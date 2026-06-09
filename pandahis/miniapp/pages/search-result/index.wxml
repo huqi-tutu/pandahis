@@ -1,0 +1,37 @@
+<navigation-bar title="搜索结果" back="{{true}}" color="#9B3E38" background="rgba(250,247,243,0.96)"></navigation-bar>
+
+<view class="page-search-result">
+  <view class="summary">「{{keyword}}」· 找到 {{resultTotal}} 条</view>
+
+  <view class="filter-bar" wx:if="{{results.length}}">
+    <scroll-view scroll-x class="filter-scroll" enhanced show-scrollbar="{{false}}">
+      <view class="filter-inner">
+        <view
+          wx:for="{{filterCats}}"
+          wx:key="*this"
+          class="filter-tag {{filterIndex === index ? 'active' : ''}}"
+          data-i="{{index}}"
+          bindtap="onFilter"
+        >{{item}}</view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <view wx:if="{{searching}}" class="loading">搜索中…</view>
+  <empty-state wx:elif="{{!filteredResults.length}}" type="search" title="未找到结果" desc="换个关键词试试"></empty-state>
+  <scroll-view wx:else scroll-y class="result-scroll" enhanced show-scrollbar="{{false}}">
+    <view
+      class="result-card"
+      wx:for="{{filteredResults}}"
+      wx:key="key"
+      bindtap="go"
+      data-type="{{item.type}}"
+      data-id="{{item.id}}"
+    >
+      <view wx:if="{{item.category}}" class="result-cat">{{item.category}}</view>
+      <view class="path">{{item.pathText}}</view>
+      <rich-text class="title" nodes="{{item.titleRich}}"></rich-text>
+      <rich-text wx:if="{{item.hasDesc}}" class="desc" nodes="{{item.descRich}}"></rich-text>
+    </view>
+  </scroll-view>
+</view>

@@ -1,0 +1,15 @@
+{
+  "name": "pandahis-data-cleaning",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "validate-index": "node validators/validate-index.mjs",
+    "validate-compose": "node validators/validate-compose.mjs",
+    "dedupe": "node validators/dedupe-names.mjs",
+    "align": "node validators/align-reference.mjs"
+  },
+  "dependencies": {
+    "zod": "^3.25.76"
+  }
+}

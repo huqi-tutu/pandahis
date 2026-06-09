@@ -1,0 +1,117 @@
+@import '../../styles/atlas.wxss';
+
+.page-shell {
+  min-height: 100vh;
+  background: #F8F6F2;
+}
+
+.nav-search { font-size: 40rpx; padding: 8rpx 16rpx; }
+
+/* ─── 结果区域 ─── */
+.result-body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.kw-bar {
+  display: flex;
+  align-items: baseline;
+  gap: 16rpx;
+  padding: 24rpx 32rpx 16rpx;
+}
+
+.kw-text {
+  font-family: 'PingFang SC', serif;
+  font-size: 34rpx;
+  font-weight: 700;
+  color: #262626;
+}
+
+.kw-count { font-size: 22rpx; }
+
+/* ─── 筛选栏 ─── */
+.filter-bar {
+  padding: 0 24rpx 16rpx;
+}
+
+.filter-scroll { width: 100%; white-space: nowrap; }
+
+.filter-inner {
+  display: inline-flex;
+  gap: 12rpx;
+  padding-bottom: 4rpx;
+}
+
+.filter-tag {
+  flex-shrink: 0;
+  padding: 10rpx 28rpx;
+  border-radius: 999rpx;
+  font-size: 24rpx;
+  font-weight: 500;
+  background: #EEECEA;
+  color: #9A9A9A;
+  border: 1rpx solid transparent;
+}
+
+.filter-tag.active {
+  background: #4A3F3F;
+  color: #FFFFFF;
+}
+
+/* ─── 结果卡 ─── */
+.result-scroll {
+  flex: 1;
+  padding: 0 24rpx;
+}
+
+.result-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 20rpx;
+  background: #FFFFFF;
+  border-radius: 16rpx;
+  border: 1rpx solid #EDEAE6;
+  padding: 24rpx;
+  margin-bottom: 12rpx;
+}
+
+.result-cat-badge {
+  flex-shrink: 0;
+  padding: 6rpx 16rpx;
+  border-radius: 999rpx;
+  font-size: 20rpx;
+  font-weight: 600;
+  margin-top: 4rpx;
+  white-space: nowrap;
+}
+
+.result-main { flex: 1; min-width: 0; }
+
+.result-title {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #262626;
+  display: block;
+  margin-bottom: 6rpx;
+  line-height: 1.3;
+}
+
+.result-sub {
+  font-size: 22rpx;
+  display: block;
+  margin-bottom: 8rpx;
+}
+
+.result-snippet {
+  font-size: 24rpx;
+  line-height: 1.55;
+  display: block;
+  overflow: hidden;
+}
+
+.result-arrow {
+  font-size: 32rpx;
+  padding-top: 4rpx;
+  flex-shrink: 0;
+}

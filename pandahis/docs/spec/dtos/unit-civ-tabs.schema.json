@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "unit-civ-tabs.schema.json",
+  "type": "object",
+  "required": ["tabs"],
+  "properties": {
+    "tabs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["civilizationId", "civilizationName", "unitId", "isActive"],
+        "properties": {
+          "civilizationId": { "type": "integer" },
+          "civilizationName": { "type": "string" },
+          "unitId": { "type": "string" },
+          "isActive": { "type": "boolean" }
+        }
+      }
+    }
+  }
+}
+

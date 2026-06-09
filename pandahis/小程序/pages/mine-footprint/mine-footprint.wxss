@@ -1,0 +1,53 @@
+@import '../../styles/atlas.wxss';
+
+.proto-shell {
+  min-height: 100vh;
+  background: #F8F6F2;
+}
+
+.fp-body {
+  padding: 24rpx;
+  box-sizing: border-box;
+  padding-bottom: calc(100rpx + env(safe-area-inset-bottom));
+}
+
+.summary {
+  font-size: 22rpx;
+  letter-spacing: 2rpx;
+  margin-bottom: 20rpx;
+  display: block;
+}
+
+.card {
+  background: #FFFFFF;
+  border-radius: 20rpx;
+  border: 1rpx solid #EDEAE6;
+  padding: 24rpx;
+  margin-bottom: 16rpx;
+  box-shadow: 0 2rpx 8rpx rgba(47,41,38,0.04);
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10rpx;
+}
+
+.t {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #262626;
+  flex: 1;
+  margin-right: 16rpx;
+}
+
+.time { font-size: 22rpx; }
+
+.era {
+  font-size: 24rpx;
+  margin-bottom: 6rpx;
+  display: block;
+}
+
+.path { font-size: 22rpx; }

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "membership.schema.json",
+  "type": "object",
+  "required": ["status", "endAt"],
+  "properties": {
+    "status": { "type": "string", "enum": ["NONE", "ACTIVE", "EXPIRED"] },
+    "endAt": { "type": ["string", "null"], "format": "date-time" }
+  }
+}
+

@@ -1,0 +1,98 @@
+<view class="page-shell">
+  <proto-nav title="会员中心" show-back="{{false}}" />
+
+  <!-- 主内容滚动区 -->
+  <scroll-view
+    class="vip-hub-scroll"
+    scroll-y enhanced show-scrollbar="{{false}}"
+    style="top: {{headerPadPx}}px; bottom: {{buyBarH}}px;"
+  >
+    <!-- 导引文字 -->
+    <text class="vip-hub-lead">选择适合你的典藏会员方案，畅享全地域图谱与高阶阅读能力。</text>
+
+    <!-- 三列方案卡 -->
+    <view class="vip-plans">
+      <!-- 邀友获取 季卡 -->
+      <view
+        class="vip-plan vip-plan--invite {{selectedPlan === 'invite' ? 'selected' : ''}}"
+        bindtap="onPlanTap"
+        data-plan="invite"
+        data-label="邀友获取 · 季卡 · ¥0"
+      >
+        <view class="vip-plan-tag">最划算</view>
+        <view class="vip-plan-body">
+          <text class="vip-plan-type">季卡</text>
+          <text class="vip-plan-way">邀友获取</text>
+          <view class="vip-plan-price-wrap">
+            <text class="vip-plan-price vip-plan-price--zero">¥0</text>
+          </view>
+        </view>
+      </view>
+
+      <!-- 付费订阅 季卡 -->
+      <view
+        class="vip-plan {{selectedPlan === 'season' ? 'selected' : ''}}"
+        bindtap="onPlanTap"
+        data-plan="season"
+        data-label="付费订阅 · 季卡 · ¥19.9"
+      >
+        <view class="vip-plan-body">
+          <text class="vip-plan-type">季卡</text>
+          <text class="vip-plan-way">付费订阅</text>
+          <view class="vip-plan-price-wrap">
+            <text class="vip-plan-price">¥19.9</text>
+          </view>
+        </view>
+      </view>
+
+      <!-- 付费订阅 年卡 -->
+      <view
+        class="vip-plan {{selectedPlan === 'year' ? 'selected' : ''}}"
+        bindtap="onPlanTap"
+        data-plan="year"
+        data-label="付费订阅 · 年卡 · ¥49.9"
+      >
+        <view class="vip-plan-body">
+          <text class="vip-plan-type">年卡</text>
+          <text class="vip-plan-way">付费订阅</text>
+          <view class="vip-plan-price-wrap">
+            <text class="vip-plan-price">¥49.9</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 权益列表 -->
+    <view class="vip-benefits">
+      <text class="vip-benefits-title">高级权限包含</text>
+      <view class="vip-benefit">
+        <text class="vip-benefit-icon">✦</text>
+        <text class="vip-benefit-text">全部一级文明地域详细图谱与时间矩阵</text>
+      </view>
+      <view class="vip-benefit">
+        <text class="vip-benefit-icon">✦</text>
+        <text class="vip-benefit-text">跨时空评述 · 多视角对照深度阅读</text>
+      </view>
+      <view class="vip-benefit">
+        <text class="vip-benefit-icon">✦</text>
+        <text class="vip-benefit-text">文物见证 · 典藏线索与馆藏信息</text>
+      </view>
+      <view class="vip-benefit">
+        <text class="vip-benefit-icon">✦</text>
+        <text class="vip-benefit-text">24 史原文对照 · 无广告 · 离线缓存</text>
+      </view>
+    </view>
+
+    <view style="height: 32rpx;"></view>
+  </scroll-view>
+
+  <!-- 底部购买栏（fixed） -->
+  <view class="vip-buy-bar">
+    <view class="vip-buy-meta">
+      <text class="vip-buy-meta-label">当前选择</text>
+      <text class="vip-buy-meta-value">{{selectedLabel}}</text>
+    </view>
+    <view class="vip-buy-btn" bindtap="onConfirm">确认开通</view>
+  </view>
+
+</view>

@@ -1,0 +1,47 @@
+<navigation-bar title="设置" back="{{true}}" color="#4a3230" background="rgba(255,248,247,0.95)"></navigation-bar>
+
+<scroll-view class="page-settings" scroll-y>
+  <view class="menu-card" wx:if="{{loggedIn}}">
+    <view class="menu-item" bindtap="goProfileEdit">
+      <text class="menu-label">编辑昵称</text>
+      <text class="menu-extra">›</text>
+    </view>
+    <view class="menu-item" bindtap="goInviteReads">
+      <text class="menu-label">邀请有礼 · 阅读点</text>
+      <text class="menu-extra">›</text>
+    </view>
+    <view class="menu-item menu-item-col menu-item-bind">
+      <text class="menu-label">补填好友邀请码</text>
+      <view class="bind-row">
+        <input
+          class="bind-input"
+          value="{{bindCode}}"
+          maxlength="32"
+          placeholder="邀请码"
+          bindinput="onBindInput"
+        />
+        <view class="bind-btn {{bindSubmitting ? 'disabled' : ''}}" bindtap="submitBindCode">
+          {{bindSubmitting ? '…' : '绑定'}}
+        </view>
+      </view>
+    </view>
+    <view class="menu-item" bindtap="copySupportEmail">
+      <text class="menu-label">帮助与反馈</text>
+      <text class="menu-extra">复制邮箱</text>
+    </view>
+  </view>
+
+  <view class="menu-card">
+    <view class="menu-item" bindtap="clearCache">
+      <text class="menu-label">清除本地缓存</text>
+      <text class="menu-extra">图片与临时数据</text>
+    </view>
+    <view class="menu-item menu-item-col">
+      <text class="menu-label">接口地址</text>
+      <text class="menu-url">{{apiBase}}</text>
+    </view>
+  </view>
+  <view wx:if="{{loggedIn}}" class="logout-wrap">
+    <view class="logout-btn" bindtap="logout">退出登录</view>
+  </view>
+</scroll-view>

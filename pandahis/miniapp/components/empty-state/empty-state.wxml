@@ -1,0 +1,18 @@
+<view class="wrap">
+  <view class="illus card">
+    <view class="blob b1"></view>
+    <view class="blob b2"></view>
+    <view class="grid"></view>
+
+    <view class="icon {{type}}">
+      <view class="stroke s1"></view>
+      <view class="stroke s2"></view>
+      <view class="stroke s3"></view>
+    </view>
+  </view>
+
+  <view class="title">{{title}}</view>
+  <view wx:if="{{desc}}" class="desc text3">{{desc}}</view>
+  <view wx:if="{{cta}}" class="cta btnGhost" bindtap="onCta">{{cta}}</view>
+</view>
+

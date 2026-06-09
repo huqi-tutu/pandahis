@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "me.schema.json",
+  "type": "object",
+  "required": ["nickname", "avatarUrl", "phoneMasked", "favoriteCount", "footprintCount", "learnDaysCount", "membershipStatus", "membershipEndAt"],
+  "properties": {
+    "nickname": { "type": "string" },
+    "avatarUrl": { "type": ["string", "null"] },
+    "phoneMasked": { "type": ["string", "null"] },
+    "favoriteCount": { "type": "integer", "minimum": 0 },
+    "footprintCount": { "type": "integer", "minimum": 0 },
+    "learnDaysCount": { "type": "integer", "minimum": 0 },
+    "membershipStatus": { "type": "string", "enum": ["NONE", "ACTIVE", "EXPIRED"] },
+    "membershipEndAt": { "type": ["string", "null"], "format": "date-time" }
+  }
+}
+

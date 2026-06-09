@@ -1,0 +1,83 @@
+<view class="page-shell">
+  <proto-nav
+    title="历史图谱"
+    home-nav="{{true}}"
+    mode-pill-text="总览 ▾"
+    bind:modepilltap="goMatrix"
+  />
+
+  <view class="overview-body" style="padding-top: {{headerPadPx}}px;">
+
+    <!-- 顶部提示 -->
+    <view class="hint-bar">
+      <text class="hint-text muted">横向滑动浏览地图 · 点击区域进入史略</text>
+    </view>
+
+    <!-- 世界地图 + 热区 -->
+    <scroll-view scroll-x class="map-scroll" enhanced show-scrollbar="{{false}}">
+      <view class="map-frame">
+        <image
+          class="map-image"
+          src="/images/world-history-dynasty-map.png"
+          mode="widthFix"
+          show-menu-by-longpress="{{false}}"
+        />
+        <!-- 文明热区点 -->
+        <view
+          wx:for="{{civSpots}}"
+          wx:key="id"
+          class="civ-spot"
+          style="left: {{item.x}}%; top: {{item.y}}%;"
+          bindtap="onSpotTap"
+          data-id="{{item.id}}"
+          data-name="{{item.name}}"
+        >
+          <view class="spot-dot" style="background: {{item.color}};"></view>
+          <text class="spot-label" style="color: {{item.color}};">{{item.name}}</text>
+        </view>
+      </view>
+    </scroll-view>
+
+    <!-- 年代色彩条 -->
+    <view class="era-bar-section">
+      <view class="dynasty-era-bar">
+        <view class="era-seg era-c1"><text>先秦</text></view>
+        <view class="era-seg era-c2"><text>秦汉</text></view>
+        <view class="era-seg era-c3"><text>三国·魏晋</text></view>
+        <view class="era-seg era-c4"><text>隋唐</text></view>
+        <view class="era-seg era-c5"><text>宋</text></view>
+        <view class="era-seg era-c6"><text>元</text></view>
+        <view class="era-seg era-c1"><text>明</text></view>
+        <view class="era-seg era-c2"><text>清</text></view>
+      </view>
+    </view>
+
+    <!-- 地域文明列表 -->
+    <view class="civ-list-section">
+      <view class="section-title-bar">
+        <text class="list-title">地域文明</text>
+        <text class="list-count muted">{{civSpots.length}} 个文明</text>
+      </view>
+      <view class="civ-grid">
+        <view
+          wx:for="{{civSpots}}"
+          wx:key="id"
+          class="civ-grid-card"
+          bindtap="onCivCardTap"
+          data-id="{{item.id}}"
+        >
+          <image
+            class="civ-card-img"
+            src="{{item.img}}"
+            mode="aspectFill"
+            lazy-load
+          />
+          <view class="civ-card-overlay" style="background: linear-gradient(180deg, transparent 30%, {{item.color}}cc 100%);"></view>
+          <text class="civ-card-name">{{item.name}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view style="height: 120rpx;"></view>
+  </view>
+</view>

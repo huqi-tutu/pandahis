@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "unit-swim-matrix.schema.json",
+  "type": "object",
+  "required": ["startYear", "endYear", "endLabel", "ticks", "lanes", "concurrentItems", "sheetWidthRpx"],
+  "properties": {
+    "startYear": { "type": "integer" },
+    "endYear": { "type": "integer" },
+    "endLabel": { "type": "string" },
+    "sheetWidthRpx": { "type": "integer", "minimum": 1 },
+    "concurrentItems": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "ticks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["label", "left"],
+        "properties": {
+          "label": { "type": "string" },
+          "left": { "type": "string" }
+        }
+      }
+    },
+    "lanes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["label", "borderColor", "layout", "collapsedRows", "hasMore", "moreCount"],
+        "properties": {
+          "label": { "type": "string" },
+          "borderColor": { "type": "string" },
+          "layout": { "type": "string", "enum": ["shichen", "continuous", "isolated"] },
+          "hasMore": { "type": "boolean" },
+          "moreCount": { "type": "integer", "minimum": 0 },
+          "moreBarLeft": { "type": "string" },
+          "moreBarWidth": { "type": "string" },
+          "collapsedRows": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["title", "boxId", "left", "width"],
+                "properties": {
+                  "title": { "type": "string" },
+                  "boxId": { "type": "string" },
+                  "left": { "type": "string" },
+                  "width": { "type": "string" },
+                  "priority": { "type": "string" },
+                  "type": { "type": "string" },
+                  "timeRange": { "type": "string" }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

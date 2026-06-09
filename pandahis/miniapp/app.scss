@@ -1,0 +1,56 @@
+@import './native-utils/tokens.scss';
+
+page {
+  @include page-bg;
+  @include font-body;
+  color: $text-title;
+}
+
+view,
+text {
+  box-sizing: border-box;
+}
+
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.text2 {
+  color: var(--text2);
+}
+
+.text3 {
+  color: var(--text3);
+}
+
+.btnPrimary {
+  height: 88rpx;
+  border-radius: 18rpx;
+  background: $theme-primary;
+  color: $theme-on-primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  font-weight: 700;
+  letter-spacing: 0.5rpx;
+}
+
+.btnGhost {
+  height: 88rpx;
+  border-radius: 18rpx;
+  background: $inactive-bg;
+  color: $inactive-text;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  font-weight: 600;
+}
+
+.card {
+  background: var(--bgCard);
+  border: 1rpx solid var(--borderCard);
+  border-radius: var(--radiusLg);
+  box-shadow: var(--shadow1);
+}

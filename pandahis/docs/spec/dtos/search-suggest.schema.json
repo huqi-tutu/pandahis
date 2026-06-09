@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "search-suggest.schema.json",
+  "type": "object",
+  "required": ["hotKeywords", "historyKeywords"],
+  "properties": {
+    "hotKeywords": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["keyword", "isHot"],
+        "properties": {
+          "keyword": { "type": "string" },
+          "isHot": { "type": "boolean" }
+        }
+      }
+    },
+    "historyKeywords": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["keyword"],
+        "properties": {
+          "keyword": { "type": "string" },
+          "lastSearchedAt": { "type": "string", "format": "date-time" }
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,87 @@
+<view class="paper-page safe-bottom">
+  <!-- 导航栏 -->
+  <proto-nav title="{{title}}" show-back="{{true}}"></proto-nav>
+
+  <!-- 顶部信息栏 -->
+  <view class="page-header" style="padding-top: {{headerPadPx}}px;">
+    <view class="header-info">
+      <text class="header-title">{{title}}</text>
+      <text class="header-sub muted">{{subtitle}} · {{critiques.length}}条评述</text>
+    </view>
+  </view>
+
+  <!-- 评述列表 -->
+  <scroll-view scroll-y class="critique-scroll" enhanced show-scrollbar="{{false}}">
+    <block wx:for="{{critiques}}" wx:key="id">
+      <!-- 主评述卡片 -->
+      <view class="critique-card" bindtap="onCritiqueTap" data-author="{{item.author}}">
+        <view class="critique-head">
+          <view class="avatar" style="background: {{item.avatarBg}};">
+            <text class="avatar-text">{{item.avatar}}</text>
+          </view>
+          <view class="critique-meta">
+            <text class="critique-author">{{item.author}}</text>
+            <text class="critique-era muted">{{item.era}}</text>
+          </view>
+        </view>
+
+        <text class="critique-body">{{item.text}}</text>
+
+        <text class="critique-source muted">—— {{item.source}}</text>
+
+        <!-- 底部操作栏 -->
+        <view class="critique-actions">
+          <view class="action-btn {{item.liked ? 'liked' : ''}}" catchtap="onLike" data-type="main" data-id="{{item.id}}">
+            <text class="action-icon">{{item.liked ? '♥' : '♡'}}</text>
+            <text class="action-count">{{item.likes}}</text>
+          </view>
+          <view class="action-btn">
+            <text class="action-icon">💬</text>
+            <text class="action-count">{{item.replies.length}}</text>
+          </view>
+        </view>
+
+        <!-- 回复区域 -->
+        <view wx:if="{{item.hasReplies}}" class="replies-section">
+          <view class="replies-toggle" catchtap="toggleReplies" data-id="{{item.id}}">
+            <text class="toggle-text">
+              {{expandedReplies[item.id] ? '收起回复' : '展开 ' + item.replies.length + ' 条回复'}}
+            </text>
+            <text class="toggle-arrow {{expandedReplies[item.id] ? 'arrow-up' : ''}}">›</text>
+          </view>
+
+          <!-- 回复列表 -->
+          <view wx:if="{{expandedReplies[item.id]}}" class="replies-list">
+            <view wx:for="{{item.replies}}" wx:key="id" wx:for-item="reply" class="reply-card">
+              <view class="reply-head">
+                <view class="avatar avatar-sm" style="background: {{reply.avatarBg}};">
+                  <text class="avatar-text">{{reply.avatar}}</text>
+                </view>
+                <view class="reply-meta">
+                  <view class="reply-author-row">
+                    <text class="reply-author">{{reply.author}}</text>
+                    <text wx:if="{{reply.replyTo}}" class="reply-to muted">回复 @{{reply.replyTo}}</text>
+                  </view>
+                  <text class="reply-era muted">{{reply.era}}</text>
+                </view>
+              </view>
+
+              <text class="reply-body">{{reply.text}}</text>
+              <text class="critique-source muted">—— {{reply.source}}</text>
+
+              <view class="critique-actions">
+                <view class="action-btn {{reply.liked ? 'liked' : ''}}" catchtap="onLike" data-type="reply" data-parent-id="{{item.id}}" data-id="{{reply.id}}">
+                  <text class="action-icon">{{reply.liked ? '♥' : '♡'}}</text>
+                  <text class="action-count">{{reply.likes}}</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+
+    <!-- 底部留白 -->
+    <view style="height: 60rpx;"></view>
+  </scroll-view>
+</view>

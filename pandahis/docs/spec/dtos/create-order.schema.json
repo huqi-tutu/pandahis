@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "create-order.schema.json",
+  "type": "object",
+  "required": ["orderId", "status", "payParams"],
+  "properties": {
+    "orderId": { "type": "integer", "minimum": 1 },
+    "status": { "type": "string", "enum": ["created", "paid", "closed", "refunded"] },
+    "payParams": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  }
+}
+

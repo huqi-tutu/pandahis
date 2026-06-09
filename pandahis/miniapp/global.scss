@@ -1,0 +1,4 @@
+/* 微信开发者工具公共 SCSS 占位（project.config → scssCommonUseFilePath）
+ * 设计令牌请在各页面/组件内：@import '../../native-utils/design-tokens.scss';
+ * 勿在此重复 import，否则与页面 import 冲突导致「变量已定义」编译失败。
+ */

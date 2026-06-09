@@ -1,0 +1,63 @@
+@import '../../styles/atlas.wxss';
+
+.proto-shell {
+  min-height: 100vh;
+  background: #F8F6F2;
+}
+
+.box-page-body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.box-hero {
+  margin: 20rpx 24rpx 0;
+  padding: 24rpx 28rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 8rpx;
+}
+
+.box-title {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: #262626;
+}
+
+.box-sub { font-size: 22rpx; }
+.box-fav { font-size: 36rpx; position: absolute; right: 28rpx; color: #B0A89E; }
+
+.box-tabs {
+  display: flex;
+  gap: 8rpx;
+  padding: 12rpx 24rpx;
+  background: rgba(250, 247, 243, 0.96);
+  border-bottom: 1rpx solid #EDEAE6;
+}
+
+.box-tab {
+  flex: 1;
+  text-align: center;
+  padding: 14rpx;
+  border-radius: 999rpx;
+  font-size: 24rpx;
+  color: #9A9A9A;
+}
+
+.box-tab.active {
+  background: #4A3F3F;
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+.graph-scroll {
+  flex: 1;
+  padding: 16rpx 24rpx;
+}
+
+.graph-svg-img {
+  width: 100%;
+  display: block;
+  border-radius: 16rpx;
+}

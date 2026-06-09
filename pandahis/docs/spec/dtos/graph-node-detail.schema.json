@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "graph-node-detail.schema.json",
+  "type": "object",
+  "required": ["name", "category", "role", "level", "lineage", "summary"],
+  "properties": {
+    "name": { "type": "string" },
+    "category": { "type": "string" },
+    "role": { "type": "string" },
+    "level": { "type": "string" },
+    "lineage": { "type": "string" },
+    "summary": { "type": "string" },
+    "targetBoxId": { "type": ["string", "null"] }
+  }
+}

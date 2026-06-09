@@ -1,0 +1,792 @@
+openapi: 3.0.3
+info:
+  title: Histomap API
+  version: 0.1.0
+servers:
+  - url: /api/v1
+
+tags:
+  - name: contentgraph
+  - name: search
+  - name: user
+  - name: membership
+  - name: auth
+
+paths:
+  /home/grid:
+    get:
+      tags: [contentgraph]
+      summary: Load home grid (axes + sparse cells)
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiResponse_HomeGrid"
+
+  /home/matrix:
+    get:
+      tags: [contentgraph]
+      summary: Load immersive home regime matrix for one civilization
+      parameters:
+        - name: civId
+          in: query
+          required: true
+          schema: { type: integer, format: int64 }
+        - name: expanded
+          in: query
+          required: false
+          description: Comma-separated dynasty keys to expand (show individual units)
+          schema: { type: string }
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiResponse_HomeMatrix"
+
+  /units/{unitId}:
+    get:
+      tags: [contentgraph]
+      summary: Load unit hero info
+      parameters:
+        - $ref: "#/components/parameters/UnitId"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiResponse_UnitHero"
+        "404":
+          $ref: "#/components/responses/NotFound"
+
+  /units/{unitId}/matrix:
+    get:
+      tags: [contentgraph]
+      summary: Load unit matrix (years x categories)
+      parameters:
+        - $ref: "#/components/parameters/UnitId"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiResponse_UnitMatrix"
+        "404":
+          $ref: "#/components/responses/NotFound"
+
+  /units/{unitId}/swim-matrix:
+    get:
+      tags: [contentgraph]
+      summary: Load unit swim-lane matrix (5 categories)
+      parameters:
+        - $ref: "#/components/parameters/UnitId"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiResponse_UnitSwimMatrix"
+        "404":
+          $ref: "#/components/responses/NotFound"
+
+  /units/{unitId}/civ-tabs:
+    get:
+      tags: [contentgraph]
+      summary: Load civilization comparison tabs for unit
+      parameters:
+        - $ref: "#/components/parameters/UnitId"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiResponse_UnitCivTabs"
+        "404":
+          $ref: "#/components/responses/NotFound"
+
+  /boxes/{boxId}:
+    get:
+      tags: [contentgraph]
+      summary: Load box header (hero + favorite + tab summary + access)
+      parameters:
+        - $ref: "#/components/parameters/BoxId"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiResponse_BoxHeader"
+        "404":
+          $ref: "#/components/responses/NotFound"
+
+  /boxes/{boxId}/detail:
+    get:
+      tags: [contentgraph]
+      summary: Load box detail content
+      parameters:
+        - $ref: "#/components/parameters/BoxId"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiResponse_BoxDetail"
+        "403":
+          $ref: "#/components/responses/ForbiddenLocked"
+        "404":
+          $ref: "#/components/responses/NotFound"
+
+  /boxes/{boxId}/graph:
+    get:
+      tags: [contentgraph]
+      summary: Load box graph (nodes/edges)
+      parameters:
+        - $ref: "#/components/parameters/BoxId"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiResponse_BoxGraph"
+        "403":
+          $ref: "#/components/responses/ForbiddenLocked"
+        "404":
+          $ref: "#/components/responses/NotFound"
+
+  /boxes/{boxId}/graph/nodes/{nodeKey}:
+    get:
+      tags: [contentgraph]
+      summary: Load relation graph node detail for relation-detail page
+      parameters:
+        - $ref: "#/components/parameters/BoxId"
+        - name: nodeKey
+          in: path
+          required: true
+          schema: { type: string, maxLength: 64 }
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiResponse_GraphNodeDetail"
+        "403":
+          $ref: "#/components/responses/ForbiddenLocked"
+        "404":
+          $ref: "#/components/responses/NotFound"
+
+  /boxes/{boxId}/critiques:
+    get:
+      tags: [contentgraph]
+      summary: Load box critiques
+      parameters:
+        - $ref: "#/components/parameters/BoxId"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiResponse_BoxCritiques"
+        "403":
+          $ref: "#/components/responses/ForbiddenLocked"
+        "404":
+          $ref: "#/components/responses/NotFound"
+
+  /boxes/{boxId}/relics:
+    get:
+      tags: [contentgraph]
+      summary: Load box relics
+      parameters:
+        - $ref: "#/components/parameters/BoxId"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiResponse_BoxRelics"
+        "403":
+          $ref: "#/components/responses/ForbiddenLocked"
+        "404":
+          $ref: "#/components/responses/NotFound"
+
+  /search/suggest:
+    get:
+      tags: [search]
+      summary: Hot keywords + user search history (if logged in)
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiResponse_SearchSuggest"
+
+  /search:
+    get:
+      tags: [search]
+      summary: Search units and boxes
+      parameters:
+        - name: q
+          in: query
+          required: true
+          schema: { type: string, minLength: 1, maxLength: 32 }
+        - $ref: "#/components/parameters/Page"
+        - $ref: "#/components/parameters/PageSize"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiResponse_SearchResult"
+
+  /search/history:
+    delete:
+      tags: [search]
+      summary: Delete one search history keyword (idempotent)
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: keyword
+          in: query
+          required: true
+          schema: { type: string, minLength: 1, maxLength: 64 }
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiResponse_Empty"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+
+  /auth/wx-login:
+    post:
+      tags: [auth]
+      summary: WeChat login (code -> token)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/WxLoginRequest"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiResponse_WxLogin"
+
+  /me:
+    get:
+      tags: [user]
+      summary: My profile + counts + membership summary
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiResponse_Me"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+
+  /favorites/boxes/{boxId}:
+    post:
+      tags: [user]
+      summary: Favorite a box (idempotent)
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: "#/components/parameters/BoxId"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiResponse_Empty"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+    delete:
+      tags: [user]
+      summary: Unfavorite a box (idempotent)
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: "#/components/parameters/BoxId"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiResponse_Empty"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+
+  /favorites/boxes:
+    get:
+      tags: [user]
+      summary: List favorites (paged)
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: "#/components/parameters/Page"
+        - $ref: "#/components/parameters/PageSize"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiResponse_FavoriteList"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+
+  /footprints/boxes/{boxId}/view:
+    post:
+      tags: [user]
+      summary: Record footprint view (upsert, idempotent)
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: "#/components/parameters/BoxId"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiResponse_Empty"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+
+  /footprints/boxes:
+    get:
+      tags: [user]
+      summary: List footprints (paged)
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: "#/components/parameters/Page"
+        - $ref: "#/components/parameters/PageSize"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiResponse_FootprintList"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+
+  /membership/plans:
+    get:
+      tags: [membership]
+      summary: List membership plans
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiResponse_MembershipPlans"
+
+  /membership:
+    get:
+      tags: [membership]
+      summary: Get current membership status
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiResponse_Membership"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+
+  /orders:
+    post:
+      tags: [membership]
+      summary: Create order and return pay params
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateOrderRequest"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiResponse_CreateOrder"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+
+  /orders/{orderId}:
+    get:
+      tags: [membership]
+      summary: Get order status
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: "#/components/parameters/OrderId"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiResponse_Order"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "404":
+          $ref: "#/components/responses/NotFound"
+
+  /payments/wechat/notify:
+    post:
+      tags: [membership]
+      summary: WeChat payment notify callback (verify + idempotent + state machine)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/WechatNotifyRequest"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ApiResponse_Empty"
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  parameters:
+    UnitId:
+      name: unitId
+      in: path
+      required: true
+      schema: { type: string, minLength: 1, maxLength: 64 }
+    BoxId:
+      name: boxId
+      in: path
+      required: true
+      schema: { type: string, minLength: 1, maxLength: 128 }
+    OrderId:
+      name: orderId
+      in: path
+      required: true
+      schema: { type: integer, minimum: 1 }
+    Page:
+      name: page
+      in: query
+      required: false
+      schema: { type: integer, minimum: 1, default: 1 }
+    PageSize:
+      name: pageSize
+      in: query
+      required: false
+      schema: { type: integer, minimum: 1, maximum: 50, default: 20 }
+
+  responses:
+    Unauthorized:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ApiResponse_Error"
+    NotFound:
+      description: Not Found
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ApiResponse_Error"
+    ForbiddenLocked:
+      description: Forbidden (locked)
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ApiResponse_Locked"
+
+  schemas:
+    ApiResponse_Base:
+      type: object
+      required: [code, message, requestId, data]
+      properties:
+        code: { type: string }
+        message: { type: string }
+        requestId: { type: string }
+        data: {}
+
+    ApiResponse_Empty:
+      allOf:
+        - $ref: "#/components/schemas/ApiResponse_Base"
+        - type: object
+          properties:
+            data:
+              type: object
+
+    ApiResponse_Error:
+      allOf:
+        - $ref: "#/components/schemas/ApiResponse_Base"
+        - type: object
+          properties:
+            data:
+              nullable: true
+
+    LockedInfo:
+      type: object
+      required: [locked, lockedReason, unlockAction]
+      properties:
+        locked: { type: boolean }
+        lockedReason: { type: string, enum: [MEMBERSHIP_REQUIRED] }
+        unlockAction:
+          type: object
+          required: [type]
+          properties:
+            type: { type: string, enum: [OPEN_VIP_PAGE] }
+            params: { type: object, additionalProperties: true }
+
+    ApiResponse_Locked:
+      allOf:
+        - $ref: "#/components/schemas/ApiResponse_Base"
+        - type: object
+          properties:
+            code:
+              type: string
+              enum: [FORBIDDEN]
+            data:
+              $ref: "#/components/schemas/LockedInfo"
+
+    HomeGridDTO:
+      $ref: "./dtos/home-grid.schema.json"
+    HomeMatrixDTO:
+      $ref: "./dtos/home-matrix.schema.json"
+    UnitHeroDTO:
+      $ref: "./dtos/unit-hero.schema.json"
+    UnitMatrixDTO:
+      $ref: "./dtos/unit-matrix.schema.json"
+    UnitSwimMatrixDTO:
+      $ref: "./dtos/unit-swim-matrix.schema.json"
+    UnitCivTabsDTO:
+      $ref: "./dtos/unit-civ-tabs.schema.json"
+    BoxHeaderDTO:
+      $ref: "./dtos/box-header.schema.json"
+    BoxDetailDTO:
+      $ref: "./dtos/box-detail.schema.json"
+    BoxGraphDTO:
+      $ref: "./dtos/box-graph.schema.json"
+    GraphNodeDetailDTO:
+      $ref: "./dtos/graph-node-detail.schema.json"
+    BoxCritiquesDTO:
+      $ref: "./dtos/box-critiques.schema.json"
+    BoxRelicsDTO:
+      $ref: "./dtos/box-relics.schema.json"
+    SearchSuggestDTO:
+      $ref: "./dtos/search-suggest.schema.json"
+    SearchResultDTO:
+      $ref: "./dtos/search-result.schema.json"
+    MeDTO:
+      $ref: "./dtos/me.schema.json"
+    FavoriteListDTO:
+      $ref: "./dtos/favorite-list.schema.json"
+    FootprintListDTO:
+      $ref: "./dtos/footprint-list.schema.json"
+    MembershipPlansDTO:
+      $ref: "./dtos/membership-plans.schema.json"
+    MembershipDTO:
+      $ref: "./dtos/membership.schema.json"
+    CreateOrderDTO:
+      $ref: "./dtos/create-order.schema.json"
+    OrderDTO:
+      $ref: "./dtos/order.schema.json"
+    WxLoginDTO:
+      $ref: "./dtos/wx-login.schema.json"
+
+    ApiResponse_HomeGrid:
+      allOf:
+        - $ref: "#/components/schemas/ApiResponse_Base"
+        - type: object
+          properties:
+            data: { $ref: "#/components/schemas/HomeGridDTO" }
+    ApiResponse_HomeMatrix:
+      allOf:
+        - $ref: "#/components/schemas/ApiResponse_Base"
+        - type: object
+          properties:
+            data: { $ref: "#/components/schemas/HomeMatrixDTO" }
+    ApiResponse_UnitHero:
+      allOf:
+        - $ref: "#/components/schemas/ApiResponse_Base"
+        - type: object
+          properties:
+            data: { $ref: "#/components/schemas/UnitHeroDTO" }
+    ApiResponse_UnitMatrix:
+      allOf:
+        - $ref: "#/components/schemas/ApiResponse_Base"
+        - type: object
+          properties:
+            data: { $ref: "#/components/schemas/UnitMatrixDTO" }
+    ApiResponse_UnitSwimMatrix:
+      allOf:
+        - $ref: "#/components/schemas/ApiResponse_Base"
+        - type: object
+          properties:
+            data: { $ref: "#/components/schemas/UnitSwimMatrixDTO" }
+    ApiResponse_UnitCivTabs:
+      allOf:
+        - $ref: "#/components/schemas/ApiResponse_Base"
+        - type: object
+          properties:
+            data: { $ref: "#/components/schemas/UnitCivTabsDTO" }
+    ApiResponse_BoxHeader:
+      allOf:
+        - $ref: "#/components/schemas/ApiResponse_Base"
+        - type: object
+          properties:
+            data: { $ref: "#/components/schemas/BoxHeaderDTO" }
+    ApiResponse_BoxDetail:
+      allOf:
+        - $ref: "#/components/schemas/ApiResponse_Base"
+        - type: object
+          properties:
+            data: { $ref: "#/components/schemas/BoxDetailDTO" }
+    ApiResponse_BoxGraph:
+      allOf:
+        - $ref: "#/components/schemas/ApiResponse_Base"
+        - type: object
+          properties:
+            data: { $ref: "#/components/schemas/BoxGraphDTO" }
+    ApiResponse_GraphNodeDetail:
+      allOf:
+        - $ref: "#/components/schemas/ApiResponse_Base"
+        - type: object
+          properties:
+            data: { $ref: "#/components/schemas/GraphNodeDetailDTO" }
+    ApiResponse_BoxCritiques:
+      allOf:
+        - $ref: "#/components/schemas/ApiResponse_Base"
+        - type: object
+          properties:
+            data: { $ref: "#/components/schemas/BoxCritiquesDTO" }
+    ApiResponse_BoxRelics:
+      allOf:
+        - $ref: "#/components/schemas/ApiResponse_Base"
+        - type: object
+          properties:
+            data: { $ref: "#/components/schemas/BoxRelicsDTO" }
+    ApiResponse_SearchSuggest:
+      allOf:
+        - $ref: "#/components/schemas/ApiResponse_Base"
+        - type: object
+          properties:
+            data: { $ref: "#/components/schemas/SearchSuggestDTO" }
+    ApiResponse_SearchResult:
+      allOf:
+        - $ref: "#/components/schemas/ApiResponse_Base"
+        - type: object
+          properties:
+            data: { $ref: "#/components/schemas/SearchResultDTO" }
+    ApiResponse_Me:
+      allOf:
+        - $ref: "#/components/schemas/ApiResponse_Base"
+        - type: object
+          properties:
+            data: { $ref: "#/components/schemas/MeDTO" }
+    ApiResponse_FavoriteList:
+      allOf:
+        - $ref: "#/components/schemas/ApiResponse_Base"
+        - type: object
+          properties:
+            data: { $ref: "#/components/schemas/FavoriteListDTO" }
+    ApiResponse_FootprintList:
+      allOf:
+        - $ref: "#/components/schemas/ApiResponse_Base"
+        - type: object
+          properties:
+            data: { $ref: "#/components/schemas/FootprintListDTO" }
+    ApiResponse_MembershipPlans:
+      allOf:
+        - $ref: "#/components/schemas/ApiResponse_Base"
+        - type: object
+          properties:
+            data: { $ref: "#/components/schemas/MembershipPlansDTO" }
+    ApiResponse_Membership:
+      allOf:
+        - $ref: "#/components/schemas/ApiResponse_Base"
+        - type: object
+          properties:
+            data: { $ref: "#/components/schemas/MembershipDTO" }
+    ApiResponse_CreateOrder:
+      allOf:
+        - $ref: "#/components/schemas/ApiResponse_Base"
+        - type: object
+          properties:
+            data: { $ref: "#/components/schemas/CreateOrderDTO" }
+    ApiResponse_Order:
+      allOf:
+        - $ref: "#/components/schemas/ApiResponse_Base"
+        - type: object
+          properties:
+            data: { $ref: "#/components/schemas/OrderDTO" }
+    ApiResponse_WxLogin:
+      allOf:
+        - $ref: "#/components/schemas/ApiResponse_Base"
+        - type: object
+          properties:
+            data: { $ref: "#/components/schemas/WxLoginDTO" }
+
+    WxLoginRequest:
+      type: object
+      required: [code]
+      properties:
+        code: { type: string, minLength: 1, maxLength: 128 }
+
+    CreateOrderRequest:
+      type: object
+      required: [planId]
+      properties:
+        planId: { type: string, minLength: 1, maxLength: 32 }
+
+    WechatNotifyRequest:
+      type: object
+      description: |
+        v1 开发联调用：只表达“我们系统如何处理与验收”，不绑定微信字段版本。
+        线上接入微信支付时，可在后端适配层把真实回调解析映射到该结构后复用业务幂等/状态机逻辑。
+      required: [orderId, wxTransactionId, paidAt]
+      properties:
+        orderId: { type: integer, minimum: 1 }
+        wxTransactionId: { type: string, minLength: 1, maxLength: 128 }
+        paidAt: { type: string, format: date-time }
+

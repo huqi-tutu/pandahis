@@ -1,0 +1,21 @@
+{
+  "mcpServers": {
+    "mysql-histomap": {
+      "command": "npx",
+      "args": ["-y", "@benborla29/mcp-server-mysql"],
+      "env": {
+        "MYSQL_HOST": "49.235.165.220",
+        "MYSQL_PORT": "3306",
+        "MYSQL_USER": "histomap",
+        "MYSQL_PASS": "change-me",
+        "MYSQL_DB": "histomap",
+        "ALLOW_INSERT_OPERATION": "true",
+        "ALLOW_UPDATE_OPERATION": "true",
+        "ALLOW_DELETE_OPERATION": "true",
+        "ALLOW_DDL_OPERATION": "true",
+        "SCHEMA_DDL_PERMISSIONS": "histomap:true",
+        "MYSQL_DISABLE_READ_ONLY_TRANSACTIONS": "true"
+      }
+    }
+  }
+}

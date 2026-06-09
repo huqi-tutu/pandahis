@@ -1,0 +1,186 @@
+<!-- 沉浸 · 政权矩阵（产品 home-matrix 1:1） -->
+<view wx:if="{{mode=='immersive'}}" class="page-shell">
+  <proto-nav
+    title="历史图谱"
+    home-nav="{{true}}"
+    mode-pill-icon="/配图/icons/quanbu.png"
+    right-pill-text="总览 ▾"
+    bind:modepilltap="onToggleCivPicker"
+    bind:rightpilltap="goOverview"
+  />
+
+  <view wx:if="{{stackMode}}"
+    id="civTabArea"
+    class="civ-tab-area"
+    style="top:{{headerPadPx}}px; height:{{tabAreaH}}rpx;"
+    bindtouchstart="onStackTouchStart"
+    bindtouchend="onStackTouchEnd"
+  >
+    <view id="stackLayer" class="civ-stack-layer" style="{{stackLayerStyle}}">
+      <view class="civ-stack-container">
+        <view
+          wx:for="{{civStackItems}}"
+          wx:key="realIdx"
+          class="civ-stack-card {{civSwitching ? 'civ-stack-card--moving' : ''}}"
+          style="{{item.cardStyle}}"
+          data-ri="{{item.realIdx}}"
+          bindtap="onCivTap"
+        >
+          <image class="civ-stack-img" src="{{item.img}}" mode="aspectFill" />
+        </view>
+      </view>
+    </view>
+    <view id="textLayer" class="civ-text-layer" style="{{textLayerStyle}}">
+      <scroll-view class="civ-text-scroll" scroll-x enhanced show-scrollbar="{{false}}" scroll-left="{{civTextScrollLeft}}" scroll-with-animation>
+        <view class="civ-text-inner">
+          <view
+            wx:for="{{civTextItems}}"
+            wx:key="id"
+            class="civ-text-item {{item.realIdx === civIndex ? 'civ-text-item--active' : ''}}"
+            data-ri="{{item.realIdx}}"
+            bindtap="onCivTap"
+          >
+            <text>{{item.name}}</text>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+
+  <view wx:else class="civ-rail-wrap" style="top: {{headerPadPx}}px;">
+    <scroll-view class="civ-rail-scroll" scroll-x enhanced show-scrollbar="{{false}}" scroll-left="{{civScrollLeft}}" scroll-with-animation="{{civScrollAnim}}" bindscrollend="onCivScrollEnd">
+      <view class="civ-rail-inner">
+        <view wx:for="{{civTabsLoop}}" wx:key="loopIdx" class="civ-card {{item.realIdx === civIndex ? 'active' : ''}}" style="{{item.cardStyle}}" data-ri="{{item.realIdx}}" bindtap="onCivTap">
+          <view class="civ-card-img-wrap">
+            <image class="civ-card-img" src="{{item.img}}" mode="aspectFill" lazy-load />
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <scroll-view
+    id="matrixScroll"
+    class="matrix-scroll"
+    scroll-y
+    enhanced
+    show-scrollbar="{{false}}"
+    style="top: {{scrollAreaTop}}px; height: {{matrixHeight}}px;"
+    bindscroll="onMatrixScroll"
+    bindscrollend="onMatrixScrollEnd"
+  >
+    <view class="matrix-body" style="height: {{matrixTotalH + 120}}rpx;">
+      <view class="matrix-time-col">
+        <view wx:for="{{matrixRows}}" wx:key="key" wx:for-item="row" class="time-row-abs {{row.showYear ? '' : 'time-row-abs--compact'}}" style="top: {{row.y}}rpx; height: {{row.h}}rpx;">
+          <view class="time-label-wrap">
+            <view wx:if="{{row.showYear}}" class="time-year-row">
+              <view class="time-h-line time-h-line--edge"></view>
+              <view class="time-year" style="font-size: {{row.yearFontSize}}rpx;">{{row.year}}</view>
+              <view class="time-h-line time-h-line--edge"></view>
+            </view>
+            <view wx:if="{{row.hxLabel}}" class="time-hx-wrap {{row.expandable ? 'time-hx-wrap--tap' : ''}}" bindtap="{{row.expandable ? 'onDynastyToggle' : ''}}" data-dynasty="{{row.dynastyKey}}">
+              <text class="time-dynasty" style="font-size: {{row.hxFontSize}}rpx;">{{row.hxLabel}}</text>
+              <view wx:if="{{row.expandable}}" class="time-expand-arrow">
+                <text class="time-arrow-icon">{{row.expanded ? '↑' : '↓'}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="matrix-canvas">
+        <view class="matrix-canvas-inner">
+          <view wx:for="{{matrixBlocks}}" wx:key="id" wx:for-item="blk" class="era-block {{blk.edgeClass}}" style="top: {{blk.top}}rpx; height: {{blk.h}}rpx; left: {{blk.leftPct}}%; width: {{blk.widthPct}}%; border-radius: {{blk.radiusStyle}};" hover-class="era-block--hover" bindtap="onCardTap" data-dynasty="{{blk.dynasty}}" data-person="{{blk.person}}" data-civ="{{blk.civ}}" data-anchor-year="{{blk.anchorYear}}">
+            <view class="era-block-fill {{blk.fillSeamFix ? 'era-block-fill--solid-seam' : ''}}{{blk.seamGapTop ? ' era-block-fill--gap-top' : ''}}{{blk.seamGapBottom ? ' era-block-fill--gap-bottom' : ''}}{{blk.seamGapLeft ? ' era-block-fill--gap-left' : ''}}{{blk.seamGapRight ? ' era-block-fill--gap-right' : ''}}" style="background-color: {{blk.cardBg}}; border-radius: {{blk.radiusStyle}};{{blk.fillStyleExtra || ''}}"></view>
+            <view wx:if="{{blk.entryId === 'zhong_hua_wu_di_huang_di'}}" class="era-block-paper-grain" style="border-radius: {{blk.radiusStyle}};"></view>
+          </view>
+          <view wx:for="{{matrixOverlays}}" wx:key="id" wx:for-item="ovl" class="entry-chrome">
+            <view wx:if="{{!ovl.hideLabels}}" class="entry-header-wrap" style="top: {{ovl.headerTop}}rpx; left: {{ovl.headerLeftPct}}%; width: {{ovl.headerWidthPct}}%;">
+              <view class="entry-header entry-header--{{ovl.labelLayout}}">
+                <block wx:if="{{ovl.labelLayout === 'inline'}}">
+                  <text class="card-person card-person--inline">{{ovl.kind === 'single' ? ovl.person : ovl.displayName}}</text>
+                  <view wx:if="{{!ovl.hideTags && ovl.highlights.length}}" class="entry-tag-row entry-tag-row--inline">
+                    <view wx:for="{{ovl.highlights}}" wx:key="text" wx:for-item="tag" class="entry-tag" style="{{tag.tagStyle}}">{{tag.text}}</view>
+                  </view>
+                </block>
+                <block wx:else>
+                  <text class="card-person card-person--stacked">{{ovl.kind === 'single' ? ovl.person : ovl.displayName}}</text>
+                  <view wx:if="{{!ovl.hideTags && ovl.highlights.length}}" class="entry-tag-row">
+                    <view wx:for="{{ovl.highlights}}" wx:key="text" wx:for-item="tag" class="entry-tag" style="{{tag.tagStyle}}">{{tag.text}}</view>
+                  </view>
+                </block>
+              </view>
+            </view>
+            <view wx:if="{{!ovl.hideTime}}" class="entry-time-wrap" style="top: {{ovl.timeWrapTop}}rpx; left: {{ovl.timeLeftPct}}%; width: {{ovl.timeWidthPct}}%; height: {{ovl.timeWrapH}}rpx;">
+              <view class="card-time-range card-time-range--{{ovl.timeCorner}}" style="font-size: {{ovl.timeFontRpx}}rpx;">{{ovl.timeRange}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <view wx:if="{{civPickerOpen}}" class="civ-picker" style="top: {{headerPadPx}}px;" catchtouchmove="preventMove">
+    <view class="civ-picker-sheet" style="height: {{civPickerSheetH}}rpx;" catchtap="preventMove">
+      <view class="civ-picker-grid">
+        <view wx:for="{{civPickerItems}}" wx:key="id" class="civ-picker-item {{item.realIdx === civIndex ? 'civ-picker-item--active' : ''}}" data-ri="{{item.realIdx}}" bindtap="onCivPickerSelect">
+          <view class="civ-picker-card" style="width: {{civPickerCardW}}rpx; height: {{civPickerCardH}}rpx;">
+            <image class="civ-picker-card-img" src="{{item.img}}" mode="aspectFill" />
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="civ-picker-backdrop" bindtap="onCivPickerClose"></view>
+  </view>
+
+  <view wx:if="{{matrixDataLoading}}" class="matrix-data-loading">
+    <view class="matrix-data-loading__inner">
+      <view class="matrix-data-loading__dot"></view>
+      <text class="matrix-data-loading__text">同步历史数据…</text>
+    </view>
+  </view>
+</view>
+
+<!-- 总览 · 世界地图（产品 home-overview 1:1） -->
+<view wx:elif="{{mode=='overview'}}" class="page-shell page-shell--overview">
+  <proto-nav title="历史图谱" home-nav="{{true}}" mode-pill-text="总览 ▾" bind:modepilltap="goMatrix" />
+  <view class="overview-body" style="padding-top: {{headerPadPx}}px;">
+    <view class="hint-bar">
+      <text class="hint-text muted">横向滑动浏览地图 · 点击区域进入史略</text>
+    </view>
+    <scroll-view scroll-x class="map-scroll" enhanced show-scrollbar="{{false}}">
+      <view class="map-frame">
+        <image class="map-image" src="{{overviewMapUrl}}" mode="widthFix" show-menu-by-longpress="{{false}}" />
+        <view wx:for="{{civSpots}}" wx:key="id" class="civ-spot" style="left: {{item.x}}%; top: {{item.y}}%;" bindtap="onSpotTap" data-id="{{item.id}}">
+          <view class="spot-dot" style="background: {{item.color}};"></view>
+          <text class="spot-label" style="color: {{item.color}};">{{item.name}}</text>
+        </view>
+      </view>
+    </scroll-view>
+    <view class="era-bar-section">
+      <view class="dynasty-era-bar">
+        <view class="era-seg era-c1"><text>先秦</text></view>
+        <view class="era-seg era-c2"><text>秦汉</text></view>
+        <view class="era-seg era-c3"><text>三国·魏晋</text></view>
+        <view class="era-seg era-c4"><text>隋唐</text></view>
+        <view class="era-seg era-c5"><text>宋</text></view>
+        <view class="era-seg era-c6"><text>元</text></view>
+        <view class="era-seg era-c1"><text>明</text></view>
+        <view class="era-seg era-c2"><text>清</text></view>
+      </view>
+    </view>
+    <view class="civ-list-section">
+      <view class="section-title-bar">
+        <text class="list-title">地域文明</text>
+        <text class="list-count muted">{{civSpots.length}} 个文明</text>
+      </view>
+      <view class="civ-grid">
+        <view wx:for="{{civSpots}}" wx:key="id" class="civ-grid-card" bindtap="onCivCardTap" data-id="{{item.id}}">
+          <image class="civ-card-img" src="{{item.img}}" mode="aspectFill" lazy-load />
+          <view class="civ-card-overlay" style="background: linear-gradient(180deg, transparent 30%, {{item.color}}cc 100%);"></view>
+          <text class="civ-card-name">{{item.name}}</text>
+        </view>
+      </view>
+    </view>
+    <view style="height: 120rpx;"></view>
+  </view>
+</view>

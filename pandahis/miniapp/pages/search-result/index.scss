@@ -1,0 +1,89 @@
+@import '../../native-utils/design-tokens.scss';
+
+.page-search-result {
+  min-height: 100vh;
+  background: $page-bg;
+  padding: 24rpx 32rpx;
+}
+
+.summary {
+  font-size: 26rpx;
+  color: $text-caption;
+  margin-bottom: 16rpx;
+}
+
+.filter-bar {
+  margin-bottom: 16rpx;
+}
+
+.filter-scroll {
+  width: 100%;
+  white-space: nowrap;
+}
+
+.filter-inner {
+  display: inline-flex;
+  gap: 12rpx;
+}
+
+.filter-tag {
+  flex-shrink: 0;
+  padding: 10rpx 28rpx;
+  border-radius: 999rpx;
+  font-size: 24rpx;
+  font-weight: 500;
+  background: #eeecea;
+  color: #9a9a9a;
+}
+
+.filter-tag.active {
+  background: #4a3f3f;
+  color: #fff;
+}
+
+.result-cat {
+  display: inline-block;
+  padding: 4rpx 14rpx;
+  margin-bottom: 8rpx;
+  border-radius: 999rpx;
+  font-size: 20rpx;
+  font-weight: 600;
+  color: $accent-v5;
+  background: rgba(155, 62, 56, 0.12);
+}
+
+.result-scroll {
+  max-height: calc(100vh - 200rpx);
+}
+
+.result-card {
+  background: #fff;
+  border-radius: 12rpx;
+  padding: 24rpx;
+  margin-bottom: 16rpx;
+  border: 1rpx solid $divider;
+}
+
+.path {
+  font-size: 22rpx;
+  color: $text-caption;
+  margin-bottom: 8rpx;
+}
+
+.title {
+  font-size: 30rpx;
+  font-weight: 700;
+  color: $text-title;
+}
+
+.desc {
+  margin-top: 8rpx;
+  font-size: 26rpx;
+  color: $text-body;
+}
+
+.loading {
+  text-align: center;
+  padding: 48rpx;
+  color: $text-caption;
+}

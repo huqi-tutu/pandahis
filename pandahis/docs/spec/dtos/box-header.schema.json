@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "box-header.schema.json",
+  "type": "object",
+  "required": ["box", "isFavorite", "tabSummary", "access"],
+  "properties": {
+    "box": {
+      "type": "object",
+      "required": ["id", "title", "subText", "categoryKey", "startYear", "endYear"],
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "subText": { "type": "string" },
+        "categoryKey": { "type": "string" },
+        "startYear": { "type": "integer" },
+        "endYear": { "type": "integer" }
+      }
+    },
+    "isFavorite": { "type": "boolean" },
+    "tabSummary": {
+      "type": "object",
+      "required": ["hasGraph", "hasCritiques", "hasRelics", "hasOriginal"],
+      "properties": {
+        "hasGraph": { "type": "boolean" },
+        "hasCritiques": { "type": "boolean" },
+        "hasRelics": { "type": "boolean" },
+        "hasOriginal": { "type": "boolean" }
+      }
+    },
+    "access": {
+      "type": "object",
+      "required": ["boxLocked", "tabs"],
+      "properties": {
+        "boxLocked": { "type": "boolean" },
+        "tabs": {
+          "type": "object",
+          "required": ["graph", "critique", "relic", "original"],
+          "properties": {
+            "graph": { "$ref": "#/$defs/tabAccess" },
+            "critique": { "$ref": "#/$defs/tabAccess" },
+            "relic": { "$ref": "#/$defs/tabAccess" },
+            "original": { "$ref": "#/$defs/tabAccess" }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "tabAccess": {
+      "type": "object",
+      "required": ["locked"],
+      "properties": {
+        "locked": { "type": "boolean" },
+        "lockedReason": { "type": "string" },
+        "unlockAction": {
+          "type": "object",
+          "properties": {
+            "type": { "type": "string" },
+            "params": { "type": "object", "additionalProperties": true }
+          }
+        }
+      }
+    }
+  }
+}
+

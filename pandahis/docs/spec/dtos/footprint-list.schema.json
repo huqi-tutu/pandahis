@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "footprint-list.schema.json",
+  "type": "object",
+  "required": ["page", "pageSize", "total", "items"],
+  "properties": {
+    "page": { "type": "integer", "minimum": 1 },
+    "pageSize": { "type": "integer", "minimum": 1 },
+    "total": { "type": "integer", "minimum": 0 },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["boxId", "title", "subText", "categoryKey", "lastViewedAt", "viewCount"],
+        "properties": {
+          "boxId": { "type": "string" },
+          "title": { "type": "string" },
+          "subText": { "type": "string" },
+          "categoryKey": { "type": "string" },
+          "lastViewedAt": { "type": "string", "format": "date-time" },
+          "viewCount": { "type": "integer", "minimum": 1 }
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,22 @@
+# 本地 MCP 含数据库密码，勿提交
+.cursor/mcp.json
+
+# IDE
+.idea/
+*.iml
+
+# 生图 MCP 临时落盘
+deploy/_tmp_assets/
+
+# Tab 图生成目录（上传 COS 后不入库）
+.tmp/
+
+# Dependencies & build
+node_modules/
+target/
+dist/
+*.log
+
+# OS / archive junk
+.DS_Store
+__MACOSX/

@@ -1,0 +1,29 @@
+<view class="proto-shell">
+  <proto-nav title="{{name}}" show-back="{{true}}"></proto-nav>
+
+  <view class="detail-body pad" style="padding-top: {{headerPadPx}}px;">
+    <!-- 图片占位 -->
+    <view class="hero-img muted">文物图片占位</view>
+
+    <!-- 主信息卡片 -->
+    <view class="info-card">
+      <view class="info-header">
+        <text class="relic-title">{{name}}</text>
+      </view>
+      <view class="info-divider"></view>
+      <view class="info-location">
+        <text class="location-icon">◎</text>
+        <text class="location-text">{{museum}}</text>
+      </view>
+    </view>
+
+    <!-- 详细介绍卡片 -->
+    <view class="section-card">
+      <view class="section-header">
+        <view class="section-bar"></view>
+        <text class="section-title">详细介绍</text>
+      </view>
+      <text class="section-body">{{detail}}</text>
+    </view>
+  </view>
+</view>

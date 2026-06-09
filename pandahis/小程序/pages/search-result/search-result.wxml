@@ -1,0 +1,54 @@
+<view class="page-shell safe-bottom">
+  <proto-nav title="搜索结果" show-back="{{true}}">
+    <view slot="right">
+      <text class="nav-search muted" bindtap="goSearch">⌕</text>
+    </view>
+  </proto-nav>
+
+  <view class="result-body" style="padding-top: {{headerPadPx}}px;">
+
+    <!-- 关键词展示 + 结果数 -->
+    <view class="kw-bar">
+      <text class="kw-text">「{{keyword}}」</text>
+      <text class="kw-count muted">共 {{results.length}} 条</text>
+    </view>
+
+    <!-- 类别筛选 -->
+    <view class="filter-bar">
+      <scroll-view scroll-x class="filter-scroll" enhanced show-scrollbar="{{false}}">
+        <view class="filter-inner">
+          <view
+            wx:for="{{filterCats}}"
+            wx:key="*this"
+            class="filter-tag {{filterIndex === index ? 'active' : ''}}"
+            data-i="{{index}}"
+            bindtap="onFilter"
+          >{{item}}</view>
+        </view>
+      </scroll-view>
+    </view>
+
+    <!-- 结果列表 -->
+    <scroll-view scroll-y class="result-scroll" enhanced show-scrollbar="{{false}}">
+      <view wx:if="{{results.length === 0}}" class="empty-state">
+        <text class="empty-icon">🔍</text>
+        <text class="empty-text">暂无相关词条</text>
+        <text class="muted" style="font-size:24rpx;">换个关键词试试？</text>
+      </view>
+
+      <view wx:for="{{filteredResults}}" wx:key="id" class="result-card" bindtap="onResultTap" data-item="{{item}}">
+        <view class="result-cat-badge" style="background: {{item.color}}18; color: {{item.color}};">
+          <text>{{item.cat}}</text>
+        </view>
+        <view class="result-main">
+          <text class="result-title">{{item.title}}</text>
+          <text class="result-sub faint">{{item.sub}}</text>
+          <text class="result-snippet muted">{{item.snippet}}</text>
+        </view>
+        <text class="result-arrow muted">›</text>
+      </view>
+
+      <view style="height: 60rpx;"></view>
+    </scroll-view>
+  </view>
+</view>

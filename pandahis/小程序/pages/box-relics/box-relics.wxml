@@ -1,0 +1,25 @@
+<view class="proto-shell">
+  <proto-nav title="{{title}}" show-back="{{true}}"></proto-nav>
+
+  <view class="box-page-body" style="padding-top: {{headerPadPx}}px;">
+    <view class="box-hero card-paper">
+      <text class="box-title">{{title}}</text>
+      <text class="box-sub muted">{{sub}}</text>
+      <text class="box-fav">♥</text>
+    </view>
+    <view class="box-tabs">
+      <view wx:for="{{tabs}}" wx:key="*this" class="box-tab {{tabActive===index?'active':''}}" data-i="{{index}}" bindtap="onTabTap">{{item}}</view>
+    </view>
+    <scroll-view scroll-y class="list-scroll" enhanced>
+      <view wx:for="{{list}}" wx:key="name" class="relic-row card-paper" bindtap="openRelic" data-name="{{item.name}}">
+        <view class="relic-thumb muted">{{item.badge}}</view>
+        <view class="relic-info">
+          <text class="relic-name">{{item.name}}</text>
+          <text class="relic-desc muted">{{item.desc}}</text>
+          <text class="relic-museum accent">◎ {{item.museum}}</text>
+        </view>
+        <text class="chev muted">›</text>
+      </view>
+    </scroll-view>
+  </view>
+</view>

@@ -1,0 +1,26 @@
+<view class="proto-shell">
+  <proto-nav title="我的收藏" show-back="{{true}}"></proto-nav>
+
+  <view class="fp-body pad" style="padding-top: {{headerPadPx}}px;">
+    <view class="tabs">
+      <text class="tab {{tab===0?'on':''}}" data-i="0" bindtap="switchTab">朝代</text>
+      <text class="tab {{tab===1?'on':''}}" data-i="1" bindtap="switchTab">史略</text>
+    </view>
+    <scroll-view scroll-y class="scroll" enhanced>
+      <block wx:if="{{tab===0}}">
+        <view wx:for="{{dynasties}}" wx:key="title" class="card card-paper">
+          <view class="top"><text class="t">{{item.title}}</text><text class="muted">{{item.time}}</text></view>
+          <text class="era accent">{{item.era}}</text>
+          <text class="muted path">{{item.path}}</text>
+        </view>
+      </block>
+      <block wx:else>
+        <view wx:for="{{boxes}}" wx:key="title" class="card card-paper">
+          <view class="top"><text class="t">{{item.title}}</text><text class="muted">{{item.time}}</text></view>
+          <text class="era accent">{{item.era}}</text>
+          <text class="muted path">{{item.path}}</text>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+</view>

@@ -1,0 +1,11 @@
+@import './design-tokens.scss';
+
+page {
+  --bgCard: #{$card-bg};
+  --borderCard: #{$divider};
+  --text2: #{$text-body};
+  --text3: #{$text-caption};
+  --shadow1: 0 8rpx 24rpx rgba(74, 63, 63, 0.06);
+  --radiusLg: 24rpx;
+  --radiusMd: 18rpx;
+}

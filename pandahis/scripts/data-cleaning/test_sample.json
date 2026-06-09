@@ -1,0 +1,58 @@
+{
+  "book": "Test",
+  "volume": "V1",
+  "chapter": "Chapter 1",
+  "scan_log": [
+    {
+      "paragraph": 1,
+      "results": "test"
+    }
+  ],
+  "characters": [
+    {
+      "entity": "Test",
+      "type": "君纪",
+      "paragraphs": [
+        1
+      ],
+      "context": "test",
+      "note": "test",
+      "related_characters": [],
+      "priority": "P1",
+      "priority_reason": "test",
+      "confidence": "确定"
+    }
+  ],
+  "events": [],
+  "systems": [],
+  "folklore": [],
+  "works": [],
+  "review_summary": {
+    "total_characters": 1,
+    "total_events": 0,
+    "total_systems": 0,
+    "total_folklore": 0,
+    "total_works": 0,
+    "grand_total": 1,
+    "confirmed": 1,
+    "uncertain": 0,
+    "uncertain_items": [],
+    "excluded_summary": {
+      "excluded_characters": [],
+      "excluded_events": [],
+      "excluded_systems": [],
+      "skipped_paragraphs": []
+    },
+    "quality_check": {
+      "all_characters_have_unique_type": true,
+      "monarch_over_minister_rule_applied": [],
+      "all_events_have_cause_process_result": true,
+      "all_systems_have_name_and_operation": true,
+      "all_works_have_name_and_source": true,
+      "no_pedigree_filler_characters_included": true,
+      "character_event_cross_reference_complete": true,
+      "dual_file_output_complete": true
+    },
+    "notes": "ok"
+  }
+}

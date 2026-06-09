@@ -1,0 +1,30 @@
+/** 占位头像：取标题首字（兼容双字节） */
+function firstChar(title) {
+  if (!title || title.length === 0) return '帝'
+  return title.substring(0, 1)
+}
+
+function yearLabel(y) {
+  if (y === undefined || y === null) return ''
+  if (y < 0) return '前' + (-y)
+  return '' + y
+}
+
+function yearRange(start, end) {
+  return yearLabel(start) + ' — ' + yearLabel(end)
+}
+
+function highlightLine(highlights) {
+  if (!highlights || highlights.length === 0) return ''
+  return highlights[0]
+}
+
+function isQuadOffset(index) {
+  return index % 2 === 1
+}
+
+module.exports.firstChar = firstChar
+module.exports.yearLabel = yearLabel
+module.exports.yearRange = yearRange
+module.exports.highlightLine = highlightLine
+module.exports.isQuadOffset = isQuadOffset

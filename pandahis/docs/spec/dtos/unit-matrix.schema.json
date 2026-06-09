@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "unit-matrix.schema.json",
+  "type": "object",
+  "required": ["years", "categories", "items"],
+  "properties": {
+    "years": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["year", "label"],
+        "properties": {
+          "year": { "type": "integer" },
+          "label": { "type": "string" }
+        }
+      }
+    },
+    "categories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["key", "name"],
+        "properties": {
+          "key": { "type": "string" },
+          "name": { "type": "string" }
+        }
+      }
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["boxId", "year", "categoryKey", "title", "highlight"],
+        "properties": {
+          "boxId": { "type": "string" },
+          "year": { "type": "integer" },
+          "categoryKey": { "type": "string" },
+          "title": { "type": "string" },
+          "highlight": { "type": "boolean" }
+        }
+      }
+    }
+  }
+}
+

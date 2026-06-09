@@ -1,0 +1,69 @@
+{
+  "pages": [
+    "pages/home-matrix/home-matrix",
+    "pages/home-overview/home-overview",
+    "pages/dynasty-detail/dynasty-detail",
+    "pages/box-detail/box-detail",
+    "pages/box-graph/box-graph",
+    "pages/box-critique/box-critique",
+    "pages/box-relics/box-relics",
+    "pages/critique-detail/critique-detail",
+    "pages/critique-list/critique-list",
+    "pages/relation-detail/relation-detail",
+    "pages/relic-detail/relic-detail",
+    "pages/search/search",
+    "pages/search-result/search-result",
+    "pages/mine/mine",
+    "pages/mine-footprint/mine-footprint",
+    "pages/mine-favorite/mine-favorite",
+    "pages/vip/vip",
+    "pages/vip-invite/vip-invite",
+    "pages/login/login"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#F8F6F2",
+    "navigationBarTitleText": "历史图谱",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#F8F6F2",
+    "backgroundColorTop": "#F8F6F2",
+    "backgroundColorBottom": "#F8F6F2"
+  },
+  "tabBar": {
+    "color": "#9A9690",
+    "selectedColor": "#4A3F3F",
+    "backgroundColor": "#F8F6F2",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/home-matrix/home-matrix",
+        "text": "图谱",
+        "iconPath": "配图/icons/tupu.png",
+        "selectedIconPath": "配图/icons/tupu_jihuo.png"
+      },
+      {
+        "pagePath": "pages/search/search",
+        "text": "搜索",
+        "iconPath": "配图/icons/sousuo.png",
+        "selectedIconPath": "配图/icons/sousuo_jihuo.png"
+      },
+      {
+        "pagePath": "pages/vip/vip",
+        "text": "会员",
+        "iconPath": "配图/icons/huiyuan.png",
+        "selectedIconPath": "配图/icons/huiyuan_jihuo.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "配图/icons/wode.png",
+        "selectedIconPath": "配图/icons/wode_jihuo.png"
+      }
+    ]
+  },
+  "usingComponents": {},
+  "style": "v2",
+  "cloud": true,
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

@@ -1,0 +1,67 @@
+@import '../../native-utils/design-tokens.scss';
+
+$text-main: $text-title;
+$text-muted: $text-caption;
+$primary: $theme-primary;
+$border: $divider;
+
+.page-about {
+  min-height: 100vh;
+  @include parchment-page-bg;
+  padding: 32rpx;
+  box-sizing: border-box;
+}
+
+.logo-wrap {
+  text-align: center;
+  padding: 48rpx 0 40rpx;
+}
+
+.logo {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 0 auto;
+  border-radius: 28rpx;
+  background: $primary;
+  color: #fff;
+  font-size: 56rpx;
+  font-weight: 800;
+  line-height: 128rpx;
+}
+
+.app-name {
+  margin-top: 24rpx;
+  font-size: 40rpx;
+  font-weight: 800;
+  color: $text-main;
+}
+
+.version {
+  margin-top: 8rpx;
+  font-size: 24rpx;
+  color: $text-muted;
+}
+
+.card {
+  background: #fff;
+  border: 1rpx solid $border;
+  border-radius: 24rpx;
+  padding: 32rpx;
+}
+
+.para {
+  font-size: 28rpx;
+  line-height: 1.65;
+  color: $text-main;
+}
+
+.para + .para {
+  margin-top: 20rpx;
+}
+
+.footer {
+  margin-top: 48rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: $text-muted;
+}

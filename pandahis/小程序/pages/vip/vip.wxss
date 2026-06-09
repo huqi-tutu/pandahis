@@ -1,0 +1,229 @@
+@import '../../styles/atlas.wxss';
+
+.page-shell {
+  background: #F8F6F2;
+  min-height: 100vh;
+}
+
+/* ─────────────────────────────────────
+   主滚动区
+───────────────────────────────────── */
+.vip-hub-scroll {
+  position: fixed;
+  left: 0; right: 0;
+  overflow: hidden;
+  padding: 28rpx 32rpx 0;
+  box-sizing: border-box;
+}
+
+/* Body：导引文字 */
+.vip-hub-lead {
+  display: block;
+  font-family: 'PingFang SC', -apple-system, sans-serif;
+  font-size: 24rpx;   /* Body */
+  font-weight: 400;
+  line-height: 1.65;
+  color: #6A6A6A;     /* 正文 */
+  letter-spacing: 0.3rpx;
+  margin-bottom: 28rpx;
+}
+
+/* ─────────────────────────────────────
+   三列方案卡
+───────────────────────────────────── */
+.vip-plans {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16rpx;
+  margin-bottom: 40rpx;
+}
+
+.vip-plan {
+  position: relative;
+  min-height: 240rpx;
+  padding: 36rpx 12rpx 28rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  text-align: center;
+  border-radius: 12rpx;
+  border: 1rpx solid #EDEAE6;
+  background: #FFFFFF;
+  box-shadow: 0 2rpx 8rpx rgba(0,0,0,0.06);
+  box-sizing: border-box;
+}
+
+.vip-plan.selected {
+  border-color: rgba(74, 63, 63, 0.28);
+  background: rgba(74, 63, 63, 0.04);
+  box-shadow: 0 2rpx 12rpx rgba(74, 63, 63, 0.10);
+}
+
+.vip-plan--invite {
+  padding-top: 48rpx;
+}
+
+.vip-plan--invite.selected {
+  border-color: rgba(184, 150, 90, 0.45);
+  background: rgba(241, 230, 206, 0.15);
+  box-shadow: 0 2rpx 8rpx rgba(160, 120, 60, 0.08);
+}
+
+/* 最划算标签 */
+.vip-plan-tag {
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translate(-50%, -50%);
+  background: #4A3F3F;
+  color: #FFFFFF;
+  font-family: 'PingFang SC', -apple-system, sans-serif;
+  font-size: 18rpx;
+  font-weight: 600;
+  letter-spacing: 0.5rpx;
+  padding: 4rpx 16rpx;
+  border-radius: 999rpx;
+  white-space: nowrap;
+}
+
+.vip-plan-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  gap: 10rpx;
+}
+
+/* H2：卡型名称，衬线体 */
+.vip-plan-type {
+  font-family: 'Noto Serif SC', 'Songti SC', serif;
+  font-size: 34rpx;   /* H2 17px */
+  font-weight: 700;
+  line-height: 1.3;
+  color: #262626;
+  letter-spacing: 1rpx;
+}
+
+/* Caption：获取方式 */
+.vip-plan-way {
+  font-family: 'PingFang SC', -apple-system, sans-serif;
+  font-size: 22rpx;   /* Caption */
+  font-weight: 400;
+  color: #8A8A8A;
+  letter-spacing: 0.5rpx;
+}
+
+.vip-plan-price-wrap { margin-top: 12rpx; }
+
+/* 价格数字，等宽字体 */
+.vip-plan-price {
+  font-family: 'SF Mono', 'Menlo', monospace;
+  font-size: 44rpx;
+  font-weight: 700;
+  line-height: 1.15;
+  color: #262626;
+  letter-spacing: 0.5rpx;
+}
+
+/* ¥0 用暖金色区分 */
+.vip-plan-price--zero {
+  color: #84572F;  /* c1 深咖 */
+}
+
+/* ─────────────────────────────────────
+   权益列表
+───────────────────────────────────── */
+.vip-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 18rpx;
+  padding: 0 4rpx;
+}
+
+/* Caption：权益标题 */
+.vip-benefits-title {
+  font-family: 'PingFang SC', -apple-system, sans-serif;
+  font-size: 22rpx;   /* Caption */
+  font-weight: 600;
+  color: #262626;
+  letter-spacing: 4rpx;
+  margin-bottom: 6rpx;
+}
+
+.vip-benefit {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 12rpx;
+}
+
+.vip-benefit-icon {
+  font-size: 20rpx;
+  color: #4A3F3F;
+  flex-shrink: 0;
+  margin-top: 3rpx;
+}
+
+/* Body：权益描述文字 */
+.vip-benefit-text {
+  font-family: 'PingFang SC', -apple-system, sans-serif;
+  font-size: 24rpx;   /* Body */
+  font-weight: 400;
+  line-height: 1.6;
+  color: #6A6A6A;
+  letter-spacing: 0.3rpx;
+}
+
+/* ─────────────────────────────────────
+   底部购买栏
+───────────────────────────────────── */
+.vip-buy-bar {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  padding: 20rpx 32rpx 48rpx;
+  background: linear-gradient(180deg,
+    rgba(248, 246, 242, 0) 0%,
+    rgba(248, 246, 242, 0.98) 18%);
+  border-top: 1rpx solid #EDEAE6;
+}
+
+.vip-buy-meta {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 16rpx;
+}
+
+/* Caption：当前选择标签 */
+.vip-buy-meta-label {
+  font-family: 'PingFang SC', -apple-system, sans-serif;
+  font-size: 20rpx;   /* Caption2 */
+  color: #8A8A8A;
+  letter-spacing: 2rpx;
+}
+
+/* Caption：选中方案名 */
+.vip-buy-meta-value {
+  font-family: 'PingFang SC', -apple-system, sans-serif;
+  font-size: 24rpx;   /* Body */
+  font-weight: 600;
+  color: #262626;
+  letter-spacing: 0.5rpx;
+}
+
+/* 主按钮：主题色实底 + 白字 */
+.vip-buy-btn {
+  width: 100%;
+  height: 88rpx;
+  border-radius: 12rpx;
+  background: #4A3F3F;
+  color: #FFFFFF;
+  font-family: 'PingFang SC', -apple-system, sans-serif;
+  font-size: 28rpx;
+  font-weight: 600;
+  letter-spacing: 3rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4rpx 16rpx rgba(74, 63, 63, 0.22);
+}

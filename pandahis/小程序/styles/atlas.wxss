@@ -1,0 +1,241 @@
+/* ══════════════════════════════════════════════
+   历史图谱 · 全局公共样式
+   遵循：视觉颜色规范 v2.0
+   ══════════════════════════════════════════════ */
+
+@import './proto-home.wxss';
+
+/* ─── CSS 变量 ─── */
+page {
+  --color-bg:          #F8F6F2;
+  --color-card:        #FFFFFF;
+  --color-divider:     #EDEAE6;
+  --color-primary:     #4A3F3F;
+  --color-accent:      #9B3E38;
+  --color-text-1:      #262626;
+  --color-text-2:      #6A6A6A;
+  --color-text-3:      #8A8A8A;
+  --color-text-4:      #B0A89E;
+  --color-inactive-bg: #EEECEA;
+  --color-inactive-fg: #9A9A9A;
+
+  font-family: 'PingFang SC', -apple-system, 'Helvetica Neue', sans-serif;
+  font-size: 28rpx;
+  line-height: 1.5;
+  color: var(--color-text-1);
+  background-color: var(--color-bg);
+  box-sizing: border-box;
+}
+
+/* ─── 布局工具 ─── */
+.paper-page {
+  min-height: 100vh;
+  background: var(--color-bg);
+}
+
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.tab-page-safe {
+  padding-bottom: calc(100rpx + env(safe-area-inset-bottom));
+  box-sizing: border-box;
+}
+
+/* ─── 卡片 ─── */
+.card-paper {
+  background: #FFFFFF;
+  border-radius: 24rpx;
+  border: 1rpx solid var(--color-divider);
+  box-shadow: 0 2rpx 12rpx rgba(47, 41, 38, 0.05);
+}
+
+/* ─── 按钮 ─── */
+.btn-primary {
+  background: var(--color-primary);
+  color: #FFFFFF;
+  border-radius: 16rpx;
+  font-weight: 600;
+  font-size: 30rpx;
+  letter-spacing: 2rpx;
+  border: none;
+}
+
+.btn-primary::after { border: none; }
+
+.btn-secondary {
+  background: var(--color-inactive-bg);
+  color: var(--color-inactive-fg);
+  border-radius: 16rpx;
+  font-weight: 500;
+  border: none;
+}
+
+.btn-secondary::after { border: none; }
+
+/* ─── 文字层级 ─── */
+.text-h1 {
+  font-family: 'PingFang SC', serif;
+  font-size: 48rpx;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--color-text-1);
+}
+
+.text-h2 {
+  font-size: 34rpx;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--color-text-1);
+}
+
+.text-body {
+  font-size: 28rpx;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-text-2);
+}
+
+.text-caption {
+  font-size: 22rpx;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--color-text-3);
+}
+
+.text-micro {
+  font-size: 20rpx;
+  font-weight: 500;
+  color: var(--color-text-4);
+}
+
+.accent   { color: var(--color-primary); }
+.muted    { color: var(--color-text-3); }
+.faint    { color: var(--color-text-4); }
+
+/* ─── 分割线 ─── */
+.divider {
+  height: 1rpx;
+  background: var(--color-divider);
+}
+
+.divider-thick {
+  height: 12rpx;
+  background: var(--color-bg);
+}
+
+/* ─── 列表行 ─── */
+.list-row {
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+  padding: 28rpx 32rpx;
+  background: #FFFFFF;
+  border-bottom: 1rpx solid var(--color-divider);
+}
+
+.list-row:last-child { border-bottom: none; }
+
+.list-icon {
+  width: 56rpx;
+  height: 56rpx;
+  border-radius: 14rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-inactive-bg);
+  flex-shrink: 0;
+}
+
+.list-label {
+  flex: 1;
+  font-size: 30rpx;
+  color: var(--color-text-1);
+}
+
+.list-value {
+  font-size: 26rpx;
+  color: var(--color-text-3);
+}
+
+.list-arrow {
+  font-size: 28rpx;
+  color: var(--color-text-4);
+}
+
+/* ─── Badge ─── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4rpx 14rpx;
+  border-radius: 999rpx;
+  font-size: 20rpx;
+  font-weight: 600;
+  letter-spacing: 0.5rpx;
+}
+
+.badge-accent {
+  background: rgba(155, 62, 56, 0.1);
+  color: var(--color-accent);
+}
+
+.badge-primary {
+  background: var(--color-primary);
+  color: #FFFFFF;
+}
+
+/* ─── 筛选标签 ─── */
+.filter-tag {
+  padding: 10rpx 24rpx;
+  border-radius: 999rpx;
+  font-size: 24rpx;
+  font-weight: 500;
+  background: var(--color-inactive-bg);
+  color: var(--color-inactive-fg);
+  transition: all 0.15s ease;
+  border: none;
+}
+
+.filter-tag.active {
+  background: var(--color-primary);
+  color: #FFFFFF;
+}
+
+.filter-tag::after { border: none; }
+
+/* ─── 空状态 ─── */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 120rpx 48rpx;
+  gap: 20rpx;
+}
+
+.empty-icon { font-size: 80rpx; opacity: 0.3; }
+.empty-text { font-size: 28rpx; color: var(--color-text-3); }
+
+/* ─── 朝代色彩条 ─── */
+.dynasty-era-bar {
+  display: flex;
+  height: 32rpx;
+  border-radius: 8rpx;
+  overflow: hidden;
+}
+
+.era-seg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16rpx;
+  font-weight: 600;
+  letter-spacing: 1rpx;
+}
+
+.era-c1 { background: #84572F; color: #fff;     flex: 1.5; }
+.era-c2 { background: #F1A805; color: #5A3A00;  flex: 1; }
+.era-c3 { background: #F2D6A1; color: #6B5E3A;  flex: 1; }
+.era-c4 { background: #92ADA4; color: #3A4A3E;  flex: 0.8; }
+.era-c5 { background: #B3D9E0; color: #3A5A6A;  flex: 1.2; }
+.era-c6 { background: #EDD5C0; color: #6A4A3A;  flex: 0.7; }

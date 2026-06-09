@@ -1,0 +1,127 @@
+<navigation-bar title="" back="{{false}}" color="#9B3E38" background="rgba(250,247,243,0.96)"></navigation-bar>
+
+<scroll-view class="page-my" scroll-y enhanced show-scrollbar="{{false}}">
+  <view class="hero-section">
+    <view class="hero-bg"></view>
+    <view class="hero-content">
+      <view class="avatar-wrap" wx:if="{{loggedIn}}">
+        <view class="avatar">
+          <image wx:if="{{avatarUrl}}" class="avatar-img" src="{{avatarUrl}}" mode="aspectFill" />
+          <text wx:else class="avatar-text">{{avatarInitial}}</text>
+        </view>
+        <view wx:if="{{isVip}}" class="vip-badge">VIP</view>
+      </view>
+      <view class="avatar-wrap" wx:else bindtap="goLogin">
+        <view class="avatar avatar-guest">
+          <text class="avatar-text">?</text>
+        </view>
+      </view>
+      <view class="user-info" wx:if="{{loggedIn}}">
+        <text class="user-name">{{nickname}}</text>
+        <text class="user-phone">{{phoneLine}}</text>
+      </view>
+      <view class="user-info" wx:else bindtap="goLogin">
+        <text class="user-name">点击登录</text>
+        <text class="user-phone">登录后同步收藏与足迹</text>
+      </view>
+      <view wx:if="{{loggedIn}}" class="edit-btn" bindtap="onEditProfile" aria-role="button">
+        <image class="edit-icon" src="/images/icons/bianji.png" mode="aspectFit" />
+      </view>
+    </view>
+
+    <view class="stats-row">
+      <view class="stat-item" bindtap="goFootprints">
+        <text class="stat-num accent">{{footprintCount}}</text>
+        <text class="stat-label">足迹</text>
+      </view>
+      <view class="stat-divider"></view>
+      <view class="stat-item" bindtap="goFavorites">
+        <text class="stat-num accent">{{favoriteCount}}</text>
+        <text class="stat-label">收藏</text>
+      </view>
+      <view class="stat-divider"></view>
+      <view class="stat-item">
+        <text class="stat-num accent">{{learnDays}}</text>
+        <text class="stat-label">学习天</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="main">
+    <view wx:if="{{!isVip}}" class="vip-promo" bindtap="goMembership">
+      <view class="vip-promo-left">
+        <image class="vip-promo-icon" src="/images/icons/huiyuan.png" mode="aspectFit" />
+        <view>
+          <text class="vip-promo-title">开通年度会员</text>
+          <text class="vip-promo-sub">全地域图谱 · 原文对照 · 跨文明评述</text>
+        </view>
+      </view>
+      <text class="vip-promo-arrow">›</text>
+    </view>
+    <view wx:else class="vip-card" bindtap="goMembership">
+      <view class="vip-left">
+        <image class="icon-vip-img" src="/images/icons/huiyuan.png" mode="aspectFit" />
+        <view class="vip-text">
+          <view class="vip-title">{{vipTitle}}</view>
+          <view class="vip-desc">{{vipDesc}}</view>
+        </view>
+      </view>
+      <image class="icon-chevron-img" src="/images/icons/haiyou.png" mode="aspectFit" />
+    </view>
+
+    <view class="menu-card">
+      <view class="menu-item" bindtap="onShareFriend">
+        <view class="menu-left">
+          <view class="menu-icon menu-icon--share">
+            <image class="menu-icon-img" src="/images/icons/fenxiang.png" mode="aspectFit" />
+          </view>
+          <text class="menu-label">分享给朋友</text>
+        </view>
+        <view class="menu-right">
+          <image class="icon-chevron-img muted" src="/images/icons/haiyou.png" mode="aspectFit" />
+        </view>
+      </view>
+      <view class="menu-item" bindtap="goSettings">
+        <view class="menu-left">
+          <view class="menu-icon">
+            <image class="menu-icon-img" src="/images/icons/shezhi.png" mode="aspectFit" />
+          </view>
+          <text class="menu-label">设置</text>
+        </view>
+        <view class="menu-right">
+          <image class="icon-chevron-img muted" src="/images/icons/haiyou.png" mode="aspectFit" />
+        </view>
+      </view>
+      <view class="menu-item" bindtap="goHelp">
+        <view class="menu-left">
+          <view class="menu-icon">
+            <image class="menu-icon-img" src="/images/icons/bangzhuyufankui.png" mode="aspectFit" />
+          </view>
+          <text class="menu-label">帮助与反馈</text>
+        </view>
+        <view class="menu-right">
+          <image class="icon-chevron-img muted" src="/images/icons/haiyou.png" mode="aspectFit" />
+        </view>
+      </view>
+      <view class="menu-item menu-item-last" bindtap="goAbout">
+        <view class="menu-left">
+          <view class="menu-icon">
+            <image class="menu-icon-img" src="/images/icons/guanyuwomen.png" mode="aspectFit" />
+          </view>
+          <text class="menu-label">关于历史图谱</text>
+        </view>
+        <view class="menu-right">
+          <text class="menu-extra">v{{appVersion}}</text>
+          <image class="icon-chevron-img muted" src="/images/icons/haiyou.png" mode="aspectFit" />
+        </view>
+      </view>
+    </view>
+
+    <view wx:if="{{loggedIn}}" class="logout-wrap">
+      <view class="logout-btn" bindtap="logout">退出登录</view>
+    </view>
+    <view wx:else class="logout-wrap">
+      <view class="login-btn" bindtap="goLogin">微信登录</view>
+    </view>
+  </view>
+</scroll-view>

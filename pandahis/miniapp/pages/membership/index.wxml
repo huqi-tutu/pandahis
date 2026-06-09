@@ -1,0 +1,46 @@
+<navigation-bar
+  title="会员中心"
+  back="{{showBack}}"
+  color="#9B3E38"
+  background="rgba(255,248,247,0.92)"
+></navigation-bar>
+
+<scroll-view class="page-member" scroll-y enhanced show-scrollbar="{{false}}">
+  <view class="intro">
+    <text>选择适合你的典藏会员方案。会员有效期内评述、见证、原文免扣阅读点；未开通时可邀友助力或付费订阅。</text>
+  </view>
+
+  <view class="plans-grid">
+    <view
+      wx:for="{{plans}}"
+      wx:key="id"
+      class="plan-card {{selectedId === item.id ? 'plan-card-active' : ''}}"
+      data-id="{{item.id}}"
+      bindtap="onSelectPlan"
+    >
+      <view wx:if="{{item.tag}}" class="plan-badge">{{item.tag}}</view>
+      <view class="plan-name">{{item.name}}</view>
+      <view class="plan-sub">{{item.subtitle}}</view>
+      <view class="plan-price {{selectedId === item.id ? 'plan-price-active' : ''}}">
+        <text class="yen">¥</text>
+        <text class="amount {{item.kind === 'invite' ? 'amount-lg' : ''}}">{{item.priceYuan}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="benefits-section">
+    <view class="benefits-title">高级权限包含</view>
+    <view class="benefit-row" wx:for="{{benefits}}" wx:key="*this">
+      <view class="star"></view>
+      <text class="benefit-text">{{item}}</text>
+    </view>
+  </view>
+</scroll-view>
+
+<view class="checkout-bar {{isTabPage ? 'checkout-bar-tab' : ''}}">
+  <view class="checkout-summary">
+    <text class="checkout-label">当前选择</text>
+    <text class="checkout-value">{{checkoutLine}}</text>
+  </view>
+  <view class="checkout-btn" bindtap="onConfirm">确认开通</view>
+</view>

@@ -1,0 +1,120 @@
+.page {
+  padding: 18rpx 24rpx 48rpx;
+  max-height: 100vh;
+  box-sizing: border-box;
+}
+
+.ref-root {
+  padding-bottom: 24rpx;
+}
+
+.ref-hero {
+  text-align: center;
+  padding: 28rpx 20rpx 32rpx;
+  border-radius: 24rpx;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(245, 240, 255, 0.88));
+  border: 1rpx solid rgba(15, 23, 42, 0.06);
+  box-shadow: 0 12rpx 40rpx rgba(15, 23, 42, 0.06);
+  margin-bottom: 24rpx;
+}
+
+.ref-hero-icon {
+  font-size: 48rpx;
+  line-height: 1;
+  margin-bottom: 12rpx;
+}
+
+.ref-hero-title {
+  font-size: 34rpx;
+  font-weight: 850;
+  color: rgba(15, 23, 42, 0.92);
+  letter-spacing: 0.02em;
+}
+
+.ref-hero-sub {
+  margin-top: 10rpx;
+  font-size: 24rpx;
+  color: rgba(15, 23, 42, 0.48);
+  line-height: 1.5;
+}
+
+.ref-card {
+  margin-top: 20rpx;
+  padding: 24rpx 22rpx;
+  border-radius: 20rpx;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1rpx solid rgba(15, 23, 42, 0.07);
+  box-shadow: 0 8rpx 28rpx rgba(15, 23, 42, 0.05);
+}
+
+.ref-card-plain {
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.ref-card-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12rpx;
+  margin-bottom: 16rpx;
+}
+
+.ref-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 8rpx 16rpx;
+  border-radius: 999rpx;
+  font-size: 24rpx;
+  font-weight: 700;
+  color: rgba(79, 70, 229, 0.95);
+  background: rgba(99, 102, 241, 0.12);
+  border: 1rpx solid rgba(99, 102, 241, 0.2);
+}
+
+.ref-chip-muted {
+  color: rgba(15, 23, 42, 0.72);
+  background: rgba(15, 23, 42, 0.06);
+  border-color: rgba(15, 23, 42, 0.08);
+  font-weight: 650;
+}
+
+.ref-excerpt {
+  font-size: 28rpx;
+  line-height: 1.75;
+  color: rgba(15, 23, 42, 0.88);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.ref-actions {
+  margin-top: 18rpx;
+  padding-top: 16rpx;
+  border-top: 1rpx solid rgba(15, 23, 42, 0.06);
+}
+
+.ref-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14rpx 28rpx;
+  border-radius: 14rpx;
+  font-size: 26rpx;
+  font-weight: 700;
+  color: rgba(37, 99, 235, 0.95);
+  background: rgba(59, 130, 246, 0.1);
+  border: 1rpx solid rgba(59, 130, 246, 0.22);
+}
+
+.ref-fallback-label {
+  font-size: 24rpx;
+  font-weight: 700;
+  color: rgba(15, 23, 42, 0.45);
+  margin-bottom: 12rpx;
+}
+
+.ref-fallback-body {
+  font-size: 26rpx;
+  line-height: 1.65;
+  color: rgba(15, 23, 42, 0.82);
+  white-space: pre-wrap;
+  word-break: break-word;
+}

@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "box-graph.schema.json",
+  "type": "object",
+  "required": ["centerNodeKey", "nodes", "edges"],
+  "properties": {
+    "centerNodeKey": { "type": ["string", "null"] },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["key", "type", "name"],
+        "properties": {
+          "key": { "type": "string" },
+          "type": { "type": "string" },
+          "name": { "type": "string" },
+          "badgeText": { "type": "string" },
+          "weight": { "type": "integer" },
+          "targetBoxId": { "type": "string" }
+        }
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["fromKey", "toKey", "label"],
+        "properties": {
+          "fromKey": { "type": "string" },
+          "toKey": { "type": "string" },
+          "label": { "type": "string" }
+        }
+      }
+    }
+  }
+}
+

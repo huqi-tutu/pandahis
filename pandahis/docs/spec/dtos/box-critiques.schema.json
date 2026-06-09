@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "box-critiques.schema.json",
+  "type": "object",
+  "required": ["items"],
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["author", "eraText", "content"],
+        "properties": {
+          "author": { "type": "string" },
+          "eraText": { "type": "string" },
+          "year": { "type": "integer" },
+          "content": { "type": "string" },
+          "source": { "type": "string" }
+        }
+      }
+    }
+  }
+}
+

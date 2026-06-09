@@ -1,0 +1,129 @@
+/* 历史图谱 · 视觉设计规范 v2.0 — 设计令牌 */
+
+/* —— 主题 / 中性 —— */
+$accent-v5: #9b3e38;
+$theme-primary: #4a3f3f;
+$theme-accent: $accent-v5;
+$theme-on-primary: #ffffff;
+$page-bg: #f8f6f2;
+$card-bg: #ffffff;
+$divider: #edeae6;
+
+$inactive-bg: #eeecea;
+$inactive-text: #9a9a9a;
+$tab-inactive-text: #9a9690;
+$indicator-inactive: #e0dedc;
+
+/* —— 文字层级 —— */
+$text-title: #262626;
+$text-body: #6a6a6a;
+$text-caption: #8a8a8a;
+$text-time: #b0a89e;
+
+/* —— 朝代 6 色循环（规范 §3.1） —— */
+$dyn-c1: #84572f;
+$dyn-c1-border: #84572f;
+$dyn-c1-active: #f0e8e0;
+$dyn-c1-bar-text: #ffffff;
+
+$dyn-c2: #f1a805;
+$dyn-c2-border: #f1a805;
+$dyn-c2-active: #fff5e0;
+$dyn-c2-bar-text: #5a3a00;
+
+$dyn-c3: #f2d6a1;
+$dyn-c3-border: #e0c088;
+$dyn-c3-active: #f5f0e0;
+$dyn-c3-bar-text: #6b5e3a;
+
+$dyn-c4: #92ada4;
+$dyn-c4-border: #92ada4;
+$dyn-c4-active: #eaf0ea;
+$dyn-c4-bar-text: #3a4a3e;
+
+$dyn-c5: #b3d9e0;
+$dyn-c5-border: #9abcc8;
+$dyn-c5-active: #edf4f8;
+$dyn-c5-bar-text: #3a5a6a;
+
+$dyn-c6: #edd5c0;
+$dyn-c6-border: #d4b098;
+$dyn-c6-active: #f5eae4;
+$dyn-c6-bar-text: #6a4a3a;
+
+$dyn-placeholder-dark: #2a2420;
+
+/* —— 字号（375 → 750，px×2 = rpx） —— */
+$font-h1: 48rpx;
+$font-h2: 34rpx;
+$font-body: 24rpx;
+$font-caption: 22rpx;
+$font-caption2: 20rpx;
+$font-micro: 16rpx;
+
+$font-family-title: 'Noto Serif SC', 'Songti SC', serif;
+$font-family-body: 'PingFang SC', -apple-system, 'Helvetica Neue', sans-serif;
+$font-family-mono: 'SF Mono', Menlo, monospace;
+
+@mixin font-title {
+  font-family: $font-family-title;
+}
+
+@mixin font-body {
+  font-family: $font-family-body;
+}
+
+@mixin font-mono {
+  font-family: $font-family-mono;
+}
+
+@mixin page-bg {
+  background-color: $page-bg;
+}
+
+/** 兼容旧页面 @include parchment-page-bg */
+@mixin parchment-page-bg {
+  @include page-bg;
+}
+
+@mixin page-tab-safe-bottom {
+  padding-bottom: calc(180rpx + env(safe-area-inset-bottom));
+}
+
+/* 兼容旧 parchment 引用名 */
+$bg: $page-bg;
+$on-bg: $text-title;
+$primary: $theme-primary;
+$on-surface: $text-title;
+$on-surface-variant: $text-caption;
+$outline-variant: $divider;
+$surface-container-high: $inactive-bg;
+$surface-container-low: #ffffff;
+
+page {
+  --theme-primary: #{$theme-primary};
+  --theme-accent: #{$accent-v5};
+  --accent-v5: #{$accent-v5};
+  --page-bg: #{$page-bg};
+  --card-bg: #{$card-bg};
+  --divider: #{$divider};
+  --text-title: #{$text-title};
+  --text-body: #{$text-body};
+  --text-caption: #{$text-caption};
+  --text-time: #{$text-time};
+  --inactive-bg: #{$inactive-bg};
+  --inactive-text: #{$inactive-text};
+  --tab-inactive-text: #{$tab-inactive-text};
+}
+
+.font-title {
+  @include font-title;
+}
+
+.font-body {
+  @include font-body;
+}
+
+.font-mono {
+  @include font-mono;
+}

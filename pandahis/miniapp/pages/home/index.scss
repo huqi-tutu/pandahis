@@ -1,0 +1,1060 @@
+/* home-matrix + home-overview (product 1:1) */
+
+.muted { color: #8A8A8A; }
+
+/* ── home-matrix (product 1:1) ── */
+
+/* 鈹€鈹€鈹€ 椤甸潰瀹瑰櫒 鈹€鈹€鈹€ */
+.page-shell {
+  background: #FFFFFF;
+  min-height: 100vh;
+}
+
+.matrix-data-loading {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 48rpx;
+  z-index: 200;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.matrix-data-loading__inner {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+  padding: 16rpx 24rpx;
+  border-radius: 12rpx;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.08);
+}
+
+.matrix-data-loading__dot {
+  width: 12rpx;
+  height: 12rpx;
+  border-radius: 50%;
+  background: #2A7A5D;
+  animation: matrix-loading-pulse 1.2s ease-in-out infinite;
+}
+
+.matrix-data-loading__text {
+  font-size: 24rpx;
+  color: #6C757D;
+  line-height: 1.6;
+}
+
+@keyframes matrix-loading-pulse {
+  0%, 100% { opacity: 0.35; transform: scale(0.92); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+/* 鈹€鈹€鈹€ 鍏ㄩ儴鏂囨槑娴眰 鈹€鈹€鈹€ */
+.civ-picker {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 500;
+  display: flex;
+  flex-direction: column;
+  pointer-events: auto;
+}
+
+.civ-picker-sheet {
+  flex-shrink: 0;
+  background: #FFFFFF;
+  border-radius: 0 0 24rpx 24rpx;
+  box-shadow: 0 8rpx 32rpx rgba(47, 41, 38, 0.08);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.civ-picker-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 16rpx;
+  row-gap: 16rpx;
+  padding: 24rpx;
+  box-sizing: border-box;
+  height: 100%;
+  justify-items: center;
+  align-content: start;
+}
+
+.civ-picker-item {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.civ-picker-card {
+  border-radius: 8rpx;
+  overflow: hidden;
+  border: 2rpx solid transparent;
+  box-sizing: border-box;
+  background: #F8F6F2;
+  transition: border-color 0.2s ease;
+}
+
+.civ-picker-item--active .civ-picker-card {
+  border-color: #2A7A5D;
+}
+
+.civ-picker-card-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.civ-picker-backdrop {
+  flex: 1;
+  min-height: 0;
+  background: rgba(47, 41, 38, 0.28);
+}
+
+/* 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲
+   銆愭柊鐗堛€戝眰鍙犲崱鐗?Tab 鏍峰紡
+   鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲 */
+
+/* 缁熶竴 Tab 鍖哄煙瀹瑰櫒锛歨eight 鐢?JS inline style 瀹炴椂娉ㄥ叆锛屾澶勪笉璁惧浐瀹氶珮搴?*/
+.civ-tab-area {
+  position: fixed;
+  left: 0; right: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.97);
+  border-bottom: 1rpx solid #EDEAE6;
+  overflow: hidden;
+}
+
+/* 鍥剧墖灞傚彔灞傦細閾烘弧瀹瑰櫒锛堟粴鍔ㄦ笎闅愮敱 WXS 鐩撮┍锛屼笉鍔?transition锛?*/
+.civ-stack-layer {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  display: flex;
+  align-items: center;
+  transform: translate3d(0, 0, 0);
+}
+
+/* 鍐呭眰鐩稿瀹氫綅瀹瑰櫒锛氶摵婊?Tab 鍖猴紝鍗＄墖鍦ㄥ尯鍐呭瀭鐩村眳涓?*/
+.civ-stack-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: translate3d(0, 0, 0);
+}
+
+/* 姣忓紶鍗＄墖锛欸PU 鍚堟垚灞?+ 涓濇粦缂撳姩 */
+.civ-stack-card {
+  position: absolute;
+  top: 50%;
+  margin-top: -59rpx; /* 118rpx 楂樺害鐨勪竴鍗婏紝涓ユ牸涓婁笅灞呬腑 */
+  width: 104rpx;
+  height: 118rpx;
+  border-radius: 8rpx;
+  overflow: hidden;
+  transform-origin: 50% 50%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition:
+    transform 0.34s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity   0.32s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.civ-stack-card--moving {
+  will-change: transform, opacity;
+}
+
+.civ-stack-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* 鈹€鈹€ 鏂囧瓧 Tab 灞傦紙婊氬姩娓愮幇鐢?WXS 鐩撮┍锛?鈹€鈹€ */
+.civ-text-layer {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  display: flex;
+  align-items: center;
+  transform: translate3d(0, 0, 0);
+}
+
+.civ-text-scroll {
+  width: 100%;
+  /* 楂樺害闅忓唴瀹硅嚜閫傚簲锛屼笉鍐欐 */
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.civ-text-inner {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 28rpx;
+  gap: 10rpx;
+  box-sizing: content-box;
+}
+
+.civ-text-item {
+  flex-shrink: 0;
+  /* 涓嶈鍥哄畾楂樺害锛岀敱 padding + line-height 鎾戝紑 */
+  padding: 10rpx 18rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 26rpx;
+  font-size: 26rpx;
+  font-weight: 400;
+  color: #7A7570;
+  letter-spacing: 1rpx;
+  transition: color 0.18s ease, background 0.18s ease;
+  white-space: nowrap;
+}
+
+.civ-text-item--active {
+  color: #1A1816;
+  font-weight: 600;
+  background: rgba(42, 42, 42, 0.10);
+}
+
+/* 鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲
+   銆愭棫鐗堛€戞í鍚戞粦鍔?Tab 鏍峰紡锛堜繚鐣欙紝渚?stackMode=false 鏃朵娇鐢級
+   鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲鈺愨晲 */
+
+/* 鈹€鈹€鈹€ 鏂囨槑 Tab 鏍忥紙鍥剧墖鍗＄墖锛夆攢鈹€鈹€ */
+.civ-rail-wrap {
+  position: fixed;
+  left: 0; right: 0;
+  z-index: 100;
+  height: 180rpx;
+  background: rgba(255, 255, 255, 0.97);
+  border-bottom: 1rpx solid #EDEAE6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.civ-rail-scroll {
+  width: 100%;
+  height: 100%;
+  /* inline-flex 瀛愬厓绱犻渶瑕侀樆姝㈢埗绾ф崲琛?*/
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.civ-rail-inner {
+  /* inline-flex锛氬鍣ㄥ搴︾敱鍐呭鎾戝紑锛宻croll-view 鑳芥纭拷韪€诲搴?*/
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  min-height: 100%;
+  /* gap 涓?JS 渚у繀椤讳繚鎸佷竴鑷达細CIV_CARD_GAP_RPX = 16 */
+  gap: 16rpx;
+  /* 涓嶈姘村钩 padding锛屽交搴曟秷闄?padL 瀵?scroll-left 鍧愭爣鐨勫奖鍝?*/
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 姣忎釜鏂囨槑鍗＄墖 鈹€鈹€ 瀹?130rpx锛屽浘楂?152rpx锛屾棤鏂囧瓧琛?*/
+/* scale / opacity 鐢?JS 鎸夎窛绂昏绠楀悗鍐欏叆 inline style */
+.civ-card {
+  flex-shrink: 0;
+  width: 130rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 12rpx;
+  overflow: hidden;
+  background: transparent;           /* 鍘绘帀澶氫綑鑳屾櫙 */
+  position: relative;
+  transform-origin: center center;
+  /* 寮规€у脊鍑烘洸绾匡細selected 鏃?scale 鏈夎交寰繃鍐诧紝鏇翠紭闆?*/
+  transition: transform 0.38s cubic-bezier(0.34, 1.56, 0.64, 1),
+              opacity   0.30s ease-out;
+}
+
+.civ-card-img-wrap {
+  width: 130rpx;
+  height: 152rpx;
+  overflow: hidden;
+}
+
+.civ-card-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* 鈹€鈹€鈹€ 鐭╅樀婊氬姩鍖猴紙缁熶竴椤甸潰搴曡壊锛屼笌鑹插潡鍏壊鏃犲叧锛?鈹€鈹€鈹€ */
+.matrix-scroll {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  box-sizing: border-box;
+  background: #FFFFFF;
+}
+
+/* 鐭╅樀鏁翠綋锛氱浉瀵瑰畾浣嶅鍣紝楂樺害鐢?JS 娉ㄥ叆 */
+.matrix-body {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  background: #FFFFFF;
+  overflow: visible;
+}
+
+/* 宸︼細鏃堕棿鍒诲害鍒?*/
+.matrix-time-col {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 84rpx;
+  border-right: 1rpx solid #EDEAE6;
+  background: #FFFFFF;
+  z-index: 2;
+  box-sizing: border-box;
+  padding-left: 8rpx;
+  padding-right: 4rpx;
+}
+
+.time-row-abs {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  padding: 12rpx 0 0;
+  box-sizing: border-box;
+  overflow: visible;
+}
+
+.time-row-abs--compact {
+  padding-top: 0;
+}
+
+/* 鍙筹細鍗＄墖鐢诲竷 */
+.matrix-canvas {
+  position: absolute;
+  left: 84rpx;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #FFFFFF;
+  overflow: visible;
+}
+
+/* 鍐呭眰锛氳壊鍧椾笌鏍囩鍙傜収鍖猴紝宸?涓?鍙崇暀鍛煎惛闂磋窛锛堝彸 20rpx 鈮?10px锛?*/
+.matrix-canvas-inner {
+  position: absolute;
+  left: 12rpx;
+  right: 20rpx;
+  top: 12rpx;
+  bottom: 8rpx;
+  background: #FFFFFF;
+  overflow: visible;
+}
+
+/* 鈹€鈹€鈹€ 鏀挎潈鍧楋紙缁濆瀹氫綅锛屽彲澶氭鎷兼帴鎴愪笉瑙勫垯褰級 鈹€鈹€鈹€ */
+.era-block {
+  position: absolute;
+  box-sizing: border-box;
+  border: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.era-block-fill {
+  position: absolute;
+  /* 寰墿濉厖锛屾秷闄ょ櫨鍒嗘瘮瀹氫綅涓庡渾瑙掓姉閿娇鎺ョ紳 */
+  left: -2rpx;
+  right: -2rpx;
+  top: -2rpx;
+  bottom: -2rpx;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+
+.era-block--hover .era-block-fill {
+  opacity: 0.73;
+}
+
+/* 鎸囧畾 L 褰?/ 澶氭鑹插潡锛氫粎濉厖灞備笉閫忔槑 + 寰墿锛屾秷娈甸棿鎺ョ紳锛屼笉鏀硅壊鍧楀嚑浣?*/
+.era-block-fill--solid-seam {
+  opacity: 1;
+  top: -4rpx;
+  bottom: -4rpx;
+  left: -3rpx;
+  right: -3rpx;
+}
+
+/* 涓庨偦鍧楃暀 16rpx 鐨勮竟锛氳渚т笉寰墿锛岄伩鍏嶅悆鎺夐棿璺?*/
+.era-block-fill--solid-seam.era-block-fill--gap-top { top: 0; }
+.era-block-fill--solid-seam.era-block-fill--gap-bottom { bottom: 0; }
+.era-block-fill--solid-seam.era-block-fill--gap-left { left: 0; }
+.era-block-fill--solid-seam.era-block-fill--gap-right { right: 0; }
+
+.era-block--hover .era-block-fill--solid-seam {
+  opacity: 0.88;
+}
+
+/* 榛勫笣鑹插潡锛氭瀬寮辩焊鎰熷櫔鐐癸紙棰勮锛屼粎 zhong_hua_wu_di_huang_di锛?*/
+.era-block-paper-grain {
+  position: absolute;
+  left: -2rpx;
+  right: -2rpx;
+  top: -2rpx;
+  bottom: -2rpx;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+  background-image: url('/images/paper-grain-huangdi.png');
+  background-repeat: repeat;
+  background-size: 96rpx 61rpx;
+  opacity: 0.22;
+  mix-blend-mode: soft-light;
+}
+
+.era-block--hover .era-block-paper-grain {
+  opacity: 0.18;
+}
+
+/* 缁熶竴鏍囩灞傦細宸︿笂鍚嶇О + 鏃堕棿锛堝凡鍘绘帀宸︿晶鑹叉潯涓庤壊鍧楁弿杈癸級 */
+.entry-chrome {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 3;
+  overflow: visible;
+}
+
+.entry-header-wrap {
+  position: absolute;
+  box-sizing: border-box;
+  padding: 8rpx 8rpx 8rpx 10rpx;
+  overflow: visible;
+}
+
+/* 鏃堕棿閿氬畾灞傦細瀵归綈瀵瑰簲鑹插潡娈碉紝璐村簳瑙?*/
+.entry-time-wrap {
+  position: absolute;
+  box-sizing: border-box;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 2;
+}
+
+.card-time-range--br,
+.card-time-range--bl {
+  position: absolute;
+  bottom: 8rpx;
+  z-index: 2;
+  font-family: 'SF Mono', 'Menlo', monospace;
+  font-size: 16rpx;
+  font-weight: 400;
+  line-height: 1.35;
+  color: #B0A89E;
+  letter-spacing: 0;
+  white-space: nowrap;
+  overflow: visible;
+  text-shadow: none;
+}
+
+.card-time-range--br {
+  right: 10rpx;
+  text-align: right;
+}
+
+.card-time-range--bl {
+  left: 8rpx;
+  text-align: left;
+}
+
+.entry-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6rpx;
+  width: 100%;
+  padding-top: 0;
+  box-sizing: border-box;
+}
+
+/* 鍚屾椂鏈熸斂鏉?= 1锛氬悕绉?+ 鏍囩妯帓锛屾爣绛惧湪鍙炽€佸瀭鐩村眳涓?*/
+.entry-header--inline {
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8rpx;
+}
+
+/* 鍚屾椂鏈熸斂鏉?> 1锛氬悕绉板湪涓婏紝鏍囩鍦ㄤ笅宸﹀榻?*/
+.entry-header--stacked {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6rpx;
+}
+
+/* 鑳跺泭鏍囩锛堟棤杈规锛?*/
+.entry-tag-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6rpx;
+  max-width: 100%;
+}
+
+.entry-tag-row--inline {
+  flex-wrap: nowrap;
+  flex-shrink: 1;
+  min-width: 0;
+}
+
+.entry-tag-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4rpx;
+  max-width: 100%;
+}
+
+.entry-tag {
+  display: inline-block;
+  vertical-align: top;
+  max-width: 100%;
+  padding: 3rpx 10rpx;
+  border-radius: 20rpx;
+  font-size: 15rpx;
+  font-weight: 500;
+  line-height: 1.35;
+  color: #FFFFFF;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.entry-tag--stack {
+  white-space: normal;
+  word-break: break-all;
+  align-self: flex-start;
+}
+
+.card-person--inline {
+  font-size: 22rpx;
+  line-height: 1.25;
+  flex-shrink: 0;
+  max-width: 100%;
+  word-break: break-all;
+}
+
+.card-person--stacked {
+  font-size: 20rpx;
+  line-height: 1.25;
+  max-width: 100%;
+  word-break: break-all;
+}
+
+.entry-header--stacked .entry-tag {
+  font-size: 14rpx;
+  padding: 2rpx 8rpx;
+}
+
+.entry-header-left {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rpx;
+  align-items: flex-start;
+}
+
+.card-time-range--tr {
+  flex-shrink: 0;
+  text-align: right;
+  max-width: 46%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 淇濈暀鏃ц甯冨眬绫伙紙鍏煎锛?*/
+.matrix-row {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  flex-shrink: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.matrix-row--ref {
+  opacity: 0.7;
+}
+
+.card-area--ref {
+  flex: 1;
+  min-width: 0;
+}
+
+.time-cell {
+  width: 84rpx;
+  flex-shrink: 0;
+  border-right: 1rpx solid #EDEAE6;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  padding: 12rpx 0 0;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.90);
+}
+
+.time-label-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 5rpx;
+  width: 100%;
+}
+
+/* 骞翠唤琛岋細宸﹀彸鍚勪竴鐭埢搴︼紝鍒嗗埆璐村乏缂樹笌鏃堕棿杞寸珫绾?*/
+.time-year-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.time-h-line--edge {
+  flex-shrink: 0;
+  width: 10rpx;
+  height: 1rpx;
+  background: rgba(160, 152, 142, 0.32);
+}
+
+.time-year {
+  flex: 1;
+  flex-shrink: 1;
+  min-width: 0;
+  padding: 0 2rpx;
+  font-family: 'SF Mono', 'Menlo', monospace;
+  font-size: 14rpx;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  color: #B0A89E;
+  text-align: center;
+  letter-spacing: 2rpx;
+  line-height: 1.25;
+  white-space: nowrap;
+}
+
+/* 鈹€鈹€鈹€ 鍗庡鍙傝€冩爣娉ㄥ尯锛堟湞浠ｅ悕 + 灞曞紑绠ご锛夆攢鈹€鈹€ */
+.time-hx-wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 3rpx;
+  width: 100%;
+  padding: 0 2rpx;
+  box-sizing: border-box;
+}
+
+.time-hx-wrap--tap {
+  min-height: 40rpx;
+  padding: 4rpx 2rpx;
+  box-sizing: border-box;
+}
+
+/* 鍗庡鏈濅唬鍚嶏紙瀛楀彿鐢?JS 鎸夊垪瀹借嚜閫傚簲锛?*/
+.time-dynasty {
+  font-size: 16rpx;
+  color: #B0A89E;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 1.3;
+  white-space: nowrap;
+  flex-shrink: 1;
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* 灞曞紑/鏀惰捣绠ご锛堜粎鍗庡鏂囨槑涓嬫樉绀猴級 */
+.time-expand-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2rpx;
+}
+
+.time-arrow-icon {
+  font-size: 14rpx;
+  color: #9A9090;
+  line-height: 1;
+}
+
+/* 鈹€鈹€鈹€ 鍙筹細鍗＄墖鍖哄煙锛坒lex 妯悜锛屾敮鎸佸苟鍒楀鍗★級鈹€鈹€鈹€ */
+.card-area {
+  flex: 1;
+  min-width: 0;
+  padding: 6rpx 12rpx 6rpx 10rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: stretch;
+  gap: 6rpx;    /* 骞跺垪鍗＄墖闂磋窛 */
+}
+
+.slot-wrap {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: stretch;
+}
+
+/* 绌哄崰浣嶆Ы锛氬悓鏈濅唬缁勫唴鏈缓绔?宸茶鐏殑鏀挎潈锛屼繚鐣欏潎鍒嗕綅缃?*/
+.slot-empty {
+  flex: 1;
+  min-width: 0;
+}
+
+
+/* 鈹€鈹€鈹€ 澶у崱锛堝崟鍒楋級 鈹€鈹€鈹€ */
+.era-card {
+  flex: 1;
+  width: 100%;
+  border-radius: 10rpx;
+  background: transparent;
+  border: 1rpx solid #EDEAE6;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.era-card--hover { opacity: 0.78; }
+
+/* 宸︿晶褰╄壊鐭珫鏉★細鍐呭祵鍦嗚鑳跺泭褰?*/
+.card-left-bar {
+  position: absolute;
+  left: 0;
+  top: 10rpx;
+  bottom: 10rpx;
+  width: 7rpx;
+  border-radius: 999rpx;
+  transform: translateX(2rpx);
+  z-index: 2;
+}
+
+.era-block .card-top-left {
+  left: 12rpx;
+  right: 8rpx;
+  z-index: 3;
+}
+
+.mini-bar {
+  top: 6rpx;
+  bottom: 6rpx;
+}
+
+/* 宸︿笂瑙掞細鍚嶇О + 鏈濅唬锛堟棤澶村儚锛?*/
+.card-top-left {
+  position: absolute;
+  top: 10rpx;
+  left: 14rpx;
+  right: 8rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.card-text-block {
+  display: flex;
+  flex-direction: column;
+  gap: 2rpx;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+/* 甯濈帇鍚嶏紙澶у崱/灏忓崱缁熶竴锛?*/
+.card-person,
+.mini-person {
+  font-family: 'Noto Serif SC', 'Songti SC', serif;
+  font-size: 24rpx;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #4A3F3F;
+  letter-spacing: 0.5rpx;
+  max-width: 100%;
+}
+
+/* 鏈濅唬鍚嶏紙澶у崱/灏忓崱缁熶竴锛?*/
+.card-dynasty-name,
+.mini-dynasty-name {
+  font-family: 'PingFang SC', -apple-system, sans-serif;
+  font-size: 18rpx;
+  font-weight: 400;
+  line-height: 1.35;
+  color: #8A8A8A;
+  overflow: hidden;
+}
+
+/* 璧锋 / 鍗充綅鈥旈€€浣?鏃堕棿 */
+.card-time-range {
+  font-family: 'SF Mono', 'Menlo', monospace;
+  font-size: 16rpx;
+  font-weight: 400;
+  line-height: 1.35;
+  color: #B0A89E;
+  letter-spacing: -0.3rpx;
+  display: inline-block;
+  text-shadow: none;
+}
+
+/* 鐭╅樀鏍囩灞傦細鏃堕棿瀹屾暣鏄剧ず */
+.entry-chrome .entry-header-wrap {
+  overflow: visible;
+}
+
+.entry-chrome .entry-time-wrap {
+  overflow: visible;
+}
+
+.entry-chrome .card-person,
+.entry-chrome .card-person--inline,
+.entry-chrome .card-person--stacked {
+  color: #4A3F3F;
+  text-shadow: none;
+}
+
+.entry-chrome .card-time-range--br,
+.entry-chrome .card-time-range--bl {
+  overflow: visible;
+  white-space: nowrap;
+  color: #B0A89E;
+  text-shadow: none;
+}
+
+/* 鍦ㄤ綅鏃堕暱锛堝皬鍗＄瓑閬楃暀锛?*/
+.card-tenure-br,
+.mini-tenure-br {
+  position: absolute;
+  bottom: 7rpx;
+  right: 8rpx;
+  font-family: 'SF Mono', 'Menlo', monospace;
+  font-size: 16rpx;
+  font-weight: 400;
+  line-height: 1;
+  color: #B0A89E;
+}
+
+/* 鈹€鈹€鈹€ 骞舵帓灏忓崱 (cluster) 鈹€鈹€鈹€ */
+.card-cluster {
+  flex: 1;
+  display: grid;
+  gap: 6rpx;
+  align-items: stretch;
+}
+
+.cols-2 { grid-template-columns: repeat(2, 1fr); }
+.cols-3 { grid-template-columns: repeat(3, 1fr); }
+.cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+.era-mini {
+  border-radius: 8rpx;
+  background: transparent;
+  border: 1rpx solid #EDEAE6;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.era-mini--hover { opacity: 0.78; }
+
+/* 灏忓崱宸︿笂瑙?*/
+.mini-top-left {
+  position: absolute;
+  top: 6rpx;
+  left: 12rpx;  /* 璁╁紑绔栨潯 */
+  right: 6rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.mini-text-block {
+  display: flex;
+  flex-direction: column;
+  gap: 2rpx;
+  align-items: flex-start;
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* 灏忓崱瀛椾綋鐢变笂鏂圭粺涓€瑙勫垯瑕嗙洊锛屾澶勪粎淇濈暀 cols-4 宸︾缉杩涘井璋?*/
+.cols-4 .mini-top-left { left: 4rpx; }
+
+/* ── home-overview (product 1:1) ── */
+
+.page-shell--overview {
+  min-height: 100vh;
+  background: #F8F6F2;
+}
+
+.overview-body {
+  padding-bottom: 24rpx;
+}
+
+/* 鈹€鈹€鈹€ 鎻愮ず鏉?鈹€鈹€鈹€ */
+.hint-bar {
+  padding: 16rpx 32rpx;
+  border-bottom: 1rpx solid #EDEAE6;
+}
+
+.hint-text { font-size: 22rpx; letter-spacing: 1rpx; }
+
+/* 鈹€鈹€鈹€ 鍦板浘 鈹€鈹€鈹€ */
+.map-scroll {
+  width: 100%;
+  background: #EDF0F2;
+}
+
+.map-frame {
+  position: relative;
+  display: inline-block;
+  min-width: 750rpx;
+}
+
+.map-image {
+  width: 900rpx;
+  display: block;
+}
+
+.civ-spot {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rpx;
+  transform: translate(-50%, -50%);
+}
+
+.spot-dot {
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;
+  border: 3rpx solid rgba(255,255,255,0.9);
+  box-shadow: 0 2rpx 8rpx rgba(0,0,0,0.2);
+}
+
+.spot-label {
+  font-size: 16rpx;
+  font-weight: 700;
+  text-shadow: 0 1rpx 3rpx rgba(255,255,255,0.8);
+  white-space: nowrap;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 2rpx 8rpx;
+  border-radius: 6rpx;
+}
+
+/* 鈹€鈹€鈹€ 骞翠唬鏉?鈹€鈹€鈹€ */
+.era-bar-section {
+  padding: 16rpx 24rpx;
+}
+
+.dynasty-era-bar {
+  display: flex;
+  height: 48rpx;
+  border-radius: 12rpx;
+  overflow: hidden;
+}
+
+.era-seg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18rpx;
+  font-weight: 600;
+}
+
+.era-c1 { background: #84572F; color: #fff;    flex: 1.5; }
+.era-c2 { background: #F1A805; color: #5A3A00; flex: 1; }
+.era-c3 { background: #F2D6A1; color: #6B5E3A; flex: 1.5; }
+.era-c4 { background: #92ADA4; color: #3A4A3E; flex: 0.8; }
+.era-c5 { background: #B3D9E0; color: #3A5A6A; flex: 0.7; }
+.era-c6 { background: #EDD5C0; color: #6A4A3A; flex: 0.5; }
+
+/* 鈹€鈹€鈹€ 鏂囨槑缃戞牸 鈹€鈹€鈹€ */
+.civ-list-section {
+  padding: 0 24rpx;
+}
+
+.section-title-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16rpx;
+}
+
+.list-title {
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #262626;
+  letter-spacing: 2rpx;
+}
+
+.list-count { font-size: 22rpx; }
+
+.civ-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12rpx;
+}
+
+.civ-grid-card {
+  position: relative;
+  height: 160rpx;
+  border-radius: 16rpx;
+  overflow: hidden;
+  border: 1rpx solid rgba(255, 255, 255, 0.3);
+}
+
+.civ-card-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.civ-card-overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.civ-card-name {
+  position: absolute;
+  bottom: 12rpx;
+  left: 0; right: 0;
+  text-align: center;
+  font-size: 24rpx;
+  font-weight: 700;
+  color: #FFFFFF;
+  text-shadow: 0 1rpx 4rpx rgba(0,0,0,0.4);
+  z-index: 2;
+  letter-spacing: 2rpx;
+}
+

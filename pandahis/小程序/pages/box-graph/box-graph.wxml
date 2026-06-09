@@ -1,0 +1,17 @@
+<view class="proto-shell">
+  <proto-nav title="{{title}}" show-back="{{true}}"></proto-nav>
+
+  <view class="box-page-body" style="padding-top: {{headerPadPx}}px;">
+    <view class="box-hero card-paper">
+      <text class="box-title">{{title}}</text>
+      <text class="box-sub muted">{{sub}}</text>
+      <text class="box-fav">♥</text>
+    </view>
+    <view class="box-tabs">
+      <view wx:for="{{tabs}}" wx:key="*this" class="box-tab {{tabActive===index?'active':''}}" data-i="{{index}}" bindtap="onTabTap">{{item}}</view>
+    </view>
+    <scroll-view scroll-y class="graph-scroll" enhanced>
+      <image class="graph-svg-img" src="/images/relation-graph.svg" mode="widthFix" />
+    </scroll-view>
+  </view>
+</view>

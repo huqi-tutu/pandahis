@@ -1,0 +1,81 @@
+<view class="page-shell safe-bottom">
+  <view class="login-body">
+
+    <!-- Logo 区 -->
+    <view class="logo-section">
+      <view class="logo-icon">
+        <image class="logo-img" src="/配图/icons/tupu.png" mode="aspectFit" />
+      </view>
+      <text class="logo-title">历史图谱</text>
+      <text class="logo-sub muted">纵览千年 · 横跨文明</text>
+    </view>
+
+    <!-- 登录方式 -->
+    <view class="login-section">
+      <!-- 微信一键登录 -->
+      <button
+        class="btn-wechat"
+        open-type="getUserInfo"
+        bindgetuserinfo="onGetUserInfo"
+      >
+        <text class="btn-wechat-icon">💬</text>
+        <text>微信一键登录</text>
+      </button>
+
+      <!-- 手机号登录 -->
+      <view class="phone-section">
+        <view class="input-group">
+          <view class="input-wrap">
+            <text class="input-prefix muted">+86</text>
+            <input
+              class="phone-input"
+              type="number"
+              placeholder="请输入手机号"
+              placeholder-class="input-placeholder"
+              maxlength="11"
+              bindinput="onPhoneInput"
+              value="{{phone}}"
+            />
+          </view>
+        </view>
+        <view class="input-group">
+          <view class="input-wrap">
+            <input
+              class="code-input"
+              type="number"
+              placeholder="验证码"
+              placeholder-class="input-placeholder"
+              maxlength="6"
+              bindinput="onCodeInput"
+              value="{{code}}"
+            />
+            <view class="send-code {{countdown > 0 ? 'disabled' : ''}}" bindtap="sendCode">
+              <text>{{countdown > 0 ? countdown + 's后重发' : '获取验证码'}}</text>
+            </view>
+          </view>
+        </view>
+        <button class="btn-phone btn-primary" bindtap="loginByPhone">登录 / 注册</button>
+      </view>
+
+      <!-- 分隔线 -->
+      <view class="divider-line">
+        <view class="divider-seg"></view>
+        <text class="divider-text muted">或者</text>
+        <view class="divider-seg"></view>
+      </view>
+
+      <!-- 游客浏览 -->
+      <view class="guest-btn" bindtap="guestBrowse">
+        <text class="muted">以游客身份浏览（部分功能受限）</text>
+      </view>
+    </view>
+
+    <!-- 协议 -->
+    <view class="agreement">
+      <text class="agree-text muted">登录即代表同意</text>
+      <text class="agree-link accent" bindtap="openAgreement">《用户服务协议》</text>
+      <text class="agree-text muted">与</text>
+      <text class="agree-link accent" bindtap="openPrivacy">《隐私政策》</text>
+    </view>
+  </view>
+</view>

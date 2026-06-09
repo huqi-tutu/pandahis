@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "home-matrix.schema.json",
+  "type": "object",
+  "required": ["rows", "blocks", "overlays", "totalHRpx"],
+  "properties": {
+    "rows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["key", "y", "h", "year", "hxLabel", "showYear", "expandable", "expanded", "dynastyKey"],
+        "properties": {
+          "key": { "type": "string" },
+          "y": { "type": "integer", "minimum": 0 },
+          "h": { "type": "integer", "minimum": 1 },
+          "year": { "type": "string" },
+          "hxLabel": { "type": "string" },
+          "showYear": { "type": "boolean" },
+          "expandable": { "type": "boolean" },
+          "expanded": { "type": "boolean" },
+          "dynastyKey": { "type": "string" }
+        }
+      }
+    },
+    "blocks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "top", "h", "leftPct", "widthPct", "cardBg", "unitId", "anchorYear"],
+        "properties": {
+          "id": { "type": "string" },
+          "top": { "type": "integer" },
+          "h": { "type": "integer" },
+          "leftPct": { "type": "number" },
+          "widthPct": { "type": "number" },
+          "cardBg": { "type": "string" },
+          "person": { "type": "string" },
+          "dynasty": { "type": "string" },
+          "civ": { "type": "string" },
+          "anchorYear": { "type": "integer" },
+          "unitId": { "type": "string" },
+          "kind": { "type": "string" },
+          "displayName": { "type": "string" },
+          "timeRange": { "type": "string" },
+          "radiusStyle": { "type": "string" },
+          "edgeClass": { "type": "string" },
+          "entryId": { "type": "string" },
+          "fillSeamFix": { "type": "boolean" },
+          "seamGapTop": { "type": "boolean" },
+          "seamGapBottom": { "type": "boolean" },
+          "seamGapLeft": { "type": "boolean" },
+          "seamGapRight": { "type": "boolean" },
+          "fillStyleExtra": { "type": "string" }
+        }
+      }
+    },
+    "overlays": { "type": "array" },
+    "totalHRpx": { "type": "integer", "minimum": 0 }
+  }
+}

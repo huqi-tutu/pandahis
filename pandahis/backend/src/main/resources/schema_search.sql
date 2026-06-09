@@ -1,0 +1,17 @@
+CREATE TABLE IF NOT EXISTS search_hot_keyword (
+  id BIGINT PRIMARY KEY AUTO_INCREMENT,
+  keyword VARCHAR(64) NOT NULL,
+  is_hot TINYINT NOT NULL DEFAULT 0,
+  sort_order INT NOT NULL DEFAULT 0,
+  status TINYINT NOT NULL DEFAULT 1
+);
+
+CREATE TABLE IF NOT EXISTS user_search_history (
+  id BIGINT PRIMARY KEY AUTO_INCREMENT,
+  user_id BIGINT NOT NULL,
+  keyword VARCHAR(64) NOT NULL,
+  last_searched_at TIMESTAMP NOT NULL,
+  search_count INT NOT NULL DEFAULT 1,
+  UNIQUE (user_id, keyword)
+);
+

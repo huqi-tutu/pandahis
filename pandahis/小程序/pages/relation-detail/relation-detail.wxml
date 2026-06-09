@@ -1,0 +1,41 @@
+<view class="proto-shell">
+  <proto-nav title="{{name}}" show-back="{{true}}"></proto-nav>
+
+  <view class="detail-body pad" style="padding-top: {{headerPadPx}}px;">
+    <block wx:if="{{info}}">
+      <!-- 元信息卡片 -->
+      <view class="meta card-paper">
+        <view class="row">
+          <text class="lab muted">姓名</text>
+          <text class="val">{{info.name}}</text>
+        </view>
+        <view class="row">
+          <text class="lab muted">关系类别</text>
+          <view class="val-row">
+            <text class="val">{{info.category}}</text>
+            <text class="role-badge" style="background: {{color}}20; color: {{color}};">{{info.role}}</text>
+          </view>
+        </view>
+        <view class="row">
+          <text class="lab muted">关系层级</text>
+          <text class="val">{{info.level}}</text>
+        </view>
+        <view wx:if="{{info.lineage}}" class="row">
+          <text class="lab muted">家族关系链</text>
+          <text class="val val-small">{{info.lineage}}</text>
+        </view>
+      </view>
+
+      <!-- 关系简述 -->
+      <text class="sec accent">关系简述</text>
+      <view class="text-card card-paper">{{info.summary}}</view>
+    </block>
+
+    <block wx:else>
+      <view class="empty-state">
+        <text class="empty-icon">🔍</text>
+        <text class="empty-text">未找到 {{name}} 的关系数据</text>
+      </view>
+    </block>
+  </view>
+</view>

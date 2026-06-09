@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "order.schema.json",
+  "type": "object",
+  "required": ["orderId", "status", "amountCent", "paidAt", "planId"],
+  "properties": {
+    "orderId": { "type": "integer", "minimum": 1 },
+    "status": { "type": "string", "enum": ["created", "paid", "closed", "refunded"] },
+    "amountCent": { "type": "integer", "minimum": 0 },
+    "paidAt": { "type": ["string", "null"], "format": "date-time" },
+    "planId": { "type": "string" }
+  }
+}
+

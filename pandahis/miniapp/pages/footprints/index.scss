@@ -1,0 +1,106 @@
+@import '../../native-utils/design-tokens.scss';
+
+$brand: $theme-primary;
+$text-main: #333333;
+$text-muted: #8e8281;
+
+.page-fp {
+  min-height: 100vh;
+  @include parchment-page-bg;
+  color: $text-main;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.summary {
+  padding: 24rpx 40rpx 8rpx;
+}
+
+.summary-text {
+  font-size: 28rpx;
+  color: $text-muted;
+  line-height: 1.5;
+}
+
+.empty-wrap {
+  flex: 1;
+  padding: 48rpx 32rpx;
+}
+
+.list-scroll {
+  flex: 1;
+  height: calc(100vh - 300rpx);
+  padding: 16rpx 40rpx 48rpx;
+  box-sizing: border-box;
+}
+
+.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24rpx;
+}
+
+.fp-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 24rpx;
+  padding: 24rpx 40rpx;
+  border: 1rpx solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4rpx 16rpx rgba(74, 63, 63, 0.06);
+}
+
+.fp-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 15%;
+  bottom: 15%;
+  width: 6rpx;
+  background-color: $brand;
+  border-radius: 8rpx;
+}
+
+.card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16rpx;
+}
+
+.card-title {
+  flex: 1;
+  font-size: 32rpx;
+  font-weight: 700;
+  color: #333333;
+  line-height: 1.35;
+}
+
+.card-time {
+  flex-shrink: 0;
+  font-size: 24rpx;
+  color: $text-muted;
+  margin-top: 4rpx;
+}
+
+.card-years {
+  margin-top: 8rpx;
+  font-size: 28rpx;
+  font-weight: 500;
+  color: $brand;
+  letter-spacing: 0.04em;
+}
+
+.card-path {
+  margin-top: 6rpx;
+  font-size: 24rpx;
+  color: $text-muted;
+  line-height: 1.45;
+}
+
+.loading {
+  padding: 80rpx 32rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: $text-muted;
+}

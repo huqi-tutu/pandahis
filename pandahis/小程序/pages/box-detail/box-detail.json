@@ -1,0 +1,6 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "proto-nav": "/components/proto-nav/proto-nav"
+  }
+}

@@ -1,0 +1,116 @@
+@import '../../styles/atlas.wxss';
+
+.page-shell {
+  min-height: 100vh;
+  background: #FAF7F3;
+}
+
+.search-body {
+  padding-bottom: 32rpx;
+}
+
+/* ─── 搜索框 ─── */
+.search-bar-wrap {
+  padding: 24rpx 40rpx 40rpx;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+  height: 88rpx;
+  padding: 0 32rpx;
+  border-radius: 44rpx;
+  background: rgba(155, 62, 56, 0.08);
+  box-sizing: border-box;
+}
+
+.search-ico {
+  font-size: 32rpx;
+  color: #B0A89E;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.search-input {
+  flex: 1;
+  font-size: 28rpx;
+  color: #2F2926;
+  background: transparent;
+  height: 88rpx;
+  line-height: 88rpx;
+}
+
+.search-placeholder {
+  color: #B0A89E;
+  font-size: 28rpx;
+}
+
+.search-clear {
+  font-size: 28rpx;
+  color: #B0A89E;
+  padding: 8rpx;
+  flex-shrink: 0;
+}
+
+/* ─── 区块 ─── */
+.search-section {
+  padding: 0 40rpx 40rpx;
+}
+
+.search-section-title {
+  display: block;
+  font-size: 24rpx;
+  color: #B0A89E;
+  letter-spacing: 4rpx;
+  margin-bottom: 24rpx;
+}
+
+/* ─── 热门标签 ─── */
+.search-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16rpx 24rpx;
+}
+
+.search-tag {
+  font-size: 26rpx;
+  color: #5C534C;
+  letter-spacing: 1rpx;
+  line-height: 1.4;
+  padding: 8rpx 0;
+}
+
+.search-tag--hot {
+  padding: 12rpx 24rpx;
+  border-radius: 28rpx;
+  background: rgba(155, 62, 56, 0.1);
+  color: #9B3E38;
+}
+
+/* ─── 历史记录 ─── */
+.search-history-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24rpx 0;
+  border-bottom: 1rpx solid rgba(101, 53, 49, 0.12);
+}
+
+.search-history-item:last-child {
+  border-bottom: none;
+}
+
+.search-history-text {
+  flex: 1;
+  font-size: 28rpx;
+  color: #5C534C;
+  letter-spacing: 0.5rpx;
+}
+
+.search-history-del {
+  font-size: 28rpx;
+  color: #C8C0B8;
+  padding: 8rpx 0 8rpx 24rpx;
+  flex-shrink: 0;
+}

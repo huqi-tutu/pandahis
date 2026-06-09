@@ -1,0 +1,26 @@
+# Local tooling / IDE
+.claude/
+.claudetalk/
+.claudetalk-sessions.json
+.claudetalk.json
+.codex/
+.idea/
+*.iml
+__MACOSX/
+
+# Cursor (MCP may contain secrets)
+.cursor/mcp.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Dependencies & build
+node_modules/
+target/
+dist/
+*.log
+
+# Temp / generated assets
+.tmp/
+deploy/_tmp_assets/

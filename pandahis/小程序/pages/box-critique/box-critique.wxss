@@ -1,0 +1,118 @@
+@import '../../styles/atlas.wxss';
+@import '../box-graph/box-graph.wxss';
+
+.list-scroll {
+  flex: 1;
+  padding: 24rpx;
+  box-sizing: border-box;
+}
+
+.crit-card {
+  background: #FFFFFF;
+  border-radius: 20rpx;
+  border: 1rpx solid #EDEAE6;
+  padding: 28rpx 28rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 2rpx 8rpx rgba(47, 41, 38, 0.04);
+}
+
+.crit-card:active {
+  background: #FAFAFA;
+}
+
+/* ── 头部：头像 + 作者 + 年代 ── */
+.crit-head {
+  display: flex;
+  align-items: center;
+  gap: 18rpx;
+  margin-bottom: 20rpx;
+}
+
+.crit-avatar {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1);
+}
+
+.crit-avatar-text {
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #FFFFFF;
+  font-family: 'Noto Serif SC', serif;
+}
+
+.crit-meta {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4rpx;
+}
+
+.crit-author {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #262626;
+  font-family: 'Noto Serif SC', 'PingFang SC', serif;
+}
+
+.crit-era {
+  font-size: 22rpx;
+}
+
+.chev {
+  font-size: 40rpx;
+  color: #B0A89E;
+  flex-shrink: 0;
+}
+
+/* ── 分割线 ── */
+.crit-divider {
+  height: 1rpx;
+  background: #EDEAE6;
+  margin-bottom: 18rpx;
+}
+
+/* ── 评述标题 ── */
+.crit-title {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #262626;
+  display: block;
+  margin-bottom: 10rpx;
+  line-height: 1.4;
+  font-family: 'Noto Serif SC', 'PingFang SC', serif;
+}
+
+/* ── 出处 ── */
+.crit-src {
+  margin-bottom: 14rpx;
+  font-size: 22rpx;
+  display: block;
+  font-style: italic;
+}
+
+/* ── 正文 ── */
+.crit-body {
+  font-size: 28rpx;
+  line-height: 1.7;
+  color: #6A6A6A;
+  display: block;
+}
+
+.tab-empty {
+  padding: 80rpx 32rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tab-empty-text {
+  font-size: 26rpx;
+  color: #8A8A8A;
+  letter-spacing: 1rpx;
+}

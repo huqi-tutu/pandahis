@@ -1,0 +1,29 @@
+<view class="proto-nav-root">
+  <view class="proto-status-h" style="height: {{statusBarHeight}}px;"></view>
+
+  <view wx:if="{{homeNav}}" class="proto-bar proto-bar--home">
+    <view class="proto-home-left">
+      <view
+        wx:if="{{modePillIcon || modePillText}}"
+        class="proto-mode-pill {{modePillIcon ? 'proto-mode-pill--icon' : ''}}"
+        catchtap="onModePillTap"
+      >
+        <image wx:if="{{modePillIcon}}" class="proto-mode-pill-icon" src="{{modePillIcon}}" mode="aspectFit" />
+        <text wx:else>{{modePillText}}</text>
+      </view>
+    </view>
+    <text class="proto-title proto-title--center">{{title}}</text>
+    <view class="proto-home-right"></view>
+  </view>
+
+  <view wx:else class="proto-bar">
+    <view class="proto-side proto-side--left">
+      <text wx:if="{{showBack}}" class="proto-back" bindtap="onBack">‹</text>
+      <slot name="left"></slot>
+    </view>
+    <text class="proto-title proto-title--flex">{{title}}</text>
+    <view class="proto-side proto-side--right">
+      <slot name="right"></slot>
+    </view>
+  </view>
+</view>

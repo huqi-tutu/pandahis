@@ -1,0 +1,51 @@
+@import '../../styles/atlas.wxss';
+@import '../box-graph/box-graph.wxss';
+
+.relic-row {
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+  background: #FFFFFF;
+  border-radius: 20rpx;
+  border: 1rpx solid #EDEAE6;
+  padding: 20rpx;
+  margin-bottom: 16rpx;
+  box-shadow: 0 2rpx 8rpx rgba(47,41,38,0.04);
+}
+
+.relic-thumb {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 16rpx;
+  background: linear-gradient(135deg, rgba(155,62,56,0.06), rgba(250,247,243,1));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 52rpx;
+  flex-shrink: 0;
+}
+
+.relic-info { flex: 1; min-width: 0; }
+
+.relic-name {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #262626;
+  display: block;
+  margin-bottom: 6rpx;
+}
+
+.relic-desc {
+  font-size: 24rpx;
+  color: #6A6A6A;
+  margin-top: 4rpx;
+  display: block;
+  line-height: 1.5;
+}
+
+.relic-museum {
+  font-size: 22rpx;
+  color: #B0A89E;
+  margin-top: 10rpx;
+  display: block;
+}

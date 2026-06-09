@@ -1,0 +1,88 @@
+<navigation-bar
+  title="邀请"
+  back="{{false}}"
+  color="#4A3F3F"
+  background="rgba(255, 248, 247, 0.92)"
+></navigation-bar>
+
+<view class="page-invite">
+  <view wx:if="{{!hasToken}}" class="login-banner">
+    <view class="login-title">登录后使用邀请功能</view>
+    <view class="login-desc">查看阅读数、邀请码，并邀请好友一起读史。</view>
+    <view class="btn-primary" bindtap="goLogin">去登录</view>
+  </view>
+
+  <block wx:else>
+    <view class="hero">
+      <view class="hero-tag">邀请有礼</view>
+      <view class="hero-desc">邀请好友注册，双方各得阅读点</view>
+      <view class="hero-stats">
+        <view class="stat">
+          <view class="stat-val">{{loading ? '—' : readBalance}}</view>
+          <view class="stat-label">阅读点</view>
+        </view>
+        <view class="stat-divider"></view>
+        <view class="stat">
+          <view class="stat-val">{{loading ? '—' : invitedCount}}</view>
+          <view class="stat-label">已邀请</view>
+        </view>
+        <view class="stat-divider"></view>
+        <view class="stat">
+          <view class="stat-val">{{loading ? '—' : inviteRewardReads}}</view>
+          <view class="stat-label">每人奖励</view>
+        </view>
+      </view>
+      <view wx:if="{{!loading && readBalance === 0}}" class="hero-hint" bindtap="goHome">
+        去图谱打开评述、见证或原文，即可使用阅读点 →
+      </view>
+    </view>
+
+    <glass-card className="card">
+      <view class="card-title">我的邀请码</view>
+      <view class="code-row">
+        <view wx:if="{{loading}}" class="code-skeleton"></view>
+        <text wx:else class="code">{{inviteCode || '暂无'}}</text>
+        <view
+          class="btn-copy {{loading || !inviteCode ? 'disabled' : ''}}"
+          bindtap="copyCode"
+        >复制</view>
+      </view>
+      <view class="card-note">
+        每邀请 1 位新用户注册，你可获得 <text class="em">{{inviteRewardReads}}</text> 点阅读数
+      </view>
+    </glass-card>
+
+    <glass-card className="card card-bind">
+      <view class="card-title">填写好友邀请码</view>
+      <view class="card-note">若注册时未通过链接进入，可在此补填（仅首次绑定有效）。</view>
+      <view class="bind-row">
+        <input
+          class="bind-input"
+          value="{{bindCode}}"
+          maxlength="32"
+          placeholder="输入邀请码"
+          bindinput="onBindInput"
+        />
+        <view
+          class="btn-copy {{bindSubmitting ? 'disabled' : ''}}"
+          bindtap="submitBindCode"
+        >{{bindSubmitting ? '…' : '绑定'}}</view>
+      </view>
+    </glass-card>
+
+    <glass-card className="card card-rules">
+      <view class="card-title">阅读点说明</view>
+      <view class="rules">
+        <text>首次打开「评述 / 见证 / 原文」各消耗 1 点；重复进入同一 Tab 不重复扣。</text>
+      </view>
+      <view class="card-title share-title">邀请好友</view>
+      <view class="rules share-notice">小程序未认证前无法使用分享卡片，请复制邀请码发给好友。</view>
+      <view
+        class="btn-share {{loading || !inviteCode ? 'disabled' : ''}}"
+        bindtap="onInviteFriends"
+      >复制邀请码邀请好友</view>
+    </glass-card>
+  </block>
+
+  <view class="hint">好友在「邀请加入」页登录并完成首次注册后，邀请生效。</view>
+</view>

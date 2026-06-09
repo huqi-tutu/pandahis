@@ -1,0 +1,44 @@
+# 生产环境：SPRING_PROFILES_ACTIVE=prod 后 java -jar 即可（数据源默认见下方 MySQL）
+# 仍可用环境变量 SPRING_DATASOURCE_* 覆盖下方配置（可选）
+# 首次部署请在 MySQL 中手工执行 schema（见 docs/DEPLOY.md），勿依赖 spring.sql.init
+
+spring:
+  datasource:
+    url: jdbc:mysql://49.235.165.220:3306/histomap?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&useSSL=false
+    username: histomap
+    password: change-me
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      connection-timeout: 30000
+      idle-timeout: 120000
+      max-lifetime: 580000
+      keepalive-time: 120000
+      maximum-pool-size: 15
+      minimum-idle: 2
+  sql:
+    init:
+      mode: never
+  # 工程未使用 Redis；排除后可避免无 Redis 实例时启动失败或多余连接
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration
+      - org.springframework.boot.autoconfigure.data.redis.RedisRepositoriesAutoConfiguration
+
+histomap:
+  civ-tab:
+    image-cache-bust: "2025052401"
+
+  wechat:
+    miniapp:
+      app-id: ${HISTOMAP_WECHAT_MINIAPP_APP_ID:wx130cbdfbc6c4b1ab}
+      app-secret: ${HISTOMAP_WECHAT_MINIAPP_APP_SECRET:bd3eaaab354744ccdfda38dee822920a}
+  auth:
+    jwt:
+      secret: ${HISTOMAP_AUTH_JWT_SECRET:}
+      expires-days: ${HISTOMAP_AUTH_JWT_EXPIRES_DAYS:7}
+    dev-bypass-token: ${HISTOMAP_AUTH_DEV_BYPASS_TOKEN:}
+
+logging:
+  level:
+    root: INFO
+    com.pandahis: INFO

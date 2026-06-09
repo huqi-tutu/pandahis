@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "box-relics.schema.json",
+  "type": "object",
+  "required": ["items"],
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name"],
+        "properties": {
+          "name": { "type": "string" },
+          "imageUrl": { "type": "string" },
+          "description": { "type": "string" },
+          "museum": { "type": "string" }
+        }
+      }
+    }
+  }
+}
+

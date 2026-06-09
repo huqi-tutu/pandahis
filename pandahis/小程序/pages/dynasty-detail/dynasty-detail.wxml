@@ -1,0 +1,304 @@
+<view class="page-shell">
+
+  <!-- 时间轴刻度模板（内联 + 固定顶栏复用） -->
+  <template name="dynSwimAxis">
+    <view class="dyn-swim-axis">
+      <view class="dyn-swim-axis-inner">
+        <block wx:for="{{ticks}}" wx:key="label">
+          <text
+            class="dyn-swim-axis-tick {{item.edgeStart ? 'dyn-swim-axis-tick--edge-start' : ''}}"
+            style="left: {{item.left}};"
+          >{{item.label}}</text>
+        </block>
+        <text class="dyn-swim-axis-tick dyn-swim-axis-tick--end" style="left:100%;">{{endLabel}}</text>
+      </view>
+    </view>
+  </template>
+
+  <!-- 导航栏 -->
+  <proto-nav title="{{dynasty.title}}" show-back="{{true}}" />
+
+  <!-- 并发政权 tab 栏 -->
+  <view class="unit-civ-tabs" style="top: {{headerPadPx}}px;">
+    <scroll-view class="unit-region-scroll" scroll-x show-scrollbar="{{false}}" enhanced>
+      <view class="unit-region-inner">
+        <view
+          wx:for="{{dynasty.concurrentItems}}"
+          wx:key="*this"
+          class="unit-civ-tab {{index === 0 ? 'active' : ''}}"
+        >{{item}}</view>
+      </view>
+    </scroll-view>
+    <view class="unit-civ-fade"></view>
+  </view>
+
+  <!-- 滚动吸顶后：固定时间轴（与泳道横向同步） -->
+  <view
+    wx:if="{{axisPinned && dynasty}}"
+    class="dyn-axis-fixed"
+    style="top: {{scrollTop}}px;"
+  >
+    <scroll-view
+      class="dyn-swim-hscroll dyn-axis-fixed-hscroll"
+      scroll-x
+      show-scrollbar="{{false}}"
+      scroll-left="{{swimScrollLeft}}"
+      bindscroll="onAxisHScroll"
+    >
+      <view class="dyn-axis-fixed-sheet">
+        <template is="dynSwimAxis" data="{{ticks: dynasty.ticks, endLabel: dynasty.endLabel}}" />
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 主滚动区 -->
+  <scroll-view
+    class="dynasty-scroll"
+    scroll-y enhanced show-scrollbar="{{false}}"
+    style="top: {{scrollTop}}px;"
+    scroll-top="{{pageScrollTop}}"
+    bindscroll="onDynastyScroll"
+  >
+
+    <!-- 英雄区 -->
+    <view class="unit-hero">
+      <view class="unit-title-line">
+
+        <!-- 左：朝代大标题 -->
+        <text class="unit-title">{{dynasty.title}}</text>
+
+        <!-- 中：文明·年份 + 下一朝代，高度与标题对齐 -->
+        <view class="unit-title-meta-stack">
+          <view class="unit-inline-meta">
+            <text class="unit-title-path">{{dynasty.civ}}</text>
+            <text class="unit-inline-sep">·</text>
+            <text class="unit-title-range">{{dynasty.range}}</text>
+          </view>
+          <view class="unit-hero-next-dynasty" bindtap="goNext">
+            <text class="unit-next-text">下一朝代：{{dynasty.next.title}} ›</text>
+          </view>
+        </view>
+
+        <view class="unit-title-spacer"></view>
+
+        <!-- 右：操作按钮 -->
+        <view class="unit-hero-actions">
+          <view class="unit-action-btn" bindtap="toggleFavorite">
+            <image
+              class="unit-action-img"
+              src="/配图/icons/{{isFavorite ? 'shoucangB' : 'shoucangA'}}.png"
+              mode="aspectFit"
+            />
+          </view>
+          <view class="unit-action-btn" bindtap="onShare">
+            <image
+              class="unit-action-img"
+              src="/配图/icons/fenxiang.png"
+              mode="aspectFit"
+            />
+          </view>
+        </view>
+
+      </view>
+    </view>
+
+    <!-- 简介 -->
+    <view class="unit-intro">
+      <text class="unit-intro-text">{{dynasty.intro}}<text class="unit-intro-more">全部›</text></text>
+    </view>
+
+    <!-- ── 泳道矩阵 ── -->
+    <view class="dyn-swim-matrix">
+      <view class="dyn-swim-board">
+        <!-- 横向滚动容器 -->
+        <scroll-view
+          class="dyn-swim-hscroll"
+          scroll-x show-scrollbar="{{false}}"
+          scroll-left="{{swimScrollLeft}}"
+          bindscroll="onSwimHScroll"
+        >
+          <view class="dyn-swim-sheet">
+
+            <!-- 内联时间轴（吸顶前可见，吸顶后占位） -->
+            <view class="dyn-swim-stick-head {{axisPinned ? 'is-placeholder' : ''}}">
+              <template is="dynSwimAxis" data="{{ticks: dynasty.ticks, endLabel: dynasty.endLabel}}" />
+            </view>
+
+            <!-- 泳道列表 -->
+            <view class="dyn-swim-lanes">
+              <view
+                wx:for="{{dynasty.lanes}}"
+                wx:key="label"
+                class="dyn-swim-lane lane-{{index}}"
+                style="border-left-color: {{item.borderColor}};"
+              >
+                <!-- 纵向标签 -->
+                <view class="dyn-swim-lane-head">
+                  <text class="dyn-swim-lane-head-label">{{item.label}}</text>
+                </view>
+                <!-- 士臣泳道：平面紧凑，虚线 + 姓名 chip -->
+                <view wx:if="{{item.layout === 'shichen'}}" class="dyn-swim-track">
+                  <view class="dyn-swim-track-grid"></view>
+                  <view class="dyn-swim-stack dyn-swim-stack--shichen">
+                    <view
+                      wx:for="{{item.collapsedRows}}"
+                      wx:for-item="row"
+                      wx:key="index"
+                      class="dyn-swim-row"
+                    >
+                      <view
+                        wx:for="{{row}}"
+                        wx:for-item="bar"
+                        wx:key="title"
+                        class="dyn-shichen-unit"
+                        style="left: {{bar.unitLeft}}; width: calc({{bar.unitWidth}} - 2rpx); z-index: {{bar.zIndex || 10}};"
+                        bindtap="onBarTap"
+                        data-box-key="{{bar.boxKey}}"
+                        data-box-title="{{bar.boxTitle}}"
+                        data-title="{{bar.title}}"
+                      >
+                        <view class="dyn-shichen-line dyn-shichen-line--left" style="width: {{bar.lineLeftW}};"></view>
+                        <view
+                          class="dyn-shichen-chip dyn-shichen-chip--{{bar.type || 'default'}}"
+                          style="left: {{bar.chipLeft}};"
+                        >{{bar.title}}</view>
+                        <view
+                          class="dyn-shichen-line dyn-shichen-line--right"
+                          style="left: {{bar.lineRightL}}; width: {{bar.lineRightW}};"
+                        ></view>
+                      </view>
+                    </view>
+                  </view>
+                </view>
+
+                <!-- 连续型泳道：虚线+胶囊单元布局（复用士臣结构） -->
+                <view wx:elif="{{item.layout === 'continuous'}}" class="dyn-swim-track">
+                  <view class="dyn-swim-track-grid"></view>
+                  <view class="dyn-swim-stack dyn-swim-stack--continuous">
+                    <view
+                      wx:for="{{item.collapsedRows}}"
+                      wx:for-item="row"
+                      wx:key="index"
+                      class="dyn-swim-row"
+                    >
+                      <view
+                        wx:for="{{row}}"
+                        wx:for-item="bar"
+                        wx:key="title"
+                        class="dyn-continuous-unit"
+                        style="left: {{bar.unitLeft}}; width: calc({{bar.unitWidth}} - 2rpx); z-index: {{bar.zIndex || 10}};"
+                        bindtap="onBarTap"
+                        data-box-key="{{bar.boxKey}}"
+                        data-box-title="{{bar.boxTitle}}"
+                        data-title="{{bar.title}}"
+                      >
+                        <view class="dyn-continuous-line dyn-continuous-line--left" style="width: {{bar.lineLeftW}};"></view>
+                        <view
+                          class="dyn-continuous-chip dyn-continuous-chip--{{bar.priority}}"
+                          style="left: {{bar.chipLeft}}; width: {{bar.chipWidth}};"
+                        >{{bar.title}}</view>
+                        <view
+                          class="dyn-continuous-line dyn-continuous-line--right"
+                          style="left: {{bar.lineRightL}}; width: {{bar.lineRightW}};"
+                        ></view>
+                      </view>
+                    </view>
+
+                    <!-- 超出10条 -->
+                    <view wx:if="{{item.hasMore}}" class="dyn-swim-row">
+                      <view
+                        class="dyn-swim-more-btn"
+                        style="left: {{item.moreBarLeft}}; width: calc({{item.moreBarWidth}} - 4rpx);"
+                        bindtap="showMoreOverlay"
+                        data-lane="{{index}}"
+                        data-label="{{item.label}}"
+                      >
+                        <text class="dyn-swim-more-text">+{{item.moreCount}} ›</text>
+                      </view>
+                    </view>
+
+                  </view>
+
+                </view>
+
+                <!-- 孤立型泳道：纯胶囊，无虚线 -->
+                <view wx:else class="dyn-swim-track">
+                  <view class="dyn-swim-track-grid"></view>
+                  <view class="dyn-swim-stack">
+                    <view
+                      wx:for="{{item.collapsedRows}}"
+                      wx:for-item="row"
+                      wx:key="index"
+                      class="dyn-swim-row"
+                    >
+                      <view
+                        wx:for="{{row}}"
+                        wx:for-item="bar"
+                        wx:key="title"
+                        class="dyn-swim-bar dyn-swim-bar--isolated dyn-swim-bar--default dyn-swim-bar--{{bar.priority}}"
+                        style="left: {{bar.left}}; width: calc({{bar.width}} - 4rpx);"
+                        bindtap="onBarTap"
+                        data-box-key="{{bar.boxKey}}"
+                        data-box-title="{{bar.boxTitle}}"
+                        data-title="{{bar.title}}"
+                      >{{bar.title}}</view>
+                    </view>
+
+                    <!-- 超出10条 -->
+                    <view wx:if="{{item.hasMore}}" class="dyn-swim-row">
+                      <view
+                        class="dyn-swim-more-btn"
+                        style="left: {{item.moreBarLeft}}; width: calc({{item.moreBarWidth}} - 4rpx);"
+                        bindtap="showMoreOverlay"
+                        data-lane="{{index}}"
+                        data-label="{{item.label}}"
+                      >
+                        <text class="dyn-swim-more-text">+{{item.moreCount}} ›</text>
+                      </view>
+                    </view>
+
+                  </view>
+
+                </view>
+              </view>
+            </view>
+
+          </view>
+        </scroll-view>
+      </view>
+    </view>
+
+    <view style="height: 120rpx;"></view>
+  </scroll-view>
+
+  <!-- ── 超出史略浮层（底部抽屉） ── -->
+  <view wx:if="{{overlayVisible}}" class="more-overlay-backdrop" bindtap="hideOverlay">
+    <view class="more-overlay-sheet" catchtap="">
+
+      <view class="more-overlay-handle"></view>
+
+      <view class="more-overlay-header">
+        <text class="more-overlay-title">{{overlayLabel}} · 更多史略</text>
+        <view class="more-overlay-close" bindtap="hideOverlay">
+          <text class="more-overlay-close-icon">✕</text>
+        </view>
+      </view>
+
+      <scroll-view class="more-overlay-list" scroll-y enhanced show-scrollbar="{{false}}">
+        <view
+          wx:for="{{overlayBars}}"
+          wx:key="title"
+          class="more-overlay-item"
+        >
+          <view class="more-overlay-item-left">
+            <view class="more-overlay-dot more-overlay-dot--{{item.type || 'default'}}"></view>
+            <text class="more-overlay-item-title">{{item.title}}</text>
+          </view>
+          <text class="more-overlay-item-range">{{item.timeRange}}</text>
+        </view>
+      </scroll-view>
+
+    </view>
+  </view>
+
+</view>

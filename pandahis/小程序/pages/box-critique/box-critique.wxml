@@ -1,0 +1,33 @@
+<view class="proto-shell">
+  <proto-nav title="{{title}} · 历代评述" show-back="{{true}}"></proto-nav>
+
+  <view class="box-page-body" style="padding-top: {{headerPadPx}}px;">
+    <scroll-view scroll-y class="list-scroll" enhanced>
+      <view wx:for="{{list}}" wx:key="author" wx:for-index="idx" class="crit-card" bindtap="openItem" data-idx="{{idx}}">
+        <!-- 头部：头像 + 作者 + 年代 -->
+        <view class="crit-head">
+          <view class="crit-avatar" style="background: {{item.color}};">
+            <text class="crit-avatar-text">{{item.avatar}}</text>
+          </view>
+          <view class="crit-meta">
+            <text class="crit-author">{{item.title}}</text>
+            <text class="crit-era muted">{{item.author}} · {{item.era}} · {{item.book}}</text>
+          </view>
+          <text class="chev muted">›</text>
+        </view>
+
+        <!-- 分割线 -->
+        <view class="crit-divider"></view>
+
+        <!-- 简介 -->
+        <text class="crit-body">{{item.summary}}</text>
+      </view>
+
+      <view wx:if="{{list.length === 0}}" class="tab-empty">
+        <text class="tab-empty-text">暂无评述数据</text>
+      </view>
+
+      <view style="height: 120rpx;"></view>
+    </scroll-view>
+  </view>
+</view>

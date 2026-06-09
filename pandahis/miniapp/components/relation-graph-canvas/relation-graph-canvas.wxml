@@ -1,0 +1,12 @@
+<view class="wrap">
+  <canvas
+    type="2d"
+    id="relGraphCanvas"
+    class="canvas-el"
+    bindtouchstart="onTouchStart"
+    bindtouchmove="onTouchMove"
+    bindtouchend="onTouchEnd"
+    bindtouchcancel="onTouchEnd"
+  ></canvas>
+  <view wx:if="{{hint}}" class="hint text3">{{hint}}</view>
+</view>

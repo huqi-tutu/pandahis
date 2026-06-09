@@ -1,0 +1,41 @@
+@import '../../styles/atlas.wxss';
+@import '../critique-detail/critique-detail.wxss';
+
+.val-row {
+  display: flex;
+  align-items: center;
+  gap: 10rpx;
+}
+
+.role-badge {
+  font-size: 20rpx;
+  font-weight: 600;
+  padding: 4rpx 14rpx;
+  border-radius: 999rpx;
+  flex-shrink: 0;
+}
+
+.val-small {
+  font-size: 22rpx;
+  max-width: 400rpx;
+  text-align: right;
+  line-height: 1.5;
+}
+
+.empty-state {
+  padding: 120rpx 48rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16rpx;
+}
+
+.empty-icon {
+  font-size: 80rpx;
+  opacity: 0.3;
+}
+
+.empty-text {
+  font-size: 28rpx;
+  color: #8A8A8A;
+}

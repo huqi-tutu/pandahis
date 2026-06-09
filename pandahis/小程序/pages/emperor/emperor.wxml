@@ -1,0 +1,44 @@
+<!--pages/emperor/emperor.wxml-->
+<view class="container">
+  <view class="header">
+    <text class="title">👑 帝王列表</text>
+    <text class="subtitle">{{civilizationName}}</text>
+  </view>
+
+  <view class="content">
+    <block wx:if="{{loading}}">
+      <view class="loading">
+        <text>加载中...</text>
+      </view>
+    </block>
+    
+    <block wx:elif="{{emperors.length === 0}}">
+      <view class="empty">
+        <text>该文明的帝王数据开发中...</text>
+      </view>
+    </block>
+    
+    <block wx:else>
+      <view class="emperor-list">
+        <view 
+          wx:for="{{emperors}}" 
+          wx:key="id"
+          class="emperor-item"
+          data-index="{{index}}"
+          bindtap="onEmperorTap"
+        >
+          <view class="emperor-header">
+            <text class="emperor-name">{{item.name}}</text>
+            <text class="emperor-dynasty">{{item.dynasty}}</text>
+          </view>
+          <view class="emperor-info">
+            <text class="emperor-reign">{{item.reign}}</text>
+            <text class="emperor-tags" wx:if="{{item.tags}}">
+              <text wx:for="{{item.tags}}" wx:key="*this" class="tag">{{item}}</text>
+            </text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

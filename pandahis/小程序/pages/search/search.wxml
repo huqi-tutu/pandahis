@@ -1,0 +1,56 @@
+<view class="page-shell">
+  <proto-nav title="搜索" show-back="{{false}}"></proto-nav>
+
+  <view class="search-body tab-page-safe" style="padding-top: {{headerPadPx}}px;">
+
+    <!-- 搜索框 -->
+    <view class="search-bar-wrap">
+      <view class="search-bar">
+        <text class="search-ico">⌕</text>
+        <input
+          class="search-input"
+          placeholder="年代 / 人物 / 事件"
+          placeholder-class="search-placeholder"
+          confirm-type="search"
+          bindconfirm="onConfirm"
+          bindinput="onInput"
+          value="{{keyword}}"
+          focus="{{autoFocus}}"
+        />
+        <text wx:if="{{keyword}}" class="search-clear" bindtap="clearInput">✕</text>
+      </view>
+    </view>
+
+    <!-- 热门搜索 -->
+    <view class="search-section">
+      <text class="search-section-title">热门搜索</text>
+      <view class="search-tags">
+        <view
+          wx:for="{{hot}}"
+          wx:key="kw"
+          class="search-tag {{item.highlight ? 'search-tag--hot' : ''}}"
+          bindtap="tapHot"
+          data-kw="{{item.kw}}"
+        >{{item.kw}}</view>
+      </view>
+    </view>
+
+    <!-- 历史记录 -->
+    <view class="search-section" wx:if="{{history.length > 0}}">
+      <text class="search-section-title">历史记录</text>
+      <view class="search-history">
+        <view
+          wx:for="{{history}}"
+          wx:key="*this"
+          class="search-history-item"
+          bindtap="tapHist"
+          data-kw="{{item}}"
+        >
+          <text class="search-history-text">{{item}}</text>
+          <text class="search-history-del" catchtap="delHist" data-kw="{{item}}">✕</text>
+        </view>
+      </view>
+    </view>
+
+  </view>
+</view>

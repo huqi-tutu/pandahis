@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "box-detail.schema.json",
+  "type": "object",
+  "required": ["detailMd", "originalRef"],
+  "properties": {
+    "detailMd": { "type": "string" },
+    "originalRef": {
+      "anyOf": [
+        { "type": "null" },
+        {
+          "type": "object",
+          "properties": {
+            "title": { "type": "string" },
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "work": { "type": "string" },
+                  "chapter": { "type": "string" },
+                  "url": { "type": "string" }
+                }
+              }
+            }
+          },
+          "additionalProperties": true
+        }
+      ]
+    }
+  }
+}
+

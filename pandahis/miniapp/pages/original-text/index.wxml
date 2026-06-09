@@ -1,0 +1,31 @@
+<navigation-bar title="历史著作原文" back="{{true}}" color="black" background="transparent"></navigation-bar>
+
+<scroll-view class="page" scroll-y>
+  <empty-state wx:if="{{empty}}" type="search" title="暂无原文引用" desc="该盒子在服务端未配置 originalRef。"></empty-state>
+
+  <view wx:else class="ref-root">
+    <view class="ref-hero">
+      <view class="ref-hero-icon">📜</view>
+      <view class="ref-hero-title">{{refTitle}}</view>
+      <view class="ref-hero-sub">以下为史料出处与摘录，便于对照阅读</view>
+    </view>
+
+    <block wx:for="{{refItems}}" wx:key="index">
+      <view class="ref-card">
+        <view class="ref-card-head" wx:if="{{item.work || item.chapter}}">
+          <view class="ref-chip" wx:if="{{item.work}}">{{item.work}}</view>
+          <view class="ref-chip ref-chip-muted" wx:if="{{item.chapter}}">{{item.chapter}}</view>
+        </view>
+        <view class="ref-excerpt" wx:if="{{item.excerpt}}">{{item.excerpt}}</view>
+        <view class="ref-actions" wx:if="{{item.url}}">
+          <view class="ref-btn" bindtap="copyLink" data-url="{{item.url}}">复制链接</view>
+        </view>
+      </view>
+    </block>
+
+    <view wx:if="{{refFallback}}" class="ref-card ref-card-plain">
+      <view class="ref-fallback-label">原文内容</view>
+      <view class="ref-fallback-body">{{refFallback}}</view>
+    </view>
+  </view>
+</scroll-view>

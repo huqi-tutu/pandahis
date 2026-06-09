@@ -1,0 +1,158 @@
+<!--
+  pages/index/index.wxml
+  历史图谱首页 · 时间轴固定 + 文明列横向可滑
+-->
+<view class="page">
+
+  <view class="main-row">
+
+    <!-- ══ 左：固定时间轴（不随横向滑动） ══ -->
+    <view class="time-panel">
+
+      <!-- 时间列标题头，与右侧文明列标题等高 -->
+      <view class="time-panel-hd">时间</view>
+
+      <!-- 纵向滚动，由 JS 同步右侧滚动位置 -->
+      <scroll-view
+        class="time-panel-sc"
+        scroll-y="true"
+        scroll-top="{{timeScrollTop}}"
+        scroll-with-animation="{{false}}"
+        enhanced="true"
+        show-scrollbar="false"
+      >
+        <view class="time-cells-wrap">
+          <view
+            wx:for="{{timeCells}}"
+            wx:key="id"
+            class="time-cell"
+            style="height: {{item.height}}rpx;"
+          >
+            <!-- 刻度：─ 年份 ─，上下左右居中 -->
+            <view class="time-row">
+              <view class="tick-h"></view>
+              <text class="year-label">{{item.yearLabel}}</text>
+              <view class="tick-h"></view>
+            </view>
+          </view>
+          <!-- 底部留白与右侧保持一致 -->
+          <view class="time-bottom-pad"></view>
+        </view>
+      </scroll-view>
+
+    </view><!-- /time-panel -->
+
+    <!-- ══ 右：可横向滑动的文明列 ══ -->
+    <scroll-view
+      class="civ-h-scroll"
+      scroll-x="true"
+      enhanced="true"
+      show-scrollbar="false"
+    >
+      <view class="civ-wide">
+
+        <!-- 文明列标题（随横滑移动） -->
+        <view class="civ-header">
+          <view class="col-h china-h">中华</view>
+          <view class="col-h asia-h">亚洲</view>
+          <view class="col-h europe-h">欧洲</view>
+          <view class="col-h americas-h">美洲</view>
+          <view class="col-h africa-h">非洲</view>
+        </view>
+
+        <!-- 文明数据：纵向滚动，触发时间轴同步 -->
+        <scroll-view
+          class="civ-v-scroll"
+          scroll-y="true"
+          enhanced="true"
+          show-scrollbar="false"
+          bind:scroll="onCivScroll"
+        >
+
+          <view wx:if="{{loading}}" class="loading-wrap">
+            <view class="loading-dot"></view>
+            <view class="loading-dot loading-dot-2"></view>
+            <view class="loading-dot loading-dot-3"></view>
+          </view>
+
+          <view wx:else class="cards-wrap">
+            <view
+              wx:for="{{timeCells}}"
+              wx:key="id"
+              class="civ-row"
+              style="height: {{item.height}}rpx; background: linear-gradient(118deg, {{item.dynastyBg}} 0%, rgba(12,12,16,0) 55%);"
+            >
+              <!-- ① 中华 -->
+              <view class="col-data col-china" catchtap="onCellTap" data-cell="{{item.china}}" data-type="china">
+                <view class="chip-china">
+                  <text class="chip-title" style="color: {{item.dynastyColor}};">{{item.dynasty}} · {{item.china.name}}</text>
+                  <text class="chip-reign">在位 {{item.china.reign}} 年</text>
+                </view>
+              </view>
+
+              <!-- ② 亚洲 -->
+              <view class="col-data" catchtap="onCellTap" data-cell="{{item.asia}}" data-type="asia">
+                <view wx:if="{{item.asia && !item.asiaCont}}" class="chip-ext" style="{{item.asiaExtBg}}">
+                  <text class="chip-ext-name asia-name">{{item.asia.name}}</text>
+                </view>
+              </view>
+
+              <!-- ③ 欧洲 -->
+              <view class="col-data" catchtap="onCellTap" data-cell="{{item.europe}}" data-type="europe">
+                <view wx:if="{{item.europe && !item.europeCont}}" class="chip-ext" style="{{item.europeExtBg}}">
+                  <text class="chip-ext-name europe-name">{{item.europe.name}}</text>
+                </view>
+              </view>
+
+              <!-- ④ 美洲 -->
+              <view class="col-data" catchtap="onCellTap" data-cell="{{item.americas}}" data-type="americas">
+                <view wx:if="{{item.americas && !item.americasCont}}" class="chip-ext" style="{{item.americasExtBg}}">
+                  <text class="chip-ext-name americas-name">{{item.americas.name}}</text>
+                </view>
+              </view>
+
+              <!-- ⑤ 非洲 -->
+              <view class="col-data" catchtap="onCellTap" data-cell="{{item.africa}}" data-type="africa">
+                <view wx:if="{{item.africa && !item.africaCont}}" class="chip-ext" style="{{item.africaExtBg}}">
+                  <text class="chip-ext-name africa-name">{{item.africa.name}}</text>
+                </view>
+              </view>
+
+            </view><!-- /civ-row -->
+
+            <!-- 时间轴末端 -->
+            <view class="timeline-end">
+              <view class="end-line"></view>
+              <text class="end-text">1912</text>
+              <text class="end-sub">清帝逊位 · 文明图谱终章</text>
+            </view>
+
+          </view>
+        </scroll-view><!-- /civ-v-scroll -->
+
+      </view><!-- /civ-wide -->
+    </scroll-view><!-- /civ-h-scroll -->
+
+  </view><!-- /main-row -->
+
+  <!-- ── 底部导航 ── -->
+  <view class="bottom-nav">
+    <view class="nav-item active">
+      <text class="nav-icon">◈</text>
+      <text class="nav-label">图谱</text>
+    </view>
+    <view class="nav-item">
+      <text class="nav-icon">◎</text>
+      <text class="nav-label">探索</text>
+    </view>
+    <view class="nav-item">
+      <text class="nav-icon">☰</text>
+      <text class="nav-label">书架</text>
+    </view>
+    <view class="nav-item">
+      <text class="nav-icon">◉</text>
+      <text class="nav-label">我的</text>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,316 @@
+@import '../../native-utils/design-tokens.scss';
+
+$outline: $divider;
+$on-surface-variant: $text-caption;
+
+.page-search {
+  min-height: 100vh;
+  @include parchment-page-bg;
+  @include page-tab-safe-bottom;
+  color: $on-surface;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* —— TopAppBar —— */
+.search-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  flex-shrink: 0;
+  background: $bg;
+  border-bottom: 1rpx solid $divider;
+  box-shadow: 0 2rpx 12rpx rgba(36, 25, 23, 0.04);
+  /* padding-top / 左右留白由 onLoad 按胶囊位置写入 inline style */
+}
+
+.topbar-row {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+  min-height: 88rpx;
+  padding: 8rpx 48rpx 12rpx;
+  box-sizing: border-box;
+}
+
+.btn-icon {
+  flex-shrink: 0;
+  width: 72rpx;
+  height: 72rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999rpx;
+}
+
+.tap:active {
+  opacity: 0.72;
+}
+
+.search-field {
+  flex: 1;
+  min-width: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid $outline;
+  padding-bottom: 4rpx;
+}
+
+.search-underline-input {
+  flex: 1;
+  min-width: 0;
+  padding: 8rpx 56rpx 8rpx 0;
+  font-size: 36rpx;
+  font-weight: 500;
+  line-height: 1.3;
+  color: $on-surface;
+  background: transparent;
+}
+
+.search-placeholder {
+  color: rgba(87, 66, 63, 0.55);
+  font-weight: 400;
+}
+
+.btn-clear {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48rpx;
+  height: 48rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-back {
+  width: 20rpx;
+  height: 20rpx;
+  border-left: 4rpx solid $primary;
+  border-bottom: 4rpx solid $primary;
+  transform: rotate(45deg);
+  margin-left: 8rpx;
+}
+
+.icon-close {
+  width: 28rpx;
+  height: 28rpx;
+  position: relative;
+  opacity: 0.55;
+}
+
+.icon-close::before,
+.icon-close::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 28rpx;
+  height: 3rpx;
+  background: $on-surface-variant;
+  border-radius: 2rpx;
+}
+
+.icon-close::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.icon-close::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.icon-search {
+  width: 32rpx;
+  height: 32rpx;
+  border: 4rpx solid $primary;
+  border-radius: 999rpx;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.icon-search::after {
+  content: '';
+  position: absolute;
+  width: 14rpx;
+  height: 4rpx;
+  background: $primary;
+  border-radius: 2rpx;
+  right: -10rpx;
+  bottom: -4rpx;
+  transform: rotate(45deg);
+}
+
+/* —— 主内容区 —— */
+.body-scroll {
+  flex: 1;
+  height: 0;
+  padding: 32rpx 48rpx 24rpx;
+  box-sizing: border-box;
+}
+
+.body-scroll--results {
+  padding-top: 24rpx;
+}
+
+.section {
+  margin-bottom: 64rpx;
+}
+
+.section-label {
+  font-size: 24rpx;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: $on-surface-variant;
+  margin-bottom: 24rpx;
+}
+
+.hot-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24rpx 32rpx;
+  align-items: center;
+}
+
+.hot-item {
+  font-size: 28rpx;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.hot-item--pill {
+  padding: 12rpx 32rpx;
+  border-radius: 999rpx;
+  background: $surface-container-low;
+  color: $primary;
+  border: 1rpx solid $divider;
+}
+
+.hot-item--plain {
+  padding: 12rpx 16rpx;
+  color: $on-surface-variant;
+}
+
+.history-list {
+  border-top: 1rpx solid transparent;
+}
+
+.history-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32rpx 0;
+  border-bottom: 1rpx solid $outline-variant;
+}
+
+.history-keyword {
+  flex: 1;
+  font-size: 30rpx;
+  color: $on-surface;
+  line-height: 1.4;
+  padding-right: 24rpx;
+}
+
+.history-del-icon {
+  font-size: 44rpx;
+  line-height: 1;
+  color: rgba(87, 66, 63, 0.45);
+  font-weight: 300;
+}
+
+.hint-empty {
+  padding: 48rpx 0;
+  text-align: center;
+  font-size: 28rpx;
+  color: $on-surface-variant;
+}
+
+.result-loading {
+  padding: 80rpx 0;
+  text-align: center;
+  font-size: 28rpx;
+  color: $on-surface-variant;
+}
+
+.result-empty {
+  padding: 24rpx 0;
+}
+
+.result-summary {
+  margin-bottom: 32rpx;
+}
+
+.result-summary-text {
+  font-size: 20rpx;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: $on-surface-variant;
+}
+
+.result-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* museum-label-border + red-accent-line */
+.museum-card {
+  position: relative;
+  margin-bottom: 0;
+  padding: 24rpx;
+  background: #ffffff;
+  border: 1rpx solid rgba(138, 113, 110, 0.15);
+  border-left: 6rpx solid $primary;
+  box-sizing: border-box;
+}
+
+.museum-card::after {
+  content: '';
+  position: absolute;
+  top: 8rpx;
+  left: 8rpx;
+  right: 8rpx;
+  bottom: 8rpx;
+  border: 1rpx solid rgba(138, 113, 110, 0.1);
+  pointer-events: none;
+}
+
+.museum-card:active {
+  box-shadow: 0 8rpx 24rpx rgba(36, 25, 23, 0.08);
+}
+
+.museum-card-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8rpx;
+}
+
+.result-path {
+  font-size: 18rpx;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: rgba(87, 66, 63, 0.7);
+  line-height: 1.35;
+}
+
+.result-title {
+  font-size: 36rpx;
+  font-weight: 500;
+  line-height: 1.35;
+  color: $on-surface;
+}
+
+.result-snippet {
+  display: block;
+  font-size: 24rpx;
+  line-height: 1.65;
+  color: $on-surface-variant;
+  max-height: 3.3em;
+  overflow: hidden;
+  font-style: italic;
+}

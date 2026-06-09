@@ -1,0 +1,11 @@
+{
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "export:v3-png": "node scripts/export-v3-overview-png.mjs"
+  },
+  "dependencies": {
+    "playwright-core": "^1.49.0",
+    "sharp": "^0.33.0"
+  }
+}

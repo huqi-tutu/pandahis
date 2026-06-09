@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "unit-hero.schema.json",
+  "type": "object",
+  "required": ["unit", "categoryTips"],
+  "properties": {
+    "unit": {
+      "type": "object",
+      "required": ["id", "name", "crumbText", "startYear", "endYear", "durationYears", "summary", "cardImageUrl"],
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "dynastyName": { "type": "string" },
+        "crumbText": { "type": "string" },
+        "eraText": { "type": "string" },
+        "startYear": { "type": "integer" },
+        "endYear": { "type": "integer" },
+        "durationYears": { "type": "integer" },
+        "summary": { "type": "string" },
+        "cardImageUrl": { "type": "string" }
+      }
+    },
+    "categoryTips": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["key", "name", "desc"],
+        "properties": {
+          "key": { "type": "string" },
+          "name": { "type": "string" },
+          "desc": { "type": "string" }
+        }
+      }
+    }
+  }
+}
+

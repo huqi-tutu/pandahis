@@ -1,0 +1,10 @@
+{
+  "name": "importHistoryData",
+  "version": "1.0.0",
+  "description": "批量导入历史图谱帝王和政权数据",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "~2.6.3"
+  },
+  "timeout": 60
+}

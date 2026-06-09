@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "wx-login.schema.json",
+  "type": "object",
+  "required": ["accessToken", "expiresIn", "newUser", "inviteRecorded"],
+  "properties": {
+    "accessToken": { "type": "string" },
+    "expiresIn": { "type": "integer", "minimum": 1 },
+    "newUser": { "type": "boolean" },
+    "inviteRecorded": { "type": "boolean" }
+  }
+}

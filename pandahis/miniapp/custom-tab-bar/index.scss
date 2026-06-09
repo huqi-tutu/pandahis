@@ -1,0 +1,56 @@
+@import '../native-utils/design-tokens.scss';
+
+.tabbar-safe {
+  padding-bottom: env(safe-area-inset-bottom);
+  background: rgba(248, 246, 242, 0.92);
+  border-top: 1rpx solid $divider;
+}
+
+.tabbar {
+  height: 112rpx;
+  display: flex;
+  position: relative;
+}
+
+.item {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: $tab-inactive-text;
+}
+
+.icon-img {
+  width: 46rpx;
+  height: 46rpx;
+  opacity: 0.45;
+}
+
+.text {
+  margin-top: 8rpx;
+  font-size: 22rpx;
+  line-height: 22rpx;
+}
+
+.active {
+  color: $theme-primary;
+  font-weight: 800;
+}
+
+.active .icon-img {
+  opacity: 1;
+}
+
+.active::after {
+  content: '';
+  position: absolute;
+  bottom: 8rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8rpx;
+  height: 8rpx;
+  border-radius: 999rpx;
+  background: $theme-primary;
+}

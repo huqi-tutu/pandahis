@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/search/index",
+    "pages/search-result/index",
+    "pages/invite/index",
+    "pages/my/index",
+    "pages/unit-detail/index",
+    "pages/box-detail/index",
+    "pages/login/index",
+    "pages/invite-accept/index",
+    "pages/favorites/index",
+    "pages/footprints/index",
+    "pages/original-text/index",
+    "pages/settings/index",
+    "pages/about/index",
+    "pages/membership/index",
+    "pages/invite-assist/index",
+    "pages/profile-edit/index",
+    "pages/relation-detail/index",
+    "pages/critique-detail/index",
+    "pages/relic-detail/index"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "plugins": {
+    "WechatSI": {
+      "version": "0.3.6",
+      "provider": "wx069ba97219f66d99"
+    }
+  },
+  "tabBar": {
+    "custom": true,
+    "list": [
+      { "pagePath": "pages/home/index", "text": "图谱" },
+      { "pagePath": "pages/search/index", "text": "搜索" },
+      { "pagePath": "pages/membership/index", "text": "会员" },
+      { "pagePath": "pages/my/index", "text": "我的" }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,797 @@
+@import '../../styles/atlas.wxss';
+
+/* ══════════════════════════════════════════
+   视觉规范参考：
+   标题/朝代名  → Noto Serif SC / Songti SC / serif
+   正文/UI     → PingFang SC / -apple-system / sans-serif
+   时间/数字   → SF Mono / Menlo / monospace
+
+   页面底色  #F8F6F2
+   标题文字  #262626  (H1 48rpx 700 / H2 34rpx 700)
+   正文     #6A6A6A  (Body 24rpx 400)
+   辅助文字  #8A8A8A  (Caption 22rpx 500)
+   时间标注  #B0A89E  (Caption2 20rpx / 等宽)
+   主题色   #4A3F3F
+   卡片底   #FFFFFF
+   分割线   #EDEAE6
+══════════════════════════════════════════ */
+
+.page-shell {
+  background: #F8F6F2;
+  min-height: 100vh;
+}
+
+/* ─────────────────────────────────────
+   并发政权 Tab 栏
+───────────────────────────────────── */
+.unit-civ-tabs {
+  position: fixed;
+  left: 0; right: 0;
+  z-index: 90;
+  background: rgba(248, 246, 242, 0.96);
+  border-bottom: 1rpx solid #EDEAE6;
+}
+
+.unit-region-scroll { width: 100%; }
+
+.unit-region-inner {
+  display: inline-flex;
+  gap: 8rpx;
+  padding: 12rpx 24rpx 12rpx;
+  box-sizing: border-box;
+}
+
+.unit-civ-tab {
+  flex-shrink: 0;
+  height: 48rpx;
+  padding: 0 20rpx;
+  border-radius: 999rpx;
+  display: inline-flex;
+  align-items: center;
+  font-family: 'PingFang SC', -apple-system, sans-serif;
+  font-size: 22rpx;
+  font-weight: 500;
+  color: #8A8A8A;
+  background: #EEECEA;
+  letter-spacing: 0.5rpx;
+  border: 1rpx solid #EDEAE6;
+}
+
+.unit-civ-tab.active {
+  background: rgba(74, 63, 63, 0.10);
+  color: #4A3F3F;
+  font-weight: 600;
+  border-color: rgba(74, 63, 63, 0.20);
+}
+
+.unit-civ-fade {
+  position: absolute;
+  top: 0; right: 0; bottom: 0;
+  width: 40rpx;
+  background: linear-gradient(90deg, transparent, rgba(248, 246, 242, 0.92));
+  pointer-events: none;
+}
+
+/* ─────────────────────────────────────
+   主滚动区
+───────────────────────────────────── */
+.dynasty-scroll {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  overflow: hidden;
+}
+
+/* ─────────────────────────────────────
+   英雄区
+───────────────────────────────────── */
+.unit-hero {
+  padding: 24rpx 32rpx 0;
+}
+
+/* 外层：标题 + 右侧元数据 + 弹簧 + 按钮，单行水平排列 */
+.unit-title-line {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 16rpx;
+}
+
+/* H1：朝代大标题，衬线体 */
+.unit-title {
+  font-family: 'Noto Serif SC', 'Songti SC', serif;
+  font-size: 64rpx;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #262626;
+  letter-spacing: 3rpx;
+  flex-shrink: 0;
+}
+
+/* 右侧元数据列：文明·年份 + 下一朝代，高度与大标题对齐 */
+.unit-title-meta-stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 70rpx;   /* ≈ 64rpx × 1.1 行高 */
+  padding-top: 4rpx;
+}
+
+.unit-inline-meta {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6rpx;
+}
+
+/* Caption：文明名 */
+.unit-title-path {
+  font-family: 'PingFang SC', -apple-system, sans-serif;
+  font-size: 22rpx;
+  font-weight: 500;
+  color: #8A8A8A;
+}
+
+.unit-inline-sep {
+  font-size: 20rpx;
+  color: #B0A89E;
+}
+
+/* Caption2：年份区间，等宽字体 */
+.unit-title-range {
+  font-family: 'SF Mono', 'Menlo', monospace;
+  font-size: 20rpx;
+  font-weight: 500;
+  color: #B0A89E;
+}
+
+/* 下一朝代跳转 */
+.unit-hero-next-dynasty {
+  display: inline-flex;
+}
+
+.unit-next-text {
+  font-family: 'PingFang SC', -apple-system, sans-serif;
+  font-size: 20rpx;
+  font-weight: 400;
+  color: #8A8A8A;
+  letter-spacing: 0.3rpx;
+}
+
+.unit-title-spacer { flex: 1; }
+
+/* 操作按钮组 */
+.unit-hero-actions {
+  display: flex;
+  flex-direction: row;
+  gap: 8rpx;
+  flex-shrink: 0;
+  padding-top: 4rpx;
+}
+
+.unit-action-btn {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 12rpx;
+  background: rgba(74, 63, 63, 0.06);
+  border: 1rpx solid #EDEAE6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.unit-action-img {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+/* ─────────────────────────────────────
+   简介
+───────────────────────────────────── */
+.unit-intro {
+  padding: 16rpx 32rpx 20rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 4rpx;
+}
+
+.unit-intro-text {
+  font-family: 'PingFang SC', -apple-system, sans-serif;
+  font-size: 24rpx;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #6A6A6A;
+  letter-spacing: 0.3rpx;
+}
+
+.unit-intro-more {
+  font-family: 'PingFang SC', -apple-system, sans-serif;
+  font-size: 22rpx;
+  font-weight: 500;
+  color: #4A3F3F;
+  letter-spacing: 0.5rpx;
+}
+
+/* ═══════════════════════════════════════
+   泳道矩阵
+═══════════════════════════════════════ */
+.dyn-swim-matrix {
+  flex: 1;
+  min-height: 0;
+}
+
+.dyn-swim-board {
+  padding: 0 24rpx 24rpx;
+}
+
+.dyn-swim-hscroll {
+  width: 100%;
+  overflow: hidden;
+}
+
+.dyn-swim-sheet {
+  display: flex;
+  flex-direction: column;
+  gap: 24rpx;
+  width: 1440rpx;
+  padding-bottom: 16rpx;
+  box-sizing: border-box;
+}
+
+/* ── 时间轴 · 内联 / 吸顶占位 ── */
+.dyn-swim-stick-head {
+  flex-shrink: 0;
+  padding: 0 0 20rpx;
+}
+
+.dyn-swim-stick-head.is-placeholder {
+  visibility: hidden;
+}
+
+/* ── 吸顶固定时间轴（scroll-view 内 sticky 无效，改 fixed） ── */
+.dyn-axis-fixed {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 85;
+  padding: 8rpx 24rpx 12rpx;
+  background: rgba(248, 246, 242, 0.98);
+  border-bottom: 1rpx solid #EDEAE6;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+}
+
+.dyn-axis-fixed-hscroll {
+  width: 100%;
+}
+
+.dyn-axis-fixed-sheet {
+  width: 1440rpx;
+  box-sizing: border-box;
+}
+
+.dyn-swim-axis {
+  padding: 14rpx 16rpx 12rpx;
+  border-radius: 12rpx;
+  background: #FFFFFF;
+  box-shadow: 0 2rpx 8rpx rgba(0,0,0,0.06),
+              inset 0 0 0 1rpx #EDEAE6;
+}
+
+.dyn-swim-axis-inner {
+  position: relative;
+  width: 100%;
+  min-height: 44rpx;
+  border-radius: 8rpx;
+  background: rgba(237, 234, 230, 0.30);
+  box-sizing: border-box;
+}
+
+.dyn-swim-axis-inner::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 1rpx;
+  background: rgba(74, 63, 63, 0.15);
+}
+
+/* 时间轴刻度 — Caption2 等宽字体，仅10年整数 */
+.dyn-swim-axis-tick {
+  position: absolute;
+  bottom: 2rpx;
+  transform: translateX(-50%);
+  font-family: 'SF Mono', 'Menlo', monospace;
+  font-size: 16rpx;
+  font-weight: 600;
+  color: #B0A89E;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+/* 起始刻度（刚好在左边缘，translateX(0) 避免被截断） */
+.dyn-swim-axis-tick--edge-start {
+  left: 0 !important;
+  transform: translateX(0);
+}
+
+/* 结束刻度 */
+.dyn-swim-axis-tick--end {
+  transform: translateX(-100%);
+}
+
+.dyn-swim-axis-tick::before {
+  content: '';
+  position: absolute;
+  bottom: calc(100% + 4rpx);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1rpx;
+  height: 14rpx;
+  background: rgba(74, 63, 63, 0.12);
+}
+
+/* ── 泳道列表 ── */
+.dyn-swim-lanes {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+  flex-shrink: 0;
+}
+
+.dyn-swim-lane {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  border-radius: 12rpx;
+  overflow: hidden;
+  background: #FFFFFF;
+  border-left: 4rpx solid transparent;
+  box-shadow: 0 2rpx 8rpx rgba(0,0,0,0.06),
+              inset 0 0 0 1rpx #EDEAE6;
+  box-sizing: border-box;
+}
+
+/* ── 泳道竖向标签 ── */
+.dyn-swim-lane-head {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 60rpx;
+  min-width: 60rpx;
+  padding: 18rpx 10rpx;
+  background: rgba(248, 246, 242, 0.95);
+  border-right: 1rpx solid #EDEAE6;
+  box-sizing: border-box;
+}
+
+.dyn-swim-lane-head-label {
+  font-family: 'PingFang SC', -apple-system, sans-serif;
+  font-size: 20rpx;
+  font-weight: 500;
+  color: #8A8A8A;
+  letter-spacing: 3rpx;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  white-space: nowrap;
+}
+
+/* ── 轨道区 ── */
+.dyn-swim-track {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  background: rgba(248, 249, 250, 0.50);
+  padding: 14rpx 16rpx 20rpx;
+  box-sizing: border-box;
+}
+
+.dyn-swim-track-grid {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  opacity: 0.4;
+  background-image: repeating-linear-gradient(
+    90deg,
+    #EDEAE6 0, #EDEAE6 1rpx,
+    transparent 1rpx,
+    transparent 6%
+  );
+}
+
+.dyn-swim-stack {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10rpx;
+}
+
+/* ── 行 ── */
+.dyn-swim-row {
+  position: relative;
+  width: 100%;
+  height: 40rpx;
+  flex-shrink: 0;
+}
+
+/* ── 条形 · 基础结构 ── */
+.dyn-swim-bar {
+  position: absolute;
+  top: 0;
+  height: 40rpx;
+  padding: 0 10rpx;
+  border-radius: 20rpx;
+  font-family: 'PingFang SC', -apple-system, sans-serif;
+  font-size: 18rpx;
+  font-weight: 500;
+  letter-spacing: 0.3rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-shadow: 0 1rpx 4rpx rgba(0,0,0,0.05);
+  box-sizing: border-box;
+}
+
+/* ── 泳道 C2 · 暖金 #F1A805 · 君纪 ── */
+.lane-0 .dyn-swim-bar--default { background: #FFF5E0; color: #5A3A00; }
+
+/* ── 泳道 C3 · 麦色 #E0C088 · 士臣 ── */
+.lane-1 .dyn-swim-bar--default { background: #F5F0E0; color: #6B5E3A; }
+
+/* ── 泳道 C4 · 灰绿 #92ADA4 · 典制 ── */
+.lane-2 .dyn-swim-bar--default { background: #EAF0EA; color: #3A4A3E; }
+
+/* ── 泳道 C5 · 远天蓝 #9ABCC8 · 事略 ── */
+.lane-3 .dyn-swim-bar--default { background: #EDF4F8; color: #3A5A6A; }
+
+/* ── 泳道 C6 · 蜜桃 #D4B098 · 民录 ── */
+.lane-4 .dyn-swim-bar--default { background: #F5F0E8; color: #6A4A3A; }
+
+/* ── 泳道 C7 · 淡紫 #A894B8 · 著作 ── */
+.lane-5 .dyn-swim-bar--default { background: #F3EFF8; color: #4A3A5A; }
+
+/* ── 泳道 C8 · 青灰 #7F9EB5 · 思想 ── */
+.lane-6 .dyn-swim-bar--default { background: #EDF2F6; color: #3A4A58; }
+
+/* narrow 全泳道通用 */
+.dyn-swim-bar--narrow { min-width: 60rpx; }
+
+/* ══════════════════════════════════════════
+   连续型泳道 · 单元布局（左虚线 + 胶囊 + 右虚线）
+   复用士臣泳道的结构，胶囊宽度按文字自适应
+══════════════════════════════════════════ */
+.dyn-swim-stack--continuous {
+  gap: 8rpx;
+}
+
+/* 连续型单元容器 */
+.dyn-continuous-unit {
+  position: absolute;
+  top: 0;
+  height: 40rpx;
+  box-sizing: border-box;
+  pointer-events: auto;
+}
+
+/* 虚线基础 */
+.dyn-continuous-line {
+  position: absolute;
+  top: 50%;
+  height: 2rpx;
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 1;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(120, 120, 120, 0.5) 0,
+    rgba(120, 120, 120, 0.5) 4rpx,
+    transparent 4rpx,
+    transparent 10rpx
+  );
+}
+
+/* 左段虚线：淡入（透明→可见） */
+.dyn-continuous-line--left {
+  left: 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.5) 30%, #000 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.5) 30%, #000 100%);
+}
+
+/* 右段虚线：淡出（可见→透明） */
+.dyn-continuous-line--right {
+  -webkit-mask-image: linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.5) 70%, transparent 100%);
+  mask-image: linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.5) 70%, transparent 100%);
+}
+
+/* 胶囊 */
+.dyn-continuous-chip {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 36rpx;
+  padding: 0 12rpx;
+  border-radius: 18rpx;
+  font-family: 'PingFang SC', -apple-system, sans-serif;
+  font-size: 18rpx;
+  font-weight: 500;
+  letter-spacing: 0.3rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+  z-index: 2;
+  box-shadow: 0 2rpx 6rpx rgba(0, 0, 0, 0.08);
+}
+
+/* ── 连续型 · 各泳道配色（底色统一，优先级通过 opacity 区分） ── */
+
+/* 泳道 0 · 君纪 · 暖金 #F1A805 */
+.lane-0 .dyn-continuous-line { background: repeating-linear-gradient(90deg, rgba(241,168,5,0.5) 0, rgba(241,168,5,0.5) 4rpx, transparent 4rpx, transparent 10rpx); }
+.lane-0 .dyn-continuous-chip { background: #FFF5E0; color: #5A3A00; }
+
+/* 泳道 2 · 典制 · 灰绿 #92ADA4 */
+.lane-2 .dyn-continuous-line { background: repeating-linear-gradient(90deg, rgba(146,173,164,0.5) 0, rgba(146,173,164,0.5) 4rpx, transparent 4rpx, transparent 10rpx); }
+.lane-2 .dyn-continuous-chip { background: #EAF0EA; color: #3A4A3E; }
+
+/* 泳道 3 · 事略 · 远天蓝 #9ABCC8 */
+.lane-3 .dyn-continuous-line { background: repeating-linear-gradient(90deg, rgba(154,188,200,0.5) 0, rgba(154,188,200,0.5) 4rpx, transparent 4rpx, transparent 10rpx); }
+.lane-3 .dyn-continuous-chip { background: #EDF4F8; color: #3A5A6A; }
+
+/* ══════════════════════════════════════════
+   孤立型泳道 · 纯胶囊样式
+══════════════════════════════════════════ */
+.dyn-swim-bar--isolated {
+  border-radius: 20rpx;
+  border: none;
+  box-shadow: none;
+}
+
+/* ══════════════════════════════════════════
+   优先级透明度体系（P0/P1 全显，P2 75%，P3 50%）
+   同一泳道内底色一致，仅通过透明度区分重要程度
+══════════════════════════════════════════ */
+.dyn-continuous-chip--p0,
+.dyn-swim-bar--p0 { opacity: 1; }
+
+.dyn-continuous-chip--p1,
+.dyn-swim-bar--p1 { opacity: 1; }
+
+.dyn-continuous-chip--p2,
+.dyn-swim-bar--p2 { opacity: 0.75; }
+
+.dyn-continuous-chip--p3,
+.dyn-swim-bar--p3 { opacity: 0.50; }
+
+/* ── 「还有N条」触发胶囊（绝对定位，对齐第10条 bar） ── */
+.dyn-swim-more-btn {
+  position: absolute;
+  top: 0;
+  height: 40rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6rpx;
+  background: rgba(74, 63, 63, 0.05);
+  border: 1rpx dashed rgba(74, 63, 63, 0.25);
+  box-sizing: border-box;
+}
+
+.dyn-swim-more-text {
+  font-family: 'PingFang SC', -apple-system, sans-serif;
+  font-size: 18rpx;
+  font-weight: 500;
+  color: #8A8A8A;
+  letter-spacing: 0.3rpx;
+  white-space: nowrap;
+}
+
+/* ══════════════════════════════════════════
+   士臣泳道 · 平面紧凑排列（虚线 + chip，单元永不重叠）
+══════════════════════════════════════════ */
+.dyn-swim-stack--shichen {
+  gap: 8rpx;
+}
+
+/* 士臣 chip 轻微立体阴影 */
+.lane-1 .dyn-shichen-chip {
+  box-shadow: 0 2rpx 8rpx rgba(107, 94, 58, 0.12),
+              0 1rpx 2rpx rgba(0, 0, 0, 0.06);
+}
+
+/* ── 士臣 · 独立单元：左线(生→胶囊) + 胶囊 + 右线(胶囊→殁) ── */
+.dyn-shichen-unit {
+  position: absolute;
+  top: 0;
+  height: 40rpx;
+  box-sizing: border-box;
+  pointer-events: auto;
+}
+
+.dyn-shichen-line {
+  position: absolute;
+  top: 50%;
+  height: 2rpx;
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 1;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(196, 160, 108, 0.78) 0,
+    rgba(196, 160, 108, 0.78) 4rpx,
+    transparent 4rpx,
+    transparent 10rpx
+  );
+}
+
+/* 左段：出生端淡 → 胶囊左缘亮 */
+.dyn-shichen-line--left {
+  left: 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.45) 28%, #000 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.45) 28%, #000 100%);
+}
+
+/* 右段：胶囊右缘亮 → 死亡端淡 */
+.dyn-shichen-line--right {
+  -webkit-mask-image: linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.45) 72%, transparent 100%);
+  mask-image: linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.45) 72%, transparent 100%);
+}
+
+.dyn-shichen-chip {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 120rpx;
+  height: 36rpx;
+  padding: 0 8rpx;
+  border-radius: 18rpx;
+  font-family: 'PingFang SC', -apple-system, sans-serif;
+  font-size: 18rpx;
+  font-weight: 500;
+  letter-spacing: 0.3rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+.lane-1 .dyn-shichen-chip--default { background: #F5F0E0; color: #6B5E3A; }
+.lane-1 .dyn-shichen-chip--accent  { background: rgba(224,192,136,0.40); color: #6B5E3A; }
+.lane-1 .dyn-shichen-chip--ghost   { background: rgba(224,192,136,0.12); color: #8A8A8A; box-shadow: none; }
+
+/* ══════════════════════════════════════════
+   超出史略浮层 · 底部抽屉
+══════════════════════════════════════════ */
+.more-overlay-backdrop {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 300;
+  background: rgba(0, 0, 0, 0.42);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.more-overlay-sheet {
+  background: #FFFFFF;
+  border-radius: 24rpx 24rpx 0 0;
+  display: flex;
+  flex-direction: column;
+  max-height: 65vh;
+  animation: overlaySlideUp 0.22s ease;
+}
+
+@keyframes overlaySlideUp {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0);    }
+}
+
+/* 顶部把手 */
+.more-overlay-handle {
+  width: 64rpx;
+  height: 8rpx;
+  border-radius: 4rpx;
+  background: #EDEAE6;
+  margin: 16rpx auto 4rpx;
+  flex-shrink: 0;
+}
+
+/* 标题栏 */
+.more-overlay-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16rpx 32rpx 20rpx;
+  border-bottom: 1rpx solid #EDEAE6;
+  flex-shrink: 0;
+}
+
+.more-overlay-title {
+  font-family: 'Noto Serif SC', 'Songti SC', serif;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #262626;
+  letter-spacing: 1rpx;
+}
+
+.more-overlay-close {
+  width: 48rpx;
+  height: 48rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.more-overlay-close-icon {
+  font-size: 26rpx;
+  color: #8A8A8A;
+}
+
+/* 列表区 */
+.more-overlay-list {
+  flex: 1;
+  height: 480rpx;
+  padding: 8rpx 32rpx 40rpx;
+  box-sizing: border-box;
+}
+
+.more-overlay-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22rpx 0;
+  border-bottom: 1rpx solid #F0EDE9;
+}
+
+.more-overlay-item:last-child {
+  border-bottom: none;
+}
+
+.more-overlay-item-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 14rpx;
+}
+
+/* 色点：与泳道配色一致 */
+.more-overlay-dot {
+  width: 12rpx;
+  height: 12rpx;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.more-overlay-dot--default { background: #B0A89E; }
+.more-overlay-dot--accent  { background: #F1A805; }
+.more-overlay-dot--marker  { background: #9ABCC8; }
+.more-overlay-dot--ghost   { background: #D0CCC8; }
+.more-overlay-dot--narrow  { background: #B0A89E; }
+
+.more-overlay-item-title {
+  font-family: 'PingFang SC', -apple-system, sans-serif;
+  font-size: 26rpx;
+  font-weight: 500;
+  color: #262626;
+}
+
+.more-overlay-item-range {
+  font-family: 'SF Mono', 'Menlo', monospace;
+  font-size: 20rpx;
+  font-weight: 400;
+  color: #B0A89E;
+  letter-spacing: 0.3rpx;
+}

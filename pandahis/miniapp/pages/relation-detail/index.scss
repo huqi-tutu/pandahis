@@ -1,0 +1,47 @@
+@import '../../native-utils/design-tokens.scss';
+
+.detail-page {
+  padding: 24rpx 32rpx 48rpx;
+}
+
+.meta-card, .text-card {
+  background: #fff;
+  border-radius: 12rpx;
+  padding: 24rpx;
+  border: 1rpx solid $divider;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16rpx;
+  padding: 12rpx 0;
+  border-bottom: 1rpx solid $divider;
+  font-size: 28rpx;
+}
+
+.lab { color: $text-caption; }
+.val { color: $text-title; text-align: right; flex: 1; }
+.val-small { font-size: 24rpx; }
+
+.sec {
+  display: block;
+  margin: 24rpx 0 12rpx;
+  font-size: 28rpx;
+  font-weight: 700;
+  color: #9b3e38;
+}
+
+.text-card {
+  font-size: 28rpx;
+  line-height: 1.65;
+  color: $text-body;
+}
+
+.cta {
+  margin-top: 24rpx;
+  text-align: center;
+  color: #9b3e38;
+  font-size: 28rpx;
+  font-weight: 600;
+}

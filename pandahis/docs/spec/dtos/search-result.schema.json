@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "search-result.schema.json",
+  "type": "object",
+  "required": ["total", "page", "pageSize", "items"],
+  "properties": {
+    "total": { "type": "integer", "minimum": 0 },
+    "page": { "type": "integer", "minimum": 1 },
+    "pageSize": { "type": "integer", "minimum": 1 },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["type", "id", "pathText", "titleHighlight", "descHighlight"],
+        "properties": {
+          "type": { "type": "string", "enum": ["box", "unit"] },
+          "id": { "type": "string" },
+          "pathText": { "type": "string" },
+          "titleHighlight": { "type": "string" },
+          "descHighlight": { "type": "string" }
+        }
+      }
+    }
+  }
+}
+

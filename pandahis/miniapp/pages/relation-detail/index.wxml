@@ -1,0 +1,14 @@
+<navigation-bar title="{{name}}" back="{{true}}" color="#4A3F3F" background="rgba(248,246,242,0.96)"></navigation-bar>
+
+<view class="detail-page" wx:if="{{info}}">
+  <view class="meta-card">
+    <view class="row"><text class="lab">姓名</text><text class="val">{{info.name}}</text></view>
+    <view class="row"><text class="lab">关系类别</text><text class="val">{{info.category}}</text></view>
+    <view wx:if="{{info.role}}" class="row"><text class="lab">角色</text><text class="val">{{info.role}}</text></view>
+    <view wx:if="{{info.level}}" class="row"><text class="lab">关系层级</text><text class="val">{{info.level}}</text></view>
+    <view wx:if="{{info.lineage}}" class="row"><text class="lab">家族关系链</text><text class="val val-small">{{info.lineage}}</text></view>
+  </view>
+  <text class="sec">关系简述</text>
+  <view class="text-card">{{info.summary}}</view>
+  <view wx:if="{{info.targetBoxId}}" class="cta" bindtap="goTargetBox">查看相关史略 ›</view>
+</view>

@@ -1,0 +1,18 @@
+<navigation-bar title="编辑资料" back="{{true}}" color="#4a3230" background="rgba(255,248,247,0.95)"></navigation-bar>
+
+<view class="page">
+  <glass-card className="card">
+    <view class="title">昵称</view>
+    <view class="desc text3">1–32 个字符，将显示在「我的」页。</view>
+    <input
+      class="input"
+      value="{{nickname}}"
+      maxlength="32"
+      placeholder="请输入昵称"
+      bindinput="onInput"
+      confirm-type="done"
+      bindconfirm="onSave"
+    />
+    <view class="btnPrimary {{saving ? 'disabled' : ''}}" bindtap="onSave">{{saving ? '保存中…' : '保存'}}</view>
+  </glass-card>
+</view>

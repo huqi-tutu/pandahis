@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "membership-plans.schema.json",
+  "type": "object",
+  "required": ["plans"],
+  "properties": {
+    "plans": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "priceCent", "durationDays", "isDefault", "tagText", "benefits"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "priceCent": { "type": "integer", "minimum": 0 },
+          "durationDays": { "type": "integer", "minimum": 1 },
+          "isDefault": { "type": "boolean" },
+          "tagText": { "type": ["string", "null"] },
+          "benefits": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    }
+  }
+}
+

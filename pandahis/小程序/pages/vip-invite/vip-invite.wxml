@@ -1,0 +1,63 @@
+<view class="page-shell">
+  <proto-nav title="好友助力" show-back="{{true}}" />
+
+  <scroll-view
+    class="vip-invite-body"
+    scroll-y enhanced show-scrollbar="{{false}}"
+    style="top: {{headerPadPx}}px;"
+  >
+    <view class="vip-invite-sheet">
+
+      <!-- 单张会员卡 -->
+      <view class="vip-inv-card {{complete ? 'vip-inv-card--claimed' : ''}}">
+        <image class="vip-inv-card-bg" src="/配图/vipcar.png" mode="widthFix" />
+        <view class="vip-inv-card-overlay">
+          <view class="vip-inv-card-head">
+            <text class="vip-inv-card-title">90天VIP会员体验卡</text>
+            <text wx:if="{{complete}}" class="vip-inv-chip vip-inv-chip--ok">已获得</text>
+            <text wx:if="{{complete}}" class="vip-inv-chip">到期日：2026-5-31</text>
+            <text wx:if="{{!complete}}" class="vip-inv-chip">助力免费领</text>
+          </view>
+          <text class="vip-inv-card-line">图谱高级权限 · 评述 · 见证 · 全文对照</text>
+          <text wx:if="{{complete}}" class="vip-inv-card-line vip-inv-card-line--sub">有效期内随时可用</text>
+        </view>
+      </view>
+
+      <!-- 规则文字 -->
+      <text class="vip-invite-rule-lead">
+        <text class="vip-inv-strong">
+          {{complete ? '4 名好友已全部助力' : '邀请 4 名好友助力，限时完成领奖励'}}
+        </text>
+      </text>
+      <text wx:if="{{complete}}" class="vip-invite-complete-sub">你可以在会员中心查看剩余有效期与明细</text>
+
+      <!-- 进度 -->
+      <text class="vip-invite-progress">
+        助力进度：<text class="vip-inv-strong">{{filled}} / 4</text>
+      </text>
+
+      <!-- 4 个助力槽 -->
+      <view class="vip-invite-slots">
+        <view
+          wx:for="{{slots}}"
+          wx:key="index"
+          class="vip-inv-slot {{item.filled ? 'vip-inv-slot--filled' : ''}}"
+        >
+          <view class="vip-inv-slot-ring">
+            <text wx:if="{{item.filled}}" class="vip-inv-slot-avatar">友</text>
+            <view wx:else class="vip-inv-slot-plus"></view>
+          </view>
+          <text class="vip-inv-slot-txt">{{item.filled ? '已助力' : '待加入'}}</text>
+        </view>
+      </view>
+
+      <view class="vip-invite-cta" bindtap="onInvite">邀请好友</view>
+
+      <view wx:if="{{!complete}}" class="vip-demo-tip" bindtap="simulateComplete">
+        （演示：点此模拟全部完成）
+      </view>
+
+    </view>
+    <view style="height: 120rpx;"></view>
+  </scroll-view>
+</view>

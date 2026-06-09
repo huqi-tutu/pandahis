@@ -1,0 +1,17 @@
+<view class="proto-shell">
+  <proto-nav title="我的足迹" show-back="{{true}}"></proto-nav>
+
+  <view class="fp-body pad" style="padding-top: {{headerPadPx}}px;">
+    <text class="summary muted">{{summary}}</text>
+    <scroll-view scroll-y class="scroll" enhanced>
+      <view wx:for="{{list}}" wx:key="title" class="card card-paper">
+        <view class="top">
+          <text class="t">{{item.title}}</text>
+          <text class="time muted">{{item.time}}</text>
+        </view>
+        <text class="era accent">{{item.era}}</text>
+        <text class="path muted">{{item.path}}</text>
+      </view>
+    </scroll-view>
+  </view>
+</view>

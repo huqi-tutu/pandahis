@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "home-grid.schema.json",
+  "type": "object",
+  "required": ["timeAxis", "civilizations", "cells", "overview"],
+  "properties": {
+    "timeAxis": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["year", "label", "rowHeightPx"],
+        "properties": {
+          "year": { "type": "integer" },
+          "label": { "type": "string" },
+          "rowHeightPx": { "type": "integer", "minimum": 1 }
+        }
+      }
+    },
+    "civilizations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "displayName", "colorHex", "sortOrder"],
+        "properties": {
+          "id": { "type": "integer" },
+          "displayName": { "type": "string" },
+          "colorHex": { "type": "string" },
+          "sortOrder": { "type": "integer" }
+        }
+      }
+    },
+    "cells": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["timeYear", "civId", "unitCard"],
+        "properties": {
+          "timeYear": { "type": "integer" },
+          "civId": { "type": "integer" },
+          "unitCard": {
+            "anyOf": [
+              { "type": "null" },
+              {
+                "type": "object",
+                "required": [
+                  "unitId",
+                  "title",
+                  "startYear",
+                  "endYear",
+                  "durationYears",
+                  "variant",
+                  "highlights",
+                  "cardImageUrl"
+                ],
+                "properties": {
+                  "unitId": { "type": "string" },
+                  "title": { "type": "string" },
+                  "note": { "type": "string" },
+                  "meta": { "type": "string" },
+                  "startYear": { "type": "integer" },
+                  "endYear": { "type": "integer" },
+                  "durationYears": { "type": "integer" },
+                  "variant": { "type": "string" },
+                  "highlights": {
+                    "type": "array",
+                    "items": { "type": "string" }
+                  },
+                  "cardImageUrl": { "type": "string" },
+                  "accentHex": { "type": "string", "description": "一级地域色，用于卡片描边" }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "overview": {
+      "type": "object",
+      "required": ["mapImageUrl", "hotspots"],
+      "properties": {
+        "mapImageUrl": { "type": "string" },
+        "hotspots": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["unitId", "left", "top", "width", "height"],
+            "properties": {
+              "unitId": { "type": "string" },
+              "left": { "type": "number" },
+              "top": { "type": "number" },
+              "width": { "type": "number" },
+              "height": { "type": "number" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

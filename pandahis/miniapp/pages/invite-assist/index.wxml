@@ -1,0 +1,69 @@
+<navigation-bar title="好友助力" back="{{true}}" color="#333333" background="rgba(255,248,247,0.92)"></navigation-bar>
+
+<scroll-view class="page-assist" scroll-y enhanced show-scrollbar="{{false}}">
+  <view class="vip-card">
+    <view class="vip-deco">
+      <view class="vip-deco-circle"></view>
+      <view class="vip-deco-line vip-deco-line-v"></view>
+      <view class="vip-deco-line vip-deco-line-h"></view>
+    </view>
+    <view class="vip-inner">
+      <view class="vip-left">
+        <view class="vip-title-row">
+          <text class="vip-title">免费获取季度会员卡</text>
+          <text wx:if="{{!rewardClaimed}}" class="vip-badge">{{durationDays}} 天</text>
+          <text wx:else class="vip-badge">到期日：{{endDateLabel}}</text>
+        </view>
+        <text class="vip-desc">会员期内评述 · 见证 · 原文免扣阅读点</text>
+      </view>
+      <text class="vip-mark">VIP</text>
+    </view>
+  </view>
+
+  <view class="status-block">
+    <view class="status-title">邀请 {{targetCount}} 名好友助力，限时完成领奖励</view>
+    <view class="status-progress">
+      助力进度：<text class="strong">{{currentCount}} / {{targetCount}}</text>
+    </view>
+    <view wx:if="{{deadlineLabel && !rewardClaimed}}" class="status-deadline {{assistExpired ? 'expired' : ''}}">
+      {{assistExpired ? '活动已截止' : '请在'}}<text wx:if="{{!assistExpired}}">{{deadlineLabel}} 前完成</text>
+    </view>
+  </view>
+
+  <view class="slots">
+    <view class="slot" wx:for="{{slots}}" wx:key="index">
+      <view wx:if="{{item.filled}}" class="slot-avatar filled">
+        <view class="slot-inner">
+          <image
+            wx:if="{{item.avatarUrl}}"
+            class="slot-img"
+            src="{{item.avatarUrl}}"
+            mode="aspectFill"
+          />
+          <text wx:else class="slot-char">{{item.label}}</text>
+        </view>
+      </view>
+      <view wx:else class="slot-avatar empty">
+        <view class="slot-user-icon"></view>
+        <view class="slot-plus">+</view>
+      </view>
+      <text class="slot-label {{item.filled ? 'slot-label-done' : ''}}">{{item.filled ? '已助力' : '待加入'}}</text>
+    </view>
+  </view>
+
+  <view wx:if="{{completed && !rewardClaimed && !assistExpired}}" class="claim-hint">
+    助力已满，正在为你开通季度会员…
+  </view>
+  <view wx:if="{{assistExpired && !rewardClaimed}}" class="claim-hint expired-hint">
+    本期助力已截止，可付费开通会员或邀请好友获取阅读点
+  </view>
+</scroll-view>
+
+<view class="footer-bar">
+  <button
+    wx:if="{{canShare}}"
+    class="share-btn"
+    open-type="share"
+  >邀请好友</button>
+  <view wx:else class="share-btn" bindtap="onInviteFriends">邀请好友</view>
+</view>

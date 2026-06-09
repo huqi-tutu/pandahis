@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="graph-svg" viewBox="-32 -118 588 788" preserveAspectRatio="xMidYMin meet">
+
+            <!-- 连线层（贝塞尔，端点贴合圆与类型框） -->
+            <g class="graph-layer-edges">
+            <path class="graph-edge-rel-family graph-edge-curve" d="M220,370 C225.566,347 215.446,347 220,324"/>
+            <path class="graph-edge-rel-mentor graph-edge-curve" d="M190,400 C170,395.16 170,403.96 150,400"/>
+            <path class="graph-edge-rel-foe graph-edge-curve" d="M220,430 C214.434,453 224.554,453 220,476"/>
+            <path class="graph-edge-rel-court graph-edge-curve" d="M250,400 C273.5,405.687 273.5,395.347 297,400"/>
+            <path class="graph-edge-rel-family graph-edge-curve" d="M203.579,300 C157.739,233.176 128.875,272.674 80.148,209.8"/>
+            <path class="graph-edge-rel-family graph-edge-curve" d="M220,300 C236.544,253 206.464,253 220,206"/>
+            <path class="graph-edge-rel-family graph-edge-curve" d="M238.105,300 C322.724,278.676 293.62,234.764 375.329,209.049"/>
+            <path class="graph-edge-rel-family graph-edge-curve" d="M407.698,185.607 C437.201,175.507 425.536,160.731 453.872,149.154"/>
+            <path class="graph-edge-rel-family graph-edge-curve" d="M375.04,187.4 C350.167,156.245 337.412,176.654 311.264,147.54"/>
+            <path class="graph-edge-rel-family graph-edge-curve" d="M473.129,120.746 C486.572,102.208 473.322,98.269 485.44,79.337"/>
+            <path class="graph-edge-rel-family graph-edge-curve" d="M285.39,123.46 C276.296,93.2 260.888,104.444 250.253,75.309"/>
+            <path class="graph-edge-rel-family graph-edge-curve" d="M307.56,124.203 C336.536,107.033 320.95,93.974 348.367,75.498"/>
+            <path class="graph-edge-rel-family graph-edge-curve" d="M490,48 C493.872,37 486.832,37 490,26"/>
+            <path class="graph-edge-rel-family graph-edge-curve" d="M481.381,0.968 C472.211,-26.269 458.54,-15.588 448.003,-41.756"/>
+            <path class="graph-edge-rel-family graph-edge-curve" d="M499.401,1.626 C527.078,-13.354 513.001,-26.112 539.27,-42.367"/>
+            <path class="graph-edge-rel-mentor graph-edge-curve" d="M109.765,388 C97.203,341.342 73.152,357.848 58.185,312.841"/>
+            <path class="graph-edge-rel-mentor graph-edge-curve" d="M109.765,412 C70.747,440.501 94.798,457.007 58.185,487.159"/>
+            <path class="graph-edge-rel-foe graph-edge-curve" d="M208.667,500 C154.92,527.675 181.453,552.733 130.359,582.914"/>
+            <path class="graph-edge-rel-foe graph-edge-curve" d="M220,500 C202.752,549 234.112,549 220,598"/>
+            <path class="graph-edge-rel-foe graph-edge-curve" d="M231.333,500 C255.894,555.239 282.427,530.181 309.641,582.914"/>
+            <path class="graph-edge-rel-court graph-edge-curve" d="M337.333,388 C384.428,357.728 357.75,336.977 402.177,304.63"/>
+            <path class="graph-edge-rel-court graph-edge-curve" d="M342.824,388 C379.278,375.02 364.58,356.863 399.564,342.067"/>
+            <path class="graph-edge-rel-court graph-edge-curve" d="M359,389.667 C380.129,390.02 376.095,377.917 396.821,377.06"/>
+            <path class="graph-edge-rel-court graph-edge-curve" d="M359,404.429 C376.646,413.623 378.345,401.732 396.161,409.737"/>
+            <path class="graph-edge-rel-court graph-edge-curve" d="M347.385,412 C367.333,436.767 377.438,420.443 398.396,443.578"/>
+            <path class="graph-edge-rel-court graph-edge-curve" d="M338.957,412 C358.084,457.049 379.903,437.127 401.212,480.184"/>
+            <path class="graph-edge-rel-court graph-edge-curve" d="M335.636,412 C350.779,477.179 384.859,455.491 403.41,518.501"/>
+            </g>
+
+            <!-- 关系类型节点 -->
+            <rect class="graph-rel-type-node-family" x="191" y="300" width="58" height="24" rx="8"/>
+            <text class="graph-rel-type-label" x="220" y="317">家庭</text>
+            <rect class="graph-rel-type-node-mentor" x="86" y="388" width="64" height="24" rx="8"/>
+            <text class="graph-rel-type-label" x="118" y="405">师从</text>
+            <rect class="graph-rel-type-node-foe" x="191" y="476" width="58" height="24" rx="8"/>
+            <text class="graph-rel-type-label" x="220" y="493">敌对</text>
+            <rect class="graph-rel-type-node-court" x="297" y="388" width="62" height="24" rx="8"/>
+            <text class="graph-rel-type-label" x="328" y="405">君臣</text>
+
+            <!-- 人物圆点 -->
+            <circle class="graph-node graph-node-center" cx="220" cy="400" r="30"/>
+            <circle class="graph-node-rel-family" cx="64" cy="198" r="20"/>
+            <circle class="graph-node-rel-family" cx="220" cy="186" r="20"/>
+            <circle class="graph-node-rel-family" cx="392" cy="198" r="20"/>
+            <circle class="graph-node-rel-family" cx="468" cy="138" r="18"/>
+            <circle class="graph-node-rel-family" cx="296" cy="138" r="18"/>
+            <circle class="graph-node-rel-family" cx="490" cy="64" r="16"/>
+            <circle class="graph-node-rel-family" cx="242" cy="64" r="14"/>
+            <circle class="graph-node-rel-family" cx="358" cy="64" r="15"/>
+            <circle class="graph-node-rel-family" cx="490" cy="12" r="14"/>
+            <circle class="graph-node-rel-family" cx="440" cy="-52" r="13"/>
+            <circle class="graph-node-rel-family" cx="548" cy="-52" r="13"/>
+            <circle class="graph-node-rel-mentor" cx="48" cy="298" r="18"/>
+            <circle class="graph-node-rel-mentor" cx="48" cy="502" r="18"/>
+            <circle class="graph-node-rel-foe" cx="118" cy="596" r="18"/>
+            <circle class="graph-node-rel-foe" cx="220" cy="616" r="18"/>
+            <circle class="graph-node-rel-foe" cx="322" cy="596" r="18"/>
+            <circle class="graph-node-rel-court" cx="412" cy="292" r="16"/>
+            <circle class="graph-node-rel-court" cx="412" cy="332" r="16"/>
+            <circle class="graph-node-rel-court" cx="412" cy="372" r="16"/>
+            <circle class="graph-node-rel-court" cx="412" cy="412" r="16"/>
+            <circle class="graph-node-rel-court" cx="412" cy="452" r="16"/>
+            <circle class="graph-node-rel-court" cx="412" cy="492" r="16"/>
+            <circle class="graph-node-rel-court" cx="412" cy="532" r="16"/>
+
+            <!-- 上级连接线标题（置于线段旁） -->
+            <g class="graph-edge-labels">
+            <text class="graph-edge-label graph-edge-label-tone-family" x="148.747" y="243.761" text-anchor="middle" dominant-baseline="middle">母亲</text>
+            <text class="graph-edge-label graph-edge-label-tone-family" x="232.067" y="251.102" text-anchor="middle" dominant-baseline="middle">父亲</text>
+            <text class="graph-edge-label graph-edge-label-tone-family" x="314.737" y="265.107" text-anchor="middle" dominant-baseline="middle">妻子</text>
+            <text class="graph-edge-label graph-edge-label-tone-family" x="439.801" y="174.885" text-anchor="middle" dominant-baseline="middle">儿子</text>
+            <text class="graph-edge-label graph-edge-label-tone-family" x="347.532" y="156.349" text-anchor="middle" dominant-baseline="middle">儿子</text>
+            <text class="graph-edge-label graph-edge-label-tone-family" x="490.793" y="100.688" text-anchor="middle" dominant-baseline="middle">儿子</text>
+            <text class="graph-edge-label graph-edge-label-tone-family" x="275.68" y="90.661" text-anchor="middle" dominant-baseline="middle">妻子</text>
+            <text class="graph-edge-label graph-edge-label-tone-family" x="338.334" y="105.467" text-anchor="middle" dominant-baseline="middle">儿子</text>
+            <text class="graph-edge-label graph-edge-label-tone-family" x="500.86" y="34.021" text-anchor="middle" dominant-baseline="middle">儿子</text>
+            <text class="graph-edge-label graph-edge-label-tone-family" x="472.139" y="-29.379" text-anchor="middle" dominant-baseline="middle">儿子</text>
+            <text class="graph-edge-label graph-edge-label-tone-family" x="529.47" y="-14.449" text-anchor="middle" dominant-baseline="middle">儿子</text>
+            <text class="graph-edge-label graph-edge-label-tone-mentor" x="92.787" y="342.019" text-anchor="middle" dominant-baseline="middle">问医</text>
+            <text class="graph-edge-label graph-edge-label-tone-mentor" x="72.967" y="444.378" text-anchor="middle" dominant-baseline="middle">问道</text>
+            <text class="graph-edge-label graph-edge-label-tone-foe" x="159.399" y="534.102" text-anchor="middle" dominant-baseline="middle">阪泉之战</text>
+            <text class="graph-edge-label graph-edge-label-tone-foe" x="207.866" y="550.838" text-anchor="middle" dominant-baseline="middle">涿鹿之战</text>
+            <text class="graph-edge-label graph-edge-label-tone-foe" x="262.566" y="551.135" text-anchor="middle" dominant-baseline="middle">驱逐</text>
+            <text class="graph-edge-label graph-edge-label-tone-court" x="380.492" y="352.483" text-anchor="middle" dominant-baseline="middle">大臣</text>
+            <text class="graph-edge-label graph-edge-label-tone-court" x="380.285" y="372.747" text-anchor="middle" dominant-baseline="middle">大臣</text>
+            <text class="graph-edge-label graph-edge-label-tone-court" x="384.011" y="393.093" text-anchor="middle" dominant-baseline="middle">大臣</text>
+            <text class="graph-edge-label graph-edge-label-tone-court" x="378.726" y="418.48" text-anchor="middle" dominant-baseline="middle">大臣</text>
+            <text class="graph-edge-label graph-edge-label-tone-court" x="368.887" y="438.832" text-anchor="middle" dominant-baseline="middle">史官</text>
+            <text class="graph-edge-label graph-edge-label-tone-court" x="362.49" y="455.63" text-anchor="middle" dominant-baseline="middle">乐官</text>
+            <text class="graph-edge-label graph-edge-label-tone-court" x="359.645" y="473.213" text-anchor="middle" dominant-baseline="middle">造历</text>
+            </g>
+
+            <!-- 人物名称 -->
+            <g class="graph-node-labels">
+            <text class="graph-text" x="220" y="405">黄帝</text>
+            <text class="graph-text" x="64" y="203">附宝</text>
+            <text class="graph-text" x="220" y="191">少典</text>
+            <text class="graph-text" x="392" y="203">嫘祖</text>
+            <text class="graph-text" x="468" y="143">玄嚣</text>
+            <text class="graph-text" x="296" y="143">昌意</text>
+            <text class="graph-text" x="490" y="69">蟜极</text>
+            <text class="graph-text" x="242" y="69" style="font-size:10px;">昌仆</text>
+            <text class="graph-text" x="358" y="69">颛顼</text>
+            <text class="graph-text" x="490" y="17" style="font-size:10px;">帝喾</text>
+            <text class="graph-text" x="440" y="-48" style="font-size:9px;">挚</text>
+            <text class="graph-text" x="548" y="-48" style="font-size:9px;">尧</text>
+            <text class="graph-text" x="48" y="303">岐伯</text>
+            <text class="graph-text" x="48" y="507" style="font-size:10px;">广成子</text>
+            <text class="graph-text" x="118" y="601">炎帝</text>
+            <text class="graph-text" x="220" y="621">蚩尤</text>
+            <text class="graph-text" x="322" y="601">荤粥</text>
+            <text class="graph-text" x="412" y="297">风后</text>
+            <text class="graph-text" x="412" y="337">力牧</text>
+            <text class="graph-text" x="412" y="377">常先</text>
+            <text class="graph-text" x="412" y="417">大鸿</text>
+            <text class="graph-text" x="412" y="457">仓颉</text>
+            <text class="graph-text" x="412" y="497">伶伦</text>
+            <text class="graph-text" x="412" y="537">大挠</text>
+            </g>
+
+          </svg>

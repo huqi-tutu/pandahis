@@ -1,0 +1,63 @@
+@import '../../styles/atlas.wxss';
+
+.proto-shell {
+  min-height: 100vh;
+  background: #F8F6F2;
+}
+
+.detail-body {
+  padding: 24rpx;
+  box-sizing: border-box;
+  padding-bottom: 60rpx;
+}
+
+.crit-detail-title {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 36rpx;
+  font-weight: 700;
+  color: #262626;
+  line-height: 1.4;
+  margin-bottom: 24rpx;
+}
+
+.meta {
+  background: #FFFFFF;
+  border-radius: 20rpx;
+  border: 1rpx solid #EDEAE6;
+  padding: 24rpx 28rpx;
+  margin-bottom: 24rpx;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24rpx;
+  font-size: 28rpx;
+  padding: 14rpx 0;
+  border-bottom: 1rpx solid #EDEAE6;
+}
+
+.row:last-child { border-bottom: none; }
+
+.lab { flex-shrink: 0; font-size: 26rpx; }
+.val { text-align: right; font-size: 28rpx; font-weight: 500; color: #262626; }
+
+.sec {
+  font-size: 26rpx;
+  font-weight: 700;
+  letter-spacing: 3rpx;
+  color: #9B3E38;
+  margin-bottom: 16rpx;
+  display: block;
+}
+
+.text-card {
+  background: #FFFFFF;
+  border-radius: 20rpx;
+  border: 1rpx solid #EDEAE6;
+  padding: 28rpx;
+  font-size: 30rpx;
+  line-height: 1.8;
+  color: #6A6A6A;
+}

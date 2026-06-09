@@ -1,0 +1,14 @@
+.glass {
+  position: relative;
+  overflow: hidden;
+}
+
+.glass::before {
+  content: '';
+  position: absolute;
+  inset: -120rpx;
+  background: radial-gradient(500rpx 220rpx at 25% 20%, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0) 60%),
+    radial-gradient(420rpx 200rpx at 80% 40%, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0) 65%);
+  pointer-events: none;
+}
+

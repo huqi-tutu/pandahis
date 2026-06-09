@@ -1,0 +1,6 @@
+@import "./styles/atlas.wxss";
+
+/* 微信小程序全局导航栏透明 */
+page {
+  --tab-bar-height: 98rpx;
+}

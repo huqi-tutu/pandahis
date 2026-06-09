@@ -1,0 +1,267 @@
+<view class="page-shell">
+  <proto-nav
+    title="历史图谱"
+    home-nav="{{true}}"
+    mode-pill-icon="/配图/icons/quanbu.png"
+    bind:modepilltap="onToggleCivPicker"
+  />
+
+  <!-- ══ 文明 Tab 栏 ══ -->
+
+  <!-- 【新版】层叠卡片 + 向下滑动渐变为文字 Tab（stackMode=true） -->
+  <!-- 触摸事件统一在最外层容器捕获，避免内层 opacity:0 的文字层拦截触摸 -->
+  <view wx:if="{{stackMode}}"
+    id="civTabArea"
+    class="civ-tab-area"
+    style="top:{{headerPadPx}}px; height:{{tabAreaH}}rpx;"
+    bindtouchstart="onStackTouchStart"
+    bindtouchend="onStackTouchEnd"
+  >
+
+    <!-- 层 1：图片层叠（向下滑动：淡出 + 向上移出） -->
+    <view
+      id="stackLayer"
+      class="civ-stack-layer"
+      style="{{stackLayerStyle}}"
+    >
+      <view class="civ-stack-container">
+        <view
+          wx:for="{{civStackItems}}"
+          wx:key="realIdx"
+          class="civ-stack-card {{civSwitching ? 'civ-stack-card--moving' : ''}}"
+          style="{{item.cardStyle}}"
+          data-ri="{{item.realIdx}}"
+          bindtap="onCivTap"
+        >
+          <image class="civ-stack-img" src="{{item.img}}" mode="aspectFill" />
+        </view>
+      </view>
+    </view>
+
+    <!-- 层 2：文字 Tab（向下滑动：从下方淡入滑入） -->
+    <view
+      id="textLayer"
+      class="civ-text-layer"
+      style="{{textLayerStyle}}"
+    >
+      <scroll-view
+        class="civ-text-scroll"
+        scroll-x
+        enhanced
+        show-scrollbar="{{false}}"
+        scroll-left="{{civTextScrollLeft}}"
+        scroll-with-animation
+      >
+        <view class="civ-text-inner">
+          <view
+            wx:for="{{civTextItems}}"
+            wx:key="id"
+            class="civ-text-item {{item.realIdx === civIndex ? 'civ-text-item--active' : ''}}"
+            data-ri="{{item.realIdx}}"
+            bindtap="onCivTap"
+          >
+            <text>{{item.name}}</text>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+
+  </view>
+
+  <!-- 【旧版】横向滑动（stackMode=false，可随时切回） -->
+  <view wx:else class="civ-rail-wrap" style="top: {{headerPadPx}}px;">
+    <scroll-view
+      class="civ-rail-scroll"
+      scroll-x
+      enhanced
+      show-scrollbar="{{false}}"
+      scroll-left="{{civScrollLeft}}"
+      scroll-with-animation="{{civScrollAnim}}"
+      bindscrollend="onCivScrollEnd"
+    >
+      <view class="civ-rail-inner">
+        <view
+          wx:for="{{civTabsLoop}}"
+          wx:key="loopIdx"
+          class="civ-card {{item.realIdx === civIndex ? 'active' : ''}}"
+          style="{{item.cardStyle}}"
+          data-ri="{{item.realIdx}}"
+          bindtap="onCivTap"
+        >
+          <view class="civ-card-img-wrap">
+            <image class="civ-card-img" src="{{item.img}}" mode="aspectFill" lazy-load />
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 矩阵主体：时间轴行 + 绝对定位政权块 -->
+  <scroll-view
+    id="matrixScroll"
+    class="matrix-scroll"
+    scroll-y
+    enhanced
+    show-scrollbar="{{false}}"
+    style="top: {{scrollAreaTop}}px; height: {{matrixHeight}}px;"
+    data-ratio="{{scrollRatio}}"
+    data-status-bar="{{statusBarPx}}"
+    data-win-h="{{windowHeightPx}}"
+    bindscroll="onMatrixScroll"
+    bindscrollend="onMatrixScrollEnd"
+  >
+    <view class="matrix-body" style="height: {{matrixTotalH + 120}}rpx;">
+
+      <!-- 左：时间刻度（按行绝对定位） -->
+      <view class="matrix-time-col">
+        <view
+          wx:for="{{matrixRows}}"
+          wx:key="key"
+          wx:for-item="row"
+          class="time-row-abs {{row.showYear ? '' : 'time-row-abs--compact'}}"
+          style="top: {{row.y}}rpx; height: {{row.h}}rpx;"
+        >
+          <view class="time-label-wrap">
+            <view wx:if="{{row.showYear}}" class="time-year-row">
+              <view class="time-h-line time-h-line--edge"></view>
+              <view class="time-year" style="font-size: {{row.yearFontSize}}rpx;">{{row.year}}</view>
+              <view class="time-h-line time-h-line--edge"></view>
+            </view>
+            <view wx:if="{{row.hxLabel}}"
+                  class="time-hx-wrap {{row.expandable ? 'time-hx-wrap--tap' : ''}}"
+                  bindtap="{{row.expandable ? 'onDynastyToggle' : ''}}"
+                  data-dynasty="{{row.dynastyKey}}">
+              <text class="time-dynasty" style="font-size: {{row.hxFontSize}}rpx;">{{row.hxLabel}}</text>
+              <view wx:if="{{row.expandable}}" class="time-expand-arrow">
+                <text class="time-arrow-icon">{{row.expanded ? '↑' : '↓'}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <!-- 右：政权色块画布 -->
+      <view class="matrix-canvas">
+        <view class="matrix-canvas-inner">
+        <view
+          wx:for="{{matrixBlocks}}"
+          wx:key="id"
+          wx:for-item="blk"
+          class="era-block {{blk.edgeClass}}"
+          style="top: {{blk.top}}rpx; height: {{blk.h}}rpx; left: {{blk.leftPct}}%; width: {{blk.widthPct}}%; border-radius: {{blk.radiusStyle}};"
+          hover-class="era-block--hover"
+          bindtap="onCardTap"
+          data-dynasty="{{blk.dynasty}}"
+          data-person="{{blk.person}}"
+          data-civ="{{blk.civ}}"
+          data-anchor-year="{{blk.anchorYear}}"
+        >
+          <view class="era-block-fill {{blk.fillSeamFix ? 'era-block-fill--solid-seam' : ''}}{{blk.seamGapTop ? ' era-block-fill--gap-top' : ''}}{{blk.seamGapBottom ? ' era-block-fill--gap-bottom' : ''}}{{blk.seamGapLeft ? ' era-block-fill--gap-left' : ''}}{{blk.seamGapRight ? ' era-block-fill--gap-right' : ''}}" style="background-color: {{blk.cardBg}}; border-radius: {{blk.radiusStyle}};{{blk.fillStyleExtra || ''}}"></view>
+          <view
+            wx:if="{{blk.entryId === 'zhong_hua_wu_di_huang_di'}}"
+            class="era-block-paper-grain"
+            style="border-radius: {{blk.radiusStyle}};"
+          ></view>
+        </view>
+
+        <!-- 统一标签层：严格对齐各色块 -->
+        <view
+          wx:for="{{matrixOverlays}}"
+          wx:key="id"
+          wx:for-item="ovl"
+          class="entry-chrome"
+        >
+          <!-- 名称 / 标签：顶段 -->
+          <view
+            wx:if="{{!ovl.hideLabels}}"
+            class="entry-header-wrap"
+            style="top: {{ovl.headerTop}}rpx; left: {{ovl.headerLeftPct}}%; width: {{ovl.headerWidthPct}}%;"
+          >
+            <view class="entry-header entry-header--{{ovl.labelLayout}}">
+              <!-- 同时期政权 = 1：名称 + 标签横排，标签在右、垂直居中 -->
+              <block wx:if="{{ovl.labelLayout === 'inline'}}">
+                <text class="card-person card-person--inline">{{ovl.kind === 'single' ? ovl.person : ovl.displayName}}</text>
+                <view wx:if="{{!ovl.hideTags && ovl.highlights.length}}" class="entry-tag-row entry-tag-row--inline">
+                  <view
+                    wx:for="{{ovl.highlights}}"
+                    wx:key="text"
+                    wx:for-item="tag"
+                    class="entry-tag"
+                    style="{{tag.tagStyle}}"
+                  >{{tag.text}}</view>
+                </view>
+              </block>
+
+              <!-- 同时期政权 > 1：名称在上，标签在下左对齐 -->
+              <block wx:else>
+                <text class="card-person card-person--stacked">{{ovl.kind === 'single' ? ovl.person : ovl.displayName}}</text>
+                <view wx:if="{{!ovl.hideTags && ovl.highlights.length}}" class="entry-tag-row">
+                  <view
+                    wx:for="{{ovl.highlights}}"
+                    wx:key="text"
+                    wx:for-item="tag"
+                    class="entry-tag"
+                    style="{{tag.tagStyle}}"
+                  >{{tag.text}}</view>
+                </view>
+              </block>
+            </view>
+          </view>
+
+          <!-- 时间：规则矩形→右下角，不规则形→左下角 -->
+          <view
+            wx:if="{{!ovl.hideTime}}"
+            class="entry-time-wrap"
+            style="top: {{ovl.timeWrapTop}}rpx; left: {{ovl.timeLeftPct}}%; width: {{ovl.timeWidthPct}}%; height: {{ovl.timeWrapH}}rpx;"
+          >
+            <view
+              class="card-time-range card-time-range--{{ovl.timeCorner}}"
+              style="font-size: {{ovl.timeFontRpx}}rpx;"
+            >{{ovl.timeRange}}</view>
+          </view>
+        </view>
+        </view>
+      </view>
+
+    </view>
+  </scroll-view>
+
+  <!-- 全部文明浮层 -->
+  <view
+    wx:if="{{civPickerOpen}}"
+    class="civ-picker"
+    style="top: {{headerPadPx}}px;"
+    catchtouchmove="preventMove"
+  >
+    <view
+      class="civ-picker-sheet"
+      style="height: {{civPickerSheetH}}rpx;"
+      catchtap="preventMove"
+    >
+      <view class="civ-picker-grid">
+        <view
+          wx:for="{{civPickerItems}}"
+          wx:key="id"
+          class="civ-picker-item {{item.realIdx === civIndex ? 'civ-picker-item--active' : ''}}"
+          data-ri="{{item.realIdx}}"
+          bindtap="onCivPickerSelect"
+        >
+          <view
+            class="civ-picker-card"
+            style="width: {{civPickerCardW}}rpx; height: {{civPickerCardH}}rpx;"
+          >
+            <image class="civ-picker-card-img" src="{{item.img}}" mode="aspectFill" />
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="civ-picker-backdrop" bindtap="onCivPickerClose"></view>
+  </view>
+
+  <view wx:if="{{matrixDataLoading}}" class="matrix-data-loading">
+    <view class="matrix-data-loading__inner">
+      <view class="matrix-data-loading__dot"></view>
+      <text class="matrix-data-loading__text">同步历史数据…</text>
+    </view>
+  </view>
+</view>
