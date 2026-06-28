@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 /**
- * 从 数据/王朝表.json、数据/帝王表.json 生成本地 data/*.js（小程序写死数据源）
+ * 从 data/政权.json、data/帝王.json 生成本地 data/*.js（小程序写死数据源）
+ * 推荐统一使用：node scripts/build-matrix-data.js
  * 用法：node scripts/build-local-matrix-data.js
  */
 const fs = require('fs')

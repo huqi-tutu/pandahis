@@ -48,6 +48,17 @@ Page({
     vipTitle: '开通年度会员',
     vipDesc: '解锁全地域图谱 · 跨时空评述 · 见证 Tab',
     appVersion: APP_VERSION,
+    headerPadPx: 88,
+  },
+  onLoad() {
+    // 与 proto-nav 一致：状态栏 + 88rpx 导航行（随屏宽换算 px）
+    try {
+      const sys = wx.getSystemInfoSync()
+      const navPx = 88 * (sys.windowWidth / 750)
+      this.setData({ headerPadPx: (sys.statusBarHeight || 20) + navPx })
+    } catch {
+      this.setData({ headerPadPx: 88 })
+    }
   },
   onShow() {
     const tab = typeof this.getTabBar === 'function' ? this.getTabBar() : null

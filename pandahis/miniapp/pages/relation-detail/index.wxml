@@ -1,14 +1,41 @@
-<navigation-bar title="{{name}}" back="{{true}}" color="#4A3F3F" background="rgba(248,246,242,0.96)"></navigation-bar>
+<view class="proto-shell">
+  <proto-nav title="{{name}}" show-back="{{true}}"></proto-nav>
 
-<view class="detail-page" wx:if="{{info}}">
-  <view class="meta-card">
-    <view class="row"><text class="lab">姓名</text><text class="val">{{info.name}}</text></view>
-    <view class="row"><text class="lab">关系类别</text><text class="val">{{info.category}}</text></view>
-    <view wx:if="{{info.role}}" class="row"><text class="lab">角色</text><text class="val">{{info.role}}</text></view>
-    <view wx:if="{{info.level}}" class="row"><text class="lab">关系层级</text><text class="val">{{info.level}}</text></view>
-    <view wx:if="{{info.lineage}}" class="row"><text class="lab">家族关系链</text><text class="val val-small">{{info.lineage}}</text></view>
+  <view class="detail-body" style="padding-top: {{headerPadPx}}px;">
+    <block wx:if="{{info}}">
+      <view class="meta card-paper">
+        <view class="row">
+          <text class="lab muted">姓名</text>
+          <text class="val">{{info.name}}</text>
+        </view>
+        <view class="row">
+          <text class="lab muted">关系类别</text>
+          <view class="val-row">
+            <text class="val">{{info.category}}</text>
+            <text wx:if="{{info.role}}" class="role-badge" style="background: {{color}}20; color: {{color}};">{{info.role}}</text>
+          </view>
+        </view>
+        <view wx:if="{{info.level}}" class="row">
+          <text class="lab muted">关系层级</text>
+          <text class="val">{{info.level}}</text>
+        </view>
+        <view wx:if="{{info.lineage}}" class="row">
+          <text class="lab muted">家族关系链</text>
+          <text class="val val-small">{{info.lineage}}</text>
+        </view>
+      </view>
+
+      <text class="sec accent">关系简述</text>
+      <view class="text-card card-paper">{{info.summary}}</view>
+
+      <view wx:if="{{info.targetBoxId}}" class="cta" bindtap="goTargetBox">查看相关史略 ›</view>
+    </block>
+
+    <block wx:else>
+      <view class="empty-state">
+        <text class="empty-icon">🔍</text>
+        <text class="empty-text">未找到 {{name}} 的关系数据</text>
+      </view>
+    </block>
   </view>
-  <text class="sec">关系简述</text>
-  <view class="text-card">{{info.summary}}</view>
-  <view wx:if="{{info.targetBoxId}}" class="cta" bindtap="goTargetBox">查看相关史略 ›</view>
 </view>

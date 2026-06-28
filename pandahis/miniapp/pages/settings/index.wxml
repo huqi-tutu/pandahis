@@ -1,23 +1,24 @@
-<navigation-bar title="设置" back="{{true}}" color="#4a3230" background="rgba(255,248,247,0.95)"></navigation-bar>
+<proto-nav title="设置" show-back="{{true}}"></proto-nav>
 
-<scroll-view class="page-settings" scroll-y>
-  <view class="menu-card" wx:if="{{loggedIn}}">
-    <view class="menu-item" bindtap="goProfileEdit">
-      <text class="menu-label">编辑昵称</text>
-      <text class="menu-extra">›</text>
+<scroll-view class="page-settings" scroll-y enhanced show-scrollbar="{{false}}" style="padding-top: {{headerPadPx}}px;">
+  <view class="card-paper menu-card" wx:if="{{loggedIn}}">
+    <view class="list-row" bindtap="goProfileEdit" hover-class="row-hover" hover-stay-time="60">
+      <text class="list-label">编辑昵称</text>
+      <text class="list-arrow">›</text>
     </view>
-    <view class="menu-item" bindtap="goInviteReads">
-      <text class="menu-label">邀请有礼 · 阅读点</text>
-      <text class="menu-extra">›</text>
+    <view class="list-row" bindtap="goInviteReads" hover-class="row-hover" hover-stay-time="60">
+      <text class="list-label">邀请有礼 · 阅读点</text>
+      <text class="list-arrow">›</text>
     </view>
-    <view class="menu-item menu-item-col menu-item-bind">
-      <text class="menu-label">补填好友邀请码</text>
+    <view class="list-row list-row-col">
+      <text class="list-label">补填好友邀请码</text>
       <view class="bind-row">
         <input
           class="bind-input"
           value="{{bindCode}}"
           maxlength="32"
           placeholder="邀请码"
+          placeholder-class="bind-input-ph"
           bindinput="onBindInput"
         />
         <view class="bind-btn {{bindSubmitting ? 'disabled' : ''}}" bindtap="submitBindCode">
@@ -25,23 +26,24 @@
         </view>
       </view>
     </view>
-    <view class="menu-item" bindtap="copySupportEmail">
-      <text class="menu-label">帮助与反馈</text>
-      <text class="menu-extra">复制邮箱</text>
+    <view class="list-row" bindtap="copySupportEmail" hover-class="row-hover" hover-stay-time="60">
+      <text class="list-label">帮助与反馈</text>
+      <text class="list-value">复制邮箱</text>
     </view>
   </view>
 
-  <view class="menu-card">
-    <view class="menu-item" bindtap="clearCache">
-      <text class="menu-label">清除本地缓存</text>
-      <text class="menu-extra">图片与临时数据</text>
+  <view class="card-paper menu-card">
+    <view class="list-row" bindtap="clearCache" hover-class="row-hover" hover-stay-time="60">
+      <text class="list-label">清除本地缓存</text>
+      <text class="list-value">图片与临时数据</text>
     </view>
-    <view class="menu-item menu-item-col">
-      <text class="menu-label">接口地址</text>
+    <view class="list-row list-row-col">
+      <text class="list-label">接口地址</text>
       <text class="menu-url">{{apiBase}}</text>
     </view>
   </view>
+
   <view wx:if="{{loggedIn}}" class="logout-wrap">
-    <view class="logout-btn" bindtap="logout">退出登录</view>
+    <view class="logout-btn" bindtap="logout" hover-class="logout-hover" hover-stay-time="60">退出登录</view>
   </view>
 </scroll-view>

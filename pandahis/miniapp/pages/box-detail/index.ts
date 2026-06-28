@@ -37,17 +37,6 @@ type BoxHeader = {
   }
 }
 
-type RelicVm = {
-  name: string
-  imageUrl?: string | null
-  summary?: string | null
-  description?: string | null
-  museum: string
-  priorityCode?: string | null
-  thumbLabel: string
-  teaser: string
-}
-
 type CritiqueVm = {
   title?: string | null
   blurb?: string | null
@@ -60,7 +49,22 @@ type CritiqueVm = {
   eraMeta: string
   bodyQuote: string
   avatarLetter: string
+  cardTitle: string
+  cardMeta: string
+  cardSummary: string
   _k: number
+}
+
+type RelicVm = {
+  name: string
+  imageUrl?: string | null
+  summary?: string | null
+  description?: string | null
+  museum: string
+  priorityCode?: string | null
+  thumbLabel: string
+  teaser: string
+  location: string
 }
 
 function relicThumbLabel(name: string): string {
@@ -83,28 +87,39 @@ function mapCritiqueItems(raw: any[]): CritiqueVm[] {
     const content = String(it.content || '').trim()
     const blurb = String(it.blurb || '').trim()
     const bodyQuote = content || blurb
+    const source = String(it.source || it.book || '').trim()
+    const cardTitle = title || displayAuthor
+    const cardMeta = [author, eraMeta, source].filter(Boolean).join(' · ')
     return {
       ...it,
       displayAuthor,
       eraMeta,
       bodyQuote,
       avatarLetter: displayAuthor.charAt(0) || '评',
+      cardTitle,
+      cardMeta,
+      cardSummary: bodyQuote,
       _k: idx,
     }
   })
 }
 
 function mapRelicItems(raw: any[]): RelicVm[] {
-  return (raw || []).slice(0, 3).map((it) => ({
-    name: it.name || '',
-    imageUrl: it.imageUrl,
-    summary: it.summary,
-    description: it.description,
-    museum: it.museum || '馆藏待补充',
-    priorityCode: it.priorityCode,
-    thumbLabel: relicThumbLabel(it.name || ''),
-    teaser: String(it.summary || it.description || '').trim(),
-  }))
+  return (raw || []).slice(0, 3).map((it) => {
+    const teaser = String(it.summary || it.description || '').trim()
+    const museum = it.museum || '馆藏待补充'
+    return {
+      name: it.name || '',
+      imageUrl: it.imageUrl,
+      summary: teaser,
+      description: it.description,
+      museum,
+      priorityCode: it.priorityCode,
+      thumbLabel: relicThumbLabel(it.name || ''),
+      teaser,
+      location: museum,
+    }
+  })
 }
 
 function formatDetailMetaLine(subText: string): string {
@@ -138,12 +153,86 @@ function splitDetailParagraphs(md: string): string[] {
   return parts.length ? parts : [raw]
 }
 
+type AssistActionKey = 'original' | 'play' | 'fav' | 'share'
+
+type AssistMenuItem = {
+  key: AssistActionKey
+  label: string
+  icon: string
+  dx: number
+  dy: number
+  delay: number
+}
+
+type AssistMetrics = {
+  margin: number
+  menuRadius: number
+  minX: number
+  minY: number
+  maxX: number
+  maxY: number
+}
+
+const ASSIST_ACTION_DEFS: Array<{ key: AssistActionKey; label: string; icon: string; angle: number }> = [
+  { key: 'original', label: '原文', icon: '/images/icons/yuanwen.png', angle: 5 },
+  { key: 'play', label: '播放', icon: '/images/icons/bofang.png', angle: 42 },
+  { key: 'fav', label: '收藏', icon: '/images/icons/shoucangA.png', angle: 79 },
+  { key: 'share', label: '分享', icon: '/images/icons/fenxiang.png', angle: 116 },
+]
+
+function buildAssistMetrics(sys: WechatMiniprogram.SystemInfo, bodyTop: number): AssistMetrics {
+  const margin = Math.round(32 * (sys.windowWidth / 750))
+  const dotSize = Math.round(88 * (sys.windowWidth / 750))
+  const menuRadius = Math.round(228 * (sys.windowWidth / 750))
+  return {
+    margin,
+    menuRadius,
+    minX: margin,
+    minY: bodyTop + margin,
+    maxX: sys.windowWidth - margin - dotSize,
+    maxY: sys.windowHeight - margin - dotSize,
+  }
+}
+
+function defaultAssistPosition(metrics: AssistMetrics, sys: WechatMiniprogram.SystemInfo) {
+  const x = Math.round(sys.windowWidth * 0.25)
+  const availableH = sys.windowHeight - metrics.minY
+  const y = Math.round(metrics.minY + availableH * 0.72)
+  return clampAssistPosition(x, y, metrics)
+}
+
+function clampAssistPosition(x: number, y: number, metrics: AssistMetrics) {
+  return {
+    x: Math.min(metrics.maxX, Math.max(metrics.minX, x)),
+    y: Math.min(metrics.maxY, Math.max(metrics.minY, y)),
+  }
+}
+
+function buildAssistMenuItems(open: boolean, menuRadius: number): AssistMenuItem[] {
+  return ASSIST_ACTION_DEFS.map((def, idx) => {
+    const rad = (def.angle * Math.PI) / 180
+    const dx = open ? Math.round(Math.cos(rad) * menuRadius) : 0
+    const dy = open ? Math.round(-Math.sin(rad) * menuRadius) : 0
+    return {
+      key: def.key,
+      label: def.label,
+      icon: def.icon,
+      dx,
+      dy,
+      delay: open ? idx * 30 : 0,
+    }
+  })
+}
+
 Page({
   data: {
     boxId: '',
     navTitle: '史略盒子',
     header: null as BoxHeader | null,
-    stickyTabsTopPx: 88,
+    tabTop: 88,
+    bodyTop: 160,
+    graphCanvasH: 400,
+    critColors: ['#92ADA4', '#C9825A', '#7BA87B', '#B85A5A', '#84572F', '#5A8FA8'],
     tab: 'content' as 'content' | 'relations' | 'reviews' | 'relics',
     isFav: false,
     detailMd: '',
@@ -170,7 +259,20 @@ Page({
     audioCurrentTime: '0:00',
     audioDuration: '0:00',
     graphScaleLabel: '100%',
+    assistOpen: false,
+    assistDragging: false,
+    assistX: 24,
+    assistY: 560,
+    assistMenuItems: [] as AssistMenuItem[],
   },
+  _assistMetrics: null as AssistMetrics | null,
+  _assistTouch: null as {
+    startX: number
+    startY: number
+    originX: number
+    originY: number
+    moved: boolean
+  } | null,
   onUnload() {
     stopNarration()
     this.setData({ audioOpen: false })
@@ -188,10 +290,24 @@ Page({
   async onLoad(query: Record<string, string | undefined>) {
     const boxId = query.boxId || query.id
     if (!boxId) return
-    const menu = wx.getMenuButtonBoundingClientRect()
     const sys = wx.getSystemInfoSync()
-    const stickyTabsTopPx = Math.max(Math.ceil(menu.bottom), (sys.statusBarHeight || 0) + 44)
-    this.setData({ boxId, stickyTabsTopPx })
+    const navH = Math.round(88 * (sys.windowWidth / 750))
+    const tabTop = (sys.statusBarHeight || 20) + navH
+    const tabBarPx = Math.round(72 * (sys.windowWidth / 750))
+    const bodyTop = tabTop + tabBarPx
+    const graphCanvasH = Math.max(400, Math.floor((sys.windowHeight || 667) - bodyTop - 40))
+    const assistMetrics = buildAssistMetrics(sys, bodyTop)
+    const assistPos = defaultAssistPosition(assistMetrics, sys)
+    this._assistMetrics = assistMetrics
+    this.setData({
+      boxId,
+      tabTop,
+      bodyTop,
+      graphCanvasH,
+      assistX: assistPos.x,
+      assistY: assistPos.y,
+      assistMenuItems: buildAssistMenuItems(false, assistMetrics.menuRadius),
+    })
     try {
       const res = await request<BoxHeader>(`/boxes/${encodePathSegment(boxId)}`)
       const header = res.data
@@ -315,7 +431,7 @@ Page({
     if (tab === 'reviews') {
       if (this.data.critFetched) return
       try {
-        const res = await request<{ items: any[] }>(`/boxes/${enc}/critiques`, { auth: hasToken() })
+        const res = await request<{ items: any[] }>(`/boxes/${enc}/critiques`)
         this.setData({
           critiques: mapCritiqueItems(res.data.items || []),
           critErr: '',
@@ -342,7 +458,7 @@ Page({
     if (tab === 'relics') {
       if (this.data.relicFetched) return
       try {
-        const res = await request<{ items: any[] }>(`/boxes/${enc}/relics`, { auth: hasToken() })
+        const res = await request<{ items: any[] }>(`/boxes/${enc}/relics`)
         const items = mapRelicItems(res.data.items || [])
         this.setData({ relics: items, relicErr: '', relicReady: true, relicFetched: true })
       } catch (e: any) {
@@ -362,16 +478,75 @@ Page({
       }
     }
   },
-  setTab(e: WechatMiniprogram.BaseEvent) {
-    const tab = (e.currentTarget as any).dataset.tab as 'content' | 'relations' | 'reviews' | 'relics'
-    const h = this.data.header as BoxHeader | null
-    if (tab === 'reviews' && h?.access?.tabs?.critique?.locked) {
-      this.promptLockedTab(h.access.tabs.critique)
+  setAssistOpen(open: boolean) {
+    const metrics = this._assistMetrics
+    const menuRadius = metrics?.menuRadius ?? 60
+    this.setData({
+      assistOpen: open,
+      assistMenuItems: buildAssistMenuItems(open, menuRadius),
+    })
+  },
+  onAssistTouchStart(e: WechatMiniprogram.TouchEvent) {
+    const touch = e.touches[0]
+    if (!touch) return
+    this._assistTouch = {
+      startX: touch.clientX,
+      startY: touch.clientY,
+      originX: this.data.assistX,
+      originY: this.data.assistY,
+      moved: false,
+    }
+    this.setData({ assistDragging: false })
+  },
+  onAssistTouchMove(e: WechatMiniprogram.TouchEvent) {
+    const touch = e.touches[0]
+    const state = this._assistTouch
+    const metrics = this._assistMetrics
+    if (!touch || !state || !metrics) return
+    const dx = touch.clientX - state.startX
+    const dy = touch.clientY - state.startY
+    if (!state.moved && Math.hypot(dx, dy) < 8) return
+    state.moved = true
+    const next = clampAssistPosition(state.originX + dx, state.originY + dy, metrics)
+    if (this.data.assistOpen) {
+      this.setAssistOpen(false)
+    }
+    this.setData({ assistDragging: true, assistX: next.x, assistY: next.y })
+  },
+  onAssistTouchEnd() {
+    const state = this._assistTouch
+    this._assistTouch = null
+    if (!state) return
+    if (state.moved) {
+      this.setData({ assistDragging: false })
       return
     }
-    if (tab === 'relics' && h?.access?.tabs?.relic?.locked) {
-      this.promptLockedTab(h.access.tabs.relic)
+    this.setAssistOpen(!this.data.assistOpen)
+    this.setData({ assistDragging: false })
+  },
+  onAssistAction(e: WechatMiniprogram.BaseEvent) {
+    const action = (e.currentTarget as any).dataset.action as AssistActionKey
+    this.setAssistOpen(false)
+    if (action === 'original') {
+      this.goOriginal()
       return
+    }
+    if (action === 'play') {
+      void this.onPlayIntro()
+      return
+    }
+    if (action === 'fav') {
+      this.toggleFav()
+      return
+    }
+    if (action === 'share') {
+      this.onShareTap()
+    }
+  },
+  setTab(e: WechatMiniprogram.BaseEvent) {
+    const tab = (e.currentTarget as any).dataset.tab as 'content' | 'relations' | 'reviews' | 'relics'
+    if (tab !== 'content' && this.data.assistOpen) {
+      this.setAssistOpen(false)
     }
     this.setData({ tab })
     void this.ensureTab(tab)

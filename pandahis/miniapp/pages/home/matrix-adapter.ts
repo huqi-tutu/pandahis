@@ -79,3 +79,51 @@ export function resolveUnitId(dynastyKey: string, map: Record<string, string>): 
   }
   return ''
 }
+
+export type NavigationTargetOpts = {
+  entityType?: string
+  entityId?: string
+  legacyId?: string
+  dynastyId?: string
+  person?: string
+  dynasty?: string
+  displayName?: string
+}
+
+/** 首页矩阵卡片 → 详情页 unitId（朝代详情优先 CD_* / dynastyId） */
+export function resolveNavigationUnitId(
+  opts: NavigationTargetOpts,
+  map: Record<string, string>
+): string {
+  const entityType = String(opts.entityType || '').trim()
+  const dynastyId = String(opts.dynastyId || '').trim()
+  const entityId = String(opts.entityId || '').trim()
+  const legacyId = String(opts.legacyId || '').trim()
+  const person = String(opts.person || '').trim()
+  const dynasty = String(opts.dynasty || opts.displayName || '').trim()
+  const seen = new Set<string>()
+  const candidates: string[] = []
+
+  function push(id: string) {
+    const v = String(id || '').trim()
+    if (!v || seen.has(v)) return
+    seen.add(v)
+    candidates.push(v)
+  }
+
+  push(dynastyId)
+  push(resolveUnitId(dynasty, map))
+
+  if (entityType === 'emperor') {
+    push(entityId)
+    push(legacyId)
+    push(resolveUnitId(person, map))
+  } else {
+    push(entityId)
+    push(legacyId)
+    if (person) push(resolveUnitId(person, map))
+  }
+
+  const dynastyCandidate = candidates.find((id) => id.startsWith('CD_'))
+  return dynastyCandidate || candidates[0] || ''
+}

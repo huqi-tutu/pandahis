@@ -18,6 +18,16 @@ Page({
     visibleItems: [] as FavoriteCardView[],
     dynastyItems: [] as FavoriteCardView[],
     shilueItems: [] as FavoriteCardView[],
+    headerPadPx: 88,
+  },
+  onLoad() {
+    try {
+      const sys = wx.getSystemInfoSync()
+      const navPx = 88 * (sys.windowWidth / 750)
+      this.setData({ headerPadPx: (sys.statusBarHeight || 20) + navPx })
+    } catch {
+      this.setData({ headerPadPx: 88 })
+    }
   },
   onShow() {
     const ok = hasToken()

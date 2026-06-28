@@ -9,6 +9,16 @@ Page({
     total: 0,
     summaryText: '',
     items: [] as FootprintCardView[],
+    headerPadPx: 88,
+  },
+  onLoad() {
+    try {
+      const sys = wx.getSystemInfoSync()
+      const navPx = 88 * (sys.windowWidth / 750)
+      this.setData({ headerPadPx: (sys.statusBarHeight || 20) + navPx })
+    } catch {
+      this.setData({ headerPadPx: 88 })
+    }
   },
   onShow() {
     const ok = hasToken()

@@ -1,80 +1,67 @@
 <view class="page-search">
-  <!-- TopAppBar（对齐参考稿：返回 + 下划线输入 + 清除 + 搜索） -->
-  <view class="search-topbar" style="{{topbarStyle}}">
-    <view class="topbar-row">
-      <view class="btn-icon tap" bindtap="onBack" aria-label="返回">
-        <view class="icon-back"></view>
-      </view>
-      <view class="search-field">
+  <proto-nav title="搜索" show-back="{{false}}"></proto-nav>
+
+  <view class="search-body" style="padding-top: {{headerPadPx}}px;">
+
+    <!-- 搜索框 -->
+    <view class="search-bar-wrap">
+      <view class="search-bar">
+        <text class="search-ico">⌕</text>
         <input
-          class="search-underline-input"
-          value="{{keyword}}"
+          class="search-input"
           placeholder="年代 / 人物 / 事件"
           placeholder-class="search-placeholder"
-          bindinput="onInput"
           confirm-type="search"
           bindconfirm="onConfirm"
+          bindinput="onInput"
+          value="{{keyword}}"
         />
-        <view
-          wx:if="{{keyword}}"
-          class="btn-clear tap"
-          catchtap="onClear"
-          aria-label="清除"
-        >
-          <view class="icon-close"></view>
-        </view>
-      </view>
-      <view class="btn-icon tap" bindtap="onConfirm" aria-label="搜索">
-        <view class="icon-search"></view>
+        <text wx:if="{{keyword}}" class="search-clear" catchtap="onClear">✕</text>
       </view>
     </view>
-  </view>
 
-  <scroll-view
-    class="body-scroll"
-    scroll-y
-    enhanced
-    show-scrollbar="{{false}}"
-  >
-    <view class="section" wx:if="{{hotKeywords.length}}">
-      <view class="section-label">热门搜索</view>
-      <view class="hot-row">
+    <!-- 热门搜索 -->
+    <view class="search-section" wx:if="{{hotKeywords.length}}">
+      <text class="search-section-title">热门搜索</text>
+      <view class="search-tags">
         <view
           wx:for="{{hotKeywords}}"
           wx:key="keyword"
-          class="hot-item {{item.isHot ? 'hot-item--pill' : 'hot-item--plain'}}"
+          class="search-tag {{item.isHot ? 'search-tag--hot' : ''}}"
           bindtap="tapKeyword"
           data-k="{{item.keyword}}"
-        >
-          {{item.keyword}}
-        </view>
+        >{{item.keyword}}</view>
       </view>
     </view>
 
-    <view class="section" wx:if="{{historyKeywords.length}}">
-      <view class="section-label">历史记录</view>
-      <view class="history-list">
-        <view class="history-item" wx:for="{{historyKeywords}}" wx:key="keyword">
-          <view class="history-keyword tap" bindtap="tapKeyword" data-k="{{item.keyword}}">
-            {{item.keyword}}
-          </view>
-          <view
-            class="history-del tap"
+    <!-- 历史记录 -->
+    <view class="search-section" wx:if="{{historyKeywords.length}}">
+      <text class="search-section-title">历史记录</text>
+      <view class="search-history">
+        <view
+          wx:for="{{historyKeywords}}"
+          wx:key="keyword"
+          class="search-history-item"
+        >
+          <text
+            class="search-history-text"
+            bindtap="tapKeyword"
+            data-k="{{item.keyword}}"
+          >{{item.keyword}}</text>
+          <text
+            class="search-history-del"
             catchtap="removeHistory"
             data-k="{{item.keyword}}"
-            aria-label="删除"
-          >
-            <text class="history-del-icon">×</text>
-          </view>
+          >✕</text>
         </view>
       </view>
     </view>
 
+    <!-- 空态 -->
     <view
       wx:if="{{!hotKeywords.length && !historyKeywords.length}}"
-      class="hint-empty"
-    >
-      输入关键词搜索朝代、人物与史略
-    </view>
-  </scroll-view>
+      class="search-empty"
+    >输入关键词搜索朝代、人物与史略</view>
+
+  </view>
 </view>

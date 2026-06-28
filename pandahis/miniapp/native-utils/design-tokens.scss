@@ -61,9 +61,9 @@ $font-caption: 22rpx;
 $font-caption2: 20rpx;
 $font-micro: 16rpx;
 
-$font-family-title: 'Noto Serif SC', 'Songti SC', serif;
-$font-family-body: 'PingFang SC', -apple-system, 'Helvetica Neue', sans-serif;
-$font-family-mono: 'SF Mono', Menlo, monospace;
+$font-family-title: 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', 'STSong', 'SimSun', 'FangSong', serif;
+$font-family-body: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+$font-family-mono: 'SF Mono', 'Roboto Mono', Menlo, Consolas, monospace;
 
 @mixin font-title {
   font-family: $font-family-title;

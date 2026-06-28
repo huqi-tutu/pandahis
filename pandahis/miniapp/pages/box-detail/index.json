@@ -1,6 +1,7 @@
 {
+  "navigationStyle": "custom",
   "usingComponents": {
-    "navigation-bar": "/components/navigation-bar/navigation-bar",
+    "proto-nav": "/components/proto-nav/proto-nav",
     "relation-graph-canvas": "/components/relation-graph-canvas/relation-graph-canvas"
   }
 }

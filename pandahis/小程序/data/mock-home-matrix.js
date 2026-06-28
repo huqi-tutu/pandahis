@@ -296,6 +296,7 @@ let EMPEROR_LANES_BY_DYN = {}
 function rebuildMatrixDataSources(dynastyRaw, emperorRaw) {
   DYNASTIES_BY_CIV = {}
   DYNASTY_GROUPS = {}
+  dynastyRaw = dynastyRaw || []
 
   ;(dynastyRaw || []).forEach((d, idx) => {
     const civ = d.civilization

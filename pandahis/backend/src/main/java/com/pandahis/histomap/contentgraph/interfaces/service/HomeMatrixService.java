@@ -39,8 +39,8 @@ public class HomeMatrixService {
 
   public HomeMatrixDTO load(long civId, Set<String> expandedDynastyKeys) {
     List<Map<String, Object>> units = jdbcTemplate.queryForList(
-        "SELECT id, name, dynasty_name, dynasty_id, start_year, end_year, duration_years, core_topics_json "
-            + "FROM historical_unit WHERE status=1 AND civilization_l1_id=? ORDER BY start_year ASC, id ASC",
+        "SELECT id, name, dynasty_name, dynasty_id, enthronement_year, abdication_year, reign_duration, tags "
+            + "FROM historical_emperor WHERE status=1 AND civilization_l1_id=? ORDER BY enthronement_year ASC, id ASC",
         civId
     );
     if (units.isEmpty()) {
@@ -58,14 +58,14 @@ public class HomeMatrixService {
     }
 
     for (Map<String, Object> u : units) {
-      int start = ((Number) u.get("start_year")).intValue();
-      int end = ((Number) u.get("end_year")).intValue();
+      int start = u.get("enthronement_year") == null ? 0 : ((Number) u.get("enthronement_year")).intValue();
+      int end = u.get("abdication_year") == null ? start + 1 : ((Number) u.get("abdication_year")).intValue();
       if (end <= start) end = start + 1;
       String dynasty = trimOrEmpty((String) u.get("dynasty_name"));
       String dynastyId = trimOrEmpty((String) u.get("dynasty_id"));
       String dynastyKey = !dynastyId.isEmpty() ? dynastyId : slugDynasty(dynasty);
       String title = trimOrEmpty((String) u.get("name"));
-      List<String> highlights = parseHighlights((String) u.get("core_topics_json"));
+      List<String> highlights = parseHighlights((String) u.get("tags"));
       entries.add(new Entry(
           (String) u.get("id"),
           title,
@@ -291,23 +291,27 @@ public class HomeMatrixService {
     return s == null ? "" : s.trim();
   }
 
-  private static List<String> parseHighlights(String json) {
-    if (json == null || json.isBlank()) return List.of();
-    try {
-      JsonNode n = OM.readTree(json);
-      if (!n.isArray()) return List.of();
-      LinkedHashSet<String> seen = new LinkedHashSet<>();
-      for (JsonNode x : n) {
-        if (x.isTextual()) {
-          String t = x.asText().trim();
-          if (!t.isEmpty()) seen.add(t);
+  private static List<String> parseHighlights(String raw) {
+    if (raw == null || raw.isBlank()) return List.of();
+    String trimmed = raw.trim();
+    if (trimmed.startsWith("[")) {
+      try {
+        JsonNode n = OM.readTree(trimmed);
+        if (!n.isArray()) return List.of();
+        LinkedHashSet<String> seen = new LinkedHashSet<>();
+        for (JsonNode x : n) {
+          if (x.isTextual()) {
+            String t = x.asText().trim();
+            if (!t.isEmpty()) seen.add(t);
+          }
+          if (seen.size() >= 3) break;
         }
-        if (seen.size() >= 3) break;
+        return List.copyOf(seen);
+      } catch (Exception e) {
+        return List.of();
       }
-      return List.copyOf(seen);
-    } catch (Exception e) {
-      return List.of();
     }
+    return List.of(trimmed);
   }
 
   private record Entry(

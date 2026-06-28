@@ -1,13 +1,8 @@
 package com.pandahis.histomap.contentgraph.interfaces.service;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.pandahis.histomap.common.api.ApiException;
 import com.pandahis.histomap.contentgraph.interfaces.dto.UnitSwimMatrixDTO;
 import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -16,7 +11,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class UnitSwimMatrixService {
-  private static final ObjectMapper OM = new ObjectMapper();
   private static final int MAX_VISIBLE = 10;
   private static final int SHEET_WIDTH_RPX = 1440;
 
@@ -25,7 +19,8 @@ public class UnitSwimMatrixService {
       new LaneDef("shichen", "士臣", "#E0C088", "shichen"),
       new LaneDef("dianzhi", "典制", "#92ADA4", "continuous"),
       new LaneDef("shilue", "事略", "#B3D9E0", "continuous"),
-      new LaneDef("minlu", "民录", "#EDD5C0", "isolated")
+      new LaneDef("minlu", "民录", "#EDD5C0", "isolated"),
+      new LaneDef("lunzhu", "论著", "#A894B8", "isolated")
   );
 
   private static final Map<String, String> LANE_BORDER = Map.of(
@@ -33,40 +28,33 @@ public class UnitSwimMatrixService {
       "shichen", "#E0C088",
       "dianzhi", "#92ADA4",
       "shilue", "#B3D9E0",
-      "minlu", "#EDD5C0"
+      "minlu", "#EDD5C0",
+      "lunzhu", "#A894B8"
   );
 
   private final JdbcTemplate jdbcTemplate;
+  private final UnitDynastyResolver dynastyResolver;
 
-  public UnitSwimMatrixService(JdbcTemplate jdbcTemplate) {
+  public UnitSwimMatrixService(JdbcTemplate jdbcTemplate, UnitDynastyResolver dynastyResolver) {
     this.jdbcTemplate = jdbcTemplate;
+    this.dynastyResolver = dynastyResolver;
   }
 
   public UnitSwimMatrixDTO load(String unitId) {
-    List<Map<String, Object>> unitRows = jdbcTemplate.queryForList(
-        "SELECT id, name, dynasty_name, civilization_l1_id, start_year, end_year FROM historical_unit "
-            + "WHERE id=? AND status=1",
-        unitId
-    );
-    if (unitRows.isEmpty()) {
-      throw ApiException.notFound("unit not found");
-    }
-    Map<String, Object> unit = unitRows.get(0);
-    int startYear = ((Number) unit.get("start_year")).intValue();
-    int endYear = ((Number) unit.get("end_year")).intValue();
-    if (endYear <= startYear) endYear = startYear + 1;
-    String dynastyName = Optional.ofNullable((String) unit.get("dynasty_name")).orElse("").trim();
-    String civName = jdbcTemplate.queryForObject(
-        "SELECT display_name FROM civilization_l1 WHERE id=?",
-        String.class,
-        ((Number) unit.get("civilization_l1_id")).longValue()
-    );
-    if (civName == null) civName = "";
+    String dynastyId = dynastyResolver.resolveDynastyId(unitId)
+        .orElseThrow(() -> ApiException.notFound("unit not found"));
+    Map<String, Object> dynasty = dynastyResolver.requireDynastyById(dynastyId);
+
+    int startYear = dynastyResolver.dynastyStartYear(dynasty);
+    int endYear = dynastyResolver.dynastyEndYear(dynasty);
+    String dynastyName = Optional.ofNullable((String) dynasty.get("name")).orElse("").trim();
+    String civName = dynastyResolver.civilizationName(dynasty);
 
     List<Map<String, Object>> boxes = jdbcTemplate.queryForList(
         "SELECT id, title, category_key, start_year, end_year, importance_level, blurb "
-            + "FROM historical_box WHERE unit_id=? AND status=1 ORDER BY start_year ASC, id ASC",
-        unitId
+            + "FROM historical_box WHERE dynasty_id=? AND status=1 "
+            + "ORDER BY start_year ASC, id ASC",
+        dynastyId
     );
 
     List<UnitSwimMatrixDTO.AxisTick> ticks = buildTicks(startYear, endYear);
@@ -140,93 +128,14 @@ public class UnitSwimMatrixService {
       int startYear,
       int span
   ) {
-    List<List<BarInput>> packed = new ArrayList<>();
-    for (BarInput b : bars) {
-      boolean placed = false;
-      for (List<BarInput> row : packed) {
-        if (!overlaps(row, b)) {
-          row.add(b);
-          placed = true;
-          break;
-        }
-      }
-      if (!placed) {
-        List<BarInput> row = new ArrayList<>();
-        row.add(b);
-        packed.add(row);
-      }
-    }
-
-    List<List<UnitSwimMatrixDTO.Bar>> out = new ArrayList<>();
-    for (List<BarInput> row : packed) {
-      List<UnitSwimMatrixDTO.Bar> rowOut = new ArrayList<>();
-      for (BarInput b : row) {
-        rowOut.add(toBar(b, layout, startYear, span));
-      }
-      out.add(rowOut);
-    }
-    return out.isEmpty() ? List.of(List.of()) : out;
-  }
-
-  private static boolean overlaps(List<BarInput> row, BarInput b) {
-    for (BarInput x : row) {
-      if (b.start < x.end && b.end > x.start) return true;
-    }
-    return false;
-  }
-
-  private UnitSwimMatrixDTO.Bar toBar(BarInput b, String layout, int startYear, int span) {
-    double left = pct(b.start, startYear, span);
-    double right = pct(b.end, startYear, span);
-    double width = Math.max(2, right - left);
-    String leftStr = fmtPct(left);
-    String widthStr = fmtPct(width);
-    String timeRange = fmtYear(b.start) + " — " + fmtYear(b.end);
-    String pri = b.priority;
-
-    if ("shichen".equals(layout) || "continuous".equals(layout)) {
-      double chipW = Math.min(width * 0.55, 18);
-      double chipL = left + (width - chipW) / 2;
-      return new UnitSwimMatrixDTO.Bar(
-          b.title,
-          b.boxId,
-          b.boxId,
-          b.title,
-          leftStr,
-          widthStr,
-          leftStr,
-          widthStr,
-          fmtPct(chipL),
-          fmtPct(chipW),
-          fmtPct(Math.max(0, chipL - left)),
-          fmtPct(chipL + chipW),
-          fmtPct(Math.max(0, right - chipL - chipW)),
-          pri,
-          "default",
-          10,
-          timeRange
-      );
-    }
-
-    return new UnitSwimMatrixDTO.Bar(
-        b.title,
-        b.boxId,
-        b.boxId,
-        b.title,
-        leftStr,
-        widthStr,
-        leftStr,
-        widthStr,
-        leftStr,
-        widthStr,
-        "0%",
-        leftStr,
-        widthStr,
-        pri,
-        "default",
-        10,
-        timeRange
-    );
+    List<SwimLaneLayout.SwimBarInput> inputs = bars.stream()
+        .map(b -> new SwimLaneLayout.SwimBarInput(b.boxId(), b.title(), b.start(), b.end(), b.priority()))
+        .toList();
+    return switch (layout) {
+      case "shichen" -> SwimLaneLayout.packShichen(inputs, startYear, span);
+      case "isolated" -> SwimLaneLayout.packIsolated(inputs, startYear, span);
+      default -> SwimLaneLayout.packContinuous(inputs, startYear, span);
+    };
   }
 
   private List<UnitSwimMatrixDTO.AxisTick> buildTicks(int start, int end) {
@@ -244,11 +153,13 @@ public class UnitSwimMatrixService {
 
   private List<String> loadConcurrentItems(String civName, String dynastyName, int start, int end) {
     List<Map<String, Object>> rows = jdbcTemplate.queryForList(
-        "SELECT DISTINCT c.display_name AS civ, COALESCE(NULLIF(TRIM(u.dynasty_name),''), u.name) AS title, "
-            + "u.start_year, u.end_year FROM historical_unit u "
-            + "JOIN civilization_l1 c ON c.id=u.civilization_l1_id "
-            + "WHERE u.status=1 AND u.start_year<? AND u.end_year>? "
-            + "ORDER BY u.start_year ASC LIMIT 24",
+        "SELECT DISTINCT COALESCE(NULLIF(TRIM(r.civilization_name),''), c.display_name) AS civ, "
+            + "COALESCE(NULLIF(TRIM(r.name),''), r.dynasty_name) AS title "
+            + "FROM historical_regime r "
+            + "JOIN civilization_l1 c ON c.id=r.civilization_l1_id "
+            + "WHERE r.status=1 AND r.start_year IS NOT NULL AND r.end_year IS NOT NULL "
+            + "AND r.start_year<? AND r.end_year>? "
+            + "LIMIT 24",
         end,
         start
     );
@@ -280,11 +191,12 @@ public class UnitSwimMatrixService {
     return String.valueOf(y);
   }
 
+  /** P0=0 最高优先级 → p0；与 import_box_index_json 一致 */
   private static String priority(Object imp) {
     int v = imp == null ? 2 : ((Number) imp).intValue();
-    if (v >= 4) return "p0";
-    if (v >= 3) return "p1";
-    if (v >= 2) return "p2";
+    if (v <= 0) return "p0";
+    if (v == 1) return "p1";
+    if (v == 2) return "p2";
     return "p3";
   }
 

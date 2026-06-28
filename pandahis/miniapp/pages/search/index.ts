@@ -4,7 +4,6 @@ import {
   readLocalSearchHistory,
   removeLocalSearchHistory,
 } from '../../native-utils/search-history-storage'
-import { getNavBarMetrics } from '../../native-utils/nav-metrics'
 import { ROUTES, navigateTo } from '../../native-utils/router'
 
 type Suggest = {
@@ -17,16 +16,17 @@ Page({
     keyword: '',
     hotKeywords: [] as Suggest['hotKeywords'],
     historyKeywords: [] as Suggest['historyKeywords'],
-    topbarStyle: '',
+    headerPadPx: 88,
   },
   onLoad() {
-    void getNavBarMetrics()
-      .then((m) => {
-        this.setData({
-          topbarStyle: `padding-top:${m.statusBarHeight}px;padding-left:${m.paddingLeft}px;padding-right:${m.paddingRight}px;`,
-        })
-      })
-      .catch(() => {})
+    // 与 proto-nav 一致：状态栏 + 88rpx 导航行（随屏宽换算 px）
+    try {
+      const sys = wx.getSystemInfoSync()
+      const navPx = 88 * (sys.windowWidth / 750)
+      this.setData({ headerPadPx: (sys.statusBarHeight || 20) + navPx })
+    } catch {
+      this.setData({ headerPadPx: 88 })
+    }
   },
   onShow() {
     const tab = typeof this.getTabBar === 'function' ? this.getTabBar() : null
@@ -60,9 +60,6 @@ Page({
   },
   onConfirm() {
     void this.doSearch()
-  },
-  onBack() {
-    wx.switchTab({ url: ROUTES.home })
   },
   onClear() {
     this.setData({ keyword: '' })

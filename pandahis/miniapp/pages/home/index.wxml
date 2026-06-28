@@ -4,9 +4,7 @@
     title="历史图谱"
     home-nav="{{true}}"
     mode-pill-icon="/配图/icons/quanbu.png"
-    right-pill-text="总览 ▾"
     bind:modepilltap="onToggleCivPicker"
-    bind:rightpilltap="goOverview"
   />
 
   <view wx:if="{{stackMode}}"
@@ -89,7 +87,7 @@
       </view>
       <view class="matrix-canvas">
         <view class="matrix-canvas-inner">
-          <view wx:for="{{matrixBlocks}}" wx:key="id" wx:for-item="blk" class="era-block {{blk.edgeClass}}" style="top: {{blk.top}}rpx; height: {{blk.h}}rpx; left: {{blk.leftPct}}%; width: {{blk.widthPct}}%; border-radius: {{blk.radiusStyle}};" hover-class="era-block--hover" bindtap="onCardTap" data-dynasty="{{blk.dynasty}}" data-person="{{blk.person}}" data-civ="{{blk.civ}}" data-anchor-year="{{blk.anchorYear}}">
+          <view wx:for="{{matrixBlocks}}" wx:key="id" wx:for-item="blk" class="era-block {{blk.edgeClass}}" style="top: {{blk.top}}rpx; height: {{blk.h}}rpx; left: {{blk.leftPct}}%; width: {{blk.widthPct}}%; border-radius: {{blk.radiusStyle}};" hover-class="era-block--hover" bindtap="onCardTap" data-dynasty="{{blk.dynasty}}" data-display-name="{{blk.displayName}}" data-person="{{blk.person}}" data-civ="{{blk.civ}}" data-anchor-year="{{blk.anchorYear}}" data-entity-type="{{blk.entityType}}" data-entity-id="{{blk.entityId}}" data-dynasty-id="{{blk.dynastyId}}" data-legacy-id="{{blk.legacyId}}">
             <view class="era-block-fill {{blk.fillSeamFix ? 'era-block-fill--solid-seam' : ''}}{{blk.seamGapTop ? ' era-block-fill--gap-top' : ''}}{{blk.seamGapBottom ? ' era-block-fill--gap-bottom' : ''}}{{blk.seamGapLeft ? ' era-block-fill--gap-left' : ''}}{{blk.seamGapRight ? ' era-block-fill--gap-right' : ''}}" style="background-color: {{blk.cardBg}}; border-radius: {{blk.radiusStyle}};{{blk.fillStyleExtra || ''}}"></view>
             <view wx:if="{{blk.entryId === 'zhong_hua_wu_di_huang_di'}}" class="era-block-paper-grain" style="border-radius: {{blk.radiusStyle}};"></view>
           </view>

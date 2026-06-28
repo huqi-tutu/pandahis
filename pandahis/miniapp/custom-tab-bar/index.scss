@@ -25,7 +25,7 @@
 .icon-img {
   width: 46rpx;
   height: 46rpx;
-  opacity: 0.45;
+  opacity: 0.5;
 }
 
 .text {
@@ -36,21 +36,10 @@
 
 .active {
   color: $theme-primary;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .active .icon-img {
   opacity: 1;
 }
 
-.active::after {
-  content: '';
-  position: absolute;
-  bottom: 8rpx;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 8rpx;
-  height: 8rpx;
-  border-radius: 999rpx;
-  background: $theme-primary;
-}

@@ -3,8 +3,8 @@
   "packOptions": {
     "ignore": [
       {
-        "type": "folder",
-        "value": "cloudfunctions/**/node_modules"
+        "value": "cloudfunctions/**/node_modules",
+        "type": "folder"
       }
     ],
     "include": []
@@ -50,7 +50,7 @@
     "disableSWC": true
   },
   "compileType": "miniprogram",
-  "libVersion": "3.3.4",
+  "libVersion": "3.15.2",
   "appid": "wx130cbdfbc6c4b1ab",
   "projectname": "history-atlas-miniprogram",
   "cloudfunctionRoot": "cloudfunctions/",

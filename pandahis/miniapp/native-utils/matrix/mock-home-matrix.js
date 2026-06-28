@@ -47,13 +47,16 @@ CIV_TABS.forEach(c => { CIV_ID_TO_NAME[c.id] = c.name })
 const regimeEra = require('./regime-era-layout.js')
 
 // ─── 朝代色（6 色按起始时间顺序轮流）──────────────────────────────
+// 取自 小程序/pages/index 的文明配色（中华红/亚洲橙/欧洲蓝/美洲绿/非洲紫/金）。
+// 原方案用于深色底（饱和度高）；home 为白底，故卡片背景取柔和浅色调，
+// 边框/填充用 index 原色作点缀，符合低饱和、文艺的设计基调。
 const ERA_COLORS = [
-  { cardBg: '#B3A08F', tagBorder: '#B3A08F', fill: '#B3A08F', leftBorder: '#B3A08F' },
-  { cardBg: '#F8D180', tagBorder: '#F8D180', fill: '#F8D180', leftBorder: '#F8D180' },
-  { cardBg: '#F9E9D0', tagBorder: '#F9E9D0', fill: '#F9E9D0', leftBorder: '#F9E9D0' },
-  { cardBg: '#C0D6CF', tagBorder: '#C0D6CF', fill: '#C0D6CF', leftBorder: '#C0D6CF' },
-  { cardBg: '#D9EBEF', tagBorder: '#D9EBEF', fill: '#D9EBEF', leftBorder: '#D9EBEF' },
-  { cardBg: '#F6EAE0', tagBorder: '#F6EAE0', fill: '#F6EAE0', leftBorder: '#F6EAE0' },
+  { cardBg: '#F3D9D9', tagBorder: '#D45050', fill: '#E7B4B4', leftBorder: '#D45050' }, // 中华红
+  { cardBg: '#F6E4CD', tagBorder: '#D4882A', fill: '#EDC999', leftBorder: '#D4882A' }, // 亚洲橙
+  { cardBg: '#DBE5F5', tagBorder: '#4A80D0', fill: '#B6C9EC', leftBorder: '#4A80D0' }, // 欧洲蓝
+  { cardBg: '#D6ECDF', tagBorder: '#3A9A60', fill: '#AED9C0', leftBorder: '#3A9A60' }, // 美洲绿
+  { cardBg: '#ECDDF4', tagBorder: '#B875D5', fill: '#DABEE9', leftBorder: '#B875D5' }, // 非洲紫
+  { cardBg: '#F6EDCD', tagBorder: '#D4AA20', fill: '#EBDA98', leftBorder: '#D4AA20' }, // 金
 ]
 
 function getEraColor(colorIdx) {
@@ -89,6 +92,30 @@ const EMP_REGIME_REMAP = {
 function getEmperorRegimeKey(e) {
   const raw = e.dynasty2 || e.dynasty
   return EMP_REGIME_REMAP[raw] || raw
+}
+
+/** legacy 矩阵补丁 id → 新 canonical id（政权ID / 帝王ID） */
+let ENTRY_ID_BY_LEGACY = {}
+
+function resolveEntryId(ref) {
+  if (!ref) return ref
+  return ENTRY_ID_BY_LEGACY[ref] || ref
+}
+
+function registerLegacyIds(records) {
+  ;(records || []).forEach(r => {
+    if (r && r.legacyId) ENTRY_ID_BY_LEGACY[r.legacyId] = r.id
+  })
+}
+
+function entryIdsMatch(entryId, ref) {
+  if (!entryId || !ref) return false
+  return entryId === ref || entryId === resolveEntryId(ref)
+}
+
+function entryIdInSet(entryId, setOrArr) {
+  const items = setOrArr instanceof Set ? [...setOrArr] : setOrArr
+  return items.some(ref => entryIdsMatch(entryId, ref))
 }
 
 // ─── 年份解析 ─────────────────────────────────────────────────────
@@ -146,7 +173,15 @@ const THREE_KINGDOMS_MIN = {
 /** 首页矩阵不展示的帝王（如未正式称帝、追封庙号者） */
 const MATRIX_EXCLUDED_EMPEROR_IDS = new Set([
   'zhong_hua_wei_cao_cao', // 曹操：魏武帝为曹丕追封，生前未称帝
+  'DW_HX_SANGUO_SANGUOWEI_CAOCAO',
 ])
+
+function isExcludedEmperor(e) {
+  if (!e || !e.id) return true
+  if (MATRIX_EXCLUDED_EMPEROR_IDS.has(e.id)) return true
+  if (e.legacyId && MATRIX_EXCLUDED_EMPEROR_IDS.has(e.legacyId)) return true
+  return false
+}
 
 function countEmperorsByRegime(emperorRaw) {
   const counts = {}
@@ -296,21 +331,30 @@ let EMPEROR_LANES_BY_DYN = {}
 function rebuildMatrixDataSources(dynastyRaw, emperorRaw) {
   DYNASTIES_BY_CIV = {}
   DYNASTY_GROUPS = {}
+  ENTRY_ID_BY_LEGACY = {}
+  registerLegacyIds(dynastyRaw)
+  registerLegacyIds(emperorRaw)
 
   ;(dynastyRaw || []).forEach((d, idx) => {
     const civ = d.civilization
     if (!civ) return
     if (!DYNASTIES_BY_CIV[civ]) DYNASTIES_BY_CIV[civ] = []
     DYNASTIES_BY_CIV[civ].push({
-      id:          d.id || `dyn_${idx}`,
-      name:        d.name,
-      dynasty:     d.dynasty || d.name,
-      dynasty2:    getDynasty2(d),
-      start:       parseYear(d.start),
-      end:         parseYear(d.end),
-      startStr:    d.start,
-      endStr:      d.end,
-      colorIdx:    0,
+      id:              d.id || `dyn_${idx}`,
+      legacyId:        d.legacyId || '',
+      name:            d.name,
+      dynasty:         d.dynasty || d.name,
+      dynastyId:       d.dynastyId || '',
+      dynasty_zy:      d.dynasty_zy || '',
+      dynasty2:        getDynasty2(d),
+      civilization:    civ,
+      civilizationId:  d.civilizationId || '',
+      regimeId:        d.id || '',
+      start:           parseYear(d.start),
+      end:             parseYear(d.end),
+      startStr:        d.start,
+      endStr:          d.end,
+      colorIdx:        0,
     })
   })
 
@@ -333,7 +377,9 @@ function rebuildMatrixDataSources(dynastyRaw, emperorRaw) {
   const hx = DYNASTIES_BY_CIV['华夏']
   if (hx && !hx.some(d => d.name === '南明' || d.dynasty === '南明')) {
     const nm = {
-      id: 'HX-NM', name: '南明', dynasty: '南明', dynasty2: '南明',
+      id: 'ZQ_HX_NANMING_NANMING', legacyId: 'HX-NM',
+      name: '南明', dynasty: '南明', dynastyId: '', dynasty_zy: '南明',
+      dynasty2: '南明', civilization: '华夏', civilizationId: 'HX', regimeId: 'ZQ_HX_NANMING_NANMING',
       start: 1644, end: 1662,
       startStr: '1644', endStr: '1662', colorIdx: 0,
     }
@@ -345,17 +391,27 @@ function rebuildMatrixDataSources(dynastyRaw, emperorRaw) {
 
   EMPERORS_BY_DYN = {}
   ;(emperorRaw || []).forEach(e => {
-    if (MATRIX_EXCLUDED_EMPEROR_IDS.has(e.id)) return
+    if (isExcludedEmperor(e)) return
     const dyn = getEmperorRegimeKey(e)
     if (!EMPERORS_BY_DYN[dyn]) EMPERORS_BY_DYN[dyn] = []
     EMPERORS_BY_DYN[dyn].push({
-      id:     e.id,
-      name:   e.name,
-      dynasty: dyn,
-      start:  parseInt(e.start, 10) || 0,
-      end:    parseInt(e.end, 10) || 0,
-      years:  parseInt(e.years, 10) || 1,
-      tag:    normalizeEmperorTag(e.tag),
+      id:               e.id,
+      legacyId:         e.legacyId || '',
+      name:             e.name,
+      originalName:     e.originalName || '',
+      dynasty:          e.dynasty || dyn,
+      dynastyId:        e.dynastyId || '',
+      dynasty2:         e.dynasty2 || dyn,
+      regimeId:         e.regimeId || '',
+      civilization:     e.civilization || '',
+      civilizationId:   e.civilizationId || '',
+      temple:           e.temple || '',
+      era:              e.era || '',
+      importance:       e.importance || '',
+      start:            parseInt(e.start, 10) || 0,
+      end:              parseInt(e.end, 10) || 0,
+      years:            parseInt(e.years, 10) || 1,
+      tag:              normalizeEmperorTag(e.tag),
     })
   })
   Object.values(EMPERORS_BY_DYN).forEach(arr =>
@@ -657,11 +713,11 @@ const FILL_SEAM_FIX_IDS = new Set([
 /** 东晋帝王上下承续：固定 16rpx 间距（仅指定 entry 对） */
 function pinJinEmperorGap(blocks, upperEntryId, lowerEntryId) {
   const upper = blocks
-    .filter(b => b.entryId === upperEntryId && !b.isLBridge && !b.isNanbeiLBridge)
+    .filter(b => entryIdsMatch(b.entryId, upperEntryId) && !b.isLBridge && !b.isNanbeiLBridge)
     .sort((a, b) => a.top - b.top)
     .slice(-1)[0]
   const lower = blocks
-    .filter(b => b.entryId === lowerEntryId && !b.isLBridge && !b.isNanbeiLBridge)
+    .filter(b => entryIdsMatch(b.entryId, lowerEntryId) && !b.isLBridge && !b.isNanbeiLBridge)
     .sort((a, b) => a.top - b.top)[0]
   if (!upper || !lower) return
   lower.top = upper.top + upper.h + BLOCK_V_GAP_RPX
@@ -705,17 +761,17 @@ function applyEntryBlockPatches(blocks) {
     byEntry[b.entryId].push(b)
   })
   Object.entries(ENTRY_BLOCK_PATCHES).forEach(([entryId, patch]) => {
-    const segs = byEntry[entryId]
+    const segs = byEntry[resolveEntryId(entryId)] || byEntry[entryId]
     if (segs) patch(segs)
   })
   // 宋理宗：下段已覆盖桥接区，去掉冗余桥接块（消除右上角半透明叠色）
   for (let i = blocks.length - 1; i >= 0; i--) {
-    if (blocks[i].entryId === 'zhong_hua_song_lizong' && blocks[i].isSongHalfLBridge) {
+    if (entryIdsMatch(blocks[i].entryId, 'zhong_hua_song_lizong') && blocks[i].isSongHalfLBridge) {
       blocks.splice(i, 1)
     }
   }
   // 魏陈留王：右段/桥接底缘与左臂对齐，消右下 protrusion
-  const weiSegs = blocks.filter(b => b.entryId === 'zhong_hua_wei_cao_huan')
+  const weiSegs = blocks.filter(b => entryIdsMatch(b.entryId, 'zhong_hua_wei_cao_huan'))
   const weiLeft = weiSegs.find(b => !b.isLBridge && b.leftPct < 1)
   if (weiLeft) {
     const targetBottom = weiLeft.top + weiLeft.h
@@ -727,12 +783,12 @@ function applyEntryBlockPatches(blocks) {
   }
   // 魏陈留王：桥接段与右段合并，消列间距处白色竖线（仅本 entry 有 isLBridge）
   const weiBridgeIdx = blocks.findIndex(b =>
-    b.entryId === 'zhong_hua_wei_cao_huan' && b.isLBridge
+    entryIdsMatch(b.entryId, 'zhong_hua_wei_cao_huan') && b.isLBridge
   )
   if (weiBridgeIdx >= 0) {
     const bridge = blocks[weiBridgeIdx]
     const weiRight = blocks.find(b =>
-      b.entryId === 'zhong_hua_wei_cao_huan' && !b.isLBridge && b.leftPct > weiLeft.leftPct + 0.5
+      entryIdsMatch(b.entryId, 'zhong_hua_wei_cao_huan') && !b.isLBridge && b.leftPct > weiLeft.leftPct + 0.5
     )
     if (weiRight) {
       weiRight.leftPct = bridge.leftPct
@@ -749,14 +805,14 @@ function applyEntryBlockPatches(blocks) {
     weiRight.widthPct += 1.5
   }
   blocks.forEach(b => {
-    if (FILL_SEAM_FIX_IDS.has(b.entryId)) b.fillSeamFix = true
+    if (entryIdInSet(b.entryId, FILL_SEAM_FIX_IDS)) b.fillSeamFix = true
   })
   pinJinEmperorGap(blocks, 'zhong_hua_jin_si_ma_ye', 'zhong_hua_jin_si_ma_rui')
   pinJinEmperorGap(blocks, 'zhong_hua_jin_si_ma_rui', 'zhong_hua_jin_si_ma_shao')
   pinJinEmperorGap(blocks, 'zhong_hua_jin_si_ma_shao', 'zhong_hua_jin_si_ma_yan_cheng')
   // 晋武帝：上段加宽至与陈留王右缘齐平 + 右肩 L 桥（仅本 entry）
   const yanSegs = blocks.filter(b =>
-    b.entryId === 'zhong_hua_jin_si_ma_yan' && !b.isLBridge
+    b.entryId === resolveEntryId('zhong_hua_jin_si_ma_yan') && !b.isLBridge
   )
   if (yanSegs.length >= 2 && weiRight) {
     yanSegs.sort((a, b) => a.top - b.top)
@@ -772,8 +828,8 @@ function applyEntryBlockPatches(blocks) {
       const bridgeW = lower.widthPct - upper.widthPct
       if (bridgeW > 0.5 && Math.abs(lower.top - joint) <= 8) {
         blocks.push(Object.assign({}, lower, {
-          id:            `zhong_hua_jin_si_ma_yan_ybridge_${joint}`,
-          entryId:       'zhong_hua_jin_si_ma_yan',
+          id:            `${resolveEntryId('zhong_hua_jin_si_ma_yan')}_ybridge_${joint}`,
+          entryId:       resolveEntryId('zhong_hua_jin_si_ma_yan'),
           leftPct:       upper.leftPct + upper.widthPct,
           widthPct:      bridgeW,
           top:           joint - 2,
@@ -791,7 +847,9 @@ function applyEntryBlockPatches(blocks) {
 /** 按自定义比例分配并列帝王宽度；不匹配则返回 null */
 function assignWeightedEmperorPairPlacements(emperors) {
   if (emperors.length !== 2) return null
-  const weights = EMPEROR_PAIR_WIDTHS[emperors.map(e => e.id).sort().join('|')]
+  const idKey = emperors.map(e => e.id).sort().join('|')
+  const legacyKey = emperors.map(e => e.legacyId || e.id).sort().join('|')
+  const weights = EMPEROR_PAIR_WIDTHS[idKey] || EMPEROR_PAIR_WIDTHS[legacyKey]
   if (!weights) return null
 
   const G = BLOCK_H_GAP_PCT
@@ -834,6 +892,12 @@ function entryToCardFields(e, civId) {
   if (e.isEmperor) {
     return Object.assign({
       kind: 'single', person: e.displayName, dynasty: e.dynastyName,
+      entityType: 'emperor',
+      entityId: e.id,
+      regimeId: e.regimeId || '',
+      dynastyId: e.dynastyId || '',
+      civilizationId: e.civilizationId || '',
+      originalName: e.originalName || '',
       timeRange, civ: civId,
       anchorYear: Math.round((e.start + e.end) / 2),
       highlights,
@@ -841,6 +905,11 @@ function entryToCardFields(e, civId) {
   }
   return Object.assign({
     kind: 'dynasty', dynasty: e.dynastyName, displayName: e.displayName,
+    entityType: 'regime',
+    entityId: e.id,
+    regimeId: e.regimeId || e.id || '',
+    dynastyId: e.dynastyId || '',
+    civilizationId: e.civilizationId || '',
     timeRange, civ: civId,
     anchorYear: e.start,
     highlights,
@@ -2109,7 +2178,7 @@ function finalizeColumnTransition(blocks) {
       // 大幅扩宽 L 形（如宋 1/4→左半、南北朝段间）交给专用桥接
       if (lower.widthPct - upper.widthPct >= 8) continue
       if (upper.entryId === NANBEI_ENTRY_ID || lower.entryId === NANBEI_ENTRY_ID) continue
-      if (upper.entryId === XIAOWUDI_ENTRY_ID || lower.entryId === XIAOWUDI_ENTRY_ID) continue
+      if (entryIdsMatch(upper.entryId, XIAOWUDI_ENTRY_ID) || entryIdsMatch(lower.entryId, XIAOWUDI_ENTRY_ID)) continue
       if (leftDelta >= MAX_LEFT_D || widthDelta >= MAX_WIDTH_D) continue
 
       if (upper.h <= THIN) {
@@ -2236,7 +2305,7 @@ const XIAOWUDI_ENTRY_ID = 'zhong_hua_jin_si_ma_yao'
 /** 晋孝武帝：上宽下窄右肩，消右侧偏下凸起（仅本 entry） */
 function applyXiaowudiBlockPatch(blocks) {
   const segs = blocks.filter(b =>
-    b.entryId === XIAOWUDI_ENTRY_ID && !b.isLBridge && !b.isNanbeiLBridge && !b.isXiaowudiBridge
+    entryIdsMatch(b.entryId, XIAOWUDI_ENTRY_ID) && !b.isLBridge && !b.isNanbeiLBridge && !b.isXiaowudiBridge
   )
   if (segs.length < 2) return
   segs.sort((a, b) => a.top - b.top)
@@ -2273,7 +2342,7 @@ function applyJinShiliuGapPatch(blocks) {
 
   JIN_SHILIU_GAP_ENTRY_IDS.forEach(id => {
     blocks.filter(b =>
-      b.entryId === id && !b.isLBridge && !b.isXiaowudiBridge
+      entryIdsMatch(b.entryId, id) && !b.isLBridge && !b.isXiaowudiBridge
     ).forEach(b => {
       const segRight = b.leftPct + b.widthPct
       if (segRight > shiliuLeft + 2 || segRight < shiliuLeft - 18) return
@@ -2288,7 +2357,7 @@ function applyJinEmperorCornerPatch(blocks) {
   const R = BLOCK_RADIUS_RPX
   JIN_SHILIU_GAP_ENTRY_IDS.forEach(id => {
     const segs = blocks
-      .filter(b => b.entryId === id && !b.isLBridge && !b.isXiaowudiBridge)
+      .filter(b => entryIdsMatch(b.entryId, id) && !b.isLBridge && !b.isXiaowudiBridge)
       .sort((a, b) => a.top - b.top)
     if (!segs.length) return
 
@@ -2430,7 +2499,7 @@ function applyNanbeiFullToHalfTransitionFix(blocks) {
     s.widthPct < 55 && s.leftPct > 40 && s.top > 14600
   )
   const suiSegs = blocks
-    .filter(b => b.entryId === SUI_WENDI_ENTRY_ID)
+    .filter(b => entryIdsMatch(b.entryId, SUI_WENDI_ENTRY_ID))
     .sort((a, b) => a.top - b.top)
   if (!suiSegs.length) return
 
@@ -2592,9 +2661,9 @@ function enforceSuiLayout(blocks) {
   const STITCH = 2
   const R = BLOCK_RADIUS_RPX
   const wendi = blocks
-    .filter(b => b.entryId === SUI_WENDI_ENTRY_ID)
+    .filter(b => entryIdsMatch(b.entryId, SUI_WENDI_ENTRY_ID))
     .sort((a, b) => a.top - b.top)
-  const yangdi = blocks.find(b => b.entryId === SUI_YANGDI_ENTRY_ID)
+  const yangdi = blocks.find(b => entryIdsMatch(b.entryId, SUI_YANGDI_ENTRY_ID))
   if (!wendi.length) return
 
   const clearSeam = (b) => {
@@ -2668,7 +2737,7 @@ function enforceNanbeiSui581VerticalGaps(blocks) {
     .filter(b => b.entryId === NANBEI_ENTRY_ID && !b.isNanbeiLBridge && !b.isLBridge)
     .sort((a, b) => a.top - b.top)
   const wendi = blocks
-    .filter(b => b.entryId === SUI_WENDI_ENTRY_ID)
+    .filter(b => entryIdsMatch(b.entryId, SUI_WENDI_ENTRY_ID))
     .sort((a, b) => a.top - b.top)
   const wendiPar = wendi.find(s => s.leftPct < 5 && s.widthPct < 55 && s.top > 14600)
   const wendiFull = wendi.find(s => s.widthPct > 90)
@@ -2807,7 +2876,7 @@ function applyNanbei439Sui589WhiteLineFix(blocks) {
     b.entryId === NANBEI_ENTRY_ID && !b.isNanbeiLBridge && !b.isLBridge
   )
   const wendiPar = blocks.find(b =>
-    b.entryId === SUI_WENDI_ENTRY_ID && b.leftPct < 5 && b.widthPct < 55 && b.top > 14600
+    entryIdsMatch(b.entryId, SUI_WENDI_ENTRY_ID) && b.leftPct < 5 && b.widthPct < 55 && b.top > 14600
   )
   const fullNb581 = nbReal.find(b =>
     b.widthPct > 95 && wendiPar &&
@@ -2946,7 +3015,7 @@ function applyNanbeiBlockPatches(blocks) {
   // 581–589 隋左、南北朝右：交界精确留 16rpx
   const hGap = calcBlockHGapPct()
   const suiPar581 = blocks.find(b =>
-    b.entryId === SUI_WENDI_ENTRY_ID && b.leftPct < 5 && b.widthPct < 55 && b.top > 14600
+    entryIdsMatch(b.entryId, SUI_WENDI_ENTRY_ID) && b.leftPct < 5 && b.widthPct < 55 && b.top > 14600
   )
   const nbHalf581 = real.find(s =>
     s.leftPct > 40 && s.widthPct < 55 && s.top > 14600
@@ -3039,9 +3108,9 @@ function finalizeEntryShape(segs) {
   })
 
   const topSeg = segs[0]
-  const hideLabels = HIDE_LABEL_ENTRY_IDS.has(topSeg.entryId)
-  const hideTags = HIDE_TAG_ENTRY_IDS.has(topSeg.entryId)
-  const hideTime = HIDE_TIME_ENTRY_IDS.has(topSeg.entryId) || !!topSeg.hideTime
+  const hideLabels = entryIdInSet(topSeg.entryId, HIDE_LABEL_ENTRY_IDS)
+  const hideTags = entryIdInSet(topSeg.entryId, HIDE_TAG_ENTRY_IDS)
+  const hideTime = entryIdInSet(topSeg.entryId, HIDE_TIME_ENTRY_IDS) || !!topSeg.hideTime
   const headerLeftPct = topSeg.leftPct
   const headerWidthPct = topSeg.widthPct
   const headerTop = entryTop + HEADER_TOP_INSET
@@ -3051,7 +3120,7 @@ function finalizeEntryShape(segs) {
 
   const irregular = isIrregularEntryShape(segs)
   const timeAnchor = getTimeAnchorSeg(segs, irregular)
-  const timeCorner = (irregular && !TIME_CORNER_BR_IRREGULAR.has(topSeg.entryId)) ? 'bl' : 'br'
+  const timeCorner = (irregular && !entryIdInSet(topSeg.entryId, TIME_CORNER_BR_IRREGULAR)) ? 'bl' : 'br'
   const timeFontRpx = fitCardTimeFontSize(timeAnchor.timeRange, timeAnchor.widthPct)
 
   const barSegs = segs.filter(s => Math.abs(s.leftPct - topSeg.leftPct) < EPS)
@@ -3255,6 +3324,7 @@ function finishBlockSeg(seg, entry, civId) {
   return Object.assign({
     id:              `${entry.id}_${seg.top}`,
     entryId:         entry.id,
+    legacyId:        entry.legacyId || '',
     top:             seg.top,
     h:               seg.h,
     leftPct:         seg.leftPct,
@@ -3298,8 +3368,12 @@ function buildDisplayEntries(civId, expandedDynasties, civName, isHuaxia) {
     if (isExpanded && emps.length > 0) {
       emps.forEach(emp => {
         displayEntries.push({
-          id: emp.id, isEmperor: true,
+          id: emp.id, legacyId: emp.legacyId || '', isEmperor: true,
           dynastyName: dyn.name, dynastyGroup: dyn.dynasty,
+          dynastyId: emp.dynastyId || dyn.dynastyId || '',
+          regimeId: emp.regimeId || dyn.regimeId || dyn.id || '',
+          civilizationId: emp.civilizationId || dyn.civilizationId || '',
+          originalName: emp.originalName || '',
           displayName: emp.name,
           start: emp.start, end: emp.end, years: emp.years,
           colorIdx: dyn.colorIdx,
@@ -3308,8 +3382,11 @@ function buildDisplayEntries(civId, expandedDynasties, civName, isHuaxia) {
       })
     } else {
       displayEntries.push({
-        id: dyn.id, isEmperor: false,
+        id: dyn.id, legacyId: dyn.legacyId || '', isEmperor: false,
         dynastyName: dyn.name, dynastyGroup: dyn.dynasty,
+        dynastyId: dyn.dynastyId || '',
+        regimeId: dyn.regimeId || dyn.id || '',
+        civilizationId: dyn.civilizationId || '',
         displayName: dyn.dynasty === dyn.name ? dyn.dynasty : dyn.name,
         start: dyn.start, end: dyn.end,
         years: dyn.end - dyn.start,

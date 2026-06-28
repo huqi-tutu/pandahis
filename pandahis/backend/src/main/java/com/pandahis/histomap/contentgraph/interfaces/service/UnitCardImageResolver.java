@@ -7,7 +7,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
 /**
- * 首页/单元页卡片图：优先 historical_unit.card_image_url，
+ * 首页/帝王页卡片图：优先 historical_emperor.card_image_url，
  * 为空时回退到该单元下 box_relic 的代表图（君纪盒子优先）。
  */
 @Service
@@ -30,7 +30,7 @@ public class UnitCardImageResolver {
     List<String> urls = jdbcTemplate.query(
         "SELECT br.image_url FROM box_relic br "
             + "INNER JOIN historical_box b ON b.id = br.box_id AND b.status = 1 "
-            + "WHERE b.unit_id = ? AND br.image_url IS NOT NULL AND TRIM(br.image_url) <> '' "
+            + "WHERE b.emperor_id = ? AND br.image_url IS NOT NULL AND TRIM(br.image_url) <> '' "
             + "AND br.image_url NOT LIKE '%待查%' "
             + "ORDER BY CASE WHEN b.category_key = 'junji' THEN 0 ELSE 1 END ASC, "
             + "COALESCE(b.importance_level, 0) DESC, br.sort_order ASC LIMIT 1",
@@ -55,21 +55,22 @@ public class UnitCardImageResolver {
     return trimOrNull(relicFallbackByUnit.get(unitId));
   }
 
-  /** 每个 unit_id 取一张代表性文物图（已按君纪/重要性排序，每单元仅保留第一条） */
+  /** 每个 emperor_id 取一张代表性文物图（已按君纪/重要性排序，每帝王仅保留第一条） */
   public Map<String, String> loadRelicFallbackByUnit() {
     List<Map<String, Object>> rows = jdbcTemplate.queryForList(
-        "SELECT b.unit_id AS unit_id, br.image_url AS image_url "
+        "SELECT b.emperor_id AS emperor_id, br.image_url AS image_url "
             + "FROM box_relic br "
             + "INNER JOIN historical_box b ON b.id = br.box_id AND b.status = 1 "
-            + "WHERE br.image_url IS NOT NULL AND TRIM(br.image_url) <> '' "
+            + "WHERE b.emperor_id IS NOT NULL AND TRIM(b.emperor_id) <> '' "
+            + "AND br.image_url IS NOT NULL AND TRIM(br.image_url) <> '' "
             + "AND br.image_url NOT LIKE '%待查%' "
-            + "ORDER BY b.unit_id ASC, "
+            + "ORDER BY b.emperor_id ASC, "
             + "CASE WHEN b.category_key = 'junji' THEN 0 ELSE 1 END ASC, "
             + "COALESCE(b.importance_level, 0) DESC, br.sort_order ASC"
     );
     Map<String, String> out = new HashMap<>();
     for (Map<String, Object> r : rows) {
-      String unitId = (String) r.get("unit_id");
+      String unitId = (String) r.get("emperor_id");
       if (unitId == null || out.containsKey(unitId)) {
         continue;
       }

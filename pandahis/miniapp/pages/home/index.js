@@ -7,7 +7,7 @@ const {
   OVERVIEW_CIV_SPOTS,
   OVERVIEW_SPOT_TO_MATRIX_SLUG,
   buildDynastyUnitMap,
-  resolveUnitId,
+  resolveNavigationUnitId,
 } = require('./matrix-adapter.js')
 
 const DEFAULT_OVERVIEW_MAP = '/images/world-history-dynasty-map.png'
@@ -628,29 +628,47 @@ Page({
   preventMove() {},
 
   onCardTap(e) {
-    const { dynasty, anchorYear } = e.currentTarget.dataset
-    if (!dynasty) return
-    this._openDynastyDetail(dynasty, anchorYear)
+    const ds = e.currentTarget.dataset || {}
+    this._openEntityDetail(ds)
   },
 
   onMiniTap(e) {
-    const { dynasty, anchorYear } = e.currentTarget.dataset
-    if (!dynasty) return
-    this._openDynastyDetail(dynasty, anchorYear)
+    const ds = e.currentTarget.dataset || {}
+    this._openEntityDetail(ds)
   },
 
-  _openDynastyDetail(dynasty, anchorYear) {
+  _openEntityDetail(ds) {
+    const dynasty = ds.dynasty || ds.displayName || ''
+    const person = ds.person || ''
+    if (!dynasty && !person && !ds.entityId) return
+
     const map = this._dynastyUnitMap || this.data.dynastyUnitMap || {}
-    const unitId = resolveUnitId(dynasty, map)
+    const unitId = resolveNavigationUnitId({
+      entityType: ds.entityType,
+      entityId: ds.entityId,
+      legacyId: ds.legacyId,
+      dynastyId: ds.dynastyId,
+      person,
+      dynasty,
+      displayName: ds.displayName,
+    }, map)
+
     if (unitId) {
       let url = `/pages/unit-detail/index?unitId=${encodeURIComponent(unitId)}`
+      const label = dynasty || ds.displayName || person
+      if (label) {
+        url += `&dynasty=${encodeURIComponent(String(label))}`
+      }
+      const anchorYear = ds.anchorYear
       if (anchorYear != null && anchorYear !== '') {
         url += `&anchorYear=${encodeURIComponent(String(anchorYear))}`
       }
       wx.navigateTo({ url })
       return
     }
-    wx.navigateTo({ url: `/pages/search/index?q=${encodeURIComponent(String(dynasty || ''))}` })
+
+    const q = person || dynasty
+    wx.navigateTo({ url: `/pages/search/index?q=${encodeURIComponent(String(q || ''))}` })
   },
 
   // 展开/收起华夏某朝代（点击时间轴朝代名旁箭头触发）

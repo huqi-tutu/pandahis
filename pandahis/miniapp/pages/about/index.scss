@@ -1,15 +1,10 @@
 @import '../../native-utils/design-tokens.scss';
 
-$text-main: $text-title;
-$text-muted: $text-caption;
-$primary: $theme-primary;
-$border: $divider;
-
 .page-about {
   min-height: 100vh;
   @include parchment-page-bg;
-  padding: 32rpx;
   box-sizing: border-box;
+  padding: 24rpx 32rpx calc(48rpx + env(safe-area-inset-bottom));
 }
 
 .logo-wrap {
@@ -22,46 +17,39 @@ $border: $divider;
   height: 128rpx;
   margin: 0 auto;
   border-radius: 28rpx;
-  background: $primary;
+  background: $theme-primary;
   color: #fff;
   font-size: 56rpx;
-  font-weight: 800;
+  font-weight: 700;
   line-height: 128rpx;
+  box-shadow: 0 8rpx 24rpx rgba(74, 63, 63, 0.18);
 }
 
 .app-name {
   margin-top: 24rpx;
-  font-size: 40rpx;
-  font-weight: 800;
-  color: $text-main;
 }
 
 .version {
   margin-top: 8rpx;
   font-size: 24rpx;
-  color: $text-muted;
+  color: $text-time;
+  letter-spacing: 0.04em;
 }
 
-.card {
-  background: #fff;
-  border: 1rpx solid $border;
-  border-radius: 24rpx;
+.intro-card {
   padding: 32rpx;
 }
 
 .para {
-  font-size: 28rpx;
-  line-height: 1.65;
-  color: $text-main;
+  color: $text-body;
 }
 
-.para + .para {
-  margin-top: 20rpx;
+.intro-divider {
+  margin: 24rpx 0;
 }
 
 .footer {
   margin-top: 48rpx;
   text-align: center;
-  font-size: 24rpx;
-  color: $text-muted;
+  color: $text-time;
 }

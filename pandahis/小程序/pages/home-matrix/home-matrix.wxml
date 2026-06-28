@@ -152,6 +152,7 @@
           hover-class="era-block--hover"
           bindtap="onCardTap"
           data-dynasty="{{blk.dynasty}}"
+          data-dynasty-id="{{blk.dynastyId}}"
           data-person="{{blk.person}}"
           data-civ="{{blk.civ}}"
           data-anchor-year="{{blk.anchorYear}}"

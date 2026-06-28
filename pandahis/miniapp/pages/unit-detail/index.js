@@ -4,55 +4,60 @@ const api_1 = require("../../native-utils/api");
 const encode_path_segment_1 = require("../../native-utils/encode-path-segment");
 const favorite_box_1 = require("../../native-utils/favorite-box");
 const router_1 = require("../../native-utils/router");
-const format_1 = require("../../native-utils/format");
 const share_invite_1 = require("../../native-utils/share-invite");
-function previewIntro(intro) {
-    const max = 80;
-    if (!intro || intro.length <= max)
-        return { preview: intro || '', canExpand: false };
-    return { preview: `${intro.slice(0, max)}…`, canExpand: true };
-}
-function heroDynastyTitle(dynastyTitle) {
-    const d = (dynastyTitle || '').trim();
-    if (!d)
-        return '';
-    if (d.endsWith('朝'))
-        return d;
-    return `${d}朝`;
-}
-function titleLines(title) {
-    const raw = (title || '').trim();
-    if (!raw)
-        return [''];
-    const parts = raw.split(/\r?\n/).map((s) => s.trim()).filter(Boolean);
-    return parts.length ? parts : [raw];
-}
-function cellCardClass(highlight, colIndex) {
-    if (highlight) {
-        return 'ud-artifact--surface ud-artifact--marker';
+function collectMatrixBoxIds(swim) {
+    const ids = [];
+    for (const lane of (swim === null || swim === void 0 ? void 0 : swim.lanes) || []) {
+        for (const row of lane.collapsedRows || []) {
+            for (const bar of row) {
+                if (bar === null || bar === void 0 ? void 0 : bar.boxId)
+                    ids.push(bar.boxId);
+            }
+        }
     }
-    return colIndex % 2 === 0 ? 'ud-artifact--high' : 'ud-artifact--highest';
+    return ids;
+}
+function splitIntroParagraphs(intro) {
+    const text = (intro || '').trim() || '空';
+    return text.split(/\n\n+/).map((p) => p.trim()).filter(Boolean);
+}
+function previewIntro(intro) {
+    const paragraphs = splitIntroParagraphs(intro);
+    if (paragraphs.length <= 1) {
+        return { preview: paragraphs[0] || '空', canExpand: false, paragraphs };
+    }
+    return { preview: paragraphs[0], canExpand: true, paragraphs };
 }
 Page({
+    swimScrollLeft: 0,
+    _echoMatrix: false,
+    _echoAxis: false,
     data: {
         unit: null,
         dynastyTitle: '',
         navTitle: '',
-        heroDynastyTitle: '',
         heroSubLine: '',
-        civTabs: [],
+        swim: null,
+        concurrentItems: [],
         relatedUnits: [],
         nextUnit: null,
-        catHeaders: [],
-        matrixRows: [],
-        matrixStickyTopPx: 88,
         introPreview: '',
         introCanExpand: false,
+        introParagraphs: [],
         showIntroModal: false,
         matrixBoxIds: [],
         isFav: false,
         favPartial: false,
         favToggling: false,
+        headerPadPx: 88,
+        scrollTop: 140,
+        matrixScrollLeft: 0,
+        axisScrollLeft: 0,
+        axisPinned: false,
+        overlayVisible: false,
+        overlayLabel: '',
+        overlayBars: [],
+        loadError: '',
     },
     onShow() {
         void this.refreshFavState();
@@ -65,103 +70,140 @@ Page({
         return { title: t, path };
     },
     async onLoad(query) {
-        var _a, _b;
         const unitId = query.unitId || query.id;
-        if (!unitId)
+        const dynastyHint = decodeURIComponent(query.dynasty || query.displayName || '');
+        if (!unitId && !dynastyHint)
             return;
-        const menu = wx.getMenuButtonBoundingClientRect();
         const sys = wx.getSystemInfoSync();
-        const matrixStickyTopPx = Math.max(Math.ceil(menu.bottom), (sys.statusBarHeight || 0) + 44);
-        try {
-            const enc = (0, encode_path_segment_1.encodePathSegment)(unitId);
-            const [heroRes, matrixRes, civRes] = await Promise.all([
-                (0, api_1.request)(`/units/${enc}`),
-                (0, api_1.request)(`/units/${enc}/matrix`),
-                (0, api_1.request)(`/units/${enc}/civ-tabs`).catch(() => ({ data: { tabs: [] } })),
-            ]);
-            const hero = heroRes.data;
+        const navH = Math.round(88 * (sys.windowWidth / 750));
+        const headerPadPx = (sys.statusBarHeight || 20) + navH;
+        const tabBarH = Math.round(72 * (sys.windowWidth / 750));
+        const scrollTop = headerPadPx + tabBarH;
+        const anchorYear = query.anchorYear ? parseInt(query.anchorYear, 10) : NaN;
+        const applyPageData = (hero, swim) => {
             const unit = hero.unit;
             const dynastyTitle = (unit.dynastyName && unit.dynastyName.trim()) || unit.name;
-            const navTitle = dynastyTitle.length <= 3 ? dynastyTitle : dynastyTitle.slice(0, 4);
-            const matrix = matrixRes.data;
-            let civTabs = ((_a = civRes.data) === null || _a === void 0 ? void 0 : _a.tabs) || [];
-            if (!civTabs.length) {
-                civTabs = [{ civilizationId: 0, civilizationName: '', unitId: unit.id, isActive: true }];
-            }
-            let catOrder = matrix.categories || [];
-            if (!catOrder.length) {
-                catOrder = format_1.PRD_CATEGORY_KEYS.map((k) => ({ key: k, name: (0, format_1.categoryLabel)(k) }));
-            }
-            const itemMap = new Map();
-            for (const it of matrix.items || []) {
-                itemMap.set(`${it.year}|${it.categoryKey}`, it);
-            }
-            const matrixRows = (matrix.years || []).map((y) => ({
-                year: y.year,
-                label: y.label,
-                cells: catOrder.map((c, ci) => {
-                    const it = itemMap.get(`${y.year}|${c.key}`);
-                    if (!it)
-                        return null;
-                    return {
-                        boxId: it.boxId,
-                        title: it.title,
-                        titleLines: titleLines(it.title),
-                        blurb: it.blurb,
-                        highlight: it.highlight,
-                        cardClass: cellCardClass(it.highlight, ci),
-                    };
-                }),
-            }));
-            const activeCiv = civTabs.find((t) => t.isActive) || civTabs[0];
-            const civPart = ((activeCiv === null || activeCiv === void 0 ? void 0 : activeCiv.civilizationName) || '').trim();
-            const yearRange = `${unit.startYear}–${unit.endYear}`;
-            const heroSubLine = civPart ? `${civPart} · ${yearRange}` : yearRange;
-            const { preview, canExpand } = previewIntro(unit.summary || '');
-            const matrixBoxIds = [];
-            for (const row of matrixRows) {
-                for (const cell of row.cells) {
-                    if (cell === null || cell === void 0 ? void 0 : cell.boxId)
-                        matrixBoxIds.push(cell.boxId);
-                }
-            }
+            const navTitle = dynastyTitle.length <= 4 ? dynastyTitle : dynastyTitle.slice(0, 4);
+            const heroSubLine = `${unit.startYear}–${unit.endYear}`;
+            const matrixBoxIds = collectMatrixBoxIds(swim);
+            const { preview, canExpand, paragraphs } = previewIntro(unit.summary || '');
             this.setData({
                 unit,
                 dynastyTitle,
                 navTitle,
-                heroDynastyTitle: heroDynastyTitle(dynastyTitle),
                 heroSubLine,
-                civTabs,
+                swim,
+                concurrentItems: swim.concurrentItems || [],
                 relatedUnits: hero.relatedUnits || [],
-                nextUnit: (_b = hero.nextUnit) !== null && _b !== void 0 ? _b : null,
-                catHeaders: catOrder.map((c) => ({ key: c.key, name: c.name || (0, format_1.categoryLabel)(c.key) })),
-                matrixRows,
+                nextUnit: hero.nextUnit ?? null,
                 matrixBoxIds,
-                matrixStickyTopPx,
+                headerPadPx,
+                scrollTop,
                 introPreview: preview,
                 introCanExpand: canExpand,
+                introParagraphs: paragraphs,
+                loadError: '',
             });
             void this.refreshFavState();
+            if (!Number.isNaN(anchorYear)) {
+                setTimeout(() => this.scrollToAnchorYear(anchorYear, swim), 120);
+            }
+        };
+        if (unitId) {
+            try {
+                const enc = (0, encode_path_segment_1.encodePathSegment)(unitId);
+                const [heroRes, swimRes] = await Promise.all([
+                    (0, api_1.request)(`/units/${enc}`),
+                    (0, api_1.request)(`/units/${enc}/swim-matrix`),
+                ]);
+                applyPageData(heroRes.data, swimRes.data);
+                return;
+            }
+            catch (e) {
+                console.error('[unit-detail] API failed', e);
+                const msg = (e === null || e === void 0 ? void 0 : e.message) || '加载失败';
+                this.setData({
+                    unit: null,
+                    swim: null,
+                    loadError: `无法加载朝代数据（${msg}）。请确认后端已启动且已导入 historical_dynasty / historical_box 数据。`,
+                });
+                wx.showToast({ title: '加载失败', icon: 'none' });
+                return;
+            }
         }
-        catch (e) {
-            wx.showToast({ title: (e === null || e === void 0 ? void 0 : e.message) || '加载失败', icon: 'none' });
+        this.setData({ loadError: '缺少朝代 ID，无法加载' });
+    },
+    scrollToAnchorYear(anchorYear, swim) {
+        const span = Math.max(1, swim.endYear - swim.startYear);
+        const clamped = Math.max(swim.startYear, Math.min(swim.endYear, anchorYear));
+        const sheetPx = (swim.sheetWidthRpx || 1440) * (wx.getSystemInfoSync().windowWidth / 750);
+        const targetPx = ((clamped - swim.startYear) / span) * sheetPx;
+        const bias = wx.getSystemInfoSync().windowWidth * 0.32;
+        const left = Math.max(0, targetPx - bias);
+        this.swimScrollLeft = left;
+        this.setData({ matrixScrollLeft: left, axisScrollLeft: left });
+    },
+    onMatrixHScroll(e) {
+        const left = e.detail.scrollLeft;
+        this.swimScrollLeft = left;
+        if (this._echoMatrix) {
+            this._echoMatrix = false;
+            return;
         }
+        if (this.data.axisPinned) {
+            this._echoAxis = true;
+            this.setData({ axisScrollLeft: left });
+        }
+    },
+    onAxisHScroll(e) {
+        const left = e.detail.scrollLeft;
+        this.swimScrollLeft = left;
+        if (this._echoAxis) {
+            this._echoAxis = false;
+            return;
+        }
+        this._echoMatrix = true;
+        this.setData({ matrixScrollLeft: left });
+    },
+    onDynastyScroll(e) {
+        const top = e.detail.scrollTop;
+        const pinned = top > 120;
+        if (pinned !== this.data.axisPinned) {
+            this.setData({ axisPinned: pinned });
+        }
+    },
+    onBarTap(e) {
+        const boxId = e.currentTarget.dataset.box;
+        if (!boxId)
+            return;
+        (0, router_1.navigateTo)(router_1.ROUTES.boxDetail, { boxId });
+    },
+    showMoreOverlay(e) {
+        const label = e.currentTarget.dataset.label;
+        const laneIdx = Number(e.currentTarget.dataset.lane);
+        const swim = this.data.swim;
+        if (!swim)
+            return;
+        const lane = swim.lanes[laneIdx];
+        if (!lane)
+            return;
+        const bars = (lane.extraBars && lane.extraBars.length)
+            ? lane.extraBars
+            : lane.collapsedRows.flat();
+        this.setData({ overlayVisible: true, overlayLabel: label, overlayBars: bars });
+    },
+    hideOverlay() {
+        this.setData({ overlayVisible: false });
     },
     goUnit(e) {
         const id = e.currentTarget.dataset.id;
         (0, router_1.navigateTo)(router_1.ROUTES.unitDetail, { unitId: id });
     },
-    onCivTab(e) {
-        var _a;
-        const id = e.currentTarget.dataset.id;
-        const cur = (_a = this.data.unit) === null || _a === void 0 ? void 0 : _a.id;
-        if (!id || id === cur)
+    goNext() {
+        const n = this.data.nextUnit;
+        if (!(n === null || n === void 0 ? void 0 : n.unitId))
             return;
-        (0, router_1.navigateTo)(router_1.ROUTES.unitDetail, { unitId: id });
-    },
-    goBox(e) {
-        const id = e.currentTarget.dataset.id;
-        (0, router_1.navigateTo)(router_1.ROUTES.boxDetail, { boxId: id });
+        (0, router_1.navigateTo)(router_1.ROUTES.unitDetail, { unitId: n.unitId, dynasty: n.title });
     },
     openIntro() {
         this.setData({ showIntroModal: true });
@@ -172,26 +214,18 @@ Page({
     noop() { },
     async refreshFavState() {
         const boxIds = this.data.matrixBoxIds;
-        if (!boxIds.length) {
-            this.setData({ isFav: false, favPartial: false });
-            return;
-        }
-        if (!(0, api_1.hasToken)()) {
+        if (!boxIds.length || !(0, api_1.hasToken)()) {
             this.setData({ isFav: false, favPartial: false });
             return;
         }
         const favorited = await (0, favorite_box_1.fetchFavoritedBoxIdSet)();
         const st = (0, favorite_box_1.computeUnitFavoriteState)(boxIds, favorited);
-        this.setData({
-            isFav: st.allFavorited,
-            favPartial: st.anyFavorited && !st.allFavorited,
-        });
+        this.setData({ isFav: st.allFavorited, favPartial: st.anyFavorited && !st.allFavorited });
     },
     async onFavoriteTap() {
-        if (this.data.favToggling)
-            return;
-        if (!(0, api_1.hasToken)()) {
-            (0, favorite_box_1.promptLoginForFavorite)();
+        if (this.data.favToggling || !(0, api_1.hasToken)()) {
+            if (!(0, api_1.hasToken)())
+                (0, favorite_box_1.promptLoginForFavorite)();
             return;
         }
         const boxIds = this.data.matrixBoxIds;
@@ -203,55 +237,19 @@ Page({
         const st = (0, favorite_box_1.computeUnitFavoriteState)(boxIds, favorited);
         const nextFav = !st.allFavorited;
         this.setData({ favToggling: true });
-        wx.showLoading({ title: nextFav ? '收藏中' : '取消中', mask: true });
         try {
             await (0, favorite_box_1.setBoxesFavorited)(boxIds, nextFav);
             await this.refreshFavState();
-            const msg = nextFav
-                ? st.anyFavorited
-                    ? '已补全本朝收藏'
-                    : '已收藏本朝史略'
-                : '已取消收藏';
-            wx.showToast({ title: msg, icon: 'success' });
+            wx.showToast({ title: nextFav ? '已收藏本朝史略' : '已取消收藏', icon: 'success' });
         }
         catch (e) {
-            const msg = e instanceof Error ? e.message : '操作失败';
-            wx.showToast({ title: msg.length > 18 ? `${msg.slice(0, 16)}…` : msg, icon: 'none' });
+            wx.showToast({ title: e instanceof Error ? e.message : '操作失败', icon: 'none' });
         }
         finally {
-            wx.hideLoading();
             this.setData({ favToggling: false });
         }
     },
     onShareTap() {
         (0, share_invite_1.promptContentShareUnavailable)();
-    },
-    onMoreTap() {
-        wx.showActionSheet({
-            itemList: ['分享', '反馈与建议'],
-            success: (res) => {
-                if (res.tapIndex === 0) {
-                    (0, share_invite_1.promptContentShareUnavailable)();
-                    return;
-                }
-                if (res.tapIndex === 1) {
-                    const email = 'support@pandahis.com';
-                    wx.showModal({
-                        title: '反馈与建议',
-                        content: `请发送邮件至：\n${email}`,
-                        confirmText: '复制邮箱',
-                        cancelText: '关闭',
-                        success: (r) => {
-                            if (!r.confirm)
-                                return;
-                            wx.setClipboardData({
-                                data: email,
-                                success: () => wx.showToast({ title: '已复制邮箱', icon: 'success' }),
-                            });
-                        },
-                    });
-                }
-            },
-        });
     },
 });

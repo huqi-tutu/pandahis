@@ -5,6 +5,16 @@ Page({
   data: {
     nickname: '',
     saving: false,
+    headerPadPx: 88,
+  },
+  onLoad() {
+    try {
+      var sys = wx.getSystemInfoSync()
+      var navPx = 88 * (sys.windowWidth / 750)
+      this.setData({ headerPadPx: (sys.statusBarHeight || 20) + navPx })
+    } catch (e) {
+      this.setData({ headerPadPx: 88 })
+    }
   },
   onShow() {
     if (!hasToken()) {

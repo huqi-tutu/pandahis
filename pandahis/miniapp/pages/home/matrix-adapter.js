@@ -78,6 +78,43 @@ function resolveUnitId(dynastyKey, map) {
   return ''
 }
 
+/** 首页矩阵卡片 → 详情页 unitId（朝代详情优先用 dynastyId） */
+function resolveNavigationUnitId(opts, map) {
+  const entityType = String(opts.entityType || '').trim()
+  const dynastyId = String(opts.dynastyId || '').trim()
+  const entityId = String(opts.entityId || '').trim()
+  const legacyId = String(opts.legacyId || '').trim()
+  const person = String(opts.person || '').trim()
+  const dynasty = String(opts.dynasty || opts.displayName || '').trim()
+  const seen = new Set()
+  const candidates = []
+
+  function push(id) {
+    const v = String(id || '').trim()
+    if (!v || seen.has(v)) return
+    seen.add(v)
+    candidates.push(v)
+  }
+
+  // 朝代详情页：优先 CD_* 朝代 ID
+  push(dynastyId)
+
+  if (entityType === 'emperor') {
+    push(resolveUnitId(person, map))
+    push(entityId)
+    push(legacyId)
+    push(resolveUnitId(dynasty, map))
+  } else {
+    push(resolveUnitId(dynasty, map))
+    push(entityId)
+    push(legacyId)
+    if (person) push(resolveUnitId(person, map))
+  }
+
+  const dynastyCandidate = candidates.find((id) => id.startsWith('CD_'))
+  return dynastyCandidate || candidates[0] || ''
+}
+
 module.exports = {
   CIV_SLUG_BY_CODE,
   CIV_CODE_BY_SLUG,
@@ -85,4 +122,5 @@ module.exports = {
   OVERVIEW_CIV_SPOTS,
   buildDynastyUnitMap,
   resolveUnitId,
+  resolveNavigationUnitId,
 }

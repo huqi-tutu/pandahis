@@ -1,12 +1,27 @@
-<navigation-bar title="{{name}}" back="{{true}}" color="#4A3F3F" background="rgba(248,246,242,0.96)"></navigation-bar>
+<view class="proto-shell">
+  <proto-nav title="{{name}}" show-back="{{true}}"></proto-nav>
 
-<view class="detail-page">
-  <image wx:if="{{imageUrl}}" class="hero-img" src="{{imageUrl}}" mode="aspectFill" />
-  <view wx:else class="hero-placeholder">🏛</view>
-  <view class="info-card">
-    <text class="relic-title">{{name}}</text>
-    <view wx:if="{{museum}}" class="location">◎ {{museum}}</view>
+  <view class="detail-body" style="padding-top: {{headerPadPx}}px;">
+    <image wx:if="{{imageUrl}}" class="hero-img-real" src="{{imageUrl}}" mode="aspectFill" />
+    <view wx:else class="hero-img muted">文物图片占位</view>
+
+    <view class="info-card card-paper">
+      <view class="info-header">
+        <text class="relic-title">{{name}}</text>
+      </view>
+      <view wx:if="{{museum}}" class="info-divider"></view>
+      <view wx:if="{{museum}}" class="info-location">
+        <text class="location-icon">◎</text>
+        <text class="location-text">{{museum}}</text>
+      </view>
+    </view>
+
+    <view class="section-card card-paper">
+      <view class="section-header">
+        <view class="section-bar"></view>
+        <text class="section-title">详细介绍</text>
+      </view>
+      <text class="section-body">{{detail || '暂无详细介绍'}}</text>
+    </view>
   </view>
-  <text class="sec">详细介绍</text>
-  <view class="text-card">{{detail || '暂无详细介绍'}}</view>
 </view>

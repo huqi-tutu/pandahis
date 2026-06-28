@@ -1,6 +1,6 @@
-<navigation-bar title="" back="{{false}}" color="#9B3E38" background="rgba(250,247,243,0.96)"></navigation-bar>
+<proto-nav title="我的" show-back="{{false}}"></proto-nav>
 
-<scroll-view class="page-my" scroll-y enhanced show-scrollbar="{{false}}">
+<scroll-view class="page-my" scroll-y enhanced show-scrollbar="{{false}}" style="padding-top: {{headerPadPx}}px;">
   <view class="hero-section">
     <view class="hero-bg"></view>
     <view class="hero-content">
@@ -66,7 +66,7 @@
           <view class="vip-desc">{{vipDesc}}</view>
         </view>
       </view>
-      <image class="icon-chevron-img" src="/images/icons/haiyou.png" mode="aspectFit" />
+      <text class="list-arrow">›</text>
     </view>
 
     <view class="menu-card">
@@ -77,9 +77,7 @@
           </view>
           <text class="menu-label">分享给朋友</text>
         </view>
-        <view class="menu-right">
-          <image class="icon-chevron-img muted" src="/images/icons/haiyou.png" mode="aspectFit" />
-        </view>
+        <text class="list-arrow">›</text>
       </view>
       <view class="menu-item" bindtap="goSettings">
         <view class="menu-left">
@@ -88,9 +86,7 @@
           </view>
           <text class="menu-label">设置</text>
         </view>
-        <view class="menu-right">
-          <image class="icon-chevron-img muted" src="/images/icons/haiyou.png" mode="aspectFit" />
-        </view>
+        <text class="list-arrow">›</text>
       </view>
       <view class="menu-item" bindtap="goHelp">
         <view class="menu-left">
@@ -99,9 +95,7 @@
           </view>
           <text class="menu-label">帮助与反馈</text>
         </view>
-        <view class="menu-right">
-          <image class="icon-chevron-img muted" src="/images/icons/haiyou.png" mode="aspectFit" />
-        </view>
+        <text class="list-arrow">›</text>
       </view>
       <view class="menu-item menu-item-last" bindtap="goAbout">
         <view class="menu-left">
@@ -112,7 +106,7 @@
         </view>
         <view class="menu-right">
           <text class="menu-extra">v{{appVersion}}</text>
-          <image class="icon-chevron-img muted" src="/images/icons/haiyou.png" mode="aspectFit" />
+          <text class="list-arrow">›</text>
         </view>
       </view>
     </view>

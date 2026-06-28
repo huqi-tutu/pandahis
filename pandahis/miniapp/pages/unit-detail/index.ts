@@ -9,6 +9,18 @@ import {
 import { ROUTES, navigateTo } from '../../native-utils/router'
 import { promptContentShareUnavailable } from '../../native-utils/share-invite'
 
+function collectMatrixBoxIds(swim: { lanes?: { collapsedRows?: { boxId?: string }[][] }[] } | null) {
+  const ids: string[] = []
+  for (const lane of swim?.lanes || []) {
+    for (const row of lane.collapsedRows || []) {
+      for (const bar of row) {
+        if (bar?.boxId) ids.push(bar.boxId)
+      }
+    }
+  }
+  return ids
+}
+
 type UnitHero = {
   unit: {
     id: string
@@ -63,26 +75,27 @@ type SwimMatrix = {
   sheetWidthRpx: number
 }
 
-function previewIntro(intro: string): { preview: string; canExpand: boolean } {
-  const max = 80
-  if (!intro || intro.length <= max) return { preview: intro || '', canExpand: false }
-  return { preview: `${intro.slice(0, max)}…`, canExpand: true }
+function splitIntroParagraphs(intro: string): string[] {
+  const text = (intro || '').trim() || '空'
+  return text.split(/\n\n+/).map((p) => p.trim()).filter(Boolean)
 }
 
-function heroDynastyTitle(dynastyTitle: string): string {
-  const d = (dynastyTitle || '').trim()
-  if (!d) return ''
-  if (d.endsWith('朝')) return d
-  return `${d}朝`
+function previewIntro(intro: string): { preview: string; canExpand: boolean; paragraphs: string[] } {
+  const paragraphs = splitIntroParagraphs(intro)
+  if (paragraphs.length <= 1) {
+    return { preview: paragraphs[0] || '空', canExpand: false, paragraphs }
+  }
+  return { preview: paragraphs[0], canExpand: true, paragraphs }
 }
 
 Page({
   swimScrollLeft: 0,
+  _echoMatrix: false,
+  _echoAxis: false,
   data: {
     unit: null as UnitHero['unit'] | null,
     dynastyTitle: '',
     navTitle: '',
-    heroDynastyTitle: '',
     heroSubLine: '',
     swim: null as SwimMatrix | null,
     concurrentItems: [] as string[],
@@ -90,17 +103,21 @@ Page({
     nextUnit: null as UnitHero['nextUnit'] | null,
     introPreview: '',
     introCanExpand: false,
+    introParagraphs: [] as string[],
     showIntroModal: false,
     matrixBoxIds: [] as string[],
     isFav: false,
     favPartial: false,
     favToggling: false,
-    scrollTop: 100,
-    swimScrollLeft: 0,
+    headerPadPx: 88,
+    scrollTop: 140,
+    matrixScrollLeft: 0,
+    axisScrollLeft: 0,
     axisPinned: false,
     overlayVisible: false,
     overlayLabel: '',
     overlayBars: [] as SwimBar[],
+    loadError: '',
   },
   onShow() {
     void this.refreshFavState()
@@ -114,58 +131,71 @@ Page({
   },
   async onLoad(query: Record<string, string | undefined>) {
     const unitId = query.unitId || query.id
-    if (!unitId) return
-    const menu = wx.getMenuButtonBoundingClientRect()
-    const sys = wx.getSystemInfoSync()
-    const scrollTop = Math.max(Math.ceil(menu.bottom), (sys.statusBarHeight || 0) + 44) + 36
+    const dynastyHint = decodeURIComponent(query.dynasty || query.displayName || '')
+    if (!unitId && !dynastyHint) return
 
-    try {
-      const enc = encodePathSegment(unitId)
-      const anchorYear = query.anchorYear ? parseInt(query.anchorYear, 10) : NaN
-      const [heroRes, swimRes] = await Promise.all([
-        request<UnitHero>(`/units/${enc}`),
-        request<SwimMatrix>(`/units/${enc}/swim-matrix`),
-      ])
-      const hero = heroRes.data
+    const sys = wx.getSystemInfoSync()
+    const navH = Math.round(88 * (sys.windowWidth / 750))
+    const headerPadPx = (sys.statusBarHeight || 20) + navH
+    const tabBarH = Math.round(72 * (sys.windowWidth / 750))
+    const scrollTop = headerPadPx + tabBarH
+    const anchorYear = query.anchorYear ? parseInt(query.anchorYear, 10) : NaN
+
+    const applyPageData = (
+      hero: UnitHero,
+      swim: SwimMatrix,
+    ) => {
       const unit = hero.unit
       const dynastyTitle = (unit.dynastyName && unit.dynastyName.trim()) || unit.name
       const navTitle = dynastyTitle.length <= 4 ? dynastyTitle : dynastyTitle.slice(0, 4)
-      const swim = swimRes.data
-      const yearRange = `${unit.startYear}–${unit.endYear}`
-      const heroSubLine = yearRange
-
-      const matrixBoxIds: string[] = []
-      for (const lane of swim.lanes || []) {
-        for (const row of lane.collapsedRows || []) {
-          for (const bar of row) {
-            if (bar.boxId) matrixBoxIds.push(bar.boxId)
-          }
-        }
-      }
-
-      const { preview, canExpand } = previewIntro(unit.summary || '')
+      const heroSubLine = `${unit.startYear}–${unit.endYear}`
+      const matrixBoxIds = collectMatrixBoxIds(swim)
+      const { preview, canExpand, paragraphs } = previewIntro(unit.summary || '')
       this.setData({
         unit,
         dynastyTitle,
         navTitle,
-        heroDynastyTitle: heroDynastyTitle(dynastyTitle),
         heroSubLine,
         swim,
         concurrentItems: swim.concurrentItems || [],
         relatedUnits: hero.relatedUnits || [],
         nextUnit: hero.nextUnit ?? null,
         matrixBoxIds,
+        headerPadPx,
         scrollTop,
         introPreview: preview,
         introCanExpand: canExpand,
+        introParagraphs: paragraphs,
       })
       void this.refreshFavState()
       if (!Number.isNaN(anchorYear)) {
         setTimeout(() => this.scrollToAnchorYear(anchorYear, swim), 120)
       }
-    } catch (e: any) {
-      wx.showToast({ title: e?.message || '加载失败', icon: 'none' })
     }
+
+    if (unitId) {
+      try {
+        const enc = encodePathSegment(unitId)
+        const [heroRes, swimRes] = await Promise.all([
+          request<UnitHero>(`/units/${enc}`),
+          request<SwimMatrix>(`/units/${enc}/swim-matrix`),
+        ])
+        applyPageData(heroRes.data, swimRes.data)
+        return
+      } catch (e: any) {
+        console.error('[unit-detail] API failed', e)
+        const msg = e?.message || '加载失败'
+        this.setData({
+          unit: null,
+          swim: null,
+          loadError: `无法加载朝代数据（${msg}）。请确认后端已启动且已导入 historical_dynasty / historical_box 数据。`,
+        })
+        wx.showToast({ title: '加载失败', icon: 'none' })
+        return
+      }
+    }
+
+    this.setData({ loadError: '缺少朝代 ID，无法加载' })
   },
   scrollToAnchorYear(anchorYear: number, swim: SwimMatrix) {
     const span = Math.max(1, swim.endYear - swim.startYear)
@@ -174,11 +204,32 @@ Page({
     const targetPx = ((clamped - swim.startYear) / span) * sheetPx
     const bias = wx.getSystemInfoSync().windowWidth * 0.32
     const left = Math.max(0, targetPx - bias)
-    this.setData({ swimScrollLeft: left })
+    this.swimScrollLeft = left
+    this.setData({ matrixScrollLeft: left, axisScrollLeft: left })
   },
-  onSwimHScroll(e: WechatMiniprogram.ScrollViewScroll) {
-    this.swimScrollLeft = e.detail.scrollLeft
-    this.setData({ swimScrollLeft: e.detail.scrollLeft })
+  // 泳道主体横滑：仅在吸顶时把位置同步给顶部固定时间轴
+  onMatrixHScroll(e: WechatMiniprogram.ScrollViewScroll) {
+    const left = e.detail.scrollLeft
+    this.swimScrollLeft = left
+    if (this._echoMatrix) {
+      this._echoMatrix = false
+      return
+    }
+    if (this.data.axisPinned) {
+      this._echoAxis = true
+      this.setData({ axisScrollLeft: left })
+    }
+  },
+  // 顶部固定时间轴横滑：回写给泳道主体
+  onAxisHScroll(e: WechatMiniprogram.ScrollViewScroll) {
+    const left = e.detail.scrollLeft
+    this.swimScrollLeft = left
+    if (this._echoAxis) {
+      this._echoAxis = false
+      return
+    }
+    this._echoMatrix = true
+    this.setData({ matrixScrollLeft: left })
   },
   onDynastyScroll(e: WechatMiniprogram.ScrollViewScroll) {
     const top = e.detail.scrollTop
@@ -197,9 +248,11 @@ Page({
     const laneIdx = Number((e.currentTarget as any).dataset.lane)
     const swim = this.data.swim
     if (!swim) return
-    const lane = swim.lanes[laneIdx]
+    const lane = swim.lanes[laneIdx] as SwimLane & { extraBars?: SwimBar[] }
     if (!lane) return
-    const bars = lane.collapsedRows.flat()
+    const bars = (lane.extraBars && lane.extraBars.length)
+      ? lane.extraBars
+      : lane.collapsedRows.flat()
     this.setData({ overlayVisible: true, overlayLabel: label, overlayBars: bars })
   },
   hideOverlay() {
@@ -212,7 +265,7 @@ Page({
   goNext() {
     const n = this.data.nextUnit
     if (!n?.unitId) return
-    navigateTo(ROUTES.unitDetail, { unitId: n.unitId })
+    navigateTo(ROUTES.unitDetail, { unitId: n.unitId, dynasty: n.title })
   },
   openIntro() {
     this.setData({ showIntroModal: true })

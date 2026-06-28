@@ -1,106 +1,90 @@
 @import '../../native-utils/design-tokens.scss';
 
-$brand: $theme-primary;
-$text-main: #333333;
-$text-muted: #8e8281;
-
-.page-fp {
+.page-shell {
   min-height: 100vh;
-  @include parchment-page-bg;
-  color: $text-main;
-  display: flex;
-  flex-direction: column;
+  background: $page-bg;
+}
+
+.fp-body {
+  padding: 24rpx 32rpx calc(48rpx + env(safe-area-inset-bottom));
   box-sizing: border-box;
 }
 
 .summary {
-  padding: 24rpx 40rpx 8rpx;
+  display: block;
+  margin-bottom: 20rpx;
+  font-size: 22rpx;
+  letter-spacing: 2rpx;
 }
 
-.summary-text {
-  font-size: 28rpx;
-  color: $text-muted;
-  line-height: 1.5;
-}
-
-.empty-wrap {
-  flex: 1;
-  padding: 48rpx 32rpx;
-}
-
-.list-scroll {
-  flex: 1;
-  height: calc(100vh - 300rpx);
-  padding: 16rpx 40rpx 48rpx;
-  box-sizing: border-box;
-}
-
+/* ─────────────────────────────────────
+   卡片列表
+───────────────────────────────────── */
 .card-list {
   display: flex;
   flex-direction: column;
-  gap: 24rpx;
 }
 
-.fp-card {
-  position: relative;
-  background: #ffffff;
-  border-radius: 24rpx;
-  padding: 24rpx 40rpx;
-  border: 1rpx solid rgba(0, 0, 0, 0.05);
-  box-shadow: 0 4rpx 16rpx rgba(74, 63, 63, 0.06);
+.card {
+  padding: 24rpx;
+  margin-bottom: 16rpx;
 }
 
-.fp-card::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 15%;
-  bottom: 15%;
-  width: 6rpx;
-  background-color: $brand;
-  border-radius: 8rpx;
-}
-
-.card-head {
+.top {
   display: flex;
-  align-items: flex-start;
   justify-content: space-between;
-  gap: 16rpx;
+  align-items: flex-start;
+  margin-bottom: 10rpx;
 }
 
-.card-title {
+.t {
   flex: 1;
-  font-size: 32rpx;
-  font-weight: 700;
-  color: #333333;
+  margin-right: 16rpx;
+  font-size: 30rpx;
+  font-weight: 600;
+  color: $text-title;
   line-height: 1.35;
 }
 
-.card-time {
+.time {
   flex-shrink: 0;
-  font-size: 24rpx;
-  color: $text-muted;
-  margin-top: 4rpx;
+  font-size: 22rpx;
 }
 
-.card-years {
-  margin-top: 8rpx;
-  font-size: 28rpx;
-  font-weight: 500;
-  color: $brand;
+.era {
+  display: block;
+  margin-bottom: 6rpx;
+  font-size: 24rpx;
   letter-spacing: 0.04em;
 }
 
-.card-path {
-  margin-top: 6rpx;
-  font-size: 24rpx;
-  color: $text-muted;
+.path {
+  display: block;
+  font-size: 22rpx;
   line-height: 1.45;
+}
+
+/* ─────────────────────────────────────
+   空态 / 加载态
+───────────────────────────────────── */
+.empty-hint {
+  font-size: 24rpx;
+  color: $text-time;
+  text-align: center;
+}
+
+.login-btn {
+  margin-top: 8rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80rpx;
+  padding: 0 56rpx;
 }
 
 .loading {
   padding: 80rpx 32rpx;
   text-align: center;
   font-size: 28rpx;
-  color: $text-muted;
+  color: $text-body;
 }

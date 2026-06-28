@@ -49,8 +49,8 @@ public class HomeGridService {
     );
 
     List<Map<String, Object>> units = jdbcTemplate.queryForList(
-        "SELECT id, name, dynasty_name, era_name, civilization_l1_id, start_year, end_year, duration_years, "
-            + "core_topics_json, card_image_url FROM historical_unit WHERE status=1"
+        "SELECT id, name, dynasty_name, era_name, civilization_l1_id, enthronement_year, abdication_year, reign_duration, "
+            + "tags, card_image_url FROM historical_emperor WHERE status=1"
     );
     Map<String, String> relicFallbackByUnit = unitCardImageResolver.loadRelicFallbackByUnit();
 
@@ -62,16 +62,16 @@ public class HomeGridService {
     for (Map<String, Object> u : units) {
       String unitId = (String) u.get("id");
       String title = (String) u.get("name");
-      int startYear = ((Number) u.get("start_year")).intValue();
-      int endYear = ((Number) u.get("end_year")).intValue();
-      int duration = ((Number) u.get("duration_years")).intValue();
+      int startYear = u.get("enthronement_year") == null ? 0 : ((Number) u.get("enthronement_year")).intValue();
+      int endYear = u.get("abdication_year") == null ? startYear : ((Number) u.get("abdication_year")).intValue();
+      int duration = u.get("reign_duration") == null ? 0 : ((Number) u.get("reign_duration")).intValue();
       Long civId = ((Number) u.get("civilization_l1_id")).longValue();
 
       String dynasty = trimOrNull((String) u.get("dynasty_name"));
       String era = trimOrNull((String) u.get("era_name"));
       String note = dynasty != null ? dynasty : "";
       String meta = buildMeta(era, duration);
-      List<String> highlights = parseHighlights((String) u.get("core_topics_json"));
+      List<String> highlights = parseHighlights((String) u.get("tags"));
       String cardImageUrl = unitCardImageResolver.resolve(
           unitId,
           (String) u.get("card_image_url"),
@@ -180,32 +180,36 @@ public class HomeGridService {
     return t.isEmpty() ? null : t;
   }
 
-  private static List<String> parseHighlights(String json) {
-    if (json == null || json.isBlank()) {
+  private static List<String> parseHighlights(String raw) {
+    if (raw == null || raw.isBlank()) {
       return List.of();
     }
-    try {
-      JsonNode n = OM.readTree(json);
-      if (!n.isArray()) {
-        return List.of();
-      }
-      List<String> out = new ArrayList<>();
-      LinkedHashSet<String> seen = new LinkedHashSet<>();
-      for (JsonNode x : n) {
-        if (x.isTextual()) {
-          String t = x.asText().trim();
-          if (!t.isEmpty() && seen.add(t)) {
-            out.add(t);
+    String trimmed = raw.trim();
+    if (trimmed.startsWith("[")) {
+      try {
+        JsonNode n = OM.readTree(trimmed);
+        if (!n.isArray()) {
+          return List.of();
+        }
+        List<String> out = new ArrayList<>();
+        LinkedHashSet<String> seen = new LinkedHashSet<>();
+        for (JsonNode x : n) {
+          if (x.isTextual()) {
+            String t = x.asText().trim();
+            if (!t.isEmpty() && seen.add(t)) {
+              out.add(t);
+            }
+          }
+          if (out.size() >= 5) {
+            break;
           }
         }
-        if (out.size() >= 5) {
-          break;
-        }
+        return List.copyOf(out);
+      } catch (Exception e) {
+        return List.of();
       }
-      return List.copyOf(out);
-    } catch (Exception e) {
-      return List.of();
     }
+    return List.of(trimmed);
   }
 
   private HomeGridDTO.Overview loadOverview() {

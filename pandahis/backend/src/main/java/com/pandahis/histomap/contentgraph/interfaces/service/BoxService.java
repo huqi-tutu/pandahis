@@ -7,6 +7,7 @@ import com.pandahis.histomap.common.auth.UserContextHolder;
 import com.pandahis.histomap.common.config.HistomapProperties;
 import com.pandahis.histomap.contentgraph.interfaces.dto.*;
 import com.pandahis.histomap.invite.service.DeepTabReadService;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
@@ -40,24 +41,30 @@ public class BoxService {
     int startYear = ((Number) box.get("start_year")).intValue();
     int endYear = ((Number) box.get("end_year")).intValue();
 
-    String unitId = (String) box.get("unit_id");
-    Long civId = jdbcTemplate.queryForObject(
-        "SELECT civilization_l1_id FROM historical_unit WHERE id=?",
-        Long.class,
-        unitId
-    );
-    String civName = civId == null ? "" : Optional.ofNullable(jdbcTemplate.queryForObject(
-        "SELECT display_name FROM civilization_l1 WHERE id=?",
-        String.class,
-        civId
-    )).orElse("");
+    String emperorId = (String) box.get("emperor_id");
+    Long civId = null;
+    if (emperorId != null && !emperorId.isBlank()) {
+      civId = jdbcTemplate.queryForObject(
+          "SELECT civilization_l1_id FROM historical_emperor WHERE id=?",
+          Long.class,
+          emperorId
+      );
+    }
+    String civName = "";
+    if (civId != null) {
+      civName = Optional.ofNullable(jdbcTemplate.queryForObject(
+          "SELECT display_name FROM civilization_l1 WHERE id=?",
+          String.class,
+          civId
+      )).orElse("");
+    }
 
     String subText = yearLabel(startYear) + " · " + civName + " · " + categoryName(categoryKey);
     String blurb = Optional.ofNullable((String) box.get("blurb")).orElse("").trim();
 
     boolean hasGraphFromDb = exists("SELECT COUNT(1) FROM box_graph_node WHERE box_id=?", boxId);
     Integer unitLinked = jdbcTemplate.queryForObject(
-        "SELECT COUNT(1) FROM historical_box b WHERE b.id=? AND b.status=1 AND b.unit_id IS NOT NULL AND TRIM(b.unit_id) <> ''",
+        "SELECT COUNT(1) FROM historical_box b WHERE b.id=? AND b.status=1 AND b.emperor_id IS NOT NULL AND TRIM(b.emperor_id) <> ''",
         Integer.class,
         boxId
     );
@@ -104,7 +111,10 @@ public class BoxService {
   public BoxDetailDTO loadDetail(String boxId) {
     ensureTabAllowed("detail", boxId);
     Map<String, Object> box = findBox(boxId);
-    String detail = Optional.ofNullable((String) box.get("detail_md")).orElse("");
+    String detail = loadTranslateDetail(boxId);
+    if (detail.isBlank()) {
+      detail = Optional.ofNullable((String) box.get("detail_md")).orElse("");
+    }
     String flash = Optional.ofNullable((String) box.get("detail_md_flash")).orElse("");
     String pro = Optional.ofNullable((String) box.get("detail_md_pro")).orElse("");
     // 原文见 GET /boxes/{id}/original-ref（消耗阅读数）
@@ -114,6 +124,21 @@ public class BoxService {
         flash.isBlank() ? null : flash,
         pro.isBlank() ? null : pro
     );
+  }
+
+  /** 史略翻译详情（historical_box_detail.translate_detail），优先于 historical_box.detail_md */
+  private String loadTranslateDetail(String boxId) {
+    try {
+      return jdbcTemplate.queryForObject(
+          "SELECT translate_detail FROM historical_box_detail WHERE box_id=?",
+          String.class,
+          boxId
+      );
+    } catch (EmptyResultDataAccessException e) {
+      return "";
+    } catch (Exception ignored) {
+      return "";
+    }
   }
 
   public BoxOriginalRefDTO loadOriginalRef(String boxId) {
@@ -312,8 +337,8 @@ public class BoxService {
   private BoxGraphDTO syntheticUnitEventGraph(String boxId) {
     try {
       Map<String, Object> row = jdbcTemplate.queryForMap(
-          "SELECT b.title AS box_title, b.unit_id AS unit_id, u.name AS unit_name "
-              + "FROM historical_box b JOIN historical_unit u ON u.id = b.unit_id AND u.status = 1 "
+          "SELECT b.title AS box_title, b.emperor_id AS emperor_id, u.name AS unit_name "
+              + "FROM historical_box b JOIN historical_emperor u ON u.id = b.emperor_id AND u.status = 1 "
               + "WHERE b.id = ? AND b.status = 1",
           boxId
       );
@@ -334,7 +359,6 @@ public class BoxService {
   }
 
   public BoxCritiquesDTO loadCritiques(String boxId) {
-    ensureDeepTab("critique", boxId);
     findBox(boxId);
     int max = props.getBox().getCritiques().getMaxCount();
     List<BoxCritiquesDTO.Item> items = jdbcTemplate.query(
@@ -355,7 +379,6 @@ public class BoxService {
   }
 
   public BoxRelicsDTO loadRelics(String boxId) {
-    ensureDeepTab("relic", boxId);
     findBox(boxId);
     int max = props.getBox().getRelics().getMaxCount();
     List<BoxRelicsDTO.Item> items = jdbcTemplate.query(
@@ -384,16 +407,16 @@ public class BoxService {
       throw ApiException.notFound("box not found");
     }
     return jdbcTemplate.queryForMap(
-        "SELECT id,unit_id,title,category_key,start_year,end_year,blurb,detail_md,detail_md_flash,detail_md_pro,original_ref_json "
+        "SELECT id,emperor_id,title,category_key,start_year,end_year,blurb,detail_md,detail_md_flash,detail_md_pro,original_ref_json "
             + "FROM historical_box WHERE id=? AND status=1",
         boxId
     );
   }
 
-  /** 通过 Excel「史略 ID」等业务码解析盒子头信息（id 与 business_code 任一命中） */
+  /** 通过史略ID 或母本史略ID 解析盒子头信息 */
   public BoxHeaderDTO loadHeaderByBusinessCode(String code) {
     String id = jdbcTemplate.query(
-        "SELECT id FROM historical_box WHERE status=1 AND (business_code=? OR id=?) LIMIT 1",
+        "SELECT id FROM historical_box WHERE status=1 AND (id=? OR parent_entry_id=?) LIMIT 1",
         (rs, rowNum) -> rs.getString("id"),
         code,
         code
@@ -417,24 +440,24 @@ public class BoxService {
       case "minlu" -> "民录";
       case "dianzhi" -> "典制";
       case "shilue" -> "事略";
+      case "lunzhu" -> "论著";
       default -> key;
     };
   }
 
   private BoxHeaderDTO.Access buildAccess(String boxId) {
-    BoxHeaderDTO.TabAccess graphUnlocked = new BoxHeaderDTO.TabAccess(false, null, null);
+    BoxHeaderDTO.TabAccess unlocked = new BoxHeaderDTO.TabAccess(false, null, null);
     var ctx = UserContextHolder.get();
     boolean authed = ctx.authenticated();
     if (!authed) {
       BoxHeaderDTO.TabAccess lockedLogin =
           new BoxHeaderDTO.TabAccess(true, "LOGIN_REQUIRED", new BoxHeaderDTO.UnlockAction("OPEN_LOGIN"));
-      return new BoxHeaderDTO.Access(false, new BoxHeaderDTO.Tabs(graphUnlocked, lockedLogin, lockedLogin, lockedLogin));
+      // 评述、见证暂开放；原文 Tab 仍须登录
+      return new BoxHeaderDTO.Access(false, new BoxHeaderDTO.Tabs(unlocked, unlocked, unlocked, lockedLogin));
     }
     long uid = ctx.userId();
-    BoxHeaderDTO.TabAccess critique = deepTabReadService.tabAccess(uid, boxId, true, "critique");
-    BoxHeaderDTO.TabAccess relic = deepTabReadService.tabAccess(uid, boxId, true, "relic");
     BoxHeaderDTO.TabAccess original = deepTabReadService.tabAccess(uid, boxId, true, "original");
-    return new BoxHeaderDTO.Access(false, new BoxHeaderDTO.Tabs(graphUnlocked, critique, relic, original));
+    return new BoxHeaderDTO.Access(false, new BoxHeaderDTO.Tabs(unlocked, unlocked, unlocked, original));
   }
 
   private void ensureTabAllowed(String tab, String boxId) {
@@ -445,7 +468,7 @@ public class BoxService {
   }
 
   private void ensureDeepTab(String tab, String boxId) {
-    if (!tab.equals("critique") && !tab.equals("relic") && !tab.equals("original")) {
+    if (!tab.equals("original")) {
       return;
     }
     var ctx = UserContextHolder.get();

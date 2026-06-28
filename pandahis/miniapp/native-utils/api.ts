@@ -1,13 +1,56 @@
+import { DEV_API_PORT, DEV_LAN_HOST } from './dev-config'
+
 export type ApiResponse<T> = { code: string; message: string; requestId: string; data: T }
 
-// 正式环境：wx.setStorageSync('apiBaseUrl', 'https://域名/api/v1') 或改下方默认值；见 docs/DEPLOY.md
- const DEFAULT_BASE_URL = 'https://www.pandahis.com/api/v1'
-// 本地调试（后端默认端口 8080、context-path /api/v1）；真机预览请换成本机局域网 IP，例如 http://192.168.x.x:8080/api/v1
-  // const DEFAULT_BASE_URL = 'http://localhost:8080/api/v1'
+const PROD_BASE_URL = 'https://www.pandahis.com/api/v1'
 
-export function getBaseUrl() {
-  const v = wx.getStorageSync('apiBaseUrl')
-  return v || DEFAULT_BASE_URL
+function isDevtoolsClient(): boolean {
+  try {
+    const info = wx.getSystemInfoSync() as WechatMiniprogram.SystemInfo & {
+      host?: { env?: string }
+    }
+    if (info.platform === 'devtools') return true
+    if (info.host?.env === 'WeChatDevTools') return true
+  } catch {
+    // ignore
+  }
+  return false
+}
+
+/** 开发者工具用 localhost；真机用局域网 IP（见 dev-config.ts） */
+function getLocalBaseUrl(): string {
+  if (isDevtoolsClient()) {
+    return `http://localhost:${DEV_API_PORT}/api/v1`
+  }
+  return `http://${DEV_LAN_HOST}:${DEV_API_PORT}/api/v1`
+}
+
+function isDevelopEnv(): boolean {
+  try {
+    return wx.getAccountInfoSync()?.miniProgram?.envVersion === 'develop'
+  } catch {
+    return true
+  }
+}
+
+/** 开发版误把生产地址写入 storage 时，自动回退本地后端 */
+function resolveStoredBaseUrl(stored: string): string {
+  if (
+    isDevelopEnv() &&
+    (stored === PROD_BASE_URL || stored.includes('www.pandahis.com'))
+  ) {
+    return getLocalBaseUrl()
+  }
+  return stored
+}
+
+export function getBaseUrl(): string {
+  if (isDevelopEnv()) {
+    return getLocalBaseUrl()
+  }
+  const stored = String(wx.getStorageSync('apiBaseUrl') || '').trim()
+  if (stored) return resolveStoredBaseUrl(stored)
+  return PROD_BASE_URL
 }
 
 export function getToken(): string {

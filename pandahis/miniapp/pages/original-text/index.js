@@ -61,8 +61,17 @@ Page({
         refTitle: '',
         refItems: [],
         refFallback: '',
+        headerPadPx: 88,
     },
     async onLoad(query) {
+        try {
+            const sys = wx.getSystemInfoSync();
+            const navPx = 88 * (sys.windowWidth / 750);
+            this.setData({ headerPadPx: (sys.statusBarHeight || 20) + navPx });
+        }
+        catch (_e) {
+            this.setData({ headerPadPx: 88 });
+        }
         const boxId = query.boxId || query.id;
         if (!boxId) {
             this.setData({ empty: true, refTitle: '', refItems: [], refFallback: '' });

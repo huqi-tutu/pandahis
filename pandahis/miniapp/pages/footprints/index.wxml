@@ -1,45 +1,42 @@
-<navigation-bar title="我的足迹" back="{{true}}" color="#4a3230" background="rgba(255,248,247,0.92)"></navigation-bar>
+<view class="page-shell">
+  <proto-nav title="浏览足迹" show-back="{{true}}"></proto-nav>
 
-<view class="page-fp">
-  <empty-state
-    wx:if="{{!hasToken}}"
-    type="login"
-    title="需要登录"
-    desc="登录后会自动记录盒子浏览足迹。"
-    cta="去登录"
-    bind:cta="goLogin"
-  ></empty-state>
-
-  <block wx:elif="{{loaded}}">
-    <view wx:if="{{!items.length}}" class="empty-wrap">
-      <empty-state type="footprints" title="暂无足迹" desc="打开任意历史盒子详情页即可记录。"></empty-state>
+  <view class="fp-body" style="padding-top: {{headerPadPx}}px;">
+    <view wx:if="{{!hasToken}}" class="empty-state">
+      <text class="empty-icon">🔒</text>
+      <text class="empty-text">登录后会自动记录盒子浏览足迹</text>
+      <view class="login-btn btn-primary" bindtap="goLogin">去登录</view>
     </view>
 
-    <block wx:else>
-      <view class="summary">
-        <text class="summary-text">{{summaryText}}</text>
+    <block wx:elif="{{loaded}}">
+      <view wx:if="{{!items.length}}" class="empty-state">
+        <text class="empty-icon">🕔</text>
+        <text class="empty-text">暂无足迹</text>
+        <text class="empty-hint">打开任意历史盒子详情页即可记录</text>
       </view>
 
-      <scroll-view class="list-scroll" scroll-y enhanced show-scrollbar="{{false}}">
+      <block wx:else>
+        <text class="summary muted">{{summaryText}}</text>
+
         <view class="card-list">
           <view
-            class="fp-card"
+            class="card card-paper"
             wx:for="{{items}}"
             wx:key="boxId"
-            bindtap="go"
             data-id="{{item.boxId}}"
+            bindtap="go"
           >
-            <view class="card-head">
-              <text class="card-title">{{item.title}}</text>
-              <text class="card-time">{{item.timeLabel}}</text>
+            <view class="top">
+              <text class="t">{{item.title}}</text>
+              <text class="time muted">{{item.timeLabel}}</text>
             </view>
-            <view class="card-years">{{item.yearRange}}</view>
-            <view class="card-path" wx:if="{{item.pathLabel}}">{{item.pathLabel}}</view>
+            <text class="era accent">{{item.yearRange}}</text>
+            <text wx:if="{{item.pathLabel}}" class="path muted">{{item.pathLabel}}</text>
           </view>
         </view>
-      </scroll-view>
+      </block>
     </block>
-  </block>
 
-  <view wx:else class="loading">加载中…</view>
+    <view wx:else class="loading">加载中…</view>
+  </view>
 </view>

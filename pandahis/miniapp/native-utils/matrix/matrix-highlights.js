@@ -82,16 +82,28 @@ function parseTagList(tag) {
     .slice(0, 2)
 }
 
+function idInSet(id, legacyId, set) {
+  if (!id) return false
+  if (set.has(id)) return true
+  if (legacyId && set.has(legacyId)) return true
+  return false
+}
+
 function getMatrixHighlights(entry) {
   if (!entry) return []
   if (entry.isEmperor) {
-    if (NO_HIGHLIGHT_EMPEROR_IDS.has(entry.id)) return []
+    if (idInSet(entry.id, entry.legacyId, NO_HIGHLIGHT_EMPEROR_IDS)) return []
     const curated = BY_EMPEROR_ID[entry.id]
+      || (entry.legacyId ? BY_EMPEROR_ID[entry.legacyId] : null)
     if (curated && curated.length) return curated
-    if (HIDE_EMPEROR_TAG_FIELD_IDS.has(entry.id)) return []
+    if (idInSet(entry.id, entry.legacyId, HIDE_EMPEROR_TAG_FIELD_IDS)) return []
     return parseTagList(entry.tag)
   }
-  return BY_DYNASTY_ID[entry.id] || BY_DYNASTY_NAME[entry.dynastyName] || BY_DYNASTY_NAME[entry.displayName] || []
+  return BY_DYNASTY_ID[entry.id]
+    || (entry.legacyId ? BY_DYNASTY_ID[entry.legacyId] : null)
+    || BY_DYNASTY_NAME[entry.dynastyName]
+    || BY_DYNASTY_NAME[entry.displayName]
+    || []
 }
 
 module.exports = { getMatrixHighlights }

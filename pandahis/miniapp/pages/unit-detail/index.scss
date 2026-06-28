@@ -1,380 +1,767 @@
 @import '../../native-utils/design-tokens.scss';
 
-page {
-  background-color: $page-bg;
-  color: $text-title;
-  min-height: 100%;
-  @include font-body;
+/* ══════════════════════════════════════════
+   视觉规范：
+   标题/朝代名  → Noto Serif SC / Songti SC / serif
+   正文/UI     → PingFang SC / -apple-system / sans-serif
+   时间/数字   → SF Mono / Menlo / monospace
+   页面底色  #F8F6F2 · 卡片底 #FFFFFF · 分割线 #EDEAE6
+══════════════════════════════════════════ */
+
+.page-shell {
+  background: #F8F6F2;
+  min-height: 100vh;
 }
 
-.ud-nav-host {
-  border-bottom: 0.5px solid rgba(74, 63, 63, 0.1);
+/* ─────────────────────────────────────
+   并发政权 Tab 栏（fixed，紧贴 proto-nav）
+───────────────────────────────────── */
+.unit-civ-tabs {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 90;
+  background: rgba(248, 246, 242, 0.96);
+  border-bottom: 1rpx solid #EDEAE6;
 }
 
-.ud-nav-more {
-  padding: 12rpx 28rpx 12rpx 20rpx;
-  margin-right: -8rpx;
-  font-size: 40rpx;
-  line-height: 1;
-  color: #4A3F3F;
-  font-weight: 300;
-}
+.unit-region-scroll { width: 100%; }
 
-.ud-nav-more-hover {
-  opacity: 0.55;
-}
-
-.ud-page {
-  padding: 0 32rpx 48rpx;
-  padding-bottom: calc(48rpx + env(safe-area-inset-bottom));
+.unit-region-inner {
+  display: inline-flex;
+  gap: 8rpx;
+  padding: 12rpx 24rpx;
   box-sizing: border-box;
 }
 
-/* 并列朝代 / 文明 Tab */
-.ud-tabs-x {
-  width: calc(100% + 64rpx);
-  margin-left: -32rpx;
-  margin-right: -32rpx;
-  border-bottom: 1rpx solid rgba(120, 113, 108, 0.12);
-  background: rgba(250, 250, 249, 0.35);
-}
-
-.ud-tabs-inner {
+.unit-civ-tab {
+  flex-shrink: 0;
+  height: 48rpx;
+  padding: 0 20rpx;
+  border-radius: 999rpx;
   display: inline-flex;
-  gap: 16rpx;
-  padding: 24rpx 32rpx 20rpx;
+  align-items: center;
+  font-size: 22rpx;
+  font-weight: 500;
+  color: #8A8A8A;
+  background: #EEECEA;
+  letter-spacing: 0.5rpx;
+  border: 1rpx solid #EDEAE6;
   white-space: nowrap;
 }
 
-.ud-tab {
-  flex-shrink: 0;
-  padding: 8rpx 24rpx;
-  border-radius: 9999rpx;
-  font-size: 20rpx;
+.unit-civ-tab.active {
+  background: rgba(74, 63, 63, 0.10);
+  color: #4A3F3F;
   font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: #57423f;
-  border: 1rpx solid rgba(138, 113, 110, 0.12);
-  background: transparent;
+  border-color: rgba(74, 63, 63, 0.20);
 }
 
-.ud-tab--active {
-  color: #ffffff;
-  background: #4A3F3F;
-  border-color: rgba(74, 63, 63, 0.12);
-  box-shadow: 0 0 0 1rpx rgba(74, 63, 63, 0.06);
+.unit-civ-fade {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 40rpx;
+  background: linear-gradient(90deg, transparent, rgba(248, 246, 242, 0.92));
+  pointer-events: none;
 }
 
-/* Hero */
-.ud-hero {
-  margin-top: 24rpx;
-  padding: 32rpx;
-  border-radius: 16rpx;
-  background: #fff0ee;
-  border: 1rpx solid rgba(74, 63, 63, 0.05);
-  box-shadow: 0 2rpx 12rpx rgba(36, 25, 23, 0.04);
+/* ─────────────────────────────────────
+   主滚动区（fixed，fill below tabs）
+───────────────────────────────────── */
+.dynasty-scroll {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
 }
 
-.ud-hero-top {
+/* ─────────────────────────────────────
+   英雄区（朝代大标题 · 内联布局）
+───────────────────────────────────── */
+.unit-hero {
+  padding: 24rpx 32rpx 0;
+}
+
+.unit-title-line {
   display: flex;
+  flex-direction: row;
   align-items: flex-start;
-  justify-content: space-between;
   gap: 16rpx;
-  margin-bottom: 8rpx;
 }
 
-.ud-hero-title {
-  font-size: 40rpx;
+.unit-title {
+  font-family: 'Noto Serif SC', 'Songti SC', serif;
+  font-size: 64rpx;
   font-weight: 700;
-  line-height: 1.2;
-  color: $text-title;
-  @include font-title;
+  line-height: 1.1;
+  color: #262626;
+  letter-spacing: 3rpx;
+  flex-shrink: 0;
 }
 
-.ud-hero-sub {
-  margin-top: 4rpx;
+.unit-title-meta-stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 70rpx;
+  padding-top: 4rpx;
+}
+
+.unit-inline-meta {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6rpx;
+}
+
+.unit-title-path {
   font-size: 22rpx;
   font-weight: 500;
-  color: #5c614d;
-  letter-spacing: 0.02em;
+  color: #8A8A8A;
 }
 
-.ud-hero-actions {
+.unit-inline-sep {
+  font-size: 20rpx;
+  color: #B0A89E;
+}
+
+.unit-title-range {
+  font-family: 'SF Mono', 'Menlo', monospace;
+  font-size: 20rpx;
+  font-weight: 500;
+  color: #B0A89E;
+}
+
+.unit-hero-next-dynasty {
+  display: inline-flex;
+}
+
+.unit-next-text {
+  font-size: 20rpx;
+  font-weight: 400;
+  color: #8A8A8A;
+  letter-spacing: 0.3rpx;
+}
+
+.unit-title-spacer { flex: 1; }
+
+.unit-hero-actions {
+  display: flex;
+  flex-direction: row;
+  gap: 8rpx;
+  flex-shrink: 0;
+  padding-top: 4rpx;
+}
+
+.unit-action-btn {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 12rpx;
+  background: rgba(74, 63, 63, 0.06);
+  border: 1rpx solid #EDEAE6;
   display: flex;
   align-items: center;
-  gap: 24rpx;
-  flex-shrink: 0;
+  justify-content: center;
+  box-sizing: border-box;
 }
 
-.ud-icon-btn {
-  padding: 8rpx;
-  color: rgba(74, 63, 63, 0.65);
-}
-
-.ud-icon-btn-hover {
-  color: #4A3F3F;
-}
-
-.ud-icon-text {
-  font-size: 28rpx;
-}
-
-.ud-ico-img {
+.unit-action-img {
   width: 40rpx;
   height: 40rpx;
-  display: block;
 }
 
-.ud-fav-glyph {
-  font-size: 36rpx;
-  line-height: 1;
-  color: #57423f;
+/* ─────────────────────────────────────
+   简介
+───────────────────────────────────── */
+.unit-intro {
+  padding: 16rpx 32rpx 20rpx;
 }
 
-.ud-fav-glyph--on {
-  color: #ba1a1a;
+.unit-intro-text {
+  font-size: 24rpx;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #6A6A6A;
+  letter-spacing: 0.3rpx;
 }
 
-.ud-icon-btn--fav-partial .ud-fav-glyph {
-  color: #ba1a1a;
-  opacity: 0.55;
-}
-
-.ud-icon-btn--fav-on {
-  color: #ba1a1a;
-}
-
-.ud-share-btn {
-  margin: 0;
-  padding: 8rpx;
-  background: transparent;
-  border: none;
-  line-height: 1;
-  color: rgba(74, 63, 63, 0.65);
-  font-size: inherit;
-}
-
-.ud-share-btn::after {
-  border: none;
-}
-
-.ud-hero-intro {
-  font-size: 26rpx;
-  line-height: 1.65;
-  color: #57423f;
-}
-
-.ud-detail-link {
-  margin-left: 6rpx;
+.unit-intro-more {
+  display: inline;
+  font-size: 22rpx;
+  font-weight: 500;
   color: #4A3F3F;
-  font-weight: 600;
-  border-bottom: 1rpx solid rgba(74, 63, 63, 0.28);
+  letter-spacing: 0.5rpx;
+  margin-left: 4rpx;
+  white-space: nowrap;
 }
 
-/* Matrix — 120rpx ≈ 稿面 60px 标尺列，五列均分 */
-.ud-matrix-wrap {
-  margin-top: 32rpx;
-  position: relative;
+/* ═══════════════════════════════════════
+   泳道矩阵
+═══════════════════════════════════════ */
+.dyn-swim-matrix {
+  flex: 1;
+  min-height: 0;
 }
 
-.ud-matrix-head {
-  display: grid;
-  grid-template-columns: 120rpx repeat(5, 1fr);
-  position: sticky;
-  z-index: 30;
-  padding: 16rpx 0;
-  background: rgba(255, 248, 247, 0.96);
-  backdrop-filter: blur(12px);
-  border-bottom: 1rpx solid rgba(74, 63, 63, 0.1);
+.dyn-swim-board {
+  padding: 0 24rpx 24rpx;
 }
 
-.ud-matrix-corner {
-  grid-column: 1;
+.dyn-swim-hscroll {
+  width: 100%;
 }
 
-.ud-matrix-cat {
-  text-align: center;
-  font-size: 18rpx;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: rgba(87, 66, 63, 0.55);
+/* 单一横向滚动容器 */
+.dyn-swim-matrix-scroll {
+  white-space: nowrap;
 }
 
-.ud-matrix-row {
-  display: grid;
-  grid-template-columns: 120rpx repeat(5, 1fr);
-  min-height: 160rpx;
-  border-bottom: 0.5px solid rgba(140, 113, 110, 0.22);
-}
-
-.ud-year-col {
-  position: relative;
+/* 内容画布：时间轴行 + 泳道列表，纵向排列 */
+.dyn-swim-sheet {
   display: flex;
+  flex-direction: column;
+  gap: 24rpx;
+  padding-bottom: 16rpx;
+  box-sizing: border-box;
+}
+
+/* sticky 冻结列（分类标题 / 时间轴占位）
+   z-index 必须高于史略胶囊（bar 内联 z-index 最高约 10），否则横滑时被遮挡 */
+.dyn-swim-head-sticky {
+  position: sticky;
+  left: 0;
+  z-index: 50;
+  flex-shrink: 0;
+}
+
+/* 时间轴行：sticky 占位 + 刻度 */
+.dyn-swim-axis-row {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+.dyn-swim-axis-row.is-placeholder {
+  visibility: hidden;
+}
+
+.dyn-swim-axis-spacer {
+  width: 60rpx;
+  min-width: 60rpx;
+  background: #F8F6F2;
+}
+
+.dyn-swim-axis-sheet {
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+/* 吸顶固定时间轴里的静态占位 */
+.dyn-swim-lane-head-spacer {
+  flex-shrink: 0;
+  width: 60rpx;
+  min-width: 60rpx;
+}
+
+/* ── 吸顶固定时间轴（fixed） ── */
+.dyn-axis-fixed {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 85;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  padding: 8rpx 24rpx 12rpx;
+  background: rgba(248, 246, 242, 0.98);
+  border-bottom: 1rpx solid #EDEAE6;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+}
+
+.dyn-axis-fixed .dyn-swim-lane-head-spacer {
+  flex-shrink: 0;
+}
+
+.dyn-axis-fixed-hscroll {
+  flex: 1;
+  min-width: 0;
+  width: 0;
+}
+
+.dyn-axis-fixed-sheet {
+  width: 1440rpx;
+  box-sizing: border-box;
+}
+
+/* 时间轴卡片 */
+.dyn-swim-axis {
+  padding: 14rpx 16rpx 12rpx;
+  border-radius: 12rpx;
+  background: #FFFFFF;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.06), inset 0 0 0 1rpx #EDEAE6;
+}
+
+.dyn-swim-axis-inner {
+  position: relative;
+  width: 100%;
+  min-height: 44rpx;
+  border-radius: 8rpx;
+  background: rgba(237, 234, 230, 0.30);
+  box-sizing: border-box;
+}
+
+.dyn-swim-axis-inner::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1rpx;
+  background: rgba(74, 63, 63, 0.15);
+}
+
+.dyn-swim-axis-tick {
+  position: absolute;
+  bottom: 2rpx;
+  transform: translateX(-50%);
+  font-family: 'SF Mono', 'Menlo', monospace;
+  font-size: 16rpx;
+  font-weight: 600;
+  color: #B0A89E;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.dyn-swim-axis-tick--edge-start {
+  left: 0 !important;
+  transform: translateX(0);
+}
+
+.dyn-swim-axis-tick--end {
+  transform: translateX(-100%);
+}
+
+.dyn-swim-axis-tick::before {
+  content: '';
+  position: absolute;
+  bottom: calc(100% + 4rpx);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1rpx;
+  height: 14rpx;
+  background: rgba(74, 63, 63, 0.12);
+}
+
+/* ── 泳道列表 ── */
+.dyn-swim-lanes {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+  flex-shrink: 0;
+}
+
+/* 注意：lane 不能用 overflow:hidden，否则会破坏内部 sticky 标题 */
+.dyn-swim-lane {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  border-radius: 12rpx;
+  background: #FFFFFF;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+}
+
+/* ── 泳道竖向标签（sticky 冻结列） ── */
+.dyn-swim-lane-head {
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-right: 1rpx solid rgba(120, 113, 108, 0.18);
+  width: 60rpx;
+  min-width: 60rpx;
+  padding: 18rpx 10rpx;
+  background: #F6F4F0;
+  border-left: 4rpx solid transparent;
+  border-right: 1rpx solid #EDEAE6;
+  border-radius: 12rpx 0 0 12rpx;
+  box-sizing: border-box;
 }
 
-.ud-year-label {
+.dyn-swim-lane-head-label {
   font-size: 20rpx;
   font-weight: 500;
-  color: #a8a29e;
+  color: #8A8A8A;
+  letter-spacing: 3rpx;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  white-space: nowrap;
 }
 
-.ud-year-tick {
+/* ── 轨道区（宽度由 sheetWidthRpx 内联指定） ── */
+.dyn-swim-track {
+  position: relative;
+  flex-shrink: 0;
+  background: rgba(248, 249, 250, 0.50);
+  padding: 14rpx 16rpx 20rpx;
+  border-radius: 0 12rpx 12rpx 0;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.dyn-swim-track-grid {
+  pointer-events: none;
   position: absolute;
-  right: 0;
-  top: 50%;
-  width: 12rpx;
-  height: 1rpx;
-  background: #d6d3d1;
-  transform: translateY(-50%);
+  inset: 0;
+  opacity: 0.4;
+  background-image: repeating-linear-gradient(
+    90deg,
+    #EDEAE6 0, #EDEAE6 1rpx,
+    transparent 1rpx,
+    transparent 6%
+  );
 }
 
-.ud-cell {
-  padding: 12rpx;
+.dyn-swim-stack {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10rpx;
+}
+
+.dyn-swim-row {
+  position: relative;
+  width: 100%;
+  height: 40rpx;
+  flex-shrink: 0;
+}
+
+/* ── 条形 · 基础结构 ── */
+.dyn-swim-bar {
+  position: absolute;
+  top: 0;
+  height: 40rpx;
+  padding: 0 8rpx;
+  border-radius: 20rpx;
+  font-size: 22rpx;
+  font-weight: 500;
+  letter-spacing: 0.2rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-shadow: 0 1rpx 4rpx rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+}
+
+/* ── 各泳道条形配色 ── */
+.lane-0 .dyn-swim-bar--default { background: #FFF5E0; color: #5A3A00; }
+.lane-1 .dyn-swim-bar--default { background: #F5F0E0; color: #6B5E3A; }
+.lane-2 .dyn-swim-bar--default { background: #EAF0EA; color: #3A4A3E; }
+.lane-3 .dyn-swim-bar--default { background: #EDF4F8; color: #3A5A6A; }
+.lane-4 .dyn-swim-bar--default { background: #F5F0E8; color: #6A4A3A; }
+.lane-5 .dyn-swim-bar--default { background: #F3EFF8; color: #4A3A5A; }
+.lane-6 .dyn-swim-bar--default { background: #EDF2F6; color: #3A4A58; }
+
+.dyn-swim-bar--isolated {
+  border-radius: 20rpx;
+  border: none;
+  box-shadow: none;
+}
+
+/* ── 优先级透明度 ── */
+.dyn-continuous-chip--p0, .dyn-swim-bar--p0 { opacity: 1; }
+.dyn-continuous-chip--p1, .dyn-swim-bar--p1 { opacity: 1; }
+.dyn-continuous-chip--p2, .dyn-swim-bar--p2 { opacity: 0.75; }
+.dyn-continuous-chip--p3, .dyn-swim-bar--p3 { opacity: 0.50; }
+
+/* ── 「还有N条」触发胶囊 ── */
+.dyn-swim-more-btn {
+  position: absolute;
+  top: 0;
+  height: 40rpx;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-right: 1rpx solid rgba(120, 113, 108, 0.06);
+  border-radius: 6rpx;
+  background: rgba(74, 63, 63, 0.05);
+  border: 1rpx dashed rgba(74, 63, 63, 0.25);
   box-sizing: border-box;
 }
 
-.ud-cell:last-child {
-  border-right: none;
+.dyn-swim-more-text {
+  font-size: 18rpx;
+  font-weight: 500;
+  color: #8A8A8A;
+  letter-spacing: 0.3rpx;
+  white-space: nowrap;
 }
 
-.ud-artifact {
-  width: 100%;
+/* ══════════════════════════════════════════
+   连续型泳道（虚线 + 胶囊）
+══════════════════════════════════════════ */
+.dyn-swim-stack--continuous { gap: 8rpx; }
+
+.dyn-continuous-unit {
+  position: absolute;
+  top: 0;
+  height: 40rpx;
   box-sizing: border-box;
-  padding: 8rpx 10rpx;
-  border-radius: 8rpx;
-  text-align: center;
-  border: 1rpx solid rgba(74, 63, 63, 0.08);
+  pointer-events: auto;
 }
 
-.ud-artifact-lines {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rpx;
+.dyn-continuous-line {
+  position: absolute;
+  top: 50%;
+  height: 2rpx;
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 1;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(120, 120, 120, 0.5) 0, rgba(120, 120, 120, 0.5) 4rpx,
+    transparent 4rpx, transparent 10rpx
+  );
 }
 
-.ud-artifact-line {
-  font-size: 18rpx;
-  font-weight: 600;
-  line-height: 1.25;
-  color: #262626;
+.dyn-continuous-line--left {
+  left: 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.5) 30%, #000 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.5) 30%, #000 100%);
 }
 
-.ud-artifact-blurb {
-  margin-top: 6rpx;
-  font-size: 18rpx;
-  line-height: 1.3;
-  color: rgba(87, 66, 63, 0.75);
+.dyn-continuous-line--right {
+  -webkit-mask-image: linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.5) 70%, transparent 100%);
+  mask-image: linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.5) 70%, transparent 100%);
 }
 
-.ud-artifact--surface {
-  background: #fee9e6;
-}
-
-.ud-artifact--marker .ud-artifact-line {
-  color: #4A3F3F;
-}
-
-.ud-artifact--high {
-  background: #f9e4e0;
-}
-
-.ud-artifact--highest {
-  background: #f3dedb;
-}
-
-.ud-related {
-  margin-top: 40rpx;
-}
-
-.ud-related-label {
+.dyn-continuous-chip {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 36rpx;
+  min-width: 48rpx;
+  padding: 0 8rpx;
+  border-radius: 18rpx;
   font-size: 22rpx;
-  color: rgba(87, 66, 63, 0.85);
-  margin-bottom: 12rpx;
-}
-
-.ud-related-x {
-  width: 100%;
-}
-
-.ud-related-inner {
+  font-weight: 500;
+  letter-spacing: 0.2rpx;
+  line-height: 1;
   display: inline-flex;
-  gap: 16rpx;
-  padding-bottom: 8rpx;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  box-sizing: border-box;
+  z-index: 2;
+  box-shadow: 0 2rpx 6rpx rgba(0, 0, 0, 0.08);
 }
 
-.ud-related-chip {
-  flex-shrink: 0;
-  min-width: 160rpx;
-  padding: 12rpx 20rpx;
-  border-radius: 9999rpx;
-  border: 1rpx solid rgba(138, 113, 110, 0.12);
-  background: rgba(255, 255, 255, 0.55);
+/* 连续型各泳道配色 */
+.lane-0 .dyn-continuous-line { background: repeating-linear-gradient(90deg, rgba(241,168,5,0.5) 0, rgba(241,168,5,0.5) 4rpx, transparent 4rpx, transparent 10rpx); }
+.lane-0 .dyn-continuous-chip { background: #FFF5E0; color: #5A3A00; }
+.lane-2 .dyn-continuous-line { background: repeating-linear-gradient(90deg, rgba(146,173,164,0.5) 0, rgba(146,173,164,0.5) 4rpx, transparent 4rpx, transparent 10rpx); }
+.lane-2 .dyn-continuous-chip { background: #EAF0EA; color: #3A4A3E; }
+.lane-3 .dyn-continuous-line { background: repeating-linear-gradient(90deg, rgba(154,188,200,0.5) 0, rgba(154,188,200,0.5) 4rpx, transparent 4rpx, transparent 10rpx); }
+.lane-3 .dyn-continuous-chip { background: #EDF4F8; color: #3A5A6A; }
+.lane-5 .dyn-swim-bar--default { background: #F3EFF8; color: #4A3A5A; }
+
+/* ══════════════════════════════════════════
+   士臣泳道（虚线 + chip）
+══════════════════════════════════════════ */
+.dyn-swim-stack--shichen { gap: 8rpx; }
+
+.lane-1 .dyn-shichen-chip {
+  box-shadow: 0 2rpx 8rpx rgba(107, 94, 58, 0.12), 0 1rpx 2rpx rgba(0, 0, 0, 0.06);
+}
+
+.dyn-shichen-unit {
+  position: absolute;
+  top: 0;
+  height: 40rpx;
+  box-sizing: border-box;
+  pointer-events: auto;
+}
+
+.dyn-shichen-line {
+  position: absolute;
+  top: 50%;
+  height: 2rpx;
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 1;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(196, 160, 108, 0.78) 0, rgba(196, 160, 108, 0.78) 4rpx,
+    transparent 4rpx, transparent 10rpx
+  );
+}
+
+.dyn-shichen-line--left {
+  left: 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.45) 28%, #000 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.45) 28%, #000 100%);
+}
+
+.dyn-shichen-line--right {
+  -webkit-mask-image: linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.45) 72%, transparent 100%);
+  mask-image: linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0.45) 72%, transparent 100%);
+}
+
+.dyn-shichen-chip {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 120rpx;
+  height: 36rpx;
+  padding: 0 6rpx;
+  border-radius: 18rpx;
+  font-size: 22rpx;
+  font-weight: 500;
+  letter-spacing: 0.2rpx;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+.lane-1 .dyn-shichen-chip--default { background: #F5F0E0; color: #6B5E3A; }
+.lane-1 .dyn-shichen-chip--accent  { background: rgba(224, 192, 136, 0.40); color: #6B5E3A; }
+.lane-1 .dyn-shichen-chip--ghost   { background: rgba(224, 192, 136, 0.12); color: #8A8A8A; box-shadow: none; }
+
+/* ══════════════════════════════════════════
+   超出史略浮层 · 底部抽屉
+══════════════════════════════════════════ */
+.more-overlay-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 300;
+  background: rgba(0, 0, 0, 0.42);
   display: flex;
   flex-direction: column;
-  gap: 4rpx;
+  justify-content: flex-end;
 }
 
-.ud-related-name {
-  font-size: 24rpx;
-  font-weight: 650;
-  color: #262626;
-}
-
-.ud-related-meta {
-  font-size: 20rpx;
-  color: #78716c;
-}
-
-.ud-next {
-  margin-top: 64rpx;
-  padding: 32rpx;
-  border-radius: 16rpx;
-  border: 1rpx solid rgba(214, 211, 209, 0.65);
-  background: #fafaf9;
+.more-overlay-sheet {
+  background: #FFFFFF;
+  border-radius: 24rpx 24rpx 0 0;
   display: flex;
+  flex-direction: column;
+  max-height: 65vh;
+  animation: overlaySlideUp 0.22s ease;
+}
+
+@keyframes overlaySlideUp {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0);    }
+}
+
+.more-overlay-handle {
+  width: 64rpx;
+  height: 8rpx;
+  border-radius: 4rpx;
+  background: #EDEAE6;
+  margin: 16rpx auto 4rpx;
+  flex-shrink: 0;
+}
+
+.more-overlay-header {
+  display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  padding: 16rpx 32rpx 20rpx;
+  border-bottom: 1rpx solid #EDEAE6;
+  flex-shrink: 0;
 }
 
-.ud-next-hover {
-  background: #f5f5f4;
+.more-overlay-title {
+  font-family: 'Noto Serif SC', 'Songti SC', serif;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #262626;
+  letter-spacing: 1rpx;
 }
 
-.ud-next-text {
-  font-size: 30rpx;
+.more-overlay-close {
+  width: 48rpx;
+  height: 48rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.more-overlay-close-icon {
+  font-size: 26rpx;
+  color: #8A8A8A;
+}
+
+.more-overlay-list {
+  flex: 1;
+  height: 480rpx;
+  padding: 8rpx 32rpx 40rpx;
+  box-sizing: border-box;
+}
+
+.more-overlay-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22rpx 0;
+  border-bottom: 1rpx solid #F0EDE9;
+}
+
+.more-overlay-item:last-child { border-bottom: none; }
+
+.more-overlay-item-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 14rpx;
+}
+
+.more-overlay-dot {
+  width: 12rpx;
+  height: 12rpx;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.more-overlay-dot--default { background: #B0A89E; }
+.more-overlay-dot--accent  { background: #F1A805; }
+.more-overlay-dot--marker  { background: #9ABCC8; }
+.more-overlay-dot--ghost   { background: #D0CCC8; }
+.more-overlay-dot--narrow  { background: #B0A89E; }
+
+.more-overlay-item-title {
+  font-size: 26rpx;
   font-weight: 500;
-  color: #a8a29e;
+  color: #262626;
 }
 
-.ud-next-hover .ud-next-text,
-.ud-next-hover .ud-next-chev {
-  color: #4A3F3F;
+.more-overlay-item-range {
+  font-family: 'SF Mono', 'Menlo', monospace;
+  font-size: 20rpx;
+  font-weight: 400;
+  color: #B0A89E;
+  letter-spacing: 0.3rpx;
 }
 
-.ud-next-chev {
-  font-size: 36rpx;
-  color: #a8a29e;
-  font-weight: 300;
-}
-
-.ud-foot {
-  margin-top: 28rpx;
-  font-size: 22rpx;
-  line-height: 1.5;
-  color: rgba(87, 66, 63, 0.65);
-}
-
-/* 简介弹层 */
+/* ── 简介弹层 ── */
 .ud-modal {
   position: fixed;
   inset: 0;
@@ -392,248 +779,51 @@ page {
   box-sizing: border-box;
 }
 
+.ud-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16rpx;
+  margin-bottom: 24rpx;
+}
+
 .ud-modal-title {
+  flex: 1;
+  min-width: 0;
   font-size: 34rpx;
   font-weight: 700;
   color: #4A3F3F;
 }
 
-.ud-modal-body {
-  margin-top: 16rpx;
-  max-height: 50vh;
-  font-size: 28rpx;
-  line-height: 1.65;
-  color: rgba(36, 25, 23, 0.85);
-}
-
-.ud-modal-btn {
-  margin-top: 20rpx;
-  height: 88rpx;
-  border-radius: 16rpx;
-  background: #4A3F3F;
-  color: #fff;
+.ud-modal-close {
+  flex-shrink: 0;
+  width: 56rpx;
+  height: 56rpx;
+  border-radius: 50%;
+  background: rgba(74, 63, 63, 0.06);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 700;
+}
+
+.ud-modal-close-icon {
   font-size: 28rpx;
+  line-height: 1;
+  color: #6A6A6A;
 }
 
-.unit-civ-tabs {
-  position: sticky;
-  z-index: 10;
-  background: rgba(248, 246, 242, 0.96);
-  border-bottom: 1rpx solid $divider;
-}
-
-.unit-region-inner {
-  display: inline-flex;
-  gap: 12rpx;
-  padding: 12rpx 24rpx;
-}
-
-.unit-civ-tab {
-  padding: 8rpx 20rpx;
-  border-radius: 999rpx;
-  font-size: 22rpx;
-  color: $text-caption;
-  background: $inactive-bg;
-  white-space: nowrap;
-}
-
-.unit-civ-tab.active {
-  background: #9b3e38;
-  color: #fff;
-}
-
-.dynasty-scroll {
-  height: calc(100vh - 140rpx);
-}
-
-.ud-hero-next {
-  margin-top: 8rpx;
-  font-size: 24rpx;
-  color: #9b3e38;
-}
-
-.dyn-swim-matrix {
-  margin-top: 24rpx;
-  border-radius: 12rpx;
-  overflow: hidden;
-  background: #fff;
-  border: 1rpx solid $divider;
-}
-
-.dyn-swim-hscroll {
-  width: 100%;
-}
-
-.dyn-swim-sheet {
-  min-width: 100%;
-}
-
-.dyn-swim-axis {
-  padding: 16rpx 0;
-  border-bottom: 1rpx solid $divider;
-}
-
-.dyn-swim-axis-inner {
-  position: relative;
-  height: 40rpx;
-}
-
-.dyn-swim-axis-tick {
-  position: absolute;
-  transform: translateX(-50%);
-  font-size: 20rpx;
-  color: $text-time;
-  font-family: monospace;
-}
-
-.dyn-swim-lanes {
-  padding: 8rpx 0 24rpx;
-}
-
-.dyn-swim-lane {
-  border-left: 4rpx solid #84572f;
-  margin: 0 16rpx 16rpx;
-  padding-left: 12rpx;
-}
-
-.dyn-swim-lane-head {
-  font-size: 24rpx;
-  font-weight: 700;
-  color: $text-title;
-  margin-bottom: 8rpx;
-}
-
-.dyn-swim-track {
-  position: relative;
-  min-height: 64rpx;
-}
-
-.dyn-swim-row {
-  position: relative;
-  height: 48rpx;
-  margin-bottom: 8rpx;
-}
-
-.dyn-swim-bar {
-  position: absolute;
-  top: 8rpx;
-  height: 32rpx;
-  line-height: 32rpx;
-  padding: 0 12rpx;
-  border-radius: 999rpx;
-  font-size: 20rpx;
-  background: rgba(132, 87, 47, 0.15);
-  color: $text-title;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.dyn-swim-bar--p0 { background: rgba(132, 87, 47, 0.35); }
-.dyn-swim-bar--p1 { background: rgba(132, 87, 47, 0.28); }
-.dyn-swim-bar--p2 { opacity: 0.85; }
-.dyn-swim-bar--p3 { opacity: 0.6; }
-
-.dyn-swim-more {
-  font-size: 22rpx;
-  color: #9b3e38;
-  padding: 8rpx 0;
-}
-
-.more-overlay-backdrop {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.35);
-  z-index: 200;
-  display: flex;
-  align-items: flex-end;
-}
-
-.more-overlay-sheet {
-  width: 100%;
+.ud-modal-body {
   max-height: 60vh;
-  background: #fff;
-  border-radius: 24rpx 24rpx 0 0;
-  padding: 24rpx;
 }
 
-.more-overlay-title {
-  font-size: 30rpx;
-  font-weight: 700;
-  margin-bottom: 16rpx;
-}
-
-.more-overlay-item {
-  padding: 16rpx 0;
-  border-bottom: 1rpx solid $divider;
-  font-size: 28rpx;
-}
-
-.dyn-swim-axis--fixed {
-  position: fixed;
-  left: 0;
-  right: 0;
-  z-index: 30;
-  background: rgba(248, 246, 242, 0.96);
-  border-bottom: 1rpx solid $divider;
-  padding: 8rpx 24rpx 12rpx 120rpx;
-  box-sizing: border-box;
-}
-
-.dyn-swim-track-grid {
-  position: absolute;
-  inset: 0;
-  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1rpx, transparent 1rpx);
-  background-size: 10% 100%;
-  pointer-events: none;
-}
-
-.dyn-shichen-unit,
-.dyn-continuous-unit {
-  position: absolute;
-  top: 0;
-  height: 100%;
-}
-
-.dyn-shichen-line,
-.dyn-continuous-line {
-  position: absolute;
-  top: 50%;
-  height: 0;
-  border-top: 2rpx dashed rgba(132, 87, 47, 0.35);
-}
-
-.dyn-shichen-chip,
-.dyn-continuous-chip {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  padding: 4rpx 12rpx;
-  border-radius: 999rpx;
-  font-size: 20rpx;
-  white-space: nowrap;
-  max-width: 90%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  background: rgba(132, 87, 47, 0.18);
-  color: #4a3f3f;
-}
-
-.dyn-continuous-chip {
-  text-align: center;
-}
-
-.dyn-swim-bar--isolated {
-  border-radius: 999rpx;
-}
-
-.more-overlay-range {
+.ud-modal-para {
   display: block;
-  margin-top: 4rpx;
-  font-size: 22rpx;
-  color: $text-caption;
+  font-size: 28rpx;
+  line-height: 1.65;
+  color: rgba(36, 25, 23, 0.85);
+  margin-bottom: 24rpx;
+}
+
+.ud-modal-para:last-child {
+  margin-bottom: 0;
 }

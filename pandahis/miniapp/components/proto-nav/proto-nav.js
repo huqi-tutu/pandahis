@@ -41,8 +41,11 @@ Component({
   lifetimes: {
     attached() {
       try {
-        const sys = wx.getSystemInfoSync()
-        this.setData({ statusBarHeight: sys.statusBarHeight || 20 })
+        const statusBarHeight =
+          typeof wx.getWindowInfo === 'function'
+            ? wx.getWindowInfo().statusBarHeight
+            : wx.getSystemInfoSync().statusBarHeight
+        this.setData({ statusBarHeight: statusBarHeight || 20 })
       } catch (e) {
         this.setData({ statusBarHeight: 20 })
       }

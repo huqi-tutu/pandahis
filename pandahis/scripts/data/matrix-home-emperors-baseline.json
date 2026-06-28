@@ -1,0 +1,2909 @@
+[
+  {
+    "id": "zhong_hua_wu_di_huang_di",
+    "legacyId": "zhong_hua_wu_di_huang_di",
+    "name": "黄帝",
+    "dynasty": "五帝",
+    "dynasty2": "五帝",
+    "start": "-2698",
+    "end": "-2598"
+  },
+  {
+    "id": "zhong_hua_wu_di_zhuan_xu",
+    "legacyId": "zhong_hua_wu_di_zhuan_xu",
+    "name": "颛顼",
+    "dynasty": "五帝",
+    "dynasty2": "五帝",
+    "start": "-2514",
+    "end": "-2436"
+  },
+  {
+    "id": "zhong_hua_wu_di_di_ku",
+    "legacyId": "zhong_hua_wu_di_di_ku",
+    "name": "帝喾",
+    "dynasty": "五帝",
+    "dynasty2": "五帝",
+    "start": "-2436",
+    "end": "-2366"
+  },
+  {
+    "id": "zhong_hua_wu_di_yao",
+    "legacyId": "zhong_hua_wu_di_yao",
+    "name": "尧",
+    "dynasty": "五帝",
+    "dynasty2": "五帝",
+    "start": "-2356",
+    "end": "-2255"
+  },
+  {
+    "id": "zhong_hua_wu_di_shun",
+    "legacyId": "zhong_hua_wu_di_shun",
+    "name": "舜",
+    "dynasty": "五帝",
+    "dynasty2": "五帝",
+    "start": "-2255",
+    "end": "-2205"
+  },
+  {
+    "id": "zhong_hua_xia_tai_kang",
+    "legacyId": "zhong_hua_xia_tai_kang",
+    "name": "太康",
+    "dynasty": "夏",
+    "dynasty2": "夏",
+    "start": "-2041",
+    "end": "-2021"
+  },
+  {
+    "id": "zhong_hua_xia_zhong_kang",
+    "legacyId": "zhong_hua_xia_zhong_kang",
+    "name": "仲康",
+    "dynasty": "夏",
+    "dynasty2": "夏",
+    "start": "-2021",
+    "end": "-2007"
+  },
+  {
+    "id": "zhong_hua_xia_xiang",
+    "legacyId": "zhong_hua_xia_xiang",
+    "name": "相",
+    "dynasty": "夏",
+    "dynasty2": "夏",
+    "start": "-2007",
+    "end": "-1977"
+  },
+  {
+    "id": "zhong_hua_xia_shao_kang",
+    "legacyId": "zhong_hua_xia_shao_kang",
+    "name": "少康",
+    "dynasty": "夏",
+    "dynasty2": "夏",
+    "start": "-1977",
+    "end": "-1954"
+  },
+  {
+    "id": "zhong_hua_xia_zhu",
+    "legacyId": "zhong_hua_xia_zhu",
+    "name": "杼",
+    "dynasty": "夏",
+    "dynasty2": "夏",
+    "start": "-1954",
+    "end": "-1935"
+  },
+  {
+    "id": "zhong_hua_xia_huai",
+    "legacyId": "zhong_hua_xia_huai",
+    "name": "槐",
+    "dynasty": "夏",
+    "dynasty2": "夏",
+    "start": "-1935",
+    "end": "-1911"
+  },
+  {
+    "id": "zhong_hua_xia_mang",
+    "legacyId": "zhong_hua_xia_mang",
+    "name": "芒",
+    "dynasty": "夏",
+    "dynasty2": "夏",
+    "start": "-1911",
+    "end": "-1893"
+  },
+  {
+    "id": "zhong_hua_xia_xie",
+    "legacyId": "zhong_hua_xia_xie",
+    "name": "泄",
+    "dynasty": "夏",
+    "dynasty2": "夏",
+    "start": "-1893",
+    "end": "-1876"
+  },
+  {
+    "id": "zhong_hua_xia_bu_jiang",
+    "legacyId": "zhong_hua_xia_bu_jiang",
+    "name": "不降",
+    "dynasty": "夏",
+    "dynasty2": "夏",
+    "start": "-1876",
+    "end": "-1835"
+  },
+  {
+    "id": "zhong_hua_xia_jiong",
+    "legacyId": "zhong_hua_xia_jiong",
+    "name": "扃",
+    "dynasty": "夏",
+    "dynasty2": "夏",
+    "start": "-1835",
+    "end": "-1818"
+  },
+  {
+    "id": "zhong_hua_xia_yin_jia",
+    "legacyId": "zhong_hua_xia_yin_jia",
+    "name": "廑",
+    "dynasty": "夏",
+    "dynasty2": "夏",
+    "start": "-1818",
+    "end": "-1806"
+  },
+  {
+    "id": "zhong_hua_xia_kong_jia",
+    "legacyId": "zhong_hua_xia_kong_jia",
+    "name": "孔甲",
+    "dynasty": "夏",
+    "dynasty2": "夏",
+    "start": "-1806",
+    "end": "-1775"
+  },
+  {
+    "id": "zhong_hua_xia_gao",
+    "legacyId": "zhong_hua_xia_gao",
+    "name": "皋",
+    "dynasty": "夏",
+    "dynasty2": "夏",
+    "start": "-1775",
+    "end": "-1765"
+  },
+  {
+    "id": "zhong_hua_xia_fa",
+    "legacyId": "zhong_hua_xia_fa",
+    "name": "发",
+    "dynasty": "夏",
+    "dynasty2": "夏",
+    "start": "-1704",
+    "end": "-1652"
+  },
+  {
+    "id": "zhong_hua_xia_jie",
+    "legacyId": "zhong_hua_xia_jie",
+    "name": "桀",
+    "dynasty": "夏",
+    "dynasty2": "夏",
+    "start": "-1652",
+    "end": "-1600"
+  },
+  {
+    "id": "zhong_hua_shang_wai_bing",
+    "legacyId": "zhong_hua_shang_wai_bing",
+    "name": "外丙",
+    "dynasty": "商",
+    "dynasty2": "商",
+    "start": "-1587",
+    "end": "-1585"
+  },
+  {
+    "id": "zhong_hua_shang_zhong_ren",
+    "legacyId": "zhong_hua_shang_zhong_ren",
+    "name": "仲壬",
+    "dynasty": "商",
+    "dynasty2": "商",
+    "start": "-1585",
+    "end": "-1582"
+  },
+  {
+    "id": "zhong_hua_shang_tai_jia",
+    "legacyId": "zhong_hua_shang_tai_jia",
+    "name": "太甲",
+    "dynasty": "商",
+    "dynasty2": "商",
+    "start": "-1582",
+    "end": "-1559"
+  },
+  {
+    "id": "zhong_hua_shang_wo_ding",
+    "legacyId": "zhong_hua_shang_wo_ding",
+    "name": "沃丁",
+    "dynasty": "商",
+    "dynasty2": "商",
+    "start": "-1559",
+    "end": "-1541"
+  },
+  {
+    "id": "zhong_hua_shang_pan_geng",
+    "legacyId": "zhong_hua_shang_pan_geng",
+    "name": "盘庚",
+    "dynasty": "商",
+    "dynasty2": "商",
+    "start": "-1300",
+    "end": "-1272"
+  },
+  {
+    "id": "zhong_hua_shang_wu_ding",
+    "legacyId": "zhong_hua_shang_wu_ding",
+    "name": "武丁",
+    "dynasty": "商",
+    "dynasty2": "商",
+    "start": "-1250",
+    "end": "-1192"
+  },
+  {
+    "id": "zhong_hua_shang_zhou",
+    "legacyId": "zhong_hua_shang_zhou",
+    "name": "帝辛（纣）",
+    "dynasty": "商",
+    "dynasty2": "商",
+    "start": "-1076",
+    "end": "-1046"
+  },
+  {
+    "id": "zhong_hua_zhou_wu_wang",
+    "legacyId": "zhong_hua_zhou_wu_wang",
+    "name": "周武王",
+    "dynasty": "西周",
+    "dynasty2": "西周",
+    "start": "-1046",
+    "end": "-1043"
+  },
+  {
+    "id": "zhong_hua_zhou_cheng_wang",
+    "legacyId": "zhong_hua_zhou_cheng_wang",
+    "name": "周成王",
+    "dynasty": "西周",
+    "dynasty2": "西周",
+    "start": "-1042",
+    "end": "-1021"
+  },
+  {
+    "id": "zhong_hua_zhou_kang_wang",
+    "legacyId": "zhong_hua_zhou_kang_wang",
+    "name": "周康王",
+    "dynasty": "西周",
+    "dynasty2": "西周",
+    "start": "-1020",
+    "end": "-996"
+  },
+  {
+    "id": "zhong_hua_zhou_zhao_wang",
+    "legacyId": "zhong_hua_zhou_zhao_wang",
+    "name": "周昭王",
+    "dynasty": "西周",
+    "dynasty2": "西周",
+    "start": "-995",
+    "end": "-977"
+  },
+  {
+    "id": "zhong_hua_zhou_mu_wang",
+    "legacyId": "zhong_hua_zhou_mu_wang",
+    "name": "周穆王",
+    "dynasty": "西周",
+    "dynasty2": "西周",
+    "start": "-976",
+    "end": "-922"
+  },
+  {
+    "id": "zhong_hua_zhou_li_wang",
+    "legacyId": "zhong_hua_zhou_li_wang",
+    "name": "周厉王",
+    "dynasty": "西周",
+    "dynasty2": "西周",
+    "start": "-878",
+    "end": "-841"
+  },
+  {
+    "id": "zhong_hua_zhou_xuan_wang",
+    "legacyId": "zhong_hua_zhou_xuan_wang",
+    "name": "周宣王",
+    "dynasty": "西周",
+    "dynasty2": "西周",
+    "start": "-827",
+    "end": "-782"
+  },
+  {
+    "id": "zhong_hua_zhou_you_wang",
+    "legacyId": "zhong_hua_zhou_you_wang",
+    "name": "周幽王",
+    "dynasty": "西周",
+    "dynasty2": "西周",
+    "start": "-781",
+    "end": "-771"
+  },
+  {
+    "id": "zhong_hua_qin_ying_zheng",
+    "legacyId": "zhong_hua_qin_ying_zheng",
+    "name": "秦始皇",
+    "dynasty": "秦",
+    "dynasty2": "秦",
+    "start": "-221",
+    "end": "-210"
+  },
+  {
+    "id": "zhong_hua_qin_er_shi",
+    "legacyId": "zhong_hua_qin_er_shi",
+    "name": "秦二世",
+    "dynasty": "秦",
+    "dynasty2": "秦",
+    "start": "-210",
+    "end": "-207"
+  },
+  {
+    "id": "zhong_hua_han_gao_zu",
+    "legacyId": "zhong_hua_han_gao_zu",
+    "name": "汉高祖",
+    "dynasty": "西汉",
+    "dynasty2": "西汉",
+    "start": "-202",
+    "end": "-195"
+  },
+  {
+    "id": "zhong_hua_han_hui_di",
+    "legacyId": "zhong_hua_han_hui_di",
+    "name": "汉惠帝",
+    "dynasty": "西汉",
+    "dynasty2": "西汉",
+    "start": "-195",
+    "end": "-188"
+  },
+  {
+    "id": "zhong_hua_han_wen_di",
+    "legacyId": "zhong_hua_han_wen_di",
+    "name": "汉文帝",
+    "dynasty": "西汉",
+    "dynasty2": "西汉",
+    "start": "-180",
+    "end": "-157"
+  },
+  {
+    "id": "zhong_hua_han_jing_di",
+    "legacyId": "zhong_hua_han_jing_di",
+    "name": "汉景帝",
+    "dynasty": "西汉",
+    "dynasty2": "西汉",
+    "start": "-157",
+    "end": "-141"
+  },
+  {
+    "id": "zhong_hua_han_wu_di",
+    "legacyId": "zhong_hua_han_wu_di",
+    "name": "汉武帝",
+    "dynasty": "西汉",
+    "dynasty2": "西汉",
+    "start": "-141",
+    "end": "-87"
+  },
+  {
+    "id": "zhong_hua_han_zhao_di",
+    "legacyId": "zhong_hua_han_zhao_di",
+    "name": "汉昭帝",
+    "dynasty": "西汉",
+    "dynasty2": "西汉",
+    "start": "-87",
+    "end": "-74"
+  },
+  {
+    "id": "zhong_hua_han_xuan_di",
+    "legacyId": "zhong_hua_han_xuan_di",
+    "name": "汉宣帝",
+    "dynasty": "西汉",
+    "dynasty2": "西汉",
+    "start": "-74",
+    "end": "-49"
+  },
+  {
+    "id": "zhong_hua_han_yuan_di",
+    "legacyId": "zhong_hua_han_yuan_di",
+    "name": "汉元帝",
+    "dynasty": "西汉",
+    "dynasty2": "西汉",
+    "start": "-49",
+    "end": "-33"
+  },
+  {
+    "id": "zhong_hua_han_cheng_di",
+    "legacyId": "zhong_hua_han_cheng_di",
+    "name": "汉成帝",
+    "dynasty": "西汉",
+    "dynasty2": "西汉",
+    "start": "-33",
+    "end": "-7"
+  },
+  {
+    "id": "zhong_hua_han_ai_di",
+    "legacyId": "zhong_hua_han_ai_di",
+    "name": "汉哀帝",
+    "dynasty": "西汉",
+    "dynasty2": "西汉",
+    "start": "-7",
+    "end": "-1"
+  },
+  {
+    "id": "zhong_hua_han_ping_di",
+    "legacyId": "zhong_hua_han_ping_di",
+    "name": "汉平帝",
+    "dynasty": "西汉",
+    "dynasty2": "西汉",
+    "start": "-1",
+    "end": "5"
+  },
+  {
+    "id": "zhong_hua_han_ru_zi_ying",
+    "legacyId": "zhong_hua_han_ru_zi_ying",
+    "name": "孺子婴",
+    "dynasty": "西汉",
+    "dynasty2": "西汉",
+    "start": "5",
+    "end": "8"
+  },
+  {
+    "id": "zhong_hua_xin_wang_mang",
+    "legacyId": "zhong_hua_xin_wang_mang",
+    "name": "王莽",
+    "dynasty": "新",
+    "dynasty2": "新",
+    "start": "9",
+    "end": "23"
+  },
+  {
+    "id": "zhong_hua_han_guang_wu_di",
+    "legacyId": "zhong_hua_han_guang_wu_di",
+    "name": "汉光武帝",
+    "dynasty": "东汉",
+    "dynasty2": "东汉",
+    "start": "25",
+    "end": "57"
+  },
+  {
+    "id": "zhong_hua_han_ming_di",
+    "legacyId": "zhong_hua_han_ming_di",
+    "name": "汉明帝",
+    "dynasty": "东汉",
+    "dynasty2": "东汉",
+    "start": "57",
+    "end": "75"
+  },
+  {
+    "id": "zhong_hua_han_zhang_di",
+    "legacyId": "zhong_hua_han_zhang_di",
+    "name": "汉章帝",
+    "dynasty": "东汉",
+    "dynasty2": "东汉",
+    "start": "75",
+    "end": "88"
+  },
+  {
+    "id": "zhong_hua_han_he_di",
+    "legacyId": "zhong_hua_han_he_di",
+    "name": "汉和帝",
+    "dynasty": "东汉",
+    "dynasty2": "东汉",
+    "start": "88",
+    "end": "105"
+  },
+  {
+    "id": "zhong_hua_han_xian_di",
+    "legacyId": "zhong_hua_han_xian_di",
+    "name": "汉献帝",
+    "dynasty": "东汉",
+    "dynasty2": "东汉",
+    "start": "189",
+    "end": "220"
+  },
+  {
+    "id": "zhong_hua_wei_cao_pi",
+    "legacyId": "zhong_hua_wei_cao_pi",
+    "name": "魏文帝",
+    "dynasty": "三国",
+    "dynasty2": "三国·魏",
+    "start": "220",
+    "end": "226"
+  },
+  {
+    "id": "zhong_hua_shu_liu_bei",
+    "legacyId": "zhong_hua_shu_liu_bei",
+    "name": "蜀昭烈帝",
+    "dynasty": "三国",
+    "dynasty2": "三国·蜀",
+    "start": "221",
+    "end": "223"
+  },
+  {
+    "id": "zhong_hua_jin_si_ma_yan",
+    "legacyId": "zhong_hua_jin_si_ma_yan",
+    "name": "晋武帝",
+    "dynasty": "西晋",
+    "dynasty2": "西晋",
+    "start": "265",
+    "end": "290"
+  },
+  {
+    "id": "zhong_hua_jin_si_ma_zhong",
+    "legacyId": "zhong_hua_jin_si_ma_zhong",
+    "name": "晋惠帝",
+    "dynasty": "西晋",
+    "dynasty2": "西晋",
+    "start": "290",
+    "end": "307"
+  },
+  {
+    "id": "zhong_hua_jin_si_ma_rui",
+    "legacyId": "zhong_hua_jin_si_ma_rui",
+    "name": "晋元帝",
+    "dynasty": "东晋",
+    "dynasty2": "东晋",
+    "start": "317",
+    "end": "323"
+  },
+  {
+    "id": "zhong_hua_sui_wen_di",
+    "legacyId": "zhong_hua_sui_wen_di",
+    "name": "隋文帝",
+    "dynasty": "隋",
+    "dynasty2": "隋",
+    "start": "581",
+    "end": "604"
+  },
+  {
+    "id": "zhong_hua_sui_yang_di",
+    "legacyId": "zhong_hua_sui_yang_di",
+    "name": "隋炀帝",
+    "dynasty": "隋",
+    "dynasty2": "隋",
+    "start": "604",
+    "end": "618"
+  },
+  {
+    "id": "zhong_hua_tang_gao_zu",
+    "legacyId": "zhong_hua_tang_gao_zu",
+    "name": "唐高祖",
+    "dynasty": "唐",
+    "dynasty2": "唐",
+    "start": "618",
+    "end": "626"
+  },
+  {
+    "id": "zhong_hua_tang_li_shi_min",
+    "legacyId": "zhong_hua_tang_li_shi_min",
+    "name": "唐太宗",
+    "dynasty": "唐",
+    "dynasty2": "唐",
+    "start": "626",
+    "end": "649"
+  },
+  {
+    "id": "zhong_hua_tang_wu_zetian",
+    "legacyId": "zhong_hua_tang_wu_zetian",
+    "name": "武则天",
+    "dynasty": "唐",
+    "dynasty2": "唐",
+    "start": "690",
+    "end": "705"
+  },
+  {
+    "id": "zhong_hua_tang_xuan_zong",
+    "legacyId": "zhong_hua_tang_xuan_zong",
+    "name": "唐玄宗",
+    "dynasty": "唐",
+    "dynasty2": "唐",
+    "start": "712",
+    "end": "756"
+  },
+  {
+    "id": "zhong_hua_tang_su_zong",
+    "legacyId": "zhong_hua_tang_su_zong",
+    "name": "唐肃宗",
+    "dynasty": "唐",
+    "dynasty2": "唐",
+    "start": "756",
+    "end": "762"
+  },
+  {
+    "id": "zhong_hua_tang_dai_zong",
+    "legacyId": "zhong_hua_tang_dai_zong",
+    "name": "唐代宗",
+    "dynasty": "唐",
+    "dynasty2": "唐",
+    "start": "762",
+    "end": "779"
+  },
+  {
+    "id": "zhong_hua_tang_de_zong",
+    "legacyId": "zhong_hua_tang_de_zong",
+    "name": "唐德宗",
+    "dynasty": "唐",
+    "dynasty2": "唐",
+    "start": "779",
+    "end": "805"
+  },
+  {
+    "id": "zhong_hua_tang_xian_zong",
+    "legacyId": "zhong_hua_tang_xian_zong",
+    "name": "唐宪宗",
+    "dynasty": "唐",
+    "dynasty2": "唐",
+    "start": "805",
+    "end": "820"
+  },
+  {
+    "id": "zhong_hua_tang_wen_zong",
+    "legacyId": "zhong_hua_tang_wen_zong",
+    "name": "唐文宗",
+    "dynasty": "唐",
+    "dynasty2": "唐",
+    "start": "826",
+    "end": "840"
+  },
+  {
+    "id": "zhong_hua_tang_wu_zong",
+    "legacyId": "zhong_hua_tang_wu_zong",
+    "name": "唐武宗",
+    "dynasty": "唐",
+    "dynasty2": "唐",
+    "start": "840",
+    "end": "846"
+  },
+  {
+    "id": "zhong_hua_tang_xuan_zong_li_chen",
+    "legacyId": "zhong_hua_tang_xuan_zong_li_chen",
+    "name": "唐宣宗",
+    "dynasty": "唐",
+    "dynasty2": "唐",
+    "start": "846",
+    "end": "859"
+  },
+  {
+    "id": "zhong_hua_song_zhao_kuang_yin",
+    "legacyId": "zhong_hua_song_zhao_kuang_yin",
+    "name": "宋太祖",
+    "dynasty": "北宋",
+    "dynasty2": "北宋",
+    "start": "960",
+    "end": "976"
+  },
+  {
+    "id": "zhong_hua_song_zhao_jiong",
+    "legacyId": "zhong_hua_song_zhao_jiong",
+    "name": "宋太宗",
+    "dynasty": "北宋",
+    "dynasty2": "北宋",
+    "start": "976",
+    "end": "997"
+  },
+  {
+    "id": "zhong_hua_song_zhao_heng",
+    "legacyId": "zhong_hua_song_zhao_heng",
+    "name": "宋真宗",
+    "dynasty": "北宋",
+    "dynasty2": "北宋",
+    "start": "997",
+    "end": "1022"
+  },
+  {
+    "id": "zhong_hua_song_zhao_zhen",
+    "legacyId": "zhong_hua_song_zhao_zhen",
+    "name": "宋仁宗",
+    "dynasty": "北宋",
+    "dynasty2": "北宋",
+    "start": "1022",
+    "end": "1063"
+  },
+  {
+    "id": "zhong_hua_song_zhao_xu",
+    "legacyId": "zhong_hua_song_zhao_xu",
+    "name": "宋神宗",
+    "dynasty": "北宋",
+    "dynasty2": "北宋",
+    "start": "1067",
+    "end": "1085"
+  },
+  {
+    "id": "zhong_hua_song_zhao_ji",
+    "legacyId": "zhong_hua_song_zhao_ji",
+    "name": "宋徽宗",
+    "dynasty": "北宋",
+    "dynasty2": "北宋",
+    "start": "1100",
+    "end": "1125"
+  },
+  {
+    "id": "zhong_hua_song_zhao_gou",
+    "legacyId": "zhong_hua_song_zhao_gou",
+    "name": "宋高宗",
+    "dynasty": "南宋",
+    "dynasty2": "南宋",
+    "start": "1127",
+    "end": "1162"
+  },
+  {
+    "id": "zhong_hua_song_zhao_shen",
+    "legacyId": "zhong_hua_song_zhao_shen",
+    "name": "宋孝宗",
+    "dynasty": "南宋",
+    "dynasty2": "南宋",
+    "start": "1162",
+    "end": "1189"
+  },
+  {
+    "id": "zhong_hua_liao_yel_ajin",
+    "legacyId": "zhong_hua_liao_yel_ajin",
+    "name": "辽太祖",
+    "dynasty": "辽",
+    "dynasty2": "辽",
+    "start": "916",
+    "end": "926"
+  },
+  {
+    "id": "zhong_hua_liao_yel_degguang",
+    "legacyId": "zhong_hua_liao_yel_degguang",
+    "name": "辽太宗",
+    "dynasty": "辽",
+    "dynasty2": "辽",
+    "start": "926",
+    "end": "947"
+  },
+  {
+    "id": "zhong_hua_jin_wanyan_aguda",
+    "legacyId": "zhong_hua_jin_wanyan_aguda",
+    "name": "金太祖",
+    "dynasty": "金",
+    "dynasty2": "金",
+    "start": "1115",
+    "end": "1123"
+  },
+  {
+    "id": "zhong_hua_yuan_hu_lie",
+    "legacyId": "zhong_hua_yuan_hu_lie",
+    "name": "元世祖",
+    "dynasty": "元",
+    "dynasty2": "元",
+    "start": "1260",
+    "end": "1294"
+  },
+  {
+    "id": "zhong_hua_yuan_tie_mu_er",
+    "legacyId": "zhong_hua_yuan_tie_mu_er",
+    "name": "元成宗",
+    "dynasty": "元",
+    "dynasty2": "元",
+    "start": "1294",
+    "end": "1307"
+  },
+  {
+    "id": "zhong_hua_ming_zhu_yuan_zhang",
+    "legacyId": "zhong_hua_ming_zhu_yuan_zhang",
+    "name": "明太祖",
+    "dynasty": "明",
+    "dynasty2": "明",
+    "start": "1368",
+    "end": "1398"
+  },
+  {
+    "id": "zhong_hua_ming_zhu_di",
+    "legacyId": "zhong_hua_ming_zhu_di",
+    "name": "明成祖",
+    "dynasty": "明",
+    "dynasty2": "明",
+    "start": "1402",
+    "end": "1424"
+  },
+  {
+    "id": "zhong_hua_ming_zhu_zhan_ji",
+    "legacyId": "zhong_hua_ming_zhu_zhan_ji",
+    "name": "明宣宗",
+    "dynasty": "明",
+    "dynasty2": "明",
+    "start": "1425",
+    "end": "1435"
+  },
+  {
+    "id": "zhong_hua_ming_zhu_qizhen",
+    "legacyId": "zhong_hua_ming_zhu_qizhen",
+    "name": "明英宗",
+    "dynasty": "明",
+    "dynasty2": "明",
+    "start": "1435",
+    "end": "1464"
+  },
+  {
+    "id": "zhong_hua_ming_zhu_hou_zhao",
+    "legacyId": "zhong_hua_ming_zhu_hou_zhao",
+    "name": "明武宗",
+    "dynasty": "明",
+    "dynasty2": "明",
+    "start": "1505",
+    "end": "1521"
+  },
+  {
+    "id": "zhong_hua_ming_zhu_hou_jiong",
+    "legacyId": "zhong_hua_ming_zhu_hou_jiong",
+    "name": "嘉靖",
+    "dynasty": "明",
+    "dynasty2": "明",
+    "start": "1521",
+    "end": "1566"
+  },
+  {
+    "id": "zhong_hua_ming_zhu_yijun",
+    "legacyId": "zhong_hua_ming_zhu_yijun",
+    "name": "万历",
+    "dynasty": "明",
+    "dynasty2": "明",
+    "start": "1572",
+    "end": "1620"
+  },
+  {
+    "id": "zhong_hua_ming_zhu_youjian",
+    "legacyId": "zhong_hua_ming_zhu_youjian",
+    "name": "崇祯",
+    "dynasty": "明",
+    "dynasty2": "明",
+    "start": "1627",
+    "end": "1644"
+  },
+  {
+    "id": "zhong_hua_qing_nu_er_ha_chi",
+    "legacyId": "zhong_hua_qing_nu_er_ha_chi",
+    "name": "清太祖",
+    "dynasty": "后金",
+    "dynasty2": "后金",
+    "start": "1616",
+    "end": "1626"
+  },
+  {
+    "id": "zhong_hua_qing_huang_tai_ji",
+    "legacyId": "zhong_hua_qing_huang_tai_ji",
+    "name": "清太宗",
+    "dynasty": "清",
+    "dynasty2": "清",
+    "start": "1636",
+    "end": "1643"
+  },
+  {
+    "id": "zhong_hua_qing_fu_lin",
+    "legacyId": "zhong_hua_qing_fu_lin",
+    "name": "顺治",
+    "dynasty": "清",
+    "dynasty2": "清",
+    "start": "1643",
+    "end": "1661"
+  },
+  {
+    "id": "zhong_hua_qing_xuan_ye",
+    "legacyId": "zhong_hua_qing_xuan_ye",
+    "name": "康熙",
+    "dynasty": "清",
+    "dynasty2": "清",
+    "start": "1661",
+    "end": "1722"
+  },
+  {
+    "id": "zhong_hua_qing_yin_zhen",
+    "legacyId": "zhong_hua_qing_yin_zhen",
+    "name": "雍正",
+    "dynasty": "清",
+    "dynasty2": "清",
+    "start": "1722",
+    "end": "1735"
+  },
+  {
+    "id": "zhong_hua_qing_hong_li",
+    "legacyId": "zhong_hua_qing_hong_li",
+    "name": "乾隆",
+    "dynasty": "清",
+    "dynasty2": "清",
+    "start": "1735",
+    "end": "1796"
+  },
+  {
+    "id": "zhong_hua_qing_yan_yan",
+    "legacyId": "zhong_hua_qing_yan_yan",
+    "name": "嘉庆",
+    "dynasty": "清",
+    "dynasty2": "清",
+    "start": "1796",
+    "end": "1820"
+  },
+  {
+    "id": "zhong_hua_qing_min_ning",
+    "legacyId": "zhong_hua_qing_min_ning",
+    "name": "道光",
+    "dynasty": "清",
+    "dynasty2": "清",
+    "start": "1820",
+    "end": "1850"
+  },
+  {
+    "id": "zhong_hua_qing_yi_zhu",
+    "legacyId": "zhong_hua_qing_yi_zhu",
+    "name": "咸丰",
+    "dynasty": "清",
+    "dynasty2": "清",
+    "start": "1850",
+    "end": "1861"
+  },
+  {
+    "id": "zhong_hua_qing_zai_chun",
+    "legacyId": "zhong_hua_qing_zai_chun",
+    "name": "同治",
+    "dynasty": "清",
+    "dynasty2": "清",
+    "start": "1861",
+    "end": "1875"
+  },
+  {
+    "id": "zhong_hua_qing_zai_tian",
+    "legacyId": "zhong_hua_qing_zai_tian",
+    "name": "光绪",
+    "dynasty": "清",
+    "dynasty2": "清",
+    "start": "1875",
+    "end": "1908"
+  },
+  {
+    "id": "zhong_hua_qing_pu_yi",
+    "legacyId": "zhong_hua_qing_pu_yi",
+    "name": "宣统",
+    "dynasty": "清",
+    "dynasty2": "清",
+    "start": "1908",
+    "end": "1912"
+  },
+  {
+    "id": "zhong_hua_ming_zhu_qi",
+    "legacyId": "zhong_hua_ming_zhu_qi",
+    "name": "明代宗",
+    "dynasty": "明",
+    "dynasty2": "明",
+    "start": "1449",
+    "end": "1457"
+  },
+  {
+    "id": "zhong_hua_ming_zhu_you_tang",
+    "legacyId": "zhong_hua_ming_zhu_you_tang",
+    "name": "明孝宗",
+    "dynasty": "明",
+    "dynasty2": "明",
+    "start": "1487",
+    "end": "1505"
+  },
+  {
+    "id": "zhong_hua_ming_zhu_zai_hou",
+    "legacyId": "zhong_hua_ming_zhu_zai_hou",
+    "name": "明穆宗",
+    "dynasty": "明",
+    "dynasty2": "明",
+    "start": "1566",
+    "end": "1572"
+  },
+  {
+    "id": "zhong_hua_ming_zhu_chang_luo",
+    "legacyId": "zhong_hua_ming_zhu_chang_luo",
+    "name": "明光宗",
+    "dynasty": "明",
+    "dynasty2": "明",
+    "start": "1620",
+    "end": "1620"
+  },
+  {
+    "id": "zhong_hua_ming_zhu_you_jiao",
+    "legacyId": "zhong_hua_ming_zhu_you_jiao",
+    "name": "明熹宗",
+    "dynasty": "明",
+    "dynasty2": "明",
+    "start": "1620",
+    "end": "1627"
+  },
+  {
+    "id": "zhong_hua_ming_zhu_gao_chi",
+    "legacyId": "zhong_hua_ming_zhu_gao_chi",
+    "name": "明仁宗",
+    "dynasty": "明",
+    "dynasty2": "明",
+    "start": "1424",
+    "end": "1425"
+  },
+  {
+    "id": "zhong_hua_ming_zhu_jian_shen",
+    "legacyId": "zhong_hua_ming_zhu_jian_shen",
+    "name": "明宪宗",
+    "dynasty": "明",
+    "dynasty2": "明",
+    "start": "1464",
+    "end": "1487"
+  },
+  {
+    "id": "zhong_hua_shu_wang_jian",
+    "legacyId": "zhong_hua_shu_wang_jian",
+    "name": "蜀高祖",
+    "dynasty": "五代十国",
+    "dynasty2": "十国·前蜀",
+    "start": "907",
+    "end": "918"
+  },
+  {
+    "id": "zhong_hua_wu_yang_xing_mi",
+    "legacyId": "zhong_hua_wu_yang_xing_mi",
+    "name": "吴太祖",
+    "dynasty": "五代十国",
+    "dynasty2": "十国·吴",
+    "start": "902",
+    "end": "905"
+  },
+  {
+    "id": "zhong_hua_nan_tang_li_bian",
+    "legacyId": "zhong_hua_nan_tang_li_bian",
+    "name": "唐先主",
+    "dynasty": "五代十国",
+    "dynasty2": "十国·南唐",
+    "start": "937",
+    "end": "943"
+  },
+  {
+    "id": "zhong_hua_nan_tang_li_jing",
+    "legacyId": "zhong_hua_nan_tang_li_jing",
+    "name": "唐中主",
+    "dynasty": "五代十国",
+    "dynasty2": "十国·南唐",
+    "start": "943",
+    "end": "961"
+  },
+  {
+    "id": "zhong_hua_nan_tang_li_yu",
+    "legacyId": "zhong_hua_nan_tang_li_yu",
+    "name": "唐后主",
+    "dynasty": "五代十国",
+    "dynasty2": "十国·南唐",
+    "start": "961",
+    "end": "975"
+  },
+  {
+    "id": "zhong_hua_wu_yue_qian_liu",
+    "legacyId": "zhong_hua_wu_yue_qian_liu",
+    "name": "吴越太祖",
+    "dynasty": "五代十国",
+    "dynasty2": "十国·吴越",
+    "start": "907",
+    "end": "932"
+  },
+  {
+    "id": "zhong_hua_nan_ping_gao_ji_xing",
+    "legacyId": "zhong_hua_nan_ping_gao_ji_xing",
+    "name": "南平武信王",
+    "dynasty": "五代十国",
+    "dynasty2": "十国·南平",
+    "start": "924",
+    "end": "929"
+  },
+  {
+    "id": "zhong_hua_min_wang_shen_zhi",
+    "legacyId": "zhong_hua_min_wang_shen_zhi",
+    "name": "闽太祖",
+    "dynasty": "五代十国",
+    "dynasty2": "十国·闽",
+    "start": "893",
+    "end": "925"
+  },
+  {
+    "id": "zhong_hua_jing_nan_gao_bao_rong",
+    "legacyId": "zhong_hua_jing_nan_gao_bao_rong",
+    "name": "荆南贞懿王",
+    "dynasty": "五代十国",
+    "dynasty2": "十国·南平",
+    "start": "928",
+    "end": "960"
+  },
+  {
+    "id": "zhong_hua_beihan_liu_min",
+    "legacyId": "zhong_hua_beihan_liu_min",
+    "name": "北汉世祖",
+    "dynasty": "五代十国",
+    "dynasty2": "十国·北汉",
+    "start": "951",
+    "end": "954"
+  },
+  {
+    "id": "zhong_hua_song_liu_yu",
+    "legacyId": "zhong_hua_song_liu_yu",
+    "name": "宋武帝",
+    "dynasty": "南北朝",
+    "dynasty2": "南朝·宋",
+    "start": "420",
+    "end": "422"
+  },
+  {
+    "id": "zhong_hua_nan_song_wen",
+    "legacyId": "zhong_hua_nan_song_wen",
+    "name": "宋文帝",
+    "dynasty": "南北朝",
+    "dynasty2": "南朝·宋",
+    "start": "424",
+    "end": "453"
+  },
+  {
+    "id": "zhong_hua_nan_liang_wu",
+    "legacyId": "zhong_hua_nan_liang_wu",
+    "name": "梁武帝",
+    "dynasty": "南北朝",
+    "dynasty2": "南朝·梁",
+    "start": "502",
+    "end": "549"
+  },
+  {
+    "id": "zhong_hua_wei_tuo_ba_gui",
+    "legacyId": "zhong_hua_wei_tuo_ba_gui",
+    "name": "北魏道武帝",
+    "dynasty": "南北朝",
+    "dynasty2": "北魏",
+    "start": "386",
+    "end": "409"
+  },
+  {
+    "id": "zhong_hua_wei_tuo_ba_hong",
+    "legacyId": "zhong_hua_wei_tuo_ba_hong",
+    "name": "孝文帝",
+    "dynasty": "南北朝",
+    "dynasty2": "北魏",
+    "start": "471",
+    "end": "499"
+  },
+  {
+    "id": "zhong_hua_dong_wei_yuan_shan_jian",
+    "legacyId": "zhong_hua_dong_wei_yuan_shan_jian",
+    "name": "东魏孝静帝",
+    "dynasty": "南北朝",
+    "dynasty2": "东魏",
+    "start": "534",
+    "end": "550"
+  },
+  {
+    "id": "zhong_hua_xi_wei_yuan_bao_ju",
+    "legacyId": "zhong_hua_xi_wei_yuan_bao_ju",
+    "name": "西魏文帝",
+    "dynasty": "南北朝",
+    "dynasty2": "西魏",
+    "start": "535",
+    "end": "551"
+  },
+  {
+    "id": "zhong_hua_qi_gao_yang",
+    "legacyId": "zhong_hua_qi_gao_yang",
+    "name": "北齐文宣帝",
+    "dynasty": "南北朝",
+    "dynasty2": "北齐",
+    "start": "550",
+    "end": "559"
+  },
+  {
+    "id": "zhong_hua_bei_zhou_wu",
+    "legacyId": "zhong_hua_bei_zhou_wu",
+    "name": "北周武帝",
+    "dynasty": "南北朝",
+    "dynasty2": "北周",
+    "start": "543",
+    "end": "578"
+  },
+  {
+    "id": "zhong_hua_han_qian_shao_di",
+    "legacyId": "zhong_hua_han_qian_shao_di",
+    "name": "汉前少帝",
+    "dynasty": "西汉",
+    "dynasty2": "西汉",
+    "start": "-188",
+    "end": "-184"
+  },
+  {
+    "id": "zhong_hua_han_hou_shao_di",
+    "legacyId": "zhong_hua_han_hou_shao_di",
+    "name": "汉后少帝",
+    "dynasty": "西汉",
+    "dynasty2": "西汉",
+    "start": "-184",
+    "end": "-180"
+  },
+  {
+    "id": "zhong_hua_han_chang_yi_wang",
+    "legacyId": "zhong_hua_han_chang_yi_wang",
+    "name": "汉废帝",
+    "dynasty": "西汉",
+    "dynasty2": "西汉",
+    "start": "-74",
+    "end": "-74"
+  },
+  {
+    "id": "zhong_hua_han_shang_di",
+    "legacyId": "zhong_hua_han_shang_di",
+    "name": "汉殇帝",
+    "dynasty": "东汉",
+    "dynasty2": "东汉",
+    "start": "105",
+    "end": "106"
+  },
+  {
+    "id": "zhong_hua_han_an_di",
+    "legacyId": "zhong_hua_han_an_di",
+    "name": "汉安帝",
+    "dynasty": "东汉",
+    "dynasty2": "东汉",
+    "start": "106",
+    "end": "125"
+  },
+  {
+    "id": "zhong_hua_han_shun_di",
+    "legacyId": "zhong_hua_han_shun_di",
+    "name": "汉顺帝",
+    "dynasty": "东汉",
+    "dynasty2": "东汉",
+    "start": "125",
+    "end": "144"
+  },
+  {
+    "id": "zhong_hua_han_chong_di",
+    "legacyId": "zhong_hua_han_chong_di",
+    "name": "汉冲帝",
+    "dynasty": "东汉",
+    "dynasty2": "东汉",
+    "start": "144",
+    "end": "145"
+  },
+  {
+    "id": "zhong_hua_han_zhi_di",
+    "legacyId": "zhong_hua_han_zhi_di",
+    "name": "汉质帝",
+    "dynasty": "东汉",
+    "dynasty2": "东汉",
+    "start": "145",
+    "end": "146"
+  },
+  {
+    "id": "zhong_hua_han_huan_di",
+    "legacyId": "zhong_hua_han_huan_di",
+    "name": "汉桓帝",
+    "dynasty": "东汉",
+    "dynasty2": "东汉",
+    "start": "146",
+    "end": "167"
+  },
+  {
+    "id": "zhong_hua_han_ling_di",
+    "legacyId": "zhong_hua_han_ling_di",
+    "name": "汉灵帝",
+    "dynasty": "东汉",
+    "dynasty2": "东汉",
+    "start": "167",
+    "end": "189"
+  },
+  {
+    "id": "zhong_hua_tang_gao_zong",
+    "legacyId": "zhong_hua_tang_gao_zong",
+    "name": "唐高宗",
+    "dynasty": "唐",
+    "dynasty2": "唐",
+    "start": "649",
+    "end": "683"
+  },
+  {
+    "id": "zhong_hua_tang_zhong_zong_1",
+    "legacyId": "zhong_hua_tang_zhong_zong_1",
+    "name": "唐中宗",
+    "dynasty": "唐",
+    "dynasty2": "唐",
+    "start": "684",
+    "end": "710"
+  },
+  {
+    "id": "zhong_hua_tang_rui_zong_1",
+    "legacyId": "zhong_hua_tang_rui_zong_1",
+    "name": "唐睿宗",
+    "dynasty": "唐",
+    "dynasty2": "唐",
+    "start": "684",
+    "end": "712"
+  },
+  {
+    "id": "zhong_hua_tang_jing_zong",
+    "legacyId": "zhong_hua_tang_jing_zong",
+    "name": "唐敬宗",
+    "dynasty": "唐",
+    "dynasty2": "唐",
+    "start": "824",
+    "end": "826"
+  },
+  {
+    "id": "zhong_hua_tang_yi_zong",
+    "legacyId": "zhong_hua_tang_yi_zong",
+    "name": "唐懿宗",
+    "dynasty": "唐",
+    "dynasty2": "唐",
+    "start": "859",
+    "end": "873"
+  },
+  {
+    "id": "zhong_hua_tang_xi_zong",
+    "legacyId": "zhong_hua_tang_xi_zong",
+    "name": "唐僖宗",
+    "dynasty": "唐",
+    "dynasty2": "唐",
+    "start": "873",
+    "end": "888"
+  },
+  {
+    "id": "zhong_hua_tang_zhao_zong",
+    "legacyId": "zhong_hua_tang_zhao_zong",
+    "name": "唐昭宗",
+    "dynasty": "唐",
+    "dynasty2": "唐",
+    "start": "888",
+    "end": "904"
+  },
+  {
+    "id": "zhong_hua_tang_ai_di",
+    "legacyId": "zhong_hua_tang_ai_di",
+    "name": "唐哀帝",
+    "dynasty": "唐",
+    "dynasty2": "唐",
+    "start": "904",
+    "end": "907"
+  },
+  {
+    "id": "zhong_hua_song_yingzong",
+    "legacyId": "zhong_hua_song_yingzong",
+    "name": "宋英宗",
+    "dynasty": "北宋",
+    "dynasty2": "北宋",
+    "start": "1063",
+    "end": "1067"
+  },
+  {
+    "id": "zhong_hua_song_zhezong",
+    "legacyId": "zhong_hua_song_zhezong",
+    "name": "宋哲宗",
+    "dynasty": "北宋",
+    "dynasty2": "北宋",
+    "start": "1085",
+    "end": "1100"
+  },
+  {
+    "id": "zhong_hua_song_qinzong",
+    "legacyId": "zhong_hua_song_qinzong",
+    "name": "宋钦宗",
+    "dynasty": "北宋",
+    "dynasty2": "北宋",
+    "start": "1125",
+    "end": "1127"
+  },
+  {
+    "id": "zhong_hua_song_guangzong",
+    "legacyId": "zhong_hua_song_guangzong",
+    "name": "宋光宗",
+    "dynasty": "南宋",
+    "dynasty2": "南宋",
+    "start": "1189",
+    "end": "1194"
+  },
+  {
+    "id": "zhong_hua_song_ningzong",
+    "legacyId": "zhong_hua_song_ningzong",
+    "name": "宋宁宗",
+    "dynasty": "南宋",
+    "dynasty2": "南宋",
+    "start": "1194",
+    "end": "1224"
+  },
+  {
+    "id": "zhong_hua_song_lizong",
+    "legacyId": "zhong_hua_song_lizong",
+    "name": "宋理宗",
+    "dynasty": "南宋",
+    "dynasty2": "南宋",
+    "start": "1224",
+    "end": "1264"
+  },
+  {
+    "id": "zhong_hua_song_duzong",
+    "legacyId": "zhong_hua_song_duzong",
+    "name": "宋度宗",
+    "dynasty": "南宋",
+    "dynasty2": "南宋",
+    "start": "1264",
+    "end": "1274"
+  },
+  {
+    "id": "zhong_hua_song_gongzong",
+    "legacyId": "zhong_hua_song_gongzong",
+    "name": "宋恭帝",
+    "dynasty": "南宋",
+    "dynasty2": "南宋",
+    "start": "1274",
+    "end": "1276"
+  },
+  {
+    "id": "zhong_hua_song_duanzong",
+    "legacyId": "zhong_hua_song_duanzong",
+    "name": "宋端宗",
+    "dynasty": "南宋",
+    "dynasty2": "南宋",
+    "start": "1276",
+    "end": "1278"
+  },
+  {
+    "id": "zhong_hua_yuan_wuzong",
+    "legacyId": "zhong_hua_yuan_wuzong",
+    "name": "元武宗",
+    "dynasty": "元",
+    "dynasty2": "元",
+    "start": "1307",
+    "end": "1311"
+  },
+  {
+    "id": "zhong_hua_yuan_renzong",
+    "legacyId": "zhong_hua_yuan_renzong",
+    "name": "元仁宗",
+    "dynasty": "元",
+    "dynasty2": "元",
+    "start": "1311",
+    "end": "1320"
+  },
+  {
+    "id": "zhong_hua_yuan_yingzong",
+    "legacyId": "zhong_hua_yuan_yingzong",
+    "name": "元英宗",
+    "dynasty": "元",
+    "dynasty2": "元",
+    "start": "1320",
+    "end": "1323"
+  },
+  {
+    "id": "zhong_hua_yuan_taiding_di",
+    "legacyId": "zhong_hua_yuan_taiding_di",
+    "name": "元泰定帝",
+    "dynasty": "元",
+    "dynasty2": "元",
+    "start": "1323",
+    "end": "1328"
+  },
+  {
+    "id": "zhong_hua_yuan_mingzong",
+    "legacyId": "zhong_hua_yuan_mingzong",
+    "name": "元明宗",
+    "dynasty": "元",
+    "dynasty2": "元",
+    "start": "1329",
+    "end": "1329"
+  },
+  {
+    "id": "zhong_hua_yuan_wenzong",
+    "legacyId": "zhong_hua_yuan_wenzong",
+    "name": "元文宗",
+    "dynasty": "元",
+    "dynasty2": "元",
+    "start": "1328",
+    "end": "1332"
+  },
+  {
+    "id": "zhong_hua_yuan_ningzong",
+    "legacyId": "zhong_hua_yuan_ningzong",
+    "name": "元宁宗",
+    "dynasty": "元",
+    "dynasty2": "元",
+    "start": "1332",
+    "end": "1332"
+  },
+  {
+    "id": "zhong_hua_yuan_shundi",
+    "legacyId": "zhong_hua_yuan_shundi",
+    "name": "元顺帝",
+    "dynasty": "元",
+    "dynasty2": "元",
+    "start": "1333",
+    "end": "1368"
+  },
+  {
+    "id": "zhong_hua_liao_shizong",
+    "legacyId": "zhong_hua_liao_shizong",
+    "name": "辽世宗",
+    "dynasty": "辽",
+    "dynasty2": "辽",
+    "start": "947",
+    "end": "951"
+  },
+  {
+    "id": "zhong_hua_liao_muzong",
+    "legacyId": "zhong_hua_liao_muzong",
+    "name": "辽穆宗",
+    "dynasty": "辽",
+    "dynasty2": "辽",
+    "start": "951",
+    "end": "969"
+  },
+  {
+    "id": "zhong_hua_liao_jingzong",
+    "legacyId": "zhong_hua_liao_jingzong",
+    "name": "辽景宗",
+    "dynasty": "辽",
+    "dynasty2": "辽",
+    "start": "969",
+    "end": "982"
+  },
+  {
+    "id": "zhong_hua_liao_shengzong",
+    "legacyId": "zhong_hua_liao_shengzong",
+    "name": "辽圣宗",
+    "dynasty": "辽",
+    "dynasty2": "辽",
+    "start": "983",
+    "end": "1031"
+  },
+  {
+    "id": "zhong_hua_liao_xingzong",
+    "legacyId": "zhong_hua_liao_xingzong",
+    "name": "辽兴宗",
+    "dynasty": "辽",
+    "dynasty2": "辽",
+    "start": "1031",
+    "end": "1055"
+  },
+  {
+    "id": "zhong_hua_liao_daozong",
+    "legacyId": "zhong_hua_liao_daozong",
+    "name": "辽道宗",
+    "dynasty": "辽",
+    "dynasty2": "辽",
+    "start": "1055",
+    "end": "1101"
+  },
+  {
+    "id": "zhong_hua_liao_tianzuodi",
+    "legacyId": "zhong_hua_liao_tianzuodi",
+    "name": "辽天祚帝",
+    "dynasty": "辽",
+    "dynasty2": "辽",
+    "start": "1101",
+    "end": "1125"
+  },
+  {
+    "id": "zhong_hua_jin_taizong",
+    "legacyId": "zhong_hua_jin_taizong",
+    "name": "金太宗",
+    "dynasty": "金",
+    "dynasty2": "金",
+    "start": "1123",
+    "end": "1135"
+  },
+  {
+    "id": "zhong_hua_jin_xizong",
+    "legacyId": "zhong_hua_jin_xizong",
+    "name": "金熙宗",
+    "dynasty": "金",
+    "dynasty2": "金",
+    "start": "1135",
+    "end": "1150"
+  },
+  {
+    "id": "zhong_hua_jin_shizong",
+    "legacyId": "zhong_hua_jin_shizong",
+    "name": "金世宗",
+    "dynasty": "金",
+    "dynasty2": "金",
+    "start": "1161",
+    "end": "1189"
+  },
+  {
+    "id": "zhong_hua_jin_zhangzong",
+    "legacyId": "zhong_hua_jin_zhangzong",
+    "name": "金章宗",
+    "dynasty": "金",
+    "dynasty2": "金",
+    "start": "1189",
+    "end": "1208"
+  },
+  {
+    "id": "zhong_hua_jin_weishaowang",
+    "legacyId": "zhong_hua_jin_weishaowang",
+    "name": "金卫绍王",
+    "dynasty": "金",
+    "dynasty2": "金",
+    "start": "1208",
+    "end": "1213"
+  },
+  {
+    "id": "zhong_hua_jin_xuanzong",
+    "legacyId": "zhong_hua_jin_xuanzong",
+    "name": "金宣宗",
+    "dynasty": "金",
+    "dynasty2": "金",
+    "start": "1213",
+    "end": "1223"
+  },
+  {
+    "id": "zhong_hua_jin_aizong",
+    "legacyId": "zhong_hua_jin_aizong",
+    "name": "金哀宗",
+    "dynasty": "金",
+    "dynasty2": "金",
+    "start": "1223",
+    "end": "1234"
+  },
+  {
+    "id": "zhong_hua_nan_song_qi",
+    "legacyId": "zhong_hua_nan_song_qi",
+    "name": "宋少帝",
+    "dynasty": "南北朝",
+    "dynasty2": "南朝·宋",
+    "start": "422",
+    "end": "424"
+  },
+  {
+    "id": "zhong_hua_nan_song_xiao_wu",
+    "legacyId": "zhong_hua_nan_song_xiao_wu",
+    "name": "宋孝武帝",
+    "dynasty": "南北朝",
+    "dynasty2": "南朝·宋",
+    "start": "453",
+    "end": "464"
+  },
+  {
+    "id": "zhong_hua_nan_song_ming",
+    "legacyId": "zhong_hua_nan_song_ming",
+    "name": "宋明帝",
+    "dynasty": "南北朝",
+    "dynasty2": "南朝·宋",
+    "start": "465",
+    "end": "472"
+  },
+  {
+    "id": "zhong_hua_nan_song_shun",
+    "legacyId": "zhong_hua_nan_song_shun",
+    "name": "宋顺帝",
+    "dynasty": "南北朝",
+    "dynasty2": "南朝·宋",
+    "start": "477",
+    "end": "479"
+  },
+  {
+    "id": "zhong_hua_nan_qi_gao",
+    "legacyId": "zhong_hua_nan_qi_gao",
+    "name": "齐武帝",
+    "dynasty": "南北朝",
+    "dynasty2": "南朝·齐",
+    "start": "482",
+    "end": "493"
+  },
+  {
+    "id": "zhong_hua_nan_qi_ming",
+    "legacyId": "zhong_hua_nan_qi_ming",
+    "name": "齐明帝",
+    "dynasty": "南北朝",
+    "dynasty2": "南朝·齐",
+    "start": "494",
+    "end": "498"
+  },
+  {
+    "id": "zhong_hua_nan_qi_dong_hun",
+    "legacyId": "zhong_hua_nan_qi_dong_hun",
+    "name": "齐东昏侯",
+    "dynasty": "南北朝",
+    "dynasty2": "南朝·齐",
+    "start": "498",
+    "end": "501"
+  },
+  {
+    "id": "zhong_hua_nan_qi_he",
+    "legacyId": "zhong_hua_nan_qi_he",
+    "name": "齐和帝",
+    "dynasty": "南北朝",
+    "dynasty2": "南朝·齐",
+    "start": "501",
+    "end": "502"
+  },
+  {
+    "id": "zhong_hua_nan_liang_jian",
+    "legacyId": "zhong_hua_nan_liang_jian",
+    "name": "梁简文帝",
+    "dynasty": "南北朝",
+    "dynasty2": "南朝·梁",
+    "start": "549",
+    "end": "551"
+  },
+  {
+    "id": "zhong_hua_nan_liang_yuan",
+    "legacyId": "zhong_hua_nan_liang_yuan",
+    "name": "梁元帝",
+    "dynasty": "南北朝",
+    "dynasty2": "南朝·梁",
+    "start": "552",
+    "end": "554"
+  },
+  {
+    "id": "zhong_hua_nan_liang_jing",
+    "legacyId": "zhong_hua_nan_liang_jing",
+    "name": "梁敬帝",
+    "dynasty": "南北朝",
+    "dynasty2": "南朝·梁",
+    "start": "555",
+    "end": "557"
+  },
+  {
+    "id": "zhong_hua_nan_chen_wu",
+    "legacyId": "zhong_hua_nan_chen_wu",
+    "name": "陈武帝",
+    "dynasty": "南北朝",
+    "dynasty2": "南朝·陈",
+    "start": "557",
+    "end": "559"
+  },
+  {
+    "id": "zhong_hua_nan_chen_wen",
+    "legacyId": "zhong_hua_nan_chen_wen",
+    "name": "陈文帝",
+    "dynasty": "南北朝",
+    "dynasty2": "南朝·陈",
+    "start": "559",
+    "end": "566"
+  },
+  {
+    "id": "zhong_hua_nan_chen_fei",
+    "legacyId": "zhong_hua_nan_chen_fei",
+    "name": "陈废帝",
+    "dynasty": "南北朝",
+    "dynasty2": "南朝·陈",
+    "start": "566",
+    "end": "568"
+  },
+  {
+    "id": "zhong_hua_nan_chen_xuan",
+    "legacyId": "zhong_hua_nan_chen_xuan",
+    "name": "陈宣帝",
+    "dynasty": "南北朝",
+    "dynasty2": "南朝·陈",
+    "start": "569",
+    "end": "582"
+  },
+  {
+    "id": "zhong_hua_bei_wei_ming_yuan",
+    "legacyId": "zhong_hua_bei_wei_ming_yuan",
+    "name": "北魏明元帝",
+    "dynasty": "南北朝",
+    "dynasty2": "北魏",
+    "start": "409",
+    "end": "423"
+  },
+  {
+    "id": "zhong_hua_bei_wei_tai_wu",
+    "legacyId": "zhong_hua_bei_wei_tai_wu",
+    "name": "北魏太武帝",
+    "dynasty": "南北朝",
+    "dynasty2": "北魏",
+    "start": "423",
+    "end": "452"
+  },
+  {
+    "id": "zhong_hua_bei_wei_wen_cheng",
+    "legacyId": "zhong_hua_bei_wei_wen_cheng",
+    "name": "北魏文成帝",
+    "dynasty": "南北朝",
+    "dynasty2": "北魏",
+    "start": "452",
+    "end": "465"
+  },
+  {
+    "id": "zhong_hua_bei_wei_xian_wen",
+    "legacyId": "zhong_hua_bei_wei_xian_wen",
+    "name": "北魏献文帝",
+    "dynasty": "南北朝",
+    "dynasty2": "北魏",
+    "start": "454",
+    "end": "476"
+  },
+  {
+    "id": "zhong_hua_bei_wei_xuan_wu",
+    "legacyId": "zhong_hua_bei_wei_xuan_wu",
+    "name": "北魏宣武帝",
+    "dynasty": "南北朝",
+    "dynasty2": "北魏",
+    "start": "483",
+    "end": "515"
+  },
+  {
+    "id": "zhong_hua_bei_wei_xiao_ming",
+    "legacyId": "zhong_hua_bei_wei_xiao_ming",
+    "name": "北魏孝明帝",
+    "dynasty": "南北朝",
+    "dynasty2": "北魏",
+    "start": "510",
+    "end": "528"
+  },
+  {
+    "id": "zhong_hua_bei_wei_xiao_zhuang",
+    "legacyId": "zhong_hua_bei_wei_xiao_zhuang",
+    "name": "北魏孝庄帝",
+    "dynasty": "南北朝",
+    "dynasty2": "北魏",
+    "start": "507",
+    "end": "530"
+  },
+  {
+    "id": "zhong_hua_bei_wei_jie_min",
+    "legacyId": "zhong_hua_bei_wei_jie_min",
+    "name": "北魏节闵帝",
+    "dynasty": "南北朝",
+    "dynasty2": "北魏",
+    "start": "498",
+    "end": "532"
+  },
+  {
+    "id": "zhong_hua_bei_wei_fei_di",
+    "legacyId": "zhong_hua_bei_wei_fei_di",
+    "name": "北魏废帝",
+    "dynasty": "南北朝",
+    "dynasty2": "北魏",
+    "start": "513",
+    "end": "534"
+  },
+  {
+    "id": "zhong_hua_xi_wei_fei",
+    "legacyId": "zhong_hua_xi_wei_fei",
+    "name": "西魏废帝",
+    "dynasty": "南北朝",
+    "dynasty2": "西魏",
+    "start": "537",
+    "end": "554"
+  },
+  {
+    "id": "zhong_hua_xi_wei_gong",
+    "legacyId": "zhong_hua_xi_wei_gong",
+    "name": "西魏恭帝",
+    "dynasty": "南北朝",
+    "dynasty2": "西魏",
+    "start": "537",
+    "end": "557"
+  },
+  {
+    "id": "zhong_hua_bei_qi_fei_di",
+    "legacyId": "zhong_hua_bei_qi_fei_di",
+    "name": "北齐废帝",
+    "dynasty": "南北朝",
+    "dynasty2": "北齐",
+    "start": "545",
+    "end": "561"
+  },
+  {
+    "id": "zhong_hua_bei_qi_xiao_zhao",
+    "legacyId": "zhong_hua_bei_qi_xiao_zhao",
+    "name": "北齐孝昭帝",
+    "dynasty": "南北朝",
+    "dynasty2": "北齐",
+    "start": "535",
+    "end": "561"
+  },
+  {
+    "id": "zhong_hua_bei_qi_wu_cheng",
+    "legacyId": "zhong_hua_bei_qi_wu_cheng",
+    "name": "北齐武成帝",
+    "dynasty": "南北朝",
+    "dynasty2": "北齐",
+    "start": "537",
+    "end": "569"
+  },
+  {
+    "id": "zhong_hua_bei_qi_hou_zhu",
+    "legacyId": "zhong_hua_bei_qi_hou_zhu",
+    "name": "北齐后主",
+    "dynasty": "南北朝",
+    "dynasty2": "北齐",
+    "start": "556",
+    "end": "577"
+  },
+  {
+    "id": "zhong_hua_bei_zhou_ming",
+    "legacyId": "zhong_hua_bei_zhou_ming",
+    "name": "北周明帝",
+    "dynasty": "南北朝",
+    "dynasty2": "北周",
+    "start": "534",
+    "end": "560"
+  },
+  {
+    "id": "zhong_hua_bei_zhou_xuan",
+    "legacyId": "zhong_hua_bei_zhou_xuan",
+    "name": "北周宣帝",
+    "dynasty": "南北朝",
+    "dynasty2": "北周",
+    "start": "559",
+    "end": "580"
+  },
+  {
+    "id": "zhong_hua_wu_yue_mo",
+    "legacyId": "zhong_hua_wu_yue_mo",
+    "name": "吴越忠懿王",
+    "dynasty": "五代十国",
+    "dynasty2": "十国·吴越",
+    "start": "947",
+    "end": "978"
+  },
+  {
+    "id": "zhong_hua_nan_han_mo",
+    "legacyId": "zhong_hua_nan_han_mo",
+    "name": "汉后主",
+    "dynasty": "五代十国",
+    "dynasty2": "十国·南汉",
+    "start": "958",
+    "end": "971"
+  },
+  {
+    "id": "zhong_hua_min_mo",
+    "legacyId": "zhong_hua_min_mo",
+    "name": "闽天德帝",
+    "dynasty": "五代十国",
+    "dynasty2": "十国·闽",
+    "start": "943",
+    "end": "945"
+  },
+  {
+    "id": "zhong_hua_bei_han_mo",
+    "legacyId": "zhong_hua_bei_han_mo",
+    "name": "北汉刘继元",
+    "dynasty": "五代十国",
+    "dynasty2": "十国·北汉",
+    "start": "968",
+    "end": "979"
+  },
+  {
+    "id": "zhong_hua_nan_song_shao",
+    "legacyId": "zhong_hua_nan_song_shao",
+    "name": "宋前废帝",
+    "dynasty": "南北朝",
+    "dynasty2": "南朝·宋",
+    "start": "464",
+    "end": "465"
+  },
+  {
+    "id": "zhong_hua_nan_song_hou_fei",
+    "legacyId": "zhong_hua_nan_song_hou_fei",
+    "name": "宋后废帝",
+    "dynasty": "南北朝",
+    "dynasty2": "南朝·宋",
+    "start": "472",
+    "end": "477"
+  },
+  {
+    "id": "zhong_hua_nan_qi_yu",
+    "legacyId": "zhong_hua_nan_qi_yu",
+    "name": "齐郁林王",
+    "dynasty": "南北朝",
+    "dynasty2": "南朝·齐",
+    "start": "493",
+    "end": "494"
+  },
+  {
+    "id": "zhong_hua_nan_qi_hai",
+    "legacyId": "zhong_hua_nan_qi_hai",
+    "name": "齐海陵王",
+    "dynasty": "南北朝",
+    "dynasty2": "南朝·齐",
+    "start": "494",
+    "end": "494"
+  },
+  {
+    "id": "zhong_hua_nan_liang_zheng",
+    "legacyId": "zhong_hua_nan_liang_zheng",
+    "name": "梁萧正德",
+    "dynasty": "南北朝",
+    "dynasty2": "南朝·梁",
+    "start": "548",
+    "end": "549"
+  },
+  {
+    "id": "zhong_hua_bei_wei_wen",
+    "legacyId": "zhong_hua_bei_wei_wen",
+    "name": "北魏孝武帝",
+    "dynasty": "南北朝",
+    "dynasty2": "北魏",
+    "start": "532",
+    "end": "534"
+  },
+  {
+    "id": "zhong_hua_nan_wu_rui",
+    "legacyId": "zhong_hua_nan_wu_rui",
+    "name": "吴睿帝",
+    "dynasty": "五代十国",
+    "dynasty2": "十国·吴",
+    "start": "920",
+    "end": "937"
+  },
+  {
+    "id": "zhong_hua_nan_ping_gao",
+    "legacyId": "zhong_hua_nan_ping_gao",
+    "name": "南平文献王",
+    "dynasty": "五代十国",
+    "dynasty2": "十国·南平",
+    "start": "929",
+    "end": "948"
+  },
+  {
+    "id": "zhong_hua_xi_xia_jing",
+    "legacyId": "zhong_hua_xi_xia_jing",
+    "name": "西夏景宗",
+    "dynasty": "西夏",
+    "dynasty2": "西夏",
+    "start": "1032",
+    "end": "1048"
+  },
+  {
+    "id": "zhong_hua_xi_xia_hui",
+    "legacyId": "zhong_hua_xi_xia_hui",
+    "name": "西夏惠宗",
+    "dynasty": "西夏",
+    "dynasty2": "西夏",
+    "start": "1067",
+    "end": "1086"
+  },
+  {
+    "id": "zhong_hua_xi_xia_chong",
+    "legacyId": "zhong_hua_xi_xia_chong",
+    "name": "西夏崇宗",
+    "dynasty": "西夏",
+    "dynasty2": "西夏",
+    "start": "1086",
+    "end": "1139"
+  },
+  {
+    "id": "zhong_hua_xi_xia_ren",
+    "legacyId": "zhong_hua_xi_xia_ren",
+    "name": "西夏仁宗",
+    "dynasty": "西夏",
+    "dynasty2": "西夏",
+    "start": "1139",
+    "end": "1193"
+  },
+  {
+    "id": "zhong_hua_xi_xia_mo",
+    "legacyId": "zhong_hua_xi_xia_mo",
+    "name": "西夏末主",
+    "dynasty": "西夏",
+    "dynasty2": "西夏",
+    "start": "1226",
+    "end": "1227"
+  },
+  {
+    "id": "zhong_hua_da_li_zheng",
+    "legacyId": "zhong_hua_da_li_zheng",
+    "name": "大理太祖",
+    "dynasty": "大理",
+    "dynasty2": "大理",
+    "start": "937",
+    "end": "944"
+  },
+  {
+    "id": "zhong_hua_da_li_sun",
+    "legacyId": "zhong_hua_da_li_sun",
+    "name": "大理文经帝",
+    "dynasty": "大理",
+    "dynasty2": "大理",
+    "start": "944",
+    "end": "945"
+  },
+  {
+    "id": "zhong_hua_da_li_mo",
+    "legacyId": "zhong_hua_da_li_mo",
+    "name": "大理天定贤王",
+    "dynasty": "大理",
+    "dynasty2": "大理",
+    "start": "1251",
+    "end": "1254"
+  },
+  {
+    "id": "zhong_hua_bo_hai_gao",
+    "legacyId": "zhong_hua_bo_hai_gao",
+    "name": "渤海高王",
+    "dynasty": "渤海",
+    "dynasty2": "渤海",
+    "start": "698",
+    "end": "719"
+  },
+  {
+    "id": "zhong_hua_bo_hai_mo",
+    "legacyId": "zhong_hua_bo_hai_mo",
+    "name": "渤海大諲譔",
+    "dynasty": "渤海",
+    "dynasty2": "渤海",
+    "start": "907",
+    "end": "926"
+  },
+  {
+    "id": "zhong_hua_nan_zhao_mo",
+    "legacyId": "zhong_hua_nan_zhao_mo",
+    "name": "南诏威成王",
+    "dynasty": "南诏",
+    "dynasty2": "南诏",
+    "start": "697",
+    "end": "748"
+  },
+  {
+    "id": "zhong_hua_nan_zhao_mo_zhu",
+    "legacyId": "zhong_hua_nan_zhao_mo_zhu",
+    "name": "南诏孝哀帝",
+    "dynasty": "南诏",
+    "dynasty2": "南诏",
+    "start": "897",
+    "end": "902"
+  },
+  {
+    "id": "zhong_hua_jin_mo_di",
+    "legacyId": "zhong_hua_jin_mo_di",
+    "name": "金末帝",
+    "dynasty": "金",
+    "dynasty2": "金",
+    "start": "1234",
+    "end": "1234"
+  },
+  {
+    "id": "zhong_hua_yuan_zong",
+    "legacyId": "zhong_hua_yuan_zong",
+    "name": "元烈祖",
+    "dynasty": "元",
+    "dynasty2": "元",
+    "start": "1134",
+    "end": "1170"
+  },
+  {
+    "id": "zhong_hua_ming_gong",
+    "legacyId": "zhong_hua_ming_gong",
+    "name": "南明永历帝",
+    "dynasty": "南明",
+    "dynasty2": "南明",
+    "start": "1646",
+    "end": "1662"
+  },
+  {
+    "id": "zhong_hua_nan_ming_hong",
+    "legacyId": "zhong_hua_nan_ming_hong",
+    "name": "弘光",
+    "dynasty": "南明",
+    "dynasty2": "南明",
+    "start": "1644",
+    "end": "1645"
+  },
+  {
+    "id": "zhong_hua_nan_ming_long",
+    "legacyId": "zhong_hua_nan_ming_long",
+    "name": "隆武",
+    "dynasty": "南明",
+    "dynasty2": "南明",
+    "start": "1645",
+    "end": "1646"
+  },
+  {
+    "id": "zhong_hua_nan_ming_shao",
+    "legacyId": "zhong_hua_nan_ming_shao",
+    "name": "监国鲁王",
+    "dynasty": "南明",
+    "dynasty2": "南明",
+    "start": "1645",
+    "end": "1662"
+  },
+  {
+    "id": "zhong_hua_taiping_guo",
+    "legacyId": "zhong_hua_taiping_guo",
+    "name": "天王",
+    "dynasty": "清",
+    "dynasty2": "清",
+    "start": "1851",
+    "end": "1864"
+  },
+  {
+    "id": "zhong_hua_taiping_mo",
+    "legacyId": "zhong_hua_taiping_mo",
+    "name": "幼天王",
+    "dynasty": "清",
+    "dynasty2": "清",
+    "start": "1864",
+    "end": "1864"
+  },
+  {
+    "id": "zhong_hua_yuan_shikai",
+    "legacyId": "zhong_hua_yuan_shikai",
+    "name": "洪宪帝",
+    "dynasty": "民国",
+    "dynasty2": "民国",
+    "start": "1915",
+    "end": "1916"
+  },
+  {
+    "id": "zhong_hua_wei_cao_rui",
+    "legacyId": "zhong_hua_wei_cao_rui",
+    "name": "魏明帝",
+    "dynasty": "三国",
+    "dynasty2": "三国·魏",
+    "start": "226",
+    "end": "239"
+  },
+  {
+    "id": "zhong_hua_wei_cao_fang",
+    "legacyId": "zhong_hua_wei_cao_fang",
+    "name": "魏齐王",
+    "dynasty": "三国",
+    "dynasty2": "三国·魏",
+    "start": "239",
+    "end": "254"
+  },
+  {
+    "id": "zhong_hua_wei_cao_mao",
+    "legacyId": "zhong_hua_wei_cao_mao",
+    "name": "魏高贵乡公",
+    "dynasty": "三国",
+    "dynasty2": "三国·魏",
+    "start": "254",
+    "end": "260"
+  },
+  {
+    "id": "zhong_hua_wei_cao_huan",
+    "legacyId": "zhong_hua_wei_cao_huan",
+    "name": "魏陈留王",
+    "dynasty": "三国",
+    "dynasty2": "三国·魏",
+    "start": "260",
+    "end": "265"
+  },
+  {
+    "id": "zhong_hua_wu_sun_liang",
+    "legacyId": "zhong_hua_wu_sun_liang",
+    "name": "吴会稽王",
+    "dynasty": "三国",
+    "dynasty2": "三国·吴",
+    "start": "252",
+    "end": "258"
+  },
+  {
+    "id": "zhong_hua_wu_sun_xiu",
+    "legacyId": "zhong_hua_wu_sun_xiu",
+    "name": "吴景帝",
+    "dynasty": "三国",
+    "dynasty2": "三国·吴",
+    "start": "258",
+    "end": "264"
+  },
+  {
+    "id": "zhong_hua_wu_sun_hao",
+    "legacyId": "zhong_hua_wu_sun_hao",
+    "name": "吴乌程侯",
+    "dynasty": "三国",
+    "dynasty2": "三国·吴",
+    "start": "264",
+    "end": "280"
+  },
+  {
+    "id": "zhong_hua_tang_li_song",
+    "legacyId": "zhong_hua_tang_li_song",
+    "name": "唐顺宗",
+    "dynasty": "唐",
+    "dynasty2": "唐",
+    "start": "805",
+    "end": "805"
+  },
+  {
+    "id": "zhong_hua_ming_zhu_yun_wen",
+    "legacyId": "zhong_hua_ming_zhu_yun_wen",
+    "name": "建文帝",
+    "dynasty": "明",
+    "dynasty2": "明",
+    "start": "1398",
+    "end": "1402"
+  },
+  {
+    "id": "zhong_hua_han_liu_xuan",
+    "legacyId": "zhong_hua_han_liu_xuan",
+    "name": "汉更始帝",
+    "dynasty": "西汉",
+    "dynasty2": "西汉",
+    "start": "23",
+    "end": "25"
+  },
+  {
+    "id": "zhong_hua_tang_li_heng",
+    "legacyId": "zhong_hua_tang_li_heng",
+    "name": "唐穆宗",
+    "dynasty": "唐",
+    "dynasty2": "唐",
+    "start": "820",
+    "end": "824"
+  },
+  {
+    "id": "xi_xia_huan",
+    "legacyId": "xi_xia_huan",
+    "name": "西夏桓宗",
+    "dynasty": "西夏",
+    "dynasty2": "西夏",
+    "start": "1193",
+    "end": "1206"
+  },
+  {
+    "id": "xi_xia_xiang",
+    "legacyId": "xi_xia_xiang",
+    "name": "西夏襄宗",
+    "dynasty": "西夏",
+    "dynasty2": "西夏",
+    "start": "1206",
+    "end": "1211"
+  },
+  {
+    "id": "xi_xia_shen",
+    "legacyId": "xi_xia_shen",
+    "name": "西夏神宗",
+    "dynasty": "西夏",
+    "dynasty2": "西夏",
+    "start": "1211",
+    "end": "1223"
+  },
+  {
+    "id": "xi_xia_xian",
+    "legacyId": "xi_xia_xian",
+    "name": "西夏献宗",
+    "dynasty": "西夏",
+    "dynasty2": "西夏",
+    "start": "1223",
+    "end": "1226"
+  },
+  {
+    "id": "zhong_hua_jin_si_ma_chi",
+    "legacyId": "zhong_hua_jin_si_ma_chi",
+    "name": "晋怀帝",
+    "dynasty": "西晋",
+    "dynasty2": "西晋",
+    "start": "307",
+    "end": "311"
+  },
+  {
+    "id": "zhong_hua_jin_si_ma_ye",
+    "legacyId": "zhong_hua_jin_si_ma_ye",
+    "name": "晋愍帝",
+    "dynasty": "西晋",
+    "dynasty2": "西晋",
+    "start": "313",
+    "end": "316"
+  },
+  {
+    "id": "zhong_hua_shang_tai_geng",
+    "legacyId": "zhong_hua_shang_tai_geng",
+    "name": "太庚",
+    "dynasty": "商",
+    "dynasty2": "商",
+    "start": "-1541",
+    "end": "-1516"
+  },
+  {
+    "id": "zhong_hua_shang_xiao_jia",
+    "legacyId": "zhong_hua_shang_xiao_jia",
+    "name": "小甲",
+    "dynasty": "商",
+    "dynasty2": "商",
+    "start": "-1516",
+    "end": "-1499"
+  },
+  {
+    "id": "zhong_hua_shang_yong_ji",
+    "legacyId": "zhong_hua_shang_yong_ji",
+    "name": "雍己",
+    "dynasty": "商",
+    "dynasty2": "商",
+    "start": "-1499",
+    "end": "-1487"
+  },
+  {
+    "id": "zhong_hua_shang_tai_wu",
+    "legacyId": "zhong_hua_shang_tai_wu",
+    "name": "太戊",
+    "dynasty": "商",
+    "dynasty2": "商",
+    "start": "-1487",
+    "end": "-1412"
+  },
+  {
+    "id": "zhong_hua_shang_zhong_ding",
+    "legacyId": "zhong_hua_shang_zhong_ding",
+    "name": "仲丁",
+    "dynasty": "商",
+    "dynasty2": "商",
+    "start": "-1412",
+    "end": "-1401"
+  },
+  {
+    "id": "zhong_hua_shang_wai_ren",
+    "legacyId": "zhong_hua_shang_wai_ren",
+    "name": "外壬",
+    "dynasty": "商",
+    "dynasty2": "商",
+    "start": "-1401",
+    "end": "-1386"
+  },
+  {
+    "id": "zhong_hua_shang_he_dan_jia",
+    "legacyId": "zhong_hua_shang_he_dan_jia",
+    "name": "河亶甲",
+    "dynasty": "商",
+    "dynasty2": "商",
+    "start": "-1386",
+    "end": "-1377"
+  },
+  {
+    "id": "zhong_hua_shang_zu_yi",
+    "legacyId": "zhong_hua_shang_zu_yi",
+    "name": "祖乙",
+    "dynasty": "商",
+    "dynasty2": "商",
+    "start": "-1377",
+    "end": "-1358"
+  },
+  {
+    "id": "zhong_hua_shang_zu_xin",
+    "legacyId": "zhong_hua_shang_zu_xin",
+    "name": "祖辛",
+    "dynasty": "商",
+    "dynasty2": "商",
+    "start": "-1358",
+    "end": "-1344"
+  },
+  {
+    "id": "zhong_hua_shang_wo_jia",
+    "legacyId": "zhong_hua_shang_wo_jia",
+    "name": "沃甲",
+    "dynasty": "商",
+    "dynasty2": "商",
+    "start": "-1344",
+    "end": "-1339"
+  },
+  {
+    "id": "zhong_hua_shang_zu_ding",
+    "legacyId": "zhong_hua_shang_zu_ding",
+    "name": "祖丁",
+    "dynasty": "商",
+    "dynasty2": "商",
+    "start": "-1339",
+    "end": "-1327"
+  },
+  {
+    "id": "zhong_hua_shang_nan_geng",
+    "legacyId": "zhong_hua_shang_nan_geng",
+    "name": "南庚",
+    "dynasty": "商",
+    "dynasty2": "商",
+    "start": "-1327",
+    "end": "-1321"
+  },
+  {
+    "id": "zhong_hua_shang_yang_jia",
+    "legacyId": "zhong_hua_shang_yang_jia",
+    "name": "阳甲",
+    "dynasty": "商",
+    "dynasty2": "商",
+    "start": "-1321",
+    "end": "-1317"
+  },
+  {
+    "id": "zhong_hua_shang_xiao_xin",
+    "legacyId": "zhong_hua_shang_xiao_xin",
+    "name": "小辛",
+    "dynasty": "商",
+    "dynasty2": "商",
+    "start": "-1272",
+    "end": "-1269"
+  },
+  {
+    "id": "zhong_hua_shang_xiao_yi",
+    "legacyId": "zhong_hua_shang_xiao_yi",
+    "name": "小乙",
+    "dynasty": "商",
+    "dynasty2": "商",
+    "start": "-1269",
+    "end": "-1250"
+  },
+  {
+    "id": "zhong_hua_shang_zu_geng",
+    "legacyId": "zhong_hua_shang_zu_geng",
+    "name": "祖庚",
+    "dynasty": "商",
+    "dynasty2": "商",
+    "start": "-1192",
+    "end": "-1185"
+  },
+  {
+    "id": "zhong_hua_shang_zu_jia",
+    "legacyId": "zhong_hua_shang_zu_jia",
+    "name": "祖甲",
+    "dynasty": "商",
+    "dynasty2": "商",
+    "start": "-1185",
+    "end": "-1152"
+  },
+  {
+    "id": "zhong_hua_shang_lin_xin",
+    "legacyId": "zhong_hua_shang_lin_xin",
+    "name": "廪辛",
+    "dynasty": "商",
+    "dynasty2": "商",
+    "start": "-1152",
+    "end": "-1146"
+  },
+  {
+    "id": "zhong_hua_shang_kang_ding",
+    "legacyId": "zhong_hua_shang_kang_ding",
+    "name": "康丁",
+    "dynasty": "商",
+    "dynasty2": "商",
+    "start": "-1146",
+    "end": "-1138"
+  },
+  {
+    "id": "zhong_hua_shang_wu_yi",
+    "legacyId": "zhong_hua_shang_wu_yi",
+    "name": "武乙",
+    "dynasty": "商",
+    "dynasty2": "商",
+    "start": "-1138",
+    "end": "-1103"
+  },
+  {
+    "id": "zhong_hua_shang_wen_ding",
+    "legacyId": "zhong_hua_shang_wen_ding",
+    "name": "文丁",
+    "dynasty": "商",
+    "dynasty2": "商",
+    "start": "-1103",
+    "end": "-1092"
+  },
+  {
+    "id": "zhong_hua_shang_di_yi",
+    "legacyId": "zhong_hua_shang_di_yi",
+    "name": "帝乙",
+    "dynasty": "商",
+    "dynasty2": "商",
+    "start": "-1092",
+    "end": "-1076"
+  },
+  {
+    "id": "zhong_hua_xi_zhou_gong_wang",
+    "legacyId": "zhong_hua_xi_zhou_gong_wang",
+    "name": "周共王",
+    "dynasty": "西周",
+    "dynasty2": "西周",
+    "start": "-922",
+    "end": "-900"
+  },
+  {
+    "id": "zhong_hua_xi_zhou_yi_wang",
+    "legacyId": "zhong_hua_xi_zhou_yi_wang",
+    "name": "周懿王",
+    "dynasty": "西周",
+    "dynasty2": "西周",
+    "start": "-900",
+    "end": "-892"
+  },
+  {
+    "id": "zhong_hua_xi_zhou_xiao_wang",
+    "legacyId": "zhong_hua_xi_zhou_xiao_wang",
+    "name": "周孝王",
+    "dynasty": "西周",
+    "dynasty2": "西周",
+    "start": "-892",
+    "end": "-886"
+  },
+  {
+    "id": "zhong_hua_xi_zhou_yi_wang2",
+    "legacyId": "zhong_hua_xi_zhou_yi_wang2",
+    "name": "周夷王",
+    "dynasty": "西周",
+    "dynasty2": "西周",
+    "start": "-886",
+    "end": "-878"
+  },
+  {
+    "id": "zhong_hua_chun_qiu_qi_huan_gong",
+    "legacyId": "zhong_hua_chun_qiu_qi_huan_gong",
+    "name": "齐桓公",
+    "dynasty": "春秋",
+    "dynasty2": "齐",
+    "start": "-685",
+    "end": "-643"
+  },
+  {
+    "id": "zhong_hua_chun_qiu_jin_wen_gong",
+    "legacyId": "zhong_hua_chun_qiu_jin_wen_gong",
+    "name": "晋文公",
+    "dynasty": "春秋",
+    "dynasty2": "晋",
+    "start": "-636",
+    "end": "-628"
+  },
+  {
+    "id": "zhong_hua_chun_qiu_chu_zhuang_wang",
+    "legacyId": "zhong_hua_chun_qiu_chu_zhuang_wang",
+    "name": "楚庄王",
+    "dynasty": "春秋",
+    "dynasty2": "楚",
+    "start": "-613",
+    "end": "-591"
+  },
+  {
+    "id": "zhong_hua_chun_qiu_qin_mu_gong",
+    "legacyId": "zhong_hua_chun_qiu_qin_mu_gong",
+    "name": "秦穆公",
+    "dynasty": "春秋",
+    "dynasty2": "秦(诸侯)",
+    "start": "-659",
+    "end": "-621"
+  },
+  {
+    "id": "zhong_hua_chun_qiu_song_xiang_gong",
+    "legacyId": "zhong_hua_chun_qiu_song_xiang_gong",
+    "name": "宋襄公",
+    "dynasty": "春秋",
+    "dynasty2": "宋",
+    "start": "-650",
+    "end": "-637"
+  },
+  {
+    "id": "zhong_hua_chun_qiu_yue_wang_gou_jian",
+    "legacyId": "zhong_hua_chun_qiu_yue_wang_gou_jian",
+    "name": "越王勾践",
+    "dynasty": "春秋",
+    "dynasty2": "越",
+    "start": "-496",
+    "end": "-465"
+  },
+  {
+    "id": "zhong_hua_chun_qiu_wu_wang_fu_chai",
+    "legacyId": "zhong_hua_chun_qiu_wu_wang_fu_chai",
+    "name": "吴王夫差",
+    "dynasty": "春秋",
+    "dynasty2": "吴",
+    "start": "-495",
+    "end": "-473"
+  },
+  {
+    "id": "zhong_hua_chun_qiu_wu_wang_he_lu",
+    "legacyId": "zhong_hua_chun_qiu_wu_wang_he_lu",
+    "name": "吴王阖闾",
+    "dynasty": "春秋",
+    "dynasty2": "吴",
+    "start": "-514",
+    "end": "-496"
+  },
+  {
+    "id": "zhong_hua_chun_qiu_zheng_zhuang_gong",
+    "legacyId": "zhong_hua_chun_qiu_zheng_zhuang_gong",
+    "name": "郑庄公",
+    "dynasty": "春秋",
+    "dynasty2": "郑",
+    "start": "-743",
+    "end": "-701"
+  },
+  {
+    "id": "zhong_hua_chun_qiu_jin_xian_gong",
+    "legacyId": "zhong_hua_chun_qiu_jin_xian_gong",
+    "name": "晋献公",
+    "dynasty": "春秋",
+    "dynasty2": "晋",
+    "start": "-676",
+    "end": "-651"
+  },
+  {
+    "id": "zhong_hua_chun_qiu_qi_jing_gong",
+    "legacyId": "zhong_hua_chun_qiu_qi_jing_gong",
+    "name": "齐景公",
+    "dynasty": "春秋",
+    "dynasty2": "齐",
+    "start": "-547",
+    "end": "-490"
+  },
+  {
+    "id": "zhong_hua_chun_qiu_wu_wang_liao",
+    "legacyId": "zhong_hua_chun_qiu_wu_wang_liao",
+    "name": "吴王僚",
+    "dynasty": "春秋",
+    "dynasty2": "吴",
+    "start": "-526",
+    "end": "-514"
+  },
+  {
+    "id": "zhong_hua_chun_qiu_wu_wang_yu_ji",
+    "legacyId": "zhong_hua_chun_qiu_wu_wang_yu_ji",
+    "name": "吴王余祭",
+    "dynasty": "春秋",
+    "dynasty2": "吴",
+    "start": "-547",
+    "end": "-531"
+  },
+  {
+    "id": "zhong_hua_chun_qiu_wu_wang_zhu_fan",
+    "legacyId": "zhong_hua_chun_qiu_wu_wang_zhu_fan",
+    "name": "吴王诸樊",
+    "dynasty": "春秋",
+    "dynasty2": "吴",
+    "start": "-560",
+    "end": "-548"
+  },
+  {
+    "id": "zhong_hua_chun_qiu_jin_ling_gong",
+    "legacyId": "zhong_hua_chun_qiu_jin_ling_gong",
+    "name": "晋灵公",
+    "dynasty": "春秋",
+    "dynasty2": "晋",
+    "start": "-620",
+    "end": "-607"
+  },
+  {
+    "id": "zhong_hua_chun_qiu_qi_zhuang_gong",
+    "legacyId": "zhong_hua_chun_qiu_qi_zhuang_gong",
+    "name": "齐庄公",
+    "dynasty": "春秋",
+    "dynasty2": "齐",
+    "start": "-553",
+    "end": "-548"
+  },
+  {
+    "id": "zhong_hua_chun_qiu_zheng_jian_gong",
+    "legacyId": "zhong_hua_chun_qiu_zheng_jian_gong",
+    "name": "郑简公",
+    "dynasty": "春秋",
+    "dynasty2": "郑",
+    "start": "-565",
+    "end": "-530"
+  },
+  {
+    "id": "zhong_hua_zhan_guo_chu_huai_wang",
+    "legacyId": "zhong_hua_zhan_guo_chu_huai_wang",
+    "name": "楚怀王",
+    "dynasty": "战国",
+    "dynasty2": "楚",
+    "start": "-328",
+    "end": "-299"
+  },
+  {
+    "id": "zhong_hua_zhan_guo_chu_xuan_wang",
+    "legacyId": "zhong_hua_zhan_guo_chu_xuan_wang",
+    "name": "楚宣王",
+    "dynasty": "战国",
+    "dynasty2": "楚",
+    "start": "-369",
+    "end": "-340"
+  },
+  {
+    "id": "zhong_hua_zhan_guo_zhao_wu_ling_wang",
+    "legacyId": "zhong_hua_zhan_guo_zhao_wu_ling_wang",
+    "name": "赵武灵王",
+    "dynasty": "战国",
+    "dynasty2": "赵",
+    "start": "-325",
+    "end": "-295"
+  },
+  {
+    "id": "zhong_hua_zhan_guo_zhao_hui_wen_wang",
+    "legacyId": "zhong_hua_zhan_guo_zhao_hui_wen_wang",
+    "name": "赵惠文王",
+    "dynasty": "战国",
+    "dynasty2": "赵",
+    "start": "-298",
+    "end": "-266"
+  },
+  {
+    "id": "zhong_hua_zhan_guo_zhao_xiao_cheng_wang",
+    "legacyId": "zhong_hua_zhan_guo_zhao_xiao_cheng_wang",
+    "name": "赵孝成王",
+    "dynasty": "战国",
+    "dynasty2": "赵",
+    "start": "-265",
+    "end": "-245"
+  },
+  {
+    "id": "zhong_hua_zhan_guo_wei_hui_wang",
+    "legacyId": "zhong_hua_zhan_guo_wei_hui_wang",
+    "name": "魏惠王",
+    "dynasty": "战国",
+    "dynasty2": "魏",
+    "start": "-369",
+    "end": "-319"
+  },
+  {
+    "id": "zhong_hua_zhan_guo_han_lie_hou",
+    "legacyId": "zhong_hua_zhan_guo_han_lie_hou",
+    "name": "韩烈侯",
+    "dynasty": "战国",
+    "dynasty2": "韩",
+    "start": "-399",
+    "end": "-387"
+  },
+  {
+    "id": "zhong_hua_zhan_guo_yan_zhao_wang",
+    "legacyId": "zhong_hua_zhan_guo_yan_zhao_wang",
+    "name": "燕昭王",
+    "dynasty": "战国",
+    "dynasty2": "燕",
+    "start": "-311",
+    "end": "-279"
+  },
+  {
+    "id": "zhong_hua_jin_si_ma_shao",
+    "legacyId": "zhong_hua_jin_si_ma_shao",
+    "name": "晋明帝",
+    "dynasty": "东晋",
+    "dynasty2": "东晋",
+    "start": "323",
+    "end": "325"
+  },
+  {
+    "id": "zhong_hua_jin_si_ma_yan_cheng",
+    "legacyId": "zhong_hua_jin_si_ma_yan_cheng",
+    "name": "晋成帝",
+    "dynasty": "东晋",
+    "dynasty2": "东晋",
+    "start": "325",
+    "end": "342"
+  },
+  {
+    "id": "zhong_hua_jin_si_ma_yue",
+    "legacyId": "zhong_hua_jin_si_ma_yue",
+    "name": "晋康帝",
+    "dynasty": "东晋",
+    "dynasty2": "东晋",
+    "start": "342",
+    "end": "344"
+  },
+  {
+    "id": "zhong_hua_jin_si_ma_dan",
+    "legacyId": "zhong_hua_jin_si_ma_dan",
+    "name": "晋穆帝",
+    "dynasty": "东晋",
+    "dynasty2": "东晋",
+    "start": "344",
+    "end": "361"
+  },
+  {
+    "id": "zhong_hua_jin_si_ma_pi",
+    "legacyId": "zhong_hua_jin_si_ma_pi",
+    "name": "晋哀帝",
+    "dynasty": "东晋",
+    "dynasty2": "东晋",
+    "start": "361",
+    "end": "365"
+  },
+  {
+    "id": "zhong_hua_jin_si_ma_yi",
+    "legacyId": "zhong_hua_jin_si_ma_yi",
+    "name": "晋废帝",
+    "dynasty": "东晋",
+    "dynasty2": "东晋",
+    "start": "365",
+    "end": "371"
+  },
+  {
+    "id": "zhong_hua_jin_si_ma_yu",
+    "legacyId": "zhong_hua_jin_si_ma_yu",
+    "name": "晋简文帝",
+    "dynasty": "东晋",
+    "dynasty2": "东晋",
+    "start": "371",
+    "end": "372"
+  },
+  {
+    "id": "zhong_hua_jin_si_ma_yao",
+    "legacyId": "zhong_hua_jin_si_ma_yao",
+    "name": "晋孝武帝",
+    "dynasty": "东晋",
+    "dynasty2": "东晋",
+    "start": "372",
+    "end": "396"
+  },
+  {
+    "id": "zhong_hua_jin_si_ma_de_zong",
+    "legacyId": "zhong_hua_jin_si_ma_de_zong",
+    "name": "晋安帝",
+    "dynasty": "东晋",
+    "dynasty2": "东晋",
+    "start": "396",
+    "end": "418"
+  }
+]

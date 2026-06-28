@@ -1,12 +1,14 @@
-<navigation-bar title="评述详情" back="{{true}}" color="#4A3F3F" background="rgba(248,246,242,0.96)"></navigation-bar>
+<view class="proto-shell">
+  <proto-nav title="评述详情" show-back="{{true}}"></proto-nav>
 
-<view class="detail-page">
-  <view wx:if="{{title}}" class="title">{{title}}</view>
-  <view class="meta-card">
-    <view class="row"><text class="lab">评述人</text><text class="val">{{author}}</text></view>
-    <view wx:if="{{book}}" class="row"><text class="lab">评述著作</text><text class="val">{{book}}</text></view>
-    <view wx:if="{{era}}" class="row"><text class="lab">评述时代</text><text class="val">{{era}}</text></view>
+  <view class="detail-body" style="padding-top: {{headerPadPx}}px;">
+    <view wx:if="{{title}}" class="crit-detail-title">{{title}}</view>
+    <view class="meta card-paper">
+      <view class="row"><text class="lab muted">评述人</text><text class="val">{{author}}</text></view>
+      <view wx:if="{{book}}" class="row"><text class="lab muted">评述著作</text><text class="val">{{book}}</text></view>
+      <view wx:if="{{era}}" class="row"><text class="lab muted">评述时代</text><text class="val">{{era}}</text></view>
+    </view>
+    <text class="sec accent">评述内容</text>
+    <view class="text-card card-paper">{{body}}</view>
   </view>
-  <text class="sec">评述内容</text>
-  <view class="text-card">{{body}}</view>
 </view>

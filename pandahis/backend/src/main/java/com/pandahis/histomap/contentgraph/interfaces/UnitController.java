@@ -28,28 +28,28 @@ public class UnitController {
 
   @GetMapping("/units/{unitId}")
   public ApiResponse<UnitHeroDTO> hero(
-      @PathVariable @NotBlank @Size(max = 64) String unitId
+      @PathVariable @NotBlank @Size(max = 128) String unitId
   ) {
     return ApiResponse.ok(RequestIdHolder.get(), unitService.loadHero(unitId));
   }
 
   @GetMapping("/units/{unitId}/matrix")
   public ApiResponse<UnitMatrixDTO> matrix(
-      @PathVariable @NotBlank @Size(max = 64) String unitId
+      @PathVariable @NotBlank @Size(max = 128) String unitId
   ) {
     return ApiResponse.ok(RequestIdHolder.get(), unitService.loadMatrix(unitId));
   }
 
   @GetMapping("/units/{unitId}/civ-tabs")
   public ApiResponse<UnitCivTabsDTO> civTabs(
-      @PathVariable @NotBlank @Size(max = 64) String unitId
+      @PathVariable @NotBlank @Size(max = 128) String unitId
   ) {
     return ApiResponse.ok(RequestIdHolder.get(), unitService.loadCivTabs(unitId));
   }
 
   @GetMapping("/units/{unitId}/swim-matrix")
   public ApiResponse<UnitSwimMatrixDTO> swimMatrix(
-      @PathVariable @NotBlank @Size(max = 64) String unitId
+      @PathVariable @NotBlank @Size(max = 128) String unitId
   ) {
     return ApiResponse.ok(RequestIdHolder.get(), unitSwimMatrixService.load(unitId));
   }

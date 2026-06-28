@@ -1,220 +1,210 @@
-<navigation-bar
-  title=""
-  back="{{true}}"
-  color="#262626"
-  background="rgba(250,249,246,0.96)"
-  ext-class="bd-nav-host"
->
-  <view slot="center" class="bd-nav-title">{{navTitle}}</view>
-  <view slot="right" class="bd-nav-share-btn" bindtap="onShareTap" hover-class="bd-nav-share-hover" aria-role="button">
-    <image class="bd-ico-img bd-ico-img--nav" src="/images/icons/fenxiang.png" mode="aspectFit" />
-  </view>
-</navigation-bar>
+<view class="page-shell">
+  <proto-nav title="{{navTitle}}" show-back="{{true}}"></proto-nav>
 
-<view
-  class="bd-page {{tab=='content' ? 'bd-page--content' : ''}} {{tab=='relations' ? 'bd-page--relations' : ''}}"
-  wx:if="{{header}}"
->
-  <!-- Hero -->
-  <view class="bd-hero {{tab=='content' ? 'bd-hero--detail' : ''}} {{tab=='relations' ? 'bd-hero--relations' : ''}}">
-    <view class="bd-hero-top">
-      <view class="bd-hero-text">
-        <view class="bd-hero-h2">{{header.box.title}}</view>
-        <view class="bd-hero-meta">{{tab=='content' || tab=='relations' ? detailMetaDisplay : header.box.subText}}</view>
-      </view>
-      <view class="bd-hero-actions {{tab=='content' ? 'bd-hero-actions--detail' : ''}}">
-        <block wx:if="{{tab=='content'}}">
+  <block wx:if="{{header}}">
+    <!-- 内容 Tab 栏（紧跟导航栏） -->
+    <view class="box-tabs-wrap" style="top: {{tabTop}}px;">
+      <view class="box-tab {{tab === 'content' ? 'active' : ''}}" data-tab="content" bindtap="setTab">详情</view>
+      <view class="box-tab {{tab === 'relations' ? 'active' : ''}}" data-tab="relations" bindtap="setTab">关系</view>
+      <view class="box-tab {{tab === 'reviews' ? 'active' : ''}}" data-tab="reviews" bindtap="setTab">评述</view>
+      <view class="box-tab {{tab === 'relics' ? 'active' : ''}}" data-tab="relics" bindtap="setTab">见证</view>
+    </view>
+
+    <!-- 内容滚动区（关系 Tab 禁用纵向滚动） -->
+    <scroll-view
+      class="box-body-scroll"
+      scroll-y="{{tab !== 'relations'}}"
+      enhanced
+      show-scrollbar="{{false}}"
+      style="top: {{bodyTop}}px;"
+    >
+      <!-- Tab 0：详情 -->
+      <view wx:if="{{tab === 'content'}}" class="box-tab1-body">
+        <view wx:if="{{detailErr}}" class="tab-empty">
+          <text class="tab-empty-text">{{detailErr}}</text>
+        </view>
+        <block wx:elif="{{detailReady}}">
           <view
-            class="bd-icon-tile {{narrationState=='playing' || narrationState=='loading' ? 'bd-icon-tile--narrating' : ''}}"
-            bindtap="onPlayIntro"
-            hover-class="bd-icon-tile-hover"
-            aria-role="button"
-            aria-label="{{narrationState=='playing' ? '暂停朗读' : narrationState=='paused' ? '继续朗读' : '朗读详情'}}"
-          >
-            <view wx:if="{{narrationState=='playing' || narrationState=='loading'}}" class="bd-ico bd-ico-pause"></view>
-            <view wx:else class="bd-ico bd-ico-play {{narrationState=='paused' ? 'bd-ico-play--paused' : ''}}"></view>
-          </view>
-          <view class="bd-icon-tile" bindtap="toggleFav" hover-class="bd-icon-tile-hover" aria-role="button">
-            <image class="bd-ico-img" src="{{isFav ? '/images/icons/shoucangA.png' : '/images/icons/shoucangB.png'}}" mode="aspectFit" />
-          </view>
-          <view class="bd-icon-tile" bindtap="onShareTap" hover-class="bd-icon-tile-hover" aria-role="button">
-            <image class="bd-ico-img" src="/images/icons/fenxiang.png" mode="aspectFit" />
+            wx:if="{{header.box.blurb && !detailParagraphs.length}}"
+            class="box-p"
+          >{{header.box.blurb}}</view>
+          <view wx:for="{{detailParagraphs}}" wx:key="*this" class="box-p">{{item}}</view>
+          <view wx:if="{{!detailParagraphs.length && !header.box.blurb}}" class="tab-empty">
+            <text class="tab-empty-text">暂无详情正文</text>
           </view>
         </block>
-        <block wx:else>
-          <view class="bd-icon-tile" bindtap="toggleFav" hover-class="bd-icon-tile-hover">
-            <image class="bd-ico-img" src="{{isFav ? '/images/icons/shoucangA.png' : '/images/icons/shoucangB.png'}}" mode="aspectFit" />
-          </view>
-          <view class="bd-icon-tile" bindtap="onShareTap" hover-class="bd-icon-tile-hover">
-            <image class="bd-ico-img" src="/images/icons/fenxiang.png" mode="aspectFit" />
-          </view>
-        </block>
+        <view wx:else class="tab-empty">
+          <text class="tab-empty-text">加载中…</text>
+        </view>
       </view>
-    </view>
-  </view>
 
-  <!-- Tab bar -->
-  <view class="bd-tabs {{tab=='content' ? 'bd-tabs--detail' : ''}} {{tab=='relations' ? 'bd-tabs--relations' : ''}}" style="top: {{stickyTabsTopPx}}px;">
-    <view class="bd-tab {{tab=='content'?'bd-tab--on':''}}" bindtap="setTab" data-tab="content">详情</view>
-    <view class="bd-tab {{tab=='relations'?'bd-tab--on':''}}" bindtap="setTab" data-tab="relations">关系</view>
-    <view class="bd-tab {{tab=='reviews'?'bd-tab--on':''}}" bindtap="setTab" data-tab="reviews">评述</view>
-    <view class="bd-tab {{tab=='relics'?'bd-tab--on':''}}" bindtap="setTab" data-tab="relics">见证</view>
-  </view>
+      <!-- Tab 1：关系图谱 -->
+      <view wx:if="{{tab === 'relations'}}" class="rel-tab-body">
+        <view wx:if="{{graphErr}}" class="tab-empty">
+          <text class="tab-empty-text">{{graphErr}}</text>
+        </view>
+        <view wx:elif="{{graphReady && !graph.nodes.length}}" class="tab-empty">
+          <text class="tab-empty-text">暂无关系数据</text>
+        </view>
+        <view wx:elif="{{graphReady}}" class="rel-graph-wrap">
+          <view class="rel-graph-viewport" style="height: {{graphCanvasH}}px;">
+            <relation-graph-canvas
+              wx:if="{{graph.nodes.length}}"
+              id="bdRelationGraph"
+              class="rel-graph-canvas"
+              graph="{{graph}}"
+              bind:nodeTap="onGraphNodeTap"
+              bind:zoomChange="onGraphZoomChange"
+            />
+          </view>
+        </view>
+        <view wx:else class="tab-empty">
+          <text class="tab-empty-text">加载中…</text>
+        </view>
+      </view>
 
-  <!-- 详情 -->
-  <view class="bd-panel bd-panel--detail" wx:if="{{tab=='content'}}">
-    <view wx:if="{{detailErr}}" class="locked">{{detailErr}}</view>
-    <block wx:elif="{{detailReady}}">
-      <view class="bd-detail-article">
+      <!-- Tab 2：评述 -->
+      <view wx:if="{{tab === 'reviews'}}" class="box-tab-content">
+        <view wx:if="{{critErr}}" class="tab-empty">
+          <text class="tab-empty-text">{{critErr}}</text>
+        </view>
+        <view wx:elif="{{critReady && !critiques.length}}" class="tab-empty">
+          <text class="tab-empty-text">暂无评述数据</text>
+        </view>
         <view
-          wx:if="{{header.box.blurb && !detailParagraphs.length}}"
-          class="bd-detail-p"
-        >{{header.box.blurb}}</view>
-        <view class="bd-detail-p" wx:for="{{detailParagraphs}}" wx:for-item="para" wx:for-index="pi" wx:key="pi">{{para}}</view>
-        <view wx:if="{{!detailParagraphs.length && !header.box.blurb}}" class="bd-muted bd-empty-copy">暂无详情正文</view>
+          wx:for="{{critiques}}"
+          wx:key="_k"
+          wx:for-index="idx"
+          class="crit-card"
+          bindtap="onCritiqueTap"
+          data-idx="{{idx}}"
+        >
+          <view class="crit-head">
+            <view class="crit-avatar" style="background: {{critColors[idx % 6]}};">
+              <text class="crit-avatar-text">{{item.avatarLetter}}</text>
+            </view>
+            <view class="crit-meta">
+              <text class="crit-author">{{item.cardTitle}}</text>
+              <text class="crit-era muted">{{item.cardMeta}}</text>
+            </view>
+            <text class="chev muted">›</text>
+          </view>
+          <view class="crit-divider"></view>
+          <text class="crit-body">{{item.cardSummary}}</text>
+        </view>
+        <view wx:if="{{!critReady && !critErr}}" class="tab-empty">
+          <text class="tab-empty-text">加载中…</text>
+        </view>
       </view>
-      <view
-        wx:if="{{header.tabSummary.hasOriginal}}"
-        class="bd-original-cta"
-        bindtap="goOriginal"
-        hover-class="bd-original-cta-hover"
-      >
-        <view class="bd-ico bd-ico-book"></view>
-        <text class="bd-original-txt">查看 24 史原文对照</text>
-      </view>
-    </block>
-    <view wx:else class="bd-muted bd-loading">加载中…</view>
-  </view>
 
-  <!-- 关系 -->
-  <view class="bd-panel bd-panel--graph" wx:elif="{{tab=='relations'}}">
-    <view wx:if="{{graphErr}}" class="locked">{{graphErr}}</view>
-    <view wx:elif="{{graphReady}}" class="bd-graph-shell">
-      <view class="bd-graph-canvas-box">
-        <relation-graph-canvas
-          wx:if="{{graph.nodes.length}}"
-          id="bdRelationGraph"
-          class="bd-graph-canvas"
-          graph="{{graph}}"
-          bind:nodeTap="onGraphNodeTap"
-          bind:zoomChange="onGraphZoomChange"
-        />
-        <view wx:else class="bd-graph-empty bd-muted">暂无关系图谱</view>
-      </view>
-    </view>
-    <view wx:else class="bd-muted bd-loading">加载中…</view>
-    <view wx:if="{{tab=='relations' && graph.nodes.length}}" class="bd-graph-zoom-bar" catchtouchmove="noop">
-      <view class="bd-graph-zoom-btn" bindtap="onGraphZoomOut" hover-class="bd-graph-zoom-btn-hover">−</view>
-      <text class="bd-graph-zoom-label">{{graphScaleLabel}}</text>
-      <view class="bd-graph-zoom-btn" bindtap="onGraphZoomIn" hover-class="bd-graph-zoom-btn-hover">+</view>
-    </view>
-  </view>
-
-  <!-- 评述 -->
-  <view class="bd-panel bd-panel--reviews" wx:elif="{{tab=='reviews'}}">
-    <view wx:if="{{critErr}}" class="locked">{{critErr}}</view>
-    <view wx:elif="{{critReady && critiques.length}}" class="bd-critique-list">
-      <view
-        class="bd-critique-card"
-        wx:for="{{critiques}}"
-        wx:key="_k"
-        bindtap="onCritiqueTap"
-        data-idx="{{index}}"
-        hover-class="bd-critique-card-hover"
-      >
-        <view class="bd-critique-head">
-          <view class="bd-critique-avatar">{{item.avatarLetter}}</view>
-          <text class="bd-critique-author">{{item.displayAuthor}}</text>
-          <view class="bd-critique-meta-wrap">
-            <text class="bd-critique-era">{{item.eraMeta}}</text>
-            <text class="bd-critique-chev">›</text>
+      <!-- Tab 3：见证 -->
+      <view wx:if="{{tab === 'relics'}}" class="box-tab-content">
+        <view wx:if="{{relicErr}}" class="tab-empty">
+          <text class="tab-empty-text">{{relicErr}}</text>
+        </view>
+        <view wx:elif="{{relicReady && !relics.length}}" class="tab-empty">
+          <text class="tab-empty-text">暂无文物数据</text>
+        </view>
+        <view
+          wx:for="{{relics}}"
+          wx:key="name"
+          wx:for-index="ri"
+          class="relic-card card-paper"
+          bindtap="onRelicTap"
+          data-idx="{{ri}}"
+        >
+          <view class="relic-head">
+            <view class="relic-thumb muted">
+              <image wx:if="{{item.imageUrl}}" class="relic-thumb-img" src="{{item.imageUrl}}" mode="aspectFill" />
+              <text wx:else>{{item.thumbLabel}}</text>
+            </view>
+            <view class="relic-info">
+              <view class="relic-name-row">
+                <text class="relic-name">{{item.name}}</text>
+              </view>
+              <text class="relic-summary muted">{{item.summary}}</text>
+              <text class="relic-location accent">◎ {{item.location}}</text>
+            </view>
+            <text class="chev muted">›</text>
           </view>
         </view>
-        <view class="bd-critique-quote">{{item.bodyQuote}}</view>
-        <view wx:if="{{item.source}}" class="bd-critique-source">{{item.source}}</view>
-      </view>
-    </view>
-    <view wx:elif="{{critReady}}" class="bd-muted bd-empty-copy">暂无评述</view>
-    <view wx:else class="bd-muted bd-loading">加载中…</view>
-  </view>
-
-  <!-- 见证 -->
-  <view class="bd-panel bd-panel--witness" wx:elif="{{tab=='relics'}}">
-    <view wx:if="{{relicErr}}" class="locked">{{relicErr}}</view>
-    <view wx:elif="{{relicReady && relics.length}}" class="bd-witness-list">
-      <view
-        class="bd-witness-card"
-        wx:for="{{relics}}"
-        wx:for-index="ri"
-        wx:key="ri"
-        bindtap="onRelicTap"
-        data-idx="{{ri}}"
-        hover-class="bd-witness-card-hover"
-      >
-        <view class="bd-witness-thumb-wrap">
-          <image wx:if="{{item.imageUrl}}" class="bd-witness-thumb-img" src="{{item.imageUrl}}" mode="aspectFill" />
-          <view wx:else class="bd-witness-thumb-text">{{item.thumbLabel}}</view>
+        <view wx:if="{{!relicReady && !relicErr}}" class="tab-empty">
+          <text class="tab-empty-text">加载中…</text>
         </view>
-        <view class="bd-witness-main">
-          <view class="bd-witness-top">
-            <view class="bd-witness-name">{{item.name}}</view>
-            <view class="bd-witness-teaser">{{item.teaser}}</view>
-          </view>
-          <view class="bd-witness-museum">
-            <text class="bd-witness-museum-icon">博</text>
-            <text class="bd-witness-museum-text">{{item.museum}}</text>
-          </view>
-        </view>
-        <view class="bd-witness-chev">›</view>
       </view>
-    </view>
-    <view wx:elif="{{relicReady}}" class="bd-muted bd-empty-copy">暂无见证</view>
-    <view wx:else class="bd-muted bd-loading">加载中…</view>
-  </view>
 
-  <!-- 详情 Tab 底部四宫格 -->
-  <view wx:if="{{tab=='content' && header}}" class="box-bottom-bar">
-    <view class="box-bottom-item" bindtap="goOriginal">
-      <text class="box-bottom-icon">📜</text>
-      <text class="box-bottom-label">原文</text>
-    </view>
-    <view class="box-bottom-item" bindtap="onPlayIntro">
-      <text class="box-bottom-icon">▶</text>
-      <text class="box-bottom-label">播放</text>
-    </view>
-    <view class="box-bottom-item" bindtap="toggleFav">
-      <text class="box-bottom-icon">{{isFav ? '♥' : '♡'}}</text>
-      <text class="box-bottom-label {{isFav ? 'box-bottom-label--active' : ''}}">收藏</text>
-    </view>
-    <view class="box-bottom-item" bindtap="onShareTap">
-      <text class="box-bottom-icon">↗</text>
-      <text class="box-bottom-label">分享</text>
-    </view>
-  </view>
-
-  <!-- 音频播放浮层 -->
-  <view class="box-audio-overlay {{audioOpen ? 'box-audio-overlay--open' : ''}}" hidden="{{!audioOpen}}">
-    <view class="box-audio-top">
-      <view class="box-audio-back" bindtap="toggleAudioOverlay">返回正文</view>
-      <text class="box-audio-mode-title">音频播放</text>
-      <view class="box-audio-top-spacer"></view>
-    </view>
-    <view class="box-audio-cover">朗读 · 史略解说</view>
-    <view class="box-audio-scrub">
-      <view class="box-audio-scrub-track">
-        <view class="box-audio-scrub-fill" style="width: {{audioProgress}}%;"></view>
-      </view>
-      <view class="box-audio-time-row">
-        <text>{{audioCurrentTime}}</text>
-        <text>{{audioDuration}}</text>
-      </view>
-    </view>
-    <view class="box-audio-play-row">
-      <view class="box-audio-play" bindtap="toggleAudioPlayback">{{narrationState=='playing' ? '⏸' : '▶'}}</view>
-    </view>
-    <scroll-view class="box-audio-text" scroll-y show-scrollbar="{{false}}">
-      <view wx:for="{{detailParagraphs}}" wx:key="*this" class="box-audio-para">{{item}}</view>
-      <view wx:if="{{!detailParagraphs.length && header.box.blurb}}" class="box-audio-para">{{header.box.blurb}}</view>
+      <view wx:if="{{tab !== 'relations'}}" style="height: 96rpx;"></view>
     </scroll-view>
-  </view>
+
+    <!-- 关系 Tab 缩放栏 -->
+    <view wx:if="{{tab === 'relations' && graph.nodes.length}}" class="graph-zoom-bar">
+      <view class="graph-zoom-btn" bindtap="onGraphZoomOut">−</view>
+      <text class="graph-zoom-label">{{graphScaleLabel}}</text>
+      <view class="graph-zoom-btn" bindtap="onGraphZoomIn">+</view>
+    </view>
+
+    <!-- AssistiveTouch 漂浮操作点（仅详情 Tab） -->
+    <view
+      wx:if="{{tab === 'content'}}"
+      class="assist-layer"
+      style="left: {{assistX}}px; top: {{assistY}}px;"
+    >
+      <view
+        wx:for="{{assistMenuItems}}"
+        wx:key="key"
+        class="assist-action {{assistOpen ? 'assist-action--open' : ''}}"
+        style="transform: translate({{item.dx}}px, {{item.dy}}px); transition-delay: {{item.delay}}ms;"
+        catchtap="onAssistAction"
+        data-action="{{item.key}}"
+      >
+        <view class="assist-action-btn">
+          <image
+            wx:if="{{item.key !== 'fav'}}"
+            class="assist-action-icon"
+            src="{{item.icon}}"
+            mode="aspectFit"
+          />
+          <image
+            wx:else
+            class="assist-action-icon"
+            src="{{isFav ? '/images/icons/shoucangB.png' : '/images/icons/shoucangA.png'}}"
+            mode="aspectFit"
+          />
+          <text class="assist-action-label">{{item.label}}</text>
+        </view>
+      </view>
+      <view
+        class="assist-dot {{assistOpen ? 'assist-dot--open' : ''}} {{assistDragging ? 'assist-dot--dragging' : ''}}"
+        catchtouchstart="onAssistTouchStart"
+        catchtouchmove="onAssistTouchMove"
+        catchtouchend="onAssistTouchEnd"
+      ></view>
+    </view>
+
+    <!-- 音频播放浮层 -->
+    <view class="box-audio-overlay {{audioOpen ? 'box-audio-overlay--open' : ''}}" hidden="{{!audioOpen}}">
+      <view class="box-audio-top">
+        <view class="box-audio-back" bindtap="toggleAudioOverlay">返回正文</view>
+        <text class="box-audio-mode-title">音频播放</text>
+        <view class="box-audio-top-spacer"></view>
+      </view>
+      <view class="box-audio-cover">朗读 · 史略解说</view>
+      <view class="box-audio-scrub">
+        <view class="box-audio-scrub-track">
+          <view class="box-audio-scrub-fill" style="width: {{audioProgress}}%;"></view>
+        </view>
+        <view class="box-audio-time-row">
+          <text>{{audioCurrentTime}}</text>
+          <text>{{audioDuration}}</text>
+        </view>
+      </view>
+      <view class="box-audio-play-row">
+        <view class="box-audio-play" bindtap="toggleAudioPlayback">{{narrationState === 'playing' ? '⏸' : '▶'}}</view>
+      </view>
+      <scroll-view class="box-audio-text" scroll-y show-scrollbar="{{false}}">
+        <view wx:for="{{detailParagraphs}}" wx:key="*this" class="box-audio-para">{{item}}</view>
+        <view wx:if="{{!detailParagraphs.length && header.box.blurb}}" class="box-audio-para">{{header.box.blurb}}</view>
+      </scroll-view>
+    </view>
+  </block>
 </view>

@@ -2,6 +2,19 @@ const protoPage = require('../../behaviors/proto-page.js')
 const { navBarPx } = require('../../utils/layout.js')
 const { CIV_TABS, buildRows, initialCiv, buildAllExpanded, toggleDynastyExpanded } = require('../../data/mock-home-matrix.js')
 const { fetchHomeMatrixData } = require('../../utils/matrix-cloud.js')
+const dynastyRaw = require('../../data/dynasty-data.js')
+
+const DYNASTY_ID_BY_NAME = (() => {
+  const map = {}
+  for (const d of dynastyRaw || []) {
+    const id = d.dynastyId
+    if (!id) continue
+    if (d.name) map[String(d.name).trim()] = id
+    if (d.dynasty) map[String(d.dynasty).trim()] = id
+    if (d.dynasty2) map[String(d.dynasty2).trim()] = id
+  }
+  return map
+})()
 
 // ─────────────────────────────────────────────────────────────────────────────
 // 【旧版】横向滑动模式常量（stackMode=false 时使用）
@@ -566,22 +579,40 @@ Page({
 
   preventMove() {},
 
+  _resolveDynastyId(name) {
+    const k = String(name || '').trim()
+    if (!k) return ''
+    if (DYNASTY_ID_BY_NAME[k]) return DYNASTY_ID_BY_NAME[k]
+    for (const [title, id] of Object.entries(DYNASTY_ID_BY_NAME)) {
+      if (title.includes(k) || k.includes(title)) return id
+    }
+    return ''
+  },
+
   onCardTap(e) {
-    const { dynasty, anchorYear } = e.currentTarget.dataset
-    if (!dynasty) return
-    this._openDynastyDetail(dynasty, anchorYear)
+    const ds = e.currentTarget.dataset || {}
+    if (!ds.dynasty && !ds.dynastyId) return
+    this._openDynastyDetail(ds.dynasty, ds.anchorYear, ds.dynastyId)
   },
 
   onMiniTap(e) {
-    const { dynasty, anchorYear } = e.currentTarget.dataset
-    if (!dynasty) return
-    this._openDynastyDetail(dynasty, anchorYear)
+    const ds = e.currentTarget.dataset || {}
+    if (!ds.dynasty && !ds.dynastyId) return
+    this._openDynastyDetail(ds.dynasty, ds.anchorYear, ds.dynastyId)
   },
 
-  _openDynastyDetail(dynasty, anchorYear) {
-    let url = `/pages/dynasty-detail/dynasty-detail?dynasty=${encodeURIComponent(dynasty)}`
+  _openDynastyDetail(dynasty, anchorYear, dynastyId) {
+    const id = dynastyId || this._resolveDynastyId(dynasty)
+    if (!id) {
+      wx.showToast({ title: '未找到朝代 ID', icon: 'none' })
+      return
+    }
+    let url = `/pages/dynasty-detail/dynasty-detail?unitId=${encodeURIComponent(id)}`
+    if (dynasty) {
+      url += `&dynasty=${encodeURIComponent(String(dynasty))}`
+    }
     if (anchorYear != null && anchorYear !== '') {
-      url += `&anchorYear=${encodeURIComponent(anchorYear)}`
+      url += `&anchorYear=${encodeURIComponent(String(anchorYear))}`
     }
     wx.navigateTo({ url })
   },

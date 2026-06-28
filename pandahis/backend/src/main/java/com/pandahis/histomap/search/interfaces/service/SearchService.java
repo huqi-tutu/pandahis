@@ -57,19 +57,19 @@ public class SearchService {
 
     // boxes
     List<Map<String, Object>> boxRows = jdbcTemplate.queryForList(
-        "SELECT b.id,b.title,b.category_key,b.start_year,b.business_code,b.blurb,u.name AS unit_name,u.ruler_name,u.civilization_l1_id "
-            + "FROM historical_box b JOIN historical_unit u ON u.id=b.unit_id "
-            + "WHERE b.status=1 AND (b.title LIKE ? ESCAPE '\\\\' OR b.business_code LIKE ? ESCAPE '\\\\' OR b.blurb LIKE ? ESCAPE '\\\\') "
+        "SELECT b.id,b.title,b.category_key,b.start_year,b.parent_entry_id,b.blurb,u.name AS unit_name,u.ruler_name,u.civilization_l1_id "
+            + "FROM historical_box b LEFT JOIN historical_emperor u ON u.id=b.emperor_id "
+            + "WHERE b.status=1 AND (b.id LIKE ? ESCAPE '\\\\' OR b.title LIKE ? ESCAPE '\\\\' OR b.parent_entry_id LIKE ? ESCAPE '\\\\' OR b.blurb LIKE ? ESCAPE '\\\\') "
             + "ORDER BY b.importance_level DESC, b.start_year ASC LIMIT 100",
         like, like, like
     );
 
     // units
     List<Map<String, Object>> unitRows = jdbcTemplate.queryForList(
-        "SELECT id,name,ruler_name,civilization_l1_id,start_year FROM historical_unit "
-            + "WHERE status=1 AND (name LIKE ? ESCAPE '\\\\' OR ruler_name LIKE ? ESCAPE '\\\\' OR dynasty_name LIKE ? ESCAPE '\\\\' OR era_name LIKE ? ESCAPE '\\\\') "
-            + "ORDER BY start_year ASC LIMIT 100",
-        like, like, like, like
+        "SELECT id,name,ruler_name,civilization_l1_id,enthronement_year FROM historical_emperor "
+            + "WHERE status=1 AND (name LIKE ? ESCAPE '\\\\' OR ruler_name LIKE ? ESCAPE '\\\\' OR dynasty_name LIKE ? ESCAPE '\\\\' OR era_name LIKE ? ESCAPE '\\\\' OR tags LIKE ? ESCAPE '\\\\') "
+            + "ORDER BY enthronement_year ASC LIMIT 100",
+        like, like, like, like, like
     );
 
     List<SearchResultDTO.Item> items = new ArrayList<>();
@@ -77,10 +77,16 @@ public class SearchService {
       String id = (String) r.get("id");
       String title = (String) r.get("title");
       String unitName = (String) r.get("unit_name");
+      if (unitName == null) unitName = "";
       String cat = (String) r.get("category_key");
-      long civId = ((Number) r.get("civilization_l1_id")).longValue();
-      String civName = jdbcTemplate.queryForObject("SELECT display_name FROM civilization_l1 WHERE id=?", String.class, civId);
-      String pathText = (civName == null ? "" : civName) + " › " + unitName + " › " + categoryName(cat);
+      Object civObj = r.get("civilization_l1_id");
+      String civName = "";
+      if (civObj != null) {
+        long civId = ((Number) civObj).longValue();
+        civName = jdbcTemplate.queryForObject("SELECT display_name FROM civilization_l1 WHERE id=?", String.class, civId);
+      }
+      if (civName == null) civName = "";
+      String pathText = civName.isEmpty() ? (unitName + " › " + categoryName(cat)) : (civName + " › " + unitName + " › " + categoryName(cat));
       String blurb = r.get("blurb") != null ? String.valueOf(r.get("blurb")) : "";
       items.add(new SearchResultDTO.Item(
           "box",
@@ -125,6 +131,7 @@ public class SearchService {
       case "minlu" -> "民录";
       case "dianzhi" -> "典制";
       case "shilue" -> "事略";
+      case "lunzhu" -> "论著";
       default -> key;
     };
   }

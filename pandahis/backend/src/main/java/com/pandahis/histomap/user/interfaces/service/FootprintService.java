@@ -31,7 +31,7 @@ public class FootprintService {
             + "u.name AS unit_name, u.dynasty_name, c.display_name AS civ_name "
             + "FROM user_footprint f "
             + "JOIN historical_box b ON b.id=f.box_id "
-            + "JOIN historical_unit u ON u.id=b.unit_id "
+            + "LEFT JOIN historical_emperor u ON u.id=b.emperor_id "
             + "JOIN civilization_l1 c ON c.id=u.civilization_l1_id "
             + "WHERE f.user_id=? "
             + "ORDER BY f.last_viewed_at DESC "
@@ -69,6 +69,7 @@ public class FootprintService {
       case "minlu" -> "民录";
       case "dianzhi" -> "典制";
       case "shilue" -> "事略";
+      case "lunzhu" -> "论著";
       default -> key;
     };
   }

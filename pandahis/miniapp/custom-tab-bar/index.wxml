@@ -1,19 +1,19 @@
 <view class="tabbar-safe">
   <view class="tabbar">
     <view class="item {{selected==0?'active':''}}" bindtap="onTap" data-index="0">
-      <image class="icon-img" src="/images/icons/tupu.png" mode="aspectFit" />
+      <image class="icon-img" src="/images/icons/{{selected==0?'tupu_jihuo':'tupu'}}.png" mode="aspectFit" />
       <view class="text">图谱</view>
     </view>
     <view class="item {{selected==1?'active':''}}" bindtap="onTap" data-index="1">
-      <image class="icon-img" src="/images/icons/sousuo.png" mode="aspectFit" />
+      <image class="icon-img" src="/images/icons/{{selected==1?'sousuo_jihuo':'sousuo'}}.png" mode="aspectFit" />
       <view class="text">搜索</view>
     </view>
     <view class="item {{selected==2?'active':''}}" bindtap="onTap" data-index="2">
-      <image class="icon-img" src="/images/icons/huiyuan.png" mode="aspectFit" />
+      <image class="icon-img" src="/images/icons/{{selected==2?'huiyuan_jihuo':'huiyuan'}}.png" mode="aspectFit" />
       <view class="text">会员</view>
     </view>
     <view class="item {{selected==3?'active':''}}" bindtap="onTap" data-index="3">
-      <image class="icon-img" src="/images/icons/wode.png" mode="aspectFit" />
+      <image class="icon-img" src="/images/icons/{{selected==3?'wode_jihuo':'wode'}}.png" mode="aspectFit" />
       <view class="text">我的</view>
     </view>
   </view>

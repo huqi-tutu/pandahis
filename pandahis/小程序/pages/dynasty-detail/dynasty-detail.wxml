@@ -16,7 +16,13 @@
   </template>
 
   <!-- 导航栏 -->
-  <proto-nav title="{{dynasty.title}}" show-back="{{true}}" />
+  <proto-nav title="{{dynasty.title || '朝代详情'}}" show-back="{{true}}" />
+
+  <view wx:if="{{loadError}}" class="unit-intro" style="padding: 48rpx 32rpx; text-align: center; color: #6C757D;">
+    <text>{{loadError}}</text>
+  </view>
+
+  <block wx:if="{{dynasty && !loadError}}">
 
   <!-- 并发政权 tab 栏 -->
   <view class="unit-civ-tabs" style="top: {{headerPadPx}}px;">
@@ -270,6 +276,8 @@
 
     <view style="height: 120rpx;"></view>
   </scroll-view>
+
+  </block>
 
   <!-- ── 超出史略浮层（底部抽屉） ── -->
   <view wx:if="{{overlayVisible}}" class="more-overlay-backdrop" bindtap="hideOverlay">

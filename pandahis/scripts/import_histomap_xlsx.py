@@ -51,6 +51,7 @@ SHILUE_KIND_TO_CATEGORY = {
     "典制": "dianzhi",
     "事略": "shilue",
     "民录": "minlu",
+    "论著": "lunzhu",
 }
 
 # Excel「一级文明归属」常见写法 -> civilization_l1.id（与 data.sql 18 条一致）

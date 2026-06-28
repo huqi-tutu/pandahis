@@ -1,22 +1,37 @@
-<navigation-bar title="邀请加入" back="{{true}}" color="black" background="transparent"></navigation-bar>
+<view class="page-shell">
+  <proto-nav title="接受邀请" show-back="{{true}}"></proto-nav>
 
-<view class="page">
-  <glass-card className="card">
-    <view class="title">欢迎通过好友邀请来到历史图谱</view>
-    <view class="line text3" wx:if="{{hasPendingInvite}}">已记录好友邀请，登录后将自动绑定（仅新用户首次注册生效）。</view>
-    <view class="line text3" wx:else>通过分享进入时邀请码会自动保存；也可手动填写后登录。</view>
-    <view class="bind-field">
-      <view class="bind-label">好友邀请码（选填）</view>
-      <input
-        class="bind-input"
-        value="{{inviteCodeInput}}"
-        maxlength="32"
-        placeholder="输入邀请码"
-        bindinput="onInviteCodeInput"
-      />
+  <view class="page" style="padding-top: {{headerPadPx}}px;">
+    <view class="hero">
+      <view class="hero-icon">
+        <text class="hero-glyph">史</text>
+      </view>
+      <view class="hero-title">好友邀你一起读史</view>
+      <view class="hero-sub muted">纵览千年 · 横跨文明</view>
     </view>
-    <view class="btnPrimary" bindtap="loginHere">{{loggingIn ? '登录中…' : '微信登录并加入'}}</view>
-    <view class="btnGhost" bindtap="goLogin">前往登录页</view>
-    <view class="btnGhost" bindtap="goHome">先逛逛</view>
-  </glass-card>
+
+    <view class="card card-paper">
+      <view class="title">欢迎通过好友邀请来到历史图谱</view>
+      <view class="line muted" wx:if="{{hasPendingInvite}}">已记录好友邀请，登录后将自动绑定（仅新用户首次注册生效）。</view>
+      <view class="line muted" wx:else>通过分享进入时邀请码会自动保存；也可手动填写后登录。</view>
+
+      <view class="bind-field">
+        <view class="bind-label muted">好友邀请码（选填）</view>
+        <view class="input-wrap">
+          <input
+            class="bind-input"
+            value="{{inviteCodeInput}}"
+            maxlength="32"
+            placeholder="输入邀请码"
+            placeholder-class="input-placeholder"
+            bindinput="onInviteCodeInput"
+          />
+        </view>
+      </view>
+
+      <view class="btn-primary-cta" bindtap="loginHere">{{loggingIn ? '登录中…' : '微信登录并加入'}}</view>
+      <view class="btn-ghost" bindtap="goLogin">前往登录页</view>
+      <view class="btn-ghost" bindtap="goHome">先逛逛</view>
+    </view>
+  </view>
 </view>

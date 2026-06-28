@@ -27,27 +27,38 @@ function mapCritiqueItems(raw) {
         const content = String(it.content || '').trim();
         const blurb = String(it.blurb || '').trim();
         const bodyQuote = content || blurb;
+        const source = String(it.source || it.book || '').trim();
+        const cardTitle = title || displayAuthor;
+        const cardMeta = [author, eraMeta, source].filter(Boolean).join(' · ');
         return {
             ...it,
             displayAuthor,
             eraMeta,
             bodyQuote,
             avatarLetter: displayAuthor.charAt(0) || '评',
+            cardTitle,
+            cardMeta,
+            cardSummary: bodyQuote,
             _k: idx,
         };
     });
 }
 function mapRelicItems(raw) {
-    return (raw || []).slice(0, 3).map((it) => ({
-        name: it.name || '',
-        imageUrl: it.imageUrl,
-        summary: it.summary,
-        description: it.description,
-        museum: it.museum || '馆藏待补充',
-        priorityCode: it.priorityCode,
-        thumbLabel: relicThumbLabel(it.name || ''),
-        teaser: String(it.summary || it.description || '').trim(),
-    }));
+    return (raw || []).slice(0, 3).map((it) => {
+        const teaser = String(it.summary || it.description || '').trim();
+        const museum = it.museum || '馆藏待补充';
+        return {
+            name: it.name || '',
+            imageUrl: it.imageUrl,
+            summary: teaser,
+            description: it.description,
+            museum,
+            priorityCode: it.priorityCode,
+            thumbLabel: relicThumbLabel(it.name || ''),
+            teaser,
+            location: museum,
+        };
+    });
 }
 function formatDetailMetaLine(subText) {
     return String(subText || '')
@@ -81,12 +92,61 @@ function splitDetailParagraphs(md) {
     const parts = raw.split(/\n{2,}/).map((s) => s.trim()).filter(Boolean);
     return parts.length ? parts : [raw];
 }
+const ASSIST_ACTION_DEFS = [
+    { key: 'original', label: '原文', icon: '/images/icons/yuanwen.png', angle: 5 },
+    { key: 'play', label: '播放', icon: '/images/icons/bofang.png', angle: 42 },
+    { key: 'fav', label: '收藏', icon: '/images/icons/shoucangA.png', angle: 79 },
+    { key: 'share', label: '分享', icon: '/images/icons/fenxiang.png', angle: 116 },
+];
+function buildAssistMetrics(sys, bodyTop) {
+    const margin = Math.round(32 * (sys.windowWidth / 750));
+    const dotSize = Math.round(88 * (sys.windowWidth / 750));
+    const menuRadius = Math.round(228 * (sys.windowWidth / 750));
+    return {
+        margin,
+        menuRadius,
+        minX: margin,
+        minY: bodyTop + margin,
+        maxX: sys.windowWidth - margin - dotSize,
+        maxY: sys.windowHeight - margin - dotSize,
+    };
+}
+function defaultAssistPosition(metrics, sys) {
+    const x = Math.round(sys.windowWidth * 0.25);
+    const availableH = sys.windowHeight - metrics.minY;
+    const y = Math.round(metrics.minY + availableH * 0.72);
+    return clampAssistPosition(x, y, metrics);
+}
+function clampAssistPosition(x, y, metrics) {
+    return {
+        x: Math.min(metrics.maxX, Math.max(metrics.minX, x)),
+        y: Math.min(metrics.maxY, Math.max(metrics.minY, y)),
+    };
+}
+function buildAssistMenuItems(open, menuRadius) {
+    return ASSIST_ACTION_DEFS.map((def, idx) => {
+        const rad = (def.angle * Math.PI) / 180;
+        const dx = open ? Math.round(Math.cos(rad) * menuRadius) : 0;
+        const dy = open ? Math.round(-Math.sin(rad) * menuRadius) : 0;
+        return {
+            key: def.key,
+            label: def.label,
+            icon: def.icon,
+            dx,
+            dy,
+            delay: open ? idx * 30 : 0,
+        };
+    });
+}
 Page({
     data: {
         boxId: '',
         navTitle: '史略盒子',
         header: null,
-        stickyTabsTopPx: 88,
+        tabTop: 88,
+        bodyTop: 160,
+        graphCanvasH: 400,
+        critColors: ['#92ADA4', '#C9825A', '#7BA87B', '#B85A5A', '#84572F', '#5A8FA8'],
         tab: 'content',
         isFav: false,
         detailMd: '',
@@ -108,9 +168,22 @@ Page({
         critFetched: false,
         relicFetched: false,
         narrationState: 'idle',
+        audioOpen: false,
+        audioProgress: 0,
+        audioCurrentTime: '0:00',
+        audioDuration: '0:00',
+        graphScaleLabel: '100%',
+        assistOpen: false,
+        assistDragging: false,
+        assistX: 24,
+        assistY: 560,
+        assistMenuItems: [],
     },
+    _assistMetrics: null,
+    _assistTouch: null,
     onUnload() {
         (0, box_narration_1.stopNarration)();
+        this.setData({ audioOpen: false });
     },
     onShareAppMessage() {
         var _a;
@@ -127,10 +200,24 @@ Page({
         const boxId = query.boxId || query.id;
         if (!boxId)
             return;
-        const menu = wx.getMenuButtonBoundingClientRect();
         const sys = wx.getSystemInfoSync();
-        const stickyTabsTopPx = Math.max(Math.ceil(menu.bottom), (sys.statusBarHeight || 0) + 44);
-        this.setData({ boxId, stickyTabsTopPx });
+        const navH = Math.round(88 * (sys.windowWidth / 750));
+        const tabTop = (sys.statusBarHeight || 20) + navH;
+        const tabBarPx = Math.round(72 * (sys.windowWidth / 750));
+        const bodyTop = tabTop + tabBarPx;
+        const graphCanvasH = Math.max(400, Math.floor((sys.windowHeight || 667) - bodyTop - 40));
+        const assistMetrics = buildAssistMetrics(sys, bodyTop);
+        const assistPos = defaultAssistPosition(assistMetrics, sys);
+        this._assistMetrics = assistMetrics;
+        this.setData({
+            boxId,
+            tabTop,
+            bodyTop,
+            graphCanvasH,
+            assistX: assistPos.x,
+            assistY: assistPos.y,
+            assistMenuItems: buildAssistMenuItems(false, assistMetrics.menuRadius),
+        });
         try {
             const res = await (0, api_1.request)(`/boxes/${(0, encode_path_segment_1.encodePathSegment)(boxId)}`);
             const header = res.data;
@@ -237,6 +324,7 @@ Page({
                     graphErr: '',
                     graphReady: true,
                     graphFetched: true,
+                    graphScaleLabel: '100%',
                 });
             }
             catch (e) {
@@ -253,7 +341,7 @@ Page({
             if (this.data.critFetched)
                 return;
             try {
-                const res = await (0, api_1.request)(`/boxes/${enc}/critiques`, { auth: (0, api_1.hasToken)() });
+                const res = await (0, api_1.request)(`/boxes/${enc}/critiques`);
                 this.setData({
                     critiques: mapCritiqueItems(res.data.items || []),
                     critErr: '',
@@ -283,7 +371,7 @@ Page({
             if (this.data.relicFetched)
                 return;
             try {
-                const res = await (0, api_1.request)(`/boxes/${enc}/relics`, { auth: (0, api_1.hasToken)() });
+                const res = await (0, api_1.request)(`/boxes/${enc}/relics`);
                 const items = mapRelicItems(res.data.items || []);
                 this.setData({ relics: items, relicErr: '', relicReady: true, relicFetched: true });
             }
@@ -305,17 +393,79 @@ Page({
             }
         }
     },
-    setTab(e) {
-        var _a, _b, _c, _d, _e, _f;
-        const tab = e.currentTarget.dataset.tab;
-        const h = this.data.header;
-        if (tab === 'reviews' && ((_c = (_b = (_a = h === null || h === void 0 ? void 0 : h.access) === null || _a === void 0 ? void 0 : _a.tabs) === null || _b === void 0 ? void 0 : _b.critique) === null || _c === void 0 ? void 0 : _c.locked)) {
-            this.promptLockedTab(h.access.tabs.critique);
+    setAssistOpen(open) {
+        const metrics = this._assistMetrics;
+        const menuRadius = (metrics === null || metrics === void 0 ? void 0 : metrics.menuRadius) ?? 60;
+        this.setData({
+            assistOpen: open,
+            assistMenuItems: buildAssistMenuItems(open, menuRadius),
+        });
+    },
+    onAssistTouchStart(e) {
+        const touch = e.touches[0];
+        if (!touch)
+            return;
+        this._assistTouch = {
+            startX: touch.clientX,
+            startY: touch.clientY,
+            originX: this.data.assistX,
+            originY: this.data.assistY,
+            moved: false,
+        };
+        this.setData({ assistDragging: false });
+    },
+    onAssistTouchMove(e) {
+        const touch = e.touches[0];
+        const state = this._assistTouch;
+        const metrics = this._assistMetrics;
+        if (!touch || !state || !metrics)
+            return;
+        const dx = touch.clientX - state.startX;
+        const dy = touch.clientY - state.startY;
+        if (!state.moved && Math.hypot(dx, dy) < 8)
+            return;
+        state.moved = true;
+        const next = clampAssistPosition(state.originX + dx, state.originY + dy, metrics);
+        if (this.data.assistOpen) {
+            this.setAssistOpen(false);
+        }
+        this.setData({ assistDragging: true, assistX: next.x, assistY: next.y });
+    },
+    onAssistTouchEnd() {
+        const state = this._assistTouch;
+        this._assistTouch = null;
+        if (!state)
+            return;
+        if (state.moved) {
+            this.setData({ assistDragging: false });
             return;
         }
-        if (tab === 'relics' && ((_f = (_e = (_d = h === null || h === void 0 ? void 0 : h.access) === null || _d === void 0 ? void 0 : _d.tabs) === null || _e === void 0 ? void 0 : _e.relic) === null || _f === void 0 ? void 0 : _f.locked)) {
-            this.promptLockedTab(h.access.tabs.relic);
+        this.setAssistOpen(!this.data.assistOpen);
+        this.setData({ assistDragging: false });
+    },
+    onAssistAction(e) {
+        const action = e.currentTarget.dataset.action;
+        this.setAssistOpen(false);
+        if (action === 'original') {
+            this.goOriginal();
             return;
+        }
+        if (action === 'play') {
+            void this.onPlayIntro();
+            return;
+        }
+        if (action === 'fav') {
+            this.toggleFav();
+            return;
+        }
+        if (action === 'share') {
+            this.onShareTap();
+        }
+    },
+    setTab(e) {
+        const tab = e.currentTarget.dataset.tab;
+        if (tab !== 'content' && this.data.assistOpen) {
+            this.setAssistOpen(false);
         }
         this.setData({ tab });
         void this.ensureTab(tab);
@@ -352,6 +502,7 @@ Page({
         var _a, _b;
         const cur = (0, box_narration_1.getNarrationState)();
         if (cur === 'playing' || cur === 'paused') {
+            this.setData({ audioOpen: true });
             (0, box_narration_1.toggleNarrationPlayback)();
             this.setData({ narrationState: (0, box_narration_1.getNarrationState)() });
             return;
@@ -380,12 +531,22 @@ Page({
         try {
             wx.showLoading({ title: '正在准备朗读', mask: true });
             loadingVisible = true;
+            this.setData({ audioOpen: true, audioProgress: 0, audioCurrentTime: '0:00', audioDuration: '0:00' });
             await (0, box_narration_1.startNarration)(script, (s) => {
                 if (s === 'playing' && loadingVisible) {
                     wx.hideLoading();
                     loadingVisible = false;
                 }
+                if (s === 'idle') {
+                    this.setData({ audioOpen: false, audioProgress: 0 });
+                }
                 this.setData({ narrationState: s });
+            }, (p) => {
+                this.setData({
+                    audioProgress: p.progress,
+                    audioCurrentTime: p.current,
+                    audioDuration: p.duration,
+                });
             });
         }
         catch (e) {
@@ -397,6 +558,29 @@ Page({
             if (loadingVisible)
                 wx.hideLoading();
         }
+    },
+    toggleAudioOverlay() {
+        const open = !this.data.audioOpen;
+        if (!open) {
+            (0, box_narration_1.stopNarration)();
+            this.setData({ audioOpen: false, narrationState: 'idle', audioProgress: 0 });
+            return;
+        }
+        this.setData({ audioOpen: true });
+        if ((0, box_narration_1.getNarrationState)() === 'idle')
+            void this.onPlayIntro();
+    },
+    toggleAudioPlayback() {
+        (0, box_narration_1.toggleNarrationPlayback)();
+        this.setData({ narrationState: (0, box_narration_1.getNarrationState)() });
+    },
+    formatGraphScaleLabel(scale) {
+        return `${Math.round((scale || 1) * 100)}%`;
+    },
+    refreshGraphScaleLabel() {
+        const c = this.selectComponent('#bdRelationGraph');
+        const scale = (c === null || c === void 0 ? void 0 : c.getZoomScale) ? c.getZoomScale() : 1;
+        this.setData({ graphScaleLabel: this.formatGraphScaleLabel(scale) });
     },
     goOriginal() {
         var _a, _b;
@@ -426,16 +610,24 @@ Page({
         var _a;
         const c = this.selectComponent('#bdRelationGraph');
         (_a = c === null || c === void 0 ? void 0 : c.zoomIn) === null || _a === void 0 ? void 0 : _a.call(c);
+        this.refreshGraphScaleLabel();
     },
     onGraphZoomOut() {
         var _a;
         const c = this.selectComponent('#bdRelationGraph');
         (_a = c === null || c === void 0 ? void 0 : c.zoomOut) === null || _a === void 0 ? void 0 : _a.call(c);
+        this.refreshGraphScaleLabel();
     },
     onGraphZoomReset() {
         var _a;
         const c = this.selectComponent('#bdRelationGraph');
         (_a = c === null || c === void 0 ? void 0 : c.resetZoom) === null || _a === void 0 ? void 0 : _a.call(c);
+        this.refreshGraphScaleLabel();
+    },
+    onGraphZoomChange(e) {
+        var _a;
+        const scale = (_a = e.detail) === null || _a === void 0 ? void 0 : _a.scale;
+        this.setData({ graphScaleLabel: this.formatGraphScaleLabel(scale !== null && scale !== void 0 ? scale : 1) });
     },
     toggleFav() {
         if (!(0, api_1.hasToken)()) {
