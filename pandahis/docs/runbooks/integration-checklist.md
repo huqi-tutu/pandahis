@@ -31,7 +31,7 @@
 ### SCREEN02 历史单元详情 · 泳道矩阵
 
 - [ ] `GET /units/{unitId}` 返回 hero + relatedUnits + nextUnit
-- [ ] `GET /units/{unitId}/swim-matrix` 返回 5 lanes（君纪/士臣/典制/事略/民录）
+- [ ] `GET /units/{unitId}/swim-matrix` 返回 5 lanes（君王/士臣/典制/事略/民录）
 - [ ] 泳道 bar 含 `boxId/left/width/layout`；`hasMore` 时显示 +N
 - [ ] 小程序：三态 layout（shichen/continuous/isolated）渲染
 - [ ] 小程序：横向时间轴吸顶（`axisPinned`）
@@ -50,7 +50,7 @@
 
 - [ ] `GET /search/suggest` + `GET /search?q=`
 - [ ] 搜索 Tab → 独立 `search-result` 页
-- [ ] 结果页分类筛选（全部/君纪/士臣/典制/事略/民录）
+- [ ] 结果页分类筛选（全部/君王/士臣/典制/事略/民录）
 
 ### SCREEN09 我的
 

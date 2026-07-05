@@ -1,0 +1,18 @@
+{
+  "work": "01史记",
+  "updated_at": null,
+  "volumes": {
+    "001": {
+      "skeleton_file": "01史记_001_五帝本纪_skeleton.json",
+      "volume_name": "五帝本纪",
+      "overall": "not_started",
+      "blocked_reason": null,
+      "steps": {
+        "1": { "status": "pending", "at": null, "detail": null },
+        "2": { "status": "pending", "at": null, "detail": null },
+        "3": { "status": "pending", "at": null, "detail": null },
+        "4": { "status": "pending", "at": null, "detail": null }
+      }
+    }
+  }
+}
