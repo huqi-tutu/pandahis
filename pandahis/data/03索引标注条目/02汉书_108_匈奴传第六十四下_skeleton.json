@@ -1,0 +1,327 @@
+{
+  "volume": "匈奴传第六十四下",
+  "source_file": "02汉书_108_匈奴传第六十四下.txt",
+  "total_paragraphs": 30,
+  "volume_type": "纪传叙事",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [],
+      "exclude_reason": "篇内小标题"
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "匈奴",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "匈奴",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "匈奴",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "匈奴",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "匈奴",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "匈奴",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "匈奴",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "匈奴",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "匈奴",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "匈奴",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "匈奴",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "匈奴",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "匈奴",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "匈奴",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "匈奴",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "匈奴",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "匈奴",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "匈奴",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "匈奴",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "匈奴",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "匈奴",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "匈奴",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "匈奴",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "匈奴",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "匈奴",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "匈奴",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "匈奴",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [],
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HANSHU_108_01",
+      "史略名称": "匈奴",
+      "史略简介": "匈奴",
+      "原文字句": "呼韩邪单于归庭数月，罢兵使各归故地，乃收",
+      "史略分类": "蕃祚",
+      "主要史料出处": "《汉书·卷108·匈奴传第六十四下》",
+      "优先级": "P0",
+      "优先级判定理由": "匈奴为秦汉时期中原王朝最强大的北方游牧政权，长期与汉朝和战，构成《汉书》边疆民族叙事的核心，故列最高优先级。",
+      "史略开始年": -209,
+      "史略结束年": 91,
+      "四级帝王坐标": "汉武帝",
+      "paragraphs": [
+        {
+          "volume": "匈奴传第六十四下",
+          "paragraph_from": 3,
+          "paragraph_to": 29
+        }
+      ],
+      "_auto_filled": {
+        "年规则": "政权立国年 → 政权灭亡年",
+        "年规则备注": "针对【02汉书、匈奴传第六十四下、匈奴】：史略开始年=政权立国年，史略结束年=政权灭亡（或被灭、丧失独立）年。须据著作体例、卷名所指政权及史学界主流兴亡年代独立考订；勿用传主生卒，勿用「叙事跨度」代替政权起亡。脚本兜底仅在人名/政权表已录入时启用，且不得覆盖已有 _年LLM依据。",
+        "_年LLM依据": "冒顿单于于公元前209年杀父自立，建立匈奴政权；北匈奴于公元91年被东汉击败后西迁，匈奴政权终结。",
+        "_坐标主轴说明": "本传述匈奴自头曼至更始末三百余年史事，汉武帝时遣卫青、霍去病屡出塞征伐，取河南地、置河西四郡，漠北一战“匈奴远遁，而幕南无王庭”，为汉匈攻守势变之关键，故以武帝为坐标主轴。"
+      },
+      "五级细坐标": "汉书·卷108·蕃祚·01",
+      "六级段落锚点": "[P3-P29]",
+      "原文出处": "匈奴传第六十四下·P3-P29",
+      "一级文明坐标": "华夏",
+      "二级朝代坐标": "西汉",
+      "三级政权坐标": "西汉",
+      "文明ID": "HX",
+      "朝代ID": "CD_HX_XIHAN",
+      "政权ID": "ZQ_HX_XIHAN_XIHAN",
+      "帝王ID": "DW_HX_XIHAN_XIHAN_HANWUDI"
+    }
+  ],
+  "volume_subtype": "列传",
+  "volume_subtype_source": "llm_step1a",
+  "protagonist_count": 1,
+  "protagonist_count_source": "llm_step1a",
+  "protagonists_manifest": [
+    {
+      "name": "匈奴",
+      "category": "蕃祚",
+      "rationale": "《匈奴传》为《汉书》记述匈奴政权兴衰及其与汉关系的专篇。本卷为第六十四下，延续上卷叙事，主轴为匈奴单于及部族集体的蕃祚更替，而非汉朝帝王或将领。"
+    }
+  ],
+  "knowledge_provenance": {
+    "step1": {
+      "source": "llm",
+      "at": "2026-07-04T17:46:40Z",
+      "session_id": "hist-02-108-s1-1079-2cf236aa"
+    },
+    "step4": {
+      "source": "llm",
+      "at": "2026-07-04T17:50:00Z",
+      "session_id": "hist-02-108-s4-1082-68def16c"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "work": "01史记",
+  "vol": "051",
+  "volume_name": "荆燕世家",
+  "volume_type_guess": "世家",
+  "protagonists": [
+    {
+      "name": "荆王",
+      "category": "宗戚",
+      "standard_name_note": "非帝王，属宗室诸侯王",
+      "rationale": "卷名‘荆燕世家’指荆王刘贾与燕王刘泽，二人为汉初同姓诸侯王，是世家叙事主轴人物。"
+    },
+    {
+      "name": "燕王",
+      "category": "宗戚",
+      "standard_name_note": "非帝王，属宗室诸侯王",
+      "rationale": "卷名‘荆燕世家’指荆王刘贾与燕王刘泽，二人为汉初同姓诸侯王，是世家叙事主轴人物。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题"
+  ]
+}

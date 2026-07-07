@@ -1,0 +1,18 @@
+{
+  "work": "01史记",
+  "vol": "068",
+  "volume_name": "商君列传",
+  "volume_type_guess": "列传",
+  "protagonists": [
+    {
+      "name": "商鞅",
+      "category": "文臣",
+      "rationale": "卷名《商君列传》明确以商鞅（商君）为传主，属战国时期秦国变法士臣，非君王、宫眷或庶众。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题"
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "work": "02汉书",
+  "vol": "082",
+  "volume_name": "傅常郑甘陈段传",
+  "narrative_mode": "hezhuan",
+  "total_paragraphs": 25,
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 25,
+      "paragraph_to": 25,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "傅介子",
+      "category": "武将",
+      "paragraph_from": 2,
+      "paragraph_to": 3
+    },
+    {
+      "name": "常惠",
+      "category": "武将",
+      "paragraph_from": 4,
+      "paragraph_to": 4
+    },
+    {
+      "name": "郑吉",
+      "category": "武将",
+      "paragraph_from": 5,
+      "paragraph_to": 6
+    },
+    {
+      "name": "甘延寿",
+      "category": "武将",
+      "paragraph_from": 7,
+      "paragraph_to": 7
+    },
+    {
+      "name": "陈汤",
+      "category": "武将",
+      "paragraph_from": 8,
+      "paragraph_to": 22
+    },
+    {
+      "name": "段会宗",
+      "category": "武将",
+      "paragraph_from": 23,
+      "paragraph_to": 24
+    }
+  ],
+  "_mechanical": true,
+  "_mechanical_hezhuan": true
+}

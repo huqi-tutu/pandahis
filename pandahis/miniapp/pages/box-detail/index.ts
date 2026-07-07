@@ -1,4 +1,15 @@
 import { hasToken, request } from '../../native-utils/api'
+import {
+  buildBoxNarrationScript,
+  getNarrationState,
+  seekNarration,
+  seekNarrationPct,
+  setPlaybackRate,
+  startNarration,
+  stopNarration,
+  toggleNarrationPlayback,
+  type NarrationState,
+} from '../../native-utils/box-narration'
 import { encodePathSegment } from '../../native-utils/encode-path-segment'
 import {
   favoriteBox,
@@ -7,14 +18,6 @@ import {
   unfavoriteBox,
 } from '../../native-utils/favorite-box'
 import { ROUTES, navigateTo } from '../../native-utils/router'
-import {
-  buildBoxNarrationScript,
-  getNarrationState,
-  startNarration,
-  stopNarration,
-  toggleNarrationPlayback,
-  type NarrationState,
-} from '../../native-utils/box-narration'
 import { promptContentShareUnavailable } from '../../native-utils/share-invite'
 
 type TabAccess = { locked?: boolean; lockedReason?: string | null; unlockAction?: { type?: string } | null }
@@ -26,6 +29,8 @@ type BoxHeader = {
     subText: string
     blurb?: string | null
     categoryKey: string
+    civilization_name: string
+    dynasty_name: string
     startYear: number
     endYear: number
   }
@@ -153,76 +158,7 @@ function splitDetailParagraphs(md: string): string[] {
   return parts.length ? parts : [raw]
 }
 
-type AssistActionKey = 'original' | 'play' | 'fav' | 'share'
 
-type AssistMenuItem = {
-  key: AssistActionKey
-  label: string
-  icon: string
-  dx: number
-  dy: number
-  delay: number
-}
-
-type AssistMetrics = {
-  margin: number
-  menuRadius: number
-  minX: number
-  minY: number
-  maxX: number
-  maxY: number
-}
-
-const ASSIST_ACTION_DEFS: Array<{ key: AssistActionKey; label: string; icon: string; angle: number }> = [
-  { key: 'original', label: '原文', icon: '/images/icons/yuanwen.png', angle: 5 },
-  { key: 'play', label: '播放', icon: '/images/icons/bofang.png', angle: 42 },
-  { key: 'fav', label: '收藏', icon: '/images/icons/shoucangA.png', angle: 79 },
-  { key: 'share', label: '分享', icon: '/images/icons/fenxiang.png', angle: 116 },
-]
-
-function buildAssistMetrics(sys: WechatMiniprogram.SystemInfo, bodyTop: number): AssistMetrics {
-  const margin = Math.round(32 * (sys.windowWidth / 750))
-  const dotSize = Math.round(88 * (sys.windowWidth / 750))
-  const menuRadius = Math.round(228 * (sys.windowWidth / 750))
-  return {
-    margin,
-    menuRadius,
-    minX: margin,
-    minY: bodyTop + margin,
-    maxX: sys.windowWidth - margin - dotSize,
-    maxY: sys.windowHeight - margin - dotSize,
-  }
-}
-
-function defaultAssistPosition(metrics: AssistMetrics, sys: WechatMiniprogram.SystemInfo) {
-  const x = Math.round(sys.windowWidth * 0.25)
-  const availableH = sys.windowHeight - metrics.minY
-  const y = Math.round(metrics.minY + availableH * 0.72)
-  return clampAssistPosition(x, y, metrics)
-}
-
-function clampAssistPosition(x: number, y: number, metrics: AssistMetrics) {
-  return {
-    x: Math.min(metrics.maxX, Math.max(metrics.minX, x)),
-    y: Math.min(metrics.maxY, Math.max(metrics.minY, y)),
-  }
-}
-
-function buildAssistMenuItems(open: boolean, menuRadius: number): AssistMenuItem[] {
-  return ASSIST_ACTION_DEFS.map((def, idx) => {
-    const rad = (def.angle * Math.PI) / 180
-    const dx = open ? Math.round(Math.cos(rad) * menuRadius) : 0
-    const dy = open ? Math.round(-Math.sin(rad) * menuRadius) : 0
-    return {
-      key: def.key,
-      label: def.label,
-      icon: def.icon,
-      dx,
-      dy,
-      delay: open ? idx * 30 : 0,
-    }
-  })
-}
 
 Page({
   data: {
@@ -258,21 +194,25 @@ Page({
     audioProgress: 0,
     audioCurrentTime: '0:00',
     audioDuration: '0:00',
+    audioTitle: '',
+    audioActivePara: -1,
+    audioSpeed: 1,
+    audioSpeedLabel: '1x',
+    audioTimeRange: '',
+    audioCategoryPath: '',
     graphScaleLabel: '100%',
-    assistOpen: false,
-    assistDragging: false,
-    assistX: 24,
-    assistY: 560,
-    assistMenuItems: [] as AssistMenuItem[],
+    readingProgress: 0,
+    uiFocused: true,
+    showOriginal: false,
+    originalTitle: '',
+    originalItems: [],
+    originalFallback: '',
+    originalEmpty: true,
+    originalLoading: false,
   },
-  _assistMetrics: null as AssistMetrics | null,
-  _assistTouch: null as {
-    startX: number
-    startY: number
-    originX: number
-    originY: number
-    moved: boolean
-  } | null,
+  _detailScrollTop: 0,
+  _tabBarPx: 0,
+  _rawOriginalRef: null,
   onUnload() {
     stopNarration()
     this.setData({ audioOpen: false })
@@ -296,25 +236,26 @@ Page({
     const tabBarPx = Math.round(72 * (sys.windowWidth / 750))
     const bodyTop = tabTop + tabBarPx
     const graphCanvasH = Math.max(400, Math.floor((sys.windowHeight || 667) - bodyTop - 40))
-    const assistMetrics = buildAssistMetrics(sys, bodyTop)
-    const assistPos = defaultAssistPosition(assistMetrics, sys)
-    this._assistMetrics = assistMetrics
+
+    this._tabBarPx = tabBarPx
     this.setData({
       boxId,
       tabTop,
       bodyTop,
       graphCanvasH,
-      assistX: assistPos.x,
-      assistY: assistPos.y,
-      assistMenuItems: buildAssistMenuItems(false, assistMetrics.menuRadius),
     })
     try {
       const res = await request<BoxHeader>(`/boxes/${encodePathSegment(boxId)}`)
       const header = res.data
+      const y0 = yearLabel(header.box.startYear)
+      const y1 = yearLabel(header.box.endYear)
+      const timeRange = y0 && y1 ? y0 + ' — ' + y1 : (y0 || y1 || '')
       this.setData({
         header,
         navTitle: header.box.title,
         detailMetaDisplay: buildDetailMetaFromBox(header.box),
+        audioTimeRange: timeRange,
+        audioCategoryPath: [header.box.civilization_name, header.box.dynasty_name].filter(Boolean).join(' · '),
       })
       await this.refreshFavState()
       await this.recordFootprint()
@@ -392,6 +333,7 @@ Page({
           detailReady: true,
           detailFetched: true,
         })
+        this._rawOriginalRef = res.data.originalRef ?? null
       } catch (e: any) {
         this.setData({
           detailErr: e?.message || '加载失败',
@@ -478,76 +420,13 @@ Page({
       }
     }
   },
-  setAssistOpen(open: boolean) {
-    const metrics = this._assistMetrics
-    const menuRadius = metrics?.menuRadius ?? 60
-    this.setData({
-      assistOpen: open,
-      assistMenuItems: buildAssistMenuItems(open, menuRadius),
-    })
-  },
-  onAssistTouchStart(e: WechatMiniprogram.TouchEvent) {
-    const touch = e.touches[0]
-    if (!touch) return
-    this._assistTouch = {
-      startX: touch.clientX,
-      startY: touch.clientY,
-      originX: this.data.assistX,
-      originY: this.data.assistY,
-      moved: false,
-    }
-    this.setData({ assistDragging: false })
-  },
-  onAssistTouchMove(e: WechatMiniprogram.TouchEvent) {
-    const touch = e.touches[0]
-    const state = this._assistTouch
-    const metrics = this._assistMetrics
-    if (!touch || !state || !metrics) return
-    const dx = touch.clientX - state.startX
-    const dy = touch.clientY - state.startY
-    if (!state.moved && Math.hypot(dx, dy) < 8) return
-    state.moved = true
-    const next = clampAssistPosition(state.originX + dx, state.originY + dy, metrics)
-    if (this.data.assistOpen) {
-      this.setAssistOpen(false)
-    }
-    this.setData({ assistDragging: true, assistX: next.x, assistY: next.y })
-  },
-  onAssistTouchEnd() {
-    const state = this._assistTouch
-    this._assistTouch = null
-    if (!state) return
-    if (state.moved) {
-      this.setData({ assistDragging: false })
-      return
-    }
-    this.setAssistOpen(!this.data.assistOpen)
-    this.setData({ assistDragging: false })
-  },
-  onAssistAction(e: WechatMiniprogram.BaseEvent) {
-    const action = (e.currentTarget as any).dataset.action as AssistActionKey
-    this.setAssistOpen(false)
-    if (action === 'original') {
-      this.goOriginal()
-      return
-    }
-    if (action === 'play') {
-      void this.onPlayIntro()
-      return
-    }
-    if (action === 'fav') {
-      this.toggleFav()
-      return
-    }
-    if (action === 'share') {
-      this.onShareTap()
-    }
-  },
+
+
+
+
+
   setTab(e: WechatMiniprogram.BaseEvent) {
     const tab = (e.currentTarget as any).dataset.tab as 'content' | 'relations' | 'reviews' | 'relics'
-    if (tab !== 'content' && this.data.assistOpen) {
-      this.setAssistOpen(false)
-    }
     this.setData({ tab })
     void this.ensureTab(tab)
   },
@@ -580,15 +459,14 @@ Page({
   async onPlayIntro() {
     const cur = getNarrationState()
     if (cur === 'playing' || cur === 'paused') {
-      this.setData({ audioOpen: true })
+      const audioTitle = this.data.detailMetaDisplay || this.data.navTitle || '史略解说'
+      this.setData({ audioOpen: true, audioTitle })
       toggleNarrationPlayback()
       this.setData({ narrationState: getNarrationState() })
       return
     }
     if (cur === 'loading') {
-      stopNarration()
-      this.setData({ narrationState: 'idle', audioOpen: false })
-      wx.hideLoading()
+      wx.showToast({ title: '正在准备朗读…', icon: 'none', duration: 1500 })
       return
     }
 
@@ -611,7 +489,8 @@ Page({
     try {
       wx.showLoading({ title: '正在准备朗读', mask: true })
       loadingVisible = true
-      this.setData({ audioOpen: true, audioProgress: 0, audioCurrentTime: '0:00', audioDuration: '0:00' })
+      const audioTitle = this.data.detailMetaDisplay || this.data.navTitle || '史略解说'
+      this.setData({ audioOpen: true, audioTitle, audioProgress: 0, audioCurrentTime: '0:00', audioDuration: '0:00', audioActivePara: -1 })
       await startNarration(
         script,
         (s) => {
@@ -647,12 +526,65 @@ Page({
       this.setData({ audioOpen: false, narrationState: 'idle', audioProgress: 0 })
       return
     }
-    this.setData({ audioOpen: true })
+    const audioTitle = this.data.detailMetaDisplay || this.data.navTitle || '史略解说'
+    this.setData({ audioOpen: true, audioTitle })
     if (getNarrationState() === 'idle') void this.onPlayIntro()
   },
   toggleAudioPlayback() {
     toggleNarrationPlayback()
     this.setData({ narrationState: getNarrationState() })
+  },
+
+  onAudioSkipBack() {
+    seekNarration(-15)
+  },
+
+  onAudioSkipFwd() {
+    seekNarration(15)
+  },
+
+  _audioSeekStartX: 0,
+
+  onAudioSeekStart() {
+    this._audioSeekStartX = 0
+  },
+
+  onAudioSeekMove(e: WechatMiniprogram.TouchEvent) {
+    const touch = e.touches?.[0]
+    if (!touch) return
+    const query = wx.createSelectorQuery().in(this)
+    query.select('.box-audio-scrub-track').boundingClientRect((rect) => {
+      if (!rect || rect.width <= 0) return
+      const x = touch.clientX - rect.left
+      const ratio = Math.max(0, Math.min(1, x / rect.width))
+      const pct = Math.round(ratio * 100)
+      this.setData({ audioProgress: pct })
+    }).exec()
+  },
+
+  onAudioSeekEnd(e: WechatMiniprogram.TouchEvent) {
+    const touch = e.changedTouches?.[0]
+    if (!touch) return
+    const query = wx.createSelectorQuery().in(this)
+    query.select('.box-audio-scrub-track').boundingClientRect((rect) => {
+      if (!rect || rect.width <= 0) return
+      const x = touch.clientX - rect.left
+      const ratio = Math.max(0, Math.min(1, x / rect.width))
+      const pct = Math.round(ratio * 100)
+      seekNarrationPct(pct)
+    }).exec()
+  },
+
+  onSpeedToggle() {
+    const speeds = [0.75, 1, 1.25, 1.5, 2]
+    const cur = this.data.audioSpeed
+    let idx = speeds.indexOf(cur)
+    if (idx === -1 || idx === speeds.length - 1) idx = 0
+    else idx += 1
+    const next = speeds[idx]
+    setPlaybackRate(next)
+    this.setData({ audioSpeed: next, audioSpeedLabel: next + 'x' })
+    wx.showToast({ title: '倍速 ' + next + 'x', icon: 'none', duration: 1200 })
   },
   formatGraphScaleLabel(scale: number) {
     return `${Math.round((scale || 1) * 100)}%`
@@ -662,14 +594,112 @@ Page({
     const scale = c?.getZoomScale?.() ?? 1
     this.setData({ graphScaleLabel: this.formatGraphScaleLabel(scale) })
   },
+  /** 解析原文引用（同 pages/original-text） */
+  _parseOriginalRef(ref: unknown): { title: string; items: any[]; fallback: string } | null {
+    if (ref == null || (Array.isArray(ref) && ref.length === 0) || (typeof ref === 'object' && Object.keys(ref as object).length === 0)) return null
+    if (typeof ref === 'string') {
+      const t = ref.trim()
+      return t ? { title: '原文', items: [], fallback: t } : null
+    }
+    if (typeof ref !== 'object' || ref === null) return null
+    const o = ref as Record<string, unknown>
+    const textField = typeof o.text === 'string' ? o.text.trim() : ''
+    if (textField) {
+      const title = typeof o.title === 'string' && o.title.trim() ? o.title.trim() : '史料原文'
+      return { title, items: [], fallback: textField }
+    }
+    const title = typeof o.title === 'string' && o.title.trim() ? o.title.trim() : '史料原文'
+    const rawItems = o.items
+    const items: any[] = []
+    if (Array.isArray(rawItems)) {
+      for (const it of rawItems) {
+        if (!it || typeof it !== 'object') continue
+        const x = it as Record<string, unknown>
+        items.push({
+          work: String(x.work ?? '').trim(),
+          chapter: String(x.chapter ?? '').trim(),
+          excerpt: String(x.excerpt ?? '').trim().replace(/\\r\\n/g, '\n').replace(/\\n/g, '\n'),
+          url: String(x.url ?? '').trim(),
+        })
+      }
+    }
+    const hasStructured = items.some((i: any) => i.work || i.chapter || i.excerpt || i.url)
+    if (!hasStructured) {
+      try { return { title, items: [], fallback: JSON.stringify(ref, null, 2) } }
+      catch { return { title, items: [], fallback: String(ref) } }
+    }
+    return { title, items, fallback: '' }
+  },
+
   goOriginal() {
     const h = this.data.header as BoxHeader | null
     const o = h?.access?.tabs?.original
-    if (o?.locked) {
-      this.promptLockedTab(o)
-      return
+    if (o?.locked) { this.promptLockedTab(o); return }
+
+    // 优先使用之前缓存的数据
+    const ref = this._rawOriginalRef
+    if (ref != null) {
+      const parsed = this._parseOriginalRef(ref)
+      if (parsed && (parsed.items.length > 0 || parsed.fallback.length > 0)) {
+        this.setData({
+          showOriginal: true,
+          originalTitle: parsed.title,
+          originalItems: parsed.items,
+          originalFallback: parsed.fallback,
+          originalEmpty: false,
+          originalLoading: false,
+        })
+        return
+      }
     }
-    navigateTo(ROUTES.originalText, { boxId: this.data.boxId })
+
+    // 无缓存，重新请求
+    this.setData({ showOriginal: true, originalLoading: true, originalEmpty: true })
+    const run = async () => {
+      try {
+        const enc = encodePathSegment(this.data.boxId)
+        const res = await request<{ originalRef: unknown }>(`/boxes/${enc}/original-ref`, { auth: hasToken() })
+        const parsed = this._parseOriginalRef(res.data.originalRef)
+        if (!parsed || (!parsed.items.length && !parsed.fallback.length)) {
+          this.setData({ originalLoading: false, originalEmpty: true, originalTitle: '', originalItems: [], originalFallback: '' })
+          return
+        }
+        this.setData({
+          originalLoading: false,
+          originalEmpty: false,
+          originalTitle: parsed.title,
+          originalItems: parsed.items,
+          originalFallback: parsed.fallback,
+        })
+      } catch (e: any) {
+        const msg = String(e?.message || '')
+        if (msg.includes('INSUFFICIENT_READS') || msg.includes('NEED_MEMBERSHIP_OR_READS')) {
+          this.setData({ showOriginal: false })
+          wx.showModal({
+            title: '需要会员或阅读点',
+            content: '开通会员可免扣点阅读；也可去会员页邀友助力或查看阅读点。',
+            confirmText: '去开通',
+            success: (r) => { if (r.confirm) wx.switchTab({ url: ROUTES.membership }) },
+          })
+        } else {
+          this.setData({ originalLoading: false, originalEmpty: true })
+          wx.showToast({ title: '加载失败', icon: 'none' })
+        }
+      }
+    }
+    void run()
+  },
+
+  closeOriginal() {
+    this.setData({ showOriginal: false })
+  },
+
+  copyOriginalLink(e: WechatMiniprogram.TouchEvent) {
+    const url = e.currentTarget?.dataset?.url
+    if (url) {
+      wx.setClipboardData({ data: url })
+      wx.showToast({ title: '链接已复制', icon: 'success' })
+    }
   },
   onGraphNodeTap(e: WechatMiniprogram.CustomEvent<{ key?: string; targetBoxId?: string }>) {
     const key = e.detail?.key
@@ -684,6 +714,8 @@ Page({
     }
   },
   noop() {},
+  /** 标记本次tap来自底部操作栏，阻止导航栏切换 */
+  markTapFromBar() { this._ignoreTapFromBar = true; },
   onGraphZoomIn() {
     const c = this.selectComponent('#bdRelationGraph') as { zoomIn?: () => void } | null
     c?.zoomIn?.()
@@ -702,6 +734,54 @@ Page({
   onGraphZoomChange(e: WechatMiniprogram.CustomEvent<{ scale?: number }>) {
     const scale = e.detail?.scale ?? 1
     this.setData({ graphScaleLabel: this.formatGraphScaleLabel(scale) })
+  },
+  onDetailScroll(e: WechatMiniprogram.ScrollViewScrollDetail) {
+    const d = e.detail || { scrollTop: 0, scrollHeight: 0 }
+    const scrollTop = d.scrollTop || 0
+    const scrollHeight = d.scrollHeight || 0
+    const sysInfo = wx.getSystemInfoSync()
+    const bodyTop = this.data.bodyTop
+    const viewportH = sysInfo.windowHeight - bodyTop
+    const maxScroll = Math.max(scrollHeight - viewportH, 1)
+    const pct = Math.min(Math.round((scrollTop / maxScroll) * 100), 100)
+    this.setData({ readingProgress: pct })
+
+    // 自动隐藏 tab 栏（仅详情 Tab），使用 CSS transition 实现无抖动显隐
+    if (this.data.tab === 'content') {
+      const prevScrollTop = this._detailScrollTop ?? 0
+      const delta = scrollTop - prevScrollTop
+      this._detailScrollTop = scrollTop
+
+      if (scrollTop <= 5) {
+        // 顶部自动显示
+        if (!this.data.uiFocused) this.setData({ uiFocused: true })
+      } else if (delta > 5) {
+        // 下划 > 5px 隐藏
+        if (this.data.uiFocused) this.setData({ uiFocused: false })
+      } else if (delta < -5) {
+        // 上划 > 5px 显示
+        if (!this.data.uiFocused) this.setData({ uiFocused: true })
+      }
+    }
+  },
+
+  /** 切换 tab 栏显隐：改变 bodyTop 让正文填满空白，配合 CSS transition 无抖动 */
+  onToggleUI(focused: boolean) {
+    if (this.data.tab !== 'content') return
+    const tabBarPx = this._tabBarPx || 0
+    const newBodyTop = focused ? this.data.tabTop + tabBarPx : this.data.tabTop
+    this.setData({ uiFocused: focused, bodyTop: newBodyTop })
+  },
+
+
+
+  /** 点击屏幕切换导航栏显隐 */
+  onPageTap() {
+    if (this.data.showOriginal) return
+    if (this.data.tab === 'content' && !this._ignoreTapFromBar) {
+      this.onToggleUI(!this.data.uiFocused)
+    }
+    this._ignoreTapFromBar = false
   },
   toggleFav() {
     if (!hasToken()) {

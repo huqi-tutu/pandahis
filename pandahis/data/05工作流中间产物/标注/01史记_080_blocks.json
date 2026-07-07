@@ -1,0 +1,18 @@
+{
+  "total_paragraphs": 24,
+  "excludes": [
+    {
+      "paragraph_from": 24,
+      "paragraph_to": 24,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "乐毅",
+      "category": "武将",
+      "paragraph_from": 1,
+      "paragraph_to": 23
+    }
+  ]
+}

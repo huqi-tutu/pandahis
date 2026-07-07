@@ -1,0 +1,18 @@
+{
+  "total_paragraphs": 43,
+  "excludes": [
+    {
+      "paragraph_from": 43,
+      "paragraph_to": 43,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "张良",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 42
+    }
+  ]
+}

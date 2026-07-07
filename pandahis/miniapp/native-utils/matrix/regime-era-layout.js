@@ -19,8 +19,12 @@ const WARRING_TRIPLE_REGIMES = new Set(['韩', '赵', '魏'])
 const SPRING_ONLY_REGIMES = new Set(['宋', '晋'])
 const WARRING_ONLY_REGIMES = new Set(['燕', '韩', '赵', '魏'])
 const SPANNING_REGIMES = new Set(['东周', '齐', '秦', '楚'])
+/** 诸侯级政权（按 ID 区分与统一「秦」ZQ_HX_QIN_QIN） */
+const REGIME_ONLY_REGIME_IDS = new Set([
+  'ZQ_HX_CHUNQIU_QINZHUHOU',
+])
 const REGIME_ONLY_NAMES = new Set([
-  '春秋', '齐', '楚', '燕', '秦(诸侯)', '晋', '韩', '赵', '魏', '宋',
+  '春秋', '齐', '楚', '燕', '晋', '韩', '赵', '魏', '宋',
 ])
 /** 春秋/战国固定列槽外的小国，不展示 */
 const REGIME_EXCLUDED_NAMES = new Set(['鲁', '郑', '吴', '越'])
@@ -29,7 +33,6 @@ const REGIME_FALL_YEAR = {
   '春秋': -256,
   '东周': -256,
   '齐': -221,
-  '秦(诸侯)': -221,
   '秦': -221,
   '楚': -223,
   '宋': -286,
@@ -79,6 +82,7 @@ function isRegimeOnlyEraGroup(groupName) {
 }
 
 function isRegimeOnlyDynasty(dyn) {
+  if (REGIME_ONLY_REGIME_IDS.has(dyn.id)) return true
   return REGIME_ONLY_NAMES.has(dyn.name)
 }
 
@@ -90,7 +94,6 @@ function isExcludedRegimeDynasty(dyn) {
 
 function getRegimeDisplayName(name) {
   if (name === '春秋') return '东周'
-  if (name === '秦(诸侯)') return '秦'
   return name
 }
 
@@ -129,15 +132,19 @@ function filterActiveForEra(active, tS) {
     )
   }
   if (isSpringAutumnSlice(tS) || isWarringStatesSlice(tS)) {
-    const collapsed = active.filter(e =>
-      e.isCollapsedRegimeSummary && e.id === 'collapsed_春秋战国'
-    )
-    if (collapsed.length) return collapsed
     if (isSpringAutumnSlice(tS)) {
+      const collapsedSpring = active.filter(e => e.isCollapsedRegimeSummary && e.id === 'collapsed_春秋')
+      if (collapsedSpring.length) return collapsedSpring
+      const springContainer = active.filter(e => e.isContainerSpan && e.containerId === '春秋')
+      if (springContainer.length) return springContainer
       return active.filter(e =>
         e.isRegimeOnly && SPRING_AUTUMN_SLOTS.some(k => matchRegimeSlotKey(e, k))
       )
     }
+    const collapsedWarring = active.filter(e => e.isCollapsedRegimeSummary && e.id === 'collapsed_战国')
+    if (collapsedWarring.length) return collapsedWarring
+    const warringContainer = active.filter(e => e.isContainerSpan && e.containerId === '战国')
+    if (warringContainer.length) return warringContainer
     return active.filter(e =>
       e.isRegimeOnly && WARRING_STATES_SLOTS.some(k => matchRegimeSlotKey(e, k))
     )
@@ -146,9 +153,18 @@ function filterActiveForEra(active, tS) {
 }
 
 function entryOverlapsRegimeEra(entry) {
+  if (entry.containerId) return false
   return entry.isRegimeOnly &&
     entry.start < WARRING_STATES_END &&
     entry.end > SPRING_AUTUMN_START
+}
+
+function isSpringContainerColumn(colKey) {
+  return SPRING_AUTUMN_SLOTS.includes(colKey)
+}
+
+function isWarringContainerColumn(colKey) {
+  return WARRING_STATES_SLOTS.includes(colKey)
 }
 
 function calcRegimeEraUnitGeometry(startCol, span, G) {
@@ -346,6 +362,8 @@ function buildRegimeOnlyEntry(dyn, parseYear) {
     isRegimeOnly: true,
     dynastyName: dyn.name,
     dynastyGroup: dyn.dynasty,
+    dynastyId: dyn.dynastyId || '',
+    regimeId: dyn.id,
     displayName: getRegimeDisplayName(dyn.name),
     start: visualStart,
     end,
@@ -365,6 +383,10 @@ module.exports = {
   WARRING_STATES_END,
   setRegimeEraColorIdx,
   getRegimeEraColorIdx,
+  SPRING_AUTUMN_SLOTS,
+  WARRING_STATES_SLOTS,
+  isSpringContainerColumn,
+  isWarringContainerColumn,
   isWesternZhouSlice,
   isSpringAutumnSlice,
   isWarringStatesSlice,

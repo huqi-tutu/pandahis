@@ -1,0 +1,54 @@
+{
+  "work": "02汉书",
+  "vol": "078",
+  "volume_name": "公孙刘田王杨蔡陈郑传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "公孙贺",
+      "category": "文臣",
+      "rationale": "卷名首姓「公孙」，且本卷为西汉中后期宰辅合传，公孙贺曾任丞相，为其一。"
+    },
+    {
+      "name": "刘屈氂",
+      "category": "文臣",
+      "rationale": "卷名次姓「刘」，且为宗室出身之丞相，合传主人公之一。"
+    },
+    {
+      "name": "田千秋",
+      "category": "文臣",
+      "rationale": "卷名有「田」姓，即丞相田千秋（后改名车千秋），合传主人公之一。"
+    },
+    {
+      "name": "王訢",
+      "category": "文臣",
+      "rationale": "卷名有「王」姓，即丞相王訢，合传主人公之一。"
+    },
+    {
+      "name": "杨敞",
+      "category": "文臣",
+      "rationale": "卷名有「杨」姓，即丞相杨敞，合传主人公之一。"
+    },
+    {
+      "name": "蔡义",
+      "category": "文臣",
+      "rationale": "卷名有「蔡」姓，即丞相蔡义，合传主人公之一。"
+    },
+    {
+      "name": "陈万年",
+      "category": "文臣",
+      "rationale": "卷名有「陈」姓，即御史大夫陈万年，合传主人公之一。"
+    },
+    {
+      "name": "郑弘",
+      "category": "文臣",
+      "rationale": "卷名有「郑」姓，即御史大夫郑弘，合传主人公之一。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "work": "02汉书",
+  "vol": "009",
+  "volume_name": "宣帝纪",
+  "volume_type_guess": "本纪",
+  "protagonists": [
+    {
+      "name": "汉宣帝",
+      "category": "君王",
+      "rationale": "卷名「宣帝纪」为汉代皇帝本纪，以汉宣帝刘询（刘病已）一生在位事迹为叙事主轴，符合本纪体例。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

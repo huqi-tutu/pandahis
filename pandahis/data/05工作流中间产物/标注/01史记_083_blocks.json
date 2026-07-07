@@ -1,0 +1,24 @@
+{
+  "total_paragraphs": 33,
+  "excludes": [
+    {
+      "paragraph_from": 33,
+      "paragraph_to": 33,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "鲁仲连",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 16
+    },
+    {
+      "name": "邹阳",
+      "category": "文臣",
+      "paragraph_from": 17,
+      "paragraph_to": 32
+    }
+  ]
+}

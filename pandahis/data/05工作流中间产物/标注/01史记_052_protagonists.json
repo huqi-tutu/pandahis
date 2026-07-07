@@ -1,0 +1,19 @@
+{
+  "work": "01史记",
+  "vol": "052",
+  "volume_name": "齐悼惠王世家",
+  "volume_type_guess": "世家",
+  "protagonists": [
+    {
+      "name": "齐悼惠王",
+      "category": "宗戚",
+      "standard_name_note": "卷名即人物，齐悼惠王刘肥为西汉诸侯王，属君王类",
+      "rationale": "卷名《齐悼惠王世家》明确以齐悼惠王刘肥为叙事主轴，世家体例记诸侯王世系与事迹，刘肥为汉高祖长子、齐国首位封王，本卷核心人物。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "total_paragraphs": 58,
+  "excludes": [
+    {
+      "paragraph_from": 58,
+      "paragraph_to": 58,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "卫康叔",
+      "category": "君王",
+      "paragraph_from": 1,
+      "paragraph_to": 11
+    },
+    {
+      "name": "卫宣公",
+      "category": "君王",
+      "paragraph_from": 12,
+      "paragraph_to": 16
+    },
+    {
+      "name": "卫懿公",
+      "category": "君王",
+      "paragraph_from": 17,
+      "paragraph_to": 20
+    },
+    {
+      "name": "卫文公",
+      "category": "君王",
+      "paragraph_from": 21,
+      "paragraph_to": 35
+    },
+    {
+      "name": "卫灵公",
+      "category": "君王",
+      "paragraph_from": 36,
+      "paragraph_to": 40
+    },
+    {
+      "name": "卫出公",
+      "category": "君王",
+      "paragraph_from": 41,
+      "paragraph_to": 57
+    }
+  ]
+}

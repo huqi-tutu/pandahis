@@ -1,0 +1,83 @@
+{
+  "total_paragraphs": 33,
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph_from": 2,
+      "paragraph_to": 9,
+      "exclude_reason": "其他"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "申公",
+      "category": "文臣",
+      "paragraph_from": 10,
+      "paragraph_to": 12
+    },
+    {
+      "name": "辕固生",
+      "category": "文臣",
+      "paragraph_from": 13,
+      "paragraph_to": 17
+    },
+    {
+      "name": "韩生",
+      "category": "文臣",
+      "paragraph_from": 18,
+      "paragraph_to": 18
+    },
+    {
+      "name": "伏生",
+      "category": "文臣",
+      "paragraph_from": 19,
+      "paragraph_to": 22
+    },
+    {
+      "name": "高堂生",
+      "category": "文臣",
+      "paragraph_from": 23,
+      "paragraph_to": 23
+    },
+    {
+      "name": "徐生",
+      "category": "文臣",
+      "paragraph_from": 24,
+      "paragraph_to": 25
+    },
+    {
+      "name": "杨何",
+      "category": "文臣",
+      "paragraph_from": 26,
+      "paragraph_to": 28
+    },
+    {
+      "name": "董仲舒",
+      "category": "文臣",
+      "paragraph_from": 29,
+      "paragraph_to": 30
+    },
+    {
+      "name": "胡毋生",
+      "category": "文臣",
+      "paragraph_from": 31,
+      "paragraph_to": 31
+    },
+    {
+      "name": "江生",
+      "category": "文臣",
+      "paragraph_from": 32,
+      "paragraph_to": 32
+    },
+    {
+      "name": "吕步舒",
+      "category": "文臣",
+      "paragraph_from": 33,
+      "paragraph_to": 33
+    }
+  ]
+}

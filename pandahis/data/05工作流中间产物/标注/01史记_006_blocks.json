@@ -1,0 +1,18 @@
+{
+  "total_paragraphs": 139,
+  "excludes": [],
+  "blocks": [
+    {
+      "name": "秦始皇",
+      "category": "君王",
+      "paragraph_from": 1,
+      "paragraph_to": 107
+    },
+    {
+      "name": "秦二世",
+      "category": "君王",
+      "paragraph_from": 108,
+      "paragraph_to": 139
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "total_paragraphs": 183,
+  "excludes": [
+    {
+      "paragraph_from": 183,
+      "paragraph_to": 183,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "晋武公",
+      "category": "君王",
+      "paragraph_from": 1,
+      "paragraph_to": 23
+    },
+    {
+      "name": "晋献公",
+      "category": "君王",
+      "paragraph_from": 24,
+      "paragraph_to": 44
+    },
+    {
+      "name": "晋文公",
+      "category": "君王",
+      "paragraph_from": 45,
+      "paragraph_to": 102
+    },
+    {
+      "name": "晋景公",
+      "category": "君王",
+      "paragraph_from": 103,
+      "paragraph_to": 151
+    },
+    {
+      "name": "晋悼公",
+      "category": "君王",
+      "paragraph_from": 152,
+      "paragraph_to": 182
+    }
+  ]
+}

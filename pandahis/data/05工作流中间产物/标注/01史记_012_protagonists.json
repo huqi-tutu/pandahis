@@ -1,0 +1,19 @@
+{
+  "work": "01史记",
+  "vol": "012",
+  "volume_name": "孝武本纪",
+  "volume_type_guess": "本纪",
+  "protagonists": [
+    {
+      "name": "汉武帝",
+      "category": "君王",
+      "standard_name_note": "帝王.json 帝王名称",
+      "rationale": "《史记·孝武本纪》记载汉武帝刘彻在位期间的政治、祭祀、求仙等事迹，卷名‘孝武’即汉武帝谥号，主轴为西汉第五位皇帝。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题"
+  ]
+}

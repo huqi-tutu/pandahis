@@ -1,0 +1,28 @@
+{
+  "work": "02汉书",
+  "vol": "046",
+  "volume_name": "楚元王传",
+  "narrative_mode": "single",
+  "total_paragraphs": 33,
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 33,
+      "paragraph_to": 33,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "楚元王",
+      "category": "宗戚",
+      "paragraph_from": 2,
+      "paragraph_to": 32
+    }
+  ],
+  "_mechanical": true
+}

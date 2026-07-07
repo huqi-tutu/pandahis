@@ -1,0 +1,35 @@
+{
+  "total_paragraphs": 16,
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 16,
+      "paragraph_to": 16,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "杜周",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 5
+    },
+    {
+      "name": "杜延年",
+      "category": "文臣",
+      "paragraph_from": 6,
+      "paragraph_to": 12
+    },
+    {
+      "name": "杜钦",
+      "category": "文臣",
+      "paragraph_from": 13,
+      "paragraph_to": 15
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "work": "01史记",
+  "vol": "055",
+  "volume_name": "留侯世家",
+  "volume_type_guess": "世家",
+  "protagonists": [
+    {
+      "name": "张良",
+      "category": "文臣",
+      "standard_name_note": "非帝王，故不查帝王表",
+      "rationale": "卷名'留侯'即张良封号，世家专记其生平谋略与辅佐汉高祖之功，为全卷唯一主轴人物。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题"
+  ]
+}

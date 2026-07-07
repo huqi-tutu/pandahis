@@ -1,0 +1,39 @@
+{
+  "work": "01史记",
+  "vol": "059",
+  "volume_name": "五宗世家",
+  "volume_type_guess": "世家",
+  "protagonists": [
+    {
+      "name": "栗姬",
+      "category": "宗戚",
+      "rationale": "《五宗世家》叙事主轴：栗姬（宗戚）"
+    },
+    {
+      "name": "程姬",
+      "category": "宗戚",
+      "rationale": "《五宗世家》叙事主轴：程姬（宗戚）"
+    },
+    {
+      "name": "贾夫人",
+      "category": "宗戚",
+      "rationale": "《五宗世家》叙事主轴：贾夫人（宗戚）"
+    },
+    {
+      "name": "唐姬",
+      "category": "宗戚",
+      "rationale": "《五宗世家》叙事主轴：唐姬（宗戚）"
+    },
+    {
+      "name": "儿姁",
+      "category": "宗戚",
+      "rationale": "《五宗世家》叙事主轴：儿姁（宗戚）"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题",
+    "其他"
+  ]
+}

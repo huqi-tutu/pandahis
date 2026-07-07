@@ -1,0 +1,18 @@
+{
+  "total_paragraphs": 17,
+  "excludes": [
+    {
+      "paragraph_from": 15,
+      "paragraph_to": 17,
+      "exclude_reason": "其他"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "东越",
+      "category": "蕃祚",
+      "paragraph_from": 1,
+      "paragraph_to": 14
+    }
+  ]
+}

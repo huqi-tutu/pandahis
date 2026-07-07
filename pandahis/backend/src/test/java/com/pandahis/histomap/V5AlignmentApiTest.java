@@ -67,11 +67,13 @@ class V5AlignmentApiTest {
   }
 
   @Test
-  void unitSwimMatrix_returnsFiveLanes() throws Exception {
+  void unitSwimMatrix_returnsTenLanes() throws Exception {
     mockMvc.perform(get("/units/huaxia_song_shenzong/swim-matrix"))
         .andExpect(status().isOk())
         .andExpect(jsonPath("$.code").value("OK"))
-        .andExpect(jsonPath("$.data.lanes.length()").value(5))
+        .andExpect(jsonPath("$.data.lanes.length()").value(10))
+        .andExpect(jsonPath("$.data.lanes[0].label").value("君王"))
+        .andExpect(jsonPath("$.data.lanes[9].label").value("蕃祚"))
         .andExpect(jsonPath("$.data.lanes[0].layout").exists())
         .andExpect(jsonPath("$.data.sheetWidthRpx").isNumber());
   }

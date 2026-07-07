@@ -1,0 +1,1394 @@
+{
+  "volume": "宣帝纪",
+  "source_file": "02汉书_009_宣帝纪第八.txt",
+  "total_paragraphs": 148,
+  "volume_type": "纪传叙事",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 47,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 48,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 49,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 50,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 51,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 52,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 53,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 54,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 55,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 56,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 57,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 58,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 59,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 60,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 61,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 62,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 63,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 64,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 65,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 66,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 67,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 68,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 69,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 70,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 71,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 72,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 73,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 74,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 75,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 76,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 77,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 78,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 79,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 80,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 81,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 82,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 83,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 84,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 85,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 86,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 87,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 88,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 89,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 90,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 91,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 92,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 93,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 94,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 95,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 96,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 97,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 98,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 99,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 100,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 101,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 102,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 103,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 104,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 105,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 106,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 107,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 108,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 109,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 110,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 111,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 112,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 113,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 114,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 115,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 116,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 117,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 118,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 119,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 120,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 121,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 122,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 123,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 124,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 125,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 126,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 127,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 128,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 129,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 130,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 131,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 132,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 133,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 134,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 135,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 136,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 137,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 138,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 139,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 140,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 141,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 142,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 143,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 144,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 145,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 146,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 147,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 148,
+      "owners": [
+        {
+          "name": "汉宣帝",
+          "category": "君王"
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HANSHU_009_01",
+      "史略名称": "汉宣帝",
+      "史略简介": "汉宣帝",
+      "原文字句": "孝宣皇帝，武帝曾孙，戾太子孙也。太子纳史良娣，生史皇孙。皇孙纳王夫人，生宣帝，号曰皇曾孙。生数月，遭巫蛊事，太子、良娣、皇孙、王夫人皆遇害。语在《太子传》。曾孙",
+      "史略分类": "君王",
+      "主要史料出处": "《汉书·卷9·宣帝纪》",
+      "paragraphs": [
+        {
+          "volume": "宣帝纪",
+          "paragraph_from": 2,
+          "paragraph_to": 148
+        }
+      ],
+      "_auto_filled": {
+        "年规则": "即位年 → 退位/崩年",
+        "_年LLM依据": "据《汉书·宣帝纪》，刘询于公元前74年即位，公元前49年崩，葬杜陵。"
+      },
+      "四级帝王坐标": "汉宣帝",
+      "三级政权坐标": "西汉",
+      "二级朝代坐标": "西汉",
+      "一级文明坐标": "华夏",
+      "文明ID": "HX",
+      "朝代ID": "CD_HX_XIHAN",
+      "政权ID": "ZQ_HX_XIHAN_XIHAN",
+      "帝王ID": "DW_HX_XIHAN_XIHAN_HANXUANDI",
+      "五级细坐标": "汉书·卷009·君王·01",
+      "六级段落锚点": "[P2-P148]",
+      "原文出处": "宣帝纪·P2-P148",
+      "优先级": "P0",
+      "优先级判定理由": "本纪主轴叙事，共147段",
+      "史略开始年": -74,
+      "史略结束年": -49
+    }
+  ],
+  "volume_subtype": "本纪",
+  "volume_subtype_source": "llm_step1a",
+  "protagonist_count": 1,
+  "protagonist_count_source": "llm_step1a",
+  "protagonists_manifest": [
+    {
+      "name": "汉宣帝",
+      "category": "君王",
+      "rationale": "卷名「宣帝纪」为汉代皇帝本纪，以汉宣帝刘询（刘病已）一生在位事迹为叙事主轴，符合本纪体例。"
+    }
+  ],
+  "knowledge_provenance": {
+    "step1": {
+      "source": "llm",
+      "at": "2026-07-01T13:09:46Z",
+      "session_id": "hist-02-009-s1-683-69d742ed"
+    },
+    "step4": {
+      "source": "llm",
+      "at": "2026-07-05T02:55:31Z"
+    }
+  }
+}

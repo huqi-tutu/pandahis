@@ -1,0 +1,19 @@
+{
+  "work": "01史记",
+  "vol": "041",
+  "volume_name": "越王句践世家",
+  "volume_type_guess": "世家",
+  "protagonists": [
+    {
+      "name": "越王句践",
+      "category": "君王",
+      "rationale": "《越王句践世家》叙事主轴：越王句践（君王）"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题",
+    "其他"
+  ]
+}

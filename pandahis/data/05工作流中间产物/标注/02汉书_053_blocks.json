@@ -1,0 +1,53 @@
+{
+  "work": "02汉书",
+  "vol": "053",
+  "volume_name": "郦陆朱刘叔孙传",
+  "narrative_mode": "hezhuan",
+  "total_paragraphs": 17,
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 17,
+      "paragraph_to": 17,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "郦食其",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 4
+    },
+    {
+      "name": "陆贾",
+      "category": "文臣",
+      "paragraph_from": 5,
+      "paragraph_to": 7
+    },
+    {
+      "name": "朱建",
+      "category": "文臣",
+      "paragraph_from": 8,
+      "paragraph_to": 9
+    },
+    {
+      "name": "刘敬",
+      "category": "文臣",
+      "paragraph_from": 10,
+      "paragraph_to": 12
+    },
+    {
+      "name": "叔孙通",
+      "category": "文臣",
+      "paragraph_from": 13,
+      "paragraph_to": 16
+    }
+  ],
+  "_mechanical": true,
+  "_mechanical_hezhuan": true
+}

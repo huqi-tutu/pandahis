@@ -1,0 +1,49 @@
+{
+  "work": "02汉书",
+  "vol": "104",
+  "volume_name": "货殖传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "蜀卓氏",
+      "category": "庶众",
+      "rationale": "《货殖传》为汉代以货殖致富的平民立传，蜀卓氏为临邛富商，传主之一。"
+    },
+    {
+      "name": "程郑",
+      "category": "庶众",
+      "rationale": "《货殖传》合传主人公之一，临邛富商，与蜀卓氏齐名。"
+    },
+    {
+      "name": "宛孔氏",
+      "category": "庶众",
+      "rationale": "《货殖传》所载南阳大商人，因冶铸、贩卖致富，属庶众。"
+    },
+    {
+      "name": "曹邴氏",
+      "category": "庶众",
+      "rationale": "《货殖传》所载鲁地富商，以铁冶起家，庶众身份。"
+    },
+    {
+      "name": "刁闲",
+      "category": "庶众",
+      "rationale": "《货殖传》记述的齐地大贾，用奴虏致富，属庶众传主。"
+    },
+    {
+      "name": "师史",
+      "category": "庶众",
+      "rationale": "《货殖传》所载周地大商，转毂百数，贾郡国，庶众出身。"
+    },
+    {
+      "name": "宣曲任氏",
+      "category": "庶众",
+      "rationale": "《货殖传》记载的关中富商，以窖仓粟致富，庶众身份。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰"
+  ]
+}

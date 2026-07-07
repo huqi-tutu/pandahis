@@ -1,34 +1,13 @@
 <!-- 沉浸 · 政权矩阵（产品 home-matrix 1:1） -->
 <view wx:if="{{mode=='immersive'}}" class="page-shell">
-  <proto-nav
-    title="历史图谱"
-    home-nav="{{true}}"
-    mode-pill-icon="/配图/icons/quanbu.png"
-    bind:modepilltap="onToggleCivPicker"
-  />
+  <proto-nav title="历史图谱" home-nav="{{true}}" />
 
-  <view wx:if="{{stackMode}}"
+  <view
     id="civTabArea"
-    class="civ-tab-area"
+    class="civ-tab-area civ-tab-area--text-only"
     style="top:{{headerPadPx}}px; height:{{tabAreaH}}rpx;"
-    bindtouchstart="onStackTouchStart"
-    bindtouchend="onStackTouchEnd"
   >
-    <view id="stackLayer" class="civ-stack-layer" style="{{stackLayerStyle}}">
-      <view class="civ-stack-container">
-        <view
-          wx:for="{{civStackItems}}"
-          wx:key="realIdx"
-          class="civ-stack-card {{civSwitching ? 'civ-stack-card--moving' : ''}}"
-          style="{{item.cardStyle}}"
-          data-ri="{{item.realIdx}}"
-          bindtap="onCivTap"
-        >
-          <image class="civ-stack-img" src="{{item.img}}" mode="aspectFill" />
-        </view>
-      </view>
-    </view>
-    <view id="textLayer" class="civ-text-layer" style="{{textLayerStyle}}">
+    <view class="civ-text-bar">
       <scroll-view class="civ-text-scroll" scroll-x enhanced show-scrollbar="{{false}}" scroll-left="{{civTextScrollLeft}}" scroll-with-animation>
         <view class="civ-text-inner">
           <view
@@ -42,34 +21,27 @@
           </view>
         </view>
       </scroll-view>
-    </view>
-  </view>
-
-  <view wx:else class="civ-rail-wrap" style="top: {{headerPadPx}}px;">
-    <scroll-view class="civ-rail-scroll" scroll-x enhanced show-scrollbar="{{false}}" scroll-left="{{civScrollLeft}}" scroll-with-animation="{{civScrollAnim}}" bindscrollend="onCivScrollEnd">
-      <view class="civ-rail-inner">
-        <view wx:for="{{civTabsLoop}}" wx:key="loopIdx" class="civ-card {{item.realIdx === civIndex ? 'active' : ''}}" style="{{item.cardStyle}}" data-ri="{{item.realIdx}}" bindtap="onCivTap">
-          <view class="civ-card-img-wrap">
-            <image class="civ-card-img" src="{{item.img}}" mode="aspectFill" lazy-load />
-          </view>
+      <view class="civ-all-btn-wrap" catchtap="onToggleCivPicker">
+        <view class="civ-all-btn">
+          <image class="civ-all-btn-icon" src="/配图/icons/quanbu.png" mode="aspectFit" />
         </view>
       </view>
-    </scroll-view>
+    </view>
   </view>
 
   <scroll-view
     id="matrixScroll"
     class="matrix-scroll"
     scroll-y
-    enhanced
     show-scrollbar="{{false}}"
+    scroll-top="{{navDragActive ? matrixScrollTop : undefined}}"
+    
     style="top: {{scrollAreaTop}}px; height: {{matrixHeight}}px;"
     bindscroll="onMatrixScroll"
-    bindscrollend="onMatrixScrollEnd"
   >
-    <view class="matrix-body" style="height: {{matrixTotalH + 120}}rpx;">
-      <view class="matrix-time-col">
-        <view wx:for="{{matrixRows}}" wx:key="key" wx:for-item="row" class="time-row-abs {{row.showYear ? '' : 'time-row-abs--compact'}}" style="top: {{row.y}}rpx; height: {{row.h}}rpx;">
+    <view class="matrix-body" style="height: {{matrixTotalH + matrixScrollBottomPad}}rpx;">
+      <view class="matrix-time-col" >
+        <view wx:for="{{matrixRows}}" wx:key="key" wx:for-item="row" id="ts_{{row.key}}" class="time-row-abs {{row.showYear ? '' : 'time-row-abs--compact'}}" style="top: {{row.y}}rpx; height: {{row.h}}rpx;">
           <view class="time-label-wrap">
             <view wx:if="{{row.showYear}}" class="time-year-row">
               <view class="time-h-line time-h-line--edge"></view>
@@ -77,45 +49,73 @@
               <view class="time-h-line time-h-line--edge"></view>
             </view>
             <view wx:if="{{row.hxLabel}}" class="time-hx-wrap {{row.expandable ? 'time-hx-wrap--tap' : ''}}" bindtap="{{row.expandable ? 'onDynastyToggle' : ''}}" data-dynasty="{{row.dynastyKey}}">
-              <text class="time-dynasty" style="font-size: {{row.hxFontSize}}rpx;">{{row.hxLabel}}</text>
-              <view wx:if="{{row.expandable}}" class="time-expand-arrow">
-                <text class="time-arrow-icon">{{row.expanded ? '↑' : '↓'}}</text>
-              </view>
+              <text class="time-dynasty {{row.isMajorNode ? 'time-dynasty--major' : ''}}" style="font-size: {{row.hxFontSize}}rpx;">{{row.hxLabel}}</text>
+              <image wx:if="{{row.expandable}}" class="time-expand-arrow {{row.expanded ? 'time-expand-arrow--expanded' : ''}}" src="/配图/icons/kaihe.png" mode="aspectFit" />
             </view>
           </view>
         </view>
       </view>
       <view class="matrix-canvas">
         <view class="matrix-canvas-inner">
-          <view wx:for="{{matrixBlocks}}" wx:key="id" wx:for-item="blk" class="era-block {{blk.edgeClass}}" style="top: {{blk.top}}rpx; height: {{blk.h}}rpx; left: {{blk.leftPct}}%; width: {{blk.widthPct}}%; border-radius: {{blk.radiusStyle}};" hover-class="era-block--hover" bindtap="onCardTap" data-dynasty="{{blk.dynasty}}" data-display-name="{{blk.displayName}}" data-person="{{blk.person}}" data-civ="{{blk.civ}}" data-anchor-year="{{blk.anchorYear}}" data-entity-type="{{blk.entityType}}" data-entity-id="{{blk.entityId}}" data-dynasty-id="{{blk.dynastyId}}" data-legacy-id="{{blk.legacyId}}">
-            <view class="era-block-fill {{blk.fillSeamFix ? 'era-block-fill--solid-seam' : ''}}{{blk.seamGapTop ? ' era-block-fill--gap-top' : ''}}{{blk.seamGapBottom ? ' era-block-fill--gap-bottom' : ''}}{{blk.seamGapLeft ? ' era-block-fill--gap-left' : ''}}{{blk.seamGapRight ? ' era-block-fill--gap-right' : ''}}" style="background-color: {{blk.cardBg}}; border-radius: {{blk.radiusStyle}};{{blk.fillStyleExtra || ''}}"></view>
-            <view wx:if="{{blk.entryId === 'zhong_hua_wu_di_huang_di'}}" class="era-block-paper-grain" style="border-radius: {{blk.radiusStyle}};"></view>
+          <view wx:for="{{matrixBlocks}}" wx:key="id" wx:for-item="blk" class="era-block {{blk.edgeClass}}{{blk.isDynastyContainer ? ' era-block--dynasty-container' : ''}}" style="top: {{blk.top}}rpx; height: {{blk.h}}rpx; left: {{blk.leftPct}}%; width: {{blk.widthPct}}%; border-radius: {{blk.radiusStyle}}; z-index: {{blk.zIndex || 1}};" hover-class="{{blk.isDynastyContainer ? '' : 'era-block--hover'}}" bindtap="{{blk.isDynastyContainer ? '' : 'onCardTap'}}" data-dynasty="{{blk.dynasty}}" data-display-name="{{blk.displayName}}" data-person="{{blk.person}}" data-civ="{{blk.civ}}" data-anchor-year="{{blk.anchorYear}}" data-entity-type="{{blk.entityType}}" data-entity-id="{{blk.entityId}}" data-dynasty-id="{{blk.dynastyId}}" data-legacy-id="{{blk.legacyId}}">
+            <view class="era-block-fill {{blk.fillSeamFix ? 'era-block-fill--solid-seam' : ''}}{{blk.seamGapTop ? ' era-block-fill--gap-top' : ''}}{{blk.seamGapBottom ? ' era-block-fill--gap-bottom' : ''}}{{blk.seamGapLeft ? ' era-block-fill--gap-left' : ''}}{{blk.seamGapRight ? ' era-block-fill--gap-right' : ''}}" style="background: {{blk.cardBg}}; border-radius: {{blk.radiusStyle}};{{blk.fillStyleExtra || ''}}"></view>
+            <view class="era-block-highlight" style="border-radius: {{blk.radiusStyle}};"></view>
+            <view wx:if="{{blk.strokeStyle}}" class="era-block-stroke" style="border-radius: {{blk.radiusStyle}}; {{blk.strokeStyle}}"></view>
           </view>
-          <view wx:for="{{matrixOverlays}}" wx:key="id" wx:for-item="ovl" class="entry-chrome">
-            <view wx:if="{{!ovl.hideLabels}}" class="entry-header-wrap" style="top: {{ovl.headerTop}}rpx; left: {{ovl.headerLeftPct}}%; width: {{ovl.headerWidthPct}}%;">
+          <!-- 容器内二级帝王卡（等宽等高 · 半透明白底） -->
+          <view wx:for="{{matrixSubCards}}" wx:key="id" wx:for-item="sub" class="container-sub-card" style="top: {{sub.top}}rpx; height: {{sub.h}}rpx; left: {{sub.leftPct}}%; width: {{sub.widthPct}}%; border-radius: {{sub.radiusRpx}}rpx; z-index: {{sub.zIndex || 8}};" hover-class="container-sub-card--hover" bindtap="onCardTap" data-dynasty="{{sub.dynasty}}" data-display-name="{{sub.displayName}}" data-person="{{sub.person}}" data-civ="{{sub.civ}}" data-anchor-year="{{sub.anchorYear}}" data-entity-type="{{sub.entityType}}" data-entity-id="{{sub.entityId}}" data-dynasty-id="{{sub.dynastyId}}" data-legacy-id="{{sub.legacyId}}">
+            <view class="container-sub-card-fill" style="background: {{sub.subCardBg}}; {{sub.subCardStroke}}; border-radius: {{sub.radiusRpx}}rpx;"></view>
+            <view class="container-sub-card-highlight" style="border-radius: {{sub.radiusRpx}}rpx;"></view>
+          </view>
+          <view wx:for="{{matrixOverlays}}" wx:key="id" wx:for-item="ovl" class="entry-chrome" style="z-index: {{ovl.zIndex || 20}};">
+            <view wx:if="{{!ovl.hideLabels}}" class="entry-header-wrap {{ovl.labelLayout === 'stacked' ? 'entry-header-wrap--stacked' : ''}}{{ovl.isRegimeCard ? ' entry-header-wrap--regime' : ''}}" style="top: {{ovl.headerTop}}rpx; left: {{ovl.headerLeftPct}}%; width: {{ovl.headerWidthPct}}%;{{ovl.headerHeight ? ' height: ' + ovl.headerHeight + 'rpx;' : ''}}">
               <view class="entry-header entry-header--{{ovl.labelLayout}}">
-                <block wx:if="{{ovl.labelLayout === 'inline'}}">
-                  <text class="card-person card-person--inline">{{ovl.kind === 'single' ? ovl.person : ovl.displayName}}</text>
-                  <view wx:if="{{!ovl.hideTags && ovl.highlights.length}}" class="entry-tag-row entry-tag-row--inline">
+                <block wx:if="{{ovl.labelLayout === 'stacked'}}">
+                  <text class="card-person card-person--stacked">{{ovl.kind === 'single' ? ovl.person : ovl.displayName}}</text>
+                  <view wx:if="{{!ovl.hideTags && ovl.highlights.length}}" class="entry-tag-row entry-tag-row--stacked">
                     <view wx:for="{{ovl.highlights}}" wx:key="text" wx:for-item="tag" class="entry-tag" style="{{tag.tagStyle}}">{{tag.text}}</view>
                   </view>
+                  <text wx:if="{{!ovl.hideTime}}" class="entry-time-inline entry-time-inline--stacked" style="font-size: {{ovl.timeFontRpx}}rpx;">{{ovl.timeRange}}</text>
                 </block>
                 <block wx:else>
-                  <text class="card-person card-person--stacked">{{ovl.kind === 'single' ? ovl.person : ovl.displayName}}</text>
-                  <view wx:if="{{!ovl.hideTags && ovl.highlights.length}}" class="entry-tag-row">
-                    <view wx:for="{{ovl.highlights}}" wx:key="text" wx:for-item="tag" class="entry-tag" style="{{tag.tagStyle}}">{{tag.text}}</view>
+                  <view class="entry-name-tag-row">
+                    <text class="card-person card-person--{{ovl.labelLayout}}">{{ovl.kind === 'single' ? ovl.person : ovl.displayName}}</text>
+                    <view wx:if="{{!ovl.hideTags && ovl.highlights.length}}" class="entry-tag-row">
+                      <view wx:for="{{ovl.highlights}}" wx:key="text" wx:for-item="tag" class="entry-tag" style="{{tag.tagStyle}}">{{tag.text}}</view>
+                    </view>
                   </view>
+                  <text wx:if="{{!ovl.hideTime}}" class="entry-time-inline" style="font-size: {{ovl.timeFontRpx}}rpx;">{{ovl.timeRange}}</text>
                 </block>
               </view>
-            </view>
-            <view wx:if="{{!ovl.hideTime}}" class="entry-time-wrap" style="top: {{ovl.timeWrapTop}}rpx; left: {{ovl.timeLeftPct}}%; width: {{ovl.timeWidthPct}}%; height: {{ovl.timeWrapH}}rpx;">
-              <view class="card-time-range card-time-range--{{ovl.timeCorner}}" style="font-size: {{ovl.timeFontRpx}}rpx;">{{ovl.timeRange}}</view>
             </view>
           </view>
         </view>
       </view>
     </view>
+  
   </scroll-view>
+
+
+  <!-- 导航索引触控层（catch 捕获，阻止 scroll-view 原生滚动） -->
+  <view class="dynasty-nav-touch" style="top: {{scrollAreaTop}}px; height: {{matrixHeight}}px;" catchtouchstart="onNavTouchStart" catchtouchmove="onNavTouchMove" catchtouchend="onNavTouchEnd"></view>
+  <!-- 导航索引视觉层（纯展示，不接收触摸） -->
+  <view class="dynasty-nav {{navActive ? 'dynasty-nav--active' : 'dynasty-nav--hidden'}}" style="top: {{scrollAreaTop}}px; height: {{matrixHeight}}px;">
+    <view
+      wx:for="{{navItems}}"
+      wx:key="key"
+      class="dynasty-nav-item {{navActiveIdx === index ? 'dynasty-nav-item--active' : ''}}"
+      data-key="{{item.key}}"
+      data-y-px="{{item.yPx}}"
+    >{{item.label}}</view>
+  </view>
+
+  <!-- 导航 HUD -->
+  <view wx:if="{{navHudVisible}}" class="nav-hud {{navHudFading ? 'nav-hud--fading' : ''}}" style="top: {{navHudTop}}px; left: {{navHudLeft}}px;">
+    <view class="nav-hud-midline"></view>
+    <text class="nav-hud-title">{{navHudTitle}}</text>
+    <text class="nav-hud-year">{{navHudYear}}</text>
+    <text wx:if="{{navHudEmp}}" class="nav-hud-emp">{{navHudEmp}}</text>
+  </view>
 
   <view wx:if="{{civPickerOpen}}" class="civ-picker" style="top: {{headerPadPx}}px;" catchtouchmove="preventMove">
     <view class="civ-picker-sheet" style="height: {{civPickerSheetH}}rpx;" catchtap="preventMove">

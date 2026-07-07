@@ -1,0 +1,230 @@
+{
+  "total_paragraphs": 118,
+  "excludes": [
+    {
+      "paragraph_from": 59,
+      "paragraph_to": 60,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 80,
+      "paragraph_to": 80,
+      "exclude_reason": "过渡叙事"
+    },
+    {
+      "paragraph_from": 116,
+      "paragraph_to": 116,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 117,
+      "paragraph_to": 117,
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph_from": 118,
+      "paragraph_to": 118,
+      "exclude_reason": "其他"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "非子",
+      "category": "君王",
+      "paragraph_from": 1,
+      "paragraph_to": 7
+    },
+    {
+      "name": "秦仲",
+      "category": "君王",
+      "paragraph_from": 8,
+      "paragraph_to": 8
+    },
+    {
+      "name": "秦庄公",
+      "category": "君王",
+      "paragraph_from": 9,
+      "paragraph_to": 9
+    },
+    {
+      "name": "秦襄公",
+      "category": "君王",
+      "paragraph_from": 10,
+      "paragraph_to": 10
+    },
+    {
+      "name": "秦文公",
+      "category": "君王",
+      "paragraph_from": 11,
+      "paragraph_to": 13
+    },
+    {
+      "name": "秦宁公",
+      "category": "君王",
+      "paragraph_from": 14,
+      "paragraph_to": 15
+    },
+    {
+      "name": "秦武公",
+      "category": "君王",
+      "paragraph_from": 16,
+      "paragraph_to": 17
+    },
+    {
+      "name": "秦德公",
+      "category": "君王",
+      "paragraph_from": 18,
+      "paragraph_to": 18
+    },
+    {
+      "name": "秦宣公",
+      "category": "君王",
+      "paragraph_from": 19,
+      "paragraph_to": 19
+    },
+    {
+      "name": "秦成公",
+      "category": "君王",
+      "paragraph_from": 20,
+      "paragraph_to": 20
+    },
+    {
+      "name": "秦穆公",
+      "category": "君王",
+      "paragraph_from": 21,
+      "paragraph_to": 58
+    },
+    {
+      "name": "秦康公",
+      "category": "君王",
+      "paragraph_from": 61,
+      "paragraph_to": 61
+    },
+    {
+      "name": "秦共公",
+      "category": "君王",
+      "paragraph_from": 62,
+      "paragraph_to": 62
+    },
+    {
+      "name": "秦桓公",
+      "category": "君王",
+      "paragraph_from": 63,
+      "paragraph_to": 63
+    },
+    {
+      "name": "秦景公",
+      "category": "君王",
+      "paragraph_from": 64,
+      "paragraph_to": 64
+    },
+    {
+      "name": "秦哀公",
+      "category": "君王",
+      "paragraph_from": 65,
+      "paragraph_to": 67
+    },
+    {
+      "name": "秦惠公",
+      "category": "君王",
+      "paragraph_from": 68,
+      "paragraph_to": 68
+    },
+    {
+      "name": "秦悼公",
+      "category": "君王",
+      "paragraph_from": 69,
+      "paragraph_to": 69
+    },
+    {
+      "name": "秦简公",
+      "category": "君王",
+      "paragraph_from": 70,
+      "paragraph_to": 71
+    },
+    {
+      "name": "秦悼公",
+      "category": "君王",
+      "paragraph_from": 72,
+      "paragraph_to": 72
+    },
+    {
+      "name": "秦厉共公",
+      "category": "君王",
+      "paragraph_from": 73,
+      "paragraph_to": 74
+    },
+    {
+      "name": "秦怀公",
+      "category": "君王",
+      "paragraph_from": 75,
+      "paragraph_to": 75
+    },
+    {
+      "name": "秦灵公",
+      "category": "君王",
+      "paragraph_from": 76,
+      "paragraph_to": 76
+    },
+    {
+      "name": "秦简公",
+      "category": "君王",
+      "paragraph_from": 77,
+      "paragraph_to": 77
+    },
+    {
+      "name": "秦惠公",
+      "category": "君王",
+      "paragraph_from": 78,
+      "paragraph_to": 78
+    },
+    {
+      "name": "秦出子",
+      "category": "君王",
+      "paragraph_from": 79,
+      "paragraph_to": 79
+    },
+    {
+      "name": "秦献公",
+      "category": "君王",
+      "paragraph_from": 81,
+      "paragraph_to": 81
+    },
+    {
+      "name": "秦孝公",
+      "category": "君王",
+      "paragraph_from": 82,
+      "paragraph_to": 93
+    },
+    {
+      "name": "秦惠文王",
+      "category": "君王",
+      "paragraph_from": 94,
+      "paragraph_to": 97
+    },
+    {
+      "name": "秦武王",
+      "category": "君王",
+      "paragraph_from": 98,
+      "paragraph_to": 98
+    },
+    {
+      "name": "秦昭襄王",
+      "category": "君王",
+      "paragraph_from": 99,
+      "paragraph_to": 113
+    },
+    {
+      "name": "秦孝文王",
+      "category": "君王",
+      "paragraph_from": 114,
+      "paragraph_to": 114
+    },
+    {
+      "name": "秦庄襄王",
+      "category": "君王",
+      "paragraph_from": 115,
+      "paragraph_to": 115
+    }
+  ]
+}

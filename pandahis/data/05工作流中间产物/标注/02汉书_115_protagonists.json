@@ -1,0 +1,20 @@
+{
+  "work": "02汉书",
+  "vol": "115",
+  "volume_name": "王莽传第六十九上",
+  "volume_type_guess": "列传",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "王莽",
+      "category": "君王",
+      "rationale": "《王莽传第六十九上》是王莽的单人传记，卷名直接指名主人公为王莽。虽为外戚出身，但建立新朝称帝，按分类链“君王 ＞ 宗戚”故归类为君王。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "work": "01史记",
+  "vol": "121",
+  "volume_name": "儒林列传",
+  "volume_type_guess": "列传",
+  "protagonists": [
+    {
+      "name": "申公",
+      "category": "文臣",
+      "rationale": "武帝朝鲁诗大师，卷中首记汉儒经师。"
+    },
+    {
+      "name": "辕固生",
+      "category": "文臣",
+      "rationale": "齐诗大师，与黄生论汤武、刺豕著名。"
+    },
+    {
+      "name": "伏生",
+      "category": "文臣",
+      "rationale": "秦壁藏尚书，文帝朝传书及弟子儿宽。"
+    },
+    {
+      "name": "董仲舒",
+      "category": "文臣",
+      "rationale": "春秋公羊大家，江都相、灾异论与著书。"
+    },
+    {
+      "name": "韩生",
+      "category": "文臣",
+      "rationale": "燕韩诗传人，卷中列五经博士之一。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首总论",
+    "太史公曰"
+  ]
+}

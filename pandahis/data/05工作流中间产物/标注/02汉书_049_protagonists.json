@@ -1,0 +1,25 @@
+{
+  "work": "02汉书",
+  "vol": "049",
+  "volume_name": "萧何曹参传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "萧何",
+      "category": "文臣",
+      "rationale": "卷名「萧何曹参传」明确以萧何、曹参二人为合传主轴，萧何为西汉开国丞相，属文臣。"
+    },
+    {
+      "name": "曹参",
+      "category": "文臣",
+      "rationale": "卷名「萧何曹参传」明确以萧何、曹参二人为合传主轴，曹参继萧何为相，属文臣。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "赞曰",
+    "卷首标题",
+    "过渡叙事"
+  ]
+}

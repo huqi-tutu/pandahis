@@ -1,0 +1,18 @@
+{
+  "total_paragraphs": 18,
+  "excludes": [
+    {
+      "paragraph_from": 18,
+      "paragraph_to": 18,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "商鞅",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 17
+    }
+  ]
+}

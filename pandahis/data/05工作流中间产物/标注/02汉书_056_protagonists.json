@@ -1,0 +1,37 @@
+{
+  "work": "02汉书",
+  "vol": "056",
+  "volume_name": "万石卫直周张传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "石奋",
+      "category": "文臣",
+      "rationale": "卷级覆盖指定的合传主轴人物，需与 blocks 一致保留。"
+    },
+    {
+      "name": "卫绾",
+      "category": "文臣",
+      "rationale": "卷级覆盖指定的合传主轴人物，需与 blocks 一致保留。"
+    },
+    {
+      "name": "直不疑",
+      "category": "文臣",
+      "rationale": "卷级覆盖指定的合传主轴人物，需与 blocks 一致保留。"
+    },
+    {
+      "name": "周仁",
+      "category": "文臣",
+      "rationale": "卷级覆盖指定的合传主轴人物，需与 blocks 一致保留。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "名册简传",
+    "其他"
+  ],
+  "_mechanical_override": true
+}

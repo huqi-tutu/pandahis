@@ -1,0 +1,18 @@
+{
+  "work": "01史记",
+  "vol": "085",
+  "volume_name": "吕不韦列传",
+  "volume_type_guess": "列传",
+  "protagonists": [
+    {
+      "name": "吕不韦",
+      "category": "文臣",
+      "rationale": "卷名即为《吕不韦列传》，吕不韦是战国末期秦国商人、政治家，后任秦相，列传以他为主轴叙事。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题"
+  ]
+}

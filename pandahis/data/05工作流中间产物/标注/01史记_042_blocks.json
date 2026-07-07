@@ -1,0 +1,24 @@
+{
+  "total_paragraphs": 76,
+  "excludes": [],
+  "blocks": [
+    {
+      "name": "郑桓公",
+      "category": "君王",
+      "paragraph_from": 1,
+      "paragraph_to": 2
+    },
+    {
+      "name": "郑武公",
+      "category": "君王",
+      "paragraph_from": 3,
+      "paragraph_to": 4
+    },
+    {
+      "name": "郑庄公",
+      "category": "君王",
+      "paragraph_from": 5,
+      "paragraph_to": 76
+    }
+  ]
+}

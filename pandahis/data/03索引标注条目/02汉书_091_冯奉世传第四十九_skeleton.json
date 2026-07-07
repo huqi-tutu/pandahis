@@ -1,0 +1,204 @@
+{
+  "volume": "冯奉世传",
+  "source_file": "02汉书_091_冯奉世传第四十九.txt",
+  "total_paragraphs": 16,
+  "volume_type": "纪传叙事",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "冯奉世",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "冯奉世",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "冯奉世",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "冯奉世",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "冯奉世",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "冯奉世",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "冯奉世",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "冯奉世",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "冯奉世",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "冯奉世",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "冯奉世",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "冯奉世",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "冯奉世",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "冯奉世",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [],
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HANSHU_091_01",
+      "史略名称": "冯奉世",
+      "史略简介": "冯奉世",
+      "原文字句": "冯奉世字子明，上党潞人也",
+      "史略分类": "武将",
+      "主要史料出处": "《汉书·卷91·冯奉世传》",
+      "paragraphs": [
+        {
+          "volume": "冯奉世传",
+          "paragraph_from": 2,
+          "paragraph_to": 15
+        }
+      ],
+      "_auto_filled": {
+        "年规则": "出生年 → 去世年（君王类人物条目同即位/退位）",
+        "年规则备注": "优先由大模型据史学界主流观点填写，尽量体现正常生卒或即位/退位（含推测生年）。脚本兜底：学界有推测生卒则填完整区间；仅当完全无出生年推测且知去世年时，开始=结束=去世年；不知去世年但知活跃期则取活跃期帝王在位起止；活跃期亦未知则取对应朝代开始年（两年相同）。",
+        "_年LLM依据": "冯奉世生年无确切记载，据《汉书》本传，其卒于汉元帝永光年间（公元前39年），故开始年与结束年均取卒年。"
+      },
+      "五级细坐标": "汉书·卷091·武将·01",
+      "六级段落锚点": "[P2-P15]",
+      "原文出处": "冯奉世传·P2-P15",
+      "优先级": "P0",
+      "优先级判定理由": "《冯奉世传》为《汉书》单列专传，详记其平定莎车、击破羌虏等重大事迹，为西汉中后期核心武将。",
+      "史略开始年": -39,
+      "史略结束年": -39,
+      "四级帝王坐标": "汉元帝",
+      "一级文明坐标": "华夏",
+      "二级朝代坐标": "西汉",
+      "三级政权坐标": "西汉",
+      "文明ID": "HX",
+      "朝代ID": "CD_HX_XIHAN",
+      "政权ID": "ZQ_HX_XIHAN_XIHAN",
+      "帝王ID": "DW_HX_XIHAN_XIHAN_HANYUANDI"
+    }
+  ],
+  "volume_subtype": "列传",
+  "volume_subtype_source": "llm_step1a",
+  "protagonist_count": 1,
+  "protagonist_count_source": "llm_step1a",
+  "protagonists_manifest": [
+    {
+      "name": "冯奉世",
+      "category": "武将",
+      "rationale": "《冯奉世传》为单人列传，卷名专记冯奉世一生事功，其平定莎车之乱、击破羌虏等军功卓著，主轴人物即冯奉世本人。"
+    }
+  ],
+  "knowledge_provenance": {
+    "step1": {
+      "source": "llm",
+      "at": "2026-07-04T13:00:59Z",
+      "session_id": "hist-02-091-s1-1011-0b8e2757"
+    },
+    "step4": {
+      "source": "llm",
+      "at": "2026-07-04T13:02:34Z",
+      "session_id": "hist-02-091-s4-1014-bfab1b88"
+    }
+  }
+}

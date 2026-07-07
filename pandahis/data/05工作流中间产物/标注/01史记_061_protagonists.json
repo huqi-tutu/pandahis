@@ -1,0 +1,18 @@
+{
+  "work": "01史记",
+  "vol": "061",
+  "volume_name": "伯夷列传",
+  "volume_type_guess": "列传",
+  "protagonists": [
+    {
+      "name": "伯夷",
+      "category": "庶众",
+      "rationale": "卷名《伯夷列传》明确以伯夷为传主，属列传体，记其让国、饿死首阳山等事迹，为列传之首篇。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题"
+  ]
+}

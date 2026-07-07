@@ -1,0 +1,53 @@
+{
+  "total_paragraphs": 48,
+  "excludes": [
+    {
+      "paragraph_from": 44,
+      "paragraph_to": 44,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 48,
+      "paragraph_to": 48,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "禹",
+      "category": "君王",
+      "paragraph_from": 1,
+      "paragraph_to": 37
+    },
+    {
+      "name": "启",
+      "category": "君王",
+      "paragraph_from": 38,
+      "paragraph_to": 41
+    },
+    {
+      "name": "太康",
+      "category": "君王",
+      "paragraph_from": 42,
+      "paragraph_to": 42
+    },
+    {
+      "name": "中康",
+      "category": "君王",
+      "paragraph_from": 43,
+      "paragraph_to": 43
+    },
+    {
+      "name": "孔甲",
+      "category": "君王",
+      "paragraph_from": 45,
+      "paragraph_to": 46
+    },
+    {
+      "name": "桀",
+      "category": "君王",
+      "paragraph_from": 47,
+      "paragraph_to": 47
+    }
+  ]
+}

@@ -1,0 +1,3220 @@
+{
+  "work": "01史记",
+  "updated_at": "2026-06-30T15:13:49Z",
+  "volumes": {
+    "001": {
+      "skeleton_file": "01史记_001_五帝本纪第一_skeleton.json",
+      "volume_name": "五帝本纪",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-28T06:53:35Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-28T06:53:35Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-28T06:54:34Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-28T08:01:30Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "002": {
+      "skeleton_file": "01史记_002_夏本纪第二_skeleton.json",
+      "volume_name": "夏本纪",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-28T08:14:55Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-28T08:16:16Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-28T08:17:26Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-28T08:21:21Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "003": {
+      "skeleton_file": "01史记_003_殷本纪第三_skeleton.json",
+      "volume_name": "殷本纪",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-28T08:46:39Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-28T08:46:39Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-28T08:47:29Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-28T08:55:46Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "004": {
+      "skeleton_file": "01史记_004_周本纪第四_skeleton.json",
+      "volume_name": "周本纪",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-28T09:06:37Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-28T09:14:49Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-28T09:21:39Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-28T09:29:40Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "005": {
+      "skeleton_file": "01史记_005_秦本纪第五_skeleton.json",
+      "volume_name": "秦本纪",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-30T14:39:31Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-30T14:39:32Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-30T14:39:32Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-30T14:39:32Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "006": {
+      "skeleton_file": "01史记_006_秦始皇本纪第六_skeleton.json",
+      "volume_name": "秦始皇本纪",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-28T09:40:36Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-28T09:43:34Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-28T09:40:37Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-28T09:43:45Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "007": {
+      "skeleton_file": "01史记_007_项羽本纪第七_skeleton.json",
+      "volume_name": "项羽本纪",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-28T09:44:22Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-28T09:44:23Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-28T09:51:37Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-28T09:51:41Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "008": {
+      "skeleton_file": "01史记_008_高祖本纪第八_skeleton.json",
+      "volume_name": "高祖本纪",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-28T10:02:17Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-28T09:53:09Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-28T09:58:48Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-28T10:00:32Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "009": {
+      "skeleton_file": "01史记_009_吕太后本纪第九_skeleton.json",
+      "volume_name": "吕太后本纪",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-28T10:02:17Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-28T09:53:15Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-28T09:58:48Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-28T10:00:32Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "010": {
+      "skeleton_file": "01史记_010_孝文本纪第十_skeleton.json",
+      "volume_name": "孝文本纪",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-28T10:02:17Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-28T12:07:26Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-28T11:46:37Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-28T11:46:41Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "011": {
+      "skeleton_file": "01史记_011_孝景本纪第十一_skeleton.json",
+      "volume_name": "孝景本纪",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-28T12:07:26Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-28T12:07:27Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-28T12:07:27Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-28T12:07:30Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "012": {
+      "skeleton_file": "01史记_012_孝武本纪第十二_skeleton.json",
+      "volume_name": "孝武本纪",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-28T12:14:44Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-28T12:14:45Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-28T12:14:45Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-28T12:14:48Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "023": {
+      "skeleton_file": "01史记_023_礼书第一_skeleton.json",
+      "volume_name": "礼书",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-30T14:56:56Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-30T14:56:56Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-30T14:56:56Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-30T14:56:56Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "024": {
+      "skeleton_file": "01史记_024_乐书第二_skeleton.json",
+      "volume_name": "乐书",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-30T14:57:00Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-30T14:57:00Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-30T14:57:00Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-30T14:57:01Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "031": {
+      "skeleton_file": "01史记_031_吴太伯世家第一_skeleton.json",
+      "volume_name": "吴太伯世家",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-28T13:23:30Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-28T13:23:31Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-28T13:23:31Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-28T13:23:35Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "032": {
+      "skeleton_file": "01史记_032_齐太公世家第二_skeleton.json",
+      "volume_name": "齐太公世家",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-28T13:24:44Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-28T13:24:44Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-28T13:24:44Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-28T13:24:48Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "033": {
+      "skeleton_file": "01史记_033_鲁周公世家第三_skeleton.json",
+      "volume_name": "鲁周公世家",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-28T13:36:11Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-28T13:36:11Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-28T13:36:12Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-28T13:36:15Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "034": {
+      "skeleton_file": "01史记_034_燕召公世家第四_skeleton.json",
+      "volume_name": "燕召公世家",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-28T14:32:49Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-28T14:32:49Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-28T14:32:49Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-28T14:32:49Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "035": {
+      "skeleton_file": "01史记_035_管蔡世家第五_skeleton.json",
+      "volume_name": "管蔡世家",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-28T13:36:55Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-28T13:36:56Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-28T13:36:56Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-28T13:37:00Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "036": {
+      "skeleton_file": "01史记_036_陈杞世家第六_skeleton.json",
+      "volume_name": "陈杞世家",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-28T13:39:10Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-28T13:39:10Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-28T13:39:10Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-28T13:39:14Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "037": {
+      "skeleton_file": "01史记_037_卫康叔世家第七_skeleton.json",
+      "volume_name": "卫康叔世家",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-28T14:32:50Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-28T14:32:50Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-28T14:32:50Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-28T14:32:50Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "038": {
+      "skeleton_file": "01史记_038_宋微子世家第八_skeleton.json",
+      "volume_name": "宋微子世家",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-28T14:32:51Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-28T14:32:51Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-28T14:32:51Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-28T14:32:51Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "039": {
+      "skeleton_file": "01史记_039_晋世家第九_skeleton.json",
+      "volume_name": "晋世家",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-28T14:32:51Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-28T14:32:52Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-28T14:32:52Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-28T14:32:52Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "040": {
+      "skeleton_file": "01史记_040_楚世家第十_skeleton.json",
+      "volume_name": "楚世家",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-28T14:32:52Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-28T14:32:52Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-28T14:32:53Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-28T14:32:53Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "041": {
+      "skeleton_file": "01史记_041_越王句践世家第十一_skeleton.json",
+      "volume_name": "越王句践世家",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-28T14:32:53Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-28T14:32:53Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-28T14:32:53Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-28T14:32:54Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "042": {
+      "skeleton_file": "01史记_042_郑世家第十二_skeleton.json",
+      "volume_name": "郑世家",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-28T13:50:10Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-28T13:50:10Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-28T13:50:10Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-28T13:50:14Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "043": {
+      "skeleton_file": "01史记_043_赵世家第十三_skeleton.json",
+      "volume_name": "赵世家",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-28T13:55:21Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-28T13:55:21Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-28T13:55:22Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-28T13:55:26Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "044": {
+      "skeleton_file": "01史记_044_魏世家第十四_skeleton.json",
+      "volume_name": "魏世家",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-28T13:57:38Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-28T13:57:38Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-28T13:57:38Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-28T13:57:42Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "045": {
+      "skeleton_file": "01史记_045_韩世家第十五_skeleton.json",
+      "volume_name": "韩世家",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-28T13:59:15Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-28T13:59:15Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-28T14:02:48Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-28T14:02:48Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "046": {
+      "skeleton_file": "01史记_046_田敬仲完世家第十六_skeleton.json",
+      "volume_name": "田敬仲完世家",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-28T14:03:33Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-28T14:03:33Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-28T14:03:33Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-28T14:03:37Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "047": {
+      "skeleton_file": "01史记_047_孔子世家第十七_skeleton.json",
+      "volume_name": "孔子世家",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-28T14:32:47Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-28T14:32:47Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-28T14:32:47Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-28T14:32:47Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "048": {
+      "skeleton_file": "01史记_048_陈涉世家第十八_skeleton.json",
+      "volume_name": "陈涉世家",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-28T14:33:29Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-28T14:33:29Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-28T14:33:29Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-28T14:33:29Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "049": {
+      "skeleton_file": "01史记_049_外戚世家第十九_skeleton.json",
+      "volume_name": "外戚世家",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-30T14:39:12Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-30T14:39:12Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-30T14:39:12Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-30T14:39:13Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "050": {
+      "skeleton_file": "01史记_050_楚元王世家第二十_skeleton.json",
+      "volume_name": "楚元王世家",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-28T14:06:24Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-28T14:06:24Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-28T14:06:25Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-28T14:06:28Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "051": {
+      "skeleton_file": "01史记_051_荆燕世家第二十一_skeleton.json",
+      "volume_name": "荆燕世家",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-28T14:06:41Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-28T14:06:41Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-28T14:09:28Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-28T14:10:05Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "052": {
+      "skeleton_file": "01史记_052_齐悼惠王世家第二十二_skeleton.json",
+      "volume_name": "齐悼惠王世家",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-28T14:10:51Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-28T14:10:51Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-28T14:10:51Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-28T14:10:56Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "053": {
+      "skeleton_file": "01史记_053_萧相国世家第二十三_skeleton.json",
+      "volume_name": "萧相国世家",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-28T14:11:04Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-28T14:11:04Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-28T14:11:05Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-28T14:20:39Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "054": {
+      "skeleton_file": "01史记_054_曹相国世家第二十四_skeleton.json",
+      "volume_name": "曹相国世家",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-28T14:20:54Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-28T14:20:54Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-28T14:20:54Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-28T14:22:08Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "055": {
+      "skeleton_file": "01史记_055_留侯世家第二十五_skeleton.json",
+      "volume_name": "留侯世家",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-28T14:22:26Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-28T14:22:26Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-28T14:22:26Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-28T14:35:17Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "056": {
+      "skeleton_file": "01史记_056_陈丞相世家第二十六_skeleton.json",
+      "volume_name": "陈丞相世家",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-28T14:36:37Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-28T14:36:37Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-28T14:36:37Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-28T14:41:35Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "057": {
+      "skeleton_file": "01史记_057_绛侯周勃世家第二十七_skeleton.json",
+      "volume_name": "绛侯周勃世家",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-28T14:44:20Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-28T14:44:20Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-28T14:44:20Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-28T14:46:57Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "058": {
+      "skeleton_file": "01史记_058_梁孝王世家第二十八_skeleton.json",
+      "volume_name": "梁孝王世家",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-28T14:47:30Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-28T14:47:30Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-28T14:47:30Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-28T14:47:34Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "059": {
+      "skeleton_file": "01史记_059_五宗世家第二十九_skeleton.json",
+      "volume_name": "五宗世家",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-28T15:08:51Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-28T15:08:51Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-28T15:08:51Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-28T15:08:51Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "060": {
+      "skeleton_file": "01史记_060_三王世家第三十_skeleton.json",
+      "volume_name": "三王世家",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-28T15:14:08Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-28T15:14:08Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-28T15:14:08Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-28T15:14:08Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "079": {
+      "skeleton_file": "01史记_079_范睢蔡泽列传第十九_skeleton.json",
+      "volume_name": "范睢蔡泽列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-29T08:42:48Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-29T08:42:48Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-29T08:42:49Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-29T08:42:53Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "083": {
+      "skeleton_file": "01史记_083_鲁仲连邹阳列传第二十三_skeleton.json",
+      "volume_name": "鲁仲连邹阳列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-29T08:44:09Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-29T08:44:09Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-29T08:44:09Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-29T10:03:35Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "085": {
+      "skeleton_file": "01史记_085_吕不韦列传第二十五_skeleton.json",
+      "volume_name": "吕不韦列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-29T10:05:03Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-29T10:05:03Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-29T10:05:03Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-29T10:05:08Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "086": {
+      "skeleton_file": "01史记_086_刺客列传第二十六_skeleton.json",
+      "volume_name": "刺客列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-29T10:05:16Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-29T10:05:16Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-29T10:05:16Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-29T13:07:13Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "094": {
+      "skeleton_file": "01史记_094_田儋列传第三十四_skeleton.json",
+      "volume_name": "田儋列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-29T15:27:40Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-29T15:27:40Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-29T15:27:40Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-29T15:48:22Z",
+          "detail": "check_format final 失败 (exit 1)\nHIJI_094_03] 田荣 缺少 四级帝王坐标\n  ❌ [SHIJI_094_01] 田儋 人物生卒跨度仅 3 年（-210～-207），与 4 段传记篇幅不符\n\n  📊 归属表检查 (共 20 段)\n\n  📄 exclude 内容门\n  ✅ exclude 内容 OK\n\n  👑 君王命名\n  ✅ 君王名称均在帝王.json 枚举内\n\n  🎯 卷主轴身份\n  ✅ skeleton 人物身份 OK\n\n  📅 君王年份\n  ✅ 君王年份无重复区间\n\n  📊 逐段归属表:\n       段01 → [田儋] 士臣\n       段02 → [田儋] 士臣\n       段03 → [田儋] 士臣\n       段04 → [田儋] 士臣\n       段05 → [田荣] 士臣\n       段06 → [田荣] 士臣\n       段07 → [田荣] 士臣\n       段08 → [田荣] 士臣\n       段09 → [田荣] 士臣\n       段10 → [田荣] 士臣\n       段11 → [田荣] 士臣\n       段12 → [田荣] 士臣\n       段13 → [田横] 士臣\n       段14 → [田横] 士臣\n       段15 → [田横] 士臣\n       段16 → [田横] 士臣\n       段17 → [田横] 士臣\n       段18 → [田横] 士臣\n       段19 → [田横] 士臣\n     ⛔ 段20 → 排除 (太史公曰)\n\n  🔎 原文字句验证\n\n⛔ 发现 39 个错误，修正前不得进入下一步:\n  - [2/3] Step 4 未完成，缺少: 优先级\n  - [2/3] Step 4 未完成，缺少: 优先级判定理由\n  - [2/3] Step 4 未完成，缺少: 史略开始年\n  - [2/3] Step 4 未完成，缺少: 史略结束年\n  - [2/3] Step 4 未完成，缺少: 一级文明坐标\n  - [2/3] Step 4 未完成，缺少: 二级朝代坐标\n  - [2/3] Step 4 未完成，缺少: 三级政权坐标\n  - [2/3] Step 4 未完成，缺少: 四级帝王坐标\n  - [2/3] Step 4 未完成，缺少: 文明ID\n  - [2/3] Step 4 未完成，缺少: 朝代ID\n  - [2/3] Step 4 未完成，缺少: 政权ID\n  - [2/3] Step 4 未完成，缺少: 帝王ID\n  - [2/3] 仍含 _needs_llm，LLM 补全后应删除临时字段\n  - [SHIJI_094_02] 田横 缺少有效史略开始年（整数，公元前为负）\n  - [SHIJI_094_02] 田横 缺少有效史略结束年（整数，公元前为负）\n  - [3/3] Step 4 未完成，缺少: 优先级\n  - [3/3] Step 4 未完成，缺少: 优先级判定理由\n  - [3/3] Step 4 未完成，缺少: 史略开始年\n  - [3/3] Step 4 未完成，缺少: 史略结束年\n  - [3/3] Step 4 未完成，缺少: 一级文明坐标\n  - [3/3] Step 4 未完成，缺少: 二级朝代坐标\n  - [3/3] Step 4 未完成，缺少: 三级政权坐标\n  - [3/3] Step 4 未完成，缺少: 四级帝王坐标\n  - [3/3] Step 4 未完成，缺少: 文明ID\n  - [3/3] Step 4 未完成，缺少: 朝代ID\n  - [3/3] Step 4 未完成，缺少: 政权ID\n  - [3/3] Step 4 未完成，缺少: 帝王ID\n  - [3/3] 仍含 _needs_llm，LLM 补全后应删除临时字段\n  - [SHIJI_094_03] 田荣 缺少有效史略开始年（整数，公元前为负）\n  - [SHIJI_094_03] 田荣 缺少有效史略结束年（整数，公元前为负）\n  - [SHIJI_094_02] 田横 缺少 一级文明坐标\n  - [SHIJI_094_02] 田横 缺少 二级朝代坐标\n  - [SHIJI_094_02] 田横 缺少 三级政权坐标\n  - [SHIJI_094_02] 田横 缺少 四级帝王坐标\n  - [SHIJI_094_03] 田荣 缺少 一级文明坐标\n  - [SHIJI_094_03] 田荣 缺少 二级朝代坐标\n  - [SHIJI_094_03] 田荣 缺少 三级政权坐标\n  - [SHIJI_094_03] 田荣 缺少 四级帝王坐标\n  - [SHIJI_094_01] 田儋 人物生卒",
+          "note": "check_format final 通过（step4_hardening recover）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "123": {
+      "skeleton_file": "01史记_123_大宛列传第六十三_skeleton.json",
+      "volume_name": "大宛列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-30T12:13:13Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-30T12:13:13Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-30T12:13:13Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-30T12:13:22Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "093": {
+      "skeleton_file": "01史记_093_韩信卢绾列传第三十三_skeleton.json",
+      "volume_name": "韩信卢绾列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-29T15:27:28Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-29T15:27:28Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-29T15:27:28Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-29T15:27:34Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "067": {
+      "skeleton_file": "01史记_067_仲尼弟子列传第七_skeleton.json",
+      "volume_name": "仲尼弟子列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-30T14:19:54Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-30T14:19:54Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-30T14:19:54Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-30T14:19:54Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "075": {
+      "skeleton_file": "01史记_075_孟尝君列传第十五_skeleton.json",
+      "volume_name": "孟尝君列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-29T05:34:00Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-29T05:34:00Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-29T05:34:00Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-29T05:34:18Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "084": {
+      "skeleton_file": "01史记_084_屈原贾生列传第二十四_skeleton.json",
+      "volume_name": "屈原贾生列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-29T10:04:11Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-29T10:04:11Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-29T10:04:11Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-29T10:04:16Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "087": {
+      "skeleton_file": "01史记_087_李斯列传第二十七_skeleton.json",
+      "volume_name": "李斯列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-29T13:08:44Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-29T13:08:45Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-29T13:08:45Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-29T13:08:50Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "092": {
+      "skeleton_file": "01史记_092_淮阴侯列传第三十二_skeleton.json",
+      "volume_name": "淮阴侯列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-29T15:21:55Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-29T15:21:56Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-29T15:21:56Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-29T15:25:28Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "104": {
+      "skeleton_file": "01史记_104_田叔列传第四十四_skeleton.json",
+      "volume_name": "田叔列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-29T16:12:29Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-29T16:12:30Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-29T16:12:30Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-29T16:12:39Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "109": {
+      "skeleton_file": "01史记_109_李将军列传第四十九_skeleton.json",
+      "volume_name": "李将军列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-29T23:29:15Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-29T23:29:15Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-29T23:29:15Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-29T23:29:24Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "122": {
+      "skeleton_file": "01史记_122_酷吏列传第六十二_skeleton.json",
+      "volume_name": "酷吏列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-30T12:12:56Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-30T12:12:57Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-30T12:12:57Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-30T12:13:05Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "064": {
+      "skeleton_file": "01史记_064_司马穰苴列传第四_skeleton.json",
+      "volume_name": "司马穰苴列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-28T23:49:49Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-28T23:49:49Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-28T23:49:50Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-28T23:52:40Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "073": {
+      "skeleton_file": "01史记_073_白起王翦列传第十三_skeleton.json",
+      "volume_name": "白起王翦列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-29T05:06:46Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-29T05:06:46Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-29T05:06:47Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-29T05:13:11Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "074": {
+      "skeleton_file": "01史记_074_孟子荀卿列传第十四_skeleton.json",
+      "volume_name": "孟子荀卿列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-29T05:32:22Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-29T05:32:23Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-29T05:32:23Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-29T05:32:44Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "103": {
+      "skeleton_file": "01史记_103_万石张叔列传第四十三_skeleton.json",
+      "volume_name": "万石张叔列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-29T16:11:44Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-29T16:11:44Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-29T16:11:44Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-29T16:11:53Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "098": {
+      "skeleton_file": "01史记_098_傅靳蒯成列传第三十八_skeleton.json",
+      "volume_name": "傅靳蒯成列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-29T16:03:43Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）",
+          "note": "blocks手修+step4"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-29T16:03:43Z",
+          "detail": "check_format skeleton 通过",
+          "note": "blocks手修+step4"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-29T16:03:43Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及",
+          "note": "blocks手修+step4"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-29T16:03:43Z",
+          "detail": null,
+          "note": "blocks手修+step4"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "124": {
+      "skeleton_file": "01史记_124_游侠列传第六十四_skeleton.json",
+      "volume_name": "游侠列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-30T15:12:03Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-30T15:12:04Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-30T15:12:04Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-30T15:12:04Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "061": {
+      "skeleton_file": "01史记_061_伯夷列传第一_skeleton.json",
+      "volume_name": "伯夷列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-28T15:16:24Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-28T15:16:24Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-28T15:16:24Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-28T15:23:27Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "088": {
+      "skeleton_file": "01史记_088_蒙恬列传第二十八_skeleton.json",
+      "volume_name": "蒙恬列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-29T13:09:31Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-29T13:09:31Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-29T13:09:31Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-29T13:23:10Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "090": {
+      "skeleton_file": "01史记_090_魏豹彭越列传第三十_skeleton.json",
+      "volume_name": "魏豹彭越列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-29T15:01:30Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-29T15:01:30Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-29T15:01:30Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-29T15:15:14Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "125": {
+      "skeleton_file": "01史记_125_佞幸列传第六十五_skeleton.json",
+      "volume_name": "佞幸列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-30T15:12:53Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-30T15:12:53Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-30T15:12:53Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-30T15:12:53Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "099": {
+      "skeleton_file": "01史记_099_刘敬叔孙通列传第三十九_skeleton.json",
+      "volume_name": "刘敬叔孙通列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-29T16:09:39Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-29T16:09:39Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-29T16:09:39Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-29T16:09:48Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "121": {
+      "skeleton_file": "01史记_121_儒林列传第六十一_skeleton.json",
+      "volume_name": "儒林列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-30T12:10:18Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-30T12:10:18Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-30T12:10:18Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-30T12:10:27Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "072": {
+      "skeleton_file": "01史记_072_穰侯列传第十二_skeleton.json",
+      "volume_name": "穰侯列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-29T05:05:32Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-29T05:05:32Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-29T05:05:33Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-29T05:05:53Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "101": {
+      "skeleton_file": "01史记_101_袁盎晁错列传第四十一_skeleton.json",
+      "volume_name": "袁盎晁错列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-29T16:10:56Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-29T16:10:56Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-29T16:10:56Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-29T16:11:06Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "102": {
+      "skeleton_file": "01史记_102_张释之冯唐列传第四十二_skeleton.json",
+      "volume_name": "张释之冯唐列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-29T16:11:16Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-29T16:11:17Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-29T16:11:17Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-29T16:11:26Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "113": {
+      "skeleton_file": "01史记_113_南越列传第五十三_skeleton.json",
+      "volume_name": "南越列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-29T23:36:38Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-29T23:36:38Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-29T23:36:38Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-29T23:36:47Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "089": {
+      "skeleton_file": "01史记_089_张耳陈馀列传第二十九_skeleton.json",
+      "volume_name": "张耳陈馀列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-29T13:24:31Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-29T13:24:31Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-29T13:24:31Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-29T15:00:57Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "068": {
+      "skeleton_file": "01史记_068_商君列传第八_skeleton.json",
+      "volume_name": "商君列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-29T01:08:13Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-29T01:08:13Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-29T01:08:13Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-29T01:08:30Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "120": {
+      "skeleton_file": "01史记_120_汲郑列传第六十_skeleton.json",
+      "volume_name": "汲郑列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-30T12:09:53Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-30T12:09:54Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-30T12:09:54Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-30T12:10:02Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "080": {
+      "skeleton_file": "01史记_080_乐毅列传第二十_skeleton.json",
+      "volume_name": "乐毅列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-29T08:43:03Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-29T08:43:03Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-29T08:43:03Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-29T08:43:08Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "082": {
+      "skeleton_file": "01史记_082_田单列传第二十二_skeleton.json",
+      "volume_name": "田单列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-29T08:43:57Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-29T08:43:57Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-29T08:43:57Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-29T08:44:02Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "095": {
+      "skeleton_file": "01史记_095_樊郦滕灌列传第三十五_skeleton.json",
+      "volume_name": "樊郦滕灌列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-29T15:43:26Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-29T15:43:27Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-29T15:43:27Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-29T15:48:22Z",
+          "detail": null,
+          "note": "check_format final 通过（step4_hardening recover）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "106": {
+      "skeleton_file": "01史记_106_吴王濞列传第四十六_skeleton.json",
+      "volume_name": "吴王濞列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-29T16:17:12Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-29T16:17:13Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-29T16:17:44Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-29T16:17:52Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "115": {
+      "skeleton_file": "01史记_115_朝鲜列传第五十五_skeleton.json",
+      "volume_name": "朝鲜列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-29T23:39:08Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-29T23:39:09Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-29T23:39:09Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-29T23:39:18Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "078": {
+      "skeleton_file": "01史记_078_春申君列传第十八_skeleton.json",
+      "volume_name": "春申君列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-29T08:42:38Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-29T08:42:38Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-29T08:42:38Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-29T08:42:43Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "066": {
+      "skeleton_file": "01史记_066_伍子胥列传第六_skeleton.json",
+      "volume_name": "伍子胥列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-29T00:59:39Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-29T00:59:40Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-29T00:59:40Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-29T01:00:56Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "118": {
+      "skeleton_file": "01史记_118_淮南衡山列传第五十八_skeleton.json",
+      "volume_name": "淮南衡山列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-30T12:01:52Z",
+          "detail": "manual recover + check_format final"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-30T12:01:52Z",
+          "detail": "manual recover + check_format final"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-30T12:01:52Z",
+          "detail": "manual recover + check_format final"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-30T12:01:52Z",
+          "detail": "manual recover + check_format final"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "107": {
+      "skeleton_file": "01史记_107_魏其武安侯列传第四十七_skeleton.json",
+      "volume_name": "魏其武安侯列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-29T23:28:12Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）",
+          "note": "灌夫PATCH+step4"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-29T23:28:12Z",
+          "detail": "check_format skeleton 通过",
+          "note": "灌夫PATCH+step4"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-29T23:28:12Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及",
+          "note": "灌夫PATCH+step4"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-29T23:28:12Z",
+          "detail": null,
+          "note": "灌夫PATCH+step4"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "128": {
+      "skeleton_file": "01史记_128_龟策列传第六十八_skeleton.json",
+      "volume_name": "龟策列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-30T15:13:49Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-30T15:13:49Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-30T15:13:49Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-30T15:13:49Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "081": {
+      "skeleton_file": "01史记_081_廉颇蔺相如列传第二十一_skeleton.json",
+      "volume_name": "廉颇蔺相如列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-29T08:43:44Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-29T08:43:44Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-29T08:43:45Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-29T08:43:49Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "070": {
+      "skeleton_file": "01史记_070_张仪列传第十_skeleton.json",
+      "volume_name": "张仪列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-29T01:09:43Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-29T01:09:43Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-29T01:09:44Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-29T01:10:03Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "114": {
+      "skeleton_file": "01史记_114_东越列传第五十四_skeleton.json",
+      "volume_name": "东越列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-29T23:37:59Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-29T23:38:00Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-29T23:38:44Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-29T23:38:53Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "069": {
+      "skeleton_file": "01史记_069_苏秦列传第九_skeleton.json",
+      "volume_name": "苏秦列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-29T01:08:49Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-29T01:08:49Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-29T01:08:50Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-29T01:09:14Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "127": {
+      "skeleton_file": "01史记_127_日者列传第六十七_skeleton.json",
+      "volume_name": "日者列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-30T15:12:08Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-30T15:12:08Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-30T15:12:08Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-30T15:12:09Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "126": {
+      "skeleton_file": "01史记_126_滑稽列传第六十六_skeleton.json",
+      "volume_name": "滑稽列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-30T15:12:58Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-30T15:12:58Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-30T15:12:58Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-30T15:12:58Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "100": {
+      "skeleton_file": "01史记_100_季布栾布列传第四十_skeleton.json",
+      "volume_name": "季布栾布列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-29T16:10:37Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-29T16:10:38Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-29T16:10:38Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-29T16:10:47Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "129": {
+      "skeleton_file": "01史记_129_货殖列传第六十九_skeleton.json",
+      "volume_name": "货殖列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-30T15:12:17Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-30T15:12:17Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-30T15:12:17Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-30T15:12:17Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "091": {
+      "skeleton_file": "01史记_091_黥布列传第三十一_skeleton.json",
+      "volume_name": "黥布列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-29T15:16:43Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-29T15:16:43Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-29T15:16:44Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-29T15:19:53Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "077": {
+      "skeleton_file": "01史记_077_魏公子列传第十七_skeleton.json",
+      "volume_name": "魏公子列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-29T08:41:09Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-29T08:41:09Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-29T08:41:09Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-29T08:41:14Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "130": {
+      "skeleton_file": "01史记_130_太史公自序第七十_skeleton.json",
+      "volume_name": "太史公自序",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-30T13:15:56Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-30T13:16:57Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-30T13:16:57Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-30T13:17:07Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "110": {
+      "skeleton_file": "01史记_110_匈奴列传第五十_skeleton.json",
+      "volume_name": "匈奴列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-29T23:29:39Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-29T23:29:40Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-29T23:29:40Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-29T23:29:48Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "112": {
+      "skeleton_file": "01史记_112_平津侯主父列传第五十二_skeleton.json",
+      "volume_name": "平津侯主父列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-29T23:31:54Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-29T23:31:54Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-29T23:31:54Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-29T23:32:03Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "065": {
+      "skeleton_file": "01史记_065_孙子吴起列传第五_skeleton.json",
+      "volume_name": "孙子吴起列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-28T23:52:50Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-28T23:52:51Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-28T23:52:52Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-29T01:01:00Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "105": {
+      "skeleton_file": "01史记_105_扁鹊仓公列传第四十五_skeleton.json",
+      "volume_name": "扁鹊仓公列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-29T16:16:36Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）",
+          "note": "blocks手修+step4"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-29T16:16:36Z",
+          "detail": "check_format skeleton 通过",
+          "note": "blocks手修+step4"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-29T16:16:36Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及",
+          "note": "blocks手修+step4"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-29T16:16:43Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）",
+          "note": "blocks手修+step4"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "097": {
+      "skeleton_file": "01史记_097_郦生陆贾列传第三十七_skeleton.json",
+      "volume_name": "郦生陆贾列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-29T15:59:58Z",
+          "detail": null,
+          "note": "blocks手修+step4_hardening"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-29T15:59:58Z",
+          "detail": null,
+          "note": "blocks手修+step4_hardening"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-29T15:59:58Z",
+          "detail": null,
+          "note": "blocks手修+step4_hardening"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-29T15:59:59Z",
+          "detail": null,
+          "note": "blocks手修+step4_hardening"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "108": {
+      "skeleton_file": "01史记_108_韩长孺列传第四十八_skeleton.json",
+      "volume_name": "韩长孺列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-29T23:28:32Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-29T23:28:32Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-29T23:28:32Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-29T23:28:41Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "076": {
+      "skeleton_file": "01史记_076_平原君虞卿列传第十六_skeleton.json",
+      "volume_name": "平原君虞卿列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-29T05:34:33Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-29T05:34:33Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-29T05:34:34Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-29T08:41:04Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "116": {
+      "skeleton_file": "01史记_116_西南夷列传第五十六_skeleton.json",
+      "volume_name": "西南夷列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-29T23:39:31Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-29T23:39:31Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-29T23:39:31Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-29T23:39:40Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "096": {
+      "skeleton_file": "01史记_096_张丞相列传第三十六_skeleton.json",
+      "volume_name": "张丞相列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-29T15:54:33Z",
+          "detail": null,
+          "note": "手动修复 blocks+step4_hardening"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-29T15:54:33Z",
+          "detail": null,
+          "note": "手动修复 blocks+step4_hardening"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-29T15:54:33Z",
+          "detail": null,
+          "note": "手动修复 blocks+step4_hardening"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-29T15:54:33Z",
+          "detail": null,
+          "note": "手动修复 blocks+step4_hardening"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "111": {
+      "skeleton_file": "01史记_111_卫将军骠骑列传第五十一_skeleton.json",
+      "volume_name": "卫将军骠骑列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-29T23:29:53Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-29T23:29:54Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-29T23:29:54Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-29T23:30:02Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "117": {
+      "skeleton_file": "01史记_117_司马相如列传第五十七_skeleton.json",
+      "volume_name": "司马相如列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-29T23:40:19Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-29T23:40:19Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-29T23:40:19Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-29T23:40:28Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "063": {
+      "skeleton_file": "01史记_063_老子韩非列传第三_skeleton.json",
+      "volume_name": "老子韩非列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-28T23:33:27Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-28T23:33:27Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-28T23:33:28Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-28T23:49:24Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "062": {
+      "skeleton_file": "01史记_062_管晏列传第二_skeleton.json",
+      "volume_name": "管晏列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-28T15:24:37Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-28T15:24:37Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-28T15:24:37Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-28T23:32:58Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "119": {
+      "skeleton_file": "01史记_119_循吏列传第五十九_skeleton.json",
+      "volume_name": "循吏列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-30T12:02:05Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-30T12:02:05Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-30T12:02:05Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-30T12:03:01Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    },
+    "071": {
+      "skeleton_file": "01史记_071_樗里子甘茂列传第十一_skeleton.json",
+      "volume_name": "樗里子甘茂列传",
+      "steps": {
+        "1": {
+          "status": "done",
+          "at": "2026-06-29T01:10:11Z",
+          "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
+        },
+        "2": {
+          "status": "done",
+          "at": "2026-06-29T01:10:11Z",
+          "detail": "check_format skeleton 通过"
+        },
+        "3": {
+          "status": "done",
+          "at": "2026-06-29T01:10:11Z",
+          "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
+        },
+        "4": {
+          "status": "done",
+          "at": "2026-06-29T04:49:02Z",
+          "detail": "check_format final 通过（含优先级/年份/归属）"
+        }
+      },
+      "overall": "done",
+      "blocked_reason": null
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "total_paragraphs": 18,
+  "excludes": [
+    {
+      "paragraph_from": 18,
+      "paragraph_to": 18,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "傅宽",
+      "category": "武将",
+      "paragraph_from": 1,
+      "paragraph_to": 7
+    },
+    {
+      "name": "靳歙",
+      "category": "武将",
+      "paragraph_from": 8,
+      "paragraph_to": 14
+    },
+    {
+      "name": "蒯成",
+      "category": "文臣",
+      "paragraph_from": 15,
+      "paragraph_to": 17
+    }
+  ]
+}

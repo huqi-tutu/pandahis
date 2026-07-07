@@ -1,0 +1,29 @@
+{
+  "work": "01史记",
+  "vol": "124",
+  "volume_name": "游侠列传",
+  "volume_type_guess": "列传",
+  "protagonists": [
+    {
+      "name": "朱家",
+      "category": "庶众",
+      "rationale": "《游侠列传》叙事主轴：朱家（庶众）"
+    },
+    {
+      "name": "剧孟",
+      "category": "庶众",
+      "rationale": "《游侠列传》叙事主轴：剧孟（庶众）"
+    },
+    {
+      "name": "郭解",
+      "category": "庶众",
+      "rationale": "《游侠列传》叙事主轴：郭解（庶众）"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题",
+    "其他"
+  ]
+}

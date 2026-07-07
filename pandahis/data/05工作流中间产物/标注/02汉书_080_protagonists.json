@@ -1,0 +1,24 @@
+{
+  "work": "02汉书",
+  "vol": "080",
+  "volume_name": "霍光金日磾传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "霍光",
+      "category": "武将",
+      "rationale": "《霍光金日磾传》为合传，卷名首列‘霍光’，其为西汉中期权臣、大司马大将军，辅政、废立，是卷中首要叙事主轴人物。"
+    },
+    {
+      "name": "金日磾",
+      "category": "武将",
+      "rationale": "《霍光金日磾传》为合传，卷名次列‘金日磾’，其为匈奴休屠王太子，入汉为侍中、驸马都尉，武帝托孤重臣，是卷中另一核心叙事主轴人物。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰"
+  ]
+}

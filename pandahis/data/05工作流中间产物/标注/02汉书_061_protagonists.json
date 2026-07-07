@@ -1,0 +1,34 @@
+{
+  "work": "02汉书",
+  "vol": "061",
+  "volume_name": "贾邹枚路传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "贾谊",
+      "category": "文臣",
+      "rationale": "卷名《贾邹枚路传》首为贾姓，指西汉文帝时期著名政论家、文学家贾谊，为合传主轴人物之一。"
+    },
+    {
+      "name": "邹阳",
+      "category": "文臣",
+      "rationale": "卷名《贾邹枚路传》次为邹姓，指西汉景帝时期文学家、辩士邹阳，为合传主轴人物之一。"
+    },
+    {
+      "name": "枚乘",
+      "category": "文臣",
+      "rationale": "卷名《贾邹枚路传》第三为枚姓，指西汉景帝时期著名辞赋家枚乘，为合传主轴人物之一。"
+    },
+    {
+      "name": "路温舒",
+      "category": "文臣",
+      "rationale": "卷名《贾邹枚路传》末为路姓，指西汉昭帝、宣帝时期著名司法官员、奏疏《尚德缓刑书》作者路温舒，为合传主轴人物之一。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰"
+  ]
+}

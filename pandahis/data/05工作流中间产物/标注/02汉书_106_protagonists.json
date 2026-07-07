@@ -1,0 +1,45 @@
+{
+  "work": "02汉书",
+  "vol": "106",
+  "volume_name": "佞幸传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "邓通",
+      "category": "文臣",
+      "rationale": "《佞幸传》记载以谄媚得宠者，邓通为汉文帝宠臣，传中首位核心传主。"
+    },
+    {
+      "name": "韩嫣",
+      "category": "文臣",
+      "rationale": "韩嫣为汉武帝宠臣，出身贵族而非宦官，《佞幸传》为其立专传。"
+    },
+    {
+      "name": "李延年",
+      "category": "文臣",
+      "rationale": "李延年以倡优得幸于汉武帝，《佞幸传》列其为传主之一。"
+    },
+    {
+      "name": "石显",
+      "category": "宦官",
+      "rationale": "石显以宦官身份受汉元帝宠信，专权朝政，《佞幸传》中重要传主。"
+    },
+    {
+      "name": "淳于长",
+      "category": "宗戚",
+      "rationale": "淳于长系孝元王皇后外甥，以外戚之身得幸于汉成帝，按分类链宗戚优先于文臣。"
+    },
+    {
+      "name": "董贤",
+      "category": "文臣",
+      "rationale": "董贤为汉哀帝宠臣，官至大司马，非外戚，《佞幸传》末篇核心传主。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

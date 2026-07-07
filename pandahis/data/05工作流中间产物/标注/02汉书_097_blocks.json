@@ -1,0 +1,29 @@
+{
+  "total_paragraphs": 25,
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 25,
+      "paragraph_to": 25,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "谷永",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 20
+    },
+    {
+      "name": "杜邺",
+      "category": "文臣",
+      "paragraph_from": 21,
+      "paragraph_to": 24
+    }
+  ]
+}

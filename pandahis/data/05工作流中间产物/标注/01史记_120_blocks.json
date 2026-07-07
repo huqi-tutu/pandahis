@@ -1,0 +1,24 @@
+{
+  "total_paragraphs": 26,
+  "excludes": [
+    {
+      "paragraph_from": 26,
+      "paragraph_to": 26,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "汲黯",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 18
+    },
+    {
+      "name": "郑当时",
+      "category": "文臣",
+      "paragraph_from": 19,
+      "paragraph_to": 25
+    }
+  ]
+}

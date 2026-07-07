@@ -20,6 +20,11 @@ function parseOriginalRef(ref: unknown): { title: string; items: RefItemView[]; 
   }
   if (typeof ref !== 'object' || ref === null) return null
   const o = ref as Record<string, unknown>
+  const textField = typeof o.text === 'string' ? o.text.trim() : ''
+  if (textField) {
+    const title = typeof o.title === 'string' && o.title.trim() ? o.title.trim() : '史料原文'
+    return { title, items: [], fallback: textField }
+  }
   const title = typeof o.title === 'string' && o.title.trim() ? o.title.trim() : '史料原文'
   const rawItems = o.items
   const items: RefItemView[] = []

@@ -1,0 +1,47 @@
+{
+  "work": "02汉书",
+  "vol": "088",
+  "volume_name": "赵尹韩张两王传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "赵广汉",
+      "category": "文臣",
+      "rationale": "卷名“赵”指赵广汉，宣帝朝京兆尹，以发奸擿伏、威制豪强著称，属本卷明确主轴。"
+    },
+    {
+      "name": "尹翁归",
+      "category": "文臣",
+      "rationale": "卷名“尹”指尹翁归，历东海太守、右扶风，以明察与廉平著称，属本卷明确主轴。"
+    },
+    {
+      "name": "韩延寿",
+      "category": "文臣",
+      "rationale": "卷名“韩”指韩延寿，重礼教、善移风俗，终以左冯翊坐弃市，属本卷明确主轴。"
+    },
+    {
+      "name": "张敞",
+      "category": "文臣",
+      "rationale": "卷名“张”指张敞，宣帝朝名吏，历胶东相、京兆尹、冀州刺史，属本卷明确主轴。"
+    },
+    {
+      "name": "王尊",
+      "category": "文臣",
+      "rationale": "卷名“两王”之一，历益州刺史、东平相、京兆尹、东郡太守，以刚直敢断著称，属本卷明确主轴。"
+    },
+    {
+      "name": "王章",
+      "category": "文臣",
+      "rationale": "卷名“两王”之一，成帝朝谏大夫、司隶校尉、京兆尹，以刚直敢言、为王凤所陷著称，属本卷明确主轴。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "名册简传",
+    "其他"
+  ],
+  "_mechanical_override": true
+}

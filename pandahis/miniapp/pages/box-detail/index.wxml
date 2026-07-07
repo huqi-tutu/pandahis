@@ -1,210 +1,293 @@
-<view class="page-shell">
-  <proto-nav title="{{navTitle}}" show-back="{{true}}"></proto-nav>
+<view class="page-shell" bindtap="onPageTap">
+  <proto-nav hidden="{{audioOpen}}" title="{{navTitle}}" show-back="{{true}}"></proto-nav>
 
-  <block wx:if="{{header}}">
-    <!-- 内容 Tab 栏（紧跟导航栏） -->
-    <view class="box-tabs-wrap" style="top: {{tabTop}}px;">
-      <view class="box-tab {{tab === 'content' ? 'active' : ''}}" data-tab="content" bindtap="setTab">详情</view>
-      <view class="box-tab {{tab === 'relations' ? 'active' : ''}}" data-tab="relations" bindtap="setTab">关系</view>
-      <view class="box-tab {{tab === 'reviews' ? 'active' : ''}}" data-tab="reviews" bindtap="setTab">评述</view>
-      <view class="box-tab {{tab === 'relics' ? 'active' : ''}}" data-tab="relics" bindtap="setTab">见证</view>
+ <block wx:if="{{header}}">
+  <!-- 页面主体容器（固定定位，包含 Tab 栏 + 滚动区） -->
+  <view class="box-page-body" style="top: {{tabTop}}px;">
+   <!-- 内容 Tab 栏 -->
+   <view class="box-tabs-wrap" hidden="{{tab === 'content' && !uiFocused}}">
+    <view class="box-tab {{tab === 'content' ? 'active' : ''}}" data-tab="content" bindtap="setTab">详情</view>
+    <view class="box-tab {{tab === 'relations' ? 'active' : ''}}" data-tab="relations" bindtap="setTab">关系</view>
+    <view class="box-tab {{tab === 'reviews' ? 'active' : ''}}" data-tab="reviews" bindtap="setTab">评述</view>
+    <view class="box-tab {{tab === 'relics' ? 'active' : ''}}" data-tab="relics" bindtap="setTab">见证</view>
+   </view>
+
+   <!-- 内容滚动区（关系 Tab 禁用纵向滚动） -->
+   <scroll-view
+    class="box-body-scroll"
+    scroll-y="{{tab !== 'relations'}}"
+    enhanced
+    show-scrollbar="{{false}}"
+    id="boxBodyScroll"
+    bindscroll="onDetailScroll">
+   <!-- Tab 0：详情 -->
+   <view wx:if="{{tab === 'content'}}" class="box-tab1-body">
+    <!-- 左侧滚动指示器 -->
+    <view wx:if="{{readingProgress> 0}}" class="scroll-indicator-left">
+     <view class="scroll-indicator-track"></view>
+     <view class="scroll-indicator-thumb" style="top: {{readingProgress}}%;"></view>
     </view>
 
-    <!-- 内容滚动区（关系 Tab 禁用纵向滚动） -->
-    <scroll-view
-      class="box-body-scroll"
-      scroll-y="{{tab !== 'relations'}}"
-      enhanced
-      show-scrollbar="{{false}}"
-      style="top: {{bodyTop}}px;"
-    >
-      <!-- Tab 0：详情 -->
-      <view wx:if="{{tab === 'content'}}" class="box-tab1-body">
-        <view wx:if="{{detailErr}}" class="tab-empty">
-          <text class="tab-empty-text">{{detailErr}}</text>
-        </view>
-        <block wx:elif="{{detailReady}}">
-          <view
-            wx:if="{{header.box.blurb && !detailParagraphs.length}}"
-            class="box-p"
-          >{{header.box.blurb}}</view>
-          <view wx:for="{{detailParagraphs}}" wx:key="*this" class="box-p">{{item}}</view>
-          <view wx:if="{{!detailParagraphs.length && !header.box.blurb}}" class="tab-empty">
-            <text class="tab-empty-text">暂无详情正文</text>
-          </view>
-        </block>
-        <view wx:else class="tab-empty">
-          <text class="tab-empty-text">加载中…</text>
-        </view>
-      </view>
-
-      <!-- Tab 1：关系图谱 -->
-      <view wx:if="{{tab === 'relations'}}" class="rel-tab-body">
-        <view wx:if="{{graphErr}}" class="tab-empty">
-          <text class="tab-empty-text">{{graphErr}}</text>
-        </view>
-        <view wx:elif="{{graphReady && !graph.nodes.length}}" class="tab-empty">
-          <text class="tab-empty-text">暂无关系数据</text>
-        </view>
-        <view wx:elif="{{graphReady}}" class="rel-graph-wrap">
-          <view class="rel-graph-viewport" style="height: {{graphCanvasH}}px;">
-            <relation-graph-canvas
-              wx:if="{{graph.nodes.length}}"
-              id="bdRelationGraph"
-              class="rel-graph-canvas"
-              graph="{{graph}}"
-              bind:nodeTap="onGraphNodeTap"
-              bind:zoomChange="onGraphZoomChange"
-            />
-          </view>
-        </view>
-        <view wx:else class="tab-empty">
-          <text class="tab-empty-text">加载中…</text>
-        </view>
-      </view>
-
-      <!-- Tab 2：评述 -->
-      <view wx:if="{{tab === 'reviews'}}" class="box-tab-content">
-        <view wx:if="{{critErr}}" class="tab-empty">
-          <text class="tab-empty-text">{{critErr}}</text>
-        </view>
-        <view wx:elif="{{critReady && !critiques.length}}" class="tab-empty">
-          <text class="tab-empty-text">暂无评述数据</text>
-        </view>
-        <view
-          wx:for="{{critiques}}"
-          wx:key="_k"
-          wx:for-index="idx"
-          class="crit-card"
-          bindtap="onCritiqueTap"
-          data-idx="{{idx}}"
-        >
-          <view class="crit-head">
-            <view class="crit-avatar" style="background: {{critColors[idx % 6]}};">
-              <text class="crit-avatar-text">{{item.avatarLetter}}</text>
-            </view>
-            <view class="crit-meta">
-              <text class="crit-author">{{item.cardTitle}}</text>
-              <text class="crit-era muted">{{item.cardMeta}}</text>
-            </view>
-            <text class="chev muted">›</text>
-          </view>
-          <view class="crit-divider"></view>
-          <text class="crit-body">{{item.cardSummary}}</text>
-        </view>
-        <view wx:if="{{!critReady && !critErr}}" class="tab-empty">
-          <text class="tab-empty-text">加载中…</text>
-        </view>
-      </view>
-
-      <!-- Tab 3：见证 -->
-      <view wx:if="{{tab === 'relics'}}" class="box-tab-content">
-        <view wx:if="{{relicErr}}" class="tab-empty">
-          <text class="tab-empty-text">{{relicErr}}</text>
-        </view>
-        <view wx:elif="{{relicReady && !relics.length}}" class="tab-empty">
-          <text class="tab-empty-text">暂无文物数据</text>
-        </view>
-        <view
-          wx:for="{{relics}}"
-          wx:key="name"
-          wx:for-index="ri"
-          class="relic-card card-paper"
-          bindtap="onRelicTap"
-          data-idx="{{ri}}"
-        >
-          <view class="relic-head">
-            <view class="relic-thumb muted">
-              <image wx:if="{{item.imageUrl}}" class="relic-thumb-img" src="{{item.imageUrl}}" mode="aspectFill" />
-              <text wx:else>{{item.thumbLabel}}</text>
-            </view>
-            <view class="relic-info">
-              <view class="relic-name-row">
-                <text class="relic-name">{{item.name}}</text>
-              </view>
-              <text class="relic-summary muted">{{item.summary}}</text>
-              <text class="relic-location accent">◎ {{item.location}}</text>
-            </view>
-            <text class="chev muted">›</text>
-          </view>
-        </view>
-        <view wx:if="{{!relicReady && !relicErr}}" class="tab-empty">
-          <text class="tab-empty-text">加载中…</text>
-        </view>
-      </view>
-
-      <view wx:if="{{tab !== 'relations'}}" style="height: 96rpx;"></view>
-    </scroll-view>
-
-    <!-- 关系 Tab 缩放栏 -->
-    <view wx:if="{{tab === 'relations' && graph.nodes.length}}" class="graph-zoom-bar">
-      <view class="graph-zoom-btn" bindtap="onGraphZoomOut">−</view>
-      <text class="graph-zoom-label">{{graphScaleLabel}}</text>
-      <view class="graph-zoom-btn" bindtap="onGraphZoomIn">+</view>
+    <view wx:if="{{detailErr}}" class="tab-empty">
+     <text class="tab-empty-text">{{detailErr}}</text>
     </view>
+    <block wx:elif="{{detailReady}}">
 
-    <!-- AssistiveTouch 漂浮操作点（仅详情 Tab） -->
+     <view wx:if="{{!detailParagraphs.length && header.box.blurb}}" class="detail-body">
+      <view class="box-p box-p--first">{{header.box.blurb}}</view>
+     </view>
+     <view wx:elif="{{detailParagraphs.length}}" class="detail-body">
+      <view
+       wx:for="{{detailParagraphs}}"
+       wx:key="*this"
+       class="box-p {{index === 0 ? 'box-p--first' : ''}}">{{item}}</view>
+      <!-- 正文结束装饰 -->
+      <view class="detail-endmark">❧</view>
+     </view>
+     <view wx:else class="tab-empty tab-empty--detail">
+      <view class="tab-empty-icon">📜</view>
+      <text class="tab-empty-text">暂无详情正文</text>
+      <text class="tab-empty-sub">史略内容正在编撰中</text>
+     </view>
+ </block>
+    <view wx:else class="tab-empty tab-empty--loading">
+     <view class="tab-empty-loading">
+      <text class="tab-empty-loading-dot">·</text>
+      <text class="tab-empty-loading-dot">·</text>
+      <text class="tab-empty-loading-dot">·</text>
+     </view>
+     <text class="tab-empty-text">加载中</text>
+    </view>
+   </view>
+
+   <!-- Tab 1：关系图谱 -->
+   <view wx:if="{{tab === 'relations'}}" class="rel-tab-body">
+    <view wx:if="{{graphErr}}" class="tab-empty">
+     <text class="tab-empty-text">{{graphErr}}</text>
+    </view>
+    <view wx:elif="{{graphReady && !graph.nodes.length}}" class="tab-empty">
+     <text class="tab-empty-text">暂无关系数据</text>
+    </view>
+    <view wx:elif="{{graphReady}}" class="rel-graph-wrap">
+     <view class="rel-graph-viewport" style="height: {{graphCanvasH}}px;">
+      <relation-graph-canvas
+       wx:if="{{graph.nodes.length}}"
+       id="bdRelationGraph"
+       class="rel-graph-canvas"
+       graph="{{graph}}"
+       bind:nodeTap="onGraphNodeTap"
+       bind:zoomChange="onGraphZoomChange"
+      />
+     </view>
+    </view>
+    <view wx:else class="tab-empty">
+     <text class="tab-empty-text">加载中…</text>
+    </view>
+   </view>
+
+   <!-- Tab 2：评述 -->
+   <view wx:if="{{tab === 'reviews'}}" class="box-tab-content">
+    <view wx:if="{{critErr}}" class="tab-empty">
+     <text class="tab-empty-text">{{critErr}}</text>
+    </view>
+    <view wx:elif="{{critReady && !critiques.length}}" class="tab-empty">
+     <text class="tab-empty-text">暂无评述数据</text>
+    </view>
     <view
-      wx:if="{{tab === 'content'}}"
-      class="assist-layer"
-      style="left: {{assistX}}px; top: {{assistY}}px;"
-    >
-      <view
-        wx:for="{{assistMenuItems}}"
-        wx:key="key"
-        class="assist-action {{assistOpen ? 'assist-action--open' : ''}}"
-        style="transform: translate({{item.dx}}px, {{item.dy}}px); transition-delay: {{item.delay}}ms;"
-        catchtap="onAssistAction"
-        data-action="{{item.key}}"
-      >
-        <view class="assist-action-btn">
-          <image
-            wx:if="{{item.key !== 'fav'}}"
-            class="assist-action-icon"
-            src="{{item.icon}}"
-            mode="aspectFit"
-          />
-          <image
-            wx:else
-            class="assist-action-icon"
-            src="{{isFav ? '/images/icons/shoucangB.png' : '/images/icons/shoucangA.png'}}"
-            mode="aspectFit"
-          />
-          <text class="assist-action-label">{{item.label}}</text>
-        </view>
+     wx:for="{{critiques}}"
+     wx:key="_k"
+     wx:for-index="idx"
+     class="crit-card"
+     bindtap="onCritiqueTap"
+     data-idx="{{idx}}">
+     <view class="crit-head">
+      <view class="crit-avatar" style="background: {{critColors[idx % 6]}};">
+       <text class="crit-avatar-text">{{item.avatarLetter}}</text>
       </view>
-      <view
-        class="assist-dot {{assistOpen ? 'assist-dot--open' : ''}} {{assistDragging ? 'assist-dot--dragging' : ''}}"
-        catchtouchstart="onAssistTouchStart"
-        catchtouchmove="onAssistTouchMove"
-        catchtouchend="onAssistTouchEnd"
-      ></view>
+      <view class="crit-meta">
+       <text class="crit-author">{{item.cardTitle}}</text>
+       <text class="crit-era muted">{{item.cardMeta}}</text>
+      </view>
+      <text class="chev muted">›</text>
+     </view>
+     <view class="crit-divider"></view>
+     <text class="crit-body">{{item.cardSummary}}</text>
     </view>
+    <view wx:if="{{!critReady && !critErr}}" class="tab-empty">
+     <text class="tab-empty-text">加载中…</text>
+    </view>
+   </view>
+
+   <!-- Tab 3：见证 -->
+   <view wx:if="{{tab === 'relics'}}" class="box-tab-content">
+    <view wx:if="{{relicErr}}" class="tab-empty">
+     <text class="tab-empty-text">{{relicErr}}</text>
+    </view>
+    <view wx:elif="{{relicReady && !relics.length}}" class="tab-empty">
+     <text class="tab-empty-text">暂无文物数据</text>
+    </view>
+    <view
+     wx:for="{{relics}}"
+     wx:key="name"
+     wx:for-index="ri"
+     class="relic-card card-paper"
+     bindtap="onRelicTap"
+     data-idx="{{ri}}">
+     <view class="relic-head">
+      <view class="relic-thumb muted">
+       <image wx:if="{{item.imageUrl}}" class="relic-thumb-img" src="{{item.imageUrl}}" mode="aspectFill" />
+       <text wx:else>{{item.thumbLabel}}</text>
+      </view>
+      <view class="relic-info">
+       <view class="relic-name-row">
+        <text class="relic-name">{{item.name}}</text>
+       </view>
+       <text class="relic-summary muted">{{item.summary}}</text>
+       <text class="relic-location accent">◎ {{item.location}}</text>
+      </view>
+      <text class="chev muted">›</text>
+     </view>
+    </view>
+    <view wx:if="{{!relicReady && !relicErr}}" class="tab-empty">
+     <text class="tab-empty-text">加载中…</text>
+    </view>
+   </view>
+
+   <view wx:if="{{tab !== 'relations'}}" style="height: 96rpx;"></view>
+  </scroll-view>
+ </view>
+
+  <!-- 关系 Tab 缩放栏 -->
+  <view wx:if="{{tab === 'relations' && graph.nodes.length}}" class="graph-zoom-bar">
+   <view class="graph-zoom-btn" bindtap="onGraphZoomOut">−</view>
+   <text class="graph-zoom-label">{{graphScaleLabel}}</text>
+   <view class="graph-zoom-btn" bindtap="onGraphZoomIn">+</view>
+  </view>
+
 
     <!-- 音频播放浮层 -->
-    <view class="box-audio-overlay {{audioOpen ? 'box-audio-overlay--open' : ''}}" hidden="{{!audioOpen}}">
-      <view class="box-audio-top">
-        <view class="box-audio-back" bindtap="toggleAudioOverlay">返回正文</view>
-        <text class="box-audio-mode-title">音频播放</text>
-        <view class="box-audio-top-spacer"></view>
+  <view class="box-audio-overlay {{audioOpen ? 'box-audio-overlay--open' : ''}}" hidden="{{!audioOpen}}">
+    <!-- 旋转封面 -->
+    <view class="box-audio-cover">
+      <view class="box-audio-cover-disc {{narrationState === 'playing' ? 'box-audio-cover-disc--spin' : ''}}" bindtap="toggleAudioOverlay">
+        <image class="box-audio-cover-logo" src="/images/icons/history-logo.png" mode="aspectFill" />
       </view>
-      <view class="box-audio-cover">朗读 · 史略解说</view>
-      <view class="box-audio-scrub">
-        <view class="box-audio-scrub-track">
-          <view class="box-audio-scrub-fill" style="width: {{audioProgress}}%;"></view>
-        </view>
-        <view class="box-audio-time-row">
-          <text>{{audioCurrentTime}}</text>
-          <text>{{audioDuration}}</text>
-        </view>
-      </view>
-      <view class="box-audio-play-row">
-        <view class="box-audio-play" bindtap="toggleAudioPlayback">{{narrationState === 'playing' ? '⏸' : '▶'}}</view>
-      </view>
-      <scroll-view class="box-audio-text" scroll-y show-scrollbar="{{false}}">
-        <view wx:for="{{detailParagraphs}}" wx:key="*this" class="box-audio-para">{{item}}</view>
-        <view wx:if="{{!detailParagraphs.length && header.box.blurb}}" class="box-audio-para">{{header.box.blurb}}</view>
-      </scroll-view>
+      <text class="box-audio-cover-title">{{navTitle}}</text>
+      <text class="box-audio-cover-time">{{audioTimeRange}}</text>
+      <text class="box-audio-cover-category">{{audioCategoryPath}}</text>
     </view>
-  </block>
+
+    <!-- 操作栏（详情/倍速/收藏/分享） -->
+    <view class="box-audio-actions">
+      <view class="box-audio-action-btn" bindtap="toggleAudioOverlay">
+        <image class="box-audio-action-icon" src="/images/icons/xiangqing.png" mode="aspectFit" />
+        <text class="box-audio-action-label">详情</text>
+      </view>
+      <view class="box-audio-action-btn" bindtap="onSpeedToggle">
+        <text class="box-audio-action-speed">{{audioSpeedLabel}}</text>
+        <text class="box-audio-action-label">倍速</text>
+      </view>
+      <view class="box-audio-action-btn" bindtap="toggleFav">
+        <image class="box-audio-action-icon" src="{{isFav ? '/images/icons/shoucangB.png' : '/images/icons/shoucangA.png'}}" mode="aspectFit" />
+        <text class="box-audio-action-label">收藏</text>
+      </view>
+      <view class="box-audio-action-btn" bindtap="onShareTap">
+        <image class="box-audio-action-icon" src="/images/icons/fenxiang.png" mode="aspectFit" />
+        <text class="box-audio-action-label">分享</text>
+      </view>
+    </view>
+
+    <!-- 进度条 -->
+    <view class="box-audio-scrub">
+      <view class="box-audio-time-row">
+        <text class="box-audio-time-text">{{audioCurrentTime}}</text>
+        <view
+          class="box-audio-scrub-track"
+          bindtouchstart="onAudioSeekStart"
+          bindtouchmove="onAudioSeekMove"
+          bindtouchend="onAudioSeekEnd">
+          <view class="box-audio-scrub-bg"></view>
+          <view class="box-audio-scrub-fill" style="width: {{audioProgress}}%;"></view>
+          <view class="box-audio-scrub-knob" style="left: {{audioProgress}}%;"></view>
+        </view>
+        <text class="box-audio-time-text">{{audioDuration}}</text>
+      </view>
+    </view>
+
+    <!-- 控制区 -->
+    <view class="box-audio-controls">
+      <view class="box-audio-ctrl-btn" bindtap="onAudioSkipBack">
+        <text class="box-audio-ctrl-icon">↺</text>
+        <text class="box-audio-ctrl-label">15</text>
+      </view>
+      <view class="box-audio-play" bindtap="toggleAudioPlayback">
+        <text class="box-audio-play-icon">{{narrationState === 'playing' ? '❚❚' : '▶'}}</text>
+      </view>
+      <view class="box-audio-ctrl-btn" bindtap="onAudioSkipFwd">
+        <text class="box-audio-ctrl-icon">↻</text>
+        <text class="box-audio-ctrl-label">15</text>
+      </view>
+    </view>
+  </view>
+  <!-- 底部悬浮操作栏（原文/播放/收藏/分享） -->
+  <view wx:if="{{tab === 'content'}}" class="bottom-action-bar {{!uiFocused ? 'bottom-action-bar--hidden' : ''}}" catchtap="markTapFromBar">
+   <view class="bottom-action-item" bindtap="goOriginal">
+    <image class="bottom-action-icon" src="/images/icons/yuanwen.png" mode="aspectFit" />
+    <text class="bottom-action-label">原文</text>
+   </view>
+   <view class="bottom-action-item" bindtap="onPlayIntro">
+    <image class="bottom-action-icon" src="/images/icons/langdu.png" mode="aspectFit" />
+    <text class="bottom-action-label">朗读</text>
+   </view>
+   <view class="bottom-action-item" bindtap="toggleFav">
+    <image class="bottom-action-icon" src="{{isFav ? '/images/icons/shoucangB.png' : '/images/icons/shoucangA.png'}}" mode="aspectFit" />
+    <text class="bottom-action-label">收藏</text>
+   </view>
+   <view class="bottom-action-item" bindtap="onShareTap">
+    <image class="bottom-action-icon" src="/images/icons/fenxiang.png" mode="aspectFit" />
+    <text class="bottom-action-label">分享</text>
+   </view>
+  </view>
+
+  <!-- 原文半屏弹层（样式同朝代简介） -->
+  <view class="ud-modal" wx:if="{{showOriginal}}" bindtap="closeOriginal" data-close="1">
+   <view class="ud-modal-card" catchtap="noop">
+    <view class="ud-modal-header">
+     <view class="ud-modal-title">{{originalTitle || '史料原文'}}</view>
+     <view class="ud-modal-close" catchtap="closeOriginal">
+      <text class="ud-modal-close-icon">✕</text>
+     </view>
+    </view>
+    <scroll-view scroll-y class="ud-modal-body" enhanced show-scrollbar="{{false}}">
+     <view wx:if="{{originalLoading}}" class="tab-empty tab-empty--loading">
+      <view class="tab-empty-loading">
+       <text class="tab-empty-loading-dot">·</text>
+       <text class="tab-empty-loading-dot">·</text>
+       <text class="tab-empty-loading-dot">·</text>
+      </view>
+      <text class="tab-empty-text">加载中</text>
+     </view>
+     <view wx:elif="{{originalEmpty}}" class="tab-empty">
+      <text class="tab-empty-text">暂无原文引用</text>
+     </view>
+     <block wx:elif="{{originalItems.length}}">
+      <view wx:for="{{originalItems}}" wx:key="index" class="ud-modal-ref-card">
+       <view class="ud-modal-ref-head" wx:if="{{item.work || item.chapter}}">
+        <view class="ud-modal-ref-chip" wx:if="{{item.work}}">{{item.work}}</view>
+        <view class="ud-modal-ref-chip ud-modal-ref-chip--muted" wx:if="{{item.chapter}}">{{item.chapter}}</view>
+       </view>
+       <view class="ud-modal-ref-excerpt" wx:if="{{item.excerpt}}">{{item.excerpt}}</view>
+       <view class="ud-modal-actions" wx:if="{{item.url}}">
+        <view class="ud-modal-copy-btn" bindtap="copyOriginalLink" data-url="{{item.url}}">复制链接</view>
+       </view>
+      </view>
+     </block>
+     <view wx:elif="{{originalFallback}}" class="ud-modal-fallback">
+      <view class="ud-modal-fallback-label">原文内容</view>
+      <view class="ud-modal-fallback-body">{{originalFallback}}</view>
+     </view>
+    </scroll-view>
+   </view>
+  </view>
+ </block>
 </view>

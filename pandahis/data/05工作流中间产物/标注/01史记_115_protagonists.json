@@ -1,0 +1,18 @@
+{
+  "work": "01史记",
+  "vol": "115",
+  "volume_name": "朝鲜列传",
+  "volume_type_guess": "列传",
+  "protagonists": [
+    {
+      "name": "朝鲜",
+      "category": "蕃祚",
+      "rationale": "《朝鲜列传》为记国列传，以朝鲜国为叙事主轴，记述其与汉朝关系及最终灭亡。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题"
+  ]
+}

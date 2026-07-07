@@ -1,0 +1,42 @@
+{
+  "total_paragraphs": 64,
+  "excludes": [
+    {
+      "paragraph_from": 63,
+      "paragraph_to": 64,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "宋微子",
+      "category": "君王",
+      "paragraph_from": 1,
+      "paragraph_to": 39
+    },
+    {
+      "name": "宋襄公",
+      "category": "君王",
+      "paragraph_from": 40,
+      "paragraph_to": 44
+    },
+    {
+      "name": "宋昭公",
+      "category": "君王",
+      "paragraph_from": 45,
+      "paragraph_to": 57
+    },
+    {
+      "name": "宋景公",
+      "category": "君王",
+      "paragraph_from": 58,
+      "paragraph_to": 61
+    },
+    {
+      "name": "宋君偃",
+      "category": "君王",
+      "paragraph_from": 62,
+      "paragraph_to": 62
+    }
+  ]
+}

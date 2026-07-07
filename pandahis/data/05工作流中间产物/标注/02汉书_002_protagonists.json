@@ -1,0 +1,18 @@
+{
+  "work": "02汉书",
+  "vol": "002",
+  "volume_name": "高帝纪第一下",
+  "volume_type_guess": "本纪",
+  "protagonists": [
+    {
+      "name": "汉高祖",
+      "category": "君王",
+      "rationale": "卷名「高帝纪第一下」明确为汉高祖刘邦的本纪，是《汉书》记载西汉开国皇帝刘邦生平事迹的核心卷章。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "赞曰",
+    "过渡叙事",
+    "其他"
+  ]
+}

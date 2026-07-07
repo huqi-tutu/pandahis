@@ -1,0 +1,29 @@
+{
+  "work": "02汉书",
+  "vol": "043",
+  "volume_name": "魏豹田儋韩王信传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "魏豹",
+      "category": "君王",
+      "rationale": "卷名首列人物，魏豹为秦末汉初诸侯，本传为其个人传记，属合传主轴之一。"
+    },
+    {
+      "name": "田儋",
+      "category": "君王",
+      "rationale": "卷名第二人物，田儋为秦末齐地起义领袖，本传为其个人传记，属合传主轴之一。"
+    },
+    {
+      "name": "韩王信",
+      "category": "君王",
+      "rationale": "卷名第三人物，韩王信为西汉初年诸侯王，本传为其个人传记，属合传主轴之一。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰/班固曰"
+  ]
+}

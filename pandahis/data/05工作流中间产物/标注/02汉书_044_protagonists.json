@@ -1,0 +1,40 @@
+{
+  "work": "02汉书",
+  "vol": "044",
+  "volume_name": "韩彭英卢吴传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "韩信",
+      "category": "武将",
+      "rationale": "卷名《韩彭英卢吴传》首列韩信，为西汉开国功臣、诸侯王，属武将列传合传主轴。"
+    },
+    {
+      "name": "彭越",
+      "category": "武将",
+      "rationale": "卷名次列彭越，西汉开国功臣、梁王，属武将列传合传主轴。"
+    },
+    {
+      "name": "英布",
+      "category": "武将",
+      "rationale": "卷名第三列英布，西汉开国功臣、淮南王，属武将列传合传主轴。"
+    },
+    {
+      "name": "卢绾",
+      "category": "武将",
+      "rationale": "卷名第四列卢绾，西汉开国功臣、燕王，属武将列传合传主轴。"
+    },
+    {
+      "name": "吴芮",
+      "category": "君王",
+      "rationale": "卷名末列吴芮，西汉开国功臣、长沙王，属武将列传合传主轴。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "赞曰",
+    "班固曰",
+    "过渡叙事"
+  ]
+}

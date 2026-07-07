@@ -1,0 +1,504 @@
+{
+  "volume": "哀帝纪",
+  "source_file": "02汉书_012_哀帝纪第十一.txt",
+  "total_paragraphs": 50,
+  "volume_type": "纪传叙事",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "汉哀帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "汉哀帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "汉哀帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "汉哀帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "汉哀帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "汉哀帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "汉哀帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "汉哀帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "汉哀帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "汉哀帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "汉哀帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "汉哀帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "汉哀帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "汉哀帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "汉哀帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "汉哀帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "汉哀帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "汉哀帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "汉哀帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "汉哀帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "汉哀帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "汉哀帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "汉哀帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "汉哀帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "汉哀帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "汉哀帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "汉哀帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "汉哀帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "汉哀帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "汉哀帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "汉哀帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "汉哀帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "汉哀帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "汉哀帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "汉哀帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "汉哀帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "汉哀帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "汉哀帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "汉哀帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "汉哀帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "汉哀帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "汉哀帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "汉哀帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [
+        {
+          "name": "汉哀帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 47,
+      "owners": [
+        {
+          "name": "汉哀帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 48,
+      "owners": [
+        {
+          "name": "汉哀帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 49,
+      "owners": [
+        {
+          "name": "汉哀帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 50,
+      "owners": [],
+      "exclude_reason": "其他"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HANSHU_012_01",
+      "史略名称": "汉哀帝",
+      "史略简介": "汉哀帝",
+      "原文字句": "孝哀皇帝，元帝庶孙，定陶恭王子也。母曰丁姬。年三岁嗣立为王，长好文辞法律。元延四年入朝，尽从傅、相、中尉。时成帝少弟中山孝王亦来朝，独从傅。上怪之，以问定陶王，",
+      "史略分类": "君王",
+      "主要史料出处": "《汉书·卷12·哀帝纪》",
+      "paragraphs": [
+        {
+          "volume": "哀帝纪",
+          "paragraph_from": 3,
+          "paragraph_to": 49
+        }
+      ],
+      "_auto_filled": {
+        "年规则": "即位年 → 退位/崩年",
+        "_年LLM依据": "据《汉书·哀帝纪》，刘欣于公元前7年即位，公元前1年崩，葬义陵。"
+      },
+      "四级帝王坐标": "汉哀帝",
+      "三级政权坐标": "西汉",
+      "二级朝代坐标": "西汉",
+      "一级文明坐标": "华夏",
+      "文明ID": "HX",
+      "朝代ID": "CD_HX_XIHAN",
+      "政权ID": "ZQ_HX_XIHAN_XIHAN",
+      "帝王ID": "DW_HX_XIHAN_XIHAN_HANAIDI",
+      "五级细坐标": "汉书·卷012·君王·01",
+      "六级段落锚点": "[P3-P49]",
+      "原文出处": "哀帝纪·P3-P49",
+      "优先级": "P0",
+      "优先级判定理由": "本纪主轴叙事，共47段",
+      "史略开始年": -7,
+      "史略结束年": -1
+    }
+  ],
+  "volume_subtype": "本纪",
+  "volume_subtype_source": "llm_step1a",
+  "protagonist_count": 1,
+  "protagonist_count_source": "llm_step1a",
+  "protagonists_manifest": [
+    {
+      "name": "汉哀帝",
+      "category": "君王",
+      "rationale": "卷名‘哀帝纪’明确指示本卷为汉哀帝刘欣的本纪，按《汉书》体例，本纪以帝王为叙事主轴，记录其生平、政令及在位期间大事。"
+    }
+  ],
+  "knowledge_provenance": {
+    "step1": {
+      "source": "llm",
+      "at": "2026-07-01T00:42:17Z",
+      "session_id": "hist-02-012-s1-695-4e2a7a90"
+    },
+    "step4": {
+      "source": "llm",
+      "at": "2026-07-05T02:55:31Z"
+    }
+  }
+}

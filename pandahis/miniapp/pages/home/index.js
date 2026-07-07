@@ -3,6 +3,7 @@ const { navBarPx } = require('../../native-utils/matrix/layout.js')
 const { CIV_TABS, buildRows, initialCiv, buildAllExpanded, toggleDynastyExpanded } = require('../../native-utils/matrix/mock-home-matrix.js')
 const { fetchHomeMatrixData } = require('../../native-utils/matrix/matrix-cloud.js')
 const { request } = require('../../native-utils/api.js')
+const { buildNavFromRows, findActiveNavIndex } = require('../../native-utils/matrix/dynasty-nav-data.js')
 const {
   OVERVIEW_CIV_SPOTS,
   OVERVIEW_SPOT_TO_MATRIX_SLUG,
@@ -18,10 +19,21 @@ const DEFAULT_OVERVIEW_MAP = '/images/world-history-dynasty-map.png'
 const CIV_CARD_W_RPX   = 130
 const CIV_CARD_GAP_RPX = 16
 const CIV_TAB_BAR_RPX  = 180
+/** 底部 custom-tab-bar 高度 + 安全区，矩阵滚动留白（保证末段色块完整露出） */
+const CUSTOM_TAB_BAR_RPX = 112
+const MATRIX_SCROLL_BOTTOM_EXTRA_RPX = 32
+
+function calcMatrixScrollBottomPad(screenW, safeAreaBottomPx) {
+  const ratio = screenW / 750
+  const safeRpx = Math.max(0, (safeAreaBottomPx || 0) / ratio)
+  return Math.ceil(CUSTOM_TAB_BAR_RPX + safeRpx + MATRIX_SCROLL_BOTTOM_EXTRA_RPX)
+}
 
 const N = CIV_TABS.length  // 18
 
 /** 时间轴列宽（rpx），与 home-matrix.wxss 中 .matrix-time-col 保持一致 */
+const MAJOR_NODE_KEYS = new Set(['夏','商','西周','秦','西汉','西晋','隋','唐','北宋','元','明','清'])
+
 const MATRIX_TIME_COL_RPX = 84
 const HX_LABEL_FONT_MAX = 16
 const HX_LABEL_FONT_MIN = 9
@@ -63,6 +75,7 @@ function enrichMatrixRows(rows) {
   return (rows || []).map(row => Object.assign({}, row, {
     hxFontSize:   row.hxLabel ? fitHxLabelFontSize(row.hxLabel, row.expandable) : 0,
     yearFontSize: fitYearFontSize(row.year),
+    isMajorNode:  !!(row.hxLabel && MAJOR_NODE_KEYS.has(row.hxDynastyKey)),
   }))
 }
 
@@ -105,11 +118,13 @@ const STACK_BAR_RPX    = Math.round(210 * STACK_UI_SCALE)  // 147
 const STACK_LAYER_SHIFT_PX = Math.round(22 * STACK_UI_SCALE)  // 15
 const STACK_DEPTH_Y_RPX    = Math.round(4 * STACK_UI_SCALE)   // 3
 const TEXT_BAR_RPX     = 88    // 文字 Tab 栏高（文字高 + 上下 padding）
+const CIV_TEXT_TAB_BAR_RPX = TEXT_BAR_RPX
 const STACK_MAX_D      = 4     // 最多展示左右各 4 张
 
 // 文字 Tab 常量（向下滑动后展示）
 const TEXT_ITEM_W_RPX  = 72
 const TEXT_ITEM_GAP_RPX = 10
+const CIV_ALL_BTN_RESERVE_RPX = 112
 
 /** 浮层文明卡相对列宽缩放（0.7 = 缩小 30%） */
 const CIV_PICKER_CARD_SCALE = 0.7
@@ -136,7 +151,8 @@ function calcTextScroll(civIndex, screenW) {
   const r    = screenW / 750
   const step = (TEXT_ITEM_W_RPX + TEXT_ITEM_GAP_RPX) * r
   const mid  = civIndex * step + TEXT_ITEM_W_RPX * r / 2
-  return Math.max(0, mid - screenW / 2)
+  const visibleW = screenW - CIV_ALL_BTN_RESERVE_RPX * r
+  return Math.max(0, mid - visibleW / 2)
 }
 
 /**
@@ -175,8 +191,8 @@ function buildStackItems(civIndex, screenW) {
   })
 }
 
-// ─── 切换模式：true = 层叠卡片，false = 横向滑动（回退）─────────────
-const STACK_MODE = true
+// ─── 首页仅保留文字 Tab（图片 Tab 已移除）────────────────────────────
+const STACK_MODE = false
 
 /** 生成 Tab 双层样式（避免 WXML 属性里写 `<` 导致编译失败白屏） */
 function buildTabLayerStyles(tabAlpha) {
@@ -208,11 +224,10 @@ Page({
     civTextItems:      CIV_TABS.map((t, i) => ({ id: t.id, name: t.name, realIdx: i })),
     civTextScrollLeft: 0,
     // 图片→文字渐变进度（0=图片，1=文字），由 onMatrixScroll 驱动
-    tabAlpha:          0,
-    stackLayerStyle:   'opacity:1;transform:translateY(0px);z-index:2;',
-    textLayerStyle:    'opacity:0;transform:translateY(14px);pointer-events:none;z-index:1;',
-    // Tab 栏当前高度 rpx（随滚动从 STACK_BAR_RPX 缩至 TEXT_BAR_RPX）
-    tabAreaH:          STACK_BAR_RPX,
+    tabAlpha:          1,
+    stackLayerStyle:   '',
+    textLayerStyle:    '',
+    tabAreaH:          CIV_TEXT_TAB_BAR_RPX,
     civSwitching:      false,
     scrollRatio:       0.5,
     statusBarPx:       20,
@@ -227,8 +242,23 @@ Page({
     activeCiv:         initialCiv,
     matrixRows:        [],
     matrixBlocks:      [],
+    matrixScrollTop:   0,
+    navItems:          [],
+    navActiveIdx:      -1,
+    navActive:         false,
+    navHudVisible:     false,
+    navHudFading:     false,
+    navDragActive: false,
+    navHudTitle:       '',
+    navHudSub:         '',
+    navHudYear:        '',
+    navHudEmp:        '',
+    navHudLeft:        0,
+    navHudTop:         0,
     matrixOverlays:    [],
+    matrixSubCards:    [],
     matrixTotalH:      0,
+    matrixScrollBottomPad: 200,
     scrollAreaTop:     0,
     matrixHeight:      600,
     headerPadPx:       88,
@@ -246,11 +276,15 @@ Page({
     let sw = 375
     let statusBar = 20
     let windowHeight = 667
+    let safeBottomPx = 0
     try {
       const sys = wx.getSystemInfoSync()
       sw = sys.windowWidth
       statusBar = sys.statusBarHeight || 20
       windowHeight = sys.windowHeight
+      if (sys.safeArea && sys.screenHeight) {
+        safeBottomPx = Math.max(0, sys.screenHeight - sys.safeArea.bottom)
+      }
     } catch (e) {}
 
     this._screenW = sw
@@ -262,31 +296,37 @@ Page({
 
     const navPx = navBarPx()
     const headerPadPx = statusBar + navPx
-    const tabBarPx = STACK_BAR_RPX * (sw / 750)
+    const tabBarPx = CIV_TEXT_TAB_BAR_RPX * (sw / 750)
     const scrollAreaTop = headerPadPx + tabBarPx
     const matrixHeight = Math.max(200, windowHeight - scrollAreaTop)
+    const matrixScrollBottomPad = calcMatrixScrollBottomPad(sw, safeBottomPx)
     const pickerMetrics = calcCivPickerMetrics(windowHeight, headerPadPx, sw)
 
     this.setData(Object.assign({
       activeCiv:         initialCiv,
       civIndex:          0,
       expandedDynasties: defaultExpanded,
-      civStackItems:     buildStackItems(0, sw),
+      tabAreaH:          CIV_TEXT_TAB_BAR_RPX,
+      civStackItems:     [],
       civTabsLoop:       buildLoopItems(0),
       civScrollLeft:     calcCivScroll(0, sw),
       civScrollAnim:     false,
       scrollAreaTop,
       matrixHeight,
+      matrixScrollBottomPad,
       scrollRatio:       sw / 750,
       statusBarPx:       statusBar,
       windowHeightPx:    windowHeight,
       matrixRows:        [],
       matrixBlocks:      [],
+      matrixSubCards:    [],
+      matrixOverlays:    [],
       matrixTotalH:      0,
     }, buildTabLayerStyles(0), pickerMetrics))
 
     this._tabAlpha = 0
     this._preloadCivImages()
+    this._lastScrollTop = 0
     this._skipShowRefresh = true
     this._matrixDataPromise = this._refreshMatrixData()
     this._gridDataPromise = this._loadGridData()
@@ -332,11 +372,15 @@ Page({
     let windowHeight = 667
     let statusBar = this._statusBarH || 20
     let sw = this._screenW || 375
+    let safeBottomPx = 0
     try {
       const sys = wx.getSystemInfoSync()
       windowHeight = sys.windowHeight
       statusBar = sys.statusBarHeight || 20
       sw = sys.windowWidth
+      if (sys.safeArea && sys.screenHeight) {
+        safeBottomPx = Math.max(0, sys.screenHeight - sys.safeArea.bottom)
+      }
       this._screenW = sw
       this._statusBarH = statusBar
       this._windowHeight = windowHeight
@@ -345,12 +389,15 @@ Page({
 
     const navPx = this._navPx || navBarPx()
     const headerPadPx = statusBar + navPx
-    const tabBarPx = (this.data.stackMode ? STACK_BAR_RPX : CIV_TAB_BAR_RPX) * (sw / 750)
+    const tabBarPx = CIV_TEXT_TAB_BAR_RPX * (sw / 750)
     const scrollAreaTop = headerPadPx + tabBarPx
     const matrixHeight = Math.max(200, windowHeight - scrollAreaTop)
+    const matrixScrollBottomPad = calcMatrixScrollBottomPad(sw, safeBottomPx)
     this.setData(Object.assign({
       scrollAreaTop,
       matrixHeight,
+      matrixScrollBottomPad,
+      tabAreaH: CIV_TEXT_TAB_BAR_RPX,
       scrollRatio:    sw / 750,
       statusBarPx:    statusBar,
       windowHeightPx: windowHeight,
@@ -376,21 +423,32 @@ Page({
         console.error('[home-matrix] buildRows returned empty for', civId)
       }
       this.setData({
-        matrixRows:     enrichMatrixRows(layout.rows     || []),
-        matrixBlocks:   layout.blocks   || [],
-        matrixOverlays: layout.overlays || [],
-        matrixTotalH:   layout.totalH   || 0,
+        matrixRows:       enrichMatrixRows(layout.rows     || []),
+        // Phase 1/2: initialize nav data from rows
+        navItems:         layout.rows
+          ? buildNavFromRows(layout.rows, this._ratio || 0.5).navItems
+          : this.data.navItems,
+        matrixBlocks:     layout.blocks     || [],
+        matrixOverlays:   layout.overlays     || [],
+        matrixSubCards:   layout.subCards   || [],
+        matrixTotalH:     layout.totalH     || 0,
         civScrollAnim: true,
       })
+      this._cacheNavRect()
     } catch (err) {
       console.error('[home-matrix] _loadMatrix failed', err)
       try {
         const layout = buildRows(civId, {})
         this.setData({
-          matrixRows:     enrichMatrixRows(layout.rows     || []),
-          matrixBlocks:   layout.blocks   || [],
-          matrixOverlays: layout.overlays || [],
-          matrixTotalH:   layout.totalH   || 0,
+          matrixRows:       enrichMatrixRows(layout.rows     || []),
+        // Phase 1/2: initialize nav data from rows
+        navItems:         layout.rows
+          ? buildNavFromRows(layout.rows, this._ratio || 0.5).navItems
+          : this.data.navItems,
+          matrixBlocks:     layout.blocks     || [],
+          matrixOverlays:   layout.overlays     || [],
+          matrixSubCards:   layout.subCards   || [],
+          matrixTotalH:     layout.totalH     || 0,
           expandedDynasties: {},
         })
       } catch (err2) {
@@ -399,38 +457,19 @@ Page({
     }
   },
 
-  /** 根据矩阵 scrollTop 同步图片 Tab / 文字 Tab 渐隐状态 */
-  _applyTabAlphaFromScroll(scrollTop, force) {
-    const THRESHOLD = 130
-    const raw  = Math.min(1, Math.max(0, (scrollTop || 0) / THRESHOLD))
-    const next = Math.round(raw * 100) / 100
-    if (!force && Math.abs(next - (this._tabAlpha || 0)) < 0.02) return
-    this._tabAlpha = next
-    const r          = this._ratio      || 0.5
-    const statusBarH = this._statusBarH || 20
-    const tabAreaH      = Math.round(STACK_BAR_RPX - next * (STACK_BAR_RPX - TEXT_BAR_RPX))
-    const scrollAreaTop = statusBarH + (this._navPx || navBarPx()) + tabAreaH * r
-    const matrixHeight = Math.max(200, (this._windowHeight || 667) - scrollAreaTop)
-    this.setData(Object.assign(
-      { tabAreaH, scrollAreaTop, matrixHeight },
-      buildTabLayerStyles(next)
-    ))
+  /** 文字 Tab 固定展示，矩阵滚动不再切换 Tab 形态 */
+
+  // ─── 导航高亮更新 ──────────────────────────────────────────────
+  _updateNavHighlight(scrollTopPx) {
+    const activeIdx = findActiveNavIndex(scrollTopPx, this.data.navItems)
+    if (activeIdx !== this.data.navActiveIdx) {
+      this.setData({ navActiveIdx: activeIdx })
+    }
   },
 
-  _syncTabAlphaFromDom() {
-    if (!this.data.stackMode) return
-    wx.nextTick(() => {
-      wx.createSelectorQuery()
-        .in(this)
-        .select('#matrixScroll')
-        .scrollOffset(res => {
-          if (res && res.scrollTop != null) {
-            this._applyTabAlphaFromScroll(res.scrollTop, true)
-          }
-        })
-        .exec()
-    })
-  },
+  _applyTabAlphaFromScroll() {},
+
+  _syncTabAlphaFromDom() {},
 
   onShow() {
     const tab = typeof this.getTabBar === 'function' ? this.getTabBar() : null
@@ -486,8 +525,6 @@ Page({
 
     if (this._matrixLoadTimer) clearTimeout(this._matrixLoadTimer)
 
-    // 先启动卡片动画，延迟矩阵重建避免阻塞动画帧
-    this._applyStackStyles(civIndex, sw)
     this.setData({
       activeCiv,
       civIndex,
@@ -543,8 +580,52 @@ Page({
   },
 
   // 矩阵滚动：图片 Tab 渐隐 → 文字 Tab 渐现（跟手更新 opacity / 位移）
+  /** 矩阵触摸移动：nav 激活时配合 scroll-view 原生 touchmove 处理索引拖动 */
+  onMatrixTouchMove(e) {
+    var touch = e.touches && e.touches[0]
+    if (!touch) return
+    // 只处理右侧 50px 范围内的触摸（nav 区域）
+    var rightZone = this._navRightZoneEdge !== undefined ? this._navRightZoneEdge : (wx.getSystemInfoSync().windowWidth - 50)
+    if (touch.clientX < rightZone) return
+    // 不在 nav 区域内的触摸直接放行（由 scroll-view 原生滚动处理）
+    if (!this._navTouched) return
+
+    // 长按计时器未触发（< 400ms）→ 不做任何事，只有长按 400ms 才能激活
+    if (this._navLongPressTimer) {
+      return
+    }
+
+    // 导航栏未激活时不处理
+    if (!this.data.navActive && !this._navPendingActivation) return
+
+    // 导航已激活，更新位置
+    if (!this._navMoved) {
+      this._navMoved = true
+      this._navWasDrag = true
+      this._isNavDragging = true
+      if (this._navAutoDismissTimer) {
+        clearTimeout(this._navAutoDismissTimer)
+        this._navAutoDismissTimer = null
+      }
+    }
+    this._updateNavFromTouch(e)
+  },
+
+
   onMatrixScroll(e) {
-    this._applyTabAlphaFromScroll(e.detail.scrollTop)
+    const scrollTop = e.detail.scrollTop
+    this._lastScrollTop = scrollTop
+    this._applyTabAlphaFromScroll(scrollTop)
+    this._updateNavHighlight(scrollTop)
+    // nav 已收起但 navDragActive 仍锁定 → 用户手动滚动时释放
+    if (this.data.navDragActive && !this.data.navActive && !this._navPendingActivation) {
+      this.setData({ navDragActive: false })
+    }
+    // 用户手动滚动时收起导航栏（非 drag 状态）
+    if (this.data.navActive && !this._navMoved && !this._isNavDragging) {
+      this.setData({ navActive: false })
+      this._hideNavHud()
+    }
   },
 
   // 滚动结束后补一次同步，覆盖惯性滚动末帧
@@ -552,6 +633,272 @@ Page({
     const scrollTop = (e && e.detail && e.detail.scrollTop) || 0
     this._applyTabAlphaFromScroll(scrollTop, true)
   },
+
+  // ─── 导航索引点击跳转 ──────────────────────────────────────────
+  _findRowKeyForDynasty(dynastyKey) {
+    const rows = this.data.matrixRows || []
+    const row = rows.find(r => r.hxDynastyKey === dynastyKey)
+    return row ? row.key : null
+  },
+
+
+
+  // ─── 时间轴触摸：长按 400ms 激活导航栏，短按穿透到收起展开 ──
+  onTimeColTouchStart(e) {
+    // 时间列不再处理导航交互，保留为空
+  },
+
+  onTimeColTouchMove(e) {
+    // 时间列不再处理导航交互
+  },
+
+
+  onTimeColTouchEnd(e) {
+    // 时间列不再处理导航交互
+  },
+
+
+
+
+  // ─── 导航索引触摸（Phase 3 拖动预留） ─────────────────────────
+  /** 缓存导航器位置，供拖动手势映射使用 */
+  _cacheNavRect() {
+    var that = this
+    wx.createSelectorQuery()
+      .select('.dynasty-nav')
+      .boundingClientRect(function(rect) {
+        if (rect) that._navRect = rect
+      })
+      .exec()
+  },
+
+  /** 拖动结束后吸附到最近朝代起始位置 */
+  _snapNav() {
+    if (this._isNavDragging) return
+    var scrollTop = this._lastScrollTop || 0
+    var navItems = this.data.navItems
+    if (!navItems || !navItems.length) return
+    var nearest = null
+    var minDist = Infinity
+    navItems.forEach(function(item) {
+      var dist = Math.abs(item.yPx - scrollTop)
+      if (dist < minDist) {
+        minDist = dist
+        nearest = item
+      }
+    })
+    if (nearest && nearest.yPx >= 0) {
+      // Snap：通过 scroll-top 吸附到朝代起点
+      this.setData({
+        matrixScrollTop: nearest.yPx,
+        navDragActive: true,
+      })
+      if (this._navSnapTimer) clearTimeout(this._navSnapTimer)
+      var that = this
+      this._navSnapTimer = setTimeout(function() {
+        that.setData({ navDragActive: false })
+        that._navSnapTimer = null
+      }, 50)
+    }
+  },
+
+  onNavTouchStart(e) {
+    // 只处理右侧 50px 范围内的触摸（nav 区域）
+    var touch = e.touches && e.touches[0]
+    if (!touch) return
+    var sysInfo = wx.getSystemInfoSync()
+    var navZoneRightEdge = sysInfo.windowWidth - 50
+    if (touch.clientX < navZoneRightEdge) return
+    // 清理自动收起计时器
+    if (this._navAutoDismissTimer) {
+      clearTimeout(this._navAutoDismissTimer)
+      this._navAutoDismissTimer = null
+    }
+    if (this._navLongPressTimer) {
+      clearTimeout(this._navLongPressTimer)
+      this._navLongPressTimer = null
+    }
+    this._navTouched = true
+    this._navLastActiveIdx = -1
+    this._navWasDrag = false
+    this._navMoved = false
+    this._isNavDragging = false
+    this._navPendingActivation = false
+    this._navTouchStartY = touch.clientY
+    this._navRightZoneEdge = navZoneRightEdge
+    // 长按 400ms 激活导航栏
+    var that = this
+    this._navLongPressTimer = setTimeout(function() {
+      that._navLongPressTimer = null
+      that._navPendingActivation = true
+      // 激活时默认高亮当前视口顶部的朝代
+      var scrollTopPx = that._lastScrollTop || 0
+      var navItems = that.data.navItems || []
+      var activeIdx = (typeof findActiveNavIndex === 'function')
+        ? findActiveNavIndex(scrollTopPx, navItems)
+        : -1
+      if (activeIdx < 0 || activeIdx >= navItems.length) activeIdx = 0
+      that._navLastActiveIdx = activeIdx
+      that.setData({
+        navActive: true,
+        navActiveIdx: activeIdx,
+        matrixScrollTop: scrollTopPx,
+        navDragActive: true,
+      })
+      that._showNavHud(navItems[activeIdx])
+      that._cacheNavRect()
+      that._isNavDragging = true
+      that._navMoved = false
+      that._navTouched = true
+      that._navWasDrag = false
+    }, 400)
+  },
+
+  onNavTouchMove(e) {
+    // 只有长按 400ms 激活后才能拖动
+    if (!this.data.navActive && !this._navPendingActivation) return
+
+    // 计时器未触发 → 不做任何事
+    if (this._navLongPressTimer) return
+
+    // 首次移动标记
+    if (!this._navMoved) {
+      this._navMoved = true
+      this._navWasDrag = true
+      this._isNavDragging = true
+      if (this._navAutoDismissTimer) {
+        clearTimeout(this._navAutoDismissTimer)
+        this._navAutoDismissTimer = null
+      }
+    }
+    this._updateNavFromTouch(e)
+  },
+
+  onNavTouchEnd(e) {
+    this._navTouched = false
+
+    if (this._navLongPressTimer) {
+      // 短按（< 400ms），计时器未触发 → 不做任何事
+      clearTimeout(this._navLongPressTimer)
+      this._navLongPressTimer = null
+      return
+    }
+
+    if (this.data.navActive) {
+      // 手指松开 → 立即收起导航栏，无需 3s 延迟
+      this._isNavDragging = false
+      this._navLastActiveIdx = -1
+      this.setData({ navActive: false })
+      this._hideNavHud()
+      this._navMoved = false
+    }
+  },
+
+  _handleNavTap(e) {
+    // 单次点击：通过 scroll-top 跳转，不显示 HUD
+    if (!this._navRect) return
+    var touch = e && e.changedTouches && e.changedTouches[0]
+    if (!touch) return
+    var relY = touch.clientY - this._navRect.top
+    var ratio = Math.max(0, Math.min(1, relY / this._navRect.height))
+    var totalHPx = this.data.matrixTotalH * this._ratio
+    var scrollTop = Math.round(ratio * totalHPx)
+    var maxScroll = Math.max(0, totalHPx - this.data.matrixHeight)
+    scrollTop = Math.max(0, Math.min(maxScroll, scrollTop))
+    this.setData({ matrixScrollTop: scrollTop, navDragActive: true })
+    // 短暂激活后释放（利用 scroll-top 完成一次性跳转）
+    if (this._navTapTimer) clearTimeout(this._navTapTimer)
+    var that = this
+    this._navTapTimer = setTimeout(function() {
+      that.setData({ navDragActive: false })
+      that._navTapTimer = null
+    }, 50)
+  },
+
+  _updateNavFromTouch(e) {
+    const touch = e.touches && e.touches[0]
+    if (!touch) return
+    // 直接用 scrollAreaTop / matrixHeight 计算位置（避免 _navRect 缓存过期）
+    var navTop = this.data.scrollAreaTop || 0
+    var navH = this.data.matrixHeight || 600
+    if (!navH) return
+    var relY = touch.clientY - navTop
+    // 触摸位置对应 navItems 索引
+    var navItems = this.data.navItems
+    if (!navItems || !navItems.length) return
+    var ratio = Math.max(0, Math.min(1, (relY - navH * 0.25) / (navH * 0.50)))
+    var idx = Math.round(ratio * (navItems.length - 1))
+    idx = Math.max(0, Math.min(navItems.length - 1, idx))
+    var item = navItems[idx]
+    if (!item || item.yPx < 0) return
+    // 如果朝代没有变化则不处理（每次只切换一个朝代）
+    if (idx === this._navLastActiveIdx && this._navLastActiveIdx >= 0) return
+    this._navLastActiveIdx = idx
+    // 直接 snap 到该朝代的 yPx 位置（第一个卡片在屏幕顶部）
+    var maxScroll = Math.max(0, this.data.matrixTotalH * this._ratio - this.data.matrixHeight)
+    var snapTop = Math.max(0, Math.min(maxScroll, item.yPx))
+    this.setData({
+      matrixScrollTop: snapTop,
+      navDragActive: true,
+    })
+    // 更新高亮和 HUD
+    this.setData({ navActiveIdx: idx })
+    this._showNavHud(navItems[idx])
+  },
+
+  // ─── HUD 显示/隐藏 ─────────────────────────────────────────────
+  _showNavHud(item) {
+    if (!item) return
+    const label = item.label
+    const start = item.start
+    const idx = this.data.navItems.indexOf(item)
+    const next = idx >= 0 && idx < this.data.navItems.length - 1
+      ? this.data.navItems[idx + 1]
+      : null
+    const endYear = next ? next.start : ''
+    const yearStr = start < 0
+      ? '前' + (-start) + (endYear ? ' — ' + (endYear < 0 ? '前' + (-endYear) : '' + endYear) : '')
+      : '' + start + (endYear ? ' — ' + endYear : '')
+    const empCount = item.emperorCount || 0
+    const scrollAreaTop = this.data.scrollAreaTop
+    // HUD 固定在左上区域（时间列右侧，与导航栏位置无关）
+    const hudTop = scrollAreaTop + 12
+    const ratio = this._ratio || 0.5
+    // 时间列宽度 84rpx，HUD 放在其右侧
+    const timeColW = Math.round(84 * ratio)
+    const hudLeft = timeColW + 10
+    this.setData({
+      navHudVisible: true,
+      navHudFading: false,
+      navHudTitle:   label,
+      navHudYear:    yearStr,
+      navHudEmp:     empCount > 0 ? empCount + ' 位帝王' : '',
+      navHudTop:     hudTop,
+      navHudLeft:    hudLeft,
+    })
+  },
+
+  _hideNavHud() {
+    if (this._navHudTimer) {
+      clearTimeout(this._navHudTimer)
+      this._navHudTimer = null
+    }
+    // 先触发 opacity 过渡，250ms 后再隐藏 DOM
+    this.setData({ navHudFading: true })
+    this._navHudTimer = setTimeout(() => {
+      this.setData({ navHudVisible: false, navHudFading: false })
+      this._navHudTimer = null
+    }, 250)
+  },
+
+  _clearNavHudTimer() {
+    if (this._navHudTimer) {
+      clearTimeout(this._navHudTimer)
+      this._navHudTimer = null
+    }
+  },
+
+
 
   // 用户手动滑到边缘时，无动画静默跳回中间段（实现环形效果）
   // 阈值设计：跳转后的新位置不再触发阈值，避免连锁跳转
@@ -654,7 +1001,7 @@ Page({
     }, map)
 
     if (unitId) {
-      let url = `/pages/unit-detail/index?unitId=${encodeURIComponent(unitId)}`
+      let url = `/pages/dynasty-detail/index?unitId=${encodeURIComponent(unitId)}`
       const label = dynasty || ds.displayName || person
       if (label) {
         url += `&dynasty=${encodeURIComponent(String(label))}`
@@ -673,6 +1020,11 @@ Page({
 
   // 展开/收起华夏某朝代（点击时间轴朝代名旁箭头触发）
   onDynastyToggle(e) {
+    // 长按激活了导航栏 → 不执行展开收起
+    if (this._navPendingActivation) {
+      this._navPendingActivation = false
+      return
+    }
     const dynastyKey = e.currentTarget.dataset.dynasty
     if (!dynastyKey) return
     const civTab = CIV_TABS[this.data.civIndex]
@@ -680,5 +1032,6 @@ Page({
     const expanded = toggleDynastyExpanded(dynastyKey, this.data.expandedDynasties, civName)
     this.setData({ expandedDynasties: expanded })
     this._loadMatrix(this.data.activeCiv, expanded)
-  }
+  },
+  noop() {}
 })

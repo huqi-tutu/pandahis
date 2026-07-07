@@ -1,0 +1,24 @@
+{
+  "work": "02汉书",
+  "vol": "064",
+  "volume_name": "李广苏建传第二十四",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "李广",
+      "category": "武将",
+      "rationale": "《李广苏建传》卷名首人，汉朝名将，为合传主人公之一。"
+    },
+    {
+      "name": "苏建",
+      "category": "武将",
+      "rationale": "《李广苏建传》卷名第二人，卫青部将，为合传主人公之一。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰"
+  ]
+}

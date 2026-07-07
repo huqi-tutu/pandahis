@@ -1,0 +1,18 @@
+{
+  "work": "01史记",
+  "vol": "077",
+  "volume_name": "魏公子列传",
+  "volume_type_guess": "列传",
+  "protagonists": [
+    {
+      "name": "魏无忌",
+      "category": "文臣",
+      "rationale": "卷名《魏公子列传》明确指向魏国公子无忌（信陵君），其为战国四公子之一，以养士窃符救赵闻名，是列传唯一主轴人物。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题"
+  ]
+}

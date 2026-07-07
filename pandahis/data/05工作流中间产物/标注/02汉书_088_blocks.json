@@ -1,0 +1,59 @@
+{
+  "work": "02汉书",
+  "vol": "088",
+  "volume_name": "赵尹韩张两王传",
+  "narrative_mode": "hezhuan",
+  "total_paragraphs": 35,
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 35,
+      "paragraph_to": 35,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "赵广汉",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 6
+    },
+    {
+      "name": "尹翁归",
+      "category": "文臣",
+      "paragraph_from": 7,
+      "paragraph_to": 9
+    },
+    {
+      "name": "韩延寿",
+      "category": "文臣",
+      "paragraph_from": 10,
+      "paragraph_to": 15
+    },
+    {
+      "name": "张敞",
+      "category": "文臣",
+      "paragraph_from": 16,
+      "paragraph_to": 23
+    },
+    {
+      "name": "王尊",
+      "category": "文臣",
+      "paragraph_from": 24,
+      "paragraph_to": 31
+    },
+    {
+      "name": "王章",
+      "category": "文臣",
+      "paragraph_from": 32,
+      "paragraph_to": 34
+    }
+  ],
+  "_mechanical": true,
+  "_mechanical_hezhuan": true
+}

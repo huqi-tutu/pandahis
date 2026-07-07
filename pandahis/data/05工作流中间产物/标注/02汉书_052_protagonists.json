@@ -1,0 +1,40 @@
+{
+  "work": "02汉书",
+  "vol": "052",
+  "volume_name": "张周赵任申屠传第十二",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "张苍",
+      "category": "文臣",
+      "rationale": "卷名“张周赵任申屠传”指西汉初年功臣合传，张苍为五人之首，历任丞相，故为主轴人物。"
+    },
+    {
+      "name": "周昌",
+      "category": "文臣",
+      "rationale": "卷名“张周赵任申屠传”之“周”指周昌，汉初御史大夫，因直谏知名，合传叙事主轴。"
+    },
+    {
+      "name": "赵尧",
+      "category": "文臣",
+      "rationale": "合传中“赵”为赵尧，继周昌为御史大夫，属本卷核心人物之一。"
+    },
+    {
+      "name": "任敖",
+      "category": "文臣",
+      "rationale": "合传中“任”为任敖，早年任职狱吏，后为御史大夫，列入合传主轴。"
+    },
+    {
+      "name": "申屠嘉",
+      "category": "文臣",
+      "rationale": "卷名“申屠”指申屠嘉，文帝时任丞相，以刚正著称，为合传末位主人公。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

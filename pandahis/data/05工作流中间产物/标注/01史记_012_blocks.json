@@ -1,0 +1,18 @@
+{
+  "total_paragraphs": 71,
+  "excludes": [
+    {
+      "paragraph_from": 71,
+      "paragraph_to": 71,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "汉武帝",
+      "category": "君王",
+      "paragraph_from": 1,
+      "paragraph_to": 70
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "work": "01史记",
+  "vol": "056",
+  "volume_name": "陈丞相世家",
+  "volume_type_guess": "世家",
+  "protagonists": [
+    {
+      "name": "陈平",
+      "category": "文臣",
+      "standard_name_note": "非帝王，故不查帝王表",
+      "rationale": "卷名『陈丞相世家』，陈平为西汉开国功臣、丞相，本卷以其生平事迹为叙事主轴，属士臣世家。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题"
+  ]
+}

@@ -4,5 +4,6 @@
 CREATE TABLE IF NOT EXISTS historical_box_detail (
   box_id VARCHAR(64) PRIMARY KEY COMMENT '史略ID',
   translate_detail LONGTEXT NOT NULL COMMENT '翻译详情',
+  source_original_json LONGTEXT NULL COMMENT '史料原文 JSON（含 text/blocks）',
   CONSTRAINT fk_box_detail_box FOREIGN KEY (box_id) REFERENCES historical_box (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='史略翻译详情';

@@ -1,0 +1,17 @@
+{
+  "work": "02汉书",
+  "vol": "013",
+  "volume_name": "平帝纪",
+  "volume_type_guess": "本纪",
+  "protagonists": [
+    {
+      "name": "汉平帝",
+      "category": "君王",
+      "rationale": "卷名《平帝纪》为汉书十二本纪之一，以汉平帝（刘衎）在位时期编年叙事为主轴，本纪体例以当朝皇帝为核心主人公。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰"
+  ]
+}

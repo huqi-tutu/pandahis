@@ -1,0 +1,17 @@
+{
+  "work": "02汉书",
+  "vol": "011",
+  "volume_name": "成帝纪",
+  "volume_type_guess": "本纪",
+  "protagonists": [
+    {
+      "name": "汉成帝",
+      "category": "君王",
+      "rationale": "卷名《成帝纪》为汉书皇帝本纪，依纪传体通例，本卷以汉成帝刘骜为唯一叙事主轴。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰"
+  ]
+}

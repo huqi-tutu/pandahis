@@ -1,0 +1,30 @@
+{
+  "total_paragraphs": 113,
+  "excludes": [
+    {
+      "paragraph_from": 113,
+      "paragraph_to": 113,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "赵襄子",
+      "category": "君王",
+      "paragraph_from": 1,
+      "paragraph_to": 53
+    },
+    {
+      "name": "赵武灵王",
+      "category": "君王",
+      "paragraph_from": 54,
+      "paragraph_to": 90
+    },
+    {
+      "name": "赵孝成王",
+      "category": "君王",
+      "paragraph_from": 91,
+      "paragraph_to": 112
+    }
+  ]
+}

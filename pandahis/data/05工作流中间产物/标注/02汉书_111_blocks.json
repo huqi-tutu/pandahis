@@ -1,0 +1,59 @@
+{
+  "total_paragraphs": 23,
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 23,
+      "paragraph_to": 23,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "大宛",
+      "category": "蕃祚",
+      "paragraph_from": 2,
+      "paragraph_to": 4
+    },
+    {
+      "name": "康居",
+      "category": "蕃祚",
+      "paragraph_from": 5,
+      "paragraph_to": 7
+    },
+    {
+      "name": "安息",
+      "category": "蕃祚",
+      "paragraph_from": 8,
+      "paragraph_to": 10
+    },
+    {
+      "name": "大夏",
+      "category": "蕃祚",
+      "paragraph_from": 11,
+      "paragraph_to": 13
+    },
+    {
+      "name": "罽宾",
+      "category": "蕃祚",
+      "paragraph_from": 14,
+      "paragraph_to": 16
+    },
+    {
+      "name": "乌弋山离",
+      "category": "蕃祚",
+      "paragraph_from": 17,
+      "paragraph_to": 19
+    },
+    {
+      "name": "条支",
+      "category": "蕃祚",
+      "paragraph_from": 20,
+      "paragraph_to": 22
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "total_paragraphs": 57,
+  "excludes": [
+    {
+      "paragraph_from": 57,
+      "paragraph_to": 57,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "齐悼惠王",
+      "category": "宗戚",
+      "paragraph_from": 1,
+      "paragraph_to": 42
+    },
+    {
+      "name": "齐悼惠王",
+      "category": "宗戚",
+      "paragraph_from": 43,
+      "paragraph_to": 56
+    }
+  ]
+}

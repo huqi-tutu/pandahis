@@ -1,0 +1,196 @@
+{
+  "total_paragraphs": 164,
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 2,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 116,
+      "paragraph_to": 163,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 164,
+      "paragraph_to": 164,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "颜回",
+      "category": "文臣",
+      "paragraph_from": 3,
+      "paragraph_to": 8
+    },
+    {
+      "name": "闵子骞",
+      "category": "文臣",
+      "paragraph_from": 9,
+      "paragraph_to": 10
+    },
+    {
+      "name": "冉伯牛",
+      "category": "文臣",
+      "paragraph_from": 11,
+      "paragraph_to": 12
+    },
+    {
+      "name": "冉雍",
+      "category": "文臣",
+      "paragraph_from": 13,
+      "paragraph_to": 15
+    },
+    {
+      "name": "冉有",
+      "category": "文臣",
+      "paragraph_from": 16,
+      "paragraph_to": 18
+    },
+    {
+      "name": "子路",
+      "category": "文臣",
+      "paragraph_from": 19,
+      "paragraph_to": 33
+    },
+    {
+      "name": "宰予",
+      "category": "文臣",
+      "paragraph_from": 34,
+      "paragraph_to": 39
+    },
+    {
+      "name": "子贡",
+      "category": "文臣",
+      "paragraph_from": 40,
+      "paragraph_to": 58
+    },
+    {
+      "name": "子游",
+      "category": "文臣",
+      "paragraph_from": 59,
+      "paragraph_to": 61
+    },
+    {
+      "name": "子夏",
+      "category": "文臣",
+      "paragraph_from": 62,
+      "paragraph_to": 66
+    },
+    {
+      "name": "子张",
+      "category": "文臣",
+      "paragraph_from": 67,
+      "paragraph_to": 70
+    },
+    {
+      "name": "曾参",
+      "category": "文臣",
+      "paragraph_from": 71,
+      "paragraph_to": 72
+    },
+    {
+      "name": "澹台灭明",
+      "category": "文臣",
+      "paragraph_from": 73,
+      "paragraph_to": 75
+    },
+    {
+      "name": "宓不齐",
+      "category": "文臣",
+      "paragraph_from": 76,
+      "paragraph_to": 78
+    },
+    {
+      "name": "原宪",
+      "category": "文臣",
+      "paragraph_from": 79,
+      "paragraph_to": 82
+    },
+    {
+      "name": "公冶长",
+      "category": "文臣",
+      "paragraph_from": 83,
+      "paragraph_to": 84
+    },
+    {
+      "name": "南宫括",
+      "category": "文臣",
+      "paragraph_from": 85,
+      "paragraph_to": 86
+    },
+    {
+      "name": "公皙哀",
+      "category": "文臣",
+      "paragraph_from": 87,
+      "paragraph_to": 88
+    },
+    {
+      "name": "曾蒧",
+      "category": "文臣",
+      "paragraph_from": 89,
+      "paragraph_to": 90
+    },
+    {
+      "name": "颜无繇",
+      "category": "文臣",
+      "paragraph_from": 91,
+      "paragraph_to": 92
+    },
+    {
+      "name": "商瞿",
+      "category": "文臣",
+      "paragraph_from": 93,
+      "paragraph_to": 94
+    },
+    {
+      "name": "高柴",
+      "category": "文臣",
+      "paragraph_from": 95,
+      "paragraph_to": 97
+    },
+    {
+      "name": "漆彫开",
+      "category": "文臣",
+      "paragraph_from": 98,
+      "paragraph_to": 99
+    },
+    {
+      "name": "公伯缭",
+      "category": "文臣",
+      "paragraph_from": 100,
+      "paragraph_to": 101
+    },
+    {
+      "name": "司马耕",
+      "category": "文臣",
+      "paragraph_from": 102,
+      "paragraph_to": 104
+    },
+    {
+      "name": "樊须",
+      "category": "文臣",
+      "paragraph_from": 105,
+      "paragraph_to": 107
+    },
+    {
+      "name": "有若",
+      "category": "文臣",
+      "paragraph_from": 108,
+      "paragraph_to": 110
+    },
+    {
+      "name": "公西赤",
+      "category": "文臣",
+      "paragraph_from": 111,
+      "paragraph_to": 113
+    },
+    {
+      "name": "巫马施",
+      "category": "文臣",
+      "paragraph_from": 114,
+      "paragraph_to": 115
+    }
+  ]
+}

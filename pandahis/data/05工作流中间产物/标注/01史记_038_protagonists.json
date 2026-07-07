@@ -1,0 +1,39 @@
+{
+  "work": "01史记",
+  "vol": "038",
+  "volume_name": "宋微子世家",
+  "volume_type_guess": "世家",
+  "protagonists": [
+    {
+      "name": "宋微子",
+      "category": "君王",
+      "rationale": "《宋微子世家》叙事主轴：宋微子（君王）"
+    },
+    {
+      "name": "宋襄公",
+      "category": "君王",
+      "rationale": "《宋微子世家》叙事主轴：宋襄公（君王）"
+    },
+    {
+      "name": "宋昭公",
+      "category": "君王",
+      "rationale": "《宋微子世家》叙事主轴：宋昭公（君王）"
+    },
+    {
+      "name": "宋景公",
+      "category": "君王",
+      "rationale": "《宋微子世家》叙事主轴：宋景公（君王）"
+    },
+    {
+      "name": "宋君偃",
+      "category": "君王",
+      "rationale": "《宋微子世家》叙事主轴：宋君偃（君王）"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题",
+    "其他"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "work": "01史记",
+  "vol": "113",
+  "volume_name": "南越列传",
+  "volume_type_guess": "列传",
+  "protagonists": [
+    {
+      "name": "南越",
+      "category": "蕃祚",
+      "rationale": "《南越列传》为国别史合传，主轴是南越政权集体，赵佗等为叙事中君主但不在帝王.json，故分类庶众；年轴为叙事跨度。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题"
+  ]
+}

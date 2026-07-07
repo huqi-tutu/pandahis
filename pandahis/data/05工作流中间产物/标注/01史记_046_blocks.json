@@ -1,0 +1,30 @@
+{
+  "total_paragraphs": 76,
+  "excludes": [
+    {
+      "paragraph_from": 75,
+      "paragraph_to": 76,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "齐威王",
+      "category": "君王",
+      "paragraph_from": 1,
+      "paragraph_to": 30
+    },
+    {
+      "name": "齐宣王",
+      "category": "君王",
+      "paragraph_from": 31,
+      "paragraph_to": 50
+    },
+    {
+      "name": "齐湣王",
+      "category": "君王",
+      "paragraph_from": 51,
+      "paragraph_to": 74
+    }
+  ]
+}

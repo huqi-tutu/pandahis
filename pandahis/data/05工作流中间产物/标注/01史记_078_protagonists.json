@@ -1,0 +1,18 @@
+{
+  "work": "01史记",
+  "vol": "078",
+  "volume_name": "春申君列传",
+  "volume_type_guess": "列传",
+  "protagonists": [
+    {
+      "name": "黄歇",
+      "category": "文臣",
+      "rationale": "卷名《春申君列传》，春申君即黄歇，战国四公子之一，楚国大臣，以士臣身份为列传主轴人物。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题"
+  ]
+}

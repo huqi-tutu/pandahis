@@ -18,7 +18,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_JSON = ROOT / "data" / "帝王.json"
+DEFAULT_JSON = ROOT / "data" / "01历史坐标数据" / "帝王.json"
 
 CIV_CODE_TO_ID: dict[str, int] = {
     "HX": 1, "CX": 2, "RB": 3, "DNY": 4, "ZY": 5, "BY": 6, "NY": 7, "XY": 8,

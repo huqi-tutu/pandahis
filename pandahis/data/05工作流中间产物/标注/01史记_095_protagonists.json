@@ -1,0 +1,33 @@
+{
+  "work": "01史记",
+  "vol": "095",
+  "volume_name": "樊郦滕灌列传",
+  "volume_type_guess": "列传（合传）",
+  "protagonists": [
+    {
+      "name": "樊哙",
+      "category": "武将",
+      "rationale": "卷名首列樊哙，为西汉开国功臣，本卷合传主轴人物之一。"
+    },
+    {
+      "name": "郦商",
+      "category": "武将",
+      "rationale": "卷名次列郦商，为西汉开国功臣，本卷合传主轴人物之一。"
+    },
+    {
+      "name": "滕公（夏侯婴）",
+      "category": "文臣",
+      "rationale": "卷名第三为滕公（夏侯婴），为西汉开国功臣，本卷合传主轴人物之一。"
+    },
+    {
+      "name": "灌婴",
+      "category": "武将",
+      "rationale": "卷名末列灌婴，为西汉开国功臣，本卷合传主轴人物之一。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题"
+  ]
+}

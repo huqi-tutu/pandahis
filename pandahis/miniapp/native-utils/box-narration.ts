@@ -356,3 +356,43 @@ export function toggleNarrationPlayback(): NarrationState {
   }
   return state
 }
+
+/**
+ * 在当前音频片段内 seek 偏移（秒），正数快进、负数快退
+ * 超出当前片段范围时取边界值
+ */
+export function seekNarration(offsetSec: number): void {
+  if (!audio || (state !== 'playing' && state !== 'paused')) return
+  try {
+    const cur = audio.currentTime || 0
+    const dur = audio.duration || 0
+    const target = Math.max(0, Math.min(dur, cur + offsetSec))
+    audio.seek(target)
+  } catch {
+    // seek 失败静默处理
+  }
+}
+
+/**
+ * 在当前音频片段内 seek 到指定百分比（0-100）
+ */
+export function seekNarrationPct(pct: number): void {
+  if (!audio || (state !== 'playing' && state !== 'paused')) return
+  try {
+    const dur = audio.duration || 0
+    const target = Math.max(0, Math.min(dur, (pct / 100) * dur))
+    audio.seek(target)
+  } catch {
+    // seek 失败静默处理
+  }
+}
+
+/** 设置播放速度（需基础库 2.11.0+） */
+export function setPlaybackRate(rate: number): void {
+  if (!audio) return
+  try {
+    audio.playbackRate = rate
+  } catch {
+    // 低版本基础库不支持，静默忽略
+  }
+}

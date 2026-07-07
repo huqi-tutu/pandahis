@@ -1,0 +1,78 @@
+{
+  "total_paragraphs": 37,
+  "excludes": [
+    {
+      "paragraph_from": 37,
+      "paragraph_to": 37,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "窦婴",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 5
+    },
+    {
+      "name": "田蚡",
+      "category": "文臣",
+      "paragraph_from": 6,
+      "paragraph_to": 10
+    },
+    {
+      "name": "窦婴",
+      "category": "文臣",
+      "paragraph_from": 11,
+      "paragraph_to": 11
+    },
+    {
+      "name": "灌夫",
+      "category": "武将",
+      "paragraph_from": 12,
+      "paragraph_to": 14
+    },
+    {
+      "name": "窦婴",
+      "category": "文臣",
+      "paragraph_from": 15,
+      "paragraph_to": 15
+    },
+    {
+      "name": "田蚡",
+      "category": "文臣",
+      "paragraph_from": 16,
+      "paragraph_to": 19
+    },
+    {
+      "name": "窦婴",
+      "category": "文臣",
+      "paragraph_from": 20,
+      "paragraph_to": 21
+    },
+    {
+      "name": "窦婴",
+      "category": "文臣",
+      "paragraph_from": 22,
+      "paragraph_to": 23
+    },
+    {
+      "name": "田蚡",
+      "category": "文臣",
+      "paragraph_from": 24,
+      "paragraph_to": 24
+    },
+    {
+      "name": "窦婴",
+      "category": "文臣",
+      "paragraph_from": 25,
+      "paragraph_to": 25
+    },
+    {
+      "name": "田蚡",
+      "category": "文臣",
+      "paragraph_from": 26,
+      "paragraph_to": 36
+    }
+  ]
+}

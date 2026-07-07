@@ -1,0 +1,23 @@
+{
+  "work": "01史记",
+  "vol": "083",
+  "volume_name": "鲁仲连邹阳列传",
+  "volume_type_guess": "列传",
+  "protagonists": [
+    {
+      "name": "鲁仲连",
+      "category": "文臣",
+      "rationale": "卷名首列鲁仲连，为战国齐之高士，以义不帝秦、解邯郸之围著称，列传主轴人物。"
+    },
+    {
+      "name": "邹阳",
+      "category": "文臣",
+      "rationale": "卷名次列邹阳，西汉梁孝王门客，以《狱中上梁王书》闻名，与鲁仲连合传，同为列传主轴。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题"
+  ]
+}

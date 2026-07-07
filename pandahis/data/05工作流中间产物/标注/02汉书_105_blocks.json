@@ -1,0 +1,64 @@
+{
+  "total_paragraphs": 16,
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 2,
+      "paragraph_to": 6,
+      "exclude_reason": "无故事弧"
+    },
+    {
+      "paragraph_from": 16,
+      "paragraph_to": 16,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "朱家",
+      "category": "庶众",
+      "paragraph_from": 7,
+      "paragraph_to": 7
+    },
+    {
+      "name": "剧孟",
+      "category": "庶众",
+      "paragraph_from": 8,
+      "paragraph_to": 8
+    },
+    {
+      "name": "郭解",
+      "category": "庶众",
+      "paragraph_from": 9,
+      "paragraph_to": 11
+    },
+    {
+      "name": "万章",
+      "category": "庶众",
+      "paragraph_from": 12,
+      "paragraph_to": 12
+    },
+    {
+      "name": "楼护",
+      "category": "庶众",
+      "paragraph_from": 13,
+      "paragraph_to": 13
+    },
+    {
+      "name": "陈遵",
+      "category": "庶众",
+      "paragraph_from": 14,
+      "paragraph_to": 14
+    },
+    {
+      "name": "原涉",
+      "category": "庶众",
+      "paragraph_from": 15,
+      "paragraph_to": 15
+    }
+  ]
+}

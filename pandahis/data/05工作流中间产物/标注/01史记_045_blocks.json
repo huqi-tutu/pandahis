@@ -1,0 +1,30 @@
+{
+  "total_paragraphs": 45,
+  "excludes": [
+    {
+      "paragraph_from": 45,
+      "paragraph_to": 45,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "韩厥",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 17
+    },
+    {
+      "name": "韩昭侯",
+      "category": "君王",
+      "paragraph_from": 18,
+      "paragraph_to": 41
+    },
+    {
+      "name": "韩王安",
+      "category": "君王",
+      "paragraph_from": 42,
+      "paragraph_to": 44
+    }
+  ]
+}

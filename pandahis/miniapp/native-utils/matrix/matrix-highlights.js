@@ -58,7 +58,6 @@ const BY_DYNASTY_ID = {
   'HX-NB': ['淝水之战'],
   'HX-SU': ['大运河'],
   'HX-L': ['燕云十六州'],
-  'HX-XX': ['创制西夏文'],
   'HX-J': ['靖康之变'],
   'HX-Y': ['元大都'],
   'HX-M': ['郑和下西洋'],
@@ -70,7 +69,6 @@ const BY_DYNASTY_NAME = {
   十六国: ['五胡乱华'],
   南北朝: ['北魏孝文帝改革'],
   五代十国: ['儿皇帝'],
-  南明:   ['抗清'],
 }
 
 function parseTagList(tag) {

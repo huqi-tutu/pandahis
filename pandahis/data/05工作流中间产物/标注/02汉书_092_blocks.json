@@ -1,0 +1,53 @@
+{
+  "total_paragraphs": 13,
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 13,
+      "paragraph_to": 13,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "刘钦",
+      "category": "宗戚",
+      "paragraph_from": 2,
+      "paragraph_to": 3
+    },
+    {
+      "name": "刘嚣",
+      "category": "宗戚",
+      "paragraph_from": 4,
+      "paragraph_to": 4
+    },
+    {
+      "name": "刘宇",
+      "category": "宗戚",
+      "paragraph_from": 5,
+      "paragraph_to": 6
+    },
+    {
+      "name": "刘竟",
+      "category": "宗戚",
+      "paragraph_from": 7,
+      "paragraph_to": 7
+    },
+    {
+      "name": "刘康",
+      "category": "宗戚",
+      "paragraph_from": 8,
+      "paragraph_to": 10
+    },
+    {
+      "name": "刘兴",
+      "category": "宗戚",
+      "paragraph_from": 11,
+      "paragraph_to": 12
+    }
+  ]
+}

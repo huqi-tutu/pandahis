@@ -1,0 +1,42 @@
+{
+  "total_paragraphs": 28,
+  "excludes": [
+    {
+      "paragraph_from": 28,
+      "paragraph_to": 28,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "孟尝君",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 3
+    },
+    {
+      "name": "孟尝君",
+      "category": "文臣",
+      "paragraph_from": 4,
+      "paragraph_to": 4
+    },
+    {
+      "name": "孟尝君",
+      "category": "文臣",
+      "paragraph_from": 5,
+      "paragraph_to": 7
+    },
+    {
+      "name": "孟尝君",
+      "category": "文臣",
+      "paragraph_from": 8,
+      "paragraph_to": 13
+    },
+    {
+      "name": "孟尝君",
+      "category": "文臣",
+      "paragraph_from": 14,
+      "paragraph_to": 27
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "total_paragraphs": 82,
+  "excludes": [
+    {
+      "paragraph_from": 82,
+      "paragraph_to": 82,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "司马相如",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 81
+    }
+  ]
+}

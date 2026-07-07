@@ -1,0 +1,17 @@
+{
+  "work": "02汉书",
+  "vol": "005",
+  "volume_name": "文帝纪",
+  "volume_type_guess": "本纪",
+  "protagonists": [
+    {
+      "name": "汉文帝",
+      "category": "君王",
+      "rationale": "《汉书》卷五为文帝纪，以汉文帝刘恒在位期间政事为叙事主轴，属本纪体例，故汉文帝为唯一主轴人物。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰"
+  ]
+}

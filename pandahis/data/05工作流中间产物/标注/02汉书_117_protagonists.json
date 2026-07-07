@@ -1,0 +1,19 @@
+{
+  "work": "02汉书",
+  "vol": "117",
+  "volume_name": "王莽传第六十九下",
+  "volume_type_guess": "列传",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "王莽",
+      "category": "君王",
+      "rationale": "《王莽传》为《汉书》单人列传，卷名明确以王莽为传主。王莽废汉自立，建立新朝，在位15年，虽《汉书》不立本纪而降为列传，实为一朝之君，故以王莽为唯一主轴人物，分类按‘君王＞宗戚’链取‘君王’。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰"
+  ]
+}

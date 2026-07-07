@@ -1,0 +1,61 @@
+{
+  "volume": "084",
+  "narrative_mode": "hezhuan",
+  "total_paragraphs": 28,
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 2,
+      "paragraph_to": 3,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 28,
+      "paragraph_to": 28,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "王吉",
+      "category": "文臣",
+      "paragraph_from": 4,
+      "paragraph_to": 10
+    },
+    {
+      "name": "贡禹",
+      "category": "文臣",
+      "paragraph_from": 11,
+      "paragraph_to": 16
+    },
+    {
+      "name": "龚胜",
+      "category": "文臣",
+      "paragraph_from": 17,
+      "paragraph_to": 19
+    },
+    {
+      "name": "龚舍",
+      "category": "文臣",
+      "paragraph_from": 20,
+      "paragraph_to": 20
+    },
+    {
+      "name": "龚胜",
+      "category": "文臣",
+      "paragraph_from": 21,
+      "paragraph_to": 21
+    },
+    {
+      "name": "鲍宣",
+      "category": "文臣",
+      "paragraph_from": 22,
+      "paragraph_to": 27
+    }
+  ],
+  "_source": "hanshu_hezhuan_autofix_override"
+}

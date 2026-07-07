@@ -1,0 +1,18 @@
+{
+  "total_paragraphs": 23,
+  "excludes": [
+    {
+      "paragraph_from": 23,
+      "paragraph_to": 23,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "吕不韦",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 22
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "work": "01史记",
+  "vol": "082",
+  "volume_name": "田单列传",
+  "volume_type_guess": "列传",
+  "protagonists": [
+    {
+      "name": "田单",
+      "category": "武将",
+      "rationale": "卷名《田单列传》明确以田单为传主，田单为齐国将领，以火牛阵破燕复齐，属士臣类。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题"
+  ]
+}

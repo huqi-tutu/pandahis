@@ -1,5 +1,6 @@
 package com.pandahis.histomap.search.interfaces.service;
 
+import com.pandahis.histomap.contentgraph.domain.BoxCategorySupport;
 import com.pandahis.histomap.search.interfaces.dto.SearchResultDTO;
 import com.pandahis.histomap.search.interfaces.dto.SearchSuggestDTO;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -125,15 +126,7 @@ public class SearchService {
   }
 
   private static String categoryName(String key) {
-    return switch (key) {
-      case "junji" -> "君纪";
-      case "shichen" -> "士臣";
-      case "minlu" -> "民录";
-      case "dianzhi" -> "典制";
-      case "shilue" -> "事略";
-      case "lunzhu" -> "论著";
-      default -> key;
-    };
+    return BoxCategorySupport.displayName(key);
   }
 
   private static String escapeLike(String s) {

@@ -1,0 +1,74 @@
+{
+  "total_paragraphs": 34,
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 11,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 18,
+      "paragraph_to": 18,
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph_from": 19,
+      "paragraph_to": 20,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 22,
+      "paragraph_to": 22,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 24,
+      "paragraph_to": 24,
+      "exclude_reason": "其他"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "齐王刘闳",
+      "category": "宗戚",
+      "paragraph_from": 12,
+      "paragraph_to": 13
+    },
+    {
+      "name": "齐王刘闳",
+      "category": "宗戚",
+      "paragraph_from": 21,
+      "paragraph_to": 21
+    },
+    {
+      "name": "齐王刘闳",
+      "category": "宗戚",
+      "paragraph_from": 23,
+      "paragraph_to": 23
+    },
+    {
+      "name": "燕王刘旦",
+      "category": "宗戚",
+      "paragraph_from": 14,
+      "paragraph_to": 15
+    },
+    {
+      "name": "燕王刘旦",
+      "category": "宗戚",
+      "paragraph_from": 29,
+      "paragraph_to": 34
+    },
+    {
+      "name": "广陵王刘胥",
+      "category": "宗戚",
+      "paragraph_from": 16,
+      "paragraph_to": 17
+    },
+    {
+      "name": "广陵王刘胥",
+      "category": "宗戚",
+      "paragraph_from": 25,
+      "paragraph_to": 28
+    }
+  ]
+}

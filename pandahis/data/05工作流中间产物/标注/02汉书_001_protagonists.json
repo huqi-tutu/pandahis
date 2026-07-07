@@ -1,0 +1,18 @@
+{
+  "work": "02汉书",
+  "vol": "001",
+  "volume_name": "高帝纪第一上",
+  "volume_type_guess": "本纪",
+  "protagonists": [
+    {
+      "name": "汉高祖",
+      "category": "君王",
+      "rationale": "《高帝纪第一上》为汉高祖刘邦本纪上册，叙事主轴为汉高祖。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "赞曰",
+    "卷首标题",
+    "其他"
+  ]
+}

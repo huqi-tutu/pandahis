@@ -1,0 +1,18 @@
+{
+  "work": "01史记",
+  "vol": "110",
+  "volume_name": "匈奴列传",
+  "volume_type_guess": "列传",
+  "protagonists": [
+    {
+      "name": "匈奴",
+      "category": "蕃祚",
+      "rationale": "《匈奴列传》为部族/政权族史合传，主轴是匈奴集体，非帝王.json 内单君王，故分类庶众；年轴为叙事跨度。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题"
+  ]
+}

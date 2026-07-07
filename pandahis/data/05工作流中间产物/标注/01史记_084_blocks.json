@@ -1,0 +1,29 @@
+{
+  "total_paragraphs": 45,
+  "excludes": [
+    {
+      "paragraph_from": 15,
+      "paragraph_to": 15,
+      "exclude_reason": "过渡叙事"
+    },
+    {
+      "paragraph_from": 45,
+      "paragraph_to": 45,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "屈原",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 14
+    },
+    {
+      "name": "贾谊",
+      "category": "文臣",
+      "paragraph_from": 16,
+      "paragraph_to": 44
+    }
+  ]
+}

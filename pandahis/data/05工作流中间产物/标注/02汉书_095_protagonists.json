@@ -1,0 +1,24 @@
+{
+  "work": "02汉书",
+  "vol": "095",
+  "volume_name": "薛宣朱博传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "薛宣",
+      "category": "文臣",
+      "rationale": "《薛宣朱博传》卷名首列，西汉名臣，曾任丞相，以明习文法、吏治著称，合传主人公之一。"
+    },
+    {
+      "name": "朱博",
+      "category": "文臣",
+      "rationale": "《薛宣朱博传》卷名随后列出，西汉名臣，官至丞相，以武健果断、不避豪强闻名，合传主人公之一。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰"
+  ]
+}

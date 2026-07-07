@@ -1,0 +1,263 @@
+{
+  "volume": "孙子吴起列传",
+  "source_file": "01史记_065_孙子吴起列传第五.txt",
+  "total_paragraphs": 21,
+  "volume_type": "纪传叙事",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [
+        {
+          "name": "孙武",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "孙武",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "孙武",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "孙武",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "孙武",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "孙武",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "孙武",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "吴起",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "吴起",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "吴起",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "吴起",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "吴起",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "吴起",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "吴起",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "吴起",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "吴起",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "吴起",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "吴起",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "吴起",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "吴起",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [],
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SHIJI_065_01",
+      "史略名称": "吴起",
+      "史略简介": "吴起",
+      "原文字句": "吴起者，卫人也，好用兵。尝学於曾子，事鲁君。齐人攻鲁，鲁欲将吴起，吴起取齐女为妻，而鲁疑之。吴起於是欲就名，遂杀其妻，以明不与齐也。鲁卒以为将。将而攻齐，大破之",
+      "史略分类": "武将",
+      "主要史料出处": "《史记·卷65·孙子吴起列传》",
+      "paragraphs": [
+        {
+          "volume": "孙子吴起列传",
+          "paragraph_from": 8,
+          "paragraph_to": 20
+        }
+      ],
+      "五级细坐标": "史记·卷065·武将·01",
+      "六级段落锚点": "[P8-P20]",
+      "原文出处": "孙子吴起列传·P8-P20",
+      "四级帝王坐标": "魏武侯",
+      "三级政权坐标": "魏",
+      "二级朝代坐标": "战国",
+      "一级文明坐标": "华夏",
+      "文明ID": "HX",
+      "朝代ID": "CD_HX_ZHANGUO",
+      "政权ID": "ZQ_HX_ZHANGUO_WEI",
+      "帝王ID": "DW_HX_ZHANGUO_WEI_WEIWUHOU",
+      "优先级": "P0",
+      "优先级判定理由": "吴起列传主轴叙事，共13段",
+      "_auto_filled": {
+        "_坐标主轴说明": "本卷后半叙吴起相魏武侯并卒于楚，主轴挂魏武侯；事鲁及楚见共段事略。",
+        "_年LLM依据": "吴起约前440–前381"
+      },
+      "史略开始年": -440,
+      "史略结束年": -381
+    },
+    {
+      "史略ID": "SHIJI_065_02",
+      "史略名称": "孙武",
+      "史略简介": "孙武",
+      "原文字句": "孙子武者，齐人也。以兵法见於吴王阖庐。阖庐曰：“子之十三篇，吾尽观之矣，可以小试勒兵乎？”对曰：“可。”阖庐曰：“可试以妇人乎？”曰：“可。”於是许之，出宫中美",
+      "史略分类": "文臣",
+      "主要史料出处": "《史记·卷65·孙子吴起列传》",
+      "paragraphs": [
+        {
+          "volume": "孙子吴起列传",
+          "paragraph_from": 1,
+          "paragraph_to": 7
+        }
+      ],
+      "五级细坐标": "史记·卷065·文臣·02",
+      "六级段落锚点": "[P1-P7]",
+      "原文出处": "孙子吴起列传·P1-P7",
+      "四级帝王坐标": "吴王阖闾",
+      "三级政权坐标": "吴",
+      "二级朝代坐标": "春秋",
+      "一级文明坐标": "华夏",
+      "文明ID": "HX",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "政权ID": "ZQ_HX_CHUNQIU_WU",
+      "帝王ID": "DW_HX_CHUNQIU_WU_WUWANGHELV",
+      "优先级": "P0",
+      "优先级判定理由": "孙武列传主轴叙事，共7段",
+      "_auto_filled": {
+        "_年LLM依据": "孙武约前512–前496（传说）",
+        "_坐标主轴说明": "本列传以孙武见吴王阖闾、练兵破楚为主线，主轴挂吴王阖闾；后载孙膑吴起见共段事略。"
+      },
+      "史略开始年": -512,
+      "史略结束年": -496
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "work": "02汉书",
+  "vol": "044",
+  "volume_name": "韩彭英卢吴传",
+  "narrative_mode": "hezhuan",
+  "total_paragraphs": 26,
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 26,
+      "paragraph_to": 26,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "韩信",
+      "category": "武将",
+      "paragraph_from": 2,
+      "paragraph_to": 12
+    },
+    {
+      "name": "彭越",
+      "category": "武将",
+      "paragraph_from": 13,
+      "paragraph_to": 15
+    },
+    {
+      "name": "英布",
+      "category": "武将",
+      "paragraph_from": 16,
+      "paragraph_to": 21
+    },
+    {
+      "name": "卢绾",
+      "category": "武将",
+      "paragraph_from": 22,
+      "paragraph_to": 24
+    },
+    {
+      "name": "吴芮",
+      "category": "君王",
+      "paragraph_from": 25,
+      "paragraph_to": 25
+    }
+  ],
+  "_mechanical": true,
+  "_mechanical_hezhuan": true
+}

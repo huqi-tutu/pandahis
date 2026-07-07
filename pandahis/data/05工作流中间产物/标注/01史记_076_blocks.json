@@ -1,0 +1,24 @@
+{
+  "total_paragraphs": 28,
+  "excludes": [
+    {
+      "paragraph_from": 28,
+      "paragraph_to": 28,
+      "exclude_reason": "其他"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "平原君赵胜",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 14
+    },
+    {
+      "name": "虞卿",
+      "category": "文臣",
+      "paragraph_from": 15,
+      "paragraph_to": 27
+    }
+  ]
+}

@@ -14,7 +14,19 @@ export type CivilizationKey =
   | 'camer'
   | 'andes'
 
-export type CategoryKey = 'junji' | 'shichen' | 'minlu' | 'dianzhi' | 'shilue'
+export type CategoryKey =
+  | 'junji'
+  | 'zongqi'
+  | 'wenchen'
+  | 'wujiang'
+  | 'shilue'
+  | 'dianzhi'
+  | 'lunzhu'
+  | 'huanguan'
+  | 'shuzhong'
+  | 'fanzhu'
+  | 'shichen'
+  | 'minlu'
 
 export type Civilization = {
   id: CivilizationKey

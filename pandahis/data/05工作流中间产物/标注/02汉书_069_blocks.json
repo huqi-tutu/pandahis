@@ -1,0 +1,40 @@
+{
+  "total_paragraphs": 15,
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 2,
+      "paragraph_to": 2,
+      "exclude_reason": "篇内小标题"
+    },
+    {
+      "paragraph_from": 15,
+      "paragraph_to": 15,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "公孙弘",
+      "category": "文臣",
+      "paragraph_from": 3,
+      "paragraph_to": 10
+    },
+    {
+      "name": "卜式",
+      "category": "文臣",
+      "paragraph_from": 11,
+      "paragraph_to": 12
+    },
+    {
+      "name": "儿宽",
+      "category": "文臣",
+      "paragraph_from": 13,
+      "paragraph_to": 14
+    }
+  ]
+}

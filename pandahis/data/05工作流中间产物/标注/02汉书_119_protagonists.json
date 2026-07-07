@@ -1,0 +1,20 @@
+{
+  "work": "02汉书",
+  "vol": "119",
+  "volume_name": "叙传第七十下",
+  "volume_type_guess": "列传",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "班固",
+      "category": "文臣",
+      "rationale": "《叙传》为班固自述家世、生平及著史宗旨的序传。《叙传第七十下》承接上卷，重在记叙班固本人的才学、仕宦经历以及编纂《汉书》的始末，属于自传性质，其叙事主轴人物即为作者班固本人。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

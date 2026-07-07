@@ -1,0 +1,47 @@
+{
+  "work": "02汉书",
+  "vol": "050",
+  "volume_name": "张陈王周传",
+  "narrative_mode": "hezhuan",
+  "total_paragraphs": 28,
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 28,
+      "paragraph_to": 28,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "张良",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 10
+    },
+    {
+      "name": "陈平",
+      "category": "文臣",
+      "paragraph_from": 11,
+      "paragraph_to": 16
+    },
+    {
+      "name": "王陵",
+      "category": "文臣",
+      "paragraph_from": 17,
+      "paragraph_to": 19
+    },
+    {
+      "name": "周勃",
+      "category": "武将",
+      "paragraph_from": 20,
+      "paragraph_to": 27
+    }
+  ],
+  "_mechanical": true,
+  "_mechanical_hezhuan": true
+}

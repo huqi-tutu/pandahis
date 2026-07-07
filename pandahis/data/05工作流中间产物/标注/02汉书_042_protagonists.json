@@ -1,0 +1,25 @@
+{
+  "work": "02汉书",
+  "vol": "042",
+  "volume_name": "张耳陈馀传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "张耳",
+      "category": "文臣",
+      "rationale": "卷名《张耳陈馀传》为二人合传，张耳为卷名首位主人公，西汉初诸侯王，后归汉封赵王，属列传核心人物。"
+    },
+    {
+      "name": "陈馀",
+      "category": "文臣",
+      "rationale": "卷名《张耳陈馀传》为二人合传，陈馀为卷名第二位主人公，与张耳同为秦末起义将领，后与张耳反目，属列传核心人物。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "赞曰",
+    "过渡叙事",
+    "其他"
+  ]
+}

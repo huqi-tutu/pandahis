@@ -1,0 +1,30 @@
+{
+  "work": "02汉书",
+  "vol": "047",
+  "volume_name": "季布栾布田叔传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "季布",
+      "category": "武将",
+      "rationale": "卷名首列人物，季布为楚汉时期著名将领，以诺言守信著称，本传主轴人物之一。"
+    },
+    {
+      "name": "栾布",
+      "category": "武将",
+      "rationale": "卷名次列人物，栾布为西汉将领，以忠义著称，本传主轴人物之一。"
+    },
+    {
+      "name": "田叔",
+      "category": "文臣",
+      "rationale": "卷名末列人物，田叔为西汉文臣，以清廉正直著称，本传主轴人物之一。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "赞曰",
+    "过渡叙事",
+    "其他"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "work": "01史记",
+  "vol": "089",
+  "volume_name": "张耳陈馀列传",
+  "volume_type_guess": "列传",
+  "protagonists": [
+    {
+      "name": "张耳",
+      "category": "武将",
+      "rationale": "卷名《张耳陈馀列传》为合传，张耳位列卷名首位，是列传核心主人公之一。"
+    },
+    {
+      "name": "陈馀",
+      "category": "武将",
+      "rationale": "卷名《张耳陈馀列传》为合传，陈馀位列卷名第二位，与张耳并列为核心主人公。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题"
+  ]
+}

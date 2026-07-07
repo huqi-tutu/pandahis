@@ -46,7 +46,8 @@ def parse_year(val) -> int | None:
 
 
 SHILUE_KIND_TO_CATEGORY = {
-    "君纪": "junji",
+    "君王": "junji",
+    "君纪": "junji",  # 旧称兼容
     "士臣": "shichen",
     "典制": "dianzhi",
     "事略": "shilue",

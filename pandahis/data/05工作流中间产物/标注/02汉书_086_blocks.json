@@ -1,0 +1,35 @@
+{
+  "work": "02汉书",
+  "vol": "086",
+  "volume_name": "魏相丙吉传",
+  "narrative_mode": "hezhuan",
+  "total_paragraphs": 16,
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 16,
+      "paragraph_to": 16,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "魏相",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 8
+    },
+    {
+      "name": "丙吉",
+      "category": "文臣",
+      "paragraph_from": 9,
+      "paragraph_to": 15
+    }
+  ],
+  "_mechanical": true,
+  "_mechanical_hezhuan": true
+}

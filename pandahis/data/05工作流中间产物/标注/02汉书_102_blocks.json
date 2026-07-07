@@ -1,0 +1,53 @@
+{
+  "total_paragraphs": 15,
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 15,
+      "paragraph_to": 15,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "文翁",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 3
+    },
+    {
+      "name": "王成",
+      "category": "文臣",
+      "paragraph_from": 4,
+      "paragraph_to": 4
+    },
+    {
+      "name": "黄霸",
+      "category": "文臣",
+      "paragraph_from": 5,
+      "paragraph_to": 9
+    },
+    {
+      "name": "朱邑",
+      "category": "文臣",
+      "paragraph_from": 10,
+      "paragraph_to": 10
+    },
+    {
+      "name": "龚遂",
+      "category": "文臣",
+      "paragraph_from": 11,
+      "paragraph_to": 13
+    },
+    {
+      "name": "召信臣",
+      "category": "文臣",
+      "paragraph_from": 14,
+      "paragraph_to": 14
+    }
+  ]
+}

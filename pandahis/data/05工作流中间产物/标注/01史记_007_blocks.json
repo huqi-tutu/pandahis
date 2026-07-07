@@ -1,0 +1,18 @@
+{
+  "total_paragraphs": 83,
+  "excludes": [
+    {
+      "paragraph_from": 83,
+      "paragraph_to": 83,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "项羽",
+      "category": "君王",
+      "paragraph_from": 1,
+      "paragraph_to": 82
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "total_paragraphs": 52,
+  "excludes": [
+    {
+      "paragraph_from": 52,
+      "paragraph_to": 52,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "吴太伯",
+      "category": "君王",
+      "paragraph_from": 1,
+      "paragraph_to": 21
+    },
+    {
+      "name": "吴王阖闾",
+      "category": "君王",
+      "paragraph_from": 22,
+      "paragraph_to": 39
+    },
+    {
+      "name": "吴王夫差",
+      "category": "君王",
+      "paragraph_from": 40,
+      "paragraph_to": 51
+    }
+  ]
+}

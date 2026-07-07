@@ -22,7 +22,8 @@ public record UnitSwimMatrixDTO(
       boolean hasMore,
       int moreCount,
       String moreBarLeft,
-      String moreBarWidth
+      String moreBarWidth,
+      List<Bar> extraBars
   ) {}
 
   public record Bar(

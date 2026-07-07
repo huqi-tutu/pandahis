@@ -1,0 +1,45 @@
+{
+  "total_paragraphs": 39,
+  "excludes": [
+    {
+      "paragraph_from": 7,
+      "paragraph_to": 7,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 12,
+      "paragraph_to": 12,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 18,
+      "paragraph_to": 18,
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph_from": 19,
+      "paragraph_to": 39,
+      "exclude_reason": "其他"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "淳于髡",
+      "category": "庶众",
+      "paragraph_from": 1,
+      "paragraph_to": 6
+    },
+    {
+      "name": "优孟",
+      "category": "庶众",
+      "paragraph_from": 8,
+      "paragraph_to": 11
+    },
+    {
+      "name": "优旃",
+      "category": "庶众",
+      "paragraph_from": 13,
+      "paragraph_to": 17
+    }
+  ]
+}

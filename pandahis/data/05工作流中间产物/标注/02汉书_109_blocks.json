@@ -1,0 +1,56 @@
+{
+  "total_paragraphs": 22,
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 7,
+      "paragraph_to": 7,
+      "exclude_reason": "赞曰"
+    },
+    {
+      "paragraph_from": 14,
+      "paragraph_to": 14,
+      "exclude_reason": "赞曰"
+    },
+    {
+      "paragraph_from": 19,
+      "paragraph_to": 19,
+      "exclude_reason": "赞曰"
+    },
+    {
+      "paragraph_from": 22,
+      "paragraph_to": 22,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "西南夷",
+      "category": "蕃祚",
+      "paragraph_from": 2,
+      "paragraph_to": 6
+    },
+    {
+      "name": "南越",
+      "category": "蕃祚",
+      "paragraph_from": 8,
+      "paragraph_to": 13
+    },
+    {
+      "name": "闽越",
+      "category": "蕃祚",
+      "paragraph_from": 15,
+      "paragraph_to": 18
+    },
+    {
+      "name": "朝鲜",
+      "category": "蕃祚",
+      "paragraph_from": 20,
+      "paragraph_to": 21
+    }
+  ]
+}

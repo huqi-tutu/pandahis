@@ -1,0 +1,24 @@
+{
+  "total_paragraphs": 18,
+  "excludes": [
+    {
+      "paragraph_from": 18,
+      "paragraph_to": 18,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "白起",
+      "category": "武将",
+      "paragraph_from": 1,
+      "paragraph_to": 9
+    },
+    {
+      "name": "王翦",
+      "category": "武将",
+      "paragraph_from": 10,
+      "paragraph_to": 17
+    }
+  ]
+}

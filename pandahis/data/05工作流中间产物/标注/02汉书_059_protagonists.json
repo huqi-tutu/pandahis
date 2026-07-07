@@ -1,0 +1,25 @@
+{
+  "work": "02汉书",
+  "vol": "059",
+  "volume_name": "爰盎晁错传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "爰盎",
+      "category": "文臣",
+      "rationale": "《爰盎晁错传》卷名首列人物，合传主人公之一。爰盎（即袁盎）为汉文帝、景帝时期大臣，以直言敢谏著称。"
+    },
+    {
+      "name": "晁错",
+      "category": "文臣",
+      "rationale": "《爰盎晁错传》卷名次列人物，合传主人公之一。晁错为汉文帝、景帝时期大臣，力主削藩，是文臣而非君王或藩王。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

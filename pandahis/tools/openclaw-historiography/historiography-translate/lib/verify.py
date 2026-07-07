@@ -537,6 +537,23 @@ def verify_chunk_body(
 
     errors.extend(_invalid_tongjia_annotations(text))
 
+
+    # --- 前置引入检查 ---
+    has_intro_intro = False
+    first_para = detail.split("\n\n")[0].strip() if "\n\n" in detail else detail[:200]
+    # 检查第一段是否包含朝代/时代/身份类词（表明有人物定位）
+    intro_keywords = re.findall(
+        r"[夏商周秦汉魏晋南北隋唐宋元明清]|"
+        r"世纪|时代|公元前|时期|即位|君主|天子|帝王|诸侯|"
+        r"首领|领袖|君王|贵族|名臣|名将|宰相|大臣|始祖",
+        first_para,
+    )
+    # 如果第一段包含直接引自母本的内容（《》引用 + 母本原文片段）但无定位词，视为缺引入
+    has_direct_citation = bool(re.search(r"《[^》]+》[记载写说]", first_para[:150]))
+    if has_direct_citation and len(intro_keywords) < 1:
+        errors.append("正文开头缺少前置引入：建议在顺译前先写一段人物背景介绍。")
+
+
     return len(errors) == 0, errors
 
 

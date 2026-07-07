@@ -1,0 +1,17 @@
+{
+  "work": "02汉书",
+  "vol": "006",
+  "volume_name": "景帝纪",
+  "volume_type_guess": "本纪",
+  "protagonists": [
+    {
+      "name": "汉景帝",
+      "category": "君王",
+      "rationale": "卷名「景帝纪」为汉景帝刘启的本纪，本卷以汉景帝为叙事主轴，记载其在位期间的政治、军事、经济等大事。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰"
+  ]
+}

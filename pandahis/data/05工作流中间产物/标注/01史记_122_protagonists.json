@@ -1,0 +1,18 @@
+{
+  "work": "01史记",
+  "vol": "122",
+  "volume_name": "酷吏列传",
+  "volume_type_guess": "列传",
+  "protagonists": [
+    {
+      "name": "酷吏列传",
+      "category": "文臣",
+      "rationale": "卷名'酷吏列传'明确指向汉代以严刑峻法著称的官吏群体，属于合传性质，主轴为酷吏群体整体，非单一个体，按列传合传惯例以卷名指代群体，category归为士臣。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题"
+  ]
+}

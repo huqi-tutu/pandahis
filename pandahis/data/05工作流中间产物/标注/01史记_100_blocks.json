@@ -1,0 +1,24 @@
+{
+  "total_paragraphs": 15,
+  "excludes": [
+    {
+      "paragraph_from": 12,
+      "paragraph_to": 15,
+      "exclude_reason": "其他"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "季布",
+      "category": "武将",
+      "paragraph_from": 1,
+      "paragraph_to": 6
+    },
+    {
+      "name": "栾布",
+      "category": "武将",
+      "paragraph_from": 7,
+      "paragraph_to": 11
+    }
+  ]
+}

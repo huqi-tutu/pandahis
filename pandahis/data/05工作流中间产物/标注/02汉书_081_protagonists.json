@@ -1,0 +1,24 @@
+{
+  "work": "02汉书",
+  "vol": "081",
+  "volume_name": "赵充国辛庆忌传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "赵充国",
+      "category": "武将",
+      "rationale": "卷名《赵充国辛庆忌传》首列赵充国，为西汉名将，平定羌乱、倡屯田，本传主轴人物之一。"
+    },
+    {
+      "name": "辛庆忌",
+      "category": "武将",
+      "rationale": "卷名《赵充国辛庆忌传》次列辛庆忌，西汉后期戍边名将，本传主轴人物之一。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "work": "01史记",
+  "vol": "114",
+  "volume_name": "东越列传",
+  "volume_type_guess": "列传",
+  "protagonists": [
+    {
+      "name": "东越",
+      "category": "蕃祚",
+      "rationale": "《东越列传》为地域合传，以东南越族政权为主体，卷名即表明叙事主轴为东越族群及其政权兴衰，非单一个体人物。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题"
+  ]
+}

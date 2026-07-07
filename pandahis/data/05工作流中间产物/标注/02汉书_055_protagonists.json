@@ -1,0 +1,34 @@
+{
+  "work": "02汉书",
+  "vol": "055",
+  "volume_name": "蒯伍江息夫传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "蒯通",
+      "category": "文臣",
+      "rationale": "《蒯伍江息夫传》卷名首叙人物，合传主人公之一，本名蒯彻，史避汉武帝讳改蒯通。"
+    },
+    {
+      "name": "伍被",
+      "category": "文臣",
+      "rationale": "《蒯伍江息夫传》卷名次叙人物，合传主人公之一，淮南王刘安谋士。"
+    },
+    {
+      "name": "江充",
+      "category": "文臣",
+      "rationale": "《蒯伍江息夫传》卷名第三人物，合传主人公之一，汉武帝时直指绣衣使者。"
+    },
+    {
+      "name": "息夫躬",
+      "category": "文臣",
+      "rationale": "《蒯伍江息夫传》卷名第四人物，合传主人公之一，汉哀帝时宜陵侯。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰"
+  ]
+}

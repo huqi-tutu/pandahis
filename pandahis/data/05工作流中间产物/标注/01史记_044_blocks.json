@@ -1,0 +1,41 @@
+{
+  "total_paragraphs": 64,
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 64,
+      "paragraph_to": 64,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "魏文侯",
+      "category": "君王",
+      "paragraph_from": 2,
+      "paragraph_to": 19
+    },
+    {
+      "name": "魏武侯",
+      "category": "君王",
+      "paragraph_from": 20,
+      "paragraph_to": 22
+    },
+    {
+      "name": "魏惠王",
+      "category": "君王",
+      "paragraph_from": 23,
+      "paragraph_to": 45
+    },
+    {
+      "name": "魏安釐王",
+      "category": "君王",
+      "paragraph_from": 46,
+      "paragraph_to": 63
+    }
+  ]
+}

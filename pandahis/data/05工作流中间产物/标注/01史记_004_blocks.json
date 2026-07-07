@@ -1,0 +1,43 @@
+{
+  "total_paragraphs": 100,
+  "excludes": [
+    { "paragraph_from": 3, "paragraph_to": 3, "exclude_reason": "世系链" },
+    { "paragraph_from": 36, "paragraph_to": 36, "exclude_reason": "世系链" },
+    { "paragraph_from": 67, "paragraph_to": 67, "exclude_reason": "世系链" },
+    { "paragraph_from": 77, "paragraph_to": 77, "exclude_reason": "世系链" },
+    { "paragraph_from": 100, "paragraph_to": 100, "exclude_reason": "太史公曰" }
+  ],
+  "blocks": [
+    { "name": "后稷", "category": "君王", "paragraph_from": 1, "paragraph_to": 2 },
+    { "name": "古公亶父", "category": "君王", "paragraph_from": 4, "paragraph_to": 6 },
+    { "name": "季历", "category": "君王", "paragraph_from": 7, "paragraph_to": 7 },
+    { "name": "周文王", "category": "君王", "paragraph_from": 8, "paragraph_to": 13 },
+    { "name": "周武王", "category": "君王", "paragraph_from": 14, "paragraph_to": 27 },
+    { "name": "周成王", "category": "君王", "paragraph_from": 28, "paragraph_to": 29 },
+    { "name": "周康王", "category": "君王", "paragraph_from": 30, "paragraph_to": 30 },
+    { "name": "周昭王", "category": "君王", "paragraph_from": 31, "paragraph_to": 31 },
+    { "name": "周穆王", "category": "君王", "paragraph_from": 32, "paragraph_to": 34 },
+    { "name": "周共王", "category": "君王", "paragraph_from": 35, "paragraph_to": 35 },
+    { "name": "周厉王", "category": "君王", "paragraph_from": 37, "paragraph_to": 41 },
+    { "name": "周宣王", "category": "君王", "paragraph_from": 42, "paragraph_to": 45 },
+    { "name": "周幽王", "category": "君王", "paragraph_from": 46, "paragraph_to": 52 },
+    { "name": "周平王", "category": "君王", "paragraph_from": 53, "paragraph_to": 53 },
+    { "name": "周桓王", "category": "君王", "paragraph_from": 54, "paragraph_to": 55 },
+    { "name": "周庄王", "category": "君王", "paragraph_from": 56, "paragraph_to": 56 },
+    { "name": "周釐王", "category": "君王", "paragraph_from": 57, "paragraph_to": 57 },
+    { "name": "周惠王", "category": "君王", "paragraph_from": 58, "paragraph_to": 62 },
+    { "name": "周襄王", "category": "君王", "paragraph_from": 63, "paragraph_to": 66 },
+    { "name": "周定王", "category": "君王", "paragraph_from": 68, "paragraph_to": 70 },
+    { "name": "周灵王", "category": "君王", "paragraph_from": 71, "paragraph_to": 71 },
+    { "name": "周景王", "category": "君王", "paragraph_from": 72, "paragraph_to": 72 },
+    { "name": "周敬王", "category": "君王", "paragraph_from": 73, "paragraph_to": 76 },
+    { "name": "周元王", "category": "君王", "paragraph_from": 78, "paragraph_to": 78 },
+    { "name": "周贞定王", "category": "君王", "paragraph_from": 79, "paragraph_to": 79 },
+    { "name": "周威烈王", "category": "君王", "paragraph_from": 80, "paragraph_to": 80 },
+    { "name": "周安王", "category": "君王", "paragraph_from": 81, "paragraph_to": 81 },
+    { "name": "周烈王", "category": "君王", "paragraph_from": 82, "paragraph_to": 82 },
+    { "name": "周显王", "category": "君王", "paragraph_from": 83, "paragraph_to": 83 },
+    { "name": "周慎靓王", "category": "君王", "paragraph_from": 84, "paragraph_to": 84 },
+    { "name": "周赧王", "category": "君王", "paragraph_from": 85, "paragraph_to": 99 }
+  ]
+}

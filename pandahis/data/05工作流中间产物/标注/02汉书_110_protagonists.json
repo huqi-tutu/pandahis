@@ -1,0 +1,20 @@
+{
+  "work": "02汉书",
+  "vol": "110",
+  "volume_name": "西域传第六十六上",
+  "volume_type_guess": "列传",
+  "narrative_mode": "fanzuo",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "西域",
+      "category": "蕃祚",
+      "rationale": "《西域传》为《汉书》记述西域诸国地理、沿革及与汉关系的类传。卷名明确指向‘西域’这一地域蕃祚集体，主轴为西域诸国整体，非单一个人。依‘匈奴/南越/西南夷/西域传’类传通例，类别为蕃祚。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

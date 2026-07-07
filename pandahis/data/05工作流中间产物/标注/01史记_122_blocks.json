@@ -1,0 +1,110 @@
+{
+  "total_paragraphs": 62,
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 4,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 16,
+      "paragraph_to": 16,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 51,
+      "paragraph_to": 53,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 61,
+      "paragraph_to": 61,
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph_from": 62,
+      "paragraph_to": 62,
+      "exclude_reason": "其他"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "郅都",
+      "category": "文臣",
+      "paragraph_from": 5,
+      "paragraph_to": 9
+    },
+    {
+      "name": "宁成",
+      "category": "文臣",
+      "paragraph_from": 10,
+      "paragraph_to": 12
+    },
+    {
+      "name": "周阳由",
+      "category": "文臣",
+      "paragraph_from": 13,
+      "paragraph_to": 15
+    },
+    {
+      "name": "赵禹",
+      "category": "文臣",
+      "paragraph_from": 17,
+      "paragraph_to": 18
+    },
+    {
+      "name": "张汤",
+      "category": "文臣",
+      "paragraph_from": 19,
+      "paragraph_to": 33
+    },
+    {
+      "name": "赵禹",
+      "category": "文臣",
+      "paragraph_from": 34,
+      "paragraph_to": 35
+    },
+    {
+      "name": "义纵",
+      "category": "文臣",
+      "paragraph_from": 36,
+      "paragraph_to": 40
+    },
+    {
+      "name": "王温舒",
+      "category": "文臣",
+      "paragraph_from": 41,
+      "paragraph_to": 45
+    },
+    {
+      "name": "杨仆",
+      "category": "武将",
+      "paragraph_from": 46,
+      "paragraph_to": 47
+    },
+    {
+      "name": "王温舒",
+      "category": "文臣",
+      "paragraph_from": 48,
+      "paragraph_to": 49
+    },
+    {
+      "name": "尹齐",
+      "category": "文臣",
+      "paragraph_from": 50,
+      "paragraph_to": 50
+    },
+    {
+      "name": "减宣",
+      "category": "文臣",
+      "paragraph_from": 54,
+      "paragraph_to": 55
+    },
+    {
+      "name": "杜周",
+      "category": "文臣",
+      "paragraph_from": 56,
+      "paragraph_to": 60
+    }
+  ]
+}

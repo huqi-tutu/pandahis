@@ -1,0 +1,23 @@
+{
+  "work": "01史记",
+  "vol": "071",
+  "volume_name": "樗里子甘茂列传",
+  "volume_type_guess": "列传",
+  "protagonists": [
+    {
+      "name": "樗里子",
+      "category": "文臣",
+      "rationale": "卷名『樗里子甘茂列传』为合传，樗里子为秦国宗室大臣，以智谋著称，是列传主轴人物之一。"
+    },
+    {
+      "name": "甘茂",
+      "category": "文臣",
+      "rationale": "卷名『樗里子甘茂列传』为合传，甘茂为秦国左丞相，是列传主轴人物之一。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "work": "01史记",
+  "vol": "011",
+  "volume_name": "孝景本纪",
+  "volume_type_guess": "本纪",
+  "protagonists": [
+    {
+      "name": "汉景帝",
+      "category": "君王",
+      "standard_name_note": "帝王.json 帝王名称",
+      "rationale": "卷名「孝景本纪」为西汉皇帝本纪，孝景皇帝即汉景帝刘启，是西汉第六位皇帝，本卷以其在位期间政事为叙事主轴。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题"
+  ]
+}

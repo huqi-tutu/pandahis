@@ -1,0 +1,18 @@
+{
+  "work": "01史记",
+  "vol": "088",
+  "volume_name": "蒙恬列传",
+  "volume_type_guess": "列传",
+  "protagonists": [
+    {
+      "name": "蒙恬",
+      "category": "武将",
+      "rationale": "卷名《蒙恬列传》明确以蒙恬为主轴人物，列传体例通常以传主命名，蒙恬为秦朝名将，属士臣类。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题"
+  ]
+}

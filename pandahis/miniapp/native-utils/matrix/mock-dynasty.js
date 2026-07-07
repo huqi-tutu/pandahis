@@ -5,17 +5,17 @@
  *   - 每条泳道有一组平铺的 bars（无须手动分行）
  *   - buildSwimData 调用 packBars 自动按贪心区间调度分行，保证同行无重叠
  *   - 每条泳道最多显示 MAX_VISIBLE 条，超出部分折叠
- *   - 类目：君纪、士臣、典制、事略、民录、著作、思想
+ *   - 类目：君王、士臣、典制、事略、民录、著作、思想
  */
 
 const MAX_VISIBLE = 10   // 每条泳道最多展示条数（士臣泳道全量展示）
 const SHICHEN_LABEL = '士臣'
 
 // 泳道类型标记：连续型(true)有时间线，孤立型(false)纯胶囊
-// 连续型：君纪、士臣、典制、事略（有明确起止时间）
+// 连续型：君王、士臣、典制、事略（有明确起止时间）
 // 孤立型：民录、著作、思想（概念性/时间点事件）
 const LANE_CONTINUOUS = {
-  '君纪': true,
+  '君王': true,
   '士臣': true,
   '典制': true,
   '事略': true,
@@ -133,7 +133,7 @@ const DYNASTY_DB = {
     intro: '五帝时代（约前2698—前2205）是华夏文明的起源期。黄帝统一各部落，奠定华夏族基础；颛顼、帝喾承续治理；尧舜以禅让传位，开创了"天下为公"的政治理想。这一时期的诸多创举——造字、制乐、作历、论医、养蚕——被视为中华文明的源头。',
     next: { title: '夏 · 阳城', dynasty: '夏' },
     lanes: [
-      { label: '君纪', borderColor: '#F1A805', bars: [
+      { label: '君王', borderColor: '#F1A805', bars: [
         { title: '黄帝', start: -2698, end: -2598, type: 'accent', boxKey: 'box-detail', boxTitle: '黄帝' },
         { title: '颛顼', start: -2514, end: -2436, type: '' },
         { title: '帝喾', start: -2436, end: -2366, type: '' },
@@ -182,7 +182,7 @@ const DYNASTY_DB = {
     intro: '北宋（960—1127）是华夏文治最盛的王朝之一，太祖陈桥兵变立国，历九帝一百六十七年，科举大兴、士大夫当政，经济与文化成就卓著，然积弱于边患，终因金兵南下、靖康之变而亡。',
     next: { title: '南宋 · 临安', dynasty: '南宋' },
     lanes: [
-      { label: '君纪', borderColor: '#F1A805', bars: [
+      { label: '君王', borderColor: '#F1A805', bars: [
         { title: '太祖赵匡胤', start: 960,  end: 976,  type: ''       },
         { title: '太宗赵光义', start: 976,  end: 997,  type: ''       },
         { title: '真宗',       start: 997,  end: 1022, type: ''       },
@@ -242,7 +242,7 @@ const DYNASTY_DB = {
     intro: '唐朝（618—907）是继隋之后的大一统王朝，共历二十一帝二百八十九年，贞观之治开创盛世，丝路贯通中西、文化多元包容，唐诗成就举世无双，然安史之乱后藩镇割据、宦官专权，终由黄巢起义动摇根基而亡。',
     next: { title: '五代 · 汴梁', dynasty: '五代' },
     lanes: [
-      { label: '君纪', borderColor: '#F1A805', bars: [
+      { label: '君王', borderColor: '#F1A805', bars: [
         { title: '高祖', start: 618, end: 626, type: ''       },
         { title: '太宗', start: 626, end: 649, type: 'accent' },
         { title: '高宗', start: 649, end: 683, type: ''       },
@@ -292,7 +292,7 @@ const DYNASTY_DB = {
     intro: '清朝（1644—1912）是中国最后一个封建王朝，共历十二帝二百六十八年，康乾盛世国力鼎盛、疆域辽阔，然闭关锁国错失工业革命，鸦片战争后列强入侵、内忧外患接踵而至，终以辛亥革命告终。',
     next: { title: '中华民国 · 南京', dynasty: '中华民国' },
     lanes: [
-      { label: '君纪', borderColor: '#F1A805', bars: [
+      { label: '君王', borderColor: '#F1A805', bars: [
         { title: '顺治', start: 1644, end: 1661, type: ''       },
         { title: '康熙', start: 1661, end: 1722, type: 'accent' },
         { title: '雍正', start: 1722, end: 1735, type: ''       },
@@ -341,7 +341,7 @@ const DYNASTY_DB = {
     intro: '明朝（1368—1644）是继元之后的大一统王朝，共历十六帝二百七十六年，太祖洪武整吏治、永乐迁都北京并遣郑和七下西洋，文化昌盛、版图广阔，然宦官专权、党争内耗日深，终因李自成起义而亡。',
     next: { title: '清 · 北京', dynasty: '清' },
     lanes: [
-      { label: '君纪', borderColor: '#F1A805', bars: [
+      { label: '君王', borderColor: '#F1A805', bars: [
         { title: '洪武', start: 1368, end: 1398, type: 'accent' },
         { title: '建文', start: 1398, end: 1402, type: ''       },
         { title: '永乐', start: 1402, end: 1424, type: 'accent' },

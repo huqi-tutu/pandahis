@@ -1,0 +1,20 @@
+{
+  "work": "02汉书",
+  "vol": "077",
+  "volume_name": "东方朔传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "东方朔",
+      "category": "文臣",
+      "rationale": "本卷卷名《东方朔传》为单人列传，卷名直接指明了唯一主轴人物为东方朔。东方朔在西汉以文学侍从、诙谐讽谏闻名，属于典型的文臣列传。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

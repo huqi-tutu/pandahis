@@ -1,0 +1,64 @@
+{
+  "work": "01史记",
+  "vol": "096",
+  "volume_name": "张丞相列传",
+  "volume_type_guess": "列传（合传）",
+  "protagonists": [
+    {
+      "name": "张苍",
+      "category": "文臣",
+      "rationale": "卷名《张丞相列传》主轴，西汉名相，历计相、御史大夫、丞相。"
+    },
+    {
+      "name": "周昌",
+      "category": "文臣",
+      "rationale": "本卷合传人物，汾阴侯，护太子、相赵王。"
+    },
+    {
+      "name": "任敖",
+      "category": "文臣",
+      "rationale": "本卷合传人物，广阿侯，沛县旧吏从高祖。"
+    },
+    {
+      "name": "申屠嘉",
+      "category": "文臣",
+      "rationale": "本卷合传人物，故安侯丞相，刚直守节。"
+    },
+    {
+      "name": "韦贤",
+      "category": "文臣",
+      "rationale": "征和以来补述诸丞相之一，韦丞相（扶阳侯韦玄成之父）。"
+    },
+    {
+      "name": "魏相",
+      "category": "文臣",
+      "rationale": "征和以来补述诸丞相之一，魏丞相。"
+    },
+    {
+      "name": "邴吉",
+      "category": "文臣",
+      "rationale": "征和以来补述诸丞相之一，邴丞相。"
+    },
+    {
+      "name": "黄霸",
+      "category": "文臣",
+      "rationale": "征和以来补述诸丞相之一，黄丞相，颍川治绩著。"
+    },
+    {
+      "name": "韦玄成",
+      "category": "文臣",
+      "rationale": "征和以来补述诸丞相之一，继于定国后为丞相，韦贤之子。"
+    },
+    {
+      "name": "匡衡",
+      "category": "文臣",
+      "rationale": "征和以来补述诸丞相之一，乐安侯丞相。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "过渡叙事",
+    "世系链",
+    "卷首标题"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "total_paragraphs": 37,
+  "excludes": [
+    {
+      "paragraph_from": 36,
+      "paragraph_to": 37,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "梁孝王",
+      "category": "宗戚",
+      "paragraph_from": 1,
+      "paragraph_to": 35
+    }
+  ]
+}

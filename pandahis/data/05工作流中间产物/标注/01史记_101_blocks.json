@@ -1,0 +1,24 @@
+{
+  "total_paragraphs": 31,
+  "excludes": [
+    {
+      "paragraph_from": 31,
+      "paragraph_to": 31,
+      "exclude_reason": "其他"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "袁盎",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 19
+    },
+    {
+      "name": "晁错",
+      "category": "文臣",
+      "paragraph_from": 20,
+      "paragraph_to": 30
+    }
+  ]
+}

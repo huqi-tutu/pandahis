@@ -1,0 +1,35 @@
+{
+  "work": "02汉书",
+  "vol": "049",
+  "volume_name": "萧何曹参传",
+  "narrative_mode": "hezhuan",
+  "total_paragraphs": 12,
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 12,
+      "paragraph_to": 12,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "萧何",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 6
+    },
+    {
+      "name": "曹参",
+      "category": "文臣",
+      "paragraph_from": 7,
+      "paragraph_to": 11
+    }
+  ],
+  "_mechanical": true,
+  "_mechanical_hezhuan": true
+}

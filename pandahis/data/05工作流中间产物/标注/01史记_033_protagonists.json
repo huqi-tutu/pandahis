@@ -1,0 +1,19 @@
+{
+  "work": "01史记",
+  "vol": "033",
+  "volume_name": "鲁周公世家",
+  "volume_type_guess": "世家",
+  "protagonists": [
+    {
+      "name": "周公旦",
+      "category": "君王",
+      "standard_name_note": "帝王.json 帝王名称；鲁国始祖，摄政成王",
+      "rationale": "卷名「鲁周公世家」主轴为周公旦；虽摄政未就鲁封，帝王表标准名为周公旦，世家叙事自其封鲁、辅政至鲁国后世皆在本卷。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题"
+  ]
+}

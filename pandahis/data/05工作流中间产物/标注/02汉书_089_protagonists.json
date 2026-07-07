@@ -1,0 +1,49 @@
+{
+  "work": "02汉书",
+  "vol": "089",
+  "volume_name": "盖诸葛刘郑孙毋将何传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "盖宽饶",
+      "category": "文臣",
+      "rationale": "卷名首字“盖”，合传主人公之一，西汉司隶校尉，以刚直敢谏著称。"
+    },
+    {
+      "name": "诸葛丰",
+      "category": "文臣",
+      "rationale": "卷名次字“诸葛”，合传主人公之一，西汉司隶校尉，以执法严明闻名。"
+    },
+    {
+      "name": "刘辅",
+      "category": "文臣",
+      "rationale": "卷名中“刘”，合传主人公之一，西汉谏大夫，以直言敢谏立传。"
+    },
+    {
+      "name": "郑崇",
+      "category": "文臣",
+      "rationale": "卷名中“郑”，合传主人公之一，西汉尚书仆射，以直谏触怒哀帝下狱死。"
+    },
+    {
+      "name": "孙宝",
+      "category": "文臣",
+      "rationale": "卷名中“孙”，合传主人公之一，西汉名臣，历任刺史、京兆尹等，以刚正不阿见称。"
+    },
+    {
+      "name": "毋将隆",
+      "category": "文臣",
+      "rationale": "卷名中“毋将”，复姓，合传主人公之一，西汉京兆尹、执金吾，因反对哀帝与董贤武库兵而贬。"
+    },
+    {
+      "name": "何并",
+      "category": "文臣",
+      "rationale": "卷名中“何”，合传主人公之一，西汉颍川太守，以抑强扶弱、严治豪族闻名。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰"
+  ]
+}

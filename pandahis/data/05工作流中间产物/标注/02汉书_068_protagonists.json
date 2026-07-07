@@ -1,0 +1,20 @@
+{
+  "work": "02汉书",
+  "vol": "068",
+  "volume_name": "司马相如传第二十七下",
+  "volume_type_guess": "列传",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "司马相如",
+      "category": "文臣",
+      "rationale": "《司马相如传》为单人列传，本卷为其下卷，叙事主轴即司马相如。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "篇内小标题",
+    "赞曰"
+  ]
+}

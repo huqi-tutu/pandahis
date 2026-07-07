@@ -1,0 +1,39 @@
+{
+  "work": "01史记",
+  "vol": "125",
+  "volume_name": "佞幸列传",
+  "volume_type_guess": "列传",
+  "protagonists": [
+    {
+      "name": "籍孺",
+      "category": "文臣",
+      "rationale": "《佞幸列传》叙事主轴：籍孺（文臣）"
+    },
+    {
+      "name": "闳孺",
+      "category": "文臣",
+      "rationale": "《佞幸列传》叙事主轴：闳孺（文臣）"
+    },
+    {
+      "name": "邓通",
+      "category": "文臣",
+      "rationale": "《佞幸列传》叙事主轴：邓通（文臣）"
+    },
+    {
+      "name": "韩嫣",
+      "category": "文臣",
+      "rationale": "《佞幸列传》叙事主轴：韩嫣（文臣）"
+    },
+    {
+      "name": "李延年",
+      "category": "宦官",
+      "rationale": "《佞幸列传》叙事主轴：李延年（宦官）"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题",
+    "其他"
+  ]
+}

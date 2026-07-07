@@ -1,0 +1,247 @@
+{
+  "volume": "吕不韦列传",
+  "source_file": "01史记_085_吕不韦列传第二十五.txt",
+  "total_paragraphs": 23,
+  "volume_type": "纪传叙事",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [
+        {
+          "name": "吕不韦",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "吕不韦",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "吕不韦",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "吕不韦",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "吕不韦",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "吕不韦",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "吕不韦",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "吕不韦",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "吕不韦",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "吕不韦",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "吕不韦",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "吕不韦",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "吕不韦",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "吕不韦",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "吕不韦",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "吕不韦",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "吕不韦",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "吕不韦",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "吕不韦",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "吕不韦",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "吕不韦",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "吕不韦",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [],
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SHIJI_085_01",
+      "史略名称": "吕不韦",
+      "史略简介": "吕不韦",
+      "原文字句": "吕不韦者，阳翟大贾人也。往来贩贱卖贵，家累千金。",
+      "史略分类": "文臣",
+      "主要史料出处": "《史记·卷85·吕不韦列传》",
+      "paragraphs": [
+        {
+          "volume": "吕不韦列传",
+          "paragraph_from": 1,
+          "paragraph_to": 22
+        }
+      ],
+      "五级细坐标": "史记·卷085·文臣·01",
+      "六级段落锚点": "[P1-P22]",
+      "原文出处": "吕不韦列传·P1-P22",
+      "四级帝王坐标": "秦始皇",
+      "三级政权坐标": "秦",
+      "二级朝代坐标": "秦",
+      "一级文明坐标": "华夏",
+      "文明ID": "HX",
+      "朝代ID": "CD_HX_QIN",
+      "政权ID": "ZQ_HX_QIN_QIN",
+      "帝王ID": "DW_HX_QIN_QIN_QINSHIHUANG",
+      "优先级": "P0",
+      "优先级判定理由": "吕不韦列传主轴叙事，共22段",
+      "_auto_filled": {
+        "_坐标主轴说明": "本卷以庄襄王、始皇朝相秦、门客著书为主线，主轴挂秦始皇；昭襄王时入秦见共段事略。",
+        "_年LLM依据": "吕不韦约前292生，卒前235"
+      },
+      "史略开始年": -292,
+      "史略结束年": -235
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "work": "01史记",
+  "vol": "060",
+  "volume_name": "三王世家",
+  "volume_type_guess": "世家",
+  "protagonists": [
+    {
+      "name": "齐王刘闳",
+      "category": "宗戚",
+      "rationale": "《三王世家》叙事主轴：齐王刘闳（君王）"
+    },
+    {
+      "name": "燕王刘旦",
+      "category": "宗戚",
+      "rationale": "《三王世家》叙事主轴：燕王旦（君王）"
+    },
+    {
+      "name": "广陵王刘胥",
+      "category": "宗戚",
+      "rationale": "《三王世家》叙事主轴：广陵王刘胥（君王）"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题",
+    "其他"
+  ]
+}

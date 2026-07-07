@@ -1,0 +1,211 @@
+{
+  "volume": "穰侯列传",
+  "source_file": "01史记_072_穰侯列传第十二.txt",
+  "total_paragraphs": 19,
+  "volume_type": "纪传叙事",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [
+        {
+          "name": "魏冉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "魏冉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "魏冉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "魏冉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "魏冉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "魏冉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "魏冉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "魏冉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "魏冉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "魏冉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "魏冉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "魏冉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "魏冉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "魏冉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "魏冉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "魏冉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "魏冉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "魏冉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [],
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SHIJI_072_01",
+      "史略名称": "魏冉",
+      "史略简介": "魏冉",
+      "原文字句": "穰侯魏者，秦昭王母宣太后弟也。其先楚人，姓羋氏。",
+      "史略分类": "文臣",
+      "主要史料出处": "《史记·卷72·穰侯列传》",
+      "paragraphs": [
+        {
+          "volume": "穰侯列传",
+          "paragraph_from": 1,
+          "paragraph_to": 18
+        }
+      ],
+      "五级细坐标": "史记·卷072·文臣·01",
+      "六级段落锚点": "[P1-P18]",
+      "原文出处": "穰侯列传·P1-P18",
+      "四级帝王坐标": "秦昭襄王",
+      "三级政权坐标": "战国·秦",
+      "二级朝代坐标": "战国",
+      "一级文明坐标": "华夏",
+      "文明ID": "HX",
+      "朝代ID": "CD_HX_ZHANGUO",
+      "政权ID": "ZQ_HX_ZHANGUO_ZHANGUOQIN",
+      "帝王ID": "DW_HX_ZHANGUO_ZHANGUOQIN_QINZHAOXIANGWANG",
+      "优先级": "P0",
+      "优先级判定理由": "魏冉列传主轴叙事，共18段",
+      "_auto_filled": {
+        "_年LLM依据": "魏冉穰侯秦昭襄时专权，卒前251",
+        "_坐标主轴说明": "本卷以穰侯秦昭襄时专权为主线，主轴挂秦昭襄王；惠文王时入秦见前段事略。"
+      },
+      "史略开始年": -330,
+      "史略结束年": -251
+    }
+  ]
+}

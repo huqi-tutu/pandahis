@@ -24,13 +24,14 @@ description: >
 
 ```
 1. recall     → 段落索引逐 block 召回
-2. source_plan → 母本 M 清单 + 外部补全（默认采用:false）
+2. source_plan → 母本 M 清单 + 外部补全（默认采用:false）；`前置引入素材` 由编排器自动注入
 3. Phase1     → draft_mother（仅母本，无他书）
 4. verify_mother → 必现词 + 覆盖 + 禁他书
-5. Phase2     → draft_enrich（锚点补异说/背景/细节，禁重复母本）
-6. verify     → 全文 + plan 出处
-7. aggregate  → 史略翻译_汇总.json
-8. sync       → 自动 upsert 线上 historical_box_detail（`TRANSLATE_AUTO_SYNC=1` 默认开）
+5. Phase2     → draft_enrich（锚点补异说/背景/细节，禁重复母本）；**先写 100-200 字前置引入，再进入正文**
+6. postprocess → 段落合并、去加粗标记、去分节词（自动）
+7. verify     → 全文 + plan 出处 + 前置引入检测 + 格式检查
+8. aggregate  → 史略翻译_汇总.json
+9. sync       → 自动 upsert 线上 historical_box_detail（`TRANSLATE_AUTO_SYNC=1` 默认开）
 ```
 
 ## 流水线
@@ -38,11 +39,12 @@ description: >
 ```
 史略索引_01至02.json (GLBL_*)
   → recall
-  → source_plan（M001… + 必现词 + 外部补全筛选）
+  → source_plan（M001… + 必现词 + 外部补全 + 自动注入前置引入素材）
   → Phase1 draft_mother  → {id}.mother.json
   → verify_mother_draft
-  → Phase2 draft_enrich   → {id}_{名称}.json
-  → verify
+  → Phase2 draft_enrich   → {前置引入 + 锚点补全} → {id}_{名称}.json
+  → postprocess（段落合并/去加粗/去分节词）
+  → verify（含引入检测 + 格式检查）
   → aggregate → sync（单条 upsert 线上 DB）
 ```
 

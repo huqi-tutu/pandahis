@@ -1,0 +1,1702 @@
+{
+  "work": "01史记",
+  "volumes": 130,
+  "errors": 39,
+  "warnings": 51,
+  "reports": [
+    {
+      "vol": "001",
+      "volume_name": "五帝本纪",
+      "protagonists": [],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "missing_blocks",
+          "severity": "error",
+          "message": "缺少 blocks.json",
+          "paragraph": null,
+          "protagonist": null
+        }
+      ]
+    },
+    {
+      "vol": "002",
+      "volume_name": "夏本纪",
+      "protagonists": [
+        "禹",
+        "启",
+        "太康",
+        "中康",
+        "孔甲",
+        "桀"
+      ],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "foreign_protagonist_at_start",
+          "severity": "warn",
+          "message": "启 块起 P38 出现其他传主：禹",
+          "paragraph": 38,
+          "protagonist": "启"
+        },
+        {
+          "kind": "foreign_protagonist_at_start",
+          "severity": "warn",
+          "message": "太康 块起 P42 出现其他传主：启",
+          "paragraph": 42,
+          "protagonist": "太康"
+        },
+        {
+          "kind": "foreign_protagonist_at_start",
+          "severity": "warn",
+          "message": "中康 块起 P43 出现其他传主：太康",
+          "paragraph": 43,
+          "protagonist": "中康"
+        },
+        {
+          "kind": "foreign_protagonist_at_start",
+          "severity": "warn",
+          "message": "桀 块起 P47 出现其他传主：孔甲",
+          "paragraph": 47,
+          "protagonist": "桀"
+        }
+      ]
+    },
+    {
+      "vol": "003",
+      "volume_name": "殷本纪",
+      "protagonists": [
+        "契",
+        "成汤",
+        "太甲",
+        "沃丁",
+        "太戊",
+        "祖乙",
+        "阳甲",
+        "盘庚",
+        "小辛",
+        "小乙",
+        "武丁",
+        "祖庚",
+        "祖甲",
+        "廪辛",
+        "武乙",
+        "帝辛（纣）"
+      ],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "foreign_protagonist_at_start",
+          "severity": "warn",
+          "message": "成汤 块起 P3 出现其他传主：契",
+          "paragraph": 3,
+          "protagonist": "成汤"
+        },
+        {
+          "kind": "foreign_protagonist_at_start",
+          "severity": "warn",
+          "message": "太甲 块起 P11 出现其他传主：成汤",
+          "paragraph": 11,
+          "protagonist": "太甲"
+        },
+        {
+          "kind": "foreign_protagonist_at_start",
+          "severity": "warn",
+          "message": "盘庚 块起 P22 出现其他传主：成汤, 阳甲",
+          "paragraph": 22,
+          "protagonist": "盘庚"
+        },
+        {
+          "kind": "foreign_protagonist_at_start",
+          "severity": "warn",
+          "message": "小辛 块起 P24 出现其他传主：小乙, 盘庚",
+          "paragraph": 24,
+          "protagonist": "小辛"
+        },
+        {
+          "kind": "foreign_protagonist_at_start",
+          "severity": "warn",
+          "message": "小乙 块起 P25 出现其他传主：武丁",
+          "paragraph": 25,
+          "protagonist": "小乙"
+        },
+        {
+          "kind": "foreign_protagonist_at_start",
+          "severity": "warn",
+          "message": "武丁 块起 P26 出现其他传主：成汤",
+          "paragraph": 26,
+          "protagonist": "武丁"
+        },
+        {
+          "kind": "foreign_protagonist_at_start",
+          "severity": "warn",
+          "message": "祖庚 块起 P28 出现其他传主：祖甲",
+          "paragraph": 28,
+          "protagonist": "祖庚"
+        },
+        {
+          "kind": "foreign_protagonist_at_start",
+          "severity": "warn",
+          "message": "祖甲 块起 P29 出现其他传主：廪辛, 武乙",
+          "paragraph": 29,
+          "protagonist": "祖甲"
+        },
+        {
+          "kind": "foreign_protagonist_at_start",
+          "severity": "warn",
+          "message": "廪辛 块起 P30 出现其他传主：武乙",
+          "paragraph": 30,
+          "protagonist": "廪辛"
+        }
+      ]
+    },
+    {
+      "vol": "004",
+      "volume_name": "周本纪",
+      "protagonists": [
+        "后稷",
+        "古公亶父",
+        "季历",
+        "周文王",
+        "周武王",
+        "周成王",
+        "周康王",
+        "周昭王",
+        "周穆王",
+        "周共王",
+        "周厉王",
+        "周宣王",
+        "周幽王",
+        "周平王",
+        "周桓王",
+        "周庄王",
+        "周釐王",
+        "周惠王",
+        "周襄王",
+        "周定王",
+        "周灵王",
+        "周景王",
+        "周敬王",
+        "周元王",
+        "周贞定王",
+        "周威烈王",
+        "周安王",
+        "周烈王",
+        "周显王",
+        "周慎靓王",
+        "周赧王"
+      ],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "foreign_protagonist_at_start",
+          "severity": "warn",
+          "message": "古公亶父 块起 P4 出现其他传主：后稷",
+          "paragraph": 4,
+          "protagonist": "古公亶父"
+        },
+        {
+          "kind": "foreign_protagonist_at_start",
+          "severity": "warn",
+          "message": "周文王 块起 P8 出现其他传主：后稷",
+          "paragraph": 8,
+          "protagonist": "周文王"
+        }
+      ]
+    },
+    {
+      "vol": "005",
+      "volume_name": "秦本纪",
+      "protagonists": [
+        "非子",
+        "秦仲",
+        "秦庄公",
+        "秦襄公",
+        "秦文公",
+        "秦宁公",
+        "秦武公",
+        "秦德公",
+        "秦宣公",
+        "秦成公",
+        "秦穆公",
+        "秦康公",
+        "秦共公",
+        "秦桓公",
+        "秦景公",
+        "秦哀公",
+        "秦惠公",
+        "秦悼公",
+        "秦简公",
+        "秦厉共公",
+        "秦怀公",
+        "秦灵公",
+        "秦出子",
+        "秦献公",
+        "秦孝公",
+        "秦惠文王",
+        "秦武王",
+        "秦昭襄王",
+        "秦孝文王",
+        "秦庄襄王"
+      ],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "foreign_protagonist_at_start",
+          "severity": "warn",
+          "message": "秦仲 块起 P8 出现其他传主：非子",
+          "paragraph": 8,
+          "protagonist": "秦仲"
+        },
+        {
+          "kind": "foreign_protagonist_at_start",
+          "severity": "warn",
+          "message": "秦襄公 块起 P10 出现其他传主：秦仲",
+          "paragraph": 10,
+          "protagonist": "秦襄公"
+        },
+        {
+          "kind": "foreign_protagonist_at_start",
+          "severity": "warn",
+          "message": "秦文公 块起 P11 出现其他传主：秦仲",
+          "paragraph": 11,
+          "protagonist": "秦文公"
+        },
+        {
+          "kind": "transition_only_block",
+          "severity": "info",
+          "message": "秦孝文王 仅 P114 且似过渡句，宜 exclude 或并入前块",
+          "paragraph": 114,
+          "protagonist": "秦孝文王"
+        }
+      ]
+    },
+    {
+      "vol": "006",
+      "volume_name": "秦始皇本纪",
+      "protagonists": [
+        "秦始皇",
+        "秦二世"
+      ],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "commentary_owned",
+          "severity": "error",
+          "message": "P77 为评述/补笔却归属 ['秦始皇']",
+          "paragraph": 77,
+          "protagonist": null
+        }
+      ]
+    },
+    {
+      "vol": "007",
+      "volume_name": "项羽本纪",
+      "protagonists": [
+        "项羽"
+      ],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "commentary_owned",
+          "severity": "error",
+          "message": "P82 为评述/补笔却归属 ['项羽']",
+          "paragraph": 82,
+          "protagonist": null
+        }
+      ]
+    },
+    {
+      "vol": "013",
+      "volume_name": "013",
+      "protagonists": [],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "missing_blocks",
+          "severity": "error",
+          "message": "缺少 blocks.json",
+          "paragraph": null,
+          "protagonist": null
+        }
+      ]
+    },
+    {
+      "vol": "014",
+      "volume_name": "014",
+      "protagonists": [],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "missing_blocks",
+          "severity": "error",
+          "message": "缺少 blocks.json",
+          "paragraph": null,
+          "protagonist": null
+        }
+      ]
+    },
+    {
+      "vol": "015",
+      "volume_name": "015",
+      "protagonists": [],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "missing_blocks",
+          "severity": "error",
+          "message": "缺少 blocks.json",
+          "paragraph": null,
+          "protagonist": null
+        }
+      ]
+    },
+    {
+      "vol": "016",
+      "volume_name": "016",
+      "protagonists": [],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "missing_blocks",
+          "severity": "error",
+          "message": "缺少 blocks.json",
+          "paragraph": null,
+          "protagonist": null
+        }
+      ]
+    },
+    {
+      "vol": "017",
+      "volume_name": "017",
+      "protagonists": [],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "missing_blocks",
+          "severity": "error",
+          "message": "缺少 blocks.json",
+          "paragraph": null,
+          "protagonist": null
+        }
+      ]
+    },
+    {
+      "vol": "018",
+      "volume_name": "018",
+      "protagonists": [],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "missing_blocks",
+          "severity": "error",
+          "message": "缺少 blocks.json",
+          "paragraph": null,
+          "protagonist": null
+        }
+      ]
+    },
+    {
+      "vol": "019",
+      "volume_name": "019",
+      "protagonists": [],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "missing_blocks",
+          "severity": "error",
+          "message": "缺少 blocks.json",
+          "paragraph": null,
+          "protagonist": null
+        }
+      ]
+    },
+    {
+      "vol": "020",
+      "volume_name": "020",
+      "protagonists": [],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "missing_blocks",
+          "severity": "error",
+          "message": "缺少 blocks.json",
+          "paragraph": null,
+          "protagonist": null
+        }
+      ]
+    },
+    {
+      "vol": "021",
+      "volume_name": "021",
+      "protagonists": [],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "missing_blocks",
+          "severity": "error",
+          "message": "缺少 blocks.json",
+          "paragraph": null,
+          "protagonist": null
+        }
+      ]
+    },
+    {
+      "vol": "022",
+      "volume_name": "022",
+      "protagonists": [],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "missing_blocks",
+          "severity": "error",
+          "message": "缺少 blocks.json",
+          "paragraph": null,
+          "protagonist": null
+        }
+      ]
+    },
+    {
+      "vol": "023",
+      "volume_name": "礼书",
+      "protagonists": [],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "missing_blocks",
+          "severity": "error",
+          "message": "缺少 blocks.json",
+          "paragraph": null,
+          "protagonist": null
+        }
+      ]
+    },
+    {
+      "vol": "024",
+      "volume_name": "乐书",
+      "protagonists": [],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "missing_blocks",
+          "severity": "error",
+          "message": "缺少 blocks.json",
+          "paragraph": null,
+          "protagonist": null
+        }
+      ]
+    },
+    {
+      "vol": "025",
+      "volume_name": "025",
+      "protagonists": [],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "missing_blocks",
+          "severity": "error",
+          "message": "缺少 blocks.json",
+          "paragraph": null,
+          "protagonist": null
+        }
+      ]
+    },
+    {
+      "vol": "026",
+      "volume_name": "026",
+      "protagonists": [],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "missing_blocks",
+          "severity": "error",
+          "message": "缺少 blocks.json",
+          "paragraph": null,
+          "protagonist": null
+        }
+      ]
+    },
+    {
+      "vol": "027",
+      "volume_name": "027",
+      "protagonists": [],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "missing_blocks",
+          "severity": "error",
+          "message": "缺少 blocks.json",
+          "paragraph": null,
+          "protagonist": null
+        }
+      ]
+    },
+    {
+      "vol": "028",
+      "volume_name": "028",
+      "protagonists": [],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "missing_blocks",
+          "severity": "error",
+          "message": "缺少 blocks.json",
+          "paragraph": null,
+          "protagonist": null
+        }
+      ]
+    },
+    {
+      "vol": "029",
+      "volume_name": "029",
+      "protagonists": [],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "missing_blocks",
+          "severity": "error",
+          "message": "缺少 blocks.json",
+          "paragraph": null,
+          "protagonist": null
+        }
+      ]
+    },
+    {
+      "vol": "030",
+      "volume_name": "030",
+      "protagonists": [],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "missing_blocks",
+          "severity": "error",
+          "message": "缺少 blocks.json",
+          "paragraph": null,
+          "protagonist": null
+        }
+      ]
+    },
+    {
+      "vol": "031",
+      "volume_name": "吴太伯世家",
+      "protagonists": [
+        "吴太伯",
+        "吴王阖闾",
+        "吴王夫差"
+      ],
+      "ok": true,
+      "issues": []
+    },
+    {
+      "vol": "034",
+      "volume_name": "燕召公世家",
+      "protagonists": [
+        "燕召公",
+        "燕昭王",
+        "燕惠王",
+        "燕王喜"
+      ],
+      "ok": true,
+      "issues": []
+    },
+    {
+      "vol": "035",
+      "volume_name": "管蔡世家",
+      "protagonists": [
+        "管叔鲜",
+        "蔡叔度"
+      ],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "foreign_protagonist_at_start",
+          "severity": "warn",
+          "message": "管叔鲜 块起 P1 出现其他传主：蔡叔度",
+          "paragraph": 1,
+          "protagonist": "管叔鲜"
+        },
+        {
+          "kind": "commentary_owned",
+          "severity": "error",
+          "message": "P27 为评述/补笔却归属 ['蔡叔度']",
+          "paragraph": 27,
+          "protagonist": null
+        },
+        {
+          "kind": "commentary_owned",
+          "severity": "error",
+          "message": "P47 为评述/补笔却归属 ['蔡叔度']",
+          "paragraph": 47,
+          "protagonist": null
+        }
+      ]
+    },
+    {
+      "vol": "036",
+      "volume_name": "陈杞世家",
+      "protagonists": [
+        "陈胡公满",
+        "杞东楼公"
+      ],
+      "ok": true,
+      "issues": []
+    },
+    {
+      "vol": "037",
+      "volume_name": "卫康叔世家",
+      "protagonists": [
+        "卫康叔",
+        "卫宣公",
+        "卫懿公",
+        "卫文公",
+        "卫灵公",
+        "卫出公"
+      ],
+      "ok": true,
+      "issues": []
+    },
+    {
+      "vol": "038",
+      "volume_name": "宋微子世家",
+      "protagonists": [
+        "宋微子",
+        "宋襄公",
+        "宋昭公",
+        "宋景公",
+        "宋君偃"
+      ],
+      "ok": true,
+      "issues": []
+    },
+    {
+      "vol": "039",
+      "volume_name": "晋世家",
+      "protagonists": [
+        "晋武公",
+        "晋献公",
+        "晋文公",
+        "晋景公",
+        "晋悼公"
+      ],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "foreign_protagonist_at_start",
+          "severity": "warn",
+          "message": "晋景公 块起 P103 出现其他传主：晋文公",
+          "paragraph": 103,
+          "protagonist": "晋景公"
+        }
+      ]
+    },
+    {
+      "vol": "040",
+      "volume_name": "楚世家",
+      "protagonists": [
+        "楚武王",
+        "楚成王",
+        "楚庄王",
+        "楚昭王",
+        "楚怀王"
+      ],
+      "ok": true,
+      "issues": []
+    },
+    {
+      "vol": "042",
+      "volume_name": "郑世家",
+      "protagonists": [
+        "郑桓公",
+        "郑武公",
+        "郑庄公"
+      ],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "commentary_owned",
+          "severity": "error",
+          "message": "P76 为评述/补笔却归属 ['郑庄公']",
+          "paragraph": 76,
+          "protagonist": null
+        }
+      ]
+    },
+    {
+      "vol": "043",
+      "volume_name": "赵世家",
+      "protagonists": [
+        "赵襄子",
+        "赵武灵王",
+        "赵孝成王"
+      ],
+      "ok": true,
+      "issues": []
+    },
+    {
+      "vol": "044",
+      "volume_name": "魏世家",
+      "protagonists": [
+        "魏文侯",
+        "魏武侯",
+        "魏惠王",
+        "魏安釐王"
+      ],
+      "ok": true,
+      "issues": []
+    },
+    {
+      "vol": "045",
+      "volume_name": "韩世家",
+      "protagonists": [
+        "韩厥",
+        "韩昭侯",
+        "韩王安"
+      ],
+      "ok": true,
+      "issues": []
+    },
+    {
+      "vol": "046",
+      "volume_name": "田敬仲完世家",
+      "protagonists": [
+        "齐威王",
+        "齐宣王",
+        "齐湣王"
+      ],
+      "ok": true,
+      "issues": []
+    },
+    {
+      "vol": "049",
+      "volume_name": "外戚世家",
+      "protagonists": [
+        "薄太后",
+        "窦太后",
+        "王太后",
+        "卫子夫"
+      ],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "commentary_owned",
+          "severity": "error",
+          "message": "P40 为评述/补笔却归属 ['卫子夫']",
+          "paragraph": 40,
+          "protagonist": null
+        }
+      ]
+    },
+    {
+      "vol": "051",
+      "volume_name": "荆燕世家",
+      "protagonists": [
+        "荆王刘贾",
+        "燕王刘泽"
+      ],
+      "ok": true,
+      "issues": []
+    },
+    {
+      "vol": "053",
+      "volume_name": "萧相国世家",
+      "protagonists": [
+        "萧何"
+      ],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "commentary_owned",
+          "severity": "error",
+          "message": "P20 为评述/补笔却归属 ['萧何']",
+          "paragraph": 20,
+          "protagonist": null
+        }
+      ]
+    },
+    {
+      "vol": "058",
+      "volume_name": "梁孝王世家",
+      "protagonists": [
+        "梁孝王"
+      ],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "commentary_owned",
+          "severity": "error",
+          "message": "P28 为评述/补笔却归属 ['梁孝王']",
+          "paragraph": 28,
+          "protagonist": null
+        }
+      ]
+    },
+    {
+      "vol": "059",
+      "volume_name": "五宗世家",
+      "protagonists": [
+        "栗姬",
+        "程姬",
+        "贾夫人",
+        "唐姬",
+        "儿姁"
+      ],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "foreign_protagonist_at_start",
+          "severity": "warn",
+          "message": "栗姬 块起 P1 出现其他传主：儿姁, 唐姬, 程姬, 贾夫人",
+          "paragraph": 1,
+          "protagonist": "栗姬"
+        },
+        {
+          "kind": "foreign_protagonist_at_start",
+          "severity": "warn",
+          "message": "唐姬 块起 P27 出现其他传主：程姬",
+          "paragraph": 27,
+          "protagonist": "唐姬"
+        }
+      ]
+    },
+    {
+      "vol": "060",
+      "volume_name": "三王世家",
+      "protagonists": [
+        "齐王刘闳",
+        "燕王旦",
+        "广陵王刘胥"
+      ],
+      "ok": true,
+      "issues": []
+    },
+    {
+      "vol": "062",
+      "volume_name": "管晏列传",
+      "protagonists": [
+        "管仲",
+        "晏婴"
+      ],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "foreign_protagonist_at_start",
+          "severity": "warn",
+          "message": "晏婴 块起 P9 出现其他传主：管仲",
+          "paragraph": 9,
+          "protagonist": "晏婴"
+        },
+        {
+          "kind": "commentary_owned",
+          "severity": "error",
+          "message": "P16 为评述/补笔却归属 ['晏婴']",
+          "paragraph": 16,
+          "protagonist": null
+        }
+      ]
+    },
+    {
+      "vol": "063",
+      "volume_name": "老子韩非列传",
+      "protagonists": [
+        "老子",
+        "韩非"
+      ],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "foreign_protagonist_at_start",
+          "severity": "warn",
+          "message": "韩非 块起 P9 出现其他传主：老子",
+          "paragraph": 9,
+          "protagonist": "韩非"
+        }
+      ]
+    },
+    {
+      "vol": "065",
+      "volume_name": "孙子吴起列传",
+      "protagonists": [
+        "孙武",
+        "吴起"
+      ],
+      "ok": true,
+      "issues": []
+    },
+    {
+      "vol": "067",
+      "volume_name": "仲尼弟子列传",
+      "protagonists": [
+        "颜回",
+        "闵子骞",
+        "冉伯牛",
+        "冉雍",
+        "冉有",
+        "子路",
+        "宰予",
+        "子贡",
+        "子游",
+        "子夏",
+        "子张",
+        "曾参",
+        "澹台灭明",
+        "宓不齐",
+        "原宪",
+        "公冶长",
+        "南宫括",
+        "公皙哀",
+        "曾蒧",
+        "颜无繇",
+        "商瞿",
+        "高柴",
+        "漆彫开",
+        "公伯缭",
+        "司马耕",
+        "樊须",
+        "有若",
+        "公西赤",
+        "巫马施"
+      ],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "foreign_protagonist_at_start",
+          "severity": "warn",
+          "message": "颜无繇 块起 P91 出现其他传主：颜回",
+          "paragraph": 91,
+          "protagonist": "颜无繇"
+        }
+      ]
+    },
+    {
+      "vol": "069",
+      "volume_name": "苏秦列传",
+      "protagonists": [
+        "苏秦"
+      ],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "commentary_owned",
+          "severity": "error",
+          "message": "P82 为评述/补笔却归属 ['苏秦']",
+          "paragraph": 82,
+          "protagonist": null
+        }
+      ]
+    },
+    {
+      "vol": "070",
+      "volume_name": "张仪列传",
+      "protagonists": [
+        "张仪"
+      ],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "commentary_owned",
+          "severity": "error",
+          "message": "P76 为评述/补笔却归属 ['张仪']",
+          "paragraph": 76,
+          "protagonist": null
+        }
+      ]
+    },
+    {
+      "vol": "071",
+      "volume_name": "樗里子甘茂列传",
+      "protagonists": [
+        "樗里子",
+        "甘茂"
+      ],
+      "ok": true,
+      "issues": []
+    },
+    {
+      "vol": "073",
+      "volume_name": "白起王翦列传",
+      "protagonists": [
+        "白起",
+        "王翦"
+      ],
+      "ok": true,
+      "issues": []
+    },
+    {
+      "vol": "074",
+      "volume_name": "孟子荀卿列传",
+      "protagonists": [
+        "孟子",
+        "荀卿"
+      ],
+      "ok": true,
+      "issues": []
+    },
+    {
+      "vol": "076",
+      "volume_name": "平原君虞卿列传",
+      "protagonists": [
+        "平原君赵胜",
+        "虞卿"
+      ],
+      "ok": true,
+      "issues": []
+    },
+    {
+      "vol": "079",
+      "volume_name": "范睢蔡泽列传",
+      "protagonists": [
+        "范睢",
+        "蔡泽"
+      ],
+      "ok": true,
+      "issues": []
+    },
+    {
+      "vol": "081",
+      "volume_name": "廉颇蔺相如列传",
+      "protagonists": [
+        "廉颇",
+        "蔺相如"
+      ],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "foreign_protagonist_at_start",
+          "severity": "warn",
+          "message": "廉颇 块起 P1 出现其他传主：蔺相如",
+          "paragraph": 1,
+          "protagonist": "廉颇"
+        }
+      ]
+    },
+    {
+      "vol": "082",
+      "volume_name": "田单列传",
+      "protagonists": [
+        "田单"
+      ],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "commentary_owned",
+          "severity": "error",
+          "message": "P10 为评述/补笔却归属 ['田单']",
+          "paragraph": 10,
+          "protagonist": null
+        }
+      ]
+    },
+    {
+      "vol": "083",
+      "volume_name": "鲁仲连邹阳列传",
+      "protagonists": [
+        "鲁仲连",
+        "邹阳"
+      ],
+      "ok": true,
+      "issues": []
+    },
+    {
+      "vol": "084",
+      "volume_name": "屈原贾生列传",
+      "protagonists": [
+        "屈原",
+        "贾谊"
+      ],
+      "ok": true,
+      "issues": []
+    },
+    {
+      "vol": "086",
+      "volume_name": "刺客列传",
+      "protagonists": [
+        "曹沫",
+        "专诸",
+        "豫让",
+        "聂政",
+        "荆轲"
+      ],
+      "ok": true,
+      "issues": []
+    },
+    {
+      "vol": "089",
+      "volume_name": "张耳陈馀列传",
+      "protagonists": [
+        "张耳",
+        "陈馀"
+      ],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "foreign_protagonist_at_start",
+          "severity": "warn",
+          "message": "张耳 块起 P1 出现其他传主：陈馀",
+          "paragraph": 1,
+          "protagonist": "张耳"
+        },
+        {
+          "kind": "foreign_protagonist_at_start",
+          "severity": "warn",
+          "message": "陈馀 块起 P21 出现其他传主：张耳",
+          "paragraph": 21,
+          "protagonist": "陈馀"
+        }
+      ]
+    },
+    {
+      "vol": "090",
+      "volume_name": "魏豹彭越列传",
+      "protagonists": [
+        "魏豹",
+        "彭越"
+      ],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "foreign_protagonist_at_start",
+          "severity": "warn",
+          "message": "彭越 块起 P5 出现其他传主：魏豹",
+          "paragraph": 5,
+          "protagonist": "彭越"
+        }
+      ]
+    },
+    {
+      "vol": "093",
+      "volume_name": "韩信卢绾列传",
+      "protagonists": [
+        "韩王信",
+        "卢绾"
+      ],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "foreign_protagonist_at_start",
+          "severity": "warn",
+          "message": "卢绾 块起 P19 出现其他传主：韩王信",
+          "paragraph": 19,
+          "protagonist": "卢绾"
+        }
+      ]
+    },
+    {
+      "vol": "094",
+      "volume_name": "田儋列传",
+      "protagonists": [
+        "田儋",
+        "田荣",
+        "田横"
+      ],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "foreign_protagonist_at_start",
+          "severity": "warn",
+          "message": "田儋 块起 P1 出现其他传主：田横, 田荣",
+          "paragraph": 1,
+          "protagonist": "田儋"
+        }
+      ]
+    },
+    {
+      "vol": "095",
+      "volume_name": "樊郦滕灌列传",
+      "protagonists": [
+        "樊哙",
+        "郦商",
+        "滕公（夏侯婴）",
+        "灌婴"
+      ],
+      "ok": true,
+      "issues": []
+    },
+    {
+      "vol": "096",
+      "volume_name": "张丞相列传",
+      "protagonists": [
+        "张苍",
+        "周昌",
+        "任敖",
+        "申屠嘉",
+        "韦贤",
+        "魏相",
+        "邴吉",
+        "黄霸",
+        "韦玄成",
+        "匡衡"
+      ],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "foreign_protagonist_at_start",
+          "severity": "warn",
+          "message": "任敖 块起 P12 出现其他传主：张苍",
+          "paragraph": 12,
+          "protagonist": "任敖"
+        },
+        {
+          "kind": "foreign_protagonist_at_start",
+          "severity": "warn",
+          "message": "申屠嘉 块起 P19 出现其他传主：张苍",
+          "paragraph": 19,
+          "protagonist": "申屠嘉"
+        }
+      ]
+    },
+    {
+      "vol": "097",
+      "volume_name": "郦生陆贾列传",
+      "protagonists": [
+        "郦食其",
+        "陆贾"
+      ],
+      "ok": true,
+      "issues": []
+    },
+    {
+      "vol": "098",
+      "volume_name": "傅靳蒯成列传",
+      "protagonists": [
+        "傅宽",
+        "靳歙",
+        "蒯成"
+      ],
+      "ok": true,
+      "issues": []
+    },
+    {
+      "vol": "099",
+      "volume_name": "刘敬叔孙通列传",
+      "protagonists": [
+        "刘敬",
+        "叔孙通"
+      ],
+      "ok": true,
+      "issues": []
+    },
+    {
+      "vol": "100",
+      "volume_name": "季布栾布列传",
+      "protagonists": [
+        "季布",
+        "栾布"
+      ],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "foreign_protagonist_at_start",
+          "severity": "warn",
+          "message": "栾布 块起 P7 出现其他传主：季布",
+          "paragraph": 7,
+          "protagonist": "栾布"
+        }
+      ]
+    },
+    {
+      "vol": "101",
+      "volume_name": "袁盎晁错列传",
+      "protagonists": [
+        "袁盎",
+        "晁错"
+      ],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "foreign_protagonist_at_start",
+          "severity": "warn",
+          "message": "晁错 块起 P20 出现其他传主：袁盎",
+          "paragraph": 20,
+          "protagonist": "晁错"
+        },
+        {
+          "kind": "commentary_owned",
+          "severity": "error",
+          "message": "P30 为评述/补笔却归属 ['晁错']",
+          "paragraph": 30,
+          "protagonist": null
+        }
+      ]
+    },
+    {
+      "vol": "102",
+      "volume_name": "张释之冯唐列传",
+      "protagonists": [
+        "张释之",
+        "冯唐"
+      ],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "commentary_owned",
+          "severity": "error",
+          "message": "P17 为评述/补笔却归属 ['冯唐']",
+          "paragraph": 17,
+          "protagonist": null
+        }
+      ]
+    },
+    {
+      "vol": "103",
+      "volume_name": "万石张叔列传",
+      "protagonists": [
+        "石奋",
+        "张叔"
+      ],
+      "ok": true,
+      "issues": []
+    },
+    {
+      "vol": "104",
+      "volume_name": "田叔列传",
+      "protagonists": [
+        "田叔"
+      ],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "commentary_owned",
+          "severity": "error",
+          "message": "P12 为评述/补笔却归属 ['田叔']",
+          "paragraph": 12,
+          "protagonist": null
+        },
+        {
+          "kind": "commentary_owned",
+          "severity": "error",
+          "message": "P13 为评述/补笔却归属 ['田叔']",
+          "paragraph": 13,
+          "protagonist": null
+        }
+      ]
+    },
+    {
+      "vol": "105",
+      "volume_name": "扁鹊仓公列传",
+      "protagonists": [
+        "扁鹊",
+        "仓公"
+      ],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "foreign_protagonist_at_start",
+          "severity": "warn",
+          "message": "仓公 块起 P18 出现其他传主：扁鹊",
+          "paragraph": 18,
+          "protagonist": "仓公"
+        }
+      ]
+    },
+    {
+      "vol": "107",
+      "volume_name": "魏其武安侯列传",
+      "protagonists": [
+        "窦婴",
+        "田蚡",
+        "灌夫"
+      ],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "foreign_protagonist_at_start",
+          "severity": "warn",
+          "message": "窦婴 块起 P22 出现其他传主：灌夫",
+          "paragraph": 22,
+          "protagonist": "窦婴"
+        },
+        {
+          "kind": "foreign_protagonist_at_start",
+          "severity": "warn",
+          "message": "田蚡 块起 P24 出现其他传主：灌夫",
+          "paragraph": 24,
+          "protagonist": "田蚡"
+        },
+        {
+          "kind": "foreign_protagonist_at_start",
+          "severity": "warn",
+          "message": "窦婴 块起 P25 出现其他传主：灌夫",
+          "paragraph": 25,
+          "protagonist": "窦婴"
+        },
+        {
+          "kind": "foreign_protagonist_at_start",
+          "severity": "warn",
+          "message": "田蚡 块起 P26 出现其他传主：灌夫",
+          "paragraph": 26,
+          "protagonist": "田蚡"
+        }
+      ]
+    },
+    {
+      "vol": "111",
+      "volume_name": "卫将军骠骑列传",
+      "protagonists": [
+        "卫青",
+        "霍去病"
+      ],
+      "ok": true,
+      "issues": []
+    },
+    {
+      "vol": "112",
+      "volume_name": "平津侯主父列传",
+      "protagonists": [
+        "公孙弘",
+        "主父偃"
+      ],
+      "ok": true,
+      "issues": []
+    },
+    {
+      "vol": "118",
+      "volume_name": "淮南衡山列传",
+      "protagonists": [
+        "刘长",
+        "刘安",
+        "刘赐"
+      ],
+      "ok": true,
+      "issues": []
+    },
+    {
+      "vol": "119",
+      "volume_name": "循吏列传",
+      "protagonists": [
+        "孙叔敖",
+        "子产",
+        "公仪休",
+        "石奢",
+        "李离"
+      ],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "excerpt_drift",
+          "severity": "warn",
+          "message": "孙叔敖 原文字句与 P1 段首不一致",
+          "paragraph": 1,
+          "protagonist": "孙叔敖"
+        },
+        {
+          "kind": "commentary_owned",
+          "severity": "error",
+          "message": "P1 为评述/补笔却归属 ['孙叔敖']",
+          "paragraph": 1,
+          "protagonist": null
+        }
+      ]
+    },
+    {
+      "vol": "120",
+      "volume_name": "汲郑列传",
+      "protagonists": [
+        "汲黯",
+        "郑当时"
+      ],
+      "ok": true,
+      "issues": []
+    },
+    {
+      "vol": "121",
+      "volume_name": "儒林列传",
+      "protagonists": [
+        "申公",
+        "辕固生",
+        "韩生",
+        "伏生",
+        "高堂生",
+        "徐生",
+        "杨何",
+        "董仲舒",
+        "胡毋生",
+        "江生",
+        "吕步舒"
+      ],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "foreign_protagonist_at_start",
+          "severity": "warn",
+          "message": "董仲舒 块起 P29 出现其他传主：吕步舒",
+          "paragraph": 29,
+          "protagonist": "董仲舒"
+        },
+        {
+          "kind": "foreign_protagonist_at_start",
+          "severity": "warn",
+          "message": "江生 块起 P32 出现其他传主：董仲舒",
+          "paragraph": 32,
+          "protagonist": "江生"
+        },
+        {
+          "kind": "foreign_protagonist_at_start",
+          "severity": "warn",
+          "message": "吕步舒 块起 P33 出现其他传主：董仲舒",
+          "paragraph": 33,
+          "protagonist": "吕步舒"
+        }
+      ]
+    },
+    {
+      "vol": "122",
+      "volume_name": "酷吏列传",
+      "protagonists": [
+        "郅都",
+        "宁成",
+        "周阳由",
+        "赵禹",
+        "张汤",
+        "义纵",
+        "王温舒",
+        "杨仆",
+        "尹齐",
+        "减宣",
+        "杜周"
+      ],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "foreign_protagonist_at_start",
+          "severity": "warn",
+          "message": "宁成 块起 P10 出现其他传主：郅都",
+          "paragraph": 10,
+          "protagonist": "宁成"
+        },
+        {
+          "kind": "foreign_protagonist_at_start",
+          "severity": "warn",
+          "message": "王温舒 块起 P41 出现其他传主：张汤",
+          "paragraph": 41,
+          "protagonist": "王温舒"
+        },
+        {
+          "kind": "foreign_protagonist_at_start",
+          "severity": "warn",
+          "message": "杨仆 块起 P46 出现其他传主：尹齐",
+          "paragraph": 46,
+          "protagonist": "杨仆"
+        },
+        {
+          "kind": "foreign_protagonist_at_start",
+          "severity": "warn",
+          "message": "杜周 块起 P56 出现其他传主：义纵, 减宣, 张汤",
+          "paragraph": 56,
+          "protagonist": "杜周"
+        }
+      ]
+    },
+    {
+      "vol": "124",
+      "volume_name": "游侠列传",
+      "protagonists": [
+        "朱家",
+        "剧孟",
+        "郭解"
+      ],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "foreign_protagonist_at_start",
+          "severity": "warn",
+          "message": "剧孟 块起 P9 出现其他传主：朱家",
+          "paragraph": 9,
+          "protagonist": "剧孟"
+        }
+      ]
+    },
+    {
+      "vol": "125",
+      "volume_name": "佞幸列传",
+      "protagonists": [
+        "籍孺",
+        "闳孺",
+        "邓通",
+        "韩嫣",
+        "李延年"
+      ],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "foreign_protagonist_at_start",
+          "severity": "warn",
+          "message": "韩嫣 块起 P9 出现其他传主：李延年, 邓通",
+          "paragraph": 9,
+          "protagonist": "韩嫣"
+        }
+      ]
+    },
+    {
+      "vol": "126",
+      "volume_name": "滑稽列传",
+      "protagonists": [
+        "淳于髡",
+        "优孟",
+        "优旃"
+      ],
+      "ok": true,
+      "issues": []
+    },
+    {
+      "vol": "128",
+      "volume_name": "龟策列传",
+      "protagonists": [],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "missing_blocks",
+          "severity": "error",
+          "message": "缺少 blocks.json",
+          "paragraph": null,
+          "protagonist": null
+        }
+      ]
+    },
+    {
+      "vol": "129",
+      "volume_name": "货殖列传",
+      "protagonists": [
+        "陶朱公",
+        "子贡",
+        "白圭",
+        "猗顿",
+        "巴寡妇清",
+        "卓氏"
+      ],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "foreign_protagonist_at_start",
+          "severity": "warn",
+          "message": "子贡 块起 P8 出现其他传主：白圭",
+          "paragraph": 8,
+          "protagonist": "子贡"
+        }
+      ]
+    },
+    {
+      "vol": "130",
+      "volume_name": "太史公自序",
+      "protagonists": [
+        "司马迁"
+      ],
+      "ok": false,
+      "issues": [
+        {
+          "kind": "commentary_owned",
+          "severity": "error",
+          "message": "P17 为评述/补笔却归属 ['司马迁']",
+          "paragraph": 17,
+          "protagonist": null
+        },
+        {
+          "kind": "commentary_owned",
+          "severity": "error",
+          "message": "P157 为评述/补笔却归属 ['司马迁']",
+          "paragraph": 157,
+          "protagonist": null
+        }
+      ]
+    }
+  ]
+}

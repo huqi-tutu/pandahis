@@ -2,7 +2,7 @@ import { request } from '../../native-utils/api'
 import { formatSearchPath, highlightEmToRich, stripHtml } from '../../native-utils/format'
 import { ROUTES, navigateTo } from '../../native-utils/router'
 
-const FILTER_CATS = ['全部', '君纪', '士臣', '典制', '事略', '民录'] as const
+const FILTER_CATS = ['全部', '君王', '士臣', '典制', '事略', '民录'] as const
 
 type SearchResult = {
   total: number
@@ -104,7 +104,7 @@ Page({
   go(e: WechatMiniprogram.BaseEvent) {
     const ds = (e.currentTarget as WechatMiniprogram.IAnyObject).dataset as { type: string; id: string }
     if (ds.type === 'unit') {
-      navigateTo(ROUTES.unitDetail, { unitId: ds.id })
+      navigateTo(ROUTES.dynastyDetail, { unitId: ds.id })
       return
     }
     if (ds.type === 'box') {

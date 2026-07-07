@@ -1,0 +1,18 @@
+{
+  "work": "01史记",
+  "vol": "080",
+  "volume_name": "乐毅列传",
+  "volume_type_guess": "列传",
+  "protagonists": [
+    {
+      "name": "乐毅",
+      "category": "武将",
+      "rationale": "卷名《乐毅列传》明确以乐毅为传主，是典型的单人列传，乐毅为燕国名将，属士臣类。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "work": "02汉书",
+  "vol": "111",
+  "volume_name": "西域传第六十六下",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "大宛",
+      "category": "蕃祚",
+      "rationale": "《汉书·西域传第六十六下》记载西域诸国，大宛为其中之一，属蕃祚合传。"
+    },
+    {
+      "name": "康居",
+      "category": "蕃祚",
+      "rationale": "《汉书·西域传第六十六下》记载西域诸国，康居为其中之一，属蕃祚合传。"
+    },
+    {
+      "name": "安息",
+      "category": "蕃祚",
+      "rationale": "《汉书·西域传第六十六下》记载西域诸国，安息为其中之一，属蕃祚合传。"
+    },
+    {
+      "name": "大夏",
+      "category": "蕃祚",
+      "rationale": "《汉书·西域传第六十六下》记载西域诸国，大夏为其中之一，属蕃祚合传。"
+    },
+    {
+      "name": "罽宾",
+      "category": "蕃祚",
+      "rationale": "《汉书·西域传第六十六下》记载西域诸国，罽宾为其中之一，属蕃祚合传。"
+    },
+    {
+      "name": "乌弋山离",
+      "category": "蕃祚",
+      "rationale": "《汉书·西域传第六十六下》记载西域诸国，乌弋山离为其中之一，属蕃祚合传。"
+    },
+    {
+      "name": "条支",
+      "category": "蕃祚",
+      "rationale": "《汉书·西域传第六十六下》记载西域诸国，条支为其中之一，属蕃祚合传。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

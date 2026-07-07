@@ -1,0 +1,34 @@
+{
+  "total_paragraphs": 13,
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 2,
+      "paragraph_to": 2,
+      "exclude_reason": "篇内小标题"
+    },
+    {
+      "paragraph_from": 13,
+      "paragraph_to": 13,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "张骞",
+      "category": "文臣",
+      "paragraph_from": 3,
+      "paragraph_to": 6
+    },
+    {
+      "name": "李广利",
+      "category": "武将",
+      "paragraph_from": 7,
+      "paragraph_to": 12
+    }
+  ]
+}

@@ -1,0 +1,2196 @@
+{
+  "generated_at": "2026-06-30T14:42:23Z",
+  "work": "01史记",
+  "vol_range": "001-130",
+  "volume_counts": {
+    "fail": 9,
+    "ok": 105,
+    "skip": 16
+  },
+  "skeleton_files": 114,
+  "total_entries": 351,
+  "fail_volumes": [
+    "001",
+    "002",
+    "003",
+    "004",
+    "007",
+    "008",
+    "010",
+    "024",
+    "049"
+  ],
+  "missing_volumes": [],
+  "skip_volumes": [
+    "013",
+    "014",
+    "015",
+    "016",
+    "017",
+    "018",
+    "019",
+    "020",
+    "021",
+    "022",
+    "025",
+    "026",
+    "027",
+    "028",
+    "029",
+    "030"
+  ],
+  "layer_issue_counts": {
+    "L1-skeleton": {
+      "ERROR": 20
+    },
+    "L1-final": {
+      "ERROR": 39
+    },
+    "L2-year": {
+      "ERROR": 7,
+      "WARN": 2
+    }
+  },
+  "l1_skeleton_fail": 7,
+  "l1_final_fail": 8,
+  "l2_precheck_fail": 0,
+  "l2_year_error_volumes": 2,
+  "volumes": [
+    {
+      "vol": "001",
+      "filename": "01史记_001_五帝本纪第一_skeleton.json",
+      "status": "fail",
+      "entry_count": 5,
+      "json_ok": true,
+      "skeleton_ok": false,
+      "final_ok": false,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": [
+        {
+          "layer": "L1-skeleton",
+          "severity": "ERROR",
+          "message": "❌ exclude 内容门未过:"
+        },
+        {
+          "layer": "L1-skeleton",
+          "severity": "ERROR",
+          "message": "❌ - P42 非「太史公曰」起笔（非好学深思，心知其意，固难为浅见寡闻道也。余并论次，择其言尤雅者，故著为本纪书首…），禁止 exclude=太史公曰"
+        },
+        {
+          "layer": "L1-final",
+          "severity": "ERROR",
+          "message": "❌ exclude 内容门未过:"
+        },
+        {
+          "layer": "L1-final",
+          "severity": "ERROR",
+          "message": "❌ - P42 非「太史公曰」起笔（非好学深思，心知其意，固难为浅见寡闻道也。余并论次，择其言尤雅者，故著为本纪书首…），禁止 exclude=太史公曰"
+        }
+      ]
+    },
+    {
+      "vol": "002",
+      "filename": "01史记_002_夏本纪第二_skeleton.json",
+      "status": "fail",
+      "entry_count": 6,
+      "json_ok": true,
+      "skeleton_ok": false,
+      "final_ok": false,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": [
+        {
+          "layer": "L1-skeleton",
+          "severity": "ERROR",
+          "message": "❌ exclude 内容门未过:"
+        },
+        {
+          "layer": "L1-skeleton",
+          "severity": "ERROR",
+          "message": "❌ - P44 为叙事正文（中康崩，子帝相立。帝相崩，子帝少康立。帝少康崩，子帝予立。帝予崩，子帝槐立。帝槐…），禁止 exclude=世系链"
+        },
+        {
+          "layer": "L1-final",
+          "severity": "ERROR",
+          "message": "❌ exclude 内容门未过:"
+        },
+        {
+          "layer": "L1-final",
+          "severity": "ERROR",
+          "message": "❌ - P44 为叙事正文（中康崩，子帝相立。帝相崩，子帝少康立。帝少康崩，子帝予立。帝予崩，子帝槐立。帝槐…），禁止 exclude=世系链"
+        }
+      ]
+    },
+    {
+      "vol": "003",
+      "filename": "01史记_003_殷本纪第三_skeleton.json",
+      "status": "fail",
+      "entry_count": 16,
+      "json_ok": true,
+      "skeleton_ok": false,
+      "final_ok": false,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": [
+        {
+          "layer": "L1-skeleton",
+          "severity": "ERROR",
+          "message": "❌ exclude 内容门未过:"
+        },
+        {
+          "layer": "L1-skeleton",
+          "severity": "ERROR",
+          "message": "❌ - P2 为叙事正文（契卒，子昭明立。昭明卒，子相土立。相土卒，子昌若立。昌若卒，子曹圉立。曹圉卒，子…），禁止 exclude=世系链"
+        },
+        {
+          "layer": "L1-skeleton",
+          "severity": "ERROR",
+          "message": "❌ - P15 为叙事正文（沃丁崩，弟太庚立，是为帝太庚。帝太庚崩，子帝小甲立。帝小甲崩，弟雍己立，是为帝雍…），禁止 exclude=世系链"
+        },
+        {
+          "layer": "L1-skeleton",
+          "severity": "ERROR",
+          "message": "❌ - P17 为叙事正文（中宗崩，子帝中丁立。帝中丁迁于隞。河亶甲居相。祖乙迁于邢。帝中丁崩，弟外壬立，是…），禁止 exclude=世系链"
+        },
+        {
+          "layer": "L1-skeleton",
+          "severity": "ERROR",
+          "message": "❌ - P19 为叙事正文（祖乙崩，子帝祖辛立。帝祖辛崩，弟沃甲立，是为帝沃甲。帝沃甲崩，立沃甲兄祖辛之子祖…），禁止 exclude=世系链"
+        },
+        {
+          "layer": "L1-final",
+          "severity": "ERROR",
+          "message": "❌ exclude 内容门未过:"
+        },
+        {
+          "layer": "L1-final",
+          "severity": "ERROR",
+          "message": "❌ - P2 为叙事正文（契卒，子昭明立。昭明卒，子相土立。相土卒，子昌若立。昌若卒，子曹圉立。曹圉卒，子…），禁止 exclude=世系链"
+        },
+        {
+          "layer": "L1-final",
+          "severity": "ERROR",
+          "message": "❌ - P15 为叙事正文（沃丁崩，弟太庚立，是为帝太庚。帝太庚崩，子帝小甲立。帝小甲崩，弟雍己立，是为帝雍…），禁止 exclude=世系链"
+        },
+        {
+          "layer": "L1-final",
+          "severity": "ERROR",
+          "message": "❌ - P17 为叙事正文（中宗崩，子帝中丁立。帝中丁迁于隞。河亶甲居相。祖乙迁于邢。帝中丁崩，弟外壬立，是…），禁止 exclude=世系链"
+        },
+        {
+          "layer": "L1-final",
+          "severity": "ERROR",
+          "message": "❌ - P19 为叙事正文（祖乙崩，子帝祖辛立。帝祖辛崩，弟沃甲立，是为帝沃甲。帝沃甲崩，立沃甲兄祖辛之子祖…），禁止 exclude=世系链"
+        }
+      ]
+    },
+    {
+      "vol": "004",
+      "filename": "01史记_004_周本纪第四_skeleton.json",
+      "status": "fail",
+      "entry_count": 31,
+      "json_ok": true,
+      "skeleton_ok": false,
+      "final_ok": false,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": [
+        {
+          "layer": "L1-skeleton",
+          "severity": "ERROR",
+          "message": "❌ exclude 内容门未过:"
+        },
+        {
+          "layer": "L1-skeleton",
+          "severity": "ERROR",
+          "message": "❌ - P3 为叙事正文（后稷卒，子不窋立。不窋末年，夏后氏政衰，去稷不务，不窋以失其官而奔戎狄之间。不窋…），禁止 exclude=世系链"
+        },
+        {
+          "layer": "L1-skeleton",
+          "severity": "ERROR",
+          "message": "❌ - P36 为叙事正文（穆王立五十五年，崩，子共王繄扈立。共王游於泾上，密康公从，有三女奔之。其母曰：“…），禁止 exclude=世系链"
+        },
+        {
+          "layer": "L1-skeleton",
+          "severity": "ERROR",
+          "message": "❌ - P67 为叙事正文（三十二年，襄王崩，子顷王壬臣立。顷王六年，崩，子匡王班立。匡王六年，崩，弟瑜立，…），禁止 exclude=世系链"
+        },
+        {
+          "layer": "L1-final",
+          "severity": "ERROR",
+          "message": "❌ exclude 内容门未过:"
+        },
+        {
+          "layer": "L1-final",
+          "severity": "ERROR",
+          "message": "❌ - P3 为叙事正文（后稷卒，子不窋立。不窋末年，夏后氏政衰，去稷不务，不窋以失其官而奔戎狄之间。不窋…），禁止 exclude=世系链"
+        },
+        {
+          "layer": "L1-final",
+          "severity": "ERROR",
+          "message": "❌ - P36 为叙事正文（穆王立五十五年，崩，子共王繄扈立。共王游於泾上，密康公从，有三女奔之。其母曰：“…），禁止 exclude=世系链"
+        },
+        {
+          "layer": "L1-final",
+          "severity": "ERROR",
+          "message": "❌ - P67 为叙事正文（三十二年，襄王崩，子顷王壬臣立。顷王六年，崩，子匡王班立。匡王六年，崩，弟瑜立，…），禁止 exclude=世系链"
+        }
+      ]
+    },
+    {
+      "vol": "005",
+      "filename": "01史记_005_秦本纪第五_skeleton.json",
+      "status": "ok",
+      "entry_count": 30,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "006",
+      "filename": "01史记_006_秦始皇本纪第六_skeleton.json",
+      "status": "ok",
+      "entry_count": 2,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "007",
+      "filename": "01史记_007_项羽本纪第七_skeleton.json",
+      "status": "fail",
+      "entry_count": 1,
+      "json_ok": true,
+      "skeleton_ok": false,
+      "final_ok": false,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": [
+        {
+          "layer": "L1-skeleton",
+          "severity": "ERROR",
+          "message": "❌ exclude 内容门未过:"
+        },
+        {
+          "layer": "L1-skeleton",
+          "severity": "ERROR",
+          "message": "❌ - P83 非「太史公曰」起笔（然羽非有尺寸，乘埶起陇亩之中，三年，遂将五诸侯灭秦，分裂天下，而封王侯，政由羽出…），禁止 exclude=太史公曰"
+        },
+        {
+          "layer": "L1-final",
+          "severity": "ERROR",
+          "message": "❌ exclude 内容门未过:"
+        },
+        {
+          "layer": "L1-final",
+          "severity": "ERROR",
+          "message": "❌ - P83 非「太史公曰」起笔（然羽非有尺寸，乘埶起陇亩之中，三年，遂将五诸侯灭秦，分裂天下，而封王侯，政由羽出…），禁止 exclude=太史公曰"
+        }
+      ]
+    },
+    {
+      "vol": "008",
+      "filename": "01史记_008_高祖本纪第八_skeleton.json",
+      "status": "fail",
+      "entry_count": 1,
+      "json_ok": true,
+      "skeleton_ok": false,
+      "final_ok": false,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": [
+        {
+          "layer": "L1-skeleton",
+          "severity": "ERROR",
+          "message": "❌ exclude 内容门未过:"
+        },
+        {
+          "layer": "L1-skeleton",
+          "severity": "ERROR",
+          "message": "❌ - P116 非「太史公曰」起笔（及孝惠五年，思高祖之悲乐沛，以沛宫为高祖原庙。高祖所教歌儿百二十人，皆令为吹乐，…），禁止 exclude=太史公曰"
+        },
+        {
+          "layer": "L1-skeleton",
+          "severity": "ERROR",
+          "message": "❌ - P117 非「太史公曰」起笔（高帝八男：长庶齐悼惠王肥；次孝惠，吕后子；次戚夫人子赵隐王如意；次代王恒，已立为…），禁止 exclude=太史公曰"
+        },
+        {
+          "layer": "L1-final",
+          "severity": "ERROR",
+          "message": "❌ exclude 内容门未过:"
+        },
+        {
+          "layer": "L1-final",
+          "severity": "ERROR",
+          "message": "❌ - P116 非「太史公曰」起笔（及孝惠五年，思高祖之悲乐沛，以沛宫为高祖原庙。高祖所教歌儿百二十人，皆令为吹乐，…），禁止 exclude=太史公曰"
+        },
+        {
+          "layer": "L1-final",
+          "severity": "ERROR",
+          "message": "❌ - P117 非「太史公曰」起笔（高帝八男：长庶齐悼惠王肥；次孝惠，吕后子；次戚夫人子赵隐王如意；次代王恒，已立为…），禁止 exclude=太史公曰"
+        }
+      ]
+    },
+    {
+      "vol": "009",
+      "filename": "01史记_009_吕太后本纪第九_skeleton.json",
+      "status": "ok",
+      "entry_count": 1,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "010",
+      "filename": "01史记_010_孝文本纪第十_skeleton.json",
+      "status": "fail",
+      "entry_count": 1,
+      "json_ok": true,
+      "skeleton_ok": false,
+      "final_ok": false,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": [
+        {
+          "layer": "L1-skeleton",
+          "severity": "ERROR",
+          "message": "❌ exclude 内容门未过:"
+        },
+        {
+          "layer": "L1-skeleton",
+          "severity": "ERROR",
+          "message": "❌ - P57 非「太史公曰」起笔（孝惠庙酎，奏文始、五行之舞。孝文皇帝临天下，通关梁，不异远方。除诽谤，去肉刑，赏…），禁止 exclude=太史公曰"
+        },
+        {
+          "layer": "L1-final",
+          "severity": "ERROR",
+          "message": "❌ exclude 内容门未过:"
+        },
+        {
+          "layer": "L1-final",
+          "severity": "ERROR",
+          "message": "❌ - P57 非「太史公曰」起笔（孝惠庙酎，奏文始、五行之舞。孝文皇帝临天下，通关梁，不异远方。除诽谤，去肉刑，赏…），禁止 exclude=太史公曰"
+        }
+      ]
+    },
+    {
+      "vol": "011",
+      "filename": "01史记_011_孝景本纪第十一_skeleton.json",
+      "status": "ok",
+      "entry_count": 1,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "012",
+      "filename": "01史记_012_孝武本纪第十二_skeleton.json",
+      "status": "ok",
+      "entry_count": 1,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "013",
+      "filename": null,
+      "status": "skip",
+      "entry_count": 0,
+      "json_ok": false,
+      "skeleton_ok": null,
+      "final_ok": null,
+      "precheck_ok": null,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": [
+        {
+          "layer": "meta",
+          "severity": "INFO",
+          "message": "表/志/书 skip 卷，无 skeleton 属预期"
+        }
+      ]
+    },
+    {
+      "vol": "014",
+      "filename": null,
+      "status": "skip",
+      "entry_count": 0,
+      "json_ok": false,
+      "skeleton_ok": null,
+      "final_ok": null,
+      "precheck_ok": null,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": [
+        {
+          "layer": "meta",
+          "severity": "INFO",
+          "message": "表/志/书 skip 卷，无 skeleton 属预期"
+        }
+      ]
+    },
+    {
+      "vol": "015",
+      "filename": null,
+      "status": "skip",
+      "entry_count": 0,
+      "json_ok": false,
+      "skeleton_ok": null,
+      "final_ok": null,
+      "precheck_ok": null,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": [
+        {
+          "layer": "meta",
+          "severity": "INFO",
+          "message": "表/志/书 skip 卷，无 skeleton 属预期"
+        }
+      ]
+    },
+    {
+      "vol": "016",
+      "filename": null,
+      "status": "skip",
+      "entry_count": 0,
+      "json_ok": false,
+      "skeleton_ok": null,
+      "final_ok": null,
+      "precheck_ok": null,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": [
+        {
+          "layer": "meta",
+          "severity": "INFO",
+          "message": "表/志/书 skip 卷，无 skeleton 属预期"
+        }
+      ]
+    },
+    {
+      "vol": "017",
+      "filename": null,
+      "status": "skip",
+      "entry_count": 0,
+      "json_ok": false,
+      "skeleton_ok": null,
+      "final_ok": null,
+      "precheck_ok": null,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": [
+        {
+          "layer": "meta",
+          "severity": "INFO",
+          "message": "表/志/书 skip 卷，无 skeleton 属预期"
+        }
+      ]
+    },
+    {
+      "vol": "018",
+      "filename": null,
+      "status": "skip",
+      "entry_count": 0,
+      "json_ok": false,
+      "skeleton_ok": null,
+      "final_ok": null,
+      "precheck_ok": null,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": [
+        {
+          "layer": "meta",
+          "severity": "INFO",
+          "message": "表/志/书 skip 卷，无 skeleton 属预期"
+        }
+      ]
+    },
+    {
+      "vol": "019",
+      "filename": null,
+      "status": "skip",
+      "entry_count": 0,
+      "json_ok": false,
+      "skeleton_ok": null,
+      "final_ok": null,
+      "precheck_ok": null,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": [
+        {
+          "layer": "meta",
+          "severity": "INFO",
+          "message": "表/志/书 skip 卷，无 skeleton 属预期"
+        }
+      ]
+    },
+    {
+      "vol": "020",
+      "filename": null,
+      "status": "skip",
+      "entry_count": 0,
+      "json_ok": false,
+      "skeleton_ok": null,
+      "final_ok": null,
+      "precheck_ok": null,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": [
+        {
+          "layer": "meta",
+          "severity": "INFO",
+          "message": "表/志/书 skip 卷，无 skeleton 属预期"
+        }
+      ]
+    },
+    {
+      "vol": "021",
+      "filename": null,
+      "status": "skip",
+      "entry_count": 0,
+      "json_ok": false,
+      "skeleton_ok": null,
+      "final_ok": null,
+      "precheck_ok": null,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": [
+        {
+          "layer": "meta",
+          "severity": "INFO",
+          "message": "表/志/书 skip 卷，无 skeleton 属预期"
+        }
+      ]
+    },
+    {
+      "vol": "022",
+      "filename": null,
+      "status": "skip",
+      "entry_count": 0,
+      "json_ok": false,
+      "skeleton_ok": null,
+      "final_ok": null,
+      "precheck_ok": null,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": [
+        {
+          "layer": "meta",
+          "severity": "INFO",
+          "message": "表/志/书 skip 卷，无 skeleton 属预期"
+        }
+      ]
+    },
+    {
+      "vol": "023",
+      "filename": "01史记_023_礼书第一_skeleton.json",
+      "status": "ok",
+      "entry_count": 2,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "024",
+      "filename": "01史记_024_乐书第二_skeleton.json",
+      "status": "fail",
+      "entry_count": 1,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": false,
+      "precheck_ok": true,
+      "year_audit_errors": 6,
+      "year_audit_warns": 0,
+      "issues": [
+        {
+          "layer": "L1-final",
+          "severity": "ERROR",
+          "message": "❌ [1/1] Step 4 未完成，缺少: 优先级"
+        },
+        {
+          "layer": "L1-final",
+          "severity": "ERROR",
+          "message": "❌ [1/1] Step 4 未完成，缺少: 优先级判定理由"
+        },
+        {
+          "layer": "L1-final",
+          "severity": "ERROR",
+          "message": "❌ [1/1] Step 4 未完成，缺少: 史略开始年"
+        },
+        {
+          "layer": "L1-final",
+          "severity": "ERROR",
+          "message": "❌ [1/1] Step 4 未完成，缺少: 史略结束年"
+        },
+        {
+          "layer": "L1-final",
+          "severity": "ERROR",
+          "message": "❌ [1/1] Step 4 未完成，缺少: 一级文明坐标"
+        },
+        {
+          "layer": "L1-final",
+          "severity": "ERROR",
+          "message": "❌ [1/1] Step 4 未完成，缺少: 二级朝代坐标"
+        },
+        {
+          "layer": "L1-final",
+          "severity": "ERROR",
+          "message": "❌ [1/1] Step 4 未完成，缺少: 三级政权坐标"
+        },
+        {
+          "layer": "L1-final",
+          "severity": "ERROR",
+          "message": "❌ [1/1] Step 4 未完成，缺少: 四级帝王坐标"
+        },
+        {
+          "layer": "L1-final",
+          "severity": "ERROR",
+          "message": "❌ [1/1] Step 4 未完成，缺少: 文明ID"
+        },
+        {
+          "layer": "L1-final",
+          "severity": "ERROR",
+          "message": "❌ [1/1] Step 4 未完成，缺少: 朝代ID"
+        },
+        {
+          "layer": "L1-final",
+          "severity": "ERROR",
+          "message": "❌ [1/1] Step 4 未完成，缺少: 政权ID"
+        },
+        {
+          "layer": "L1-final",
+          "severity": "ERROR",
+          "message": "❌ [1/1] Step 4 未完成，缺少: 帝王ID"
+        },
+        {
+          "layer": "L1-final",
+          "severity": "ERROR",
+          "message": "❌ [1/1] 仍含 _needs_llm，LLM 补全后应删除临时字段"
+        },
+        {
+          "layer": "L1-final",
+          "severity": "ERROR",
+          "message": "❌ [SHIJI_024_01] 无 缺少有效史略开始年（整数，公元前为负）"
+        },
+        {
+          "layer": "L1-final",
+          "severity": "ERROR",
+          "message": "❌ [SHIJI_024_01] 无 缺少有效史略结束年（整数，公元前为负）"
+        },
+        {
+          "layer": "L1-final",
+          "severity": "ERROR",
+          "message": "❌ [SHIJI_024_01] 无 缺少 一级文明坐标"
+        },
+        {
+          "layer": "L1-final",
+          "severity": "ERROR",
+          "message": "❌ [SHIJI_024_01] 无 缺少 二级朝代坐标"
+        },
+        {
+          "layer": "L1-final",
+          "severity": "ERROR",
+          "message": "❌ [SHIJI_024_01] 无 缺少 三级政权坐标"
+        },
+        {
+          "layer": "L1-final",
+          "severity": "ERROR",
+          "message": "❌ [SHIJI_024_01] 无 缺少 四级帝王坐标"
+        },
+        {
+          "layer": "L2-year",
+          "severity": "ERROR",
+          "message": "[SHIJI_024_01] [SHIJI_024_01] 无 缺少 一级文明坐标"
+        },
+        {
+          "layer": "L2-year",
+          "severity": "ERROR",
+          "message": "[SHIJI_024_01] [SHIJI_024_01] 无 缺少 二级朝代坐标"
+        },
+        {
+          "layer": "L2-year",
+          "severity": "ERROR",
+          "message": "[SHIJI_024_01] [SHIJI_024_01] 无 缺少 三级政权坐标"
+        },
+        {
+          "layer": "L2-year",
+          "severity": "ERROR",
+          "message": "[SHIJI_024_01] [SHIJI_024_01] 无 缺少 四级帝王坐标"
+        },
+        {
+          "layer": "L2-year",
+          "severity": "ERROR",
+          "message": "[SHIJI_024_01] [SHIJI_024_01] 无 缺少有效史略开始年（整数，公元前为负）"
+        },
+        {
+          "layer": "L2-year",
+          "severity": "ERROR",
+          "message": "[SHIJI_024_01] [SHIJI_024_01] 无 缺少有效史略结束年（整数，公元前为负）"
+        }
+      ]
+    },
+    {
+      "vol": "025",
+      "filename": null,
+      "status": "skip",
+      "entry_count": 0,
+      "json_ok": false,
+      "skeleton_ok": null,
+      "final_ok": null,
+      "precheck_ok": null,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": [
+        {
+          "layer": "meta",
+          "severity": "INFO",
+          "message": "表/志/书 skip 卷，无 skeleton 属预期"
+        }
+      ]
+    },
+    {
+      "vol": "026",
+      "filename": null,
+      "status": "skip",
+      "entry_count": 0,
+      "json_ok": false,
+      "skeleton_ok": null,
+      "final_ok": null,
+      "precheck_ok": null,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": [
+        {
+          "layer": "meta",
+          "severity": "INFO",
+          "message": "表/志/书 skip 卷，无 skeleton 属预期"
+        }
+      ]
+    },
+    {
+      "vol": "027",
+      "filename": null,
+      "status": "skip",
+      "entry_count": 0,
+      "json_ok": false,
+      "skeleton_ok": null,
+      "final_ok": null,
+      "precheck_ok": null,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": [
+        {
+          "layer": "meta",
+          "severity": "INFO",
+          "message": "表/志/书 skip 卷，无 skeleton 属预期"
+        }
+      ]
+    },
+    {
+      "vol": "028",
+      "filename": null,
+      "status": "skip",
+      "entry_count": 0,
+      "json_ok": false,
+      "skeleton_ok": null,
+      "final_ok": null,
+      "precheck_ok": null,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": [
+        {
+          "layer": "meta",
+          "severity": "INFO",
+          "message": "表/志/书 skip 卷，无 skeleton 属预期"
+        }
+      ]
+    },
+    {
+      "vol": "029",
+      "filename": null,
+      "status": "skip",
+      "entry_count": 0,
+      "json_ok": false,
+      "skeleton_ok": null,
+      "final_ok": null,
+      "precheck_ok": null,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": [
+        {
+          "layer": "meta",
+          "severity": "INFO",
+          "message": "表/志/书 skip 卷，无 skeleton 属预期"
+        }
+      ]
+    },
+    {
+      "vol": "030",
+      "filename": null,
+      "status": "skip",
+      "entry_count": 0,
+      "json_ok": false,
+      "skeleton_ok": null,
+      "final_ok": null,
+      "precheck_ok": null,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": [
+        {
+          "layer": "meta",
+          "severity": "INFO",
+          "message": "表/志/书 skip 卷，无 skeleton 属预期"
+        }
+      ]
+    },
+    {
+      "vol": "031",
+      "filename": "01史记_031_吴太伯世家第一_skeleton.json",
+      "status": "ok",
+      "entry_count": 3,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "032",
+      "filename": "01史记_032_齐太公世家第二_skeleton.json",
+      "status": "ok",
+      "entry_count": 1,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "033",
+      "filename": "01史记_033_鲁周公世家第三_skeleton.json",
+      "status": "ok",
+      "entry_count": 1,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "034",
+      "filename": "01史记_034_燕召公世家第四_skeleton.json",
+      "status": "ok",
+      "entry_count": 4,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "035",
+      "filename": "01史记_035_管蔡世家第五_skeleton.json",
+      "status": "ok",
+      "entry_count": 2,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "036",
+      "filename": "01史记_036_陈杞世家第六_skeleton.json",
+      "status": "ok",
+      "entry_count": 2,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "037",
+      "filename": "01史记_037_卫康叔世家第七_skeleton.json",
+      "status": "ok",
+      "entry_count": 6,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "038",
+      "filename": "01史记_038_宋微子世家第八_skeleton.json",
+      "status": "ok",
+      "entry_count": 5,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "039",
+      "filename": "01史记_039_晋世家第九_skeleton.json",
+      "status": "ok",
+      "entry_count": 5,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "040",
+      "filename": "01史记_040_楚世家第十_skeleton.json",
+      "status": "ok",
+      "entry_count": 5,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "041",
+      "filename": "01史记_041_越王句践世家第十一_skeleton.json",
+      "status": "ok",
+      "entry_count": 1,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "042",
+      "filename": "01史记_042_郑世家第十二_skeleton.json",
+      "status": "ok",
+      "entry_count": 3,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "043",
+      "filename": "01史记_043_赵世家第十三_skeleton.json",
+      "status": "ok",
+      "entry_count": 3,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "044",
+      "filename": "01史记_044_魏世家第十四_skeleton.json",
+      "status": "ok",
+      "entry_count": 4,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "045",
+      "filename": "01史记_045_韩世家第十五_skeleton.json",
+      "status": "ok",
+      "entry_count": 3,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "046",
+      "filename": "01史记_046_田敬仲完世家第十六_skeleton.json",
+      "status": "ok",
+      "entry_count": 3,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "047",
+      "filename": "01史记_047_孔子世家第十七_skeleton.json",
+      "status": "ok",
+      "entry_count": 1,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "048",
+      "filename": "01史记_048_陈涉世家第十八_skeleton.json",
+      "status": "ok",
+      "entry_count": 1,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "049",
+      "filename": "01史记_049_外戚世家第十九_skeleton.json",
+      "status": "fail",
+      "entry_count": 4,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 1,
+      "year_audit_warns": 0,
+      "issues": [
+        {
+          "layer": "L2-year",
+          "severity": "ERROR",
+          "message": "[SHIJI_049_02] 外戚册立之君应为「汉高祖」，现为「汉武帝」"
+        }
+      ]
+    },
+    {
+      "vol": "050",
+      "filename": "01史记_050_楚元王世家第二十_skeleton.json",
+      "status": "ok",
+      "entry_count": 1,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "051",
+      "filename": "01史记_051_荆燕世家第二十一_skeleton.json",
+      "status": "ok",
+      "entry_count": 2,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "052",
+      "filename": "01史记_052_齐悼惠王世家第二十二_skeleton.json",
+      "status": "ok",
+      "entry_count": 1,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "053",
+      "filename": "01史记_053_萧相国世家第二十三_skeleton.json",
+      "status": "ok",
+      "entry_count": 1,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "054",
+      "filename": "01史记_054_曹相国世家第二十四_skeleton.json",
+      "status": "ok",
+      "entry_count": 1,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "055",
+      "filename": "01史记_055_留侯世家第二十五_skeleton.json",
+      "status": "ok",
+      "entry_count": 1,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "056",
+      "filename": "01史记_056_陈丞相世家第二十六_skeleton.json",
+      "status": "ok",
+      "entry_count": 1,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "057",
+      "filename": "01史记_057_绛侯周勃世家第二十七_skeleton.json",
+      "status": "ok",
+      "entry_count": 1,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "058",
+      "filename": "01史记_058_梁孝王世家第二十八_skeleton.json",
+      "status": "ok",
+      "entry_count": 1,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "059",
+      "filename": "01史记_059_五宗世家第二十九_skeleton.json",
+      "status": "ok",
+      "entry_count": 5,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "060",
+      "filename": "01史记_060_三王世家第三十_skeleton.json",
+      "status": "ok",
+      "entry_count": 3,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "061",
+      "filename": "01史记_061_伯夷列传第一_skeleton.json",
+      "status": "ok",
+      "entry_count": 1,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "062",
+      "filename": "01史记_062_管晏列传第二_skeleton.json",
+      "status": "ok",
+      "entry_count": 2,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "063",
+      "filename": "01史记_063_老子韩非列传第三_skeleton.json",
+      "status": "ok",
+      "entry_count": 2,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "064",
+      "filename": "01史记_064_司马穰苴列传第四_skeleton.json",
+      "status": "ok",
+      "entry_count": 1,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "065",
+      "filename": "01史记_065_孙子吴起列传第五_skeleton.json",
+      "status": "ok",
+      "entry_count": 2,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "066",
+      "filename": "01史记_066_伍子胥列传第六_skeleton.json",
+      "status": "ok",
+      "entry_count": 1,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "067",
+      "filename": "01史记_067_仲尼弟子列传第七_skeleton.json",
+      "status": "ok",
+      "entry_count": 29,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "068",
+      "filename": "01史记_068_商君列传第八_skeleton.json",
+      "status": "ok",
+      "entry_count": 1,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "069",
+      "filename": "01史记_069_苏秦列传第九_skeleton.json",
+      "status": "ok",
+      "entry_count": 1,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "070",
+      "filename": "01史记_070_张仪列传第十_skeleton.json",
+      "status": "ok",
+      "entry_count": 1,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "071",
+      "filename": "01史记_071_樗里子甘茂列传第十一_skeleton.json",
+      "status": "ok",
+      "entry_count": 2,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "072",
+      "filename": "01史记_072_穰侯列传第十二_skeleton.json",
+      "status": "ok",
+      "entry_count": 1,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "073",
+      "filename": "01史记_073_白起王翦列传第十三_skeleton.json",
+      "status": "ok",
+      "entry_count": 2,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "074",
+      "filename": "01史记_074_孟子荀卿列传第十四_skeleton.json",
+      "status": "ok",
+      "entry_count": 2,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "075",
+      "filename": "01史记_075_孟尝君列传第十五_skeleton.json",
+      "status": "ok",
+      "entry_count": 1,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "076",
+      "filename": "01史记_076_平原君虞卿列传第十六_skeleton.json",
+      "status": "ok",
+      "entry_count": 2,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "077",
+      "filename": "01史记_077_魏公子列传第十七_skeleton.json",
+      "status": "ok",
+      "entry_count": 1,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "078",
+      "filename": "01史记_078_春申君列传第十八_skeleton.json",
+      "status": "ok",
+      "entry_count": 1,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "079",
+      "filename": "01史记_079_范睢蔡泽列传第十九_skeleton.json",
+      "status": "ok",
+      "entry_count": 2,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "080",
+      "filename": "01史记_080_乐毅列传第二十_skeleton.json",
+      "status": "ok",
+      "entry_count": 1,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "081",
+      "filename": "01史记_081_廉颇蔺相如列传第二十一_skeleton.json",
+      "status": "ok",
+      "entry_count": 2,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "082",
+      "filename": "01史记_082_田单列传第二十二_skeleton.json",
+      "status": "ok",
+      "entry_count": 1,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "083",
+      "filename": "01史记_083_鲁仲连邹阳列传第二十三_skeleton.json",
+      "status": "ok",
+      "entry_count": 2,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "084",
+      "filename": "01史记_084_屈原贾生列传第二十四_skeleton.json",
+      "status": "ok",
+      "entry_count": 2,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "085",
+      "filename": "01史记_085_吕不韦列传第二十五_skeleton.json",
+      "status": "ok",
+      "entry_count": 1,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "086",
+      "filename": "01史记_086_刺客列传第二十六_skeleton.json",
+      "status": "ok",
+      "entry_count": 5,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "087",
+      "filename": "01史记_087_李斯列传第二十七_skeleton.json",
+      "status": "ok",
+      "entry_count": 1,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "088",
+      "filename": "01史记_088_蒙恬列传第二十八_skeleton.json",
+      "status": "ok",
+      "entry_count": 1,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "089",
+      "filename": "01史记_089_张耳陈馀列传第二十九_skeleton.json",
+      "status": "ok",
+      "entry_count": 2,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "090",
+      "filename": "01史记_090_魏豹彭越列传第三十_skeleton.json",
+      "status": "ok",
+      "entry_count": 2,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "091",
+      "filename": "01史记_091_黥布列传第三十一_skeleton.json",
+      "status": "ok",
+      "entry_count": 1,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "092",
+      "filename": "01史记_092_淮阴侯列传第三十二_skeleton.json",
+      "status": "ok",
+      "entry_count": 1,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "093",
+      "filename": "01史记_093_韩信卢绾列传第三十三_skeleton.json",
+      "status": "ok",
+      "entry_count": 2,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "094",
+      "filename": "01史记_094_田儋列传第三十四_skeleton.json",
+      "status": "ok",
+      "entry_count": 3,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "095",
+      "filename": "01史记_095_樊郦滕灌列传第三十五_skeleton.json",
+      "status": "ok",
+      "entry_count": 4,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "096",
+      "filename": "01史记_096_张丞相列传第三十六_skeleton.json",
+      "status": "ok",
+      "entry_count": 10,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "097",
+      "filename": "01史记_097_郦生陆贾列传第三十七_skeleton.json",
+      "status": "ok",
+      "entry_count": 2,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "098",
+      "filename": "01史记_098_傅靳蒯成列传第三十八_skeleton.json",
+      "status": "ok",
+      "entry_count": 3,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "099",
+      "filename": "01史记_099_刘敬叔孙通列传第三十九_skeleton.json",
+      "status": "ok",
+      "entry_count": 2,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "100",
+      "filename": "01史记_100_季布栾布列传第四十_skeleton.json",
+      "status": "ok",
+      "entry_count": 2,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "101",
+      "filename": "01史记_101_袁盎晁错列传第四十一_skeleton.json",
+      "status": "ok",
+      "entry_count": 2,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "102",
+      "filename": "01史记_102_张释之冯唐列传第四十二_skeleton.json",
+      "status": "ok",
+      "entry_count": 2,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "103",
+      "filename": "01史记_103_万石张叔列传第四十三_skeleton.json",
+      "status": "ok",
+      "entry_count": 2,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "104",
+      "filename": "01史记_104_田叔列传第四十四_skeleton.json",
+      "status": "ok",
+      "entry_count": 1,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "105",
+      "filename": "01史记_105_扁鹊仓公列传第四十五_skeleton.json",
+      "status": "ok",
+      "entry_count": 2,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "106",
+      "filename": "01史记_106_吴王濞列传第四十六_skeleton.json",
+      "status": "ok",
+      "entry_count": 1,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "107",
+      "filename": "01史记_107_魏其武安侯列传第四十七_skeleton.json",
+      "status": "ok",
+      "entry_count": 3,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "108",
+      "filename": "01史记_108_韩长孺列传第四十八_skeleton.json",
+      "status": "ok",
+      "entry_count": 1,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "109",
+      "filename": "01史记_109_李将军列传第四十九_skeleton.json",
+      "status": "ok",
+      "entry_count": 1,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "110",
+      "filename": "01史记_110_匈奴列传第五十_skeleton.json",
+      "status": "ok",
+      "entry_count": 1,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "111",
+      "filename": "01史记_111_卫将军骠骑列传第五十一_skeleton.json",
+      "status": "ok",
+      "entry_count": 2,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "112",
+      "filename": "01史记_112_平津侯主父列传第五十二_skeleton.json",
+      "status": "ok",
+      "entry_count": 2,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "113",
+      "filename": "01史记_113_南越列传第五十三_skeleton.json",
+      "status": "ok",
+      "entry_count": 1,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "114",
+      "filename": "01史记_114_东越列传第五十四_skeleton.json",
+      "status": "ok",
+      "entry_count": 1,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "115",
+      "filename": "01史记_115_朝鲜列传第五十五_skeleton.json",
+      "status": "ok",
+      "entry_count": 1,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "116",
+      "filename": "01史记_116_西南夷列传第五十六_skeleton.json",
+      "status": "ok",
+      "entry_count": 1,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "117",
+      "filename": "01史记_117_司马相如列传第五十七_skeleton.json",
+      "status": "ok",
+      "entry_count": 1,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "118",
+      "filename": "01史记_118_淮南衡山列传第五十八_skeleton.json",
+      "status": "ok",
+      "entry_count": 3,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "119",
+      "filename": "01史记_119_循吏列传第五十九_skeleton.json",
+      "status": "ok",
+      "entry_count": 5,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "120",
+      "filename": "01史记_120_汲郑列传第六十_skeleton.json",
+      "status": "ok",
+      "entry_count": 2,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "121",
+      "filename": "01史记_121_儒林列传第六十一_skeleton.json",
+      "status": "ok",
+      "entry_count": 11,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "122",
+      "filename": "01史记_122_酷吏列传第六十二_skeleton.json",
+      "status": "ok",
+      "entry_count": 11,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "123",
+      "filename": "01史记_123_大宛列传第六十三_skeleton.json",
+      "status": "ok",
+      "entry_count": 1,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "124",
+      "filename": "01史记_124_游侠列传第六十四_skeleton.json",
+      "status": "ok",
+      "entry_count": 4,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "125",
+      "filename": "01史记_125_佞幸列传第六十五_skeleton.json",
+      "status": "ok",
+      "entry_count": 3,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "126",
+      "filename": "01史记_126_滑稽列传第六十六_skeleton.json",
+      "status": "ok",
+      "entry_count": 3,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 2,
+      "issues": [
+        {
+          "layer": "L2-year",
+          "severity": "WARN",
+          "message": "[SHIJI_126_01] 生卒 -613～-591 与四级帝王「楚庄王」在位年完全一致，疑似帝王在位年替代生卒"
+        },
+        {
+          "layer": "L2-year",
+          "severity": "WARN",
+          "message": "[SHIJI_126_03] 生卒 -378～-320 与四级帝王「齐威王」在位年完全一致，疑似帝王在位年替代生卒"
+        }
+      ]
+    },
+    {
+      "vol": "127",
+      "filename": "01史记_127_日者列传第六十七_skeleton.json",
+      "status": "ok",
+      "entry_count": 1,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "128",
+      "filename": "01史记_128_龟策列传第六十八_skeleton.json",
+      "status": "ok",
+      "entry_count": 1,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "129",
+      "filename": "01史记_129_货殖列传第六十九_skeleton.json",
+      "status": "ok",
+      "entry_count": 1,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    },
+    {
+      "vol": "130",
+      "filename": "01史记_130_太史公自序第七十_skeleton.json",
+      "status": "ok",
+      "entry_count": 1,
+      "json_ok": true,
+      "skeleton_ok": true,
+      "final_ok": true,
+      "precheck_ok": true,
+      "year_audit_errors": 0,
+      "year_audit_warns": 0,
+      "issues": []
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "total_paragraphs": 57,
+  "excludes": [
+    {
+      "paragraph_from": 57,
+      "paragraph_to": 57,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "曹沫",
+      "category": "庶众",
+      "paragraph_from": 1,
+      "paragraph_to": 4
+    },
+    {
+      "name": "专诸",
+      "category": "庶众",
+      "paragraph_from": 5,
+      "paragraph_to": 12
+    },
+    {
+      "name": "豫让",
+      "category": "庶众",
+      "paragraph_from": 13,
+      "paragraph_to": 22
+    },
+    {
+      "name": "聂政",
+      "category": "庶众",
+      "paragraph_from": 23,
+      "paragraph_to": 35
+    },
+    {
+      "name": "荆轲",
+      "category": "庶众",
+      "paragraph_from": 36,
+      "paragraph_to": 56
+    }
+  ]
+}

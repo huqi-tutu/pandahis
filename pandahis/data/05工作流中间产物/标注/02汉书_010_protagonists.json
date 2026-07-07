@@ -1,0 +1,17 @@
+{
+  "work": "02汉书",
+  "vol": "010",
+  "volume_name": "元帝纪",
+  "volume_type_guess": "本纪",
+  "protagonists": [
+    {
+      "name": "汉元帝",
+      "category": "君王",
+      "rationale": "卷名「元帝纪」为汉书皇帝本纪，主轴为汉元帝刘奭。据《汉书》体例，皇帝本纪以该皇帝为唯一主轴人物。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰"
+  ]
+}

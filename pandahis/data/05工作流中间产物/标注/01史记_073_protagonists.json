@@ -1,0 +1,23 @@
+{
+  "work": "01史记",
+  "vol": "073",
+  "volume_name": "白起王翦列传",
+  "volume_type_guess": "列传",
+  "protagonists": [
+    {
+      "name": "白起",
+      "category": "武将",
+      "rationale": "卷名《白起王翦列传》为合传，白起为战国秦将，位列卷名首位，是叙事主轴人物之一。"
+    },
+    {
+      "name": "王翦",
+      "category": "武将",
+      "rationale": "卷名《白起王翦列传》为合传，王翦为战国秦将，位列卷名第二位，是叙事主轴人物之一。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题"
+  ]
+}

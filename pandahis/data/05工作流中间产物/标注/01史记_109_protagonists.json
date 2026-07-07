@@ -1,0 +1,18 @@
+{
+  "work": "01史记",
+  "vol": "109",
+  "volume_name": "李将军列传",
+  "volume_type_guess": "列传",
+  "protagonists": [
+    {
+      "name": "李广",
+      "category": "武将",
+      "rationale": "卷名《李将军列传》明确以李广为主轴，列传体例记其生平战功与际遇，李广为西汉名将，属士臣类。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题"
+  ]
+}

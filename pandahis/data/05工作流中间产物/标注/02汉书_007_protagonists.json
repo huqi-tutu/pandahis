@@ -1,0 +1,17 @@
+{
+  "work": "02汉书",
+  "vol": "007",
+  "volume_name": "武帝纪",
+  "volume_type_guess": "本纪",
+  "protagonists": [
+    {
+      "name": "汉武帝",
+      "category": "君王",
+      "rationale": "《汉书·武帝纪》为汉武帝刘彻的本纪，以汉武帝在位期间的政治、军事、经济、文化等大事为叙事主轴，卷名明确指向汉武帝。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰"
+  ]
+}

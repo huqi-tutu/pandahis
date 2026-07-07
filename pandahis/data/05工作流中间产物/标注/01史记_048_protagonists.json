@@ -1,0 +1,19 @@
+{
+  "work": "01史记",
+  "vol": "048",
+  "volume_name": "陈涉世家",
+  "volume_type_guess": "世家",
+  "protagonists": [
+    {
+      "name": "陈涉",
+      "category": "庶众",
+      "rationale": "《陈涉世家》叙事主轴：陈涉（庶众）"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题",
+    "其他"
+  ]
+}

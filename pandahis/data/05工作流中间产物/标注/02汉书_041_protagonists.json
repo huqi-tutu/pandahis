@@ -1,0 +1,24 @@
+{
+  "work": "02汉书",
+  "vol": "041",
+  "volume_name": "陈胜项籍传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "陈胜",
+      "category": "庶众",
+      "rationale": "卷名「陈胜项籍传」明确将陈胜列为首位主轴人物。陈胜为秦末起义领袖，非汉朝帝王或官员，依分类链归为庶众。"
+    },
+    {
+      "name": "项籍",
+      "category": "武将",
+      "rationale": "卷名「陈胜项籍传」明确将项籍列为第二位主轴人物。项籍（项羽）为秦末军事领袖，楚汉争霸主要人物，依分类链归为武将。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰"
+  ]
+}

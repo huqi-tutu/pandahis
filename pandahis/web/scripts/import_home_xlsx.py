@@ -100,7 +100,7 @@ def _split_tags(s: str) -> list[str]:
 
 CAT_KEYS = ["junji", "shichen", "minlu", "dianzhi", "shilue"]
 CAT_NAMES = {
-    "junji": "君纪",
+    "junji": "君王",
     "shichen": "士臣",
     "minlu": "民录",
     "dianzhi": "典制",

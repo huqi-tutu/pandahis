@@ -1,0 +1,58 @@
+{
+  "total_paragraphs": 15,
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 2,
+      "paragraph_to": 2,
+      "exclude_reason": "过渡叙事"
+    },
+    {
+      "paragraph_from": 15,
+      "paragraph_to": 15,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "邓通",
+      "category": "文臣",
+      "paragraph_from": 3,
+      "paragraph_to": 5
+    },
+    {
+      "name": "韩嫣",
+      "category": "文臣",
+      "paragraph_from": 6,
+      "paragraph_to": 6
+    },
+    {
+      "name": "李延年",
+      "category": "文臣",
+      "paragraph_from": 7,
+      "paragraph_to": 7
+    },
+    {
+      "name": "石显",
+      "category": "宦官",
+      "paragraph_from": 8,
+      "paragraph_to": 10
+    },
+    {
+      "name": "淳于长",
+      "category": "宗戚",
+      "paragraph_from": 11,
+      "paragraph_to": 12
+    },
+    {
+      "name": "董贤",
+      "category": "文臣",
+      "paragraph_from": 13,
+      "paragraph_to": 14
+    }
+  ]
+}

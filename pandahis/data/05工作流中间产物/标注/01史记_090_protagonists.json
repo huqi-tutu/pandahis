@@ -1,0 +1,23 @@
+{
+  "work": "01史记",
+  "vol": "090",
+  "volume_name": "魏豹彭越列传",
+  "volume_type_guess": "列传",
+  "protagonists": [
+    {
+      "name": "魏豹",
+      "category": "武将",
+      "rationale": "卷名《魏豹彭越列传》为合传，魏豹为传主之一，原为魏国贵族，后归汉又叛汉，属士臣类。"
+    },
+    {
+      "name": "彭越",
+      "category": "武将",
+      "rationale": "卷名《魏豹彭越列传》为合传，彭越为传主之一，汉初名将、梁王，属士臣类。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题"
+  ]
+}

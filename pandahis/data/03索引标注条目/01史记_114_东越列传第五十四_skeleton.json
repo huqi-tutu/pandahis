@@ -1,0 +1,198 @@
+{
+  "volume": "东越列传",
+  "source_file": "01史记_114_东越列传第五十四.txt",
+  "total_paragraphs": 17,
+  "volume_type": "纪传叙事",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [
+        {
+          "name": "东越",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "东越",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "东越",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "东越",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "东越",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "东越",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "东越",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "东越",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "东越",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "东越",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "东越",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "东越",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "东越",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "东越",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [],
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 16,
+      "owners": [],
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 17,
+      "owners": [],
+      "exclude_reason": "其他"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SHIJI_114_01",
+      "史略名称": "东越",
+      "史略简介": "东越",
+      "原文字句": "闽越王无诸及越东海王摇者，其先皆越王句践之后也，姓驺氏。秦已并天下，皆废为君长，以其地为闽中郡。及诸侯畔秦，无诸、摇率越归鄱阳令吴芮，所谓鄱君者也，从诸侯灭秦。",
+      "史略分类": "蕃祚",
+      "主要史料出处": "《史记·卷114·东越列传》",
+      "paragraphs": [
+        {
+          "volume": "东越列传",
+          "paragraph_from": 1,
+          "paragraph_to": 14
+        }
+      ],
+      "_auto_filled": {
+        "match_confidence": "exact",
+        "_主轴参考": "脚本猜测主轴帝王「汉武帝」（exact），请据史略主题确认或修正",
+        "帝王开始年": -141,
+        "帝王结束年": -87,
+        "_坐标规则": "跨朝代/政权/帝王时，由大模型判定四级帝王：以其主要主政、仕宦、最高官职、历史功业所在帝王为准，二/三级随该帝王反推；若在多帝下功绩难分主次，则取更早能匹配上的帝王、政权、朝代。宗戚/外戚以册立之君为准。须为帝王.json 标准名；禁止将史略名称本人当作四级帝王。",
+        "_史略主题": "东越：东越",
+        "年规则": "政权立国年 → 政权灭亡年",
+        "年规则备注": "蕃祚条目：史略开始年=该政权/汗国/方国的立国（或建号、入据）之年，史略结束年=灭亡、被灭、或丧失独立地位之年；由大模型据【著作+卷名+史略名称（政权名）】与史学界主流判断，禁止用个人生卒、禁止写「生卒学界主流」，禁止仅用本卷叙事起止代替政权兴亡。",
+        "文明ID": "HX",
+        "朝代ID": "CD_HX_XIHAN",
+        "政权ID": "ZQ_HX_XIHAN_XIHAN",
+        "帝王ID": "DW_HX_XIHAN_XIHAN_HANWUDI",
+        "_年LLM依据": "东越/闽越政权立国约前202（汉封闽越王），汉平东越前111，非个人生卒",
+        "_坐标主轴说明": "本卷述闽越、东越与汉关系，从汉侧视角主轴挂汉武帝；汉初闽越围东瓯等见共段事略"
+      },
+      "五级细坐标": "史记·卷114·蕃祚·01",
+      "六级段落锚点": "[P1-P14]",
+      "原文出处": "东越列传·P1-P14",
+      "史略开始年": -202,
+      "史略结束年": -111,
+      "四级帝王坐标": "汉武帝",
+      "三级政权坐标": "西汉",
+      "二级朝代坐标": "西汉",
+      "一级文明坐标": "华夏",
+      "文明ID": "HX",
+      "朝代ID": "CD_HX_XIHAN",
+      "政权ID": "ZQ_HX_XIHAN_XIHAN",
+      "帝王ID": "DW_HX_XIHAN_XIHAN_HANWUDI",
+      "优先级": "P0",
+      "优先级判定理由": "东越列传主轴叙事，共14段",
+      "_needs_llm": []
+    }
+  ]
+}

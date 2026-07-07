@@ -1,0 +1,18 @@
+{
+  "work": "01史记",
+  "vol": "066",
+  "volume_name": "伍子胥列传",
+  "volume_type_guess": "列传",
+  "protagonists": [
+    {
+      "name": "伍子胥",
+      "category": "武将",
+      "rationale": "卷名《伍子胥列传》明确以伍子胥为列传主人公，是典型的士臣列传。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题"
+  ]
+}

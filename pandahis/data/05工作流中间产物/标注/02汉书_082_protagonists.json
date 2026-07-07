@@ -1,0 +1,44 @@
+{
+  "work": "02汉书",
+  "vol": "082",
+  "volume_name": "傅常郑甘陈段传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "傅介子",
+      "category": "武将",
+      "rationale": "卷名首字‘傅’，合传主人公之一，西汉出使西域、斩杀楼兰王之名将。"
+    },
+    {
+      "name": "常惠",
+      "category": "武将",
+      "rationale": "卷名第二姓‘常’，合传主人公之一，多次出使乌孙，击败匈奴，封长罗侯。"
+    },
+    {
+      "name": "郑吉",
+      "category": "武将",
+      "rationale": "卷名第三姓‘郑’，合传主人公之一，首任西域都护，威震西域。"
+    },
+    {
+      "name": "甘延寿",
+      "category": "武将",
+      "rationale": "卷名第四姓‘甘’，合传主人公之一，与陈汤共诛郅支单于，封义成侯。"
+    },
+    {
+      "name": "陈汤",
+      "category": "武将",
+      "rationale": "卷名第五姓‘陈’，合传主人公之一，远征郅支，发‘明犯强汉者，虽远必诛’之豪言。"
+    },
+    {
+      "name": "段会宗",
+      "category": "武将",
+      "rationale": "卷名末姓‘段’，合传主人公之一，多次出镇西域，安抚乌孙，封关内侯。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰"
+  ]
+}

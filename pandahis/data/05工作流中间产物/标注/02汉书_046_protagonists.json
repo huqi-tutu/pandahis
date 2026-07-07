@@ -1,0 +1,20 @@
+{
+  "work": "02汉书",
+  "vol": "046",
+  "volume_name": "楚元王传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "楚元王",
+      "category": "宗戚",
+      "rationale": "卷名「楚元王传」指西汉楚元王刘交，汉高祖刘邦之弟，封楚王，为卷名所指核心人物，属宗室文臣类。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "赞曰",
+    "卷首标题",
+    "世系链"
+  ]
+}

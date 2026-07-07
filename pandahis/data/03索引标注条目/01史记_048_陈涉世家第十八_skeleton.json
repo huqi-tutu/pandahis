@@ -1,0 +1,264 @@
+{
+  "volume": "陈涉世家",
+  "source_file": "01史记_048_陈涉世家第十八.txt",
+  "total_paragraphs": 28,
+  "volume_type": "纪传叙事",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "陈涉",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "陈涉",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "陈涉",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "陈涉",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "陈涉",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "陈涉",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "陈涉",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "陈涉",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "陈涉",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "陈涉",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "陈涉",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "陈涉",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "陈涉",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "陈涉",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "陈涉",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "陈涉",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "陈涉",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "陈涉",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "陈涉",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "陈涉",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [],
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 23,
+      "owners": [],
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 24,
+      "owners": [],
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 25,
+      "owners": [],
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 26,
+      "owners": [],
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 27,
+      "owners": [],
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 28,
+      "owners": [],
+      "exclude_reason": "其他"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SHIJI_048_01",
+      "史略名称": "陈涉",
+      "史略简介": "陈涉",
+      "原文字句": "陈胜者，阳城人也，字涉。吴广者，阳夏人也，字叔。陈涉少时，尝与人佣耕，辍耕之垄上，怅恨久之，曰：“苟富贵，无相忘。”庸者笑而应曰：“若为庸耕，何富贵也？”陈涉太",
+      "史略分类": "庶众",
+      "主要史料出处": "《史记·卷48·陈涉世家》",
+      "paragraphs": [
+        {
+          "volume": "陈涉世家",
+          "paragraph_from": 2,
+          "paragraph_to": 21
+        }
+      ],
+      "优先级": "P0",
+      "优先级判定理由": "陈涉世家主轴（庶众），共20段",
+      "五级细坐标": "史记·卷048·庶众·01",
+      "六级段落锚点": "[P2-P21]",
+      "原文出处": "陈涉世家·P2-P21",
+      "四级帝王坐标": "秦二世",
+      "三级政权坐标": "秦",
+      "二级朝代坐标": "秦",
+      "一级文明坐标": "华夏",
+      "文明ID": "HX",
+      "朝代ID": "CD_HX_QIN",
+      "政权ID": "ZQ_HX_QIN_QIN",
+      "帝王ID": "DW_HX_QIN_QIN_QINERSHI",
+      "_auto_filled": {
+        "_年LLM依据": "陈涉起事至卒约前209–前196（生年不详取起事前推）",
+        "_坐标主轴说明": "本世家以大泽乡起兵、称王张楚至败亡为主线，主轴挂秦二世；起事前佣耕见共段事略。"
+      },
+      "史略开始年": -209,
+      "史略结束年": -196
+    }
+  ]
+}

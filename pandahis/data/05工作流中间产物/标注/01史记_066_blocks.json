@@ -1,0 +1,18 @@
+{
+  "total_paragraphs": 36,
+  "excludes": [
+    {
+      "paragraph_from": 36,
+      "paragraph_to": 36,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "伍子胥",
+      "category": "武将",
+      "paragraph_from": 1,
+      "paragraph_to": 35
+    }
+  ]
+}

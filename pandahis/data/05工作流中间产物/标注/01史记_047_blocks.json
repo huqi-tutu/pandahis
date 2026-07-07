@@ -1,0 +1,18 @@
+{
+  "total_paragraphs": 108,
+  "excludes": [
+    {
+      "paragraph_from": 107,
+      "paragraph_to": 108,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "孔子",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 106
+    }
+  ]
+}

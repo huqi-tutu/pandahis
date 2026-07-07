@@ -1,0 +1,18 @@
+{
+  "total_paragraphs": 26,
+  "excludes": [
+    {
+      "paragraph_from": 26,
+      "paragraph_to": 26,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "魏无忌",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 25
+    }
+  ]
+}

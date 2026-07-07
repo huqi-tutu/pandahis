@@ -1,0 +1,57 @@
+{
+  "generated_at": "2026-07-05T03:24:30Z",
+  "work": "02汉书",
+  "volume_counts": {
+    "ok": 90,
+    "skip": 27,
+    "fail": 2
+  },
+  "skeleton_files": 92,
+  "total_entries": 322,
+  "fail_volumes": [
+    "051",
+    "057"
+  ],
+  "missing_volumes": [],
+  "skip_volumes": [
+    "014",
+    "015",
+    "016",
+    "017",
+    "018",
+    "019",
+    "020",
+    "021",
+    "022",
+    "023",
+    "024",
+    "025",
+    "026",
+    "027",
+    "028",
+    "029",
+    "030",
+    "031",
+    "032",
+    "033",
+    "034",
+    "035",
+    "036",
+    "037",
+    "038",
+    "039",
+    "040"
+  ],
+  "layer_issue_counts": {
+    "L3-semantic": {
+      "WARN": 311
+    },
+    "L2-precheck": {
+      "ERROR": 7
+    }
+  },
+  "intro_placeholder_entries": 303,
+  "l1_final_fail": 0,
+  "cross_work_warns": 0,
+  "cross_work_issues": []
+}

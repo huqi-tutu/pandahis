@@ -1,0 +1,223 @@
+{
+  "volume": "元后传",
+  "source_file": "02汉书_114_元后传第六十八.txt",
+  "total_paragraphs": 18,
+  "volume_type": "纪传叙事",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "王政君",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "王政君",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "王政君",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "王政君",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "王政君",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "王政君",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "王政君",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "王政君",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "王政君",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "王政君",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "王政君",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "王政君",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "王政君",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "王政君",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "王政君",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "王政君",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [],
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HANSHU_114_01",
+      "史略名称": "王政君",
+      "史略简介": "王政君",
+      "原文字句": "孝元皇后，王莽姑也。莽自谓黄帝之后，其《自本》曰：黄帝姓姚氏，八世生虞舜。舜起妫汭，以妫为姓。至周武王封舜后妫满于陈，是为胡公，十三世生完。完字敬仲，奔齐，齐桓",
+      "史略分类": "宗戚",
+      "主要史料出处": "《汉书·卷114·元后传》",
+      "paragraphs": [
+        {
+          "volume": "元后传",
+          "paragraph_from": 2,
+          "paragraph_to": 17
+        }
+      ],
+      "_auto_filled": {
+        "年规则": "出生年 → 去世年（君王类人物条目同即位/退位）",
+        "年规则备注": "优先由大模型据史学界主流观点填写，尽量体现正常生卒或即位/退位（含推测生年）。脚本兜底：学界有推测生卒则填完整区间；仅当完全无出生年推测且知去世年时，开始=结束=去世年；不知去世年但知活跃期则取活跃期帝王在位起止；活跃期亦未知则取对应朝代开始年（两年相同）。",
+        "_坐标主轴说明": "王政君为汉元帝皇后，成帝之母，其法理身份与政治根基皆系于元帝正宫之位；后虽以太后、太皇太后长期临朝，然权源始终出自元帝，故四级取汉元帝。",
+        "_年LLM依据": "据《汉书·元后传》，王政君生于汉宣帝本始三年（前71年），卒于王莽始建国五年（13年），享年八十四岁。学界一致认可此说。"
+      },
+      "优先级": "P0",
+      "优先级判定理由": "西汉元帝皇后，历经宣、元、成、哀、平、孺子婴六朝，为成、哀、平三朝太后、太皇太后，长期把持后宫与部分朝政，其侄王莽以其为倚仗终至篡汉，是理解西汉末年政治变局的核心人物，故列为最高优先级。",
+      "史略开始年": -71,
+      "史略结束年": 13,
+      "四级帝王坐标": "汉元帝",
+      "五级细坐标": "汉书·卷114·宗戚·01",
+      "六级段落锚点": "[P2-P17]",
+      "原文出处": "元后传·P2-P17",
+      "一级文明坐标": "华夏",
+      "二级朝代坐标": "西汉",
+      "三级政权坐标": "西汉",
+      "文明ID": "HX",
+      "朝代ID": "CD_HX_XIHAN",
+      "政权ID": "ZQ_HX_XIHAN_XIHAN",
+      "帝王ID": "DW_HX_XIHAN_XIHAN_HANYUANDI"
+    }
+  ],
+  "volume_subtype": "列传",
+  "volume_subtype_source": "llm_step1a",
+  "protagonist_count": 1,
+  "protagonist_count_source": "llm_step1a",
+  "protagonists_manifest": [
+    {
+      "name": "王政君",
+      "category": "宗戚",
+      "rationale": "《元后传》为汉元帝皇后王政君的单人传记。元后历经元、成、哀、平四朝，身居太后之位，其侄王莽终借其势篡汉。本卷以元后一生为叙事主轴。"
+    }
+  ],
+  "knowledge_provenance": {
+    "step1": {
+      "source": "llm",
+      "at": "2026-07-04T18:58:13Z",
+      "session_id": "hist-02-114-s1-1103-fcaab859"
+    },
+    "step4": {
+      "source": "llm",
+      "at": "2026-07-04T19:01:14Z",
+      "session_id": "hist-02-114-s4-1106-eb0fccd8"
+    }
+  }
+}

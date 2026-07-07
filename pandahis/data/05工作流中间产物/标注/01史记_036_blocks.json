@@ -1,0 +1,24 @@
+{
+  "total_paragraphs": 35,
+  "excludes": [
+    {
+      "paragraph_from": 35,
+      "paragraph_to": 35,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "陈胡公满",
+      "category": "君王",
+      "paragraph_from": 1,
+      "paragraph_to": 28
+    },
+    {
+      "name": "杞东楼公",
+      "category": "君王",
+      "paragraph_from": 29,
+      "paragraph_to": 34
+    }
+  ]
+}

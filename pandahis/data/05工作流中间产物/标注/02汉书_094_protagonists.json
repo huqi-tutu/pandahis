@@ -1,0 +1,29 @@
+{
+  "work": "02汉书",
+  "vol": "094",
+  "volume_name": "王商史丹傅喜传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "王商",
+      "category": "文臣",
+      "rationale": "卷名《王商史丹傅喜传》明示本卷为三人合传，王商列居首位，历位丞相，属文臣。"
+    },
+    {
+      "name": "史丹",
+      "category": "宗戚",
+      "rationale": "卷名合传人物之一，史丹以宣帝外戚（史良娣侄孙）贵显，官至左将军，以宗戚身份入传。"
+    },
+    {
+      "name": "傅喜",
+      "category": "宗戚",
+      "rationale": "卷名合传人物之一，傅喜为哀帝祖母傅太后从弟，以外戚官至大司马，属宗戚。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "work": "02汉书",
+  "vol": "105",
+  "volume_name": "游侠传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "朱家",
+      "category": "庶众",
+      "rationale": "《游侠传》为游侠合传，朱家是汉代著名游侠，列传首叙其事迹。"
+    },
+    {
+      "name": "剧孟",
+      "category": "庶众",
+      "rationale": "《游侠传》所载游侠之一，以任侠闻名。"
+    },
+    {
+      "name": "郭解",
+      "category": "庶众",
+      "rationale": "《游侠传》所载游侠之一，武帝时期著名游侠。"
+    },
+    {
+      "name": "万章",
+      "category": "庶众",
+      "rationale": "《游侠传》所载游侠之一。"
+    },
+    {
+      "name": "楼护",
+      "category": "庶众",
+      "rationale": "《游侠传》所载游侠之一。"
+    },
+    {
+      "name": "陈遵",
+      "category": "庶众",
+      "rationale": "《游侠传》所载游侠之一。"
+    },
+    {
+      "name": "原涉",
+      "category": "庶众",
+      "rationale": "《游侠传》所载游侠之一。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰"
+  ]
+}

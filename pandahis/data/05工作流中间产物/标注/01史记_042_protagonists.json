@@ -1,0 +1,31 @@
+{
+  "work": "01史记",
+  "vol": "042",
+  "volume_name": "郑世家",
+  "volume_type_guess": "世家",
+  "protagonists": [
+    {
+      "name": "郑桓公",
+      "category": "君王",
+      "standard_name_note": "帝王.json 帝王名称",
+      "rationale": "郑国开国君主，郑世家叙事起点，奠定郑国基业，为卷中世系之首。"
+    },
+    {
+      "name": "郑武公",
+      "category": "君王",
+      "standard_name_note": "帝王.json 帝王名称",
+      "rationale": "郑桓公之子，东迁后巩固郑国地位，是郑国早期重要君主。"
+    },
+    {
+      "name": "郑庄公",
+      "category": "君王",
+      "standard_name_note": "帝王.json 帝王名称",
+      "rationale": "郑国最强盛时期的君主，小霸诸侯，是郑世家叙事核心人物之一。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题"
+  ]
+}

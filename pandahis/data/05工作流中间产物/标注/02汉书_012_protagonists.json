@@ -1,0 +1,17 @@
+{
+  "work": "02汉书",
+  "vol": "012",
+  "volume_name": "哀帝纪",
+  "volume_type_guess": "本纪",
+  "protagonists": [
+    {
+      "name": "汉哀帝",
+      "category": "君王",
+      "rationale": "卷名‘哀帝纪’明确指示本卷为汉哀帝刘欣的本纪，按《汉书》体例，本纪以帝王为叙事主轴，记录其生平、政令及在位期间大事。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰"
+  ]
+}

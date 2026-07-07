@@ -1,0 +1,25 @@
+{
+  "work": "02汉书",
+  "vol": "072",
+  "volume_name": "张骞李广利传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "张骞",
+      "category": "文臣",
+      "rationale": "《张骞李广利传》为合传，卷名首列张骞，其以出使西域、开拓丝路闻名，属文臣。"
+    },
+    {
+      "name": "李广利",
+      "category": "武将",
+      "rationale": "《张骞李广利传》为合传，卷名列李广利，其任贰师将军征伐大宛，属武将。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "篇内小标题",
+    "赞曰"
+  ]
+}

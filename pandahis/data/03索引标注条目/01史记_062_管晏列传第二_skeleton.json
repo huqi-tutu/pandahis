@@ -1,0 +1,227 @@
+{
+  "volume": "管晏列传",
+  "source_file": "01史记_062_管晏列传第二.txt",
+  "total_paragraphs": 17,
+  "volume_type": "纪传叙事",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [
+        {
+          "name": "管仲",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "管仲",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "管仲",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "管仲",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "管仲",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "管仲",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "管仲",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "管仲",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "晏婴",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "晏婴",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "晏婴",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "晏婴",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "晏婴",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "晏婴",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "晏婴",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "晏婴",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [],
+      "exclude_reason": "其他"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SHIJI_062_01",
+      "史略名称": "晏婴",
+      "史略简介": "晏婴",
+      "原文字句": "管仲富拟於公室，有三归、反坫，齐人不以为侈。管仲卒，齐国遵其政，常彊於诸侯。后百馀年而有晏子焉。",
+      "史略分类": "文臣",
+      "主要史料出处": "《史记·卷62·管晏列传》",
+      "paragraphs": [
+        {
+          "volume": "管晏列传",
+          "paragraph_from": 9,
+          "paragraph_to": 16
+        }
+      ],
+      "五级细坐标": "史记·卷062·文臣·01",
+      "六级段落锚点": "[P9-P16]",
+      "原文出处": "管晏列传·P9-P16",
+      "四级帝王坐标": "齐景公",
+      "三级政权坐标": "齐",
+      "二级朝代坐标": "春秋",
+      "一级文明坐标": "华夏",
+      "帝王ID": "DW_HX_CHUNQIU_QI_QIJINGGONG",
+      "政权ID": "ZQ_HX_CHUNQIU_QI",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "文明ID": "HX",
+      "优先级": "P0",
+      "优先级判定理由": "管晏列传后半传主，历事灵庄景三君，共8段",
+      "_auto_filled": {
+        "_坐标主轴说明": "本卷以相齐景公、晏子春秋事为主线，主轴挂齐景公；历灵公至后嗣见共段事略。",
+        "_年LLM依据": "晏婴生卒约前581–前500"
+      },
+      "史略开始年": -581,
+      "史略结束年": -500
+    },
+    {
+      "史略ID": "SHIJI_062_02",
+      "史略名称": "管仲",
+      "史略简介": "管仲",
+      "原文字句": "管仲夷吾者，颍上人也。少时常与鲍叔牙游，鲍叔知其贤。管仲贫困，常欺鲍叔，鲍叔终善遇之，不以为言。已而鲍叔事齐公子小白，管仲事公子纠。及小白立，为桓公，公子纠死，",
+      "史略分类": "文臣",
+      "主要史料出处": "《史记·卷62·管晏列传》",
+      "paragraphs": [
+        {
+          "volume": "管晏列传",
+          "paragraph_from": 1,
+          "paragraph_to": 8
+        }
+      ],
+      "五级细坐标": "史记·卷062·文臣·02",
+      "六级段落锚点": "[P1-P8]",
+      "原文出处": "管晏列传·P1-P8",
+      "四级帝王坐标": "齐桓公",
+      "三级政权坐标": "齐",
+      "二级朝代坐标": "春秋",
+      "一级文明坐标": "华夏",
+      "帝王ID": "DW_HX_CHUNQIU_QI_QIHUANGONG",
+      "政权ID": "ZQ_HX_CHUNQIU_QI",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "文明ID": "HX",
+      "优先级": "P0",
+      "优先级判定理由": "管晏列传前半传主，辅齐桓公称霸，共8段",
+      "_auto_filled": {
+        "_年LLM依据": "管仲生卒学界主流约前725–前645",
+        "_坐标主轴说明": "本卷以辅齐桓公称霸、改革内政为主线，主轴挂齐桓公；早年事公子纠见前段事略。"
+      },
+      "史略开始年": -725,
+      "史略结束年": -645
+    }
+  ]
+}

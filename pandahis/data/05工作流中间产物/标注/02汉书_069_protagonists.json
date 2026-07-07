@@ -1,0 +1,30 @@
+{
+  "work": "02汉书",
+  "vol": "069",
+  "volume_name": "公孙弘卜式儿宽传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "公孙弘",
+      "category": "文臣",
+      "rationale": "卷名首列，武帝时期丞相，合传主人公之一。"
+    },
+    {
+      "name": "卜式",
+      "category": "文臣",
+      "rationale": "卷名次列，以畜牧致富助边，官至御史大夫，合传主人公之一。"
+    },
+    {
+      "name": "儿宽",
+      "category": "文臣",
+      "rationale": "卷名末列，通经术、定历法，官至御史大夫，合传主人公之一。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "篇内小标题"
+  ]
+}

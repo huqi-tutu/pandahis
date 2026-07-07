@@ -1,12 +1,19 @@
 import generated from './generated.json'
 import type { Box, Civilization, SearchSuggest, TimeAxisRow, Topic, Unit } from './models'
 
-/** PRD 王朝层：五类横轴展示顺序 */
+/** 朝代详情固定 9 泳道 */
 export const CATEGORY_LABELS: Record<string, string> = {
-  junji: '君纪',
-  shichen: '士臣',
-  dianzhi: '典制',
+  junji: '君王',
+  zongqi: '宗戚',
+  wenchen: '文臣',
+  wujiang: '武将',
   shilue: '事略',
+  dianzhi: '典制',
+  lunzhu: '论著',
+  huanguan: '宦官',
+  shuzhong: '庶众',
+  fanzhu: '蕃祚',
+  shichen: '士臣',
   minlu: '民录',
 }
 

@@ -1,0 +1,19 @@
+{
+  "work": "02汉书",
+  "vol": "067",
+  "volume_name": "司马相如传第二十七上",
+  "volume_type_guess": "列传",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "司马相如",
+      "category": "文臣",
+      "rationale": "卷名《司马相如传》为单人列传，司马相如为本卷主轴人物，曾任郎官，属文臣。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰"
+  ]
+}

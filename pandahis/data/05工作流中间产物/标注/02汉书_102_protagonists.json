@@ -1,0 +1,44 @@
+{
+  "work": "02汉书",
+  "vol": "102",
+  "volume_name": "循吏传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "文翁",
+      "category": "文臣",
+      "rationale": "《循吏传》为循吏合传，文翁乃兴学重教之著名循吏，卷内应有其独立传记。"
+    },
+    {
+      "name": "王成",
+      "category": "文臣",
+      "rationale": "《循吏传》所载循吏之一，以治理胶东闻名，卷内应有其独立传记。"
+    },
+    {
+      "name": "黄霸",
+      "category": "文臣",
+      "rationale": "《循吏传》所载循吏，曾任丞相，治行宽厚，卷内应有其独立传记。"
+    },
+    {
+      "name": "朱邑",
+      "category": "文臣",
+      "rationale": "《循吏传》所载循吏，曾任大司农，廉洁奉公，卷内应有其独立传记。"
+    },
+    {
+      "name": "龚遂",
+      "category": "文臣",
+      "rationale": "《循吏传》所载循吏，以治渤海、平盗贼著称，卷内应有其独立传记。"
+    },
+    {
+      "name": "召信臣",
+      "category": "文臣",
+      "rationale": "《循吏传》所载循吏，以兴修水利、劝课农桑闻名，卷内应有其独立传记。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰"
+  ]
+}

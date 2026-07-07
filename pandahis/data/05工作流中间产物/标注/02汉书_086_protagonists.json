@@ -1,0 +1,21 @@
+{
+  "work": "02汉书",
+  "vol": "086",
+  "volume_name": "魏相丙吉传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "魏相",
+      "category": "文臣",
+      "rationale": "卷名首位传主，宣帝朝丞相，为本卷核心人物之一。"
+    },
+    {
+      "name": "丙吉",
+      "category": "文臣",
+      "rationale": "卷名次位传主，宣帝旧恩大臣并官至丞相，为本卷核心人物之一。"
+    }
+  ],
+  "excluded_kinds_hint": ["卷首标题", "赞曰"]
+}

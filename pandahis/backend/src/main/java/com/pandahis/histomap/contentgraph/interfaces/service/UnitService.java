@@ -1,6 +1,7 @@
 package com.pandahis.histomap.contentgraph.interfaces.service;
 
 import com.pandahis.histomap.common.api.ApiException;
+import com.pandahis.histomap.contentgraph.domain.BoxCategorySupport;
 import com.pandahis.histomap.contentgraph.interfaces.dto.UnitCivTabsDTO;
 import com.pandahis.histomap.contentgraph.interfaces.dto.UnitHeroDTO;
 import com.pandahis.histomap.contentgraph.interfaces.dto.UnitMatrixDTO;
@@ -12,15 +13,10 @@ import java.util.stream.Collectors;
 
 @Service
 public class UnitService {
-  /** PRD V1.1：君纪 → 士臣 → 典制 → 事略 → 民录 */
-  private static final List<UnitMatrixDTO.Category> CATEGORIES = List.of(
-      new UnitMatrixDTO.Category("junji", "君纪"),
-      new UnitMatrixDTO.Category("shichen", "士臣"),
-      new UnitMatrixDTO.Category("dianzhi", "典制"),
-      new UnitMatrixDTO.Category("shilue", "事略"),
-      new UnitMatrixDTO.Category("minlu", "民录"),
-      new UnitMatrixDTO.Category("lunzhu", "论著")
-  );
+  /** 朝代详情矩阵：固定 10 泳道 */
+  private static final List<UnitMatrixDTO.Category> CATEGORIES = BoxCategorySupport.swimLanes().stream()
+      .map(def -> new UnitMatrixDTO.Category(def.key(), def.label()))
+      .toList();
 
   private final JdbcTemplate jdbcTemplate;
   private final UnitDynastyResolver dynastyResolver;
@@ -122,14 +118,25 @@ public class UnitService {
   }
 
   private static List<UnitHeroDTO.CategoryTip> categoryTips() {
-    return List.of(
-        new UnitHeroDTO.CategoryTip("junji", "君纪", "帝王本纪、君主世系、登基册立……"),
-        new UnitHeroDTO.CategoryTip("shichen", "士臣", "将相列传、名臣政绩、文人士大夫……"),
-        new UnitHeroDTO.CategoryTip("dianzhi", "典制", "制度、礼法、官制、财政、军制……"),
-        new UnitHeroDTO.CategoryTip("shilue", "事略", "重要事件、战争、外交、灾异与节点……"),
-        new UnitHeroDTO.CategoryTip("minlu", "民录", "社会民生、风俗、群体生活与变迁……"),
-        new UnitHeroDTO.CategoryTip("lunzhu", "论著", "学术论著、思想文献与评论……")
-    );
+    return BoxCategorySupport.swimLanes().stream()
+        .map(def -> new UnitHeroDTO.CategoryTip(
+            def.key(),
+            def.label(),
+            switch (def.key()) {
+              case "junji" -> "帝王本纪、君主世系、登基册立……";
+              case "zongqi" -> "外戚、宗室、后妃与宗藩……";
+              case "wenchen" -> "行政、刑名、外交、儒学、文学仕宦……";
+              case "wujiang" -> "军功、征战、将帅……";
+              case "shilue" -> "重要事件、战争、外交与节点……";
+              case "dianzhi" -> "制度、礼法、官制、财政、军制……";
+              case "lunzhu" -> "学术论著、思想文献与评论……";
+              case "huanguan" -> "宦官、内侍、佞幸……";
+              case "shuzhong" -> "游侠、商贾、庶民与群体……";
+              case "fanzhu" -> "域外政权、蕃部、属国与边陲……";
+              default -> "";
+            }
+        ))
+        .toList();
   }
 
   public UnitMatrixDTO loadMatrix(String unitId) {
@@ -169,9 +176,10 @@ public class UnitService {
       if (yObj == null) continue;
       int year = ((Number) yObj).intValue();
       String cat = (String) r.get("category_key");
-      if (cat == null) continue;
+      String laneKey = BoxCategorySupport.swimLaneKey(cat).orElse(null);
+      if (laneKey == null) continue;
 
-      Key k = new Key(year, cat);
+      Key k = new Key(year, laneKey);
       Map<String, Object> current = best.get(k);
       if (current == null) {
         best.put(k, r);
@@ -195,13 +203,14 @@ public class UnitService {
     List<UnitMatrixDTO.Item> items = best.values().stream()
         .map(r -> {
           int year = ((Number) r.get("start_year")).intValue();
+          String itemLaneKey = BoxCategorySupport.swimLaneKey((String) r.get("category_key")).orElse("");
           int imp = importance(r.get("importance_level"));
           boolean highlight = imp <= 1;
           String blurb = Optional.ofNullable((String) r.get("blurb")).orElse("").trim();
           return new UnitMatrixDTO.Item(
               (String) r.get("id"),
               year,
-              (String) r.get("category_key"),
+              itemLaneKey,
               (String) r.get("title"),
               blurb.isEmpty() ? null : blurb,
               highlight

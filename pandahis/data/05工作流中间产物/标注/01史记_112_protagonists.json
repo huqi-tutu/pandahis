@@ -1,0 +1,23 @@
+{
+  "work": "01史记",
+  "vol": "112",
+  "volume_name": "平津侯主父列传",
+  "volume_type_guess": "列传",
+  "protagonists": [
+    {
+      "name": "公孙弘",
+      "category": "文臣",
+      "rationale": "卷名‘平津侯’即公孙弘封号，平津侯列传以公孙弘为传主，属士臣列传。"
+    },
+    {
+      "name": "主父偃",
+      "category": "文臣",
+      "rationale": "卷名‘主父’指主父偃，与公孙弘合传，同为列传主轴人物，属士臣。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题"
+  ]
+}

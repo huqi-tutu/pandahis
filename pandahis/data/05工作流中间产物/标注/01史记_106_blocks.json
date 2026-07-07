@@ -1,0 +1,18 @@
+{
+  "total_paragraphs": 38,
+  "excludes": [
+    {
+      "paragraph_from": 38,
+      "paragraph_to": 38,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "刘濞",
+      "category": "宗戚",
+      "paragraph_from": 1,
+      "paragraph_to": 37
+    }
+  ]
+}

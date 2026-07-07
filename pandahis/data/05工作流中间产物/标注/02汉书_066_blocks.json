@@ -1,0 +1,28 @@
+{
+  "total_paragraphs": 21,
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 2,
+      "paragraph_to": 2,
+      "exclude_reason": "篇内小标题"
+    },
+    {
+      "paragraph_from": 21,
+      "paragraph_to": 21,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "董仲舒",
+      "category": "文臣",
+      "paragraph_from": 3,
+      "paragraph_to": 20
+    }
+  ]
+}

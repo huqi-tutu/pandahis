@@ -1,0 +1,41 @@
+{
+  "total_paragraphs": 30,
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 30,
+      "paragraph_to": 30,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "匡衡",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 9
+    },
+    {
+      "name": "张禹",
+      "category": "文臣",
+      "paragraph_from": 10,
+      "paragraph_to": 16
+    },
+    {
+      "name": "孔光",
+      "category": "文臣",
+      "paragraph_from": 17,
+      "paragraph_to": 26
+    },
+    {
+      "name": "马宫",
+      "category": "文臣",
+      "paragraph_from": 27,
+      "paragraph_to": 29
+    }
+  ]
+}

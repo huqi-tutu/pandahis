@@ -1,0 +1,20 @@
+{
+  "work": "02汉书",
+  "vol": "066",
+  "volume_name": "董仲舒传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "董仲舒",
+      "category": "文臣",
+      "rationale": "《汉书·董仲舒传》为单人列传，卷名明确以董仲舒为传主，叙其生平、对策及学术成就。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "篇内小标题",
+    "赞曰"
+  ]
+}

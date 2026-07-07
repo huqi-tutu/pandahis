@@ -1,0 +1,65 @@
+{
+  "work": "02汉书",
+  "vol": "083",
+  "volume_name": "隽疏于薛平彭传",
+  "narrative_mode": "hezhuan",
+  "total_paragraphs": 20,
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 20,
+      "paragraph_to": 20,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "隽不疑",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 4
+    },
+    {
+      "name": "疏广",
+      "category": "文臣",
+      "paragraph_from": 5,
+      "paragraph_to": 6
+    },
+    {
+      "name": "疏受",
+      "category": "文臣",
+      "paragraph_from": 7,
+      "paragraph_to": 9
+    },
+    {
+      "name": "于定国",
+      "category": "文臣",
+      "paragraph_from": 10,
+      "paragraph_to": 13
+    },
+    {
+      "name": "薛广德",
+      "category": "文臣",
+      "paragraph_from": 14,
+      "paragraph_to": 14
+    },
+    {
+      "name": "平当",
+      "category": "文臣",
+      "paragraph_from": 15,
+      "paragraph_to": 17
+    },
+    {
+      "name": "彭宣",
+      "category": "文臣",
+      "paragraph_from": 18,
+      "paragraph_to": 19
+    }
+  ],
+  "_mechanical": true,
+  "_mechanical_hezhuan": true
+}

@@ -1,0 +1,138 @@
+{
+  "total_paragraphs": 41,
+  "excludes": [
+    {
+      "paragraph_from": 2,
+      "paragraph_to": 2,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 15,
+      "paragraph_to": 15,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 17,
+      "paragraph_to": 17,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 19,
+      "paragraph_to": 19,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 21,
+      "paragraph_to": 21,
+      "exclude_reason": "过渡叙事"
+    },
+    {
+      "paragraph_from": 40,
+      "paragraph_to": 40,
+      "exclude_reason": "过渡叙事"
+    },
+    {
+      "paragraph_from": 41,
+      "paragraph_to": 41,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "契",
+      "category": "君王",
+      "paragraph_from": 1,
+      "paragraph_to": 1
+    },
+    {
+      "name": "成汤",
+      "category": "君王",
+      "paragraph_from": 3,
+      "paragraph_to": 10
+    },
+    {
+      "name": "太甲",
+      "category": "君王",
+      "paragraph_from": 11,
+      "paragraph_to": 13
+    },
+    {
+      "name": "沃丁",
+      "category": "君王",
+      "paragraph_from": 14,
+      "paragraph_to": 14
+    },
+    {
+      "name": "太戊",
+      "category": "君王",
+      "paragraph_from": 16,
+      "paragraph_to": 16
+    },
+    {
+      "name": "祖乙",
+      "category": "君王",
+      "paragraph_from": 18,
+      "paragraph_to": 18
+    },
+    {
+      "name": "阳甲",
+      "category": "君王",
+      "paragraph_from": 20,
+      "paragraph_to": 20
+    },
+    {
+      "name": "盘庚",
+      "category": "君王",
+      "paragraph_from": 22,
+      "paragraph_to": 23
+    },
+    {
+      "name": "小辛",
+      "category": "君王",
+      "paragraph_from": 24,
+      "paragraph_to": 24
+    },
+    {
+      "name": "小乙",
+      "category": "君王",
+      "paragraph_from": 25,
+      "paragraph_to": 25
+    },
+    {
+      "name": "武丁",
+      "category": "君王",
+      "paragraph_from": 26,
+      "paragraph_to": 27
+    },
+    {
+      "name": "祖庚",
+      "category": "君王",
+      "paragraph_from": 28,
+      "paragraph_to": 28
+    },
+    {
+      "name": "祖甲",
+      "category": "君王",
+      "paragraph_from": 29,
+      "paragraph_to": 29
+    },
+    {
+      "name": "廪辛",
+      "category": "君王",
+      "paragraph_from": 30,
+      "paragraph_to": 30
+    },
+    {
+      "name": "武乙",
+      "category": "君王",
+      "paragraph_from": 31,
+      "paragraph_to": 32
+    },
+    {
+      "name": "帝辛（纣）",
+      "category": "君王",
+      "paragraph_from": 33,
+      "paragraph_to": 39
+    }
+  ]
+}

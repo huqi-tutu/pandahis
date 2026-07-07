@@ -1,0 +1,24 @@
+{
+  "total_paragraphs": 18,
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "孟子",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 8
+    },
+    {
+      "name": "荀卿",
+      "category": "文臣",
+      "paragraph_from": 9,
+      "paragraph_to": 18
+    }
+  ]
+}

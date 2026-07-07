@@ -1,0 +1,18 @@
+{
+  "work": "01史记",
+  "vol": "092",
+  "volume_name": "淮阴侯列传",
+  "volume_type_guess": "列传",
+  "protagonists": [
+    {
+      "name": "韩信",
+      "category": "武将",
+      "rationale": "卷名『淮阴侯列传』，淮阴侯即韩信，为西汉开国功臣，列传体例以人物为中心，故韩信为本卷唯一主轴人物。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题"
+  ]
+}

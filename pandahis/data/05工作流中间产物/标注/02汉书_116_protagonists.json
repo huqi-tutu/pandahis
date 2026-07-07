@@ -1,0 +1,20 @@
+{
+  "work": "02汉书",
+  "vol": "116",
+  "volume_name": "王莽传第六十九中",
+  "volume_type_guess": "列传",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "王莽",
+      "category": "君王",
+      "rationale": "《王莽传》为单人列传，分上中下三篇。本卷为‘中’，记述王莽篡汉建立新朝后的统治，卷名已明示全篇围绕王莽一人展开，为王莽新朝时期的核心叙事主体。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

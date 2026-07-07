@@ -1,0 +1,20 @@
+{
+  "work": "02汉书",
+  "vol": "107",
+  "volume_name": "匈奴传第六十四上",
+  "volume_type_guess": "列传",
+  "narrative_mode": "fanzuo",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "匈奴",
+      "category": "蕃祚",
+      "rationale": "《匈奴传》为《汉书》记载匈奴部族的专传，卷名直接点明主轴为匈奴政权/部族整体，符合蕃祚整卷（fanzuo）的定义，不以单个首领或人物为主轴。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

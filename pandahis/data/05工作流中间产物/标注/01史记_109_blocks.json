@@ -1,0 +1,18 @@
+{
+  "total_paragraphs": 28,
+  "excludes": [
+    {
+      "paragraph_from": 28,
+      "paragraph_to": 28,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "李广",
+      "category": "武将",
+      "paragraph_from": 1,
+      "paragraph_to": 27
+    }
+  ]
+}

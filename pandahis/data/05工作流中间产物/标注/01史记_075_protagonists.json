@@ -1,0 +1,18 @@
+{
+  "work": "01史记",
+  "vol": "075",
+  "volume_name": "孟尝君列传",
+  "volume_type_guess": "列传",
+  "protagonists": [
+    {
+      "name": "孟尝君",
+      "category": "文臣",
+      "rationale": "卷名即为《孟尝君列传》，列传体例以人物为中心，孟尝君田文为齐国宗室大臣，战国四公子之一，是本卷唯一叙事主轴人物。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题"
+  ]
+}

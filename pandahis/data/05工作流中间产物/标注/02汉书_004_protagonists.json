@@ -1,0 +1,20 @@
+{
+  "work": "02汉书",
+  "vol": "004",
+  "volume_name": "高后纪",
+  "volume_type_guess": "本纪",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "吕太后",
+      "category": "宗戚",
+      "rationale": "《高后纪》主轴为吕雉（吕太后），本纪体例下为宗戚非君王。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

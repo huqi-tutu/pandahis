@@ -1,0 +1,24 @@
+{
+  "total_paragraphs": 52,
+  "excludes": [
+    {
+      "paragraph_from": 52,
+      "paragraph_to": 52,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "范睢",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 40
+    },
+    {
+      "name": "蔡泽",
+      "category": "文臣",
+      "paragraph_from": 41,
+      "paragraph_to": 51
+    }
+  ]
+}

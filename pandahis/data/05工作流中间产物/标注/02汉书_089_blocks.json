@@ -1,0 +1,59 @@
+{
+  "total_paragraphs": 23,
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 23,
+      "paragraph_to": 23,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "盖宽饶",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 6
+    },
+    {
+      "name": "诸葛丰",
+      "category": "文臣",
+      "paragraph_from": 7,
+      "paragraph_to": 8
+    },
+    {
+      "name": "刘辅",
+      "category": "文臣",
+      "paragraph_from": 9,
+      "paragraph_to": 10
+    },
+    {
+      "name": "郑崇",
+      "category": "文臣",
+      "paragraph_from": 11,
+      "paragraph_to": 13
+    },
+    {
+      "name": "孙宝",
+      "category": "文臣",
+      "paragraph_from": 14,
+      "paragraph_to": 17
+    },
+    {
+      "name": "毋将隆",
+      "category": "文臣",
+      "paragraph_from": 18,
+      "paragraph_to": 19
+    },
+    {
+      "name": "何并",
+      "category": "文臣",
+      "paragraph_from": 20,
+      "paragraph_to": 22
+    }
+  ]
+}

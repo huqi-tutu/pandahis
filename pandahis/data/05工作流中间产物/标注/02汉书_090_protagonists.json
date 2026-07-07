@@ -1,0 +1,20 @@
+{
+  "work": "02汉书",
+  "vol": "090",
+  "volume_name": "萧望之传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "萧望之",
+      "category": "文臣",
+      "rationale": "《萧望之传》为《汉书》列传之一，卷名即传主名，依史学常识，萧望之为西汉重臣（曾任御史大夫、太子太傅），此卷为单人传记，故萧望之为唯一主轴人物。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

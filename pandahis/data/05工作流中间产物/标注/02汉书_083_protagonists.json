@@ -1,0 +1,49 @@
+{
+  "work": "02汉书",
+  "vol": "083",
+  "volume_name": "隽疏于薛平彭传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "隽不疑",
+      "category": "文臣",
+      "rationale": "《隽疏于薛平彭传》卷名首字指隽不疑，合传主人公之一。"
+    },
+    {
+      "name": "疏广",
+      "category": "文臣",
+      "rationale": "卷名“疏”指疏广、疏受叔侄；疏广为太子太傅，合传主人公之一。"
+    },
+    {
+      "name": "疏受",
+      "category": "文臣",
+      "rationale": "卷名“疏”兼指疏受；疏受为太子少傅，与疏广同传，合传主人公之一。"
+    },
+    {
+      "name": "于定国",
+      "category": "文臣",
+      "rationale": "卷名“于”指于定国，曾任丞相，合传主人公之一。"
+    },
+    {
+      "name": "薛广德",
+      "category": "文臣",
+      "rationale": "卷名“薛”指薛广德，曾任御史大夫，合传主人公之一。"
+    },
+    {
+      "name": "平当",
+      "category": "文臣",
+      "rationale": "卷名“平”指平当，曾任丞相，合传主人公之一。"
+    },
+    {
+      "name": "彭宣",
+      "category": "文臣",
+      "rationale": "卷名“彭”指彭宣，曾任大司空，合传主人公之一。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰"
+  ]
+}

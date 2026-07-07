@@ -1,0 +1,59 @@
+{
+  "total_paragraphs": 9,
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 2,
+      "paragraph_to": 2,
+      "exclude_reason": "过渡叙事"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "蜀卓氏",
+      "category": "庶众",
+      "paragraph_from": 3,
+      "paragraph_to": 3
+    },
+    {
+      "name": "程郑",
+      "category": "庶众",
+      "paragraph_from": 4,
+      "paragraph_to": 4
+    },
+    {
+      "name": "宛孔氏",
+      "category": "庶众",
+      "paragraph_from": 5,
+      "paragraph_to": 5
+    },
+    {
+      "name": "曹邴氏",
+      "category": "庶众",
+      "paragraph_from": 6,
+      "paragraph_to": 6
+    },
+    {
+      "name": "刁闲",
+      "category": "庶众",
+      "paragraph_from": 7,
+      "paragraph_to": 7
+    },
+    {
+      "name": "师史",
+      "category": "庶众",
+      "paragraph_from": 8,
+      "paragraph_to": 8
+    },
+    {
+      "name": "宣曲任氏",
+      "category": "庶众",
+      "paragraph_from": 9,
+      "paragraph_to": 9
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "work": "01史记",
+  "vol": "039",
+  "volume_name": "晋世家",
+  "volume_type_guess": "世家",
+  "protagonists": [
+    {
+      "name": "晋武公",
+      "category": "君王",
+      "rationale": "《晋世家》叙事主轴：晋武公（君王）"
+    },
+    {
+      "name": "晋献公",
+      "category": "君王",
+      "rationale": "《晋世家》叙事主轴：晋献公（君王）"
+    },
+    {
+      "name": "晋文公",
+      "category": "君王",
+      "rationale": "《晋世家》叙事主轴：晋文公（君王）"
+    },
+    {
+      "name": "晋景公",
+      "category": "君王",
+      "rationale": "《晋世家》叙事主轴：晋景公（君王）"
+    },
+    {
+      "name": "晋悼公",
+      "category": "君王",
+      "rationale": "《晋世家》叙事主轴：晋悼公（君王）"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题",
+    "其他"
+  ]
+}

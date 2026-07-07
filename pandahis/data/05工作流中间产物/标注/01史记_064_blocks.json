@@ -1,0 +1,18 @@
+{
+  "total_paragraphs": 6,
+  "excludes": [
+    {
+      "paragraph_from": 6,
+      "paragraph_to": 6,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "司马穰苴",
+      "category": "武将",
+      "paragraph_from": 1,
+      "paragraph_to": 5
+    }
+  ]
+}

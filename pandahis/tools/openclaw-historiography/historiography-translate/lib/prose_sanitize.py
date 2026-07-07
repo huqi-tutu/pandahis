@@ -119,3 +119,67 @@ def polish_enrich_file(path: Path) -> bool:
     data["翻译详情"] = cleaned
     path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return True
+
+
+
+def _merge_short_paragraphs(text: str) -> str:
+    """将连续的单句/双句段落合并为正常段落。"""
+    paras = text.split("\n\n")
+    if len(paras) <= 1:
+        return text
+    merged = []
+    buffer = ""
+    for p in paras:
+        sentences = [s for s in re.split(r"[。！？\n]", p) if s.strip()]
+        if len(sentences) <= 2 and buffer:
+            # 若缓冲段以句号/问号/感叹号结尾，直接用空字符串拼接
+            join_char = "" if buffer.rstrip()[-1:] in "。！？" else "，"
+            buffer += join_char + p.lstrip()
+        else:
+            if buffer:
+                merged.append(buffer)
+            buffer = p
+    if buffer:
+        merged.append(buffer)
+    return "\n\n".join(merged)
+
+
+def _remove_bold_markers(text: str) -> str:
+    """去掉翻译中 LLM 误用的加粗标记。"""
+    text = re.sub(r"\*\*([^*]+)\*\*", r"\1", text)
+    return text
+
+
+def _strip_first_second_markers(text: str) -> str:
+    """去掉叙事正文中「首先」「其次」「第一」等分节词。"""
+    text = re.sub(r"^(首先|其次|再次)[，,]", "", text, flags=re.M)
+    text = re.sub(r"[。；](首先|其次|再次)[，,]", r"。", text)
+    text = re.sub(r"[，,](第一|第二|第三)[，,]", "，", text)
+    return text
+
+
+def sanitize_enrich_detail_full(detail: str) -> str:
+    """增强版后处理：段落合并 + 去加粗 + 去分节词。"""
+    text = sanitize_enrich_detail(detail)
+    text = _merge_short_paragraphs(text)
+    text = _remove_bold_markers(text)
+    text = _strip_first_second_markers(text)
+    return text
+
+
+def polish_enrich_file_full(path) -> bool:
+    """增强版润色，在标准 polished 基础上追加段落/格式修复。"""
+    if not path.is_file():
+        return False
+    try:
+        import json
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return False
+    detail = str(data.get("翻译详情") or "")
+    cleaned = sanitize_enrich_detail_full(detail)
+    if cleaned == detail:
+        return False
+    data["翻译详情"] = cleaned
+    path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    return True

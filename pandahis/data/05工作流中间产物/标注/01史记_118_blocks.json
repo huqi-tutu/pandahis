@@ -1,0 +1,30 @@
+{
+  "total_paragraphs": 52,
+  "excludes": [
+    {
+      "paragraph_from": 52,
+      "paragraph_to": 52,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "刘长",
+      "category": "宗戚",
+      "paragraph_from": 1,
+      "paragraph_to": 3
+    },
+    {
+      "name": "刘安",
+      "category": "宗戚",
+      "paragraph_from": 4,
+      "paragraph_to": 17
+    },
+    {
+      "name": "刘赐",
+      "category": "宗戚",
+      "paragraph_from": 18,
+      "paragraph_to": 51
+    }
+  ]
+}

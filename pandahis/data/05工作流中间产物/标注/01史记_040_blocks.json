@@ -1,0 +1,42 @@
+{
+  "total_paragraphs": 134,
+  "excludes": [
+    {
+      "paragraph_from": 134,
+      "paragraph_to": 134,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "楚武王",
+      "category": "君王",
+      "paragraph_from": 1,
+      "paragraph_to": 19
+    },
+    {
+      "name": "楚成王",
+      "category": "君王",
+      "paragraph_from": 20,
+      "paragraph_to": 29
+    },
+    {
+      "name": "楚庄王",
+      "category": "君王",
+      "paragraph_from": 30,
+      "paragraph_to": 55
+    },
+    {
+      "name": "楚昭王",
+      "category": "君王",
+      "paragraph_from": 56,
+      "paragraph_to": 93
+    },
+    {
+      "name": "楚怀王",
+      "category": "君王",
+      "paragraph_from": 94,
+      "paragraph_to": 133
+    }
+  ]
+}

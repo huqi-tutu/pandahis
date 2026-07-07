@@ -1,0 +1,17 @@
+{
+  "work": "02汉书",
+  "vol": "008",
+  "volume_name": "昭帝纪",
+  "volume_type_guess": "本纪",
+  "protagonists": [
+    {
+      "name": "汉昭帝",
+      "category": "君王",
+      "rationale": "卷名「昭帝纪」为汉代皇帝本纪体例，以汉昭帝刘弗陵（后改名刘弗）为叙事主轴，记载其在位期间朝政大事。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰"
+  ]
+}

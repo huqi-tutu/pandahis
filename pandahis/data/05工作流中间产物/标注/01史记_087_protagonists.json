@@ -1,0 +1,18 @@
+{
+  "work": "01史记",
+  "vol": "087",
+  "volume_name": "李斯列传",
+  "volume_type_guess": "列传",
+  "protagonists": [
+    {
+      "name": "李斯",
+      "category": "文臣",
+      "rationale": "卷名《李斯列传》明确以李斯为传主，列传体例通常以一人或数人为核心叙事，李斯为秦朝丞相，属士臣阶层。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "total_paragraphs": 13,
+  "excludes": [
+    {
+      "paragraph_from": 13,
+      "paragraph_to": 13,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "荆王",
+      "category": "宗戚",
+      "paragraph_from": 1,
+      "paragraph_to": 7
+    },
+    {
+      "name": "燕王",
+      "category": "宗戚",
+      "paragraph_from": 8,
+      "paragraph_to": 12
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "work": "02汉书",
+  "vol": "003",
+  "volume_name": "惠帝纪",
+  "volume_type_guess": "本纪",
+  "protagonists": [
+    {
+      "name": "汉惠帝",
+      "category": "君王",
+      "rationale": "《惠帝纪》叙事主轴：汉惠帝（君王）"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "赞曰",
+    "卷首标题",
+    "其他"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "work": "01史记",
+  "vol": "072",
+  "volume_name": "穰侯列传",
+  "volume_type_guess": "列传",
+  "protagonists": [
+    {
+      "name": "魏冉",
+      "category": "文臣",
+      "rationale": "卷名「穰侯列传」，穰侯即魏冉，秦昭王母宣太后异父弟，四任秦相，封于穰，为战国秦重要外戚权臣，列传主轴人物。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题"
+  ]
+}

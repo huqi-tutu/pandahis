@@ -1,0 +1,193 @@
+{
+  "volume": "荆燕世家",
+  "source_file": "01史记_051_荆燕世家第二十一.txt",
+  "total_paragraphs": 13,
+  "volume_type": "纪传叙事",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [
+        {
+          "name": "荆王",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "荆王",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "荆王",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "荆王",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "荆王",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "荆王",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "荆王",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "燕王",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "燕王",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "燕王",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "燕王",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "燕王",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [],
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SHIJI_051_01",
+      "史略名称": "燕王",
+      "史略简介": "燕王刘泽",
+      "原文字句": "太后又重发之，恐大臣不听。今卿最幸，大臣所敬，何不风大臣以闻太后，太后必喜。诸吕已王，万户侯亦卿之有。太后心欲之，而卿为内臣，不急发，恐祸及身矣。”张卿大然之，",
+      "史略分类": "宗戚",
+      "主要史料出处": "《史记·卷51·荆燕世家》",
+      "paragraphs": [
+        {
+          "volume": "荆燕世家",
+          "paragraph_from": 8,
+          "paragraph_to": 12
+        }
+      ],
+      "五级细坐标": "史记·卷051·文臣·01",
+      "六级段落锚点": "[P8-P12]",
+      "原文出处": "荆燕世家·P8-P12",
+      "一级文明坐标": "华夏",
+      "文明ID": "HX",
+      "二级朝代坐标": "西汉",
+      "朝代ID": "CD_HX_XIHAN",
+      "三级政权坐标": "西汉",
+      "政权ID": "ZQ_HX_XIHAN_XIHAN",
+      "四级帝王坐标": "汉高祖",
+      "帝王ID": "DW_HX_XIHAN_XIHAN_HANGAOZU",
+      "优先级": "P1",
+      "优先级判定理由": "合传后段主轴，共5段",
+      "_auto_filled": {
+        "_坐标主轴说明": "燕王为汉高祖所封同姓藩王，四级帝王坐标挂册封之君汉高祖。",
+        "_年LLM依据": "刘泽封燕王至卒约前220–前178"
+      },
+      "史略开始年": -220,
+      "史略结束年": -178,
+      "宗戚ID": "ZJ_HX_XIHAN_XIHAN_YANWANG"
+    },
+    {
+      "史略ID": "SHIJI_051_02",
+      "史略名称": "荆王",
+      "史略简介": "荆王刘贾",
+      "原文字句": "荆王刘贾者，诸刘，不知其何属初起时。汉王元年，还定三秦，刘贾为将军，定塞地，从东击项籍。",
+      "史略分类": "宗戚",
+      "主要史料出处": "《史记·卷51·荆燕世家》",
+      "paragraphs": [
+        {
+          "volume": "荆燕世家",
+          "paragraph_from": 1,
+          "paragraph_to": 7
+        }
+      ],
+      "五级细坐标": "史记·卷051·文臣·02",
+      "六级段落锚点": "[P1-P7]",
+      "原文出处": "荆燕世家·P1-P7",
+      "一级文明坐标": "华夏",
+      "文明ID": "HX",
+      "二级朝代坐标": "西汉",
+      "朝代ID": "CD_HX_XIHAN",
+      "三级政权坐标": "西汉",
+      "政权ID": "ZQ_HX_XIHAN_XIHAN",
+      "四级帝王坐标": "汉高祖",
+      "帝王ID": "DW_HX_XIHAN_XIHAN_HANGAOZU",
+      "优先级": "P0",
+      "优先级判定理由": "合传开篇主轴，共7段",
+      "_auto_filled": {
+        "_年LLM依据": "刘贾从高祖至卒约前220–前196",
+        "_坐标主轴说明": "荆王为汉高祖所封同姓藩王，四级帝王坐标挂册封之君汉高祖。"
+      },
+      "史略开始年": -220,
+      "史略结束年": -196,
+      "宗戚ID": "ZJ_HX_XIHAN_JING_JINGWANG"
+    }
+  ]
+}

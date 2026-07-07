@@ -1,0 +1,18 @@
+{
+  "work": "01史记",
+  "vol": "117",
+  "volume_name": "司马相如列传",
+  "volume_type_guess": "列传",
+  "protagonists": [
+    {
+      "name": "司马相如",
+      "category": "文臣",
+      "rationale": "卷名即为《司马相如列传》，属单人列传，主轴人物为传主司马相如，西汉辞赋家、士臣。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题"
+  ]
+}

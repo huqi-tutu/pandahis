@@ -1,0 +1,18 @@
+{
+  "total_paragraphs": 27,
+  "excludes": [
+    {
+      "paragraph_from": 26,
+      "paragraph_to": 27,
+      "exclude_reason": "其他"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "黄歇",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 25
+    }
+  ]
+}

@@ -2,13 +2,18 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 import { getUnit, listBoxesByUnit, listRelatedCrossCivUnits, nextDynastyUnit, yearLabel } from '../data/content'
 import type { CategoryKey } from '../data/models'
 
-/** PRD：君纪 → 士臣 → 典制 → 事略 → 民录 */
+/** 朝代详情固定 10 泳道 */
 const CATS: { key: CategoryKey; name: string }[] = [
-  { key: 'junji', name: '君纪' },
-  { key: 'shichen', name: '士臣' },
-  { key: 'dianzhi', name: '典制' },
+  { key: 'junji', name: '君王' },
+  { key: 'zongqi', name: '宗戚' },
+  { key: 'wenchen', name: '文臣' },
+  { key: 'wujiang', name: '武将' },
   { key: 'shilue', name: '事略' },
-  { key: 'minlu', name: '民录' },
+  { key: 'dianzhi', name: '典制' },
+  { key: 'lunzhu', name: '论著' },
+  { key: 'huanguan', name: '宦官' },
+  { key: 'shuzhong', name: '庶众' },
+  { key: 'fanzhu', name: '蕃祚' },
 ]
 
 export function UnitPage() {

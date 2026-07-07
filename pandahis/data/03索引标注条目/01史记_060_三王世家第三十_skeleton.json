@@ -1,0 +1,383 @@
+{
+  "volume": "三王世家",
+  "source_file": "01史记_060_三王世家第三十.txt",
+  "total_paragraphs": 34,
+  "volume_type": "纪传叙事",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 2,
+      "owners": [],
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 3,
+      "owners": [],
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 4,
+      "owners": [],
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 5,
+      "owners": [],
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 6,
+      "owners": [],
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 7,
+      "owners": [],
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 8,
+      "owners": [],
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 9,
+      "owners": [],
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 10,
+      "owners": [],
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 11,
+      "owners": [],
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "齐王刘闳",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "齐王刘闳",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "燕王刘旦",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "燕王刘旦",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "广陵王刘胥",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "广陵王刘胥",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [],
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph": 19,
+      "owners": [],
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 20,
+      "owners": [],
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "齐王刘闳",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [],
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "齐王刘闳",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [],
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "广陵王刘胥",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "广陵王刘胥",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "广陵王刘胥",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "广陵王刘胥",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "燕王刘旦",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "燕王刘旦",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "燕王刘旦",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "燕王刘旦",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "燕王刘旦",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "燕王刘旦",
+          "category": "宗戚"
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SHIJI_060_01",
+      "史略名称": "广陵王刘胥",
+      "史略简介": "广陵王刘胥",
+      "原文字句": "“维六年四月乙巳，皇帝使御史大夫汤庙立子胥为广陵王。曰：於戏，小子胥，受兹赤社！朕承祖考，维稽古建尔国家，封于南土，世为汉藩辅。古人有言曰：‘大江之南，五湖之间",
+      "史略分类": "宗戚",
+      "主要史料出处": "《史记·卷60·三王世家》",
+      "paragraphs": [
+        {
+          "volume": "三王世家",
+          "paragraph_from": 16,
+          "paragraph_to": 17
+        },
+        {
+          "volume": "三王世家",
+          "paragraph_from": 25,
+          "paragraph_to": 28
+        }
+      ],
+      "史略开始年": -117,
+      "史略结束年": -54,
+      "优先级": "P0",
+      "优先级判定理由": "广陵王策+褚补，共6段",
+      "五级细坐标": "史记·卷060·宗戚·01",
+      "六级段落锚点": "[P16-P17],[P25-P28]",
+      "原文出处": "三王世家·P16-P17,P25-P28",
+      "四级帝王坐标": "汉武帝",
+      "三级政权坐标": "西汉",
+      "二级朝代坐标": "西汉",
+      "一级文明坐标": "华夏",
+      "文明ID": "HX",
+      "朝代ID": "CD_HX_XIHAN",
+      "政权ID": "ZQ_HX_XIHAN_XIHAN",
+      "帝王ID": "DW_HX_XIHAN_XIHAN_HANWUDI",
+      "_auto_filled": {
+        "_年兜底级别": "君王表",
+        "_年修正": "君王年与帝王表一致 -117～-54",
+        "_年LLM依据": "广陵王刘胥即位前117，崩前54",
+        "_坐标主轴说明": "广陵王刘胥为汉武帝所封同姓藩王，四级帝王坐标挂册封之君汉武帝。"
+      },
+      "宗戚ID": "ZJ_HX_XIHAN_GUANLING_GUANLINGWANGLIUXU"
+    },
+    {
+      "史略ID": "SHIJI_060_02",
+      "史略名称": "燕王刘旦",
+      "史略简介": "燕王旦",
+      "原文字句": "“维六年四月乙巳，皇帝使御史大夫汤庙立子旦为燕王。曰：於戏，小子旦，受兹玄社！朕承祖考，维稽古，建尔国家，封于北土，世为汉藩辅。於戏！荤粥氏虐老兽心，侵犯寇盗，",
+      "史略分类": "宗戚",
+      "主要史料出处": "《史记·卷60·三王世家》",
+      "paragraphs": [
+        {
+          "volume": "三王世家",
+          "paragraph_from": 14,
+          "paragraph_to": 15
+        },
+        {
+          "volume": "三王世家",
+          "paragraph_from": 29,
+          "paragraph_to": 34
+        }
+      ],
+      "史略开始年": -117,
+      "史略结束年": -80,
+      "优先级": "P0",
+      "优先级判定理由": "燕王策+褚补，共8段",
+      "五级细坐标": "史记·卷060·宗戚·02",
+      "六级段落锚点": "[P14-P15],[P29-P34]",
+      "原文出处": "三王世家·P14-P15,P29-P34",
+      "四级帝王坐标": "汉武帝",
+      "三级政权坐标": "西汉",
+      "二级朝代坐标": "西汉",
+      "一级文明坐标": "华夏",
+      "文明ID": "HX",
+      "朝代ID": "CD_HX_XIHAN",
+      "政权ID": "ZQ_HX_XIHAN_XIHAN",
+      "帝王ID": "DW_HX_XIHAN_XIHAN_HANWUDI",
+      "_auto_filled": {
+        "_年兜底级别": "君王表",
+        "_年修正": "君王年与帝王表一致 -117～-80",
+        "_年LLM依据": "燕王旦即位前117，崩前80",
+        "_坐标主轴说明": "燕王刘旦为汉武帝所封同姓藩王，四级帝王坐标挂册封之君汉武帝。"
+      },
+      "宗戚ID": "ZJ_HX_XIHAN_YAN_YANWANGLIUDAN"
+    },
+    {
+      "史略ID": "SHIJI_060_03",
+      "史略名称": "齐王刘闳",
+      "史略简介": "齐王刘闳",
+      "原文字句": "“维六年四月乙巳，皇帝使御史大夫汤庙立子闳为齐王。曰：於戏，小子闳，受兹青社！朕承祖考，维稽古建尔国家，封于东土，世为汉藩辅。於戏念哉！恭朕之诏，惟命不于常。人",
+      "史略分类": "宗戚",
+      "主要史料出处": "《史记·卷60·三王世家》",
+      "paragraphs": [
+        {
+          "volume": "三王世家",
+          "paragraph_from": 12,
+          "paragraph_to": 13
+        },
+        {
+          "volume": "三王世家",
+          "paragraph_from": 21,
+          "paragraph_to": 21
+        },
+        {
+          "volume": "三王世家",
+          "paragraph_from": 23,
+          "paragraph_to": 23
+        }
+      ],
+      "史略开始年": -117,
+      "史略结束年": -110,
+      "优先级": "P0",
+      "优先级判定理由": "齐王策+褚补，共5段",
+      "五级细坐标": "史记·卷060·宗戚·03",
+      "六级段落锚点": "[P12-P13],[P21],[P23]",
+      "原文出处": "三王世家·P12-P13,P21,P23",
+      "四级帝王坐标": "汉武帝",
+      "三级政权坐标": "西汉",
+      "二级朝代坐标": "西汉",
+      "一级文明坐标": "华夏",
+      "文明ID": "HX",
+      "朝代ID": "CD_HX_XIHAN",
+      "政权ID": "ZQ_HX_XIHAN_XIHAN",
+      "帝王ID": "DW_HX_XIHAN_XIHAN_HANWUDI",
+      "_auto_filled": {
+        "_年兜底级别": "君王表",
+        "_年修正": "君王年与帝王表一致 -117～-110",
+        "_年LLM依据": "齐王刘闳即位前117，崩前110",
+        "_坐标主轴说明": "齐王刘闳为汉武帝所封同姓藩王，四级帝王坐标挂册封之君汉武帝。"
+      },
+      "宗戚ID": "ZJ_HX_XIHAN_QI_QIWANGLIUHONG"
+    }
+  ]
+}

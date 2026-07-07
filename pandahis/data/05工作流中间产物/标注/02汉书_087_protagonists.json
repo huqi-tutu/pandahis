@@ -1,0 +1,47 @@
+{
+  "work": "02汉书",
+  "vol": "087",
+  "volume_name": "眭两夏侯京翼李传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "眭弘",
+      "category": "文臣",
+      "rationale": "卷名“眭”指眭弘，因推灾异与昌邑、公孙病已之说而著名，属本卷明确主轴。"
+    },
+    {
+      "name": "夏侯始昌",
+      "category": "文臣",
+      "rationale": "卷名“两夏侯”之一，武帝所重经师，亦为昌邑王太傅，属本卷明确主轴。"
+    },
+    {
+      "name": "夏侯胜",
+      "category": "文臣",
+      "rationale": "卷名“两夏侯”之一，昭宣间名儒，废昌邑王、斥武帝庙乐与授经太后事迹完整，属本卷明确主轴。"
+    },
+    {
+      "name": "京房",
+      "category": "文臣",
+      "rationale": "卷名“京”指京房，治易言灾异、创考功课吏法而死于党争，属本卷明确主轴。"
+    },
+    {
+      "name": "翼奉",
+      "category": "文臣",
+      "rationale": "卷名“翼”指翼奉，以齐诗、阴阳灾异与徙都成周之议著称，属本卷明确主轴。"
+    },
+    {
+      "name": "李寻",
+      "category": "文臣",
+      "rationale": "卷名“李”指李寻，哀帝时以洪范灾异、改元易号与外戚之议著称，属本卷明确主轴。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "名册简传",
+    "其他"
+  ],
+  "_mechanical_override": true
+}

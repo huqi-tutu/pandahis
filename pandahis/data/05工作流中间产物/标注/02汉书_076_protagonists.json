@@ -1,0 +1,35 @@
+{
+  "work": "02汉书",
+  "vol": "076",
+  "volume_name": "严朱吾丘主父徐严终王贾传第三十四下",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "严安",
+      "category": "文臣",
+      "rationale": "卷名'严朱吾丘主父徐严终王贾传'中的第二个'严'，指严安，合传主人公之一，西汉文臣。"
+    },
+    {
+      "name": "终军",
+      "category": "文臣",
+      "rationale": "卷名中的'终'，指终军，合传主人公之一，西汉文臣，有'请缨'典故。"
+    },
+    {
+      "name": "王褒",
+      "category": "文臣",
+      "rationale": "卷名中的'王'，指王褒，合传主人公之一，西汉辞赋家、文臣。"
+    },
+    {
+      "name": "贾捐之",
+      "category": "文臣",
+      "rationale": "卷名中的'贾'，指贾捐之，合传主人公之一，西汉文臣，贾谊曾孙。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

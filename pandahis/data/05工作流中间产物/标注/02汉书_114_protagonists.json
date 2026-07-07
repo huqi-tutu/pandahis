@@ -1,0 +1,19 @@
+{
+  "work": "02汉书",
+  "vol": "114",
+  "volume_name": "元后传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "王政君",
+      "category": "宗戚",
+      "rationale": "《元后传》为汉元帝皇后王政君的单人传记。元后历经元、成、哀、平四朝，身居太后之位，其侄王莽终借其势篡汉。本卷以元后一生为叙事主轴。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰"
+  ]
+}

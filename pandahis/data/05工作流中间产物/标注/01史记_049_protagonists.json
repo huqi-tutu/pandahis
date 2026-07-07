@@ -1,0 +1,34 @@
+{
+  "work": "01史记",
+  "vol": "049",
+  "volume_name": "外戚世家",
+  "volume_type_guess": "世家",
+  "protagonists": [
+    {
+      "name": "薄太后",
+      "category": "宗戚",
+      "rationale": "《外戚世家》叙事主轴：薄太后（宗戚）"
+    },
+    {
+      "name": "窦太后",
+      "category": "宗戚",
+      "rationale": "《外戚世家》叙事主轴：窦太后（宗戚）"
+    },
+    {
+      "name": "王太后",
+      "category": "宗戚",
+      "rationale": "《外戚世家》叙事主轴：王太后（宗戚）"
+    },
+    {
+      "name": "卫子夫",
+      "category": "宗戚",
+      "rationale": "《外戚世家》叙事主轴：卫子夫（宗戚）"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题",
+    "其他"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "work": "02汉书",
+  "vol": "118",
+  "volume_name": "叙传第七十上",
+  "volume_type_guess": "列传",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "班固",
+      "category": "文臣",
+      "rationale": "《叙传》为《汉书》作者自序，本卷专门叙述班固家世、著述缘起与个人经历，班固即为本卷唯一叙事主轴人物。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

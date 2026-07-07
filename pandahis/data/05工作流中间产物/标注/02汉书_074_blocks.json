@@ -1,0 +1,52 @@
+{
+  "total_paragraphs": 19,
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 2,
+      "paragraph_to": 2,
+      "exclude_reason": "篇内小标题"
+    },
+    {
+      "paragraph_from": 19,
+      "paragraph_to": 19,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "刘据",
+      "category": "庶众",
+      "paragraph_from": 3,
+      "paragraph_to": 8
+    },
+    {
+      "name": "刘闳",
+      "category": "庶众",
+      "paragraph_from": 9,
+      "paragraph_to": 9
+    },
+    {
+      "name": "刘旦",
+      "category": "庶众",
+      "paragraph_from": 10,
+      "paragraph_to": 14
+    },
+    {
+      "name": "刘胥",
+      "category": "庶众",
+      "paragraph_from": 15,
+      "paragraph_to": 17
+    },
+    {
+      "name": "刘髆",
+      "category": "庶众",
+      "paragraph_from": 18,
+      "paragraph_to": 18
+    }
+  ]
+}

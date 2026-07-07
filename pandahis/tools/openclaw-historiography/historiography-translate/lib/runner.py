@@ -11,7 +11,7 @@ from typing import Any, Dict, List, Optional, Tuple
 from lib import db
 from lib.config import default_index_path, paths
 from lib.plan_postprocess import plan_for_enrich_phase, plan_for_mother_phase
-from lib.prose_sanitize import polish_enrich_file, polish_mother_file, sanitize_mother_detail
+from lib.prose_sanitize import polish_enrich_file, polish_enrich_file_full, polish_mother_file, sanitize_mother_detail
 from lib.remote_sync import auto_sync_enabled
 from lib.stall_watch import (
     diagnose_stall,
@@ -447,7 +447,7 @@ def _run_phase2_enrich(
         )
         if not target.is_file():
             return False, ["Phase2: LLM 未落盘最终译稿"], time.time() - t0
-        if polish_enrich_file(target):
+        if polish_enrich_file_full(target):
             print("   🔧 已自动修正模糊出处表述", flush=True)
         touch_heartbeat(work_dir, entry_id, stage="verify_enrich")
         e_ok, e_errs = verify_enrich_draft(

@@ -1,0 +1,23 @@
+{
+  "work": "01史记",
+  "vol": "063",
+  "volume_name": "老子韩非列传",
+  "volume_type_guess": "列传（合传）",
+  "protagonists": [
+    {
+      "name": "老子",
+      "category": "文臣",
+      "rationale": "卷名《老子韩非列传》首位人物，道家创始人，列传主轴之一。"
+    },
+    {
+      "name": "韩非",
+      "category": "文臣",
+      "rationale": "卷名《老子韩非列传》末位人物，法家集大成者，列传主轴之一。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题"
+  ]
+}

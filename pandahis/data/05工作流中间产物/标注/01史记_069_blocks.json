@@ -1,0 +1,18 @@
+{
+  "total_paragraphs": 83,
+  "excludes": [
+    {
+      "paragraph_from": 83,
+      "paragraph_to": 83,
+      "exclude_reason": "其他"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "苏秦",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 82
+    }
+  ]
+}

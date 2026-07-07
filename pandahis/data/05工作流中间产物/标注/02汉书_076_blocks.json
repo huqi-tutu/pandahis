@@ -1,0 +1,47 @@
+{
+  "work": "02汉书",
+  "vol": "076",
+  "volume_name": "严朱吾丘主父徐严终王贾传第三十四下",
+  "narrative_mode": "hezhuan",
+  "total_paragraphs": 18,
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 18,
+      "paragraph_to": 18,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "严安",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 4
+    },
+    {
+      "name": "终军",
+      "category": "文臣",
+      "paragraph_from": 5,
+      "paragraph_to": 7
+    },
+    {
+      "name": "王褒",
+      "category": "文臣",
+      "paragraph_from": 8,
+      "paragraph_to": 10
+    },
+    {
+      "name": "贾捐之",
+      "category": "文臣",
+      "paragraph_from": 11,
+      "paragraph_to": 17
+    }
+  ],
+  "_mechanical": true,
+  "_mechanical_hezhuan": true
+}

@@ -1,0 +1,19 @@
+{
+  "work": "01史记",
+  "vol": "127",
+  "volume_name": "日者列传",
+  "volume_type_guess": "列传",
+  "protagonists": [
+    {
+      "name": "司马季主",
+      "category": "庶众",
+      "rationale": "《日者列传》叙事主轴：司马季主（庶众）"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题",
+    "其他"
+  ]
+}

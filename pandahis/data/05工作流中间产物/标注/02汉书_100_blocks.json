@@ -1,0 +1,23 @@
+{
+  "total_paragraphs": 14,
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 14,
+      "paragraph_to": 14,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "扬雄",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 13
+    }
+  ]
+}

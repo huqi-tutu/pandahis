@@ -1,0 +1,18 @@
+{
+  "work": "01史记",
+  "vol": "091",
+  "volume_name": "黥布列传",
+  "volume_type_guess": "列传",
+  "protagonists": [
+    {
+      "name": "黥布",
+      "category": "武将",
+      "rationale": "卷名即为《黥布列传》，列传体例以人物命名，黥布（英布）为传主，属士臣类。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题"
+  ]
+}

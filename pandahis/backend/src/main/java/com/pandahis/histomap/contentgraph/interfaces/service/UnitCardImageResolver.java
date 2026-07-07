@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * 首页/帝王页卡片图：优先 historical_emperor.card_image_url，
- * 为空时回退到该单元下 box_relic 的代表图（君纪盒子优先）。
+ * 为空时回退到该单元下 box_relic 的代表图（君王盒子优先）。
  */
 @Service
 public class UnitCardImageResolver {
@@ -55,7 +55,7 @@ public class UnitCardImageResolver {
     return trimOrNull(relicFallbackByUnit.get(unitId));
   }
 
-  /** 每个 emperor_id 取一张代表性文物图（已按君纪/重要性排序，每帝王仅保留第一条） */
+  /** 每个 emperor_id 取一张代表性文物图（已按君王/重要性排序，每帝王仅保留第一条） */
   public Map<String, String> loadRelicFallbackByUnit() {
     List<Map<String, Object>> rows = jdbcTemplate.queryForList(
         "SELECT b.emperor_id AS emperor_id, br.image_url AS image_url "

@@ -1,0 +1,29 @@
+{
+  "work": "01史记",
+  "vol": "126",
+  "volume_name": "滑稽列传",
+  "volume_type_guess": "列传",
+  "protagonists": [
+    {
+      "name": "淳于髡",
+      "category": "庶众",
+      "rationale": "《滑稽列传》叙事主轴：淳于髡（庶众）"
+    },
+    {
+      "name": "优孟",
+      "category": "庶众",
+      "rationale": "《滑稽列传》叙事主轴：优孟（庶众）"
+    },
+    {
+      "name": "优旃",
+      "category": "庶众",
+      "rationale": "《滑稽列传》叙事主轴：优旃（庶众）"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题",
+    "其他"
+  ]
+}

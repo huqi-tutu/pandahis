@@ -1,0 +1,19 @@
+{
+  "work": "02汉书",
+  "vol": "108",
+  "volume_name": "匈奴传第六十四下",
+  "volume_type_guess": "列传",
+  "narrative_mode": "fanzuo",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "匈奴",
+      "category": "蕃祚",
+      "rationale": "《匈奴传》为《汉书》记述匈奴政权兴衰及其与汉关系的专篇。本卷为第六十四下，延续上卷叙事，主轴为匈奴单于及部族集体的蕃祚更替，而非汉朝帝王或将领。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰"
+  ]
+}

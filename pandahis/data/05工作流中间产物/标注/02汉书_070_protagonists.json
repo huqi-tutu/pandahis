@@ -1,0 +1,19 @@
+{
+  "work": "02汉书",
+  "vol": "070",
+  "volume_name": "张汤传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "张汤",
+      "category": "文臣",
+      "rationale": "卷名《张汤传》明确以汉武帝时期酷吏、御史大夫张汤为主轴，为单人列传，无合传提示，故定其为唯一主人公。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰"
+  ]
+}

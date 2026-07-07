@@ -1,0 +1,19 @@
+{
+  "work": "01史记",
+  "vol": "047",
+  "volume_name": "孔子世家",
+  "volume_type_guess": "世家",
+  "protagonists": [
+    {
+      "name": "孔子",
+      "category": "文臣",
+      "rationale": "《孔子世家》叙事主轴：孔子（士臣）"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题",
+    "其他"
+  ]
+}

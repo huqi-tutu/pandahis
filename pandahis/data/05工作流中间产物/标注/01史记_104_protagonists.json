@@ -1,0 +1,18 @@
+{
+  "work": "01史记",
+  "vol": "104",
+  "volume_name": "田叔列传",
+  "volume_type_guess": "列传",
+  "protagonists": [
+    {
+      "name": "田叔",
+      "category": "文臣",
+      "rationale": "卷名《田叔列传》明确以田叔为传主，列传体例通常以一人或数人为主轴，田叔为本卷核心人物。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题"
+  ]
+}

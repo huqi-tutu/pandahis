@@ -1,0 +1,35 @@
+{
+  "work": "02汉书",
+  "vol": "050",
+  "volume_name": "张陈王周传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "张良",
+      "category": "文臣",
+      "rationale": "卷名「张陈王周传」首字为张，张良为西汉开国功臣，属文臣谋士，本卷为其合传之一。"
+    },
+    {
+      "name": "陈平",
+      "category": "文臣",
+      "rationale": "卷名第二字为陈，陈平为西汉开国功臣，以奇计著称，属文臣，本卷为其合传之一。"
+    },
+    {
+      "name": "王陵",
+      "category": "文臣",
+      "rationale": "卷名第三字为王，王陵为西汉开国功臣，官至右丞相，属文臣，本卷为其合传之一。"
+    },
+    {
+      "name": "周勃",
+      "category": "武将",
+      "rationale": "卷名末字为周，周勃为西汉开国功臣，以军功封绛侯，属武将，本卷为其合传之一。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "班固曰",
+    "赞曰",
+    "卷首标题"
+  ]
+}

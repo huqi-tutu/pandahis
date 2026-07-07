@@ -1,0 +1,18 @@
+{
+  "work": "01史记",
+  "vol": "106",
+  "volume_name": "吴王濞列传",
+  "volume_type_guess": "列传",
+  "protagonists": [
+    {
+      "name": "刘濞",
+      "category": "宗戚",
+      "rationale": "卷名《吴王濞列传》明确以吴王刘濞为传主，刘濞为汉高祖之侄，受封吴王，后因七国之乱被诛，属诸侯王而非帝王，故归为士臣。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题"
+  ]
+}

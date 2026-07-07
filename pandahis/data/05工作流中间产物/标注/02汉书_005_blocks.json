@@ -1,0 +1,18 @@
+{
+  "total_paragraphs": 80,
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "汉文帝",
+      "category": "君王",
+      "paragraph_from": 2,
+      "paragraph_to": 80
+    }
+  ]
+}

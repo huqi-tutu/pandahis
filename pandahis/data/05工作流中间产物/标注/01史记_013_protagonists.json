@@ -1,0 +1,37 @@
+{
+  "work": "01史记",
+  "vol": "013",
+  "volume_name": "三代世表",
+  "volume_type_guess": "表",
+  "protagonists": [
+    {
+      "name": "黄帝",
+      "category": "君王",
+      "standard_name_note": "帝王.json 帝王名称",
+      "rationale": "《三代世表》以五帝及夏商周三代世系为核心，黄帝为五帝之首，是世系表的起点和主轴人物。"
+    },
+    {
+      "name": "禹",
+      "category": "君王",
+      "standard_name_note": "帝王.json 帝王名称",
+      "rationale": "夏朝开国君主，三代世系中夏代的核心始祖，世表记载夏代帝王世系。"
+    },
+    {
+      "name": "成汤",
+      "category": "君王",
+      "standard_name_note": "帝王.json 帝王名称",
+      "rationale": "商朝开国君主，三代世系中商代的核心始祖，世表记载商代帝王世系。"
+    },
+    {
+      "name": "周文王",
+      "category": "君王",
+      "standard_name_note": "帝王.json 帝王名称",
+      "rationale": "周朝奠基者，三代世系中周代的核心始祖，世表记载周代帝王世系。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题"
+  ]
+}

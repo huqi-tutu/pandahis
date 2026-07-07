@@ -1,0 +1,42 @@
+{
+  "work": "02汉书",
+  "vol": "084",
+  "volume_name": "",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "王吉",
+      "category": "文臣",
+      "rationale": "卷名所列五人合传首位人物，昌邑中尉谏王、宣帝时上疏论政，属本卷明确主轴。"
+    },
+    {
+      "name": "贡禹",
+      "category": "文臣",
+      "rationale": "卷名所列合传主角之一，元帝朝御史大夫，多上书言节俭、赋役与宗庙制度，属本卷明确主轴。"
+    },
+    {
+      "name": "龚胜",
+      "category": "文臣",
+      "rationale": "卷名“两龚”之一，哀帝朝谏官，王莽征召不起绝食而死，具完整故事弧，应独立立条。"
+    },
+    {
+      "name": "龚舍",
+      "category": "文臣",
+      "rationale": "卷名“两龚”之一，以名节著称，受征为谏大夫、太山太守后辞归，属本卷明确主轴。"
+    },
+    {
+      "name": "鲍宣",
+      "category": "文臣",
+      "rationale": "卷名所列合传主角之一，哀帝朝谏大夫与司隶，七亡七死之论为本卷核心叙事之一。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "名册简传",
+    "其他"
+  ],
+  "_mechanical_override": true
+}

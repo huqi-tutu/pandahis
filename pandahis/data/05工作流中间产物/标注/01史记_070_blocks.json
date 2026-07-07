@@ -1,0 +1,18 @@
+{
+  "total_paragraphs": 77,
+  "excludes": [
+    {
+      "paragraph_from": 77,
+      "paragraph_to": 77,
+      "exclude_reason": "其他"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "张仪",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 76
+    }
+  ]
+}

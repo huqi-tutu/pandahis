@@ -1,0 +1,25 @@
+{
+  "work": "01史记",
+  "vol": "035",
+  "volume_name": "管蔡世家",
+  "volume_type_guess": "世家",
+  "protagonists": [
+    {
+      "name": "管叔鲜",
+      "category": "君王",
+      "standard_name_note": "非帝王，按卷名核心人物",
+      "rationale": "卷名‘管蔡世家’中‘管’指管叔鲜，为周武王之弟，封于管，是周初重要诸侯，其事迹构成该世家主轴之一。"
+    },
+    {
+      "name": "蔡叔度",
+      "category": "君王",
+      "standard_name_note": "非帝王，按卷名核心人物",
+      "rationale": "卷名‘管蔡世家’中‘蔡’指蔡叔度，为周武王之弟，封于蔡，与管叔鲜共同参与三监之乱，其世系与事迹为本卷叙事主轴。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题"
+  ]
+}

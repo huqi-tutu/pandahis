@@ -1,0 +1,35 @@
+{
+  "work": "02汉书",
+  "vol": "081",
+  "volume_name": "赵充国辛庆忌传",
+  "narrative_mode": "hezhuan",
+  "total_paragraphs": 20,
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 20,
+      "paragraph_to": 20,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "赵充国",
+      "category": "武将",
+      "paragraph_from": 2,
+      "paragraph_to": 16
+    },
+    {
+      "name": "辛庆忌",
+      "category": "武将",
+      "paragraph_from": 17,
+      "paragraph_to": 19
+    }
+  ],
+  "_mechanical": true,
+  "_mechanical_hezhuan": true
+}

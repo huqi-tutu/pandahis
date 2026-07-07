@@ -1,0 +1,20 @@
+{
+  "work": "02汉书",
+  "vol": "058",
+  "volume_name": "贾谊传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "贾谊",
+      "category": "文臣",
+      "rationale": "《汉书·贾谊传》为贾谊单人专传，卷名明确指向贾谊一人，故本卷叙事主轴人物为贾谊，无其他合传对象。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

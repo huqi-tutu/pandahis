@@ -1,0 +1,24 @@
+{
+  "total_paragraphs": 41,
+  "excludes": [
+    {
+      "paragraph_from": 41,
+      "paragraph_to": 41,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "张耳",
+      "category": "武将",
+      "paragraph_from": 1,
+      "paragraph_to": 20
+    },
+    {
+      "name": "陈馀",
+      "category": "武将",
+      "paragraph_from": 21,
+      "paragraph_to": 40
+    }
+  ]
+}

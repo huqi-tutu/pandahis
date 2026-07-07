@@ -36,6 +36,20 @@
           "moreCount": { "type": "integer", "minimum": 0 },
           "moreBarLeft": { "type": "string" },
           "moreBarWidth": { "type": "string" },
+          "extraBars": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["title", "boxId"],
+              "properties": {
+                "title": { "type": "string" },
+                "boxId": { "type": "string" },
+                "timeRange": { "type": "string" },
+                "priority": { "type": "string" },
+                "type": { "type": "string" }
+              }
+            }
+          },
           "collapsedRows": {
             "type": "array",
             "items": {

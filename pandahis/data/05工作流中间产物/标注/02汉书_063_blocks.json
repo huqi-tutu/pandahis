@@ -1,0 +1,100 @@
+{
+  "total_paragraphs": 18,
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 2,
+      "paragraph_to": 2,
+      "exclude_reason": "篇内小标题"
+    },
+    {
+      "paragraph_from": 18,
+      "paragraph_to": 18,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "刘德",
+      "category": "宗戚",
+      "paragraph_from": 3,
+      "paragraph_to": 4
+    },
+    {
+      "name": "刘阏",
+      "category": "宗戚",
+      "paragraph_from": 5,
+      "paragraph_to": 5
+    },
+    {
+      "name": "刘荣",
+      "category": "宗戚",
+      "paragraph_from": 6,
+      "paragraph_to": 6
+    },
+    {
+      "name": "刘馀",
+      "category": "宗戚",
+      "paragraph_from": 7,
+      "paragraph_to": 7
+    },
+    {
+      "name": "刘非",
+      "category": "宗戚",
+      "paragraph_from": 8,
+      "paragraph_to": 9
+    },
+    {
+      "name": "刘端",
+      "category": "宗戚",
+      "paragraph_from": 10,
+      "paragraph_to": 10
+    },
+    {
+      "name": "刘彭祖",
+      "category": "宗戚",
+      "paragraph_from": 11,
+      "paragraph_to": 11
+    },
+    {
+      "name": "刘胜",
+      "category": "宗戚",
+      "paragraph_from": 12,
+      "paragraph_to": 12
+    },
+    {
+      "name": "刘发",
+      "category": "宗戚",
+      "paragraph_from": 13,
+      "paragraph_to": 13
+    },
+    {
+      "name": "刘越",
+      "category": "宗戚",
+      "paragraph_from": 14,
+      "paragraph_to": 14
+    },
+    {
+      "name": "刘寄",
+      "category": "宗戚",
+      "paragraph_from": 15,
+      "paragraph_to": 15
+    },
+    {
+      "name": "刘乘",
+      "category": "宗戚",
+      "paragraph_from": 16,
+      "paragraph_to": 16
+    },
+    {
+      "name": "刘舜",
+      "category": "宗戚",
+      "paragraph_from": 17,
+      "paragraph_to": 17
+    }
+  ]
+}

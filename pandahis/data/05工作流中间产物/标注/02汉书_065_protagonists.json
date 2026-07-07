@@ -1,0 +1,25 @@
+{
+  "work": "02汉书",
+  "vol": "065",
+  "volume_name": "卫青霍去病传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "卫青",
+      "category": "武将",
+      "rationale": "《卫青霍去病传》为二人合传，卫青是传主之一，西汉名将，属武将。"
+    },
+    {
+      "name": "霍去病",
+      "category": "武将",
+      "rationale": "《卫青霍去病传》为二人合传，霍去病是传主之一，西汉名将，属武将。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "篇内小标题",
+    "赞曰"
+  ]
+}

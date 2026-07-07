@@ -1,0 +1,18 @@
+{
+  "total_paragraphs": 52,
+  "excludes": [
+    {
+      "paragraph_from": 52,
+      "paragraph_to": 52,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "吕太后",
+      "category": "宗戚",
+      "paragraph_from": 1,
+      "paragraph_to": 51
+    }
+  ]
+}

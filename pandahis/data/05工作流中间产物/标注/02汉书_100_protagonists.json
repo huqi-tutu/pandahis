@@ -1,0 +1,19 @@
+{
+  "work": "02汉书",
+  "vol": "100",
+  "volume_name": "扬雄传第五十七下",
+  "volume_type_guess": "列传",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "扬雄",
+      "category": "文臣",
+      "rationale": "卷名「扬雄传第五十七下」为单人列传，与卷八十七上合为扬雄全传，叙事主轴唯一即扬雄本人。扬雄为西汉辞赋家、学者，成哀平三朝仕宦，王莽时免官，属典型文臣。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰"
+  ]
+}

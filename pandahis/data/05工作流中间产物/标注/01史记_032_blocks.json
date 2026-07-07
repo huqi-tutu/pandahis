@@ -1,0 +1,18 @@
+{
+  "total_paragraphs": 97,
+  "excludes": [
+    {
+      "paragraph_from": 97,
+      "paragraph_to": 97,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "齐太公",
+      "category": "君王",
+      "paragraph_from": 1,
+      "paragraph_to": 96
+    }
+  ]
+}

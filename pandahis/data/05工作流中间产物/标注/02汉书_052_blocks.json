@@ -1,0 +1,53 @@
+{
+  "work": "02汉书",
+  "vol": "052",
+  "volume_name": "张周赵任申屠传第十二",
+  "narrative_mode": "hezhuan",
+  "total_paragraphs": 8,
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 8,
+      "paragraph_to": 8,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "张苍",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 2
+    },
+    {
+      "name": "周昌",
+      "category": "文臣",
+      "paragraph_from": 3,
+      "paragraph_to": 3
+    },
+    {
+      "name": "赵尧",
+      "category": "文臣",
+      "paragraph_from": 4,
+      "paragraph_to": 4
+    },
+    {
+      "name": "任敖",
+      "category": "文臣",
+      "paragraph_from": 5,
+      "paragraph_to": 5
+    },
+    {
+      "name": "申屠嘉",
+      "category": "文臣",
+      "paragraph_from": 6,
+      "paragraph_to": 7
+    }
+  ],
+  "_mechanical": true,
+  "_mechanical_hezhuan": true
+}

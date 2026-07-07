@@ -1,0 +1,24 @@
+{
+  "total_paragraphs": 17,
+  "excludes": [
+    {
+      "paragraph_from": 17,
+      "paragraph_to": 17,
+      "exclude_reason": "其他"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "管仲",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 8
+    },
+    {
+      "name": "晏婴",
+      "category": "文臣",
+      "paragraph_from": 9,
+      "paragraph_to": 16
+    }
+  ]
+}

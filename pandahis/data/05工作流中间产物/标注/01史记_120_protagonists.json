@@ -1,0 +1,21 @@
+{
+  "work": "01史记",
+  "vol": "120",
+  "volume_name": "汲郑列传",
+  "volume_type_guess": "列传",
+  "protagonists": [
+    {
+      "name": "汲黯",
+      "category": "文臣",
+      "rationale": "卷名「汲郑」之首，记汲黯直谏、淮阳太守及卒。"
+    },
+    {
+      "name": "郑当时",
+      "category": "文臣",
+      "rationale": "卷名「汲郑」之次，记郑庄（郑当时）任侠好客、历仕九卿及晚节。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰"
+  ]
+}

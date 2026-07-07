@@ -1,0 +1,24 @@
+{
+  "total_paragraphs": 73,
+  "excludes": [
+    {
+      "paragraph_from": 73,
+      "paragraph_to": 73,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "扁鹊",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 17
+    },
+    {
+      "name": "仓公",
+      "category": "文臣",
+      "paragraph_from": 18,
+      "paragraph_to": 72
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "work": "01史记",
+  "vol": "064",
+  "volume_name": "司马穰苴列传",
+  "volume_type_guess": "列传",
+  "protagonists": [
+    {
+      "name": "司马穰苴",
+      "category": "武将",
+      "rationale": "卷名即为《司马穰苴列传》，列传体例以人物为中心，司马穰苴为本卷唯一主轴人物，身份为齐国将领、士臣。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题"
+  ]
+}

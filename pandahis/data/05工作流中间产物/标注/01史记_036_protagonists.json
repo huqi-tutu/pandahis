@@ -1,0 +1,25 @@
+{
+  "work": "01史记",
+  "vol": "036",
+  "volume_name": "陈杞世家",
+  "volume_type_guess": "世家",
+  "protagonists": [
+    {
+      "name": "陈胡公满",
+      "category": "君王",
+      "standard_name_note": "陈胡公为陈国始封君，谥号胡公，名满；帝王.json中无此名，但世家卷主轴为陈国君主，按规则取卷名核心人物",
+      "rationale": "《陈杞世家》以陈国为主线，陈胡公为陈国首位君主，是叙事主轴人物。"
+    },
+    {
+      "name": "杞东楼公",
+      "category": "君王",
+      "standard_name_note": "杞东楼公为杞国始封君；帝王.json中无此名，但世家卷主轴含杞国君主",
+      "rationale": "卷名含'杞'，杞东楼公为杞国首位君主，是合传中另一主轴人物。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题"
+  ]
+}

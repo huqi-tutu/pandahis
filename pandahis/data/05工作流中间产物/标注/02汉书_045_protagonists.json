@@ -1,0 +1,29 @@
+{
+  "work": "02汉书",
+  "vol": "045",
+  "volume_name": "荆燕吴传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "荆王",
+      "category": "宗戚",
+      "rationale": "卷名「荆燕吴传」中「荆」指荆王刘贾，为卷名所指第一位藩王，是卷主轴人物。"
+    },
+    {
+      "name": "燕王",
+      "category": "宗戚",
+      "rationale": "卷名「荆燕吴传」中「燕」指燕王刘泽，为卷名所指第二位藩王，是卷主轴人物。"
+    },
+    {
+      "name": "刘濞",
+      "category": "宗戚",
+      "rationale": "卷名「荆燕吴传」中「吴」指吴王刘濞，为卷名所指第三位藩王，是卷主轴人物。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰"
+  ]
+}

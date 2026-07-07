@@ -1,0 +1,19 @@
+{
+  "work": "01史记",
+  "vol": "032",
+  "volume_name": "齐太公世家",
+  "volume_type_guess": "世家",
+  "protagonists": [
+    {
+      "name": "齐太公",
+      "category": "君王",
+      "standard_name_note": "帝王.json 帝王名称",
+      "rationale": "《史记·齐太公世家》以齐国开国君主姜尚（齐太公）为叙事起点，主轴人物为齐太公及其后裔历代齐君，卷名即明示核心主人公。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题"
+  ]
+}

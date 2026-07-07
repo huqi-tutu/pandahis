@@ -1,0 +1,36 @@
+{
+  "total_paragraphs": 44,
+  "excludes": [
+    {
+      "paragraph_from": 44,
+      "paragraph_to": 44,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "燕召公",
+      "category": "君王",
+      "paragraph_from": 1,
+      "paragraph_to": 29
+    },
+    {
+      "name": "燕昭王",
+      "category": "君王",
+      "paragraph_from": 30,
+      "paragraph_to": 34
+    },
+    {
+      "name": "燕惠王",
+      "category": "君王",
+      "paragraph_from": 35,
+      "paragraph_to": 39
+    },
+    {
+      "name": "燕王喜",
+      "category": "君王",
+      "paragraph_from": 40,
+      "paragraph_to": 43
+    }
+  ]
+}

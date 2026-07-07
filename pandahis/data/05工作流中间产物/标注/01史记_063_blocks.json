@@ -1,0 +1,24 @@
+{
+  "total_paragraphs": 30,
+  "excludes": [
+    {
+      "paragraph_from": 30,
+      "paragraph_to": 30,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "老子",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 8
+    },
+    {
+      "name": "韩非",
+      "category": "文臣",
+      "paragraph_from": 9,
+      "paragraph_to": 29
+    }
+  ]
+}

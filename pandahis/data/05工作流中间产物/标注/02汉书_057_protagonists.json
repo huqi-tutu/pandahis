@@ -1,0 +1,32 @@
+{
+  "work": "02汉书",
+  "vol": "057",
+  "volume_name": "文三王传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "刘参",
+      "category": "宗戚",
+      "rationale": "卷名所列文帝诸王之一，虽仅在卷首交代受封，但属合传明确主角，不应因篇幅短而排除。"
+    },
+    {
+      "name": "梁孝王",
+      "category": "宗戚",
+      "rationale": "《文三王传》叙事主体，卷中多段记其朝会、薨逝及梁国后续事件，应保留为主轴人物。"
+    },
+    {
+      "name": "刘揖",
+      "category": "宗戚",
+      "rationale": "卷名所列三王之一，且有独立段落记其好学、坠马而薨及国除，具完整故事弧，应独立立条。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "名册简传",
+    "其他"
+  ],
+  "_mechanical_override": true
+}

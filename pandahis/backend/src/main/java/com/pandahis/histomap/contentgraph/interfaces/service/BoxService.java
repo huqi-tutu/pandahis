@@ -3,6 +3,7 @@ package com.pandahis.histomap.contentgraph.interfaces.service;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.pandahis.histomap.common.api.ApiException;
+import com.pandahis.histomap.contentgraph.domain.BoxCategorySupport;
 import com.pandahis.histomap.common.auth.UserContextHolder;
 import com.pandahis.histomap.common.config.HistomapProperties;
 import com.pandahis.histomap.contentgraph.interfaces.dto.*;
@@ -71,7 +72,7 @@ public class BoxService {
     boolean hasGraph = hasGraphFromDb || (unitLinked != null && unitLinked > 0);
     boolean hasCritiques = exists("SELECT COUNT(1) FROM box_critique WHERE box_id=?", boxId);
     boolean hasRelics = exists("SELECT COUNT(1) FROM box_relic WHERE box_id=?", boxId);
-    boolean hasOriginal = parseOriginalRefJson((String) box.get("original_ref_json")) != null;
+    boolean hasOriginal = hasOriginalContent(boxId, (String) box.get("original_ref_json"));
 
     var tabSummary = new BoxHeaderDTO.TabSummary(hasGraph, hasCritiques, hasRelics, hasOriginal);
 
@@ -144,7 +145,7 @@ public class BoxService {
   public BoxOriginalRefDTO loadOriginalRef(String boxId) {
     ensureDeepTab("original", boxId);
     Map<String, Object> box = findBox(boxId);
-    JsonNode ref = parseOriginalRefJson((String) box.get("original_ref_json"));
+    JsonNode ref = resolveOriginalRef(boxId, box);
     return new BoxOriginalRefDTO(ref);
   }
 
@@ -434,15 +435,7 @@ public class BoxService {
   }
 
   private static String categoryName(String key) {
-    return switch (key) {
-      case "junji" -> "君纪";
-      case "shichen" -> "士臣";
-      case "minlu" -> "民录";
-      case "dianzhi" -> "典制";
-      case "shilue" -> "事略";
-      case "lunzhu" -> "论著";
-      default -> key;
-    };
+    return BoxCategorySupport.displayName(key);
   }
 
   private BoxHeaderDTO.Access buildAccess(String boxId) {
@@ -488,6 +481,67 @@ public class BoxService {
       if (node == null || node.isNull() || node.isMissingNode()) return null;
       if ((node.isObject() || node.isArray()) && node.size() == 0) return null;
       return node;
+    } catch (Exception ignored) {
+      return null;
+    }
+  }
+
+  /** 优先读 historical_box_detail.source_original_json 的 text，回退 historical_box.original_ref_json */
+  private JsonNode resolveOriginalRef(String boxId, Map<String, Object> box) {
+    JsonNode fromDetail = parseSourceOriginalJson(loadSourceOriginalJson(boxId));
+    if (fromDetail != null) {
+      return fromDetail;
+    }
+    return parseOriginalRefJson((String) box.get("original_ref_json"));
+  }
+
+  private boolean hasOriginalContent(String boxId, String legacyRefJson) {
+    if (parseSourceOriginalJson(loadSourceOriginalJson(boxId)) != null) {
+      return true;
+    }
+    return parseOriginalRefJson(legacyRefJson) != null;
+  }
+
+  private String loadSourceOriginalJson(String boxId) {
+    try {
+      return jdbcTemplate.queryForObject(
+          "SELECT source_original_json FROM historical_box_detail WHERE box_id=?",
+          String.class,
+          boxId
+      );
+    } catch (EmptyResultDataAccessException e) {
+      return null;
+    } catch (Exception ignored) {
+      return null;
+    }
+  }
+
+  /**
+   * 解析翻译产出中的「史料原文」JSON，提取 text 作为 API 原文正文（纯文本 JsonNode）。
+   */
+  private JsonNode parseSourceOriginalJson(String raw) {
+    if (raw == null || raw.isBlank()) return null;
+    try {
+      JsonNode root = objectMapper.readTree(raw);
+      if (root == null || root.isNull() || root.isMissingNode()) return null;
+      String text = root.path("text").asText("").trim();
+      if (!text.isBlank()) {
+        return objectMapper.getNodeFactory().textNode(text);
+      }
+      JsonNode blocks = root.path("blocks");
+      if (blocks.isArray() && blocks.size() > 0) {
+        StringBuilder joined = new StringBuilder();
+        for (JsonNode block : blocks) {
+          String blockText = block.path("text").asText("").trim();
+          if (blockText.isBlank()) continue;
+          if (joined.length() > 0) joined.append('\n');
+          joined.append(blockText);
+        }
+        if (joined.length() > 0) {
+          return objectMapper.getNodeFactory().textNode(joined.toString());
+        }
+      }
+      return null;
     } catch (Exception ignored) {
       return null;
     }

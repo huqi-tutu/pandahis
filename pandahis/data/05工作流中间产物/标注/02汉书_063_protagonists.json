@@ -1,0 +1,81 @@
+{
+  "work": "02汉书",
+  "vol": "063",
+  "volume_name": "景十三王传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "刘德",
+      "category": "宗戚",
+      "rationale": "《景十三王传》为汉景帝十三子合传，刘德（河间献王）为十三王之首，依卷名与传次为主角。"
+    },
+    {
+      "name": "刘阏",
+      "category": "宗戚",
+      "rationale": "景十三王之一，临江哀王，传中有独立叙次。"
+    },
+    {
+      "name": "刘荣",
+      "category": "宗戚",
+      "rationale": "景十三王之一，原为太子，废为临江王，传中有独立叙次。"
+    },
+    {
+      "name": "刘馀",
+      "category": "宗戚",
+      "rationale": "景十三王之一，鲁恭王，传中有独立叙次。"
+    },
+    {
+      "name": "刘非",
+      "category": "宗戚",
+      "rationale": "景十三王之一，江都易王，传中有独立叙次。"
+    },
+    {
+      "name": "刘端",
+      "category": "宗戚",
+      "rationale": "景十三王之一，胶西于王，传中有独立叙次。"
+    },
+    {
+      "name": "刘彭祖",
+      "category": "宗戚",
+      "rationale": "景十三王之一，赵敬肃王，传中有独立叙次。"
+    },
+    {
+      "name": "刘胜",
+      "category": "宗戚",
+      "rationale": "景十三王之一，中山靖王，传中有独立叙次。"
+    },
+    {
+      "name": "刘发",
+      "category": "宗戚",
+      "rationale": "景十三王之一，长沙定王，传中有独立叙次。"
+    },
+    {
+      "name": "刘越",
+      "category": "宗戚",
+      "rationale": "景十三王之一，广川惠王，传中有独立叙次。"
+    },
+    {
+      "name": "刘寄",
+      "category": "宗戚",
+      "rationale": "景十三王之一，胶东康王，传中有独立叙次。"
+    },
+    {
+      "name": "刘乘",
+      "category": "宗戚",
+      "rationale": "景十三王之一，清河哀王，传中有独立叙次。"
+    },
+    {
+      "name": "刘舜",
+      "category": "宗戚",
+      "rationale": "景十三王之一，常山宪王，传中有独立叙次。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "篇内小标题",
+    "其他"
+  ]
+}

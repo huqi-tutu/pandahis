@@ -3,7 +3,7 @@ export const ROUTES = {
   mine: '/pages/my/index',
   search: '/pages/search/index',
   searchResult: '/pages/search-result/index',
-  unitDetail: '/pages/unit-detail/index',
+  dynastyDetail: '/pages/dynasty-detail/index',
   boxDetail: '/pages/box-detail/index',
   login: '/pages/login/index',
   invite: '/pages/invite/index',

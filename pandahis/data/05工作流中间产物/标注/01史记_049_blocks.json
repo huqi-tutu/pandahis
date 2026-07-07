@@ -1,0 +1,41 @@
+{
+  "total_paragraphs": 56,
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 3,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 45,
+      "paragraph_to": 56,
+      "exclude_reason": "其他"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "薄太后",
+      "category": "宗戚",
+      "paragraph_from": 4,
+      "paragraph_to": 8
+    },
+    {
+      "name": "窦太后",
+      "category": "宗戚",
+      "paragraph_from": 9,
+      "paragraph_to": 15
+    },
+    {
+      "name": "王太后",
+      "category": "宗戚",
+      "paragraph_from": 16,
+      "paragraph_to": 28
+    },
+    {
+      "name": "卫子夫",
+      "category": "宗戚",
+      "paragraph_from": 29,
+      "paragraph_to": 44
+    }
+  ]
+}

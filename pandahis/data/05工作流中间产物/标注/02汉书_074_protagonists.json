@@ -1,0 +1,40 @@
+{
+  "work": "02汉书",
+  "vol": "074",
+  "volume_name": "武五子传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "刘据",
+      "category": "庶众",
+      "rationale": "《武五子传》为汉武帝五子合传，戾太子刘据为卷中首位王子，属宗戚，循类归庶众。"
+    },
+    {
+      "name": "刘闳",
+      "category": "庶众",
+      "rationale": "齐王刘闳，汉武帝子，武五子之一，属宗戚，循类归庶众。"
+    },
+    {
+      "name": "刘旦",
+      "category": "庶众",
+      "rationale": "燕王刘旦，汉武帝子，武五子之一，属宗戚，循类归庶众。"
+    },
+    {
+      "name": "刘胥",
+      "category": "庶众",
+      "rationale": "广陵王刘胥，汉武帝子，武五子之一，属宗戚，循类归庶众。"
+    },
+    {
+      "name": "刘髆",
+      "category": "庶众",
+      "rationale": "昌邑王刘髆，汉武帝子，武五子之一，属宗戚，循类归庶众。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "篇内小标题",
+    "赞曰"
+  ]
+}

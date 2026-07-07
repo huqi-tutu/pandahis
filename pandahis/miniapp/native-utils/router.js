@@ -5,7 +5,7 @@ exports.ROUTES = {
     home: '/pages/home/index',
     mine: '/pages/my/index',
     search: '/pages/search/index',
-    unitDetail: '/pages/unit-detail/index',
+    dynastyDetail: '/pages/dynasty-detail/index',
     boxDetail: '/pages/box-detail/index',
     login: '/pages/login/index',
     invite: '/pages/invite/index',

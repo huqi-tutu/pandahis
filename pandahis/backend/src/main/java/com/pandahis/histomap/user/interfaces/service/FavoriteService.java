@@ -1,5 +1,6 @@
 package com.pandahis.histomap.user.interfaces.service;
 
+import com.pandahis.histomap.contentgraph.domain.BoxCategorySupport;
 import com.pandahis.histomap.user.interfaces.dto.FavoriteListDTO;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
@@ -65,15 +66,7 @@ public class FavoriteService {
   }
 
   private static String categoryName(String key) {
-    return switch (key) {
-      case "junji" -> "君纪";
-      case "shichen" -> "士臣";
-      case "minlu" -> "民录";
-      case "dianzhi" -> "典制";
-      case "shilue" -> "事略";
-      case "lunzhu" -> "论著";
-      default -> key;
-    };
+    return BoxCategorySupport.displayName(key);
   }
 
   private static String pathLabel(String categoryKey, String civName, String dynastyName, String unitName) {

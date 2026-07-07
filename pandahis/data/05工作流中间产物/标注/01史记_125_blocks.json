@@ -1,0 +1,52 @@
+{
+  "total_paragraphs": 16,
+  "excludes": [
+    {
+      "paragraph_from": 8,
+      "paragraph_to": 8,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 15,
+      "paragraph_to": 15,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 16,
+      "paragraph_to": 16,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "籍孺",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 2
+    },
+    {
+      "name": "闳孺",
+      "category": "文臣",
+      "paragraph_from": 3,
+      "paragraph_to": 3
+    },
+    {
+      "name": "邓通",
+      "category": "文臣",
+      "paragraph_from": 4,
+      "paragraph_to": 7
+    },
+    {
+      "name": "韩嫣",
+      "category": "文臣",
+      "paragraph_from": 9,
+      "paragraph_to": 11
+    },
+    {
+      "name": "李延年",
+      "category": "宦官",
+      "paragraph_from": 12,
+      "paragraph_to": 14
+    }
+  ]
+}

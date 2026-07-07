@@ -1,0 +1,34 @@
+{
+  "work": "02汉书",
+  "vol": "109",
+  "volume_name": "西南夷两粤朝鲜传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "fanzuo",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "西南夷",
+      "category": "蕃祚",
+      "rationale": "卷名“西南夷两粤朝鲜传”中的西南夷，指西南地区众部族、政权集体，本卷以其兴亡为主线，故立为蕃祚主人公。"
+    },
+    {
+      "name": "南越",
+      "category": "蕃祚",
+      "rationale": "卷名“两粤”包含南越，赵氏割据岭南，传叙其国兴灭，故以蕃祚立目。"
+    },
+    {
+      "name": "闽越",
+      "category": "蕃祚",
+      "rationale": "卷名“两粤”包含闽越（东越），传载闽越王无诸及后世，故以蕃祚立目。"
+    },
+    {
+      "name": "朝鲜",
+      "category": "蕃祚",
+      "rationale": "卷名直指朝鲜，传述卫满朝鲜及其灭亡，故以蕃祚立目。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰"
+  ]
+}

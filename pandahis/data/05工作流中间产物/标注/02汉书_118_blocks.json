@@ -1,0 +1,23 @@
+{
+  "total_paragraphs": 17,
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 17,
+      "paragraph_to": 17,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "班固",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 16
+    }
+  ]
+}

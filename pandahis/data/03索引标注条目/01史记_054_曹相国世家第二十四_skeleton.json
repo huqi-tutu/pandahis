@@ -1,0 +1,274 @@
+{
+  "volume": "曹相国世家",
+  "source_file": "01史记_054_曹相国世家第二十四.txt",
+  "total_paragraphs": 26,
+  "volume_type": "纪传叙事",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [
+        {
+          "name": "曹参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "曹参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "曹参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "曹参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "曹参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "曹参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "曹参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "曹参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "曹参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "曹参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "曹参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "曹参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "曹参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "曹参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "曹参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "曹参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "曹参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "曹参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "曹参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "曹参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "曹参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "曹参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "曹参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "曹参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "曹参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [],
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SHIJI_054_01",
+      "史略名称": "曹参",
+      "史略简介": "曹参",
+      "原文字句": "平阳侯曹参者，沛人也。秦时为沛狱掾，而萧何为主吏，居县为豪吏矣。",
+      "史略分类": "文臣",
+      "主要史料出处": "《史记·卷54·曹相国世家》",
+      "paragraphs": [
+        {
+          "volume": "曹相国世家",
+          "paragraph_from": 1,
+          "paragraph_to": 25
+        }
+      ],
+      "五级细坐标": "史记·卷054·文臣·01",
+      "六级段落锚点": "[P1-P25]",
+      "原文出处": "曹相国世家·P1-P25",
+      "一级文明坐标": "华夏",
+      "文明ID": "HX",
+      "二级朝代坐标": "西汉",
+      "朝代ID": "CD_HX_XIHAN",
+      "三级政权坐标": "西汉",
+      "政权ID": "ZQ_HX_XIHAN_XIHAN",
+      "四级帝王坐标": "汉高祖",
+      "帝王ID": "DW_HX_XIHAN_XIHAN_HANGAOZU",
+      "优先级": "P0",
+      "优先级判定理由": "世家主轴叙事，共25段",
+      "_auto_filled": {
+        "_年LLM依据": "曹参生卒约前210–前190（生年推测）",
+        "_坐标主轴说明": "本世家以从高祖征战、封侯及任丞相清静无为为主线，主轴挂汉高祖；惠帝朝为相见共段事略。"
+      },
+      "史略开始年": -210,
+      "史略结束年": -190
+    }
+  ]
+}

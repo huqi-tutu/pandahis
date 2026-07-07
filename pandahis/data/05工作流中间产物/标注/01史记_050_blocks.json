@@ -1,0 +1,18 @@
+{
+  "total_paragraphs": 12,
+  "excludes": [
+    {
+      "paragraph_from": 12,
+      "paragraph_to": 12,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "楚元王",
+      "category": "宗戚",
+      "paragraph_from": 1,
+      "paragraph_to": 11
+    }
+  ]
+}

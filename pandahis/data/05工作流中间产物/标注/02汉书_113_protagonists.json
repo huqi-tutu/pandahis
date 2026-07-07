@@ -1,0 +1,64 @@
+{
+  "work": "02汉书",
+  "vol": "113",
+  "volume_name": "外戚传第六十七下",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "孝宣许皇后",
+      "category": "宗戚",
+      "rationale": "卷名「外戚传」为后妃合传，下卷叙宣帝至平帝诸后妃，此乃首位宣帝皇后。"
+    },
+    {
+      "name": "孝宣霍皇后",
+      "category": "宗戚",
+      "rationale": "宣帝第二位皇后，霍光之女，属本卷外戚合传人物。"
+    },
+    {
+      "name": "孝宣王皇后",
+      "category": "宗戚",
+      "rationale": "宣帝第三位皇后，邛成太后，属本卷外戚合传人物。"
+    },
+    {
+      "name": "孝成许皇后",
+      "category": "宗戚",
+      "rationale": "成帝许皇后，属本卷外戚合传人物。"
+    },
+    {
+      "name": "孝成班婕妤",
+      "category": "宗戚",
+      "rationale": "成帝班婕妤，以文学德行著称，属本卷外戚合传人物。"
+    },
+    {
+      "name": "孝成赵皇后",
+      "category": "宗戚",
+      "rationale": "成帝赵皇后（赵飞燕），本卷的重要传主，与妹赵昭仪合传。"
+    },
+    {
+      "name": "孝元傅昭仪",
+      "category": "宗戚",
+      "rationale": "元帝傅昭仪，哀帝祖母，属本卷外戚合传人物。"
+    },
+    {
+      "name": "孝元冯昭仪",
+      "category": "宗戚",
+      "rationale": "元帝冯昭仪，中山太后，属本卷外戚合传人物。"
+    },
+    {
+      "name": "孝哀傅皇后",
+      "category": "宗戚",
+      "rationale": "哀帝傅皇后，属本卷外戚合传人物。"
+    },
+    {
+      "name": "孝平王皇后",
+      "category": "宗戚",
+      "rationale": "平帝王皇后，王莽之女，属本卷外戚合传人物。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰"
+  ]
+}

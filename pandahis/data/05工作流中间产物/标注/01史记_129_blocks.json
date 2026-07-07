@@ -1,0 +1,58 @@
+{
+  "total_paragraphs": 52,
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 4,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 14,
+      "paragraph_to": 35,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 37,
+      "paragraph_to": 52,
+      "exclude_reason": "其他"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "陶朱公",
+      "category": "庶众",
+      "paragraph_from": 5,
+      "paragraph_to": 7
+    },
+    {
+      "name": "子贡",
+      "category": "文臣",
+      "paragraph_from": 8,
+      "paragraph_to": 8
+    },
+    {
+      "name": "白圭",
+      "category": "庶众",
+      "paragraph_from": 9,
+      "paragraph_to": 10
+    },
+    {
+      "name": "猗顿",
+      "category": "庶众",
+      "paragraph_from": 11,
+      "paragraph_to": 11
+    },
+    {
+      "name": "巴寡妇清",
+      "category": "庶众",
+      "paragraph_from": 12,
+      "paragraph_to": 13
+    },
+    {
+      "name": "卓氏",
+      "category": "庶众",
+      "paragraph_from": 36,
+      "paragraph_to": 36
+    }
+  ]
+}

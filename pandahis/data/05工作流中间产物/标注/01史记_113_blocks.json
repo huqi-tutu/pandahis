@@ -1,0 +1,18 @@
+{
+  "total_paragraphs": 21,
+  "excludes": [
+    {
+      "paragraph_from": 21,
+      "paragraph_to": 21,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "南越",
+      "category": "蕃祚",
+      "paragraph_from": 1,
+      "paragraph_to": 20
+    }
+  ]
+}

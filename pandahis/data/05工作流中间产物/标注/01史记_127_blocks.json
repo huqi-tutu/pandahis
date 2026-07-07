@@ -1,0 +1,23 @@
+{
+  "total_paragraphs": 24,
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 2,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 20,
+      "paragraph_to": 24,
+      "exclude_reason": "其他"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "司马季主",
+      "category": "庶众",
+      "paragraph_from": 3,
+      "paragraph_to": 19
+    }
+  ]
+}

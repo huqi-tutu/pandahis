@@ -140,6 +140,7 @@ def finalize_plan(plan: Dict[str, Any], recalled: Dict[str, Any] | None = None, 
     finalize_external(out)
     if recalled is not None:
         out = ensure_mother_checklist(out, recalled, id_start=id_start)
+        inject_intro_material(out, recalled)
     return out
 
 
@@ -257,3 +258,44 @@ def _strip_external_hint(hint: str) -> str:
     parts = re.split(r"[；;]", hint)
     kept = [p.strip() for p in parts if p.strip() and "外部补全" not in p]
     return "；".join(kept) if kept else hint.split("（外部")[0].strip()
+
+
+
+def inject_intro_material(plan: Dict[str, Any], recalled: Dict[str, Any]) -> None:
+    """从索引结构化数据程序化注入前置引入素材，不依赖 LLM 生成。
+
+    这些字段来自人工标注的全局索引，已被 verify 过；
+    Phase2 enrich 阶段用它们来写前置引入，避免 LLM 编造错误背景。
+    """
+    material: Dict[str, str] = {}
+
+    name = recalled.get("史略名称", "").strip()
+    if name:
+        material["人物名称"] = name
+
+    category = recalled.get("史略分类", "").strip()
+    if category:
+        material["人物类别"] = category
+
+    dynasty = recalled.get("二级朝代坐标", "").strip()
+    if dynasty:
+        material["朝代"] = dynasty
+
+    regime = recalled.get("三级政权坐标", "").strip()
+    if regime:
+        material["政权"] = regime
+
+    source = recalled.get("主要史料出处", "").strip()
+    if source:
+        material["史料源头"] = source
+
+    intro = recalled.get("史略简介", "").strip()
+    if intro:
+        material["一句话定位"] = intro
+
+    civ = recalled.get("一级文明坐标", "").strip()
+    if civ:
+        material["文明归属"] = civ
+
+    if material:
+        plan["前置引入素材"] = material

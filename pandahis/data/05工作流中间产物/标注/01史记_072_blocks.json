@@ -1,0 +1,18 @@
+{
+  "total_paragraphs": 19,
+  "excludes": [
+    {
+      "paragraph_from": 19,
+      "paragraph_to": 19,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "魏冉",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 18
+    }
+  ]
+}

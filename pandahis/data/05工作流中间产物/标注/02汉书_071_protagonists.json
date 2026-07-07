@@ -1,0 +1,30 @@
+{
+  "work": "02汉书",
+  "vol": "071",
+  "volume_name": "杜周传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "杜周",
+      "category": "文臣",
+      "rationale": "本卷以杜周为名，是其家族合传的起始人物，有完整独立传记。"
+    },
+    {
+      "name": "杜延年",
+      "category": "文臣",
+      "rationale": "杜周之子，卷中列为次传，辅佐昭宣，为麒麟阁功臣，有详实独立的叙事段。"
+    },
+    {
+      "name": "杜钦",
+      "category": "文臣",
+      "rationale": "杜周之孙，成帝时以文才见称，卷中附有独立传记，非简单世系链，当立为主轴。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "世系链"
+  ]
+}

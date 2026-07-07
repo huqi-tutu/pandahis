@@ -1,0 +1,35 @@
+{
+  "work": "02汉书",
+  "vol": "093",
+  "volume_name": "匡张孔马传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "匡衡",
+      "category": "文臣",
+      "rationale": "《匡张孔马传》卷名首姓，西汉后期著名儒臣，以经学致位宰相，合传主人公之一。"
+    },
+    {
+      "name": "张禹",
+      "category": "文臣",
+      "rationale": "《匡张孔马传》卷名第二姓，西汉后期丞相、经学家，合传主人公之一。"
+    },
+    {
+      "name": "孔光",
+      "category": "文臣",
+      "rationale": "《匡张孔马传》卷名第三姓，孔子后裔，西汉后期重臣，历仕数朝官至丞相，合传主人公之一。"
+    },
+    {
+      "name": "马宫",
+      "category": "文臣",
+      "rationale": "《匡张孔马传》卷名第四姓，西汉末年大臣，以经学进身，曾任大司徒，合传主人公之一。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

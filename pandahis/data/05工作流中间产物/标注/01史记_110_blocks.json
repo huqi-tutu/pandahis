@@ -1,0 +1,24 @@
+{
+  "total_paragraphs": 78,
+  "excludes": [
+    {
+      "paragraph_from": 78,
+      "paragraph_to": 78,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "匈奴",
+      "category": "蕃祚",
+      "paragraph_from": 1,
+      "paragraph_to": 14
+    },
+    {
+      "name": "匈奴",
+      "category": "蕃祚",
+      "paragraph_from": 15,
+      "paragraph_to": 77
+    }
+  ]
+}

@@ -16,7 +16,20 @@
 
 const LOCAL_DYNASTY_RAW = require('./dynasty-data.js')
 const LOCAL_EMPEROR_RAW = require('./emperor-data.js')
+const { filterMatrixHomeRegimes } = require('./matrix-home-filter.js')
 const { getMatrixHighlights } = require('./matrix-highlights.js')
+const {
+  assignHuaxiaDynastyColorIndices,
+  getHuaxiaDynastyColorIdx,
+  isDynastyContainerActive,
+  isRegimeContainerExpanded,
+  filterEntriesForTimeSlices,
+  buildDynastyContainerVisuals,
+  applyDynastyContainerBlockStyles,
+  applyContainerTimelineHeightBoost,
+  getContainerTimelineEnd,
+  DYNASTY_CONTAINER_LAYOUTS,
+} = require('./dynasty-container-layout.js')
 
 // ─── 文明 Tab 配置 ───────────────────────────────────────────────
 const CIV_TABS = [
@@ -47,16 +60,43 @@ CIV_TABS.forEach(c => { CIV_ID_TO_NAME[c.id] = c.name })
 const regimeEra = require('./regime-era-layout.js')
 
 // ─── 朝代色（6 色按起始时间顺序轮流）──────────────────────────────
-// 取自 小程序/pages/index 的文明配色（中华红/亚洲橙/欧洲蓝/美洲绿/非洲紫/金）。
-// 原方案用于深色底（饱和度高）；home 为白底，故卡片背景取柔和浅色调，
-// 边框/填充用 index 原色作点缀，符合低饱和、文艺的设计基调。
+// 视觉重构（Museum Minimalism / 低饱和暖灰）：六种低饱和浅色循环使用，
+// 每张卡片统一 180° 轻微渐变（亮度差约 3%），仅增加纸张质感，不改布局/形状。
+// cardBg 为完整渐变串（wxml 以 background 渲染）；leftBorder 取暖灰点缀色。
 const ERA_COLORS = [
-  { cardBg: '#F3D9D9', tagBorder: '#D45050', fill: '#E7B4B4', leftBorder: '#D45050' }, // 中华红
-  { cardBg: '#F6E4CD', tagBorder: '#D4882A', fill: '#EDC999', leftBorder: '#D4882A' }, // 亚洲橙
-  { cardBg: '#DBE5F5', tagBorder: '#4A80D0', fill: '#B6C9EC', leftBorder: '#4A80D0' }, // 欧洲蓝
-  { cardBg: '#D6ECDF', tagBorder: '#3A9A60', fill: '#AED9C0', leftBorder: '#3A9A60' }, // 美洲绿
-  { cardBg: '#ECDDF4', tagBorder: '#B875D5', fill: '#DABEE9', leftBorder: '#B875D5' }, // 非洲紫
-  { cardBg: '#F6EDCD', tagBorder: '#D4AA20', fill: '#EBDA98', leftBorder: '#D4AA20' }, // 金
+  { cardBg: 'linear-gradient(180deg, #EDF5F1 0%, #E8F0EC 100%)', topColor: '#EDF5F1', tagBorder: '#9C9083', fill: '#E8F0EC', leftBorder: '#9C9083' },
+  { cardBg: 'linear-gradient(180deg, #F6F1E3 0%, #F1EBDC 100%)', topColor: '#F6F1E3', tagBorder: '#9C9083', fill: '#F1EBDC', leftBorder: '#9C9083' },
+  { cardBg: 'linear-gradient(180deg, #EEF2F9 0%, #E8EDF5 100%)', topColor: '#EEF2F9', tagBorder: '#9C9083', fill: '#E8EDF5', leftBorder: '#9C9083' },
+  { cardBg: 'linear-gradient(180deg, #F6ECEB 0%, #F0E5E4 100%)', topColor: '#F6ECEB', tagBorder: '#9C9083', fill: '#F0E5E4', leftBorder: '#9C9083' },
+  { cardBg: 'linear-gradient(180deg, #F2F0F8 0%, #ECE9F3 100%)', topColor: '#F2F0F8', tagBorder: '#9C9083', fill: '#ECE9F3', leftBorder: '#9C9083' },
+  { cardBg: 'linear-gradient(180deg, #EEF4F3 0%, #E8EFEE 100%)', topColor: '#EEF4F3', tagBorder: '#9C9083', fill: '#E8EFEE', leftBorder: '#9C9083' },
+]
+
+// 时间轴永远展示这些朝代的开始年份 + 名称，不随选中文明改变
+const HUAXIA_AXIS_MARKS = [
+  { label: '五帝',     start: -2698, dynastyKey: '五帝' },
+  { label: '夏',       start: -2070, dynastyKey: '夏' },
+  { label: '商',       start: -1600, dynastyKey: '商' },
+  { label: '西周',     start: -1046, dynastyKey: '西周' },
+  { label: '春秋',     start: -770,  dynastyKey: '春秋' },
+  { label: '战国',     start: -475,  dynastyKey: '战国' },
+  { label: '秦',       start: -221,  dynastyKey: '秦' },
+  { label: '西汉',     start: -202,  dynastyKey: '西汉' },
+  { label: '新',       start: 8,     dynastyKey: '新' },
+  { label: '东汉',     start: 25,    dynastyKey: '东汉' },
+  { label: '三国',     start: 220,   dynastyKey: '三国' },
+  { label: '西晋',     start: 266,   dynastyKey: '西晋' },
+  { label: '十六国',   start: 304,   dynastyKey: '十六国' },
+  { label: '东晋',     start: 317,   dynastyKey: '东晋' },
+  { label: '南北朝',   start: 420,   dynastyKey: '南北朝' },
+  { label: '隋',       start: 581,   dynastyKey: '隋' },
+  { label: '唐',       start: 618,   dynastyKey: '唐' },
+  { label: '五代十国', start: 907,   dynastyKey: '五代十国' },
+  { label: '北宋',     start: 960,   dynastyKey: '北宋' },
+  { label: '南宋',     start: 1127,  dynastyKey: '南宋' },
+  { label: '元',       start: 1271,  dynastyKey: '元' },
+  { label: '明',       start: 1368,  dynastyKey: '明' },
+  { label: '清',       start: 1636,  dynastyKey: '清' },
 ]
 
 function getEraColor(colorIdx) {
@@ -159,9 +199,12 @@ function fmtRange(start, end, startStr, endStr) {
   return `${s} — ${e}`
 }
 
-/** 按同时期政权数选择标签排版：单政权横排 | 多政权名称下左对齐 */
-function inferLabelLayout(concurrentCount) {
-  return (concurrentCount || 1) <= 1 ? 'inline' : 'stacked'
+/** 卡片宽度 ≥ 半宽（(100-3.2)/2 ≈ 48.4%）时用宽版排版 */
+const CARD_WIDE_MIN_WIDTH_PCT = 48.4
+
+/** 按卡片宽度选择排版：≥半宽 名称+标签横排、时间在其下 | 不足半宽 名称/标签/时间纵排 */
+function inferLabelLayout(widthPct) {
+  return (widthPct || 0) >= CARD_WIDE_MIN_WIDTH_PCT - 0.05 ? 'wide' : 'narrow'
 }
 
 const THREE_KINGDOMS_MIN = {
@@ -174,12 +217,29 @@ const THREE_KINGDOMS_MIN = {
 const MATRIX_EXCLUDED_EMPEROR_IDS = new Set([
   'zhong_hua_wei_cao_cao', // 曹操：魏武帝为曹丕追封，生前未称帝
   'DW_HX_SANGUO_SANGUOWEI_CAOCAO',
+  'zhong_hua_yuan_zong',           // 元烈祖
+  'DW_HX_YUAN_YUAN_YUANLIEZU',
+  'zhong_hua_taiping_guo',         // 太平天国天王
+  'DW_HX_QING_QING_TIANWANG',
+  'zhong_hua_taiping_mo',          // 太平天国幼天王
+  'DW_HX_QING_QING_YOUTIANWANG',
+  'zhong_hua_yuan_shikai',         // 洪宪帝
+  'DW_HX_MINGUO_MINGUO_HONGXIANDI',
+])
+
+/** 首页矩阵不展示的政权名（帝王按 dynasty / dynasty2 匹配） */
+const MATRIX_EXCLUDED_REGIME_NAMES = new Set([
+  '渤海', '南诏', '大理', '西夏', '南明', '新中国', '民国',
 ])
 
 function isExcludedEmperor(e) {
   if (!e || !e.id) return true
   if (MATRIX_EXCLUDED_EMPEROR_IDS.has(e.id)) return true
   if (e.legacyId && MATRIX_EXCLUDED_EMPEROR_IDS.has(e.legacyId)) return true
+  const regimeKey = getEmperorRegimeKey(e)
+  if (MATRIX_EXCLUDED_REGIME_NAMES.has(regimeKey)) return true
+  if (MATRIX_EXCLUDED_REGIME_NAMES.has(e.dynasty)) return true
+  if (MATRIX_EXCLUDED_REGIME_NAMES.has(e.dynasty2)) return true
   return false
 }
 
@@ -217,33 +277,58 @@ function mergeDynastyRecords(local, incoming) {
   return Object.values(byId)
 }
 
-/** 胶囊标签：统一底色 + 无边框（字色由 wxss 统一控制） */
+// ─── 标签三级语义配色（按历史意义划分，非统一一色）──────────────
+// 一级（重大身份）：开国/中兴/统一/亡国/篡位/摄政  → 深暖灰底白字
+// 二级（人物评价）：明君/暴君/贤君/昏君            → 中暖灰底白字
+// 三级（普通历史事件）：被废/禅让/战死/迁都/被杀/被俘 + 其余 → 浅暖灰底深字
+const TAG_TIER_STYLE = {
+  1: 'background-color:#6F6458;color:#FFFFFF;border:none;',
+  2: 'background-color:#9C9083;color:#FFFFFF;border:none;',
+  3: 'background-color:#ECE8E3;color:#6E665D;border:none;',
+}
+const TAG_TIER1_KEYWORDS = ['开国', '中兴', '统一', '一统', '亡国', '篡', '摄政']
+const TAG_TIER2_KEYWORDS = ['明君', '暴君', '贤君', '昏君']
+const TAG_TIER3_KEYWORDS = ['被废', '禅让', '战死', '迁都', '被杀', '被俘']
+
+/** 按文案关键词归入三级；普通历史事件默认三级（浅色中性胶囊） */
+function classifyTagTier(text) {
+  const s = String(text || '')
+  if (TAG_TIER1_KEYWORDS.some(k => s.includes(k))) return 1
+  if (TAG_TIER2_KEYWORDS.some(k => s.includes(k))) return 2
+  if (TAG_TIER3_KEYWORDS.some(k => s.includes(k))) return 3
+  return 3
+}
+
+/** 胶囊标签：按历史意义分三级配色 + 无边框 */
 function buildHighlightTagList(labels) {
   const list = (labels || []).slice(0, 2).filter(Boolean)
   if (!list.length) return []
   return list.map(text => ({
     text,
-    tagStyle: 'background-color:#B0A89E;border:none;',
+    tagStyle: TAG_TIER_STYLE[classifyTagTier(text)],
   }))
 }
 
 /** 画布内容区参考宽度（750 - 时间轴 - inner 左右边距） */
 const MATRIX_CANVAS_INNER_RPX = 634
 
-/** 卡片右上角时间字号：按色块全宽自适应，保证完整显示 */
+/** 卡片时间字号：宽版略大，窄版适配半宽以下卡片 */
 function fitCardTimeFontSize(timeRange, widthPct) {
+  const wide = inferLabelLayout(widthPct) === 'wide'
   const s = String(timeRange || '')
-  if (!s) return 16
+  if (!s) return wide ? 15 : 14
   let units = 0
   for (const ch of s) {
     units += (ch >= '0' && ch <= '9') ? 0.58 : 1
   }
   const cardW = Math.max(40, (widthPct / 100) * MATRIX_CANVAS_INNER_RPX)
-  const avail = cardW - LABEL_CARD_INSET * 3
-  for (let fs = 16; fs >= 8; fs--) {
-    if (units * fs * 0.62 <= avail) return fs
+  const avail = cardW - LABEL_CARD_INSET * 2
+  const maxFs = wide ? 15 : 14
+  const minFs = wide ? 13 : 12
+  for (let fs = maxFs; fs >= minFs; fs--) {
+    if (units * fs * 0.72 <= avail) return fs
   }
-  return 8
+  return minFs
 }
 
 // ─── 高度计算 ─────────────────────────────────────────────────────
@@ -255,7 +340,7 @@ const EMP_H_REF_YEARS = 71
 
 // 时间轴行高：按切片实际年数线性映射（保证色块随存续时长变高）
 const SLICE_RPX_PER_YEAR = 2.8   // 1 年 ≈ 2.8rpx（375 屏约 1.4px）
-const SLICE_H_MIN_RPX    = 108   // 最短切片 +10px
+const SLICE_H_MIN_RPX    = 130   // 最短切片 +10px
 const SLICE_H_MAX_RPX    = 360   // 单段上限 180px，超长时期封顶
 const BLOCK_H_GAP_PCT    = 3.2   // 不同色块水平间距（占画布 %，≈20rpx）
 const BLOCK_V_GAP_RPX    = 16     // 不同色块垂直间距（8px，同 entry 多段无缝）
@@ -275,12 +360,12 @@ function calcVisualVBoxGapRpx() {
 function calcVisualHBoxGapPct() {
   return ((BLOCK_V_GAP_RPX + SOLID_SEAM_BLEED_H_RPX * 2) / MATRIX_CANVAS_USABLE_RPX) * 100
 }
-const BLOCK_MIN_SEG_H    = 52    // 段最小高度 +10px
-const COMPRESSED_EMPEROR_SLICE_H_MIN_RPX = 92  // 压缩阶段内并列帝王卡片最低行高 +10px
+const BLOCK_MIN_SEG_H    = 63    // 段最小高度 +10px
+const COMPRESSED_EMPEROR_SLICE_H_MIN_RPX = 110  // 压缩阶段内并列帝王卡片最低行高 +10px
 const HEADER_TOP_INSET = 8      // 标签层与色块顶缘间距（配合 wrap padding）
 const LABEL_CARD_INSET = 8      // 名称/时间与色块边缘间距
 const TIME_CARD_INSET = LABEL_CARD_INSET
-const BLOCK_RADIUS_RPX = 10
+const BLOCK_RADIUS_RPX = 12
 /** 时间轴年份最小纵向间距（过密则跳过中间年份，朝代起点始终显示） */
 const TIME_YEAR_LABEL_MIN_GAP_RPX = 280
 
@@ -327,15 +412,17 @@ let DYNASTIES_BY_CIV = {}
 let DYNASTY_GROUPS = {}
 let EMPERORS_BY_DYN = {}
 let EMPEROR_LANES_BY_DYN = {}
+let HUAXIA_DYNASTY_COLOR_MAP = {}
 
 function rebuildMatrixDataSources(dynastyRaw, emperorRaw) {
   DYNASTIES_BY_CIV = {}
   DYNASTY_GROUPS = {}
   ENTRY_ID_BY_LEGACY = {}
-  registerLegacyIds(dynastyRaw)
+  const homeDynasties = filterMatrixHomeRegimes(dynastyRaw)
+  registerLegacyIds(homeDynasties)
   registerLegacyIds(emperorRaw)
 
-  ;(dynastyRaw || []).forEach((d, idx) => {
+  ;(homeDynasties || []).forEach((d, idx) => {
     const civ = d.civilization
     if (!civ) return
     if (!DYNASTIES_BY_CIV[civ]) DYNASTIES_BY_CIV[civ] = []
@@ -359,7 +446,13 @@ function rebuildMatrixDataSources(dynastyRaw, emperorRaw) {
   })
 
   Object.keys(DYNASTIES_BY_CIV).forEach(civName => {
-    assignCivilizationColorIndices(civName)
+    if (civName === '华夏') {
+      HUAXIA_DYNASTY_COLOR_MAP = assignHuaxiaDynastyColorIndices(
+        civName, DYNASTIES_BY_CIV, HUAXIA_AXIS_MARKS, ERA_COLORS.length
+      )
+    } else {
+      assignCivilizationColorIndices(civName)
+    }
   })
 
   Object.keys(DYNASTIES_BY_CIV).forEach(civName => {
@@ -374,20 +467,7 @@ function rebuildMatrixDataSources(dynastyRaw, emperorRaw) {
     )
   })
 
-  const hx = DYNASTIES_BY_CIV['华夏']
-  if (hx && !hx.some(d => d.name === '南明' || d.dynasty === '南明')) {
-    const nm = {
-      id: 'ZQ_HX_NANMING_NANMING', legacyId: 'HX-NM',
-      name: '南明', dynasty: '南明', dynastyId: '', dynasty_zy: '南明',
-      dynasty2: '南明', civilization: '华夏', civilizationId: 'HX', regimeId: 'ZQ_HX_NANMING_NANMING',
-      start: 1644, end: 1662,
-      startStr: '1644', endStr: '1662', colorIdx: 0,
-    }
-    hx.push(nm)
-    if (!DYNASTY_GROUPS['华夏']) DYNASTY_GROUPS['华夏'] = {}
-    DYNASTY_GROUPS['华夏']['南明'] = [nm]
-    assignCivilizationColorIndices('华夏')
-  }
+  const hxSpring = DYNASTIES_BY_CIV['华夏'] && DYNASTIES_BY_CIV['华夏'].find(d => d.name === '春秋')
 
   EMPERORS_BY_DYN = {}
   ;(emperorRaw || []).forEach(e => {
@@ -442,7 +522,6 @@ function rebuildMatrixDataSources(dynastyRaw, emperorRaw) {
     }
   })
 
-  const hxSpring = DYNASTIES_BY_CIV['华夏'] && DYNASTIES_BY_CIV['华夏'].find(d => d.name === '春秋')
   regimeEra.setRegimeEraColorIdx(hxSpring ? hxSpring.colorIdx : 0)
 }
 
@@ -469,10 +548,10 @@ function isMergedEraGroup(groupName) {
 
 /** 时间轴阶段压缩：整段行高缩小（色块与刻度同步，不单缩色块） */
 const TIMELINE_COMPRESS_ZONES = [
-  { start: -3000, end: -2070, scale: 0.8 }, // 五帝（高度等比缩小 20%）
+  { start: -2698, end: -2070, scale: 0.8 }, // 五帝（高度等比缩小 20%）
   { start: -770, end: -221, scale: 0.55 }, // 春秋战国
   { start: 304, end: 439, scale: 0.5 },  // 十六国阶段
-  { start: 386, end: 589, scale: 0.5 },  // 南北朝阶段
+  { start: 420, end: 589, scale: 0.5 },  // 南北朝阶段
 ]
 
 function getTimelineCompressScale(tS, tE) {
@@ -483,11 +562,18 @@ function getTimelineCompressScale(tS, tE) {
   return scale
 }
 
+const MERGED_ERA_BOUNDS = {
+  '五代十国': { start: 907, end: 979, startStr: '907', endStr: '979' },
+  '南北朝':  { start: 420, end: 589, startStr: '420', endStr: '589' },
+}
+
+
 /** 将同 dynasty 组内所有政权合并为一条展示条目 */
 function buildMergedEraEntry(groupName, members) {
   if (!members || members.length === 0) return null
-  const start = Math.min(...members.map(m => m.start))
-  const end   = Math.max(...members.map(m => m.end))
+  const override = MERGED_ERA_BOUNDS[groupName]
+  const start = override ? override.start : Math.min(...members.map(m => m.start))
+  const end   = override ? override.end   : Math.max(...members.map(m => m.end))
   const startMember = members.find(m => m.start === start) || members[0]
   const endMember   = members.reduce((a, b) => (b.end > a.end ? b : a), members[0])
   return {
@@ -502,39 +588,10 @@ function buildMergedEraEntry(groupName, members) {
     end,
     years:        end - start,
     colorIdx:     startMember.colorIdx,
-    startStr:     startMember.startStr,
-    endStr:       endMember.endStr,
+    startStr:     override ? override.startStr : startMember.startStr,
+    endStr:       override ? override.endStr : endMember.endStr,
   }
 }
-// 时间轴永远展示这些朝代的开始年份 + 名称，不随选中文明改变
-const HUAXIA_AXIS_MARKS = [
-  { label: '五帝',     start: -2698, dynastyKey: '五帝' },
-  { label: '夏',       start: -2070, dynastyKey: '夏' },
-  { label: '商',       start: -1600, dynastyKey: '商' },
-  { label: '西周',     start: -1046, dynastyKey: '西周' },
-  { label: '春秋',     start: -770,  dynastyKey: '春秋' },
-  { label: '战国',     start: -475,  dynastyKey: '战国' },
-  { label: '秦',       start: -221,  dynastyKey: '秦' },
-  { label: '西汉',     start: -202,  dynastyKey: '西汉' },
-  { label: '新',       start: 8,     dynastyKey: '新' },
-  { label: '东汉',     start: 25,    dynastyKey: '东汉' },
-  { label: '三国',     start: 220,   dynastyKey: '三国' },
-  { label: '西晋',     start: 266,   dynastyKey: '西晋' },
-  { label: '十六国',   start: 304,   dynastyKey: '十六国' },
-  { label: '东晋',     start: 317,   dynastyKey: '东晋' },
-  { label: '南北朝',   start: 386,   dynastyKey: '南北朝' },
-  { label: '隋',       start: 581,   dynastyKey: '隋' },
-  { label: '唐',       start: 618,   dynastyKey: '唐' },
-  { label: '五代十国', start: 907,   dynastyKey: '五代十国' },
-  { label: '北宋',     start: 960,   dynastyKey: '北宋' },
-  { label: '南宋',     start: 1127,  dynastyKey: '南宋' },
-  { label: '元',       start: 1271,  dynastyKey: '元' },
-  { label: '明',       start: 1368,  dynastyKey: '明' },
-  { label: '清',       start: 1636,  dynastyKey: '清' },
-  { label: '民国',     start: 1912,  dynastyKey: '民国' },
-  { label: '新中国',   start: 1949,  dynastyKey: '新中国' },
-]
-
 const HUAXIA_AXIS_BY_START = {}
 HUAXIA_AXIS_MARKS.forEach(m => { HUAXIA_AXIS_BY_START[m.start] = m })
 
@@ -544,39 +601,47 @@ function getDrawerMembers(dynKey, civName) {
 }
 
 /** 春秋时间轴：是否展开春秋/战国各政权色块 */
-function isSpringAutumnWarringExpanded(expandedDynasties, civName) {
-  if (expandedDynasties['春秋'] || expandedDynasties['战国']) return true
-  const names = [...getDrawerMembers('春秋', civName), ...getDrawerMembers('战国', civName)]
-  return names.some(d => expandedDynasties[d.name])
+/** 仅「帝王进容器」模式（三国）；春秋/战国由政权条目进容器，统一秦不进容器 */
+function findEmperorContainerLayout(dynName) {
+  return Object.values(DYNASTY_CONTAINER_LAYOUTS).find(l =>
+    l.dynastyKey === '三国' && l.columns.some(c => c.key === dynName)
+  )
 }
 
-/** 收起态：春秋+战国合并为一张全宽「春秋战国」色块 */
+/** 收起态：春秋和战国各自独立展示，带各自时间 */
 function buildCollapsedSpringWarringEntry() {
   const hx = DYNASTIES_BY_CIV['华夏'] || []
-  const dyn = hx.find(d => d.name === '春秋')
-  const start = regimeEra.SPRING_AUTUMN_START
-  const end = regimeEra.WARRING_STATES_END
-  return {
-    id:              'collapsed_春秋战国',
-    isEmperor:       false,
-    isCollapsedRegimeSummary: true,
-    dynastyName:     '春秋战国',
-    dynastyGroup:    '春秋战国',
-    displayName:     '春秋战国',
-    start,
-    end,
-    years:           end - start,
-    colorIdx:        dyn ? dyn.colorIdx : regimeEra.getRegimeEraColorIdx(),
-    startStr:        String(start),
-    endStr:          String(end),
-  }
+  const entries = []
+  const eraDefs = [
+    { name: '春秋', start: regimeEra.SPRING_AUTUMN_START, end: regimeEra.SPRING_AUTUMN_END },
+    { name: '战国', start: regimeEra.WARRING_STATES_START, end: regimeEra.WARRING_STATES_END },
+  ]
+  eraDefs.forEach(def => {
+    const dyn = hx.find(d => d.name === def.name)
+    entries.push({
+      id:              'collapsed_' + def.name,
+      isEmperor:       false,
+      isCollapsedRegimeSummary: true,
+      dynastyName:     def.name,
+      dynastyGroup:    def.name,
+      displayName:     def.name,
+      start:           def.start,
+      end:             def.end,
+      years:           def.end - def.start,
+      colorIdx:        dyn ? dyn.colorIdx : regimeEra.getRegimeEraColorIdx(),
+      startStr:        String(def.start),
+      endStr:          String(def.end),
+    })
+  })
+  return entries
 }
 
 /** 时间轴朝代名是否可点击收展 */
 function isTimelineExpandable(hxDynastyKey) {
   if (!hxDynastyKey) return false
+  if (hxDynastyKey === '南北朝') return true
   if (isMergedEraGroup(hxDynastyKey)) return false
-  if (hxDynastyKey === '春秋') return true
+  if (hxDynastyKey === '春秋' || hxDynastyKey === '战国') return true
   if (regimeEra.isRegimeOnlyEraGroup(hxDynastyKey)) return false
   return true
 }
@@ -594,22 +659,9 @@ function isDynastyExpanded(dynKey, expandedDynasties, civName) {
 function toggleDynastyExpanded(dynKey, expandedDynasties, civName) {
   const next = Object.assign({}, expandedDynasties)
 
-  if (dynKey === '春秋') {
-    const willExpand = !isSpringAutumnWarringExpanded(next, civName)
-    const names = new Set()
-    getDrawerMembers('春秋', civName).forEach(d => names.add(d.name))
-    getDrawerMembers('战国', civName).forEach(d => names.add(d.name))
-    names.forEach(name => {
-      if (willExpand) next[name] = true
-      else delete next[name]
-    })
-    if (willExpand) {
-      next['春秋'] = true
-      next['战国'] = true
-    } else {
-      delete next['春秋']
-      delete next['战国']
-    }
+  if (dynKey === '春秋' || dynKey === '战国') {
+    if (next[dynKey]) delete next[dynKey]
+    else next[dynKey] = true
     return next
   }
 
@@ -645,6 +697,19 @@ const EMPEROR_PAIR_WIDTHS = {
     zhong_hua_ming_zhu_qizhen: 1 / 6, // 明英宗（被俘/退位）
     zhong_hua_ming_zhu_qi:     5 / 6, // 明代宗（景泰实际执政）
   },
+  'DW_HX_MING_MING_MINGDAIZONG|DW_HX_MING_MING_MINGYINGZONG': {
+    DW_HX_MING_MING_MINGYINGZONG: 1 / 6,
+    DW_HX_MING_MING_MINGDAIZONG: 5 / 6,
+  },
+}
+
+function getEmperorPairWeight(weights, emperor) {
+  if (!weights || !emperor) return null
+  const id = emperor.id
+  const legacyId = emperor.legacyId
+  if (weights[id] != null) return weights[id]
+  if (legacyId && weights[legacyId] != null) return weights[legacyId]
+  return null
 }
 
 /** 多段色块：段间微重叠，底缘不变 */
@@ -810,6 +875,14 @@ function applyEntryBlockPatches(blocks) {
   pinJinEmperorGap(blocks, 'zhong_hua_jin_si_ma_ye', 'zhong_hua_jin_si_ma_rui')
   pinJinEmperorGap(blocks, 'zhong_hua_jin_si_ma_rui', 'zhong_hua_jin_si_ma_shao')
   pinJinEmperorGap(blocks, 'zhong_hua_jin_si_ma_shao', 'zhong_hua_jin_si_ma_yan_cheng')
+  pinJinEmperorGap(blocks, 'zhong_hua_jin_si_ma_yan_cheng', 'zhong_hua_jin_si_ma_yue')
+  pinJinEmperorGap(blocks, 'zhong_hua_jin_si_ma_yue', 'zhong_hua_jin_si_ma_dan')
+  pinJinEmperorGap(blocks, 'zhong_hua_jin_si_ma_dan', 'zhong_hua_jin_si_ma_pi')
+  pinJinEmperorGap(blocks, 'zhong_hua_jin_si_ma_pi', 'zhong_hua_jin_si_ma_yi')
+  pinJinEmperorGap(blocks, 'zhong_hua_jin_si_ma_yi', 'zhong_hua_jin_si_ma_yu')
+  pinJinEmperorGap(blocks, 'zhong_hua_jin_si_ma_yu', 'zhong_hua_jin_si_ma_yao')
+  pinJinEmperorGap(blocks, 'zhong_hua_jin_si_ma_yao', 'zhong_hua_jin_si_ma_de_zong')
+  pinJinEmperorGap(blocks, 'zhong_hua_jin_si_ma_de_zong', 'zhong_hua_jin_si_ma_de_wen')
   // 晋武帝：上段加宽至与陈留王右缘齐平 + 右肩 L 桥（仅本 entry）
   const yanSegs = blocks.filter(b =>
     b.entryId === resolveEntryId('zhong_hua_jin_si_ma_yan') && !b.isLBridge
@@ -858,12 +931,16 @@ function assignWeightedEmperorPairPlacements(emperors) {
     (a, b) => getEmperorLanePlacement(a).stackIndex - getEmperorLanePlacement(b).stackIndex
   )
   let left = 0
-  return ordered.map((e, i) => {
-    const widthPct = usable * weights[e.id]
+  const placements = ordered.map((e, i) => {
+    const weight = getEmperorPairWeight(weights, e)
+    if (weight == null) return null
+    const widthPct = usable * weight
     const pl = makePlacement(e, left, widthPct, i, 2)
     left += widthPct + (i < ordered.length - 1 ? G : 0)
     return pl
   })
+  if (placements.some(p => !p)) return null
+  return placements
 }
 
 // ─── slot / block 构造 ───────────────────────────────────────────
@@ -874,9 +951,11 @@ function entryToCardFields(e, civId) {
     leftBorder: era.leftBorder,
     cardBg:     era.cardBg,
     fillColor:  era.fill,
+    gradientTop: era.topColor,
+    gradientBottom: era.fill,
   }
   if (e.isRegimeOnly) {
-    const label = regimeEra.getRegimeDisplayName(e.dynastyName)
+    const label = e.displayName || regimeEra.getRegimeDisplayName(e.dynastyName)
     return Object.assign({
       kind: 'dynasty',
       dynasty: label,
@@ -923,40 +1002,38 @@ const PARALLEL_ZONES = [
   { start: 200,  end: 280,  slots: ['三国·魏', '三国·蜀', '三国·吴'] },
   // 304–386：晋 2/3 + 十六国 1/3
   { start: 304, end: 386, slots: ['__jin__', '十六国'], weights: [2, 1] },
-  // 386–420：南北朝 | 晋 | 十六国 三等分（重合期）
-  { start: 386, end: 420, slots: ['南北朝', '__jin__', '十六国'], weights: [1, 1, 1] },
+  // 386–420：晋 | 十六国 二等分（南北朝自 420 起）
+  { start: 386, end: 420, slots: ['__jin__', '十六国'], weights: [1, 1] },
   // 420–439：南北朝 2/3 + 十六国 1/3
   { start: 420, end: 439, slots: ['南北朝', '十六国'], weights: [2, 1] },
   // 581–589：隋文帝左、南北朝右
   { start: 581,  end: 589,  slots: ['隋', '南北朝'], weights: [1, 1] },
-  { start: 960,  end: 1127, slots: ['北宋', '辽', '西夏'] },
-  // 1100 宋徽宗起：宋·金·西夏·辽 四等分（金 1115 年起占第 2 列）
-  { start: 1100, end: 1127, slots: ['北宋', '金', '西夏', '辽'] },
-  { start: 1127, end: 1279, slots: ['南宋', '金', '西夏', '元'] },
+  { start: 960,  end: 1127, slots: ['北宋', '辽'] },
+  // 1100 宋徽宗起：宋·金·辽 三等分（金 1115 年起占第 2 列）
+  { start: 1100, end: 1127, slots: ['北宋', '金', '辽'] },
+  { start: 1127, end: 1279, slots: ['南宋', '金', '元'] },
 ]
 
-/** 后金(1616)起：明/南明左半，后金/清右半（清接续后金列） */
+/** 后金(1616)起：明左半，后金/清右半（清接续后金列） */
 const HOUJIN_START_YEAR = 1616
 const MING_QING_COEXIST_END = 1662
-const MING_SEQUENCE_REGIMES = new Set(['明', '南明'])
+const MING_SEQUENCE_REGIMES = new Set(['明'])
 const QING_SEQUENCE_REGIMES = new Set(['后金', '清'])
 
-/** 六等分并列：左 4/6 唐，中 1/6 渤海，右 1/6 南诏 */
+/** 唐时期全宽展示（原并列渤海/南诏已移除） */
 const SIXTH_GRID_ZONES = [
   {
     start: 697, end: 904,
     columns: [
-      { key: '__tang__', sixths: 4 },
-      { key: '渤海',   sixths: 1 },
-      { key: '南诏',   sixths: 1 },
+      { key: '__tang__', sixths: 6 },
     ],
   },
 ]
 
-/** 904–979：无宋时左 1/2 唐/渤海/大理、右半五代/辽均分；有宋时宋靠左 1/2，其余均分右半 */
+/** 907–979：无宋时左 1/2 唐、右半五代/辽均分；有宋时宋靠左 1/2，其余均分右半 */
 const QUARTER_GRID_ZONES = [
   {
-    start: 904, end: 979,
+    start: 907, end: 979,
     columns: [
       { key: '__left_seq__', quarters: 3 },
       { key: '北宋',         quarters: 1 },
@@ -966,12 +1043,12 @@ const QUARTER_GRID_ZONES = [
   },
 ]
 
-const LEFT_SEQ_REGIMES = new Set(['唐', '渤海', '大理'])
+const LEFT_SEQ_REGIMES = new Set(['唐'])
 const SONG_REGIMES = new Set(['北宋', '南宋'])
 
-/** 四列均分（左→右）各占 1/4：北宋期末 宋金西夏辽，南宋期 宋金西夏元 */
-const FOUR_EQUAL_NORTH_SLOTS = ['北宋', '金', '西夏', '辽']
-const FOUR_EQUAL_SOUTH_SLOTS = ['南宋', '金', '西夏', '元']
+/** 三列均分（左→右）各占 1/3：北宋期末 宋金辽，南宋期 宋金元 */
+const FOUR_EQUAL_NORTH_SLOTS = ['北宋', '金', '辽']
+const FOUR_EQUAL_SOUTH_SLOTS = ['南宋', '金', '元']
 
 function isFourEqualSongJinXixiaYuanSlots(slotKeys) {
   if (!slotKeys) return false
@@ -1299,11 +1376,10 @@ function activeForSixthGridLayout(active) {
   )
   if (!hasTangEmperor) return active
 
-  // 唐帝王展开时：并列渤海/南诏的折叠政权卡不占列，唐色块左起拉通
+  // 唐帝王展开时：唐色块全宽展示
   return active.filter(e => {
     if (e.isEmperor) return true
     if (matchSixthGridKey(e, '__tang__')) return true
-    if (matchSixthGridKey(e, '渤海') || matchSixthGridKey(e, '南诏')) return false
     return true
   })
 }
@@ -1342,8 +1418,8 @@ function findQuarterGridZone(tS) {
   return QUARTER_GRID_ZONES.find(z => tS >= z.start && tS < z.end) || null
 }
 
-/** 宋 1/2 | 中间列 1/4（西夏/五代/金）| 辽 1/4 靠右；总份数 6 = 3 + 1.5 + 1.5 */
-const MIDDLE_COLUMN_KEYS = ['西夏', '五代十国', '金']
+/** 宋 1/2 | 中间列 1/4（五代/金）| 辽 1/4 靠右；总份数 6 = 3 + 1.5 + 1.5 */
+const MIDDLE_COLUMN_KEYS = ['五代十国', '金']
 
 function matchLiaoEntry(entry) {
   return matchSlotKey(entry, '辽') || matchQuarterGridKey(entry, '辽')
@@ -1553,6 +1629,7 @@ function assignWeightedZonePlacements(active, zone, prevPlacements, tS, tE) {
     }
   })
 
+
   return active.map(e => {
     const next = ideal[e.id]
     const prev = prevMap[e.id]
@@ -1669,6 +1746,12 @@ function assignFixedColumnPlacements(active, slotKeys, prevPlacements, tS, tE) {
  */
 function assignPlacements(active, prevPlacements, tS, tE, civName) {
   if (!active.length) return []
+
+  if (active.some(e => e.isContainerSpan)) {
+    return active.filter(e => e.isContainerSpan).map(e =>
+      makePlacement(e, 0, 100, 0, 1)
+    )
+  }
 
   if (active.some(e => e.isCollapsedRegimeSummary)) {
     return active.filter(e => e.isCollapsedRegimeSummary).map(e =>
@@ -2287,6 +2370,125 @@ function externalCornerFlags(seg, segs) {
     rBR: !below && !rightN && !occupiesSE,
     above, below, leftN, rightN,
   }
+}
+
+const STROKE_INSET = '1rpx'
+const STROKE_COLOR = 'rgba(255,255,255,0.65)'
+
+function hexToRgb(hex) {
+  const h = String(hex || '').replace('#', '')
+  if (h.length !== 6) return { r: 237, g: 245, b: 241 }
+  return {
+    r: parseInt(h.slice(0, 2), 16),
+    g: parseInt(h.slice(2, 4), 16),
+    b: parseInt(h.slice(4, 6), 16),
+  }
+}
+
+function rgbToHex(r, g, b) {
+  return '#' + [r, g, b].map(v => {
+    const n = Math.round(Math.max(0, Math.min(255, v)))
+    return n.toString(16).padStart(2, '0')
+  }).join('')
+}
+
+/** 两色线性插值（用于统一渐变切片） */
+function lerpHexColor(hexA, hexB, t) {
+  const a = hexToRgb(hexA)
+  const b = hexToRgb(hexB)
+  const k = Math.max(0, Math.min(1, t))
+  return rgbToHex(
+    a.r + (b.r - a.r) * k,
+    a.g + (b.g - a.g) * k,
+    a.b + (b.b - a.b) * k,
+  )
+}
+
+/** 按 entry 整体高度切片 180° 渐变，使多段/L 形在接缝处颜色连续 */
+function buildSegmentGradientBg(topColor, bottomColor, segTop, segH, entryTop, entryHeight) {
+  if (!entryHeight || entryHeight <= 0) {
+    return `linear-gradient(180deg, ${topColor} 0%, ${bottomColor} 100%)`
+  }
+  const t0 = Math.max(0, Math.min(1, (segTop - entryTop) / entryHeight))
+  const t1 = Math.max(0, Math.min(1, (segTop + segH - entryTop) / entryHeight))
+  const c0 = lerpHexColor(topColor, bottomColor, t0)
+  const c1 = lerpHexColor(topColor, bottomColor, t1)
+  if (c0 === c1) return c0
+  return `linear-gradient(180deg, ${c0} 0%, ${c1} 100%)`
+}
+
+function isBridgeFillSegment(seg) {
+  return !!(seg.isSongHalfLBridge || seg.isLBridge || seg.isNanbeiLBridge || seg.isXiaowudiBridge)
+}
+
+/** 仅外轮廓边绘制内描边（文档 rgba(255,255,255,0.65)，无外层投影） */
+function buildSegmentStrokeStyle(seg) {
+  if (isBridgeFillSegment(seg)) return ''
+  const shadows = []
+  if (seg.edgeTop) shadows.push(`inset 0 ${STROKE_INSET} 0 0 ${STROKE_COLOR}`)
+  if (seg.edgeBottom) shadows.push(`inset 0 -${STROKE_INSET} 0 0 ${STROKE_COLOR}`)
+  if (seg.edgeRight) shadows.push(`inset -${STROKE_INSET} 0 0 0 ${STROKE_COLOR}`)
+  if (seg.edgeLeft) shadows.push(`inset ${STROKE_INSET} 0 0 0 ${STROKE_COLOR}`)
+  return shadows.length ? `box-shadow:${shadows.join(',')};` : ''
+}
+
+/** 全部 patch 完成后：按 entry 整体外接矩形统一 180° 渐变，再切片到各段 */
+function applyUnifiedEntryGradients(blocks) {
+  const byEntry = {}
+  blocks.forEach(b => {
+    if (!byEntry[b.entryId]) byEntry[b.entryId] = []
+    byEntry[b.entryId].push(b)
+  })
+
+  Object.values(byEntry).forEach(segs => {
+    const entryTop = Math.min(...segs.map(s => s.top))
+    const entryBottom = Math.max(...segs.map(s => s.top + s.h))
+    const entryHeight = entryBottom - entryTop
+    const ref = segs.find(s => s.gradientTop && s.gradientBottom) || segs[0]
+    const topColor = ref.gradientTop || '#EDF5F1'
+    const bottomColor = ref.gradientBottom || ref.fillColor || '#E8F0EC'
+
+    segs.forEach(seg => {
+      seg.cardBg = buildSegmentGradientBg(
+        topColor,
+        bottomColor,
+        seg.top,
+        seg.h,
+        entryTop,
+        entryHeight,
+      )
+    })
+  })
+}
+
+/** 全部 patch 完成后：内描边策略
+ *  - 单段矩形：三边外轮廓内描边（符合文档）
+ *  - 多段/L 形/桥接组合：整体填色，不做分段描边（避免「几个矩形拼起来」） */
+function applyBlockStrokeStyles(blocks) {
+  const byEntry = {}
+  blocks.forEach(b => {
+    if (!byEntry[b.entryId]) byEntry[b.entryId] = []
+    byEntry[b.entryId].push(b)
+  })
+
+  Object.values(byEntry).forEach(segs => {
+    const paintSegs = segs.filter(s => !isBridgeFillSegment(s))
+    const isUnifiedShape = paintSegs.length > 1
+
+    segs.forEach(seg => {
+      seg.edgeTop = seg.edgeRight = seg.edgeBottom = seg.edgeLeft = false
+      seg.edgeClass = ''
+      seg.strokeStyle = ''
+
+      if (isBridgeFillSegment(seg) || isUnifiedShape) return
+
+      seg.edgeTop = true
+      seg.edgeRight = true
+      seg.edgeBottom = true
+      seg.edgeClass = 'eb-t eb-r eb-b'
+      seg.strokeStyle = buildSegmentStrokeStyle(seg)
+    })
+  })
 }
 
 /** 多段 entry 是否为不规则形（L 形等；同列同宽竖叠仍视为规则矩形） */
@@ -3114,14 +3316,9 @@ function finalizeEntryShape(segs) {
   const headerLeftPct = topSeg.leftPct
   const headerWidthPct = topSeg.widthPct
   const headerTop = entryTop + HEADER_TOP_INSET
-  const concurrentCount = topSeg.concurrentCount || 1
-  const labelLayout = hideLabels ? 'default' : inferLabelLayout(concurrentCount)
+  const labelLayout = hideLabels ? 'default' : inferLabelLayout(headerWidthPct)
   const labelMode = hideLabels ? 'hidden' : labelLayout
-
-  const irregular = isIrregularEntryShape(segs)
-  const timeAnchor = getTimeAnchorSeg(segs, irregular)
-  const timeCorner = (irregular && !entryIdInSet(topSeg.entryId, TIME_CORNER_BR_IRREGULAR)) ? 'bl' : 'br'
-  const timeFontRpx = fitCardTimeFontSize(timeAnchor.timeRange, timeAnchor.widthPct)
+  const timeFontRpx = fitCardTimeFontSize(topSeg.timeRange, headerWidthPct)
 
   const barSegs = segs.filter(s => Math.abs(s.leftPct - topSeg.leftPct) < EPS)
   let barTop = Math.min(...barSegs.map(s => s.top))
@@ -3129,6 +3326,8 @@ function finalizeEntryShape(segs) {
   if (barTop <= entryTop + EPS) barTop += HEADER_TOP_INSET
   if (barBottom >= entryBottom - EPS) barBottom -= HEADER_TOP_INSET
   const barH = Math.max(20, barBottom - barTop)
+
+  const blockZ = Math.max(...segs.map(s => s.zIndex || 1))
 
   return {
     id:              `${topSeg.entryId}_chrome`,
@@ -3152,12 +3351,8 @@ function finalizeEntryShape(segs) {
     headerTop,
     headerLeftPct,
     headerWidthPct,
-    timeCorner,
-    timeWrapTop:     timeAnchor.top,
-    timeWrapH:       timeAnchor.h,
-    timeLeftPct:     timeAnchor.leftPct,
-    timeWidthPct:    timeAnchor.widthPct,
     timeFontRpx,
+    zIndex:          blockZ + 20,
   }
 }
 
@@ -3229,12 +3424,14 @@ function applyConquestColumnFills(rows, displayEntries, byEntry, civId) {
 }
 
 /** 从行网格生成政权块（同一政权跨列变化 → 多段拼接成不规则形） */
-function buildBlocksFromRows(rows, displayEntries, civId) {
+function buildBlocksFromRows(rows, displayEntries, civId, expandedDynasties) {
   const blocks = []
   const overlays = []
   const byEntry = {}
 
   displayEntries.forEach(entry => {
+    if (!entry.isContainerSpan && entry.containerId &&
+        isDynastyContainerActive(entry.containerId, expandedDynasties)) return
     if (regimeEra.entryOverlapsRegimeEra(entry)) return
     let seg = null
     rows.forEach(row => {
@@ -3296,6 +3493,7 @@ function buildBlocksFromRows(rows, displayEntries, civId) {
   applyEntryBlockPatches(blocks)
 
   Object.keys(byEntry).forEach(entryId => {
+    if (String(entryId).startsWith('container_span_')) return
     const segs = blocks.filter(b => b.entryId === entryId).sort((a, b) => a.top - b.top)
     const chrome = finalizeEntryShape(segs)
     if (chrome) overlays.push(chrome)
@@ -3313,8 +3511,22 @@ function buildBlocksFromRows(rows, displayEntries, civId) {
   enforceNanbeiSui581VerticalGaps(blocks)
   applyNanbei439Sui589WhiteLineFix(blocks)
   applyIrregularSolidSeamFix(blocks)
+  applyUnifiedEntryGradients(blocks)
+  applyBlockStrokeStyles(blocks)
+  applyDynastyContainerBlockStyles(blocks)
 
-  blocks.sort((a, b) => a.top - b.top || a.leftPct - b.leftPct)
+  const { applyRectangularLayoutOverrides } = require('./rectangular-layout-overrides.js')
+  const rectPack = applyRectangularLayoutOverrides(blocks, overlays, rows, {
+    entryIdsMatch,
+    isIrregularEntryShape,
+    finalizeEntryShape,
+  })
+  blocks.splice(0, blocks.length, ...rectPack.blocks)
+  overlays.splice(0, overlays.length, ...rectPack.overlays)
+  applyUnifiedEntryGradients(blocks)
+  applyBlockStrokeStyles(blocks)
+
+  blocks.sort((a, b) => (a.zIndex || 1) - (b.zIndex || 1) || a.top - b.top || a.leftPct - b.leftPct)
   overlays.sort((a, b) => a.top - b.top || a.leftPct - b.leftPct)
   return { blocks, overlays }
 }
@@ -3330,7 +3542,38 @@ function finishBlockSeg(seg, entry, civId) {
     leftPct:         seg.leftPct,
     widthPct:        seg.widthPct,
     concurrentCount: seg.concurrentCount || 1,
+    isDynastyContainer: !!entry.isContainerSpan,
+    containerId:     entry.containerId || '',
   }, fields)
+}
+
+/** 容器占位：参与时间轴切片与一级色块构建（起止年与轴标衔接） */
+function buildContainerSpanPlaceholders(expandedDynasties, civName) {
+  if (civName !== '华夏') return []
+  return Object.entries(DYNASTY_CONTAINER_LAYOUTS)
+    .filter(([id]) => {
+      if (id === '春秋') {
+        return isRegimeContainerExpanded('春秋', expandedDynasties)
+      }
+      if (id === '战国') {
+        return isRegimeContainerExpanded('战国', expandedDynasties)
+      }
+      return isDynastyContainerActive(id, expandedDynasties)
+    })
+    .map(([id, layout]) => ({
+      id:              `container_span_${id}`,
+      isContainerSpan: true,
+      isDynastyContainer: true,
+      containerId:     id,
+      dynastyName:     id,
+      dynastyGroup:    id,
+      displayName:     id,
+      start:           layout.start,
+      end:             getContainerTimelineEnd(layout),
+      colorIdx:        HUAXIA_DYNASTY_COLOR_MAP[id] != null
+        ? HUAXIA_DYNASTY_COLOR_MAP[id] : 0,
+      hideTime:        true,
+    }))
 }
 
 /** 构建显示条目列表 */
@@ -3344,14 +3587,77 @@ function buildDisplayEntries(civId, expandedDynasties, civName, isHuaxia) {
     if (regimeEra.isExcludedRegimeDynasty(dyn)) return
 
     if (regimeEra.isRegimeOnlyDynasty(dyn)) {
-      if (isHuaxia && !isSpringAutumnWarringExpanded(expandedDynasties, civName)) return
-      displayEntries.push(regimeEra.buildRegimeOnlyEntry(dyn, parseYear))
+      const baseEntry = regimeEra.buildRegimeOnlyEntry(dyn, parseYear)
+      const colKey = regimeEra.getRegimeDisplayName(dyn.name)
+      let added = false
+
+      const springExpanded = isHuaxia && isRegimeContainerExpanded('春秋', expandedDynasties)
+      const warringExpanded = isHuaxia && isRegimeContainerExpanded('战国', expandedDynasties)
+
+      const isSpringCol = regimeEra.isSpringContainerColumn(colKey)
+      const isWarringCol = regimeEra.isWarringContainerColumn(colKey)
+
+      if (springExpanded && isSpringCol) {
+        displayEntries.push(Object.assign({}, baseEntry, {
+          id:              `${baseEntry.id}__cq`,
+          containerId:     '春秋',
+          containerColumn: colKey,
+        }))
+        added = true
+      }
+      if (warringExpanded && isWarringCol) {
+        displayEntries.push(Object.assign({}, baseEntry, {
+          id:              `${baseEntry.id}__zg`,
+          containerId:     '战国',
+          containerColumn: colKey,
+        }))
+        added = true
+      }
+
+      if (!added) {
+        const isStandalone = !isSpringCol && !isWarringCol
+        if (isStandalone) {
+          displayEntries.push(baseEntry)
+        }
+      }
       return
     }
 
     if (isMergedEraGroup(dyn.dynasty)) {
       if (mergedDone.has(dyn.dynasty)) return
       mergedDone.add(dyn.dynasty)
+      // 南北朝容器展开时，创建二级条目
+      if (dyn.dynasty === '南北朝' && isHuaxia &&
+          isDynastyContainerActive('南北朝', expandedDynasties)) {
+        const members = DYNASTY_GROUPS[civName][dyn.dynasty] || [dyn]
+        members.forEach(member => {
+          const start = parseInt(String(member.start || '').replace('约',''), 10) || 0
+          const end = parseInt(String(member.end || '').replace('约',''), 10) || 0
+          const displayLabel = member.name.replace(/^南朝·/, '')
+          displayEntries.push({
+            id: member.id,
+            legacyId: member.legacyId || '',
+            isEmperor: false,
+            isRegimeOnly: true,
+            dynastyName: displayLabel,
+            dynastyGroup: '南北朝',
+            dynastyId: member.dynastyId || '',
+            regimeId: member.id,
+            civilizationId: member.civilizationId || '',
+            displayName: displayLabel,
+            start,
+            end,
+            years: Math.max(1, end - start),
+            colorIdx: member.colorIdx != null ? member.colorIdx : 0,
+            startStr: member.startStr || String(start),
+            endStr: member.endStr || String(end),
+            containerId: '南北朝',
+            containerColumn: member.name,
+            hideTime: true,
+          })
+        })
+        return
+      }
       const members = DYNASTY_GROUPS[civName][dyn.dynasty] || [dyn]
       const merged = buildMergedEraEntry(dyn.dynasty, members)
       if (merged) displayEntries.push(merged)
@@ -3366,6 +3672,13 @@ function buildDisplayEntries(civId, expandedDynasties, civName, isHuaxia) {
     const emps = isExpanded ? (EMPERORS_BY_DYN[dyn.name] || []) : []
 
     if (isExpanded && emps.length > 0) {
+      const containerLayout = findEmperorContainerLayout(dyn.name)
+      const useContainer = containerLayout &&
+        isDynastyContainerActive(containerLayout.dynastyKey, expandedDynasties)
+      const dynastyColorIdx = civName === '华夏'
+        ? getHuaxiaDynastyColorIdx(dyn, HUAXIA_DYNASTY_COLOR_MAP)
+        : dyn.colorIdx
+
       emps.forEach(emp => {
         displayEntries.push({
           id: emp.id, legacyId: emp.legacyId || '', isEmperor: true,
@@ -3376,10 +3689,13 @@ function buildDisplayEntries(civId, expandedDynasties, civName, isHuaxia) {
           originalName: emp.originalName || '',
           displayName: emp.name,
           start: emp.start, end: emp.end, years: emp.years,
-          colorIdx: dyn.colorIdx,
+          colorIdx: dynastyColorIdx,
           tag: emp.tag || '',
+          containerId: useContainer ? containerLayout.dynastyKey : '',
+          containerColumn: useContainer ? dyn.name : '',
         })
       })
+      if (useContainer) return
     } else {
       displayEntries.push({
         id: dyn.id, legacyId: dyn.legacyId || '', isEmperor: false,
@@ -3390,14 +3706,42 @@ function buildDisplayEntries(civId, expandedDynasties, civName, isHuaxia) {
         displayName: dyn.dynasty === dyn.name ? dyn.dynasty : dyn.name,
         start: dyn.start, end: dyn.end,
         years: dyn.end - dyn.start,
-        colorIdx: dyn.colorIdx,
+        colorIdx: civName === '华夏'
+          ? getHuaxiaDynastyColorIdx(dyn, HUAXIA_DYNASTY_COLOR_MAP)
+          : dyn.colorIdx,
         startStr: dyn.startStr, endStr: dyn.endStr,
       })
     }
   })
 
-  if (isHuaxia && !isSpringAutumnWarringExpanded(expandedDynasties, civName)) {
-    displayEntries.push(buildCollapsedSpringWarringEntry())
+  if (isHuaxia) {
+    const springExpanded = isRegimeContainerExpanded('春秋', expandedDynasties)
+    const warringExpanded = isRegimeContainerExpanded('战国', expandedDynasties)
+    const hx = DYNASTIES_BY_CIV['华夏'] || []
+    const eras = []
+    if (!springExpanded) {
+      eras.push({ name: '春秋', start: -770, end: -476 })
+    }
+    if (!warringExpanded) {
+      eras.push({ name: '战国', start: -475, end: -221 })
+    }
+    eras.forEach(def => {
+      const dyn = hx.find(d => d.name === def.name)
+      displayEntries.push({
+        id: 'collapsed_' + def.name,
+        isEmperor: false,
+        isCollapsedRegimeSummary: true,
+        dynastyName: def.name,
+        dynastyGroup: def.name,
+        displayName: def.name,
+        start: def.start,
+        end: def.end,
+        years: def.end - def.start,
+        colorIdx: dyn ? dyn.colorIdx : regimeEra.getRegimeEraColorIdx(),
+        startStr: String(def.start),
+        endStr: String(def.end),
+      })
+    })
   }
 
   return displayEntries
@@ -3411,15 +3755,19 @@ function buildRows(civId, expandedDynasties) {
   const civDyns  = DYNASTIES_BY_CIV[civName] || []
   const hxDyns   = DYNASTIES_BY_CIV['华夏']  || []
 
-  const empty = { rows: [], blocks: [], overlays: [], totalH: 0 }
+  const empty = { rows: [], blocks: [], overlays: [], subCards: [], totalH: 0 }
   if (civDyns.length === 0) return empty
 
   const displayEntries = buildDisplayEntries(civId, expandedDynasties, civName, isHuaxia)
+  const containerPlaceholders = buildContainerSpanPlaceholders(expandedDynasties, civName)
+  const blockEntries = displayEntries.concat(containerPlaceholders)
+  const sliceEntries = filterEntriesForTimeSlices(displayEntries, expandedDynasties)
+    .concat(containerPlaceholders)
 
   const timeSet = new Set()
   HUAXIA_AXIS_MARKS.forEach(m => timeSet.add(m.start))
   hxDyns.forEach(d => timeSet.add(d.end))
-  displayEntries.forEach(e => { timeSet.add(e.start); timeSet.add(e.end) })
+  sliceEntries.forEach(e => { timeSet.add(e.start); timeSet.add(e.end) })
   const times = [...timeSet].sort((a, b) => a - b)
 
   const rawSlices = []
@@ -3427,7 +3775,7 @@ function buildRows(civId, expandedDynasties) {
     const tS = times[i]
     const tE = times[i + 1]
     if (tE <= tS) continue
-    const active = displayEntries.filter(e => e.start <= tS && e.end > tS)
+    const active = sliceEntries.filter(e => e.start <= tS && e.end > tS)
     const filtered = regimeEra.filterActiveForEra(active, tS)
     if (filtered.length === 0) continue
     const hxMark = HUAXIA_AXIS_BY_START[tS]
@@ -3446,6 +3794,7 @@ function buildRows(civId, expandedDynasties) {
     sliceRows.push(Object.assign({}, sl, {
       placements,
       pKey: placementKey(placements),
+      _entryIds: (placements||[]).map(p => p.id).sort().join(','),
       idx,
     }))
   })
@@ -3454,7 +3803,9 @@ function buildRows(civId, expandedDynasties) {
   const mergedSlices = []
   sliceRows.forEach(sl => {
     const last = mergedSlices[mergedSlices.length - 1]
-    if (last && last.tE === sl.tS && !sl.hxLabel &&
+    // 仅当相邻时间片的 entry ID 集合也相同时才允许合并
+    const sameContent = last && last._entryIds === sl._entryIds
+    if (last && last.tE === sl.tS && !sl.hxLabel && sameContent &&
         (last.pKey === sl.pKey || regimeEra.canMergeRegimeEraRow(last, sl))) {
       last.tE = sl.tE
       return
@@ -3462,15 +3813,24 @@ function buildRows(civId, expandedDynasties) {
     mergedSlices.push(Object.assign({}, sl))
   })
 
+  applyContainerTimelineHeightBoost(
+    mergedSlices, expandedDynasties, displayEntries, calcSliceH
+  )
+
   let y = 0
   const rows = mergedSlices.map((sl, idx) => {
-    const h = calcSliceH(sl.tS, sl.tE, sl.active)
+    let h = calcSliceH(sl.tS, sl.tE, sl.active)
+    if (sl._containerHeightScale) {
+      h = Math.max(BLOCK_MIN_SEG_H, Math.round(h * sl._containerHeightScale))
+    }
     const expandable = isHuaxia && !!sl.hxLabel && isTimelineExpandable(sl.hxDynastyKey)
     const dynastyKey = sl.hxDynastyKey
     const expanded   = expandable && (
       dynastyKey === '春秋'
-        ? isSpringAutumnWarringExpanded(expandedDynasties, civName)
-        : isDynastyExpanded(dynastyKey, expandedDynasties, civName)
+        ? !!expandedDynasties['春秋']
+        : dynastyKey === '战国'
+          ? !!expandedDynasties['战国']
+          : isDynastyExpanded(dynastyKey, expandedDynasties, civName)
     )
 
     const row = {
@@ -3498,8 +3858,140 @@ function buildRows(civId, expandedDynasties) {
     if (row.showYear) lastYearLabelY = row.y
   })
 
-  const { blocks, overlays } = buildBlocksFromRows(rows, displayEntries, civId)
-  return { rows, blocks, overlays, totalH: y }
+  const { blocks, overlays } = buildBlocksFromRows(rows, blockEntries, civId, expandedDynasties)
+
+  /* 一）南北朝容器与十六国对齐：在子卡布局前调整容器位置 */
+  if (civName === '华夏') {
+    const nbcEntryId = 'container_span_南北朝'
+    const nbContainer = blocks.find(b => b.entryId === nbcEntryId)
+    if (nbContainer) {
+      const jinGongDi = blocks.find(b =>
+        entryIdsMatch(b.entryId, 'zhong_hua_jin_si_ma_de_wen') && !b.isLBridge
+      )
+      if (jinGongDi) {
+        const align = jinGongDi.top + jinGongDi.h
+        /* 十六国底缘截止 420 线，与晋恭帝底缘对齐 */
+        const shiliu = blocks.filter(b => b.entryId === 'merged_十六国')
+          .reduce((a, b) => ((!a || a.top + a.h < b.top + b.h) ? b : a), null)
+        if (shiliu) {
+          const slBottom = shiliu.top + shiliu.h
+          if (slBottom > align) {
+            shiliu.h = Math.max(BLOCK_MIN_SEG_H, shiliu.h - (slBottom - align))
+          }
+        }
+        /* 容器上缘 = 晋恭帝底缘 + 16rpx */
+        nbContainer.h = Math.max(BLOCK_MIN_SEG_H, (nbContainer.top + nbContainer.h) - (align + BLOCK_V_GAP_RPX))
+nbContainer.top = align + BLOCK_V_GAP_RPX
+      }
+    }
+  }
+
+  /* 一续）南北朝收起态：合并块与十六国对齐（无容器时） */
+  if (civName === '华夏') {
+    const nbEntryId = NANBEI_ENTRY_ID
+    const nbMergedFirst = blocks.find(b =>
+      b.entryId === nbEntryId && !b.isLBridge && !b.isNanbeiLBridge
+    )
+    const hasContainer = blocks.some(b => b.entryId === 'container_span_南北朝')
+    if (nbMergedFirst && !hasContainer) {
+      const jinGongDi = blocks.find(b =>
+        entryIdsMatch(b.entryId, 'zhong_hua_jin_si_ma_de_wen') && !b.isLBridge
+      )
+      if (jinGongDi) {
+        const align = jinGongDi.top + jinGongDi.h
+        /* 十六国底缘截止 420 线，与晋恭帝底缘对齐 */
+        const shiliu = blocks.filter(b => b.entryId === 'merged_十六国')
+          .reduce((a, b) => ((!a || a.top + a.h < b.top + b.h) ? b : a), null)
+        if (shiliu) {
+          const slBottom = shiliu.top + shiliu.h
+          if (slBottom > align) {
+            shiliu.h = Math.max(BLOCK_MIN_SEG_H, shiliu.h - (slBottom - align))
+          }
+        }
+        /* 合并块上缘 = 晋恭帝底缘 + 16rpx */
+        const nbSegments = blocks
+          .filter(b => b.entryId === nbEntryId && !b.isLBridge && !b.isNanbeiLBridge)
+          .sort((a, b) => a.top - b.top)
+        if (nbSegments.length > 0) {
+          const firstSeg = nbSegments[0]
+          const targetTop = align + BLOCK_V_GAP_RPX
+          const delta = targetTop - firstSeg.top
+          nbSegments.forEach(seg => { seg.top += delta })
+          /* 隋文帝同步移动，保持581行左右半对齐 */
+          const suiWendiSegs = blocks.filter(b =>
+            entryIdsMatch(b.entryId, 'zhong_hua_sui_wen_di')
+          )
+          suiWendiSegs.forEach(seg => { seg.top += delta })
+          /* 合并块 overlay 同步更新，保证文字位置正确 */
+          overlays.forEach(ov => {
+            if (ov.entryId === nbEntryId) {
+              ov.headerTop += delta
+              ov.barTop += delta
+            }
+          })
+        }
+      }
+    }
+  }
+
+  /* 二）构建容器内子卡（此时容器 top 已正确）*/
+  const containerPack = buildDynastyContainerVisuals({
+    blocks,
+    displayEntries,
+    expandedDynasties,
+    civId,
+    entryToCardFields,
+    fitCardTimeFontSize,
+    inferLabelLayout,
+    HEADER_TOP_INSET,
+  })
+
+  /* 三）南北朝容器底部延伸至隋文帝色块底缘 */
+  if (civName === '华夏') {
+    const nbcEntryId = 'container_span_南北朝'
+    const nbContainer = blocks.find(b => b.entryId === nbcEntryId)
+    if (nbContainer) {
+      const suiWendi = blocks.find(b =>
+        entryIdsMatch(b.entryId, 'zhong_hua_sui_wen_di') &&
+        !b.isLBridge && !b.isNanbeiLBridge
+      )
+      if (suiWendi) {
+        const suiBottom = suiWendi.top + suiWendi.h
+        const nbBottom = nbContainer.top + nbContainer.h
+        const need = suiBottom - nbBottom
+        if (need > 0) nbContainer.h += need
+      }
+    }
+  }
+  /* 4) 隋折叠展开/朝代名下移至581标注行 */
+  if (civName === '华夏') {
+    const row581 = rows.find(r => r.year === '581' && Math.abs(r.tS - 581) < 1)
+    const rowSui = rows.find(r => Math.abs(r.tS - 589) < 1)
+    if (row581 && rowSui) {
+      row581.showYear = false
+      row581.hxLabel = ''
+      row581.expandable = false
+      row581.expanded = false
+      row581.dynastyKey = ''
+      rowSui.showYear = true
+      rowSui.year = '581'
+      rowSui.hxLabel = '隋'
+      rowSui.dynastyKey = '隋'
+      rowSui.expandable = true
+      rowSui.expanded = isDynastyExpanded('隋', expandedDynasties, civName)
+    }
+  }
+
+  return {
+    rows,
+    blocks,
+    overlays: [
+      ...(overlays || []),
+      ...(containerPack.subOverlays || []),
+    ],
+    subCards: containerPack.subCards,
+    totalH: y,
+  }
 }
 
 /**
@@ -3518,7 +4010,15 @@ function buildAllExpanded(civId) {
     }
   })
   HUAXIA_AXIS_MARKS.forEach(m => {
+    if (m.dynastyKey === '南北朝') {
+      result[m.dynastyKey] = true
+      return
+    }
     if (isMergedEraGroup(m.dynastyKey)) return
+    if (m.dynastyKey === '春秋' || m.dynastyKey === '战国') {
+      result[m.dynastyKey] = true
+      return
+    }
     if (regimeEra.isRegimeOnlyEraGroup(m.dynastyKey)) return
     const members = getDrawerMembers(m.dynastyKey, civName)
     if (members.length > 0 && members.some(d => result[d.name])) {

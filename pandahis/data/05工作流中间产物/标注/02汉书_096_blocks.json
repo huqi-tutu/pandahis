@@ -1,0 +1,23 @@
+{
+  "total_paragraphs": 20,
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 20,
+      "paragraph_to": 20,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "翟方进",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 19
+    }
+  ]
+}

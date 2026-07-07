@@ -1,0 +1,20 @@
+{
+  "work": "02汉书",
+  "vol": "073",
+  "volume_name": "司马迁传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "司马迁",
+      "category": "文臣",
+      "rationale": "卷名《司马迁传》，为单人列传，以西汉太史公司马迁的生平事业为主轴。据分类链，司马迁为史官，属文臣。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "篇内小标题"
+  ]
+}

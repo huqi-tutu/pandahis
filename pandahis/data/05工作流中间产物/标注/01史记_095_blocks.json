@@ -1,0 +1,36 @@
+{
+  "total_paragraphs": 46,
+  "excludes": [
+    {
+      "paragraph_from": 46,
+      "paragraph_to": 46,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "樊哙",
+      "category": "武将",
+      "paragraph_from": 1,
+      "paragraph_to": 14
+    },
+    {
+      "name": "郦商",
+      "category": "武将",
+      "paragraph_from": 15,
+      "paragraph_to": 22
+    },
+    {
+      "name": "滕公（夏侯婴）",
+      "category": "文臣",
+      "paragraph_from": 23,
+      "paragraph_to": 31
+    },
+    {
+      "name": "灌婴",
+      "category": "武将",
+      "paragraph_from": 32,
+      "paragraph_to": 45
+    }
+  ]
+}

@@ -1,0 +1,236 @@
+{
+  "volume": "白起王翦列传",
+  "source_file": "01史记_073_白起王翦列传第十三.txt",
+  "total_paragraphs": 18,
+  "volume_type": "纪传叙事",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [
+        {
+          "name": "白起",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "白起",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "白起",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "白起",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "白起",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "白起",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "白起",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "白起",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "白起",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "王翦",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "王翦",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "王翦",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "王翦",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "王翦",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "王翦",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "王翦",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "王翦",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [],
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SHIJI_073_01",
+      "史略名称": "王翦",
+      "史略简介": "王翦",
+      "原文字句": "其九月，秦复发兵，使五大夫王陵攻赵邯郸。是时武安君病，不任行。四十九年正月，陵攻邯郸，少利，秦益发兵佐陵。陵兵亡五校。武安君病愈，秦王欲使武安君代陵将。武安君言",
+      "史略分类": "武将",
+      "主要史料出处": "《史记·卷73·白起王翦列传》",
+      "paragraphs": [
+        {
+          "volume": "白起王翦列传",
+          "paragraph_from": 10,
+          "paragraph_to": 17
+        }
+      ],
+      "五级细坐标": "史记·卷073·武将·01",
+      "六级段落锚点": "[P10-P17]",
+      "原文出处": "白起王翦列传·P10-P17",
+      "优先级": "P0",
+      "优先级判定理由": "王翦列传主轴叙事，共8段",
+      "四级帝王坐标": "秦始皇",
+      "三级政权坐标": "秦",
+      "二级朝代坐标": "秦",
+      "一级文明坐标": "华夏",
+      "文明ID": "HX",
+      "朝代ID": "CD_HX_QIN",
+      "政权ID": "ZQ_HX_QIN_QIN",
+      "帝王ID": "DW_HX_QIN_QIN_QINSHIHUANG",
+      "_auto_filled": {
+        "_坐标主轴说明": "本卷以始皇朝灭楚、定天下为主线，主轴挂秦始皇；昭襄王时长平事见共段事略。",
+        "_年LLM依据": "王翦约前262–前214（生年推测）"
+      },
+      "史略开始年": -262,
+      "史略结束年": -214
+    },
+    {
+      "史略ID": "SHIJI_073_02",
+      "史略名称": "白起",
+      "史略简介": "白起",
+      "原文字句": "白起者，郿人也。善用兵，事秦昭王。昭王十三年，而白起为左庶长，将而击韩之新城。是岁，穰侯相秦，举任鄙以为汉中守。其明年，白起为左更，攻韩、魏於伊阙，斩首二十四万",
+      "史略分类": "武将",
+      "主要史料出处": "《史记·卷73·白起王翦列传》",
+      "paragraphs": [
+        {
+          "volume": "白起王翦列传",
+          "paragraph_from": 1,
+          "paragraph_to": 9
+        }
+      ],
+      "五级细坐标": "史记·卷073·武将·02",
+      "六级段落锚点": "[P1-P9]",
+      "原文出处": "白起王翦列传·P1-P9",
+      "四级帝王坐标": "秦昭襄王",
+      "三级政权坐标": "战国·秦",
+      "二级朝代坐标": "战国",
+      "一级文明坐标": "华夏",
+      "文明ID": "HX",
+      "朝代ID": "CD_HX_ZHANGUO",
+      "政权ID": "ZQ_HX_ZHANGUO_ZHANGUOQIN",
+      "帝王ID": "DW_HX_ZHANGUO_ZHANGUOQIN_QINZHAOXIANGWANG",
+      "优先级": "P0",
+      "优先级判定理由": "白起列传主轴叙事，共9段",
+      "_auto_filled": {
+        "_坐标主轴说明": "本卷以秦昭朝长平灭赵为主线，主轴挂秦昭襄王；武安君事功见共段事略。",
+        "_年LLM依据": "白起约前332–前257"
+      },
+      "史略开始年": -332,
+      "史略结束年": -257
+    }
+  ]
+}

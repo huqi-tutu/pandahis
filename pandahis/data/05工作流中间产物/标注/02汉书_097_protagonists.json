@@ -1,0 +1,25 @@
+{
+  "work": "02汉书",
+  "vol": "097",
+  "volume_name": "谷永杜邺传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "谷永",
+      "category": "文臣",
+      "rationale": "《谷永杜邺传》以谷永与杜邺二人合传，卷名明确列谷永为首，故为其一主轴。"
+    },
+    {
+      "name": "杜邺",
+      "category": "文臣",
+      "rationale": "《谷永杜邺传》以谷永与杜邺二人合传，卷名明确列杜邺为次，故为其一主轴。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

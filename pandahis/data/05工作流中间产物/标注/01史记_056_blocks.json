@@ -1,0 +1,18 @@
+{
+  "total_paragraphs": 39,
+  "excludes": [
+    {
+      "paragraph_from": 38,
+      "paragraph_to": 39,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "陈平",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 37
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "total_paragraphs": 18,
+  "excludes": [
+    {
+      "paragraph_from": 18,
+      "paragraph_to": 18,
+      "exclude_reason": "其他"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "张释之",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 12
+    },
+    {
+      "name": "冯唐",
+      "category": "文臣",
+      "paragraph_from": 13,
+      "paragraph_to": 17
+    }
+  ]
+}

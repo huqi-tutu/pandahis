@@ -1,0 +1,18 @@
+{
+  "work": "01史记",
+  "vol": "070",
+  "volume_name": "张仪列传",
+  "volume_type_guess": "列传",
+  "protagonists": [
+    {
+      "name": "张仪",
+      "category": "文臣",
+      "rationale": "卷名《张仪列传》明确以张仪为列传主人公，张仪为战国纵横家、秦国相国，属士臣范畴。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题"
+  ]
+}

@@ -1,18 +1,32 @@
-/** 盒子 category_key → 展示名（与后端 FavoriteService 一致） */
+/** 盒子 category_key → 展示名（与后端 BoxCategorySupport 一致） */
 export function categoryLabel(key: string): string {
   switch (key) {
     case 'junji':
-      return '君纪'
+      return '君王'
+    case 'zongqi':
+      return '宗戚'
+    case 'wenchen':
+      return '文臣'
+    case 'wujiang':
+      return '武将'
+    case 'shilue':
+      return '事略'
+    case 'dianzhi':
+      return '典制'
+    case 'lunzhu':
+      return '论著'
+    case 'huanguan':
+      return '宦官'
+    case 'shuzhong':
+      return '庶众'
+    case 'fanzhu':
+      return '蕃祚'
     case 'shichen':
       return '士臣'
     case 'minlu':
       return '民录'
-    case 'dianzhi':
-      return '典制'
-    case 'shilue':
-      return '史略'
     default:
-      return '其他'
+      return key || '其他'
   }
 }
 

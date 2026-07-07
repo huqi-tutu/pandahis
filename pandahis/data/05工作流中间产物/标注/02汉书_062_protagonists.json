@@ -1,0 +1,34 @@
+{
+  "work": "02汉书",
+  "vol": "062",
+  "volume_name": "窦田灌韩传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "窦婴",
+      "category": "文臣",
+      "rationale": "《窦田灌韩传》卷名首姓，窦婴为窦太后从侄，曾任大将军、丞相，合传主人公之一。"
+    },
+    {
+      "name": "田蚡",
+      "category": "文臣",
+      "rationale": "《窦田灌韩传》卷名次姓，田蚡为孝景王皇后同母弟，武帝舅父，曾任丞相，合传主人公之一。"
+    },
+    {
+      "name": "灌夫",
+      "category": "武将",
+      "rationale": "《窦田灌韩传》卷名第三姓，灌夫以勇力显名，曾参与平定七国之乱，合传主人公之一。"
+    },
+    {
+      "name": "韩安国",
+      "category": "文臣",
+      "rationale": "《窦田灌韩传》卷名第四姓，韩安国为梁成安人，以辩才著称，曾任御史大夫，合传主人公之一。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰"
+  ]
+}

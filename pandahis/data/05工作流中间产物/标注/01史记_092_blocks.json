@@ -1,0 +1,18 @@
+{
+  "total_paragraphs": 45,
+  "excludes": [
+    {
+      "paragraph_from": 45,
+      "paragraph_to": 45,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "韩信",
+      "category": "武将",
+      "paragraph_from": 1,
+      "paragraph_to": 44
+    }
+  ]
+}

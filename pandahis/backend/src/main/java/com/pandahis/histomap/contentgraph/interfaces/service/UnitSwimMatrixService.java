@@ -1,6 +1,7 @@
 package com.pandahis.histomap.contentgraph.interfaces.service;
 
 import com.pandahis.histomap.common.api.ApiException;
+import com.pandahis.histomap.contentgraph.domain.BoxCategorySupport;
 import com.pandahis.histomap.contentgraph.interfaces.dto.UnitSwimMatrixDTO;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,26 +12,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class UnitSwimMatrixService {
-  private static final int MAX_VISIBLE = 10;
   private static final int SHEET_WIDTH_RPX = 1440;
-
-  private static final List<LaneDef> LANES = List.of(
-      new LaneDef("junji", "君纪", "#F1A805", "continuous"),
-      new LaneDef("shichen", "士臣", "#E0C088", "shichen"),
-      new LaneDef("dianzhi", "典制", "#92ADA4", "continuous"),
-      new LaneDef("shilue", "事略", "#B3D9E0", "continuous"),
-      new LaneDef("minlu", "民录", "#EDD5C0", "isolated"),
-      new LaneDef("lunzhu", "论著", "#A894B8", "isolated")
-  );
-
-  private static final Map<String, String> LANE_BORDER = Map.of(
-      "junji", "#F1A805",
-      "shichen", "#E0C088",
-      "dianzhi", "#92ADA4",
-      "shilue", "#B3D9E0",
-      "minlu", "#EDD5C0",
-      "lunzhu", "#A894B8"
-  );
 
   private final JdbcTemplate jdbcTemplate;
   private final UnitDynastyResolver dynastyResolver;
@@ -61,11 +43,12 @@ public class UnitSwimMatrixService {
     String endLabel = fmtAxisYear(endYear);
 
     List<UnitSwimMatrixDTO.Lane> lanes = new ArrayList<>();
-    for (LaneDef def : LANES) {
+    for (BoxCategorySupport.CategoryDef def : BoxCategorySupport.swimLanes()) {
       List<BarInput> bars = new ArrayList<>();
       for (Map<String, Object> b : boxes) {
         String cat = (String) b.get("category_key");
-        if (cat == null || !cat.equals(def.key())) continue;
+        Optional<String> laneKey = BoxCategorySupport.swimLaneKey(cat);
+        if (laneKey.isEmpty() || !laneKey.get().equals(def.key())) continue;
         int bs = b.get("start_year") == null ? startYear : ((Number) b.get("start_year")).intValue();
         int be = b.get("end_year") == null ? bs : ((Number) b.get("end_year")).intValue();
         if (be <= bs) be = bs + 1;
@@ -93,13 +76,28 @@ public class UnitSwimMatrixService {
     );
   }
 
-  private UnitSwimMatrixDTO.Lane buildLane(LaneDef def, List<BarInput> bars, int startYear, int endYear) {
+  private UnitSwimMatrixDTO.Lane buildLane(
+      BoxCategorySupport.CategoryDef def,
+      List<BarInput> bars,
+      int startYear,
+      int endYear
+  ) {
     int span = Math.max(1, endYear - startYear);
-    boolean hasMore = bars.size() > MAX_VISIBLE;
-    List<BarInput> visible = hasMore ? bars.subList(0, MAX_VISIBLE) : bars;
-    int moreCount = hasMore ? bars.size() - MAX_VISIBLE : 0;
+
+    // 文臣/武将（shichen）：贪心分行，全量展示
+    SwimLaneOverflow.Split split = "shichen".equals(def.layout())
+        ? new SwimLaneOverflow.Split(toSlices(bars), List.of())
+        : SwimLaneOverflow.split(toSlices(bars));
+
+    List<BarInput> visible = fromSlices(split.visible());
+    List<BarInput> extra = fromSlices(split.extra());
+    boolean hasMore = !extra.isEmpty();
+    int moreCount = extra.size();
 
     List<List<UnitSwimMatrixDTO.Bar>> rows = packBars(visible, def.layout(), startYear, span);
+    List<UnitSwimMatrixDTO.Bar> extraBars = extra.stream()
+        .map(b -> toOverlayBar(b, startYear, span))
+        .toList();
 
     String moreBarLeft = "0%";
     String moreBarWidth = "12%";
@@ -112,14 +110,59 @@ public class UnitSwimMatrixService {
 
     return new UnitSwimMatrixDTO.Lane(
         def.label(),
-        LANE_BORDER.getOrDefault(def.key(), "#84572F"),
+        BoxCategorySupport.laneBorderColor(def.key()),
         def.layout(),
         rows,
         hasMore,
         moreCount,
         moreBarLeft,
-        moreBarWidth
+        moreBarWidth,
+        extraBars
     );
+  }
+
+  private static List<SwimLaneOverflow.BarSlice> toSlices(List<BarInput> bars) {
+    return bars.stream()
+        .map(b -> new SwimLaneOverflow.BarSlice(b.boxId(), b.title(), b.start(), b.end(), b.priority()))
+        .toList();
+  }
+
+  private static List<BarInput> fromSlices(List<SwimLaneOverflow.BarSlice> slices) {
+    return slices.stream()
+        .map(s -> new BarInput(s.boxId(), s.title(), s.start(), s.end(), s.priority()))
+        .toList();
+  }
+
+  private static UnitSwimMatrixDTO.Bar toOverlayBar(BarInput bar, int startYear, int span) {
+    String timeRange = fmtYearRange(bar.start, bar.end);
+    return new UnitSwimMatrixDTO.Bar(
+        bar.title(),
+        bar.boxId(),
+        bar.boxId(),
+        bar.title(),
+        "0%",
+        "0%",
+        "0%",
+        "0%",
+        "0%",
+        "0%",
+        "0%",
+        "0%",
+        "0%",
+        bar.priority(),
+        "default",
+        0,
+        timeRange
+    );
+  }
+
+  private static String fmtYearRange(int start, int end) {
+    return fmtYear(start) + " — " + fmtYear(end);
+  }
+
+  private static String fmtYear(int y) {
+    if (y < 0) return "前" + Math.abs(y);
+    return String.valueOf(y);
   }
 
   private List<List<UnitSwimMatrixDTO.Bar>> packBars(
@@ -186,11 +229,6 @@ public class UnitSwimMatrixService {
     return String.valueOf(y);
   }
 
-  private static String fmtYear(int y) {
-    if (y < 0) return "前" + Math.abs(y);
-    return String.valueOf(y);
-  }
-
   /** P0=0 最高优先级 → p0；与 import_box_index_json 一致 */
   private static String priority(Object imp) {
     int v = imp == null ? 2 : ((Number) imp).intValue();
@@ -199,8 +237,6 @@ public class UnitSwimMatrixService {
     if (v == 2) return "p2";
     return "p3";
   }
-
-  private record LaneDef(String key, String label, String borderColor, String layout) {}
 
   private record BarInput(String boxId, String title, int start, int end, String priority) {}
 }

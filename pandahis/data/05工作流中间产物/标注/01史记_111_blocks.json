@@ -1,0 +1,24 @@
+{
+  "total_paragraphs": 57,
+  "excludes": [
+    {
+      "paragraph_from": 57,
+      "paragraph_to": 57,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "卫青",
+      "category": "武将",
+      "paragraph_from": 1,
+      "paragraph_to": 29
+    },
+    {
+      "name": "霍去病",
+      "category": "武将",
+      "paragraph_from": 30,
+      "paragraph_to": 56
+    }
+  ]
+}

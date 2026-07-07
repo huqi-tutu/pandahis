@@ -1,0 +1,39 @@
+{
+  "work": "01史记",
+  "vol": "040",
+  "volume_name": "楚世家",
+  "volume_type_guess": "世家",
+  "protagonists": [
+    {
+      "name": "楚武王",
+      "category": "君王",
+      "rationale": "《楚世家》叙事主轴：楚武王（君王）"
+    },
+    {
+      "name": "楚成王",
+      "category": "君王",
+      "rationale": "《楚世家》叙事主轴：楚成王（君王）"
+    },
+    {
+      "name": "楚庄王",
+      "category": "君王",
+      "rationale": "《楚世家》叙事主轴：楚庄王（君王）"
+    },
+    {
+      "name": "楚昭王",
+      "category": "君王",
+      "rationale": "《楚世家》叙事主轴：楚昭王（君王）"
+    },
+    {
+      "name": "楚怀王",
+      "category": "君王",
+      "rationale": "《楚世家》叙事主轴：楚怀王（君王）"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题",
+    "其他"
+  ]
+}

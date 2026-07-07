@@ -1,0 +1,19 @@
+{
+  "work": "01史记",
+  "vol": "057",
+  "volume_name": "绛侯周勃世家",
+  "volume_type_guess": "世家",
+  "protagonists": [
+    {
+      "name": "周勃",
+      "category": "武将",
+      "standard_name_note": "卷名人物，非帝王",
+      "rationale": "卷名「绛侯周勃世家」明确以周勃为叙事核心，周勃是西汉开国功臣、绛侯，官至太尉、丞相，属于士臣世家类型。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题"
+  ]
+}

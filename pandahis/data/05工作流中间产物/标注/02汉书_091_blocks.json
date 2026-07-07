@@ -1,0 +1,23 @@
+{
+  "total_paragraphs": 16,
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 16,
+      "paragraph_to": 16,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "冯奉世",
+      "category": "武将",
+      "paragraph_from": 2,
+      "paragraph_to": 15
+    }
+  ]
+}

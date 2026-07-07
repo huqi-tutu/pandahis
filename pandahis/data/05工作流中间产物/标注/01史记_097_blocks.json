@@ -1,0 +1,35 @@
+{
+  "total_paragraphs": 33,
+  "excludes": [
+    {
+      "paragraph_from": 32,
+      "paragraph_to": 32,
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph_from": 33,
+      "paragraph_to": 33,
+      "exclude_reason": "其他"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "郦食其",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 10
+    },
+    {
+      "name": "陆贾",
+      "category": "文臣",
+      "paragraph_from": 11,
+      "paragraph_to": 26
+    },
+    {
+      "name": "郦食其",
+      "category": "文臣",
+      "paragraph_from": 27,
+      "paragraph_to": 31
+    }
+  ]
+}

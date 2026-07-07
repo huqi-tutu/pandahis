@@ -1,0 +1,44 @@
+{
+  "work": "01史记",
+  "vol": "037",
+  "volume_name": "卫康叔世家",
+  "volume_type_guess": "世家",
+  "protagonists": [
+    {
+      "name": "卫康叔",
+      "category": "君王",
+      "rationale": "《卫康叔世家》叙事主轴：卫康叔（君王）"
+    },
+    {
+      "name": "卫宣公",
+      "category": "君王",
+      "rationale": "《卫康叔世家》叙事主轴：卫宣公（君王）"
+    },
+    {
+      "name": "卫懿公",
+      "category": "君王",
+      "rationale": "《卫康叔世家》叙事主轴：卫懿公（君王）"
+    },
+    {
+      "name": "卫文公",
+      "category": "君王",
+      "rationale": "《卫康叔世家》叙事主轴：卫文公（君王）"
+    },
+    {
+      "name": "卫灵公",
+      "category": "君王",
+      "rationale": "《卫康叔世家》叙事主轴：卫灵公（君王）"
+    },
+    {
+      "name": "卫出公",
+      "category": "君王",
+      "rationale": "《卫康叔世家》叙事主轴：卫出公（君王）"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "卷首标题",
+    "其他"
+  ]
+}

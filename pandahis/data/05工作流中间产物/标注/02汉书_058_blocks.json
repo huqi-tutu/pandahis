@@ -1,0 +1,28 @@
+{
+  "total_paragraphs": 24,
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 2,
+      "paragraph_to": 2,
+      "exclude_reason": "篇内小标题"
+    },
+    {
+      "paragraph_from": 24,
+      "paragraph_to": 24,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "贾谊",
+      "category": "文臣",
+      "paragraph_from": 3,
+      "paragraph_to": 23
+    }
+  ]
+}
