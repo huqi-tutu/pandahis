@@ -1,6 +1,7 @@
 package com.pandahis.histomap.contentgraph.interfaces.dto;
 
 import java.util.List;
+import java.util.Map;
 
 /** 朝代详情 · 横向泳道矩阵 */
 public record UnitSwimMatrixDTO(
@@ -15,15 +16,36 @@ public record UnitSwimMatrixDTO(
   public record AxisTick(String label, String left) {}
 
   public record Lane(
+      String key,
       String label,
+      String icon,
       String borderColor,
       String layout,
+      int totalCount,
+      Integer readCount,
+      String readProgressText,
       List<List<Bar>> collapsedRows,
       boolean hasMore,
       int moreCount,
       String moreBarLeft,
       String moreBarWidth,
-      List<Bar> extraBars
+      List<Bar> extraBars,
+      Map<String, LaneView> priorityViews,
+      int rowCount,
+      int trackHeightRpx,
+      int visibleCount
+  ) {}
+
+  public record LaneView(
+      List<List<Bar>> collapsedRows,
+      boolean hasMore,
+      int moreCount,
+      String moreBarLeft,
+      String moreBarWidth,
+      List<Bar> extraBars,
+      int rowCount,
+      int trackHeightRpx,
+      int visibleCount
   ) {}
 
   public record Bar(
@@ -43,6 +65,10 @@ public record UnitSwimMatrixDTO(
       String priority,
       String type,
       int zIndex,
-      String timeRange
+      String timeRange,
+      int startYear,
+      int endYear,
+      Integer peakYear,
+      int globalIdNumber
   ) {}
 }

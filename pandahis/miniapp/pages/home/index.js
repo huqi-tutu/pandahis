@@ -2,9 +2,12 @@ const protoPage = require('../../behaviors/proto-page.js')
 const { navBarPx } = require('../../native-utils/matrix/layout.js')
 const { CIV_TABS, buildRows, initialCiv, buildAllExpanded, toggleDynastyExpanded } = require('../../native-utils/matrix/mock-home-matrix.js')
 const { fetchHomeMatrixData } = require('../../native-utils/matrix/matrix-cloud.js')
-const { request } = require('../../native-utils/api.js')
+const { hasToken, request } = require('../../native-utils/api.js')
+const { trySilentWxLogin } = require('../../native-utils/wx-auth.js')
 const { buildNavFromRows, findActiveNavIndex } = require('../../native-utils/matrix/dynasty-nav-data.js')
 const {
+  CIV_CODE_BY_SLUG,
+  CIV_SLUG_BY_CODE,
   OVERVIEW_CIV_SPOTS,
   OVERVIEW_SPOT_TO_MATRIX_SLUG,
   buildDynastyUnitMap,
@@ -12,6 +15,9 @@ const {
 } = require('./matrix-adapter.js')
 
 const DEFAULT_OVERVIEW_MAP = '/images/world-history-dynasty-map.png'
+const HOME_MATRIX_STATE_PATH = '/me/home-matrix-state'
+const HOME_MATRIX_STATE_LOCAL_KEY = 'homeMatrixState'
+const HOME_STATE_SAVE_DELAY = 400
 
 // ─────────────────────────────────────────────────────────────────────────────
 // 【旧版】横向滑动模式常量（stackMode=false 时使用）
@@ -77,6 +83,174 @@ function enrichMatrixRows(rows) {
     yearFontSize: fitYearFontSize(row.year),
     isMajorNode:  !!(row.hxLabel && MAJOR_NODE_KEYS.has(row.hxDynastyKey)),
   }))
+}
+
+function expandedFromCollapsed(civId, collapsedKeys) {
+  const expanded = buildAllExpanded(civId)
+  ;(collapsedKeys || []).forEach(key => {
+    const k = String(key || '').trim()
+    if (k) delete expanded[k]
+  })
+  return expanded
+}
+
+function collapsedFromExpanded(civId, expandedDynasties) {
+  const allExpanded = buildAllExpanded(civId)
+  return Object.keys(allExpanded).filter(key => !expandedDynasties || !expandedDynasties[key])
+}
+
+function resolveStateCivId(state) {
+  const raw = String((state && (state.civilizationCode || state.civId || state.activeCiv)) || '').trim()
+  if (!raw) return initialCiv
+  if (CIV_TABS.some(c => c.id === raw)) return raw
+  const upper = raw.toUpperCase()
+  return CIV_SLUG_BY_CODE[upper] || initialCiv
+}
+
+function civilizationCodeForCivId(civId) {
+  return CIV_CODE_BY_SLUG[civId] || String(civId || initialCiv).toUpperCase()
+}
+
+function normalizeHomeState(raw) {
+  const data = (raw && raw.data) || raw || {}
+  const collapsed = Array.isArray(data.collapsedDynastyKeys)
+    ? data.collapsedDynastyKeys.map(k => String(k || '').trim()).filter(Boolean)
+    : []
+  return {
+    civilizationCode: String(data.civilizationCode || '').trim(),
+    civId: resolveStateCivId(data),
+    lastDynastyKey: String(data.lastDynastyKey || '').trim(),
+    collapsedDynastyKeys: collapsed,
+    lastScrollTopPx: data.lastScrollTopPx == null ? null : Number(data.lastScrollTopPx),
+    lastNavActiveIdx: data.lastNavActiveIdx == null ? null : Number(data.lastNavActiveIdx),
+    updatedAt: String(data.updatedAt || '').trim(),
+  }
+}
+
+function readLocalHomeState() {
+  try {
+    const raw = wx.getStorageSync(HOME_MATRIX_STATE_LOCAL_KEY)
+    return raw && typeof raw === 'object' ? normalizeHomeState(raw) : null
+  } catch {
+    return null
+  }
+}
+
+function writeLocalHomeState(state) {
+  try {
+    wx.setStorageSync(HOME_MATRIX_STATE_LOCAL_KEY, state)
+    debugHomeState('写入本地 Storage', state)
+  } catch (err) {
+    console.warn('[home-state] 写入本地失败', err)
+  }
+}
+
+function isHomeMatrixApiMissing(err) {
+  const detail = err && err.detail
+  if (!detail || detail.status !== 404) return false
+  return String(detail.url || '').includes('home-matrix-state')
+}
+
+function debugHomeState(label, state) {
+  try {
+    if (wx.getAccountInfoSync().miniProgram.envVersion !== 'develop') return
+    console.info('[home-state]', label, state || '(空)')
+  } catch {
+    // ignore
+  }
+}
+
+function hasMeaningfulHomeState(state) {
+  if (!state) return false
+  return Boolean(
+    state.lastDynastyKey ||
+    (state.lastNavActiveIdx != null && state.lastNavActiveIdx >= 0) ||
+    (state.lastScrollTopPx != null && state.lastScrollTopPx > 0) ||
+    (Array.isArray(state.collapsedDynastyKeys) && state.collapsedDynastyKeys.length) ||
+    state.updatedAt
+  )
+}
+
+/** 合并本地与服务端状态，避免服务端空 scroll 覆盖本地有效 viewport */
+function mergeHomeStates(local, remote) {
+  const l = local ? normalizeHomeState(local) : null
+  const r = remote ? normalizeHomeState(remote) : null
+  if (!l && !r) return null
+  if (!l) return r
+  if (!r) return l
+
+  const lScroll = l.lastScrollTopPx != null ? l.lastScrollTopPx : 0
+  const rScroll = r.lastScrollTopPx != null ? r.lastScrollTopPx : 0
+  let viewport = l
+  if (rScroll > lScroll) {
+    viewport = r
+  } else if (lScroll <= 0 && rScroll <= 0 && r.lastDynastyKey && !l.lastDynastyKey) {
+    viewport = r
+  }
+
+  const lCollapsed = l.collapsedDynastyKeys || []
+  const rCollapsed = r.collapsedDynastyKeys || []
+  let collapsed = lCollapsed
+  if (r.updatedAt && l.updatedAt) {
+    collapsed = r.updatedAt >= l.updatedAt ? rCollapsed : lCollapsed
+  } else if (rCollapsed.length > lCollapsed.length) {
+    collapsed = rCollapsed
+  }
+
+  return normalizeHomeState({
+    civilizationCode: viewport.civilizationCode || r.civilizationCode || l.civilizationCode,
+    civId: viewport.civId || l.civId || r.civId,
+    lastDynastyKey: viewport.lastDynastyKey || r.lastDynastyKey || l.lastDynastyKey,
+    lastScrollTopPx: lScroll > 0 ? lScroll : (rScroll > 0 ? rScroll : (viewport.lastScrollTopPx != null ? viewport.lastScrollTopPx : null)),
+    lastNavActiveIdx: l.lastNavActiveIdx != null ? l.lastNavActiveIdx : r.lastNavActiveIdx,
+    collapsedDynastyKeys: collapsed,
+    updatedAt: r.updatedAt || l.updatedAt,
+  })
+}
+
+/** 保存时合并：折叠/朝代变更不应把有效 scrollTop 覆盖成 0 */
+function mergePersistPayload(existing, next) {
+  const prev = existing ? normalizeHomeState(existing) : null
+  const cur = normalizeHomeState(next)
+  if (!prev) return cur
+
+  const prevScroll = prev.lastScrollTopPx > 0 ? prev.lastScrollTopPx : 0
+  const curScroll = cur.lastScrollTopPx > 0 ? cur.lastScrollTopPx : 0
+  const scrollTop = curScroll > 0 ? curScroll : prevScroll
+
+  const prevNav = prev.lastNavActiveIdx != null && prev.lastNavActiveIdx >= 0 ? prev.lastNavActiveIdx : null
+  const curNav = cur.lastNavActiveIdx != null && cur.lastNavActiveIdx >= 0 ? cur.lastNavActiveIdx : null
+  const navIdx = curScroll > 0
+    ? (curNav != null ? curNav : prevNav)
+    : (curNav != null ? curNav : prevNav)
+
+  let dynastyKey = cur.lastDynastyKey || prev.lastDynastyKey || ''
+  if (curScroll > 0 && cur.lastDynastyKey) {
+    dynastyKey = cur.lastDynastyKey
+  } else if (curScroll <= 0 && prevScroll > 0 && prev.lastDynastyKey) {
+    dynastyKey = prev.lastDynastyKey
+  }
+
+  return normalizeHomeState(Object.assign({}, cur, {
+    lastScrollTopPx: scrollTop,
+    lastNavActiveIdx: navIdx,
+    lastDynastyKey: dynastyKey,
+  }))
+}
+
+function findNavIndexByDynastyKey(key, navItems) {
+  const k = String(key || '').trim()
+  if (!k || !navItems || !navItems.length) return -1
+  return navItems.findIndex(item => item.key === k || item.label === k)
+}
+
+function findMatrixRowKeyForDynasty(dynastyKey, matrixRows) {
+  const k = String(dynastyKey || '').trim()
+  if (!k || !matrixRows || !matrixRows.length) return ''
+  const row = matrixRows.find(r =>
+    r.hxDynastyKey === k || r.dynastyKey === k || r.hxLabel === k
+  )
+  return row && row.key ? row.key : ''
 }
 
 function buildLoopItems(civIndex) {
@@ -243,6 +417,7 @@ Page({
     matrixRows:        [],
     matrixBlocks:      [],
     matrixScrollTop:   0,
+    matrixScrollIntoView: '',
     navItems:          [],
     navActiveIdx:      -1,
     navActive:         false,
@@ -301,15 +476,32 @@ Page({
     const matrixHeight = Math.max(200, windowHeight - scrollAreaTop)
     const matrixScrollBottomPad = calcMatrixScrollBottomPad(sw, safeBottomPx)
     const pickerMetrics = calcCivPickerMetrics(windowHeight, headerPadPx, sw)
+    const cachedLocal = readLocalHomeState()
+    this._cachedHomeState = cachedLocal
+    const bootCiv = cachedLocal && cachedLocal.civId ? cachedLocal.civId : initialCiv
+    const bootCivIndex = Math.max(0, CIV_TABS.findIndex(c => c.id === bootCiv))
+    const bootExpanded = cachedLocal
+      ? expandedFromCollapsed(bootCiv, cachedLocal.collapsedDynastyKeys)
+      : defaultExpanded
+    if (cachedLocal && cachedLocal.lastScrollTopPx > 0) {
+      this._lastScrollTop = cachedLocal.lastScrollTopPx
+    }
+    if (cachedLocal && cachedLocal.lastDynastyKey) {
+      this._lastDynastyKey = cachedLocal.lastDynastyKey
+    }
+    if (cachedLocal && cachedLocal.lastNavActiveIdx != null && cachedLocal.lastNavActiveIdx >= 0) {
+      this._lastNavActiveIdx = cachedLocal.lastNavActiveIdx
+    }
 
     this.setData(Object.assign({
-      activeCiv:         initialCiv,
-      civIndex:          0,
-      expandedDynasties: defaultExpanded,
+      activeCiv:         bootCiv,
+      civIndex:          bootCivIndex,
+      expandedDynasties: bootExpanded,
       tabAreaH:          CIV_TEXT_TAB_BAR_RPX,
       civStackItems:     [],
-      civTabsLoop:       buildLoopItems(0),
-      civScrollLeft:     calcCivScroll(0, sw),
+      civTabsLoop:       buildLoopItems(bootCivIndex),
+      civScrollLeft:     calcCivScroll(bootCivIndex, sw),
+      civTextScrollLeft: calcTextScroll(bootCivIndex, sw),
       civScrollAnim:     false,
       scrollAreaTop,
       matrixHeight,
@@ -328,6 +520,9 @@ Page({
     this._preloadCivImages()
     this._lastScrollTop = 0
     this._skipShowRefresh = true
+    this._homeStateLoaded = false
+    this._restoringHomeState = false
+    this._homeStatePromise = this._loadHomeMatrixState()
     this._matrixDataPromise = this._refreshMatrixData()
     this._gridDataPromise = this._loadGridData()
     wx.nextTick(() => this._syncTabAlphaFromDom())
@@ -345,6 +540,40 @@ Page({
       console.warn('[home] grid load failed', err)
       this._dynastyUnitMap = {}
     })
+  },
+
+  _loadHomeMatrixState() {
+    const localState = readLocalHomeState()
+    debugHomeState('启动读取本地', localState)
+    if (this._homeMatrixRemoteUnavailable) {
+      return Promise.resolve(localState)
+    }
+    const ensureToken = hasToken() ? Promise.resolve(true) : trySilentWxLogin()
+    return ensureToken.then(ok => {
+      if (!ok || !hasToken()) {
+        return localState
+      }
+      return request(HOME_MATRIX_STATE_PATH, { auth: true }).then(res => {
+        const remoteState = normalizeHomeState(res && res.data ? res.data : null)
+        const merged = mergeHomeStates(localState, remoteState)
+        if (merged && hasMeaningfulHomeState(merged)) {
+          writeLocalHomeState(merged)
+          return merged
+        }
+        return localState || remoteState
+      }).catch(err => {
+        if (isHomeMatrixApiMissing(err)) {
+          this._homeMatrixRemoteUnavailable = true
+          console.info('[home-state] 本地后端未部署 /me/home-matrix-state，仅使用本地 Storage（键名 homeMatrixState）')
+          return localState
+        }
+        const msg = String(err && err.message || '')
+        if (msg !== 'UNAUTHORIZED') {
+          console.warn('[home] home matrix state load failed', err)
+        }
+        return localState
+      })
+    }).catch(() => localState)
   },
 
   /** 每次进入首页：云函数拉取王朝 / 帝王数据 */
@@ -404,19 +633,27 @@ Page({
       civStackItems:  buildStackItems(this.data.civIndex, sw),
     }, calcCivPickerMetrics(windowHeight, headerPadPx, sw)))
 
-    const loadAfterData = () => {
+    const loadAfterData = (homeState) => {
       this._readyLoaded = true
-      this._loadMatrix(this.data.activeCiv, this._pendingExpanded || this.data.expandedDynasties)
+      const state = homeState || this._cachedHomeState || readLocalHomeState()
+      this._applyInitialHomeMatrixState(state)
     }
-    if (this._matrixDataPromise) {
-      this._matrixDataPromise.then(loadAfterData).catch(loadAfterData)
+    if (this._matrixDataPromise || this._homeStatePromise) {
+      Promise.all([
+        (this._matrixDataPromise || Promise.resolve()).catch(err => {
+          console.warn('[home] matrix data load failed before ready', err)
+          return null
+        }),
+        this._homeStatePromise || Promise.resolve(null),
+      ]).then(([, homeState]) => loadAfterData(homeState)).catch(() => loadAfterData(null))
     } else {
-      loadAfterData()
+      loadAfterData(null)
     }
   },
 
   /** 构建并注入矩阵行（失败时降级为收起态） */
-  _loadMatrix(civId, expandedDynasties) {
+  _loadMatrix(civId, expandedDynasties, onReady) {
+    const done = typeof onReady === 'function' ? onReady : null
     try {
       const layout = buildRows(civId, expandedDynasties || {})
       if (!layout.rows || !layout.rows.length) {
@@ -433,8 +670,10 @@ Page({
         matrixSubCards:   layout.subCards   || [],
         matrixTotalH:     layout.totalH     || 0,
         civScrollAnim: true,
+      }, () => {
+        this._cacheNavRect()
+        if (done) done()
       })
-      this._cacheNavRect()
     } catch (err) {
       console.error('[home-matrix] _loadMatrix failed', err)
       try {
@@ -450,11 +689,239 @@ Page({
           matrixSubCards:   layout.subCards   || [],
           matrixTotalH:     layout.totalH     || 0,
           expandedDynasties: {},
+        }, () => {
+          this._cacheNavRect()
+          if (done) done()
         })
       } catch (err2) {
         console.error('[home-matrix] fallback load failed', err2)
+        if (done) done()
       }
     }
+  },
+
+  _applyInitialHomeMatrixState(homeState) {
+    this._homeStateLoaded = true
+    const state = homeState ? normalizeHomeState(homeState) : null
+    this._cachedHomeState = state
+    const activeCiv = state ? state.civId : this.data.activeCiv
+    const civIndex = Math.max(0, CIV_TABS.findIndex(c => c.id === activeCiv))
+    const resolvedCiv = CIV_TABS[civIndex] ? CIV_TABS[civIndex].id : initialCiv
+    const expandedDynasties = state
+      ? expandedFromCollapsed(resolvedCiv, state.collapsedDynastyKeys)
+      : (this._pendingExpanded || this.data.expandedDynasties || buildAllExpanded(resolvedCiv))
+    const sw = this._screenW || 375
+
+    this.setData({
+      activeCiv: resolvedCiv,
+      civIndex,
+      expandedDynasties,
+      civTextScrollLeft: calcTextScroll(civIndex, sw),
+      civTabsLoop: buildLoopItems(civIndex),
+      civScrollLeft: calcCivScroll(civIndex, sw),
+      civScrollAnim: false,
+    })
+    this._lastDynastyKey = state && state.lastDynastyKey ? state.lastDynastyKey : ''
+    this._loadMatrix(resolvedCiv, expandedDynasties, () => {
+      this._waitForMatrixLayout(() => {
+        if (state && hasMeaningfulHomeState(state)) {
+          this._restoreViewportFromState(state)
+        } else if (!state) {
+          this._scrollToTop()
+        }
+        this.setData({ civScrollAnim: true })
+      })
+    })
+  },
+
+  /** 等待矩阵布局完成后再恢复滚动，避免 scroll-top 对空内容无效 */
+  _waitForMatrixLayout(callback, attempt) {
+    const tryCount = attempt != null ? attempt : 0
+    const ready = this.data.matrixTotalH > 0 && (this.data.navItems || []).length > 0
+    if (ready || tryCount >= 24) {
+      setTimeout(callback, ready ? 100 : 0)
+      return
+    }
+    setTimeout(() => this._waitForMatrixLayout(callback, tryCount + 1), 50)
+  },
+
+  _restoreViewportFromState(state) {
+    const normalized = normalizeHomeState(state)
+    debugHomeState('准备恢复滚动', normalized)
+    if (!hasMeaningfulHomeState(normalized)) {
+      this._scrollToTop()
+      return
+    }
+
+    const navItems = this.data.navItems || []
+    const matrixRows = this.data.matrixRows || []
+    const ratio = this._ratio || 0.5
+    const maxScroll = Math.max(0, this.data.matrixTotalH * ratio - this.data.matrixHeight)
+    let navIdx = -1
+    let navItem = null
+    let scrollTop = 0
+    let rowKey = ''
+
+    if (normalized.lastNavActiveIdx != null && normalized.lastNavActiveIdx >= 0 && normalized.lastNavActiveIdx < navItems.length) {
+      navIdx = normalized.lastNavActiveIdx
+      navItem = navItems[navIdx]
+    }
+    if (!navItem && normalized.lastDynastyKey) {
+      navIdx = findNavIndexByDynastyKey(normalized.lastDynastyKey, navItems)
+      navItem = navIdx >= 0 ? navItems[navIdx] : null
+    }
+
+    if (normalized.lastScrollTopPx != null && normalized.lastScrollTopPx > 0) {
+      scrollTop = normalized.lastScrollTopPx
+    } else if (navItem && navItem.yPx > 0) {
+      scrollTop = navItem.yPx
+    } else if (normalized.lastDynastyKey) {
+      rowKey = findMatrixRowKeyForDynasty(normalized.lastDynastyKey, matrixRows)
+      const row = matrixRows.find(r =>
+        r.key === rowKey ||
+        r.hxDynastyKey === normalized.lastDynastyKey ||
+        r.dynastyKey === normalized.lastDynastyKey ||
+        r.hxLabel === normalized.lastDynastyKey
+      )
+      scrollTop = row ? Math.round((row.y || 0) * ratio) : 0
+      if (!navItem) {
+        navIdx = findActiveNavIndex(scrollTop, navItems)
+        navItem = navIdx >= 0 ? navItems[navIdx] : null
+      }
+    }
+
+    scrollTop = Math.max(0, Math.min(maxScroll, scrollTop))
+    if (navItem && navItem.key) {
+      this._lastDynastyKey = navItem.key
+    } else if (normalized.lastDynastyKey) {
+      this._lastDynastyKey = normalized.lastDynastyKey
+    }
+    if (navIdx < 0 && navItem) {
+      navIdx = findNavIndexByDynastyKey(navItem.key, navItems)
+    }
+    if (!rowKey && normalized.lastDynastyKey) {
+      rowKey = findMatrixRowKeyForDynasty(normalized.lastDynastyKey, matrixRows)
+    }
+
+    this._applyProgrammaticScroll({
+      scrollTop,
+      navIdx,
+      scrollIntoView: rowKey ? ('ts_' + rowKey) : '',
+      isRestore: true,
+    })
+  },
+
+  /** 程序化滚动：冷启动用 scroll-into-view + scroll-top，不先滚到顶部 */
+  _applyProgrammaticScroll(opts) {
+    const scrollTop = Math.max(0, Math.round(opts.scrollTop || 0))
+    const navIdx = opts.navIdx != null ? opts.navIdx : -1
+    const scrollIntoView = String(opts.scrollIntoView || '').trim()
+    const lockMs = opts.isRestore ? 1200 : 120
+
+    this._restoringHomeState = !!opts.isRestore
+    this._lastScrollTop = scrollTop
+    this._scrollTopNonce = (this._scrollTopNonce || 0) + 1
+
+    const applyTarget = () => {
+      const patch = {
+        navDragActive: true,
+        matrixScrollTop: scrollTop,
+        navActiveIdx: navIdx >= 0 ? navIdx : this.data.navActiveIdx,
+      }
+      if (scrollIntoView) patch.matrixScrollIntoView = scrollIntoView
+      this.setData(patch, () => {
+        if (scrollIntoView) {
+          setTimeout(() => this.setData({ matrixScrollIntoView: '' }), 200)
+        }
+        if (opts.isRestore) {
+          this._verifyScrollRestore(scrollTop, navIdx, scrollIntoView, 0)
+        } else {
+          this._releaseProgrammaticScrollLock(lockMs)
+        }
+      })
+    }
+
+    if (opts.isRestore && scrollTop > 0) {
+      this.setData({ navDragActive: true, matrixScrollIntoView: '' }, () => {
+        setTimeout(applyTarget, 150)
+      })
+      return
+    }
+
+    this.setData({ navDragActive: true, matrixScrollTop: 0, matrixScrollIntoView: '' }, () => {
+      setTimeout(applyTarget, opts.isRestore ? 120 : 20)
+    })
+  },
+
+  _verifyScrollRestore(expectedTop, navIdx, scrollIntoView, attempt) {
+    const that = this
+    wx.createSelectorQuery().in(this).select('#matrixScroll').scrollOffset(function(res) {
+      const current = res && res.scrollTop != null ? res.scrollTop : 0
+      const diff = Math.abs(current - expectedTop)
+      if (diff > 12 && attempt < 6) {
+        const patch = {
+          navDragActive: true,
+          matrixScrollTop: expectedTop + (attempt % 2 ? 1 : 0),
+          navActiveIdx: navIdx >= 0 ? navIdx : that.data.navActiveIdx,
+        }
+        if (attempt >= 3 && scrollIntoView) {
+          patch.matrixScrollIntoView = scrollIntoView
+        }
+        that.setData(patch, () => {
+          if (patch.matrixScrollIntoView) {
+            setTimeout(() => that.setData({ matrixScrollIntoView: '' }), 200)
+          }
+          setTimeout(function() {
+            that._verifyScrollRestore(expectedTop, navIdx, scrollIntoView, attempt + 1)
+          }, 220)
+        })
+        return
+      }
+      that._lastScrollTop = current > 0 ? current : expectedTop
+      that._restoringHomeState = false
+      that.setData({
+        navDragActive: false,
+        navActiveIdx: navIdx >= 0 ? navIdx : that.data.navActiveIdx,
+      })
+    }).exec()
+  },
+
+  _scrollToTop() {
+    this._applyProgrammaticScroll({ scrollTop: 0, navIdx: 0, isRestore: true })
+  },
+
+  _scrollToDynastyStart(dynastyKey) {
+    const key = String(dynastyKey || '').trim()
+    if (!key) {
+      this._scrollToTop()
+      return
+    }
+    const ratio = this._ratio || 0.5
+    const navItem = (this.data.navItems || []).find(item => item.key === key || item.label === key)
+    const row = (this.data.matrixRows || []).find(r =>
+      r.hxDynastyKey === key || r.dynastyKey === key || r.hxLabel === key
+    )
+    const rawTop = navItem ? navItem.yPx : (row ? Math.round((row.y || 0) * ratio) : 0)
+    const maxScroll = Math.max(0, this.data.matrixTotalH * ratio - this.data.matrixHeight)
+    const scrollTop = Math.max(0, Math.min(maxScroll, rawTop))
+    this._restoringHomeState = true
+    this.setData({
+      matrixScrollTop: scrollTop,
+      navDragActive: true,
+    })
+    this._lastScrollTop = scrollTop
+    this._updateNavHighlight(scrollTop)
+    this._releaseProgrammaticScrollLock()
+  },
+
+  _releaseProgrammaticScrollLock(lockMs) {
+    const delay = lockMs != null ? lockMs : 120
+    if (this._homeStateScrollTimer) clearTimeout(this._homeStateScrollTimer)
+    this._homeStateScrollTimer = setTimeout(() => {
+      this._restoringHomeState = false
+      this.setData({ navDragActive: false })
+      this._homeStateScrollTimer = null
+    }, delay)
   },
 
   /** 文字 Tab 固定展示，矩阵滚动不再切换 Tab 形态 */
@@ -465,6 +932,108 @@ Page({
     if (activeIdx !== this.data.navActiveIdx) {
       this.setData({ navActiveIdx: activeIdx })
     }
+    const item = activeIdx >= 0 ? (this.data.navItems || [])[activeIdx] : null
+    if (item && item.key) {
+      this._lastDynastyKey = item.key
+      this._lastNavActiveIdx = activeIdx
+    }
+  },
+
+  /** 退出前读取 scroll-view 真实 scrollTop，避免缓存滞后 */
+  _syncScrollTopFromDom(done) {
+    const finish = typeof done === 'function' ? done : function() {}
+    try {
+      wx.createSelectorQuery().in(this).select('#matrixScroll').scrollOffset(res => {
+        if (res && res.scrollTop != null && !this._restoringHomeState) {
+          this._lastScrollTop = res.scrollTop
+          this._updateNavHighlight(res.scrollTop)
+        }
+        finish()
+      }).exec()
+    } catch {
+      finish()
+    }
+  },
+
+  _scheduleHomeMatrixStateSave(immediate) {
+    if (this._restoringHomeState && !immediate) return
+    if (this._homeStateSaveTimer) {
+      clearTimeout(this._homeStateSaveTimer)
+      this._homeStateSaveTimer = null
+    }
+    if (immediate) {
+      this._persistHomeViewportState(true)
+      return
+    }
+    this._homeStateSaveTimer = setTimeout(() => {
+      this._homeStateSaveTimer = null
+      this._persistHomeViewportState(true)
+    }, HOME_STATE_SAVE_DELAY)
+  },
+
+  _saveHomeMatrixState() {
+    this._persistHomeViewportState(false)
+  },
+
+  /** 写入本地缓存；有登录态时同步服务端 */
+  _persistHomeViewportState(syncRemote) {
+    this._syncScrollTopFromDom(() => this._writeHomeViewportState(syncRemote))
+  },
+
+  _writeHomeViewportState(syncRemote) {
+    const activeCiv = this.data.activeCiv || initialCiv
+    const navItems = this.data.navItems || []
+    const scrollTopPx = Math.max(0, Math.round(this._lastScrollTop || 0))
+    const navIdx = this.data.navActiveIdx != null && this.data.navActiveIdx >= 0
+      ? this.data.navActiveIdx
+      : findActiveNavIndex(scrollTopPx, navItems)
+    const rawPayload = {
+      civilizationCode: civilizationCodeForCivId(activeCiv),
+      civId: activeCiv,
+      lastDynastyKey: this._lastDynastyKey || this._currentDynastyKeyFromScroll() || '',
+      collapsedDynastyKeys: collapsedFromExpanded(activeCiv, this.data.expandedDynasties || {}),
+      lastScrollTopPx: scrollTopPx,
+      lastNavActiveIdx: navIdx >= 0 ? navIdx : null,
+      updatedAt: new Date().toISOString(),
+    }
+    if (
+      !rawPayload.lastDynastyKey &&
+      !rawPayload.lastScrollTopPx &&
+      rawPayload.lastNavActiveIdx == null &&
+      !(rawPayload.collapsedDynastyKeys || []).length
+    ) {
+      return
+    }
+    const existing = this._cachedHomeState || readLocalHomeState()
+    const payload = mergePersistPayload(existing, rawPayload)
+    writeLocalHomeState(payload)
+    this._cachedHomeState = payload
+    if (!syncRemote || !hasToken() || this._homeMatrixRemoteUnavailable) return
+    request(HOME_MATRIX_STATE_PATH, {
+      method: 'PUT',
+      auth: true,
+      data: {
+        civilizationCode: payload.civilizationCode,
+        lastDynastyKey: payload.lastDynastyKey,
+        collapsedDynastyKeys: payload.collapsedDynastyKeys,
+        lastScrollTopPx: payload.lastScrollTopPx,
+      },
+    }).catch(err => {
+      if (isHomeMatrixApiMissing(err)) {
+        this._homeMatrixRemoteUnavailable = true
+        return
+      }
+      const msg = String(err && err.message || '')
+      if (msg !== 'UNAUTHORIZED') {
+        console.warn('[home] home matrix state save failed', err)
+      }
+    })
+  },
+
+  _currentDynastyKeyFromScroll() {
+    const activeIdx = findActiveNavIndex(this._lastScrollTop || 0, this.data.navItems || [])
+    const item = activeIdx >= 0 ? (this.data.navItems || [])[activeIdx] : null
+    return item && item.key ? item.key : ''
   },
 
   _applyTabAlphaFromScroll() {},
@@ -498,7 +1067,12 @@ Page({
 
     this._refreshMatrixData().then(() => {
       if (this._readyLoaded) {
-        this._loadMatrix(this.data.activeCiv, this.data.expandedDynasties)
+        const restoreState = this._cachedHomeState || readLocalHomeState()
+        this._loadMatrix(this.data.activeCiv, this.data.expandedDynasties, () => {
+          if (restoreState && hasMeaningfulHomeState(restoreState)) {
+            this._restoreViewportFromState(restoreState)
+          }
+        })
       }
     })
   },
@@ -506,6 +1080,13 @@ Page({
   onUnload() {
     if (this._matrixLoadTimer) clearTimeout(this._matrixLoadTimer)
     if (this._civSwitchTimer) clearTimeout(this._civSwitchTimer)
+    if (this._homeStateSaveTimer) clearTimeout(this._homeStateSaveTimer)
+    if (this._homeStateScrollTimer) clearTimeout(this._homeStateScrollTimer)
+    this._syncScrollTopFromDom(() => this._persistHomeViewportState(true))
+  },
+
+  onHide() {
+    this._syncScrollTopFromDom(() => this._persistHomeViewportState(true))
   },
 
   // ── 用路径更新 civStackItems 的每个 cardStyle，保留 DOM 节点让 CSS transition 生效
@@ -520,7 +1101,7 @@ Page({
 
   _selectCiv(activeCiv, civIndex) {
     if (civIndex === this.data.civIndex && activeCiv === this.data.activeCiv) return
-    const expandedDynasties = activeCiv === 'huaxia' ? buildAllExpanded('huaxia') : {}
+    const expandedDynasties = buildAllExpanded(activeCiv)
     const sw = (this._screenW) || 375
 
     if (this._matrixLoadTimer) clearTimeout(this._matrixLoadTimer)
@@ -543,6 +1124,8 @@ Page({
 
     this._matrixLoadTimer = setTimeout(() => {
       this._loadMatrix(activeCiv, expandedDynasties)
+      this._lastDynastyKey = this._currentDynastyKeyFromScroll()
+      this._scheduleHomeMatrixStateSave()
     }, 300)
   },
 
@@ -613,12 +1196,18 @@ Page({
 
 
   onMatrixScroll(e) {
-    const scrollTop = e.detail.scrollTop
-    this._lastScrollTop = scrollTop
+    const detailTop = e && e.detail ? e.detail.scrollTop : 0
+    if (detailTop > 0 || !this._lastScrollTop) {
+      this._lastScrollTop = detailTop
+    }
+    const scrollTop = this._lastScrollTop
     this._applyTabAlphaFromScroll(scrollTop)
-    this._updateNavHighlight(scrollTop)
-    // nav 已收起但 navDragActive 仍锁定 → 用户手动滚动时释放
-    if (this.data.navDragActive && !this.data.navActive && !this._navPendingActivation) {
+    if (!this._restoringHomeState) {
+      this._updateNavHighlight(scrollTop)
+      this._scheduleHomeMatrixStateSave()
+    }
+    // nav 已收起但 navDragActive 仍锁定 → 用户手动滚动时释放（恢复期间不可打断）
+    if (!this._restoringHomeState && this.data.navDragActive && !this.data.navActive && !this._navPendingActivation) {
       this.setData({ navDragActive: false })
     }
     // 用户手动滚动时收起导航栏（非 drag 状态）
@@ -628,10 +1217,14 @@ Page({
     }
   },
 
-  // 滚动结束后补一次同步，覆盖惯性滚动末帧
-  onMatrixScrollEnd(e) {
-    const scrollTop = (e && e.detail && e.detail.scrollTop) || 0
-    this._applyTabAlphaFromScroll(scrollTop, true)
+  // 滚动结束后从 DOM 读取真实位置再保存（enhanced scroll-view 的 detail.scrollTop 可能不准）
+  onMatrixScrollEnd() {
+    if (this._restoringHomeState) return
+    this._syncScrollTopFromDom(() => {
+      this._applyTabAlphaFromScroll(this._lastScrollTop, true)
+      this._updateNavHighlight(this._lastScrollTop)
+      this._writeHomeViewportState(true)
+    })
   },
 
   // ─── 导航索引点击跳转 ──────────────────────────────────────────
@@ -787,6 +1380,14 @@ Page({
     if (this.data.navActive) {
       // 手指松开 → 立即收起导航栏，无需 3s 延迟
       this._isNavDragging = false
+      const idx = this.data.navActiveIdx
+      const item = idx >= 0 ? (this.data.navItems || [])[idx] : null
+      if (item && item.key) {
+        this._lastDynastyKey = item.key
+        this._lastNavActiveIdx = idx
+        if (item.yPx >= 0) this._lastScrollTop = item.yPx
+        this._persistHomeViewportState(true)
+      }
       this._navLastActiveIdx = -1
       this.setData({ navActive: false })
       this._hideNavHud()
@@ -841,9 +1442,13 @@ Page({
       matrixScrollTop: snapTop,
       navDragActive: true,
     })
+    this._lastScrollTop = snapTop
+    this._lastDynastyKey = item.key
+    this._lastNavActiveIdx = idx
     // 更新高亮和 HUD
     this.setData({ navActiveIdx: idx })
     this._showNavHud(navItems[idx])
+    this._persistHomeViewportState(true)
   },
 
   // ─── HUD 显示/隐藏 ─────────────────────────────────────────────
@@ -1031,7 +1636,10 @@ Page({
     const civName = civTab ? civTab.name : '华夏'
     const expanded = toggleDynastyExpanded(dynastyKey, this.data.expandedDynasties, civName)
     this.setData({ expandedDynasties: expanded })
-    this._loadMatrix(this.data.activeCiv, expanded)
+    this._lastDynastyKey = dynastyKey
+    this._loadMatrix(this.data.activeCiv, expanded, () => {
+      this._syncScrollTopFromDom(() => this._persistHomeViewportState(true))
+    })
   },
   noop() {}
 })

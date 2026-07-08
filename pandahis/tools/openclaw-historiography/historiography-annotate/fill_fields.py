@@ -855,6 +855,11 @@ def finalize_entries(entries: list) -> None:
         "_坐标主轴说明",
         "年规则",
         "年规则备注",
+        # 峰值年审计元数据（Step4d peak_year.py 写入）
+        "_峰值LLM依据",
+        "_峰值待审",
+        "_峰值兜底级别",
+        "_峰值人工锁定",
     })
     for entry in entries:
         auto = entry.get("_auto_filled")

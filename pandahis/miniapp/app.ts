@@ -47,4 +47,29 @@ App<IAppOption>({
   onShow(options: WechatMiniprogram.App.LaunchShowOption) {
     stashInviteFromLaunchOptions(options)
   },
+  onHide() {
+    try {
+      const pages = getCurrentPages()
+      for (let i = pages.length - 1; i >= 0; i--) {
+        const page = pages[i] as WechatMiniprogram.Page.Instance<
+          WechatMiniprogram.IAnyObject,
+          WechatMiniprogram.IAnyObject
+        > & {
+          _persistHomeViewportState?: (syncRemote: boolean) => void
+          _syncScrollTopFromDom?: (done?: () => void) => void
+          route?: string
+        }
+        const route = page?.route ? String(page.route) : ''
+        if (!route.endsWith('home/index')) continue
+        if (page._syncScrollTopFromDom) {
+          page._syncScrollTopFromDom(() => page._persistHomeViewportState?.(true))
+        } else {
+          page._persistHomeViewportState?.(true)
+        }
+        break
+      }
+    } catch {
+      // ignore
+    }
+  },
 })

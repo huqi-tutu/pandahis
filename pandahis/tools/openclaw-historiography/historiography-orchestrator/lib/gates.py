@@ -6,7 +6,7 @@ import json
 import subprocess
 import sys
 from pathlib import Path
-from typing import Tuple
+from typing import Dict, Tuple
 
 from lib.config import ANNOTATE_DIR, AUDIT_DIR, PIPELINE_DIR, get_work_config, paths
 
@@ -384,6 +384,42 @@ def step4_year_quality_issues(skeleton: Path) -> list:
     with open(skeleton, encoding="utf-8") as f:
         data = json.load(f)
     return validate_year_quality(data.get("entries") or [])
+
+
+def step4_peak_year(skeleton: Path, *, use_llm: bool = True) -> Tuple[Dict[str, int], list]:
+    """Step4d：年份终态后标注峰值年（规则 → LLM 分批 → 兜底）。失败不抛异常。"""
+    with open(skeleton, encoding="utf-8") as f:
+        data = json.load(f)
+    if not (data.get("entries") or []):
+        return {"total": 0, "skipped_empty": 1}, ["无 entries，跳过峰值年"]
+
+    sys.path.insert(0, str(ANNOTATE_DIR))
+    from peak_year import annotate_skeleton  # noqa: E402
+
+    review_dir = paths()["annotate_work"]
+    stats, logs = annotate_skeleton(
+        skeleton,
+        use_llm=use_llm,
+        review_dir=review_dir,
+    )
+    return stats, logs
+
+
+def step4_peak_verify(skeleton: Path) -> Tuple[bool, str]:
+    """峰值年硬校验（缺字段/越界/非法类型）；低置信仅待审，不 fail。"""
+    with open(skeleton, encoding="utf-8") as f:
+        data = json.load(f)
+    entries = data.get("entries") or []
+    if not entries:
+        return True, "无 entries，跳过峰值校验"
+
+    sys.path.insert(0, str(ANNOTATE_DIR))
+    from peak_year import verify_entries_peak  # noqa: E402
+
+    ok, issues = verify_entries_peak(entries)
+    if ok:
+        return True, "峰值年硬校验通过"
+    return False, "\n".join(issues[:30])
 
 
 def verify_step4_final(skeleton: Path) -> Tuple[bool, str]:

@@ -12,10 +12,14 @@ VALUES
   ('huaxia_song_shenzong', '宋神宗', '宋', 'dyn_song_hx', '熙宁', 1, 1067, 1085, 18, 5, '["王安石变法","乌台诗案"]', '宋神宗在位推行熙宁变法。', 1),
   ('huaxia_song_zhezong', '宋哲宗', '宋', 'dyn_song_hx', '元符', 1, 1085, 1100, 15, 4, '[]', '宋哲宗，神宗之子。', 1);
 
-INSERT INTO historical_box (id, unit_id, title, category_key, blurb, start_year, end_year, importance_level, status, detail_md, original_ref_json)
+INSERT INTO historical_box (
+  id, unit_id, title, category_key, blurb, start_year, end_year,
+  priority_code, priority_reason, importance_level, peak_year, peak_reason, peak_type,
+  status, detail_md, original_ref_json
+)
 VALUES
-  ('box_wutai_1079', 'huaxia_song_shenzong', '乌台诗案', 'shilue', '文字狱', 1079, 1079, 5, 1, '苏轼文字狱。', '{}'),
-  ('box_bianfa', 'huaxia_song_shenzong', '熙宁变法', 'dianzhi', '变法', 1069, 1076, 4, 1, '变法概述。', '{}');
+  ('box_wutai_1079', 'huaxia_song_shenzong', '乌台诗案', 'shilue', '文字狱', 1079, 1079, 'P0', '测试优先级', 0, 1079, '乌台诗案发生', 'event_climax', 1, '苏轼文字狱。', '{}'),
+  ('box_bianfa', 'huaxia_song_shenzong', '熙宁变法', 'dianzhi', '变法', 1069, 1076, 'P0', '测试优先级', 0, 1069, '变法开始', 'reform_start', 1, '变法概述。', '{}');
 
 INSERT INTO box_graph_node (box_id, node_key, node_type, name, extra_json)
 VALUES ('box_wutai_1079', 'person_sushi', 'person', '苏轼', '{"category":"人物","role":"主角","level":"一级","lineage":"父亲 · 苏洵","summary":"北宋文学家苏轼。"}');

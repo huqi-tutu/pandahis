@@ -142,93 +142,18 @@
                   wx:for="{{swim.lanes}}"
                   wx:for-index="li"
                   wx:key="label"
-                  class="dyn-swim-lane lane-{{li}}"
+                  class="dyn-swim-lane"
+                  style="height: {{item.laneHeightRpx || item.trackHeightRpx || 96}}rpx;"
                 >
-                  <view class="dyn-swim-head-sticky dyn-swim-lane-head" style="border-left-color: {{item.borderColor}};">
+                  <view
+                    class="dyn-swim-head-sticky dyn-swim-lane-head"
+                    style="background: {{item.laneHeadBg}};"
+                  >
                     <text class="dyn-swim-lane-head-label">{{item.label}}</text>
+                    <text class="dyn-swim-lane-progress">{{item.readProgressText || '0/0'}}</text>
                   </view>
 
-                  <!-- 人物密集泳道（文臣/武将） -->
-                  <view wx:if="{{item.layout === 'shichen'}}" class="dyn-swim-track" style="width: {{swim.sheetWidthRpx}}rpx;">
-                              <!-- 泳道网格线 -->
-          <view class="dyn-swim-lane-grid">
-            <block wx:for="{{swim.gridLines}}" wx:key="left">
-              <view class="dyn-swim-grid-line" style="left: {{item.left}};"></view>
-            </block>
-          </view>
-
-                    <view class="dyn-swim-stack dyn-swim-stack--shichen">
-                      <view
-                        wx:for="{{item.collapsedRows}}"
-                        wx:for-item="row"
-                        wx:for-index="ri"
-                        wx:key="ri"
-                        class="dyn-swim-row"
-                      >
-                        <view
-                          wx:for="{{row}}"
-                          wx:for-item="bar"
-                          wx:key="title"
-                          class="dyn-shichen-unit"
-                          style="left: {{bar.unitLeft}}; width: calc({{bar.unitWidth}} - 2rpx); z-index: {{bar.zIndex || 10}};"
-                          bindtap="onBarTap"
-                          data-box="{{bar.boxId}}"
-                        >
-                          <view class="dyn-shichen-line dyn-shichen-line--left" style="width: {{bar.lineLeftW}};"></view>
-                          <view class="dyn-shichen-chip dyn-shichen-chip--{{bar.type || 'default'}}" style="left: {{bar.chipLeft}};">{{bar.title}}</view>
-                          <view class="dyn-shichen-line dyn-shichen-line--right" style="left: {{bar.lineRightL}}; width: {{bar.lineRightW}};"></view>
-                        </view>
-                      </view>
-                    </view>
-                  </view>
-
-                  <!-- 连续型泳道 -->
-                  <view wx:elif="{{item.layout === 'continuous'}}" class="dyn-swim-track" style="width: {{swim.sheetWidthRpx}}rpx;">
-                    <!-- 泳道网格线 -->
-                    <view class="dyn-swim-lane-grid">
-                      <block wx:for="{{swim.gridLines}}" wx:key="left">
-                        <view class="dyn-swim-grid-line" style="left: {{item.left}};"></view>
-                      </block>
-                    </view>
-                    <view class="dyn-swim-stack dyn-swim-stack--continuous">
-                      <view
-                        wx:for="{{item.collapsedRows}}"
-                        wx:for-item="row"
-                        wx:for-index="ri"
-                        wx:key="ri"
-                        class="dyn-swim-row"
-                      >
-                        <view
-                          wx:for="{{row}}"
-                          wx:for-item="bar"
-                          wx:key="title"
-                          class="dyn-continuous-unit"
-                          style="left: {{bar.unitLeft}}; width: calc({{bar.unitWidth}} - 2rpx); z-index: {{bar.zIndex || 10}};"
-                          bindtap="onBarTap"
-                          data-box="{{bar.boxId}}"
-                        >
-                          <view class="dyn-continuous-line dyn-continuous-line--left" style="width: {{bar.lineLeftW}};"></view>
-                          <view class="dyn-continuous-chip dyn-continuous-chip--{{bar.priority}}" style="left: {{bar.chipLeft}}; width: {{bar.chipWidth}};">{{bar.title}}</view>
-                          <view class="dyn-continuous-line dyn-continuous-line--right" style="left: {{bar.lineRightL}}; width: {{bar.lineRightW}};"></view>
-                        </view>
-                      </view>
-
-                      <view wx:if="{{item.hasMore}}" class="dyn-swim-row">
-                        <view
-                          class="dyn-swim-more-btn"
-                          style="left: {{item.moreBarLeft || '0'}}; width: calc({{item.moreBarWidth || '20%'}} - 4rpx);"
-                          bindtap="showMoreOverlay"
-                          data-lane="{{li}}"
-                          data-label="{{item.label}}"
-                        >
-                          <text class="dyn-swim-more-text">+{{item.moreCount}} ›</text>
-                        </view>
-                      </view>
-                    </view>
-                  </view>
-
-                  <!-- 孤立型泳道 -->
-                  <view wx:else class="dyn-swim-track" style="width: {{swim.sheetWidthRpx}}rpx;">
+                  <view class="dyn-swim-track" style="width: {{swim.sheetWidthRpx}}rpx; background: {{item.laneTrackBg}};">
                     <!-- 泳道网格线 -->
                     <view class="dyn-swim-lane-grid">
                       <block wx:for="{{swim.gridLines}}" wx:key="left">
@@ -246,24 +171,28 @@
                         <view
                           wx:for="{{row}}"
                           wx:for-item="bar"
-                          wx:key="title"
-                          class="dyn-swim-bar dyn-swim-bar--isolated dyn-swim-bar--default dyn-swim-bar--{{bar.priority}}"
-                          style="left: {{bar.left}}; width: calc({{bar.width}} - 4rpx);"
+                          wx:key="boxId"
+                          class="dyn-swim-chip dyn-swim-chip--{{bar.priority}}"
+                          style="left: {{bar.left}}; z-index: {{bar.zIndex || 10}};"
                           bindtap="onBarTap"
+                          bindlongpress="onBarLongPress"
                           data-box="{{bar.boxId}}"
-                        >{{bar.title}}</view>
+                          data-title="{{bar.title}}"
+                          data-range="{{bar.timeRange}}"
+                        >
+                          <text class="dyn-swim-chip-title">{{bar.title}}</text>
+                        </view>
                       </view>
 
-                      <view wx:if="{{item.hasMore}}" class="dyn-swim-row">
-                        <view
-                          class="dyn-swim-more-btn"
-                          style="left: {{item.moreBarLeft || '0'}}; width: calc({{item.moreBarWidth || '20%'}} - 4rpx);"
-                          bindtap="showMoreOverlay"
-                          data-lane="{{li}}"
-                          data-label="{{item.label}}"
-                        >
-                          <text class="dyn-swim-more-text">+{{item.moreCount}} ›</text>
-                        </view>
+                      <view
+                        wx:if="{{item.hasMore}}"
+                        class="dyn-swim-more-btn"
+                        style="left: {{item.moreBarLeft || '88%'}};"
+                        bindtap="showMoreOverlay"
+                        data-lane="{{li}}"
+                        data-label="{{item.label}}"
+                      >
+                        <text class="dyn-swim-more-text">+{{item.moreCount}}</text>
                       </view>
                     </view>
                   </view>
@@ -276,9 +205,34 @@
         </view>
       </view>
 
-      <view style="height: 120rpx;"></view>
+      <view style="height: 190rpx;"></view>
     </scroll-view>
 
+  </view>
+
+  <view wx:if="{{unit && swim}}" class="priority-dock">
+    <view class="priority-tabs">
+      <view
+        wx:for="{{priorityOptions}}"
+        wx:key="value"
+        class="priority-tab {{activePriority === item.value ? 'active' : ''}}"
+        bindtap="onPriorityTap"
+        data-priority="{{item.value}}"
+      >
+        <text>{{item.label}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view wx:if="{{chipTooltipVisible}}" class="chip-tooltip-backdrop" catchtap="hideChipTooltip">
+    <view
+      class="chip-tooltip"
+      style="left: {{chipTooltipLeftPx}}px; top: {{chipTooltipTopPx}}px;"
+      catchtap="hideChipTooltip"
+    >
+      <text class="chip-tooltip-title">{{chipTooltipTitle}}</text>
+      <text class="chip-tooltip-range">{{chipTooltipRange}}</text>
+    </view>
   </view>
 
   <!-- 简介弹层 -->
@@ -313,6 +267,7 @@
           class="more-overlay-item"
           bindtap="onBarTap"
           data-box="{{item.boxId}}"
+          data-title="{{item.title}}"
         >
           <view class="more-overlay-item-left">
             <view class="more-overlay-dot more-overlay-dot--{{item.type || 'default'}}"></view>

@@ -182,7 +182,7 @@ def verify_mother_draft(
     errors.extend(_foreign_citations_in_mother(detail, mother_work, mother_src))
 
     if plan:
-        errors.extend(_verify_must_phrases(detail, plan))
+        errors.extend(_verify_must_phrases(detail, plan, batch_mode=batch_mode))
         cov_ok, cov_errs = verify_mother_coverage(detail, plan)
         if not cov_ok:
             errors.extend([f"母本顺译 {e}" for e in cov_errs])
@@ -242,15 +242,20 @@ def _phrase_hit(phrase: str, body: str) -> bool:
     return False
 
 
-def _hard_must_phrases(phrases: List[Any], orig: str) -> List[str]:
-    """从必现词中筛硬锚点；优先专名、数字、原文连续片段。"""
-    from lib.mother_sentences import _MUST_GENERIC  # noqa: PLC0415
+def _hard_must_phrases(
+    phrases: List[Any],
+    orig: str,
+    *,
+    batch_mode: bool = False,
+) -> List[str]:
+    """从必现词中筛硬锚点；优先专名、数字、句读边界短语。"""
+    from lib.mother_sentences import _MUST_GENERIC, is_midword_fragment  # noqa: PLC0415
 
     orig_plain = re.sub(r"\s+", "", orig)
     hard: List[str] = []
     for raw in phrases:
         p = str(raw).strip()
-        if not p:
+        if not p or is_midword_fragment(p, orig):
             continue
         if re.search(r"\d", p):
             hard.append(p)
@@ -263,15 +268,41 @@ def _hard_must_phrases(phrases: List[Any], orig: str) -> List[str]:
             continue
         if len(p) >= 3 and p in orig_plain and p not in _MUST_GENERIC:
             hard.append(p)
-    if not hard:
-        hard = [str(p) for p in phrases if len(str(p).strip()) >= 3][:3]
-    return hard
+    # 去重并优先保留较短、专名性更强的锚点
+    deduped: List[str] = []
+    for p in hard:
+        if any(p != q and p in q for q in hard):
+            continue
+        if p not in deduped:
+            deduped.append(p)
+    if not deduped:
+        deduped = [
+            str(p).strip()
+            for p in phrases
+            if len(str(p).strip()) >= 3 and not is_midword_fragment(str(p), orig)
+        ][:3]
+    deduped = deduped[:4]
+    if not batch_mode:
+        return deduped
+    # 分批顺译：只盯数字、氏名、≤6 字专名，长句段留给合并后全文校验
+    critical = [
+        p
+        for p in deduped
+        if re.search(r"\d", p) or "氏" in p or len(p) <= 6
+    ]
+    return critical if critical else deduped[:2]
 
 
-def _verify_must_phrases(detail: str, plan: Dict[str, Any]) -> List[str]:
-    errors: List[str] = []
+def _must_phrase_weak_ids(
+    detail: str,
+    plan: Dict[str, Any],
+    *,
+    ratio_floor: float = 0.34,
+    batch_mode: bool = False,
+) -> List[Tuple[str, List[str]]]:
+    """返回弱覆盖条目：(编号, 缺失硬锚点列表)。"""
     body = re.sub(r"\s+", "", detail)
-    weak: List[str] = []
+    weak: List[Tuple[str, List[str]]] = []
     checklist = plan.get("母本逐句清单") or []
     for item in checklist:
         if not isinstance(item, dict):
@@ -281,15 +312,54 @@ def _verify_must_phrases(detail: str, plan: Dict[str, Any]) -> List[str]:
         phrases = item.get("必现词") or []
         if not isinstance(phrases, list) or not phrases:
             continue
-        hard = _hard_must_phrases(phrases, orig)
-        hits = sum(1 for p in hard if _phrase_hit(p, body))
+        hard = _hard_must_phrases(phrases, orig, batch_mode=batch_mode)
+        missing = [p for p in hard if not _phrase_hit(p, body)]
+        hits = len(hard) - len(missing)
         ratio = hits / len(hard) if hard else 1.0
-        if ratio < 0.34:
-            weak.append(sid)
-    if len(weak) >= max(3, len(checklist) // 5):
+        if ratio < ratio_floor:
+            weak.append((sid, missing))
+    return weak
+
+
+def collect_must_phrase_misses(
+    detail: str,
+    plan: Dict[str, Any],
+    *,
+    limit: int = 12,
+    batch_mode: bool = False,
+) -> List[str]:
+    """生成 Phase1 重试提示：列出缺失的硬锚点。"""
+    lines: List[str] = []
+    for sid, missing in _must_phrase_weak_ids(detail, plan, batch_mode=batch_mode):
+        if not missing:
+            lines.append(f"- {sid}: 原词锚点覆盖不足，请对照原文摘句补全")
+            continue
+        shown = "、".join(missing[:4])
+        if len(missing) > 4:
+            shown += f" 等{len(missing)}个"
+        lines.append(f"- {sid}: 译文须保留「{shown}」")
+        if len(lines) >= limit:
+            break
+    return lines
+
+
+def _verify_must_phrases(
+    detail: str,
+    plan: Dict[str, Any],
+    *,
+    batch_mode: bool = False,
+) -> List[str]:
+    errors: List[str] = []
+    checklist = plan.get("母本逐句清单") or []
+    ratio_floor = 0.25 if batch_mode else 0.34
+    weak = _must_phrase_weak_ids(detail, plan, ratio_floor=ratio_floor, batch_mode=batch_mode)
+    weak_ids = [sid for sid, _ in weak]
+    # 分批顺译时放宽：允许更多句弱覆盖，合并后再全文严检
+    fail_threshold = max(4, len(checklist) // 3) if batch_mode else max(3, len(checklist) // 5)
+    if len(weak_ids) >= fail_threshold:
         errors.append(
-            f"必现词命中不足: {len(weak)} 条 M 未保留母本原词锚点"
-            f"（如 {', '.join(weak[:6])}）"
+            f"必现词命中不足: {len(weak_ids)} 条 M 未保留母本原词锚点"
+            f"（如 {', '.join(weak_ids[:6])}）"
         )
     return errors
 

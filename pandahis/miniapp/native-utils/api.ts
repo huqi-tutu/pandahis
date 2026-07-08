@@ -92,7 +92,7 @@ export function hasToken(): boolean {
 
 export function request<T>(
   path: string,
-  opts?: { method?: 'GET' | 'POST' | 'PATCH' | 'DELETE'; data?: any; auth?: boolean }
+  opts?: { method?: 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE'; data?: any; auth?: boolean }
 ): Promise<ApiResponse<T>> {
   if (opts?.auth && !getToken()) {
     return Promise.reject(new Error('UNAUTHORIZED'))

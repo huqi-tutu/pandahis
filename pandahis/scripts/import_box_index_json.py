@@ -212,6 +212,9 @@ def build_box_rows(entries: list[dict]) -> list[dict]:
                 "priority_code": priority,
                 "priority_reason": str(item.get("优先级判定理由", "")).strip() or None,
                 "importance_level": priority_level(priority),
+                "peak_year": int(item["峰值年"]) if item.get("峰值年") is not None else None,
+                "peak_reason": str(item.get("峰值原因", "")).strip() or None,
+                "peak_type": str(item.get("峰值类型", "")).strip() or None,
                 "primary_source": str(item.get("主要史料出处", "")).strip() or None,
                 "original_text": str(item.get("原文字句", "")).strip() or None,
                 "original_location": str(item.get("原文出处", "")).strip() or None,
@@ -335,6 +338,9 @@ def create_historical_box(cursor) -> None:
           priority_code VARCHAR(8) NULL COMMENT '优先级 P0-P3',
           priority_reason TEXT NULL COMMENT '优先级判定理由',
           importance_level TINYINT NULL COMMENT '由优先级推导',
+          peak_year INT NULL COMMENT '峰值年',
+          peak_reason TEXT NULL COMMENT '峰值原因',
+          peak_type VARCHAR(64) NULL COMMENT '峰值类型',
           primary_source VARCHAR(256) NULL COMMENT '主要史料出处',
           original_text TEXT NULL COMMENT '原文字句',
           original_location VARCHAR(128) NULL COMMENT '原文出处',
@@ -389,6 +395,13 @@ def ensure_schema(cursor) -> None:
     ):
         cursor.execute("ALTER TABLE historical_box ADD INDEX idx_box_parent_entry (parent_entry_id)")
 
+    if not column_exists(cursor, "historical_box", "peak_year"):
+        cursor.execute("ALTER TABLE historical_box ADD COLUMN peak_year INT NULL COMMENT '峰值年' AFTER importance_level")
+    if not column_exists(cursor, "historical_box", "peak_reason"):
+        cursor.execute("ALTER TABLE historical_box ADD COLUMN peak_reason TEXT NULL COMMENT '峰值原因' AFTER peak_year")
+    if not column_exists(cursor, "historical_box", "peak_type"):
+        cursor.execute("ALTER TABLE historical_box ADD COLUMN peak_type VARCHAR(64) NULL COMMENT '峰值类型' AFTER peak_reason")
+
 
 def rebuild_schema(cursor) -> None:
     for table in CHILD_TABLES:
@@ -423,7 +436,7 @@ def upsert_boxes(cursor, rows: list[dict]) -> int:
           id, parent_entry_id, emperor_id, regime_id, dynasty_id,
           civilization_code, civilization_name, dynasty_name, regime_name, emperor_name,
           title, category_key, blurb, start_year, end_year,
-          priority_code, priority_reason, importance_level,
+          priority_code, priority_reason, importance_level, peak_year, peak_reason, peak_type,
           primary_source, original_text, original_location, fine_coordinate, paragraph_anchor,
           parent_work, source_entry_count, paragraph_block_count,
           paragraphs_json, merge_sources_json, source_works_json, original_ref_json,
@@ -433,7 +446,7 @@ def upsert_boxes(cursor, rows: list[dict]) -> int:
           %(id)s, %(parent_entry_id)s, %(emperor_id)s, %(regime_id)s, %(dynasty_id)s,
           %(civilization_code)s, %(civilization_name)s, %(dynasty_name)s, %(regime_name)s, %(emperor_name)s,
           %(title)s, %(category_key)s, %(blurb)s, %(start_year)s, %(end_year)s,
-          %(priority_code)s, %(priority_reason)s, %(importance_level)s,
+          %(priority_code)s, %(priority_reason)s, %(importance_level)s, %(peak_year)s, %(peak_reason)s, %(peak_type)s,
           %(primary_source)s, %(original_text)s, %(original_location)s, %(fine_coordinate)s, %(paragraph_anchor)s,
           %(parent_work)s, %(source_entry_count)s, %(paragraph_block_count)s,
           %(paragraphs_json)s, %(merge_sources_json)s, %(source_works_json)s, %(original_ref_json)s,
@@ -458,6 +471,9 @@ def upsert_boxes(cursor, rows: list[dict]) -> int:
           priority_code = VALUES(priority_code),
           priority_reason = VALUES(priority_reason),
           importance_level = VALUES(importance_level),
+          peak_year = VALUES(peak_year),
+          peak_reason = VALUES(peak_reason),
+          peak_type = VALUES(peak_type),
           primary_source = VALUES(primary_source),
           original_text = VALUES(original_text),
           original_location = VALUES(original_location),
@@ -479,6 +495,24 @@ def upsert_boxes(cursor, rows: list[dict]) -> int:
     for row in rows:
         cursor.execute(sql, row)
         count += 1
+    return count
+
+
+def update_priority_peak_fields(cursor, rows: list[dict]) -> int:
+    sql = """
+        UPDATE historical_box
+        SET priority_code = %(priority_code)s,
+            priority_reason = %(priority_reason)s,
+            importance_level = %(importance_level)s,
+            peak_year = %(peak_year)s,
+            peak_reason = %(peak_reason)s,
+            peak_type = %(peak_type)s
+        WHERE id = %(id)s
+    """
+    count = 0
+    for row in rows:
+        cursor.execute(sql, row)
+        count += cursor.rowcount
     return count
 
 
@@ -560,6 +594,11 @@ def main() -> int:
     parser.add_argument("--mysql-user", default="histomap_admin")
     parser.add_argument("--mysql-password", default="pandahis#666")
     parser.add_argument("--mysql-db", default="histomap")
+    parser.add_argument(
+        "--priority-peak-only",
+        action="store_true",
+        help="只按 JSON 更新优先级/判定理由/峰值字段，不清理子表、不更新其他列",
+    )
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
 
@@ -599,6 +638,15 @@ def main() -> int:
                 rebuild_schema(cursor)
             else:
                 ensure_schema(cursor)
+            if args.priority_peak_only:
+                updated = update_priority_peak_fields(cursor, rows)
+                cursor.execute(
+                    "SELECT COUNT(*) AS cnt FROM historical_box WHERE peak_year IS NOT NULL"
+                )
+                peak_count = cursor.fetchone()["cnt"]
+                conn.commit()
+                print(f"完成: 更新优先级/峰值字段 {updated} 条，peak_year 非空 {peak_count} 条")
+                return 0
             json_ids = [row["id"] for row in rows]
             emperor_stats = ensure_emperor_refs(cursor, rows, args.emperor_json)
             if emperor_stats:

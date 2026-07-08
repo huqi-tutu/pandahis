@@ -163,7 +163,7 @@ function splitDetailParagraphs(md: string): string[] {
 Page({
   data: {
     boxId: '',
-    navTitle: '史略盒子',
+    navTitle: '史略详情',
     header: null as BoxHeader | null,
     tabTop: 88,
     bodyTop: 160,
@@ -230,6 +230,7 @@ Page({
   async onLoad(query: Record<string, string | undefined>) {
     const boxId = query.boxId || query.id
     if (!boxId) return
+    const provisionalTitle = String(query.title || query.displayName || '').trim()
     const sys = wx.getSystemInfoSync()
     const navH = Math.round(88 * (sys.windowWidth / 750))
     const tabTop = (sys.statusBarHeight || 20) + navH
@@ -240,6 +241,7 @@ Page({
     this._tabBarPx = tabBarPx
     this.setData({
       boxId,
+      navTitle: provisionalTitle || '史略详情',
       tabTop,
       bodyTop,
       graphCanvasH,

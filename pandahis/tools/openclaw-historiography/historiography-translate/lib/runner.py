@@ -36,6 +36,7 @@ from lib.aggregate import rebuild_aggregate
 from lib.chunk_runner import run_chunked_pipeline, should_use_chunked_flow
 from lib.chunking import build_chunk_specs, needs_chunked_mode
 from lib.verify import (
+    collect_must_phrase_misses,
     load_output,
     output_path,
     verify_enrich_draft,
@@ -214,7 +215,11 @@ def _plan_json_for_enrich(plan_data: Dict[str, Any]) -> str:
 
 
 def _phase1_max_retries() -> int:
-    return max(0, int(os.environ.get("TRANSLATE_PHASE1_MAX_RETRIES", "2")))
+    return max(0, int(os.environ.get("TRANSLATE_PHASE1_MAX_RETRIES", "4")))
+
+
+def _phase1_retry_temperature() -> float:
+    return float(os.environ.get("TRANSLATE_PHASE1_RETRY_TEMPERATURE", "0.4"))
 
 
 def _phase2_max_retries() -> int:
@@ -305,13 +310,22 @@ def _run_phase1_mother_single(
     mother_plan_json = _plan_json_for_mother(plan_data)
     verify_plan_data = {"母本逐句清单": plan_data.get("母本逐句清单") or []}
     m_errs: List[str] = []
+    mother_detail = ""
     for attempt in range(_phase1_max_retries() + 1):
         retry_note = ""
         if attempt > 0 and m_errs:
+            miss_lines = collect_must_phrase_misses(
+                mother_detail, verify_plan_data, batch_mode=bool(batch_label)
+            )
             retry_note = (
                 "\n\n--- 上轮 Phase1 质检失败，须逐项修正 ---\n"
                 + "\n".join(f"- {e}" for e in m_errs[:12])
             )
+            if miss_lines:
+                retry_note += (
+                    "\n\n--- 以下原词锚点须在译文中保留（可用「」标出）---\n"
+                    + "\n".join(miss_lines)
+                )
         batch_note = ""
         if batch_label:
             batch_note = (
@@ -341,12 +355,14 @@ def _run_phase1_mother_single(
             session_id=f"{session_id}-r{attempt}",
             timeout_sec=900,
             artifact_paths={"output": mother_file},
+            temperature=_phase1_retry_temperature() if attempt > 0 else None,
         )
         if not mother_file.is_file():
             return False, ["Phase1: LLM 未落盘母本顺译"]
         if polish_mother_file(mother_file):
             print("   🔧 已修正 Phase1 误用书名号", flush=True)
         touch_heartbeat(work_dir, entry_id, stage="verify_mother")
+        mother_detail = _load_mother_text(mother_file)
         m_ok, m_errs = verify_mother_draft(
             entry_id,
             recalled,
@@ -369,6 +385,7 @@ def _llm_turn(
     session_id: str,
     timeout_sec: int,
     artifact_paths: Dict[str, Path] | None = None,
+    temperature: float | None = None,
 ) -> None:
     touch_heartbeat(work_dir, entry_id, stage=f"llm_{stage}", detail=session_id)
     run_agent_turn(
@@ -376,6 +393,7 @@ def _llm_turn(
         session_id=session_id,
         timeout_sec=timeout_sec,
         artifact_paths=artifact_paths,
+        temperature=temperature,
     )
     touch_heartbeat(work_dir, entry_id, stage=f"done_{stage}")
 

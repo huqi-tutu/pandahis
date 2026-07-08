@@ -30,6 +30,7 @@ def run_agent_turn(
     session_id: Optional[str] = None,
     timeout_sec: int = 900,
     artifact_paths: Optional[Dict[str, Path]] = None,
+    temperature: Optional[float] = None,
     openclaw_env_key: str = "HIST_OPENCLAW_AGENT",
     openclaw_local_env_key: str = "HIST_OPENCLAW_LOCAL",
     forbid_main_message: str = (
@@ -44,6 +45,7 @@ def run_agent_turn(
             session_id=session_id,
             timeout_sec=timeout_sec,
             artifact_paths=artifact_paths,
+            temperature=temperature,
         )
 
     resolved_agent = resolve_agent_id(

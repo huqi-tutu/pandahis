@@ -29,6 +29,7 @@ description: >
 | `historiography-annotate/count_paragraphs.py` | **Step 0** 段落数（标注前必跑） |
 | `historiography-annotate/check_format.py` | Step 2 / Step 4 硬门 |
 | `historiography-annotate/fill_fields.py` | Step 4 辅助 |
+| `historiography-annotate/peak_year.py` | Step 4d 峰值年标注 |
 | `historiography-annotate/merge_volumes.py` | 多卷合并（Step M） |
 | `historiography-audit/audit_precheck.py` | Step 3 预检 |
 
@@ -99,11 +100,12 @@ exit 0 → progress 自动记 done。失败 → 修 JSON，不得进 Step 3。
 python3 .../run_volume_pipeline.py verify --work 01史记 --vol 001 --step 3
 ```
 
-### Step 4 — 补全（fill_fields + LLM + 终检）
+### Step 4 — 补全（fill_fields + LLM + 峰值年 + 终检）
 
 1. `fill_fields.py` 写临时字段，并自动补全四级坐标 ID
 2. LLM 补：优先级、年份、文明/王朝/帝王归属（名称）；删 `_needs_llm`；**不得手填坐标 ID**
-3. 验证：
+3. **`peak_year.py`（Step4d）**：年份终态后标注 `峰值年/峰值原因/峰值类型/峰值置信度`（规则 → LLM 分批 → 兜底；低置信进待审，不挡终检）
+4. 验证：
 
 ```bash
 python3 .../run_volume_pipeline.py verify --work 01史记 --vol 001 --step 4

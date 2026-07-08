@@ -24,6 +24,8 @@ _META_CHECKLIST_LINE = re.compile(
 )
 
 _FIXUPS: tuple[tuple[str, str], ...] = (
+    (r"^```json\s*", ""),
+    (r"^```\s*", ""),
     (r"，据说是太阳升起的地方", "，即日出之处"),
     (r"据说是太阳升起的地方", "即日出之处"),
     (r"，三苗据说是蚩尤的后裔部落", ""),
@@ -87,6 +89,10 @@ def sanitize_enrich_detail(detail: str) -> str:
 
     text = _META_PREFIX.sub("", text).strip()
     text = _META_CHECKLIST_LINE.sub("", text).strip()
+
+    # Strip markdown code block markers from LLM output
+    text = re.sub(r'^```(?:json)?\\s*', '', text)
+    text = re.sub(r'```\\s*$', '', text)
 
     for pat, rep in _FIXUPS:
         text = re.sub(pat, rep, text)

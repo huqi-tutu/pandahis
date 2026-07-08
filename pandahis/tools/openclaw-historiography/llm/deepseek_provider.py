@@ -41,6 +41,7 @@ def run_deepseek_turn(
     timeout_sec: int,
     artifact_paths: Optional[Dict[str, Path]] = None,
     max_attempts: int = 3,
+    temperature: Optional[float] = None,
 ) -> Dict[str, Any]:
     settings = deepseek_settings()
     api_key = str(settings["api_key"])
@@ -51,7 +52,7 @@ def run_deepseek_turn(
     payload = {
         "model": settings["model"],
         "messages": [{"role": "user", "content": message}],
-        "temperature": settings["temperature"],
+        "temperature": settings["temperature"] if temperature is None else temperature,
     }
     last_err: Optional[Exception] = None
     data: Optional[dict] = None

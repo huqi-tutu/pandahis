@@ -5,7 +5,7 @@ from __future__ import annotations
 import re
 from typing import Any, Dict, List
 
-from lib.mother_sentences import extract_must_phrases
+from lib.mother_sentences import extract_must_phrases, is_midword_fragment
 
 # 仅当与母本形成有意义差异时才允许采用
 _EXTERNAL_TYPES = frozenset(
@@ -17,9 +17,14 @@ _EXTERNAL_TYPE_ALIASES = {
     "必要背景": "必要上下文",
     "母本未载细节": "补充细节",
     "细节补充": "补充细节",
+    "细节": "补充细节",
+    "冲突观点/细节补充": "补充细节",
     "冲突": "冲突观点",
     "背景信息": "背景",
+    "背景补充": "背景",
     "异说/补充细节": "异说",
+    "母本未载事实": "补充细节",
+    "补充说明": "补充细节",
 }
 
 
@@ -29,6 +34,8 @@ def _broken_must_phrases(phrases: List[Any], orig: str) -> bool:
         return True
     orig_plain = re.sub(r"[\s，。、；：\"\"''「」]", "", orig)
     parts = [str(p).strip() for p in phrases if str(p).strip()]
+    if any(is_midword_fragment(p, orig) for p in parts):
+        return True
     if len(parts) >= 2:
         joined = "".join(parts)
         if joined in orig_plain and all(len(p) <= 5 for p in parts):
@@ -154,10 +161,14 @@ def validate_external_items(plan: Dict[str, Any]) -> List[str]:
             continue
         typ = str(item.get("补全类型") or "").strip()
         if typ not in _EXTERNAL_TYPES:
-            errors.append(
-                f"外部补全[{i}] 补全类型无效或缺失: {typ!r} "
-                f"（须为 {sorted(_EXTERNAL_TYPES)} 之一）"
-            )
+            resolved = _EXTERNAL_TYPE_ALIASES.get(typ)
+            if resolved:
+                item["补全类型"] = resolved
+            else:
+                errors.append(
+                    f"外部补全[{i}] 补全类型无效或缺失: {typ!r} "
+                    f"（须为 {sorted(_EXTERNAL_TYPES)} 之一）"
+                )
         rel = str(item.get("与母本关系") or item.get("理由") or "").strip()
         if len(rel) < 8:
             errors.append(f"外部补全[{i}] 须说明「与母本关系」（为何不是重复母本）")

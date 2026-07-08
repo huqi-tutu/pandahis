@@ -494,7 +494,19 @@ def check_entries(entries: list, total_paragraphs: int, phase: str) -> Set[Tuple
             for old in LEGACY_COORD_MAP:
                 if old in entry and entry.get(old) not in (None, ""):
                     err(f"{prefix}仍使用旧坐标字段「{old}」，请改为「{LEGACY_COORD_MAP[old]}」")
-            for key in ["优先级", "优先级判定理由", "史略开始年", "史略结束年", *COORD_FIELDS, *COORD_ID_FIELDS, *DETAIL_FIELDS]:
+            for key in [
+                "优先级",
+                "优先级判定理由",
+                "史略开始年",
+                "史略结束年",
+                "峰值年",
+                "峰值原因",
+                "峰值类型",
+                "峰值置信度",
+                *COORD_FIELDS,
+                *COORD_ID_FIELDS,
+                *DETAIL_FIELDS,
+            ]:
                 if key not in entry or entry[key] in (None, ""):
                     err(f"{prefix}Step 4 未完成，缺少: {key}")
             pri = entry.get("优先级", "")
@@ -503,6 +515,10 @@ def check_entries(entries: list, total_paragraphs: int, phase: str) -> Set[Tuple
             if "_needs_llm" in entry and entry.get("_needs_llm"):
                 err(f"{prefix}仍含 _needs_llm，LLM 补全后应删除临时字段")
             for msg in validate_entry_years(entry):
+                err(msg)
+            from peak_year import validate_peak  # noqa: WPS433
+
+            for msg in validate_peak(entry):
                 err(msg)
             wj = (entry.get("五级细坐标") or "").strip()
             if wj:

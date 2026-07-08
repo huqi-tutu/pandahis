@@ -71,18 +71,47 @@ _MUST_STOP = frozenset(
     "之乎者也矣焉於于以而则乃若其吾汝尔彼此何谁孰哉兮耶欤耳盖夫且尚又及与为在是有非无已于是然后".split()
 )
 _MUST_GENERIC = frozenset(
-    "黄帝轩辕神农尧舜禹启汤文武诸侯百姓万民天下天子帝王".split()
+    "黄帝轩辕神农尧舜禹启汤文武诸侯百姓万民天下天子帝王"
+    "公侯伯子男君王后妃太子太师太傅太保大夫将军大臣国人君子小人".split()
 )
+_BOUNDARY_PUNCT = frozenset("，。、；：！？,")
+
+
+def _plain_text(text: str) -> str:
+    return re.sub(r"\s+", "", text)
+
+
+def is_midword_fragment(phrase: str, orig: str) -> bool:
+    """短语是否为原文中间截断的 n-gram 碎片（首尾未落在句读边界）。"""
+    p = str(phrase).strip()
+    if len(p) < 2:
+        return True
+    orig_plain = _plain_text(orig)
+    if p not in orig_plain:
+        return False
+    idx = 0
+    while True:
+        pos = orig_plain.find(p, idx)
+        if pos < 0:
+            return True
+        start_ok = pos == 0 or orig_plain[pos - 1] in _BOUNDARY_PUNCT
+        end_pos = pos + len(p)
+        end_ok = end_pos == len(orig_plain) or orig_plain[end_pos] in _BOUNDARY_PUNCT
+        if start_ok and end_ok:
+            return False
+        idx = pos + 1
 
 
 def extract_must_phrases(orig: str, *, max_phrases: int = 6) -> List[str]:
-    """从母本摘句提取硬锚点：数字、引号内原文、X氏专名、原文连续片段。"""
+    """从母本摘句提取硬锚点：数字、引号内原文、X氏专名、句读边界短语。"""
     out: List[str] = []
     seen: set[str] = set()
 
     def _add(w: str) -> None:
         w = w.strip()
         if len(w) < 2 or w in _MUST_STOP or w in _MUST_GENERIC:
+            return
+        if is_midword_fragment(w, orig):
             return
         if w not in seen:
             seen.add(w)
@@ -92,18 +121,17 @@ def extract_must_phrases(orig: str, *, max_phrases: int = 6) -> List[str]:
         _add(num)
     for m in re.finditer(r"[\u4e00-\u9fff]{2,8}氏", orig):
         _add(m.group(0))
-    for m in re.finditer(r"[「『\"]([^」』\"]{2,12})[」』\"]", orig):
+    for m in re.finditer(r"[「『\"“]([^」』\"”]{2,16})[」』\"”]", orig):
         _add(m.group(1))
-    for m in re.finditer(r"[\u4e00-\u9fff]{3,6}", orig):
-        seg = m.group(0)
-        if any(seg in x for x in seen):
-            continue
-        _add(seg)
-    if len(out) < max_phrases:
-        for chunk in re.split(r"[，。、；：]", orig):
-            chunk = chunk.strip()
-            if 2 <= len(chunk) <= 4:
-                _add(re.sub(r"[之乎者也矣焉]", "", chunk))
+    for m in re.finditer(
+        r"[\u4e00-\u9fff]{2,6}(?:公|侯|王|伯|子|尚|挚)",
+        orig,
+    ):
+        _add(m.group(0))
+    for chunk in re.split(r"[，。、；：]", orig):
+        chunk = re.sub(r"[之乎者也矣焉]", "", chunk.strip())
+        if 2 <= len(chunk) <= 12:
+            _add(chunk)
     return out[:max_phrases]
 
 

@@ -1,14 +1,18 @@
 package com.pandahis.histomap;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -21,6 +25,14 @@ class V5AlignmentApiTest {
 
   @Autowired
   private MockMvc mockMvc;
+
+  @Autowired
+  private JdbcTemplate jdbcTemplate;
+
+  @BeforeEach
+  void cleanHomeMatrixState() {
+    jdbcTemplate.update("DELETE FROM user_home_matrix_state WHERE user_id=1");
+  }
 
   @Test
   void homeGrid_returnsSparseCells() throws Exception {
@@ -75,6 +87,11 @@ class V5AlignmentApiTest {
         .andExpect(jsonPath("$.data.lanes[0].label").value("君王"))
         .andExpect(jsonPath("$.data.lanes[9].label").value("蕃祚"))
         .andExpect(jsonPath("$.data.lanes[0].layout").exists())
+        .andExpect(jsonPath("$.data.lanes[0].key").exists())
+        .andExpect(jsonPath("$.data.lanes[0].icon").exists())
+        .andExpect(jsonPath("$.data.lanes[0].readProgressText").exists())
+        .andExpect(jsonPath("$.data.lanes[0].priorityViews.p0").exists())
+        .andExpect(jsonPath("$.data.lanes[0].trackHeightRpx").isNumber())
         .andExpect(jsonPath("$.data.sheetWidthRpx").isNumber());
   }
 
@@ -95,5 +112,40 @@ class V5AlignmentApiTest {
         .andExpect(jsonPath("$.code").value("OK"))
         .andExpect(jsonPath("$.data.learnDaysCount").value(2))
         .andExpect(jsonPath("$.data.nickname").value("测试用户"));
+  }
+
+  @Test
+  void homeMatrixState_defaultForFirstVisit() throws Exception {
+    mockMvc.perform(get("/me/home-matrix-state").header(HttpHeaders.AUTHORIZATION, AUTH))
+        .andExpect(status().isOk())
+        .andExpect(jsonPath("$.code").value("OK"))
+        .andExpect(jsonPath("$.data.civilizationCode").value("HX"))
+        .andExpect(jsonPath("$.data.collapsedDynastyKeys").isArray())
+        .andExpect(jsonPath("$.data.collapsedDynastyKeys.length()").value(0));
+  }
+
+  @Test
+  void homeMatrixState_upsertsAndReturnsUserState() throws Exception {
+    mockMvc.perform(put("/me/home-matrix-state")
+            .header(HttpHeaders.AUTHORIZATION, AUTH)
+            .contentType(MediaType.APPLICATION_JSON)
+            .content("""
+                {
+                  "civilizationCode": "HX",
+                  "lastDynastyKey": "唐",
+                  "collapsedDynastyKeys": ["西汉", "唐"],
+                  "lastScrollTopPx": 1280
+                }
+                """))
+        .andExpect(status().isOk())
+        .andExpect(jsonPath("$.code").value("OK"))
+        .andExpect(jsonPath("$.data.lastDynastyKey").value("唐"))
+        .andExpect(jsonPath("$.data.collapsedDynastyKeys[0]").value("西汉"))
+        .andExpect(jsonPath("$.data.lastScrollTopPx").value(1280));
+
+    mockMvc.perform(get("/me/home-matrix-state").header(HttpHeaders.AUTHORIZATION, AUTH))
+        .andExpect(status().isOk())
+        .andExpect(jsonPath("$.data.lastDynastyKey").value("唐"))
+        .andExpect(jsonPath("$.data.collapsedDynastyKeys.length()").value(2));
   }
 }

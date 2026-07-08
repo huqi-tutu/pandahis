@@ -55,6 +55,7 @@ export HISTOGRAPH_ROOT=/path/to/pandahis/pandahis   # 可选
 | 文明参考 | `reference/文明.json` |
 | **准入标准（权威）** | `reference/人物标注规则.md` |
 | **块优先归属** | `reference/人物归因.md` |
+| **峰值年规则** | `reference/峰值年规则.md` |
 | **卷型补充** | `reference/卷型补充/<卷类型>.md` |
 
 Skill 目录：`pandahis/pandahis/tools/openclaw-historiography/historiography-annotate/`
@@ -67,7 +68,7 @@ Skill 目录：`pandahis/pandahis/tools/openclaw-historiography/historiography-a
 Step 1  LLM 标注 → skeleton.json（按卷独立文件）
 Step 2  check_format.py --phase skeleton  → exit 0 才继续
 Step 3  audit_precheck.py → historiography-audit LLM 审计 → 修正后重跑 2+3
-Step 4  fill_fields.py → LLM 补全 → check_format.py --phase final
+Step 4  fill_fields.py → LLM 补全 → peak_year.py（Step4d）→ check_format.py --phase final
         → generate_stats.py → 落盘统计
 Step M  merge_volumes.py → 著作级索引 {著作}_条目索引.json
 ```
@@ -338,6 +339,26 @@ python3 pandahis/pandahis/tools/openclaw-historiography/historiography-annotate/
 
 **时空坐标**：均须来自 `reference/*.json`；非君王由关联帝王反推二/三/四级。
 `check_format.py --phase final` 与 `fill_fields.py --verify` 会按分类校验。
+
+### Step 4d：峰值年（编排器自动，年份终态后）
+
+在 Step4 主 LLM 补全年份/优先级/坐标 **之后**、`--finalize` **之前**，编排器自动调用 `peak_year.py`：
+
+```bash
+# 单卷手工补跑（通常不必；编排器已调用）
+python3 pandahis/pandahis/tools/openclaw-historiography/historiography-annotate/peak_year.py \
+  /path/to/skeleton.json --llm
+```
+
+**字段（中文键）**：`峰值年` / `峰值原因` / `峰值类型` / `峰值置信度`  
+**规则 SSOT**：`reference/峰值年规则.md`  
+**硬约束**：`史略开始年 ≤ 峰值年 ≤ 史略结束年`  
+**幂等**：`_auto_filled._峰值指纹` 未变则跳过；`_峰值人工锁定=true` 永不被覆盖  
+**待审**：置信度 &lt; 0.4 或越界 clamp → `_峰值待审`，写入 `data/05工作流中间产物/标注/{卷}_peak_review.md`，**不阻断** `check_format final`
+
+**禁止**：把峰值年塞进 Step4 主 LLM prompt（易卡死、难幂等）。
+
+**LLM 输入（`peak_year.py` 自动组装）**：`判定对象`（=史略名称）、史略分类、简介、年份区间、考订依据·坐标主轴/年、母本段落、母本原文字句（≤300字）、二/三/四级坐标；**不传**卷内优先级。合传/多源/蕃祚自动小批次（≤5）+ 事后守门（原因须点名判定对象）。
 
 ### Done when（Step 4）
 

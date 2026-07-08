@@ -5,17 +5,43 @@ const encode_path_segment_1 = require("../../native-utils/encode-path-segment");
 const favorite_box_1 = require("../../native-utils/favorite-box");
 const router_1 = require("../../native-utils/router");
 const share_invite_1 = require("../../native-utils/share-invite");
+const swim_lane_palette_1 = require("../../native-utils/swim-lane-palette");
+const PRIORITY_OPTIONS = [
+    { value: 'p0', label: 'P0' },
+    { value: 'p1', label: 'P1' },
+    { value: 'p2', label: 'P2' },
+    { value: 'p3', label: 'P3' },
+];
+const MAX_LANE_ROWS = 10;
+const LANE_ROW_HEIGHT_RPX = 44;
+const LANE_ROW_GAP_RPX = 16;
+const LANE_TRACK_PAD_VERTICAL_RPX = 24;
+const CHIP_WIDTH_RPX = 132;
+const CHIP_GAP_RPX = 16;
+const EDGE_GAP_RPX = 20;
+const MORE_WIDTH_RPX = 112;
+const MORE_GAP_RPX = 20;
+function laneTrackHeight(rowCount) {
+    const rows = Math.max(1, Math.min(MAX_LANE_ROWS, rowCount || 1));
+    return LANE_TRACK_PAD_VERTICAL_RPX + rows * LANE_ROW_HEIGHT_RPX + (rows - 1) * LANE_ROW_GAP_RPX;
+}
 function collectMatrixBoxIds(swim) {
     const ids = [];
     for (const lane of (swim === null || swim === void 0 ? void 0 : swim.lanes) || []) {
-        for (const row of lane.collapsedRows || []) {
+        const fullView = lane.priorityViews && lane.priorityViews.p3;
+        const rows = (fullView === null || fullView === void 0 ? void 0 : fullView.collapsedRows) || lane.collapsedRows || [];
+        for (const row of rows) {
             for (const bar of row) {
                 if (bar === null || bar === void 0 ? void 0 : bar.boxId)
                     ids.push(bar.boxId);
             }
         }
+        for (const bar of ((fullView === null || fullView === void 0 ? void 0 : fullView.extraBars) || lane.extraBars || [])) {
+            if (bar === null || bar === void 0 ? void 0 : bar.boxId)
+                ids.push(bar.boxId);
+        }
     }
-    return ids;
+    return Array.from(new Set(ids));
 }
 function splitIntroParagraphs(intro) {
     const text = (intro || '').trim() || '空';
@@ -23,7 +49,7 @@ function splitIntroParagraphs(intro) {
 }
 function generateTimelineTicks(startYear, endYear, originalSheetWidthRpx) {
   const span = endYear - startYear;
-  const newSheetWidthRpx = Math.round(originalSheetWidthRpx * (50 / 20));
+  const newSheetWidthRpx = Math.round(originalSheetWidthRpx);
   const ticks = [];
   ticks.push({ label: String(startYear), left: '0%', edgeStart: true, hideLabel: false });
   const firstTick = Math.ceil((startYear + 1) / 10) * 10;
@@ -39,6 +65,102 @@ function generateTimelineTicks(startYear, endYear, originalSheetWidthRpx) {
   }
   const gridLines = ticks.filter(function(t) { return t.left !== '0%'; }).map(function(t) { return { left: t.left }; });
   return { ticks, endLabel: String(endYear), sheetWidthRpx: newSheetWidthRpx, gridLines };
+}
+function applyPriorityView(swim, priority) {
+    const sheetWidthRpx = estimateSheetWidth(swim);
+    return Object.assign(Object.assign({}, swim), { sheetWidthRpx, lanes: (swim.lanes || []).map((lane, laneIndex) => {
+            var _a;
+            const view = (_a = lane.priorityViews) === null || _a === void 0 ? void 0 : _a[priority];
+            const base = !view
+                ? normalizeLegacyLane(lane, sheetWidthRpx, priority)
+                : Object.assign(Object.assign({}, lane), { collapsedRows: view.collapsedRows || [[]], hasMore: view.hasMore, moreCount: view.moreCount, moreBarLeft: view.moreBarLeft, moreBarWidth: view.moreBarWidth, extraBars: view.extraBars || [], rowCount: view.rowCount, trackHeightRpx: view.trackHeightRpx, visibleCount: view.visibleCount });
+            return (0, swim_lane_palette_1.enrichSwimLaneVisuals)(base, laneIndex);
+        }) });
+}
+function estimateSheetWidth(swim) {
+    const base = swim.sheetWidthRpx || 1440;
+    const maxBars = Math.max(0, ...(swim.lanes || []).map((lane) => {
+        var _a;
+        const view = (_a = lane.priorityViews) === null || _a === void 0 ? void 0 : _a.p3;
+        if (view)
+            return view.visibleCount;
+        return (lane.collapsedRows || []).reduce((count, row) => count + row.length, 0) + (lane.extraBars || []).length;
+    }));
+    const perRow = Math.max(1, Math.ceil(maxBars / MAX_LANE_ROWS));
+    const needed = EDGE_GAP_RPX + perRow * CHIP_WIDTH_RPX + Math.max(0, perRow - 1) * CHIP_GAP_RPX + MORE_GAP_RPX + MORE_WIDTH_RPX + EDGE_GAP_RPX;
+    return Math.max(base, Math.min(base * 4, needed));
+}
+function normalizeLegacyLane(lane, sheetWidthRpx, priority) {
+    const allBars = [...(lane.collapsedRows || []).flat(), ...(lane.extraBars || [])]
+        .map((bar) => prepareLegacyBar(bar, sheetWidthRpx))
+        .sort(compareLegacyBars);
+    const maxPriority = priorityRank(priority);
+    const candidates = allBars.filter((bar) => priorityRank(bar.priority) <= maxPriority);
+    const hiddenByPriority = allBars.filter((bar) => priorityRank(bar.priority) > maxPriority);
+    const packed = packLegacyBars(candidates, sheetWidthRpx);
+    const extraBars = [...hiddenByPriority, ...packed.extra].sort(compareLegacyBars);
+    const hasMore = extraBars.length > 0;
+    return Object.assign(Object.assign({}, lane), { collapsedRows: packed.rows.length ? packed.rows : [[]], hasMore, moreCount: extraBars.length, moreBarLeft: `${moreLeftPct(sheetWidthRpx).toFixed(2)}%`, moreBarWidth: lane.moreBarWidth || '12%', extraBars, rowCount: Math.max(1, packed.rows.length), trackHeightRpx: laneTrackHeight(packed.rows.length), visibleCount: packed.rows.reduce((count, row) => count + row.length, 0) });
+}
+function prepareLegacyBar(bar, sheetWidthRpx) {
+    const rawLeft = parseFloat(String(bar.left || bar.unitLeft || '0').replace('%', ''));
+    const edgePct = 20 / sheetWidthRpx * 100;
+    const reservedRightRpx = EDGE_GAP_RPX + MORE_GAP_RPX + MORE_WIDTH_RPX;
+    const chipPct = CHIP_WIDTH_RPX / sheetWidthRpx * 100;
+    const maxLeft = 100 - (CHIP_WIDTH_RPX + reservedRightRpx) / sheetWidthRpx * 100;
+    const left = Math.max(edgePct, Math.min(maxLeft, Number.isFinite(rawLeft) ? rawLeft : 0));
+    return Object.assign(Object.assign({}, bar), { left: `${left.toFixed(2)}%`, width: `${chipPct.toFixed(2)}%`, _leftPct: left, _rightPct: left + chipPct, _priorityRank: priorityRank(bar.priority), _globalIdNumber: parseGlobalIdNumber(bar.boxId) });
+}
+function packLegacyBars(bars, sheetWidthRpx) {
+    const rows = [];
+    const extra = [];
+    const gapPct = CHIP_GAP_RPX / sheetWidthRpx * 100;
+    for (const bar of bars) {
+        let assigned = -1;
+        for (let rowIndex = 0; rowIndex < rows.length; rowIndex++) {
+            if (canFitRow(rows[rowIndex], bar, gapPct)) {
+                assigned = rowIndex;
+                rows[rowIndex] = [...rows[rowIndex], bar].sort((a, b) => a._leftPct - b._leftPct);
+                break;
+            }
+        }
+        if (assigned === -1) {
+            if (rows.length >= MAX_LANE_ROWS) {
+                extra.push(bar);
+            }
+            else {
+                rows.push([bar]);
+            }
+        }
+    }
+    return { rows, extra };
+}
+function canFitRow(row, bar, gapPct) {
+    return row.every((existing) => bar._rightPct + gapPct <= existing._leftPct || existing._rightPct + gapPct <= bar._leftPct);
+}
+function compareLegacyBars(a, b) {
+    if (a._priorityRank !== b._priorityRank)
+        return a._priorityRank - b._priorityRank;
+    if (a._leftPct !== b._leftPct)
+        return a._leftPct - b._leftPct;
+    return a._globalIdNumber - b._globalIdNumber;
+}
+function priorityRank(priority) {
+    const value = String(priority || 'p3').toLowerCase();
+    if (value === 'p0')
+        return 0;
+    if (value === 'p1')
+        return 1;
+    if (value === 'p2')
+        return 2;
+    return 3;
+}
+function parseGlobalIdNumber(boxId) {
+    const match = String(boxId || '').match(/^GLBL_(\d+)$/);
+    return match ? Number(match[1]) : Number.MAX_SAFE_INTEGER;
+}
+function moreLeftPct(sheetWidthRpx) {
+    return 100 - ((EDGE_GAP_RPX + MORE_WIDTH_RPX) / sheetWidthRpx * 100);
 }
 
 function previewIntro(intro) {
@@ -62,6 +184,7 @@ Page({
         relatedUnits: [],
         nextUnit: null,
         introPreview: '',
+        introDisplay: '',
         introCanExpand: false,
         introParagraphs: [],
         showIntroModal: false,
@@ -78,6 +201,13 @@ Page({
         overlayLabel: '',
         overlayBars: [],
         loadError: '',
+        priorityOptions: PRIORITY_OPTIONS,
+        activePriority: 'p3',
+        chipTooltipVisible: false,
+        chipTooltipTitle: '',
+        chipTooltipRange: '',
+        chipTooltipLeftPx: 0,
+        chipTooltipTopPx: 0,
     },
     onShow() {
         void this.refreshFavState();
@@ -105,15 +235,17 @@ Page({
             const dynastyTitle = (unit.dynastyName && unit.dynastyName.trim()) || unit.name;
             const navTitle = dynastyTitle.length <= 4 ? dynastyTitle : dynastyTitle.slice(0, 4);
             const heroSubLine = `${unit.startYear}–${unit.endYear}`;
-            const matrixBoxIds = collectMatrixBoxIds(swim);
+            const activePriority = this.data.activePriority || 'p3';
+            const prioritySwim = applyPriorityView(swim, activePriority);
+            const matrixBoxIds = collectMatrixBoxIds(prioritySwim);
             const { preview, canExpand, paragraphs } = previewIntro(unit.summary || '');
             this.setData({
                 unit,
                 dynastyTitle,
                 navTitle,
                 heroSubLine,
-                swim,
-                concurrentItems: swim.concurrentItems || [],
+                swim: prioritySwim,
+                concurrentItems: prioritySwim.concurrentItems || [],
                 relatedUnits: hero.relatedUnits || [],
                 nextUnit: hero.nextUnit ?? null,
                 matrixBoxIds,
@@ -193,12 +325,35 @@ Page({
         if (pinned !== this.data.axisPinned) {
             this.setData({ axisPinned: pinned });
         }
+        if (this.data.chipTooltipVisible) {
+            this.hideChipTooltip();
+        }
     },
     onBarTap(e) {
-        const boxId = e.currentTarget.dataset.box;
+        if (this.data.chipTooltipVisible) {
+            this.hideChipTooltip();
+            return;
+        }
+        const ds = e.currentTarget.dataset || {};
+        const boxId = ds.box;
         if (!boxId)
             return;
-        (0, router_1.navigateTo)(router_1.ROUTES.boxDetail, { boxId });
+        (0, router_1.navigateTo)(router_1.ROUTES.boxDetail, { boxId, title: ds.title || '' });
+    },
+    onBarLongPress(e) {
+        var _a, _b;
+        const ds = e.currentTarget.dataset || {};
+        const touch = ((_a = e.touches) === null || _a === void 0 ? void 0 : _a[0]) || ((_b = e.changedTouches) === null || _b === void 0 ? void 0 : _b[0]);
+        const sys = wx.getSystemInfoSync();
+        const left = (touch === null || touch === void 0 ? void 0 : touch.clientX) == null ? Math.round(sys.windowWidth / 2) : Math.max(92, Math.min(sys.windowWidth - 92, touch.clientX));
+        const top = (touch === null || touch === void 0 ? void 0 : touch.clientY) == null ? Math.round(sys.windowHeight * 0.45) : Math.max(92, Math.min(sys.windowHeight - 120, touch.clientY - 72));
+        this.setData({
+            chipTooltipVisible: true,
+            chipTooltipTitle: ds.title || '',
+            chipTooltipRange: ds.range || '',
+            chipTooltipLeftPx: left,
+            chipTooltipTopPx: top,
+        });
     },
     showMoreOverlay(e) {
         const label = e.currentTarget.dataset.label;
@@ -209,13 +364,28 @@ Page({
         const lane = swim.lanes[laneIdx];
         if (!lane)
             return;
-        const bars = (lane.extraBars && lane.extraBars.length)
-            ? lane.extraBars
-            : lane.collapsedRows.flat();
+        const bars = lane.extraBars || [];
         this.setData({ overlayVisible: true, overlayLabel: label, overlayBars: bars });
+    },
+    onPriorityTap(e) {
+        const priority = e.currentTarget.dataset.priority;
+        if (!priority || priority === this.data.activePriority)
+            return;
+        const swim = this.data.swim;
+        if (!swim)
+            return;
+        this.setData({
+            activePriority: priority,
+            swim: applyPriorityView(swim, priority),
+            overlayVisible: false,
+            chipTooltipVisible: false,
+        });
     },
     hideOverlay() {
         this.setData({ overlayVisible: false });
+    },
+    hideChipTooltip() {
+        this.setData({ chipTooltipVisible: false });
     },
     goUnit(e) {
         const id = e.currentTarget.dataset.id;
@@ -228,6 +398,8 @@ Page({
         (0, router_1.navigateTo)(router_1.ROUTES.dynastyDetail, { unitId: n.unitId, dynasty: n.title });
     },
     openIntro() {
+        if (!this.data.introCanExpand)
+            return;
         this.setData({ showIntroModal: true, introModalTitle: (this.data.dynastyTitle || '') + '·朝代简介' });
     },
     closeIntro() {

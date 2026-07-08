@@ -44,7 +44,12 @@ CREATE TABLE IF NOT EXISTS historical_box (
   blurb VARCHAR(64) NULL,
   start_year INT,
   end_year INT,
+  priority_code VARCHAR(8),
+  priority_reason TEXT,
   importance_level TINYINT,
+  peak_year INT,
+  peak_reason TEXT,
+  peak_type VARCHAR(64),
   status TINYINT NOT NULL DEFAULT 1,
   detail_md TEXT,
   original_ref_json TEXT
@@ -103,6 +108,18 @@ CREATE TABLE IF NOT EXISTS user_footprint (
   last_viewed_at TIMESTAMP NOT NULL,
   view_count INT NOT NULL DEFAULT 1,
   UNIQUE (user_id, box_id)
+);
+
+CREATE TABLE IF NOT EXISTS user_home_matrix_state (
+  id BIGINT PRIMARY KEY AUTO_INCREMENT,
+  user_id BIGINT NOT NULL,
+  civilization_code VARCHAR(16) NOT NULL DEFAULT 'HX',
+  last_dynasty_key VARCHAR(64) NULL,
+  collapsed_dynasty_keys_json TEXT NULL,
+  last_scroll_top_px INT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  UNIQUE (user_id)
 );
 
 CREATE TABLE IF NOT EXISTS membership (

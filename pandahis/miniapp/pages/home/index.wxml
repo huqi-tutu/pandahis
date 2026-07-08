@@ -35,9 +35,11 @@
     scroll-y
     show-scrollbar="{{false}}"
     scroll-top="{{navDragActive ? matrixScrollTop : undefined}}"
+    scroll-into-view="{{matrixScrollIntoView}}"
     
     style="top: {{scrollAreaTop}}px; height: {{matrixHeight}}px;"
     bindscroll="onMatrixScroll"
+    bindscrollend="onMatrixScrollEnd"
   >
     <view class="matrix-body" style="height: {{matrixTotalH + matrixScrollBottomPad}}rpx;">
       <view class="matrix-time-col" >

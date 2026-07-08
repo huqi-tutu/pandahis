@@ -325,7 +325,7 @@ def verify_step4_final(skeleton: Path, data: dict) -> Tuple[bool, str]:
     code, out = run_script(cmd)
     if code != 0:
         return False, f"check_format final 失败 (exit {code})\n{out[-2000:]}"
-    return True, "check_format final 通过（含优先级/年份/归属）"
+    return True, "check_format final 通过（含优先级/年份/归属/峰值年）"
 
 
 def verify_step(work: str, vol: str, step: str) -> Tuple[bool, str]:

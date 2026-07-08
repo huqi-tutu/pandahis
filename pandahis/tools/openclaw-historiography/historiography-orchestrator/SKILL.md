@@ -131,11 +131,13 @@ python3 .../hist.py approve-work --work 01A尚书
 编排器 Step4 流程（LLM 不可删临时字段）：
 
 1. `fill_fields.py` + `--merge-auto`（脚本合并归属/君纪年）
-2. LLM 仅补 `_needs_llm` 所列缺失正式字段
-3. `--verify` → `--finalize`（脚本删 `_auto_filled`）
-4. `check_format --phase final`
+2. LLM 仅补 `_needs_llm` 所列缺失正式字段（**不含峰值年**）
+3. `peak_year.py`（Step4d）：规则 → LLM 分批 → 兜底，写峰值四字段
+4. `--verify` → `--finalize`（脚本删临时 `_auto_filled`，**保留峰值审计元数据**）
+5. `check_format --phase final`（含峰值年硬校验）
 
-失败时自动 `fill_fields` 恢复 scratch，可 `hist resume` 重试。
+失败时自动 `fill_fields` 恢复 scratch，可 `hist resume` 重试。  
+峰值 LLM 单批失败 → 该批走兜底层，**不阻断整卷 Step4**。
 
 ## 与下游
 

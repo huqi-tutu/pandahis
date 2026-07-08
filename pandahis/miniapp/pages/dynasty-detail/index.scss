@@ -5,11 +5,11 @@
    标题/朝代名  → Noto Serif SC / Songti SC / serif
    正文/UI     → PingFang SC / -apple-system / sans-serif
    时间/数字   → SF Mono / Menlo / monospace
-   页面底色  #F8F6F2 · 卡片底 #FFFFFF · 分割线 #EDEAE6
+   页面底色  #F7F5F2 · 卡片底 #FFFFFF · 分割线 #EDEAE6
 ══════════════════════════════════════════ */
 
 .page-shell {
-  background: #F8F6F2;
+  background: #F7F5F2;
   min-height: 100vh;
 }
 
@@ -21,7 +21,7 @@
   left: 0;
   right: 0;
   z-index: 90;
-  background: rgba(248, 246, 242, 0.96);
+  background: rgba(247, 245, 242, 0.96);
   border-bottom: 1rpx solid #EDEAE6;
 }
 
@@ -61,7 +61,7 @@
   right: 0;
   bottom: 0;
   width: 60rpx;
-  background: linear-gradient(90deg, transparent, rgba(248, 246, 242, 0.92));
+  background: linear-gradient(90deg, transparent, rgba(247, 245, 242, 0.92));
   pointer-events: none;
 }
 
@@ -228,6 +228,9 @@
 /* ═══════════════════════════════════════
    泳道矩阵
 ═══════════════════════════════════════ */
+$swim-lane-head-w: 53rpx;
+$swim-lane-text: #4A4540;
+
 .dyn-swim-matrix {
   flex: 1;
   min-height: 0;
@@ -277,8 +280,8 @@
 }
 
 .dyn-swim-axis-spacer {
-  width: 60rpx;
-  min-width: 60rpx;
+  width: $swim-lane-head-w;
+  min-width: $swim-lane-head-w;
   background: #F5F3F0;
   border-radius: 12rpx 0 0 12rpx;
 }
@@ -291,8 +294,8 @@
 /* 吸顶固定时间轴里的静态占位 */
 .dyn-swim-lane-head-spacer {
   flex-shrink: 0;
-  width: 60rpx;
-  min-width: 60rpx;
+  width: $swim-lane-head-w;
+  min-width: $swim-lane-head-w;
 }
 
 .dyn-axis-fixed .dyn-swim-lane-head-spacer {
@@ -310,7 +313,7 @@
   flex-direction: row;
   align-items: stretch;
   padding: 8rpx 24rpx 12rpx;
-  background: rgba(248, 246, 242, 0.98);
+  background: rgba(247, 245, 242, 0.98);
   border-bottom: 1rpx solid #EDEAE6;
   box-sizing: border-box;
 }
@@ -408,57 +411,70 @@
 .dyn-swim-lanes {
   display: flex;
   flex-direction: column;
-  gap: 20rpx;
+  gap: 24rpx;
   flex-shrink: 0;
 }
 
-/* 注意：lane 不能用 overflow:hidden，否则会破坏内部 sticky 标题 */
+/* 泳道容器：统一高度由 laneHeightRpx 锁定，标题栏与轨道 100% 填满 */
 .dyn-swim-lane {
   display: flex;
   flex-direction: row;
   align-items: stretch;
-  border-radius: 12rpx;
-  background: linear-gradient(180deg, rgba(255,255,255,0.88), rgba(252,250,248,0.94));
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.06);
+  border-radius: 16rpx;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
-/* ── 泳道竖向标签（sticky 冻结列） ── */
+/* ── 泳道竖向标签（sticky 冻结列 · 60% 透明色底） ── */
 .dyn-swim-lane-head {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 60rpx;
-  min-width: 60rpx;
-  padding: 18rpx 10rpx;
-  background: #F6F4F0;
-  border-left: 4rpx solid transparent;
-  /* color assigned by .lane-N wrapper */
-  border-right: 1rpx solid #EDEAE6;
-  border-radius: 12rpx 0 0 12rpx;
+  gap: 6rpx;
+  width: $swim-lane-head-w;
+  min-width: $swim-lane-head-w;
+  height: 100%;
+  min-height: 0;
+  flex-shrink: 0;
+  padding: 10rpx 4rpx;
+  border-right: 1rpx solid rgba(74, 69, 64, 0.08);
+  border-radius: 16rpx 0 0 16rpx;
   box-sizing: border-box;
 }
 
 .dyn-swim-lane-head-label {
-  font-size: 20rpx;
-  font-weight: 500;
-  color: #8A8A8A;
+  font-size: 18rpx;
+  font-weight: 700;
+  color: $swim-lane-text;
   letter-spacing: 3rpx;
+  line-height: 1.15;
   writing-mode: vertical-rl;
-  text-orientation: mixed;
+  text-orientation: upright;
   white-space: nowrap;
 }
 
-/* ── 轨道区（宽度由 sheetWidthRpx 内联指定） ── */
+.dyn-swim-lane-progress {
+  font-family: 'SF Mono', 'Menlo', monospace;
+  font-size: 12rpx;
+  font-weight: 600;
+  color: $swim-lane-text;
+  white-space: nowrap;
+  text-align: center;
+  letter-spacing: 0;
+  flex-shrink: 0;
+  transform: scale(0.92);
+  transform-origin: center center;
+}
+
+/* ── 轨道区（背景色 laneTrackBg 内联，高度与标题栏一致） ── */
 .dyn-swim-track {
   position: relative;
-  flex-shrink: 0;
-  background: rgba(248, 249, 250, 0.50);
-  padding: 14rpx 0 20rpx;
-  border-radius: 0 12rpx 12rpx 0;
+  flex: 1;
+  height: 100%;
+  min-height: 0;
+  padding: 12rpx 0;
+  border-radius: 0 16rpx 16rpx 0;
   overflow: hidden;
   box-sizing: border-box;
 }
@@ -487,16 +503,65 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 10rpx;
-  padding: 0 16rpx;
+  gap: 16rpx;
+  padding: 0 24rpx;
   box-sizing: border-box;
+  z-index: 2;
 }
 
 .dyn-swim-row {
   position: relative;
   width: 100%;
-  height: 40rpx;
+  height: 44rpx;
   flex-shrink: 0;
+}
+
+/* ── 史略胶囊：统一白底悬浮，优先级仅影响背景 alpha ── */
+.dyn-swim-chip {
+  position: absolute;
+  top: 0;
+  width: 132rpx;
+  height: 44rpx;
+  padding: 0 12rpx;
+  border-radius: 999rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  overflow: hidden;
+  box-sizing: border-box;
+  background: #FFFFFF;
+  color: #2C2C2C;
+  border: 1rpx solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.16s ease, transform 0.16s ease;
+}
+
+.dyn-swim-chip-title {
+  max-width: 100%;
+  font-size: 21rpx;
+  font-weight: 600;
+  line-height: 1;
+  color: #2C2C2C;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dyn-swim-chip--p0 {
+  background: #FFFFFF;
+}
+
+.dyn-swim-chip--p1 {
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.dyn-swim-chip--p2 {
+  background: rgba(255, 255, 255, 0.70);
+}
+
+.dyn-swim-chip--p3 {
+  background: rgba(255, 255, 255, 0.55);
 }
 
 /* ── 条形 · 基础结构 ── */
@@ -531,45 +596,28 @@
   opacity: 0.55;
 }
 
-/* ── 各泳道条形配色 ── */
-.lane-0 .dyn-swim-bar--default { background: #FFF5E0; color: #5A3A00; }
-.lane-1 .dyn-swim-bar--default { background: #F5F0E0; color: #6B5E3A; }
-.lane-2 .dyn-swim-bar--default { background: #EAF0EA; color: #3A4A3E; }
-.lane-3 .dyn-swim-bar--default { background: #EDF4F8; color: #3A5A6A; }
-.lane-4 .dyn-swim-bar--default { background: #F5F0E8; color: #6A4A3A; }
-.lane-5 .dyn-swim-bar--default { background: #F3EFF8; color: #4A3A5A; }
-.lane-6 .dyn-swim-bar--default { background: #EDF2F6; color: #3A4A58; }
-
-.dyn-swim-bar--isolated {
-  border-radius: 20rpx;
-  border: none;
-  box-shadow: none;
-}
-
-/* ── 优先级透明度 ── */
-.dyn-continuous-chip--p0, .dyn-swim-bar--p0 { opacity: 1; }
-.dyn-continuous-chip--p1, .dyn-swim-bar--p1 { opacity: 1; }
-.dyn-continuous-chip--p2, .dyn-swim-bar--p2 { opacity: 0.75; }
-.dyn-continuous-chip--p3, .dyn-swim-bar--p3 { opacity: 0.50; }
-
 /* ── 「还有N条」触发胶囊 ── */
 .dyn-swim-more-btn {
   position: absolute;
-  top: 0;
-  height: 40rpx;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 112rpx;
+  height: 52rpx;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 6rpx;
-  background: rgba(74, 63, 63, 0.05);
-  border: 1rpx dashed rgba(74, 63, 63, 0.25);
+  border-radius: 999rpx;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1rpx solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.06);
   box-sizing: border-box;
+  z-index: 20;
 }
 
 .dyn-swim-more-text {
-  font-size: 18rpx;
-  font-weight: 500;
-  color: #8A8A8A;
+  font-size: 22rpx;
+  font-weight: 700;
+  color: #2C2C2C;
   letter-spacing: 0.3rpx;
   white-space: nowrap;
 }
@@ -858,6 +906,93 @@
   letter-spacing: 0.3rpx;
 }
 
+/* ── 底部优先级导航 ── */
+.priority-dock {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: calc(24rpx + env(safe-area-inset-bottom));
+  z-index: 120;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.priority-tabs {
+  display: flex;
+  flex-direction: row;
+  gap: 6rpx;
+  padding: 8rpx;
+  border-radius: 28rpx;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1rpx solid rgba(237, 234, 230, 0.92);
+  box-shadow: 0 12rpx 36rpx rgba(47, 41, 38, 0.14);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  pointer-events: auto;
+}
+
+.priority-tab {
+  min-width: 86rpx;
+  height: 52rpx;
+  border-radius: 22rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'SF Mono', 'Menlo', monospace;
+  font-size: 22rpx;
+  font-weight: 700;
+  color: #8A8177;
+}
+
+.priority-tab.active {
+  color: #FFFFFF;
+  background: #4A3F3F;
+  box-shadow: 0 6rpx 16rpx rgba(74, 63, 63, 0.22);
+}
+
+/* ── 史略胶囊长按浮窗 ── */
+.chip-tooltip-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 250;
+  background: rgba(36, 34, 32, 0.48);
+}
+
+.chip-tooltip {
+  position: absolute;
+  z-index: 1;
+  width: 184rpx;
+  min-height: 112rpx;
+  transform: translate(-50%, -100%);
+  padding: 18rpx 16rpx;
+  border-radius: 18rpx;
+  background: rgba(38, 34, 30, 0.94);
+  border: 1rpx solid rgba(255, 255, 255, 0.12);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10rpx;
+}
+
+.chip-tooltip-title {
+  font-size: 24rpx;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.chip-tooltip-range {
+  font-family: 'SF Mono', 'Menlo', monospace;
+  font-size: 18rpx;
+  font-weight: 600;
+  line-height: 1.1;
+  color: rgba(255, 255, 255, 0.74);
+  text-align: center;
+}
+
 /* ── 简介弹层 ── */
 .ud-modal {
   position: fixed;
@@ -865,7 +1000,7 @@
   background: rgba(36, 25, 23, 0.50);
   display: flex;
   align-items: flex-end;
-  z-index: 100;
+  z-index: 200;
 }
 
 .ud-modal-card {
@@ -927,31 +1062,9 @@
 }
 
 
-/* ── 泳道彩色身份条（与首页朝代色统一） ── */
-.lane-0 .dyn-swim-lane-head { border-left-color: #F1A805; }
-.lane-1 .dyn-swim-lane-head { border-left-color: #E0C088; }
-.lane-2 .dyn-swim-lane-head { border-left-color: #92ADA4; }
-.lane-3 .dyn-swim-lane-head { border-left-color: #9ABCC8; }
-.lane-4 .dyn-swim-lane-head { border-left-color: #D4B098; }
-.lane-5 .dyn-swim-lane-head { border-left-color: #B8A8D0; }
-.lane-6 .dyn-swim-lane-head { border-left-color: #A0B8C8; }
-
-
 /* ── 史略节点点击态 ── */
-.dyn-swim-bar:active {
-  transform: scale(1.03);
-  box-shadow: 0 6rpx 20rpx rgba(74, 63, 63, 0.14);
-  z-index: 10;
-}
-
-.dyn-continuous-chip:active {
-  transform: translateY(-50%) scale(1.06);
-  box-shadow: 0 6rpx 18rpx rgba(74, 63, 63, 0.16);
-  z-index: 10;
-}
-
-.dyn-shichen-chip:active {
-  transform: translateY(-50%) scale(1.06);
-  box-shadow: 0 6rpx 18rpx rgba(74, 63, 63, 0.16);
-  z-index: 10;
+.dyn-swim-chip:active {
+  transform: translateY(-2rpx);
+  box-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.08);
+  z-index: 30;
 }

@@ -842,6 +842,20 @@ def _run_step4(work: str, vol: str, job_id: int, job: Optional[dict] = None) -> 
             for ln in fb_logs:
                 print(f"   📌 Step4 finalize 前加固: {ln}", flush=True)
 
+    # Step4d：峰值年（年份终态后、finalize 前；独立于 Step4 主 LLM）
+    sk_data = json.loads(sk.read_text(encoding="utf-8"))
+    if sk_data.get("entries"):
+        cfg = get_work_config(work)
+        use_peak_llm = cfg.get("step4_peak_llm", True)
+        _peak_stats, peak_logs = gates.step4_peak_year(sk, use_llm=use_peak_llm)
+        for ln in peak_logs:
+            print(f"   📌 {ln}", flush=True)
+        ok_peak, peak_msg = gates.step4_peak_verify(sk)
+        if not ok_peak:
+            gates.step4_restore_scratch(sk)
+            raise RuntimeError(f"verify step4 失败:\n峰值年硬校验:\n{peak_msg}")
+        print("✅ Step4 峰值年标注完成", flush=True)
+
     ok, msg = gates.step4_finalize(sk)
     if not ok:
         gates.step4_restore_scratch(sk)
