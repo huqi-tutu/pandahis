@@ -11,39 +11,61 @@ CREATE TABLE IF NOT EXISTS civilization_l1 (
 CREATE TABLE IF NOT EXISTS historical_dynasty (
   id VARCHAR(32) PRIMARY KEY,
   civilization_l1_id BIGINT NOT NULL,
+  civilization_name VARCHAR(64) NULL,
+  civilization_code VARCHAR(16) NULL,
   name VARCHAR(128) NOT NULL,
+  start_year INT NULL,
+  end_year INT NULL,
+  start_year_raw VARCHAR(32) NULL,
+  end_year_raw VARCHAR(32) NULL,
+  sort_order INT NOT NULL DEFAULT 0,
+  status TINYINT NOT NULL DEFAULT 1
+);
+
+CREATE TABLE IF NOT EXISTS historical_regime (
+  id VARCHAR(128) PRIMARY KEY,
+  name VARCHAR(128) NOT NULL,
+  dynasty_id VARCHAR(64) NOT NULL,
+  dynasty_name VARCHAR(128) NOT NULL,
+  civilization_l1_id BIGINT NOT NULL,
+  civilization_name VARCHAR(64) NULL,
   start_year INT NULL,
   end_year INT NULL,
   sort_order INT NOT NULL DEFAULT 0,
   status TINYINT NOT NULL DEFAULT 1
 );
 
-CREATE TABLE IF NOT EXISTS historical_unit (
-  id VARCHAR(64) PRIMARY KEY,
+CREATE TABLE IF NOT EXISTS historical_emperor (
+  id VARCHAR(128) PRIMARY KEY,
   name VARCHAR(128) NOT NULL,
   ruler_name VARCHAR(64) NULL,
-  dynasty_name VARCHAR(64),
-  dynasty_id VARCHAR(32) NULL,
-  era_name VARCHAR(64),
+  regime_id VARCHAR(128) NOT NULL,
+  regime_name VARCHAR(128) NOT NULL,
+  dynasty_id VARCHAR(64) NOT NULL,
+  dynasty_name VARCHAR(128) NOT NULL,
   civilization_l1_id BIGINT NOT NULL,
-  start_year INT NOT NULL,
-  end_year INT NOT NULL,
-  duration_years INT NOT NULL,
+  era_name VARCHAR(64) NULL,
+  enthronement_year INT NULL,
+  abdication_year INT NULL,
+  reign_duration INT NULL,
   importance_level TINYINT NULL,
-  core_topics_json TEXT,
-  summary TEXT,
+  tags TEXT NULL,
   card_image_url VARCHAR(512) NULL,
+  sort_order INT NOT NULL DEFAULT 0,
   status TINYINT NOT NULL DEFAULT 1
 );
 
 CREATE TABLE IF NOT EXISTS historical_box (
   id VARCHAR(128) PRIMARY KEY,
-  unit_id VARCHAR(64) NOT NULL,
+  emperor_id VARCHAR(128) NOT NULL,
+  regime_id VARCHAR(128) NOT NULL,
+  dynasty_id VARCHAR(64) NOT NULL,
+  civilization_code VARCHAR(16) NOT NULL,
   title VARCHAR(128) NOT NULL,
   category_key VARCHAR(16) NOT NULL,
   blurb VARCHAR(64) NULL,
-  start_year INT,
-  end_year INT,
+  start_year INT NOT NULL,
+  end_year INT NOT NULL,
   priority_code VARCHAR(8),
   priority_reason TEXT,
   importance_level TINYINT,

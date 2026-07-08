@@ -50,8 +50,9 @@ class SwimLaneOverflowTest {
     SwimLaneOverflow.Split split = SwimLaneOverflow.split(bars);
     assertEquals(10, split.visible().size());
     assertEquals(2, split.extra().size());
-    assertFalse(split.visible().stream().anyMatch(b -> b.boxId().equals("B11")));
-    assertTrue(split.extra().stream().anyMatch(b -> b.boxId().equals("B11")));
+    assertTrue(split.visible().stream().anyMatch(b -> b.boxId().equals("B0")));
+    assertTrue(split.visible().stream().anyMatch(b -> b.boxId().equals("B1")));
+    assertTrue(split.extra().stream().allMatch(b -> b.priority().equals("p3")));
   }
 
   private static SwimLaneOverflow.BarSlice slice(String id, String title, int start, int end) {
