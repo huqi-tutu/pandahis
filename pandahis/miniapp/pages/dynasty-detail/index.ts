@@ -1,3 +1,4 @@
+import { DEV_API_PORT, DEV_LAN_HOST } from '../../native-utils/dev-config'
 import { hasToken, request } from '../../native-utils/api'
 import { encodePathSegment } from '../../native-utils/encode-path-segment'
 import {
@@ -7,8 +8,14 @@ import {
   setBoxesFavorited,
 } from '../../native-utils/favorite-box'
 import { ROUTES, navigateTo } from '../../native-utils/router'
-import { promptContentShareUnavailable } from '../../native-utils/share-invite'
+import { formatHistoryYear } from '../../native-utils/year-format'
 import { enrichSwimLaneVisuals } from '../../native-utils/swim-lane-palette'
+const {
+  buildSwimMatrixFromMock,
+  buildHeroFromMock,
+  normalizeDynastyKey,
+  isDegradedMockFallback,
+} = require('./swim-local-fallback')
 
 type PriorityLevel = 'p0' | 'p1' | 'p2' | 'p3'
 
@@ -28,6 +35,7 @@ const CHIP_GAP_RPX = 16
 const EDGE_GAP_RPX = 20
 const MORE_WIDTH_RPX = 112
 const MORE_GAP_RPX = 20
+
 
 function laneTrackHeight(rowCount: number): number {
   const rows = Math.max(1, Math.min(MAX_LANE_ROWS, rowCount || 1))
@@ -49,6 +57,22 @@ function collectMatrixBoxIds(swim: { lanes?: SwimLane[] } | null) {
     }
   }
   return Array.from(new Set(ids))
+}
+
+function findSwimBar(swim: { lanes?: SwimLane[] } | null, boxId: string): SwimBar | null {
+  if (!swim?.lanes?.length || !boxId) return null
+  for (const lane of swim.lanes) {
+    const rows = lane.collapsedRows || []
+    for (const row of rows) {
+      for (const bar of row) {
+        if (bar?.boxId === boxId) return bar
+      }
+    }
+    for (const bar of lane.extraBars || []) {
+      if (bar?.boxId === boxId) return bar
+    }
+  }
+  return null
 }
 
 type UnitHero = {
@@ -87,6 +111,7 @@ type SwimBar = {
   startYear?: number
   endYear?: number
   peakYear?: number
+  peakReason?: string
   globalIdNumber?: number
 }
 
@@ -132,15 +157,77 @@ type SwimMatrix = {
   startYear: number
   endYear: number
   endLabel: string
-  ticks: { label: string; left: string; edgeStart?: boolean; hideLabel?: boolean }[]
+  ticks: { label: string; left: string; edgeStart?: boolean; hideLabel?: boolean; segmentBoundary?: boolean }[]
+  gridLines?: { left: string }[]
+  timeSegments?: {
+    startYear: number
+    endYear: number
+    startLabel: string
+    endLabel: string
+    left: string
+    width: string
+    boxCount: number
+    dense: boolean
+  }[]
+  timeScaleMode?: string
   lanes: SwimLane[]
   concurrentItems: string[]
   sheetWidthRpx: number
 }
 
+function percentForYearOnSwim(swim: SwimMatrix, year: number): number {
+  const clamped = Math.max(swim.startYear, Math.min(swim.endYear, year))
+  const segments = swim.timeSegments || []
+  if (segments.length) {
+    for (const seg of segments) {
+      if (clamped < seg.startYear || clamped > seg.endYear) continue
+      const segLeft = parseFloat(String(seg.left).replace('%', ''))
+      const segWidth = parseFloat(String(seg.width).replace('%', ''))
+      const segSpan = Math.max(1, seg.endYear - seg.startYear)
+      return segLeft + ((clamped - seg.startYear) / segSpan) * segWidth
+    }
+  }
+  const span = Math.max(1, swim.endYear - swim.startYear)
+  return ((clamped - swim.startYear) / span) * 100
+}
+
 function splitIntroParagraphs(intro: string): string[] {
   const text = (intro || '').trim() || '空'
   return text.split(/\n\n+/).map((p) => p.trim()).filter(Boolean)
+}
+
+function isDevelopEnv(): boolean {
+  try {
+    return wx.getAccountInfoSync()?.miniProgram?.envVersion === 'develop'
+  } catch {
+    return true
+  }
+}
+
+function warnIfDegradedMock(swim: SwimMatrix) {
+  if (!isDegradedMockFallback(swim)) return
+  wx.showToast({
+    title: `后端未连通(${DEV_LAN_HOST}:${DEV_API_PORT})，仅显示君王`,
+    icon: 'none',
+    duration: 3500,
+  })
+}
+
+function tryLoadLocalMock(
+  dynastyName: string,
+  unitId: string,
+): { hero: UnitHero; swim: SwimMatrix } | null {
+  const key = normalizeDynastyKey(dynastyName)
+  if (!key) return null
+  try {
+    const swimMatrix = buildSwimMatrixFromMock(key)
+    if (!swimMatrix?.lanes?.length) return null
+    const hero = buildHeroFromMock(swimMatrix, unitId || key, key)
+    return { hero, swim: swimMatrix as SwimMatrix }
+  } catch (err) {
+    console.warn('[dynasty-detail] local mock failed', err)
+    return null
+  }
 }
 
 /* ── 生成20年间隔时间轴刻度 ── */
@@ -150,7 +237,7 @@ function generateTimelineTicks(startYear: number, endYear: number, originalSheet
   const ticks: { label: string; left: string; edgeStart?: boolean; hideLabel?: boolean }[] = []
 
   // 起始年
-  ticks.push({ label: String(startYear), left: '0%', edgeStart: true, hideLabel: false })
+  ticks.push({ label: formatHistoryYear(startYear), left: '0%', edgeStart: true, hideLabel: false })
 
   // 首个10的倍数的刻度（>= startYear + 1 的10倍数）
   const firstTick = Math.ceil((startYear + 1) / 10) * 10
@@ -163,18 +250,18 @@ function generateTimelineTicks(startYear: number, endYear: number, originalSheet
     // 第2个刻度距起点<20年 → 只画线不标数字
     // 倒数第2个距终点<20年 → 只画线不标数字
     const hideLabel = (tickYear === firstTick && distToStart < 20) || (isPenultimate && distToEnd < 20)
-    ticks.push({ label: String(tickYear), left: `${left}%`, hideLabel })
+    ticks.push({ label: formatHistoryYear(tickYear), left: `${left}%`, hideLabel })
     tickYear += 20
   }
 
   // 泳道网格线：从第2个刻度开始，与时间轴刻度对齐
   const gridLines = ticks.filter(t => t.left !== '0%').map(t => ({ left: t.left }))
 
-  return { ticks, endLabel: String(endYear), sheetWidthRpx: newSheetWidthRpx, gridLines }
+  return { ticks, endLabel: formatHistoryYear(endYear), sheetWidthRpx: newSheetWidthRpx, gridLines }
 }
 
 function applyPriorityView(swim: SwimMatrix, priority: PriorityLevel): SwimMatrix {
-  const sheetWidthRpx = estimateSheetWidth(swim)
+  const sheetWidthRpx = swim.sheetWidthRpx || 1440
   return {
     ...swim,
     sheetWidthRpx,
@@ -352,6 +439,8 @@ Page({
     chipTooltipVisible: false,
     chipTooltipTitle: '',
     chipTooltipRange: '',
+    chipTooltipPeakYear: '',
+    chipTooltipPeakReason: '',
     chipTooltipLeftPx: 0,
     chipTooltipTopPx: 0,
   },
@@ -384,7 +473,7 @@ Page({
       const unit = hero.unit
       const dynastyTitle = (unit.dynastyName && unit.dynastyName.trim()) || unit.name
       const navTitle = dynastyTitle.length <= 4 ? dynastyTitle : dynastyTitle.slice(0, 4)
-      const heroSubLine = `${unit.startYear}–${unit.endYear}`
+      const heroSubLine = `${formatHistoryYear(unit.startYear)}–${formatHistoryYear(unit.endYear)}`
       const activePriority = this.data.activePriority || 'p3'
       const prioritySwim = applyPriorityView(swim, activePriority)
       const matrixBoxIds = collectMatrixBoxIds(prioritySwim)
@@ -422,12 +511,30 @@ Page({
         ])
         const enhancedSwim = {
           ...swimRes.data,
-          ...generateTimelineTicks(swimRes.data.startYear, swimRes.data.endYear, swimRes.data.sheetWidthRpx),
+          gridLines: swimRes.data.gridLines || [],
         }
         applyPageData(heroRes.data, enhancedSwim)
         return
       } catch (e: any) {
         console.error('[dynasty-detail] API failed', e)
+        if (isDevelopEnv() && dynastyHint) {
+          const fallback = tryLoadLocalMock(dynastyHint, unitId)
+          if (fallback) {
+            console.warn('[dynasty-detail] using local mock for', dynastyHint)
+            const enhancedSwim = {
+              ...fallback.swim,
+              ...generateTimelineTicks(
+                fallback.swim.startYear,
+                fallback.swim.endYear,
+                fallback.swim.sheetWidthRpx,
+              ),
+              timeScaleMode: 'linear',
+            }
+            applyPageData(fallback.hero, enhancedSwim)
+            warnIfDegradedMock(enhancedSwim)
+            return
+          }
+        }
         const msg = e?.message || '加载失败'
         this.setData({
           unit: null,
@@ -439,13 +546,30 @@ Page({
       }
     }
 
+    if (isDevelopEnv() && dynastyHint) {
+      const fallback = tryLoadLocalMock(dynastyHint, '')
+      if (fallback) {
+        console.warn('[dynasty-detail] using local mock for', dynastyHint)
+        const enhancedSwim = {
+          ...fallback.swim,
+          ...generateTimelineTicks(
+            fallback.swim.startYear,
+            fallback.swim.endYear,
+            fallback.swim.sheetWidthRpx,
+          ),
+          timeScaleMode: 'linear',
+        }
+        applyPageData(fallback.hero, enhancedSwim)
+        warnIfDegradedMock(enhancedSwim)
+        return
+      }
+    }
+
     this.setData({ loadError: '缺少朝代 ID，无法加载' })
   },
   scrollToAnchorYear(anchorYear: number, swim: SwimMatrix) {
-    const span = Math.max(1, swim.endYear - swim.startYear)
-    const clamped = Math.max(swim.startYear, Math.min(swim.endYear, anchorYear))
     const sheetPx = (swim.sheetWidthRpx || 1440) * (wx.getSystemInfoSync().windowWidth / 750)
-    const targetPx = ((clamped - swim.startYear) / span) * sheetPx
+    const targetPx = (percentForYearOnSwim(swim, anchorYear) / 100) * sheetPx
     const bias = wx.getSystemInfoSync().windowWidth * 0.32
     const left = Math.max(0, targetPx - bias)
     this.swimScrollLeft = left
@@ -497,14 +621,20 @@ Page({
   },
   onBarLongPress(e: WechatMiniprogram.BaseEvent) {
     const ds = (e.currentTarget as any).dataset || {}
+    const boxId = ds.box as string
+    const bar = findSwimBar(this.data.swim, boxId)
     const touch = (e as any).touches?.[0] || (e as any).changedTouches?.[0]
     const sys = wx.getSystemInfoSync()
-    const left = touch?.clientX == null ? Math.round(sys.windowWidth / 2) : Math.max(92, Math.min(sys.windowWidth - 92, touch.clientX))
-    const top = touch?.clientY == null ? Math.round(sys.windowHeight * 0.45) : Math.max(92, Math.min(sys.windowHeight - 120, touch.clientY - 72))
+    const left = touch?.clientX == null ? Math.round(sys.windowWidth / 2) : Math.max(140, Math.min(sys.windowWidth - 140, touch.clientX))
+    const top = touch?.clientY == null ? Math.round(sys.windowHeight * 0.45) : Math.max(120, Math.min(sys.windowHeight - 160, touch.clientY - 96))
+    const peakYearNum = bar?.peakYear
+    const peakReason = String(bar?.peakReason || '').trim()
     this.setData({
       chipTooltipVisible: true,
-      chipTooltipTitle: ds.title || '',
-      chipTooltipRange: ds.range || '',
+      chipTooltipTitle: bar?.title || ds.title || '',
+      chipTooltipRange: bar?.timeRange || ds.range || '',
+      chipTooltipPeakYear: peakYearNum == null ? '' : formatHistoryYear(peakYearNum),
+      chipTooltipPeakReason: peakReason,
       chipTooltipLeftPx: left,
       chipTooltipTopPx: top,
     })

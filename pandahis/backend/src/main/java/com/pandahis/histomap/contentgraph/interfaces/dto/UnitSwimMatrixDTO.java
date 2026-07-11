@@ -9,11 +9,33 @@ public record UnitSwimMatrixDTO(
     int endYear,
     String endLabel,
     List<AxisTick> ticks,
+    List<GridLine> gridLines,
+    List<TimeSegment> timeSegments,
+    String timeScaleMode,
     List<Lane> lanes,
     List<String> concurrentItems,
     int sheetWidthRpx
 ) {
-  public record AxisTick(String label, String left) {}
+  public record AxisTick(
+      String label,
+      String left,
+      boolean edgeStart,
+      boolean hideLabel,
+      boolean segmentBoundary
+  ) {}
+
+  public record GridLine(String left, boolean segmentBoundary) {}
+
+  public record TimeSegment(
+      int startYear,
+      int endYear,
+      String startLabel,
+      String endLabel,
+      String left,
+      String width,
+      int boxCount,
+      boolean dense
+  ) {}
 
   public record Lane(
       String key,
@@ -69,6 +91,7 @@ public record UnitSwimMatrixDTO(
       int startYear,
       int endYear,
       Integer peakYear,
+      String peakReason,
       int globalIdNumber
   ) {}
 }

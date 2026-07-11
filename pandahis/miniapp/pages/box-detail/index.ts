@@ -17,6 +17,7 @@ import {
   promptLoginForFavorite,
   unfavoriteBox,
 } from '../../native-utils/favorite-box'
+import { formatHistoryYear } from '../../native-utils/year-format'
 import { ROUTES, navigateTo } from '../../native-utils/router'
 import { promptContentShareUnavailable } from '../../native-utils/share-invite'
 
@@ -137,7 +138,7 @@ function formatDetailMetaLine(subText: string): string {
 
 function yearLabel(y: number): string {
   if (!Number.isFinite(y) || y === 0) return ''
-  return y < 0 ? `前${Math.abs(y)}` : String(y)
+  return formatHistoryYear(y)
 }
 
 function buildDetailMetaFromBox(box: BoxHeader['box']): string {

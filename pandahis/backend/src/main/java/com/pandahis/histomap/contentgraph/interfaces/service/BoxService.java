@@ -2,6 +2,7 @@ package com.pandahis.histomap.contentgraph.interfaces.service;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.pandahis.histomap.common.util.HistoryYearFormat;
 import com.pandahis.histomap.common.api.ApiException;
 import com.pandahis.histomap.contentgraph.domain.BoxCategorySupport;
 import com.pandahis.histomap.common.auth.UserContextHolder;
@@ -60,7 +61,7 @@ public class BoxService {
       )).orElse("");
     }
 
-    String subText = yearLabel(startYear) + " · " + civName + " · " + categoryName(categoryKey);
+    String subText = HistoryYearFormat.label(startYear) + " · " + civName + " · " + categoryName(categoryKey);
     String blurb = Optional.ofNullable((String) box.get("blurb")).orElse("").trim();
 
     boolean hasGraphFromDb = exists("SELECT COUNT(1) FROM box_graph_node WHERE box_id=?", boxId);
@@ -428,10 +429,6 @@ public class BoxService {
   private boolean exists(String sql, Object... args) {
     Integer v = jdbcTemplate.queryForObject(sql, Integer.class, args);
     return v != null && v > 0;
-  }
-
-  private static String yearLabel(int year) {
-    return year < 0 ? ("前" + Math.abs(year)) : String.valueOf(year);
   }
 
   private static String categoryName(String key) {

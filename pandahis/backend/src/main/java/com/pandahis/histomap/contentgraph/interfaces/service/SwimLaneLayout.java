@@ -1,5 +1,6 @@
 package com.pandahis.histomap.contentgraph.interfaces.service;
 
+import com.pandahis.histomap.common.util.HistoryYearFormat;
 import com.pandahis.histomap.contentgraph.interfaces.dto.UnitSwimMatrixDTO;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -30,7 +31,9 @@ final class SwimLaneLayout {
       int start,
       int end,
       String priority,
-      Integer peakYear
+      Integer peakYear,
+      String peakReason,
+      boolean anchorAtStart
   ) {}
 
   private SwimLaneLayout() {}
@@ -41,9 +44,17 @@ final class SwimLaneLayout {
       int span,
       int sheetRpx
   ) {
+    return buildPriorityViews(bars, SwimTimeScale.linear(startYear, startYear + span), sheetRpx);
+  }
+
+  static Map<String, UnitSwimMatrixDTO.LaneView> buildPriorityViews(
+      List<SwimBarInput> bars,
+      SwimTimeScale scale,
+      int sheetRpx
+  ) {
     Map<String, UnitSwimMatrixDTO.LaneView> views = new LinkedHashMap<>();
     for (String threshold : PRIORITY_LEVELS) {
-      views.put(threshold, buildPriorityView(bars, threshold, startYear, span, sheetRpx));
+      views.put(threshold, buildPriorityView(bars, threshold, scale, sheetRpx));
     }
     return views;
   }
@@ -51,8 +62,7 @@ final class SwimLaneLayout {
   private static UnitSwimMatrixDTO.LaneView buildPriorityView(
       List<SwimBarInput> bars,
       String threshold,
-      int startYear,
-      int span,
+      SwimTimeScale scale,
       int sheetRpx
   ) {
     List<PreparedBar> prepared = bars.stream()
@@ -68,7 +78,7 @@ final class SwimLaneLayout {
         .filter(bar -> bar.priorityRank > maxPriority)
         .toList();
 
-    Placement placement = place(candidates, startYear, span, sheetRpx);
+    Placement placement = place(candidates, scale, sheetRpx);
     List<PreparedBar> extra = new ArrayList<>(hiddenByPriority);
     extra.addAll(placement.overflow);
     extra.sort(PreparedBar.ORDER);
@@ -84,7 +94,7 @@ final class SwimLaneLayout {
         extra.size(),
         moreLeft,
         "12%",
-        extra.stream().map(bar -> toOverlayBar(bar, startYear, span)).toList(),
+        extra.stream().map(bar -> toOverlayBar(bar, scale)).toList(),
         rowCount,
         height,
         placement.visibleCount
@@ -93,8 +103,7 @@ final class SwimLaneLayout {
 
   private static Placement place(
       List<PreparedBar> candidates,
-      int startYear,
-      int span,
+      SwimTimeScale scale,
       int sheetRpx
   ) {
     List<List<UnitSwimMatrixDTO.Bar>> rows = new ArrayList<>();
@@ -107,7 +116,7 @@ final class SwimLaneLayout {
     double reservedRightPct = (EDGE_GAP_RPX + MORE_GAP_RPX + MORE_RPX) / (double) sheetRpx * 100.0;
 
     for (PreparedBar bar : candidates) {
-      double anchorLeft = percentForYear(bar.anchorYear, startYear, span);
+      double anchorLeft = scale.percentForYear(bar.anchorYear);
       double left = Math.max(edgePct, Math.min(100 - chipPct - reservedRightPct, anchorLeft));
       double right = left + chipPct;
 
@@ -130,7 +139,7 @@ final class SwimLaneLayout {
         rows.add(new ArrayList<>());
       }
 
-      rows.get(assigned).add(toVisibleBar(bar, left, chipPct, startYear, span, rows.get(assigned).size()));
+      rows.get(assigned).add(toVisibleBar(bar, left, chipPct, rows.get(assigned).size()));
     }
 
     if (rows.isEmpty()) {
@@ -142,7 +151,7 @@ final class SwimLaneLayout {
   private static PreparedBar prepare(SwimBarInput input) {
     int start = input.start();
     int end = input.end() <= start ? start + 1 : input.end();
-    int anchorYear = input.peakYear() == null ? start : input.peakYear();
+    int anchorYear = input.anchorAtStart() || input.peakYear() == null ? start : input.peakYear();
     String priority = normalizePriority(input.priority());
     return new PreparedBar(
         input.boxId(),
@@ -153,6 +162,7 @@ final class SwimLaneLayout {
         priorityRank(priority),
         anchorYear,
         input.peakYear(),
+        input.peakReason(),
         parseGlobalId(input.boxId())
     );
   }
@@ -161,8 +171,6 @@ final class SwimLaneLayout {
       PreparedBar bar,
       double leftPct,
       double widthPct,
-      int startYear,
-      int span,
       int zOffset
   ) {
     String left = fmtPct(leftPct);
@@ -184,16 +192,17 @@ final class SwimLaneLayout {
         bar.priority,
         "default",
         10 + zOffset,
-        fmtYearRange(bar.start, bar.end),
+        HistoryYearFormat.label(bar.start) + " — " + HistoryYearFormat.label(bar.end),
         bar.start,
         bar.end,
         bar.peakYear,
+        bar.peakReason,
         bar.globalIdNumber
     );
   }
 
-  private static UnitSwimMatrixDTO.Bar toOverlayBar(PreparedBar bar, int startYear, int span) {
-    String left = fmtPct(percentForYear(bar.anchorYear, startYear, span));
+  private static UnitSwimMatrixDTO.Bar toOverlayBar(PreparedBar bar, SwimTimeScale scale) {
+    String left = fmtPct(scale.percentForYear(bar.anchorYear));
     return new UnitSwimMatrixDTO.Bar(
         bar.title,
         bar.boxId,
@@ -211,10 +220,11 @@ final class SwimLaneLayout {
         bar.priority,
         "default",
         0,
-        fmtYearRange(bar.start, bar.end),
+        HistoryYearFormat.label(bar.start) + " — " + HistoryYearFormat.label(bar.end),
         bar.start,
         bar.end,
         bar.peakYear,
+        bar.peakReason,
         bar.globalIdNumber
     );
   }
@@ -258,15 +268,6 @@ final class SwimLaneLayout {
     return String.format("%.2f%%", value);
   }
 
-  private static String fmtYearRange(int start, int end) {
-    return fmtYear(start) + " — " + fmtYear(end);
-  }
-
-  private static String fmtYear(int year) {
-    if (year < 0) return "前" + Math.abs(year);
-    return String.valueOf(year);
-  }
-
   private record Placement(
       List<List<UnitSwimMatrixDTO.Bar>> rows,
       List<PreparedBar> overflow,
@@ -282,6 +283,7 @@ final class SwimLaneLayout {
       int priorityRank,
       int anchorYear,
       Integer peakYear,
+      String peakReason,
       int globalIdNumber
   ) {
     static final Comparator<PreparedBar> ORDER = Comparator

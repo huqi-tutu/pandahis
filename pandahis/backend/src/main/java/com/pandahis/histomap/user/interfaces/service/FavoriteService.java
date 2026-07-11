@@ -1,5 +1,6 @@
 package com.pandahis.histomap.user.interfaces.service;
 
+import com.pandahis.histomap.common.util.HistoryYearFormat;
 import com.pandahis.histomap.contentgraph.domain.BoxCategorySupport;
 import com.pandahis.histomap.user.interfaces.dto.FavoriteListDTO;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -49,7 +50,7 @@ public class FavoriteService {
           String civName = rs.getString("civ_name");
           String unitName = rs.getString("unit_name");
           String dynastyName = rs.getString("dynasty_name");
-          String subText = yearLabel(startYear) + " · " + (civName == null ? "" : civName) + " · " + categoryName(categoryKey);
+          String subText = HistoryYearFormat.label(startYear) + " · " + (civName == null ? "" : civName) + " · " + categoryName(categoryKey);
           String pathLabel = pathLabel(categoryKey, civName, dynastyName, unitName);
           OffsetDateTime at = rs.getObject("created_at", OffsetDateTime.class);
           String iso = at == null ? null : at.toString();
@@ -59,10 +60,6 @@ public class FavoriteService {
         userId, pageSize, offset
     );
     return new FavoriteListDTO(page, pageSize, total, items);
-  }
-
-  private static String yearLabel(int year) {
-    return year < 0 ? ("前" + Math.abs(year)) : String.valueOf(year);
   }
 
   private static String categoryName(String key) {

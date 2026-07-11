@@ -41,10 +41,17 @@
         <view class="dyn-axis-fixed-sheet" style="width: {{swim.sheetWidthRpx}}rpx;">
           <view class="dyn-swim-axis">
             <view class="dyn-swim-axis-inner">
+              <view
+                wx:for="{{swim.timeSegments}}"
+                wx:key="startYear"
+                wx:if="{{item.dense && swim.timeScaleMode === 'segmented'}}"
+                class="dyn-swim-segment-band"
+                style="left: {{item.left}}; width: {{item.width}};"
+              ></view>
               <text
                 wx:for="{{swim.ticks}}"
                 wx:key="label"
-                class="dyn-swim-axis-tick {{item.edgeStart ? 'dyn-swim-axis-tick--edge-start' : ''}}"
+                class="dyn-swim-axis-tick {{item.edgeStart ? 'dyn-swim-axis-tick--edge-start' : ''}} {{item.segmentBoundary ? 'dyn-swim-axis-tick--segment' : ''}}"
                 style="left: {{item.left}};"
               >{{item.hideLabel ? '' : item.label}}</text>
               <text class="dyn-swim-axis-tick dyn-swim-axis-tick--end" style="left:100%;">{{swim.endLabel}}</text>
@@ -124,10 +131,17 @@
                 <view class="dyn-swim-axis-sheet" style="width: {{swim.sheetWidthRpx}}rpx;">
                   <view class="dyn-swim-axis">
                     <view class="dyn-swim-axis-inner">
+                      <view
+                        wx:for="{{swim.timeSegments}}"
+                        wx:key="startYear"
+                        wx:if="{{item.dense && swim.timeScaleMode === 'segmented'}}"
+                        class="dyn-swim-segment-band"
+                        style="left: {{item.left}}; width: {{item.width}};"
+                      ></view>
                       <text
                         wx:for="{{swim.ticks}}"
                         wx:key="label"
-                        class="dyn-swim-axis-tick {{item.edgeStart ? 'dyn-swim-axis-tick--edge-start' : ''}}"
+                        class="dyn-swim-axis-tick {{item.edgeStart ? 'dyn-swim-axis-tick--edge-start' : ''}} {{item.segmentBoundary ? 'dyn-swim-axis-tick--segment' : ''}}"
                         style="left: {{item.left}};"
                       >{{item.hideLabel ? "" : item.label}}</text>
                       <text class="dyn-swim-axis-tick dyn-swim-axis-tick--end" style="left:100%;">{{swim.endLabel}}</text>
@@ -157,7 +171,7 @@
                     <!-- 泳道网格线 -->
                     <view class="dyn-swim-lane-grid">
                       <block wx:for="{{swim.gridLines}}" wx:key="left">
-                        <view class="dyn-swim-grid-line" style="left: {{item.left}};"></view>
+                        <view class="dyn-swim-grid-line {{item.segmentBoundary ? 'dyn-swim-grid-line--segment' : ''}}" style="left: {{item.left}};"></view>
                       </block>
                     </view>
                     <view class="dyn-swim-stack">
@@ -232,6 +246,8 @@
     >
       <text class="chip-tooltip-title">{{chipTooltipTitle}}</text>
       <text class="chip-tooltip-range">{{chipTooltipRange}}</text>
+      <text wx:if="{{chipTooltipPeakYear}}" class="chip-tooltip-meta">峰值年：{{chipTooltipPeakYear}}</text>
+      <text wx:if="{{chipTooltipPeakReason}}" class="chip-tooltip-reason">判定原因：{{chipTooltipPeakReason}}</text>
     </view>
   </view>
 

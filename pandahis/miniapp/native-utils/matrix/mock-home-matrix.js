@@ -173,19 +173,17 @@ function parseYear(str) {
 }
 
 function fmtYear(y) {
-  if (y < 0)  return `前${Math.abs(y)}`
+  if (y < 0) return '-' + Math.abs(y)
   if (y === 0) return '公元0'
   return String(y)
 }
 
-/** 时间轴年份：负数用「-」前缀，比「前」更省列宽 */
+/** 时间轴年份（与 fmtYear 一致） */
 function fmtTimelineYear(y) {
-  if (y < 0)  return `-${Math.abs(y)}`
-  if (y === 0) return '公元0'
-  return String(y)
+  return fmtYear(y)
 }
 
-/** 起止年份展示（保留「约」「至今」，负数统一为「前X」） */
+/** 起止年份展示（保留「约」「至今」，负数统一为 -X） */
 function fmtRange(start, end, startStr, endStr) {
   const approxS = startStr && String(startStr).includes('约')
   const approxE = endStr && String(endStr).includes('约')
@@ -490,9 +488,11 @@ function rebuildMatrixDataSources(dynastyRaw, emperorRaw) {
       temple:           e.temple || '',
       era:              e.era || '',
       importance:       e.importance || '',
-      start:            parseInt(e.start, 10) || 0,
-      end:              parseInt(e.end, 10) || 0,
-      years:            parseInt(e.years, 10) || 1,
+      start:            parseYear(e.start),
+      end:              parseYear(e.end),
+      startStr:         e.start,
+      endStr:           e.end,
+      years:            parseInt(e.years, 10) || Math.max(1, parseYear(e.end) - parseYear(e.start)),
       tag:              normalizeEmperorTag(e.tag),
     })
   })
@@ -582,7 +582,6 @@ function buildMergedEraEntry(groupName, members) {
     id:           `merged_${groupName}`,
     isEmperor:    false,
     isMergedEra:  true,
-    isCollapsedDynastyCard: true,
     dynastyName:  groupName,
     dynastyGroup: groupName,
     dynastyDisp:  groupName,
@@ -1066,7 +1065,7 @@ function entryToCardFields(e, civId) {
       civilizationId: e.civilizationId || '',
       originalName: e.originalName || '',
       timeRange, civ: civId,
-      anchorYear: Math.round((e.start + e.end) / 2),
+      anchorYear: e.start,
       highlights,
     }, colors)
   }
@@ -2010,7 +2009,9 @@ function calcSliceH(tS, tE, active) {
 }
 
 function isCollapsedDynastyFixedHeightSlice(active) {
-  return !!(active && active.some(e => e.isCollapsedDynastyCard || e.isCollapsedRegimeSummary))
+  return !!(active && active.some(e =>
+    (e.isCollapsedDynastyCard && !e.isMergedEra) || e.isCollapsedRegimeSummary
+  ))
 }
 
 function placementKey(placements) {
@@ -2085,7 +2086,10 @@ function applyInterBlockGaps(blocks) {
 function enforceCollapsedDynastyCardHeights(blocks, rows, displayEntries) {
   const fixedIds = new Set(
     (displayEntries || [])
-      .filter(e => e.isCollapsedDynastyCard || e.isCollapsedRegimeSummary)
+      .filter(e =>
+        !e.isMergedEra &&
+        (e.isCollapsedDynastyCard || e.isCollapsedRegimeSummary)
+      )
       .map(e => e.id)
   )
   if (!fixedIds.size) return
@@ -2106,7 +2110,10 @@ function enforceCollapsedDynastyCardHeights(blocks, rows, displayEntries) {
 function refreshCollapsedDynastyOverlays(blocks, overlays, displayEntries) {
   const fixedIds = new Set(
     (displayEntries || [])
-      .filter(e => e.isCollapsedDynastyCard || e.isCollapsedRegimeSummary)
+      .filter(e =>
+        !e.isMergedEra &&
+        (e.isCollapsedDynastyCard || e.isCollapsedRegimeSummary)
+      )
       .map(e => e.id)
   )
   if (!fixedIds.size) return
@@ -3837,6 +3844,8 @@ function buildDisplayEntries(civId, expandedDynasties, civName, isHuaxia) {
           originalName: emp.originalName || '',
           displayName: emp.name,
           start: emp.start, end: emp.end, years: emp.years,
+          startStr: emp.startStr || String(emp.start),
+          endStr: emp.endStr || String(emp.end),
           colorIdx: dynastyColorIdx,
           tag: emp.tag || '',
           containerId: useContainer ? containerLayout.dynastyKey : '',

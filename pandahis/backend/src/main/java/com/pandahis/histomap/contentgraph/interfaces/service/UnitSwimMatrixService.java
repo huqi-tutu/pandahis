@@ -1,6 +1,7 @@
 package com.pandahis.histomap.contentgraph.interfaces.service;
 
 import com.pandahis.histomap.common.api.ApiException;
+import com.pandahis.histomap.common.util.HistoryYearFormat;
 import com.pandahis.histomap.contentgraph.domain.BoxCategorySupport;
 import com.pandahis.histomap.contentgraph.interfaces.dto.UnitSwimMatrixDTO;
 import java.util.ArrayList;
@@ -12,8 +13,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class UnitSwimMatrixService {
-  private static final int SHEET_WIDTH_RPX = 1440;
-
   private final JdbcTemplate jdbcTemplate;
   private final UnitDynastyResolver dynastyResolver;
 
@@ -33,15 +32,40 @@ public class UnitSwimMatrixService {
     String civName = dynastyResolver.civilizationName(dynasty);
 
     List<Map<String, Object>> boxes = jdbcTemplate.queryForList(
-        "SELECT id, title, category_key, start_year, end_year, priority_code, importance_level, peak_year, blurb "
+        "SELECT id, title, category_key, start_year, end_year, priority_code, importance_level, peak_year, peak_reason, blurb "
             + "FROM historical_box WHERE dynasty_id=? AND status=1 "
             + "ORDER BY start_year ASC, id ASC",
         dynastyId
     );
 
-    List<UnitSwimMatrixDTO.AxisTick> ticks = buildTicks(startYear, endYear);
-    String endLabel = fmtAxisYear(endYear);
+    List<LaneSeed> laneSeeds = buildLaneSeeds(boxes, startYear, endYear);
+    List<Integer> anchorYears = collectAnchorYears(laneSeeds);
 
+    SwimTimeScale.Plan timePlan = SwimTimeScale.plan(startYear, endYear, anchorYears, laneSeeds.size());
+    int sheetWidthRpx = refineSheetWidth(laneSeeds, timePlan);
+
+    List<UnitSwimMatrixDTO.Lane> lanes = laneSeeds.stream()
+        .map(seed -> buildLane(seed.def(), seed.bars(), timePlan.scale(), sheetWidthRpx))
+        .toList();
+
+    List<String> concurrent = loadConcurrentItems(civName, dynastyName, startYear, endYear);
+    SwimTimeScale.Plan finalPlan = timePlan.scale().replan(sheetWidthRpx, timePlan.timeScaleMode());
+
+    return new UnitSwimMatrixDTO(
+        startYear,
+        endYear,
+        HistoryYearFormat.label(endYear),
+        finalPlan.ticks(),
+        finalPlan.gridLines(),
+        finalPlan.timeSegments(),
+        finalPlan.timeScaleMode(),
+        lanes,
+        concurrent,
+        sheetWidthRpx
+    );
+  }
+
+  private List<LaneSeed> buildLaneSeeds(List<Map<String, Object>> boxes, int startYear, int endYear) {
     List<LaneSeed> laneSeeds = new ArrayList<>();
     for (BoxCategorySupport.CategoryDef def : BoxCategorySupport.swimLanes()) {
       List<SwimLaneLayout.SwimBarInput> bars = new ArrayList<>();
@@ -53,49 +77,47 @@ public class UnitSwimMatrixService {
         int be = b.get("end_year") == null ? bs : ((Number) b.get("end_year")).intValue();
         if (be <= bs) be = bs + 1;
         Integer peakYear = b.get("peak_year") == null ? null : ((Number) b.get("peak_year")).intValue();
+        String peakReason = b.get("peak_reason") == null ? null : String.valueOf(b.get("peak_reason")).trim();
+        if (peakReason != null && peakReason.isEmpty()) {
+          peakReason = null;
+        }
         bars.add(new SwimLaneLayout.SwimBarInput(
             (String) b.get("id"),
             (String) b.get("title"),
             bs,
             be,
             priority(b.get("priority_code"), b.get("importance_level")),
-            "junji".equals(def.key()) ? null : peakYear
+            peakYear,
+            peakReason,
+            "junji".equals(def.key())
         ));
       }
       laneSeeds.add(new LaneSeed(def, bars));
     }
+    return laneSeeds;
+  }
 
-    int sheetWidthRpx = computeSheetWidth(laneSeeds, startYear, endYear);
-    List<UnitSwimMatrixDTO.Lane> lanes = laneSeeds.stream()
-        .map(seed -> buildLane(seed.def(), seed.bars(), startYear, endYear, sheetWidthRpx))
-        .toList();
-
-    List<String> concurrent = loadConcurrentItems(civName, dynastyName, startYear, endYear);
-
-    return new UnitSwimMatrixDTO(
-        startYear,
-        endYear,
-        endLabel,
-        ticks,
-        lanes,
-        concurrent,
-        sheetWidthRpx
-    );
+  private static List<Integer> collectAnchorYears(List<LaneSeed> laneSeeds) {
+    List<Integer> anchors = new ArrayList<>();
+    for (LaneSeed seed : laneSeeds) {
+      for (SwimLaneLayout.SwimBarInput bar : seed.bars()) {
+        int anchor = bar.anchorAtStart() || bar.peakYear() == null ? bar.start() : bar.peakYear();
+        anchors.add(anchor);
+      }
+    }
+    return anchors;
   }
 
   private UnitSwimMatrixDTO.Lane buildLane(
       BoxCategorySupport.CategoryDef def,
       List<SwimLaneLayout.SwimBarInput> bars,
-      int startYear,
-      int endYear,
+      SwimTimeScale scale,
       int sheetWidthRpx
   ) {
-    int span = Math.max(1, endYear - startYear);
     Map<String, UnitSwimMatrixDTO.LaneView> views =
-        SwimLaneLayout.buildPriorityViews(bars, startYear, span, sheetWidthRpx);
+        SwimLaneLayout.buildPriorityViews(bars, scale, sheetWidthRpx);
     UnitSwimMatrixDTO.LaneView defaultView = views.get("p3");
     int totalCount = bars.size();
-    // TODO: replace with real per-user read progress when the API exposes it.
     int readCount = 0;
 
     return new UnitSwimMatrixDTO.Lane(
@@ -120,21 +142,20 @@ public class UnitSwimMatrixService {
     );
   }
 
-  private int computeSheetWidth(List<LaneSeed> laneSeeds, int startYear, int endYear) {
-    int span = Math.max(1, endYear - startYear);
-    int width = SHEET_WIDTH_RPX;
+  private int refineSheetWidth(List<LaneSeed> laneSeeds, SwimTimeScale.Plan timePlan) {
+    int width = timePlan.sheetWidthRpx();
     for (int pass = 0; pass < 2; pass++) {
       int maxRows = 1;
       for (LaneSeed seed : laneSeeds) {
         UnitSwimMatrixDTO.LaneView view = SwimLaneLayout
-            .buildPriorityViews(seed.bars(), startYear, span, width)
+            .buildPriorityViews(seed.bars(), timePlan.scale(), width)
             .get("p3");
         maxRows = Math.max(maxRows, view.rowCount());
       }
-      double factor = Math.max(0.5, Math.min(4.0, maxRows / 5.0));
-      width = (int) Math.round(SHEET_WIDTH_RPX * factor);
+      double factor = Math.max(1.0, Math.min(1.8, maxRows / 6.0));
+      width = (int) Math.round(width * factor);
     }
-    return width;
+    return Math.max(SwimTimeScale.MIN_SHEET_RPX, Math.min(SwimTimeScale.MAX_SHEET_RPX, width));
   }
 
   private static String laneIcon(String key) {
@@ -151,19 +172,6 @@ public class UnitSwimMatrixService {
       case "fanzhu" -> "蕃";
       default -> "史";
     };
-  }
-
-  private List<UnitSwimMatrixDTO.AxisTick> buildTicks(int start, int end) {
-    int span = Math.max(1, end - start);
-    int step = span <= 20 ? 5 : span <= 80 ? 10 : span <= 200 ? 25 : 50;
-    List<UnitSwimMatrixDTO.AxisTick> ticks = new ArrayList<>();
-    int first = ((start / step) + (start % step == 0 ? 0 : 1)) * step;
-    if (first < start) first += step;
-    for (int y = first; y < end; y += step) {
-      double left = pct(y, start, span);
-      ticks.add(new UnitSwimMatrixDTO.AxisTick(fmtAxisYear(y), fmtPct(left)));
-    }
-    return ticks;
   }
 
   private List<String> loadConcurrentItems(String civName, String dynastyName, int start, int end) {
@@ -188,20 +196,7 @@ public class UnitSwimMatrixService {
     return out;
   }
 
-  private static double pct(int year, int start, int span) {
-    return Math.max(0, Math.min(100, 100.0 * (year - start) / span));
-  }
 
-  private static String fmtPct(double v) {
-    return String.format("%.2f%%", v);
-  }
-
-  private static String fmtAxisYear(int y) {
-    if (y < 0) return "-" + Math.abs(y);
-    return String.valueOf(y);
-  }
-
-  /** P0 最高优先级；优先使用 priority_code，importance_level 仅作历史数据兜底。 */
   private static String priority(Object priorityCode, Object imp) {
     if (priorityCode != null) {
       String code = String.valueOf(priorityCode).trim().toLowerCase();

@@ -95,6 +95,31 @@ class SwimLaneLayoutTest {
   }
 
   @Test
+  void anchorAtStartKeepsPeakYearForDisplay() {
+    UnitSwimMatrixDTO.LaneView view = SwimLaneLayout.buildPriorityViews(
+        List.of(new SwimLaneLayout.SwimBarInput(
+            "GLBL_00022",
+            "君王展示",
+            1000,
+            1010,
+            "p0",
+            1005,
+            "即位为君",
+            true
+        )),
+        1000,
+        100,
+        1440
+    ).get("p0");
+
+    UnitSwimMatrixDTO.Bar chip = view.collapsedRows().get(0).get(0);
+
+    assertEquals("1.39%", chip.left());
+    assertEquals(1005, chip.peakYear());
+    assertEquals("即位为君", chip.peakReason());
+  }
+
+  @Test
   void invalidGlobalIdFailsFast() {
     List<SwimLaneLayout.SwimBarInput> bars = List.of(
         bar("BOX_1", "非法编号", 1000, 1001, "p0")
@@ -113,7 +138,7 @@ class SwimLaneLayoutTest {
       int end,
       String priority
   ) {
-    return new SwimLaneLayout.SwimBarInput(boxId, title, start, end, priority, null);
+    return new SwimLaneLayout.SwimBarInput(boxId, title, start, end, priority, null, null, false);
   }
 
   private static SwimLaneLayout.SwimBarInput bar(
@@ -124,7 +149,7 @@ class SwimLaneLayoutTest {
       String priority,
       Integer peakYear
   ) {
-    return new SwimLaneLayout.SwimBarInput(boxId, title, start, end, priority, peakYear);
+    return new SwimLaneLayout.SwimBarInput(boxId, title, start, end, priority, peakYear, null, false);
   }
 
   private static int rowOf(UnitSwimMatrixDTO.LaneView view, String boxId) {

@@ -128,9 +128,9 @@ function getConcurrentItems(selfCiv, selfTitle, startYear, endYear) {
 const DYNASTY_DB = {
   /* ════ 五帝 ════ */
   '五帝': {
-    title: '五帝', civ: '华夏', range: '约前2698–前2205', startYear: -2698, endYear: -2205,
+    title: '五帝', civ: '华夏', range: '约-2698–-2205', startYear: -2698, endYear: -2205,
     capital: '有熊（传说）',
-    intro: '五帝时代（约前2698—前2205）是华夏文明的起源期。黄帝统一各部落，奠定华夏族基础；颛顼、帝喾承续治理；尧舜以禅让传位，开创了"天下为公"的政治理想。这一时期的诸多创举——造字、制乐、作历、论医、养蚕——被视为中华文明的源头。',
+    intro: '五帝时代（约-2698—-2205）是华夏文明的起源期。黄帝统一各部落，奠定华夏族基础；颛顼、帝喾承续治理；尧舜以禅让传位，开创了"天下为公"的政治理想。这一时期的诸多创举——造字、制乐、作历、论医、养蚕——被视为中华文明的源头。',
     next: { title: '夏 · 阳城', dynasty: '夏' },
     lanes: [
       { label: '君王', borderColor: '#F1A805', bars: [
@@ -649,7 +649,75 @@ function packShichenBars(rawBars, startYear, span) {
  */
 
 function getDynastyData(dynastyName) {
-  return DYNASTY_DB[dynastyName] || DYNASTY_DB['北宋']
+  if (DYNASTY_DB[dynastyName]) return DYNASTY_DB[dynastyName]
+  const fromEmperors = buildDynastyFromEmperorData(dynastyName)
+  if (fromEmperors) return fromEmperors
+  return DYNASTY_DB['北宋']
+}
+
+function parseYearSimple(str) {
+  if (!str) return 0
+  const s = String(str).trim().replace('约', '')
+  if (s === '至今') return 2025
+  const n = parseInt(s, 10)
+  return isNaN(n) ? 0 : n
+}
+
+/** 无 DYNASTY_DB 条目时，从 bundled 帝王表合成泳道数据（如商、夏、周） */
+function buildDynastyFromEmperorData(dynastyName) {
+  const key = String(dynastyName || '').trim()
+  if (!key) return null
+
+  let EMPEROR_RAW = []
+  let DYNASTY_RAW = []
+  try {
+    EMPEROR_RAW = require('./emperor-data.js')
+    DYNASTY_RAW = require('./dynasty-data.js')
+  } catch {
+    return null
+  }
+
+  const emperors = EMPEROR_RAW.filter(e => {
+    const d = e.dynasty || e.dynasty2 || ''
+    return d === key || d === key.replace(/朝$/, '')
+  })
+    .map(e => ({
+      title: e.name,
+      start: parseYearSimple(e.start),
+      end: parseYearSimple(e.end),
+      type: (parseInt(e.importance, 10) || 0) >= 5 ? 'accent' : '',
+    }))
+    .filter(e => e.end > e.start)
+    .sort((a, b) => a.start - b.start)
+
+  if (!emperors.length) return null
+
+  const dynRow = DYNASTY_RAW.find(d => d.name === key || d.dynasty === key)
+  const startYear = dynRow
+    ? parseYearSimple(dynRow.start)
+    : Math.min(...emperors.map(e => e.start))
+  let endYear = dynRow
+    ? parseYearSimple(dynRow.end)
+    : Math.max(...emperors.map(e => e.end))
+  if (endYear <= startYear) endYear = startYear + 1
+
+  const bars = emperors.map(e => ({
+    title: e.title,
+    start: e.start,
+    end: e.end <= e.start ? e.start + 1 : e.end,
+    type: e.type,
+  }))
+
+  const civ = (dynRow && dynRow.civilization) || '华夏'
+  return {
+    title: key,
+    civ,
+    range: `${startYear}–${endYear}`,
+    startYear,
+    endYear,
+    intro: '',
+    lanes: [{ label: '君王', borderColor: '#F1A805', bars }],
+  }
 }
 
 function buildSwimData(dynastyName) {
@@ -752,4 +820,4 @@ function buildSwimData(dynastyName) {
   return { ...d, ticks, endLabel, lanes, concurrentItems }
 }
 
-module.exports = { DYNASTY_DB, WORLD_DYNASTIES, getDynastyData, buildSwimData }
+module.exports = { DYNASTY_DB, WORLD_DYNASTIES, getDynastyData, buildSwimData, buildDynastyFromEmperorData }

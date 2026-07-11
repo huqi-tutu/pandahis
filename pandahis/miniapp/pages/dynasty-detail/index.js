@@ -1,11 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const api_1 = require("../../native-utils/api");
+const dev_config_1 = require("../../native-utils/dev-config");
 const encode_path_segment_1 = require("../../native-utils/encode-path-segment");
 const favorite_box_1 = require("../../native-utils/favorite-box");
 const router_1 = require("../../native-utils/router");
 const share_invite_1 = require("../../native-utils/share-invite");
 const swim_lane_palette_1 = require("../../native-utils/swim-lane-palette");
+const { formatHistoryYear } = require('../../native-utils/year-format.js');
+const { buildSwimMatrixFromMock, buildHeroFromMock, normalizeDynastyKey, isDegradedMockFallback, } = require('./swim-local-fallback');
 const PRIORITY_OPTIONS = [
     { value: 'p0', label: 'P0' },
     { value: 'p1', label: 'P1' },
@@ -43,15 +46,82 @@ function collectMatrixBoxIds(swim) {
     }
     return Array.from(new Set(ids));
 }
+function findSwimBar(swim, boxId) {
+    if (!(swim === null || swim === void 0 ? void 0 : swim.lanes) || !swim.lanes.length || !boxId)
+        return null;
+    for (const lane of swim.lanes) {
+        const rows = lane.collapsedRows || [];
+        for (const row of rows) {
+            for (const bar of row) {
+                if ((bar === null || bar === void 0 ? void 0 : bar.boxId) === boxId)
+                    return bar;
+            }
+        }
+        for (const bar of lane.extraBars || []) {
+            if ((bar === null || bar === void 0 ? void 0 : bar.boxId) === boxId)
+                return bar;
+        }
+    }
+    return null;
+}
+function percentForYearOnSwim(swim, year) {
+    const clamped = Math.max(swim.startYear, Math.min(swim.endYear, year));
+    const segments = swim.timeSegments || [];
+    if (segments.length) {
+        for (const seg of segments) {
+            if (clamped < seg.startYear || clamped > seg.endYear)
+                continue;
+            const segLeft = parseFloat(String(seg.left).replace('%', ''));
+            const segWidth = parseFloat(String(seg.width).replace('%', ''));
+            const segSpan = Math.max(1, seg.endYear - seg.startYear);
+            return segLeft + ((clamped - seg.startYear) / segSpan) * segWidth;
+        }
+    }
+    const span = Math.max(1, swim.endYear - swim.startYear);
+    return ((clamped - swim.startYear) / span) * 100;
+}
 function splitIntroParagraphs(intro) {
     const text = (intro || '').trim() || '空';
     return text.split(/\n\n+/).map((p) => p.trim()).filter(Boolean);
+}
+function isDevelopEnv() {
+    try {
+        return wx.getAccountInfoSync()?.miniProgram?.envVersion === 'develop';
+    }
+    catch (_a) {
+        return true;
+    }
+}
+function warnIfDegradedMock(swim) {
+    if (!isDegradedMockFallback(swim))
+        return;
+    wx.showToast({
+        title: `后端未连通(${dev_config_1.DEV_LAN_HOST}:${dev_config_1.DEV_API_PORT})，仅显示君王`,
+        icon: 'none',
+        duration: 3500,
+    });
+}
+function tryLoadLocalMock(dynastyName, unitId) {
+    const key = normalizeDynastyKey(dynastyName);
+    if (!key)
+        return null;
+    try {
+        const swimMatrix = buildSwimMatrixFromMock(key);
+        if (!(swimMatrix === null || swimMatrix === void 0 ? void 0 : swimMatrix.lanes) || !swimMatrix.lanes.length)
+            return null;
+        const hero = buildHeroFromMock(swimMatrix, unitId || key, key);
+        return { hero, swim: swimMatrix };
+    }
+    catch (err) {
+        console.warn('[dynasty-detail] local mock failed', err);
+        return null;
+    }
 }
 function generateTimelineTicks(startYear, endYear, originalSheetWidthRpx) {
   const span = endYear - startYear;
   const newSheetWidthRpx = Math.round(originalSheetWidthRpx);
   const ticks = [];
-  ticks.push({ label: String(startYear), left: '0%', edgeStart: true, hideLabel: false });
+  ticks.push({ label: formatHistoryYear(startYear), left: '0%', edgeStart: true, hideLabel: false });
   const firstTick = Math.ceil((startYear + 1) / 10) * 10;
   let tickYear = firstTick;
   while (tickYear < endYear) {
@@ -60,14 +130,14 @@ function generateTimelineTicks(startYear, endYear, originalSheetWidthRpx) {
     const distToEnd = endYear - tickYear;
     const isPenultimate = tickYear + 20 >= endYear;
     const hideLabel = (tickYear === firstTick && distToStart < 20) || (isPenultimate && distToEnd < 20);
-    ticks.push({ label: String(tickYear), left: left + '%', hideLabel });
+    ticks.push({ label: formatHistoryYear(tickYear), left: left + '%', hideLabel });
     tickYear += 20;
   }
   const gridLines = ticks.filter(function(t) { return t.left !== '0%'; }).map(function(t) { return { left: t.left }; });
-  return { ticks, endLabel: String(endYear), sheetWidthRpx: newSheetWidthRpx, gridLines };
+  return { ticks, endLabel: formatHistoryYear(endYear), sheetWidthRpx: newSheetWidthRpx, gridLines };
 }
 function applyPriorityView(swim, priority) {
-    const sheetWidthRpx = estimateSheetWidth(swim);
+    const sheetWidthRpx = swim.sheetWidthRpx || 1440;
     return Object.assign(Object.assign({}, swim), { sheetWidthRpx, lanes: (swim.lanes || []).map((lane, laneIndex) => {
             var _a;
             const view = (_a = lane.priorityViews) === null || _a === void 0 ? void 0 : _a[priority];
@@ -206,6 +276,8 @@ Page({
         chipTooltipVisible: false,
         chipTooltipTitle: '',
         chipTooltipRange: '',
+        chipTooltipPeakYear: '',
+        chipTooltipPeakReason: '',
         chipTooltipLeftPx: 0,
         chipTooltipTopPx: 0,
     },
@@ -234,7 +306,7 @@ Page({
             const unit = hero.unit;
             const dynastyTitle = (unit.dynastyName && unit.dynastyName.trim()) || unit.name;
             const navTitle = dynastyTitle.length <= 4 ? dynastyTitle : dynastyTitle.slice(0, 4);
-            const heroSubLine = `${unit.startYear}–${unit.endYear}`;
+            const heroSubLine = `${formatHistoryYear(unit.startYear)}–${formatHistoryYear(unit.endYear)}`;
             const activePriority = this.data.activePriority || 'p3';
             const prioritySwim = applyPriorityView(swim, activePriority);
             const matrixBoxIds = collectMatrixBoxIds(prioritySwim);
@@ -269,12 +341,22 @@ Page({
                     (0, api_1.request)(`/units/${enc}`),
                     (0, api_1.request)(`/units/${enc}/swim-matrix`),
                 ]);
-                const enhancedSwim = Object.assign({}, swimRes.data, generateTimelineTicks(swimRes.data.startYear, swimRes.data.endYear, swimRes.data.sheetWidthRpx));
+                const enhancedSwim = Object.assign({}, swimRes.data, { gridLines: swimRes.data.gridLines || [] });
         applyPageData(heroRes.data, enhancedSwim);
                 return;
             }
             catch (e) {
                 console.error('[dynasty-detail] API failed', e);
+                if (isDevelopEnv() && dynastyHint) {
+                    const fallback = tryLoadLocalMock(dynastyHint, unitId);
+                    if (fallback) {
+                        console.warn('[dynasty-detail] using local mock for', dynastyHint);
+                        const enhancedSwim = Object.assign({}, fallback.swim, generateTimelineTicks(fallback.swim.startYear, fallback.swim.endYear, fallback.swim.sheetWidthRpx), { timeScaleMode: 'linear' });
+                        applyPageData(fallback.hero, enhancedSwim);
+                        warnIfDegradedMock(enhancedSwim);
+                        return;
+                    }
+                }
                 const msg = (e === null || e === void 0 ? void 0 : e.message) || '加载失败';
                 this.setData({
                     unit: null,
@@ -285,13 +367,21 @@ Page({
                 return;
             }
         }
+        if (isDevelopEnv() && dynastyHint) {
+            const fallback = tryLoadLocalMock(dynastyHint, '');
+            if (fallback) {
+                console.warn('[dynasty-detail] using local mock for', dynastyHint);
+                const enhancedSwim = Object.assign({}, fallback.swim, generateTimelineTicks(fallback.swim.startYear, fallback.swim.endYear, fallback.swim.sheetWidthRpx), { timeScaleMode: 'linear' });
+                applyPageData(fallback.hero, enhancedSwim);
+                warnIfDegradedMock(enhancedSwim);
+                return;
+            }
+        }
         this.setData({ loadError: '缺少朝代 ID，无法加载' });
     },
     scrollToAnchorYear(anchorYear, swim) {
-        const span = Math.max(1, swim.endYear - swim.startYear);
-        const clamped = Math.max(swim.startYear, Math.min(swim.endYear, anchorYear));
         const sheetPx = (swim.sheetWidthRpx || 1440) * (wx.getSystemInfoSync().windowWidth / 750);
-        const targetPx = ((clamped - swim.startYear) / span) * sheetPx;
+        const targetPx = (percentForYearOnSwim(swim, anchorYear) / 100) * sheetPx;
         const bias = wx.getSystemInfoSync().windowWidth * 0.32;
         const left = Math.max(0, targetPx - bias);
         this.swimScrollLeft = left;
@@ -343,14 +433,20 @@ Page({
     onBarLongPress(e) {
         var _a, _b;
         const ds = e.currentTarget.dataset || {};
+        const boxId = ds.box;
+        const bar = findSwimBar(this.data.swim, boxId);
         const touch = ((_a = e.touches) === null || _a === void 0 ? void 0 : _a[0]) || ((_b = e.changedTouches) === null || _b === void 0 ? void 0 : _b[0]);
         const sys = wx.getSystemInfoSync();
-        const left = (touch === null || touch === void 0 ? void 0 : touch.clientX) == null ? Math.round(sys.windowWidth / 2) : Math.max(92, Math.min(sys.windowWidth - 92, touch.clientX));
-        const top = (touch === null || touch === void 0 ? void 0 : touch.clientY) == null ? Math.round(sys.windowHeight * 0.45) : Math.max(92, Math.min(sys.windowHeight - 120, touch.clientY - 72));
+        const left = (touch === null || touch === void 0 ? void 0 : touch.clientX) == null ? Math.round(sys.windowWidth / 2) : Math.max(140, Math.min(sys.windowWidth - 140, touch.clientX));
+        const top = (touch === null || touch === void 0 ? void 0 : touch.clientY) == null ? Math.round(sys.windowHeight * 0.45) : Math.max(120, Math.min(sys.windowHeight - 160, touch.clientY - 96));
+        const peakYearNum = bar === null || bar === void 0 ? void 0 : bar.peakYear;
+        const peakReason = String((bar === null || bar === void 0 ? void 0 : bar.peakReason) || '').trim();
         this.setData({
             chipTooltipVisible: true,
-            chipTooltipTitle: ds.title || '',
-            chipTooltipRange: ds.range || '',
+            chipTooltipTitle: (bar === null || bar === void 0 ? void 0 : bar.title) || ds.title || '',
+            chipTooltipRange: (bar === null || bar === void 0 ? void 0 : bar.timeRange) || ds.range || '',
+            chipTooltipPeakYear: peakYearNum == null ? '' : formatHistoryYear(peakYearNum),
+            chipTooltipPeakReason: peakReason,
             chipTooltipLeftPx: left,
             chipTooltipTopPx: top,
         });

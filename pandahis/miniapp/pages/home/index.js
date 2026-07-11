@@ -19,6 +19,14 @@ const HOME_MATRIX_STATE_PATH = '/me/home-matrix-state'
 const HOME_MATRIX_STATE_LOCAL_KEY = 'homeMatrixState'
 const HOME_STATE_SAVE_DELAY = 400
 
+/** 历史年份展示：公元前用 -XX */
+function formatHistoryYear(y) {
+  if (!Number.isFinite(y)) return ''
+  if (y === 0) return '公元0'
+  if (y < 0) return '-' + Math.abs(y)
+  return String(y)
+}
+
 // ─────────────────────────────────────────────────────────────────────────────
 // 【旧版】横向滑动模式常量（stackMode=false 时使用）
 // ─────────────────────────────────────────────────────────────────────────────
@@ -1461,9 +1469,7 @@ Page({
       ? this.data.navItems[idx + 1]
       : null
     const endYear = next ? next.start : ''
-    const yearStr = start < 0
-      ? '前' + (-start) + (endYear ? ' — ' + (endYear < 0 ? '前' + (-endYear) : '' + endYear) : '')
-      : '' + start + (endYear ? ' — ' + endYear : '')
+    const yearStr = formatHistoryYear(start) + (endYear !== '' && endYear != null ? ' — ' + formatHistoryYear(endYear) : '')
     const empCount = item.emperorCount || 0
     const scrollAreaTop = this.data.scrollAreaTop
     // HUD 固定在左上区域（时间列右侧，与导航栏位置无关）

@@ -1,3 +1,5 @@
+import { formatHistoryYear, formatYearRange } from './year-format'
+
 export type FavoriteItemRaw = {
   boxId: string
   title: string
@@ -15,16 +17,7 @@ export type FavoriteCardView = FavoriteItemRaw & {
   pathLabel: string
 }
 
-export function formatHistoryYear(y: number): string {
-  if (y < 0) return `前${Math.abs(y)}`
-  return String(y)
-}
-
-export function formatYearRange(start?: number, end?: number): string {
-  const s = start ?? 0
-  const e = end ?? s
-  return `${formatHistoryYear(s)} — ${formatHistoryYear(e)}`
-}
+export { formatHistoryYear, formatYearRange }
 
 export function formatFavoriteDate(iso?: string): string {
   if (!iso) return ''

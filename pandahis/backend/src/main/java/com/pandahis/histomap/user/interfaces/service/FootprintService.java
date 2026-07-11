@@ -1,5 +1,6 @@
 package com.pandahis.histomap.user.interfaces.service;
 
+import com.pandahis.histomap.common.util.HistoryYearFormat;
 import com.pandahis.histomap.contentgraph.domain.BoxCategorySupport;
 import com.pandahis.histomap.user.interfaces.dto.FootprintListDTO;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -46,7 +47,7 @@ public class FootprintService {
           String civName = rs.getString("civ_name");
           String unitName = rs.getString("unit_name");
           String dynastyName = rs.getString("dynasty_name");
-          String subText = yearLabel(startYear) + " · " + (civName == null ? "" : civName) + " · " + categoryName(categoryKey);
+          String subText = HistoryYearFormat.label(startYear) + " · " + (civName == null ? "" : civName) + " · " + categoryName(categoryKey);
           String pathLabel = footprintPathLabel(civName, dynastyName, unitName, categoryKey);
           OffsetDateTime at = rs.getObject("last_viewed_at", OffsetDateTime.class);
           String iso = at == null ? null : at.toString();
@@ -57,10 +58,6 @@ public class FootprintService {
         userId, pageSize, offset
     );
     return new FootprintListDTO(page, pageSize, total, items);
-  }
-
-  private static String yearLabel(int year) {
-    return year < 0 ? ("前" + Math.abs(year)) : String.valueOf(year);
   }
 
   private static String categoryName(String key) {

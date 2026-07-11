@@ -3,6 +3,7 @@ package com.pandahis.histomap.contentgraph.interfaces.service;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.pandahis.histomap.common.api.ApiException;
+import com.pandahis.histomap.common.util.HistoryYearFormat;
 import com.pandahis.histomap.contentgraph.interfaces.dto.HomeMatrixDTO;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -273,18 +274,11 @@ public class HomeMatrixService {
   }
 
   private static String fmtTimelineYear(int y) {
-    if (y < 0) return "-" + Math.abs(y);
-    if (y == 0) return "0";
-    return String.valueOf(y);
+    return HistoryYearFormat.label(y);
   }
 
   private static String fmtRange(int start, int end) {
-    return fmtYear(start) + " — " + fmtYear(end);
-  }
-
-  private static String fmtYear(int y) {
-    if (y < 0) return "前" + Math.abs(y);
-    return String.valueOf(y);
+    return HistoryYearFormat.label(start) + " — " + HistoryYearFormat.label(end);
   }
 
   private static String trimOrEmpty(String s) {

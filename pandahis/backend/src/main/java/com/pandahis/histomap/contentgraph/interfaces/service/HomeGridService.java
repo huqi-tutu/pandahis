@@ -2,6 +2,7 @@ package com.pandahis.histomap.contentgraph.interfaces.service;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.pandahis.histomap.common.util.HistoryYearFormat;
 import com.pandahis.histomap.contentgraph.interfaces.dto.HomeGridDTO;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.dao.DataAccessException;
@@ -125,9 +126,9 @@ public class HomeGridService {
     }
 
     List<HomeGridDTO.TimeAxisItem> timeAxis = yearSet.isEmpty()
-        ? List.of(new HomeGridDTO.TimeAxisItem(-221, "前221", 72))
+        ? List.of(new HomeGridDTO.TimeAxisItem(-221, "-221", 72))
         : yearSet.stream()
-            .map(y -> new HomeGridDTO.TimeAxisItem(y, yearLabel(y), rowHeightByYear.getOrDefault(y, 72)))
+            .map(y -> new HomeGridDTO.TimeAxisItem(y, HistoryYearFormat.label(y), rowHeightByYear.getOrDefault(y, 72)))
             .toList();
 
     HomeGridDTO.Overview overview = loadOverview();
@@ -275,7 +276,5 @@ public class HomeGridService {
     return n.asDouble();
   }
 
-  private static String yearLabel(int year) {
-    return year < 0 ? ("前" + Math.abs(year)) : String.valueOf(year);
-  }
+
 }

@@ -3,6 +3,9 @@
 
 规则 SSOT：reference/标注索引条目合并规则.md
 
+⚠️ 全量 merge 会按排序重新编号全部 GLBL ID，禁止用于已发布索引的修复。
+   已发布数据须用 repair_*.py 外科手术式修复，见合并规则 §九。
+
 用法:
   python3 merge_global_entries.py
   python3 merge_global_entries.py --dry-run
@@ -21,11 +24,10 @@ from typing import Any, Dict, List, Tuple
 
 GROUP_KEYWORDS = ("儒林", "酷吏", "游侠", "货殖", "佞幸", "循吏")
 
-# 异名归一（merge_key）
+# 硬编码异名归一（merge_key）；宗戚异名见 _load_zongqi_aliases()
 NAME_ALIASES: Dict[str, str] = {
     "项籍": "项羽",
     "陈涉": "陈胜",
-    "刘交": "楚元王",
     "蜀卓氏": "卓氏",
 }
 
@@ -79,9 +81,45 @@ def _repo_root() -> Path:
     return Path(__file__).resolve().parents[4]
 
 
+def _load_zongqi_aliases() -> Dict[str, str]:
+    """宗戚原名/全称 → 宗戚名称；SSOT: reference/宗戚别名.json + data/宗戚.json。"""
+    out: Dict[str, str] = {}
+    alias_path = Path(__file__).resolve().parents[1] / "reference" / "宗戚别名.json"
+    if alias_path.is_file():
+        cfg = json.loads(alias_path.read_text(encoding="utf-8"))
+        for alias, canonical in (cfg.get("global") or {}).items():
+            a, c = str(alias).strip(), str(canonical).strip()
+            if a and c:
+                out[a] = c
+    zj_path = _repo_root() / "data" / "01历史坐标数据" / "宗戚.json"
+    if zj_path.is_file():
+        for row in json.loads(zj_path.read_text(encoding="utf-8")):
+            canon = str(row.get("宗戚名称") or "").strip()
+            given = str(row.get("宗戚原名") or "").strip()
+            if canon:
+                out.setdefault(canon, canon)
+            if given and canon:
+                out.setdefault(given, canon)
+    return out
+
+
+_ZONGQI_ALIASES: Dict[str, str] | None = None
+
+
+def _zongqi_alias_map() -> Dict[str, str]:
+    global _ZONGQI_ALIASES
+    if _ZONGQI_ALIASES is None:
+        _ZONGQI_ALIASES = _load_zongqi_aliases()
+    return _ZONGQI_ALIASES
+
+
 def _canonical_name(name: str) -> str:
     n = (name or "").strip()
-    return NAME_ALIASES.get(n, n)
+    if not n:
+        return n
+    if n in NAME_ALIASES:
+        return NAME_ALIASES[n]
+    return _zongqi_alias_map().get(n, n)
 
 
 def _parse_skeleton_path(fp: Path) -> Tuple[str, str, str]:

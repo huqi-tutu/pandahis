@@ -1,5 +1,6 @@
 package com.pandahis.histomap.contentgraph.interfaces.service;
 
+import com.pandahis.histomap.common.util.HistoryYearFormat;
 import com.pandahis.histomap.common.api.ApiException;
 import com.pandahis.histomap.contentgraph.domain.BoxCategorySupport;
 import com.pandahis.histomap.contentgraph.interfaces.dto.UnitCivTabsDTO;
@@ -166,7 +167,7 @@ public class UnitService {
     }
 
     List<UnitMatrixDTO.YearItem> yearItems = years.stream()
-        .map(y -> new UnitMatrixDTO.YearItem(y, yearLabel(y)))
+        .map(y -> new UnitMatrixDTO.YearItem(y, HistoryYearFormat.label(y)))
         .collect(Collectors.toList());
 
     record Key(int year, String category) {}
@@ -223,9 +224,6 @@ public class UnitService {
     return new UnitMatrixDTO(yearItems, CATEGORIES, items);
   }
 
-  private static String yearLabel(int year) {
-    return year < 0 ? ("前" + Math.abs(year)) : String.valueOf(year);
-  }
 
   private static int importance(Object v) {
     if (v == null) return 0;

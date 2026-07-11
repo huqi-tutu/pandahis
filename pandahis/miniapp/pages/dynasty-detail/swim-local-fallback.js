@@ -70,10 +70,20 @@ function collectMatrixBoxIds(swim) {
   return ids
 }
 
+/** API 不可达时的本地回退：仅能从帝王表合成「君王」单泳道，无简介/文臣等 */
+function isDegradedMockFallback(swimMatrix) {
+  const d = swimMatrix._mock || {}
+  const lanes = swimMatrix.lanes || []
+  const hasIntro = Boolean(String(d.intro || '').trim())
+  const onlyJunji = lanes.length <= 1 && lanes.every((lane) => lane.label === '君王')
+  return onlyJunji && !hasIntro
+}
+
 module.exports = {
   SWIM_SHEET_RPX,
   normalizeDynastyKey,
   buildSwimMatrixFromMock,
   buildHeroFromMock,
   collectMatrixBoxIds,
+  isDegradedMockFallback,
 }
