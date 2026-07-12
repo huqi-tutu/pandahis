@@ -13,6 +13,8 @@ final class SwimTimeScale {
   static final int MIN_SHEET_RPX = 1440;
   static final int MAX_SHEET_RPX = 5760;
   static final int TARGET_TICK_SPACING_RPX = 96;
+  /** 远古大年份标签（如「-2698」）比刻度线更宽，标签间距单独保底。 */
+  static final int MIN_LABEL_SPACING_RPX = 104;
 
   private final int startYear;
   private final int endYear;
@@ -112,6 +114,14 @@ final class SwimTimeScale {
     return segments;
   }
 
+  int startYear() {
+    return startYear;
+  }
+
+  int endYear() {
+    return endYear;
+  }
+
   Plan replan(int sheetWidthRpx, String mode) {
     return toPlan(sheetWidthRpx, mode);
   }
@@ -165,7 +175,7 @@ final class SwimTimeScale {
         continue;
       }
       double segPx = sheet * seg.widthPct() / 100.0;
-      double neededPx = seg.boxCount() * (SwimLaneLayout.CHIP_RPX + SwimLaneLayout.CHIP_GAP_RPX) + 80;
+      double neededPx = seg.boxCount() * (SwimLaneLayout.CHIP_MAX_RPX + SwimLaneLayout.CHIP_GAP_RPX) + 80;
       if (neededPx > segPx) {
         sheet = (int) Math.ceil(sheet * neededPx / Math.max(1.0, segPx) * 1.08);
       }
@@ -325,26 +335,31 @@ final class SwimTimeScale {
 
   private static int tickStep(int segSpanYears, double segWidthPct, int sheetWidthRpx) {
     double segPx = sheetWidthRpx * segWidthPct / 100.0;
-    double yearsPerTick = (TARGET_TICK_SPACING_RPX / Math.max(1.0, segPx)) * segSpanYears;
-    return niceStep(yearsPerTick);
+    double yearsPerTickGrid = (TARGET_TICK_SPACING_RPX / Math.max(1.0, segPx)) * segSpanYears;
+    double yearsPerTickLabel = (MIN_LABEL_SPACING_RPX / Math.max(1.0, segPx)) * segSpanYears;
+    return niceStep(Math.max(yearsPerTickGrid, yearsPerTickLabel));
   }
 
+  /** 取不小于 raw 的最近「整」步长，保证刻度间距不低于目标像素。 */
   private static int niceStep(double raw) {
-    if (raw <= 3) return 1;
-    if (raw <= 6) return 2;
-    if (raw <= 12) return 5;
-    if (raw <= 25) return 10;
-    if (raw <= 60) return 20;
-    if (raw <= 120) return 25;
-    if (raw <= 240) return 50;
-    return 100;
+    if (raw <= 1) return 1;
+    if (raw <= 2) return 2;
+    if (raw <= 5) return 5;
+    if (raw <= 10) return 10;
+    if (raw <= 20) return 20;
+    if (raw <= 25) return 25;
+    if (raw <= 50) return 50;
+    if (raw <= 100) return 100;
+    if (raw <= 200) return 200;
+    if (raw <= 500) return 500;
+    return 1000;
   }
 
   private static int roundUpToStep(int year, int step) {
     if (step <= 1) {
       return year;
     }
-    int rem = year % step;
+    int rem = Math.floorMod(year, step);
     if (rem == 0) {
       return year;
     }

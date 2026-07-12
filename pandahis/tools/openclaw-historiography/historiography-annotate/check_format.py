@@ -430,7 +430,7 @@ def check_json_structure(data: dict, phase: str) -> bool:
     elif not data.get("segment_attribution"):
         err("segment_attribution 为空，必须先产出逐段归属表")
     if phase == "final":
-        for key in ["优先级", "史略开始年", "史略结束年"]:
+        for key in ["史略开始年", "史略结束年"]:
             pass  # checked per entry below
     return not errors
 
@@ -495,8 +495,6 @@ def check_entries(entries: list, total_paragraphs: int, phase: str) -> Set[Tuple
                 if old in entry and entry.get(old) not in (None, ""):
                     err(f"{prefix}仍使用旧坐标字段「{old}」，请改为「{LEGACY_COORD_MAP[old]}」")
             for key in [
-                "优先级",
-                "优先级判定理由",
                 "史略开始年",
                 "史略结束年",
                 "峰值年",
@@ -509,6 +507,8 @@ def check_entries(entries: list, total_paragraphs: int, phase: str) -> Set[Tuple
             ]:
                 if key not in entry or entry[key] in (None, ""):
                     err(f"{prefix}Step 4 未完成，缺少: {key}")
+            if entry.get("优先级") or entry.get("优先级判定理由"):
+                err(f"{prefix}卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入")
             pri = entry.get("优先级", "")
             if pri and pri not in VALID_PRIORITIES:
                 err(f"{prefix}非法优先级: {pri}")

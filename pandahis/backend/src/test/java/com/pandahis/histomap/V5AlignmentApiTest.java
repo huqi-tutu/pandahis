@@ -97,7 +97,7 @@ class V5AlignmentApiTest {
 
   @Test
   void graphNodeDetail_returnsRelationFields() throws Exception {
-    mockMvc.perform(get("/boxes/box_wutai_1079/graph/nodes/person_sushi"))
+    mockMvc.perform(get("/boxes/GLBL_01079/graph/nodes/person_sushi"))
         .andExpect(status().isOk())
         .andExpect(jsonPath("$.code").value("OK"))
         .andExpect(jsonPath("$.data.name").value("苏轼"))

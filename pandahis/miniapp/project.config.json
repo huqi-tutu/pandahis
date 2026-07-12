@@ -7,11 +7,10 @@
     "uglifyFileName": false,
     "enhance": false,
     "useCompilerPlugins": [
-      "typescript",
       "sass"
     ],
-    "compileWorklet": false,
-    "uploadWithSourceMap": true,
+    "compileWorklet": true,
+    "uploadWithSourceMap": false,
     "packNpmManually": false,
     "packNpmRelationList": [],
     "minifyWXSS": true,
@@ -26,6 +25,7 @@
       "outputPath": ""
     },
     "disableSWC": true,
+    "bigPackageSizeSupport": true,
     "sassSetting": {
       "sassCommonUseFilePath": "global.sass",
       "scssCommonUseFilePath": "global.scss"
@@ -36,8 +36,17 @@
   "editorSetting": {},
   "simulatorPluginLibVersion": {},
   "packOptions": {
-    "ignore": [],
+    "ignore": [
+      { "type": "folder", "value": "node_modules" },
+      { "type": "folder", "value": "scripts" },
+      { "type": "folder", "value": "typings" },
+      { "type": "file", "value": "package.json" },
+      { "type": "file", "value": "package-lock.json" },
+      { "type": "file", "value": "tsconfig.json" },
+      { "type": "suffix", "value": ".ts" },
+      { "type": "file", "value": "tsconfig.build.json" }
+    ],
     "include": []
   },
-  "libVersion": "3.15.2"
+  "libVersion": "3.14.5"
 }

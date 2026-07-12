@@ -5,10 +5,15 @@
 ### 运行方式
 
 1. 打开微信开发者工具，**导入**本目录：`pandahis/miniapp`
-2. 页面逻辑为 **`index.ts`**、样式为 **`*.scss`**，已在 `project.config.json` 中开启 **`useCompilerPlugins: ["typescript", "sass"]`**：TS 编成 JS、SCSS 编成 WXSS。若删掉 **`sass`**，页面会几乎没有任何样式（只有纯文字）。
-3. **WXML 注意**：表达式里请使用 `==` 而不是 `===`；同一节点不要同时写 `wx:if`/`wx:elif` 与 `wx:for`；自定义组件尽量写成 `<comp></comp>` 闭合形式（避免 `/>` 在旧解析器上报错）。
-4. 若 TS/SCSS 不编译：请将微信开发者工具升级到较新版本（官方 TS 插件说明见[编译 TS](https://developers.weixin.qq.com/miniprogram/dev/devtools/compilets.html)），并检查 `project.private.config.json` 是否把 `useCompilerPlugins` 改成了不含 `sass`/`typescript` 的值。
-5. 启动后端（默认 `http://localhost:8080`），保证可访问 `GET /api/v1/health`（如有）
+2. 页面逻辑为 **`index.ts`**、样式为 **`*.scss`**。微信开发者工具仅开启 **`sass`** 插件（SCSS→WXSS）；**TypeScript 在本地预编译**为 `.js`（见下），避免工具内 TS 全量编译超时。
+3. **改完 `.ts` 后请执行** `npm run build:ts`（类型检查：`npm run check:ts`）。存在 `index.ts` 的页面以 TS 为唯一源码，不要手改编译产物 `.js`。
+4. **编译范围**：若重新开启微信的 `typescript` 插件，工具会编译项目内**全部** `.ts`，任一报错会导致整包（含首页）失败。
+5. 改完 TS 后可在本目录执行 **`npm run check:ts`**（或 `bash scripts/check-ts.sh`）提前发现类型错误。
+6. **WXML 注意**：表达式里请使用 `==` 而不是 `===`；同一节点不要同时写 `wx:if`/`wx:elif` 与 `wx:for`；自定义组件尽量写成 `<comp></comp>` 闭合形式（避免 `/>` 在旧解析器上报错）。
+7. **若模拟器报 `Error: timeout`（`WAServiceMainContext.js` + 基础库 3.15.x）**：多为开发者工具已知问题，与业务代码无关。本项目已将 **`libVersion` 固定为 `3.14.5`**；请在 **详情 → 本地设置** 将调试基础库也选为 **3.14.x**，并 **清缓存 → 重新编译**。
+8. **真机预览报 80051 / 超过 2MB**：主包默认上限 2MB。已开启 **`bigPackageSizeSupport`**（预览上限 4MB），且 **`.miniprogramignore` 排除 `*.ts`**（只上传编译后的 `.js`）。改 TS 后先 `npm run build:ts` 再预览。若仍超限，在开发者工具 **详情 → 本地设置** 确认已勾选「预览及真机调试时主包、分包体积上限调整为 4M」。
+9. 若 SCSS 不编译：检查 `project.private.config.json` 的 `useCompilerPlugins` 是否包含 `sass`。
+10. 启动后端（默认 `http://localhost:8080`），保证可访问 `GET /api/v1/health`（如有）
 
 ### 后端联调
 

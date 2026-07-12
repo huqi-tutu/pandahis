@@ -728,7 +728,7 @@ Component({
           canvas.width = w * dpr
           canvas.height = h * dpr
 
-          const ctx = canvas.getContext('2d') as CanvasRenderingContext2D
+          const ctx = canvas.getContext('2d') as unknown as CanvasRenderingContext2D
           ctx.setTransform(1, 0, 0, 1, 0, 0)
           ctx.scale(dpr, dpr)
 
@@ -923,7 +923,7 @@ Component({
           if (!info?.node) return
           const canvas = info.node as WechatMiniprogram.Canvas
           const dpr = (this as any)._dpr || 1
-          const ctx = canvas.getContext('2d') as CanvasRenderingContext2D
+          const ctx = canvas.getContext('2d') as unknown as CanvasRenderingContext2D
           ctx.setTransform(1, 0, 0, 1, 0, 0)
           ctx.scale(dpr, dpr)
           this.paint(ctx, w, h, layout)

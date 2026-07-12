@@ -5,8 +5,9 @@
     "strict": false,
     "noImplicitAny": false,
     "skipLibCheck": true,
-    "baseUrl": "."
+    "baseUrl": ".",
+    "types": ["miniprogram-api-typings"]
   },
-  "include": ["./**/*.ts"],
+  "include": ["./**/*.ts", "./typings/**/*.d.ts"],
   "exclude": ["node_modules"]
 }

@@ -29,6 +29,7 @@ NAME_ALIASES: Dict[str, str] = {
     "项籍": "项羽",
     "陈涉": "陈胜",
     "蜀卓氏": "卓氏",
+    "滕公（夏侯婴）": "夏侯婴",
 }
 
 COPY_FIELDS = [
@@ -41,6 +42,13 @@ COPY_FIELDS = [
     "优先级判定理由",
     "史略开始年",
     "史略结束年",
+    "峰值年",
+    "峰值原因",
+    "峰值类型",
+    "峰值置信度",
+    "人物标签",
+    "人物标签判定理由",
+    "人物标签置信度",
     "一级文明坐标",
     "二级朝代坐标",
     "三级政权坐标",
@@ -272,6 +280,7 @@ def _build_glbl_entry(glbl_id: str, sources: List[dict]) -> dict:
     if len(ranked) > 1:
         out["六级段落锚点"] = f"[{_merge_anchor(ranked)}]"
 
+    out["史略来源"] = "史料提取"
     return out
 
 

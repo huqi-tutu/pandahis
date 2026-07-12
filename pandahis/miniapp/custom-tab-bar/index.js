@@ -4,7 +4,7 @@ Component({
         list: [
             { pagePath: '/pages/home/index' },
             { pagePath: '/pages/search/index' },
-            { pagePath: '/pages/invite/index' },
+            { pagePath: '/pages/membership/index' },
             { pagePath: '/pages/my/index' },
         ],
     },

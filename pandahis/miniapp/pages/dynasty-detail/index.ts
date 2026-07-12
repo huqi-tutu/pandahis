@@ -8,8 +8,10 @@ import {
   setBoxesFavorited,
 } from '../../native-utils/favorite-box'
 import { ROUTES, navigateTo } from '../../native-utils/router'
+import { decodeQueryValue } from '../../native-utils/query-value'
 import { formatHistoryYear } from '../../native-utils/year-format'
-import { enrichSwimLaneVisuals } from '../../native-utils/swim-lane-palette'
+import { formatEntrySourceLabel } from '../../native-utils/entry-source-label'
+import { promptContentShareUnavailable } from '../../native-utils/share-invite'
 const {
   buildSwimMatrixFromMock,
   buildHeroFromMock,
@@ -27,19 +29,156 @@ const PRIORITY_OPTIONS: { value: PriorityLevel; label: string }[] = [
 ]
 
 const MAX_LANE_ROWS = 10
+const GRID_RPX = 8
 const LANE_ROW_HEIGHT_RPX = 44
 const LANE_ROW_GAP_RPX = 16
 const LANE_TRACK_PAD_VERTICAL_RPX = 24
-const CHIP_WIDTH_RPX = 132
+const CHIP_MAX_RPX = 288
+const CHIP_MIN_RPX = 80
+const CHIP_HEIGHT_RPX = 52
+/** 胶囊左右 padding 合计（与 SCSS 14+14 对齐） */
+const CHIP_PAD_H_RPX = 28
+const CHIP_TITLE_RPX_PER_CHAR = 24
+/** Badge 左右 padding 合计（与 SCSS 8+8 对齐） */
+const CHIP_TAG_PAD_H_RPX = 16
+const CHIP_TAG_RPX_PER_CHAR = 20
+const CHIP_INNER_GAP_RPX = 4
 const CHIP_GAP_RPX = 16
-const EDGE_GAP_RPX = 20
+const ROW_GAP_RPX = 16
+const EDGE_GAP_RPX = 24
 const MORE_WIDTH_RPX = 112
 const MORE_GAP_RPX = 20
+const CANVAS_PAD_LEFT_RPX = 40
+const BAND_GAP_RPX = 24
+const BAND_PAD_RPX = 16
+const MIN_BAND_HEIGHT_RPX = 56
+const AXIS_PIN_AT = 150
+const AXIS_UNPIN_AT = 110
+
+function roundScrollLeft(left: number): number {
+  return Math.round(left)
+}
+
+function snapRpx(value: number): number {
+  if (value <= 0) return 0
+  return Math.max(GRID_RPX, Math.round(value / GRID_RPX) * GRID_RPX)
+}
 
 
 function laneTrackHeight(rowCount: number): number {
-  const rows = Math.max(1, Math.min(MAX_LANE_ROWS, rowCount || 1))
-  return LANE_TRACK_PAD_VERTICAL_RPX + rows * LANE_ROW_HEIGHT_RPX + (rows - 1) * LANE_ROW_GAP_RPX
+  const rows = Math.max(1, rowCount || 1)
+  return LANE_TRACK_PAD_VERTICAL_RPX + rows * CHIP_HEIGHT_RPX + (rows - 1) * ROW_GAP_RPX
+}
+
+const MIN_BUCKET_YEARS = 10
+const MAX_BUCKET_YEARS = 30
+
+function resolveBucketYears(span: number, overflowCount: number): number {
+  if (overflowCount <= 0) return span
+  if (span <= MAX_BUCKET_YEARS) return span
+  const minBuckets = Math.max(1, Math.ceil(overflowCount / 12))
+  const maxBuckets = Math.max(minBuckets, Math.ceil(overflowCount / 5))
+  const targetBuckets = Math.min(Math.floor(span / MIN_BUCKET_YEARS), Math.floor((minBuckets + maxBuckets) / 2))
+  const bucketYears = Math.ceil(span / Math.max(1, targetBuckets))
+  return Math.max(MIN_BUCKET_YEARS, Math.min(MAX_BUCKET_YEARS, bucketYears))
+}
+
+const BUCKET_CHIP_TITLE = '查看更多'
+
+function parseBucketMemberCount(title: string): number {
+  const match = String(title || '').match(/\+(\d+)$/)
+  return match ? Number(match[1]) : 0
+}
+
+function bucketTitle(laneLabel: string, count: number): string {
+  return BUCKET_CHIP_TITLE
+}
+
+function anchorYearOfBar(bar: ReturnType<typeof prepareLegacyBar>): number {
+  if (typeof bar.peakYear === 'number') return bar.peakYear
+  if (typeof bar.startYear === 'number') return bar.startYear
+  return 0
+}
+
+function placeBucketChips(
+  rows: ReturnType<typeof prepareLegacyBar>[][],
+  overflow: ReturnType<typeof prepareLegacyBar>[],
+  laneKey: string,
+  laneLabel: string,
+  startYear: number,
+  endYear: number,
+  sheetWidthRpx: number,
+  percentForYear: (year: number) => number,
+) {
+  if (!overflow.length) return rows
+  const span = Math.max(1, endYear - startYear)
+  const bucketYears = resolveBucketYears(span, overflow.length)
+  const gapPct = CHIP_GAP_RPX / sheetWidthRpx * 100
+  const nextRows = rows.map((row) => [...row])
+  const rowEnds = nextRows.map((row) => Math.max(0, ...row.map((bar) => bar._rightPct)))
+
+  let cursor = startYear
+  let bucketIndex = 0
+  while (cursor < endYear) {
+    const bucketEnd = Math.min(endYear, cursor + bucketYears)
+    const members = overflow.filter((bar) => {
+      const y = anchorYearOfBar(bar)
+      return y >= cursor && y < bucketEnd
+    })
+    if (members.length) {
+      const countTag = buildOverlayCountTag(laneLabel, members.length)
+      const title = BUCKET_CHIP_TITLE
+      const chipW = estimateChipWidthRpx(title, countTag)
+      const chipPct = chipW / sheetWidthRpx * 100
+      const anchorYear = Math.floor((cursor + bucketEnd) / 2)
+      const centerPct = percentForYear(anchorYear)
+      const edgePct = EDGE_GAP_RPX / sheetWidthRpx * 100
+      const maxLeft = 100 - (chipW + EDGE_GAP_RPX) / sheetWidthRpx * 100
+      const left = Math.max(edgePct, Math.min(maxLeft, centerPct - chipPct / 2))
+      const bucketBar = {
+        title,
+        chipTag: countTag,
+        boxId: `BUCKET_${laneKey}_${bucketIndex}`,
+        left: `${left.toFixed(2)}%`,
+        width: `${chipPct.toFixed(2)}%`,
+        unitLeft: `${left.toFixed(2)}%`,
+        unitWidth: `${chipPct.toFixed(2)}%`,
+        chipLeft: `${left.toFixed(2)}%`,
+        chipWidth: `${chipW}rpx`,
+        lineLeftW: '0rpx',
+        lineRightL: '0rpx',
+        lineRightW: '0rpx',
+        priority: 'p3',
+        type: 'overflow_bucket',
+        timeRange: `${formatHistoryYear(cursor)} — ${formatHistoryYear(bucketEnd)}`,
+        startYear: cursor,
+        endYear: bucketEnd,
+        peakYear: anchorYear,
+        heightRpx: CHIP_HEIGHT_RPX,
+        _leftPct: left,
+        _rightPct: left + chipPct,
+        _priorityRank: 3,
+        _globalIdNumber: 0,
+      } as ReturnType<typeof prepareLegacyBar>
+
+      let assigned = -1
+      for (let rowIndex = 0; rowIndex < nextRows.length; rowIndex++) {
+        if (rowEnds[rowIndex] + gapPct <= bucketBar._leftPct) {
+          assigned = rowIndex
+          rowEnds[rowIndex] = bucketBar._rightPct
+          nextRows[rowIndex] = [...nextRows[rowIndex], bucketBar].sort((a, b) => a._leftPct - b._leftPct)
+          break
+        }
+      }
+      if (assigned === -1) {
+        nextRows.push([bucketBar])
+        rowEnds.push(bucketBar._rightPct)
+      }
+      bucketIndex += 1
+    }
+    cursor = bucketEnd
+  }
+  return nextRows
 }
 
 function collectMatrixBoxIds(swim: { lanes?: SwimLane[] } | null) {
@@ -112,7 +251,22 @@ type SwimBar = {
   endYear?: number
   peakYear?: number
   peakReason?: string
+  priorityReason?: string
+  entrySource?: string
   globalIdNumber?: number
+  topRpx?: number
+  heightRpx?: number
+  chipTag?: string
+}
+
+type CategoryBand = {
+  key: string
+  label: string
+  borderColor: string
+  topRpx: number
+  heightRpx: number
+  readProgressText?: string
+  totalCount: number
 }
 
 type SwimLaneView = {
@@ -151,6 +305,9 @@ type SwimLane = {
   laneHeadBg?: string
   laneTrackBg?: string
   laneHeightRpx?: number
+  bandTopRpx?: number
+  bandHeightRpx?: number
+  moreTopRpx?: number
 }
 
 type SwimMatrix = {
@@ -173,6 +330,10 @@ type SwimMatrix = {
   lanes: SwimLane[]
   concurrentItems: string[]
   sheetWidthRpx: number
+  canvasHeightRpx?: number
+  canvasPadLeftRpx?: number
+  canvasWidthRpx?: number
+  categoryBands?: CategoryBand[]
 }
 
 function percentForYearOnSwim(swim: SwimMatrix, year: number): number {
@@ -231,27 +392,50 @@ function tryLoadLocalMock(
 }
 
 /* ── 生成20年间隔时间轴刻度 ── */
+const TARGET_TICK_SPACING_RPX = 96
+const MIN_LABEL_SPACING_RPX = 104
+
+function niceTickStep(raw: number): number {
+  if (raw <= 1) return 1
+  if (raw <= 2) return 2
+  if (raw <= 5) return 5
+  if (raw <= 10) return 10
+  if (raw <= 20) return 20
+  if (raw <= 25) return 25
+  if (raw <= 50) return 50
+  if (raw <= 100) return 100
+  if (raw <= 200) return 200
+  if (raw <= 500) return 500
+  return 1000
+}
+
+function computeTickStep(span: number, sheetWidthRpx: number): number {
+  const yearsPerTickGrid = (TARGET_TICK_SPACING_RPX / Math.max(1, sheetWidthRpx)) * span
+  const yearsPerTickLabel = (MIN_LABEL_SPACING_RPX / Math.max(1, sheetWidthRpx)) * span
+  return niceTickStep(Math.max(yearsPerTickGrid, yearsPerTickLabel))
+}
+
+function roundUpToStep(year: number, step: number): number {
+  if (step <= 1) return year
+  const rem = ((year % step) + step) % step
+  if (rem === 0) return year
+  return year + (step - rem)
+}
+
 function generateTimelineTicks(startYear: number, endYear: number, originalSheetWidthRpx: number) {
   const span = endYear - startYear
   const newSheetWidthRpx = Math.round(originalSheetWidthRpx)
   const ticks: { label: string; left: string; edgeStart?: boolean; hideLabel?: boolean }[] = []
+  const step = computeTickStep(span, newSheetWidthRpx)
 
-  // 起始年
   ticks.push({ label: formatHistoryYear(startYear), left: '0%', edgeStart: true, hideLabel: false })
 
-  // 首个10的倍数的刻度（>= startYear + 1 的10倍数）
-  const firstTick = Math.ceil((startYear + 1) / 10) * 10
-  let tickYear = firstTick
+  let tickYear = roundUpToStep(startYear + 1, step)
   while (tickYear < endYear) {
     const left = ((tickYear - startYear) / span) * 100
-    const distToStart = tickYear - startYear
-    const distToEnd = endYear - tickYear
-    const isPenultimate = tickYear + 20 >= endYear
-    // 第2个刻度距起点<20年 → 只画线不标数字
-    // 倒数第2个距终点<20年 → 只画线不标数字
-    const hideLabel = (tickYear === firstTick && distToStart < 20) || (isPenultimate && distToEnd < 20)
+    const hideLabel = tickYear - startYear < step || endYear - tickYear < step
     ticks.push({ label: formatHistoryYear(tickYear), left: `${left}%`, hideLabel })
-    tickYear += 20
+    tickYear += step
   }
 
   // 泳道网格线：从第2个刻度开始，与时间轴刻度对齐
@@ -260,30 +444,226 @@ function generateTimelineTicks(startYear: number, endYear: number, originalSheet
   return { ticks, endLabel: formatHistoryYear(endYear), sheetWidthRpx: newSheetWidthRpx, gridLines }
 }
 
-function applyPriorityView(swim: SwimMatrix, priority: PriorityLevel): SwimMatrix {
+function visibleLength(value: string): number {
+  const trimmed = String(value || '').trim()
+  return Array.from(trimmed).length
+}
+
+function formatPriorityLabel(priority: string): string {
+  const p = String(priority || '').trim().toLowerCase()
+  if (!p) return ''
+  return p.toUpperCase()
+}
+
+function splitTimeRangeLabels(bar: SwimBar | null, fallbackRange: string): { start: string; end: string } {
+  if (bar?.startYear != null && bar?.endYear != null) {
+    return {
+      start: formatHistoryYear(bar.startYear),
+      end: formatHistoryYear(bar.endYear),
+    }
+  }
+  const parts = String(fallbackRange || '').split(/\s*[—–-]\s*/)
+  if (parts.length >= 2) {
+    return { start: parts[0].trim(), end: parts[parts.length - 1].trim() }
+  }
+  const single = String(fallbackRange || '').trim()
+  return { start: single, end: '' }
+}
+
+function estimateChipWidthRpx(title: string, chipTag?: string): number {
+  const titleLen = visibleLength(title)
+  const tag = String(chipTag || '').trim()
+  let tagW = 0
+  if (tag) {
+    tagW = CHIP_TAG_PAD_H_RPX + visibleLength(tag) * CHIP_TAG_RPX_PER_CHAR + CHIP_INNER_GAP_RPX
+  }
+  const raw = CHIP_PAD_H_RPX + titleLen * CHIP_TITLE_RPX_PER_CHAR + tagW
+  return snapRpx(Math.max(CHIP_MIN_RPX, Math.min(CHIP_MAX_RPX, raw)))
+}
+
+function chipWidthRpxFromBar(bar: SwimBar): number {
+  return estimateChipWidthRpx(bar.title, bar.chipTag)
+}
+
+/** 后端仍返回旧固定宽时，按宽度差回推 left，保持峰值年居中 */
+function adjustLeftForChipWidth(bar: SwimBar, chipW: number, sheetWidthRpx: number): string {
+  const apiMatch = String(bar.chipWidth || '').match(/^(\d+)rpx$/)
+  const apiW = apiMatch ? parseInt(apiMatch[1], 10) : chipW
+  const leftStr = bar.left || bar.unitLeft || '0%'
+  const leftPct = parseFloat(String(leftStr).replace('%', ''))
+  if (!Number.isFinite(leftPct) || apiW >= chipW) return leftStr
+  const shiftPct = ((chipW - apiW) / 2) / sheetWidthRpx * 100
+  return `${Math.max(0, leftPct - shiftPct).toFixed(2)}%`
+}
+
+function chipHeightRpx(bar: SwimBar): number {
+  return bar.heightRpx || CHIP_HEIGHT_RPX
+}
+
+function withBucketChipMeta(bar: SwimBar, laneLabel = ''): SwimBar {
+  if (bar.type !== 'overflow_bucket') return bar
+  if (bar.title === BUCKET_CHIP_TITLE && bar.chipTag) return bar
+  let count = 0
+  const tagMatch = String(bar.chipTag || '').match(/^(\d+)位/)
+  if (tagMatch) count = Number(tagMatch[1])
+  if (!count) count = parseBucketMemberCount(bar.title)
+  return {
+    ...bar,
+    title: BUCKET_CHIP_TITLE,
+    chipTag: buildOverlayCountTag(laneLabel, count),
+  }
+}
+
+function buildOverlayCountTag(label: string, count: number): string {
+  const category = String(label || '史略').trim()
+  return `${Math.max(0, count)}位${category}`
+}
+
+function hasLaneContent(lane: SwimLane): boolean {
+  return (lane.totalCount ?? 0) > 0
+}
+
+function composeCanvasLayout(swim: SwimMatrix, lanes: SwimLane[]): SwimMatrix {
+  const categoryBands: CategoryBand[] = []
+  const canvasLanes: SwimLane[] = []
+  let cursor = BAND_PAD_RPX
   const sheetWidthRpx = swim.sheetWidthRpx || 1440
+  const visibleLanes = lanes.filter(hasLaneContent)
+
+  for (const lane of visibleLanes) {
+    const rowCount = Math.max(1, lane.rowCount || lane.collapsedRows?.length || 1)
+    const trackHeight = snapRpx(
+      LANE_TRACK_PAD_VERTICAL_RPX + rowCount * CHIP_HEIGHT_RPX + (rowCount - 1) * ROW_GAP_RPX,
+    )
+    const bandHeight = Math.max(MIN_BAND_HEIGHT_RPX, trackHeight)
+
+    const canvasRows: SwimBar[][] = []
+    ;(lane.collapsedRows || []).forEach((row, rowIndex) => {
+      const topRpx = snapRpx(cursor + BAND_PAD_RPX + rowIndex * (CHIP_HEIGHT_RPX + ROW_GAP_RPX))
+      canvasRows.push(
+        row.map((bar) => {
+          const enriched = withBucketChipMeta(bar, lane.label)
+          const chipW = chipWidthRpxFromBar(enriched)
+          const left = adjustLeftForChipWidth(enriched, chipW, sheetWidthRpx)
+          return {
+            ...enriched,
+            left,
+            topRpx,
+            heightRpx: chipHeightRpx(enriched),
+            chipWidth: `${chipW}rpx`,
+            width: `${(chipW / sheetWidthRpx * 100).toFixed(2)}%`,
+          }
+        }),
+      )
+    })
+
+    categoryBands.push({
+      key: lane.key,
+      label: lane.label,
+      borderColor: lane.borderColor,
+      topRpx: cursor,
+      heightRpx: bandHeight,
+      readProgressText: lane.readProgressText || `${lane.readCount ?? 0}/${lane.totalCount ?? 0}`,
+      totalCount: lane.totalCount,
+    })
+
+    canvasLanes.push({
+      ...lane,
+      bandTopRpx: cursor,
+      bandHeightRpx: bandHeight,
+      moreTopRpx: snapRpx(cursor + bandHeight / 2),
+      trackHeightRpx: bandHeight,
+      collapsedRows: canvasRows.length ? canvasRows : [[]],
+    })
+
+    cursor += bandHeight + BAND_GAP_RPX
+  }
+
   return {
     ...swim,
-    sheetWidthRpx,
-    lanes: (swim.lanes || []).map((lane, laneIndex) => {
-      const view = lane.priorityViews?.[priority]
-      const base = !view
-        ? normalizeLegacyLane(lane, sheetWidthRpx, priority)
-        : {
-            ...lane,
-            collapsedRows: view.collapsedRows || [[]],
-            hasMore: view.hasMore,
-            moreCount: view.moreCount,
-            moreBarLeft: view.moreBarLeft,
-            moreBarWidth: view.moreBarWidth,
-            extraBars: view.extraBars || [],
-            rowCount: view.rowCount,
-            trackHeightRpx: view.trackHeightRpx,
-            visibleCount: view.visibleCount,
-          }
-      return enrichSwimLaneVisuals(base, laneIndex)
-    }),
+    lanes: canvasLanes,
+    categoryBands,
+    canvasHeightRpx: snapRpx(Math.max(MIN_BAND_HEIGHT_RPX + BAND_PAD_RPX * 2, cursor + BAND_PAD_RPX)),
+    canvasPadLeftRpx: swim.canvasPadLeftRpx ?? CANVAS_PAD_LEFT_RPX,
+    canvasWidthRpx: (swim.sheetWidthRpx || 1440) + (swim.canvasPadLeftRpx ?? CANVAS_PAD_LEFT_RPX),
   }
+}
+
+function stripLegacyBarFields(bar: ReturnType<typeof prepareLegacyBar>): SwimBar {
+  const { _leftPct, _rightPct, _priorityRank, _globalIdNumber, ...rest } = bar
+  return rest
+}
+
+function enrichApiLaneView(
+  lane: SwimLane,
+  view: SwimLaneView,
+  swim: SwimMatrix,
+  sheetWidthRpx: number,
+): SwimLaneView {
+  const extra = view.extraBars || []
+  const hasBuckets = (view.collapsedRows || []).some((row) =>
+    row.some((bar) => bar.type === 'overflow_bucket'),
+  )
+  if (!extra.length || hasBuckets) {
+    return view
+  }
+
+  const rows = (view.collapsedRows || [[]]).map((row) =>
+    row.map((bar) => prepareLegacyBar(bar, sheetWidthRpx)),
+  )
+  const extraPrepared = extra.map((bar) => prepareLegacyBar(bar, sheetWidthRpx))
+  const rowsWithBuckets = placeBucketChips(
+    rows.length ? rows : [[]],
+    extraPrepared,
+    lane.key,
+    lane.label,
+    swim.startYear,
+    swim.endYear,
+    sheetWidthRpx,
+    (year) => percentForYearOnSwim(swim, year),
+  )
+  const collapsedRows = rowsWithBuckets.map((row) => row.map(stripLegacyBarFields))
+  const bucketCount = collapsedRows.reduce(
+    (count, row) => count + row.filter((bar) => bar.type === 'overflow_bucket').length,
+    0,
+  )
+  const individualCount = collapsedRows.reduce(
+    (count, row) => count + row.filter((bar) => bar.type !== 'overflow_bucket').length,
+    0,
+  )
+
+  return {
+    ...view,
+    collapsedRows,
+    hasMore: false,
+    rowCount: Math.max(1, collapsedRows.length),
+    trackHeightRpx: laneTrackHeight(collapsedRows.length),
+    visibleCount: individualCount + bucketCount,
+  }
+}
+
+function applyPriorityView(swim: SwimMatrix, priority: PriorityLevel): SwimMatrix {
+  const sheetWidthRpx = swim.sheetWidthRpx || 1440
+  const lanes = (swim.lanes || []).map((lane) => {
+    const view = lane.priorityViews?.[priority]
+    if (!view) {
+      return normalizeLegacyLane(lane, sheetWidthRpx, priority, swim)
+    }
+    const enriched = enrichApiLaneView(lane, view, swim, sheetWidthRpx)
+    return {
+      ...lane,
+      collapsedRows: enriched.collapsedRows || [[]],
+      hasMore: enriched.hasMore,
+      moreCount: enriched.moreCount,
+      moreBarLeft: enriched.moreBarLeft,
+      moreBarWidth: enriched.moreBarWidth,
+      extraBars: enriched.extraBars || [],
+      rowCount: enriched.rowCount,
+      trackHeightRpx: enriched.trackHeightRpx,
+      visibleCount: enriched.visibleCount,
+    }
+  })
+  return composeCanvasLayout({ ...swim, sheetWidthRpx }, lanes)
 }
 
 function estimateSheetWidth(swim: SwimMatrix): number {
@@ -294,11 +674,16 @@ function estimateSheetWidth(swim: SwimMatrix): number {
     return (lane.collapsedRows || []).reduce((count, row) => count + row.length, 0) + (lane.extraBars || []).length
   }))
   const perRow = Math.max(1, Math.ceil(maxBars / MAX_LANE_ROWS))
-  const needed = EDGE_GAP_RPX + perRow * CHIP_WIDTH_RPX + Math.max(0, perRow - 1) * CHIP_GAP_RPX + MORE_GAP_RPX + MORE_WIDTH_RPX + EDGE_GAP_RPX
+  const needed = EDGE_GAP_RPX + perRow * CHIP_MAX_RPX + Math.max(0, perRow - 1) * CHIP_GAP_RPX + MORE_GAP_RPX + MORE_WIDTH_RPX + EDGE_GAP_RPX
   return Math.max(base, Math.min(base * 4, needed))
 }
 
-function normalizeLegacyLane(lane: SwimLane, sheetWidthRpx: number, priority: PriorityLevel): SwimLane {
+function normalizeLegacyLane(
+  lane: SwimLane,
+  sheetWidthRpx: number,
+  priority: PriorityLevel,
+  swim: SwimMatrix,
+): SwimLane {
   const allBars = [...(lane.collapsedRows || []).flat(), ...(lane.extraBars || [])]
     .map((bar) => prepareLegacyBar(bar, sheetWidthRpx))
     .sort(compareLegacyBars)
@@ -307,33 +692,52 @@ function normalizeLegacyLane(lane: SwimLane, sheetWidthRpx: number, priority: Pr
   const hiddenByPriority = allBars.filter((bar) => priorityRank(bar.priority) > maxPriority)
   const packed = packLegacyBars(candidates, sheetWidthRpx)
   const extraBars = [...hiddenByPriority, ...packed.extra].sort(compareLegacyBars)
-  const hasMore = extraBars.length > 0
+  const rowsWithBuckets = placeBucketChips(
+    packed.rows.length ? packed.rows : [[]],
+    extraBars,
+    lane.key,
+    lane.label,
+    swim.startYear,
+    swim.endYear,
+    sheetWidthRpx,
+    (year) => percentForYearOnSwim(swim, year),
+  )
+  const bucketCount = rowsWithBuckets.reduce(
+    (count, row) => count + row.filter((bar) => bar.type === 'overflow_bucket').length,
+    0,
+  )
+  const individualCount = rowsWithBuckets.reduce(
+    (count, row) => count + row.filter((bar) => bar.type !== 'overflow_bucket').length,
+    0,
+  )
 
   return {
     ...lane,
-    collapsedRows: packed.rows.length ? packed.rows : [[]],
-    hasMore,
+    collapsedRows: rowsWithBuckets.map((row) => row.map(stripLegacyBarFields)),
+    hasMore: false,
     moreCount: extraBars.length,
     moreBarLeft: `${moreLeftPct(sheetWidthRpx).toFixed(2)}%`,
     moreBarWidth: lane.moreBarWidth || '12%',
     extraBars,
-    rowCount: Math.max(1, packed.rows.length),
-    trackHeightRpx: laneTrackHeight(packed.rows.length),
-    visibleCount: packed.rows.reduce((count, row) => count + row.length, 0),
+    rowCount: Math.max(1, rowsWithBuckets.length),
+    trackHeightRpx: laneTrackHeight(rowsWithBuckets.length),
+    visibleCount: individualCount + bucketCount,
   }
 }
 
 function prepareLegacyBar(bar: SwimBar, sheetWidthRpx: number): SwimBar & { _leftPct: number; _rightPct: number; _priorityRank: number; _globalIdNumber: number } {
   const rawLeft = parseFloat(String(bar.left || bar.unitLeft || '0').replace('%', ''))
   const edgePct = 20 / sheetWidthRpx * 100
-  const reservedRightRpx = EDGE_GAP_RPX + MORE_GAP_RPX + MORE_WIDTH_RPX
-  const chipPct = CHIP_WIDTH_RPX / sheetWidthRpx * 100
-  const maxLeft = 100 - (CHIP_WIDTH_RPX + reservedRightRpx) / sheetWidthRpx * 100
+  const chipW = chipWidthRpxFromBar(bar)
+  const chipPct = chipW / sheetWidthRpx * 100
+  const maxLeft = 100 - (chipW + EDGE_GAP_RPX) / sheetWidthRpx * 100
   const left = Math.max(edgePct, Math.min(maxLeft, Number.isFinite(rawLeft) ? rawLeft : 0))
   const normalized = {
     ...bar,
     left: `${left.toFixed(2)}%`,
     width: `${chipPct.toFixed(2)}%`,
+    chipWidth: bar.chipWidth || `${chipW}rpx`,
+    heightRpx: chipHeightRpx(bar),
     _leftPct: left,
     _rightPct: left + chipPct,
     _priorityRank: priorityRank(bar.priority),
@@ -395,6 +799,52 @@ function moreLeftPct(sheetWidthRpx: number): number {
   return 100 - ((EDGE_GAP_RPX + MORE_WIDTH_RPX) / sheetWidthRpx * 100)
 }
 
+function rpxToPx(rpx: number, windowWidth: number): number {
+  return Math.round(rpx * (windowWidth / 750))
+}
+
+type ChipTooltipPlacement = { left: number; top: number; transform: string; origin: string }
+
+function computeChipTooltipSafeTop(axisPinned: boolean, scrollViewTopPx: number, windowWidth: number): number {
+  const axisHeightPx = axisPinned ? rpxToPx(86, windowWidth) + 8 : 0
+  return scrollViewTopPx + axisHeightPx + 8
+}
+
+function computeChipTooltipSafeBottom(windowHeight: number, windowWidth: number, safeAreaBottom = 0): number {
+  return windowHeight - rpxToPx(120, windowWidth) - safeAreaBottom
+}
+
+function computeChipTooltipPlacement(
+  rect: { top: number; bottom: number; left: number; width: number },
+  opts: { safeTop: number; safeBottom: number; windowWidth: number },
+): ChipTooltipPlacement {
+  const gap = 8
+  const minTooltipH = 96
+  const centerX = rect.left + rect.width / 2
+  const left = Math.max(140, Math.min(opts.windowWidth - 140, centerX))
+  const spaceAbove = rect.top - opts.safeTop
+  const spaceBelow = opts.safeBottom - rect.bottom
+  const showAbove = spaceAbove >= minTooltipH && spaceAbove >= spaceBelow
+  if (showAbove) {
+    return {
+      left,
+      top: rect.top - gap,
+      transform: 'translate(-50%, -100%)',
+      origin: '50% 100%',
+    }
+  }
+  return {
+    left,
+    top: rect.bottom + gap,
+    transform: 'translate(-50%, 0)',
+    origin: '50% 0%',
+  }
+}
+
+function chipTooltipTransformWithScale(baseTransform: string, scale: number): string {
+  return `${baseTransform} scale(${scale.toFixed(2)})`
+}
+
 function previewIntro(intro: string): { preview: string; canExpand: boolean; paragraphs: string[] } {
   const paragraphs = splitIntroParagraphs(intro)
   if (paragraphs.length <= 1) {
@@ -405,8 +855,7 @@ function previewIntro(intro: string): { preview: string; canExpand: boolean; par
 
 Page({
   swimScrollLeft: 0,
-  _echoMatrix: false,
-  _echoAxis: false,
+  chipTooltipExitTimer: null as ReturnType<typeof setTimeout> | null,
   data: {
     unit: null as UnitHero['unit'] | null,
     dynastyTitle: '',
@@ -427,22 +876,35 @@ Page({
     favToggling: false,
     headerPadPx: 88,
     scrollTop: 140,
-    matrixScrollLeft: 0,
-    axisScrollLeft: 0,
+    panelScrollLeft: 0,
+    axisMirrorLeft: 0,
     axisPinned: false,
     overlayVisible: false,
-    overlayLabel: '',
+    overlayCountTag: '',
     overlayBars: [] as SwimBar[],
+    overlayLaneKey: '',
     loadError: '',
     priorityOptions: PRIORITY_OPTIONS,
     activePriority: 'p3' as PriorityLevel,
     chipTooltipVisible: false,
+    chipTooltipPhase: 'enter' as 'enter' | 'idle' | 'exit',
+    chipTooltipHeldId: '',
     chipTooltipTitle: '',
     chipTooltipRange: '',
+    chipTooltipTag: '',
     chipTooltipPeakYear: '',
     chipTooltipPeakReason: '',
+    chipTooltipPriority: '',
+    chipTooltipPriorityReason: '',
+    chipTooltipEntrySource: '',
+    chipTooltipLaneKey: '',
+    chipTooltipStartYear: '',
+    chipTooltipEndYear: '',
     chipTooltipLeftPx: 0,
     chipTooltipTopPx: 0,
+    chipTooltipBaseTransform: 'translate(-50%, -100%)',
+    chipTooltipOrigin: '50% 100%',
+    chipTooltipTransform: 'translate(-50%, -100%) scale(0.88)',
   },
   onShow() {
     void this.refreshFavState()
@@ -456,7 +918,7 @@ Page({
   },
   async onLoad(query: Record<string, string | undefined>) {
     const unitId = query.unitId || query.id
-    const dynastyHint = decodeURIComponent(query.dynasty || query.displayName || '')
+    const dynastyHint = decodeQueryValue(query.dynasty || query.displayName || '')
     if (!unitId && !dynastyHint) return
 
     const sys = wx.getSystemInfoSync()
@@ -465,6 +927,16 @@ Page({
     const tabBarH = Math.round(72 * (sys.windowWidth / 750))
     const scrollTop = headerPadPx + tabBarH
     const anchorYear = query.anchorYear ? parseInt(query.anchorYear, 10) : NaN
+    const provisionalNavTitle = dynastyHint
+      ? (dynastyHint.length <= 4 ? dynastyHint : dynastyHint.slice(0, 4))
+      : ''
+
+    this.setData({
+      headerPadPx,
+      scrollTop,
+      navTitle: provisionalNavTitle,
+      dynastyTitle: dynastyHint,
+    })
 
     const applyPageData = (
       hero: UnitHero,
@@ -509,11 +981,10 @@ Page({
           request<UnitHero>(`/units/${enc}`),
           request<SwimMatrix>(`/units/${enc}/swim-matrix`),
         ])
-        const enhancedSwim = {
+        applyPageData(heroRes.data, {
           ...swimRes.data,
           gridLines: swimRes.data.gridLines || [],
-        }
-        applyPageData(heroRes.data, enhancedSwim)
+        })
         return
       } catch (e: any) {
         console.error('[dynasty-detail] API failed', e)
@@ -568,42 +1039,29 @@ Page({
     this.setData({ loadError: '缺少朝代 ID，无法加载' })
   },
   scrollToAnchorYear(anchorYear: number, swim: SwimMatrix) {
-    const sheetPx = (swim.sheetWidthRpx || 1440) * (wx.getSystemInfoSync().windowWidth / 750)
-    const targetPx = (percentForYearOnSwim(swim, anchorYear) / 100) * sheetPx
+    const rpxRatio = wx.getSystemInfoSync().windowWidth / 750
+    const padLeftPx = (swim.canvasPadLeftRpx || CANVAS_PAD_LEFT_RPX) * rpxRatio
+    const sheetPx = (swim.sheetWidthRpx || 1440) * rpxRatio
+    const targetPx = padLeftPx + (percentForYearOnSwim(swim, anchorYear) / 100) * sheetPx
     const bias = wx.getSystemInfoSync().windowWidth * 0.32
-    const left = Math.max(0, targetPx - bias)
+    const left = Math.max(0, Math.round(targetPx - bias))
     this.swimScrollLeft = left
-    this.setData({ matrixScrollLeft: left, axisScrollLeft: left })
+    this.setData({ panelScrollLeft: left, axisMirrorLeft: left })
   },
-  // 泳道主体横滑：仅在吸顶时把位置同步给顶部固定时间轴
-  onMatrixHScroll(e: WechatMiniprogram.ScrollViewScroll) {
-    const left = e.detail.scrollLeft
+  onPanelHScroll(e: { scrollLeft: number }) {
+    const left = roundScrollLeft(e.scrollLeft)
     this.swimScrollLeft = left
-    if (this._echoMatrix) {
-      this._echoMatrix = false
-      return
-    }
-    if (this.data.axisPinned) {
-      this._echoAxis = true
-      this.setData({ axisScrollLeft: left })
-    }
-  },
-  // 顶部固定时间轴横滑：回写给泳道主体
-  onAxisHScroll(e: WechatMiniprogram.ScrollViewScroll) {
-    const left = e.detail.scrollLeft
-    this.swimScrollLeft = left
-    if (this._echoAxis) {
-      this._echoAxis = false
-      return
-    }
-    this._echoMatrix = true
-    this.setData({ matrixScrollLeft: left })
   },
   onDynastyScroll(e: WechatMiniprogram.ScrollViewScroll) {
     const top = e.detail.scrollTop
-    const pinned = top > 120
+    let pinned = this.data.axisPinned
+    if (!pinned && top > AXIS_PIN_AT) pinned = true
+    else if (pinned && top < AXIS_UNPIN_AT) pinned = false
     if (pinned !== this.data.axisPinned) {
-      this.setData({ axisPinned: pinned })
+      this.setData({
+        axisPinned: pinned,
+        axisMirrorLeft: this.swimScrollLeft,
+      })
     }
     if (this.data.chipTooltipVisible) {
       this.hideChipTooltip()
@@ -617,27 +1075,116 @@ Page({
     const ds = (e.currentTarget as any).dataset || {}
     const boxId = ds.box as string
     if (!boxId) return
-    navigateTo(ROUTES.boxDetail, { boxId, title: ds.title || '' })
+    if (ds.type === 'overflow_bucket') {
+      this.showBucketOverlay(ds)
+      return
+    }
+    const title = decodeQueryValue(ds.title)
+    void request(`/boxes/${encodePathSegment(boxId)}`).catch(() => {})
+    navigateTo(ROUTES.boxDetail, { boxId, title })
+  },
+  showBucketOverlay(ds: Record<string, unknown>) {
+    const laneIdx = Number(ds.lane)
+    const bucketStart = Number(ds.startYear)
+    const bucketEnd = Number(ds.endYear)
+    const label = String(ds.label || '')
+    const swim = this.data.swim
+    if (!swim || Number.isNaN(laneIdx)) return
+    const lane = swim.lanes[laneIdx] as SwimLane & { extraBars?: SwimBar[] }
+    if (!lane) return
+    let bars = lane.extraBars || []
+    if (Number.isFinite(bucketStart) && Number.isFinite(bucketEnd)) {
+      bars = bars.filter((bar) => {
+        const y = bar.peakYear ?? bar.startYear ?? 0
+        return y >= bucketStart && y < bucketEnd
+      })
+    }
+    this.openOverlaySheet(lane, bars, label)
+  },
+  openOverlaySheet(lane: SwimLane & { extraBars?: SwimBar[] }, bars: SwimBar[], label = '') {
+    this.setData({
+      overlayVisible: true,
+      overlayCountTag: buildOverlayCountTag(label || lane.label, bars.length),
+      overlayBars: bars,
+      overlayLaneKey: lane.key,
+    })
   },
   onBarLongPress(e: WechatMiniprogram.BaseEvent) {
     const ds = (e.currentTarget as any).dataset || {}
     const boxId = ds.box as string
+    if (!boxId) return
     const bar = findSwimBar(this.data.swim, boxId)
-    const touch = (e as any).touches?.[0] || (e as any).changedTouches?.[0]
-    const sys = wx.getSystemInfoSync()
-    const left = touch?.clientX == null ? Math.round(sys.windowWidth / 2) : Math.max(140, Math.min(sys.windowWidth - 140, touch.clientX))
-    const top = touch?.clientY == null ? Math.round(sys.windowHeight * 0.45) : Math.max(120, Math.min(sys.windowHeight - 160, touch.clientY - 96))
     const peakYearNum = bar?.peakYear
     const peakReason = String(bar?.peakReason || '').trim()
-    this.setData({
-      chipTooltipVisible: true,
-      chipTooltipTitle: bar?.title || ds.title || '',
-      chipTooltipRange: bar?.timeRange || ds.range || '',
-      chipTooltipPeakYear: peakYearNum == null ? '' : formatHistoryYear(peakYearNum),
-      chipTooltipPeakReason: peakReason,
-      chipTooltipLeftPx: left,
-      chipTooltipTopPx: top,
-    })
+    const priorityReason = String(bar?.priorityReason || '').trim()
+    const chipTag = String(bar?.chipTag || '').trim()
+    const laneKey = String(ds.laneKey || '').trim()
+    const { start: startYearLabel, end: endYearLabel } = splitTimeRangeLabels(bar, bar?.timeRange || ds.range || '')
+    const sys = wx.getSystemInfoSync()
+    const safeTop = computeChipTooltipSafeTop(this.data.axisPinned, this.data.scrollTop, sys.windowWidth)
+    const safeBottom = computeChipTooltipSafeBottom(
+      sys.windowHeight,
+      sys.windowWidth,
+      sys.safeAreaInsets?.bottom || 0,
+    )
+
+    const showTooltip = (rect: WechatMiniprogram.BoundingClientRectCallbackResult | null) => {
+      let placement: ChipTooltipPlacement
+      if (rect && rect.width > 0 && rect.height > 0) {
+        placement = computeChipTooltipPlacement(rect, {
+          safeTop,
+          safeBottom,
+          windowWidth: sys.windowWidth,
+        })
+      } else {
+        const touch = (e as any).touches?.[0] || (e as any).changedTouches?.[0]
+        const anchorY = touch?.clientY ?? Math.round(sys.windowHeight * 0.45)
+        const left = touch?.clientX == null
+          ? Math.round(sys.windowWidth / 2)
+          : Math.max(140, Math.min(sys.windowWidth - 140, touch.clientX))
+        const showAbove = anchorY - safeTop >= 120
+        placement = showAbove
+          ? { left, top: anchorY - 8, transform: 'translate(-50%, -100%)', origin: '50% 100%' }
+          : { left, top: anchorY + 8, transform: 'translate(-50%, 0)', origin: '50% 0%' }
+      }
+      if (this.chipTooltipExitTimer) {
+        clearTimeout(this.chipTooltipExitTimer)
+        this.chipTooltipExitTimer = null
+      }
+      this.setData({
+        chipTooltipHeldId: boxId,
+        chipTooltipVisible: true,
+        chipTooltipPhase: 'enter',
+        chipTooltipTitle: bar?.title || ds.title || '',
+        chipTooltipStartYear: startYearLabel,
+        chipTooltipEndYear: endYearLabel,
+        chipTooltipTag: chipTag,
+        chipTooltipLaneKey: laneKey,
+        chipTooltipPeakYear: peakYearNum == null ? '' : formatHistoryYear(peakYearNum),
+        chipTooltipPeakReason: peakReason,
+        chipTooltipPriority: formatPriorityLabel(bar?.priority || ''),
+        chipTooltipPriorityReason: priorityReason,
+        chipTooltipEntrySource: formatEntrySourceLabel(bar?.entrySource || ''),
+        chipTooltipLeftPx: placement.left,
+        chipTooltipTopPx: placement.top,
+        chipTooltipBaseTransform: placement.transform,
+        chipTooltipOrigin: placement.origin,
+        chipTooltipTransform: chipTooltipTransformWithScale(placement.transform, 0.88),
+      })
+      setTimeout(() => {
+        if (!this.data.chipTooltipVisible || this.data.chipTooltipHeldId !== boxId) return
+        this.setData({
+          chipTooltipPhase: 'idle',
+          chipTooltipTransform: chipTooltipTransformWithScale(placement.transform, 1),
+        })
+      }, 20)
+    }
+
+    wx.createSelectorQuery()
+      .in(this)
+      .select(`#chip-${boxId}`)
+      .boundingClientRect((rect) => showTooltip(rect))
+      .exec()
   },
   showMoreOverlay(e: WechatMiniprogram.BaseEvent) {
     const label = (e.currentTarget as any).dataset.label as string
@@ -647,7 +1194,7 @@ Page({
     const lane = swim.lanes[laneIdx] as SwimLane & { extraBars?: SwimBar[] }
     if (!lane) return
     const bars = lane.extraBars || []
-    this.setData({ overlayVisible: true, overlayLabel: label, overlayBars: bars })
+    this.openOverlaySheet(lane, bars, label)
   },
   onPriorityTap(e: WechatMiniprogram.BaseEvent) {
     const priority = (e.currentTarget as any).dataset.priority as PriorityLevel
@@ -658,14 +1205,42 @@ Page({
       activePriority: priority,
       swim: applyPriorityView(swim, priority),
       overlayVisible: false,
-      chipTooltipVisible: false,
     })
+    this.hideChipTooltip()
   },
   hideOverlay() {
     this.setData({ overlayVisible: false })
   },
   hideChipTooltip() {
-    this.setData({ chipTooltipVisible: false })
+    if (!this.data.chipTooltipVisible) return
+    if (this.data.chipTooltipPhase === 'exit') return
+    const baseTransform = this.data.chipTooltipBaseTransform || 'translate(-50%, -100%)'
+    this.setData({
+      chipTooltipPhase: 'exit',
+      chipTooltipTransform: chipTooltipTransformWithScale(baseTransform, 0.88),
+    })
+    if (this.chipTooltipExitTimer) clearTimeout(this.chipTooltipExitTimer)
+    this.chipTooltipExitTimer = setTimeout(() => {
+      this.chipTooltipExitTimer = null
+      if (this.data.chipTooltipPhase !== 'exit') return
+      this.setData({
+        chipTooltipVisible: false,
+        chipTooltipHeldId: '',
+        chipTooltipPhase: 'enter',
+      })
+    }, 190)
+  },
+  onChipTooltipTransitionEnd() {
+    if (this.data.chipTooltipPhase !== 'exit') return
+    if (this.chipTooltipExitTimer) {
+      clearTimeout(this.chipTooltipExitTimer)
+      this.chipTooltipExitTimer = null
+    }
+    this.setData({
+      chipTooltipVisible: false,
+      chipTooltipHeldId: '',
+      chipTooltipPhase: 'enter',
+    })
   },
   goUnit(e: WechatMiniprogram.BaseEvent) {
     const id = (e.currentTarget as any).dataset.id as string

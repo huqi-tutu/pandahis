@@ -11,6 +11,7 @@ import {
   type NarrationState,
 } from '../../native-utils/box-narration'
 import { encodePathSegment } from '../../native-utils/encode-path-segment'
+import { decodeQueryValue } from '../../native-utils/query-value'
 import {
   favoriteBox,
   fetchFavoritedBoxIdSet,
@@ -152,11 +153,71 @@ function buildDetailMetaFromBox(box: BoxHeader['box']): string {
   return parts.join(' · ')
 }
 
-function splitDetailParagraphs(md: string): string[] {
+type TextSegment = { text: string; bold: boolean }
+
+type DetailParagraph = {
+  segs: TextSegment[]
+  plain: string
+  dropcap?: string
+}
+
+function parseBoldSegments(text: string): TextSegment[] {
+  const parts = text.split(/(\*\*[^*]*\*\*)/)
+  return parts.filter(Boolean).map((p) => {
+    if (p.startsWith('**') && p.endsWith('**')) {
+      return { text: p.slice(2, -2), bold: true }
+    }
+    return { text: p, bold: false }
+  })
+}
+
+/** 中文/英文/常用标点字符集合（用于剔除首段开头标点） */
+const LEADING_PUNCTUATION = new Set(
+  '《》「」『』【】（）()。，、！？；：""\'\'…—·.．,，\'·：；！？、，。'
+)
+
+function stripLeadingPunctuation(text: string): string {
+  let start = 0
+  while (start < text.length && LEADING_PUNCTUATION.has(text[start])) {
+    start++
+  }
+  return text.slice(start)
+}
+
+function findDropcap(segs: TextSegment[]): { ch: string; si: number; ci: number } {
+  for (let si = 0; si < segs.length; si++) {
+    for (let ci = 0; ci < segs[si].text.length; ci++) {
+      const ch = segs[si].text[ci]
+      if (/[\u4e00-\u9fff\u3400-\u4dbf\w]/.test(ch)) {
+        return { ch, si, ci }
+      }
+    }
+  }
+  const first = segs[0]?.text || ''
+  return { ch: first[0] || '', si: 0, ci: 0 }
+}
+
+function splitDetailParagraphs(md: string): DetailParagraph[] {
   const raw = String(md || '').trim()
   if (!raw) return []
   const parts = raw.split(/\n{2,}/).map((s) => s.trim()).filter(Boolean)
-  return parts.length ? parts : [raw]
+  const list = parts.length ? parts : [raw]
+  return list.map((p, i) => {
+    // 首段：剔除开头的标点符号，确保 dropcap 始终是正常文字
+    let processed = i === 0 ? stripLeadingPunctuation(p) : p
+    const segs = parseBoldSegments(processed)
+    const plain = segs.map((s) => s.text).join('')
+    const para: DetailParagraph = { segs, plain }
+    if (i === 0) {
+      const dc = findDropcap(segs)
+      para.dropcap = dc.ch
+      if (segs[dc.si]) {
+        const seg = segs[dc.si]
+        seg.text = seg.text.slice(0, dc.ci) + seg.text.slice(dc.ci + 1)
+      }
+    }
+    return para
+  })
 }
 
 
@@ -173,7 +234,7 @@ Page({
     tab: 'content' as 'content' | 'relations' | 'reviews' | 'relics',
     isFav: false,
     detailMd: '',
-    detailParagraphs: [] as string[],
+    detailParagraphs: [] as DetailParagraph[],
     detailMetaDisplay: '',
     detailReady: false,
     detailErr: '',
@@ -204,6 +265,7 @@ Page({
     graphScaleLabel: '100%',
     readingProgress: 0,
     uiFocused: true,
+    bodyScrollTop: 0,
     showOriginal: false,
     originalTitle: '',
     originalItems: [],
@@ -213,8 +275,14 @@ Page({
   },
   _detailScrollTop: 0,
   _tabBarPx: 0,
+  _suppressChromeHide: false,
+  _suppressChromeHideTimer: null as ReturnType<typeof setTimeout> | null,
   _rawOriginalRef: null,
   onUnload() {
+    if (this._suppressChromeHideTimer) {
+      clearTimeout(this._suppressChromeHideTimer)
+      this._suppressChromeHideTimer = null
+    }
     stopNarration()
     this.setData({ audioOpen: false })
   },
@@ -231,7 +299,7 @@ Page({
   async onLoad(query: Record<string, string | undefined>) {
     const boxId = query.boxId || query.id
     if (!boxId) return
-    const provisionalTitle = String(query.title || query.displayName || '').trim()
+    const provisionalTitle = decodeQueryValue(query.title || query.displayName)
     const sys = wx.getSystemInfoSync()
     const navH = Math.round(88 * (sys.windowWidth / 750))
     const tabTop = (sys.statusBarHeight || 20) + navH
@@ -253,12 +321,19 @@ Page({
       const y0 = yearLabel(header.box.startYear)
       const y1 = yearLabel(header.box.endYear)
       const timeRange = y0 && y1 ? y0 + ' — ' + y1 : (y0 || y1 || '')
+      const blurbClean = stripLeadingPunctuation(header.box.blurb || '')
       this.setData({
         header,
         navTitle: header.box.title,
         detailMetaDisplay: buildDetailMetaFromBox(header.box),
         audioTimeRange: timeRange,
         audioCategoryPath: [header.box.civilization_name, header.box.dynasty_name].filter(Boolean).join(' · '),
+        blurbSegs: parseBoldSegments(blurbClean),
+        blurbDropcap: (() => {
+          const segs = parseBoldSegments(blurbClean)
+          const dc = findDropcap(segs)
+          return dc.ch
+        })(),
       })
       await this.refreshFavState()
       await this.recordFootprint()
@@ -329,9 +404,10 @@ Page({
           detailMdPro?: string | null
         }>(`/boxes/${enc}/detail`)
         const md = res.data.detailMd || ''
+        const parsed = splitDetailParagraphs(md)
         this.setData({
           detailMd: md,
-          detailParagraphs: splitDetailParagraphs(md),
+          detailParagraphs: parsed,
           detailErr: '',
           detailReady: true,
           detailFetched: true,
@@ -430,7 +506,32 @@ Page({
 
   setTab(e: WechatMiniprogram.BaseEvent) {
     const tab = (e.currentTarget as any).dataset.tab as 'content' | 'relations' | 'reviews' | 'relics'
-    this.setData({ tab })
+    if (tab === this.data.tab) return
+
+    const nextScrollTop = this.data.bodyScrollTop === 0 ? 0.01 : 0
+
+    // 防止同一次点击冒泡到 onPageTap 后又被切成阅读全屏态
+    this._ignoreTapFromBar = true
+    this._detailScrollTop = 0
+    this._suppressChromeHide = true
+    if (this._suppressChromeHideTimer) {
+      clearTimeout(this._suppressChromeHideTimer)
+    }
+    this._suppressChromeHideTimer = setTimeout(() => {
+      this._suppressChromeHide = false
+      this._suppressChromeHideTimer = null
+    }, 280) as unknown as number
+
+    this.setData({
+      tab,
+      uiFocused: true,
+      readingProgress: 0,
+      bodyScrollTop: nextScrollTop,
+    }, () => {
+      if (nextScrollTop !== 0) {
+        this.setData({ bodyScrollTop: 0 })
+      }
+    })
     void this.ensureTab(tab)
   },
   onCritiqueTap(e: WechatMiniprogram.BaseEvent) {
@@ -480,7 +581,7 @@ Page({
     const script = buildBoxNarrationScript({
       title: h?.box?.title,
       meta: this.data.detailMetaDisplay,
-      paragraphs: this.data.detailParagraphs,
+      paragraphs: this.data.detailParagraphs.map((p: DetailParagraph) => p.plain),
       blurb: h?.box?.blurb,
     })
     if (!script.trim()) {
@@ -738,7 +839,7 @@ Page({
     const scale = e.detail?.scale ?? 1
     this.setData({ graphScaleLabel: this.formatGraphScaleLabel(scale) })
   },
-  onDetailScroll(e: WechatMiniprogram.ScrollViewScrollDetail) {
+  onDetailScroll(e: WechatMiniprogram.ScrollViewScroll) {
     const d = e.detail || { scrollTop: 0, scrollHeight: 0 }
     const scrollTop = d.scrollTop || 0
     const scrollHeight = d.scrollHeight || 0
@@ -750,7 +851,7 @@ Page({
     this.setData({ readingProgress: pct })
 
     // 自动隐藏 tab 栏（仅详情 Tab），使用 CSS transition 实现无抖动显隐
-    if (this.data.tab === 'content') {
+    if (this.data.tab === 'content' && !this._suppressChromeHide) {
       const prevScrollTop = this._detailScrollTop ?? 0
       const delta = scrollTop - prevScrollTop
       this._detailScrollTop = scrollTop
@@ -765,15 +866,15 @@ Page({
         // 上划 > 5px 显示
         if (!this.data.uiFocused) this.setData({ uiFocused: true })
       }
+    } else if (this.data.tab === 'content') {
+      this._detailScrollTop = scrollTop
     }
   },
 
-  /** 切换 tab 栏显隐：改变 bodyTop 让正文填满空白，配合 CSS transition 无抖动 */
+  /** 切换 tab 栏显隐（悬浮 overlay，不影响正文布局，无跳变） */
   onToggleUI(focused: boolean) {
     if (this.data.tab !== 'content') return
-    const tabBarPx = this._tabBarPx || 0
-    const newBodyTop = focused ? this.data.tabTop + tabBarPx : this.data.tabTop
-    this.setData({ uiFocused: focused, bodyTop: newBodyTop })
+    this.setData({ uiFocused: focused })
   },
 
 

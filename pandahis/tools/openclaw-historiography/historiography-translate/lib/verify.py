@@ -9,6 +9,10 @@ from typing import Any, Dict, List, Tuple
 
 from lib.coverage import verify_mother_coverage
 from lib.source_text import build_source_original, source_original_fingerprint
+from lib.gloss_rules import detect_forbidden_gloss
+from lib.citation_mode import count_short_quote_density
+from lib.intro_overlap import intro_mother_overlap
+from lib.attribution import detect_foreign_exit_in_opening
 
 FORBIDDEN_PROSE = (
     "此外",
@@ -186,6 +190,13 @@ def verify_mother_draft(
         cov_ok, cov_errs = verify_mother_coverage(detail, plan)
         if not cov_ok:
             errors.extend([f"母本顺译 {e}" for e in cov_errs])
+
+    errors.extend(detect_forbidden_gloss(detail))
+    short_q = count_short_quote_density(detail, threshold_len=4)
+    if short_q >= 12:
+        errors.append(
+            f"母本引用过碎: ≤4字「」引用 {short_q} 处，并列句群应整簇引用"
+        )
 
     wc = len(detail)
     if not batch_mode:
@@ -471,6 +482,12 @@ def verify_enrich_draft(
     allowed = _collect_allowed_titles(recalled, plan, mother_work)
     errors.extend(_unauthorized_citations(detail, allowed, mother_src)[:5])
 
+    subject = str(recalled.get("史略名称") or "")
+    errors.extend(detect_foreign_exit_in_opening(detail, subject))
+    errors.extend(detect_forbidden_gloss(detail))
+    if plan:
+        errors.extend(intro_mother_overlap(detail, plan))
+
     return len(errors) == 0, errors
 
 
@@ -553,7 +570,18 @@ def verify_output(
         tongjia_errs = _invalid_tongjia_annotations(detail)
         errors.extend(tongjia_errs)
 
+        errors.extend(detect_forbidden_gloss(detail))
+        short_q = count_short_quote_density(detail, threshold_len=4)
+        if short_q >= 15:
+            errors.append(
+                f"引用过碎: ≤4字「」引用 {short_q} 处，并列句群应整簇引用后统一解释"
+            )
+
+        subject = str(recalled.get("史略名称") or entry_name)
+        errors.extend(detect_foreign_exit_in_opening(detail, subject))
+
         if plan:
+            errors.extend(intro_mother_overlap(detail, plan))
             errors.extend(_verify_plan_sources_in_detail(detail, plan))
             cov_ok, cov_errs = verify_mother_coverage(detail, plan)
             if not cov_ok:
@@ -606,23 +634,7 @@ def verify_chunk_body(
         errors.append(f"书面腔词汇过多: {hits[:5]}")
 
     errors.extend(_invalid_tongjia_annotations(text))
-
-
-    # --- 前置引入检查 ---
-    has_intro_intro = False
-    first_para = detail.split("\n\n")[0].strip() if "\n\n" in detail else detail[:200]
-    # 检查第一段是否包含朝代/时代/身份类词（表明有人物定位）
-    intro_keywords = re.findall(
-        r"[夏商周秦汉魏晋南北隋唐宋元明清]|"
-        r"世纪|时代|公元前|时期|即位|君主|天子|帝王|诸侯|"
-        r"首领|领袖|君王|贵族|名臣|名将|宰相|大臣|始祖",
-        first_para,
-    )
-    # 如果第一段包含直接引自母本的内容（《》引用 + 母本原文片段）但无定位词，视为缺引入
-    has_direct_citation = bool(re.search(r"《[^》]+》[记载写说]", first_para[:150]))
-    if has_direct_citation and len(intro_keywords) < 1:
-        errors.append("正文开头缺少前置引入：建议在顺译前先写一段人物背景介绍。")
-
+    errors.extend(detect_forbidden_gloss(text))
 
     return len(errors) == 0, errors
 

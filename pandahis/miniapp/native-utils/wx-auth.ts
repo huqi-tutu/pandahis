@@ -46,8 +46,10 @@ export function leaveAfterLogin(delayMs = 400) {
     const pages = getCurrentPages()
     const prev = pages.length > 1 ? pages[pages.length - 2] : null
     const notifyPrev = () => {
-      const r = (prev as WechatMiniprogram.Page.Instance<Record<string, unknown>> & { refresh?: () => void })
-        ?.refresh
+      const r = (prev as WechatMiniprogram.Page.Instance<
+        Record<string, unknown>,
+        WechatMiniprogram.IAnyObject
+      > & { refresh?: () => void })?.refresh
       if (typeof r === 'function') void r.call(prev)
     }
     if (pages.length > 1) {

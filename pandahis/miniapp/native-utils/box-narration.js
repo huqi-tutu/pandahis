@@ -4,7 +4,7 @@
  * 插件不可用时回退服务端合成 MP3。
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.toggleNarrationPlayback = exports.startNarration = exports.resumeNarration = exports.pauseNarration = exports.stopNarration = exports.getNarrationState = exports.buildBoxNarrationScript = exports.chunkTextForTts = void 0;
+exports.setPlaybackRate = exports.seekNarrationPct = exports.seekNarration = exports.toggleNarrationPlayback = exports.startNarration = exports.resumeNarration = exports.pauseNarration = exports.stopNarration = exports.getNarrationState = exports.buildBoxNarrationScript = exports.chunkTextForTts = void 0;
 const api_1 = require("./api");
 const CHUNK_MAX = 180;
 const TEXT_MAX = 6000;
@@ -14,8 +14,27 @@ let chunkIndex = 0;
 let aborted = false;
 let state = 'idle';
 let onStateChange = null;
+let onProgressChange = null;
 let wechatSIChecked = false;
 let wechatSIAvailable = false;
+function formatMmSs(sec) {
+    if (!Number.isFinite(sec) || sec < 0)
+        return '0:00';
+    const m = Math.floor(sec / 60);
+    const s = Math.floor(sec % 60);
+    return `${m}:${s < 10 ? '0' : ''}${s}`;
+}
+function emitProgress(currentSec = 0, durationSec = 0) {
+    const dur = durationSec > 0 ? durationSec : 1;
+    const chunkPart = chunks.length ? chunkIndex / chunks.length : 0;
+    const innerPart = Math.min(1, currentSec / dur) / (chunks.length || 1);
+    const progress = Math.min(100, Math.round((chunkPart + innerPart) * 100));
+    onProgressChange === null || onProgressChange === void 0 ? void 0 : onProgressChange({
+        progress,
+        current: formatMmSs(currentSec),
+        duration: formatMmSs(durationSec),
+    });
+}
 function setState(next) {
     state = next;
     onStateChange === null || onStateChange === void 0 ? void 0 : onStateChange(next);
@@ -52,7 +71,7 @@ function textToSpeechNative(content) {
         try {
             plugin = requirePlugin('WechatSI');
         }
-        catch {
+        catch (e) {
             reject(new Error('未加载微信同声传译插件'));
             return;
         }
@@ -69,8 +88,8 @@ function textToSpeechNative(content) {
                     reject(new Error(`语音合成失败(${(_a = res === null || res === void 0 ? void 0 : res.retcode) !== null && _a !== void 0 ? _a : 'unknown'})`));
             },
             fail: (res) => {
-                var _a, _b;
-                reject(new Error((res === null || res === void 0 ? void 0 : res.msg) || `语音合成失败(${(_b = (_a = res === null || res === void 0 ? void 0 : res.retcode) !== null && _a !== void 0 ? _a : 'fail')})`));
+                var _a;
+                reject(new Error((res === null || res === void 0 ? void 0 : res.msg) || `语音合成失败(${(_a = res === null || res === void 0 ? void 0 : res.retcode) !== null && _a !== void 0 ? _a : 'fail'})`));
             },
         });
     });
@@ -84,7 +103,7 @@ function writeMp3TempFile(base64) {
             data: base64,
             encoding: 'base64',
             success: () => resolve(path),
-            fail: (err) => { var _a; return reject(new Error(((_a = err === null || err === void 0 ? void 0 : err.errMsg) !== null && _a !== void 0 ? _a : '写入语音文件失败'))); },
+            fail: (err) => reject(new Error((err === null || err === void 0 ? void 0 : err.errMsg) || '写入语音文件失败')),
         });
     });
 }
@@ -211,6 +230,11 @@ function ensureAudio() {
         chunkIndex += 1;
         void playNextChunk();
     });
+    audio.onTimeUpdate(() => {
+        if (aborted || !audio)
+            return;
+        emitProgress(audio.currentTime || 0, audio.duration || 0);
+    });
     audio.onError((err) => {
         if (aborted)
             return;
@@ -220,6 +244,7 @@ function ensureAudio() {
     });
 }
 function playFile(filename) {
+    var _a;
     ensureAudio();
     if (!audio || aborted)
         return;
@@ -236,10 +261,10 @@ function playFile(filename) {
             wx.showToast({ title: '播放失败', icon: 'none' });
         }
     };
-    var _a;
     (_a = audio.offCanplay) === null || _a === void 0 ? void 0 : _a.call(audio);
     audio.onCanplay(playNow);
     audio.src = filename;
+    // 部分机型 onCanplay 不触发，兜底直接 play
     setTimeout(() => {
         if (!aborted && state === 'loading' && audio) {
             playNow();
@@ -276,6 +301,7 @@ function stopNarration() {
     chunks = [];
     chunkIndex = 0;
     destroyAudio();
+    onProgressChange = null;
     setState('idle');
 }
 exports.stopNarration = stopNarration;
@@ -303,10 +329,11 @@ function resumeNarration() {
     setState('playing');
 }
 exports.resumeNarration = resumeNarration;
-async function startNarration(text, stateCb) {
+async function startNarration(text, stateCb, progressCb) {
     stopNarration();
     aborted = false;
     onStateChange = stateCb;
+    onProgressChange = progressCb || null;
     chunks = chunkTextForTts(text);
     if (!chunks.length)
         throw new Error('暂无正文可朗读');
@@ -325,3 +352,49 @@ function toggleNarrationPlayback() {
     return state;
 }
 exports.toggleNarrationPlayback = toggleNarrationPlayback;
+/**
+ * 在当前音频片段内 seek 偏移（秒），正数快进、负数快退
+ * 超出当前片段范围时取边界值
+ */
+function seekNarration(offsetSec) {
+    if (!audio || (state !== 'playing' && state !== 'paused'))
+        return;
+    try {
+        const cur = audio.currentTime || 0;
+        const dur = audio.duration || 0;
+        const target = Math.max(0, Math.min(dur, cur + offsetSec));
+        audio.seek(target);
+    }
+    catch {
+        // seek 失败静默处理
+    }
+}
+exports.seekNarration = seekNarration;
+/**
+ * 在当前音频片段内 seek 到指定百分比（0-100）
+ */
+function seekNarrationPct(pct) {
+    if (!audio || (state !== 'playing' && state !== 'paused'))
+        return;
+    try {
+        const dur = audio.duration || 0;
+        const target = Math.max(0, Math.min(dur, (pct / 100) * dur));
+        audio.seek(target);
+    }
+    catch {
+        // seek 失败静默处理
+    }
+}
+exports.seekNarrationPct = seekNarrationPct;
+/** 设置播放速度（需基础库 2.11.0+） */
+function setPlaybackRate(rate) {
+    if (!audio)
+        return;
+    try {
+        audio.playbackRate = rate;
+    }
+    catch {
+        // 低版本基础库不支持，静默忽略
+    }
+}
+exports.setPlaybackRate = setPlaybackRate;

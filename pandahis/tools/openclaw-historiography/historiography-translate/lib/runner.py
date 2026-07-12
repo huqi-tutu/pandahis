@@ -12,6 +12,7 @@ from lib import db
 from lib.config import default_index_path, paths
 from lib.plan_postprocess import plan_for_enrich_phase, plan_for_mother_phase
 from lib.prose_sanitize import polish_enrich_file, polish_enrich_file_full, polish_mother_file, sanitize_mother_detail
+from lib.attribution import apply_attribution_fixes
 from lib.remote_sync import auto_sync_enabled
 from lib.stall_watch import (
     diagnose_stall,
@@ -22,6 +23,13 @@ from lib.stall_watch import (
 )
 from lib.fingerprint import recalled_summary, source_fingerprint
 from lib.index_filter import filter_pending_jobs
+from lib.translate_scope import (
+    compute_progress,
+    format_progress_report,
+    is_translate_required,
+    load_dynasty_detail_ids,
+    load_translated_ids,
+)
 from lib.openclaw import (
     build_source_plan_prompt,
     build_translate_enrich_prompt,
@@ -78,9 +86,13 @@ def bootstrap(*, index_path: Path | None = None, force: bool = False) -> int:
     index = load_global_index(idx_path)
     entries = index.get("entries") or []
     created = 0
+    skipped_supplement = 0
     for e in entries:
         eid = e.get("史略ID")
         if not eid:
+            continue
+        if not is_translate_required(e):
+            skipped_supplement += 1
             continue
         paras = e.get("paragraphs") or []
         para_count = int(e.get("段落域数") or 0)
@@ -101,7 +113,10 @@ def bootstrap(*, index_path: Path | None = None, force: bool = False) -> int:
         created += 1
     db.set_meta("index_path", str(idx_path))
     db.set_meta("index_entry_count", str(len(entries)))
-    print(f"✅ bootstrap: {created} 条任务 ← {idx_path}")
+    print(
+        f"✅ bootstrap: {created} 条翻译任务 ← {idx_path}"
+        f"（跳过朝代补全 {skipped_supplement} 条）"
+    )
     return created
 
 
@@ -220,6 +235,27 @@ def _phase1_max_retries() -> int:
 
 def _phase1_retry_temperature() -> float:
     return float(os.environ.get("TRANSLATE_PHASE1_RETRY_TEMPERATURE", "0.4"))
+
+
+def _apply_attribution_polish(
+    target: Path,
+    recalled: Dict[str, Any],
+    plan_data: Dict[str, Any],
+) -> None:
+    """Phase2 落盘后：归因清洗 + 本传缺漏退场补全。"""
+    if not target.is_file():
+        return
+    try:
+        data = json.loads(target.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return
+    detail = str(data.get("翻译详情") or "")
+    fixed, changes = apply_attribution_fixes(detail, recalled, plan_data)
+    if not changes:
+        return
+    data["翻译详情"] = fixed
+    target.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(f"   🔧 归因修复: {', '.join(changes[:3])}", flush=True)
 
 
 def _phase2_max_retries() -> int:
@@ -467,6 +503,7 @@ def _run_phase2_enrich(
             return False, ["Phase2: LLM 未落盘最终译稿"], time.time() - t0
         if polish_enrich_file_full(target):
             print("   🔧 已自动修正模糊出处表述", flush=True)
+        _apply_attribution_polish(target, recalled, plan_data)
         touch_heartbeat(work_dir, entry_id, stage="verify_enrich")
         e_ok, e_errs = verify_enrich_draft(
             entry_id, recalled, target, plan=plan_data
@@ -1028,10 +1065,24 @@ def print_status() -> int:
     done = db.count_jobs("done")
     pending = db.count_jobs("pending")
     failed = db.count_jobs("failed")
-    print(f"\n📋 史略翻译")
+    print(f"\n📋 史略翻译任务队列")
     print(f"   任务: done {done}/{total}  pending {pending}  failed {failed}")
     idx = db.get_meta("index_path")
     if idx:
         print(f"   索引: {idx}")
     print(f"   产出: {paths()['translate_output']}")
+
+    idx_path = Path(idx) if idx else default_index_path()
+    if idx_path.is_file():
+        index = load_global_index(idx_path)
+        entries = index.get("entries") or []
+        out_dir = Path(paths()["translate_output"])
+        detail_agg = paths()["dynasty_knowledge_detail_aggregate"]
+        progress = compute_progress(
+            entries,
+            translated_ids=load_translated_ids(out_dir),
+            dynasty_detail_ids=load_dynasty_detail_ids(detail_agg),
+        )
+        print()
+        print(format_progress_report(progress))
     return 0

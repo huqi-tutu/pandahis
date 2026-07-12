@@ -1,0 +1,12 @@
+{
+  "name": "pandahis-miniapp",
+  "private": true,
+  "scripts": {
+    "check:ts": "tsc --noEmit -p tsconfig.json",
+    "build:ts": "tsc -p tsconfig.build.json"
+  },
+  "devDependencies": {
+    "miniprogram-api-typings": "^4.0.0",
+    "typescript": "^5.4.5"
+  }
+}

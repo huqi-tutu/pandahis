@@ -802,14 +802,6 @@ def _run_step4(work: str, vol: str, job_id: int, job: Optional[dict] = None) -> 
         else:
             print(f"⚠️ Step4 reconcile 失败:\n{recon_msg[-800:]}", flush=True)
 
-        still = gates.step4_priority_gap_count(sk)
-        if still:
-            print(
-                f"⚠️ LLM 未写入 {still} 条君王优先级，"
-                f"reconcile 已按段数脚本补缺（可人工改 skeleton 后重跑 Step4）",
-                flush=True,
-            )
-
         ok, msg = gates.step4_verify_fields(sk, require_clean=False)
         if not ok:
             payload = gates.step4_collect_decisions(sk)

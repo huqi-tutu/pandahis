@@ -5,6 +5,7 @@ from __future__ import annotations
 import re
 from typing import Any, Dict, List
 
+from lib.citation_mode import enrich_checklist_citation_modes
 from lib.mother_sentences import extract_must_phrases, is_midword_fragment
 
 # 仅当与母本形成有意义差异时才允许采用
@@ -147,7 +148,10 @@ def finalize_plan(plan: Dict[str, Any], recalled: Dict[str, Any] | None = None, 
     finalize_external(out)
     if recalled is not None:
         out = ensure_mother_checklist(out, recalled, id_start=id_start)
+        enrich_checklist_citation_modes(out.get("母本逐句清单") or [])
         inject_intro_material(out, recalled)
+        inject_mother_preview(out)
+        inject_exit_supplements_plan(out, recalled)
     return out
 
 
@@ -310,3 +314,76 @@ def inject_intro_material(plan: Dict[str, Any], recalled: Dict[str, Any]) -> Non
 
     if material:
         plan["前置引入素材"] = material
+
+
+def inject_mother_preview(plan: Dict[str, Any]) -> None:
+    """程序化写入母本前三句预览与引入禁区，避免 Phase2 与 M001–M003 重复。"""
+    checklist = plan.get("母本逐句清单") or []
+    if not isinstance(checklist, list) or not checklist:
+        return
+
+    preview: Dict[str, Any] = {}
+    forbidden: List[str] = []
+    for i, item in enumerate(checklist[:3], start=1):
+        if not isinstance(item, dict):
+            continue
+        orig = str(item.get("原文摘句") or "").strip()
+        phrases = item.get("必现词") or extract_must_phrases(orig)
+        preview[f"M{i:03d}摘句"] = orig[:120]
+        preview[f"M{i:03d}必现词"] = phrases[:6]
+        for w in phrases:
+            if len(str(w).strip()) >= 2:
+                forbidden.append(str(w).strip())
+        # 身世/品貌类短语
+        for pat in (
+            r"姓[\u4e00-\u9fff]{1,2}",
+            r"名曰[\u4e00-\u9fff]{1,4}",
+            r"生而神灵",
+            r"弱而能言",
+            r"幼而徇齐",
+            r"长而敦敏",
+            r"成而聪明",
+        ):
+            m = re.search(pat, orig)
+            if m:
+                forbidden.append(m.group(0))
+
+    seen: set[str] = set()
+    deduped: List[str] = []
+    for w in forbidden:
+        if w not in seen:
+            seen.add(w)
+            deduped.append(w)
+
+    if preview:
+        plan["母本首句预览"] = preview
+    if deduped:
+        plan["前置引入禁区"] = deduped
+
+
+def inject_exit_supplements_plan(plan: Dict[str, Any], recalled: Dict[str, Any]) -> None:
+    """将召回侧本传缺漏补全写入 plan，供 Phase2 尾部采用。"""
+    supplements = recalled.get("本传缺漏补全") or []
+    if supplements:
+        plan["本传缺漏补全"] = supplements
+        ext = plan.get("外部补全") or []
+        if not isinstance(ext, list):
+            ext = []
+        for item in supplements:
+            if not isinstance(item, dict):
+                continue
+            text = str(item.get("text") or "").strip()
+            if not text:
+                continue
+            ext.append(
+                {
+                    "主题": "本传退场/收束",
+                    "出处": str(item.get("来源") or "母本相邻段落"),
+                    "补全类型": "补充细节",
+                    "与母本关系": "母本段落域未收录该退场句，须在正文尾部补入",
+                    "母本锚点": "tail",
+                    "采用": True,
+                    "理由": text,
+                }
+            )
+        plan["外部补全"] = ext

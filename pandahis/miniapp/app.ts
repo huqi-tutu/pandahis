@@ -14,6 +14,13 @@ function migrateDevApiBaseUrl() {
 
 /** 加载 Noto Serif SC，解决 Android 无内置宋体导致标题字体不一致 */
 function loadAppFonts() {
+  try {
+    const platform = wx.getDeviceInfo?.().platform || wx.getSystemInfoSync().platform
+    // 开发者工具无法稳定加载外链字体；真机需在后台配置 downloadFile 合法域名
+    if (platform === 'devtools') return
+  } catch {
+    return
+  }
   wx.loadFontFace({
     family: 'Noto Serif SC',
     source:

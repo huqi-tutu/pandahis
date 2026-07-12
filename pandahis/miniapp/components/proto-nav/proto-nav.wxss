@@ -94,6 +94,7 @@
 
 .proto-side--left {
   justify-content: flex-start;
+  margin-left: -8rpx;
 }
 
 .proto-side--right {
@@ -104,7 +105,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 8rpx 24rpx 8rpx 8rpx;
+  padding: 8rpx 20rpx 8rpx 0;
+  margin-left: -8rpx;
 }
 
 .proto-back-icon {

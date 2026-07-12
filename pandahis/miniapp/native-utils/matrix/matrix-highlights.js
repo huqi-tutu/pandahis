@@ -61,7 +61,7 @@ const BY_DYNASTY_ID = {
   'HX-J': ['靖康之变'],
   'HX-Y': ['元大都'],
   'HX-M': ['郑和下西洋'],
-  'HX-Q': ['康乾盛世'],
+  'HX-Q-1': ['康乾盛世'],
 }
 
 const BY_DYNASTY_NAME = {

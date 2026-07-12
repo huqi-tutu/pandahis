@@ -88,7 +88,8 @@ public class BoxService {
             blurb.isEmpty() ? null : blurb,
             categoryKey,
             startYear,
-            endYear
+            endYear,
+            normalizeEntrySource((String) box.get("entry_source"))
         ),
         isFavorite,
         tabSummary,
@@ -409,10 +410,18 @@ public class BoxService {
       throw ApiException.notFound("box not found");
     }
     return jdbcTemplate.queryForMap(
-        "SELECT id,emperor_id,title,category_key,start_year,end_year,blurb,detail_md,detail_md_flash,detail_md_pro,original_ref_json "
+        "SELECT id,emperor_id,title,category_key,start_year,end_year,blurb,detail_md,detail_md_flash,detail_md_pro,original_ref_json,entry_source "
             + "FROM historical_box WHERE id=? AND status=1",
         boxId
     );
+  }
+
+  private static String normalizeEntrySource(String raw) {
+    if (raw == null) {
+      return "extract";
+    }
+    String value = raw.trim().toLowerCase();
+    return "supplement".equals(value) ? "supplement" : "extract";
   }
 
   /** 通过史略ID 或母本史略ID 解析盒子头信息 */

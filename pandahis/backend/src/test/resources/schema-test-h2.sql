@@ -72,6 +72,8 @@ CREATE TABLE IF NOT EXISTS historical_box (
   peak_year INT,
   peak_reason TEXT,
   peak_type VARCHAR(64),
+  person_tag VARCHAR(64),
+  entry_source VARCHAR(16) NOT NULL DEFAULT 'extract',
   status TINYINT NOT NULL DEFAULT 1,
   detail_md TEXT,
   original_ref_json TEXT

@@ -1,3 +1,5 @@
+<wxs src="./panel-scroll.wxs" module="panelScroll" />
+
 <view class="page-shell">
 
   <!-- 导航栏 -->
@@ -23,42 +25,42 @@
       <view class="unit-civ-fade"></view>
     </view>
 
-    <!-- 吸顶后：固定时间轴（与泳道横向同步，左侧留出分类标题列） -->
+    <!-- 吸顶后：固定时间轴镜像（由 WXS 跟面板横滑实时同步，非独立 scroll-view） -->
     <view
       wx:if="{{axisPinned && swim}}"
       class="dyn-axis-fixed"
       style="top: {{scrollTop}}px;"
     >
-      <view class="dyn-swim-lane-head-spacer"></view>
-      <scroll-view
-        class="dyn-swim-hscroll dyn-axis-fixed-hscroll"
-        scroll-x
-        show-scrollbar="{{false}}"
-        scroll-with-animation="{{false}}"
-        scroll-left="{{axisScrollLeft}}"
-        bindscroll="onAxisHScroll"
-      >
-        <view class="dyn-axis-fixed-sheet" style="width: {{swim.sheetWidthRpx}}rpx;">
-          <view class="dyn-swim-axis">
-            <view class="dyn-swim-axis-inner">
-              <view
-                wx:for="{{swim.timeSegments}}"
-                wx:key="startYear"
-                wx:if="{{item.dense && swim.timeScaleMode === 'segmented'}}"
-                class="dyn-swim-segment-band"
-                style="left: {{item.left}}; width: {{item.width}};"
-              ></view>
-              <text
-                wx:for="{{swim.ticks}}"
-                wx:key="label"
-                class="dyn-swim-axis-tick {{item.edgeStart ? 'dyn-swim-axis-tick--edge-start' : ''}} {{item.segmentBoundary ? 'dyn-swim-axis-tick--segment' : ''}}"
-                style="left: {{item.left}};"
-              >{{item.hideLabel ? '' : item.label}}</text>
-              <text class="dyn-swim-axis-tick dyn-swim-axis-tick--end" style="left:100%;">{{swim.endLabel}}</text>
+      <view class="dyn-axis-fixed-clip">
+        <view
+          class="dyn-axis-fixed-track"
+          style="transform: translateX(-{{axisMirrorLeft}}px); width: {{swim.canvasWidthRpx || swim.sheetWidthRpx}}rpx;"
+        >
+          <view class="dyn-axis-scroll-sheet" style="width: {{swim.canvasWidthRpx || swim.sheetWidthRpx}}rpx;">
+            <view class="dyn-axis-pad" style="width: {{swim.canvasPadLeftRpx || 40}}rpx;"></view>
+            <view class="dyn-axis-sheet" style="width: {{swim.sheetWidthRpx}}rpx;">
+              <view class="dyn-swim-axis">
+                <view class="dyn-swim-axis-inner">
+                  <view
+                    wx:for="{{swim.timeSegments}}"
+                    wx:key="startYear"
+                    wx:if="{{item.dense && swim.timeScaleMode === 'segmented'}}"
+                    class="dyn-swim-segment-band"
+                    style="left: {{item.left}}; width: {{item.width}};"
+                  ></view>
+                  <text
+                    wx:for="{{swim.ticks}}"
+                    wx:key="label"
+                    class="dyn-swim-axis-tick {{item.edgeStart ? 'dyn-swim-axis-tick--edge-start' : ''}} {{item.segmentBoundary ? 'dyn-swim-axis-tick--segment' : ''}}"
+                    style="left: {{item.left}};"
+                  >{{item.hideLabel ? '' : item.label}}</text>
+                  <text class="dyn-swim-axis-tick dyn-swim-axis-tick--end" style="left:100%;">{{swim.endLabel}}</text>
+                </view>
+              </view>
             </view>
           </view>
         </view>
-      </scroll-view>
+      </view>
     </view>
 
     <!-- 主滚动区 -->
@@ -74,10 +76,8 @@
         <view class="unit-hero">
           <view class="unit-title-line">
 
-            <!-- 左：朝代大标题 -->
             <text class="unit-title">{{dynastyTitle}}</text>
 
-            <!-- 中：文明·年份 + 下一朝代 -->
             <view class="unit-title-meta-stack">
               <view class="unit-inline-meta">
                 <text class="unit-title-path">{{unit.crumbText}}</text>
@@ -91,7 +91,6 @@
 
             <view class="unit-title-spacer"></view>
 
-            <!-- 右：操作按钮 -->
             <view class="unit-hero-actions">
               <view class="unit-action-btn" bindtap="onFavoriteTap">
                 <image
@@ -105,30 +104,31 @@
           </view>
         </view>
 
-        <!-- 简介（3行截断，› 浮在右下角与卡片背景融合） -->
         <view class="unit-intro" bindtap="openIntro">
           <text class="unit-intro-text">{{introDisplay}}</text>
           <text wx:if="{{introCanExpand}}" class="unit-intro-after"> ›</text>
         </view>
       </view>
 
-      <!-- ── 泳道矩阵（单一横向滚动 + sticky 冻结分类标题） ── -->
-      <view class="dyn-swim-matrix">
-        <view class="dyn-swim-board">
-          <scroll-view
-            class="dyn-swim-hscroll dyn-swim-matrix-scroll"
-            scroll-x
-            show-scrollbar="{{false}}"
-            scroll-with-animation="{{false}}"
-            scroll-left="{{matrixScrollLeft}}"
-            bindscroll="onMatrixHScroll"
-          >
-            <view class="dyn-swim-sheet" style="width: calc({{swim.sheetWidthRpx}}rpx + 60rpx);">
-
-              <!-- 时间轴行：sticky 左占位 + 刻度 -->
-              <view class="dyn-swim-axis-row {{axisPinned ? 'is-placeholder' : ''}}">
-                <view class="dyn-swim-head-sticky dyn-swim-axis-spacer"></view>
-                <view class="dyn-swim-axis-sheet" style="width: {{swim.sheetWidthRpx}}rpx;">
+      <!-- ── 历史面板：时间轴 + 画布 共用同一横向滚动（天然同步） ── -->
+      <view class="dyn-panel-board">
+        <scroll-view
+          class="dyn-swim-hscroll dyn-panel-hscroll"
+          scroll-x
+          enhanced
+          show-scrollbar="{{false}}"
+          scroll-with-animation="{{false}}"
+          bounces="{{false}}"
+          scroll-left="{{panelScrollLeft}}"
+          data-axis-pinned="{{axisPinned}}"
+          bindscroll="{{panelScroll.onScroll}}"
+        >
+          <view class="dyn-panel-sheet" style="width: {{swim.canvasWidthRpx || swim.sheetWidthRpx}}rpx;">
+            <!-- 时间轴行（未吸顶时随面板横滑；吸顶后由占位撑高 + 顶部镜像） -->
+            <view wx:if="{{!axisPinned}}" class="dyn-panel-axis">
+              <view class="dyn-axis-scroll-sheet" style="width: {{swim.canvasWidthRpx || swim.sheetWidthRpx}}rpx;">
+                <view class="dyn-axis-pad" style="width: {{swim.canvasPadLeftRpx || 40}}rpx;"></view>
+                <view class="dyn-axis-sheet" style="width: {{swim.sheetWidthRpx}}rpx;">
                   <view class="dyn-swim-axis">
                     <view class="dyn-swim-axis-inner">
                       <view
@@ -149,74 +149,73 @@
                   </view>
                 </view>
               </view>
+            </view>
+            <view wx:else class="dyn-panel-axis-spacer"></view>
 
-              <!-- 泳道列表：标题 sticky 冻结，仅轨道随单一容器横滑 -->
-              <view class="dyn-swim-lanes">
+            <!-- 史略画布 -->
+            <view
+              class="dyn-canvas"
+              style="width: {{swim.canvasWidthRpx || swim.sheetWidthRpx}}rpx; height: {{swim.canvasHeightRpx || 800}}rpx;"
+            >
+              <view class="dyn-cat-col" style="width: {{swim.canvasPadLeftRpx || 40}}rpx;">
                 <view
-                  wx:for="{{swim.lanes}}"
-                  wx:for-index="li"
-                  wx:key="label"
-                  class="dyn-swim-lane"
-                  style="height: {{item.laneHeightRpx || item.trackHeightRpx || 96}}rpx;"
+                  wx:for="{{swim.categoryBands}}"
+                  wx:key="key"
+                  class="dyn-cat-pill"
+                  style="top: {{item.topRpx}}rpx; height: {{item.heightRpx}}rpx; border-left-color: {{item.borderColor}};"
                 >
-                  <view
-                    class="dyn-swim-head-sticky dyn-swim-lane-head"
-                    style="background: {{item.laneHeadBg}};"
-                  >
-                    <text class="dyn-swim-lane-head-label">{{item.label}}</text>
-                    <text class="dyn-swim-lane-progress">{{item.readProgressText || '0/0'}}</text>
+                  <view class="dyn-cat-pill-inner">
+                    <text class="dyn-cat-pill-label">{{item.label}}</text>
+                    <text class="dyn-cat-pill-progress">{{item.readProgressText || '0/0'}}</text>
                   </view>
-
-                  <view class="dyn-swim-track" style="width: {{swim.sheetWidthRpx}}rpx; background: {{item.laneTrackBg}};">
-                    <!-- 泳道网格线 -->
-                    <view class="dyn-swim-lane-grid">
-                      <block wx:for="{{swim.gridLines}}" wx:key="left">
-                        <view class="dyn-swim-grid-line {{item.segmentBoundary ? 'dyn-swim-grid-line--segment' : ''}}" style="left: {{item.left}};"></view>
-                      </block>
-                    </view>
-                    <view class="dyn-swim-stack">
-                      <view
-                        wx:for="{{item.collapsedRows}}"
-                        wx:for-item="row"
-                        wx:for-index="ri"
-                        wx:key="ri"
-                        class="dyn-swim-row"
-                      >
-                        <view
-                          wx:for="{{row}}"
-                          wx:for-item="bar"
-                          wx:key="boxId"
-                          class="dyn-swim-chip dyn-swim-chip--{{bar.priority}}"
-                          style="left: {{bar.left}}; z-index: {{bar.zIndex || 10}};"
-                          bindtap="onBarTap"
-                          bindlongpress="onBarLongPress"
-                          data-box="{{bar.boxId}}"
-                          data-title="{{bar.title}}"
-                          data-range="{{bar.timeRange}}"
-                        >
-                          <text class="dyn-swim-chip-title">{{bar.title}}</text>
-                        </view>
-                      </view>
-
-                      <view
-                        wx:if="{{item.hasMore}}"
-                        class="dyn-swim-more-btn"
-                        style="left: {{item.moreBarLeft || '88%'}};"
-                        bindtap="showMoreOverlay"
-                        data-lane="{{li}}"
-                        data-label="{{item.label}}"
-                      >
-                        <text class="dyn-swim-more-text">+{{item.moreCount}}</text>
-                      </view>
-                    </view>
-                  </view>
-
                 </view>
               </view>
 
+              <view class="dyn-canvas-surface" style="width: {{swim.sheetWidthRpx}}rpx;">
+                <!-- 时间竖 Grid：与顶部刻度对齐，极浅贯穿画布 -->
+                <view class="dyn-canvas-grid">
+                  <block wx:for="{{swim.gridLines}}" wx:key="left">
+                    <view
+                      class="dyn-canvas-grid-line {{item.segmentBoundary ? 'dyn-canvas-grid-line--segment' : ''}}"
+                      style="left: {{item.left}};"
+                    ></view>
+                  </block>
+                </view>
+
+                <block wx:for="{{swim.lanes}}" wx:for-item="lane" wx:for-index="li" wx:key="key">
+                  <block wx:for="{{lane.collapsedRows}}" wx:for-item="row" wx:for-index="ri" wx:key="ri">
+                    <view
+                      wx:for="{{row}}"
+                      wx:for-item="bar"
+                      wx:key="boxId"
+                      id="chip-{{bar.boxId}}"
+                      class="dyn-canvas-chip dyn-canvas-chip--{{bar.priority}} dyn-canvas-chip--cat-{{lane.key}} {{bar.type === 'overflow_bucket' ? 'dyn-canvas-chip--overflow-bucket' : ''}} {{chipTooltipHeldId === bar.boxId ? 'dyn-canvas-chip--held' : ''}}"
+                      style="left: {{bar.left}}; width: {{bar.chipWidth}}; top: {{bar.topRpx}}rpx; height: {{bar.heightRpx}}rpx; z-index: {{bar.zIndex || 10}};"
+                      hover-class="{{bar.type === 'overflow_bucket' ? 'dyn-canvas-chip--bucket-hover' : 'dyn-canvas-chip--hover'}}"
+                      hover-stay-time="80"
+                      bindtap="onBarTap"
+                      bindlongpress="onBarLongPress"
+                      data-box="{{bar.boxId}}"
+                      data-title="{{bar.title}}"
+                      data-type="{{bar.type}}"
+                      data-start-year="{{bar.startYear}}"
+                      data-end-year="{{bar.endYear}}"
+                      data-lane="{{li}}"
+                      data-label="{{lane.label}}"
+                      data-range="{{bar.timeRange}}"
+                      data-lane-key="{{lane.key}}"
+                    >
+                      <view class="dyn-canvas-chip-inner">
+                        <text class="dyn-canvas-chip-title">{{bar.title}}</text>
+                        <text wx:if="{{bar.chipTag}}" class="dyn-canvas-chip-tag dyn-canvas-chip-tag--cat-{{lane.key}}">{{bar.chipTag}}</text>
+                      </view>
+                    </view>
+                  </block>
+                </block>
+              </view>
             </view>
-          </scroll-view>
-        </view>
+          </view>
+        </scroll-view>
       </view>
 
       <view style="height: 190rpx;"></view>
@@ -238,20 +237,53 @@
     </view>
   </view>
 
-  <view wx:if="{{chipTooltipVisible}}" class="chip-tooltip-backdrop" catchtap="hideChipTooltip">
+  <view wx:if="{{chipTooltipVisible}}" class="chip-tooltip-backdrop chip-tooltip-backdrop--{{chipTooltipPhase}}" catchtap="hideChipTooltip">
     <view
-      class="chip-tooltip"
-      style="left: {{chipTooltipLeftPx}}px; top: {{chipTooltipTopPx}}px;"
+      class="chip-tooltip chip-tooltip--{{chipTooltipPhase}}"
+      style="left: {{chipTooltipLeftPx}}px; top: {{chipTooltipTopPx}}px; transform: {{chipTooltipTransform}}; transform-origin: {{chipTooltipOrigin}};"
       catchtap="hideChipTooltip"
+      bindtransitionend="onChipTooltipTransitionEnd"
     >
-      <text class="chip-tooltip-title">{{chipTooltipTitle}}</text>
-      <text class="chip-tooltip-range">{{chipTooltipRange}}</text>
-      <text wx:if="{{chipTooltipPeakYear}}" class="chip-tooltip-meta">峰值年：{{chipTooltipPeakYear}}</text>
-      <text wx:if="{{chipTooltipPeakReason}}" class="chip-tooltip-reason">判定原因：{{chipTooltipPeakReason}}</text>
+      <view class="chip-tooltip-head">
+        <text class="chip-tooltip-title {{chipTooltipPriority === 'P0' ? 'chip-tooltip-title--p0' : ''}}">{{chipTooltipTitle}}</text>
+        <text
+          wx:if="{{chipTooltipTag}}"
+          class="chip-tooltip-tag chip-tooltip-tag--cat-{{chipTooltipLaneKey}}"
+        >{{chipTooltipTag}}</text>
+        <view class="chip-tooltip-time">
+          <text class="chip-tooltip-time-start">{{chipTooltipStartYear}}</text>
+          <text wx:if="{{chipTooltipEndYear}}" class="chip-tooltip-time-sep">—</text>
+          <text wx:if="{{chipTooltipEndYear}}" class="chip-tooltip-time-end">{{chipTooltipEndYear}}</text>
+        </view>
+      </view>
+      <view
+        wx:if="{{chipTooltipPeakYear || chipTooltipPeakReason || chipTooltipPriority || chipTooltipPriorityReason || chipTooltipEntrySource}}"
+        class="chip-tooltip-foot"
+      >
+        <view wx:if="{{chipTooltipPeakYear || chipTooltipPeakReason}}" class="chip-tooltip-foot-row">
+          <text class="chip-tooltip-foot-label">峰值年</text>
+          <text
+            wx:if="{{chipTooltipPeakYear}}"
+            class="chip-tooltip-foot-highlight chip-tooltip-foot-highlight--cat-{{chipTooltipLaneKey}}"
+          >{{chipTooltipPeakYear}}</text>
+          <text wx:if="{{chipTooltipPeakReason}}" class="chip-tooltip-foot-reason">{{chipTooltipPeakReason}}</text>
+        </view>
+        <view wx:if="{{chipTooltipPriority || chipTooltipPriorityReason}}" class="chip-tooltip-foot-row">
+          <text class="chip-tooltip-foot-label">优先级</text>
+          <text
+            wx:if="{{chipTooltipPriority}}"
+            class="chip-tooltip-foot-highlight chip-tooltip-foot-highlight--cat-{{chipTooltipLaneKey}}"
+          >{{chipTooltipPriority}}</text>
+          <text wx:if="{{chipTooltipPriorityReason}}" class="chip-tooltip-foot-reason">{{chipTooltipPriorityReason}}</text>
+        </view>
+        <view wx:if="{{chipTooltipEntrySource}}" class="chip-tooltip-foot-row">
+          <text class="chip-tooltip-foot-label">数据来源</text>
+          <text class="chip-tooltip-foot-highlight">{{chipTooltipEntrySource}}</text>
+        </view>
+      </view>
     </view>
   </view>
 
-  <!-- 简介弹层 -->
   <view class="ud-modal" wx:if="{{showIntroModal}}" bindtap="closeIntro">
     <view class="ud-modal-card" catchtap="noop">
       <view class="ud-modal-header">
@@ -266,12 +298,17 @@
     </view>
   </view>
 
-  <!-- 超出史略浮层（底部抽屉） -->
   <view wx:if="{{overlayVisible}}" class="more-overlay-backdrop" bindtap="hideOverlay">
     <view class="more-overlay-sheet" catchtap="">
       <view class="more-overlay-handle"></view>
       <view class="more-overlay-header">
-        <text class="more-overlay-title">{{overlayLabel}} · 更多史略</text>
+        <view class="more-overlay-header-main">
+          <text class="more-overlay-title">查看更多</text>
+          <text
+            wx:if="{{overlayCountTag}}"
+            class="more-overlay-count-tag more-overlay-count-tag--cat-{{overlayLaneKey}}"
+          >{{overlayCountTag}}</text>
+        </view>
         <view class="more-overlay-close" bindtap="hideOverlay">
           <text class="more-overlay-close-icon">✕</text>
         </view>
@@ -282,12 +319,21 @@
           wx:key="title"
           class="more-overlay-item"
           bindtap="onBarTap"
+          bindlongpress="onBarLongPress"
           data-box="{{item.boxId}}"
           data-title="{{item.title}}"
+          data-lane-key="{{overlayLaneKey}}"
+          data-range="{{item.timeRange}}"
         >
           <view class="more-overlay-item-left">
             <view class="more-overlay-dot more-overlay-dot--{{item.type || 'default'}}"></view>
-            <text class="more-overlay-item-title">{{item.title}}</text>
+            <view class="more-overlay-item-name">
+              <text class="more-overlay-item-title {{item.priority === 'p0' ? 'more-overlay-item-title--p0' : ''}}">{{item.title}}</text>
+              <text
+                wx:if="{{item.chipTag}}"
+                class="more-overlay-item-tag more-overlay-item-tag--cat-{{overlayLaneKey}}"
+              >{{item.chipTag}}</text>
+            </view>
           </view>
           <text class="more-overlay-item-range">{{item.timeRange}}</text>
         </view>

@@ -28,8 +28,8 @@ description: >
 3. Phase1     → draft_mother（仅母本，无他书）
 4. verify_mother → 必现词 + 覆盖 + 禁他书
 5. Phase2     → draft_enrich（锚点补异说/背景/细节，禁重复母本）；**先写 100-200 字前置引入，再进入正文**
-6. postprocess → 段落合并、去加粗标记、去分节词（自动）
-7. verify     → 全文 + plan 出处 + 前置引入检测 + 格式检查
+6. postprocess → 段落合并、去加粗、归因清洗、尾部退场补全（自动）
+7. verify     → 全文 + plan 出处 + 引入去重 + 碎引号 + 禁释词 + 归因检查
 8. aggregate  → 史略翻译_汇总.json
 9. sync       → 自动 upsert 线上 historical_box_detail（`TRANSLATE_AUTO_SYNC=1` 默认开）
 ```
@@ -59,6 +59,8 @@ cd tools/openclaw-historiography/historiography-translate
 python3 translate.py init
 python3 translate.py recall --id GLBL_00149
 python3 translate.py run-one --id GLBL_00149
+python3 translate.py refine --id GLBL_00149 --scope intro --instructions "收窄引入，不重复母本开头"
+python3 translate.py refine --id GLBL_00144 --scope attribution --no-llm  # 规则清洗，零 token
 python3 translate.py verify --id GLBL_00149
 python3 translate.py aggregate
 python3 translate.py sync --id GLBL_00149   # 手动补同步

@@ -108,7 +108,7 @@ export function request<T>(
   return new Promise<ApiResponse<T>>((resolve, reject) => {
     wx.request({
       url,
-      method,
+      method: method as WechatMiniprogram.RequestOption['method'],
       data: opts?.data,
       header,
       // 首请求含连接池建连 + 远端 MySQL 时可能 >10s；与后端日志对齐，避免误报 timeout

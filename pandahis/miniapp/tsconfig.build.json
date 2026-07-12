@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "declaration": false,
+    "sourceMap": false
+  },
+  "exclude": [
+    "node_modules",
+    "scripts",
+    "pages/home/matrix-adapter.ts",
+    "native-utils/civ-tab-images.ts"
+  ]
+}

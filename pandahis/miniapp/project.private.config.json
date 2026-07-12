@@ -1,9 +1,8 @@
 {
-  "libVersion": "3.15.2",
+  "libVersion": "3.14.5",
   "projectname": "miniapp",
   "setting": {
     "useCompilerPlugins": [
-      "typescript",
       "sass"
     ],
     "urlCheck": false,
@@ -17,9 +16,9 @@
     "useStaticServer": false,
     "useLanDebug": true,
     "showES6CompileOption": false,
-    "compileHotReLoad": true,
+    "compileHotReLoad": false,
     "checkInvalidKey": true,
     "ignoreDevUnusedFiles": false,
-    "bigPackageSizeSupport": false
+    "bigPackageSizeSupport": true
   }
 }

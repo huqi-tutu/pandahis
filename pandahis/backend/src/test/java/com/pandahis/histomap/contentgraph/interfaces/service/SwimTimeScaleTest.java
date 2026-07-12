@@ -67,4 +67,33 @@ class SwimTimeScaleTest {
     assertEquals(0.0, scale.percentForYear(-202), 0.01);
     assertEquals(100.0, scale.percentForYear(8), 0.01);
   }
+
+  @Test
+  void ancientLongSpanKeepsTickLabelsSpaced() {
+    SwimTimeScale.Plan plan = SwimTimeScale.plan(-2698, -2070, java.util.List.of(), 0);
+    int sheet = plan.sheetWidthRpx();
+    int span = -2070 - (-2698);
+
+    long visibleLabels = plan.ticks().stream().filter(t -> !t.hideLabel()).count();
+    assertTrue(visibleLabels <= 30, "远古长跨度不应生成过密标签，实际=" + visibleLabels);
+
+    double prevPx = -1;
+    for (var tick : plan.ticks()) {
+      if (tick.hideLabel()) {
+        continue;
+      }
+      double pct = Double.parseDouble(tick.left().replace("%", ""));
+      double px = sheet * pct / 100.0;
+      if (prevPx >= 0) {
+        assertTrue(
+            px - prevPx >= SwimTimeScale.MIN_LABEL_SPACING_RPX * 0.92,
+            "相邻标签间距过近: " + (px - prevPx) + "rpx"
+        );
+      }
+      prevPx = px;
+    }
+
+    int step = (int) Math.round((double) span / Math.max(1, visibleLabels));
+    assertTrue(step >= 20, "五帝跨度刻度步长应>=20年，实际约" + step);
+  }
 }

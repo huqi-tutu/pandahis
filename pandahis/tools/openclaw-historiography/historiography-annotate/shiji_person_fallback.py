@@ -575,9 +575,6 @@ def apply_entry_step4_fallback(
         if ys is not None and ye is not None:
             entry["史略开始年"] = ys
             entry["史略结束年"] = ye
-    entry["优先级"] = "P0"
-    noun = _volume_noun(vol_name)
-    entry["优先级判定理由"] = f"{name}{noun}主轴叙事，共{n}段"
     entry["五级细坐标"] = _fine_coord(entry, vol, cat)
     entry["六级段落锚点"] = f"[P{pf}-P{pt}]"
     entry["原文出处"] = f"{vol_name}·P{pf}-P{pt}"
@@ -665,9 +662,7 @@ def apply_volume_step4_fallback(
             if cat not in SPINDLE_FALLBACK_CATS:
                 continue
             name = (entry.get("史略名称") or "").strip()
-            missing = not (entry.get("优先级") or "").strip() or not (
-                entry.get("四级帝王坐标") or ""
-            ).strip()
+            missing = not (entry.get("四级帝王坐标") or "").strip()
             cross = detect_cross_regime_person(entry, entries)
             needs_rationale = (
                 bool(cross)

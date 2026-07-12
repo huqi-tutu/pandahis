@@ -5,6 +5,7 @@ exports.ROUTES = {
     home: '/pages/home/index',
     mine: '/pages/my/index',
     search: '/pages/search/index',
+    searchResult: '/pages/search-result/index',
     dynastyDetail: '/pages/dynasty-detail/index',
     boxDetail: '/pages/box-detail/index',
     login: '/pages/login/index',
@@ -18,6 +19,9 @@ exports.ROUTES = {
     membership: '/pages/membership/index',
     inviteAssist: '/pages/invite-assist/index',
     profileEdit: '/pages/profile-edit/index',
+    relationDetail: '/pages/relation-detail/index',
+    critiqueDetail: '/pages/critique-detail/index',
+    relicDetail: '/pages/relic-detail/index',
 };
 exports.SUPPORT_EMAIL = 'support@pandahis.com';
 function buildUrl(path, query) {
@@ -35,11 +39,10 @@ function buildUrl(path, query) {
 }
 exports.buildUrl = buildUrl;
 function navigateTo(path, query) {
-    const url = buildUrl(path, query);
     wx.navigateTo({
-        url,
+        url: buildUrl(path, query),
         fail(err) {
-            console.error('[navigateTo]', url, err);
+            console.error('[navigateTo]', buildUrl(path, query), err);
             wx.showToast({ title: '页面打开失败', icon: 'none' });
         },
     });

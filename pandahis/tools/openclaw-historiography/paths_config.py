@@ -16,8 +16,12 @@ DIR_SOURCES = "02二十四史拆分后"
 DIR_ANNOTATIONS = "03索引标注条目"
 DIR_TRANSLATIONS = "04史料翻译"
 DIR_INTERMEDIATE = "05工作流中间产物"
+DIR_DYNASTY_KNOWLEDGE = "06朝代知识补全"
 
 SUBDIR_INTERMEDIATE_ANNOTATE = "标注"
+SUBDIR_INTERMEDIATE_DYNASTY_KNOWLEDGE = "朝代知识补全"
+SUBDIR_DYNASTY_KNOWLEDGE_ENTRIES = "索引条目"
+SUBDIR_DYNASTY_KNOWLEDGE_DETAILS = "详情"
 SUBDIR_INTERMEDIATE_TRANSLATE = "翻译"
 SUBDIR_INTERMEDIATE_ORCHESTRATOR = "编排"
 SUBDIR_TRANSLATE_QUEUE = "队列"
@@ -31,6 +35,7 @@ SUBDIR_REFS = "参考文献"
 
 DEFAULT_GLOBAL_INDEX = "史略索引_01至02.json"
 TRANSLATE_AGGREGATE_FILENAME = "史略翻译_汇总.json"
+DYNASTY_KNOWLEDGE_DETAIL_AGGREGATE = "朝代知识详情_汇总.json"
 
 # 禁止作为 HISTOGRAPH_ROOT 的外部目录（防止产出跑到 OpenClaw / 旧桌面目录）
 FORBIDDEN_ROOTS = (
@@ -46,11 +51,12 @@ def get_histograph_root() -> Path:
 
 def ensure_workflow_data_dirs(data: Path) -> None:
     """确保 data 下各产出 / 中间产物目录存在。"""
-    for name in (DIR_SOURCES, DIR_ANNOTATIONS, DIR_TRANSLATIONS, DIR_INTERMEDIATE):
+    for name in (DIR_SOURCES, DIR_ANNOTATIONS, DIR_TRANSLATIONS, DIR_INTERMEDIATE, DIR_DYNASTY_KNOWLEDGE):
         (data / name).mkdir(parents=True, exist_ok=True)
     intermediate = data / DIR_INTERMEDIATE
     for sub in (
         SUBDIR_INTERMEDIATE_ANNOTATE,
+        SUBDIR_INTERMEDIATE_DYNASTY_KNOWLEDGE,
         SUBDIR_INTERMEDIATE_TRANSLATE,
         SUBDIR_INTERMEDIATE_ORCHESTRATOR,
     ):
@@ -64,6 +70,9 @@ def ensure_workflow_data_dirs(data: Path) -> None:
     (intermediate / SUBDIR_INTERMEDIATE_ORCHESTRATOR / "locks").mkdir(
         parents=True, exist_ok=True
     )
+    dynasty_root = data / DIR_DYNASTY_KNOWLEDGE
+    (dynasty_root / SUBDIR_DYNASTY_KNOWLEDGE_ENTRIES).mkdir(parents=True, exist_ok=True)
+    (dynasty_root / SUBDIR_DYNASTY_KNOWLEDGE_DETAILS).mkdir(parents=True, exist_ok=True)
     (data / DIR_AUTH_SOURCES / SUBDIR_AUTH_SOURCES).mkdir(parents=True, exist_ok=True)
 
 
@@ -122,6 +131,13 @@ def histograph_paths() -> Dict[str, Path]:
         "translate_output": translations,
         "intermediate": intermediate,
         "annotate_work": intermediate / SUBDIR_INTERMEDIATE_ANNOTATE,
+        "dynasty_knowledge_work": intermediate / SUBDIR_INTERMEDIATE_DYNASTY_KNOWLEDGE,
+        "dynasty_knowledge": data / DIR_DYNASTY_KNOWLEDGE,
+        "dynasty_knowledge_entries": data / DIR_DYNASTY_KNOWLEDGE / SUBDIR_DYNASTY_KNOWLEDGE_ENTRIES,
+        "dynasty_knowledge_details": data / DIR_DYNASTY_KNOWLEDGE / SUBDIR_DYNASTY_KNOWLEDGE_DETAILS,
+        "dynasty_knowledge_detail_aggregate": (
+            data / DIR_DYNASTY_KNOWLEDGE / SUBDIR_DYNASTY_KNOWLEDGE_DETAILS / DYNASTY_KNOWLEDGE_DETAIL_AGGREGATE
+        ),
         "translate_work": translate_work,
         "translate_state": translate_state,
         "global_index": annotations / DEFAULT_GLOBAL_INDEX,

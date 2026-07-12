@@ -4,15 +4,15 @@ exports.request = exports.hasToken = exports.hasUserLoggedOut = exports.clearTok
 const dev_config_1 = require("./dev-config");
 const PROD_BASE_URL = 'https://www.pandahis.com/api/v1';
 function isDevtoolsClient() {
+    var _a;
     try {
         const info = wx.getSystemInfoSync();
         if (info.platform === 'devtools')
             return true;
-        const host = info.host;
-        if (host && host.env === 'WeChatDevTools')
+        if (((_a = info.host) === null || _a === void 0 ? void 0 : _a.env) === 'WeChatDevTools')
             return true;
     }
-    catch (_a) {
+    catch {
         // ignore
     }
     return false;
@@ -25,13 +25,21 @@ function getLocalBaseUrl() {
     return `http://${dev_config_1.DEV_LAN_HOST}:${dev_config_1.DEV_API_PORT}/api/v1`;
 }
 function isDevelopEnv() {
+    var _a, _b;
     try {
-        var _a;
-        return ((_a = wx.getAccountInfoSync()) === null || _a === void 0 ? void 0 : _a.miniProgram.envVersion) === 'develop';
+        return ((_b = (_a = wx.getAccountInfoSync()) === null || _a === void 0 ? void 0 : _a.miniProgram) === null || _b === void 0 ? void 0 : _b.envVersion) === 'develop';
     }
-    catch (_b) {
+    catch {
         return true;
     }
+}
+/** 开发版误把生产地址写入 storage 时，自动回退本地后端 */
+function resolveStoredBaseUrl(stored) {
+    if (isDevelopEnv() &&
+        (stored === PROD_BASE_URL || stored.includes('www.pandahis.com'))) {
+        return getLocalBaseUrl();
+    }
+    return stored;
 }
 function getBaseUrl() {
     if (isDevelopEnv()) {
@@ -39,7 +47,7 @@ function getBaseUrl() {
     }
     const stored = String(wx.getStorageSync('apiBaseUrl') || '').trim();
     if (stored)
-        return stored;
+        return resolveStoredBaseUrl(stored);
     return PROD_BASE_URL;
 }
 exports.getBaseUrl = getBaseUrl;
@@ -54,7 +62,7 @@ function setToken(token) {
     try {
         wx.removeStorageSync(exports.USER_LOGGED_OUT_KEY);
     }
-    catch (_a) {
+    catch {
         // ignore
     }
 }
@@ -64,7 +72,7 @@ function clearToken() {
     try {
         wx.setStorageSync(exports.USER_LOGGED_OUT_KEY, '1');
     }
-    catch (_a) {
+    catch {
         // ignore
     }
 }
@@ -73,7 +81,7 @@ function hasUserLoggedOut() {
     try {
         return wx.getStorageSync(exports.USER_LOGGED_OUT_KEY) === '1';
     }
-    catch (_a) {
+    catch {
         return false;
     }
 }
@@ -96,9 +104,10 @@ function request(path, opts) {
     return new Promise((resolve, reject) => {
         wx.request({
             url,
-            method,
+            method: method,
             data: opts === null || opts === void 0 ? void 0 : opts.data,
             header,
+            // 首请求含连接池建连 + 远端 MySQL 时可能 >10s；与后端日志对齐，避免误报 timeout
             timeout: 60000,
             success(res) {
                 const status = res.statusCode || 0;
@@ -109,7 +118,12 @@ function request(path, opts) {
                     return;
                 }
                 if (status >= 400) {
-                    const detail = { url, method, status, body };
+                    const detail = {
+                        url,
+                        method,
+                        status,
+                        body,
+                    };
                     console.error('[api] HTTP_ERROR', detail);
                     const msg = (typeof body === 'object' && body && (body.message || body.code)) ||
                         (typeof body === 'string' && body.slice(0, 200)) ||

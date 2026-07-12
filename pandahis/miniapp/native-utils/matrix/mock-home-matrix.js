@@ -16,6 +16,7 @@
 
 const LOCAL_DYNASTY_RAW = require('./dynasty-data.js')
 const LOCAL_EMPEROR_RAW = require('./emperor-data.js')
+const { civTabImage } = require('../civ-tab-images.js')
 const { filterMatrixHomeRegimes } = require('./matrix-home-filter.js')
 const { getMatrixHighlights } = require('./matrix-highlights.js')
 const {
@@ -33,24 +34,24 @@ const {
 
 // ─── 文明 Tab 配置 ───────────────────────────────────────────────
 const CIV_TABS = [
-  { id: 'huaxia',         name: '华夏',     img: '/配图/文明tab配图/01_华夏.png'   },
-  { id: 'chaoxian',       name: '朝鲜',     img: '/配图/文明tab配图/02_朝鲜.png'   },
-  { id: 'japan',          name: '日本',     img: '/配图/文明tab配图/03_日本.png'   },
-  { id: 'sea',            name: '东南亚',   img: '/配图/文明tab配图/04_东南亚.png' },
-  { id: 'centralasia',    name: '中亚',     img: '/配图/文明tab配图/05_中亚.png'   },
-  { id: 'northasia',      name: '北亚游牧', img: '/配图/文明tab配图/06_北亚.png'   },
-  { id: 'southasia',      name: '南亚',     img: '/配图/文明tab配图/07_南亚.png'   },
-  { id: 'westasia',       name: '西亚',     img: '/配图/文明tab配图/08_西亚.png'   },
-  { id: 'northafrica',    name: '北非',     img: '/配图/文明tab配图/13_北非.png'   },
-  { id: 'southeu',        name: '南欧',     img: '/配图/文明tab配图/09_南欧.png'   },
-  { id: 'easteu',         name: '东欧',     img: '/配图/文明tab配图/10_东欧.png'   },
-  { id: 'westeu',         name: '西欧',     img: '/配图/文明tab配图/11_西欧.png'   },
-  { id: 'northeu',        name: '北欧',     img: '/配图/文明tab配图/12_北欧.png'   },
-  { id: 'westafrica',     name: '西非',     img: '/配图/文明tab配图/14_西非.png'   },
-  { id: 'eastafrica',     name: '东非',     img: '/配图/文明tab配图/15_东非.png'   },
-  { id: 'centralamerica', name: '中美',     img: '/配图/文明tab配图/16_中美.png'   },
-  { id: 'northamerica',   name: '北美',     img: '/配图/文明tab配图/17_北美.png'   },
-  { id: 'southamerica',   name: '南美',     img: '/配图/文明tab配图/18_南美.png'   },
+  { id: 'huaxia',         name: '华夏',     img: civTabImage('huaxia') },
+  { id: 'chaoxian',       name: '朝鲜',     img: civTabImage('chaoxian') },
+  { id: 'japan',          name: '日本',     img: civTabImage('japan') },
+  { id: 'sea',            name: '东南亚',   img: civTabImage('sea') },
+  { id: 'centralasia',    name: '中亚',     img: civTabImage('centralasia') },
+  { id: 'northasia',      name: '北亚游牧', img: civTabImage('northasia') },
+  { id: 'southasia',      name: '南亚',     img: civTabImage('southasia') },
+  { id: 'westasia',       name: '西亚',     img: civTabImage('westasia') },
+  { id: 'northafrica',    name: '北非',     img: civTabImage('northafrica') },
+  { id: 'southeu',        name: '南欧',     img: civTabImage('southeu') },
+  { id: 'easteu',         name: '东欧',     img: civTabImage('easteu') },
+  { id: 'westeu',         name: '西欧',     img: civTabImage('westeu') },
+  { id: 'northeu',        name: '北欧',     img: civTabImage('northeu') },
+  { id: 'westafrica',     name: '西非',     img: civTabImage('westafrica') },
+  { id: 'eastafrica',     name: '东非',     img: civTabImage('eastafrica') },
+  { id: 'centralamerica', name: '中美',     img: civTabImage('centralamerica') },
+  { id: 'northamerica',   name: '北美',     img: civTabImage('northamerica') },
+  { id: 'southamerica',   name: '南美',     img: civTabImage('southamerica') },
 ]
 
 const initialCiv = 'huaxia'
@@ -685,6 +686,7 @@ function buildCollapsedSpringWarringEntry() {
       isCollapsedRegimeSummary: true,
       dynastyName:     def.name,
       dynastyGroup:    def.name,
+      dynastyId:       def.name === '春秋' ? 'CD_HX_CHUNQIU' : 'CD_HX_ZHANGUO',
       displayName:     def.name,
       start:           def.start,
       end:             def.end,
@@ -3912,6 +3914,7 @@ function buildDisplayEntries(civId, expandedDynasties, civName, isHuaxia) {
         isCollapsedRegimeSummary: true,
         dynastyName: def.name,
         dynastyGroup: def.name,
+        dynastyId: def.name === '春秋' ? 'CD_HX_CHUNQIU' : 'CD_HX_ZHANGUO',
         displayName: def.name,
         start: def.start,
         end: def.end,

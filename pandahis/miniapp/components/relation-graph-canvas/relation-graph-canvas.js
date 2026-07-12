@@ -1,6 +1,6 @@
-const BRANCH = ['#e0e5cc', '#f3dedb', '#e0e5cc', '#f3dedb'];
-const CENTER_FILL = '#f3dedb';
-const CENTER_STROKE = '#dec0bc';
+const BRANCH = ['#EDEAE6', '#F5EAE4', '#EDEAE6', '#F5EAE4'];
+const CENTER_FILL = '#F5EAE4';
+const CENTER_STROKE = '#D4B098';
 const SECTOR_BASE = {
     家庭: -Math.PI / 2,
     师从: Math.PI,
@@ -248,13 +248,13 @@ function layoutRadial(nodes, edges, centerKey, w, h) {
             }
             else if (d === 1) {
                 color = BRANCH[i % BRANCH.length];
-                stroke = '#c4c9b1';
+                stroke = '#92ADA4';
             }
             else {
                 const pk = findParentKey(key, edges, depthMap);
                 const parent = pk ? posMap.get(pk) : null;
                 color = parent ? tint(parent.color, 0.12) : BRANCH[i % BRANCH.length];
-                stroke = '#dec0bc';
+                stroke = '#D4B098';
             }
             const p = {
                 key,
@@ -348,7 +348,7 @@ function layoutSectorGrouped(nodes, edges, centerKey, w, h) {
                 type: meta.type || 'node',
                 depth: 1,
                 color: BRANCH[i % BRANCH.length],
-                stroke: '#c4c9b1',
+                stroke: '#92ADA4',
                 targetBoxId: meta.targetBoxId,
             });
         });
@@ -404,7 +404,7 @@ function layoutSectorGrouped(nodes, edges, centerKey, w, h) {
                 type: meta.type || 'node',
                 depth: d,
                 color,
-                stroke: '#dec0bc',
+                stroke: '#D4B098',
                 targetBoxId: meta.targetBoxId,
             });
         });
@@ -424,8 +424,8 @@ function layoutSectorGrouped(nodes, edges, centerKey, w, h) {
             fontSize: 11,
             type: meta.type || 'node',
             depth: 99,
-            color: '#f3dedb',
-            stroke: '#dec0bc',
+            color: '#F5EAE4',
+            stroke: '#D4B098',
             targetBoxId: meta.targetBoxId,
         });
     }
@@ -644,6 +644,7 @@ Component({
             this.triggerEvent('zoomChange', { scale: this._zoomScale });
         },
         resetZoom() {
+            ;
             this._zoomScale = 1;
             this._panX = 0;
             this._panY = 0;
@@ -713,8 +714,8 @@ Component({
         drawGroupBoxes(ctx, boxes) {
             for (const b of boxes) {
                 ctx.save();
-                ctx.fillStyle = '#fff0ee';
-                ctx.strokeStyle = '#dec0bc';
+                ctx.fillStyle = '#F8F6F2';
+                ctx.strokeStyle = '#EDEAE6';
                 ctx.lineWidth = 1;
                 ctx.setLineDash([4, 4]);
                 const r = 6;
@@ -733,7 +734,7 @@ Component({
                 ctx.stroke();
                 ctx.setLineDash([]);
                 ctx.font = '9px sans-serif';
-                ctx.fillStyle = '#8a716e';
+                ctx.fillStyle = '#8A8A8A';
                 ctx.textAlign = 'center';
                 ctx.textBaseline = 'middle';
                 ctx.fillText(b.name, b.x + b.w / 2, b.y + b.h / 2);

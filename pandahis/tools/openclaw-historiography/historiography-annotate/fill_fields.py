@@ -84,9 +84,8 @@ NO_JUNJI_COORD_RULE = (
 )
 
 # Step4 正式字段（与 check_format --phase final 一致）
+# 优先级仅在全局 enrichment（dynasty_priority.py）写入，卷级 Step4 不要求
 STEP4_FORMAL_FIELDS = [
-    "优先级",
-    "优先级判定理由",
     "史略开始年",
     "史略结束年",
     *COORD_FIELDS,
@@ -363,9 +362,6 @@ def entry_missing_fields(entry: dict) -> List[str]:
         val = entry.get(key)
         if val is None or val == "":
             missing.append(key)
-    pri = entry.get("优先级", "")
-    if pri and pri not in VALID_PRIORITIES:
-        missing.append(f"非法优先级:{pri}")
     cat = normalize_entry_category(entry.get("史略分类", ""))
     raw_cat = (entry.get("史略分类") or "").strip()
     if raw_cat in LEGACY_CATS:
@@ -723,9 +719,6 @@ def merge_all_entries(
         for line in id_logs[:12]:
             print(f"    · {line}")
     _flag_ambiguous_junji_years(entries)
-    pri_n = apply_inferred_junji_priorities(entries)
-    if pri_n:
-        print(f"\n  🏷 君王优先级补缺 {pri_n} 条（仅填 LLM 未写的空位）")
     refresh_needs_llm(entries)
 
 
@@ -872,6 +865,9 @@ def finalize_entries(entries: list) -> None:
         else:
             entry.pop("_auto_filled", None)
         entry.pop("_needs_llm", None)
+        # 卷级不保留优先级；全局 enrichment（dynasty_priority.py）为唯一 SSOT
+        entry.pop("优先级", None)
+        entry.pop("优先级判定理由", None)
 
 
 def build_llm_missing_report(data: dict) -> str:
@@ -929,7 +925,7 @@ def build_llm_missing_report(data: dict) -> str:
                 lines.append(f"- **参考（可推翻）**: {auto['_主轴参考']}")
         elif cat == "君王":
             lines.append(
-                "- **坐标**: 君王条目由帝王表对齐；补优先级与年份"
+                "- **坐标**: 君王条目由帝王表对齐；补年份"
             )
         if auto.get("年规则备注"):
             lines.append(f"- **注意**: {auto['年规则备注']}")

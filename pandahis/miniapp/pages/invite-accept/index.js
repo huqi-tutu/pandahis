@@ -10,9 +10,18 @@ Page({
         hasPendingInvite: false,
         loggingIn: false,
         inviteCodeInput: '',
+        headerPadPx: 88,
     },
     onLoad(query) {
         var _a;
+        try {
+            const sys = wx.getSystemInfoSync();
+            const navPx = 88 * (sys.windowWidth / 750);
+            this.setData({ headerPadPx: (sys.statusBarHeight || 20) + navPx });
+        }
+        catch {
+            this.setData({ headerPadPx: 88 });
+        }
         (0, invite_storage_1.stashInviteCodeFromQuery)(query);
         try {
             const launch = (_a = wx.getLaunchOptionsSync) === null || _a === void 0 ? void 0 : _a.call(wx);

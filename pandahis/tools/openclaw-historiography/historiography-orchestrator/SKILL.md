@@ -49,7 +49,7 @@ description: >
 |------|----------|
 | 1（短卷 <40 段） | 完整 skeleton |
 | 1（长卷 ≥40 段） | **仅 blocks 草稿**（叙事块 + exclude） |
-| 4 | 优先级、优先级判定理由（及缺年/坐标推断） |
+| 4 | 年份、坐标（**不含**卷级优先级；全局 enrichment 另跑） |
 
 Step3 由 `build_audit_block.py` 脚本生成，不占用 LLM。
 
@@ -79,7 +79,7 @@ python3 hist.py run-batch --work 01史记 --loop
 | `HIST_BATCH_AUTO` | 0 | 1=自动 resume、自动坐标决策 |
 | `HIST_AUTO_COORD` | emperor-ssot | 坐标冲突默认策略 |
 | `HIST_AUTO_GOLD` | 0 | 1=自动 approve-gold（不建议，应人工金标） |
-| `HIST_SCRIPT_PRIORITY` | 0 | 1=君王优先级脚本兜底（默认关，交 LLM） |
+| `HIST_SCRIPT_PRIORITY` | 0 | 已废弃：卷级不再脚本补优先级（全局 dynasty_priority.py） |
 | `HIST_REPAIR` | 0 | 单卷手工修复，跳过 Step1 LLM |
 
 效率要点：**不要用 `--max-jobs 1` 做生产**——那只会每跑 1 个 job 就停，相当于手动点 8000+ 次（2000 卷×4 步）。

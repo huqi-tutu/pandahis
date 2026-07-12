@@ -18,19 +18,19 @@ VALUES
 INSERT INTO historical_box (
   id, emperor_id, regime_id, dynasty_id, civilization_code, title, category_key, blurb,
   start_year, end_year, priority_code, priority_reason, importance_level,
-  peak_year, peak_reason, peak_type, status, detail_md, original_ref_json
+  peak_year, peak_reason, peak_type, person_tag, entry_source, status, detail_md, original_ref_json
 )
 VALUES
-  ('box_wutai_1079', 'huaxia_song_shenzong', 'regime_song_hx', 'dyn_song_hx', 'HX', '乌台诗案', 'shilue', '文字狱', 1079, 1079, 'P0', '测试优先级', 0, 1079, '乌台诗案发生', 'event_climax', 1, '苏轼文字狱。', '{}'),
-  ('box_bianfa', 'huaxia_song_shenzong', 'regime_song_hx', 'dyn_song_hx', 'HX', '熙宁变法', 'dianzhi', '变法', 1069, 1076, 'P0', '测试优先级', 0, 1069, '变法开始', 'reform_start', 1, '变法概述。', '{}');
+  ('GLBL_01079', 'huaxia_song_shenzong', 'regime_song_hx', 'dyn_song_hx', 'HX', '乌台诗案', 'shilue', '文字狱', 1079, 1079, 'P0', '测试优先级', 0, 1079, '乌台诗案发生', 'event_climax', NULL, 'extract', 1, '苏轼文字狱。', '{}'),
+  ('GLBL_01069', 'huaxia_song_shenzong', 'regime_song_hx', 'dyn_song_hx', 'HX', '熙宁变法', 'dianzhi', '变法', 1069, 1076, 'P0', '测试优先级', 0, 1069, '变法开始', 'reform_start', NULL, 'extract', 1, '变法概述。', '{}');
 
 INSERT INTO box_graph_node (box_id, node_key, node_type, name, extra_json)
-VALUES ('box_wutai_1079', 'person_sushi', 'person', '苏轼', '{"category":"人物","role":"主角","level":"一级","lineage":"父亲 · 苏洵","summary":"北宋文学家苏轼。"}');
+VALUES ('GLBL_01079', 'person_sushi', 'person', '苏轼', '{"category":"人物","role":"主角","level":"一级","lineage":"父亲 · 苏洵","summary":"北宋文学家苏轼。"}');
 
 INSERT INTO user_footprint (user_id, box_id, last_viewed_at, view_count)
 VALUES
-  (1, 'box_wutai_1079', TIMESTAMP '2026-06-01 10:00:00', 2),
-  (1, 'box_bianfa', TIMESTAMP '2026-06-02 11:00:00', 1);
+  (1, 'GLBL_01079', TIMESTAMP '2026-06-01 10:00:00', 2),
+  (1, 'GLBL_01069', TIMESTAMP '2026-06-02 11:00:00', 1);
 
 INSERT INTO search_hot_keyword (keyword, is_hot, sort_order, status)
 VALUES ('乌台诗案', 1, 1, 1);

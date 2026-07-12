@@ -8,14 +8,13 @@ function formatHistoryYear(y) {
     if (y === 0)
         return '公元0';
     if (y < 0)
-        return '-' + Math.abs(y);
+        return `-${Math.abs(y)}`;
     return String(y);
 }
 exports.formatHistoryYear = formatHistoryYear;
-function formatYearRange(start, end, sep) {
-    if (sep === void 0) { sep = ' — '; }
-    var s = start != null ? start : 0;
-    var e = end != null ? end : s;
-    return formatHistoryYear(s) + sep + formatHistoryYear(e);
+function formatYearRange(start, end, sep = ' — ') {
+    const s = start !== null && start !== void 0 ? start : 0;
+    const e = end !== null && end !== void 0 ? end : s;
+    return `${formatHistoryYear(s)}${sep}${formatHistoryYear(e)}`;
 }
 exports.formatYearRange = formatYearRange;

@@ -30,9 +30,17 @@
   flex-direction: column;
 }
 
+.box-page-body--boot .box-tab:not(.active) {
+  opacity: 0.45;
+}
+
+.box-boot-body {
+  flex: 1;
+  overflow: hidden;
+}
+
 /* ── 内容 Tab 栏 ── */
 .box-tabs-wrap {
-  flex-shrink: 0;
   display: flex;
   flex-direction: row;
   padding: 0 32rpx;
@@ -40,6 +48,21 @@
   border-bottom: 1rpx solid #EDEAE6;
 }
 
+/* 阅读态下 Tab 栏悬浮在内容上方，向上滑走，不挤占布局空间 */
+.box-tabs-wrap--fixed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.box-tabs-wrap--fixed.box-tabs-wrap--hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
 
 
 .box-tab {
@@ -48,8 +71,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24rpx;
-  font-weight: 500;
+  font-size: 26rpx;
+  font-weight: 400;
   color: #9A9A9A;
   letter-spacing: 1rpx;
   position: relative;
@@ -78,10 +101,9 @@
   flex: 1;
   overflow: hidden;
 }
-
 .box-tab1-body {
   position: relative;
-  padding: 0;
+  padding: 72rpx 0 0;
 }
 
 /* ── 左侧滚动指示器 ── */
@@ -133,8 +155,16 @@
   word-break: break-word;
 }
 
-/* 首字下沉（古典排版） */
+.seg--bold {
+  font-weight: 700;
+}
+
+/* 首字下沉（古典排版）— 改用手动 dropcap 避免首字为标点 */
 .box-p--first::first-letter {
+  all: unset;
+}
+
+.dropcap-text {
   font-family: 'Noto Serif SC', 'Songti SC', 'STSong', serif;
   font-size: 68rpx;
   font-weight: 700;

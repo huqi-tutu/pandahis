@@ -74,7 +74,7 @@ Page({
             const navPx = 88 * (sys.windowWidth / 750);
             this.setData({ headerPadPx: (sys.statusBarHeight || 20) + navPx });
         }
-        catch (_e) {
+        catch {
             this.setData({ headerPadPx: 88 });
         }
         const boxId = query.boxId || query.id;
@@ -101,21 +101,21 @@ Page({
         }
         catch (e) {
             const msg = String((e === null || e === void 0 ? void 0 : e.message) || '');
-            if (msg.includes('INSUFFICIENT_READS')) {
+            if (msg.includes('INSUFFICIENT_READS') || msg.includes('NEED_MEMBERSHIP_OR_READS')) {
                 wx.showModal({
-                    title: '阅读点数不足',
-                    content: '去「邀请」页邀请好友可获得阅读点数。',
-                    confirmText: '去邀请',
+                    title: '需要会员或阅读点',
+                    content: '开通会员可免扣点阅读；也可去会员页邀友助力或查看阅读点。',
+                    confirmText: '去开通',
                     success: (r) => {
                         if (r.confirm)
-                            wx.switchTab({ url: router_1.ROUTES.invite });
+                            wx.switchTab({ url: router_1.ROUTES.membership });
                     },
                 });
             }
             else if (msg === 'UNAUTHORIZED' || msg.includes('login required')) {
                 wx.showModal({
                     title: '需要登录',
-                    content: '登录后可使用阅读点数查看原文对照。',
+                    content: '登录后可开通会员或使用阅读点查看原文对照。',
                     confirmText: '去登录',
                     success: (r) => {
                         if (r.confirm)

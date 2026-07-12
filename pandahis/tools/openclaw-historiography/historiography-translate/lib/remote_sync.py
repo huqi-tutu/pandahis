@@ -176,27 +176,21 @@ def sync_output_entry(
     return sync_translate_detail(entry_id, detail, dry_run=dry_run)
 
 
-def sync_all_from_aggregate(
-    json_path: Path,
-    *,
-    dry_run: bool = False,
-    prune_orphans: bool = True,
-) -> Tuple[bool, str]:
-    """从汇总 JSON 全量同步（可选删除 JSON 中不存在的 orphan 记录）。"""
+def _rows_from_aggregate_json(json_path: Path) -> List[Dict[str, Any]]:
     import json
 
     with json_path.open(encoding="utf-8") as fp:
         data = json.load(fp)
     entries = data.get("entries") or []
     if not isinstance(entries, list):
-        return False, "汇总 JSON 缺少 entries 数组"
+        raise ValueError(f"{json_path} 缺少 entries 数组")
 
     rows: List[Dict[str, Any]] = []
     for item in entries:
         box_id = str(item["史略ID"]).strip()
         detail = item.get("翻译详情")
         if detail is None:
-            return False, f"史略 {box_id} 缺少 翻译详情"
+            raise ValueError(f"史略 {box_id} 缺少 翻译详情")
         source_original = item.get("史料原文")
         source_json = None
         if isinstance(source_original, dict):
@@ -208,6 +202,91 @@ def sync_all_from_aggregate(
                 "source_original_json": source_json,
             }
         )
+    return rows
+
+
+def sync_all_box_details(
+    *,
+    translate_json: Path | None = None,
+    dynasty_detail_json: Path | None = None,
+    dry_run: bool = False,
+    prune_orphans: bool = True,
+) -> Tuple[bool, str]:
+    """合并翻译汇总与朝代知识详情汇总，全量 upsert 到 historical_box_detail。"""
+    merged: Dict[str, Dict[str, Any]] = {}
+    sources: List[str] = []
+
+    if translate_json and translate_json.is_file():
+        tr_rows = _rows_from_aggregate_json(translate_json)
+        for row in tr_rows:
+            merged[row["box_id"]] = row
+        sources.append(f"翻译 {len(tr_rows)} 条")
+    if dynasty_detail_json and dynasty_detail_json.is_file():
+        dk_rows = _rows_from_aggregate_json(dynasty_detail_json)
+        for row in dk_rows:
+            existing = merged.get(row["box_id"])
+            if existing and existing["translate_detail"].strip():
+                continue
+            merged[row["box_id"]] = row
+        sources.append(f"朝代补全 {len(dk_rows)} 条")
+
+    rows = [merged[k] for k in sorted(merged)]
+    if not rows:
+        return False, "没有可同步的详情记录"
+
+    if dry_run:
+        return True, f"dry-run: 将导入 {len(rows)} 条（{' + '.join(sources)}）"
+
+    conn = _connect()
+    try:
+        with conn.cursor() as cursor:
+            ensure_schema(cursor)
+            for row in rows:
+                upsert_translate_detail(
+                    cursor,
+                    row["box_id"],
+                    row["translate_detail"],
+                    row.get("source_original_json"),
+                )
+            deleted = 0
+            if prune_orphans:
+                json_ids = [row["box_id"] for row in rows]
+                if json_ids:
+                    placeholders = ", ".join(["%s"] * len(json_ids))
+                    cursor.execute(
+                        f"DELETE FROM historical_box_detail WHERE box_id NOT IN ({placeholders})",
+                        json_ids,
+                    )
+                    deleted = cursor.rowcount
+                else:
+                    cursor.execute("DELETE FROM historical_box_detail")
+                    deleted = cursor.rowcount
+            cursor.execute("SELECT COUNT(*) AS cnt FROM historical_box_detail")
+            final_count = cursor.fetchone()["cnt"]
+        conn.commit()
+        return (
+            True,
+            f"导入/更新 {len(rows)} 条（{' + '.join(sources)}），"
+            f"删除多余 {deleted} 条，当前共 {final_count} 条",
+        )
+    except Exception as exc:
+        conn.rollback()
+        return False, str(exc)
+    finally:
+        conn.close()
+
+
+def sync_all_from_aggregate(
+    json_path: Path,
+    *,
+    dry_run: bool = False,
+    prune_orphans: bool = True,
+) -> Tuple[bool, str]:
+    """从汇总 JSON 全量同步（可选删除 JSON 中不存在的 orphan 记录）。"""
+    try:
+        rows = _rows_from_aggregate_json(json_path)
+    except ValueError as exc:
+        return False, str(exc)
 
     if dry_run:
         return True, f"dry-run: 将导入 {len(rows)} 条"

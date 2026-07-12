@@ -27,8 +27,8 @@ description: >
 
 ## 角色
 
-**块优先、边界精判**：先划叙事块与人物清单，再展开 `segment_attribution` + `entries`。  
-严格按 `reference/人物标注规则.md`（v2）与 `reference/人物归因.md` 执行。  
+**块优先、边界精判**：先划叙事块与人物清单，再展开 `segment_attribution` + `entries`。
+严格按 `reference/人物标注规则.md`（v2）与 `reference/人物归因.md` 执行。
 Step 1 负责「该不该建条、块归谁」；Step 3（audit）负责语义复核与删改决策。
 
 **原则**：按卷提取**人物**与**尽可能完整的连续叙事段**；块内不轻易 exclude。表 / 志 / 书无卷主人公则 **skip**；本纪可有多名**君王**（如五帝本纪），但本纪不出士臣 / 庶众 / 宗戚。合传 / 多人本纪须在**块边界**精读，防张冠李戴。
@@ -56,6 +56,8 @@ export HISTOGRAPH_ROOT=/path/to/pandahis/pandahis   # 可选
 | **准入标准（权威）** | `reference/人物标注规则.md` |
 | **块优先归属** | `reference/人物归因.md` |
 | **峰值年规则** | `reference/峰值年规则.md` |
+| **人物标签规则** | `reference/人物标签规则.md` |
+| **朝代优先级规则** | `reference/朝代优先级规则.md`（仅全局 enrichment） |
 | **卷型补充** | `reference/卷型补充/<卷类型>.md` |
 
 Skill 目录：`pandahis/pandahis/tools/openclaw-historiography/historiography-annotate/`
@@ -68,8 +70,9 @@ Skill 目录：`pandahis/pandahis/tools/openclaw-historiography/historiography-a
 Step 1  LLM 标注 → skeleton.json（按卷独立文件）
 Step 2  check_format.py --phase skeleton  → exit 0 才继续
 Step 3  audit_precheck.py → historiography-audit LLM 审计 → 修正后重跑 2+3
-Step 4  fill_fields.py → LLM 补全 → peak_year.py（Step4d）→ check_format.py --phase final
+Step 4  fill_fields.py → LLM 补全（年份/坐标，**不含优先级**）→ peak_year.py（Step4d）→ check_format.py --phase final
         → generate_stats.py → 落盘统计
+Global   merge_global_entries → run_global_enrichment.py（优先级 → 峰值 → 人物标签）→ import_box_index_json
 Step M  merge_volumes.py → 著作级索引 {著作}_条目索引.json
 ```
 
@@ -120,7 +123,7 @@ Step M  merge_volumes.py → 著作级索引 {著作}_条目索引.json
 | 坐标 ID 从帝王表反查（名称已定后） | 四级帝王坐标归属、起止年 |
 | `knowledge_provenance` skip 标记 | `pop(_needs_llm)` 假装 Step4 完成 |
 
-《汉书》等 `require_llm_knowledge: true` 著作：**禁止**叙事卷 repair 旁路；Step4 `force_step4_llm` 强制调 LLM。  
+《汉书》等 `require_llm_knowledge: true` 著作：**禁止**叙事卷 repair 旁路；Step4 `force_step4_llm` 强制调 LLM。
 final 检：`knowledge_provenance.step1/step4.source` 须为 `llm`（表志 skip 卷为 `skip_non_narrative`）。
 
 **人工介入条件**：同一卷同一根因重试 ≥ `max_retries` 且卷级返工脚本仍失败时，才 `awaiting_decision`。
@@ -144,9 +147,10 @@ Step D  展开 segment_attribution（块内机械填充；可用 expand_blocks.p
 Step E  归纳 entries + paragraphs + 原文字句
 ```
 
-**禁止**：事略 / 典制 / 民录 / 论著 entry；同段多 owner；未读原文按人名切块。  
-**分类**：只在 entry 定一次；段上不必逐段判四类。  
-**exclude**：`太史公曰`、卷首标题、明确世系链、纯纪年；块内叙事尽量归人物。  
+**禁止**：事略 / 典制 / 民录 / 论著 entry；同段多 owner；未读原文按人名切块。
+**朝代知识补全**（事略/典制/论著）走独立 skill：`historiography-dynasty-knowledge/`——与本 skill 无关，勿引用其 `reference/`。
+**分类**：只在 entry 定一次；段上不必逐段判四类。
+**exclude**：`太史公曰`、卷首标题、明确世系链、纯纪年；块内叙事尽量归人物。
 表志书无主人公 → **skip 整卷**
 
 可选辅助：
@@ -175,10 +179,10 @@ python3 pandahis/pandahis/tools/openclaw-historiography/historiography-annotate/
 
 ### Done when（Step 1）
 
-- [ ] Step 0 通过  
-- [ ] 已 Read 人物标注规则 + 人物归因 + 卷型补充  
-- [ ] 叙事块已划分；合传 / 多人本纪边界已精判  
-- [ ] 段数 = total_paragraphs；segment_attribution 1..N 完整；单段单归属  
+- [ ] Step 0 通过
+- [ ] 已 Read 人物标注规则 + 人物归因 + 卷型补充
+- [ ] 叙事块已划分；合传 / 多人本纪边界已精判
+- [ ] 段数 = total_paragraphs；segment_attribution 1..N 完整；单段单归属
 - [ ] skeleton 落盘（或 skip 卷已标记）
 
 ---
@@ -267,7 +271,8 @@ python3 .../fill_fields.py /path/to/skeleton.json --merge-auto
 3. `backfill_provenance_fields.py`（补 `_年LLM依据` / `_坐标主轴说明`，不覆盖已有）
 4. `fill_fields.py --sync-coord-ids`
 
-**LLM 只补仍缺的正式字段（优先级、年份、坐标名称）；禁止 LLM 删除 `_auto_filled` / `_needs_llm`（脚本 finalize）。**
+**LLM 只补仍缺的正式字段（年份、坐标名称）；禁止 LLM 删除 `_auto_filled` / `_needs_llm`（脚本 finalize）。**
+**卷级 Step4 不填 `优先级` / `人物标签`；二者仅在全局 enrichment 写入。**
 
 **坐标 ID（脚本自动，LLM 禁止手填）**：每条史略在四级坐标名确定后，由 `fill_fields.py` 自动写入 `文明ID` / `朝代ID` / `政权ID` / `帝王ID`（SSOT：`reference/文明.json` → `朝代.json` → `政权.json` → `帝王.json`）。已有卷可批量补 ID：
 
@@ -276,7 +281,7 @@ python3 .../fill_fields.py /path/to/skeleton.json --sync-coord-ids
 ```
 
 1. 脚本 `--merge-auto`：归属 + 君王年份 + **坐标 ID** 确定性合并
-2. LLM：补 `优先级` / `优先级判定理由` / 年份 / 归属（见 `_needs_llm`）
+2. LLM：补年份 / 归属（见 `_needs_llm`）；**不要**补 `优先级` 或 `人物标签`
 3. 脚本 `--finalize`：verify 通过后删临时字段
 4. 终检：
 
@@ -308,9 +313,9 @@ python3 pandahis/pandahis/tools/openclaw-historiography/historiography-annotate/
 
 **脚本兜底**（仅当 LLM 未填完整时；**编排器 Step4 在调 LLM 之前由脚本执行**）：
 
-1. **学界有推测生卒**（含仅生年推测）→ 填完整出生年～去世年，写入 `_auto_filled._年LLM依据`  
-2. **完全无出生年推测**、仅知去世年 → 开始年 = 结束年 = 去世年  
-3. 不知去世年、知活跃期 → 取活跃期帝王在位起止年  
+1. **学界有推测生卒**（含仅生年推测）→ 填完整出生年～去世年，写入 `_auto_filled._年LLM依据`
+2. **完全无出生年推测**、仅知去世年 → 开始年 = 结束年 = 去世年
+3. 不知去世年、知活跃期 → 取活跃期帝王在位起止年
 4. 活跃期亦未知 → 取对应朝代开始年（两年相同）
 
 **禁止**：用四级帝王在位年（如汉高祖 -202～-195）代替人物生卒；有学界/PATCH 数据时不得退化为帝王在位年。
@@ -325,13 +330,13 @@ python3 pandahis/pandahis/tools/openclaw-historiography/historiography-annotate/
 
 **《史记》Step4 脚本执行顺序**（`gates.step4_shiji_person_fallback` → `step4_hardening`，**LLM 之前/之后、finalize 后、check_format 失败时均会调用**）：
 
-1. `fill_fields.py --merge-auto`（只写坐标元数据，**不**把帝王在位年写入人物生卒）  
-2. `apply_person_years_from_tables`：PERSON_PATCH / 学界表预填生卒 + `_年LLM依据`  
-3. `apply_volume_step4_fallback`：坐标、优先级、主轴说明  
-4. `backfill_provenance_fields`：缺考订字段时自动补（不覆盖已有）  
-5. `prepare_year_quality_repatch`：质检失败时清空错误年 → **再次**尝试 PATCH/学界表回填  
-6. 仅当仍缺字段或无任何依据时 → 才调 LLM Step4  
-7. `check_format final` 失败 → `step4_recover_before_fail` 再跑一轮 1–5 + finalize + 终检  
+1. `fill_fields.py --merge-auto`（只写坐标元数据，**不**把帝王在位年写入人物生卒）
+2. `apply_person_years_from_tables`：PERSON_PATCH / 学界表预填生卒 + `_年LLM依据`
+3. `apply_volume_step4_fallback`：坐标、优先级、主轴说明
+4. `backfill_provenance_fields`：缺考订字段时自动补（不覆盖已有）
+5. `prepare_year_quality_repatch`：质检失败时清空错误年 → **再次**尝试 PATCH/学界表回填
+6. 仅当仍缺字段或无任何依据时 → 才调 LLM Step4
+7. `check_format final` 失败 → `step4_recover_before_fail` 再跑一轮 1–5 + finalize + 终检
 
 有 `_年LLM依据` 的条目：`check_format` 不再用「段落数 vs 生卒跨度」启发式否决。
 
@@ -350,10 +355,10 @@ python3 pandahis/pandahis/tools/openclaw-historiography/historiography-annotate/
   /path/to/skeleton.json --llm
 ```
 
-**字段（中文键）**：`峰值年` / `峰值原因` / `峰值类型` / `峰值置信度`  
-**规则 SSOT**：`reference/峰值年规则.md`  
-**硬约束**：`史略开始年 ≤ 峰值年 ≤ 史略结束年`  
-**幂等**：`_auto_filled._峰值指纹` 未变则跳过；`_峰值人工锁定=true` 永不被覆盖  
+**字段（中文键）**：`峰值年` / `峰值原因` / `峰值类型` / `峰值置信度`
+**规则 SSOT**：`reference/峰值年规则.md`
+**硬约束**：`史略开始年 ≤ 峰值年 ≤ 史略结束年`
+**幂等**：`_auto_filled._峰值指纹` 未变则跳过；`_峰值人工锁定=true` 永不被覆盖
 **待审**：置信度 &lt; 0.4 或越界 clamp → `_峰值待审`，写入 `data/05工作流中间产物/标注/{卷}_peak_review.md`，**不阻断** `check_format final`
 
 **禁止**：把峰值年塞进 Step4 主 LLM prompt（易卡死、难幂等）。
@@ -365,6 +370,30 @@ python3 pandahis/pandahis/tools/openclaw-historiography/historiography-annotate/
 - [ ] `check_format.py --phase final` exit 0
 - [ ] 统计 MD 已生成
 - [ ] progress 中该卷 Step 1–4 均为 **done**（Step4 完成即本卷标注完成）
+
+---
+
+## 全局 Enrichment（优先级 / 峰值 / 人物标签）
+
+**不在单卷 pipeline 内。** 针对 `史略索引_01至02.json`（或 merge 后的全局索引）批处理：
+
+```bash
+python3 pandahis/pandahis/tools/openclaw-historiography/historiography-annotate/scripts/run_global_enrichment.py
+# 或分步：
+python3 .../dynasty_priority.py data/03索引标注条目/史略索引_01至02.json --llm
+python3 .../peak_year.py          data/03索引标注条目/史略索引_01至02.json --llm
+python3 .../person_tag.py         data/03索引标注条目/史略索引_01至02.json --llm
+python3 pandahis/pandahis/scripts/import_box_index_json.py --enrichment-only
+```
+
+| 步骤 | 脚本 | 字段 |
+|------|------|------|
+| 1 | `dynasty_priority.py` | `优先级` / `优先级判定理由` |
+| 2 | `peak_year.py` | `峰值年` 四字段 |
+| 3 | `person_tag.py` | `人物标签` 三字段 |
+
+规则：`reference/朝代优先级规则.md`、`reference/峰值年规则.md`、`reference/人物标签规则.md`
+未来首页帝王标签从君王史略的 `人物标签` 读取，不用 `historical_emperor.tags` 占位。
 
 ---
 

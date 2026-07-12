@@ -1,0 +1,10 @@
+node_modules/**
+scripts/**
+**/*.ts
+package.json
+package-lock.json
+tsconfig.json
+tsconfig.build.json
+typings/**
+README.md
+**/.DS_Store

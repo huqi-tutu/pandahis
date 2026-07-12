@@ -16,6 +16,11 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+TOOLS = ROOT / "tools" / "openclaw-historiography"
+if str(TOOLS) not in sys.path:
+    sys.path.insert(0, str(TOOLS))
+from entry_source import entry_source_to_db, infer_entry_source  # noqa: E402
+
 DEFAULT_JSON = ROOT / "data" / "03索引标注条目" / "史略索引_01至02.json"
 DEFAULT_EMPEROR_JSON = ROOT / "data" / "01历史坐标数据" / "帝王.json"
 
@@ -206,6 +211,7 @@ def build_box_rows(entries: list[dict]) -> list[dict]:
                 "emperor_name": str(item["四级帝王坐标"]).strip(),
                 "title": str(item["史略名称"]).strip(),
                 "category_key": category_key(item["史略分类"]),
+                "entry_source": entry_source_to_db(infer_entry_source(item)),
                 "blurb": str(item["史略简介"]).strip(),
                 "start_year": int(item["史略开始年"]),
                 "end_year": int(item["史略结束年"]),
@@ -215,6 +221,13 @@ def build_box_rows(entries: list[dict]) -> list[dict]:
                 "peak_year": int(item["峰值年"]) if item.get("峰值年") is not None else None,
                 "peak_reason": str(item.get("峰值原因", "")).strip() or None,
                 "peak_type": str(item.get("峰值类型", "")).strip() or None,
+                "person_tag": str(item.get("人物标签", "")).strip() or None,
+                "person_tag_reason": str(item.get("人物标签判定理由", "")).strip() or None,
+                "person_tag_confidence": (
+                    float(item["人物标签置信度"])
+                    if item.get("人物标签置信度") is not None
+                    else None
+                ),
                 "primary_source": str(item.get("主要史料出处", "")).strip() or None,
                 "original_text": str(item.get("原文字句", "")).strip() or None,
                 "original_location": str(item.get("原文出处", "")).strip() or None,
@@ -332,6 +345,7 @@ def create_historical_box(cursor) -> None:
           emperor_name VARCHAR(128) NULL COMMENT '四级帝王坐标',
           title VARCHAR(128) NOT NULL COMMENT '史略名称',
           category_key VARCHAR(16) NOT NULL COMMENT '史略分类编码',
+          entry_source VARCHAR(16) NOT NULL DEFAULT 'extract' COMMENT '史略来源 extract=史料提取 supplement=模型补全',
           blurb VARCHAR(64) NULL COMMENT '史略简介',
           start_year INT NOT NULL COMMENT '史略开始年',
           end_year INT NOT NULL COMMENT '史略结束年',
@@ -341,6 +355,9 @@ def create_historical_box(cursor) -> None:
           peak_year INT NULL COMMENT '峰值年',
           peak_reason TEXT NULL COMMENT '峰值原因',
           peak_type VARCHAR(64) NULL COMMENT '峰值类型',
+          person_tag VARCHAR(16) NULL COMMENT '人物/蕃祚辨识度标签 2-5字',
+          person_tag_reason TEXT NULL COMMENT '人物标签判定理由',
+          person_tag_confidence DECIMAL(4,2) NULL COMMENT '人物标签置信度 0-1',
           primary_source VARCHAR(256) NULL COMMENT '主要史料出处',
           original_text TEXT NULL COMMENT '原文字句',
           original_location VARCHAR(128) NULL COMMENT '原文出处',
@@ -365,6 +382,7 @@ def create_historical_box(cursor) -> None:
           INDEX idx_box_regime (regime_id),
           INDEX idx_box_dynasty (dynasty_id),
           INDEX idx_box_category (category_key),
+          INDEX idx_box_entry_source (entry_source),
           CONSTRAINT fk_box_emperor FOREIGN KEY (emperor_id) REFERENCES historical_emperor (id),
           CONSTRAINT fk_box_regime FOREIGN KEY (regime_id) REFERENCES historical_regime (id),
           CONSTRAINT fk_box_dynasty FOREIGN KEY (dynasty_id) REFERENCES historical_dynasty (id)
@@ -401,6 +419,28 @@ def ensure_schema(cursor) -> None:
         cursor.execute("ALTER TABLE historical_box ADD COLUMN peak_reason TEXT NULL COMMENT '峰值原因' AFTER peak_year")
     if not column_exists(cursor, "historical_box", "peak_type"):
         cursor.execute("ALTER TABLE historical_box ADD COLUMN peak_type VARCHAR(64) NULL COMMENT '峰值类型' AFTER peak_reason")
+    if not column_exists(cursor, "historical_box", "person_tag"):
+        cursor.execute(
+            "ALTER TABLE historical_box ADD COLUMN person_tag VARCHAR(16) NULL "
+            "COMMENT '人物/蕃祚辨识度标签 2-5字' AFTER peak_type"
+        )
+    if not column_exists(cursor, "historical_box", "person_tag_reason"):
+        cursor.execute(
+            "ALTER TABLE historical_box ADD COLUMN person_tag_reason TEXT NULL "
+            "COMMENT '人物标签判定理由' AFTER person_tag"
+        )
+    if not column_exists(cursor, "historical_box", "person_tag_confidence"):
+        cursor.execute(
+            "ALTER TABLE historical_box ADD COLUMN person_tag_confidence DECIMAL(4,2) NULL "
+            "COMMENT '人物标签置信度 0-1' AFTER person_tag_reason"
+        )
+    if not column_exists(cursor, "historical_box", "entry_source"):
+        cursor.execute(
+            "ALTER TABLE historical_box ADD COLUMN entry_source VARCHAR(16) NOT NULL DEFAULT 'extract' "
+            "COMMENT '史略来源 extract=史料提取 supplement=模型补全' AFTER category_key"
+        )
+    if not index_exists(cursor, "historical_box", "idx_box_entry_source"):
+        cursor.execute("ALTER TABLE historical_box ADD INDEX idx_box_entry_source (entry_source)")
 
 
 def rebuild_schema(cursor) -> None:
@@ -435,8 +475,9 @@ def upsert_boxes(cursor, rows: list[dict]) -> int:
         INSERT INTO historical_box (
           id, parent_entry_id, emperor_id, regime_id, dynasty_id,
           civilization_code, civilization_name, dynasty_name, regime_name, emperor_name,
-          title, category_key, blurb, start_year, end_year,
+          title, category_key, entry_source, blurb, start_year, end_year,
           priority_code, priority_reason, importance_level, peak_year, peak_reason, peak_type,
+          person_tag, person_tag_reason, person_tag_confidence,
           primary_source, original_text, original_location, fine_coordinate, paragraph_anchor,
           parent_work, source_entry_count, paragraph_block_count,
           paragraphs_json, merge_sources_json, source_works_json, original_ref_json,
@@ -445,8 +486,9 @@ def upsert_boxes(cursor, rows: list[dict]) -> int:
         ) VALUES (
           %(id)s, %(parent_entry_id)s, %(emperor_id)s, %(regime_id)s, %(dynasty_id)s,
           %(civilization_code)s, %(civilization_name)s, %(dynasty_name)s, %(regime_name)s, %(emperor_name)s,
-          %(title)s, %(category_key)s, %(blurb)s, %(start_year)s, %(end_year)s,
+          %(title)s, %(category_key)s, %(entry_source)s, %(blurb)s, %(start_year)s, %(end_year)s,
           %(priority_code)s, %(priority_reason)s, %(importance_level)s, %(peak_year)s, %(peak_reason)s, %(peak_type)s,
+          %(person_tag)s, %(person_tag_reason)s, %(person_tag_confidence)s,
           %(primary_source)s, %(original_text)s, %(original_location)s, %(fine_coordinate)s, %(paragraph_anchor)s,
           %(parent_work)s, %(source_entry_count)s, %(paragraph_block_count)s,
           %(paragraphs_json)s, %(merge_sources_json)s, %(source_works_json)s, %(original_ref_json)s,
@@ -465,6 +507,7 @@ def upsert_boxes(cursor, rows: list[dict]) -> int:
           emperor_name = VALUES(emperor_name),
           title = VALUES(title),
           category_key = VALUES(category_key),
+          entry_source = VALUES(entry_source),
           blurb = VALUES(blurb),
           start_year = VALUES(start_year),
           end_year = VALUES(end_year),
@@ -474,6 +517,9 @@ def upsert_boxes(cursor, rows: list[dict]) -> int:
           peak_year = VALUES(peak_year),
           peak_reason = VALUES(peak_reason),
           peak_type = VALUES(peak_type),
+          person_tag = VALUES(person_tag),
+          person_tag_reason = VALUES(person_tag_reason),
+          person_tag_confidence = VALUES(person_tag_confidence),
           primary_source = VALUES(primary_source),
           original_text = VALUES(original_text),
           original_location = VALUES(original_location),
@@ -498,7 +544,7 @@ def upsert_boxes(cursor, rows: list[dict]) -> int:
     return count
 
 
-def update_priority_peak_fields(cursor, rows: list[dict]) -> int:
+def update_enrichment_fields(cursor, rows: list[dict]) -> int:
     sql = """
         UPDATE historical_box
         SET priority_code = %(priority_code)s,
@@ -506,7 +552,10 @@ def update_priority_peak_fields(cursor, rows: list[dict]) -> int:
             importance_level = %(importance_level)s,
             peak_year = %(peak_year)s,
             peak_reason = %(peak_reason)s,
-            peak_type = %(peak_type)s
+            peak_type = %(peak_type)s,
+            person_tag = %(person_tag)s,
+            person_tag_reason = %(person_tag_reason)s,
+            person_tag_confidence = %(person_tag_confidence)s
         WHERE id = %(id)s
     """
     count = 0
@@ -514,6 +563,11 @@ def update_priority_peak_fields(cursor, rows: list[dict]) -> int:
         cursor.execute(sql, row)
         count += cursor.rowcount
     return count
+
+
+def update_priority_peak_fields(cursor, rows: list[dict]) -> int:
+    """兼容旧参数名。"""
+    return update_enrichment_fields(cursor, rows)
 
 
 def delete_child_rows_for_boxes(cursor, box_ids: list[str]) -> dict[str, int]:
@@ -597,7 +651,12 @@ def main() -> int:
     parser.add_argument(
         "--priority-peak-only",
         action="store_true",
-        help="只按 JSON 更新优先级/判定理由/峰值字段，不清理子表、不更新其他列",
+        help="只按 JSON 更新优先级/峰值/人物标签字段（同 --enrichment-only）",
+    )
+    parser.add_argument(
+        "--enrichment-only",
+        action="store_true",
+        help="只按 JSON 更新优先级/峰值/人物标签字段，不清理子表、不更新其他列",
     )
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
@@ -638,14 +697,21 @@ def main() -> int:
                 rebuild_schema(cursor)
             else:
                 ensure_schema(cursor)
-            if args.priority_peak_only:
-                updated = update_priority_peak_fields(cursor, rows)
+            if args.priority_peak_only or args.enrichment_only:
+                updated = update_enrichment_fields(cursor, rows)
                 cursor.execute(
                     "SELECT COUNT(*) AS cnt FROM historical_box WHERE peak_year IS NOT NULL"
                 )
                 peak_count = cursor.fetchone()["cnt"]
+                cursor.execute(
+                    "SELECT COUNT(*) AS cnt FROM historical_box WHERE person_tag IS NOT NULL"
+                )
+                tag_count = cursor.fetchone()["cnt"]
                 conn.commit()
-                print(f"完成: 更新优先级/峰值字段 {updated} 条，peak_year 非空 {peak_count} 条")
+                print(
+                    f"完成: 更新 enrichment 字段 {updated} 条，"
+                    f"peak_year 非空 {peak_count} 条，person_tag 非空 {tag_count} 条"
+                )
                 return 0
             json_ids = [row["id"] for row in rows]
             emperor_stats = ensure_emperor_refs(cursor, rows, args.emperor_json)

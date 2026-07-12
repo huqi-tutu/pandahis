@@ -17,6 +17,7 @@ function promptLoginForFavorite() {
 }
 exports.promptLoginForFavorite = promptLoginForFavorite;
 async function fetchFavoritedBoxIdSet() {
+    var _a;
     if (!(0, api_1.hasToken)())
         return new Set();
     const set = new Set();
@@ -30,7 +31,7 @@ async function fetchFavoritedBoxIdSet() {
                 if (x.boxId)
                     set.add(x.boxId);
             }
-            const total = res.data.total ?? items.length;
+            const total = (_a = res.data.total) !== null && _a !== void 0 ? _a : items.length;
             if (items.length < pageSize || set.size >= total)
                 break;
             page += 1;

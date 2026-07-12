@@ -1,6 +1,7 @@
 package com.pandahis.histomap.contentgraph.interfaces.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -26,26 +27,79 @@ class SwimLaneLayoutTest {
     UnitSwimMatrixDTO.LaneView p0 = views.get("p0");
     UnitSwimMatrixDTO.LaneView p1 = views.get("p1");
 
-    assertEquals(1, p0.visibleCount());
+    assertEquals(1, p0.collapsedRows().stream().flatMap(List::stream)
+        .filter(bar -> !"overflow_bucket".equals(bar.type())).count());
+    assertTrue(p0.visibleCount() > 1);
     assertEquals(2, p0.moreCount());
+    assertFalse(p0.hasMore());
     assertTrue(p0.extraBars().stream().anyMatch(b -> "GLBL_00002".equals(b.boxId())));
-    assertEquals(2, p1.visibleCount());
+    assertEquals(3, p1.visibleCount());
     assertEquals(1, p1.moreCount());
   }
 
   @Test
-  void priorityViewsCapVisibleRowsAtTen() {
+  void priorityViewsCapVisibleRowsAtTenAndAlwaysShowBucketChips() {
     List<SwimLaneLayout.SwimBarInput> bars = java.util.stream.IntStream.rangeClosed(1, 12)
         .mapToObj(i -> bar(String.format("GLBL_%05d", i), "同年史略" + i, 1000, 1001, "p0"))
         .toList();
 
     UnitSwimMatrixDTO.LaneView view =
-        SwimLaneLayout.buildPriorityViews(bars, 990, 40, 1440).get("p0");
+        SwimLaneLayout.buildPriorityViews(
+            bars,
+            SwimTimeScale.linear(990, 1030),
+            1440,
+            "wenchen",
+            "文臣"
+        ).get("p0");
 
-    assertEquals(10, view.rowCount());
-    assertEquals(10, view.visibleCount());
+    assertEquals(11, view.rowCount());
+    assertEquals(11, view.visibleCount());
     assertEquals(2, view.moreCount());
     assertEquals(2, view.extraBars().size());
+    assertFalse(view.hasMore());
+    UnitSwimMatrixDTO.Bar bucket = view.collapsedRows().stream()
+        .flatMap(List::stream)
+        .filter(bar -> "overflow_bucket".equals(bar.type()))
+        .findFirst()
+        .orElseThrow();
+
+    assertEquals("查看更多", bucket.title());
+    assertEquals("2位文臣", bucket.chipTag());
+  }
+
+  @Test
+  void overflowBucketAnchorsToBucketCenterYear() {
+    List<SwimLaneLayout.SwimBarInput> bars = java.util.stream.IntStream.rangeClosed(1, 12)
+        .mapToObj(i -> bar(String.format("GLBL_%05d", i), "同年史略" + i, 1000, 1001, "p0"))
+        .toList();
+
+    UnitSwimMatrixDTO.LaneView view =
+        SwimLaneLayout.buildPriorityViews(
+            bars,
+            SwimTimeScale.linear(990, 1030),
+            1440,
+            "wenchen",
+            "文臣"
+        ).get("p0");
+
+    UnitSwimMatrixDTO.Bar bucket = view.collapsedRows().stream()
+        .flatMap(List::stream)
+        .filter(bar -> "overflow_bucket".equals(bar.type()))
+        .findFirst()
+        .orElseThrow();
+
+    assertEquals(990, bucket.startYear());
+    assertEquals(1020, bucket.endYear());
+    assertEquals(1005, bucket.peakYear());
+    assertTrue(parsePct(bucket.left()) > 0);
+  }
+
+  @Test
+  void resolveBucketYearsAdaptsBetweenTenAndThirty() {
+    assertEquals(14, SwimLaneLayout.resolveBucketYears(14, 8));
+    assertEquals(16, SwimLaneLayout.resolveBucketYears(206, 95));
+    assertTrue(SwimLaneLayout.resolveBucketYears(120, 20) >= 10);
+    assertTrue(SwimLaneLayout.resolveBucketYears(120, 20) <= 30);
   }
 
   @Test
@@ -75,12 +129,12 @@ class SwimLaneLayoutTest {
 
     UnitSwimMatrixDTO.Bar chip = view.collapsedRows().get(0).get(0);
 
-    assertEquals("20.00%", chip.left());
+    assertEquals("15.56%", chip.left());
     assertEquals(1020, chip.peakYear());
   }
 
   @Test
-  void startYearAnchorsChipLeftWhenPeakYearMissing() {
+  void startYearAnchorsChipCenterWhenPeakYearMissing() {
     UnitSwimMatrixDTO.LaneView view = SwimLaneLayout.buildPriorityViews(
         List.of(bar("GLBL_00021", "君王定位", 1000, 1010, "p0")),
         1000,
@@ -90,7 +144,7 @@ class SwimLaneLayoutTest {
 
     UnitSwimMatrixDTO.Bar chip = view.collapsedRows().get(0).get(0);
 
-    assertEquals("1.39%", chip.left());
+    assertEquals("1.67%", chip.left());
     assertNull(chip.peakYear());
   }
 
@@ -105,7 +159,10 @@ class SwimLaneLayoutTest {
             "p0",
             1005,
             "即位为君",
-            true
+            true,
+            null,
+            null,
+            "extract"
         )),
         1000,
         100,
@@ -114,9 +171,75 @@ class SwimLaneLayoutTest {
 
     UnitSwimMatrixDTO.Bar chip = view.collapsedRows().get(0).get(0);
 
-    assertEquals("1.39%", chip.left());
+    assertEquals("1.67%", chip.left());
     assertEquals(1005, chip.peakYear());
     assertEquals("即位为君", chip.peakReason());
+  }
+
+  @Test
+  void personTagMapsToChipTag() {
+    UnitSwimMatrixDTO.LaneView view = SwimLaneLayout.buildPriorityViews(
+        List.of(new SwimLaneLayout.SwimBarInput(
+            "GLBL_00030",
+            "韩信",
+            1000,
+            1010,
+            "p0",
+            1005,
+            "国士无双",
+            false,
+            "国士无双",
+            null,
+            "extract"
+        )),
+        1000,
+        100,
+        1440
+    ).get("p0");
+
+    UnitSwimMatrixDTO.Bar chip = view.collapsedRows().get(0).get(0);
+
+    assertEquals("国士无双", chip.chipTag());
+  }
+
+  @Test
+  void uniformChipHeightForAllBars() {
+    UnitSwimMatrixDTO.LaneView view = SwimLaneLayout.buildPriorityViews(
+        List.of(bar("GLBL_00031", "秦悼公", 1000, 1010, "p3")),
+        1000,
+        100,
+        1440
+    ).get("p3");
+
+    assertEquals(52, view.collapsedRows().get(0).get(0).heightRpx());
+    assertNull(view.collapsedRows().get(0).get(0).chipTag());
+  }
+
+  @Test
+  void personTagUsesWiderChip() {
+    UnitSwimMatrixDTO.LaneView view = SwimLaneLayout.buildPriorityViews(
+        List.of(new SwimLaneLayout.SwimBarInput(
+            "GLBL_00030",
+            "韩信",
+            1000,
+            1010,
+            "p0",
+            1005,
+            "国士无双",
+            false,
+            "国士无双",
+            null,
+            "extract"
+        )),
+        1000,
+        100,
+        1440
+    ).get("p0");
+
+    UnitSwimMatrixDTO.Bar chip = view.collapsedRows().get(0).get(0);
+    assertEquals(52, chip.heightRpx());
+    assertEquals("国士无双", chip.chipTag());
+    assertEquals("176rpx", chip.chipWidth());
   }
 
   @Test
@@ -138,7 +261,7 @@ class SwimLaneLayoutTest {
       int end,
       String priority
   ) {
-    return new SwimLaneLayout.SwimBarInput(boxId, title, start, end, priority, null, null, false);
+    return new SwimLaneLayout.SwimBarInput(boxId, title, start, end, priority, null, null, false, null, null, "extract");
   }
 
   private static SwimLaneLayout.SwimBarInput bar(
@@ -149,7 +272,7 @@ class SwimLaneLayoutTest {
       String priority,
       Integer peakYear
   ) {
-    return new SwimLaneLayout.SwimBarInput(boxId, title, start, end, priority, peakYear, null, false);
+    return new SwimLaneLayout.SwimBarInput(boxId, title, start, end, priority, peakYear, null, false, null, null, "extract");
   }
 
   private static int rowOf(UnitSwimMatrixDTO.LaneView view, String boxId) {
@@ -161,5 +284,9 @@ class SwimLaneLayoutTest {
       }
     }
     return Integer.MAX_VALUE;
+  }
+
+  private static double parsePct(String value) {
+    return Double.parseDouble(value.replace("%", ""));
   }
 }

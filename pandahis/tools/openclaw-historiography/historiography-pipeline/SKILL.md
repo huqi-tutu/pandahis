@@ -30,6 +30,8 @@ description: >
 | `historiography-annotate/check_format.py` | Step 2 / Step 4 硬门 |
 | `historiography-annotate/fill_fields.py` | Step 4 辅助 |
 | `historiography-annotate/peak_year.py` | Step 4d 峰值年标注 |
+| `historiography-annotate/person_tag.py` | 全局 enrichment 人物标签 |
+| `historiography-annotate/scripts/run_global_enrichment.py` | 全局优先级/峰值/标签批处理 |
 | `historiography-annotate/merge_volumes.py` | 多卷合并（Step M） |
 | `historiography-audit/audit_precheck.py` | Step 3 预检 |
 
@@ -103,7 +105,7 @@ python3 .../run_volume_pipeline.py verify --work 01史记 --vol 001 --step 3
 ### Step 4 — 补全（fill_fields + LLM + 峰值年 + 终检）
 
 1. `fill_fields.py` 写临时字段，并自动补全四级坐标 ID
-2. LLM 补：优先级、年份、文明/王朝/帝王归属（名称）；删 `_needs_llm`；**不得手填坐标 ID**
+2. LLM 补：年份、文明/王朝/帝王归属（名称）；**不补优先级/人物标签**；删 `_needs_llm`；**不得手填坐标 ID**
 3. **`peak_year.py`（Step4d）**：年份终态后标注 `峰值年/峰值原因/峰值类型/峰值置信度`（规则 → LLM 分批 → 兜底；低置信进待审，不挡终检）
 4. 验证：
 
@@ -144,6 +146,16 @@ python3 .../run_volume_pipeline.py status --work 01史记
 ```bash
 python3 pandahis/pandahis/tools/openclaw-historiography/historiography-annotate/merge_volumes.py 01史记
 ```
+
+---
+
+## 全局 Enrichment（merge 之后）
+
+```bash
+python3 pandahis/pandahis/tools/openclaw-historiography/historiography-annotate/scripts/run_global_enrichment.py
+```
+
+顺序：`dynasty_priority` → `peak_year` → `person_tag` → `import_box_index_json.py --enrichment-only`
 
 ---
 

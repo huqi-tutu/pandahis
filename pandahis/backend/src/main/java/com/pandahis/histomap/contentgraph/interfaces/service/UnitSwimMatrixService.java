@@ -32,7 +32,8 @@ public class UnitSwimMatrixService {
     String civName = dynastyResolver.civilizationName(dynasty);
 
     List<Map<String, Object>> boxes = jdbcTemplate.queryForList(
-        "SELECT id, title, category_key, start_year, end_year, priority_code, importance_level, peak_year, peak_reason, blurb "
+        "SELECT id, title, category_key, start_year, end_year, priority_code, priority_reason, importance_level, "
+            + "peak_year, peak_reason, person_tag, blurb, entry_source "
             + "FROM historical_box WHERE dynasty_id=? AND status=1 "
             + "ORDER BY start_year ASC, id ASC",
         dynastyId
@@ -48,6 +49,8 @@ public class UnitSwimMatrixService {
         .map(seed -> buildLane(seed.def(), seed.bars(), timePlan.scale(), sheetWidthRpx))
         .toList();
 
+    SwimCanvasLayout.CanvasPlan canvas = SwimCanvasLayout.build(lanes);
+
     List<String> concurrent = loadConcurrentItems(civName, dynastyName, startYear, endYear);
     SwimTimeScale.Plan finalPlan = timePlan.scale().replan(sheetWidthRpx, timePlan.timeScaleMode());
 
@@ -59,9 +62,12 @@ public class UnitSwimMatrixService {
         finalPlan.gridLines(),
         finalPlan.timeSegments(),
         finalPlan.timeScaleMode(),
-        lanes,
+        canvas.lanes(),
         concurrent,
-        sheetWidthRpx
+        sheetWidthRpx,
+        canvas.canvasHeightRpx(),
+        canvas.canvasPadLeftRpx(),
+        canvas.categoryBands()
     );
   }
 
@@ -81,6 +87,10 @@ public class UnitSwimMatrixService {
         if (peakReason != null && peakReason.isEmpty()) {
           peakReason = null;
         }
+        String priorityReason = b.get("priority_reason") == null ? null : String.valueOf(b.get("priority_reason")).trim();
+        if (priorityReason != null && priorityReason.isEmpty()) {
+          priorityReason = null;
+        }
         bars.add(new SwimLaneLayout.SwimBarInput(
             (String) b.get("id"),
             (String) b.get("title"),
@@ -89,7 +99,10 @@ public class UnitSwimMatrixService {
             priority(b.get("priority_code"), b.get("importance_level")),
             peakYear,
             peakReason,
-            "junji".equals(def.key())
+            "junji".equals(def.key()),
+            personTag(b.get("person_tag")),
+            priorityReason,
+            entrySource(b.get("entry_source"))
         ));
       }
       laneSeeds.add(new LaneSeed(def, bars));
@@ -115,7 +128,7 @@ public class UnitSwimMatrixService {
       int sheetWidthRpx
   ) {
     Map<String, UnitSwimMatrixDTO.LaneView> views =
-        SwimLaneLayout.buildPriorityViews(bars, scale, sheetWidthRpx);
+        SwimLaneLayout.buildPriorityViews(bars, scale, sheetWidthRpx, def.key(), def.label());
     UnitSwimMatrixDTO.LaneView defaultView = views.get("p3");
     int totalCount = bars.size();
     int readCount = 0;
@@ -148,7 +161,7 @@ public class UnitSwimMatrixService {
       int maxRows = 1;
       for (LaneSeed seed : laneSeeds) {
         UnitSwimMatrixDTO.LaneView view = SwimLaneLayout
-            .buildPriorityViews(seed.bars(), timePlan.scale(), width)
+            .buildPriorityViews(seed.bars(), timePlan.scale(), width, seed.def().key(), seed.def().label())
             .get("p3");
         maxRows = Math.max(maxRows, view.rowCount());
       }
@@ -197,6 +210,14 @@ public class UnitSwimMatrixService {
   }
 
 
+  private static String personTag(Object raw) {
+    if (raw == null) {
+      return null;
+    }
+    String value = String.valueOf(raw).trim();
+    return value.isEmpty() ? null : value;
+  }
+
   private static String priority(Object priorityCode, Object imp) {
     if (priorityCode != null) {
       String code = String.valueOf(priorityCode).trim().toLowerCase();
@@ -209,6 +230,14 @@ public class UnitSwimMatrixService {
     if (v == 1) return "p1";
     if (v == 2) return "p2";
     return "p3";
+  }
+
+  private static String entrySource(Object raw) {
+    if (raw == null) {
+      return "extract";
+    }
+    String value = String.valueOf(raw).trim().toLowerCase();
+    return "supplement".equals(value) ? "supplement" : "extract";
   }
 
   private record LaneSeed(BoxCategorySupport.CategoryDef def, List<SwimLaneLayout.SwimBarInput> bars) {}

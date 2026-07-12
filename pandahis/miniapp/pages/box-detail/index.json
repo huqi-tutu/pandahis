@@ -1,5 +1,6 @@
 {
   "navigationStyle": "custom",
+  "navigationBarTitleText": "史略详情",
   "usingComponents": {
     "proto-nav": "/components/proto-nav/proto-nav",
     "relation-graph-canvas": "/components/relation-graph-canvas/relation-graph-canvas"

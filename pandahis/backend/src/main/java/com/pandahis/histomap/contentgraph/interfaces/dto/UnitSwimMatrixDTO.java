@@ -14,7 +14,10 @@ public record UnitSwimMatrixDTO(
     String timeScaleMode,
     List<Lane> lanes,
     List<String> concurrentItems,
-    int sheetWidthRpx
+    int sheetWidthRpx,
+    int canvasHeightRpx,
+    int canvasPadLeftRpx,
+    List<CategoryBand> categoryBands
 ) {
   public record AxisTick(
       String label,
@@ -35,6 +38,16 @@ public record UnitSwimMatrixDTO(
       String width,
       int boxCount,
       boolean dense
+  ) {}
+
+  public record CategoryBand(
+      String key,
+      String label,
+      String borderColor,
+      int topRpx,
+      int heightRpx,
+      String readProgressText,
+      int totalCount
   ) {}
 
   public record Lane(
@@ -92,6 +105,11 @@ public record UnitSwimMatrixDTO(
       int endYear,
       Integer peakYear,
       String peakReason,
-      int globalIdNumber
+      int globalIdNumber,
+      int topRpx,
+      int heightRpx,
+      String chipTag,
+      String priorityReason,
+      String entrySource
   ) {}
 }

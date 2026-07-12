@@ -8,7 +8,8 @@ public record BoxHeaderDTO(Box box, boolean isFavorite, TabSummary tabSummary, A
       String blurb,
       String categoryKey,
       int startYear,
-      int endYear
+      int endYear,
+      String entrySource
   ) {}
 
   public record TabSummary(boolean hasGraph, boolean hasCritiques, boolean hasRelics, boolean hasOriginal) {}

@@ -7,6 +7,7 @@
   python3 translate.py recall --id GLBL_00001
   python3 translate.py run --from GLBL_00001 --max 1 [--priority P0] [--single-source-only]
   python3 translate.py run-one --id GLBL_00001 [--from-phase phase2] [--dry-run]
+  python3 translate.py refine --id GLBL_00001 --scope intro|tail|attribution|full [--instructions "..."]
   python3 translate.py verify --id GLBL_00001
   python3 translate.py aggregate
   python3 translate.py status
@@ -88,6 +89,19 @@ def main() -> int:
     p.add_argument("--priority", default=None)
     p.add_argument("--index", type=Path, default=None)
 
+    p = sub.add_parser("refine", help="局部更新已产出译稿（不全量重写）")
+    p.add_argument("--id", required=True, dest="entry_id")
+    p.add_argument(
+        "--scope",
+        default="full",
+        choices=("intro", "mother", "tail", "full", "attribution"),
+        help="attribution=规则清洗；其余 scope 走 LLM",
+    )
+    p.add_argument("--instructions", default="", help="用户修改意见")
+    p.add_argument("--index", type=Path, default=None)
+    p.add_argument("--dry-run", action="store_true")
+    p.add_argument("--no-llm", action="store_true", help="仅 attribution scope 可用")
+
     args = parser.parse_args()
     index = args.index if hasattr(args, "index") else None
 
@@ -152,6 +166,21 @@ def main() -> int:
             priority=args.priority,
             index_path=index,
         )
+
+    if args.cmd == "refine":
+        from lib.refine import refine_entry
+
+        index = args.index if hasattr(args, "index") else None
+        ok, msg = refine_entry(
+            args.entry_id,
+            scope=args.scope,
+            instructions=args.instructions,
+            index_path=index,
+            dry_run=args.dry_run,
+            use_llm=not args.no_llm,
+        )
+        print(msg)
+        return 0 if ok else 1
 
     return 1
 

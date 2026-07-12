@@ -27,7 +27,7 @@ Page({
     stashInviteCodeFromQuery(query)
     try {
       const launch = wx.getLaunchOptionsSync?.()
-      if (launch) stashInviteFromLaunchOptions(launch)
+      if (launch) stashInviteFromLaunchOptions(launch as WechatMiniprogram.App.LaunchShowOption)
     } catch {
       // ignore
     }

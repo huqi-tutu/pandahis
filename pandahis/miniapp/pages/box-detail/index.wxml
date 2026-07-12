@@ -1,21 +1,41 @@
 <view class="page-shell" bindtap="onPageTap">
   <proto-nav hidden="{{audioOpen}}" title="{{navTitle}}" show-back="{{true}}"></proto-nav>
 
+ <view wx:if="{{!header}}" class="box-page-body box-page-body--boot" style="top: {{tabTop}}px;">
+  <view class="box-tabs-wrap">
+   <view class="box-tab active">详情</view>
+   <view class="box-tab">关系</view>
+   <view class="box-tab">评述</view>
+   <view class="box-tab">见证</view>
+  </view>
+  <view class="box-boot-body">
+   <view class="tab-empty tab-empty--loading">
+    <view class="tab-empty-loading">
+     <text class="tab-empty-loading-dot">·</text>
+     <text class="tab-empty-loading-dot">·</text>
+     <text class="tab-empty-loading-dot">·</text>
+    </view>
+    <text class="tab-empty-text">加载中</text>
+   </view>
+  </view>
+ </view>
+
  <block wx:if="{{header}}">
   <!-- 页面主体容器（固定定位，包含 Tab 栏 + 滚动区） -->
   <view class="box-page-body" style="top: {{tabTop}}px;">
-   <!-- 内容 Tab 栏 -->
-   <view class="box-tabs-wrap" hidden="{{tab === 'content' && !uiFocused}}">
-    <view class="box-tab {{tab === 'content' ? 'active' : ''}}" data-tab="content" bindtap="setTab">详情</view>
-    <view class="box-tab {{tab === 'relations' ? 'active' : ''}}" data-tab="relations" bindtap="setTab">关系</view>
-    <view class="box-tab {{tab === 'reviews' ? 'active' : ''}}" data-tab="reviews" bindtap="setTab">评述</view>
-    <view class="box-tab {{tab === 'relics' ? 'active' : ''}}" data-tab="relics" bindtap="setTab">见证</view>
+   <!-- 内容 Tab 栏：悬浮在内容上方，阅读态向上滑走，不挤占布局 -->
+   <view class="box-tabs-wrap box-tabs-wrap--fixed {{tab === 'content' && !uiFocused ? 'box-tabs-wrap--hidden' : ''}}" catchtap="noop">
+    <view class="box-tab {{tab === 'content' ? 'active' : ''}}" data-tab="content" catchtap="setTab">详情</view>
+    <view class="box-tab {{tab === 'relations' ? 'active' : ''}}" data-tab="relations" catchtap="setTab">关系</view>
+    <view class="box-tab {{tab === 'reviews' ? 'active' : ''}}" data-tab="reviews" catchtap="setTab">评述</view>
+    <view class="box-tab {{tab === 'relics' ? 'active' : ''}}" data-tab="relics" catchtap="setTab">见证</view>
    </view>
 
    <!-- 内容滚动区（关系 Tab 禁用纵向滚动） -->
    <scroll-view
     class="box-body-scroll"
     scroll-y="{{tab !== 'relations'}}"
+    scroll-top="{{bodyScrollTop}}"
     enhanced
     show-scrollbar="{{false}}"
     id="boxBodyScroll"
@@ -34,13 +54,24 @@
     <block wx:elif="{{detailReady}}">
 
      <view wx:if="{{!detailParagraphs.length && header.box.blurb}}" class="detail-body">
-      <view class="box-p box-p--first">{{header.box.blurb}}</view>
+      <view class="box-p box-p--first">
+       <text wx:if="{{blurbDropcap}}" class="dropcap-text">{{blurbDropcap}}</text>
+       <text wx:for="{{blurbSegs}}" wx:key="text" class="{{item.bold ? 'seg--bold' : ''}}">{{item.text}}</text>
+      </view>
      </view>
      <view wx:elif="{{detailParagraphs.length}}" class="detail-body">
       <view
        wx:for="{{detailParagraphs}}"
-       wx:key="*this"
-       class="box-p {{index === 0 ? 'box-p--first' : ''}}">{{item}}</view>
+       wx:key="index"
+       class="box-p {{index === 0 ? 'box-p--first' : ''}}"
+      >
+       <text wx:if="{{index === 0 && item.dropcap}}" class="dropcap-text">{{item.dropcap}}</text>
+       <text
+       wx:for="{{item.segs}}"
+       wx:key="text"
+       class="{{item.bold ? 'seg--bold' : ''}}"
+      >{{item.text}}</text>
+      </view>
       <!-- 正文结束装饰 -->
       <view class="detail-endmark">❧</view>
      </view>

@@ -1,0 +1,25 @@
+/** 面板横滑：吸顶时在视图层即时镜像固定时间轴，避免 setData 一帧延迟 */
+function isPinned(value) {
+  return value === true || value === 'true' || value === 1 || value === '1'
+}
+
+function onScroll(event, ownerInstance) {
+  var scrollLeft = event.detail.scrollLeft
+  var pinned = event.currentTarget.dataset.axisPinned
+
+  if (isPinned(pinned)) {
+    var track = ownerInstance.selectComponent('.dyn-axis-fixed-track')
+    if (track) {
+      track.setStyle({
+        transform: 'translateX(' + (-scrollLeft) + 'px)',
+        '-webkit-transform': 'translateX(' + (-scrollLeft) + 'px)',
+      })
+    }
+  }
+
+  ownerInstance.callMethod('onPanelHScroll', { scrollLeft: scrollLeft })
+}
+
+module.exports = {
+  onScroll: onScroll,
+}

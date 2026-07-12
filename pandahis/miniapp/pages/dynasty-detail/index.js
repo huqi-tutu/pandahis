@@ -1,13 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const api_1 = require("../../native-utils/api");
 const dev_config_1 = require("../../native-utils/dev-config");
+const api_1 = require("../../native-utils/api");
 const encode_path_segment_1 = require("../../native-utils/encode-path-segment");
 const favorite_box_1 = require("../../native-utils/favorite-box");
 const router_1 = require("../../native-utils/router");
+const query_value_1 = require("../../native-utils/query-value");
+const year_format_1 = require("../../native-utils/year-format");
+const entry_source_label_1 = require("../../native-utils/entry-source-label");
 const share_invite_1 = require("../../native-utils/share-invite");
-const swim_lane_palette_1 = require("../../native-utils/swim-lane-palette");
-const { formatHistoryYear } = require('../../native-utils/year-format.js');
 const { buildSwimMatrixFromMock, buildHeroFromMock, normalizeDynastyKey, isDegradedMockFallback, } = require('./swim-local-fallback');
 const PRIORITY_OPTIONS = [
     { value: 'p0', label: 'P0' },
@@ -16,22 +17,146 @@ const PRIORITY_OPTIONS = [
     { value: 'p3', label: 'P3' },
 ];
 const MAX_LANE_ROWS = 10;
+const GRID_RPX = 8;
 const LANE_ROW_HEIGHT_RPX = 44;
 const LANE_ROW_GAP_RPX = 16;
 const LANE_TRACK_PAD_VERTICAL_RPX = 24;
-const CHIP_WIDTH_RPX = 132;
+const CHIP_MAX_RPX = 288;
+const CHIP_MIN_RPX = 80;
+const CHIP_HEIGHT_RPX = 52;
+/** 胶囊左右 padding 合计（与 SCSS 14+14 对齐） */
+const CHIP_PAD_H_RPX = 28;
+const CHIP_TITLE_RPX_PER_CHAR = 24;
+/** Badge 左右 padding 合计（与 SCSS 8+8 对齐） */
+const CHIP_TAG_PAD_H_RPX = 16;
+const CHIP_TAG_RPX_PER_CHAR = 20;
+const CHIP_INNER_GAP_RPX = 4;
 const CHIP_GAP_RPX = 16;
-const EDGE_GAP_RPX = 20;
+const ROW_GAP_RPX = 16;
+const EDGE_GAP_RPX = 24;
 const MORE_WIDTH_RPX = 112;
 const MORE_GAP_RPX = 20;
+const CANVAS_PAD_LEFT_RPX = 40;
+const BAND_GAP_RPX = 24;
+const BAND_PAD_RPX = 16;
+const MIN_BAND_HEIGHT_RPX = 56;
+const AXIS_PIN_AT = 150;
+const AXIS_UNPIN_AT = 110;
+function roundScrollLeft(left) {
+    return Math.round(left);
+}
+function snapRpx(value) {
+    if (value <= 0)
+        return 0;
+    return Math.max(GRID_RPX, Math.round(value / GRID_RPX) * GRID_RPX);
+}
 function laneTrackHeight(rowCount) {
-    const rows = Math.max(1, Math.min(MAX_LANE_ROWS, rowCount || 1));
-    return LANE_TRACK_PAD_VERTICAL_RPX + rows * LANE_ROW_HEIGHT_RPX + (rows - 1) * LANE_ROW_GAP_RPX;
+    const rows = Math.max(1, rowCount || 1);
+    return LANE_TRACK_PAD_VERTICAL_RPX + rows * CHIP_HEIGHT_RPX + (rows - 1) * ROW_GAP_RPX;
+}
+const MIN_BUCKET_YEARS = 10;
+const MAX_BUCKET_YEARS = 30;
+function resolveBucketYears(span, overflowCount) {
+    if (overflowCount <= 0)
+        return span;
+    if (span <= MAX_BUCKET_YEARS)
+        return span;
+    const minBuckets = Math.max(1, Math.ceil(overflowCount / 12));
+    const maxBuckets = Math.max(minBuckets, Math.ceil(overflowCount / 5));
+    const targetBuckets = Math.min(Math.floor(span / MIN_BUCKET_YEARS), Math.floor((minBuckets + maxBuckets) / 2));
+    const bucketYears = Math.ceil(span / Math.max(1, targetBuckets));
+    return Math.max(MIN_BUCKET_YEARS, Math.min(MAX_BUCKET_YEARS, bucketYears));
+}
+const BUCKET_CHIP_TITLE = '查看更多';
+function parseBucketMemberCount(title) {
+    const match = String(title || '').match(/\+(\d+)$/);
+    return match ? Number(match[1]) : 0;
+}
+function bucketTitle(laneLabel, count) {
+    return BUCKET_CHIP_TITLE;
+}
+function anchorYearOfBar(bar) {
+    if (typeof bar.peakYear === 'number')
+        return bar.peakYear;
+    if (typeof bar.startYear === 'number')
+        return bar.startYear;
+    return 0;
+}
+function placeBucketChips(rows, overflow, laneKey, laneLabel, startYear, endYear, sheetWidthRpx, percentForYear) {
+    if (!overflow.length)
+        return rows;
+    const span = Math.max(1, endYear - startYear);
+    const bucketYears = resolveBucketYears(span, overflow.length);
+    const gapPct = CHIP_GAP_RPX / sheetWidthRpx * 100;
+    const nextRows = rows.map((row) => [...row]);
+    const rowEnds = nextRows.map((row) => Math.max(0, ...row.map((bar) => bar._rightPct)));
+    let cursor = startYear;
+    let bucketIndex = 0;
+    while (cursor < endYear) {
+        const bucketEnd = Math.min(endYear, cursor + bucketYears);
+        const members = overflow.filter((bar) => {
+            const y = anchorYearOfBar(bar);
+            return y >= cursor && y < bucketEnd;
+        });
+        if (members.length) {
+            const countTag = buildOverlayCountTag(laneLabel, members.length);
+            const title = BUCKET_CHIP_TITLE;
+            const chipW = estimateChipWidthRpx(title, countTag);
+            const chipPct = chipW / sheetWidthRpx * 100;
+            const anchorYear = Math.floor((cursor + bucketEnd) / 2);
+            const centerPct = percentForYear(anchorYear);
+            const edgePct = EDGE_GAP_RPX / sheetWidthRpx * 100;
+            const maxLeft = 100 - (chipW + EDGE_GAP_RPX) / sheetWidthRpx * 100;
+            const left = Math.max(edgePct, Math.min(maxLeft, centerPct - chipPct / 2));
+            const bucketBar = {
+                title,
+                chipTag: countTag,
+                boxId: `BUCKET_${laneKey}_${bucketIndex}`,
+                left: `${left.toFixed(2)}%`,
+                width: `${chipPct.toFixed(2)}%`,
+                unitLeft: `${left.toFixed(2)}%`,
+                unitWidth: `${chipPct.toFixed(2)}%`,
+                chipLeft: `${left.toFixed(2)}%`,
+                chipWidth: `${chipW}rpx`,
+                lineLeftW: '0rpx',
+                lineRightL: '0rpx',
+                lineRightW: '0rpx',
+                priority: 'p3',
+                type: 'overflow_bucket',
+                timeRange: `${(0, year_format_1.formatHistoryYear)(cursor)} — ${(0, year_format_1.formatHistoryYear)(bucketEnd)}`,
+                startYear: cursor,
+                endYear: bucketEnd,
+                peakYear: anchorYear,
+                heightRpx: CHIP_HEIGHT_RPX,
+                _leftPct: left,
+                _rightPct: left + chipPct,
+                _priorityRank: 3,
+                _globalIdNumber: 0,
+            };
+            let assigned = -1;
+            for (let rowIndex = 0; rowIndex < nextRows.length; rowIndex++) {
+                if (rowEnds[rowIndex] + gapPct <= bucketBar._leftPct) {
+                    assigned = rowIndex;
+                    rowEnds[rowIndex] = bucketBar._rightPct;
+                    nextRows[rowIndex] = [...nextRows[rowIndex], bucketBar].sort((a, b) => a._leftPct - b._leftPct);
+                    break;
+                }
+            }
+            if (assigned === -1) {
+                nextRows.push([bucketBar]);
+                rowEnds.push(bucketBar._rightPct);
+            }
+            bucketIndex += 1;
+        }
+        cursor = bucketEnd;
+    }
+    return nextRows;
 }
 function collectMatrixBoxIds(swim) {
+    var _a;
     const ids = [];
     for (const lane of (swim === null || swim === void 0 ? void 0 : swim.lanes) || []) {
-        const fullView = lane.priorityViews && lane.priorityViews.p3;
+        const fullView = (_a = lane.priorityViews) === null || _a === void 0 ? void 0 : _a.p3;
         const rows = (fullView === null || fullView === void 0 ? void 0 : fullView.collapsedRows) || lane.collapsedRows || [];
         for (const row of rows) {
             for (const bar of row) {
@@ -39,7 +164,7 @@ function collectMatrixBoxIds(swim) {
                     ids.push(bar.boxId);
             }
         }
-        for (const bar of ((fullView === null || fullView === void 0 ? void 0 : fullView.extraBars) || lane.extraBars || [])) {
+        for (const bar of (fullView === null || fullView === void 0 ? void 0 : fullView.extraBars) || lane.extraBars || []) {
             if (bar === null || bar === void 0 ? void 0 : bar.boxId)
                 ids.push(bar.boxId);
         }
@@ -47,7 +172,8 @@ function collectMatrixBoxIds(swim) {
     return Array.from(new Set(ids));
 }
 function findSwimBar(swim, boxId) {
-    if (!(swim === null || swim === void 0 ? void 0 : swim.lanes) || !swim.lanes.length || !boxId)
+    var _a;
+    if (!((_a = swim === null || swim === void 0 ? void 0 : swim.lanes) === null || _a === void 0 ? void 0 : _a.length) || !boxId)
         return null;
     for (const lane of swim.lanes) {
         const rows = lane.collapsedRows || [];
@@ -85,10 +211,11 @@ function splitIntroParagraphs(intro) {
     return text.split(/\n\n+/).map((p) => p.trim()).filter(Boolean);
 }
 function isDevelopEnv() {
+    var _a, _b;
     try {
-        return wx.getAccountInfoSync()?.miniProgram?.envVersion === 'develop';
+        return ((_b = (_a = wx.getAccountInfoSync()) === null || _a === void 0 ? void 0 : _a.miniProgram) === null || _b === void 0 ? void 0 : _b.envVersion) === 'develop';
     }
-    catch (_a) {
+    catch {
         return true;
     }
 }
@@ -102,12 +229,13 @@ function warnIfDegradedMock(swim) {
     });
 }
 function tryLoadLocalMock(dynastyName, unitId) {
+    var _a;
     const key = normalizeDynastyKey(dynastyName);
     if (!key)
         return null;
     try {
         const swimMatrix = buildSwimMatrixFromMock(key);
-        if (!(swimMatrix === null || swimMatrix === void 0 ? void 0 : swimMatrix.lanes) || !swimMatrix.lanes.length)
+        if (!((_a = swimMatrix === null || swimMatrix === void 0 ? void 0 : swimMatrix.lanes) === null || _a === void 0 ? void 0 : _a.length))
             return null;
         const hero = buildHeroFromMock(swimMatrix, unitId || key, key);
         return { hero, swim: swimMatrix };
@@ -117,35 +245,242 @@ function tryLoadLocalMock(dynastyName, unitId) {
         return null;
     }
 }
+/* ── 生成20年间隔时间轴刻度 ── */
+const TARGET_TICK_SPACING_RPX = 96;
+const MIN_LABEL_SPACING_RPX = 104;
+function niceTickStep(raw) {
+    if (raw <= 1)
+        return 1;
+    if (raw <= 2)
+        return 2;
+    if (raw <= 5)
+        return 5;
+    if (raw <= 10)
+        return 10;
+    if (raw <= 20)
+        return 20;
+    if (raw <= 25)
+        return 25;
+    if (raw <= 50)
+        return 50;
+    if (raw <= 100)
+        return 100;
+    if (raw <= 200)
+        return 200;
+    if (raw <= 500)
+        return 500;
+    return 1000;
+}
+function computeTickStep(span, sheetWidthRpx) {
+    const yearsPerTickGrid = (TARGET_TICK_SPACING_RPX / Math.max(1, sheetWidthRpx)) * span;
+    const yearsPerTickLabel = (MIN_LABEL_SPACING_RPX / Math.max(1, sheetWidthRpx)) * span;
+    return niceTickStep(Math.max(yearsPerTickGrid, yearsPerTickLabel));
+}
+function roundUpToStep(year, step) {
+    if (step <= 1)
+        return year;
+    const rem = ((year % step) + step) % step;
+    if (rem === 0)
+        return year;
+    return year + (step - rem);
+}
 function generateTimelineTicks(startYear, endYear, originalSheetWidthRpx) {
-  const span = endYear - startYear;
-  const newSheetWidthRpx = Math.round(originalSheetWidthRpx);
-  const ticks = [];
-  ticks.push({ label: formatHistoryYear(startYear), left: '0%', edgeStart: true, hideLabel: false });
-  const firstTick = Math.ceil((startYear + 1) / 10) * 10;
-  let tickYear = firstTick;
-  while (tickYear < endYear) {
-    const left = ((tickYear - startYear) / span) * 100;
-    const distToStart = tickYear - startYear;
-    const distToEnd = endYear - tickYear;
-    const isPenultimate = tickYear + 20 >= endYear;
-    const hideLabel = (tickYear === firstTick && distToStart < 20) || (isPenultimate && distToEnd < 20);
-    ticks.push({ label: formatHistoryYear(tickYear), left: left + '%', hideLabel });
-    tickYear += 20;
-  }
-  const gridLines = ticks.filter(function(t) { return t.left !== '0%'; }).map(function(t) { return { left: t.left }; });
-  return { ticks, endLabel: formatHistoryYear(endYear), sheetWidthRpx: newSheetWidthRpx, gridLines };
+    const span = endYear - startYear;
+    const newSheetWidthRpx = Math.round(originalSheetWidthRpx);
+    const ticks = [];
+    const step = computeTickStep(span, newSheetWidthRpx);
+    ticks.push({ label: (0, year_format_1.formatHistoryYear)(startYear), left: '0%', edgeStart: true, hideLabel: false });
+    let tickYear = roundUpToStep(startYear + 1, step);
+    while (tickYear < endYear) {
+        const left = ((tickYear - startYear) / span) * 100;
+        const hideLabel = tickYear - startYear < step || endYear - tickYear < step;
+        ticks.push({ label: (0, year_format_1.formatHistoryYear)(tickYear), left: `${left}%`, hideLabel });
+        tickYear += step;
+    }
+    // 泳道网格线：从第2个刻度开始，与时间轴刻度对齐
+    const gridLines = ticks.filter(t => t.left !== '0%').map(t => ({ left: t.left }));
+    return { ticks, endLabel: (0, year_format_1.formatHistoryYear)(endYear), sheetWidthRpx: newSheetWidthRpx, gridLines };
+}
+function visibleLength(value) {
+    const trimmed = String(value || '').trim();
+    return Array.from(trimmed).length;
+}
+function formatPriorityLabel(priority) {
+    const p = String(priority || '').trim().toLowerCase();
+    if (!p)
+        return '';
+    return p.toUpperCase();
+}
+function splitTimeRangeLabels(bar, fallbackRange) {
+    if ((bar === null || bar === void 0 ? void 0 : bar.startYear) != null && (bar === null || bar === void 0 ? void 0 : bar.endYear) != null) {
+        return {
+            start: (0, year_format_1.formatHistoryYear)(bar.startYear),
+            end: (0, year_format_1.formatHistoryYear)(bar.endYear),
+        };
+    }
+    const parts = String(fallbackRange || '').split(/\s*[—–-]\s*/);
+    if (parts.length >= 2) {
+        return { start: parts[0].trim(), end: parts[parts.length - 1].trim() };
+    }
+    const single = String(fallbackRange || '').trim();
+    return { start: single, end: '' };
+}
+function estimateChipWidthRpx(title, chipTag) {
+    const titleLen = visibleLength(title);
+    const tag = String(chipTag || '').trim();
+    let tagW = 0;
+    if (tag) {
+        tagW = CHIP_TAG_PAD_H_RPX + visibleLength(tag) * CHIP_TAG_RPX_PER_CHAR + CHIP_INNER_GAP_RPX;
+    }
+    const raw = CHIP_PAD_H_RPX + titleLen * CHIP_TITLE_RPX_PER_CHAR + tagW;
+    return snapRpx(Math.max(CHIP_MIN_RPX, Math.min(CHIP_MAX_RPX, raw)));
+}
+function chipWidthRpxFromBar(bar) {
+    return estimateChipWidthRpx(bar.title, bar.chipTag);
+}
+/** 后端仍返回旧固定宽时，按宽度差回推 left，保持峰值年居中 */
+function adjustLeftForChipWidth(bar, chipW, sheetWidthRpx) {
+    const apiMatch = String(bar.chipWidth || '').match(/^(\d+)rpx$/);
+    const apiW = apiMatch ? parseInt(apiMatch[1], 10) : chipW;
+    const leftStr = bar.left || bar.unitLeft || '0%';
+    const leftPct = parseFloat(String(leftStr).replace('%', ''));
+    if (!Number.isFinite(leftPct) || apiW >= chipW)
+        return leftStr;
+    const shiftPct = ((chipW - apiW) / 2) / sheetWidthRpx * 100;
+    return `${Math.max(0, leftPct - shiftPct).toFixed(2)}%`;
+}
+function chipHeightRpx(bar) {
+    return bar.heightRpx || CHIP_HEIGHT_RPX;
+}
+function withBucketChipMeta(bar, laneLabel = '') {
+    if (bar.type !== 'overflow_bucket')
+        return bar;
+    if (bar.title === BUCKET_CHIP_TITLE && bar.chipTag)
+        return bar;
+    let count = 0;
+    const tagMatch = String(bar.chipTag || '').match(/^(\d+)位/);
+    if (tagMatch)
+        count = Number(tagMatch[1]);
+    if (!count)
+        count = parseBucketMemberCount(bar.title);
+    return {
+        ...bar,
+        title: BUCKET_CHIP_TITLE,
+        chipTag: buildOverlayCountTag(laneLabel, count),
+    };
+}
+function buildOverlayCountTag(label, count) {
+    const category = String(label || '史略').trim();
+    return `${Math.max(0, count)}位${category}`;
+}
+function hasLaneContent(lane) {
+    var _a;
+    return ((_a = lane.totalCount) !== null && _a !== void 0 ? _a : 0) > 0;
+}
+function composeCanvasLayout(swim, lanes) {
+    var _a, _b, _c, _d, _e;
+    const categoryBands = [];
+    const canvasLanes = [];
+    let cursor = BAND_PAD_RPX;
+    const sheetWidthRpx = swim.sheetWidthRpx || 1440;
+    const visibleLanes = lanes.filter(hasLaneContent);
+    for (const lane of visibleLanes) {
+        const rowCount = Math.max(1, lane.rowCount || ((_a = lane.collapsedRows) === null || _a === void 0 ? void 0 : _a.length) || 1);
+        const trackHeight = snapRpx(LANE_TRACK_PAD_VERTICAL_RPX + rowCount * CHIP_HEIGHT_RPX + (rowCount - 1) * ROW_GAP_RPX);
+        const bandHeight = Math.max(MIN_BAND_HEIGHT_RPX, trackHeight);
+        const canvasRows = [];
+        (lane.collapsedRows || []).forEach((row, rowIndex) => {
+            const topRpx = snapRpx(cursor + BAND_PAD_RPX + rowIndex * (CHIP_HEIGHT_RPX + ROW_GAP_RPX));
+            canvasRows.push(row.map((bar) => {
+                const enriched = withBucketChipMeta(bar, lane.label);
+                const chipW = chipWidthRpxFromBar(enriched);
+                const left = adjustLeftForChipWidth(enriched, chipW, sheetWidthRpx);
+                return {
+                    ...enriched,
+                    left,
+                    topRpx,
+                    heightRpx: chipHeightRpx(enriched),
+                    chipWidth: `${chipW}rpx`,
+                    width: `${(chipW / sheetWidthRpx * 100).toFixed(2)}%`,
+                };
+            }));
+        });
+        categoryBands.push({
+            key: lane.key,
+            label: lane.label,
+            borderColor: lane.borderColor,
+            topRpx: cursor,
+            heightRpx: bandHeight,
+            readProgressText: lane.readProgressText || `${(_b = lane.readCount) !== null && _b !== void 0 ? _b : 0}/${(_c = lane.totalCount) !== null && _c !== void 0 ? _c : 0}`,
+            totalCount: lane.totalCount,
+        });
+        canvasLanes.push({
+            ...lane,
+            bandTopRpx: cursor,
+            bandHeightRpx: bandHeight,
+            moreTopRpx: snapRpx(cursor + bandHeight / 2),
+            trackHeightRpx: bandHeight,
+            collapsedRows: canvasRows.length ? canvasRows : [[]],
+        });
+        cursor += bandHeight + BAND_GAP_RPX;
+    }
+    return {
+        ...swim,
+        lanes: canvasLanes,
+        categoryBands,
+        canvasHeightRpx: snapRpx(Math.max(MIN_BAND_HEIGHT_RPX + BAND_PAD_RPX * 2, cursor + BAND_PAD_RPX)),
+        canvasPadLeftRpx: (_d = swim.canvasPadLeftRpx) !== null && _d !== void 0 ? _d : CANVAS_PAD_LEFT_RPX,
+        canvasWidthRpx: (swim.sheetWidthRpx || 1440) + ((_e = swim.canvasPadLeftRpx) !== null && _e !== void 0 ? _e : CANVAS_PAD_LEFT_RPX),
+    };
+}
+function stripLegacyBarFields(bar) {
+    const { _leftPct, _rightPct, _priorityRank, _globalIdNumber, ...rest } = bar;
+    return rest;
+}
+function enrichApiLaneView(lane, view, swim, sheetWidthRpx) {
+    const extra = view.extraBars || [];
+    const hasBuckets = (view.collapsedRows || []).some((row) => row.some((bar) => bar.type === 'overflow_bucket'));
+    if (!extra.length || hasBuckets) {
+        return view;
+    }
+    const rows = (view.collapsedRows || [[]]).map((row) => row.map((bar) => prepareLegacyBar(bar, sheetWidthRpx)));
+    const extraPrepared = extra.map((bar) => prepareLegacyBar(bar, sheetWidthRpx));
+    const rowsWithBuckets = placeBucketChips(rows.length ? rows : [[]], extraPrepared, lane.key, lane.label, swim.startYear, swim.endYear, sheetWidthRpx, (year) => percentForYearOnSwim(swim, year));
+    const collapsedRows = rowsWithBuckets.map((row) => row.map(stripLegacyBarFields));
+    const bucketCount = collapsedRows.reduce((count, row) => count + row.filter((bar) => bar.type === 'overflow_bucket').length, 0);
+    const individualCount = collapsedRows.reduce((count, row) => count + row.filter((bar) => bar.type !== 'overflow_bucket').length, 0);
+    return {
+        ...view,
+        collapsedRows,
+        hasMore: false,
+        rowCount: Math.max(1, collapsedRows.length),
+        trackHeightRpx: laneTrackHeight(collapsedRows.length),
+        visibleCount: individualCount + bucketCount,
+    };
 }
 function applyPriorityView(swim, priority) {
     const sheetWidthRpx = swim.sheetWidthRpx || 1440;
-    return Object.assign(Object.assign({}, swim), { sheetWidthRpx, lanes: (swim.lanes || []).map((lane, laneIndex) => {
-            var _a;
-            const view = (_a = lane.priorityViews) === null || _a === void 0 ? void 0 : _a[priority];
-            const base = !view
-                ? normalizeLegacyLane(lane, sheetWidthRpx, priority)
-                : Object.assign(Object.assign({}, lane), { collapsedRows: view.collapsedRows || [[]], hasMore: view.hasMore, moreCount: view.moreCount, moreBarLeft: view.moreBarLeft, moreBarWidth: view.moreBarWidth, extraBars: view.extraBars || [], rowCount: view.rowCount, trackHeightRpx: view.trackHeightRpx, visibleCount: view.visibleCount });
-            return (0, swim_lane_palette_1.enrichSwimLaneVisuals)(base, laneIndex);
-        }) });
+    const lanes = (swim.lanes || []).map((lane) => {
+        var _a;
+        const view = (_a = lane.priorityViews) === null || _a === void 0 ? void 0 : _a[priority];
+        if (!view) {
+            return normalizeLegacyLane(lane, sheetWidthRpx, priority, swim);
+        }
+        const enriched = enrichApiLaneView(lane, view, swim, sheetWidthRpx);
+        return {
+            ...lane,
+            collapsedRows: enriched.collapsedRows || [[]],
+            hasMore: enriched.hasMore,
+            moreCount: enriched.moreCount,
+            moreBarLeft: enriched.moreBarLeft,
+            moreBarWidth: enriched.moreBarWidth,
+            extraBars: enriched.extraBars || [],
+            rowCount: enriched.rowCount,
+            trackHeightRpx: enriched.trackHeightRpx,
+            visibleCount: enriched.visibleCount,
+        };
+    });
+    return composeCanvasLayout({ ...swim, sheetWidthRpx }, lanes);
 }
 function estimateSheetWidth(swim) {
     const base = swim.sheetWidthRpx || 1440;
@@ -157,10 +492,10 @@ function estimateSheetWidth(swim) {
         return (lane.collapsedRows || []).reduce((count, row) => count + row.length, 0) + (lane.extraBars || []).length;
     }));
     const perRow = Math.max(1, Math.ceil(maxBars / MAX_LANE_ROWS));
-    const needed = EDGE_GAP_RPX + perRow * CHIP_WIDTH_RPX + Math.max(0, perRow - 1) * CHIP_GAP_RPX + MORE_GAP_RPX + MORE_WIDTH_RPX + EDGE_GAP_RPX;
+    const needed = EDGE_GAP_RPX + perRow * CHIP_MAX_RPX + Math.max(0, perRow - 1) * CHIP_GAP_RPX + MORE_GAP_RPX + MORE_WIDTH_RPX + EDGE_GAP_RPX;
     return Math.max(base, Math.min(base * 4, needed));
 }
-function normalizeLegacyLane(lane, sheetWidthRpx, priority) {
+function normalizeLegacyLane(lane, sheetWidthRpx, priority, swim) {
     const allBars = [...(lane.collapsedRows || []).flat(), ...(lane.extraBars || [])]
         .map((bar) => prepareLegacyBar(bar, sheetWidthRpx))
         .sort(compareLegacyBars);
@@ -169,17 +504,41 @@ function normalizeLegacyLane(lane, sheetWidthRpx, priority) {
     const hiddenByPriority = allBars.filter((bar) => priorityRank(bar.priority) > maxPriority);
     const packed = packLegacyBars(candidates, sheetWidthRpx);
     const extraBars = [...hiddenByPriority, ...packed.extra].sort(compareLegacyBars);
-    const hasMore = extraBars.length > 0;
-    return Object.assign(Object.assign({}, lane), { collapsedRows: packed.rows.length ? packed.rows : [[]], hasMore, moreCount: extraBars.length, moreBarLeft: `${moreLeftPct(sheetWidthRpx).toFixed(2)}%`, moreBarWidth: lane.moreBarWidth || '12%', extraBars, rowCount: Math.max(1, packed.rows.length), trackHeightRpx: laneTrackHeight(packed.rows.length), visibleCount: packed.rows.reduce((count, row) => count + row.length, 0) });
+    const rowsWithBuckets = placeBucketChips(packed.rows.length ? packed.rows : [[]], extraBars, lane.key, lane.label, swim.startYear, swim.endYear, sheetWidthRpx, (year) => percentForYearOnSwim(swim, year));
+    const bucketCount = rowsWithBuckets.reduce((count, row) => count + row.filter((bar) => bar.type === 'overflow_bucket').length, 0);
+    const individualCount = rowsWithBuckets.reduce((count, row) => count + row.filter((bar) => bar.type !== 'overflow_bucket').length, 0);
+    return {
+        ...lane,
+        collapsedRows: rowsWithBuckets.map((row) => row.map(stripLegacyBarFields)),
+        hasMore: false,
+        moreCount: extraBars.length,
+        moreBarLeft: `${moreLeftPct(sheetWidthRpx).toFixed(2)}%`,
+        moreBarWidth: lane.moreBarWidth || '12%',
+        extraBars,
+        rowCount: Math.max(1, rowsWithBuckets.length),
+        trackHeightRpx: laneTrackHeight(rowsWithBuckets.length),
+        visibleCount: individualCount + bucketCount,
+    };
 }
 function prepareLegacyBar(bar, sheetWidthRpx) {
     const rawLeft = parseFloat(String(bar.left || bar.unitLeft || '0').replace('%', ''));
     const edgePct = 20 / sheetWidthRpx * 100;
-    const reservedRightRpx = EDGE_GAP_RPX + MORE_GAP_RPX + MORE_WIDTH_RPX;
-    const chipPct = CHIP_WIDTH_RPX / sheetWidthRpx * 100;
-    const maxLeft = 100 - (CHIP_WIDTH_RPX + reservedRightRpx) / sheetWidthRpx * 100;
+    const chipW = chipWidthRpxFromBar(bar);
+    const chipPct = chipW / sheetWidthRpx * 100;
+    const maxLeft = 100 - (chipW + EDGE_GAP_RPX) / sheetWidthRpx * 100;
     const left = Math.max(edgePct, Math.min(maxLeft, Number.isFinite(rawLeft) ? rawLeft : 0));
-    return Object.assign(Object.assign({}, bar), { left: `${left.toFixed(2)}%`, width: `${chipPct.toFixed(2)}%`, _leftPct: left, _rightPct: left + chipPct, _priorityRank: priorityRank(bar.priority), _globalIdNumber: parseGlobalIdNumber(bar.boxId) });
+    const normalized = {
+        ...bar,
+        left: `${left.toFixed(2)}%`,
+        width: `${chipPct.toFixed(2)}%`,
+        chipWidth: bar.chipWidth || `${chipW}rpx`,
+        heightRpx: chipHeightRpx(bar),
+        _leftPct: left,
+        _rightPct: left + chipPct,
+        _priorityRank: priorityRank(bar.priority),
+        _globalIdNumber: parseGlobalIdNumber(bar.boxId),
+    };
+    return normalized;
 }
 function packLegacyBars(bars, sheetWidthRpx) {
     const rows = [];
@@ -232,7 +591,42 @@ function parseGlobalIdNumber(boxId) {
 function moreLeftPct(sheetWidthRpx) {
     return 100 - ((EDGE_GAP_RPX + MORE_WIDTH_RPX) / sheetWidthRpx * 100);
 }
-
+function rpxToPx(rpx, windowWidth) {
+    return Math.round(rpx * (windowWidth / 750));
+}
+function computeChipTooltipSafeTop(axisPinned, scrollViewTopPx, windowWidth) {
+    const axisHeightPx = axisPinned ? rpxToPx(86, windowWidth) + 8 : 0;
+    return scrollViewTopPx + axisHeightPx + 8;
+}
+function computeChipTooltipSafeBottom(windowHeight, windowWidth, safeAreaBottom = 0) {
+    return windowHeight - rpxToPx(120, windowWidth) - safeAreaBottom;
+}
+function computeChipTooltipPlacement(rect, opts) {
+    const gap = 8;
+    const minTooltipH = 96;
+    const centerX = rect.left + rect.width / 2;
+    const left = Math.max(140, Math.min(opts.windowWidth - 140, centerX));
+    const spaceAbove = rect.top - opts.safeTop;
+    const spaceBelow = opts.safeBottom - rect.bottom;
+    const showAbove = spaceAbove >= minTooltipH && spaceAbove >= spaceBelow;
+    if (showAbove) {
+        return {
+            left,
+            top: rect.top - gap,
+            transform: 'translate(-50%, -100%)',
+            origin: '50% 100%',
+        };
+    }
+    return {
+        left,
+        top: rect.bottom + gap,
+        transform: 'translate(-50%, 0)',
+        origin: '50% 0%',
+    };
+}
+function chipTooltipTransformWithScale(baseTransform, scale) {
+    return `${baseTransform} scale(${scale.toFixed(2)})`;
+}
 function previewIntro(intro) {
     const paragraphs = splitIntroParagraphs(intro);
     if (paragraphs.length <= 1) {
@@ -242,8 +636,7 @@ function previewIntro(intro) {
 }
 Page({
     swimScrollLeft: 0,
-    _echoMatrix: false,
-    _echoAxis: false,
+    chipTooltipExitTimer: null,
     data: {
         unit: null,
         dynastyTitle: '',
@@ -264,22 +657,35 @@ Page({
         favToggling: false,
         headerPadPx: 88,
         scrollTop: 140,
-        matrixScrollLeft: 0,
-        axisScrollLeft: 0,
+        panelScrollLeft: 0,
+        axisMirrorLeft: 0,
         axisPinned: false,
         overlayVisible: false,
-        overlayLabel: '',
+        overlayCountTag: '',
         overlayBars: [],
+        overlayLaneKey: '',
         loadError: '',
         priorityOptions: PRIORITY_OPTIONS,
         activePriority: 'p3',
         chipTooltipVisible: false,
+        chipTooltipPhase: 'enter',
+        chipTooltipHeldId: '',
         chipTooltipTitle: '',
         chipTooltipRange: '',
+        chipTooltipTag: '',
         chipTooltipPeakYear: '',
         chipTooltipPeakReason: '',
+        chipTooltipPriority: '',
+        chipTooltipPriorityReason: '',
+        chipTooltipEntrySource: '',
+        chipTooltipLaneKey: '',
+        chipTooltipStartYear: '',
+        chipTooltipEndYear: '',
         chipTooltipLeftPx: 0,
         chipTooltipTopPx: 0,
+        chipTooltipBaseTransform: 'translate(-50%, -100%)',
+        chipTooltipOrigin: '50% 100%',
+        chipTooltipTransform: 'translate(-50%, -100%) scale(0.88)',
     },
     onShow() {
         void this.refreshFavState();
@@ -293,7 +699,7 @@ Page({
     },
     async onLoad(query) {
         const unitId = query.unitId || query.id;
-        const dynastyHint = decodeURIComponent(query.dynasty || query.displayName || '');
+        const dynastyHint = (0, query_value_1.decodeQueryValue)(query.dynasty || query.displayName || '');
         if (!unitId && !dynastyHint)
             return;
         const sys = wx.getSystemInfoSync();
@@ -302,11 +708,21 @@ Page({
         const tabBarH = Math.round(72 * (sys.windowWidth / 750));
         const scrollTop = headerPadPx + tabBarH;
         const anchorYear = query.anchorYear ? parseInt(query.anchorYear, 10) : NaN;
+        const provisionalNavTitle = dynastyHint
+            ? (dynastyHint.length <= 4 ? dynastyHint : dynastyHint.slice(0, 4))
+            : '';
+        this.setData({
+            headerPadPx,
+            scrollTop,
+            navTitle: provisionalNavTitle,
+            dynastyTitle: dynastyHint,
+        });
         const applyPageData = (hero, swim) => {
+            var _a;
             const unit = hero.unit;
             const dynastyTitle = (unit.dynastyName && unit.dynastyName.trim()) || unit.name;
             const navTitle = dynastyTitle.length <= 4 ? dynastyTitle : dynastyTitle.slice(0, 4);
-            const heroSubLine = `${formatHistoryYear(unit.startYear)}–${formatHistoryYear(unit.endYear)}`;
+            const heroSubLine = `${(0, year_format_1.formatHistoryYear)(unit.startYear)}–${(0, year_format_1.formatHistoryYear)(unit.endYear)}`;
             const activePriority = this.data.activePriority || 'p3';
             const prioritySwim = applyPriorityView(swim, activePriority);
             const matrixBoxIds = collectMatrixBoxIds(prioritySwim);
@@ -319,7 +735,7 @@ Page({
                 swim: prioritySwim,
                 concurrentItems: prioritySwim.concurrentItems || [],
                 relatedUnits: hero.relatedUnits || [],
-                nextUnit: hero.nextUnit ?? null,
+                nextUnit: (_a = hero.nextUnit) !== null && _a !== void 0 ? _a : null,
                 matrixBoxIds,
                 headerPadPx,
                 scrollTop,
@@ -341,8 +757,10 @@ Page({
                     (0, api_1.request)(`/units/${enc}`),
                     (0, api_1.request)(`/units/${enc}/swim-matrix`),
                 ]);
-                const enhancedSwim = Object.assign({}, swimRes.data, { gridLines: swimRes.data.gridLines || [] });
-        applyPageData(heroRes.data, enhancedSwim);
+                applyPageData(heroRes.data, {
+                    ...swimRes.data,
+                    gridLines: swimRes.data.gridLines || [],
+                });
                 return;
             }
             catch (e) {
@@ -351,7 +769,11 @@ Page({
                     const fallback = tryLoadLocalMock(dynastyHint, unitId);
                     if (fallback) {
                         console.warn('[dynasty-detail] using local mock for', dynastyHint);
-                        const enhancedSwim = Object.assign({}, fallback.swim, generateTimelineTicks(fallback.swim.startYear, fallback.swim.endYear, fallback.swim.sheetWidthRpx), { timeScaleMode: 'linear' });
+                        const enhancedSwim = {
+                            ...fallback.swim,
+                            ...generateTimelineTicks(fallback.swim.startYear, fallback.swim.endYear, fallback.swim.sheetWidthRpx),
+                            timeScaleMode: 'linear',
+                        };
                         applyPageData(fallback.hero, enhancedSwim);
                         warnIfDegradedMock(enhancedSwim);
                         return;
@@ -371,7 +793,11 @@ Page({
             const fallback = tryLoadLocalMock(dynastyHint, '');
             if (fallback) {
                 console.warn('[dynasty-detail] using local mock for', dynastyHint);
-                const enhancedSwim = Object.assign({}, fallback.swim, generateTimelineTicks(fallback.swim.startYear, fallback.swim.endYear, fallback.swim.sheetWidthRpx), { timeScaleMode: 'linear' });
+                const enhancedSwim = {
+                    ...fallback.swim,
+                    ...generateTimelineTicks(fallback.swim.startYear, fallback.swim.endYear, fallback.swim.sheetWidthRpx),
+                    timeScaleMode: 'linear',
+                };
                 applyPageData(fallback.hero, enhancedSwim);
                 warnIfDegradedMock(enhancedSwim);
                 return;
@@ -380,40 +806,31 @@ Page({
         this.setData({ loadError: '缺少朝代 ID，无法加载' });
     },
     scrollToAnchorYear(anchorYear, swim) {
-        const sheetPx = (swim.sheetWidthRpx || 1440) * (wx.getSystemInfoSync().windowWidth / 750);
-        const targetPx = (percentForYearOnSwim(swim, anchorYear) / 100) * sheetPx;
+        const rpxRatio = wx.getSystemInfoSync().windowWidth / 750;
+        const padLeftPx = (swim.canvasPadLeftRpx || CANVAS_PAD_LEFT_RPX) * rpxRatio;
+        const sheetPx = (swim.sheetWidthRpx || 1440) * rpxRatio;
+        const targetPx = padLeftPx + (percentForYearOnSwim(swim, anchorYear) / 100) * sheetPx;
         const bias = wx.getSystemInfoSync().windowWidth * 0.32;
-        const left = Math.max(0, targetPx - bias);
+        const left = Math.max(0, Math.round(targetPx - bias));
         this.swimScrollLeft = left;
-        this.setData({ matrixScrollLeft: left, axisScrollLeft: left });
+        this.setData({ panelScrollLeft: left, axisMirrorLeft: left });
     },
-    onMatrixHScroll(e) {
-        const left = e.detail.scrollLeft;
+    onPanelHScroll(e) {
+        const left = roundScrollLeft(e.scrollLeft);
         this.swimScrollLeft = left;
-        if (this._echoMatrix) {
-            this._echoMatrix = false;
-            return;
-        }
-        if (this.data.axisPinned) {
-            this._echoAxis = true;
-            this.setData({ axisScrollLeft: left });
-        }
-    },
-    onAxisHScroll(e) {
-        const left = e.detail.scrollLeft;
-        this.swimScrollLeft = left;
-        if (this._echoAxis) {
-            this._echoAxis = false;
-            return;
-        }
-        this._echoMatrix = true;
-        this.setData({ matrixScrollLeft: left });
     },
     onDynastyScroll(e) {
         const top = e.detail.scrollTop;
-        const pinned = top > 120;
+        let pinned = this.data.axisPinned;
+        if (!pinned && top > AXIS_PIN_AT)
+            pinned = true;
+        else if (pinned && top < AXIS_UNPIN_AT)
+            pinned = false;
         if (pinned !== this.data.axisPinned) {
-            this.setData({ axisPinned: pinned });
+            this.setData({
+                axisPinned: pinned,
+                axisMirrorLeft: this.swimScrollLeft,
+            });
         }
         if (this.data.chipTooltipVisible) {
             this.hideChipTooltip();
@@ -428,28 +845,118 @@ Page({
         const boxId = ds.box;
         if (!boxId)
             return;
-        (0, router_1.navigateTo)(router_1.ROUTES.boxDetail, { boxId, title: ds.title || '' });
+        if (ds.type === 'overflow_bucket') {
+            this.showBucketOverlay(ds);
+            return;
+        }
+        const title = (0, query_value_1.decodeQueryValue)(ds.title);
+        void (0, api_1.request)(`/boxes/${(0, encode_path_segment_1.encodePathSegment)(boxId)}`).catch(() => { });
+        (0, router_1.navigateTo)(router_1.ROUTES.boxDetail, { boxId, title });
+    },
+    showBucketOverlay(ds) {
+        const laneIdx = Number(ds.lane);
+        const bucketStart = Number(ds.startYear);
+        const bucketEnd = Number(ds.endYear);
+        const label = String(ds.label || '');
+        const swim = this.data.swim;
+        if (!swim || Number.isNaN(laneIdx))
+            return;
+        const lane = swim.lanes[laneIdx];
+        if (!lane)
+            return;
+        let bars = lane.extraBars || [];
+        if (Number.isFinite(bucketStart) && Number.isFinite(bucketEnd)) {
+            bars = bars.filter((bar) => {
+                var _a, _b;
+                const y = (_b = (_a = bar.peakYear) !== null && _a !== void 0 ? _a : bar.startYear) !== null && _b !== void 0 ? _b : 0;
+                return y >= bucketStart && y < bucketEnd;
+            });
+        }
+        this.openOverlaySheet(lane, bars, label);
+    },
+    openOverlaySheet(lane, bars, label = '') {
+        this.setData({
+            overlayVisible: true,
+            overlayCountTag: buildOverlayCountTag(label || lane.label, bars.length),
+            overlayBars: bars,
+            overlayLaneKey: lane.key,
+        });
     },
     onBarLongPress(e) {
-        var _a, _b;
+        var _a;
         const ds = e.currentTarget.dataset || {};
         const boxId = ds.box;
+        if (!boxId)
+            return;
         const bar = findSwimBar(this.data.swim, boxId);
-        const touch = ((_a = e.touches) === null || _a === void 0 ? void 0 : _a[0]) || ((_b = e.changedTouches) === null || _b === void 0 ? void 0 : _b[0]);
-        const sys = wx.getSystemInfoSync();
-        const left = (touch === null || touch === void 0 ? void 0 : touch.clientX) == null ? Math.round(sys.windowWidth / 2) : Math.max(140, Math.min(sys.windowWidth - 140, touch.clientX));
-        const top = (touch === null || touch === void 0 ? void 0 : touch.clientY) == null ? Math.round(sys.windowHeight * 0.45) : Math.max(120, Math.min(sys.windowHeight - 160, touch.clientY - 96));
         const peakYearNum = bar === null || bar === void 0 ? void 0 : bar.peakYear;
         const peakReason = String((bar === null || bar === void 0 ? void 0 : bar.peakReason) || '').trim();
-        this.setData({
-            chipTooltipVisible: true,
-            chipTooltipTitle: (bar === null || bar === void 0 ? void 0 : bar.title) || ds.title || '',
-            chipTooltipRange: (bar === null || bar === void 0 ? void 0 : bar.timeRange) || ds.range || '',
-            chipTooltipPeakYear: peakYearNum == null ? '' : formatHistoryYear(peakYearNum),
-            chipTooltipPeakReason: peakReason,
-            chipTooltipLeftPx: left,
-            chipTooltipTopPx: top,
-        });
+        const priorityReason = String((bar === null || bar === void 0 ? void 0 : bar.priorityReason) || '').trim();
+        const chipTag = String((bar === null || bar === void 0 ? void 0 : bar.chipTag) || '').trim();
+        const laneKey = String(ds.laneKey || '').trim();
+        const { start: startYearLabel, end: endYearLabel } = splitTimeRangeLabels(bar, (bar === null || bar === void 0 ? void 0 : bar.timeRange) || ds.range || '');
+        const sys = wx.getSystemInfoSync();
+        const safeTop = computeChipTooltipSafeTop(this.data.axisPinned, this.data.scrollTop, sys.windowWidth);
+        const safeBottom = computeChipTooltipSafeBottom(sys.windowHeight, sys.windowWidth, ((_a = sys.safeAreaInsets) === null || _a === void 0 ? void 0 : _a.bottom) || 0);
+        const showTooltip = (rect) => {
+            var _a, _b, _c;
+            let placement;
+            if (rect && rect.width > 0 && rect.height > 0) {
+                placement = computeChipTooltipPlacement(rect, {
+                    safeTop,
+                    safeBottom,
+                    windowWidth: sys.windowWidth,
+                });
+            }
+            else {
+                const touch = ((_a = e.touches) === null || _a === void 0 ? void 0 : _a[0]) || ((_b = e.changedTouches) === null || _b === void 0 ? void 0 : _b[0]);
+                const anchorY = (_c = touch === null || touch === void 0 ? void 0 : touch.clientY) !== null && _c !== void 0 ? _c : Math.round(sys.windowHeight * 0.45);
+                const left = (touch === null || touch === void 0 ? void 0 : touch.clientX) == null
+                    ? Math.round(sys.windowWidth / 2)
+                    : Math.max(140, Math.min(sys.windowWidth - 140, touch.clientX));
+                const showAbove = anchorY - safeTop >= 120;
+                placement = showAbove
+                    ? { left, top: anchorY - 8, transform: 'translate(-50%, -100%)', origin: '50% 100%' }
+                    : { left, top: anchorY + 8, transform: 'translate(-50%, 0)', origin: '50% 0%' };
+            }
+            if (this.chipTooltipExitTimer) {
+                clearTimeout(this.chipTooltipExitTimer);
+                this.chipTooltipExitTimer = null;
+            }
+            this.setData({
+                chipTooltipHeldId: boxId,
+                chipTooltipVisible: true,
+                chipTooltipPhase: 'enter',
+                chipTooltipTitle: (bar === null || bar === void 0 ? void 0 : bar.title) || ds.title || '',
+                chipTooltipStartYear: startYearLabel,
+                chipTooltipEndYear: endYearLabel,
+                chipTooltipTag: chipTag,
+                chipTooltipLaneKey: laneKey,
+                chipTooltipPeakYear: peakYearNum == null ? '' : (0, year_format_1.formatHistoryYear)(peakYearNum),
+                chipTooltipPeakReason: peakReason,
+                chipTooltipPriority: formatPriorityLabel((bar === null || bar === void 0 ? void 0 : bar.priority) || ''),
+                chipTooltipPriorityReason: priorityReason,
+                chipTooltipEntrySource: (0, entry_source_label_1.formatEntrySourceLabel)((bar === null || bar === void 0 ? void 0 : bar.entrySource) || ''),
+                chipTooltipLeftPx: placement.left,
+                chipTooltipTopPx: placement.top,
+                chipTooltipBaseTransform: placement.transform,
+                chipTooltipOrigin: placement.origin,
+                chipTooltipTransform: chipTooltipTransformWithScale(placement.transform, 0.88),
+            });
+            setTimeout(() => {
+                if (!this.data.chipTooltipVisible || this.data.chipTooltipHeldId !== boxId)
+                    return;
+                this.setData({
+                    chipTooltipPhase: 'idle',
+                    chipTooltipTransform: chipTooltipTransformWithScale(placement.transform, 1),
+                });
+            }, 20);
+        };
+        wx.createSelectorQuery()
+            .in(this)
+            .select(`#chip-${boxId}`)
+            .boundingClientRect((rect) => showTooltip(rect))
+            .exec();
     },
     showMoreOverlay(e) {
         const label = e.currentTarget.dataset.label;
@@ -461,7 +968,7 @@ Page({
         if (!lane)
             return;
         const bars = lane.extraBars || [];
-        this.setData({ overlayVisible: true, overlayLabel: label, overlayBars: bars });
+        this.openOverlaySheet(lane, bars, label);
     },
     onPriorityTap(e) {
         const priority = e.currentTarget.dataset.priority;
@@ -474,14 +981,47 @@ Page({
             activePriority: priority,
             swim: applyPriorityView(swim, priority),
             overlayVisible: false,
-            chipTooltipVisible: false,
         });
+        this.hideChipTooltip();
     },
     hideOverlay() {
         this.setData({ overlayVisible: false });
     },
     hideChipTooltip() {
-        this.setData({ chipTooltipVisible: false });
+        if (!this.data.chipTooltipVisible)
+            return;
+        if (this.data.chipTooltipPhase === 'exit')
+            return;
+        const baseTransform = this.data.chipTooltipBaseTransform || 'translate(-50%, -100%)';
+        this.setData({
+            chipTooltipPhase: 'exit',
+            chipTooltipTransform: chipTooltipTransformWithScale(baseTransform, 0.88),
+        });
+        if (this.chipTooltipExitTimer)
+            clearTimeout(this.chipTooltipExitTimer);
+        this.chipTooltipExitTimer = setTimeout(() => {
+            this.chipTooltipExitTimer = null;
+            if (this.data.chipTooltipPhase !== 'exit')
+                return;
+            this.setData({
+                chipTooltipVisible: false,
+                chipTooltipHeldId: '',
+                chipTooltipPhase: 'enter',
+            });
+        }, 190);
+    },
+    onChipTooltipTransitionEnd() {
+        if (this.data.chipTooltipPhase !== 'exit')
+            return;
+        if (this.chipTooltipExitTimer) {
+            clearTimeout(this.chipTooltipExitTimer);
+            this.chipTooltipExitTimer = null;
+        }
+        this.setData({
+            chipTooltipVisible: false,
+            chipTooltipHeldId: '',
+            chipTooltipPhase: 'enter',
+        });
     },
     goUnit(e) {
         const id = e.currentTarget.dataset.id;

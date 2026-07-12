@@ -1,5 +1,6 @@
 {
   "navigationStyle": "custom",
+  "navigationBarTitleText": "朝代详情",
   "usingComponents": {
     "proto-nav": "/components/proto-nav/proto-nav"
   }
