@@ -96,4 +96,153 @@ class SwimTimeScaleTest {
     int step = (int) Math.round((double) span / Math.max(1, visibleLabels));
     assertTrue(step >= 20, "五帝跨度刻度步长应>=20年，实际约" + step);
   }
+
+  @Test
+  void sparseGapsAreCompactedEvenWhenThereAreFewerThanEightAnchors() {
+    java.util.List<Integer> anchors = java.util.List.of(-2698, -2540, -2360, -2200, -2070);
+    SwimTimeScale.Plan initial = SwimTimeScale.plan(-2698, -2070, anchors, 5);
+    SwimTimeScale.Plan fitted = initial.scale().fitToViewport(
+        anchors,
+        4200,
+        initial.timeScaleMode()
+    );
+
+    assertEquals("segmented", fitted.timeScaleMode());
+    assertGapsAtMost(fitted, anchors, SwimTimeScale.MAX_EMPTY_GAP_RPX);
+    assertTrue(fitted.sheetWidthRpx() < 4200);
+  }
+
+  @Test
+  void prefixAndSuffixUseStricterCapThanTheMiddleDesert() {
+    java.util.List<Integer> anchors = java.util.List.of(-900, -890, -500, -490);
+    SwimTimeScale.Plan initial = SwimTimeScale.plan(-1200, -200, anchors, 4);
+    SwimTimeScale.Plan fitted = initial.scale().fitToViewport(
+        anchors,
+        5000,
+        initial.timeScaleMode()
+    );
+
+    java.util.List<Integer> boundaries = new java.util.ArrayList<>();
+    boundaries.add(-1200);
+    boundaries.addAll(anchors);
+    boundaries.add(-200);
+    assertGapsAtMost(fitted, boundaries, SwimTimeScale.MAX_EMPTY_GAP_RPX);
+    assertTrue(
+        pixelGap(fitted.scale(), -1200, anchors.get(0), fitted.sheetWidthRpx())
+            <= SwimTimeScale.MAX_EDGE_EMPTY_GAP_RPX + 1.0
+    );
+    assertTrue(
+        pixelGap(fitted.scale(), anchors.get(anchors.size() - 1), -200, fitted.sheetWidthRpx())
+            <= SwimTimeScale.MAX_EDGE_EMPTY_GAP_RPX + 1.0
+    );
+  }
+
+  @Test
+  void fittingSparseEdgesDoesNotCompressAlreadyComfortableDenseIntervals() {
+    java.util.List<Integer> anchors = new java.util.ArrayList<>();
+    for (int year = -200; year <= 0; year += 5) {
+      anchors.add(year);
+    }
+    SwimTimeScale.Plan initial = SwimTimeScale.plan(-220, 20, anchors, 8);
+    int requestedWidth = 3600;
+    double before = pixelGap(initial.scale(), -100, -95, requestedWidth);
+
+    SwimTimeScale.Plan fitted = initial.scale().fitToViewport(
+        anchors,
+        requestedWidth,
+        initial.timeScaleMode()
+    );
+    double after = pixelGap(fitted.scale(), -100, -95, fitted.sheetWidthRpx());
+
+    assertTrue(fitted.sheetWidthRpx() < requestedWidth);
+    assertEquals(before, after, 0.1);
+  }
+
+  @Test
+  void compactingDesertsPreservesDenseClusterSpacingInTheSameTimeline() {
+    java.util.List<Integer> anchors = new java.util.ArrayList<>(
+        java.util.List.of(-1100, -1095, -500)
+    );
+    for (int year = -495; year <= -450; year += 5) {
+      anchors.add(year);
+    }
+    anchors.add(-100);
+    SwimTimeScale.Plan initial = SwimTimeScale.plan(-1200, 0, anchors, 8);
+    int requestedWidth = 5000;
+    double denseGapBefore = pixelGap(initial.scale(), -490, -485, requestedWidth);
+
+    SwimTimeScale.Plan fitted = initial.scale().fitToViewport(
+        anchors,
+        requestedWidth,
+        initial.timeScaleMode()
+    );
+    double denseGapAfter = pixelGap(fitted.scale(), -490, -485, fitted.sheetWidthRpx());
+
+    assertTrue(fitted.sheetWidthRpx() < requestedWidth);
+    assertEquals(denseGapBefore, denseGapAfter, 0.05);
+    java.util.List<Integer> boundaries = new java.util.ArrayList<>();
+    boundaries.add(-1200);
+    boundaries.addAll(anchors);
+    boundaries.add(0);
+    assertGapsAtMost(fitted, boundaries, SwimTimeScale.MAX_EMPTY_GAP_RPX);
+  }
+
+  @Test
+  void emptyTimelineDoesNotCreateAHorizontallyScrollableBlankCanvas() {
+    SwimTimeScale.Plan initial = SwimTimeScale.plan(-1000, -500, java.util.List.of(), 0);
+    SwimTimeScale.Plan fitted = initial.scale().fitToViewport(
+        java.util.List.of(),
+        4200,
+        initial.timeScaleMode()
+    );
+
+    assertEquals(SwimTimeScale.VIEWPORT_RPX, fitted.sheetWidthRpx());
+    assertEquals("linear", fitted.timeScaleMode());
+  }
+
+  @Test
+  void singleEdgeAnchorUsesOneViewportInsteadOfScalingItsOnlyDesert() {
+    java.util.List<Integer> anchors = java.util.List.of(-1000);
+    SwimTimeScale.Plan initial = SwimTimeScale.plan(-1000, -500, anchors, 1);
+    SwimTimeScale.Plan fitted = initial.scale().fitToViewport(
+        anchors,
+        900,
+        initial.timeScaleMode()
+    );
+
+    assertEquals(SwimTimeScale.VIEWPORT_RPX, fitted.sheetWidthRpx());
+    assertEquals(0.0, fitted.scale().percentForYear(-1000), 0.01);
+  }
+
+  @Test
+  void singleEndAnchorAlsoUsesOneViewport() {
+    java.util.List<Integer> anchors = java.util.List.of(-500);
+    SwimTimeScale.Plan initial = SwimTimeScale.plan(-1000, -500, anchors, 1);
+    SwimTimeScale.Plan fitted = initial.scale().fitToViewport(
+        anchors,
+        900,
+        initial.timeScaleMode()
+    );
+
+    assertEquals(SwimTimeScale.VIEWPORT_RPX, fitted.sheetWidthRpx());
+    assertEquals(100.0, fitted.scale().percentForYear(-500), 0.01);
+  }
+
+  private static void assertGapsAtMost(
+      SwimTimeScale.Plan plan,
+      java.util.List<Integer> years,
+      int maximumRpx
+  ) {
+    for (int i = 0; i < years.size() - 1; i++) {
+      double gap = pixelGap(plan.scale(), years.get(i), years.get(i + 1), plan.sheetWidthRpx());
+      assertTrue(
+          gap <= maximumRpx + 1.0,
+          years.get(i) + " 到 " + years.get(i + 1) + " 的空档过宽: " + gap + "rpx"
+      );
+    }
+  }
+
+  private static double pixelGap(SwimTimeScale scale, int fromYear, int toYear, int sheetWidthRpx) {
+    return (scale.percentForYear(toYear) - scale.percentForYear(fromYear)) * sheetWidthRpx / 100.0;
+  }
 }

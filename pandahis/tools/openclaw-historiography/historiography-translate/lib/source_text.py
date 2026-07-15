@@ -6,32 +6,12 @@ import json
 from typing import Any, Dict, List
 
 
-def _block_payload(block: Dict[str, Any], *, default_role: str = "母本") -> Dict[str, Any]:
-    paras = block.get("paragraphs") or []
-    joined = block.get("text") or "\n".join(
-        str(p.get("text") or "") for p in paras
-    )
-    return {
-        "role": block.get("role") or default_role,
-        "work": block.get("work") or "",
-        "vol": block.get("vol") or "",
-        "volume": block.get("volume") or "",
-        "source_file": block.get("source_file") or "",
-        "paragraph_from": block.get("paragraph_from"),
-        "paragraph_to": block.get("paragraph_to"),
-        "paragraphs": [
-            {"id": p.get("id"), "text": p.get("text") or ""}
-            for p in paras
-        ],
-        "text": joined,
-    }
-
-
-def build_source_original(recalled: Dict[str, Any]) -> Dict[str, Any]:
+def build_source_original(recalled: Dict[str, Any]) -> str:
     """
-    构建「史料原文」：仅段落索引召回的母本与索引补充，不含 LLM 外部补全。
+    构建「史料原文」：仅段落索引召回的母本与索引补充原文全文拼接，不含 LLM 外部补全。
+    返回纯文本字符串。
     """
-    blocks_out: List[Dict[str, Any]] = []
+    texts: List[str] = []
     raw_blocks = recalled.get("blocks")
 
     if raw_blocks:
@@ -39,41 +19,27 @@ def build_source_original(recalled: Dict[str, Any]) -> Dict[str, Any]:
             role = str(block.get("role") or "母本")
             if role not in ("母本", "补充"):
                 continue
-            blocks_out.append(_block_payload(block))
+            block_text = block.get("text") or ""
+            if not block_text:
+                paras = block.get("paragraphs") or []
+                block_text = "\n".join(str(p.get("text") or "") for p in paras)
+            if block_text.strip():
+                texts.append(block_text)
     else:
         paras = recalled.get("paragraphs") or []
         if paras:
-            blocks_out.append(
-                {
-                    "role": "母本",
-                    "work": recalled.get("work") or "",
-                    "vol": recalled.get("vol") or "",
-                    "volume": recalled.get("volume") or "",
-                    "source_file": recalled.get("source_file") or "",
-                    "paragraph_from": recalled.get("paragraph_from"),
-                    "paragraph_to": recalled.get("paragraph_to"),
-                    "paragraphs": [
-                        {"id": p.get("id"), "text": p.get("text") or ""}
-                        for p in paras
-                    ],
-                    "text": recalled.get("text")
-                    or "\n".join(str(p.get("text") or "") for p in paras),
-                }
+            full = recalled.get("text") or "\n".join(
+                str(p.get("text") or "") for p in paras
             )
+            if full.strip():
+                texts.append(full)
 
-    full_text = "\n".join(
-        b.get("text") or "" for b in blocks_out if (b.get("text") or "").strip()
-    )
-    return {
-        "说明": "段落索引召回原文；不含模型外部补全",
-        "blocks": blocks_out,
-        "text": full_text,
-    }
+    return "\n".join(texts)
 
 
-def source_original_fingerprint(source_original: Dict[str, Any]) -> str:
+def source_original_fingerprint(text: str) -> str:
     """用于 verify：对比召回与产出中的史料原文是否一致。"""
-    return json.dumps(source_original, ensure_ascii=False, sort_keys=True)
+    return text
 
 
 def attach_source_original(output_file, recalled: Dict[str, Any]) -> None:

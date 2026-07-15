@@ -67,6 +67,16 @@ def _ensure_output_dir() -> Path:
     return out
 
 
+def _dynasty_detail_aggregate_path() -> Path | None:
+    """查找朝代知识详情汇总 JSON（与 translate 共用 historical_box_detail 表）。"""
+    from pathlib import Path
+
+    # 从 translate_output 反推数据根目录
+    out = paths()["translate_output"]  # e.g. data/04史料翻译
+    candidate = Path(out.parent, "06朝代知识补全", "详情", "朝代知识详情_汇总.json")
+    return candidate if candidate.is_file() else None
+
+
 def _ensure_work_dir() -> Path:
     work = paths()["translate_work"]
     work.mkdir(parents=True, exist_ok=True)
@@ -347,7 +357,9 @@ def _run_phase1_mother_single(
     verify_plan_data = {"母本逐句清单": plan_data.get("母本逐句清单") or []}
     m_errs: List[str] = []
     mother_detail = ""
-    for attempt in range(_phase1_max_retries() + 1):
+    checklist = plan_data.get("母本逐句清单") or []
+    max_retries = 2 if len(checklist) > 40 else _phase1_max_retries()  # D: 长条目最多重试2次
+    for attempt in range(max_retries + 1):
         retry_note = ""
         if attempt > 0 and m_errs:
             miss_lines = collect_must_phrase_misses(
@@ -380,7 +392,7 @@ def _run_phase1_mother_single(
         )
         title = batch_label or f"Phase1 母本顺译 {entry_id} → {mother_file.name}"
         print(
-            title + (f"（重试 {attempt}/{_phase1_max_retries()}）" if attempt else ""),
+            title + (f"（重试 {attempt}/{max_retries}）" if attempt else ""),
             flush=True,
         )
         _llm_turn(
@@ -1026,14 +1038,21 @@ def sync_cmd(
     index_path: Path | None = None,
 ) -> int:
     """同步单条产出或汇总 JSON 到线上 historical_box_detail。"""
-    from lib.remote_sync import sync_all_from_aggregate, sync_output_entry
+    from lib.remote_sync import sync_all_box_details, sync_all_from_aggregate, sync_output_entry
     from lib.aggregate import aggregate_path
 
     out_dir = _ensure_output_dir()
 
     if all_from_aggregate:
         agg = aggregate_path(out_dir)
-        ok, msg = sync_all_from_aggregate(agg, dry_run=dry_run, prune_orphans=True)
+        # 同时带上朝代知识补全汇总，避免 prune 误删
+        dk_agg = _dynasty_detail_aggregate_path()
+        ok, msg = sync_all_box_details(
+            translate_json=agg,
+            dynasty_detail_json=dk_agg,
+            dry_run=dry_run,
+            prune_orphans=True,
+        )
         if ok:
             print(f"☁️ {msg}")
             return 0

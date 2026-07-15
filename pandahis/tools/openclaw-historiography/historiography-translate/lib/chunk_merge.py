@@ -133,7 +133,7 @@ def write_final_output(
     detail: str,
     output_file: Path,
     *,
-    source_original: Dict[str, Any] | None = None,
+    source_original: str | None = None,
 ) -> None:
     payload: Dict[str, Any] = {"史略ID": entry_id, "翻译详情": detail}
     if source_original is not None:

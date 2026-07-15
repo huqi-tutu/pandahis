@@ -12,6 +12,12 @@ import { decodeQueryValue } from '../../native-utils/query-value'
 import { formatHistoryYear } from '../../native-utils/year-format'
 import { formatEntrySourceLabel } from '../../native-utils/entry-source-label'
 import { promptContentShareUnavailable } from '../../native-utils/share-invite'
+import {
+  countOffscreenBottom,
+  countOffscreenRight,
+  dedupeHintItems,
+  type OffscreenHintItem,
+} from '../../native-utils/offscreen-hints'
 const {
   buildSwimMatrixFromMock,
   buildHeroFromMock,
@@ -54,6 +60,9 @@ const BAND_PAD_RPX = 16
 const MIN_BAND_HEIGHT_RPX = 56
 const AXIS_PIN_AT = 150
 const AXIS_UNPIN_AT = 110
+const CONTINUATION_CUE_THROTTLE_MS = 120
+const CONTINUATION_CUE_TOLERANCE_RPX = 16
+const CONTINUATION_CUE_BOTTOM_RESERVE_RPX = 128
 
 function roundScrollLeft(left: number): number {
   return Math.round(left)
@@ -334,6 +343,37 @@ type SwimMatrix = {
   canvasPadLeftRpx?: number
   canvasWidthRpx?: number
   categoryBands?: CategoryBand[]
+}
+
+function continuationWeight(bar: SwimBar): number {
+  if (bar.type !== 'overflow_bucket') return 1
+  const count = parseInt(String(bar.chipTag || '').match(/^\d+/)?.[0] || '1', 10)
+  return Number.isFinite(count) ? Math.max(1, count) : 1
+}
+
+function buildContinuationItems(swim: SwimMatrix): OffscreenHintItem[] {
+  const sheetWidthRpx = swim.sheetWidthRpx || 1440
+  const padLeftRpx = swim.canvasPadLeftRpx ?? CANVAS_PAD_LEFT_RPX
+  const items = (swim.lanes || []).flatMap((lane) =>
+    (lane.collapsedRows || []).flatMap((row) =>
+      row.map((bar) => {
+        const leftPct = parseFloat(String(bar.left || '0').replace('%', ''))
+        const chipWidthRpx = parseFloat(String(bar.chipWidth || '0').replace('rpx', ''))
+        const topRpx = Number(bar.topRpx || 0)
+        const heightRpx = Number(bar.heightRpx || CHIP_HEIGHT_RPX)
+        return {
+          id: bar.boxId,
+          rightRpx:
+            padLeftRpx
+            + (Number.isFinite(leftPct) ? leftPct : 0) / 100 * sheetWidthRpx
+            + (Number.isFinite(chipWidthRpx) ? chipWidthRpx : 0),
+          bottomRpx: topRpx + heightRpx / 2,
+          weight: continuationWeight(bar),
+        }
+      }),
+    ),
+  )
+  return dedupeHintItems(items)
 }
 
 function percentForYearOnSwim(swim: SwimMatrix, year: number): number {
@@ -855,6 +895,17 @@ function previewIntro(intro: string): { preview: string; canExpand: boolean; par
 
 Page({
   swimScrollLeft: 0,
+  pageUnloaded: false,
+  continuationItems: [] as OffscreenHintItem[],
+  continuationRatio: 1,
+  continuationViewportWidthPx: 0,
+  continuationWindowHeightPx: 0,
+  continuationCanvasTopPx: 0,
+  continuationCanvasHeightPx: 0,
+  continuationPageScrollTop: 0,
+  continuationGeometryReady: false,
+  continuationLastUpdateAt: 0,
+  continuationUpdateTimer: null as ReturnType<typeof setTimeout> | null,
   chipTooltipExitTimer: null as ReturnType<typeof setTimeout> | null,
   data: {
     unit: null as UnitHero['unit'] | null,
@@ -883,6 +934,9 @@ Page({
     overlayCountTag: '',
     overlayBars: [] as SwimBar[],
     overlayLaneKey: '',
+    continuationRightCount: 0,
+    continuationBottomCount: 0,
+    continuationCanvasActive: false,
     loadError: '',
     priorityOptions: PRIORITY_OPTIONS,
     activePriority: 'p3' as PriorityLevel,
@@ -909,6 +963,11 @@ Page({
   onShow() {
     void this.refreshFavState()
   },
+  onUnload() {
+    this.pageUnloaded = true
+    if (this.continuationUpdateTimer) clearTimeout(this.continuationUpdateTimer)
+    if (this.chipTooltipExitTimer) clearTimeout(this.chipTooltipExitTimer)
+  },
   onShareAppMessage() {
     const u = this.data.unit
     const t = this.data.dynastyTitle || u?.name || '朝代详情'
@@ -926,6 +985,9 @@ Page({
     const headerPadPx = (sys.statusBarHeight || 20) + navH
     const tabBarH = Math.round(72 * (sys.windowWidth / 750))
     const scrollTop = headerPadPx + tabBarH
+    this.continuationRatio = sys.windowWidth / 750
+    this.continuationViewportWidthPx = sys.windowWidth - 48 * this.continuationRatio
+    this.continuationWindowHeightPx = sys.windowHeight
     const anchorYear = query.anchorYear ? parseInt(query.anchorYear, 10) : NaN
     const provisionalNavTitle = dynastyHint
       ? (dynastyHint.length <= 4 ? dynastyHint : dynastyHint.slice(0, 4))
@@ -967,6 +1029,8 @@ Page({
         introCanExpand: canExpand,
         introParagraphs: paragraphs,
         loadError: '',
+      }, () => {
+        this.rebuildContinuationHints(prioritySwim)
       })
       void this.refreshFavState()
       if (!Number.isNaN(anchorYear)) {
@@ -1038,6 +1102,116 @@ Page({
 
     this.setData({ loadError: '缺少朝代 ID，无法加载' })
   },
+  rebuildContinuationHints(swim: SwimMatrix) {
+    this.continuationItems = buildContinuationItems(swim)
+    this.continuationGeometryReady = false
+    wx.nextTick(() => {
+      if (this.pageUnloaded) return
+      wx.createSelectorQuery()
+        .in(this)
+        .select('.dyn-panel-hscroll')
+        .boundingClientRect()
+        .select('.dyn-canvas')
+        .boundingClientRect()
+        .exec((rects: any[]) => {
+          if (this.pageUnloaded) return
+          const panelRect = rects?.[0]
+          const canvasRect = rects?.[1]
+          if (!panelRect || !canvasRect) {
+            this.setData({
+              continuationRightCount: 0,
+              continuationBottomCount: 0,
+              continuationCanvasActive: false,
+            })
+            return
+          }
+          this.continuationViewportWidthPx =
+            Number(panelRect.width) || this.continuationViewportWidthPx
+          this.continuationCanvasTopPx =
+            this.continuationPageScrollTop + Number(canvasRect.top) - this.data.scrollTop
+          this.continuationCanvasHeightPx = Number(canvasRect.height) || 0
+          this.continuationGeometryReady = true
+          this.updateContinuationHints(true)
+        })
+    })
+  },
+  scheduleContinuationHintUpdate() {
+    const elapsed = Date.now() - this.continuationLastUpdateAt
+    if (elapsed >= CONTINUATION_CUE_THROTTLE_MS) {
+      this.updateContinuationHints(true)
+      return
+    }
+    if (this.continuationUpdateTimer) clearTimeout(this.continuationUpdateTimer)
+    this.continuationUpdateTimer = setTimeout(() => {
+      this.continuationUpdateTimer = null
+      if (this.pageUnloaded) return
+      this.updateContinuationHints(true)
+    }, CONTINUATION_CUE_THROTTLE_MS - elapsed)
+  },
+  updateContinuationHints(force = false) {
+    if (this.pageUnloaded) return
+    if (!this.continuationGeometryReady || !this.continuationItems.length) {
+      if (
+        this.data.continuationRightCount
+        || this.data.continuationBottomCount
+        || this.data.continuationCanvasActive
+      ) {
+        this.setData({
+          continuationRightCount: 0,
+          continuationBottomCount: 0,
+          continuationCanvasActive: false,
+        })
+      }
+      return
+    }
+    const now = Date.now()
+    if (!force && now - this.continuationLastUpdateAt < CONTINUATION_CUE_THROTTLE_MS) {
+      this.scheduleContinuationHintUpdate()
+      return
+    }
+    this.continuationLastUpdateAt = now
+    const ratio = Math.max(0.01, this.continuationRatio)
+    const visibleRightRpx =
+      (this.swimScrollLeft + this.continuationViewportWidthPx) / ratio
+    const outerViewportHeightPx = Math.max(
+      0,
+      this.continuationWindowHeightPx
+        - this.data.scrollTop
+        - CONTINUATION_CUE_BOTTOM_RESERVE_RPX * ratio,
+    )
+    const visibleBottomContentPx = this.continuationPageScrollTop + outerViewportHeightPx
+    const visibleBottomCanvasRpx =
+      (visibleBottomContentPx - this.continuationCanvasTopPx) / ratio
+    const canvasBottomPx = this.continuationCanvasTopPx + this.continuationCanvasHeightPx
+    const canvasActive =
+      this.continuationCanvasTopPx < visibleBottomContentPx
+      && canvasBottomPx > this.continuationPageScrollTop
+    const rightCount = canvasActive
+      ? countOffscreenRight(
+        this.continuationItems,
+        visibleRightRpx,
+        CONTINUATION_CUE_TOLERANCE_RPX,
+      )
+      : 0
+    const bottomCount = canvasActive
+      ? countOffscreenBottom(
+        this.continuationItems,
+        visibleBottomCanvasRpx,
+        CONTINUATION_CUE_TOLERANCE_RPX,
+      )
+      : 0
+    if (
+      rightCount !== this.data.continuationRightCount
+      || bottomCount !== this.data.continuationBottomCount
+      || canvasActive !== this.data.continuationCanvasActive
+    ) {
+      this.setData({
+        continuationRightCount: rightCount,
+        continuationBottomCount: bottomCount,
+        continuationCanvasActive: canvasActive,
+      })
+    }
+  },
   scrollToAnchorYear(anchorYear: number, swim: SwimMatrix) {
     const rpxRatio = wx.getSystemInfoSync().windowWidth / 750
     const padLeftPx = (swim.canvasPadLeftRpx || CANVAS_PAD_LEFT_RPX) * rpxRatio
@@ -1047,13 +1221,17 @@ Page({
     const left = Math.max(0, Math.round(targetPx - bias))
     this.swimScrollLeft = left
     this.setData({ panelScrollLeft: left, axisMirrorLeft: left })
+    this.scheduleContinuationHintUpdate()
   },
   onPanelHScroll(e: { scrollLeft: number }) {
     const left = roundScrollLeft(e.scrollLeft)
     this.swimScrollLeft = left
+    this.scheduleContinuationHintUpdate()
   },
   onDynastyScroll(e: WechatMiniprogram.ScrollViewScroll) {
     const top = e.detail.scrollTop
+    this.continuationPageScrollTop = top
+    this.scheduleContinuationHintUpdate()
     let pinned = this.data.axisPinned
     if (!pinned && top > AXIS_PIN_AT) pinned = true
     else if (pinned && top < AXIS_UNPIN_AT) pinned = false
@@ -1201,10 +1379,13 @@ Page({
     if (!priority || priority === this.data.activePriority) return
     const swim = this.data.swim
     if (!swim) return
+    const nextSwim = applyPriorityView(swim, priority)
     this.setData({
       activePriority: priority,
-      swim: applyPriorityView(swim, priority),
+      swim: nextSwim,
       overlayVisible: false,
+    }, () => {
+      this.rebuildContinuationHints(nextSwim)
     })
     this.hideChipTooltip()
   },

@@ -1341,6 +1341,78 @@ $cat-index-w: 28rpx;
   letter-spacing: 0.3rpx;
 }
 
+/* ── 画布续览提示：完全脱离布局流，可整段删除回滚 ── */
+.continuation-cue {
+  position: fixed;
+  z-index: 110;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7rpx;
+  padding: 7rpx 13rpx;
+  border: 1rpx solid rgba(116, 107, 98, 0.1);
+  border-radius: 999rpx;
+  background: rgba(247, 245, 242, 0.7);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition-property: opacity, transform, visibility;
+  transition-duration: 180ms;
+  transition-timing-function: ease-out;
+}
+
+.continuation-cue--right {
+  top: 54%;
+  right: 8rpx;
+  transform: translate(6rpx, -50%);
+}
+
+.continuation-cue--bottom {
+  left: 50%;
+  bottom: calc(108rpx + env(safe-area-inset-bottom));
+  transform: translate(-50%, 6rpx);
+}
+
+.continuation-cue--right.continuation-cue--visible {
+  transform: translate(0, -50%);
+}
+
+.continuation-cue--bottom.continuation-cue--visible {
+  transform: translate(-50%, 0);
+}
+
+.continuation-cue--visible {
+  opacity: 0.62;
+  visibility: visible;
+}
+
+.continuation-cue-text {
+  color: rgba(90, 82, 74, 0.72);
+  font-size: 20rpx;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.2rpx;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.continuation-cue-arrow {
+  width: 14rpx;
+  height: 9rpx;
+  flex-shrink: 0;
+  opacity: 0.72;
+}
+
+.continuation-cue-arrow--right {
+  transform: rotate(-90deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .continuation-cue {
+    transition-duration: 0ms;
+  }
+}
+
 /* ── 底部优先级导航 ── */
 .priority-dock {
   position: fixed;

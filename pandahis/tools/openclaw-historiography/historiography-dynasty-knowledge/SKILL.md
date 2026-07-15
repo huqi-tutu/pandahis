@@ -1,8 +1,8 @@
 ---
 name: historiography-dynasty-knowledge
 description: >
-  朝代知识补全（事略/典制/论著）。与 historiography-annotate（二十四史卷级人物标注）完全独立。
-  按朝代 + LLM 史学共识补全，不经著作抽取。激活词：朝代补全、事略补全、典制补全、论著补全。
+  朝代知识补全（事略/典制/论著/人物七类）。与 historiography-annotate（二十四史卷级人物标注）完全独立。
+  按朝代 + LLM 史学共识补全，不经著作抽取。激活词：朝代补全、事略补全、典制补全、论著补全、人物补全、帝王补全。
 ---
 
 # 朝代知识补全工作流
@@ -12,14 +12,14 @@ description: >
 | 模块 | 职责 | 输入 |
 |------|------|------|
 | **historiography-annotate** | 一期：人物七类，从二十四史卷抽取 | 著作 + 卷 |
-| **historiography-dynasty-knowledge**（本 skill） | 二期：事略 / 典制 / 论著，按朝代 LLM 补全 | 朝代 |
+| **historiography-dynasty-knowledge**（本 skill） | 二期：事略 / 典制 / 论著 + 人物缺口补全，按朝代 LLM 补全 | 朝代 |
 
 **禁止**在标注 skill 中引用本目录 `reference/`；**禁止**在本 skill 中跑 Step1 卷级切块。
 
 ## When to Activate
 
-- 用户要求为某朝代补全事略、典制、论著
-- 用户提到「朝代知识」「二期补全」「dynasty supplement」
+- 用户要求为某朝代补全事略、典制、论著、**人物**
+- 用户提到「朝代知识」「二期补全」「dynasty supplement」「人物补全」
 - 五帝等试点朝代的候选清单 / 入库
 
 ## 规范 SSOT（本目录）
@@ -32,7 +32,9 @@ description: >
 | `reference/典制与思想分界.md` | 典制 vs 思想权威分界 |
 | `reference/论著补全规则.md` | 论著（含典籍/名篇/思想） |
 | `reference/朝代补全格式规范.md` | JSON / GLBL 字段 |
-| `reference/详情撰写规则.md` | 详情正文：仅下限、起承转合、风格 |
+| `reference/人物补全规则.md` | 人物缺口补全、去重、六类边界 |
+| `reference/详情撰写规则.md` | 详情正文：仅下限、起承转合、风格（事略/典制/论著） |
+| `reference/人物详情撰写规则.md` | 人物七类详情正文：起承转合、六类侧重、记忆点优先 |
 | `reference/执行纪律.md` | **三类分步、详情逐条、LLM 模型**（必读） |
 
 共享（只读引用，不写入 annotate）：
@@ -60,7 +62,7 @@ description: >
 | 朝代元数据 | `data/01历史坐标数据/朝代.json` |
 | 并入目标 | `data/03索引标注条目/史略索引_01至02.json` |
 
-> `06` 与 `03索引标注条目`、`04史料翻译` 隔离，专用于朝代知识补全（事略/典制/论著）的一步到位产出。
+> `06` 与 `03索引标注条目`、`04史料翻译` 隔离，专用于朝代知识补全（事略/典制/论著/人物）的一步到位产出。
 
 ## 命令
 
@@ -70,13 +72,20 @@ cd historiography-dynasty-knowledge/scripts
 # Step 1 研究报告
 python3 dynasty_supplement.py --dynasty 五帝 --step research --dry-run
 
-# Step 2–4 候选（每次仅一类，禁止三类同 prompt）
+# Step 2–4 候选（每次仅一类，禁止多类同 prompt）
 python3 dynasty_supplement.py --dynasty 五帝 --step candidates-shilue --dry-run
 python3 dynasty_supplement.py --dynasty 五帝 --step candidates-dianzhi --dry-run
 python3 dynasty_supplement.py --dynasty 五帝 --step candidates-lunzhu --dry-run
 
-# Step 6 详情（每次仅一条）
+# Step 2.5 人物候选（第四分支 · 一次调用六类串行）
+python3 dynasty_supplement.py --dynasty 五帝 --step candidates-renwu --dry-run
+
+# Step 6 详情（每次仅一条；人物和非人物均通过 compose-detail）
 python3 dynasty_supplement.py --dynasty 五帝 --step compose-detail --entry-id GLBL_00xxx --dry-run
+
+# fill / gate renwu
+python3 dynasty_supplement.py --dynasty 五帝 --step fill-renwu --dry-run
+python3 dynasty_supplement.py --dynasty 五帝 --step gate-renwu
 ```
 
 **禁止** `--step all`。详见 `reference/执行纪律.md`。

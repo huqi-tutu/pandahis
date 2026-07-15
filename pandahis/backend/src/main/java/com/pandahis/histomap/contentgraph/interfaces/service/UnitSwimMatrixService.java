@@ -43,16 +43,21 @@ public class UnitSwimMatrixService {
     List<Integer> anchorYears = collectAnchorYears(laneSeeds);
 
     SwimTimeScale.Plan timePlan = SwimTimeScale.plan(startYear, endYear, anchorYears, laneSeeds.size());
-    int sheetWidthRpx = refineSheetWidth(laneSeeds, timePlan);
+    int recommendedSheetWidthRpx = refineSheetWidth(laneSeeds, timePlan);
+    SwimTimeScale.Plan finalPlan = timePlan.scale().fitToViewport(
+        anchorYears,
+        recommendedSheetWidthRpx,
+        timePlan.timeScaleMode()
+    );
+    int sheetWidthRpx = finalPlan.sheetWidthRpx();
 
     List<UnitSwimMatrixDTO.Lane> lanes = laneSeeds.stream()
-        .map(seed -> buildLane(seed.def(), seed.bars(), timePlan.scale(), sheetWidthRpx))
+        .map(seed -> buildLane(seed.def(), seed.bars(), finalPlan.scale(), sheetWidthRpx))
         .toList();
 
     SwimCanvasLayout.CanvasPlan canvas = SwimCanvasLayout.build(lanes);
 
     List<String> concurrent = loadConcurrentItems(civName, dynastyName, startYear, endYear);
-    SwimTimeScale.Plan finalPlan = timePlan.scale().replan(sheetWidthRpx, timePlan.timeScaleMode());
 
     return new UnitSwimMatrixDTO(
         startYear,

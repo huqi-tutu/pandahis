@@ -41,8 +41,11 @@ def _load_entry_file(path: Path) -> Dict[str, Any] | None:
     source = data.get("史料原文")
     if not entry_id or not isinstance(detail, str) or not detail.strip():
         return None
-    if not isinstance(source, dict):
-        return None
+    # 兼容新旧格式：新格式是纯文本字符串，旧格式是 {"text": "..."}
+    if isinstance(source, dict):
+        source = source.get("text") or ""
+    if isinstance(source, str):
+        source = source.strip() or ""
     _, name_from_file = _parse_entry_from_filename(path)
     return {
         "史略ID": entry_id,

@@ -9,6 +9,7 @@
   python3 person_tag.py <史略索引.json> --verify
   python3 person_tag.py <史略索引.json> --dry-run
   python3 person_tag.py <史略索引.json> --llm --dynasty-id CD_HX_XIHAN
+  python3 person_tag.py <史略索引.json> --llm --no-empty  # 二期补全：禁止留空
 """
 
 from __future__ import annotations
@@ -80,6 +81,17 @@ RULES_BRIEF = (
     "优先：通行典故>标志性事件>传世标识>历史角色>笼统角色词（名将/名臣等兜底）。"
     "若无任何合适锚点，人物标签留空（输出空字符串），不要硬凑。"
     "禁止：泳道分类词、元描述缺载标签（史载寡闻/事迹不详等）、姓名本字、朝代名。"
+    "禁止以本名/表字/别号/谥号/庙号代替标签（标签须是后世记忆锚点，非人物称谓本身）。"
+    "峰值年/峰值原因/优先级仅作参考，可与标签不一致。"
+)
+
+NO_EMPTY_RULES = (
+    "人物标签=后世提及该主体时最具辨识度的记忆锚点（2～5汉字）。"
+    "优先：通行典故>标志性事件>传世标识>历史角色>笼统角色词（名将/名臣等兜底）。"
+    "补全条目均为重要历史人物，**每条都必须给出标签，不得留空**。"
+    "若无通行典故，退而求其次：标志性事件简写 → 传世标识 → 历史角色（如「乐官始祖」「司法鼻祖」）。"
+    "禁止：泳道分类词、元描述缺载标签、姓名本字、朝代名。"
+    "禁止以本名/表字/别号/谥号/庙号代替标签（标签须是后世记忆锚点，非人物称谓本身）。"
     "峰值年/峰值原因/优先级仅作参考，可与标签不一致。"
 )
 
@@ -263,29 +275,31 @@ def write_tag(entry: dict, tag: str, reason: str, conf: float) -> None:
         auto.pop(META_REVIEW, None)
 
 
-def build_llm_prompt(batch: List[dict]) -> str:
+def build_llm_prompt(batch: List[dict], *, no_empty: bool = False) -> str:
+    rules = NO_EMPTY_RULES if no_empty else RULES_BRIEF
     lines = [
-        "你是历史图谱编辑。为下列史略逐条判定「人物标签」（2～5汉字，或留空）。",
+        "你是历史图谱编辑。为下列史略逐条判定「人物标签」（2～5汉字" + ("，不可留空" if no_empty else "，或留空") + "）。",
         SUBJECT_LOCK,
         "",
-        RULES_BRIEF,
+        rules,
         "",
         "只输出 JSON 数组，元素形如：",
-        '{"史略ID":"...","人物标签":"2-5字或空字符串","人物标签判定理由":"须点名判定对象",'
+        '{"史略ID":"...","人物标签":"2-5字","人物标签判定理由":"须点名判定对象",'
         '"人物标签置信度":0.xx}',
-        "无合适锚点时人物标签输出空字符串。",
-        "",
-        "待判定条目：",
     ]
+    if not no_empty:
+        lines.append("无合适锚点时人物标签输出空字符串。")
+    lines.append("")
+    lines.append("待判定条目：")
     for e in batch:
         lines.append(json.dumps(build_llm_input(e), ensure_ascii=False))
     return "\n".join(lines)
 
 
-def run_llm_batch(batch: List[dict], *, batch_index: int) -> Dict[str, dict]:
+def run_llm_batch(batch: List[dict], *, batch_index: int, no_empty: bool = False) -> Dict[str, dict]:
     from llm.provider import run_agent_turn  # noqa: WPS433
 
-    prompt = build_llm_prompt(batch)
+    prompt = build_llm_prompt(batch, no_empty=no_empty)
     sid = "ptag-" + hashlib.sha1(prompt.encode("utf-8")).hexdigest()[:12]
     _log(f"  🤖 LLM 人物标签 第 {batch_index} 批 ({len(batch)} 条)")
     out: Dict[str, dict] = {}
@@ -306,6 +320,7 @@ def annotate(
     *,
     use_llm: bool = True,
     force: bool = False,
+    no_empty: bool = False,
     on_batch_done: Optional[Callable[[], None]] = None,
 ) -> Dict[str, int]:
     stats = {"total": 0, "skipped": 0, "locked": 0, "fresh": 0, "llm": 0, "empty": 0, "failed": 0}
@@ -331,7 +346,7 @@ def annotate(
     for i in range(0, len(pending), BATCH_SIZE):
         batch = pending[i : i + BATCH_SIZE]
         batch_no += 1
-        rows = run_llm_batch(batch, batch_index=batch_no)
+        rows = run_llm_batch(batch, batch_index=batch_no, no_empty=no_empty)
         for e in batch:
             eid = str(e.get("史略ID", ""))
             row = rows.get(eid)
@@ -344,6 +359,11 @@ def annotate(
             if tag:
                 write_tag(e, tag, reason, conf)
                 stats["llm"] += 1
+            elif no_empty:
+                # 二期补全不允许留空：LLM 未产出标签 → 不清除已有标签，标记待审
+                auto = _auto(e)
+                auto[META_REVIEW] = "二期补全拒绝留空，LLM 未产出标签"
+                stats["empty"] += 1
             else:
                 clear_tag(e, reason)
                 stats["empty"] += 1
@@ -370,6 +390,7 @@ def annotate_index(
     use_llm: bool = True,
     force: bool = False,
     dynasty_id: Optional[str] = None,
+    no_empty: bool = False,
 ) -> Tuple[Dict[str, int], List[str]]:
     data, entries = _load(index_path)
     logs: List[str] = []
@@ -391,6 +412,7 @@ def annotate_index(
         work,
         use_llm=use_llm,
         force=force,
+        no_empty=no_empty,
         on_batch_done=_checkpoint if use_llm else None,
     )
     data["entries"] = entries
@@ -514,6 +536,7 @@ def main() -> None:
     ap.add_argument("--qc", action="store_true", help="质检已标注标签，输出问题清单")
     ap.add_argument("--qc-out", type=Path, default=None, help="--qc 报告 JSON 路径")
     ap.add_argument("--dynasty-id", default=None)
+    ap.add_argument("--no-empty", action="store_true", help="二期补全模式：所有条目都必须有标签，禁止留空")
     args = ap.parse_args()
 
     data, entries = _load(args.index_path)
@@ -570,6 +593,7 @@ def main() -> None:
         use_llm=args.llm,
         force=args.force,
         dynasty_id=args.dynasty_id,
+        no_empty=args.no_empty,
     )
     for ln in logs:
         _log(ln)

@@ -122,7 +122,7 @@ def sync_translate_detail(
     entry_id: str,
     translate_detail: str,
     *,
-    source_original: dict | None = None,
+    source_text: str | None = None,
     dry_run: bool = False,
 ) -> Tuple[bool, str]:
     """将单条翻译详情 upsert 到线上 DB（不删除其它记录）。"""
@@ -130,11 +130,7 @@ def sync_translate_detail(
     if not detail:
         return False, "翻译详情为空"
 
-    source_json = None
-    if source_original:
-        import json
-
-        source_json = json.dumps(source_original, ensure_ascii=False)
+    source_json = source_text if source_text else None
 
     if dry_run:
         extra = f"，原文 {len(source_json or '')} 字" if source_json else ""
@@ -166,12 +162,13 @@ def sync_output_entry(
         return False, "; ".join(errs) or "无法读取产出 JSON"
     detail = str(data.get("翻译详情") or "")
     source_original = data.get("史料原文")
-    if isinstance(source_original, dict):
+    if isinstance(source_original, str) and source_original.strip():
         return sync_translate_detail(
-            entry_id,
-            detail,
-            source_original=source_original,
-            dry_run=dry_run,
+            entry_id, detail, source_text=source_original, dry_run=dry_run
+        )
+    if isinstance(source_original, dict) and source_original.get("text", "").strip():
+        return sync_translate_detail(
+            entry_id, detail, source_text=source_original["text"], dry_run=dry_run
         )
     return sync_translate_detail(entry_id, detail, dry_run=dry_run)
 
@@ -193,8 +190,10 @@ def _rows_from_aggregate_json(json_path: Path) -> List[Dict[str, Any]]:
             raise ValueError(f"史略 {box_id} 缺少 翻译详情")
         source_original = item.get("史料原文")
         source_json = None
-        if isinstance(source_original, dict):
-            source_json = json.dumps(source_original, ensure_ascii=False)
+        if isinstance(source_original, str) and source_original.strip():
+            source_json = source_original
+        elif isinstance(source_original, dict) and source_original.get("text", "").strip():
+            source_json = source_original["text"]
         rows.append(
             {
                 "box_id": box_id,

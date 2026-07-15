@@ -33,3 +33,17 @@ def deepseek_settings() -> dict[str, str | float]:
         "model": os.environ.get("DEEPSEEK_MODEL", "deepseek-chat"),
         "temperature": float(os.environ.get("DEEPSEEK_TEMPERATURE", "0.2")),
     }
+
+
+def review_settings() -> dict[str, str | float]:
+    """独立质检/审校 LLM（OpenAI 兼容，默认 Moonshot Kimi）。"""
+    base = os.environ.get("REVIEW_BASE_URL", "https://api.moonshot.cn").rstrip("/")
+    if not base.endswith("/v1"):
+        base = f"{base}/v1"
+    return {
+        "api_key": os.environ.get("REVIEW_API_KEY", ""),
+        "base_url": base.rstrip("/"),
+        "model": os.environ.get("REVIEW_MODEL", "kimi-k2.6"),
+        "temperature": float(os.environ.get("REVIEW_TEMPERATURE", "1")),
+        "timeout_sec": int(os.environ.get("REVIEW_TIMEOUT_SEC", "900")),
+    }

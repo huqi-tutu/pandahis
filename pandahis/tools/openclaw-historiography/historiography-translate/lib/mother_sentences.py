@@ -102,8 +102,8 @@ def is_midword_fragment(phrase: str, orig: str) -> bool:
         idx = pos + 1
 
 
-def extract_must_phrases(orig: str, *, max_phrases: int = 6) -> List[str]:
-    """从母本摘句提取硬锚点：数字、引号内原文、X氏专名、句读边界短语。"""
+def extract_must_phrases(orig: str, *, max_phrases: int = 4) -> List[str]:
+    """从母本摘句提取硬锚点：数字、引号内原文、X氏专名、句读边界短语。上限降为4，减少冗余锚点。"""
     out: List[str] = []
     seen: set[str] = set()
 

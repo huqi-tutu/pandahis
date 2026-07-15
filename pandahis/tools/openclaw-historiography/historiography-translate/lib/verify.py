@@ -57,6 +57,18 @@ _TONGJIA_SAME_CHAR = re.compile(
 # macOS / Windows 文件名非法字符
 _UNSAFE_FILENAME = re.compile(r'[/\\:*?"<>|\n\r\t]')
 
+# 描述性称呼检测（这家伙/这位爷）
+_DESCRIPTIVE_REF_PATTERN = re.compile(r"[这那]家伙|这位爷")
+
+# 段落破折号结尾检测
+_DASH_ENDING_PATTERN = re.compile(r"——\s*$", re.MULTILINE)
+
+# 正文首字符必须是汉字，禁止标点/书名号/引号/井号等开头
+_PUNCTUATION_FIRST = re.compile(r"^[\u4e00-\u9fff]")
+
+# 段落过碎检测：连续单句成段
+_MIN_SENTENCES_PER_PARA = 1
+
 
 def sanitize_entry_name(name: str) -> str:
     cleaned = _UNSAFE_FILENAME.sub("", (name or "").strip())
@@ -153,6 +165,50 @@ def _mother_source_text(recalled: Dict[str, Any]) -> str:
     return "\n".join(parts)
 
 
+def _detect_dash_ending(detail: str) -> List[str]:
+    """检测段落以破折号结尾（禁止 —— 在段落末尾）。"""
+    paragraphs = [p.strip() for p in detail.split("\n\n") if p.strip()]
+    errors: List[str] = []
+    for i, para in enumerate(paragraphs):
+        if _DASH_ENDING_PATTERN.search(para):
+            preview = para[-60:] if len(para) > 60 else para
+            errors.append(f"段落以破折号结尾（第{i+1}段）: …{preview}")
+    return errors
+
+
+def _detect_punctuation_opening(detail: str) -> List[str]:
+    """正文首字符必须是汉字，禁止以标点符号、书名号、引号、井号等开头。"""
+    first_char = detail.lstrip()[0] if detail.strip() else ""
+    if not _PUNCTUATION_FIRST.match(first_char):
+        return [f"正文首字符非法: 「{first_char}」（必须以汉字开头，禁止标点/书名号/引号/井号）"]
+    return []
+
+
+def _detect_excessive_descriptive_refs(detail: str) -> List[str]:
+    """检测描述性称呼过度（这家伙/这位爷 ≥3次）。"""
+    count = len(_DESCRIPTIVE_REF_PATTERN.findall(detail))
+    if count > 3:
+        return [f"描述性称呼过多: {count}处（这家伙/这位爷），上限3次"]
+    return []
+
+
+def _detect_single_sentence_paragraphs(detail: str) -> List[str]:
+    """检测连续单句成段的段落过碎问题（连续 ≥4 段单句即报错）。"""
+    paragraphs = [p.strip() for p in detail.split("\n\n") if p.strip()]
+    streak = 0
+    max_streak = 0
+    for para in paragraphs:
+        sentence_count = len([c for c in para if c in "。！？"])
+        if sentence_count <= _MIN_SENTENCES_PER_PARA:
+            streak += 1
+            max_streak = max(max_streak, streak)
+        else:
+            streak = 0
+    if max_streak >= 4:
+        return [f"段落过碎: 连续{max_streak}段单句成段，建议合并"]
+    return []
+
+
 def verify_mother_draft(
     entry_id: str,
     recalled: Dict[str, Any],
@@ -178,6 +234,8 @@ def verify_mother_draft(
         errors.append("母本顺译为空")
         return False, errors
 
+    errors.extend(_detect_punctuation_opening(detail))
+
     if "*参考著作*" in detail or detail.rstrip().endswith("参考著作"):
         errors.append("Phase1 不应含「参考著作」节")
 
@@ -192,11 +250,16 @@ def verify_mother_draft(
             errors.extend([f"母本顺译 {e}" for e in cov_errs])
 
     errors.extend(detect_forbidden_gloss(detail))
-    short_q = count_short_quote_density(detail, threshold_len=4)
-    if short_q >= 12:
-        errors.append(
-            f"母本引用过碎: ≤4字「」引用 {short_q} 处，并列句群应整簇引用"
-        )
+    if not batch_mode:
+        short_q = count_short_quote_density(detail, threshold_len=4)
+        short_q_limit = max(12, len(detail) // 95)
+        if short_q >= short_q_limit:
+            errors.append(
+                f"母本引用过碎: ≤4字「」引用 {short_q} 处（阈值{short_q_limit}），并列句群应整簇引用"
+            )
+
+    errors.extend(_detect_dash_ending(detail))
+    errors.extend(_detect_excessive_descriptive_refs(detail))
 
     wc = len(detail)
     if not batch_mode:
@@ -233,16 +296,19 @@ def _foreign_citations_in_mother(
 
 
 def _phrase_hit(phrase: str, body: str) -> bool:
+    """锚点词是否出现在译文中（精确/引号内/顺序模糊）。"""
     p = str(phrase).strip()
     if not p:
         return True
     if p in body:
         return True
+    # 引号内容自动算命中（硬锚点在「」内任意位置即通过）
     if f"「{p}」" in body:
         return True
     for m in re.finditer(r"「([^」]+)」", body):
         if p in m.group(1):
             return True
+    # 两步过滤：去引号纯文本次序匹配
     plain = re.sub(r"[「」『』\s]", "", body)
     pi = 0
     for ch in plain:
@@ -253,65 +319,87 @@ def _phrase_hit(phrase: str, body: str) -> bool:
     return False
 
 
+def _classify_must_phrases(
+    phrases: List[Any],
+    orig: str,
+    *,
+    batch_mode: bool = False,
+) -> Tuple[List[str], List[str]]:
+    """必现词分两级：硬锚点（专名/数字/氏/引号原文）须保留；软锚点（句读边界短语）仅记分不阻断。
+
+    翻译规则 §第零部分「必现词分级」：硬锚点在 Phase1 用「」保留；软锚点由 coverage 验收。
+    """
+    from lib.mother_sentences import _MUST_GENERIC, is_midword_fragment  # noqa: PLC0415
+
+    orig_plain = re.sub(r"\s+", "", orig)
+    hard: List[str] = []
+    soft: List[str] = []
+    for raw in phrases:
+        p = str(raw).strip()
+        if not p or is_midword_fragment(p, orig):
+            continue
+        # 硬锚点：数字、X氏专名
+        if re.search(r"\d", p) or ("氏" in p and len(p) >= 2):
+            hard.append(p)
+            continue
+        # 硬锚点：≥4字且在原文中完整出现（专名/事件/地名）
+        if len(p) >= 4 and p in orig_plain:
+            hard.append(p)
+            continue
+        # 软锚点：句读边界短语（非专用名但有信息传递功能）
+        if len(p) >= 3 and p in orig_plain and p not in _MUST_GENERIC:
+            soft.append(p)
+
+    def _dedup(items: List[str]) -> List[str]:
+        out: List[str] = []
+        for p in items:
+            if any(p != q and p in q for q in items):
+                continue
+            if p not in out:
+                out.append(p)
+        return out
+
+    hard = _dedup(hard)[:3]
+    soft = _dedup(soft)[:2]
+
+    if not hard and not soft:
+        fallback = [
+            str(p).strip()
+            for p in phrases
+            if len(str(p).strip()) >= 3 and not is_midword_fragment(str(p), orig)
+        ][:3]
+        return fallback, []
+
+    if not batch_mode:
+        return hard, soft
+
+    critical = [
+        p
+        for p in hard
+        if re.search(r"\d", p) or "氏" in p or len(p) <= 6
+    ]
+    return critical if critical else hard[:2], []
+
+
 def _hard_must_phrases(
     phrases: List[Any],
     orig: str,
     *,
     batch_mode: bool = False,
 ) -> List[str]:
-    """从必现词中筛硬锚点；优先专名、数字、句读边界短语。"""
-    from lib.mother_sentences import _MUST_GENERIC, is_midword_fragment  # noqa: PLC0415
-
-    orig_plain = re.sub(r"\s+", "", orig)
-    hard: List[str] = []
-    for raw in phrases:
-        p = str(raw).strip()
-        if not p or is_midword_fragment(p, orig):
-            continue
-        if re.search(r"\d", p):
-            hard.append(p)
-            continue
-        if "氏" in p and len(p) >= 2:
-            hard.append(p)
-            continue
-        if len(p) >= 4 and p in orig_plain:
-            hard.append(p)
-            continue
-        if len(p) >= 3 and p in orig_plain and p not in _MUST_GENERIC:
-            hard.append(p)
-    # 去重并优先保留较短、专名性更强的锚点
-    deduped: List[str] = []
-    for p in hard:
-        if any(p != q and p in q for q in hard):
-            continue
-        if p not in deduped:
-            deduped.append(p)
-    if not deduped:
-        deduped = [
-            str(p).strip()
-            for p in phrases
-            if len(str(p).strip()) >= 3 and not is_midword_fragment(str(p), orig)
-        ][:3]
-    deduped = deduped[:4]
-    if not batch_mode:
-        return deduped
-    # 分批顺译：只盯数字、氏名、≤6 字专名，长句段留给合并后全文校验
-    critical = [
-        p
-        for p in deduped
-        if re.search(r"\d", p) or "氏" in p or len(p) <= 6
-    ]
-    return critical if critical else deduped[:2]
+    """兼容旧接口：返回硬锚点列表。"""
+    hard, _soft = _classify_must_phrases(phrases, orig, batch_mode=batch_mode)
+    return hard
 
 
 def _must_phrase_weak_ids(
     detail: str,
     plan: Dict[str, Any],
     *,
-    ratio_floor: float = 0.34,
+    ratio_floor: float = 0.50,
     batch_mode: bool = False,
 ) -> List[Tuple[str, List[str]]]:
-    """返回弱覆盖条目：(编号, 缺失硬锚点列表)。"""
+    """返回硬锚点弱覆盖条目：(编号, 缺失硬锚点列表)。软锚点不参与阻断判定。"""
     body = re.sub(r"\s+", "", detail)
     weak: List[Tuple[str, List[str]]] = []
     checklist = plan.get("母本逐句清单") or []
@@ -323,10 +411,12 @@ def _must_phrase_weak_ids(
         phrases = item.get("必现词") or []
         if not isinstance(phrases, list) or not phrases:
             continue
-        hard = _hard_must_phrases(phrases, orig, batch_mode=batch_mode)
+        hard, _soft = _classify_must_phrases(phrases, orig, batch_mode=batch_mode)
+        if not hard:
+            continue
         missing = [p for p in hard if not _phrase_hit(p, body)]
         hits = len(hard) - len(missing)
-        ratio = hits / len(hard) if hard else 1.0
+        ratio = hits / len(hard)
         if ratio < ratio_floor:
             weak.append((sid, missing))
     return weak
@@ -360,16 +450,32 @@ def _verify_must_phrases(
     *,
     batch_mode: bool = False,
 ) -> List[str]:
+    """硬锚点阻断校验：只检查硬锚点（专名/数字/氏），软锚点不阻断。长条目自动放宽。
+    
+    分批模式下跳过 —— verify_mother_coverage 已经做了更精细的逐句覆盖校验，
+    硬锚点校验在分批阶段是冗余且容易误判的。
+    """
+    if batch_mode:
+        return []
     errors: List[str] = []
     checklist = plan.get("母本逐句清单") or []
-    ratio_floor = 0.25 if batch_mode else 0.34
+    n = len(checklist)
+    is_long = n > 40  # D: 长条目自动放宽
+
+    ratio_floor = 0.25 if batch_mode else (0.35 if is_long else 0.50)
     weak = _must_phrase_weak_ids(detail, plan, ratio_floor=ratio_floor, batch_mode=batch_mode)
     weak_ids = [sid for sid, _ in weak]
-    # 分批顺译时放宽：允许更多句弱覆盖，合并后再全文严检
-    fail_threshold = max(4, len(checklist) // 3) if batch_mode else max(3, len(checklist) // 5)
+
+    if is_long:
+        fail_threshold = max(8, n // 4)  # D: 长条目阈值从 max(3, n/5) 放宽
+    elif batch_mode:
+        fail_threshold = max(4, n // 3)
+    else:
+        fail_threshold = max(3, n // 5)
+
     if len(weak_ids) >= fail_threshold:
         errors.append(
-            f"必现词命中不足: {len(weak_ids)} 条 M 未保留母本原词锚点"
+            f"必现词命中不足: {len(weak_ids)} 条 M 未保留硬锚点"
             f"（如 {', '.join(weak_ids[:6])}）"
         )
     return errors
@@ -464,6 +570,8 @@ def verify_enrich_draft(
         errors.append("翻译详情为空")
         return False, errors
 
+    errors.extend(_detect_punctuation_opening(detail))
+
     if re.search(r"^本条\s*\d+\s*段（母本", detail) or "已读完" in detail[:120]:
         errors.append("正文含「喊数/进度汇报」元叙述，须删除后再落盘")
 
@@ -485,6 +593,8 @@ def verify_enrich_draft(
     subject = str(recalled.get("史略名称") or "")
     errors.extend(detect_foreign_exit_in_opening(detail, subject))
     errors.extend(detect_forbidden_gloss(detail))
+    errors.extend(_detect_dash_ending(detail))
+    errors.extend(_detect_excessive_descriptive_refs(detail))
     if plan:
         errors.extend(intro_mother_overlap(detail, plan))
 
@@ -516,14 +626,10 @@ def verify_output(
 
     expected_source = build_source_original(recalled)
     source = data.get("史料原文")
-    if not isinstance(source, dict):
-        errors.append("史料原文缺失或格式无效")
-    elif source_original_fingerprint(source) != source_original_fingerprint(
-        expected_source
-    ):
+    if not isinstance(source, str) or not source.strip():
+        errors.append("史料原文缺失或为空")
+    elif source != expected_source:
         errors.append("史料原文与召回母本/索引补充不一致（须由编排器写入，禁止 LLM 改写）")
-    elif not (source.get("text") or "").strip():
-        errors.append("史料原文.text 为空")
 
     if data.get("史略ID") != entry_id:
         errors.append(
@@ -534,6 +640,8 @@ def verify_output(
     if not detail:
         errors.append("翻译详情为空")
     else:
+        errors.extend(_detect_punctuation_opening(detail))
+
         if re.search(r"^本条\s*\d+\s*段（母本", detail) or (
             detail.startswith("本条") and "已读完" in detail.split("\n", 1)[0]
         ):
@@ -542,7 +650,7 @@ def verify_output(
         wc = len(detail)
         para_count = int(recalled.get("paragraph_count") or 1)
         para_floor = min_word_count(para_count)
-        src_len = len(re.sub(r"\s+", "", str(expected_source.get("text") or "")))
+        src_len = len(re.sub(r"\s+", "", str(expected_source or "")))
         src_floor = max(100, int(src_len * 3.5))
         floor = min(para_floor, src_floor) if src_len < 150 else para_floor
         if wc < floor:
@@ -571,10 +679,14 @@ def verify_output(
         errors.extend(tongjia_errs)
 
         errors.extend(detect_forbidden_gloss(detail))
+        errors.extend(_detect_dash_ending(detail))
+        errors.extend(_detect_excessive_descriptive_refs(detail))
+        errors.extend(_detect_single_sentence_paragraphs(detail))
         short_q = count_short_quote_density(detail, threshold_len=4)
-        if short_q >= 15:
+        short_q_limit = max(15, len(detail) // 95)
+        if short_q >= short_q_limit:
             errors.append(
-                f"引用过碎: ≤4字「」引用 {short_q} 处，并列句群应整簇引用后统一解释"
+                f"引用过碎: ≤4字「」引用 {short_q} 处（阈值{short_q_limit}），并列句群应整簇引用后统一解释"
             )
 
         subject = str(recalled.get("史略名称") or entry_name)

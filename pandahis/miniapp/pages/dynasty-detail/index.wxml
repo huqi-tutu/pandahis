@@ -223,6 +223,36 @@
 
   </view>
 
+  <!-- 续览提示：fixed + pointer-events:none，不参与任何页面布局 -->
+  <view
+    wx:if="{{swim}}"
+    class="continuation-cue continuation-cue--right {{continuationCanvasActive && continuationRightCount > 0 && !overlayVisible && !chipTooltipVisible && !showIntroModal ? 'continuation-cue--visible' : ''}}"
+    role="status"
+    aria-label="右侧还有 {{continuationRightCount}} 条史略"
+  >
+    <text class="continuation-cue-text">{{continuationRightCount}} 条</text>
+    <image
+      class="continuation-cue-arrow continuation-cue-arrow--right"
+      src="/配图/icons/kaihe.png"
+      mode="aspectFit"
+      aria-hidden="true"
+    />
+  </view>
+  <view
+    wx:if="{{swim}}"
+    class="continuation-cue continuation-cue--bottom {{continuationCanvasActive && continuationBottomCount > 0 && !overlayVisible && !chipTooltipVisible && !showIntroModal ? 'continuation-cue--visible' : ''}}"
+    role="status"
+    aria-label="下方还有 {{continuationBottomCount}} 条史略"
+  >
+    <text class="continuation-cue-text">{{continuationBottomCount}} 条</text>
+    <image
+      class="continuation-cue-arrow"
+      src="/配图/icons/kaihe.png"
+      mode="aspectFit"
+      aria-hidden="true"
+    />
+  </view>
+
   <view wx:if="{{unit && swim}}" class="priority-dock">
     <view class="priority-tabs">
       <view

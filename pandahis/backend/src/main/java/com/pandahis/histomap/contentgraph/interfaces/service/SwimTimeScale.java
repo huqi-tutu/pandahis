@@ -3,7 +3,6 @@ package com.pandahis.histomap.contentgraph.interfaces.service;
 import com.pandahis.histomap.common.util.HistoryYearFormat;
 import com.pandahis.histomap.contentgraph.interfaces.dto.UnitSwimMatrixDTO;
 import java.util.ArrayList;
-import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
@@ -13,6 +12,11 @@ final class SwimTimeScale {
   static final int MIN_SHEET_RPX = 1440;
   static final int MAX_SHEET_RPX = 5760;
   static final int TARGET_TICK_SPACING_RPX = 96;
+  static final int VIEWPORT_RPX = 750;
+  /** 内部相邻史略锚点最多间隔约半屏，避免一屏只露出边缘卡片。 */
+  static final int MAX_EMPTY_GAP_RPX = 360;
+  /** 首尾没有后续内容提示，留白应比内部间隔更紧。 */
+  static final int MAX_EDGE_EMPTY_GAP_RPX = 240;
   /** 远古大年份标签（如「-2698」）比刻度线更宽，标签间距单独保底。 */
   static final int MIN_LABEL_SPACING_RPX = 104;
 
@@ -126,6 +130,111 @@ final class SwimTimeScale {
     return toPlan(sheetWidthRpx, mode);
   }
 
+  /**
+   * 在保留密集区绝对像素间距的前提下压缩稀疏区。
+   *
+   * <p>映射以相邻史略锚点（含画布首尾）为边界：不超过上限的区间保持原宽，
+   * 超出上限的区间压缩到固定宽度。这样高密时期不会因压缩空白而再次拥挤，
+   * 稀疏时期也不会产生可横滑的一整屏空画布。完全没有锚点时，画布收敛为
+   * 一个视口宽度，交由页面展示空状态，不保留无意义的横向滚动。</p>
+   */
+  Plan fitToViewport(List<Integer> anchorYears, int requestedSheetRpx, String currentMode) {
+    int sourceSheetRpx = Math.max(VIEWPORT_RPX, requestedSheetRpx);
+    List<Integer> anchors = normalizeAnchors(anchorYears, startYear, endYear);
+    if (anchors.isEmpty()) {
+      return linear(startYear, endYear).toPlan(VIEWPORT_RPX, "linear");
+    }
+
+    TreeSet<Integer> anchorBoundaries = new TreeSet<>();
+    anchorBoundaries.add(startYear);
+    anchorBoundaries.addAll(anchors);
+    anchorBoundaries.add(endYear);
+
+    List<RemapPoint> remapPoints = new ArrayList<>();
+    double destinationRpx = 0.0;
+    double previousSourceRpx = 0.0;
+    boolean compacted = false;
+    List<Integer> boundaryYears = new ArrayList<>(anchorBoundaries);
+    for (int i = 0; i < boundaryYears.size(); i++) {
+      int year = boundaryYears.get(i);
+      double sourceRpx = percentForYear(year) * sourceSheetRpx / 100.0;
+      if (remapPoints.isEmpty()) {
+        remapPoints.add(new RemapPoint(sourceRpx, 0.0));
+        previousSourceRpx = sourceRpx;
+        continue;
+      }
+      double sourceGap = Math.max(0.0, sourceRpx - previousSourceRpx);
+      int previousYear = boundaryYears.get(i - 1);
+      boolean leadingEmptyEdge = previousYear == startYear && !anchors.contains(startYear);
+      boolean trailingEmptyEdge = year == endYear && !anchors.contains(endYear);
+      int gapLimit = leadingEmptyEdge || trailingEmptyEdge
+          ? MAX_EDGE_EMPTY_GAP_RPX
+          : MAX_EMPTY_GAP_RPX;
+      double keptGap = Math.min(sourceGap, gapLimit);
+      compacted = compacted || keptGap + 0.01 < sourceGap;
+      destinationRpx += keptGap;
+      remapPoints.add(new RemapPoint(sourceRpx, destinationRpx));
+      previousSourceRpx = sourceRpx;
+    }
+
+    if (!compacted) {
+      return toPlan(sourceSheetRpx, currentMode);
+    }
+
+    double destinationScale = destinationRpx < VIEWPORT_RPX
+        ? VIEWPORT_RPX / Math.max(1.0, destinationRpx)
+        : 1.0;
+    if (destinationScale > 1.0) {
+      remapPoints = remapPoints.stream()
+          .map(point -> new RemapPoint(point.sourceRpx(), point.destinationRpx() * destinationScale))
+          .toList();
+      destinationRpx *= destinationScale;
+    }
+
+    TreeSet<Integer> controlYears = new TreeSet<>(anchorBoundaries);
+    for (Segment segment : segments) {
+      controlYears.add(segment.startYear());
+      controlYears.add(segment.endYear());
+    }
+
+    List<Integer> years = new ArrayList<>(controlYears);
+    List<MappedDraft> mappedDrafts = new ArrayList<>();
+    for (int i = 0; i < years.size() - 1; i++) {
+      int fromYear = years.get(i);
+      int toYear = years.get(i + 1);
+      if (toYear <= fromYear) {
+        continue;
+      }
+      double fromSourceRpx = percentForYear(fromYear) * sourceSheetRpx / 100.0;
+      double toSourceRpx = percentForYear(toYear) * sourceSheetRpx / 100.0;
+      double fromDestinationRpx = mapRpx(remapPoints, fromSourceRpx);
+      double toDestinationRpx = mapRpx(remapPoints, toSourceRpx);
+      boolean firstInterval = i == 0;
+      int boxCount = (int) anchors.stream()
+          .filter(anchor -> (firstInterval ? anchor >= fromYear : anchor > fromYear) && anchor <= toYear)
+          .count();
+      appendOrMerge(
+          mappedDrafts,
+          new MappedDraft(fromYear, toYear, fromDestinationRpx, toDestinationRpx, boxCount)
+      );
+    }
+
+    int fittedSheetRpx = Math.max(VIEWPORT_RPX, (int) Math.floor(destinationRpx));
+    List<Segment> fittedSegments = new ArrayList<>();
+    for (MappedDraft draft : mappedDrafts) {
+      fittedSegments.add(new Segment(
+          draft.startYear(),
+          draft.endYear(),
+          draft.leftRpx() / destinationRpx * 100.0,
+          (draft.rightRpx() - draft.leftRpx()) / destinationRpx * 100.0,
+          draft.boxCount()
+      ));
+    }
+    String fittedMode = fittedSegments.size() > 1 ? "segmented" : "linear";
+    SwimTimeScale fittedScale = new SwimTimeScale(startYear, endYear, fittedSegments);
+    return fittedScale.toPlan(fittedSheetRpx, fittedMode);
+  }
+
   private Plan toPlan(int sheetWidthRpx, String mode) {
     List<UnitSwimMatrixDTO.AxisTick> ticks = new ArrayList<>();
     List<UnitSwimMatrixDTO.GridLine> gridLines = new ArrayList<>();
@@ -205,7 +314,7 @@ final class SwimTimeScale {
   }
 
   private static List<Integer> buildCutPoints(int startYear, int endYear, List<Integer> anchors, int span) {
-    LinkedHashSet<Integer> cuts = new LinkedHashSet<>();
+    Set<Integer> cuts = new TreeSet<>();
     cuts.add(startYear);
 
     int gapThreshold = Math.max(18, span / 7);
@@ -274,7 +383,8 @@ final class SwimTimeScale {
       }
       int count = 0;
       for (int anchor : anchors) {
-        if (anchor >= segStart && anchor <= segEnd) {
+        boolean afterStart = i == 0 ? anchor >= segStart : anchor > segStart;
+        if (afterStart && anchor <= segEnd) {
           count++;
         }
       }
@@ -383,6 +493,59 @@ final class SwimTimeScale {
 
   private static String fmtPct(double value) {
     return String.format("%.2f%%", value);
+  }
+
+  private static double mapRpx(List<RemapPoint> points, double sourceRpx) {
+    for (int i = 0; i < points.size() - 1; i++) {
+      RemapPoint from = points.get(i);
+      RemapPoint to = points.get(i + 1);
+      if (sourceRpx > to.sourceRpx()) {
+        continue;
+      }
+      double sourceSpan = Math.max(1.0, to.sourceRpx() - from.sourceRpx());
+      double fraction = Math.max(0.0, Math.min(1.0, (sourceRpx - from.sourceRpx()) / sourceSpan));
+      return from.destinationRpx() + fraction * (to.destinationRpx() - from.destinationRpx());
+    }
+    return points.get(points.size() - 1).destinationRpx();
+  }
+
+  private static void appendOrMerge(List<MappedDraft> drafts, MappedDraft next) {
+    if (drafts.isEmpty()) {
+      drafts.add(next);
+      return;
+    }
+    MappedDraft previous = drafts.get(drafts.size() - 1);
+    double previousSlope = previous.pixelSlope();
+    double nextSlope = next.pixelSlope();
+    double slopeTolerance = Math.max(0.0001, Math.max(Math.abs(previousSlope), Math.abs(nextSlope)) * 0.000001);
+    if (Math.abs(previousSlope - nextSlope) <= slopeTolerance && previous.endYear() == next.startYear()) {
+      drafts.set(
+          drafts.size() - 1,
+          new MappedDraft(
+              previous.startYear(),
+              next.endYear(),
+              previous.leftRpx(),
+              next.rightRpx(),
+              previous.boxCount() + next.boxCount()
+          )
+      );
+      return;
+    }
+    drafts.add(next);
+  }
+
+  private record RemapPoint(double sourceRpx, double destinationRpx) {}
+
+  private record MappedDraft(
+      int startYear,
+      int endYear,
+      double leftRpx,
+      double rightRpx,
+      int boxCount
+  ) {
+    double pixelSlope() {
+      return (rightRpx - leftRpx) / Math.max(1, endYear - startYear);
+    }
   }
 
   private static final class SegmentDraft {

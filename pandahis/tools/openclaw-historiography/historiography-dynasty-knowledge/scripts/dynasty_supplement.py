@@ -31,6 +31,8 @@ from paths_config import (  # noqa: E402
     get_histograph_root,
 )
 
+import detail_verify as dv  # noqa: E402
+import detail_review as dr  # noqa: E402
 import dynasty_supplement_lib as dkl  # noqa: E402
 
 HISTOGRAPH_ROOT = get_histograph_root()
@@ -40,6 +42,7 @@ WORK_DIR = DATA_DIR / "05工作流中间产物" / SUBDIR_INTERMEDIATE_DYNASTY_KN
 OUTPUT_DIR = DATA_DIR / DIR_DYNASTY_KNOWLEDGE
 ENTRIES_DIR = OUTPUT_DIR / SUBDIR_DYNASTY_KNOWLEDGE_ENTRIES
 DETAILS_DIR = OUTPUT_DIR / SUBDIR_DYNASTY_KNOWLEDGE_DETAILS
+ANCHORS_DIR = OUTPUT_DIR / "锚点"
 ANNOTATE_DIR = OPENCLAW_ROOT / "historiography-annotate"
 
 CATEGORIES = ("事略", "典制", "论著")
@@ -60,8 +63,15 @@ STEPS = (
     "fill-renwu",
     "compose-detail",
     "compose-pending",
+    "anchor-research",
+    "verify-detail",
+    "review-detail",
+    "patch-detail",
+    "qa-detail",
+    "test-display",
     "gate",
     "gate-renwu",
+    "test-review-llm",
     "enrich",
     "enrich-renwu",
 )
@@ -72,6 +82,7 @@ RULES = {
     "总则": MODULE_ROOT / "reference" / "朝代知识补全总则.md",
     "纪律": MODULE_ROOT / "reference" / "执行纪律.md",
     "详情": MODULE_ROOT / "reference" / "详情撰写规则.md",
+    "人物详情": MODULE_ROOT / "reference" / "人物详情撰写规则.md",
     "事略": MODULE_ROOT / "reference" / "事略补全规则.md",
     "典制": MODULE_ROOT / "reference" / "典制补全规则.md",
     "典制思想分界": MODULE_ROOT / "reference" / "典制与思想分界.md",
@@ -83,14 +94,7 @@ RULES = {
     "格式": MODULE_ROOT / "reference" / "朝代补全格式规范.md",
 }
 
-FORBIDDEN_PROSE = (
-    "综上所述",
-    "由此可见",
-    "众所周知",
-    "历史长河",
-    "命运齿轮",
-    "毫无疑问",
-)
+FORBIDDEN_PROSE = dkl.FORBIDDEN_PROSE_WORDS
 
 
 def _log(msg: str) -> None:
@@ -613,6 +617,7 @@ def fill_entry_prompt(
 史略分类：{category}
 不要填原文字句、paragraphs、优先级（后续 enrichment）。
 不要填人物标签（后续 person_tag.py）。
+坐标字段（一级文明坐标/二级朝代坐标/三级政权坐标/政权ID等）无需填写，脚本会根据四级帝王坐标从帝王.json自动反查填充。
 
 ## 朝代
 {json.dumps(context, ensure_ascii=False, indent=2)}
@@ -645,6 +650,7 @@ def fill_renwu_entry_prompt(
 史略名称须用候选「名称」标准名；君王须对齐帝王.json「帝王名称」。
 不要填原文字句、paragraphs、优先级、人物标签（后续 enrichment）。
 史略简介 ≤20 字，必填。
+坐标字段（一级文明坐标/二级朝代坐标/三级政权坐标/政权ID等）无需填写，脚本会根据四级帝王坐标从帝王.json自动反查填充。
 
 ## 朝代
 {json.dumps(context, ensure_ascii=False, indent=2)}
@@ -672,28 +678,54 @@ def pinyin_rules_excerpt(rules: dict[str, str]) -> str:
     return m.group(0).strip() if m else text[:2500]
 
 
-def compose_detail_prompt(entry: dict[str, Any], rules: dict[str, str]) -> str:
+def compose_detail_prompt(
+    entry: dict[str, Any],
+    rules: dict[str, str],
+    *,
+    anchor: dict[str, Any] | None = None,
+    revise_issues: list[str] | None = None,
+) -> str:
     pri = str(entry.get("优先级") or "P1")
-    cat = str(entry.get("史略分类") or "")
+    cat = dkl.normalize_category(str(entry.get("史略分类") or ""))
     allow_list = "、".join(sorted(dkl._ALLOW_PINYIN_WORDS))
-    return f"""为以下史略撰写详情。只输出 JSON：{{"史略ID":"...","翻译详情":"..."}}
+    is_person = cat in dkl.PERSON_INDEX_CATEGORIES
+    fmt_rules = rules.get("人物详情" if is_person else "详情", "")[:7000]
+    type_label = "人物" if is_person else cat
+    density = dkl.resolve_source_density(entry, anchor)
+    floor = dkl.detail_effective_floor(cat, pri, entry, anchor)
+    anchor_block = ""
+    if anchor:
+        anchor_block = f"""
+## 锚点（必须覆盖，禁止超出条目范围发挥）
+{json.dumps(anchor, ensure_ascii=False, indent=2)}
+"""
+    revise_block = ""
+    if revise_issues:
+        revise_block = f"""
+## 上一轮质检未通过（须整篇重写修正，禁止只改局部导致重复段/丢开篇）
+{chr(10).join(f"- {x}" for x in revise_issues)}
+"""
+    mode = "修订重写成稿" if revise_issues else "首次成稿"
+    return f"""为以下史略撰写详情（{mode}）。只输出 JSON：{{"史略ID":"...","翻译详情":"..."}}
 
 ## 条目
 {json.dumps(entry, ensure_ascii=False, indent=2)}
-
+{anchor_block}{revise_block}
 ## 撰写规范
-{rules.get('详情', '')[:7000]}
+{fmt_rules}
 
 ## 硬性要求
-- 分类 {cat}，优先级 {pri}，正文（不含参考著作）字数不得低于规范下限
-- 起承转合齐全；开篇引入 100-200 字
+- 分类 {cat}（{type_label}），优先级 {pri}，史料丰度 {density}
+- 正文（不含开篇引入、不含参考著作）字数不得低于 **{floor}** 字
+- 起承转合齐全；开篇引入 100-200 字（独立一段）
+- 段落数：P0≥7段、P1≥5段（均含开篇引入）
 - 文末 *参考著作：* 与主要史料出处一致
-- 禁止【】、禁止 AI 腔
+- 过程禁编：原文未载细节不可编造；异说须标注
+- 禁止【】、禁止 AI 腔、禁止禁词（此外/与此同时/则是/必然 等）
+- 禁止编造人物心理活动（除非正史明确记载）
 - **注音纪律（二期 · 默认全文不注音）**：
   - 本产品面向具备通识文史素养的读者，**不是**识字教辅/小程序
   - **禁止**给常见字、通识人名、通识地名、动物名、器物名注音
-  - 禁止：许由（xǔ yóu）、箕山（jī shān）、颍水（yǐng shuǐ）、偃鼠（yǎn shǔ）、皋陶（gāo yáo）、伯益（yì）、夔（kuí）等
-  - 禁止：尧舜禹黄帝、尧帝、五帝时代、丹朱、巢父、皇甫谧 等一切通识专名注音
   - **仅当**正文出现下列罕用字专名时，可保留该词注音：{allow_list}
   - 除上述白名单外，全文不得出现任何「汉字（拼音）」标注
 """
@@ -708,6 +740,12 @@ def output_paths(dynasty_name: str) -> dict[str, Path]:
     WORK_DIR.mkdir(parents=True, exist_ok=True)
     ENTRIES_DIR.mkdir(parents=True, exist_ok=True)
     DETAILS_DIR.mkdir(parents=True, exist_ok=True)
+    ANCHORS_DIR.mkdir(parents=True, exist_ok=True)
+    logs = WORK_DIR / "logs"
+    logs.mkdir(parents=True, exist_ok=True)
+    (logs / "reviews").mkdir(parents=True, exist_ok=True)
+    (logs / "verify").mkdir(parents=True, exist_ok=True)
+    (logs / "qa_state").mkdir(parents=True, exist_ok=True)
     return {
         "research": WORK_DIR / f"{slug}_研究报告.md",
         "candidates": WORK_DIR / f"{slug}_候选清单.json",
@@ -715,6 +753,7 @@ def output_paths(dynasty_name: str) -> dict[str, Path]:
         "entries": ENTRIES_DIR / f"{slug}_事略典制论著.json",
         "entries_renwu": ENTRIES_DIR / f"{slug}_人物.json",
         "details_dir": DETAILS_DIR,
+        "anchors_dir": ANCHORS_DIR,
         "approval": WORK_DIR / f"{slug}_人审批准.json",
         "review_md": WORK_DIR / f"{slug}_人审确认表.md",
         "logs_dir": WORK_DIR / "logs",
@@ -997,28 +1036,293 @@ def _load_entry_by_id(
     raise SystemExit(f"未找到 {entry_id}")
 
 
-def run_compose_detail(
+def anchor_research_prompt(entry: dict[str, Any], rules: dict[str, str]) -> str:
+    cat = str(entry.get("史略分类") or "")
+    is_person = cat in dkl.PERSON_INDEX_CATEGORIES
+    fmt = rules.get("人物详情" if is_person else "详情", "")[:5000]
+    return f"""为以下史略条目研究锚点（撰写蓝图 SSOT）。只输出 JSON，不要 markdown 围栏。
+
+## 条目
+{json.dumps(entry, ensure_ascii=False, indent=2)}
+
+## 规范摘要
+{fmt[:3000]}
+
+## 输出 schema
+{{
+  "schema": "dynasty-knowledge-anchor/v1",
+  "史略ID": "...",
+  "史料丰度": "S0|S1|S2|S3",
+  "hard_facts": [
+    {{"text": "可核查史实一句", "keywords": ["关键词1", "关键词2"]}}
+  ],
+  "legend_facts": [
+    {{"text": "传说/后世附会一句", "keywords": ["..."]}}
+  ],
+  "core_enumerations": [
+    {{"label": "列举名称", "items": ["项1", "项2"], "min_mentions": 2}}
+  ],
+  "checklist": ["信息点1", "信息点2"],
+  "forbidden_inventions": ["原文未载不可编造的过程细节"]
+}}
+
+纪律：
+- hard_facts 仅来自主要史料出处，不得编造
+- legend_facts 单独列出，正文须标注传说
+- core_enumerations **仅限本条目主题**（如「禅让制」不写九官全员；「九官制」才列九官）
+- core_enumerations 最多 3 组，每组 items 不超过 6 项
+- 五帝传说期默认 S0 或 S1
+"""
+
+
+def _load_detail_file(paths: dict[str, Path], entry_id: str) -> tuple[dict[str, Any], Path]:
+    files = list(paths["details_dir"].glob(f"{entry_id}_*.json"))
+    if not files:
+        raise SystemExit(f"未找到详情 {entry_id}")
+    path = files[0]
+    return json.loads(path.read_text(encoding="utf-8")), path
+
+
+def run_anchor_research(
     paths: dict[str, Path],
     entry_id: str,
     *,
     dry_run: bool,
-    entries_path: Path | None = None,
 ) -> None:
     if not entry_id:
-        raise SystemExit("compose-detail 必须 --entry-id")
-    entry, _src = _load_entry_by_id(paths, entry_id, entries_path=entries_path)
+        raise SystemExit("anchor-research 必须 --entry-id")
+    entry, _ = _load_entry_by_id(paths, entry_id)
     rules = load_rules_text()
-    prompt = compose_detail_prompt(entry, rules)
-    title = str(entry.get("史略名称") or "未命名")
-    cat = str(entry.get("史略分类") or "")
-    temp = dkl.detail_compose_temperature(cat)
-    safe_title = re.sub(r'[\\/:*?"<>|]', "_", title)
-    out_path = paths["details_dir"] / f"{entry_id}_{safe_title}.json"
+    prompt = anchor_research_prompt(entry, rules)
+    out_path = paths["anchors_dir"] / f"{entry_id}.json"
     if dry_run:
-        _log(f"=== compose-detail {entry_id} preview (temp={temp}) ===")
+        _log(f"=== anchor-research {entry_id} preview ===")
         _log(prompt[:2000])
         return
-    _log(f"🤖 compose-detail {entry_id} {title} (temp={temp}) …")
+    _log(f"🤖 anchor-research {entry_id} …")
+    text = dkl.call_llm(
+        prompt,
+        session_prefix=f"dk-anc-{entry_id}-",
+        timeout_sec=600,
+        temperature=0,
+    )
+    data = dkl.extract_json_object(text)
+    if not data:
+        raise RuntimeError(f"{entry_id} 锚点解析失败")
+    data["史略ID"] = entry_id
+    data.setdefault("schema", "dynasty-knowledge-anchor/v1")
+    dkl.save_anchor(paths["anchors_dir"], entry_id, data)
+    if data.get("史料丰度") in dkl.SOURCE_DENSITY_LEVELS:
+        entry["史料丰度"] = data["史料丰度"]
+    _log(f"  ✅ 锚点 {out_path.name}（hard={len(data.get('hard_facts') or [])}）")
+
+
+def run_verify_detail(
+    paths: dict[str, Path],
+    entry_id: str,
+    *,
+    strict: bool = True,
+) -> int:
+    if not entry_id:
+        raise SystemExit("verify-detail 必须 --entry-id")
+    entry, _ = _load_entry_by_id(paths, entry_id)
+    detail, _ = _load_detail_file(paths, entry_id)
+    anchor = dkl.load_anchor(paths["anchors_dir"], entry_id)
+    report = dv.verify_detail(entry, detail, anchor=anchor)
+    out = dkl.save_verify_artifact(paths["logs_dir"], entry_id, report.to_dict())
+    for line in dv.format_verify_issues(report):
+        _log(f"  {'⚠️' if 'warn' in line else '❌' if not report.passed else '·'} {line}")
+    if report.passed:
+        _log(f"✅ verify-detail {entry_id} 通过 → {out.name}")
+        return 0
+    _log(f"❌ verify-detail {entry_id} 未通过（{len(report.issues)} 项）→ {out.name}")
+    return 1 if strict else 0
+
+
+def run_review_detail(
+    paths: dict[str, Path],
+    entry_id: str,
+    *,
+    dry_run: bool,
+) -> int:
+    if not entry_id:
+        raise SystemExit("review-detail 必须 --entry-id")
+    entry, _ = _load_entry_by_id(paths, entry_id)
+    detail, _ = _load_detail_file(paths, entry_id)
+    anchor = dkl.load_anchor(paths["anchors_dir"], entry_id)
+    if dry_run:
+        _log(dr.build_review_prompt(entry, str(detail.get("翻译详情", "")), anchor=anchor)[:2000])
+        return 0
+    _log(f"🔍 review-detail {entry_id}（Kimi）…")
+    review = dr.run_detail_review(entry, detail, anchor=anchor, timeout_sec=900)
+    review["schema"] = "dynasty-knowledge-review/v1"
+    review["史略ID"] = entry_id
+    review["reviewed_at"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    out = dkl.save_review_artifact(paths["logs_dir"], entry_id, review)
+    verdict = str(review.get("overall_verdict") or "unknown")
+    _log(f"  ✅ 审校 {verdict} → {out.name}")
+    if verdict == "fail":
+        return 1
+    return 0
+
+
+def patch_detail_prompt(
+    entry: dict[str, Any],
+    paragraphs: list[str],
+    fixes: list[dict[str, Any]],
+) -> str:
+    blocks = []
+    for fix in fixes:
+        idx = int(fix.get("paragraph_index", -1))
+        if 0 <= idx < len(paragraphs):
+            blocks.append(
+                f"[P{idx}] 原文：\n{paragraphs[idx]}\n"
+                f"问题：{'; '.join(fix.get('issues') or [])}\n"
+                f"建议：{fix.get('suggested_fix') or '按锚点修正'}"
+            )
+    return f"""按审校意见修订以下段落。只输出 JSON：
+{{"paragraphs": [{{"paragraph_index": 0, "text": "修订后段落"}}]}}
+
+## 条目
+{json.dumps({k: entry.get(k) for k in ('史略ID', '史略名称', '史略分类', '主要史料出处')}, ensure_ascii=False, indent=2)}
+
+## 待修段落
+{chr(10).join(blocks)}
+
+纪律：只改指定段落；过程禁编；保留未列段落不动；不要【】；默认不注音。"""
+
+
+def run_patch_detail(
+    paths: dict[str, Path],
+    entry_id: str,
+    *,
+    dry_run: bool,
+) -> int:
+    if not entry_id:
+        raise SystemExit("patch-detail 必须 --entry-id")
+    entry, _ = _load_entry_by_id(paths, entry_id)
+    detail, detail_path = _load_detail_file(paths, entry_id)
+    review = dkl.load_review_artifact(paths["logs_dir"], entry_id)
+    if not review:
+        raise SystemExit(f"未找到审校产物，请先 review-detail {entry_id}")
+
+    state = dkl.load_qa_state(paths["logs_dir"], entry_id)
+    patch_n = int(state.get("patch_attempts") or 0)
+    if patch_n >= dkl.MAX_PATCH_ROUNDS:
+        raise SystemExit(
+            f"{entry_id} patch 已达上限 {dkl.MAX_PATCH_ROUNDS}；"
+            f"请 compose-detail 整篇重写，勿再 patch"
+        )
+
+    raw = str(detail.get("翻译详情") or "")
+    body = dkl.strip_detail_body(raw)
+    paragraphs = dkl.split_detail_paragraphs(raw)
+    refs = ""
+    if "参考著作" in raw:
+        refs = raw.split("参考著作", 1)[1]
+        refs = "*参考著作" + refs if not refs.strip().startswith("*") else "参考著作" + refs
+
+    fixes = [
+        r
+        for r in review.get("paragraph_reviews") or []
+        if str(r.get("verdict")) in ("fail", "warn")
+        and (r.get("issues") or r.get("suggested_fix"))
+    ]
+    if not fixes:
+        _log(f"✅ patch-detail {entry_id} 无需修订")
+        return 0
+
+    prompt = patch_detail_prompt(entry, paragraphs, fixes)
+    if dry_run:
+        _log(prompt[:2000])
+        return 0
+
+    _log(f"🤖 patch-detail {entry_id}（{len(fixes)} 段）…")
+    text = dkl.call_llm(
+        prompt,
+        session_prefix=f"dk-pat-{entry_id}-",
+        timeout_sec=600,
+        temperature=0.2,
+    )
+    data = dkl.extract_json_object(text)
+    patches = data.get("paragraphs") or []
+    for patch in patches:
+        idx = int(patch.get("paragraph_index", -1))
+        new_text = str(patch.get("text") or "").strip()
+        if 0 <= idx < len(paragraphs) and new_text:
+            paragraphs[idx] = new_text
+
+    new_body = "\n\n".join(paragraphs)
+    if refs:
+        new_body = new_body.rstrip() + "\n\n" + refs.strip()
+    detail["翻译详情"] = new_body
+    save_json(detail_path, {"史略ID": entry_id, "翻译详情": new_body})
+    state["patch_attempts"] = patch_n + 1
+    dkl.save_qa_state(paths["logs_dir"], state)
+    _log(f"  ✅ 已写回 {detail_path.name}")
+    return run_verify_detail(paths, entry_id, strict=True)
+
+
+def run_qa_detail(
+    paths: dict[str, Path],
+    entry_id: str,
+    *,
+    dry_run: bool,
+    skip_review: bool = False,
+) -> int:
+    """质检链：verify（必）→ review（可选，不自动 patch，防死循环）。"""
+    if not entry_id:
+        raise SystemExit("qa-detail 必须 --entry-id")
+    state = dkl.load_qa_state(paths["logs_dir"], entry_id)
+    code = run_verify_detail(paths, entry_id, strict=True)
+    if code != 0:
+        state["status"] = "needs_human"
+        dkl.save_qa_state(paths["logs_dir"], state)
+        return code
+    if skip_review:
+        state["status"] = "verify_pass"
+        dkl.save_qa_state(paths["logs_dir"], state)
+        return 0
+    if dry_run:
+        return run_review_detail(paths, entry_id, dry_run=True)
+    code = run_review_detail(paths, entry_id, dry_run=False)
+    if code != 0:
+        state["status"] = "review_fail"
+        dkl.save_qa_state(paths["logs_dir"], state)
+        _log(
+            f"⚠️ review fail：不自动 patch（易劣化）。"
+            f"请运行 compose-detail --entry-id {entry_id} 整篇重写，或人工处理。"
+        )
+        return code
+    state["status"] = "qa_pass"
+    dkl.save_qa_state(paths["logs_dir"], state)
+    return 0
+
+
+def run_test_display(paths: dict[str, Path], entry_id: str | None = None) -> int:
+    """本地内容展现测试：模拟小程序分段 + 可选 API 探测。"""
+    from test_content_display import run_display_tests  # noqa: WPS433
+
+    return run_display_tests(paths["details_dir"], entry_id=entry_id)
+
+
+def _compose_and_save_detail(
+    paths: dict[str, Path],
+    entry: dict[str, Any],
+    entry_id: str,
+    rules: dict[str, str],
+    *,
+    anchor: dict[str, Any] | None,
+    revise_issues: list[str] | None,
+    out_path: Path,
+) -> str:
+    cat = dkl.normalize_category(str(entry.get("史略分类") or ""))
+    temp = dkl.detail_compose_temperature(cat)
+    prompt = compose_detail_prompt(
+        entry, rules, anchor=anchor, revise_issues=revise_issues
+    )
+    label = "compose-revise" if revise_issues else "compose-detail"
+    _log(f"🤖 {label} {entry_id} {entry.get('史略名称')} (temp={temp}) …")
     text = dkl.call_llm(
         prompt,
         session_prefix=f"dk-det-{entry_id}-",
@@ -1030,8 +1334,103 @@ def run_compose_detail(
         raise RuntimeError(f"{entry_id} 详情解析失败")
     data["史略ID"] = entry_id
     save_json(out_path, {"史略ID": entry_id, "翻译详情": data["翻译详情"]})
-    body_len = len(dkl.strip_detail_body(data["翻译详情"]))
+    return str(data["翻译详情"])
+
+
+def run_compose_detail(
+    paths: dict[str, Path],
+    entry_id: str,
+    *,
+    dry_run: bool,
+    entries_path: Path | None = None,
+    skip_verify: bool = False,
+    auto_revise: bool = True,
+) -> None:
+    if not entry_id:
+        raise SystemExit("compose-detail 必须 --entry-id")
+    entry, _src = _load_entry_by_id(paths, entry_id, entries_path=entries_path)
+    rules = load_rules_text()
+    title = str(entry.get("史略名称") or "未命名")
+    safe_title = re.sub(r'[\\/:*?"<>|]', "_", title)
+    out_path = paths["details_dir"] / f"{entry_id}_{safe_title}.json"
+
+    anchor = dkl.load_anchor(paths["anchors_dir"], entry_id)
+    if not anchor and not dry_run:
+        _log(f"📌 无锚点，先 anchor-research {entry_id} …")
+        run_anchor_research(paths, entry_id, dry_run=False)
+        anchor = dkl.load_anchor(paths["anchors_dir"], entry_id)
+
+    state = dkl.load_qa_state(paths["logs_dir"], entry_id)
+    if dry_run:
+        _log(f"=== compose-detail {entry_id} preview ===")
+        _log(compose_detail_prompt(entry, rules, anchor=anchor)[:2000])
+        return
+
+    if int(state.get("compose_attempts") or 0) >= dkl.MAX_QA_DETAIL_ROUNDS:
+        raise RuntimeError(
+            f"{entry_id} 已达撰写上限 {dkl.MAX_QA_DETAIL_ROUNDS} 次，"
+            f"状态={state.get('status')}，请人工处理或重置 qa_state"
+        )
+
+    _compose_and_save_detail(
+        paths, entry, entry_id, rules, anchor=anchor, revise_issues=None, out_path=out_path
+    )
+    state["compose_attempts"] = int(state.get("compose_attempts") or 0) + 1
+    body_len = len(dkl.strip_detail_body(str(json.loads(out_path.read_text())["翻译详情"])))
     _log(f"  ✅ 详情 {out_path.name} ({body_len} 字)")
+
+    if skip_verify:
+        state["status"] = "composed"
+        dkl.save_qa_state(paths["logs_dir"], state)
+        return
+
+    report = dv.verify_detail(
+        entry,
+        json.loads(out_path.read_text(encoding="utf-8")),
+        anchor=anchor,
+    )
+    dkl.save_verify_artifact(paths["logs_dir"], entry_id, report.to_dict())
+    if report.passed:
+        state["status"] = "verify_pass"
+        dkl.save_qa_state(paths["logs_dir"], state)
+        _log(f"✅ verify-detail {entry_id} 通过")
+        return
+
+    issues = [f"{i.code}: {i.message}" for i in report.issues if i.severity == "error"]
+    for i in report.issues:
+        if i.severity == "warn":
+            _log(f"  ⚠️ verify/{i.code}: {i.message}")
+
+    if auto_revise and int(state.get("compose_attempts") or 0) < dkl.MAX_QA_DETAIL_ROUNDS:
+        _log(f"↻ compose-revise {entry_id}（1 次上限，整篇重写）…")
+        _compose_and_save_detail(
+            paths,
+            entry,
+            entry_id,
+            rules,
+            anchor=anchor,
+            revise_issues=issues,
+            out_path=out_path,
+        )
+        state["compose_attempts"] = int(state.get("compose_attempts") or 0) + 1
+        report2 = dv.verify_detail(
+            entry,
+            json.loads(out_path.read_text(encoding="utf-8")),
+            anchor=anchor,
+        )
+        dkl.save_verify_artifact(paths["logs_dir"], entry_id, report2.to_dict())
+        if report2.passed:
+            state["status"] = "verify_pass"
+            dkl.save_qa_state(paths["logs_dir"], state)
+            _log(f"✅ compose-revise 后 verify 通过")
+            return
+
+    state["status"] = "needs_human"
+    dkl.save_qa_state(paths["logs_dir"], state)
+    raise RuntimeError(
+        f"{entry_id} verify 未通过且已达 revise 上限；已标记 needs_human，"
+        f"详情已落盘请人工处理。问题：{'; '.join(issues[:5])}"
+    )
 
 
 def parse_dynasty_year(text: Any) -> int | None:
@@ -1184,7 +1583,39 @@ def gate_validate_person_entries(
     return issues
 
 
-def run_gate_renwu(paths: dict[str, Path], context: dict[str, Any]) -> int:
+def _gate_detail_qa(
+    paths: dict[str, Path],
+    entry: dict[str, Any],
+    detail: dict[str, Any],
+    *,
+    require_review: bool,
+) -> list[str]:
+    """详情 QA：verify + 可选 review 产物检查。"""
+    issues: list[str] = []
+    eid = str(entry.get("史略ID", ""))
+    name = str(entry.get("史略名称", ""))
+    anchor = dkl.load_anchor(paths["anchors_dir"], eid)
+    report = dv.verify_detail(entry, detail, anchor=anchor)
+    dkl.save_verify_artifact(paths["logs_dir"], eid, report.to_dict())
+    for issue in report.issues:
+        if issue.severity == "error":
+            issues.append(f"[{eid}] {name} verify/{issue.code}: {issue.message}")
+        else:
+            _log(f"  ⚠️ [{eid}] verify/{issue.code}: {issue.message}")
+
+    review = dkl.load_review_artifact(paths["logs_dir"], eid)
+    if require_review and not review:
+        issues.append(f"[{eid}] {name} 缺少 review-detail 审校产物")
+    elif not review:
+        _log(f"  ⚠️ [{eid}] 未跑 review-detail（建议 qa-detail）")
+    elif str(review.get("overall_verdict")) == "fail":
+        issues.append(
+            f"[{eid}] {name} Kimi 审校 fail: {review.get('summary', '')[:80]}"
+        )
+    return issues
+
+
+def run_gate_renwu(paths: dict[str, Path], context: dict[str, Any], *, require_review: bool = False) -> int:
     issues: list[str] = []
     if not paths["entries_renwu"].is_file():
         issues.append("缺少人物索引文件")
@@ -1213,18 +1644,10 @@ def run_gate_renwu(paths: dict[str, Path], context: dict[str, Any]) -> int:
             issues.append(f"[{eid}] {name} 缺少详情 JSON")
             continue
         detail = json.loads(detail_files[0].read_text(encoding="utf-8"))
-        body = dkl.strip_detail_body(str(detail.get("翻译详情", "")))
-        pri = str(e.get("优先级") or "P1")
-        floor = dkl.detail_min_chars(cat, pri)
-        if len(body) < floor:
-            issues.append(f"[{eid}] {name} 详情 {len(body)} 字 < 下限 {floor}")
-        if "参考著作" not in str(detail.get("翻译详情", "")):
-            issues.append(f"[{eid}] 缺少参考著作")
-        for w in FORBIDDEN_PROSE:
-            if w in body:
-                issues.append(f"[{eid}] 含禁词 {w}")
-        for pin in dkl.detect_over_pinyin(body):
-            issues.append(f"[{eid}] {name} 多余注音：{pin}")
+        issues.extend(dkl.validate_detail_schema(detail, detail_id=eid))
+        issues.extend(
+            _gate_detail_qa(paths, e, detail, require_review=require_review)
+        )
     _report_gate(issues)
     if issues:
         return 1
@@ -1232,7 +1655,7 @@ def run_gate_renwu(paths: dict[str, Path], context: dict[str, Any]) -> int:
     return 0
 
 
-def run_gate(paths: dict[str, Path], context: dict[str, Any]) -> int:
+def run_gate(paths: dict[str, Path], context: dict[str, Any], *, require_review: bool = False) -> int:
     issues: list[str] = []
     if not paths["entries"].is_file():
         issues.append("缺少索引文件")
@@ -1241,6 +1664,12 @@ def run_gate(paths: dict[str, Path], context: dict[str, Any]) -> int:
     doc = json.loads(paths["entries"].read_text(encoding="utf-8"))
     entries = doc.get("entries") or []
     issues.extend(gate_validate_entries(entries, context))
+
+    # Schema validation for all entries
+    for e in entries:
+        eid = str(e.get("史略ID", ""))
+        issues.extend(dkl.validate_entry_schema(e, entry_id=eid))
+
     for e in entries:
         eid = str(e.get("史略ID", ""))
         name = str(e.get("史略名称", ""))
@@ -1254,18 +1683,10 @@ def run_gate(paths: dict[str, Path], context: dict[str, Any]) -> int:
             issues.append(f"[{eid}] {name} 缺少详情 JSON")
             continue
         detail = json.loads(detail_files[0].read_text(encoding="utf-8"))
-        body = dkl.strip_detail_body(str(detail.get("翻译详情", "")))
-        pri = str(e.get("优先级") or "P1")
-        floor = dkl.detail_min_chars(cat, pri)
-        if len(body) < floor:
-            issues.append(f"[{eid}] {name} 详情 {len(body)} 字 < 下限 {floor}")
-        if "参考著作" not in str(detail.get("翻译详情", "")):
-            issues.append(f"[{eid}] 缺少参考著作")
-        for w in FORBIDDEN_PROSE:
-            if w in body:
-                issues.append(f"[{eid}] 含禁词 {w}")
-        for pin in dkl.detect_over_pinyin(body):
-            issues.append(f"[{eid}] {name} 多余注音：{pin}")
+        issues.extend(dkl.validate_detail_schema(detail, detail_id=eid))
+        issues.extend(
+            _gate_detail_qa(paths, e, detail, require_review=require_review)
+        )
     _report_gate(issues)
     if issues:
         return 1
@@ -1294,9 +1715,27 @@ def run_enrich_renwu(paths: dict[str, Path], context: dict[str, Any], *, dry_run
         ("peak_year.py", "峰值年"),
         ("person_tag.py", "人物标签"),
     ):
-        cmd = [py, str(ANNOTATE_DIR / script), str(idx), "--llm", "--dynasty-id", dynasty_id]
+        cmd = [py, str(ANNOTATE_DIR / script), str(idx), "--llm", "--no-empty", "--dynasty-id", dynasty_id]
         _log(f"🤖 {label}: {' '.join(cmd[-4:])}")
         subprocess.run(cmd, check=True, cwd=str(ANNOTATE_DIR.parent))
+    # —— person_tag 后验证：补全人物必须有标签 ——
+    idx_data = json.loads(idx.read_text(encoding="utf-8"))
+    missing_tags: list[str] = []
+    for e in idx_data.get("entries") or []:
+        cat = str(e.get("史略分类", ""))
+        if cat not in PERSON_CATEGORIES:
+            continue
+        eid = str(e.get("史略ID", ""))
+        name = str(e.get("史略名称", ""))
+        tag = str(e.get("人物标签", "")).strip()
+        auto = e.get("_auto_filled") or {}
+        if not tag and not auto.get("_人物标签留空"):
+            missing_tags.append(f"[{eid}] {name}")
+    if missing_tags:
+        _log(f"❌ 补全人物标签缺失 {len(missing_tags)} 条（person_tag.py --no-empty 未产出且无留空标记，需人工复核）：")
+        for line in missing_tags[:20]:
+            _log(f"  - {line}")
+        return 1
     _log("✅ enrich-renwu 完成")
     return 0
 
@@ -1316,6 +1755,24 @@ def run_enrich(paths: dict[str, Path], context: dict[str, Any], *, dry_run: bool
         _log(f"🤖 {label}: {' '.join(cmd[-4:])}")
         subprocess.run(cmd, check=True, cwd=str(ANNOTATE_DIR.parent))
     _log("✅ enrich 完成")
+    return 0
+
+
+def run_test_review_llm() -> int:
+    """独立质检模型连通性测试（Moonshot Kimi / OpenAI 兼容）。"""
+    from llm.config import review_settings  # noqa: WPS433
+    from llm.review_provider import test_review_connectivity  # noqa: WPS433
+
+    cfg = review_settings()
+    _log(f"🔌 test-review-llm → {cfg['model']} @ {cfg['base_url']}")
+    try:
+        out = test_review_connectivity()
+    except Exception as exc:
+        _log(f"❌ Review LLM 连通失败: {exc}")
+        return 1
+    _log(f"✅ Review LLM 连通成功（model={out.get('model')} session={out.get('session_id')}）")
+    preview = str(out.get("result", "")).strip().replace("\n", " ")[:80]
+    _log(f"   回复预览: {preview}")
     return 0
 
 
@@ -1368,6 +1825,21 @@ def main() -> int:
         choices=REVIEW_PHASES,
         default="candidates",
         help="export-review 阶段：candidates=候选清单；entries=已产出索引待写详情",
+    )
+    parser.add_argument(
+        "--skip-verify",
+        action="store_true",
+        help="compose-detail 落盘后跳过 verify-detail（仅调试）",
+    )
+    parser.add_argument(
+        "--require-review",
+        action="store_true",
+        help="gate 强制要求已有 review-detail 产物",
+    )
+    parser.add_argument(
+        "--skip-review",
+        action="store_true",
+        help="qa-detail 跳过 Kimi 审校",
     )
     parser.add_argument(
         "--background",
@@ -1439,7 +1911,12 @@ def main() -> int:
             require_approval=require_approval,
         )
     elif step == "compose-detail":
-        run_compose_detail(paths, (args.entry_id or "").strip(), dry_run=args.dry_run)
+        run_compose_detail(
+            paths,
+            (args.entry_id or "").strip(),
+            dry_run=args.dry_run,
+            skip_verify=args.skip_verify,
+        )
     elif step == "compose-pending":
         run_compose_pending(
             context,
@@ -1447,16 +1924,35 @@ def main() -> int:
             dry_run=args.dry_run,
             require_approval=require_approval,
         )
+    elif step == "anchor-research":
+        run_anchor_research(paths, (args.entry_id or "").strip(), dry_run=args.dry_run)
+    elif step == "verify-detail":
+        return run_verify_detail(paths, (args.entry_id or "").strip())
+    elif step == "review-detail":
+        return run_review_detail(paths, (args.entry_id or "").strip(), dry_run=args.dry_run)
+    elif step == "patch-detail":
+        return run_patch_detail(paths, (args.entry_id or "").strip(), dry_run=args.dry_run)
+    elif step == "qa-detail":
+        return run_qa_detail(
+            paths,
+            (args.entry_id or "").strip(),
+            dry_run=args.dry_run,
+            skip_review=args.skip_review,
+        )
+    elif step == "test-display":
+        return run_test_display(paths, (args.entry_id or "").strip() or None)
     elif step == "gate":
-        code = run_gate(paths, context)
+        code = run_gate(paths, context, require_review=args.require_review)
         if code == 0:
             aggregate_details(paths)
         return code
     elif step == "gate-renwu":
-        code = run_gate_renwu(paths, context)
+        code = run_gate_renwu(paths, context, require_review=args.require_review)
         if code == 0:
             aggregate_details(paths)
         return code
+    elif step == "test-review-llm":
+        return run_test_review_llm()
     elif step == "enrich":
         return run_enrich(paths, context, dry_run=args.dry_run)
     elif step == "enrich-renwu":

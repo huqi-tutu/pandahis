@@ -3,33 +3,44 @@
 from __future__ import annotations
 
 import re
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Tuple
 
 from lib.config import paths
 from lib.mother_sentences import mother_sentence_count
 
 _RULES = paths()["rules"]
 
-_ALL_WRITING_RULES = list(range(1, 13))
-_WRITING_SECTIONS_PLAN = [4, 10, 11]
-_DONE_SECTION = 11
-_CN = ["零", "一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一", "十二"]
+# 翻译规则.md 实际 ## 标题 → 注入层级
+# 规则文件使用「第零部分」「规则一」等中文序号，未按 P0/P1 等标签
+_HEADING_TO_LAYER = {
+    "第零部分：流水线约定": "P0",
+    "执行纪律（每条翻译前）": "P0",
+    "规则一：风格定位": "P1",
+    "规则二：结构完整": "P1",
+    "规则三：内容完整性与数据准确": "P0",
+    "规则四：原文融入与引用规范（核心之一）": "P2",
+    "规则四：原文融入与引用规范": "P2",
+    "规则五：人物刻画": "P1",
+    "规则六：纯叙事": "P1",
+    "规则七：注音标注": "P3",
+    "规则八：六类触发条件（含现代地名标注）": "P3",
+    "规则九：通假字处理": "P3",
+    "规则十：逐句顺译原则（灵魂规则）": "P2",
+    "规则十：逐句顺译原则": "P2",
+    "规则十一：完成标准（Definition of Done）": "P3",
+    # 规则十二（JSON 产出与汇总规范）纯编排器层面，不注入 LLM
+}
 
-_LAYER1_HEADINGS = ("执行优先级", "禁止事项")
-_LAYER2_PART0_HEADINGS = (
-    "术语",
-    "顺译的定义",
-    "召回纪律",
-    "太史公曰 / 司马迁评述（仅翻译环节处理）",
-    "翻译总流程",
-    "两阶段成稿（translate 编排器）",
-    "内容层级与取舍",
-    "外部补全与锚点原则",
-    "重复判定",
-    "允许压缩（表达层）",
-    "产出格式（translate 编排器）",
-    "喊数（动笔前一行）",
-)
+# P0 = 硬约束，P1 = 写作风格，P2 = 流程规范，P3 = 辅助规则
+# plan 阶段: P0 + P2(引用+顺译) + P3(产出格式)
+# Phase1 draft_mother: P0 + P2(引用+顺译) + P1(风格定位，不含幽默)
+# Phase2 draft_enrich: P0 + P2(引用+顺译) + P1(全量风格@幽默) + P3(注音/地名/通假)
+_PHASE_SECTIONS: Dict[str, List[str]] = {
+    "plan": ["P0", "P2", "P3"],
+    "draft_mother": ["P0", "P2", "P1_style"],
+    "draft_enrich": ["P0", "P2", "P1_full", "P3"],
+    "draft": ["P0", "P2", "P1_full", "P3"],
+}
 
 _PHASE_PREAMBLE: Dict[str, str] = {
     "plan": (
@@ -60,60 +71,116 @@ def _read() -> str:
     return _RULES.read_text(encoding="utf-8")
 
 
-def _extract_subsection(text: str, heading: str) -> str:
-    pat = rf"(### {re.escape(heading)}[\s\S]*?)(?=\n### |\n## |\Z)"
-    m = re.search(pat, text)
-    return m.group(1).strip() if m else ""
+def _extract_sections(text: str) -> Dict[str, str]:
+    """按 ## heading 切分，映射到标准层级名称（P0/P1/P2/P3）。"""
+    result: Dict[str, str] = {}
+    pattern = r"(^## .+$)"
+    parts = re.split(pattern, text, flags=re.MULTILINE)
+    current_layer = "_preamble"
+    result[current_layer] = ""
+    for part in parts:
+        stripped = part.strip()
+        if re.match(r"^## .+", stripped):
+            heading = stripped.lstrip("# ").strip()
+            current_layer = _heading_to_layer(heading)
+            result.setdefault(current_layer, "")
+        else:
+            result[current_layer] = result.get(current_layer, "") + "\n" + part
+    return {k: v.strip() for k, v in result.items() if v.strip()}
 
 
-def _extract_part0_block(text: str) -> str:
-    m = re.search(
-        r"(## 第零部分：流水线约定[\s\S]*?)(?=\n---\n\n## 执行纪律)",
-        text,
-    )
+def _heading_to_layer(heading: str) -> str:
+    """将翻译规则.md 的 ## 标题映射到 P0/P1/P2/P3 层级。"""
+    for prefix, layer in _HEADING_TO_LAYER.items():
+        if heading.startswith(prefix):
+            return layer
+    return heading  # 未知标题保留原名
+
+
+def _p1_style_only(p1_text: str) -> str:
+    """从 P1 全文中剥离纯风格部分（规则一核心 + 规则六纯叙事），排除幽默规范。"""
+    parts = []
+    m = re.search(r"(?s)(.*?)### 幽默规范", p1_text)
     if m:
-        return m.group(1).strip()
-    m = re.search(
-        r"(## 第零部分：流水线约定[\s\S]*?)(?=\n---\n\n## 规则一)",
+        parts.append(m.group(1).strip())
+    else:
+        parts.append(p1_text.strip())
+    return "\n\n".join(p for p in parts if p).strip()
+
+
+# ── 注入优化：三个后处理函数（SSOT 翻译规则.md 原文不动，仅注入时过滤/精简）──
+
+
+def _strip_orchestrator_sections(text: str) -> str:
+    """从 P0/P3 中剥离编排器层面的技术细节，LLM 不需要知道。"""
+    # P0 中需剥离的子章节（纯编排器技术细节）
+    _P0_STRIP = [
+        r"### GLBL 入口与跨著作补充[\s\S]*?(?=### |\Z)",
+        r"### 召回纪律[\s\S]*?(?=### |\Z)",
+        r"### 喊数（动笔前一行[\s\S]*?(?=### |\Z)",
+        r"### 分块翻译[\s\S]*?(?=### |\Z)",
+    ]
+    for pat in _P0_STRIP:
+        text = re.sub(pat, "", text)
+
+    # 产出格式：只保留单条 JSON 三字段摘要，删除 nested JSON 结构、汇总产出等编排器细节
+    text = re.sub(
+        r"### 产出格式[\s\S]*?(?=### )",
+        "### 产出格式\n\n单条产出固定三字段：`史略ID`、`翻译详情`（Markdown 正文 + 文末 `*参考著作：*`）、`史料原文`（编排器自动写入）。\n\n",
         text,
     )
-    return m.group(1).strip() if m else ""
+
+    return text
 
 
-def _extract_discipline(text: str) -> str:
-    m = re.search(
-        r"(## 执行纪律[\s\S]*?)(?=\n---\n\n## 规则一)",
-        text,
+def _dedupe_shunyi(p0_text: str) -> str:
+    """顺译定义归一到规则十：P0 中只留一行引用，完整定义仅存于 P2 规则十。"""
+    replacement = (
+        "### 顺译的定义\n\n"
+        "**顺译**的权威定义见规则十（逐句顺译原则）。简言之：句序守恒、信息点守恒、表达可重写。\n"
     )
-    return m.group(1).strip() if m else ""
-
-
-def _extract_rule(text: str, n: int) -> str:
-    title = f"## 规则{_CN[n]}："
-    m = re.search(
-        rf"({re.escape(title)}[\s\S]*?)(?=\n## 规则|\n## 附录|\Z)",
-        text,
+    p0_text = re.sub(
+        r"### 顺译的定义[\s\S]*?(?=### )",
+        replacement,
+        p0_text,
     )
-    return m.group(1).strip() if m else ""
+    return p0_text
+
+
+def _merge_external_admission(p0_text: str) -> str:
+    """外部补全准入合并：「两阶段成稿」中的准入条件精简为引用，「外部补全与锚点原则」保留三级体系为权威。"""
+    # 「两阶段成稿」中 L142 的准入条件整句替换为短引用
+    p0_text = re.sub(
+        r"\*\*外部补全准入\*\*（plan 与 enrich 均须遵守）：仅当相对母本存在 \*\*异说、冲突观点、必要背景、母本未载细节、评价差异\*\* 之一时方可采用；与母本主体/事件/结果相同的内容视为重复，\*\*不得\*\*以外部补全再写一遍。",
+        "**外部补全准入**见下文「外部补全与锚点原则」（含三级补充体系）。",
+        p0_text,
+    )
+    return p0_text
+
+
+def _optimize_layer(text: str, layer: str) -> str:
+    """对指定层级文本执行注入优化。"""
+    if not text:
+        return text
+    if layer == "P0":
+        text = _strip_orchestrator_sections(text)
+        text = _dedupe_shunyi(text)
+        text = _merge_external_admission(text)
+    return text
 
 
 def _extract_goal(text: str) -> str:
-    m = re.search(r"> 总目标：[^\n]+", text)
+    m = re.search(r"> \*\*总目标\*\*：[^\n]+", text)
     return m.group(0).strip() if m else "总目标：以母本为底本顺译，完整、流畅、有据地呈现一个史略。"
 
 
-def _join_sections(sections: List[str]) -> str:
-    return "\n\n".join(s for s in sections if s.strip())
-
-
-def _writing_sections(phase: str) -> List[int]:
-    if phase == "plan":
-        return _WRITING_SECTIONS_PLAN
-    return _ALL_WRITING_RULES
+def _join(*parts: str) -> str:
+    return "\n\n".join(p for p in parts if p.strip())
 
 
 def compile_rule_bundle(recalled: Dict[str, Any], *, phase: str = "draft") -> str:
     text = _read()
+    sections = _extract_sections(text)
 
     supplement = sum(
         1 for b in (recalled.get("blocks") or []) if b.get("role") == "补充"
@@ -130,60 +197,66 @@ def compile_rule_bundle(recalled: Dict[str, Any], *, phase: str = "draft") -> st
         f"每条须有「必现词」"
     )
 
-    part0 = _extract_part0_block(text)
-    part0_intro = ""
-    if part0:
-        intro_m = re.match(
-            r"(## 第零部分：流水线约定\n\n>[^\n]+\n)",
-            part0,
-        )
-        if intro_m:
-            part0_intro = intro_m.group(1).strip()
+    # 按层收集并优化
+    p0 = _optimize_layer(sections.get("P0", ""), "P0")
+    p1 = sections.get("P1", "")
+    p2 = sections.get("P2", "")
+    p3 = _optimize_layer(sections.get("P3", ""), "P3")
 
-    layer1 = _join_sections(
-        [
-            meta,
-            "",
-            "## 任务目标",
-            _extract_goal(text),
-            "",
-            _extract_subsection(part0, "执行优先级"),
-            "",
-            _extract_subsection(part0, "禁止事项"),
-        ]
-    )
+    # 执行流程 = 规则十（逐句顺译）+ 规则四（引用规范）
+    process = _join(p2)
 
-    layer2_parts: List[str] = ["## 执行流程"]
-    if part0_intro:
-        layer2_parts.append(part0_intro)
-    for h in _LAYER2_PART0_HEADINGS:
-        sec = _extract_subsection(part0, h)
-        if sec:
-            layer2_parts.append(sec)
-    disc = _extract_discipline(text)
-    if disc:
-        layer2_parts.append(disc)
-    layer2 = _join_sections(layer2_parts)
+    # P1 分两个变体：纯风格（Phase1）和全量（Phase2）
+    p1_style = _p1_style_only(p1) if p1 else ""
 
-    writing_nums = _writing_sections(phase)
-    writing_chunks = [_extract_rule(text, n) for n in writing_nums]
-    layer3 = _join_sections(["## 写作规范（全部须遵守）", *writing_chunks])
+    picked = _PHASE_SECTIONS.get(phase, _PHASE_SECTIONS["draft"])
+    write_rules: List[str] = []
+    for key in picked:
+        if key == "P0":
+            write_rules.append(p0)
+        elif key == "P2":
+            write_rules.append(p2)
+        elif key == "P1_style":
+            write_rules.append(p1_style)
+        elif key == "P1_full":
+            write_rules.append(p1)
+        elif key == "P3":
+            write_rules.append(p3)
 
-    done = _extract_rule(text, _DONE_SECTION)
-    layer4 = (
-        _join_sections(["## 验收标准（动笔时即按此自检）", done])
-        if done and phase != "plan"
-        else ""
-    )
+    layer3 = _join(*write_rules)
 
     layers = [
-        "【第一层】任务目标与纪律",
-        layer1,
-        "【第二层】执行流程",
-        layer2,
-        "【第三层】写作规范",
-        layer3,
-        "【第四层】验收",
-        layer4,
+        ("【第一层】硬约束 — P0（违反即失败）", _join(meta, _extract_goal(text), p0)),
+        ("【第二层】执行流程", process),
+        ("【第三层】写作规范", layer3),
     ]
-    return "\n\n".join(layers)
+
+    return "\n\n".join(
+        f"## {label}\n\n{content}" for label, content in layers if content.strip()
+    )
+
+
+# ── 命令行验证入口 ──
+# 运行方式: python -m lib.rule_bundle plan|draft_mother|draft_enrich
+# 将 LLM 实际收到的规则 bundle 写入 /tmp/rule_bundle_<phase>.md 便于审查
+# 同时打印统计摘要到终端
+
+if __name__ == "__main__":
+    import sys
+    from pathlib import Path
+
+    phase = sys.argv[1] if len(sys.argv) > 1 else "draft_enrich"
+    if phase not in ("plan", "draft_mother", "draft_enrich", "draft"):
+        print(f"用法: python -m lib.rule_bundle [plan|draft_mother|draft_enrich|draft]")
+        sys.exit(1)
+
+    recalled = {"id": "DUMP_VERIFY", "blocks": [], "母本内容": []}
+    bundle = compile_rule_bundle(recalled, phase=phase)
+
+    out_path = Path(f"/tmp/rule_bundle_{phase}.md")
+    out_path.write_text(bundle, encoding="utf-8")
+    print(f"文件: {_RULES}")
+    print(f"阶段: {phase}")
+    print(f"注入量: {len(bundle)} 字符 ≈ {len(bundle)//4} tokens")
+    print(f"写入: {out_path}")
+    print(f"打开: open {out_path}")
