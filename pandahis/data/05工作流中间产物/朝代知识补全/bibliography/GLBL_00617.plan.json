@@ -1,0 +1,205 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00617",
+  "写作结构": "正史记载（如《史记·夏本纪》提及车正）见翻译详录，拓展文重点写史外异说与延展：以先秦文献《左传》《世本》《荀子》《吕氏春秋》等记载为核心，说明奚仲担任夏朝车正及发明车的传说；辅以后世文献如《水经注》等，补充其被尊为车神、有祭祀遗迹的情况；最后强调传说性质，指出缺乏同期实证。",
+  "候选著作": [
+    {
+      "出处": "《左传·定公元年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载奚仲为薛国始祖，担任夏朝车正，是最早明确提到奚仲官职的传世文献。",
+      "检索词": "奚仲 车正 薛",
+      "采用": true,
+      "原文摘句": "薛之皇祖奚仲，居薛，以为夏车正。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《世本·作篇》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "辑佚文献，明确记载“奚仲作车”，是造车传说的早期出处。",
+      "检索词": "奚仲作车",
+      "采用": true,
+      "原文摘句": "奚仲作车。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《荀子·解蔽》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "将奚仲造车与器物发明并列，说明其在先秦时期已被视作造车始祖。",
+      "检索词": "奚仲作车 乘杜作乘马",
+      "采用": true,
+      "原文摘句": "奚仲作车，乘杜作乘马，而造化立矣。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《吕氏春秋·君守》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "列举古代发明家，称奚仲作车，确认其发明地位。",
+      "检索词": "奚仲作车 君守",
+      "采用": true,
+      "原文摘句": "奚仲作车，苍颉作书，后稷作稼，皋陶作刑。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《墨子·非儒下》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "以奚仲造车为例反驳儒者‘君子循而不作’之说，侧面印证奚仲发明车的普遍认知。",
+      "检索词": "奚仲作车 非儒",
+      "采用": true,
+      "原文摘句": "奚仲作车，巧垂作舟。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《水经注·泗水》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "记载奚仲墓及相关地理风物，反映后世对其祭祀与纪念，可作为车神信仰的早期地理文献佐证。",
+      "检索词": "奚仲墓 泗水",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《说文解字·车部》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "字书引用“奚仲作车”，反映汉代人对造车起源的认知。",
+      "检索词": "奚仲作车 说文",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《路史·后纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋人罗泌辑录上古传说，整合奚仲事迹，属后世系统化叙述，可与早期记载互参。",
+      "检索词": "奚仲 路史",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《左传·定公元年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载奚仲为薛国始祖，担任夏朝车正，是最早明确提到奚仲官职的传世文献。",
+      "检索词": "奚仲 车正 薛",
+      "采用": true,
+      "原文摘句": "薛之皇祖奚仲，居薛，以为夏车正。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《世本·作篇》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "辑佚文献，明确记载“奚仲作车”，是造车传说的早期出处。",
+      "检索词": "奚仲作车",
+      "采用": true,
+      "原文摘句": "奚仲作车。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《荀子·解蔽》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "将奚仲造车与器物发明并列，说明其在先秦时期已被视作造车始祖。",
+      "检索词": "奚仲作车 乘杜作乘马",
+      "采用": true,
+      "原文摘句": "奚仲作车，乘杜作乘马，而造化立矣。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《吕氏春秋·君守》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "列举古代发明家，称奚仲作车，确认其发明地位。",
+      "检索词": "奚仲作车 君守",
+      "采用": true,
+      "原文摘句": "奚仲作车，苍颉作书，后稷作稼，皋陶作刑。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《墨子·非儒下》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "以奚仲造车为例反驳儒者‘君子循而不作’之说，侧面印证奚仲发明车的普遍认知。",
+      "检索词": "奚仲作车 非儒",
+      "采用": true,
+      "原文摘句": "奚仲作车，巧垂作舟。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《说文解字·车部》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "字书引用“奚仲作车”，反映汉代人对造车起源的认知。",
+      "检索词": "奚仲作车 说文",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《水经注·泗水》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "记载奚仲墓及相关地理风物，反映后世对其祭祀与纪念，可作为车神信仰的早期地理文献佐证。",
+      "检索词": "奚仲墓 泗水",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《路史·后纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋人罗泌辑录上古传说，整合奚仲事迹，属后世系统化叙述，可与早期记载互参。",
+      "检索词": "奚仲 路史",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 6,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "schema": "dynasty-knowledge-factual-fix/v1",
+  "fix_round": 2,
+  "all_applied": true,
+  "refs_sync_ok": true,
+  "issues": [],
+  "edits": [
+    {
+      "original": "《吕氏春秋·慎大》里说，商汤的军队「围夏师于鸣条」，而后大破之",
+      "revised": "《吕氏春秋·简选》记载商汤「登自鸣条，乃入巢门」，而后大破之",
+      "error_index": 1,
+      "applied": true,
+      "note": "《吕氏春秋·慎大》无此语，相关记载见于《简选》篇，作「登自鸣条，乃入巢门」。更正篇名并替换为正确原文。",
+      "target": "body"
+    },
+    {
+      "original": "《吕氏春秋·慎大》",
+      "revised": "《吕氏春秋·简选》",
+      "error_index": 1,
+      "applied": true,
+      "note": "参考著作段中的篇名需与正文同步修正。",
+      "target": "refs"
+    }
+  ]
+}

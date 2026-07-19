@@ -14,12 +14,6 @@ from typing import Any
 import dynasty_supplement_lib as dkl
 
 
-def _dropcap_char(paragraph: str) -> str:
-    text = paragraph.lstrip()
-    text = re.sub(r'^[\s，。！？、；：""''（）【】《》…—\-]+', "", text)
-    return text[0] if text else ""
-
-
 def simulate_miniapp_paragraphs(md: str) -> list[dict[str, Any]]:
     """对齐 miniapp/pages/box-detail splitDetailParagraphs 行为。"""
     parts = dkl.split_detail_paragraphs(md)
@@ -30,8 +24,6 @@ def simulate_miniapp_paragraphs(md: str) -> list[dict[str, Any]]:
             "char_count": len(para),
             "sentence_count": len([p for p in re.split(r"[。！？!?]", para) if p.strip()]),
         }
-        if i == 0:
-            item["dropcap"] = _dropcap_char(para)
         out.append(item)
     return out
 
@@ -79,8 +71,6 @@ def run_display_tests(
         issues: list[str] = []
         if not paras:
             issues.append("正文切段为空")
-        if paras and not paras[0].get("dropcap"):
-            issues.append("首段 dropcap 为空")
         if len(paras) < 3:
             issues.append(f"段落过少（{len(paras)}）")
         body = dkl.strip_detail_body(md)
@@ -93,7 +83,6 @@ def run_display_tests(
             failures += 1
         print(
             f"{status} {eid} · {path.name} · {len(paras)} 段 · "
-            f"dropcap={paras[0].get('dropcap') if paras else '-'} · "
             f"api={'OK' if api['detail_ok'] else 'offline/missing'}"
         )
         for issue in issues:

@@ -1,0 +1,13 @@
+{
+  "has_factual_errors": false,
+  "factual_errors": [],
+  "summary": "正文所述世系、在位年数、典籍异名及九夷来朝等核心史实，均与《史记》《竹书纪年》等常见史料通识相符，未发现硬史实性错误。",
+  "overall_verdict": "pass",
+  "schema": "dynasty-knowledge-review/v2",
+  "史略ID": "GLBL_00605",
+  "reviewed_at": "2026-07-19T04:13:46Z",
+  "pipeline_blocking": false,
+  "review_fix_round": 2,
+  "forced_pass": false,
+  "human_review_required": false
+}

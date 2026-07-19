@@ -1,0 +1,61 @@
+{
+  "schema": "dynasty-knowledge-source-graph/v1",
+  "史略ID": "GLBL_00616",
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 7,
+    "C_excluded": 1,
+    "overall": "B"
+  },
+  "sources": [
+    {
+      "出处": "《韩诗外传》卷四",
+      "tier": "经注/杂史",
+      "material_tier": "B",
+      "snippet_verified": false,
+      "ctext_urn": null
+    },
+    {
+      "出处": "《庄子·胠箧》",
+      "tier": "先秦文献",
+      "material_tier": "B",
+      "snippet_verified": false,
+      "ctext_urn": null
+    },
+    {
+      "出处": "《荀子·解蔽》",
+      "tier": "先秦文献",
+      "material_tier": "B",
+      "snippet_verified": false,
+      "ctext_urn": null
+    },
+    {
+      "出处": "《吕氏春秋·离谓》",
+      "tier": "先秦文献",
+      "material_tier": "B",
+      "snippet_verified": false,
+      "ctext_urn": null
+    },
+    {
+      "出处": "《新序·节士》",
+      "tier": "经注/杂史",
+      "material_tier": "B",
+      "snippet_verified": false,
+      "ctext_urn": null
+    },
+    {
+      "出处": "《韩非子·说难》",
+      "tier": "先秦文献",
+      "material_tier": "B",
+      "snippet_verified": false,
+      "ctext_urn": null
+    },
+    {
+      "出处": "《贞观政要·纳谏》",
+      "tier": "后世综述",
+      "material_tier": "B",
+      "snippet_verified": false,
+      "ctext_urn": null
+    }
+  ]
+}

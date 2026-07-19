@@ -1,0 +1,13 @@
+{
+  "has_factual_errors": false,
+  "factual_errors": [],
+  "summary": "全文主干史实与《左传·哀公元年》《左传·襄公四年》《竹书纪年》等常见史料相符，人物关系、事件顺序、典籍引文均无硬伤；涉及《楚辞·天问》的段落虽做了文学性勾连，但未将传说或一家之辞径自信史化，亦未捏造无依据的具体战术细节。",
+  "overall_verdict": "pass",
+  "schema": "dynasty-knowledge-review/v2",
+  "史略ID": "GLBL_00603",
+  "reviewed_at": "2026-07-19T04:01:57Z",
+  "pipeline_blocking": false,
+  "review_fix_round": 1,
+  "forced_pass": false,
+  "human_review_required": false
+}

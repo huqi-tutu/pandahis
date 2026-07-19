@@ -1,0 +1,179 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00578",
+  "写作结构": "正史叙述见翻译详录（史记·五帝本纪）；拓展文整合《山海经》《竹书纪年》《孟子》等史外异说，呈现丹朱之‘帝丹朱’葬地传说、流放丹水与‘不肖’的多源印证，并附后世《论衡》等对丹朱品性的评说作为补充。",
+  "候选著作": [
+    {
+      "出处": "《史记·五帝本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料来源，详载丹朱不肖、尧禅舜而不传子的核心叙事",
+      "检索词": "丹朱不肖 尧知子丹朱之不肖",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《山海经·海内南经》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载“帝丹朱”葬于苍梧之山阴，暗示在另一传说中丹朱曾被尊为帝，与舜并立",
+      "检索词": "苍梧之山 帝丹朱",
+      "采用": true,
+      "原文摘句": "苍梧之山，帝丹朱葬于其阴，帝舜葬于其阳。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《竹书纪年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "载“后稷放帝子丹朱于丹水”，补充流放结局，异于《史记》仅言不传位",
+      "检索词": "放帝子丹朱",
+      "采用": true,
+      "原文摘句": "后稷放帝子丹朱于丹水。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《孟子·万章上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "论证禅让合法性时提及丹朱与舜之子皆“不肖”，为‘传贤不传子’提供伦理依据",
+      "检索词": "丹朱之不肖",
+      "采用": true,
+      "原文摘句": "丹朱之不肖，舜之子亦不肖。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《国语·楚语上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "以“尧有丹朱”与“舜有商均”对举，说明至贤亦有难教之子，为禅让叙事常例",
+      "检索词": "尧有丹朱",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《吕氏春秋·去私》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "言尧有子十人而不传子，强调以天下为公，间接印证丹朱未得位的原因",
+      "检索词": "尧有子十人 不与其子",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《论衡·本性篇》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "称“丹朱傲”，为“不肖”做性格注脚，反映汉代对丹朱品行的理解",
+      "检索词": "丹朱傲",
+      "采用": true,
+      "原文摘句": "丹朱傲，商均虐。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·五帝本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料来源，详载丹朱不肖、尧禅舜而不传子的核心叙事",
+      "检索词": "丹朱不肖 尧知子丹朱之不肖",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《山海经·海内南经》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载“帝丹朱”葬于苍梧之山阴，暗示在另一传说中丹朱曾被尊为帝，与舜并立",
+      "检索词": "苍梧之山 帝丹朱",
+      "采用": true,
+      "原文摘句": "苍梧之山，帝丹朱葬于其阴，帝舜葬于其阳。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《竹书纪年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "载“后稷放帝子丹朱于丹水”，补充流放结局，异于《史记》仅言不传位",
+      "检索词": "放帝子丹朱",
+      "采用": true,
+      "原文摘句": "后稷放帝子丹朱于丹水。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《孟子·万章上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "论证禅让合法性时提及丹朱与舜之子皆“不肖”，为‘传贤不传子’提供伦理依据",
+      "检索词": "丹朱之不肖",
+      "采用": true,
+      "原文摘句": "丹朱之不肖，舜之子亦不肖。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《国语·楚语上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "以“尧有丹朱”与“舜有商均”对举，说明至贤亦有难教之子，为禅让叙事常例",
+      "检索词": "尧有丹朱",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《吕氏春秋·去私》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "言尧有子十人而不传子，强调以天下为公，间接印证丹朱未得位的原因",
+      "检索词": "尧有子十人 不与其子",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《论衡·本性篇》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "称“丹朱傲”，为“不肖”做性格注脚，反映汉代对丹朱品行的理解",
+      "检索词": "丹朱傲",
+      "采用": true,
+      "原文摘句": "丹朱傲，商均虐。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 4,
+    "C_excluded": 3,
+    "overall": "B"
+  }
+}

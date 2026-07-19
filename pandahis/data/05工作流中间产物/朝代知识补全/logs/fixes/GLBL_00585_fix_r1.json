@@ -1,0 +1,25 @@
+{
+  "schema": "dynasty-knowledge-factual-fix/v1",
+  "fix_round": 1,
+  "all_applied": true,
+  "refs_sync_ok": true,
+  "issues": [],
+  "edits": [
+    {
+      "original": "洗耳的细节，最早在《淮南子·精神训》里与巢父并提，到了皇甫谧的《高士传》和魏晋佚书《逸士传》里，才被铺陈为完整的轶事。",
+      "revised": "洗耳与巢父的情节，至皇甫谧的《高士传》和魏晋佚书《逸士传》等书中方见完整记载。",
+      "error_index": 1,
+      "applied": true,
+      "note": "删去错误归属的《淮南子·精神训》，改为魏晋著作方见完整记载",
+      "target": "body"
+    },
+    {
+      "original": "*参考著作：《高士传》《庄子·逍遥游》《淮南子·精神训》《逸士传》*",
+      "revised": "*参考著作：《高士传》《庄子·逍遥游》《逸士传》*",
+      "error_index": 1,
+      "applied": true,
+      "note": "同步删除参考著作中的《淮南子·精神训》",
+      "target": "refs"
+    }
+  ]
+}

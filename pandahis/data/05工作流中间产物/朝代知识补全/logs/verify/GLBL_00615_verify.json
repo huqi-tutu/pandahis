@@ -1,0 +1,22 @@
+{
+  "schema": "dynasty-knowledge-verify/v1",
+  "verified_at": "2026-07-19T05:06:26Z",
+  "史略ID": "GLBL_00615",
+  "passed": false,
+  "issues": [
+    {
+      "code": "source_curved_quote",
+      "message": "《…》引用后使用弯引号「女色误国…」，史料原文须改直角引号「」并配白话译述",
+      "severity": "error"
+    }
+  ],
+  "metrics": {
+    "char_count": 1040,
+    "effective_floor": 390,
+    "source_density": "S0",
+    "paragraph_count": 6,
+    "min_paragraphs": 5,
+    "legend_trigger_count": 1,
+    "legend_char_ratio": 0.0
+  }
+}

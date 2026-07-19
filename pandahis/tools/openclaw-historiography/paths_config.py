@@ -17,9 +17,14 @@ DIR_ANNOTATIONS = "03索引标注条目"
 DIR_TRANSLATIONS = "04史料翻译"
 DIR_INTERMEDIATE = "05工作流中间产物"
 DIR_DYNASTY_KNOWLEDGE = "06朝代知识补全"
+DIR_PERSON_RELATIONS = "07人物关系"
+DIR_COMMENTARY = "08评述"
+DIR_WITNESS = "09见证"
 
 SUBDIR_INTERMEDIATE_ANNOTATE = "标注"
 SUBDIR_INTERMEDIATE_DYNASTY_KNOWLEDGE = "朝代知识补全"
+SUBDIR_INTERMEDIATE_PERSON_RELATIONS = "人物关系补全"
+SUBDIR_INTERMEDIATE_COMMENTARY_WITNESS = "评述见证补全"
 SUBDIR_DYNASTY_KNOWLEDGE_ENTRIES = "索引条目"
 SUBDIR_DYNASTY_KNOWLEDGE_DETAILS = "详情"
 SUBDIR_INTERMEDIATE_TRANSLATE = "翻译"
@@ -51,7 +56,16 @@ def get_histograph_root() -> Path:
 
 def ensure_workflow_data_dirs(data: Path) -> None:
     """确保 data 下各产出 / 中间产物目录存在。"""
-    for name in (DIR_SOURCES, DIR_ANNOTATIONS, DIR_TRANSLATIONS, DIR_INTERMEDIATE, DIR_DYNASTY_KNOWLEDGE):
+    for name in (
+        DIR_SOURCES,
+        DIR_ANNOTATIONS,
+        DIR_TRANSLATIONS,
+        DIR_INTERMEDIATE,
+        DIR_DYNASTY_KNOWLEDGE,
+        DIR_PERSON_RELATIONS,
+        DIR_COMMENTARY,
+        DIR_WITNESS,
+    ):
         (data / name).mkdir(parents=True, exist_ok=True)
     intermediate = data / DIR_INTERMEDIATE
     for sub in (
@@ -73,6 +87,11 @@ def ensure_workflow_data_dirs(data: Path) -> None:
     dynasty_root = data / DIR_DYNASTY_KNOWLEDGE
     (dynasty_root / SUBDIR_DYNASTY_KNOWLEDGE_ENTRIES).mkdir(parents=True, exist_ok=True)
     (dynasty_root / SUBDIR_DYNASTY_KNOWLEDGE_DETAILS).mkdir(parents=True, exist_ok=True)
+    (data / DIR_PERSON_RELATIONS).mkdir(parents=True, exist_ok=True)
+    (data / DIR_COMMENTARY).mkdir(parents=True, exist_ok=True)
+    (data / DIR_WITNESS).mkdir(parents=True, exist_ok=True)
+    (intermediate / SUBDIR_INTERMEDIATE_PERSON_RELATIONS / "logs").mkdir(parents=True, exist_ok=True)
+    (intermediate / SUBDIR_INTERMEDIATE_COMMENTARY_WITNESS / "logs").mkdir(parents=True, exist_ok=True)
     (data / DIR_AUTH_SOURCES / SUBDIR_AUTH_SOURCES).mkdir(parents=True, exist_ok=True)
 
 
@@ -138,6 +157,11 @@ def histograph_paths() -> Dict[str, Path]:
         "dynasty_knowledge_detail_aggregate": (
             data / DIR_DYNASTY_KNOWLEDGE / SUBDIR_DYNASTY_KNOWLEDGE_DETAILS / DYNASTY_KNOWLEDGE_DETAIL_AGGREGATE
         ),
+        "person_relations": data / DIR_PERSON_RELATIONS,
+        "person_relations_work": intermediate / SUBDIR_INTERMEDIATE_PERSON_RELATIONS,
+        "commentary": data / DIR_COMMENTARY,
+        "witness": data / DIR_WITNESS,
+        "commentary_witness_work": intermediate / SUBDIR_INTERMEDIATE_COMMENTARY_WITNESS,
         "translate_work": translate_work,
         "translate_state": translate_state,
         "global_index": annotations / DEFAULT_GLOBAL_INDEX,

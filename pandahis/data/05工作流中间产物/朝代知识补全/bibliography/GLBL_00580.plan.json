@@ -1,0 +1,201 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00580",
+  "写作结构": "正史叙事以《史记·秦本纪》《尚书·舜典》为主干，由翻译详录提供原文。拓展文聚焦伯益生平之后的继承传说，引《孟子》《古本竹书纪年》《韩非子》呈现不同说法，并借《吕氏春秋》略补其虞官职能。传说部分作为异闻附记，不列入正式年表。",
+  "候选著作": [
+    {
+      "出处": "《尚书·舜典》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载舜命伯益为虞官，位列主要史料出处",
+      "检索词": "益作朕虞",
+      "采用": false,
+      "原文摘句": "帝曰：‘畴若予上下草木鸟兽？’佥曰：‘益哉！’帝曰：‘俞，咨！益，汝作朕虞。’",
+      "snippet_verified": true,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《史记·秦本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载伯益佐禹治水、受赐姓嬴的经过，为主要史源",
+      "检索词": "佐禹治水",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《孟子·万章上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "载禹荐益于天、益避启于箕山，是禅让传说的重要儒家版本",
+      "检索词": "益避启",
+      "采用": true,
+      "原文摘句": "禹荐益于天，七年，禹崩，三年之丧毕，益避禹之子于箕山之阴。朝觐讼狱者不之益而之启，曰：‘吾君之子也。’",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《古本竹书纪年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "战国魏墓出土编年史，载益与启争位，与《孟子》形成鲜明对比",
+      "检索词": "益干启位",
+      "采用": true,
+      "原文摘句": "益干启位，启杀之。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《韩非子·外储说右下》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "法家视角记述禹传天下于益，而启凭借国内势力夺位",
+      "检索词": "启与友党攻益",
+      "采用": true,
+      "原文摘句": "禹爱益而任天下于益，已而以启人为吏。及老，而以启为不足任天下，故传天下于益，而势重尽在启也。已而启与友党攻益而夺之天下。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《吕氏春秋·慎行论·求人》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "提及禹命伯益为虞，并随巡四方，可补充虞官的实际执掌范围",
+      "检索词": "使益为虞",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《战国策·燕策一》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "叙禹授益以政而启夺之，与《韩非子》说相近，重复度高",
+      "检索词": "禹授益而以启为吏",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《论衡·刺孟》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "王充对孟子所述益避启传说的质疑与评议",
+      "检索词": "伯益避启",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《尚书·舜典》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载舜命伯益为虞官，位列主要史料出处",
+      "检索词": "益作朕虞",
+      "采用": false,
+      "原文摘句": "帝曰：‘畴若予上下草木鸟兽？’佥曰：‘益哉！’帝曰：‘俞，咨！益，汝作朕虞。’",
+      "snippet_verified": true,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《史记·秦本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载伯益佐禹治水、受赐姓嬴的经过，为主要史源",
+      "检索词": "佐禹治水",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《孟子·万章上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "载禹荐益于天、益避启于箕山，是禅让传说的重要儒家版本",
+      "检索词": "益避启",
+      "采用": true,
+      "原文摘句": "禹荐益于天，七年，禹崩，三年之丧毕，益避禹之子于箕山之阴。朝觐讼狱者不之益而之启，曰：‘吾君之子也。’",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《古本竹书纪年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "战国魏墓出土编年史，载益与启争位，与《孟子》形成鲜明对比",
+      "检索词": "益干启位",
+      "采用": true,
+      "原文摘句": "益干启位，启杀之。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《韩非子·外储说右下》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "法家视角记述禹传天下于益，而启凭借国内势力夺位",
+      "检索词": "启与友党攻益",
+      "采用": true,
+      "原文摘句": "禹爱益而任天下于益，已而以启人为吏。及老，而以启为不足任天下，故传天下于益，而势重尽在启也。已而启与友党攻益而夺之天下。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《吕氏春秋·慎行论·求人》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "提及禹命伯益为虞，并随巡四方，可补充虞官的实际执掌范围",
+      "检索词": "使益为虞",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《战国策·燕策一》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "叙禹授益以政而启夺之，与《韩非子》说相近，重复度高",
+      "检索词": "禹授益而以启为吏",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《论衡·刺孟》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "王充对孟子所述益避启传说的质疑与评议",
+      "检索词": "伯益避启",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 4,
+    "C_excluded": 4,
+    "overall": "B"
+  }
+}

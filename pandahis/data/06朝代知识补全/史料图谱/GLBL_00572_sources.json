@@ -1,0 +1,33 @@
+{
+  "schema": "dynasty-knowledge-source-graph/v1",
+  "史略ID": "GLBL_00572",
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 3,
+    "C_excluded": 2,
+    "overall": "B"
+  },
+  "sources": [
+    {
+      "出处": "《周礼·春官·大宗伯》",
+      "tier": "先秦文献",
+      "material_tier": "B",
+      "snippet_verified": false,
+      "ctext_urn": null
+    },
+    {
+      "出处": "《礼记·祭统》",
+      "tier": "先秦文献",
+      "material_tier": "B",
+      "snippet_verified": false,
+      "ctext_urn": null
+    },
+    {
+      "出处": "《礼记·明堂位》",
+      "tier": "先秦文献",
+      "material_tier": "B",
+      "snippet_verified": false,
+      "ctext_urn": null
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00614",
+  "写作结构": "正文叙述以《左传·哀公元年》为核心，展开后缗逃出自窦、归有仍生少康的经过；《古本竹书纪年》《世本》辑文作为旁证补充时空坐标；正史《史记·夏本纪》只作概括性记录，见翻译详录不拓展细节；《帝王世纪》等后世综述纳入合段补充，但避免编造逃亡路线、心理活动等；严禁描写forbidden_inventions中的具体路线、搏斗、对话及少康成长故事。",
+  "候选著作": [
+    {
+      "出处": "《左传·哀公元年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "最早且最详实的记载，完整叙述后缗怀孕时从墙洞逃出、归于有仍氏并生下少康的史实。",
+      "检索词": "后缗方娠逃出自窦",
+      "采用": true,
+      "原文摘句": "昔有过浇杀斟灌以伐斟鄩，灭夏后相。后缗方娠，逃出自窦，归于有仍，生少康焉，为仍牧正。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《古本竹书纪年·夏纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "收录后缗归于有仍生少康的简约记录，可印证《左传》记载的时间坐标。",
+      "检索词": "后缗归有仍",
+      "采用": true,
+      "原文摘句": "后缗归于有仍，生少康。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《世本·帝王世本》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记述有仍氏女缗为少康生母，补充母族世系信息。",
+      "检索词": "有仍氏女缗",
+      "采用": true,
+      "原文摘句": "有仍氏之女曰缗，生少康。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·夏本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "简略提及帝相之子少康，未涉后缗逃亡细节，作为正史参考。",
+      "检索词": "帝相子少康",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "整合先代传说，以文学笔法重述后缗逃出生天故事，反映汉晋间传说层的丰富。",
+      "检索词": "后缗逃出自窦",
+      "采用": true,
+      "原文摘句": "后缗有娠，逃出自窦，归于有仍，生少康焉。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《左传·哀公元年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "最早且最详实的记载，完整叙述后缗怀孕时从墙洞逃出、归于有仍氏并生下少康的史实。",
+      "检索词": "后缗方娠逃出自窦",
+      "采用": true,
+      "原文摘句": "昔有过浇杀斟灌以伐斟鄩，灭夏后相。后缗方娠，逃出自窦，归于有仍，生少康焉，为仍牧正。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《古本竹书纪年·夏纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "收录后缗归于有仍生少康的简约记录，可印证《左传》记载的时间坐标。",
+      "检索词": "后缗归有仍",
+      "采用": true,
+      "原文摘句": "后缗归于有仍，生少康。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《世本·帝王世本》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记述有仍氏女缗为少康生母，补充母族世系信息。",
+      "检索词": "有仍氏女缗",
+      "采用": true,
+      "原文摘句": "有仍氏之女曰缗，生少康。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·夏本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "简略提及帝相之子少康，未涉后缗逃亡细节，作为正史参考。",
+      "检索词": "帝相子少康",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "整合先代传说，以文学笔法重述后缗逃出生天故事，反映汉晋间传说层的丰富。",
+      "检索词": "后缗逃出自窦",
+      "采用": true,
+      "原文摘句": "后缗有娠，逃出自窦，归于有仍，生少康焉。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 4,
+    "C_excluded": 1,
+    "overall": "B"
+  }
+}

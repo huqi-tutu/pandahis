@@ -1,0 +1,13 @@
+{
+  "has_factual_errors": false,
+  "factual_errors": [],
+  "summary": "正文所述夏帝廑的世系、别名、都邑迁徙、在位年数异说及传位给孔甲等情节，均与常见史料（《史记》《竹书纪年》《帝王世纪》等）的通识记载相符，未见明显硬史实错误。",
+  "overall_verdict": "pass",
+  "schema": "dynasty-knowledge-review/v2",
+  "史略ID": "GLBL_00610",
+  "reviewed_at": "2026-07-19T04:34:51Z",
+  "pipeline_blocking": false,
+  "review_fix_round": 1,
+  "forced_pass": false,
+  "human_review_required": false
+}

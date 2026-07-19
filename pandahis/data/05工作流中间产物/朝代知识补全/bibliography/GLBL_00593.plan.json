@@ -1,0 +1,255 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00593",
+  "写作结构": "正史叙述见翻译详录（《史记·夏本纪》等）；拓展文以《尚书·汤誓》及《书序》为核心叙事，辅以《古本竹书纪年》《逸周书》《国语》等说明战役结果与夏桀逃亡，并以《帝王世纪》补充后世传说中商巢之死。其余诸子记载作为旁证，避免编造战斗细节。",
+  "候选著作": [
+    {
+      "出处": "《尚书·汤誓》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "本条目主要史料出处，记载商汤战前动员、列举夏桀罪状及天命伐桀依据",
+      "检索词": "时日曷丧 予及汝皆亡",
+      "采用": true,
+      "原文摘句": "时日曷丧？予及汝皆亡。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《尚书·汤誓序》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "概述伊尹辅汤伐桀及鸣条之战的起因与地点",
+      "检索词": "伊尹相汤伐桀",
+      "采用": true,
+      "原文摘句": "伊尹相汤伐桀，升自陑，遂与桀战于鸣条之野。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《古本竹书纪年·夏纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "提供夏桀败亡及逃亡南巢的简明实录，弥补《尚书》未载的结局细节",
+      "检索词": "汤遂灭夏 桀逃南巢",
+      "采用": true,
+      "原文摘句": "汤遂灭夏，桀逃南巢。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《逸周书·殷祝解》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记述商汤流放夏桀的经过与对话，展现除武力外的政治处置",
+      "检索词": "汤放桀 中野",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《国语·鲁语上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载夏桀败亡后奔于南巢，与《竹书纪年》相合",
+      "检索词": "桀奔南巢",
+      "采用": true,
+      "原文摘句": "桀奔南巢。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《吕氏春秋·慎大》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "叙述商汤在鸣条围困夏师并战胜，为鸣条之战提供另一先秦记载",
+      "检索词": "困夏师 鸣条",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "后世文献补充夏桀逃亡南巢后死于该地的传说",
+      "检索词": "桀奔南巢之山",
+      "采用": true,
+      "原文摘句": "桀奔于南巢之山而死。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·夏本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史对鸣条之战的系统叙述，保留在翻译详录中",
+      "检索词": "汤伐桀 鸣条",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《清华简·尹至》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "出土文献记录伊尹自夏归商与汤谋划灭夏，为战前形势提供新材料",
+      "检索词": "尹至 汤 夏",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《墨子·非攻下》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "以天命论说汤伐桀的正义性，可与《汤誓》互证",
+      "检索词": "汤伐桀 天命",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《尚书·汤誓》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "本条目主要史料出处，记载商汤战前动员、列举夏桀罪状及天命伐桀依据",
+      "检索词": "时日曷丧 予及汝皆亡",
+      "采用": true,
+      "原文摘句": "时日曷丧？予及汝皆亡。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《尚书·汤誓序》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "概述伊尹辅汤伐桀及鸣条之战的起因与地点",
+      "检索词": "伊尹相汤伐桀",
+      "采用": true,
+      "原文摘句": "伊尹相汤伐桀，升自陑，遂与桀战于鸣条之野。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《古本竹书纪年·夏纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "提供夏桀败亡及逃亡南巢的简明实录，弥补《尚书》未载的结局细节",
+      "检索词": "汤遂灭夏 桀逃南巢",
+      "采用": true,
+      "原文摘句": "汤遂灭夏，桀逃南巢。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《逸周书·殷祝解》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记述商汤流放夏桀的经过与对话，展现除武力外的政治处置",
+      "检索词": "汤放桀 中野",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《国语·鲁语上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载夏桀败亡后奔于南巢，与《竹书纪年》相合",
+      "检索词": "桀奔南巢",
+      "采用": true,
+      "原文摘句": "桀奔南巢。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《吕氏春秋·慎大》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "叙述商汤在鸣条围困夏师并战胜，为鸣条之战提供另一先秦记载",
+      "检索词": "困夏师 鸣条",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·夏本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史对鸣条之战的系统叙述，保留在翻译详录中",
+      "检索词": "汤伐桀 鸣条",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《清华简·尹至》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "出土文献记录伊尹自夏归商与汤谋划灭夏，为战前形势提供新材料",
+      "检索词": "尹至 汤 夏",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《墨子·非攻下》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "以天命论说汤伐桀的正义性，可与《汤誓》互证",
+      "检索词": "汤伐桀 天命",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "后世文献补充夏桀逃亡南巢后死于该地的传说",
+      "检索词": "桀奔南巢之山",
+      "采用": true,
+      "原文摘句": "桀奔于南巢之山而死。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 9,
+    "C_excluded": 1,
+    "overall": "B"
+  }
+}

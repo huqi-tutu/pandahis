@@ -1,0 +1,40 @@
+{
+  "schema": "dynasty-knowledge-source-graph/v1",
+  "史略ID": "GLBL_00587",
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 4,
+    "C_excluded": 1,
+    "overall": "B"
+  },
+  "sources": [
+    {
+      "出处": "《尚书·甘誓》",
+      "tier": "先秦文献",
+      "material_tier": "B",
+      "snippet_verified": false,
+      "ctext_urn": null
+    },
+    {
+      "出处": "《竹书纪年》辑本",
+      "tier": "辑佚/出土",
+      "material_tier": "B",
+      "snippet_verified": false,
+      "ctext_urn": null
+    },
+    {
+      "出处": "《逸周书·史记解》",
+      "tier": "辑佚/出土",
+      "material_tier": "B",
+      "snippet_verified": false,
+      "ctext_urn": null
+    },
+    {
+      "出处": "《吕氏春秋·先己》",
+      "tier": "经注/杂史",
+      "material_tier": "B",
+      "snippet_verified": false,
+      "ctext_urn": null
+    }
+  ]
+}

@@ -8,7 +8,8 @@
       <view class="ref-hero card-paper">
         <view class="ref-hero-icon">📜</view>
         <view class="ref-hero-title">{{refTitle}}</view>
-        <view class="ref-hero-sub">以下为史料出处与摘录，便于对照阅读</view>
+        <view class="ref-hero-sub" wx:if="{{refSourceWork}}">{{refSourceWork}}</view>
+        <view class="ref-hero-sub" wx:else>以下为史料出处与摘录，便于对照阅读</view>
       </view>
 
       <block wx:for="{{refItems}}" wx:key="index">

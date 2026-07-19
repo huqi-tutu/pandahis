@@ -1,0 +1,13 @@
+{
+  "has_factual_errors": false,
+  "factual_errors": [],
+  "summary": "正文所涉典籍引文、事件脉络、地望与人物关系均与通行史料相合，未检出明显硬史实性错误；部分表述（如鸣条地望取河南封丘说、夏祚约数、孥戮之训）属于学界常见异说或合理概数，不构成事实讹误。",
+  "overall_verdict": "pass",
+  "schema": "dynasty-knowledge-review/v2",
+  "史略ID": "GLBL_00593",
+  "reviewed_at": "2026-07-19T02:47:44Z",
+  "pipeline_blocking": false,
+  "review_fix_round": 3,
+  "forced_pass": false,
+  "human_review_required": false
+}

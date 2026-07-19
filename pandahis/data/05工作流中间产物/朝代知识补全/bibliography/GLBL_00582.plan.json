@@ -1,0 +1,158 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00582",
+  "写作结构": "正史叙述见翻译详录（《史记·殷本纪》）。拓展文以《尚书·舜典》记司徒任命为纲，旁引《诗经·商颂·玄鸟》溯始祖神话、《国语·鲁语上》证祭祀地位、《荀子·成相》述称号与迁徙、《大戴礼记·帝系姓》载出身世系，异说延展。",
+  "候选著作": [
+    {
+      "出处": "《尚书·舜典》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载舜命契为司徒，执掌教化",
+      "检索词": "五品不逊",
+      "采用": true,
+      "原文摘句": "帝曰：“契，百姓不亲，五品不逊。汝作司徒，敬敷五教，在宽。”",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《诗经·商颂·玄鸟》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "传颂商族起源“玄鸟生商”，关联始祖契",
+      "检索词": "玄鸟生商",
+      "采用": true,
+      "原文摘句": "天命玄鸟，降而生商，宅殷土芒芒。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《国语·鲁语上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记录商族祭祀以契为祖，印证始祖地位",
+      "检索词": "禘喾而祖契",
+      "采用": true,
+      "原文摘句": "商人禘喾而祖契，郊冥而宗汤。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《荀子·成相》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "直言契称玄王，居于砥石，后迁于商",
+      "检索词": "契玄王",
+      "采用": true,
+      "原文摘句": "契玄王，生昭明，居于砥石，迁于商。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《大戴礼记·帝系姓》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载契为帝喾之子，母为有娀氏简狄",
+      "检索词": "简狄生契",
+      "采用": true,
+      "原文摘句": "帝喾卜其四妃之子，而皆有天下……次妃有娀氏之女也，曰简狄，生契。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·殷本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史中契的详细生平叙述",
+      "检索词": "殷本纪契",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《尚书·舜典》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载舜命契为司徒，执掌教化",
+      "检索词": "五品不逊",
+      "采用": true,
+      "原文摘句": "帝曰：“契，百姓不亲，五品不逊。汝作司徒，敬敷五教，在宽。”",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《诗经·商颂·玄鸟》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "传颂商族起源“玄鸟生商”，关联始祖契",
+      "检索词": "玄鸟生商",
+      "采用": true,
+      "原文摘句": "天命玄鸟，降而生商，宅殷土芒芒。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《国语·鲁语上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记录商族祭祀以契为祖，印证始祖地位",
+      "检索词": "禘喾而祖契",
+      "采用": true,
+      "原文摘句": "商人禘喾而祖契，郊冥而宗汤。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《荀子·成相》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "直言契称玄王，居于砥石，后迁于商",
+      "检索词": "契玄王",
+      "采用": true,
+      "原文摘句": "契玄王，生昭明，居于砥石，迁于商。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《大戴礼记·帝系姓》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载契为帝喾之子，母为有娀氏简狄",
+      "检索词": "简狄生契",
+      "采用": true,
+      "原文摘句": "帝喾卜其四妃之子，而皆有天下……次妃有娀氏之女也，曰简狄，生契。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·殷本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史中契的详细生平叙述",
+      "检索词": "殷本纪契",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "legend_sources": [],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 5,
+    "C_excluded": 1,
+    "overall": "B"
+  }
+}

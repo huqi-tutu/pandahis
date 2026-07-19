@@ -1,0 +1,13 @@
+{
+  "has_factual_errors": false,
+  "factual_errors": [],
+  "summary": "正文所述寒浞代夏、灭斟灌斟寻、少康中兴等关键史实与《左传·襄公四年》《竹书纪年》等常见史料记载基本一致，未发现明显硬史实错误。",
+  "overall_verdict": "pass",
+  "schema": "dynasty-knowledge-review/v2",
+  "史略ID": "GLBL_00619",
+  "reviewed_at": "2026-07-19T05:34:47Z",
+  "pipeline_blocking": false,
+  "review_fix_round": 3,
+  "forced_pass": false,
+  "human_review_required": false
+}

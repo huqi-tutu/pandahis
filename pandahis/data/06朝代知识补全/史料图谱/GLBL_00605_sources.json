@@ -1,0 +1,26 @@
+{
+  "schema": "dynasty-knowledge-source-graph/v1",
+  "史略ID": "GLBL_00605",
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 2,
+    "overall": "B"
+  },
+  "sources": [
+    {
+      "出处": "《竹书纪年·夏纪》",
+      "tier": "辑佚/出土",
+      "material_tier": "B",
+      "snippet_verified": false,
+      "ctext_urn": null
+    },
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "material_tier": "B",
+      "snippet_verified": false,
+      "ctext_urn": null
+    }
+  ]
+}

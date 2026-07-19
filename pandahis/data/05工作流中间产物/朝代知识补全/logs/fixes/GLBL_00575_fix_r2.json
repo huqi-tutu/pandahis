@@ -1,0 +1,20 @@
+{
+  "schema": "dynasty-knowledge-factual-fix/v1",
+  "fix_round": 2,
+  "all_applied": false,
+  "refs_sync_ok": false,
+  "issues": [
+    "仍含错误典籍「《荀子·赋篇》」（须正文与参考著作一并清除）",
+    "参考著作段仍含「赋篇」，须与正文同步修正"
+  ],
+  "edits": [
+    {
+      "original": "比如《荀子·赋篇》在论述时，便把嫫母与闾娵子奢等对举",
+      "revised": "比如《荀子·赋篇》在论述时，以嫫母、力父与闾娵、子奢等对举",
+      "error_index": 1,
+      "applied": true,
+      "note": "据《荀子·赋篇》原文，嫫母与力父为丑者，闾娵与子奢为美者，对举而非并列，故补入力父并调整句式。",
+      "target": "body"
+    }
+  ]
+}

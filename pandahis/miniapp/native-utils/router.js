@@ -12,6 +12,7 @@ exports.ROUTES = {
     invite: '/pages/invite/index',
     inviteAccept: '/pages/invite-accept/index',
     favorites: '/pages/favorites/index',
+    corrections: '/pages/corrections/index',
     footprints: '/pages/footprints/index',
     originalText: '/pages/original-text/index',
     settings: '/pages/settings/index',

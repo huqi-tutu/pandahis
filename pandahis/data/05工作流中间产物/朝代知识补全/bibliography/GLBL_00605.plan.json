@@ -1,0 +1,87 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00605",
+  "写作结构": "正史叙述见翻译详录，拓展文以《竹书纪年》为核心补充在位年数与九夷来朝事；异名参考《帝王世纪》。",
+  "候选著作": [
+    {
+      "出处": "《史记·夏本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要记载槐继杼立及夏世系，为最基本的正史依据",
+      "检索词": "夏本纪 槐",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《竹书纪年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "补记槐在位年数及九夷来朝的具体记载，为最具拓展价值之文献",
+      "检索词": "后芬 九夷来御",
+      "采用": true,
+      "原文摘句": "后芬即位，三年，九夷来御。后芬立四十四年。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "提供槐的异名及不同系统名号说法，属后世整理，可信度较低",
+      "检索词": "帝槐 芬 发",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·夏本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要记载槐继杼立及夏世系，为最基本的正史依据",
+      "检索词": "夏本纪 槐",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《竹书纪年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "补记槐在位年数及九夷来朝的具体记载，为最具拓展价值之文献",
+      "检索词": "后芬 九夷来御",
+      "采用": true,
+      "原文摘句": "后芬即位，三年，九夷来御。后芬立四十四年。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "提供槐的异名及不同系统名号说法，属后世整理，可信度较低",
+      "检索词": "帝槐 芬 发",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 1,
+    "overall": "B"
+  }
+}

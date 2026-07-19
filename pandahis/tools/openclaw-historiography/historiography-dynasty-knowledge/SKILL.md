@@ -26,16 +26,19 @@ description: >
 
 | 文档 | 用途 |
 |------|------|
-| `reference/朝代知识补全总则.md` | 总纲与 Workflow |
+| `reference/朝代知识补全总则.md` | 总纲、Workflow、**§零 读者交付物** |
 | `reference/事略补全规则.md` | 事略五要素 |
 | `reference/典制补全规则.md` | 典制准入 |
 | `reference/典制与思想分界.md` | 典制 vs 思想权威分界 |
 | `reference/论著补全规则.md` | 论著（含典籍/名篇/思想） |
 | `reference/朝代补全格式规范.md` | JSON / GLBL 字段 |
 | `reference/人物补全规则.md` | 人物缺口补全、去重、六类边界 |
-| `reference/详情撰写规则.md` | 详情正文：仅下限、起承转合、风格（事略/典制/论著） |
-| `reference/人物详情撰写规则.md` | 人物七类详情正文：起承转合、六类侧重、记忆点优先 |
+| `reference/详情写作_共用规范.md` | **§0 读者交付物**（《明朝那些事儿》文体、禁元叙述）+ compose 共用规范 |
+| `reference/详情撰写规则.md` | 事略/典制/论著专属：起承转合、checklist |
+| `reference/人物详情撰写规则.md` | 人物七类专属：六类侧重、记忆点 |
+| `reference/附录/` | 示例反例、工作流、字数详表（人类参考，不进 prompt） |
 | `reference/执行纪律.md` | **三类分步、详情逐条、LLM 模型**（必读） |
+| `reference/维基底稿使用规范.md` | compose-detail 维基分层、条目坐标聚焦（必读） |
 
 共享（只读引用，不写入 annotate）：
 
@@ -58,7 +61,8 @@ description: >
 | 中间产物（研究/候选） | `data/05工作流中间产物/朝代知识补全/` |
 | **正式产出根目录** | `data/06朝代知识补全/` |
 | 索引条目 JSON | `data/06朝代知识补全/索引条目/` |
-| 详情译文 JSON | `data/06朝代知识补全/详情/` |
+| 详情译文 JSON | `data/06朝代知识补全/详情/`（**`翻译详情` = 小程序读者正文**，见总则 §零） |
+| 维基摘录（compose grounding） | `data/06朝代知识补全/维基摘录/` |
 | 朝代元数据 | `data/01历史坐标数据/朝代.json` |
 | 并入目标 | `data/03索引标注条目/史略索引_01至02.json` |
 
@@ -80,7 +84,8 @@ python3 dynasty_supplement.py --dynasty 五帝 --step candidates-lunzhu --dry-ru
 # Step 2.5 人物候选（第四分支 · 一次调用六类串行）
 python3 dynasty_supplement.py --dynasty 五帝 --step candidates-renwu --dry-run
 
-# Step 6 详情（每次仅一条；人物和非人物均通过 compose-detail）
+# Step 6 详情（每次仅一条；compose-detail 自动拉维基底稿，可用 wiki-fetch 单独预拉）
+python3 dynasty_supplement.py --dynasty 五帝 --step wiki-fetch --entry-id GLBL_00xxx
 python3 dynasty_supplement.py --dynasty 五帝 --step compose-detail --entry-id GLBL_00xxx --dry-run
 
 # fill / gate renwu

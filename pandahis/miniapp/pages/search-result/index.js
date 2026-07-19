@@ -54,6 +54,7 @@ Page({
                 type: it.type,
                 id: it.id,
                 pathText,
+                dynastyHint: it.type === 'unit' ? (0, format_1.extractUnitDynastyHint)(pathText) : '',
                 titleRich: (0, format_1.highlightEmToRich)(it.titleHighlight || ''),
                 descRich: (0, format_1.highlightEmToRich)(it.descHighlight || ''),
                 hasDesc: descPlain.length > 0,
@@ -93,7 +94,10 @@ Page({
     go(e) {
         const ds = e.currentTarget.dataset;
         if (ds.type === 'unit') {
-            (0, router_1.navigateTo)(router_1.ROUTES.dynastyDetail, { unitId: ds.id });
+            (0, router_1.navigateTo)(router_1.ROUTES.dynastyDetail, {
+                unitId: ds.id,
+                dynasty: ds.dynasty || '',
+            });
             return;
         }
         if (ds.type === 'box') {

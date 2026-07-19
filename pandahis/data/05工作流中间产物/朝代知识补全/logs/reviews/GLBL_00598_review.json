@@ -1,0 +1,19 @@
+{
+  "has_factual_errors": true,
+  "factual_errors": [
+    {
+      "quote": "后世今文经学家（如董仲舒、刘歆）",
+      "reason": "刘歆是西汉古文经学的奠基人，他校书中秘时发现并推崇《左氏春秋》《毛诗》《古文尚书》等古文典籍，主张立古文经于学官，与今文经学派有明确对立。将刘歆归为“今文经学家”属于人物学派归属的硬史实错误。",
+      "fix_hint": "改为“后世经学家（如今文家的董仲舒、古文家的刘歆）”或删去刘歆。"
+    }
+  ],
+  "summary": "正文整体史料运用较为谨慎，但存在一处明显的学派归属硬错误：将古文经学代表人物刘歆误作今文经学家。",
+  "overall_verdict": "forced_pass",
+  "schema": "dynasty-knowledge-review/v2",
+  "史略ID": "GLBL_00598",
+  "reviewed_at": "2026-07-19T03:26:07Z",
+  "pipeline_blocking": false,
+  "review_fix_round": 3,
+  "forced_pass": true,
+  "human_review_required": true
+}

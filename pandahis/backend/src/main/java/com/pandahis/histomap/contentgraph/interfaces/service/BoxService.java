@@ -60,8 +60,13 @@ public class BoxService {
           civId
       )).orElse("");
     }
+    String civilizationName = Optional.ofNullable((String) box.get("civilization_name")).orElse("").trim();
+    if (civilizationName.isEmpty()) {
+      civilizationName = civName.trim();
+    }
+    String dynastyName = Optional.ofNullable((String) box.get("dynasty_name")).orElse("").trim();
 
-    String subText = HistoryYearFormat.label(startYear) + " · " + civName + " · " + categoryName(categoryKey);
+    String subText = HistoryYearFormat.label(startYear) + " · " + civilizationName + " · " + categoryName(categoryKey);
     String blurb = Optional.ofNullable((String) box.get("blurb")).orElse("").trim();
 
     boolean hasGraphFromDb = exists("SELECT COUNT(1) FROM box_graph_node WHERE box_id=?", boxId);
@@ -70,7 +75,8 @@ public class BoxService {
         Integer.class,
         boxId
     );
-    boolean hasGraph = hasGraphFromDb || (unitLinked != null && unitLinked > 0);
+    boolean hasGraphData = hasGraphFromDb || (unitLinked != null && unitLinked > 0);
+    boolean hasGraph = BoxCategorySupport.isPersonCategory(categoryKey) && hasGraphData;
     boolean hasCritiques = exists("SELECT COUNT(1) FROM box_critique WHERE box_id=?", boxId);
     boolean hasRelics = exists("SELECT COUNT(1) FROM box_relic WHERE box_id=?", boxId);
     boolean hasOriginal = hasOriginalContent(boxId, (String) box.get("original_ref_json"));
@@ -89,7 +95,9 @@ public class BoxService {
             categoryKey,
             startYear,
             endYear,
-            normalizeEntrySource((String) box.get("entry_source"))
+            normalizeEntrySource((String) box.get("entry_source")),
+            civilizationName,
+            dynastyName
         ),
         isFavorite,
         tabSummary,
@@ -190,17 +198,10 @@ public class BoxService {
     );
 
     if (nodes.isEmpty()) {
-      if (boxTitle.contains("黄帝")) {
-        return buildHuangDiDemonstrationGraph(boxId);
-      }
       var synthetic = syntheticUnitEventGraph(boxId);
       if (synthetic != null) {
         return synthetic;
       }
-    }
-
-    if (boxTitle.contains("黄帝") && shouldUseHuangDiDemonstration(nodes)) {
-      return buildHuangDiDemonstrationGraph(boxId);
     }
 
     String centerNodeKey = resolveCenterNodeKey(nodes, boxTitle);
@@ -230,11 +231,14 @@ public class BoxService {
     if (extra != null && !extra.isBlank()) {
       try {
         JsonNode n = objectMapper.readTree(extra);
-        category = textOr(n, "category", category);
-        role = textOr(n, "role", role);
-        level = textOr(n, "level", level);
-        lineage = textOr(n, "lineage", lineage);
-        summary = textOr(n, "summary", summary);
+        category = normalizeGraphCategory(textOrAny(n, category, "关系类别", "category", "group"));
+        role = textOrAny(n, role, "上级连接线标题", "role");
+        level = textOrAny(n, level, "关系层级", "level");
+        lineage = textOrAny(n, lineage, "关系链", "lineage");
+        if (lineage.isBlank()) {
+          lineage = buildLineageFromParents(n);
+        }
+        summary = textOrAny(n, summary, "关系简述", "summary");
         targetBoxId = textOr(n, "targetBoxId", null);
       } catch (Exception ignored) {}
     }
@@ -242,6 +246,43 @@ public class BoxService {
       summary = name + " 与当前史略存在「" + (role.isBlank() ? category : role) + "」关联。";
     }
     return new GraphNodeDetailDTO(name, category, role, level, lineage, summary, targetBoxId);
+  }
+
+  private static String normalizeGraphCategory(String raw) {
+    if (raw == null || raw.isBlank()) return "";
+    return switch (raw.trim()) {
+      case "君臣" -> "同僚";
+      case "敌对" -> "外敌";
+      default -> raw.trim();
+    };
+  }
+
+  private static String buildLineageFromParents(JsonNode n) {
+    List<String> parts = new ArrayList<>();
+    appendIfPresent(parts, n, "所属一级关系");
+    appendIfPresent(parts, n, "所属二级关系");
+    appendIfPresent(parts, n, "所属三级关系");
+    appendIfPresent(parts, n, "l1");
+    appendIfPresent(parts, n, "l2");
+    appendIfPresent(parts, n, "l3");
+    return String.join(" › ", parts);
+  }
+
+  private static void appendIfPresent(List<String> parts, JsonNode n, String field) {
+    String v = textOr(n, field, "");
+    if (v != null && !v.isBlank()) {
+      parts.add(v.trim());
+    }
+  }
+
+  private static String textOrAny(JsonNode n, String fallback, String... fields) {
+    for (String field : fields) {
+      String v = textOr(n, field, "");
+      if (v != null && !v.isBlank()) {
+        return v.trim();
+      }
+    }
+    return fallback == null ? "" : fallback;
   }
 
   private static String textOr(JsonNode n, String field, String fallback) {
@@ -410,7 +451,9 @@ public class BoxService {
       throw ApiException.notFound("box not found");
     }
     return jdbcTemplate.queryForMap(
-        "SELECT id,emperor_id,title,category_key,start_year,end_year,blurb,detail_md,detail_md_flash,detail_md_pro,original_ref_json,entry_source "
+        "SELECT id,emperor_id,title,category_key,start_year,end_year,blurb,detail_md,detail_md_flash,detail_md_pro,original_ref_json,entry_source, "
+            + "COALESCE(NULLIF(TRIM(civilization_name), ''), '') AS civilization_name, "
+            + "COALESCE(NULLIF(TRIM(dynasty_name), ''), '') AS dynasty_name "
             + "FROM historical_box WHERE id=? AND status=1",
         boxId
     );
@@ -492,44 +535,111 @@ public class BoxService {
     }
   }
 
-  /** 优先读 historical_box_detail.source_original_json 的 text，回退 historical_box.original_ref_json */
+  /**
+   * 组装原文接口：正文优先 detail.source_original_json，出处优先 detail.source_citation，
+   * 回退索引 original_ref_json（primarySource + originalText）。
+   */
   private JsonNode resolveOriginalRef(String boxId, Map<String, Object> box) {
-    JsonNode fromDetail = parseSourceOriginalJson(loadSourceOriginalJson(boxId));
-    if (fromDetail != null) {
-      return fromDetail;
+    DetailOriginal detail = loadDetailOriginal(boxId);
+    JsonNode legacyRoot = parseOriginalRefJson((String) box.get("original_ref_json"));
+
+    String text = null;
+    if (detail != null && detail.text() != null && !detail.text().isBlank()) {
+      text = detail.text().trim();
+    } else {
+      JsonNode legacyText = normalizeLegacyOriginalRef(legacyRoot);
+      if (legacyText != null && legacyText.isTextual()) {
+        text = legacyText.asText("").trim();
+      } else if (legacyText != null && legacyText.has("items")) {
+        return legacyText;
+      }
     }
-    return parseOriginalRefJson((String) box.get("original_ref_json"));
+    if (text == null || text.isBlank()) {
+      return null;
+    }
+
+    String sourceWork = "";
+    if (detail != null && detail.citation() != null && !detail.citation().isBlank()) {
+      sourceWork = detail.citation().trim();
+    } else if (legacyRoot != null && legacyRoot.isObject()) {
+      sourceWork = legacyRoot.path("primarySource").asText("").trim();
+    }
+
+    var out = objectMapper.createObjectNode();
+    out.put("title", "母本原文");
+    if (!sourceWork.isBlank()) {
+      out.put("sourceWork", sourceWork);
+    }
+    out.put("text", text);
+    return out;
   }
 
   private boolean hasOriginalContent(String boxId, String legacyRefJson) {
-    if (parseSourceOriginalJson(loadSourceOriginalJson(boxId)) != null) {
+    DetailOriginal detail = loadDetailOriginal(boxId);
+    if (detail != null && detail.text() != null && !detail.text().isBlank()) {
       return true;
     }
-    return parseOriginalRefJson(legacyRefJson) != null;
+    return normalizeLegacyOriginalRef(parseOriginalRefJson(legacyRefJson)) != null;
   }
 
-  private String loadSourceOriginalJson(String boxId) {
+  private record DetailOriginal(String text, String citation) {}
+
+  private DetailOriginal loadDetailOriginal(String boxId) {
     try {
-      return jdbcTemplate.queryForObject(
-          "SELECT source_original_json FROM historical_box_detail WHERE box_id=?",
-          String.class,
+      return jdbcTemplate.query(
+          """
+          SELECT source_original_json, source_citation
+          FROM historical_box_detail WHERE box_id=?
+          """,
+          rs -> {
+            if (!rs.next()) return null;
+            String raw = rs.getString("source_original_json");
+            String citation = rs.getString("source_citation");
+            JsonNode textNode = parseSourceOriginalJson(raw);
+            String text = textNode != null && textNode.isTextual() ? textNode.asText("") : null;
+            return new DetailOriginal(text, citation);
+          },
           boxId
       );
     } catch (EmptyResultDataAccessException e) {
       return null;
     } catch (Exception ignored) {
-      return null;
+      // 兼容尚未加列的旧库：仅读 source_original_json
+      try {
+        String raw = jdbcTemplate.queryForObject(
+            "SELECT source_original_json FROM historical_box_detail WHERE box_id=?",
+            String.class,
+            boxId
+        );
+        JsonNode textNode = parseSourceOriginalJson(raw);
+        String text = textNode != null && textNode.isTextual() ? textNode.asText("") : null;
+        return new DetailOriginal(text, null);
+      } catch (Exception ignored2) {
+        return null;
+      }
     }
   }
 
   /**
-   * 解析翻译产出中的「史料原文」JSON，提取 text 作为 API 原文正文（纯文本 JsonNode）。
+   * 解析翻译产出中的「史料原文」：
+   * - 纯文本字符串（当前流水线落盘形态）
+   * - JSON 对象 { text } / { blocks:[{text}] }
+   * 提取正文作为 API 原文（纯文本 JsonNode）。
    */
   private JsonNode parseSourceOriginalJson(String raw) {
     if (raw == null || raw.isBlank()) return null;
+    String trimmed = raw.trim();
+    // 非 JSON 外壳：直接视为正文（兼容 remote_sync 曾写入的纯文本）
+    if (!trimmed.startsWith("{") && !trimmed.startsWith("[")) {
+      return objectMapper.getNodeFactory().textNode(trimmed);
+    }
     try {
-      JsonNode root = objectMapper.readTree(raw);
+      JsonNode root = objectMapper.readTree(trimmed);
       if (root == null || root.isNull() || root.isMissingNode()) return null;
+      if (root.isTextual()) {
+        String text = root.asText("").trim();
+        return text.isBlank() ? null : objectMapper.getNodeFactory().textNode(text);
+      }
       String text = root.path("text").asText("").trim();
       if (!text.isBlank()) {
         return objectMapper.getNodeFactory().textNode(text);
@@ -547,9 +657,53 @@ public class BoxService {
           return objectMapper.getNodeFactory().textNode(joined.toString());
         }
       }
-      return null;
+      // 兼容误写入 detail 列的索引侧形态（originalText / paragraphs）
+      return normalizeLegacyOriginalRef(root);
     } catch (Exception ignored) {
+      // 以 { / [ 开头却解析失败：视为脏数据，交由 legacy original_ref 回退
       return null;
     }
+  }
+
+  /**
+   * 索引侧 original_ref_json 使用 originalText / paragraphs，归一化为前端可展示的纯文本或原结构。
+   */
+  private JsonNode normalizeLegacyOriginalRef(JsonNode node) {
+    if (node == null) return null;
+    if (node.isTextual()) {
+      String text = node.asText("").trim();
+      return text.isBlank() ? null : objectMapper.getNodeFactory().textNode(text);
+    }
+    if (!node.isObject()) return node;
+
+    if (node.hasNonNull("text") && !node.path("text").asText("").isBlank()) {
+      return objectMapper.getNodeFactory().textNode(node.path("text").asText("").trim());
+    }
+    if (node.has("items") && node.path("items").isArray() && node.path("items").size() > 0) {
+      return node;
+    }
+
+    String originalText = node.path("originalText").asText("").trim();
+    if (!originalText.isBlank()) {
+      return objectMapper.getNodeFactory().textNode(originalText);
+    }
+
+    JsonNode paragraphs = node.path("paragraphs");
+    if (paragraphs.isArray() && paragraphs.size() > 0) {
+      StringBuilder joined = new StringBuilder();
+      for (JsonNode p : paragraphs) {
+        String blockText = p.path("text").asText("").trim();
+        if (blockText.isBlank() && p.isTextual()) {
+          blockText = p.asText("").trim();
+        }
+        if (blockText.isBlank()) continue;
+        if (joined.length() > 0) joined.append('\n');
+        joined.append(blockText);
+      }
+      if (joined.length() > 0) {
+        return objectMapper.getNodeFactory().textNode(joined.toString());
+      }
+    }
+    return null;
   }
 }

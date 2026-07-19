@@ -1,0 +1,135 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00611",
+  "写作结构": "正史（《史记·夏本纪》）叙述见翻译详录；拓展部分以《竹书纪年》《世本》等辑佚文献所存世系为佐证，说明皋仅为孔甲与发之间的过渡君王，无政事可征，其余留白。",
+  "候选著作": [
+    {
+      "出处": "《史记·夏本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记皋为孔甲之子，在位十一年崩，子发立，为夏朝世系之一环",
+      "检索词": "皋 孔甲子",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《竹书纪年·夏纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记皋即位元年及卒年，可补世系细节",
+      "检索词": "帝皋 元年",
+      "采用": true,
+      "原文摘句": "帝孔甲崩，子帝皋立。帝皋元年庚辰，帝即位。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《世本·帝王世本》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "录夏代世系，皋为孔甲子、发之父",
+      "检索词": "皋 发 孔甲",
+      "采用": true,
+      "原文摘句": "孔甲生皋，皋生发。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《帝王世纪》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "魏晋皇甫谧集录夏王世系，记皋在位年数",
+      "检索词": "皋 在位 十一年",
+      "采用": true,
+      "原文摘句": "孔甲崩，子皋立，在位十一年。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《路史·后纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋人罗泌综考夏代世系，述皋为孔甲后、身当衰世",
+      "检索词": "皋 夏后纪",
+      "采用": true,
+      "原文摘句": "孔甲崩，子皋嗣，守先业，无所兴复。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·夏本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记皋为孔甲之子，在位十一年崩，子发立，为夏朝世系之一环",
+      "检索词": "皋 孔甲子",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《竹书纪年·夏纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记皋即位元年及卒年，可补世系细节",
+      "检索词": "帝皋 元年",
+      "采用": true,
+      "原文摘句": "帝孔甲崩，子帝皋立。帝皋元年庚辰，帝即位。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《世本·帝王世本》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "录夏代世系，皋为孔甲子、发之父",
+      "检索词": "皋 发 孔甲",
+      "采用": true,
+      "原文摘句": "孔甲生皋，皋生发。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《帝王世纪》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "魏晋皇甫谧集录夏王世系，记皋在位年数",
+      "检索词": "皋 在位 十一年",
+      "采用": true,
+      "原文摘句": "孔甲崩，子皋立，在位十一年。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《路史·后纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋人罗泌综考夏代世系，述皋为孔甲后、身当衰世",
+      "检索词": "皋 夏后纪",
+      "采用": true,
+      "原文摘句": "孔甲崩，子皋嗣，守先业，无所兴复。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 4,
+    "C_excluded": 1,
+    "overall": "B"
+  }
+}

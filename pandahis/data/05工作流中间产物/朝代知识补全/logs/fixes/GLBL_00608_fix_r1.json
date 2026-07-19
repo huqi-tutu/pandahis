@@ -1,0 +1,17 @@
+{
+  "schema": "dynasty-knowledge-factual-fix/v1",
+  "fix_round": 1,
+  "all_applied": true,
+  "refs_sync_ok": true,
+  "issues": [],
+  "edits": [
+    {
+      "original": "他在位五十九年，比后世的汉武帝、康熙还要久",
+      "revised": "他在位五十九年，超过了汉武帝，但不及后世的康熙",
+      "error_index": 1,
+      "applied": true,
+      "note": "康熙帝在位61年，长于不降的59年，原比较颠倒。",
+      "target": "body"
+    }
+  ]
+}

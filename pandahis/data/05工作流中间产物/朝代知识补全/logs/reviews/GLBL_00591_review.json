@@ -1,0 +1,13 @@
+{
+  "has_factual_errors": false,
+  "factual_errors": [],
+  "summary": "正文对史料的引用与转述均无明显的硬史实错误；代数表述虽与自禹起算的通行世系（第十四代）相差一代，但存在自启起算的不同计数惯例，不足以构成无可争议的硬错误；传说部分已有「据…载」「异闻」等 framing，符合不报告范围。",
+  "overall_verdict": "pass",
+  "schema": "dynasty-knowledge-review/v2",
+  "史略ID": "GLBL_00591",
+  "reviewed_at": "2026-07-19T02:22:55Z",
+  "pipeline_blocking": false,
+  "review_fix_round": 1,
+  "forced_pass": false,
+  "human_review_required": false
+}

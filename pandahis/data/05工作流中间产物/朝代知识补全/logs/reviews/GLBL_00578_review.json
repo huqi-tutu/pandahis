@@ -1,0 +1,13 @@
+{
+  "has_factual_errors": false,
+  "factual_errors": [],
+  "summary": "经核查，正文所引《史记》《孟子》《山海经》《竹书纪年》《论衡》等典籍内容与通行史料相符，异说部分亦有合理的传说/分述 framing，未见明显硬史实性错误。",
+  "overall_verdict": "pass",
+  "schema": "dynasty-knowledge-review/v2",
+  "史略ID": "GLBL_00578",
+  "reviewed_at": "2026-07-18T16:23:36Z",
+  "pipeline_blocking": false,
+  "review_fix_round": 2,
+  "forced_pass": false,
+  "human_review_required": false
+}

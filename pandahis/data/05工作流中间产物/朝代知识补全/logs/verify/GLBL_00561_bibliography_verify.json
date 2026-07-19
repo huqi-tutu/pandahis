@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "entry_id": "GLBL_00561",
+  "issues": [
+    {
+      "code": "anchor_forbidden",
+      "message": "书目/摘句触及 anchor forbidden: 黄帝与炎帝的战场对话或心理活动…",
+      "severity": "warn"
+    },
+    {
+      "code": "anchor_forbidden",
+      "message": "书目/摘句触及 anchor forbidden: 黄帝与炎帝的战场对话或心理活动…",
+      "severity": "warn"
+    }
+  ]
+}

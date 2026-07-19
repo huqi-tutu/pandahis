@@ -1,0 +1,13 @@
+{
+  "has_factual_errors": false,
+  "factual_errors": [],
+  "summary": "正文叙事紧扣《左传·哀公》《古本竹书纪年》《帝王世纪》及《楚辞·天问》等常见传世文献，人物、地望、职官、引文与通行史料大体相符，无显著的人物张冠李戴、事件归属错乱或传说被径直当作信史等硬史实性错误；部分表述如“五百个族人”“故都”等属对“一旅”“复禹之绩”的通俗化转述，未超出合理演绎范围。",
+  "overall_verdict": "pass",
+  "schema": "dynasty-knowledge-review/v2",
+  "史略ID": "GLBL_00590",
+  "reviewed_at": "2026-07-19T02:13:54Z",
+  "pipeline_blocking": false,
+  "review_fix_round": 1,
+  "forced_pass": false,
+  "human_review_required": false
+}

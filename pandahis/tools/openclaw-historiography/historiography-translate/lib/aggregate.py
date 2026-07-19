@@ -39,6 +39,7 @@ def _load_entry_file(path: Path) -> Dict[str, Any] | None:
     entry_id = str(data.get("史略ID") or "").strip()
     detail = data.get("翻译详情")
     source = data.get("史料原文")
+    citation = data.get("原文出处")
     if not entry_id or not isinstance(detail, str) or not detail.strip():
         return None
     # 兼容新旧格式：新格式是纯文本字符串，旧格式是 {"text": "..."}
@@ -46,13 +47,19 @@ def _load_entry_file(path: Path) -> Dict[str, Any] | None:
         source = source.get("text") or ""
     if isinstance(source, str):
         source = source.strip() or ""
+    cite_str = ""
+    if isinstance(citation, str) and citation.strip():
+        cite_str = citation.strip()
     _, name_from_file = _parse_entry_from_filename(path)
-    return {
+    row: Dict[str, Any] = {
         "史略ID": entry_id,
         "史略名称": name_from_file or entry_id,
         "翻译详情": detail,
         "史料原文": source,
     }
+    if cite_str:
+        row["原文出处"] = cite_str
+    return row
 
 
 def collect_entries(output_dir: Path) -> List[Dict[str, Any]]:

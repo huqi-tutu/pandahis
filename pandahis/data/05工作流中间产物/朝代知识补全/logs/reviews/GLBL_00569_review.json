@@ -1,0 +1,13 @@
+{
+  "has_factual_errors": false,
+  "factual_errors": [],
+  "summary": "文本基于《尚书·尧典》《国语·周语下》及孔颖达《尚书正义》等常见史料展开白话阐释，核心史实与典籍脉络相符；虽含文学化演绎（如“皱眉头”“痛在哪儿”等），但未触及硬史实性错误，亦未将神话、传说径作信史叙述。",
+  "overall_verdict": "pass",
+  "schema": "dynasty-knowledge-review/v2",
+  "史略ID": "GLBL_00569",
+  "reviewed_at": "2026-07-18T16:00:25Z",
+  "pipeline_blocking": false,
+  "review_fix_round": 3,
+  "forced_pass": false,
+  "human_review_required": false
+}

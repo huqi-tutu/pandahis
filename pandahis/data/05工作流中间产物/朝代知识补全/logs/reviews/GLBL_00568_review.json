@@ -1,0 +1,13 @@
+{
+  "has_factual_errors": false,
+  "factual_errors": [],
+  "summary": "正文对《史记》《国语》《大戴礼记》《管子》《淮南子》等典籍的引用与常见史料基本一致，叙事框架遵循传统古史体系，且末段对后世附会与传说性质有自觉说明，未发现明显悖于通识的硬史实错误。",
+  "overall_verdict": "pass",
+  "schema": "dynasty-knowledge-review/v2",
+  "史略ID": "GLBL_00568",
+  "reviewed_at": "2026-07-18T15:53:29Z",
+  "pipeline_blocking": false,
+  "review_fix_round": 2,
+  "forced_pass": false,
+  "human_review_required": false
+}

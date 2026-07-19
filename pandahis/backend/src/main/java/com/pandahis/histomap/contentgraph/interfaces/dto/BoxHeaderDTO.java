@@ -9,7 +9,9 @@ public record BoxHeaderDTO(Box box, boolean isFavorite, TabSummary tabSummary, A
       String categoryKey,
       int startYear,
       int endYear,
-      String entrySource
+      String entrySource,
+      String civilizationName,
+      String dynastyName
   ) {}
 
   public record TabSummary(boolean hasGraph, boolean hasCritiques, boolean hasRelics, boolean hasOriginal) {}

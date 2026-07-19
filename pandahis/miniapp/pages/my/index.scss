@@ -311,16 +311,11 @@ $border: $divider;
   justify-content: center;
 }
 
-.logout-btn,
 .login-btn {
   font-size: 30rpx;
-  color: $text-muted;
-  padding: 16rpx 48rpx;
-}
-
-.login-btn {
   color: $accent;
   font-weight: 700;
+  padding: 16rpx 48rpx;
 }
 
 .icon-vip-img {

@@ -1,0 +1,25 @@
+{
+  "schema": "dynasty-knowledge-factual-fix/v1",
+  "fix_round": 1,
+  "all_applied": true,
+  "refs_sync_ok": true,
+  "issues": [],
+  "edits": [
+    {
+      "original": "抛弃了武罗、伯困等贤臣",
+      "revised": "抛弃了武罗、伯因等贤臣",
+      "error_index": 1,
+      "applied": true,
+      "note": "修正《左传》贤臣名字，将“伯困”改为“伯因”",
+      "target": "body"
+    },
+    {
+      "original": "《楚辞·天问》中有几句质问揭示了后羿的失德：「胡射夫河伯，而妻彼雒嫔？」——为何射伤河伯，又强占洛水女神？这说明后羿代夏后，恃强凌弱，霸占他人妻女，早已失尽民心",
+      "revised": "《楚辞·天问》中有几句质问以神话异闻的方式记载了后羿的行为：「胡射夫河伯，而妻彼雒嫔？」——为何射伤河伯，又强占洛水女神？这虽属神话，但亦反映后羿代夏后，恃强凌弱，霸占他人妻女，早已失尽民心",
+      "error_index": 2,
+      "applied": true,
+      "note": "为《天问》引文添加“神话异闻”限定，避免直接作为信史证据论断后羿代夏后的实际失德",
+      "target": "body"
+    }
+  ]
+}

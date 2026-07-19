@@ -1,0 +1,25 @@
+{
+  "schema": "dynasty-knowledge-factual-fix/v1",
+  "fix_round": 1,
+  "all_applied": true,
+  "refs_sync_ok": true,
+  "issues": [],
+  "edits": [
+    {
+      "original": "他的儿子芒（《史记》或写作荒）",
+      "revised": "他的儿子芒（《竹书纪年》等或写作荒）",
+      "error_index": 1,
+      "applied": true,
+      "note": "「荒」之异文出自《竹书纪年》等书，非《史记》，《史记》作「芒」。",
+      "target": "body"
+    },
+    {
+      "original": "《帝王世纪》又称他为发",
+      "revised": "《帝王世纪》又称他为芬",
+      "error_index": 2,
+      "applied": true,
+      "note": "「发」乃夏朝后期君主帝发，非槐（芬）之异名；《帝王世纪》仍称「芬」。",
+      "target": "body"
+    }
+  ]
+}

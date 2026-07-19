@@ -1,0 +1,13 @@
+{
+  "has_factual_errors": false,
+  "factual_errors": [],
+  "summary": "正文核心情节与《尚书》《史记》《孟子》《韩非子》及《竹书纪年》辑本等常见史料大体相符，异说分述得当，未发现明显的人物、事件、典籍张冠李戴或信史与传说混淆的硬史实错误。",
+  "overall_verdict": "pass",
+  "schema": "dynasty-knowledge-review/v2",
+  "史略ID": "GLBL_00564",
+  "reviewed_at": "2026-07-18T15:17:59Z",
+  "pipeline_blocking": false,
+  "review_fix_round": 2,
+  "forced_pass": false,
+  "human_review_required": false
+}

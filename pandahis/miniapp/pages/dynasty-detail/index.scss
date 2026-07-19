@@ -1519,12 +1519,46 @@ $cat-index-w: 28rpx;
 .chip-tooltip-head {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16rpx;
+  width: 100%;
+  min-width: 0;
+}
+
+.chip-tooltip-head-left {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
   justify-content: flex-start;
   gap: 10rpx;
-  width: 100%;
-  min-width: 0;
+}
+
+.chip-tooltip-correction {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4rpx;
+  margin-left: auto;
+}
+
+.chip-tooltip-correction-icon {
+  width: 28rpx;
+  height: 28rpx;
+  flex-shrink: 0;
+}
+
+.chip-tooltip-correction-label {
+  font-size: 22rpx;
+  font-weight: 500;
+  line-height: 28rpx;
+  color: #B88932;
+  white-space: nowrap;
 }
 
 .chip-tooltip-title {

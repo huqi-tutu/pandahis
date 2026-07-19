@@ -8,6 +8,9 @@ from datetime import datetime, timezone
 from typing import Any
 
 import dynasty_supplement_lib as dkl
+from shared.legend_quota import analyze_legend_quota, legend_quota_verify_issues
+from shared.reference_works import reference_works_verify_issues
+from shared.source_citation import source_citation_verify_issues
 
 
 @dataclass
@@ -68,6 +71,7 @@ def verify_detail(
     detail: dict[str, Any],
     *,
     anchor: dict[str, Any] | None = None,
+    bibliography_plan: dict[str, Any] | None = None,
 ) -> VerifyReport:
     """程序化质检；返回 VerifyReport（passed = 无 error 级 issue）。"""
     eid = str(entry.get("史略ID") or detail.get("史略ID") or "?")
@@ -84,15 +88,46 @@ def verify_detail(
     # 参考著作
     if "参考著作" not in raw:
         issues.append(VerifyIssue("missing_refs", "缺少文末「参考著作」"))
+    else:
+        for code, message, severity in reference_works_verify_issues(
+            raw, entry, bibliography_plan
+        ):
+            issues.append(VerifyIssue(code, message, severity=severity))
 
-    # 禁词
-    for word in dkl.FORBIDDEN_PROSE_WORDS:
-        if word in body:
-            issues.append(VerifyIssue("forbidden_word", f"含禁词「{word}」"))
+    # AI 腔词频（非 100% 禁用，见 shared/ai_flavor_words.py）
+    for code, message, severity in dkl.ai_flavor_verify_issues(body):
+        issues.append(VerifyIssue(code, message, severity=severity))
+
+    for msg in dkl.detect_unanchored_vague_citations(body):
+        issues.append(VerifyIssue("vague_citation", msg))
+
+    for code, message, severity in legend_quota_verify_issues(body, priority=pri):
+        issues.append(VerifyIssue(code, message, severity=severity))
+
+    for code, message, severity in source_citation_verify_issues(
+        body,
+        bibliography_plan=bibliography_plan,
+        priority=pri,
+    ):
+        issues.append(VerifyIssue(code, message, severity=severity))
+
+    # 元叙述 / 编辑腔（交付物 §0.3）
+    for phrase in dkl.FORBIDDEN_META_PHRASES:
+        if phrase in body:
+            issues.append(VerifyIssue("meta_prose", f"含元叙述/编辑腔「{phrase}」"))
 
     # 【】
     if "【" in body or "】" in body:
         issues.append(VerifyIssue("forbidden_brackets", "禁止【】引文标记"))
+
+    # Markdown 加粗（小程序仅对「」『』内原文自动加粗）
+    if re.search(r"\*\*[^*]+\*\*", body):
+        issues.append(
+            VerifyIssue(
+                "markdown_bold",
+                "禁止 ** Markdown 加粗；史料原文请用直角引号「」，由小程序自动加粗",
+            )
+        )
 
     # 注音
     for pin in dkl.detect_over_pinyin(body):
@@ -141,45 +176,20 @@ def verify_detail(
         else:
             streak = 0
 
-    # 锚点 hard_facts 覆盖
+    # 锚点覆盖改由 coverage-check（语义）负责；此处不再做字面匹配
     if anchor:
-        missing_facts: list[str] = []
-        for fact in anchor.get("hard_facts") or []:
-            kws = _anchor_keywords(fact)
-            if not _body_contains_keywords(body, kws):
-                label = fact.get("text") if isinstance(fact, dict) else str(fact)
-                missing_facts.append(str(label)[:40])
-        if missing_facts:
+        if not (
+            anchor.get("coverage_claims")
+            or anchor.get("checklist")
+            or anchor.get("hard_facts")
+        ):
             issues.append(
                 VerifyIssue(
-                    "anchor_hard_facts",
-                    f"hard_facts 未覆盖 {len(missing_facts)} 条："
-                    + "；".join(missing_facts[:3]),
+                    "missing_coverage_claims",
+                    "锚点缺少 coverage_claims（或 legacy checklist/hard_facts）",
+                    severity="warn",
                 )
             )
-
-        for enum in anchor.get("core_enumerations") or []:
-            if not isinstance(enum, dict):
-                continue
-            items = enum.get("items") or []
-            label = str(enum.get("label") or enum.get("name") or "核心列举")
-            missing_items: list[str] = []
-            for item in items:
-                item_s = str(item)
-                token = item_s.split("-")[0].split("：")[0].split(":")[0].strip()
-                if token and token not in body and item_s not in body:
-                    missing_items.append(item_s[:20])
-            min_need = int(enum.get("min_mentions") or len(items))
-            covered = len(items) - len(missing_items)
-            if items and covered < min_need:
-                sev = "warn" if len(items) > 6 else "error"
-                issues.append(
-                    VerifyIssue(
-                        "core_enumeration",
-                        f"「{label}」仅覆盖 {covered}/{len(items)} 项",
-                        severity=sev,
-                    )
-                )
     elif str(entry.get("朝代ID", "")) == "CD_HX_WUDI":
         issues.append(
             VerifyIssue(
@@ -189,6 +199,23 @@ def verify_detail(
             )
         )
 
+    legend_m = analyze_legend_quota(body)
+    if cat == "典制":
+        story_hits = sum(body.count(t) for t in ("尧", "舜", "丹朱", "禹", "鲧"))
+        inst_hits = sum(
+            body.count(t)
+            for t in ("制度", "程序", "规则", "运作", "推举", "摄政", "合法性", "共主")
+        )
+        if story_hits >= 12 and story_hits > inst_hits * 2:
+            issues.append(
+                VerifyIssue(
+                    "category_drift",
+                    f"典制条目人物叙事（尧舜等 {story_hits} 处）明显多于制度表述"
+                    f"（{inst_hits} 处），疑似写成事略",
+                    severity="error",
+                )
+            )
+
     passed = not any(i.severity == "error" for i in issues)
     metrics = {
         "char_count": char_count,
@@ -196,6 +223,8 @@ def verify_detail(
         "source_density": density,
         "paragraph_count": len(paragraphs),
         "min_paragraphs": min_para,
+        "legend_trigger_count": legend_m.trigger_count,
+        "legend_char_ratio": round(legend_m.legend_char_ratio, 3),
     }
     return VerifyReport(entry_id=eid, passed=passed, issues=issues, metrics=metrics)
 

@@ -1,0 +1,50 @@
+{
+  "paragraph_count": 6,
+  "paragraph_reviews": [
+    {
+      "paragraph_index": 0,
+      "verdict": "pass",
+      "issues": [],
+      "suggested_fix": ""
+    },
+    {
+      "paragraph_index": 1,
+      "verdict": "pass",
+      "issues": [],
+      "suggested_fix": ""
+    },
+    {
+      "paragraph_index": 2,
+      "verdict": "pass",
+      "issues": [],
+      "suggested_fix": ""
+    },
+    {
+      "paragraph_index": 3,
+      "verdict": "pass",
+      "issues": [],
+      "suggested_fix": ""
+    },
+    {
+      "paragraph_index": 4,
+      "verdict": "fail",
+      "issues": [
+        "典籍归属错误（硬史实幻觉）：《史记·五帝本纪》原文已载黄帝‘教熊罴貔貅貙虎，以与炎帝战于阪泉之野’，正文却将此情节误归于‘更晚的《列子·黄帝》’，属于张冠李戴。"
+      ],
+      "suggested_fix": "应删除《列子·黄帝》的误引，改为指出《史记·五帝本纪》本身即有‘教熊罴貔貅貙虎’之载，后世（或民俗演绎）据此将其神话化；若需引用真正附加神话色彩的文献，应换用正确书名并核实。"
+    },
+    {
+      "paragraph_index": 5,
+      "verdict": "pass",
+      "issues": [],
+      "suggested_fix": ""
+    }
+  ],
+  "overall_verdict": "fail",
+  "summary": "P4 存在典籍归属硬伤，将《史记·五帝本纪》本身记载的‘教熊罴貔貅貙虎’误植为《列子·黄帝》的内容，构成知识性错误，须修正。其余各段无实质问题，可读性与主张覆盖均达标。",
+  "schema": "dynasty-knowledge-review/v1",
+  "史略ID": "GLBL_00561",
+  "reviewed_at": "2026-07-18T13:41:11Z",
+  "pipeline_blocking": false,
+  "human_review_required": true
+}

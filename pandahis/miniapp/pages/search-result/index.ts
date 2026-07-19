@@ -1,5 +1,10 @@
 import { request } from '../../native-utils/api'
-import { formatSearchPath, highlightEmToRich, stripHtml } from '../../native-utils/format'
+import {
+  extractUnitDynastyHint,
+  formatSearchPath,
+  highlightEmToRich,
+  stripHtml,
+} from '../../native-utils/format'
 import { ROUTES, navigateTo } from '../../native-utils/router'
 
 const FILTER_CATS = ['全部', '君王', '士臣', '典制', '事略', '民录'] as const
@@ -14,6 +19,7 @@ type ResultItem = {
   type: string
   id: string
   pathText: string
+  dynastyHint: string
   titleRich: string
   descRich: string
   hasDesc: boolean
@@ -68,6 +74,7 @@ Page({
         type: it.type,
         id: it.id,
         pathText,
+        dynastyHint: it.type === 'unit' ? extractUnitDynastyHint(pathText) : '',
         titleRich: highlightEmToRich(it.titleHighlight || ''),
         descRich: highlightEmToRich(it.descHighlight || ''),
         hasDesc: descPlain.length > 0,
@@ -102,9 +109,16 @@ Page({
     })
   },
   go(e: WechatMiniprogram.BaseEvent) {
-    const ds = (e.currentTarget as WechatMiniprogram.IAnyObject).dataset as { type: string; id: string }
+    const ds = (e.currentTarget as WechatMiniprogram.IAnyObject).dataset as {
+      type: string
+      id: string
+      dynasty?: string
+    }
     if (ds.type === 'unit') {
-      navigateTo(ROUTES.dynastyDetail, { unitId: ds.id })
+      navigateTo(ROUTES.dynastyDetail, {
+        unitId: ds.id,
+        dynasty: ds.dynasty || '',
+      })
       return
     }
     if (ds.type === 'box') {

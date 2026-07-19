@@ -1,6 +1,25 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.buildFavoriteSummary = exports.categoryLabel = void 0;
+exports.buildFavoriteSummary = exports.categoryLabel = exports.isPersonBoxCategory = exports.PERSON_BOX_CATEGORY_KEYS = void 0;
+/** 人物六类 category_key（与后端 BoxCategorySupport 一致） */
+exports.PERSON_BOX_CATEGORY_KEYS = [
+    'junji',
+    'zongqi',
+    'wenchen',
+    'wujiang',
+    'huanguan',
+    'shuzhong',
+    'shichen',
+    'minlu',
+];
+/** 是否为人物类史略（君王/宗戚/文臣/武将/宦官/庶众） */
+function isPersonBoxCategory(key) {
+    const k = String(key || '').trim();
+    if (!k)
+        return false;
+    return exports.PERSON_BOX_CATEGORY_KEYS.includes(k);
+}
+exports.isPersonBoxCategory = isPersonBoxCategory;
 /** 盒子 category_key → 展示名（与后端 BoxCategorySupport 一致） */
 function categoryLabel(key) {
     switch (key) {

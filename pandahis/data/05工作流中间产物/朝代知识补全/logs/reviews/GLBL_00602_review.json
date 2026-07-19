@@ -1,0 +1,13 @@
+{
+  "has_factual_errors": false,
+  "factual_errors": [],
+  "summary": "正文所述夏后相世系、太康失国、后羿代夏、寒浞浇灭斟灌斟寻、后缗逃归有仍生少康及少康中兴等核心情节，均与《左传》《竹书纪年》《帝王世纪》等古史系统的主流记载相符；人物关系、事件归属、典籍引述未见明显张冠李戴，亦无将神话传说径直当作信史之处理。",
+  "overall_verdict": "pass",
+  "schema": "dynasty-knowledge-review/v2",
+  "史略ID": "GLBL_00602",
+  "reviewed_at": "2026-07-19T03:56:09Z",
+  "pipeline_blocking": false,
+  "review_fix_round": 2,
+  "forced_pass": false,
+  "human_review_required": false
+}

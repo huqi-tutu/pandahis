@@ -19,9 +19,8 @@
 
 - 开发版会自动选择 API 地址：
   - **开发者工具**：`http://localhost:8080/api/v1`
-  - **真机预览**：`http://<局域网IP>:8080/api/v1`（当前配置见 `native-utils/dev-config.ts`）
-- 换 WiFi 或 IP 变化时，修改 `native-utils/dev-config.ts` 中的 `DEV_LAN_HOST`
-- 手动覆盖：在调试器 Console 执行  
+  - **真机预览**：`https://www.pandahis.com/api/v1`，避免开发机局域网 IP 变化导致页面空白
+- 开发版真机需要联调本地后端时，可在调试器 Console 手动覆盖：
   `wx.setStorageSync('apiBaseUrl', 'http://<本机IP>:8080/api/v1')`
 
 ### 合法域名 / localhost 请求失败

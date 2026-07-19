@@ -1,0 +1,128 @@
+@import '../../native-utils/design-tokens.scss';
+
+.share-poster-mask {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(0, 0, 0, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.share-poster-body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.share-poster-stage {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48rpx 56rpx 24rpx;
+  min-height: 0;
+}
+
+.share-poster-preview {
+  width: 560rpx;
+  border-radius: 16rpx;
+  box-shadow: 0 24rpx 80rpx rgba(0, 0, 0, 0.38);
+}
+
+.share-poster-loading {
+  width: 560rpx;
+  min-height: 720rpx;
+  border-radius: 16rpx;
+  background: #2a2420;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.share-poster-loading-text {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 28rpx;
+}
+
+.share-poster-sheet {
+  flex-shrink: 0;
+  padding: 28rpx 32rpx calc(24rpx + env(safe-area-inset-bottom));
+  background: #1f1f1f;
+  border-radius: 28rpx 28rpx 0 0;
+}
+
+.share-poster-actions {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  padding: 8rpx 8rpx 28rpx;
+}
+
+.share-poster-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16rpx;
+  min-width: 160rpx;
+}
+
+.share-poster-action-icon {
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.share-poster-action-icon--save {
+  background: #4a7fd7;
+}
+
+.share-poster-action-icon--friend {
+  background: #07c160;
+}
+
+.share-poster-action-icon--timeline {
+  background: linear-gradient(135deg, #f5a623 0%, #07c160 55%, #4a7fd7 100%);
+}
+
+.share-poster-action-glyph {
+  color: #fff;
+  font-size: 34rpx;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.share-poster-action-label {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 24rpx;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.share-poster-cancel {
+  margin-top: 8rpx;
+  height: 88rpx;
+  border-radius: 16rpx;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.share-poster-canvas-offscreen {
+  position: fixed;
+  left: -9999px;
+  top: -9999px;
+  width: 750px;
+  height: 1100px;
+  opacity: 0;
+  pointer-events: none;
+}

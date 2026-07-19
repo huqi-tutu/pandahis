@@ -1,0 +1,23 @@
+{
+  "schema": "dynasty-knowledge-factual-fix/v1",
+  "all_applied": false,
+  "issues": [
+    "跳过未匹配 edit #1"
+  ],
+  "edits": [
+    {
+      "original": "这套逻辑被《吕氏春秋·去私》用一句话点到了极致：「天下非一人之天下也，天下之天下也。」",
+      "revised": "这套逻辑被《吕氏春秋·贵公》用一句话点到了极致：「天下非一人之天下也，天下之天下也。」",
+      "error_index": 1,
+      "applied": false,
+      "note": "「天下非一人之天下也，天下之天下也」出《贵公》篇，非《去私》篇，修正引书篇名。"
+    },
+    {
+      "original": "《吕氏春秋·去私》",
+      "revised": "《吕氏春秋·贵公》",
+      "error_index": 1,
+      "applied": true,
+      "note": "同步修正参考著作段中的篇名，使与正文一致。"
+    }
+  ]
+}

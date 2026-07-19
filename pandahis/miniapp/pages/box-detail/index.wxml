@@ -1,10 +1,9 @@
 <view class="page-shell" bindtap="onPageTap">
-  <proto-nav hidden="{{audioOpen}}" title="{{navTitle}}" show-back="{{true}}"></proto-nav>
+  <proto-nav hidden="{{audioOpen || (tab === 'content' && !uiFocused)}}" title="{{navTitle}}" show-back="{{true}}"></proto-nav>
 
  <view wx:if="{{!header}}" class="box-page-body box-page-body--boot" style="top: {{tabTop}}px;">
   <view class="box-tabs-wrap">
    <view class="box-tab active">详情</view>
-   <view class="box-tab">关系</view>
    <view class="box-tab">评述</view>
    <view class="box-tab">见证</view>
   </view>
@@ -23,10 +22,10 @@
  <block wx:if="{{header}}">
   <!-- 页面主体容器（固定定位，包含 Tab 栏 + 滚动区） -->
   <view class="box-page-body" style="top: {{tabTop}}px;">
-   <!-- 内容 Tab 栏：悬浮在内容上方，阅读态向上滑走，不挤占布局 -->
-   <view class="box-tabs-wrap box-tabs-wrap--fixed {{tab === 'content' && !uiFocused ? 'box-tabs-wrap--hidden' : ''}}" catchtap="noop">
+   <!-- 内容 Tab 栏（文档流占位，避免关系 Tab canvas 原生层级盖住） -->
+   <view class="box-tabs-wrap {{tab !== 'content' ? 'box-tabs-wrap--persistent' : ''}} {{tab === 'content' && !uiFocused ? 'box-tabs-wrap--hidden' : ''}}" catchtap="noop">
     <view class="box-tab {{tab === 'content' ? 'active' : ''}}" data-tab="content" catchtap="setTab">详情</view>
-    <view class="box-tab {{tab === 'relations' ? 'active' : ''}}" data-tab="relations" catchtap="setTab">关系</view>
+    <view wx:if="{{showRelationsTab}}" class="box-tab {{tab === 'relations' ? 'active' : ''}}" data-tab="relations" catchtap="setTab">关系</view>
     <view class="box-tab {{tab === 'reviews' ? 'active' : ''}}" data-tab="reviews" catchtap="setTab">评述</view>
     <view class="box-tab {{tab === 'relics' ? 'active' : ''}}" data-tab="relics" catchtap="setTab">见证</view>
    </view>
@@ -34,7 +33,7 @@
    <!-- 内容滚动区（关系 Tab 禁用纵向滚动） -->
    <scroll-view
     class="box-body-scroll"
-    scroll-y="{{tab !== 'relations'}}"
+    scroll-y="{{!showRelationsTab || tab !== 'relations'}}"
     scroll-top="{{bodyScrollTop}}"
     enhanced
     show-scrollbar="{{false}}"
@@ -54,24 +53,28 @@
     <block wx:elif="{{detailReady}}">
 
      <view wx:if="{{!detailParagraphs.length && header.box.blurb}}" class="detail-body">
-      <view class="box-p box-p--first">
-       <text wx:if="{{blurbDropcap}}" class="dropcap-text">{{blurbDropcap}}</text>
-       <text wx:for="{{blurbSegs}}" wx:key="text" class="{{item.bold ? 'seg--bold' : ''}}">{{item.text}}</text>
-      </view>
+      <block wx:key="selectionMountKey">
+       <selection id="detailBodySelection" disable-context-menu bindselectionchange="onDetailSelectionChange">
+        <text class="box-p" user-select>
+         <block wx:for="{{blurbSegs}}" wx:for-item="seg" wx:for-index="segIndex" wx:key="segIndex">
+          <text style="font-weight: {{seg.bold ? 700 : 400}};">{{seg.text}}</text>
+         </block>
+        </text>
+       </selection>
+      </block>
      </view>
      <view wx:elif="{{detailParagraphs.length}}" class="detail-body">
-      <view
-       wx:for="{{detailParagraphs}}"
-       wx:key="index"
-       class="box-p {{index === 0 ? 'box-p--first' : ''}}"
-      >
-       <text wx:if="{{index === 0 && item.dropcap}}" class="dropcap-text">{{item.dropcap}}</text>
-       <text
-       wx:for="{{item.segs}}"
-       wx:key="text"
-       class="{{item.bold ? 'seg--bold' : ''}}"
-      >{{item.text}}</text>
-      </view>
+      <block wx:key="selectionMountKey">
+       <selection id="detailBodySelection" disable-context-menu bindselectionchange="onDetailSelectionChange">
+        <block wx:for="{{detailParagraphs}}" wx:for-item="para" wx:for-index="pIndex" wx:key="pIndex">
+         <text class="box-p {{pIndex === detailParagraphs.length - 1 ? 'box-p--last' : ''}}" user-select>
+          <block wx:for="{{para.segs}}" wx:for-item="seg" wx:for-index="segIndex" wx:key="segIndex">
+           <text style="font-weight: {{seg.bold ? 700 : 400}};">{{seg.text}}</text>
+          </block>
+         </text>
+        </block>
+       </selection>
+      </block>
       <!-- 正文结束装饰 -->
       <view class="detail-endmark">❧</view>
      </view>
@@ -92,7 +95,7 @@
    </view>
 
    <!-- Tab 1：关系图谱 -->
-   <view wx:if="{{tab === 'relations'}}" class="rel-tab-body">
+   <view wx:if="{{showRelationsTab && tab === 'relations'}}" class="rel-tab-body">
     <view wx:if="{{graphErr}}" class="tab-empty">
      <text class="tab-empty-text">{{graphErr}}</text>
     </view>
@@ -184,12 +187,12 @@
     </view>
    </view>
 
-   <view wx:if="{{tab !== 'relations'}}" style="height: 96rpx;"></view>
+   <view wx:if="{{!showRelationsTab || tab !== 'relations'}}" style="height: 96rpx;"></view>
   </scroll-view>
  </view>
 
-  <!-- 关系 Tab 缩放栏 -->
-  <view wx:if="{{tab === 'relations' && graph.nodes.length}}" class="graph-zoom-bar">
+  <!-- 关系 Tab 缩放栏：百分比由 canvas 绘制到栏位中线区域，页面不 setData -->
+  <view wx:if="{{showRelationsTab && tab === 'relations' && graph.nodes.length}}" class="graph-zoom-bar">
    <view class="graph-zoom-btn" bindtap="onGraphZoomOut">−</view>
    <text class="graph-zoom-label">{{graphScaleLabel}}</text>
    <view class="graph-zoom-btn" bindtap="onGraphZoomIn">+</view>
@@ -284,7 +287,10 @@
   <view class="ud-modal" wx:if="{{showOriginal}}" bindtap="closeOriginal" data-close="1">
    <view class="ud-modal-card" catchtap="noop">
     <view class="ud-modal-header">
-     <view class="ud-modal-title">{{originalTitle || '史料原文'}}</view>
+     <view class="ud-modal-title-wrap">
+      <view class="ud-modal-title">{{originalTitle || '母本原文'}}</view>
+      <view class="ud-modal-source" wx:if="{{originalSourceWork}}">{{originalSourceWork}}</view>
+     </view>
      <view class="ud-modal-close" catchtap="closeOriginal">
       <text class="ud-modal-close-icon">✕</text>
      </view>
@@ -314,11 +320,44 @@
       </view>
      </block>
      <view wx:elif="{{originalFallback}}" class="ud-modal-fallback">
-      <view class="ud-modal-fallback-label">原文内容</view>
       <view class="ud-modal-fallback-body">{{originalFallback}}</view>
      </view>
     </scroll-view>
    </view>
   </view>
  </block>
+
+ <correction-modal
+  visible="{{correctionVisible}}"
+  mode="edit"
+  civilizationName="{{correctionCivilizationName}}"
+  dynastyName="{{correctionDynastyName}}"
+  boxTitle="{{correctionBoxTitle}}"
+  selectedText="{{correctionSelectedText}}"
+  sourceType="box_detail_selection"
+  submitting="{{correctionSubmitting}}"
+  bind:close="closeCorrection"
+  bind:submit="onCorrectionSubmit"
+ />
+
+ <text-selection-bar
+  visible="{{selectionBarVisible}}"
+  left="{{selectionBarLeft}}"
+  top="{{selectionBarTop}}"
+  bind:share="onSelectionShare"
+  bind:copy="onSelectionCopy"
+  bind:query="onSelectionQuery"
+  bind:correction="onSelectionCorrection"
+ />
+
+ <share-poster-sheet
+  visible="{{sharePosterVisible}}"
+  quoteText="{{sharePosterQuote}}"
+  userName="{{sharePosterUserName}}"
+  userAvatarUrl="{{sharePosterUserAvatar}}"
+  sourceLine1="{{sharePosterSourceLine1}}"
+  sourceLine2="{{sharePosterSourceLine2}}"
+  excerptDate="{{sharePosterExcerptDate}}"
+  bind:close="closeSharePoster"
+ />
 </view>

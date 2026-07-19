@@ -3,7 +3,8 @@
   "private": true,
   "scripts": {
     "check:ts": "tsc --noEmit -p tsconfig.json",
-    "build:ts": "tsc -p tsconfig.build.json"
+    "build:ts": "tsc -p tsconfig.build.json",
+    "test": "node --test scripts/*.test.js"
   },
   "devDependencies": {
     "miniprogram-api-typings": "^4.0.0",

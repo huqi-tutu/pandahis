@@ -1,0 +1,17 @@
+{
+  "schema": "dynasty-knowledge-factual-fix/v1",
+  "fix_round": 1,
+  "all_applied": true,
+  "refs_sync_ok": true,
+  "issues": [],
+  "edits": [
+    {
+      "original": "《竹书纪年》则记载「杼作矛」",
+      "revised": "《世本·作篇》又载「杼作矛」",
+      "error_index": 1,
+      "applied": true,
+      "note": "将杼作矛的出处由《竹书纪年》更正为《世本·作篇》，并改为‘又载’以呼应前文同一典籍。",
+      "target": "body"
+    }
+  ]
+}

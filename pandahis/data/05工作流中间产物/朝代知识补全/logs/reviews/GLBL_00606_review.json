@@ -1,0 +1,13 @@
+{
+  "has_factual_errors": false,
+  "factual_errors": [],
+  "summary": "正文所述世系、典籍记载与事件细节均与常见史料相符，无硬史实性错误。",
+  "overall_verdict": "pass",
+  "schema": "dynasty-knowledge-review/v2",
+  "史略ID": "GLBL_00606",
+  "reviewed_at": "2026-07-19T04:18:02Z",
+  "pipeline_blocking": false,
+  "review_fix_round": 1,
+  "forced_pass": false,
+  "human_review_required": false
+}

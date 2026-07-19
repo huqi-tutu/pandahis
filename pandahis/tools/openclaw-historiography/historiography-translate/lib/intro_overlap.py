@@ -5,7 +5,7 @@ from __future__ import annotations
 import re
 from typing import Any, Dict, List, Tuple
 
-from lib.mother_sentences import extract_must_phrases
+from lib.mother_sentences import MAX_MUST_PHRASES, extract_must_phrases
 
 
 def _intro_zone(detail: str) -> str:
@@ -31,7 +31,7 @@ def _forbidden_phrases(plan: Dict[str, Any]) -> List[str]:
         if not isinstance(item, dict):
             continue
         orig = str(item.get("原文摘句") or "")
-        for w in extract_must_phrases(orig)[:4]:
+        for w in extract_must_phrases(orig)[:MAX_MUST_PHRASES]:
             if len(w) >= 2:
                 forbidden.append(w)
     # 去重保序

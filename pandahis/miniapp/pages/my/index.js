@@ -161,6 +161,9 @@ Page({
     goFavorites() {
         this.requireLogin(() => (0, router_1.navigateTo)(router_1.ROUTES.favorites));
     },
+    goCorrections() {
+        this.requireLogin(() => (0, router_1.navigateTo)(router_1.ROUTES.corrections));
+    },
     goSettings() {
         (0, router_1.navigateTo)(router_1.ROUTES.settings);
     },
@@ -186,19 +189,5 @@ Page({
     },
     goAbout() {
         (0, router_1.navigateTo)(router_1.ROUTES.about);
-    },
-    logout() {
-        wx.showModal({
-            title: '退出登录',
-            content: '退出后需重新登录才能使用收藏、足迹与邀请功能。',
-            confirmText: '退出',
-            success: (r) => {
-                if (!r.confirm)
-                    return;
-                (0, api_1.clearToken)();
-                void this.refresh();
-                wx.showToast({ title: '已退出', icon: 'success' });
-            },
-        });
     },
 });

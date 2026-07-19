@@ -81,11 +81,15 @@ CREATE TABLE IF NOT EXISTS historical_box (
 
 CREATE TABLE IF NOT EXISTS box_graph_node (
   id BIGINT PRIMARY KEY AUTO_INCREMENT,
+  component_id VARCHAR(64) NOT NULL,
+  shilue_id VARCHAR(128) NOT NULL,
+  shilue_name VARCHAR(128) NOT NULL,
   box_id VARCHAR(128) NOT NULL,
   node_key VARCHAR(64) NOT NULL,
   node_type VARCHAR(16) NOT NULL,
   name VARCHAR(64) NOT NULL,
   extra_json TEXT,
+  UNIQUE (component_id),
   UNIQUE (box_id, node_key)
 );
 
@@ -99,6 +103,9 @@ CREATE TABLE IF NOT EXISTS box_graph_edge (
 
 CREATE TABLE IF NOT EXISTS box_relic (
   id BIGINT PRIMARY KEY AUTO_INCREMENT,
+  component_id VARCHAR(64) NOT NULL,
+  shilue_id VARCHAR(128) NOT NULL,
+  shilue_name VARCHAR(128) NOT NULL,
   box_id VARCHAR(128) NOT NULL,
   name VARCHAR(128) NOT NULL,
   image_url VARCHAR(512),

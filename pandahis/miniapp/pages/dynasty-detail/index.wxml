@@ -105,7 +105,11 @@
         </view>
 
         <view class="unit-intro" bindtap="openIntro">
-          <text class="unit-intro-text">{{introDisplay}}</text>
+          <block wx:key="selectionMountKey">
+            <selection id="dynastyIntroSelection" disable-context-menu bindselectionchange="onDetailSelectionChange">
+              <text class="unit-intro-text" user-select>{{introDisplay}}</text>
+            </selection>
+          </block>
           <text wx:if="{{introCanExpand}}" class="unit-intro-after"> ›</text>
         </view>
       </view>
@@ -271,19 +275,25 @@
     <view
       class="chip-tooltip chip-tooltip--{{chipTooltipPhase}}"
       style="left: {{chipTooltipLeftPx}}px; top: {{chipTooltipTopPx}}px; transform: {{chipTooltipTransform}}; transform-origin: {{chipTooltipOrigin}};"
-      catchtap="hideChipTooltip"
+      catchtap="onChipTooltipCardTap"
       bindtransitionend="onChipTooltipTransitionEnd"
     >
       <view class="chip-tooltip-head">
-        <text class="chip-tooltip-title {{chipTooltipPriority === 'P0' ? 'chip-tooltip-title--p0' : ''}}">{{chipTooltipTitle}}</text>
-        <text
-          wx:if="{{chipTooltipTag}}"
-          class="chip-tooltip-tag chip-tooltip-tag--cat-{{chipTooltipLaneKey}}"
-        >{{chipTooltipTag}}</text>
-        <view class="chip-tooltip-time">
-          <text class="chip-tooltip-time-start">{{chipTooltipStartYear}}</text>
-          <text wx:if="{{chipTooltipEndYear}}" class="chip-tooltip-time-sep">—</text>
-          <text wx:if="{{chipTooltipEndYear}}" class="chip-tooltip-time-end">{{chipTooltipEndYear}}</text>
+        <view class="chip-tooltip-head-left">
+          <text class="chip-tooltip-title {{chipTooltipPriority === 'P0' ? 'chip-tooltip-title--p0' : ''}}">{{chipTooltipTitle}}</text>
+          <text
+            wx:if="{{chipTooltipTag}}"
+            class="chip-tooltip-tag chip-tooltip-tag--cat-{{chipTooltipLaneKey}}"
+          >{{chipTooltipTag}}</text>
+          <view class="chip-tooltip-time">
+            <text class="chip-tooltip-time-start">{{chipTooltipStartYear}}</text>
+            <text wx:if="{{chipTooltipEndYear}}" class="chip-tooltip-time-sep">—</text>
+            <text wx:if="{{chipTooltipEndYear}}" class="chip-tooltip-time-end">{{chipTooltipEndYear}}</text>
+          </view>
+        </view>
+        <view class="chip-tooltip-correction" catchtap="onChipCorrectionTap" aria-role="button" aria-label="纠错">
+          <image class="chip-tooltip-correction-icon" src="/images/icons/jiucuo.png" mode="aspectFit" />
+          <text class="chip-tooltip-correction-label">纠错</text>
         </view>
       </view>
       <view
@@ -323,7 +333,11 @@
         </view>
       </view>
       <scroll-view scroll-y class="ud-modal-body" enhanced show-scrollbar="{{false}}">
-        <text wx:for="{{introParagraphs}}" wx:key="index" class="ud-modal-para">{{item}}</text>
+        <block wx:key="selectionMountKey">
+          <selection id="dynastyModalSelection" disable-context-menu bindselectionchange="onDetailSelectionChange">
+            <text wx:for="{{introParagraphs}}" wx:key="index" class="ud-modal-para" user-select>{{item}}</text>
+          </selection>
+        </block>
       </scroll-view>
     </view>
   </view>
@@ -370,5 +384,38 @@
       </scroll-view>
     </view>
   </view>
+
+  <correction-modal
+    visible="{{correctionVisible}}"
+    mode="edit"
+    civilizationName="{{correctionCivilizationName}}"
+    dynastyName="{{correctionDynastyName}}"
+    boxTitle="{{correctionBoxTitle}}"
+    sourceType="dynasty_canvas"
+    submitting="{{correctionSubmitting}}"
+    bind:close="closeCorrection"
+    bind:submit="onCorrectionSubmit"
+  />
+
+  <text-selection-bar
+    visible="{{selectionBarVisible}}"
+    left="{{selectionBarLeft}}"
+    top="{{selectionBarTop}}"
+    bind:share="onSelectionShare"
+    bind:copy="onSelectionCopy"
+    bind:query="onSelectionQuery"
+    bind:correction="onSelectionCorrection"
+  />
+
+  <share-poster-sheet
+    visible="{{sharePosterVisible}}"
+    quoteText="{{sharePosterQuote}}"
+    userName="{{sharePosterUserName}}"
+    userAvatarUrl="{{sharePosterUserAvatar}}"
+    sourceLine1="{{sharePosterSourceLine1}}"
+    sourceLine2="{{sharePosterSourceLine2}}"
+    excerptDate="{{sharePosterExcerptDate}}"
+    bind:close="closeSharePoster"
+  />
 
 </view>

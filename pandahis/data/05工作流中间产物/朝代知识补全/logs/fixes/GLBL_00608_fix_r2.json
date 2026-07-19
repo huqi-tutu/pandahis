@@ -1,0 +1,25 @@
+{
+  "schema": "dynasty-knowledge-factual-fix/v1",
+  "fix_round": 2,
+  "all_applied": true,
+  "refs_sync_ok": true,
+  "issues": [],
+  "edits": [
+    {
+      "original": "他执政的近六十年里",
+      "revised": "他执政的二十余年里",
+      "error_index": 1,
+      "applied": true,
+      "note": "夏王扃在位约二十一年，并非近六十年，修正为大致年数。",
+      "target": "body"
+    },
+    {
+      "original": "不降退居二线后又活了二十年，合计在位五十九年",
+      "revised": "不降退居二线后又活了二十年，自即位至去世凡五十九年",
+      "error_index": 2,
+      "applied": true,
+      "note": "逊位后不再“在位”，改为自即位至去世的总年数以避免矛盾。",
+      "target": "body"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "schema": "dynasty-knowledge-factual-fix/v1",
+  "fix_round": 1,
+  "all_applied": false,
+  "refs_sync_ok": false,
+  "issues": [
+    "edit #1 未应用",
+    "替换后仍含原文（#1）: 《论衡·本性篇》…"
+  ],
+  "edits": [
+    {
+      "original": "到了汉代，王充在《论衡·本性篇》里用了一个「傲」字来形容丹朱",
+      "revised": "到了汉代，王充在《论衡·率性篇》里用了一个「傲」字来形容丹朱",
+      "error_index": 1,
+      "applied": false,
+      "note": "修正篇名张冠李戴：《论衡》中「傲」的记载出自《率性篇》",
+      "target": "body"
+    },
+    {
+      "original": "《论衡·本性篇》",
+      "revised": "《论衡·率性篇》",
+      "error_index": 1,
+      "applied": true,
+      "note": "同步修正参考著作中的篇名",
+      "target": "refs"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "schema": "dynasty-knowledge-factual-fix/v1",
+  "fix_round": 1,
+  "all_applied": true,
+  "refs_sync_ok": true,
+  "issues": [],
+  "edits": [
+    {
+      "original": "后来却亲手杀掉后羿",
+      "revised": "后来却指使家众杀掉后羿",
+      "error_index": 1,
+      "applied": true,
+      "note": "《左传·襄公四年》载‘家众杀而亨之’，寒浞为主谋，非亲手杀之；改为‘指使家众’消除与后文‘家众突然发难’的矛盾。",
+      "target": "body"
+    },
+    {
+      "original": "靡聚集了两国的余烬，像扑灭一场大火那样，扫荡了寒浞的势力，砍掉了浇和豷这两个爪牙，最终将寒浞杀死",
+      "revised": "少康使女艾、季杼砍掉了浇和豷这两个爪牙，靡聚集了两国的余烬，像扑灭一场大火那样，扫荡了寒浞的势力，最终将寒浞杀死",
+      "error_index": 2,
+      "applied": true,
+      "note": "《左传·哀公元年》载少康遣女艾、季杼灭浇与豷，靡仅收二国之烬以灭浞；修正张冠李戴。",
+      "target": "body"
+    }
+  ]
+}

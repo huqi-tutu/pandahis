@@ -1,0 +1,107 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00609",
+  "写作结构": "正史叙述见翻译详录；拓展部分援引《古本竹书纪年》异说，说明不降逊位、扃在位十年等差异。其余后世文献仅同源重复，不作拓展。",
+  "候选著作": [
+    {
+      "出处": "《古本竹书纪年·夏纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载不降逊位于弟扃、扃在位十年等，与《史记》不同，为重要异说",
+      "检索词": "不降逊位 扃",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《世本·帝系》（辑本）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记有夏王世系，可能列扃为不降弟，但无具体事迹",
+      "检索词": "帝扃",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "晋代整理的上古帝王世系，可能重复扃的继位记载，无新信息",
+      "检索词": "扃",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《路史·后纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "南宋罗泌纂集的上古传说，涉及夏王世系，多为整合前说",
+      "检索词": "夏后扃",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《古本竹书纪年·夏纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载不降逊位于弟扃、扃在位十年等，与《史记》不同，为重要异说",
+      "检索词": "不降逊位 扃",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《世本·帝系》（辑本）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记有夏王世系，可能列扃为不降弟，但无具体事迹",
+      "检索词": "帝扃",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "晋代整理的上古帝王世系，可能重复扃的继位记载，无新信息",
+      "检索词": "扃",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《路史·后纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "南宋罗泌纂集的上古传说，涉及夏王世系，多为整合前说",
+      "检索词": "夏后扃",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 1,
+    "C_excluded": 3,
+    "overall": "B"
+  }
+}

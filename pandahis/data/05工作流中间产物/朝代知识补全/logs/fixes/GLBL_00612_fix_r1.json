@@ -1,0 +1,25 @@
+{
+  "schema": "dynasty-knowledge-factual-fix/v1",
+  "fix_round": 1,
+  "all_applied": true,
+  "refs_sync_ok": true,
+  "issues": [],
+  "edits": [
+    {
+      "original": "《竹书纪年》载，帝发年间「诸侯宾于王门」",
+      "revised": "《竹书纪年》载，帝发年间「诸夷宾于王门」",
+      "error_index": 1,
+      "applied": true,
+      "note": "《竹书纪年》佚文实为「诸夷宾于王门」，非「诸侯」。",
+      "target": "body"
+    },
+    {
+      "original": "他死后二十年左右，夏朝就没了。",
+      "revised": "他死后数十年，夏朝才走向覆灭。",
+      "error_index": 2,
+      "applied": true,
+      "note": "夏桀在位长达数十年，发死后距夏亡非仅二十年。",
+      "target": "body"
+    }
+  ]
+}

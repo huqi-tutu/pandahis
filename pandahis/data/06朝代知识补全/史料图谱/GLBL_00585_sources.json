@@ -1,0 +1,40 @@
+{
+  "schema": "dynasty-knowledge-source-graph/v1",
+  "史略ID": "GLBL_00585",
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 4,
+    "C_excluded": 2,
+    "overall": "B"
+  },
+  "sources": [
+    {
+      "出处": "《庄子·逍遥游》",
+      "tier": "先秦文献",
+      "material_tier": "B",
+      "snippet_verified": false,
+      "ctext_urn": null
+    },
+    {
+      "出处": "皇甫谧《高士传·许由》",
+      "tier": "经注/杂史",
+      "material_tier": "B",
+      "snippet_verified": false,
+      "ctext_urn": null
+    },
+    {
+      "出处": "《吕氏春秋·求人》",
+      "tier": "先秦文献",
+      "material_tier": "B",
+      "snippet_verified": false,
+      "ctext_urn": null
+    },
+    {
+      "出处": "《淮南子·道应训》",
+      "tier": "先秦文献",
+      "material_tier": "B",
+      "snippet_verified": false,
+      "ctext_urn": null
+    }
+  ]
+}

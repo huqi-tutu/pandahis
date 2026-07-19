@@ -1,0 +1,205 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00583",
+  "写作结构": "正史叙述（《史记·周本纪》《尚书·舜典》）见翻译详录；拓展文以《诗经·大雅·生民》《孟子·滕文公上》《国语·鲁语上》《山海经·大荒西经》等先秦文献为主，辅以《列女传》补充弃母事迹，呈现其感生神话、农业功绩及周族始祖形象的多元记载。legend 部分以《论衡·奇怪篇》作为后世理性解读的异说补充。",
+  "候选著作": [
+    {
+      "出处": "《诗经·大雅·生民》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "叙述弃的感生、诞生、天生擅长农业及祭天礼仪，是最早的诗体记录，补充《史记》细节。",
+      "检索词": "后稷 生民 姜嫄 履帝武敏",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《孟子·滕文公上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "明确概括后稷教民稼穑、树艺五谷，使民人育，是农业起源的经典表述。",
+      "检索词": "后稷教民稼穑",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《国语·鲁语上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "展禽论祀典提及“稷勤百谷而山死”，提供后稷因勤劳农业而死的异说。",
+      "检索词": "稷勤百谷而山死",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《山海经·大荒西经》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载“帝俊生后稷，稷降以百谷”，并及叔均代播百谷的故事，呈现神性世系与农业神格。",
+      "检索词": "帝俊生后稷 降以百谷",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《列女传·母仪传·弃母姜嫄》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "详述姜嫄履巨人迹而孕、生子以为不祥再三弃之的经过，补充弃幼年遭弃与被收留的细节。",
+      "检索词": "弃母姜嫄 巨人迹",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《论衡·奇怪篇》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "对姜嫄履巨人迹生后稷的感生神话提出理性批评，作为后世对始祖传说的质疑与解构之声。",
+      "检索词": "后稷母履大人迹 感生",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《尚书·舜典》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载舜命弃为后稷、播时百谷的原始敕命，为coverage_claims的核心依据之一。",
+      "检索词": "弃 后稷 播时百谷",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·周本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "系统记述弃之诞生、尧举为农师、舜封于邰及周族世系，是主要史料出处。",
+      "检索词": "弃 姜原 巨人迹 后稷",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《诗经·大雅·生民》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "叙述弃的感生、诞生、天生擅长农业及祭天礼仪，是最早的诗体记录，补充《史记》细节。",
+      "检索词": "后稷 生民 姜嫄 履帝武敏",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《孟子·滕文公上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "明确概括后稷教民稼穑、树艺五谷，使民人育，是农业起源的经典表述。",
+      "检索词": "后稷教民稼穑",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《国语·鲁语上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "展禽论祀典提及“稷勤百谷而山死”，提供后稷因勤劳农业而死的异说。",
+      "检索词": "稷勤百谷而山死",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《山海经·大荒西经》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载“帝俊生后稷，稷降以百谷”，并及叔均代播百谷的故事，呈现神性世系与农业神格。",
+      "检索词": "帝俊生后稷 降以百谷",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《列女传·母仪传·弃母姜嫄》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "详述姜嫄履巨人迹而孕、生子以为不祥再三弃之的经过，补充弃幼年遭弃与被收留的细节。",
+      "检索词": "弃母姜嫄 巨人迹",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《尚书·舜典》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载舜命弃为后稷、播时百谷的原始敕命，为coverage_claims的核心依据之一。",
+      "检索词": "弃 后稷 播时百谷",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·周本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "系统记述弃之诞生、尧举为农师、舜封于邰及周族世系，是主要史料出处。",
+      "检索词": "弃 姜原 巨人迹 后稷",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《论衡·奇怪篇》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "对姜嫄履巨人迹生后稷的感生神话提出理性批评，作为后世对始祖传说的质疑与解构之声。",
+      "检索词": "后稷母履大人迹 感生",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 6,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

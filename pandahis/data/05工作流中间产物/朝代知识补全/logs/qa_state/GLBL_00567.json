@@ -1,7 +1,9 @@
 {
   "史略ID": "GLBL_00567",
-  "status": "qa_pass",
   "compose_attempts": 1,
   "patch_attempts": 0,
-  "last_review_verdict": "warn"
+  "status": "qa_pass",
+  "last_fix_at": "2026-07-18T14:19:32Z",
+  "review_fix_round": 1,
+  "review_fix_forced_pass": false
 }

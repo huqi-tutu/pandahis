@@ -1,0 +1,13 @@
+{
+  "has_factual_errors": false,
+  "factual_errors": [],
+  "summary": "正文对《国语·楚语下》《尚书·吕刑》《史记·五帝本纪》《山海经·大荒西经》等典籍的引用与通识史载大体相符，关键情节均有史料来源；神话异说部分已自行标注为传说，未见明显硬史实性错误或张冠李戴。",
+  "overall_verdict": "pass",
+  "schema": "dynasty-knowledge-review/v2",
+  "史略ID": "GLBL_00563",
+  "reviewed_at": "2026-07-18T15:22:04Z",
+  "pipeline_blocking": false,
+  "review_fix_round": 1,
+  "forced_pass": false,
+  "human_review_required": false
+}

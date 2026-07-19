@@ -1,0 +1,26 @@
+{
+  "schema": "dynasty-knowledge-source-graph/v1",
+  "史略ID": "GLBL_00608",
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 1,
+    "overall": "B"
+  },
+  "sources": [
+    {
+      "出处": "《古本竹书纪年》（《太平御览》卷八二引）",
+      "tier": "辑佚/出土",
+      "material_tier": "B",
+      "snippet_verified": false,
+      "ctext_urn": null
+    },
+    {
+      "出处": "《帝王世纪·夏第五》",
+      "tier": "经注/杂史",
+      "material_tier": "B",
+      "snippet_verified": false,
+      "ctext_urn": null
+    }
+  ]
+}

@@ -7,7 +7,14 @@ import re
 from pathlib import Path
 from typing import Any, Dict
 
-from lib.verify import VAGUE_CITATION_PATTERNS
+import sys
+from pathlib import Path
+
+_OPENCLAW_ROOT = Path(__file__).resolve().parents[2]
+if str(_OPENCLAW_ROOT) not in sys.path:
+    sys.path.insert(0, str(_OPENCLAW_ROOT))
+
+from shared.vague_citation import VAGUE_CITATION_TRIGGERS  # noqa: E402
 
 _META_PREFIX = re.compile(
     r"^本条\s*\d+\s*段.*?---\s*",
@@ -99,12 +106,20 @@ def sanitize_enrich_detail(detail: str) -> str:
 
     text = _demote_six_arts_citations(text)
 
-    for word in VAGUE_CITATION_PATTERNS:
-        text = re.sub(
-            rf"([，,；;])?{re.escape(word)}[^。！？\n《]{{0,24}}",
-            "",
-            text,
-        )
+    parts = re.split(r"([。！？\n])", text)
+    cleaned_parts: list[str] = []
+    for i in range(0, len(parts), 2):
+        seg = parts[i]
+        punct = parts[i + 1] if i + 1 < len(parts) else ""
+        if seg and "《" not in seg:
+            for word in VAGUE_CITATION_TRIGGERS:
+                seg = re.sub(
+                    rf"([，,；;])?{re.escape(word)}[^。！？\n《]{{0,24}}",
+                    "",
+                    seg,
+                )
+        cleaned_parts.append(seg + punct)
+    text = "".join(cleaned_parts)
 
     text = re.sub(r"[，,]{2,}", "，", text)
     text = re.sub(r"\n{3,}", "\n\n", text)
@@ -151,7 +166,7 @@ def _merge_short_paragraphs(text: str) -> str:
 
 
 def _remove_bold_markers(text: str) -> str:
-    """去掉翻译中 LLM 误用的加粗标记。"""
+    """去掉正文中的 Markdown 加粗；小程序仅对「」『』内原文自动加粗。"""
     text = re.sub(r"\*\*([^*]+)\*\*", r"\1", text)
     return text
 

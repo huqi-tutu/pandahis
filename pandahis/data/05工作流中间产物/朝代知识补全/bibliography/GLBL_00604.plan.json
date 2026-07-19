@@ -1,0 +1,111 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00604",
+  "写作结构": "正史记述见《史记·夏本纪》翻译详录；拓展文以《古本竹书纪年》《世本》为主，交代甲矛发明与东征至东海、获九尾狐等事，不铺陈战斗细节。",
+  "候选著作": [
+    {
+      "出处": "《古本竹书纪年·帝杼》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载帝杼居原、迁老丘，征东海获九尾狐，并作矛。是锚点所引主要史源之一，提供发明与东征的关键文本。",
+      "检索词": "帝杼征于东海",
+      "采用": true,
+      "原文摘句": "帝杼……八年征于东海及三寿，得一狐九尾。杼作矛。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《世本·作篇》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记发明“杼作甲”，补充《竹书纪年》只记作矛的不足，共同构成甲矛装备提升。",
+      "检索词": "杼作甲",
+      "采用": true,
+      "原文摘句": "季杼作甲。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《帝王世纪》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "晋人辑录夏王世系，载杼在位年数及继承关系，可协调《纪年》叙述。",
+      "检索词": "帝杼少康子",
+      "采用": true,
+      "原文摘句": "帝杼，少康之子也。……在位十七年。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《路史·后纪十三·夏后纪下》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋人杂纂，概述杼事迹，含九尾狐祥瑞说，可作为传说层补充。",
+      "检索词": "杼得九尾狐",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《古本竹书纪年·帝杼》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载帝杼居原、迁老丘，征东海获九尾狐，并作矛。是锚点所引主要史源之一，提供发明与东征的关键文本。",
+      "检索词": "帝杼征于东海",
+      "采用": true,
+      "原文摘句": "帝杼……八年征于东海及三寿，得一狐九尾。杼作矛。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《世本·作篇》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记发明“杼作甲”，补充《竹书纪年》只记作矛的不足，共同构成甲矛装备提升。",
+      "检索词": "杼作甲",
+      "采用": true,
+      "原文摘句": "季杼作甲。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《帝王世纪》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "晋人辑录夏王世系，载杼在位年数及继承关系，可协调《纪年》叙述。",
+      "检索词": "帝杼少康子",
+      "采用": true,
+      "原文摘句": "帝杼，少康之子也。……在位十七年。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《路史·后纪十三·夏后纪下》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋人杂纂，概述杼事迹，含九尾狐祥瑞说，可作为传说层补充。",
+      "检索词": "杼得九尾狐",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 3,
+    "C_excluded": 1,
+    "overall": "B"
+  }
+}

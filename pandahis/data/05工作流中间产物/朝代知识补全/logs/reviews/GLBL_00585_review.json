@@ -1,0 +1,13 @@
+{
+  "has_factual_errors": false,
+  "factual_errors": [],
+  "summary": "正文对不同层次文献的归属区分清晰，未将后世传说与战国诸子文本混为一谈；所引《庄子》《高士传》及李白诗等常见史料内容准确，无明显硬史实错误。",
+  "overall_verdict": "pass",
+  "schema": "dynasty-knowledge-review/v2",
+  "史略ID": "GLBL_00585",
+  "reviewed_at": "2026-07-18T17:05:37Z",
+  "pipeline_blocking": false,
+  "review_fix_round": 2,
+  "forced_pass": false,
+  "human_review_required": false
+}

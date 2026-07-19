@@ -1,0 +1,42 @@
+<view wx:if="{{visible}}" class="share-poster-mask" catchtap="onClose">
+  <view class="share-poster-body" catchtap="noop">
+    <view class="share-poster-stage">
+      <image
+        wx:if="{{posterPath}}"
+        class="share-poster-preview"
+        src="{{posterPath}}"
+        mode="widthFix"
+        show-menu-by-longpress="{{false}}"
+      />
+      <view wx:else class="share-poster-loading">
+        <text class="share-poster-loading-text">{{renderError || '正在生成海报…'}}</text>
+      </view>
+    </view>
+
+    <view class="share-poster-sheet">
+      <view class="share-poster-actions">
+        <view class="share-poster-action" catchtap="onSave">
+          <view class="share-poster-action-icon share-poster-action-icon--save">
+            <text class="share-poster-action-glyph">↓</text>
+          </view>
+          <text class="share-poster-action-label">保存到相册</text>
+        </view>
+        <view class="share-poster-action" catchtap="onShareFriend">
+          <view class="share-poster-action-icon share-poster-action-icon--friend">
+            <text class="share-poster-action-glyph">微</text>
+          </view>
+          <text class="share-poster-action-label">分享给朋友</text>
+        </view>
+        <view class="share-poster-action" catchtap="onShareTimeline">
+          <view class="share-poster-action-icon share-poster-action-icon--timeline">
+            <text class="share-poster-action-glyph">圈</text>
+          </view>
+          <text class="share-poster-action-label">分享到朋友圈</text>
+        </view>
+      </view>
+      <view class="share-poster-cancel" catchtap="onClose">取消</view>
+    </view>
+  </view>
+
+  <canvas type="2d" id="sharePosterCanvas" class="share-poster-canvas-offscreen"></canvas>
+</view>

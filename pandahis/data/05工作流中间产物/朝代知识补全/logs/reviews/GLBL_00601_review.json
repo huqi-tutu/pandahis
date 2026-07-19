@@ -1,0 +1,13 @@
+{
+  "has_factual_errors": false,
+  "factual_errors": [],
+  "summary": "正文所引典籍、人物、事件归属及关键文句均与通识史实相符，且对《新序》传说已作‘未必是史实’的明确分述，无明显硬史实性错误。",
+  "overall_verdict": "pass",
+  "schema": "dynasty-knowledge-review/v2",
+  "史略ID": "GLBL_00601",
+  "reviewed_at": "2026-07-19T03:46:56Z",
+  "pipeline_blocking": false,
+  "review_fix_round": 1,
+  "forced_pass": false,
+  "human_review_required": false
+}

@@ -1,0 +1,17 @@
+{
+  "schema": "dynasty-knowledge-factual-fix/v1",
+  "fix_round": 2,
+  "all_applied": true,
+  "refs_sync_ok": true,
+  "issues": [],
+  "edits": [
+    {
+      "original": "四岳坚持“试不可用而已”",
+      "revised": "四岳坚持“试可乃已”",
+      "error_index": 1,
+      "applied": true,
+      "note": "将引文修正为《尚书·尧典》原文，消除张冠李戴错误，后文“按《尚书·尧典》记载”无需更改。",
+      "target": "body"
+    }
+  ]
+}

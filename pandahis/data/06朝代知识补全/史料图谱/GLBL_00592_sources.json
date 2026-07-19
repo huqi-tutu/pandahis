@@ -1,0 +1,40 @@
+{
+  "schema": "dynasty-knowledge-source-graph/v1",
+  "史略ID": "GLBL_00592",
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 4,
+    "C_excluded": 2,
+    "overall": "B"
+  },
+  "sources": [
+    {
+      "出处": "《尚书·汤誓》",
+      "tier": "先秦文献",
+      "material_tier": "B",
+      "snippet_verified": false,
+      "ctext_urn": null
+    },
+    {
+      "出处": "《太平御览》卷八十二引《竹书纪年》",
+      "tier": "辑佚/出土",
+      "material_tier": "B",
+      "snippet_verified": false,
+      "ctext_urn": null
+    },
+    {
+      "出处": "《列女传·孽嬖传》",
+      "tier": "经注/杂史",
+      "material_tier": "B",
+      "snippet_verified": false,
+      "ctext_urn": null
+    },
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "material_tier": "B",
+      "snippet_verified": false,
+      "ctext_urn": null
+    }
+  ]
+}

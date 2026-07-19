@@ -26,6 +26,16 @@ export function formatSearchPath(path: string): string {
     .join(' › ')
 }
 
+/** 从搜索结果的 unit 路径提取朝代名，供详情页 mock 兜底使用 */
+export function extractUnitDynastyHint(pathText: string): string {
+  const parts = String(pathText || '')
+    .split(/[>›/\\|]+/)
+    .map((s) => s.trim())
+    .filter(Boolean)
+  if (parts.length >= 2) return parts[parts.length - 1]
+  return parts[0] || ''
+}
+
 /** 将搜索高亮 <em> 转为 rich-text 可渲染的 HTML */
 function escapeHtml(text: string): string {
   return String(text)

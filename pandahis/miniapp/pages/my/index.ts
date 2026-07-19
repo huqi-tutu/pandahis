@@ -177,6 +177,9 @@ Page({
   goFavorites() {
     this.requireLogin(() => navigateTo(ROUTES.favorites))
   },
+  goCorrections() {
+    this.requireLogin(() => navigateTo(ROUTES.corrections))
+  },
   goSettings() {
     navigateTo(ROUTES.settings)
   },
@@ -201,18 +204,5 @@ Page({
   },
   goAbout() {
     navigateTo(ROUTES.about)
-  },
-  logout() {
-    wx.showModal({
-      title: '退出登录',
-      content: '退出后需重新登录才能使用收藏、足迹与邀请功能。',
-      confirmText: '退出',
-      success: (r) => {
-        if (!r.confirm) return
-        clearToken()
-        void this.refresh()
-        wx.showToast({ title: '已退出', icon: 'success' })
-      },
-    })
   },
 })

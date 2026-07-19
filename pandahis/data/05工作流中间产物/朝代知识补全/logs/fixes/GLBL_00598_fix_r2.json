@@ -1,0 +1,17 @@
+{
+  "schema": "dynasty-knowledge-factual-fix/v1",
+  "fix_round": 2,
+  "all_applied": true,
+  "refs_sync_ok": true,
+  "issues": [],
+  "edits": [
+    {
+      "original": "后世阴阳家把夏商周岁首的不同，演变出一套“三正”循环的神秘理论，说夏得人统、建寅，商得地统、建丑，周得天统、建子",
+      "revised": "后世今文经学家（如董仲舒、刘歆）把夏商周岁首的不同，演变出一套“三正”循环的神秘理论，说夏得人统、建寅，商得地统、建丑，周得天统、建子",
+      "error_index": 1,
+      "applied": true,
+      "note": "将“三正”循环理论的归属从阴阳家修正为汉代今文经学家（如董仲舒、刘歆），符合史实。",
+      "target": "body"
+    }
+  ]
+}

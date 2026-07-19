@@ -1,0 +1,13 @@
+{
+  "has_factual_errors": false,
+  "factual_errors": [],
+  "summary": "正文对《周礼》《礼记》《尚书·舜典》及杜佑《通典》的引用与通识史实相符，对传说与制度之间的张力亦有自觉分疏，未见硬史实错误。",
+  "overall_verdict": "pass",
+  "schema": "dynasty-knowledge-review/v2",
+  "史略ID": "GLBL_00572",
+  "reviewed_at": "2026-07-18T15:55:02Z",
+  "pipeline_blocking": false,
+  "review_fix_round": 1,
+  "forced_pass": false,
+  "human_review_required": false
+}

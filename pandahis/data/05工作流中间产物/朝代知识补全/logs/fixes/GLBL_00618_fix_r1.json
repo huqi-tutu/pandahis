@@ -1,0 +1,17 @@
+{
+  "schema": "dynasty-knowledge-factual-fix/v1",
+  "fix_round": 1,
+  "all_applied": true,
+  "refs_sync_ok": true,
+  "issues": [],
+  "edits": [
+    {
+      "original": "更惨的是，他的儿子被烹杀，还有人逼着后羿吃下自己儿子的肉",
+      "revised": "更惨的是，他被家众烹杀，还有人逼着他的儿子吃下他的肉，其子不忍食，死于穷门",
+      "error_index": 1,
+      "applied": true,
+      "note": "据《左传·襄公四年》订正：被烹杀并食之的是后羿，被逼食父肉的是其子，子不忍食而死。",
+      "target": "body"
+    }
+  ]
+}

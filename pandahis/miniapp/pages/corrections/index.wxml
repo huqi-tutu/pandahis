@@ -1,0 +1,54 @@
+<view class="page-shell">
+  <proto-nav title="我的纠错" show-back="{{true}}"></proto-nav>
+
+  <view class="corrections-body" style="padding-top: {{headerPadPx}}px;">
+    <view wx:if="{{!hasToken}}" class="empty-state">
+      <text class="empty-icon">🔒</text>
+      <text class="empty-text">登录后可查看纠错记录</text>
+      <view class="login-btn btn-primary" bindtap="goLogin">去登录</view>
+    </view>
+
+    <block wx:elif="{{loaded}}">
+      <view wx:if="{{!items.length}}" class="empty-state">
+        <text class="empty-icon">✎</text>
+        <text class="empty-text">暂无纠错记录</text>
+        <text class="empty-hint">在朝代详情或史略详情页可提交纠错</text>
+      </view>
+
+      <view wx:else class="correction-list">
+        <view
+          class="correction-item"
+          wx:for="{{items}}"
+          wx:key="id"
+          data-id="{{item.id}}"
+          bindtap="onItemTap"
+        >
+          <view class="correction-item-main">
+            <text class="correction-item-title">{{item.boxTitle}}</text>
+            <text class="correction-item-time">{{item.createdAtLabel}}</text>
+          </view>
+          <view class="correction-item-meta">
+            <text class="correction-item-status correction-item-status--{{item.status}}">{{item.statusLabel}}</text>
+            <text class="list-arrow">›</text>
+          </view>
+        </view>
+      </view>
+    </block>
+
+    <view wx:else class="loading">加载中…</view>
+  </view>
+
+  <correction-modal
+    visible="{{detailVisible}}"
+    mode="view"
+    civilizationName="{{detail.civilizationName}}"
+    dynastyName="{{detail.dynastyName}}"
+    boxTitle="{{detail.boxTitle}}"
+    selectedText="{{detail.selectedText}}"
+    reason="{{detail.reason}}"
+    status="{{detail.status}}"
+    sourceType="{{detail.sourceType}}"
+    submittedAt="{{detail.createdAt}}"
+    bind:close="closeDetail"
+  />
+</view>

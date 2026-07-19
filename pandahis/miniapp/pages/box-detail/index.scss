@@ -28,6 +28,7 @@
   bottom: 0;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .box-page-body--boot .box-tab:not(.active) {
@@ -39,29 +40,36 @@
   overflow: hidden;
 }
 
-/* ── 内容 Tab 栏 ── */
+/* ── 内容 Tab 栏（悬浮 overlay，隐藏时不改变正文布局） ── */
 .box-tabs-wrap {
-  display: flex;
-  flex-direction: row;
-  padding: 0 32rpx;
-  background: rgba(248, 246, 242, 0.97);
-  border-bottom: 1rpx solid #EDEAE6;
-}
-
-/* 阅读态下 Tab 栏悬浮在内容上方，向上滑走，不挤占布局空间 */
-.box-tabs-wrap--fixed {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 10;
-  transition: transform 0.25s ease, opacity 0.25s ease;
+  z-index: 30;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  padding: 0 32rpx;
+  background: rgba(248, 246, 242, 0.97);
+  border-bottom: 1rpx solid #EDEAE6;
+  transition: opacity 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+  will-change: opacity, transform;
 }
 
-.box-tabs-wrap--fixed.box-tabs-wrap--hidden {
-  transform: translateY(-100%);
+.box-tabs-wrap--persistent {
+  position: relative;
+  top: auto;
+  z-index: 90;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.box-tabs-wrap--hidden {
   opacity: 0;
   pointer-events: none;
+  transform: translateY(-100%);
+  border-bottom-color: transparent;
 }
 
 
@@ -99,11 +107,14 @@
 /* ── 内容滚动区 ── */
 .box-body-scroll {
   flex: 1;
+  min-height: 0;
   overflow: hidden;
+  background: #F8F6F2;
 }
 .box-tab1-body {
   position: relative;
-  padding: 72rpx 0 0;
+  /* 为悬浮 Tab 栏预留高度，隐藏/显示时不改变正文滚动位置 */
+  padding-top: 72rpx;
 }
 
 /* ── 左侧滚动指示器 ── */
@@ -144,9 +155,11 @@
 }
 
 .box-p {
+  display: block;
+  width: 100%;
   font-size: 32rpx;
   font-weight: 400;
-  line-height: 1.85;
+  line-height: 1.92;
   color: #3D3636;
   letter-spacing: 0.8rpx;
   margin-bottom: 28rpx;
@@ -155,24 +168,8 @@
   word-break: break-word;
 }
 
-.seg--bold {
-  font-weight: 700;
-}
-
-/* 首字下沉（古典排版）— 改用手动 dropcap 避免首字为标点 */
-.box-p--first::first-letter {
-  all: unset;
-}
-
-.dropcap-text {
-  font-family: 'Noto Serif SC', 'Songti SC', 'STSong', serif;
-  font-size: 68rpx;
-  font-weight: 700;
-  color: #9B3E38;
-  float: left;
-  line-height: 1.05;
-  margin-right: 10rpx;
-  margin-top: 6rpx;
+.box-p--last {
+  margin-bottom: 0;
 }
 
 /* 正文结束装饰 */
@@ -258,21 +255,31 @@
   flex-shrink: 0;
 }
 
-/* ── Tab 1：关系图谱 ── */
+/* ── Tab 1：关系图谱（浅色底，仅本 Tab） ── */
 .rel-tab-body {
   padding: 0;
   height: 100%;
+  min-height: 100%;
+  background: #F8F6F2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .rel-graph-wrap {
   padding: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #F8F6F2;
 }
 
 .rel-graph-viewport {
   position: relative;
   width: 100%;
-  min-height: 400rpx;
-  background: transparent;
+  flex: 1;
+  height: 100%;
+  background: #F8F6F2;
   overflow: hidden;
   touch-action: none;
 }
@@ -328,7 +335,9 @@
   color: #4A3F3F;
   letter-spacing: 0.5rpx;
   font-variant-numeric: tabular-nums;
-  min-width: 80rpx;
+  width: 88rpx;
+  min-width: 88rpx;
+  flex-shrink: 0;
   text-align: center;
 }
 
@@ -830,6 +839,7 @@
   max-height: 80vh;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .ud-modal-header {
@@ -841,12 +851,25 @@
   flex-shrink: 0;
 }
 
-.ud-modal-title {
+.ud-modal-title-wrap {
   flex: 1;
   min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6rpx;
+}
+
+.ud-modal-title {
   font-size: 34rpx;
   font-weight: 700;
   color: #4A3F3F;
+}
+
+.ud-modal-source {
+  font-size: 24rpx;
+  font-weight: 400;
+  color: #8A7F7A;
+  line-height: 1.4;
 }
 
 .ud-modal-close {
@@ -868,6 +891,9 @@
 
 .ud-modal-body {
   flex: 1;
+  min-height: 0;
+  height: 0;
+  max-height: 62vh;
   overflow: hidden;
 }
 
@@ -940,13 +966,6 @@
   border: 1rpx solid #EDEAE6;
   border-radius: 16rpx;
   padding: 24rpx;
-}
-
-.ud-modal-fallback-label {
-  font-size: 24rpx;
-  font-weight: 600;
-  color: #4A3F3F;
-  margin-bottom: 12rpx;
 }
 
 .ud-modal-fallback-body {

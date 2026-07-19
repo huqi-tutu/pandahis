@@ -1,0 +1,17 @@
+{
+  "schema": "dynasty-knowledge-factual-fix/v1",
+  "fix_round": 1,
+  "all_applied": true,
+  "refs_sync_ok": true,
+  "issues": [],
+  "edits": [
+    {
+      "original": "《孟子·滕文公上》追述说「夏后氏五十而贡」——也就是把耕地划成五十亩一块的方块田，以这个标准单位向农户征收定额的实物贡赋。",
+      "revised": "《孟子·滕文公上》追述说「夏后氏五十而贡」——指一夫授田五十亩而行贡法，以这个标准单位向农户征收定额的实物贡赋。",
+      "error_index": 1,
+      "applied": true,
+      "note": "《孟子》原文仅记夏后氏五十而贡，未言方块田；改为传统解释中的授田五十亩行贡法，保存后续推测空间。",
+      "target": "body"
+    }
+  ]
+}

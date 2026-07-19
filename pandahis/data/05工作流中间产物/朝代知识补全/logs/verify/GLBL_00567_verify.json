@@ -1,14 +1,27 @@
 {
   "schema": "dynasty-knowledge-verify/v1",
-  "verified_at": "2026-07-15T15:30:29Z",
+  "verified_at": "2026-07-18T14:19:32Z",
   "史略ID": "GLBL_00567",
   "passed": true,
-  "issues": [],
+  "issues": [
+    {
+      "code": "refs_orphan",
+      "message": "参考著作《尚书·尧典》未在正文出现",
+      "severity": "warn"
+    },
+    {
+      "code": "legend_before_sourced",
+      "message": "传说层段落早于首段有出处叙述，主叙事应优先史料/文献层",
+      "severity": "warn"
+    }
+  ],
   "metrics": {
-    "char_count": 1380,
-    "effective_floor": 700,
-    "source_density": "S1",
+    "char_count": 1633,
+    "effective_floor": 370,
+    "source_density": "S0",
     "paragraph_count": 7,
-    "min_paragraphs": 7
+    "min_paragraphs": 7,
+    "legend_trigger_count": 1,
+    "legend_char_ratio": 0.179
   }
 }

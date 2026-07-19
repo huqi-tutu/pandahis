@@ -1,0 +1,17 @@
+{
+  "schema": "dynasty-knowledge-factual-fix/v1",
+  "fix_round": 1,
+  "all_applied": true,
+  "refs_sync_ok": true,
+  "issues": [],
+  "edits": [
+    {
+      "original": "四岳的源头，曾是辅佐大禹治水的姜姓部落势力，后来受封为侯伯。",
+      "revised": "辅佐大禹治水的姜姓部落，其首领亦称四岳，后来受封为侯伯。",
+      "error_index": 1,
+      "applied": true,
+      "note": "删去‘四岳的源头’这一时序错误的溯源表述，改为指出《国语》中另有姜姓部落首领称‘四岳’，避免将《尧典》的制度职官与《周语》的人名族名混为一谈。",
+      "target": "body"
+    }
+  ]
+}

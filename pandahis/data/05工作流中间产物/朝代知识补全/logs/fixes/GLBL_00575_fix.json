@@ -1,0 +1,14 @@
+{
+  "schema": "dynasty-knowledge-factual-fix/v1",
+  "all_applied": true,
+  "issues": [],
+  "edits": [
+    {
+      "original": "比如《荀子·赋篇》在论述时，便把嫫母与美女西施对举，说她虽然容貌丑陋，却能因其德行而受到喜爱。",
+      "revised": "比如《荀子·赋篇》在论述时，便把嫫母与闾娵子奢等对举，说她虽然容貌丑陋，却能因其德行而受到喜爱。",
+      "error_index": 1,
+      "applied": true,
+      "note": "《荀子·赋篇》原文无西施，改为“闾娵子奢等”以符合典籍实际。"
+    }
+  ]
+}

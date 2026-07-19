@@ -1,0 +1,13 @@
+{
+  "has_factual_errors": false,
+  "factual_errors": [],
+  "summary": "全文人物、事件归属、典籍引用及时间线均与通识史实相符；对传说/附会内容（如酒池肉林）已明确标注为后世附会，无硬史实错误。",
+  "overall_verdict": "pass",
+  "schema": "dynasty-knowledge-review/v2",
+  "史略ID": "GLBL_00592",
+  "reviewed_at": "2026-07-19T02:35:53Z",
+  "pipeline_blocking": false,
+  "review_fix_round": 3,
+  "forced_pass": false,
+  "human_review_required": false
+}

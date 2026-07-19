@@ -1,0 +1,17 @@
+{
+  "schema": "dynasty-knowledge-factual-fix/v1",
+  "fix_round": 1,
+  "all_applied": true,
+  "refs_sync_ok": true,
+  "issues": [],
+  "edits": [
+    {
+      "original": "夏桀战败被俘，随后被放逐到南巢",
+      "revised": "夏桀战败出逃，被放逐到南巢",
+      "error_index": 1,
+      "applied": true,
+      "note": "据《史记·夏本纪》‘走鸣条，遂放而死’及《竹书纪年》‘桀逃南巢氏’，皆记其败走出逃后遭放逐，无‘被俘’明文，改为‘出逃’以合常见史料。",
+      "target": "body"
+    }
+  ]
+}

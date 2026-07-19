@@ -1,0 +1,13 @@
+{
+  "has_factual_errors": false,
+  "factual_errors": [],
+  "summary": "全文所引世系、典籍出处（《史记·夏本纪》《世本·作篇》《竹书纪年》《帝王世纪》）及核心史实均与通行史料相合，无明显人物、时序、事件归属或典籍张冠李戴之硬误；文学性心理与战术铺陈虽无直接史料对译，但属白话叙述常见笔法，未列入需报告的硬史实错误。",
+  "overall_verdict": "pass",
+  "schema": "dynasty-knowledge-review/v2",
+  "史略ID": "GLBL_00604",
+  "reviewed_at": "2026-07-19T04:08:47Z",
+  "pipeline_blocking": false,
+  "review_fix_round": 2,
+  "forced_pass": false,
+  "human_review_required": false
+}

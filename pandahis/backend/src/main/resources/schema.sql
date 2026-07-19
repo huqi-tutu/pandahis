@@ -135,12 +135,17 @@ CREATE TABLE IF NOT EXISTS historical_box (
 
 CREATE TABLE IF NOT EXISTS box_graph_node (
   id BIGINT PRIMARY KEY AUTO_INCREMENT,
-  box_id VARCHAR(128) NOT NULL,
+  component_id VARCHAR(64) NOT NULL COMMENT '组件ID（全局唯一）',
+  shilue_id VARCHAR(128) NOT NULL COMMENT '史略ID',
+  shilue_name VARCHAR(128) NOT NULL COMMENT '史略名称',
+  box_id VARCHAR(128) NOT NULL COMMENT '史略ID（FK，与 shilue_id 同值）',
   node_key VARCHAR(64) NOT NULL,
   node_type VARCHAR(16) NOT NULL,
   name VARCHAR(64) NOT NULL,
   extra_json TEXT,
+  UNIQUE (component_id),
   UNIQUE (box_id, node_key),
+  INDEX idx_box_graph_node_shilue_id (shilue_id),
   CONSTRAINT fk_graph_node_box FOREIGN KEY (box_id) REFERENCES historical_box (id)
 );
 
@@ -155,7 +160,10 @@ CREATE TABLE IF NOT EXISTS box_graph_edge (
 
 CREATE TABLE IF NOT EXISTS box_critique (
   id BIGINT PRIMARY KEY AUTO_INCREMENT,
-  box_id VARCHAR(128) NOT NULL,
+  component_id VARCHAR(64) NOT NULL COMMENT '组件ID（全局唯一）',
+  shilue_id VARCHAR(128) NOT NULL COMMENT '史略ID',
+  shilue_name VARCHAR(128) NOT NULL COMMENT '史略名称',
+  box_id VARCHAR(128) NOT NULL COMMENT '史略ID（FK，与 shilue_id 同值）',
   title VARCHAR(128) NULL,
   author VARCHAR(64) NOT NULL,
   era_text VARCHAR(64) NOT NULL,
@@ -164,12 +172,17 @@ CREATE TABLE IF NOT EXISTS box_critique (
   source VARCHAR(256),
   blurb VARCHAR(256) NULL,
   sort_order INT NOT NULL DEFAULT 0,
+  UNIQUE (component_id),
+  INDEX idx_box_critique_shilue_id (shilue_id),
   CONSTRAINT fk_critique_box FOREIGN KEY (box_id) REFERENCES historical_box (id)
 );
 
 CREATE TABLE IF NOT EXISTS box_relic (
   id BIGINT PRIMARY KEY AUTO_INCREMENT,
-  box_id VARCHAR(128) NOT NULL,
+  component_id VARCHAR(64) NOT NULL COMMENT '组件ID（全局唯一）',
+  shilue_id VARCHAR(128) NOT NULL COMMENT '史略ID',
+  shilue_name VARCHAR(128) NOT NULL COMMENT '史略名称',
+  box_id VARCHAR(128) NOT NULL COMMENT '史略ID（FK，与 shilue_id 同值）',
   name VARCHAR(128) NOT NULL,
   image_url VARCHAR(512),
   summary VARCHAR(256) NULL,
@@ -178,6 +191,8 @@ CREATE TABLE IF NOT EXISTS box_relic (
   priority_code VARCHAR(8) NULL,
   priority_reason TEXT NULL,
   sort_order INT NOT NULL DEFAULT 0,
+  UNIQUE (component_id),
+  INDEX idx_box_relic_shilue_id (shilue_id),
   CONSTRAINT fk_relic_box FOREIGN KEY (box_id) REFERENCES historical_box (id)
 );
 

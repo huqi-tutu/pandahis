@@ -1,4 +1,3 @@
-import { DEV_API_PORT, DEV_LAN_HOST } from '../../native-utils/dev-config'
 import { hasToken, request } from '../../native-utils/api'
 import { encodePathSegment } from '../../native-utils/encode-path-segment'
 import {
@@ -11,7 +10,18 @@ import { ROUTES, navigateTo } from '../../native-utils/router'
 import { decodeQueryValue } from '../../native-utils/query-value'
 import { formatHistoryYear } from '../../native-utils/year-format'
 import { formatEntrySourceLabel } from '../../native-utils/entry-source-label'
-import { promptContentShareUnavailable } from '../../native-utils/share-invite'
+import { buildSharePosterSheetState } from '../../native-utils/share-poster-open'
+import {
+  parseCivilizationFromCrumb,
+  requireLoginForCorrection,
+  submitCorrection,
+} from '../../native-utils/correction'
+import {
+  formatDynastyLoadError,
+  formatEmptySwimError,
+  formatUserFacingError,
+} from '../../native-utils/load-error-message'
+import { isDevelopEnv } from '../../native-utils/runtime-env'
 import {
   countOffscreenBottom,
   countOffscreenRight,
@@ -397,18 +407,10 @@ function splitIntroParagraphs(intro: string): string[] {
   return text.split(/\n\n+/).map((p) => p.trim()).filter(Boolean)
 }
 
-function isDevelopEnv(): boolean {
-  try {
-    return wx.getAccountInfoSync()?.miniProgram?.envVersion === 'develop'
-  } catch {
-    return true
-  }
-}
-
 function warnIfDegradedMock(swim: SwimMatrix) {
   if (!isDegradedMockFallback(swim)) return
   wx.showToast({
-    title: `后端未连通(${DEV_LAN_HOST}:${DEV_API_PORT})，仅显示君王`,
+    title: '朝代数据加载失败，仅显示本地君王数据',
     icon: 'none',
     duration: 3500,
   })
@@ -959,6 +961,24 @@ Page({
     chipTooltipBaseTransform: 'translate(-50%, -100%)',
     chipTooltipOrigin: '50% 100%',
     chipTooltipTransform: 'translate(-50%, -100%) scale(0.88)',
+    correctionVisible: false,
+    correctionSubmitting: false,
+    correctionBoxId: '',
+    correctionBoxTitle: '',
+    correctionCivilizationName: '',
+    correctionDynastyName: '',
+    selectionBarVisible: false,
+    selectionBarLeft: 0,
+    selectionBarTop: 0,
+    selectionBarText: '',
+    selectionMountKey: 1,
+    sharePosterVisible: false,
+    sharePosterQuote: '',
+    sharePosterSourceLine1: '',
+    sharePosterSourceLine2: '',
+    sharePosterUserName: '历史读者',
+    sharePosterUserAvatar: '',
+    sharePosterExcerptDate: '',
   },
   onShow() {
     void this.refreshFavState()
@@ -1011,7 +1031,29 @@ Page({
       const activePriority = this.data.activePriority || 'p3'
       const prioritySwim = applyPriorityView(swim, activePriority)
       const matrixBoxIds = collectMatrixBoxIds(prioritySwim)
+      const hasVisibleContent = (prioritySwim.lanes || []).some(hasLaneContent)
       const { preview, canExpand, paragraphs } = previewIntro(unit.summary || '')
+      if (!hasVisibleContent) {
+        this.setData({
+          unit,
+          dynastyTitle,
+          navTitle,
+          heroSubLine,
+          swim: null,
+          concurrentItems: [],
+          relatedUnits: hero.relatedUnits || [],
+          nextUnit: hero.nextUnit ?? null,
+          matrixBoxIds: [],
+          headerPadPx,
+          scrollTop,
+          introPreview: preview,
+          introDisplay: preview,
+          introCanExpand: canExpand,
+          introParagraphs: paragraphs,
+          loadError: formatEmptySwimError(isDevelopEnv()),
+        })
+        return
+      }
       this.setData({
         unit,
         dynastyTitle,
@@ -1038,43 +1080,58 @@ Page({
       }
     }
 
+    const tryApplyLocalMock = (mockHint: string) => {
+      const fallback = tryLoadLocalMock(mockHint, unitId || '')
+      if (!fallback) return false
+      console.warn('[dynasty-detail] using local mock for', mockHint)
+      const enhancedSwim = {
+        ...fallback.swim,
+        ...generateTimelineTicks(
+          fallback.swim.startYear,
+          fallback.swim.endYear,
+          fallback.swim.sheetWidthRpx,
+        ),
+        timeScaleMode: 'linear' as const,
+      }
+      applyPageData(fallback.hero, enhancedSwim)
+      warnIfDegradedMock(enhancedSwim)
+      return true
+    }
+
+    let resolvedMockHint = dynastyHint
+
     if (unitId) {
       try {
         const enc = encodePathSegment(unitId)
-        const [heroRes, swimRes] = await Promise.all([
-          request<UnitHero>(`/units/${enc}`),
-          request<SwimMatrix>(`/units/${enc}/swim-matrix`),
-        ])
-        applyPageData(heroRes.data, {
-          ...swimRes.data,
-          gridLines: swimRes.data.gridLines || [],
-        })
-        return
-      } catch (e: any) {
-        console.error('[dynasty-detail] API failed', e)
-        if (isDevelopEnv() && dynastyHint) {
-          const fallback = tryLoadLocalMock(dynastyHint, unitId)
-          if (fallback) {
-            console.warn('[dynasty-detail] using local mock for', dynastyHint)
-            const enhancedSwim = {
-              ...fallback.swim,
-              ...generateTimelineTicks(
-                fallback.swim.startYear,
-                fallback.swim.endYear,
-                fallback.swim.sheetWidthRpx,
-              ),
-              timeScaleMode: 'linear',
-            }
-            applyPageData(fallback.hero, enhancedSwim)
-            warnIfDegradedMock(enhancedSwim)
+        const heroRes = await request<UnitHero>(`/units/${enc}`)
+        resolvedMockHint =
+          dynastyHint ||
+          heroRes.data.unit.dynastyName?.trim() ||
+          heroRes.data.unit.name?.trim() ||
+          ''
+        try {
+          const swimRes = await request<SwimMatrix>(`/units/${enc}/swim-matrix`)
+          applyPageData(heroRes.data, {
+            ...swimRes.data,
+            gridLines: swimRes.data.gridLines || [],
+          })
+          return
+        } catch (swimErr: any) {
+          console.error('[dynasty-detail] swim-matrix failed', swimErr)
+          if (isDevelopEnv() && resolvedMockHint && tryApplyLocalMock(resolvedMockHint)) {
             return
           }
+          throw swimErr
         }
-        const msg = e?.message || '加载失败'
+      } catch (e: any) {
+        console.error('[dynasty-detail] API failed', e)
+        if (isDevelopEnv() && resolvedMockHint && tryApplyLocalMock(resolvedMockHint)) {
+          return
+        }
         this.setData({
           unit: null,
           swim: null,
-          loadError: `无法加载朝代数据（${msg}）。请确认后端已启动且已导入 historical_dynasty / historical_box 数据。`,
+          loadError: formatDynastyLoadError(e, isDevelopEnv()),
         })
         wx.showToast({ title: '加载失败', icon: 'none' })
         return
@@ -1424,8 +1481,14 @@ Page({
     })
   },
   goUnit(e: WechatMiniprogram.BaseEvent) {
-    const id = (e.currentTarget as any).dataset.id as string
-    navigateTo(ROUTES.dynastyDetail, { unitId: id })
+    const ds = (e.currentTarget as WechatMiniprogram.IAnyObject).dataset as {
+      id: string
+      dynasty?: string
+    }
+    navigateTo(ROUTES.dynastyDetail, {
+      unitId: ds.id,
+      dynasty: ds.dynasty || '',
+    })
   },
   goNext() {
     const n = this.data.nextUnit
@@ -1469,12 +1532,151 @@ Page({
       await this.refreshFavState()
       wx.showToast({ title: nextFav ? '已收藏本朝史略' : '已取消收藏', icon: 'success' })
     } catch (e: unknown) {
-      wx.showToast({ title: e instanceof Error ? e.message : '操作失败', icon: 'none' })
+      wx.showToast({
+        title: formatUserFacingError(e, isDevelopEnv(), '操作失败，请稍后重试'),
+        icon: 'none',
+      })
     } finally {
       this.setData({ favToggling: false })
     }
   },
-  onShareTap() {
-    promptContentShareUnavailable()
+  hideSelectionBar() {
+    this.setData({
+      selectionBarVisible: false,
+      selectionBarText: '',
+    })
+    this.clearDetailSelection()
+  },
+  clearDetailSelection() {
+    for (const selector of ['#dynastyIntroSelection', '#dynastyModalSelection']) {
+      wx.createSelectorQuery()
+        .in(this)
+        .select(selector)
+        .context((res) => {
+          const ctx = (res as WechatMiniprogram.IAnyObject)?.context as { removeSelection?: () => void } | null
+          ctx?.removeSelection?.()
+        })
+        .exec()
+    }
+  },
+  onDetailSelectionChange(e: WechatMiniprogram.CustomEvent) {
+    const detail = (e.detail || {}) as {
+      isCollapsed?: boolean
+      selectedString?: string
+      firstRangeRect?: { left?: number; top?: number; width?: number; height?: number }
+    }
+    const selected = String(detail.selectedString || '').trim()
+    if (detail.isCollapsed || !selected) {
+      this.hideSelectionBar()
+      return
+    }
+    const rect = detail.firstRangeRect
+    let left = this.data.selectionBarLeft
+    let top = this.data.selectionBarTop
+    if (rect && rect.left != null && rect.top != null) {
+      const width = rect.width || 0
+      left = rect.left + width / 2
+      top = rect.top
+      const minTop = 120
+      const maxTop = (wx.getSystemInfoSync().windowHeight || 667) - 80
+      top = Math.max(minTop, Math.min(maxTop, top))
+    }
+    this.setData({
+      selectionBarVisible: true,
+      selectionBarText: selected,
+      selectionBarLeft: left,
+      selectionBarTop: top,
+    })
+  },
+  async onSelectionShare() {
+    const text = this.data.selectionBarText
+    this.hideSelectionBar()
+    if (!text) return
+    wx.showLoading({ title: '生成海报…', mask: true })
+    const dynastyTitle = this.data.dynastyTitle || '朝代'
+    const unit = this.data.unit
+    const posterState = await buildSharePosterSheetState(
+      text,
+      `/ ${dynastyTitle} · 朝代简介`,
+      unit?.crumbText || this.data.heroSubLine || '',
+    )
+    wx.hideLoading()
+    this.setData(posterState)
+  },
+  onSelectionCopy() {
+    const text = this.data.selectionBarText
+    this.hideSelectionBar()
+    if (!text) return
+    wx.setClipboardData({
+      data: text,
+      success: () => wx.showToast({ title: '已复制', icon: 'success' }),
+    })
+  },
+  onSelectionQuery() {
+    this.hideSelectionBar()
+    wx.showToast({ title: '查询功能即将上线', icon: 'none' })
+  },
+  onSelectionCorrection() {
+    const text = this.data.selectionBarText
+    this.hideSelectionBar()
+    if (!text) return
+    requireLoginForCorrection(() => {
+      const unit = this.data.unit
+      const civilizationName = unit ? parseCivilizationFromCrumb(unit.crumbText) : ''
+      this.setData({
+        correctionVisible: true,
+        correctionSubmitting: false,
+        correctionBoxId: this.data.matrixBoxIds[0] || '',
+        correctionBoxTitle: `${this.data.dynastyTitle} · 朝代简介`,
+        correctionCivilizationName: civilizationName,
+        correctionDynastyName: this.data.dynastyTitle,
+      })
+    })
+  },
+  closeSharePoster() {
+    this.setData({ sharePosterVisible: false })
+  },
+  onChipTooltipCardTap() {},
+  onChipCorrectionTap() {
+    const boxId = this.data.chipTooltipHeldId
+    if (!boxId) return
+    requireLoginForCorrection(() => {
+      const unit = this.data.unit
+      const civilizationName = unit ? parseCivilizationFromCrumb(unit.crumbText) : ''
+      this.setData({
+        chipTooltipVisible: false,
+        chipTooltipHeldId: '',
+        correctionVisible: true,
+        correctionSubmitting: false,
+        correctionBoxId: boxId,
+        correctionBoxTitle: this.data.chipTooltipTitle,
+        correctionCivilizationName: civilizationName,
+        correctionDynastyName: this.data.dynastyTitle,
+      })
+    })
+  },
+  closeCorrection() {
+    this.setData({ correctionVisible: false, correctionSubmitting: false })
+  },
+  async onCorrectionSubmit(e: WechatMiniprogram.CustomEvent) {
+    const reason = String((e.detail as { reason?: string })?.reason || '')
+    const boxId = this.data.correctionBoxId
+    if (!boxId || this.data.correctionSubmitting) return
+    this.setData({ correctionSubmitting: true })
+    try {
+      await submitCorrection({
+        boxId,
+        sourceType: 'dynasty_canvas',
+        reason,
+      })
+      wx.showToast({ title: '提交成功，感谢反馈', icon: 'success' })
+      this.setData({ correctionVisible: false, correctionSubmitting: false })
+    } catch (err: unknown) {
+      this.setData({ correctionSubmitting: false })
+      wx.showToast({
+        title: formatUserFacingError(err, isDevelopEnv(), '提交失败，请稍后重试'),
+        icon: 'none',
+      })
+    }
   },
 })

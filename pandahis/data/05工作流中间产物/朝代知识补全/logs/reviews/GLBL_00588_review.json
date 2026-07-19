@@ -1,0 +1,13 @@
+{
+  "has_factual_errors": false,
+  "factual_errors": [],
+  "summary": "全文对《左传》《竹书纪年》《孟子》《楚辞》《淮南子》等典籍的引用与常识性史实大体吻合，对神话附会、异说分歧均有明确标注，未将传说当作信史，亦未发现明显的人物、时代、典籍张冠李戴或内部矛盾。",
+  "overall_verdict": "pass",
+  "schema": "dynasty-knowledge-review/v2",
+  "史略ID": "GLBL_00588",
+  "reviewed_at": "2026-07-19T01:57:37Z",
+  "pipeline_blocking": false,
+  "review_fix_round": 2,
+  "forced_pass": false,
+  "human_review_required": false
+}

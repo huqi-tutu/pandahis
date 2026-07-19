@@ -1,0 +1,13 @@
+{
+  "has_factual_errors": false,
+  "factual_errors": [],
+  "summary": "经核查，正文虽涉及经学解释争议，但关键细节均有典籍依据，且对传说、异说与后世附会已有明确framing，未发现明显硬史实性错误。",
+  "overall_verdict": "pass",
+  "schema": "dynasty-knowledge-review/v2",
+  "史略ID": "GLBL_00573",
+  "reviewed_at": "2026-07-18T16:01:16Z",
+  "pipeline_blocking": false,
+  "review_fix_round": 1,
+  "forced_pass": false,
+  "human_review_required": false
+}

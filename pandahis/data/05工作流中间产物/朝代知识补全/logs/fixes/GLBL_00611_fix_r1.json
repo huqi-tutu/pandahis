@@ -1,0 +1,17 @@
+{
+  "schema": "dynasty-knowledge-factual-fix/v1",
+  "fix_round": 1,
+  "all_applied": true,
+  "refs_sync_ok": true,
+  "issues": [],
+  "edits": [
+    {
+      "original": "太史公写到这里，笔一顿，只落下九个字：「帝孔甲崩，子帝皋立。帝皋崩，子帝发立。」",
+      "revised": "太史公写到这里，笔一顿，只落下寥寥十余字：「帝孔甲崩，子帝皋立。帝皋崩，子帝发立。」",
+      "error_index": 1,
+      "applied": true,
+      "note": "将“九个字”改为“寥寥十余字”，消除与引文字数的矛盾。",
+      "target": "body"
+    }
+  ]
+}

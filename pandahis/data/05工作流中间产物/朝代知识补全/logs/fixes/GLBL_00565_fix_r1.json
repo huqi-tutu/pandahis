@@ -1,0 +1,25 @@
+{
+  "schema": "dynasty-knowledge-factual-fix/v1",
+  "fix_round": 1,
+  "all_applied": true,
+  "refs_sync_ok": true,
+  "issues": [],
+  "edits": [
+    {
+      "original": "《史记·五帝本纪》只记了一笔：「九载，绩用弗成。」",
+      "revised": "《尚书·尧典》只记了一笔：「九载，绩用弗成。」",
+      "error_index": 1,
+      "applied": true,
+      "note": "正文引文出自《尚书·尧典》，非《史记·五帝本纪》，改为正确出处。",
+      "target": "body"
+    },
+    {
+      "original": "*参考著作：《尚书·禹贡》《史记·五帝本纪》《史记·夏本纪》《国语·周语下》《吕氏春秋·古乐》*",
+      "revised": "*参考著作：《尚书·尧典》《尚书·禹贡》《史记·五帝本纪》《史记·夏本纪》《国语·周语下》《吕氏春秋·古乐》*",
+      "error_index": 1,
+      "applied": true,
+      "note": "正文引用《尚书·尧典》，参考著作段相应增补此典籍。",
+      "target": "refs"
+    }
+  ]
+}

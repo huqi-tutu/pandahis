@@ -1,0 +1,13 @@
+{
+  "has_factual_errors": false,
+  "factual_errors": [],
+  "summary": "全文对《史记》与《竹书纪年》的记载分述准确，夏王世系排序与典籍引文均未见硬史实性错误，推测性表述亦有「或许」等限定，符合核查标准。",
+  "overall_verdict": "pass",
+  "schema": "dynasty-knowledge-review/v2",
+  "史略ID": "GLBL_00609",
+  "reviewed_at": "2026-07-19T04:31:49Z",
+  "pipeline_blocking": false,
+  "review_fix_round": 1,
+  "forced_pass": false,
+  "human_review_required": false
+}

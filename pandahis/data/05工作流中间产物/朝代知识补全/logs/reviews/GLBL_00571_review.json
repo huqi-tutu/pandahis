@@ -1,0 +1,13 @@
+{
+  "has_factual_errors": false,
+  "factual_errors": [],
+  "summary": "正文所涉《尚书·尧典》四仲中星、四方测候、《山海经》羲和生日及《世本·作篇》占日等核心史实与常见史料记载相符；对后世追述与神话附会亦有明确 framing，未见明显硬史实性错误。",
+  "overall_verdict": "pass",
+  "schema": "dynasty-knowledge-review/v2",
+  "史略ID": "GLBL_00571",
+  "reviewed_at": "2026-07-18T15:49:42Z",
+  "pipeline_blocking": false,
+  "review_fix_round": 1,
+  "forced_pass": false,
+  "human_review_required": false
+}

@@ -11,6 +11,7 @@
   史略ID   -> box_id
   翻译详情 -> translate_detail
   史料原文 -> source_original_json（仅翻译流水线产出）
+  原文出处 -> source_citation（母本典籍篇名，如《史记五帝本纪》）
 
 单条同步请用翻译编排器：
   python3 translate.py sync --id GLBL_00149

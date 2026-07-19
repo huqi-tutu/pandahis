@@ -1,0 +1,47 @@
+{
+  "dynasty": "五帝",
+  "mode": "commentary",
+  "completed": [
+    {
+      "glbl": "GLBL_00149",
+      "name": "黄帝",
+      "file": "GLBL_00149_黄帝_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-07-19T04:09:52Z"
+    },
+    {
+      "glbl": "GLBL_00144",
+      "name": "颛顼",
+      "file": "GLBL_00144_颛顼_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-07-19T04:10:52Z"
+    },
+    {
+      "glbl": "GLBL_00057",
+      "name": "帝喾",
+      "file": "GLBL_00057_帝喾_评述.json",
+      "status": "done",
+      "entry_count": 4,
+      "verified_at": "2026-07-19T04:11:54Z"
+    },
+    {
+      "glbl": "GLBL_00056",
+      "name": "尧",
+      "file": "GLBL_00056_尧_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-07-19T04:12:34Z"
+    },
+    {
+      "glbl": "GLBL_00129",
+      "name": "舜",
+      "file": "GLBL_00129_舜_评述.json",
+      "status": "done",
+      "entry_count": 3,
+      "verified_at": "2026-07-19T04:13:22Z"
+    }
+  ],
+  "updated_at": "2026-07-19T04:13:22Z"
+}

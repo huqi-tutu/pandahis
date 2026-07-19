@@ -1,0 +1,133 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00591",
+  "写作结构": "正史《史记·夏本纪》叙事见翻译详录，拓展文不重复。拓展以《国语·周语下》为纲，点明孔甲乱政导致国运转折；取《竹书纪年》帝孔甲纪事说明其居西河、刘累迁鲁阳等史影；以《左传·昭公二十九年》豢龙传说作为异闻附段，呼应用户关于孔甲好鬼神、失德的形象。注意不编造诸侯背叛具体情节和内部政变经过，仅陈述史家结论。",
+  "候选著作": [
+    {
+      "出处": "《史记·夏本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "后世史家据以论述孔甲乱政的基本文献，摘句由翻译环节提供，本plan不摘用",
+      "检索词": "孔甲",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": null
+    },
+    {
+      "出处": "《国语·周语下》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "直接记载‘孔甲乱夏，四世而陨’，为孔甲失德导致夏衰的最早概括之一",
+      "检索词": "孔甲乱夏",
+      "采用": true,
+      "原文摘句": "昔孔甲乱夏，四世而陨。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《竹书纪年·帝孔甲》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记孔甲在位年代、居西河及刘累迁鲁阳等事，可与《左传》豢龙传说相印证",
+      "检索词": "帝孔甲",
+      "采用": true,
+      "原文摘句": "帝孔甲元年乙巳，帝即位，居西河。……七年，刘累迁于鲁阳。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《左传·昭公二十九年》",
+      "tier": "先秦文献",
+      "pool": "legend",
+      "与本主题关系": "记孔甲得龙、刘累豢龙故事，是孔甲好鬼神、失政的传说依据",
+      "检索词": "孔甲飨龙",
+      "采用": true,
+      "原文摘句": "有夏孔甲，扰于有帝，帝赐之乘龙……龙一雌死，潜醢以食夏后。夏后飨之，既而使求之。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "后人辑录夏代帝王事迹，多采《左传》等旧说，无超出信息",
+      "检索词": "孔甲",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": null
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·夏本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "后世史家据以论述孔甲乱政的基本文献，摘句由翻译环节提供，本plan不摘用",
+      "检索词": "孔甲",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": null
+    },
+    {
+      "出处": "《国语·周语下》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "直接记载‘孔甲乱夏，四世而陨’，为孔甲失德导致夏衰的最早概括之一",
+      "检索词": "孔甲乱夏",
+      "采用": true,
+      "原文摘句": "昔孔甲乱夏，四世而陨。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《竹书纪年·帝孔甲》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记孔甲在位年代、居西河及刘累迁鲁阳等事，可与《左传》豢龙传说相印证",
+      "检索词": "帝孔甲",
+      "采用": true,
+      "原文摘句": "帝孔甲元年乙巳，帝即位，居西河。……七年，刘累迁于鲁阳。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《左传·昭公二十九年》",
+      "tier": "先秦文献",
+      "pool": "legend",
+      "与本主题关系": "记孔甲得龙、刘累豢龙故事，是孔甲好鬼神、失政的传说依据",
+      "检索词": "孔甲飨龙",
+      "采用": true,
+      "原文摘句": "有夏孔甲，扰于有帝，帝赐之乘龙……龙一雌死，潜醢以食夏后。夏后飨之，既而使求之。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "后人辑录夏代帝王事迹，多采《左传》等旧说，无超出信息",
+      "检索词": "孔甲",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": null
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 3,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "has_factual_errors": true,
+  "factual_errors": [
+    {
+      "quote": "大约是公元前1702年",
+      "reason": "夏代末年诸王年代在通识年表中距夏亡（约前1600年或稍早）仅数十年。皋为孔甲之子、发之父，系倒数第三位夏王，其即位年无论按《竹书纪年》推算（约前1630年代）还是夏商周断代工程框架（约前1670年代左右），均不可能早至前1702年，该年份与夏王世系明显错位，属于硬性的年代错置。",
+      "fix_hint": "改为约前1670年代或删去具体年份，改用“约在夏朝末年”等模糊表述。"
+    }
+  ],
+  "summary": "文中所记皋即位年“公元前1702年”与夏末王世系及通行年代框架明显不符，属硬史实错误；其余世系、史籍引文与概括性描述未见明显硬伤。",
+  "overall_verdict": "forced_pass",
+  "schema": "dynasty-knowledge-review/v2",
+  "史略ID": "GLBL_00611",
+  "reviewed_at": "2026-07-19T04:43:40Z",
+  "pipeline_blocking": false,
+  "review_fix_round": 3,
+  "forced_pass": true,
+  "human_review_required": true
+}

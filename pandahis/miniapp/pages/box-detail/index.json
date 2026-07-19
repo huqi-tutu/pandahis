@@ -3,6 +3,9 @@
   "navigationBarTitleText": "史略详情",
   "usingComponents": {
     "proto-nav": "/components/proto-nav/proto-nav",
-    "relation-graph-canvas": "/components/relation-graph-canvas/relation-graph-canvas"
+    "relation-graph-canvas": "/components/relation-graph-canvas/relation-graph-canvas",
+    "correction-modal": "/components/correction-modal/correction-modal",
+    "text-selection-bar": "/components/text-selection-bar/text-selection-bar",
+    "share-poster-sheet": "/components/share-poster-sheet/share-poster-sheet"
   }
 }

@@ -1,0 +1,13 @@
+{
+  "has_factual_errors": false,
+  "factual_errors": [],
+  "summary": "正文对《尚书·舜典》所载舜命九官的职官、人名、分工及史料来源的叙述均符合常见史学通识；《说苑》异说亦以“异说” framing 引出，未见明显与通识史实相悖或典籍张冠李戴之处。",
+  "overall_verdict": "pass",
+  "schema": "dynasty-knowledge-review/v2",
+  "史略ID": "GLBL_00570",
+  "reviewed_at": "2026-07-18T15:43:13Z",
+  "pipeline_blocking": false,
+  "review_fix_round": 1,
+  "forced_pass": false,
+  "human_review_required": false
+}

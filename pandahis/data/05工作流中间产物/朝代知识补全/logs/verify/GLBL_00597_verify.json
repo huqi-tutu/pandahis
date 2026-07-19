@@ -1,0 +1,22 @@
+{
+  "schema": "dynasty-knowledge-verify/v1",
+  "verified_at": "2026-07-19T03:15:06Z",
+  "史略ID": "GLBL_00597",
+  "passed": false,
+  "issues": [
+    {
+      "code": "category_drift",
+      "message": "典制条目人物叙事（尧舜等 14 处）明显多于制度表述（4 处），疑似写成事略",
+      "severity": "error"
+    }
+  ],
+  "metrics": {
+    "char_count": 1161,
+    "effective_floor": 300,
+    "source_density": "S0",
+    "paragraph_count": 6,
+    "min_paragraphs": 5,
+    "legend_trigger_count": 1,
+    "legend_char_ratio": 0.0
+  }
+}

@@ -21,6 +21,12 @@ import {
 import { formatHistoryYear } from '../../native-utils/year-format'
 import { ROUTES, navigateTo } from '../../native-utils/router'
 import { promptContentShareUnavailable } from '../../native-utils/share-invite'
+import { buildSharePosterSheetState } from '../../native-utils/share-poster-open'
+import {
+  requireLoginForCorrection,
+  submitCorrection,
+} from '../../native-utils/correction'
+import { isPersonBoxCategory } from '../../native-utils/category-label'
 
 type TabAccess = { locked?: boolean; lockedReason?: string | null; unlockAction?: { type?: string } | null }
 
@@ -31,8 +37,10 @@ type BoxHeader = {
     subText: string
     blurb?: string | null
     categoryKey: string
-    civilization_name: string
-    dynasty_name: string
+    civilizationName?: string
+    dynastyName?: string
+    civilization_name?: string
+    dynasty_name?: string
     startYear: number
     endYear: number
   }
@@ -153,48 +161,87 @@ function buildDetailMetaFromBox(box: BoxHeader['box']): string {
   return parts.join(' · ')
 }
 
+function readBoxLocationNames(box: BoxHeader['box'] | null | undefined): { civ: string; dynasty: string } {
+  if (!box) return { civ: '', dynasty: '' }
+  const raw = box as Record<string, unknown>
+  return {
+    civ: String(raw.civilizationName ?? raw.civilization_name ?? '').trim(),
+    dynasty: String(raw.dynastyName ?? raw.dynasty_name ?? '').trim(),
+  }
+}
+
 type TextSegment = { text: string; bold: boolean }
 
 type DetailParagraph = {
   segs: TextSegment[]
   plain: string
-  dropcap?: string
 }
 
-function parseBoldSegments(text: string): TextSegment[] {
-  const parts = text.split(/(\*\*[^*]*\*\*)/)
-  return parts.filter(Boolean).map((p) => {
-    if (p.startsWith('**') && p.endsWith('**')) {
-      return { text: p.slice(2, -2), bold: true }
+const QUOTE_CLOSER: Record<string, string> = { '「': '」', '『': '』' }
+const QUOTE_OPENERS = new Set(Object.keys(QUOTE_CLOSER))
+const QUOTE_CLOSERS = new Set(Object.values(QUOTE_CLOSER))
+
+function stripMarkdownBold(text: string): string {
+  return text.replace(/\*\*([^*]+)\*\*/g, '$1')
+}
+
+function mergeAdjacentSegments(segs: TextSegment[]): TextSegment[] {
+  const out: TextSegment[] = []
+  for (const seg of segs) {
+    if (!seg.text) continue
+    const prev = out[out.length - 1]
+    if (prev && prev.bold === seg.bold) {
+      prev.text += seg.text
+    } else {
+      out.push({ ...seg })
     }
-    return { text: p, bold: false }
-  })
-}
-
-/** 中文/英文/常用标点字符集合（用于剔除首段开头标点） */
-const LEADING_PUNCTUATION = new Set(
-  '《》「」『』【】（）()。，、！？；：""\'\'…—·.．,，\'·：；！？、，。'
-)
-
-function stripLeadingPunctuation(text: string): string {
-  let start = 0
-  while (start < text.length && LEADING_PUNCTUATION.has(text[start])) {
-    start++
   }
-  return text.slice(start)
+  return out
 }
 
-function findDropcap(segs: TextSegment[]): { ch: string; si: number; ci: number } {
-  for (let si = 0; si < segs.length; si++) {
-    for (let ci = 0; ci < segs[si].text.length; ci++) {
-      const ch = segs[si].text[ci]
-      if (/[\u4e00-\u9fff\u3400-\u4dbf\w]/.test(ch)) {
-        return { ch, si, ci }
+/** 直角引号「」『』及其中原文整体加粗；正文勿写 ** markdown 加粗 */
+function parseDisplaySegments(raw: string): TextSegment[] {
+  const text = stripMarkdownBold(raw)
+  const segs: TextSegment[] = []
+  let buf = ''
+  let bufBold = false
+  let depth = 0
+
+  const flush = () => {
+    if (!buf) return
+    segs.push({ text: buf, bold: bufBold })
+    buf = ''
+  }
+
+  for (let i = 0; i < text.length; i++) {
+    const ch = text[i]
+    if (QUOTE_OPENERS.has(ch)) {
+      if (!bufBold) {
+        flush()
+        bufBold = true
       }
+      buf += ch
+      depth++
+      continue
     }
+    if (QUOTE_CLOSERS.has(ch)) {
+      buf += ch
+      depth = Math.max(0, depth - 1)
+      if (depth === 0) {
+        flush()
+        bufBold = false
+      }
+      continue
+    }
+    const wantBold = depth > 0
+    if (bufBold !== wantBold) {
+      flush()
+      bufBold = wantBold
+    }
+    buf += ch
   }
-  const first = segs[0]?.text || ''
-  return { ch: first[0] || '', si: 0, ci: 0 }
+  flush()
+  return mergeAdjacentSegments(segs)
 }
 
 function splitDetailParagraphs(md: string): DetailParagraph[] {
@@ -202,21 +249,10 @@ function splitDetailParagraphs(md: string): DetailParagraph[] {
   if (!raw) return []
   const parts = raw.split(/\n{2,}/).map((s) => s.trim()).filter(Boolean)
   const list = parts.length ? parts : [raw]
-  return list.map((p, i) => {
-    // 首段：剔除开头的标点符号，确保 dropcap 始终是正常文字
-    let processed = i === 0 ? stripLeadingPunctuation(p) : p
-    const segs = parseBoldSegments(processed)
+  return list.map((p) => {
+    const segs = parseDisplaySegments(p)
     const plain = segs.map((s) => s.text).join('')
-    const para: DetailParagraph = { segs, plain }
-    if (i === 0) {
-      const dc = findDropcap(segs)
-      para.dropcap = dc.ch
-      if (segs[dc.si]) {
-        const seg = segs[dc.si]
-        seg.text = seg.text.slice(0, dc.ci) + seg.text.slice(dc.ci + 1)
-      }
-    }
-    return para
+    return { segs, plain }
   })
 }
 
@@ -232,6 +268,7 @@ Page({
     graphCanvasH: 400,
     critColors: ['#92ADA4', '#C9825A', '#7BA87B', '#B85A5A', '#84572F', '#5A8FA8'],
     tab: 'content' as 'content' | 'relations' | 'reviews' | 'relics',
+    showRelationsTab: false,
     isFav: false,
     detailMd: '',
     detailParagraphs: [] as DetailParagraph[],
@@ -268,16 +305,62 @@ Page({
     bodyScrollTop: 0,
     showOriginal: false,
     originalTitle: '',
+    originalSourceWork: '',
     originalItems: [],
     originalFallback: '',
     originalEmpty: true,
     originalLoading: false,
+    correctionVisible: false,
+    correctionSubmitting: false,
+    correctionBoxTitle: '',
+    correctionCivilizationName: '',
+    correctionDynastyName: '',
+    correctionSelectedText: '',
+    selectionBarVisible: false,
+    selectionBarLeft: 0,
+    selectionBarTop: 0,
+    selectionBarText: '',
+    selectionMountKey: 1,
+    sharePosterVisible: false,
+    sharePosterQuote: '',
+    sharePosterSourceLine1: '',
+    sharePosterSourceLine2: '',
+    sharePosterUserName: '历史读者',
+    sharePosterUserAvatar: '',
+    sharePosterExcerptDate: '',
   },
+  _selectionContext: null as WechatMiniprogram.IAnyObject | null,
   _detailScrollTop: 0,
   _tabBarPx: 0,
   _suppressChromeHide: false,
   _suppressChromeHideTimer: null as ReturnType<typeof setTimeout> | null,
   _rawOriginalRef: null,
+  onReady() {
+    this.bindDetailSelectionContext()
+  },
+  bindDetailSelectionContext() {
+    wx.createSelectorQuery()
+      .in(this)
+      .select('#detailBodySelection')
+      .context((res) => {
+        this._selectionContext = (res as WechatMiniprogram.IAnyObject)?.context ?? null
+      })
+      .exec()
+  },
+  clearDetailSelection() {
+    const ctx = this._selectionContext as { removeSelection?: () => void } | null
+    if (ctx && typeof ctx.removeSelection === 'function') {
+      try {
+        ctx.removeSelection()
+        return
+      } catch {
+        // fallback to remount below
+      }
+    }
+    this.setData({ selectionMountKey: this.data.selectionMountKey + 1 }, () => {
+      this.bindDetailSelectionContext()
+    })
+  },
   onUnload() {
     if (this._suppressChromeHideTimer) {
       clearTimeout(this._suppressChromeHideTimer)
@@ -305,7 +388,8 @@ Page({
     const tabTop = (sys.statusBarHeight || 20) + navH
     const tabBarPx = Math.round(72 * (sys.windowWidth / 750))
     const bodyTop = tabTop + tabBarPx
-    const graphCanvasH = Math.max(400, Math.floor((sys.windowHeight || 667) - bodyTop - 40))
+    const zoomBarPx = Math.round(130 * (sys.windowWidth / 750))
+    const graphCanvasH = Math.max(400, Math.floor((sys.windowHeight || 667) - bodyTop - zoomBarPx))
 
     this._tabBarPx = tabBarPx
     this.setData({
@@ -321,19 +405,19 @@ Page({
       const y0 = yearLabel(header.box.startYear)
       const y1 = yearLabel(header.box.endYear)
       const timeRange = y0 && y1 ? y0 + ' — ' + y1 : (y0 || y1 || '')
-      const blurbClean = stripLeadingPunctuation(header.box.blurb || '')
+      const { civ, dynasty } = readBoxLocationNames(header.box)
+      const showRelationsTab = isPersonBoxCategory(header.box.categoryKey)
+      const tab =
+        !showRelationsTab && this.data.tab === 'relations' ? 'content' : this.data.tab
       this.setData({
         header,
         navTitle: header.box.title,
         detailMetaDisplay: buildDetailMetaFromBox(header.box),
         audioTimeRange: timeRange,
-        audioCategoryPath: [header.box.civilization_name, header.box.dynasty_name].filter(Boolean).join(' · '),
-        blurbSegs: parseBoldSegments(blurbClean),
-        blurbDropcap: (() => {
-          const segs = parseBoldSegments(blurbClean)
-          const dc = findDropcap(segs)
-          return dc.ch
-        })(),
+        audioCategoryPath: [civ, dynasty].filter(Boolean).join(' · '),
+        blurbSegs: parseDisplaySegments(header.box.blurb || ''),
+        showRelationsTab,
+        tab,
       })
       await this.refreshFavState()
       await this.recordFootprint()
@@ -411,6 +495,8 @@ Page({
           detailErr: '',
           detailReady: true,
           detailFetched: true,
+        }, () => {
+          this.bindDetailSelectionContext()
         })
         this._rawOriginalRef = res.data.originalRef ?? null
       } catch (e: any) {
@@ -425,6 +511,7 @@ Page({
       return
     }
     if (tab === 'relations') {
+      if (!this.data.showRelationsTab) return
       if (this.data.graphFetched) return
       try {
         const res = await request<{ centerNodeKey: string | null; nodes: any[]; edges: any[] }>(`/boxes/${enc}/graph`)
@@ -506,7 +593,9 @@ Page({
 
   setTab(e: WechatMiniprogram.BaseEvent) {
     const tab = (e.currentTarget as any).dataset.tab as 'content' | 'relations' | 'reviews' | 'relics'
+    if (tab === 'relations' && !this.data.showRelationsTab) return
     if (tab === this.data.tab) return
+    this.hideSelectionBar()
 
     const nextScrollTop = this.data.bodyScrollTop === 0 ? 0.01 : 0
 
@@ -522,6 +611,7 @@ Page({
       this._suppressChromeHideTimer = null
     }, 280) as unknown as number
 
+    // 切换 Tab 时始终显示顶部四 Tab（非详情阅读沉浸态）
     this.setData({
       tab,
       uiFocused: true,
@@ -699,20 +789,39 @@ Page({
     this.setData({ graphScaleLabel: this.formatGraphScaleLabel(scale) })
   },
   /** 解析原文引用（同 pages/original-text） */
-  _parseOriginalRef(ref: unknown): { title: string; items: any[]; fallback: string } | null {
+  _parseOriginalRef(ref: unknown): { title: string; sourceWork: string; items: any[]; fallback: string } | null {
     if (ref == null || (Array.isArray(ref) && ref.length === 0) || (typeof ref === 'object' && Object.keys(ref as object).length === 0)) return null
     if (typeof ref === 'string') {
       const t = ref.trim()
-      return t ? { title: '原文', items: [], fallback: t } : null
+      return t ? { title: '母本原文', sourceWork: '', items: [], fallback: t } : null
     }
     if (typeof ref !== 'object' || ref === null) return null
     const o = ref as Record<string, unknown>
-    const textField = typeof o.text === 'string' ? o.text.trim() : ''
+    const title = typeof o.title === 'string' && o.title.trim() ? o.title.trim() : '母本原文'
+    const sourceWork =
+      (typeof o.sourceWork === 'string' ? o.sourceWork.trim() : '') ||
+      (typeof o.primarySource === 'string' ? o.primarySource.trim() : '')
+
+    const textField =
+      (typeof o.text === 'string' ? o.text.trim() : '') ||
+      (typeof o.originalText === 'string' ? o.originalText.trim() : '')
     if (textField) {
-      const title = typeof o.title === 'string' && o.title.trim() ? o.title.trim() : '史料原文'
-      return { title, items: [], fallback: textField }
+      return { title, sourceWork, items: [], fallback: textField }
     }
-    const title = typeof o.title === 'string' && o.title.trim() ? o.title.trim() : '史料原文'
+
+    // 索引侧 paragraphs: [{ text }] 或 string[]
+    if (Array.isArray(o.paragraphs)) {
+      const parts: string[] = []
+      for (const p of o.paragraphs) {
+        if (typeof p === 'string' && p.trim()) parts.push(p.trim())
+        else if (p && typeof p === 'object') {
+          const t = String((p as Record<string, unknown>).text ?? '').trim()
+          if (t) parts.push(t)
+        }
+      }
+      if (parts.length) return { title, sourceWork, items: [], fallback: parts.join('\n') }
+    }
+
     const rawItems = o.items
     const items: any[] = []
     if (Array.isArray(rawItems)) {
@@ -728,11 +837,9 @@ Page({
       }
     }
     const hasStructured = items.some((i: any) => i.work || i.chapter || i.excerpt || i.url)
-    if (!hasStructured) {
-      try { return { title, items: [], fallback: JSON.stringify(ref, null, 2) } }
-      catch { return { title, items: [], fallback: String(ref) } }
-    }
-    return { title, items, fallback: '' }
+    // 无法识别的结构：不向用户展示 JSON 字符串
+    if (!hasStructured) return null
+    return { title, sourceWork, items, fallback: '' }
   },
 
   goOriginal() {
@@ -748,6 +855,7 @@ Page({
         this.setData({
           showOriginal: true,
           originalTitle: parsed.title,
+          originalSourceWork: parsed.sourceWork,
           originalItems: parsed.items,
           originalFallback: parsed.fallback,
           originalEmpty: false,
@@ -765,13 +873,21 @@ Page({
         const res = await request<{ originalRef: unknown }>(`/boxes/${enc}/original-ref`, { auth: hasToken() })
         const parsed = this._parseOriginalRef(res.data.originalRef)
         if (!parsed || (!parsed.items.length && !parsed.fallback.length)) {
-          this.setData({ originalLoading: false, originalEmpty: true, originalTitle: '', originalItems: [], originalFallback: '' })
+          this.setData({
+            originalLoading: false,
+            originalEmpty: true,
+            originalTitle: '',
+            originalSourceWork: '',
+            originalItems: [],
+            originalFallback: '',
+          })
           return
         }
         this.setData({
           originalLoading: false,
           originalEmpty: false,
           originalTitle: parsed.title,
+          originalSourceWork: parsed.sourceWork,
           originalItems: parsed.items,
           originalFallback: parsed.fallback,
         })
@@ -805,39 +921,54 @@ Page({
       wx.showToast({ title: '链接已复制', icon: 'success' })
     }
   },
-  onGraphNodeTap(e: WechatMiniprogram.CustomEvent<{ key?: string; targetBoxId?: string }>) {
-    const key = e.detail?.key
-    const targetId = e.detail?.targetBoxId
-    const boxId = this.data.boxId
-    if (targetId && targetId !== boxId) {
-      navigateTo(ROUTES.boxDetail, { boxId: targetId })
-      return
-    }
-    if (key && boxId) {
-      navigateTo(ROUTES.relationDetail, { boxId, nodeKey: key })
-    }
+  onGraphNodeTap(_e: WechatMiniprogram.CustomEvent<{ key?: string; targetBoxId?: string; nodeType?: string }>) {
+    // 关系图谱暂不支持点击跳转
   },
   noop() {},
   /** 标记本次tap来自底部操作栏，阻止导航栏切换 */
   markTapFromBar() { this._ignoreTapFromBar = true; },
   onGraphZoomIn() {
-    const c = this.selectComponent('#bdRelationGraph') as { zoomIn?: () => void } | null
+    const c = this.selectComponent('#bdRelationGraph') as {
+      zoomIn?: () => void
+      getZoomScale?: () => number
+      paintCached?: () => void
+    } | null
     c?.zoomIn?.()
-    this.refreshGraphScaleLabel()
+    const label = this.formatGraphScaleLabel(c?.getZoomScale?.() ?? 1)
+    if (label !== this.data.graphScaleLabel) {
+      this.setData({ graphScaleLabel: label }, () => c?.paintCached?.())
+    }
   },
   onGraphZoomOut() {
-    const c = this.selectComponent('#bdRelationGraph') as { zoomOut?: () => void } | null
+    const c = this.selectComponent('#bdRelationGraph') as {
+      zoomOut?: () => void
+      getZoomScale?: () => number
+      paintCached?: () => void
+    } | null
     c?.zoomOut?.()
-    this.refreshGraphScaleLabel()
+    const label = this.formatGraphScaleLabel(c?.getZoomScale?.() ?? 1)
+    if (label !== this.data.graphScaleLabel) {
+      this.setData({ graphScaleLabel: label }, () => c?.paintCached?.())
+    }
   },
   onGraphZoomReset() {
-    const c = this.selectComponent('#bdRelationGraph') as { resetZoom?: () => void } | null
+    const c = this.selectComponent('#bdRelationGraph') as {
+      resetZoom?: () => void
+      paintCached?: () => void
+    } | null
     c?.resetZoom?.()
-    this.refreshGraphScaleLabel()
+    if (this.data.graphScaleLabel !== '100%') {
+      this.setData({ graphScaleLabel: '100%' }, () => c?.paintCached?.())
+    }
   },
   onGraphZoomChange(e: WechatMiniprogram.CustomEvent<{ scale?: number }>) {
-    const scale = e.detail?.scale ?? 1
-    this.setData({ graphScaleLabel: this.formatGraphScaleLabel(scale) })
+    // 双指缩放：松手后由组件触发；过程中不 setData
+    const scale = e.detail?.scale
+    if (scale == null) return
+    const c = this.selectComponent('#bdRelationGraph') as { paintCached?: () => void } | null
+    const label = this.formatGraphScaleLabel(scale)
+    if (label === this.data.graphScaleLabel) return
+    this.setData({ graphScaleLabel: label }, () => c?.paintCached?.())
   },
   onDetailScroll(e: WechatMiniprogram.ScrollViewScroll) {
     const d = e.detail || { scrollTop: 0, scrollHeight: 0 }
@@ -882,6 +1013,10 @@ Page({
   /** 点击屏幕切换导航栏显隐 */
   onPageTap() {
     if (this.data.showOriginal) return
+    if (this.data.selectionBarVisible) {
+      this.hideSelectionBar()
+      return
+    }
     if (this.data.tab === 'content' && !this._ignoreTapFromBar) {
       this.onToggleUI(!this.data.uiFocused)
     }
@@ -910,5 +1045,123 @@ Page({
       }
     }
     void run()
+  },
+  hideSelectionBar() {
+    this.setData({
+      selectionBarVisible: false,
+      selectionBarText: '',
+    })
+    this.clearDetailSelection()
+  },
+  onDetailSelectionChange(e: WechatMiniprogram.CustomEvent) {
+    if (this.data.tab !== 'content') return
+    const detail = (e.detail || {}) as {
+      isCollapsed?: boolean
+      selectedString?: string
+      firstRangeRect?: { left?: number; top?: number; width?: number; height?: number }
+    }
+    const selected = String(detail.selectedString || '').trim()
+    if (detail.isCollapsed || !selected) {
+      this.hideSelectionBar()
+      return
+    }
+    const rect = detail.firstRangeRect
+    let left = this.data.selectionBarLeft
+    let top = this.data.selectionBarTop
+    if (rect && rect.left != null && rect.top != null) {
+      const width = rect.width || 0
+      const height = rect.height || 0
+      left = rect.left + width / 2
+      top = rect.top
+      const minTop = 120
+      const maxTop = (wx.getSystemInfoSync().windowHeight || 667) - 80
+      top = Math.max(minTop, Math.min(maxTop, top))
+    }
+    this.setData({
+      selectionBarVisible: true,
+      selectionBarText: selected,
+      selectionBarLeft: left,
+      selectionBarTop: top,
+    })
+  },
+  async onSelectionShare() {
+    const text = this.data.selectionBarText
+    this.hideSelectionBar()
+    if (!text) return
+    wx.showLoading({ title: '生成海报…', mask: true })
+    const header = this.data.header as BoxHeader | null
+    const box = header?.box
+    const { civ, dynasty } = readBoxLocationNames(box)
+    const title = box?.title || this.data.navTitle || '史略'
+    const sourceLine2 = [civ, dynasty].filter(Boolean).join(' · ') || this.data.detailMetaDisplay || ''
+    const posterState = await buildSharePosterSheetState(
+      text,
+      `/ ${title} · 史略`,
+      sourceLine2,
+    )
+    wx.hideLoading()
+    this.setData(posterState)
+  },
+  closeSharePoster() {
+    this.setData({ sharePosterVisible: false })
+  },
+  onSelectionCopy() {
+    const text = this.data.selectionBarText
+    this.hideSelectionBar()
+    if (!text) return
+    wx.setClipboardData({
+      data: text,
+      success: () => wx.showToast({ title: '已复制', icon: 'success' }),
+    })
+  },
+  onSelectionQuery() {
+    this.hideSelectionBar()
+    wx.showToast({ title: '查询功能即将上线', icon: 'none' })
+  },
+  onSelectionCorrection() {
+    const text = this.data.selectionBarText
+    this.hideSelectionBar()
+    if (!text) return
+    this.openCorrectionModal(text)
+  },
+  openCorrectionModal(selectedText: string) {
+    this.clearDetailSelection()
+    requireLoginForCorrection(() => {
+      const header = this.data.header as BoxHeader | null
+      const box = header?.box
+      const { civ, dynasty } = readBoxLocationNames(box)
+      this.setData({
+        correctionVisible: true,
+        correctionSubmitting: false,
+        correctionBoxTitle: box?.title || this.data.navTitle,
+        correctionCivilizationName: civ,
+        correctionDynastyName: dynasty,
+        correctionSelectedText: selectedText,
+      })
+    })
+  },
+  closeCorrection() {
+    this.setData({ correctionVisible: false, correctionSubmitting: false })
+    this.clearDetailSelection()
+  },
+  async onCorrectionSubmit(e: WechatMiniprogram.CustomEvent) {
+    const reason = String((e.detail as { reason?: string })?.reason || '')
+    const boxId = this.data.boxId
+    if (!boxId || this.data.correctionSubmitting) return
+    this.setData({ correctionSubmitting: true })
+    try {
+      await submitCorrection({
+        boxId,
+        sourceType: 'box_detail_selection',
+        reason,
+        selectedText: this.data.correctionSelectedText,
+      })
+      wx.showToast({ title: '提交成功，感谢反馈', icon: 'success' })
+      this.setData({ correctionVisible: false, correctionSubmitting: false })
+    } catch (err: unknown) {
+      this.setData({ correctionSubmitting: false })
+      const msg = err instanceof Error ? err.message : '提交失败，请稍后重试'
+      wx.showToast({ title: msg, icon: 'none' })
+    }
   },
 })

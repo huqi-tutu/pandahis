@@ -1,0 +1,135 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00574",
+  "写作结构": "正史叙述以《史记·五帝本纪》为基，由翻译详录提供主体叙事。拓展文侧重史外异说与延展：一、通过《山海经》《世本》等先秦两汉文献展示嫘祖异名、子嗣的早期记载，与正史形成互证或异文；二、采择《帝王世纪》等杂史说明后世对嫘祖身份的增饰；三、以《隋书·礼仪志》为引，交代嫘祖被尊为先蚕的祭祀制度与蚕神传说脉络。",
+  "候选著作": [
+    {
+      "出处": "《史记·五帝本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，载嫘祖为西陵氏之女、正妃，生玄嚣、昌意，后代有天下。",
+      "检索词": "嫘祖",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《山海经·海内经》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "称黄帝妻雷祖，生昌意，是最早的异名记录，可佐证嫘祖在早期传说中的存在。",
+      "检索词": "黄帝妻雷祖",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《世本·帝系》（辑佚）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记黄帝娶西陵氏女嫘祖，产青阳及昌意，明确西陵氏出身并提及青阳之名，可与《史记》互相印证补充。",
+      "检索词": "嫘祖 西陵氏",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《帝王世纪》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "称黄帝四妃，嫘祖为元妃，生昌意、玄嚣等，突出正妃地位并为子嗣提供异说（如增龙苗等）。",
+      "检索词": "黄帝四妃 嫘祖",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《隋书·礼仪志二》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "记述后周、隋祭祀先蚕之礼，明载以嫘祖为先蚕，是蚕神传说的制度化体现。",
+      "检索词": "先蚕 嫘祖",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C",
+      "fetch_note": "二十四史由翻译详录服务，拓展路不摘句"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·五帝本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，载嫘祖为西陵氏之女、正妃，生玄嚣、昌意，后代有天下。",
+      "检索词": "嫘祖",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《山海经·海内经》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "称黄帝妻雷祖，生昌意，是最早的异名记录，可佐证嫘祖在早期传说中的存在。",
+      "检索词": "黄帝妻雷祖",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《世本·帝系》（辑佚）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记黄帝娶西陵氏女嫘祖，产青阳及昌意，明确西陵氏出身并提及青阳之名，可与《史记》互相印证补充。",
+      "检索词": "嫘祖 西陵氏",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《帝王世纪》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "称黄帝四妃，嫘祖为元妃，生昌意、玄嚣等，突出正妃地位并为子嗣提供异说（如增龙苗等）。",
+      "检索词": "黄帝四妃 嫘祖",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《隋书·礼仪志二》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "记述后周、隋祭祀先蚕之礼，明载以嫘祖为先蚕，是蚕神传说的制度化体现。",
+      "检索词": "先蚕 嫘祖",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C",
+      "fetch_note": "二十四史由翻译详录服务，拓展路不摘句"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 3,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

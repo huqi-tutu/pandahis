@@ -6,35 +6,51 @@ import hashlib
 import json
 import os
 import re
+import sys
 from pathlib import Path
 from typing import Any
 
 OPENCLAW_ROOT = Path(__file__).resolve().parents[2]
 ANNOTATE_REF = OPENCLAW_ROOT / "historiography-annotate" / "reference"
 
+if str(OPENCLAW_ROOT) not in sys.path:
+    sys.path.insert(0, str(OPENCLAW_ROOT))
+
+from shared.ai_flavor_words import (  # noqa: E402
+    AI_FLAVOR_WORD_FAIL_AT,
+    AI_FLAVOR_WORDS,
+    FORBIDDEN_PROSE_WORDS,
+    ai_flavor_verify_issues,
+    ai_flavor_word_counts,
+)
+from shared.vague_citation import detect_unanchored_vague_citations  # noqa: E402
+
 PERSON_CATEGORIES = ("君王", "宗戚", "宦官", "文臣", "武将", "蕃祚", "庶众")
 PERSON_INDEX_CATEGORIES = frozenset(PERSON_CATEGORIES)
 
-FORBIDDEN_PROSE_WORDS = (
-    "综上所述",
-    "由此可见",
-    "众所周知",
-    "历史长河",
-    "命运齿轮",
-    "毫无疑问",
-    "此外",
-    "与此同时",
-    "值得注意的是",
-    "堪称",
-    "可谓",
-    "不啻",
-    "则是",
-    "时代洪流",
-    "拉开序幕",
-    "翻开新篇章",
-    "历史终将证明",
-    "注定",
-    "必然",
+# 兼容旧常量名（撰写侧与 verify 共用 shared/ai_flavor_words.py）
+AI_FLAVOR_WORD_MAX_TOTAL = AI_FLAVOR_WORD_FAIL_AT - 1
+AI_FLAVOR_WORD_MAX_PER_WORD = AI_FLAVOR_WORD_FAIL_AT - 1
+
+
+# 元叙述 / 编辑腔（交付物 §0.3；出现在读者正文即 error）
+FORBIDDEN_META_PHRASES = (
+    "正文不载",
+    "正文不宜",
+    "读者能把握",
+    "本条须",
+    "史实边界",
+    "对读者而言",
+    "并不采此写法",
+    "应留空",
+    "不宜补写",
+    "须落定的硬史实",
+    "若谈史实边界",
+    "不得把神话",
+    "当作本文硬事实",
+    "写作的基本前提",
+    "后世亦不得",
+    "其余细节应留空",
 )
 
 MIN_PARAGRAPHS_BY_PRIORITY = {
@@ -46,7 +62,9 @@ MIN_PARAGRAPHS_BY_PRIORITY = {
 
 # 质检/撰写 retry 上限（防 agent 或脚本死循环）
 MAX_COMPOSE_REVISE_ROUNDS = 1
-MAX_PATCH_ROUNDS = 1
+MAX_COMPOSE_PARSE_ATTEMPTS = 3  # compose LLM 输出 JSON 解析失败时重试
+MAX_PATCH_ROUNDS = 3  # Kimi 精准改稿 + review↔fix 循环上限（轮）
+MAX_REVIEW_FIX_ROUNDS = 3  # Kimi 事实核查最多 3 轮；第 3 轮仍有问题则 forced_pass
 MAX_QA_DETAIL_ROUNDS = 2  # compose + 1 revise，整条 qa 链路上限
 
 CATEGORY_SLUG_TO_CN = {
@@ -161,7 +179,7 @@ def extract_json_array(text: str) -> list[dict[str, Any]]:
 def extract_json_object(text: str) -> dict[str, Any] | None:
     if not text:
         return None
-    m = re.search(r"```(?:json)?\s*(\{.*?\})\s*```", text, re.DOTALL)
+    m = re.search(r"```(?:json)?\s*(\{.*\})\s*```", text, re.DOTALL)
     raw = m.group(1) if m else None
     if raw is None:
         s, e = text.find("{"), text.rfind("}")
@@ -172,7 +190,28 @@ def extract_json_object(text: str) -> dict[str, Any] | None:
         data = json.loads(raw)
         return data if isinstance(data, dict) else None
     except json.JSONDecodeError:
+        pass
+    # 容错：从首个 { 起 raw_decode（应对尾部多余文字）
+    dec = json.JSONDecoder()
+    start = text.find("{")
+    if start != -1:
+        try:
+            data, _ = dec.raw_decode(text[start:])
+            return data if isinstance(data, dict) else None
+        except json.JSONDecodeError:
+            return None
+    return None
+
+
+def parse_compose_detail_response(text: str) -> dict[str, Any] | None:
+    """从 compose-detail LLM 回复解析 {史略ID, 翻译详情}。"""
+    data = extract_json_object(text)
+    if not data:
         return None
+    body = str(data.get("翻译详情") or "").strip()
+    if not body:
+        return None
+    return data
 
 
 def max_glbl_num(histograph_root: Path) -> int:

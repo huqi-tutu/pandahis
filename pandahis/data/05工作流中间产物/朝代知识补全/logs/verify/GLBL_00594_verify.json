@@ -1,0 +1,16 @@
+{
+  "schema": "dynasty-knowledge-verify/v1",
+  "verified_at": "2026-07-19T02:51:27Z",
+  "史略ID": "GLBL_00594",
+  "passed": true,
+  "issues": [],
+  "metrics": {
+    "char_count": 1007,
+    "effective_floor": 300,
+    "source_density": "S0",
+    "paragraph_count": 5,
+    "min_paragraphs": 5,
+    "legend_trigger_count": 1,
+    "legend_char_ratio": 0.147
+  }
+}

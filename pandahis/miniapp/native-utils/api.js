@@ -1,53 +1,37 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.request = exports.hasToken = exports.hasUserLoggedOut = exports.clearToken = exports.setToken = exports.USER_LOGGED_OUT_KEY = exports.getToken = exports.getBaseUrl = void 0;
+exports.request = exports.hasToken = exports.hasUserLoggedOut = exports.clearToken = exports.setToken = exports.USER_LOGGED_OUT_KEY = exports.getToken = exports.getBaseUrl = exports.ApiError = void 0;
 const dev_config_1 = require("./dev-config");
+const runtime_env_1 = require("./runtime-env");
+class ApiError extends Error {
+    constructor(message, detail) {
+        super(message);
+        this.name = 'ApiError';
+        this.detail = detail;
+    }
+}
+exports.ApiError = ApiError;
 const PROD_BASE_URL = 'https://www.pandahis.com/api/v1';
-function isDevtoolsClient() {
-    var _a;
-    try {
-        const info = wx.getSystemInfoSync();
-        if (info.platform === 'devtools')
-            return true;
-        if (((_a = info.host) === null || _a === void 0 ? void 0 : _a.env) === 'WeChatDevTools')
-            return true;
-    }
-    catch {
-        // ignore
-    }
-    return false;
-}
-/** 开发者工具用 localhost；真机用局域网 IP（见 dev-config.ts） */
-function getLocalBaseUrl() {
-    if (isDevtoolsClient()) {
-        return `http://localhost:${dev_config_1.DEV_API_PORT}/api/v1`;
-    }
-    return `http://${dev_config_1.DEV_LAN_HOST}:${dev_config_1.DEV_API_PORT}/api/v1`;
-}
-function isDevelopEnv() {
-    var _a, _b;
-    try {
-        return ((_b = (_a = wx.getAccountInfoSync()) === null || _a === void 0 ? void 0 : _a.miniProgram) === null || _b === void 0 ? void 0 : _b.envVersion) === 'develop';
-    }
-    catch {
-        return true;
-    }
-}
-/** 开发版误把生产地址写入 storage 时，自动回退本地后端 */
-function resolveStoredBaseUrl(stored) {
-    if (isDevelopEnv() &&
-        (stored === PROD_BASE_URL || stored.includes('www.pandahis.com'))) {
-        return getLocalBaseUrl();
-    }
-    return stored;
+function normalizeDevelopBaseUrl(value) {
+    const url = String(value || '').trim().replace(/\/$/, '');
+    if (!url)
+        return '';
+    if (/^https:\/\/[a-z0-9.-]+(?::\d+)?(?:\/.*)?$/i.test(url))
+        return url;
+    const privateHttp = /^http:\/\/(?:localhost|127(?:\.\d{1,3}){3}|10(?:\.\d{1,3}){3}|192\.168(?:\.\d{1,3}){2}|172\.(?:1[6-9]|2\d|3[01])(?:\.\d{1,3}){2})(?::\d+)?(?:\/.*)?$/i;
+    return privateHttp.test(url) ? url : '';
 }
 function getBaseUrl() {
-    if (isDevelopEnv()) {
-        return getLocalBaseUrl();
+    if ((0, runtime_env_1.getEnvVersion)() === 'develop') {
+        const stored = normalizeDevelopBaseUrl(wx.getStorageSync('apiBaseUrl'));
+        if (stored)
+            return stored;
+        // 开发者工具可直接访问本机；真机预览默认走生产 HTTPS，
+        // 避免 DHCP 改变开发机局域网 IP 后整页数据加载失败。
+        if ((0, runtime_env_1.isDevtoolsClient)()) {
+            return `http://localhost:${dev_config_1.DEV_API_PORT}/api/v1`;
+        }
     }
-    const stored = String(wx.getStorageSync('apiBaseUrl') || '').trim();
-    if (stored)
-        return resolveStoredBaseUrl(stored);
     return PROD_BASE_URL;
 }
 exports.getBaseUrl = getBaseUrl;
@@ -128,35 +112,27 @@ function request(path, opts) {
                     const msg = (typeof body === 'object' && body && (body.message || body.code)) ||
                         (typeof body === 'string' && body.slice(0, 200)) ||
                         `HTTP_${status}`;
-                    const err = new Error(msg);
-                    err.detail = detail;
-                    reject(err);
+                    reject(new ApiError(String(msg), detail));
                     return;
                 }
                 if (!body || typeof body !== 'object') {
                     const detail = { url, method, status, body };
                     console.error('[api] INVALID_RESPONSE', detail);
-                    const err = new Error('INVALID_RESPONSE');
-                    err.detail = detail;
-                    reject(err);
+                    reject(new ApiError('INVALID_RESPONSE', detail));
                     return;
                 }
                 if (body.code && body.code !== 'OK') {
                     const detail = { url, method, status, body };
                     console.error('[api] API_ERROR', detail);
-                    const err = new Error(body.message || body.code);
-                    err.detail = detail;
-                    reject(err);
+                    reject(new ApiError(String(body.message || body.code), detail));
                     return;
                 }
                 resolve(body);
             },
             fail(err) {
                 console.error('[api] REQUEST_FAIL', { url, method, err });
-                const msg = (err === null || err === void 0 ? void 0 : err.errMsg) || (err === null || err === void 0 ? void 0 : err.message) || 'REQUEST_FAIL';
-                const e = new Error(msg);
-                e.detail = { url, method, err };
-                reject(e);
+                const msg = (err === null || err === void 0 ? void 0 : err.errMsg) || 'REQUEST_FAIL';
+                reject(new ApiError(msg, { url, method, err }));
             },
         });
     });

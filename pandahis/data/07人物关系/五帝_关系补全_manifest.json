@@ -1,0 +1,40 @@
+{
+  "dynasty": "五帝",
+  "completed": [
+    {
+      "glbl": "GLBL_00149",
+      "name": "黄帝",
+      "file": "黄帝关系表.json",
+      "count": 14,
+      "verified_at": "2026-07-19"
+    },
+    {
+      "glbl": "GLBL_00144",
+      "name": "颛顼",
+      "file": "颛顼关系表.json",
+      "count": 7,
+      "verified_at": "2026-07-19"
+    },
+    {
+      "glbl": "GLBL_00057",
+      "name": "帝喾",
+      "file": "帝喾关系表.json",
+      "count": 18,
+      "verified_at": "2026-07-19"
+    },
+    {
+      "glbl": "GLBL_00056",
+      "name": "尧",
+      "file": "尧关系表.json",
+      "count": 14,
+      "verified_at": "2026-07-19"
+    },
+    {
+      "glbl": "GLBL_00129",
+      "name": "舜",
+      "file": "舜关系表.json",
+      "count": 24,
+      "verified_at": "2026-07-19"
+    }
+  ]
+}

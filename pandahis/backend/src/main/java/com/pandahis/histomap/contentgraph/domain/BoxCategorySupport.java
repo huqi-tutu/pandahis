@@ -3,6 +3,7 @@ package com.pandahis.histomap.contentgraph.domain;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 
 /**
  * 产品层史略分类与泳道配置。
@@ -44,6 +45,18 @@ public final class BoxCategorySupport {
       Map.entry("minlu", "shuzhong")
   );
 
+  /** 人物六类 + 历史别名；关系 Tab 仅对这些类型开放 */
+  private static final Set<String> PERSON_CATEGORY_KEYS = Set.of(
+      "junji",
+      "zongqi",
+      "wenchen",
+      "wujiang",
+      "huanguan",
+      "shuzhong",
+      "shichen",
+      "minlu"
+  );
+
   private static final Map<String, String> DISPLAY_NAMES = Map.ofEntries(
       Map.entry("junji", "君王"),
       Map.entry("zongqi", "宗戚"),
@@ -79,6 +92,14 @@ public final class BoxCategorySupport {
       return "";
     }
     return DISPLAY_NAMES.getOrDefault(key, key);
+  }
+
+  /** 是否为人物类史略（君王/宗戚/文臣/武将/宦官/庶众） */
+  public static boolean isPersonCategory(String boxCategoryKey) {
+    if (boxCategoryKey == null || boxCategoryKey.isBlank()) {
+      return false;
+    }
+    return PERSON_CATEGORY_KEYS.contains(boxCategoryKey.trim());
   }
 
   public static Optional<CategoryDef> swimLaneDef(String laneKey) {

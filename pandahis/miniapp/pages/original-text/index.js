@@ -14,22 +14,38 @@ function isRefMeaningless(ref) {
     return false;
 }
 function parseOriginalRef(ref) {
-    var _a, _b, _c, _d;
+    var _a, _b, _c, _d, _e;
     if (isRefMeaningless(ref))
         return null;
     if (typeof ref === 'string') {
         const t = ref.trim();
-        return t ? { title: '原文', items: [], fallback: t } : null;
+        return t ? { title: '母本原文', sourceWork: '', items: [], fallback: t } : null;
     }
     if (typeof ref !== 'object' || ref === null)
         return null;
     const o = ref;
-    const textField = typeof o.text === 'string' ? o.text.trim() : '';
+    const title = typeof o.title === 'string' && o.title.trim() ? o.title.trim() : '母本原文';
+    const sourceWork = (typeof o.sourceWork === 'string' ? o.sourceWork.trim() : '') ||
+        (typeof o.primarySource === 'string' ? o.primarySource.trim() : '');
+    const textField = (typeof o.text === 'string' ? o.text.trim() : '') ||
+        (typeof o.originalText === 'string' ? o.originalText.trim() : '');
     if (textField) {
-        const title = typeof o.title === 'string' && o.title.trim() ? o.title.trim() : '史料原文';
-        return { title, items: [], fallback: textField };
+        return { title, sourceWork, items: [], fallback: textField };
     }
-    const title = typeof o.title === 'string' && o.title.trim() ? o.title.trim() : '史料原文';
+    if (Array.isArray(o.paragraphs)) {
+        const parts = [];
+        for (const p of o.paragraphs) {
+            if (typeof p === 'string' && p.trim())
+                parts.push(p.trim());
+            else if (p && typeof p === 'object') {
+                const t = String((_a = p.text) !== null && _a !== void 0 ? _a : '').trim();
+                if (t)
+                    parts.push(t);
+            }
+        }
+        if (parts.length)
+            return { title, sourceWork, items: [], fallback: parts.join('\n') };
+    }
     const rawItems = o.items;
     const items = [];
     if (Array.isArray(rawItems)) {
@@ -38,32 +54,26 @@ function parseOriginalRef(ref) {
                 continue;
             const x = it;
             items.push({
-                work: String((_a = x.work) !== null && _a !== void 0 ? _a : '').trim(),
-                chapter: String((_b = x.chapter) !== null && _b !== void 0 ? _b : '').trim(),
-                excerpt: String((_c = x.excerpt) !== null && _c !== void 0 ? _c : '')
+                work: String((_b = x.work) !== null && _b !== void 0 ? _b : '').trim(),
+                chapter: String((_c = x.chapter) !== null && _c !== void 0 ? _c : '').trim(),
+                excerpt: String((_d = x.excerpt) !== null && _d !== void 0 ? _d : '')
                     .trim()
                     .replace(/\\r\\n/g, '\n')
                     .replace(/\\n/g, '\n'),
-                url: String((_d = x.url) !== null && _d !== void 0 ? _d : '').trim(),
+                url: String((_e = x.url) !== null && _e !== void 0 ? _e : '').trim(),
             });
         }
     }
     const hasStructured = items.some((i) => i.work || i.chapter || i.excerpt || i.url);
-    if (!hasStructured) {
-        try {
-            const fallback = JSON.stringify(ref, null, 2);
-            return { title, items: [], fallback };
-        }
-        catch {
-            return { title, items: [], fallback: String(ref) };
-        }
-    }
-    return { title, items, fallback: '' };
+    if (!hasStructured)
+        return null;
+    return { title, sourceWork, items, fallback: '' };
 }
 Page({
     data: {
         empty: true,
         refTitle: '',
+        refSourceWork: '',
         refItems: [],
         refFallback: '',
         headerPadPx: 88,
@@ -88,13 +98,14 @@ Page({
             });
             const parsed = parseOriginalRef(res.data.originalRef);
             if (!parsed) {
-                this.setData({ empty: true, refTitle: '', refItems: [], refFallback: '' });
+                this.setData({ empty: true, refTitle: '', refSourceWork: '', refItems: [], refFallback: '' });
                 return;
             }
             const hasContent = parsed.items.length > 0 || parsed.fallback.length > 0;
             this.setData({
                 empty: !hasContent,
                 refTitle: parsed.title,
+                refSourceWork: parsed.sourceWork,
                 refItems: parsed.items,
                 refFallback: parsed.fallback,
             });
@@ -126,7 +137,7 @@ Page({
             else {
                 wx.showToast({ title: (e === null || e === void 0 ? void 0 : e.message) || '加载失败', icon: 'none' });
             }
-            this.setData({ empty: true, refTitle: '', refItems: [], refFallback: '' });
+            this.setData({ empty: true, refTitle: '', refSourceWork: '', refItems: [], refFallback: '' });
         }
     },
     copyLink(e) {

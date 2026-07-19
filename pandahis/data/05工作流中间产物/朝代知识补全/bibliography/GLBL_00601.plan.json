@@ -1,0 +1,133 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00601",
+  "写作结构": "正史叙述见翻译详录（《史记·夏本纪》《殷本纪》等）。拓展文以《尚书·汤誓》原文为起点，引《孟子》异文证早期流传，补《新序》所载夏桀自比太阳的传说层，阐明民谣的历史语境与后世作为暴政必亡典型的意义。",
+  "候选著作": [
+    {
+      "出处": "《尚书·汤誓》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "民谣的直接出处，商汤伐桀誓师时引用，为全部叙事的基础文本",
+      "检索词": "时日曷丧",
+      "采用": true,
+      "原文摘句": "时日曷丧？予及汝皆亡！",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《孟子·梁惠王上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "孟子引《汤誓》文，文字作“时日害丧？予及女偕亡”，证先秦流传与异文",
+      "检索词": "时日害丧",
+      "采用": true,
+      "原文摘句": "《汤誓》曰：‘时日害丧？予及女偕亡。’",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《新序·刺奢》",
+      "tier": "经注/杂史",
+      "pool": "legend",
+      "与本主题关系": "记载夏桀自比太阳的传说，对民谣的生成背景提供后世阐释",
+      "检索词": "日亡吾乃亡",
+      "采用": true,
+      "原文摘句": "桀曰：‘吾有天下，犹天之有日也。日有亡乎？日亡吾乃亡矣。’",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《帝王世纪》",
+      "tier": "辑佚/出土",
+      "pool": "legend",
+      "与本主题关系": "辑本可能载有夏桀暴政与民谣背景的传说，可与《新序》互补",
+      "检索词": "时日曷丧",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·夏本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史对夏桀亡国的记述，包含类似民怨背景，但由翻译详录覆盖",
+      "检索词": "时日曷丧",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《尚书·汤誓》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "民谣的直接出处，商汤伐桀誓师时引用，为全部叙事的基础文本",
+      "检索词": "时日曷丧",
+      "采用": true,
+      "原文摘句": "时日曷丧？予及汝皆亡！",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《孟子·梁惠王上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "孟子引《汤誓》文，文字作“时日害丧？予及女偕亡”，证先秦流传与异文",
+      "检索词": "时日害丧",
+      "采用": true,
+      "原文摘句": "《汤誓》曰：‘时日害丧？予及女偕亡。’",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·夏本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史对夏桀亡国的记述，包含类似民怨背景，但由翻译详录覆盖",
+      "检索词": "时日曷丧",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《新序·刺奢》",
+      "tier": "经注/杂史",
+      "pool": "legend",
+      "与本主题关系": "记载夏桀自比太阳的传说，对民谣的生成背景提供后世阐释",
+      "检索词": "日亡吾乃亡",
+      "采用": true,
+      "原文摘句": "桀曰：‘吾有天下，犹天之有日也。日有亡乎？日亡吾乃亡矣。’",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《帝王世纪》",
+      "tier": "辑佚/出土",
+      "pool": "legend",
+      "与本主题关系": "辑本可能载有夏桀暴政与民谣背景的传说，可与《新序》互补",
+      "检索词": "时日曷丧",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 3,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

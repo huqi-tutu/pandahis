@@ -1,0 +1,67 @@
+<view wx:if="{{visible}}" class="correction-modal" catchtap="onBackdropTap">
+  <view class="correction-modal-card" catchtap="noop">
+    <view class="correction-modal-header">
+      <view class="correction-modal-title-wrap">
+        <text class="correction-modal-title">{{mode === 'edit' ? '提交纠错' : '纠错详情'}}</text>
+        <text wx:if="{{sourceLabel}}" class="correction-modal-source">来源：{{sourceLabel}}</text>
+      </view>
+      <view class="correction-modal-close" bindtap="onClose">
+        <text class="correction-modal-close-icon">✕</text>
+      </view>
+    </view>
+
+    <scroll-view class="correction-modal-body" scroll-y enhanced show-scrollbar="{{false}}">
+      <view class="correction-field">
+        <text class="correction-label">文明</text>
+        <text class="correction-value">{{civilizationName || '—'}}</text>
+      </view>
+      <view class="correction-field">
+        <text class="correction-label">朝代</text>
+        <text class="correction-value">{{dynastyName || '—'}}</text>
+      </view>
+      <view class="correction-field">
+        <text class="correction-label">史略</text>
+        <text class="correction-value">{{boxTitle || '—'}}</text>
+      </view>
+
+      <view wx:if="{{selectedText}}" class="correction-field correction-field--block">
+        <text class="correction-label">选中内容</text>
+        <text class="correction-quote">{{selectedText}}</text>
+      </view>
+
+      <view wx:if="{{mode === 'view' && submittedAt}}" class="correction-field">
+        <text class="correction-label">提交时间</text>
+        <text class="correction-value">{{submittedAtDisplay}}</text>
+      </view>
+
+      <view wx:if="{{mode === 'view'}}" class="correction-field">
+        <text class="correction-label">处理状态</text>
+        <text class="correction-value correction-status correction-status--{{status}}">{{statusLabel}}</text>
+      </view>
+
+      <view class="correction-field correction-field--block">
+        <text class="correction-label">纠错原因</text>
+        <block wx:if="{{mode === 'edit'}}">
+          <textarea
+            class="correction-textarea"
+            placeholder="请描述发现的问题（选填，最多500字）"
+            maxlength="500"
+            value="{{draftReason}}"
+            bindinput="onReasonInput"
+            auto-height
+            show-confirm-bar="{{false}}"
+          />
+          <text class="correction-counter">{{draftReason.length}}/500</text>
+        </block>
+        <text wx:else class="correction-value correction-reason">{{reasonDisplay}}</text>
+      </view>
+    </scroll-view>
+
+    <view wx:if="{{mode === 'edit'}}" class="correction-modal-footer">
+      <view
+        class="correction-submit {{submitting ? 'correction-submit--disabled' : ''}}"
+        bindtap="onSubmit"
+      >{{submitting ? '提交中…' : '提交'}}</view>
+    </view>
+  </view>
+</view>

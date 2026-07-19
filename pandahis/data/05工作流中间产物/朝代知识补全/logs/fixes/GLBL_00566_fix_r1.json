@@ -1,0 +1,17 @@
+{
+  "schema": "dynasty-knowledge-factual-fix/v1",
+  "fix_round": 1,
+  "all_applied": true,
+  "refs_sync_ok": true,
+  "issues": [],
+  "edits": [
+    {
+      "original": "舜即帝位后不出多久，就决定不再把这道难题留给后人",
+      "revised": "舜摄政后不久，就决定不再把这道难题留给后人",
+      "error_index": 1,
+      "applied": true,
+      "note": "据《史记·五帝本纪》与《左传·文公十八年》，舜流四凶发生在摄政期间，非即帝位后，改‘即帝位后’为‘摄政后’",
+      "target": "body"
+    }
+  ]
+}

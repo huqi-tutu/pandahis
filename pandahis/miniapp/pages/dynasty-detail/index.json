@@ -2,6 +2,9 @@
   "navigationStyle": "custom",
   "navigationBarTitleText": "朝代详情",
   "usingComponents": {
-    "proto-nav": "/components/proto-nav/proto-nav"
+    "proto-nav": "/components/proto-nav/proto-nav",
+    "correction-modal": "/components/correction-modal/correction-modal",
+    "text-selection-bar": "/components/text-selection-bar/text-selection-bar",
+    "share-poster-sheet": "/components/share-poster-sheet/share-poster-sheet"
   }
 }

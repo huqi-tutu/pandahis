@@ -1,0 +1,13 @@
+{
+  "has_factual_errors": false,
+  "factual_errors": [],
+  "summary": "正文对夏代土地制度的推测性描述虽缺乏同时期直接史料支撑，但文中已有明确自觉的史学反思（指出《禹贡》《孟子》为后世追述、托古改制，并强调无夏代同期文字或实物可证实），未将传说当作信史写死，也未出现人物、时代、典籍引用上的明显硬错误。",
+  "overall_verdict": "pass",
+  "schema": "dynasty-knowledge-review/v2",
+  "史略ID": "GLBL_00599",
+  "reviewed_at": "2026-07-19T03:35:11Z",
+  "pipeline_blocking": false,
+  "review_fix_round": 2,
+  "forced_pass": false,
+  "human_review_required": false
+}

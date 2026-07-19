@@ -33,3 +33,6 @@ __pycache__/
 # Temp / generated assets
 .tmp/
 deploy/_tmp_assets/
+
+# Large local archives (do not push)
+*.zip

@@ -1,0 +1,86 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00610",
+  "写作结构": "正史叙述见翻译详录；拓展文以《竹书纪年》异名、居西河及《帝王世纪》在位年数异说为主干，补充留白禁忌，不铺陈事迹。",
+  "候选著作": [
+    {
+      "出处": "《史记·夏本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载帝廑为帝扃子、在位八年及崩后孔甲继位",
+      "检索词": "帝廑",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《古本竹书纪年·夏纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "辑本记载帝廑异名胤甲、即位居西河，为史外新增信息",
+      "检索词": "帝廑 胤甲",
+      "采用": true,
+      "原文摘句": "帝廑，一名胤甲。即位，居西河。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《帝王世纪·夏第二》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记帝廑在位二十年，与《史记》八年不同，提供异说",
+      "检索词": "帝廑 在位二十年",
+      "采用": true,
+      "原文摘句": "帝廑，一名顿，在位二十年。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·夏本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载帝廑为帝扃子、在位八年及崩后孔甲继位",
+      "检索词": "帝廑",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《古本竹书纪年·夏纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "辑本记载帝廑异名胤甲、即位居西河，为史外新增信息",
+      "检索词": "帝廑 胤甲",
+      "采用": true,
+      "原文摘句": "帝廑，一名胤甲。即位，居西河。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《帝王世纪·夏第二》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记帝廑在位二十年，与《史记》八年不同，提供异说",
+      "检索词": "帝廑 在位二十年",
+      "采用": true,
+      "原文摘句": "帝廑，一名顿，在位二十年。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 1,
+    "overall": "B"
+  }
+}

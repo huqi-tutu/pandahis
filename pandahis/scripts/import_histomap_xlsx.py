@@ -29,6 +29,17 @@ def sql_escape(s: str | None) -> str:
     return "'" + str(s).replace("\\", "\\\\").replace("'", "''") + "'"
 
 
+def component_id(prefix: str, shilue_id: str, suffix: str) -> str:
+    safe_suffix = re.sub(r"[^a-zA-Z0-9_]+", "_", suffix)[:48]
+    return f"{shilue_id}_{prefix}_{safe_suffix}"
+
+
+def box_component_columns(component: str, shilue_id: str, shilue_name: str, box_id: str) -> str:
+    return (
+        f"{sql_escape(component)}, {sql_escape(shilue_id)}, {sql_escape(shilue_name)}, {sql_escape(box_id)}"
+    )
+
+
 def parse_year(val) -> int | None:
     if val is None or val == "":
         return None
@@ -281,9 +292,10 @@ def main():
             if not bid:
                 continue
             crit_sort[bid] += 1
+            cid = component_id("CRIT", bid, f"{crit_sort[bid]:03d}")
             emit(
-                "INSERT INTO box_critique (box_id, title, author, era_text, year_value, content, source, blurb, sort_order) "
-                f"VALUES ({sql_escape(bid)}, {sql_escape(ctitle) if ctitle else 'NULL'}, {sql_escape(author)}, {sql_escape(era)}, NULL, "
+                "INSERT INTO box_critique (component_id, shilue_id, shilue_name, box_id, title, author, era_text, year_value, content, source, blurb, sort_order) "
+                f"VALUES ({box_component_columns(cid, bid, shilue_name or bid, bid)}, {sql_escape(ctitle) if ctitle else 'NULL'}, {sql_escape(author)}, {sql_escape(era)}, NULL, "
                 f"{sql_escape(content)}, {sql_escape(src_book)}, {sql_escape(blurb) if blurb else 'NULL'}, {crit_sort[bid]});"
             )
 
@@ -305,10 +317,12 @@ def main():
             if not shilue_id:
                 continue
             relic_sort[shilue_id] += 1
+            shilue_name = str(row[1] or "").strip() if len(row) > 1 else ""
+            cid = component_id("RELIC", shilue_id, f"{relic_sort[shilue_id]:03d}")
             img_sql = "NULL" if not img or "待查" in img else sql_escape(img)
             emit(
-                "INSERT INTO box_relic (box_id, name, image_url, summary, description, museum, priority_code, priority_reason, sort_order) "
-                f"VALUES ({sql_escape(shilue_id)}, {sql_escape(name)}, {img_sql}, {sql_escape(summ) if summ else 'NULL'}, "
+                "INSERT INTO box_relic (component_id, shilue_id, shilue_name, box_id, name, image_url, summary, description, museum, priority_code, priority_reason, sort_order) "
+                f"VALUES ({box_component_columns(cid, shilue_id, shilue_name or shilue_id, shilue_id)}, {sql_escape(name)}, {img_sql}, {sql_escape(summ) if summ else 'NULL'}, "
                 f"{sql_escape(desc)}, {sql_escape(museum)}, {sql_escape(pcode) if pcode else 'NULL'}, "
                 f"{sql_escape(preason) if preason else 'NULL'}, {relic_sort[shilue_id]});"
             )
@@ -323,6 +337,7 @@ def main():
             rid = str(row[0] or "").strip()
             bid = str(row[2] or "").strip()
             node_title = str(row[3] or "").strip()
+            shilue_name = str(row[1] or "").strip() if len(row) > 1 else ""
             if not bid or not rid:
                 continue
             cat = str(row[4] or "").strip() if len(row) > 4 else ""
@@ -344,28 +359,32 @@ def main():
                 "summary": summ,
             }
             nk = re.sub(r"[^a-zA-Z0-9_]+", "_", rid)[:60]
-            by_box[bid].append((nk, node_title, cat, edge_lbl, extra))
+            cid = rid if rid else component_id("REL", bid, nk)
+            by_box[bid].append((nk, node_title, cat, edge_lbl, extra, shilue_name or bid, cid))
 
         for bid, rows in by_box.items():
             root_key = "rel_root"
+            root_name = rows[0][5] if rows else bid
+            root_cid = component_id("REL", bid, root_key)
             emit(
-                f"INSERT INTO box_graph_node (box_id, node_key, node_type, name, extra_json) VALUES ({sql_escape(bid)}, {sql_escape(root_key)}, 'root', '根', '{{}}') "
-                "ON DUPLICATE KEY UPDATE name=VALUES(name);"
+                f"INSERT INTO box_graph_node (component_id, shilue_id, shilue_name, box_id, node_key, node_type, name, extra_json) "
+                f"VALUES ({box_component_columns(root_cid, bid, root_name, bid)}, {sql_escape(root_key)}, 'root', '根', '{{}}') "
+                "ON DUPLICATE KEY UPDATE name=VALUES(name), shilue_name=VALUES(shilue_name);"
             )
             parent_map: dict[str, str] = {}
-            for nk, title, cat, edge_lbl, extra in rows:
+            for nk, title, cat, edge_lbl, extra, shilue_name, cid in rows:
                 et = "person" if "家庭" in cat or "君臣" in cat else "event"
                 ej = json.dumps(extra, ensure_ascii=False)
                 emit(
-                    "INSERT INTO box_graph_node (box_id, node_key, node_type, name, extra_json) "
-                    f"VALUES ({sql_escape(bid)}, {sql_escape(nk)}, {sql_escape(et)}, {sql_escape(title)}, {sql_escape(ej)}) "
-                    "ON DUPLICATE KEY UPDATE name=VALUES(name), extra_json=VALUES(extra_json);"
+                    "INSERT INTO box_graph_node (component_id, shilue_id, shilue_name, box_id, node_key, node_type, name, extra_json) "
+                    f"VALUES ({box_component_columns(cid, bid, shilue_name, bid)}, {sql_escape(nk)}, {sql_escape(et)}, {sql_escape(title)}, {sql_escape(ej)}) "
+                    "ON DUPLICATE KEY UPDATE name=VALUES(name), extra_json=VALUES(extra_json), shilue_name=VALUES(shilue_name);"
                 )
                 chain = [x for x in [extra.get("l1"), extra.get("l2"), extra.get("l3"), extra.get("l4")] if x]
                 parent_title = chain[-2] if len(chain) >= 2 else (chain[0] if len(chain) == 1 else None)
                 pk = root_key
                 if parent_title:
-                    for pn, pt, _, _, ex in rows:
+                    for pn, pt, _, _, ex, _, _ in rows:
                         if pt == parent_title:
                             pk = pn
                             break

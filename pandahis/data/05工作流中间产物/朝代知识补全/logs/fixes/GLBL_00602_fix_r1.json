@@ -1,0 +1,25 @@
+{
+  "schema": "dynasty-knowledge-factual-fix/v1",
+  "fix_round": 1,
+  "all_applied": true,
+  "refs_sync_ok": true,
+  "issues": [],
+  "edits": [
+    {
+      "original": "相即位之初，都城尚在斟鄩。但朝政大权完全攥在后羿手里",
+      "revised": "相即位之初，都城尚在商丘。但朝政大权完全攥在后羿手里",
+      "error_index": 1,
+      "applied": true,
+      "note": "据《竹书纪年》《帝王世纪》改，相居商丘，斟鄩为太康、后羿所居",
+      "target": "body"
+    },
+    {
+      "original": "先是东夷有穷氏的后羿，后是后羿的义子寒浞。",
+      "revised": "先是东夷有穷氏的后羿，后是后羿的亲信寒浞。",
+      "error_index": 2,
+      "applied": true,
+      "note": "史料无寒浞为后羿义子的确载，改为亲信，与后文统一",
+      "target": "body"
+    }
+  ]
+}

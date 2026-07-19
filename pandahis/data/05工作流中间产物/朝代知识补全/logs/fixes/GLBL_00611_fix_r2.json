@@ -1,0 +1,17 @@
+{
+  "schema": "dynasty-knowledge-factual-fix/v1",
+  "fix_round": 2,
+  "all_applied": true,
+  "refs_sync_ok": true,
+  "issues": [],
+  "edits": [
+    {
+      "original": "他是第十四代王，孔甲的儿子，发的父亲",
+      "revised": "他是第十五代王，孔甲的儿子，发的父亲",
+      "error_index": 1,
+      "applied": true,
+      "note": "按夏代世系通识，皋为第十五位夏王，非第十四代。",
+      "target": "body"
+    }
+  ]
+}

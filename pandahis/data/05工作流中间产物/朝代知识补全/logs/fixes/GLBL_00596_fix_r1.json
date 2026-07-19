@@ -1,0 +1,17 @@
+{
+  "schema": "dynasty-knowledge-factual-fix/v1",
+  "fix_round": 1,
+  "all_applied": true,
+  "refs_sync_ok": true,
+  "issues": [],
+  "edits": [
+    {
+      "original": "再远只交粟米，到了四五百里就象征性地交些带壳的谷子",
+      "revised": "三百里纳秸服，四百里纳粟，五百里纳米",
+      "error_index": 1,
+      "applied": true,
+      "note": "按《尚书·禹贡》原文修正甸服贡品等级描述",
+      "target": "body"
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00608",
+  "写作结构": "正史《史记·夏本纪》仅列世系，无具体事迹，正史叙述见翻译详录；伐九苑、逊位等细节主要出自《竹书纪年》，可从辑本、今本补充具体年份和原因；后世文献如《路史》提供集成性叙述，可作为异说辅助。",
+  "候选著作": [
+    {
+      "出处": "《史记·夏本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记不降继其父泄为夏后，及传位弟扃，无任何事件细节",
+      "检索词": "帝不降",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《古本竹书纪年·夏纪》（辑佚）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "载不降在位年数及六年伐九苑之事，正史所无",
+      "检索词": "不降 伐九苑",
+      "采用": true,
+      "原文摘句": "帝不降即位，六年，伐九苑。（《太平御览》卷八二引《纪年》）",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《今本竹书纪年·卷上》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "详记不降元年、六年伐九苑及三十九年遘疾逊位于弟扃，补充逊位原因",
+      "检索词": "不降 逊位 遘疾",
+      "采用": true,
+      "原文摘句": "不降元年己未，帝即位。六年，伐九苑。三十九年，遘疾，逊位于弟扃。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《帝王世纪》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "载不降年寿，可丰富人物形象",
+      "检索词": "帝不降",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《路史·后纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋代综述夏王世系与行迹，集录不降逊位之说，可作为后世整理之补充",
+      "检索词": "不降 五十九载",
+      "采用": true,
+      "原文摘句": "帝不降立五十九载，逊于弟扃。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·夏本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记不降继其父泄为夏后，及传位弟扃，无任何事件细节",
+      "检索词": "帝不降",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《古本竹书纪年·夏纪》（辑佚）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "载不降在位年数及六年伐九苑之事，正史所无",
+      "检索词": "不降 伐九苑",
+      "采用": true,
+      "原文摘句": "帝不降即位，六年，伐九苑。（《太平御览》卷八二引《纪年》）",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《今本竹书纪年·卷上》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "详记不降元年、六年伐九苑及三十九年遘疾逊位于弟扃，补充逊位原因",
+      "检索词": "不降 逊位 遘疾",
+      "采用": true,
+      "原文摘句": "不降元年己未，帝即位。六年，伐九苑。三十九年，遘疾，逊位于弟扃。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《帝王世纪》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "载不降年寿，可丰富人物形象",
+      "检索词": "帝不降",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《路史·后纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋代综述夏王世系与行迹，集录不降逊位之说，可作为后世整理之补充",
+      "检索词": "不降 五十九载",
+      "采用": true,
+      "原文摘句": "帝不降立五十九载，逊于弟扃。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 3,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

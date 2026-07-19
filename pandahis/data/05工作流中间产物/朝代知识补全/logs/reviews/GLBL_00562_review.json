@@ -1,0 +1,70 @@
+{
+  "paragraph_count": 9,
+  "paragraph_reviews": [
+    {
+      "paragraph_index": 0,
+      "verdict": "pass",
+      "issues": [],
+      "suggested_fix": ""
+    },
+    {
+      "paragraph_index": 1,
+      "verdict": "fail",
+      "issues": [
+        "包含无史料支撑的动机推测与心理活动（'眼瞅着中原的势头越来越猛，蚩尤不乐意了'），《史记》仅载'蚩尤作乱，不用帝命'，未交代其心理动因，违反过程禁编"
+      ],
+      "suggested_fix": "删除'眼瞅着……不乐意了'等无史料支撑的动机描写，改为中性叙述，如直接陈述'蚩尤不肯听号令，扯旗起兵'。"
+    },
+    {
+      "paragraph_index": 2,
+      "verdict": "pass",
+      "issues": [],
+      "suggested_fix": ""
+    },
+    {
+      "paragraph_index": 3,
+      "verdict": "fail",
+      "issues": [
+        "包含无史料支撑的过程细节（'一路追击'），《史记》仅载'遂禽杀蚩尤'，未交代追击或战术动作，违反过程禁编"
+      ],
+      "suggested_fix": "删去'一路追击'，仅保留史料明确记载的结果，改为'黄帝最终生擒蚩尤，随即将其处死'。"
+    },
+    {
+      "paragraph_index": 4,
+      "verdict": "pass",
+      "issues": [],
+      "suggested_fix": ""
+    },
+    {
+      "paragraph_index": 5,
+      "verdict": "pass",
+      "issues": [],
+      "suggested_fix": ""
+    },
+    {
+      "paragraph_index": 6,
+      "verdict": "pass",
+      "issues": [],
+      "suggested_fix": ""
+    },
+    {
+      "paragraph_index": 7,
+      "verdict": "pass",
+      "issues": [],
+      "suggested_fix": ""
+    },
+    {
+      "paragraph_index": 8,
+      "verdict": "pass",
+      "issues": [],
+      "suggested_fix": ""
+    }
+  ],
+  "overall_verdict": "fail",
+  "summary": "全文可读性强，围绕涿鹿之战的主轴清晰，主张覆盖完整（c01–c06），且异说分述（P6–P7）边界清楚、未与正史混写。但P1、P3存在过程禁编：P1加入无史料支撑的蚩尤心理动机（'不乐意了'），P3添加'一路追击'等未载于《史记》的战术细节，均属于对极简史料的过度发挥，应删改。其余各段无知识性硬伤。",
+  "schema": "dynasty-knowledge-review/v1",
+  "史略ID": "GLBL_00562",
+  "reviewed_at": "2026-07-18T13:47:19Z",
+  "pipeline_blocking": false,
+  "human_review_required": true
+}

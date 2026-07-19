@@ -1,0 +1,13 @@
+{
+  "has_factual_errors": false,
+  "factual_errors": [],
+  "summary": "文本对《左传》《史记》所载舜流四凶的史事脉络、典籍引文、四凶族属与后世《神异经》神话变形均处理得当，未见硬史实性错误。",
+  "overall_verdict": "pass",
+  "schema": "dynasty-knowledge-review/v2",
+  "史略ID": "GLBL_00566",
+  "reviewed_at": "2026-07-18T15:28:35Z",
+  "pipeline_blocking": false,
+  "review_fix_round": 2,
+  "forced_pass": false,
+  "human_review_required": false
+}

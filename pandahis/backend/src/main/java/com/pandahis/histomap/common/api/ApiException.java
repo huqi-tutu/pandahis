@@ -31,5 +31,9 @@ public class ApiException extends RuntimeException {
   public static ApiException internalError(String message) {
     return new ApiException(ErrorCode.INTERNAL_ERROR, message);
   }
+
+  public static ApiException rateLimited(String message) {
+    return new ApiException(ErrorCode.RATE_LIMITED, message);
+  }
 }
 

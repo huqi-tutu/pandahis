@@ -8,6 +8,9 @@ const favorite_box_1 = require("../../native-utils/favorite-box");
 const year_format_1 = require("../../native-utils/year-format");
 const router_1 = require("../../native-utils/router");
 const share_invite_1 = require("../../native-utils/share-invite");
+const share_poster_open_1 = require("../../native-utils/share-poster-open");
+const correction_1 = require("../../native-utils/correction");
+const category_label_1 = require("../../native-utils/category-label");
 function relicThumbLabel(name) {
     const n = (name || '').trim();
     if (!n)
@@ -87,36 +90,79 @@ function buildDetailMetaFromBox(box) {
         parts.push(y0);
     return parts.join(' · ');
 }
-function parseBoldSegments(text) {
-    const parts = text.split(/(\*\*[^*]*\*\*)/);
-    return parts.filter(Boolean).map((p) => {
-        if (p.startsWith('**') && p.endsWith('**')) {
-            return { text: p.slice(2, -2), bold: true };
+function readBoxLocationNames(box) {
+    var _a, _b, _c, _d;
+    if (!box)
+        return { civ: '', dynasty: '' };
+    const raw = box;
+    return {
+        civ: String((_b = (_a = raw.civilizationName) !== null && _a !== void 0 ? _a : raw.civilization_name) !== null && _b !== void 0 ? _b : '').trim(),
+        dynasty: String((_d = (_c = raw.dynastyName) !== null && _c !== void 0 ? _c : raw.dynasty_name) !== null && _d !== void 0 ? _d : '').trim(),
+    };
+}
+const QUOTE_CLOSER = { '「': '」', '『': '』' };
+const QUOTE_OPENERS = new Set(Object.keys(QUOTE_CLOSER));
+const QUOTE_CLOSERS = new Set(Object.values(QUOTE_CLOSER));
+function stripMarkdownBold(text) {
+    return text.replace(/\*\*([^*]+)\*\*/g, '$1');
+}
+function mergeAdjacentSegments(segs) {
+    const out = [];
+    for (const seg of segs) {
+        if (!seg.text)
+            continue;
+        const prev = out[out.length - 1];
+        if (prev && prev.bold === seg.bold) {
+            prev.text += seg.text;
         }
-        return { text: p, bold: false };
-    });
-}
-/** 中文/英文/常用标点字符集合（用于剔除首段开头标点） */
-const LEADING_PUNCTUATION = new Set('《》「」『』【】（）()。，、！？；：""\'\'…—·.．,，\'·：；！？、，。');
-function stripLeadingPunctuation(text) {
-    let start = 0;
-    while (start < text.length && LEADING_PUNCTUATION.has(text[start])) {
-        start++;
+        else {
+            out.push({ ...seg });
+        }
     }
-    return text.slice(start);
+    return out;
 }
-function findDropcap(segs) {
-    var _a;
-    for (let si = 0; si < segs.length; si++) {
-        for (let ci = 0; ci < segs[si].text.length; ci++) {
-            const ch = segs[si].text[ci];
-            if (/[\u4e00-\u9fff\u3400-\u4dbf\w]/.test(ch)) {
-                return { ch, si, ci };
+/** 直角引号「」『』及其中原文整体加粗；正文勿写 ** markdown 加粗 */
+function parseDisplaySegments(raw) {
+    const text = stripMarkdownBold(raw);
+    const segs = [];
+    let buf = '';
+    let bufBold = false;
+    let depth = 0;
+    const flush = () => {
+        if (!buf)
+            return;
+        segs.push({ text: buf, bold: bufBold });
+        buf = '';
+    };
+    for (let i = 0; i < text.length; i++) {
+        const ch = text[i];
+        if (QUOTE_OPENERS.has(ch)) {
+            if (!bufBold) {
+                flush();
+                bufBold = true;
             }
+            buf += ch;
+            depth++;
+            continue;
         }
+        if (QUOTE_CLOSERS.has(ch)) {
+            buf += ch;
+            depth = Math.max(0, depth - 1);
+            if (depth === 0) {
+                flush();
+                bufBold = false;
+            }
+            continue;
+        }
+        const wantBold = depth > 0;
+        if (bufBold !== wantBold) {
+            flush();
+            bufBold = wantBold;
+        }
+        buf += ch;
     }
-    const first = ((_a = segs[0]) === null || _a === void 0 ? void 0 : _a.text) || '';
-    return { ch: first[0] || '', si: 0, ci: 0 };
+    flush();
+    return mergeAdjacentSegments(segs);
 }
 function splitDetailParagraphs(md) {
     const raw = String(md || '').trim();
@@ -124,21 +170,10 @@ function splitDetailParagraphs(md) {
         return [];
     const parts = raw.split(/\n{2,}/).map((s) => s.trim()).filter(Boolean);
     const list = parts.length ? parts : [raw];
-    return list.map((p, i) => {
-        // 首段：剔除开头的标点符号，确保 dropcap 始终是正常文字
-        let processed = i === 0 ? stripLeadingPunctuation(p) : p;
-        const segs = parseBoldSegments(processed);
+    return list.map((p) => {
+        const segs = parseDisplaySegments(p);
         const plain = segs.map((s) => s.text).join('');
-        const para = { segs, plain };
-        if (i === 0) {
-            const dc = findDropcap(segs);
-            para.dropcap = dc.ch;
-            if (segs[dc.si]) {
-                const seg = segs[dc.si];
-                seg.text = seg.text.slice(0, dc.ci) + seg.text.slice(dc.ci + 1);
-            }
-        }
-        return para;
+        return { segs, plain };
     });
 }
 Page({
@@ -151,6 +186,7 @@ Page({
         graphCanvasH: 400,
         critColors: ['#92ADA4', '#C9825A', '#7BA87B', '#B85A5A', '#84572F', '#5A8FA8'],
         tab: 'content',
+        showRelationsTab: false,
         isFav: false,
         detailMd: '',
         detailParagraphs: [],
@@ -187,16 +223,64 @@ Page({
         bodyScrollTop: 0,
         showOriginal: false,
         originalTitle: '',
+        originalSourceWork: '',
         originalItems: [],
         originalFallback: '',
         originalEmpty: true,
         originalLoading: false,
+        correctionVisible: false,
+        correctionSubmitting: false,
+        correctionBoxTitle: '',
+        correctionCivilizationName: '',
+        correctionDynastyName: '',
+        correctionSelectedText: '',
+        selectionBarVisible: false,
+        selectionBarLeft: 0,
+        selectionBarTop: 0,
+        selectionBarText: '',
+        selectionMountKey: 1,
+        sharePosterVisible: false,
+        sharePosterQuote: '',
+        sharePosterSourceLine1: '',
+        sharePosterSourceLine2: '',
+        sharePosterUserName: '历史读者',
+        sharePosterUserAvatar: '',
+        sharePosterExcerptDate: '',
     },
+    _selectionContext: null,
     _detailScrollTop: 0,
     _tabBarPx: 0,
     _suppressChromeHide: false,
     _suppressChromeHideTimer: null,
     _rawOriginalRef: null,
+    onReady() {
+        this.bindDetailSelectionContext();
+    },
+    bindDetailSelectionContext() {
+        wx.createSelectorQuery()
+            .in(this)
+            .select('#detailBodySelection')
+            .context((res) => {
+            var _a;
+            this._selectionContext = (_a = res === null || res === void 0 ? void 0 : res.context) !== null && _a !== void 0 ? _a : null;
+        })
+            .exec();
+    },
+    clearDetailSelection() {
+        const ctx = this._selectionContext;
+        if (ctx && typeof ctx.removeSelection === 'function') {
+            try {
+                ctx.removeSelection();
+                return;
+            }
+            catch {
+                // fallback to remount below
+            }
+        }
+        this.setData({ selectionMountKey: this.data.selectionMountKey + 1 }, () => {
+            this.bindDetailSelectionContext();
+        });
+    },
     onUnload() {
         if (this._suppressChromeHideTimer) {
             clearTimeout(this._suppressChromeHideTimer);
@@ -226,7 +310,8 @@ Page({
         const tabTop = (sys.statusBarHeight || 20) + navH;
         const tabBarPx = Math.round(72 * (sys.windowWidth / 750));
         const bodyTop = tabTop + tabBarPx;
-        const graphCanvasH = Math.max(400, Math.floor((sys.windowHeight || 667) - bodyTop - 40));
+        const zoomBarPx = Math.round(130 * (sys.windowWidth / 750));
+        const graphCanvasH = Math.max(400, Math.floor((sys.windowHeight || 667) - bodyTop - zoomBarPx));
         this._tabBarPx = tabBarPx;
         this.setData({
             boxId,
@@ -241,19 +326,18 @@ Page({
             const y0 = yearLabel(header.box.startYear);
             const y1 = yearLabel(header.box.endYear);
             const timeRange = y0 && y1 ? y0 + ' — ' + y1 : (y0 || y1 || '');
-            const blurbClean = stripLeadingPunctuation(header.box.blurb || '');
+            const { civ, dynasty } = readBoxLocationNames(header.box);
+            const showRelationsTab = (0, category_label_1.isPersonBoxCategory)(header.box.categoryKey);
+            const tab = !showRelationsTab && this.data.tab === 'relations' ? 'content' : this.data.tab;
             this.setData({
                 header,
                 navTitle: header.box.title,
                 detailMetaDisplay: buildDetailMetaFromBox(header.box),
                 audioTimeRange: timeRange,
-                audioCategoryPath: [header.box.civilization_name, header.box.dynasty_name].filter(Boolean).join(' · '),
-                blurbSegs: parseBoldSegments(blurbClean),
-                blurbDropcap: (() => {
-                    const segs = parseBoldSegments(blurbClean);
-                    const dc = findDropcap(segs);
-                    return dc.ch;
-                })(),
+                audioCategoryPath: [civ, dynasty].filter(Boolean).join(' · '),
+                blurbSegs: parseDisplaySegments(header.box.blurb || ''),
+                showRelationsTab,
+                tab,
             });
             await this.refreshFavState();
             await this.recordFootprint();
@@ -331,6 +415,8 @@ Page({
                     detailErr: '',
                     detailReady: true,
                     detailFetched: true,
+                }, () => {
+                    this.bindDetailSelectionContext();
                 });
                 this._rawOriginalRef = (_a = res.data.originalRef) !== null && _a !== void 0 ? _a : null;
             }
@@ -346,6 +432,8 @@ Page({
             return;
         }
         if (tab === 'relations') {
+            if (!this.data.showRelationsTab)
+                return;
             if (this.data.graphFetched)
                 return;
             try {
@@ -430,8 +518,11 @@ Page({
     },
     setTab(e) {
         const tab = e.currentTarget.dataset.tab;
+        if (tab === 'relations' && !this.data.showRelationsTab)
+            return;
         if (tab === this.data.tab)
             return;
+        this.hideSelectionBar();
         const nextScrollTop = this.data.bodyScrollTop === 0 ? 0.01 : 0;
         // 防止同一次点击冒泡到 onPageTap 后又被切成阅读全屏态
         this._ignoreTapFromBar = true;
@@ -444,6 +535,7 @@ Page({
             this._suppressChromeHide = false;
             this._suppressChromeHideTimer = null;
         }, 280);
+        // 切换 Tab 时始终显示顶部四 Tab（非详情阅读沉浸态）
         this.setData({
             tab,
             uiFocused: true,
@@ -625,22 +717,39 @@ Page({
     },
     /** 解析原文引用（同 pages/original-text） */
     _parseOriginalRef(ref) {
-        var _a, _b, _c, _d;
+        var _a, _b, _c, _d, _f;
         if (ref == null || (Array.isArray(ref) && ref.length === 0) || (typeof ref === 'object' && Object.keys(ref).length === 0))
             return null;
         if (typeof ref === 'string') {
             const t = ref.trim();
-            return t ? { title: '原文', items: [], fallback: t } : null;
+            return t ? { title: '母本原文', sourceWork: '', items: [], fallback: t } : null;
         }
         if (typeof ref !== 'object' || ref === null)
             return null;
         const o = ref;
-        const textField = typeof o.text === 'string' ? o.text.trim() : '';
+        const title = typeof o.title === 'string' && o.title.trim() ? o.title.trim() : '母本原文';
+        const sourceWork = (typeof o.sourceWork === 'string' ? o.sourceWork.trim() : '') ||
+            (typeof o.primarySource === 'string' ? o.primarySource.trim() : '');
+        const textField = (typeof o.text === 'string' ? o.text.trim() : '') ||
+            (typeof o.originalText === 'string' ? o.originalText.trim() : '');
         if (textField) {
-            const title = typeof o.title === 'string' && o.title.trim() ? o.title.trim() : '史料原文';
-            return { title, items: [], fallback: textField };
+            return { title, sourceWork, items: [], fallback: textField };
         }
-        const title = typeof o.title === 'string' && o.title.trim() ? o.title.trim() : '史料原文';
+        // 索引侧 paragraphs: [{ text }] 或 string[]
+        if (Array.isArray(o.paragraphs)) {
+            const parts = [];
+            for (const p of o.paragraphs) {
+                if (typeof p === 'string' && p.trim())
+                    parts.push(p.trim());
+                else if (p && typeof p === 'object') {
+                    const t = String((_a = p.text) !== null && _a !== void 0 ? _a : '').trim();
+                    if (t)
+                        parts.push(t);
+                }
+            }
+            if (parts.length)
+                return { title, sourceWork, items: [], fallback: parts.join('\n') };
+        }
         const rawItems = o.items;
         const items = [];
         if (Array.isArray(rawItems)) {
@@ -649,23 +758,18 @@ Page({
                     continue;
                 const x = it;
                 items.push({
-                    work: String((_a = x.work) !== null && _a !== void 0 ? _a : '').trim(),
-                    chapter: String((_b = x.chapter) !== null && _b !== void 0 ? _b : '').trim(),
-                    excerpt: String((_c = x.excerpt) !== null && _c !== void 0 ? _c : '').trim().replace(/\\r\\n/g, '\n').replace(/\\n/g, '\n'),
-                    url: String((_d = x.url) !== null && _d !== void 0 ? _d : '').trim(),
+                    work: String((_b = x.work) !== null && _b !== void 0 ? _b : '').trim(),
+                    chapter: String((_c = x.chapter) !== null && _c !== void 0 ? _c : '').trim(),
+                    excerpt: String((_d = x.excerpt) !== null && _d !== void 0 ? _d : '').trim().replace(/\\r\\n/g, '\n').replace(/\\n/g, '\n'),
+                    url: String((_f = x.url) !== null && _f !== void 0 ? _f : '').trim(),
                 });
             }
         }
         const hasStructured = items.some((i) => i.work || i.chapter || i.excerpt || i.url);
-        if (!hasStructured) {
-            try {
-                return { title, items: [], fallback: JSON.stringify(ref, null, 2) };
-            }
-            catch {
-                return { title, items: [], fallback: String(ref) };
-            }
-        }
-        return { title, items, fallback: '' };
+        // 无法识别的结构：不向用户展示 JSON 字符串
+        if (!hasStructured)
+            return null;
+        return { title, sourceWork, items, fallback: '' };
     },
     goOriginal() {
         var _a, _b;
@@ -683,6 +787,7 @@ Page({
                 this.setData({
                     showOriginal: true,
                     originalTitle: parsed.title,
+                    originalSourceWork: parsed.sourceWork,
                     originalItems: parsed.items,
                     originalFallback: parsed.fallback,
                     originalEmpty: false,
@@ -699,13 +804,21 @@ Page({
                 const res = await (0, api_1.request)(`/boxes/${enc}/original-ref`, { auth: (0, api_1.hasToken)() });
                 const parsed = this._parseOriginalRef(res.data.originalRef);
                 if (!parsed || (!parsed.items.length && !parsed.fallback.length)) {
-                    this.setData({ originalLoading: false, originalEmpty: true, originalTitle: '', originalItems: [], originalFallback: '' });
+                    this.setData({
+                        originalLoading: false,
+                        originalEmpty: true,
+                        originalTitle: '',
+                        originalSourceWork: '',
+                        originalItems: [],
+                        originalFallback: '',
+                    });
                     return;
                 }
                 this.setData({
                     originalLoading: false,
                     originalEmpty: false,
                     originalTitle: parsed.title,
+                    originalSourceWork: parsed.sourceWork,
                     originalItems: parsed.items,
                     originalFallback: parsed.fallback,
                 });
@@ -741,44 +854,49 @@ Page({
             wx.showToast({ title: '链接已复制', icon: 'success' });
         }
     },
-    onGraphNodeTap(e) {
-        var _a, _b;
-        const key = (_a = e.detail) === null || _a === void 0 ? void 0 : _a.key;
-        const targetId = (_b = e.detail) === null || _b === void 0 ? void 0 : _b.targetBoxId;
-        const boxId = this.data.boxId;
-        if (targetId && targetId !== boxId) {
-            (0, router_1.navigateTo)(router_1.ROUTES.boxDetail, { boxId: targetId });
-            return;
-        }
-        if (key && boxId) {
-            (0, router_1.navigateTo)(router_1.ROUTES.relationDetail, { boxId, nodeKey: key });
-        }
+    onGraphNodeTap(_e) {
+        // 关系图谱暂不支持点击跳转
     },
     noop() { },
     /** 标记本次tap来自底部操作栏，阻止导航栏切换 */
     markTapFromBar() { this._ignoreTapFromBar = true; },
     onGraphZoomIn() {
-        var _a;
+        var _a, _b, _c;
         const c = this.selectComponent('#bdRelationGraph');
         (_a = c === null || c === void 0 ? void 0 : c.zoomIn) === null || _a === void 0 ? void 0 : _a.call(c);
-        this.refreshGraphScaleLabel();
+        const label = this.formatGraphScaleLabel((_c = (_b = c === null || c === void 0 ? void 0 : c.getZoomScale) === null || _b === void 0 ? void 0 : _b.call(c)) !== null && _c !== void 0 ? _c : 1);
+        if (label !== this.data.graphScaleLabel) {
+            this.setData({ graphScaleLabel: label }, () => { var _a; return (_a = c === null || c === void 0 ? void 0 : c.paintCached) === null || _a === void 0 ? void 0 : _a.call(c); });
+        }
     },
     onGraphZoomOut() {
-        var _a;
+        var _a, _b, _c;
         const c = this.selectComponent('#bdRelationGraph');
         (_a = c === null || c === void 0 ? void 0 : c.zoomOut) === null || _a === void 0 ? void 0 : _a.call(c);
-        this.refreshGraphScaleLabel();
+        const label = this.formatGraphScaleLabel((_c = (_b = c === null || c === void 0 ? void 0 : c.getZoomScale) === null || _b === void 0 ? void 0 : _b.call(c)) !== null && _c !== void 0 ? _c : 1);
+        if (label !== this.data.graphScaleLabel) {
+            this.setData({ graphScaleLabel: label }, () => { var _a; return (_a = c === null || c === void 0 ? void 0 : c.paintCached) === null || _a === void 0 ? void 0 : _a.call(c); });
+        }
     },
     onGraphZoomReset() {
         var _a;
         const c = this.selectComponent('#bdRelationGraph');
         (_a = c === null || c === void 0 ? void 0 : c.resetZoom) === null || _a === void 0 ? void 0 : _a.call(c);
-        this.refreshGraphScaleLabel();
+        if (this.data.graphScaleLabel !== '100%') {
+            this.setData({ graphScaleLabel: '100%' }, () => { var _a; return (_a = c === null || c === void 0 ? void 0 : c.paintCached) === null || _a === void 0 ? void 0 : _a.call(c); });
+        }
     },
     onGraphZoomChange(e) {
-        var _a, _b;
-        const scale = (_b = (_a = e.detail) === null || _a === void 0 ? void 0 : _a.scale) !== null && _b !== void 0 ? _b : 1;
-        this.setData({ graphScaleLabel: this.formatGraphScaleLabel(scale) });
+        var _a;
+        // 双指缩放：松手后由组件触发；过程中不 setData
+        const scale = (_a = e.detail) === null || _a === void 0 ? void 0 : _a.scale;
+        if (scale == null)
+            return;
+        const c = this.selectComponent('#bdRelationGraph');
+        const label = this.formatGraphScaleLabel(scale);
+        if (label === this.data.graphScaleLabel)
+            return;
+        this.setData({ graphScaleLabel: label }, () => { var _a; return (_a = c === null || c === void 0 ? void 0 : c.paintCached) === null || _a === void 0 ? void 0 : _a.call(c); });
     },
     onDetailScroll(e) {
         var _a;
@@ -826,6 +944,10 @@ Page({
     onPageTap() {
         if (this.data.showOriginal)
             return;
+        if (this.data.selectionBarVisible) {
+            this.hideSelectionBar();
+            return;
+        }
         if (this.data.tab === 'content' && !this._ignoreTapFromBar) {
             this.onToggleUI(!this.data.uiFocused);
         }
@@ -856,5 +978,122 @@ Page({
             }
         };
         void run();
+    },
+    hideSelectionBar() {
+        this.setData({
+            selectionBarVisible: false,
+            selectionBarText: '',
+        });
+        this.clearDetailSelection();
+    },
+    onDetailSelectionChange(e) {
+        if (this.data.tab !== 'content')
+            return;
+        const detail = (e.detail || {});
+        const selected = String(detail.selectedString || '').trim();
+        if (detail.isCollapsed || !selected) {
+            this.hideSelectionBar();
+            return;
+        }
+        const rect = detail.firstRangeRect;
+        let left = this.data.selectionBarLeft;
+        let top = this.data.selectionBarTop;
+        if (rect && rect.left != null && rect.top != null) {
+            const width = rect.width || 0;
+            const height = rect.height || 0;
+            left = rect.left + width / 2;
+            top = rect.top;
+            const minTop = 120;
+            const maxTop = (wx.getSystemInfoSync().windowHeight || 667) - 80;
+            top = Math.max(minTop, Math.min(maxTop, top));
+        }
+        this.setData({
+            selectionBarVisible: true,
+            selectionBarText: selected,
+            selectionBarLeft: left,
+            selectionBarTop: top,
+        });
+    },
+    async onSelectionShare() {
+        const text = this.data.selectionBarText;
+        this.hideSelectionBar();
+        if (!text)
+            return;
+        wx.showLoading({ title: '生成海报…', mask: true });
+        const header = this.data.header;
+        const box = header === null || header === void 0 ? void 0 : header.box;
+        const { civ, dynasty } = readBoxLocationNames(box);
+        const title = (box === null || box === void 0 ? void 0 : box.title) || this.data.navTitle || '史略';
+        const sourceLine2 = [civ, dynasty].filter(Boolean).join(' · ') || this.data.detailMetaDisplay || '';
+        const posterState = await (0, share_poster_open_1.buildSharePosterSheetState)(text, `/ ${title} · 史略`, sourceLine2);
+        wx.hideLoading();
+        this.setData(posterState);
+    },
+    closeSharePoster() {
+        this.setData({ sharePosterVisible: false });
+    },
+    onSelectionCopy() {
+        const text = this.data.selectionBarText;
+        this.hideSelectionBar();
+        if (!text)
+            return;
+        wx.setClipboardData({
+            data: text,
+            success: () => wx.showToast({ title: '已复制', icon: 'success' }),
+        });
+    },
+    onSelectionQuery() {
+        this.hideSelectionBar();
+        wx.showToast({ title: '查询功能即将上线', icon: 'none' });
+    },
+    onSelectionCorrection() {
+        const text = this.data.selectionBarText;
+        this.hideSelectionBar();
+        if (!text)
+            return;
+        this.openCorrectionModal(text);
+    },
+    openCorrectionModal(selectedText) {
+        this.clearDetailSelection();
+        (0, correction_1.requireLoginForCorrection)(() => {
+            const header = this.data.header;
+            const box = header === null || header === void 0 ? void 0 : header.box;
+            const { civ, dynasty } = readBoxLocationNames(box);
+            this.setData({
+                correctionVisible: true,
+                correctionSubmitting: false,
+                correctionBoxTitle: (box === null || box === void 0 ? void 0 : box.title) || this.data.navTitle,
+                correctionCivilizationName: civ,
+                correctionDynastyName: dynasty,
+                correctionSelectedText: selectedText,
+            });
+        });
+    },
+    closeCorrection() {
+        this.setData({ correctionVisible: false, correctionSubmitting: false });
+        this.clearDetailSelection();
+    },
+    async onCorrectionSubmit(e) {
+        var _a;
+        const reason = String(((_a = e.detail) === null || _a === void 0 ? void 0 : _a.reason) || '');
+        const boxId = this.data.boxId;
+        if (!boxId || this.data.correctionSubmitting)
+            return;
+        this.setData({ correctionSubmitting: true });
+        try {
+            await (0, correction_1.submitCorrection)({
+                boxId,
+                sourceType: 'box_detail_selection',
+                reason,
+                selectedText: this.data.correctionSelectedText,
+            });
+            wx.showToast({ title: '提交成功，感谢反馈', icon: 'success' });
+            this.setData({ correctionVisible: false, correctionSubmitting: false });
+        }
+        catch (err) {
+            this.setData({ correctionSubmitting: false });
+            const msg = err instanceof Error ? err.message : '提交失败，请稍后重试';
+            wx.showToast({ title: msg, icon: 'none' });
+        }
     },
 });

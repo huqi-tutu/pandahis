@@ -1,0 +1,126 @@
+@import '../../native-utils/design-tokens.scss';
+
+.page-shell {
+  min-height: 100vh;
+  background: $page-bg;
+}
+
+.corrections-body {
+  padding: 24rpx 32rpx calc(48rpx + env(safe-area-inset-bottom));
+  box-sizing: border-box;
+}
+
+.correction-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+}
+
+.correction-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16rpx;
+  padding: 24rpx;
+  border-radius: 16rpx;
+  background: $card-bg;
+  border: 1rpx solid $divider;
+}
+
+.correction-item-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8rpx;
+}
+
+.correction-item-title {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: $text-title;
+  line-height: 1.35;
+}
+
+.correction-item-time {
+  font-size: 22rpx;
+  color: $inactive-text;
+}
+
+.correction-item-meta {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 8rpx;
+}
+
+.correction-item-status {
+  font-size: 24rpx;
+}
+
+.correction-item-status--pending {
+  color: #B88932;
+}
+
+.correction-item-status--reviewed {
+  color: #5E8A94;
+}
+
+.correction-item-status--resolved {
+  color: #5E7A70;
+}
+
+.list-arrow {
+  font-size: 32rpx;
+  color: #C0B8B4;
+  line-height: 1;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 120rpx 32rpx;
+  gap: 16rpx;
+}
+
+.empty-icon {
+  font-size: 64rpx;
+  line-height: 1;
+}
+
+.empty-text {
+  font-size: 30rpx;
+  color: $text-title;
+  font-weight: 600;
+}
+
+.empty-hint {
+  font-size: 24rpx;
+  color: $inactive-text;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.login-btn {
+  margin-top: 24rpx;
+  padding: 20rpx 48rpx;
+  border-radius: 12rpx;
+  font-size: 28rpx;
+}
+
+.loading {
+  text-align: center;
+  padding: 80rpx;
+  color: $inactive-text;
+  font-size: 28rpx;
+}
+
+.login-btn {
+  margin-top: 8rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80rpx;
+  padding: 0 56rpx;
+}

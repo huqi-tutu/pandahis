@@ -1,0 +1,26 @@
+<view
+  wx:if="{{visible}}"
+  class="text-selection-bar"
+  style="left: {{left}}px; top: {{top}}px;"
+  catchtap="noop"
+>
+  <view class="text-selection-bar-panel">
+    <view class="text-selection-bar-item" catchtap="onCopy">
+      <image class="text-selection-bar-icon" src="/images/icons/fuzhi.png" mode="aspectFit" />
+      <text class="text-selection-bar-label">复制</text>
+    </view>
+    <view class="text-selection-bar-item" catchtap="onShare">
+      <image class="text-selection-bar-icon" src="/images/icons/fenxiang.png" mode="aspectFit" />
+      <text class="text-selection-bar-label">分享</text>
+    </view>
+    <view class="text-selection-bar-item" catchtap="onQuery">
+      <image class="text-selection-bar-icon" src="/images/icons/sousuo.png" mode="aspectFit" />
+      <text class="text-selection-bar-label">查询</text>
+    </view>
+    <view class="text-selection-bar-item" catchtap="onCorrection">
+      <image class="text-selection-bar-icon" src="/images/icons/jiucuo.png" mode="aspectFit" />
+      <text class="text-selection-bar-label">纠错</text>
+    </view>
+  </view>
+  <view class="text-selection-bar-arrow"></view>
+</view>

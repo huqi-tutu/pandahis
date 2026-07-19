@@ -12,20 +12,43 @@ function isRefMeaningless(ref: unknown): boolean {
   return false
 }
 
-function parseOriginalRef(ref: unknown): { title: string; items: RefItemView[]; fallback: string } | null {
+function parseOriginalRef(ref: unknown): {
+  title: string
+  sourceWork: string
+  items: RefItemView[]
+  fallback: string
+} | null {
   if (isRefMeaningless(ref)) return null
   if (typeof ref === 'string') {
     const t = ref.trim()
-    return t ? { title: '原文', items: [], fallback: t } : null
+    return t ? { title: '母本原文', sourceWork: '', items: [], fallback: t } : null
   }
   if (typeof ref !== 'object' || ref === null) return null
   const o = ref as Record<string, unknown>
-  const textField = typeof o.text === 'string' ? o.text.trim() : ''
+  const title = typeof o.title === 'string' && o.title.trim() ? o.title.trim() : '母本原文'
+  const sourceWork =
+    (typeof o.sourceWork === 'string' ? o.sourceWork.trim() : '') ||
+    (typeof o.primarySource === 'string' ? o.primarySource.trim() : '')
+
+  const textField =
+    (typeof o.text === 'string' ? o.text.trim() : '') ||
+    (typeof o.originalText === 'string' ? o.originalText.trim() : '')
   if (textField) {
-    const title = typeof o.title === 'string' && o.title.trim() ? o.title.trim() : '史料原文'
-    return { title, items: [], fallback: textField }
+    return { title, sourceWork, items: [], fallback: textField }
   }
-  const title = typeof o.title === 'string' && o.title.trim() ? o.title.trim() : '史料原文'
+
+  if (Array.isArray(o.paragraphs)) {
+    const parts: string[] = []
+    for (const p of o.paragraphs) {
+      if (typeof p === 'string' && p.trim()) parts.push(p.trim())
+      else if (p && typeof p === 'object') {
+        const t = String((p as Record<string, unknown>).text ?? '').trim()
+        if (t) parts.push(t)
+      }
+    }
+    if (parts.length) return { title, sourceWork, items: [], fallback: parts.join('\n') }
+  }
+
   const rawItems = o.items
   const items: RefItemView[] = []
   if (Array.isArray(rawItems)) {
@@ -44,21 +67,15 @@ function parseOriginalRef(ref: unknown): { title: string; items: RefItemView[]; 
     }
   }
   const hasStructured = items.some((i) => i.work || i.chapter || i.excerpt || i.url)
-  if (!hasStructured) {
-    try {
-      const fallback = JSON.stringify(ref, null, 2)
-      return { title, items: [], fallback }
-    } catch {
-      return { title, items: [], fallback: String(ref) }
-    }
-  }
-  return { title, items, fallback: '' }
+  if (!hasStructured) return null
+  return { title, sourceWork, items, fallback: '' }
 }
 
 Page({
   data: {
     empty: true,
     refTitle: '',
+    refSourceWork: '',
     refItems: [] as RefItemView[],
     refFallback: '',
     headerPadPx: 88,
@@ -82,13 +99,14 @@ Page({
       })
       const parsed = parseOriginalRef(res.data.originalRef)
       if (!parsed) {
-        this.setData({ empty: true, refTitle: '', refItems: [], refFallback: '' })
+        this.setData({ empty: true, refTitle: '', refSourceWork: '', refItems: [], refFallback: '' })
         return
       }
       const hasContent = parsed.items.length > 0 || parsed.fallback.length > 0
       this.setData({
         empty: !hasContent,
         refTitle: parsed.title,
+        refSourceWork: parsed.sourceWork,
         refItems: parsed.items,
         refFallback: parsed.fallback,
       })
@@ -115,7 +133,7 @@ Page({
       } else {
         wx.showToast({ title: e?.message || '加载失败', icon: 'none' })
       }
-      this.setData({ empty: true, refTitle: '', refItems: [], refFallback: '' })
+      this.setData({ empty: true, refTitle: '', refSourceWork: '', refItems: [], refFallback: '' })
     }
   },
   copyLink(e: WechatMiniprogram.BaseEvent) {

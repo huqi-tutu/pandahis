@@ -5,6 +5,8 @@ from __future__ import annotations
 import json
 from typing import Any, Dict, List
 
+from lib.source_citation import build_source_citation
+
 
 def build_source_original(recalled: Dict[str, Any]) -> str:
     """
@@ -43,12 +45,17 @@ def source_original_fingerprint(text: str) -> str:
 
 
 def attach_source_original(output_file, recalled: Dict[str, Any]) -> None:
-    """将「史料原文」写入产出 JSON（编排器调用，不由 LLM 生成）。"""
+    """将「史料原文」「原文出处」写入产出 JSON（编排器调用，不由 LLM 生成）。"""
     from pathlib import Path
 
     path = Path(output_file)
     data = json.loads(path.read_text(encoding="utf-8"))
     data["史料原文"] = build_source_original(recalled)
+    citation = build_source_citation(recalled)
+    if citation:
+        data["原文出处"] = citation
+    else:
+        data.pop("原文出处", None)
     path.write_text(
         json.dumps(data, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",

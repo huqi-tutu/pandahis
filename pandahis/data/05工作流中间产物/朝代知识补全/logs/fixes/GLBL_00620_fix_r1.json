@@ -1,0 +1,25 @@
+{
+  "schema": "dynasty-knowledge-factual-fix/v1",
+  "fix_round": 1,
+  "all_applied": true,
+  "refs_sync_ok": true,
+  "issues": [],
+  "edits": [
+    {
+      "original": "《左传·襄公四年》记载得很直接：「昔有过浇杀斟灌以伐斟寻，灭夏后相。」",
+      "revised": "《左传·哀公元年》记载得很直接：「昔有过浇杀斟灌以伐斟寻，灭夏后相。」",
+      "error_index": 1,
+      "applied": true,
+      "note": "修正引文出处，《左传·襄公四年》改为《左传·哀公元年》。",
+      "target": "body"
+    },
+    {
+      "original": "《左传·襄公四年》《竹书纪年》",
+      "revised": "《左传·襄公四年》《左传·哀公元年》《竹书纪年》",
+      "error_index": 1,
+      "applied": true,
+      "note": "同步补充引文出处《左传·哀公元年》。",
+      "target": "refs"
+    }
+  ]
+}

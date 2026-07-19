@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const dev_config_1 = require("../../native-utils/dev-config");
 const api_1 = require("../../native-utils/api");
 const encode_path_segment_1 = require("../../native-utils/encode-path-segment");
 const favorite_box_1 = require("../../native-utils/favorite-box");
@@ -8,7 +7,10 @@ const router_1 = require("../../native-utils/router");
 const query_value_1 = require("../../native-utils/query-value");
 const year_format_1 = require("../../native-utils/year-format");
 const entry_source_label_1 = require("../../native-utils/entry-source-label");
-const share_invite_1 = require("../../native-utils/share-invite");
+const share_poster_open_1 = require("../../native-utils/share-poster-open");
+const correction_1 = require("../../native-utils/correction");
+const load_error_message_1 = require("../../native-utils/load-error-message");
+const runtime_env_1 = require("../../native-utils/runtime-env");
 const offscreen_hints_1 = require("../../native-utils/offscreen-hints");
 const { buildSwimMatrixFromMock, buildHeroFromMock, normalizeDynastyKey, isDegradedMockFallback, } = require('./swim-local-fallback');
 const PRIORITY_OPTIONS = [
@@ -241,20 +243,11 @@ function splitIntroParagraphs(intro) {
     const text = (intro || '').trim() || '空';
     return text.split(/\n\n+/).map((p) => p.trim()).filter(Boolean);
 }
-function isDevelopEnv() {
-    var _a, _b;
-    try {
-        return ((_b = (_a = wx.getAccountInfoSync()) === null || _a === void 0 ? void 0 : _a.miniProgram) === null || _b === void 0 ? void 0 : _b.envVersion) === 'develop';
-    }
-    catch {
-        return true;
-    }
-}
 function warnIfDegradedMock(swim) {
     if (!isDegradedMockFallback(swim))
         return;
     wx.showToast({
-        title: `后端未连通(${dev_config_1.DEV_LAN_HOST}:${dev_config_1.DEV_API_PORT})，仅显示君王`,
+        title: '朝代数据加载失败，仅显示本地君王数据',
         icon: 'none',
         duration: 3500,
     });
@@ -731,6 +724,24 @@ Page({
         chipTooltipBaseTransform: 'translate(-50%, -100%)',
         chipTooltipOrigin: '50% 100%',
         chipTooltipTransform: 'translate(-50%, -100%) scale(0.88)',
+        correctionVisible: false,
+        correctionSubmitting: false,
+        correctionBoxId: '',
+        correctionBoxTitle: '',
+        correctionCivilizationName: '',
+        correctionDynastyName: '',
+        selectionBarVisible: false,
+        selectionBarLeft: 0,
+        selectionBarTop: 0,
+        selectionBarText: '',
+        selectionMountKey: 1,
+        sharePosterVisible: false,
+        sharePosterQuote: '',
+        sharePosterSourceLine1: '',
+        sharePosterSourceLine2: '',
+        sharePosterUserName: '历史读者',
+        sharePosterUserAvatar: '',
+        sharePosterExcerptDate: '',
     },
     onShow() {
         void this.refreshFavState();
@@ -750,6 +761,7 @@ Page({
         return { title: t, path };
     },
     async onLoad(query) {
+        var _a, _b;
         const unitId = query.unitId || query.id;
         const dynastyHint = (0, query_value_1.decodeQueryValue)(query.dynasty || query.displayName || '');
         if (!unitId && !dynastyHint)
@@ -773,7 +785,7 @@ Page({
             dynastyTitle: dynastyHint,
         });
         const applyPageData = (hero, swim) => {
-            var _a;
+            var _a, _b;
             const unit = hero.unit;
             const dynastyTitle = (unit.dynastyName && unit.dynastyName.trim()) || unit.name;
             const navTitle = dynastyTitle.length <= 4 ? dynastyTitle : dynastyTitle.slice(0, 4);
@@ -781,7 +793,29 @@ Page({
             const activePriority = this.data.activePriority || 'p3';
             const prioritySwim = applyPriorityView(swim, activePriority);
             const matrixBoxIds = collectMatrixBoxIds(prioritySwim);
+            const hasVisibleContent = (prioritySwim.lanes || []).some(hasLaneContent);
             const { preview, canExpand, paragraphs } = previewIntro(unit.summary || '');
+            if (!hasVisibleContent) {
+                this.setData({
+                    unit,
+                    dynastyTitle,
+                    navTitle,
+                    heroSubLine,
+                    swim: null,
+                    concurrentItems: [],
+                    relatedUnits: hero.relatedUnits || [],
+                    nextUnit: (_a = hero.nextUnit) !== null && _a !== void 0 ? _a : null,
+                    matrixBoxIds: [],
+                    headerPadPx,
+                    scrollTop,
+                    introPreview: preview,
+                    introDisplay: preview,
+                    introCanExpand: canExpand,
+                    introParagraphs: paragraphs,
+                    loadError: (0, load_error_message_1.formatEmptySwimError)((0, runtime_env_1.isDevelopEnv)()),
+                });
+                return;
+            }
             this.setData({
                 unit,
                 dynastyTitle,
@@ -790,7 +824,7 @@ Page({
                 swim: prioritySwim,
                 concurrentItems: prioritySwim.concurrentItems || [],
                 relatedUnits: hero.relatedUnits || [],
-                nextUnit: (_a = hero.nextUnit) !== null && _a !== void 0 ? _a : null,
+                nextUnit: (_b = hero.nextUnit) !== null && _b !== void 0 ? _b : null,
                 matrixBoxIds,
                 headerPadPx,
                 scrollTop,
@@ -807,46 +841,61 @@ Page({
                 setTimeout(() => this.scrollToAnchorYear(anchorYear, swim), 120);
             }
         };
+        const tryApplyLocalMock = (mockHint) => {
+            const fallback = tryLoadLocalMock(mockHint, unitId || '');
+            if (!fallback)
+                return false;
+            console.warn('[dynasty-detail] using local mock for', mockHint);
+            const enhancedSwim = {
+                ...fallback.swim,
+                ...generateTimelineTicks(fallback.swim.startYear, fallback.swim.endYear, fallback.swim.sheetWidthRpx),
+                timeScaleMode: 'linear',
+            };
+            applyPageData(fallback.hero, enhancedSwim);
+            warnIfDegradedMock(enhancedSwim);
+            return true;
+        };
+        let resolvedMockHint = dynastyHint;
         if (unitId) {
             try {
                 const enc = (0, encode_path_segment_1.encodePathSegment)(unitId);
-                const [heroRes, swimRes] = await Promise.all([
-                    (0, api_1.request)(`/units/${enc}`),
-                    (0, api_1.request)(`/units/${enc}/swim-matrix`),
-                ]);
-                applyPageData(heroRes.data, {
-                    ...swimRes.data,
-                    gridLines: swimRes.data.gridLines || [],
-                });
-                return;
+                const heroRes = await (0, api_1.request)(`/units/${enc}`);
+                resolvedMockHint =
+                    dynastyHint ||
+                        ((_a = heroRes.data.unit.dynastyName) === null || _a === void 0 ? void 0 : _a.trim()) ||
+                        ((_b = heroRes.data.unit.name) === null || _b === void 0 ? void 0 : _b.trim()) ||
+                        '';
+                try {
+                    const swimRes = await (0, api_1.request)(`/units/${enc}/swim-matrix`);
+                    applyPageData(heroRes.data, {
+                        ...swimRes.data,
+                        gridLines: swimRes.data.gridLines || [],
+                    });
+                    return;
+                }
+                catch (swimErr) {
+                    console.error('[dynasty-detail] swim-matrix failed', swimErr);
+                    if ((0, runtime_env_1.isDevelopEnv)() && resolvedMockHint && tryApplyLocalMock(resolvedMockHint)) {
+                        return;
+                    }
+                    throw swimErr;
+                }
             }
             catch (e) {
                 console.error('[dynasty-detail] API failed', e);
-                if (isDevelopEnv() && dynastyHint) {
-                    const fallback = tryLoadLocalMock(dynastyHint, unitId);
-                    if (fallback) {
-                        console.warn('[dynasty-detail] using local mock for', dynastyHint);
-                        const enhancedSwim = {
-                            ...fallback.swim,
-                            ...generateTimelineTicks(fallback.swim.startYear, fallback.swim.endYear, fallback.swim.sheetWidthRpx),
-                            timeScaleMode: 'linear',
-                        };
-                        applyPageData(fallback.hero, enhancedSwim);
-                        warnIfDegradedMock(enhancedSwim);
-                        return;
-                    }
+                if ((0, runtime_env_1.isDevelopEnv)() && resolvedMockHint && tryApplyLocalMock(resolvedMockHint)) {
+                    return;
                 }
-                const msg = (e === null || e === void 0 ? void 0 : e.message) || '加载失败';
                 this.setData({
                     unit: null,
                     swim: null,
-                    loadError: `无法加载朝代数据（${msg}）。请确认后端已启动且已导入 historical_dynasty / historical_box 数据。`,
+                    loadError: (0, load_error_message_1.formatDynastyLoadError)(e, (0, runtime_env_1.isDevelopEnv)()),
                 });
                 wx.showToast({ title: '加载失败', icon: 'none' });
                 return;
             }
         }
-        if (isDevelopEnv() && dynastyHint) {
+        if ((0, runtime_env_1.isDevelopEnv)() && dynastyHint) {
             const fallback = tryLoadLocalMock(dynastyHint, '');
             if (fallback) {
                 console.warn('[dynasty-detail] using local mock for', dynastyHint);
@@ -1185,8 +1234,11 @@ Page({
         });
     },
     goUnit(e) {
-        const id = e.currentTarget.dataset.id;
-        (0, router_1.navigateTo)(router_1.ROUTES.dynastyDetail, { unitId: id });
+        const ds = e.currentTarget.dataset;
+        (0, router_1.navigateTo)(router_1.ROUTES.dynastyDetail, {
+            unitId: ds.id,
+            dynasty: ds.dynasty || '',
+        });
     },
     goNext() {
         const n = this.data.nextUnit;
@@ -1234,13 +1286,152 @@ Page({
             wx.showToast({ title: nextFav ? '已收藏本朝史略' : '已取消收藏', icon: 'success' });
         }
         catch (e) {
-            wx.showToast({ title: e instanceof Error ? e.message : '操作失败', icon: 'none' });
+            wx.showToast({
+                title: (0, load_error_message_1.formatUserFacingError)(e, (0, runtime_env_1.isDevelopEnv)(), '操作失败，请稍后重试'),
+                icon: 'none',
+            });
         }
         finally {
             this.setData({ favToggling: false });
         }
     },
-    onShareTap() {
-        (0, share_invite_1.promptContentShareUnavailable)();
+    hideSelectionBar() {
+        this.setData({
+            selectionBarVisible: false,
+            selectionBarText: '',
+        });
+        this.clearDetailSelection();
+    },
+    clearDetailSelection() {
+        for (const selector of ['#dynastyIntroSelection', '#dynastyModalSelection']) {
+            wx.createSelectorQuery()
+                .in(this)
+                .select(selector)
+                .context((res) => {
+                var _a;
+                const ctx = res === null || res === void 0 ? void 0 : res.context;
+                (_a = ctx === null || ctx === void 0 ? void 0 : ctx.removeSelection) === null || _a === void 0 ? void 0 : _a.call(ctx);
+            })
+                .exec();
+        }
+    },
+    onDetailSelectionChange(e) {
+        const detail = (e.detail || {});
+        const selected = String(detail.selectedString || '').trim();
+        if (detail.isCollapsed || !selected) {
+            this.hideSelectionBar();
+            return;
+        }
+        const rect = detail.firstRangeRect;
+        let left = this.data.selectionBarLeft;
+        let top = this.data.selectionBarTop;
+        if (rect && rect.left != null && rect.top != null) {
+            const width = rect.width || 0;
+            left = rect.left + width / 2;
+            top = rect.top;
+            const minTop = 120;
+            const maxTop = (wx.getSystemInfoSync().windowHeight || 667) - 80;
+            top = Math.max(minTop, Math.min(maxTop, top));
+        }
+        this.setData({
+            selectionBarVisible: true,
+            selectionBarText: selected,
+            selectionBarLeft: left,
+            selectionBarTop: top,
+        });
+    },
+    async onSelectionShare() {
+        const text = this.data.selectionBarText;
+        this.hideSelectionBar();
+        if (!text)
+            return;
+        wx.showLoading({ title: '生成海报…', mask: true });
+        const dynastyTitle = this.data.dynastyTitle || '朝代';
+        const unit = this.data.unit;
+        const posterState = await (0, share_poster_open_1.buildSharePosterSheetState)(text, `/ ${dynastyTitle} · 朝代简介`, (unit === null || unit === void 0 ? void 0 : unit.crumbText) || this.data.heroSubLine || '');
+        wx.hideLoading();
+        this.setData(posterState);
+    },
+    onSelectionCopy() {
+        const text = this.data.selectionBarText;
+        this.hideSelectionBar();
+        if (!text)
+            return;
+        wx.setClipboardData({
+            data: text,
+            success: () => wx.showToast({ title: '已复制', icon: 'success' }),
+        });
+    },
+    onSelectionQuery() {
+        this.hideSelectionBar();
+        wx.showToast({ title: '查询功能即将上线', icon: 'none' });
+    },
+    onSelectionCorrection() {
+        const text = this.data.selectionBarText;
+        this.hideSelectionBar();
+        if (!text)
+            return;
+        (0, correction_1.requireLoginForCorrection)(() => {
+            const unit = this.data.unit;
+            const civilizationName = unit ? (0, correction_1.parseCivilizationFromCrumb)(unit.crumbText) : '';
+            this.setData({
+                correctionVisible: true,
+                correctionSubmitting: false,
+                correctionBoxId: this.data.matrixBoxIds[0] || '',
+                correctionBoxTitle: `${this.data.dynastyTitle} · 朝代简介`,
+                correctionCivilizationName: civilizationName,
+                correctionDynastyName: this.data.dynastyTitle,
+            });
+        });
+    },
+    closeSharePoster() {
+        this.setData({ sharePosterVisible: false });
+    },
+    onChipTooltipCardTap() { },
+    onChipCorrectionTap() {
+        const boxId = this.data.chipTooltipHeldId;
+        if (!boxId)
+            return;
+        (0, correction_1.requireLoginForCorrection)(() => {
+            const unit = this.data.unit;
+            const civilizationName = unit ? (0, correction_1.parseCivilizationFromCrumb)(unit.crumbText) : '';
+            this.setData({
+                chipTooltipVisible: false,
+                chipTooltipHeldId: '',
+                correctionVisible: true,
+                correctionSubmitting: false,
+                correctionBoxId: boxId,
+                correctionBoxTitle: this.data.chipTooltipTitle,
+                correctionCivilizationName: civilizationName,
+                correctionDynastyName: this.data.dynastyTitle,
+            });
+        });
+    },
+    closeCorrection() {
+        this.setData({ correctionVisible: false, correctionSubmitting: false });
+    },
+    async onCorrectionSubmit(e) {
+        var _a;
+        const reason = String(((_a = e.detail) === null || _a === void 0 ? void 0 : _a.reason) || '');
+        const boxId = this.data.correctionBoxId;
+        if (!boxId || this.data.correctionSubmitting)
+            return;
+        this.setData({ correctionSubmitting: true });
+        try {
+            await (0, correction_1.submitCorrection)({
+                boxId,
+                sourceType: 'dynasty_canvas',
+                reason,
+            });
+            wx.showToast({ title: '提交成功，感谢反馈', icon: 'success' });
+            this.setData({ correctionVisible: false, correctionSubmitting: false });
+        }
+        catch (err) {
+            this.setData({ correctionSubmitting: false });
+            wx.showToast({
+                title: (0, load_error_message_1.formatUserFacingError)(err, (0, runtime_env_1.isDevelopEnv)(), '提交失败，请稍后重试'),
+                icon: 'none',
+            });
+        }
     },
 });

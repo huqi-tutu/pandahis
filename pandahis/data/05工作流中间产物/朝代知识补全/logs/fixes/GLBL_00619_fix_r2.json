@@ -1,0 +1,17 @@
+{
+  "schema": "dynasty-knowledge-factual-fix/v1",
+  "fix_round": 2,
+  "all_applied": true,
+  "refs_sync_ok": true,
+  "issues": [],
+  "edits": [
+    {
+      "original": "后羿有一身百步穿杨的好箭法",
+      "revised": "后羿有一手精湛的箭法",
+      "error_index": 1,
+      "applied": true,
+      "note": "「百步穿杨」为春秋养由基典故，错置夏代；改为「精湛的箭法」保留善射之意，与 fix_hint 一致。",
+      "target": "body"
+    }
+  ]
+}

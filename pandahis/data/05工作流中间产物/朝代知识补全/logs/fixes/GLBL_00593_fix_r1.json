@@ -1,0 +1,28 @@
+{
+  "schema": "dynasty-knowledge-factual-fix/v1",
+  "fix_round": 1,
+  "all_applied": false,
+  "refs_sync_ok": false,
+  "issues": [
+    "edit #1 未应用",
+    "替换后仍含原文（#1）: 《尚书·汤誓》…"
+  ],
+  "edits": [
+    {
+      "original": "战国时编纂的《尚书·汤誓》",
+      "revised": "今文《尚书·汤誓》",
+      "error_index": 1,
+      "applied": false,
+      "note": "修正典籍时代表述，改为中性说法",
+      "target": "body"
+    },
+    {
+      "original": "《尚书·汤誓》",
+      "revised": "今文《尚书·汤誓》",
+      "error_index": 1,
+      "applied": true,
+      "note": "同步修正参考著作段中的篇名",
+      "target": "refs"
+    }
+  ]
+}

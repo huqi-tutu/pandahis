@@ -1,0 +1,13 @@
+{
+  "has_factual_errors": false,
+  "factual_errors": [],
+  "summary": "正文所涉人物身份、典籍引文、典故出处及传说叙事均与常见史料相符，且对传说性内容有适当的传闻 framing，未见明显硬史实性错误。",
+  "overall_verdict": "pass",
+  "schema": "dynasty-knowledge-review/v2",
+  "史略ID": "GLBL_00584",
+  "reviewed_at": "2026-07-18T16:56:29Z",
+  "pipeline_blocking": false,
+  "review_fix_round": 1,
+  "forced_pass": false,
+  "human_review_required": false
+}

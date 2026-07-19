@@ -1,0 +1,17 @@
+{
+  "schema": "dynasty-knowledge-factual-fix/v1",
+  "fix_round": 2,
+  "all_applied": true,
+  "refs_sync_ok": true,
+  "issues": [],
+  "edits": [
+    {
+      "original": "后羿上射九日，下诛群凶",
+      "revised": "羿上射九日，下诛群凶",
+      "error_index": 1,
+      "applied": true,
+      "note": "《淮南子·本经训》称射日者为“羿”，非“后羿”，据原文修正。",
+      "target": "body"
+    }
+  ]
+}

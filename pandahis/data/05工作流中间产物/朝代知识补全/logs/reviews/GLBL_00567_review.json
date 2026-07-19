@@ -1,55 +1,13 @@
 {
-  "paragraph_count": 7,
-  "paragraph_reviews": [
-    {
-      "paragraph_index": 0,
-      "verdict": "pass",
-      "issues": [],
-      "suggested_fix": ""
-    },
-    {
-      "paragraph_index": 1,
-      "verdict": "pass",
-      "issues": [],
-      "suggested_fix": ""
-    },
-    {
-      "paragraph_index": 2,
-      "verdict": "warn",
-      "issues": [
-        "引文归属不清：「顽凶，不用」语出《史记·五帝本纪》，紧接于《尧典》引文之后，易使读者误为《尧典》原文；",
-        "现代口语入史：「退居二线」为现代政治用语，用于尧舜叙事不够典雅，且非史料原文。"
-      ],
-      "suggested_fix": "将「尧以『顽凶，不用』拒之」明确标注为《史记》记载，或调整为《尧典》对应的「嚚讼」表述；将「自己退居二线」改为「尧老，使舜摄行天子之政」等贴近史书的表达。"
-    },
-    {
-      "paragraph_index": 3,
-      "verdict": "pass",
-      "issues": [],
-      "suggested_fix": ""
-    },
-    {
-      "paragraph_index": 4,
-      "verdict": "pass",
-      "issues": [],
-      "suggested_fix": ""
-    },
-    {
-      "paragraph_index": 5,
-      "verdict": "pass",
-      "issues": [],
-      "suggested_fix": ""
-    },
-    {
-      "paragraph_index": 6,
-      "verdict": "pass",
-      "issues": [],
-      "suggested_fix": ""
-    }
-  ],
-  "overall_verdict": "warn",
-  "summary": "全文核心事实、人物序列与程序列举均与锚点及《史记》《尚书》一致；异说（《竹书纪年》、许由传说）已独立成块并明确标注。唯 P2 存在引文来源混淆及一处现代口语，建议修正后通过。",
-  "schema": "dynasty-knowledge-review/v1",
+  "has_factual_errors": false,
+  "factual_errors": [],
+  "summary": "正文对传世文献与出土异说的引用和事件归属均符合史学通识，虽以儒家叙事为主线，但对《竹书纪年》等异说有明确分述，未见明显硬史实错误或张冠李戴。",
+  "overall_verdict": "pass",
+  "schema": "dynasty-knowledge-review/v2",
   "史略ID": "GLBL_00567",
-  "reviewed_at": "2026-07-15T15:34:47Z"
+  "reviewed_at": "2026-07-18T14:40:17Z",
+  "pipeline_blocking": false,
+  "review_fix_round": 1,
+  "forced_pass": false,
+  "human_review_required": false
 }

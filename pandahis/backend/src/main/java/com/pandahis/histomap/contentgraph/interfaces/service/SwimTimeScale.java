@@ -274,7 +274,94 @@ final class SwimTimeScale {
       }
     }
 
+    ticks = resolveTickLabelCollisions(ticks, sheetWidthRpx);
     return new Plan(this, sheetWidthRpx, ticks, gridLines, timeSegments, mode);
+  }
+
+  /**
+   * 标签像素间距不足时隐藏低优先级刻度，避免起点/段界等标签叠字。
+   * 优先级：起点 > 段界 > 普通刻度。
+   */
+  private static List<UnitSwimMatrixDTO.AxisTick> resolveTickLabelCollisions(
+      List<UnitSwimMatrixDTO.AxisTick> ticks,
+      int sheetWidthRpx
+  ) {
+    if (ticks.size() <= 1) {
+      return ticks;
+    }
+
+    List<TickSlot> slots = new ArrayList<>();
+    for (int i = 0; i < ticks.size(); i++) {
+      UnitSwimMatrixDTO.AxisTick tick = ticks.get(i);
+      slots.add(new TickSlot(
+          i,
+          tick,
+          parsePct(tick.left()) * sheetWidthRpx / 100.0,
+          tick.hideLabel()
+      ));
+    }
+
+    slots.sort(java.util.Comparator.comparingDouble(slot -> slot.px));
+    List<TickSlot> kept = new ArrayList<>();
+    for (TickSlot slot : slots) {
+      if (slot.hideLabel) {
+        continue;
+      }
+      TickSlot conflict = null;
+      for (TickSlot other : kept) {
+        if (Math.abs(slot.px - other.px) < MIN_LABEL_SPACING_RPX) {
+          conflict = other;
+          break;
+        }
+      }
+      if (conflict == null) {
+        kept.add(slot);
+        continue;
+      }
+      if (tickPriority(slot.tick) > tickPriority(conflict.tick)) {
+        conflict.hideLabel = true;
+        kept.remove(conflict);
+        kept.add(slot);
+      } else {
+        slot.hideLabel = true;
+      }
+    }
+
+    boolean[] hide = new boolean[ticks.size()];
+    for (TickSlot slot : slots) {
+      hide[slot.index] = slot.hideLabel;
+    }
+
+    List<UnitSwimMatrixDTO.AxisTick> out = new ArrayList<>(ticks.size());
+    for (int i = 0; i < ticks.size(); i++) {
+      UnitSwimMatrixDTO.AxisTick tick = ticks.get(i);
+      if (hide[i] == tick.hideLabel()) {
+        out.add(tick);
+        continue;
+      }
+      out.add(new UnitSwimMatrixDTO.AxisTick(
+          tick.label(),
+          tick.left(),
+          tick.edgeStart(),
+          hide[i],
+          tick.segmentBoundary()
+      ));
+    }
+    return out;
+  }
+
+  private static int tickPriority(UnitSwimMatrixDTO.AxisTick tick) {
+    if (tick.edgeStart()) {
+      return 3;
+    }
+    if (tick.segmentBoundary()) {
+      return 2;
+    }
+    return 1;
+  }
+
+  private static double parsePct(String left) {
+    return Double.parseDouble(left.replace("%", ""));
   }
 
   private int recommendSheetWidth(int anchorCount, int laneSeedCount) {
@@ -545,6 +632,20 @@ final class SwimTimeScale {
   ) {
     double pixelSlope() {
       return (rightRpx - leftRpx) / Math.max(1, endYear - startYear);
+    }
+  }
+
+  private static final class TickSlot {
+    final int index;
+    final UnitSwimMatrixDTO.AxisTick tick;
+    final double px;
+    boolean hideLabel;
+
+    TickSlot(int index, UnitSwimMatrixDTO.AxisTick tick, double px, boolean hideLabel) {
+      this.index = index;
+      this.tick = tick;
+      this.px = px;
+      this.hideLabel = hideLabel;
     }
   }
 

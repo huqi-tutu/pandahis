@@ -1,0 +1,28 @@
+{
+  "schema": "dynasty-knowledge-factual-fix/v1",
+  "fix_round": 2,
+  "all_applied": false,
+  "refs_sync_ok": false,
+  "issues": [
+    "未找到片段（#2, body）: 《韩诗外传》就给他安排了一整套\"酒池肉林\"的荒淫场景…",
+    "edit #2 未应用"
+  ],
+  "edits": [
+    {
+      "original": "他公然把自己比作天上的太阳，说太阳不灭，他就不会亡。可是百姓们不这么想。他们一面忍受着无休止的劳役，一面偷偷咒骂",
+      "revised": "百姓们则把他比作天上的太阳，他们一面忍受着无休止的劳役，一面偷偷咒骂",
+      "error_index": 1,
+      "applied": true,
+      "note": "《尚书·汤誓》所载为夏民将桀比作太阳并咒其灭亡，非桀自比太阳。",
+      "target": "body"
+    },
+    {
+      "original": "《韩诗外传》就给他安排了一整套\"酒池肉林\"的荒淫场景",
+      "revised": "《韩诗外传》就给他安排了酒池的荒淫场景，后世更把商纣的'肉林'附会于他",
+      "error_index": 2,
+      "applied": false,
+      "note": "《韩诗外传》卷四仅载桀作酒池，肉林为《史记·殷本纪》等所载商纣典故，原文张冠李戴。",
+      "target": "body"
+    }
+  ]
+}

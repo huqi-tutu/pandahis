@@ -6,7 +6,7 @@ import re
 from typing import Any, Dict, List
 
 from lib.citation_mode import enrich_checklist_citation_modes
-from lib.mother_sentences import extract_must_phrases, is_midword_fragment
+from lib.mother_sentences import MAX_MUST_PHRASES, extract_must_phrases, is_midword_fragment
 
 # 仅当与母本形成有意义差异时才允许采用
 _EXTERNAL_TYPES = frozenset(
@@ -53,8 +53,8 @@ def finalize_checklist(plan: Dict[str, Any]) -> None:
         if not isinstance(item, dict):
             continue
         orig = str(item.get("原文摘句") or item.get("text") or "").strip()
-        phrases = item.get("必现词") or []
-        if orig and (not phrases or _broken_must_phrases(phrases, orig)):
+        if orig:
+            # 必现词一律程序化重算，不信任 LLM 填写（防卒/立等 L0 词与超限）
             item["必现词"] = extract_must_phrases(orig)
         hint = str(item.get("写作提示") or "")
         if hint and not item.get("母本提示"):
@@ -129,7 +129,7 @@ def ensure_mother_checklist(
             "编号": f"M{i:03d}",
             "段落": s["段落"],
             "原文摘句": orig,
-            "必现词": prev.get("必现词") or extract_must_phrases(orig),
+            "必现词": extract_must_phrases(orig),
             "信息点": str(
                 prev.get("信息点") or prev.get("回译") or prev.get("母本提示") or orig
             ).strip(),
@@ -330,7 +330,7 @@ def inject_mother_preview(plan: Dict[str, Any]) -> None:
         orig = str(item.get("原文摘句") or "").strip()
         phrases = item.get("必现词") or extract_must_phrases(orig)
         preview[f"M{i:03d}摘句"] = orig[:120]
-        preview[f"M{i:03d}必现词"] = phrases[:6]
+        preview[f"M{i:03d}必现词"] = phrases[:MAX_MUST_PHRASES]
         for w in phrases:
             if len(str(w).strip()) >= 2:
                 forbidden.append(str(w).strip())

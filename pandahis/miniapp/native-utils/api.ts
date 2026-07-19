@@ -1,55 +1,47 @@
-import { DEV_API_PORT, DEV_LAN_HOST } from './dev-config'
+import { DEV_API_PORT } from './dev-config'
+import { getEnvVersion, isDevtoolsClient } from './runtime-env'
 
 export type ApiResponse<T> = { code: string; message: string; requestId: string; data: T }
 
+export type ApiErrorDetail = {
+  url: string
+  method: string
+  status?: number
+  body?: unknown
+  err?: unknown
+}
+
+export class ApiError extends Error {
+  readonly detail: ApiErrorDetail
+
+  constructor(message: string, detail: ApiErrorDetail) {
+    super(message)
+    this.name = 'ApiError'
+    this.detail = detail
+  }
+}
+
 const PROD_BASE_URL = 'https://www.pandahis.com/api/v1'
 
-function isDevtoolsClient(): boolean {
-  try {
-    const info = wx.getSystemInfoSync() as WechatMiniprogram.SystemInfo & {
-      host?: { env?: string }
-    }
-    if (info.platform === 'devtools') return true
-    if (info.host?.env === 'WeChatDevTools') return true
-  } catch {
-    // ignore
-  }
-  return false
-}
-
-/** 开发者工具用 localhost；真机用局域网 IP（见 dev-config.ts） */
-function getLocalBaseUrl(): string {
-  if (isDevtoolsClient()) {
-    return `http://localhost:${DEV_API_PORT}/api/v1`
-  }
-  return `http://${DEV_LAN_HOST}:${DEV_API_PORT}/api/v1`
-}
-
-function isDevelopEnv(): boolean {
-  try {
-    return wx.getAccountInfoSync()?.miniProgram?.envVersion === 'develop'
-  } catch {
-    return true
-  }
-}
-
-/** 开发版误把生产地址写入 storage 时，自动回退本地后端 */
-function resolveStoredBaseUrl(stored: string): string {
-  if (
-    isDevelopEnv() &&
-    (stored === PROD_BASE_URL || stored.includes('www.pandahis.com'))
-  ) {
-    return getLocalBaseUrl()
-  }
-  return stored
+function normalizeDevelopBaseUrl(value: unknown): string {
+  const url = String(value || '').trim().replace(/\/$/, '')
+  if (!url) return ''
+  if (/^https:\/\/[a-z0-9.-]+(?::\d+)?(?:\/.*)?$/i.test(url)) return url
+  const privateHttp =
+    /^http:\/\/(?:localhost|127(?:\.\d{1,3}){3}|10(?:\.\d{1,3}){3}|192\.168(?:\.\d{1,3}){2}|172\.(?:1[6-9]|2\d|3[01])(?:\.\d{1,3}){2})(?::\d+)?(?:\/.*)?$/i
+  return privateHttp.test(url) ? url : ''
 }
 
 export function getBaseUrl(): string {
-  if (isDevelopEnv()) {
-    return getLocalBaseUrl()
+  if (getEnvVersion() === 'develop') {
+    const stored = normalizeDevelopBaseUrl(wx.getStorageSync('apiBaseUrl'))
+    if (stored) return stored
+    // 开发者工具可直接访问本机；真机预览默认走生产 HTTPS，
+    // 避免 DHCP 改变开发机局域网 IP 后整页数据加载失败。
+    if (isDevtoolsClient()) {
+      return `http://localhost:${DEV_API_PORT}/api/v1`
+    }
   }
-  const stored = String(wx.getStorageSync('apiBaseUrl') || '').trim()
-  if (stored) return resolveStoredBaseUrl(stored)
   return PROD_BASE_URL
 }
 
@@ -133,35 +125,27 @@ export function request<T>(
             (typeof body === 'object' && body && (body.message || body.code)) ||
             (typeof body === 'string' && body.slice(0, 200)) ||
             `HTTP_${status}`
-          const err = new Error(msg)
-          ;(err as any).detail = detail
-          reject(err)
+          reject(new ApiError(String(msg), detail))
           return
         }
         if (!body || typeof body !== 'object') {
           const detail = { url, method, status, body }
           console.error('[api] INVALID_RESPONSE', detail)
-          const err = new Error('INVALID_RESPONSE')
-          ;(err as any).detail = detail
-          reject(err)
+          reject(new ApiError('INVALID_RESPONSE', detail))
           return
         }
         if (body.code && body.code !== 'OK') {
           const detail = { url, method, status, body }
           console.error('[api] API_ERROR', detail)
-          const err = new Error(body.message || body.code)
-          ;(err as any).detail = detail
-          reject(err)
+          reject(new ApiError(String(body.message || body.code), detail))
           return
         }
         resolve(body as ApiResponse<T>)
       },
       fail(err) {
         console.error('[api] REQUEST_FAIL', { url, method, err })
-        const msg = (err as any)?.errMsg || (err as any)?.message || 'REQUEST_FAIL'
-        const e = new Error(msg)
-        ;(e as any).detail = { url, method, err }
-        reject(e)
+        const msg = err?.errMsg || 'REQUEST_FAIL'
+        reject(new ApiError(msg, { url, method, err }))
       },
     })
   })

@@ -1,0 +1,13 @@
+{
+  "has_factual_errors": false,
+  "factual_errors": [],
+  "summary": "正文未见明显硬史实错误，所涉人物位次、典籍引述与通识记载基本相符，且对后世传说有明确标注。",
+  "overall_verdict": "pass",
+  "schema": "dynasty-knowledge-review/v2",
+  "史略ID": "GLBL_00575",
+  "reviewed_at": "2026-07-18T14:45:12Z",
+  "pipeline_blocking": false,
+  "review_fix_round": 3,
+  "forced_pass": false,
+  "human_review_required": false
+}

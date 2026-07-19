@@ -6,6 +6,13 @@ import os
 import re
 from typing import Any, Dict, List
 
+from lib.gloss_rules import L0_GLOSS_WORDS, is_l0_word
+
+MAX_MUST_PHRASES = 4
+# 必现词字数上限：短锚点便于 Phase1 保留与 verify 命中；句意覆盖走「信息点」
+MAX_MUST_CHAR = 4
+MAX_MUST_CHAR_CLAN = 5  # X氏专名例外
+
 
 def _split_sentences(text: str) -> List[str]:
     """按句号分句；引号/对话内的 。不拆分。"""
@@ -102,36 +109,138 @@ def is_midword_fragment(phrase: str, orig: str) -> bool:
         idx = pos + 1
 
 
-def extract_must_phrases(orig: str, *, max_phrases: int = 4) -> List[str]:
-    """从母本摘句提取硬锚点：数字、引号内原文、X氏专名、句读边界短语。上限降为4，减少冗余锚点。"""
+def _trim_l0_edges(phrase: str) -> str:
+    """去掉短语首尾的单字 L0 通识文言（如「康王卒」→「康王」）。"""
+    w = phrase.strip()
+    if not w or is_l0_word(w):
+        return ""
+    changed = True
+    while changed and len(w) >= 2:
+        changed = False
+        if len(w) > 2 and w[-1] in L0_GLOSS_WORDS:
+            w = w[:-1]
+            changed = True
+        if len(w) > 2 and w[0] in L0_GLOSS_WORDS:
+            w = w[1:]
+            changed = True
+    return w.strip()
+
+
+def _iter_clan_names(text: str) -> List[str]:
+    """提取 X氏 专名（2–4 字 + 氏，总长 ≤ MAX_MUST_CHAR_CLAN），避免贪婪正则吞整句。"""
+    found: List[str] = []
+    seen: set[str] = set()
+    for i, ch in enumerate(text):
+        if ch != "氏":
+            continue
+        for n in range(3, MAX_MUST_CHAR_CLAN + 1):
+            start = i - n + 1
+            if start < 0:
+                continue
+            phrase = text[start : i + 1]
+            if len(phrase) != n or phrase[-1] != "氏":
+                continue
+            if not all("\u4e00" <= c <= "\u9fff" for c in phrase):
+                continue
+            if phrase not in seen:
+                seen.add(phrase)
+                found.append(phrase)
+            break
+    return found
+
+
+def _max_len_for(phrase: str) -> int:
+    return MAX_MUST_CHAR_CLAN if phrase.endswith("氏") else MAX_MUST_CHAR
+
+
+def _within_must_length(phrase: str) -> bool:
+    w = phrase.strip()
+    return len(w) >= 2 and len(w) <= _max_len_for(w)
+
+
+def _reject_must_phrase(phrase: str, orig: str, *, clause_level: bool = False) -> bool:
+    """True = 不应作为必现词。"""
+    w = phrase.strip()
+    if len(w) < 2:
+        return True
+    if not _within_must_length(w):
+        return True
+    if is_l0_word(w):
+        return True
+    if w in _MUST_STOP or w in _MUST_GENERIC:
+        return True
+    if not clause_level and is_midword_fragment(w, orig):
+        return True
+    return False
+
+
+def extract_must_phrases(orig: str, *, max_phrases: int = MAX_MUST_PHRASES) -> List[str]:
+    """从母本摘句程序化提取短锚点（≤4 字，氏名 ≤5）；落盘覆盖 LLM 填写。"""
     out: List[str] = []
     seen: set[str] = set()
 
-    def _add(w: str) -> None:
-        w = w.strip()
-        if len(w) < 2 or w in _MUST_STOP or w in _MUST_GENERIC:
+    def _add(raw: str, *, clause_level: bool = False, allow_kernels: bool = True) -> None:
+        if len(out) >= max_phrases:
             return
-        if is_midword_fragment(w, orig):
+        w = _trim_l0_edges(raw)
+        if not w:
+            return
+        if not _within_must_length(w):
+            if allow_kernels:
+                _add_kernels_from_segment(raw)
+            return
+        if _reject_must_phrase(w, orig, clause_level=clause_level):
             return
         if w not in seen:
             seen.add(w)
             out.append(w)
 
+    def _add_kernels_from_segment(segment: str) -> None:
+        """长分句块不整段入选，只抽数字/氏/称号/≤4 字子片段。"""
+        for num in re.findall(r"\d+", segment):
+            _add(num, allow_kernels=False)
+        for clan in _iter_clan_names(segment):
+            _add(clan, clause_level=True, allow_kernels=False)
+        for m in re.finditer(
+            r"[\u4e00-\u9fff]{1,3}(?:公|侯|王|伯|子|尚|挚)",
+            segment,
+        ):
+            _add(m.group(0), clause_level=True, allow_kernels=False)
+        for part in re.split(r"[、；]", segment):
+            part = re.sub(r"[之乎者也矣焉]", "", part.strip())
+            if not part:
+                continue
+            trimmed = _trim_l0_edges(part)
+            if 2 <= len(trimmed) <= MAX_MUST_CHAR and trimmed[0] not in "於于之其而":
+                _add(part, clause_level=True, allow_kernels=False)
+
     for num in re.findall(r"\d+", orig):
-        _add(num)
-    for m in re.finditer(r"[\u4e00-\u9fff]{2,8}氏", orig):
-        _add(m.group(0))
+        _add(num, allow_kernels=False)
+    for clan in _iter_clan_names(orig):
+        _add(clan, clause_level=True, allow_kernels=False)
     for m in re.finditer(r"[「『\"“]([^」』\"”]{2,16})[」』\"”]", orig):
-        _add(m.group(1))
+        inner = m.group(1).strip()
+        trimmed_inner = _trim_l0_edges(inner)
+        if _within_must_length(trimmed_inner):
+            _add(inner, clause_level=True, allow_kernels=False)
+        else:
+            _add_kernels_from_segment(inner)
+            for part in re.split(r"[，、；]", inner):
+                _add(part, clause_level=True, allow_kernels=False)
     for m in re.finditer(
-        r"[\u4e00-\u9fff]{2,6}(?:公|侯|王|伯|子|尚|挚)",
+        r"[\u4e00-\u9fff]{1,3}(?:公|侯|王|伯|子|尚|挚)",
         orig,
     ):
-        _add(m.group(0))
+        _add(m.group(0), clause_level=True, allow_kernels=False)
     for chunk in re.split(r"[，。、；：]", orig):
         chunk = re.sub(r"[之乎者也矣焉]", "", chunk.strip())
-        if 2 <= len(chunk) <= 12:
-            _add(chunk)
+        if len(chunk) < 2:
+            continue
+        trimmed = _trim_l0_edges(chunk)
+        if 2 <= len(trimmed) <= MAX_MUST_CHAR and trimmed[0] not in "於于之其而":
+            _add(chunk, clause_level=True, allow_kernels=False)
+        else:
+            _add_kernels_from_segment(chunk)
     return out[:max_phrases]
 
 

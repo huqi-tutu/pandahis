@@ -70,6 +70,15 @@
     </view>
 
     <view class="menu-card">
+      <view class="menu-item" bindtap="goCorrections">
+        <view class="menu-left">
+          <view class="menu-icon">
+            <image class="menu-icon-img" src="/images/icons/jiucuo.png" mode="aspectFit" />
+          </view>
+          <text class="menu-label">我的纠错</text>
+        </view>
+        <text class="list-arrow">›</text>
+      </view>
       <view class="menu-item" bindtap="onShareFriend">
         <view class="menu-left">
           <view class="menu-icon menu-icon--share">
@@ -111,10 +120,7 @@
       </view>
     </view>
 
-    <view wx:if="{{loggedIn}}" class="logout-wrap">
-      <view class="logout-btn" bindtap="logout">退出登录</view>
-    </view>
-    <view wx:else class="logout-wrap">
+    <view wx:if="{{!loggedIn}}" class="logout-wrap">
       <view class="login-btn" bindtap="goLogin">微信登录</view>
     </view>
   </view>

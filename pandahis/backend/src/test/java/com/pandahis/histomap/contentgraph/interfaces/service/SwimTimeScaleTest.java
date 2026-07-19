@@ -98,6 +98,35 @@ class SwimTimeScaleTest {
   }
 
   @Test
+  void denseLeadingSegmentDoesNotDuplicateStartLabel() {
+    java.util.List<Integer> anchors = java.util.List.of(-2698, -2695, -2540, -2360, -2200, -2070);
+    SwimTimeScale.Plan initial = SwimTimeScale.plan(-2698, -2070, anchors, 5);
+    SwimTimeScale.Plan fitted = initial.scale().fitToViewport(
+        anchors,
+        initial.sheetWidthRpx(),
+        initial.timeScaleMode()
+    );
+
+    long visibleNearStart = fitted.ticks().stream()
+        .filter(t -> !t.hideLabel())
+        .filter(t -> Double.parseDouble(t.left().replace("%", "")) <= 2.0)
+        .count();
+    assertEquals(1, visibleNearStart, "起点附近只应保留一个可见标签");
+
+    var edgeStart = fitted.ticks().stream()
+        .filter(t -> t.edgeStart())
+        .findFirst()
+        .orElseThrow();
+    assertTrue(!edgeStart.hideLabel(), "起点年份标签必须可见");
+
+    assertTrue(
+        fitted.ticks().stream()
+            .anyMatch(t -> "-2695".equals(t.label()) && t.hideLabel()),
+        "与起点过近的段界标签应隐藏"
+    );
+  }
+
+  @Test
   void sparseGapsAreCompactedEvenWhenThereAreFewerThanEightAnchors() {
     java.util.List<Integer> anchors = java.util.List.of(-2698, -2540, -2360, -2200, -2070);
     SwimTimeScale.Plan initial = SwimTimeScale.plan(-2698, -2070, anchors, 5);

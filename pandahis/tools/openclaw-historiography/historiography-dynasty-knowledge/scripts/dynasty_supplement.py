@@ -31,9 +31,15 @@ from paths_config import (  # noqa: E402
     get_histograph_root,
 )
 
+import bibliography_lib as blib  # noqa: E402
+from shared.reference_works import attach_reference_section  # noqa: E402
 import detail_verify as dv  # noqa: E402
 import detail_review as dr  # noqa: E402
+import detail_fix as dfix  # noqa: E402
+import coverage_check as cc  # noqa: E402
+import review_warns_summary as rws  # noqa: E402
 import dynasty_supplement_lib as dkl  # noqa: E402
+import wikipedia_client as wiki  # noqa: E402
 
 HISTOGRAPH_ROOT = get_histograph_root()
 DATA_DIR = HISTOGRAPH_ROOT / DIR_DATA
@@ -43,6 +49,8 @@ OUTPUT_DIR = DATA_DIR / DIR_DYNASTY_KNOWLEDGE
 ENTRIES_DIR = OUTPUT_DIR / SUBDIR_DYNASTY_KNOWLEDGE_ENTRIES
 DETAILS_DIR = OUTPUT_DIR / SUBDIR_DYNASTY_KNOWLEDGE_DETAILS
 ANCHORS_DIR = OUTPUT_DIR / "锚点"
+WIKI_DIR = OUTPUT_DIR / "维基摘录"
+SOURCE_GRAPH_DIR = OUTPUT_DIR / "史料图谱"
 ANNOTATE_DIR = OPENCLAW_ROOT / "historiography-annotate"
 
 CATEGORIES = ("事略", "典制", "论著")
@@ -64,8 +72,15 @@ STEPS = (
     "compose-detail",
     "compose-pending",
     "anchor-research",
+    "bibliography-plan",
+    "fetch-snippets",
+    "verify-bibliography",
+    "wiki-fetch",
     "verify-detail",
+    "coverage-check",
     "review-detail",
+    "fix-detail",
+    "review-warns-summary",
     "patch-detail",
     "qa-detail",
     "test-display",
@@ -83,6 +98,10 @@ RULES = {
     "纪律": MODULE_ROOT / "reference" / "执行纪律.md",
     "详情": MODULE_ROOT / "reference" / "详情撰写规则.md",
     "人物详情": MODULE_ROOT / "reference" / "人物详情撰写规则.md",
+    "详情写作共用": MODULE_ROOT / "reference" / "详情写作_共用规范.md",
+    "anchor纪律": MODULE_ROOT / "reference" / "anchor_research_纪律.md",
+    "书目plan": MODULE_ROOT / "reference" / "bibliography_plan_纪律.md",
+    "详情审校": MODULE_ROOT / "reference" / "详情审校规则.md",
     "事略": MODULE_ROOT / "reference" / "事略补全规则.md",
     "典制": MODULE_ROOT / "reference" / "典制补全规则.md",
     "典制思想分界": MODULE_ROOT / "reference" / "典制与思想分界.md",
@@ -99,6 +118,60 @@ FORBIDDEN_PROSE = dkl.FORBIDDEN_PROSE_WORDS
 
 def _log(msg: str) -> None:
     print(msg, flush=True)
+
+
+def save_llm_prompt(
+    logs_dir: Path,
+    entry_id: str,
+    step: str,
+    prompt: str,
+) -> Path:
+    """落盘发给 LLM 的完整 prompt，供人工核验（所见即所执行）。"""
+    out_dir = logs_dir / "prompts"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    path = out_dir / f"{entry_id}_{step}.txt"
+    header = (
+        f"# LLM prompt 快照\n"
+        f"# 史略ID: {entry_id}\n"
+        f"# 步骤: {step}\n"
+        f"# 说明: 下文即实际发给模型的完整提示词（含动态 JSON/维基块）\n"
+        f"# 规范类 reference/*.md 全文注入（共用 + 类型专属），无 [:N] 隐藏截取\n"
+        f"{'=' * 72}\n\n"
+    )
+    path.write_text(header + prompt, encoding="utf-8")
+    return path
+
+
+def save_compose_raw(
+    logs_dir: Path,
+    entry_id: str,
+    attempt: int,
+    label: str,
+    raw_text: str,
+) -> Path:
+    """compose 解析失败时落盘 LLM 原始回复，便于排查。"""
+    out_dir = logs_dir / "compose_raw"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    path = out_dir / f"{entry_id}_{label}_r{attempt}.txt"
+    header = (
+        f"# compose LLM 原始回复\n"
+        f"# 史略ID: {entry_id}\n"
+        f"# 步骤: {label}\n"
+        f"# 尝试: {attempt}\n"
+        f"{'=' * 72}\n\n"
+    )
+    path.write_text(header + (raw_text or ""), encoding="utf-8")
+    return path
+
+
+def _compose_json_retry_suffix(attempt: int) -> str:
+    if attempt <= 1:
+        return ""
+    return (
+        f"\n\n## ⚠️ 第 {attempt} 次重试\n"
+        "上次输出无法解析为合法 JSON。请务必：只输出 {{\"史略ID\":\"...\",\"翻译详情\":\"...\"}}；"
+        "正文内不要使用 ASCII 双引号 `\"`，换行用 \\n；不要 markdown 代码块外的说明文字。\n"
+    )
 
 
 def _load_dynasties() -> list[dict[str, Any]]:
@@ -158,8 +231,8 @@ def research_prompt(context: dict[str, Any], rules: dict[str, str]) -> str:
 4. 不要列人物传记清单
 5. 不要列事略/典制/论著候选（后续分步）
 
-## 规范摘要
-{rules.get('总则', '')[:2500]}
+## 规范（全文 · 朝代知识补全总则.md）
+{rules.get('总则', '')}
 """
 
 
@@ -202,8 +275,8 @@ def candidates_prompt(
 ## 已列其他类型
 {other_note or '无'}
 
-## 规范
-{rules.get(category, '')[:7000]}
+## 规范（全文）
+{rules.get(category, '')}
 
 ## 输出
 JSON 数组，每项含：名称、建议年份、建议挂靠帝王、主要史料出处、边界备注、审核状态(pending)。
@@ -248,8 +321,8 @@ def candidates_renwu_prompt(
             names = [str(x.get("名称", "")) for x in items[:30]]
             other_note += f"\n- 已补「{cat}」：{', '.join(names)}"
 
-    person_rules_excerpt = rules.get("人物标注", "")[:12000]
-    renwu_rules = rules.get("人物", "")[:5000]
+    person_rules_excerpt = rules.get("人物标注", "")
+    renwu_rules = rules.get("人物", "")
 
     return f"""你是中国史学者。为本朝代**补全缺失的重要人物**候选（非卷级重抽）。
 
@@ -625,8 +698,8 @@ def fill_entry_prompt(
 ## 候选
 {json.dumps(candidate, ensure_ascii=False, indent=2)}
 
-## 格式规范摘要
-{rules.get('格式', '')[:5000]}
+## 格式规范（全文）
+{rules.get('格式', '')}
 
 只输出 JSON 对象，字段用中文键名。
 """
@@ -658,12 +731,12 @@ def fill_renwu_entry_prompt(
 ## 候选
 {json.dumps(candidate, ensure_ascii=False, indent=2)}
 
-## 人物年份规则
-{rules.get('人物年份', '')[:4000]}
+## 人物年份规则（全文）
+{rules.get('人物年份', '')}
 {year_note}
 
-## 格式规范摘要
-{rules.get('格式', '')[:3000]}
+## 格式规范（全文）
+{rules.get('格式', '')}
 
 只输出 JSON 对象，字段用中文键名。
 """
@@ -678,26 +751,135 @@ def pinyin_rules_excerpt(rules: dict[str, str]) -> str:
     return m.group(0).strip() if m else text[:2500]
 
 
+def _find_sibling_entries(
+    paths: dict[str, Path],
+    entry: dict[str, Any],
+) -> list[dict[str, str]]:
+    """同朝代姊妹条（典制↔事略等），供 compose 互斥提示。"""
+    name = str(entry.get("史略名称") or "")
+    cat = dkl.normalize_category(str(entry.get("史略分类") or ""))
+    pairs: list[tuple[str, str]] = []
+    if cat == "典制" and name.endswith("制"):
+        pairs.append((name[:-1], "事略"))
+    if cat == "事略" and "禅让" in name:
+        pairs.append(("禅让制", "典制"))
+    found: list[dict[str, str]] = []
+    for path_key in ("entries", "entries_renwu"):
+        p = paths.get(path_key)
+        if not p or not p.is_file():
+            continue
+        doc = json.loads(p.read_text(encoding="utf-8"))
+        for e in doc.get("entries") or []:
+            ename = str(e.get("史略名称") or "")
+            ecat = dkl.normalize_category(str(e.get("史略分类") or ""))
+            for needle, expect_cat in pairs:
+                if needle in ename and ecat == expect_cat:
+                    found.append(
+                        {
+                            "史略ID": str(e.get("史略ID") or ""),
+                            "史略名称": ename,
+                            "史略分类": ecat,
+                        }
+                    )
+    return found
+
+
+def _compose_category_discipline(
+    entry: dict[str, Any],
+    siblings: list[dict[str, str]],
+) -> str:
+    cat = dkl.normalize_category(str(entry.get("史略分类") or ""))
+    name = str(entry.get("史略名称") or "")
+    lines = [f"## 分类主轴（{cat} · 硬约束）"]
+    if cat == "典制":
+        lines += [
+            f"- 主语是**制度/程序/规则**（「{name}」），不是某一桩故事",
+            "- 起承转：写制度痛点、运作机制、合法性来源、争议与制度史意义",
+            "- 尧舜/黄帝等**仅可 1 句例证**，禁止按时间线展开事件",
+        ]
+    elif cat == "事略":
+        lines += [
+            f"- 主语是**事件过程与结果**（「{name}」）",
+            "- 可关联同主题典制，但不展开制度通论",
+        ]
+    elif cat in dkl.PERSON_INDEX_CATEGORIES:
+        lines += [
+            f"- 主语是**人物**（「{name}」）",
+            "- 有出处记载为主；相传/传说仅合段补充，不可当家",
+        ]
+    if siblings:
+        lines.append("- **姊妹条互斥**（勿复述其详情）：")
+        for s in siblings:
+            lines.append(f"  · {s.get('史略ID')} {s.get('史略名称')}（{s.get('史略分类')}）")
+    lines += [
+        "",
+        "## 传说层纪律",
+        "- 传说/相传/据说**可以写**（不必每句《》），但须克制",
+        "- 起承转以 primary 池 + hard_facts 为主；传说 ≤5 触发词，连续传说段 ≤1",
+    ]
+    return "\n".join(lines)
+
+
 def compose_detail_prompt(
     entry: dict[str, Any],
     rules: dict[str, str],
     *,
     anchor: dict[str, Any] | None = None,
+    bibliography_plan: dict[str, Any] | None = None,
+    wiki_digest: dict[str, Any] | None = None,
     revise_issues: list[str] | None = None,
+    sibling_entries: list[dict[str, str]] | None = None,
 ) -> str:
     pri = str(entry.get("优先级") or "P1")
     cat = dkl.normalize_category(str(entry.get("史略分类") or ""))
     allow_list = "、".join(sorted(dkl._ALLOW_PINYIN_WORDS))
     is_person = cat in dkl.PERSON_INDEX_CATEGORIES
-    fmt_rules = rules.get("人物详情" if is_person else "详情", "")[:7000]
-    type_label = "人物" if is_person else cat
+    common_rules = rules.get("详情写作共用", "")
+    type_rules = rules.get("人物详情" if is_person else "详情", "")
+    type_label_file = "人物详情撰写规则.md" if is_person else "详情撰写规则.md"
+    fmt_rules = f"""### 共用（详情写作_共用规范.md）
+{common_rules}
+
+### 专属（{type_label_file}）
+{type_rules}"""
+    compose_temp = dkl.detail_compose_temperature(cat)
+    type_label = f"人物·{cat}" if is_person else cat
     density = dkl.resolve_source_density(entry, anchor)
     floor = dkl.detail_effective_floor(cat, pri, entry, anchor)
+    category_block = _compose_category_discipline(entry, sibling_entries or [])
     anchor_block = ""
     if anchor:
-        anchor_block = f"""
-## 锚点（必须覆盖，禁止超出条目范围发挥）
-{json.dumps(anchor, ensure_ascii=False, indent=2)}
+        anchor_block = cc.format_claims_for_compose(anchor)
+    bib_block = ""
+    if bibliography_plan:
+        bib_text = blib.format_plan_for_prompt(bibliography_plan)
+        overall = (bibliography_plan.get("material_summary") or {}).get("overall") or "C"
+        bib_block = f"""
+## 史料书目 Plan（拓展认知路 · 主底池）
+整体材料档 {overall}。二十四史正文见翻译详录；下文为史外书目与已校验摘句。
+
+{bib_text}
+"""
+    wiki_block = ""
+    if wiki_digest:
+        wiki_text = wiki.format_digest_for_prompt(wiki_digest, entry)
+        scope_text = wiki.format_scope_discipline(entry)
+        wiki_block = f"""
+## 写作主轴（条目坐标，不得偏题）
+{scope_text}
+
+## 维基百科底稿（分层：核心→起承转；延伸→合段收束后世；排除→勿用）
+来源：{wiki_digest.get("page_url") or "zh.wikipedia.org"} · 检索词：{wiki_digest.get("query")}
+
+{wiki_text}
+
+维基底稿纪律：
+- 【核心】层：**叙事底池** — 起、承、转的主体；围绕本条目所属朝代；可编排、白话化，**不可在核心层之外新增硬史实**
+- 【延伸】层：合段后世影响、制度史意义（简略、可选）；须用「后世/制度史上」等 framing
+- 【排除】层：年表/导航/现当代专题/其他朝代链 — **勿写入正文**
+- 主轴=史略所属朝代；禁止跨时代拼接同名制度（如禅让）的细节
+- **优先级**：锚点 hard_facts + 索引「主要史料出处」＞ 维基【核心】；冲突以锚点为准
+- 底稿与锚点均未载处：用叙事性留白（共用规范 §0.3）
 """
     revise_block = ""
     if revise_issues:
@@ -706,28 +888,62 @@ def compose_detail_prompt(
 {chr(10).join(f"- {x}" for x in revise_issues)}
 """
     mode = "修订重写成稿" if revise_issues else "首次成稿"
-    return f"""为以下史略撰写详情（{mode}）。只输出 JSON：{{"史略ID":"...","翻译详情":"..."}}
+    density_note = ""
+    if bibliography_plan:
+        overall = (bibliography_plan.get("material_summary") or {}).get("overall") or "C"
+        density_note = (
+            f"\n- **书目 plan 材料档 {overall}**：锚点 hard_facts 必覆盖；"
+            f"A 档可展开 verified 摘句，B 档仅书目级异说，C 档留白；"
+            f"**禁止** B/C 档写过程细节；字数不足用异说并陈/后世诠释/留白，"
+            f"**禁止**编造细节凑 {floor} 字"
+        )
+    elif density in ("S0", "S1"):
+        density_note = (
+            f"\n- **史料丰度 {density}**：以维基底稿【核心】+ 锚点为主；"
+            f"字数不足时用异说并陈、后世诠释、制度史意义、叙事性留白充实，"
+            f"**禁止**编造细节、元叙述或合规口号凑 {floor} 字"
+        )
+    fact_source = (
+        "书目 plan A/B 档 + 锚点 hard_facts"
+        if bibliography_plan
+        else "维基底稿【核心】+ 锚点 hard_facts"
+    )
+    return f"""为以下史略撰写详情（{mode}）。**只输出一个 JSON 对象**，格式：{{"史略ID":"...","翻译详情":"..."}}，不要 markdown 围栏外任何文字。
+
+## 输出格式（硬性格式，违反则解析失败）
+- **仅**输出上述 JSON；`翻译详情` 值为整篇正文（含换行时用 \\n，或写成单行）
+- **段与段之间必须用 \\n\\n 空行分隔**（单 \\n 不算分段，会导致 paragraph_count 校验失败）
+- JSON 字符串内**禁止** ASCII 双引号 `"`（会破坏解析）；史料原文用「」、术语强调亦用「」或不用引号
+- 禁止在 JSON 外写「好的/如下/说明」等前缀后缀
 
 ## 条目
 {json.dumps(entry, ensure_ascii=False, indent=2)}
-{anchor_block}{revise_block}
+
+{category_block}
+{anchor_block}{bib_block}{wiki_block}{revise_block}
 ## 撰写规范
 {fmt_rules}
 
 ## 硬性要求
-- 分类 {cat}（{type_label}），优先级 {pri}，史料丰度 {density}
+- **交付物**：`翻译详情` = 小程序读者正文；完整、流畅、可读；《明朝那些事儿》口语叙事（见共用规范 §0）；**禁止**编辑备注、质检说明、元叙述入正文
+- 分类 {cat}（{type_label}），优先级 {pri}，史料丰度 {density}，**撰写温度 {compose_temp}**
 - 正文（不含开篇引入、不含参考著作）字数不得低于 **{floor}** 字
+- **事实底稿**：{fact_source} 为叙事主体；不得在未授权材料处新增硬史实
 - 起承转合齐全；开篇引入 100-200 字（独立一段）
 - 段落数：P0≥7段、P1≥5段（均含开篇引入）
-- 文末 *参考著作：* 与主要史料出处一致
-- 过程禁编：原文未载细节不可编造；异说须标注
-- 禁止【】、禁止 AI 腔、禁止禁词（此外/与此同时/则是/必然 等）
+- 文末 *参考著作：* 须包含：**索引「主要史料出处」** + **正文实际引用的全部《书名》**（compose 落盘时会自动合并；**禁止**手写与正文卷篇矛盾的参考书目）
+- **引用 ↔ 参考著作双端一致**：正文出现《书名·卷篇》时，文末须**同名同卷**；改正文典籍名须同步改参考著作（fix-detail 亦同；fix 后会按正文重合并参考书目）
+- **史料原文 + 译述**（对齐一期翻译详录）：经典句、金句、异说原文须 `《书名》…「原文」——白话译述`；**禁止**仅有出处而无「」原文；**禁止**用弯引号""标史料原文（术语/比喻可用弯引号）
+- 书目 plan **A 档 verified 摘句**须完整写入「」并展开译述
+- 底稿无载处：用叙事性留白（§0.3），全文 ≤2 处；禁止「正文不宜…」式合规口号
+- 传说/相传/据说可写但须克制（§9；verify legend_dominance）；其余模糊词仍须同句《》或删除
+- 禁止【】、小标题、列表符号；**AI 腔词**（此外/综上所述/堪称 等，见共用规范 §3.5）全文合计与单词均 **< 5 次**（≥5 次 verify fail）
 - 禁止编造人物心理活动（除非正史明确记载）
 - **注音纪律（二期 · 默认全文不注音）**：
   - 本产品面向具备通识文史素养的读者，**不是**识字教辅/小程序
   - **禁止**给常见字、通识人名、通识地名、动物名、器物名注音
   - **仅当**正文出现下列罕用字专名时，可保留该词注音：{allow_list}
-  - 除上述白名单外，全文不得出现任何「汉字（拼音）」标注
+  - 除上述白名单外，全文不得出现任何「汉字（拼音）」标注{density_note}
 """
 
 
@@ -741,8 +957,13 @@ def output_paths(dynasty_name: str) -> dict[str, Path]:
     ENTRIES_DIR.mkdir(parents=True, exist_ok=True)
     DETAILS_DIR.mkdir(parents=True, exist_ok=True)
     ANCHORS_DIR.mkdir(parents=True, exist_ok=True)
+    WIKI_DIR.mkdir(parents=True, exist_ok=True)
+    SOURCE_GRAPH_DIR.mkdir(parents=True, exist_ok=True)
+    bibliography_dir = WORK_DIR / "bibliography"
+    bibliography_dir.mkdir(parents=True, exist_ok=True)
     logs = WORK_DIR / "logs"
     logs.mkdir(parents=True, exist_ok=True)
+    (logs / "coverage").mkdir(parents=True, exist_ok=True)
     (logs / "reviews").mkdir(parents=True, exist_ok=True)
     (logs / "verify").mkdir(parents=True, exist_ok=True)
     (logs / "qa_state").mkdir(parents=True, exist_ok=True)
@@ -754,6 +975,9 @@ def output_paths(dynasty_name: str) -> dict[str, Path]:
         "entries_renwu": ENTRIES_DIR / f"{slug}_人物.json",
         "details_dir": DETAILS_DIR,
         "anchors_dir": ANCHORS_DIR,
+        "wiki_dir": WIKI_DIR,
+        "bibliography_dir": bibliography_dir,
+        "source_graph_dir": SOURCE_GRAPH_DIR,
         "approval": WORK_DIR / f"{slug}_人审批准.json",
         "review_md": WORK_DIR / f"{slug}_人审确认表.md",
         "logs_dir": WORK_DIR / "logs",
@@ -1036,42 +1260,47 @@ def _load_entry_by_id(
     raise SystemExit(f"未找到 {entry_id}")
 
 
+def _anchor_category_discipline(entry: dict[str, Any]) -> str:
+    cat = dkl.normalize_category(str(entry.get("史略分类") or ""))
+    name = str(entry.get("史略名称") or "")
+    if cat != "典制":
+        return ""
+    return f"""
+## 分类主轴（典制 · anchor 须遵守）
+- 主语是**制度/程序/规则**（「{name}」），不是某一桩人物故事
+- hard_facts 须写：制度定义、运作程序、合法性来源、与世袭制的区别
+- core_enumerations 须列**制度要素**（如推举程序、考察环节），勿把尧舜故事步骤当作唯一主轴
+- 尧舜/黄帝等仅作**1 条** hard_fact 例证时可引用，不得占 checklist 大半
+- 姊妹事略「尧舜禅让」已专述故事线；本 anchor **禁止**复写完整禅让叙事 checklist
+"""
+
+
 def anchor_research_prompt(entry: dict[str, Any], rules: dict[str, str]) -> str:
-    cat = str(entry.get("史略分类") or "")
-    is_person = cat in dkl.PERSON_INDEX_CATEGORIES
-    fmt = rules.get("人物详情" if is_person else "详情", "")[:5000]
+    discipline = rules.get("anchor纪律", "")
+    cat_block = _anchor_category_discipline(entry)
     return f"""为以下史略条目研究锚点（撰写蓝图 SSOT）。只输出 JSON，不要 markdown 围栏。
 
 ## 条目
 {json.dumps(entry, ensure_ascii=False, indent=2)}
-
-## 规范摘要
-{fmt[:3000]}
+{cat_block}
+## 规范纪律
+{discipline}
 
 ## 输出 schema
 {{
   "schema": "dynasty-knowledge-anchor/v1",
   "史略ID": "...",
   "史料丰度": "S0|S1|S2|S3",
-  "hard_facts": [
-    {{"text": "可核查史实一句", "keywords": ["关键词1", "关键词2"]}}
+  "coverage_claims": [
+    {{"id": "c01", "claim": "须传达的自然语言主张一句（不要求正文出现特定词语）"}}
   ],
   "legend_facts": [
-    {{"text": "传说/后世附会一句", "keywords": ["..."]}}
+    {{"text": "传说/异说一句", "keywords": ["..."]}}
   ],
-  "core_enumerations": [
-    {{"label": "列举名称", "items": ["项1", "项2"], "min_mentions": 2}}
-  ],
-  "checklist": ["信息点1", "信息点2"],
   "forbidden_inventions": ["原文未载不可编造的过程细节"]
 }}
 
-纪律：
-- hard_facts 仅来自主要史料出处，不得编造
-- legend_facts 单独列出，正文须标注传说
-- core_enumerations **仅限本条目主题**（如「禅让制」不写九官全员；「九官制」才列九官）
-- core_enumerations 最多 3 组，每组 items 不超过 6 项
-- 五帝传说期默认 S0 或 S1
+勿再输出 hard_facts / core_enumerations / checklist（已由 coverage_claims 取代）。
 """
 
 
@@ -1095,11 +1324,13 @@ def run_anchor_research(
     rules = load_rules_text()
     prompt = anchor_research_prompt(entry, rules)
     out_path = paths["anchors_dir"] / f"{entry_id}.json"
+    prompt_path = save_llm_prompt(paths["logs_dir"], entry_id, "anchor-research", prompt)
     if dry_run:
-        _log(f"=== anchor-research {entry_id} preview ===")
-        _log(prompt[:2000])
+        _log(f"=== anchor-research {entry_id} dry-run ===")
+        _log(f"  📄 完整 prompt 已写入: {prompt_path}")
         return
     _log(f"🤖 anchor-research {entry_id} …")
+    _log(f"  📄 prompt 快照: {prompt_path}")
     text = dkl.call_llm(
         prompt,
         session_prefix=f"dk-anc-{entry_id}-",
@@ -1114,7 +1345,255 @@ def run_anchor_research(
     dkl.save_anchor(paths["anchors_dir"], entry_id, data)
     if data.get("史料丰度") in dkl.SOURCE_DENSITY_LEVELS:
         entry["史料丰度"] = data["史料丰度"]
-    _log(f"  ✅ 锚点 {out_path.name}（hard={len(data.get('hard_facts') or [])}）")
+    _log(f"  ✅ 锚点 {out_path.name}（claims={len(data.get('coverage_claims') or cc.extract_coverage_claims(data))}）")
+
+
+def bibliography_plan_prompt(
+    entry: dict[str, Any],
+    rules: dict[str, str],
+    *,
+    anchor: dict[str, Any] | None = None,
+) -> str:
+    discipline = rules.get("书目plan", "")
+    anchor_block = ""
+    if anchor:
+        anchor_block = f"""
+## 锚点（plan 不得与之矛盾）
+{json.dumps(anchor, ensure_ascii=False, indent=2)}
+"""
+    return f"""为以下史略条目制定**史料书目 plan**（拓展认知路：史外文献发现，非二十四史摘句）。只输出 JSON，不要 markdown 围栏。
+
+## 条目
+{json.dumps(entry, ensure_ascii=False, indent=2)}
+{anchor_block}
+## 规范纪律
+{discipline}
+
+## 输出 schema
+{{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "...",
+  "写作结构": "建议 compose 如何分配：正史见翻译 / 史外异说 / 留白",
+  "候选著作": [
+    {{
+      "出处": "《书名·卷篇》",
+      "tier": "先秦文献|辑佚/出土|经注/杂史|正史-见翻译|后世综述",
+      "pool": "primary|legend",
+      "与本主题关系": "一句话说明该文献与本条目的关系",
+      "检索词": "供 ctext 检索的 2-6 字词",
+      "采用": true,
+      "原文摘句": "若已知可写 15-80 字摘句；未知可留空",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }}
+  ]
+}}
+
+纪律提醒：
+- **primary 池**：有明确记载/篇卷，fetch 优先，供起承转主叙事
+- **legend 池**：后世综述/口传附会，**最多 1 条** 采用:true，仅合段补充
+- 索引「主要史料出处」若为二十四史：tier=正史-见翻译，pool=primary，采用=false
+"""
+
+
+def run_bibliography_plan(
+    paths: dict[str, Path],
+    entry_id: str,
+    *,
+    dry_run: bool,
+    force: bool = False,
+) -> None:
+    if not entry_id:
+        raise SystemExit("bibliography-plan 必须 --entry-id")
+    entry, _ = _load_entry_by_id(paths, entry_id)
+    bib_dir = paths["bibliography_dir"]
+    out_path = blib.plan_path(bib_dir, entry_id)
+    if out_path.is_file() and not force and not dry_run:
+        _log(f"  📋 书目 plan 已存在 {out_path.name}（--force-bibliography 可重跑）")
+        return
+    anchor = dkl.load_anchor(paths["anchors_dir"], entry_id)
+    if not anchor and not dry_run:
+        _log(f"📌 无锚点，先 anchor-research {entry_id} …")
+        run_anchor_research(paths, entry_id, dry_run=False)
+        anchor = dkl.load_anchor(paths["anchors_dir"], entry_id)
+    rules = load_rules_text()
+    prompt = bibliography_plan_prompt(entry, rules, anchor=anchor)
+    prompt_path = save_llm_prompt(paths["logs_dir"], entry_id, "bibliography-plan", prompt)
+    if dry_run:
+        _log(f"=== bibliography-plan {entry_id} dry-run ===")
+        _log(f"  📄 完整 prompt 已写入: {prompt_path}")
+        return
+    _log(f"🤖 bibliography-plan {entry_id} …")
+    _log(f"  📄 prompt 快照: {prompt_path}")
+    text = dkl.call_llm(
+        prompt,
+        session_prefix=f"dk-bib-{entry_id}-",
+        timeout_sec=600,
+        temperature=0,
+    )
+    data = dkl.extract_json_object(text)
+    if not data:
+        raise RuntimeError(f"{entry_id} 书目 plan 解析失败")
+    data["史略ID"] = entry_id
+    data.setdefault("schema", blib.SCHEMA)
+    data = blib.normalize_plan_pools(data)
+    data = blib.fetch_all_snippets(data, dry_run=True)
+    for src in data.get("候选著作") or []:
+        if isinstance(src, dict):
+            src.setdefault("snippet_verified", False)
+            src.setdefault("material_tier", "B" if src.get("采用") else "C")
+    blib.save_plan(bib_dir, entry_id, data)
+    adopted = sum(1 for s in (data.get("候选著作") or []) if isinstance(s, dict) and s.get("采用"))
+    _log(f"  ✅ 书目 plan {out_path.name}（候选 {len(data.get('候选著作') or [])}，采用 {adopted}）")
+
+
+def run_fetch_snippets(
+    paths: dict[str, Path],
+    entry_id: str,
+    *,
+    dry_run: bool,
+) -> None:
+    if not entry_id:
+        raise SystemExit("fetch-snippets 必须 --entry-id")
+    bib_dir = paths["bibliography_dir"]
+    plan = blib.load_plan(bib_dir, entry_id)
+    if not plan:
+        raise SystemExit(f"未找到书目 plan：{entry_id}，请先 bibliography-plan")
+    if dry_run:
+        adopted = [s for s in (plan.get("候选著作") or []) if isinstance(s, dict) and s.get("采用")]
+        _log(f"=== fetch-snippets {entry_id} dry-run ===")
+        _log(f"  将采用条目 {len(adopted)} 条尝试 ctext")
+        for s in adopted[:5]:
+            _log(f"    · {s.get('出处')} 检索词={s.get('检索词')}")
+        return
+    _log(f"📥 fetch-snippets {entry_id} …")
+    updated = blib.fetch_all_snippets(plan, dry_run=False)
+    updated = blib.normalize_plan_pools(updated)
+    blib.save_plan(bib_dir, entry_id, updated)
+    summary = updated.get("material_summary") or {}
+    _log(
+        f"  ✅ A={summary.get('A_verified', 0)} "
+        f"B={summary.get('B_bibliography_only', 0)} "
+        f"overall={summary.get('overall', '?')}"
+    )
+
+
+def run_verify_bibliography(
+    paths: dict[str, Path],
+    entry_id: str,
+    *,
+    strict: bool = True,
+    persist_graph: bool = True,
+) -> int:
+    if not entry_id:
+        raise SystemExit("verify-bibliography 必须 --entry-id")
+    bib_dir = paths["bibliography_dir"]
+    plan = blib.load_plan(bib_dir, entry_id)
+    if not plan:
+        raise SystemExit(f"未找到书目 plan：{entry_id}")
+    anchor = dkl.load_anchor(paths["anchors_dir"], entry_id)
+    report = blib.verify_plan(plan, entry_id=entry_id, anchor=anchor)
+    out = paths["logs_dir"] / "verify" / f"{entry_id}_bibliography_verify.json"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(report.to_dict(), ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    for issue in report.issues:
+        icon = "❌" if issue.severity == "error" else "⚠️"
+        _log(f"  {icon} {issue.code}: {issue.message}")
+    if report.passed:
+        _log(f"✅ verify-bibliography {entry_id} 通过 → {out.name}")
+        if persist_graph:
+            graph = blib.build_source_graph(plan)
+            gpath = blib.save_source_graph(paths["source_graph_dir"], entry_id, graph)
+            _log(f"  📎 史料图谱 {gpath.name}")
+        return 0
+    _log(f"❌ verify-bibliography {entry_id} 未通过 → {out.name}")
+    return 1 if strict else 0
+
+
+def _ensure_bibliography_plan(
+    paths: dict[str, Path],
+    entry_id: str,
+    entry: dict[str, Any],
+    *,
+    dry_run: bool,
+    skip: bool = False,
+    force: bool = False,
+) -> dict[str, Any] | None:
+    if skip:
+        return None
+    bib_dir = paths["bibliography_dir"]
+    plan = blib.load_plan(bib_dir, entry_id)
+    if plan and not force:
+        if not plan.get("material_summary"):
+            if dry_run:
+                _log(f"  [dry-run] plan 缺 material_summary，将 fetch-snippets")
+            else:
+                run_fetch_snippets(paths, entry_id, dry_run=False)
+            plan = blib.load_plan(bib_dir, entry_id)
+        return plan
+    if dry_run:
+        _log(f"  [dry-run] 将运行 bibliography-plan + fetch-snippets")
+        return plan
+    run_bibliography_plan(paths, entry_id, dry_run=False, force=force)
+    run_fetch_snippets(paths, entry_id, dry_run=False)
+    return blib.load_plan(bib_dir, entry_id)
+
+
+def _ensure_wiki_digest(
+    paths: dict[str, Path],
+    entry_id: str,
+    entry: dict[str, Any],
+    *,
+    force: bool = False,
+    dry_run: bool = False,
+) -> dict[str, Any] | None:
+    """拉取或读取维基摘录；dry_run 时不请求网络。"""
+    wiki_dir = paths["wiki_dir"]
+    entry_name = str(entry.get("史略名称") or "").strip()
+    if not force:
+        cached = wiki.load_wiki_digest(wiki_dir, entry_id)
+        if cached and cached.get("full_extract"):
+            cached = wiki.apply_scope_to_digest(cached, entry)
+            _log(f"  📚 维基摘录已缓存 {entry_id} → {cached.get('resolved_title')}")
+            return cached
+    if dry_run:
+        _log(f"  [dry-run] 将检索维基：{entry_name}")
+        return None
+    _log(f"📚 wiki-fetch {entry_id} 「{entry_name}」…")
+    digest = wiki.fetch_for_entry(
+        entry_id,
+        entry_name,
+        force=True,
+        wiki_dir=wiki_dir,
+        entry=entry,
+    )
+    _log(
+        f"  ✅ 维基 {digest.get('resolved_title')} "
+        f"(核心 {len((digest.get('scoped') or {}).get('core_sections') or [])} 节)"
+    )
+    return digest
+
+
+def run_wiki_fetch(
+    paths: dict[str, Path],
+    entry_id: str,
+    *,
+    dry_run: bool,
+    force: bool = False,
+    entries_path: Path | None = None,
+) -> None:
+    if not entry_id:
+        raise SystemExit("wiki-fetch 必须 --entry-id")
+    entry, _ = _load_entry_by_id(paths, entry_id, entries_path=entries_path)
+    name = str(entry.get("史略名称") or "").strip()
+    if dry_run:
+        _log(f"=== wiki-fetch {entry_id} preview ===")
+        _log(f"  检索词: {name}")
+        _log(wiki.format_scope_discipline(entry))
+        candidates = wiki.search_titles(name) if name else []
+        _log(f"  opensearch 候选: {candidates[:5]}")
+        return
+    _ensure_wiki_digest(paths, entry_id, entry, force=force, dry_run=False)
 
 
 def run_verify_detail(
@@ -1128,7 +1607,10 @@ def run_verify_detail(
     entry, _ = _load_entry_by_id(paths, entry_id)
     detail, _ = _load_detail_file(paths, entry_id)
     anchor = dkl.load_anchor(paths["anchors_dir"], entry_id)
-    report = dv.verify_detail(entry, detail, anchor=anchor)
+    bib_plan = blib.load_plan(paths["bibliography_dir"], entry_id)
+    report = dv.verify_detail(
+        entry, detail, anchor=anchor, bibliography_plan=bib_plan
+    )
     out = dkl.save_verify_artifact(paths["logs_dir"], entry_id, report.to_dict())
     for line in dv.format_verify_issues(report):
         _log(f"  {'⚠️' if 'warn' in line else '❌' if not report.passed else '·'} {line}")
@@ -1139,31 +1621,293 @@ def run_verify_detail(
     return 1 if strict else 0
 
 
+def run_coverage_check(
+    paths: dict[str, Path],
+    entry_id: str,
+    *,
+    dry_run: bool,
+    strict: bool = False,
+) -> int:
+    if not entry_id:
+        raise SystemExit("coverage-check 必须 --entry-id")
+    entry, _ = _load_entry_by_id(paths, entry_id)
+    detail, _ = _load_detail_file(paths, entry_id)
+    anchor = dkl.load_anchor(paths["anchors_dir"], entry_id)
+    prompt = cc.build_coverage_check_prompt(
+        entry, str(detail.get("翻译详情") or ""), anchor
+    )
+    prompt_path = save_llm_prompt(paths["logs_dir"], entry_id, "coverage-check", prompt)
+    if dry_run:
+        _log(f"  📄 完整 prompt: {prompt_path}")
+        return 0
+    _log(f"🎯 coverage-check {entry_id} …")
+    try:
+        report = cc.run_coverage_check_llm(entry, detail, anchor=anchor, prompt=prompt)
+    except RuntimeError as exc:
+        state = dkl.load_qa_state(paths["logs_dir"], entry_id)
+        state["coverage_status"] = "error"
+        dkl.save_qa_state(paths["logs_dir"], state)
+        _log(f"  ⚠️ coverage-check {entry_id} 解析失败（不阻断后续 qa）: {exc}")
+        return 0
+    out = cc.save_coverage_artifact(paths["logs_dir"], entry_id, report)
+    state = dkl.load_qa_state(paths["logs_dir"], entry_id)
+    if report.passed:
+        state["coverage_status"] = "pass"
+        _log(f"✅ coverage-check {entry_id} 通过 → {out.name}")
+    else:
+        state["coverage_status"] = "fail"
+        state["status"] = "needs_human"
+        for issue in report.issues[:5]:
+            _log(f"  ❌ coverage: {issue}")
+        _log(f"⚠️ coverage-check {entry_id} 未通过 → {out.name}")
+    dkl.save_qa_state(paths["logs_dir"], state)
+    return 1 if (strict and not report.passed) else 0
+
+
+def run_review_warns_summary(
+    paths: dict[str, Path],
+    context: dict[str, Any],
+) -> int:
+    entries: list[dict[str, Any]] = []
+    for key in ("entries", "entries_renwu"):
+        p = paths.get(key)
+        if p and p.is_file():
+            doc = json.loads(p.read_text(encoding="utf-8"))
+            entries.extend(doc.get("entries") or [])
+    json_path, md_path = rws.write_review_warns_summary(
+        paths["logs_dir"],
+        entries=entries,
+        dynasty_name=str(context.get("朝代名称") or "朝代"),
+        details_dir=paths.get("details_dir"),
+    )
+    doc = json.loads(json_path.read_text(encoding="utf-8"))
+    _log(f"📋 Kimi 人工关注汇总 {doc['entry_count']} 条 → {md_path.name} / {json_path.name}")
+    return 0
+
+
+def run_fix_detail(
+    paths: dict[str, Path],
+    entry_id: str,
+    *,
+    dry_run: bool,
+    review: dict[str, Any] | None = None,
+    fix_round: int = 1,
+    dynasty_name: str = "朝代",
+) -> bool:
+    """按 Kimi factual_errors 精准改稿。返回是否已成功应用全部 edits 且典籍同步通过。"""
+    if not entry_id:
+        raise SystemExit("fix-detail 必须 --entry-id")
+    entry, _ = _load_entry_by_id(paths, entry_id)
+    detail, detail_path = _load_detail_file(paths, entry_id)
+    if review is None:
+        review = dkl.load_review_artifact(paths["logs_dir"], entry_id)
+    if not review:
+        raise SystemExit(f"未找到审校产物，请先 review-detail {entry_id}")
+
+    errors = [
+        e
+        for e in (review.get("factual_errors") or [])
+        if isinstance(e, dict) and (e.get("quote") or e.get("reason"))
+    ]
+    if not review.get("has_factual_errors") or not errors:
+        _log(f"✅ fix-detail {entry_id} 无 Kimi 硬错误，跳过")
+        return True
+
+    raw = str(detail.get("翻译详情") or "")
+    prompt = dfix.build_factual_fix_prompt(
+        entry, raw, errors, fix_round=fix_round
+    )
+    label = f"fix-detail-r{fix_round}"
+    prompt_path = save_llm_prompt(paths["logs_dir"], entry_id, label, prompt)
+    if dry_run:
+        _log(f"  📄 完整 prompt: {prompt_path}（{len(prompt):,} 字符）")
+        return False
+
+    _log(f"✏️ fix-detail {entry_id} 第 {fix_round} 轮（{len(errors)} 处）…")
+    _log(f"  📄 prompt 快照: {prompt_path}")
+    text = dkl.call_llm(
+        prompt,
+        session_prefix=f"dk-fix-{entry_id}-r{fix_round}-",
+        timeout_sec=600,
+        temperature=0,
+    )
+    edits = dfix.parse_fix_response(text)
+    fix_result = dfix.apply_factual_edits_to_full_text(raw, edits, fix_round=fix_round)
+    refs_ok, sync_issues = dfix.validate_citation_sync(
+        fix_result.text_after, errors, edits
+    )
+    fix_result.refs_sync_ok = refs_ok
+    fix_result.issues.extend(sync_issues)
+    if sync_issues:
+        fix_result.all_applied = False
+
+    fix_log = paths["logs_dir"] / "fixes" / f"{entry_id}_fix_r{fix_round}.json"
+    fix_log.parent.mkdir(parents=True, exist_ok=True)
+    fix_log.write_text(
+        json.dumps(fix_result.to_dict(), ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+
+    applied_n = sum(1 for e in fix_result.edits if e.applied)
+    _log(f"  📝 应用 {applied_n}/{len(fix_result.edits)} 处替换 → {fix_log.name}")
+    for issue in fix_result.issues:
+        _log(f"  ⚠️ {issue}")
+
+    anchor = dkl.load_anchor(paths["anchors_dir"], entry_id)
+    bib_plan = blib.load_plan(paths["bibliography_dir"], entry_id)
+    new_body = attach_reference_section(
+        fix_result.text_after,
+        entry,
+        bib_plan,
+    )
+    save_json(detail_path, {"史略ID": entry_id, "翻译详情": new_body})
+    state = dkl.load_qa_state(paths["logs_dir"], entry_id)
+    state["patch_attempts"] = int(state.get("patch_attempts") or 0) + 1
+    state["last_fix_at"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    state["last_fix_round"] = fix_round
+    dkl.save_qa_state(paths["logs_dir"], state)
+    _log(f"  ✅ 已写回 {detail_path.name}")
+
+    report = dv.verify_detail(
+        entry,
+        json.loads(detail_path.read_text(encoding="utf-8")),
+        anchor=anchor,
+        bibliography_plan=bib_plan,
+    )
+    dkl.save_verify_artifact(paths["logs_dir"], entry_id, report.to_dict())
+    if report.passed:
+        _log(f"  ✅ fix 后 verify 通过")
+    else:
+        for i in report.issues[:3]:
+            if i.severity == "error":
+                _log(f"  ❌ verify/{i.code}: {i.message}")
+
+    return fix_result.all_applied and refs_ok
+
+
+def _save_kimi_review(
+    paths: dict[str, Path],
+    entry_id: str,
+    review: dict[str, Any],
+    *,
+    review_round: int,
+    forced_pass: bool = False,
+) -> Path:
+    review["schema"] = dr.REVIEW_SCHEMA_V2
+    review["史略ID"] = entry_id
+    review["reviewed_at"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    review["pipeline_blocking"] = False
+    review["review_fix_round"] = review_round
+    review["forced_pass"] = forced_pass
+    if forced_pass:
+        review["has_factual_errors"] = bool(review.get("has_factual_errors"))
+        review["overall_verdict"] = "forced_pass"
+        review["human_review_required"] = True
+    else:
+        review["human_review_required"] = bool(review.get("has_factual_errors"))
+    return dkl.save_review_artifact(paths["logs_dir"], entry_id, review)
+
+
+def run_review_fix_loop(
+    paths: dict[str, Path],
+    entry_id: str,
+    *,
+    dry_run: bool,
+    dynasty_name: str = "朝代",
+    auto_fix_on_review: bool = True,
+) -> int:
+    """Kimi 核查 ↔ 精准改稿，最多 MAX_REVIEW_FIX_ROUNDS 轮；末轮仍有问题则 forced_pass。"""
+    entry, _ = _load_entry_by_id(paths, entry_id)
+    state = dkl.load_qa_state(paths["logs_dir"], entry_id)
+
+    for review_round in range(1, dkl.MAX_REVIEW_FIX_ROUNDS + 1):
+        detail, _ = _load_detail_file(paths, entry_id)
+        prompt = dr.build_review_prompt(entry, str(detail.get("翻译详情", "")))
+        prompt_path = save_llm_prompt(
+            paths["logs_dir"], entry_id, f"review-detail-r{review_round}", prompt
+        )
+        if dry_run:
+            _log(f"  📄 Kimi 第 {review_round} 轮 prompt: {prompt_path}")
+            return 0
+
+        _log(
+            f"🔍 review-detail {entry_id}（Kimi · 第 {review_round}/"
+            f"{dkl.MAX_REVIEW_FIX_ROUNDS} 轮）…"
+        )
+        review = dr.run_detail_review(entry, detail, prompt=prompt, timeout_sec=600)
+        n_err = len(review.get("factual_errors") or [])
+
+        if not review.get("has_factual_errors"):
+            _save_kimi_review(
+                paths, entry_id, review, review_round=review_round
+            )
+            _log(f"  ✅ 第 {review_round} 轮：未发现硬史实错误")
+            state["review_fix_round"] = review_round
+            state["review_fix_forced_pass"] = False
+            dkl.save_qa_state(paths["logs_dir"], state)
+            break
+
+        out = _save_kimi_review(paths, entry_id, review, review_round=review_round)
+        _log(
+            f"  🟡 第 {review_round} 轮：{n_err} 处硬史实问题 → {out.name}"
+        )
+
+        if review_round >= dkl.MAX_REVIEW_FIX_ROUNDS:
+            _save_kimi_review(
+                paths,
+                entry_id,
+                review,
+                review_round=review_round,
+                forced_pass=True,
+            )
+            _log(
+                f"  ⏭️ 已达 {dkl.MAX_REVIEW_FIX_ROUNDS} 轮 Kimi 核查上限，"
+                f"forced_pass（不再自动改稿，见 review_warns_汇总）"
+            )
+            state["review_fix_round"] = review_round
+            state["review_fix_forced_pass"] = True
+            dkl.save_qa_state(paths["logs_dir"], state)
+            break
+
+        if not auto_fix_on_review:
+            state["review_fix_round"] = review_round
+            dkl.save_qa_state(paths["logs_dir"], state)
+            break
+
+        ok = run_fix_detail(
+            paths,
+            entry_id,
+            dry_run=False,
+            review=review,
+            fix_round=review_round,
+            dynasty_name=dynasty_name,
+        )
+        state["review_fix_round"] = review_round
+        dkl.save_qa_state(paths["logs_dir"], state)
+        if not ok:
+            _log(f"  ⚠️ 第 {review_round} 轮改稿未完全落地，进入下一轮 Kimi 核查")
+
+    run_review_warns_summary(paths, {"朝代名称": dynasty_name})
+    return 0
+
+
 def run_review_detail(
     paths: dict[str, Path],
     entry_id: str,
     *,
     dry_run: bool,
+    dynasty_name: str = "朝代",
+    auto_fix_on_review: bool = True,
 ) -> int:
     if not entry_id:
         raise SystemExit("review-detail 必须 --entry-id")
-    entry, _ = _load_entry_by_id(paths, entry_id)
-    detail, _ = _load_detail_file(paths, entry_id)
-    anchor = dkl.load_anchor(paths["anchors_dir"], entry_id)
-    if dry_run:
-        _log(dr.build_review_prompt(entry, str(detail.get("翻译详情", "")), anchor=anchor)[:2000])
-        return 0
-    _log(f"🔍 review-detail {entry_id}（Kimi）…")
-    review = dr.run_detail_review(entry, detail, anchor=anchor, timeout_sec=900)
-    review["schema"] = "dynasty-knowledge-review/v1"
-    review["史略ID"] = entry_id
-    review["reviewed_at"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-    out = dkl.save_review_artifact(paths["logs_dir"], entry_id, review)
-    verdict = str(review.get("overall_verdict") or "unknown")
-    _log(f"  ✅ 审校 {verdict} → {out.name}")
-    if verdict == "fail":
-        return 1
-    return 0
+    return run_review_fix_loop(
+        paths,
+        entry_id,
+        dry_run=dry_run,
+        dynasty_name=dynasty_name,
+        auto_fix_on_review=auto_fix_on_review,
+    )
 
 
 def patch_detail_prompt(
@@ -1269,8 +2013,11 @@ def run_qa_detail(
     *,
     dry_run: bool,
     skip_review: bool = False,
+    skip_coverage: bool = False,
+    dynasty_name: str = "朝代",
+    auto_fix_on_review: bool = True,
 ) -> int:
-    """质检链：verify（必）→ review（可选，不自动 patch，防死循环）。"""
+    """质检链：verify → coverage-check → review（Kimi 不阻断）。"""
     if not entry_id:
         raise SystemExit("qa-detail 必须 --entry-id")
     state = dkl.load_qa_state(paths["logs_dir"], entry_id)
@@ -1279,21 +2026,27 @@ def run_qa_detail(
         state["status"] = "needs_human"
         dkl.save_qa_state(paths["logs_dir"], state)
         return code
+    if not skip_coverage:
+        run_coverage_check(paths, entry_id, dry_run=dry_run, strict=False)
     if skip_review:
         state["status"] = "verify_pass"
         dkl.save_qa_state(paths["logs_dir"], state)
         return 0
     if dry_run:
-        return run_review_detail(paths, entry_id, dry_run=True)
-    code = run_review_detail(paths, entry_id, dry_run=False)
-    if code != 0:
-        state["status"] = "review_fail"
-        dkl.save_qa_state(paths["logs_dir"], state)
-        _log(
-            f"⚠️ review fail：不自动 patch（易劣化）。"
-            f"请运行 compose-detail --entry-id {entry_id} 整篇重写，或人工处理。"
+        return run_review_fix_loop(
+            paths,
+            entry_id,
+            dry_run=True,
+            dynasty_name=dynasty_name,
+            auto_fix_on_review=auto_fix_on_review,
         )
-        return code
+    run_review_fix_loop(
+        paths,
+        entry_id,
+        dry_run=False,
+        dynasty_name=dynasty_name,
+        auto_fix_on_review=auto_fix_on_review,
+    )
     state["status"] = "qa_pass"
     dkl.save_qa_state(paths["logs_dir"], state)
     return 0
@@ -1313,28 +2066,62 @@ def _compose_and_save_detail(
     rules: dict[str, str],
     *,
     anchor: dict[str, Any] | None,
+    bibliography_plan: dict[str, Any] | None,
+    wiki_digest: dict[str, Any] | None,
     revise_issues: list[str] | None,
+    sibling_entries: list[dict[str, str]] | None,
     out_path: Path,
 ) -> str:
     cat = dkl.normalize_category(str(entry.get("史略分类") or ""))
     temp = dkl.detail_compose_temperature(cat)
     prompt = compose_detail_prompt(
-        entry, rules, anchor=anchor, revise_issues=revise_issues
+        entry,
+        rules,
+        anchor=anchor,
+        bibliography_plan=bibliography_plan,
+        wiki_digest=wiki_digest,
+        revise_issues=revise_issues,
+        sibling_entries=sibling_entries,
     )
     label = "compose-revise" if revise_issues else "compose-detail"
+    prompt_path = save_llm_prompt(paths["logs_dir"], entry_id, label, prompt)
+    _log(f"  📄 prompt 快照: {prompt_path}")
     _log(f"🤖 {label} {entry_id} {entry.get('史略名称')} (temp={temp}) …")
-    text = dkl.call_llm(
-        prompt,
-        session_prefix=f"dk-det-{entry_id}-",
-        timeout_sec=900,
-        temperature=temp,
-    )
-    data = dkl.extract_json_object(text)
-    if not data or not str(data.get("翻译详情", "")).strip():
-        raise RuntimeError(f"{entry_id} 详情解析失败")
+
+    data: dict[str, Any] | None = None
+    last_raw = ""
+    for attempt in range(1, dkl.MAX_COMPOSE_PARSE_ATTEMPTS + 1):
+        eff_prompt = prompt + _compose_json_retry_suffix(attempt)
+        if attempt > 1:
+            _log(f"  ↻ compose JSON 解析重试 {attempt}/{dkl.MAX_COMPOSE_PARSE_ATTEMPTS} …")
+        text = dkl.call_llm(
+            eff_prompt,
+            session_prefix=f"dk-det-{entry_id}-a{attempt}-",
+            timeout_sec=900,
+            temperature=temp,
+        )
+        last_raw = text
+        data = dkl.parse_compose_detail_response(text)
+        if data:
+            if attempt > 1:
+                _log(f"  ✅ 第 {attempt} 次解析成功")
+            break
+        save_compose_raw(paths["logs_dir"], entry_id, attempt, label, text)
+        _log(f"  ⚠️ compose 第 {attempt} 次输出非合法 JSON → compose_raw/{entry_id}_{label}_r{attempt}.txt")
+
+    if not data:
+        raise RuntimeError(
+            f"{entry_id} 详情解析失败（{dkl.MAX_COMPOSE_PARSE_ATTEMPTS} 次尝试）；"
+            f"见 logs/compose_raw/{entry_id}_{label}_r*.txt"
+        )
     data["史略ID"] = entry_id
-    save_json(out_path, {"史略ID": entry_id, "翻译详情": data["翻译详情"]})
-    return str(data["翻译详情"])
+    detail_text = attach_reference_section(
+        str(data["翻译详情"]),
+        entry,
+        bibliography_plan,
+    )
+    save_json(out_path, {"史略ID": entry_id, "翻译详情": detail_text})
+    return detail_text
 
 
 def run_compose_detail(
@@ -1344,7 +2131,12 @@ def run_compose_detail(
     dry_run: bool,
     entries_path: Path | None = None,
     skip_verify: bool = False,
-    auto_revise: bool = True,
+    skip_coverage: bool = False,
+    skip_wiki: bool = False,
+    skip_bibliography: bool = False,
+    force_wiki: bool = False,
+    force_bibliography: bool = False,
+    auto_revise: bool = False,
 ) -> None:
     if not entry_id:
         raise SystemExit("compose-detail 必须 --entry-id")
@@ -1360,10 +2152,59 @@ def run_compose_detail(
         run_anchor_research(paths, entry_id, dry_run=False)
         anchor = dkl.load_anchor(paths["anchors_dir"], entry_id)
 
+    bibliography_plan = _ensure_bibliography_plan(
+        paths,
+        entry_id,
+        entry,
+        dry_run=dry_run,
+        skip=skip_bibliography,
+        force=force_bibliography,
+    )
+    # 有书目 plan 时默认不拉维基（拓展路主底池切换）
+    effective_skip_wiki = skip_wiki or bool(bibliography_plan)
+
+    wiki_digest: dict[str, Any] | None = None
+    if not effective_skip_wiki:
+        if dry_run:
+            wiki_digest = wiki.load_wiki_digest(paths["wiki_dir"], entry_id)
+            if wiki_digest:
+                wiki_digest = wiki.apply_scope_to_digest(wiki_digest, entry)
+        else:
+            wiki_digest = _ensure_wiki_digest(
+                paths,
+                entry_id,
+                entry,
+                force=force_wiki,
+                dry_run=False,
+            )
+
     state = dkl.load_qa_state(paths["logs_dir"], entry_id)
+    siblings = _find_sibling_entries(paths, entry)
+    prompt = compose_detail_prompt(
+        entry,
+        rules,
+        anchor=anchor,
+        bibliography_plan=bibliography_plan,
+        wiki_digest=wiki_digest,
+        sibling_entries=siblings,
+    )
+    prompt_path = save_llm_prompt(paths["logs_dir"], entry_id, "compose-detail", prompt)
     if dry_run:
-        _log(f"=== compose-detail {entry_id} preview ===")
-        _log(compose_detail_prompt(entry, rules, anchor=anchor)[:2000])
+        cat = dkl.normalize_category(str(entry.get("史略分类") or ""))
+        type_file = (
+            "人物详情撰写规则.md"
+            if cat in dkl.PERSON_INDEX_CATEGORIES
+            else "详情撰写规则.md"
+        )
+        _log(f"=== compose-detail {entry_id} dry-run ===")
+        _log(f"  📄 完整 prompt 已写入: {prompt_path}")
+        _log(
+            f"  📏 总长 {len(prompt):,} 字符"
+            f"（撰写规范 = 详情写作_共用规范 + {type_file} 全文）"
+        )
+        if bibliography_plan:
+            ms = bibliography_plan.get("material_summary") or {}
+            _log(f"  📋 书目 plan overall={ms.get('overall', '?')}")
         return
 
     if int(state.get("compose_attempts") or 0) >= dkl.MAX_QA_DETAIL_ROUNDS:
@@ -1373,7 +2214,16 @@ def run_compose_detail(
         )
 
     _compose_and_save_detail(
-        paths, entry, entry_id, rules, anchor=anchor, revise_issues=None, out_path=out_path
+        paths,
+        entry,
+        entry_id,
+        rules,
+        anchor=anchor,
+        bibliography_plan=bibliography_plan,
+        wiki_digest=wiki_digest,
+        revise_issues=None,
+        sibling_entries=siblings,
+        out_path=out_path,
     )
     state["compose_attempts"] = int(state.get("compose_attempts") or 0) + 1
     body_len = len(dkl.strip_detail_body(str(json.loads(out_path.read_text())["翻译详情"])))
@@ -1382,55 +2232,74 @@ def run_compose_detail(
     if skip_verify:
         state["status"] = "composed"
         dkl.save_qa_state(paths["logs_dir"], state)
+        if not skip_coverage:
+            run_coverage_check(paths, entry_id, dry_run=False, strict=False)
         return
 
     report = dv.verify_detail(
         entry,
         json.loads(out_path.read_text(encoding="utf-8")),
         anchor=anchor,
+        bibliography_plan=bibliography_plan,
     )
     dkl.save_verify_artifact(paths["logs_dir"], entry_id, report.to_dict())
-    if report.passed:
-        state["status"] = "verify_pass"
-        dkl.save_qa_state(paths["logs_dir"], state)
+    verify_ok = report.passed
+    if verify_ok:
         _log(f"✅ verify-detail {entry_id} 通过")
-        return
+    else:
+        issues = [f"{i.code}: {i.message}" for i in report.issues if i.severity == "error"]
+        for i in report.issues:
+            if i.severity == "warn":
+                _log(f"  ⚠️ verify/{i.code}: {i.message}")
+        if auto_revise and int(state.get("compose_attempts") or 0) < dkl.MAX_QA_DETAIL_ROUNDS:
+            _log(f"↻ compose-revise {entry_id}（1 次上限，整篇重写）…")
+            _compose_and_save_detail(
+                paths,
+                entry,
+                entry_id,
+                rules,
+                anchor=anchor,
+                bibliography_plan=bibliography_plan,
+                wiki_digest=wiki_digest,
+                revise_issues=issues,
+                sibling_entries=siblings,
+                out_path=out_path,
+            )
+            state["compose_attempts"] = int(state.get("compose_attempts") or 0) + 1
+            report2 = dv.verify_detail(
+                entry,
+                json.loads(out_path.read_text(encoding="utf-8")),
+                anchor=anchor,
+                bibliography_plan=bibliography_plan,
+            )
+            dkl.save_verify_artifact(paths["logs_dir"], entry_id, report2.to_dict())
+            verify_ok = report2.passed
+            if verify_ok:
+                _log(f"✅ compose-revise 后 verify 通过")
+            else:
+                issues = [
+                    f"{i.code}: {i.message}"
+                    for i in report2.issues
+                    if i.severity == "error"
+                ]
+        if not verify_ok:
+            _log(
+                f"⚠️ verify-detail {entry_id} 未通过（草稿已落盘 → {out_path.name}）；"
+                f"问题：{'; '.join(issues[:5])}"
+            )
 
-    issues = [f"{i.code}: {i.message}" for i in report.issues if i.severity == "error"]
-    for i in report.issues:
-        if i.severity == "warn":
-            _log(f"  ⚠️ verify/{i.code}: {i.message}")
+    if not skip_coverage:
+        try:
+            run_coverage_check(paths, entry_id, dry_run=False, strict=False)
+        except Exception as exc:
+            _log(f"  ⚠️ compose 收尾 coverage-check 异常（成稿已落盘，继续）: {exc}")
 
-    if auto_revise and int(state.get("compose_attempts") or 0) < dkl.MAX_QA_DETAIL_ROUNDS:
-        _log(f"↻ compose-revise {entry_id}（1 次上限，整篇重写）…")
-        _compose_and_save_detail(
-            paths,
-            entry,
-            entry_id,
-            rules,
-            anchor=anchor,
-            revise_issues=issues,
-            out_path=out_path,
-        )
-        state["compose_attempts"] = int(state.get("compose_attempts") or 0) + 1
-        report2 = dv.verify_detail(
-            entry,
-            json.loads(out_path.read_text(encoding="utf-8")),
-            anchor=anchor,
-        )
-        dkl.save_verify_artifact(paths["logs_dir"], entry_id, report2.to_dict())
-        if report2.passed:
-            state["status"] = "verify_pass"
-            dkl.save_qa_state(paths["logs_dir"], state)
-            _log(f"✅ compose-revise 后 verify 通过")
-            return
-
-    state["status"] = "needs_human"
+    if verify_ok:
+        state["status"] = "verify_pass"
+    else:
+        state["status"] = "needs_human"
     dkl.save_qa_state(paths["logs_dir"], state)
-    raise RuntimeError(
-        f"{entry_id} verify 未通过且已达 revise 上限；已标记 needs_human，"
-        f"详情已落盘请人工处理。问题：{'; '.join(issues[:5])}"
-    )
+    return
 
 
 def parse_dynasty_year(text: Any) -> int | None:
@@ -1595,7 +2464,10 @@ def _gate_detail_qa(
     eid = str(entry.get("史略ID", ""))
     name = str(entry.get("史略名称", ""))
     anchor = dkl.load_anchor(paths["anchors_dir"], eid)
-    report = dv.verify_detail(entry, detail, anchor=anchor)
+    bib_plan = blib.load_plan(paths["bibliography_dir"], eid)
+    report = dv.verify_detail(
+        entry, detail, anchor=anchor, bibliography_plan=bib_plan
+    )
     dkl.save_verify_artifact(paths["logs_dir"], eid, report.to_dict())
     for issue in report.issues:
         if issue.severity == "error":
@@ -1608,9 +2480,16 @@ def _gate_detail_qa(
         issues.append(f"[{eid}] {name} 缺少 review-detail 审校产物")
     elif not review:
         _log(f"  ⚠️ [{eid}] 未跑 review-detail（建议 qa-detail）")
-    elif str(review.get("overall_verdict")) == "fail":
-        issues.append(
-            f"[{eid}] {name} Kimi 审校 fail: {review.get('summary', '')[:80]}"
+    elif review.get("has_factual_errors"):
+        n = len(review.get("factual_errors") or [])
+        _log(
+            f"  🟡 [{eid}] Kimi 硬史实问题 {n} 处："
+            f"{str(review.get('summary') or '')[:80]}（见 review_warns_汇总.md）"
+        )
+    elif str(review.get("overall_verdict")) in ("warn", "fail"):
+        _log(
+            f"  🟡 [{eid}] Kimi {review.get('overall_verdict')}: "
+            f"{str(review.get('summary') or '')[:80]}（见 review_warns_汇总.md）"
         )
     return issues
 
@@ -1710,12 +2589,12 @@ def run_enrich_renwu(paths: dict[str, Path], context: dict[str, Any], *, dry_run
     py = sys.executable
     dynasty_id = str(context["朝代ID"])
     idx = paths["entries_renwu"]
-    for script, label in (
-        ("dynasty_priority.py", "优先级"),
-        ("peak_year.py", "峰值年"),
-        ("person_tag.py", "人物标签"),
+    for script, label, extra in (
+        ("dynasty_priority.py", "优先级", ()),
+        ("peak_year.py", "峰值年", ()),
+        ("person_tag.py", "人物标签", ("--no-empty",)),
     ):
-        cmd = [py, str(ANNOTATE_DIR / script), str(idx), "--llm", "--no-empty", "--dynasty-id", dynasty_id]
+        cmd = [py, str(ANNOTATE_DIR / script), str(idx), "--llm", *extra, "--dynasty-id", dynasty_id]
         _log(f"🤖 {label}: {' '.join(cmd[-4:])}")
         subprocess.run(cmd, check=True, cwd=str(ANNOTATE_DIR.parent))
     # —— person_tag 后验证：补全人物必须有标签 ——
@@ -1832,6 +2711,36 @@ def main() -> int:
         help="compose-detail 落盘后跳过 verify-detail（仅调试）",
     )
     parser.add_argument(
+        "--skip-coverage",
+        action="store_true",
+        help="compose-detail / qa-detail 跳过 coverage-check",
+    )
+    parser.add_argument(
+        "--skip-wiki",
+        action="store_true",
+        help="compose-detail 跳过维基底稿拉取",
+    )
+    parser.add_argument(
+        "--skip-bibliography",
+        action="store_true",
+        help="compose-detail 跳过书目 plan 路（回退维基主底池）",
+    )
+    parser.add_argument(
+        "--force-bibliography",
+        action="store_true",
+        help="bibliography-plan / compose-detail 强制重跑书目 plan",
+    )
+    parser.add_argument(
+        "--auto-revise",
+        action="store_true",
+        help="verify 失败时自动 compose-revise 一次（默认关闭）",
+    )
+    parser.add_argument(
+        "--force-wiki",
+        action="store_true",
+        help="compose-detail / wiki-fetch 强制重新拉取维基摘录",
+    )
+    parser.add_argument(
         "--require-review",
         action="store_true",
         help="gate 强制要求已有 review-detail 产物",
@@ -1840,6 +2749,11 @@ def main() -> int:
         "--skip-review",
         action="store_true",
         help="qa-detail 跳过 Kimi 审校",
+    )
+    parser.add_argument(
+        "--no-auto-fix-review",
+        action="store_true",
+        help="Kimi 发现硬错误时不自动 fix-detail 精准改稿",
     )
     parser.add_argument(
         "--background",
@@ -1868,6 +2782,20 @@ def main() -> int:
         bg_args.append("--skip-approval")
     if args.step == "export-review":
         bg_args += ["--review-phase", args.review_phase]
+    if args.skip_verify:
+        bg_args.append("--skip-verify")
+    if args.skip_coverage:
+        bg_args.append("--skip-coverage")
+    if args.skip_wiki:
+        bg_args.append("--skip-wiki")
+    if args.skip_bibliography:
+        bg_args.append("--skip-bibliography")
+    if args.force_bibliography:
+        bg_args.append("--force-bibliography")
+    if args.auto_revise:
+        bg_args.append("--auto-revise")
+    if args.force_wiki:
+        bg_args.append("--force-wiki")
     if args.background:
         spawn_background(bg_args, paths, f"{context['朝代名称']}_{args.step}")
         return 0
@@ -1916,6 +2844,12 @@ def main() -> int:
             (args.entry_id or "").strip(),
             dry_run=args.dry_run,
             skip_verify=args.skip_verify,
+            skip_coverage=args.skip_coverage,
+            skip_wiki=args.skip_wiki,
+            skip_bibliography=args.skip_bibliography,
+            force_wiki=args.force_wiki,
+            force_bibliography=args.force_bibliography,
+            auto_revise=args.auto_revise,
         )
     elif step == "compose-pending":
         run_compose_pending(
@@ -1926,10 +2860,51 @@ def main() -> int:
         )
     elif step == "anchor-research":
         run_anchor_research(paths, (args.entry_id or "").strip(), dry_run=args.dry_run)
+    elif step == "bibliography-plan":
+        run_bibliography_plan(
+            paths,
+            (args.entry_id or "").strip(),
+            dry_run=args.dry_run,
+            force=args.force_bibliography,
+        )
+    elif step == "fetch-snippets":
+        run_fetch_snippets(paths, (args.entry_id or "").strip(), dry_run=args.dry_run)
+    elif step == "verify-bibliography":
+        return run_verify_bibliography(paths, (args.entry_id or "").strip())
+    elif step == "wiki-fetch":
+        run_wiki_fetch(
+            paths,
+            (args.entry_id or "").strip(),
+            dry_run=args.dry_run,
+            force=args.force_wiki,
+        )
     elif step == "verify-detail":
         return run_verify_detail(paths, (args.entry_id or "").strip())
+    elif step == "coverage-check":
+        return run_coverage_check(
+            paths,
+            (args.entry_id or "").strip(),
+            dry_run=args.dry_run,
+            strict=False,
+        )
     elif step == "review-detail":
-        return run_review_detail(paths, (args.entry_id or "").strip(), dry_run=args.dry_run)
+        return run_review_detail(
+            paths,
+            (args.entry_id or "").strip(),
+            dry_run=args.dry_run,
+            dynasty_name=str(context.get("朝代名称") or "朝代"),
+            auto_fix_on_review=not args.no_auto_fix_review,
+        )
+    elif step == "fix-detail":
+        return run_review_fix_loop(
+            paths,
+            (args.entry_id or "").strip(),
+            dry_run=args.dry_run,
+            dynasty_name=str(context.get("朝代名称") or "朝代"),
+            auto_fix_on_review=not args.no_auto_fix_review,
+        )
+    elif step == "review-warns-summary":
+        return run_review_warns_summary(paths, context)
     elif step == "patch-detail":
         return run_patch_detail(paths, (args.entry_id or "").strip(), dry_run=args.dry_run)
     elif step == "qa-detail":
@@ -1938,6 +2913,9 @@ def main() -> int:
             (args.entry_id or "").strip(),
             dry_run=args.dry_run,
             skip_review=args.skip_review,
+            skip_coverage=args.skip_coverage,
+            dynasty_name=str(context.get("朝代名称") or "朝代"),
+            auto_fix_on_review=not args.no_auto_fix_review,
         )
     elif step == "test-display":
         return run_test_display(paths, (args.entry_id or "").strip() or None)

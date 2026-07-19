@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import re
+import sys
 from pathlib import Path
 from typing import Any, Dict, List, Tuple
 
@@ -14,39 +15,28 @@ from lib.citation_mode import count_short_quote_density
 from lib.intro_overlap import intro_mother_overlap
 from lib.attribution import detect_foreign_exit_in_opening
 
-FORBIDDEN_PROSE = (
-    "此外",
-    "综上所述",
-    "值得注意的是",
-    "堪称",
-    "可谓",
-    "不啻",
-    "历史长河",
-    "时代洪流",
-    "命运齿轮",
-    "拉开序幕",
-    "翻开新篇章",
-    "历史终将证明",
-    "毫无疑问",
+_OPENCLAW_ROOT = Path(__file__).resolve().parents[2]
+if str(_OPENCLAW_ROOT) not in sys.path:
+    sys.path.insert(0, str(_OPENCLAW_ROOT))
+
+from shared.ai_flavor_words import (  # noqa: E402
+    AI_FLAVOR_WORDS,
+    ai_flavor_verify_issues,
 )
+from shared.vague_citation import (  # noqa: E402
+    VAGUE_CITATION_TRIGGERS,
+    detect_unanchored_vague_citations,
+)
+
+# 兼容旧 import 名
+FORBIDDEN_PROSE = AI_FLAVOR_WORDS
+VAGUE_CITATION_PATTERNS = VAGUE_CITATION_TRIGGERS
 
 PLACEHOLDER_PATTERNS = (
     r"TODO",
     r"待补充",
     r"此处省略",
     r"\[\.{3}\]",
-)
-
-VAGUE_CITATION_PATTERNS = (
-    "有资料说",
-    "据说",
-    "相传",
-    "传说",
-    "有人说",
-    "历史上认为",
-    "一般认为",
-    "后世认为",
-    "有观点认为",
 )
 
 # 通假标注：X（通『Y』）中 X 与 Y 必须不同
@@ -62,9 +52,6 @@ _DESCRIPTIVE_REF_PATTERN = re.compile(r"[这那]家伙|这位爷")
 
 # 段落破折号结尾检测
 _DASH_ENDING_PATTERN = re.compile(r"——\s*$", re.MULTILINE)
-
-# 正文首字符必须是汉字，禁止标点/书名号/引号/井号等开头
-_PUNCTUATION_FIRST = re.compile(r"^[\u4e00-\u9fff]")
 
 # 段落过碎检测：连续单句成段
 _MIN_SENTENCES_PER_PARA = 1
@@ -176,11 +163,10 @@ def _detect_dash_ending(detail: str) -> List[str]:
     return errors
 
 
-def _detect_punctuation_opening(detail: str) -> List[str]:
-    """正文首字符必须是汉字，禁止以标点符号、书名号、引号、井号等开头。"""
-    first_char = detail.lstrip()[0] if detail.strip() else ""
-    if not _PUNCTUATION_FIRST.match(first_char):
-        return [f"正文首字符非法: 「{first_char}」（必须以汉字开头，禁止标点/书名号/引号/井号）"]
+def _detect_markdown_bold(detail: str) -> List[str]:
+    """禁止 ** markdown 加粗；加粗由小程序对「」『』内原文自动处理。"""
+    if re.search(r"\*\*[^*]+\*\*", detail):
+        return ["正文含 Markdown **加粗**（禁止；史料原文请用直角引号「」，由小程序自动加粗）"]
     return []
 
 
@@ -234,8 +220,6 @@ def verify_mother_draft(
         errors.append("母本顺译为空")
         return False, errors
 
-    errors.extend(_detect_punctuation_opening(detail))
-
     if "*参考著作*" in detail or detail.rstrip().endswith("参考著作"):
         errors.append("Phase1 不应含「参考著作」节")
 
@@ -249,6 +233,7 @@ def verify_mother_draft(
         if not cov_ok:
             errors.extend([f"母本顺译 {e}" for e in cov_errs])
 
+    errors.extend(_detect_markdown_bold(detail))
     errors.extend(detect_forbidden_gloss(detail))
     if not batch_mode:
         short_q = count_short_quote_density(detail, threshold_len=4)
@@ -329,6 +314,7 @@ def _classify_must_phrases(
 
     翻译规则 §第零部分「必现词分级」：硬锚点在 Phase1 用「」保留；软锚点由 coverage 验收。
     """
+    from lib.gloss_rules import is_l0_word  # noqa: PLC0415
     from lib.mother_sentences import _MUST_GENERIC, is_midword_fragment  # noqa: PLC0415
 
     orig_plain = re.sub(r"\s+", "", orig)
@@ -336,7 +322,9 @@ def _classify_must_phrases(
     soft: List[str] = []
     for raw in phrases:
         p = str(raw).strip()
-        if not p or is_midword_fragment(p, orig):
+        if not p or is_l0_word(p) or is_midword_fragment(p, orig):
+            continue
+        if p in _MUST_GENERIC:
             continue
         # 硬锚点：数字、X氏专名
         if re.search(r"\d", p) or ("氏" in p and len(p) >= 2):
@@ -570,17 +558,14 @@ def verify_enrich_draft(
         errors.append("翻译详情为空")
         return False, errors
 
-    errors.extend(_detect_punctuation_opening(detail))
-
     if re.search(r"^本条\s*\d+\s*段（母本", detail) or "已读完" in detail[:120]:
         errors.append("正文含「喊数/进度汇报」元叙述，须删除后再落盘")
 
-    vague_hits = [w for w in VAGUE_CITATION_PATTERNS if w in detail]
-    if vague_hits:
-        errors.append(
-            f"存在无明确出处表达: {vague_hits[:5]}"
-            "（须改为「《书名·卷》载…」或删除）"
-        )
+    errors.extend(_detect_markdown_bold(detail))
+    errors.extend(detect_unanchored_vague_citations(detail))
+
+    for _code, message, _severity in ai_flavor_verify_issues(detail):
+        errors.append(message)
 
     if "*参考著作*" not in detail and "参考著作" not in detail:
         errors.append("文末缺少「参考著作」列表")
@@ -615,14 +600,14 @@ def verify_output(
         return False, errors
 
     keys = set(data.keys())
-    allowed = {"史略ID", "翻译详情", "史料原文"}
-    if keys != allowed:
-        extra = keys - allowed
-        missing = allowed - keys
-        if extra:
-            errors.append(f"多余字段: {sorted(extra)}")
-        if missing:
-            errors.append(f"缺少字段: {sorted(missing)}")
+    required = {"史略ID", "翻译详情", "史料原文"}
+    allowed = required | {"原文出处"}
+    extra = keys - allowed
+    missing = required - keys
+    if extra:
+        errors.append(f"多余字段: {sorted(extra)}")
+    if missing:
+        errors.append(f"缺少字段: {sorted(missing)}")
 
     expected_source = build_source_original(recalled)
     source = data.get("史料原文")
@@ -630,6 +615,18 @@ def verify_output(
         errors.append("史料原文缺失或为空")
     elif source != expected_source:
         errors.append("史料原文与召回母本/索引补充不一致（须由编排器写入，禁止 LLM 改写）")
+
+    from lib.source_citation import build_source_citation
+
+    expected_cite = build_source_citation(recalled)
+    cite = data.get("原文出处")
+    if expected_cite:
+        if not isinstance(cite, str) or cite.strip() != expected_cite:
+            errors.append(
+                "原文出处与母本典籍篇名不一致（须为《史记五帝本纪》形态，禁止排序用卷号与「第X」次序）"
+            )
+    elif cite not in (None, ""):
+        errors.append("原文出处应为空（无法从母本 source_file 解析典籍卷名）")
 
     if data.get("史略ID") != entry_id:
         errors.append(
@@ -640,7 +637,7 @@ def verify_output(
     if not detail:
         errors.append("翻译详情为空")
     else:
-        errors.extend(_detect_punctuation_opening(detail))
+        errors.extend(_detect_markdown_bold(detail))
 
         if re.search(r"^本条\s*\d+\s*段（母本", detail) or (
             detail.startswith("本条") and "已读完" in detail.split("\n", 1)[0]
@@ -663,13 +660,10 @@ def verify_output(
             if re.search(pat, detail, re.I):
                 errors.append(f"含占位符: {pat}")
 
-        hits = [w for w in FORBIDDEN_PROSE if w in detail]
-        if len(hits) >= 3:
-            errors.append(f"书面腔词汇过多: {hits[:5]}")
+        for _code, message, _severity in ai_flavor_verify_issues(detail):
+            errors.append(message)
 
-        vague_hits = [w for w in VAGUE_CITATION_PATTERNS if w in detail]
-        if vague_hits:
-            errors.append(f"存在无明确出处表达: {vague_hits[:5]}")
+        errors.extend(detect_unanchored_vague_citations(detail))
 
         repeated = _repeated_long_paragraphs(detail)
         if repeated:
@@ -741,9 +735,8 @@ def verify_chunk_body(
         if re.search(pat, text, re.I):
             errors.append(f"含占位符: {pat}")
 
-    hits = [w for w in FORBIDDEN_PROSE if w in text]
-    if len(hits) >= 3:
-        errors.append(f"书面腔词汇过多: {hits[:5]}")
+    for _code, message, _severity in ai_flavor_verify_issues(text):
+        errors.append(message)
 
     errors.extend(_invalid_tongjia_annotations(text))
     errors.extend(detect_forbidden_gloss(text))

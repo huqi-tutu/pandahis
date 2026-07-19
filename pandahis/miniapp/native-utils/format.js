@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.categoryLabel = exports.highlightEmToRich = exports.formatSearchPath = exports.stripHtml = exports.PRD_CATEGORY_KEYS = void 0;
+exports.categoryLabel = exports.highlightEmToRich = exports.extractUnitDynastyHint = exports.formatSearchPath = exports.stripHtml = exports.PRD_CATEGORY_KEYS = void 0;
 /** 朝代详情固定 10 泳道顺序 */
 exports.PRD_CATEGORY_KEYS = [
     'junji',
@@ -29,6 +29,17 @@ function formatSearchPath(path) {
         .join(' › ');
 }
 exports.formatSearchPath = formatSearchPath;
+/** 从搜索结果的 unit 路径提取朝代名，供详情页 mock 兜底使用 */
+function extractUnitDynastyHint(pathText) {
+    const parts = String(pathText || '')
+        .split(/[>›/\\|]+/)
+        .map((s) => s.trim())
+        .filter(Boolean);
+    if (parts.length >= 2)
+        return parts[parts.length - 1];
+    return parts[0] || '';
+}
+exports.extractUnitDynastyHint = extractUnitDynastyHint;
 /** 将搜索高亮 <em> 转为 rich-text 可渲染的 HTML */
 function escapeHtml(text) {
     return String(text)

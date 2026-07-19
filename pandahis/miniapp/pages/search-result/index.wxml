@@ -40,6 +40,7 @@
         bindtap="go"
         data-type="{{item.type}}"
         data-id="{{item.id}}"
+        data-dynasty="{{item.dynastyHint}}"
       >
         <view wx:if="{{item.category}}" class="result-cat-badge">
           <text>{{item.category}}</text>

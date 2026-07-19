@@ -1,0 +1,61 @@
+"""reference_works 合并与校验测试。"""
+
+from __future__ import annotations
+
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+
+from reference_works import (  # noqa: E402
+    attach_reference_section,
+    merge_reference_works,
+    reference_works_verify_issues,
+)
+
+
+def test_merge_from_body_and_index():
+    entry = {"主要史料出处": "《史记·五帝本纪》"}
+    body = "按《逸周书·尝麦解》的说法，后世《路史》亦有附会。"
+    refs = merge_reference_works(entry, body, None)
+    titles = "".join(refs)
+    assert "史记" in titles
+    assert "逸周书" in titles
+    assert "路史" in titles
+
+
+def test_attach_replaces_incomplete_tail():
+    entry = {"主要史料出处": "《史记·五帝本纪》"}
+    raw = "正文引《逸周书·尝麦解》。\n\n*参考著作：《史记·五帝本纪》*"
+    out = attach_reference_section(raw, entry, None)
+    assert "逸周书" in out
+    assert out.count("参考著作") == 1
+
+
+def test_verify_catches_missing_body_ref():
+    entry = {"主要史料出处": "《史记·五帝本纪》"}
+    raw = "见《逸周书·尝麦解》。\n\n*参考著作：《史记·五帝本纪》*"
+    issues = reference_works_verify_issues(raw, entry, None)
+    codes = [c for c, _, _ in issues]
+    assert "refs_missing_body_citation" in codes
+
+
+def test_dedupe_keeps_multiple_volumes_same_mother():
+    entry = {"主要史料出处": "《史记·五帝本纪》"}
+    body = "见《史记·五帝本纪》与《史记·夏本纪》的记载。"
+    refs = merge_reference_works(entry, body, None)
+    joined = "".join(refs)
+    assert "五帝本纪" in joined
+    assert "夏本纪" in joined
+
+
+def test_verify_catches_volume_mismatch():
+    entry = {"主要史料出处": "《吕氏春秋·贵公》"}
+    raw = (
+        "据《吕氏春秋·贵公》记载。\n\n"
+        "*参考著作：《吕氏春秋·去私》《史记·五帝本纪》*"
+    )
+    issues = reference_works_verify_issues(raw, entry, None)
+    codes = [c for c, _, sev in issues if sev == "error"]
+    assert "refs_volume_mismatch" in codes

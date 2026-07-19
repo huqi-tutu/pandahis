@@ -1,0 +1,13 @@
+{
+  "has_factual_errors": false,
+  "factual_errors": [],
+  "summary": "全文未见明显硬史实错误。信史部分对《尚书·益稷》《吕氏春秋·音初》《孟子》的引用与常见史料相符；神话部分均有「民间传说」「据《淮南子》所载及后世相传」等明确 framing，未当作信史叙述。",
+  "overall_verdict": "pass",
+  "schema": "dynasty-knowledge-review/v2",
+  "史略ID": "GLBL_00613",
+  "reviewed_at": "2026-07-19T04:56:38Z",
+  "pipeline_blocking": false,
+  "review_fix_round": 1,
+  "forced_pass": false,
+  "human_review_required": false
+}

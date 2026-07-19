@@ -1,0 +1,19 @@
+{
+  "has_factual_errors": true,
+  "factual_errors": [
+    {
+      "quote": "不传儿子传弟弟，这在夏朝诸王中是独一份",
+      "reason": "《史记·夏本纪》明确记载「帝太康崩，弟中康立」，太康与中康即为兄终弟及，故不降传弟扃并非夏朝「独一份」。",
+      "fix_hint": "改为「这在夏朝诸王中极为罕见」或补充「此前太康已传弟中康」。"
+    }
+  ],
+  "summary": "文中关于不降在位年数、逊位记载及与其他帝王对比均无误，唯「兄终弟及为夏朝独一份」与《史记》所载太康传弟中康的通识史实相悖。",
+  "overall_verdict": "forced_pass",
+  "schema": "dynasty-knowledge-review/v2",
+  "史略ID": "GLBL_00608",
+  "reviewed_at": "2026-07-19T04:28:42Z",
+  "pipeline_blocking": false,
+  "review_fix_round": 3,
+  "forced_pass": true,
+  "human_review_required": true
+}

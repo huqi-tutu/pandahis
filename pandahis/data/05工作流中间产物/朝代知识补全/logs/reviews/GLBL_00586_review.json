@@ -1,0 +1,13 @@
+{
+  "has_factual_errors": false,
+  "factual_errors": [],
+  "summary": "全文对《左传》《国语》《楚辞》等典籍的引用与史实框架准确，传说、异说、后世附会均有明确标注，未将神话叙事混同于信史，亦无明显人物、时代、事件归属或典籍张冠李戴之误。",
+  "overall_verdict": "pass",
+  "schema": "dynasty-knowledge-review/v2",
+  "史略ID": "GLBL_00586",
+  "reviewed_at": "2026-07-19T01:43:18Z",
+  "pipeline_blocking": false,
+  "review_fix_round": 1,
+  "forced_pass": false,
+  "human_review_required": false
+}

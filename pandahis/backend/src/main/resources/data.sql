@@ -49,21 +49,21 @@ VALUES ('box_wutai_1079', NULL, 'huaxia_song_shenzong', NULL, NULL, '乌台诗�
 ON DUPLICATE KEY UPDATE title=VALUES(title), category_key=VALUES(category_key), shilue_kind=VALUES(shilue_kind), blurb=VALUES(blurb), start_year=VALUES(start_year), end_year=VALUES(end_year), importance_level=VALUES(importance_level), status=VALUES(status),
   detail_md=VALUES(detail_md), original_ref_json=VALUES(original_ref_json);
 
-INSERT INTO box_graph_node (box_id, node_key, node_type, name, extra_json)
-VALUES ('box_wutai_1079','event_wutai','event','乌台诗案','{}'),
-       ('box_wutai_1079','person_sushi','person','苏轼','{"targetBoxId":"box_wutai_1079"}')
-ON DUPLICATE KEY UPDATE node_type=VALUES(node_type), name=VALUES(name), extra_json=VALUES(extra_json);
+INSERT INTO box_graph_node (component_id, shilue_id, shilue_name, box_id, node_key, node_type, name, extra_json)
+VALUES ('box_wutai_1079_REL_event_wutai', 'box_wutai_1079', '乌台诗案', 'box_wutai_1079','event_wutai','event','乌台诗案','{}'),
+       ('box_wutai_1079_REL_person_sushi', 'box_wutai_1079', '乌台诗案', 'box_wutai_1079','person_sushi','person','苏轼','{"targetBoxId":"box_wutai_1079"}')
+ON DUPLICATE KEY UPDATE node_type=VALUES(node_type), name=VALUES(name), extra_json=VALUES(extra_json), shilue_name=VALUES(shilue_name);
 
 INSERT INTO box_graph_edge (box_id, from_node_key, to_node_key, label)
 VALUES ('box_wutai_1079','event_wutai','person_sushi','主角');
 
-INSERT INTO box_critique (box_id, title, author, era_text, year_value, content, source, blurb, sort_order)
-VALUES ('box_wutai_1079','党议与诗案','朱熹','南宋 · 1200',1200,'轼之狱，非为诗也，为党议也……','《朱子语类》卷一三一','朱熹论乌台诗案性质',1);
+INSERT INTO box_critique (component_id, shilue_id, shilue_name, box_id, title, author, era_text, year_value, content, source, blurb, sort_order)
+VALUES ('box_wutai_1079_CRIT_001', 'box_wutai_1079', '乌台诗案', 'box_wutai_1079','党议与诗案','朱熹','南宋 · 1200',1200,'轼之狱，非为诗也，为党议也……','《朱子语类》卷一三一','朱熹论乌台诗案性质',1);
 
-INSERT INTO box_relic (box_id, name, image_url, summary, description, museum, priority_code, priority_reason, sort_order)
-VALUES ('box_wutai_1079','黄州寒食帖','https://example.com/relics/hs.jpg','苏轼黄州第三年寒食','苏轼被贬黄州第三年寒食节所写。','台北故宫博物院','P0',NULL,1),
-       ('box_wutai_1079','相关文书（示例）',NULL,'制度与文本','制度与文本证据占位。','馆藏待补充','P2',NULL,2),
-       ('box_wutai_1079','碑刻（示例）',NULL,'碑刻见证','见证条目最多 3 条（PRD）。','馆藏待补充','P2',NULL,3);
+INSERT INTO box_relic (component_id, shilue_id, shilue_name, box_id, name, image_url, summary, description, museum, priority_code, priority_reason, sort_order)
+VALUES ('box_wutai_1079_RELIC_001', 'box_wutai_1079', '乌台诗案', 'box_wutai_1079','黄州寒食帖','https://example.com/relics/hs.jpg','苏轼黄州第三年寒食','苏轼被贬黄州第三年寒食节所写。','台北故宫博物院','P0',NULL,1),
+       ('box_wutai_1079_RELIC_002', 'box_wutai_1079', '乌台诗案', 'box_wutai_1079','相关文书（示例）',NULL,'制度与文本','制度与文本证据占位。','馆藏待补充','P2',NULL,2),
+       ('box_wutai_1079_RELIC_003', 'box_wutai_1079', '乌台诗案', 'box_wutai_1079','碑刻（示例）',NULL,'碑刻见证','见证条目最多 3 条（PRD）。','馆藏待补充','P2',NULL,3);
 
 INSERT INTO search_hot_keyword (keyword, is_hot, sort_order, status)
 VALUES ('王安石变法', 1, 1, 1),
