@@ -11,6 +11,7 @@ import { decodeQueryValue } from '../../native-utils/query-value'
 import { formatHistoryYear } from '../../native-utils/year-format'
 import { formatEntrySourceLabel } from '../../native-utils/entry-source-label'
 import { buildSharePosterSheetState } from '../../native-utils/share-poster-open'
+import { resolveSelectionBarAnchor } from '../../native-utils/selection-bar-position'
 import {
   parseCivilizationFromCrumb,
   requireLoginForCorrection,
@@ -970,6 +971,7 @@ Page({
     selectionBarVisible: false,
     selectionBarLeft: 0,
     selectionBarTop: 0,
+    selectionBarPlacement: 'above' as 'above' | 'below',
     selectionBarText: '',
     selectionMountKey: 1,
     sharePosterVisible: false,
@@ -1570,22 +1572,17 @@ Page({
       this.hideSelectionBar()
       return
     }
-    const rect = detail.firstRangeRect
-    let left = this.data.selectionBarLeft
-    let top = this.data.selectionBarTop
-    if (rect && rect.left != null && rect.top != null) {
-      const width = rect.width || 0
-      left = rect.left + width / 2
-      top = rect.top
-      const minTop = 120
-      const maxTop = (wx.getSystemInfoSync().windowHeight || 667) - 80
-      top = Math.max(minTop, Math.min(maxTop, top))
-    }
+    const anchor = resolveSelectionBarAnchor(detail.firstRangeRect, {
+      left: this.data.selectionBarLeft,
+      top: this.data.selectionBarTop,
+      placement: this.data.selectionBarPlacement,
+    })
     this.setData({
       selectionBarVisible: true,
       selectionBarText: selected,
-      selectionBarLeft: left,
-      selectionBarTop: top,
+      selectionBarLeft: anchor.left,
+      selectionBarTop: anchor.top,
+      selectionBarPlacement: anchor.placement,
     })
   },
   async onSelectionShare() {
@@ -1593,15 +1590,21 @@ Page({
     this.hideSelectionBar()
     if (!text) return
     wx.showLoading({ title: '生成海报…', mask: true })
-    const dynastyTitle = this.data.dynastyTitle || '朝代'
-    const unit = this.data.unit
-    const posterState = await buildSharePosterSheetState(
-      text,
-      `/ ${dynastyTitle} · 朝代简介`,
-      unit?.crumbText || this.data.heroSubLine || '',
-    )
+    try {
+      const dynastyTitle = this.data.dynastyTitle || '朝代'
+      const unit = this.data.unit
+      const civ = unit ? parseCivilizationFromCrumb(unit.crumbText) : ''
+      const sourceLine1 = `/${[civ, dynastyTitle, '朝代简介'].filter(Boolean).join('・')}`
+      const posterState = await buildSharePosterSheetState(text, sourceLine1, '')
+      this.setData(posterState)
+    } catch {
+      wx.hideLoading()
+      wx.showToast({ title: '海报生成失败', icon: 'none' })
+    }
+  },
+  closeSharePoster() {
     wx.hideLoading()
-    this.setData(posterState)
+    this.setData({ sharePosterVisible: false })
   },
   onSelectionCopy() {
     const text = this.data.selectionBarText
@@ -1632,9 +1635,6 @@ Page({
         correctionDynastyName: this.data.dynastyTitle,
       })
     })
-  },
-  closeSharePoster() {
-    this.setData({ sharePosterVisible: false })
   },
   onChipTooltipCardTap() {},
   onChipCorrectionTap() {

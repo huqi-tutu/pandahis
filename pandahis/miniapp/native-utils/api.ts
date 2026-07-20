@@ -150,3 +150,68 @@ export function request<T>(
     })
   })
 }
+
+/** 上传本地文件（如头像），字段名默认 `file` */
+export function uploadFile<T>(
+  path: string,
+  filePath: string,
+  opts?: { name?: string; formData?: Record<string, string> }
+): Promise<ApiResponse<T>> {
+  if (!getToken()) {
+    return Promise.reject(new Error('UNAUTHORIZED'))
+  }
+
+  const baseUrl = getBaseUrl()
+  const url = baseUrl.replace(/\/$/, '') + (path.startsWith('/') ? path : `/${path}`)
+  const name = opts?.name || 'file'
+  const header: Record<string, string> = {}
+  const token = getToken()
+  if (token) header.Authorization = `Bearer ${token}`
+
+  return new Promise<ApiResponse<T>>((resolve, reject) => {
+    wx.uploadFile({
+      url,
+      filePath,
+      name,
+      formData: opts?.formData,
+      header,
+      timeout: 60000,
+      success(res) {
+        const status = res.statusCode || 0
+        let body: any = null
+        try {
+          body = typeof res.data === 'string' ? JSON.parse(res.data) : res.data
+        } catch {
+          body = res.data
+        }
+        if (status === 401 || body?.code === 'UNAUTHORIZED') {
+          clearToken()
+          reject(new Error('UNAUTHORIZED'))
+          return
+        }
+        if (status >= 400) {
+          const detail = { url, method: 'POST', status, body }
+          console.error('[api] UPLOAD_HTTP_ERROR', detail)
+          const msg =
+            (typeof body === 'object' && body && (body.message || body.code)) ||
+            `HTTP_${status}`
+          reject(new ApiError(String(msg), detail))
+          return
+        }
+        if (!body || typeof body !== 'object') {
+          reject(new ApiError('INVALID_RESPONSE', { url, method: 'POST', status, body }))
+          return
+        }
+        if (body.code && body.code !== 'OK') {
+          reject(new ApiError(String(body.message || body.code), { url, method: 'POST', status, body }))
+          return
+        }
+        resolve(body as ApiResponse<T>)
+      },
+      fail(err) {
+        console.error('[api] UPLOAD_FAIL', { url, err })
+        reject(new ApiError(err?.errMsg || 'UPLOAD_FAIL', { url, method: 'POST', err }))
+      },
+    })
+  })
+}

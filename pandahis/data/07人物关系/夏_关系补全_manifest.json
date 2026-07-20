@@ -1,0 +1,34 @@
+{
+  "dynasty": "夏",
+  "completed": [
+    {
+      "glbl": "GLBL_00631",
+      "name": "胤侯",
+      "file": "胤侯关系表.json",
+      "count": 2,
+      "verified_at": "2026-07-20"
+    },
+    {
+      "glbl": "GLBL_00632",
+      "name": "女艾",
+      "file": "女艾关系表.json",
+      "count": 2,
+      "verified_at": "2026-07-20"
+    },
+    {
+      "glbl": "GLBL_00633",
+      "name": "寒浇",
+      "file": "寒浇关系表.json",
+      "count": 9,
+      "verified_at": "2026-07-20"
+    },
+    {
+      "glbl": "GLBL_00634",
+      "name": "寒豷",
+      "file": "寒豷关系表.json",
+      "count": 8,
+      "verified_at": "2026-07-20"
+    }
+  ],
+  "updated_at": "2026-07-20"
+}

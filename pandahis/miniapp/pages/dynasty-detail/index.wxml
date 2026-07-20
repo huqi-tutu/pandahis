@@ -401,6 +401,7 @@
     visible="{{selectionBarVisible}}"
     left="{{selectionBarLeft}}"
     top="{{selectionBarTop}}"
+    placement="{{selectionBarPlacement}}"
     bind:share="onSelectionShare"
     bind:copy="onSelectionCopy"
     bind:query="onSelectionQuery"

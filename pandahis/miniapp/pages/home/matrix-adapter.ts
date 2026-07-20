@@ -1,5 +1,6 @@
 /** 产品 CIV_TABS slug ↔ 后端 civilization code */
 import { civTabImage } from '../../native-utils/civ-tab-images'
+/** 与素材 01–18 / DB sort_order 一致 */
 export const CIV_SLUG_BY_CODE: Record<string, string> = {
   HX: 'huaxia',
   CX: 'chaoxian',
@@ -9,11 +10,11 @@ export const CIV_SLUG_BY_CODE: Record<string, string> = {
   BY: 'northasia',
   NY: 'southasia',
   XY: 'westasia',
-  BF: 'northafrica',
   NO: 'southeu',
   DO: 'easteu',
   XO: 'westeu',
   BO: 'northeu',
+  BF: 'northafrica',
   XF: 'westafrica',
   DF: 'eastafrica',
   ZM: 'centralamerica',

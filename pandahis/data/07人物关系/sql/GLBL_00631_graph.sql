@@ -1,0 +1,11 @@
+DELETE FROM box_graph_edge WHERE box_id='GLBL_00631';
+DELETE FROM box_graph_node WHERE box_id='GLBL_00631';
+INSERT INTO box_graph_node (component_id, shilue_id, shilue_name, box_id, node_key, node_type, name, extra_json) VALUES ('GLBL_00631_REL_center', 'GLBL_00631', '胤侯', 'GLBL_00631', 'center', 'event', '胤侯', '{}');
+INSERT INTO box_graph_node (component_id, shilue_id, shilue_name, box_id, node_key, node_type, name, extra_json) VALUES ('GLBL_00631_REL_cat_col', 'GLBL_00631', '胤侯', 'GLBL_00631', 'cat_col', 'category', '同僚', '{"关系类别": "同僚", "isCategoryNode": true}');
+INSERT INTO box_graph_edge (box_id, from_node_key, to_node_key, label) VALUES ('GLBL_00631', 'center', 'cat_col', '同僚');
+INSERT INTO box_graph_node (component_id, shilue_id, shilue_name, box_id, node_key, node_type, name, extra_json) VALUES ('GLBL_00631_REL_cat_foe', 'GLBL_00631', '胤侯', 'GLBL_00631', 'cat_foe', 'category', '外敌', '{"关系类别": "外敌", "isCategoryNode": true}');
+INSERT INTO box_graph_edge (box_id, from_node_key, to_node_key, label) VALUES ('GLBL_00631', 'center', 'cat_foe', '外敌');
+INSERT INTO box_graph_node (component_id, shilue_id, shilue_name, box_id, node_key, node_type, name, extra_json) VALUES ('GLBL_00631_REL_HD_COL_001', 'GLBL_00631', '胤侯', 'GLBL_00631', 'hd_col_001', 'person', '太康', '{"关系ID": "HD-COL-001", "关系类别": "同僚", "关系层级": "一级", "上级连接线标题": "君王", "关系简述": "夏朝君主，胤侯为其治下诸侯。《竹书纪年》称太康失国时胤侯与夏后氏同衰，表明胤侯曾依附太康王权。", "record_id": "recd63ec0dc9040"}');
+INSERT INTO box_graph_edge (box_id, from_node_key, to_node_key, label) VALUES ('GLBL_00631', 'cat_col', 'hd_col_001', '君王');
+INSERT INTO box_graph_node (component_id, shilue_id, shilue_name, box_id, node_key, node_type, name, extra_json) VALUES ('GLBL_00631_REL_HD_FOE_001', 'GLBL_00631', '胤侯', 'GLBL_00631', 'hd_foe_001', 'person', '后羿', '{"关系ID": "HD-FOE-001", "关系类别": "外敌", "关系层级": "一级", "上级连接线标题": "外敌", "关系简述": "有穷氏首领，趁太康田猎不归、据河而守，导致太康失国。胤侯作为夏臣，随夏后氏一同衰落，后羿属外部敌对阵营。", "record_id": "reca6ad74e4fa1c"}');
+INSERT INTO box_graph_edge (box_id, from_node_key, to_node_key, label) VALUES ('GLBL_00631', 'cat_foe', 'hd_foe_001', '外敌');

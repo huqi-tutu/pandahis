@@ -1,6 +1,6 @@
 <view
   wx:if="{{visible}}"
-  class="text-selection-bar"
+  class="text-selection-bar text-selection-bar--{{placement}}"
   style="left: {{left}}px; top: {{top}}px;"
   catchtap="noop"
 >

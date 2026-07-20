@@ -12,6 +12,10 @@ Component({
             type: Number,
             value: 0,
         },
+        placement: {
+            type: String,
+            value: 'above',
+        },
     },
     methods: {
         noop() { },

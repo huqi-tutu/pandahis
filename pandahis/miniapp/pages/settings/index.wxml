@@ -3,7 +3,7 @@
 <scroll-view class="page-settings" scroll-y enhanced show-scrollbar="{{false}}" style="padding-top: {{headerPadPx}}px;">
   <view class="card-paper menu-card" wx:if="{{loggedIn}}">
     <view class="list-row" bindtap="goProfileEdit" hover-class="row-hover" hover-stay-time="60">
-      <text class="list-label">编辑昵称</text>
+      <text class="list-label">编辑资料</text>
       <text class="list-arrow">›</text>
     </view>
     <view class="list-row" bindtap="goInviteReads" hover-class="row-hover" hover-stay-time="60">
@@ -20,6 +20,8 @@
           placeholder="邀请码"
           placeholder-class="bind-input-ph"
           bindinput="onBindInput"
+          adjust-position="{{true}}"
+          cursor-spacing="{{80}}"
         />
         <view class="bind-btn {{bindSubmitting ? 'disabled' : ''}}" bindtap="submitBindCode">
           {{bindSubmitting ? '…' : '绑定'}}

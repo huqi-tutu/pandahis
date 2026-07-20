@@ -136,7 +136,7 @@ public class HistomapProperties {
   }
 
   public static class Relics {
-    private int maxCount = 3;
+    private int maxCount = 5;
 
     public int getMaxCount() {
       return maxCount;

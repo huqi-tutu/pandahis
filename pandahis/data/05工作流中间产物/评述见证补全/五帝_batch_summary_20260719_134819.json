@@ -1,0 +1,366 @@
+[
+  {
+    "id": "GLBL_00561",
+    "name": "阪泉之战",
+    "mode": "commentary",
+    "status": "skip"
+  },
+  {
+    "id": "GLBL_00561",
+    "name": "阪泉之战",
+    "mode": "witness",
+    "status": "skip"
+  },
+  {
+    "id": "GLBL_00562",
+    "name": "涿鹿之战",
+    "mode": "commentary",
+    "status": "skip"
+  },
+  {
+    "id": "GLBL_00562",
+    "name": "涿鹿之战",
+    "mode": "witness",
+    "status": "skip"
+  },
+  {
+    "id": "GLBL_00563",
+    "name": "颛顼绝地天通",
+    "mode": "commentary",
+    "status": "skip"
+  },
+  {
+    "id": "GLBL_00563",
+    "name": "颛顼绝地天通",
+    "mode": "witness",
+    "status": "skip"
+  },
+  {
+    "id": "GLBL_00564",
+    "name": "尧舜禅让",
+    "mode": "commentary",
+    "status": "skip"
+  },
+  {
+    "id": "GLBL_00564",
+    "name": "尧舜禅让",
+    "mode": "witness",
+    "status": "skip"
+  },
+  {
+    "id": "GLBL_00565",
+    "name": "鲧禹治水",
+    "mode": "commentary",
+    "status": "skip"
+  },
+  {
+    "id": "GLBL_00565",
+    "name": "鲧禹治水",
+    "mode": "witness",
+    "status": "skip"
+  },
+  {
+    "id": "GLBL_00566",
+    "name": "舜流四凶",
+    "mode": "commentary",
+    "status": "ok",
+    "doc_status": "done",
+    "entry_count": 5
+  },
+  {
+    "id": "GLBL_00566",
+    "name": "舜流四凶",
+    "mode": "witness",
+    "status": "ok",
+    "doc_status": "done",
+    "entry_count": 2
+  },
+  {
+    "id": "GLBL_00567",
+    "name": "禅让制",
+    "mode": "commentary",
+    "status": "ok",
+    "doc_status": "done",
+    "entry_count": 5
+  },
+  {
+    "id": "GLBL_00567",
+    "name": "禅让制",
+    "mode": "witness",
+    "status": "ok",
+    "doc_status": "done",
+    "entry_count": 5
+  },
+  {
+    "id": "GLBL_00568",
+    "name": "部落联盟共主制",
+    "mode": "commentary",
+    "status": "ok",
+    "doc_status": "done",
+    "entry_count": 5
+  },
+  {
+    "id": "GLBL_00568",
+    "name": "部落联盟共主制",
+    "mode": "witness",
+    "status": "ok",
+    "doc_status": "已处理·无可用",
+    "entry_count": 0
+  },
+  {
+    "id": "GLBL_00569",
+    "name": "四岳议事制度",
+    "mode": "commentary",
+    "status": "ok",
+    "doc_status": "done",
+    "entry_count": 5
+  },
+  {
+    "id": "GLBL_00569",
+    "name": "四岳议事制度",
+    "mode": "witness",
+    "status": "ok",
+    "doc_status": "已处理·无可用",
+    "entry_count": 0
+  },
+  {
+    "id": "GLBL_00570",
+    "name": "九官制",
+    "mode": "commentary",
+    "status": "ok",
+    "doc_status": "done",
+    "entry_count": 5
+  },
+  {
+    "id": "GLBL_00570",
+    "name": "九官制",
+    "mode": "witness",
+    "status": "ok",
+    "doc_status": "done",
+    "entry_count": 2
+  },
+  {
+    "id": "GLBL_00571",
+    "name": "羲和观象授时",
+    "mode": "commentary",
+    "status": "ok",
+    "doc_status": "done",
+    "entry_count": 4
+  },
+  {
+    "id": "GLBL_00571",
+    "name": "羲和观象授时",
+    "mode": "witness",
+    "status": "ok",
+    "doc_status": "done",
+    "entry_count": 3
+  },
+  {
+    "id": "GLBL_00572",
+    "name": "五礼制度",
+    "mode": "commentary",
+    "status": "ok",
+    "doc_status": "done",
+    "entry_count": 5
+  },
+  {
+    "id": "GLBL_00572",
+    "name": "五礼制度",
+    "mode": "witness",
+    "status": "ok",
+    "doc_status": "已处理·无可用",
+    "entry_count": 0
+  },
+  {
+    "id": "GLBL_00573",
+    "name": "五刑制度",
+    "mode": "commentary",
+    "status": "ok",
+    "doc_status": "done",
+    "entry_count": 5
+  },
+  {
+    "id": "GLBL_00573",
+    "name": "五刑制度",
+    "mode": "witness",
+    "status": "ok",
+    "doc_status": "done",
+    "entry_count": 5
+  },
+  {
+    "id": "GLBL_00574",
+    "name": "嫘祖",
+    "mode": "commentary",
+    "status": "ok",
+    "doc_status": "done",
+    "entry_count": 4
+  },
+  {
+    "id": "GLBL_00574",
+    "name": "嫘祖",
+    "mode": "witness",
+    "status": "ok",
+    "doc_status": "done",
+    "entry_count": 3
+  },
+  {
+    "id": "GLBL_00575",
+    "name": "嫫母",
+    "mode": "commentary",
+    "status": "ok",
+    "doc_status": "done",
+    "entry_count": 4
+  },
+  {
+    "id": "GLBL_00575",
+    "name": "嫫母",
+    "mode": "witness",
+    "status": "ok",
+    "doc_status": "done",
+    "entry_count": 2
+  },
+  {
+    "id": "GLBL_00576",
+    "name": "娥皇",
+    "mode": "commentary",
+    "status": "ok",
+    "doc_status": "done",
+    "entry_count": 5
+  },
+  {
+    "id": "GLBL_00576",
+    "name": "娥皇",
+    "mode": "witness",
+    "status": "ok",
+    "doc_status": "done",
+    "entry_count": 3
+  },
+  {
+    "id": "GLBL_00577",
+    "name": "女英",
+    "mode": "commentary",
+    "status": "ok",
+    "doc_status": "done",
+    "entry_count": 5
+  },
+  {
+    "id": "GLBL_00577",
+    "name": "女英",
+    "mode": "witness",
+    "status": "ok",
+    "doc_status": "done",
+    "entry_count": 2
+  },
+  {
+    "id": "GLBL_00578",
+    "name": "丹朱",
+    "mode": "commentary",
+    "status": "ok",
+    "doc_status": "done",
+    "entry_count": 5
+  },
+  {
+    "id": "GLBL_00578",
+    "name": "丹朱",
+    "mode": "witness",
+    "status": "ok",
+    "doc_status": "done",
+    "entry_count": 2
+  },
+  {
+    "id": "GLBL_00579",
+    "name": "皋陶",
+    "mode": "commentary",
+    "status": "ok",
+    "doc_status": "done",
+    "entry_count": 5
+  },
+  {
+    "id": "GLBL_00579",
+    "name": "皋陶",
+    "mode": "witness",
+    "status": "ok",
+    "doc_status": "done",
+    "entry_count": 3
+  },
+  {
+    "id": "GLBL_00580",
+    "name": "伯益",
+    "mode": "commentary",
+    "status": "ok",
+    "doc_status": "done",
+    "entry_count": 5
+  },
+  {
+    "id": "GLBL_00580",
+    "name": "伯益",
+    "mode": "witness",
+    "status": "ok",
+    "doc_status": "done",
+    "entry_count": 2
+  },
+  {
+    "id": "GLBL_00582",
+    "name": "契",
+    "mode": "commentary",
+    "status": "ok",
+    "doc_status": "done",
+    "entry_count": 4
+  },
+  {
+    "id": "GLBL_00582",
+    "name": "契",
+    "mode": "witness",
+    "status": "ok",
+    "doc_status": "done",
+    "entry_count": 2
+  },
+  {
+    "id": "GLBL_00583",
+    "name": "弃",
+    "mode": "commentary",
+    "status": "ok",
+    "doc_status": "done",
+    "entry_count": 5
+  },
+  {
+    "id": "GLBL_00583",
+    "name": "弃",
+    "mode": "witness",
+    "status": "ok",
+    "doc_status": "done",
+    "entry_count": 4
+  },
+  {
+    "id": "GLBL_00584",
+    "name": "夔",
+    "mode": "commentary",
+    "status": "ok",
+    "doc_status": "done",
+    "entry_count": 4
+  },
+  {
+    "id": "GLBL_00584",
+    "name": "夔",
+    "mode": "witness",
+    "status": "ok",
+    "doc_status": "已处理·无可用",
+    "entry_count": 0
+  },
+  {
+    "id": "GLBL_00585",
+    "name": "许由",
+    "mode": "commentary",
+    "status": "ok",
+    "doc_status": "done",
+    "entry_count": 5
+  },
+  {
+    "id": "GLBL_00585",
+    "name": "许由",
+    "mode": "witness",
+    "status": "ok",
+    "doc_status": "done",
+    "entry_count": 4
+  }
+]

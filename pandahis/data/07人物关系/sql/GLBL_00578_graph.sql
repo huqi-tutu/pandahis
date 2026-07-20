@@ -1,0 +1,13 @@
+DELETE FROM box_graph_edge WHERE box_id='GLBL_00578';
+DELETE FROM box_graph_node WHERE box_id='GLBL_00578';
+INSERT INTO box_graph_node (component_id, shilue_id, shilue_name, box_id, node_key, node_type, name, extra_json) VALUES ('GLBL_00578_REL_center', 'GLBL_00578', '丹朱', 'GLBL_00578', 'center', 'event', '丹朱', '{}');
+INSERT INTO box_graph_node (component_id, shilue_id, shilue_name, box_id, node_key, node_type, name, extra_json) VALUES ('GLBL_00578_REL_cat_fam', 'GLBL_00578', '丹朱', 'GLBL_00578', 'cat_fam', 'category', '家庭', '{"关系类别": "家庭", "isCategoryNode": true}');
+INSERT INTO box_graph_edge (box_id, from_node_key, to_node_key, label) VALUES ('GLBL_00578', 'center', 'cat_fam', '家庭');
+INSERT INTO box_graph_node (component_id, shilue_id, shilue_name, box_id, node_key, node_type, name, extra_json) VALUES ('GLBL_00578_REL_cat_foe', 'GLBL_00578', '丹朱', 'GLBL_00578', 'cat_foe', 'category', '外敌', '{"关系类别": "外敌", "isCategoryNode": true}');
+INSERT INTO box_graph_edge (box_id, from_node_key, to_node_key, label) VALUES ('GLBL_00578', 'center', 'cat_foe', '外敌');
+INSERT INTO box_graph_node (component_id, shilue_id, shilue_name, box_id, node_key, node_type, name, extra_json) VALUES ('GLBL_00578_REL_HD_FAM_001', 'GLBL_00578', '丹朱', 'GLBL_00578', 'hd_fam_001', 'person', '尧', '{"关系ID": "HD-FAM-001", "关系类别": "家庭", "关系层级": "一级", "上级连接线标题": "父亲", "关系简述": "丹朱为帝尧之子，因不肖，尧未传位于他，而禅让给舜。见《史记·五帝本纪》。", "record_id": "recc692568ed933"}');
+INSERT INTO box_graph_edge (box_id, from_node_key, to_node_key, label) VALUES ('GLBL_00578', 'cat_fam', 'hd_fam_001', '父亲');
+INSERT INTO box_graph_node (component_id, shilue_id, shilue_name, box_id, node_key, node_type, name, extra_json) VALUES ('GLBL_00578_REL_HD_FOE_001', 'GLBL_00578', '丹朱', 'GLBL_00578', 'hd_foe_001', 'person', '舜', '{"关系ID": "HD-FOE-001", "关系类别": "外敌", "关系层级": "一级", "上级连接线标题": "外敌", "关系简述": "尧禅位于舜，丹朱作为被排除的继承人，与舜形成敌对势力，舜即位后将其流放。见《史记·五帝本纪》《竹书纪年》。", "record_id": "recf5349984e2df"}');
+INSERT INTO box_graph_edge (box_id, from_node_key, to_node_key, label) VALUES ('GLBL_00578', 'cat_foe', 'hd_foe_001', '外敌');
+INSERT INTO box_graph_node (component_id, shilue_id, shilue_name, box_id, node_key, node_type, name, extra_json) VALUES ('GLBL_00578_REL_HD_FOE_002', 'GLBL_00578', '丹朱', 'GLBL_00578', 'hd_foe_002', 'person', '后稷', '{"关系ID": "HD-FOE-002", "关系类别": "外敌", "关系层级": "一级", "上级连接线标题": "外敌", "关系简述": "后稷受舜之命将丹朱流放至丹水，是丹朱流放的具体执行者。见《竹书纪年》。", "record_id": "rec785148066189"}');
+INSERT INTO box_graph_edge (box_id, from_node_key, to_node_key, label) VALUES ('GLBL_00578', 'cat_foe', 'hd_foe_002', '外敌');

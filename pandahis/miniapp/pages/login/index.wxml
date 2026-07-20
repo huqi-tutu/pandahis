@@ -32,6 +32,8 @@
             placeholder="有邀请码可填写"
             placeholder-class="input-placeholder"
             bindinput="onInviteCodeInput"
+            adjust-position="{{true}}"
+            cursor-spacing="{{80}}"
           />
         </view>
       </view>
@@ -49,6 +51,8 @@
               maxlength="11"
               bindinput="onPhoneInput"
               value="{{phone}}"
+              adjust-position="{{true}}"
+              cursor-spacing="{{80}}"
             />
           </view>
         </view>
@@ -62,6 +66,8 @@
               maxlength="6"
               bindinput="onCodeInput"
               value="{{code}}"
+              adjust-position="{{true}}"
+              cursor-spacing="{{80}}"
             />
             <view class="send-code {{countdown > 0 ? 'disabled' : ''}}" bindtap="sendCode">
               <text>{{countdown > 0 ? countdown + 's后重发' : '获取验证码'}}</text>

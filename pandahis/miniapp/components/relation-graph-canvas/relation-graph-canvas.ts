@@ -28,6 +28,8 @@ type Pos = {
   stroke: string
   targetBoxId?: string
   isCategory?: boolean
+  /** 君王/臣子/父母等二级分组，非真实人物 */
+  isSubcategory?: boolean
   pillW?: number
 }
 
@@ -42,6 +44,27 @@ const CATEGORY_FILL: Record<string, string> = {
 }
 const CATEGORY_STROKE = 'rgba(212, 176, 152, 0.38)'
 const CATEGORY_TEXT = '#9A8A82'
+/** 子分类：比一级分类更弱的胶囊样式 */
+const SUBCATEGORY_FILL = 'rgba(248, 246, 242, 0.55)'
+const SUBCATEGORY_STROKE = 'rgba(212, 176, 152, 0.28)'
+const SUBCATEGORY_TEXT = '#B0A89E'
+/** 分组节点标题（非人名），应渲染为子分类胶囊 */
+const SUBCATEGORY_NAMES = new Set([
+  '君王',
+  '臣子',
+  '敌对',
+  '父母',
+  '配偶',
+  '子女',
+  '兄弟',
+  '姐妹',
+  '后裔',
+  '族人',
+  '同僚',
+  '外敌',
+  '师从',
+  '家庭',
+])
 
 type GroupBox = { name: string; x: number; y: number; w: number; h: number }
 
@@ -97,6 +120,25 @@ function isCategoryNode(meta?: GraphNode): boolean {
     /* ignore */
   }
   return false
+}
+
+/** 君王/臣子/父母等：分组节点，不是人物 */
+function isSubcategoryNode(meta?: GraphNode): boolean {
+  if (!meta || isCategoryNode(meta)) return false
+  try {
+    if (meta.extraJson) {
+      const o = JSON.parse(meta.extraJson) as Record<string, unknown>
+      if (o.isSubcategoryNode) return true
+    }
+  } catch {
+    /* ignore */
+  }
+  const name = ((meta.name != null && String(meta.name).trim()) || '').trim()
+  return SUBCATEGORY_NAMES.has(name)
+}
+
+function isGroupLikePos(p: Pos): boolean {
+  return !!(p.isCategory || p.isSubcategory)
 }
 
 function assignNodeGroups(
@@ -372,7 +414,7 @@ function categoryRingDistance(minDim: number, fanLeaves = 1): number {
 }
 
 function edgeRadiusAlong(p: Pos, ux: number, uy: number): number {
-  if (p.isCategory && p.pillW) {
+  if ((p.isCategory || p.isSubcategory) && p.pillW) {
     const hw = p.pillW / 2
     const hh = p.r
     const ax = Math.abs(ux)
@@ -404,7 +446,7 @@ function countLeaves(key: string, edges: GraphEdge[], nodeMap: Map<string, Graph
 }
 
 function parentExtentAlong(parent: Pos, ux: number, uy: number): number {
-  if (parent.isCategory && parent.pillW) {
+  if ((parent.isCategory || parent.isSubcategory) && parent.pillW) {
     return edgeRadiusAlong(parent, ux, uy)
   }
   return parent.r
@@ -430,9 +472,13 @@ function layoutOrbitSubtree(
 
   const outA = Math.atan2(parent.y - cy, parent.x - cx)
   const leafCounts = kids.map((k) => countLeaves(k, edges, nodeMap))
-  const radii = kids.map((k) => posMap.get(k)?.r ?? 18)
+  const radii = kids.map((k) => {
+    const meta = nodeMap.get(k)
+    if (isSubcategoryNode(meta)) return posMap.get(k)?.r ?? 12
+    return posMap.get(k)?.r ?? 18
+  })
   const maxChildR = Math.max(...radii, 18)
-  const gap = parent.isCategory ? 38 : 34
+  const gap = isGroupLikePos(parent) ? 38 : 34
   const parentExt = parentExtentAlong(parent, Math.cos(outA), Math.sin(outA))
   const step = parentExt + maxChildR + gap
 
@@ -442,7 +488,7 @@ function layoutOrbitSubtree(
   const angleSpans = leafCounts.map((leaves) => Math.max(minAngle, leaves * minAngle * 0.9))
   const totalSpan = angleSpans.reduce((a, b) => a + b, 0)
   // 扇区以父节点外向角为中轴，略收拢避免跨入邻类
-  const maxSpan = parent.isCategory ? Math.PI * 0.95 : Math.PI * 0.75
+  const maxSpan = isGroupLikePos(parent) ? Math.PI * 0.95 : Math.PI * 0.75
   const scale = totalSpan > maxSpan ? maxSpan / totalSpan : 1
   let cursor = outA - (totalSpan * scale) / 2
 
@@ -459,6 +505,7 @@ function layoutOrbitSubtree(
     const y = parent.y + childStep * Math.sin(ang)
     const existing = posMap.get(childKey)
     const fullName = ((meta.name != null && String(meta.name).trim()) || childKey).trim()
+    const sub = isSubcategoryNode(meta)
 
     posMap.set(childKey, {
       key: childKey,
@@ -467,21 +514,23 @@ function layoutOrbitSubtree(
       r: childR,
       fullName,
       lines: existing?.lines ?? [fullName],
-      fontSize: existing?.fontSize ?? 11,
-      type: meta.type || 'person',
+      fontSize: existing?.fontSize ?? (sub ? 10 : 11),
+      type: sub ? 'subcategory' : meta.type || 'person',
       depth,
-      color: existing?.color ?? BRANCH[i % BRANCH.length],
-      stroke: existing?.stroke ?? '#D4B098',
+      color: sub ? SUBCATEGORY_FILL : existing?.color ?? BRANCH[i % BRANCH.length],
+      stroke: sub ? SUBCATEGORY_STROKE : existing?.stroke ?? '#D4B098',
       targetBoxId: meta.targetBoxId,
+      isSubcategory: sub,
+      pillW: sub ? Math.max(44, fullName.length * 12 + 16) : undefined,
     })
     layoutOrbitSubtree(childKey, depth + 1, posMap, nodeMap, edges, cx, cy)
   })
 }
 
-/** 分离重叠：人物↔人物、人物↔分类 */
+/** 分离重叠：人物↔人物、人物↔分组胶囊 */
 function separateOverlappingPersons(positions: Pos[], centerKey: string, cx: number, cy: number) {
-  const persons = positions.filter((p) => !p.isCategory && p.key !== centerKey)
-  const obstacles = positions.filter((p) => p.isCategory || p.key === centerKey)
+  const persons = positions.filter((p) => !isGroupLikePos(p) && p.key !== centerKey)
+  const obstacles = positions.filter((p) => isGroupLikePos(p) || p.key === centerKey)
 
   for (let pass = 0; pass < 16; pass++) {
     let moved = false
@@ -517,7 +566,10 @@ function separateOverlappingPersons(positions: Pos[], centerKey: string, cx: num
         const dx = p.x - obs.x
         const dy = p.y - obs.y
         const dist = Math.hypot(dx, dy)
-        const obsR = obs.isCategory && obs.pillW ? Math.max(obs.pillW / 2, obs.r) + 6 : obs.r + 8
+        const obsR =
+          (obs.isCategory || obs.isSubcategory) && obs.pillW
+            ? Math.max(obs.pillW / 2, obs.r) + 6
+            : obs.r + 8
         const minDist = p.r + obsR + 18
         if (dist >= minDist) continue
         const push = dist < 1e-4 ? minDist : minDist - dist + 1
@@ -587,7 +639,8 @@ function reflowCompactCategoryTree(
 
 function labelBoxHitsNode(lx: number, ly: number, hw: number, hh: number, nodes: Pos[]): boolean {
   for (const n of nodes) {
-    const nr = n.isCategory && n.pillW ? Math.max(n.pillW / 2, n.r) : n.r
+    const nr =
+      (n.isCategory || n.isSubcategory) && n.pillW ? Math.max(n.pillW / 2, n.r) : n.r
     const dx = Math.abs(lx - n.x)
     const dy = Math.abs(ly - n.y)
     // 余量收紧：允许标签贴线，只避开圆内文字区
@@ -937,6 +990,14 @@ function applyFixedNodeSizes(positions: Pos[], minDim: number) {
       p.r = Math.max(13, 15 * scale)
       p.fontSize = 11
       p.pillW = Math.max(52, p.fullName.length * 13 + 20)
+    } else if (p.isSubcategory || SUBCATEGORY_NAMES.has(p.fullName)) {
+      p.isSubcategory = true
+      p.r = Math.max(11, 12 * scale)
+      p.fontSize = 10
+      p.pillW = Math.max(44, p.fullName.length * 12 + 16)
+      p.color = SUBCATEGORY_FILL
+      p.stroke = SUBCATEGORY_STROKE
+      p.lines = [p.fullName]
     } else if (p.depth === 1) {
       p.r = Math.max(20, 24 * scale)
       p.fontSize = 11
@@ -944,7 +1005,7 @@ function applyFixedNodeSizes(positions: Pos[], minDim: number) {
       p.r = Math.max(16, 20 * scale)
       p.fontSize = 11
     }
-    if (!p.isCategory) {
+    if (!p.isCategory && !p.isSubcategory) {
       p.lines = [p.fullName.length > 5 && p.r < 22 ? p.fullName.slice(0, 4) + '…' : p.fullName]
     }
   }
@@ -1084,12 +1145,19 @@ function buildEdgeList(positions: Pos[], edges: GraphEdge[]): EdgeDraw[] {
     const ra = edgeRadiusAlong(a, ux, uy)
     const rb = edgeRadiusAlong(b, -ux, -uy)
     const isCenterToCat = a.depth === 0 && b.isCategory
+    // 分类→子分类：连线标题与节点名重复时不画，避免「君王」叠两遍
+    const labelRaw = isCenterToCat ? '' : (e.label || '关联').slice(0, 16)
+    const hideDup =
+      (a.isCategory || a.isSubcategory) &&
+      b.isSubcategory &&
+      labelRaw &&
+      (labelRaw === b.fullName || labelRaw === a.fullName)
     out.push({
       x1: a.x + ux * ra,
       y1: a.y + uy * ra,
       x2: b.x - ux * rb,
       y2: b.y - uy * rb,
-      label: isCenterToCat ? '' : (e.label || '关联').slice(0, 16),
+      label: hideDup ? '' : labelRaw,
       color: isCenterToCat ? 'rgba(180, 160, 150, 0.75)' : 'rgba(190, 170, 160, 0.8)',
       len: Math.hypot(b.x - ux * rb - (a.x + ux * ra), b.y - uy * rb - (a.y + uy * ra)),
     })
@@ -1302,10 +1370,10 @@ Component({
       }
 
       for (const p of layout.positions) {
-        if (p.isCategory && p.pillW) {
+        if ((p.isCategory || p.isSubcategory) && p.pillW) {
           const hw = p.pillW / 2
           const hh = p.r
-          const rx = 6
+          const rx = p.isSubcategory ? 5 : 6
           ctx.beginPath()
           ctx.moveTo(p.x - hw + rx, p.y - hh)
           ctx.lineTo(p.x + hw - rx, p.y - hh)
@@ -1320,7 +1388,8 @@ Component({
           ctx.fillStyle = p.color
           ctx.strokeStyle = p.stroke
           ctx.lineWidth = 1
-          ctx.setLineDash([4, 3])
+          // 一级分类虚线稍密，子分类更疏、更弱
+          ctx.setLineDash(p.isSubcategory ? [3, 4] : [4, 3])
           ctx.fill()
           ctx.stroke()
           ctx.setLineDash([])
@@ -1334,8 +1403,8 @@ Component({
           ctx.stroke()
         }
 
-        ctx.fillStyle = p.isCategory ? CATEGORY_TEXT : '#262626'
-        const fontWeight = p.depth === 0 ? '600' : p.isCategory ? '500' : '400'
+        ctx.fillStyle = p.isCategory || p.isSubcategory ? (p.isSubcategory ? SUBCATEGORY_TEXT : CATEGORY_TEXT) : '#262626'
+        const fontWeight = p.depth === 0 ? '600' : p.isCategory ? '500' : p.isSubcategory ? '500' : '400'
         ctx.font = `${fontWeight} ${p.fontSize}px sans-serif`
         ctx.textAlign = 'center'
         ctx.textBaseline = 'middle'

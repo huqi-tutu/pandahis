@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.async.AsyncRequestNotUsableException;
 import org.springframework.web.method.annotation.HandlerMethodValidationException;
+import org.springframework.web.multipart.support.MissingServletRequestPartException;
 import org.springframework.web.servlet.resource.NoResourceFoundException;
 
 @RestControllerAdvice
@@ -83,6 +84,14 @@ public class GlobalExceptionHandler {
     log.warn("[{}] NoResourceFound {}", requestId, ex.getResourcePath());
     return ResponseEntity.status(HttpStatus.NOT_FOUND)
         .body(new ApiResponse<>(ErrorCode.NOT_FOUND.name(), "not found", requestId, null));
+  }
+
+  @ExceptionHandler(MissingServletRequestPartException.class)
+  public ResponseEntity<ApiResponse<Object>> handleMissingPart(MissingServletRequestPartException ex) {
+    String requestId = RequestIdHolder.get();
+    log.warn("[{}] MissingServletRequestPart {}", requestId, ex.getRequestPartName());
+    return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+        .body(new ApiResponse<>(ErrorCode.INVALID_ARGUMENT.name(), "请上传头像文件", requestId, null));
   }
 
   /**

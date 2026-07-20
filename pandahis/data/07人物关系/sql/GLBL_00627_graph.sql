@@ -1,0 +1,13 @@
+DELETE FROM box_graph_edge WHERE box_id='GLBL_00627';
+DELETE FROM box_graph_node WHERE box_id='GLBL_00627';
+INSERT INTO box_graph_node (component_id, shilue_id, shilue_name, box_id, node_key, node_type, name, extra_json) VALUES ('GLBL_00627_REL_center', 'GLBL_00627', '共工', 'GLBL_00627', 'center', 'event', '共工', '{}');
+INSERT INTO box_graph_node (component_id, shilue_id, shilue_name, box_id, node_key, node_type, name, extra_json) VALUES ('GLBL_00627_REL_cat_col', 'GLBL_00627', '共工', 'GLBL_00627', 'cat_col', 'category', '同僚', '{"关系类别": "同僚", "isCategoryNode": true}');
+INSERT INTO box_graph_edge (box_id, from_node_key, to_node_key, label) VALUES ('GLBL_00627', 'center', 'cat_col', '同僚');
+INSERT INTO box_graph_node (component_id, shilue_id, shilue_name, box_id, node_key, node_type, name, extra_json) VALUES ('GLBL_00627_REL_HD_COL_001', 'GLBL_00627', '共工', 'GLBL_00627', 'hd_col_001', 'person', '君王', '{"关系ID": "HD-COL-001", "关系类别": "同僚", "关系层级": "一级", "上级连接线标题": "君王", "关系简述": "共工在颛顼为帝时为其辖下部族首领，后起兵争帝。", "record_id": "rec9748b75ced40"}');
+INSERT INTO box_graph_edge (box_id, from_node_key, to_node_key, label) VALUES ('GLBL_00627', 'cat_col', 'hd_col_001', '君王');
+INSERT INTO box_graph_node (component_id, shilue_id, shilue_name, box_id, node_key, node_type, name, extra_json) VALUES ('GLBL_00627_REL_HD_COL_002', 'GLBL_00627', '共工', 'GLBL_00627', 'hd_col_002', 'person', '颛顼', '{"关系ID": "HD-COL-002", "关系类别": "同僚", "关系层级": "二级", "上级连接线标题": "为君者", "关系简述": "帝颛顼统领天下，共工与之争帝，被颛顼诛讨。《史记·五帝本纪》载“颛顼诛共工”。", "所属一级关系": "君王", "关系链": "共工 › 君王", "record_id": "receb2495cedf3a"}');
+INSERT INTO box_graph_edge (box_id, from_node_key, to_node_key, label) VALUES ('GLBL_00627', 'hd_col_001', 'hd_col_002', '为君者');
+INSERT INTO box_graph_node (component_id, shilue_id, shilue_name, box_id, node_key, node_type, name, extra_json) VALUES ('GLBL_00627_REL_HD_COL_003', 'GLBL_00627', '共工', 'GLBL_00627', 'hd_col_003', 'person', '敌对', '{"关系ID": "HD-COL-003", "关系类别": "同僚", "关系层级": "一级", "上级连接线标题": "敌对", "关系简述": "共工与朝中臣属互为敌对者。", "record_id": "recf5690e050166"}');
+INSERT INTO box_graph_edge (box_id, from_node_key, to_node_key, label) VALUES ('GLBL_00627', 'cat_col', 'hd_col_003', '敌对');
+INSERT INTO box_graph_node (component_id, shilue_id, shilue_name, box_id, node_key, node_type, name, extra_json) VALUES ('GLBL_00627_REL_HD_COL_004', 'GLBL_00627', '共工', 'GLBL_00627', 'hd_col_004', 'person', '重黎', '{"关系ID": "HD-COL-004", "关系类别": "同僚", "关系层级": "二级", "上级连接线标题": "征讨者", "关系简述": "颛顼氏时期共工作乱，重黎奉命率兵征讨。《竹书纪年》载其事。", "所属一级关系": "敌对", "关系链": "共工 › 敌对", "record_id": "rec0c375bc31cb6"}');
+INSERT INTO box_graph_edge (box_id, from_node_key, to_node_key, label) VALUES ('GLBL_00627', 'hd_col_003', 'hd_col_004', '征讨者');

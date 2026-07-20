@@ -33,25 +33,19 @@ Component({
         },
     },
     data: {
-        posterPath: '',
         rendering: false,
-        renderError: '',
     },
     observers: {
         visible(v) {
             if (v) {
-                void this.renderPoster();
+                void this.renderAndShare();
             }
             else {
-                this.setData({ posterPath: '', renderError: '' });
+                this.setData({ rendering: false });
             }
         },
     },
     methods: {
-        noop() { },
-        onClose() {
-            this.triggerEvent('close');
-        },
         buildPayload() {
             return {
                 quoteText: this.properties.quoteText,
@@ -62,63 +56,43 @@ Component({
                 excerptDate: this.properties.excerptDate,
             };
         },
-        async renderPoster() {
+        async waitForCanvas() {
+            // canvas 挂载后稍等一帧再取 node，避免 wx:if 刚为 true 时查不到
+            await new Promise((resolve) => setTimeout(resolve, 32));
+            return new Promise((resolve) => {
+                this.createSelectorQuery()
+                    .select('#sharePosterCanvas')
+                    .fields({ node: true, size: true })
+                    .exec((res) => {
+                    var _a;
+                    const canvas = (_a = res === null || res === void 0 ? void 0 : res[0]) === null || _a === void 0 ? void 0 : _a.node;
+                    resolve(canvas !== null && canvas !== void 0 ? canvas : null);
+                });
+            });
+        },
+        async renderAndShare() {
             if (this.data.rendering)
                 return;
-            this.setData({ rendering: true, posterPath: '', renderError: '' });
+            this.setData({ rendering: true });
             try {
-                const query = this.createSelectorQuery();
-                const node = await new Promise((resolve) => {
-                    query
-                        .select('#sharePosterCanvas')
-                        .fields({ node: true, size: true })
-                        .exec((res) => { var _a; return resolve((_a = res === null || res === void 0 ? void 0 : res[0]) !== null && _a !== void 0 ? _a : null); });
-                });
-                const canvas = node === null || node === void 0 ? void 0 : node.node;
+                const canvas = await this.waitForCanvas();
                 if (!canvas) {
                     throw new Error('canvas 初始化失败');
                 }
                 const posterPath = await (0, share_poster_canvas_1.renderSharePosterToCanvas)(canvas, this.buildPayload());
-                this.setData({ posterPath, rendering: false, renderError: '' });
+                this.setData({ rendering: false });
                 this.triggerEvent('ready', { posterPath });
+                // 直接调起微信原生图片分享菜单（含发送给朋友 / 朋友圈 / 收藏 / 保存 / 贴图）
+                (0, share_poster_canvas_1.openPosterShareMenu)(posterPath);
+                // 关闭页面侧状态，避免残留自定义浮层
+                this.triggerEvent('close');
             }
             catch (err) {
+                this.setData({ rendering: false });
                 const msg = err instanceof Error ? err.message : '海报生成失败';
-                this.setData({ rendering: false, renderError: msg });
-                wx.showToast({ title: '海报生成失败', icon: 'none' });
+                wx.showToast({ title: msg || '海报生成失败', icon: 'none' });
+                this.triggerEvent('close');
             }
-        },
-        ensurePosterReady() {
-            const path = this.data.posterPath;
-            if (!path) {
-                wx.showToast({ title: '海报生成中，请稍候', icon: 'none' });
-                return null;
-            }
-            return path;
-        },
-        async onSave() {
-            const path = this.ensurePosterReady();
-            if (!path)
-                return;
-            try {
-                await (0, share_poster_canvas_1.savePosterToAlbum)(path);
-                wx.showToast({ title: '已保存到相册', icon: 'success' });
-            }
-            catch {
-                wx.showToast({ title: '保存失败', icon: 'none' });
-            }
-        },
-        onShareFriend() {
-            const path = this.ensurePosterReady();
-            if (!path)
-                return;
-            (0, share_poster_canvas_1.openPosterShareMenu)(path);
-        },
-        onShareTimeline() {
-            const path = this.ensurePosterReady();
-            if (!path)
-                return;
-            (0, share_poster_canvas_1.openPosterShareMenu)(path);
         },
     },
 });

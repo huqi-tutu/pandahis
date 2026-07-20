@@ -1076,6 +1076,26 @@ def _quality_warnings(
     else:
         print("  ✅ 文臣/武将/宦官字数充足")
 
+    # 4. 厚度门预警：全类合计 <100 汉字（merge 将拒收 GLBL，见 史料厚度门规则.md）
+    thin_all = []
+    han_re = re.compile(r"[\u4e00-\u9fff]")
+    for e in entries:
+        if not src_lines:
+            continue
+        total_han = 0
+        for pr in e.get("paragraphs", []):
+            for p in range(int(pr.get("paragraph_from", 0)), int(pr.get("paragraph_to", 0)) + 1):
+                if 1 <= p <= len(src_lines):
+                    total_han += len(han_re.findall(src_lines[p - 1]))
+        if 0 < total_han < 100:
+            thin_all.append((e.get("史略ID"), e.get("史略名称"), e.get("史略分类"), total_han))
+    if thin_all:
+        print("  ⚠️  厚度门：下列条目合计 <100 字，merge 将不产 GLBL（本纪君王除外 warn-only）：")
+        for eid, name, cat, n in sorted(thin_all):
+            print(f"      {eid}: {name} ({cat}) 共{n}字")
+    else:
+        print("  ✅ 厚度门：无 <100 字条目预警")
+
 
 def _exit_with_errors() -> None:
     if errors:

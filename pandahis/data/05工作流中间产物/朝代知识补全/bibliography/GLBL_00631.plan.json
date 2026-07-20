@@ -1,0 +1,89 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00631",
+  "写作结构": "正史（二十四史）未载胤侯事迹，不涉及翻译部分。拓展以《竹书纪年》为核心叙事，说明其在太康失国时期的诸侯身份与衰落，并引《尚书·胤征》作为胤国后续职事的背景参照，以明夏诸侯制度的延续性。叙事须控制留白，不揣细节。",
+  "候选著作": [
+    {
+      "出处": "《古本竹书纪年·夏纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载太康失国期间胤侯与夏后氏同衰，是唯一直接提及太康时期胤侯的先秦编年记载。",
+      "检索词": "胤侯 太康 失国",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《尚书·胤征》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "载仲康时胤侯奉命征羲和，反映胤国在夏朝政治中的军事职责，可作太康时期胤侯家族地位的旁证，但非同一人物。",
+      "检索词": "胤征 羲和",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《古本竹书纪年辑证》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "汇集《竹书纪年》佚文及诸家校注，对太康失国时期的诸侯格局有所解说，可资推考胤侯的封邑与衰落背景。",
+      "检索词": "胤侯 太康",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《古本竹书纪年·夏纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载太康失国期间胤侯与夏后氏同衰，是唯一直接提及太康时期胤侯的先秦编年记载。",
+      "检索词": "胤侯 太康 失国",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《尚书·胤征》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "载仲康时胤侯奉命征羲和，反映胤国在夏朝政治中的军事职责，可作太康时期胤侯家族地位的旁证，但非同一人物。",
+      "检索词": "胤征 羲和",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《古本竹书纪年辑证》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "汇集《竹书纪年》佚文及诸家校注，对太康失国时期的诸侯格局有所解说，可资推考胤侯的封邑与衰落背景。",
+      "检索词": "胤侯 太康",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 3,
+    "C_excluded": 0,
+    "overall": "B"
+  }
+}

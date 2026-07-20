@@ -97,6 +97,32 @@ def min_word_count(paragraph_count: int) -> int:
     return base + extra
 
 
+_HAN_CHAR_RE = re.compile(r"[\u4e00-\u9fff]")
+THIN_SOURCE_THRESHOLD = 100
+
+
+def recalled_source_han_count(recalled: Dict[str, Any]) -> int:
+    total = 0
+    for block in recalled.get("blocks") or []:
+        for para in block.get("paragraphs") or []:
+            total += len(_HAN_CHAR_RE.findall(str(para.get("text") or "")))
+    return total
+
+
+def verify_source_thickness(recalled: Dict[str, Any], *, threshold: int = THIN_SOURCE_THRESHOLD) -> List[str]:
+    """一期翻译准入：史料提取条目合计汉字须 ≥ threshold。"""
+    source_kind = str(recalled.get("史略来源") or "史料提取").strip()
+    if source_kind not in ("史料提取", ""):
+        return []
+    total = recalled_source_han_count(recalled)
+    if total < threshold:
+        return [
+            f"史料原文合计仅{total}汉字（<{threshold}），禁止一期翻译；"
+            "应走 merge 厚度门拒收 → 朝代知识补全（见 史料厚度门规则.md）"
+        ]
+    return []
+
+
 def _chunk_source_char_count(recalled_chunk: Dict[str, Any]) -> int:
     total = 0
     for block in recalled_chunk.get("blocks") or []:
@@ -204,7 +230,7 @@ def verify_mother_draft(
     batch_mode: bool = False,
 ) -> Tuple[bool, List[str]]:
     """Phase1 母本顺译质检。"""
-    errors: List[str] = []
+    errors: List[str] = list(verify_source_thickness(recalled))
     if not mother_path.is_file():
         return False, [f"缺少母本顺译: {mother_path}"]
     try:
@@ -592,7 +618,7 @@ def verify_output(
     output_dir: Path,
     plan: Dict[str, Any] | None = None,
 ) -> Tuple[bool, List[str]]:
-    errors: List[str] = []
+    errors: List[str] = list(verify_source_thickness(recalled))
     entry_name = str(recalled.get("史略名称") or "")
     ok, data, load_errs = load_output(entry_id, output_dir, entry_name)
     errors.extend(load_errs)

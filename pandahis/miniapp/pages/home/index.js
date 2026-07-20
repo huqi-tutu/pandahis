@@ -294,7 +294,8 @@ function calcCivScroll(realIdx, screenW) {
 // ─────────────────────────────────────────────────────────────────────────────
 const STACK_UI_SCALE   = 0.7   // 图片 Tab 整体等比缩小 30%
 const STACK_CARD_W_RPX = Math.round(148 * STACK_UI_SCALE)  // 104
-const STACK_CARD_H_RPX = Math.round(168 * STACK_UI_SCALE)  // 118
+/** 与 COS 文明卡素材比例 468×546 对齐，避免 aspectFill 裁切错位 */
+const STACK_CARD_H_RPX = Math.round(STACK_CARD_W_RPX * 546 / 468)
 const STACK_STEP_RPX   = Math.round(166 * STACK_UI_SCALE)  // 116
 const STACK_BAR_RPX    = Math.round(210 * STACK_UI_SCALE)  // 147
 const STACK_LAYER_SHIFT_PX = Math.round(22 * STACK_UI_SCALE)  // 15
@@ -543,7 +544,34 @@ Page({
       const mapUrl = String(overview.mapImageUrl || '').trim() || DEFAULT_OVERVIEW_MAP
       const dynastyUnitMap = buildDynastyUnitMap(data.cells || [])
       this._dynastyUnitMap = dynastyUnitMap
-      this.setData({ overviewMapUrl: mapUrl, dynastyUnitMap })
+
+      // 用后端 tabImageUrl（含 cache-bust）覆盖浮层/总览配图，保证文明 CODE ↔ 图 一一对应
+      const civs = Array.isArray(data.civilizations) ? data.civilizations : []
+      const urlBySlug = {}
+      civs.forEach(c => {
+        const code = String((c && c.code) || '').trim().toUpperCase()
+        const slug = CIV_SLUG_BY_CODE[code]
+        const url = String((c && c.tabImageUrl) || '').trim()
+        if (slug && url) urlBySlug[slug] = url
+      })
+      CIV_TABS.forEach(t => {
+        if (urlBySlug[t.id]) t.img = urlBySlug[t.id]
+      })
+      const civPickerItems = CIV_TABS.map((t, i) => Object.assign({}, t, { realIdx: i }))
+      const civSpots = (this.data.civSpots || OVERVIEW_CIV_SPOTS).map(spot => {
+        const matrixSlug = OVERVIEW_SPOT_TO_MATRIX_SLUG[spot.id] || spot.id
+        const img = urlBySlug[matrixSlug] || spot.img
+        return Object.assign({}, spot, { img })
+      })
+
+      this.setData({
+        overviewMapUrl: mapUrl,
+        dynastyUnitMap,
+        civPickerItems,
+        civSpots,
+        civTabsLoop: buildLoopItems(this.data.civIndex || 0),
+      })
+      this._preloadCivImages()
     }).catch(err => {
       console.warn('[home] grid load failed', err)
       this._dynastyUnitMap = {}
@@ -584,7 +612,7 @@ Page({
     }).catch(() => localState)
   },
 
-  /** 每次进入首页：云函数拉取王朝 / 帝王数据 */
+  /** 拉取首页矩阵源数据（冷启动 / 无缓存兜底时调用；切 tab 回来不走这里） */
   _refreshMatrixData() {
     this.setData({ matrixDataLoading: true })
     return fetchHomeMatrixData().then(info => {
@@ -1073,15 +1101,22 @@ Page({
       return
     }
 
+    // 切 tab / 从子页返回：页面实例仍在，矩阵 DOM 与滚动位置应保留。
+    // 不整表 _loadMatrix、不恢复视口（避免闪到唐朝等过期锚点）。
+    // 仅冷启动竞态（尚未 ready）或矩阵被清空时才兜底重建。
+    const hasMatrix = (this.data.matrixRows || []).length > 0
+    if (this._readyLoaded && hasMatrix) {
+      return
+    }
+
     this._refreshMatrixData().then(() => {
-      if (this._readyLoaded) {
-        const restoreState = this._cachedHomeState || readLocalHomeState()
-        this._loadMatrix(this.data.activeCiv, this.data.expandedDynasties, () => {
-          if (restoreState && hasMeaningfulHomeState(restoreState)) {
-            this._restoreViewportFromState(restoreState)
-          }
-        })
-      }
+      if (!this._readyLoaded) return
+      const restoreState = this._cachedHomeState || readLocalHomeState()
+      this._loadMatrix(this.data.activeCiv, this.data.expandedDynasties, () => {
+        if (restoreState && hasMeaningfulHomeState(restoreState)) {
+          this._restoreViewportFromState(restoreState)
+        }
+      })
     })
   },
 

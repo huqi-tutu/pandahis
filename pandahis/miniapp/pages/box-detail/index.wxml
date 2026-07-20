@@ -264,7 +264,7 @@
     </view>
   </view>
   <!-- 底部悬浮操作栏（原文/播放/收藏/分享） -->
-  <view wx:if="{{tab === 'content'}}" class="bottom-action-bar {{!uiFocused ? 'bottom-action-bar--hidden' : ''}}" catchtap="markTapFromBar">
+  <view wx:if="{{tab === 'content'}}" class="bottom-action-bar {{!uiFocused || sharePosterVisible ? 'bottom-action-bar--hidden' : ''}}" catchtap="markTapFromBar">
    <view class="bottom-action-item" bindtap="goOriginal">
     <image class="bottom-action-icon" src="/images/icons/yuanwen.png" mode="aspectFit" />
     <text class="bottom-action-label">原文</text>
@@ -344,6 +344,7 @@
   visible="{{selectionBarVisible}}"
   left="{{selectionBarLeft}}"
   top="{{selectionBarTop}}"
+  placement="{{selectionBarPlacement}}"
   bind:share="onSelectionShare"
   bind:copy="onSelectionCopy"
   bind:query="onSelectionQuery"

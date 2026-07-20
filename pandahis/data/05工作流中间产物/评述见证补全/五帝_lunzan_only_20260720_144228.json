@@ -1,0 +1,241 @@
+{
+  "stamp": "20260720_144228",
+  "dynasty": "五帝",
+  "by_status": {
+    "dry_run": 29
+  },
+  "results": [
+    {
+      "id": "GLBL_00056",
+      "name": "尧",
+      "status": "dry_run",
+      "strategy": "swap",
+      "entry_count": 5,
+      "prompt_chars": 4743
+    },
+    {
+      "id": "GLBL_00057",
+      "name": "帝喾",
+      "status": "dry_run",
+      "strategy": "swap",
+      "entry_count": 5,
+      "prompt_chars": 4756
+    },
+    {
+      "id": "GLBL_00129",
+      "name": "舜",
+      "status": "dry_run",
+      "strategy": "swap",
+      "entry_count": 5,
+      "prompt_chars": 4746
+    },
+    {
+      "id": "GLBL_00144",
+      "name": "颛顼",
+      "status": "dry_run",
+      "strategy": "append",
+      "entry_count": 4,
+      "prompt_chars": 4719
+    },
+    {
+      "id": "GLBL_00149",
+      "name": "黄帝",
+      "status": "dry_run",
+      "strategy": "swap",
+      "entry_count": 5,
+      "prompt_chars": 4761
+    },
+    {
+      "id": "GLBL_00561",
+      "name": "阪泉之战",
+      "status": "dry_run",
+      "strategy": "swap",
+      "entry_count": 5,
+      "prompt_chars": 4767
+    },
+    {
+      "id": "GLBL_00562",
+      "name": "涿鹿之战",
+      "status": "dry_run",
+      "strategy": "append",
+      "entry_count": 4,
+      "prompt_chars": 4728
+    },
+    {
+      "id": "GLBL_00563",
+      "name": "颛顼绝地天通",
+      "status": "dry_run",
+      "strategy": "append",
+      "entry_count": 4,
+      "prompt_chars": 4733
+    },
+    {
+      "id": "GLBL_00564",
+      "name": "尧舜禅让",
+      "status": "dry_run",
+      "strategy": "swap",
+      "entry_count": 5,
+      "prompt_chars": 4760
+    },
+    {
+      "id": "GLBL_00565",
+      "name": "鲧禹治水",
+      "status": "dry_run",
+      "strategy": "swap",
+      "entry_count": 5,
+      "prompt_chars": 4752
+    },
+    {
+      "id": "GLBL_00566",
+      "name": "舜流四凶",
+      "status": "dry_run",
+      "strategy": "append",
+      "entry_count": 4,
+      "prompt_chars": 4735
+    },
+    {
+      "id": "GLBL_00567",
+      "name": "禅让制",
+      "status": "dry_run",
+      "strategy": "swap",
+      "entry_count": 5,
+      "prompt_chars": 4754
+    },
+    {
+      "id": "GLBL_00568",
+      "name": "部落联盟共主制",
+      "status": "dry_run",
+      "strategy": "swap",
+      "entry_count": 5,
+      "prompt_chars": 4775
+    },
+    {
+      "id": "GLBL_00569",
+      "name": "四岳议事制度",
+      "status": "dry_run",
+      "strategy": "append",
+      "entry_count": 4,
+      "prompt_chars": 4752
+    },
+    {
+      "id": "GLBL_00570",
+      "name": "九官制",
+      "status": "dry_run",
+      "strategy": "swap",
+      "entry_count": 5,
+      "prompt_chars": 4755
+    },
+    {
+      "id": "GLBL_00571",
+      "name": "羲和观象授时",
+      "status": "dry_run",
+      "strategy": "swap",
+      "entry_count": 5,
+      "prompt_chars": 4784
+    },
+    {
+      "id": "GLBL_00572",
+      "name": "五礼制度",
+      "status": "dry_run",
+      "strategy": "append",
+      "entry_count": 3,
+      "prompt_chars": 4708
+    },
+    {
+      "id": "GLBL_00573",
+      "name": "五刑制度",
+      "status": "dry_run",
+      "strategy": "swap",
+      "entry_count": 5,
+      "prompt_chars": 4757
+    },
+    {
+      "id": "GLBL_00574",
+      "name": "嫘祖",
+      "status": "dry_run",
+      "strategy": "append",
+      "entry_count": 4,
+      "prompt_chars": 4718
+    },
+    {
+      "id": "GLBL_00575",
+      "name": "嫫母",
+      "status": "dry_run",
+      "strategy": "swap",
+      "entry_count": 5,
+      "prompt_chars": 4745
+    },
+    {
+      "id": "GLBL_00576",
+      "name": "娥皇",
+      "status": "dry_run",
+      "strategy": "swap",
+      "entry_count": 5,
+      "prompt_chars": 4741
+    },
+    {
+      "id": "GLBL_00577",
+      "name": "女英",
+      "status": "dry_run",
+      "strategy": "append",
+      "entry_count": 3,
+      "prompt_chars": 4701
+    },
+    {
+      "id": "GLBL_00578",
+      "name": "丹朱",
+      "status": "dry_run",
+      "strategy": "swap",
+      "entry_count": 5,
+      "prompt_chars": 4729
+    },
+    {
+      "id": "GLBL_00579",
+      "name": "皋陶",
+      "status": "dry_run",
+      "strategy": "swap",
+      "entry_count": 5,
+      "prompt_chars": 4748
+    },
+    {
+      "id": "GLBL_00580",
+      "name": "伯益",
+      "status": "dry_run",
+      "strategy": "swap",
+      "entry_count": 5,
+      "prompt_chars": 4729
+    },
+    {
+      "id": "GLBL_00582",
+      "name": "契",
+      "status": "dry_run",
+      "strategy": "append",
+      "entry_count": 3,
+      "prompt_chars": 4689
+    },
+    {
+      "id": "GLBL_00583",
+      "name": "弃",
+      "status": "dry_run",
+      "strategy": "swap",
+      "entry_count": 5,
+      "prompt_chars": 4761
+    },
+    {
+      "id": "GLBL_00584",
+      "name": "夔",
+      "status": "dry_run",
+      "strategy": "append",
+      "entry_count": 3,
+      "prompt_chars": 4693
+    },
+    {
+      "id": "GLBL_00585",
+      "name": "许由",
+      "status": "dry_run",
+      "strategy": "swap",
+      "entry_count": 5,
+      "prompt_chars": 4743
+    }
+  ]
+}

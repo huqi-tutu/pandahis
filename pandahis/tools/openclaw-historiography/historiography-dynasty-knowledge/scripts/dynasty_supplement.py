@@ -89,6 +89,7 @@ STEPS = (
     "test-review-llm",
     "enrich",
     "enrich-renwu",
+    "enrich-all",
 )
 
 REVIEW_PHASES = ("candidates", "entries")
@@ -295,6 +296,7 @@ def candidates_renwu_prompt(
     alias_index: dict[str, str],
     emperor_gaps: list[dict[str, str]],
     supplement_knowledge: dict[str, list],
+    thin_deferred: list[dict[str, Any]] | None = None,
 ) -> str:
     """人物候选：一次调用，六类串行加工，附分类定义与一期去重清单。"""
     phase1_lines = []
@@ -313,6 +315,14 @@ def candidates_renwu_prompt(
         f"- {g['帝王名称']}：{g['补全理由']}" for g in emperor_gaps
     ]
     gap_block = "\n".join(gap_lines) if gap_lines else "（帝王表君王均已有一期条目）"
+
+    thin_lines = []
+    for row in thin_deferred or []:
+        thin_lines.append(
+            f"- [{row.get('史略分类')}] {row.get('史略名称')} "
+            f"（一期标注{row.get('source_char_count')}字，未升GLBL，{row.get('史略ID')}）"
+        )
+    thin_block = "\n".join(thin_lines) if thin_lines else "（本朝暂无薄标注待补条目）"
 
     other_note = ""
     for cat in ("事略", "典制", "论著"):
@@ -350,6 +360,10 @@ def candidates_renwu_prompt(
 
 ## 帝王表君王缺口（须优先列入君王类候选）
 {gap_block}
+
+## 薄标注待补（merge 厚度门 <100 字 · 一期有 skeleton 无 GLBL · 优先考虑）
+{thin_block}
+说明：下列人物已在二十四史标注中出现但史料过薄，**不宜一期顺译**；若符合知名度与可写性，可纳入候选，**人审可删**。
 
 ## 已补朝代知识（参考，勿重复为人物）
 {other_note or '无'}
@@ -396,6 +410,11 @@ def run_candidates_renwu(
     dynasty_id = str(context["朝代ID"])
     phase1, alias_index = dkl.load_phase1_person_index(HISTOGRAPH_ROOT, dynasty_id)
     emperor_gaps = dkl.load_emperor_gaps(HISTOGRAPH_ROOT, dynasty_id, alias_index)
+    thin_deferred = dkl.load_thin_deferred_for_dynasty(
+        HISTOGRAPH_ROOT,
+        dynasty_id,
+        dynasty_name=str(context.get("朝代名称") or context.get("二级朝代坐标") or ""),
+    )
 
     payload = load_or_init_candidates(paths["candidates"], context)
     supplement = {c: list(payload["candidates"].get(c) or []) for c in CATEGORIES}
@@ -408,10 +427,11 @@ def run_candidates_renwu(
         alias_index,
         emperor_gaps,
         supplement,
+        thin_deferred,
     )
     if dry_run:
         _log("=== candidates-renwu preview ===")
-        _log(f"一期人物 {len(phase1)} 条，帝王缺口 {len(emperor_gaps)} 条")
+        _log(f"一期人物 {len(phase1)} 条，帝王缺口 {len(emperor_gaps)} 条，薄标注 {len(thin_deferred)} 条")
         _log(prompt[:4000])
         _log(f"...（共 {len(prompt)} 字）")
         return
@@ -423,6 +443,7 @@ def run_candidates_renwu(
         raise RuntimeError("人物候选解析失败（须为 JSON 对象）")
 
     phase1_canonicals = {str(p.get("标准名", "")) for p in phase1}
+    alias_map = dkl.load_person_alias_maps()
     for cat in PERSON_CATEGORIES:
         rows = data.get(cat) or []
         if not isinstance(rows, list):
@@ -430,6 +451,18 @@ def run_candidates_renwu(
         filtered, dropped = filter_renwu_duplicates(rows, alias_index, phase1_canonicals)
         if dropped:
             _log(f"  ⚠️ {cat} 脚本剔除重复 {len(dropped)} 条：{'; '.join(dropped[:5])}")
+        # 薄标注种子：LLM 未产出时写入候选池（人审可删，非强制成稿）
+        existing_names = {str(r.get("名称", "")).strip() for r in filtered}
+        for td in thin_deferred:
+            if str(td.get("史略分类", "")).strip() != cat:
+                continue
+            seed = dkl.thin_deferred_to_candidate(td)
+            name = seed["名称"]
+            canon = alias_index.get(name) or dkl.normalize_person_name(name, alias_map)
+            if canon in phase1_canonicals or name in existing_names:
+                continue
+            filtered.insert(0, seed)
+            existing_names.add(name)
         for row in filtered:
             if isinstance(row, dict):
                 row.setdefault("史略分类", cat)
@@ -2934,6 +2967,11 @@ def main() -> int:
     elif step == "enrich":
         return run_enrich(paths, context, dry_run=args.dry_run)
     elif step == "enrich-renwu":
+        return run_enrich_renwu(paths, context, dry_run=args.dry_run)
+    elif step == "enrich-all":
+        code = run_enrich(paths, context, dry_run=args.dry_run)
+        if code != 0:
+            return code
         return run_enrich_renwu(paths, context, dry_run=args.dry_run)
 
     return 0

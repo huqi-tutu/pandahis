@@ -91,9 +91,12 @@ python3 dynasty_supplement.py --dynasty 五帝 --step compose-detail --entry-id 
 # fill / gate renwu
 python3 dynasty_supplement.py --dynasty 五帝 --step fill-renwu --dry-run
 python3 dynasty_supplement.py --dynasty 五帝 --step gate-renwu
+
+# 增量补漏 compose 后必跑（优先级/峰值年/人物标签）
+python3 dynasty_supplement.py --dynasty 五帝 --step enrich-all
 ```
 
-**禁止** `--step all`。详见 `reference/执行纪律.md`。
+**禁止** `--step all`。增量补漏见 `reference/Agent执行纪律.md` §六（compose 后不可省略 `enrich-all`）。详见 `reference/执行纪律.md`。
 
 ## 入库
 

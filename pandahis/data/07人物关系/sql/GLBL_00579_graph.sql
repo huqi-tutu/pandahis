@@ -1,0 +1,13 @@
+DELETE FROM box_graph_edge WHERE box_id='GLBL_00579';
+DELETE FROM box_graph_node WHERE box_id='GLBL_00579';
+INSERT INTO box_graph_node (component_id, shilue_id, shilue_name, box_id, node_key, node_type, name, extra_json) VALUES ('GLBL_00579_REL_center', 'GLBL_00579', '皋陶', 'GLBL_00579', 'center', 'event', '皋陶', '{}');
+INSERT INTO box_graph_node (component_id, shilue_id, shilue_name, box_id, node_key, node_type, name, extra_json) VALUES ('GLBL_00579_REL_cat_col', 'GLBL_00579', '皋陶', 'GLBL_00579', 'cat_col', 'category', '同僚', '{"关系类别": "同僚", "isCategoryNode": true}');
+INSERT INTO box_graph_edge (box_id, from_node_key, to_node_key, label) VALUES ('GLBL_00579', 'center', 'cat_col', '同僚');
+INSERT INTO box_graph_node (component_id, shilue_id, shilue_name, box_id, node_key, node_type, name, extra_json) VALUES ('GLBL_00579_REL_HD_COL_001', 'GLBL_00579', '皋陶', 'GLBL_00579', 'hd_col_001', 'person', '君王', '{"关系ID": "HD-COL-001", "关系类别": "同僚", "关系层级": "一级", "上级连接线标题": "君王", "关系简述": "皋陶作为臣子，所效忠的君主。", "record_id": "recd77e6651f8ef"}');
+INSERT INTO box_graph_edge (box_id, from_node_key, to_node_key, label) VALUES ('GLBL_00579', 'cat_col', 'hd_col_001', '君王');
+INSERT INTO box_graph_node (component_id, shilue_id, shilue_name, box_id, node_key, node_type, name, extra_json) VALUES ('GLBL_00579_REL_HD_COL_002', 'GLBL_00579', '皋陶', 'GLBL_00579', 'hd_col_002', 'person', '舜', '{"关系ID": "HD-COL-002", "关系类别": "同僚", "关系层级": "二级", "上级连接线标题": "君王", "关系简述": "舜任命皋陶为士，主管刑狱。《尚书·舜典》载：“帝曰：‘皋陶，蛮夷猾夏，寇贼奸宄。汝作士，五刑有服……’”。", "所属一级关系": "君王", "关系链": "皋陶 › 君王", "record_id": "rec726cc7dca7a0"}');
+INSERT INTO box_graph_edge (box_id, from_node_key, to_node_key, label) VALUES ('GLBL_00579', 'hd_col_001', 'hd_col_002', '君王');
+INSERT INTO box_graph_node (component_id, shilue_id, shilue_name, box_id, node_key, node_type, name, extra_json) VALUES ('GLBL_00579_REL_HD_COL_003', 'GLBL_00579', '皋陶', 'GLBL_00579', 'hd_col_003', 'person', '同僚', '{"关系ID": "HD-COL-003", "关系类别": "同僚", "关系层级": "一级", "上级连接线标题": "同僚", "关系简述": "皋陶在朝中的同僚，共事者。", "record_id": "rec21f5af639b14"}');
+INSERT INTO box_graph_edge (box_id, from_node_key, to_node_key, label) VALUES ('GLBL_00579', 'cat_col', 'hd_col_003', '同僚');
+INSERT INTO box_graph_node (component_id, shilue_id, shilue_name, box_id, node_key, node_type, name, extra_json) VALUES ('GLBL_00579_REL_HD_COL_004', 'GLBL_00579', '皋陶', 'GLBL_00579', 'hd_col_004', 'person', '禹', '{"关系ID": "HD-COL-004", "关系类别": "同僚", "关系层级": "二级", "上级连接线标题": "同僚", "关系简述": "皋陶与禹共议国政。《尚书·皋陶谟》载皋陶与禹论“知人安民”之道与“九德”之选。", "所属一级关系": "同僚", "关系链": "皋陶 › 同僚", "record_id": "rec13ac6483f9e3"}');
+INSERT INTO box_graph_edge (box_id, from_node_key, to_node_key, label) VALUES ('GLBL_00579', 'hd_col_003', 'hd_col_004', '同僚');

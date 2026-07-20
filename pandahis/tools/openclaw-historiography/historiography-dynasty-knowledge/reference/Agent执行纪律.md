@@ -95,3 +95,33 @@ python3 dynasty_supplement.py --dynasty 五帝 --step fill-renwu --background
 | candidates-renwu 后直接 fill-renwu + compose | 先 export-review，等用户批 |
 | fill 默认连带 compose-detail | 默认分离；详情须二次确认 |
 | 前台阻塞跑 12 条详情 ~25 分钟 | `compose-pending --background` |
+| 增量补漏只跑 fill + compose，跳过 enrich | **必须**在 compose 后跑 `enrich-all`（见 §六） |
+
+---
+
+## 六、增量补漏（用户点名清单）
+
+用户指定「某朝再补哪些史略」时，**字段须与首跑批次同等完整**，不得只产出索引/详情。
+
+```text
+seed_incremental_candidates.py（或手改候选 + 人审批准 phase=candidates）
+  → fill-* / fill-renwu（跳过已有名称，只写新 GLBL）
+  → 人审批准 phase=entries
+  → compose-pending / compose-detail
+  → enrich-all          ← 强制：优先级 + 峰值年 + 人物标签
+  → gate（可选）
+  → append + 线上 upsert
+```
+
+| 步骤 | 产出字段 | 人物七类 | 事略/典制/论著 |
+|------|----------|----------|----------------|
+| `fill-*` | 索引骨架 | 不含标签/优先级 | 不含优先级 |
+| `compose-detail` | `翻译详情` | ✓ | ✓ |
+| `enrich` | `优先级`、`峰值年` | ✓ | ✓ |
+| `enrich-renwu` / `enrich-all` 后半 | `人物标签` 等 | **✓ 必填** | — |
+
+**说明**：`fill` 阶段 prompt 刻意不写人物标签（SSOT：`person_tag.py` 专责）。漏跑 `enrich-renwu` 即表现为**人物条无标签**。
+
+```bash
+python3 dynasty_supplement.py --dynasty 五帝 --step enrich-all
+```

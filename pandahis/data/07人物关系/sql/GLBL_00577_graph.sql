@@ -1,0 +1,11 @@
+DELETE FROM box_graph_edge WHERE box_id='GLBL_00577';
+DELETE FROM box_graph_node WHERE box_id='GLBL_00577';
+INSERT INTO box_graph_node (component_id, shilue_id, shilue_name, box_id, node_key, node_type, name, extra_json) VALUES ('GLBL_00577_REL_center', 'GLBL_00577', '女英', 'GLBL_00577', 'center', 'event', '女英', '{}');
+INSERT INTO box_graph_node (component_id, shilue_id, shilue_name, box_id, node_key, node_type, name, extra_json) VALUES ('GLBL_00577_REL_cat_fam', 'GLBL_00577', '女英', 'GLBL_00577', 'cat_fam', 'category', '家庭', '{"关系类别": "家庭", "isCategoryNode": true}');
+INSERT INTO box_graph_edge (box_id, from_node_key, to_node_key, label) VALUES ('GLBL_00577', 'center', 'cat_fam', '家庭');
+INSERT INTO box_graph_node (component_id, shilue_id, shilue_name, box_id, node_key, node_type, name, extra_json) VALUES ('GLBL_00577_REL_HD_FAM_001', 'GLBL_00577', '女英', 'GLBL_00577', 'hd_fam_001', 'person', '尧', '{"关系ID": "HD-FAM-001", "关系类别": "家庭", "关系层级": "一级", "上级连接线标题": "父亲", "关系简述": "帝尧，将二女娥皇、女英嫁与舜，以观其内助之德。", "record_id": "rec87b6c4d4fc64"}');
+INSERT INTO box_graph_edge (box_id, from_node_key, to_node_key, label) VALUES ('GLBL_00577', 'cat_fam', 'hd_fam_001', '父亲');
+INSERT INTO box_graph_node (component_id, shilue_id, shilue_name, box_id, node_key, node_type, name, extra_json) VALUES ('GLBL_00577_REL_HD_FAM_002', 'GLBL_00577', '女英', 'GLBL_00577', 'hd_fam_002', 'person', '娥皇', '{"关系ID": "HD-FAM-002", "关系类别": "家庭", "关系层级": "一级", "上级连接线标题": "姐", "关系简述": "尧长女，与女英同嫁舜，谦恭俭让，助舜规避家人迫害，后传为湘君。", "record_id": "recf8a5660e4a90"}');
+INSERT INTO box_graph_edge (box_id, from_node_key, to_node_key, label) VALUES ('GLBL_00577', 'cat_fam', 'hd_fam_002', '姐');
+INSERT INTO box_graph_node (component_id, shilue_id, shilue_name, box_id, node_key, node_type, name, extra_json) VALUES ('GLBL_00577_REL_HD_FAM_003', 'GLBL_00577', '女英', 'GLBL_00577', 'hd_fam_003', 'person', '舜', '{"关系ID": "HD-FAM-003", "关系类别": "家庭", "关系层级": "一级", "上级连接线标题": "丈夫", "关系简述": "帝舜，尧以二女妻之，女英为妃，内助脱险。南巡崩于苍梧，二妃追至，泪洒斑竹，投江化神。", "record_id": "rec825e2f458361"}');
+INSERT INTO box_graph_edge (box_id, from_node_key, to_node_key, label) VALUES ('GLBL_00577', 'cat_fam', 'hd_fam_003', '丈夫');

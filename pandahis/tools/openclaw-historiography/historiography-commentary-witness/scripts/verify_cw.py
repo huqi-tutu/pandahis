@@ -16,16 +16,54 @@ from cw_lib import STATUS_DONE, STATUS_EMPTY, count_han  # noqa: E402
 
 Mode = Literal["commentary", "witness"]
 
-ID_P = re.compile(r"^GLBL_\d{5}_P\d{2}$")
-ID_W = re.compile(r"^GLBL_\d{5}_W\d{2}$")
-# 兼容非 GLBL 前缀史略（若有）
 ID_P_FLEX = re.compile(r"^.+_P\d{2}$")
 ID_W_FLEX = re.compile(r"^.+_W\d{2}$")
 PRI_OK = frozenset({"P0", "P1", "P2", "P3", "P4"})
 
+# 写作形式：翻译体断裂
+TRANSLATION_MARKERS = re.compile(
+    r"(原文\s*[:：]|白话\s*[:：]|译文\s*[:：]|今译\s*[:：]|意思是\s*[:：])"
+)
+
+# 教材级争议框架（角度词 / 标题侧）
+FRAME_LAYERED = re.compile(r"(层累|古史辨|疑古辨伪|神话历史化|神话剥离|神话解构|造神)")
+FRAME_SHANRANG = re.compile(r"(禅让真假|逼尧|囚尧|篡位|逼篡|舜逼)")
+FRAME_MYTH_HIST = re.compile(r"(信史|传说符号|神话人物|是否真实)")
+
+# 软关联 / 现代纪念（见证 P0 禁）
+# 注意：勿用裸「1993年/2008年」——出土/入藏年代会误伤早期简牍等真物证
+SOFT_P0 = re.compile(
+    r"(纪念碑|纪念亭|新建|手植柏|"
+    r"传为.{0,8}葬|"
+    r"(?:19|20)\d{2}\s*年.{0,12}(?:立|建|修|落成|重建|揭幕)|"
+    r"(?:立|建|修|落成|重建|揭幕).{0,12}(?:19|20)\d{2}\s*年)"
+)
+GU_MARKERS = re.compile(r"(顾颉刚|古史辨)")
+
 
 def _issue(level: str, msg: str) -> dict[str, str]:
     return {"level": level, "msg": msg}
+
+
+def _angle(title: str) -> str:
+    if "·" not in title:
+        return ""
+    return title.split("·", 1)[-1].strip()
+
+
+def _framework_hits(title: str, brief: str, body: str) -> set[str]:
+    blob = f"{title}\n{brief}\n{body}"
+    hits: set[str] = set()
+    if FRAME_LAYERED.search(blob):
+        hits.add("层累/疑古")
+    if FRAME_SHANRANG.search(blob):
+        hits.add("禅让真假")
+    if FRAME_MYTH_HIST.search(blob) and FRAME_LAYERED.search(blob):
+        # 信史vs神话常与层累叠用，已计入层累则不重复计第二框架
+        pass
+    elif re.search(r"(神话|传说).{0,6}(历史|信史)|(历史|信史).{0,6}(神话|传说)", blob):
+        hits.add("信史vs神话")
+    return hits
 
 
 def verify_envelope(doc: dict[str, Any], mode: Mode) -> list[dict[str, str]]:
@@ -63,6 +101,32 @@ def verify_commentary_entries(doc: dict[str, Any]) -> list[dict[str, str]]:
     eid = str(doc.get("史略ID") or "").strip()
     name = str(doc.get("史略名称") or "").strip()
     seen: set[str] = set()
+    angles: list[str] = []
+    framework_used: list[tuple[int, str]] = []
+    gu_indices: list[int] = []
+    existence_doubt = 0
+
+    try:
+        from cw_lib import (  # noqa: WPS433
+            bibliography_exclusion_set,
+            is_cited_in_bibliography,
+            is_zhengshi_lunzan,
+            load_detail_bibliography,
+        )
+
+        excl = bibliography_exclusion_set(
+            load_detail_bibliography({"史略ID": eid, "史略名称": name})
+        )
+    except Exception:
+        excl = set()
+
+        def is_cited_in_bibliography(*_a: Any, **_k: Any) -> bool:  # type: ignore
+            return False
+
+        def is_zhengshi_lunzan(*_a: Any, **_k: Any) -> bool:  # type: ignore
+            return False
+
+    has_lunzan = False
     for i, row in enumerate(doc.get("entries") or [], start=1):
         prefix = f"[{i}]"
         if not isinstance(row, dict):
@@ -84,9 +148,22 @@ def verify_commentary_entries(doc: dict[str, Any]) -> list[dict[str, str]]:
         title = str(row.get("评述标题") or "").strip()
         if "·" not in title:
             issues.append(_issue("CRITICAL", f"{prefix} 评述标题须含「·」: {title!r}"))
+        else:
+            angles.append(_angle(title))
         for k in ("评述人", "评述著作", "评述内容", "评述简介", "评述年代"):
             if not str(row.get(k) or "").strip():
                 issues.append(_issue("CRITICAL", f"{prefix} 缺少 {k}"))
+        work = str(row.get("评述著作") or "")
+        if excl and is_cited_in_bibliography(work, excl) and not is_zhengshi_lunzan(row):
+            issues.append(
+                _issue(
+                    "CRITICAL",
+                    f"{prefix} 评述著作「{work}」已在详情参考著作中，不得再作评述"
+                    "（正史论赞除外）",
+                )
+            )
+        if is_zhengshi_lunzan(row):
+            has_lunzan = True
         brief = str(row.get("评述简介") or "")
         if count_han(brief) > 20:
             issues.append(
@@ -96,11 +173,95 @@ def verify_commentary_entries(doc: dict[str, Any]) -> list[dict[str, str]]:
         hc = count_han(body)
         if hc < 50 or hc > 200:
             issues.append(_issue("CRITICAL", f"{prefix} 评述内容汉字数 {hc} 不在 50–200"))
-        if "《" not in str(row.get("评述著作") or ""):
+        if TRANSLATION_MARKERS.search(body):
+            issues.append(
+                _issue(
+                    "CRITICAL",
+                    f"{prefix} 评述内容禁止「原文/白话/译文」分离结构，须写成嵌入原文的完整议论",
+                )
+            )
+        if "《" not in work:
             issues.append(_issue("WARN", f"{prefix} 评述著作建议含书名号"))
+
+        author = str(row.get("评述人") or "")
+        if GU_MARKERS.search(author) or GU_MARKERS.search(work):
+            gu_indices.append(i)
+        hits = _framework_hits(title, brief, body)
+        for h in hits:
+            framework_used.append((i, h))
+        if "层累/疑古" in hits or GU_MARKERS.search(author + work + body):
+            existence_doubt += 1
+
     n = len(doc.get("entries") or [])
-    if doc.get("status") == STATUS_DONE and (n < 1 or n > 5):
-        issues.append(_issue("WARN", f"评述条数 {n} 超出建议 1–5"))
+    lunzan_rows, other_rows = [], []
+    try:
+        from cw_lib import split_lunzan_and_others  # noqa: WPS433
+
+        lunzan_rows, other_rows = split_lunzan_and_others(doc.get("entries") or [])
+    except Exception:
+        lunzan_rows, other_rows = ([], doc.get("entries") or [])
+
+    if doc.get("status") == STATUS_DONE and n > 6:
+        issues.append(_issue("CRITICAL", f"评述条数 {n} 超过硬上限 6（1论赞+5其他）"))
+    if doc.get("status") == STATUS_DONE and len(lunzan_rows) == 0 and n > 5:
+        issues.append(_issue("CRITICAL", f"无论赞时评述条数 {n} 超过上限 5"))
+    if doc.get("status") == STATUS_DONE and len(lunzan_rows) >= 1 and len(other_rows) > 5:
+        issues.append(
+            _issue(
+                "CRITICAL",
+                f"论赞之外其他评述 {len(other_rows)} 条，超过上限 5",
+            )
+        )
+    if doc.get("status") == STATUS_DONE and (n < 1 or n > 6):
+        issues.append(_issue("WARN", f"评述条数 {n} 超出建议范围（有论赞≤6 / 无论赞≤5）"))
+    if len(lunzan_rows) > 1:
+        issues.append(_issue("WARN", f"正史论赞 {len(lunzan_rows)} 条，建议只保留 1 条"))
+    if (
+        doc.get("status") == STATUS_DONE
+        and n >= 1
+        and not has_lunzan
+        and str(doc.get("史略分类") or "") in ("君王", "junji", "宗戚", "zongqi", "文臣", "wenchen", "武将", "wujiang")
+    ):
+        issues.append(
+            _issue(
+                "WARN",
+                "人物类评述未含二十四史论赞（太史公曰/赞曰/评曰/史臣曰/论曰等）；"
+                "若该史略见于正史纪传，建议补 1 条",
+            )
+        )
+    if len(angles) >= 2 and len(set(angles)) < len(angles):
+        issues.append(_issue("CRITICAL", "评述标题角度词重复，须差异化/多元化"))
+    if n >= 3 and len(set(angles)) == 1:
+        issues.append(_issue("CRITICAL", "多条评述角度完全相同，违反多元化门禁"))
+
+    # 教材级框架：合计种类过多，或出现在第 1 条
+    frame_kinds = {h for _, h in framework_used}
+    if len(frame_kinds) > 1:
+        issues.append(
+            _issue(
+                "WARN",
+                f"教材级争议框架出现多种 {sorted(frame_kinds)}，建议每文件最多保留 1 种",
+            )
+        )
+    for idx, h in framework_used:
+        if idx == 1:
+            issues.append(
+                _issue(
+                    "CRITICAL",
+                    f"[1] 教材级争议框架「{h}」不得放在第 1 条评述",
+                )
+            )
+    if existence_doubt >= 3:
+        issues.append(
+            _issue(
+                "WARN",
+                f"存在性质疑/疑古类条目偏多（{existence_doubt}），宜删减叠床架屋者",
+            )
+        )
+    if len(gu_indices) >= 2:
+        issues.append(
+            _issue("CRITICAL", f"顾颉刚/古史辨出现 {len(gu_indices)} 次，同文件择一即可")
+        )
     return issues
 
 
@@ -108,8 +269,10 @@ def verify_witness_entries(doc: dict[str, Any]) -> list[dict[str, str]]:
     issues: list[dict[str, str]] = []
     eid = str(doc.get("史略ID") or "").strip()
     name = str(doc.get("史略名称") or "").strip()
+    category = str(doc.get("史略分类") or "").strip()
     seen_id: set[str] = set()
     seen_pri: set[str] = set()
+    soft_count = 0
     for i, row in enumerate(doc.get("entries") or [], start=1):
         prefix = f"[{i}]"
         if not isinstance(row, dict):
@@ -139,19 +302,60 @@ def verify_witness_entries(doc: dict[str, Any]) -> list[dict[str, str]]:
             issues.append(_issue("CRITICAL", f"{prefix} 优先级重复: {pri}"))
         seen_pri.add(pri)
         intro = str(row.get("文物介绍") or "")
+        reason = str(row.get("优先级判定理由") or "")
+        title = str(row.get("文物标题") or "")
         hc = count_han(intro)
         if hc < 100 or hc > 200:
             issues.append(_issue("CRITICAL", f"{prefix} 文物介绍汉字数 {hc} 不在 100–200"))
-        reason = str(row.get("优先级判定理由") or "")
         rc = count_han(reason)
         if rc < 20 or rc > 80:
             issues.append(_issue("WARN", f"{prefix} 优先级判定理由汉字数 {rc} 建议 20–80"))
         loc = str(row.get("现藏地点") or "")
         if "·" not in loc:
             issues.append(_issue("WARN", f"{prefix} 现藏地点建议「国家·机构」格式"))
+
+        soft_blob = f"{title}\n{intro}\n{reason}"
+        is_soft = bool(SOFT_P0.search(soft_blob)) or ("证据力弱" in reason)
+        if is_soft:
+            soft_count += 1
+            if pri == "P0":
+                issues.append(
+                    _issue(
+                        "CRITICAL",
+                        f"{prefix} 软关联/现代纪念/证据力弱 不得标为 P0（应空结果或至多低优先级）",
+                    )
+                )
+
+        # 制度类：介绍中宜有时间锚点提示
+        if category in ("典制", "dianzhi") or "制" in name:
+            if not re.search(
+                r"(距|晚于|早于|属于.{0,6}(朝|世纪|年代)|后世成型|起源期|约.{0,4}年)",
+                intro,
+            ):
+                issues.append(
+                    _issue(
+                        "WARN",
+                        f"{prefix} 制度类见证介绍建议写明物证朝代及与传说起源的时间跨度",
+                    )
+                )
+
     n = len(doc.get("entries") or [])
     if doc.get("status") == STATUS_DONE and (n < 1 or n > 5):
         issues.append(_issue("WARN", f"文物件数 {n} 超出建议 1–5"))
+    if soft_count >= 2:
+        issues.append(
+            _issue(
+                "WARN",
+                f"软关联类见证 {soft_count} 条，宜删减；仅 E 层时应优先 已处理·无可用",
+            )
+        )
+    if soft_count == n and n >= 1 and doc.get("status") == STATUS_DONE:
+        issues.append(
+            _issue(
+                "WARN",
+                "全部见证疑似软关联：考虑改为 status=已处理·无可用",
+            )
+        )
     return issues
 
 
@@ -163,19 +367,105 @@ def verify_file(path: Path, *, mode: Mode, strict: bool = True) -> list[dict[str
     else:
         issues.extend(verify_witness_entries(doc))
     if strict:
-        # WARN 不阻断；仅 CRITICAL 由调用方判断
         pass
+    return issues
+
+
+def verify_dynasty_commentary(dynasty: str, *, commentary_dir: Path) -> list[dict[str, str]]:
+    """朝代级配额：顾颉刚占比、角度词跨文件重复。"""
+    issues: list[dict[str, str]] = []
+    files = sorted(commentary_dir.glob("GLBL_*_评述.json"))
+    docs: list[dict[str, Any]] = []
+    for fp in files:
+        try:
+            doc = json.loads(fp.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            continue
+        if str(doc.get("二级朝代坐标") or "").strip() != dynasty.strip():
+            continue
+        if doc.get("status") == STATUS_EMPTY:
+            continue
+        docs.append(doc)
+    if not docs:
+        issues.append(_issue("INFO", f"朝代「{dynasty}」无已完成评述文件"))
+        return issues
+
+    gu_files = 0
+    angle_map: dict[str, list[str]] = {}
+    for doc in docs:
+        eid = str(doc.get("史略ID") or "")
+        name = str(doc.get("史略名称") or "")
+        blob = json.dumps(doc.get("entries") or [], ensure_ascii=False)
+        if GU_MARKERS.search(blob):
+            gu_files += 1
+        for row in doc.get("entries") or []:
+            if not isinstance(row, dict):
+                continue
+            ang = _angle(str(row.get("评述标题") or ""))
+            if ang:
+                angle_map.setdefault(ang, []).append(f"{eid}:{name}")
+
+    ratio = gu_files / len(docs)
+    if ratio > 0.5:
+        issues.append(
+            _issue(
+                "CRITICAL",
+                f"朝代「{dynasty}」含顾颉刚/古史辨的文件 {gu_files}/{len(docs)}"
+                f"（{ratio:.0%}）> 50%，须换方向重做超额条目",
+            )
+        )
+    elif ratio > 0.35:
+        issues.append(
+            _issue(
+                "WARN",
+                f"朝代「{dynasty}」顾颉刚占比 {ratio:.0%}，接近 50% 上限",
+            )
+        )
+
+    for ang, holders in sorted(angle_map.items(), key=lambda x: -len(x[1])):
+        if len(holders) >= 3:
+            issues.append(
+                _issue(
+                    "WARN",
+                    f"角度词「{ang}」跨文件出现 {len(holders)} 次"
+                    f"（如 {', '.join(holders[:4])}），疑同质化模板",
+                )
+            )
     return issues
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="校验评述/见证 JSON")
-    parser.add_argument("file", type=Path)
-    parser.add_argument("--mode", choices=["commentary", "witness"], required=True)
+    parser.add_argument("file", type=Path, nargs="?")
+    parser.add_argument("--mode", choices=["commentary", "witness"], default=None)
     parser.add_argument("--strict", action="store_true", default=True)
     parser.add_argument("--no-strict", action="store_true")
+    parser.add_argument("--dynasty", default=None, help="朝代级评述配额检查")
+    parser.add_argument(
+        "--commentary-dir",
+        type=Path,
+        default=None,
+        help="评述目录（配合 --dynasty）",
+    )
     args = parser.parse_args()
     strict = not args.no_strict
+
+    if args.dynasty:
+        from paths_config import histograph_paths  # noqa: E402
+
+        cdir = args.commentary_dir or histograph_paths()["commentary"]
+        issues = verify_dynasty_commentary(args.dynasty, commentary_dir=cdir)
+        for it in issues:
+            print(f"{it['level']}: {it['msg']}")
+        critical = [i for i in issues if i["level"] == "CRITICAL"]
+        if critical:
+            print(f"\n⛔ {len(critical)} CRITICAL")
+            return 1
+        print(f"\n✅ dynasty verify OK（{len(issues)} issues，0 CRITICAL）")
+        return 0
+
+    if not args.file or not args.mode:
+        parser.error("单文件校验须提供 file 与 --mode；或使用 --dynasty")
     issues = verify_file(args.file, mode=args.mode, strict=strict)
     for it in issues:
         print(f"{it['level']}: {it['msg']}")

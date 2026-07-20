@@ -1,0 +1,11 @@
+DELETE FROM box_graph_edge WHERE box_id='GLBL_00632';
+DELETE FROM box_graph_node WHERE box_id='GLBL_00632';
+INSERT INTO box_graph_node (component_id, shilue_id, shilue_name, box_id, node_key, node_type, name, extra_json) VALUES ('GLBL_00632_REL_center', 'GLBL_00632', '女艾', 'GLBL_00632', 'center', 'event', '女艾', '{}');
+INSERT INTO box_graph_node (component_id, shilue_id, shilue_name, box_id, node_key, node_type, name, extra_json) VALUES ('GLBL_00632_REL_cat_col', 'GLBL_00632', '女艾', 'GLBL_00632', 'cat_col', 'category', '同僚', '{"关系类别": "同僚", "isCategoryNode": true}');
+INSERT INTO box_graph_edge (box_id, from_node_key, to_node_key, label) VALUES ('GLBL_00632', 'center', 'cat_col', '同僚');
+INSERT INTO box_graph_node (component_id, shilue_id, shilue_name, box_id, node_key, node_type, name, extra_json) VALUES ('GLBL_00632_REL_cat_foe', 'GLBL_00632', '女艾', 'GLBL_00632', 'cat_foe', 'category', '外敌', '{"关系类别": "外敌", "isCategoryNode": true}');
+INSERT INTO box_graph_edge (box_id, from_node_key, to_node_key, label) VALUES ('GLBL_00632', 'center', 'cat_foe', '外敌');
+INSERT INTO box_graph_node (component_id, shilue_id, shilue_name, box_id, node_key, node_type, name, extra_json) VALUES ('GLBL_00632_REL_HD_COL_001', 'GLBL_00632', '女艾', 'GLBL_00632', 'hd_col_001', 'person', '少康', '{"关系ID": "HD-COL-001", "关系类别": "同僚", "关系层级": "一级", "上级连接线标题": "君王", "关系简述": "夏后相之子，夏朝中兴之主。女艾为其臣子，受少康之命执行谍报任务，是女艾效忠的君主。", "record_id": "recee5a90c95fe6"}');
+INSERT INTO box_graph_edge (box_id, from_node_key, to_node_key, label) VALUES ('GLBL_00632', 'cat_col', 'hd_col_001', '君王');
+INSERT INTO box_graph_node (component_id, shilue_id, shilue_name, box_id, node_key, node_type, name, extra_json) VALUES ('GLBL_00632_REL_HD_FOE_001', 'GLBL_00632', '女艾', 'GLBL_00632', 'hd_foe_001', 'person', '寒浇', '{"关系ID": "HD-FOE-001", "关系类别": "外敌", "关系层级": "一级", "上级连接线标题": "外敌", "关系简述": "寒浞之子，封于过。女艾受少康之命对其进行刺探，并最终协助少康将其消灭，是女艾行间的主要目标。", "record_id": "recdfb1c4002f3e"}');
+INSERT INTO box_graph_edge (box_id, from_node_key, to_node_key, label) VALUES ('GLBL_00632', 'cat_foe', 'hd_foe_001', '外敌');

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """合并 01史记 + 02汉书 skeleton 条目 → 全局史略索引（GLBL_*）。
 
-规则 SSOT：reference/标注索引条目合并规则.md
+规则 SSOT：reference/标注索引条目合并规则.md、reference/史料厚度门规则.md
 
 ⚠️ 全量 merge 会按排序重新编号全部 GLBL ID，禁止用于已发布索引的修复。
    已发布数据须用 repair_*.py 外科手术式修复，见合并规则 §九。
@@ -21,6 +21,18 @@ from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, List, Tuple
+
+import sys
+
+_ANNOTATE_DIR = Path(__file__).resolve().parents[1]
+if str(_ANNOTATE_DIR) not in sys.path:
+    sys.path.insert(0, str(_ANNOTATE_DIR))
+from source_thickness import (  # noqa: E402
+    apply_thickness_mub_swap,
+    build_deferred_record,
+    should_defer_glbl,
+    thin_registry_path,
+)
 
 GROUP_KEYWORDS = ("儒林", "酷吏", "游侠", "货殖", "佞幸", "循吏")
 
@@ -231,8 +243,8 @@ def _merge_anchor(sources: List[dict]) -> str:
     return ",".join(parts)
 
 
-def _build_glbl_entry(glbl_id: str, sources: List[dict]) -> dict:
-    ranked = _rank_sources(sources)
+def _build_glbl_entry(glbl_id: str, sources: List[dict], *, ranked: List[dict] | None = None) -> dict:
+    ranked = ranked if ranked is not None else _rank_sources(sources)
     main = ranked[0]
     main_entry = main["entry"]
 
@@ -294,16 +306,46 @@ def merge(*, dry_run: bool = False) -> dict:
         groups[key].append(s)
 
     entries: List[dict] = []
+    deferred: List[dict] = []
+    thin_warn = 0
     multi = 0
     cross = 0
-    for idx, (_key, group) in enumerate(sorted(groups.items(), key=lambda x: (x[0][1], x[0][0])), start=1):
-        glbl_id = f"GLBL_{idx:05d}"
-        ent = _build_glbl_entry(glbl_id, group)
+    glbl_seq = 0
+    for _key, group in sorted(groups.items(), key=lambda x: (x[0][1], x[0][0])):
+        ranked = apply_thickness_mub_swap(_rank_sources(group))
+        defer, total_chars, reason = should_defer_glbl(ranked)
+        if defer:
+            deferred.append(build_deferred_record(ranked, total_chars=total_chars, reason=reason))
+            continue
+        glbl_seq += 1
+        glbl_id = f"GLBL_{glbl_seq:05d}"
+        ent = _build_glbl_entry(glbl_id, group, ranked=ranked)
+        if reason == "thin_benji_juwang_warn":
+            thin_warn += 1
+            kaoding = ent.setdefault("考订依据", {})
+            if isinstance(kaoding, dict):
+                kaoding["厚度门"] = f"本纪君王合计仅{total_chars}字（<100），warn-only 仍产 GLBL"
         entries.append(ent)
         if len(group) > 1:
             multi += 1
         if len({g["work"] for g in group}) > 1:
             cross += 1
+
+    registry_path = thin_registry_path(_repo_root())
+    if not dry_run:
+        registry_path.parent.mkdir(parents=True, exist_ok=True)
+        registry_doc = {
+            "schema": "thin_annotation_deferred/v1",
+            "rules_ref": "historiography-annotate/reference/史料厚度门规则.md",
+            "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "threshold_han_chars": 100,
+            "entry_count": len(deferred),
+            "entries": deferred,
+        }
+        registry_path.write_text(
+            json.dumps(registry_doc, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
 
     result = {
         "schema_version": 2,
@@ -319,7 +361,10 @@ def merge(*, dry_run: bool = False) -> dict:
             "multi_source": multi,
             "cross_work": cross,
             "paragraph_blocks": sum(e.get("段落域数", 0) for e in entries),
+            "thin_deferred": len(deferred),
+            "thin_benji_juwang_warn": thin_warn,
         },
+        "thin_registry_path": str(registry_path),
         "entries": entries,
     }
 
@@ -337,6 +382,9 @@ def merge(*, dry_run: bool = False) -> dict:
             f"- 源 skeleton 条目：{len(sources)}",
             f"- 多源合并：{multi}（跨著作 {cross}）",
             f"- 段落域合计：{result['merge_stats']['paragraph_blocks']}",
+            f"- 厚度门拒收（未产 GLBL）：{result['merge_stats'].get('thin_deferred', 0)}",
+            f"- 本纪君王薄源 warn：{result['merge_stats'].get('thin_benji_juwang_warn', 0)}",
+            f"- 薄标注注册表：`{result.get('thin_registry_path', '')}`",
             "",
             "## 跨著作合并主题（节选）",
             "",

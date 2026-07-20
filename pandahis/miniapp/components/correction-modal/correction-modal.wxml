@@ -1,5 +1,9 @@
 <view wx:if="{{visible}}" class="correction-modal" catchtap="onBackdropTap">
-  <view class="correction-modal-card" catchtap="noop">
+  <view
+    class="correction-modal-card"
+    style="margin-bottom: {{keyboardHeight}}px; max-height: {{cardMaxHeightPx}}px;"
+    catchtap="noop"
+  >
     <view class="correction-modal-header">
       <view class="correction-modal-title-wrap">
         <text class="correction-modal-title">{{mode === 'edit' ? '提交纠错' : '纠错详情'}}</text>
@@ -10,7 +14,14 @@
       </view>
     </view>
 
-    <scroll-view class="correction-modal-body" scroll-y enhanced show-scrollbar="{{false}}">
+    <scroll-view
+      class="correction-modal-body"
+      scroll-y
+      enhanced
+      show-scrollbar="{{false}}"
+      scroll-into-view="{{scrollIntoView}}"
+      scroll-with-animation="{{true}}"
+    >
       <view class="correction-field">
         <text class="correction-label">文明</text>
         <text class="correction-value">{{civilizationName || '—'}}</text>
@@ -39,7 +50,7 @@
         <text class="correction-value correction-status correction-status--{{status}}">{{statusLabel}}</text>
       </view>
 
-      <view class="correction-field correction-field--block">
+      <view id="correction-reason-field" class="correction-field correction-field--block">
         <text class="correction-label">纠错原因</text>
         <block wx:if="{{mode === 'edit'}}">
           <textarea
@@ -48,8 +59,14 @@
             maxlength="500"
             value="{{draftReason}}"
             bindinput="onReasonInput"
-            auto-height
+            bindfocus="onReasonFocus"
+            bindkeyboardheightchange="onKeyboardHeightChange"
+            adjust-position="{{false}}"
+            cursor-spacing="{{24}}"
+            hold-keyboard="{{true}}"
+            auto-height="{{false}}"
             show-confirm-bar="{{false}}"
+            disable-default-padding="{{true}}"
           />
           <text class="correction-counter">{{draftReason.length}}/500</text>
         </block>

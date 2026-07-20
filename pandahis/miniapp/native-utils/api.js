@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.request = exports.hasToken = exports.hasUserLoggedOut = exports.clearToken = exports.setToken = exports.USER_LOGGED_OUT_KEY = exports.getToken = exports.getBaseUrl = exports.ApiError = void 0;
+exports.uploadFile = exports.request = exports.hasToken = exports.hasUserLoggedOut = exports.clearToken = exports.setToken = exports.USER_LOGGED_OUT_KEY = exports.getToken = exports.getBaseUrl = exports.ApiError = void 0;
 const dev_config_1 = require("./dev-config");
 const runtime_env_1 = require("./runtime-env");
 class ApiError extends Error {
@@ -138,3 +138,63 @@ function request(path, opts) {
     });
 }
 exports.request = request;
+/** 上传本地文件（如头像），字段名默认 `file` */
+function uploadFile(path, filePath, opts) {
+    if (!getToken()) {
+        return Promise.reject(new Error('UNAUTHORIZED'));
+    }
+    const baseUrl = getBaseUrl();
+    const url = baseUrl.replace(/\/$/, '') + (path.startsWith('/') ? path : `/${path}`);
+    const name = (opts === null || opts === void 0 ? void 0 : opts.name) || 'file';
+    const header = {};
+    const token = getToken();
+    if (token)
+        header.Authorization = `Bearer ${token}`;
+    return new Promise((resolve, reject) => {
+        wx.uploadFile({
+            url,
+            filePath,
+            name,
+            formData: opts === null || opts === void 0 ? void 0 : opts.formData,
+            header,
+            timeout: 60000,
+            success(res) {
+                const status = res.statusCode || 0;
+                let body = null;
+                try {
+                    body = typeof res.data === 'string' ? JSON.parse(res.data) : res.data;
+                }
+                catch {
+                    body = res.data;
+                }
+                if (status === 401 || (body === null || body === void 0 ? void 0 : body.code) === 'UNAUTHORIZED') {
+                    clearToken();
+                    reject(new Error('UNAUTHORIZED'));
+                    return;
+                }
+                if (status >= 400) {
+                    const detail = { url, method: 'POST', status, body };
+                    console.error('[api] UPLOAD_HTTP_ERROR', detail);
+                    const msg = (typeof body === 'object' && body && (body.message || body.code)) ||
+                        `HTTP_${status}`;
+                    reject(new ApiError(String(msg), detail));
+                    return;
+                }
+                if (!body || typeof body !== 'object') {
+                    reject(new ApiError('INVALID_RESPONSE', { url, method: 'POST', status, body }));
+                    return;
+                }
+                if (body.code && body.code !== 'OK') {
+                    reject(new ApiError(String(body.message || body.code), { url, method: 'POST', status, body }));
+                    return;
+                }
+                resolve(body);
+            },
+            fail(err) {
+                console.error('[api] UPLOAD_FAIL', { url, err });
+                reject(new ApiError((err === null || err === void 0 ? void 0 : err.errMsg) || 'UPLOAD_FAIL', { url, method: 'POST', err }));
+            },
+        });
+    });
+}
+exports.uploadFile = uploadFile;

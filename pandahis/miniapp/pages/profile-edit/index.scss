@@ -1,14 +1,68 @@
 @import '../../native-utils/design-tokens.scss';
 
 .page {
-  min-height: 100vh;
+  height: 100vh;
   @include parchment-page-bg;
   box-sizing: border-box;
-  padding: 24rpx 32rpx calc(48rpx + env(safe-area-inset-bottom));
+  padding-left: 32rpx;
+  padding-right: 32rpx;
+  padding-bottom: calc(48rpx + env(safe-area-inset-bottom));
 }
 
 .card {
   padding: 32rpx;
+  margin-top: 24rpx;
+}
+
+.avatar-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16rpx;
+  margin-bottom: 40rpx;
+}
+
+.avatar-btn {
+  width: 144rpx;
+  height: 144rpx;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(135deg, $accent-v5, #c4764a);
+  box-shadow: 0 4rpx 16rpx rgba(155, 62, 56, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.avatar-btn::after {
+  border: none;
+}
+
+.avatar-btn-hover {
+  transform: translateY(-2rpx);
+  box-shadow: 0 6rpx 20rpx rgba(155, 62, 56, 0.28);
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+}
+
+.avatar-initial {
+  font-size: 52rpx;
+  font-weight: 700;
+  color: #f8f6f2;
+  line-height: 1;
+}
+
+.avatar-hint {
+  font-size: 24rpx;
+  color: $text-caption;
+  line-height: 1.4;
 }
 
 .title {
@@ -24,8 +78,10 @@
 
 .input {
   width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
   box-sizing: border-box;
-  padding: 24rpx 28rpx;
+  padding: 0 28rpx;
   border-radius: 12rpx;
   background: $page-bg;
   border: 1rpx solid $divider;
@@ -36,17 +92,20 @@
 
 .input-ph {
   color: $text-caption;
+  font-size: 30rpx;
+  line-height: 88rpx;
 }
 
 .save-btn {
   text-align: center;
-  padding: 26rpx;
+  height: 88rpx;
+  line-height: 88rpx;
   border-radius: 12rpx;
   background: $theme-primary;
-  color: #fff;
+  color: #f8f6f2;
   font-size: 30rpx;
   font-weight: 600;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 .save-btn.disabled {

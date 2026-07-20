@@ -56,6 +56,31 @@ public class MeService {
     return load(userId);
   }
 
+  @Transactional
+  public MeDTO updateAvatarUrl(long userId, String avatarUrlRaw) {
+    String avatarUrl = avatarUrlRaw == null ? "" : avatarUrlRaw.trim();
+    if (avatarUrl.isBlank() || avatarUrl.length() > 512) {
+      throw ApiException.invalidArgument("头像地址无效");
+    }
+    if (!(avatarUrl.startsWith("https://") || avatarUrl.startsWith("http://"))) {
+      throw ApiException.invalidArgument("头像地址无效");
+    }
+    jdbcTemplate.update("UPDATE app_user SET avatar_url=? WHERE id=?", avatarUrl, userId);
+    return load(userId);
+  }
+
+  public String currentAvatarUrl(long userId) {
+    try {
+      return jdbcTemplate.queryForObject(
+          "SELECT avatar_url FROM app_user WHERE id=?",
+          String.class,
+          userId
+      );
+    } catch (Exception e) {
+      return null;
+    }
+  }
+
   private record MembershipSummary(String status, String endAt) {}
 
   private MembershipSummary loadMembershipSummary(long userId) {

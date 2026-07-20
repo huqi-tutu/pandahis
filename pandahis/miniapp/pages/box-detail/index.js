@@ -7,10 +7,10 @@ const query_value_1 = require("../../native-utils/query-value");
 const favorite_box_1 = require("../../native-utils/favorite-box");
 const year_format_1 = require("../../native-utils/year-format");
 const router_1 = require("../../native-utils/router");
-const share_invite_1 = require("../../native-utils/share-invite");
 const share_poster_open_1 = require("../../native-utils/share-poster-open");
 const correction_1 = require("../../native-utils/correction");
 const category_label_1 = require("../../native-utils/category-label");
+const selection_bar_position_1 = require("../../native-utils/selection-bar-position");
 function relicThumbLabel(name) {
     const n = (name || '').trim();
     if (!n)
@@ -49,14 +49,16 @@ function mapCritiqueItems(raw) {
     });
 }
 function mapRelicItems(raw) {
-    return (raw || []).slice(0, 3).map((it) => {
+    return (raw || []).map((it) => {
+        const full = String(it.description || it.summary || '').trim();
+        // 列表简介：优先用服务端 summary；勿把截断摘要拼进详情全文
         const teaser = String(it.summary || it.description || '').trim();
         const museum = it.museum || '馆藏待补充';
         return {
             name: it.name || '',
             imageUrl: it.imageUrl,
             summary: teaser,
-            description: it.description,
+            description: full,
             museum,
             priorityCode: it.priorityCode,
             thumbLabel: relicThumbLabel(it.name || ''),
@@ -106,63 +108,77 @@ const QUOTE_CLOSERS = new Set(Object.values(QUOTE_CLOSER));
 function stripMarkdownBold(text) {
     return text.replace(/\*\*([^*]+)\*\*/g, '$1');
 }
-function mergeAdjacentSegments(segs) {
-    const out = [];
-    for (const seg of segs) {
-        if (!seg.text)
-            continue;
-        const prev = out[out.length - 1];
-        if (prev && prev.bold === seg.bold) {
-            prev.text += seg.text;
-        }
-        else {
-            out.push({ ...seg });
-        }
-    }
-    return out;
-}
-/** 直角引号「」『』及其中原文整体加粗；正文勿写 ** markdown 加粗 */
+const MIN_QUOTE_BOLD_CHARS = 5;
+/** 直角引号「」『』内正文 ≥5 字时，引号与原文整体加粗；正文勿写 ** markdown 加粗 */
 function parseDisplaySegments(raw) {
     const text = stripMarkdownBold(raw);
-    const segs = [];
-    let buf = '';
-    let bufBold = false;
-    let depth = 0;
-    const flush = () => {
-        if (!buf)
+    const pieces = [];
+    const stack = [];
+    let plain = '';
+    const flushPlain = () => {
+        if (!plain)
             return;
-        segs.push({ text: buf, bold: bufBold });
-        buf = '';
+        pieces.push({ text: plain, bold: null });
+        plain = '';
+    };
+    const markRange = (start, end, bold) => {
+        for (let i = start; i <= end; i++) {
+            const piece = pieces[i];
+            if (!piece)
+                continue;
+            if (bold) {
+                if (piece.bold !== false)
+                    piece.bold = true;
+            }
+            else {
+                piece.bold = false;
+            }
+        }
     };
     for (let i = 0; i < text.length; i++) {
         const ch = text[i];
         if (QUOTE_OPENERS.has(ch)) {
-            if (!bufBold) {
-                flush();
-                bufBold = true;
-            }
-            buf += ch;
-            depth++;
+            flushPlain();
+            for (const frame of stack)
+                frame.inner += ch;
+            stack.push({ inner: '', pieceStart: pieces.length });
+            pieces.push({ text: ch, bold: null });
             continue;
         }
         if (QUOTE_CLOSERS.has(ch)) {
-            buf += ch;
-            depth = Math.max(0, depth - 1);
-            if (depth === 0) {
-                flush();
-                bufBold = false;
+            const frame = stack.pop();
+            if (!frame) {
+                plain += ch;
+                continue;
             }
+            for (const f of stack)
+                f.inner += ch;
+            pieces.push({ text: ch, bold: null });
+            markRange(frame.pieceStart, pieces.length - 1, frame.inner.length >= MIN_QUOTE_BOLD_CHARS);
             continue;
         }
-        const wantBold = depth > 0;
-        if (bufBold !== wantBold) {
-            flush();
-            bufBold = wantBold;
+        if (stack.length) {
+            for (const frame of stack)
+                frame.inner += ch;
+            pieces.push({ text: ch, bold: null });
         }
-        buf += ch;
+        else {
+            plain += ch;
+        }
     }
-    flush();
-    return mergeAdjacentSegments(segs);
+    flushPlain();
+    const segs = [];
+    for (const piece of pieces) {
+        const bold = piece.bold === true;
+        const prev = segs[segs.length - 1];
+        if (prev && prev.bold === bold) {
+            prev.text += piece.text;
+        }
+        else {
+            segs.push({ text: piece.text, bold });
+        }
+    }
+    return segs;
 }
 function splitDetailParagraphs(md) {
     const raw = String(md || '').trim();
@@ -237,6 +253,7 @@ Page({
         selectionBarVisible: false,
         selectionBarLeft: 0,
         selectionBarTop: 0,
+        selectionBarPlacement: 'above',
         selectionBarText: '',
         selectionMountKey: 1,
         sharePosterVisible: false,
@@ -297,8 +314,39 @@ Page({
         const path = id ? `/pages/box-detail/index?boxId=${encodeURIComponent(id)}` : '/pages/box-detail/index';
         return { title, path };
     },
-    onShareTap() {
-        (0, share_invite_1.promptContentShareUnavailable)();
+    /** 底部「分享」：与选文分享同一套海报 UI，默认用详情第一段 */
+    async onShareTap() {
+        var _a, _b, _c;
+        const paragraphs = this.data.detailParagraphs;
+        const firstPara = String(((_a = paragraphs === null || paragraphs === void 0 ? void 0 : paragraphs[0]) === null || _a === void 0 ? void 0 : _a.plain) || '').trim();
+        const blurb = String(((_c = (_b = this.data.header) === null || _b === void 0 ? void 0 : _b.box) === null || _c === void 0 ? void 0 : _c.blurb) || '').trim();
+        const quote = firstPara || blurb;
+        if (!quote) {
+            wx.showToast({ title: '暂无可分享内容', icon: 'none' });
+            return;
+        }
+        await this.openSharePoster(quote);
+    },
+    /** 打开摘录分享海报（选文 / 底栏共用） */
+    async openSharePoster(quoteText) {
+        const text = String(quoteText || '').trim();
+        if (!text)
+            return;
+        wx.showLoading({ title: '生成海报…', mask: true });
+        try {
+            const header = this.data.header;
+            const box = header === null || header === void 0 ? void 0 : header.box;
+            const { civ, dynasty } = readBoxLocationNames(box);
+            const title = (box === null || box === void 0 ? void 0 : box.title) || this.data.navTitle || '史略';
+            const typeLabel = (0, category_label_1.categoryLabel)((box === null || box === void 0 ? void 0 : box.categoryKey) || '') || '史略';
+            const sourceLine1 = `/${[civ, dynasty, typeLabel, title].filter(Boolean).join('・')}`;
+            const posterState = await (0, share_poster_open_1.buildSharePosterSheetState)(text, sourceLine1, '');
+            this.setData(posterState);
+        }
+        catch {
+            wx.hideLoading();
+            wx.showToast({ title: '海报生成失败', icon: 'none' });
+        }
     },
     async onLoad(query) {
         const boxId = query.boxId || query.id;
@@ -554,7 +602,7 @@ Page({
         const c = list[idx];
         if (!c)
             return;
-        const body = [c.content, c.blurb, c.bodyQuote, c.source].filter(Boolean).join('\n\n');
+        const body = String(c.content || c.bodyQuote || '').trim();
         (0, router_1.navigateTo)(router_1.ROUTES.critiqueDetail, {
             title: c.title || '',
             author: c.displayAuthor || '',
@@ -572,7 +620,8 @@ Page({
         (0, router_1.navigateTo)(router_1.ROUTES.relicDetail, {
             name: r.name || '',
             museum: r.museum || '',
-            detail: [r.teaser, r.description].filter(Boolean).join('\n\n'),
+            // 只用完整介绍；summary 入库时会截断并加「…」，拼进去会像「没写完」
+            detail: String(r.description || r.teaser || '').trim(),
             imageUrl: r.imageUrl || '',
         });
     },
@@ -995,23 +1044,17 @@ Page({
             this.hideSelectionBar();
             return;
         }
-        const rect = detail.firstRangeRect;
-        let left = this.data.selectionBarLeft;
-        let top = this.data.selectionBarTop;
-        if (rect && rect.left != null && rect.top != null) {
-            const width = rect.width || 0;
-            const height = rect.height || 0;
-            left = rect.left + width / 2;
-            top = rect.top;
-            const minTop = 120;
-            const maxTop = (wx.getSystemInfoSync().windowHeight || 667) - 80;
-            top = Math.max(minTop, Math.min(maxTop, top));
-        }
+        const anchor = (0, selection_bar_position_1.resolveSelectionBarAnchor)(detail.firstRangeRect, {
+            left: this.data.selectionBarLeft,
+            top: this.data.selectionBarTop,
+            placement: this.data.selectionBarPlacement,
+        });
         this.setData({
             selectionBarVisible: true,
             selectionBarText: selected,
-            selectionBarLeft: left,
-            selectionBarTop: top,
+            selectionBarLeft: anchor.left,
+            selectionBarTop: anchor.top,
+            selectionBarPlacement: anchor.placement,
         });
     },
     async onSelectionShare() {
@@ -1019,17 +1062,10 @@ Page({
         this.hideSelectionBar();
         if (!text)
             return;
-        wx.showLoading({ title: '生成海报…', mask: true });
-        const header = this.data.header;
-        const box = header === null || header === void 0 ? void 0 : header.box;
-        const { civ, dynasty } = readBoxLocationNames(box);
-        const title = (box === null || box === void 0 ? void 0 : box.title) || this.data.navTitle || '史略';
-        const sourceLine2 = [civ, dynasty].filter(Boolean).join(' · ') || this.data.detailMetaDisplay || '';
-        const posterState = await (0, share_poster_open_1.buildSharePosterSheetState)(text, `/ ${title} · 史略`, sourceLine2);
-        wx.hideLoading();
-        this.setData(posterState);
+        await this.openSharePoster(text);
     },
     closeSharePoster() {
+        wx.hideLoading();
         this.setData({ sharePosterVisible: false });
     },
     onSelectionCopy() {

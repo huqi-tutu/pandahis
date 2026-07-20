@@ -12,7 +12,7 @@ export type SharePosterPayload = {
 }
 
 const POSTER_W = 750
-const POSTER_H = 1100
+const POSTER_H = 1150
 const DPR = 2
 
 const COLORS = {
@@ -26,6 +26,7 @@ const COLORS = {
 }
 
 const QR_IMAGE_PATH = '/images/miniapp-qrcode.png'
+const BRAND_SLOGAN = '时间・空间・文明'
 
 function formatExcerptDate(input?: string): string {
   if (input) return input
@@ -33,16 +34,33 @@ function formatExcerptDate(input?: string): string {
   return `${now.getFullYear()}/${now.getMonth() + 1}/${now.getDate()}`
 }
 
-function loadCanvasImage(canvas: WechatMiniprogram.Canvas, src: string): Promise<WechatMiniprogram.Image | null> {
+/** 远程头像先下载到本地，避免 canvas 绘制外链失败 */
+async function resolveLocalImageSrc(src: string): Promise<string> {
+  const url = String(src || '').trim()
+  if (!url) return ''
+  if (!(url.startsWith('http://') || url.startsWith('https://'))) return url
   return new Promise((resolve) => {
-    if (!src) {
+    wx.downloadFile({
+      url,
+      success: (res) => {
+        resolve(res.statusCode === 200 && res.tempFilePath ? res.tempFilePath : '')
+      },
+      fail: () => resolve(''),
+    })
+  })
+}
+
+function loadCanvasImage(canvas: WechatMiniprogram.Canvas, src: string): Promise<WechatMiniprogram.Image | null> {
+  return new Promise(async (resolve) => {
+    const localSrc = await resolveLocalImageSrc(src)
+    if (!localSrc) {
       resolve(null)
       return
     }
     const img = canvas.createImage()
     img.onload = () => resolve(img)
     img.onerror = () => resolve(null)
-    img.src = src
+    img.src = localSrc
   })
 }
 
@@ -145,9 +163,10 @@ export async function renderSharePosterToCanvas(
   ctx.fillRect(0, 0, POSTER_W, POSTER_H)
 
   const pad = 56
-  const avatarSize = 64
-  let cursorY = pad + 8
+  const avatarSize = 96
+  let cursorY = pad + 12
 
+  // —— 顶部用户区：头像 → 昵称 → 摘录时间，全部左对齐上下排列 ——
   const avatarImg = await loadCanvasImage(canvas, payload.userAvatarUrl || '')
   ctx.save()
   ctx.beginPath()
@@ -159,42 +178,50 @@ export async function renderSharePosterToCanvas(
     drawAvatarFallback(ctx, pad, cursorY, avatarSize, userName)
   }
   ctx.restore()
+  cursorY += avatarSize + 20
 
   ctx.textAlign = 'left'
   ctx.textBaseline = 'top'
   ctx.fillStyle = COLORS.name
-  ctx.font = '600 30px "Songti SC", "STSong", "Noto Serif SC", serif'
-  ctx.fillText(userName, pad + avatarSize + 20, cursorY + 4)
+  ctx.font = '600 32px "Songti SC", "STSong", "Noto Serif SC", serif'
+  ctx.fillText(userName, pad, cursorY)
+  cursorY += 40
 
   ctx.fillStyle = COLORS.meta
   ctx.font = '22px "PingFang SC", sans-serif'
-  ctx.fillText(`摘录于 ${excerptDate}`, pad + avatarSize + 20, cursorY + 40)
+  ctx.fillText(`摘录于 ${excerptDate}`, pad, cursorY)
+  cursorY += 56
 
-  cursorY += avatarSize + 56
-
+  // —— 摘录正文：左对齐，自用户区下方自然向下排 ——
   ctx.fillStyle = COLORS.quote
-  ctx.font = '700 38px "Songti SC", "STSong", "Noto Serif SC", serif'
-  const quoteLines = wrapTextLines(ctx, quoteText, POSTER_W - pad * 2, 8)
+  ctx.font = '700 34px "Songti SC", "STSong", "Noto Serif SC", serif'
+  const quoteMaxWidth = POSTER_W - pad * 2
+  const quoteLines = wrapTextLines(ctx, quoteText, quoteMaxWidth, 10)
   const quoteLineHeight = 58
   quoteLines.forEach((line, index) => {
     ctx.fillText(line, pad, cursorY + index * quoteLineHeight)
   })
-  cursorY += quoteLines.length * quoteLineHeight + 36
+  cursorY += quoteLines.length * quoteLineHeight + 48
 
-  if (sourceLine1) {
+  // —— 来源路径：左对齐 ——
+  const pathLine =
+    sourceLine1 ||
+    [sourceLine2].filter(Boolean).join('') ||
+    ''
+  if (pathLine) {
     ctx.fillStyle = COLORS.meta
     ctx.font = '24px "PingFang SC", sans-serif'
-    ctx.fillText(sourceLine1, pad, cursorY)
-    cursorY += 34
-  }
-  if (sourceLine2) {
-    ctx.fillStyle = COLORS.meta
-    ctx.font = '22px "PingFang SC", sans-serif'
-    ctx.fillText(sourceLine2, pad, cursorY)
-    cursorY += 30
+    const pathLines = wrapTextLines(ctx, pathLine, quoteMaxWidth, 2)
+    pathLines.forEach((line, index) => {
+      ctx.fillText(line, pad, cursorY + index * 34)
+    })
   }
 
-  const footerTop = POSTER_H - pad - 148
+  // —— 底部：分割线 + 左侧品牌（含 slogan）与右侧二维码垂直居中 ——
+  const qrSize = 120
+  const footerInnerPad = 28
+  const footerTop = POSTER_H - pad - qrSize - footerInnerPad * 2
+
   ctx.strokeStyle = COLORS.divider
   ctx.lineWidth = 1
   ctx.beginPath()
@@ -202,14 +229,26 @@ export async function renderSharePosterToCanvas(
   ctx.lineTo(POSTER_W - pad, footerTop)
   ctx.stroke()
 
-  ctx.fillStyle = COLORS.meta
-  ctx.font = '24px "PingFang SC", sans-serif'
-  ctx.textBaseline = 'middle'
-  ctx.fillText(brandName, pad, footerTop + 74)
-
-  const qrSize = 120
   const qrX = POSTER_W - pad - qrSize
-  const qrY = footerTop + 24
+  const qrY = footerTop + footerInnerPad
+  const qrCenterY = qrY + qrSize / 2
+
+  const brandFontSize = 30
+  const sloganFontSize = 20
+  const brandGap = 10
+  const brandBlockH = brandFontSize + brandGap + sloganFontSize
+  const brandTop = qrCenterY - brandBlockH / 2
+
+  ctx.textAlign = 'left'
+  ctx.textBaseline = 'top'
+  ctx.fillStyle = COLORS.name
+  ctx.font = `600 ${brandFontSize}px "PingFang SC", "Songti SC", sans-serif`
+  ctx.fillText(brandName, pad, brandTop)
+
+  ctx.fillStyle = COLORS.meta
+  ctx.font = `${sloganFontSize}px "PingFang SC", sans-serif`
+  ctx.fillText(BRAND_SLOGAN, pad, brandTop + brandFontSize + brandGap)
+
   const qrImg = await loadCanvasImage(canvas, payload.qrImagePath || QR_IMAGE_PATH)
   if (qrImg) {
     drawRoundRect(ctx, qrX - 6, qrY - 6, qrSize + 12, qrSize + 12, 10)
@@ -274,15 +313,13 @@ export async function savePosterToAlbum(filePath: string): Promise<void> {
 
 export function openPosterShareMenu(filePath: string): void {
   if (typeof wx.showShareImageMenu !== 'function') {
-    wx.previewImage({ urls: [filePath], current: filePath })
-    wx.showToast({ title: '长按图片可分享', icon: 'none' })
+    wx.showToast({ title: '当前微信版本不支持图片分享', icon: 'none' })
     return
   }
   wx.showShareImageMenu({
     path: filePath,
-    fail: () => {
-      wx.previewImage({ urls: [filePath], current: filePath })
-      wx.showToast({ title: '长按图片可分享', icon: 'none' })
-    },
+    // 注意：点底部叉号关闭时，部分基础库会走 fail（如 cancel），
+    // 此前在 fail 里调了 previewImage，会误进全屏看图；此处不再做任何回退。
+    fail: () => {},
   })
 }

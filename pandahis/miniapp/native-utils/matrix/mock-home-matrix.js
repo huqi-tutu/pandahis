@@ -33,6 +33,7 @@ const {
 } = require('./dynasty-container-layout.js')
 
 // ─── 文明 Tab 配置 ───────────────────────────────────────────────
+// 顺序与 DB sort_order / 素材 01–18 一致，避免浮层「图序错位」
 const CIV_TABS = [
   { id: 'huaxia',         name: '华夏',     img: civTabImage('huaxia') },
   { id: 'chaoxian',       name: '朝鲜',     img: civTabImage('chaoxian') },
@@ -42,11 +43,11 @@ const CIV_TABS = [
   { id: 'northasia',      name: '北亚游牧', img: civTabImage('northasia') },
   { id: 'southasia',      name: '南亚',     img: civTabImage('southasia') },
   { id: 'westasia',       name: '西亚',     img: civTabImage('westasia') },
-  { id: 'northafrica',    name: '北非',     img: civTabImage('northafrica') },
   { id: 'southeu',        name: '南欧',     img: civTabImage('southeu') },
   { id: 'easteu',         name: '东欧',     img: civTabImage('easteu') },
   { id: 'westeu',         name: '西欧',     img: civTabImage('westeu') },
   { id: 'northeu',        name: '北欧',     img: civTabImage('northeu') },
+  { id: 'northafrica',    name: '北非',     img: civTabImage('northafrica') },
   { id: 'westafrica',     name: '西非',     img: civTabImage('westafrica') },
   { id: 'eastafrica',     name: '东非',     img: civTabImage('eastafrica') },
   { id: 'centralamerica', name: '中美',     img: civTabImage('centralamerica') },

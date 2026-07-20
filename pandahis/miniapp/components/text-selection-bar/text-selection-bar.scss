@@ -1,8 +1,17 @@
 .text-selection-bar {
   position: fixed;
   z-index: 130;
-  transform: translate(-50%, calc(-100% - 14px));
   pointer-events: auto;
+}
+
+/* 默认：锚点在选区顶部中心，工具条整体在上方 */
+.text-selection-bar--above {
+  transform: translate(-50%, calc(-100% - 14px));
+}
+
+/* 顶部空间不足：锚点在选区底部中心，工具条整体在下方 */
+.text-selection-bar--below {
+  transform: translate(-50%, 14px);
 }
 
 .text-selection-bar-panel {
@@ -43,11 +52,21 @@
 .text-selection-bar-arrow {
   position: absolute;
   left: 50%;
-  bottom: -10rpx;
   width: 0;
   height: 0;
   margin-left: -10rpx;
+}
+
+.text-selection-bar--above .text-selection-bar-arrow {
+  bottom: -10rpx;
   border-left: 10rpx solid transparent;
   border-right: 10rpx solid transparent;
   border-top: 10rpx solid rgba(58, 58, 58, 0.96);
+}
+
+.text-selection-bar--below .text-selection-bar-arrow {
+  top: -10rpx;
+  border-left: 10rpx solid transparent;
+  border-right: 10rpx solid transparent;
+  border-bottom: 10rpx solid rgba(58, 58, 58, 0.96);
 }

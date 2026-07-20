@@ -1,0 +1,15 @@
+DELETE FROM box_graph_edge WHERE box_id='GLBL_00576';
+DELETE FROM box_graph_node WHERE box_id='GLBL_00576';
+INSERT INTO box_graph_node (component_id, shilue_id, shilue_name, box_id, node_key, node_type, name, extra_json) VALUES ('GLBL_00576_REL_center', 'GLBL_00576', '娥皇', 'GLBL_00576', 'center', 'event', '娥皇', '{}');
+INSERT INTO box_graph_node (component_id, shilue_id, shilue_name, box_id, node_key, node_type, name, extra_json) VALUES ('GLBL_00576_REL_cat_fam', 'GLBL_00576', '娥皇', 'GLBL_00576', 'cat_fam', 'category', '家庭', '{"关系类别": "家庭", "isCategoryNode": true}');
+INSERT INTO box_graph_edge (box_id, from_node_key, to_node_key, label) VALUES ('GLBL_00576', 'center', 'cat_fam', '家庭');
+INSERT INTO box_graph_node (component_id, shilue_id, shilue_name, box_id, node_key, node_type, name, extra_json) VALUES ('GLBL_00576_REL_HD_FAM_001', 'GLBL_00576', '娥皇', 'GLBL_00576', 'hd_fam_001', 'person', '尧', '{"关系ID": "HD-FAM-001", "关系类别": "家庭", "关系层级": "一级", "上级连接线标题": "父亲", "关系简述": "帝尧，将娥皇与女英同嫁舜，以观察舜的德行与能力。", "record_id": "rec94a82d56e59d"}');
+INSERT INTO box_graph_edge (box_id, from_node_key, to_node_key, label) VALUES ('GLBL_00576', 'cat_fam', 'hd_fam_001', '父亲');
+INSERT INTO box_graph_node (component_id, shilue_id, shilue_name, box_id, node_key, node_type, name, extra_json) VALUES ('GLBL_00576_REL_HD_FAM_002', 'GLBL_00576', '娥皇', 'GLBL_00576', 'hd_fam_002', 'person', '舜', '{"关系ID": "HD-FAM-002", "关系类别": "家庭", "关系层级": "一级", "上级连接线标题": "丈夫", "关系简述": "有虞氏，帝舜，娥皇为正妃。尧将二女嫁舜，以观其内德。", "record_id": "reca6f688277714"}');
+INSERT INTO box_graph_edge (box_id, from_node_key, to_node_key, label) VALUES ('GLBL_00576', 'cat_fam', 'hd_fam_002', '丈夫');
+INSERT INTO box_graph_node (component_id, shilue_id, shilue_name, box_id, node_key, node_type, name, extra_json) VALUES ('GLBL_00576_REL_HD_FAM_003', 'GLBL_00576', '娥皇', 'GLBL_00576', 'hd_fam_003', 'person', '商均', '{"关系ID": "HD-FAM-003", "关系类别": "家庭", "关系层级": "二级", "上级连接线标题": "儿子", "关系简述": "舜之子，娥皇或女英所生。《史记》载舜禅让禹，而商均封于虞。", "所属一级关系": "舜", "关系链": "娥皇 › 舜", "record_id": "rec80520332b351"}');
+INSERT INTO box_graph_edge (box_id, from_node_key, to_node_key, label) VALUES ('GLBL_00576', 'hd_fam_002', 'hd_fam_003', '儿子');
+INSERT INTO box_graph_node (component_id, shilue_id, shilue_name, box_id, node_key, node_type, name, extra_json) VALUES ('GLBL_00576_REL_HD_FAM_004', 'GLBL_00576', '娥皇', 'GLBL_00576', 'hd_fam_004', 'person', '女英', '{"关系ID": "HD-FAM-004", "关系类别": "家庭", "关系层级": "一级", "上级连接线标题": "妹", "关系简述": "尧之次女，与姐娥皇同嫁舜为妃，并称湘妃。共助舜脱险，后同殉情于湘水。", "record_id": "reca52afcdbf976"}');
+INSERT INTO box_graph_edge (box_id, from_node_key, to_node_key, label) VALUES ('GLBL_00576', 'cat_fam', 'hd_fam_004', '妹');
+INSERT INTO box_graph_node (component_id, shilue_id, shilue_name, box_id, node_key, node_type, name, extra_json) VALUES ('GLBL_00576_REL_HD_FAM_005', 'GLBL_00576', '娥皇', 'GLBL_00576', 'hd_fam_005', 'person', '女英', '{"关系ID": "HD-FAM-005", "关系类别": "家庭", "关系层级": "一级", "上级连接线标题": "妹/舜妃", "关系简述": "娥皇之妹，同为舜妃。在家庭关系中，女英既为娥皇之妹，亦为舜之侧妃。", "record_id": "rec7be346b9412f"}');
+INSERT INTO box_graph_edge (box_id, from_node_key, to_node_key, label) VALUES ('GLBL_00576', 'cat_fam', 'hd_fam_005', '妹/舜妃');

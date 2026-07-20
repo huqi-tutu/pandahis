@@ -20,3 +20,10 @@ dist/
 # OS / archive junk
 .DS_Store
 __MACOSX/
+
+# 用户头像本地存储
+backend/data/avatars/
+
+# 工作流中间产物日志 / LLM 快照（体积大且易变）
+data/05工作流中间产物/**/logs/
+data/05工作流中间产物/**/prompts/

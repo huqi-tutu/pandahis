@@ -19,6 +19,7 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  transition: margin-bottom 0.18s ease, max-height 0.18s ease;
 }
 
 .correction-modal-header {
@@ -69,7 +70,6 @@
 .correction-modal-body {
   flex: 1;
   min-height: 0;
-  max-height: 62vh;
 }
 
 .correction-field {
@@ -112,7 +112,8 @@
 
 .correction-textarea {
   width: 100%;
-  min-height: 180rpx;
+  height: 220rpx;
+  min-height: 220rpx;
   padding: 18rpx 20rpx;
   box-sizing: border-box;
   border-radius: 12rpx;

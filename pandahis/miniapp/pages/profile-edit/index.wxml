@@ -1,19 +1,44 @@
 <proto-nav title="编辑资料" show-back="{{true}}"></proto-nav>
 
-<view class="page" style="padding-top: {{headerPadPx}}px;">
+<scroll-view
+  class="page"
+  scroll-y
+  enhanced
+  show-scrollbar="{{false}}"
+  style="padding-top: {{headerPadPx}}px; padding-bottom: {{keyboardPadPx}}px;"
+>
   <view class="card-paper card">
+    <view class="avatar-section">
+      <button
+        class="avatar-btn"
+        open-type="chooseAvatar"
+        bindchooseavatar="onChooseAvatar"
+        hover-class="avatar-btn-hover"
+      >
+        <image wx:if="{{avatarUrl}}" class="avatar-img" src="{{avatarUrl}}" mode="aspectFill" />
+        <text wx:else class="avatar-initial">{{avatarInitial}}</text>
+      </button>
+      <text class="avatar-hint">{{avatarUploading ? '上传中…' : '点击更换头像'}}</text>
+    </view>
+
     <view class="title text-h2">昵称</view>
     <view class="desc">1–32 个字符，将显示在「我的」页。</view>
     <input
       class="input"
+      type="nickname"
       value="{{nickname}}"
       maxlength="32"
       placeholder="请输入昵称"
       placeholder-class="input-ph"
       bindinput="onInput"
+      bindfocus="onInputFocus"
+      bindblur="onInputBlur"
+      bindkeyboardheightchange="onKeyboardHeightChange"
+      adjust-position="{{false}}"
+      cursor-spacing="{{24}}"
       confirm-type="done"
       bindconfirm="onSave"
     />
     <view class="save-btn {{saving ? 'disabled' : ''}}" bindtap="onSave">{{saving ? '保存中…' : '保存'}}</view>
   </view>
-</view>
+</scroll-view>

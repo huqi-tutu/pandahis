@@ -6,6 +6,10 @@ server:
 spring:
   application:
     name: histomap-api
+  servlet:
+    multipart:
+      max-file-size: 2MB
+      max-request-size: 3MB
   datasource:
     url: jdbc:mysql://49.235.165.220:3306/histomap?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&useSSL=false
     username: histomap
@@ -52,7 +56,7 @@ histomap:
     dev-bypass-token: ${HISTOMAP_AUTH_DEV_BYPASS_TOKEN:dev-local-token}
   civ-tab:
     # 换 COS 上 civ-tab 图后递增，小程序会重新拉图（否则同 URL 会长期缓存旧图）
-    image-cache-bust: "2025052401"
+    image-cache-bust: "2026072001"
   home:
     rowHeight:
       k: 0.6
@@ -66,4 +70,7 @@ histomap:
     critiques:
       maxCount: 5
     relics:
-      maxCount: 3
+      maxCount: 5
+  avatar:
+    # 用户头像本地存储目录；生产可用 HISTOMAP_AVATAR_DIR / HISTOMAP_AVATAR_PUBLIC_BASE 覆盖
+    storage-dir: ${HISTOMAP_AVATAR_DIR:./data/avatars}

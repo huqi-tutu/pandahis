@@ -1,30 +1,48 @@
-/** 文明 Tab 配图：统一 ASCII 路径，避免中文目录在开发者工具静态服务 500 */
-const CIV_TAB_IMAGES = {
-  huaxia: '/images/civ-tabs/01_huaxia.png',
-  chaoxian: '/images/civ-tabs/02_chaoxian.png',
-  japan: '/images/civ-tabs/03_japan.png',
-  sea: '/images/civ-tabs/04_sea.png',
-  centralasia: '/images/civ-tabs/05_centralasia.png',
-  northasia: '/images/civ-tabs/06_northasia.png',
-  southasia: '/images/civ-tabs/07_southasia.png',
-  westasia: '/images/civ-tabs/08_westasia.png',
-  southeu: '/images/civ-tabs/09_southeu.png',
-  easteu: '/images/civ-tabs/10_easteu.png',
-  westeu: '/images/civ-tabs/11_westeu.png',
-  northeu: '/images/civ-tabs/12_northeu.png',
-  northafrica: '/images/civ-tabs/13_northafrica.png',
-  westafrica: '/images/civ-tabs/14_westafrica.png',
-  eastafrica: '/images/civ-tabs/15_eastafrica.png',
-  centralamerica: '/images/civ-tabs/16_centralamerica.png',
-  northamerica: '/images/civ-tabs/17_northamerica.png',
-  southamerica: '/images/civ-tabs/18_southamerica.png',
+/** 文明 Tab 配图：COS 公网 URL（按 slug → 文明 CODE），避免打进小程序包 */
+'use strict'
+
+const COS_BASE =
+  'https://pandahis-1300045339.cos.ap-chengdu.myqcloud.com/histomap/civ-tab'
+
+/** 与后端 histomap.civ-tab.image-cache-bust 对齐；换图后递增 */
+const CIV_TAB_IMAGE_CACHE_BUST = '2026072001'
+
+/** slug → civilization_l1.code（与 DB / COS 文件名一致） */
+const CIV_CODE_BY_SLUG = {
+  huaxia: 'HX',
+  chaoxian: 'CX',
+  japan: 'RB',
+  sea: 'DNY',
+  centralasia: 'ZY',
+  northasia: 'BY',
+  southasia: 'NY',
+  westasia: 'XY',
+  southeu: 'NO',
+  easteu: 'DO',
+  westeu: 'XO',
+  northeu: 'BO',
+  northafrica: 'BF',
+  westafrica: 'XF',
+  eastafrica: 'DF',
+  centralamerica: 'ZM',
+  northamerica: 'BM',
+  southamerica: 'NM',
 }
 
-function civTabImage(id) {
-  return CIV_TAB_IMAGES[id] || ''
+function civTabImage(id, cacheBust) {
+  const code = CIV_CODE_BY_SLUG[id]
+  if (!code) return ''
+  const v = String(cacheBust || CIV_TAB_IMAGE_CACHE_BUST).trim()
+  return `${COS_BASE}/${code}.png?v=${encodeURIComponent(v)}`
 }
+
+const CIV_TAB_IMAGES = Object.fromEntries(
+  Object.keys(CIV_CODE_BY_SLUG).map((slug) => [slug, civTabImage(slug)])
+)
 
 module.exports = {
+  CIV_TAB_IMAGE_CACHE_BUST,
+  CIV_CODE_BY_SLUG,
   CIV_TAB_IMAGES,
   civTabImage,
 }

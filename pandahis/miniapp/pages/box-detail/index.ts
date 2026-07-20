@@ -20,13 +20,13 @@ import {
 } from '../../native-utils/favorite-box'
 import { formatHistoryYear } from '../../native-utils/year-format'
 import { ROUTES, navigateTo } from '../../native-utils/router'
-import { promptContentShareUnavailable } from '../../native-utils/share-invite'
 import { buildSharePosterSheetState } from '../../native-utils/share-poster-open'
 import {
   requireLoginForCorrection,
   submitCorrection,
 } from '../../native-utils/correction'
-import { isPersonBoxCategory } from '../../native-utils/category-label'
+import { categoryLabel, isPersonBoxCategory } from '../../native-utils/category-label'
+import { resolveSelectionBarAnchor } from '../../native-utils/selection-bar-position'
 
 type TabAccess = { locked?: boolean; lockedReason?: string | null; unlockAction?: { type?: string } | null }
 
@@ -120,14 +120,16 @@ function mapCritiqueItems(raw: any[]): CritiqueVm[] {
 }
 
 function mapRelicItems(raw: any[]): RelicVm[] {
-  return (raw || []).slice(0, 3).map((it) => {
+  return (raw || []).map((it) => {
+    const full = String(it.description || it.summary || '').trim()
+    // 列表简介：优先用服务端 summary；勿把截断摘要拼进详情全文
     const teaser = String(it.summary || it.description || '').trim()
     const museum = it.museum || '馆藏待补充'
     return {
       name: it.name || '',
       imageUrl: it.imageUrl,
       summary: teaser,
-      description: it.description,
+      description: full,
       museum,
       priorityCode: it.priorityCode,
       thumbLabel: relicThumbLabel(it.name || ''),
@@ -185,63 +187,75 @@ function stripMarkdownBold(text: string): string {
   return text.replace(/\*\*([^*]+)\*\*/g, '$1')
 }
 
-function mergeAdjacentSegments(segs: TextSegment[]): TextSegment[] {
-  const out: TextSegment[] = []
-  for (const seg of segs) {
-    if (!seg.text) continue
-    const prev = out[out.length - 1]
-    if (prev && prev.bold === seg.bold) {
-      prev.text += seg.text
-    } else {
-      out.push({ ...seg })
-    }
-  }
-  return out
-}
+const MIN_QUOTE_BOLD_CHARS = 5
 
-/** 直角引号「」『』及其中原文整体加粗；正文勿写 ** markdown 加粗 */
+/** 直角引号「」『』内正文 ≥5 字时，引号与原文整体加粗；正文勿写 ** markdown 加粗 */
 function parseDisplaySegments(raw: string): TextSegment[] {
   const text = stripMarkdownBold(raw)
-  const segs: TextSegment[] = []
-  let buf = ''
-  let bufBold = false
-  let depth = 0
+  type Piece = { text: string; bold: boolean | null }
+  const pieces: Piece[] = []
+  type Frame = { inner: string; pieceStart: number }
+  const stack: Frame[] = []
 
-  const flush = () => {
-    if (!buf) return
-    segs.push({ text: buf, bold: bufBold })
-    buf = ''
+  let plain = ''
+  const flushPlain = () => {
+    if (!plain) return
+    pieces.push({ text: plain, bold: null })
+    plain = ''
+  }
+
+  const markRange = (start: number, end: number, bold: boolean) => {
+    for (let i = start; i <= end; i++) {
+      const piece = pieces[i]
+      if (!piece) continue
+      if (bold) {
+        if (piece.bold !== false) piece.bold = true
+      } else {
+        piece.bold = false
+      }
+    }
   }
 
   for (let i = 0; i < text.length; i++) {
     const ch = text[i]
     if (QUOTE_OPENERS.has(ch)) {
-      if (!bufBold) {
-        flush()
-        bufBold = true
-      }
-      buf += ch
-      depth++
+      flushPlain()
+      for (const frame of stack) frame.inner += ch
+      stack.push({ inner: '', pieceStart: pieces.length })
+      pieces.push({ text: ch, bold: null })
       continue
     }
     if (QUOTE_CLOSERS.has(ch)) {
-      buf += ch
-      depth = Math.max(0, depth - 1)
-      if (depth === 0) {
-        flush()
-        bufBold = false
+      const frame = stack.pop()
+      if (!frame) {
+        plain += ch
+        continue
       }
+      for (const f of stack) f.inner += ch
+      pieces.push({ text: ch, bold: null })
+      markRange(frame.pieceStart, pieces.length - 1, frame.inner.length >= MIN_QUOTE_BOLD_CHARS)
       continue
     }
-    const wantBold = depth > 0
-    if (bufBold !== wantBold) {
-      flush()
-      bufBold = wantBold
+    if (stack.length) {
+      for (const frame of stack) frame.inner += ch
+      pieces.push({ text: ch, bold: null })
+    } else {
+      plain += ch
     }
-    buf += ch
   }
-  flush()
-  return mergeAdjacentSegments(segs)
+  flushPlain()
+
+  const segs: TextSegment[] = []
+  for (const piece of pieces) {
+    const bold = piece.bold === true
+    const prev = segs[segs.length - 1]
+    if (prev && prev.bold === bold) {
+      prev.text += piece.text
+    } else {
+      segs.push({ text: piece.text, bold })
+    }
+  }
+  return segs
 }
 
 function splitDetailParagraphs(md: string): DetailParagraph[] {
@@ -319,6 +333,7 @@ Page({
     selectionBarVisible: false,
     selectionBarLeft: 0,
     selectionBarTop: 0,
+    selectionBarPlacement: 'above' as 'above' | 'below',
     selectionBarText: '',
     selectionMountKey: 1,
     sharePosterVisible: false,
@@ -376,8 +391,36 @@ Page({
     const path = id ? `/pages/box-detail/index?boxId=${encodeURIComponent(id)}` : '/pages/box-detail/index'
     return { title, path }
   },
-  onShareTap() {
-    promptContentShareUnavailable()
+  /** 底部「分享」：与选文分享同一套海报 UI，默认用详情第一段 */
+  async onShareTap() {
+    const paragraphs = this.data.detailParagraphs as DetailParagraph[]
+    const firstPara = String(paragraphs?.[0]?.plain || '').trim()
+    const blurb = String((this.data.header as BoxHeader | null)?.box?.blurb || '').trim()
+    const quote = firstPara || blurb
+    if (!quote) {
+      wx.showToast({ title: '暂无可分享内容', icon: 'none' })
+      return
+    }
+    await this.openSharePoster(quote)
+  },
+  /** 打开摘录分享海报（选文 / 底栏共用） */
+  async openSharePoster(quoteText: string) {
+    const text = String(quoteText || '').trim()
+    if (!text) return
+    wx.showLoading({ title: '生成海报…', mask: true })
+    try {
+      const header = this.data.header as BoxHeader | null
+      const box = header?.box
+      const { civ, dynasty } = readBoxLocationNames(box)
+      const title = box?.title || this.data.navTitle || '史略'
+      const typeLabel = categoryLabel(box?.categoryKey || '') || '史略'
+      const sourceLine1 = `/${[civ, dynasty, typeLabel, title].filter(Boolean).join('・')}`
+      const posterState = await buildSharePosterSheetState(text, sourceLine1, '')
+      this.setData(posterState)
+    } catch {
+      wx.hideLoading()
+      wx.showToast({ title: '海报生成失败', icon: 'none' })
+    }
   },
   async onLoad(query: Record<string, string | undefined>) {
     const boxId = query.boxId || query.id
@@ -629,7 +672,7 @@ Page({
     const list = this.data.critiques as CritiqueVm[]
     const c = list[idx]
     if (!c) return
-    const body = [c.content, c.blurb, c.bodyQuote, c.source].filter(Boolean).join('\n\n')
+    const body = String(c.content || c.bodyQuote || '').trim()
     navigateTo(ROUTES.critiqueDetail, {
       title: c.title || '',
       author: c.displayAuthor || '',
@@ -646,7 +689,8 @@ Page({
     navigateTo(ROUTES.relicDetail, {
       name: r.name || '',
       museum: r.museum || '',
-      detail: [r.teaser, r.description].filter(Boolean).join('\n\n'),
+      // 只用完整介绍；summary 入库时会截断并加「…」，拼进去会像「没写完」
+      detail: String(r.description || r.teaser || '').trim(),
       imageUrl: r.imageUrl || '',
     })
   },
@@ -1065,44 +1109,27 @@ Page({
       this.hideSelectionBar()
       return
     }
-    const rect = detail.firstRangeRect
-    let left = this.data.selectionBarLeft
-    let top = this.data.selectionBarTop
-    if (rect && rect.left != null && rect.top != null) {
-      const width = rect.width || 0
-      const height = rect.height || 0
-      left = rect.left + width / 2
-      top = rect.top
-      const minTop = 120
-      const maxTop = (wx.getSystemInfoSync().windowHeight || 667) - 80
-      top = Math.max(minTop, Math.min(maxTop, top))
-    }
+    const anchor = resolveSelectionBarAnchor(detail.firstRangeRect, {
+      left: this.data.selectionBarLeft,
+      top: this.data.selectionBarTop,
+      placement: this.data.selectionBarPlacement,
+    })
     this.setData({
       selectionBarVisible: true,
       selectionBarText: selected,
-      selectionBarLeft: left,
-      selectionBarTop: top,
+      selectionBarLeft: anchor.left,
+      selectionBarTop: anchor.top,
+      selectionBarPlacement: anchor.placement,
     })
   },
   async onSelectionShare() {
     const text = this.data.selectionBarText
     this.hideSelectionBar()
     if (!text) return
-    wx.showLoading({ title: '生成海报…', mask: true })
-    const header = this.data.header as BoxHeader | null
-    const box = header?.box
-    const { civ, dynasty } = readBoxLocationNames(box)
-    const title = box?.title || this.data.navTitle || '史略'
-    const sourceLine2 = [civ, dynasty].filter(Boolean).join(' · ') || this.data.detailMetaDisplay || ''
-    const posterState = await buildSharePosterSheetState(
-      text,
-      `/ ${title} · 史略`,
-      sourceLine2,
-    )
-    wx.hideLoading()
-    this.setData(posterState)
+    await this.openSharePoster(text)
   },
   closeSharePoster() {
+    wx.hideLoading()
     this.setData({ sharePosterVisible: false })
   },
   onSelectionCopy() {

@@ -318,7 +318,7 @@ def compose_one(
     if ok:
         print(f"✅ verify 通过: {out_path}")
         if sync_db:
-            import_json_file(out_path, index_path=index_path, sql_out=sql_out, mysql=mysql)
+            import_json_file(out_path, entry_id=eid, index_path=index_path, sql_out=sql_out, mysql=mysql)
         return out_path
 
     if not revise_on_fail:
@@ -350,13 +350,14 @@ def compose_one(
         raise RuntimeError(f"修订后 verify 仍失败:\n{verify_out2}")
     print(f"✅ verify 通过（修订后）: {out_path}")
     if sync_db:
-        import_json_file(out_path, index_path=index_path, sql_out=sql_out, mysql=mysql)
+        import_json_file(out_path, entry_id=eid, index_path=index_path, sql_out=sql_out, mysql=mysql)
     return out_path
 
 
 def import_json_file(
     path: Path,
     *,
+    entry_id: str | None = None,
     index_path: Path | None = None,
     sql_out: Path | None = None,
     mysql: dict[str, Any] | None = None,
@@ -376,7 +377,7 @@ def import_json_file(
         raise ValueError(f"关联史略名称 must be single value in {path}")
     subject = next(iter(subjects))
 
-    entry = find_entry(name=subject, index_path=index_path)
+    entry = find_entry(entry_id=entry_id, name=subject if not entry_id else None, index_path=index_path)
     if not is_person_entry(entry):
         raise RuntimeError(f"{subject} 非人物六类，不可导入关系")
     box_id = str(entry.get("史略ID", "")).strip()
@@ -434,7 +435,7 @@ def import_one(
     ok, verify_out = run_verify(fp, strict=True)
     if not ok:
         raise RuntimeError(f"verify failed before import:\n{verify_out}")
-    import_json_file(fp, index_path=index_path, sql_out=sql_out, mysql=mysql)
+    import_json_file(fp, entry_id=entry_id or str(entry.get("史略ID", "")).strip() or None, index_path=index_path, sql_out=sql_out, mysql=mysql)
 
 
 def list_dynasty_persons(dynasty: str, index_path: Path | None = None) -> list[dict[str, Any]]:

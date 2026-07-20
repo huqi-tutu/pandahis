@@ -940,3 +940,57 @@ def load_emperor_gaps(
             continue
         gaps.append({"帝王名称": name, "补全理由": "帝王表条目、一期无对应人物条"})
     return gaps
+
+
+def thin_deferred_registry_path(histograph_root: Path) -> Path:
+    return histograph_root / "data" / "05工作流中间产物" / "薄标注待补全" / "registry.json"
+
+
+def load_thin_deferred_for_dynasty(
+    histograph_root: Path,
+    dynasty_id: str,
+    *,
+    dynasty_name: str = "",
+) -> list[dict[str, Any]]:
+    """merge 厚度门拒收的薄标注条目（本朝），供 candidates-renwu 优先候选。"""
+    fp = thin_deferred_registry_path(histograph_root)
+    if not fp.is_file():
+        return []
+    doc = json.loads(fp.read_text(encoding="utf-8"))
+    rows = doc.get("entries") if isinstance(doc, dict) else doc
+    if not isinstance(rows, list):
+        return []
+    out: list[dict[str, Any]] = []
+    for row in rows:
+        if not isinstance(row, dict):
+            continue
+        row_dyn = str(row.get("朝代ID", "")).strip()
+        row_coord = str(row.get("二级朝代坐标", "")).strip()
+        if row_dyn != dynasty_id and not (dynasty_name and row_coord == dynasty_name):
+            continue
+        cat = str(row.get("史略分类", "")).strip()
+        if cat not in PERSON_INDEX_CATEGORIES:
+            continue
+        out.append(row)
+    return out
+
+
+def thin_deferred_to_candidate(row: dict[str, Any]) -> dict[str, Any]:
+    """薄标注注册表 → 人物候选行。"""
+    name = str(row.get("史略名称", "")).strip()
+    chars = int(row.get("source_char_count") or 0)
+    refs = row.get("merge_sources") or []
+    ref_note = "; ".join(
+        f"{r.get('work', '')}{r.get('vol', '')}({r.get('source_char_count', '?')}字)"
+        for r in refs[:3]
+    )
+    return {
+        "名称": name,
+        "史略分类": row.get("史略分类"),
+        "补全来源": "薄标注待补",
+        "补全理由": f"一期标注合计仅{chars}字（<100），未升GLBL；史料薄不宜顺译",
+        "主要史料出处": row.get("主要史料出处") or ref_note,
+        "边界备注": f"著作级ID={row.get('史略ID', '')}；{ref_note}",
+        "审核状态": "pending",
+        "去重自检": "来自薄标注注册表，一期无 GLBL",
+    }

@@ -8,6 +8,7 @@ const query_value_1 = require("../../native-utils/query-value");
 const year_format_1 = require("../../native-utils/year-format");
 const entry_source_label_1 = require("../../native-utils/entry-source-label");
 const share_poster_open_1 = require("../../native-utils/share-poster-open");
+const selection_bar_position_1 = require("../../native-utils/selection-bar-position");
 const correction_1 = require("../../native-utils/correction");
 const load_error_message_1 = require("../../native-utils/load-error-message");
 const runtime_env_1 = require("../../native-utils/runtime-env");
@@ -733,6 +734,7 @@ Page({
         selectionBarVisible: false,
         selectionBarLeft: 0,
         selectionBarTop: 0,
+        selectionBarPlacement: 'above',
         selectionBarText: '',
         selectionMountKey: 1,
         sharePosterVisible: false,
@@ -1322,22 +1324,17 @@ Page({
             this.hideSelectionBar();
             return;
         }
-        const rect = detail.firstRangeRect;
-        let left = this.data.selectionBarLeft;
-        let top = this.data.selectionBarTop;
-        if (rect && rect.left != null && rect.top != null) {
-            const width = rect.width || 0;
-            left = rect.left + width / 2;
-            top = rect.top;
-            const minTop = 120;
-            const maxTop = (wx.getSystemInfoSync().windowHeight || 667) - 80;
-            top = Math.max(minTop, Math.min(maxTop, top));
-        }
+        const anchor = (0, selection_bar_position_1.resolveSelectionBarAnchor)(detail.firstRangeRect, {
+            left: this.data.selectionBarLeft,
+            top: this.data.selectionBarTop,
+            placement: this.data.selectionBarPlacement,
+        });
         this.setData({
             selectionBarVisible: true,
             selectionBarText: selected,
-            selectionBarLeft: left,
-            selectionBarTop: top,
+            selectionBarLeft: anchor.left,
+            selectionBarTop: anchor.top,
+            selectionBarPlacement: anchor.placement,
         });
     },
     async onSelectionShare() {
@@ -1346,11 +1343,22 @@ Page({
         if (!text)
             return;
         wx.showLoading({ title: '生成海报…', mask: true });
-        const dynastyTitle = this.data.dynastyTitle || '朝代';
-        const unit = this.data.unit;
-        const posterState = await (0, share_poster_open_1.buildSharePosterSheetState)(text, `/ ${dynastyTitle} · 朝代简介`, (unit === null || unit === void 0 ? void 0 : unit.crumbText) || this.data.heroSubLine || '');
+        try {
+            const dynastyTitle = this.data.dynastyTitle || '朝代';
+            const unit = this.data.unit;
+            const civ = unit ? (0, correction_1.parseCivilizationFromCrumb)(unit.crumbText) : '';
+            const sourceLine1 = `/${[civ, dynastyTitle, '朝代简介'].filter(Boolean).join('・')}`;
+            const posterState = await (0, share_poster_open_1.buildSharePosterSheetState)(text, sourceLine1, '');
+            this.setData(posterState);
+        }
+        catch {
+            wx.hideLoading();
+            wx.showToast({ title: '海报生成失败', icon: 'none' });
+        }
+    },
+    closeSharePoster() {
         wx.hideLoading();
-        this.setData(posterState);
+        this.setData({ sharePosterVisible: false });
     },
     onSelectionCopy() {
         const text = this.data.selectionBarText;
@@ -1383,9 +1391,6 @@ Page({
                 correctionDynastyName: this.data.dynastyTitle,
             });
         });
-    },
-    closeSharePoster() {
-        this.setData({ sharePosterVisible: false });
     },
     onChipTooltipCardTap() { },
     onChipCorrectionTap() {

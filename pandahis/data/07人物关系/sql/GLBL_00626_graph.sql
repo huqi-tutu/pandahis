@@ -1,0 +1,17 @@
+DELETE FROM box_graph_edge WHERE box_id='GLBL_00626';
+DELETE FROM box_graph_node WHERE box_id='GLBL_00626';
+INSERT INTO box_graph_node (component_id, shilue_id, shilue_name, box_id, node_key, node_type, name, extra_json) VALUES ('GLBL_00626_REL_center', 'GLBL_00626', '蚩尤', 'GLBL_00626', 'center', 'event', '蚩尤', '{}');
+INSERT INTO box_graph_node (component_id, shilue_id, shilue_name, box_id, node_key, node_type, name, extra_json) VALUES ('GLBL_00626_REL_cat_col', 'GLBL_00626', '蚩尤', 'GLBL_00626', 'cat_col', 'category', '同僚', '{"关系类别": "同僚", "isCategoryNode": true}');
+INSERT INTO box_graph_edge (box_id, from_node_key, to_node_key, label) VALUES ('GLBL_00626', 'center', 'cat_col', '同僚');
+INSERT INTO box_graph_node (component_id, shilue_id, shilue_name, box_id, node_key, node_type, name, extra_json) VALUES ('GLBL_00626_REL_cat_foe', 'GLBL_00626', '蚩尤', 'GLBL_00626', 'cat_foe', 'category', '外敌', '{"关系类别": "外敌", "isCategoryNode": true}');
+INSERT INTO box_graph_edge (box_id, from_node_key, to_node_key, label) VALUES ('GLBL_00626', 'center', 'cat_foe', '外敌');
+INSERT INTO box_graph_node (component_id, shilue_id, shilue_name, box_id, node_key, node_type, name, extra_json) VALUES ('GLBL_00626_REL_HD_FOE_001', 'GLBL_00626', '蚩尤', 'GLBL_00626', 'hd_foe_001', 'person', '黄帝', '{"关系ID": "HD-FOE-001", "关系类别": "外敌", "关系层级": "一级", "上级连接线标题": "外敌", "关系简述": "涿鹿之战，黄帝征诸侯兵，禽杀蚩尤，见《史记·五帝本纪》。", "record_id": "rec5ef7dc90756a"}');
+INSERT INTO box_graph_edge (box_id, from_node_key, to_node_key, label) VALUES ('GLBL_00626', 'cat_foe', 'hd_foe_001', '外敌');
+INSERT INTO box_graph_node (component_id, shilue_id, shilue_name, box_id, node_key, node_type, name, extra_json) VALUES ('GLBL_00626_REL_HD_FOE_002', 'GLBL_00626', '蚩尤', 'GLBL_00626', 'hd_foe_002', 'person', '炎帝', '{"关系ID": "HD-FOE-002", "关系类别": "外敌", "关系层级": "一级", "上级连接线标题": "外敌", "关系简述": "蚩尤驱逐赤帝（炎帝），炎帝大慑，乃说于黄帝，遂有黄帝伐蚩尤，见《逸周书·尝麦》。", "record_id": "rece4a27de2d9ff"}');
+INSERT INTO box_graph_edge (box_id, from_node_key, to_node_key, label) VALUES ('GLBL_00626', 'cat_foe', 'hd_foe_002', '外敌');
+INSERT INTO box_graph_node (component_id, shilue_id, shilue_name, box_id, node_key, node_type, name, extra_json) VALUES ('GLBL_00626_REL_HD_COL_001', 'GLBL_00626', '蚩尤', 'GLBL_00626', 'hd_col_001', 'person', '臣子', '{"关系ID": "HD-COL-001", "关系类别": "同僚", "关系层级": "一级", "上级连接线标题": "臣子", "关系简述": "蚩尤属下助其作战的部将。", "record_id": "rec98301c1de563"}');
+INSERT INTO box_graph_edge (box_id, from_node_key, to_node_key, label) VALUES ('GLBL_00626', 'cat_col', 'hd_col_001', '臣子');
+INSERT INTO box_graph_node (component_id, shilue_id, shilue_name, box_id, node_key, node_type, name, extra_json) VALUES ('GLBL_00626_REL_HD_COL_002', 'GLBL_00626', '蚩尤', 'GLBL_00626', 'hd_col_002', 'person', '风伯', '{"关系ID": "HD-COL-002", "关系类别": "同僚", "关系层级": "二级", "上级连接线标题": "部下", "关系简述": "蚩尤请风伯雨师纵大风雨，以拒黄帝，见《山海经·大荒北经》。", "所属一级关系": "臣子", "关系链": "蚩尤 › 臣子", "record_id": "rec3e2275e5e32c"}');
+INSERT INTO box_graph_edge (box_id, from_node_key, to_node_key, label) VALUES ('GLBL_00626', 'hd_col_001', 'hd_col_002', '部下');
+INSERT INTO box_graph_node (component_id, shilue_id, shilue_name, box_id, node_key, node_type, name, extra_json) VALUES ('GLBL_00626_REL_HD_COL_003', 'GLBL_00626', '蚩尤', 'GLBL_00626', 'hd_col_003', 'person', '雨师', '{"关系ID": "HD-COL-003", "关系类别": "同僚", "关系层级": "二级", "上级连接线标题": "部下", "关系简述": "蚩尤请风伯雨师纵大风雨，以拒黄帝，见《山海经·大荒北经》。", "所属一级关系": "臣子", "关系链": "蚩尤 › 臣子", "record_id": "rec7e79e8bd7f41"}');
+INSERT INTO box_graph_edge (box_id, from_node_key, to_node_key, label) VALUES ('GLBL_00626', 'hd_col_001', 'hd_col_003', '部下');

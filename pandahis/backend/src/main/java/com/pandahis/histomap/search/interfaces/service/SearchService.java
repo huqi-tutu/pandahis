@@ -62,7 +62,7 @@ public class SearchService {
             + "FROM historical_box b LEFT JOIN historical_emperor u ON u.id=b.emperor_id "
             + "WHERE b.status=1 AND (b.id LIKE ? ESCAPE '\\\\' OR b.title LIKE ? ESCAPE '\\\\' OR b.parent_entry_id LIKE ? ESCAPE '\\\\' OR b.blurb LIKE ? ESCAPE '\\\\') "
             + "ORDER BY b.importance_level DESC, b.start_year ASC LIMIT 100",
-        like, like, like
+        like, like, like, like
     );
 
     // units

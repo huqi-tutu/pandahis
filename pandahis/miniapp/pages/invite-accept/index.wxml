@@ -25,6 +25,8 @@
             placeholder="输入邀请码"
             placeholder-class="input-placeholder"
             bindinput="onInviteCodeInput"
+            adjust-position="{{true}}"
+            cursor-spacing="{{80}}"
           />
         </view>
       </view>

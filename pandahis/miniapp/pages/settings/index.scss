@@ -36,13 +36,16 @@
 .bind-input {
   flex: 1;
   min-width: 0;
-  padding: 18rpx 24rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  padding: 0 24rpx;
   border-radius: 12rpx;
   background: $page-bg;
   border: 1rpx solid $divider;
   font-size: 26rpx;
   color: $text-title;
   letter-spacing: 0.06em;
+  box-sizing: border-box;
 }
 
 .bind-input-ph {

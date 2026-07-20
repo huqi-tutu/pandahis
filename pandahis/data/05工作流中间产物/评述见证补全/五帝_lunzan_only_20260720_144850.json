@@ -1,0 +1,274 @@
+{
+  "stamp": "20260720_144850",
+  "dynasty": "五帝",
+  "by_status": {
+    "skip_has_lunzan": 5,
+    "no_lunzan": 17,
+    "ok": 7
+  },
+  "results": [
+    {
+      "id": "GLBL_00056",
+      "name": "尧",
+      "status": "skip_has_lunzan",
+      "entry_count": 5,
+      "action": "skip_has_lunzan",
+      "prev_count": 5
+    },
+    {
+      "id": "GLBL_00057",
+      "name": "帝喾",
+      "status": "skip_has_lunzan",
+      "entry_count": 5,
+      "action": "skip_has_lunzan",
+      "prev_count": 5
+    },
+    {
+      "id": "GLBL_00129",
+      "name": "舜",
+      "status": "skip_has_lunzan",
+      "entry_count": 5,
+      "action": "skip_has_lunzan",
+      "prev_count": 5
+    },
+    {
+      "id": "GLBL_00144",
+      "name": "颛顼",
+      "status": "no_lunzan",
+      "entry_count": 4,
+      "action": "none",
+      "prev_count": 4,
+      "raw_n": 0
+    },
+    {
+      "id": "GLBL_00149",
+      "name": "黄帝",
+      "status": "skip_has_lunzan",
+      "entry_count": 5,
+      "action": "skip_has_lunzan",
+      "prev_count": 5
+    },
+    {
+      "id": "GLBL_00561",
+      "name": "阪泉之战",
+      "status": "no_lunzan",
+      "entry_count": 5,
+      "action": "none",
+      "prev_count": 5,
+      "raw_n": 0
+    },
+    {
+      "id": "GLBL_00562",
+      "name": "涿鹿之战",
+      "status": "skip_has_lunzan",
+      "entry_count": 5,
+      "action": "skip_has_lunzan",
+      "prev_count": 5
+    },
+    {
+      "id": "GLBL_00563",
+      "name": "颛顼绝地天通",
+      "status": "ok",
+      "action": "append_keep_others",
+      "strategy": "append_keep_others",
+      "entry_count": 5,
+      "prev_count": 4,
+      "path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/08评述/GLBL_00563_颛顼绝地天通_评述.json"
+    },
+    {
+      "id": "GLBL_00564",
+      "name": "尧舜禅让",
+      "status": "no_lunzan",
+      "entry_count": 5,
+      "action": "none",
+      "prev_count": 5,
+      "raw_n": 0
+    },
+    {
+      "id": "GLBL_00565",
+      "name": "鲧禹治水",
+      "status": "ok",
+      "action": "append_keep_others",
+      "strategy": "append_keep_others",
+      "entry_count": 6,
+      "prev_count": 5,
+      "path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/08评述/GLBL_00565_鲧禹治水_评述.json"
+    },
+    {
+      "id": "GLBL_00566",
+      "name": "舜流四凶",
+      "status": "no_lunzan",
+      "entry_count": 4,
+      "action": "none",
+      "prev_count": 4,
+      "raw_n": 0
+    },
+    {
+      "id": "GLBL_00567",
+      "name": "禅让制",
+      "status": "ok",
+      "action": "append_keep_others",
+      "strategy": "append_keep_others",
+      "entry_count": 6,
+      "prev_count": 5,
+      "path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/08评述/GLBL_00567_禅让制_评述.json"
+    },
+    {
+      "id": "GLBL_00568",
+      "name": "部落联盟共主制",
+      "status": "ok",
+      "action": "append_keep_others",
+      "strategy": "append_keep_others",
+      "entry_count": 6,
+      "prev_count": 5,
+      "path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/08评述/GLBL_00568_部落联盟共主制_评述.json"
+    },
+    {
+      "id": "GLBL_00569",
+      "name": "四岳议事制度",
+      "status": "no_lunzan",
+      "entry_count": 4,
+      "action": "none",
+      "prev_count": 4,
+      "raw_n": 0
+    },
+    {
+      "id": "GLBL_00570",
+      "name": "九官制",
+      "status": "ok",
+      "action": "append_keep_others",
+      "strategy": "append_keep_others",
+      "entry_count": 6,
+      "prev_count": 5,
+      "path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/08评述/GLBL_00570_九官制_评述.json"
+    },
+    {
+      "id": "GLBL_00571",
+      "name": "羲和观象授时",
+      "status": "ok",
+      "action": "append_keep_others",
+      "strategy": "append_keep_others",
+      "entry_count": 6,
+      "prev_count": 5,
+      "path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/08评述/GLBL_00571_羲和观象授时_评述.json"
+    },
+    {
+      "id": "GLBL_00572",
+      "name": "五礼制度",
+      "status": "no_lunzan",
+      "entry_count": 3,
+      "action": "none",
+      "prev_count": 3,
+      "raw_n": 0
+    },
+    {
+      "id": "GLBL_00573",
+      "name": "五刑制度",
+      "status": "no_lunzan",
+      "entry_count": 5,
+      "action": "none",
+      "prev_count": 5,
+      "raw_n": 0
+    },
+    {
+      "id": "GLBL_00574",
+      "name": "嫘祖",
+      "status": "no_lunzan",
+      "entry_count": 4,
+      "action": "none",
+      "prev_count": 4,
+      "raw_n": 0
+    },
+    {
+      "id": "GLBL_00575",
+      "name": "嫫母",
+      "status": "no_lunzan",
+      "entry_count": 5,
+      "action": "none",
+      "prev_count": 5,
+      "raw_n": 0
+    },
+    {
+      "id": "GLBL_00576",
+      "name": "娥皇",
+      "status": "no_lunzan",
+      "entry_count": 5,
+      "action": "none",
+      "prev_count": 5,
+      "raw_n": 0
+    },
+    {
+      "id": "GLBL_00577",
+      "name": "女英",
+      "status": "no_lunzan",
+      "entry_count": 3,
+      "action": "none",
+      "prev_count": 3,
+      "raw_n": 0
+    },
+    {
+      "id": "GLBL_00578",
+      "name": "丹朱",
+      "status": "no_lunzan",
+      "entry_count": 5,
+      "action": "none",
+      "prev_count": 5,
+      "raw_n": 0
+    },
+    {
+      "id": "GLBL_00579",
+      "name": "皋陶",
+      "status": "no_lunzan",
+      "entry_count": 5,
+      "action": "none",
+      "prev_count": 5,
+      "raw_n": 0
+    },
+    {
+      "id": "GLBL_00580",
+      "name": "伯益",
+      "status": "no_lunzan",
+      "entry_count": 5,
+      "action": "none",
+      "prev_count": 5,
+      "raw_n": 0
+    },
+    {
+      "id": "GLBL_00582",
+      "name": "契",
+      "status": "ok",
+      "action": "append_keep_others",
+      "strategy": "append_keep_others",
+      "entry_count": 4,
+      "prev_count": 3,
+      "path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/08评述/GLBL_00582_契_评述.json"
+    },
+    {
+      "id": "GLBL_00583",
+      "name": "弃",
+      "status": "no_lunzan",
+      "entry_count": 5,
+      "action": "none",
+      "prev_count": 5,
+      "raw_n": 0
+    },
+    {
+      "id": "GLBL_00584",
+      "name": "夔",
+      "status": "no_lunzan",
+      "entry_count": 3,
+      "action": "none",
+      "prev_count": 3,
+      "raw_n": 1
+    },
+    {
+      "id": "GLBL_00585",
+      "name": "许由",
+      "status": "no_lunzan",
+      "entry_count": 5,
+      "action": "none",
+      "prev_count": 5,
+      "raw_n": 1
+    }
+  ]
+}

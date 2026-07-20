@@ -2,17 +2,10 @@
   "dynasty": "五帝",
   "completed": [
     {
-      "glbl": "GLBL_00149",
-      "name": "黄帝",
-      "file": "黄帝关系表.json",
+      "glbl": "GLBL_00056",
+      "name": "尧",
+      "file": "尧关系表.json",
       "count": 14,
-      "verified_at": "2026-07-19"
-    },
-    {
-      "glbl": "GLBL_00144",
-      "name": "颛顼",
-      "file": "颛顼关系表.json",
-      "count": 7,
       "verified_at": "2026-07-19"
     },
     {
@@ -23,18 +16,138 @@
       "verified_at": "2026-07-19"
     },
     {
-      "glbl": "GLBL_00056",
-      "name": "尧",
-      "file": "尧关系表.json",
-      "count": 14,
-      "verified_at": "2026-07-19"
-    },
-    {
       "glbl": "GLBL_00129",
       "name": "舜",
       "file": "舜关系表.json",
       "count": 24,
       "verified_at": "2026-07-19"
+    },
+    {
+      "glbl": "GLBL_00144",
+      "name": "颛顼",
+      "file": "颛顼关系表.json",
+      "count": 7,
+      "verified_at": "2026-07-19"
+    },
+    {
+      "glbl": "GLBL_00149",
+      "name": "黄帝",
+      "file": "黄帝关系表.json",
+      "count": 14,
+      "verified_at": "2026-07-19"
+    },
+    {
+      "glbl": "GLBL_00574",
+      "name": "嫘祖",
+      "file": "嫘祖关系表.json",
+      "count": 6,
+      "verified_at": "2026-07-19"
+    },
+    {
+      "glbl": "GLBL_00575",
+      "name": "嫫母",
+      "file": "嫫母关系表.json",
+      "count": 1,
+      "verified_at": "2026-07-19"
+    },
+    {
+      "glbl": "GLBL_00576",
+      "name": "娥皇",
+      "file": "娥皇关系表.json",
+      "count": 5,
+      "verified_at": "2026-07-19"
+    },
+    {
+      "glbl": "GLBL_00577",
+      "name": "女英",
+      "file": "女英关系表.json",
+      "count": 3,
+      "verified_at": "2026-07-19"
+    },
+    {
+      "glbl": "GLBL_00578",
+      "name": "丹朱",
+      "file": "丹朱关系表.json",
+      "count": 3,
+      "verified_at": "2026-07-19"
+    },
+    {
+      "glbl": "GLBL_00579",
+      "name": "皋陶",
+      "file": "皋陶关系表.json",
+      "count": 4,
+      "verified_at": "2026-07-19"
+    },
+    {
+      "glbl": "GLBL_00580",
+      "name": "伯益",
+      "file": "伯益关系表.json",
+      "count": 8,
+      "verified_at": "2026-07-19"
+    },
+    {
+      "glbl": "GLBL_00582",
+      "name": "契",
+      "file": "契关系表.json",
+      "count": 17,
+      "verified_at": "2026-07-19"
+    },
+    {
+      "glbl": "GLBL_00583",
+      "name": "弃",
+      "file": "弃关系表.json",
+      "count": 10,
+      "verified_at": "2026-07-19"
+    },
+    {
+      "glbl": "GLBL_00584",
+      "name": "夔",
+      "file": "夔关系表.json",
+      "count": 11,
+      "verified_at": "2026-07-19"
+    },
+    {
+      "glbl": "GLBL_00585",
+      "name": "许由",
+      "file": "许由关系表.json",
+      "count": 1,
+      "verified_at": "2026-07-19"
+    },
+    {
+      "glbl": "GLBL_00624",
+      "name": "炎帝",
+      "file": "炎帝关系表.json",
+      "count": 11,
+      "verified_at": "2026-07-20"
+    },
+    {
+      "glbl": "GLBL_00625",
+      "name": "少昊",
+      "file": "少昊关系表.json",
+      "count": 6,
+      "verified_at": "2026-07-20"
+    },
+    {
+      "glbl": "GLBL_00626",
+      "name": "蚩尤",
+      "file": "蚩尤关系表.json",
+      "count": 5,
+      "verified_at": "2026-07-20"
+    },
+    {
+      "glbl": "GLBL_00627",
+      "name": "共工",
+      "file": "共工关系表.json",
+      "count": 4,
+      "verified_at": "2026-07-20"
+    },
+    {
+      "glbl": "GLBL_00628",
+      "name": "彭祖",
+      "file": "彭祖关系表.json",
+      "count": 7,
+      "verified_at": "2026-07-20"
     }
-  ]
+  ],
+  "updated_at": "2026-07-20"
 }

@@ -36,7 +36,8 @@
 2. `schema_user.sql`
 3. `schema_search.sql`
 4. `schema_membership.sql`
-5. 按需执行 `data.sql` 作为种子数据（或自行导入）
+5. `schema_user_correction.sql`（用户纠错）
+6. 按需执行 `data.sql` 作为种子数据（或自行导入）
 
 ### 1.4 后台持续运行（不要只在前台 `java -jar`）
 
