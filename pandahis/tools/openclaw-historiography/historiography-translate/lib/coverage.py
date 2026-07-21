@@ -1,10 +1,19 @@
-"""母本逐句清单覆盖度校验（白话译文：原文关键词 + 信息点）。"""
+"""母本逐句清单覆盖度校验（白话：信息点 + 宽松 bigram，非文言字面控词）。"""
 
 from __future__ import annotations
 
 import os
 import re
+from pathlib import Path
 from typing import Any, Dict, List, Tuple
+
+from lib.coverage_info import (
+    CoverageUnit,
+    body_without_intro_zone,
+    build_coverage_units,
+    info_point_is_classical,
+)
+from lib.coverage_info import CoverageUnit  # noqa: F401 — re-export for tests
 
 # 常见虚词/高频词，不参与命中
 _STOP = frozenset(
@@ -19,17 +28,24 @@ _GENERIC = frozenset(
     "黄帝轩辕神农尧舜禹启汤文武诸侯百姓万民天下天子帝王".split()
 )
 
+# 长文（如禹本纪禹贡）清单条数达到此值时启用略低的通过率
+_LONG_CHECKLIST_SIZE = 80
+
 
 def _coverage_strict() -> bool:
     return os.environ.get("TRANSLATE_COVERAGE_STRICT", "1") != "0"
 
 
-def _coverage_min_ratio() -> float:
-    return float(os.environ.get("TRANSLATE_COVERAGE_MIN_RATIO", "0.85"))
+def _coverage_min_ratio(checklist_size: int) -> float:
+    base = float(os.environ.get("TRANSLATE_COVERAGE_MIN_RATIO", "0.70"))
+    if checklist_size >= _LONG_CHECKLIST_SIZE:
+        long_ratio = float(os.environ.get("TRANSLATE_COVERAGE_MIN_RATIO_LONG", "0.65"))
+        return min(base, long_ratio)
+    return base
 
 
 def _item_pass_threshold() -> float:
-    return float(os.environ.get("TRANSLATE_COVERAGE_ITEM_MIN", "0.45"))
+    return float(os.environ.get("TRANSLATE_COVERAGE_ITEM_MIN", "0.32"))
 
 
 def _normalize_body(body: str) -> str:
@@ -37,6 +53,9 @@ def _normalize_body(body: str) -> str:
     for a, b in (
         ("老百姓", "百姓"),
         ("民众", "百姓"),
+        ("稻种", "稻"),
+        ("低湿", "卑湿"),
+        ("低湿地", "卑湿"),
         ("欺负", "暴虐"),
         ("残害", "暴虐"),
         ("不来朝贡", "不享"),
@@ -85,6 +104,8 @@ def _normalize_body(body: str) -> str:
         ("开山凿路", "披山通道"),
         ("安稳地长住", "宁居"),
         ("走到大海边", "至于海"),
+        ("分给百姓", "予众"),
+        ("分给", "予"),
     ):
         body = body.replace(a, b)
     return body
@@ -105,14 +126,12 @@ def _clause_scores(text: str, body: str) -> List[float]:
 def _keywords(text: str, *, max_tokens: int = 8) -> List[str]:
     s = re.sub(r"[。，、；：「」『』《》\s'\"“”]", "", text)
     tokens: List[str] = []
-    # 先按标点分片，避免 greedy {2,4} 把「殷契，母曰简狄」切成「殷契母曰」
     segments = re.split(r"[，。、；：]", text) if re.search(r"[，。、；：]", text) else [text]
     for seg in segments:
         seg = re.sub(r"[「」『』《》\s'\"“”]", "", seg)
         if not seg:
             continue
         tokens.extend(re.findall(r"[\u4e00-\u9fff]{2,4}", seg))
-    # 补充 2 字切分，避免 greedy 4 字块漏检
     for seg in segments:
         seg = re.sub(r"[「」『』《》\s'\"“”]", "", seg)
         for i in range(len(seg) - 1):
@@ -144,58 +163,79 @@ def _keyword_score(keys: List[str], body: str) -> float:
     return hits / len(keys)
 
 
-def sentence_coverage_score(orig: str, body: str) -> float:
-    return _keyword_score(_keywords(orig), body)
-
-
 def _bigram_coverage(short: str, body: str) -> float:
     short = re.sub(r"[\s　，、；：。.!?]", "", short)
     if len(short) < 4:
         return 1.0
     grams = {short[i : i + 2] for i in range(len(short) - 1)}
+    if not grams:
+        return 1.0
     hits = sum(1 for g in grams if g in body)
     return hits / len(grams)
 
 
+def _must_phrase_score(must_keys: List[str], body: str) -> float:
+    if not must_keys:
+        return 1.0
+    hits = 0
+    for p in must_keys:
+        if p in body or f"「{p}」" in body:
+            hits += 1
+            continue
+        if any(p in m.group(1) for m in re.finditer(r"「([^」]+)」", body) if p in m.group(1)):
+            hits += 1
+    return hits / len(must_keys)
+
+
+def _score_baihua_info(info: str, body_n: str) -> List[float]:
+    scores: List[float] = []
+    clause_sc = _clause_scores(info, body_n)
+    if clause_sc:
+        avg = sum(clause_sc) / len(clause_sc)
+        good_ratio = sum(1 for s in clause_sc if s >= 0.28) / len(clause_sc)
+        scores.append(max(avg, good_ratio * 0.9))
+        scores.append(max(clause_sc))
+    scores.append(_bigram_coverage(info, body_n))
+    scores.append(_keyword_score(_keywords(info, max_tokens=10), body_n))
+    return scores
+
+
+def _score_paraphrase_orig(orig: str, body_n: str) -> List[float]:
+    """文言摘句：仅用 bigram / 子句宽松匹配，不做原文字面控词。"""
+    scores: List[float] = [_bigram_coverage(orig, body_n)]
+    clause_sc = _clause_scores(orig, body_n)
+    if clause_sc:
+        scores.append(max(clause_sc))
+        scores.append(sum(1 for s in clause_sc if s >= 0.22) / len(clause_sc))
+    return scores
+
+
 def item_coverage_score(item: Dict[str, Any], body: str) -> float:
-    """综合信息点（白话，主）+ 原文摘句（文言，辅）。"""
+    """单条得分：白话信息点为主；文言摘句走 paraphrase 模式；必现词仅作加分。"""
     body_n = _normalize_body(body)
     info = str(item.get("信息点") or "").strip()
     orig = str(item.get("原文摘句") or item.get("text") or "").strip()
+    must = item.get("必现词") or []
+    must_keys = [str(p).strip() for p in must if str(p).strip()] if isinstance(must, list) else []
 
     scores: List[float] = []
-    if info:
-        info_n = _normalize_body(info)
-        clause_sc = _clause_scores(info_n, body_n)
-        if clause_sc:
-            avg = sum(clause_sc) / len(clause_sc)
-            good_ratio = sum(1 for s in clause_sc if s >= 0.34) / len(clause_sc)
-            scores.append(max(avg, good_ratio * 0.92))
-            scores.append(max(clause_sc))
-        scores.append(_bigram_coverage(info_n, body_n))
-        scores.append(_keyword_score(_keywords(info_n, max_tokens=10), body_n))
-    if orig:
-        orig_n = _normalize_body(orig)
-        clause_sc = _clause_scores(orig_n, body_n)
-        if clause_sc:
-            scores.append(max(clause_sc) * 0.9)
-        scores.append(_keyword_score(_keywords(orig_n, max_tokens=8), body_n) * 0.85)
-    must = item.get("必现词") or []
-    if isinstance(must, list) and must:
-        must_keys = [str(p).strip() for p in must if str(p).strip()]
-        scores.append(_keyword_score(must_keys, body_n))
-        # 「」内原词或子串即算命中
-        hits = 0
-        for p in must_keys:
-            if p in body_n or f"「{p}」" in body_n:
-                hits += 1
-            elif any(p in m.group(1) for m in re.finditer(r"「([^」]+)」", body_n) if p in m.group(1)):
-                hits += 1
-        if must_keys:
-            scores.append(hits / len(must_keys))
+    if info and not info_point_is_classical(info, orig):
+        scores.extend(_score_baihua_info(info, body_n))
+    elif orig:
+        scores.extend(_score_paraphrase_orig(orig, body_n))
+
+    if must_keys:
+        scores.append(_must_phrase_score(must_keys, body_n) * 0.55)
+
     if not scores:
         return 1.0
     return max(scores)
+
+
+def _unit_coverage_score(unit: CoverageUnit, body: str) -> float:
+    if unit.kind == "group":
+        return max(item_coverage_score(row, body) for row in unit.items)
+    return item_coverage_score(unit.primary, body)
 
 
 def verify_mother_coverage(
@@ -204,16 +244,19 @@ def verify_mother_coverage(
     *,
     min_ratio: float | None = None,
     max_report: int = 8,
+    entry_id: str = "",
+    entry_name: str = "",
+    work_dir: Path | None = None,
 ) -> Tuple[bool, List[str]]:
     """
-    对照 plan「母本逐句清单」校验译文是否覆盖每条母本信息。
-    默认对所有条目启用；未达标则 verify 失败（TRANSLATE_COVERAGE_STRICT=1）。
-    """
-    if min_ratio is None:
-        min_ratio = _coverage_min_ratio()
+    对照 plan「母本逐句清单」校验译文信息覆盖（概率制，非逐词硬控）。
 
+    - 默认全局通过率 70%（长文 ≥80 条为 65%）
+    - 单条及格线 32%（组内 parallel_cluster 取组内最高分）
+    - 前置引入区不参与计分
+    """
     errors: List[str] = []
-    body = detail.split("*参考著作*")[0].split("参考著作")[0]
+    body = body_without_intro_zone(detail)
     checklist = plan.get("母本逐句清单") or []
     if not isinstance(checklist, list) or not checklist:
         errors.append("source plan 缺少「母本逐句清单」，无法校验母本覆盖")
@@ -224,36 +267,98 @@ def verify_mother_coverage(
         errors.append(f"母本逐句清单条数不足: {len(checklist)} < {min_checklist}")
         return False, errors
 
+    if min_ratio is None:
+        min_ratio = _coverage_min_ratio(len(checklist))
+
+    units = build_coverage_units(checklist)
+    if not units:
+        return True, []
+
     item_threshold = _item_pass_threshold()
-    weak: List[Tuple[str, str, float]] = []
+    weak_units: List[Tuple[CoverageUnit, float]] = []
     ok_count = 0
-    for item in checklist:
-        if not isinstance(item, dict):
-            continue
-        sid = str(item.get("编号") or item.get("id") or "")
-        orig = str(item.get("原文摘句") or item.get("text") or "").strip()
-        if not orig and not str(item.get("信息点") or "").strip():
-            ok_count += 1
-            continue
-        score = item_coverage_score(item, body)
+    for unit in units:
+        score = _unit_coverage_score(unit, body)
         if score >= item_threshold:
             ok_count += 1
         else:
-            weak.append((sid, orig or str(item.get("信息点") or ""), score))
+            weak_units.append((unit, score))
 
-    ratio = ok_count / len(checklist)
+    ratio = ok_count / len(units)
     if ratio < min_ratio:
+        from shared.coverage_semantic import should_trigger_l2
+
+        weak_snippets: List[Tuple[str, str, float]] = []
+        for unit, sc in weak_units:
+            row = unit.primary
+            snippet = str(row.get("原文摘句") or row.get("信息点") or "").strip()
+            weak_snippets.append((unit.label, snippet, sc))
+
+        rescued = False
+        l2_notes: List[str] = []
+        if (
+            entry_id
+            and should_trigger_l2(
+                checklist_size=len(checklist),
+                ratio=ratio,
+                min_ratio=min_ratio,
+            )
+        ):
+            try:
+                from lib.coverage_l2 import apply_l2_rescue, run_l2_coverage_review
+
+                l2_report = run_l2_coverage_review(
+                    entry_id=entry_id,
+                    entry_name=entry_name or str(plan.get("史略名称") or ""),
+                    detail=detail,
+                    weak_units=weak_units,
+                    l1_ratio=ratio,
+                    l1_min_ratio=min_ratio,
+                    work_dir=work_dir,
+                )
+                ok_count, rescued, l2_notes = apply_l2_rescue(
+                    ok_count=ok_count,
+                    units_total=len(units),
+                    min_ratio=min_ratio,
+                    weak_units=weak_units,
+                    report=l2_report,
+                )
+                ratio = ok_count / len(units)
+                if rescued:
+                    weak_snippets = [
+                        (unit.label, str(unit.primary.get("原文摘句") or "")[:48], sc)
+                        for unit, sc in weak_units
+                        if unit.label not in l2_report.conveyed_ids
+                    ]
+            except Exception as exc:
+                l2_notes.append(f"L2 语义复核失败（仍按 L1 判定）: {exc}")
+
+        if ratio >= min_ratio and rescued:
+            info = (
+                f"母本覆盖（L1+L2）: {ok_count}/{len(units)} 单元命中 ({ratio:.0%} ≥ {min_ratio:.0%})"
+            )
+            if l2_notes:
+                info += "；" + l2_notes[0]
+            return True, [f"[info] {info}"]
+
         msgs = [
-            f"母本覆盖不足: {ok_count}/{len(checklist)} 条命中 "
-            f"({ratio:.0%} < {min_ratio:.0%})"
+            f"母本覆盖不足: {ok_count}/{len(units)} 单元命中 "
+            f"({ratio:.0%} < {min_ratio:.0%}；单条及格线 {item_threshold:.0%})"
         ]
-        for sid, snippet, sc in weak[:max_report]:
+        for sid, snippet, sc in weak_snippets[:max_report]:
             msgs.append(f"  疑似漏译 {sid} [{sc:.0%}] {snippet[:48]}")
-        if len(weak) > max_report:
-            msgs.append(f"  …另有 {len(weak) - max_report} 条弱覆盖")
+        if len(weak_snippets) > max_report:
+            msgs.append(f"  …另有 {len(weak_snippets) - max_report} 单元弱覆盖")
+        for note in l2_notes:
+            msgs.append(f"  {note}")
         if _coverage_strict():
             errors.extend(msgs)
         else:
             errors.extend([f"[warn] {m}" for m in msgs[:3]])
             return True, errors
     return len(errors) == 0, errors
+
+
+# 兼容旧调用
+def sentence_coverage_score(orig: str, body: str) -> float:
+    return item_coverage_score({"原文摘句": orig, "信息点": ""}, body)

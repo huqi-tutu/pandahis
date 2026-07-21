@@ -49,25 +49,15 @@ def count_group_total_chars(sources: list[dict[str, Any]], *, index_root: Path |
     return sum(count_source_dict_chars(s, index_root=index_root) for s in sources)
 
 
-def vol_type_for_source(src: dict[str, Any]) -> str:
-    vn = str(src.get("vol_name") or "")
-    pc = int((src.get("meta") or {}).get("protagonist_count") or 99)
-    group_keywords = ("儒林", "酷吏", "游侠", "货殖", "佞幸", "循吏")
-    if any(k in vn for k in group_keywords):
-        return "群像传"
-    if "纪" in vn and "传" not in vn:
-        return "纪"
-    if pc == 1 and ("传" in vn or "世家" in vn):
-        return "专传"
-    if "传" in vn or "世家" in vn:
-        return "合传"
-    return "合传"
-
-
-def is_benji_juwang_exempt(src: dict[str, Any]) -> bool:
-    """本纪君王：merge 厚度门 warn-only，仍产 GLBL。"""
-    cat = str((src.get("entry") or {}).get("史略分类") or src.get("cat") or "").strip()
-    return vol_type_for_source(src) == "纪" and cat == "君王"
+def should_defer_glbl(sources: list[dict[str, Any]], *, index_root: Path | None = None) -> tuple[bool, int, str]:
+    """
+    返回 (是否拒收 GLBL, 合计汉字数, 原因码)。
+    合计 < 阈值一律拒收（君王无例外）。
+    """
+    total = count_group_total_chars(sources, index_root=index_root)
+    if total >= THIN_SOURCE_THRESHOLD:
+        return False, total, ""
+    return True, total, "thin_source_total_under_100"
 
 
 def apply_thickness_mub_swap(sources: list[dict[str, Any]], *, index_root: Path | None = None) -> list[dict[str, Any]]:
@@ -90,19 +80,6 @@ def apply_thickness_mub_swap(sources: list[dict[str, Any]], *, index_root: Path 
     swapped = list(ranked)
     swapped[0], swapped[best_idx] = swapped[best_idx], swapped[0]
     return swapped
-
-
-def should_defer_glbl(sources: list[dict[str, Any]], *, index_root: Path | None = None) -> tuple[bool, int, str]:
-    """
-    返回 (是否拒收 GLBL, 合计汉字数, 原因码)。
-    本纪君王 exempt → 不拒收（仅 warn）。
-    """
-    total = count_group_total_chars(sources, index_root=index_root)
-    if total >= THIN_SOURCE_THRESHOLD:
-        return False, total, ""
-    if sources and is_benji_juwang_exempt(sources[0]):
-        return False, total, "thin_benji_juwang_warn"
-    return True, total, "thin_source_total_under_100"
 
 
 def build_deferred_record(
@@ -173,23 +150,6 @@ def count_glbl_entry_han(entry: dict[str, Any]) -> dict[str, int]:
     return {"total": total, "mother": mother, "supplement": supplement}
 
 
-def is_glbl_benji_juwang(entry: dict[str, Any]) -> bool:
-    """本纪君王 warn-only：君王 + 母本 block 卷名含「纪」不含「传」。"""
-    if str(entry.get("史略分类") or "").strip() != "君王":
-        return False
-    mother_work = str(entry.get("母本著作") or "").strip()
-    for block in entry.get("paragraphs") or []:
-        role = str(block.get("role") or "").strip()
-        if not role:
-            role = "母本" if str(block.get("work") or "") == mother_work else "补充"
-        if role != "母本":
-            continue
-        vol_name = str(block.get("volume") or "").strip()
-        if "纪" in vol_name and "传" not in vol_name:
-            return True
-    return False
-
-
 def classify_glbl_thickness(entry: dict[str, Any]) -> dict[str, Any]:
     """
     对已发布 GLBL 条目做厚度分类（只读，不改 ID）。
@@ -241,14 +201,6 @@ def classify_glbl_thickness(entry: dict[str, Any]) -> dict[str, Any]:
             verdict = "pass"
             reason = f"合计{total}字 ≥ {THIN_SOURCE_THRESHOLD}"
         return {**counts, "verdict": verdict, "recommended_action": action, "reason": reason}
-
-    if is_glbl_benji_juwang(entry):
-        return {
-            **counts,
-            "verdict": "warn_benji_juwang",
-            "recommended_action": "keep_glbl_warn",
-            "reason": f"本纪君王合计仅{total}字（<{THIN_SOURCE_THRESHOLD}），warn-only 保留 GLBL",
-        }
 
     return {
         **counts,

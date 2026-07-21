@@ -11,10 +11,20 @@ from pathlib import Path
 from typing import Any
 
 OPENCLAW_ROOT = Path(__file__).resolve().parents[2]
+HISTOGRAPH_ROOT = Path(__file__).resolve().parents[4]
+SCRIPTS_DIR = HISTOGRAPH_ROOT / "scripts"
 ANNOTATE_REF = OPENCLAW_ROOT / "historiography-annotate" / "reference"
 
 if str(OPENCLAW_ROOT) not in sys.path:
     sys.path.insert(0, str(OPENCLAW_ROOT))
+if str(SCRIPTS_DIR) not in sys.path:
+    sys.path.insert(0, str(SCRIPTS_DIR))
+
+from emperor_year_align import (  # noqa: E402
+    align_junji_entry_years,
+    build_emperor_indexes,
+    validate_junji_years,
+)
 
 from shared.ai_flavor_words import (  # noqa: E402
     AI_FLAVOR_WORD_FAIL_AT,
@@ -247,34 +257,373 @@ def load_emperors(histograph_root: Path, dynasty_id: str) -> list[dict[str, Any]
     return [r for r in rows if str(r.get("朝代ID", "")).strip() == dynasty_id]
 
 
-def resolve_emperor(
+def load_emperor_alias_config() -> dict[str, Any]:
+    path = ANNOTATE_REF / "帝王别名.json"
+    if not path.is_file():
+        return {"global": {}, "strip_prefixes": []}
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def normalize_emperor_lookup_name(
+    name: str,
+    alias_map: dict[str, str] | None = None,
+) -> str:
+    """标注名/异名 → 帝王.json 标准「帝王名称」。"""
+    raw = (name or "").strip()
+    if not raw:
+        return raw
+    alias_map = alias_map if alias_map is not None else load_person_alias_maps()
+    cfg = load_emperor_alias_config()
+    merged = dict(alias_map)
+    for alias, canonical in (cfg.get("global") or {}).items():
+        a, c = str(alias).strip(), str(canonical).strip()
+        if a and c:
+            merged[a] = c
+    normalized = normalize_person_name(raw, merged)
+    if normalized in merged.values() or normalized:
+        return normalized
+    for prefix in cfg.get("strip_prefixes") or []:
+        p = str(prefix).strip()
+        if p and raw.startswith(p) and len(raw) > len(p):
+            stripped = raw[len(p) :].strip()
+            if stripped:
+                return normalize_emperor_lookup_name(stripped, merged)
+    return raw
+
+
+def _emperor_row_to_coords(row: dict[str, Any]) -> dict[str, str]:
+    return {
+        "一级文明坐标": str(row.get("文明", "")).strip(),
+        "文明ID": str(row.get("文明ID", "")).strip(),
+        "二级朝代坐标": str(row.get("朝代", "")).strip(),
+        "朝代ID": str(row.get("朝代ID", "")).strip(),
+        "三级政权坐标": str(row.get("政权", "")).strip(),
+        "政权ID": str(row.get("政权ID", "")).strip(),
+        "四级帝王坐标": str(row.get("帝王名称", "")).strip(),
+        "帝王ID": str(row.get("帝王ID", "")).strip(),
+    }
+
+
+def find_emperor_row_exact(
     name: str,
     emperors: list[dict[str, Any]],
-) -> dict[str, str] | None:
-    """从帝王.json反查完整坐标链（文明→朝代→政权→帝王）。
-
-    设计原则：LLM只需保证四级帝王坐标正确，其余坐标全部从帝王.json权威数据自动推导，
-    不依赖LLM输出，杜绝漏标/错标。
-    """
-    name = (name or "").strip()
-    if not name:
+) -> dict[str, Any] | None:
+    """仅按帝王.json「帝王名称」或「帝王原名」精确匹配，不走别名表。"""
+    key = (name or "").strip()
+    if not key:
         return None
     for row in emperors:
-        if name in (
+        if key in (
             str(row.get("帝王名称", "")).strip(),
             str(row.get("帝王原名", "")).strip(),
         ):
+            return row
+    return None
+
+
+def resolve_emperor(
+    name: str,
+    emperors: list[dict[str, Any]],
+    *,
+    alias_map: dict[str, str] | None = None,
+) -> dict[str, str] | None:
+    """从本朝帝王.json 精确反查坐标链（文明→朝代→政权→帝王）。
+
+    候选/挂靠名必须是帝王表中的「帝王名称」或「帝王原名」，一字不差。
+    不使用别名表归一——避免 LLM 自由写法与维护成本。
+    """
+    _ = alias_map  # 保留参数兼容旧调用，已忽略
+    row = find_emperor_row_exact(name, emperors)
+    if not row:
+        return None
+    return _emperor_row_to_coords(row)
+
+
+def format_emperor_catalog(emperors: list[dict[str, Any]]) -> str:
+    """供 fill prompt 展示：本朝可选挂靠帝王（标准名）。"""
+    lines: list[str] = []
+    for row in emperors:
+        name = str(row.get("帝王名称", "")).strip()
+        if not name:
+            continue
+        orig = str(row.get("帝王原名", "")).strip()
+        enth = str(row.get("即位时间", "")).strip()
+        abd = str(row.get("退位时间", "")).strip()
+        extra = f"，原名 {orig}" if orig and orig != name else ""
+        lines.append(f"- {name}{extra}（在位 {enth}～{abd}）")
+    return "\n".join(lines)
+
+
+LLM_COORD_FIELDS = (
+    "四级帝王坐标",
+    "帝王ID",
+    "一级文明坐标",
+    "二级朝代坐标",
+    "三级政权坐标",
+    "文明ID",
+    "朝代ID",
+    "政权ID",
+)
+
+
+def strip_llm_coordinate_fields(entry: dict[str, Any]) -> dict[str, Any]:
+    """移除 LLM 可能填写的坐标链字段，改由脚本从帝王表写入。"""
+    out = dict(entry)
+    for key in LLM_COORD_FIELDS:
+        out.pop(key, None)
+    return out
+
+
+def determine_attach_emperor_name(
+    category: str,
+    candidate: dict[str, Any],
+    entry_name: str,
+) -> str:
+    """确定挂靠帝王名：君王=条目名；其余=候选建议挂靠帝王（须为帝王表标准名）。"""
+    cat = str(category or "").strip()
+    if cat == "君王":
+        return str(entry_name or "").strip()
+    return str(candidate.get("建议挂靠帝王") or "").strip()
+
+
+def validate_attach_emperor_name(
+    attach_name: str,
+    emperors: list[dict[str, Any]],
+    *,
+    entry_id: str = "",
+) -> None:
+    if not attach_name:
+        raise ValueError(
+            f"{entry_id} 缺少挂靠帝王：候选须填写「建议挂靠帝王」（本朝帝王表标准名）"
+        )
+    if find_emperor_row_exact(attach_name, emperors) is None:
+        catalog = ", ".join(
+            str(r.get("帝王名称", "")).strip()
+            for r in emperors
+            if str(r.get("帝王名称", "")).strip()
+        )
+        raise ValueError(
+            f"{entry_id} 挂靠帝王「{attach_name}」不在本朝帝王表；"
+            f"可选：{catalog}"
+        )
+
+
+def align_entry_emperor_coords(
+    entry: dict[str, Any],
+    emperors: list[dict[str, Any]],
+    *,
+    attach_emperor: str | None = None,
+    alias_map: dict[str, str] | None = None,
+) -> tuple[dict[str, Any], list[str]]:
+    """据挂靠帝王名（帝王表精确匹配）写回完整坐标链。"""
+    _ = alias_map
+    out = dict(entry)
+    changes: list[str] = []
+    cat = str(out.get("史略分类", "")).strip()
+    eid = str(out.get("史略ID", "")).strip()
+    attach = (attach_emperor or "").strip()
+    if not attach:
+        if cat == "君王":
+            attach = str(out.get("史略名称") or "").strip()
+        else:
+            attach = str(out.get("四级帝王坐标") or "").strip()
+    emp = resolve_emperor(attach, emperors) if attach else None
+    if not emp:
+        return out, changes
+    for key, value in emp.items():
+        old = out.get(key)
+        if old != value:
+            changes.append(f"{eid} {key}: {old!r} → {value!r}")
+            out[key] = value
+    return out, changes
+
+
+def _coerce_year_value(raw: Any) -> int | None:
+    if raw is None:
+        return None
+    s = str(raw).strip()
+    if not s or s == "-":
+        return None
+    if s.startswith("约"):
+        s = s[1:]
+    try:
+        return int(s)
+    except ValueError:
+        return None
+
+
+def _emperor_info_for_entry(
+    entry: dict[str, Any],
+    emperors: list[dict[str, Any]],
+) -> dict[str, Any] | None:
+    eid = str(entry.get("帝王ID") or "").strip()
+    coord = str(entry.get("四级帝王坐标") or "").strip()
+    for row in emperors:
+        if eid and str(row.get("帝王ID", "")).strip() == eid:
             return {
-                "一级文明坐标": str(row.get("文明", "")).strip(),
-                "文明ID": str(row.get("文明ID", "")).strip(),
-                "二级朝代坐标": str(row.get("朝代", "")).strip(),
-                "朝代ID": str(row.get("朝代ID", "")).strip(),
-                "三级政权坐标": str(row.get("政权", "")).strip(),
-                "政权ID": str(row.get("政权ID", "")).strip(),
-                "四级帝王坐标": str(row.get("帝王名称", "")).strip(),
-                "帝王ID": str(row.get("帝王ID", "")).strip(),
+                "emperor": str(row.get("帝王名称", "")).strip(),
+                "start_year": _coerce_year_value(row.get("即位时间")),
+                "end_year": _coerce_year_value(row.get("退位时间")),
+            }
+        if coord and str(row.get("帝王名称", "")).strip() == coord:
+            return {
+                "emperor": coord,
+                "start_year": _coerce_year_value(row.get("即位时间")),
+                "end_year": _coerce_year_value(row.get("退位时间")),
             }
     return None
+
+
+def apply_person_years_for_entry(
+    entry: dict[str, Any],
+    emperors: list[dict[str, Any]],
+) -> tuple[dict[str, Any], list[str]]:
+    """人物类缺年：复用史料标注 person_year_fallback 兜底链。"""
+    _ensure_annotate_on_path()
+    from person_year_fallback import (  # noqa: WPS433
+        apply_person_year_fallback,
+        entry_has_complete_years,
+        write_fallback_years_to_entry,
+    )
+
+    out = dict(entry)
+    changes: list[str] = []
+    eid = str(out.get("史略ID", "")).strip()
+    cat = str(out.get("史略分类", "")).strip()
+    af = dict(out.get("_auto_filled") or {})
+    emperor_info = _emperor_info_for_entry(out, emperors)
+    if (
+        entry_has_complete_years(out)
+        and af.get("_年兜底级别") == "朝代起始年"
+        and emperor_info
+        and emperor_info.get("start_year") is not None
+    ):
+        out.pop("史略开始年", None)
+        out.pop("史略结束年", None)
+        af.pop("_年兜底级别", None)
+        af.pop("_年兜底依据", None)
+        out["_auto_filled"] = af
+        changes.append(f"{eid} 清除朝代起始年兜底，改取挂靠帝王在位")
+    if cat == "君王":
+        aligned = align_junji_entry_with_emperor_list(out, emperors, force=True)
+        if aligned.get("史略开始年") != out.get("史略开始年") or aligned.get(
+            "史略结束年"
+        ) != out.get("史略结束年"):
+            changes.append(
+                f"{eid} 君王年对齐帝王表: {out.get('史略开始年')}~{out.get('史略结束年')}"
+                f" → {aligned.get('史略开始年')}~{aligned.get('史略结束年')}"
+            )
+        return aligned, changes
+    if entry_has_complete_years(out):
+        return out, changes
+    emperor_info = _emperor_info_for_entry(out, emperors)
+    start, end, level, note = apply_person_year_fallback(
+        out, emperor_info=emperor_info
+    )
+    if start is None or end is None:
+        return out, changes
+    write_fallback_years_to_entry(out, start, end, level, note)
+    changes.append(f"{eid} 年份兜底({level}): {start}~{end} — {note}")
+    return out, changes
+
+
+def repair_supplement_entries(
+    entries: list[dict[str, Any]],
+    emperors: list[dict[str, Any]],
+    *,
+    alias_map: dict[str, str] | None = None,
+) -> tuple[list[dict[str, Any]], list[str]]:
+    """修复朝代补全条目：帝王坐标链、删五级细坐标、人物年份兜底。"""
+    alias_map = alias_map if alias_map is not None else load_person_alias_maps()
+    out_entries: list[dict[str, Any]] = []
+    all_changes: list[str] = []
+    for entry in entries:
+        row = dict(entry)
+        if is_dynasty_supplement_entry(row):
+            row.pop("五级细坐标", None)
+            row.pop("六级段落锚点", None)
+        row, coord_changes = align_entry_emperor_coords(row, emperors)
+        all_changes.extend(coord_changes)
+        row, year_changes = apply_person_years_for_entry(row, emperors)
+        all_changes.extend(year_changes)
+        out_entries.append(row)
+    return out_entries, all_changes
+
+
+def align_junji_entry_with_emperor_list(
+    entry: dict[str, Any],
+    emperors: list[dict[str, Any]],
+    *,
+    force: bool = True,
+) -> dict[str, Any]:
+    """君王条目：即位/退位年强制对齐帝王.json（覆盖 LLM 输出）。"""
+    if str(entry.get("史略分类", "")).strip() != "君王":
+        return entry
+    dynasty_id = str(entry.get("朝代ID", "")).strip() or None
+    by_name, by_id = build_emperor_indexes(emperors, dynasty_id=dynasty_id)
+    aligned, _ = align_junji_entry_years(
+        entry,
+        by_name=by_name,
+        by_id=by_id,
+        force=force,
+    )
+    return aligned
+
+
+def align_junji_entries_with_emperor_list(
+    entries: list[dict[str, Any]],
+    emperors: list[dict[str, Any]],
+    *,
+    force: bool = True,
+) -> tuple[list[dict[str, Any]], list[str]]:
+    dynasty_id = ""
+    for entry in entries:
+        if str(entry.get("史略分类", "")).strip() == "君王":
+            dynasty_id = str(entry.get("朝代ID", "")).strip()
+            break
+    by_name, by_id = build_emperor_indexes(
+        emperors, dynasty_id=dynasty_id or None
+    )
+    out: list[dict[str, Any]] = []
+    changes: list[str] = []
+    for entry in entries:
+        aligned, row_changes = align_junji_entry_years(
+            entry,
+            by_name=by_name,
+            by_id=by_id,
+            force=force,
+        )
+        out.append(aligned)
+        changes.extend(row_changes)
+    return out, changes
+
+
+def validate_junji_years_for_dynasty(
+    entries: list[dict[str, Any]],
+    dynasty_id: str,
+) -> list[str]:
+    return validate_junji_years(entries, dynasty_id=dynasty_id or None)
+
+
+REGIME_ID_BY_DYNASTY: dict[str, str] = {
+    "CD_HX_WUDI": "ZQ_HX_WUDI_WUDI",
+    "CD_HX_XIA": "ZQ_HX_XIA_XIA",
+}
+
+
+def default_regime_id(context: dict[str, Any]) -> str:
+    rid = str(context.get("政权ID") or "").strip()
+    if rid:
+        return rid
+    did = str(context.get("朝代ID") or "").strip()
+    return REGIME_ID_BY_DYNASTY.get(did, "")
+
+
+def is_dynasty_supplement_entry(entry: dict[str, Any]) -> bool:
+    return (
+        str(entry.get("母本著作") or "").strip() == "朝代补全"
+        or str(entry.get("史略来源") or "").strip() == "模型补全"
+    )
 
 
 def apply_coord_defaults(entry: dict[str, Any], context: dict[str, Any]) -> dict[str, Any]:
@@ -284,7 +633,7 @@ def apply_coord_defaults(entry: dict[str, Any], context: dict[str, Any]) -> dict
     out.setdefault("三级政权坐标", context.get("朝代名称"))
     out.setdefault("文明ID", context.get("文明ID") or "HX")
     out.setdefault("朝代ID", context.get("朝代ID"))
-    out.setdefault("政权ID", "ZQ_HX_WUDI_WUDI")
+    out.setdefault("政权ID", default_regime_id(context))
     out.setdefault("母本著作", "朝代补全")
     out.setdefault("来源著作", ["朝代补全"])
     out.setdefault("史略来源", "模型补全")
@@ -302,7 +651,7 @@ ENTRY_FIELD_SCHEMA: dict[str, dict[str, Any]] = {
     "一级文明坐标": {"type": str, "nullable": False, "default": ""},
     "二级朝代坐标": {"type": str, "nullable": False, "default": ""},
     "三级政权坐标": {"type": str, "nullable": False, "default": ""},
-    "五级细坐标": {"type": str, "nullable": False, "default": ""},
+    "五级细坐标": {"type": str, "nullable": True, "default": ""},
     "六级段落锚点": {"type": str, "nullable": False, "default": ""},
     "母本史略ID": {"type": str, "nullable": False, "default": ""},
     "考订依据": {"type": dict, "nullable": False, "default_factory": dict},
@@ -363,7 +712,13 @@ def validate_entry_schema(
     返回 issue 列表（空 = 通过）。
     """
     issues: list[str] = []
+    supplement = is_dynasty_supplement_entry(entry)
     for field, spec in ENTRY_FIELD_SCHEMA.items():
+        if field == "五级细坐标" and supplement:
+            entry.pop("五级细坐标", None)
+            continue
+        if field == "六级段落锚点" and supplement:
+            continue
         # 检查字段是否存在
         if field not in entry:
             if not spec["nullable"] and "default" in spec:
@@ -662,44 +1017,13 @@ def strip_detail_body(text: str) -> str:
     return body.strip()
 
 
-# 二期朝代知识详情：默认全文不注音（高级读物，非识字教辅）
-# 仅下列词条因含罕用字，允许保留注音；其余一律删除
-_ALLOW_PINYIN_WORDS = frozenset(
-    {
-        "颛顼",
-        "帝喾",
-        "瞽叟",
-        "瞽瞍",
-        "娵訾",
-        "妫汭",
-        "獬廌",
-        "獬豸",
-        "饕餮",
-        "梼杌",
-        "穷奇",
-        "浑沌",
-        "魑魅",
-        "少皞",
-    }
-)
-
-def _normalize_allowed_pinyin(word: str, pinyin: str) -> str:
-    """允许词条的注音规范化（如帝喾只保留喾音）。"""
-    if word == "帝喾":
-        parts = re.split(r"[\s,，]+", pinyin.strip())
-        if parts and re.match(r"d[iìíǐ]", parts[0], re.I):
-            rest = " ".join(parts[1:]).strip()
-            return f"帝喾（{rest}）" if rest else "帝喾"
-    return f"{word}（{pinyin.strip()}）"
+# 对客正文：全文禁止拼音括注（读者通过字典查读音）；纯「今…」地名标注保留
 
 
-_PINYIN_ANNOT_RE = re.compile(
-    r"([\u4e00-\u9fff]{1,12})[（(]([^）)]+)[）)]"
-)
+_PAREN_ANNOT_RE = re.compile(r"[（(]([^）)]+)[）)]")
 _LATIN_OR_TONE_RE = re.compile(
     r"[A-Za-zāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜü]"
 )
-_PAREN_ANNOT_RE = re.compile(r"[（(]([^）)]+)[）)]")
 
 
 def _chinese_run_before(text: str, idx: int, *, max_len: int = 8) -> str:
@@ -736,16 +1060,26 @@ def _is_modern_location_only(inner: str) -> bool:
     return False
 
 
+def _is_exempt_annotation(inner: str) -> bool:
+    """非注音括注：母本编号、西元纪年等。"""
+    s = inner.strip()
+    if re.fullmatch(r"M\d{1,4}", s):
+        return True
+    if re.fullmatch(r"BC\d{1,4}", s, re.I):
+        return True
+    return False
+
+
 def _looks_like_pinyin_annotation(inner: str, word: str) -> bool:
     """仅处理注音/今属地；跳过长篇括注说明。"""
     s = inner.strip()
     if not s:
         return False
+    if _is_exempt_annotation(s):
+        return False
     if _is_modern_location_only(s):
         return True
     if _LATIN_OR_TONE_RE.search(s):
-        return True
-    if word in _ALLOW_PINYIN_WORDS and len(s) <= 24:
         return True
     # 纯拼音音节（短）
     if len(s) <= 16 and re.fullmatch(
@@ -757,7 +1091,19 @@ def _looks_like_pinyin_annotation(inner: str, word: str) -> bool:
 
 def _resolve_annotation(word: str, inner: str, original: str) -> str:
     if not word:
+        if _is_modern_location_only(inner):
+            return f"（{inner.strip()}）"
+        if _LATIN_OR_TONE_RE.search(inner):
+            loc_m = re.search(r"今[^）)]+", inner)
+            if loc_m:
+                return f"（{loc_m.group(0)}）"
+            return ""
+        if len(inner.strip()) <= 16 and re.fullmatch(
+            r"[a-zāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜüA-Z\s·]+", inner.strip()
+        ):
+            return ""
         return original
+
     if _is_modern_location_only(inner):
         return f"{word}（{inner.strip()}）"
 
@@ -765,43 +1111,56 @@ def _resolve_annotation(word: str, inner: str, original: str) -> str:
         loc_m = re.search(r"今[^）)]+", inner)
         if loc_m:
             return f"{word}（{loc_m.group(0)}）"
-        if word in _ALLOW_PINYIN_WORDS:
-            py = re.sub(r"[^a-zāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜüA-Z\s]", "", inner)
-            py = py.strip()
-            if py:
-                return _normalize_allowed_pinyin(word, py)
         return word
 
-    if word in _ALLOW_PINYIN_WORDS:
-        return _normalize_allowed_pinyin(word, inner)
+    if len(inner.strip()) <= 16 and re.fullmatch(
+        r"[a-zāáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜüA-Z\s·]+", inner.strip()
+    ):
+        return word
     return word
 
 
+def fix_doubled_word_heads(text: str) -> tuple[str, list[str]]:
+    """修复 clean_over_pinyin 历史 bug 造成的连续重复词头（如 妫汭妫汭 → 妫汭）。"""
+    changes: list[str] = []
+    doubled = re.compile(r"([\u4e00-\u9fff]{2,4})\1")
+
+    def repl(m: re.Match[str]) -> str:
+        changes.append(f"{m.group(0)} → {m.group(1)}")
+        return m.group(1)
+
+    return doubled.sub(repl, text), changes
+
+
 def clean_over_pinyin(text: str) -> tuple[str, list[str]]:
-    """删除一切非白名单注音；保留纯「今属地」标注。"""
+    """删除一切拼音括注；保留纯「今属地」标注。"""
     changes: list[str] = []
     parts: list[str] = []
     last = 0
     for m in _PAREN_ANNOT_RE.finditer(text):
-        parts.append(text[last : m.start()])
         inner = m.group(1)
         word, word_start = _annotation_word(text, m.start())
         original = text[word_start : m.end()]
         if not _looks_like_pinyin_annotation(inner, word):
-            parts.append(original)
+            parts.append(text[last : m.end()])
             last = m.end()
             continue
+        seg_start = word_start if word else m.start()
+        parts.append(text[last : seg_start])
         resolved = _resolve_annotation(word, inner, original)
         if resolved != original:
             changes.append(f"{original} → {resolved}")
         parts.append(resolved)
         last = m.end()
     parts.append(text[last:])
-    return "".join(parts), changes
+    cleaned = "".join(parts)
+    cleaned, dedupe_changes = fix_doubled_word_heads(cleaned)
+    changes.extend(dedupe_changes)
+    return cleaned, changes
 
 
 def detect_over_pinyin(body: str) -> list[str]:
-    """检出一切非白名单注音（gate 用）；「今属地」不报错。"""
+    """检出一切拼音括注（gate 用）；纯「今属地」不报错。"""
     issues: list[str] = []
     for m in _PAREN_ANNOT_RE.finditer(body):
         inner = m.group(1)
@@ -811,9 +1170,12 @@ def detect_over_pinyin(body: str) -> list[str]:
             continue
         if _is_modern_location_only(inner):
             continue
-        if word in _ALLOW_PINYIN_WORDS:
+        if not word:
+            issues.append(f"禁止注音：{original}")
             continue
-        if _resolve_annotation(word, inner, original) == original:
+        if _resolve_annotation(word, inner, original) != original:
+            issues.append(f"禁止注音：{original}")
+        elif _LATIN_OR_TONE_RE.search(inner):
             issues.append(f"禁止注音：{original}")
     return issues
 
@@ -920,26 +1282,203 @@ def load_phase1_person_index(
     return persons, alias_index
 
 
+def _ensure_annotate_on_path() -> None:
+    ann = OPENCLAW_ROOT / "historiography-annotate"
+    if str(ann) not in sys.path:
+        sys.path.insert(0, str(ann))
+
+
+def is_phase1_juwang_adequately_covered(entry: dict[str, Any]) -> bool:
+    """一期君王是否视为已覆盖（朝代补全条目，或史料提取且厚度达标）。"""
+    if str(entry.get("母本著作") or "").strip() == "朝代补全":
+        return True
+    if str(entry.get("史略来源") or "").strip() == "朝代补全":
+        return True
+    _ensure_annotate_on_path()
+    from source_thickness import classify_glbl_thickness  # noqa: WPS433
+
+    result = classify_glbl_thickness(entry)
+    return str(result.get("verdict") or "") in ("pass", "pass_swap_recommended")
+
+
+def load_dynasty_supplement_person_index(
+    histograph_root: Path,
+    dynasty_id: str,
+) -> list[dict[str, Any]]:
+    """06朝代知识补全已有的人物索引（本朝）。"""
+    index_dir = histograph_root / "data" / "06朝代知识补全" / "索引条目"
+    if not index_dir.is_dir():
+        return []
+    persons: list[dict[str, Any]] = []
+    for fp in sorted(index_dir.glob("*.json")):
+        try:
+            doc = json.loads(fp.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            continue
+        for e in doc.get("entries") or []:
+            if not isinstance(e, dict):
+                continue
+            if str(e.get("朝代ID", "")).strip() != dynasty_id:
+                continue
+            cat = str(e.get("史略分类", "")).strip()
+            if cat not in PERSON_INDEX_CATEGORIES:
+                continue
+            name = str(e.get("史略名称", "")).strip()
+            if name:
+                persons.append(e)
+    return persons
+
+
+def _emperor_name_keys(
+    name: str,
+    alias_index: dict[str, str],
+    alias_map: dict[str, str],
+) -> set[str]:
+    canon = alias_index.get(name) or normalize_person_name(name, alias_map)
+    keys = {name, canon}
+    keys.discard("")
+    return keys
+
+
+def collect_covered_emperor_names(
+    histograph_root: Path,
+    dynasty_id: str,
+    alias_index: dict[str, str],
+    *,
+    extra_entries: list[dict[str, Any]] | None = None,
+) -> set[str]:
+    """已覆盖帝王名（一期合格君王 + 06补全君王 + 本批 entries）。"""
+    alias_map = load_person_alias_maps()
+    covered: set[str] = set()
+
+    index_path = histograph_root / "data" / "03索引标注条目" / "史略索引_01至02.json"
+    if index_path.is_file():
+        root = json.loads(index_path.read_text(encoding="utf-8"))
+        for e in root.get("entries") or []:
+            if not isinstance(e, dict):
+                continue
+            if str(e.get("朝代ID", "")).strip() != dynasty_id:
+                continue
+            if str(e.get("史略分类", "")).strip() != "君王":
+                continue
+            if not is_phase1_juwang_adequately_covered(e):
+                continue
+            name = str(e.get("史略名称", "")).strip()
+            covered.update(_emperor_name_keys(name, alias_index, alias_map))
+
+    for e in load_dynasty_supplement_person_index(histograph_root, dynasty_id):
+        if str(e.get("史略分类", "")).strip() != "君王":
+            continue
+        name = str(e.get("史略名称", "")).strip()
+        covered.update(_emperor_name_keys(name, alias_index, alias_map))
+
+    for e in extra_entries or []:
+        if str(e.get("史略分类", "")).strip() != "君王":
+            continue
+        name = str(e.get("史略名称", "")).strip()
+        covered.update(_emperor_name_keys(name, alias_index, alias_map))
+
+    return covered
+
+
 def load_emperor_gaps(
     histograph_root: Path,
     dynasty_id: str,
     alias_index: dict[str, str],
+    *,
+    extra_entries: list[dict[str, Any]] | None = None,
 ) -> list[dict[str, str]]:
-    """帝王.json 中一期未覆盖者（别名归一后，含宗戚已覆盖的太后等）。"""
-    phase1, alias_map = load_phase1_person_index(histograph_root, dynasty_id)
-    phase1_canonical = {str(p["标准名"]) for p in phase1}
-    phase1_names = {str(p["史略名称"]) for p in phase1}
+    """帝王.json 中尚未覆盖者（薄一期 GLBL、06 补全、本批 entries 均计入已覆盖）。"""
+    alias_map = load_person_alias_maps()
+    covered = collect_covered_emperor_names(
+        histograph_root, dynasty_id, alias_index, extra_entries=extra_entries
+    )
 
     gaps: list[dict[str, str]] = []
     for row in load_emperors(histograph_root, dynasty_id):
         name = str(row.get("帝王名称", "")).strip()
         if not name:
             continue
-        canon = alias_index.get(name) or normalize_person_name(name, alias_map)
-        if canon in phase1_canonical or name in phase1_names or canon in phase1_names:
+        if _emperor_name_keys(name, alias_index, alias_map) & covered:
             continue
-        gaps.append({"帝王名称": name, "补全理由": "帝王表条目、一期无对应人物条"})
+        gaps.append(
+            {
+                "帝王名称": name,
+                "帝王ID": str(row.get("帝王ID", "")).strip(),
+                "补全理由": "帝王表正牌君王、当前无合格条目，须朝代知识补全",
+            }
+        )
     return gaps
+
+
+def emperor_gap_to_candidate(gap: dict[str, str]) -> dict[str, Any]:
+    name = str(gap.get("帝王名称", "")).strip()
+    return {
+        "名称": name,
+        "史略分类": "君王",
+        "补全来源": "帝王表强制",
+        "补全理由": str(gap.get("补全理由") or "帝王表强制补全"),
+        "建议挂靠帝王": name,
+        "主要史料出处": "",
+        "边界备注": f"帝王ID={gap.get('帝王ID', '')}",
+        "审核状态": "mandatory",
+        "强制补全": True,
+        "去重自检": "帝王表缺口，脚本强制注入",
+    }
+
+
+def validate_mandatory_emperor_coverage(
+    histograph_root: Path,
+    dynasty_id: str,
+    alias_index: dict[str, str],
+    *,
+    extra_entries: list[dict[str, Any]] | None = None,
+) -> list[str]:
+    gaps = load_emperor_gaps(
+        histograph_root, dynasty_id, alias_index, extra_entries=extra_entries
+    )
+    return [f"缺少强制君王：{g['帝王名称']}（{g['补全理由']}）" for g in gaps]
+
+
+def inject_mandatory_juwang_candidates(
+    candidates: list[dict[str, Any]],
+    *,
+    emperor_gaps: list[dict[str, str]],
+    thin_deferred: list[dict[str, Any]],
+    alias_index: dict[str, str],
+    phase1_canonicals: set[str],
+) -> list[dict[str, Any]]:
+    """脚本强制注入帝王表缺口与薄标注君王（不依赖 LLM）。"""
+    alias_map = load_person_alias_maps()
+    out = list(candidates)
+    existing_names = {str(r.get("名称", "")).strip() for r in out}
+
+    def _add(seed: dict[str, Any], *, mandatory: bool = False) -> None:
+        name = str(seed.get("名称", "")).strip()
+        if not name:
+            return
+        if name in existing_names:
+            return
+        if not mandatory:
+            canon = alias_index.get(name) or normalize_person_name(name, alias_map)
+            if canon in phase1_canonicals:
+                return
+        out.insert(0, seed)
+        existing_names.add(name)
+
+    for gap in emperor_gaps:
+        _add(emperor_gap_to_candidate(gap), mandatory=True)
+
+    for row in thin_deferred:
+        if str(row.get("史略分类", "")).strip() != "君王":
+            continue
+        seed = thin_deferred_to_candidate(row)
+        seed["强制补全"] = True
+        seed["审核状态"] = "mandatory"
+        seed["补全来源"] = "薄标注待补"
+        _add(seed, mandatory=True)
+
+    return out
 
 
 def thin_deferred_registry_path(histograph_root: Path) -> Path:

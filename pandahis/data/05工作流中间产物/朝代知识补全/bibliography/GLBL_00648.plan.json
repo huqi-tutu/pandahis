@@ -1,0 +1,107 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00648",
+  "写作结构": "核心史实以《左传·哀公元年》为主要依据，补充《今本竹书纪年》纪叙；《楚辞·天问》提供浇与女岐的旁证。后世关于汝艾即女艾、首位女间谍的异说，从《古今图书集成》等类书中援引，附于结尾合段说明。",
+  "候选著作": [
+    {
+      "出处": "《左传·哀公元年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "最早完整记载少康使女艾为间谍灭浇的文献，包含间谍行动的原始记录。",
+      "检索词": "女艾 谍浇",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《今本竹书纪年·帝少康》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "明确记载“少康使女艾杀浇”，与《左传》相互印证。",
+      "检索词": "女艾 杀浇",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《楚辞·天问》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "提到“女岐缝裳”“浇与嫂通”等，为浇被灭的相关传说提供背景，但未直接涉及女艾。",
+      "检索词": "女岐 浇",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《古今图书集成·明伦汇编·闺媛典》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "清代类书收录“女艾”为夏臣行间之祖，反映后世将汝艾视作女性间谍的解读，属于后世附会。",
+      "检索词": "女艾 间谍 始",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《左传·哀公元年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "最早完整记载少康使女艾为间谍灭浇的文献，包含间谍行动的原始记录。",
+      "检索词": "女艾 谍浇",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《今本竹书纪年·帝少康》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "明确记载“少康使女艾杀浇”，与《左传》相互印证。",
+      "检索词": "女艾 杀浇",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《楚辞·天问》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "提到“女岐缝裳”“浇与嫂通”等，为浇被灭的相关传说提供背景，但未直接涉及女艾。",
+      "检索词": "女岐 浇",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《古今图书集成·明伦汇编·闺媛典》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "清代类书收录“女艾”为夏臣行间之祖，反映后世将汝艾视作女性间谍的解读，属于后世附会。",
+      "检索词": "女艾 间谍 始",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 1,
+    "C_excluded": 3,
+    "overall": "B"
+  }
+}

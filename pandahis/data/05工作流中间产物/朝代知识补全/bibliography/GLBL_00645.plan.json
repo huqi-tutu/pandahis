@@ -1,0 +1,137 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00645",
+  "写作结构": "以《战国策·魏策二》《说文解字》的记载为核心叙事，说明仪狄造酒献禹、禹疏而绝酒并预言‘后世必有以酒亡其国者’的主体故事；可引《世本》交代酿酒起源的又一早期记录，《孟子》‘禹恶旨酒’佐证禹之戒酒训诫。后世酒文化文献可点出其被视为酿酒始祖的文化定型，保留传说不附加细节描述。全文保持传说底色，不描绘工艺与具体场景。",
+  "候选著作": [
+    {
+      "出处": "《战国策·魏策二》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "最早记载仪狄造酒、献禹、禹疏之并预言以酒亡国的完整故事，是本条目的基本史源。",
+      "检索词": "仪狄 禹 疏 旨酒",
+      "采用": true,
+      "原文摘句": "昔者，帝女令仪狄作酒而美，进之禹，禹饮而甘之，遂疏仪狄，绝旨酒，曰：‘后世必有以酒亡其国者。’",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《说文解字·酉部》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "字书中提及仪狄作酒醪，是汉代对仪狄传说的重要文本佐证。",
+      "检索词": "仪狄 作酒醪",
+      "采用": true,
+      "原文摘句": "古者仪狄作酒醪，禹尝之而美，遂疏仪狄。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《世本·作篇》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "辑本保留‘仪狄始作酒醪’之说，是先秦至汉代流传的又一酿酒起源文献。",
+      "检索词": "仪狄 始作酒醪",
+      "采用": true,
+      "原文摘句": "仪狄始作酒醪，变五味。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《孟子·离娄下》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "称禹‘恶旨酒而好善言’，虽未提到仪狄，但直接印证禹以酒为戒的政治训诫。",
+      "检索词": "禹恶旨酒",
+      "采用": true,
+      "原文摘句": "禹恶旨酒而好善言。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《酒谱》（宋·窦苹）",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋人笔记总结酒史，将仪狄奉为酿酒之祖，是传说层累的典型表现。",
+      "检索词": "仪狄 酒祖",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《战国策·魏策二》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "最早记载仪狄造酒、献禹、禹疏之并预言以酒亡国的完整故事，是本条目的基本史源。",
+      "检索词": "仪狄 禹 疏 旨酒",
+      "采用": true,
+      "原文摘句": "昔者，帝女令仪狄作酒而美，进之禹，禹饮而甘之，遂疏仪狄，绝旨酒，曰：‘后世必有以酒亡其国者。’",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《说文解字·酉部》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "字书中提及仪狄作酒醪，是汉代对仪狄传说的重要文本佐证。",
+      "检索词": "仪狄 作酒醪",
+      "采用": true,
+      "原文摘句": "古者仪狄作酒醪，禹尝之而美，遂疏仪狄。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《世本·作篇》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "辑本保留‘仪狄始作酒醪’之说，是先秦至汉代流传的又一酿酒起源文献。",
+      "检索词": "仪狄 始作酒醪",
+      "采用": true,
+      "原文摘句": "仪狄始作酒醪，变五味。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《孟子·离娄下》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "称禹‘恶旨酒而好善言’，虽未提到仪狄，但直接印证禹以酒为戒的政治训诫。",
+      "检索词": "禹恶旨酒",
+      "采用": true,
+      "原文摘句": "禹恶旨酒而好善言。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《酒谱》（宋·窦苹）",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋人笔记总结酒史，将仪狄奉为酿酒之祖，是传说层累的典型表现。",
+      "检索词": "仪狄 酒祖",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 5,
+    "C_excluded": 0,
+    "overall": "B"
+  }
+}

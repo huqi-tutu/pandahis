@@ -75,10 +75,13 @@ def finalize_external(plan: Dict[str, Any]) -> None:
             continue
         src = str(item.get("出处") or "").strip()
         if item.get("采用") is True and (
-            not src or any(m in src for m in _INVALID_SOURCE_MARKERS)
+            not src
+            or any(m in src for m in _INVALID_SOURCE_MARKERS)
+            or "·过渡段" in src
+            or re.fullmatch(r"GLBL_\d{5}(·.+)?", src)
         ):
             item["采用"] = False
-            item.setdefault("理由", "出处不可核验，自动降级为不采用")
+            item.setdefault("理由", "出处不可核验（非正史卷篇名），自动降级为不采用")
         typ = str(item.get("补全类型") or "").strip()
         if typ in _EXTERNAL_TYPE_ALIASES:
             item["补全类型"] = _EXTERNAL_TYPE_ALIASES[typ]
@@ -96,6 +99,7 @@ def ensure_mother_checklist(
     id_start: int = 1,
 ) -> Dict[str, Any]:
     """以 recalled 母本分句为 SSOT 补齐/纠正 plan 清单（LLM 合并或缺字段时）。"""
+    from lib.coverage_info import sanitize_info_point
     from lib.mother_sentences import (
         checklist_sentence_violations,
         extract_mother_sentences,
@@ -130,9 +134,12 @@ def ensure_mother_checklist(
             "段落": s["段落"],
             "原文摘句": orig,
             "必现词": extract_must_phrases(orig),
-            "信息点": str(
-                prev.get("信息点") or prev.get("回译") or prev.get("母本提示") or orig
-            ).strip(),
+            "信息点": sanitize_info_point(
+                str(
+                    prev.get("信息点") or prev.get("回译") or prev.get("母本提示") or ""
+                ).strip(),
+                orig,
+            ),
         }
         for k in ("母本提示", "补全提示", "写作提示"):
             if prev.get(k):
@@ -375,14 +382,18 @@ def inject_exit_supplements_plan(plan: Dict[str, Any], recalled: Dict[str, Any])
             text = str(item.get("text") or "").strip()
             if not text:
                 continue
+            raw_src = str(item.get("来源") or "母本相邻段落").strip()
+            adopt = True
+            if "·过渡段" in raw_src or re.fullmatch(r"GLBL_\d{5}(·.+)?", raw_src):
+                raw_src = "《史记·夏本纪》"
             ext.append(
                 {
                     "主题": "本传退场/收束",
-                    "出处": str(item.get("来源") or "母本相邻段落"),
+                    "出处": raw_src,
                     "补全类型": "补充细节",
                     "与母本关系": "母本段落域未收录该退场句，须在正文尾部补入",
                     "母本锚点": "tail",
-                    "采用": True,
+                    "采用": adopt,
                     "理由": text,
                 }
             )

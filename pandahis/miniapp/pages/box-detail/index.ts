@@ -325,6 +325,8 @@ Page({
     originalEmpty: true,
     originalLoading: false,
     correctionVisible: false,
+    dictionaryVisible: false,
+    dictionaryQuery: '',
     correctionSubmitting: false,
     correctionBoxTitle: '',
     correctionCivilizationName: '',
@@ -1142,8 +1144,18 @@ Page({
     })
   },
   onSelectionQuery() {
+    const text = this.data.selectionBarText
     this.hideSelectionBar()
-    wx.showToast({ title: '查询功能即将上线', icon: 'none' })
+    if (!text) return
+    this.clearDetailSelection()
+    this.setData({
+      dictionaryVisible: true,
+      dictionaryQuery: text,
+    })
+  },
+  closeDictionary() {
+    this.setData({ dictionaryVisible: false, dictionaryQuery: '' })
+    this.clearDetailSelection()
   },
   onSelectionCorrection() {
     const text = this.data.selectionBarText

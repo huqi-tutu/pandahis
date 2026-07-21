@@ -22,6 +22,11 @@ if str(TOOLS) not in sys.path:
 if str(ROOT / "scripts") not in sys.path:
     sys.path.insert(0, str(ROOT / "scripts"))
 
+from emperor_year_align import (  # noqa: E402
+    align_junji_entry_years,
+    build_emperor_indexes,
+    load_emperor_rows,
+)
 from import_box_index_json import (  # noqa: E402
     build_box_rows,
     ensure_emperor_refs,
@@ -71,15 +76,9 @@ def load_xia_entries() -> list[dict]:
     return entries
 
 
-def build_emperor_index() -> dict[str, dict]:
-    out: dict[str, dict] = {}
-    for row in load_json(EMPEROR_JSON):
-        if str(row.get("朝代ID", "")).strip() != "CD_HX_XIA":
-            continue
-        name = str(row.get("帝王名称", "")).strip()
-        if name:
-            out[name] = row
-    return out
+def build_emperor_index() -> tuple[dict[str, dict], dict[str, dict]]:
+    rows = [r for r in load_emperor_rows(EMPEROR_JSON) if str(r.get("朝代ID", "")).strip() == "CD_HX_XIA"]
+    return build_emperor_indexes(rows)
 
 
 def parse_year(raw: str | int | None) -> int | None:
@@ -96,7 +95,11 @@ def parse_year(raw: str | int | None) -> int | None:
         return None
 
 
-def normalize_entry(entry: dict, emperors: dict[str, dict]) -> dict:
+def normalize_entry(
+    entry: dict,
+    emperors_by_name: dict[str, dict],
+    emperors_by_id: dict[str, dict],
+) -> dict:
     e = deepcopy(entry)
     e["朝代ID"] = "CD_HX_XIA"
     e["政权ID"] = REGIME_XIA
@@ -105,24 +108,37 @@ def normalize_entry(entry: dict, emperors: dict[str, dict]) -> dict:
     e.setdefault("二级朝代坐标", "夏")
     e.setdefault("文明ID", "HX")
 
+    name = str(e.get("史略名称", "")).strip()
+    cat = str(e.get("史略分类", "")).strip()
+
+    if cat == "君王" and not str(e.get("四级帝王坐标") or "").strip():
+        e["四级帝王坐标"] = name
+
     emp_name = str(e.get("四级帝王坐标") or "").strip()
     if emp_name in NAME_ALIASES:
         emp_name = NAME_ALIASES[emp_name]
-    emp_row = emperors.get(emp_name)
-    if emp_row:
-        e["帝王ID"] = emp_row["帝王ID"]
-        e["四级帝王坐标"] = emp_row["帝王名称"]
-        if e.get("史略开始年") is None:
-            e["史略开始年"] = parse_year(emp_row.get("即位时间"))
-        if e.get("史略结束年") is None:
-            e["史略结束年"] = parse_year(emp_row.get("退位时间"))
+        e["四级帝王坐标"] = emp_name
+    if not emp_name:
+        e["四级帝王坐标"] = "禹"
+        emp_name = "禹"
+    emp_row = emperors_by_name.get(emp_name)
+
+    e, _ = align_junji_entry_years(
+        e,
+        by_name=emperors_by_name,
+        by_id=emperors_by_id,
+        force=True,
+    )
 
     if e.get("史略开始年") is None:
-        e["史略开始年"] = parse_year(e.get("史略结束年")) or -2000
+        e["史略开始年"] = parse_year(e.get("史略结束年")) or parse_year(e.get("峰值年")) or -2000
     if e.get("史略结束年") is None:
         e["史略结束年"] = e["史略开始年"]
 
-    e.setdefault("帝王ID", emp_row["帝王ID"] if emp_row else "DW_HX_XIA_XIA_YU")
+    if not str(e.get("帝王ID") or "").strip():
+        e["帝王ID"] = emp_row["帝王ID"] if emp_row else "DW_HX_XIA_XIA_YU"
+    e.setdefault("母本史略ID", f"DYKN_夏_{e['史略ID']}")
+    e.setdefault("五级细坐标", f"夏·{cat or '人物'}·{name}")
     e.setdefault("母本著作", "朝代补全")
     e.setdefault("来源著作", ["朝代补全"])
     e.setdefault("来源条目数", 1)
@@ -200,14 +216,14 @@ def connect_mysql():
 
 
 def main() -> int:
-    emperors = build_emperor_index()
+    emperors_by_name, emperors_by_id = build_emperor_index()
     raw_entries = load_xia_entries()
     missing_peak, missing_tag = validate_enriched_entries(raw_entries)
     if missing_peak:
         print(f"⚠️ 缺峰值年 {len(missing_peak)} 条: {', '.join(missing_peak[:8])}{'…' if len(missing_peak) > 8 else ''}")
     if missing_tag:
         print(f"⚠️ 缺人物标签 {len(missing_tag)} 条: {', '.join(missing_tag[:8])}{'…' if len(missing_tag) > 8 else ''}")
-    entries = [normalize_entry(e, emperors) for e in raw_entries]
+    entries = [normalize_entry(e, emperors_by_name, emperors_by_id) for e in raw_entries]
     added, updated = merge_into_main_index(entries)
     print(f"本地索引合并: 新增 {added}，更新 {updated}（共 {len(entries)} 条夏朝补全）")
 

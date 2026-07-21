@@ -322,8 +322,12 @@ function generateTimelineTicks(startYear, endYear, originalSheetWidthRpx) {
         ticks.push({ label: (0, year_format_1.formatHistoryYear)(tickYear), left: `${left}%`, hideLabel });
         tickYear += step;
     }
-    // 泳道网格线：从第2个刻度开始，与时间轴刻度对齐
-    const gridLines = ticks.filter(t => t.left !== '0%').map(t => ({ left: t.left }));
+    // 泳道网格线：与时间轴刻度对齐，起点/终点也各自补一条，避免边界处刻度与网格线脱节
+    const gridLines = [
+        { left: '0%' },
+        ...ticks.filter(t => t.left !== '0%').map(t => ({ left: t.left })),
+        { left: '100%' },
+    ];
     return { ticks, endLabel: (0, year_format_1.formatHistoryYear)(endYear), sheetWidthRpx: newSheetWidthRpx, gridLines };
 }
 function visibleLength(value) {
@@ -726,6 +730,8 @@ Page({
         chipTooltipOrigin: '50% 100%',
         chipTooltipTransform: 'translate(-50%, -100%) scale(0.88)',
         correctionVisible: false,
+        dictionaryVisible: false,
+        dictionaryQuery: '',
         correctionSubmitting: false,
         correctionBoxId: '',
         correctionBoxTitle: '',
@@ -1371,8 +1377,19 @@ Page({
         });
     },
     onSelectionQuery() {
+        const text = this.data.selectionBarText;
         this.hideSelectionBar();
-        wx.showToast({ title: '查询功能即将上线', icon: 'none' });
+        if (!text)
+            return;
+        this.clearDetailSelection();
+        this.setData({
+            dictionaryVisible: true,
+            dictionaryQuery: text,
+        });
+    },
+    closeDictionary() {
+        this.setData({ dictionaryVisible: false, dictionaryQuery: '' });
+        this.clearDetailSelection();
     },
     onSelectionCorrection() {
         const text = this.data.selectionBarText;

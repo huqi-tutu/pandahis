@@ -1,0 +1,217 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00640",
+  "写作结构": "《竹书纪年》与《逸周书》均非二十四史，可直接作为拓展核心叙事。建议以《竹书纪年》记载为主线，重构放逐、叛乱、平定的时间线。《逸周书·尝麦解》可作为制度或刑罚背景的补充佐证。因后世综述材料多为转引，无新增可靠信息，叙事可在平叛结束后自然留白，避免编造细节。",
+  "候选著作": [
+    {
+      "出处": "《古本竹书纪年·夏纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "现存记载武观之乱的最核心原始文献，明确了放逐地点、叛乱年份及征伐将领。",
+      "检索词": "武观 西河 叛",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "&nbsp;道德真經註&nbsp;世說新語&nbsp;顏氏家訓&nbsp;文心雕龍&nbsp;群書治要&nbsp;藝文類聚&nbsp;黃帝陰符經&nbsp;四書章句集注&nbsp;論語注疏&nbsp;封神演義&nbsp;孝經注疏&nbsp;太平御覽&nbsp;太平廣記&nbsp;朱子語類&nbsp;宋景文公筆記&nbsp;墨經校釋網站有中、英文版本，也有繁、簡體版，可通過每頁左上角的連結隨時調整。《诗说》并非先秦两汉典籍，应该尽快转移到汉之后《诗说》并非先秦两汉典籍，应该尽快转移到汉之后，不然会对文献使用者造成误导。以为它的可信度更高。 [文字與原典鏈接錯誤在瀏覽《太乙金華宗旨》時，發現兩版本之原典鏈接皆指向同一典籍。因在兩版本中《天心章第一》之內容， [如果我說「朕」仍然是存在的你知道，朕在秦始皇帝以前，不分貴賤自稱時都說朕。秦始皇帝以後改成天子專用，因爲這個字被限制，不能 ["
+    },
+    {
+      "出处": "《逸周书·尝麦解》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载了夏启时期对子嗣的训诫或刑罚，可侧面印证夏初存在震慑宗室的法令背景。",
+      "检索词": "武观 尝麦",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/lost-book-of-zhou/chang-mai-jie）",
+      "ctext_urn": "ctp:lost-book-of-zhou/chang-mai-jie",
+      "ctext_url": "https://ctext.org/lost-book-of-zhou/chang-mai-jie",
+      "corpus_excerpt": "&nbsp;道德真經註&nbsp;世說新語&nbsp;顏氏家訓&nbsp;文心雕龍&nbsp;群書治要&nbsp;藝文類聚&nbsp;黃帝陰符經&nbsp;四書章句集注&nbsp;論語注疏&nbsp;封神演義&nbsp;孝經注疏&nbsp;太平御覽&nbsp;太平廣記&nbsp;朱子語類&nbsp;宋景文公筆記&nbsp;墨經校釋網站有中、英文版本，也有繁、簡體版，可通過每頁左上角的連結隨時調整。《诗说》并非先秦两汉典籍，应该尽快转移到汉之后《诗说》并非先秦两汉典籍，应该尽快转移到汉之后，不然会对文献使用者造成误导。以为它的可信度更高。 [文字與原典鏈接錯誤在瀏覽《太乙金華宗旨》時，發現兩版本之原典鏈接皆指向同一典籍。因在兩版本中《天心章第一》之內容， [如果我說「朕」仍然是存在的你知道，朕在秦始皇帝以前，不分貴賤自稱時都說朕。秦始皇帝以後改成天子專用，因爲這個字被限制，不能 ["
+    },
+    {
+      "出处": "《今本竹书纪年·卷上》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "后世整理的版本，部分文字虽有演绎，但整体延续了武观叛乱并被平定的叙事框架。",
+      "检索词": "武观 归",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "&nbsp;道德真經註&nbsp;世說新語&nbsp;顏氏家訓&nbsp;文心雕龍&nbsp;群書治要&nbsp;藝文類聚&nbsp;黃帝陰符經&nbsp;四書章句集注&nbsp;論語注疏&nbsp;封神演義&nbsp;孝經注疏&nbsp;太平御覽&nbsp;太平廣記&nbsp;朱子語類&nbsp;宋景文公筆記&nbsp;墨經校釋網站有中、英文版本，也有繁、簡體版，可通過每頁左上角的連結隨時調整。《诗说》并非先秦两汉典籍，应该尽快转移到汉之后《诗说》并非先秦两汉典籍，应该尽快转移到汉之后，不然会对文献使用者造成误导。以为它的可信度更高。 [文字與原典鏈接錯誤在瀏覽《太乙金華宗旨》時，發現兩版本之原典鏈接皆指向同一典籍。因在兩版本中《天心章第一》之內容， [如果我說「朕」仍然是存在的你知道，朕在秦始皇帝以前，不分貴賤自稱時都說朕。秦始皇帝以後改成天子專用，因爲這個字被限制，不能 ["
+    },
+    {
+      "出处": "《墨子·耕柱》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "提及夏启时期的天象或祭祀，未直接涉及武观此人，无法作为拓展信息来源。",
+      "检索词": "夏启",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《史记·夏本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "二十四史之一，详细记载夏代兴衰，但史记夏本纪未明确提及武观叛乱的具体过程，此部分内容由翻译详录负责。",
+      "检索词": "武观",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《左传·昭公元年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "提及夏代遗民及上古因果，未提供任何关于武观本人的新事实。",
+      "检索词": "夏有观扈",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《楚辞·天问》",
+      "tier": "先秦文献",
+      "pool": "legend",
+      "与本主题关系": "提及夏代初期权力更迭的混乱，有助于理解当时宗室冲突的氛围，但并无具体指认武观的文本。",
+      "检索词": "启代益作后",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《太平御览·卷八十二》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋代类书，引用了《竹书纪年》等古本描述，属于二手转引，无新增独立史料。",
+      "检索词": "武观",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《古本竹书纪年·夏纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "现存记载武观之乱的最核心原始文献，明确了放逐地点、叛乱年份及征伐将领。",
+      "检索词": "武观 西河 叛",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "&nbsp;道德真經註&nbsp;世說新語&nbsp;顏氏家訓&nbsp;文心雕龍&nbsp;群書治要&nbsp;藝文類聚&nbsp;黃帝陰符經&nbsp;四書章句集注&nbsp;論語注疏&nbsp;封神演義&nbsp;孝經注疏&nbsp;太平御覽&nbsp;太平廣記&nbsp;朱子語類&nbsp;宋景文公筆記&nbsp;墨經校釋網站有中、英文版本，也有繁、簡體版，可通過每頁左上角的連結隨時調整。《诗说》并非先秦两汉典籍，应该尽快转移到汉之后《诗说》并非先秦两汉典籍，应该尽快转移到汉之后，不然会对文献使用者造成误导。以为它的可信度更高。 [文字與原典鏈接錯誤在瀏覽《太乙金華宗旨》時，發現兩版本之原典鏈接皆指向同一典籍。因在兩版本中《天心章第一》之內容， [如果我說「朕」仍然是存在的你知道，朕在秦始皇帝以前，不分貴賤自稱時都說朕。秦始皇帝以後改成天子專用，因爲這個字被限制，不能 ["
+    },
+    {
+      "出处": "《逸周书·尝麦解》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载了夏启时期对子嗣的训诫或刑罚，可侧面印证夏初存在震慑宗室的法令背景。",
+      "检索词": "武观 尝麦",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/lost-book-of-zhou/chang-mai-jie）",
+      "ctext_urn": "ctp:lost-book-of-zhou/chang-mai-jie",
+      "ctext_url": "https://ctext.org/lost-book-of-zhou/chang-mai-jie",
+      "corpus_excerpt": "&nbsp;道德真經註&nbsp;世說新語&nbsp;顏氏家訓&nbsp;文心雕龍&nbsp;群書治要&nbsp;藝文類聚&nbsp;黃帝陰符經&nbsp;四書章句集注&nbsp;論語注疏&nbsp;封神演義&nbsp;孝經注疏&nbsp;太平御覽&nbsp;太平廣記&nbsp;朱子語類&nbsp;宋景文公筆記&nbsp;墨經校釋網站有中、英文版本，也有繁、簡體版，可通過每頁左上角的連結隨時調整。《诗说》并非先秦两汉典籍，应该尽快转移到汉之后《诗说》并非先秦两汉典籍，应该尽快转移到汉之后，不然会对文献使用者造成误导。以为它的可信度更高。 [文字與原典鏈接錯誤在瀏覽《太乙金華宗旨》時，發現兩版本之原典鏈接皆指向同一典籍。因在兩版本中《天心章第一》之內容， [如果我說「朕」仍然是存在的你知道，朕在秦始皇帝以前，不分貴賤自稱時都說朕。秦始皇帝以後改成天子專用，因爲這個字被限制，不能 ["
+    },
+    {
+      "出处": "《墨子·耕柱》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "提及夏启时期的天象或祭祀，未直接涉及武观此人，无法作为拓展信息来源。",
+      "检索词": "夏启",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《史记·夏本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "二十四史之一，详细记载夏代兴衰，但史记夏本纪未明确提及武观叛乱的具体过程，此部分内容由翻译详录负责。",
+      "检索词": "武观",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《左传·昭公元年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "提及夏代遗民及上古因果，未提供任何关于武观本人的新事实。",
+      "检索词": "夏有观扈",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《今本竹书纪年·卷上》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "后世整理的版本，部分文字虽有演绎，但整体延续了武观叛乱并被平定的叙事框架。",
+      "检索词": "武观 归",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "&nbsp;道德真經註&nbsp;世說新語&nbsp;顏氏家訓&nbsp;文心雕龍&nbsp;群書治要&nbsp;藝文類聚&nbsp;黃帝陰符經&nbsp;四書章句集注&nbsp;論語注疏&nbsp;封神演義&nbsp;孝經注疏&nbsp;太平御覽&nbsp;太平廣記&nbsp;朱子語類&nbsp;宋景文公筆記&nbsp;墨經校釋網站有中、英文版本，也有繁、簡體版，可通過每頁左上角的連結隨時調整。《诗说》并非先秦两汉典籍，应该尽快转移到汉之后《诗说》并非先秦两汉典籍，应该尽快转移到汉之后，不然会对文献使用者造成误导。以为它的可信度更高。 [文字與原典鏈接錯誤在瀏覽《太乙金華宗旨》時，發現兩版本之原典鏈接皆指向同一典籍。因在兩版本中《天心章第一》之內容， [如果我說「朕」仍然是存在的你知道，朕在秦始皇帝以前，不分貴賤自稱時都說朕。秦始皇帝以後改成天子專用，因爲這個字被限制，不能 ["
+    },
+    {
+      "出处": "《楚辞·天问》",
+      "tier": "先秦文献",
+      "pool": "legend",
+      "与本主题关系": "提及夏代初期权力更迭的混乱，有助于理解当时宗室冲突的氛围，但并无具体指认武观的文本。",
+      "检索词": "启代益作后",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《太平御览·卷八十二》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋代类书，引用了《竹书纪年》等古本描述，属于二手转引，无新增独立史料。",
+      "检索词": "武观",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 3,
+    "C_excluded": 5,
+    "overall": "B"
+  }
+}

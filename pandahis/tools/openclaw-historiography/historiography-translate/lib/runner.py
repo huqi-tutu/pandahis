@@ -50,7 +50,10 @@ from lib.verify import (
     verify_enrich_draft,
     verify_mother_draft,
     verify_output,
+    verify_source_thickness,
 )
+from lib.repair_ticket import save_repair_ticket
+from shared.qa_repair import classify_translate_failure, format_repair_feedback
 from lib.work_artifacts import (
     load_normalized_plan,
     load_plan,
@@ -243,6 +246,49 @@ def _phase1_max_retries() -> int:
     return max(0, int(os.environ.get("TRANSLATE_PHASE1_MAX_RETRIES", "4")))
 
 
+def _repair_feedback_suffix() -> str:
+    fb = (os.environ.get("TRANSLATE_REPAIR_FEEDBACK") or "").strip()
+    if not fb:
+        return ""
+    return f"\n\n--- 修复工单反馈（须逐项修正）---\n{fb}\n"
+
+
+def _record_translate_failure(
+    entry_id: str,
+    entry_name: str,
+    *,
+    stage: str,
+    errors: List[str],
+    work_dir: Path,
+    fail_count: int,
+) -> Tuple[int, Any]:
+    """写 repair 工单并返回 (exit_code, plan)。exit_code: 2=转线, 1=失败。"""
+    plan = classify_translate_failure(errors, stage=stage, fail_count=fail_count)
+    ticket = save_repair_ticket(
+        work_dir,
+        entry_id=entry_id,
+        entry_name=entry_name,
+        stage=stage,
+        errors=errors,
+        plan=plan,
+        fail_count=fail_count,
+    )
+    print(f"📋 修复工单 → {ticket.name}（{plan.root_cause} / {plan.disposition}）", flush=True)
+    if plan.disposition == "route_pipeline":
+        print(f"↪ 转线：{plan.route_to or 'dynasty_supplement'}", flush=True)
+        if plan.next_command:
+            print(f"   建议：{plan.next_command}", flush=True)
+        return 2, plan
+    if plan.disposition == "needs_human":
+        print(f"⏸️  需人工：{plan.structured_prompt[:200]}", flush=True)
+    else:
+        print(
+            f"💡 定向修复：python3 translate.py repair --id {entry_id}",
+            flush=True,
+        )
+    return 1, plan
+
+
 def _phase1_retry_temperature() -> float:
     return float(os.environ.get("TRANSLATE_PHASE1_RETRY_TEMPERATURE", "0.4"))
 
@@ -362,12 +408,13 @@ def _run_phase1_mother_single(
     for attempt in range(max_retries + 1):
         retry_note = ""
         if attempt > 0 and m_errs:
+            plan = classify_translate_failure(m_errs, stage="phase1", fail_count=attempt)
             miss_lines = collect_must_phrase_misses(
                 mother_detail, verify_plan_data, batch_mode=bool(batch_label)
             )
             retry_note = (
                 "\n\n--- 上轮 Phase1 质检失败，须逐项修正 ---\n"
-                + "\n".join(f"- {e}" for e in m_errs[:12])
+                + format_repair_feedback(plan, m_errs)
             )
             if miss_lines:
                 retry_note += (
@@ -389,6 +436,7 @@ def _run_phase1_mother_single(
             )
             + batch_note
             + retry_note
+            + _repair_feedback_suffix()
         )
         title = batch_label or f"Phase1 母本顺译 {entry_id} → {mother_file.name}"
         print(
@@ -485,9 +533,10 @@ def _run_phase2_enrich(
     for attempt in range(_phase2_max_retries() + 1):
         retry_note = ""
         if attempt > 0 and e_errs:
+            plan_fb = classify_translate_failure(e_errs, stage="phase2", fail_count=attempt)
             retry_note = (
                 "\n\n--- 上轮 Phase2 质检失败，须修正 ---\n"
-                + "\n".join(f"- {e}" for e in e_errs[:12])
+                + format_repair_feedback(plan_fb, e_errs)
             )
         e_prompt = build_translate_enrich_prompt(
             entry_id,
@@ -496,7 +545,7 @@ def _run_phase2_enrich(
             enrich_plan_json,
             mother_body,
             target,
-        ) + retry_note
+        ) + retry_note + _repair_feedback_suffix()
         print(
             f"⏳ Phase2 补全成稿 {entry_id} → {target.name}"
             + (f"（重试 {attempt}/{_phase2_max_retries()}）" if attempt else ""),
@@ -684,6 +733,24 @@ def run_one(
     target = output_path(entry_id, out_dir, entry_name)
     plan_file = plan_path(entry_id, entry_name, work_dir)
 
+    thin_errs = verify_source_thickness(recalled)
+    if thin_errs and use_llm and not dry_run and not recall_only:
+        fail = int(job.get("fail_count") or 0)
+        rc, plan = _record_translate_failure(
+            entry_id,
+            entry_name,
+            stage="recall_thickness",
+            errors=thin_errs,
+            work_dir=work_dir,
+            fail_count=fail,
+        )
+        db.update_job(
+            entry_id,
+            status="routed" if rc == 2 else "failed",
+            detail=f"{plan.root_cause}: {thin_errs[0]}",
+        )
+        return rc
+
     if _should_skip(entry_id, recalled, job, plan_file):
         print(f"⏭️ 跳过 {entry_id}（产出已有效 fp={fp}）")
         return 0
@@ -799,14 +866,23 @@ def run_one(
 
     if not ok:
         fail = int(job.get("fail_count") or 0) + 1
+        stage = "verify"
+        rc, plan = _record_translate_failure(
+            entry_id,
+            entry_name,
+            stage=stage,
+            errors=errs,
+            work_dir=work_dir,
+            fail_count=fail,
+        )
         db.update_job(
             entry_id,
-            status="failed",
+            status="routed" if rc == 2 else "failed",
             fail_count=fail,
-            detail="; ".join(errs),
+            detail=f"repair:{plan.root_cause}",
         )
         print(f"❌ 翻译未通过:\n   " + "\n   ".join(errs))
-        return 1
+        return rc
 
     _, plan_data, _ = load_normalized_plan(plan_file, recalled)
     v_ok, v_errs = verify_output(
@@ -814,14 +890,22 @@ def run_one(
     )
     if not v_ok:
         fail = int(job.get("fail_count") or 0) + 1
+        rc, plan = _record_translate_failure(
+            entry_id,
+            entry_name,
+            stage="verify_final",
+            errors=v_errs,
+            work_dir=work_dir,
+            fail_count=fail,
+        )
         db.update_job(
             entry_id,
-            status="failed",
+            status="routed" if rc == 2 else "failed",
             fail_count=fail,
-            detail="; ".join(v_errs),
+            detail=f"repair:{plan.root_cause}",
         )
         print(f"❌ verify 未通过:\n   " + "\n   ".join(v_errs))
-        return 1
+        return rc
 
     _, data, _ = load_output(entry_id, out_dir, entry_name)
     wc = len((data.get("翻译详情") or ""))

@@ -87,7 +87,6 @@ def audit_index(index_path: Path) -> dict[str, Any]:
         )
 
     downgrade = [r for r in rows if r["verdict"] == "downgrade_recommended"]
-    warn_benji = [r for r in rows if r["verdict"] == "warn_benji_juwang"]
     swap_hint = [r for r in rows if r["verdict"] == "pass_swap_recommended"]
 
     return {
@@ -99,7 +98,6 @@ def audit_index(index_path: Path) -> dict[str, Any]:
         "total_glbl": len(rows),
         "stats": stats,
         "downgrade_count": len(downgrade),
-        "warn_benji_count": len(warn_benji),
         "swap_hint_count": len(swap_hint),
         "entries": rows,
         "downgrade_ids": [r["史略ID"] for r in downgrade],
@@ -123,8 +121,6 @@ def _render_md(report: dict[str, Any]) -> str:
         f"{report['stats'].get('pass', 0)} | 合计 ≥ 阈值，可继续翻译 |",
         "| pass_swap_recommended | "
         f"{report['stats'].get('pass_swap_recommended', 0)} | 合计达标但母本过薄（历史 merge 未 swap） |",
-        "| warn_benji_juwang | "
-        f"{report['stats'].get('warn_benji_juwang', 0)} | 本纪君王 < 阈值，warn-only 保留 |",
         "| **downgrade_recommended** | "
         f"**{report['downgrade_count']}** | **建议降级：停翻译，走朝代补全** |",
         "| skip_not_phase1 | "
@@ -157,9 +153,6 @@ def _render_md(report: dict[str, Any]) -> str:
     downgrade.sort(key=lambda x: (x.get("source_han_chars_total") or 0, x.get("史略ID") or ""))
     _table("建议降级条目", downgrade, limit=200)
 
-    warn = [r for r in report["entries"] if r["verdict"] == "warn_benji_juwang"]
-    _table("本纪君王 warn-only", warn, limit=40)
-
     swap = [r for r in report["entries"] if r["verdict"] == "pass_swap_recommended"]
     _table("母本 swap 建议（仍保留 GLBL）", swap, limit=40)
 
@@ -169,8 +162,7 @@ def _render_md(report: dict[str, Any]) -> str:
             "",
             "1. **downgrade_recommended**：不在本次脚本中删除或改号 GLBL；运营上停止新翻译/增量 sync，"
             "优先走朝代知识补全；待补全出新 GLBL 后再做 ID 迁移（外科手术式 repair）。",
-            "2. **warn_benji_juwang**：保留现有 GLBL 与已翻译内容，仅标记。",
-            "3. 完整 JSON：`data/05工作流中间产物/薄标注待补全/glbl_thickness_audit.json`",
+            "2. 完整 JSON：`data/05工作流中间产物/薄标注待补全/glbl_thickness_audit.json`",
             "",
         ]
     )
@@ -224,7 +216,6 @@ def main() -> int:
         "--only",
         choices=[
             "downgrade_recommended",
-            "warn_benji_juwang",
             "pass_swap_recommended",
             "all",
         ],

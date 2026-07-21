@@ -255,7 +255,15 @@ def verify_mother_draft(
 
     if plan:
         errors.extend(_verify_must_phrases(detail, plan, batch_mode=batch_mode))
-        cov_ok, cov_errs = verify_mother_coverage(detail, plan)
+        from lib.config import paths as _paths
+
+        cov_ok, cov_errs = verify_mother_coverage(
+            detail,
+            plan,
+            entry_id=entry_id,
+            entry_name=str(recalled.get("史略名称") or ""),
+            work_dir=_paths()["translate_work"],
+        )
         if not cov_ok:
             errors.extend([f"母本顺译 {e}" for e in cov_errs])
 
@@ -715,7 +723,15 @@ def verify_output(
         if plan:
             errors.extend(intro_mother_overlap(detail, plan))
             errors.extend(_verify_plan_sources_in_detail(detail, plan))
-            cov_ok, cov_errs = verify_mother_coverage(detail, plan)
+            from lib.config import paths as _paths
+
+            cov_ok, cov_errs = verify_mother_coverage(
+                detail,
+                plan,
+                entry_id=entry_id,
+                entry_name=entry_name,
+                work_dir=_paths()["translate_work"],
+            )
             if not cov_ok:
                 errors.extend(cov_errs)
             else:

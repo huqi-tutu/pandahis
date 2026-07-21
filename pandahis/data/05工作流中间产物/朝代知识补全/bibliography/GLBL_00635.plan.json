@@ -1,0 +1,127 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00635",
+  "写作结构": "正史叙述（太康崩，弟仲康立）见翻译详录。拓展文只列与中康相关的史外文献存目，不作事件、政策、具体年数的展开；叙事性留白。",
+  "候选著作": [
+    {
+      "出处": "《尚书·胤征》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记仲康命胤侯征伐羲和，属明确事件，受 anchor forbidden 约束，仅存目。",
+      "检索词": "胤征",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《古本竹书纪年·夏纪》辑本",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "辑本中或有仲康即位、居地等极简世系记载，具体条目多散佚，今存佚文未含可用新增信息。",
+      "检索词": "仲康",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《今本竹书纪年·卷上》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记仲康元年居斟寻、五年日食命胤侯征羲和，含具体事件与年数，受 anchor forbidden 约束，不作为拓展内容。",
+      "检索词": "仲康",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·夏本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载太康崩，弟仲康立，帝仲康崩，子帝相立，为正史世系，翻译详录处理，不在此拓展。",
+      "检索词": "仲康",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "皇甫谧述仲康在位年数等，具体数字属 forbidden，且为后世层累，仅存目备览。",
+      "检索词": "仲康",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《尚书·胤征》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记仲康命胤侯征伐羲和，属明确事件，受 anchor forbidden 约束，仅存目。",
+      "检索词": "胤征",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《古本竹书纪年·夏纪》辑本",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "辑本中或有仲康即位、居地等极简世系记载，具体条目多散佚，今存佚文未含可用新增信息。",
+      "检索词": "仲康",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《今本竹书纪年·卷上》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记仲康元年居斟寻、五年日食命胤侯征羲和，含具体事件与年数，受 anchor forbidden 约束，不作为拓展内容。",
+      "检索词": "仲康",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·夏本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载太康崩，弟仲康立，帝仲康崩，子帝相立，为正史世系，翻译详录处理，不在此拓展。",
+      "检索词": "仲康",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "皇甫谧述仲康在位年数等，具体数字属 forbidden，且为后世层累，仅存目备览。",
+      "检索词": "仲康",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 0,
+    "C_excluded": 5,
+    "overall": "C"
+  }
+}

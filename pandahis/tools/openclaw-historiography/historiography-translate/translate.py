@@ -7,7 +7,8 @@
   python3 translate.py recall --id GLBL_00001
   python3 translate.py run --from GLBL_00001 --max 1 [--priority P0] [--single-source-only]
   python3 translate.py run-one --id GLBL_00001 [--from-phase phase2] [--dry-run]
-  python3 translate.py refine --id GLBL_00001 --scope intro|tail|attribution|full [--instructions "..."]
+  python3 translate.py repair --id GLBL_00001 [--execute] [--dry-run]
+  python3 translate.py repair-show --id GLBL_00001
   python3 translate.py verify --id GLBL_00001
   python3 translate.py aggregate
   python3 translate.py status
@@ -102,6 +103,15 @@ def main() -> int:
     p.add_argument("--dry-run", action="store_true")
     p.add_argument("--no-llm", action="store_true", help="仅 attribution scope 可用")
 
+    p = sub.add_parser("repair-show", help="查看修复工单（质检失败产物）")
+    p.add_argument("--id", required=True, dest="entry_id")
+
+    p = sub.add_parser("repair", help="按工单定向修复（非盲重跑）")
+    p.add_argument("--id", required=True, dest="entry_id")
+    p.add_argument("--index", type=Path, default=None)
+    p.add_argument("--dry-run", action="store_true")
+    p.add_argument("--execute", action="store_true", help="执行修复（默认仅展示工单）")
+
     args = parser.parse_args()
     index = args.index if hasattr(args, "index") else None
 
@@ -178,6 +188,29 @@ def main() -> int:
             index_path=index,
             dry_run=args.dry_run,
             use_llm=not args.no_llm,
+        )
+        print(msg)
+        return 0 if ok else 1
+
+    if args.cmd == "repair-show":
+        from lib.config import paths
+        from lib.repair_executor import print_repair_status
+
+        return print_repair_status(paths()["translate_work"], args.entry_id)
+
+    if args.cmd == "repair":
+        from lib.config import paths
+        from lib.repair_executor import execute_repair, print_repair_status
+
+        index = args.index if hasattr(args, "index") else None
+        if not args.execute:
+            return print_repair_status(paths()["translate_work"], args.entry_id)
+        ok, msg = execute_repair(
+            args.entry_id,
+            work_dir=paths()["translate_work"],
+            out_dir=paths()["translate_output"],
+            index_path=index,
+            dry_run=args.dry_run,
         )
         print(msg)
         return 0 if ok else 1

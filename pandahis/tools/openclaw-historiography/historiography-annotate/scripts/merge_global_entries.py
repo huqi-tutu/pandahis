@@ -307,7 +307,6 @@ def merge(*, dry_run: bool = False) -> dict:
 
     entries: List[dict] = []
     deferred: List[dict] = []
-    thin_warn = 0
     multi = 0
     cross = 0
     glbl_seq = 0
@@ -320,11 +319,6 @@ def merge(*, dry_run: bool = False) -> dict:
         glbl_seq += 1
         glbl_id = f"GLBL_{glbl_seq:05d}"
         ent = _build_glbl_entry(glbl_id, group, ranked=ranked)
-        if reason == "thin_benji_juwang_warn":
-            thin_warn += 1
-            kaoding = ent.setdefault("考订依据", {})
-            if isinstance(kaoding, dict):
-                kaoding["厚度门"] = f"本纪君王合计仅{total_chars}字（<100），warn-only 仍产 GLBL"
         entries.append(ent)
         if len(group) > 1:
             multi += 1
@@ -362,7 +356,6 @@ def merge(*, dry_run: bool = False) -> dict:
             "cross_work": cross,
             "paragraph_blocks": sum(e.get("段落域数", 0) for e in entries),
             "thin_deferred": len(deferred),
-            "thin_benji_juwang_warn": thin_warn,
         },
         "thin_registry_path": str(registry_path),
         "entries": entries,
@@ -383,7 +376,6 @@ def merge(*, dry_run: bool = False) -> dict:
             f"- 多源合并：{multi}（跨著作 {cross}）",
             f"- 段落域合计：{result['merge_stats']['paragraph_blocks']}",
             f"- 厚度门拒收（未产 GLBL）：{result['merge_stats'].get('thin_deferred', 0)}",
-            f"- 本纪君王薄源 warn：{result['merge_stats'].get('thin_benji_juwang_warn', 0)}",
             f"- 薄标注注册表：`{result.get('thin_registry_path', '')}`",
             "",
             "## 跨著作合并主题（节选）",

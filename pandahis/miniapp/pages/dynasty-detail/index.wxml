@@ -41,17 +41,10 @@
             <view class="dyn-axis-sheet" style="width: {{swim.sheetWidthRpx}}rpx;">
               <view class="dyn-swim-axis">
                 <view class="dyn-swim-axis-inner">
-                  <view
-                    wx:for="{{swim.timeSegments}}"
-                    wx:key="startYear"
-                    wx:if="{{item.dense && swim.timeScaleMode === 'segmented'}}"
-                    class="dyn-swim-segment-band"
-                    style="left: {{item.left}}; width: {{item.width}};"
-                  ></view>
                   <text
                     wx:for="{{swim.ticks}}"
                     wx:key="label"
-                    class="dyn-swim-axis-tick {{item.edgeStart ? 'dyn-swim-axis-tick--edge-start' : ''}} {{item.segmentBoundary ? 'dyn-swim-axis-tick--segment' : ''}}"
+                    class="dyn-swim-axis-tick {{item.edgeStart ? 'dyn-swim-axis-tick--edge-start' : ''}}"
                     style="left: {{item.left}};"
                   >{{item.hideLabel ? '' : item.label}}</text>
                   <text class="dyn-swim-axis-tick dyn-swim-axis-tick--end" style="left:100%;">{{swim.endLabel}}</text>
@@ -135,17 +128,10 @@
                 <view class="dyn-axis-sheet" style="width: {{swim.sheetWidthRpx}}rpx;">
                   <view class="dyn-swim-axis">
                     <view class="dyn-swim-axis-inner">
-                      <view
-                        wx:for="{{swim.timeSegments}}"
-                        wx:key="startYear"
-                        wx:if="{{item.dense && swim.timeScaleMode === 'segmented'}}"
-                        class="dyn-swim-segment-band"
-                        style="left: {{item.left}}; width: {{item.width}};"
-                      ></view>
                       <text
                         wx:for="{{swim.ticks}}"
                         wx:key="label"
-                        class="dyn-swim-axis-tick {{item.edgeStart ? 'dyn-swim-axis-tick--edge-start' : ''}} {{item.segmentBoundary ? 'dyn-swim-axis-tick--segment' : ''}}"
+                        class="dyn-swim-axis-tick {{item.edgeStart ? 'dyn-swim-axis-tick--edge-start' : ''}}"
                         style="left: {{item.left}};"
                       >{{item.hideLabel ? "" : item.label}}</text>
                       <text class="dyn-swim-axis-tick dyn-swim-axis-tick--end" style="left:100%;">{{swim.endLabel}}</text>
@@ -179,10 +165,7 @@
                 <!-- 时间竖 Grid：与顶部刻度对齐，极浅贯穿画布 -->
                 <view class="dyn-canvas-grid">
                   <block wx:for="{{swim.gridLines}}" wx:key="left">
-                    <view
-                      class="dyn-canvas-grid-line {{item.segmentBoundary ? 'dyn-canvas-grid-line--segment' : ''}}"
-                      style="left: {{item.left}};"
-                    ></view>
+                    <view class="dyn-canvas-grid-line" style="left: {{item.left}};"></view>
                   </block>
                 </view>
 
@@ -395,6 +378,12 @@
     submitting="{{correctionSubmitting}}"
     bind:close="closeCorrection"
     bind:submit="onCorrectionSubmit"
+  />
+
+  <dictionary-sheet
+    visible="{{dictionaryVisible}}"
+    query="{{dictionaryQuery}}"
+    bind:close="closeDictionary"
   />
 
   <text-selection-bar

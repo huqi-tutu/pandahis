@@ -340,6 +340,12 @@
   bind:submit="onCorrectionSubmit"
  />
 
+ <dictionary-sheet
+  visible="{{dictionaryVisible}}"
+  query="{{dictionaryQuery}}"
+  bind:close="closeDictionary"
+ />
+
  <text-selection-bar
   visible="{{selectionBarVisible}}"
   left="{{selectionBarLeft}}"

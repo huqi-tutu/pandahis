@@ -1,0 +1,179 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00646",
+  "写作结构": "正史叙述见翻译详录；拓展文以辑佚类文献（如《古本竹书纪年》）为主要信息来源，叙述征东夷的核心史实；同时可引用先秦文献中的传说性记载作为 legend 池补充，说明后世如何想象与神化伯杼的军事贡献；禁止编造战斗过程、对话与装备细节。",
+  "候选著作": [
+    {
+      "出处": "《古本竹书纪年·夏纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "现存最早且最直接记载伯杼征东夷及到达东海的编年史料，是 anchor 中核心史实的主要非正史来源。",
+      "检索词": "后杼 征 东海",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《墨子·非儒下》",
+      "tier": "先秦文献",
+      "pool": "legend",
+      "与本主题关系": "涉及传说中伯杼发明甲胄与兵矛的内容，反映了战国时期对上古军事首领的神化叙事。",
+      "检索词": "杼 作甲",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·夏本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载夏朝世系，明确伯杼为少康之子继承王位，是与本条目相关的正史核心背景。",
+      "检索词": "帝杼",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《今本竹书纪年·卷上》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "编年体记载帝杼即位与征伐东海的具体年份和事迹，可能混有后人整理成分，但仍为重要参考。",
+      "检索词": "帝杼 征 于海",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《世本·作篇》",
+      "tier": "辑佚/出土",
+      "pool": "legend",
+      "与本主题关系": "辑录先秦工匠与发明家传说，其中包含“杼作甲”、“杼作矛”的记载，属于早期的发明传说。",
+      "检索词": "杼作甲",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《国语·鲁语上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "提到“杼能帅禹者也，夏后氏报焉”，反映了春秋时期对伯杼功绩的认可与祭祀，虽未言征东夷细节，但确定了其作为杰出夏后的地位。",
+      "检索词": "杼能帅禹",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《山海经·海内经》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载夏后氏诸多世系与部族关系，可能涉及东夷地区的地理与族群描述，可作为理解征伐对象的背景材料。",
+      "检索词": "东夷 夏",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《古本竹书纪年·夏纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "现存最早且最直接记载伯杼征东夷及到达东海的编年史料，是 anchor 中核心史实的主要非正史来源。",
+      "检索词": "后杼 征 东海",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·夏本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载夏朝世系，明确伯杼为少康之子继承王位，是与本条目相关的正史核心背景。",
+      "检索词": "帝杼",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《今本竹书纪年·卷上》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "编年体记载帝杼即位与征伐东海的具体年份和事迹，可能混有后人整理成分，但仍为重要参考。",
+      "检索词": "帝杼 征 于海",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《国语·鲁语上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "提到“杼能帅禹者也，夏后氏报焉”，反映了春秋时期对伯杼功绩的认可与祭祀，虽未言征东夷细节，但确定了其作为杰出夏后的地位。",
+      "检索词": "杼能帅禹",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《山海经·海内经》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载夏后氏诸多世系与部族关系，可能涉及东夷地区的地理与族群描述，可作为理解征伐对象的背景材料。",
+      "检索词": "东夷 夏",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《墨子·非儒下》",
+      "tier": "先秦文献",
+      "pool": "legend",
+      "与本主题关系": "涉及传说中伯杼发明甲胄与兵矛的内容，反映了战国时期对上古军事首领的神化叙事。",
+      "检索词": "杼 作甲",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《世本·作篇》",
+      "tier": "辑佚/出土",
+      "pool": "legend",
+      "与本主题关系": "辑录先秦工匠与发明家传说，其中包含“杼作甲”、“杼作矛”的记载，属于早期的发明传说。",
+      "检索词": "杼作甲",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 4,
+    "C_excluded": 3,
+    "overall": "B"
+  }
+}

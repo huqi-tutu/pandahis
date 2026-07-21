@@ -90,6 +90,7 @@ STEPS = (
     "enrich",
     "enrich-renwu",
     "enrich-all",
+    "repair-index",
 )
 
 REVIEW_PHASES = ("candidates", "entries")
@@ -451,18 +452,31 @@ def run_candidates_renwu(
         filtered, dropped = filter_renwu_duplicates(rows, alias_index, phase1_canonicals)
         if dropped:
             _log(f"  ⚠️ {cat} 脚本剔除重复 {len(dropped)} 条：{'; '.join(dropped[:5])}")
-        # 薄标注种子：LLM 未产出时写入候选池（人审可删，非强制成稿）
-        existing_names = {str(r.get("名称", "")).strip() for r in filtered}
-        for td in thin_deferred:
-            if str(td.get("史略分类", "")).strip() != cat:
-                continue
-            seed = dkl.thin_deferred_to_candidate(td)
-            name = seed["名称"]
-            canon = alias_index.get(name) or dkl.normalize_person_name(name, alias_map)
-            if canon in phase1_canonicals or name in existing_names:
-                continue
-            filtered.insert(0, seed)
-            existing_names.add(name)
+        if cat == "君王":
+            filtered = dkl.inject_mandatory_juwang_candidates(
+                filtered,
+                emperor_gaps=emperor_gaps,
+                thin_deferred=thin_deferred,
+                alias_index=alias_index,
+                phase1_canonicals=phase1_canonicals,
+            )
+            cand_names = {str(r.get("名称", "")).strip() for r in filtered}
+            for gap in emperor_gaps:
+                gname = str(gap.get("帝王名称", "")).strip()
+                if gname and gname not in cand_names:
+                    raise RuntimeError(f"君王候选缺失强制项：{gname}")
+        else:
+            existing_names = {str(r.get("名称", "")).strip() for r in filtered}
+            for td in thin_deferred:
+                if str(td.get("史略分类", "")).strip() != cat:
+                    continue
+                seed = dkl.thin_deferred_to_candidate(td)
+                name = seed["名称"]
+                canon = alias_index.get(name) or dkl.normalize_person_name(name, alias_map)
+                if canon in phase1_canonicals or name in existing_names:
+                    continue
+                filtered.insert(0, seed)
+                existing_names.add(name)
         for row in filtered:
             if isinstance(row, dict):
                 row.setdefault("史略分类", cat)
@@ -717,13 +731,21 @@ def fill_entry_prompt(
     candidate: dict[str, Any],
     glbl_id: str,
     rules: dict[str, str],
+    *,
+    emperor_catalog: str = "",
 ) -> str:
+    attach = str(candidate.get("建议挂靠帝王") or "").strip()
     return f"""将以下候选转为一条 GLBL 索引 JSON（单个对象，不要数组）。
 史略ID 必须使用：{glbl_id}
 史略分类：{category}
 不要填原文字句、paragraphs、优先级（后续 enrichment）。
 不要填人物标签（后续 person_tag.py）。
-坐标字段（一级文明坐标/二级朝代坐标/三级政权坐标/政权ID等）无需填写，脚本会根据四级帝王坐标从帝王.json自动反查填充。
+**禁止填写任何坐标链字段**（四级帝王坐标、帝王ID、一级/二级/三级坐标、文明ID、朝代ID、政权ID）。
+脚本将据候选「建议挂靠帝王」在本朝帝王表中**精确匹配**后自动写入（须与下表「帝王名称」一字不差）。
+本批挂靠帝王：{attach or "（见候选）"}
+
+## 本朝帝王表（建议挂靠帝王只能填下列帝王名称）
+{emperor_catalog or "（无）"}
 
 ## 朝代
 {json.dumps(context, ensure_ascii=False, indent=2)}
@@ -744,19 +766,30 @@ def fill_renwu_entry_prompt(
     candidate: dict[str, Any],
     glbl_id: str,
     rules: dict[str, str],
+    *,
+    emperor_catalog: str = "",
 ) -> str:
     year_note = (
         "君王：史略开始年=即位年，史略结束年=退位/崩年。"
         "宗戚/文臣/武将/宦官/庶众：史略开始年=出生年，史略结束年=去世年。"
         "传说期人物仅有活跃期时，可在考订依据注明；年份须在朝代区间内。"
     )
+    attach_note = (
+        "君王：史略名称须与本朝帝王表「帝王名称」完全一致。"
+        if category == "君王"
+        else "非君王：候选「建议挂靠帝王」须为本朝帝王表「帝王名称」，一字不差。"
+    )
     return f"""将以下人物候选转为一条 GLBL 人物索引 JSON（单个对象，不要数组）。
 史略ID 必须使用：{glbl_id}
 史略分类：{category}（已确定，勿改）
-史略名称须用候选「名称」标准名；君王须对齐帝王.json「帝王名称」。
+{attach_note}
 不要填原文字句、paragraphs、优先级、人物标签（后续 enrichment）。
 史略简介 ≤20 字，必填。
-坐标字段（一级文明坐标/二级朝代坐标/三级政权坐标/政权ID等）无需填写，脚本会根据四级帝王坐标从帝王.json自动反查填充。
+**禁止填写任何坐标链字段**（四级帝王坐标、帝王ID、一级/二级/三级坐标、文明ID、朝代ID、政权ID）。
+脚本将据候选「建议挂靠帝王」或君王名在本朝帝王表中精确匹配后自动写入。
+
+## 本朝帝王表（建议挂靠帝王 / 君王名只能填下列帝王名称）
+{emperor_catalog or "（无）"}
 
 ## 朝代
 {json.dumps(context, ensure_ascii=False, indent=2)}
@@ -773,15 +806,6 @@ def fill_renwu_entry_prompt(
 
 只输出 JSON 对象，字段用中文键名。
 """
-
-
-def pinyin_rules_excerpt(rules: dict[str, str]) -> str:
-    """提取翻译规则七，供 compose-detail 硬性约束。"""
-    text = rules.get("翻译规则", "")
-    if not text:
-        return ""
-    m = re.search(r"## 规则七：注音标注.*?(?=\n## 规则八)", text, re.DOTALL)
-    return m.group(0).strip() if m else text[:2500]
 
 
 def _find_sibling_entries(
@@ -865,7 +889,6 @@ def compose_detail_prompt(
 ) -> str:
     pri = str(entry.get("优先级") or "P1")
     cat = dkl.normalize_category(str(entry.get("史略分类") or ""))
-    allow_list = "、".join(sorted(dkl._ALLOW_PINYIN_WORDS))
     is_person = cat in dkl.PERSON_INDEX_CATEGORIES
     common_rules = rules.get("详情写作共用", "")
     type_rules = rules.get("人物详情" if is_person else "详情", "")
@@ -972,11 +995,7 @@ def compose_detail_prompt(
 - 传说/相传/据说可写但须克制（§9；verify legend_dominance）；其余模糊词仍须同句《》或删除
 - 禁止【】、小标题、列表符号；**AI 腔词**（此外/综上所述/堪称 等，见共用规范 §3.5）全文合计与单词均 **< 5 次**（≥5 次 verify fail）
 - 禁止编造人物心理活动（除非正史明确记载）
-- **注音纪律（二期 · 默认全文不注音）**：
-  - 本产品面向具备通识文史素养的读者，**不是**识字教辅/小程序
-  - **禁止**给常见字、通识人名、通识地名、动物名、器物名注音
-  - **仅当**正文出现下列罕用字专名时，可保留该词注音：{allow_list}
-  - 除上述白名单外，全文不得出现任何「汉字（拼音）」标注{density_note}
+- **禁止注音**：正文不得出现任何「汉字（拼音）」括注；生僻字由读者点字典查读；古地名括注只写「今…」，不得混入拼音{density_note}
 """
 
 
@@ -1140,6 +1159,7 @@ def run_fill_category(
     entries_doc = load_or_init_entries(paths["entries"], context)
     done_names = _filled_names(entries_doc, category)
     emperors = dkl.load_emperors(HISTOGRAPH_ROOT, str(context["朝代ID"]))
+    emperor_catalog = dkl.format_emperor_catalog(emperors)
     counter = [dkl.max_glbl_num(HISTOGRAPH_ROOT)]
 
     for idx, cand in enumerate(candidates, start=1):
@@ -1147,7 +1167,14 @@ def run_fill_category(
         if not name or name in done_names:
             continue
         glbl_id = dkl.allocate_glbl_id(counter)
-        prompt = fill_entry_prompt(context, category, cand, glbl_id, rules)
+        attach = dkl.determine_attach_emperor_name(category, cand, name)
+        try:
+            dkl.validate_attach_emperor_name(attach, emperors, entry_id=glbl_id)
+        except ValueError as exc:
+            raise SystemExit(str(exc)) from exc
+        prompt = fill_entry_prompt(
+            context, category, cand, glbl_id, rules, emperor_catalog=emperor_catalog
+        )
         if dry_run:
             _log(f"=== fill {category} #{idx} {name} preview ===")
             _log(prompt[:1500])
@@ -1158,13 +1185,9 @@ def run_fill_category(
         row["史略ID"] = glbl_id
         row["史略分类"] = category
         row.setdefault("史略名称", name)
+        row = dkl.strip_llm_coordinate_fields(row)
         row = dkl.apply_coord_defaults(row, context)
-        emp = resolve_emperor(
-            str(cand.get("建议挂靠帝王") or row.get("四级帝王坐标") or ""),
-            emperors,
-        )
-        if emp:
-            row.update(emp)
+        row, _ = dkl.align_entry_emperor_coords(row, emperors, attach_emperor=attach)
         dykn_cat = CATEGORY_STEP_SUFFIX[category].upper()
         slug = slug_name(str(context["朝代名称"]))
         seq = len([e for e in entries_doc["entries"] if e.get("史略分类") == category]) + 1
@@ -1200,6 +1223,7 @@ def run_fill_renwu(
     entries_doc = load_or_init_entries(paths["entries_renwu"], context)
     done_names = _renwu_done_names(entries_doc)
     emperors = dkl.load_emperors(HISTOGRAPH_ROOT, str(context["朝代ID"]))
+    emperor_catalog = dkl.format_emperor_catalog(emperors)
     counter = [dkl.max_glbl_num(HISTOGRAPH_ROOT)]
     slug = slug_name(str(context["朝代名称"]))
     total = sum(len(cand_doc["candidates"].get(c) or []) for c in PERSON_CATEGORIES)
@@ -1225,7 +1249,14 @@ def run_fill_renwu(
             if not name or name in done_names:
                 continue
             glbl_id = dkl.allocate_glbl_id(counter)
-            prompt = fill_renwu_entry_prompt(context, cat, cand, glbl_id, rules)
+            attach = dkl.determine_attach_emperor_name(cat, cand, name)
+            try:
+                dkl.validate_attach_emperor_name(attach, emperors, entry_id=glbl_id)
+            except ValueError as exc:
+                raise SystemExit(str(exc)) from exc
+            prompt = fill_renwu_entry_prompt(
+                context, cat, cand, glbl_id, rules, emperor_catalog=emperor_catalog
+            )
             if dry_run:
                 _log(f"=== fill-renwu {cat} #{idx} {name} preview ===")
                 _log(prompt[:1500])
@@ -1238,21 +1269,13 @@ def run_fill_renwu(
             row["史略ID"] = glbl_id
             row["史略分类"] = cat
             row.setdefault("史略名称", name)
+            row = dkl.strip_llm_coordinate_fields(row)
             row = dkl.apply_coord_defaults(row, context)
-            emp = resolve_emperor(
-                str(cand.get("建议挂靠帝王") or row.get("四级帝王坐标") or ""),
-                emperors,
-            )
-            if emp:
-                row.update(emp)
-            if cat == "君王" and not row.get("帝王ID"):
-                emp2 = resolve_emperor(name, emperors)
-                if emp2:
-                    row.update(emp2)
+            row, _ = dkl.align_entry_emperor_coords(row, emperors, attach_emperor=attach)
+            row = dkl.align_junji_entry_with_emperor_list(row, emperors, force=True)
             seq_by_cat[cat] += 1
             cat_slug = dkl.PERSON_CAT_SLUG.get(cat, "RENWU")
             row.setdefault("母本史略ID", f"DYKN_{slug}_{cat_slug}_{seq_by_cat[cat]:02d}")
-            row.setdefault("五级细坐标", f"{context['朝代名称']}·{cat}·{seq_by_cat[cat]:02d}")
             entries_doc["entries"].append(row)
             save_json(paths["entries_renwu"], entries_doc)
             done_names.add(name)
@@ -1966,7 +1989,7 @@ def patch_detail_prompt(
 ## 待修段落
 {chr(10).join(blocks)}
 
-纪律：只改指定段落；过程禁编；保留未列段落不动；不要【】；默认不注音。"""
+纪律：只改指定段落；过程禁编；保留未列段落不动；不要【】；禁止注音。"""
 
 
 def run_patch_detail(
@@ -2482,6 +2505,10 @@ def gate_validate_person_entries(
                     f"[{eid}] {name} 峰值年 {peak_year} 不在 [{lo}, {hi}]"
                 )
 
+    dynasty_id = str(context.get("朝代ID", "")).strip()
+    if dynasty_id:
+        issues.extend(dkl.validate_junji_years_for_dynasty(entries, dynasty_id))
+
     return issues
 
 
@@ -2536,11 +2563,28 @@ def run_gate_renwu(paths: dict[str, Path], context: dict[str, Any], *, require_r
     doc = json.loads(paths["entries_renwu"].read_text(encoding="utf-8"))
     entries = doc.get("entries") or []
     dynasty_id = str(context["朝代ID"])
+    emperors = dkl.load_emperors(HISTOGRAPH_ROOT, dynasty_id)
+    aligned_entries, align_changes = dkl.align_junji_entries_with_emperor_list(
+        entries, emperors, force=True
+    )
+    if align_changes:
+        doc["entries"] = aligned_entries
+        save_json(paths["entries_renwu"], doc)
+        entries = aligned_entries
+        _log(f"🔧 gate-renwu：已自动对齐君王年份 {len(align_changes)} 处")
     phase1, alias_index = dkl.load_phase1_person_index(HISTOGRAPH_ROOT, dynasty_id)
     phase1_canonicals = {str(p.get("标准名")) for p in phase1}
     issues.extend(
         gate_validate_person_entries(
             entries, context, phase1_canonicals=phase1_canonicals, alias_index=alias_index
+        )
+    )
+    issues.extend(
+        dkl.validate_mandatory_emperor_coverage(
+            HISTOGRAPH_ROOT,
+            dynasty_id,
+            alias_index,
+            extra_entries=entries,
         )
     )
     for e in entries:
@@ -2649,6 +2693,45 @@ def run_enrich_renwu(paths: dict[str, Path], context: dict[str, Any], *, dry_run
             _log(f"  - {line}")
         return 1
     _log("✅ enrich-renwu 完成")
+    return 0
+
+
+def run_repair_index(
+    paths: dict[str, Path],
+    context: dict[str, Any],
+    *,
+    dry_run: bool,
+) -> int:
+    dynasty_id = str(context["朝代ID"])
+    emperors = dkl.load_emperors(HISTOGRAPH_ROOT, dynasty_id)
+    alias_map = dkl.load_person_alias_maps()
+    total_changes = 0
+    for key in ("entries", "entries_renwu"):
+        path = paths.get(key)
+        if not path or not path.is_file():
+            continue
+        doc = json.loads(path.read_text(encoding="utf-8"))
+        entries = list(doc.get("entries") or [])
+        if not entries:
+            continue
+        repaired, changes = dkl.repair_supplement_entries(
+            entries, emperors, alias_map=alias_map
+        )
+        if changes:
+            _log(f"🔧 repair-index {path.name}: {len(changes)} 处")
+            for line in changes[:20]:
+                _log(f"  - {line}")
+            if len(changes) > 20:
+                _log(f"  … 另有 {len(changes) - 20} 处")
+            total_changes += len(changes)
+        if dry_run:
+            continue
+        doc["entries"] = repaired
+        save_json(path, doc)
+    if dry_run:
+        _log(f"repair-index dry-run: 预计修改 {total_changes} 处")
+    else:
+        _log(f"✅ repair-index 完成（{total_changes} 处）")
     return 0
 
 
@@ -2969,10 +3052,15 @@ def main() -> int:
     elif step == "enrich-renwu":
         return run_enrich_renwu(paths, context, dry_run=args.dry_run)
     elif step == "enrich-all":
+        code = run_repair_index(paths, context, dry_run=args.dry_run)
+        if code != 0:
+            return code
         code = run_enrich(paths, context, dry_run=args.dry_run)
         if code != 0:
             return code
         return run_enrich_renwu(paths, context, dry_run=args.dry_run)
+    elif step == "repair-index":
+        return run_repair_index(paths, context, dry_run=args.dry_run)
 
     return 0
 

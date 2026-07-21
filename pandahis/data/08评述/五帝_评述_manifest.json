@@ -265,7 +265,39 @@
       "status": "done",
       "entry_count": 6,
       "verified_at": "2026-07-20T15:25:06Z"
+    },
+    {
+      "glbl": "GLBL_00625",
+      "name": "少昊",
+      "file": "GLBL_00625_少昊_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-07-20T15:29:16Z"
+    },
+    {
+      "glbl": "GLBL_00626",
+      "name": "蚩尤",
+      "file": "GLBL_00626_蚩尤_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-07-20T15:32:47Z"
+    },
+    {
+      "glbl": "GLBL_00627",
+      "name": "共工",
+      "file": "GLBL_00627_共工_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-07-20T15:35:07Z"
+    },
+    {
+      "glbl": "GLBL_00628",
+      "name": "彭祖",
+      "file": "GLBL_00628_彭祖_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-07-20T15:37:45Z"
     }
   ],
-  "updated_at": "2026-07-20T15:25:06Z"
+  "updated_at": "2026-07-20T15:37:45Z"
 }

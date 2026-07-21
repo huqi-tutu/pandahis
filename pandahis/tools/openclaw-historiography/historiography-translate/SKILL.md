@@ -29,7 +29,7 @@ description: >
 4. verify_mother → 必现词 + 覆盖 + 禁他书
 5. Phase2     → draft_enrich（锚点补异说/背景/细节，禁重复母本）；**先写 100-200 字前置引入，再进入正文**
 6. postprocess → 段落合并、去加粗、归因清洗、尾部退场补全（自动）
-7. verify     → 全文 + plan 出处 + 引入去重 + 碎引号 + 禁释词 + 归因检查
+7. verify     → 全文 + plan 出处 + 引入去重 + **L1 覆盖概率** +（长文灰区）**L2 语义复核**
 8. aggregate  → 史略翻译_汇总.json
 9. sync       → 自动 upsert 线上 historical_box_detail（`TRANSLATE_AUTO_SYNC=1` 默认开）
 ```
@@ -89,7 +89,13 @@ python3 ../../scripts/import_box_translate_json.py
 |------|------|------|
 | `TRANSLATE_TWO_PHASE` | `1` | `0` 回退单次 draft |
 | `TRANSLATE_COVERAGE_STRICT` | `1` | 覆盖不足则失败 |
-| `TRANSLATE_COVERAGE_MIN_RATIO` | `0.85` | M 清单命中率 |
+| `TRANSLATE_COVERAGE_MIN_RATIO` | `0.70` | 覆盖单元命中率（默认 70%） |
+| `TRANSLATE_COVERAGE_MIN_RATIO_LONG` | `0.65` | 清单 ≥80 条时长文阈值 |
+| `TRANSLATE_COVERAGE_ITEM_MIN` | `0.32` | 单条/句群单元及格线（非逐词硬控） |
+| `TRANSLATE_COVERAGE_L2` | `1` | L1 灰区时长文启用 LLM 语义复核 |
+| `TRANSLATE_COVERAGE_L2_GRAY_BAND` | `0.12` | L1 低于阈值在此带宽内才触发 L2 |
+| `TRANSLATE_COVERAGE_L2_MIN_CHECKLIST` | `50` | 清单少于此条数不跑 L2 |
+| `TRANSLATE_COVERAGE_L2_MAX_CLAIMS` | `24` | 单次 L2 最多复核弱覆盖单元数 |
 | `TRANSLATE_PLAN_MIN_RATIO` | `0.95` | plan 条数 / 母本分句 |
 | `HIST_LLM_PROVIDER` / `DEEPSEEK_API_KEY` | — | LLM |
 

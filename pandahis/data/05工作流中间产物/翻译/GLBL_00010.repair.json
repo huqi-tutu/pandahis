@@ -1,0 +1,27 @@
+{
+  "schema": "qa_repair_ticket/v1",
+  "pipeline": "translate",
+  "entry_id": "GLBL_00010",
+  "entry_name": "启",
+  "stage": "verify_final",
+  "fail_count": 2,
+  "errors": [
+    "母本覆盖不足: 10/12 条命中 (83% < 85%)",
+    "  疑似漏译 M001 [33%] 以天下授益。",
+    "  疑似漏译 M003 [25%] 禹子启贤，天下属意焉。"
+  ],
+  "plan": {
+    "root_cause": "COVERAGE_MISS",
+    "disposition": "refine_scope",
+    "action": "phase1_or_phase2_coverage_retry",
+    "structured_prompt": "【根因：母本句意覆盖不足】\n对照 plan 中未命中的 M 编号，在对应位置补译母本信息点；\n禁止用他书重复母本已述事实。",
+    "refine_scope": "full",
+    "route_to": "",
+    "next_command": "",
+    "invalidate": [],
+    "max_retries": 2,
+    "extra": {}
+  },
+  "feedback": "【根因：母本句意覆盖不足】\n对照 plan 中未命中的 M 编号，在对应位置补译母本信息点；\n禁止用他书重复母本已述事实。\n\n---\n【原始错误】\n母本覆盖不足: 10/12 条命中 (83% < 85%)\n  疑似漏译 M001 [33%] 以天下授益。\n  疑似漏译 M003 [25%] 禹子启贤，天下属意焉。",
+  "updated_at": "2026-07-21T13:04:51Z"
+}

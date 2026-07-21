@@ -1090,7 +1090,7 @@ def _quality_warnings(
         if 0 < total_han < 100:
             thin_all.append((e.get("史略ID"), e.get("史略名称"), e.get("史略分类"), total_han))
     if thin_all:
-        print("  ⚠️  厚度门：下列条目合计 <100 字，merge 将不产 GLBL（本纪君王除外 warn-only）：")
+        print("  ⚠️  厚度门：下列条目合计 <100 字，merge 将不产 GLBL：")
         for eid, name, cat, n in sorted(thin_all):
             print(f"      {eid}: {name} ({cat}) 共{n}字")
     else:

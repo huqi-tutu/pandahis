@@ -119,10 +119,11 @@ class SwimTimeScaleTest {
         .orElseThrow();
     assertTrue(!edgeStart.hideLabel(), "起点年份标签必须可见");
 
+    // 刻度不再跟随（细分段）边界强制打点，紧邻起点的锚点年份（-2695）不应
+    // 单独产生刻度，起点附近只由规则步长的普通刻度参与碰撞。
     assertTrue(
-        fitted.ticks().stream()
-            .anyMatch(t -> "-2695".equals(t.label()) && t.hideLabel()),
-        "与起点过近的段界标签应隐藏"
+        fitted.ticks().stream().noneMatch(t -> "-2695".equals(t.label())),
+        "紧邻起点的锚点年份不应再单独生成专属刻度"
     );
   }
 

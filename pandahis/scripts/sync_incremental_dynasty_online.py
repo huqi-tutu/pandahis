@@ -23,6 +23,11 @@ if str(TOOLS) not in sys.path:
 if str(ROOT / "scripts") not in sys.path:
     sys.path.insert(0, str(ROOT / "scripts"))
 
+from emperor_year_align import (  # noqa: E402
+    align_junji_entry_years,
+    build_emperor_indexes,
+    load_emperor_rows,
+)
 from import_box_index_json import (  # noqa: E402
     build_box_rows,
     ensure_emperor_refs,
@@ -76,13 +81,8 @@ def glbl_num(entry_id: str) -> int | None:
         return None
 
 
-def build_emperor_name_index() -> dict[str, dict]:
-    out: dict[str, dict] = {}
-    for row in load_json(EMPEROR_JSON):
-        name = str(row.get("帝王名称", "")).strip()
-        if name:
-            out[name] = row
-    return out
+def build_emperor_name_index() -> tuple[dict[str, dict], dict[str, dict]]:
+    return build_emperor_indexes(load_emperor_rows(EMPEROR_JSON))
 
 
 def validate_enriched_entries(entries: list[dict]) -> tuple[list[str], list[str]]:
@@ -114,7 +114,11 @@ def load_incremental_entries(id_min: int, id_max: int) -> list[dict]:
     return entries
 
 
-def normalize_entry(entry: dict, emperors: dict[str, dict]) -> dict:
+def normalize_entry(
+    entry: dict,
+    emperors_by_name: dict[str, dict],
+    emperors_by_id: dict[str, dict],
+) -> dict:
     e = deepcopy(entry)
     e.setdefault("母本著作", "朝代补全")
     e.setdefault("来源著作", ["朝代补全"])
@@ -131,16 +135,17 @@ def normalize_entry(entry: dict, emperors: dict[str, dict]) -> dict:
         e["帝王ID"] = JUNWANG_EMPEROR_ID.get(name, "")
 
     emp_name = str(e.get("四级帝王坐标") or "").strip()
-    emp_row = emperors.get(emp_name)
+    emp_row = emperors_by_name.get(emp_name)
     if emp_row and not e.get("帝王ID"):
         e["帝王ID"] = emp_row["帝王ID"]
         e["四级帝王坐标"] = emp_row["帝王名称"]
 
-    if emp_row:
-        if e.get("史略开始年") is None:
-            e["史略开始年"] = parse_year(emp_row.get("即位时间"))
-        if e.get("史略结束年") is None:
-            e["史略结束年"] = parse_year(emp_row.get("退位时间"))
+    e, _ = align_junji_entry_years(
+        e,
+        by_name=emperors_by_name,
+        by_id=emperors_by_id,
+        force=True,
+    )
 
     if e.get("史略开始年") is None:
         e["史略开始年"] = parse_year(e.get("峰值年"))
@@ -238,7 +243,7 @@ def main() -> int:
     parser.add_argument("--id-max", type=int, default=DEFAULT_ID_MAX)
     args = parser.parse_args()
 
-    emperors = build_emperor_name_index()
+    emperors_by_name, emperors_by_id = build_emperor_name_index()
     raw_entries = load_incremental_entries(args.id_min, args.id_max)
     if not raw_entries:
         print(f"未找到 GLBL_{args.id_min:05d}–{args.id_max:05d} 索引条目")
@@ -256,7 +261,7 @@ def main() -> int:
             f"{', '.join(missing_tag[:8])}{'…' if len(missing_tag) > 8 else ''}"
         )
 
-    entries = [normalize_entry(e, emperors) for e in raw_entries]
+    entries = [normalize_entry(e, emperors_by_name, emperors_by_id) for e in raw_entries]
     added, updated = merge_into_main_index(entries)
     print(
         f"本地索引合并: 新增 {added}，更新 {updated} "

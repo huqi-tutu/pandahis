@@ -1,0 +1,21 @@
+{
+  "schema": "dynasty-knowledge-anchor/v1",
+  "史略ID": "GLBL_00635",
+  "史料丰度": "S0",
+  "coverage_claims": [
+    {
+      "id": "c01",
+      "claim": "中康是夏朝第四代君主"
+    },
+    {
+      "id": "c02",
+      "claim": "中康继兄长太康之后成为夏后"
+    }
+  ],
+  "legend_facts": [],
+  "forbidden_inventions": [
+    "中康的具体在位年数",
+    "日食征伐羲和等具体事件",
+    "中康的政治措施与制度"
+  ]
+}

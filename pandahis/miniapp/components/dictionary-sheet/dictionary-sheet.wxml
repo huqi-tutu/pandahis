@@ -1,0 +1,29 @@
+<view wx:if="{{visible}}" class="dictionary-sheet" catchtap="onBackdropTap">
+  <view class="dictionary-sheet-card" catchtap="noop">
+    <view class="dictionary-sheet-header">
+      <text class="dictionary-sheet-title">读音</text>
+      <view class="dictionary-sheet-close" bindtap="onClose" aria-role="button" aria-label="关闭">
+        <text class="dictionary-sheet-close-icon">✕</text>
+      </view>
+    </view>
+
+    <view wx:if="{{loading}}" class="dictionary-sheet-state">
+      <text class="dictionary-sheet-state-text">正在查询</text>
+    </view>
+
+    <view wx:elif="{{errorText}}" class="dictionary-sheet-state">
+      <text class="dictionary-sheet-state-text">{{errorText}}</text>
+    </view>
+
+    <view wx:else class="dictionary-sheet-list">
+      <view
+        wx:for="{{entries}}"
+        wx:key="character"
+        class="dictionary-row"
+      >
+        <text class="dictionary-char">{{item.character}}</text>
+        <text class="dictionary-pinyin">{{item.displayPinyin}}</text>
+      </view>
+    </view>
+  </view>
+</view>

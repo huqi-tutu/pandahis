@@ -19,6 +19,12 @@ final class SwimTimeScale {
   static final int MAX_EDGE_EMPTY_GAP_RPX = 240;
   /** 远古大年份标签（如「-2698」）比刻度线更宽，标签间距单独保底。 */
   static final int MIN_LABEL_SPACING_RPX = 104;
+  /**
+   * 网格线/刻度线的最小像素间距。分段步长各自独立计算，相邻两段交界处可能各出
+   * 一根紧贴的候选线；即便文字标签会被碰撞检测隐藏，竖线本身仍会重复出现。
+   * 生成候选后做一次全局去重，保证任意两根竖线都不会近到看起来像"重复线"。
+   */
+  static final int MIN_GRID_SPACING_RPX = 56;
 
   private final int startYear;
   private final int endYear;
@@ -232,16 +238,23 @@ final class SwimTimeScale {
     }
     String fittedMode = fittedSegments.size() > 1 ? "segmented" : "linear";
     SwimTimeScale fittedScale = new SwimTimeScale(startYear, endYear, fittedSegments);
-    return fittedScale.toPlan(fittedSheetRpx, fittedMode);
+    return fittedScale.toPlan(fittedSheetRpx, fittedMode, this.segments);
   }
 
   private Plan toPlan(int sheetWidthRpx, String mode) {
-    List<UnitSwimMatrixDTO.AxisTick> ticks = new ArrayList<>();
-    List<UnitSwimMatrixDTO.GridLine> gridLines = new ArrayList<>();
+    return toPlan(sheetWidthRpx, mode, this.segments);
+  }
+
+  /**
+   * 生成刻度 / 网格线 / 分段信息。
+   *
+   * <p>{@code tickSegments} 是刻度步长的参照分段（未压缩前的粗分段，代表真实的
+   * 疏密节奏），与 {@code this.segments}（用于坐标映射、可能是压缩后的细分段）
+   * 解耦：分段拉伸继续负责横向布局，刻度改为按规则步长在真实像素密度上生成，
+   * 不再受任何分段边界强制打点，避免出现与拉伸细分段绑定的杂乱竖线。</p>
+   */
+  private Plan toPlan(int sheetWidthRpx, String mode, List<Segment> tickSegments) {
     List<UnitSwimMatrixDTO.TimeSegment> timeSegments = new ArrayList<>();
-
-    ticks.add(new UnitSwimMatrixDTO.AxisTick(HistoryYearFormat.label(startYear), "0.00%", true, false, false));
-
     for (Segment seg : segments) {
       timeSegments.add(new UnitSwimMatrixDTO.TimeSegment(
           seg.startYear(),
@@ -253,15 +266,18 @@ final class SwimTimeScale {
           seg.boxCount(),
           seg.dense()
       ));
+    }
 
-      if (seg.startYear() > startYear) {
-        String left = fmtPct(seg.leftPct());
-        ticks.add(new UnitSwimMatrixDTO.AxisTick(HistoryYearFormat.label(seg.startYear()), left, false, false, true));
-        gridLines.add(new UnitSwimMatrixDTO.GridLine(left, true));
-      }
+    List<Candidate> candidates = new ArrayList<>();
+    candidates.add(new Candidate(startYear, 0.0, true, false));
+
+    for (Segment seg : tickSegments) {
+      double leftPct = percentForYear(seg.startYear());
+      double rightPct = percentForYear(seg.endYear());
+      double effectiveWidthPct = Math.max(0.0, rightPct - leftPct);
 
       int segSpan = Math.max(1, seg.endYear() - seg.startYear());
-      int step = tickStep(segSpan, seg.widthPct(), sheetWidthRpx);
+      int step = tickStep(segSpan, effectiveWidthPct, sheetWidthRpx);
       int first = roundUpToStep(seg.startYear() + 1, step);
       for (int y = first; y < seg.endYear(); y += step) {
         double left = percentForYear(y);
@@ -269,24 +285,70 @@ final class SwimTimeScale {
           continue;
         }
         boolean hide = shouldHideTickLabel(y, seg.startYear(), seg.endYear(), step);
-        ticks.add(new UnitSwimMatrixDTO.AxisTick(HistoryYearFormat.label(y), fmtPct(left), false, hide, false));
-        gridLines.add(new UnitSwimMatrixDTO.GridLine(fmtPct(left), false));
+        candidates.add(new Candidate(y, left, false, hide));
       }
     }
 
+    List<Candidate> deduped = dedupeCloseCandidates(candidates, sheetWidthRpx);
+
+    List<UnitSwimMatrixDTO.AxisTick> ticks = new ArrayList<>(deduped.size());
+    List<UnitSwimMatrixDTO.GridLine> gridLines = new ArrayList<>(deduped.size() + 1);
+    for (Candidate c : deduped) {
+      String left = fmtPct(c.leftPct());
+      ticks.add(new UnitSwimMatrixDTO.AxisTick(HistoryYearFormat.label(c.year()), left, c.edgeStart(), c.hideLabel(), false));
+      gridLines.add(new UnitSwimMatrixDTO.GridLine(left, false));
+    }
+
+    gridLines.add(new UnitSwimMatrixDTO.GridLine("100.00%", false));
     ticks = resolveTickLabelCollisions(ticks, sheetWidthRpx);
     return new Plan(this, sheetWidthRpx, ticks, gridLines, timeSegments, mode);
   }
 
+  private record Candidate(int year, double leftPct, boolean edgeStart, boolean hideLabel) {}
+
   /**
-   * 标签像素间距不足时隐藏低优先级刻度，避免起点/段界等标签叠字。
-   * 优先级：起点 > 段界 > 普通刻度。
+   * 相邻分段各自计算步长，交界处可能各出一根紧贴的候选线；按像素排序后，
+   * 与前一条保留线间距小于 {@link #MIN_GRID_SPACING_RPX} 的候选直接丢弃，
+   * 保证任意两根竖线都有起码的呼吸间距，不会重复出现。
+   */
+  private static List<Candidate> dedupeCloseCandidates(List<Candidate> candidates, int sheetWidthRpx) {
+    if (candidates.size() <= 1) {
+      return candidates;
+    }
+    List<Candidate> sorted = new ArrayList<>(candidates);
+    sorted.sort(java.util.Comparator.comparingDouble(Candidate::leftPct));
+
+    double minGapPct = sheetWidthRpx <= 0 ? 0 : MIN_GRID_SPACING_RPX * 100.0 / sheetWidthRpx;
+    List<Candidate> kept = new ArrayList<>(sorted.size());
+    for (Candidate c : sorted) {
+      if (!kept.isEmpty()) {
+        Candidate last = kept.get(kept.size() - 1);
+        if (c.leftPct() - last.leftPct() < minGapPct) {
+          // 起点 / 有文字的刻度优先保留，避免被相邻段一个即将被隐藏文字的候选顶掉。
+          if (!c.edgeStart() && (last.edgeStart() || !last.hideLabel() || c.hideLabel())) {
+            continue;
+          }
+          kept.set(kept.size() - 1, c);
+          continue;
+        }
+      }
+      kept.add(c);
+    }
+    return kept;
+  }
+
+  /**
+   * 标签像素间距不足时隐藏低优先级刻度，避免起点/终点/普通刻度叠字。
+   *
+   * <p>终点年份由前端单独渲染在 100% 处（{@code swim.endLabel}），并不在
+   * {@code ticks} 列表中，因此这里额外注入一个虚拟占位参与碰撞判定 ——
+   * 它能让邻近的普通刻度让位，但本身永远不会被写回 {@code ticks}。</p>
    */
   private static List<UnitSwimMatrixDTO.AxisTick> resolveTickLabelCollisions(
       List<UnitSwimMatrixDTO.AxisTick> ticks,
       int sheetWidthRpx
   ) {
-    if (ticks.size() <= 1) {
+    if (ticks.isEmpty()) {
       return ticks;
     }
 
@@ -303,6 +365,9 @@ final class SwimTimeScale {
 
     slots.sort(java.util.Comparator.comparingDouble(slot -> slot.px));
     List<TickSlot> kept = new ArrayList<>();
+    TickSlot endAnchor = new TickSlot(-1, null, sheetWidthRpx, false);
+    kept.add(endAnchor);
+
     for (TickSlot slot : slots) {
       if (slot.hideLabel) {
         continue;
@@ -318,9 +383,12 @@ final class SwimTimeScale {
         kept.add(slot);
         continue;
       }
-      if (tickPriority(slot.tick) > tickPriority(conflict.tick)) {
-        conflict.hideLabel = true;
-        kept.remove(conflict);
+      int conflictPriority = conflict.tick == null ? 3 : tickPriority(conflict.tick);
+      if (tickPriority(slot.tick) > conflictPriority) {
+        if (conflict.tick != null) {
+          conflict.hideLabel = true;
+          kept.remove(conflict);
+        }
         kept.add(slot);
       } else {
         slot.hideLabel = true;
