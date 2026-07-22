@@ -106,16 +106,22 @@ def _normalize_body(body: str) -> str:
         ("走到大海边", "至于海"),
         ("分给百姓", "予众"),
         ("分给", "予"),
+        ("交给了", "传给"),
+        ("交给", "传给"),
+        ("授予", "传给"),
+        ("传给了", "传给"),
+        ("避居", "辟居"),
+        ("南面", "之阳"),
     ):
         body = body.replace(a, b)
     return body
 
 
-def _clause_scores(text: str, body: str) -> List[float]:
+def _clause_scores(text: str, body: str, *, include_generic: bool = False) -> List[float]:
     clauses = [c.strip() for c in re.split(r"[，。；]", text) if len(c.strip()) >= 3]
     scores: List[float] = []
     for clause in clauses:
-        keys = _keywords(clause, max_tokens=6)
+        keys = _keywords(clause, max_tokens=6, include_generic=include_generic)
         if keys:
             scores.append(_keyword_score(keys, body))
         else:
@@ -123,7 +129,32 @@ def _clause_scores(text: str, body: str) -> List[float]:
     return scores
 
 
-def _keywords(text: str, *, max_tokens: int = 8) -> List[str]:
+def _info_semantic_score(info: str, body_n: str) -> float:
+    """白话信息点：按子句验收义锚点（专名/动作词不过滤为泛词）。"""
+    clauses = [c.strip() for c in re.split(r"[，。；]", info) if len(c.strip()) >= 2]
+    if not clauses:
+        clauses = [info.strip()]
+    hits: List[float] = []
+    for clause in clauses:
+        anchors = _keywords(clause, max_tokens=12, include_generic=True)
+        singles = [
+            ch
+            for ch in clause
+            if "\u4e00" <= ch <= "\u9fff" and ch not in _STOP and len(anchors) < 3
+        ]
+        for ch in singles:
+            if ch not in anchors and ch not in _GENERIC:
+                anchors.append(ch)
+        if not anchors:
+            hits.append(1.0)
+            continue
+        hits.append(sum(1 for a in anchors if a in body_n) / len(anchors))
+    if not hits:
+        return 0.0
+    return max(sum(hits) / len(hits), min(hits) * 0.9)
+
+
+def _keywords(text: str, *, max_tokens: int = 8, include_generic: bool = False) -> List[str]:
     s = re.sub(r"[。，、；：「」『』《》\s'\"“”]", "", text)
     tokens: List[str] = []
     segments = re.split(r"[，。、；：]", text) if re.search(r"[，。、；：]", text) else [text]
@@ -142,7 +173,9 @@ def _keywords(text: str, *, max_tokens: int = 8) -> List[str]:
     out: List[str] = []
     seen: set[str] = set()
     for t in tokens:
-        if t in _STOP or t in _GENERIC:
+        if t in _STOP:
+            continue
+        if not include_generic and t in _GENERIC:
             continue
         if t not in seen:
             seen.add(t)
@@ -188,15 +221,15 @@ def _must_phrase_score(must_keys: List[str], body: str) -> float:
 
 
 def _score_baihua_info(info: str, body_n: str) -> List[float]:
-    scores: List[float] = []
-    clause_sc = _clause_scores(info, body_n)
+    scores: List[float] = [_info_semantic_score(info, body_n)]
+    clause_sc = _clause_scores(info, body_n, include_generic=True)
     if clause_sc:
         avg = sum(clause_sc) / len(clause_sc)
         good_ratio = sum(1 for s in clause_sc if s >= 0.28) / len(clause_sc)
         scores.append(max(avg, good_ratio * 0.9))
         scores.append(max(clause_sc))
     scores.append(_bigram_coverage(info, body_n))
-    scores.append(_keyword_score(_keywords(info, max_tokens=10), body_n))
+    scores.append(_keyword_score(_keywords(info, max_tokens=10, include_generic=True), body_n))
     return scores
 
 

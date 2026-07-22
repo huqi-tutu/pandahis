@@ -1,10 +1,13 @@
-/* 历史图谱 · 视觉设计规范 v2.0 — 设计令牌 */
+/* 历史图谱 · 视觉设计规范 v3.0 — 设计令牌
+ * 原则：墨色管操作 · 绢帛六色管数据 · 透明度管层次
+ */
 
 /* —— 主题 / 中性 —— */
-$accent-v5: #9b3e38;
-$theme-primary: #4a3f3f;
-$theme-accent: $accent-v5;
-$theme-on-primary: #ffffff;
+$theme-primary: #4a3f3f; /* 墨色：唯一品牌色（按钮 / Tab 高亮 / 选中态） */
+/* v3 起品牌层不再使用砖红，accent 统一指向墨色（保留变量名兼容旧引用） */
+$accent-v5: $theme-primary;
+$theme-accent: $theme-primary;
+$theme-on-primary: #fdfcfa;
 $page-bg: #f8f6f2;
 $card-bg: #ffffff;
 $divider: #edeae6;
@@ -20,36 +23,45 @@ $text-body: #6a6a6a;
 $text-caption: #8a8a8a;
 $text-time: #b0a89e;
 
-/* —— 朝代 6 色循环（规范 §3.1） —— */
-$dyn-c1: #84572f;
-$dyn-c1-border: #84572f;
-$dyn-c1-active: #f0e8e0;
+/* —— 朝代 6 色循环（规范 v3 §2「绢帛六色」）——
+ * solid：色条 / 徽章 / 描边；deep：小号文字；
+ * active：14% 叠纸底的标签底（预混不透明色，避免叠加变深）
+ */
+$dyn-c1: #a2734f; /* 赭石 · 暖 */
+$dyn-c1-border: #a2734f;
+$dyn-c1-deep: #7b573c;
+$dyn-c1-active: #ece4db;
 $dyn-c1-bar-text: #ffffff;
 
-$dyn-c2: #f1a805;
-$dyn-c2-border: #f1a805;
-$dyn-c2-active: #fff5e0;
-$dyn-c2-bar-text: #5a3a00;
+$dyn-c2: #63899c; /* 黛青 · 冷 */
+$dyn-c2-border: #63899c;
+$dyn-c2-deep: #4b6877;
+$dyn-c2-active: #e3e7e6;
+$dyn-c2-bar-text: #ffffff;
 
-$dyn-c3: #f2d6a1;
-$dyn-c3-border: #e0c088;
-$dyn-c3-active: #f5f0e0;
-$dyn-c3-bar-text: #6b5e3a;
+$dyn-c3: #b99d5b; /* 秋香 · 暖 */
+$dyn-c3-border: #b99d5b;
+$dyn-c3-deep: #8d7745;
+$dyn-c3-active: #efeadd;
+$dyn-c3-bar-text: #ffffff;
 
-$dyn-c4: #92ada4;
-$dyn-c4-border: #92ada4;
-$dyn-c4-active: #eaf0ea;
-$dyn-c4-bar-text: #3a4a3e;
+$dyn-c4: #9a798f; /* 藕合 · 冷 */
+$dyn-c4-border: #9a798f;
+$dyn-c4-deep: #755c6d;
+$dyn-c4-active: #ebe4e4;
+$dyn-c4-bar-text: #ffffff;
 
-$dyn-c5: #b3d9e0;
-$dyn-c5-border: #9abcc8;
-$dyn-c5-active: #edf4f8;
-$dyn-c5-bar-text: #3a5a6a;
+$dyn-c5: #7d8a6a; /* 苔绿 · 冷 */
+$dyn-c5-border: #7d8a6a;
+$dyn-c5-deep: #5f6951;
+$dyn-c5-active: #e7e7df;
+$dyn-c5-bar-text: #ffffff;
 
-$dyn-c6: #edd5c0;
-$dyn-c6-border: #d4b098;
-$dyn-c6-active: #f5eae4;
-$dyn-c6-bar-text: #6a4a3a;
+$dyn-c6: #a46a65; /* 绾红 · 暖 */
+$dyn-c6-border: #a46a65;
+$dyn-c6-deep: #7d514d;
+$dyn-c6-active: #ece2de;
+$dyn-c6-bar-text: #ffffff;
 
 $dyn-placeholder-dark: #2a2420;
 

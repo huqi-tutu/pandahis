@@ -1,23 +1,45 @@
 import { lookupDictionary, type DictionaryEntry } from '../../native-utils/dictionary'
+import {
+  computeDictionarySheetLayout,
+  type DictionarySheetLayout,
+} from '../../native-utils/dictionary-sheet-layout'
 
-type EntryVm = DictionaryEntry & {
+type EntryVm = {
+  displayCharacter: string
   displayPinyin: string
+  pinyin: string | null
 }
 
-function windowHeightPx(): number {
-  try {
-    const sys = wx.getSystemInfoSync()
-    return sys.windowHeight || 667
-  } catch {
-    return 667
-  }
+const HAN_CHAR_RE = /[\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFAFF]/
+
+const EMPTY_LAYOUT = computeDictionarySheetLayout(0)
+
+function extractHanChars(text: string): string[] {
+  return Array.from(text).filter((ch) => HAN_CHAR_RE.test(ch))
 }
 
-function toEntryVm(entry: DictionaryEntry): EntryVm {
+function toEntryVm(
+  entry: DictionaryEntry,
+  index: number,
+  fallbackChars: string[],
+): EntryVm {
+  const displayCharacter = String(entry.character || '').trim() || fallbackChars[index] || ''
   return {
-    ...entry,
+    displayCharacter,
     displayPinyin: entry.pinyin || '暂无读音',
+    pinyin: entry.pinyin,
   }
+}
+
+function toEntries(result: { entries?: DictionaryEntry[] }, query: string): EntryVm[] {
+  const fallbackChars = extractHanChars(query)
+  const raw = result.entries || []
+  if (raw.length > 0) {
+    return raw.map((entry, index) => toEntryVm(entry, index, fallbackChars))
+  }
+  return fallbackChars.map((ch, index) =>
+    toEntryVm({ character: ch, pinyin: null }, index, fallbackChars),
+  )
 }
 
 function formatDictionaryError(err: unknown): string {
@@ -46,7 +68,7 @@ Component({
     loading: false,
     errorText: '',
     entries: [] as EntryVm[],
-    cardMaxHeightPx: Math.floor(windowHeightPx() * 0.42),
+    layout: EMPTY_LAYOUT as DictionarySheetLayout,
   },
   observers: {
     'visible, query': function handleVisibleQuery(visible: boolean, query: string) {
@@ -55,6 +77,7 @@ Component({
           loading: false,
           errorText: '',
           entries: [],
+          layout: EMPTY_LAYOUT,
         })
         return
       }
@@ -64,6 +87,7 @@ Component({
           loading: false,
           errorText: '请先选中要查询的文字',
           entries: [],
+          layout: EMPTY_LAYOUT,
         })
         return
       }
@@ -83,13 +107,16 @@ Component({
         loading: true,
         errorText: '',
         entries: [],
+        layout: EMPTY_LAYOUT,
       })
       try {
         const result = await lookupDictionary(text)
-        const entries = (result.entries || []).map(toEntryVm)
+        const entries = toEntries(result, text)
+        const layout = computeDictionarySheetLayout(entries.length)
         this.setData({
           loading: false,
           entries,
+          layout,
           errorText: entries.length === 0 ? '未找到可查询的汉字' : '',
         })
       } catch (err: unknown) {
@@ -97,6 +124,7 @@ Component({
           loading: false,
           errorText: formatDictionaryError(err),
           entries: [],
+          layout: EMPTY_LAYOUT,
         })
       }
     },

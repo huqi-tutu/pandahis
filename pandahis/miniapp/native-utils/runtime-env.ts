@@ -12,11 +12,12 @@ export function isDevelopEnv(): boolean {
 
 export function isDevtoolsClient(): boolean {
   try {
-    const info = wx.getSystemInfoSync() as WechatMiniprogram.SystemInfo & {
-      host?: { env?: string }
-    }
-    if (info.platform === 'devtools') return true
-    if (info.host?.env === 'WeChatDevTools') return true
+    const device = wx.getDeviceInfo?.()
+    if (device?.platform === 'devtools') return true
+
+    const appBase = wx.getAppBaseInfo?.()
+    const hostEnv = (appBase as { host?: { env?: string } } | undefined)?.host?.env
+    if (hostEnv === 'WeChatDevTools') return true
   } catch {
     // ignore
   }

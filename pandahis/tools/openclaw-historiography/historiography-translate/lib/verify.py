@@ -13,6 +13,7 @@ from lib.source_text import build_source_original, source_original_fingerprint
 from lib.gloss_rules import detect_forbidden_gloss
 from lib.citation_mode import count_short_quote_density
 from lib.intro_overlap import intro_mother_overlap
+from lib.intro_tier import verify_intro_length
 from lib.attribution import detect_foreign_exit_in_opening
 
 _OPENCLAW_ROOT = Path(__file__).resolve().parents[2]
@@ -615,6 +616,9 @@ def verify_enrich_draft(
     errors.extend(_detect_dash_ending(detail))
     errors.extend(_detect_excessive_descriptive_refs(detail))
     if plan:
+        ok_len, len_msg = verify_intro_length(detail, plan)
+        if not ok_len:
+            errors.append(len_msg)
         errors.extend(intro_mother_overlap(detail, plan))
 
     return len(errors) == 0, errors
@@ -721,6 +725,9 @@ def verify_output(
         errors.extend(detect_foreign_exit_in_opening(detail, subject))
 
         if plan:
+            ok_len, len_msg = verify_intro_length(detail, plan)
+            if not ok_len:
+                errors.append(len_msg)
             errors.extend(intro_mother_overlap(detail, plan))
             errors.extend(_verify_plan_sources_in_detail(detail, plan))
             from lib.config import paths as _paths

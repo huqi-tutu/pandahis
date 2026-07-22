@@ -74,6 +74,18 @@ class TestCoverageVerify(unittest.TestCase):
         self.assertEqual(len(units), 1)
         self.assertEqual(units[0].kind, "group")
 
+    def test_qi_m001_short_sentence_paraphrase(self) -> None:
+        """启 M001：以天下授益 → 白话转述须命中，勿因泛词过滤误杀。"""
+        item = {
+            "编号": "M001",
+            "原文摘句": "以天下授益。",
+            "信息点": "禹将天下传给益。",
+            "必现词": [],
+        }
+        body = "禹在去世前，把天下交给了益。三年丧期一满，益主动让位……"
+        score = item_coverage_score(item, body)
+        self.assertGreaterEqual(score, 0.32, msg=f"score={score}")
+
     def test_verify_passes_reasonable_paraphrase(self) -> None:
         plan = {
             "母本逐句清单": [

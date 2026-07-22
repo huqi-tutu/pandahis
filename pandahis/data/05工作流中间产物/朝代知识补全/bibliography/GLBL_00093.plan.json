@@ -1,0 +1,109 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00093",
+  "写作结构": "正史叙述《史记·殷本纪》为基础，详细情节由翻译详录承担；拓展部分以《尚书·君奭》证巫贤为祖乙贤臣，以《竹书纪年》古本辑文补充祖乙迁都与殷复兴的史影；因史料极度匮乏，其余细节保持叙事留白，不虚构任何具体政令、对话与绝对年代。",
+  "候选著作": [
+    {
+      "出处": "《尚书·君奭》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "直接记载祖乙在位时的贤臣巫贤，早于《史记》且为同时期文献，可补《史记》之简。",
+      "检索词": "在祖乙 时则有若巫贤",
+      "采用": true,
+      "原文摘句": "在祖乙，时则有若巫贤。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《竹书纪年》（古本辑佚）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "提供祖乙迁都（居庇、迁邢）及殷道复兴的记载，印证并丰富“殷复兴”的史影。",
+      "检索词": "祖乙居庇 殷复兴",
+      "采用": true,
+      "原文摘句": "祖乙居庇。……祖乙之世，殷道复兴，号为中宗。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《今本竹书纪年》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "与古本内容重复，且年代不可信，仅作为后世述说保留。",
+      "检索词": "祖乙 元年 迁于耿",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "辑本中或有祖乙在位年数之说，属后人推算，不宜作为史实。",
+      "检索词": "祖乙 在位 十九年",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《尚书·君奭》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "直接记载祖乙在位时的贤臣巫贤，早于《史记》且为同时期文献，可补《史记》之简。",
+      "检索词": "在祖乙 时则有若巫贤",
+      "采用": true,
+      "原文摘句": "在祖乙，时则有若巫贤。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《竹书纪年》（古本辑佚）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "提供祖乙迁都（居庇、迁邢）及殷道复兴的记载，印证并丰富“殷复兴”的史影。",
+      "检索词": "祖乙居庇 殷复兴",
+      "采用": true,
+      "原文摘句": "祖乙居庇。……祖乙之世，殷道复兴，号为中宗。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《今本竹书纪年》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "与古本内容重复，且年代不可信，仅作为后世述说保留。",
+      "检索词": "祖乙 元年 迁于耿",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "辑本中或有祖乙在位年数之说，属后人推算，不宜作为史实。",
+      "检索词": "祖乙 在位 十九年",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

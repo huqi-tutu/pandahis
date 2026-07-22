@@ -95,6 +95,17 @@ def load_json(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def default_mysql_kwargs() -> dict[str, str | int]:
+    """与 cw.py import-* 子命令默认连接一致。"""
+    return {
+        "host": "49.235.165.220",
+        "port": 3306,
+        "user": "histomap_admin",
+        "password": "pandahis#666",
+        "db": "histomap",
+    }
+
+
 def execute_mysql(stmts: list[str], *, host: str, port: int, user: str, password: str, db: str) -> None:
     import pymysql  # type: ignore
 

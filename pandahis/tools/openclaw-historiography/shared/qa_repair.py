@@ -99,17 +99,35 @@ def classify_translate_failure(
             max_retries=2,
         )
 
+    if _has_any(e, ("引入过长", "硬上限400", "硬上限 400")):
+        return RepairPlan(
+            root_cause="INTRO_TOO_LONG",
+            disposition="retry_llm",
+            action="shorten_intro",
+            refine_scope="intro",
+            structured_prompt=(
+                "【根因：前置引入超长 — 须重写引入区】\n"
+                "引入区不得超过 400 字（建议 100–400）。请整段压缩引入：\n"
+                "1) 只保留出处、人物/时代定位等阅读框架，删除所有正文将写的事件；\n"
+                "2) 越短越好，概括精炼；末句一句过渡到母本（如「《史记·×本纪》这样记载——」）；\n"
+                "3) 勿用「原文如下」；勿保留上一轮超长引入的任何句子。\n"
+                "对照下方【原始错误】中的实际字数与引入区开头，针对性删减。"
+            ),
+            max_retries=2,
+        )
+
     if _has_any(e, ("前置引入", "引入重复", "intro", "开头与母本")):
         return RepairPlan(
             root_cause="INTRO_ISSUE",
-            disposition="refine_scope",
+            disposition="retry_llm" if fail_count < 2 else "refine_scope",
             action="refine_intro",
             refine_scope="intro",
             structured_prompt=(
-                "【根因：前置引入问题】\n"
-                "收窄 100–200 字引入：交代时代/人物定位，不重复母本首段字面。\n"
-                "勿元叙述、勿「正文不载」。"
+                "【根因：前置引入与母本开头重复】\n"
+                "收窄引入（建议 100–400 字，硬上限 400）：只写阅读框架与一句过渡，\n"
+                "不重复母本首段将写的身世/事件/专名簇。勿元叙述。"
             ),
+            max_retries=2,
         )
 
     if _has_any(e, ("归因", "attribution", "据《", "史书称")):

@@ -2,7 +2,7 @@
 
 .page-search {
   min-height: 100vh;
-  background: #faf7f3;
+  background: $page-bg;
   box-sizing: border-box;
 }
 
@@ -23,7 +23,7 @@
   height: 88rpx;
   padding: 0 32rpx;
   border-radius: 44rpx;
-  background: rgba(155, 62, 56, 0.08);
+  background: rgba(74, 63, 63, 0.06);
   box-sizing: border-box;
 }
 
@@ -37,7 +37,7 @@
 .search-input {
   flex: 1;
   font-size: 28rpx;
-  color: #2f2926;
+  color: $text-title;
   background: transparent;
   height: 88rpx;
   line-height: 88rpx;
@@ -77,7 +77,7 @@
 
 .search-tag {
   font-size: 26rpx;
-  color: #5c534c;
+  color: $text-body;
   letter-spacing: 1rpx;
   line-height: 1.4;
   padding: 8rpx 0;
@@ -85,9 +85,10 @@
 
 .search-tag--hot {
   padding: 12rpx 24rpx;
-  border-radius: 28rpx;
-  background: rgba(155, 62, 56, 0.1);
-  color: $accent-v5;
+  border-radius: 999rpx;
+  background: rgba(74, 63, 63, 0.06);
+  color: $theme-primary;
+  font-weight: 500;
 }
 
 /* ─── 历史记录 ─── */
@@ -96,7 +97,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 24rpx 0;
-  border-bottom: 1rpx solid rgba(101, 53, 49, 0.12);
+  border-bottom: 1rpx solid $divider;
 }
 
 .search-history-item:last-child {
@@ -106,13 +107,13 @@
 .search-history-text {
   flex: 1;
   font-size: 28rpx;
-  color: #5c534c;
+  color: $text-body;
   letter-spacing: 0.5rpx;
 }
 
 .search-history-del {
   font-size: 28rpx;
-  color: #c8c0b8;
+  color: $text-time;
   padding: 8rpx 0 8rpx 24rpx;
   flex-shrink: 0;
 }

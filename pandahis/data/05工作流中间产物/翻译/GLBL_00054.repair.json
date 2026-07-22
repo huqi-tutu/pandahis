@@ -1,0 +1,25 @@
+{
+  "schema": "qa_repair_ticket/v1",
+  "pipeline": "translate",
+  "entry_id": "GLBL_00054",
+  "entry_name": "小乙",
+  "stage": "verify",
+  "fail_count": 1,
+  "errors": [
+    "Phase2: 前置引入与母本开头重复（3处）: 帝小乙、子帝武丁、思复兴殷；引入应写阅读框架，不重复身世/品貌/早年。"
+  ],
+  "plan": {
+    "root_cause": "INTRO_ISSUE",
+    "disposition": "refine_scope",
+    "action": "refine_intro",
+    "structured_prompt": "【根因：前置引入问题】\n收窄 100–200 字引入：交代时代/人物定位，不重复母本首段字面。\n勿元叙述、勿「正文不载」。",
+    "refine_scope": "intro",
+    "route_to": "",
+    "next_command": "",
+    "invalidate": [],
+    "max_retries": 2,
+    "extra": {}
+  },
+  "feedback": "【根因：前置引入问题】\n收窄 100–200 字引入：交代时代/人物定位，不重复母本首段字面。\n勿元叙述、勿「正文不载」。\n\n---\n【原始错误】\nPhase2: 前置引入与母本开头重复（3处）: 帝小乙、子帝武丁、思复兴殷；引入应写阅读框架，不重复身世/品貌/早年。",
+  "updated_at": "2026-07-21T23:50:01Z"
+}

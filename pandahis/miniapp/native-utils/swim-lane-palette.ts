@@ -10,12 +10,15 @@ export type SwimLaneTone = {
   trackAlpha: number
 }
 
+/* 视觉规范 v3：与绢帛六色对齐（赭石/黛青/秋香/藕合/苔绿/绾红）；
+ * 类目固定色见 chip-badge-tokens.ts 的 CATEGORY_TONES */
 export const SWIM_LANE_PALETTE: SwimLaneTone[] = [
-  { solid: '#a74713', trackAlpha: LANE_TRACK_ALPHA },
-  { solid: '#6cb4a5', trackAlpha: LANE_TRACK_ALPHA },
-  { solid: '#e9d4af', trackAlpha: LANE_TRACK_ALPHA },
-  { solid: '#dd9b4b', trackAlpha: LANE_TRACK_ALPHA },
-  { solid: '#442b15', trackAlpha: LANE_TRACK_ALPHA },
+  { solid: '#a2734f', trackAlpha: LANE_TRACK_ALPHA },
+  { solid: '#63899c', trackAlpha: LANE_TRACK_ALPHA },
+  { solid: '#b99d5b', trackAlpha: LANE_TRACK_ALPHA },
+  { solid: '#9a798f', trackAlpha: LANE_TRACK_ALPHA },
+  { solid: '#7d8a6a', trackAlpha: LANE_TRACK_ALPHA },
+  { solid: '#a46a65', trackAlpha: LANE_TRACK_ALPHA },
 ]
 
 /** 竖排标题 + 进度条所需最小高度，避免标题区撑破轨道背景 */

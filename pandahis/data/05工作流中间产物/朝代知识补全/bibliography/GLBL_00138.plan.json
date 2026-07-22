@@ -1,0 +1,84 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00138",
+  "写作结构": "正史叙述见翻译详录；拓展文引用《竹书纪年》补充阳甲之名与都城，不作细节展开；其余事迹平淡，叙事留白。",
+  "候选著作": [
+    {
+      "出处": "《史记·卷三·殷本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载阳甲即位与殷衰，为本条目主要史料出处",
+      "检索词": "阳甲",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《竹书纪年·殷纪》辑本",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "载阳甲之名与都城，补《史记》未记之信息",
+      "检索词": "阳甲",
+      "采用": true,
+      "原文摘句": "帝阳甲，名和，居奄。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《帝王世纪》辑本",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "或记阳甲世系与在位年数",
+      "检索词": "阳甲",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·卷三·殷本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载阳甲即位与殷衰，为本条目主要史料出处",
+      "检索词": "阳甲",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《竹书纪年·殷纪》辑本",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "载阳甲之名与都城，补《史记》未记之信息",
+      "检索词": "阳甲",
+      "采用": true,
+      "原文摘句": "帝阳甲，名和，居奄。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《帝王世纪》辑本",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "或记阳甲世系与在位年数",
+      "检索词": "阳甲",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 1,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

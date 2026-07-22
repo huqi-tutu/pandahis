@@ -16,12 +16,14 @@ function isDevelopEnv() {
 }
 exports.isDevelopEnv = isDevelopEnv;
 function isDevtoolsClient() {
-    var _a;
+    var _a, _b, _c;
     try {
-        const info = wx.getSystemInfoSync();
-        if (info.platform === 'devtools')
+        const device = (_a = wx.getDeviceInfo) === null || _a === void 0 ? void 0 : _a.call(wx);
+        if ((device === null || device === void 0 ? void 0 : device.platform) === 'devtools')
             return true;
-        if (((_a = info.host) === null || _a === void 0 ? void 0 : _a.env) === 'WeChatDevTools')
+        const appBase = (_b = wx.getAppBaseInfo) === null || _b === void 0 ? void 0 : _b.call(wx);
+        const hostEnv = (_c = appBase === null || appBase === void 0 ? void 0 : appBase.host) === null || _c === void 0 ? void 0 : _c.env;
+        if (hostEnv === 'WeChatDevTools')
             return true;
     }
     catch {

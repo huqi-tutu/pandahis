@@ -14,7 +14,7 @@ $border: $divider;
 
 .hero-section {
   position: relative;
-  background: linear-gradient(145deg, rgba(155, 62, 56, 0.12) 0%, #faf7f3 60%);
+  background: linear-gradient(145deg, rgba(74, 63, 63, 0.06) 0%, $page-bg 60%);
   padding: 32rpx 32rpx 0;
   margin-bottom: 24rpx;
   overflow: hidden;
@@ -27,7 +27,7 @@ $border: $divider;
   width: 300rpx;
   height: 300rpx;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(155, 62, 56, 0.06) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(74, 63, 63, 0.04) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -47,9 +47,9 @@ $border: $divider;
   width: 128rpx;
   height: 128rpx;
   border-radius: 50%;
-  background: linear-gradient(135deg, $accent, #c4764a);
+  background: $theme-primary;
   border: none;
-  box-shadow: 0 4rpx 16rpx rgba(155, 62, 56, 0.3);
+  box-shadow: 0 4rpx 16rpx rgba(74, 63, 63, 0.22);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -76,7 +76,7 @@ $border: $divider;
   position: absolute;
   bottom: 0;
   right: -4rpx;
-  background: linear-gradient(135deg, #d6a84a, #f1a805);
+  background: $dyn-c3; /* 秋香：唯一的点缀色，去金色渐变 */
   color: #fff;
   font-size: 16rpx;
   font-weight: 700;
@@ -91,6 +91,7 @@ $border: $divider;
 
 .user-name {
   display: block;
+  font-family: $font-family-title;
   font-size: 40rpx;
   font-weight: 700;
   color: $text-main;
@@ -141,6 +142,7 @@ $border: $divider;
   font-size: 44rpx;
   font-weight: 700;
   line-height: 1;
+  font-variant-numeric: tabular-nums;
 }
 
 .stat-num.accent {
@@ -168,9 +170,9 @@ $border: $divider;
   justify-content: space-between;
   margin-bottom: 24rpx;
   padding: 24rpx;
-  background: linear-gradient(135deg, rgba(155, 62, 56, 0.06), rgba(214, 168, 74, 0.06));
-  border-radius: 20rpx;
-  border: 1rpx solid rgba(155, 62, 56, 0.12);
+  background: rgba(74, 63, 63, 0.04);
+  border-radius: 24rpx;
+  border: 1rpx solid $divider;
 }
 
 .vip-promo-left {
@@ -209,9 +211,9 @@ $border: $divider;
 .vip-card {
   margin-bottom: 24rpx;
   padding: 24rpx;
-  border-radius: 20rpx;
-  border: 1rpx solid rgba(155, 62, 56, 0.14);
-  background: linear-gradient(135deg, rgba(155, 62, 56, 0.07), rgba(214, 168, 74, 0.07));
+  border-radius: 24rpx;
+  border: 1rpx solid $divider;
+  background: rgba(74, 63, 63, 0.04);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -284,7 +286,7 @@ $border: $divider;
 }
 
 .menu-icon--share {
-  background: rgba(155, 62, 56, 0.08);
+  background: rgba(74, 63, 63, 0.06);
 }
 
 .menu-label {

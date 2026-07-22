@@ -1,0 +1,27 @@
+{
+  "schema": "qa_repair_ticket/v1",
+  "pipeline": "translate",
+  "entry_id": "GLBL_00045",
+  "entry_name": "太甲",
+  "stage": "verify_final",
+  "fail_count": 1,
+  "errors": [
+    "母本覆盖不足: 3/5 单元命中 (60% < 70%；单条及格线 32%)",
+    "  疑似漏译 M001 [30%] 帝外丙即位三年，崩，立外丙之弟中壬，是为帝中壬。",
+    "  疑似漏译 M002 [28%] 帝中壬即位四年，崩，伊尹乃立太丁之子太甲。"
+  ],
+  "plan": {
+    "root_cause": "COVERAGE_MISS",
+    "disposition": "retry_llm",
+    "action": "phase1_or_phase2_coverage_retry",
+    "structured_prompt": "【根因：母本句意覆盖不足】\n对照 plan 中未命中的 M 编号，在对应位置补译母本信息点；\n禁止用他书重复母本已述事实。",
+    "refine_scope": "full",
+    "route_to": "",
+    "next_command": "",
+    "invalidate": [],
+    "max_retries": 2,
+    "extra": {}
+  },
+  "feedback": "【根因：母本句意覆盖不足】\n对照 plan 中未命中的 M 编号，在对应位置补译母本信息点；\n禁止用他书重复母本已述事实。\n\n---\n【原始错误】\n母本覆盖不足: 3/5 单元命中 (60% < 70%；单条及格线 32%)\n  疑似漏译 M001 [30%] 帝外丙即位三年，崩，立外丙之弟中壬，是为帝中壬。\n  疑似漏译 M002 [28%] 帝中壬即位四年，崩，伊尹乃立太丁之子太甲。",
+  "updated_at": "2026-07-22T13:36:44Z"
+}

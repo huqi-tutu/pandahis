@@ -31,20 +31,7 @@ def sanitize_info_point(info: str, orig: str) -> str:
     return text
 
 
-def body_without_intro_zone(detail: str) -> str:
-    """剔除前置引入区（规则：引入不计入母本覆盖）。"""
-    body = detail.split("*参考著作*")[0].split("参考著作")[0]
-    paras = [p.strip() for p in body.split("\n\n") if p.strip()]
-    if not paras:
-        return body.strip()
-    zone_end = 0
-    for i, para in enumerate(paras[:3]):
-        zone_end = i + 1
-        if re.search(r"让我们|下面|来看一看|按下.*顺序|如何记载", para):
-            break
-    if zone_end < len(paras):
-        return "\n\n".join(paras[zone_end:]).strip()
-    return body.strip()
+from lib.intro_zone import body_without_intro_zone
 
 
 @dataclass(frozen=True)

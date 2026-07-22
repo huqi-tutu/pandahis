@@ -62,16 +62,24 @@ CIV_TABS.forEach(c => { CIV_ID_TO_NAME[c.id] = c.name })
 const regimeEra = require('./regime-era-layout.js')
 
 // ─── 朝代色（6 色按起始时间顺序轮流）──────────────────────────────
-// 视觉重构（Museum Minimalism / 低饱和暖灰）：六种低饱和浅色循环使用，
-// 每张卡片统一 180° 轻微渐变（亮度差约 3%），仅增加纸张质感，不改布局/形状。
+// 视觉规范 v3「绢帛六色」：赭石/黛青/秋香/藕合/苔绿/绾红，暖冷相间。
+// 色块底 = 本色 9%→12% 叠纸底（#F8F6F2）后的预混不透明色，
+// 预混（而非 rgba）是为了多段/L 形接缝处不产生叠色深线。
+// 每张卡片统一 180° 轻微渐变，仅增加纸张质感，不改布局/形状。
 // cardBg 为完整渐变串（wxml 以 background 渲染）；leftBorder 取暖灰点缀色。
 const ERA_COLORS = [
-  { cardBg: 'linear-gradient(180deg, #EDF5F1 0%, #E8F0EC 100%)', topColor: '#EDF5F1', tagBorder: '#9C9083', fill: '#E8F0EC', leftBorder: '#9C9083' },
-  { cardBg: 'linear-gradient(180deg, #F6F1E3 0%, #F1EBDC 100%)', topColor: '#F6F1E3', tagBorder: '#9C9083', fill: '#F1EBDC', leftBorder: '#9C9083' },
-  { cardBg: 'linear-gradient(180deg, #EEF2F9 0%, #E8EDF5 100%)', topColor: '#EEF2F9', tagBorder: '#9C9083', fill: '#E8EDF5', leftBorder: '#9C9083' },
-  { cardBg: 'linear-gradient(180deg, #F6ECEB 0%, #F0E5E4 100%)', topColor: '#F6ECEB', tagBorder: '#9C9083', fill: '#F0E5E4', leftBorder: '#9C9083' },
-  { cardBg: 'linear-gradient(180deg, #F2F0F8 0%, #ECE9F3 100%)', topColor: '#F2F0F8', tagBorder: '#9C9083', fill: '#ECE9F3', leftBorder: '#9C9083' },
-  { cardBg: 'linear-gradient(180deg, #EEF4F3 0%, #E8EFEE 100%)', topColor: '#EEF4F3', tagBorder: '#9C9083', fill: '#E8EFEE', leftBorder: '#9C9083' },
+  /* c1 赭石 #A2734F */
+  { cardBg: 'linear-gradient(180deg, #F0EAE3 0%, #EEE6DE 100%)', topColor: '#F0EAE3', tagBorder: '#9C9083', fill: '#EEE6DE', leftBorder: '#9C9083' },
+  /* c2 黛青 #63899C */
+  { cardBg: 'linear-gradient(180deg, #EBECEA 0%, #E6E9E8 100%)', topColor: '#EBECEA', tagBorder: '#9C9083', fill: '#E6E9E8', leftBorder: '#9C9083' },
+  /* c3 秋香 #B99D5B */
+  { cardBg: 'linear-gradient(180deg, #F2EEE4 0%, #F0EBE0 100%)', topColor: '#F2EEE4', tagBorder: '#9C9083', fill: '#F0EBE0', leftBorder: '#9C9083' },
+  /* c4 藕合 #9A798F */
+  { cardBg: 'linear-gradient(180deg, #F0EBE9 0%, #EDE7E6 100%)', topColor: '#F0EBE9', tagBorder: '#9C9083', fill: '#EDE7E6', leftBorder: '#9C9083' },
+  /* c5 苔绿 #7D8A6A */
+  { cardBg: 'linear-gradient(180deg, #EDECE6 0%, #E9E9E2 100%)', topColor: '#EDECE6', tagBorder: '#9C9083', fill: '#E9E9E2', leftBorder: '#9C9083' },
+  /* c6 绾红 #A46A65 */
+  { cardBg: 'linear-gradient(180deg, #F0E9E5 0%, #EEE5E1 100%)', topColor: '#F0E9E5', tagBorder: '#9C9083', fill: '#EEE5E1', leftBorder: '#9C9083' },
 ]
 
 // 时间轴永远展示这些朝代的开始年份 + 名称，不随选中文明改变
@@ -282,9 +290,9 @@ function mergeDynastyRecords(local, incoming) {
 // 二级（人物评价）：明君/暴君/贤君/昏君            → 中暖灰底白字
 // 三级（普通历史事件）：被废/禅让/战死/迁都/被杀/被俘 + 其余 → 浅暖灰底深字
 const TAG_TIER_STYLE = {
-  1: 'background-color:#6F6458;color:#FFFFFF;border:none;',
-  2: 'background-color:#9C9083;color:#FFFFFF;border:none;',
-  3: 'background-color:#ECE8E3;color:#6E665D;border:none;',
+  1: 'background-color:#4A3F3F;color:#FDFCFA;border:none;',
+  2: 'background-color:#8C817B;color:#FFFFFF;border:none;',
+  3: 'background-color:#ECE8E3;color:#5F5854;border:none;',
 }
 const TAG_TIER1_KEYWORDS = ['开国', '中兴', '统一', '一统', '亡国', '篡', '摄政']
 const TAG_TIER2_KEYWORDS = ['明君', '暴君', '贤君', '昏君']
@@ -2590,8 +2598,8 @@ function applyUnifiedEntryGradients(blocks) {
     const entryBottom = Math.max(...segs.map(s => s.top + s.h))
     const entryHeight = entryBottom - entryTop
     const ref = segs.find(s => s.gradientTop && s.gradientBottom) || segs[0]
-    const topColor = ref.gradientTop || '#EDF5F1'
-    const bottomColor = ref.gradientBottom || ref.fillColor || '#E8F0EC'
+    const topColor = ref.gradientTop || '#F0EAE3'
+    const bottomColor = ref.gradientBottom || ref.fillColor || '#EEE6DE'
 
     segs.forEach(seg => {
       seg.cardBg = buildSegmentGradientBg(

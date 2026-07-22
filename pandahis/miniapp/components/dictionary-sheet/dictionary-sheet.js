@@ -1,20 +1,27 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const dictionary_1 = require("../../native-utils/dictionary");
-function windowHeightPx() {
-    try {
-        const sys = wx.getSystemInfoSync();
-        return sys.windowHeight || 667;
-    }
-    catch {
-        return 667;
-    }
+const dictionary_sheet_layout_1 = require("../../native-utils/dictionary-sheet-layout");
+const HAN_CHAR_RE = /[\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFAFF]/;
+const EMPTY_LAYOUT = (0, dictionary_sheet_layout_1.computeDictionarySheetLayout)(0);
+function extractHanChars(text) {
+    return Array.from(text).filter((ch) => HAN_CHAR_RE.test(ch));
 }
-function toEntryVm(entry) {
+function toEntryVm(entry, index, fallbackChars) {
+    const displayCharacter = String(entry.character || '').trim() || fallbackChars[index] || '';
     return {
-        ...entry,
+        displayCharacter,
         displayPinyin: entry.pinyin || '暂无读音',
+        pinyin: entry.pinyin,
     };
+}
+function toEntries(result, query) {
+    const fallbackChars = extractHanChars(query);
+    const raw = result.entries || [];
+    if (raw.length > 0) {
+        return raw.map((entry, index) => toEntryVm(entry, index, fallbackChars));
+    }
+    return fallbackChars.map((ch, index) => toEntryVm({ character: ch, pinyin: null }, index, fallbackChars));
 }
 function formatDictionaryError(err) {
     const message = err instanceof Error ? err.message : '';
@@ -41,7 +48,7 @@ Component({
         loading: false,
         errorText: '',
         entries: [],
-        cardMaxHeightPx: Math.floor(windowHeightPx() * 0.42),
+        layout: EMPTY_LAYOUT,
     },
     observers: {
         'visible, query': function handleVisibleQuery(visible, query) {
@@ -50,6 +57,7 @@ Component({
                     loading: false,
                     errorText: '',
                     entries: [],
+                    layout: EMPTY_LAYOUT,
                 });
                 return;
             }
@@ -59,6 +67,7 @@ Component({
                     loading: false,
                     errorText: '请先选中要查询的文字',
                     entries: [],
+                    layout: EMPTY_LAYOUT,
                 });
                 return;
             }
@@ -78,13 +87,16 @@ Component({
                 loading: true,
                 errorText: '',
                 entries: [],
+                layout: EMPTY_LAYOUT,
             });
             try {
                 const result = await (0, dictionary_1.lookupDictionary)(text);
-                const entries = (result.entries || []).map(toEntryVm);
+                const entries = toEntries(result, text);
+                const layout = (0, dictionary_sheet_layout_1.computeDictionarySheetLayout)(entries.length);
                 this.setData({
                     loading: false,
                     entries,
+                    layout,
                     errorText: entries.length === 0 ? '未找到可查询的汉字' : '',
                 });
             }
@@ -93,6 +105,7 @@ Component({
                     loading: false,
                     errorText: formatDictionaryError(err),
                     entries: [],
+                    layout: EMPTY_LAYOUT,
                 });
             }
         },

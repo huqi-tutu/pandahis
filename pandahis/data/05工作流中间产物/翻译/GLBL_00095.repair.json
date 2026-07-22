@@ -1,0 +1,25 @@
+{
+  "schema": "qa_repair_ticket/v1",
+  "pipeline": "translate",
+  "entry_id": "GLBL_00095",
+  "entry_name": "祖甲",
+  "stage": "recall_thickness",
+  "fail_count": 0,
+  "errors": [
+    "史料原文合计仅15汉字（<100），禁止一期翻译；应走 merge 厚度门拒收 → 朝代知识补全（见 史料厚度门规则.md）"
+  ],
+  "plan": {
+    "root_cause": "THIN_SOURCE",
+    "disposition": "route_pipeline",
+    "action": "defer_to_dynasty_supplement",
+    "structured_prompt": "【根因：史料过薄，一期顺译不可行】\n该条目母本+补充合计 <100 汉字，禁止硬翻。\n请走朝代知识补全：帝王表强制 + 薄标注注册表 → 新 GLBL（母本著作=朝代补全）。\n勿再调用 translate run-one。",
+    "refine_scope": "",
+    "route_to": "dynasty_supplement",
+    "next_command": "dynasty_supplement.py --dynasty <朝代> --step candidates-renwu → fill-renwu → compose-detail（君王强制补全）",
+    "invalidate": [],
+    "max_retries": 2,
+    "extra": {}
+  },
+  "feedback": "【根因：史料过薄，一期顺译不可行】\n该条目母本+补充合计 <100 汉字，禁止硬翻。\n请走朝代知识补全：帝王表强制 + 薄标注注册表 → 新 GLBL（母本著作=朝代补全）。\n勿再调用 translate run-one。\n\n---\n【原始错误】\n史料原文合计仅15汉字（<100），禁止一期翻译；应走 merge 厚度门拒收 → 朝代知识补全（见 史料厚度门规则.md）",
+  "updated_at": "2026-07-21T23:47:48Z"
+}

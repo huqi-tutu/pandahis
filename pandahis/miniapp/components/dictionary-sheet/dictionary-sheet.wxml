@@ -1,7 +1,6 @@
 <view wx:if="{{visible}}" class="dictionary-sheet" catchtap="onBackdropTap">
   <view class="dictionary-sheet-card" catchtap="noop">
     <view class="dictionary-sheet-header">
-      <text class="dictionary-sheet-title">读音</text>
       <view class="dictionary-sheet-close" bindtap="onClose" aria-role="button" aria-label="关闭">
         <text class="dictionary-sheet-close-icon">✕</text>
       </view>
@@ -15,14 +14,33 @@
       <text class="dictionary-sheet-state-text">{{errorText}}</text>
     </view>
 
-    <view wx:else class="dictionary-sheet-list">
-      <view
-        wx:for="{{entries}}"
-        wx:key="character"
-        class="dictionary-row"
-      >
-        <text class="dictionary-char">{{item.character}}</text>
-        <text class="dictionary-pinyin">{{item.displayPinyin}}</text>
+    <view
+      wx:else
+      class="dictionary-sheet-body"
+      style="{{layout.layoutStyle}}"
+    >
+      <view class="dictionary-sheet-list">
+        <view
+          wx:for="{{entries}}"
+          wx:key="index"
+          class="pronounce-card"
+        >
+          <view class="pinyin-zone">
+            <view class="pinyin-lines" aria-hidden="true">
+              <view class="pinyin-line pinyin-line-edge"></view>
+              <view class="pinyin-line pinyin-line-inner"></view>
+              <view class="pinyin-line pinyin-line-inner"></view>
+              <view class="pinyin-line pinyin-line-edge"></view>
+            </view>
+            <text class="pinyin-text">{{item.displayPinyin}}</text>
+          </view>
+
+          <view class="char-grid-box">
+            <view class="grid-line grid-h" aria-hidden="true"></view>
+            <view class="grid-line grid-v" aria-hidden="true"></view>
+            <view class="char-text">{{item.displayCharacter}}</view>
+          </view>
+        </view>
       </view>
     </view>
   </view>

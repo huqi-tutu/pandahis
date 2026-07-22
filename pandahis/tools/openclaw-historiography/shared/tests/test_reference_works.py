@@ -10,7 +10,9 @@ sys.path.insert(0, str(ROOT))
 
 from reference_works import (  # noqa: E402
     attach_reference_section,
+    format_reference_section,
     merge_reference_works,
+    normalize_detail_references,
     reference_works_verify_issues,
 )
 
@@ -31,6 +33,28 @@ def test_attach_replaces_incomplete_tail():
     out = attach_reference_section(raw, entry, None)
     assert "逸周书" in out
     assert out.count("参考著作") == 1
+    assert "1. 《" in out
+
+
+def test_format_reference_section_numbered():
+    out = format_reference_section(["《史记·五帝本纪》", "《孟子·滕文公上》"])
+    assert out.startswith("参考著作：\n")
+    assert "1. 《史记·五帝本纪》" in out
+    assert "2. 《孟子·滕文公上》" in out
+    assert "*" not in out
+
+
+def test_normalize_legacy_dash_list():
+    raw = (
+        "正文。\n\n"
+        "*参考著作：*\n"
+        "- 《史记·五帝本纪》\n"
+        "- 《史记·封禅书》"
+    )
+    out = normalize_detail_references(raw)
+    assert "*参考著作" not in out
+    assert "1. 《史记·五帝本纪》" in out
+    assert "2. 《史记·封禅书》" in out
 
 
 def test_verify_catches_missing_body_ref():

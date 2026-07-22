@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>历史图谱 · 设计系统 v3.0 提案</title>
+<style>
+  /* ═══════════ 设计令牌 ═══════════ */
+  :root {
+    /* 品牌层 */
+    --ink:        #4A3F3F;
+    --ink-deep:   #3A3232;
+    --paper:      #F8F6F2;
+    --card:       #FFFFFF;
+    --divider:    #EDEAE6;
+
+    /* 文字层级 */
+    --text-1: #262626;
+    --text-2: #6A6A6A;
+    --text-3: #8A8A8A;
+    --text-4: #B0A89E;
+
+    /* 绢帛六色 · solid */
+    --c1: #A2734F;  /* 赭石 */
+    --c2: #63899C;  /* 黛青 */
+    --c3: #B99D5B;  /* 秋香 */
+    --c4: #9A798F;  /* 藕合 */
+    --c5: #7D8A6A;  /* 苔绿 */
+    --c6: #A46A65;  /* 绾红 */
+
+    /* 绢帛六色 · deep（小号文字用） */
+    --c1-deep: #7B573C;
+    --c2-deep: #4B6877;
+    --c3-deep: #8D7745;
+    --c4-deep: #755C6D;
+    --c5-deep: #5F6951;
+    --c6-deep: #7D514D;
+
+    /* 圆角 */
+    --r-sm: 4px;    /* 8rpx  小控件 */
+    --r-md: 6px;    /* 12rpx 按钮/标签 */
+    --r-lg: 12px;   /* 24rpx 卡片 */
+
+    /* 阴影 */
+    --shadow-1: 0 2px 8px rgba(74, 63, 63, 0.06);
+    --shadow-2: 0 4px 16px rgba(74, 63, 63, 0.10);
+
+    --serif: 'Noto Serif SC', 'Songti SC', 'STSong', serif;
+    --sans: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', system-ui, sans-serif;
+    --mono: 'SF Mono', 'Menlo', 'Roboto Mono', monospace;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    font-family: var(--sans);
+    color: var(--text-1);
+    line-height: 1.6;
+    padding: 64px 32px 96px;
+  }
+
+  .page { max-width: 1200px; margin: 0 auto; }
+
+  /* ═══════════ 页面骨架 ═══════════ */
+  .hero { margin-bottom: 64px; }
+  .hero-kicker {
+    font-size: 13px; letter-spacing: 4px; color: var(--text-3);
+    margin-bottom: 16px; font-weight: 500;
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: 40px; font-weight: 700; line-height: 1.2;
+    letter-spacing: 2px; margin-bottom: 16px;
+  }
+  .hero p { font-size: 15px; color: var(--text-2); max-width: 720px; }
+  .hero .scope { margin-top: 16px; font-size: 13px; color: var(--text-3); }
+  .hero .scope b { color: var(--ink); font-weight: 600; }
+
+  section { margin-bottom: 72px; }
+  .sec-head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 8px; }
+  .sec-num { font-family: var(--mono); font-size: 13px; color: var(--text-4); }
+  .sec-head h2 {
+    font-family: var(--serif);
+    font-size: 24px; font-weight: 700; letter-spacing: 1px;
+  }
+  .sec-desc { font-size: 14px; color: var(--text-2); margin-bottom: 32px; max-width: 720px; }
+
+  .grid { display: grid; gap: 24px; }
+  .cols-2 { grid-template-columns: repeat(2, 1fr); }
+  .cols-6 { grid-template-columns: repeat(6, 1fr); }
+  @media (max-width: 900px) {
+    .cols-6 { grid-template-columns: repeat(3, 1fr); }
+    .cols-2 { grid-template-columns: 1fr; }
+  }
+
+  .panel {
+    background: var(--card);
+    border-radius: var(--r-lg);
+    box-shadow: var(--shadow-1);
+    padding: 32px;
+  }
+
+  .label { font-size: 12px; color: var(--text-3); letter-spacing: 1px; margin-bottom: 16px; font-weight: 500; }
+  .hexcode { font-family: var(--mono); font-size: 11px; color: var(--text-3); }
+
+  /* ═══════════ 一、品牌层色彩 ═══════════ */
+  .swatch-row { display: flex; gap: 16px; }
+  .swatch { flex: 1; }
+  .swatch-chip { height: 72px; border-radius: var(--r-md); margin-bottom: 12px; }
+  .swatch-chip.bordered { border: 1px solid var(--divider); }
+  .swatch-name { font-size: 13px; font-weight: 600; }
+  .swatch-use { font-size: 12px; color: var(--text-3); margin-top: 2px; }
+
+  .removed .swatch-chip { position: relative; overflow: hidden; }
+  .removed .swatch-chip::after {
+    content: ''; position: absolute; left: -12%; top: 50%; width: 124%; height: 2px;
+    background: rgba(255,255,255,0.85); transform: rotate(-8deg);
+  }
+
+  /* ═══════════ 二、绢帛六色 ═══════════ */
+  .tone-solid { height: 88px; border-radius: var(--r-md) var(--r-md) 0 0; position: relative; }
+  .tone-temp {
+    position: absolute; top: 10px; right: 10px;
+    font-size: 10px; color: rgba(255,255,255,0.9);
+    border: 1px solid rgba(255,255,255,0.5);
+    padding: 1px 7px; border-radius: 999px;
+  }
+  .tone-tiers { border-radius: 0 0 var(--r-md) var(--r-md); overflow: hidden; }
+  .tone-tier { height: 36px; display: flex; align-items: center; padding: 0 12px; font-size: 11px; }
+  .tone-meta { padding: 12px 4px 0; }
+  .tone-name { font-family: var(--serif); font-size: 16px; font-weight: 700; }
+  .tone-era { font-size: 12px; color: var(--text-2); margin-top: 2px; }
+  .tone-note { font-size: 11px; color: var(--text-4); }
+
+  /* ═══════════ 三、字体字号 ═══════════ */
+  .type-row {
+    display: flex; align-items: baseline; gap: 32px;
+    padding: 20px 0; border-bottom: 1px solid var(--divider);
+  }
+  .type-row:last-child { border-bottom: none; }
+  .type-spec { width: 200px; flex-shrink: 0; }
+  .type-spec .t1 { font-family: var(--mono); font-size: 12px; color: var(--text-2); }
+  .type-spec .t2 { font-size: 11px; color: var(--text-4); margin-top: 2px; }
+
+  /* ═══════════ 四、圆角 / 阴影 ═══════════ */
+  .radius-demo { display: flex; gap: 24px; align-items: flex-end; }
+  .radius-box {
+    background: rgba(74, 63, 63, 0.08);
+    border: 1px solid rgba(74, 63, 63, 0.16);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; color: var(--text-2); text-align: center;
+  }
+  .shadow-demo { display: flex; gap: 24px; }
+  .shadow-box {
+    flex: 1; height: 96px; background: var(--card); border-radius: var(--r-lg);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; color: var(--text-2);
+  }
+
+  /* ═══════════ 五、组件 ═══════════ */
+  .comp-block { margin-bottom: 32px; }
+  .comp-block:last-child { margin-bottom: 0; }
+
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    height: 44px; padding: 0 32px; border-radius: var(--r-md);
+    font-size: 14px; font-weight: 600; letter-spacing: 1.5px;
+    cursor: pointer; transition: all 0.2s ease; border: none;
+  }
+  .btn-primary { background: var(--ink); color: #FDFCFA; box-shadow: 0 2px 8px rgba(74,63,63,0.22); }
+  .btn-primary:hover { background: var(--ink-deep); transform: translateY(-2px); }
+  .btn-ghost { background: rgba(74,63,63,0.07); color: var(--ink); }
+  .btn-ghost:hover { background: rgba(74,63,63,0.12); transform: translateY(-2px); }
+  .btn-text { background: transparent; color: var(--ink); padding: 0 16px; }
+
+  /* 文字 Tab · 下划线选中态 */
+  .txt-tabs { display: flex; gap: 28px; }
+  .txt-tab {
+    position: relative; font-size: 14px; color: var(--text-3);
+    padding: 6px 2px 10px; cursor: pointer; transition: color 0.2s ease;
+    white-space: nowrap;
+  }
+  .txt-tab:hover { color: var(--text-1); }
+  .txt-tab.on { color: var(--text-1); font-weight: 600; }
+  .txt-tab.on::after {
+    content: ''; position: absolute; left: 50%; transform: translateX(-50%);
+    bottom: 0; width: 22px; height: 2px; border-radius: 1px; background: var(--ink);
+  }
+
+  .tag {
+    display: inline-flex; align-items: center; height: 22px; padding: 0 10px;
+    border-radius: 999px; font-size: 11px; font-weight: 500;
+  }
+
+  .chip-person {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--card); border-radius: 999px; padding: 6px 8px 6px 14px;
+    box-shadow: var(--shadow-1);
+  }
+  .chip-person .name { font-size: 13px; font-weight: 600; color: #2F2A26; }
+
+  .searchbar {
+    display: flex; align-items: center; gap: 12px;
+    height: 44px; padding: 0 20px; border-radius: 22px;
+    background: rgba(74, 63, 63, 0.06); max-width: 400px;
+    color: var(--text-4); font-size: 14px;
+  }
+
+  .era-bar { display: flex; height: 28px; border-radius: var(--r-sm); overflow: hidden; max-width: 640px; }
+  .era-seg {
+    display: flex; align-items: center; justify-content: center;
+    font-size: 10px; font-weight: 600; color: rgba(255,255,255,0.95); letter-spacing: 1px;
+  }
+
+  /* ═══════════ 六、页面模拟 ═══════════ */
+  .phones { display: flex; gap: 48px; flex-wrap: wrap; justify-content: center; }
+  .phone-wrap { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+  .phone-cap { font-size: 12px; color: var(--text-3); letter-spacing: 2px; }
+  .phone {
+    width: 375px; background: var(--paper);
+    border-radius: 32px; overflow: hidden;
+    box-shadow: 0 8px 40px rgba(74, 63, 63, 0.14);
+    border: 1px solid var(--divider);
+  }
+  .phone-inner { height: 720px; overflow-y: auto; scrollbar-width: none; position: relative; }
+  .phone-inner::-webkit-scrollbar { display: none; }
+
+  .p-status { height: 24px; }
+  .p-nav {
+    display: flex; align-items: center; justify-content: center; position: relative;
+    height: 44px; padding: 0 20px;
+  }
+  .p-nav-title { font-size: 16px; font-weight: 600; letter-spacing: 2px; color: #2F2A26; }
+  .p-nav-back { position: absolute; left: 16px; font-size: 18px; color: var(--text-2); }
+  .p-nav-caps {
+    position: absolute; right: 12px; display: flex; align-items: center;
+    border: 1px solid var(--divider); background: var(--card); border-radius: 999px;
+    padding: 4px 12px; gap: 10px; font-size: 11px; color: var(--text-3);
+  }
+
+  /* 手机内的文字 Tab 栏（下划线选中态） */
+  .p-txt-tabs {
+    display: flex; gap: 22px; padding: 6px 16px 0; overflow: hidden;
+    border-bottom: 1px solid var(--divider);
+  }
+  .p-txt-tab {
+    position: relative; font-size: 13px; color: var(--text-3);
+    padding: 5px 1px 9px; white-space: nowrap;
+  }
+  .p-txt-tab.on { color: var(--text-1); font-weight: 600; }
+  .p-txt-tab.on::after {
+    content: ''; position: absolute; left: 50%; transform: translateX(-50%);
+    bottom: 0; width: 20px; height: 2px; border-radius: 1px; background: var(--ink);
+  }
+
+  /* ── 首页矩阵：左时间轴 + 右色块画布（结构不变，仅换色） ── */
+  .matrix { display: flex; position: relative; }
+  .time-col {
+    width: 44px; flex-shrink: 0; border-right: 1px solid #E7E1D8;
+    display: flex; flex-direction: column;
+  }
+  .time-cell { padding: 4px 4px 0 6px; }
+  .time-year { font-family: var(--mono); font-size: 8px; color: var(--text-4); letter-spacing: 0.5px; display: block; }
+  .time-name { font-size: 9px; color: var(--text-3); font-weight: 500; display: block; margin-top: 1px; }
+  .canvas-col { flex: 1; padding: 5px 20px 5px 6px; display: flex; flex-direction: column; gap: 8px; }
+
+  .dyn-block { border-radius: 8px; padding: 14px 14px 12px; }
+  .dyn-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .dyn-name { font-family: var(--serif); font-size: 16px; font-weight: 700; color: #2F2A26; letter-spacing: 1px; }
+  .dyn-time { font-size: 10px; color: var(--text-3); margin-top: 5px; font-variant-numeric: tabular-nums; letter-spacing: 0.5px; }
+
+  /* 展开态：帝王卡（同朝代同色，缝隙分隔——现状交互不变） */
+  .emp-stack { display: flex; flex-direction: column; gap: 6px; }
+  .emp-block { border-radius: 8px; padding: 10px 12px 9px; }
+  .emp-name { font-size: 13px; font-weight: 600; color: #2F2A26; }
+  .emp-time { font-size: 9px; color: var(--text-3); margin-top: 3px; font-variant-numeric: tabular-nums; }
+
+  /* 展开态：乱世容器 + 二级白卡（现状结构，仅容器换色） */
+  .container-block { border-radius: 8px; padding: 12px; }
+  .sub-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; margin-top: 10px; }
+  .sub-card {
+    background: rgba(255, 255, 255, 0.82);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.65);
+    border-radius: 6px; padding: 8px 6px; text-align: center;
+  }
+  .sub-card .sn { font-size: 11px; font-weight: 600; color: #2F2A26; }
+  .sub-card .st { font-size: 8px; color: var(--text-3); margin-top: 2px; font-variant-numeric: tabular-nums; }
+
+  /* 右缘朝代导航索引（保留现有交互） */
+  .right-rail {
+    position: absolute; right: 4px; top: 12px;
+    display: flex; flex-direction: column; gap: 5px; align-items: center;
+  }
+  .right-rail span { font-size: 8px; color: var(--text-4); }
+
+  /* Tab bar */
+  .p-tabbar {
+    display: flex; border-top: 1px solid var(--divider);
+    background: rgba(248, 246, 242, 0.96); padding: 10px 0 18px;
+  }
+  .p-tabbar .ti { flex: 1; text-align: center; font-size: 11px; color: var(--text-4); }
+  .p-tabbar .ti .ico { font-size: 20px; display: block; margin-bottom: 3px; opacity: 0.45; filter: grayscale(1); }
+  .p-tabbar .ti.on { color: var(--ink); font-weight: 700; }
+  .p-tabbar .ti.on .ico { opacity: 1; filter: none; }
+
+  /* ── 详情页 hero ── */
+  .hero-card {
+    background: var(--card); border-radius: 12px; padding: 18px; box-shadow: var(--shadow-1);
+    margin: 10px 12px 0;
+  }
+  .hero-title-row { display: flex; align-items: flex-start; gap: 12px; }
+  .hero-dyn { font-family: var(--serif); font-size: 34px; font-weight: 700; line-height: 1.1; }
+  .hero-meta { padding-top: 5px; flex: 1; }
+  .hero-path { font-size: 11px; color: var(--text-3); }
+  .hero-range { font-family: var(--mono); font-size: 10px; color: var(--text-4); margin-top: 2px; }
+  .hero-fav {
+    width: 36px; height: 36px; border-radius: 10px; background: rgba(74,63,63,0.05);
+    display: flex; align-items: center; justify-content: center; color: var(--text-3); font-size: 15px;
+  }
+  .hero-intro { font-size: 13px; color: var(--ink); line-height: 1.7; margin-top: 12px; }
+
+  .ruler { display: flex; justify-content: space-between; padding: 12px 20px 4px 46px; }
+  .ruler span { font-family: var(--mono); font-size: 9px; color: var(--text-4); }
+
+  /* ── 详情页平铺画布（保持现有交互：整片画布左右滑动） ── */
+  .flat-canvas { position: relative; height: 430px; margin-top: 4px; overflow: hidden; }
+  .grid-line { position: absolute; top: 0; bottom: 0; width: 1px; background: rgba(74, 63, 63, 0.05); }
+
+  /* 左缘类目轨（现状即有：细色条 + 竖排类目名） */
+  .cat-rail { position: absolute; left: 8px; width: 22px; display: flex; }
+  .cat-rail .rail-bar { width: 3px; border-radius: 999px; flex-shrink: 0; }
+  .cat-rail .rail-text {
+    writing-mode: vertical-lr; font-size: 9px; letter-spacing: 2px;
+    padding-left: 4px; font-weight: 600;
+  }
+  .cat-rail .rail-count { writing-mode: vertical-lr; font-size: 7px; opacity: 0.65; padding-left: 2px; }
+
+  .fc-chip {
+    position: absolute; display: inline-flex; align-items: center; gap: 6px;
+    background: var(--card); border-radius: 999px; padding: 5px 7px 5px 12px;
+    box-shadow: var(--shadow-1); white-space: nowrap;
+  }
+  .fc-chip .name { font-size: 12px; font-weight: 600; color: #2F2A26; }
+  .fc-chip .tag { height: 18px; font-size: 9px; padding: 0 8px; }
+
+  .more-pill {
+    position: absolute; font-size: 10px; color: var(--text-3);
+    background: rgba(74,63,63,0.05); border-radius: 999px; padding: 4px 12px;
+  }
+
+  .p-seg {
+    position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%);
+    display: inline-flex; gap: 4px; background: var(--card); border-radius: 999px;
+    padding: 4px; box-shadow: var(--shadow-2);
+  }
+  .p-seg span { font-size: 11px; padding: 4px 14px; border-radius: 999px; color: var(--text-3); }
+  .p-seg span.on { background: var(--ink); color: #FDFCFA; font-weight: 600; }
+
+  /* ── 搜索页 ── */
+  .p-sec-cap {
+    font-size: 11px; color: var(--text-3); letter-spacing: 2px;
+    margin: 20px 16px 12px; font-weight: 500;
+  }
+  .p-searchbar {
+    display: flex; align-items: center; gap: 10px;
+    height: 40px; margin: 12px 16px 0; padding: 0 16px;
+    border-radius: 20px; background: rgba(74, 63, 63, 0.06);
+    color: var(--text-4); font-size: 13px;
+  }
+  .hot-tags { display: flex; flex-wrap: wrap; gap: 10px; padding: 0 16px; }
+  .hot-tag {
+    font-size: 12px; color: var(--ink); background: rgba(74, 63, 63, 0.06);
+    padding: 6px 14px; border-radius: 999px;
+  }
+  .hot-tag.plain { background: transparent; color: var(--text-2); padding: 6px 2px; }
+  .hist-row {
+    display: flex; align-items: center; justify-content: space-between;
+    margin: 0 16px; padding: 13px 2px; border-bottom: 1px solid var(--divider);
+  }
+  .hist-row .t { font-size: 13px; color: var(--text-1); }
+  .hist-row .x { font-size: 13px; color: var(--text-4); }
+
+  /* ── 会员页 ── */
+  .vip-lead { font-size: 12px; color: var(--text-2); line-height: 1.7; padding: 14px 16px 2px; }
+  .plan-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; padding: 16px 12px 8px; }
+  .plan {
+    background: var(--card); border: 1px solid var(--divider); border-radius: 12px;
+    padding: 22px 6px 18px; text-align: center; position: relative;
+    box-shadow: var(--shadow-1);
+  }
+  .plan.sel { border-color: rgba(74, 63, 63, 0.35); background: rgba(74, 63, 63, 0.03); }
+  .plan-tag {
+    position: absolute; top: -9px; left: 50%; transform: translateX(-50%);
+    background: var(--ink); color: #FDFCFA; font-size: 9px; font-weight: 600;
+    padding: 2px 10px; border-radius: 999px; white-space: nowrap;
+  }
+  .plan-name { font-family: var(--serif); font-size: 17px; font-weight: 700; letter-spacing: 1px; }
+  .plan-way { font-size: 10px; color: var(--text-3); margin-top: 3px; }
+  .plan-price { font-family: var(--mono); font-size: 19px; font-weight: 700; margin-top: 12px; font-variant-numeric: tabular-nums; }
+  .benefit { display: flex; align-items: flex-start; gap: 8px; padding: 0 20px; font-size: 12px; color: var(--text-2); margin-bottom: 10px; line-height: 1.6; }
+  .benefit .dot { color: var(--ink); font-size: 10px; padding-top: 3px; }
+  .buy-bar {
+    position: absolute; left: 0; right: 0; bottom: 0;
+    background: var(--paper); border-top: 1px solid var(--divider);
+    padding: 10px 14px 20px;
+  }
+  .buy-meta { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; }
+  .buy-meta .l { font-size: 10px; color: var(--text-3); letter-spacing: 1px; }
+  .buy-meta .v { font-size: 12px; font-weight: 600; color: var(--text-1); }
+  .buy-btn {
+    height: 42px; border-radius: 6px; background: var(--ink); color: #FDFCFA;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; letter-spacing: 2px; font-weight: 600;
+  }
+
+  /* ── 我的页 ── */
+  .my-hero { display: flex; align-items: center; gap: 14px; padding: 22px 18px 18px; }
+  .my-avatar {
+    width: 58px; height: 58px; border-radius: 50%; position: relative; flex-shrink: 0;
+    background: rgba(74, 63, 63, 0.10); border: 1px solid rgba(74, 63, 63, 0.08);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--serif); font-size: 22px; font-weight: 700; color: var(--ink);
+  }
+  .vip-chip {
+    position: absolute; bottom: -3px; left: 50%; transform: translateX(-50%);
+    background: var(--c3); color: #FFFFFF; font-size: 8px; font-weight: 700;
+    padding: 1px 7px; border-radius: 999px; letter-spacing: 0.5px;
+  }
+  .my-name { font-family: var(--serif); font-size: 18px; font-weight: 700; }
+  .my-phone { font-size: 11px; color: var(--text-3); margin-top: 2px; }
+  .my-edit {
+    margin-left: auto; width: 32px; height: 32px; border-radius: 50%;
+    background: rgba(74, 63, 63, 0.06); display: flex; align-items: center; justify-content: center;
+    font-size: 13px; color: var(--text-2);
+  }
+  .stats-card {
+    background: var(--card); border-radius: 12px; margin: 0 12px;
+    display: flex; align-items: center; padding: 14px 0; box-shadow: var(--shadow-1);
+  }
+  .stat { flex: 1; text-align: center; }
+  .stat .n { font-size: 20px; font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums; }
+  .stat .l { font-size: 10px; color: var(--text-3); margin-top: 2px; }
+  .stat-div { width: 1px; height: 26px; background: var(--divider); }
+  .vip-banner {
+    margin: 10px 12px; background: rgba(185, 157, 91, 0.10); border-radius: 12px;
+    padding: 12px 14px; display: flex; align-items: center; gap: 10px;
+  }
+  .vip-banner .ic { font-size: 16px; color: var(--c3-deep); }
+  .vip-banner .tt { font-size: 12px; font-weight: 600; color: var(--c3-deep); }
+  .vip-banner .ds { font-size: 10px; color: var(--text-3); margin-top: 1px; }
+  .vip-banner .ar { margin-left: auto; color: var(--text-4); font-size: 12px; }
+  .menu-card { background: var(--card); border-radius: 12px; margin: 0 12px; box-shadow: var(--shadow-1); overflow: hidden; }
+  .menu-row {
+    display: flex; align-items: center; gap: 12px;
+    padding: 13px 14px; border-bottom: 1px solid var(--divider);
+  }
+  .menu-row:last-child { border-bottom: none; }
+  .menu-ico {
+    width: 30px; height: 30px; border-radius: 8px; background: rgba(74, 63, 63, 0.05);
+    display: flex; align-items: center; justify-content: center; font-size: 13px; color: var(--text-2);
+  }
+  .menu-lab { font-size: 13px; font-weight: 500; color: var(--text-1); }
+  .menu-ext { margin-left: auto; font-size: 11px; color: var(--text-3); }
+  .menu-ar { color: var(--text-4); font-size: 12px; }
+
+  .footer-note {
+    margin-top: 80px; padding-top: 24px; border-top: 1px solid var(--divider);
+    font-size: 12px; color: var(--text-4);
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ═══ 头部 ═══ -->
+  <div class="hero">
+    <div class="hero-kicker">HISTORY ATLAS · DESIGN SYSTEM v3.0</div>
+    <h1>历史图谱 设计系统提案</h1>
+    <p>墨色 #4A3F3F 为唯一品牌色；所有彩色收进「绢帛六色」母色板，变体一律由透明度阶叠加在纸底上生成。墨色管操作，六色管数据，透明度管层次。</p>
+    <p class="scope"><b>改造范围：只改视觉，不改交互。</b>字体 / 颜色 / 选中态 / 圆角 / 阴影按本规范替换；页面布局、时间轴、画布滑动、导航索引等交互结构一律保持现状。</p>
+  </div>
+
+  <!-- ═══ 一、品牌层 ═══ -->
+  <section>
+    <div class="sec-head"><span class="sec-num">01</span><h2>色彩分层 · 品牌层只留墨色</h2></div>
+    <p class="sec-desc">按钮、Tab 高亮、选中态、强调文字一律墨色或墨色透明度。砖红、绿色、高饱和金全部移除，彩色只出现在数据上。</p>
+    <div class="grid cols-2">
+      <div class="panel">
+        <div class="label">保 留 · 全 站 唯 一</div>
+        <div class="swatch-row">
+          <div class="swatch">
+            <div class="swatch-chip" style="background:var(--ink)"></div>
+            <div class="swatch-name">墨色</div>
+            <div class="hexcode">#4A3F3F</div>
+            <div class="swatch-use">按钮 / Tab / 选中态</div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-chip bordered" style="background:var(--paper)"></div>
+            <div class="swatch-name">纸底</div>
+            <div class="hexcode">#F8F6F2</div>
+            <div class="swatch-use">唯一页面底色</div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-chip bordered" style="background:var(--card)"></div>
+            <div class="swatch-name">卡纸</div>
+            <div class="hexcode">#FFFFFF</div>
+            <div class="swatch-use">卡片底</div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-chip" style="background:linear-gradient(to bottom, #262626 25%, #6A6A6A 25%, #6A6A6A 50%, #8A8A8A 50%, #8A8A8A 75%, #B0A89E 75%)"></div>
+            <div class="swatch-name">灰阶四级</div>
+            <div class="hexcode">262626 / 6A6A6A / 8A8A8A / B0A89E</div>
+            <div class="swatch-use">标题 / 正文 / 辅助 / 时间</div>
+          </div>
+        </div>
+      </div>
+      <div class="panel removed">
+        <div class="label">移 除 · 外 来 色</div>
+        <div class="swatch-row">
+          <div class="swatch">
+            <div class="swatch-chip" style="background:#9B3E38"></div>
+            <div class="swatch-name">砖红</div>
+            <div class="hexcode">#9B3E38</div>
+            <div class="swatch-use">导航胶囊 / 搜索 / 我的页</div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-chip" style="background:#2A7A5D"></div>
+            <div class="swatch-name">绿</div>
+            <div class="hexcode">#2A7A5D</div>
+            <div class="swatch-use">首页加载点</div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-chip" style="background:#F1A805"></div>
+            <div class="swatch-name">高饱和金</div>
+            <div class="hexcode">#F1A805</div>
+            <div class="swatch-use">朝代色 / VIP 徽章</div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-chip" style="background:#6CB4A5"></div>
+            <div class="swatch-name">薄荷绿</div>
+            <div class="hexcode">#6CB4A5</div>
+            <div class="swatch-use">泳道 2 号色</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 二、绢帛六色 ═══ -->
+  <section>
+    <div class="sec-head"><span class="sec-num">02</span><h2>绢帛六色 · 母色板</h2></div>
+    <p class="sec-desc">六色统一在饱和度 20–34%、明度 48–56% 区间，冷暖交替排列。每色只定义 solid 与 deep 两个实色，其余变体由透明度阶（28% / 14% / 8%）叠在纸底上生成——首页与详情页因此天然同源。</p>
+    <div class="panel" style="background:var(--paper); box-shadow:none; border:1px solid var(--divider);">
+      <div class="grid cols-6">
+
+        <div>
+          <div class="tone-solid" style="background:var(--c1)"><span class="tone-temp">暖</span></div>
+          <div class="tone-tiers">
+            <div class="tone-tier" style="background:rgba(162,115,79,0.28); color:var(--c1-deep)">28% 重底</div>
+            <div class="tone-tier" style="background:rgba(162,115,79,0.14); color:var(--c1-deep)">14% 标签底</div>
+            <div class="tone-tier" style="background:rgba(162,115,79,0.08); color:var(--c1-deep)">8% 大面积底</div>
+          </div>
+          <div class="tone-meta">
+            <div class="tone-name">赭石</div>
+            <div class="hexcode">#A2734F · deep #7B573C</div>
+            <div class="tone-era">先秦 · 明</div>
+            <div class="tone-note">黄土与青铜</div>
+          </div>
+        </div>
+
+        <div>
+          <div class="tone-solid" style="background:var(--c2)"><span class="tone-temp">冷</span></div>
+          <div class="tone-tiers">
+            <div class="tone-tier" style="background:rgba(99,137,156,0.28); color:var(--c2-deep)">28% 重底</div>
+            <div class="tone-tier" style="background:rgba(99,137,156,0.14); color:var(--c2-deep)">14% 标签底</div>
+            <div class="tone-tier" style="background:rgba(99,137,156,0.08); color:var(--c2-deep)">8% 大面积底</div>
+          </div>
+          <div class="tone-meta">
+            <div class="tone-name">黛青</div>
+            <div class="hexcode">#63899C · deep #4B6877</div>
+            <div class="tone-era">秦汉 · 清</div>
+            <div class="tone-note">秦尚玄 · 水德</div>
+          </div>
+        </div>
+
+        <div>
+          <div class="tone-solid" style="background:var(--c3)"><span class="tone-temp">暖</span></div>
+          <div class="tone-tiers">
+            <div class="tone-tier" style="background:rgba(185,157,91,0.28); color:var(--c3-deep)">28% 重底</div>
+            <div class="tone-tier" style="background:rgba(185,157,91,0.14); color:var(--c3-deep)">14% 标签底</div>
+            <div class="tone-tier" style="background:rgba(185,157,91,0.08); color:var(--c3-deep)">8% 大面积底</div>
+          </div>
+          <div class="tone-meta">
+            <div class="tone-name">秋香</div>
+            <div class="hexcode">#B99D5B · deep #8D7745</div>
+            <div class="tone-era">三国 · 魏晋</div>
+            <div class="tone-note">枯淡 · 名士</div>
+          </div>
+        </div>
+
+        <div>
+          <div class="tone-solid" style="background:var(--c4)"><span class="tone-temp">冷</span></div>
+          <div class="tone-tiers">
+            <div class="tone-tier" style="background:rgba(154,121,143,0.28); color:var(--c4-deep)">28% 重底</div>
+            <div class="tone-tier" style="background:rgba(154,121,143,0.14); color:var(--c4-deep)">14% 标签底</div>
+            <div class="tone-tier" style="background:rgba(154,121,143,0.08); color:var(--c4-deep)">8% 大面积底</div>
+          </div>
+          <div class="tone-meta">
+            <div class="tone-name">藕合</div>
+            <div class="hexcode">#9A798F · deep #755C6D</div>
+            <div class="tone-era">隋唐 · 五代</div>
+            <div class="tone-note">唐人尚紫</div>
+          </div>
+        </div>
+
+        <div>
+          <div class="tone-solid" style="background:var(--c5)"><span class="tone-temp">冷</span></div>
+          <div class="tone-tiers">
+            <div class="tone-tier" style="background:rgba(125,138,106,0.28); color:var(--c5-deep)">28% 重底</div>
+            <div class="tone-tier" style="background:rgba(125,138,106,0.14); color:var(--c5-deep)">14% 标签底</div>
+            <div class="tone-tier" style="background:rgba(125,138,106,0.08); color:var(--c5-deep)">8% 大面积底</div>
+          </div>
+          <div class="tone-meta">
+            <div class="tone-name">苔绿</div>
+            <div class="hexcode">#7D8A6A · deep #5F6951</div>
+            <div class="tone-era">宋 · 辽金西夏</div>
+            <div class="tone-note">宋瓷青釉</div>
+          </div>
+        </div>
+
+        <div>
+          <div class="tone-solid" style="background:var(--c6)"><span class="tone-temp">暖</span></div>
+          <div class="tone-tiers">
+            <div class="tone-tier" style="background:rgba(164,106,101,0.28); color:var(--c6-deep)">28% 重底</div>
+            <div class="tone-tier" style="background:rgba(164,106,101,0.14); color:var(--c6-deep)">14% 标签底</div>
+            <div class="tone-tier" style="background:rgba(164,106,101,0.08); color:var(--c6-deep)">8% 大面积底</div>
+          </div>
+          <div class="tone-meta">
+            <div class="tone-name">绾红</div>
+            <div class="hexcode">#A46A65 · deep #7D514D</div>
+            <div class="tone-era">元</div>
+            <div class="tone-note">绛纱之色</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 三、字体字号 ═══ -->
+  <section>
+    <div class="sec-head"><span class="sec-num">03</span><h2>字体与字号 · 双字体 + 八级音阶</h2></div>
+    <p class="sec-desc">衬线体只用于「朝代名 / 页面大标题」层级（全站一致，包括首页矩阵）；正文一律 PingFang SC；数字统一 tabular-nums。字号收敛为固定八级，不再出现音阶外的字号。</p>
+    <div class="panel">
+      <div class="type-row">
+        <div class="type-spec"><div class="t1">Display · 64rpx / 32px</div><div class="t2">Noto Serif SC 700 · 详情页朝代名</div></div>
+        <div style="font-family:var(--serif); font-size:32px; font-weight:700; letter-spacing:2px;">西汉 · 大一统</div>
+      </div>
+      <div class="type-row">
+        <div class="type-spec"><div class="t1">H1 · 40rpx / 20px</div><div class="t2">Noto Serif SC 700 · 页面标题</div></div>
+        <div style="font-family:var(--serif); font-size:20px; font-weight:700; letter-spacing:1px;">历史图谱 · 会员中心</div>
+      </div>
+      <div class="type-row">
+        <div class="type-spec"><div class="t1">H2 · 32rpx / 16px</div><div class="t2">PingFang SC 600 · 区块标题 / 导航</div></div>
+        <div style="font-size:16px; font-weight:600; letter-spacing:1px;">高级权限包含</div>
+      </div>
+      <div class="type-row">
+        <div class="type-spec"><div class="t1">Body · 28rpx / 14px</div><div class="t2">PingFang SC 400 · 正文 / 输入框</div></div>
+        <div style="font-size:14px; color:var(--text-2);">西汉由刘邦建立，定都长安，承接秦末乱世，开创大一统盛世格局。</div>
+      </div>
+      <div class="type-row">
+        <div class="type-spec"><div class="t1">Sub · 24rpx / 12px</div><div class="t2">PingFang SC 400 · 辅助说明</div></div>
+        <div style="font-size:12px; color:var(--text-2);">会员有效期内评述、见证、原文免扣阅读点</div>
+      </div>
+      <div class="type-row">
+        <div class="type-spec"><div class="t1">Caption · 22rpx / 11px</div><div class="t2">PingFang SC 500 · 区块小标 / 标签</div></div>
+        <div style="font-size:11px; color:var(--text-3); letter-spacing:2px; font-weight:500;">热门搜索 · 历史记录</div>
+      </div>
+      <div class="type-row">
+        <div class="type-spec"><div class="t1">Micro · 20rpx / 10px</div><div class="t2">PingFang SC 500 · 事件标签内文字</div></div>
+        <div><span class="tag" style="background:rgba(162,115,79,0.14); color:var(--c1-deep); font-size:10px;">斩蛇起义</span></div>
+      </div>
+      <div class="type-row">
+        <div class="type-spec"><div class="t1">Num · 18rpx / 9px</div><div class="t2">tabular-nums · 时间轴刻度</div></div>
+        <div style="font-family:var(--mono); font-size:9px; color:var(--text-4); letter-spacing:1px;">-202&nbsp;&nbsp;&nbsp;-195&nbsp;&nbsp;&nbsp;-190&nbsp;&nbsp;&nbsp;-185&nbsp;&nbsp;&nbsp;-180</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 四、圆角 / 阴影 ═══ -->
+  <section>
+    <div class="sec-head"><span class="sec-num">04</span><h2>圆角与阴影 · 三级圆角、两级阴影</h2></div>
+    <p class="sec-desc">全站圆角只允许三个值：8rpx（小控件）、12rpx（按钮 / 标签 / 输入框）、24rpx（卡片）；胶囊用 999。阴影只有轻、中两级，色相带一点墨色的暖调。</p>
+    <div class="grid cols-2">
+      <div class="panel">
+        <div class="label">圆 角</div>
+        <div class="radius-demo">
+          <div class="radius-box" style="width:88px; height:88px; border-radius:4px;">8rpx<br>小控件</div>
+          <div class="radius-box" style="width:88px; height:88px; border-radius:6px;">12rpx<br>按钮标签</div>
+          <div class="radius-box" style="width:88px; height:88px; border-radius:12px;">24rpx<br>卡片</div>
+          <div class="radius-box" style="width:132px; height:44px; border-radius:999px;">999 胶囊</div>
+        </div>
+      </div>
+      <div class="panel" style="background:var(--paper); border:1px solid var(--divider); box-shadow:none;">
+        <div class="label">阴 影</div>
+        <div class="shadow-demo">
+          <div class="shadow-box" style="box-shadow:var(--shadow-1);">轻 · 0 2px 8px 6%</div>
+          <div class="shadow-box" style="box-shadow:var(--shadow-2);">中 · 0 4px 16px 10%</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 五、组件 ═══ -->
+  <section>
+    <div class="sec-head"><span class="sec-num">05</span><h2>基础组件</h2></div>
+    <p class="sec-desc">操作类组件只用墨色系；数据类标签从绢帛六色派生（14% 底 + deep 深字）。文明 / 朝代切换 Tab 一律「文字 + 下划横线」，不再用实底胶囊，避免选中项在画面里过重。</p>
+    <div class="panel">
+      <div class="comp-block">
+        <div class="label">文 字 Tab · 下 划 线 选 中 态（首页文明切换 / 详情页跨文明切换）</div>
+        <div class="txt-tabs" style="border-bottom:1px solid var(--divider); max-width:560px;">
+          <span class="txt-tab on">华夏</span>
+          <span class="txt-tab">朝鲜</span>
+          <span class="txt-tab">日本</span>
+          <span class="txt-tab">东南亚</span>
+          <span class="txt-tab">中亚</span>
+          <span class="txt-tab">北亚游牧</span>
+        </div>
+      </div>
+      <div class="comp-block">
+        <div class="label">按 钮</div>
+        <div style="display:flex; gap:16px; align-items:center; flex-wrap:wrap;">
+          <button class="btn btn-primary">确认开通</button>
+          <button class="btn btn-ghost">稍后再说</button>
+          <button class="btn btn-text">查看全部 ›</button>
+        </div>
+      </div>
+      <div class="comp-block">
+        <div class="label">数 据 标 签 · 六 色 14% 底 + 深 字</div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <span class="tag" style="background:rgba(162,115,79,0.14); color:var(--c1-deep);">大禹治水</span>
+          <span class="tag" style="background:rgba(99,137,156,0.14); color:var(--c2-deep);">甲骨文</span>
+          <span class="tag" style="background:rgba(185,157,91,0.14); color:var(--c3-deep);">商鞅变法</span>
+          <span class="tag" style="background:rgba(154,121,143,0.14); color:var(--c4-deep);">贞观之治</span>
+          <span class="tag" style="background:rgba(125,138,106,0.14); color:var(--c5-deep);">澶渊之盟</span>
+          <span class="tag" style="background:rgba(164,106,101,0.14); color:var(--c6-deep);">行省制度</span>
+        </div>
+      </div>
+      <div class="comp-block">
+        <div class="label">人 物 条 目 · 名 + 事 略 标 签（详情页画布，标签色 = 所属史略类目色）</div>
+        <div style="display:flex; gap:12px; flex-wrap:wrap; background:var(--paper); border-radius:12px; padding:20px;">
+          <span class="chip-person"><span class="name">汉高祖</span><span class="tag" style="background:rgba(162,115,79,0.14); color:var(--c1-deep);">斩蛇起义</span></span>
+          <span class="chip-person"><span class="name">吕太后</span><span class="tag" style="background:rgba(185,157,91,0.14); color:var(--c3-deep);">临朝称制</span></span>
+          <span class="chip-person"><span class="name">张良</span><span class="tag" style="background:rgba(154,121,143,0.14); color:var(--c4-deep);">运筹帷幄</span></span>
+          <span class="chip-person"><span class="name">贾谊</span><span class="tag" style="background:rgba(125,138,106,0.14); color:var(--c5-deep);">治安之策</span></span>
+        </div>
+      </div>
+      <div class="comp-block">
+        <div class="label">搜 索 框 · 墨 色 6% 底</div>
+        <div class="searchbar"><span>&#9906;</span> 年代 / 人物 / 事件</div>
+      </div>
+      <div class="comp-block">
+        <div class="label">年 代 条 · 六 色 solid + 白 字</div>
+        <div class="era-bar">
+          <span class="era-seg" style="background:var(--c1); flex:1.5;">先秦</span>
+          <span class="era-seg" style="background:var(--c2); flex:1;">秦汉</span>
+          <span class="era-seg" style="background:var(--c3); flex:1;">三国</span>
+          <span class="era-seg" style="background:var(--c4); flex:1.2;">隋唐</span>
+          <span class="era-seg" style="background:var(--c5); flex:0.9;">宋</span>
+          <span class="era-seg" style="background:var(--c6); flex:0.5;">元</span>
+          <span class="era-seg" style="background:var(--c1); flex:0.6;">明</span>
+          <span class="era-seg" style="background:var(--c2); flex:0.6;">清</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 六、页面模拟 ═══ -->
+  <section>
+    <div class="sec-head"><span class="sec-num">06</span><h2>页面模拟 · 五个核心页，布局与交互完全不动，只换色</h2></div>
+    <p class="sec-desc">首页保留左侧时间轴刻度列、右缘朝代导航索引与「收起 / 展开」交互：收起态一个朝代一张色块；展开态帝王卡纵向堆叠，同朝代所有帝王共用该朝代的时代色（8% 底），卡与卡之间靠纸底缝隙分隔；乱世容器（春秋 / 战国 / 三国 / 南北朝）保持「一级容器色 + 二级中性白卡」结构，白卡不带色相、压在容器淡色上对比更清晰。详情页保留现有平铺画布与左右滑动，仅左缘类目细条与事略标签换成绢帛六色；搜索 / 会员 / 我的三页去掉全部砖红与金色渐变，操作元素统一墨色系。</p>
+    <div class="phones">
+
+      <!-- ── 首页 ── -->
+      <div class="phone-wrap">
+        <div class="phone">
+          <div class="phone-inner">
+            <div class="p-status"></div>
+            <div class="p-nav">
+              <span class="p-nav-title" style="font-family:var(--serif); letter-spacing:3px;">历史图谱</span>
+              <span class="p-nav-caps">●●● &nbsp;|&nbsp; ◎</span>
+            </div>
+            <div class="p-txt-tabs">
+              <span class="p-txt-tab on">华夏</span><span class="p-txt-tab">朝鲜</span><span class="p-txt-tab">日本</span><span class="p-txt-tab">东南亚</span><span class="p-txt-tab">中亚</span><span class="p-txt-tab">北亚游牧</span>
+            </div>
+
+            <div class="matrix">
+              <div class="time-col">
+                <div class="time-cell" style="height:112px;"><span class="time-year">-2698</span><span class="time-name">五帝 ▴</span></div>
+                <div class="time-cell" style="height:128px;"><span class="time-year">-2070</span><span class="time-name">夏 ▴</span></div>
+                <div class="time-cell" style="height:140px;"><span class="time-year">-1600</span><span class="time-name">商 ▴</span></div>
+                <div class="time-cell" style="height:108px;"><span class="time-year">-1046</span><span class="time-name">西周 ▴</span></div>
+                <div class="time-cell" style="height:108px;"><span class="time-year">-770</span><span class="time-name">春秋 ▴</span></div>
+                <div class="time-cell" style="height:124px;"><span class="time-year">-475</span><span class="time-name">战国 ▴</span></div>
+              </div>
+              <div class="canvas-col">
+                <div class="dyn-block" style="background:rgba(162,115,79,0.09); height:104px;">
+                  <div class="dyn-head"><span class="dyn-name">五帝</span></div>
+                  <div class="dyn-time">约 -2698 — 约 -2070</div>
+                </div>
+                <div class="dyn-block" style="background:rgba(99,137,156,0.09); height:120px;">
+                  <div class="dyn-head"><span class="dyn-name">夏</span>
+                    <span class="tag" style="background:rgba(99,137,156,0.14); color:var(--c2-deep); font-size:10px;">大禹治水</span>
+                  </div>
+                  <div class="dyn-time">约 -2070 — 约 -1600</div>
+                </div>
+                <div class="dyn-block" style="background:rgba(185,157,91,0.09); height:132px;">
+                  <div class="dyn-head"><span class="dyn-name">商</span>
+                    <span class="tag" style="background:rgba(185,157,91,0.14); color:var(--c3-deep); font-size:10px;">甲骨文</span>
+                    <span class="tag" style="background:rgba(185,157,91,0.14); color:var(--c3-deep); font-size:10px;">青铜文明</span>
+                  </div>
+                  <div class="dyn-time">约 -1600 — -1046</div>
+                </div>
+                <div class="dyn-block" style="background:rgba(154,121,143,0.09); height:100px;">
+                  <div class="dyn-head"><span class="dyn-name">西周</span></div>
+                  <div class="dyn-time">-1046 — -771</div>
+                </div>
+                <div class="dyn-block" style="background:rgba(125,138,106,0.09); height:100px;">
+                  <div class="dyn-head"><span class="dyn-name">春秋</span></div>
+                  <div class="dyn-time">-770 — -476</div>
+                </div>
+                <div class="dyn-block" style="background:rgba(164,106,101,0.09); height:116px;">
+                  <div class="dyn-head"><span class="dyn-name">战国</span>
+                    <span class="tag" style="background:rgba(164,106,101,0.14); color:var(--c6-deep); font-size:10px;">商鞅变法</span>
+                    <span class="tag" style="background:rgba(164,106,101,0.14); color:var(--c6-deep); font-size:10px;">长平之战</span>
+                  </div>
+                  <div class="dyn-time">-475 — -221</div>
+                </div>
+              </div>
+              <div class="right-rail">
+                <span>夏</span><span>商</span><span>周</span><span>秦</span><span>汉</span><span>晋</span><span>隋</span><span>唐</span><span>宋</span><span>元</span><span>明</span><span>清</span>
+              </div>
+            </div>
+
+            <div class="p-tabbar">
+              <span class="ti on"><span class="ico">🌐</span>图谱</span>
+              <span class="ti"><span class="ico">🔍</span>搜索</span>
+              <span class="ti"><span class="ico">♛</span>会员</span>
+              <span class="ti"><span class="ico">◉</span>我的</span>
+            </div>
+          </div>
+        </div>
+        <div class="phone-cap">首页收起态 · 时间轴 / 导航索引保留，色块换六色 8% 底</div>
+      </div>
+
+      <!-- ── 首页 · 展开态 ── -->
+      <div class="phone-wrap">
+        <div class="phone">
+          <div class="phone-inner">
+            <div class="p-status"></div>
+            <div class="p-nav">
+              <span class="p-nav-title" style="font-family:var(--serif); letter-spacing:3px;">历史图谱</span>
+              <span class="p-nav-caps">●●● &nbsp;|&nbsp; ◎</span>
+            </div>
+            <div class="p-txt-tabs">
+              <span class="p-txt-tab on">华夏</span><span class="p-txt-tab">朝鲜</span><span class="p-txt-tab">日本</span><span class="p-txt-tab">东南亚</span><span class="p-txt-tab">中亚</span><span class="p-txt-tab">北亚游牧</span>
+            </div>
+
+            <div class="matrix">
+              <div class="time-col">
+                <div class="time-cell" style="height:236px;"><span class="time-year">-475</span><span class="time-name">战国 ▾</span></div>
+                <div class="time-cell" style="height:52px;"><span class="time-year">-221</span><span class="time-name">秦 ▴</span></div>
+                <div class="time-cell" style="height:290px;"><span class="time-year">-202</span><span class="time-name">西汉 ▾</span></div>
+              </div>
+              <div class="canvas-col">
+
+                <!-- 战国：乱世容器展开（一级容器 + 二级白卡，结构不变仅换色） -->
+                <div class="container-block" style="background:rgba(164,106,101,0.09); height:228px;">
+                  <div class="dyn-head"><span class="dyn-name">战国</span>
+                    <span class="tag" style="background:rgba(164,106,101,0.14); color:var(--c6-deep); font-size:10px;">商鞅变法</span>
+                  </div>
+                  <div class="dyn-time">-475 — -221</div>
+                  <div class="sub-grid">
+                    <div class="sub-card"><div class="sn">东周</div><div class="st">-475·-256</div></div>
+                    <div class="sub-card"><div class="sn">齐</div><div class="st">-475·-221</div></div>
+                    <div class="sub-card"><div class="sn">秦</div><div class="st">-475·-221</div></div>
+                    <div class="sub-card"><div class="sn">楚</div><div class="st">-475·-223</div></div>
+                    <div class="sub-card"><div class="sn">燕</div><div class="st">-475·-222</div></div>
+                    <div class="sub-card"><div class="sn">韩</div><div class="st">-403·-230</div></div>
+                    <div class="sub-card"><div class="sn">赵</div><div class="st">-403·-222</div></div>
+                    <div class="sub-card"><div class="sn">魏</div><div class="st">-403·-225</div></div>
+                  </div>
+                </div>
+
+                <!-- 秦：收起态对照 -->
+                <div class="dyn-block" style="background:rgba(162,115,79,0.09); height:44px; padding:10px 14px;">
+                  <div class="dyn-head"><span class="dyn-name" style="font-size:14px;">秦</span>
+                    <span class="tag" style="background:rgba(162,115,79,0.14); color:var(--c1-deep); font-size:10px; height:18px;">大一统</span>
+                  </div>
+                </div>
+
+                <!-- 西汉：展开 = 帝王卡纵向堆叠，同朝代同色（黛青），缝隙分隔 -->
+                <div class="emp-stack">
+                  <div class="emp-block" style="background:rgba(99,137,156,0.09);">
+                    <span class="emp-name">汉高祖</span>
+                    <span class="tag" style="background:rgba(99,137,156,0.14); color:var(--c2-deep); font-size:9px; height:17px; margin-left:6px;">斩蛇起义</span>
+                    <div class="emp-time">-202 — -195 · 在位 8 年</div>
+                  </div>
+                  <div class="emp-block" style="background:rgba(99,137,156,0.09);">
+                    <span class="emp-name">汉惠帝</span>
+                    <span class="tag" style="background:rgba(99,137,156,0.14); color:var(--c2-deep); font-size:9px; height:17px; margin-left:6px;">人彘之惨</span>
+                    <div class="emp-time">-195 — -188 · 在位 7 年</div>
+                  </div>
+                  <div class="emp-block" style="background:rgba(99,137,156,0.09);">
+                    <span class="emp-name">吕太后</span>
+                    <span class="tag" style="background:rgba(99,137,156,0.14); color:var(--c2-deep); font-size:9px; height:17px; margin-left:6px;">临朝称制</span>
+                    <div class="emp-time">-188 — -180 · 称制 8 年</div>
+                  </div>
+                  <div class="emp-block" style="background:rgba(99,137,156,0.09);">
+                    <span class="emp-name">汉文帝</span>
+                    <span class="tag" style="background:rgba(99,137,156,0.14); color:var(--c2-deep); font-size:9px; height:17px; margin-left:6px;">文景之治</span>
+                    <div class="emp-time">-180 — -157 · 在位 23 年</div>
+                  </div>
+                  <div class="emp-block" style="background:rgba(99,137,156,0.09);">
+                    <span class="emp-name">汉景帝</span>
+                    <span class="tag" style="background:rgba(99,137,156,0.14); color:var(--c2-deep); font-size:9px; height:17px; margin-left:6px;">平七国之乱</span>
+                    <div class="emp-time">-157 — -141 · 在位 16 年</div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="right-rail">
+                <span>夏</span><span>商</span><span>周</span><span>秦</span><span>汉</span><span>晋</span><span>隋</span><span>唐</span><span>宋</span><span>元</span><span>明</span><span>清</span>
+              </div>
+            </div>
+
+            <div class="p-tabbar">
+              <span class="ti on"><span class="ico">🌐</span>图谱</span>
+              <span class="ti"><span class="ico">🔍</span>搜索</span>
+              <span class="ti"><span class="ico">♛</span>会员</span>
+              <span class="ti"><span class="ico">◉</span>我的</span>
+            </div>
+          </div>
+        </div>
+        <div class="phone-cap">首页展开态 · 帝王卡同朝代同色，乱世容器内二级白卡</div>
+      </div>
+
+      <!-- ── 详情页 ── -->
+      <div class="phone-wrap">
+        <div class="phone">
+          <div class="phone-inner">
+            <div class="p-status"></div>
+            <div class="p-nav">
+              <span class="p-nav-back">‹</span>
+              <span class="p-nav-title">西汉</span>
+              <span class="p-nav-caps">●●● &nbsp;|&nbsp; ◎</span>
+            </div>
+            <div class="p-txt-tabs">
+              <span class="p-txt-tab on">华夏 · 西汉</span><span class="p-txt-tab">北非 · 迦太基文明</span><span class="p-txt-tab">北非 · 罗马埃及</span>
+            </div>
+
+            <div class="hero-card">
+              <div class="hero-title-row">
+                <span class="hero-dyn">西汉</span>
+                <div class="hero-meta">
+                  <div class="hero-path">华夏 · 西汉 &nbsp;<span class="tag" style="background:rgba(99,137,156,0.14); color:var(--c2-deep); font-size:10px; height:18px;">时代色 · 黛青</span></div>
+                  <div class="hero-range">-202 — 8 · 下一朝代：新 ›</div>
+                </div>
+                <div class="hero-fav">♡</div>
+              </div>
+              <div class="hero-intro">西汉（前 202—8 年）由刘邦建立，定都长安，是汉朝鼎盛强盛的前期阶段，承接秦末乱世，开创大一统盛世格局。</div>
+            </div>
+
+            <div class="ruler">
+              <span>-202</span><span>-195</span><span>-190</span><span>-185</span><span>-180</span>
+            </div>
+
+            <!-- 平铺画布：保持现有左右滑动交互，仅换色 -->
+            <div class="flat-canvas">
+              <div class="grid-line" style="left:120px;"></div>
+              <div class="grid-line" style="left:200px;"></div>
+              <div class="grid-line" style="left:280px;"></div>
+
+              <!-- 左缘类目轨（现状结构，仅换色） -->
+              <div class="cat-rail" style="top:8px; height:150px;">
+                <div class="rail-bar" style="background:var(--c1);"></div>
+                <div>
+                  <div class="rail-text" style="color:var(--c1-deep);">君王</div>
+                  <div class="rail-count" style="color:var(--c1-deep);">10/11</div>
+                </div>
+              </div>
+              <div class="cat-rail" style="top:170px; height:170px;">
+                <div class="rail-bar" style="background:var(--c6);"></div>
+                <div>
+                  <div class="rail-text" style="color:var(--c6-deep);">宗戚</div>
+                  <div class="rail-count" style="color:var(--c6-deep);">10/61</div>
+                </div>
+              </div>
+              <div class="cat-rail" style="top:352px; height:66px;">
+                <div class="rail-bar" style="background:var(--c3);"></div>
+                <div>
+                  <div class="rail-text" style="color:var(--c3-deep);">武将</div>
+                  <div class="rail-count" style="color:var(--c3-deep);">8/38</div>
+                </div>
+              </div>
+
+              <!-- 君王（赭石标签） -->
+              <span class="fc-chip" style="left:42px; top:10px;"><span class="name">汉高祖</span><span class="tag" style="background:rgba(162,115,79,0.14); color:var(--c1-deep);">斩蛇起义</span></span>
+              <span class="fc-chip" style="left:246px; top:10px;"><span class="name">汉文帝</span><span class="tag" style="background:rgba(162,115,79,0.14); color:var(--c1-deep);">亲尝汤药</span></span>
+              <span class="fc-chip" style="left:82px; top:56px;"><span class="name">汉惠帝</span><span class="tag" style="background:rgba(162,115,79,0.14); color:var(--c1-deep);">人彘之惨</span></span>
+              <span class="fc-chip" style="left:150px; top:108px;"><span class="name">吕太后</span><span class="tag" style="background:rgba(162,115,79,0.14); color:var(--c1-deep);">临朝称制</span></span>
+
+              <!-- 宗戚（绾红标签，类目固定色） -->
+              <span class="fc-chip" style="left:42px; top:178px;"><span class="name">楚元王</span><span class="tag" style="background:rgba(164,106,101,0.14); color:var(--c6-deep);">传诗诸侯</span></span>
+              <span class="fc-chip" style="left:250px; top:178px;"><span class="name">刘章</span><span class="tag" style="background:rgba(164,106,101,0.14); color:var(--c6-deep);">诛吕安刘</span></span>
+              <span class="fc-chip" style="left:56px; top:224px;"><span class="name">齐悼惠王</span><span class="tag" style="background:rgba(164,106,101,0.14); color:var(--c6-deep);">献郡避祸</span></span>
+              <span class="fc-chip" style="left:254px; top:224px;"><span class="name">刘襄</span><span class="tag" style="background:rgba(164,106,101,0.14); color:var(--c6-deep);">起兵诛吕</span></span>
+              <span class="fc-chip" style="left:42px; top:270px;"><span class="name">荆王</span><span class="tag" style="background:rgba(164,106,101,0.14); color:var(--c6-deep);">战死封疆</span></span>
+              <span class="fc-chip" style="left:180px; top:270px;"><span class="name">薄太后</span><span class="tag" style="background:rgba(164,106,101,0.14); color:var(--c6-deep);">当生天子</span></span>
+              <span class="more-pill" style="left:110px; top:314px;">查看更多 · 2位宗戚 ▾</span>
+
+              <!-- 武将（秋香标签，类目固定色） -->
+              <span class="fc-chip" style="left:42px; top:360px;"><span class="name">韩信</span><span class="tag" style="background:rgba(185,157,91,0.14); color:var(--c3-deep);">背水一战</span></span>
+              <span class="fc-chip" style="left:230px; top:360px;"><span class="name">周勃</span><span class="tag" style="background:rgba(185,157,91,0.14); color:var(--c3-deep);">安刘定汉</span></span>
+
+              <div class="p-seg">
+                <span>P0</span><span>P1</span><span>P2</span><span class="on">P3</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="phone-cap">朝代详情 · 平铺画布保留，类目细条 + 标签换六色</div>
+      </div>
+
+      <!-- ── 搜索页 ── -->
+      <div class="phone-wrap">
+        <div class="phone">
+          <div class="phone-inner">
+            <div class="p-status"></div>
+            <div class="p-nav">
+              <span class="p-nav-title" style="font-family:var(--serif); letter-spacing:3px;">搜索</span>
+              <span class="p-nav-caps">●●● &nbsp;|&nbsp; ◎</span>
+            </div>
+
+            <div class="p-searchbar"><span>&#9906;</span> 年代 / 人物 / 事件</div>
+
+            <div class="p-sec-cap">热 门 搜 索</div>
+            <div class="hot-tags">
+              <span class="hot-tag">乌台诗案</span>
+              <span class="hot-tag">玄武门之变</span>
+              <span class="hot-tag plain">宋神宗</span>
+              <span class="hot-tag plain">郑和下西洋</span>
+            </div>
+
+            <div class="p-sec-cap">历 史 记 录</div>
+            <div class="hist-row"><span class="t">黄帝</span><span class="x">✕</span></div>
+            <div class="hist-row"><span class="t">皋陶</span><span class="x">✕</span></div>
+            <div class="hist-row"><span class="t">乌台诗案</span><span class="x">✕</span></div>
+            <div class="hist-row"><span class="t">七国之乱</span><span class="x">✕</span></div>
+            <div class="hist-row"><span class="t">司马相如</span><span class="x">✕</span></div>
+            <div class="hist-row" style="border-bottom:none;"><span class="t">宋神宗</span><span class="x">✕</span></div>
+
+            <div class="p-tabbar" style="position:absolute; left:0; right:0; bottom:0;">
+              <span class="ti"><span class="ico">🌐</span>图谱</span>
+              <span class="ti on"><span class="ico">🔍</span>搜索</span>
+              <span class="ti"><span class="ico">♛</span>会员</span>
+              <span class="ti"><span class="ico">◉</span>我的</span>
+            </div>
+          </div>
+        </div>
+        <div class="phone-cap">搜索 · 搜索框 / 热门标签改墨色 6% 底，分隔线统一</div>
+      </div>
+
+      <!-- ── 会员页 ── -->
+      <div class="phone-wrap">
+        <div class="phone">
+          <div class="phone-inner">
+            <div class="p-status"></div>
+            <div class="p-nav">
+              <span class="p-nav-title" style="font-family:var(--serif); letter-spacing:3px;">会员中心</span>
+              <span class="p-nav-caps">●●● &nbsp;|&nbsp; ◎</span>
+            </div>
+
+            <div class="vip-lead">选择适合你的典藏会员方案。会员有效期内评述、见证、原文免扣阅读点；未开通时可邀友助力或付费阅。</div>
+
+            <div class="plan-grid">
+              <div class="plan sel">
+                <span class="plan-tag">最划算</span>
+                <div class="plan-name">季卡</div>
+                <div class="plan-way">邀友获取</div>
+                <div class="plan-price" style="color:var(--c1-deep);">¥0</div>
+              </div>
+              <div class="plan">
+                <div class="plan-name">季度</div>
+                <div class="plan-way">付费订阅</div>
+                <div class="plan-price">¥19.9</div>
+              </div>
+              <div class="plan">
+                <div class="plan-name">年度</div>
+                <div class="plan-way">付费订阅</div>
+                <div class="plan-price">¥49.9</div>
+              </div>
+            </div>
+
+            <div class="p-sec-cap" style="margin-top:16px;">高 级 权 限 包 含</div>
+            <div class="benefit"><span class="dot">✦</span>全部一级文明地域详细图谱与时间矩阵</div>
+            <div class="benefit"><span class="dot">✦</span>跨时空评述 · 多视角对照深度阅读</div>
+            <div class="benefit"><span class="dot">✦</span>文物见证 · 典藏线索与馆藏信息</div>
+            <div class="benefit"><span class="dot">✦</span>24 史原文对照 · 无广告 · 离线缓存</div>
+
+            <div class="buy-bar" style="bottom:64px;">
+              <div class="buy-meta">
+                <span class="l">当 前 选 择</span>
+                <span class="v">邀友获取 · 季卡 · ¥0</span>
+              </div>
+              <div class="buy-btn">确认开通</div>
+            </div>
+
+            <div class="p-tabbar" style="position:absolute; left:0; right:0; bottom:0;">
+              <span class="ti"><span class="ico">🌐</span>图谱</span>
+              <span class="ti"><span class="ico">🔍</span>搜索</span>
+              <span class="ti on"><span class="ico">♛</span>会员</span>
+              <span class="ti"><span class="ico">◉</span>我的</span>
+            </div>
+          </div>
+        </div>
+        <div class="phone-cap">会员 · 卡名衬线，选中态墨色描边，CTA 墨色实底</div>
+      </div>
+
+      <!-- ── 我的页 ── -->
+      <div class="phone-wrap">
+        <div class="phone">
+          <div class="phone-inner">
+            <div class="p-status"></div>
+            <div class="p-nav">
+              <span class="p-nav-title" style="font-family:var(--serif); letter-spacing:3px;">我的</span>
+              <span class="p-nav-caps">●●● &nbsp;|&nbsp; ◎</span>
+            </div>
+
+            <div class="my-hero">
+              <div class="my-avatar">翁<span class="vip-chip">VIP</span></div>
+              <div>
+                <div class="my-name">翁如先森</div>
+                <div class="my-phone">未绑定手机号</div>
+              </div>
+              <div class="my-edit">✎</div>
+            </div>
+
+            <div class="stats-card">
+              <div class="stat"><div class="n">119</div><div class="l">足迹</div></div>
+              <div class="stat-div"></div>
+              <div class="stat"><div class="n">1</div><div class="l">收藏</div></div>
+              <div class="stat-div"></div>
+              <div class="stat"><div class="n">10</div><div class="l">学习天</div></div>
+            </div>
+
+            <div class="vip-banner">
+              <span class="ic">♛</span>
+              <div>
+                <div class="tt">典藏会员已开通</div>
+                <div class="ds">有效期至 2027-11-16 · 评述 / 见证 / 原文免扣阅读点</div>
+              </div>
+              <span class="ar">›</span>
+            </div>
+
+            <div class="menu-card">
+              <div class="menu-row"><span class="menu-ico">✐</span><span class="menu-lab">我的纠错</span><span class="menu-ext"></span><span class="menu-ar" style="margin-left:auto;">›</span></div>
+              <div class="menu-row"><span class="menu-ico">⇗</span><span class="menu-lab">分享给朋友</span><span class="menu-ar" style="margin-left:auto;">›</span></div>
+              <div class="menu-row"><span class="menu-ico">⚙</span><span class="menu-lab">设置</span><span class="menu-ar" style="margin-left:auto;">›</span></div>
+              <div class="menu-row"><span class="menu-ico">☏</span><span class="menu-lab">帮助与反馈</span><span class="menu-ar" style="margin-left:auto;">›</span></div>
+              <div class="menu-row"><span class="menu-ico">ⓘ</span><span class="menu-lab">关于历史图谱</span><span class="menu-ext">v1.0.0</span><span class="menu-ar">›</span></div>
+            </div>
+
+            <div class="p-tabbar" style="position:absolute; left:0; right:0; bottom:0;">
+              <span class="ti"><span class="ico">🌐</span>图谱</span>
+              <span class="ti"><span class="ico">🔍</span>搜索</span>
+              <span class="ti"><span class="ico">♛</span>会员</span>
+              <span class="ti on"><span class="ico">◉</span>我的</span>
+            </div>
+          </div>
+        </div>
+        <div class="phone-cap">我的 · 红色数字改墨色，VIP 徽章降饱和为秋香色</div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="footer-note">
+    历史图谱 · 设计系统 v3.0 提案 —— 墨色管操作 · 六色管数据 · 透明度管层次；只改视觉逻辑，不改交互逻辑。<br>
+    对应实现：native-utils/design-tokens.scss · dynasty-palette.ts · swim-lane-palette.ts
+  </div>
+
+</div>
+</body>
+</html>

@@ -34,7 +34,8 @@ test('环境 API 异常时按非开发环境处理', () => {
 test('识别开发者工具客户端', () => {
   global.wx = {
     getAccountInfoSync: () => ({ miniProgram: { envVersion: 'develop' } }),
-    getSystemInfoSync: () => ({ platform: 'devtools' }),
+    getDeviceInfo: () => ({ platform: 'devtools' }),
+    getAppBaseInfo: () => ({}),
   }
 
   assert.equal(isDevtoolsClient(), true)
@@ -43,7 +44,8 @@ test('识别开发者工具客户端', () => {
 test('识别 host.env 形式的开发者工具', () => {
   global.wx = {
     getAccountInfoSync: () => ({ miniProgram: { envVersion: 'develop' } }),
-    getSystemInfoSync: () => ({ platform: 'ios', host: { env: 'WeChatDevTools' } }),
+    getDeviceInfo: () => ({ platform: 'ios' }),
+    getAppBaseInfo: () => ({ host: { env: 'WeChatDevTools' } }),
   }
 
   assert.equal(isDevtoolsClient(), true)

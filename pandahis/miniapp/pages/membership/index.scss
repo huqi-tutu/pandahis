@@ -60,10 +60,11 @@
   padding-top: 48rpx;
 }
 
+/* 邀请卡选中态与其余方案统一墨色系（v3 去金色） */
 .vip-plan--invite.selected {
-  border-color: rgba(184, 150, 90, 0.45);
-  background: rgba(241, 230, 206, 0.15);
-  box-shadow: 0 2rpx 8rpx rgba(160, 120, 60, 0.08);
+  border-color: rgba(74, 63, 63, 0.28);
+  background: rgba(74, 63, 63, 0.04);
+  box-shadow: 0 2rpx 12rpx rgba(74, 63, 63, 0.1);
 }
 
 /* 最划算标签 */
@@ -124,9 +125,9 @@
   letter-spacing: 0.5rpx;
 }
 
-/* ¥0 用暖金色区分 */
+/* ¥0 用赭石深字区分（绢帛 c1-deep） */
 .vip-plan-price--zero {
-  color: $dyn-c1;
+  color: $dyn-c1-deep;
 }
 
 /* ─────────────────────────────────────

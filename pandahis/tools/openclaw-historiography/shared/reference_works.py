@@ -109,8 +109,46 @@ def merge_reference_works(
     return dedupe_reference_works(refs)
 
 
+def parse_reference_section(text: str) -> list[str]:
+    """从详情全文解析参考著作列表（兼容 *参考著作* / 编号 / 短横 / 同行连写）。"""
+    if "参考著作" not in text:
+        return []
+    tail = text.rsplit("参考著作", 1)[1]
+    tail = re.sub(r"^[\s:*：]+", "", tail)
+    tail = re.sub(r"^\*+|\*+$", "", tail.strip())
+    books = re.findall(r"《[^》]+》", tail)
+    if books:
+        return dedupe_reference_works(books)
+    items: list[str] = []
+    for line in tail.splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        line = re.sub(r"^[-*・•]\s*", "", line)
+        line = re.sub(r"^\d+\.\s*", "", line)
+        line = re.sub(r"^\*+|\*+$", "", line).strip()
+        if line:
+            items.append(_normalize_ref(line))
+    return dedupe_reference_works(items)
+
+
 def format_reference_section(refs: list[str]) -> str:
-    return f"*参考著作：{''.join(refs)}*"
+    """固定展示格式：标题行 + 编号列表（勿用 * 包裹，小程序端标题加粗）。"""
+    normalized = dedupe_reference_works([_normalize_ref(r) for r in refs if str(r).strip()])
+    if not normalized:
+        return ""
+    lines = ["参考著作："]
+    lines.extend(f"{i}. {ref}" for i, ref in enumerate(normalized, 1))
+    return "\n".join(lines)
+
+
+def normalize_detail_references(detail: str) -> str:
+    """剥离旧写法并写回统一参考著作节。"""
+    body = strip_reference_section(detail)
+    refs = parse_reference_section(detail)
+    if not refs:
+        return detail.strip()
+    return f"{body.rstrip()}\n\n{format_reference_section(refs)}"
 
 
 def attach_reference_section(

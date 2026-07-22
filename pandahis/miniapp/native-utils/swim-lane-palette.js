@@ -6,12 +6,15 @@ exports.enrichSwimLaneVisuals = exports.laneTrackBackground = exports.resolveLan
 exports.LANE_HEAD_ALPHA = 0.4;
 /** 90% 透明 = 10% 不透明度 */
 exports.LANE_TRACK_ALPHA = 0.1;
+/* 视觉规范 v3：与绢帛六色对齐（赭石/黛青/秋香/藕合/苔绿/绾红）；
+ * 类目固定色见 chip-badge-tokens.ts 的 CATEGORY_TONES */
 exports.SWIM_LANE_PALETTE = [
-    { solid: '#a74713', trackAlpha: exports.LANE_TRACK_ALPHA },
-    { solid: '#6cb4a5', trackAlpha: exports.LANE_TRACK_ALPHA },
-    { solid: '#e9d4af', trackAlpha: exports.LANE_TRACK_ALPHA },
-    { solid: '#dd9b4b', trackAlpha: exports.LANE_TRACK_ALPHA },
-    { solid: '#442b15', trackAlpha: exports.LANE_TRACK_ALPHA },
+    { solid: '#a2734f', trackAlpha: exports.LANE_TRACK_ALPHA },
+    { solid: '#63899c', trackAlpha: exports.LANE_TRACK_ALPHA },
+    { solid: '#b99d5b', trackAlpha: exports.LANE_TRACK_ALPHA },
+    { solid: '#9a798f', trackAlpha: exports.LANE_TRACK_ALPHA },
+    { solid: '#7d8a6a', trackAlpha: exports.LANE_TRACK_ALPHA },
+    { solid: '#a46a65', trackAlpha: exports.LANE_TRACK_ALPHA },
 ];
 /** 竖排标题 + 进度条所需最小高度，避免标题区撑破轨道背景 */
 exports.LANE_HEAD_MIN_HEIGHT_RPX = 80;

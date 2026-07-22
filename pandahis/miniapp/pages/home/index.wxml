@@ -73,7 +73,7 @@
             <view wx:if="{{!ovl.hideLabels}}" class="entry-header-wrap {{ovl.labelLayout === 'stacked' ? 'entry-header-wrap--stacked' : ''}}{{ovl.isRegimeCard ? ' entry-header-wrap--regime' : ''}}" style="top: {{ovl.headerTop}}rpx; left: {{ovl.headerLeftPct}}%; width: {{ovl.headerWidthPct}}%;{{ovl.headerHeight ? ' height: ' + ovl.headerHeight + 'rpx;' : ''}}">
               <view class="entry-header entry-header--{{ovl.labelLayout}}">
                 <block wx:if="{{ovl.labelLayout === 'stacked'}}">
-                  <text class="card-person card-person--stacked">{{ovl.kind === 'single' ? ovl.person : ovl.displayName}}</text>
+                  <text class="card-person card-person--stacked{{ovl.kind === 'single' ? '' : ' card-person--serif'}}">{{ovl.kind === 'single' ? ovl.person : ovl.displayName}}</text>
                   <view wx:if="{{!ovl.hideTags && ovl.highlights.length}}" class="entry-tag-row entry-tag-row--stacked">
                     <view wx:for="{{ovl.highlights}}" wx:key="text" wx:for-item="tag" class="entry-tag" style="{{tag.tagStyle}}">{{tag.text}}</view>
                   </view>
@@ -81,7 +81,7 @@
                 </block>
                 <block wx:else>
                   <view class="entry-name-tag-row">
-                    <text class="card-person card-person--{{ovl.labelLayout}}">{{ovl.kind === 'single' ? ovl.person : ovl.displayName}}</text>
+                    <text class="card-person card-person--{{ovl.labelLayout}}{{ovl.kind === 'single' ? '' : ' card-person--serif'}}">{{ovl.kind === 'single' ? ovl.person : ovl.displayName}}</text>
                     <view wx:if="{{!ovl.hideTags && ovl.highlights.length}}" class="entry-tag-row">
                       <view wx:for="{{ovl.highlights}}" wx:key="text" wx:for-item="tag" class="entry-tag" style="{{tag.tagStyle}}">{{tag.text}}</view>
                     </view>

@@ -64,7 +64,7 @@ def verify_file(path: Path, *, strict: bool) -> list[str]:
         )
 
     seen_ids: set[str] = set()
-    nodes_by_title_level: dict[tuple[str, str], dict[str, Any]] = {}
+    nodes_by_key: dict[tuple[str, str, str], dict[str, Any]] = {}
 
     for idx, rec in enumerate(records):
         loc = f"{path}#[{idx}] id={rec.get('关系ID', '?')}"
@@ -100,10 +100,14 @@ def verify_file(path: Path, *, strict: bool) -> list[str]:
 
         title = str(rec.get("关系节点标题", "")).strip()
         if title and level in VALID_LEVELS:
-            key = (title, level)
-            if key in nodes_by_title_level:
-                warns.append(f"WARN {loc}: duplicate node ({title!r}, {level})")
-            nodes_by_title_level[key] = rec
+            cat_key = cat if cat in VALID_CATEGORIES else str(rec.get("关系类别", "")).strip()
+            key = (title, level, cat_key)
+            if key in nodes_by_key:
+                msg = f"CRITICAL {loc}: duplicate node ({title!r}, {level}, {cat_key!r})" if strict else (
+                    f"WARN {loc}: duplicate node ({title!r}, {level}, {cat_key!r})"
+                )
+                (errors if strict else warns).append(msg)
+            nodes_by_key[key] = rec
 
         if rec.get("所属四级关系"):
             errors.append(f"CRITICAL {loc}: 所属四级关系 forbidden (max depth 四级)")
@@ -143,8 +147,12 @@ def verify_file(path: Path, *, strict: bool) -> list[str]:
             if not ptitle:
                 continue
             parent_level = ["一级", "二级", "三级"][i]
-            parent_key = (ptitle, parent_level)
-            if parent_key not in nodes_by_title_level:
+            parent_found = any(
+                str(r.get("关系节点标题", "")).strip() == ptitle
+                and str(r.get("关系层级", "")).strip() == parent_level
+                for r in records
+            )
+            if not parent_found:
                 errors.append(
                     f"CRITICAL {loc}: parent {ptitle!r} at {parent_level} not found"
                 )

@@ -1,0 +1,85 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00059",
+  "写作结构": "正史叙述见翻译详录（《史记·殷本纪》仅记即位与崩）。史外异说以《竹书纪年》为主，可提其居殷之记，唯细节极少，需留白处理。不编造政绩、征战、对话。",
+  "候选著作": [
+    {
+      "出处": "《竹书纪年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "古本《竹书纪年》存有商王廪辛的零散记载，可补正史之缺",
+      "检索词": "廪辛 居殷",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "晋皇甫谧辑录历代帝王世系，可能记廪辛在位年数与葬地，但属晚出汇编",
+      "检索词": "廪辛 在位",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《史记·卷三·殷本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，本条目母本，不再拓展摘句",
+      "检索词": "廪辛",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《竹书纪年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "古本《竹书纪年》存有商王廪辛的零散记载，可补正史之缺",
+      "检索词": "廪辛 居殷",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·卷三·殷本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，本条目母本，不再拓展摘句",
+      "检索词": "廪辛",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "晋皇甫谧辑录历代帝王世系，可能记廪辛在位年数与葬地，但属晚出汇编",
+      "检索词": "廪辛 在位",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 1,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

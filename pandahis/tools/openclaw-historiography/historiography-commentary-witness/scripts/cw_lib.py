@@ -34,6 +34,14 @@ def count_han(text: str) -> int:
     return len(HAN_RE.findall(text or ""))
 
 
+def clamp_han(text: str, max_han: int) -> str:
+    """按汉字计数截断，避免 LLM 略超长导致 verify 失败。"""
+    s = str(text or "").strip()
+    while s and count_han(s) > max_han:
+        s = s[:-1]
+    return s
+
+
 def load_env() -> None:
     env_file = OPENCLAW_ROOT / ".env"
     if not env_file.is_file():
@@ -396,8 +404,8 @@ def normalize_commentary_entries(
                 "史略名称": name,
                 "评述人": str(row.get("评述人") or "").strip(),
                 "评述著作": str(row.get("评述著作") or "").strip(),
-                "评述内容": str(row.get("评述内容") or "").strip(),
-                "评述简介": str(row.get("评述简介") or "").strip(),
+                "评述内容": clamp_han(str(row.get("评述内容") or "").strip(), 200),
+                "评述简介": clamp_han(str(row.get("评述简介") or "").strip(), 20),
                 "评述年代": str(row.get("评述年代") or "").strip(),
             }
         )

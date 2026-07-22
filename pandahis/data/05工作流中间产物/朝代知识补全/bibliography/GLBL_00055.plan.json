@@ -1,0 +1,135 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00055",
+  "写作结构": "正史叙述见翻译详录；史外异说可引《竹书纪年》世系延展及《尚书·盘庚》篇异说阐释；其余留白。",
+  "候选著作": [
+    {
+      "出处": "《史记·卷三·殷本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记述小辛继立、殷复衰及百姓作《盘庚》三篇。",
+      "检索词": "帝小辛",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《竹书纪年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "存世商王世系记载，可能提供小辛在位年数或相关事件异文，可补《史记》之略。",
+      "检索词": "小辛",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《帝王世纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "辑録上古帝王年世，或存小辛在位年数异说。",
+      "检索词": "小辛",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《甲骨文合集》等商代卜辞",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "商代祭祀卜辞中可见小辛庙号，可印证其作为商王的存在。",
+      "检索词": "小辛 甲骨文",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《尚书·盘庚》",
+      "tier": "先秦文献",
+      "pool": "legend",
+      "与本主题关系": "《史记》称百姓思念盘庚而作《盘庚》三篇，但《尚书》所载为盘庚训诰，此异说可说明传说层累。",
+      "检索词": "盘庚",
+      "采用": true,
+      "原文摘句": "盘庚迁于殷，民不适有居，率吁众戚出矢言……",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·卷三·殷本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记述小辛继立、殷复衰及百姓作《盘庚》三篇。",
+      "检索词": "帝小辛",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《竹书纪年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "存世商王世系记载，可能提供小辛在位年数或相关事件异文，可补《史记》之略。",
+      "检索词": "小辛",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《帝王世纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "辑録上古帝王年世，或存小辛在位年数异说。",
+      "检索词": "小辛",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《甲骨文合集》等商代卜辞",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "商代祭祀卜辞中可见小辛庙号，可印证其作为商王的存在。",
+      "检索词": "小辛 甲骨文",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《尚书·盘庚》",
+      "tier": "先秦文献",
+      "pool": "legend",
+      "与本主题关系": "《史记》称百姓思念盘庚而作《盘庚》三篇，但《尚书》所载为盘庚训诰，此异说可说明传说层累。",
+      "检索词": "盘庚",
+      "采用": true,
+      "原文摘句": "盘庚迁于殷，民不适有居，率吁众戚出矢言……",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 4,
+    "C_excluded": 1,
+    "overall": "B"
+  }
+}

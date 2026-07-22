@@ -5,11 +5,13 @@
    标题/朝代名  → Noto Serif SC / Songti SC / serif
    正文/UI     → PingFang SC / -apple-system / sans-serif
    时间/数字   → SF Mono / Menlo / monospace
-   页面底色  #F7F5F2 · 卡片底 #FFFFFF · 分割线 #EDEAE6
+   页面底色  #F8F6F2 · 卡片底 #FFFFFF · 分割线 #EDEAE6
+   类目色（v3 绢帛六色固定映射）：君王/宦官=赭石 · 宗戚/蕃祚=绾红 ·
+   文臣/论著=黛青 · 武将/庶众=秋香 · 事略=苔绿 · 典制=藕合
 ══════════════════════════════════════════ */
 
 .page-shell {
-  background: #F7F5F2;
+  background: #F8F6F2;
   min-height: 100vh;
 }
 
@@ -21,7 +23,7 @@
   left: 0;
   right: 0;
   z-index: 90;
-  background: rgba(247, 245, 242, 0.96);
+  background: rgba(248, 246, 242, 0.96);
   border-bottom: 1rpx solid #EDEAE6;
 }
 
@@ -35,23 +37,35 @@
 }
 
 .unit-civ-tab {
+  position: relative;
   flex-shrink: 0;
   padding: 10rpx 18rpx;
   display: inline-flex;
   align-items: center;
-  border-radius: 26rpx;
   font-size: 26rpx;
   font-weight: 400;
-  color: #7A7570;
+  color: #8A8A8A;
   letter-spacing: 1rpx;
-  transition: color 0.18s ease, background 0.18s ease;
+  transition: color 0.18s ease;
   white-space: nowrap;
 }
 
+/* 选中态：文字变墨 + 底部短横线（v3 去掉胶囊底） */
 .unit-civ-tab.active {
-  color: #1A1816;
+  color: #262626;
   font-weight: 600;
-  background: rgba(42, 42, 42, 0.10);
+}
+
+.unit-civ-tab.active::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 40rpx;
+  height: 4rpx;
+  border-radius: 2rpx;
+  background: #4A3F3F;
 }
 
 
@@ -61,7 +75,7 @@
   right: 0;
   bottom: 0;
   width: 60rpx;
-  background: linear-gradient(90deg, transparent, rgba(247, 245, 242, 0.92));
+  background: linear-gradient(90deg, transparent, rgba(248, 246, 242, 0.92));
   pointer-events: none;
 }
 
@@ -276,7 +290,7 @@ $cat-index-w: 28rpx;
   right: 0;
   z-index: 85;
   padding: 8rpx 24rpx 12rpx;
-  background: rgba(247, 245, 242, 0.98);
+  background: rgba(248, 246, 242, 0.98);
   border-bottom: 1rpx solid #EDEAE6;
   box-sizing: border-box;
 }
@@ -482,16 +496,16 @@ $cat-index-w: 28rpx;
 }
 
 /* 分类 Badge 配色（仅标签，非胶囊底） */
-.dyn-canvas-chip--cat-junji .dyn-canvas-chip-tag { background: #FAF1DD; color: #B88932; }
-.dyn-canvas-chip--cat-zongqi .dyn-canvas-chip-tag { background: #F6EAEA; color: #9A6666; }
-.dyn-canvas-chip--cat-wenchen .dyn-canvas-chip-tag { background: #F3EDE3; color: #9A7A45; }
-.dyn-canvas-chip--cat-wujiang .dyn-canvas-chip-tag { background: #F4EADF; color: #94643D; }
-.dyn-canvas-chip--cat-shilue .dyn-canvas-chip-tag { background: #EAF4F7; color: #5E8A94; }
-.dyn-canvas-chip--cat-dianzhi .dyn-canvas-chip-tag { background: #E8EFEC; color: #5E7A70; }
-.dyn-canvas-chip--cat-lunzhu .dyn-canvas-chip-tag { background: #F0EBF5; color: #7A668F; }
-.dyn-canvas-chip--cat-huanguan .dyn-canvas-chip-tag { background: #F1ECF6; color: #7D6F92; }
-.dyn-canvas-chip--cat-shuzhong .dyn-canvas-chip-tag { background: #FAF2EA; color: #A88762; }
-.dyn-canvas-chip--cat-fanzhu .dyn-canvas-chip-tag { background: #E8EFEC; color: #5E7A70; }
+.dyn-canvas-chip--cat-junji .dyn-canvas-chip-tag { background: #ECE4DB; color: #7B573C; }
+.dyn-canvas-chip--cat-zongqi .dyn-canvas-chip-tag { background: #ECE2DE; color: #7D514D; }
+.dyn-canvas-chip--cat-wenchen .dyn-canvas-chip-tag { background: #E3E7E6; color: #4B6877; }
+.dyn-canvas-chip--cat-wujiang .dyn-canvas-chip-tag { background: #EFEADD; color: #8D7745; }
+.dyn-canvas-chip--cat-shilue .dyn-canvas-chip-tag { background: #E7E7DF; color: #5F6951; }
+.dyn-canvas-chip--cat-dianzhi .dyn-canvas-chip-tag { background: #EBE4E4; color: #755C6D; }
+.dyn-canvas-chip--cat-lunzhu .dyn-canvas-chip-tag { background: #E3E7E6; color: #4B6877; }
+.dyn-canvas-chip--cat-huanguan .dyn-canvas-chip-tag { background: #ECE4DB; color: #7B573C; }
+.dyn-canvas-chip--cat-shuzhong .dyn-canvas-chip-tag { background: #EFEADD; color: #8D7745; }
+.dyn-canvas-chip--cat-fanzhu .dyn-canvas-chip-tag { background: #ECE2DE; color: #7D514D; }
 
 /* 优先级：统一尺寸，仅透明度 + 阴影强弱 */
 .dyn-canvas-chip--p0 {
@@ -552,7 +566,7 @@ $cat-index-w: 28rpx;
 .dyn-canvas-more-text {
   font-size: 22rpx;
   font-weight: 700;
-  color: #2C2C2C;
+  color: #262626;
   letter-spacing: 0.3rpx;
   white-space: nowrap;
 }
@@ -645,7 +659,7 @@ $cat-index-w: 28rpx;
   flex-direction: row;
   align-items: stretch;
   padding: 8rpx 24rpx 12rpx;
-  background: rgba(247, 245, 242, 0.98);
+  background: rgba(248, 246, 242, 0.98);
   border-bottom: 1rpx solid #EDEAE6;
   box-sizing: border-box;
 }
@@ -833,7 +847,7 @@ $cat-index-w: 28rpx;
 
 .dyn-swim-grid-line--segment {
   width: 2rpx;
-  background: rgba(132, 87, 47, 0.18);
+  background: rgba(74, 63, 63, 0.14);
 }
 
 .dyn-swim-stack {
@@ -870,7 +884,7 @@ $cat-index-w: 28rpx;
   overflow: hidden;
   box-sizing: border-box;
   background: #FFFFFF;
-  color: #2C2C2C;
+  color: #262626;
   border: 1rpx solid rgba(0, 0, 0, 0.05);
   box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.05);
   transition: box-shadow 0.16s ease, transform 0.16s ease;
@@ -881,7 +895,7 @@ $cat-index-w: 28rpx;
   font-size: 21rpx;
   font-weight: 600;
   line-height: 1;
-  color: #2C2C2C;
+  color: #262626;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -955,7 +969,7 @@ $cat-index-w: 28rpx;
 .dyn-swim-more-text {
   font-size: 22rpx;
   font-weight: 700;
-  color: #2C2C2C;
+  color: #262626;
   letter-spacing: 0.3rpx;
   white-space: nowrap;
 }
@@ -1033,13 +1047,13 @@ $cat-index-w: 28rpx;
 }
 
 /* 连续型各泳道配色 */
-.lane-0 .dyn-continuous-line { background: repeating-linear-gradient(90deg, rgba(241,168,5,0.5) 0, rgba(241,168,5,0.5) 4rpx, transparent 4rpx, transparent 10rpx); }
-.lane-0 .dyn-continuous-chip { background: #FFF5E0; color: #5A3A00; }
-.lane-2 .dyn-continuous-line { background: repeating-linear-gradient(90deg, rgba(146,173,164,0.5) 0, rgba(146,173,164,0.5) 4rpx, transparent 4rpx, transparent 10rpx); }
-.lane-2 .dyn-continuous-chip { background: #EAF0EA; color: #3A4A3E; }
-.lane-3 .dyn-continuous-line { background: repeating-linear-gradient(90deg, rgba(154,188,200,0.5) 0, rgba(154,188,200,0.5) 4rpx, transparent 4rpx, transparent 10rpx); }
-.lane-3 .dyn-continuous-chip { background: #EDF4F8; color: #3A5A6A; }
-.lane-5 .dyn-swim-bar--default { background: #F3EFF8; color: #4A3A5A; }
+.lane-0 .dyn-continuous-line { background: repeating-linear-gradient(90deg, rgba(162,115,79,0.5) 0, rgba(162,115,79,0.5) 4rpx, transparent 4rpx, transparent 10rpx); }
+.lane-0 .dyn-continuous-chip { background: #ECE4DB; color: #7B573C; }
+.lane-2 .dyn-continuous-line { background: repeating-linear-gradient(90deg, rgba(154,121,143,0.5) 0, rgba(154,121,143,0.5) 4rpx, transparent 4rpx, transparent 10rpx); }
+.lane-2 .dyn-continuous-chip { background: #EBE4E4; color: #755C6D; }
+.lane-3 .dyn-continuous-line { background: repeating-linear-gradient(90deg, rgba(125,138,106,0.5) 0, rgba(125,138,106,0.5) 4rpx, transparent 4rpx, transparent 10rpx); }
+.lane-3 .dyn-continuous-chip { background: #E7E7DF; color: #5F6951; }
+.lane-5 .dyn-swim-bar--default { background: #E3E7E6; color: #4B6877; }
 
 /* ══════════════════════════════════════════
    士臣泳道（虚线 + chip）
@@ -1047,7 +1061,7 @@ $cat-index-w: 28rpx;
 .dyn-swim-stack--shichen { gap: 8rpx; padding: 0 16rpx; box-sizing: border-box; }
 
 .lane-1 .dyn-shichen-chip {
-  box-shadow: 0 2rpx 8rpx rgba(107, 94, 58, 0.12), 0 1rpx 2rpx rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2rpx 8rpx rgba(75, 104, 119, 0.12), 0 1rpx 2rpx rgba(0, 0, 0, 0.06);
 }
 
 .dyn-shichen-unit {
@@ -1067,7 +1081,7 @@ $cat-index-w: 28rpx;
   z-index: 1;
   background: repeating-linear-gradient(
     90deg,
-    rgba(196, 160, 108, 0.78) 0, rgba(196, 160, 108, 0.78) 4rpx,
+    rgba(99, 137, 156, 0.6) 0, rgba(99, 137, 156, 0.6) 4rpx,
     transparent 4rpx, transparent 10rpx
   );
 }
@@ -1118,9 +1132,9 @@ $cat-index-w: 28rpx;
   opacity: 0.55;
 }
 
-.lane-1 .dyn-shichen-chip--default { background: #F5F0E0; color: #6B5E3A; }
-.lane-1 .dyn-shichen-chip--accent  { background: rgba(224, 192, 136, 0.40); color: #6B5E3A; }
-.lane-1 .dyn-shichen-chip--ghost   { background: rgba(224, 192, 136, 0.12); color: #8A8A8A; box-shadow: none; }
+.lane-1 .dyn-shichen-chip--default { background: #E3E7E6; color: #4B6877; }
+.lane-1 .dyn-shichen-chip--accent  { background: rgba(99, 137, 156, 0.24); color: #4B6877; }
+.lane-1 .dyn-shichen-chip--ghost   { background: rgba(99, 137, 156, 0.10); color: #8A8A8A; box-shadow: none; }
 
 /* ══════════════════════════════════════════
    超出史略浮层 · 底部抽屉
@@ -1199,16 +1213,16 @@ $cat-index-w: 28rpx;
   box-sizing: border-box;
 }
 
-.more-overlay-count-tag--cat-junji { background: #FAF1DD; color: #B88932; }
-.more-overlay-count-tag--cat-zongqi { background: #F6EAEA; color: #9A6666; }
-.more-overlay-count-tag--cat-wenchen { background: #F3EDE3; color: #9A7A45; }
-.more-overlay-count-tag--cat-wujiang { background: #F4EADF; color: #94643D; }
-.more-overlay-count-tag--cat-shilue { background: #EAF4F7; color: #5E8A94; }
-.more-overlay-count-tag--cat-dianzhi { background: #E8EFEC; color: #5E7A70; }
-.more-overlay-count-tag--cat-lunzhu { background: #F0EBF5; color: #7A668F; }
-.more-overlay-count-tag--cat-huanguan { background: #F1ECF6; color: #7D6F92; }
-.more-overlay-count-tag--cat-shuzhong { background: #FAF2EA; color: #A88762; }
-.more-overlay-count-tag--cat-fanzhu { background: #E8EFEC; color: #5E7A70; }
+.more-overlay-count-tag--cat-junji { background: #ECE4DB; color: #7B573C; }
+.more-overlay-count-tag--cat-zongqi { background: #ECE2DE; color: #7D514D; }
+.more-overlay-count-tag--cat-wenchen { background: #E3E7E6; color: #4B6877; }
+.more-overlay-count-tag--cat-wujiang { background: #EFEADD; color: #8D7745; }
+.more-overlay-count-tag--cat-shilue { background: #E7E7DF; color: #5F6951; }
+.more-overlay-count-tag--cat-dianzhi { background: #EBE4E4; color: #755C6D; }
+.more-overlay-count-tag--cat-lunzhu { background: #E3E7E6; color: #4B6877; }
+.more-overlay-count-tag--cat-huanguan { background: #ECE4DB; color: #7B573C; }
+.more-overlay-count-tag--cat-shuzhong { background: #EFEADD; color: #8D7745; }
+.more-overlay-count-tag--cat-fanzhu { background: #ECE2DE; color: #7D514D; }
 
 .more-overlay-close {
   width: 48rpx;
@@ -1267,8 +1281,8 @@ $cat-index-w: 28rpx;
 }
 
 .more-overlay-dot--default { background: #B0A89E; }
-.more-overlay-dot--accent  { background: #F1A805; }
-.more-overlay-dot--marker  { background: #9ABCC8; }
+.more-overlay-dot--accent  { background: #B99D5B; }
+.more-overlay-dot--marker  { background: #63899C; }
 .more-overlay-dot--ghost   { background: #D0CCC8; }
 .more-overlay-dot--narrow  { background: #B0A89E; }
 
@@ -1299,16 +1313,16 @@ $cat-index-w: 28rpx;
   box-sizing: border-box;
 }
 
-.more-overlay-item-tag--cat-junji { background: #FAF1DD; color: #B88932; }
-.more-overlay-item-tag--cat-zongqi { background: #F6EAEA; color: #9A6666; }
-.more-overlay-item-tag--cat-wenchen { background: #F3EDE3; color: #9A7A45; }
-.more-overlay-item-tag--cat-wujiang { background: #F4EADF; color: #94643D; }
-.more-overlay-item-tag--cat-shilue { background: #EAF4F7; color: #5E8A94; }
-.more-overlay-item-tag--cat-dianzhi { background: #E8EFEC; color: #5E7A70; }
-.more-overlay-item-tag--cat-lunzhu { background: #F0EBF5; color: #7A668F; }
-.more-overlay-item-tag--cat-huanguan { background: #F1ECF6; color: #7D6F92; }
-.more-overlay-item-tag--cat-shuzhong { background: #FAF2EA; color: #A88762; }
-.more-overlay-item-tag--cat-fanzhu { background: #E8EFEC; color: #5E7A70; }
+.more-overlay-item-tag--cat-junji { background: #ECE4DB; color: #7B573C; }
+.more-overlay-item-tag--cat-zongqi { background: #ECE2DE; color: #7D514D; }
+.more-overlay-item-tag--cat-wenchen { background: #E3E7E6; color: #4B6877; }
+.more-overlay-item-tag--cat-wujiang { background: #EFEADD; color: #8D7745; }
+.more-overlay-item-tag--cat-shilue { background: #E7E7DF; color: #5F6951; }
+.more-overlay-item-tag--cat-dianzhi { background: #EBE4E4; color: #755C6D; }
+.more-overlay-item-tag--cat-lunzhu { background: #E3E7E6; color: #4B6877; }
+.more-overlay-item-tag--cat-huanguan { background: #ECE4DB; color: #7B573C; }
+.more-overlay-item-tag--cat-shuzhong { background: #EFEADD; color: #8D7745; }
+.more-overlay-item-tag--cat-fanzhu { background: #ECE2DE; color: #7D514D; }
 
 .more-overlay-item-range {
   font-family: 'SF Mono', 'Menlo', monospace;
@@ -1329,7 +1343,7 @@ $cat-index-w: 28rpx;
   padding: 7rpx 13rpx;
   border: 1rpx solid rgba(116, 107, 98, 0.1);
   border-radius: 999rpx;
-  background: rgba(247, 245, 242, 0.7);
+  background: rgba(248, 246, 242, 0.7);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -1534,7 +1548,7 @@ $cat-index-w: 28rpx;
   font-size: 22rpx;
   font-weight: 500;
   line-height: 28rpx;
-  color: #B88932;
+  color: #8D7745;
   white-space: nowrap;
 }
 
@@ -1567,16 +1581,16 @@ $cat-index-w: 28rpx;
   box-sizing: border-box;
 }
 
-.chip-tooltip-tag--cat-junji { background: #FAF1DD; color: #B88932; }
-.chip-tooltip-tag--cat-zongqi { background: #F6EAEA; color: #9A6666; }
-.chip-tooltip-tag--cat-wenchen { background: #F3EDE3; color: #9A7A45; }
-.chip-tooltip-tag--cat-wujiang { background: #F4EADF; color: #94643D; }
-.chip-tooltip-tag--cat-shilue { background: #EAF4F7; color: #5E8A94; }
-.chip-tooltip-tag--cat-dianzhi { background: #E8EFEC; color: #5E7A70; }
-.chip-tooltip-tag--cat-lunzhu { background: #F0EBF5; color: #7A668F; }
-.chip-tooltip-tag--cat-huanguan { background: #F1ECF6; color: #7D6F92; }
-.chip-tooltip-tag--cat-shuzhong { background: #FAF2EA; color: #A88762; }
-.chip-tooltip-tag--cat-fanzhu { background: #E8EFEC; color: #5E7A70; }
+.chip-tooltip-tag--cat-junji { background: #ECE4DB; color: #7B573C; }
+.chip-tooltip-tag--cat-zongqi { background: #ECE2DE; color: #7D514D; }
+.chip-tooltip-tag--cat-wenchen { background: #E3E7E6; color: #4B6877; }
+.chip-tooltip-tag--cat-wujiang { background: #EFEADD; color: #8D7745; }
+.chip-tooltip-tag--cat-shilue { background: #E7E7DF; color: #5F6951; }
+.chip-tooltip-tag--cat-dianzhi { background: #EBE4E4; color: #755C6D; }
+.chip-tooltip-tag--cat-lunzhu { background: #E3E7E6; color: #4B6877; }
+.chip-tooltip-tag--cat-huanguan { background: #ECE4DB; color: #7B573C; }
+.chip-tooltip-tag--cat-shuzhong { background: #EFEADD; color: #8D7745; }
+.chip-tooltip-tag--cat-fanzhu { background: #ECE2DE; color: #7D514D; }
 
 .chip-tooltip-time {
   flex-shrink: 0;
@@ -1636,16 +1650,16 @@ $cat-index-w: 28rpx;
   line-height: 1.45;
 }
 
-.chip-tooltip-foot-highlight--cat-junji { color: #B88932; }
-.chip-tooltip-foot-highlight--cat-zongqi { color: #9A6666; }
-.chip-tooltip-foot-highlight--cat-wenchen { color: #9A7A45; }
-.chip-tooltip-foot-highlight--cat-wujiang { color: #94643D; }
-.chip-tooltip-foot-highlight--cat-shilue { color: #5E8A94; }
-.chip-tooltip-foot-highlight--cat-dianzhi { color: #5E7A70; }
-.chip-tooltip-foot-highlight--cat-lunzhu { color: #7A668F; }
-.chip-tooltip-foot-highlight--cat-huanguan { color: #7D6F92; }
-.chip-tooltip-foot-highlight--cat-shuzhong { color: #A88762; }
-.chip-tooltip-foot-highlight--cat-fanzhu { color: #5E7A70; }
+.chip-tooltip-foot-highlight--cat-junji { color: #7B573C; }
+.chip-tooltip-foot-highlight--cat-zongqi { color: #7D514D; }
+.chip-tooltip-foot-highlight--cat-wenchen { color: #4B6877; }
+.chip-tooltip-foot-highlight--cat-wujiang { color: #8D7745; }
+.chip-tooltip-foot-highlight--cat-shilue { color: #5F6951; }
+.chip-tooltip-foot-highlight--cat-dianzhi { color: #755C6D; }
+.chip-tooltip-foot-highlight--cat-lunzhu { color: #4B6877; }
+.chip-tooltip-foot-highlight--cat-huanguan { color: #7B573C; }
+.chip-tooltip-foot-highlight--cat-shuzhong { color: #8D7745; }
+.chip-tooltip-foot-highlight--cat-fanzhu { color: #7D514D; }
 
 .chip-tooltip-foot-reason {
   flex: 1;

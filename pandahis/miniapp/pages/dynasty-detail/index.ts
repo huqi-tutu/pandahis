@@ -29,6 +29,7 @@ import {
   dedupeHintItems,
   type OffscreenHintItem,
 } from '../../native-utils/offscreen-hints'
+import { categoryRailColor } from '../../native-utils/chip-badge-tokens'
 const {
   buildSwimMatrixFromMock,
   buildHeroFromMock,
@@ -607,7 +608,8 @@ function composeCanvasLayout(swim: SwimMatrix, lanes: SwimLane[]): SwimMatrix {
     categoryBands.push({
       key: lane.key,
       label: lane.label,
-      borderColor: lane.borderColor,
+      // 类目色固定映射（视觉规范 v3）：前端为准，覆盖后端旧色值
+      borderColor: categoryRailColor(lane.key, lane.borderColor),
       topRpx: cursor,
       heightRpx: bandHeight,
       readProgressText: lane.readProgressText || `${lane.readCount ?? 0}/${lane.totalCount ?? 0}`,

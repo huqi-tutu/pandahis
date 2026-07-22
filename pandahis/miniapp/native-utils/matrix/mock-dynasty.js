@@ -133,14 +133,14 @@ const DYNASTY_DB = {
     intro: '五帝时代（约-2698—-2205）是华夏文明的起源期。黄帝统一各部落，奠定华夏族基础；颛顼、帝喾承续治理；尧舜以禅让传位，开创了"天下为公"的政治理想。这一时期的诸多创举——造字、制乐、作历、论医、养蚕——被视为中华文明的源头。',
     next: { title: '夏 · 阳城', dynasty: '夏' },
     lanes: [
-      { label: '君王', borderColor: '#F1A805', bars: [
+      { label: '君王', borderColor: '#A2734F', bars: [
         { title: '黄帝', start: -2698, end: -2598, type: 'accent', boxKey: 'box-detail', boxTitle: '黄帝' },
         { title: '颛顼', start: -2514, end: -2436, type: '' },
         { title: '帝喾', start: -2436, end: -2366, type: '' },
         { title: '尧',   start: -2356, end: -2255, type: 'accent' },
         { title: '舜',   start: -2255, end: -2205, type: 'accent' },
       ]},
-      { label: '士臣', borderColor: '#E0C088', bars: [
+      { label: '士臣', borderColor: '#63899C', bars: [
         { title: '风后', birth: -2700, death: -2600, appearStart: -2680, appearEnd: -2610, type: '' },
         { title: '力牧', birth: -2700, death: -2600, appearStart: -2680, appearEnd: -2610, type: '' },
         { title: '仓颉', birth: -2700, death: -2600, appearStart: -2660, appearEnd: -2610, type: '' },
@@ -149,26 +149,26 @@ const DYNASTY_DB = {
         { title: '岐伯', birth: -2700, death: -2600, appearStart: -2670, appearEnd: -2610, type: '' },
         { title: '嫘祖', birth: -2700, death: -2610, appearStart: -2690, appearEnd: -2620, type: '' },
       ]},
-      { label: '典制', borderColor: '#92ADA4', bars: [
+      { label: '典制', borderColor: '#9A798F', bars: [
         { title: '甲子干支', start: -2680, end: -2650, type: '' },
         { title: '十二律',   start: -2670, end: -2640, type: '' },
         { title: '禅让制',   start: -2360, end: -2205, type: 'accent' },
       ]},
-      { label: '事略', borderColor: '#9ABCC8', bars: [
+      { label: '事略', borderColor: '#7D8A6A', bars: [
         { title: '阪泉之战', start: -2680, end: -2670, type: 'accent' },
         { title: '涿鹿之战', start: -2670, end: -2660, type: 'accent' },
         { title: '北逐荤粥', start: -2660, end: -2650, type: '' },
         { title: '尧舜禅让', start: -2260, end: -2250, type: 'marker' },
       ]},
-      { label: '民录', borderColor: '#D4B098', bars: [
+      { label: '民录', borderColor: '#B99D5B', bars: [
         { title: '部落融合', start: -2680, end: -2600, type: '' },
         { title: '农耕初兴', start: -2600, end: -2400, type: '' },
       ]},
-      { label: '著作', borderColor: '#A894B8', bars: [
+      { label: '著作', borderColor: '#63899C', bars: [
         { title: '黄帝内经', start: -2650, end: -2600, type: 'accent' },
         { title: '黄帝四经', start: -2600, end: -2550, type: 'ghost' },
       ]},
-      { label: '思想', borderColor: '#7F9EB5', bars: [
+      { label: '思想', borderColor: '#A46A65', bars: [
         { title: '天人合一', start: -2680, end: -2500, type: '' },
         { title: '黄老之道', start: -2500, end: -2300, type: '' },
       ]},
@@ -182,7 +182,7 @@ const DYNASTY_DB = {
     intro: '北宋（960—1127）是华夏文治最盛的王朝之一，太祖陈桥兵变立国，历九帝一百六十七年，科举大兴、士大夫当政，经济与文化成就卓著，然积弱于边患，终因金兵南下、靖康之变而亡。',
     next: { title: '南宋 · 临安', dynasty: '南宋' },
     lanes: [
-      { label: '君王', borderColor: '#F1A805', bars: [
+      { label: '君王', borderColor: '#A2734F', bars: [
         { title: '太祖赵匡胤', start: 960,  end: 976,  type: ''       },
         { title: '太宗赵光义', start: 976,  end: 997,  type: ''       },
         { title: '真宗',       start: 997,  end: 1022, type: ''       },
@@ -193,7 +193,7 @@ const DYNASTY_DB = {
         { title: '徽宗',       start: 1100, end: 1125, type: ''       },
         { title: '钦宗',       start: 1125, end: 1127, type: ''       },
       ]},
-      { label: '士臣', borderColor: '#E0C088', bars: [
+      { label: '士臣', borderColor: '#63899C', bars: [
         { title: '晏殊',   birth: 991,  death: 1055, appearStart: 1020, appearEnd: 1048, type: ''       },
         { title: '范仲淹', birth: 989,  death: 1052, appearStart: 1040, appearEnd: 1052, type: ''       },
         { title: '包拯',   birth: 999,  death: 1062, appearStart: 1037, appearEnd: 1062, type: ''       },
@@ -208,27 +208,27 @@ const DYNASTY_DB = {
         { title: '秦观',   birth: 1049, death: 1100, appearStart: 1080, appearEnd: 1100, type: ''       },
         { title: '蔡京',   birth: 1047, death: 1126, appearStart: 1094, appearEnd: 1120, type: ''       },
       ]},
-      { label: '典制', borderColor: '#92ADA4', bars: [
+      { label: '典制', borderColor: '#9A798F', bars: [
         { title: '青苗法',   start: 1069, end: 1085, type: ''      },
         { title: '募役法',   start: 1071, end: 1085, type: ''      },
         { title: '学制整理', start: 1080, end: 1110, type: 'ghost' },
       ]},
-      { label: '事略', borderColor: '#9ABCC8', bars: [
+      { label: '事略', borderColor: '#7D8A6A', bars: [
         { title: '熙宁变法', start: 1069, end: 1085, type: 'accent' },
         { title: '乌台诗案', start: 1079, end: 1080, type: 'marker', boxKey: 'box-detail', boxTitle: '乌台诗案' },
         { title: '元丰改制', start: 1082, end: 1095, type: 'ghost'  },
         { title: '靖康之变', start: 1125, end: 1127, type: 'accent', boxKey: 'box-detail', boxTitle: '靖康之变' },
       ]},
-      { label: '民录', borderColor: '#D4B098', bars: [
+      { label: '民录', borderColor: '#B99D5B', bars: [
         { title: '赋役重压', start: 1079, end: 1124, type: ''       },
         { title: '方腊',     start: 1120, end: 1122, type: 'narrow' },
       ]},
-      { label: '著作', borderColor: '#A894B8', bars: [
+      { label: '著作', borderColor: '#63899C', bars: [
         { title: '资治通鉴', start: 1066, end: 1084, type: 'accent' },
         { title: '梦溪笔谈', start: 1088, end: 1095, type: ''       },
         { title: '营造法式', start: 1100, end: 1103, type: 'ghost'  },
       ]},
-      { label: '思想', borderColor: '#7F9EB5', bars: [
+      { label: '思想', borderColor: '#A46A65', bars: [
         { title: '理学初兴', start: 1032, end: 1107, type: ''       },
         { title: '荆公新学', start: 1069, end: 1085, type: 'accent' },
       ]},
@@ -242,7 +242,7 @@ const DYNASTY_DB = {
     intro: '唐朝（618—907）是继隋之后的大一统王朝，共历二十一帝二百八十九年，贞观之治开创盛世，丝路贯通中西、文化多元包容，唐诗成就举世无双，然安史之乱后藩镇割据、宦官专权，终由黄巢起义动摇根基而亡。',
     next: { title: '五代 · 汴梁', dynasty: '五代' },
     lanes: [
-      { label: '君王', borderColor: '#F1A805', bars: [
+      { label: '君王', borderColor: '#A2734F', bars: [
         { title: '高祖', start: 618, end: 626, type: ''       },
         { title: '太宗', start: 626, end: 649, type: 'accent' },
         { title: '高宗', start: 649, end: 683, type: ''       },
@@ -252,33 +252,33 @@ const DYNASTY_DB = {
         { title: '宪宗', start: 805, end: 820, type: ''       },
         { title: '宣宗', start: 846, end: 859, type: ''       },
       ]},
-      { label: '士臣', borderColor: '#E0C088', bars: [
+      { label: '士臣', borderColor: '#63899C', bars: [
         { title: '房玄龄', birth: 579, death: 648, appearStart: 626, appearEnd: 648, type: '' },
         { title: '魏征',   birth: 580, death: 643, appearStart: 626, appearEnd: 643, type: '' },
         { title: '李白',   birth: 701, death: 762, appearStart: 742, appearEnd: 762, type: '' },
         { title: '杜甫',   birth: 712, death: 770, appearStart: 755, appearEnd: 770, type: '' },
         { title: '韩愈',   birth: 768, death: 824, appearStart: 802, appearEnd: 824, type: '' },
       ]},
-      { label: '典制', borderColor: '#92ADA4', bars: [
+      { label: '典制', borderColor: '#9A798F', bars: [
         { title: '均田制',   start: 618, end: 780, type: ''       },
         { title: '科举完善', start: 622, end: 907, type: 'ghost'  },
         { title: '两税法',   start: 780, end: 907, type: 'accent' },
       ]},
-      { label: '事略', borderColor: '#9ABCC8', bars: [
+      { label: '事略', borderColor: '#7D8A6A', bars: [
         { title: '玄武门之变', start: 626, end: 627, type: 'marker', boxKey: 'box-detail', boxTitle: '玄武门之变' },
         { title: '安史之乱',   start: 755, end: 763, type: 'accent' },
         { title: '甘露之变',   start: 835, end: 836, type: 'marker', boxKey: 'box-detail', boxTitle: '甘露之变' },
       ]},
-      { label: '民录', borderColor: '#D4B098', bars: [
+      { label: '民录', borderColor: '#B99D5B', bars: [
         { title: '贞观之治', start: 627, end: 649, type: '' },
         { title: '开元盛世', start: 713, end: 741, type: '' },
         { title: '黄巢起义', start: 875, end: 884, type: '' },
       ]},
-      { label: '著作', borderColor: '#A894B8', bars: [
+      { label: '著作', borderColor: '#63899C', bars: [
         { title: '通典',     start: 801, end: 804, type: 'accent' },
         { title: '唐诗总集', start: 730, end: 780, type: 'ghost'  },
       ]},
-      { label: '思想', borderColor: '#7F9EB5', bars: [
+      { label: '思想', borderColor: '#A46A65', bars: [
         { title: '佛教鼎盛', start: 618, end: 845, type: ''       },
         { title: '儒释道汇融', start: 700, end: 907, type: 'accent' },
       ]},
@@ -292,7 +292,7 @@ const DYNASTY_DB = {
     intro: '清朝（1644—1912）是中国最后一个封建王朝，共历十二帝二百六十八年，康乾盛世国力鼎盛、疆域辽阔，然闭关锁国错失工业革命，鸦片战争后列强入侵、内忧外患接踵而至，终以辛亥革命告终。',
     next: { title: '中华民国 · 南京', dynasty: '中华民国' },
     lanes: [
-      { label: '君王', borderColor: '#F1A805', bars: [
+      { label: '君王', borderColor: '#A2734F', bars: [
         { title: '顺治', start: 1644, end: 1661, type: ''       },
         { title: '康熙', start: 1661, end: 1722, type: 'accent' },
         { title: '雍正', start: 1722, end: 1735, type: ''       },
@@ -302,32 +302,32 @@ const DYNASTY_DB = {
         { title: '咸丰', start: 1850, end: 1861, type: ''       },
         { title: '光绪', start: 1875, end: 1908, type: ''       },
       ]},
-      { label: '士臣', borderColor: '#E0C088', bars: [
+      { label: '士臣', borderColor: '#63899C', bars: [
         { title: '洪亮吉', birth: 1746, death: 1809, appearStart: 1789, appearEnd: 1809, type: ''       },
         { title: '林则徐', birth: 1785, death: 1850, appearStart: 1839, appearEnd: 1850, type: ''       },
         { title: '曾国藩', birth: 1811, death: 1872, appearStart: 1853, appearEnd: 1872, type: 'accent' },
         { title: '李鸿章', birth: 1823, death: 1901, appearStart: 1870, appearEnd: 1895, type: ''       },
       ]},
-      { label: '典制', borderColor: '#92ADA4', bars: [
+      { label: '典制', borderColor: '#9A798F', bars: [
         { title: '文字狱',   start: 1661, end: 1799, type: ''       },
         { title: '摊丁入亩', start: 1712, end: 1912, type: ''       },
         { title: '洋务运动', start: 1861, end: 1895, type: 'accent' },
       ]},
-      { label: '事略', borderColor: '#9ABCC8', bars: [
+      { label: '事略', borderColor: '#7D8A6A', bars: [
         { title: '三藩之乱', start: 1673, end: 1681, type: ''       },
         { title: '鸦片战争', start: 1839, end: 1842, type: 'accent', boxKey: 'box-detail', boxTitle: '鸦片战争' },
         { title: '太平天国', start: 1851, end: 1864, type: 'accent' },
         { title: '甲午战争', start: 1894, end: 1895, type: 'marker', boxKey: 'box-detail', boxTitle: '甲午战争' },
       ]},
-      { label: '民录', borderColor: '#D4B098', bars: [
+      { label: '民录', borderColor: '#B99D5B', bars: [
         { title: '康乾盛世', start: 1681, end: 1796, type: '' },
         { title: '百日维新', start: 1898, end: 1899, type: '' },
       ]},
-      { label: '著作', borderColor: '#A894B8', bars: [
+      { label: '著作', borderColor: '#63899C', bars: [
         { title: '四库全书', start: 1773, end: 1782, type: 'accent' },
         { title: '红楼梦',   start: 1754, end: 1763, type: ''       },
       ]},
-      { label: '思想', borderColor: '#7F9EB5', bars: [
+      { label: '思想', borderColor: '#A46A65', bars: [
         { title: '考据学',   start: 1700, end: 1810, type: ''       },
         { title: '经世致用', start: 1840, end: 1898, type: 'accent' },
       ]},
@@ -341,7 +341,7 @@ const DYNASTY_DB = {
     intro: '明朝（1368—1644）是继元之后的大一统王朝，共历十六帝二百七十六年，太祖洪武整吏治、永乐迁都北京并遣郑和七下西洋，文化昌盛、版图广阔，然宦官专权、党争内耗日深，终因李自成起义而亡。',
     next: { title: '清 · 北京', dynasty: '清' },
     lanes: [
-      { label: '君王', borderColor: '#F1A805', bars: [
+      { label: '君王', borderColor: '#A2734F', bars: [
         { title: '洪武', start: 1368, end: 1398, type: 'accent' },
         { title: '建文', start: 1398, end: 1402, type: ''       },
         { title: '永乐', start: 1402, end: 1424, type: 'accent' },
@@ -352,31 +352,31 @@ const DYNASTY_DB = {
         { title: '万历', start: 1572, end: 1620, type: ''       },
         { title: '崇祯', start: 1627, end: 1644, type: ''       },
       ]},
-      { label: '士臣', borderColor: '#E0C088', bars: [
+      { label: '士臣', borderColor: '#63899C', bars: [
         { title: '刘伯温', birth: 1311, death: 1375, appearStart: 1360, appearEnd: 1375, type: ''       },
         { title: '海瑞',   birth: 1514, death: 1587, appearStart: 1569, appearEnd: 1587, type: ''       },
         { title: '戚继光', birth: 1528, death: 1588, appearStart: 1567, appearEnd: 1588, type: 'accent' },
         { title: '张居正', birth: 1525, death: 1582, appearStart: 1572, appearEnd: 1582, type: 'accent' },
       ]},
-      { label: '典制', borderColor: '#92ADA4', bars: [
+      { label: '典制', borderColor: '#9A798F', bars: [
         { title: '里甲制',   start: 1368, end: 1644, type: 'ghost'  },
         { title: '内阁制度', start: 1402, end: 1644, type: ''       },
         { title: '一条鞭法', start: 1581, end: 1644, type: 'accent' },
       ]},
-      { label: '事略', borderColor: '#9ABCC8', bars: [
+      { label: '事略', borderColor: '#7D8A6A', bars: [
         { title: '靖难之役',   start: 1399, end: 1402, type: 'accent' },
         { title: '土木堡之变', start: 1449, end: 1450, type: 'marker', boxKey: 'box-detail', boxTitle: '土木堡之变' },
         { title: '万历援朝',   start: 1592, end: 1598, type: ''       },
       ]},
-      { label: '民录', borderColor: '#D4B098', bars: [
+      { label: '民录', borderColor: '#B99D5B', bars: [
         { title: '郑和下西洋', start: 1405, end: 1433, type: 'accent' },
         { title: '李自成起义', start: 1627, end: 1644, type: ''       },
       ]},
-      { label: '著作', borderColor: '#A894B8', bars: [
+      { label: '著作', borderColor: '#63899C', bars: [
         { title: '永乐大典', start: 1403, end: 1408, type: 'accent' },
         { title: '本草纲目', start: 1578, end: 1580, type: 'marker' },
       ]},
-      { label: '思想', borderColor: '#7F9EB5', bars: [
+      { label: '思想', borderColor: '#A46A65', bars: [
         { title: '阳明心学', start: 1518, end: 1529, type: 'accent' },
         { title: '东林议政', start: 1604, end: 1627, type: ''       },
       ]},
@@ -716,7 +716,7 @@ function buildDynastyFromEmperorData(dynastyName) {
     startYear,
     endYear,
     intro: '',
-    lanes: [{ label: '君王', borderColor: '#F1A805', bars }],
+    lanes: [{ label: '君王', borderColor: '#A2734F', bars }],
   }
 }
 

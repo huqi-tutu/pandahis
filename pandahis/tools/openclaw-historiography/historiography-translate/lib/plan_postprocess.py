@@ -6,6 +6,7 @@ import re
 from typing import Any, Dict, List
 
 from lib.citation_mode import enrich_checklist_citation_modes
+from lib.intro_tier import inject_intro_tier
 from lib.mother_sentences import MAX_MUST_PHRASES, extract_must_phrases, is_midword_fragment
 
 # 仅当与母本形成有意义差异时才允许采用
@@ -158,6 +159,7 @@ def finalize_plan(plan: Dict[str, Any], recalled: Dict[str, Any] | None = None, 
         enrich_checklist_citation_modes(out.get("母本逐句清单") or [])
         inject_intro_material(out, recalled)
         inject_mother_preview(out)
+        inject_intro_tier(out, recalled)
         inject_exit_supplements_plan(out, recalled)
     return out
 
@@ -212,7 +214,16 @@ def _has_external_hint(hint: str) -> bool:
 def plan_for_enrich_phase(plan: Dict[str, Any]) -> Dict[str, Any]:
     """Phase2 用 plan：仅保留采用:true 的外部补全 + 引用白名单，去掉补全提示。"""
     out: Dict[str, Any] = {}
-    for k in ("史略ID", "史略名称", "母本著作", "索引补充处理", "写作结构"):
+    for k in (
+        "史略ID",
+        "史略名称",
+        "母本著作",
+        "索引补充处理",
+        "写作结构",
+        "前置引入素材",
+        "前置引入档位",
+        "前置引入档位说明",
+    ):
         if k in plan:
             out[k] = plan[k]
 

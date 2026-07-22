@@ -7,17 +7,10 @@ from typing import Any, Dict, List, Tuple
 
 from lib.mother_sentences import MAX_MUST_PHRASES, extract_must_phrases
 
+from lib.intro_tier import intro_overlap_threshold
 
-def _intro_zone(detail: str) -> str:
-    body = detail.split("*参考著作*")[0].split("参考著作")[0]
-    paras = [p.strip() for p in body.split("\n\n") if p.strip()]
-    # 引入区：前两段 + 含过渡句的第三段
-    zone: List[str] = []
-    for p in paras[:3]:
-        zone.append(p)
-        if re.search(r"让我们|下面|来看一看|按下.*顺序|如何记载", p):
-            break
-    return "\n".join(zone)
+
+from lib.intro_zone import intro_zone_text as _intro_zone
 
 
 def _forbidden_phrases(plan: Dict[str, Any]) -> List[str]:
@@ -48,9 +41,14 @@ def intro_mother_overlap(
     detail: str,
     plan: Dict[str, Any],
     *,
-    threshold: int = 2,
+    threshold: int | None = None,
 ) -> List[str]:
-    """引入区与母本前三句必现词重叠过多 → 报错。"""
+    """引入区与母本前三句必现词重叠过多 → 报错（按引入档位调整阈值）。"""
+    if threshold is None:
+        threshold = intro_overlap_threshold(plan)
+    if threshold <= 0:
+        return []
+
     intro = _intro_zone(detail)
     if not intro:
         return []

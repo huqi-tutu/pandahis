@@ -13,6 +13,7 @@ const correction_1 = require("../../native-utils/correction");
 const load_error_message_1 = require("../../native-utils/load-error-message");
 const runtime_env_1 = require("../../native-utils/runtime-env");
 const offscreen_hints_1 = require("../../native-utils/offscreen-hints");
+const chip_badge_tokens_1 = require("../../native-utils/chip-badge-tokens");
 const { buildSwimMatrixFromMock, buildHeroFromMock, normalizeDynastyKey, isDegradedMockFallback, } = require('./swim-local-fallback');
 const PRIORITY_OPTIONS = [
     { value: 'p0', label: 'P0' },
@@ -437,7 +438,8 @@ function composeCanvasLayout(swim, lanes) {
         categoryBands.push({
             key: lane.key,
             label: lane.label,
-            borderColor: lane.borderColor,
+            // 类目色固定映射（视觉规范 v3）：前端为准，覆盖后端旧色值
+            borderColor: (0, chip_badge_tokens_1.categoryRailColor)(lane.key, lane.borderColor),
             topRpx: cursor,
             heightRpx: bandHeight,
             readProgressText: lane.readProgressText || `${(_b = lane.readCount) !== null && _b !== void 0 ? _b : 0}/${(_c = lane.totalCount) !== null && _c !== void 0 ? _c : 0}`,

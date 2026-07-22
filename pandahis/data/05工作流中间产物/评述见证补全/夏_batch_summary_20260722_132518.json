@@ -1,0 +1,894 @@
+{
+  "stamp": "20260722_132518",
+  "dynasty": "夏",
+  "total_entries": 59,
+  "results": [
+    {
+      "id": "GLBL_00010",
+      "name": "启",
+      "mode": "commentary",
+      "status": "skip"
+    },
+    {
+      "id": "GLBL_00067",
+      "name": "桀",
+      "mode": "commentary",
+      "status": "skip"
+    },
+    {
+      "id": "GLBL_00096",
+      "name": "禹",
+      "mode": "commentary",
+      "status": "skip"
+    },
+    {
+      "id": "GLBL_00586",
+      "name": "涂山大会",
+      "mode": "commentary",
+      "status": "skip"
+    },
+    {
+      "id": "GLBL_00587",
+      "name": "启伐有扈氏",
+      "mode": "commentary",
+      "status": "skip"
+    },
+    {
+      "id": "GLBL_00588",
+      "name": "后羿代夏",
+      "mode": "commentary",
+      "status": "skip"
+    },
+    {
+      "id": "GLBL_00589",
+      "name": "寒浞篡权",
+      "mode": "commentary",
+      "status": "skip"
+    },
+    {
+      "id": "GLBL_00590",
+      "name": "少康中兴",
+      "mode": "commentary",
+      "status": "skip"
+    },
+    {
+      "id": "GLBL_00591",
+      "name": "孔甲乱政",
+      "mode": "commentary",
+      "status": "skip"
+    },
+    {
+      "id": "GLBL_00592",
+      "name": "夏桀暴政",
+      "mode": "commentary",
+      "status": "skip"
+    },
+    {
+      "id": "GLBL_00593",
+      "name": "鸣条之战",
+      "mode": "commentary",
+      "status": "skip"
+    },
+    {
+      "id": "GLBL_00594",
+      "name": "世袭继承制",
+      "mode": "commentary",
+      "status": "skip"
+    },
+    {
+      "id": "GLBL_00595",
+      "name": "方国羁縻制度",
+      "mode": "commentary",
+      "status": "skip"
+    },
+    {
+      "id": "GLBL_00596",
+      "name": "贡赋制度",
+      "mode": "commentary",
+      "status": "skip"
+    },
+    {
+      "id": "GLBL_00597",
+      "name": "禹刑",
+      "mode": "commentary",
+      "status": "skip"
+    },
+    {
+      "id": "GLBL_00598",
+      "name": "夏正历法",
+      "mode": "commentary",
+      "status": "skip"
+    },
+    {
+      "id": "GLBL_00599",
+      "name": "井田制雏形",
+      "mode": "commentary",
+      "status": "skip"
+    },
+    {
+      "id": "GLBL_00600",
+      "name": "《候人歌》",
+      "mode": "commentary",
+      "status": "skip"
+    },
+    {
+      "id": "GLBL_00601",
+      "name": "《时日曷丧》",
+      "mode": "commentary",
+      "status": "skip"
+    },
+    {
+      "id": "GLBL_00602",
+      "name": "相",
+      "mode": "commentary",
+      "status": "skip"
+    },
+    {
+      "id": "GLBL_00603",
+      "name": "少康",
+      "mode": "commentary",
+      "status": "skip"
+    },
+    {
+      "id": "GLBL_00604",
+      "name": "杼",
+      "mode": "commentary",
+      "status": "skip"
+    },
+    {
+      "id": "GLBL_00605",
+      "name": "槐",
+      "mode": "commentary",
+      "status": "skip"
+    },
+    {
+      "id": "GLBL_00606",
+      "name": "芒",
+      "mode": "commentary",
+      "status": "skip"
+    },
+    {
+      "id": "GLBL_00607",
+      "name": "泄",
+      "mode": "commentary",
+      "status": "skip"
+    },
+    {
+      "id": "GLBL_00608",
+      "name": "不降",
+      "mode": "commentary",
+      "status": "skip"
+    },
+    {
+      "id": "GLBL_00609",
+      "name": "扃",
+      "mode": "commentary",
+      "status": "skip"
+    },
+    {
+      "id": "GLBL_00610",
+      "name": "廑",
+      "mode": "commentary",
+      "status": "skip"
+    },
+    {
+      "id": "GLBL_00611",
+      "name": "皋",
+      "mode": "commentary",
+      "status": "skip"
+    },
+    {
+      "id": "GLBL_00612",
+      "name": "发",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00613",
+      "name": "涂山氏女",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00614",
+      "name": "后缗",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00615",
+      "name": "妺喜",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00616",
+      "name": "关龙逄",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00617",
+      "name": "奚仲",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00618",
+      "name": "后羿",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00619",
+      "name": "寒浞",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00620",
+      "name": "靡",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00629",
+      "name": "《五子之歌》",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00630",
+      "name": "《胤征》",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00631",
+      "name": "胤侯",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 2
+    },
+    {
+      "id": "GLBL_00632",
+      "name": "女艾",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00633",
+      "name": "寒浇",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00634",
+      "name": "寒豷",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00635",
+      "name": "中康",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00636",
+      "name": "孔甲",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00637",
+      "name": "仲康",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00638",
+      "name": "太康",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00639",
+      "name": "有扈氏",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00640",
+      "name": "武观",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00641",
+      "name": "女志",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00642",
+      "name": "伯益",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00643",
+      "name": "彭伯寿",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00644",
+      "name": "皋陶",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00645",
+      "name": "仪狄",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00646",
+      "name": "伯杼",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00647",
+      "name": "胤甲",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00648",
+      "name": "汝艾",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00649",
+      "name": "季杼",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00010",
+      "name": "启",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 2
+    },
+    {
+      "id": "GLBL_00067",
+      "name": "桀",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00096",
+      "name": "禹",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00586",
+      "name": "涂山大会",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00587",
+      "name": "启伐有扈氏",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00588",
+      "name": "后羿代夏",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00589",
+      "name": "寒浞篡权",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00590",
+      "name": "少康中兴",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00591",
+      "name": "孔甲乱政",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00592",
+      "name": "夏桀暴政",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 2
+    },
+    {
+      "id": "GLBL_00593",
+      "name": "鸣条之战",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00594",
+      "name": "世袭继承制",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 2
+    },
+    {
+      "id": "GLBL_00595",
+      "name": "方国羁縻制度",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00596",
+      "name": "贡赋制度",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00597",
+      "name": "禹刑",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 1
+    },
+    {
+      "id": "GLBL_00598",
+      "name": "夏正历法",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 2
+    },
+    {
+      "id": "GLBL_00599",
+      "name": "井田制雏形",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00600",
+      "name": "《候人歌》",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00601",
+      "name": "《时日曷丧》",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 1
+    },
+    {
+      "id": "GLBL_00602",
+      "name": "相",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00603",
+      "name": "少康",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00604",
+      "name": "杼",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00605",
+      "name": "槐",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00606",
+      "name": "芒",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00607",
+      "name": "泄",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00608",
+      "name": "不降",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00609",
+      "name": "扃",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 1
+    },
+    {
+      "id": "GLBL_00610",
+      "name": "廑",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00611",
+      "name": "皋",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00612",
+      "name": "发",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00613",
+      "name": "涂山氏女",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 1
+    },
+    {
+      "id": "GLBL_00614",
+      "name": "后缗",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00615",
+      "name": "妺喜",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00616",
+      "name": "关龙逄",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 1
+    },
+    {
+      "id": "GLBL_00617",
+      "name": "奚仲",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 1
+    },
+    {
+      "id": "GLBL_00618",
+      "name": "后羿",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00619",
+      "name": "寒浞",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00620",
+      "name": "靡",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00629",
+      "name": "《五子之歌》",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 1
+    },
+    {
+      "id": "GLBL_00630",
+      "name": "《胤征》",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00631",
+      "name": "胤侯",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00632",
+      "name": "女艾",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00633",
+      "name": "寒浇",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00634",
+      "name": "寒豷",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00635",
+      "name": "中康",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00636",
+      "name": "孔甲",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00637",
+      "name": "仲康",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00638",
+      "name": "太康",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00639",
+      "name": "有扈氏",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00640",
+      "name": "武观",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00641",
+      "name": "女志",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00642",
+      "name": "伯益",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00643",
+      "name": "彭伯寿",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00644",
+      "name": "皋陶",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00645",
+      "name": "仪狄",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00646",
+      "name": "伯杼",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 1
+    },
+    {
+      "id": "GLBL_00647",
+      "name": "胤甲",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00648",
+      "name": "汝艾",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00649",
+      "name": "季杼",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    }
+  ],
+  "dynasty_issues": []
+}

@@ -189,6 +189,35 @@ function stripMarkdownBold(text: string): string {
 
 const MIN_QUOTE_BOLD_CHARS = 5
 
+const REF_PARA_RE = /^[\s*]*参考著作\s*[:：]/
+
+/** 参考著作节：标题加粗 + 编号书目列表（兼容 *参考著作* / - 列表 / 同行连写） */
+function parseReferenceParagraph(raw: string): DetailParagraph {
+  let body = raw.trim()
+  body = body.replace(/^[\s*]*参考著作\s*[:：]\s*[\s*]*/u, '')
+  body = body.replace(/^\*+|\*+$/g, '').trim()
+
+  const titles: string[] = []
+  const bookRe = /《[^》]+》/g
+  let m: RegExpExecArray | null
+  while ((m = bookRe.exec(body)) !== null) {
+    titles.push(m[0])
+  }
+
+  const segs: TextSegment[] = [{ text: '参考著作：', bold: true }]
+  if (!titles.length) {
+    if (body) segs.push({ text: `\n${body}`, bold: false })
+    const plain = segs.map((s) => s.text).join('')
+    return { segs, plain }
+  }
+  titles.forEach((t, i) => {
+    segs.push({ text: '\n', bold: false })
+    segs.push({ text: `${i + 1}. ${t}`, bold: false })
+  })
+  const plain = segs.map((s) => s.text).join('')
+  return { segs, plain }
+}
+
 /** 直角引号「」『』内正文 ≥5 字时，引号与原文整体加粗；正文勿写 ** markdown 加粗 */
 function parseDisplaySegments(raw: string): TextSegment[] {
   const text = stripMarkdownBold(raw)
@@ -261,9 +290,13 @@ function parseDisplaySegments(raw: string): TextSegment[] {
 function splitDetailParagraphs(md: string): DetailParagraph[] {
   const raw = String(md || '').trim()
   if (!raw) return []
-  const parts = raw.split(/\n{2,}/).map((s) => s.trim()).filter(Boolean)
-  const list = parts.length ? parts : [raw]
+  const fixed = raw.replace(/\\n/g, '\n')
+  const parts = fixed.split(/\n{2,}/).map((s) => s.trim()).filter(Boolean)
+  const list = parts.length ? parts : [fixed]
   return list.map((p) => {
+    if (REF_PARA_RE.test(p)) {
+      return parseReferenceParagraph(p)
+    }
     const segs = parseDisplaySegments(p)
     const plain = segs.map((s) => s.text).join('')
     return { segs, plain }
