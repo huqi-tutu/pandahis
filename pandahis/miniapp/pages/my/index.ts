@@ -1,5 +1,7 @@
-import { clearToken, hasToken, request } from '../../native-utils/api'
+import { clearAccessToken, hasToken, request } from '../../native-utils/api'
 import { ROUTES, navigateTo } from '../../native-utils/router'
+import { computePageTopPadPx } from '../../native-utils/nav-metrics'
+import { trySilentWxLogin } from '../../native-utils/wx-auth'
 
 const APP_VERSION = '1.0.0'
 
@@ -50,16 +52,13 @@ Page({
     vipTitle: '开通年度会员',
     vipDesc: '解锁全地域图谱 · 跨时空评述 · 见证 Tab',
     appVersion: APP_VERSION,
-    headerPadPx: 88,
+    pageTopPadPx: 88,
   },
   onLoad() {
-    // 与 proto-nav 一致：状态栏 + 88rpx 导航行（随屏宽换算 px）
     try {
-      const sys = wx.getSystemInfoSync()
-      const navPx = 88 * (sys.windowWidth / 750)
-      this.setData({ headerPadPx: (sys.statusBarHeight || 20) + navPx })
+      this.setData({ pageTopPadPx: computePageTopPadPx() })
     } catch {
-      this.setData({ headerPadPx: 88 })
+      this.setData({ pageTopPadPx: 88 })
     }
   },
   onShow() {
@@ -91,7 +90,7 @@ Page({
     try {
       const [meRes, membership] = await Promise.all([
         request<MeDTO>('/me', { auth: true }),
-        request<MembershipDTO>('/membership', { auth: true }).catch(() => null),
+        request<MembershipDTO>('/membership', { auth: true, softAuth: true }).catch(() => null),
       ])
       const me = normalizeMe((meRes.data || {}) as Record<string, unknown>)
       const phone =
@@ -119,7 +118,11 @@ Page({
       const msg = e instanceof Error ? e.message : ''
       console.error('[my] refresh failed', e)
       if (msg === 'UNAUTHORIZED') {
-        clearToken()
+        clearAccessToken()
+        const relogged = await trySilentWxLogin()
+        if (relogged) {
+          return this.refresh()
+        }
         this.setGuestState()
         return
       }

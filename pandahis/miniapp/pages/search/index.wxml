@@ -1,7 +1,7 @@
 <view class="page-search">
   <proto-nav title="搜索" show-back="{{false}}"></proto-nav>
 
-  <view class="search-body" style="padding-top: {{headerPadPx}}px;">
+  <view class="search-body" style="padding-top: {{pageTopPadPx}}px;">
 
     <!-- 搜索框 -->
     <view class="search-bar-wrap">

@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const api_1 = require("../../native-utils/api");
 const membership_benefits_1 = require("../../native-utils/membership-benefits");
+const nav_metrics_1 = require("../../native-utils/nav-metrics");
 const router_1 = require("../../native-utils/router");
 const INVITE_PLAN_ID = 'invite_quarter';
 const FALLBACK_PLANS = [
@@ -39,16 +40,14 @@ Page({
         selectedId: INVITE_PLAN_ID,
         benefits: [...membership_benefits_1.MEMBERSHIP_BENEFITS],
         checkoutLine: '邀友获取 · 季卡 · ¥0',
-        headerPadPx: 88,
+        pageTopPadPx: 88,
     },
     onLoad() {
         try {
-            const sys = wx.getSystemInfoSync();
-            const navPx = 88 * (sys.windowWidth / 750);
-            this.setData({ headerPadPx: (sys.statusBarHeight || 20) + navPx });
+            this.setData({ pageTopPadPx: (0, nav_metrics_1.computePageTopPadPx)() });
         }
         catch {
-            this.setData({ headerPadPx: 88 });
+            this.setData({ pageTopPadPx: 88 });
         }
     },
     onShow() {

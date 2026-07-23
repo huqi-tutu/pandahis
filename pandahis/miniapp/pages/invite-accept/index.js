@@ -5,22 +5,21 @@ const invite_bind_1 = require("../../native-utils/invite-bind");
 const invite_storage_1 = require("../../native-utils/invite-storage");
 const router_1 = require("../../native-utils/router");
 const wx_auth_1 = require("../../native-utils/wx-auth");
+const nav_metrics_1 = require("../../native-utils/nav-metrics");
 Page({
     data: {
         hasPendingInvite: false,
         loggingIn: false,
         inviteCodeInput: '',
-        headerPadPx: 88,
+        pageTopPadPx: 88,
     },
     onLoad(query) {
         var _a;
         try {
-            const sys = wx.getSystemInfoSync();
-            const navPx = 88 * (sys.windowWidth / 750);
-            this.setData({ headerPadPx: (sys.statusBarHeight || 20) + navPx });
+            this.setData({ pageTopPadPx: (0, nav_metrics_1.computePageTopPadPx)() });
         }
         catch {
-            this.setData({ headerPadPx: 88 });
+            this.setData({ pageTopPadPx: 88 });
         }
         (0, invite_storage_1.stashInviteCodeFromQuery)(query);
         try {

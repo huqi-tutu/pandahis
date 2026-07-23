@@ -1,7 +1,7 @@
 <view class="proto-shell">
   <proto-nav title="原文对照" show-back="{{true}}"></proto-nav>
 
-  <scroll-view class="ref-scroll" scroll-y style="padding-top: {{headerPadPx}}px;">
+  <scroll-view class="ref-scroll" scroll-y style="padding-top: {{pageTopPadPx}}px;">
     <empty-state wx:if="{{empty}}" type="search" title="暂无原文引用" desc="该盒子在服务端未配置 originalRef。"></empty-state>
 
     <view wx:else class="ref-root">

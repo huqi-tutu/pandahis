@@ -1,5 +1,15 @@
-import { clearToken, getBaseUrl, hasToken } from '../../native-utils/api'
+import {
+  clearToken,
+  getBaseUrl,
+  hasToken,
+  probeApiConnectivity,
+  useLocalDevApi,
+  useProductionApi,
+} from '../../native-utils/api'
 import { bindInviteCode } from '../../native-utils/invite-bind'
+import { formatApiRequestError } from '../../native-utils/load-error-message'
+import { computePageTopPadPx } from '../../native-utils/nav-metrics'
+import { getEnvVersion, isDevtoolsClient } from '../../native-utils/runtime-env'
 import { ROUTES, SUPPORT_EMAIL, navigateTo } from '../../native-utils/router'
 
 const APP_VERSION = '1.0.0'
@@ -10,16 +20,14 @@ Page({
     apiBase: '',
     bindCode: '',
     bindSubmitting: false,
-    headerPadPx: 88,
+    pageTopPadPx: 88,
     appVersion: APP_VERSION,
   },
   onLoad() {
     try {
-      const sys = wx.getSystemInfoSync()
-      const navPx = 88 * (sys.windowWidth / 750)
-      this.setData({ headerPadPx: (sys.statusBarHeight || 20) + navPx })
+      this.setData({ pageTopPadPx: computePageTopPadPx() })
     } catch {
-      this.setData({ headerPadPx: 88 })
+      this.setData({ pageTopPadPx: 88 })
     }
   },
   onShow() {
@@ -74,6 +82,63 @@ Page({
   },
   goAbout() {
     navigateTo(ROUTES.about)
+  },
+  async testApiConnection() {
+    wx.showLoading({ title: '检测中', mask: true })
+    const result = await probeApiConnectivity()
+    wx.hideLoading()
+    if (result.ok) {
+      wx.showModal({
+        title: '连接正常',
+        content: `基础、登录、朝代概要、朝代画布接口均正常。\n\n当前接口：\n${getBaseUrl()}${hasToken() ? '\n\n已保存登录令牌' : '\n\n未登录（请在登录页授权）'}`,
+        showCancel: false,
+      })
+      return
+    }
+    const hint = formatApiRequestError(result.error)
+    const stageText = result.stage === 'swim-matrix'
+      ? '（朝代画布接口失败，详情页无法展示）'
+      : result.stage === 'unit'
+        ? '（朝代概要接口失败）'
+        : result.stage === 'auth'
+          ? '（微信登录接口不可达，登录与用户资料会失败）'
+          : '（基础健康检查失败）'
+    wx.showModal({
+      title: '连接失败',
+      content: `${hint}${stageText}\n\n当前配置：\n${getBaseUrl()}`,
+      confirmText: '切生产接口',
+      cancelText: '关闭',
+      success: (r) => {
+        if (!r.confirm) return
+        useProductionApi()
+        this.setData({ apiBase: getBaseUrl() })
+        wx.showToast({ title: '已切换生产接口', icon: 'success' })
+      },
+    })
+  },
+  onApiBaseTap() {
+    if (getEnvVersion() !== 'develop') {
+      void this.testApiConnection()
+      return
+    }
+    const items = ['使用生产接口（推荐，手机预览用这个）', '检测接口连接']
+    const localDevIndex = isDevtoolsClient() ? items.push('使用本机接口 localhost:8080') - 1 : -1
+    wx.showActionSheet({
+      itemList: items,
+      success: (res) => {
+        if (res.tapIndex === 0) {
+          useProductionApi()
+          wx.showToast({ title: '已切换生产接口', icon: 'success' })
+          this.setData({ apiBase: getBaseUrl() })
+        } else if (res.tapIndex === 1) {
+          void this.testApiConnection()
+        } else if (res.tapIndex === localDevIndex) {
+          useLocalDevApi()
+          wx.showToast({ title: '已切换本机接口', icon: 'success' })
+          this.setData({ apiBase: getBaseUrl() })
+        }
+      },
+    })
   },
   goProfileEdit() {
     if (!hasToken()) {

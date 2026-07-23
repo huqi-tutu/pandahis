@@ -1,12 +1,18 @@
 import { stashInviteFromLaunchOptions } from './native-utils/invite-storage'
+import { clearDevelopApiBaseUrl } from './native-utils/api'
+import { getEnvVersion, isDevtoolsClient } from './native-utils/runtime-env'
 import { trySilentWxLogin } from './native-utils/wx-auth'
 
-/** 开发版启动时清除误缓存的 API 地址，避免请求到错误后端 */
-function migrateDevApiBaseUrl() {
+/** 真机预览清除无效的本机/局域网 API 缓存，避免误连不可达地址 */
+function migrateApiBaseUrlForClient() {
   try {
-    const env = wx.getAccountInfoSync()?.miniProgram?.envVersion
-    if (env !== 'develop') return
-    wx.removeStorageSync('apiBaseUrl')
+    if (getEnvVersion() !== 'develop') return
+    if (isDevtoolsClient()) return
+    const stored = String(wx.getStorageSync('apiBaseUrl') || '').trim()
+    if (!stored) return
+    if (/^http:\/\//i.test(stored)) {
+      clearDevelopApiBaseUrl()
+    }
   } catch {
     // ignore
   }
@@ -46,7 +52,7 @@ function loadAppFonts() {
 App<IAppOption>({
   globalData: {},
   onLaunch(options: WechatMiniprogram.App.LaunchShowOption) {
-    migrateDevApiBaseUrl()
+    migrateApiBaseUrlForClient()
     loadAppFonts()
     stashInviteFromLaunchOptions(options)
     void trySilentWxLogin()

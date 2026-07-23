@@ -6,6 +6,7 @@ import {
 } from '../../native-utils/favorite-display'
 import { unmarkBoxReadComplete } from '../../native-utils/read-complete'
 import { ROUTES, navigateTo } from '../../native-utils/router'
+import { computePageTopPadPx } from '../../native-utils/nav-metrics'
 
 const ACTION_WIDTH_RPX = 168
 
@@ -24,7 +25,7 @@ Page({
     total: 0,
     summaryText: '',
     items: [] as ReadCompleteRow[],
-    headerPadPx: 88,
+    pageTopPadPx: 88,
     openBoxId: '',
     draggingBoxId: '',
   },
@@ -33,11 +34,10 @@ Page({
   onLoad() {
     try {
       const sys = wx.getSystemInfoSync()
-      const navPx = 88 * (sys.windowWidth / 750)
       this._actionWidthPx = ACTION_WIDTH_RPX * (sys.windowWidth / 750)
-      this.setData({ headerPadPx: (sys.statusBarHeight || 20) + navPx })
+      this.setData({ pageTopPadPx: computePageTopPadPx(sys) })
     } catch {
-      this.setData({ headerPadPx: 88 })
+      this.setData({ pageTopPadPx: 88 })
     }
   },
   onShow() {

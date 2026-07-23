@@ -1,7 +1,7 @@
 <view class="proto-shell">
   <proto-nav title="{{name}}" show-back="{{true}}"></proto-nav>
 
-  <view class="detail-body" style="padding-top: {{headerPadPx}}px;">
+  <view class="detail-body" style="padding-top: {{pageTopPadPx}}px;">
     <block wx:if="{{info}}">
       <view class="meta card-paper">
         <view class="row">

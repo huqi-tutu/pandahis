@@ -1,7 +1,7 @@
 <view class="page-shell">
   <proto-nav title="邀请好友" show-back="{{true}}"></proto-nav>
 
-  <view class="page-invite" style="padding-top: {{headerPadPx}}px;">
+  <view class="page-invite" style="padding-top: {{pageTopPadPx}}px;">
     <view wx:if="{{!hasToken}}" class="login-banner card-paper">
       <view class="login-title">登录后使用邀请功能</view>
       <view class="login-desc muted">查看阅读数、邀请码，并邀请好友一起读史。</view>

@@ -4,7 +4,7 @@
   min-height: 100vh;
   @include parchment-page-bg;
   box-sizing: border-box;
-  padding: 24rpx 32rpx calc(48rpx + env(safe-area-inset-bottom));
+  padding: 0 32rpx calc(48rpx + env(safe-area-inset-bottom));
 }
 
 .menu-card {
@@ -73,6 +73,13 @@
   color: $text-caption;
   word-break: break-all;
   line-height: 1.5;
+}
+
+.menu-url-hint {
+  margin-top: 8rpx;
+  font-size: 20rpx;
+  color: rgba(108, 117, 125, 0.75);
+  line-height: 1.4;
 }
 
 .logout-wrap {

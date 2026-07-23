@@ -85,7 +85,7 @@ Component({
             let countByDate = {};
             if ((0, api_1.hasToken)()) {
                 try {
-                    const res = await (0, api_1.request)('/footprints/reading-heatmap', { auth: true });
+                    const res = await (0, api_1.request)('/footprints/reading-heatmap', { auth: true, softAuth: true });
                     for (const d of res.data.days || []) {
                         countByDate[d.date] = d.count;
                     }

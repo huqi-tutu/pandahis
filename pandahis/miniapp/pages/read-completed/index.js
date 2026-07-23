@@ -4,6 +4,7 @@ const api_1 = require("../../native-utils/api");
 const favorite_display_1 = require("../../native-utils/favorite-display");
 const read_complete_1 = require("../../native-utils/read-complete");
 const router_1 = require("../../native-utils/router");
+const nav_metrics_1 = require("../../native-utils/nav-metrics");
 const ACTION_WIDTH_RPX = 168;
 Page({
     data: {
@@ -12,7 +13,7 @@ Page({
         total: 0,
         summaryText: '',
         items: [],
-        headerPadPx: 88,
+        pageTopPadPx: 88,
         openBoxId: '',
         draggingBoxId: '',
     },
@@ -21,12 +22,11 @@ Page({
     onLoad() {
         try {
             const sys = wx.getSystemInfoSync();
-            const navPx = 88 * (sys.windowWidth / 750);
             this._actionWidthPx = ACTION_WIDTH_RPX * (sys.windowWidth / 750);
-            this.setData({ headerPadPx: (sys.statusBarHeight || 20) + navPx });
+            this.setData({ pageTopPadPx: (0, nav_metrics_1.computePageTopPadPx)(sys) });
         }
         catch {
-            this.setData({ headerPadPx: 88 });
+            this.setData({ pageTopPadPx: 88 });
         }
     },
     onShow() {

@@ -4,6 +4,8 @@
 $rh-row-h: 28rpx;
 $rh-gap: 8rpx;
 $rh-body-h: $rh-row-h * 8 + $rh-gap * 7;
+/* scroll-view 会裁切底边：略增高容器，网格保持原高 */
+$rh-scroll-h: $rh-body-h + 8rpx;
 $rh-gutter-w: 28rpx;
 $rh-gutter-gap: 14rpx;
 
@@ -24,10 +26,10 @@ $rh-gutter-gap: 14rpx;
 
 .rh-body {
   position: relative;
-  height: $rh-body-h;
+  height: $rh-scroll-h;
 }
 
-/* 星期列：叠在网格左侧，与每列格子同样的 space-between 分布 */
+/* 星期列：与网格列同样的 gap 分布（避免 space-between 取整误差） */
 .rh-weekdays {
   position: absolute;
   left: 0;
@@ -37,7 +39,7 @@ $rh-gutter-gap: 14rpx;
   height: $rh-body-h;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: $rh-gap;
   pointer-events: none;
 }
 
@@ -59,7 +61,7 @@ $rh-gutter-gap: 14rpx;
 
 .rh-scroll {
   width: 100%;
-  height: $rh-body-h;
+  height: $rh-scroll-h;
   padding-left: $rh-gutter-w + $rh-gutter-gap;
   box-sizing: border-box;
 }
@@ -69,13 +71,13 @@ $rh-gutter-gap: 14rpx;
   flex-direction: row;
   gap: $rh-gap;
   height: $rh-body-h;
+  align-items: flex-start;
 }
 
 .rh-col {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: $rh-body-h;
+  gap: $rh-gap;
   flex-shrink: 0;
 }
 

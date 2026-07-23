@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const api_1 = require("../../native-utils/api");
 const format_1 = require("../../native-utils/format");
 const router_1 = require("../../native-utils/router");
+const nav_metrics_1 = require("../../native-utils/nav-metrics");
 const FILTER_CATS = ['全部', '君王', '士臣', '典制', '事略', '民录'];
 function extractCategory(pathText, type) {
     if (type !== 'box')
@@ -29,16 +30,14 @@ Page({
         resultTotal: 0,
         filterCats: [...FILTER_CATS],
         filterIndex: 0,
-        headerPadPx: 88,
+        pageTopPadPx: 88,
     },
     onLoad(query) {
         try {
-            const sys = wx.getSystemInfoSync();
-            const navPx = 88 * (sys.windowWidth / 750);
-            this.setData({ headerPadPx: (sys.statusBarHeight || 20) + navPx });
+            this.setData({ pageTopPadPx: (0, nav_metrics_1.computePageTopPadPx)() });
         }
         catch {
-            this.setData({ headerPadPx: 88 });
+            this.setData({ pageTopPadPx: 88 });
         }
         const keyword = decodeURIComponent(query.q || query.keyword || '');
         this.setData({ keyword });

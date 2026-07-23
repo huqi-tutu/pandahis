@@ -7,6 +7,7 @@ import {
   formatCorrectionTime,
 } from '../../native-utils/correction'
 import { ROUTES, navigateTo } from '../../native-utils/router'
+import { computePageTopPadPx } from '../../native-utils/nav-metrics'
 
 type CorrectionListVm = CorrectionListItem & {
   createdAtLabel: string
@@ -31,15 +32,13 @@ Page({
     items: [] as CorrectionListVm[],
     detailVisible: false,
     detail: EMPTY_DETAIL,
-    headerPadPx: 88,
+    pageTopPadPx: 88,
   },
   onLoad() {
     try {
-      const sys = wx.getSystemInfoSync()
-      const navPx = 88 * (sys.windowWidth / 750)
-      this.setData({ headerPadPx: (sys.statusBarHeight || 20) + navPx })
+      this.setData({ pageTopPadPx: computePageTopPadPx() })
     } catch {
-      this.setData({ headerPadPx: 88 })
+      this.setData({ pageTopPadPx: 88 })
     }
   },
   onShow() {

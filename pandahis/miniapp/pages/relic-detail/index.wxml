@@ -1,7 +1,7 @@
 <view class="proto-shell">
   <proto-nav title="{{name}}" show-back="{{true}}"></proto-nav>
 
-  <view class="detail-body" style="padding-top: {{headerPadPx}}px;">
+  <view class="detail-body" style="padding-top: {{pageTopPadPx}}px;">
     <image wx:if="{{imageUrl}}" class="hero-img-real" src="{{imageUrl}}" mode="aspectFill" />
     <view wx:else class="hero-img muted">文物图片占位</view>
 

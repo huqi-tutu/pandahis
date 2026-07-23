@@ -85,8 +85,11 @@
     <!-- 开发联调（仅开发者工具可见） -->
     <view wx:if="{{devVisible}}" class="dev-section">
       <view class="dev-title">开发联调</view>
-      <view class="dev-desc muted">后端 dev profile 下可写入 dev-local-token 映射测试用户。</view>
-      <view class="btn-dev accent" bindtap="loginDev">写入 dev-local-token 并返回</view>
+      <view class="dev-desc muted">当前 API：{{apiBase}}</view>
+      <view class="dev-desc muted">默认连生产；本机后端启动后再切 localhost。</view>
+      <view class="btn-dev accent" bindtap="loginDev">本机 API + dev-local-token</view>
+      <view class="btn-dev btn-dev--ghost" bindtap="useLocalApi">仅切换本机 API</view>
+      <view class="btn-dev btn-dev--ghost" bindtap="useProdApi">恢复生产 API</view>
     </view>
   </view>
 </view>

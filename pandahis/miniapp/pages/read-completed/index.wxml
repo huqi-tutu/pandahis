@@ -1,7 +1,7 @@
 <view class="page-shell">
   <proto-nav title="已读完" show-back="{{true}}"></proto-nav>
 
-  <view class="fp-body" style="padding-top: {{headerPadPx}}px;">
+  <view class="fp-body" style="padding-top: {{pageTopPadPx}}px;">
     <view wx:if="{{!hasToken}}" class="empty-state">
       <text class="empty-icon">🔒</text>
       <text class="empty-text">登录后可查看已读完的史略</text>

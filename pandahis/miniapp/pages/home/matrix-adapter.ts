@@ -89,9 +89,14 @@ const SYNTHETIC_MATRIX_ID = /^(collapsed_|merged_)/
 
 /** 本地矩阵条目缺少 dynastyId 时的朝代详情兜底 */
 const DYNASTY_UNIT_FALLBACK: Record<string, string> = {
+  五帝: 'CD_HX_WUDI',
+  夏: 'CD_HX_XIA',
+  商: 'CD_HX_SHANG',
+  西周: 'CD_HX_XIZHOU',
   春秋: 'CD_HX_CHUNQIU',
   战国: 'CD_HX_ZHANGUO',
   春秋战国: 'CD_HX_CHUNQIU',
+  秦: 'CD_HX_QIN',
   'HX-CQ': 'CD_HX_CHUNQIU',
   'HX-ZG': 'CD_HX_ZHANGUO',
 }
@@ -110,6 +115,22 @@ export type NavigationTargetOpts = {
   person?: string
   dynasty?: string
   displayName?: string
+}
+
+/** 朝代详情页 API 候选 ID（按优先级去重） */
+export function resolveDetailUnitIds(unitId: string, dynastyHint: string): string[] {
+  const seen = new Set<string>()
+  const out: string[] = []
+  const push = (id: string) => {
+    const v = String(id || '').trim()
+    if (!isNavigableUnitId(v) || seen.has(v)) return
+    seen.add(v)
+    out.push(v)
+  }
+  push(unitId)
+  push(DYNASTY_UNIT_FALLBACK[dynastyHint])
+  push(resolveUnitId(dynastyHint, {}))
+  return out
 }
 
 /** 首页矩阵卡片 → 详情页 unitId（朝代详情优先 CD_* / dynastyId） */

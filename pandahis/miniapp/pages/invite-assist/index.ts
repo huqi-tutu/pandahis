@@ -1,6 +1,7 @@
 import { hasToken, request } from '../../native-utils/api'
 import { ROUTES, buildUrl, navigateTo } from '../../native-utils/router'
 import { promptInviteByCode } from '../../native-utils/share-invite'
+import { computePageTopPadPx } from '../../native-utils/nav-metrics'
 
 type AssistParticipant = { nickname: string; avatarUrl?: string | null }
 
@@ -37,15 +38,13 @@ Page({
     slots: [] as Slot[],
     inviteCode: '',
     canShare: true,
-    headerPadPx: 88,
+    pageTopPadPx: 88,
   },
   onLoad() {
     try {
-      const sys = wx.getSystemInfoSync()
-      const navPx = 88 * (sys.windowWidth / 750)
-      this.setData({ headerPadPx: (sys.statusBarHeight || 20) + navPx })
+      this.setData({ pageTopPadPx: computePageTopPadPx() })
     } catch {
-      this.setData({ headerPadPx: 88 })
+      this.setData({ pageTopPadPx: 88 })
     }
   },
   onShow() {

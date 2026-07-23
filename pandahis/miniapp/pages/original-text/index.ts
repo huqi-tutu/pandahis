@@ -1,6 +1,7 @@
 import { hasToken, request } from '../../native-utils/api'
 import { encodePathSegment } from '../../native-utils/encode-path-segment'
 import { ROUTES, navigateTo } from '../../native-utils/router'
+import { computePageTopPadPx } from '../../native-utils/nav-metrics'
 
 type RefItemView = { work: string; chapter: string; excerpt: string; url: string }
 
@@ -78,15 +79,13 @@ Page({
     refSourceWork: '',
     refItems: [] as RefItemView[],
     refFallback: '',
-    headerPadPx: 88,
+    pageTopPadPx: 88,
   },
   async onLoad(query: Record<string, string | undefined>) {
     try {
-      const sys = wx.getSystemInfoSync()
-      const navPx = 88 * (sys.windowWidth / 750)
-      this.setData({ headerPadPx: (sys.statusBarHeight || 20) + navPx })
+      this.setData({ pageTopPadPx: computePageTopPadPx() })
     } catch {
-      this.setData({ headerPadPx: 88 })
+      this.setData({ pageTopPadPx: 88 })
     }
     const boxId = query.boxId || query.id
     if (!boxId) {

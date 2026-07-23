@@ -15,6 +15,42 @@
   min-height: 100vh;
 }
 
+.dynasty-state {
+  padding: 48rpx 32rpx;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.dynasty-state-text {
+  display: block;
+  font-size: 28rpx;
+  line-height: 1.6;
+  color: #6C757D;
+}
+
+.dynasty-state-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16rpx;
+  margin-top: 24rpx;
+}
+
+.dynasty-retry-btn,
+.dynasty-copy-btn {
+  padding: 12rpx 24rpx;
+  border-radius: 8rpx;
+  font-size: 26rpx;
+  line-height: 1.4;
+  color: #2A7A5D;
+  background: #F0F7F4;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.dynasty-retry-hover {
+  transform: translateY(-2rpx);
+  background: #E8F5E9;
+}
+
 /* ─────────────────────────────────────
    并发政权 Tab 栏（fixed，紧贴 proto-nav）
 ───────────────────────────────────── */

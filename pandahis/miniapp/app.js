@@ -1,15 +1,22 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const invite_storage_1 = require("./native-utils/invite-storage");
+const api_1 = require("./native-utils/api");
+const runtime_env_1 = require("./native-utils/runtime-env");
 const wx_auth_1 = require("./native-utils/wx-auth");
-/** 开发版启动时清除误缓存的 API 地址，避免请求到错误后端 */
-function migrateDevApiBaseUrl() {
-    var _a, _b;
+/** 真机预览清除无效的本机/局域网 API 缓存，避免误连不可达地址 */
+function migrateApiBaseUrlForClient() {
     try {
-        const env = (_b = (_a = wx.getAccountInfoSync()) === null || _a === void 0 ? void 0 : _a.miniProgram) === null || _b === void 0 ? void 0 : _b.envVersion;
-        if (env !== 'develop')
+        if ((0, runtime_env_1.getEnvVersion)() !== 'develop')
             return;
-        wx.removeStorageSync('apiBaseUrl');
+        if ((0, runtime_env_1.isDevtoolsClient)())
+            return;
+        const stored = String(wx.getStorageSync('apiBaseUrl') || '').trim();
+        if (!stored)
+            return;
+        if (/^http:\/\//i.test(stored)) {
+            (0, api_1.clearDevelopApiBaseUrl)();
+        }
     }
     catch {
         // ignore
@@ -49,7 +56,7 @@ function loadAppFonts() {
 App({
     globalData: {},
     onLaunch(options) {
-        migrateDevApiBaseUrl();
+        migrateApiBaseUrlForClient();
         loadAppFonts();
         (0, invite_storage_1.stashInviteFromLaunchOptions)(options);
         void (0, wx_auth_1.trySilentWxLogin)();

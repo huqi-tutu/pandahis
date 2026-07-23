@@ -5,11 +5,19 @@
   <!-- 导航栏 -->
   <proto-nav title="{{navTitle}}" show-back="{{true}}" />
 
-  <view wx:if="{{loadError}}" class="unit-intro" style="padding: 48rpx 32rpx; text-align: center; color: #6C757D;">
-    <text>{{loadError}}</text>
+  <view wx:if="{{loading}}" class="dynasty-state" style="padding-top: {{scrollTop}}px;">
+    <text class="dynasty-state-text">加载中…</text>
   </view>
 
-  <view wx:if="{{unit && swim}}">
+  <view wx:elif="{{loadError}}" class="dynasty-state" style="padding-top: {{scrollTop}}px;">
+    <text class="dynasty-state-text">{{loadError}}</text>
+    <view class="dynasty-state-actions">
+      <view class="dynasty-retry-btn" bindtap="retryLoad" hover-class="dynasty-retry-hover" hover-stay-time="60">重试</view>
+      <view wx:if="{{loadErrorDetail}}" class="dynasty-copy-btn" bindtap="copyLoadError" hover-class="dynasty-retry-hover" hover-stay-time="60">复制错误信息</view>
+    </view>
+  </view>
+
+  <view wx:elif="{{unit && swim}}">
 
     <!-- 并发政权 Tab 栏（fixed，紧贴 proto-nav 底部） -->
     <view class="unit-civ-tabs" style="top: {{headerPadPx}}px;">

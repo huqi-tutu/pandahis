@@ -1,35 +1,60 @@
 const assert = require('node:assert/strict')
 const test = require('node:test')
 
-const {
-  formatDynastyLoadError,
-  formatEmptySwimError,
-  formatUserFacingError,
-} = require('../native-utils/load-error-message.js')
+const { ApiError } = require('../native-utils/api.js')
+const { formatApiRequestError } = require('../native-utils/load-error-message.js')
 
-test('正式环境不向用户暴露后端和数据库诊断信息', () => {
-  const message = formatDynastyLoadError(new Error('ECONNREFUSED 49.235.165.220'), false)
-
-  assert.equal(message, '朝代数据暂时无法加载，请稍后重试。')
-  assert.doesNotMatch(message, /ECONNREFUSED|后端|historical_/)
+test.afterEach(() => {
+  delete global.wx
 })
 
-test('开发环境保留可操作的诊断信息', () => {
-  const message = formatDynastyLoadError(new Error('INVALID_RESPONSE'), true)
-
-  assert.match(message, /INVALID_RESPONSE/)
-  assert.match(message, /historical_dynasty/)
+test('识别微信合法域名拦截', () => {
+  global.wx = {
+    getDeviceInfo: () => ({ platform: 'ios' }),
+    getAppBaseInfo: () => ({}),
+  }
+  const err = new ApiError('request:fail url not in domain list', {
+    url: 'https://www.pandahis.com/api/v1/health',
+    method: 'GET',
+    err: { errMsg: 'request:fail url not in domain list' },
+  })
+  const msg = formatApiRequestError(err)
+  assert.match(msg, /合法域名/)
+  assert.match(msg, /pandahis/)
 })
 
-test('正式环境空泳道提示保持用户友好', () => {
-  const message = formatEmptySwimError(false)
-
-  assert.equal(message, '该朝代画布暂时无法展示，请稍后重试。')
-  assert.doesNotMatch(message, /swim-matrix|historical_/)
+test('真机连接失败给出设置指引', () => {
+  global.wx = {
+    getDeviceInfo: () => ({ platform: 'android' }),
+    getAppBaseInfo: () => ({}),
+  }
+  const err = new ApiError('request:fail', {
+    url: 'http://192.168.0.1:8080/api/v1/health',
+    method: 'GET',
+    err: { errMsg: 'request:fail -2:net::ERR_CONNECTION_REFUSED' },
+  })
+  const msg = formatApiRequestError(err)
+  assert.match(msg, /设置/)
 })
 
-test('正式环境 toast 不暴露 API 诊断信息', () => {
-  const message = formatUserFacingError(new Error('INTERNAL_ERROR 49.235.165.220'), false)
+test('开发版预览显示具体错误摘要', () => {
+  global.wx = {
+    getDeviceInfo: () => ({ platform: 'ios' }),
+    getAppBaseInfo: () => ({}),
+    getAccountInfoSync: () => ({ miniProgram: { envVersion: 'develop' } }),
+  }
+  const err = new ApiError('unit not found', {
+    url: 'https://www.pandahis.com/api/v1/units/HX-X',
+    method: 'GET',
+    status: 200,
+    body: { code: 'NOT_FOUND' },
+  })
+  const msg = formatApiRequestError(err)
+  assert.match(msg, /未找到该朝代/)
+})
 
-  assert.equal(message, '操作失败，请稍后重试')
+test('resolveDetailUnitIds 优先 CD 标准 ID', () => {
+  const { resolveDetailUnitIds } = require('../pages/home/matrix-adapter.js')
+  const ids = resolveDetailUnitIds('HX-X', '夏')
+  assert.deepEqual(ids, ['HX-X', 'CD_HX_XIA'])
 })

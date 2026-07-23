@@ -1,6 +1,7 @@
 package com.pandahis.histomap.contentgraph.interfaces.service;
 
 import com.pandahis.histomap.common.api.ApiException;
+import com.pandahis.histomap.common.auth.UserContext;
 import com.pandahis.histomap.common.auth.UserContextHolder;
 import com.pandahis.histomap.common.util.HistoryYearFormat;
 import com.pandahis.histomap.contentgraph.domain.BoxCategorySupport;
@@ -11,11 +12,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
 @Service
 public class UnitSwimMatrixService {
+  private static final Logger log = LoggerFactory.getLogger(UnitSwimMatrixService.class);
+
   private final JdbcTemplate jdbcTemplate;
   private final UnitDynastyResolver dynastyResolver;
   private final ReadCompleteService readCompleteService;
@@ -52,9 +57,7 @@ public class UnitSwimMatrixService {
     List<Integer> anchorYears = collectAnchorYears(laneSeeds);
 
     var ctx = UserContextHolder.get();
-    Set<String> completedBoxIds = ctx.authenticated()
-        ? readCompleteService.completedBoxIdsForDynasty(ctx.userId(), dynastyId)
-        : Set.of();
+    Set<String> completedBoxIds = loadCompletedBoxIds(ctx, dynastyId);
 
     SwimTimeScale.Plan timePlan = SwimTimeScale.plan(startYear, endYear, anchorYears, laneSeeds.size());
     int recommendedSheetWidthRpx = refineSheetWidth(laneSeeds, timePlan);
@@ -258,6 +261,18 @@ public class UnitSwimMatrixService {
     }
     String value = String.valueOf(raw).trim().toLowerCase();
     return "supplement".equals(value) ? "supplement" : "extract";
+  }
+
+  private Set<String> loadCompletedBoxIds(UserContext ctx, String dynastyId) {
+    if (!ctx.authenticated()) {
+      return Set.of();
+    }
+    try {
+      return readCompleteService.completedBoxIdsForDynasty(ctx.userId(), dynastyId);
+    } catch (Exception e) {
+      log.warn("completedBoxIdsForDynasty failed userId={} dynastyId={}", ctx.userId(), dynastyId, e);
+      return Set.of();
+    }
   }
 
   private record LaneSeed(BoxCategorySupport.CategoryDef def, List<SwimLaneLayout.SwimBarInput> bars) {}

@@ -1,6 +1,6 @@
 <proto-nav title="关于历史图谱" show-back="{{true}}"></proto-nav>
 
-<scroll-view class="page-about" scroll-y enhanced show-scrollbar="{{false}}" style="padding-top: {{headerPadPx}}px;">
+<scroll-view class="page-about" scroll-y enhanced show-scrollbar="{{false}}" style="padding-top: {{pageTopPadPx}}px;">
   <view class="logo-wrap">
     <view class="logo">史</view>
     <view class="app-name text-h2">历史图谱</view>

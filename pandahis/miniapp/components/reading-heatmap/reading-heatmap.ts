@@ -108,7 +108,7 @@ Component({
         try {
           const res = await request<{ from: string; to: string; days: { date: string; count: number }[] }>(
             '/footprints/reading-heatmap',
-            { auth: true }
+            { auth: true, softAuth: true }
           )
           for (const d of res.data.days || []) {
             countByDate[d.date] = d.count

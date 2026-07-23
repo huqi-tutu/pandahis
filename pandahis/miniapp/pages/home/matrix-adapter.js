@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.resolveNavigationUnitId = exports.resolveUnitId = exports.buildDynastyUnitMap = exports.OVERVIEW_CIV_SPOTS = exports.OVERVIEW_SPOT_TO_MATRIX_SLUG = exports.CIV_CODE_BY_SLUG = exports.CIV_SLUG_BY_CODE = void 0;
+exports.resolveNavigationUnitId = exports.resolveDetailUnitIds = exports.resolveUnitId = exports.buildDynastyUnitMap = exports.OVERVIEW_CIV_SPOTS = exports.OVERVIEW_SPOT_TO_MATRIX_SLUG = exports.CIV_CODE_BY_SLUG = exports.CIV_SLUG_BY_CODE = void 0;
 /** 产品 CIV_TABS slug ↔ 后端 civilization code */
 const civ_tab_images_1 = require("../../native-utils/civ-tab-images");
 /** 与素材 01–18 / DB sort_order 一致 */
@@ -88,9 +88,14 @@ exports.resolveUnitId = resolveUnitId;
 const SYNTHETIC_MATRIX_ID = /^(collapsed_|merged_)/;
 /** 本地矩阵条目缺少 dynastyId 时的朝代详情兜底 */
 const DYNASTY_UNIT_FALLBACK = {
+    五帝: 'CD_HX_WUDI',
+    夏: 'CD_HX_XIA',
+    商: 'CD_HX_SHANG',
+    西周: 'CD_HX_XIZHOU',
     春秋: 'CD_HX_CHUNQIU',
     战国: 'CD_HX_ZHANGUO',
     春秋战国: 'CD_HX_CHUNQIU',
+    秦: 'CD_HX_QIN',
     'HX-CQ': 'CD_HX_CHUNQIU',
     'HX-ZG': 'CD_HX_ZHANGUO',
 };
@@ -100,6 +105,23 @@ function isNavigableUnitId(id) {
         return false;
     return true;
 }
+/** 朝代详情页 API 候选 ID（按优先级去重） */
+function resolveDetailUnitIds(unitId, dynastyHint) {
+    const seen = new Set();
+    const out = [];
+    const push = (id) => {
+        const v = String(id || '').trim();
+        if (!isNavigableUnitId(v) || seen.has(v))
+            return;
+        seen.add(v);
+        out.push(v);
+    };
+    push(unitId);
+    push(DYNASTY_UNIT_FALLBACK[dynastyHint]);
+    push(resolveUnitId(dynastyHint, {}));
+    return out;
+}
+exports.resolveDetailUnitIds = resolveDetailUnitIds;
 /** 首页矩阵卡片 → 详情页 unitId（朝代详情优先 CD_* / dynastyId） */
 function resolveNavigationUnitId(opts, map) {
     const entityType = String(opts.entityType || '').trim();

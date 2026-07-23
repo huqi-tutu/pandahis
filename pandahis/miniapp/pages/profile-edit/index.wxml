@@ -5,7 +5,7 @@
   scroll-y
   enhanced
   show-scrollbar="{{false}}"
-  style="padding-top: {{headerPadPx}}px; padding-bottom: {{keyboardPadPx}}px;"
+  style="padding-top: {{pageTopPadPx}}px; padding-bottom: {{keyboardPadPx}}px;"
 >
   <view class="card-paper card">
     <view class="avatar-section">

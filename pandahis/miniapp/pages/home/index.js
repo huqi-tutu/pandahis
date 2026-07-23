@@ -1,5 +1,6 @@
 const protoPage = require('../../behaviors/proto-page.js')
 const { navBarPx } = require('../../native-utils/matrix/layout.js')
+const { computePageTopPadPx } = require('../../native-utils/nav-metrics')
 const { CIV_TABS, buildRows, initialCiv, buildAllExpanded, toggleDynastyExpanded } = require('../../native-utils/matrix/mock-home-matrix.js')
 const { fetchHomeMatrixData } = require('../../native-utils/matrix/matrix-cloud.js')
 const { hasToken, request } = require('../../native-utils/api.js')
@@ -446,6 +447,7 @@ Page({
     scrollAreaTop:     0,
     matrixHeight:      600,
     headerPadPx:       88,
+    pageTopPadPx:      88,
     expandedDynasties: {},
     matrixDataLoading: true,
     civPickerOpen:     false,
@@ -480,6 +482,7 @@ Page({
 
     const navPx = navBarPx()
     const headerPadPx = statusBar + navPx
+    const pageTopPadPx = computePageTopPadPx({ windowWidth: sw, statusBarHeight: statusBar })
     const tabBarPx = CIV_TEXT_TAB_BAR_RPX * (sw / 750)
     const scrollAreaTop = headerPadPx + tabBarPx
     const matrixHeight = Math.max(200, windowHeight - scrollAreaTop)
@@ -523,6 +526,8 @@ Page({
       matrixSubCards:    [],
       matrixOverlays:    [],
       matrixTotalH:      0,
+      headerPadPx,
+      pageTopPadPx,
     }, buildTabLayerStyles(0), pickerMetrics))
 
     this._tabAlpha = 0
@@ -654,6 +659,7 @@ Page({
 
     const navPx = this._navPx || navBarPx()
     const headerPadPx = statusBar + navPx
+    const pageTopPadPx = computePageTopPadPx({ windowWidth: sw, statusBarHeight: statusBar })
     const tabBarPx = CIV_TEXT_TAB_BAR_RPX * (sw / 750)
     const scrollAreaTop = headerPadPx + tabBarPx
     const matrixHeight = Math.max(200, windowHeight - scrollAreaTop)
@@ -667,6 +673,8 @@ Page({
       statusBarPx:    statusBar,
       windowHeightPx: windowHeight,
       civStackItems:  buildStackItems(this.data.civIndex, sw),
+      headerPadPx,
+      pageTopPadPx,
     }, calcCivPickerMetrics(windowHeight, headerPadPx, sw)))
 
     const loadAfterData = (homeState) => {

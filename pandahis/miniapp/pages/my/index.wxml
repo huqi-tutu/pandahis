@@ -1,6 +1,6 @@
 <proto-nav title="我的" show-back="{{false}}"></proto-nav>
 
-<scroll-view class="page-my" scroll-y enhanced show-scrollbar="{{false}}" style="padding-top: {{headerPadPx}}px;">
+<scroll-view class="page-my" scroll-y enhanced show-scrollbar="{{false}}" style="padding-top: {{pageTopPadPx}}px;">
   <view class="hero-section">
     <view class="hero-bg"></view>
     <view class="hero-content">

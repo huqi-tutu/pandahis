@@ -11,6 +11,7 @@ const share_poster_open_1 = require("../../native-utils/share-poster-open");
 const selection_bar_position_1 = require("../../native-utils/selection-bar-position");
 const correction_1 = require("../../native-utils/correction");
 const load_error_message_1 = require("../../native-utils/load-error-message");
+const matrix_adapter_1 = require("../home/matrix-adapter");
 const runtime_env_1 = require("../../native-utils/runtime-env");
 const offscreen_hints_1 = require("../../native-utils/offscreen-hints");
 const chip_badge_tokens_1 = require("../../native-utils/chip-badge-tokens");
@@ -245,6 +246,15 @@ function splitIntroParagraphs(intro) {
     const text = (intro || '').trim() || '空';
     return text.split(/\n\n+/).map((p) => p.trim()).filter(Boolean);
 }
+function slimSwimMatrixForView(swim) {
+    return {
+        ...swim,
+        lanes: (swim.lanes || []).map((lane) => {
+            const { priorityViews, ...rest } = lane;
+            return rest;
+        }),
+    };
+}
 function warnIfDegradedMock(swim) {
     if (!isDegradedMockFallback(swim))
         return;
@@ -404,8 +414,13 @@ function buildOverlayCountTag(label, count) {
     return `${Math.max(0, count)}位${category}`;
 }
 function hasLaneContent(lane) {
-    var _a;
-    return ((_a = lane.totalCount) !== null && _a !== void 0 ? _a : 0) > 0;
+    var _a, _b;
+    if (((_a = lane.totalCount) !== null && _a !== void 0 ? _a : 0) > 0)
+        return true;
+    if (((_b = lane.visibleCount) !== null && _b !== void 0 ? _b : 0) > 0)
+        return true;
+    const rows = lane.collapsedRows || [];
+    return rows.some((row) => (row || []).length > 0);
 }
 function composeCanvasLayout(swim, lanes) {
     var _a, _b, _c, _d, _e;
@@ -527,6 +542,7 @@ function estimateSheetWidth(swim) {
     return Math.max(base, Math.min(base * 4, needed));
 }
 function normalizeLegacyLane(lane, sheetWidthRpx, priority, swim) {
+    var _a;
     const allBars = [...(lane.collapsedRows || []).flat(), ...(lane.extraBars || [])]
         .map((bar) => prepareLegacyBar(bar, sheetWidthRpx))
         .sort(compareLegacyBars);
@@ -549,6 +565,7 @@ function normalizeLegacyLane(lane, sheetWidthRpx, priority, swim) {
         rowCount: Math.max(1, rowsWithBuckets.length),
         trackHeightRpx: laneTrackHeight(rowsWithBuckets.length),
         visibleCount: individualCount + bucketCount,
+        totalCount: (_a = lane.totalCount) !== null && _a !== void 0 ? _a : individualCount + bucketCount,
     };
 }
 function prepareLegacyBar(bar, sheetWidthRpx) {
@@ -668,6 +685,7 @@ function previewIntro(intro) {
 Page({
     swimScrollLeft: 0,
     pageUnloaded: false,
+    _loadQuery: null,
     continuationItems: [],
     continuationRatio: 1,
     continuationViewportWidthPx: 0,
@@ -710,6 +728,8 @@ Page({
         continuationBottomCount: 0,
         continuationCanvasActive: false,
         loadError: '',
+        loadErrorDetail: '',
+        loading: true,
         priorityOptions: PRIORITY_OPTIONS,
         activePriority: 'p3',
         chipTooltipVisible: false,
@@ -771,11 +791,33 @@ Page({
         return { title: t, path };
     },
     async onLoad(query) {
-        var _a, _b;
-        const unitId = query.unitId || query.id;
-        const dynastyHint = (0, query_value_1.decodeQueryValue)(query.dynasty || query.displayName || '');
-        if (!unitId && !dynastyHint)
+        this._loadQuery = query;
+        await this.loadDynastyPage(query);
+    },
+    async retryLoad() {
+        if (!this._loadQuery)
             return;
+        this.setData({ loading: true, loadError: '', loadErrorDetail: '' });
+        await this.loadDynastyPage(this._loadQuery);
+    },
+    copyLoadError() {
+        const text = this.data.loadErrorDetail || this.data.loadError;
+        if (!text)
+            return;
+        wx.setClipboardData({
+            data: text,
+            success: () => wx.showToast({ title: '已复制错误信息', icon: 'success' }),
+        });
+    },
+    async loadDynastyPage(query) {
+        var _a, _b;
+        const rawUnitId = query.unitId || query.id || '';
+        const dynastyHint = (0, query_value_1.decodeQueryValue)(query.dynasty || query.displayName || '');
+        const unitCandidates = (0, matrix_adapter_1.resolveDetailUnitIds)(rawUnitId, dynastyHint);
+        if (!unitCandidates.length && !dynastyHint) {
+            this.setData({ loading: false, loadError: '缺少朝代参数，无法加载' });
+            return;
+        }
         const sys = wx.getSystemInfoSync();
         const navH = Math.round(88 * (sys.windowWidth / 750));
         const headerPadPx = (sys.statusBarHeight || 20) + navH;
@@ -793,66 +835,83 @@ Page({
             scrollTop,
             navTitle: provisionalNavTitle,
             dynastyTitle: dynastyHint,
+            loading: true,
+            loadError: '',
+            loadErrorDetail: '',
         });
+        const finishLoading = (patch) => {
+            this.setData({ ...patch, loading: false });
+        };
         const applyPageData = (hero, swim) => {
             var _a, _b;
-            const unit = hero.unit;
-            const dynastyTitle = (unit.dynastyName && unit.dynastyName.trim()) || unit.name;
-            const navTitle = dynastyTitle.length <= 4 ? dynastyTitle : dynastyTitle.slice(0, 4);
-            const heroSubLine = `${(0, year_format_1.formatHistoryYear)(unit.startYear)}–${(0, year_format_1.formatHistoryYear)(unit.endYear)}`;
-            const activePriority = this.data.activePriority || 'p3';
-            const prioritySwim = applyPriorityView(swim, activePriority);
-            const matrixBoxIds = collectMatrixBoxIds(prioritySwim);
-            const hasVisibleContent = (prioritySwim.lanes || []).some(hasLaneContent);
-            const { preview, canExpand, paragraphs } = previewIntro(unit.summary || '');
-            if (!hasVisibleContent) {
+            try {
+                const unit = hero.unit;
+                const dynastyTitle = (unit.dynastyName && unit.dynastyName.trim()) || unit.name;
+                const navTitle = dynastyTitle.length <= 4 ? dynastyTitle : dynastyTitle.slice(0, 4);
+                const heroSubLine = `${(0, year_format_1.formatHistoryYear)(unit.startYear)}–${(0, year_format_1.formatHistoryYear)(unit.endYear)}`;
+                const activePriority = this.data.activePriority || 'p3';
+                const prioritySwim = applyPriorityView(swim, activePriority);
+                const swimForView = slimSwimMatrixForView(prioritySwim);
+                const matrixBoxIds = collectMatrixBoxIds(prioritySwim);
+                const hasVisibleContent = (prioritySwim.lanes || []).some(hasLaneContent);
+                const { preview, canExpand, paragraphs } = previewIntro(unit.summary || '');
+                if (!hasVisibleContent) {
+                    finishLoading({
+                        unit,
+                        dynastyTitle,
+                        navTitle,
+                        heroSubLine,
+                        swim: null,
+                        concurrentItems: [],
+                        relatedUnits: hero.relatedUnits || [],
+                        nextUnit: (_a = hero.nextUnit) !== null && _a !== void 0 ? _a : null,
+                        matrixBoxIds: [],
+                        headerPadPx,
+                        scrollTop,
+                        introPreview: preview,
+                        introDisplay: preview,
+                        introCanExpand: canExpand,
+                        introParagraphs: paragraphs,
+                        loadError: (0, load_error_message_1.formatEmptySwimError)((0, runtime_env_1.isDevelopEnv)()),
+                        loadErrorDetail: '',
+                    });
+                    return;
+                }
                 this.setData({
                     unit,
                     dynastyTitle,
                     navTitle,
                     heroSubLine,
-                    swim: null,
-                    concurrentItems: [],
+                    swim: swimForView,
+                    concurrentItems: prioritySwim.concurrentItems || [],
                     relatedUnits: hero.relatedUnits || [],
-                    nextUnit: (_a = hero.nextUnit) !== null && _a !== void 0 ? _a : null,
-                    matrixBoxIds: [],
+                    nextUnit: (_b = hero.nextUnit) !== null && _b !== void 0 ? _b : null,
+                    matrixBoxIds,
                     headerPadPx,
                     scrollTop,
                     introPreview: preview,
                     introDisplay: preview,
                     introCanExpand: canExpand,
                     introParagraphs: paragraphs,
-                    loadError: (0, load_error_message_1.formatEmptySwimError)((0, runtime_env_1.isDevelopEnv)()),
+                    loadError: '',
+                    loadErrorDetail: '',
+                    loading: false,
+                }, () => {
+                    this.rebuildContinuationHints(prioritySwim);
                 });
-                return;
+                void this.refreshFavState();
+                if (!Number.isNaN(anchorYear)) {
+                    setTimeout(() => this.scrollToAnchorYear(anchorYear, swim), 120);
+                }
             }
-            this.setData({
-                unit,
-                dynastyTitle,
-                navTitle,
-                heroSubLine,
-                swim: prioritySwim,
-                concurrentItems: prioritySwim.concurrentItems || [],
-                relatedUnits: hero.relatedUnits || [],
-                nextUnit: (_b = hero.nextUnit) !== null && _b !== void 0 ? _b : null,
-                matrixBoxIds,
-                headerPadPx,
-                scrollTop,
-                introPreview: preview,
-                introDisplay: preview,
-                introCanExpand: canExpand,
-                introParagraphs: paragraphs,
-                loadError: '',
-            }, () => {
-                this.rebuildContinuationHints(prioritySwim);
-            });
-            void this.refreshFavState();
-            if (!Number.isNaN(anchorYear)) {
-                setTimeout(() => this.scrollToAnchorYear(anchorYear, swim), 120);
+            catch (processErr) {
+                throw processErr instanceof Error ? processErr : new Error(String(processErr));
             }
         };
-        const tryApplyLocalMock = (mockHint) => {
-            const fallback = tryLoadLocalMock(mockHint, unitId || '');
+        const tryApplyLocalMock = (mockHint, resolvedUnitId) => {
+            if (!(0, runtime_env_1.isDevtoolsClient)())
+                return false;
+            const fallback = tryLoadLocalMock(mockHint, resolvedUnitId);
             if (!fallback)
                 return false;
             console.warn('[dynasty-detail] using local mock for', mockHint);
@@ -866,9 +925,13 @@ Page({
             return true;
         };
         let resolvedMockHint = dynastyHint;
-        if (unitId) {
+        let lastError = null;
+        const triedIds = unitCandidates.length ? unitCandidates : [''];
+        for (const candidateId of triedIds) {
+            if (!candidateId)
+                continue;
             try {
-                const enc = (0, encode_path_segment_1.encodePathSegment)(unitId);
+                const enc = (0, encode_path_segment_1.encodePathSegment)(candidateId);
                 const heroRes = await (0, api_1.request)(`/units/${enc}`);
                 resolvedMockHint =
                     dynastyHint ||
@@ -884,42 +947,33 @@ Page({
                     return;
                 }
                 catch (swimErr) {
-                    console.error('[dynasty-detail] swim-matrix failed', swimErr);
-                    if ((0, runtime_env_1.isDevelopEnv)() && resolvedMockHint && tryApplyLocalMock(resolvedMockHint)) {
+                    console.error('[dynasty-detail] swim-matrix failed', candidateId, swimErr);
+                    lastError = swimErr;
+                    if ((0, runtime_env_1.isDevtoolsClient)() && resolvedMockHint && tryApplyLocalMock(resolvedMockHint, candidateId)) {
                         return;
                     }
-                    throw swimErr;
                 }
             }
             catch (e) {
-                console.error('[dynasty-detail] API failed', e);
-                if ((0, runtime_env_1.isDevelopEnv)() && resolvedMockHint && tryApplyLocalMock(resolvedMockHint)) {
-                    return;
-                }
-                this.setData({
-                    unit: null,
-                    swim: null,
-                    loadError: (0, load_error_message_1.formatDynastyLoadError)(e, (0, runtime_env_1.isDevelopEnv)()),
-                });
-                wx.showToast({ title: '加载失败', icon: 'none' });
-                return;
+                console.error('[dynasty-detail] API failed', candidateId, e);
+                lastError = e;
             }
         }
-        if ((0, runtime_env_1.isDevelopEnv)() && dynastyHint) {
-            const fallback = tryLoadLocalMock(dynastyHint, '');
-            if (fallback) {
-                console.warn('[dynasty-detail] using local mock for', dynastyHint);
-                const enhancedSwim = {
-                    ...fallback.swim,
-                    ...generateTimelineTicks(fallback.swim.startYear, fallback.swim.endYear, fallback.swim.sheetWidthRpx),
-                    timeScaleMode: 'linear',
-                };
-                applyPageData(fallback.hero, enhancedSwim);
-                warnIfDegradedMock(enhancedSwim);
-                return;
-            }
+        if ((0, runtime_env_1.isDevtoolsClient)() && dynastyHint && tryApplyLocalMock(dynastyHint, rawUnitId || triedIds[0] || '')) {
+            return;
         }
-        this.setData({ loadError: '缺少朝代 ID，无法加载' });
+        const detail = (0, load_error_message_1.formatApiErrorDetail)(lastError, {
+            unitId: rawUnitId,
+            candidates: triedIds.join(', '),
+            dynasty: dynastyHint,
+        });
+        finishLoading({
+            unit: null,
+            swim: null,
+            loadError: (0, load_error_message_1.formatDynastyLoadError)(lastError, (0, runtime_env_1.isDevelopEnv)()),
+            loadErrorDetail: detail,
+        });
+        wx.showToast({ title: '加载失败', icon: 'none' });
     },
     rebuildContinuationHints(swim) {
         this.continuationItems = buildContinuationItems(swim);

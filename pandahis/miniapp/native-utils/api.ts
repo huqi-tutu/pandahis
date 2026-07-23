@@ -23,6 +23,9 @@ export class ApiError extends Error {
 
 const PROD_BASE_URL = 'https://www.pandahis.com/api/v1'
 
+/** 本机联调地址（需在设置或登录页开发区显式启用） */
+export const LOCAL_DEV_BASE_URL = `http://localhost:${DEV_API_PORT}/api/v1`
+
 function normalizeDevelopBaseUrl(value: unknown): string {
   const url = String(value || '').trim().replace(/\/$/, '')
   if (!url) return ''
@@ -32,17 +35,136 @@ function normalizeDevelopBaseUrl(value: unknown): string {
   return privateHttp.test(url) ? url : ''
 }
 
+function isPrivateHttpBaseUrl(url: string): boolean {
+  return /^http:\/\//i.test(url)
+}
+
+/** 真机预览无法稳定访问本机/局域网 HTTP，统一走生产 */
+function shouldIgnoreStoredBaseOnClient(stored: string): boolean {
+  if (isDevtoolsClient()) return false
+  if (/localhost|127\.0\.0\.1/i.test(stored)) return true
+  return isPrivateHttpBaseUrl(stored)
+}
+
 export function getBaseUrl(): string {
-  if (getEnvVersion() === 'develop') {
+  const envVersion = getEnvVersion()
+  if (envVersion === 'develop') {
     const stored = normalizeDevelopBaseUrl(wx.getStorageSync('apiBaseUrl'))
-    if (stored) return stored
-    // 开发者工具可直接访问本机；真机预览默认走生产 HTTPS，
-    // 避免 DHCP 改变开发机局域网 IP 后整页数据加载失败。
-    if (isDevtoolsClient()) {
-      return `http://localhost:${DEV_API_PORT}/api/v1`
+    if (stored) {
+      if (shouldIgnoreStoredBaseOnClient(stored)) {
+        return PROD_BASE_URL
+      }
+      return stored
     }
+    return PROD_BASE_URL
   }
   return PROD_BASE_URL
+}
+
+/** 设置页连通性检测（基础） */
+export function probeApiHealth(): Promise<ApiResponse<{ status: string }>> {
+  return request<{ status: string }>('/health')
+}
+
+export type ApiProbeStage = 'health' | 'auth' | 'unit' | 'swim-matrix'
+
+export type ApiProbeResult = {
+  ok: boolean
+  stage: ApiProbeStage
+  error?: unknown
+}
+
+/** 分阶段检测：health → 登录接口 → 朝代概要 → 朝代画布 */
+export async function probeApiConnectivity(): Promise<ApiProbeResult> {
+  try {
+    await probeApiHealth()
+  } catch (error) {
+    return { ok: false, stage: 'health', error }
+  }
+  try {
+    await request('/auth/wx-login', {
+      method: 'POST',
+      data: { code: 'connectivity-probe-invalid' },
+    })
+  } catch (error) {
+    const msg = error instanceof ApiError ? error.message : String(error)
+    // 服务端可达且校验 code：说明登录链路通（与 wx.login 后 POST 同域名同路径）
+    if (/invalid|expired|wx\.login/i.test(msg)) {
+      // continue
+    } else {
+      return { ok: false, stage: 'auth', error }
+    }
+  }
+  try {
+    await request('/units/CD_HX_XIA')
+  } catch (error) {
+    return { ok: false, stage: 'unit', error }
+  }
+  try {
+    await request('/units/CD_HX_XIA/swim-matrix')
+  } catch (error) {
+    return { ok: false, stage: 'swim-matrix', error }
+  }
+  return { ok: true, stage: 'swim-matrix' }
+}
+
+function parseResponseBody(raw: unknown): any {
+  if (raw == null) return null
+  if (typeof raw === 'object') return raw
+  if (typeof raw === 'string') {
+    const text = raw.trim()
+    if (!text) return null
+    try {
+      return JSON.parse(text)
+    } catch {
+      return null
+    }
+  }
+  return null
+}
+
+/** 公开内容 GET 不附带 token，避免登录态触发服务端未迁移的用户表查询导致 500 */
+function isPublicContentPath(path: string): boolean {
+  const p = path.split('?')[0]
+  return (
+    /^\/units\//.test(p)
+    || /^\/boxes\//.test(p)
+    || p.startsWith('/home/')
+    || p.startsWith('/search')
+    || p === '/health'
+    || p.startsWith('/membership/plans')
+  )
+}
+
+function shouldAttachBearerToken(path: string, method: string, auth?: boolean): boolean {
+  if (!getToken()) return false
+  if (auth) return true
+  if (method === 'GET' && isPublicContentPath(path)) return false
+  return true
+}
+
+export function setDevelopApiBaseUrl(url: string) {
+  const normalized = normalizeDevelopBaseUrl(url)
+  if (!normalized) {
+    throw new Error('API 地址无效')
+  }
+  wx.setStorageSync('apiBaseUrl', normalized)
+}
+
+export function clearDevelopApiBaseUrl() {
+  try {
+    wx.removeStorageSync('apiBaseUrl')
+  } catch {
+    // ignore
+  }
+}
+
+export function useProductionApi() {
+  clearDevelopApiBaseUrl()
+}
+
+export function useLocalDevApi() {
+  setDevelopApiBaseUrl(LOCAL_DEV_BASE_URL)
 }
 
 export function getToken(): string {
@@ -61,8 +183,18 @@ export function setToken(token: string) {
   }
 }
 
+/** 仅清除令牌（401 / 过期时用这个，不阻断后续静默登录） */
+export function clearAccessToken() {
+  try {
+    wx.removeStorageSync('accessToken')
+  } catch {
+    // ignore
+  }
+}
+
+/** 用户主动退出：清令牌并标记不再静默登录 */
 export function clearToken() {
-  wx.removeStorageSync('accessToken')
+  clearAccessToken()
   try {
     wx.setStorageSync(USER_LOGGED_OUT_KEY, '1')
   } catch {
@@ -84,7 +216,13 @@ export function hasToken(): boolean {
 
 export function request<T>(
   path: string,
-  opts?: { method?: 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE'; data?: any; auth?: boolean }
+  opts?: {
+    method?: 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE'
+    data?: any
+    auth?: boolean
+    /** 为 true 时 401 仅拒绝 Promise，不清除本地 token（用于会员/热力图等并行次要请求） */
+    softAuth?: boolean
+  }
 ): Promise<ApiResponse<T>> {
   if (opts?.auth && !getToken()) {
     return Promise.reject(new Error('UNAUTHORIZED'))
@@ -94,8 +232,9 @@ export function request<T>(
   const url = baseUrl.replace(/\/$/, '') + (path.startsWith('/') ? path : `/${path}`)
   const method = opts?.method || 'GET'
   const header: Record<string, string> = { 'content-type': 'application/json' }
-  const token = getToken()
-  if (token) header.Authorization = `Bearer ${token}`
+  if (shouldAttachBearerToken(path, method, opts?.auth)) {
+    header.Authorization = `Bearer ${getToken()}`
+  }
 
   return new Promise<ApiResponse<T>>((resolve, reject) => {
     wx.request({
@@ -103,13 +242,17 @@ export function request<T>(
       method: method as WechatMiniprogram.RequestOption['method'],
       data: opts?.data,
       header,
+      enableHttp2: false,
+      enableQuic: false,
       // 首请求含连接池建连 + 远端 MySQL 时可能 >10s；与后端日志对齐，避免误报 timeout
       timeout: 60000,
       success(res) {
         const status = res.statusCode || 0
-        const body = res.data as any
+        const body = parseResponseBody(res.data)
         if (status === 401 || body?.code === 'UNAUTHORIZED') {
-          clearToken()
+          if (!opts?.softAuth) {
+            clearAccessToken()
+          }
           reject(new Error('UNAUTHORIZED'))
           return
         }
@@ -185,7 +328,7 @@ export function uploadFile<T>(
           body = res.data
         }
         if (status === 401 || body?.code === 'UNAUTHORIZED') {
-          clearToken()
+          clearAccessToken()
           reject(new Error('UNAUTHORIZED'))
           return
         }

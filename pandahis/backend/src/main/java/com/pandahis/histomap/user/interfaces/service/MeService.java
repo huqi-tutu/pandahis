@@ -7,12 +7,17 @@ import com.pandahis.histomap.user.interfaces.service.ReadCompleteService;
 import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.Map;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class MeService {
+  private static final Logger log = LoggerFactory.getLogger(MeService.class);
+
   private final JdbcTemplate jdbcTemplate;
   private final ReadCompleteService readCompleteService;
 
@@ -22,16 +27,24 @@ public class MeService {
   }
 
   public MeDTO load(Long userId) {
-    Map<String, Object> u = jdbcTemplate.queryForMap("SELECT nickname,avatar_url,phone_e164 FROM app_user WHERE id=?", userId);
-    long fav = jdbcTemplate.queryForObject("SELECT COUNT(1) FROM user_favorite_box WHERE user_id=?", Long.class, userId);
-    long fp = jdbcTemplate.queryForObject("SELECT COUNT(1) FROM user_footprint WHERE user_id=?", Long.class, userId);
-    Long learnDays = jdbcTemplate.queryForObject(
+    Map<String, Object> u;
+    try {
+      u = jdbcTemplate.queryForMap("SELECT nickname,avatar_url,phone_e164 FROM app_user WHERE id=?", userId);
+    } catch (EmptyResultDataAccessException e) {
+      throw ApiException.unauthorized("login required");
+    }
+    long fav = safeCount("SELECT COUNT(1) FROM user_favorite_box WHERE user_id=?", userId);
+    long fp = safeCount("SELECT COUNT(1) FROM user_footprint WHERE user_id=?", userId);
+    long learnDaysCount = safeCount(
         "SELECT COUNT(DISTINCT DATE(last_viewed_at)) FROM user_footprint WHERE user_id=?",
-        Long.class,
         userId
     );
-    long learnDaysCount = learnDays == null ? 0 : learnDays;
-    long readCompleteCount = readCompleteService.countByUser(userId);
+    long readCompleteCount;
+    try {
+      readCompleteCount = readCompleteService.countByUser(userId);
+    } catch (Exception ignored) {
+      readCompleteCount = 0;
+    }
 
     String phone = (String) u.get("phone_e164");
     String masked = maskPhone(phone);
@@ -99,6 +112,16 @@ public class MeService {
       return new MembershipSummary("EXPIRED", endAt.toString());
     }
     return new MembershipSummary("ACTIVE", endAt == null ? null : endAt.toString());
+  }
+
+  private long safeCount(String sql, Object... args) {
+    try {
+      Long n = jdbcTemplate.queryForObject(sql, Long.class, args);
+      return n == null ? 0 : n;
+    } catch (Exception e) {
+      log.warn("MeService count failed: {}", sql, e);
+      return 0;
+    }
   }
 
   private String maskPhone(String phoneE164) {

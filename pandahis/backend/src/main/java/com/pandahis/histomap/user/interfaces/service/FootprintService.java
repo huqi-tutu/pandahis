@@ -4,6 +4,8 @@ import com.pandahis.histomap.common.util.HistoryYearFormat;
 import com.pandahis.histomap.contentgraph.domain.BoxCategorySupport;
 import com.pandahis.histomap.user.interfaces.dto.FootprintListDTO;
 import com.pandahis.histomap.user.interfaces.dto.ReadingHeatmapDTO;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +15,8 @@ import java.util.List;
 
 @Service
 public class FootprintService {
+  private static final Logger log = LoggerFactory.getLogger(FootprintService.class);
+
   private final JdbcTemplate jdbcTemplate;
 
   public FootprintService(JdbcTemplate jdbcTemplate) {
@@ -25,26 +29,34 @@ public class FootprintService {
             "ON DUPLICATE KEY UPDATE last_viewed_at=CURRENT_TIMESTAMP, view_count=view_count+1",
         userId, boxId
     );
-    // 按天明细（热力图）：同一天重复阅读同一篇仅记一次
-    jdbcTemplate.update(
-        "INSERT IGNORE INTO user_reading_daily(user_id, read_date, box_id) VALUES (?, CURRENT_DATE, ?)",
-        userId, boxId
-    );
+    try {
+      jdbcTemplate.update(
+          "INSERT IGNORE INTO user_reading_daily(user_id, read_date, box_id) VALUES (?, CURRENT_DATE, ?)",
+          userId, boxId
+      );
+    } catch (Exception e) {
+      log.warn("user_reading_daily write skipped userId={} boxId={}", userId, boxId, e);
+    }
   }
 
   /** 最近 days 天的每日阅读篇数（仅返回有阅读的日期） */
   public ReadingHeatmapDTO readingHeatmap(Long userId, int days) {
     LocalDate today = LocalDate.now();
     LocalDate from = today.minusDays(days - 1L);
-    List<ReadingHeatmapDTO.Day> items = jdbcTemplate.query(
-        "SELECT read_date, COUNT(1) AS cnt FROM user_reading_daily "
-            + "WHERE user_id=? AND read_date>=? GROUP BY read_date ORDER BY read_date",
-        (rs, rowNum) -> new ReadingHeatmapDTO.Day(
-            rs.getObject("read_date", LocalDate.class).toString(),
-            rs.getInt("cnt")),
-        userId, from
-    );
-    return new ReadingHeatmapDTO(from.toString(), today.toString(), items);
+    try {
+      List<ReadingHeatmapDTO.Day> items = jdbcTemplate.query(
+          "SELECT read_date, COUNT(1) AS cnt FROM user_reading_daily "
+              + "WHERE user_id=? AND read_date>=? GROUP BY read_date ORDER BY read_date",
+          (rs, rowNum) -> new ReadingHeatmapDTO.Day(
+              rs.getObject("read_date", LocalDate.class).toString(),
+              rs.getInt("cnt")),
+          userId, from
+      );
+      return new ReadingHeatmapDTO(from.toString(), today.toString(), items);
+    } catch (Exception e) {
+      log.warn("readingHeatmap failed userId={}", userId, e);
+      return new ReadingHeatmapDTO(from.toString(), today.toString(), List.of());
+    }
   }
 
   public FootprintListDTO list(Long userId, int page, int pageSize) {

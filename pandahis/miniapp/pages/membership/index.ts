@@ -1,5 +1,6 @@
 import { hasToken, request } from '../../native-utils/api'
 import { MEMBERSHIP_BENEFITS } from '../../native-utils/membership-benefits'
+import { computePageTopPadPx } from '../../native-utils/nav-metrics'
 import { ROUTES, navigateTo } from '../../native-utils/router'
 
 type ApiPlan = {
@@ -58,15 +59,13 @@ Page({
     selectedId: INVITE_PLAN_ID,
     benefits: [...MEMBERSHIP_BENEFITS],
     checkoutLine: '邀友获取 · 季卡 · ¥0',
-    headerPadPx: 88,
+    pageTopPadPx: 88,
   },
   onLoad() {
     try {
-      const sys = wx.getSystemInfoSync()
-      const navPx = 88 * (sys.windowWidth / 750)
-      this.setData({ headerPadPx: (sys.statusBarHeight || 20) + navPx })
+      this.setData({ pageTopPadPx: computePageTopPadPx() })
     } catch {
-      this.setData({ headerPadPx: 88 })
+      this.setData({ pageTopPadPx: 88 })
     }
   },
   onShow() {

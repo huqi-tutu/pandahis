@@ -1,7 +1,7 @@
 <view class="page-shell">
   <proto-nav title="接受邀请" show-back="{{true}}"></proto-nav>
 
-  <view class="page" style="padding-top: {{headerPadPx}}px;">
+  <view class="page" style="padding-top: {{pageTopPadPx}}px;">
     <view class="hero">
       <view class="hero-icon">
         <text class="hero-glyph">史</text>

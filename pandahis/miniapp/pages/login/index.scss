@@ -283,3 +283,8 @@
   border: 1rpx solid rgba(74, 63, 63, 0.25);
   font-size: 24rpx;
 }
+
+.btn-dev--ghost {
+  background: transparent;
+  color: $text-caption;
+}

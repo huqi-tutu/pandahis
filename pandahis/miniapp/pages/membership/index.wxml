@@ -1,9 +1,7 @@
 <view class="page-shell">
   <proto-nav title="会员中心" show-back="{{false}}"></proto-nav>
 
-  <view class="vip-hub-body" style="padding-top: {{headerPadPx}}px;">
-    <text class="vip-hub-lead">选择适合你的典藏会员方案。会员有效期内评述、见证、原文免扣阅读点；未开通时可邀友助力或付费订阅。</text>
-
+  <view class="vip-hub-body" style="padding-top: {{pageTopPadPx}}px;">
     <view class="vip-plans">
       <view
         wx:for="{{plans}}"

@@ -18,11 +18,13 @@ import {
   submitCorrection,
 } from '../../native-utils/correction'
 import {
+  formatApiErrorDetail,
   formatDynastyLoadError,
   formatEmptySwimError,
   formatUserFacingError,
 } from '../../native-utils/load-error-message'
-import { isDevelopEnv } from '../../native-utils/runtime-env'
+import { resolveDetailUnitIds } from '../home/matrix-adapter'
+import { isDevtoolsClient, isDevelopEnv } from '../../native-utils/runtime-env'
 import {
   countOffscreenBottom,
   countOffscreenRight,
@@ -409,6 +411,16 @@ function splitIntroParagraphs(intro: string): string[] {
   return text.split(/\n\n+/).map((p) => p.trim()).filter(Boolean)
 }
 
+function slimSwimMatrixForView(swim: SwimMatrix): SwimMatrix {
+  return {
+    ...swim,
+    lanes: (swim.lanes || []).map((lane) => {
+      const { priorityViews, ...rest } = lane
+      return rest
+    }),
+  }
+}
+
 function warnIfDegradedMock(swim: SwimMatrix) {
   if (!isDegradedMockFallback(swim)) return
   wx.showToast({
@@ -568,7 +580,10 @@ function buildOverlayCountTag(label: string, count: number): string {
 }
 
 function hasLaneContent(lane: SwimLane): boolean {
-  return (lane.totalCount ?? 0) > 0
+  if ((lane.totalCount ?? 0) > 0) return true
+  if ((lane.visibleCount ?? 0) > 0) return true
+  const rows = lane.collapsedRows || []
+  return rows.some((row) => (row || []).length > 0)
 }
 
 function composeCanvasLayout(swim: SwimMatrix, lanes: SwimLane[]): SwimMatrix {
@@ -771,6 +786,7 @@ function normalizeLegacyLane(
     rowCount: Math.max(1, rowsWithBuckets.length),
     trackHeightRpx: laneTrackHeight(rowsWithBuckets.length),
     visibleCount: individualCount + bucketCount,
+    totalCount: lane.totalCount ?? individualCount + bucketCount,
   }
 }
 
@@ -905,6 +921,7 @@ function previewIntro(intro: string): { preview: string; canExpand: boolean; par
 Page({
   swimScrollLeft: 0,
   pageUnloaded: false,
+  _loadQuery: null as Record<string, string | undefined> | null,
   continuationItems: [] as OffscreenHintItem[],
   continuationRatio: 1,
   continuationViewportWidthPx: 0,
@@ -947,6 +964,8 @@ Page({
     continuationBottomCount: 0,
     continuationCanvasActive: false,
     loadError: '',
+    loadErrorDetail: '',
+    loading: true,
     priorityOptions: PRIORITY_OPTIONS,
     activePriority: 'p3' as PriorityLevel,
     chipTooltipVisible: false,
@@ -1006,9 +1025,31 @@ Page({
     return { title: t, path }
   },
   async onLoad(query: Record<string, string | undefined>) {
-    const unitId = query.unitId || query.id
+    this._loadQuery = query
+    await this.loadDynastyPage(query)
+  },
+  async retryLoad() {
+    if (!this._loadQuery) return
+    this.setData({ loading: true, loadError: '', loadErrorDetail: '' })
+    await this.loadDynastyPage(this._loadQuery)
+  },
+  copyLoadError() {
+    const text = this.data.loadErrorDetail || this.data.loadError
+    if (!text) return
+    wx.setClipboardData({
+      data: text,
+      success: () => wx.showToast({ title: '已复制错误信息', icon: 'success' }),
+    })
+  },
+  async loadDynastyPage(query: Record<string, string | undefined>) {
+    const rawUnitId = query.unitId || query.id || ''
     const dynastyHint = decodeQueryValue(query.dynasty || query.displayName || '')
-    if (!unitId && !dynastyHint) return
+    const unitCandidates = resolveDetailUnitIds(rawUnitId, dynastyHint)
+
+    if (!unitCandidates.length && !dynastyHint) {
+      this.setData({ loading: false, loadError: '缺少朝代参数，无法加载' })
+      return
+    }
 
     const sys = wx.getSystemInfoSync()
     const navH = Math.round(88 * (sys.windowWidth / 750))
@@ -1028,70 +1069,86 @@ Page({
       scrollTop,
       navTitle: provisionalNavTitle,
       dynastyTitle: dynastyHint,
+      loading: true,
+      loadError: '',
+      loadErrorDetail: '',
     })
+
+    const finishLoading = (patch: Record<string, unknown>) => {
+      this.setData({ ...patch, loading: false })
+    }
 
     const applyPageData = (
       hero: UnitHero,
       swim: SwimMatrix,
     ) => {
-      const unit = hero.unit
-      const dynastyTitle = (unit.dynastyName && unit.dynastyName.trim()) || unit.name
-      const navTitle = dynastyTitle.length <= 4 ? dynastyTitle : dynastyTitle.slice(0, 4)
-      const heroSubLine = `${formatHistoryYear(unit.startYear)}–${formatHistoryYear(unit.endYear)}`
-      const activePriority = this.data.activePriority || 'p3'
-      const prioritySwim = applyPriorityView(swim, activePriority)
-      const matrixBoxIds = collectMatrixBoxIds(prioritySwim)
-      const hasVisibleContent = (prioritySwim.lanes || []).some(hasLaneContent)
-      const { preview, canExpand, paragraphs } = previewIntro(unit.summary || '')
-      if (!hasVisibleContent) {
+      try {
+        const unit = hero.unit
+        const dynastyTitle = (unit.dynastyName && unit.dynastyName.trim()) || unit.name
+        const navTitle = dynastyTitle.length <= 4 ? dynastyTitle : dynastyTitle.slice(0, 4)
+        const heroSubLine = `${formatHistoryYear(unit.startYear)}–${formatHistoryYear(unit.endYear)}`
+        const activePriority = this.data.activePriority || 'p3'
+        const prioritySwim = applyPriorityView(swim, activePriority)
+        const swimForView = slimSwimMatrixForView(prioritySwim)
+        const matrixBoxIds = collectMatrixBoxIds(prioritySwim)
+        const hasVisibleContent = (prioritySwim.lanes || []).some(hasLaneContent)
+        const { preview, canExpand, paragraphs } = previewIntro(unit.summary || '')
+        if (!hasVisibleContent) {
+          finishLoading({
+            unit,
+            dynastyTitle,
+            navTitle,
+            heroSubLine,
+            swim: null,
+            concurrentItems: [],
+            relatedUnits: hero.relatedUnits || [],
+            nextUnit: hero.nextUnit ?? null,
+            matrixBoxIds: [],
+            headerPadPx,
+            scrollTop,
+            introPreview: preview,
+            introDisplay: preview,
+            introCanExpand: canExpand,
+            introParagraphs: paragraphs,
+            loadError: formatEmptySwimError(isDevelopEnv()),
+            loadErrorDetail: '',
+          })
+          return
+        }
         this.setData({
           unit,
           dynastyTitle,
           navTitle,
           heroSubLine,
-          swim: null,
-          concurrentItems: [],
+          swim: swimForView,
+          concurrentItems: prioritySwim.concurrentItems || [],
           relatedUnits: hero.relatedUnits || [],
           nextUnit: hero.nextUnit ?? null,
-          matrixBoxIds: [],
+          matrixBoxIds,
           headerPadPx,
           scrollTop,
           introPreview: preview,
           introDisplay: preview,
           introCanExpand: canExpand,
           introParagraphs: paragraphs,
-          loadError: formatEmptySwimError(isDevelopEnv()),
+          loadError: '',
+          loadErrorDetail: '',
+          loading: false,
+        }, () => {
+          this.rebuildContinuationHints(prioritySwim)
         })
-        return
-      }
-      this.setData({
-        unit,
-        dynastyTitle,
-        navTitle,
-        heroSubLine,
-        swim: prioritySwim,
-        concurrentItems: prioritySwim.concurrentItems || [],
-        relatedUnits: hero.relatedUnits || [],
-        nextUnit: hero.nextUnit ?? null,
-        matrixBoxIds,
-        headerPadPx,
-        scrollTop,
-        introPreview: preview,
-        introDisplay: preview,
-        introCanExpand: canExpand,
-        introParagraphs: paragraphs,
-        loadError: '',
-      }, () => {
-        this.rebuildContinuationHints(prioritySwim)
-      })
-      void this.refreshFavState()
-      if (!Number.isNaN(anchorYear)) {
-        setTimeout(() => this.scrollToAnchorYear(anchorYear, swim), 120)
+        void this.refreshFavState()
+        if (!Number.isNaN(anchorYear)) {
+          setTimeout(() => this.scrollToAnchorYear(anchorYear, swim), 120)
+        }
+      } catch (processErr: unknown) {
+        throw processErr instanceof Error ? processErr : new Error(String(processErr))
       }
     }
 
-    const tryApplyLocalMock = (mockHint: string) => {
-      const fallback = tryLoadLocalMock(mockHint, unitId || '')
+    const tryApplyLocalMock = (mockHint: string, resolvedUnitId: string) => {
+      if (!isDevtoolsClient()) return false
+      const fallback = tryLoadLocalMock(mockHint, resolvedUnitId)
       if (!fallback) return false
       console.warn('[dynasty-detail] using local mock for', mockHint)
       const enhancedSwim = {
@@ -1109,10 +1166,13 @@ Page({
     }
 
     let resolvedMockHint = dynastyHint
+    let lastError: unknown = null
+    const triedIds = unitCandidates.length ? unitCandidates : ['']
 
-    if (unitId) {
+    for (const candidateId of triedIds) {
+      if (!candidateId) continue
       try {
-        const enc = encodePathSegment(unitId)
+        const enc = encodePathSegment(candidateId)
         const heroRes = await request<UnitHero>(`/units/${enc}`)
         resolvedMockHint =
           dynastyHint ||
@@ -1126,48 +1186,35 @@ Page({
             gridLines: swimRes.data.gridLines || [],
           })
           return
-        } catch (swimErr: any) {
-          console.error('[dynasty-detail] swim-matrix failed', swimErr)
-          if (isDevelopEnv() && resolvedMockHint && tryApplyLocalMock(resolvedMockHint)) {
+        } catch (swimErr: unknown) {
+          console.error('[dynasty-detail] swim-matrix failed', candidateId, swimErr)
+          lastError = swimErr
+          if (isDevtoolsClient() && resolvedMockHint && tryApplyLocalMock(resolvedMockHint, candidateId)) {
             return
           }
-          throw swimErr
         }
-      } catch (e: any) {
-        console.error('[dynasty-detail] API failed', e)
-        if (isDevelopEnv() && resolvedMockHint && tryApplyLocalMock(resolvedMockHint)) {
-          return
-        }
-        this.setData({
-          unit: null,
-          swim: null,
-          loadError: formatDynastyLoadError(e, isDevelopEnv()),
-        })
-        wx.showToast({ title: '加载失败', icon: 'none' })
-        return
+      } catch (e: unknown) {
+        console.error('[dynasty-detail] API failed', candidateId, e)
+        lastError = e
       }
     }
 
-    if (isDevelopEnv() && dynastyHint) {
-      const fallback = tryLoadLocalMock(dynastyHint, '')
-      if (fallback) {
-        console.warn('[dynasty-detail] using local mock for', dynastyHint)
-        const enhancedSwim = {
-          ...fallback.swim,
-          ...generateTimelineTicks(
-            fallback.swim.startYear,
-            fallback.swim.endYear,
-            fallback.swim.sheetWidthRpx,
-          ),
-          timeScaleMode: 'linear',
-        }
-        applyPageData(fallback.hero, enhancedSwim)
-        warnIfDegradedMock(enhancedSwim)
-        return
-      }
+    if (isDevtoolsClient() && dynastyHint && tryApplyLocalMock(dynastyHint, rawUnitId || triedIds[0] || '')) {
+      return
     }
 
-    this.setData({ loadError: '缺少朝代 ID，无法加载' })
+    const detail = formatApiErrorDetail(lastError, {
+      unitId: rawUnitId,
+      candidates: triedIds.join(', '),
+      dynasty: dynastyHint,
+    })
+    finishLoading({
+      unit: null,
+      swim: null,
+      loadError: formatDynastyLoadError(lastError, isDevelopEnv()),
+      loadErrorDetail: detail,
+    })
+    wx.showToast({ title: '加载失败', icon: 'none' })
   },
   rebuildContinuationHints(swim: SwimMatrix) {
     this.continuationItems = buildContinuationItems(swim)

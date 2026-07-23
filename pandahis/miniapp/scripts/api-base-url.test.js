@@ -14,6 +14,7 @@ function mockWx({
 }) {
   global.wx = {
     getSystemInfoSync: () => ({ platform }),
+    getDeviceInfo: () => ({ platform }),
     getAccountInfoSync: () => {
       if (accountInfoThrows) throw new Error('account info unavailable')
       return { miniProgram: { envVersion } }
@@ -26,10 +27,28 @@ test.afterEach(() => {
   delete global.wx
 })
 
-test('开发者工具默认连接本机后端', () => {
+test('开发者工具默认连接生产后端', () => {
   mockWx({ platform: 'devtools' })
 
+  assert.equal(getBaseUrl(), PROD_BASE_URL)
+})
+
+test('开发者工具可显式切换本机后端', () => {
+  mockWx({
+    platform: 'devtools',
+    storedBaseUrl: `http://localhost:${DEV_API_PORT}/api/v1`,
+  })
+
   assert.equal(getBaseUrl(), `http://localhost:${DEV_API_PORT}/api/v1`)
+})
+
+test('真机开发版忽略 localhost 缓存并回退生产', () => {
+  mockWx({
+    platform: 'ios',
+    storedBaseUrl: `http://localhost:${DEV_API_PORT}/api/v1`,
+  })
+
+  assert.equal(getBaseUrl(), PROD_BASE_URL)
 })
 
 test('真机开发版默认连接生产后端，避免局域网 IP 变化导致空白', () => {
@@ -38,13 +57,13 @@ test('真机开发版默认连接生产后端，避免局域网 IP 变化导致�
   assert.equal(getBaseUrl(), PROD_BASE_URL)
 })
 
-test('真机开发版允许通过 storage 显式连接局域网后端', () => {
+test('真机开发版忽略遗留局域网地址并回退生产', () => {
   mockWx({
     platform: 'ios',
     storedBaseUrl: 'http://192.168.0.107:8080/api/v1',
   })
 
-  assert.equal(getBaseUrl(), 'http://192.168.0.107:8080/api/v1')
+  assert.equal(getBaseUrl(), PROD_BASE_URL)
 })
 
 test('正式版默认连接生产后端', () => {
@@ -97,4 +116,29 @@ test('HTTP 失败返回带结构化详情的 ApiError', async () => {
     assert.match(error.detail.url, /\/units\/test$/)
     return true
   })
+})
+
+test('401 仅清 token，不写入 userLoggedOut', async () => {
+  const stored = { accessToken: 'old' }
+  global.wx = {
+    getAccountInfoSync: () => ({ miniProgram: { envVersion: 'develop' } }),
+    getStorageSync: (key) => stored[key] ?? '',
+    setStorageSync: (key, val) => {
+      stored[key] = val
+    },
+    removeStorageSync: (key) => {
+      delete stored[key]
+    },
+    request: ({ success }) => {
+      success({
+        statusCode: 401,
+        data: { code: 'UNAUTHORIZED', message: 'login required' },
+      })
+    },
+  }
+
+  const { hasUserLoggedOut, request } = require('../native-utils/api.js')
+  await assert.rejects(request('/me', { auth: true }))
+  assert.equal(stored.accessToken, undefined)
+  assert.equal(hasUserLoggedOut(), false)
 })

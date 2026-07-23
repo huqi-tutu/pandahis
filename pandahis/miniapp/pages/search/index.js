@@ -3,22 +3,20 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const api_1 = require("../../native-utils/api");
 const search_history_storage_1 = require("../../native-utils/search-history-storage");
 const router_1 = require("../../native-utils/router");
+const nav_metrics_1 = require("../../native-utils/nav-metrics");
 Page({
     data: {
         keyword: '',
         hotKeywords: [],
         historyKeywords: [],
-        headerPadPx: 88,
+        pageTopPadPx: 88,
     },
     onLoad() {
-        // 与 proto-nav 一致：状态栏 + 88rpx 导航行（随屏宽换算 px）
         try {
-            const sys = wx.getSystemInfoSync();
-            const navPx = 88 * (sys.windowWidth / 750);
-            this.setData({ headerPadPx: (sys.statusBarHeight || 20) + navPx });
+            this.setData({ pageTopPadPx: (0, nav_metrics_1.computePageTopPadPx)() });
         }
         catch {
-            this.setData({ headerPadPx: 88 });
+            this.setData({ pageTopPadPx: 88 });
         }
     },
     onShow() {

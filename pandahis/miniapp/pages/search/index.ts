@@ -5,6 +5,7 @@ import {
   removeLocalSearchHistory,
 } from '../../native-utils/search-history-storage'
 import { ROUTES, navigateTo } from '../../native-utils/router'
+import { computePageTopPadPx } from '../../native-utils/nav-metrics'
 
 type Suggest = {
   hotKeywords: { keyword: string; isHot: boolean }[]
@@ -16,16 +17,13 @@ Page({
     keyword: '',
     hotKeywords: [] as Suggest['hotKeywords'],
     historyKeywords: [] as Suggest['historyKeywords'],
-    headerPadPx: 88,
+    pageTopPadPx: 88,
   },
   onLoad() {
-    // 与 proto-nav 一致：状态栏 + 88rpx 导航行（随屏宽换算 px）
     try {
-      const sys = wx.getSystemInfoSync()
-      const navPx = 88 * (sys.windowWidth / 750)
-      this.setData({ headerPadPx: (sys.statusBarHeight || 20) + navPx })
+      this.setData({ pageTopPadPx: computePageTopPadPx() })
     } catch {
-      this.setData({ headerPadPx: 88 })
+      this.setData({ pageTopPadPx: 88 })
     }
   },
   onShow() {

@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const api_1 = require("../../native-utils/api");
 const invite_storage_1 = require("../../native-utils/invite-storage");
+const load_error_message_1 = require("../../native-utils/load-error-message");
 const wx_auth_1 = require("../../native-utils/wx-auth");
 const router_1 = require("../../native-utils/router");
 const runtime_env_1 = require("../../native-utils/runtime-env");
@@ -17,6 +18,7 @@ Page({
         countdown: 0,
         agreed: false,
         devVisible: false,
+        apiBase: '',
         guestTop: 0,
         guestHeight: 32,
     },
@@ -57,9 +59,15 @@ Page({
             pendingInvite,
             inviteCodeInput: pendingInvite || '',
             hasToken: (0, api_1.hasToken)(),
+            apiBase: (0, api_1.getBaseUrl)(),
         });
-        if ((0, api_1.hasToken)()) {
-            (0, wx_auth_1.leaveAfterLogin)(0);
+        if ((0, api_1.hasToken)() && !this.data.reauth) {
+            void (0, api_1.request)('/me', { auth: true, softAuth: true })
+                .then(() => (0, wx_auth_1.leaveAfterLogin)(0))
+                .catch(() => {
+                (0, api_1.clearAccessToken)();
+                this.setData({ hasToken: false });
+            });
         }
     },
     sendCode() {
@@ -96,9 +104,21 @@ Page({
         });
     },
     loginDev() {
+        (0, api_1.useLocalDevApi)();
         (0, api_1.setToken)('dev-local-token');
-        wx.showToast({ title: '已写入 Token', icon: 'success' });
+        this.setData({ apiBase: (0, api_1.getBaseUrl)() });
+        wx.showToast({ title: '本机 API + dev Token', icon: 'success' });
         (0, wx_auth_1.leaveAfterLogin)();
+    },
+    useProdApi() {
+        (0, api_1.useProductionApi)();
+        this.setData({ apiBase: (0, api_1.getBaseUrl)() });
+        wx.showToast({ title: '已切换生产 API', icon: 'success' });
+    },
+    useLocalApi() {
+        (0, api_1.useLocalDevApi)();
+        this.setData({ apiBase: (0, api_1.getBaseUrl)() });
+        wx.showToast({ title: '已切换本机 API', icon: 'success' });
     },
     async loginWx() {
         if (this.data.loggingIn)
@@ -118,8 +138,12 @@ Page({
             (0, wx_auth_1.leaveAfterLogin)();
         }
         catch (e) {
-            const msg = typeof (e === null || e === void 0 ? void 0 : e.message) === 'string' ? e.message : '登录失败';
-            wx.showToast({ title: msg.length > 20 ? msg.slice(0, 20) + '…' : msg, icon: 'none' });
+            const msg = (0, load_error_message_1.formatApiRequestError)(e);
+            wx.showModal({
+                title: '登录失败',
+                content: `${msg}\n\n当前接口：${(0, api_1.getBaseUrl)()}`,
+                showCancel: false,
+            });
         }
         finally {
             this.setData({ loggingIn: false });

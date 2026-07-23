@@ -4,7 +4,7 @@
   <scroll-view
     class="page-assist"
     scroll-y enhanced show-scrollbar="{{false}}"
-    style="padding-top: {{headerPadPx}}px;"
+    style="padding-top: {{pageTopPadPx}}px;"
   >
     <!-- 会员卡：PNG 圆角透明底卡片 + 文字叠加 -->
     <view class="vip-inv-card {{rewardClaimed ? 'vip-inv-card--claimed' : ''}}">

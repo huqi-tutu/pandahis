@@ -3,21 +3,20 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const api_1 = require("../../native-utils/api");
 const encode_path_segment_1 = require("../../native-utils/encode-path-segment");
 const router_1 = require("../../native-utils/router");
+const nav_metrics_1 = require("../../native-utils/nav-metrics");
 Page({
     data: {
         name: '',
         info: null,
         color: '#4A3F3F',
-        headerPadPx: 88,
+        pageTopPadPx: 88,
     },
     async onLoad(query) {
         try {
-            const sys = wx.getSystemInfoSync();
-            const navPx = 88 * (sys.windowWidth / 750);
-            this.setData({ headerPadPx: (sys.statusBarHeight || 20) + navPx });
+            this.setData({ pageTopPadPx: (0, nav_metrics_1.computePageTopPadPx)() });
         }
         catch {
-            this.setData({ headerPadPx: 88 });
+            this.setData({ pageTopPadPx: 88 });
         }
         const boxId = query.boxId;
         const nodeKey = query.nodeKey || query.name;

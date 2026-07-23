@@ -1,6 +1,6 @@
 <proto-nav title="设置" show-back="{{true}}"></proto-nav>
 
-<scroll-view class="page-settings" scroll-y enhanced show-scrollbar="{{false}}" style="padding-top: {{headerPadPx}}px;">
+<scroll-view class="page-settings" scroll-y enhanced show-scrollbar="{{false}}" style="padding-top: {{pageTopPadPx}}px;">
   <view class="card-paper menu-card" wx:if="{{loggedIn}}">
     <view class="list-row" bindtap="goProfileEdit" hover-class="row-hover" hover-stay-time="60">
       <text class="list-label">编辑资料</text>
@@ -43,9 +43,10 @@
       <text class="list-label">清除本地缓存</text>
       <text class="list-value">图片与临时数据</text>
     </view>
-    <view class="list-row list-row-col">
+    <view class="list-row list-row-col" bindtap="onApiBaseTap" hover-class="row-hover" hover-stay-time="60">
       <text class="list-label">接口地址</text>
       <text class="menu-url">{{apiBase}}</text>
+      <text class="menu-url-hint">点击切换或检测连接（开发版）</text>
     </view>
   </view>
 

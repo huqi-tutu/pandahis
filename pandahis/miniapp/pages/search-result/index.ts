@@ -6,6 +6,7 @@ import {
   stripHtml,
 } from '../../native-utils/format'
 import { ROUTES, navigateTo } from '../../native-utils/router'
+import { computePageTopPadPx } from '../../native-utils/nav-metrics'
 
 const FILTER_CATS = ['全部', '君王', '士臣', '典制', '事略', '民录'] as const
 
@@ -51,15 +52,13 @@ Page({
     resultTotal: 0,
     filterCats: [...FILTER_CATS],
     filterIndex: 0,
-    headerPadPx: 88,
+    pageTopPadPx: 88,
   },
   onLoad(query: Record<string, string | undefined>) {
     try {
-      const sys = wx.getSystemInfoSync()
-      const navPx = 88 * (sys.windowWidth / 750)
-      this.setData({ headerPadPx: (sys.statusBarHeight || 20) + navPx })
+      this.setData({ pageTopPadPx: computePageTopPadPx() })
     } catch {
-      this.setData({ headerPadPx: 88 })
+      this.setData({ pageTopPadPx: 88 })
     }
     const keyword = decodeURIComponent(query.q || query.keyword || '')
     this.setData({ keyword })

@@ -1,5 +1,15 @@
-import { clearToken, hasToken, setToken } from '../../native-utils/api'
+import {
+  clearAccessToken,
+  clearToken,
+  getBaseUrl,
+  hasToken,
+  request,
+  setToken,
+  useLocalDevApi,
+  useProductionApi,
+} from '../../native-utils/api'
 import { peekPendingInviteCode, stashInviteCode } from '../../native-utils/invite-storage'
+import { formatApiRequestError } from '../../native-utils/load-error-message'
 import { leaveAfterLogin, loginSuccessToast, loginWithWxCode } from '../../native-utils/wx-auth'
 import { ROUTES } from '../../native-utils/router'
 import { isDevtoolsClient } from '../../native-utils/runtime-env'
@@ -16,6 +26,7 @@ Page({
     countdown: 0,
     agreed: false,
     devVisible: false,
+    apiBase: '',
     guestTop: 0,
     guestHeight: 32,
   },
@@ -54,9 +65,15 @@ Page({
       pendingInvite,
       inviteCodeInput: pendingInvite || '',
       hasToken: hasToken(),
+      apiBase: getBaseUrl(),
     })
-    if (hasToken()) {
-      leaveAfterLogin(0)
+    if (hasToken() && !this.data.reauth) {
+      void request('/me', { auth: true, softAuth: true })
+        .then(() => leaveAfterLogin(0))
+        .catch(() => {
+          clearAccessToken()
+          this.setData({ hasToken: false })
+        })
     }
   },
   sendCode() {
@@ -92,9 +109,21 @@ Page({
     })
   },
   loginDev() {
+    useLocalDevApi()
     setToken('dev-local-token')
-    wx.showToast({ title: '已写入 Token', icon: 'success' })
+    this.setData({ apiBase: getBaseUrl() })
+    wx.showToast({ title: '本机 API + dev Token', icon: 'success' })
     leaveAfterLogin()
+  },
+  useProdApi() {
+    useProductionApi()
+    this.setData({ apiBase: getBaseUrl() })
+    wx.showToast({ title: '已切换生产 API', icon: 'success' })
+  },
+  useLocalApi() {
+    useLocalDevApi()
+    this.setData({ apiBase: getBaseUrl() })
+    wx.showToast({ title: '已切换本机 API', icon: 'success' })
   },
   async loginWx() {
     if (this.data.loggingIn) return
@@ -110,9 +139,13 @@ Page({
       this.setData({ reauth: false, hasToken: true })
       loginSuccessToast(data)
       leaveAfterLogin()
-    } catch (e: any) {
-      const msg = typeof e?.message === 'string' ? e.message : '登录失败'
-      wx.showToast({ title: msg.length > 20 ? msg.slice(0, 20) + '…' : msg, icon: 'none' })
+    } catch (e: unknown) {
+      const msg = formatApiRequestError(e)
+      wx.showModal({
+        title: '登录失败',
+        content: `${msg}\n\n当前接口：${getBaseUrl()}`,
+        showCancel: false,
+      })
     } finally {
       this.setData({ loggingIn: false })
     }

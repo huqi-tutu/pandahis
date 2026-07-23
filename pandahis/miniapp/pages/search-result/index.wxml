@@ -1,7 +1,7 @@
 <view class="page-shell">
   <proto-nav title="搜索结果" show-back="{{true}}"></proto-nav>
 
-  <view class="result-body" style="padding-top: {{headerPadPx}}px;">
+  <view class="result-body" style="padding-top: {{pageTopPadPx}}px;">
     <!-- 关键词展示 + 结果数 -->
     <view class="kw-bar">
       <text class="kw-text">「{{keyword}}」</text>

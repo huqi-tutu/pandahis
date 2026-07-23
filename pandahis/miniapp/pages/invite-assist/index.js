@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const api_1 = require("../../native-utils/api");
 const router_1 = require("../../native-utils/router");
 const share_invite_1 = require("../../native-utils/share-invite");
+const nav_metrics_1 = require("../../native-utils/nav-metrics");
 Page({
     data: {
         targetCount: 4,
@@ -16,16 +17,14 @@ Page({
         slots: [],
         inviteCode: '',
         canShare: true,
-        headerPadPx: 88,
+        pageTopPadPx: 88,
     },
     onLoad() {
         try {
-            const sys = wx.getSystemInfoSync();
-            const navPx = 88 * (sys.windowWidth / 750);
-            this.setData({ headerPadPx: (sys.statusBarHeight || 20) + navPx });
+            this.setData({ pageTopPadPx: (0, nav_metrics_1.computePageTopPadPx)() });
         }
         catch {
-            this.setData({ headerPadPx: 88 });
+            this.setData({ pageTopPadPx: 88 });
         }
     },
     onShow() {

@@ -9,20 +9,8 @@
    主内容区
 ───────────────────────────────────── */
 .vip-hub-body {
-  padding: 28rpx 32rpx calc(280rpx + env(safe-area-inset-bottom));
+  padding: 0 32rpx calc(280rpx + env(safe-area-inset-bottom));
   box-sizing: border-box;
-}
-
-/* Body：导引文字 */
-.vip-hub-lead {
-  display: block;
-  font-family: $font-family-body;
-  font-size: 24rpx;
-  font-weight: 400;
-  line-height: 1.65;
-  color: $text-body;
-  letter-spacing: 0.3rpx;
-  margin-bottom: 28rpx;
 }
 
 /* ─────────────────────────────────────

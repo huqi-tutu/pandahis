@@ -2,6 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const api_1 = require("../../native-utils/api");
 const router_1 = require("../../native-utils/router");
+const nav_metrics_1 = require("../../native-utils/nav-metrics");
+const wx_auth_1 = require("../../native-utils/wx-auth");
 const APP_VERSION = '1.0.0';
 /** 兼容 camelCase / snake_case 的 /me 响应 */
 function normalizeMe(raw) {
@@ -33,17 +35,14 @@ Page({
         vipTitle: '开通年度会员',
         vipDesc: '解锁全地域图谱 · 跨时空评述 · 见证 Tab',
         appVersion: APP_VERSION,
-        headerPadPx: 88,
+        pageTopPadPx: 88,
     },
     onLoad() {
-        // 与 proto-nav 一致：状态栏 + 88rpx 导航行（随屏宽换算 px）
         try {
-            const sys = wx.getSystemInfoSync();
-            const navPx = 88 * (sys.windowWidth / 750);
-            this.setData({ headerPadPx: (sys.statusBarHeight || 20) + navPx });
+            this.setData({ pageTopPadPx: (0, nav_metrics_1.computePageTopPadPx)() });
         }
         catch {
-            this.setData({ headerPadPx: 88 });
+            this.setData({ pageTopPadPx: 88 });
         }
     },
     onShow() {
@@ -77,7 +76,7 @@ Page({
         try {
             const [meRes, membership] = await Promise.all([
                 (0, api_1.request)('/me', { auth: true }),
-                (0, api_1.request)('/membership', { auth: true }).catch(() => null),
+                (0, api_1.request)('/membership', { auth: true, softAuth: true }).catch(() => null),
             ]);
             const me = normalizeMe((meRes.data || {}));
             const phone = me.phoneMasked && me.phoneMasked !== 'null' ? me.phoneMasked : '';
@@ -105,7 +104,11 @@ Page({
             const msg = e instanceof Error ? e.message : '';
             console.error('[my] refresh failed', e);
             if (msg === 'UNAUTHORIZED') {
-                (0, api_1.clearToken)();
+                (0, api_1.clearAccessToken)();
+                const relogged = await (0, wx_auth_1.trySilentWxLogin)();
+                if (relogged) {
+                    return this.refresh();
+                }
                 this.setGuestState();
                 return;
             }
