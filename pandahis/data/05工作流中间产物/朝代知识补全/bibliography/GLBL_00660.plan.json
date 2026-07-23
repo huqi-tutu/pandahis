@@ -1,0 +1,85 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00660",
+  "写作结构": "正史叙述见翻译详录；拓展文可简要指出《竹书纪年》记其居亳，其余史外文献极少，叙事以留白为主，不展开具体事迹。",
+  "候选著作": [
+    {
+      "出处": "《史记·殷本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载仲壬即位次序、在位年数及伊尹立太甲，为主要史料。",
+      "检索词": "仲壬",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《竹书纪年》（辑本，约《太平御览》卷八三引）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记‘仲壬即位，居亳’，补充居地信息，与《史记》无冲突。",
+      "检索词": "仲壬即位",
+      "采用": true,
+      "原文摘句": "仲壬即位，居亳。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "又称皇甫谧《帝王世纪》，记商王在位年数，或提及仲壬，属后世演绎。",
+      "检索词": "仲壬",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·殷本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载仲壬即位次序、在位年数及伊尹立太甲，为主要史料。",
+      "检索词": "仲壬",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《竹书纪年》（辑本，约《太平御览》卷八三引）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记‘仲壬即位，居亳’，补充居地信息，与《史记》无冲突。",
+      "检索词": "仲壬即位",
+      "采用": true,
+      "原文摘句": "仲壬即位，居亳。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "又称皇甫谧《帝王世纪》，记商王在位年数，或提及仲壬，属后世演绎。",
+      "检索词": "仲壬",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 1,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

@@ -2,11 +2,10 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const api_1 = require("../../native-utils/api");
 const router_1 = require("../../native-utils/router");
-const share_invite_1 = require("../../native-utils/share-invite");
 const APP_VERSION = '1.0.0';
 /** 兼容 camelCase / snake_case 的 /me 响应 */
 function normalizeMe(raw) {
-    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
+    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t;
     return {
         nickname: String((_b = (_a = raw.nickname) !== null && _a !== void 0 ? _a : raw['nickname']) !== null && _b !== void 0 ? _b : ''),
         avatarUrl: ((_d = (_c = raw.avatarUrl) !== null && _c !== void 0 ? _c : raw['avatar_url']) !== null && _d !== void 0 ? _d : null),
@@ -14,8 +13,9 @@ function normalizeMe(raw) {
         favoriteCount: Number((_h = (_g = raw.favoriteCount) !== null && _g !== void 0 ? _g : raw['favorite_count']) !== null && _h !== void 0 ? _h : 0),
         footprintCount: Number((_k = (_j = raw.footprintCount) !== null && _j !== void 0 ? _j : raw['footprint_count']) !== null && _k !== void 0 ? _k : 0),
         learnDaysCount: Number((_m = (_l = raw.learnDaysCount) !== null && _l !== void 0 ? _l : raw['learn_days_count']) !== null && _m !== void 0 ? _m : 0),
-        membershipStatus: String((_p = (_o = raw.membershipStatus) !== null && _o !== void 0 ? _o : raw['membership_status']) !== null && _p !== void 0 ? _p : 'NONE'),
-        membershipEndAt: ((_r = (_q = raw.membershipEndAt) !== null && _q !== void 0 ? _q : raw['membership_end_at']) !== null && _r !== void 0 ? _r : null),
+        readCompleteCount: Number((_p = (_o = raw.readCompleteCount) !== null && _o !== void 0 ? _o : raw['read_complete_count']) !== null && _p !== void 0 ? _p : 0),
+        membershipStatus: String((_r = (_q = raw.membershipStatus) !== null && _q !== void 0 ? _q : raw['membership_status']) !== null && _r !== void 0 ? _r : 'NONE'),
+        membershipEndAt: ((_t = (_s = raw.membershipEndAt) !== null && _s !== void 0 ? _s : raw['membership_end_at']) !== null && _t !== void 0 ? _t : null),
     };
 }
 Page({
@@ -29,6 +29,7 @@ Page({
         footprintCount: 0,
         favoriteCount: 0,
         learnDays: 0,
+        readCompleteCount: 0,
         vipTitle: '开通年度会员',
         vipDesc: '解锁全地域图谱 · 跨时空评述 · 见证 Tab',
         appVersion: APP_VERSION,
@@ -62,6 +63,7 @@ Page({
             footprintCount: 0,
             favoriteCount: 0,
             learnDays: 0,
+            readCompleteCount: 0,
             vipTitle: '开通年度会员',
             vipDesc: '解锁全地域图谱 · 跨时空评述 · 见证 Tab',
         });
@@ -94,6 +96,7 @@ Page({
                 footprintCount: me.footprintCount,
                 favoriteCount: me.favoriteCount,
                 learnDays: me.learnDaysCount,
+                readCompleteCount: me.readCompleteCount,
                 vipTitle: vip.title,
                 vipDesc: vip.desc,
             });
@@ -117,6 +120,7 @@ Page({
                 footprintCount: 0,
                 favoriteCount: 0,
                 learnDays: 0,
+                readCompleteCount: 0,
                 vipTitle: vip.title,
                 vipDesc: vip.desc,
             });
@@ -158,36 +162,25 @@ Page({
     goFootprints() {
         this.requireLogin(() => (0, router_1.navigateTo)(router_1.ROUTES.footprints));
     },
+    goReadCompleted() {
+        this.requireLogin(() => (0, router_1.navigateTo)(router_1.ROUTES.readCompleted));
+    },
     goFavorites() {
         this.requireLogin(() => (0, router_1.navigateTo)(router_1.ROUTES.favorites));
     },
     goCorrections() {
         this.requireLogin(() => (0, router_1.navigateTo)(router_1.ROUTES.corrections));
     },
-    goSettings() {
-        (0, router_1.navigateTo)(router_1.ROUTES.settings);
-    },
-    onShareFriend() {
-        (0, share_invite_1.promptContentShareUnavailable)();
-    },
-    goHelp() {
-        const email = 'support@pandahis.com';
-        wx.showModal({
-            title: '帮助与反馈',
-            content: `如有问题或建议，请发送邮件至：\n${email}`,
-            confirmText: '复制邮箱',
-            cancelText: '关闭',
-            success: (r) => {
-                if (!r.confirm)
-                    return;
-                wx.setClipboardData({
-                    data: email,
-                    success: () => wx.showToast({ title: '已复制邮箱', icon: 'success' }),
-                });
+    goInviteFriends() {
+        wx.navigateTo({
+            url: router_1.ROUTES.invite,
+            fail(err) {
+                console.error('[my] goInviteFriends failed', err);
+                wx.showToast({ title: '页面打开失败', icon: 'none' });
             },
         });
     },
-    goAbout() {
-        (0, router_1.navigateTo)(router_1.ROUTES.about);
+    goSettings() {
+        (0, router_1.navigateTo)(router_1.ROUTES.settings);
     },
 });

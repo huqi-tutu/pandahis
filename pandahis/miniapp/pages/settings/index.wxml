@@ -6,10 +6,6 @@
       <text class="list-label">编辑资料</text>
       <text class="list-arrow">›</text>
     </view>
-    <view class="list-row" bindtap="goInviteReads" hover-class="row-hover" hover-stay-time="60">
-      <text class="list-label">邀请有礼 · 阅读点</text>
-      <text class="list-arrow">›</text>
-    </view>
     <view class="list-row list-row-col">
       <text class="list-label">补填好友邀请码</text>
       <view class="bind-row">
@@ -28,9 +24,17 @@
         </view>
       </view>
     </view>
-    <view class="list-row" bindtap="copySupportEmail" hover-class="row-hover" hover-stay-time="60">
+  </view>
+
+  <view class="card-paper menu-card">
+    <view class="list-row" bindtap="goHelp" hover-class="row-hover" hover-stay-time="60">
       <text class="list-label">帮助与反馈</text>
-      <text class="list-value">复制邮箱</text>
+      <text class="list-arrow">›</text>
+    </view>
+    <view class="list-row" bindtap="goAbout" hover-class="row-hover" hover-stay-time="60">
+      <text class="list-label">关于历史图谱</text>
+      <text class="list-value">v{{appVersion}}</text>
+      <text class="list-arrow">›</text>
     </view>
   </view>
 

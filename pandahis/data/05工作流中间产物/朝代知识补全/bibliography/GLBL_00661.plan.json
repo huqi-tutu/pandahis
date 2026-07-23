@@ -1,0 +1,105 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00661",
+  "写作结构": "正史叙述见翻译详录，以《史记·殷本纪》为世系与继承方式的主源。拓展部分可引《竹书纪年》等记载作为互证，但事迹无详载，可留白或简要提及天干命名惯例。禁止编造政治军事细节。",
+  "候选著作": [
+    {
+      "出处": "《史记·殷本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载太庚为太甲之子、沃丁之弟，兄终弟及继立，其子小甲继位等世系继承信息",
+      "检索词": "太庚",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《今本竹书纪年·商纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "载有商王太庚名号与简短记事，可作为《史记》世系的互证材料",
+      "检索词": "太庚",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《世本八种·王侯大夫谱》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "辑录商王世系，或保留太庚谱系位置的异文线索",
+      "检索词": "太庚",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《帝王世纪》（皇甫谧）",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "后世辑录商王世系与在位年数，可作为年代估算的参照",
+      "检索词": "太庚",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·殷本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载太庚为太甲之子、沃丁之弟，兄终弟及继立，其子小甲继位等世系继承信息",
+      "检索词": "太庚",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《今本竹书纪年·商纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "载有商王太庚名号与简短记事，可作为《史记》世系的互证材料",
+      "检索词": "太庚",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《世本八种·王侯大夫谱》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "辑录商王世系，或保留太庚谱系位置的异文线索",
+      "检索词": "太庚",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《帝王世纪》（皇甫谧）",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "后世辑录商王世系与在位年数，可作为年代估算的参照",
+      "检索词": "太庚",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 0,
+    "C_excluded": 4,
+    "overall": "C"
+  }
+}

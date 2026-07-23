@@ -33,6 +33,10 @@ from paths_config import (  # noqa: E402
 
 import bibliography_lib as blib  # noqa: E402
 from shared.reference_works import attach_reference_section  # noqa: E402
+from shared.verify_format_autofix import (  # noqa: E402
+    autofix_detail_format,
+    can_autofix_verify_errors,
+)
 import detail_verify as dv  # noqa: E402
 import detail_review as dr  # noqa: E402
 import detail_fix as dfix  # noqa: E402
@@ -80,6 +84,7 @@ STEPS = (
     "coverage-check",
     "review-detail",
     "fix-detail",
+    "auto-fix-verify",
     "review-warns-summary",
     "patch-detail",
     "qa-detail",
@@ -989,13 +994,12 @@ def compose_detail_prompt(
 - 段落数：P0≥7段、P1≥5段（均含开篇引入）
 - 文末 *参考著作：* 须包含：**索引「主要史料出处」** + **正文实际引用的全部《书名》**（compose 落盘时会自动合并；**禁止**手写与正文卷篇矛盾的参考书目）
 - **引用 ↔ 参考著作双端一致**：正文出现《书名·卷篇》时，文末须**同名同卷**；改正文典籍名须同步改参考著作（fix-detail 亦同；fix 后会按正文重合并参考书目）
-- **史料原文 + 译述**（对齐一期翻译详录）：经典句、金句、异说原文须 `《书名》…「原文」——白话译述`；**禁止**仅有出处而无「」原文；**禁止**用弯引号""标史料原文（术语/比喻可用弯引号）
+- **史料原文 + 译述**（对齐一期翻译详录）：经典句、金句、异说原文须 `《书名》…「原文」——白话译述`；母本短句对话用 `某说：「原文」——译述`（禁止 `「"…"」`）；长篇誓词可全白话弯引号；**禁止**《书名》载/记/曰 后用弯引号标史料原文
 - 书目 plan **A 档 verified 摘句**须完整写入「」并展开译述
 - 底稿无载处：用叙事性留白（§0.3），全文 ≤2 处；禁止「正文不宜…」式合规口号
 - 传说/相传/据说可写但须克制（§9；verify legend_dominance）；其余模糊词仍须同句《》或删除
 - 禁止【】、小标题、列表符号；**AI 腔词**（此外/综上所述/堪称 等，见共用规范 §3.5）全文合计与单词均 **< 5 次**（≥5 次 verify fail）
-- 禁止编造人物心理活动（除非正史明确记载）
-- **禁止注音**：正文不得出现任何「汉字（拼音）」括注；生僻字由读者点字典查读；古地名括注只写「今…」，不得混入拼音{density_note}
+- 禁止编造人物心理活动（除非正史明确记载）{density_note}
 """
 
 
@@ -1652,6 +1656,94 @@ def run_wiki_fetch(
     _ensure_wiki_digest(paths, entry_id, entry, force=force, dry_run=False)
 
 
+def _apply_verify_format_autofix(
+    paths: dict[str, Path],
+    entry: dict[str, Any],
+    entry_id: str,
+    out_path: Path,
+    report: dv.VerifyReport,
+) -> dv.VerifyReport:
+    """verify 未通过且均为可机械修复项时，0 token 改稿并重验。"""
+    if not can_autofix_verify_errors(report.issues):
+        return report
+    detail_doc = json.loads(out_path.read_text(encoding="utf-8"))
+    raw = str(detail_doc.get("翻译详情") or "")
+    new_raw, fixes = autofix_detail_format(raw, entry)
+    if not fixes:
+        return report
+    detail_doc["翻译详情"] = new_raw
+    out_path.write_text(
+        json.dumps(detail_doc, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    _log(f"🔧 auto-fix-verify {entry_id}：{', '.join(fixes)}")
+    report2 = dv.verify_detail(
+        entry,
+        detail_doc,
+        anchor=dkl.load_anchor(paths["anchors_dir"], entry_id),
+        bibliography_plan=blib.load_plan(paths["bibliography_dir"], entry_id),
+    )
+    dkl.save_verify_artifact(paths["logs_dir"], entry_id, report2.to_dict())
+    if report2.passed:
+        _log(f"✅ auto-fix-verify 后 verify 通过")
+    return report2
+
+
+def run_auto_fix_verify(
+    paths: dict[str, Path],
+    entry_id: str | None,
+    *,
+    dry_run: bool,
+) -> int:
+    """批量或单条：机械修复 refs_volume_mismatch / source_curved_quote / nested_corner_quote。"""
+    targets: list[tuple[str, dict[str, Any]]] = []
+    for path_key in ("entries", "entries_renwu"):
+        if not paths[path_key].is_file():
+            continue
+        doc = json.loads(paths[path_key].read_text(encoding="utf-8"))
+        for e in doc.get("entries") or []:
+            eid = str(e.get("史略ID", ""))
+            if not eid:
+                continue
+            if entry_id and eid != entry_id:
+                continue
+            targets.append((eid, e))
+    if entry_id and not targets:
+        raise SystemExit(f"未找到条目 {entry_id}")
+    fixed = 0
+    for eid, entry in targets:
+        files = list(paths["details_dir"].glob(f"{eid}_*.json"))
+        if not files:
+            continue
+        out_path = files[0]
+        detail_doc = json.loads(out_path.read_text(encoding="utf-8"))
+        raw = str(detail_doc.get("翻译详情") or "")
+        new_raw, fixes = autofix_detail_format(raw, entry)
+        if not fixes:
+            continue
+        if dry_run:
+            _log(f"🔍 auto-fix-verify {eid}：{', '.join(fixes)}")
+            fixed += 1
+            continue
+        detail_doc["翻译详情"] = new_raw
+        out_path.write_text(
+            json.dumps(detail_doc, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
+        report = dv.verify_detail(
+            entry,
+            detail_doc,
+            anchor=dkl.load_anchor(paths["anchors_dir"], eid),
+            bibliography_plan=blib.load_plan(paths["bibliography_dir"], eid),
+        )
+        dkl.save_verify_artifact(paths["logs_dir"], eid, report.to_dict())
+        status = "通过" if report.passed else "仍有问题"
+        _log(f"🔧 auto-fix-verify {eid}：{', '.join(fixes)} → verify {status}")
+        fixed += 1
+    _log(f"✅ auto-fix-verify 完成（{fixed} 条）")
+    return 0
+
+
 def run_verify_detail(
     paths: dict[str, Path],
     entry_id: str,
@@ -1989,7 +2081,7 @@ def patch_detail_prompt(
 ## 待修段落
 {chr(10).join(blocks)}
 
-纪律：只改指定段落；过程禁编；保留未列段落不动；不要【】；禁止注音。"""
+纪律：只改指定段落；过程禁编；保留未列段落不动；不要【】。"""
 
 
 def run_patch_detail(
@@ -2307,7 +2399,21 @@ def run_compose_detail(
         for i in report.issues:
             if i.severity == "warn":
                 _log(f"  ⚠️ verify/{i.code}: {i.message}")
-        if auto_revise and int(state.get("compose_attempts") or 0) < dkl.MAX_QA_DETAIL_ROUNDS:
+        report = _apply_verify_format_autofix(
+            paths, entry, entry_id, out_path, report
+        )
+        verify_ok = report.passed
+        if not verify_ok:
+            issues = [
+                f"{i.code}: {i.message}"
+                for i in report.issues
+                if i.severity == "error"
+            ]
+        if (
+            not verify_ok
+            and auto_revise
+            and int(state.get("compose_attempts") or 0) < dkl.MAX_QA_DETAIL_ROUNDS
+        ):
             _log(f"↻ compose-revise {entry_id}（1 次上限，整篇重写）…")
             _compose_and_save_detail(
                 paths,
@@ -3018,6 +3124,12 @@ def main() -> int:
             dry_run=args.dry_run,
             dynasty_name=str(context.get("朝代名称") or "朝代"),
             auto_fix_on_review=not args.no_auto_fix_review,
+        )
+    elif step == "auto-fix-verify":
+        return run_auto_fix_verify(
+            paths,
+            (args.entry_id or "").strip() or None,
+            dry_run=args.dry_run,
         )
     elif step == "review-warns-summary":
         return run_review_warns_summary(paths, context)

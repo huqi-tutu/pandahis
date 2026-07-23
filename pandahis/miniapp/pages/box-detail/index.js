@@ -10,6 +10,7 @@ const router_1 = require("../../native-utils/router");
 const share_poster_open_1 = require("../../native-utils/share-poster-open");
 const correction_1 = require("../../native-utils/correction");
 const category_label_1 = require("../../native-utils/category-label");
+const read_complete_1 = require("../../native-utils/read-complete");
 const selection_bar_position_1 = require("../../native-utils/selection-bar-position");
 function relicThumbLabel(name) {
     const n = (name || '').trim();
@@ -230,10 +231,11 @@ Page({
         tabTop: 88,
         bodyTop: 160,
         graphCanvasH: 400,
-        critColors: ['#92ADA4', '#C9825A', '#7BA87B', '#B85A5A', '#84572F', '#5A8FA8'],
+        critColors: ['#A2734F', '#63899C', '#B99D5B', '#9A798F', '#7D8A6A', '#A46A65'],
         tab: 'content',
         showRelationsTab: false,
         isFav: false,
+        isReadComplete: false,
         detailMd: '',
         detailParagraphs: [],
         detailMetaDisplay: '',
@@ -418,6 +420,7 @@ Page({
                 blurbSegs: parseDisplaySegments(header.box.blurb || ''),
                 showRelationsTab,
                 tab,
+                isReadComplete: !!header.isReadComplete,
             });
             await this.refreshFavState();
             await this.recordFootprint();
@@ -1052,6 +1055,32 @@ Page({
                     wx.showToast({ title: '已取消收藏', icon: 'success' });
                 }
                 await this.refreshFavState();
+            }
+            catch (e) {
+                const msg = e instanceof Error ? e.message : '操作失败';
+                wx.showToast({ title: msg, icon: 'none' });
+            }
+        };
+        void run();
+    },
+    toggleReadComplete() {
+        if (!(0, api_1.hasToken)()) {
+            (0, read_complete_1.promptLoginForReadComplete)();
+            return;
+        }
+        const boxId = this.data.boxId;
+        const next = !this.data.isReadComplete;
+        const run = async () => {
+            try {
+                if (next) {
+                    await (0, read_complete_1.markBoxReadComplete)(boxId);
+                    wx.showToast({ title: '已标记读完', icon: 'success' });
+                }
+                else {
+                    await (0, read_complete_1.unmarkBoxReadComplete)(boxId);
+                    wx.showToast({ title: '已取消标记', icon: 'none' });
+                }
+                this.setData({ isReadComplete: next });
             }
             catch (e) {
                 const msg = e instanceof Error ? e.message : '操作失败';

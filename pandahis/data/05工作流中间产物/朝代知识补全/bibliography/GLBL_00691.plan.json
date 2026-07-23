@@ -1,0 +1,183 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00691",
+  "写作结构": "正史叙述《史记·殷本纪》及甲骨卜辞世系由翻译详录承担。拓展文从《公羊传》《白虎通》的殷礼立弟原则切入，说明兄终弟及的制度逻辑；以《竹书纪年》《世本》的异说世系展示传世文献间的继承歧异；引入《甲骨文合集》中晚商祭祀直系先王的卜辞实例，印证父死子继的强化过程；最后以《帝王世纪》的后世异说作为点缀，不作主叙事。",
+  "候选著作": [
+    {
+      "出处": "《史记·殷本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "商王世系与继承制度的基础记载，为正史核心史料",
+      "检索词": "殷本纪 世系",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《公羊传·隐公第一》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "直接点明殷商继承原则为“立弟”，对比周制“立子”，是兄终弟及制度的关键文献证据",
+      "检索词": "殷立弟",
+      "采用": true,
+      "原文摘句": "故殷立弟，周立子。殷道亲亲，立弟；周道尊尊，立子。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《竹书纪年》（古本辑佚）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "提供与《殷本纪》有异的商王世系，可印证兄终弟及与父子相传的交替和歧说",
+      "检索词": "商王继位 纪年",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《世本·王侯大夫谱》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "先秦世系专书，保存商王继承线索，可校补殷本纪及卜辞世系",
+      "检索词": "商人世系",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《白虎通德论·封公侯》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "阐述殷周礼制差异，重申“殷道亲亲者立弟”原则，为兄终弟及提供汉代经学诠释",
+      "检索词": "殷道亲亲",
+      "采用": true,
+      "原文摘句": "殷道亲亲者立弟，周道尊尊者立子。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《甲骨文合集》第三二三八四版等",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "录有对父丁等直系先王的专门祭祀卜辞，反映晚商强化父系继承后的祭祀偏向",
+      "检索词": "父丁 祭祀",
+      "采用": true,
+      "原文摘句": "乙亥卜，行贞：其侑于父丁，岁一牛？",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "后世辑录商王世系及在位年数，与殷本纪间有异文，可作为异说点缀",
+      "检索词": "商王在位 年数",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·殷本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "商王世系与继承制度的基础记载，为正史核心史料",
+      "检索词": "殷本纪 世系",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《公羊传·隐公第一》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "直接点明殷商继承原则为“立弟”，对比周制“立子”，是兄终弟及制度的关键文献证据",
+      "检索词": "殷立弟",
+      "采用": true,
+      "原文摘句": "故殷立弟，周立子。殷道亲亲，立弟；周道尊尊，立子。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《竹书纪年》（古本辑佚）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "提供与《殷本纪》有异的商王世系，可印证兄终弟及与父子相传的交替和歧说",
+      "检索词": "商王继位 纪年",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《世本·王侯大夫谱》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "先秦世系专书，保存商王继承线索，可校补殷本纪及卜辞世系",
+      "检索词": "商人世系",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《白虎通德论·封公侯》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "阐述殷周礼制差异，重申“殷道亲亲者立弟”原则，为兄终弟及提供汉代经学诠释",
+      "检索词": "殷道亲亲",
+      "采用": true,
+      "原文摘句": "殷道亲亲者立弟，周道尊尊者立子。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《甲骨文合集》第三二三八四版等",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "录有对父丁等直系先王的专门祭祀卜辞，反映晚商强化父系继承后的祭祀偏向",
+      "检索词": "父丁 祭祀",
+      "采用": true,
+      "原文摘句": "乙亥卜，行贞：其侑于父丁，岁一牛？",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "后世辑录商王世系及在位年数，与殷本纪间有异文，可作为异说点缀",
+      "检索词": "商王在位 年数",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 6,
+    "C_excluded": 1,
+    "overall": "B"
+  }
+}

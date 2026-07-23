@@ -5,6 +5,7 @@ import com.pandahis.histomap.common.auth.RequireAuth;
 import com.pandahis.histomap.common.auth.UserContextHolder;
 import com.pandahis.histomap.common.web.RequestIdHolder;
 import com.pandahis.histomap.user.interfaces.dto.FootprintListDTO;
+import com.pandahis.histomap.user.interfaces.dto.ReadingHeatmapDTO;
 import com.pandahis.histomap.user.interfaces.service.FootprintService;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
@@ -36,6 +37,14 @@ public class FootprintController {
       @RequestParam(defaultValue = "20") @Min(1) @Max(50) int pageSize
   ) {
     return ApiResponse.ok(RequestIdHolder.get(), footprintService.list(UserContextHolder.get().userId(), page, pageSize));
+  }
+
+  @RequireAuth
+  @GetMapping("/footprints/reading-heatmap")
+  public ApiResponse<ReadingHeatmapDTO> readingHeatmap(
+      @RequestParam(defaultValue = "365") @Min(30) @Max(366) int days
+  ) {
+    return ApiResponse.ok(RequestIdHolder.get(), footprintService.readingHeatmap(UserContextHolder.get().userId(), days));
   }
 }
 

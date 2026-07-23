@@ -129,9 +129,9 @@ def verify_detail(
             )
         )
 
-    # 注音
+    # 注音括注（后处理硬检，prompt 不提）
     for pin in dkl.detect_over_pinyin(body):
-        issues.append(VerifyIssue("over_pinyin", f"多余注音：{pin}"))
+        issues.append(VerifyIssue("over_pinyin", f"多余括注：{pin}"))
 
     # 小标题 / 列表符号
     if re.search(r"^#{1,6}\s", body, re.MULTILINE):

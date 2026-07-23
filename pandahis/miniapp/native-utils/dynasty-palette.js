@@ -3,24 +3,24 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.enrichUnitCards = exports.resolveCardAccent = exports.getDynastyTone = exports.getDynastyToneIndex = exports.ERA_BAR_SEGMENTS = exports.DYNASTY_CYCLE = void 0;
 exports.DYNASTY_CYCLE = [
-    { index: 0, color: '#84572F', border: '#84572F', activeBg: '#F0E8E0', barText: '#FFFFFF', badgeText: '#84572F' },
-    { index: 1, color: '#F1A805', border: '#F1A805', activeBg: '#FFF5E0', barText: '#5A3A00', badgeText: '#F1A805' },
-    { index: 2, color: '#F2D6A1', border: '#E0C088', activeBg: '#F5F0E0', barText: '#6B5E3A', badgeText: '#6B5E3A' },
-    { index: 3, color: '#92ADA4', border: '#92ADA4', activeBg: '#EAF0EA', barText: '#3A4A3E', badgeText: '#3A4A3E' },
-    { index: 4, color: '#B3D9E0', border: '#9ABCC8', activeBg: '#EDF4F8', barText: '#3A5A6A', badgeText: '#3A5A6A' },
-    { index: 5, color: '#EDD5C0', border: '#D4B098', activeBg: '#F5EAE4', barText: '#6A4A3A', badgeText: '#6A4A3A' },
+    { index: 0, color: '#A2734F', border: '#A2734F', activeBg: '#ECE4DB', barText: '#FFFFFF', badgeText: '#7B573C' },
+    { index: 1, color: '#63899C', border: '#63899C', activeBg: '#E3E7E6', barText: '#FFFFFF', badgeText: '#4B6877' },
+    { index: 2, color: '#B99D5B', border: '#B99D5B', activeBg: '#EFEADD', barText: '#FFFFFF', badgeText: '#8D7745' },
+    { index: 3, color: '#9A798F', border: '#9A798F', activeBg: '#EBE4E4', barText: '#FFFFFF', badgeText: '#755C6D' },
+    { index: 4, color: '#7D8A6A', border: '#7D8A6A', activeBg: '#E7E7DF', barText: '#FFFFFF', badgeText: '#5F6951' },
+    { index: 5, color: '#A46A65', border: '#A46A65', activeBg: '#ECE2DE', barText: '#FFFFFF', badgeText: '#7D514D' },
 ];
 /** 规范 §3.3 年代条 9 段 */
 exports.ERA_BAR_SEGMENTS = [
-    { label: '先秦', bg: '#84572F', textColor: '#FFFFFF', flex: 1.5 },
-    { label: '秦汉', bg: '#F1A805', textColor: '#5A3A00', flex: 1 },
-    { label: '三国', bg: '#F2D6A1', textColor: '#6B5E3A', flex: 1 },
-    { label: '魏晋', bg: '#92ADA4', textColor: '#3A4A3E', flex: 0.8 },
-    { label: '隋唐', bg: '#B3D9E0', textColor: '#3A5A6A', flex: 1.2 },
-    { label: '宋', bg: '#EDD5C0', textColor: '#6A4A3A', flex: 0.7 },
-    { label: '元', bg: '#84572F', textColor: '#FFFFFF', flex: 0.5 },
-    { label: '明', bg: '#F1A805', textColor: '#5A3A00', flex: 0.5 },
-    { label: '清', bg: '#F2D6A1', textColor: '#6B5E3A', flex: 0.6 },
+    { label: '先秦', bg: '#A2734F', textColor: '#FFFFFF', flex: 1.5 },
+    { label: '秦汉', bg: '#63899C', textColor: '#FFFFFF', flex: 1 },
+    { label: '三国', bg: '#B99D5B', textColor: '#FFFFFF', flex: 1 },
+    { label: '魏晋', bg: '#9A798F', textColor: '#FFFFFF', flex: 0.8 },
+    { label: '隋唐', bg: '#7D8A6A', textColor: '#FFFFFF', flex: 1.2 },
+    { label: '宋', bg: '#A46A65', textColor: '#FFFFFF', flex: 0.7 },
+    { label: '元', bg: '#A2734F', textColor: '#FFFFFF', flex: 0.5 },
+    { label: '明', bg: '#63899C', textColor: '#FFFFFF', flex: 0.5 },
+    { label: '清', bg: '#B99D5B', textColor: '#FFFFFF', flex: 0.6 },
 ];
 const ERA_RULES = [
     { index: 1, patterns: ['秦汉', '秦', '汉', '西汉', '东汉', '清', '清朝', '清代'] },

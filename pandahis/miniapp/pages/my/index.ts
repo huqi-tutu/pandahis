@@ -1,6 +1,5 @@
 import { clearToken, hasToken, request } from '../../native-utils/api'
 import { ROUTES, navigateTo } from '../../native-utils/router'
-import { promptContentShareUnavailable } from '../../native-utils/share-invite'
 
 const APP_VERSION = '1.0.0'
 
@@ -11,6 +10,7 @@ type MeDTO = {
   favoriteCount: number
   footprintCount: number
   learnDaysCount: number
+  readCompleteCount: number
   membershipStatus: string
   membershipEndAt?: string | null
 }
@@ -29,6 +29,7 @@ function normalizeMe(raw: Record<string, unknown>): MeDTO {
     favoriteCount: Number(raw.favoriteCount ?? raw['favorite_count'] ?? 0),
     footprintCount: Number(raw.footprintCount ?? raw['footprint_count'] ?? 0),
     learnDaysCount: Number(raw.learnDaysCount ?? raw['learn_days_count'] ?? 0),
+    readCompleteCount: Number(raw.readCompleteCount ?? raw['read_complete_count'] ?? 0),
     membershipStatus: String(raw.membershipStatus ?? raw['membership_status'] ?? 'NONE'),
     membershipEndAt: (raw.membershipEndAt ?? raw['membership_end_at'] ?? null) as string | null,
   }
@@ -45,6 +46,7 @@ Page({
     footprintCount: 0,
     favoriteCount: 0,
     learnDays: 0,
+    readCompleteCount: 0,
     vipTitle: '开通年度会员',
     vipDesc: '解锁全地域图谱 · 跨时空评述 · 见证 Tab',
     appVersion: APP_VERSION,
@@ -76,6 +78,7 @@ Page({
       footprintCount: 0,
       favoriteCount: 0,
       learnDays: 0,
+      readCompleteCount: 0,
       vipTitle: '开通年度会员',
       vipDesc: '解锁全地域图谱 · 跨时空评述 · 见证 Tab',
     })
@@ -108,6 +111,7 @@ Page({
         footprintCount: me.footprintCount,
         favoriteCount: me.favoriteCount,
         learnDays: me.learnDaysCount,
+        readCompleteCount: me.readCompleteCount,
         vipTitle: vip.title,
         vipDesc: vip.desc,
       })
@@ -130,6 +134,7 @@ Page({
         footprintCount: 0,
         favoriteCount: 0,
         learnDays: 0,
+        readCompleteCount: 0,
         vipTitle: vip.title,
         vipDesc: vip.desc,
       })
@@ -174,35 +179,25 @@ Page({
   goFootprints() {
     this.requireLogin(() => navigateTo(ROUTES.footprints))
   },
+  goReadCompleted() {
+    this.requireLogin(() => navigateTo(ROUTES.readCompleted))
+  },
   goFavorites() {
     this.requireLogin(() => navigateTo(ROUTES.favorites))
   },
   goCorrections() {
     this.requireLogin(() => navigateTo(ROUTES.corrections))
   },
-  goSettings() {
-    navigateTo(ROUTES.settings)
-  },
-  onShareFriend() {
-    promptContentShareUnavailable()
-  },
-  goHelp() {
-    const email = 'support@pandahis.com'
-    wx.showModal({
-      title: '帮助与反馈',
-      content: `如有问题或建议，请发送邮件至：\n${email}`,
-      confirmText: '复制邮箱',
-      cancelText: '关闭',
-      success: (r) => {
-        if (!r.confirm) return
-        wx.setClipboardData({
-          data: email,
-          success: () => wx.showToast({ title: '已复制邮箱', icon: 'success' }),
-        })
+  goInviteFriends() {
+    wx.navigateTo({
+      url: ROUTES.invite,
+      fail(err) {
+        console.error('[my] goInviteFriends failed', err)
+        wx.showToast({ title: '页面打开失败', icon: 'none' })
       },
     })
   },
-  goAbout() {
-    navigateTo(ROUTES.about)
+  goSettings() {
+    navigateTo(ROUTES.settings)
   },
 })

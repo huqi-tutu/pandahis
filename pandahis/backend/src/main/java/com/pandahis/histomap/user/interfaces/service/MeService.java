@@ -3,6 +3,7 @@ package com.pandahis.histomap.user.interfaces.service;
 import com.pandahis.histomap.common.api.ApiException;
 import com.pandahis.histomap.common.jdbc.JdbcDates;
 import com.pandahis.histomap.user.interfaces.dto.MeDTO;
+import com.pandahis.histomap.user.interfaces.service.ReadCompleteService;
 import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.Map;
@@ -13,9 +14,11 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class MeService {
   private final JdbcTemplate jdbcTemplate;
+  private final ReadCompleteService readCompleteService;
 
-  public MeService(JdbcTemplate jdbcTemplate) {
+  public MeService(JdbcTemplate jdbcTemplate, ReadCompleteService readCompleteService) {
     this.jdbcTemplate = jdbcTemplate;
+    this.readCompleteService = readCompleteService;
   }
 
   public MeDTO load(Long userId) {
@@ -28,6 +31,7 @@ public class MeService {
         userId
     );
     long learnDaysCount = learnDays == null ? 0 : learnDays;
+    long readCompleteCount = readCompleteService.countByUser(userId);
 
     String phone = (String) u.get("phone_e164");
     String masked = maskPhone(phone);
@@ -41,6 +45,7 @@ public class MeService {
         fav,
         fp,
         learnDaysCount,
+        readCompleteCount,
         membership.status(),
         membership.endAt()
     );

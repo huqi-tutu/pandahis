@@ -4,6 +4,7 @@ const api_1 = require("../../native-utils/api");
 const invite_storage_1 = require("../../native-utils/invite-storage");
 const wx_auth_1 = require("../../native-utils/wx-auth");
 const router_1 = require("../../native-utils/router");
+const runtime_env_1 = require("../../native-utils/runtime-env");
 Page({
     data: {
         loggingIn: false,
@@ -14,6 +15,10 @@ Page({
         phone: '',
         code: '',
         countdown: 0,
+        agreed: false,
+        devVisible: false,
+        guestTop: 0,
+        guestHeight: 32,
     },
     _countdownTimer: null,
     onLoad(query) {
@@ -21,7 +26,14 @@ Page({
         if (reauth) {
             (0, api_1.clearToken)();
         }
-        this.setData({ reauth });
+        // 「立即体验」与右上角胶囊按钮上下居中对齐
+        const rect = wx.getMenuButtonBoundingClientRect();
+        this.setData({
+            reauth,
+            devVisible: (0, runtime_env_1.isDevtoolsClient)(),
+            guestTop: rect.top,
+            guestHeight: rect.height,
+        });
     },
     onUnload() {
         if (this._countdownTimer)
@@ -66,6 +78,9 @@ Page({
     guestBrowse() {
         wx.switchTab({ url: router_1.ROUTES.home });
     },
+    toggleAgree() {
+        this.setData({ agreed: !this.data.agreed });
+    },
     openAgreement() {
         wx.showModal({
             title: '用户服务协议',
@@ -88,6 +103,10 @@ Page({
     async loginWx() {
         if (this.data.loggingIn)
             return;
+        if (!this.data.agreed) {
+            wx.showToast({ title: '请先勾选同意用户协议与隐私政策', icon: 'none' });
+            return;
+        }
         this.setData({ loggingIn: true });
         try {
             const manual = (this.data.inviteCodeInput || (0, invite_storage_1.peekPendingInviteCode)() || '').trim();

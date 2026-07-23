@@ -1,0 +1,152 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00677",
+  "写作结构": "正史未见妇好记载。主体叙事须依据殷墟甲骨卜辞。可引《尚书》《诗经》展现武丁时代背景，以《殷周金文集成》所录妇好器铭及司母辛鼎铭印证其在世与死后的尊崇地位。",
+  "候选著作": [
+    {
+      "出处": "《尚书·无逸》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记高宗武丁在位长久，可作武丁时代背景，未涉妇好。",
+      "检索词": "高宗",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《诗经·商颂·玄鸟》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "歌颂武丁中兴之盛，间接映衬王室背景，无妇好信息。",
+      "检索词": "玄鸟",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·殷本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "详记武丁政绩而未载妇好，可见传世文献缺载。",
+      "检索词": "武丁",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《竹书纪年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "辑录武丁年数及征伐，未提及妇好。",
+      "检索词": "武丁",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《殷周金文集成》·妇好鼎铭",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "出土铜器铭文直接铸有“妇好”二字，印证其实际存在与身份。",
+      "检索词": "妇好",
+      "采用": true,
+      "原文摘句": "妇好",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《殷周金文集成》·司母辛鼎铭",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "铭文“司母辛”为妇好庙号，证明其死后受子孙隆祭。",
+      "检索词": "司母辛",
+      "采用": true,
+      "原文摘句": "司母辛",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《尚书·无逸》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记高宗武丁在位长久，可作武丁时代背景，未涉妇好。",
+      "检索词": "高宗",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《诗经·商颂·玄鸟》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "歌颂武丁中兴之盛，间接映衬王室背景，无妇好信息。",
+      "检索词": "玄鸟",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·殷本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "详记武丁政绩而未载妇好，可见传世文献缺载。",
+      "检索词": "武丁",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《竹书纪年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "辑录武丁年数及征伐，未提及妇好。",
+      "检索词": "武丁",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《殷周金文集成》·妇好鼎铭",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "出土铜器铭文直接铸有“妇好”二字，印证其实际存在与身份。",
+      "检索词": "妇好",
+      "采用": true,
+      "原文摘句": "妇好",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《殷周金文集成》·司母辛鼎铭",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "铭文“司母辛”为妇好庙号，证明其死后受子孙隆祭。",
+      "检索词": "司母辛",
+      "采用": true,
+      "原文摘句": "司母辛",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 4,
+    "overall": "B"
+  }
+}

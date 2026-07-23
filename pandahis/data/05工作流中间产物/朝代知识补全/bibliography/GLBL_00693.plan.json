@@ -1,0 +1,107 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00693",
+  "写作结构": "正史见翻译”不适用；叙事主干全依殷墟等考古报告及其科学描述；史外先秦文献仅以一两条后世追述佐证人殉风气之广延，不展开具体仪式步骤；严禁编造任何杀殉细节或对话。",
+  "候选著作": [
+    {
+      "出处": "《墨子·节葬下》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载战国时仍存在大规模杀殉，可借以窥见商周以来人殉制度之余烈与规模。",
+      "检索词": "天子杀殉",
+      "采用": true,
+      "原文摘句": "天子杀殉，众者数百，寡者数十；将军大夫杀殉，众者数十，寡者数人。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《诗经·秦风·黄鸟》",
+      "tier": "先秦文献",
+      "pool": "legend",
+      "与本主题关系": "反映春秋秦穆公以良臣殉葬，可与商代贵族人殉相较，说明制度延续。",
+      "检索词": "黄鸟 秦穆公",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《左传·成公二年》",
+      "tier": "经注/杂史",
+      "pool": "legend",
+      "与本主题关系": "记载宋文公始用殉，证明人殉至春秋尚有遗留，为商代制度的远源余绪。",
+      "检索词": "宋文公 用殉",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《礼记·檀弓下》",
+      "tier": "经注/杂史",
+      "pool": "legend",
+      "与本主题关系": "孔子批评以俑代殉，间接反映人殉向明器转变的观念历程。",
+      "检索词": "刍灵 俑 不仁",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《墨子·节葬下》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载战国时仍存在大规模杀殉，可借以窥见商周以来人殉制度之余烈与规模。",
+      "检索词": "天子杀殉",
+      "采用": true,
+      "原文摘句": "天子杀殉，众者数百，寡者数十；将军大夫杀殉，众者数十，寡者数人。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《诗经·秦风·黄鸟》",
+      "tier": "先秦文献",
+      "pool": "legend",
+      "与本主题关系": "反映春秋秦穆公以良臣殉葬，可与商代贵族人殉相较，说明制度延续。",
+      "检索词": "黄鸟 秦穆公",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《左传·成公二年》",
+      "tier": "经注/杂史",
+      "pool": "legend",
+      "与本主题关系": "记载宋文公始用殉，证明人殉至春秋尚有遗留，为商代制度的远源余绪。",
+      "检索词": "宋文公 用殉",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《礼记·檀弓下》",
+      "tier": "经注/杂史",
+      "pool": "legend",
+      "与本主题关系": "孔子批评以俑代殉，间接反映人殉向明器转变的观念历程。",
+      "检索词": "刍灵 俑 不仁",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 1,
+    "C_excluded": 3,
+    "overall": "B"
+  }
+}

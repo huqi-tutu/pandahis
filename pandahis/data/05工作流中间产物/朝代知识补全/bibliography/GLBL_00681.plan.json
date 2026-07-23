@@ -1,0 +1,159 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00681",
+  "写作结构": "正史《史记·殷本纪》叙述见翻译详录；拓展部分先引《国语·晋语》载妲己与胶鬲比而亡殷，《竹书纪年》记伐有苏获妲己，《尚书·牧誓》斥妇言是用，再述《列女传》定型女祸形象；最后以《封神演义》狐妖附会合段补充传奇层。",
+  "候选著作": [
+    {
+      "出处": "《国语·晋语一》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "最早记载妲己有宠并与胶鬲勾结导致殷商灭亡的文献",
+      "检索词": "妲己有宠 胶鬲",
+      "采用": true,
+      "原文摘句": "殷辛伐有苏，有苏氏以妲己女焉，妲己有宠，于是乎与胶鬲比而亡殷。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·殷本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载帝辛爱妲己、言听计从及酒池肉林等奢靡行为的标准正史叙事",
+      "检索词": "妲己 酒池肉林",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《古本竹书纪年》（辑佚）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "提供帝辛伐有苏获妲己的具体时间（九年），补充妲己入宫的早期记载",
+      "检索词": "伐有苏 获妲己",
+      "采用": true,
+      "原文摘句": "九年，王师伐有苏，获妲己以归。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《尚书·牧誓》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "武王伐纣誓词中指责纣王“惟妇言是用”，间接反映妲己在政治中的影响",
+      "检索词": "惟妇言是用",
+      "采用": true,
+      "原文摘句": "今商王受，惟妇言是用。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《列女传·孽嬖传》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "刘向系统整理妲己祸乱殷商事迹，强化女祸观念，有较完整的叙述",
+      "检索词": "妲己 纣 嬖幸",
+      "采用": true,
+      "原文摘句": "妲己者，殷纣之妃也，嬖幸于纣……割比干之心以视妲己，曰：‘吾谓圣人心有七窍。’",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《封神演义》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "明代小说将妲己塑造为九尾狐妖附体的妖女，是民间传说最广的版本",
+      "检索词": "九尾狐 妲己 封神",
+      "采用": true,
+      "原文摘句": "这妖乃是九尾狐狸精，把妲己真魂摄去，借体成形，惑乱纣王。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《国语·晋语一》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "最早记载妲己有宠并与胶鬲勾结导致殷商灭亡的文献",
+      "检索词": "妲己有宠 胶鬲",
+      "采用": true,
+      "原文摘句": "殷辛伐有苏，有苏氏以妲己女焉，妲己有宠，于是乎与胶鬲比而亡殷。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·殷本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载帝辛爱妲己、言听计从及酒池肉林等奢靡行为的标准正史叙事",
+      "检索词": "妲己 酒池肉林",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《古本竹书纪年》（辑佚）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "提供帝辛伐有苏获妲己的具体时间（九年），补充妲己入宫的早期记载",
+      "检索词": "伐有苏 获妲己",
+      "采用": true,
+      "原文摘句": "九年，王师伐有苏，获妲己以归。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《尚书·牧誓》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "武王伐纣誓词中指责纣王“惟妇言是用”，间接反映妲己在政治中的影响",
+      "检索词": "惟妇言是用",
+      "采用": true,
+      "原文摘句": "今商王受，惟妇言是用。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《列女传·孽嬖传》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "刘向系统整理妲己祸乱殷商事迹，强化女祸观念，有较完整的叙述",
+      "检索词": "妲己 纣 嬖幸",
+      "采用": true,
+      "原文摘句": "妲己者，殷纣之妃也，嬖幸于纣……割比干之心以视妲己，曰：‘吾谓圣人心有七窍。’",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《封神演义》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "明代小说将妲己塑造为九尾狐妖附体的妖女，是民间传说最广的版本",
+      "检索词": "九尾狐 妲己 封神",
+      "采用": true,
+      "原文摘句": "这妖乃是九尾狐狸精，把妲己真魂摄去，借体成形，惑乱纣王。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 5,
+    "C_excluded": 1,
+    "overall": "B"
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00672",
+  "写作结构": "正史叙述见翻译详录，只记世次而缺事迹。拓展文以《古本竹书纪年》等史外异说为核心，叙文丁杀季历一事，并指出该记载不见于《史记》殷、周二本纪。其余在位细节留白，不增饰。",
+  "候选著作": [
+    {
+      "出处": "《史记·殷本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史主要出处，记太丁（即文丁）继武乙立，卒后弟帝乙立，未载杀季历事。",
+      "检索词": "太丁 立",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《古本竹书纪年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "辑佚本明确记载文丁杀死周王季历，是与正史相异的核心史外材料。",
+      "检索词": "文丁杀季历",
+      "采用": true,
+      "原文摘句": "文丁杀季历。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·周本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记季历卒后文王立，不载其被杀，可作正史隐讳之对照。",
+      "检索词": "公季 卒",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "晋人皇甫谧著，或采竹书之说叙商周关系，属后世转述。",
+      "检索词": "文丁 季历",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·殷本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史主要出处，记太丁（即文丁）继武乙立，卒后弟帝乙立，未载杀季历事。",
+      "检索词": "太丁 立",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《古本竹书纪年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "辑佚本明确记载文丁杀死周王季历，是与正史相异的核心史外材料。",
+      "检索词": "文丁杀季历",
+      "采用": true,
+      "原文摘句": "文丁杀季历。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·周本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记季历卒后文王立，不载其被杀，可作正史隐讳之对照。",
+      "检索词": "公季 卒",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "晋人皇甫谧著，或采竹书之说叙商周关系，属后世转述。",
+      "检索词": "文丁 季历",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 1,
+    "C_excluded": 3,
+    "overall": "B"
+  }
+}

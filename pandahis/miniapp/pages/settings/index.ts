@@ -1,6 +1,8 @@
 import { clearToken, getBaseUrl, hasToken } from '../../native-utils/api'
 import { bindInviteCode } from '../../native-utils/invite-bind'
-import { ROUTES, navigateTo } from '../../native-utils/router'
+import { ROUTES, SUPPORT_EMAIL, navigateTo } from '../../native-utils/router'
+
+const APP_VERSION = '1.0.0'
 
 Page({
   data: {
@@ -9,6 +11,7 @@ Page({
     bindCode: '',
     bindSubmitting: false,
     headerPadPx: 88,
+    appVersion: APP_VERSION,
   },
   onLoad() {
     try {
@@ -54,12 +57,23 @@ Page({
       this.setData({ bindSubmitting: false })
     }
   },
-  copySupportEmail() {
-    const email = 'support@pandahis.com'
-    wx.setClipboardData({
-      data: email,
-      success: () => wx.showToast({ title: '已复制邮箱', icon: 'success' }),
+  goHelp() {
+    wx.showModal({
+      title: '帮助与反馈',
+      content: `如有问题或建议，请发送邮件至：\n${SUPPORT_EMAIL}`,
+      confirmText: '复制邮箱',
+      cancelText: '关闭',
+      success: (r) => {
+        if (!r.confirm) return
+        wx.setClipboardData({
+          data: SUPPORT_EMAIL,
+          success: () => wx.showToast({ title: '已复制邮箱', icon: 'success' }),
+        })
+      },
     })
+  },
+  goAbout() {
+    navigateTo(ROUTES.about)
   },
   goProfileEdit() {
     if (!hasToken()) {
@@ -67,9 +81,6 @@ Page({
       return
     }
     navigateTo(ROUTES.profileEdit)
-  },
-  goInviteReads() {
-    navigateTo(ROUTES.invite)
   },
   clearCache() {
     wx.showModal({

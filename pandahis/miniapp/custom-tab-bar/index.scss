@@ -2,7 +2,7 @@
 
 .tabbar-safe {
   padding-bottom: env(safe-area-inset-bottom);
-  background: rgba(248, 246, 242, 0.92);
+  background: $page-bg;
   border-top: 1rpx solid $divider;
 }
 

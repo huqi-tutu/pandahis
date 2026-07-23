@@ -1,13 +1,16 @@
 package com.pandahis.histomap.contentgraph.interfaces.service;
 
 import com.pandahis.histomap.common.api.ApiException;
+import com.pandahis.histomap.common.auth.UserContextHolder;
 import com.pandahis.histomap.common.util.HistoryYearFormat;
 import com.pandahis.histomap.contentgraph.domain.BoxCategorySupport;
 import com.pandahis.histomap.contentgraph.interfaces.dto.UnitSwimMatrixDTO;
+import com.pandahis.histomap.user.interfaces.service.ReadCompleteService;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
@@ -15,10 +18,16 @@ import org.springframework.stereotype.Service;
 public class UnitSwimMatrixService {
   private final JdbcTemplate jdbcTemplate;
   private final UnitDynastyResolver dynastyResolver;
+  private final ReadCompleteService readCompleteService;
 
-  public UnitSwimMatrixService(JdbcTemplate jdbcTemplate, UnitDynastyResolver dynastyResolver) {
+  public UnitSwimMatrixService(
+      JdbcTemplate jdbcTemplate,
+      UnitDynastyResolver dynastyResolver,
+      ReadCompleteService readCompleteService
+  ) {
     this.jdbcTemplate = jdbcTemplate;
     this.dynastyResolver = dynastyResolver;
+    this.readCompleteService = readCompleteService;
   }
 
   public UnitSwimMatrixDTO load(String unitId) {
@@ -42,6 +51,11 @@ public class UnitSwimMatrixService {
     List<LaneSeed> laneSeeds = buildLaneSeeds(boxes, startYear, endYear);
     List<Integer> anchorYears = collectAnchorYears(laneSeeds);
 
+    var ctx = UserContextHolder.get();
+    Set<String> completedBoxIds = ctx.authenticated()
+        ? readCompleteService.completedBoxIdsForDynasty(ctx.userId(), dynastyId)
+        : Set.of();
+
     SwimTimeScale.Plan timePlan = SwimTimeScale.plan(startYear, endYear, anchorYears, laneSeeds.size());
     int recommendedSheetWidthRpx = refineSheetWidth(laneSeeds, timePlan);
     SwimTimeScale.Plan finalPlan = timePlan.scale().fitToViewport(
@@ -52,7 +66,7 @@ public class UnitSwimMatrixService {
     int sheetWidthRpx = finalPlan.sheetWidthRpx();
 
     List<UnitSwimMatrixDTO.Lane> lanes = laneSeeds.stream()
-        .map(seed -> buildLane(seed.def(), seed.bars(), finalPlan.scale(), sheetWidthRpx))
+        .map(seed -> buildLane(seed.def(), seed.bars(), finalPlan.scale(), sheetWidthRpx, completedBoxIds))
         .toList();
 
     SwimCanvasLayout.CanvasPlan canvas = SwimCanvasLayout.build(lanes);
@@ -130,13 +144,14 @@ public class UnitSwimMatrixService {
       BoxCategorySupport.CategoryDef def,
       List<SwimLaneLayout.SwimBarInput> bars,
       SwimTimeScale scale,
-      int sheetWidthRpx
+      int sheetWidthRpx,
+      Set<String> completedBoxIds
   ) {
     Map<String, UnitSwimMatrixDTO.LaneView> views =
         SwimLaneLayout.buildPriorityViews(bars, scale, sheetWidthRpx, def.key(), def.label());
     UnitSwimMatrixDTO.LaneView defaultView = views.get("p3");
     int totalCount = bars.size();
-    int readCount = 0;
+    int readCount = (int) bars.stream().filter(bar -> completedBoxIds.contains(bar.boxId())).count();
 
     return new UnitSwimMatrixDTO.Lane(
         def.key(),

@@ -1,0 +1,151 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00670",
+  "写作结构": "正史叙述见翻译详录；拓展部分主用《古本竹书纪年》异说（自庇迁奄），并与《史记》仅言‘迁于奄’对照，略述商朝中期迁都频繁之背景，可引《尚书·盘庚》‘不常厥邑’为旁证，但不宜详述。后世综述仅作参考，不展开具体内容。",
+  "候选著作": [
+    {
+      "出处": "《史记·殷本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，载南庚继位、迁奄、传位阳甲及国力衰象",
+      "检索词": "南庚 迁奄",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《古本竹书纪年·商纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "载南庚自庇迁于奄，与《史记》仅言迁奄形成地点差异，为重要异说",
+      "检索词": "南庚 自庇迁于奄",
+      "采用": true,
+      "原文摘句": "南庚更自庇迁于奄。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《今本竹书纪年·商纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "记南庚名更，元年迁奄，在位六年等，与古本相近，然其年代、细节不可尽信",
+      "检索词": "南庚 元年 迁奄",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "录商王世系及年数，或有南庚在位年之异说，可资比对",
+      "检索词": "南庚 在位 年",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《尚书·盘庚》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "盘庚迁殷时追叙前王‘不常厥邑’，可间接为南庚迁都频仍之背景提供依据",
+      "检索词": "不常厥邑 于今五邦",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《甲骨文合集》（相关周祭卜辞）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "商王周祭谱中有‘南庚’名号，印证其世系存在，但未载事迹",
+      "检索词": "南庚 卜辞",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·殷本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，载南庚继位、迁奄、传位阳甲及国力衰象",
+      "检索词": "南庚 迁奄",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《古本竹书纪年·商纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "载南庚自庇迁于奄，与《史记》仅言迁奄形成地点差异，为重要异说",
+      "检索词": "南庚 自庇迁于奄",
+      "采用": true,
+      "原文摘句": "南庚更自庇迁于奄。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《尚书·盘庚》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "盘庚迁殷时追叙前王‘不常厥邑’，可间接为南庚迁都频仍之背景提供依据",
+      "检索词": "不常厥邑 于今五邦",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《甲骨文合集》（相关周祭卜辞）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "商王周祭谱中有‘南庚’名号，印证其世系存在，但未载事迹",
+      "检索词": "南庚 卜辞",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《今本竹书纪年·商纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "记南庚名更，元年迁奄，在位六年等，与古本相近，然其年代、细节不可尽信",
+      "检索词": "南庚 元年 迁奄",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "录商王世系及年数，或有南庚在位年之异说，可资比对",
+      "检索词": "南庚 在位 年",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 1,
+    "C_excluded": 5,
+    "overall": "B"
+  }
+}

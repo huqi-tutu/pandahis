@@ -2,6 +2,7 @@ import { clearToken, hasToken, setToken } from '../../native-utils/api'
 import { peekPendingInviteCode, stashInviteCode } from '../../native-utils/invite-storage'
 import { leaveAfterLogin, loginSuccessToast, loginWithWxCode } from '../../native-utils/wx-auth'
 import { ROUTES } from '../../native-utils/router'
+import { isDevtoolsClient } from '../../native-utils/runtime-env'
 
 Page({
   data: {
@@ -13,6 +14,10 @@ Page({
     phone: '',
     code: '',
     countdown: 0,
+    agreed: false,
+    devVisible: false,
+    guestTop: 0,
+    guestHeight: 32,
   },
   _countdownTimer: null as ReturnType<typeof setInterval> | null,
   onLoad(query: Record<string, string | undefined>) {
@@ -20,7 +25,14 @@ Page({
     if (reauth) {
       clearToken()
     }
-    this.setData({ reauth })
+    // 「立即体验」与右上角胶囊按钮上下居中对齐
+    const rect = wx.getMenuButtonBoundingClientRect()
+    this.setData({
+      reauth,
+      devVisible: isDevtoolsClient(),
+      guestTop: rect.top,
+      guestHeight: rect.height,
+    })
   },
   onUnload() {
     if (this._countdownTimer) clearInterval(this._countdownTimer)
@@ -62,6 +74,9 @@ Page({
   guestBrowse() {
     wx.switchTab({ url: ROUTES.home })
   },
+  toggleAgree() {
+    this.setData({ agreed: !this.data.agreed })
+  },
   openAgreement() {
     wx.showModal({
       title: '用户服务协议',
@@ -83,6 +98,10 @@ Page({
   },
   async loginWx() {
     if (this.data.loggingIn) return
+    if (!this.data.agreed) {
+      wx.showToast({ title: '请先勾选同意用户协议与隐私政策', icon: 'none' })
+      return
+    }
     this.setData({ loggingIn: true })
     try {
       const manual = (this.data.inviteCodeInput || peekPendingInviteCode() || '').trim()

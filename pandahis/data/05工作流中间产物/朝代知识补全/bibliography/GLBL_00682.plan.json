@@ -1,0 +1,153 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00682",
+  "写作结构": "正史《史记·殷本纪》及《尚书·高宗肜日》的基本叙事见翻译详录，拓展文以出土甲骨所见祖己受祭之迹与后世《书经注》等所载祖庚异说为延展点，避免补充对话与生平细节。",
+  "候选著作": [
+    {
+      "出处": "《尚书·高宗肜日》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "祖己因雉雊劝谏的主要原始文本，但已列入主要史料出处，无新增信息",
+      "检索词": "高宗肜日 祖己",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·殷本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史记载祖己谏武丁及立高宗庙号的基本叙事，翻译详录已覆盖",
+      "检索词": "祖己 武丁 高宗",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《甲骨文合集》等甲骨著录",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "商代甲骨文中有若干关于“祖己”的祭祀卜辞，可证祖己在商代享有庙祭，补充其地位",
+      "检索词": "祖己",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《书经注》（宋·金履祥）",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "提出《高宗肜日》实为祖庚祭祀武丁时雉雊，祖己因而谏祖庚的异说",
+      "检索词": "高宗肜日 祖庚 金履祥",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《尚书正义》孔颖达疏",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "疏解《高宗肜日》，引郑玄等说，并讨论祭礼与祖己身份，无矛盾新增",
+      "检索词": "高宗肜日 孔颖达",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《帝王世纪》辑本",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "可能述及祖己与武丁的事迹，但无确凿新增异说，且与禁止的生平细节可能冲突",
+      "检索词": "祖己",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《尚书·高宗肜日》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "祖己因雉雊劝谏的主要原始文本，但已列入主要史料出处，无新增信息",
+      "检索词": "高宗肜日 祖己",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·殷本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史记载祖己谏武丁及立高宗庙号的基本叙事，翻译详录已覆盖",
+      "检索词": "祖己 武丁 高宗",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《甲骨文合集》等甲骨著录",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "商代甲骨文中有若干关于“祖己”的祭祀卜辞，可证祖己在商代享有庙祭，补充其地位",
+      "检索词": "祖己",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《尚书正义》孔颖达疏",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "疏解《高宗肜日》，引郑玄等说，并讨论祭礼与祖己身份，无矛盾新增",
+      "检索词": "高宗肜日 孔颖达",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《书经注》（宋·金履祥）",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "提出《高宗肜日》实为祖庚祭祀武丁时雉雊，祖己因而谏祖庚的异说",
+      "检索词": "高宗肜日 祖庚 金履祥",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《帝王世纪》辑本",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "可能述及祖己与武丁的事迹，但无确凿新增异说，且与禁止的生平细节可能冲突",
+      "检索词": "祖己",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 4,
+    "overall": "B"
+  }
+}

@@ -1,4 +1,4 @@
-"""翻译归因清洗：非本传主事件、缺漏退场补全。"""
+"""翻译归因清洗：非本传主事件展开压缩；尾部模板补丁清除。"""
 
 from __future__ import annotations
 
@@ -7,6 +7,12 @@ from typing import Any, Dict, List, Tuple
 
 _EXIT_RE = re.compile(
     r"([\u4e00-\u9fff]{1,6})(崩|薨|卒)(?:，[^。；]{0,24})?(?:葬[^。；]{0,24})?"
+)
+
+# 历史 attribution 尾部模板（已废弃生成，仅用于存量清洗）
+_TAIL_TEMPLATE_RE = re.compile(
+    r"\n*\*?\s*\n*《史记》又记，[^。\n]+。这是[^。\n]+一生的收束，亦标志世系承续的节点。",
+    re.MULTILINE,
 )
 
 
@@ -69,7 +75,6 @@ def sanitize_foreign_exit_opening(detail: str, subject: str) -> Tuple[str, List[
         for m in list(_EXIT_RE.finditer(para)):
             who = m.group(1)
             if who and not _names_match(who, subject):
-                # 整句删除或压缩为旁注
                 sent_pat = re.escape(m.group(0)) + r"[^。]*。"
                 modified2 = re.sub(
                     sent_pat,
@@ -79,7 +84,6 @@ def sanitize_foreign_exit_opening(detail: str, subject: str) -> Tuple[str, List[
                 if modified2 != modified:
                     changes.append(f"删除前文他人退场展开: {who}{m.group(2)}")
                     modified = modified2.strip()
-        # 清理「说到这儿，得插一段…」类补丁句
         modified = re.sub(
             r"说到这儿，得插一段[^。]+。",
             "",
@@ -93,35 +97,24 @@ def sanitize_foreign_exit_opening(detail: str, subject: str) -> Tuple[str, List[
     return "\n\n".join([*new_body, *tail_paras]), changes
 
 
+def strip_tail_exit_template(detail: str) -> Tuple[str, bool]:
+    """清除已废弃的「《史记》又记…一生收束」尾部模板段。"""
+    new_detail, n = _TAIL_TEMPLATE_RE.subn("", detail)
+    # 清孤立 * 分隔行
+    new_detail = re.sub(r"\n\n\*\n\n", "\n\n", new_detail)
+    new_detail = re.sub(r"\n\n\*\s*$", "", new_detail.rstrip()) + (
+        "\n" if detail.endswith("\n") else ""
+    )
+    return new_detail, n > 0
+
+
 def build_tail_exit_supplement(
     recalled: Dict[str, Any],
     plan: Dict[str, Any] | None = None,
 ) -> str:
-    """为本传主生成尾部退场补全段落（若母本缺漏）。"""
-    subject = str(recalled.get("史略名称") or "").strip()
-    supplements = recalled.get("本传缺漏补全") or []
-    if plan:
-        supplements = supplements or plan.get("本传缺漏补全") or []
-
-    if not supplements:
-        return ""
-
-    parts: List[str] = []
-    for item in supplements:
-        if not isinstance(item, dict):
-            continue
-        text = str(item.get("text") or "").strip()
-        if not text:
-            continue
-        # 仅采纳纯退场/葬地句，跳过「X崩，而Y立」类即位过渡
-        if re.search(r"崩，而|崩而|薨，而", text):
-            continue
-        if "崩" in text or "葬" in text:
-            parts.append(
-                f"《史记》又记，{text.rstrip('。')}。"
-                f"这是{subject}一生的收束，亦标志世系承续的节点。"
-            )
-    return "\n\n".join(parts)
+    """已废弃：不再生成「《史记》又记」尾部补丁。保留函数签名供旧脚本 import。"""
+    _ = recalled, plan
+    return ""
 
 
 def apply_attribution_fixes(
@@ -129,26 +122,20 @@ def apply_attribution_fixes(
     recalled: Dict[str, Any],
     plan: Dict[str, Any] | None = None,
 ) -> Tuple[str, List[str]]:
-    """归因清洗 + 尾部退场补全。"""
+    """归因清洗 + 清除历史尾部模板残留。"""
     changes: List[str] = []
     subject = str(recalled.get("史略名称") or "").strip()
     if not subject:
-        return detail, changes
+        cleaned, stripped = strip_tail_exit_template(detail)
+        if stripped:
+            changes.append("清除尾部又记模板")
+        return cleaned, changes
 
     cleaned, c1 = sanitize_foreign_exit_opening(detail, subject)
     changes.extend(c1)
 
-    tail = build_tail_exit_supplement(recalled, plan)
-    if tail and tail not in cleaned:
-        ref_marker = "*参考著作*"
-        if ref_marker in cleaned:
-            head, ref = cleaned.split(ref_marker, 1)
-            cleaned = head.rstrip() + "\n\n" + tail + "\n\n" + ref_marker + ref
-        elif "参考著作" in cleaned:
-            head, ref = cleaned.rsplit("参考著作", 1)
-            cleaned = head.rstrip() + "\n\n" + tail + "\n\n参考著作" + ref
-        else:
-            cleaned = cleaned.rstrip() + "\n\n" + tail
-        changes.append(f"尾部补全退场: {subject}")
+    cleaned, stripped = strip_tail_exit_template(cleaned)
+    if stripped:
+        changes.append("清除尾部又记模板")
 
     return cleaned, changes

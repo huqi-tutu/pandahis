@@ -1,0 +1,51 @@
+<view class="page-shell">
+  <proto-nav title="已读完" show-back="{{true}}"></proto-nav>
+
+  <view class="fp-body" style="padding-top: {{headerPadPx}}px;">
+    <view wx:if="{{!hasToken}}" class="empty-state">
+      <text class="empty-icon">🔒</text>
+      <text class="empty-text">登录后可查看已读完的史略</text>
+      <view class="login-btn btn-primary" bindtap="goLogin">去登录</view>
+    </view>
+
+    <block wx:elif="{{loaded}}">
+      <view wx:if="{{!items.length}}" class="empty-state">
+        <text class="empty-icon">✓</text>
+        <text class="empty-text">暂无已读完</text>
+        <text class="empty-hint">在史略详情页标记读完后会出现在这里</text>
+      </view>
+
+      <block wx:else>
+        <text class="summary muted">{{summaryText}}</text>
+
+        <view class="card-list">
+          <view class="swipe-row" wx:for="{{items}}" wx:key="boxId">
+            <view
+              class="swipe-action"
+              catchtap="onUnmark"
+              data-id="{{item.boxId}}"
+            >取消标记</view>
+            <view
+              class="swipe-content card card-paper {{draggingBoxId === item.boxId ? 'swipe-content--dragging' : ''}}"
+              style="transform: translateX({{item.swipeX}}px);"
+              data-id="{{item.boxId}}"
+              bindtouchstart="onSwipeStart"
+              bindtouchmove="onSwipeMove"
+              bindtouchend="onSwipeEnd"
+              bindtap="go"
+            >
+              <view class="top">
+                <text class="t">{{item.title}}</text>
+                <text class="time muted">{{item.timeLabel}}</text>
+              </view>
+              <text class="era accent">{{item.yearRange}}</text>
+              <text wx:if="{{item.pathLabel}}" class="path muted">{{item.pathLabel}}</text>
+            </view>
+          </view>
+        </view>
+      </block>
+    </block>
+
+    <view wx:else class="loading">加载中…</view>
+  </view>
+</view>

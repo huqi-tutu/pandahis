@@ -83,6 +83,20 @@
       <text class="tab-empty-text">暂无详情正文</text>
       <text class="tab-empty-sub">史略内容正在编撰中</text>
      </view>
+
+     <view wx:if="{{detailParagraphs.length || blurbSegs.length}}" class="read-complete-wrap">
+      <view
+        class="read-complete-tag {{isReadComplete ? 'read-complete-tag--done' : ''}}"
+        catchtap="toggleReadComplete"
+      >
+        <block wx:if="{{isReadComplete}}">
+          <text class="read-complete-mark">✓</text>
+          <text>已读完</text>
+          <text class="read-complete-cancel">取消</text>
+        </block>
+        <text wx:else>读完了</text>
+      </view>
+     </view>
  </block>
     <view wx:else class="tab-empty tab-empty--loading">
      <view class="tab-empty-loading">

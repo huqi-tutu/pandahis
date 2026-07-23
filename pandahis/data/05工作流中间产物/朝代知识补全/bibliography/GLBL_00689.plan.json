@@ -1,0 +1,157 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00689",
+  "写作结构": "正史叙述（《尚书·牧誓》《史记》本纪）见翻译详录；拓展文以《诗经·大明》《逸周书·克殷》为主体，描述牧野战场景象与纣王自焚细节；以《竹书纪年》补充年代异说；叙事严格遵循 anchor 六点，禁止编造阵型、对话与心理活动。",
+  "候选著作": [
+    {
+      "出处": "《诗经·大雅·大明》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "描绘牧野之战当日清晨会战与周军气势，可印证 c01、c05",
+      "检索词": "牧野洋洋",
+      "采用": true,
+      "原文摘句": "牧野洋洋，檀车煌煌，驷騵彭彭。维师尚父，时维鹰扬。涼彼武王，肆伐大商，会朝清明。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《逸周书·克殷》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "详细记录商军崩溃、纣王奔鹿台自焚及武王入商都，可印证 c02、c03、c04",
+      "检索词": "克殷",
+      "采用": true,
+      "原文摘句": "商师大崩，商辛奔内，登于鹿台之上，屏遮而自燔于火。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《竹书纪年·殷纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "提供武王伐纣的纪年与相关记载，可作为年代考异补充 c05",
+      "检索词": "武王伐纣",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《尚书·牧誓》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "anchor c06 所指直接文献，已列入主要史料出处，不作拓展摘句",
+      "检索词": "牧誓",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·殷本纪》《史记·周本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "二十四史正史叙述，由翻译详录覆盖，不进行摘句拓展",
+      "检索词": "",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "后世辑录的纣王自焚异说及细节，可作为 legend 层补充",
+      "检索词": "纣自焚",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《诗经·大雅·大明》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "描绘牧野之战当日清晨会战与周军气势，可印证 c01、c05",
+      "检索词": "牧野洋洋",
+      "采用": true,
+      "原文摘句": "牧野洋洋，檀车煌煌，驷騵彭彭。维师尚父，时维鹰扬。涼彼武王，肆伐大商，会朝清明。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《逸周书·克殷》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "详细记录商军崩溃、纣王奔鹿台自焚及武王入商都，可印证 c02、c03、c04",
+      "检索词": "克殷",
+      "采用": true,
+      "原文摘句": "商师大崩，商辛奔内，登于鹿台之上，屏遮而自燔于火。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《竹书纪年·殷纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "提供武王伐纣的纪年与相关记载，可作为年代考异补充 c05",
+      "检索词": "武王伐纣",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《尚书·牧誓》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "anchor c06 所指直接文献，已列入主要史料出处，不作拓展摘句",
+      "检索词": "牧誓",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·殷本纪》《史记·周本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "二十四史正史叙述，由翻译详录覆盖，不进行摘句拓展",
+      "检索词": "",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "后世辑录的纣王自焚异说及细节，可作为 legend 层补充",
+      "检索词": "纣自焚",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 4,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

@@ -1,0 +1,181 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00654",
+  "写作结构": "以殷墟甲骨卜辞为核心叙事依据，正史《史记·殷本纪》《龟策列传》记载见翻译详录，不在此拓展摘句。史外异说主要取自《尚书·盘庚》占卜迁都、《尚书·洪范》稽疑之法、《礼记·表记》殷人尊神之文化背景，竹书纪年可辅助参证。现代学术综览可参考陈梦家《殷墟卜辞综述》相关内容，但仅作合段补充。",
+  "候选著作": [
+    {
+      "出处": "《尚书·盘庚上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载盘庚迁都前问卜，体现贞卜在重大国事决策中的实际运用。",
+      "检索词": "卜稽",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《尚书·洪范》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记述殷周之际的卜筮制度与决疑原则，可补充贞卜运作程序与神意依据。",
+      "检索词": "稽疑",
+      "采用": true,
+      "原文摘句": "汝则有大疑，谋及乃心，谋及卿士，谋及庶人，谋及卜筮。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《礼记·表记》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "揭示殷人重鬼神的社会氛围，为贞卜制度提供文化合法性背景。",
+      "检索词": "殷人尊神",
+      "采用": true,
+      "原文摘句": "殷人尊神，率民以事神，先鬼而后礼。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·殷本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "商王占卜决事见于本纪，然正史叙述由翻译详录负责，不在此拓展摘句。",
+      "检索词": "卜武丁",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·龟策列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "专论龟卜源流，可追溯商代，然不在此摘句拓展。",
+      "检索词": "龟策",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《竹书纪年·殷纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载商王有卜问记录，可辅助考订贞卜制度的时间与背景。",
+      "检索词": "卜 贞",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "陈梦家《殷墟卜辞综述·商王与贞人》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "现代甲骨学综述，系统归纳贞人群体、王自占卜及‘王占曰’等细节，可作为后世研究参考。",
+      "检索词": "贞人 商王 占曰",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《尚书·盘庚上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载盘庚迁都前问卜，体现贞卜在重大国事决策中的实际运用。",
+      "检索词": "卜稽",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《尚书·洪范》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记述殷周之际的卜筮制度与决疑原则，可补充贞卜运作程序与神意依据。",
+      "检索词": "稽疑",
+      "采用": true,
+      "原文摘句": "汝则有大疑，谋及乃心，谋及卿士，谋及庶人，谋及卜筮。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《礼记·表记》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "揭示殷人重鬼神的社会氛围，为贞卜制度提供文化合法性背景。",
+      "检索词": "殷人尊神",
+      "采用": true,
+      "原文摘句": "殷人尊神，率民以事神，先鬼而后礼。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·殷本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "商王占卜决事见于本纪，然正史叙述由翻译详录负责，不在此拓展摘句。",
+      "检索词": "卜武丁",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·龟策列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "专论龟卜源流，可追溯商代，然不在此摘句拓展。",
+      "检索词": "龟策",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《竹书纪年·殷纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载商王有卜问记录，可辅助考订贞卜制度的时间与背景。",
+      "检索词": "卜 贞",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "陈梦家《殷墟卜辞综述·商王与贞人》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "现代甲骨学综述，系统归纳贞人群体、王自占卜及‘王占曰’等细节，可作为后世研究参考。",
+      "检索词": "贞人 商王 占曰",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 5,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

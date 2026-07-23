@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.toFootprintCardView = exports.formatVisitTime = exports.splitFavorites = exports.isDynastyFavorite = exports.toFavoriteCardView = exports.formatFavoriteDate = exports.formatYearRange = exports.formatHistoryYear = void 0;
+exports.toReadCompleteCardView = exports.toFootprintCardView = exports.formatVisitTime = exports.splitFavorites = exports.isDynastyFavorite = exports.toFavoriteCardView = exports.formatFavoriteDate = exports.formatYearRange = exports.formatHistoryYear = void 0;
 const year_format_1 = require("./year-format");
 Object.defineProperty(exports, "formatHistoryYear", { enumerable: true, get: function () { return year_format_1.formatHistoryYear; } });
 Object.defineProperty(exports, "formatYearRange", { enumerable: true, get: function () { return year_format_1.formatYearRange; } });
@@ -91,3 +91,13 @@ function toFootprintCardView(item) {
     };
 }
 exports.toFootprintCardView = toFootprintCardView;
+function toReadCompleteCardView(item) {
+    const pathLabel = item.pathLabel || item.subText || '';
+    return {
+        ...item,
+        timeLabel: formatVisitTime(item.completedAt),
+        yearRange: (0, year_format_1.formatYearRange)(item.startYear, item.endYear),
+        pathLabel,
+    };
+}
+exports.toReadCompleteCardView = toReadCompleteCardView;

@@ -4,7 +4,7 @@ const { CIV_TABS, buildRows, initialCiv, buildAllExpanded, toggleDynastyExpanded
 const { fetchHomeMatrixData } = require('../../native-utils/matrix/matrix-cloud.js')
 const { hasToken, request } = require('../../native-utils/api.js')
 const { trySilentWxLogin } = require('../../native-utils/wx-auth.js')
-const { buildNavFromRows, findActiveNavIndex } = require('../../native-utils/matrix/dynasty-nav-data.js')
+const { buildNavFromRows, findActiveNavIndex, invalidateHomeEmperorCountCache } = require('../../native-utils/matrix/dynasty-nav-data.js')
 const {
   CIV_CODE_BY_SLUG,
   CIV_SLUG_BY_CODE,
@@ -695,11 +695,12 @@ Page({
       if (!layout.rows || !layout.rows.length) {
         console.error('[home-matrix] buildRows returned empty for', civId)
       }
+      invalidateHomeEmperorCountCache()
       this.setData({
         matrixRows:       enrichMatrixRows(layout.rows     || []),
         // Phase 1/2: initialize nav data from rows
         navItems:         layout.rows
-          ? buildNavFromRows(layout.rows, this._ratio || 0.5).navItems
+          ? buildNavFromRows(layout.rows, this._ratio || 0.5, civId).navItems
           : this.data.navItems,
         matrixBlocks:     layout.blocks     || [],
         matrixOverlays:   layout.overlays     || [],
@@ -714,11 +715,12 @@ Page({
       console.error('[home-matrix] _loadMatrix failed', err)
       try {
         const layout = buildRows(civId, {})
+        invalidateHomeEmperorCountCache()
         this.setData({
           matrixRows:       enrichMatrixRows(layout.rows     || []),
         // Phase 1/2: initialize nav data from rows
         navItems:         layout.rows
-          ? buildNavFromRows(layout.rows, this._ratio || 0.5).navItems
+          ? buildNavFromRows(layout.rows, this._ratio || 0.5, civId).navItems
           : this.data.navItems,
           matrixBlocks:     layout.blocks     || [],
           matrixOverlays:   layout.overlays     || [],

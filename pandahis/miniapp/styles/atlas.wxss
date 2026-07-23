@@ -11,7 +11,7 @@ page {
   --color-card:        #FFFFFF;
   --color-divider:     #EDEAE6;
   --color-primary:     #4A3F3F;
-  --color-accent:      #9B3E38;
+  --color-accent:      #4A3F3F;
   --color-text-1:      #262626;
   --color-text-2:      #6A6A6A;
   --color-text-3:      #8A8A8A;
@@ -175,7 +175,7 @@ page {
 }
 
 .badge-accent {
-  background: rgba(155, 62, 56, 0.1);
+  background: rgba(74, 63, 63, 0.08);
   color: var(--color-accent);
 }
 
@@ -233,9 +233,9 @@ page {
   letter-spacing: 1rpx;
 }
 
-.era-c1 { background: #84572F; color: #fff;     flex: 1.5; }
-.era-c2 { background: #F1A805; color: #5A3A00;  flex: 1; }
-.era-c3 { background: #F2D6A1; color: #6B5E3A;  flex: 1; }
-.era-c4 { background: #92ADA4; color: #3A4A3E;  flex: 0.8; }
-.era-c5 { background: #B3D9E0; color: #3A5A6A;  flex: 1.2; }
-.era-c6 { background: #EDD5C0; color: #6A4A3A;  flex: 0.7; }
+.era-c1 { background: #A2734F; color: #fff;     flex: 1.5; }
+.era-c2 { background: #63899C; color: #fff;     flex: 1; }
+.era-c3 { background: #B99D5B; color: #fff;     flex: 1; }
+.era-c4 { background: #9A798F; color: #fff;     flex: 0.8; }
+.era-c5 { background: #7D8A6A; color: #fff;     flex: 1.2; }
+.era-c6 { background: #A46A65; color: #fff;     flex: 0.7; }

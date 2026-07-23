@@ -1,0 +1,109 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00669",
+  "写作结构": "正史《史记·殷本纪》的世系叙述见翻译详录，本条拓展文仅出史外异说。可据《古本竹书纪年》辑本补充祖丁在位年数，并提示甲骨卜辞中存在祭祀祖丁的记录以印证其王位序列，其他事迹因传世文献缺失而留白，严禁编造。",
+  "候选著作": [
+    {
+      "出处": "《古本竹书纪年·殷纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载祖丁的在位年数，可补《史记》所缺的量化信息。",
+      "检索词": "祖丁在位九年",
+      "采用": true,
+      "原文摘句": "祖丁在位九年。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《甲骨文合集》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "殷墟卜辞中屡见对祖丁的祭祀活动，可佐证其作为商王在祀谱中的真实存在。",
+      "检索词": "侑于祖丁",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·殷本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载祖丁的世系地位与继位传承。",
+      "检索词": "祖丁",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "辑本中或有关于商王世系和年数的异说，但晚出且多附会。",
+      "检索词": "祖丁",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《古本竹书纪年·殷纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载祖丁的在位年数，可补《史记》所缺的量化信息。",
+      "检索词": "祖丁在位九年",
+      "采用": true,
+      "原文摘句": "祖丁在位九年。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《甲骨文合集》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "殷墟卜辞中屡见对祖丁的祭祀活动，可佐证其作为商王在祀谱中的真实存在。",
+      "检索词": "侑于祖丁",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·殷本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载祖丁的世系地位与继位传承。",
+      "检索词": "祖丁",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "辑本中或有关于商王世系和年数的异说，但晚出且多附会。",
+      "检索词": "祖丁",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

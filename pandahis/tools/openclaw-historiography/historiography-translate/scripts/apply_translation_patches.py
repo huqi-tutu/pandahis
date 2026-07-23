@@ -128,42 +128,6 @@ def patch_entry(entry_id: str) -> list[str]:
     detail, attr_changes = apply_attribution_fixes(detail, recalled)
     changes.extend(attr_changes)
 
-    # 黄帝：补入桥山崩葬（母本 P8 未收，见五帝本纪 P9 过渡句）。
-    # 退场句属于正文收束，必须放在参考著作节之前。
-    if entry_id == "GLBL_00149":
-        tail = (
-            "《史记》又记，黄帝晚年崩，葬于桥山（今陕西黄陵）。"
-            "这是他一生的收束，也是五帝世系由轩辕向高阳过渡的前奏。"
-        )
-        detail = detail.replace("\n\n" + tail, "")
-        detail = detail.replace(tail + "\n\n", "")
-        anchor = (
-            "关于黄帝的婚姻和嫡系子嗣，《史记》这样记载：黄帝居住在轩辕之丘，娶了西陵部族的女儿，"
-            "这就是嫘祖。嫘祖是他的正妃，生下两个儿子，这两个儿子的后代日后都曾握有天下："
-            "长子叫玄嚣，号青阳，封在江水（约今岷江流域）一带；次子叫昌意，封在若水（今四川雅砻江）一带。"
-            "这就是五帝世系中最重要的两支——后来的帝喾出自玄嚣一支，颛顼则出自昌意一支。"
-        )
-        if anchor in detail:
-            detail = detail.replace(anchor, anchor + "\n\n" + tail, 1)
-        elif "*参考著作：*" in detail:
-            head, ref = detail.split("*参考著作：*", 1)
-            detail = head.rstrip() + "\n\n" + tail + "\n\n*参考著作：*" + ref
-        elif "*参考著作*" in detail:
-            head, ref = detail.split("*参考著作*", 1)
-            detail = head.rstrip() + "\n\n" + tail + "\n\n*参考著作*" + ref
-        else:
-            detail = detail.rstrip() + "\n\n" + tail
-        changes.append("黄帝尾部补桥山")
-
-    # 颛顼：清理误插在参考著作后的退场段
-    if entry_id == "GLBL_00144":
-        detail = re.sub(
-            r"\n\n《史记》又记，颛顼崩[^*]+",
-            "",
-            detail,
-        )
-        changes.append("颛顼清理误插尾部")
-
     gloss = detect_forbidden_gloss(detail)
     if gloss:
         changes.append(f"仍有禁释警告: {len(gloss)}")

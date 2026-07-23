@@ -1,44 +1,28 @@
 <view class="page-shell safe-bottom">
+  <!-- 左上角：游客入口，与右上角胶囊上下居中对齐 -->
+  <view
+    class="guest-entry"
+    style="top: {{guestTop}}px; height: {{guestHeight}}px; line-height: {{guestHeight}}px;"
+    bindtap="guestBrowse"
+  >立即体验</view>
+
   <view class="login-body">
     <glass-card wx:if="{{pendingInvite}}" className="invite-banner">
       <view class="invite-title">好友邀请</view>
       <view class="invite-desc muted">检测到邀请码，登录后将自动为邀请人记录奖励（仅新用户首次注册生效）。</view>
     </glass-card>
 
-    <!-- Logo 区 -->
-    <view class="logo-section">
-      <view class="logo-icon">
-        <text class="logo-glyph">史</text>
-      </view>
-      <text class="logo-title">历史图谱</text>
-      <text class="logo-sub muted">纵览千年 · 横跨文明</text>
-    </view>
-
-    <!-- 登录方式 -->
-    <view class="login-section">
-      <!-- 微信一键登录 -->
-      <button class="btn-wechat" bindtap="loginWx" loading="{{loggingIn}}" disabled="{{loggingIn}}">
-        <text class="btn-wechat-icon">💬</text>
-        <text>{{loggingIn ? '登录中…' : '微信一键登录'}}</text>
-      </button>
-
-      <view wx:if="{{!pendingInvite}}" class="invite-field">
-        <view class="invite-label muted">好友邀请码（选填）</view>
-        <view class="input-wrap">
-          <input
-            class="invite-input"
-            value="{{inviteCodeInput}}"
-            maxlength="32"
-            placeholder="有邀请码可填写"
-            placeholder-class="input-placeholder"
-            bindinput="onInviteCodeInput"
-            adjust-position="{{true}}"
-            cursor-spacing="{{80}}"
-          />
+    <view class="login-center">
+      <!-- 品牌区 -->
+      <view class="brand-zone">
+        <view class="logo-icon">
+          <image class="logo-img" src="/images/icons/history-logo.png" mode="aspectFill" />
         </view>
+        <text class="logo-title">历史图谱</text>
+        <text class="logo-sub">时间 · 空间 · 文明</text>
       </view>
 
-      <!-- 手机号登录 -->
+      <!-- 手机号登录（主操作） -->
       <view class="phone-section">
         <view class="input-group">
           <view class="input-wrap">
@@ -74,32 +58,32 @@
             </view>
           </view>
         </view>
-        <button class="btn-phone btn-primary" bindtap="loginByPhone">登录 / 注册</button>
+        <button class="btn-phone" bindtap="loginByPhone">登录 / 注册</button>
       </view>
 
-      <!-- 分隔线 -->
-      <view class="divider-line">
-        <view class="divider-seg"></view>
-        <text class="divider-text muted">或者</text>
-        <view class="divider-seg"></view>
+      <!-- 协议勾选 -->
+      <view class="agreement" bindtap="toggleAgree">
+        <view class="agree-check {{agreed ? 'agree-check--on' : ''}}">
+          <text wx:if="{{agreed}}" class="agree-check-mark">✓</text>
+        </view>
+        <view class="agree-body">
+          <text class="agree-text">我已阅读并同意</text>
+          <text class="agree-link" catchtap="openAgreement">《用户服务协议》</text>
+          <text class="agree-text">与</text>
+          <text class="agree-link" catchtap="openPrivacy">《隐私政策》</text>
+        </view>
       </view>
 
-      <!-- 游客浏览 -->
-      <view class="guest-btn" bindtap="guestBrowse">
-        <text class="muted">以游客身份浏览（部分功能受限）</text>
+      <!-- 微信快捷登录 -->
+      <view class="quick-zone">
+        <button class="btn-wechat {{loggingIn ? 'btn-wechat--loading' : ''}}" bindtap="loginWx" disabled="{{loggingIn}}">
+          <image class="btn-wechat-icon" src="/images/icons/weixin.png" mode="aspectFit" />
+        </button>
       </view>
     </view>
 
-    <!-- 协议 -->
-    <view class="agreement">
-      <text class="agree-text muted">登录即代表同意</text>
-      <text class="agree-link accent" bindtap="openAgreement">《用户服务协议》</text>
-      <text class="agree-text muted">与</text>
-      <text class="agree-link accent" bindtap="openPrivacy">《隐私政策》</text>
-    </view>
-
-    <!-- 开发联调 -->
-    <view class="dev-section">
+    <!-- 开发联调（仅开发者工具可见） -->
+    <view wx:if="{{devVisible}}" class="dev-section">
       <view class="dev-title">开发联调</view>
       <view class="dev-desc muted">后端 dev profile 下可写入 dev-local-token 映射测试用户。</view>
       <view class="btn-dev accent" bindtap="loginDev">写入 dev-local-token 并返回</view>

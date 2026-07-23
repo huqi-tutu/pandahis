@@ -7,6 +7,7 @@ public record MeDTO(
     long favoriteCount,
     long footprintCount,
     long learnDaysCount,
+    long readCompleteCount,
     String membershipStatus,
     String membershipEndAt
 ) {}

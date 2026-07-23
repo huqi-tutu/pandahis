@@ -1,0 +1,199 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00679",
+  "写作结构": "正史叙述见翻译详录（《尚书·微子》《史记·宋微子世家》），本拓展文以先秦典籍与经子杂说为史外补充：《论语》证其仁，《荀子》《吕氏春秋》等证其封宋，并可合引后世综述略述异说与评价，避免复述正史细节。",
+  "候选著作": [
+    {
+      "出处": "《论语·微子》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "明确将微子启列为‘殷有三仁’之一，是后世评价的经典来源。",
+      "检索词": "微子去之 殷有三仁",
+      "采用": true,
+      "原文摘句": "微子去之，箕子为之奴，比干谏而死。孔子曰：‘殷有三仁焉。’",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《荀子·议兵》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载周武王伐纣后封微子于宋，可印证微子受封的史实。",
+      "检索词": "封微子于宋",
+      "采用": true,
+      "原文摘句": "昔者武王之诛纣也……封微子启于宋。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《吕氏春秋·慎大》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记述武王胜殷后封先圣之后、功臣谋士，包括封微子于宋，可与《荀子》互证。",
+      "检索词": "封微子 于宋",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《孔子家语·辩物》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "载有关于微子启与殷商遗民、封宋始末的对话，可补充孔子对微子的看法。",
+      "检索词": "微子启 封宋",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《礼记·乐记》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "提到‘武王克殷反商……封微子于宋’，可佐证封宋之礼。",
+      "检索词": "封微子 于宋",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《尚书·微子》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料，记载微子与父师少师问答，决定离纣；由翻译详录处理。",
+      "检索词": "微子若曰",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《史记·宋微子世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料，详载微子启肉袒面缚降周、封宋始末；由翻译详录处理。",
+      "检索词": "微子启 肉袒面缚",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "辑录上古帝王世家，含微子启的异说或补充细节，可作异说层参考。",
+      "检索词": "微子启 帝乙长子",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《论语·微子》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "明确将微子启列为‘殷有三仁’之一，是后世评价的经典来源。",
+      "检索词": "微子去之 殷有三仁",
+      "采用": true,
+      "原文摘句": "微子去之，箕子为之奴，比干谏而死。孔子曰：‘殷有三仁焉。’",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《荀子·议兵》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载周武王伐纣后封微子于宋，可印证微子受封的史实。",
+      "检索词": "封微子于宋",
+      "采用": true,
+      "原文摘句": "昔者武王之诛纣也……封微子启于宋。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《吕氏春秋·慎大》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记述武王胜殷后封先圣之后、功臣谋士，包括封微子于宋，可与《荀子》互证。",
+      "检索词": "封微子 于宋",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《孔子家语·辩物》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "载有关于微子启与殷商遗民、封宋始末的对话，可补充孔子对微子的看法。",
+      "检索词": "微子启 封宋",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《礼记·乐记》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "提到‘武王克殷反商……封微子于宋’，可佐证封宋之礼。",
+      "检索词": "封微子 于宋",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《尚书·微子》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料，记载微子与父师少师问答，决定离纣；由翻译详录处理。",
+      "检索词": "微子若曰",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《史记·宋微子世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料，详载微子启肉袒面缚降周、封宋始末；由翻译详录处理。",
+      "检索词": "微子启 肉袒面缚",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "辑录上古帝王世家，含微子启的异说或补充细节，可作异说层参考。",
+      "检索词": "微子启 帝乙长子",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 3,
+    "C_excluded": 5,
+    "overall": "B"
+  }
+}

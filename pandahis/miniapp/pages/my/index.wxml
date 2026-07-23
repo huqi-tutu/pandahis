@@ -30,46 +30,41 @@
     </view>
 
     <view class="stats-row">
+      <view class="stat-item">
+        <text class="stat-num accent">{{learnDays}}</text>
+        <text class="stat-label">学习天</text>
+      </view>
+      <view class="stat-divider"></view>
       <view class="stat-item" bindtap="goFootprints">
         <text class="stat-num accent">{{footprintCount}}</text>
         <text class="stat-label">足迹</text>
+      </view>
+      <view class="stat-divider"></view>
+      <view class="stat-item" bindtap="goReadCompleted">
+        <text class="stat-num accent">{{readCompleteCount}}</text>
+        <text class="stat-label">读完</text>
       </view>
       <view class="stat-divider"></view>
       <view class="stat-item" bindtap="goFavorites">
         <text class="stat-num accent">{{favoriteCount}}</text>
         <text class="stat-label">收藏</text>
       </view>
-      <view class="stat-divider"></view>
-      <view class="stat-item">
-        <text class="stat-num accent">{{learnDays}}</text>
-        <text class="stat-label">学习天</text>
-      </view>
     </view>
   </view>
 
   <view class="main">
-    <view wx:if="{{!isVip}}" class="vip-promo" bindtap="goMembership">
-      <view class="vip-promo-left">
-        <image class="vip-promo-icon" src="/images/icons/huiyuan.png" mode="aspectFit" />
-        <view>
-          <text class="vip-promo-title">开通年度会员</text>
-          <text class="vip-promo-sub">全地域图谱 · 原文对照 · 跨文明评述</text>
-        </view>
-      </view>
-      <text class="vip-promo-arrow">›</text>
-    </view>
-    <view wx:else class="vip-card" bindtap="goMembership">
-      <view class="vip-left">
-        <image class="icon-vip-img" src="/images/icons/huiyuan.png" mode="aspectFit" />
-        <view class="vip-text">
-          <view class="vip-title">{{vipTitle}}</view>
-          <view class="vip-desc">{{vipDesc}}</view>
-        </view>
-      </view>
-      <text class="list-arrow">›</text>
-    </view>
+    <reading-heatmap wx:if="{{loggedIn}}"></reading-heatmap>
 
     <view class="menu-card">
+      <view class="menu-item" bindtap="goMembership">
+        <view class="menu-left">
+          <view class="menu-icon">
+            <image class="menu-icon-img" src="/images/icons/huiyuan.png" mode="aspectFit" />
+          </view>
+          <text class="menu-label">会员</text>
+        </view>
+        <text class="list-arrow">›</text>
+      </view>
       <view class="menu-item" bindtap="goCorrections">
         <view class="menu-left">
           <view class="menu-icon">
@@ -79,16 +74,16 @@
         </view>
         <text class="list-arrow">›</text>
       </view>
-      <view class="menu-item" bindtap="onShareFriend">
+      <navigator class="menu-item menu-item-link" url="/pages/invite/index" hover-class="menu-item-active">
         <view class="menu-left">
           <view class="menu-icon menu-icon--share">
             <image class="menu-icon-img" src="/images/icons/fenxiang.png" mode="aspectFit" />
           </view>
-          <text class="menu-label">分享给朋友</text>
+          <text class="menu-label">邀请有礼</text>
         </view>
         <text class="list-arrow">›</text>
-      </view>
-      <view class="menu-item" bindtap="goSettings">
+      </navigator>
+      <view class="menu-item menu-item-last" bindtap="goSettings">
         <view class="menu-left">
           <view class="menu-icon">
             <image class="menu-icon-img" src="/images/icons/shezhi.png" mode="aspectFit" />
@@ -96,27 +91,6 @@
           <text class="menu-label">设置</text>
         </view>
         <text class="list-arrow">›</text>
-      </view>
-      <view class="menu-item" bindtap="goHelp">
-        <view class="menu-left">
-          <view class="menu-icon">
-            <image class="menu-icon-img" src="/images/icons/bangzhuyufankui.png" mode="aspectFit" />
-          </view>
-          <text class="menu-label">帮助与反馈</text>
-        </view>
-        <text class="list-arrow">›</text>
-      </view>
-      <view class="menu-item menu-item-last" bindtap="goAbout">
-        <view class="menu-left">
-          <view class="menu-icon">
-            <image class="menu-icon-img" src="/images/icons/guanyuwomen.png" mode="aspectFit" />
-          </view>
-          <text class="menu-label">关于历史图谱</text>
-        </view>
-        <view class="menu-right">
-          <text class="menu-extra">v{{appVersion}}</text>
-          <text class="list-arrow">›</text>
-        </view>
       </view>
     </view>
 

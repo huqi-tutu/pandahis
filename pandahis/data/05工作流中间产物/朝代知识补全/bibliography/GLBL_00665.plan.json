@@ -1,0 +1,62 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00665",
+  "写作结构": "正史叙述见翻译详录，以《史记·殷本纪》交代外壬为仲丁弟、以弟继兄、在位十五年等世系要素，明其处九世之乱时期。史外异说以《竹书纪年》所载即位时叛乱为补充，显示动荡加剧，不作细节展开。其余因史料匮乏而留白。",
+  "候选著作": [
+    {
+      "出处": "《史记·殷本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载外壬继位顺序与世系，无具体事迹",
+      "检索词": "外壬",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《竹书纪年·商纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载外壬即位后邳人、姺人叛，为九世之乱提供具体表现",
+      "检索词": "外壬元年",
+      "采用": true,
+      "原文摘句": "外壬元年，邳人、姺人叛。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·殷本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载外壬继位顺序与世系，无具体事迹",
+      "检索词": "外壬",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《竹书纪年·商纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载外壬即位后邳人、姺人叛，为九世之乱提供具体表现",
+      "检索词": "外壬元年",
+      "采用": true,
+      "原文摘句": "外壬元年，邳人、姺人叛。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 1,
+    "C_excluded": 1,
+    "overall": "B"
+  }
+}

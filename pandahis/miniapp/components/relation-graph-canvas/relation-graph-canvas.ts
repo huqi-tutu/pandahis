@@ -33,20 +33,20 @@ type Pos = {
   pillW?: number
 }
 
-const BRANCH = ['#EDEAE6', '#F5EAE4', '#EDEAE6', '#F5EAE4']
-const CENTER_FILL = '#F5EAE4'
-const CENTER_STROKE = '#D4B098'
+const BRANCH = ['#EDEAE6', '#ECE4DB', '#EDEAE6', '#ECE4DB']
+const CENTER_FILL = '#ECE4DB'
+const CENTER_STROKE = 'rgba(162, 115, 79, 0.55)'
 const CATEGORY_FILL: Record<string, string> = {
   家庭: 'rgba(250, 246, 242, 0.75)',
   同僚: 'rgba(248, 246, 244, 0.75)',
   师从: 'rgba(246, 250, 248, 0.75)',
   外敌: 'rgba(250, 244, 244, 0.75)',
 }
-const CATEGORY_STROKE = 'rgba(212, 176, 152, 0.38)'
-const CATEGORY_TEXT = '#9A8A82'
+const CATEGORY_STROKE = 'rgba(162, 115, 79, 0.32)'
+const CATEGORY_TEXT = '#8A8A8A'
 /** 子分类：比一级分类更弱的胶囊样式 */
 const SUBCATEGORY_FILL = 'rgba(248, 246, 242, 0.55)'
-const SUBCATEGORY_STROKE = 'rgba(212, 176, 152, 0.28)'
+const SUBCATEGORY_STROKE = 'rgba(162, 115, 79, 0.24)'
 const SUBCATEGORY_TEXT = '#B0A89E'
 /** 分组节点标题（非人名），应渲染为子分类胶囊 */
 const SUBCATEGORY_NAMES = new Set([
@@ -366,12 +366,12 @@ function layoutRadial(
         stroke = CENTER_STROKE
       } else if (d === 1) {
         color = BRANCH[i % BRANCH.length]
-        stroke = '#92ADA4'
+        stroke = 'rgba(99, 137, 156, 0.5)'
       } else {
         const pk = findParentKey(key, edges, depthMap)
         const parent = pk ? posMap.get(pk) : null
         color = parent ? tint(parent.color, 0.12) : BRANCH[i % BRANCH.length]
-        stroke = '#D4B098'
+        stroke = 'rgba(162, 115, 79, 0.45)'
       }
 
       const p: Pos = {
@@ -518,7 +518,7 @@ function layoutOrbitSubtree(
       type: sub ? 'subcategory' : meta.type || 'person',
       depth,
       color: sub ? SUBCATEGORY_FILL : existing?.color ?? BRANCH[i % BRANCH.length],
-      stroke: sub ? SUBCATEGORY_STROKE : existing?.stroke ?? '#D4B098',
+      stroke: sub ? SUBCATEGORY_STROKE : existing?.stroke ?? 'rgba(162, 115, 79, 0.45)',
       targetBoxId: meta.targetBoxId,
       isSubcategory: sub,
       pillW: sub ? Math.max(44, fullName.length * 12 + 16) : undefined,
@@ -867,7 +867,7 @@ function layoutSectorGrouped(
         type: meta.type || 'node',
         depth: 1,
         color: cat ? CATEGORY_FILL[groupName] || '#EDEAE6' : BRANCH[i % BRANCH.length],
-        stroke: cat ? CATEGORY_STROKE : '#92ADA4',
+        stroke: cat ? CATEGORY_STROKE : 'rgba(99, 137, 156, 0.5)',
         targetBoxId: meta.targetBoxId,
         isCategory: cat,
         pillW: cat ? Math.max(58, fullName.length * 14 + 24) : undefined,
@@ -923,7 +923,7 @@ function layoutSectorGrouped(
         type: meta.type || 'node',
         depth: d,
         color,
-        stroke: '#D4B098',
+        stroke: 'rgba(162, 115, 79, 0.45)',
         targetBoxId: meta.targetBoxId,
       })
     })
@@ -943,8 +943,8 @@ function layoutSectorGrouped(
       fontSize: 11,
       type: meta.type || 'node',
       depth: 99,
-      color: '#F5EAE4',
-      stroke: '#D4B098',
+      color: '#ECE4DB',
+      stroke: 'rgba(162, 115, 79, 0.45)',
       targetBoxId: meta.targetBoxId,
     })
   }
@@ -1158,7 +1158,7 @@ function buildEdgeList(positions: Pos[], edges: GraphEdge[]): EdgeDraw[] {
       x2: b.x - ux * rb,
       y2: b.y - uy * rb,
       label: hideDup ? '' : labelRaw,
-      color: isCenterToCat ? 'rgba(180, 160, 150, 0.75)' : 'rgba(190, 170, 160, 0.8)',
+      color: isCenterToCat ? 'rgba(74, 63, 63, 0.36)' : 'rgba(74, 63, 63, 0.3)',
       len: Math.hypot(b.x - ux * rb - (a.x + ux * ra), b.y - uy * rb - (a.y + uy * ra)),
     })
   }
@@ -1434,7 +1434,7 @@ Component({
 
       ctx.save()
       ctx.font = '8px sans-serif'
-      ctx.fillStyle = '#A89890'
+      ctx.fillStyle = '#8A8A8A'
       ctx.textAlign = 'center'
       ctx.textBaseline = 'middle'
       ctx.fillText(label, e.labelX, e.labelY)

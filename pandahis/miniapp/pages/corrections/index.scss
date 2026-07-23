@@ -59,20 +59,20 @@
 }
 
 .correction-item-status--pending {
-  color: #B88932;
+  color: #8D7745;
 }
 
 .correction-item-status--reviewed {
-  color: #5E8A94;
+  color: #4B6877;
 }
 
 .correction-item-status--resolved {
-  color: #5E7A70;
+  color: #5F6951;
 }
 
 .list-arrow {
   font-size: 32rpx;
-  color: #C0B8B4;
+  color: $text-time;
   line-height: 1;
 }
 

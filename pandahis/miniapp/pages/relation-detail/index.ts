@@ -14,7 +14,7 @@ Page({
       summary: string
       targetBoxId?: string
     } | null,
-    color: '#9B3E38',
+    color: '#4A3F3F',
     headerPadPx: 88,
   },
   async onLoad(query: Record<string, string | undefined>) {

@@ -116,3 +116,30 @@ export function toFootprintCardView(item: FootprintItemRaw): FootprintCardView {
     pathLabel,
   }
 }
+
+export type ReadCompleteItemRaw = {
+  boxId: string
+  title: string
+  subText?: string
+  categoryKey?: string
+  completedAt?: string
+  startYear?: number
+  endYear?: number
+  pathLabel?: string
+}
+
+export type ReadCompleteCardView = ReadCompleteItemRaw & {
+  timeLabel: string
+  yearRange: string
+  pathLabel: string
+}
+
+export function toReadCompleteCardView(item: ReadCompleteItemRaw): ReadCompleteCardView {
+  const pathLabel = item.pathLabel || item.subText || ''
+  return {
+    ...item,
+    timeLabel: formatVisitTime(item.completedAt),
+    yearRange: formatYearRange(item.startYear, item.endYear),
+    pathLabel,
+  }
+}

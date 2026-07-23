@@ -545,6 +545,10 @@ function loadMatrixData(dynastyRaw, emperorRaw) {
     emp = mergeEmperorRecords(LOCAL_EMPEROR_RAW, [])
   }
   rebuildMatrixDataSources(dyn, emp)
+  try {
+    const { invalidateHomeEmperorCountCache } = require('./dynasty-nav-data.js')
+    invalidateHomeEmperorCountCache()
+  } catch (_) { /* nav 模块未加载时忽略 */ }
 }
 
 rebuildMatrixDataSources(LOCAL_DYNASTY_RAW, LOCAL_EMPEROR_RAW)

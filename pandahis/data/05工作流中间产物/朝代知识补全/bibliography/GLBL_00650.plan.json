@@ -1,0 +1,109 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00650",
+  "写作结构": "正史叙述见翻译详录；拓展部分以《古本竹书纪年》所载商王征伐之事侧面呈现九世动荡，并引用《尚书·盘庚》开篇提及盘庚迁都，不作告谕内容展开。",
+  "候选著作": [
+    {
+      "出处": "《史记·殷本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "九世之乱的主干记载，叙述自中丁废嫡立弟子直至阳甲共九王争位、诸侯莫朝的过程。",
+      "检索词": "九世之乱 殷本纪",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《古本竹书纪年》辑佚（《太平御览》卷八十三引）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载中丁、河亶甲等商王征蓝夷，间接印证九世期间对外控制力减弱与多方冲突。",
+      "检索词": "仲丁 征蓝夷 竹书纪年",
+      "采用": true,
+      "原文摘句": "仲丁即位，征于蓝夷。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《尚书·盘庚上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记录盘庚迁都殷地，此举是九世之乱结束后重整商朝的关键步骤。",
+      "检索词": "盘庚迁于殷",
+      "采用": true,
+      "原文摘句": "盘庚迁于殷，民不适有居，率吁众戚出矢言。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《皇王大纪·商纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "南宋胡宏编纂的商史概述，可能提及九世争位非嫡上传子造成政局不稳，属后世归纳。",
+      "检索词": "九世 商王 争立",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·殷本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "九世之乱的主干记载，叙述自中丁废嫡立弟子直至阳甲共九王争位、诸侯莫朝的过程。",
+      "检索词": "九世之乱 殷本纪",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《古本竹书纪年》辑佚（《太平御览》卷八十三引）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载中丁、河亶甲等商王征蓝夷，间接印证九世期间对外控制力减弱与多方冲突。",
+      "检索词": "仲丁 征蓝夷 竹书纪年",
+      "采用": true,
+      "原文摘句": "仲丁即位，征于蓝夷。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《尚书·盘庚上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记录盘庚迁都殷地，此举是九世之乱结束后重整商朝的关键步骤。",
+      "检索词": "盘庚迁于殷",
+      "采用": true,
+      "原文摘句": "盘庚迁于殷，民不适有居，率吁众戚出矢言。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《皇王大纪·商纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "南宋胡宏编纂的商史概述，可能提及九世争位非嫡上传子造成政局不稳，属后世归纳。",
+      "检索词": "九世 商王 争立",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

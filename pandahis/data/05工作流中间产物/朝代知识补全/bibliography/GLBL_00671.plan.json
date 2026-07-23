@@ -1,0 +1,109 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00671",
+  "写作结构": "正史（《史记·殷本纪》）仅载继序与嗣君，具体事迹缺书，建议留白；史外异说由《竹书纪年》辑本提供在位年数，甲骨卜辞可证其庙号，可作点缀性扩展，但不宜铺陈细节。",
+  "候选著作": [
+    {
+      "出处": "《史记·殷本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记康丁（庚丁）为祖甲子、廪辛弟，子武乙继位，未言在位年数与行事。",
+      "检索词": "庚丁 廪辛",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《古本竹书纪年·殷纪》（辑本）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "后世辑本存有康丁（庚丁）即位、居殷及在位八年等寥寥数字的纪年信息，可补《史记》所无。",
+      "检索词": "帝庚丁 八年",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《甲骨文合集》等出土甲骨著录",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "商代卜辞中康丁称“康丁”或“康祖丁”，多见祭祀、周祭记录，反映其先王地位，可印证庙号，无法指向单一篇卷。",
+      "检索词": "康丁 康祖丁 卜辞",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《帝王世纪》（辑本）",
+      "tier": "辑佚/出土",
+      "pool": "legend",
+      "与本主题关系": "或录有商王世系异文，可能对康丁名号、年数有零星参校，属后世补述，存疑待核。",
+      "检索词": "商王 庚丁",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·殷本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记康丁（庚丁）为祖甲子、廪辛弟，子武乙继位，未言在位年数与行事。",
+      "检索词": "庚丁 廪辛",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《古本竹书纪年·殷纪》（辑本）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "后世辑本存有康丁（庚丁）即位、居殷及在位八年等寥寥数字的纪年信息，可补《史记》所无。",
+      "检索词": "帝庚丁 八年",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《甲骨文合集》等出土甲骨著录",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "商代卜辞中康丁称“康丁”或“康祖丁”，多见祭祀、周祭记录，反映其先王地位，可印证庙号，无法指向单一篇卷。",
+      "检索词": "康丁 康祖丁 卜辞",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《帝王世纪》（辑本）",
+      "tier": "辑佚/出土",
+      "pool": "legend",
+      "与本主题关系": "或录有商王世系异文，可能对康丁名号、年数有零星参校，属后世补述，存疑待核。",
+      "检索词": "商王 庚丁",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

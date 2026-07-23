@@ -29,7 +29,7 @@ function buildCivSpots(civilizations) {
         return {
             id: c.id,
             name: c.displayName,
-            color: c.colorHex || '#84572F',
+            color: c.colorHex || '#A2734F',
             img: c.tabImageUrl || '',
             x: pos.x,
             y: pos.y,

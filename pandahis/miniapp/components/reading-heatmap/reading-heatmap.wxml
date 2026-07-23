@@ -1,0 +1,39 @@
+<view class="rh-card">
+  <view class="rh-title">最近一年阅读足迹</view>
+
+  <view class="rh-body">
+    <!-- 左侧星期：与右侧网格同高、同行间距 -->
+    <view class="rh-weekdays">
+      <view class="rh-month-spacer"></view>
+      <view wx:for="{{weekdayLabels}}" wx:key="*this" class="rh-weekday">{{item}}</view>
+    </view>
+
+    <!-- 右侧网格：单个横向滚动 -->
+    <scroll-view class="rh-scroll" scroll-x enhanced enable-flex show-scrollbar="{{false}}">
+      <view class="rh-grid">
+        <view wx:for="{{weeks}}" wx:key="index" wx:for-item="week" class="rh-col">
+          <view class="rh-month">{{week.monthLabel}}</view>
+          <view
+            wx:for="{{week.cells}}"
+            wx:key="date"
+            wx:for-item="cell"
+            class="rh-cell {{cell.future ? 'rh-cell--future' : ''}} {{cell.date === selectedDate ? 'rh-cell--selected' : ''}}"
+            style="{{cell.color ? 'background:' + cell.color + ';' : ''}}"
+            data-date="{{cell.date}}"
+            data-count="{{cell.count}}"
+            data-future="{{cell.future}}"
+            bindtap="onCellTap"
+          ></view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <view class="rh-detail" wx:if="{{selected}}">
+    <view class="rh-detail-icon {{selected.count > 0 ? 'rh-detail-icon--on' : ''}}">✓</view>
+    <view class="rh-detail-text">
+      <view class="rh-detail-date">{{selected.label}}</view>
+      <view class="rh-detail-sub">{{selected.count > 0 ? '这一天读过 ' + selected.count + ' 篇' : '这一天没有阅读'}}</view>
+    </view>
+  </view>
+</view>

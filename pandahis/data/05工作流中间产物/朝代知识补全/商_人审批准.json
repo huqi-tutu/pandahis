@@ -2,10 +2,10 @@
   "schema_version": 1,
   "朝代ID": "CD_HX_SHANG",
   "朝代名称": "商",
-  "phase": "candidates",
-  "approved_at": "2026-07-23T07:35:00Z",
+  "phase": "entries",
+  "approved_at": "2026-07-22T23:52:31Z",
   "approved_by": "user",
-  "note": "用户确认人审表后启动 fill 批次",
+  "note": "全量 46 条待撰写详情批准（含缺口补 fill）",
   "items": {
     "事略": [
       "伊尹放太甲",

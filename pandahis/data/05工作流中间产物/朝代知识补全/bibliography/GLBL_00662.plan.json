@@ -1,0 +1,107 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00662",
+  "写作结构": "正史叙述《史记·殷本纪》仅载世系次序，具体内容由翻译详录处理。拓展文可补充《太平御览》所引《史记》异文，谓小甲在位十七年，此或参合《竹书纪年》等史外材料，说明诸书对位年数的异载，与正史无事迹形成对比。其余细节留白。",
+  "候选著作": [
+    {
+      "出处": "《史记·殷本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "本条目主要史料出处，仅记世系，无事迹",
+      "检索词": "帝小甲",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《太平御览·卷八十三·皇王部八》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "引《史记》异文，多出在位年数（十七年），可与正史互补",
+      "检索词": "帝小甲",
+      "采用": true,
+      "原文摘句": "《史记》曰：帝小甲，太庚子，在位十七年。崩，弟雍己立。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《竹书纪年·商纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "今本载小甲元年丁巳即位，居亳，十七年陟，与《太平御览》在位年数相合",
+      "检索词": "帝小甲",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《帝王世纪》",
+      "tier": "经注/杂史",
+      "pool": "legend",
+      "与本主题关系": "后世辑本或提及小甲在位年数，但源流晚出，仅资异说参考",
+      "检索词": "帝小甲",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·殷本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "本条目主要史料出处，仅记世系，无事迹",
+      "检索词": "帝小甲",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《太平御览·卷八十三·皇王部八》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "引《史记》异文，多出在位年数（十七年），可与正史互补",
+      "检索词": "帝小甲",
+      "采用": true,
+      "原文摘句": "《史记》曰：帝小甲，太庚子，在位十七年。崩，弟雍己立。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《竹书纪年·商纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "今本载小甲元年丁巳即位，居亳，十七年陟，与《太平御览》在位年数相合",
+      "检索词": "帝小甲",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《帝王世纪》",
+      "tier": "经注/杂史",
+      "pool": "legend",
+      "与本主题关系": "后世辑本或提及小甲在位年数，但源流晚出，仅资异说参考",
+      "检索词": "帝小甲",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 1,
+    "C_excluded": 3,
+    "overall": "B"
+  }
+}

@@ -141,6 +141,21 @@ CREATE TABLE IF NOT EXISTS user_footprint (
   UNIQUE (user_id, box_id)
 );
 
+CREATE TABLE IF NOT EXISTS user_reading_daily (
+  id BIGINT PRIMARY KEY AUTO_INCREMENT,
+  user_id BIGINT NOT NULL,
+  read_date DATE NOT NULL,
+  box_id VARCHAR(128) NOT NULL,
+  UNIQUE (user_id, read_date, box_id)
+);
+
+CREATE TABLE IF NOT EXISTS user_box_read_completion (
+  user_id BIGINT NOT NULL,
+  box_id VARCHAR(128) NOT NULL,
+  completed_at TIMESTAMP NOT NULL,
+  PRIMARY KEY (user_id, box_id)
+);
+
 CREATE TABLE IF NOT EXISTS user_home_matrix_state (
   id BIGINT PRIMARY KEY AUTO_INCREMENT,
   user_id BIGINT NOT NULL,

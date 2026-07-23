@@ -1,0 +1,157 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00685",
+  "写作结构": "正史《史记·殷本纪》《封禅书》对巫咸的记载见翻译详录。拓展叙事以《尚书·君奭》《竹书纪年》为主，揭示巫咸“乂王家”与祷山川的史影；辅以甲骨文中“咸”的考释。后世有传说以为巫咸发明蓍筮，为巫觋之祖，见《世本》，此为后起附会，不取为信史。",
+  "候选著作": [
+    {
+      "出处": "《尚书·君奭》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "明确记载巫咸在太戊时与伊陟、臣扈并列，治理王家内务，是早期最可靠出处",
+      "检索词": "巫咸乂王家",
+      "采用": true,
+      "原文摘句": "在太戊，时则有若伊陟、臣扈，格于上帝；巫咸乂王家。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《竹书纪年·商纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载太戊命巫咸祷于山川，具体体现其以巫术沟通神明的职事",
+      "检索词": "巫咸祷于山川",
+      "采用": true,
+      "原文摘句": "太戊……使巫咸祷于山川。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《甲骨文合集》等卜辞著录",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "商代甲骨文中屡见“咸”参与祭祀，学者多认为即巫咸，可印证其王家巫者身份",
+      "检索词": "咸 卜辞",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《世本·作篇》（清辑本）",
+      "tier": "辑佚/出土",
+      "pool": "legend",
+      "与本主题关系": "传巫咸发明蓍筮，为巫觋之祖，属后世方术附会之说",
+      "检索词": "巫咸作筮",
+      "采用": true,
+      "原文摘句": "巫咸作筮。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《楚辞·离骚》",
+      "tier": "先秦文献",
+      "pool": "legend",
+      "与本主题关系": "以巫咸为夕降之神巫，反映战国时期对巫咸的神化想象",
+      "检索词": "巫咸将夕降兮",
+      "采用": false,
+      "原文摘句": "巫咸将夕降兮，怀椒糈而要之。",
+      "snippet_verified": true,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《史记·殷本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "巫咸在正史中的核心记载，仅索引出处，不在此拓展摘句",
+      "检索词": "巫咸",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《尚书·君奭》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "明确记载巫咸在太戊时与伊陟、臣扈并列，治理王家内务，是早期最可靠出处",
+      "检索词": "巫咸乂王家",
+      "采用": true,
+      "原文摘句": "在太戊，时则有若伊陟、臣扈，格于上帝；巫咸乂王家。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《竹书纪年·商纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载太戊命巫咸祷于山川，具体体现其以巫术沟通神明的职事",
+      "检索词": "巫咸祷于山川",
+      "采用": true,
+      "原文摘句": "太戊……使巫咸祷于山川。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《甲骨文合集》等卜辞著录",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "商代甲骨文中屡见“咸”参与祭祀，学者多认为即巫咸，可印证其王家巫者身份",
+      "检索词": "咸 卜辞",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·殷本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "巫咸在正史中的核心记载，仅索引出处，不在此拓展摘句",
+      "检索词": "巫咸",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《世本·作篇》（清辑本）",
+      "tier": "辑佚/出土",
+      "pool": "legend",
+      "与本主题关系": "传巫咸发明蓍筮，为巫觋之祖，属后世方术附会之说",
+      "检索词": "巫咸作筮",
+      "采用": true,
+      "原文摘句": "巫咸作筮。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《楚辞·离骚》",
+      "tier": "先秦文献",
+      "pool": "legend",
+      "与本主题关系": "以巫咸为夕降之神巫，反映战国时期对巫咸的神化想象",
+      "检索词": "巫咸将夕降兮",
+      "采用": false,
+      "原文摘句": "巫咸将夕降兮，怀椒糈而要之。",
+      "snippet_verified": true,
+      "material_tier": "A"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 4,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

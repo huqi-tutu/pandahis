@@ -20,6 +20,7 @@ exports.ROUTES = {
     membership: '/pages/membership/index',
     inviteAssist: '/pages/invite-assist/index',
     profileEdit: '/pages/profile-edit/index',
+    readCompleted: '/pages/read-completed/index',
     relationDetail: '/pages/relation-detail/index',
     critiqueDetail: '/pages/critique-detail/index',
     relicDetail: '/pages/relic-detail/index',

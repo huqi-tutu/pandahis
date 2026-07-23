@@ -1,0 +1,87 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00666",
+  "写作结构": "正史叙述见翻译详录。拓展文以《古本竹书纪年》载河亶甲名'整'、迁都于相为核心史外补充；可辅以《帝王世纪》载在位年数；具体政事、征伐等史传不载，留白。",
+  "候选著作": [
+    {
+      "出处": "《古本竹书纪年·殷纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载河亶甲名'整'，自嚣迁于相，是正史之外重要的直接史源",
+      "检索词": "河亶甲整",
+      "采用": true,
+      "原文摘句": "河亶甲整即位，自嚣迁于相。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "交代河亶甲迁都于相及在位年数",
+      "检索词": "河亶甲居相",
+      "采用": true,
+      "原文摘句": "河亶甲居相，在位九年。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《今本竹书纪年》卷上",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "详列河亶甲名整、迁相及征蓝夷等事，但后世增饰成分多，与 anchor 禁止编造政事征伐的要求相悖，故不采用",
+      "检索词": "河亶甲名整",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《古本竹书纪年·殷纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载河亶甲名'整'，自嚣迁于相，是正史之外重要的直接史源",
+      "检索词": "河亶甲整",
+      "采用": true,
+      "原文摘句": "河亶甲整即位，自嚣迁于相。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "交代河亶甲迁都于相及在位年数",
+      "检索词": "河亶甲居相",
+      "采用": true,
+      "原文摘句": "河亶甲居相，在位九年。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《今本竹书纪年》卷上",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "详列河亶甲名整、迁相及征蓝夷等事，但后世增饰成分多，与 anchor 禁止编造政事征伐的要求相悖，故不采用",
+      "检索词": "河亶甲名整",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 1,
+    "overall": "B"
+  }
+}

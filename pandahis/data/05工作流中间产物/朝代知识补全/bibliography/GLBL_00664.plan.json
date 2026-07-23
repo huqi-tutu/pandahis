@@ -1,0 +1,109 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00664",
+  "写作结构": "正史《殷本纪》叙述见翻译详录；本文以《竹书纪年》和《书序》作为主要史外异说，补入迁都年代的早期记载；传奇异说及后世综述暂不采用，相关叙事留白。",
+  "候选著作": [
+    {
+      "出处": "《史记·殷本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "仲丁继位、迁都隞及王位继承变化的主要正史记载",
+      "检索词": "殷本纪 仲丁",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《古本竹书纪年·殷纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "提供仲丁元年迁都于嚣（隞）的确切纪年，补充正史未载的即位迁都时间",
+      "检索词": "仲丁 迁嚣",
+      "采用": true,
+      "原文摘句": "仲丁即位，元年，自亳迁于嚣。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《书序》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "现存最早关于仲丁迁都的传世文献记录，仅述‘迁于嚣’，异于《史记》‘迁于隞’的说法",
+      "检索词": "仲丁迁于嚣",
+      "采用": true,
+      "原文摘句": "仲丁迁于嚣。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "后世编年体史籍，提及仲丁徙都隞或曰嚣，属于对先秦异说的综合整理",
+      "检索词": "帝仲丁 迁隞",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·殷本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "仲丁继位、迁都隞及王位继承变化的主要正史记载",
+      "检索词": "殷本纪 仲丁",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《古本竹书纪年·殷纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "提供仲丁元年迁都于嚣（隞）的确切纪年，补充正史未载的即位迁都时间",
+      "检索词": "仲丁 迁嚣",
+      "采用": true,
+      "原文摘句": "仲丁即位，元年，自亳迁于嚣。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《书序》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "现存最早关于仲丁迁都的传世文献记录，仅述‘迁于嚣’，异于《史记》‘迁于隞’的说法",
+      "检索词": "仲丁迁于嚣",
+      "采用": true,
+      "原文摘句": "仲丁迁于嚣。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "后世编年体史籍，提及仲丁徙都隞或曰嚣，属于对先秦异说的综合整理",
+      "检索词": "帝仲丁 迁隞",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

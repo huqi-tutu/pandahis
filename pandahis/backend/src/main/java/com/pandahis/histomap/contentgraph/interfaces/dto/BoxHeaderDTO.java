@@ -1,6 +1,6 @@
 package com.pandahis.histomap.contentgraph.interfaces.dto;
 
-public record BoxHeaderDTO(Box box, boolean isFavorite, TabSummary tabSummary, Access access) {
+public record BoxHeaderDTO(Box box, boolean isFavorite, boolean isReadComplete, TabSummary tabSummary, Access access) {
   public record Box(
       String id,
       String title,

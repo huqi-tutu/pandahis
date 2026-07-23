@@ -1,0 +1,109 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00668",
+  "写作结构": "正史叙述见《史记·殷本纪》翻译详录；史外异说以《竹书纪年》合段于传说部分，甲骨文可作世系旁证，其余留白。",
+  "候选著作": [
+    {
+      "出处": "《史记·殷本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "基本文献，记载沃甲为祖辛弟、在位六年及继承脉络，为本条目索引主要出处",
+      "检索词": "沃甲",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《古本竹书纪年·商纪》",
+      "tier": "辑佚/出土",
+      "pool": "legend",
+      "与本主题关系": "后世辑录的异说，记商王世系及年数，可能提供沃甲在位的另一说法，作为传奇层面补充",
+      "检索词": "沃甲 居亳",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《甲骨文合集》及相关著录（如《殷墟甲骨刻辞类纂》）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "商代甲骨卜辞中沃甲称“羌甲”，见于周祭谱及祭祀卜辞，可印证商王世系中沃甲的地位与庙号",
+      "检索词": "羌甲",
+      "采用": true,
+      "原文摘句": "甲骨文有“羌甲”之称，如周祭卜辞中排列于祖辛之后，可证世系。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "王国维《殷卜辞中所见先公先王考》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "近代研究考订羌甲即沃甲，梳理商王世系，属于后世综述",
+      "检索词": "羌甲 沃甲",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·殷本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "基本文献，记载沃甲为祖辛弟、在位六年及继承脉络，为本条目索引主要出处",
+      "检索词": "沃甲",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《甲骨文合集》及相关著录（如《殷墟甲骨刻辞类纂》）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "商代甲骨卜辞中沃甲称“羌甲”，见于周祭谱及祭祀卜辞，可印证商王世系中沃甲的地位与庙号",
+      "检索词": "羌甲",
+      "采用": true,
+      "原文摘句": "甲骨文有“羌甲”之称，如周祭卜辞中排列于祖辛之后，可证世系。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《古本竹书纪年·商纪》",
+      "tier": "辑佚/出土",
+      "pool": "legend",
+      "与本主题关系": "后世辑录的异说，记商王世系及年数，可能提供沃甲在位的另一说法，作为传奇层面补充",
+      "检索词": "沃甲 居亳",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "王国维《殷卜辞中所见先公先王考》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "近代研究考订羌甲即沃甲，梳理商王世系，属于后世综述",
+      "检索词": "羌甲 沃甲",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

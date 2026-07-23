@@ -17,10 +17,10 @@ const MIN_CARD = 88
 const MAX_CONTENT_H = 400
 
 function pinyinMetrics(cardSize: number, count: number): { pinyinHeight: number; pinyinFontSize: number } {
-  const heightRatio = count >= 4 ? 0.48 : count >= 3 ? 0.42 : 0.38
+  const heightRatio = count >= 4 ? 0.52 : count >= 3 ? 0.46 : 0.42
   const fontRatio = count >= 4 ? 0.26 : count >= 3 ? 0.23 : 0.21
   return {
-    pinyinHeight: Math.max(56, Math.round(cardSize * heightRatio)),
+    pinyinHeight: Math.max(64, Math.round(cardSize * heightRatio)),
     pinyinFontSize: Math.max(30, Math.round(cardSize * fontRatio)),
   }
 }

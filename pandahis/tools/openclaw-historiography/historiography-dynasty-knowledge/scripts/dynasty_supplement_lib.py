@@ -1171,12 +1171,12 @@ def detect_over_pinyin(body: str) -> list[str]:
         if _is_modern_location_only(inner):
             continue
         if not word:
-            issues.append(f"禁止注音：{original}")
+            issues.append(f"多余括注：{original}")
             continue
         if _resolve_annotation(word, inner, original) != original:
-            issues.append(f"禁止注音：{original}")
+            issues.append(f"多余括注：{original}")
         elif _LATIN_OR_TONE_RE.search(inner):
-            issues.append(f"禁止注音：{original}")
+            issues.append(f"多余括注：{original}")
     return issues
 
 

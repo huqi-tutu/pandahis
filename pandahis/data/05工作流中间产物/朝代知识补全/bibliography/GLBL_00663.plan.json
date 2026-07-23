@@ -1,0 +1,87 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00663",
+  "写作结构": "正史叙述见翻译详录（世系、殷道衰、诸侯不朝、传位太戊）；史外异说补充雍己名伷、居亳及在位十二年之说；其余事迹无载，留白。",
+  "候选著作": [
+    {
+      "出处": "《太平御览》卷八三引《竹书纪年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载雍己名伷，居亳，为补充姓名与都邑的早期异说。",
+      "检索词": "雍己名伷",
+      "采用": true,
+      "原文摘句": "《纪年》曰：雍己名伷。又曰：雍己居亳。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《太平御览》卷八三引《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "记载雍己在位年数为十二年，与后世推算吻合。",
+      "检索词": "雍己在位十二年",
+      "采用": true,
+      "原文摘句": "《帝王世纪》曰：帝雍己，在位十二年。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·殷本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载雍己世系、即位及殷道衰、诸侯不朝。",
+      "检索词": "雍己",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《太平御览》卷八三引《竹书纪年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载雍己名伷，居亳，为补充姓名与都邑的早期异说。",
+      "检索词": "雍己名伷",
+      "采用": true,
+      "原文摘句": "《纪年》曰：雍己名伷。又曰：雍己居亳。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·殷本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载雍己世系、即位及殷道衰、诸侯不朝。",
+      "检索词": "雍己",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《太平御览》卷八三引《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "记载雍己在位年数为十二年，与后世推算吻合。",
+      "检索词": "雍己在位十二年",
+      "采用": true,
+      "原文摘句": "《帝王世纪》曰：帝雍己，在位十二年。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 1,
+    "overall": "B"
+  }
+}

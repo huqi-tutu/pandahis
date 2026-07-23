@@ -40,6 +40,7 @@
 }
 
 .correction-modal-title {
+  font-family: $font-family-title;
   font-size: 34rpx;
   font-weight: 700;
   color: #4A3F3F;
@@ -47,7 +48,7 @@
 
 .correction-modal-source {
   font-size: 24rpx;
-  color: #8A7F7A;
+  color: $text-caption;
   line-height: 1.4;
 }
 
@@ -64,7 +65,7 @@
 
 .correction-modal-close-icon {
   font-size: 28rpx;
-  color: #6A6A6A;
+  color: $text-body;
 }
 
 .correction-modal-body {
@@ -88,7 +89,7 @@
   flex-shrink: 0;
   width: 128rpx;
   font-size: 26rpx;
-  color: #8A7F7A;
+  color: $text-caption;
   line-height: 1.5;
 }
 
@@ -102,7 +103,7 @@
 
 .correction-quote {
   font-size: 26rpx;
-  color: #5A4F4F;
+  color: $text-body;
   line-height: 1.65;
   background: rgba(74, 63, 63, 0.05);
   border-radius: 12rpx;
@@ -127,7 +128,7 @@
 .correction-counter {
   align-self: flex-end;
   font-size: 22rpx;
-  color: #A89F9A;
+  color: $text-time;
 }
 
 .correction-reason {
@@ -135,15 +136,15 @@
 }
 
 .correction-status--pending {
-  color: #B88932;
+  color: #8D7745;
 }
 
 .correction-status--reviewed {
-  color: #5E8A94;
+  color: #4B6877;
 }
 
 .correction-status--resolved {
-  color: #5E7A70;
+  color: #5F6951;
 }
 
 .correction-modal-footer {

@@ -1,0 +1,156 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00680",
+  "写作结构": "正史叙述见翻译详录（《史记·宋微子世家》等载谏囚、洪范、封朝鲜、麦秀之歌）。拓展文以《论语》‘三仁’为定位，据《逸周书》《尚书大传》呈现封朝鲜的异辞，采《孟子》完善贤臣背景，并结合 anchor 中的《洪范》成书质疑、朝鲜封地附会说作简要讨论，形成史外异说与延展。",
+  "候选著作": [
+    {
+      "出处": "《论语·微子》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "孔子将箕子与微子、比干并列为殷商三仁，确立其道德地位。",
+      "检索词": "微子去之 箕子为之奴",
+      "采用": true,
+      "原文摘句": "微子去之，箕子为之奴，比干谏而死。孔子曰：‘殷有三仁焉。’",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《尚书·洪范》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "载录箕子向武王陈述洪范九畴的原始内容，为核心史料。",
+      "检索词": "洪范九畴",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《孟子·公孙丑上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "列举纣王时的贤臣包括箕子，显示其贤名流传。",
+      "检索词": "又有微子微仲王子比干箕子",
+      "采用": true,
+      "原文摘句": "孟子曰：‘……纣之去武丁未久也……又有微子、微仲、王子比干、箕子、胶鬲，皆贤人也。’",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《逸周书·殷祝解》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载武王克殷后封箕子于朝鲜，为早期文献佐证。",
+      "检索词": "封箕子于朝鲜",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《尚书大传》（辑本）",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "记载箕子不愿为周臣，自行前往朝鲜，武王因而封之，与《史记》等异辞。",
+      "检索词": "箕子走之朝鲜",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《竹书纪年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "可能记有箕子相关纪年或事迹，作为补充线索。",
+      "检索词": "箕子",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《论语·微子》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "孔子将箕子与微子、比干并列为殷商三仁，确立其道德地位。",
+      "检索词": "微子去之 箕子为之奴",
+      "采用": true,
+      "原文摘句": "微子去之，箕子为之奴，比干谏而死。孔子曰：‘殷有三仁焉。’",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《尚书·洪范》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "载录箕子向武王陈述洪范九畴的原始内容，为核心史料。",
+      "检索词": "洪范九畴",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《孟子·公孙丑上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "列举纣王时的贤臣包括箕子，显示其贤名流传。",
+      "检索词": "又有微子微仲王子比干箕子",
+      "采用": true,
+      "原文摘句": "孟子曰：‘……纣之去武丁未久也……又有微子、微仲、王子比干、箕子、胶鬲，皆贤人也。’",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《逸周书·殷祝解》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载武王克殷后封箕子于朝鲜，为早期文献佐证。",
+      "检索词": "封箕子于朝鲜",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《尚书大传》（辑本）",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "记载箕子不愿为周臣，自行前往朝鲜，武王因而封之，与《史记》等异辞。",
+      "检索词": "箕子走之朝鲜",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《竹书纪年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "可能记有箕子相关纪年或事迹，作为补充线索。",
+      "检索词": "箕子",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 4,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

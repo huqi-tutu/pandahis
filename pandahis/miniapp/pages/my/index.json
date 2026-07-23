@@ -1,7 +1,8 @@
 {
   "navigationStyle": "custom",
   "usingComponents": {
-    "proto-nav": "/components/proto-nav/proto-nav"
+    "proto-nav": "/components/proto-nav/proto-nav",
+    "reading-heatmap": "/components/reading-heatmap/reading-heatmap"
   }
 }
 

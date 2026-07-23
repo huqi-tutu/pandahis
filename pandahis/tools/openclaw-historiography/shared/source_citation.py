@@ -9,12 +9,15 @@ from typing import Any
 _CURVED_OPEN = '"\u201c'
 _CURVED_CLOSE = '"\u201d'
 
-# 《书名》后「载/记/写/云/曰…」+ 弯引号 → 疑似史料原文误标（术语性短引号不在此列）
+# 《书名》后「载/记/写/云/曰…」+ 弯引号 → 疑似史料原文误标（术语性短引号、他书对话不在此列）
 _CITE_THEN_CURVED = re.compile(
     rf"《[^》]+》[^「『」』]{{0,25}}"
     rf"(?:载|记|写|云|曰|谓|称|原文|原话|说)[^「」]{{0,10}}"
     rf"[{re.escape(_CURVED_OPEN)}]([^{re.escape(_CURVED_CLOSE)}]{{4,}})[{re.escape(_CURVED_CLOSE)}]"
 )
+
+# 「"…"」/「"…"」→ 应去掉内层史记对话标点
+_NESTED_CORNER_ASCII = re.compile(r'「["\u201c]([^」]+?)["\u201d]」')
 
 
 def _snippet_anchor(snippet: str, min_len: int = 6) -> str:
@@ -27,7 +30,10 @@ def _snippet_anchor(snippet: str, min_len: int = 6) -> str:
 
 
 def curved_quote_after_source_citation_issues(body: str) -> list[tuple[str, str, str]]:
-    """《书名》引出后直接用弯引号包裹内容 → error（应改「」并译述）。"""
+    """《书名》引出后直接用弯引号包裹史料内容 → error（应改「」并译述）。
+
+    豁免：他书对话（如《孟子》载…"公孙丑问…"）、术语性短引号不在此列。
+    """
     issues: list[tuple[str, str, str]] = []
     for m in _CITE_THEN_CURVED.finditer(body):
         snippet = m.group(1).strip()[:24]
@@ -39,6 +45,34 @@ def curved_quote_after_source_citation_issues(body: str) -> list[tuple[str, str,
             )
         )
     return issues
+
+
+def nested_corner_ascii_quote_issues(body: str) -> list[tuple[str, str, str]]:
+    """「"原文"」双层嵌套 → error（内层史记引号应去掉）。"""
+    issues: list[tuple[str, str, str]] = []
+    for m in _NESTED_CORNER_ASCII.finditer(body):
+        snippet = m.group(1).strip()[:24]
+        issues.append(
+            (
+                "nested_corner_quote",
+                f"直角引号内嵌套弯引号：「{snippet}…」，应写作「{snippet}…」",
+                "error",
+            )
+        )
+    return issues
+
+
+def fix_nested_corner_ascii_quotes(body: str) -> tuple[str, int]:
+    """「"…"」→「…」。"""
+
+    changes = 0
+
+    def _repl(m: re.Match[str]) -> str:
+        nonlocal changes
+        changes += 1
+        return f"「{m.group(1)}」"
+
+    return _NESTED_CORNER_ASCII.sub(_repl, body), changes
 
 
 def verified_snippet_quote_issues(
@@ -115,6 +149,7 @@ def source_citation_verify_issues(
 ) -> list[tuple[str, str, str]]:
     issues: list[tuple[str, str, str]] = []
     issues.extend(curved_quote_after_source_citation_issues(body))
+    issues.extend(nested_corner_ascii_quote_issues(body))
     issues.extend(verified_snippet_quote_issues(body, bibliography_plan))
     issues.extend(corner_quote_density_issues(body, priority=priority))
     return issues

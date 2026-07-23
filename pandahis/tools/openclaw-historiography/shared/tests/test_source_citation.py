@@ -10,6 +10,7 @@ sys.path.insert(0, str(ROOT))
 
 from source_citation import (  # noqa: E402
     curved_quote_after_source_citation_issues,
+    nested_corner_ascii_quote_issues,
     source_citation_verify_issues,
     verified_snippet_quote_issues,
 )
@@ -24,6 +25,17 @@ def test_curved_quote_after_cite_is_error():
 def test_corner_quote_after_cite_ok():
     body = '《山海经》载「黄帝妻雷祖，生昌意」——雷祖就是嫘祖。'
     assert not curved_quote_after_source_citation_issues(body)
+
+
+def test_mencius_dialogue_curved_quote_ok():
+    body = '《孟子·万章上》记载，公孙丑问：“有伊尹之志则可，无伊尹之志则篡也。”'
+    assert not curved_quote_after_source_citation_issues(body)
+
+
+def test_nested_corner_ascii_is_error():
+    body = '汤说：「"予有言：人视水见形"」——译述。'
+    issues = nested_corner_ascii_quote_issues(body)
+    assert issues and issues[0][0] == "nested_corner_quote"
 
 
 def test_verified_snippet_must_be_in_corner_quotes():

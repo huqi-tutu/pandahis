@@ -1,0 +1,131 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00667",
+  "写作结构": "正史叙述见翻译详录《史记·殷本纪》；史外异说可补充在位年数（《古本竹书纪年》）及甲骨祭祀证据；无更多具体行事，其余留白。",
+  "候选著作": [
+    {
+      "出处": "《古本竹书纪年·商纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "提供祖辛在位年数的唯一先秦记载，可补《史记》所缺。",
+      "检索词": "祖辛在位 十六年",
+      "采用": true,
+      "原文摘句": "祖辛在位十六年。（《太平御览》卷八三引《竹书纪年》）",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·殷本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记世系与传位，已在翻译详录中覆盖。",
+      "检索词": "祖辛",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": null
+    },
+    {
+      "出处": "《甲骨文合集》等商代祭祀卜辞",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "殷墟卜辞中祖辛多次作为先王受祭，证实其真实存在与商王身份。",
+      "检索词": "祖辛 害 我 祟",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《世本·王侯世本》（辑本）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记商王世系，内容与《史记》基本重合，无新增具体事迹。",
+      "检索词": "祖辛 弟 沃甲",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": null
+    },
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "晋人所编，可能记有祖辛年数或谥号，属后世增饰，可信度低。",
+      "检索词": "祖辛 帝王世纪",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": null
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《古本竹书纪年·商纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "提供祖辛在位年数的唯一先秦记载，可补《史记》所缺。",
+      "检索词": "祖辛在位 十六年",
+      "采用": true,
+      "原文摘句": "祖辛在位十六年。（《太平御览》卷八三引《竹书纪年》）",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·殷本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记世系与传位，已在翻译详录中覆盖。",
+      "检索词": "祖辛",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": null
+    },
+    {
+      "出处": "《甲骨文合集》等商代祭祀卜辞",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "殷墟卜辞中祖辛多次作为先王受祭，证实其真实存在与商王身份。",
+      "检索词": "祖辛 害 我 祟",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《世本·王侯世本》（辑本）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记商王世系，内容与《史记》基本重合，无新增具体事迹。",
+      "检索词": "祖辛 弟 沃甲",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": null
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "晋人所编，可能记有祖辛年数或谥号，属后世增饰，可信度低。",
+      "检索词": "祖辛 帝王世纪",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": null
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 3,
+    "overall": "B"
+  }
+}

@@ -29,8 +29,8 @@
   margin: 0;
   border: none;
   border-radius: 50%;
-  background: linear-gradient(135deg, $accent-v5, #c4764a);
-  box-shadow: 0 4rpx 16rpx rgba(155, 62, 56, 0.22);
+  background: linear-gradient(135deg, #5A4C4C, $accent-v5);
+  box-shadow: 0 4rpx 16rpx rgba(74, 63, 63, 0.22);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -44,7 +44,7 @@
 
 .avatar-btn-hover {
   transform: translateY(-2rpx);
-  box-shadow: 0 6rpx 20rpx rgba(155, 62, 56, 0.28);
+  box-shadow: 0 6rpx 20rpx rgba(74, 63, 63, 0.28);
 }
 
 .avatar-img {

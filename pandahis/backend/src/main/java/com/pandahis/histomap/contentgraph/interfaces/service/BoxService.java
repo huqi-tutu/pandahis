@@ -9,6 +9,7 @@ import com.pandahis.histomap.common.auth.UserContextHolder;
 import com.pandahis.histomap.common.config.HistomapProperties;
 import com.pandahis.histomap.contentgraph.interfaces.dto.*;
 import com.pandahis.histomap.invite.service.DeepTabReadService;
+import com.pandahis.histomap.user.interfaces.service.ReadCompleteService;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
@@ -24,17 +25,20 @@ public class BoxService {
   private final HistomapProperties props;
   private final ObjectMapper objectMapper;
   private final DeepTabReadService deepTabReadService;
+  private final ReadCompleteService readCompleteService;
 
   public BoxService(
       JdbcTemplate jdbcTemplate,
       HistomapProperties props,
       ObjectMapper objectMapper,
-      DeepTabReadService deepTabReadService
+      DeepTabReadService deepTabReadService,
+      ReadCompleteService readCompleteService
   ) {
     this.jdbcTemplate = jdbcTemplate;
     this.props = props;
     this.objectMapper = objectMapper;
     this.deepTabReadService = deepTabReadService;
+    this.readCompleteService = readCompleteService;
   }
 
   public BoxHeaderDTO loadHeader(String boxId) {
@@ -85,6 +89,7 @@ public class BoxService {
 
     var access = buildAccess(boxId);
     boolean isFavorite = resolveIsFavorite(boxId);
+    boolean isReadComplete = resolveIsReadComplete(boxId);
 
     return new BoxHeaderDTO(
         new BoxHeaderDTO.Box(
@@ -100,6 +105,7 @@ public class BoxService {
             dynastyName
         ),
         isFavorite,
+        isReadComplete,
         tabSummary,
         access
     );
@@ -117,6 +123,14 @@ public class BoxService {
             ctx.userId(),
             boxId);
     return n != null && n > 0;
+  }
+
+  private boolean resolveIsReadComplete(String boxId) {
+    var ctx = UserContextHolder.get();
+    if (!ctx.authenticated()) {
+      return false;
+    }
+    return readCompleteService.isComplete(ctx.userId(), boxId);
   }
 
   public BoxDetailDTO loadDetail(String boxId) {
