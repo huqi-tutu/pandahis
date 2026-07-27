@@ -238,7 +238,16 @@ def research_prompt(context: dict[str, Any], rules: dict[str, str]) -> str:
 2. 按时间分段（前期/中期/后期或相当阶段）
 3. 基于史学共识，不局限于单卷史书
 4. 不要列人物传记清单
-5. 不要列事略/典制/论著候选（后续分步）
+5. 不要列事略/典制/论著**候选 JSON**（后续分步）；但须在附录提供结构化盘点（见下）
+
+## 附录（必填 · Markdown 表格或分节列表）
+在正文后追加 **「文化成果盘点」**，按四类分别列项（每类 3–8 个通史可点名项）：
+- **典籍**：成书于本朝的整书（一书一条；标注史书/子部/集部等类型）
+- **名篇**：可独立点名的诗赋、歌谣、奏疏单篇（含从已列典籍中可单独成篇者，如《诗经》名篇）
+- **思想理论**：本朝提出或可考的思想命题（须用学说名，**不得**用书名代替，如写「仁礼」而非仅写《论语》）
+- **书画名作**：有传世名、史籍可考、能定创作年代者；若本朝无可考书画，写「无」并简述原因
+
+每项须标注：**成书/提出是否落在本朝区间内**；若成书在后世（如《左传》成书战国），标「不纳入本朝论著」并说明。
 
 ## 规范（全文 · 朝代知识补全总则.md）
 {rules.get('总则', '')}
@@ -257,10 +266,19 @@ def candidates_prompt(
         extra = "五要素必填：主语、参与人物、动作、结果、影响。"
     if category == "论著":
         extra = (
-            "子类：典籍/名篇/书画/思想理论。不含建筑。"
+            "子类：典籍/名篇/书画/思想理论。不含建筑。\n"
             "硬约束：成书/创作/提出之年须在本朝区间内；"
             "典籍一书一条，禁止《书名·篇名》按卷拆条；"
-            "《尚书》成书于周，不归五帝论著。"
+            "《尚书》成书于周，不归五帝论著。\n"
+            "【子类平衡 · 强制】\n"
+            "1. 必须按子类分别思考，每条 JSON 必填 `子类`。\n"
+            "2. 禁止候选以史书典籍为主：典籍中编年史书（如《春秋》类）≤1 条。\n"
+            "3. 思想理论：仅列**无法完整归入已列典籍**的独立命题（§三·二）；"
+            "若学说即某典籍核心主张，写入该典籍论著标签，**禁止典籍+学说双条**。\n"
+            "4. 名篇 ≥2 条：可从已列典籍中的著名单篇单独建条（先例：西周「鹿鸣」与《诗经》并存）。\n"
+            "5. 书画：有可考则列，无则不要凑数。\n"
+            "6. 成书不在本朝的一律不列（如《左传》《国语》成书战国则不纳入）。\n"
+            "7. 候选池目标 7–12 条，四子类均须有所覆盖（书画可为 0 但须在边界备注说明）。"
         )
     if category == "典制":
         extra = (
@@ -291,7 +309,7 @@ def candidates_prompt(
 JSON 数组，每项含：名称、建议年份、建议挂靠帝王、主要史料出处、边界备注、审核状态(pending)。
 事略加：主语、参与人物(数组)、动作、结果、影响。
 典制加：制度类型、主旨、确立或成熟年、影响。
-论著加：子类、主旨、作者或提出者、成书或传播年、影响。
+论著加：子类、论著标签（2-5字，概括最核心思想/主题，规则同人物标签字数）、主旨、作者或提出者、成书或传播年、影响。
 {extra}
 """
 
@@ -479,9 +497,11 @@ def run_candidates_renwu(
                     continue
                 seed = dkl.thin_deferred_to_candidate(td)
                 name = seed["名称"]
-                canon = alias_index.get(name) or dkl.normalize_person_name(name, alias_map)
-                if canon in phase1_canonicals or name in existing_names:
+                if not name or name in existing_names:
                     continue
+                # 薄标注强制入候选：一期或有 GLBL 但厚度门拒收，须二期重写（不因一期去重跳过）
+                seed["强制补全"] = True
+                seed["审核状态"] = "mandatory"
                 filtered.insert(0, seed)
                 existing_names.add(name)
         for row in filtered:
@@ -748,11 +768,16 @@ def fill_entry_prompt(
     emperor_catalog: str = "",
 ) -> str:
     attach = str(candidate.get("建议挂靠帝王") or "").strip()
+    lunzhu_tag_note = ""
+    if category == "论著":
+        lunzhu_tag_note = (
+            "\n论著条须填写 `论著标签`（2-5 字，概括最核心思想；优先沿用候选中的论著标签）。"
+        )
     return f"""将以下候选转为一条 GLBL 索引 JSON（单个对象，不要数组）。
 史略ID 必须使用：{glbl_id}
 史略分类：{category}
 不要填原文字句、paragraphs、优先级（后续 enrichment）。
-不要填人物标签（后续 person_tag.py）。
+不要填人物标签（后续 person_tag.py）。{lunzhu_tag_note}
 **禁止填写任何坐标链字段**（四级帝王坐标、帝王ID、一级/二级/三级坐标、文明ID、朝代ID、政权ID）。
 脚本将据候选「建议挂靠帝王」在本朝帝王表中**精确匹配**后自动写入（须与下表「帝王名称」一字不差）。
 本批挂靠帝王：{attach or "（见候选）"}
@@ -1251,6 +1276,10 @@ def run_fill_category(
         slug = slug_name(str(context["朝代名称"]))
         seq = len([e for e in entries_doc["entries"] if e.get("史略分类") == category]) + 1
         row.setdefault("母本史略ID", f"DYKN_{slug}_{dykn_cat}_{seq:02d}")
+        if category == "论著":
+            cand_tag = str(cand.get("论著标签") or "").strip()
+            if cand_tag and not str(row.get("论著标签") or "").strip():
+                row["论著标签"] = cand_tag
         entries_doc["entries"].append(row)
         save_json(paths["entries"], entries_doc)
         _log(f"  ✅ 索引已写入 {glbl_id}")
@@ -2601,6 +2630,11 @@ def gate_validate_entries(
                 issues.append(f"[{eid}] {name} 论著禁止按篇拆书（《书名·篇名》）")
             if "尚书" in name:
                 issues.append(f"[{eid}] {name} 《尚书》成书于周，不归本朝论著")
+            tag = str(e.get("论著标签") or "").strip()
+            if not tag:
+                issues.append(f"[{eid}] {name} 缺少论著标签（2-5 字）")
+            elif not dkl.LUNZHU_TAG_RE.fullmatch(tag):
+                issues.append(f"[{eid}] {name} 论著标签「{tag}」不符合 2-5 汉字")
 
         if cat == "论著" and dynasty_start is not None and dynasty_end is not None:
             if isinstance(start_year, int) and (

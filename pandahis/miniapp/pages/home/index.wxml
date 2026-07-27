@@ -89,11 +89,11 @@
             <view class="container-sub-card-highlight" style="border-radius: {{sub.radiusRpx}}rpx;"></view>
           </view>
           <view wx:for="{{matrixOverlays}}" wx:key="id" wx:for-item="ovl" class="entry-chrome" style="z-index: {{ovl.zIndex || 20}};">
-            <view wx:if="{{!ovl.hideLabels}}" class="entry-header-wrap{{ovl.isContainerDynastyHeader ? ' entry-header-wrap--container-dynasty' : ''}}{{ovl.isContainerDynastyHeaderYuan ? ' entry-header-wrap--container-dynasty-yuan' : ''}}{{ovl.isContainerDynastyHeaderRight ? ' entry-header-wrap--container-dynasty-right' : ''}}{{ovl.labelLayout === 'stacked' && !ovl.isContainerDynastyHeader ? ' entry-header-wrap--stacked' : ''}}{{ovl.isContainerEmperorCard ? ' entry-header-wrap--container-emperor' : ''}}{{ovl.isContainerEmperorInline ? ' entry-header-wrap--container-emperor-inline' : ''}}{{ovl.isContainerEmperorCompact ? ' entry-header-wrap--container-emperor-compact' : ''}}{{ovl.isContainerRegimeLabel ? ' entry-header-wrap--container-regime' : ''}}{{ovl.isWudaiFiveRegimeVertical ? ' entry-header-wrap--container-regime-vertical' : ''}}{{ovl.isRegimeCard && !ovl.isContainerRegimeLabel ? ' entry-header-wrap--regime' : ''}}" style="top: {{ovl.headerTop}}rpx; left: {{ovl.headerLeftPct}}%; width: {{ovl.headerWidthPct}}%;{{ovl.headerHeight ? ' height: ' + ovl.headerHeight + 'rpx;' : ''}}">
+            <view wx:if="{{!ovl.hideLabels}}" class="entry-header-wrap{{ovl.isContainerDynastyHeader ? ' entry-header-wrap--container-dynasty' : ''}}{{ovl.isContainerDynastyHeaderYuan ? ' entry-header-wrap--container-dynasty-yuan' : ''}}{{ovl.isContainerDynastyHeaderRight ? ' entry-header-wrap--container-dynasty-right' : ''}}{{ovl.labelLayout === 'stacked' && !ovl.isContainerDynastyHeader ? ' entry-header-wrap--stacked' : ''}}{{ovl.isCollapsedDynastyCard ? ' entry-header-wrap--collapsed-dynasty' : ''}}{{ovl.isContainerEmperorCard ? ' entry-header-wrap--container-emperor' : ''}}{{ovl.isContainerEmperorInline ? ' entry-header-wrap--container-emperor-inline' : ''}}{{ovl.isContainerEmperorCompact ? ' entry-header-wrap--container-emperor-compact' : ''}}{{ovl.isContainerRegimeLabel ? ' entry-header-wrap--container-regime' : ''}}{{ovl.isWudaiFiveRegimeVertical ? ' entry-header-wrap--container-regime-vertical' : ''}}{{ovl.isRegimeCard && !ovl.isContainerRegimeLabel ? ' entry-header-wrap--regime' : ''}}" style="top: {{ovl.headerTop}}rpx; left: {{ovl.headerLeftPct}}%; width: {{ovl.headerWidthPct}}%;{{ovl.headerHeight ? ' height: ' + ovl.headerHeight + 'rpx;' : ''}}">
               <view wx:if="{{ovl.isContainerDynastyHeader}}" class="entry-header entry-header--container-dynasty-title" bindtap="onCardTap" data-dynasty="{{ovl.dynasty || ovl.displayName}}" data-display-name="{{ovl.displayName}}" data-dynasty-id="{{ovl.dynastyId}}" data-entity-type="{{ovl.entityType}}" data-entity-id="{{ovl.entityId}}" data-legacy-id="{{ovl.legacyId}}" data-container-id="{{ovl.containerId}}" data-anchor-year="{{ovl.anchorYear}}">
                 <block wx:if="{{ovl.containerTagPlacement === 'inline-name'}}">
                   <view class="entry-name-tag-row entry-name-tag-row--container-dynasty">
-                    <text class="card-person card-person--wide card-person--serif card-person--container-dynasty">{{ovl.displayName}}</text>
+                    <text class="card-person {{ovl.isCollapsedDynastyCard ? 'card-person--collapsed-dynasty card-person--container-dynasty' : 'card-person--wide card-person--serif card-person--container-dynasty'}}">{{ovl.displayName}}</text>
                     <view wx:if="{{!ovl.hideTags && ovl.highlights.length}}" class="entry-tag-row">
                       <view wx:for="{{ovl.highlights}}" wx:key="text" wx:for-item="tag" class="entry-tag{{tag.tagClass ? ' ' + tag.tagClass : ''}}" style="{{tag.tagStyle}}">
                         <view wx:if="{{tag.iconSrc}}" class="entry-tag-icon-slot">
@@ -108,7 +108,7 @@
                   <text wx:if="{{!ovl.hideTime}}" class="entry-time-inline entry-time-inline--container-dynasty" style="font-size: {{ovl.timeFontRpx}}rpx;">{{ovl.timeRange}}</text>
                 </block>
                 <block wx:else>
-                  <text class="card-person card-person--wide card-person--serif card-person--container-dynasty">{{ovl.displayName}}</text>
+                  <text class="card-person {{ovl.isCollapsedDynastyCard ? 'card-person--collapsed-dynasty card-person--container-dynasty' : 'card-person--wide card-person--serif card-person--container-dynasty'}}">{{ovl.displayName}}</text>
                   <view wx:if="{{!ovl.hideTags && ovl.highlights.length}}" class="entry-tag-row entry-tag-row--below-name">
                     <view wx:for="{{ovl.highlights}}" wx:key="text" wx:for-item="tag" class="entry-tag{{tag.tagClass ? ' ' + tag.tagClass : ''}}" style="{{tag.tagStyle}}">
                       <view wx:if="{{tag.iconSrc}}" class="entry-tag-icon-slot">
@@ -124,7 +124,7 @@
               </view>
               <view wx:else class="entry-header entry-header--{{ovl.labelLayout}}">
                 <block wx:if="{{ovl.labelLayout === 'stacked'}}">
-                  <text class="card-person card-person--stacked{{ovl.kind === 'single' ? '' : (ovl.isContainerRegimeLabel ? ' card-person--sub-regime' : ' card-person--serif')}}">{{ovl.kind === 'single' ? ovl.person : ovl.displayName}}</text>
+                  <text class="card-person {{ovl.isCollapsedDynastyCard ? 'card-person--collapsed-dynasty card-person--serif' : ('card-person--stacked' + (ovl.kind === 'single' ? '' : (ovl.isContainerRegimeLabel ? ' card-person--sub-regime' : ' card-person--serif')))}}">{{ovl.kind === 'single' ? ovl.person : ovl.displayName}}</text>
                   <view wx:if="{{!ovl.hideTags && ovl.highlights.length}}" class="entry-tag-row entry-tag-row--below-name">
                     <view wx:for="{{ovl.highlights}}" wx:key="text" wx:for-item="tag" class="entry-tag{{tag.tagClass ? ' ' + tag.tagClass : ''}}" style="{{tag.tagStyle}}">
                       <view wx:if="{{tag.iconSrc}}" class="entry-tag-icon-slot">

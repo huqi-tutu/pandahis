@@ -34,6 +34,7 @@ const WUDAI_FIVE_REGIME_KEYS = new Set(['后梁', '后唐', '后晋', '后汉', 
 
 const songLiaoJin = require('./song-liao-jin-layout.js')
 const mingQing = require('./ming-qing-layout.js')
+const { getMatrixHighlights, buildHighlightTagList } = require('./matrix-highlights.js')
 
 /** 容器内相对坐标（0–100%）→ 画布绝对 left/width 百分比 */
 function toCanvasSubCardGeom(containerBlock, innerLeftPct, innerWidthPct) {
@@ -298,11 +299,10 @@ function getHuaxiaDynastyColorIdx(dyn, colorMap) {
 
 const REGIME_CONTAINER_IDS = new Set(['春秋', '战国', '五代十国'])
 
-/** 时间轴节点固定展开、不可收展（仍显示朝代标题） */
-const ALWAYS_EXPANDED_REGIME_CONTAINER_IDS = new Set(['春秋', '战国', '五代十国'])
-
 function isRegimeContainerExpanded(containerId, expandedDynasties) {
-  if (ALWAYS_EXPANDED_REGIME_CONTAINER_IDS.has(containerId)) return true
+  if (containerId === '五代十国') {
+    return songLiaoJin.isWudaiExpanded(expandedDynasties)
+  }
   return !!(expandedDynasties && expandedDynasties[containerId])
 }
 
@@ -597,6 +597,43 @@ function getContainerNavFields(containerId) {
 }
 
 const REGIME_CONTAINER_HIT_Z_INDEX = 4
+
+/** 辽/金收起态：仅保留容器外壳，顶栏需展示朝代标签 */
+function isCollapsedChannelContainerShell(containerId, expandedDynasties) {
+  if (containerId === '辽') return !songLiaoJin.isLiaoEmperorsVisible(expandedDynasties)
+  if (containerId === '金') return !songLiaoJin.isJinEmperorsVisible(expandedDynasties)
+  return false
+}
+
+function resolveContainerShellHighlights(containerId, colorIdx) {
+  const nav = getContainerNavFields(containerId)
+  return buildHighlightTagList(getMatrixHighlights({
+    id: nav && nav.entityId,
+    legacyId: nav && nav.legacyId,
+    dynastyName: containerId,
+    displayName: containerId,
+    isEmperor: false,
+  }), {
+    dynastyName: containerId,
+    themeIndex: colorIdx != null ? colorIdx : 0,
+  })
+}
+
+function pushCollapsedChannelContainerHit(containerHits, containerId, containerBlock, layout, civId) {
+  const navFields = getContainerNavFields(containerId)
+  if (!navFields || !containerBlock) return
+  containerHits.push(Object.assign({}, navFields, {
+    id: `container_hit_${containerId}`,
+    containerId,
+    top: containerBlock.top,
+    h: containerBlock.h,
+    leftPct: containerBlock.leftPct,
+    widthPct: containerBlock.widthPct,
+    zIndex: REGIME_CONTAINER_HIT_Z_INDEX,
+    civ: civId,
+    anchorYear: layout.start,
+  }))
+}
 
 /** 金容器二级帝王卡几何（右半通道内单列） */
 function calcJinChannelSubCardGeom() {
@@ -1262,23 +1299,31 @@ function buildDynastyContainerVisuals(ctx) {
         : yuanHeaderGeom
           ? yuanHeaderGeom.leftPct
           : containerBlock.leftPct
+      const collapsedShell = isCollapsedChannelContainerShell(containerId, expandedDynasties)
+      const shellColorIdx = containerBlock.colorIdx != null ? containerBlock.colorIdx : 0
+      const shellHighlights = collapsedShell
+        ? resolveContainerShellHighlights(containerId, shellColorIdx)
+        : []
       subOverlays.push({
         id: `container_header_${containerId}`,
         kind: 'dynasty',
         displayName: containerId,
         timeRange,
         hideLabels: false,
-        hideTags: true,
+        hideTags: !collapsedShell,
         hideTime: false,
-        highlights: [],
-        containerTagPlacement: 'none',
-        labelLayout: typeof inferLabelLayout === 'function'
-          ? inferLabelLayout(headerWidthPct)
-          : 'wide',
+        highlights: shellHighlights,
+        containerTagPlacement: collapsedShell ? 'below-name' : 'none',
+        labelLayout: collapsedShell
+          ? 'stacked'
+          : (typeof inferLabelLayout === 'function'
+            ? inferLabelLayout(headerWidthPct)
+            : 'wide'),
         headerTop: containerBlock.top + HEADER_TOP_INSET,
         headerLeftPct,
         headerWidthPct,
         isContainerDynastyHeader: true,
+        isCollapsedDynastyCard: collapsedShell,
         isContainerDynastyHeaderYuan: containerId === '元' || containerId === '清',
         isContainerDynastyHeaderRight: false,
         timeFontRpx: fitCardTimeFontSize(timeRange, headerWidthPct),
@@ -1289,8 +1334,14 @@ function buildDynastyContainerVisuals(ctx) {
     }
 
     // 辽/金/元：对应通道未展开时仅保留容器色块，不展示帝王二级卡
-    if (containerId === '辽' && !songLiaoJin.isLiaoEmperorsVisible(expandedDynasties)) return
-    if (containerId === '金' && !songLiaoJin.isJinEmperorsVisible(expandedDynasties)) return
+    if (containerId === '辽' && !songLiaoJin.isLiaoEmperorsVisible(expandedDynasties)) {
+      pushCollapsedChannelContainerHit(containerHits, containerId, containerBlock, layout, civId)
+      return
+    }
+    if (containerId === '金' && !songLiaoJin.isJinEmperorsVisible(expandedDynasties)) {
+      pushCollapsedChannelContainerHit(containerHits, containerId, containerBlock, layout, civId)
+      return
+    }
     if (containerId === '元' && !songLiaoJin.isYuanEmperorsVisible(expandedDynasties)) return
     if (containerId === '清' && !mingQing.isQingEmperorsVisible(expandedDynasties)) return
 
@@ -1637,7 +1688,6 @@ module.exports = {
   isDynastyContainerActive,
   isRegimeContainerExpanded,
   REGIME_CONTAINER_IDS,
-  ALWAYS_EXPANDED_REGIME_CONTAINER_IDS,
   filterEntriesForTimeSlices,
   calcContainerMinTimelineHeight,
   applyContainerTimelineHeightBoost,

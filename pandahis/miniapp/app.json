@@ -6,7 +6,6 @@
     "pages/invite/index",
     "pages/my/index",
     "pages/dynasty-detail/index",
-    "pages/box-detail/index",
     "pages/login/index",
     "pages/invite-accept/index",
     "pages/favorites/index",
@@ -22,6 +21,15 @@
     "pages/relation-detail/index",
     "pages/critique-detail/index",
     "pages/relic-detail/index"
+  ],
+  "subPackages": [
+    {
+      "root": "package-graph",
+      "name": "graph",
+      "pages": [
+        "pages/box-detail/index"
+      ]
+    }
   ],
   "window": {
     "navigationBarTextStyle": "black",

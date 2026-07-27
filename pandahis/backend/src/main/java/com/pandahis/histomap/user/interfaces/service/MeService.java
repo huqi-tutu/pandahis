@@ -34,9 +34,25 @@ public class MeService {
       throw ApiException.unauthorized("login required");
     }
     long fav = safeCount("SELECT COUNT(1) FROM user_favorite_box WHERE user_id=?", userId);
-    long fp = safeCount("SELECT COUNT(1) FROM user_footprint WHERE user_id=?", userId);
+    // 与热力图 daily 表合并口径：索引重建会清空 user_footprint，但 user_reading_daily 仍保留历史。
+    long fp = safeCount(
+        "SELECT COUNT(DISTINCT box_id) FROM ("
+            + "SELECT box_id FROM user_footprint WHERE user_id=? "
+            + "UNION "
+            + "SELECT box_id FROM user_reading_daily WHERE user_id=?"
+            + ") t",
+        userId,
+        userId
+    );
+    // 与阅读热力图同源：user_reading_daily 保留每日阅读记录；
+    // UNION footprint 末次日期，兼容尚未写入 daily 表的历史数据。
     long learnDaysCount = safeCount(
-        "SELECT COUNT(DISTINCT DATE(last_viewed_at)) FROM user_footprint WHERE user_id=?",
+        "SELECT COUNT(DISTINCT d) FROM ("
+            + "SELECT read_date AS d FROM user_reading_daily WHERE user_id=? "
+            + "UNION "
+            + "SELECT DATE(last_viewed_at) AS d FROM user_footprint WHERE user_id=?"
+            + ") t",
+        userId,
         userId
     );
     long readCompleteCount;

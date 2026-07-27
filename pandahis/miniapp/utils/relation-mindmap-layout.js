@@ -1,11 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.layoutMaxRadius = exports.hasNodeOverlap = exports.computeMindmapPositions = exports.LAYOUT_NODE_R = void 0;
-/** 与 F6 defaultNode / toF6GraphData 中的 size 对齐 */
+/** 与 relation-graph-canvas 绘制半径一致 */
 exports.LAYOUT_NODE_R = {
-    center: 32,
-    category: 26,
-    person: 23,
+    center: 28,
+    category: 24,
+    person: 22,
 };
 const NODE_GAP = 10;
 const NODE_D = exports.LAYOUT_NODE_R.person * 2 + NODE_GAP;

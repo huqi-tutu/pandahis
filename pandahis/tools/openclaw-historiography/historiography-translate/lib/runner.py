@@ -714,7 +714,10 @@ def _run_phase2_enrich(
             artifact_paths={"output": target},
         )
         if not target.is_file():
-            return False, ["Phase2: LLM 未落盘最终译稿"], time.time() - t0
+            e_errs = ["Phase2: LLM 未落盘最终译稿"]
+            e_ok = False
+            print(f"⚠️ Phase2 未通过: {e_errs[0]}", flush=True)
+            continue
         if polish_enrich_file_full(target):
             print("   🔧 已自动修正模糊出处表述", flush=True)
         touch_heartbeat(work_dir, entry_id, stage="verify_enrich")

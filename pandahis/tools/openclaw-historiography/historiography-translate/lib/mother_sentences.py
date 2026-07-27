@@ -9,8 +9,9 @@ from typing import Any, Dict, List
 from lib.gloss_rules import L0_GLOSS_WORDS, is_l0_word
 
 MAX_MUST_PHRASES = 4
-# 必现词字数上限：短锚点便于 Phase1 保留与 verify 命中；句意覆盖走「信息点」
-MAX_MUST_CHAR = 4
+# 必现词字数：只抽 1–3 字短锚点（4 字易成硬锚点误拦白话意译）；氏名 ≤5
+MIN_MUST_CHAR = 1
+MAX_MUST_CHAR = 3
 MAX_MUST_CHAR_CLAN = 5  # X氏专名例外
 
 
@@ -91,8 +92,11 @@ def _plain_text(text: str) -> str:
 def is_midword_fragment(phrase: str, orig: str) -> bool:
     """短语是否为原文中间截断的 n-gram 碎片（首尾未落在句读边界）。"""
     p = str(phrase).strip()
-    if len(p) < 2:
+    if len(p) < MIN_MUST_CHAR:
         return True
+    # 单字不做「词中截断」判定，交由 L0/虚词过滤
+    if len(p) == 1:
+        return False
     orig_plain = _plain_text(orig)
     if p not in orig_plain:
         return False
@@ -155,13 +159,13 @@ def _max_len_for(phrase: str) -> int:
 
 def _within_must_length(phrase: str) -> bool:
     w = phrase.strip()
-    return len(w) >= 2 and len(w) <= _max_len_for(w)
+    return len(w) >= MIN_MUST_CHAR and len(w) <= _max_len_for(w)
 
 
 def _reject_must_phrase(phrase: str, orig: str, *, clause_level: bool = False) -> bool:
     """True = 不应作为必现词。"""
     w = phrase.strip()
-    if len(w) < 2:
+    if len(w) < MIN_MUST_CHAR:
         return True
     if not _within_must_length(w):
         return True
@@ -175,7 +179,7 @@ def _reject_must_phrase(phrase: str, orig: str, *, clause_level: bool = False) -
 
 
 def extract_must_phrases(orig: str, *, max_phrases: int = MAX_MUST_PHRASES) -> List[str]:
-    """从母本摘句程序化提取短锚点（≤4 字，氏名 ≤5）；落盘覆盖 LLM 填写。"""
+    """从母本摘句程序化提取短锚点（1–3 字，氏名 ≤5）；落盘覆盖 LLM 填写。"""
     out: List[str] = []
     seen: set[str] = set()
 
@@ -183,8 +187,16 @@ def extract_must_phrases(orig: str, *, max_phrases: int = MAX_MUST_PHRASES) -> L
         if len(out) >= max_phrases:
             return
         w = _trim_l0_edges(raw)
+        w = re.sub(r"[。．\.、，；：！？!?\s\"\"''「」『』“”]", "", w)
         if not w:
             return
+        # 必须是原文连续子串（数字除外），避免「国属害」这类截断碎片
+        if not re.fullmatch(r"\d+", w):
+            orig_plain = _plain_text(orig)
+            if w not in orig_plain:
+                if allow_kernels and len(raw.strip()) > MAX_MUST_CHAR:
+                    _add_kernels_from_segment(raw)
+                return
         if not _within_must_length(w):
             if allow_kernels:
                 _add_kernels_from_segment(raw)
@@ -196,7 +208,7 @@ def extract_must_phrases(orig: str, *, max_phrases: int = MAX_MUST_PHRASES) -> L
             out.append(w)
 
     def _add_kernels_from_segment(segment: str) -> None:
-        """长分句块不整段入选，只抽数字/氏/称号/≤4 字子片段。"""
+        """长分句块不整段入选，只抽数字/氏/称号/≤3 字子片段。"""
         for num in re.findall(r"\d+", segment):
             _add(num, allow_kernels=False)
         for clan in _iter_clan_names(segment):
@@ -211,7 +223,9 @@ def extract_must_phrases(orig: str, *, max_phrases: int = MAX_MUST_PHRASES) -> L
             if not part:
                 continue
             trimmed = _trim_l0_edges(part)
-            if 2 <= len(trimmed) <= MAX_MUST_CHAR and trimmed[0] not in "於于之其而":
+            if MIN_MUST_CHAR <= len(trimmed) <= MAX_MUST_CHAR and (
+                len(trimmed) == 1 or trimmed[0] not in "於于之其而"
+            ):
                 _add(part, clause_level=True, allow_kernels=False)
 
     for num in re.findall(r"\d+", orig):
@@ -237,7 +251,9 @@ def extract_must_phrases(orig: str, *, max_phrases: int = MAX_MUST_PHRASES) -> L
         if len(chunk) < 2:
             continue
         trimmed = _trim_l0_edges(chunk)
-        if 2 <= len(trimmed) <= MAX_MUST_CHAR and trimmed[0] not in "於于之其而":
+        if MIN_MUST_CHAR <= len(trimmed) <= MAX_MUST_CHAR and (
+            len(trimmed) == 1 or trimmed[0] not in "於于之其而"
+        ):
             _add(chunk, clause_level=True, allow_kernels=False)
         else:
             _add_kernels_from_segment(chunk)

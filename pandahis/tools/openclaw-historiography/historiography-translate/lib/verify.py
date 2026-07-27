@@ -436,12 +436,8 @@ def _classify_must_phrases(
     soft = _dedup(soft)[:2]
 
     if not hard and not soft:
-        fallback = [
-            str(p).strip()
-            for p in phrases
-            if len(str(p).strip()) >= 3 and not is_midword_fragment(str(p), orig)
-        ][:3]
-        return fallback, []
+        # 无硬无软时不把普通短语抬成硬锚点（易误拦白话意译）
+        return [], []
 
     if not batch_mode:
         return hard, soft

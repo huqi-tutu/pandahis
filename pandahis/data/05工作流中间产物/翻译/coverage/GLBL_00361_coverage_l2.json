@@ -1,0 +1,19 @@
+{
+  "schema": "translate-coverage-l2/v1",
+  "史略ID": "GLBL_00361",
+  "passed": true,
+  "degraded": false,
+  "summary": "全部母本信息已传达",
+  "l1_ratio": 0.0,
+  "l1_min_ratio": 0.0,
+  "claims": [
+    {
+      "id": "M005",
+      "claim": "弟子商瞿年纪很大了还没有儿子，他的母亲要为他娶妾。",
+      "status": "conveyed",
+      "evidence": "商瞿年纪大了还没有儿子，他母亲替他张罗娶妻。",
+      "note": "直接提及"
+    }
+  ],
+  "issues": []
+}

@@ -4,7 +4,7 @@ export const ROUTES = {
   search: '/pages/search/index',
   searchResult: '/pages/search-result/index',
   dynastyDetail: '/pages/dynasty-detail/index',
-  boxDetail: '/pages/box-detail/index',
+  boxDetail: '/package-graph/pages/box-detail/index',
   login: '/pages/login/index',
   invite: '/pages/invite/index',
   inviteAccept: '/pages/invite-accept/index',

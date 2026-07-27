@@ -44,7 +44,8 @@
       { "type": "file", "value": "package-lock.json" },
       { "type": "file", "value": "tsconfig.json" },
       { "type": "suffix", "value": ".ts" },
-      { "type": "file", "value": "tsconfig.build.json" }
+      { "type": "file", "value": "tsconfig.build.json" },
+      { "type": "suffix", "value": ".map" }
     ],
     "include": []
   },

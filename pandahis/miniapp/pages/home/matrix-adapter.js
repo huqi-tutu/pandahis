@@ -100,7 +100,7 @@ const DYNASTY_UNIT_FALLBACK = {
     金: 'CD_HX_JIN',
     辽: 'CD_HX_LIAO',
     秦: 'CD_HX_QIN',
-    秦末汉初: 'CD_HX_QINMOHANCHU',
+    楚汉: 'CD_HX_QINMOHANCHU',
     北宋: 'CD_HX_BEISONG',
     南宋: 'CD_HX_NANSONG',
     元: 'CD_HX_YUAN',

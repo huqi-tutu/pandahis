@@ -661,6 +661,8 @@ def apply_coord_defaults(entry: dict[str, Any], context: dict[str, Any]) -> dict
 
 # ── 字段 Schema 校验（gate 集成） ──────────────────────────────────
 
+LUNZHU_TAG_RE = re.compile(r"^[\u4e00-\u9fff]{2,5}$")
+
 # 条目字段：类型、是否允许为空、null 替换默认值
 ENTRY_FIELD_SCHEMA: dict[str, dict[str, Any]] = {
     "一级文明坐标": {"type": str, "nullable": False, "default": ""},
@@ -697,6 +699,7 @@ ENTRY_FIELD_SCHEMA: dict[str, dict[str, Any]] = {
     "后续演变": {"type": str, "nullable": True, "default": ""},
     "备注": {"type": str, "nullable": True, "default": ""},
     "史料丰度": {"type": str, "nullable": True, "default": ""},
+    "论著标签": {"type": str, "nullable": True, "default": ""},
 }
 
 # 详情字段

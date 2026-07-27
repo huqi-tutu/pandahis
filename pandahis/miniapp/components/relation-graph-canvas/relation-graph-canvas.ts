@@ -1,3 +1,5 @@
+import { computeMindmapPositions } from '../../utils/relation-mindmap-layout'
+
 type GraphNode = { key: string; name?: string; type?: string; targetBoxId?: string; extraJson?: string }
 type GraphEdge = { fromKey: string; toKey: string; label?: string }
 type GraphPayload = { centerNodeKey?: string; nodes?: GraphNode[]; edges?: GraphEdge[] }
@@ -9,6 +11,8 @@ type EdgeDraw = {
   y1: number
   x2: number
   y2: number
+  cx: number
+  cy: number
   color: string
   group: string
   label: string
@@ -75,30 +79,12 @@ const GROUP_EDGE: Record<string, string> = {
   外敌: 'rgba(180, 100, 100, 0.42)',
   other: 'rgba(120, 110, 105, 0.38)',
 }
-const SECTOR_ANGLE: Record<string, number> = {
-  家庭: -Math.PI / 2,
-  师从: Math.PI,
-  同僚: 0,
-  外敌: Math.PI / 2,
-}
-const CATEGORY_ORDER = ['家庭', '师从', '同僚', '外敌']
 const CENTER_R = 28
 const PERSON_R = 22
 const NODE_GAP = 10
 const CAT_FONT = 11
 const REL_LABEL_H = 13
 const REL_LABEL_FONT = 7
-const CENTER_TO_CAT = 118
-const LINK_L1 = 100
-const LINK_DEEP = 82
-const MIN_FAN = 0.18
-const NODE_D = PERSON_R * 2 + NODE_GAP
-const WEDGE: Record<string, number> = {
-  家庭: Math.PI * 0.88,
-  师从: Math.PI * 0.62,
-  同僚: Math.PI * 0.62,
-  外敌: Math.PI * 0.62,
-}
 
 function normalizeGroupName(raw: string): string {
   const g = (raw || '').trim()
@@ -140,13 +126,6 @@ function isExpandNode(meta?: GraphNode, name?: string): boolean {
   return /展开全部|展开更多|\+(\d+)/.test(n) || meta?.type === 'expand'
 }
 
-function childrenOf(parentKey: string, edges: GraphEdge[]): string[] {
-  return (edges || [])
-    .filter((e) => e.fromKey === parentKey)
-    .map((e) => e.toKey)
-    .sort()
-}
-
 function buildParentMap(centerKey: string, edges: GraphEdge[]): Map<string, string> {
   const parent = new Map<string, string>()
   const adj = new Map<string, string[]>()
@@ -173,133 +152,6 @@ function nodeGroup(meta: GraphNode | undefined, fallback = 'other'): string {
   if (isCategoryNode(meta)) return normalizeGroupName(String(meta.name || '')) || fallback
   return parseExtraGroup(meta.extraJson) || fallback
 }
-
-function polar(cx: number, cy: number, angle: number, dist: number) {
-  return { x: cx + Math.cos(angle) * dist, y: cy + Math.sin(angle) * dist }
-}
-
-/** 节点碰撞半径（含安全间距） */
-function collisionRadius(p: Pos): number {
-  if (p.isCenter || p.isCategory) return Math.max(p.boxW, p.boxH) / 2 + 4
-  return p.circleR + NODE_GAP / 2
-}
-
-function nodesOverlap(a: Pos, b: Pos): boolean {
-  if (a.key === b.key) return false
-  const dx = b.x - a.x
-  const dy = b.y - a.y
-  const minDist = collisionRadius(a) + collisionRadius(b)
-  return dx * dx + dy * dy < minDist * minDist
-}
-
-function findFirstOverlap(positions: Pos[]): [Pos, Pos] | null {
-  for (let i = 0; i < positions.length; i++) {
-    for (let j = i + 1; j < positions.length; j++) {
-      if (nodesOverlap(positions[i], positions[j])) return [positions[i], positions[j]]
-    }
-  }
-  return null
-}
-
-function buildChildrenMap(edges: GraphEdge[]): Map<string, string[]> {
-  const m = new Map<string, string[]>()
-  for (const e of edges || []) {
-    if (!m.has(e.fromKey)) m.set(e.fromKey, [])
-    m.get(e.fromKey)!.push(e.toKey)
-  }
-  for (const [k, list] of m) m.set(k, [...list].sort())
-  return m
-}
-
-function moveSubtree(
-  rootKey: string,
-  dx: number,
-  dy: number,
-  childrenMap: Map<string, string[]>,
-  posByKey: Map<string, Pos>
-) {
-  const stack = [rootKey]
-  const seen = new Set<string>()
-  while (stack.length) {
-    const k = stack.pop()!
-    if (seen.has(k)) continue
-    seen.add(k)
-    const p = posByKey.get(k)
-    if (!p) continue
-    p.x += dx
-    p.y += dy
-    if (!p.isCenter) p.minR = Math.max(p.minR, radialOf(p.x, p.y) - 4)
-    for (const c of childrenMap.get(k) || []) stack.push(c)
-  }
-}
-
-/** 沿父→子方向把整棵子树外推（只向外，不往中心撤） */
-function pushSubtreeOutward(
-  nodeKey: string,
-  delta: number,
-  parentMap: Map<string, string>,
-  posByKey: Map<string, Pos>,
-  childrenMap: Map<string, string[]>
-) {
-  const parentKey = parentMap.get(nodeKey)
-  if (!parentKey) return
-  const parent = posByKey.get(parentKey)
-  const node = posByKey.get(nodeKey)
-  if (!parent || !node) return
-  const angle = Math.atan2(node.y - parent.y, node.x - parent.x)
-  moveSubtree(nodeKey, Math.cos(angle) * delta, Math.sin(angle) * delta, childrenMap, posByKey)
-}
-
-/** 固定逻辑：检测到重叠就外推较深子树，直到无重叠或达上限 */
-function ensureNoNodeOverlap(
-  positions: Pos[],
-  parentMap: Map<string, string>,
-  childrenMap: Map<string, string[]>,
-  maxPass = 160
-) {
-  const posByKey = new Map(positions.map((p) => [p.key, p]))
-  for (let pass = 0; pass < maxPass; pass++) {
-    const pair = findFirstOverlap(positions)
-    if (!pair) return
-    const [a, b] = pair
-    if (a.depth === b.depth) {
-      pushSubtreeOutward(a.key, 6, parentMap, posByKey, childrenMap)
-      pushSubtreeOutward(b.key, 6, parentMap, posByKey, childrenMap)
-    } else {
-      const mover = a.depth > b.depth ? a : b
-      pushSubtreeOutward(mover.key, 8, parentMap, posByKey, childrenMap)
-    }
-  }
-}
-
-/** 在角度 sector 内放 n 个兄弟，求满足 NODE_D 的最短连线 */
-function minLinkForSector(sectorRad: number, slotCount: number, base: number): number {
-  if (slotCount <= 1) return base
-  const half = sectorRad / slotCount / 2
-  const need = NODE_D / (2 * Math.sin(Math.max(half, 0.05)))
-  return Math.max(base, need)
-}
-
-function subtreeWeight(
-  key: string,
-  edges: GraphEdge[],
-  nodeMap: Map<string, GraphNode>,
-  cache = new Map<string, number>()
-): number {
-  if (cache.has(key)) return cache.get(key)!
-  const kids = childrenOf(key, edges).filter((k) => {
-    const m = nodeMap.get(k)
-    return m && !isCategoryNode(m)
-  })
-  if (!kids.length) {
-    cache.set(key, 1)
-    return 1
-  }
-  const w = kids.reduce((sum, k) => sum + subtreeWeight(k, edges, nodeMap, cache), 0)
-  cache.set(key, Math.max(w, 1))
-  return cache.get(key)!
-}
-
 
 function personFontSize(name: string): number {
   const len = name.length
@@ -379,113 +231,51 @@ function addPos(
   })
 }
 
-/**
- * 思维导图核心：每个节点独占一段角度 [angleStart, angleEnd]，
- * 子节点在该段内再切分；连线长度由几何公式预先算好，保证兄弟间距 >= NODE_D。
- */
-function placeSubtree(
-  key: string,
-  hubX: number,
-  hubY: number,
-  angleStart: number,
-  angleEnd: number,
-  linkLen: number,
-  depth: number,
-  group: string,
-  edges: GraphEdge[],
-  nodeMap: Map<string, GraphNode>,
-  posMap: Map<string, Pos>
-) {
-  const meta = nodeMap.get(key)
-  if (!meta) return
-  const name = ((meta.name != null && String(meta.name).trim()) || key).trim()
-  const midAngle = (angleStart + angleEnd) / 2
-  const pos = polar(hubX, hubY, midAngle, linkLen)
-  addPos(posMap, meta, pos.x, pos.y, depth, group, {
-    isExpand: isExpandNode(meta, name),
-  })
-
-  const kids = childrenOf(key, edges).filter((k) => {
-    const m = nodeMap.get(k)
-    return m && !isCategoryNode(m)
-  })
-  if (!kids.length) return
-
-  const sector = Math.max(angleEnd - angleStart, MIN_FAN)
-  const weights = kids.map((k) => subtreeWeight(k, edges, nodeMap))
-  const total = weights.reduce((a, b) => a + b, 0) || kids.length
-  const nextLink = minLinkForSector(sector, kids.length, LINK_DEEP)
-
-  let cursor = angleStart
-  kids.forEach((kid, i) => {
-    const slice = (weights[i] / total) * sector
-    const a0 = cursor
-    const a1 = cursor + slice
-    cursor += slice
-    placeSubtree(kid, pos.x, pos.y, a0, a1, nextLink, depth + 1, group, edges, nodeMap, posMap)
-  })
+function computeDepthMap(centerKey: string, edges: GraphEdge[]): Map<string, number> {
+  const parent = buildParentMap(centerKey, edges)
+  const depth = new Map<string, number>()
+  depth.set(centerKey, 0)
+  for (const key of parent.keys()) {
+    let d = 0
+    let cur: string | undefined = key
+    while (cur && cur !== centerKey) {
+      d++
+      cur = parent.get(cur)
+    }
+    depth.set(key, d)
+  }
+  return depth
 }
 
-function layoutCluster(
-  catMeta: GraphNode,
-  edges: GraphEdge[],
-  nodeMap: Map<string, GraphNode>,
-  posMap: Map<string, Pos>
-) {
-  const g = normalizeGroupName(String(catMeta.name || ''))
-  const base = SECTOR_ANGLE[g] ?? -Math.PI / 2
-  const wedge = WEDGE[g] ?? Math.PI * 0.5
-  const catPos = polar(0, 0, base, CENTER_TO_CAT)
-  addPos(posMap, catMeta, catPos.x, catPos.y, 1, g, { isCategory: true })
-
-  const topKids = childrenOf(catMeta.key, edges).filter((k) => {
-    const m = nodeMap.get(k)
-    return m && !isCategoryNode(m)
+function posFromNode(meta: GraphNode, x: number, y: number, depth: number, centerKey: string): Pos {
+  const posMap = new Map<string, Pos>()
+  const name = ((meta.name != null && String(meta.name).trim()) || meta.key).trim()
+  addPos(posMap, meta, x, y, depth, nodeGroup(meta), {
+    isCenter: meta.key === centerKey,
+    isCategory: isCategoryNode(meta),
+    isExpand: isExpandNode(meta, name),
   })
-  if (!topKids.length) return
-
-  const weights = topKids.map((k) => subtreeWeight(k, edges, nodeMap))
-  const total = weights.reduce((a, b) => a + b, 0) || topKids.length
-  const start = base - wedge / 2
-  let cursor = start
-  topKids.forEach((kid, i) => {
-    const slice = (weights[i] / total) * wedge
-    const a0 = cursor
-    const a1 = cursor + slice
-    cursor += slice
-    const link = minLinkForSector(slice, 1, LINK_L1)
-    placeSubtree(kid, catPos.x, catPos.y, a0, a1, link, 2, g, edges, nodeMap, posMap)
-  })
+  return posMap.get(meta.key)!
 }
 
 function layoutMindMap(nodes: GraphNode[], edges: GraphEdge[], centerKey: string): LayoutResult {
   const nodeMap = new Map(nodes.map((n) => [n.key, n]))
-  const posMap = new Map<string, Pos>()
   const centerMeta = nodeMap.get(centerKey)
   if (!centerMeta) {
     return { positions: [], edgeList: [], bounds: { minX: -1, minY: -1, maxX: 1, maxY: 1 }, centerKey }
   }
 
-  addPos(posMap, centerMeta, 0, 0, 0, '', { isCenter: true })
-
-  const categoryNodes = CATEGORY_ORDER.map((g) =>
-    nodes.find((n) => isCategoryNode(n) && normalizeGroupName(String(n.name || '')) === g)
-  ).filter((n): n is GraphNode => n != null)
-
-  for (const cat of categoryNodes) {
-    layoutCluster(cat, edges, nodeMap, posMap)
-  }
-
+  const coordMap = computeMindmapPositions(centerKey, nodes, edges)
+  const depthMap = computeDepthMap(centerKey, edges)
+  const positions: Pos[] = []
   for (const n of nodes) {
-    if (posMap.has(n.key)) continue
-    addPos(posMap, n, 160, 160, 2, nodeGroup(n), {})
+    const pt = coordMap.get(n.key)
+    if (!pt) continue
+    positions.push(posFromNode(n, pt.x, pt.y, depthMap.get(n.key) ?? 0, centerKey))
   }
 
-  const positions = nodes.map((n) => posMap.get(n.key)).filter((p): p is Pos => p != null)
-  const parentMap = buildParentMap(centerKey, edges)
-  const childrenMap = buildChildrenMap(edges)
-  ensureNoNodeOverlap(positions, parentMap, childrenMap)
   const edgeList = buildEdgeList(positions, edges, nodeMap)
+  enrichEdgesWithCurves(edgeList)
   placeEdgeLabelsOnLine(edgeList, positions)
   return { positions, edgeList, bounds: computeBounds(positions, edgeList), centerKey }
 }
@@ -527,6 +317,7 @@ function placeEdgeLabelsOnLine(edgeList: EdgeDraw[], positions: Pos[]) {
 
   for (const [, edges] of groups) {
     const from = byKey.get(edges[0].fromKey)
+    const hideLabels = edges.length > 5
     edges.sort((ea, eb) => {
       const ta = byKey.get(ea.toKey)
       const tb = byKey.get(eb.toKey)
@@ -535,23 +326,27 @@ function placeEdgeLabelsOnLine(edgeList: EdgeDraw[], positions: Pos[]) {
     })
 
     edges.forEach((e, idx) => {
+      if (hideLabels) {
+        e.label = ''
+        e.labelW = 0
+        e.labelH = 0
+        return
+      }
       const { w, h } = measureRelLabel(e.label)
       e.labelW = w
       e.labelH = h
-      const dx = e.x2 - e.x1
-      const dy = e.y2 - e.y1
-      const len = Math.hypot(dx, dy) || 1
-      const ux = dx / len
-      const uy = dy / len
       const n = edges.length
       const baseT = n === 1 ? 0.5 : 0.34 + (idx / Math.max(1, n - 1)) * 0.32
       const tCandidates = [baseT, baseT - 0.06, baseT + 0.06, baseT - 0.12, baseT + 0.12, 0.5]
 
       let found = false
       for (const t of tCandidates) {
-        if (t < 0.28 || t > 0.72) continue
-        const lx = e.x1 + ux * len * t
-        const ly = e.y1 + uy * len * t
+        if (t < 0.22 || t > 0.78) continue
+        const lane = n > 1 ? idx - (n - 1) / 2 : 0
+        const pt = pointOnEdge(e, t)
+        const tg = tangentOnEdge(e, t)
+        const lx = pt.x - tg.uy * lane * 9
+        const ly = pt.y + tg.ux * lane * 9
         const box = labelBox(lx, ly, w + 2, h + 2)
         if (placed.some((b) => boxesOverlap(box, b))) continue
         e.labelX = lx
@@ -561,8 +356,11 @@ function placeEdgeLabelsOnLine(edgeList: EdgeDraw[], positions: Pos[]) {
         break
       }
       if (!found) {
-        e.labelX = e.x1 + ux * len * baseT
-        e.labelY = e.y1 + uy * len * baseT
+        const lane = n > 1 ? idx - (n - 1) / 2 : 0
+        const pt = pointOnEdge(e, baseT)
+        const tg = tangentOnEdge(e, baseT)
+        e.labelX = pt.x - tg.uy * lane * 9
+        e.labelY = pt.y + tg.ux * lane * 9
         placed.push(labelBox(e.labelX, e.labelY, w + 2, h + 2))
       }
     })
@@ -576,6 +374,70 @@ function placeEdgeLabelsOnLine(edgeList: EdgeDraw[], positions: Pos[]) {
     e.labelX = (e.x1 + e.x2) / 2
     e.labelY = (e.y1 + e.y2) / 2
   }
+}
+
+function quadPoint(x1: number, y1: number, cx: number, cy: number, x2: number, y2: number, t: number) {
+  const u = 1 - t
+  return {
+    x: u * u * x1 + 2 * u * t * cx + t * t * x2,
+    y: u * u * y1 + 2 * u * t * cy + t * t * y2,
+  }
+}
+
+function quadTangent(x1: number, y1: number, cx: number, cy: number, x2: number, y2: number, t: number) {
+  const u = 1 - t
+  return {
+    x: 2 * u * (cx - x1) + 2 * t * (x2 - cx),
+    y: 2 * u * (cy - y1) + 2 * t * (y2 - cy),
+  }
+}
+
+/** 借鉴 F6 processParallelEdges：同对节点多边错开；控制点向中心微弯成思维导图弧 */
+function enrichEdgesWithCurves(edgeList: EdgeDraw[]) {
+  const pairTotal = new Map<string, number>()
+  for (const e of edgeList) {
+    const k = [e.fromKey, e.toKey].sort().join('|')
+    pairTotal.set(k, (pairTotal.get(k) || 0) + 1)
+  }
+  const pairIdx = new Map<string, number>()
+  for (const e of edgeList) {
+    const k = [e.fromKey, e.toKey].sort().join('|')
+    const total = pairTotal.get(k) || 1
+    const idx = pairIdx.get(k) || 0
+    pairIdx.set(k, idx + 1)
+    const lane = total === 1 ? 0 : (idx - (total - 1) / 2) * 16
+    const mx = (e.x1 + e.x2) / 2
+    const my = (e.y1 + e.y2) / 2
+    const bend = 0.2
+    let cx = mx * (1 - bend)
+    let cy = my * (1 - bend)
+    const dx = e.x2 - e.x1
+    const dy = e.y2 - e.y1
+    const len = Math.hypot(dx, dy) || 1
+    cx += (-dy / len) * lane
+    cy += (dx / len) * lane
+    e.cx = cx
+    e.cy = cy
+  }
+}
+
+/** 借鉴 F6 fitView：仅缩小不放大，主题仍居中 */
+function fitZoomScale(w: number, h: number, bounds: LayoutResult['bounds']): number {
+  const bw = bounds.maxX - bounds.minX
+  const bh = bounds.maxY - bounds.minY
+  if (bw <= 0 || bh <= 0) return 1
+  const pad = 36
+  return Math.min(1, (w - pad * 2) / bw, (h - pad * 2) / bh)
+}
+
+function pointOnEdge(e: EdgeDraw, t: number) {
+  return quadPoint(e.x1, e.y1, e.cx, e.cy, e.x2, e.y2, t)
+}
+
+function tangentOnEdge(e: EdgeDraw, t: number) {
+  const tg = quadTangent(e.x1, e.y1, e.cx, e.cy, e.x2, e.y2, t)
+  const len = Math.hypot(tg.x, tg.y) || 1
+  return { ux: tg.x / len, uy: tg.y / len }
 }
 
 function computeBounds(positions: Pos[], edgeList: EdgeDraw[]) {
@@ -658,6 +520,8 @@ function buildEdgeList(positions: Pos[], edges: GraphEdge[], nodeMap: Map<string
       y1: start.y,
       x2: end.x,
       y2: end.y,
+      cx: (start.x + end.x) / 2,
+      cy: (start.y + end.y) / 2,
       color: GROUP_EDGE[group] || GROUP_EDGE.other,
       group,
       label,
@@ -823,17 +687,9 @@ Component({
     },
 
     centerView() {
-      const layout = (this as any)._layout as LayoutResult | undefined
-      if (!layout) {
-        ;(this as any)._panX = 0
-        ;(this as any)._panY = 0
-        return
-      }
-      const s = (this as any)._zoomScale || 1
-      const bcx = (layout.bounds.minX + layout.bounds.maxX) / 2
-      const bcy = (layout.bounds.minY + layout.bounds.maxY) / 2
-      ;(this as any)._panX = -bcx * s
-      ;(this as any)._panY = -bcy * s
+      // 布局原点即主题人物 (0,0)，视口 translate(w/2,h/2) 后 pan 归零即正中
+      ;(this as any)._panX = 0
+      ;(this as any)._panY = 0
     },
 
     getZoomScale() {
@@ -898,7 +754,7 @@ Component({
           const layout = layoutMindMap(nodes, edges, centerKey)
           ;(this as any)._layout = layout
           ;(this as any)._parentMap = buildParentMap(centerKey, edges)
-          ;(this as any)._zoomScale = 1
+          ;(this as any)._zoomScale = fitZoomScale(w, h, layout.bounds)
           this.centerView()
           this.syncScaleLabel()
           this.paint(ctx, w, h, layout)
@@ -939,13 +795,15 @@ Component({
         const highlighted = highlightEdges.has(id)
         ctx.beginPath()
         ctx.moveTo(e.x1, e.y1)
-        ctx.lineTo(e.x2, e.y2)
+        ctx.quadraticCurveTo(e.cx, e.cy, e.x2, e.y2)
         ctx.strokeStyle = active ? e.color : 'rgba(180, 172, 165, 0.12)'
+        ctx.globalAlpha = highlighted ? 1 : active ? 0.58 : 1
         ctx.lineWidth = highlighted ? 1.5 : 1
         ctx.setLineDash([4, 4])
         ctx.lineCap = 'round'
         ctx.stroke()
         ctx.setLineDash([])
+        ctx.globalAlpha = 1
       }
 
       for (const p of layout.positions) {

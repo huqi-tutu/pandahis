@@ -32,5 +32,10 @@ VALUES
   (1, 'GLBL_01079', TIMESTAMP '2026-06-01 10:00:00', 2),
   (1, 'GLBL_01069', TIMESTAMP '2026-06-02 11:00:00', 1);
 
+INSERT INTO user_reading_daily (user_id, read_date, box_id)
+VALUES
+  (1, DATE '2026-06-01', 'GLBL_01079'),
+  (1, DATE '2026-06-02', 'GLBL_01069');
+
 INSERT INTO search_hot_keyword (keyword, is_hot, sort_order, status)
 VALUES ('乌台诗案', 1, 1, 1);

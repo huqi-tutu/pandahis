@@ -60,17 +60,41 @@ public class FootprintService {
   }
 
   public FootprintListDTO list(Long userId, int page, int pageSize) {
-    long total = jdbcTemplate.queryForObject("SELECT COUNT(1) FROM user_footprint WHERE user_id=?", Long.class, userId);
+    long total = jdbcTemplate.queryForObject(
+        "SELECT COUNT(1) FROM ("
+            + "SELECT box_id FROM user_footprint WHERE user_id=? "
+            + "UNION "
+            + "SELECT box_id FROM user_reading_daily WHERE user_id=?"
+            + ") ids "
+            + "JOIN historical_box b ON b.id=ids.box_id "
+            + "LEFT JOIN historical_emperor u ON u.id=b.emperor_id "
+            + "JOIN civilization_l1 c ON c.id=u.civilization_l1_id",
+        Long.class,
+        userId,
+        userId
+    );
     int offset = (page - 1) * pageSize;
     List<FootprintListDTO.Item> items = jdbcTemplate.query(
-        "SELECT f.box_id, f.last_viewed_at, f.view_count, b.title, b.category_key, b.start_year, b.end_year, "
+        "SELECT ids.box_id, "
+            + "COALESCE(fp.last_viewed_at, daily.last_viewed_at) AS last_viewed_at, "
+            + "COALESCE(fp.view_count, daily.view_count, 1) AS view_count, "
+            + "b.title, b.category_key, b.start_year, b.end_year, "
             + "u.name AS unit_name, u.dynasty_name, c.display_name AS civ_name "
-            + "FROM user_footprint f "
-            + "JOIN historical_box b ON b.id=f.box_id "
+            + "FROM ("
+            + "SELECT box_id FROM user_footprint WHERE user_id=? "
+            + "UNION "
+            + "SELECT box_id FROM user_reading_daily WHERE user_id=?"
+            + ") ids "
+            + "JOIN historical_box b ON b.id=ids.box_id "
+            + "LEFT JOIN user_footprint fp ON fp.user_id=? AND fp.box_id=ids.box_id "
+            + "LEFT JOIN ("
+            + "SELECT box_id, CAST(MAX(read_date) AS DATETIME) AS last_viewed_at, "
+            + "COUNT(DISTINCT read_date) AS view_count "
+            + "FROM user_reading_daily WHERE user_id=? GROUP BY box_id"
+            + ") daily ON daily.box_id=ids.box_id "
             + "LEFT JOIN historical_emperor u ON u.id=b.emperor_id "
             + "JOIN civilization_l1 c ON c.id=u.civilization_l1_id "
-            + "WHERE f.user_id=? "
-            + "ORDER BY f.last_viewed_at DESC "
+            + "ORDER BY COALESCE(fp.last_viewed_at, daily.last_viewed_at) DESC "
             + "LIMIT ? OFFSET ?",
         (rs, rowNum) -> {
           String boxId = rs.getString("box_id");
@@ -89,7 +113,7 @@ public class FootprintService {
           return new FootprintListDTO.Item(
               boxId, title, subText, categoryKey, iso, viewCount, startYear, endYear, pathLabel);
         },
-        userId, pageSize, offset
+        userId, userId, userId, userId, pageSize, offset
     );
     return new FootprintListDTO(page, pageSize, total, items);
   }

@@ -137,8 +137,9 @@ function isWudaiContainerColumn(colKey) {
   return WUDAI_FIVE_REGIMES.has(colKey) || isWudaiTenKingdomColumn(colKey)
 }
 
+/** 五代十国收展跟随北宋（「宋」轴标），无独立时间轴开关 */
 function isWudaiExpanded(expandedDynasties) {
-  return true
+  return isSongExpanded(expandedDynasties)
 }
 
 function isSongExpanded(expandedDynasties) {
@@ -182,9 +183,8 @@ function isLeftChannelExpanded(expandedDynasties, tS) {
   return false
 }
 
-function shouldShowLiaoContainer(expandedDynasties, tS) {
-  return tS >= ZONE_START && tS < LIAO_END &&
-    isLeftChannelExpanded(expandedDynasties, tS)
+function shouldShowLiaoContainer(_expandedDynasties, tS) {
+  return tS >= ZONE_START && tS < LIAO_END
 }
 
 function shouldShowJinContainer(expandedDynasties, tS) {
@@ -196,9 +196,9 @@ function shouldShowYuanOnRight(tS) {
   return tS >= YUAN_AXIS
 }
 
-/** 辽容器外壳：左通道（五代/北宋）任一展开即可见，无需独立轴标 */
-function isLiaoContainerActive(expandedDynasties) {
-  return isWudaiExpanded(expandedDynasties) || isBeisongExpanded(expandedDynasties)
+/** 辽容器外壳：907–1125 始终展示（含北宋/五代收起态），顶对齐五代、底对齐北宋 */
+function isLiaoContainerActive(_expandedDynasties) {
+  return true
 }
 
 /** 辽帝王列表：随「宋」展开而展开 */
@@ -542,15 +542,11 @@ function applyCollapsedSongLiaoJinRects(blocks, rows, exp, ctx) {
   const y907 = yearTop(rows, ZONE_START)
   if (y907 == null) return blocks
 
+  // 移除宋辽金元区域旧块，由下方堆叠逻辑统一重建（避免 timeline 原位块与堆叠块重复）
   let next = blocks.filter(b => {
     if (!isSongZoneBlock(b)) return true
     if (b.entryId === YUAN_CONTAINER && !isYuanContainerActive(exp)) return false
-    if (!isSongExpanded(exp) && (
-      b.entryId === NANSONG_ENTRY ||
-      b.entryId === JIN_ENTRY ||
-      b.entryId === YUAN_ENTRY
-    )) return false
-    return true
+    return false
   })
 
   let leftTop = y907
@@ -938,7 +934,6 @@ function repositionCollapsedSongZoneRight(blocks, exp, ctx) {
     ? ctx.collapsedDynastyCardH
     : COLLAPSED_DYNASTY_CARD_H_RPX
   const rightGeom = calcRightHalfGeom()
-  const showLiao = isWudaiExpanded(exp) || isSongExpanded(exp)
 
   const wudai = findBlockBase(blocks, WUDAI_COLLAPSED) || findBlockBase(blocks, WUDAI_CONTAINER)
   const beisong = findBlockBase(blocks, BEISONG_ENTRY)
@@ -949,7 +944,7 @@ function repositionCollapsedSongZoneRight(blocks, exp, ctx) {
   const zoneTop = wudai ? wudai.top : (beisong ? beisong.top : null)
   const beisongBottom = beisong ? beisong.top + beisong.h : null
 
-  if (showLiao && liao && zoneTop != null && beisongBottom != null) {
+  if (liao && zoneTop != null && beisongBottom != null) {
     liao.top = zoneTop
     liao.h = Math.max(BLOCK_MIN_SEG_H, beisongBottom - zoneTop)
     liao.leftPct = rightGeom.leftPct

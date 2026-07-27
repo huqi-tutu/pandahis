@@ -91,7 +91,7 @@ const BY_DYNASTY_NAME = {
     { text: '郡县制', priority: 'P0', category: '制度变革' },
     { text: '书同文', priority: 'P1', category: '制度变革' },
   ],
-  秦末汉初: [
+  楚汉: [
     { text: '楚汉争霸', priority: 'P0', category: '战争动荡' },
     { text: '大泽起义', priority: 'P1', category: '战争动荡' },
   ],
@@ -175,7 +175,7 @@ const BY_DYNASTY_ID = {
   'HX-CQ': BY_DYNASTY_NAME['春秋'],
   'HX-ZG': BY_DYNASTY_NAME['战国'],
   'HX-Q': BY_DYNASTY_NAME['秦'],
-  'HX-QMH': BY_DYNASTY_NAME['秦末汉初'],
+  'HX-QMH': BY_DYNASTY_NAME['楚汉'],
   'HX-XH': BY_DYNASTY_NAME['西汉'],
   'HX-H': BY_DYNASTY_NAME['西汉'],
   'HX-DH': BY_DYNASTY_NAME['东汉'],

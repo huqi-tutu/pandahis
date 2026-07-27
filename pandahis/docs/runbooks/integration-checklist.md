@@ -54,7 +54,7 @@
 
 ### SCREEN09 我的
 
-- [ ] `GET /me` 含 `learnDaysCount`（足迹按日去重）
+- [ ] `GET /me` 含 `learnDaysCount`（来自 `user_reading_daily` 按日去重，与热力图同源）
 - [ ] hero 三列：足迹 / 收藏 / 学习天
 
 ### SCREEN10-11 会员与登录

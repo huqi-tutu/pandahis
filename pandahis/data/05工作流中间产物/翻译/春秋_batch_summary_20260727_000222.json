@@ -1,0 +1,107 @@
+{
+  "stamp": "20260727_000222",
+  "dynasty": "春秋",
+  "pending_start": 16,
+  "ok": 10,
+  "routed": 0,
+  "skip": 0,
+  "err": 6,
+  "results": [
+    {
+      "id": "GLBL_00361",
+      "name": "有若",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00421",
+      "name": "管仲",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00504",
+      "name": "司马穰苴",
+      "status": "error",
+      "rc": 1
+    },
+    {
+      "id": "GLBL_00702",
+      "name": "卫献公",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00704",
+      "name": "宋文公",
+      "status": "error",
+      "rc": 1
+    },
+    {
+      "id": "GLBL_00710",
+      "name": "晋平公",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00712",
+      "name": "晋灵公",
+      "status": "error",
+      "rc": 1
+    },
+    {
+      "id": "GLBL_00713",
+      "name": "晋襄公",
+      "status": "error",
+      "rc": 1
+    },
+    {
+      "id": "GLBL_00718",
+      "name": "楚灵王",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00725",
+      "name": "蔡昭侯",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00735",
+      "name": "郑灵公",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00741",
+      "name": "陈成公",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00752",
+      "name": "鲁成公",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00761",
+      "name": "齐孝公",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00763",
+      "name": "齐庄公",
+      "status": "error",
+      "rc": 1
+    },
+    {
+      "id": "GLBL_00775",
+      "name": "齐顷公",
+      "status": "error",
+      "rc": 1
+    }
+  ]
+}

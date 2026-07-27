@@ -1,7 +1,7 @@
 /**
  * 关系图谱自适应紧凑布局：几何最小间距 + 碰撞外推 + 二分压缩（零重叠前提下尽量缩短连线）。
  */
-import type { ApiGraphEdge, ApiGraphNode } from './f6-graph-adapter'
+import type { GraphEdge, GraphNode } from './graph-types'
 
 export type LayoutPoint = { x: number; y: number }
 
@@ -10,11 +10,11 @@ export type LayoutViewport = {
   height?: number
 }
 
-/** 与 F6 defaultNode / toF6GraphData 中的 size 对齐 */
+/** 与 relation-graph-canvas 绘制半径一致 */
 export const LAYOUT_NODE_R = {
-  center: 32,
-  category: 26,
-  person: 23,
+  center: 28,
+  category: 24,
+  person: 22,
 } as const
 
 type Pos = LayoutPoint & {
@@ -71,7 +71,7 @@ function parseExtraGroup(extraJson?: string): string {
   }
 }
 
-function isCategoryNode(meta?: ApiGraphNode): boolean {
+function isCategoryNode(meta?: GraphNode): boolean {
   if (!meta) return false
   if (meta.type === 'category') return true
   if (String(meta.key || '').startsWith('cat_')) return true
@@ -86,14 +86,14 @@ function isCategoryNode(meta?: ApiGraphNode): boolean {
   return false
 }
 
-function childrenOf(parentKey: string, edges: ApiGraphEdge[]): string[] {
+function childrenOf(parentKey: string, edges: GraphEdge[]): string[] {
   return (edges || [])
     .filter((e) => e.fromKey === parentKey)
     .map((e) => e.toKey)
     .sort()
 }
 
-function buildParentMap(centerKey: string, edges: ApiGraphEdge[]): Map<string, string> {
+function buildParentMap(centerKey: string, edges: GraphEdge[]): Map<string, string> {
   const parent = new Map<string, string>()
   const adj = new Map<string, string[]>()
   for (const e of edges || []) {
@@ -114,7 +114,7 @@ function buildParentMap(centerKey: string, edges: ApiGraphEdge[]): Map<string, s
   return parent
 }
 
-function buildChildrenMap(edges: ApiGraphEdge[]): Map<string, string[]> {
+function buildChildrenMap(edges: GraphEdge[]): Map<string, string[]> {
   const m = new Map<string, string[]>()
   for (const e of edges || []) {
     if (!m.has(e.fromKey)) m.set(e.fromKey, [])
@@ -126,8 +126,8 @@ function buildChildrenMap(edges: ApiGraphEdge[]): Map<string, string[]> {
 
 function analyzeLayoutMetrics(
   centerKey: string,
-  nodes: ApiGraphNode[],
-  edges: ApiGraphEdge[]
+  nodes: GraphNode[],
+  edges: GraphEdge[]
 ): LayoutMetrics {
   let maxSiblings = 1
   const seenParents = new Set<string>()
@@ -310,8 +310,8 @@ function compactToMinimumScale(positions: Pos[], centerKey: string): number {
 
 function subtreeWeight(
   key: string,
-  edges: ApiGraphEdge[],
-  nodeMap: Map<string, ApiGraphNode>,
+  edges: GraphEdge[],
+  nodeMap: Map<string, GraphNode>,
   cache = new Map<string, number>()
 ): number {
   if (cache.has(key)) return cache.get(key)!
@@ -330,7 +330,7 @@ function subtreeWeight(
 
 function addPos(
   posMap: Map<string, Pos>,
-  meta: ApiGraphNode,
+  meta: GraphNode,
   x: number,
   y: number,
   depth: number,
@@ -376,8 +376,8 @@ function placeSubtree(
   angleEnd: number,
   linkLen: number,
   depth: number,
-  edges: ApiGraphEdge[],
-  nodeMap: Map<string, ApiGraphNode>,
+  edges: GraphEdge[],
+  nodeMap: Map<string, GraphNode>,
   posMap: Map<string, Pos>
 ) {
   const meta = nodeMap.get(key)
@@ -408,9 +408,9 @@ function placeSubtree(
 }
 
 function layoutCluster(
-  catMeta: ApiGraphNode,
-  edges: ApiGraphEdge[],
-  nodeMap: Map<string, ApiGraphNode>,
+  catMeta: GraphNode,
+  edges: GraphEdge[],
+  nodeMap: Map<string, GraphNode>,
   posMap: Map<string, Pos>,
   metrics: LayoutMetrics
 ) {
@@ -450,8 +450,8 @@ function layoutCluster(
 
 function buildPosList(
   centerKey: string,
-  nodes: ApiGraphNode[],
-  edges: ApiGraphEdge[]
+  nodes: GraphNode[],
+  edges: GraphEdge[]
 ): Pos[] {
   const nodeMap = new Map(nodes.map((n) => [n.key, n]))
   const metrics = analyzeLayoutMetrics(centerKey, nodes, edges)
@@ -463,7 +463,7 @@ function buildPosList(
 
   const categoryNodes = CATEGORY_ORDER.map((g) =>
     nodes.find((n) => isCategoryNode(n) && normalizeGroupName(String(n.name || '')) === g)
-  ).filter((n): n is ApiGraphNode => n != null)
+  ).filter((n): n is GraphNode => n != null)
 
   for (const cat of categoryNodes) {
     layoutCluster(cat, edges, nodeMap, posMap, metrics)
@@ -486,8 +486,8 @@ function buildPosList(
 /** 计算以 centerKey 为原点的节点坐标（F6 fitView 会自动居中） */
 export function computeMindmapPositions(
   centerKey: string,
-  nodes: ApiGraphNode[],
-  edges: ApiGraphEdge[],
+  nodes: GraphNode[],
+  edges: GraphEdge[],
   _viewport?: LayoutViewport
 ): Map<string, LayoutPoint> {
   const positions = buildPosList(centerKey, nodes, edges)
@@ -501,8 +501,8 @@ export function computeMindmapPositions(
 /** 检测布局是否存在节点重叠（测试用） */
 export function hasNodeOverlap(
   centerKey: string,
-  nodes: ApiGraphNode[],
-  edges: ApiGraphEdge[]
+  nodes: GraphNode[],
+  edges: GraphEdge[]
 ): boolean {
   const positions = buildPosList(centerKey, nodes, edges)
   return hasAnyOverlap(positions)
@@ -511,8 +511,8 @@ export function hasNodeOverlap(
 /** 布局紧凑度指标（测试用）：非中心节点到原点的最大距离 */
 export function layoutMaxRadius(
   centerKey: string,
-  nodes: ApiGraphNode[],
-  edges: ApiGraphEdge[]
+  nodes: GraphNode[],
+  edges: GraphEdge[]
 ): number {
   const positions = computeMindmapPositions(centerKey, nodes, edges)
   let maxR = 0

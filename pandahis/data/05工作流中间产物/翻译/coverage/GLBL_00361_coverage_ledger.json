@@ -1,0 +1,67 @@
+{
+  "schema": "translate-coverage-ledger/v1",
+  "史略ID": "GLBL_00361",
+  "updated_at": "2026-07-27T00:04:38.714667+00:00",
+  "entries": {
+    "M001": {
+      "status": "conveyed",
+      "claim_fp": "99b9475f5a90c650",
+      "checked_at": "2026-07-27T00:04:20.555719+00:00",
+      "note": "直接提及"
+    },
+    "M002": {
+      "status": "conveyed",
+      "claim_fp": "d9fcc44edb674267",
+      "checked_at": "2026-07-27T00:04:20.555727+00:00",
+      "note": "完整引用原文并白话解读"
+    },
+    "M003": {
+      "status": "conveyed",
+      "claim_fp": "e606374a69fbeb55",
+      "checked_at": "2026-07-27T00:04:20.555730+00:00",
+      "note": "传达了思念、长相相似、替代孔子位置"
+    },
+    "M004": {
+      "status": "conveyed",
+      "claim_fp": "96111c6d4f86fe51",
+      "checked_at": "2026-07-27T00:04:20.555732+00:00",
+      "note": "完整传达了孔子预测下雨而后来未下的质问"
+    },
+    "M005": {
+      "status": "conveyed",
+      "claim_fp": "22232e025105fc3c",
+      "checked_at": "2026-07-27T00:04:38.714629+00:00",
+      "note": "直接提及"
+    },
+    "M006": {
+      "status": "conveyed",
+      "claim_fp": "c46eeacb41e4d5fd",
+      "checked_at": "2026-07-27T00:04:20.555738+00:00",
+      "note": "求情即要求免去此行，虽未明说但语境清晰"
+    },
+    "M007": {
+      "status": "conveyed",
+      "claim_fp": "c26c786c9af36607",
+      "checked_at": "2026-07-27T00:04:20.555741+00:00",
+      "note": "直接转述，语义完整对应母本信息。"
+    },
+    "M008": {
+      "status": "conveyed",
+      "claim_fp": "ddd4ddfb978f31ae",
+      "checked_at": "2026-07-27T00:04:20.555749+00:00",
+      "note": "直接对应“已而果然”。"
+    },
+    "M009": {
+      "status": "conveyed",
+      "claim_fp": "adb3b79a1f5ad9eb",
+      "checked_at": "2026-07-27T00:04:20.555752+00:00",
+      "note": "弟子反问有若，有若沉默无法回答，信息完整。"
+    },
+    "M010": {
+      "status": "conveyed",
+      "claim_fp": "308959b3d41b2dd8",
+      "checked_at": "2026-07-27T00:04:20.555755+00:00",
+      "note": "直接引用原文并白话解释，信息完整传达。"
+    }
+  }
+}

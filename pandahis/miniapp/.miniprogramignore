@@ -8,3 +8,4 @@ tsconfig.build.json
 typings/**
 README.md
 **/.DS_Store
+**/*.map
