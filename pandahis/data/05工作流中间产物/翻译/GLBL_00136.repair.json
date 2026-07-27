@@ -1,0 +1,32 @@
+{
+  "schema": "qa_repair_ticket/v1",
+  "pipeline": "translate",
+  "entry_id": "GLBL_00136",
+  "entry_name": "郑桓公",
+  "stage": "verify_final",
+  "fail_count": 3,
+  "errors": [
+    "外部补全出处未出现在译文中: 《史记·夏本纪》",
+    "外部补全出处未出现在译文中: 《史记·夏本纪》",
+    "外部补全出处未出现在译文中: 《史记·夏本纪》",
+    "外部补全出处未出现在译文中: 《史记·夏本纪》",
+    "外部补全出处未出现在译文中: 《史记·夏本纪》",
+    "外部补全出处未出现在译文中: 《史记·夏本纪》",
+    "外部补全出处未出现在译文中: 《史记·夏本纪》",
+    "外部补全出处未出现在译文中: 《史记·夏本纪》"
+  ],
+  "plan": {
+    "root_cause": "RETRY_EXHAUSTED",
+    "disposition": "needs_human",
+    "action": "human_review",
+    "structured_prompt": "【熔断】已重试 3 次，请人工查看 repair_ticket 与 verify 日志。",
+    "refine_scope": "",
+    "route_to": "",
+    "next_command": "",
+    "invalidate": [],
+    "max_retries": 2,
+    "extra": {}
+  },
+  "feedback": "【熔断】已重试 3 次，请人工查看 repair_ticket 与 verify 日志。\n\n---\n【原始错误】\n外部补全出处未出现在译文中: 《史记·夏本纪》\n外部补全出处未出现在译文中: 《史记·夏本纪》\n外部补全出处未出现在译文中: 《史记·夏本纪》\n外部补全出处未出现在译文中: 《史记·夏本纪》\n外部补全出处未出现在译文中: 《史记·夏本纪》\n外部补全出处未出现在译文中: 《史记·夏本纪》\n外部补全出处未出现在译文中: 《史记·夏本纪》\n外部补全出处未出现在译文中: 《史记·夏本纪》",
+  "updated_at": "2026-07-24T15:29:50Z"
+}

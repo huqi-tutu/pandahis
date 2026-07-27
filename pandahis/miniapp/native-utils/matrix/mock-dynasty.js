@@ -34,10 +34,11 @@ const TYPE_TO_PRIORITY = {
   'ghost':   'p3',   // 背景性/淡   → P3 50%
 }
 
-/** 时间轴刻度：公元前用 -XX，比 BCE/前 更省宽 */
+const { formatHistoryYear, formatYearRange } = require('../year-format')
+
+/** 时间轴刻度：公元前用 前XX */
 function fmtAxisYear(y) {
-  if (y < 0) return `-${Math.abs(y)}`
-  return String(y)
+  return formatHistoryYear(y)
 }
 
 /* ═══════════════════════════════════════════════════
@@ -128,7 +129,7 @@ function getConcurrentItems(selfCiv, selfTitle, startYear, endYear) {
 const DYNASTY_DB = {
   /* ════ 五帝 ════ */
   '五帝': {
-    title: '五帝', civ: '华夏', range: '约-2698–-2205', startYear: -2698, endYear: -2205,
+    title: '五帝', civ: '华夏', range: '约前2698–前2205', startYear: -2698, endYear: -2205,
     capital: '有熊（传说）',
     intro: '五帝时代（约-2698—-2205）是华夏文明的起源期。黄帝统一各部落，奠定华夏族基础；颛顼、帝喾承续治理；尧舜以禅让传位，开创了"天下为公"的政治理想。这一时期的诸多创举——造字、制乐、作历、论医、养蚕——被视为中华文明的源头。',
     next: { title: '夏 · 阳城', dynasty: '夏' },
@@ -712,7 +713,7 @@ function buildDynastyFromEmperorData(dynastyName) {
   return {
     title: key,
     civ,
-    range: `${startYear}–${endYear}`,
+    range: formatYearRange(startYear, endYear, '–'),
     startYear,
     endYear,
     intro: '',
@@ -764,7 +765,7 @@ function buildSwimData(dynastyName) {
       ? allBars.slice(MAX_VISIBLE).map(bar => ({
           title:     bar.title,
           type:      bar.type || '',
-          timeRange: `${bar.start}–${bar.end}`,
+          timeRange: formatYearRange(bar.start, bar.end, '–'),
         }))
       : []
 

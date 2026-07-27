@@ -6,8 +6,9 @@
    正文/UI     → PingFang SC / -apple-system / sans-serif
    时间/数字   → SF Mono / Menlo / monospace
    页面底色  #F8F6F2 · 卡片底 #FFFFFF · 分割线 #EDEAE6
-   类目色（v3 绢帛六色固定映射）：君王/宦官=赭石 · 宗戚/蕃祚=绾红 ·
-   文臣/论著=黛青 · 武将/庶众=秋香 · 事略=苔绿 · 典制=藕合
+   类目色（v3 绢帛六色 · 按 11 泳道顺序循环 c1→c6）：
+   君王=赭石 · 诸侯=黛青 · 宗戚=秋香 · 文臣=藕合 · 武将=苔绿 · 事略=绾红
+   典制=赭石 · 论著=黛青 · 宦官=秋香 · 庶众=藕合 · 蕃祚=苔绿
 ══════════════════════════════════════════ */
 
 .page-shell {
@@ -533,15 +534,16 @@ $cat-index-w: 28rpx;
 
 /* 分类 Badge 配色（仅标签，非胶囊底） */
 .dyn-canvas-chip--cat-junji .dyn-canvas-chip-tag { background: #ECE4DB; color: #7B573C; }
-.dyn-canvas-chip--cat-zongqi .dyn-canvas-chip-tag { background: #ECE2DE; color: #7D514D; }
-.dyn-canvas-chip--cat-wenchen .dyn-canvas-chip-tag { background: #E3E7E6; color: #4B6877; }
-.dyn-canvas-chip--cat-wujiang .dyn-canvas-chip-tag { background: #EFEADD; color: #8D7745; }
-.dyn-canvas-chip--cat-shilue .dyn-canvas-chip-tag { background: #E7E7DF; color: #5F6951; }
-.dyn-canvas-chip--cat-dianzhi .dyn-canvas-chip-tag { background: #EBE4E4; color: #755C6D; }
+.dyn-canvas-chip--cat-zhuhou .dyn-canvas-chip-tag { background: #E3E7E6; color: #4B6877; }
+.dyn-canvas-chip--cat-zongqi .dyn-canvas-chip-tag { background: #EFEADD; color: #8D7745; }
+.dyn-canvas-chip--cat-wenchen .dyn-canvas-chip-tag { background: #EBE4E4; color: #755C6D; }
+.dyn-canvas-chip--cat-wujiang .dyn-canvas-chip-tag { background: #E7E7DF; color: #5F6951; }
+.dyn-canvas-chip--cat-shilue .dyn-canvas-chip-tag { background: #ECE2DE; color: #7D514D; }
+.dyn-canvas-chip--cat-dianzhi .dyn-canvas-chip-tag { background: #ECE4DB; color: #7B573C; }
 .dyn-canvas-chip--cat-lunzhu .dyn-canvas-chip-tag { background: #E3E7E6; color: #4B6877; }
-.dyn-canvas-chip--cat-huanguan .dyn-canvas-chip-tag { background: #ECE4DB; color: #7B573C; }
-.dyn-canvas-chip--cat-shuzhong .dyn-canvas-chip-tag { background: #EFEADD; color: #8D7745; }
-.dyn-canvas-chip--cat-fanzhu .dyn-canvas-chip-tag { background: #ECE2DE; color: #7D514D; }
+.dyn-canvas-chip--cat-huanguan .dyn-canvas-chip-tag { background: #EFEADD; color: #8D7745; }
+.dyn-canvas-chip--cat-shuzhong .dyn-canvas-chip-tag { background: #EBE4E4; color: #755C6D; }
+.dyn-canvas-chip--cat-fanzhu .dyn-canvas-chip-tag { background: #E7E7DF; color: #5F6951; }
 
 /* 优先级：统一尺寸，仅透明度 + 阴影强弱 */
 .dyn-canvas-chip--p0 {
@@ -1250,15 +1252,16 @@ $cat-index-w: 28rpx;
 }
 
 .more-overlay-count-tag--cat-junji { background: #ECE4DB; color: #7B573C; }
-.more-overlay-count-tag--cat-zongqi { background: #ECE2DE; color: #7D514D; }
-.more-overlay-count-tag--cat-wenchen { background: #E3E7E6; color: #4B6877; }
-.more-overlay-count-tag--cat-wujiang { background: #EFEADD; color: #8D7745; }
-.more-overlay-count-tag--cat-shilue { background: #E7E7DF; color: #5F6951; }
-.more-overlay-count-tag--cat-dianzhi { background: #EBE4E4; color: #755C6D; }
+.more-overlay-count-tag--cat-zhuhou { background: #E3E7E6; color: #4B6877; }
+.more-overlay-count-tag--cat-zongqi { background: #EFEADD; color: #8D7745; }
+.more-overlay-count-tag--cat-wenchen { background: #EBE4E4; color: #755C6D; }
+.more-overlay-count-tag--cat-wujiang { background: #E7E7DF; color: #5F6951; }
+.more-overlay-count-tag--cat-shilue { background: #ECE2DE; color: #7D514D; }
+.more-overlay-count-tag--cat-dianzhi { background: #ECE4DB; color: #7B573C; }
 .more-overlay-count-tag--cat-lunzhu { background: #E3E7E6; color: #4B6877; }
-.more-overlay-count-tag--cat-huanguan { background: #ECE4DB; color: #7B573C; }
-.more-overlay-count-tag--cat-shuzhong { background: #EFEADD; color: #8D7745; }
-.more-overlay-count-tag--cat-fanzhu { background: #ECE2DE; color: #7D514D; }
+.more-overlay-count-tag--cat-huanguan { background: #EFEADD; color: #8D7745; }
+.more-overlay-count-tag--cat-shuzhong { background: #EBE4E4; color: #755C6D; }
+.more-overlay-count-tag--cat-fanzhu { background: #E7E7DF; color: #5F6951; }
 
 .more-overlay-close {
   width: 48rpx;
@@ -1350,15 +1353,16 @@ $cat-index-w: 28rpx;
 }
 
 .more-overlay-item-tag--cat-junji { background: #ECE4DB; color: #7B573C; }
-.more-overlay-item-tag--cat-zongqi { background: #ECE2DE; color: #7D514D; }
-.more-overlay-item-tag--cat-wenchen { background: #E3E7E6; color: #4B6877; }
-.more-overlay-item-tag--cat-wujiang { background: #EFEADD; color: #8D7745; }
-.more-overlay-item-tag--cat-shilue { background: #E7E7DF; color: #5F6951; }
-.more-overlay-item-tag--cat-dianzhi { background: #EBE4E4; color: #755C6D; }
+.more-overlay-item-tag--cat-zhuhou { background: #E3E7E6; color: #4B6877; }
+.more-overlay-item-tag--cat-zongqi { background: #EFEADD; color: #8D7745; }
+.more-overlay-item-tag--cat-wenchen { background: #EBE4E4; color: #755C6D; }
+.more-overlay-item-tag--cat-wujiang { background: #E7E7DF; color: #5F6951; }
+.more-overlay-item-tag--cat-shilue { background: #ECE2DE; color: #7D514D; }
+.more-overlay-item-tag--cat-dianzhi { background: #ECE4DB; color: #7B573C; }
 .more-overlay-item-tag--cat-lunzhu { background: #E3E7E6; color: #4B6877; }
-.more-overlay-item-tag--cat-huanguan { background: #ECE4DB; color: #7B573C; }
-.more-overlay-item-tag--cat-shuzhong { background: #EFEADD; color: #8D7745; }
-.more-overlay-item-tag--cat-fanzhu { background: #ECE2DE; color: #7D514D; }
+.more-overlay-item-tag--cat-huanguan { background: #EFEADD; color: #8D7745; }
+.more-overlay-item-tag--cat-shuzhong { background: #EBE4E4; color: #755C6D; }
+.more-overlay-item-tag--cat-fanzhu { background: #E7E7DF; color: #5F6951; }
 
 .more-overlay-item-range {
   font-family: 'SF Mono', 'Menlo', monospace;
@@ -1396,7 +1400,7 @@ $cat-index-w: 28rpx;
 
 .continuation-cue--bottom {
   left: 50%;
-  bottom: calc(108rpx + env(safe-area-inset-bottom));
+  bottom: calc(48rpx + env(safe-area-inset-bottom));
   transform: translate(-50%, 6rpx);
 }
 
@@ -1440,49 +1444,131 @@ $cat-index-w: 28rpx;
   }
 }
 
-/* ── 底部优先级导航 ── */
-.priority-dock {
+/* ── 优先级辅助点 + 菜单 ── */
+.priority-fab-wrap {
   position: fixed;
-  left: 0;
-  right: 0;
+  right: 64rpx;
   bottom: calc(24rpx + env(safe-area-inset-bottom));
   z-index: 120;
-  display: flex;
-  justify-content: center;
   pointer-events: none;
 }
 
-.priority-tabs {
-  display: flex;
-  flex-direction: row;
-  gap: 6rpx;
-  padding: 8rpx;
-  border-radius: 28rpx;
-  background: rgba(255, 255, 255, 0.92);
-  border: 1rpx solid rgba(237, 234, 230, 0.92);
-  box-shadow: 0 12rpx 36rpx rgba(47, 41, 38, 0.14);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  pointer-events: auto;
-}
-
-.priority-tab {
-  min-width: 86rpx;
-  height: 52rpx;
-  border-radius: 22rpx;
+.priority-fab {
+  width: auto;
+  min-width: 88rpx;
+  height: 64rpx;
+  padding: 0 20rpx 0 24rpx;
+  border-radius: 999rpx;
+  background: rgba(236, 228, 219, 0.58);
+  border: 1rpx solid rgba(74, 63, 63, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'SF Mono', 'Menlo', monospace;
-  font-size: 22rpx;
-  font-weight: 700;
-  color: #8A8177;
+  pointer-events: auto;
+  box-shadow: 0 4rpx 16rpx rgba(74, 63, 63, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
-.priority-tab.active {
-  color: #FFFFFF;
-  background: #4A3F3F;
-  box-shadow: 0 6rpx 16rpx rgba(74, 63, 63, 0.22);
+.priority-fab:active {
+  transform: scale(0.96) translateY(1rpx);
+  box-shadow: 0 2rpx 8rpx rgba(74, 63, 63, 0.05);
+}
+
+.priority-fab--open {
+  background: rgba(236, 228, 219, 0.72);
+  box-shadow: 0 6rpx 20rpx rgba(74, 63, 63, 0.08);
+}
+
+.priority-fab-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 8rpx;
+}
+
+.priority-fab-label {
+  font-size: 22rpx;
+  font-weight: 600;
+  color: #6A6258;
+  letter-spacing: 1rpx;
+  line-height: 1.2;
+  font-family: 'Noto Serif SC', 'Songti SC', serif;
+  white-space: nowrap;
+}
+
+/* 复用首页 kaihe 箭头逻辑：默认朝上（菜单展开），--down 朝下（菜单收起） */
+.priority-fab-arrow {
+  width: 14rpx;
+  height: 14rpx;
+  flex-shrink: 0;
+  transition: transform 200ms ease;
+  transform: rotate(180deg);
+}
+
+.priority-fab-arrow--down {
+  transform: rotate(0deg);
+}
+
+.priority-menu-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 119;
+  background: rgba(248, 246, 242, 0.28);
+}
+
+.priority-menu {
+  position: fixed;
+  right: 64rpx;
+  bottom: calc(104rpx + env(safe-area-inset-bottom));
+  z-index: 121;
+  min-width: 208rpx;
+  padding: 8rpx;
+  border-radius: 12rpx;
+  background: rgba(248, 246, 242, 0.78);
+  border: 1rpx solid rgba(74, 63, 63, 0.1);
+  box-shadow: 0 8rpx 32rpx rgba(74, 63, 63, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.priority-menu-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16rpx;
+  padding: 16rpx 20rpx;
+  border-radius: 8rpx;
+  transition: background-color 0.2s ease;
+}
+
+.priority-menu-item:active {
+  background: rgba(74, 63, 63, 0.06);
+}
+
+.priority-menu-item--active {
+  background: rgba(42, 122, 93, 0.08);
+}
+
+.priority-menu-item-label {
+  font-size: 26rpx;
+  font-weight: 500;
+  color: #343A40;
+  font-family: 'Noto Serif SC', 'Songti SC', serif;
+}
+
+.priority-menu-item--active .priority-menu-item-label {
+  color: #2A7A5D;
+  font-weight: 600;
+}
+
+.priority-menu-item-check {
+  font-size: 22rpx;
+  color: #2A7A5D;
+  flex-shrink: 0;
 }
 
 /* ── 史略胶囊长按浮窗：锚点弹出 + 原点缩放收拢 ── */
@@ -1618,15 +1704,16 @@ $cat-index-w: 28rpx;
 }
 
 .chip-tooltip-tag--cat-junji { background: #ECE4DB; color: #7B573C; }
-.chip-tooltip-tag--cat-zongqi { background: #ECE2DE; color: #7D514D; }
-.chip-tooltip-tag--cat-wenchen { background: #E3E7E6; color: #4B6877; }
-.chip-tooltip-tag--cat-wujiang { background: #EFEADD; color: #8D7745; }
-.chip-tooltip-tag--cat-shilue { background: #E7E7DF; color: #5F6951; }
-.chip-tooltip-tag--cat-dianzhi { background: #EBE4E4; color: #755C6D; }
+.chip-tooltip-tag--cat-zhuhou { background: #E3E7E6; color: #4B6877; }
+.chip-tooltip-tag--cat-zongqi { background: #EFEADD; color: #8D7745; }
+.chip-tooltip-tag--cat-wenchen { background: #EBE4E4; color: #755C6D; }
+.chip-tooltip-tag--cat-wujiang { background: #E7E7DF; color: #5F6951; }
+.chip-tooltip-tag--cat-shilue { background: #ECE2DE; color: #7D514D; }
+.chip-tooltip-tag--cat-dianzhi { background: #ECE4DB; color: #7B573C; }
 .chip-tooltip-tag--cat-lunzhu { background: #E3E7E6; color: #4B6877; }
-.chip-tooltip-tag--cat-huanguan { background: #ECE4DB; color: #7B573C; }
-.chip-tooltip-tag--cat-shuzhong { background: #EFEADD; color: #8D7745; }
-.chip-tooltip-tag--cat-fanzhu { background: #ECE2DE; color: #7D514D; }
+.chip-tooltip-tag--cat-huanguan { background: #EFEADD; color: #8D7745; }
+.chip-tooltip-tag--cat-shuzhong { background: #EBE4E4; color: #755C6D; }
+.chip-tooltip-tag--cat-fanzhu { background: #E7E7DF; color: #5F6951; }
 
 .chip-tooltip-time {
   flex-shrink: 0;
@@ -1687,15 +1774,16 @@ $cat-index-w: 28rpx;
 }
 
 .chip-tooltip-foot-highlight--cat-junji { color: #7B573C; }
-.chip-tooltip-foot-highlight--cat-zongqi { color: #7D514D; }
-.chip-tooltip-foot-highlight--cat-wenchen { color: #4B6877; }
-.chip-tooltip-foot-highlight--cat-wujiang { color: #8D7745; }
-.chip-tooltip-foot-highlight--cat-shilue { color: #5F6951; }
-.chip-tooltip-foot-highlight--cat-dianzhi { color: #755C6D; }
+.chip-tooltip-foot-highlight--cat-zhuhou { color: #4B6877; }
+.chip-tooltip-foot-highlight--cat-zongqi { color: #8D7745; }
+.chip-tooltip-foot-highlight--cat-wenchen { color: #755C6D; }
+.chip-tooltip-foot-highlight--cat-wujiang { color: #5F6951; }
+.chip-tooltip-foot-highlight--cat-shilue { color: #7D514D; }
+.chip-tooltip-foot-highlight--cat-dianzhi { color: #7B573C; }
 .chip-tooltip-foot-highlight--cat-lunzhu { color: #4B6877; }
-.chip-tooltip-foot-highlight--cat-huanguan { color: #7B573C; }
-.chip-tooltip-foot-highlight--cat-shuzhong { color: #8D7745; }
-.chip-tooltip-foot-highlight--cat-fanzhu { color: #7D514D; }
+.chip-tooltip-foot-highlight--cat-huanguan { color: #8D7745; }
+.chip-tooltip-foot-highlight--cat-shuzhong { color: #755C6D; }
+.chip-tooltip-foot-highlight--cat-fanzhu { color: #5F6951; }
 
 .chip-tooltip-foot-reason {
   flex: 1;

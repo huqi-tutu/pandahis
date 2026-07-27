@@ -1,0 +1,307 @@
+{
+  "dynasty": "商",
+  "completed": [
+    {
+      "glbl": "GLBL_00044",
+      "name": "太戊",
+      "file": "太戊关系表.json",
+      "count": 14,
+      "verified_at": "2026-07-23T23:36Z"
+    },
+    {
+      "glbl": "GLBL_00045",
+      "name": "太甲",
+      "file": "太甲关系表.json",
+      "count": 6,
+      "verified_at": "2026-07-23T23:36Z"
+    },
+    {
+      "glbl": "GLBL_00046",
+      "name": "契",
+      "file": "契关系表.json",
+      "count": 17,
+      "verified_at": "2026-07-23T23:36Z"
+    },
+    {
+      "glbl": "GLBL_00054",
+      "name": "小乙",
+      "file": "小乙关系表.json",
+      "count": 4,
+      "verified_at": "2026-07-23T23:36Z"
+    },
+    {
+      "glbl": "GLBL_00055",
+      "name": "小辛",
+      "file": "小辛关系表.json",
+      "count": 2,
+      "verified_at": "2026-07-23T23:36Z"
+    },
+    {
+      "glbl": "GLBL_00058",
+      "name": "帝辛（纣）",
+      "file": "帝辛（纣）关系表.json",
+      "count": 22,
+      "verified_at": "2026-07-23T23:36Z"
+    },
+    {
+      "glbl": "GLBL_00059",
+      "name": "廪辛",
+      "file": "廪辛关系表.json",
+      "count": 2,
+      "verified_at": "2026-07-23T23:36Z"
+    },
+    {
+      "glbl": "GLBL_00060",
+      "name": "成汤",
+      "file": "成汤关系表.json",
+      "count": 16,
+      "verified_at": "2026-07-23T23:36Z"
+    },
+    {
+      "glbl": "GLBL_00073",
+      "name": "武丁",
+      "file": "武丁关系表.json",
+      "count": 6,
+      "verified_at": "2026-07-23T23:36Z"
+    },
+    {
+      "glbl": "GLBL_00074",
+      "name": "武乙",
+      "file": "武乙关系表.json",
+      "count": 7,
+      "verified_at": "2026-07-23T23:36Z"
+    },
+    {
+      "glbl": "GLBL_00086",
+      "name": "沃丁",
+      "file": "沃丁关系表.json",
+      "count": 3,
+      "verified_at": "2026-07-23T23:36Z"
+    },
+    {
+      "glbl": "GLBL_00092",
+      "name": "盘庚",
+      "file": "盘庚关系表.json",
+      "count": 4,
+      "verified_at": "2026-07-23T23:36Z"
+    },
+    {
+      "glbl": "GLBL_00093",
+      "name": "祖乙",
+      "file": "祖乙关系表.json",
+      "count": 2,
+      "verified_at": "2026-07-23T23:36Z"
+    },
+    {
+      "glbl": "GLBL_00094",
+      "name": "祖庚",
+      "file": "祖庚关系表.json",
+      "count": 5,
+      "verified_at": "2026-07-23T23:36Z"
+    },
+    {
+      "glbl": "GLBL_00095",
+      "name": "祖甲",
+      "file": "祖甲关系表.json",
+      "count": 7,
+      "verified_at": "2026-07-23T23:37Z"
+    },
+    {
+      "glbl": "GLBL_00138",
+      "name": "阳甲",
+      "file": "阳甲关系表.json",
+      "count": 2,
+      "verified_at": "2026-07-23T23:38Z"
+    },
+    {
+      "glbl": "GLBL_00659",
+      "name": "外丙",
+      "file": "外丙关系表.json",
+      "count": 5,
+      "verified_at": "2026-07-23T23:38Z"
+    },
+    {
+      "glbl": "GLBL_00660",
+      "name": "仲壬",
+      "file": "仲壬关系表.json",
+      "count": 8,
+      "verified_at": "2026-07-23T23:39Z"
+    },
+    {
+      "glbl": "GLBL_00661",
+      "name": "太庚",
+      "file": "太庚关系表.json",
+      "count": 3,
+      "verified_at": "2026-07-23T23:39Z"
+    },
+    {
+      "glbl": "GLBL_00662",
+      "name": "小甲",
+      "file": "小甲关系表.json",
+      "count": 3,
+      "verified_at": "2026-07-23T23:40Z"
+    },
+    {
+      "glbl": "GLBL_00663",
+      "name": "雍己",
+      "file": "雍己关系表.json",
+      "count": 4,
+      "verified_at": "2026-07-23T23:40Z"
+    },
+    {
+      "glbl": "GLBL_00664",
+      "name": "仲丁",
+      "file": "仲丁关系表.json",
+      "count": 3,
+      "verified_at": "2026-07-23T23:40Z"
+    },
+    {
+      "glbl": "GLBL_00665",
+      "name": "外壬",
+      "file": "外壬关系表.json",
+      "count": 4,
+      "verified_at": "2026-07-23T23:41Z"
+    },
+    {
+      "glbl": "GLBL_00666",
+      "name": "河亶甲",
+      "file": "河亶甲关系表.json",
+      "count": 8,
+      "verified_at": "2026-07-23T23:41Z"
+    },
+    {
+      "glbl": "GLBL_00667",
+      "name": "祖辛",
+      "file": "祖辛关系表.json",
+      "count": 4,
+      "verified_at": "2026-07-23T23:41Z"
+    },
+    {
+      "glbl": "GLBL_00668",
+      "name": "沃甲",
+      "file": "沃甲关系表.json",
+      "count": 8,
+      "verified_at": "2026-07-23T23:42Z"
+    },
+    {
+      "glbl": "GLBL_00669",
+      "name": "祖丁",
+      "file": "祖丁关系表.json",
+      "count": 2,
+      "verified_at": "2026-07-23T23:42Z"
+    },
+    {
+      "glbl": "GLBL_00670",
+      "name": "南庚",
+      "file": "南庚关系表.json",
+      "count": 1,
+      "verified_at": "2026-07-23T23:42Z"
+    },
+    {
+      "glbl": "GLBL_00671",
+      "name": "康丁",
+      "file": "康丁关系表.json",
+      "count": 4,
+      "verified_at": "2026-07-23T23:43Z"
+    },
+    {
+      "glbl": "GLBL_00672",
+      "name": "文丁",
+      "file": "文丁关系表.json",
+      "count": 4,
+      "verified_at": "2026-07-23T23:43Z"
+    },
+    {
+      "glbl": "GLBL_00673",
+      "name": "帝乙",
+      "file": "帝乙关系表.json",
+      "count": 9,
+      "verified_at": "2026-07-23T23:44Z"
+    },
+    {
+      "glbl": "GLBL_00674",
+      "name": "相土",
+      "file": "相土关系表.json",
+      "count": 4,
+      "verified_at": "2026-07-23T23:45Z"
+    },
+    {
+      "glbl": "GLBL_00675",
+      "name": "冥",
+      "file": "冥关系表.json",
+      "count": 4,
+      "verified_at": "2026-07-23T23:46Z"
+    },
+    {
+      "glbl": "GLBL_00676",
+      "name": "王亥",
+      "file": "王亥关系表.json",
+      "count": 3,
+      "verified_at": "2026-07-23T23:46Z"
+    },
+    {
+      "glbl": "GLBL_00677",
+      "name": "妇好",
+      "file": "妇好关系表.json",
+      "count": 5,
+      "verified_at": "2026-07-23T23:46Z"
+    },
+    {
+      "glbl": "GLBL_00678",
+      "name": "比干",
+      "file": "比干关系表.json",
+      "count": 4,
+      "verified_at": "2026-07-23T23:47Z"
+    },
+    {
+      "glbl": "GLBL_00679",
+      "name": "微子启",
+      "file": "微子启关系表.json",
+      "count": 9,
+      "verified_at": "2026-07-23T23:48Z"
+    },
+    {
+      "glbl": "GLBL_00680",
+      "name": "箕子",
+      "file": "箕子关系表.json",
+      "count": 3,
+      "verified_at": "2026-07-23T23:49Z"
+    },
+    {
+      "glbl": "GLBL_00681",
+      "name": "妲己",
+      "file": "妲己关系表.json",
+      "count": 3,
+      "verified_at": "2026-07-23T23:49Z"
+    },
+    {
+      "glbl": "GLBL_00682",
+      "name": "祖己",
+      "file": "祖己关系表.json",
+      "count": 3,
+      "verified_at": "2026-07-23T23:49Z"
+    },
+    {
+      "glbl": "GLBL_00683",
+      "name": "伊尹",
+      "file": "伊尹关系表.json",
+      "count": 14,
+      "verified_at": "2026-07-23T23:50Z"
+    },
+    {
+      "glbl": "GLBL_00684",
+      "name": "傅说",
+      "file": "傅说关系表.json",
+      "count": 1,
+      "verified_at": "2026-07-23T23:50Z"
+    },
+    {
+      "glbl": "GLBL_00685",
+      "name": "巫咸",
+      "file": "巫咸关系表.json",
+      "count": 3,
+      "verified_at": "2026-07-23T23:50Z"
+    }
+  ],
+  "updated_at": "2026-07-23T23:50:19.212200+00:00"
+}

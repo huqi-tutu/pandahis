@@ -147,7 +147,7 @@ def refine_entry(
 
     extra = (
         f"\n\n## 局部更新 scope: {scope}\n"
-        f"## 用户意见\n{instructions or '按最新规则优化，避免引入与母本重复、压缩碎引号、禁释通识字'}\n"
+        f"## 用户意见\n{instructions or '按最新规则优化：叙事句专名融入白话，「」用于完整摘句/对话/句群；避免与母本重复、禁释通识字'}\n"
         f"## 当前正文片段（待改）\n"
         f"{_intro_paragraphs(detail.split('*参考著作*')[0], 3) if scope == 'intro' else detail[:2500]}\n"
     )

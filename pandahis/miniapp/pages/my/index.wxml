@@ -1,101 +1,91 @@
 <proto-nav title="我的" show-back="{{false}}"></proto-nav>
 
-<scroll-view class="page-my" scroll-y enhanced show-scrollbar="{{false}}" style="padding-top: {{pageTopPadPx}}px;">
-  <view class="hero-section">
-    <view class="hero-bg"></view>
-    <view class="hero-content">
-      <view class="avatar-wrap" wx:if="{{loggedIn}}">
-        <view class="avatar">
-          <image wx:if="{{avatarUrl}}" class="avatar-img" src="{{avatarUrl}}" mode="aspectFill" />
-          <text wx:else class="avatar-text">{{avatarInitial}}</text>
+<view class="page-my-host" style="height: {{pageHeightPx}}px;">
+  <scroll-view
+    id="pageMyScroll"
+    class="page-my"
+    scroll-y="{{scrollEnabled}}"
+    enhanced
+    bounces="{{false}}"
+    show-scrollbar="{{false}}"
+    style="height: {{pageHeightPx}}px; padding-top: {{pageTopPadPx}}px;"
+  >
+    <view id="pageMyContent" class="page-my-content">
+      <view class="hero-section">
+        <view class="hero-bg"></view>
+        <view class="hero-content">
+          <view class="avatar-wrap" wx:if="{{loggedIn}}">
+            <view class="avatar">
+              <image wx:if="{{avatarUrl}}" class="avatar-img" src="{{avatarUrl}}" mode="aspectFill" />
+              <text wx:else class="avatar-text">{{avatarInitial}}</text>
+            </view>
+            <view wx:if="{{isVip}}" class="vip-badge">VIP</view>
+          </view>
+          <view class="avatar-wrap" wx:else bindtap="goLogin">
+            <view class="avatar avatar-guest">
+              <text class="avatar-text">?</text>
+            </view>
+          </view>
+          <view class="user-info" wx:if="{{loggedIn}}">
+            <text class="user-name">{{nickname}}</text>
+            <text class="user-phone">{{phoneLine}}</text>
+          </view>
+          <view class="user-info" wx:else bindtap="goLogin">
+            <text class="user-name">点击登录</text>
+            <text class="user-phone">登录后同步收藏与足迹</text>
+          </view>
+          <view wx:if="{{loggedIn}}" class="edit-btn" bindtap="onEditProfile" aria-role="button">
+            <image class="edit-icon" src="/images/icons/bianji.png" mode="aspectFit" />
+          </view>
         </view>
-        <view wx:if="{{isVip}}" class="vip-badge">VIP</view>
-      </view>
-      <view class="avatar-wrap" wx:else bindtap="goLogin">
-        <view class="avatar avatar-guest">
-          <text class="avatar-text">?</text>
+
+        <view class="stats-row">
+          <view class="stat-item">
+            <text class="stat-num accent">{{learnDays}}</text>
+            <text class="stat-label">学习天</text>
+          </view>
+          <view class="stat-item" bindtap="goFootprints">
+            <text class="stat-num accent">{{footprintCount}}</text>
+            <text class="stat-label">足迹</text>
+          </view>
+          <view class="stat-item" bindtap="goReadCompleted">
+            <text class="stat-num accent">{{readCompleteCount}}</text>
+            <text class="stat-label">读完</text>
+          </view>
+          <view class="stat-item" bindtap="goFavorites">
+            <text class="stat-num accent">{{favoriteCount}}</text>
+            <text class="stat-label">收藏</text>
+          </view>
         </view>
       </view>
-      <view class="user-info" wx:if="{{loggedIn}}">
-        <text class="user-name">{{nickname}}</text>
-        <text class="user-phone">{{phoneLine}}</text>
-      </view>
-      <view class="user-info" wx:else bindtap="goLogin">
-        <text class="user-name">点击登录</text>
-        <text class="user-phone">登录后同步收藏与足迹</text>
-      </view>
-      <view wx:if="{{loggedIn}}" class="edit-btn" bindtap="onEditProfile" aria-role="button">
-        <image class="edit-icon" src="/images/icons/bianji.png" mode="aspectFit" />
+
+      <view class="main">
+        <view wx:if="{{loggedIn}}" class="heatmap-wrap">
+          <reading-heatmap></reading-heatmap>
+        </view>
+
+        <view class="shortcut-card">
+          <view class="shortcut-grid">
+            <view
+              wx:for="{{shortcuts}}"
+              wx:key="id"
+              class="shortcut-item"
+              hover-class="shortcut-item--active"
+              bindtap="onShortcutTap"
+              data-action="{{item.action}}"
+            >
+              <view class="shortcut-icon">
+                <image class="shortcut-icon-img" src="{{item.icon}}" mode="aspectFit" />
+              </view>
+              <text class="shortcut-label">{{item.label}}</text>
+            </view>
+          </view>
+        </view>
+
+        <view wx:if="{{!loggedIn}}" class="logout-wrap">
+          <view class="login-btn" bindtap="goLogin">微信登录</view>
+        </view>
       </view>
     </view>
-
-    <view class="stats-row">
-      <view class="stat-item">
-        <text class="stat-num accent">{{learnDays}}</text>
-        <text class="stat-label">学习天</text>
-      </view>
-      <view class="stat-divider"></view>
-      <view class="stat-item" bindtap="goFootprints">
-        <text class="stat-num accent">{{footprintCount}}</text>
-        <text class="stat-label">足迹</text>
-      </view>
-      <view class="stat-divider"></view>
-      <view class="stat-item" bindtap="goReadCompleted">
-        <text class="stat-num accent">{{readCompleteCount}}</text>
-        <text class="stat-label">读完</text>
-      </view>
-      <view class="stat-divider"></view>
-      <view class="stat-item" bindtap="goFavorites">
-        <text class="stat-num accent">{{favoriteCount}}</text>
-        <text class="stat-label">收藏</text>
-      </view>
-    </view>
-  </view>
-
-  <view class="main">
-    <reading-heatmap wx:if="{{loggedIn}}"></reading-heatmap>
-
-    <view class="menu-card">
-      <view class="menu-item" bindtap="goMembership">
-        <view class="menu-left">
-          <view class="menu-icon">
-            <image class="menu-icon-img" src="/images/icons/huiyuan.png" mode="aspectFit" />
-          </view>
-          <text class="menu-label">会员</text>
-        </view>
-        <text class="list-arrow">›</text>
-      </view>
-      <view class="menu-item" bindtap="goCorrections">
-        <view class="menu-left">
-          <view class="menu-icon">
-            <image class="menu-icon-img" src="/images/icons/jiucuo.png" mode="aspectFit" />
-          </view>
-          <text class="menu-label">我的纠错</text>
-        </view>
-        <text class="list-arrow">›</text>
-      </view>
-      <navigator class="menu-item menu-item-link" url="/pages/invite/index" hover-class="menu-item-active">
-        <view class="menu-left">
-          <view class="menu-icon menu-icon--share">
-            <image class="menu-icon-img" src="/images/icons/fenxiang.png" mode="aspectFit" />
-          </view>
-          <text class="menu-label">邀请有礼</text>
-        </view>
-        <text class="list-arrow">›</text>
-      </navigator>
-      <view class="menu-item menu-item-last" bindtap="goSettings">
-        <view class="menu-left">
-          <view class="menu-icon">
-            <image class="menu-icon-img" src="/images/icons/shezhi.png" mode="aspectFit" />
-          </view>
-          <text class="menu-label">设置</text>
-        </view>
-        <text class="list-arrow">›</text>
-      </view>
-    </view>
-
-    <view wx:if="{{!loggedIn}}" class="logout-wrap">
-      <view class="login-btn" bindtap="goLogin">微信登录</view>
-    </view>
-  </view>
-</scroll-view>
+  </scroll-view>
+</view>

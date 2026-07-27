@@ -4,13 +4,43 @@ const api_1 = require("../../native-utils/api");
 /** 最近一年阅读足迹热力图：7 行（周一~周日）× 52 列（周），最近一周在最左 */
 const WEEK_COUNT = 52;
 const WEEKDAY_LABELS = ['一', '二', '三', '四', '五', '六', '日'];
-/** 苔绿 #7D8A6A：1–10 篇十档色阶，在白色卡片底上预混为不透明色 */
+/** 苔绿 #7D8A6A：1–30 篇等比渐变，30 篇达到最深色 */
 const TEA_GREEN = { r: 125, g: 138, b: 106 };
-const LEVEL_COLORS = Array.from({ length: 10 }, (_, i) => {
-    const a = 0.12 + (i * 0.88) / 9;
+const HEAT_MAX_COUNT = 30;
+const HEAT_ALPHA_MIN = 0.12;
+const HEAT_ALPHA_RANGE = 0.88;
+function heatCellColor(count) {
+    if (count <= 0)
+        return '';
+    const ratio = Math.min(count, HEAT_MAX_COUNT) / HEAT_MAX_COUNT;
+    const a = HEAT_ALPHA_MIN + ratio * HEAT_ALPHA_RANGE;
     const mix = (c) => Math.round(c * a + 255 * (1 - a));
     return `rgb(${mix(TEA_GREEN.r)}, ${mix(TEA_GREEN.g)}, ${mix(TEA_GREEN.b)})`;
-});
+}
+const HEATMAP_ICONS = {
+    A: '/配图/icons/a.png',
+    B: '/配图/icons/b.png',
+    C: '/配图/icons/c.png',
+    D: '/配图/icons/d.png',
+};
+function readingTier(count) {
+    if (count === 0)
+        return 'D';
+    if (count <= 5)
+        return 'C';
+    if (count <= 15)
+        return 'B';
+    return 'A';
+}
+function buildSelected(dateStr, count) {
+    const tier = readingTier(count);
+    return {
+        label: detailLabel(dateStr),
+        count,
+        icon: HEATMAP_ICONS[tier],
+        sub: count === 0 ? '一篇没读还有脸看' : `这一天读过 ${count} 篇`,
+    };
+}
 function pad2(n) {
     return n < 10 ? `0${n}` : String(n);
 }
@@ -42,11 +72,10 @@ function buildWeeks(countByDate) {
             const dateStr = fmtDate(d);
             const future = d.getTime() > today.getTime();
             const count = future ? 0 : countByDate[dateStr] || 0;
-            const level = Math.min(count, 10);
             cells.push({
                 date: dateStr,
                 count,
-                color: level > 0 ? LEVEL_COLORS[level - 1] : '',
+                color: heatCellColor(count),
                 future,
             });
         }
@@ -96,22 +125,23 @@ Component({
             }
             const weeks = buildWeeks(countByDate);
             const todayStr = fmtDate(new Date());
-            const todayCount = countByDate[todayStr] || 0;
+            const selectedDate = this.data.selectedDate || todayStr;
+            const selectedCount = countByDate[selectedDate] || 0;
             this.setData({
                 weeks,
-                selectedDate: todayStr,
-                selected: { label: detailLabel(todayStr), count: todayCount },
+                selectedDate,
+                selected: buildSelected(selectedDate, selectedCount),
             });
         },
         onCellTap(e) {
             const ds = e.currentTarget.dataset;
             const date = ds.date;
-            if (!date || ds.future)
+            if (!date)
                 return;
             const count = Number(ds.count) || 0;
             this.setData({
                 selectedDate: date,
-                selected: { label: detailLabel(date), count },
+                selected: buildSelected(date, count),
             });
         },
     },

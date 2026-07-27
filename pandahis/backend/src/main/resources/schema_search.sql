@@ -3,7 +3,8 @@ CREATE TABLE IF NOT EXISTS search_hot_keyword (
   keyword VARCHAR(64) NOT NULL,
   is_hot TINYINT NOT NULL DEFAULT 0,
   sort_order INT NOT NULL DEFAULT 0,
-  status TINYINT NOT NULL DEFAULT 1
+  status TINYINT NOT NULL DEFAULT 1,
+  UNIQUE KEY uk_search_hot_keyword (keyword)
 );
 
 CREATE TABLE IF NOT EXISTS user_search_history (

@@ -697,11 +697,11 @@ def co_segment_peers(entry: dict, data: dict) -> List[dict]:
 
 
 def volume_junji_emperors(data: dict) -> Set[str]:
-    """本卷君王四级帝王坐标集合。"""
+    """本卷君王/诸侯四级帝王坐标集合（主轴君主）。"""
     out: Set[str] = set()
     for entry in data.get("entries", []):
         migrate_entry_fields(entry)
-        if normalize_entry_category(entry.get("史略分类", "")) != "君王":
+        if normalize_entry_category(entry.get("史略分类", "")) not in ("君王", "诸侯"):
             continue
         emp = (entry.get("四级帝王坐标") or entry.get("史略名称") or "").strip()
         if emp:
@@ -732,7 +732,7 @@ def collect_unresolved_junji(
     eidx = emperor_index if emperor_index is not None else build_emperor_info_index()
     issues: List[str] = []
     for entry in data.get("entries", []):
-        if normalize_entry_category(entry.get("史略分类", "")) != "君王":
+        if normalize_entry_category(entry.get("史略分类", "")) not in ("君王", "诸侯"):
             continue
         name = (entry.get("史略名称") or "").strip()
         if name not in eidx:
@@ -985,7 +985,7 @@ def _majority_junji_coord_hints(data: dict) -> dict:
     dynasties: Counter = Counter()
     civs: Counter = Counter()
     for entry in data.get("entries", []):
-        if normalize_entry_category(entry.get("史略分类", "")) != "君王":
+        if normalize_entry_category(entry.get("史略分类", "")) not in ("君王", "诸侯"):
             continue
         r = (entry.get("三级政权坐标") or "").strip()
         d = (entry.get("二级朝代坐标") or "").strip()

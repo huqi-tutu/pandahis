@@ -23,7 +23,7 @@ if str(OPENCLAW_ROOT) not in sys.path:
 from paths_config import histograph_paths, validate_histograph_root  # noqa: E402
 
 REQUIRED_MODEL = "deepseek-v4-pro"
-PERSON_CATEGORIES = frozenset({"君王", "宗戚", "文臣", "武将", "宦官", "庶众"})
+PERSON_CATEGORIES = frozenset({"君王", "诸侯", "宗戚", "文臣", "武将", "宦官", "庶众"})
 CATEGORY_ID_PREFIX = {
     "家庭": "HD-FAM",
     "同僚": "HD-COL",

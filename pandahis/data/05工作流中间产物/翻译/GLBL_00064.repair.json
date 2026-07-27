@@ -1,0 +1,25 @@
+{
+  "schema": "qa_repair_ticket/v1",
+  "pipeline": "translate",
+  "entry_id": "GLBL_00064",
+  "entry_name": "晋武公",
+  "stage": "verify",
+  "fail_count": 5,
+  "errors": [
+    "Phase2: 前置引入档位为「框架引入」但缺少引入/过渡句"
+  ],
+  "plan": {
+    "root_cause": "INTRO_ISSUE",
+    "disposition": "refine_scope",
+    "action": "refine_intro",
+    "structured_prompt": "【根因：前置引入与母本开头重复】\n收窄引入（建议 100–400 字，硬上限 400）：只写阅读框架与一句过渡，\n不重复母本首段将写的身世/事件/专名簇。勿元叙述。",
+    "refine_scope": "intro",
+    "route_to": "",
+    "next_command": "",
+    "invalidate": [],
+    "max_retries": 2,
+    "extra": {}
+  },
+  "feedback": "【根因：前置引入与母本开头重复】\n收窄引入（建议 100–400 字，硬上限 400）：只写阅读框架与一句过渡，\n不重复母本首段将写的身世/事件/专名簇。勿元叙述。\n\n---\n【原始错误】\nPhase2: 前置引入档位为「框架引入」但缺少引入/过渡句",
+  "updated_at": "2026-07-26T12:27:05Z"
+}

@@ -52,8 +52,8 @@
   flex-shrink: 0;
   padding: 0 32rpx;
   background: rgba(248, 246, 242, 0.97);
-  border-bottom: 1rpx solid #EDEAE6;
-  transition: opacity 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+  border-bottom: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
   will-change: opacity, transform;
 }
 
@@ -69,7 +69,6 @@
   opacity: 0;
   pointer-events: none;
   transform: translateY(-100%);
-  border-bottom-color: transparent;
 }
 
 
@@ -194,7 +193,7 @@
   height: 60rpx;
   padding: 0 24rpx;
   border-radius: 12rpx;
-  border: 1rpx solid rgba(74, 63, 63, 0.08);
+  border: none;
   background: rgba(74, 63, 63, 0.04);
   font-size: 24rpx;
   font-weight: 400;
@@ -213,9 +212,8 @@
 }
 
 .read-complete-cancel {
-  margin-left: 4rpx;
-  padding-left: 12rpx;
-  border-left: 1rpx solid rgba(74, 63, 63, 0.1);
+  margin-left: 8rpx;
+  padding-left: 0;
   font-size: 22rpx;
   color: $text-time;
 }
@@ -328,9 +326,14 @@
 }
 
 .rel-graph-canvas {
-  display: block;
   width: 100%;
   height: 100%;
+}
+
+.rel-graph-hint {
+  position: absolute;
+  inset: 0;
+  background: rgba(248, 246, 242, 0.92);
 }
 
 .graph-zoom-bar {
@@ -384,46 +387,67 @@
   text-align: center;
 }
 
-/* ── Tab 2：评述 ── */
-.crit-card {
+/* ── Tab 2/3：评述 & 见证（统一卡片） ── */
+.ref-card {
   padding: 24rpx;
-  margin-bottom: 14rpx;
+  margin-bottom: 24rpx;
   background: #FFFFFF;
   border-radius: 16rpx;
-  border: 1rpx solid #EDEAE6;
-  box-shadow: 0 2rpx 8rpx rgba(74, 63, 63, 0.04);
+  border: none;
+  box-shadow: $shadow-card;
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
 }
 
-.crit-card:active {
+.ref-card:active {
   background: rgba(74, 63, 63, 0.04);
 }
 
-.crit-head {
+.ref-head {
   display: flex;
   align-items: center;
-  gap: 14rpx;
-  margin-bottom: 14rpx;
+  gap: 16rpx;
 }
 
-.crit-avatar {
-  width: 64rpx;
-  height: 64rpx;
-  border-radius: 50%;
+.ref-thumb {
+  width: 72rpx;
+  height: 72rpx;
+  flex-shrink: 0;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
+}
+
+.ref-thumb--avatar {
+  border-radius: 50%;
   box-shadow: 0 2rpx 6rpx rgba(0, 0, 0, 0.1);
 }
 
-.crit-avatar-text {
+.ref-thumb--square {
+  border-radius: 12rpx;
+  background: rgba(74, 63, 63, 0.05);
+}
+
+.ref-thumb-text {
   font-size: 28rpx;
   font-weight: 700;
   color: #FFFFFF;
   font-family: 'Noto Serif SC', serif;
 }
 
-.crit-meta {
+.ref-thumb-label {
+  font-size: 26rpx;
+  font-family: 'Noto Serif SC', 'Songti SC', serif;
+}
+
+.ref-thumb-img {
+  width: 100%;
+  height: 100%;
+}
+
+.ref-meta {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -431,7 +455,7 @@
   min-width: 0;
 }
 
-.crit-author {
+.ref-title {
   font-size: 28rpx;
   font-weight: 600;
   color: #262626;
@@ -441,95 +465,36 @@
   white-space: nowrap;
 }
 
-.crit-era {
-  font-size: 22rpx;
-}
-
-.crit-divider {
-  height: 1rpx;
-  background: #EDEAE6;
-  margin-bottom: 18rpx;
-}
-
-.crit-body {
-  font-size: 28rpx;
-  line-height: 1.7;
-  color: #6A6A6A;
-  display: block;
-}
-
-/* ── Tab 3：见证 ── */
-.relic-card {
-  padding: 20rpx 24rpx;
-  margin-bottom: 14rpx;
-  background: #FFFFFF;
-  border-radius: 16rpx;
-  border: 1rpx solid #EDEAE6;
-  box-shadow: 0 2rpx 8rpx rgba(74, 63, 63, 0.04);
-}
-
-.relic-card:active {
-  background: rgba(74, 63, 63, 0.04);
-}
-
-.relic-head {
-  display: flex;
-  align-items: flex-start;
-  gap: 16rpx;
-}
-
-.relic-thumb {
-  width: 80rpx;
-  height: 80rpx;
-  border-radius: 12rpx;
-  background: rgba(74, 63, 63, 0.05);
+.ref-sub {
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: 28rpx;
-  flex-shrink: 0;
+  min-width: 0;
   overflow: hidden;
 }
 
-.relic-thumb-img {
-  width: 100%;
-  height: 100%;
+.ref-sub-mark {
+  font-size: 22rpx;
+  flex-shrink: 0;
+  line-height: 1.4;
 }
 
-.relic-info {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 6rpx;
+.ref-sub-text {
+  font-size: 22rpx;
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   min-width: 0;
 }
 
-.relic-name-row {
-  display: flex;
-  align-items: center;
-  gap: 10rpx;
-}
-
-.relic-name {
-  font-size: 28rpx;
-  font-weight: 600;
-  color: #262626;
-  font-family: 'Noto Serif SC', 'Songti SC', serif;
-}
-
-.relic-summary {
-  font-size: 24rpx;
-  line-height: 1.5;
+.ref-body {
+  font-size: 26rpx;
+  line-height: 1.6;
+  color: #6A6A6A;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
-}
-
-.relic-location {
-  font-size: 22rpx;
-  display: block;
-  margin-top: 4rpx;
 }
 
 /* ── 音频播放浮层 ── */

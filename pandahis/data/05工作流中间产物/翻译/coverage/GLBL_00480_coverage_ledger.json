@@ -1,0 +1,55 @@
+{
+  "schema": "translate-coverage-ledger/v1",
+  "史略ID": "GLBL_00480",
+  "updated_at": "2026-07-26T14:25:03.082481+00:00",
+  "entries": {
+    "M001": {
+      "status": "conveyed",
+      "claim_fp": "91e079f0f737cbb3",
+      "checked_at": "2026-07-26T14:24:41.763487+00:00",
+      "note": "直接点明籍贯和字。"
+    },
+    "M002": {
+      "status": "conveyed",
+      "claim_fp": "82b7b0314cf3d494",
+      "checked_at": "2026-07-26T14:24:41.763494+00:00",
+      "note": "明确传达年龄差。"
+    },
+    "M003": {
+      "status": "conveyed",
+      "claim_fp": "97769cb3f72c5a62",
+      "checked_at": "2026-07-26T14:24:41.763496+00:00",
+      "note": "完整包含问仁、孔子解释仁的含义和效果。"
+    },
+    "M004": {
+      "status": "conveyed",
+      "claim_fp": "3632eadb2302fb68",
+      "checked_at": "2026-07-26T14:24:41.763497+00:00",
+      "note": "全部三段评价均有白话展开。"
+    },
+    "M005–M006": {
+      "status": "conveyed",
+      "claim_fp": "0f142c209519e2be",
+      "checked_at": "2026-07-26T14:24:41.763498+00:00",
+      "note": "包含早死细节和孔子恸哭的原话。"
+    },
+    "M007": {
+      "status": "conveyed",
+      "claim_fp": "7878c88f3781f6f5",
+      "checked_at": "2026-07-26T14:24:41.763499+00:00",
+      "note": "完整传达哀公之问和孔子答语的要点。"
+    },
+    "M008": {
+      "status": "conveyed",
+      "claim_fp": "aa95bce7d54bb5cc",
+      "checked_at": "2026-07-26T14:24:41.763499+00:00",
+      "note": "“可惜这么个人，偏偏短命，早早走了——到现在，就再没有这样的学生了。”"
+    },
+    "M009": {
+      "status": "conveyed",
+      "claim_fp": "f73aaf8fe93e8ee5",
+      "checked_at": "2026-07-26T14:24:41.763500+00:00",
+      "note": "译文末尾以引号收束：“……今也则亡。」”"
+    }
+  }
+}

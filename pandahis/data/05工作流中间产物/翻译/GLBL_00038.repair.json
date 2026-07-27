@@ -1,0 +1,27 @@
+{
+  "schema": "qa_repair_ticket/v1",
+  "pipeline": "translate",
+  "entry_id": "GLBL_00038",
+  "entry_name": "周穆王",
+  "stage": "verify",
+  "fail_count": 1,
+  "errors": [
+    "Phase2: 未授权引用: 《臩命》",
+    "Phase2: 未授权引用: 《甫刑》",
+    "Phase2: 段落以破折号结尾（第1段）: …是穷兵黩武的君王，一面是慎刑立法的改革者，周穆王这个人，没法用一个词概括。《史记·周本纪》的记载，从他登基那一刻开始——"
+  ],
+  "plan": {
+    "root_cause": "UNKNOWN",
+    "disposition": "retry_llm",
+    "action": "generic_retry",
+    "structured_prompt": "【根因未分类】请据下列 verify 错误逐项修正，勿重复上一轮相同写法。\nPhase2: 未授权引用: 《臩命》\nPhase2: 未授权引用: 《甫刑》\nPhase2: 段落以破折号结尾（第1段）: …是穷兵黩武的君王，一面是慎刑立法的改革者，周穆王这个人，没法用一个词概括。《史记·周本纪》的记载，从他登基那一刻开始——",
+    "refine_scope": "",
+    "route_to": "",
+    "next_command": "",
+    "invalidate": [],
+    "max_retries": 2,
+    "extra": {}
+  },
+  "feedback": "【根因未分类】请据下列 verify 错误逐项修正，勿重复上一轮相同写法。\nPhase2: 未授权引用: 《臩命》\nPhase2: 未授权引用: 《甫刑》\nPhase2: 段落以破折号结尾（第1段）: …是穷兵黩武的君王，一面是慎刑立法的改革者，周穆王这个人，没法用一个词概括。《史记·周本纪》的记载，从他登基那一刻开始——\n\n---\n【原始错误】\nPhase2: 未授权引用: 《臩命》\nPhase2: 未授权引用: 《甫刑》\nPhase2: 段落以破折号结尾（第1段）: …是穷兵黩武的君王，一面是慎刑立法的改革者，周穆王这个人，没法用一个词概括。《史记·周本纪》的记载，从他登基那一刻开始——",
+  "updated_at": "2026-07-24T15:00:00Z"
+}

@@ -13,7 +13,7 @@
   align-items: center;
   justify-content: center;
   background: rgba(74, 63, 63, 0.06);
-  border: 1rpx solid rgba(74, 63, 63, 0.14);
+  border: none;
   color: #4a3f3f;
   font-size: 22rpx;
   font-weight: 600;
@@ -52,8 +52,8 @@ page {
 .card-paper {
   background: #FFFFFF;
   border-radius: 24rpx;
-  border: 1rpx solid var(--color-divider);
-  box-shadow: 0 2rpx 12rpx rgba(47, 41, 38, 0.05);
+  border: none;
+  box-shadow: var(--shadow-card, 0 2rpx 8rpx rgba(74, 63, 63, 0.04));
 }
 
 /* ─── 按钮 ─── */
@@ -133,11 +133,9 @@ page {
   display: flex;
   align-items: center;
   gap: 20rpx;
-  padding: 28rpx 32rpx;
+  padding: 32rpx;
   background: #FFFFFF;
-  border-bottom: 1rpx solid var(--color-divider);
 }
-.list-row:last-child { border-bottom: none; }
 
 .list-icon {
   width: 56rpx;

@@ -96,7 +96,16 @@ const DYNASTY_UNIT_FALLBACK: Record<string, string> = {
   春秋: 'CD_HX_CHUNQIU',
   战国: 'CD_HX_ZHANGUO',
   春秋战国: 'CD_HX_CHUNQIU',
+  南北朝: 'CD_HX_NANBEICHAO',
+  五代十国: 'CD_HX_WUDAISHIGUO',
+  金: 'CD_HX_JIN',
+  辽: 'CD_HX_LIAO',
   秦: 'CD_HX_QIN',
+  秦末汉初: 'CD_HX_QINMOHANCHU',
+  北宋: 'CD_HX_BEISONG',
+  南宋: 'CD_HX_NANSONG',
+  元: 'CD_HX_YUAN',
+  'HX-QMH': 'CD_HX_QINMOHANCHU',
   'HX-CQ': 'CD_HX_CHUNQIU',
   'HX-ZG': 'CD_HX_ZHANGUO',
 }
@@ -107,6 +116,16 @@ function isNavigableUnitId(id: string): boolean {
   return true
 }
 
+/** 容器 → 朝代详情 unitId（春秋/战国等政权容器） */
+const CONTAINER_DYNASTY_FALLBACK: Record<string, string> = {
+  春秋: 'CD_HX_CHUNQIU',
+  战国: 'CD_HX_ZHANGUO',
+  南北朝: 'CD_HX_NANBEICHAO',
+  五代十国: 'CD_HX_WUDAISHIGUO',
+  金: 'CD_HX_JIN',
+  辽: 'CD_HX_LIAO',
+}
+
 export type NavigationTargetOpts = {
   entityType?: string
   entityId?: string
@@ -115,6 +134,7 @@ export type NavigationTargetOpts = {
   person?: string
   dynasty?: string
   displayName?: string
+  containerId?: string
 }
 
 /** 朝代详情页 API 候选 ID（按优先级去重） */
@@ -144,6 +164,7 @@ export function resolveNavigationUnitId(
   const legacyId = String(opts.legacyId || '').trim()
   const person = String(opts.person || '').trim()
   const dynasty = String(opts.dynasty || opts.displayName || '').trim()
+  const containerId = String(opts.containerId || '').trim()
   const seen = new Set<string>()
   const candidates: string[] = []
 
@@ -155,6 +176,7 @@ export function resolveNavigationUnitId(
   }
 
   push(dynastyId)
+  push(CONTAINER_DYNASTY_FALLBACK[containerId])
   push(DYNASTY_UNIT_FALLBACK[dynasty])
   push(DYNASTY_UNIT_FALLBACK[legacyId])
   push(resolveUnitId(dynasty, map))

@@ -1,6 +1,5 @@
 import { hasToken, request } from '../../native-utils/api'
 import { encodePathSegment } from '../../native-utils/encode-path-segment'
-import { ROUTES, navigateTo } from '../../native-utils/router'
 import { computePageTopPadPx } from '../../native-utils/nav-metrics'
 
 type RefItemView = { work: string; chapter: string; excerpt: string; url: string }
@@ -95,6 +94,7 @@ Page({
     try {
       const res = await request<{ originalRef: unknown }>(`/boxes/${encodePathSegment(boxId)}/original-ref`, {
         auth: hasToken(),
+        softAuth: true,
       })
       const parsed = parseOriginalRef(res.data.originalRef)
       if (!parsed) {
@@ -109,29 +109,8 @@ Page({
         refItems: parsed.items,
         refFallback: parsed.fallback,
       })
-    } catch (e: any) {
-      const msg = String(e?.message || '')
-      if (msg.includes('INSUFFICIENT_READS') || msg.includes('NEED_MEMBERSHIP_OR_READS')) {
-        wx.showModal({
-          title: '需要会员或阅读点',
-          content: '开通会员可免扣点阅读；也可去会员页邀友助力或查看阅读点。',
-          confirmText: '去开通',
-          success: (r) => {
-            if (r.confirm) wx.switchTab({ url: ROUTES.membership })
-          },
-        })
-      } else if (msg === 'UNAUTHORIZED' || msg.includes('login required')) {
-        wx.showModal({
-          title: '需要登录',
-          content: '登录后可开通会员或使用阅读点查看原文对照。',
-          confirmText: '去登录',
-          success: (r) => {
-            if (r.confirm) navigateTo(ROUTES.login)
-          },
-        })
-      } else {
-        wx.showToast({ title: e?.message || '加载失败', icon: 'none' })
-      }
+    } catch {
+      wx.showToast({ title: '原文暂时无法加载，请稍后重试', icon: 'none' })
       this.setData({ empty: true, refTitle: '', refSourceWork: '', refItems: [], refFallback: '' })
     }
   },

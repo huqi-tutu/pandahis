@@ -1,0 +1,49 @@
+{
+  "schema": "translate-coverage-ledger/v1",
+  "史略ID": "GLBL_00369",
+  "updated_at": "2026-07-26T14:15:02.192748+00:00",
+  "entries": {
+    "M001": {
+      "status": "conveyed",
+      "claim_fp": "3dd27d36e965e01f",
+      "checked_at": "2026-07-26T14:14:43.002423+00:00",
+      "note": "明确点出身份和职责"
+    },
+    "M002": {
+      "status": "conveyed",
+      "claim_fp": "e5abac15c2ad92b7",
+      "checked_at": "2026-07-26T14:14:43.002433+00:00",
+      "note": "错杀、自拘、判死都已写出"
+    },
+    "M003": {
+      "status": "conveyed",
+      "claim_fp": "c3e232d61bc7f92f",
+      "checked_at": "2026-07-26T14:14:43.002437+00:00",
+      "note": "劝说的话、李离回应理由、拒绝赦免都已呈现"
+    },
+    "M004": {
+      "status": "conveyed",
+      "claim_fp": "cbbc241f0e9e40b2",
+      "checked_at": "2026-07-26T14:14:43.002441+00:00",
+      "note": "反问与法度回应均完整"
+    },
+    "M005": {
+      "status": "conveyed",
+      "claim_fp": "952de9222a84a070",
+      "checked_at": "2026-07-26T14:14:43.002445+00:00",
+      "note": "直接引用原文解释了任命原因"
+    },
+    "M006": {
+      "status": "conveyed",
+      "claim_fp": "a606680ad39a8232",
+      "checked_at": "2026-07-26T14:14:43.002448+00:00",
+      "note": "明确自判死罪"
+    },
+    "M007": {
+      "status": "conveyed",
+      "claim_fp": "df50b884d0c3351d",
+      "checked_at": "2026-07-26T14:14:43.002452+00:00",
+      "note": "白话译文直接描述了这一行为"
+    }
+  }
+}

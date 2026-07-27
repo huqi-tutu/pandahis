@@ -1,0 +1,884 @@
+{
+  "schema": "thin_annotation_deferred/v1",
+  "rules_ref": "historiography-annotate/reference/史料厚度门规则.md",
+  "updated_at": "2026-07-19T13:32:42Z",
+  "threshold_han_chars": 100,
+  "entry_count": 30,
+  "entries": [
+    {
+      "defer_reason": "glbl_audit_downgrade_recommended",
+      "source_char_count": 49,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "published_glbl_id": "GLBL_00142",
+      "史略ID": "GLBL_00142",
+      "史略名称": "韩王安",
+      "史略分类": "君王",
+      "朝代ID": "CD_HX_ZHANGUO",
+      "二级朝代坐标": "战国",
+      "paragraphs": [
+        {
+          "work": "01史记",
+          "vol": "045",
+          "volume": "韩世家",
+          "paragraph_from": 42,
+          "paragraph_to": 44,
+          "source_file": "01史记_045_韩世家第十五.txt",
+          "index_file": "段落索引/01史记_045.json",
+          "source_entry_id": "SHIJI_045_03",
+          "role": "母本"
+        }
+      ],
+      "audit_note": "合计49字 < 100，建议降级：停止翻译/线上以朝代补全替代",
+      "recommended_action": "defer_to_dynasty_supplement",
+      "offline_at": "2026-07-19T13:32:34Z",
+      "online_status": "cleared",
+      "offline_action": "historical_box.status=0; DELETE historical_box_detail"
+    },
+    {
+      "defer_reason": "glbl_audit_downgrade_recommended",
+      "source_char_count": 21,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "published_glbl_id": "GLBL_00242",
+      "史略ID": "GLBL_00242",
+      "史略名称": "猗顿",
+      "史略分类": "庶众",
+      "朝代ID": "CD_HX_ZHANGUO",
+      "二级朝代坐标": "战国",
+      "paragraphs": [
+        {
+          "work": "01史记",
+          "vol": "129",
+          "volume": "货殖列传",
+          "paragraph_from": 11,
+          "paragraph_to": 11,
+          "source_file": "01史记_129_货殖列传第六十九.txt",
+          "index_file": "段落索引/01史记_129.json",
+          "source_entry_id": "SHIJI_129_04",
+          "role": "母本"
+        }
+      ],
+      "audit_note": "合计21字 < 100，建议降级：停止翻译/线上以朝代补全替代",
+      "recommended_action": "defer_to_dynasty_supplement",
+      "offline_at": "2026-07-19T13:32:34Z",
+      "online_status": "cleared",
+      "offline_action": "historical_box.status=0; DELETE historical_box_detail"
+    },
+    {
+      "defer_reason": "glbl_audit_downgrade_recommended",
+      "source_char_count": 55,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "published_glbl_id": "GLBL_00271",
+      "史略ID": "GLBL_00271",
+      "史略名称": "公仪休",
+      "史略分类": "文臣",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "二级朝代坐标": "春秋",
+      "paragraphs": [
+        {
+          "work": "01史记",
+          "vol": "119",
+          "volume": "循吏列传",
+          "paragraph_from": 8,
+          "paragraph_to": 8,
+          "source_file": "01史记_119_循吏列传第五十九.txt",
+          "index_file": "段落索引/01史记_119.json",
+          "source_entry_id": "SHIJI_119_01",
+          "role": "母本"
+        }
+      ],
+      "audit_note": "合计55字 < 100，建议降级：停止翻译/线上以朝代补全替代",
+      "recommended_action": "defer_to_dynasty_supplement",
+      "offline_at": "2026-07-19T13:32:34Z",
+      "online_status": "cleared",
+      "offline_action": "historical_box.status=0; DELETE historical_box_detail"
+    },
+    {
+      "defer_reason": "glbl_audit_downgrade_recommended",
+      "source_char_count": 60,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "published_glbl_id": "GLBL_00272",
+      "史略ID": "GLBL_00272",
+      "史略名称": "公伯缭",
+      "史略分类": "文臣",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "二级朝代坐标": "春秋",
+      "paragraphs": [
+        {
+          "work": "01史记",
+          "vol": "067",
+          "volume": "仲尼弟子列传",
+          "paragraph_from": 100,
+          "paragraph_to": 101,
+          "source_file": "01史记_067_仲尼弟子列传第七.txt",
+          "index_file": "段落索引/01史记_067.json",
+          "source_entry_id": "SHIJI_067_01",
+          "role": "母本"
+        }
+      ],
+      "audit_note": "合计60字 < 100，建议降级：停止翻译/线上以朝代补全替代",
+      "recommended_action": "defer_to_dynasty_supplement",
+      "offline_at": "2026-07-19T13:32:34Z",
+      "online_status": "cleared",
+      "offline_action": "historical_box.status=0; DELETE historical_box_detail"
+    },
+    {
+      "defer_reason": "glbl_audit_downgrade_recommended",
+      "source_char_count": 30,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "published_glbl_id": "GLBL_00273",
+      "史略ID": "GLBL_00273",
+      "史略名称": "公冶长",
+      "史略分类": "文臣",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "二级朝代坐标": "春秋",
+      "paragraphs": [
+        {
+          "work": "01史记",
+          "vol": "067",
+          "volume": "仲尼弟子列传",
+          "paragraph_from": 83,
+          "paragraph_to": 84,
+          "source_file": "01史记_067_仲尼弟子列传第七.txt",
+          "index_file": "段落索引/01史记_067.json",
+          "source_entry_id": "SHIJI_067_02",
+          "role": "母本"
+        }
+      ],
+      "audit_note": "合计30字 < 100，建议降级：停止翻译/线上以朝代补全替代",
+      "recommended_action": "defer_to_dynasty_supplement",
+      "offline_at": "2026-07-19T13:32:34Z",
+      "online_status": "cleared",
+      "offline_action": "historical_box.status=0; DELETE historical_box_detail"
+    },
+    {
+      "defer_reason": "glbl_audit_downgrade_recommended",
+      "source_char_count": 26,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "published_glbl_id": "GLBL_00276",
+      "史略ID": "GLBL_00276",
+      "史略名称": "公皙哀",
+      "史略分类": "文臣",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "二级朝代坐标": "春秋",
+      "paragraphs": [
+        {
+          "work": "01史记",
+          "vol": "067",
+          "volume": "仲尼弟子列传",
+          "paragraph_from": 87,
+          "paragraph_to": 88,
+          "source_file": "01史记_067_仲尼弟子列传第七.txt",
+          "index_file": "段落索引/01史记_067.json",
+          "source_entry_id": "SHIJI_067_03",
+          "role": "母本"
+        }
+      ],
+      "audit_note": "合计26字 < 100，建议降级：停止翻译/线上以朝代补全替代",
+      "recommended_action": "defer_to_dynasty_supplement",
+      "offline_at": "2026-07-19T13:32:34Z",
+      "online_status": "cleared",
+      "offline_action": "historical_box.status=0; DELETE historical_box_detail"
+    },
+    {
+      "defer_reason": "glbl_audit_downgrade_recommended",
+      "source_char_count": 67,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "published_glbl_id": "GLBL_00277",
+      "史略ID": "GLBL_00277",
+      "史略名称": "公西赤",
+      "史略分类": "文臣",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "二级朝代坐标": "春秋",
+      "paragraphs": [
+        {
+          "work": "01史记",
+          "vol": "067",
+          "volume": "仲尼弟子列传",
+          "paragraph_from": 111,
+          "paragraph_to": 113,
+          "source_file": "01史记_067_仲尼弟子列传第七.txt",
+          "index_file": "段落索引/01史记_067.json",
+          "source_entry_id": "SHIJI_067_04",
+          "role": "母本"
+        }
+      ],
+      "audit_note": "合计67字 < 100，建议降级：停止翻译/线上以朝代补全替代",
+      "recommended_action": "defer_to_dynasty_supplement",
+      "offline_at": "2026-07-19T13:32:34Z",
+      "online_status": "cleared",
+      "offline_action": "historical_box.status=0; DELETE historical_box_detail"
+    },
+    {
+      "defer_reason": "glbl_audit_downgrade_recommended",
+      "source_char_count": 41,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "published_glbl_id": "GLBL_00278",
+      "史略ID": "GLBL_00278",
+      "史略名称": "冉伯牛",
+      "史略分类": "文臣",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "二级朝代坐标": "春秋",
+      "paragraphs": [
+        {
+          "work": "01史记",
+          "vol": "067",
+          "volume": "仲尼弟子列传",
+          "paragraph_from": 11,
+          "paragraph_to": 12,
+          "source_file": "01史记_067_仲尼弟子列传第七.txt",
+          "index_file": "段落索引/01史记_067.json",
+          "source_entry_id": "SHIJI_067_05",
+          "role": "母本"
+        }
+      ],
+      "audit_note": "合计41字 < 100，建议降级：停止翻译/线上以朝代补全替代",
+      "recommended_action": "defer_to_dynasty_supplement",
+      "offline_at": "2026-07-19T13:32:34Z",
+      "online_status": "cleared",
+      "offline_action": "historical_box.status=0; DELETE historical_box_detail"
+    },
+    {
+      "defer_reason": "glbl_audit_downgrade_recommended",
+      "source_char_count": 48,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "published_glbl_id": "GLBL_00280",
+      "史略ID": "GLBL_00280",
+      "史略名称": "冉雍",
+      "史略分类": "文臣",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "二级朝代坐标": "春秋",
+      "paragraphs": [
+        {
+          "work": "01史记",
+          "vol": "067",
+          "volume": "仲尼弟子列传",
+          "paragraph_from": 13,
+          "paragraph_to": 15,
+          "source_file": "01史记_067_仲尼弟子列传第七.txt",
+          "index_file": "段落索引/01史记_067.json",
+          "source_entry_id": "SHIJI_067_07",
+          "role": "母本"
+        }
+      ],
+      "audit_note": "合计48字 < 100，建议降级：停止翻译/线上以朝代补全替代",
+      "recommended_action": "defer_to_dynasty_supplement",
+      "offline_at": "2026-07-19T13:32:34Z",
+      "online_status": "cleared",
+      "offline_action": "historical_box.status=0; DELETE historical_box_detail"
+    },
+    {
+      "defer_reason": "glbl_audit_downgrade_recommended",
+      "source_char_count": 74,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "published_glbl_id": "GLBL_00287",
+      "史略ID": "GLBL_00287",
+      "史略名称": "南宫括",
+      "史略分类": "文臣",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "二级朝代坐标": "春秋",
+      "paragraphs": [
+        {
+          "work": "01史记",
+          "vol": "067",
+          "volume": "仲尼弟子列传",
+          "paragraph_from": 85,
+          "paragraph_to": 86,
+          "source_file": "01史记_067_仲尼弟子列传第七.txt",
+          "index_file": "段落索引/01史记_067.json",
+          "source_entry_id": "SHIJI_067_08",
+          "role": "母本"
+        }
+      ],
+      "audit_note": "合计74字 < 100，建议降级：停止翻译/线上以朝代补全替代",
+      "recommended_action": "defer_to_dynasty_supplement",
+      "offline_at": "2026-07-19T13:32:34Z",
+      "online_status": "cleared",
+      "offline_action": "historical_box.status=0; DELETE historical_box_detail"
+    },
+    {
+      "defer_reason": "glbl_audit_downgrade_recommended",
+      "source_char_count": 81,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "published_glbl_id": "GLBL_00294",
+      "史略ID": "GLBL_00294",
+      "史略名称": "司马耕",
+      "史略分类": "文臣",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "二级朝代坐标": "春秋",
+      "paragraphs": [
+        {
+          "work": "01史记",
+          "vol": "067",
+          "volume": "仲尼弟子列传",
+          "paragraph_from": 102,
+          "paragraph_to": 104,
+          "source_file": "01史记_067_仲尼弟子列传第七.txt",
+          "index_file": "段落索引/01史记_067.json",
+          "source_entry_id": "SHIJI_067_10",
+          "role": "母本"
+        }
+      ],
+      "audit_note": "合计81字 < 100，建议降级：停止翻译/线上以朝代补全替代",
+      "recommended_action": "defer_to_dynasty_supplement",
+      "offline_at": "2026-07-19T13:32:34Z",
+      "online_status": "cleared",
+      "offline_action": "historical_box.status=0; DELETE historical_box_detail"
+    },
+    {
+      "defer_reason": "glbl_audit_downgrade_recommended",
+      "source_char_count": 64,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "published_glbl_id": "GLBL_00296",
+      "史略ID": "GLBL_00296",
+      "史略名称": "后苍",
+      "史略分类": "文臣",
+      "朝代ID": "CD_HX_XIHAN",
+      "二级朝代坐标": "西汉",
+      "paragraphs": [
+        {
+          "work": "02汉书",
+          "vol": "101",
+          "volume": "儒林传",
+          "paragraph_from": 18,
+          "paragraph_to": 18,
+          "source_file": "02汉书_101_儒林传第五十八.txt",
+          "index_file": "段落索引/02汉书_101.json",
+          "source_entry_id": "HANSHU_101_06",
+          "role": "母本"
+        }
+      ],
+      "audit_note": "合计64字 < 100，建议降级：停止翻译/线上以朝代补全替代",
+      "recommended_action": "defer_to_dynasty_supplement",
+      "offline_at": "2026-07-19T13:32:34Z",
+      "online_status": "cleared",
+      "offline_action": "historical_box.status=0; DELETE historical_box_detail"
+    },
+    {
+      "defer_reason": "glbl_audit_downgrade_recommended",
+      "source_char_count": 88,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "published_glbl_id": "GLBL_00298",
+      "史略ID": "GLBL_00298",
+      "史略名称": "吕步舒",
+      "史略分类": "文臣",
+      "朝代ID": "CD_HX_XIHAN",
+      "二级朝代坐标": "西汉",
+      "paragraphs": [
+        {
+          "work": "01史记",
+          "vol": "121",
+          "volume": "儒林列传",
+          "paragraph_from": 33,
+          "paragraph_to": 33,
+          "source_file": "01史记_121_儒林列传第六十一.txt",
+          "index_file": "段落索引/01史记_121.json",
+          "source_entry_id": "SHIJI_121_02",
+          "role": "母本"
+        }
+      ],
+      "audit_note": "合计88字 < 100，建议降级：停止翻译/线上以朝代补全替代",
+      "recommended_action": "defer_to_dynasty_supplement",
+      "offline_at": "2026-07-19T13:32:34Z",
+      "online_status": "cleared",
+      "offline_action": "historical_box.status=0; DELETE historical_box_detail"
+    },
+    {
+      "defer_reason": "glbl_audit_downgrade_recommended",
+      "source_char_count": 90,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "published_glbl_id": "GLBL_00303",
+      "史略ID": "GLBL_00303",
+      "史略名称": "商瞿",
+      "史略分类": "文臣",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "二级朝代坐标": "春秋",
+      "paragraphs": [
+        {
+          "work": "01史记",
+          "vol": "067",
+          "volume": "仲尼弟子列传",
+          "paragraph_from": 93,
+          "paragraph_to": 94,
+          "source_file": "01史记_067_仲尼弟子列传第七.txt",
+          "index_file": "段落索引/01史记_067.json",
+          "source_entry_id": "SHIJI_067_11",
+          "role": "母本"
+        }
+      ],
+      "audit_note": "合计90字 < 100，建议降级：停止翻译/线上以朝代补全替代",
+      "recommended_action": "defer_to_dynasty_supplement",
+      "offline_at": "2026-07-19T13:32:34Z",
+      "online_status": "cleared",
+      "offline_action": "historical_box.status=0; DELETE historical_box_detail"
+    },
+    {
+      "defer_reason": "glbl_audit_downgrade_recommended",
+      "source_char_count": 96,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "published_glbl_id": "GLBL_00312",
+      "史略ID": "GLBL_00312",
+      "史略名称": "子游",
+      "史略分类": "文臣",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "二级朝代坐标": "春秋",
+      "paragraphs": [
+        {
+          "work": "01史记",
+          "vol": "067",
+          "volume": "仲尼弟子列传",
+          "paragraph_from": 59,
+          "paragraph_to": 61,
+          "source_file": "01史记_067_仲尼弟子列传第七.txt",
+          "index_file": "段落索引/01史记_067.json",
+          "source_entry_id": "SHIJI_067_14",
+          "role": "母本"
+        }
+      ],
+      "audit_note": "合计96字 < 100，建议降级：停止翻译/线上以朝代补全替代",
+      "recommended_action": "defer_to_dynasty_supplement",
+      "offline_at": "2026-07-19T13:32:34Z",
+      "online_status": "cleared",
+      "offline_action": "historical_box.status=0; DELETE historical_box_detail"
+    },
+    {
+      "defer_reason": "glbl_audit_downgrade_recommended",
+      "source_char_count": 53,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "published_glbl_id": "GLBL_00317",
+      "史略ID": "GLBL_00317",
+      "史略名称": "孔安国",
+      "史略分类": "文臣",
+      "朝代ID": "CD_HX_XIHAN",
+      "二级朝代坐标": "西汉",
+      "paragraphs": [
+        {
+          "work": "02汉书",
+          "vol": "101",
+          "volume": "儒林传",
+          "paragraph_from": 14,
+          "paragraph_to": 14,
+          "source_file": "02汉书_101_儒林传第五十八.txt",
+          "index_file": "段落索引/02汉书_101.json",
+          "source_entry_id": "HANSHU_101_10",
+          "role": "母本"
+        }
+      ],
+      "audit_note": "合计53字 < 100，建议降级：停止翻译/线上以朝代补全替代",
+      "recommended_action": "defer_to_dynasty_supplement",
+      "offline_at": "2026-07-19T13:32:34Z",
+      "online_status": "cleared",
+      "offline_action": "historical_box.status=0; DELETE historical_box_detail"
+    },
+    {
+      "defer_reason": "glbl_audit_downgrade_recommended",
+      "source_char_count": 75,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "published_glbl_id": "GLBL_00325",
+      "史略ID": "GLBL_00325",
+      "史略名称": "宓不齐",
+      "史略分类": "文臣",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "二级朝代坐标": "春秋",
+      "paragraphs": [
+        {
+          "work": "01史记",
+          "vol": "067",
+          "volume": "仲尼弟子列传",
+          "paragraph_from": 76,
+          "paragraph_to": 78,
+          "source_file": "01史记_067_仲尼弟子列传第七.txt",
+          "index_file": "段落索引/01史记_067.json",
+          "source_entry_id": "SHIJI_067_17",
+          "role": "母本"
+        }
+      ],
+      "audit_note": "合计75字 < 100，建议降级：停止翻译/线上以朝代补全替代",
+      "recommended_action": "defer_to_dynasty_supplement",
+      "offline_at": "2026-07-19T13:32:34Z",
+      "online_status": "cleared",
+      "offline_action": "historical_box.status=0; DELETE historical_box_detail"
+    },
+    {
+      "defer_reason": "glbl_audit_downgrade_recommended",
+      "source_char_count": 34,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "published_glbl_id": "GLBL_00359",
+      "史略ID": "GLBL_00359",
+      "史略名称": "曾参",
+      "史略分类": "文臣",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "二级朝代坐标": "春秋",
+      "paragraphs": [
+        {
+          "work": "01史记",
+          "vol": "067",
+          "volume": "仲尼弟子列传",
+          "paragraph_from": 71,
+          "paragraph_to": 72,
+          "source_file": "01史记_067_仲尼弟子列传第七.txt",
+          "index_file": "段落索引/01史记_067.json",
+          "source_entry_id": "SHIJI_067_20",
+          "role": "母本"
+        }
+      ],
+      "audit_note": "合计34字 < 100，建议降级：停止翻译/线上以朝代补全替代",
+      "recommended_action": "defer_to_dynasty_supplement",
+      "offline_at": "2026-07-19T13:32:34Z",
+      "online_status": "cleared",
+      "offline_action": "historical_box.status=0; DELETE historical_box_detail"
+    },
+    {
+      "defer_reason": "glbl_audit_downgrade_recommended",
+      "source_char_count": 49,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "published_glbl_id": "GLBL_00360",
+      "史略ID": "GLBL_00360",
+      "史略名称": "曾蒧",
+      "史略分类": "文臣",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "二级朝代坐标": "春秋",
+      "paragraphs": [
+        {
+          "work": "01史记",
+          "vol": "067",
+          "volume": "仲尼弟子列传",
+          "paragraph_from": 89,
+          "paragraph_to": 90,
+          "source_file": "01史记_067_仲尼弟子列传第七.txt",
+          "index_file": "段落索引/01史记_067.json",
+          "source_entry_id": "SHIJI_067_21",
+          "role": "母本"
+        }
+      ],
+      "audit_note": "合计49字 < 100，建议降级：停止翻译/线上以朝代补全替代",
+      "recommended_action": "defer_to_dynasty_supplement",
+      "offline_at": "2026-07-19T13:32:34Z",
+      "online_status": "cleared",
+      "offline_action": "historical_box.status=0; DELETE historical_box_detail"
+    },
+    {
+      "defer_reason": "glbl_audit_downgrade_recommended",
+      "source_char_count": 25,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "published_glbl_id": "GLBL_00385",
+      "史略ID": "GLBL_00385",
+      "史略名称": "江生",
+      "史略分类": "文臣",
+      "朝代ID": "CD_HX_XIHAN",
+      "二级朝代坐标": "西汉",
+      "paragraphs": [
+        {
+          "work": "01史记",
+          "vol": "121",
+          "volume": "儒林列传",
+          "paragraph_from": 32,
+          "paragraph_to": 32,
+          "source_file": "01史记_121_儒林列传第六十一.txt",
+          "index_file": "段落索引/01史记_121.json",
+          "source_entry_id": "SHIJI_121_05",
+          "role": "母本"
+        }
+      ],
+      "audit_note": "合计25字 < 100，建议降级：停止翻译/线上以朝代补全替代",
+      "recommended_action": "defer_to_dynasty_supplement",
+      "offline_at": "2026-07-19T13:32:34Z",
+      "online_status": "cleared",
+      "offline_action": "historical_box.status=0; DELETE historical_box_detail"
+    },
+    {
+      "defer_reason": "glbl_audit_downgrade_recommended",
+      "source_char_count": 22,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "published_glbl_id": "GLBL_00388",
+      "史略ID": "GLBL_00388",
+      "史略名称": "漆彫开",
+      "史略分类": "文臣",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "二级朝代坐标": "春秋",
+      "paragraphs": [
+        {
+          "work": "01史记",
+          "vol": "067",
+          "volume": "仲尼弟子列传",
+          "paragraph_from": 98,
+          "paragraph_to": 99,
+          "source_file": "01史记_067_仲尼弟子列传第七.txt",
+          "index_file": "段落索引/01史记_067.json",
+          "source_entry_id": "SHIJI_067_24",
+          "role": "母本"
+        }
+      ],
+      "audit_note": "合计22字 < 100，建议降级：停止翻译/线上以朝代补全替代",
+      "recommended_action": "defer_to_dynasty_supplement",
+      "offline_at": "2026-07-19T13:32:34Z",
+      "online_status": "cleared",
+      "offline_action": "historical_box.status=0; DELETE historical_box_detail"
+    },
+    {
+      "defer_reason": "glbl_audit_downgrade_recommended",
+      "source_char_count": 93,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "published_glbl_id": "GLBL_00389",
+      "史略ID": "GLBL_00389",
+      "史略名称": "澹台灭明",
+      "史略分类": "文臣",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "二级朝代坐标": "春秋",
+      "paragraphs": [
+        {
+          "work": "01史记",
+          "vol": "067",
+          "volume": "仲尼弟子列传",
+          "paragraph_from": 73,
+          "paragraph_to": 75,
+          "source_file": "01史记_067_仲尼弟子列传第七.txt",
+          "index_file": "段落索引/01史记_067.json",
+          "source_entry_id": "SHIJI_067_25",
+          "role": "母本"
+        }
+      ],
+      "audit_note": "合计93字 < 100，建议降级：停止翻译/线上以朝代补全替代",
+      "recommended_action": "defer_to_dynasty_supplement",
+      "offline_at": "2026-07-19T13:32:34Z",
+      "online_status": "cleared",
+      "offline_action": "historical_box.status=0; DELETE historical_box_detail"
+    },
+    {
+      "defer_reason": "glbl_audit_downgrade_recommended",
+      "source_char_count": 66,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "published_glbl_id": "GLBL_00413",
+      "史略ID": "GLBL_00413",
+      "史略名称": "疏广",
+      "史略分类": "文臣",
+      "朝代ID": "CD_HX_XIHAN",
+      "二级朝代坐标": "西汉",
+      "paragraphs": [
+        {
+          "work": "02汉书",
+          "vol": "083",
+          "volume": "隽疏于薛平彭传",
+          "paragraph_from": 5,
+          "paragraph_to": 6,
+          "source_file": "02汉书_083_隽疏于薛平彭传第四十一.txt",
+          "index_file": "段落索引/02汉书_083.json",
+          "source_entry_id": "HANSHU_083_05",
+          "role": "母本"
+        }
+      ],
+      "audit_note": "合计66字 < 100，建议降级：停止翻译/线上以朝代补全替代",
+      "recommended_action": "defer_to_dynasty_supplement",
+      "offline_at": "2026-07-19T13:32:34Z",
+      "online_status": "cleared",
+      "offline_action": "historical_box.status=0; DELETE historical_box_detail"
+    },
+    {
+      "defer_reason": "glbl_audit_downgrade_recommended",
+      "source_char_count": 58,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "published_glbl_id": "GLBL_00422",
+      "史略ID": "GLBL_00422",
+      "史略名称": "籍孺",
+      "史略分类": "文臣",
+      "朝代ID": "CD_HX_XIHAN",
+      "二级朝代坐标": "西汉",
+      "paragraphs": [
+        {
+          "work": "01史记",
+          "vol": "125",
+          "volume": "佞幸列传",
+          "paragraph_from": 1,
+          "paragraph_to": 2,
+          "source_file": "01史记_125_佞幸列传第六十五.txt",
+          "index_file": "段落索引/01史记_125.json",
+          "source_entry_id": "SHIJI_125_02",
+          "role": "母本"
+        }
+      ],
+      "audit_note": "合计58字 < 100，建议降级：停止翻译/线上以朝代补全替代",
+      "recommended_action": "defer_to_dynasty_supplement",
+      "offline_at": "2026-07-19T13:32:34Z",
+      "online_status": "cleared",
+      "offline_action": "historical_box.status=0; DELETE historical_box_detail"
+    },
+    {
+      "defer_reason": "glbl_audit_downgrade_recommended",
+      "source_char_count": 51,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "published_glbl_id": "GLBL_00464",
+      "史略ID": "GLBL_00464",
+      "史略名称": "闳孺",
+      "史略分类": "文臣",
+      "朝代ID": "CD_HX_XIHAN",
+      "二级朝代坐标": "西汉",
+      "paragraphs": [
+        {
+          "work": "01史记",
+          "vol": "125",
+          "volume": "佞幸列传",
+          "paragraph_from": 3,
+          "paragraph_to": 3,
+          "source_file": "01史记_125_佞幸列传第六十五.txt",
+          "index_file": "段落索引/01史记_125.json",
+          "source_entry_id": "SHIJI_125_04",
+          "role": "母本"
+        }
+      ],
+      "audit_note": "合计51字 < 100，建议降级：停止翻译/线上以朝代补全替代",
+      "recommended_action": "defer_to_dynasty_supplement",
+      "offline_at": "2026-07-19T13:32:34Z",
+      "online_status": "cleared",
+      "offline_action": "historical_box.status=0; DELETE historical_box_detail"
+    },
+    {
+      "defer_reason": "glbl_audit_downgrade_recommended",
+      "source_char_count": 50,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "published_glbl_id": "GLBL_00465",
+      "史略ID": "GLBL_00465",
+      "史略名称": "闵子骞",
+      "史略分类": "文臣",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "二级朝代坐标": "春秋",
+      "paragraphs": [
+        {
+          "work": "01史记",
+          "vol": "067",
+          "volume": "仲尼弟子列传",
+          "paragraph_from": 9,
+          "paragraph_to": 10,
+          "source_file": "01史记_067_仲尼弟子列传第七.txt",
+          "index_file": "段落索引/01史记_067.json",
+          "source_entry_id": "SHIJI_067_26",
+          "role": "母本"
+        }
+      ],
+      "audit_note": "合计50字 < 100，建议降级：停止翻译/线上以朝代补全替代",
+      "recommended_action": "defer_to_dynasty_supplement",
+      "offline_at": "2026-07-19T13:32:34Z",
+      "online_status": "cleared",
+      "offline_action": "historical_box.status=0; DELETE historical_box_detail"
+    },
+    {
+      "defer_reason": "glbl_audit_downgrade_recommended",
+      "source_char_count": 78,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "published_glbl_id": "GLBL_00478",
+      "史略ID": "GLBL_00478",
+      "史略名称": "韩生",
+      "史略分类": "文臣",
+      "朝代ID": "CD_HX_XIHAN",
+      "二级朝代坐标": "西汉",
+      "paragraphs": [
+        {
+          "work": "01史记",
+          "vol": "121",
+          "volume": "儒林列传",
+          "paragraph_from": 18,
+          "paragraph_to": 18,
+          "source_file": "01史记_121_儒林列传第六十一.txt",
+          "index_file": "段落索引/01史记_121.json",
+          "source_entry_id": "SHIJI_121_10",
+          "role": "母本"
+        }
+      ],
+      "audit_note": "合计78字 < 100，建议降级：停止翻译/线上以朝代补全替代",
+      "recommended_action": "defer_to_dynasty_supplement",
+      "offline_at": "2026-07-19T13:32:34Z",
+      "online_status": "cleared",
+      "offline_action": "historical_box.status=0; DELETE historical_box_detail"
+    },
+    {
+      "defer_reason": "glbl_audit_downgrade_recommended",
+      "source_char_count": 71,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "published_glbl_id": "GLBL_00482",
+      "史略ID": "GLBL_00482",
+      "史略名称": "颜无繇",
+      "史略分类": "文臣",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "二级朝代坐标": "春秋",
+      "paragraphs": [
+        {
+          "work": "01史记",
+          "vol": "067",
+          "volume": "仲尼弟子列传",
+          "paragraph_from": 91,
+          "paragraph_to": 92,
+          "source_file": "01史记_067_仲尼弟子列传第七.txt",
+          "index_file": "段落索引/01史记_067.json",
+          "source_entry_id": "SHIJI_067_28",
+          "role": "母本"
+        }
+      ],
+      "audit_note": "合计71字 < 100，建议降级：停止翻译/线上以朝代补全替代",
+      "recommended_action": "defer_to_dynasty_supplement",
+      "offline_at": "2026-07-19T13:32:34Z",
+      "online_status": "cleared",
+      "offline_action": "historical_box.status=0; DELETE historical_box_detail"
+    },
+    {
+      "defer_reason": "glbl_audit_downgrade_recommended",
+      "source_char_count": 46,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "published_glbl_id": "GLBL_00484",
+      "史略ID": "GLBL_00484",
+      "史略名称": "高堂生",
+      "史略分类": "文臣",
+      "朝代ID": "CD_HX_XIHAN",
+      "二级朝代坐标": "西汉",
+      "paragraphs": [
+        {
+          "work": "01史记",
+          "vol": "121",
+          "volume": "儒林列传",
+          "paragraph_from": 23,
+          "paragraph_to": 23,
+          "source_file": "01史记_121_儒林列传第六十一.txt",
+          "index_file": "段落索引/01史记_121.json",
+          "source_entry_id": "SHIJI_121_11",
+          "role": "母本"
+        }
+      ],
+      "audit_note": "合计46字 < 100，建议降级：停止翻译/线上以朝代补全替代",
+      "recommended_action": "defer_to_dynasty_supplement",
+      "offline_at": "2026-07-19T13:32:34Z",
+      "online_status": "cleared",
+      "offline_action": "historical_box.status=0; DELETE historical_box_detail"
+    },
+    {
+      "defer_reason": "glbl_audit_downgrade_recommended",
+      "source_char_count": 72,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "published_glbl_id": "GLBL_00485",
+      "史略ID": "GLBL_00485",
+      "史略名称": "高柴",
+      "史略分类": "文臣",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "二级朝代坐标": "春秋",
+      "paragraphs": [
+        {
+          "work": "01史记",
+          "vol": "067",
+          "volume": "仲尼弟子列传",
+          "paragraph_from": 95,
+          "paragraph_to": 97,
+          "source_file": "01史记_067_仲尼弟子列传第七.txt",
+          "index_file": "段落索引/01史记_067.json",
+          "source_entry_id": "SHIJI_067_29",
+          "role": "母本"
+        }
+      ],
+      "audit_note": "合计72字 < 100，建议降级：停止翻译/线上以朝代补全替代",
+      "recommended_action": "defer_to_dynasty_supplement",
+      "offline_at": "2026-07-19T13:32:34Z",
+      "online_status": "cleared",
+      "offline_action": "historical_box.status=0; DELETE historical_box_detail"
+    }
+  ],
+  "sources": [
+    "merge_global_entries",
+    "audit_glbl_thickness"
+  ],
+  "offline_cleared_at": "2026-07-19T13:32:34Z"
+}

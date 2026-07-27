@@ -1,0 +1,32 @@
+{
+  "schema": "zhou_xi_shiji_conflict_repair/v1",
+  "at": "2026-07-25T02:21:26Z",
+  "dry_run": false,
+  "downgrade_removed": [
+    {
+      "glbl_id": "GLBL_00066",
+      "name": "杞东楼公"
+    },
+    {
+      "glbl_id": "GLBL_00139",
+      "name": "陈胡公满"
+    }
+  ],
+  "thin_registry_updated": [
+    "SHIJI_036_01 → published_glbl_id=GLBL_00066",
+    "SHIJI_036_10 → published_glbl_id=GLBL_00139"
+  ],
+  "translation_cleaned": {
+    "GLBL_00130": 12,
+    "GLBL_00066": 7,
+    "GLBL_00139": 11,
+    "GLBL_00004": 8,
+    "GLBL_00015": 25,
+    "GLBL_00050": 10,
+    "GLBL_00087": 9
+  },
+  "aggregate_count": {
+    "before": 83,
+    "after": 77
+  }
+}

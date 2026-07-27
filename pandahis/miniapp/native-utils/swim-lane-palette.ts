@@ -10,8 +10,7 @@ export type SwimLaneTone = {
   trackAlpha: number
 }
 
-/* 视觉规范 v3：与绢帛六色对齐（赭石/黛青/秋香/藕合/苔绿/绾红）；
- * 类目固定色见 chip-badge-tokens.ts 的 CATEGORY_TONES */
+/* 视觉规范 v3：绢帛六色按泳道顺序循环（与 chip-badge-tokens.SILK_TONES 一致） */
 export const SWIM_LANE_PALETTE: SwimLaneTone[] = [
   { solid: '#a2734f', trackAlpha: LANE_TRACK_ALPHA },
   { solid: '#63899c', trackAlpha: LANE_TRACK_ALPHA },

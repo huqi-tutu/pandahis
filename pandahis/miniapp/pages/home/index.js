@@ -1,10 +1,13 @@
 const protoPage = require('../../behaviors/proto-page.js')
 const { navBarPx } = require('../../native-utils/matrix/layout.js')
 const { computePageTopPadPx } = require('../../native-utils/nav-metrics')
-const { CIV_TABS, buildRows, initialCiv, buildAllExpanded, toggleDynastyExpanded } = require('../../native-utils/matrix/mock-home-matrix.js')
+const { CIV_TABS, buildRows, initialCiv, buildAllExpanded, toggleDynastyExpanded, isDynastyExpanded } = require('../../native-utils/matrix/mock-home-matrix.js')
 const { fetchHomeMatrixData } = require('../../native-utils/matrix/matrix-cloud.js')
 const { hasToken, request } = require('../../native-utils/api.js')
 const { trySilentWxLogin } = require('../../native-utils/wx-auth.js')
+const { collapsedForCiv, hasRestorableViewport, mergePersistPayload, mergeRemoteHomeState, stripViewportFields, updateCollapsedForCiv } = require('../../native-utils/home-state.js')
+const { mergeRemoteLoadResult, isViewportReadCurrent } = require('../../native-utils/home-state-coordinator.js')
+const { createRemoteStateSaveQueue } = require('../../native-utils/remote-state-save-queue.js')
 const { buildNavFromRows, findActiveNavIndex, invalidateHomeEmperorCountCache } = require('../../native-utils/matrix/dynasty-nav-data.js')
 const {
   CIV_CODE_BY_SLUG,
@@ -19,14 +22,7 @@ const DEFAULT_OVERVIEW_MAP = '/images/world-history-dynasty-map.png'
 const HOME_MATRIX_STATE_PATH = '/me/home-matrix-state'
 const HOME_MATRIX_STATE_LOCAL_KEY = 'homeMatrixState'
 const HOME_STATE_SAVE_DELAY = 400
-
-/** 历史年份展示：公元前用 -XX */
-function formatHistoryYear(y) {
-  if (!Number.isFinite(y)) return ''
-  if (y === 0) return '公元0'
-  if (y < 0) return '-' + Math.abs(y)
-  return String(y)
-}
+const { formatHistoryYear } = require('../../native-utils/year-format')
 
 // ─────────────────────────────────────────────────────────────────────────────
 // 【旧版】横向滑动模式常量（stackMode=false 时使用）
@@ -47,7 +43,7 @@ function calcMatrixScrollBottomPad(screenW, safeAreaBottomPx) {
 const N = CIV_TABS.length  // 18
 
 /** 时间轴列宽（rpx），与 home-matrix.wxss 中 .matrix-time-col 保持一致 */
-const MAJOR_NODE_KEYS = new Set(['夏','商','西周','秦','西汉','西晋','隋','唐','北宋','元','明','清'])
+const MAJOR_NODE_KEYS = new Set(['夏','商','西周','秦','西汉','两晋','隋','唐','宋','元','明','清'])
 
 const MATRIX_TIME_COL_RPX = 84
 const HX_LABEL_FONT_MAX = 16
@@ -120,6 +116,25 @@ function civilizationCodeForCivId(civId) {
   return CIV_CODE_BY_SLUG[civId] || String(civId || initialCiv).toUpperCase()
 }
 
+function isPlainMap(value) { return Boolean(value) && typeof value === 'object' && !Array.isArray(value) }
+function isValidTimestamp(value) { return typeof value === 'string' && value.trim() && Number.isFinite(Date.parse(value)) }
+function normalizeCollapsedMap(value) {
+  if (!isPlainMap(value)) return {}
+  return Object.keys(value).reduce((result, rawId) => {
+    const id = String(rawId || '').trim()
+    if (!id || !Array.isArray(value[rawId])) return result
+    return Object.assign({}, result, { [id]: value[rawId].map(k => String(k || '').trim()).filter(Boolean) })
+  }, {})
+}
+function normalizeTimestampMap(value) {
+  if (!isPlainMap(value)) return {}
+  return Object.keys(value).reduce((result, rawId) => {
+    const id = String(rawId || '').trim()
+    const stamp = value[rawId]
+    return id && isValidTimestamp(stamp) ? Object.assign({}, result, { [id]: stamp.trim() }) : result
+  }, {})
+}
+
 function normalizeHomeState(raw) {
   const data = (raw && raw.data) || raw || {}
   const collapsed = Array.isArray(data.collapsedDynastyKeys)
@@ -130,9 +145,11 @@ function normalizeHomeState(raw) {
     civId: resolveStateCivId(data),
     lastDynastyKey: String(data.lastDynastyKey || '').trim(),
     collapsedDynastyKeys: collapsed,
+    collapsedDynastyKeysByCiv: normalizeCollapsedMap(data.collapsedDynastyKeysByCiv),
+    collapsedDynastyUpdatedAtByCiv: normalizeTimestampMap(data.collapsedDynastyUpdatedAtByCiv),
     lastScrollTopPx: data.lastScrollTopPx == null ? null : Number(data.lastScrollTopPx),
     lastNavActiveIdx: data.lastNavActiveIdx == null ? null : Number(data.lastNavActiveIdx),
-    updatedAt: String(data.updatedAt || '').trim(),
+    updatedAt: isValidTimestamp(data.updatedAt) ? data.updatedAt.trim() : '',
   }
 }
 
@@ -172,12 +189,20 @@ function debugHomeState(label, state) {
 function hasMeaningfulHomeState(state) {
   if (!state) return false
   return Boolean(
-    state.lastDynastyKey ||
-    (state.lastNavActiveIdx != null && state.lastNavActiveIdx >= 0) ||
-    (state.lastScrollTopPx != null && state.lastScrollTopPx > 0) ||
+    hasRestorableViewport(state) ||
     (Array.isArray(state.collapsedDynastyKeys) && state.collapsedDynastyKeys.length) ||
     state.updatedAt
   )
+}
+
+function homeStateForSession(rawState) {
+  const state = rawState ? normalizeHomeState(rawState) : null
+  if (!state) return null
+  return hasToken() ? state : stripViewportFields(state)
+}
+
+function shouldRestoreViewport(state) {
+  return hasToken() && hasRestorableViewport(state)
 }
 
 /** 合并本地与服务端状态，避免服务端空 scroll 覆盖本地有效 viewport */
@@ -193,7 +218,9 @@ function mergeHomeStates(local, remote) {
   let viewport = l
   if (rScroll > lScroll) {
     viewport = r
-  } else if (lScroll <= 0 && rScroll <= 0 && r.lastDynastyKey && !l.lastDynastyKey) {
+  } else if (lScroll > rScroll) {
+    viewport = l
+  } else if (r.updatedAt && l.updatedAt && r.updatedAt >= l.updatedAt) {
     viewport = r
   }
 
@@ -206,45 +233,19 @@ function mergeHomeStates(local, remote) {
     collapsed = rCollapsed
   }
 
+  const mergedCollapsedState = mergeRemoteHomeState(l, r)
   return normalizeHomeState({
+    ...mergedCollapsedState,
     civilizationCode: viewport.civilizationCode || r.civilizationCode || l.civilizationCode,
     civId: viewport.civId || l.civId || r.civId,
-    lastDynastyKey: viewport.lastDynastyKey || r.lastDynastyKey || l.lastDynastyKey,
-    lastScrollTopPx: lScroll > 0 ? lScroll : (rScroll > 0 ? rScroll : (viewport.lastScrollTopPx != null ? viewport.lastScrollTopPx : null)),
-    lastNavActiveIdx: l.lastNavActiveIdx != null ? l.lastNavActiveIdx : r.lastNavActiveIdx,
-    collapsedDynastyKeys: collapsed,
+    lastDynastyKey: lScroll > 0 ? l.lastDynastyKey : (rScroll > 0 ? r.lastDynastyKey : ''),
+    lastScrollTopPx: lScroll > 0 ? lScroll : (rScroll > 0 ? rScroll : 0),
+    lastNavActiveIdx: lScroll > 0
+      ? l.lastNavActiveIdx
+      : (rScroll > 0 ? r.lastNavActiveIdx : null),
+    collapsedDynastyKeys: collapsedForCiv(mergedCollapsedState, viewport.civId || l.civId || r.civId) || collapsed,
     updatedAt: r.updatedAt || l.updatedAt,
   })
-}
-
-/** 保存时合并：折叠/朝代变更不应把有效 scrollTop 覆盖成 0 */
-function mergePersistPayload(existing, next) {
-  const prev = existing ? normalizeHomeState(existing) : null
-  const cur = normalizeHomeState(next)
-  if (!prev) return cur
-
-  const prevScroll = prev.lastScrollTopPx > 0 ? prev.lastScrollTopPx : 0
-  const curScroll = cur.lastScrollTopPx > 0 ? cur.lastScrollTopPx : 0
-  const scrollTop = curScroll > 0 ? curScroll : prevScroll
-
-  const prevNav = prev.lastNavActiveIdx != null && prev.lastNavActiveIdx >= 0 ? prev.lastNavActiveIdx : null
-  const curNav = cur.lastNavActiveIdx != null && cur.lastNavActiveIdx >= 0 ? cur.lastNavActiveIdx : null
-  const navIdx = curScroll > 0
-    ? (curNav != null ? curNav : prevNav)
-    : (curNav != null ? curNav : prevNav)
-
-  let dynastyKey = cur.lastDynastyKey || prev.lastDynastyKey || ''
-  if (curScroll > 0 && cur.lastDynastyKey) {
-    dynastyKey = cur.lastDynastyKey
-  } else if (curScroll <= 0 && prevScroll > 0 && prev.lastDynastyKey) {
-    dynastyKey = prev.lastDynastyKey
-  }
-
-  return normalizeHomeState(Object.assign({}, cur, {
-    lastScrollTopPx: scrollTop,
-    lastNavActiveIdx: navIdx,
-    lastDynastyKey: dynastyKey,
-  }))
 }
 
 function findNavIndexByDynastyKey(key, navItems) {
@@ -260,6 +261,98 @@ function findMatrixRowKeyForDynasty(dynastyKey, matrixRows) {
     r.hxDynastyKey === k || r.dynastyKey === k || r.hxLabel === k
   )
   return row && row.key ? row.key : ''
+}
+
+function findMatrixRowByKey(rowKey, matrixRows) {
+  const k = String(rowKey || '').trim()
+  if (!k || !matrixRows || !matrixRows.length) return null
+  return matrixRows.find(r => r.key === k) || null
+}
+
+/** 矩阵重绘后，按 tS / 轴标注 / 朝代键找回对应时间轴行 */
+function findMatrixRowAfterReload(anchor, matrixRows) {
+  if (!anchor || !matrixRows || !matrixRows.length) return null
+  if (anchor.key) {
+    const byKey = matrixRows.find(r => r.key === anchor.key)
+    if (byKey) return byKey
+  }
+  if (anchor.tS != null) {
+    const byTsLabel = matrixRows.find(r => r.tS === anchor.tS && r.hxLabel === anchor.hxLabel)
+    if (byTsLabel) return byTsLabel
+    const byTsDynasty = matrixRows.find(r => r.tS === anchor.tS && r.dynastyKey === anchor.dynastyKey)
+    if (byTsDynasty) return byTsDynasty
+    const byTs = matrixRows.find(r => r.tS === anchor.tS)
+    if (byTs) return byTs
+  }
+  if (anchor.dynastyKey) {
+    return matrixRows.find(r =>
+      (r.dynastyKey === anchor.dynastyKey || r.hxDynastyKey === anchor.dynastyKey) && r.hxLabel
+    ) || null
+  }
+  return null
+}
+
+function scrollTopPxForRow(row, ratio, insetPx) {
+  if (!row || row.y == null) return 0
+  const inset = insetPx != null ? insetPx : 8
+  return Math.max(0, Math.round(row.y * (ratio || 0.5)) - inset)
+}
+
+/** 收展后 scrollTop：保持点击行在视口中的相对位置不变 */
+function resolveToggleTargetScroll(viewport, clickedRow, anchorRow, ratio, maxScroll) {
+  const r = ratio || 0.5
+  const scrollBefore = Math.max(0, Math.round((viewport && viewport.scrollBefore) || 0))
+  let target = scrollBefore
+
+  if (anchorRow && viewport && viewport.hasVisualOffset && viewport.offsetInView != null && !Number.isNaN(viewport.offsetInView)) {
+    target = Math.round(anchorRow.y * r - viewport.offsetInView)
+  } else if (anchorRow && clickedRow && clickedRow.y != null && anchorRow.y != null) {
+    target = scrollBefore + Math.round((anchorRow.y - clickedRow.y) * r)
+  }
+
+  return Math.max(0, Math.min(maxScroll, target))
+}
+
+/** 收展后滚动：优先匹配色块/容器顶缘，其次导航 yPx、时间轴行 */
+function blockMatchesDynastyScrollKey(block, dynastyKey) {
+  if (!block || !dynastyKey) return false
+  const key = String(dynastyKey).trim()
+  if (block.containerId === key) return true
+  if (block.entryId === `container_span_${key}`) return true
+  if (block.dynasty === key || block.displayName === key) return true
+  if (key === '宋' && (block.dynasty === '北宋' || block.displayName === '北宋')) return true
+  if (key === '两晋' && (block.dynasty === '西晋' || block.dynasty === '东晋')) return true
+  return false
+}
+
+function resolveDynastyScrollTopPx(dynastyKey, ctx) {
+  const key = String(dynastyKey || '').trim()
+  if (!key) return 0
+  const ratio = ctx.ratio || 0.5
+  const blocks = ctx.matrixBlocks || []
+  const navItems = ctx.navItems || []
+  const rows = ctx.matrixRows || []
+  const scrollInsetPx = ctx.scrollInsetPx != null ? ctx.scrollInsetPx : 8
+
+  const matchedBlocks = blocks.filter(b => blockMatchesDynastyScrollKey(b, key))
+  if (matchedBlocks.length) {
+    const topRpx = Math.min(...matchedBlocks.map(b => b.top))
+    return Math.max(0, Math.round(topRpx * ratio) - scrollInsetPx)
+  }
+
+  const navItem = navItems.find(item => item.key === key || item.label === key)
+  if (navItem && navItem.yPx > 0) {
+    return Math.max(0, navItem.yPx - scrollInsetPx)
+  }
+
+  const row = rows.find(r =>
+    r.hxDynastyKey === key || r.dynastyKey === key || r.hxLabel === key
+  )
+  if (row) {
+    return Math.max(0, Math.round((row.y || 0) * ratio) - scrollInsetPx)
+  }
+
+  return 0
 }
 
 function buildLoopItems(civIndex) {
@@ -428,6 +521,8 @@ Page({
     matrixBlocks:      [],
     matrixScrollTop:   0,
     matrixScrollIntoView: '',
+    matrixScrollLock:  false,
+    matrixBodyOffset:  0,
     navItems:          [],
     navActiveIdx:      -1,
     navActive:         false,
@@ -442,6 +537,7 @@ Page({
     navHudTop:         0,
     matrixOverlays:    [],
     matrixSubCards:    [],
+    matrixContainerHits: [],
     matrixTotalH:      0,
     matrixScrollBottomPad: 200,
     scrollAreaTop:     0,
@@ -479,6 +575,15 @@ Page({
     this._ratio = sw / 750
     this._navPx = navBarPx()
     this._pendingExpanded = defaultExpanded
+    this._homeStateGeneration = 0
+    this._homeStateDisposed = false
+    this._remoteHomeStateSaveQueue = createRemoteStateSaveQueue(payload => request(HOME_MATRIX_STATE_PATH, {
+      method: 'PUT', auth: true, data: payload,
+    }).catch(err => {
+      if (isHomeMatrixApiMissing(err)) { this._homeMatrixRemoteUnavailable = true; return }
+      const msg = String(err && err.message || '')
+      if (msg !== 'UNAUTHORIZED') console.warn('[home] home matrix state save failed', err)
+    }))
 
     const navPx = navBarPx()
     const headerPadPx = statusBar + navPx
@@ -488,20 +593,20 @@ Page({
     const matrixHeight = Math.max(200, windowHeight - scrollAreaTop)
     const matrixScrollBottomPad = calcMatrixScrollBottomPad(sw, safeBottomPx)
     const pickerMetrics = calcCivPickerMetrics(windowHeight, headerPadPx, sw)
-    const cachedLocal = readLocalHomeState()
+    const cachedLocal = homeStateForSession(readLocalHomeState())
     this._cachedHomeState = cachedLocal
     const bootCiv = cachedLocal && cachedLocal.civId ? cachedLocal.civId : initialCiv
     const bootCivIndex = Math.max(0, CIV_TABS.findIndex(c => c.id === bootCiv))
     const bootExpanded = cachedLocal
-      ? expandedFromCollapsed(bootCiv, cachedLocal.collapsedDynastyKeys)
+      ? expandedFromCollapsed(bootCiv, collapsedForCiv(cachedLocal, bootCiv) || cachedLocal.collapsedDynastyKeys)
       : defaultExpanded
-    if (cachedLocal && cachedLocal.lastScrollTopPx > 0) {
+    if (hasToken() && cachedLocal && cachedLocal.lastScrollTopPx > 0) {
       this._lastScrollTop = cachedLocal.lastScrollTopPx
     }
-    if (cachedLocal && cachedLocal.lastDynastyKey) {
+    if (hasToken() && cachedLocal && cachedLocal.lastDynastyKey) {
       this._lastDynastyKey = cachedLocal.lastDynastyKey
     }
-    if (cachedLocal && cachedLocal.lastNavActiveIdx != null && cachedLocal.lastNavActiveIdx >= 0) {
+    if (hasToken() && cachedLocal && cachedLocal.lastNavActiveIdx != null && cachedLocal.lastNavActiveIdx >= 0) {
       this._lastNavActiveIdx = cachedLocal.lastNavActiveIdx
     }
 
@@ -524,6 +629,7 @@ Page({
       matrixRows:        [],
       matrixBlocks:      [],
       matrixSubCards:    [],
+      matrixContainerHits: [],
       matrixOverlays:    [],
       matrixTotalH:      0,
       headerPadPx,
@@ -532,7 +638,7 @@ Page({
 
     this._tabAlpha = 0
     this._preloadCivImages()
-    this._lastScrollTop = 0
+    this._lastScrollTop = this._lastScrollTop || 0
     this._skipShowRefresh = true
     this._homeStateLoaded = false
     this._restoringHomeState = false
@@ -584,7 +690,8 @@ Page({
   },
 
   _loadHomeMatrixState() {
-    const localState = readLocalHomeState()
+    const requestGeneration = this._homeStateGeneration || 0
+    const localState = this._cachedHomeState || readLocalHomeState()
     debugHomeState('启动读取本地', localState)
     if (this._homeMatrixRemoteUnavailable) {
       return Promise.resolve(localState)
@@ -592,29 +699,35 @@ Page({
     const ensureToken = hasToken() ? Promise.resolve(true) : trySilentWxLogin()
     return ensureToken.then(ok => {
       if (!ok || !hasToken()) {
-        return localState
+        return homeStateForSession(localState)
       }
       return request(HOME_MATRIX_STATE_PATH, { auth: true }).then(res => {
         const remoteState = normalizeHomeState(res && res.data ? res.data : null)
-        const merged = mergeHomeStates(localState, remoteState)
+        const latestLocal = this._cachedHomeState || readLocalHomeState()
+        const coordinated = mergeRemoteLoadResult(latestLocal, remoteState, requestGeneration, this._homeStateGeneration || 0)
+        const merged = mergeHomeStates(latestLocal, coordinated.state)
         if (merged && hasMeaningfulHomeState(merged)) {
-          writeLocalHomeState(merged)
-          return merged
+          writeLocalHomeState(homeStateForSession(merged))
+          this._cachedHomeState = homeStateForSession(merged)
         }
-        return localState || remoteState
+        if (!coordinated.shouldApplyUi) {
+          this._homeStateLoadStale = true
+          return null
+        }
+        return homeStateForSession(merged || latestLocal || remoteState)
       }).catch(err => {
         if (isHomeMatrixApiMissing(err)) {
           this._homeMatrixRemoteUnavailable = true
           console.info('[home-state] 本地后端未部署 /me/home-matrix-state，仅使用本地 Storage（键名 homeMatrixState）')
-          return localState
+          return homeStateForSession(localState)
         }
         const msg = String(err && err.message || '')
         if (msg !== 'UNAUTHORIZED') {
           console.warn('[home] home matrix state load failed', err)
         }
-        return localState
+        return homeStateForSession(localState)
       })
-    }).catch(() => localState)
+    }).catch(() => homeStateForSession(localState))
   },
 
   /** 拉取首页矩阵源数据（冷启动 / 无缓存兜底时调用；切 tab 回来不走这里） */
@@ -679,6 +792,11 @@ Page({
 
     const loadAfterData = (homeState) => {
       this._readyLoaded = true
+      if (this._homeStateLoadStale) {
+        this._homeStateLoaded = true
+        this._loadMatrix(this.data.activeCiv, this.data.expandedDynasties)
+        return
+      }
       const state = homeState || this._cachedHomeState || readLocalHomeState()
       this._applyInitialHomeMatrixState(state)
     }
@@ -695,16 +813,38 @@ Page({
     }
   },
 
+  /** 读取 scroll-view 真实 scrollTop（bindscroll 在部分机型上不可靠） */
+  _readMatrixScrollTop(callback) {
+    const fallback = Math.max(0, Math.round(this._lastScrollTop || 0))
+    const navItems = this.data.navItems || []
+    const navIdx = this.data.navActiveIdx
+    const navTop = navIdx >= 0 && navItems[navIdx] && navItems[navIdx].yPx > 0
+      ? Math.round(navItems[navIdx].yPx)
+      : 0
+    const finish = typeof callback === 'function' ? callback : function() {}
+    try {
+      wx.createSelectorQuery().in(this).select('#matrixScroll').scrollOffset(res => {
+        const domTop = res && res.scrollTop != null ? Math.max(0, Math.round(res.scrollTop)) : 0
+        finish(domTop > 0 ? domTop : (fallback > 0 ? fallback : navTop))
+      }).exec()
+    } catch {
+      finish(fallback > 0 ? fallback : navTop)
+    }
+  },
+
   /** 构建并注入矩阵行（失败时降级为收起态） */
-  _loadMatrix(civId, expandedDynasties, onReady) {
+  _loadMatrix(civId, expandedDynasties, onReady, opts) {
     const done = typeof onReady === 'function' ? onReady : null
+    const preserveScrollTop = opts && opts.preserveScrollTop != null
+      ? Math.max(0, Math.round(opts.preserveScrollTop))
+      : null
     try {
       const layout = buildRows(civId, expandedDynasties || {})
       if (!layout.rows || !layout.rows.length) {
         console.error('[home-matrix] buildRows returned empty for', civId)
       }
       invalidateHomeEmperorCountCache()
-      this.setData({
+      const patch = {
         matrixRows:       enrichMatrixRows(layout.rows     || []),
         // Phase 1/2: initialize nav data from rows
         navItems:         layout.rows
@@ -713,9 +853,15 @@ Page({
         matrixBlocks:     layout.blocks     || [],
         matrixOverlays:   layout.overlays     || [],
         matrixSubCards:   layout.subCards   || [],
+        matrixContainerHits: layout.containerHits || [],
         matrixTotalH:     layout.totalH     || 0,
         civScrollAnim: true,
-      }, () => {
+      }
+      if (preserveScrollTop != null) {
+        patch.navDragActive = true
+        patch.matrixScrollTop = preserveScrollTop
+      }
+      this.setData(patch, () => {
         this._cacheNavRect()
         if (done) done()
       })
@@ -724,7 +870,7 @@ Page({
       try {
         const layout = buildRows(civId, {})
         invalidateHomeEmperorCountCache()
-        this.setData({
+        const fallbackPatch = {
           matrixRows:       enrichMatrixRows(layout.rows     || []),
         // Phase 1/2: initialize nav data from rows
         navItems:         layout.rows
@@ -733,9 +879,15 @@ Page({
           matrixBlocks:     layout.blocks     || [],
           matrixOverlays:   layout.overlays     || [],
           matrixSubCards:   layout.subCards   || [],
+          matrixContainerHits: layout.containerHits || [],
           matrixTotalH:     layout.totalH     || 0,
           expandedDynasties: {},
-        }, () => {
+        }
+        if (preserveScrollTop != null) {
+          fallbackPatch.navDragActive = true
+          fallbackPatch.matrixScrollTop = preserveScrollTop
+        }
+        this.setData(fallbackPatch, () => {
           this._cacheNavRect()
           if (done) done()
         })
@@ -754,7 +906,7 @@ Page({
     const civIndex = Math.max(0, CIV_TABS.findIndex(c => c.id === activeCiv))
     const resolvedCiv = CIV_TABS[civIndex] ? CIV_TABS[civIndex].id : initialCiv
     const expandedDynasties = state
-      ? expandedFromCollapsed(resolvedCiv, state.collapsedDynastyKeys)
+      ? expandedFromCollapsed(resolvedCiv, collapsedForCiv(state, resolvedCiv) || state.collapsedDynastyKeys)
       : (this._pendingExpanded || this.data.expandedDynasties || buildAllExpanded(resolvedCiv))
     const sw = this._screenW || 375
 
@@ -770,9 +922,9 @@ Page({
     this._lastDynastyKey = state && state.lastDynastyKey ? state.lastDynastyKey : ''
     this._loadMatrix(resolvedCiv, expandedDynasties, () => {
       this._waitForMatrixLayout(() => {
-        if (state && hasMeaningfulHomeState(state)) {
+        if (shouldRestoreViewport(state)) {
           this._restoreViewportFromState(state)
-        } else if (!state) {
+        } else {
           this._scrollToTop()
         }
         this.setData({ civScrollAnim: true })
@@ -794,7 +946,7 @@ Page({
   _restoreViewportFromState(state) {
     const normalized = normalizeHomeState(state)
     debugHomeState('准备恢复滚动', normalized)
-    if (!hasMeaningfulHomeState(normalized)) {
+    if (!hasRestorableViewport(normalized)) {
       this._scrollToTop()
       return
     }
@@ -817,7 +969,11 @@ Page({
       navItem = navIdx >= 0 ? navItems[navIdx] : null
     }
 
-    if (normalized.lastScrollTopPx != null && normalized.lastScrollTopPx > 0) {
+    if (normalized.lastScrollTopPx === 0) {
+      scrollTop = 0
+      navIdx = -1
+      navItem = null
+    } else if (normalized.lastScrollTopPx != null && normalized.lastScrollTopPx > 0) {
       scrollTop = normalized.lastScrollTopPx
     } else if (navItem && navItem.yPx > 0) {
       scrollTop = navItem.yPx
@@ -872,7 +1028,7 @@ Page({
       const patch = {
         navDragActive: true,
         matrixScrollTop: scrollTop,
-        navActiveIdx: navIdx >= 0 ? navIdx : this.data.navActiveIdx,
+        navActiveIdx: navIdx,
       }
       if (scrollIntoView) patch.matrixScrollIntoView = scrollIntoView
       this.setData(patch, () => {
@@ -904,22 +1060,11 @@ Page({
     wx.createSelectorQuery().in(this).select('#matrixScroll').scrollOffset(function(res) {
       const current = res && res.scrollTop != null ? res.scrollTop : 0
       const diff = Math.abs(current - expectedTop)
-      if (diff > 12 && attempt < 6) {
-        const patch = {
-          navDragActive: true,
-          matrixScrollTop: expectedTop + (attempt % 2 ? 1 : 0),
-          navActiveIdx: navIdx >= 0 ? navIdx : that.data.navActiveIdx,
-        }
-        if (attempt >= 3 && scrollIntoView) {
-          patch.matrixScrollIntoView = scrollIntoView
-        }
-        that.setData(patch, () => {
-          if (patch.matrixScrollIntoView) {
-            setTimeout(() => that.setData({ matrixScrollIntoView: '' }), 200)
-          }
+      if (diff > 12 && attempt < 8) {
+        that._scrollMatrixToPx(expectedTop, function() {
           setTimeout(function() {
             that._verifyScrollRestore(expectedTop, navIdx, scrollIntoView, attempt + 1)
-          }, 220)
+          }, 120)
         })
         return
       }
@@ -927,37 +1072,165 @@ Page({
       that._restoringHomeState = false
       that.setData({
         navDragActive: false,
-        navActiveIdx: navIdx >= 0 ? navIdx : that.data.navActiveIdx,
+        matrixScrollLock: false,
+        matrixScrollTop: that._lastScrollTop,
+        navActiveIdx: navIdx,
       })
     }).exec()
   },
 
   _scrollToTop() {
-    this._applyProgrammaticScroll({ scrollTop: 0, navIdx: 0, isRestore: true })
+    const navIdx = findActiveNavIndex(0, this.data.navItems || [])
+    this._applyProgrammaticScroll({ scrollTop: 0, navIdx, isRestore: true })
   },
 
   _scrollToDynastyStart(dynastyKey) {
     const key = String(dynastyKey || '').trim()
-    if (!key) {
-      this._scrollToTop()
-      return
-    }
+    if (!key) return
     const ratio = this._ratio || 0.5
-    const navItem = (this.data.navItems || []).find(item => item.key === key || item.label === key)
-    const row = (this.data.matrixRows || []).find(r =>
-      r.hxDynastyKey === key || r.dynastyKey === key || r.hxLabel === key
-    )
-    const rawTop = navItem ? navItem.yPx : (row ? Math.round((row.y || 0) * ratio) : 0)
+    const rawTop = resolveDynastyScrollTopPx(key, {
+      ratio,
+      matrixBlocks: this.data.matrixBlocks || [],
+      navItems: this.data.navItems || [],
+      matrixRows: this.data.matrixRows || [],
+    })
+    if (rawTop <= 0) return
     const maxScroll = Math.max(0, this.data.matrixTotalH * ratio - this.data.matrixHeight)
     const scrollTop = Math.max(0, Math.min(maxScroll, rawTop))
-    this._restoringHomeState = true
-    this.setData({
-      matrixScrollTop: scrollTop,
-      navDragActive: true,
+    const navIdx = findNavIndexByDynastyKey(key, this.data.navItems || [])
+    this._lastDynastyKey = key
+    if (navIdx >= 0) this._lastNavActiveIdx = navIdx
+    this._applyProgrammaticScroll({
+      scrollTop,
+      navIdx: navIdx >= 0 ? navIdx : this.data.navActiveIdx,
+      isRestore: true,
     })
-    this._lastScrollTop = scrollTop
-    this._updateNavHighlight(scrollTop)
-    this._releaseProgrammaticScrollLock()
+  },
+
+  /** 收展前读取：scrollTop + 点击行相对视口顶部的偏移（px） */
+  _readToggleViewportSnapshot(rowKey, clickedRow, callback) {
+    const ratio = this._ratio || 0.5
+    const finish = typeof callback === 'function' ? callback : function() {}
+    const rowSelector = rowKey ? ('#ts_' + rowKey) : ''
+    const query = wx.createSelectorQuery().in(this)
+    query.select('#matrixScroll').scrollOffset()
+    query.select('#matrixScroll').boundingClientRect()
+    if (rowSelector) query.select(rowSelector).boundingClientRect()
+
+    query.exec(res => {
+      const scrollOffset = (res && res[0]) || {}
+      const svRect = (res && res[1]) || {}
+      const rowRect = rowSelector ? ((res && res[2]) || {}) : null
+
+      let offsetInView = null
+      let hasVisualOffset = false
+      if (rowRect && svRect && rowRect.top != null && svRect.top != null) {
+        offsetInView = rowRect.top - svRect.top
+        hasVisualOffset = true
+      }
+
+      // 微信 scrollOffset 离开首屏后常为 0；用「行 y + 视口偏移」反推真实 scrollTop
+      let scrollBefore = 0
+      if (hasVisualOffset && clickedRow && clickedRow.y != null) {
+        scrollBefore = Math.max(0, Math.round(clickedRow.y * ratio - offsetInView))
+      } else {
+        const domScroll = scrollOffset.scrollTop != null ? Math.round(scrollOffset.scrollTop) : 0
+        const cachedScroll = Math.max(0, Math.round(this._lastScrollTop || 0))
+        scrollBefore = domScroll > 0 ? domScroll : cachedScroll
+      }
+
+      finish({ scrollBefore, offsetInView, hasVisualOffset })
+    })
+  },
+
+  _scrollMatrixToPx(scrollTop, done) {
+    const top = Math.max(0, Math.round(scrollTop || 0))
+    const finish = typeof done === 'function' ? done : function() {}
+    const applyFallback = () => {
+      const nudge = top > 0 ? top + 1 : 1
+      this.setData({
+        matrixScrollLock: true,
+        navDragActive: true,
+        matrixScrollIntoView: '',
+        matrixScrollTop: nudge,
+      }, () => {
+        this.setData({ matrixScrollTop: top }, () => finish(false))
+      })
+    }
+
+    try {
+      wx.createSelectorQuery()
+        .in(this)
+        .select('#matrixScroll')
+        .node()
+        .exec(res => {
+          const node = res && res[0] && res[0].node
+          if (node && typeof node.scrollTo === 'function') {
+            node.scrollTo({ top, animated: false })
+            this._lastScrollTop = top
+            this.setData({ matrixScrollTop: top })
+            finish(true)
+            return
+          }
+          applyFallback()
+        })
+    } catch {
+      applyFallback()
+    }
+  },
+
+  /** 收展：更新矩阵并恢复 scroll，保持点击行在视口中的位置 */
+  _applyMatrixTogglePreserveViewport(matrixPatch, viewport, clickedRow, anchorRow, navIdx, ratio) {
+    const maxScroll = Math.max(0, (matrixPatch.matrixTotalH || 0) * ratio - this.data.matrixHeight)
+    const targetScroll = resolveToggleTargetScroll(viewport, clickedRow, anchorRow, ratio, maxScroll)
+    const resolvedNavIdx = navIdx >= 0 ? navIdx : this.data.navActiveIdx
+    const nudgeTop = targetScroll > 0 ? targetScroll + 1 : 1
+
+    this._restoringHomeState = true
+    this._lastScrollTop = targetScroll
+
+    this.setData(Object.assign({}, matrixPatch, {
+      navActiveIdx: resolvedNavIdx,
+      matrixScrollLock: true,
+      navDragActive: true,
+      matrixScrollIntoView: '',
+      matrixBodyOffset: 0,
+      matrixScrollTop: nudgeTop,
+    }), () => {
+      this._cacheNavRect()
+      this.setData({ matrixScrollTop: targetScroll }, () => {
+        this._verifyToggleScrollRestore(targetScroll, resolvedNavIdx, 0)
+      })
+    })
+  },
+
+  /** 收展滚动校验：读回真实 scrollTop，未到位则用 _scrollMatrixToPx 重试（同冷启动 _verifyScrollRestore 模式） */
+  _verifyToggleScrollRestore(expectedTop, navIdx, attempt) {
+    const that = this
+    wx.createSelectorQuery().in(this).select('#matrixScroll').scrollOffset(function(res) {
+      const current = res && res.scrollTop != null ? res.scrollTop : 0
+      const diff = Math.abs(current - expectedTop)
+      // expectedTop 为 0 时读回的 0 不可信（首屏 scrollOffset 本就恒 0），直接按既定值收尾
+      if (expectedTop > 0 && diff > 12 && attempt < 8) {
+        that._scrollMatrixToPx(expectedTop, function() {
+          setTimeout(function() {
+            that._verifyToggleScrollRestore(expectedTop, navIdx, attempt + 1)
+          }, 120)
+        })
+        return
+      }
+      that._lastScrollTop = current > 0 ? current : expectedTop
+      that._restoringHomeState = false
+      that.setData({
+        matrixScrollLock: false,
+        navDragActive: false,
+        matrixBodyOffset: 0,
+        matrixScrollTop: that._lastScrollTop,
+        navActiveIdx: navIdx >= 0 ? navIdx : that.data.navActiveIdx,
+      })
+      that._updateNavHighlight(that._lastScrollTop)
+      that._writeHomeViewportState(true)
+    }).exec()
   },
 
   _releaseProgrammaticScrollLock(lockMs) {
@@ -986,18 +1259,21 @@ Page({
   },
 
   /** 退出前读取 scroll-view 真实 scrollTop，避免缓存滞后 */
-  _syncScrollTopFromDom(done) {
+  _syncScrollTopFromDom(done, token) {
+    const start = token || { civId: this.data.activeCiv || initialCiv, generation: this._homeStateGeneration || 0 }
     const finish = typeof done === 'function' ? done : function() {}
     try {
       wx.createSelectorQuery().in(this).select('#matrixScroll').scrollOffset(res => {
-        if (res && res.scrollTop != null && !this._restoringHomeState) {
+        const current = { civId: this.data.activeCiv || initialCiv, generation: this._homeStateGeneration || 0 }
+        const isCurrent = isViewportReadCurrent(start, current)
+        if (isCurrent && res && res.scrollTop != null && !this._restoringHomeState) {
           this._lastScrollTop = res.scrollTop
           this._updateNavHighlight(res.scrollTop)
         }
-        finish()
+        finish(isCurrent)
       }).exec()
     } catch {
-      finish()
+      finish(false)
     }
   },
 
@@ -1023,7 +1299,11 @@ Page({
 
   /** 写入本地缓存；有登录态时同步服务端 */
   _persistHomeViewportState(syncRemote) {
-    this._syncScrollTopFromDom(() => this._writeHomeViewportState(syncRemote))
+    const token = { civId: this.data.activeCiv || initialCiv, generation: this._homeStateGeneration || 0 }
+    this._syncScrollTopFromDom(() => {
+      const current = { civId: this.data.activeCiv || initialCiv, generation: this._homeStateGeneration || 0 }
+      if (isViewportReadCurrent(token, current)) this._writeHomeViewportState(syncRemote)
+    }, token)
   },
 
   _writeHomeViewportState(syncRemote) {
@@ -1042,38 +1322,25 @@ Page({
       lastNavActiveIdx: navIdx >= 0 ? navIdx : null,
       updatedAt: new Date().toISOString(),
     }
-    if (
-      !rawPayload.lastDynastyKey &&
-      !rawPayload.lastScrollTopPx &&
-      rawPayload.lastNavActiveIdx == null &&
-      !(rawPayload.collapsedDynastyKeys || []).length
-    ) {
-      return
-    }
     const existing = this._cachedHomeState || readLocalHomeState()
-    const payload = mergePersistPayload(existing, rawPayload)
-    writeLocalHomeState(payload)
-    this._cachedHomeState = payload
+    const mergedPayload = mergePersistPayload(existing, rawPayload)
+    const payload = normalizeHomeState(updateCollapsedForCiv(
+      mergedPayload,
+      activeCiv,
+      rawPayload.collapsedDynastyKeys,
+      rawPayload.updatedAt,
+    ))
+    const persisted = hasToken() ? payload : stripViewportFields(payload)
+    writeLocalHomeState(persisted)
+    this._cachedHomeState = persisted
     if (!syncRemote || !hasToken() || this._homeMatrixRemoteUnavailable) return
-    request(HOME_MATRIX_STATE_PATH, {
-      method: 'PUT',
-      auth: true,
-      data: {
-        civilizationCode: payload.civilizationCode,
-        lastDynastyKey: payload.lastDynastyKey,
-        collapsedDynastyKeys: payload.collapsedDynastyKeys,
-        lastScrollTopPx: payload.lastScrollTopPx,
-      },
-    }).catch(err => {
-      if (isHomeMatrixApiMissing(err)) {
-        this._homeMatrixRemoteUnavailable = true
-        return
-      }
-      const msg = String(err && err.message || '')
-      if (msg !== 'UNAUTHORIZED') {
-        console.warn('[home] home matrix state save failed', err)
-      }
-    })
+    const remotePayload = {
+      civilizationCode: payload.civilizationCode,
+      lastDynastyKey: payload.lastDynastyKey,
+      collapsedDynastyKeys: payload.collapsedDynastyKeys,
+      lastScrollTopPx: payload.lastScrollTopPx,
+    }
+    this._remoteHomeStateSaveQueue.enqueue(remotePayload)
   },
 
   _currentDynastyKeyFromScroll() {
@@ -1121,9 +1388,9 @@ Page({
 
     this._refreshMatrixData().then(() => {
       if (!this._readyLoaded) return
-      const restoreState = this._cachedHomeState || readLocalHomeState()
+      const restoreState = homeStateForSession(this._cachedHomeState || readLocalHomeState())
       this._loadMatrix(this.data.activeCiv, this.data.expandedDynasties, () => {
-        if (restoreState && hasMeaningfulHomeState(restoreState)) {
+        if (shouldRestoreViewport(restoreState)) {
           this._restoreViewportFromState(restoreState)
         }
       })
@@ -1135,11 +1402,13 @@ Page({
     if (this._civSwitchTimer) clearTimeout(this._civSwitchTimer)
     if (this._homeStateSaveTimer) clearTimeout(this._homeStateSaveTimer)
     if (this._homeStateScrollTimer) clearTimeout(this._homeStateScrollTimer)
-    this._syncScrollTopFromDom(() => this._persistHomeViewportState(true))
+    this._persistHomeViewportState(true)
+    this._homeStateDisposed = true
+    if (this._remoteHomeStateSaveQueue) this._remoteHomeStateSaveQueue.dispose()
   },
 
   onHide() {
-    this._syncScrollTopFromDom(() => this._persistHomeViewportState(true))
+    this._persistHomeViewportState(true)
   },
 
   // ── 用路径更新 civStackItems 的每个 cardStyle，保留 DOM 节点让 CSS transition 生效
@@ -1154,7 +1423,21 @@ Page({
 
   _selectCiv(activeCiv, civIndex) {
     if (civIndex === this.data.civIndex && activeCiv === this.data.activeCiv) return
-    const expandedDynasties = buildAllExpanded(activeCiv)
+    this._homeStateGeneration = (this._homeStateGeneration || 0) + 1
+    const previousCiv = this.data.activeCiv || initialCiv
+    const previousCollapsed = collapsedFromExpanded(previousCiv, this.data.expandedDynasties || {})
+    const previousState = normalizeHomeState(updateCollapsedForCiv(
+      this._cachedHomeState || readLocalHomeState() || {},
+      previousCiv,
+      previousCollapsed,
+      new Date().toISOString(),
+    ))
+    writeLocalHomeState(previousState)
+    this._cachedHomeState = previousState
+    const cachedCollapsed = collapsedForCiv(this._cachedHomeState || readLocalHomeState(), activeCiv)
+    const expandedDynasties = cachedCollapsed == null
+      ? buildAllExpanded(activeCiv)
+      : expandedFromCollapsed(activeCiv, cachedCollapsed)
     const sw = (this._screenW) || 375
 
     if (this._matrixLoadTimer) clearTimeout(this._matrixLoadTimer)
@@ -1250,17 +1533,21 @@ Page({
 
   onMatrixScroll(e) {
     const detailTop = e && e.detail ? e.detail.scrollTop : 0
-    if (detailTop > 0 || !this._lastScrollTop) {
+    this._lastMatrixScrollDetail = detailTop
+    if (!this._restoringHomeState && detailTop >= 0) {
+      this._lastScrollTop = detailTop
+    } else if (detailTop > 0 || !this._lastScrollTop) {
       this._lastScrollTop = detailTop
     }
     const scrollTop = this._lastScrollTop
     this._applyTabAlphaFromScroll(scrollTop)
     if (!this._restoringHomeState) {
+      this._homeStateGeneration = (this._homeStateGeneration || 0) + 1
       this._updateNavHighlight(scrollTop)
       this._scheduleHomeMatrixStateSave()
     }
-    // nav 已收起但 navDragActive 仍锁定 → 用户手动滚动时释放（恢复期间不可打断）
-    if (!this._restoringHomeState && this.data.navDragActive && !this.data.navActive && !this._navPendingActivation) {
+    // nav 已收起但 navDragActive 仍锁定 → 用户手动滚动时释放（恢复 / 收展期间不可打断）
+    if (!this._restoringHomeState && !this.data.matrixScrollLock && this.data.navDragActive && !this.data.navActive && !this._navPendingActivation) {
       this.setData({ navDragActive: false })
     }
     // 用户手动滚动时收起导航栏（非 drag 状态）
@@ -1271,9 +1558,18 @@ Page({
   },
 
   // 滚动结束后从 DOM 读取真实位置再保存（enhanced scroll-view 的 detail.scrollTop 可能不准）
-  onMatrixScrollEnd() {
+  onMatrixScrollEnd(e) {
     if (this._restoringHomeState) return
-    this._syncScrollTopFromDom(() => {
+    const detailTop = e && e.detail && e.detail.scrollTop != null ? e.detail.scrollTop : null
+    if (detailTop != null) {
+      this._lastScrollTop = detailTop
+      if (!this.data.matrixScrollLock && !this.data.navDragActive
+        && (this.data.matrixScrollTop || 0) !== detailTop) {
+        this.setData({ matrixScrollTop: detailTop })
+      }
+    }
+    this._syncScrollTopFromDom(isCurrent => {
+      if (!isCurrent) return
       this._applyTabAlphaFromScroll(this._lastScrollTop, true)
       this._updateNavHighlight(this._lastScrollTop)
       this._writeHomeViewportState(true)
@@ -1641,9 +1937,10 @@ Page({
   },
 
   _openEntityDetail(ds) {
+    const containerId = ds.containerId || ''
     const dynasty = ds.dynasty || ds.displayName || ''
     const person = ds.person || ''
-    if (!dynasty && !person && !ds.entityId) return
+    if (!dynasty && !person && !ds.entityId && !containerId) return
 
     const map = this._dynastyUnitMap || this.data.dynastyUnitMap || {}
     const unitId = resolveNavigationUnitId({
@@ -1654,11 +1951,17 @@ Page({
       person,
       dynasty,
       displayName: ds.displayName,
+      containerId,
     }, map)
 
     if (unitId) {
       let url = `/pages/dynasty-detail/index?unitId=${encodeURIComponent(unitId)}`
-      const label = dynasty || ds.displayName || person
+      const CONTAINER_LABELS = new Set([
+        '春秋', '战国', '南北朝', '五代十国', '金', '辽', '元', '清', '三国',
+      ])
+      const label = CONTAINER_LABELS.has(containerId)
+        ? containerId
+        : (dynasty || ds.displayName || person)
       if (label) {
         url += `&dynasty=${encodeURIComponent(String(label))}`
       }
@@ -1676,20 +1979,59 @@ Page({
 
   // 展开/收起华夏某朝代（点击时间轴朝代名旁箭头触发）
   onDynastyToggle(e) {
-    // 长按激活了导航栏 → 不执行展开收起
     if (this._navPendingActivation) {
       this._navPendingActivation = false
       return
     }
     const dynastyKey = e.currentTarget.dataset.dynasty
     if (!dynastyKey) return
+    const anchorRowKey = e.currentTarget.dataset.rowKey || ''
     const civTab = CIV_TABS[this.data.civIndex]
     const civName = civTab ? civTab.name : '华夏'
-    const expanded = toggleDynastyExpanded(dynastyKey, this.data.expandedDynasties, civName)
-    this.setData({ expandedDynasties: expanded })
-    this._lastDynastyKey = dynastyKey
-    this._loadMatrix(this.data.activeCiv, expanded, () => {
-      this._syncScrollTopFromDom(() => this._persistHomeViewportState(true))
+    const civId = this.data.activeCiv || initialCiv
+    const ratio = this._ratio || 0.5
+    const prevRows = this.data.matrixRows || []
+
+    const clickedRow = findMatrixRowByKey(anchorRowKey, prevRows)
+      || prevRows.find(r => r.dynastyKey === dynastyKey && r.hxLabel)
+    const anchor = clickedRow
+      ? { key: clickedRow.key, tS: clickedRow.tS, hxLabel: clickedRow.hxLabel, dynastyKey: clickedRow.dynastyKey }
+      : { dynastyKey }
+
+    this._readToggleViewportSnapshot(anchorRowKey, clickedRow, viewport => {
+      const expanded = toggleDynastyExpanded(dynastyKey, this.data.expandedDynasties, civName)
+
+      let layout
+      try {
+        layout = buildRows(civId, expanded)
+      } catch (err) {
+        console.error('[home-matrix] onDynastyToggle buildRows failed', err)
+        return
+      }
+
+      invalidateHomeEmperorCountCache()
+      const matrixRows = enrichMatrixRows(layout.rows || [])
+      const navItems = matrixRows.length
+        ? buildNavFromRows(matrixRows, ratio, civId).navItems
+        : (this.data.navItems || [])
+
+      const anchorRow = findMatrixRowAfterReload(anchor, matrixRows)
+      const navIdx = findNavIndexByDynastyKey(dynastyKey, navItems)
+
+      this._homeStateGeneration = (this._homeStateGeneration || 0) + 1
+      this._lastDynastyKey = dynastyKey
+
+      this._applyMatrixTogglePreserveViewport({
+        expandedDynasties: expanded,
+        matrixRows,
+        navItems,
+        matrixBlocks: layout.blocks || [],
+        matrixOverlays: layout.overlays || [],
+        matrixSubCards: layout.subCards || [],
+        matrixContainerHits: layout.containerHits || [],
+        matrixTotalH: layout.totalH || 0,
+        civScrollAnim: true,
+      }, viewport, clickedRow, anchorRow, navIdx, ratio)
     })
   },
   noop() {}

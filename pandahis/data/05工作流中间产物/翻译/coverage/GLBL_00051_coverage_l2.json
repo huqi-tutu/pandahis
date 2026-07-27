@@ -1,0 +1,19 @@
+{
+  "schema": "translate-coverage-l2/v1",
+  "史略ID": "GLBL_00051",
+  "passed": true,
+  "degraded": false,
+  "summary": "信息已完整传达。",
+  "l1_ratio": 0.0,
+  "l1_min_ratio": 0.0,
+  "claims": [
+    {
+      "id": "M036–M037",
+      "claim": "平公三年，楚共王拔宋之彭城，以封宋左师鱼石。；四年，诸侯共诛鱼石，而归彭城於宋。",
+      "status": "conveyed",
+      "evidence": "平公三年，楚共王攻克了宋国的彭城，把这块地方封给了宋国的左师鱼石。四年，诸侯共同出兵诛杀了鱼石，把彭城归还给了宋国。",
+      "note": "与母本信息完全一致"
+    }
+  ],
+  "issues": []
+}

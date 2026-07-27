@@ -1,6 +1,6 @@
 {
   "work": "01史记",
-  "updated_at": "2026-06-30T15:13:49Z",
+  "updated_at": "2026-07-25T01:59:20Z",
   "volumes": {
     "001": {
       "skeleton_file": "01史记_001_五帝本纪第一_skeleton.json",
@@ -400,26 +400,26 @@
       "steps": {
         "1": {
           "status": "done",
-          "at": "2026-06-28T13:23:30Z",
+          "at": "2026-07-25T01:58:30Z",
           "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
         },
         "2": {
           "status": "done",
-          "at": "2026-06-28T13:23:31Z",
+          "at": "2026-07-25T01:58:30Z",
           "detail": "check_format skeleton 通过"
         },
         "3": {
           "status": "done",
-          "at": "2026-06-28T13:23:31Z",
+          "at": "2026-07-25T01:58:31Z",
           "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
         },
         "4": {
-          "status": "done",
-          "at": "2026-06-28T13:23:35Z",
-          "detail": "check_format final 通过（含优先级/年份/归属）"
+          "status": "failed",
+          "at": "2026-07-25T01:58:31Z",
+          "detail": "check_format final 失败 (exit 1)\n王\n       段07 → [吴太伯] 君王\n       段08 → [吴太伯] 君王\n       段09 → [吴太伯] 君王\n       段10 → [吴太伯] 君王\n       段11 → [吴太伯] 君王\n       段12 → [吴太伯] 君王\n       段13 → [吴太伯] 君王\n       段14 → [吴太伯] 君王\n       段15 → [吴太伯] 君王\n       段16 → [吴太伯] 君王\n       段17 → [吴太伯] 君王\n       段18 → [吴太伯] 君王\n       段19 → [吴太伯] 君王\n       段20 → [吴太伯] 君王\n       段21 → [吴太伯] 君王\n       段22 → [吴王阖闾] 君王\n       段23 → [吴王阖闾] 君王\n       段24 → [吴王阖闾] 君王\n       段25 → [吴王阖闾] 君王\n       段26 → [吴王阖闾] 君王\n       段27 → [吴王阖闾] 君王\n       段28 → [吴王阖闾] 君王\n       段29 → [吴王阖闾] 君王\n       段30 → [吴王阖闾] 君王\n       段31 → [吴王阖闾] 君王\n       段32 → [吴王阖闾] 君王\n       段33 → [吴王阖闾] 君王\n       段34 → [吴王阖闾] 君王\n       段35 → [吴王阖闾] 君王\n       段36 → [吴王阖闾] 君王\n       段37 → [吴王阖闾] 君王\n       段38 → [吴王阖闾] 君王\n       段39 → [吴王阖闾] 君王\n       段40 → [吴王夫差] 君王\n       段41 → [吴王夫差] 君王\n       段42 → [吴王夫差] 君王\n       段43 → [吴王夫差] 君王\n       段44 → [吴王夫差] 君王\n       段45 → [吴王夫差] 君王\n       段46 → [吴王夫差] 君王\n       段47 → [吴王夫差] 君王\n       段48 → [吴王夫差] 君王\n       段49 → [吴王夫差] 君王\n       段50 → [吴王夫差] 君王\n       段51 → [吴王夫差] 君王\n     ⛔ 段52 → 排除 (太史公曰)\n\n  🔎 原文字句验证\n\n  🤖 知识性决策溯源（LLM 硬门）\n  ✅ Step1/Step4 知识性字段已标记 LLM 溯源\n\n⛔ 发现 21 个错误，修正前不得进入下一步:\n  - [1/3] Step 4 未完成，缺少: 峰值年\n  - [1/3] Step 4 未完成，缺少: 峰值原因\n  - [1/3] Step 4 未完成，缺少: 峰值类型\n  - [1/3] Step 4 未完成，缺少: 峰值置信度\n  - [1/3] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_031_01] 吴太伯 缺少有效峰值年\n  - [2/3] Step 4 未完成，缺少: 峰值年\n  - [2/3] Step 4 未完成，缺少: 峰值原因\n  - [2/3] Step 4 未完成，缺少: 峰值类型\n  - [2/3] Step 4 未完成，缺少: 峰值置信度\n  - [2/3] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_031_02] 吴王夫差 缺少有效峰值年\n  - [3/3] Step 4 未完成，缺少: 峰值年\n  - [3/3] Step 4 未完成，缺少: 峰值原因\n  - [3/3] Step 4 未完成，缺少: 峰值类型\n  - [3/3] Step 4 未完成，缺少: 峰值置信度\n  - [3/3] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_031_03] 吴王阖闾 缺少有效峰值年\n  - [SHIJI_031_01] 吴太伯 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_031_02] 吴王夫差 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_031_03] 吴王阖闾 君王在位年缺 _年LLM依据，禁止脚本占位；"
         }
       },
-      "overall": "done",
+      "overall": "failed",
       "blocked_reason": null
     },
     "032": {
@@ -428,26 +428,26 @@
       "steps": {
         "1": {
           "status": "done",
-          "at": "2026-06-28T13:24:44Z",
+          "at": "2026-07-25T01:58:32Z",
           "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
         },
         "2": {
           "status": "done",
-          "at": "2026-06-28T13:24:44Z",
+          "at": "2026-07-25T01:58:32Z",
           "detail": "check_format skeleton 通过"
         },
         "3": {
           "status": "done",
-          "at": "2026-06-28T13:24:44Z",
+          "at": "2026-07-25T01:58:32Z",
           "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
         },
         "4": {
-          "status": "done",
-          "at": "2026-06-28T13:24:48Z",
-          "detail": "check_format final 通过（含优先级/年份/归属）"
+          "status": "failed",
+          "at": "2026-07-25T01:58:32Z",
+          "detail": "check_format final 失败 (exit 1)\n  - [16/18] Step 4 未完成，缺少: 峰值原因\n  - [16/18] Step 4 未完成，缺少: 峰值类型\n  - [16/18] Step 4 未完成，缺少: 峰值置信度\n  - [16/18] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_032_16] 齐襄公 缺少有效峰值年\n  - [17/18] Step 4 未完成，缺少: 峰值年\n  - [17/18] Step 4 未完成，缺少: 峰值原因\n  - [17/18] Step 4 未完成，缺少: 峰值类型\n  - [17/18] Step 4 未完成，缺少: 峰值置信度\n  - [17/18] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_032_17] 齐釐公 缺少有效峰值年\n  - [18/18] Step 4 未完成，缺少: 峰值年\n  - [18/18] Step 4 未完成，缺少: 峰值原因\n  - [18/18] Step 4 未完成，缺少: 峰值类型\n  - [18/18] Step 4 未完成，缺少: 峰值置信度\n  - [18/18] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_032_18] 齐顷公 缺少有效峰值年\n  - [SHIJI_032_01] 齐太公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_032_02] 齐孝公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_032_03] 齐平公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_032_04] 齐庄公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_032_05] 齐康公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_032_06] 齐悼公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_032_07] 齐惠公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_032_08] 齐懿公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_032_09] 齐文公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_032_10] 齐昭公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_032_11] 齐景公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_032_12] 齐桓公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_032_13] 齐灵公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_032_14] 齐献公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_032_15] 齐简公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_032_16] 齐襄公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_032_17] 齐釐公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_032_18] 齐顷公 君王在位年缺 _年LLM依据，禁止脚本占位；"
         }
       },
-      "overall": "done",
+      "overall": "failed",
       "blocked_reason": null
     },
     "033": {
@@ -456,26 +456,26 @@
       "steps": {
         "1": {
           "status": "done",
-          "at": "2026-06-28T13:36:11Z",
+          "at": "2026-07-25T01:58:33Z",
           "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
         },
         "2": {
           "status": "done",
-          "at": "2026-06-28T13:36:11Z",
+          "at": "2026-07-25T01:58:33Z",
           "detail": "check_format skeleton 通过"
         },
         "3": {
           "status": "done",
-          "at": "2026-06-28T13:36:12Z",
+          "at": "2026-07-25T01:58:33Z",
           "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
         },
         "4": {
-          "status": "done",
-          "at": "2026-06-28T13:36:15Z",
-          "detail": "check_format final 通过（含优先级/年份/归属）"
+          "status": "failed",
+          "at": "2026-07-25T01:58:33Z",
+          "detail": "check_format final 失败 (exit 1)\nrichment 再写入\n  - [SHIJI_033_14] 鲁襄公 缺少有效峰值年\n  - [15/17] Step 4 未完成，缺少: 峰值年\n  - [15/17] Step 4 未完成，缺少: 峰值原因\n  - [15/17] Step 4 未完成，缺少: 峰值类型\n  - [15/17] Step 4 未完成，缺少: 峰值置信度\n  - [15/17] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_033_15] 鲁釐公 缺少有效峰值年\n  - [16/17] Step 4 未完成，缺少: 峰值年\n  - [16/17] Step 4 未完成，缺少: 峰值原因\n  - [16/17] Step 4 未完成，缺少: 峰值类型\n  - [16/17] Step 4 未完成，缺少: 峰值置信度\n  - [16/17] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_033_16] 鲁隐公 缺少有效峰值年\n  - [17/17] Step 4 未完成，缺少: 峰值年\n  - [17/17] Step 4 未完成，缺少: 峰值原因\n  - [17/17] Step 4 未完成，缺少: 峰值类型\n  - [17/17] Step 4 未完成，缺少: 峰值置信度\n  - [17/17] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_033_17] 鲁顷公 缺少有效峰值年\n  - [SHIJI_033_01] 周公旦 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_033_02] 鲁公伯禽 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_033_03] 鲁哀公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_033_04] 鲁定公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_033_05] 鲁宣公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_033_06] 鲁庄公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_033_07] 鲁惠公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_033_08] 鲁成公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_033_09] 鲁文公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_033_10] 鲁昭公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_033_11] 鲁桓公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_033_12] 鲁武公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_033_13] 鲁湣公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_033_14] 鲁襄公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_033_15] 鲁釐公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_033_16] 鲁隐公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_033_17] 鲁顷公 君王在位年缺 _年LLM依据，禁止脚本占位；"
         }
       },
-      "overall": "done",
+      "overall": "failed",
       "blocked_reason": null
     },
     "034": {
@@ -484,26 +484,26 @@
       "steps": {
         "1": {
           "status": "done",
-          "at": "2026-06-28T14:32:49Z",
+          "at": "2026-07-25T01:58:34Z",
           "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
         },
         "2": {
           "status": "done",
-          "at": "2026-06-28T14:32:49Z",
+          "at": "2026-07-25T01:58:34Z",
           "detail": "check_format skeleton 通过"
         },
         "3": {
           "status": "done",
-          "at": "2026-06-28T14:32:49Z",
+          "at": "2026-07-25T01:58:34Z",
           "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
         },
         "4": {
-          "status": "done",
-          "at": "2026-06-28T14:32:49Z",
-          "detail": "check_format final 通过（含优先级/年份/归属）"
+          "status": "failed",
+          "at": "2026-07-25T01:58:35Z",
+          "detail": "check_format final 失败 (exit 1)\n除；全局 enrichment 再写入\n  - [SHIJI_034_03] 燕庄公 缺少有效峰值年\n  - [4/9] Step 4 未完成，缺少: 峰值年\n  - [4/9] Step 4 未完成，缺少: 峰值原因\n  - [4/9] Step 4 未完成，缺少: 峰值类型\n  - [4/9] Step 4 未完成，缺少: 峰值置信度\n  - [4/9] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_034_04] 燕惠公 缺少有效峰值年\n  - [5/9] Step 4 未完成，缺少: 峰值年\n  - [5/9] Step 4 未完成，缺少: 峰值原因\n  - [5/9] Step 4 未完成，缺少: 峰值类型\n  - [5/9] Step 4 未完成，缺少: 峰值置信度\n  - [5/9] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_034_05] 燕惠王 缺少有效峰值年\n  - [6/9] Step 4 未完成，缺少: 峰值年\n  - [6/9] Step 4 未完成，缺少: 峰值原因\n  - [6/9] Step 4 未完成，缺少: 峰值类型\n  - [6/9] Step 4 未完成，缺少: 峰值置信度\n  - [6/9] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_034_06] 燕文公 缺少有效峰值年\n  - [7/9] Step 4 未完成，缺少: 峰值年\n  - [7/9] Step 4 未完成，缺少: 峰值原因\n  - [7/9] Step 4 未完成，缺少: 峰值类型\n  - [7/9] Step 4 未完成，缺少: 峰值置信度\n  - [7/9] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_034_07] 燕易王 缺少有效峰值年\n  - [8/9] Step 4 未完成，缺少: 峰值年\n  - [8/9] Step 4 未完成，缺少: 峰值原因\n  - [8/9] Step 4 未完成，缺少: 峰值类型\n  - [8/9] Step 4 未完成，缺少: 峰值置信度\n  - [8/9] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_034_08] 燕昭王 缺少有效峰值年\n  - [9/9] Step 4 未完成，缺少: 峰值年\n  - [9/9] Step 4 未完成，缺少: 峰值原因\n  - [9/9] Step 4 未完成，缺少: 峰值类型\n  - [9/9] Step 4 未完成，缺少: 峰值置信度\n  - [9/9] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_034_09] 燕王喜 缺少有效峰值年\n  - [SHIJI_034_01] 燕召公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_034_02] 燕哙 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_034_03] 燕庄公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_034_04] 燕惠公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_034_05] 燕惠王 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_034_06] 燕文公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_034_07] 燕易王 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_034_08] 燕昭王 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_034_09] 燕王喜 君王在位年缺 _年LLM依据，禁止脚本占位；"
         }
       },
-      "overall": "done",
+      "overall": "failed",
       "blocked_reason": null
     },
     "035": {
@@ -512,26 +512,26 @@
       "steps": {
         "1": {
           "status": "done",
-          "at": "2026-06-28T13:36:55Z",
+          "at": "2026-07-25T01:58:35Z",
           "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
         },
         "2": {
           "status": "done",
-          "at": "2026-06-28T13:36:56Z",
+          "at": "2026-07-25T01:58:35Z",
           "detail": "check_format skeleton 通过"
         },
         "3": {
           "status": "done",
-          "at": "2026-06-28T13:36:56Z",
+          "at": "2026-07-25T01:58:36Z",
           "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
         },
         "4": {
-          "status": "done",
-          "at": "2026-06-28T13:37:00Z",
-          "detail": "check_format final 通过（含优先级/年份/归属）"
+          "status": "failed",
+          "at": "2026-07-25T01:58:36Z",
+          "detail": "check_format final 失败 (exit 1)\n值类型\n  - [9/13] Step 4 未完成，缺少: 峰值置信度\n  - [9/13] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_035_09] 蔡哀侯 缺少有效峰值年\n  - [10/13] Step 4 未完成，缺少: 峰值年\n  - [10/13] Step 4 未完成，缺少: 峰值原因\n  - [10/13] Step 4 未完成，缺少: 峰值类型\n  - [10/13] Step 4 未完成，缺少: 峰值置信度\n  - [10/13] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_035_10] 蔡平侯 缺少有效峰值年\n  - [11/13] Step 4 未完成，缺少: 峰值年\n  - [11/13] Step 4 未完成，缺少: 峰值原因\n  - [11/13] Step 4 未完成，缺少: 峰值类型\n  - [11/13] Step 4 未完成，缺少: 峰值置信度\n  - [11/13] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_035_11] 蔡昭侯 缺少有效峰值年\n  - [12/13] Step 4 未完成，缺少: 峰值年\n  - [12/13] Step 4 未完成，缺少: 峰值原因\n  - [12/13] Step 4 未完成，缺少: 峰值类型\n  - [12/13] Step 4 未完成，缺少: 峰值置信度\n  - [12/13] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_035_12] 蔡灵侯 缺少有效峰值年\n  - [13/13] Step 4 未完成，缺少: 峰值年\n  - [13/13] Step 4 未完成，缺少: 峰值原因\n  - [13/13] Step 4 未完成，缺少: 峰值类型\n  - [13/13] Step 4 未完成，缺少: 峰值置信度\n  - [13/13] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_035_13] 蔡缪侯 缺少有效峰值年\n  - [SHIJI_035_01] 曹伯阳 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_035_02] 曹共公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_035_03] 曹叔振铎 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_035_04] 曹悼公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_035_05] 曹成公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_035_06] 管叔鲜 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_035_07] 蔡仲 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_035_08] 蔡侯齐 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_035_09] 蔡哀侯 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_035_10] 蔡平侯 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_035_11] 蔡昭侯 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_035_12] 蔡灵侯 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_035_13] 蔡缪侯 君王在位年缺 _年LLM依据，禁止脚本占位；"
         }
       },
-      "overall": "done",
+      "overall": "failed",
       "blocked_reason": null
     },
     "036": {
@@ -540,26 +540,26 @@
       "steps": {
         "1": {
           "status": "done",
-          "at": "2026-06-28T13:39:10Z",
+          "at": "2026-07-25T01:58:37Z",
           "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
         },
         "2": {
           "status": "done",
-          "at": "2026-06-28T13:39:10Z",
+          "at": "2026-07-25T01:58:37Z",
           "detail": "check_format skeleton 通过"
         },
         "3": {
           "status": "done",
-          "at": "2026-06-28T13:39:10Z",
+          "at": "2026-07-25T01:58:37Z",
           "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
         },
         "4": {
-          "status": "done",
-          "at": "2026-06-28T13:39:14Z",
-          "detail": "check_format final 通过（含优先级/年份/归属）"
+          "status": "failed",
+          "at": "2026-07-25T01:58:37Z",
+          "detail": "check_format final 失败 (exit 1)\n [5/10] Step 4 未完成，缺少: 峰值类型\n  - [5/10] Step 4 未完成，缺少: 峰值置信度\n  - [5/10] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_036_05] 陈怀公 缺少有效峰值年\n  - [6/10] Step 4 未完成，缺少: 峰值年\n  - [6/10] Step 4 未完成，缺少: 峰值原因\n  - [6/10] Step 4 未完成，缺少: 峰值类型\n  - [6/10] Step 4 未完成，缺少: 峰值置信度\n  - [6/10] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_036_06] 陈惠公 缺少有效峰值年\n  - [7/10] Step 4 未完成，缺少: 峰值年\n  - [7/10] Step 4 未完成，缺少: 峰值原因\n  - [7/10] Step 4 未完成，缺少: 峰值类型\n  - [7/10] Step 4 未完成，缺少: 峰值置信度\n  - [7/10] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_036_07] 陈成公 缺少有效峰值年\n  - [8/10] Step 4 未完成，缺少: 峰值年\n  - [8/10] Step 4 未完成，缺少: 峰值原因\n  - [8/10] Step 4 未完成，缺少: 峰值类型\n  - [8/10] Step 4 未完成，缺少: 峰值置信度\n  - [8/10] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_036_08] 陈湣公 缺少有效峰值年\n  - [9/10] Step 4 未完成，缺少: 峰值年\n  - [9/10] Step 4 未完成，缺少: 峰值原因\n  - [9/10] Step 4 未完成，缺少: 峰值类型\n  - [9/10] Step 4 未完成，缺少: 峰值置信度\n  - [9/10] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_036_09] 陈灵公 缺少有效峰值年\n  - [10/10] Step 4 未完成，缺少: 峰值年\n  - [10/10] Step 4 未完成，缺少: 峰值原因\n  - [10/10] Step 4 未完成，缺少: 峰值类型\n  - [10/10] Step 4 未完成，缺少: 峰值置信度\n  - [10/10] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_036_10] 陈胡公满 缺少有效峰值年\n  - [SHIJI_036_01] 杞东楼公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_036_02] 陈厉公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_036_03] 陈哀公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_036_04] 陈宣公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_036_05] 陈怀公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_036_06] 陈惠公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_036_07] 陈成公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_036_08] 陈湣公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_036_09] 陈灵公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_036_10] 陈胡公满 君王在位年缺 _年LLM依据，禁止脚本占位；"
         }
       },
-      "overall": "done",
+      "overall": "failed",
       "blocked_reason": null
     },
     "037": {
@@ -568,26 +568,26 @@
       "steps": {
         "1": {
           "status": "done",
-          "at": "2026-06-28T14:32:50Z",
+          "at": "2026-07-25T01:58:38Z",
           "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
         },
         "2": {
           "status": "done",
-          "at": "2026-06-28T14:32:50Z",
+          "at": "2026-07-25T01:58:38Z",
           "detail": "check_format skeleton 通过"
         },
         "3": {
           "status": "done",
-          "at": "2026-06-28T14:32:50Z",
+          "at": "2026-07-25T01:58:38Z",
           "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
         },
         "4": {
-          "status": "done",
-          "at": "2026-06-28T14:32:50Z",
-          "detail": "check_format final 通过（含优先级/年份/归属）"
+          "status": "failed",
+          "at": "2026-07-25T01:58:39Z",
+          "detail": "check_format final 失败 (exit 1)\n 峰值年\n  - [12/15] Step 4 未完成，缺少: 峰值原因\n  - [12/15] Step 4 未完成，缺少: 峰值类型\n  - [12/15] Step 4 未完成，缺少: 峰值置信度\n  - [12/15] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_037_12] 卫武公 缺少有效峰值年\n  - [13/15] Step 4 未完成，缺少: 峰值年\n  - [13/15] Step 4 未完成，缺少: 峰值原因\n  - [13/15] Step 4 未完成，缺少: 峰值类型\n  - [13/15] Step 4 未完成，缺少: 峰值置信度\n  - [13/15] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_037_13] 卫灵公 缺少有效峰值年\n  - [14/15] Step 4 未完成，缺少: 峰值年\n  - [14/15] Step 4 未完成，缺少: 峰值原因\n  - [14/15] Step 4 未完成，缺少: 峰值类型\n  - [14/15] Step 4 未完成，缺少: 峰值置信度\n  - [14/15] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_037_14] 卫献公 缺少有效峰值年\n  - [15/15] Step 4 未完成，缺少: 峰值年\n  - [15/15] Step 4 未完成，缺少: 峰值原因\n  - [15/15] Step 4 未完成，缺少: 峰值类型\n  - [15/15] Step 4 未完成，缺少: 峰值置信度\n  - [15/15] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_037_15] 卫襄公 缺少有效峰值年\n  - [SHIJI_037_01] 卫出公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_037_02] 卫君角 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_037_03] 卫宣公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_037_04] 卫庄公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_037_05] 卫庄公蒯聩 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_037_06] 卫康叔 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_037_07] 卫惠公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_037_08] 卫懿公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_037_09] 卫成公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_037_10] 卫文公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_037_11] 卫桓公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_037_12] 卫武公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_037_13] 卫灵公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_037_14] 卫献公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_037_15] 卫襄公 君王在位年缺 _年LLM依据，禁止脚本占位；"
         }
       },
-      "overall": "done",
+      "overall": "failed",
       "blocked_reason": null
     },
     "038": {
@@ -596,26 +596,26 @@
       "steps": {
         "1": {
           "status": "done",
-          "at": "2026-06-28T14:32:51Z",
+          "at": "2026-07-25T01:58:39Z",
           "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
         },
         "2": {
           "status": "done",
-          "at": "2026-06-28T14:32:51Z",
+          "at": "2026-07-25T01:58:39Z",
           "detail": "check_format skeleton 通过"
         },
         "3": {
           "status": "done",
-          "at": "2026-06-28T14:32:51Z",
+          "at": "2026-07-25T01:58:40Z",
           "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
         },
         "4": {
-          "status": "done",
-          "at": "2026-06-28T14:32:51Z",
-          "detail": "check_format final 通过（含优先级/年份/归属）"
+          "status": "failed",
+          "at": "2026-07-25T01:58:40Z",
+          "detail": "check_format final 失败 (exit 1)\n  - [5/10] Step 4 未完成，缺少: 峰值类型\n  - [5/10] Step 4 未完成，缺少: 峰值置信度\n  - [5/10] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_038_05] 宋文公 缺少有效峰值年\n  - [6/10] Step 4 未完成，缺少: 峰值年\n  - [6/10] Step 4 未完成，缺少: 峰值原因\n  - [6/10] Step 4 未完成，缺少: 峰值类型\n  - [6/10] Step 4 未完成，缺少: 峰值置信度\n  - [6/10] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_038_06] 宋昭公 缺少有效峰值年\n  - [7/10] Step 4 未完成，缺少: 峰值年\n  - [7/10] Step 4 未完成，缺少: 峰值原因\n  - [7/10] Step 4 未完成，缺少: 峰值类型\n  - [7/10] Step 4 未完成，缺少: 峰值置信度\n  - [7/10] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_038_07] 宋景公 缺少有效峰值年\n  - [8/10] Step 4 未完成，缺少: 峰值年\n  - [8/10] Step 4 未完成，缺少: 峰值原因\n  - [8/10] Step 4 未完成，缺少: 峰值类型\n  - [8/10] Step 4 未完成，缺少: 峰值置信度\n  - [8/10] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_038_08] 宋殇公 缺少有效峰值年\n  - [9/10] Step 4 未完成，缺少: 峰值年\n  - [9/10] Step 4 未完成，缺少: 峰值原因\n  - [9/10] Step 4 未完成，缺少: 峰值类型\n  - [9/10] Step 4 未完成，缺少: 峰值置信度\n  - [9/10] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_038_09] 宋湣公 缺少有效峰值年\n  - [10/10] Step 4 未完成，缺少: 峰值年\n  - [10/10] Step 4 未完成，缺少: 峰值原因\n  - [10/10] Step 4 未完成，缺少: 峰值类型\n  - [10/10] Step 4 未完成，缺少: 峰值置信度\n  - [10/10] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_038_10] 宋襄公 缺少有效峰值年\n  - [SHIJI_038_01] 宋共公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_038_02] 宋君偃 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_038_03] 宋宣公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_038_04] 宋微子 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_038_05] 宋文公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_038_06] 宋昭公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_038_07] 宋景公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_038_08] 宋殇公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_038_09] 宋湣公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_038_10] 宋襄公 君王在位年缺 _年LLM依据，禁止脚本占位；"
         }
       },
-      "overall": "done",
+      "overall": "failed",
       "blocked_reason": null
     },
     "039": {
@@ -624,26 +624,26 @@
       "steps": {
         "1": {
           "status": "done",
-          "at": "2026-06-28T14:32:51Z",
+          "at": "2026-07-25T01:58:40Z",
           "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
         },
         "2": {
           "status": "done",
-          "at": "2026-06-28T14:32:52Z",
+          "at": "2026-07-25T01:58:41Z",
           "detail": "check_format skeleton 通过"
         },
         "3": {
           "status": "done",
-          "at": "2026-06-28T14:32:52Z",
+          "at": "2026-07-25T01:58:41Z",
           "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
         },
         "4": {
-          "status": "done",
-          "at": "2026-06-28T14:32:52Z",
-          "detail": "check_format final 通过（含优先级/年份/归属）"
+          "status": "failed",
+          "at": "2026-07-25T01:58:41Z",
+          "detail": "check_format final 失败 (exit 1)\n值类型\n  - [9/13] Step 4 未完成，缺少: 峰值置信度\n  - [9/13] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_039_09] 晋武公 缺少有效峰值年\n  - [10/13] Step 4 未完成，缺少: 峰值年\n  - [10/13] Step 4 未完成，缺少: 峰值原因\n  - [10/13] Step 4 未完成，缺少: 峰值类型\n  - [10/13] Step 4 未完成，缺少: 峰值置信度\n  - [10/13] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_039_10] 晋灵公 缺少有效峰值年\n  - [11/13] Step 4 未完成，缺少: 峰值年\n  - [11/13] Step 4 未完成，缺少: 峰值原因\n  - [11/13] Step 4 未完成，缺少: 峰值类型\n  - [11/13] Step 4 未完成，缺少: 峰值置信度\n  - [11/13] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_039_11] 晋献公 缺少有效峰值年\n  - [12/13] Step 4 未完成，缺少: 峰值年\n  - [12/13] Step 4 未完成，缺少: 峰值原因\n  - [12/13] Step 4 未完成，缺少: 峰值类型\n  - [12/13] Step 4 未完成，缺少: 峰值置信度\n  - [12/13] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_039_12] 晋襄公 缺少有效峰值年\n  - [13/13] Step 4 未完成，缺少: 峰值年\n  - [13/13] Step 4 未完成，缺少: 峰值原因\n  - [13/13] Step 4 未完成，缺少: 峰值类型\n  - [13/13] Step 4 未完成，缺少: 峰值置信度\n  - [13/13] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_039_13] 晋顷公 缺少有效峰值年\n  - [SHIJI_039_01] 晋出公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_039_02] 晋厉公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_039_03] 晋定公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_039_04] 晋平公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_039_05] 晋悼公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_039_06] 晋惠公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_039_07] 晋文公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_039_08] 晋景公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_039_09] 晋武公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_039_10] 晋灵公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_039_11] 晋献公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_039_12] 晋襄公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_039_13] 晋顷公 君王在位年缺 _年LLM依据，禁止脚本占位；"
         }
       },
-      "overall": "done",
+      "overall": "failed",
       "blocked_reason": null
     },
     "040": {
@@ -652,26 +652,26 @@
       "steps": {
         "1": {
           "status": "done",
-          "at": "2026-06-28T14:32:52Z",
+          "at": "2026-07-25T01:58:42Z",
           "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
         },
         "2": {
           "status": "done",
-          "at": "2026-06-28T14:32:52Z",
+          "at": "2026-07-25T01:58:42Z",
           "detail": "check_format skeleton 通过"
         },
         "3": {
           "status": "done",
-          "at": "2026-06-28T14:32:53Z",
+          "at": "2026-07-25T01:58:42Z",
           "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
         },
         "4": {
-          "status": "done",
-          "at": "2026-06-28T14:32:53Z",
-          "detail": "check_format final 通过（含优先级/年份/归属）"
+          "status": "failed",
+          "at": "2026-07-25T01:58:42Z",
+          "detail": "check_format final 失败 (exit 1)\n局 enrichment 再写入\n  - [SHIJI_040_10] 楚灵王 缺少有效峰值年\n  - [11/14] Step 4 未完成，缺少: 峰值年\n  - [11/14] Step 4 未完成，缺少: 峰值原因\n  - [11/14] Step 4 未完成，缺少: 峰值类型\n  - [11/14] Step 4 未完成，缺少: 峰值置信度\n  - [11/14] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_040_11] 楚熊渠 缺少有效峰值年\n  - [12/14] Step 4 未完成，缺少: 峰值年\n  - [12/14] Step 4 未完成，缺少: 峰值原因\n  - [12/14] Step 4 未完成，缺少: 峰值类型\n  - [12/14] Step 4 未完成，缺少: 峰值置信度\n  - [12/14] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_040_12] 楚熊绎 缺少有效峰值年\n  - [13/14] Step 4 未完成，缺少: 峰值年\n  - [13/14] Step 4 未完成，缺少: 峰值原因\n  - [13/14] Step 4 未完成，缺少: 峰值类型\n  - [13/14] Step 4 未完成，缺少: 峰值置信度\n  - [13/14] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_040_13] 楚考烈王 缺少有效峰值年\n  - [14/14] Step 4 未完成，缺少: 峰值年\n  - [14/14] Step 4 未完成，缺少: 峰值原因\n  - [14/14] Step 4 未完成，缺少: 峰值类型\n  - [14/14] Step 4 未完成，缺少: 峰值置信度\n  - [14/14] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_040_14] 楚顷襄王 缺少有效峰值年\n  - [SHIJI_040_01] 楚共王 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_040_02] 楚平王 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_040_03] 楚庄王 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_040_04] 楚怀王 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_040_05] 楚惠王 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_040_06] 楚成王 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_040_07] 楚文王 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_040_08] 楚昭王 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_040_09] 楚武王 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_040_10] 楚灵王 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_040_11] 楚熊渠 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_040_12] 楚熊绎 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_040_13] 楚考烈王 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_040_14] 楚顷襄王 君王在位年缺 _年LLM依据，禁止脚本占位；"
         }
       },
-      "overall": "done",
+      "overall": "failed",
       "blocked_reason": null
     },
     "041": {
@@ -680,26 +680,26 @@
       "steps": {
         "1": {
           "status": "done",
-          "at": "2026-06-28T14:32:53Z",
+          "at": "2026-07-25T01:58:43Z",
           "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
         },
         "2": {
           "status": "done",
-          "at": "2026-06-28T14:32:53Z",
+          "at": "2026-07-25T01:58:43Z",
           "detail": "check_format skeleton 通过"
         },
         "3": {
           "status": "done",
-          "at": "2026-06-28T14:32:53Z",
+          "at": "2026-07-25T01:58:43Z",
           "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
         },
         "4": {
-          "status": "done",
-          "at": "2026-06-28T14:32:54Z",
-          "detail": "check_format final 通过（含优先级/年份/归属）"
+          "status": "failed",
+          "at": "2026-07-25T01:58:43Z",
+          "detail": "check_format final 失败 (exit 1)\nStep 4 未完成，缺少: 峰值年\n  ❌ [2/2] Step 4 未完成，缺少: 峰值原因\n  ❌ [2/2] Step 4 未完成，缺少: 峰值类型\n  ❌ [2/2] Step 4 未完成，缺少: 峰值置信度\n  ❌ [2/2] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  ❌ [SHIJI_041_02] 越王句践 缺少有效峰值年\n  ❌ [SHIJI_041_01] 王无彊 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  ❌ [SHIJI_041_02] 越王句践 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n\n  📊 归属表检查 (共 36 段)\n\n  📄 exclude 内容门\n  ✅ exclude 内容 OK\n\n  👑 君王命名\n  ✅ 君王名称均在帝王.json 枚举内\n\n  🎯 卷主轴身份\n  ✅ skeleton 人物身份 OK\n\n  📅 君王年份\n  ✅ 君王年份无重复区间\n\n  🎯 主轴君主\n  ✅ 非君纪坐标均落在本卷君王主轴内\n\n  📊 逐段归属表:\n       段01 → [越王句践] 君王\n       段02 → [越王句践] 君王\n       段03 → [越王句践] 君王\n       段04 → [越王句践] 君王\n       段05 → [越王句践] 君王\n       段06 → [越王句践] 君王\n       段07 → [越王句践] 君王\n       段08 → [越王句践] 君王\n       段09 → [越王句践] 君王\n       段10 → [越王句践] 君王\n       段11 → [越王句践] 君王\n       段12 → [越王句践] 君王\n       段13 → [越王句践] 君王\n       段14 → [越王句践] 君王\n       段15 → [越王句践] 君王\n       段16 → [越王句践] 君王\n     ⛔ 段17 → 排除 (其他)\n       段18 → [王无彊] 君王\n       段19 → [王无彊] 君王\n       段20 → [王无彊] 君王\n       段21 → [王无彊] 君王\n     ⛔ 段22 → 排除 (其他)\n     ⛔ 段23 → 排除 (其他)\n     ⛔ 段24 → 排除 (其他)\n     ⛔ 段25 → 排除 (其他)\n     ⛔ 段26 → 排除 (其他)\n     ⛔ 段27 → 排除 (其他)\n     ⛔ 段28 → 排除 (其他)\n     ⛔ 段29 → 排除 (其他)\n     ⛔ 段30 → 排除 (其他)\n     ⛔ 段31 → 排除 (其他)\n     ⛔ 段32 → 排除 (其他)\n     ⛔ 段33 → 排除 (其他)\n     ⛔ 段34 → 排除 (其他)\n     ⛔ 段35 → 排除 (其他)\n     ⛔ 段36 → 排除 (太史公曰)\n\n  🔎 原文字句验证\n\n  🤖 知识性决策溯源（LLM 硬门）\n  ✅ Step1/Step4 知识性字段已标记 LLM 溯源\n\n⛔ 发现 14 个错误，修正前不得进入下一步:\n  - [1/2] Step 4 未完成，缺少: 峰值年\n  - [1/2] Step 4 未完成，缺少: 峰值原因\n  - [1/2] Step 4 未完成，缺少: 峰值类型\n  - [1/2] Step 4 未完成，缺少: 峰值置信度\n  - [1/2] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_041_01] 王无彊 缺少有效峰值年\n  - [2/2] Step 4 未完成，缺少: 峰值年\n  - [2/2] Step 4 未完成，缺少: 峰值原因\n  - [2/2] Step 4 未完成，缺少: 峰值类型\n  - [2/2] Step 4 未完成，缺少: 峰值置信度\n  - [2/2] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_041_02] 越王句践 缺少有效峰值年\n  - [SHIJI_041_01] 王无彊 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_041_02] 越王句践 君王在位年缺 _年LLM依据，禁止脚本占位；"
         }
       },
-      "overall": "done",
+      "overall": "failed",
       "blocked_reason": null
     },
     "042": {
@@ -708,26 +708,26 @@
       "steps": {
         "1": {
           "status": "done",
-          "at": "2026-06-28T13:50:10Z",
+          "at": "2026-07-25T01:58:44Z",
           "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
         },
         "2": {
           "status": "done",
-          "at": "2026-06-28T13:50:10Z",
+          "at": "2026-07-25T01:58:44Z",
           "detail": "check_format skeleton 通过"
         },
         "3": {
           "status": "done",
-          "at": "2026-06-28T13:50:10Z",
+          "at": "2026-07-25T01:58:44Z",
           "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
         },
         "4": {
-          "status": "done",
-          "at": "2026-06-28T13:50:14Z",
-          "detail": "check_format final 通过（含优先级/年份/归属）"
+          "status": "failed",
+          "at": "2026-07-25T01:58:44Z",
+          "detail": "check_format final 失败 (exit 1)\n少: 峰值年\n  - [12/15] Step 4 未完成，缺少: 峰值原因\n  - [12/15] Step 4 未完成，缺少: 峰值类型\n  - [12/15] Step 4 未完成，缺少: 峰值置信度\n  - [12/15] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_042_12] 郑简公 缺少有效峰值年\n  - [13/15] Step 4 未完成，缺少: 峰值年\n  - [13/15] Step 4 未完成，缺少: 峰值原因\n  - [13/15] Step 4 未完成，缺少: 峰值类型\n  - [13/15] Step 4 未完成，缺少: 峰值置信度\n  - [13/15] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_042_13] 郑缪公 缺少有效峰值年\n  - [14/15] Step 4 未完成，缺少: 峰值年\n  - [14/15] Step 4 未完成，缺少: 峰值原因\n  - [14/15] Step 4 未完成，缺少: 峰值类型\n  - [14/15] Step 4 未完成，缺少: 峰值置信度\n  - [14/15] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_042_14] 郑襄公 缺少有效峰值年\n  - [15/15] Step 4 未完成，缺少: 峰值年\n  - [15/15] Step 4 未完成，缺少: 峰值原因\n  - [15/15] Step 4 未完成，缺少: 峰值类型\n  - [15/15] Step 4 未完成，缺少: 峰值置信度\n  - [15/15] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_042_15] 郑釐公 缺少有效峰值年\n  - [SHIJI_042_01] 郑厉公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_042_02] 郑声公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_042_03] 郑子亹 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_042_04] 郑定公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_042_05] 郑庄公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_042_06] 郑悼公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_042_07] 郑成公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_042_08] 郑文公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_042_09] 郑桓公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_042_10] 郑武公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_042_11] 郑灵公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_042_12] 郑简公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_042_13] 郑缪公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_042_14] 郑襄公 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_042_15] 郑釐公 君王在位年缺 _年LLM依据，禁止脚本占位；"
         }
       },
-      "overall": "done",
+      "overall": "failed",
       "blocked_reason": null
     },
     "043": {
@@ -736,26 +736,26 @@
       "steps": {
         "1": {
           "status": "done",
-          "at": "2026-06-28T13:55:21Z",
+          "at": "2026-07-25T01:58:45Z",
           "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
         },
         "2": {
           "status": "done",
-          "at": "2026-06-28T13:55:21Z",
+          "at": "2026-07-25T01:58:45Z",
           "detail": "check_format skeleton 通过"
         },
         "3": {
           "status": "done",
-          "at": "2026-06-28T13:55:22Z",
+          "at": "2026-07-25T01:58:45Z",
           "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
         },
         "4": {
-          "status": "done",
-          "at": "2026-06-28T13:55:26Z",
-          "detail": "check_format final 通过（含优先级/年份/归属）"
+          "status": "failed",
+          "at": "2026-07-25T01:58:45Z",
+          "detail": "check_format final 失败 (exit 1)\n/10] Step 4 未完成，缺少: 峰值类型\n  - [5/10] Step 4 未完成，缺少: 峰值置信度\n  - [5/10] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_043_05] 赵敬侯 缺少有效峰值年\n  - [6/10] Step 4 未完成，缺少: 峰值年\n  - [6/10] Step 4 未完成，缺少: 峰值原因\n  - [6/10] Step 4 未完成，缺少: 峰值类型\n  - [6/10] Step 4 未完成，缺少: 峰值置信度\n  - [6/10] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_043_06] 赵武灵王 缺少有效峰值年\n  - [7/10] Step 4 未完成，缺少: 峰值年\n  - [7/10] Step 4 未完成，缺少: 峰值原因\n  - [7/10] Step 4 未完成，缺少: 峰值类型\n  - [7/10] Step 4 未完成，缺少: 峰值置信度\n  - [7/10] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_043_07] 赵烈侯 缺少有效峰值年\n  - [8/10] Step 4 未完成，缺少: 峰值年\n  - [8/10] Step 4 未完成，缺少: 峰值原因\n  - [8/10] Step 4 未完成，缺少: 峰值类型\n  - [8/10] Step 4 未完成，缺少: 峰值置信度\n  - [8/10] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_043_08] 赵献侯 缺少有效峰值年\n  - [9/10] Step 4 未完成，缺少: 峰值年\n  - [9/10] Step 4 未完成，缺少: 峰值原因\n  - [9/10] Step 4 未完成，缺少: 峰值类型\n  - [9/10] Step 4 未完成，缺少: 峰值置信度\n  - [9/10] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_043_09] 赵简子 缺少有效峰值年\n  - [10/10] Step 4 未完成，缺少: 峰值年\n  - [10/10] Step 4 未完成，缺少: 峰值原因\n  - [10/10] Step 4 未完成，缺少: 峰值类型\n  - [10/10] Step 4 未完成，缺少: 峰值置信度\n  - [10/10] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_043_10] 赵襄子 缺少有效峰值年\n  - [SHIJI_043_01] 赵孝成王 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_043_02] 赵幽缪王 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_043_03] 赵悼襄王 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_043_04] 赵惠文王 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_043_05] 赵敬侯 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_043_06] 赵武灵王 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_043_07] 赵烈侯 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_043_08] 赵献侯 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_043_09] 赵简子 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_043_10] 赵襄子 君王在位年缺 _年LLM依据，禁止脚本占位；"
         }
       },
-      "overall": "done",
+      "overall": "failed",
       "blocked_reason": null
     },
     "044": {
@@ -764,26 +764,26 @@
       "steps": {
         "1": {
           "status": "done",
-          "at": "2026-06-28T13:57:38Z",
+          "at": "2026-07-25T01:59:17Z",
           "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
         },
         "2": {
           "status": "done",
-          "at": "2026-06-28T13:57:38Z",
+          "at": "2026-07-25T01:59:17Z",
           "detail": "check_format skeleton 通过"
         },
         "3": {
           "status": "done",
-          "at": "2026-06-28T13:57:38Z",
+          "at": "2026-07-25T01:59:17Z",
           "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
         },
         "4": {
-          "status": "done",
-          "at": "2026-06-28T13:57:42Z",
-          "detail": "check_format final 通过（含优先级/年份/归属）"
+          "status": "failed",
+          "at": "2026-07-25T01:59:18Z",
+          "detail": "check_format final 失败 (exit 1)\n → [魏惠王] 君王\n       段31 → [魏惠王] 君王\n       段32 → [魏惠王] 君王\n     ⛔ 段33 → 排除 (其他)\n     ⛔ 段34 → 排除 (其他)\n     ⛔ 段35 → 排除 (其他)\n     ⛔ 段36 → 排除 (其他)\n     ⛔ 段37 → 排除 (其他)\n     ⛔ 段38 → 排除 (其他)\n     ⛔ 段39 → 排除 (其他)\n     ⛔ 段40 → 排除 (其他)\n     ⛔ 段41 → 排除 (其他)\n     ⛔ 段42 → 排除 (其他)\n     ⛔ 段43 → 排除 (其他)\n     ⛔ 段44 → 排除 (其他)\n     ⛔ 段45 → 排除 (其他)\n       段46 → [魏安釐王] 君王\n       段47 → [魏安釐王] 君王\n       段48 → [魏安釐王] 君王\n       段49 → [魏安釐王] 君王\n       段50 → [魏安釐王] 君王\n       段51 → [魏安釐王] 君王\n       段52 → [魏安釐王] 君王\n       段53 → [魏安釐王] 君王\n       段54 → [魏安釐王] 君王\n       段55 → [魏安釐王] 君王\n       段56 → [魏安釐王] 君王\n       段57 → [魏安釐王] 君王\n       段58 → [魏安釐王] 君王\n       段59 → [魏安釐王] 君王\n       段60 → [魏安釐王] 君王\n     ⛔ 段61 → 排除 (其他)\n     ⛔ 段62 → 排除 (其他)\n     ⛔ 段63 → 排除 (其他)\n     ⛔ 段64 → 排除 (太史公曰)\n\n  🔎 原文字句验证\n\n  🤖 知识性决策溯源（LLM 硬门）\n  ✅ Step1/Step4 知识性字段已标记 LLM 溯源\n\n⛔ 发现 28 个错误，修正前不得进入下一步:\n  - [1/4] Step 4 未完成，缺少: 峰值年\n  - [1/4] Step 4 未完成，缺少: 峰值原因\n  - [1/4] Step 4 未完成，缺少: 峰值类型\n  - [1/4] Step 4 未完成，缺少: 峰值置信度\n  - [1/4] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_044_01] 魏安釐王 缺少有效峰值年\n  - [2/4] Step 4 未完成，缺少: 峰值年\n  - [2/4] Step 4 未完成，缺少: 峰值原因\n  - [2/4] Step 4 未完成，缺少: 峰值类型\n  - [2/4] Step 4 未完成，缺少: 峰值置信度\n  - [2/4] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_044_02] 魏惠王 缺少有效峰值年\n  - [3/4] Step 4 未完成，缺少: 峰值年\n  - [3/4] Step 4 未完成，缺少: 峰值原因\n  - [3/4] Step 4 未完成，缺少: 峰值类型\n  - [3/4] Step 4 未完成，缺少: 峰值置信度\n  - [3/4] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_044_03] 魏文侯 缺少有效峰值年\n  - [4/4] Step 4 未完成，缺少: 峰值年\n  - [4/4] Step 4 未完成，缺少: 峰值原因\n  - [4/4] Step 4 未完成，缺少: 峰值类型\n  - [4/4] Step 4 未完成，缺少: 峰值置信度\n  - [4/4] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_044_04] 魏武侯 缺少有效峰值年\n  - [SHIJI_044_01] 魏安釐王 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_044_02] 魏惠王 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_044_03] 魏文侯 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_044_04] 魏武侯 君王在位年缺 _年LLM依据，禁止脚本占位；"
         }
       },
-      "overall": "done",
+      "overall": "failed",
       "blocked_reason": null
     },
     "045": {
@@ -792,26 +792,26 @@
       "steps": {
         "1": {
           "status": "done",
-          "at": "2026-06-28T13:59:15Z",
+          "at": "2026-07-25T01:58:46Z",
           "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
         },
         "2": {
           "status": "done",
-          "at": "2026-06-28T13:59:15Z",
+          "at": "2026-07-25T01:58:46Z",
           "detail": "check_format skeleton 通过"
         },
         "3": {
           "status": "done",
-          "at": "2026-06-28T14:02:48Z",
+          "at": "2026-07-25T01:58:47Z",
           "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
         },
         "4": {
-          "status": "done",
-          "at": "2026-06-28T14:02:48Z",
-          "detail": "check_format final 通过（含优先级/年份/归属）"
+          "status": "failed",
+          "at": "2026-07-25T01:58:47Z",
+          "detail": "check_format final 失败 (exit 1)\np 4 未完成，缺少: 峰值年\n  - [1/7] Step 4 未完成，缺少: 峰值原因\n  - [1/7] Step 4 未完成，缺少: 峰值类型\n  - [1/7] Step 4 未完成，缺少: 峰值置信度\n  - [1/7] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_045_01] 韩宣惠王 缺少有效峰值年\n  - [2/7] Step 4 未完成，缺少: 峰值年\n  - [2/7] Step 4 未完成，缺少: 峰值原因\n  - [2/7] Step 4 未完成，缺少: 峰值类型\n  - [2/7] Step 4 未完成，缺少: 峰值置信度\n  - [2/7] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_045_02] 韩昭侯 缺少有效峰值年\n  - [3/7] Step 4 未完成，缺少: 峰值年\n  - [3/7] Step 4 未完成，缺少: 峰值原因\n  - [3/7] Step 4 未完成，缺少: 峰值类型\n  - [3/7] Step 4 未完成，缺少: 峰值置信度\n  - [3/7] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_045_03] 韩景侯 缺少有效峰值年\n  - [4/7] Step 4 未完成，缺少: 峰值年\n  - [4/7] Step 4 未完成，缺少: 峰值原因\n  - [4/7] Step 4 未完成，缺少: 峰值类型\n  - [4/7] Step 4 未完成，缺少: 峰值置信度\n  - [4/7] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_045_04] 韩桓惠王 缺少有效峰值年\n  - [5/7] Step 4 未完成，缺少: 峰值年\n  - [5/7] Step 4 未完成，缺少: 峰值原因\n  - [5/7] Step 4 未完成，缺少: 峰值类型\n  - [5/7] Step 4 未完成，缺少: 峰值置信度\n  - [5/7] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_045_05] 韩王安 缺少有效峰值年\n  - [6/7] Step 4 未完成，缺少: 峰值年\n  - [6/7] Step 4 未完成，缺少: 峰值原因\n  - [6/7] Step 4 未完成，缺少: 峰值类型\n  - [6/7] Step 4 未完成，缺少: 峰值置信度\n  - [6/7] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_045_06] 韩襄王 缺少有效峰值年\n  - [7/7] Step 4 未完成，缺少: 峰值年\n  - [7/7] Step 4 未完成，缺少: 峰值原因\n  - [7/7] Step 4 未完成，缺少: 峰值类型\n  - [7/7] Step 4 未完成，缺少: 峰值置信度\n  - [7/7] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_045_07] 韩釐王 缺少有效峰值年\n  - [SHIJI_045_01] 韩宣惠王 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_045_02] 韩昭侯 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_045_03] 韩景侯 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_045_04] 韩桓惠王 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_045_05] 韩王安 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_045_06] 韩襄王 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_045_07] 韩釐王 君王在位年缺 _年LLM依据，禁止脚本占位；"
         }
       },
-      "overall": "done",
+      "overall": "failed",
       "blocked_reason": null
     },
     "046": {
@@ -820,26 +820,26 @@
       "steps": {
         "1": {
           "status": "done",
-          "at": "2026-06-28T14:03:33Z",
+          "at": "2026-07-25T01:58:47Z",
           "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
         },
         "2": {
           "status": "done",
-          "at": "2026-06-28T14:03:33Z",
+          "at": "2026-07-25T01:58:47Z",
           "detail": "check_format skeleton 通过"
         },
         "3": {
           "status": "done",
-          "at": "2026-06-28T14:03:33Z",
+          "at": "2026-07-25T01:58:48Z",
           "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
         },
         "4": {
-          "status": "done",
-          "at": "2026-06-28T14:03:37Z",
-          "detail": "check_format final 通过（含优先级/年份/归属）"
+          "status": "failed",
+          "at": "2026-07-25T01:58:48Z",
+          "detail": "check_format final 失败 (exit 1)\n [2/8] Step 4 未完成，缺少: 峰值置信度\n  - [2/8] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_046_02] 田齐太公和 缺少有效峰值年\n  - [3/8] Step 4 未完成，缺少: 峰值年\n  - [3/8] Step 4 未完成，缺少: 峰值原因\n  - [3/8] Step 4 未完成，缺少: 峰值类型\n  - [3/8] Step 4 未完成，缺少: 峰值置信度\n  - [3/8] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_046_03] 齐威王 缺少有效峰值年\n  - [4/8] Step 4 未完成，缺少: 峰值年\n  - [4/8] Step 4 未完成，缺少: 峰值原因\n  - [4/8] Step 4 未完成，缺少: 峰值类型\n  - [4/8] Step 4 未完成，缺少: 峰值置信度\n  - [4/8] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_046_04] 齐宣王 缺少有效峰值年\n  - [5/8] Step 4 未完成，缺少: 峰值年\n  - [5/8] Step 4 未完成，缺少: 峰值原因\n  - [5/8] Step 4 未完成，缺少: 峰值类型\n  - [5/8] Step 4 未完成，缺少: 峰值置信度\n  - [5/8] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_046_05] 齐桓公午 缺少有效峰值年\n  - [6/8] Step 4 未完成，缺少: 峰值年\n  - [6/8] Step 4 未完成，缺少: 峰值原因\n  - [6/8] Step 4 未完成，缺少: 峰值类型\n  - [6/8] Step 4 未完成，缺少: 峰值置信度\n  - [6/8] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_046_06] 齐湣王 缺少有效峰值年\n  - [7/8] Step 4 未完成，缺少: 峰值年\n  - [7/8] Step 4 未完成，缺少: 峰值原因\n  - [7/8] Step 4 未完成，缺少: 峰值类型\n  - [7/8] Step 4 未完成，缺少: 峰值置信度\n  - [7/8] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_046_07] 齐王建 缺少有效峰值年\n  - [8/8] Step 4 未完成，缺少: 峰值年\n  - [8/8] Step 4 未完成，缺少: 峰值原因\n  - [8/8] Step 4 未完成，缺少: 峰值类型\n  - [8/8] Step 4 未完成，缺少: 峰值置信度\n  - [8/8] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_046_08] 齐襄王 缺少有效峰值年\n  - [SHIJI_046_01] 田敬仲完 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_046_02] 田齐太公和 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_046_03] 齐威王 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_046_04] 齐宣王 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_046_05] 齐桓公午 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_046_06] 齐湣王 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_046_07] 齐王建 君王在位年缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_046_08] 齐襄王 君王在位年缺 _年LLM依据，禁止脚本占位；"
         }
       },
-      "overall": "done",
+      "overall": "failed",
       "blocked_reason": null
     },
     "047": {
@@ -848,26 +848,26 @@
       "steps": {
         "1": {
           "status": "done",
-          "at": "2026-06-28T14:32:47Z",
+          "at": "2026-07-25T01:58:48Z",
           "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
         },
         "2": {
           "status": "done",
-          "at": "2026-06-28T14:32:47Z",
+          "at": "2026-07-25T01:58:48Z",
           "detail": "check_format skeleton 通过"
         },
         "3": {
           "status": "done",
-          "at": "2026-06-28T14:32:47Z",
+          "at": "2026-07-25T01:58:49Z",
           "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
         },
         "4": {
-          "status": "done",
-          "at": "2026-06-28T14:32:47Z",
-          "detail": "check_format final 通过（含优先级/年份/归属）"
+          "status": "failed",
+          "at": "2026-07-25T01:58:49Z",
+          "detail": "check_format final 失败 (exit 1)\n      段32 → [孔子] 文臣\n       段33 → [孔子] 文臣\n       段34 → [孔子] 文臣\n       段35 → [孔子] 文臣\n       段36 → [孔子] 文臣\n       段37 → [孔子] 文臣\n       段38 → [孔子] 文臣\n       段39 → [孔子] 文臣\n       段40 → [孔子] 文臣\n       段41 → [孔子] 文臣\n       段42 → [孔子] 文臣\n       段43 → [孔子] 文臣\n       段44 → [孔子] 文臣\n       段45 → [孔子] 文臣\n       段46 → [孔子] 文臣\n       段47 → [孔子] 文臣\n       段48 → [孔子] 文臣\n       段49 → [孔子] 文臣\n       段50 → [孔子] 文臣\n       段51 → [孔子] 文臣\n       段52 → [孔子] 文臣\n       段53 → [孔子] 文臣\n       段54 → [孔子] 文臣\n       段55 → [孔子] 文臣\n       段56 → [孔子] 文臣\n       段57 → [孔子] 文臣\n       段58 → [孔子] 文臣\n       段59 → [孔子] 文臣\n       段60 → [孔子] 文臣\n       段61 → [孔子] 文臣\n       段62 → [孔子] 文臣\n       段63 → [孔子] 文臣\n       段64 → [孔子] 文臣\n       段65 → [孔子] 文臣\n       段66 → [孔子] 文臣\n       段67 → [孔子] 文臣\n       段68 → [孔子] 文臣\n       段69 → [孔子] 文臣\n       段70 → [孔子] 文臣\n       段71 → [孔子] 文臣\n       段72 → [孔子] 文臣\n       段73 → [孔子] 文臣\n       段74 → [孔子] 文臣\n       段75 → [孔子] 文臣\n       段76 → [孔子] 文臣\n       段77 → [孔子] 文臣\n       段78 → [孔子] 文臣\n       段79 → [孔子] 文臣\n       段80 → [孔子] 文臣\n       段81 → [孔子] 文臣\n       段82 → [孔子] 文臣\n       段83 → [孔子] 文臣\n       段84 → [孔子] 文臣\n       段85 → [孔子] 文臣\n       段86 → [孔子] 文臣\n       段87 → [孔子] 文臣\n       段88 → [孔子] 文臣\n       段89 → [孔子] 文臣\n       段90 → [孔子] 文臣\n       段91 → [孔子] 文臣\n       段92 → [孔子] 文臣\n       段93 → [孔子] 文臣\n       段94 → [孔子] 文臣\n       段95 → [孔子] 文臣\n       段96 → [孔子] 文臣\n       段97 → [孔子] 文臣\n       段98 → [孔子] 文臣\n       段99 → [孔子] 文臣\n       段100 → [孔子] 文臣\n       段101 → [孔子] 文臣\n       段102 → [孔子] 文臣\n       段103 → [孔子] 文臣\n       段104 → [孔子] 文臣\n       段105 → [孔子] 文臣\n       段106 → [孔子] 文臣\n       段107 → [孔子] 文臣\n     ⛔ 段108 → 排除 (太史公曰)\n\n  🔎 原文字句验证\n\n  🤖 知识性决策溯源（LLM 硬门）\n  ✅ Step1/Step4 知识性字段已标记 LLM 溯源\n\n⛔ 发现 7 个错误，修正前不得进入下一步:\n  - [1/1] Step 4 未完成，缺少: 峰值年\n  - [1/1] Step 4 未完成，缺少: 峰值原因\n  - [1/1] Step 4 未完成，缺少: 峰值类型\n  - [1/1] Step 4 未完成，缺少: 峰值置信度\n  - [1/1] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_047_01] 孔子 缺少有效峰值年\n  - [SHIJI_047_01] 孔子 人物生卒缺 _年LLM依据，禁止脚本占位；"
         }
       },
-      "overall": "done",
+      "overall": "failed",
       "blocked_reason": null
     },
     "048": {
@@ -876,26 +876,26 @@
       "steps": {
         "1": {
           "status": "done",
-          "at": "2026-06-28T14:33:29Z",
+          "at": "2026-07-25T01:58:49Z",
           "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
         },
         "2": {
           "status": "done",
-          "at": "2026-06-28T14:33:29Z",
+          "at": "2026-07-25T01:58:49Z",
           "detail": "check_format skeleton 通过"
         },
         "3": {
           "status": "done",
-          "at": "2026-06-28T14:33:29Z",
+          "at": "2026-07-25T01:58:49Z",
           "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
         },
         "4": {
-          "status": "done",
-          "at": "2026-06-28T14:33:29Z",
-          "detail": "check_format final 通过（含优先级/年份/归属）"
+          "status": "failed",
+          "at": "2026-07-25T01:58:50Z",
+          "detail": "check_format final 失败 (exit 1)\n\n🔍 Step 2 自检 (final): 陈涉世家\n   条目数: 1\n\n  👑 参考表检查\n\n  📐 结构检查\n\n  📏 段落数校验（原文对照）\n  ✅ 段落数一致: 28 段 (模式=line)\n\n  📝 条目检查 (1 条)\n\n  📋 主轴人数（LLM Step1a）: 1（世家），整卷 1 条 entry 合法\n  ❌ [1/1] Step 4 未完成，缺少: 峰值年\n  ❌ [1/1] Step 4 未完成，缺少: 峰值原因\n  ❌ [1/1] Step 4 未完成，缺少: 峰值类型\n  ❌ [1/1] Step 4 未完成，缺少: 峰值置信度\n  ❌ [1/1] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  ❌ [SHIJI_048_01] 陈涉 缺少有效峰值年\n  ❌ [SHIJI_048_01] 陈涉 人物生卒缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n\n  📊 归属表检查 (共 28 段)\n\n  📄 exclude 内容门\n  ✅ exclude 内容 OK\n\n  👑 君王命名\n  ✅ 君王名称均在帝王.json 枚举内\n\n  🎯 卷主轴身份\n  ✅ skeleton 人物身份 OK\n\n  📅 君王年份\n  ✅ 君王年份无重复区间\n\n  📊 逐段归属表:\n     ⛔ 段01 → 排除 (卷首标题)\n       段02 → [陈涉] 庶众\n       段03 → [陈涉] 庶众\n       段04 → [陈涉] 庶众\n       段05 → [陈涉] 庶众\n       段06 → [陈涉] 庶众\n       段07 → [陈涉] 庶众\n       段08 → [陈涉] 庶众\n       段09 → [陈涉] 庶众\n       段10 → [陈涉] 庶众\n       段11 → [陈涉] 庶众\n       段12 → [陈涉] 庶众\n       段13 → [陈涉] 庶众\n       段14 → [陈涉] 庶众\n       段15 → [陈涉] 庶众\n       段16 → [陈涉] 庶众\n       段17 → [陈涉] 庶众\n       段18 → [陈涉] 庶众\n       段19 → [陈涉] 庶众\n       段20 → [陈涉] 庶众\n       段21 → [陈涉] 庶众\n     ⛔ 段22 → 排除 (其他)\n     ⛔ 段23 → 排除 (其他)\n     ⛔ 段24 → 排除 (其他)\n     ⛔ 段25 → 排除 (其他)\n     ⛔ 段26 → 排除 (其他)\n     ⛔ 段27 → 排除 (其他)\n     ⛔ 段28 → 排除 (其他)\n\n  🔎 原文字句验证\n\n  🤖 知识性决策溯源（LLM 硬门）\n  ✅ Step1/Step4 知识性字段已标记 LLM 溯源\n\n⛔ 发现 7 个错误，修正前不得进入下一步:\n  - [1/1] Step 4 未完成，缺少: 峰值年\n  - [1/1] Step 4 未完成，缺少: 峰值原因\n  - [1/1] Step 4 未完成，缺少: 峰值类型\n  - [1/1] Step 4 未完成，缺少: 峰值置信度\n  - [1/1] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_048_01] 陈涉 缺少有效峰值年\n  - [SHIJI_048_01] 陈涉 人物生卒缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据"
         }
       },
-      "overall": "done",
+      "overall": "failed",
       "blocked_reason": null
     },
     "049": {
@@ -904,26 +904,26 @@
       "steps": {
         "1": {
           "status": "done",
-          "at": "2026-06-30T14:39:12Z",
+          "at": "2026-07-25T01:58:50Z",
           "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
         },
         "2": {
           "status": "done",
-          "at": "2026-06-30T14:39:12Z",
+          "at": "2026-07-25T01:58:50Z",
           "detail": "check_format skeleton 通过"
         },
         "3": {
           "status": "done",
-          "at": "2026-06-30T14:39:12Z",
+          "at": "2026-07-25T01:58:50Z",
           "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
         },
         "4": {
-          "status": "done",
-          "at": "2026-06-30T14:39:13Z",
-          "detail": "check_format final 通过（含优先级/年份/归属）"
+          "status": "failed",
+          "at": "2026-07-25T01:58:51Z",
+          "detail": "check_format final 失败 (exit 1)\n王太后] 宗戚\n       段22 → [王太后] 宗戚\n       段23 → [王太后] 宗戚\n       段24 → [王太后] 宗戚\n       段25 → [王太后] 宗戚\n       段26 → [王太后] 宗戚\n       段27 → [王太后] 宗戚\n       段28 → [王太后] 宗戚\n       段29 → [卫子夫] 宗戚\n       段30 → [卫子夫] 宗戚\n       段31 → [卫子夫] 宗戚\n       段32 → [卫子夫] 宗戚\n       段33 → [卫子夫] 宗戚\n       段34 → [卫子夫] 宗戚\n       段35 → [卫子夫] 宗戚\n       段36 → [卫子夫] 宗戚\n       段37 → [卫子夫] 宗戚\n       段38 → [卫子夫] 宗戚\n       段39 → [卫子夫] 宗戚\n       段40 → [卫子夫] 宗戚\n       段41 → [卫子夫] 宗戚\n       段42 → [卫子夫] 宗戚\n       段43 → [卫子夫] 宗戚\n       段44 → [卫子夫] 宗戚\n     ⛔ 段45 → 排除 (其他)\n     ⛔ 段46 → 排除 (其他)\n     ⛔ 段47 → 排除 (其他)\n     ⛔ 段48 → 排除 (其他)\n     ⛔ 段49 → 排除 (其他)\n     ⛔ 段50 → 排除 (其他)\n     ⛔ 段51 → 排除 (其他)\n     ⛔ 段52 → 排除 (其他)\n     ⛔ 段53 → 排除 (其他)\n     ⛔ 段54 → 排除 (其他)\n     ⛔ 段55 → 排除 (其他)\n     ⛔ 段56 → 排除 (其他)\n\n  🔎 原文字句验证\n\n  🤖 知识性决策溯源（LLM 硬门）\n  ✅ Step1/Step4 知识性字段已标记 LLM 溯源\n\n⛔ 发现 28 个错误，修正前不得进入下一步:\n  - [1/4] Step 4 未完成，缺少: 峰值年\n  - [1/4] Step 4 未完成，缺少: 峰值原因\n  - [1/4] Step 4 未完成，缺少: 峰值类型\n  - [1/4] Step 4 未完成，缺少: 峰值置信度\n  - [1/4] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_049_01] 卫子夫 缺少有效峰值年\n  - [2/4] Step 4 未完成，缺少: 峰值年\n  - [2/4] Step 4 未完成，缺少: 峰值原因\n  - [2/4] Step 4 未完成，缺少: 峰值类型\n  - [2/4] Step 4 未完成，缺少: 峰值置信度\n  - [2/4] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_049_02] 王太后 缺少有效峰值年\n  - [3/4] Step 4 未完成，缺少: 峰值年\n  - [3/4] Step 4 未完成，缺少: 峰值原因\n  - [3/4] Step 4 未完成，缺少: 峰值类型\n  - [3/4] Step 4 未完成，缺少: 峰值置信度\n  - [3/4] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_049_03] 窦太后 缺少有效峰值年\n  - [4/4] Step 4 未完成，缺少: 峰值年\n  - [4/4] Step 4 未完成，缺少: 峰值原因\n  - [4/4] Step 4 未完成，缺少: 峰值类型\n  - [4/4] Step 4 未完成，缺少: 峰值置信度\n  - [4/4] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_049_04] 薄太后 缺少有效峰值年\n  - [SHIJI_049_01] 卫子夫 人物生卒缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_049_02] 王太后 人物生卒缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_049_03] 窦太后 人物生卒缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_049_04] 薄太后 人物生卒缺 _年LLM依据，禁止脚本占位；"
         }
       },
-      "overall": "done",
+      "overall": "failed",
       "blocked_reason": null
     },
     "050": {
@@ -932,26 +932,26 @@
       "steps": {
         "1": {
           "status": "done",
-          "at": "2026-06-28T14:06:24Z",
+          "at": "2026-07-25T01:58:51Z",
           "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
         },
         "2": {
           "status": "done",
-          "at": "2026-06-28T14:06:24Z",
+          "at": "2026-07-25T01:58:51Z",
           "detail": "check_format skeleton 通过"
         },
         "3": {
           "status": "done",
-          "at": "2026-06-28T14:06:25Z",
+          "at": "2026-07-25T01:58:51Z",
           "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
         },
         "4": {
-          "status": "done",
-          "at": "2026-06-28T14:06:28Z",
-          "detail": "check_format final 通过（含优先级/年份/归属）"
+          "status": "failed",
+          "at": "2026-07-25T01:58:52Z",
+          "detail": "check_format final 失败 (exit 1)\n\n🔍 Step 2 自检 (final): 楚元王世家\n   条目数: 1\n\n  👑 参考表检查\n\n  📐 结构检查\n\n  📏 段落数校验（原文对照）\n  ✅ 段落数一致: 12 段 (模式=line)\n\n  📝 条目检查 (1 条)\n\n  📋 主轴人数（LLM Step1a）: 1（世家），整卷 1 条 entry 合法\n  ❌ [1/1] Step 4 未完成，缺少: 史略开始年\n  ❌ [1/1] Step 4 未完成，缺少: 史略结束年\n  ❌ [1/1] Step 4 未完成，缺少: 峰值年\n  ❌ [1/1] Step 4 未完成，缺少: 峰值原因\n  ❌ [1/1] Step 4 未完成，缺少: 峰值类型\n  ❌ [1/1] Step 4 未完成，缺少: 峰值置信度\n  ❌ [1/1] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  ❌ [SHIJI_050_01] 楚元王 缺少有效史略开始年（整数，公元前为负）\n  ❌ [SHIJI_050_01] 楚元王 缺少有效史略结束年（整数，公元前为负）\n  ❌ [SHIJI_050_01] 楚元王 缺少有效峰值年\n\n  📊 归属表检查 (共 12 段)\n\n  📄 exclude 内容门\n  ✅ exclude 内容 OK\n\n  👑 君王命名\n  ✅ 君王名称均在帝王.json 枚举内\n\n  🎯 卷主轴身份\n  ✅ skeleton 人物身份 OK\n\n  📅 君王年份\n  ✅ 君王年份无重复区间\n\n  📊 逐段归属表:\n       段01 → [楚元王] 宗戚\n       段02 → [楚元王] 宗戚\n       段03 → [楚元王] 宗戚\n       段04 → [楚元王] 宗戚\n       段05 → [楚元王] 宗戚\n       段06 → [楚元王] 宗戚\n       段07 → [楚元王] 宗戚\n       段08 → [楚元王] 宗戚\n       段09 → [楚元王] 宗戚\n       段10 → [楚元王] 宗戚\n       段11 → [楚元王] 宗戚\n     ⛔ 段12 → 排除 (太史公曰)\n\n  🔎 原文字句验证\n\n  🤖 知识性决策溯源（LLM 硬门）\n  ✅ Step1/Step4 知识性字段已标记 LLM 溯源\n\n⛔ 发现 10 个错误，修正前不得进入下一步:\n  - [1/1] Step 4 未完成，缺少: 史略开始年\n  - [1/1] Step 4 未完成，缺少: 史略结束年\n  - [1/1] Step 4 未完成，缺少: 峰值年\n  - [1/1] Step 4 未完成，缺少: 峰值原因\n  - [1/1] Step 4 未完成，缺少: 峰值类型\n  - [1/1] Step 4 未完成，缺少: 峰值置信度\n  - [1/1] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_050_01] 楚元王 缺少有效史略开始年（整数，公元前为负）\n  - [SHIJI_050_01] 楚元王 缺少有效史略结束年（整数，公元前为负）\n  - [SHIJI_050_01] 楚元王 缺少有效峰值年"
         }
       },
-      "overall": "done",
+      "overall": "failed",
       "blocked_reason": null
     },
     "051": {
@@ -960,26 +960,26 @@
       "steps": {
         "1": {
           "status": "done",
-          "at": "2026-06-28T14:06:41Z",
+          "at": "2026-07-25T01:58:52Z",
           "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
         },
         "2": {
           "status": "done",
-          "at": "2026-06-28T14:06:41Z",
+          "at": "2026-07-25T01:58:52Z",
           "detail": "check_format skeleton 通过"
         },
         "3": {
           "status": "done",
-          "at": "2026-06-28T14:09:28Z",
+          "at": "2026-07-25T01:58:52Z",
           "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
         },
         "4": {
-          "status": "done",
-          "at": "2026-06-28T14:10:05Z",
-          "detail": "check_format final 通过（含优先级/年份/归属）"
+          "status": "failed",
+          "at": "2026-07-25T01:58:53Z",
+          "detail": "check_format final 失败 (exit 1)\n📏 段落数校验（原文对照）\n  ✅ 段落数一致: 13 段 (模式=line)\n\n  📝 条目检查 (2 条)\n  ❌ [1/2] Step 4 未完成，缺少: 史略开始年\n  ❌ [1/2] Step 4 未完成，缺少: 史略结束年\n  ❌ [1/2] Step 4 未完成，缺少: 峰值年\n  ❌ [1/2] Step 4 未完成，缺少: 峰值原因\n  ❌ [1/2] Step 4 未完成，缺少: 峰值类型\n  ❌ [1/2] Step 4 未完成，缺少: 峰值置信度\n  ❌ [1/2] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  ❌ [SHIJI_051_01] 燕王 缺少有效史略开始年（整数，公元前为负）\n  ❌ [SHIJI_051_01] 燕王 缺少有效史略结束年（整数，公元前为负）\n  ❌ [SHIJI_051_01] 燕王 缺少有效峰值年\n  ❌ [2/2] Step 4 未完成，缺少: 史略开始年\n  ❌ [2/2] Step 4 未完成，缺少: 史略结束年\n  ❌ [2/2] Step 4 未完成，缺少: 峰值年\n  ❌ [2/2] Step 4 未完成，缺少: 峰值原因\n  ❌ [2/2] Step 4 未完成，缺少: 峰值类型\n  ❌ [2/2] Step 4 未完成，缺少: 峰值置信度\n  ❌ [2/2] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  ❌ [SHIJI_051_02] 荆王 缺少有效史略开始年（整数，公元前为负）\n  ❌ [SHIJI_051_02] 荆王 缺少有效史略结束年（整数，公元前为负）\n  ❌ [SHIJI_051_02] 荆王 缺少有效峰值年\n\n  📊 归属表检查 (共 13 段)\n\n  📄 exclude 内容门\n  ✅ exclude 内容 OK\n\n  👑 君王命名\n  ✅ 君王名称均在帝王.json 枚举内\n\n  🎯 卷主轴身份\n  ✅ skeleton 人物身份 OK\n\n  📅 君王年份\n  ✅ 君王年份无重复区间\n\n  📊 逐段归属表:\n       段01 → [荆王] 宗戚\n       段02 → [荆王] 宗戚\n       段03 → [荆王] 宗戚\n       段04 → [荆王] 宗戚\n       段05 → [荆王] 宗戚\n       段06 → [荆王] 宗戚\n       段07 → [荆王] 宗戚\n       段08 → [燕王] 宗戚\n       段09 → [燕王] 宗戚\n       段10 → [燕王] 宗戚\n       段11 → [燕王] 宗戚\n       段12 → [燕王] 宗戚\n     ⛔ 段13 → 排除 (太史公曰)\n\n  🔎 原文字句验证\n\n  🤖 知识性决策溯源（LLM 硬门）\n  ✅ Step1/Step4 知识性字段已标记 LLM 溯源\n\n⛔ 发现 20 个错误，修正前不得进入下一步:\n  - [1/2] Step 4 未完成，缺少: 史略开始年\n  - [1/2] Step 4 未完成，缺少: 史略结束年\n  - [1/2] Step 4 未完成，缺少: 峰值年\n  - [1/2] Step 4 未完成，缺少: 峰值原因\n  - [1/2] Step 4 未完成，缺少: 峰值类型\n  - [1/2] Step 4 未完成，缺少: 峰值置信度\n  - [1/2] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_051_01] 燕王 缺少有效史略开始年（整数，公元前为负）\n  - [SHIJI_051_01] 燕王 缺少有效史略结束年（整数，公元前为负）\n  - [SHIJI_051_01] 燕王 缺少有效峰值年\n  - [2/2] Step 4 未完成，缺少: 史略开始年\n  - [2/2] Step 4 未完成，缺少: 史略结束年\n  - [2/2] Step 4 未完成，缺少: 峰值年\n  - [2/2] Step 4 未完成，缺少: 峰值原因\n  - [2/2] Step 4 未完成，缺少: 峰值类型\n  - [2/2] Step 4 未完成，缺少: 峰值置信度\n  - [2/2] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_051_02] 荆王 缺少有效史略开始年（整数，公元前为负）\n  - [SHIJI_051_02] 荆王 缺少有效史略结束年（整数，公元前为负）"
         }
       },
-      "overall": "done",
+      "overall": "failed",
       "blocked_reason": null
     },
     "052": {
@@ -988,26 +988,26 @@
       "steps": {
         "1": {
           "status": "done",
-          "at": "2026-06-28T14:10:51Z",
+          "at": "2026-07-25T01:58:53Z",
           "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
         },
         "2": {
           "status": "done",
-          "at": "2026-06-28T14:10:51Z",
+          "at": "2026-07-25T01:58:53Z",
           "detail": "check_format skeleton 通过"
         },
         "3": {
           "status": "done",
-          "at": "2026-06-28T14:10:51Z",
+          "at": "2026-07-25T01:58:53Z",
           "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
         },
         "4": {
-          "status": "done",
-          "at": "2026-06-28T14:10:56Z",
-          "detail": "check_format final 通过（含优先级/年份/归属）"
+          "status": "failed",
+          "at": "2026-07-25T01:58:53Z",
+          "detail": "check_format final 失败 (exit 1)\n元前为负）\n  ❌ [SHIJI_052_01] 齐悼惠王 缺少有效史略结束年（整数，公元前为负）\n  ❌ [SHIJI_052_01] 齐悼惠王 缺少有效峰值年\n\n  📊 归属表检查 (共 57 段)\n\n  📄 exclude 内容门\n  ✅ exclude 内容 OK\n\n  👑 君王命名\n  ✅ 君王名称均在帝王.json 枚举内\n\n  🎯 卷主轴身份\n  ✅ skeleton 人物身份 OK\n\n  📅 君王年份\n  ✅ 君王年份无重复区间\n\n  📊 逐段归属表:\n       段01 → [齐悼惠王] 宗戚\n       段02 → [齐悼惠王] 宗戚\n       段03 → [齐悼惠王] 宗戚\n       段04 → [齐悼惠王] 宗戚\n       段05 → [齐悼惠王] 宗戚\n       段06 → [齐悼惠王] 宗戚\n       段07 → [齐悼惠王] 宗戚\n       段08 → [齐悼惠王] 宗戚\n       段09 → [齐悼惠王] 宗戚\n       段10 → [齐悼惠王] 宗戚\n       段11 → [齐悼惠王] 宗戚\n       段12 → [齐悼惠王] 宗戚\n       段13 → [齐悼惠王] 宗戚\n       段14 → [齐悼惠王] 宗戚\n       段15 → [齐悼惠王] 宗戚\n       段16 → [齐悼惠王] 宗戚\n       段17 → [齐悼惠王] 宗戚\n       段18 → [齐悼惠王] 宗戚\n       段19 → [齐悼惠王] 宗戚\n       段20 → [齐悼惠王] 宗戚\n       段21 → [齐悼惠王] 宗戚\n       段22 → [齐悼惠王] 宗戚\n       段23 → [齐悼惠王] 宗戚\n       段24 → [齐悼惠王] 宗戚\n       段25 → [齐悼惠王] 宗戚\n       段26 → [齐悼惠王] 宗戚\n       段27 → [齐悼惠王] 宗戚\n       段28 → [齐悼惠王] 宗戚\n       段29 → [齐悼惠王] 宗戚\n       段30 → [齐悼惠王] 宗戚\n       段31 → [齐悼惠王] 宗戚\n       段32 → [齐悼惠王] 宗戚\n       段33 → [齐悼惠王] 宗戚\n       段34 → [齐悼惠王] 宗戚\n       段35 → [齐悼惠王] 宗戚\n       段36 → [齐悼惠王] 宗戚\n       段37 → [齐悼惠王] 宗戚\n       段38 → [齐悼惠王] 宗戚\n       段39 → [齐悼惠王] 宗戚\n       段40 → [齐悼惠王] 宗戚\n       段41 → [齐悼惠王] 宗戚\n       段42 → [齐悼惠王] 宗戚\n       段43 → [齐悼惠王] 宗戚\n       段44 → [齐悼惠王] 宗戚\n       段45 → [齐悼惠王] 宗戚\n       段46 → [齐悼惠王] 宗戚\n       段47 → [齐悼惠王] 宗戚\n       段48 → [齐悼惠王] 宗戚\n       段49 → [齐悼惠王] 宗戚\n       段50 → [齐悼惠王] 宗戚\n       段51 → [齐悼惠王] 宗戚\n       段52 → [齐悼惠王] 宗戚\n       段53 → [齐悼惠王] 宗戚\n       段54 → [齐悼惠王] 宗戚\n       段55 → [齐悼惠王] 宗戚\n       段56 → [齐悼惠王] 宗戚\n     ⛔ 段57 → 排除 (太史公曰)\n\n  🔎 原文字句验证\n\n  🤖 知识性决策溯源（LLM 硬门）\n  ✅ Step1/Step4 知识性字段已标记 LLM 溯源\n\n⛔ 发现 10 个错误，修正前不得进入下一步:\n  - [1/1] Step 4 未完成，缺少: 史略开始年\n  - [1/1] Step 4 未完成，缺少: 史略结束年\n  - [1/1] Step 4 未完成，缺少: 峰值年\n  - [1/1] Step 4 未完成，缺少: 峰值原因\n  - [1/1] Step 4 未完成，缺少: 峰值类型\n  - [1/1] Step 4 未完成，缺少: 峰值置信度\n  - [1/1] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_052_01] 齐悼惠王 缺少有效史略开始年（整数，公元前为负）\n  - [SHIJI_052_01] 齐悼惠王 缺少有效史略结束年（整数，公元前为负）\n "
         }
       },
-      "overall": "done",
+      "overall": "failed",
       "blocked_reason": null
     },
     "053": {
@@ -1016,26 +1016,26 @@
       "steps": {
         "1": {
           "status": "done",
-          "at": "2026-06-28T14:11:04Z",
+          "at": "2026-07-25T01:58:54Z",
           "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
         },
         "2": {
           "status": "done",
-          "at": "2026-06-28T14:11:04Z",
+          "at": "2026-07-25T01:58:54Z",
           "detail": "check_format skeleton 通过"
         },
         "3": {
           "status": "done",
-          "at": "2026-06-28T14:11:05Z",
+          "at": "2026-07-25T01:58:54Z",
           "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
         },
         "4": {
-          "status": "done",
-          "at": "2026-06-28T14:20:39Z",
-          "detail": "check_format final 通过（含优先级/年份/归属）"
+          "status": "failed",
+          "at": "2026-07-25T01:58:54Z",
+          "detail": "check_format final 失败 (exit 1)\n] Step 4 未完成，缺少: 峰值类型\n  ❌ [1/1] Step 4 未完成，缺少: 峰值置信度\n  ❌ [1/1] Step 4 未完成，缺少: 一级文明坐标\n  ❌ [1/1] Step 4 未完成，缺少: 二级朝代坐标\n  ❌ [1/1] Step 4 未完成，缺少: 三级政权坐标\n  ❌ [1/1] Step 4 未完成，缺少: 四级帝王坐标\n  ❌ [1/1] Step 4 未完成，缺少: 文明ID\n  ❌ [1/1] Step 4 未完成，缺少: 朝代ID\n  ❌ [1/1] Step 4 未完成，缺少: 政权ID\n  ❌ [1/1] Step 4 未完成，缺少: 帝王ID\n  ❌ [1/1] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  ❌ [SHIJI_053_01] 萧何 缺少有效史略开始年（整数，公元前为负）\n  ❌ [SHIJI_053_01] 萧何 缺少有效史略结束年（整数，公元前为负）\n  ❌ [SHIJI_053_01] 萧何 缺少有效峰值年\n  ❌ [SHIJI_053_01] 萧何 缺少 一级文明坐标\n  ❌ [SHIJI_053_01] 萧何 缺少 二级朝代坐标\n  ❌ [SHIJI_053_01] 萧何 缺少 三级政权坐标\n  ❌ [SHIJI_053_01] 萧何 缺少 四级帝王坐标\n\n  📊 归属表检查 (共 20 段)\n\n  📄 exclude 内容门\n  ✅ exclude 内容 OK\n\n  👑 君王命名\n  ✅ 君王名称均在帝王.json 枚举内\n\n  🎯 卷主轴身份\n  ✅ skeleton 人物身份 OK\n\n  📅 君王年份\n  ✅ 君王年份无重复区间\n\n  📊 逐段归属表:\n       段01 → [萧何] 文臣\n       段02 → [萧何] 文臣\n       段03 → [萧何] 文臣\n       段04 → [萧何] 文臣\n       段05 → [萧何] 文臣\n       段06 → [萧何] 文臣\n       段07 → [萧何] 文臣\n       段08 → [萧何] 文臣\n       段09 → [萧何] 文臣\n       段10 → [萧何] 文臣\n       段11 → [萧何] 文臣\n       段12 → [萧何] 文臣\n       段13 → [萧何] 文臣\n       段14 → [萧何] 文臣\n       段15 → [萧何] 文臣\n       段16 → [萧何] 文臣\n       段17 → [萧何] 文臣\n       段18 → [萧何] 文臣\n       段19 → [萧何] 文臣\n       段20 → [萧何] 文臣\n\n  🔎 原文字句验证\n\n  🤖 知识性决策溯源（LLM 硬门）\n  ✅ Step1/Step4 知识性字段已标记 LLM 溯源\n\n⛔ 发现 22 个错误，修正前不得进入下一步:\n  - [1/1] Step 4 未完成，缺少: 史略开始年\n  - [1/1] Step 4 未完成，缺少: 史略结束年\n  - [1/1] Step 4 未完成，缺少: 峰值年\n  - [1/1] Step 4 未完成，缺少: 峰值原因\n  - [1/1] Step 4 未完成，缺少: 峰值类型\n  - [1/1] Step 4 未完成，缺少: 峰值置信度\n  - [1/1] Step 4 未完成，缺少: 一级文明坐标\n  - [1/1] Step 4 未完成，缺少: 二级朝代坐标\n  - [1/1] Step 4 未完成，缺少: 三级政权坐标\n  - [1/1] Step 4 未完成，缺少: 四级帝王坐标\n  - [1/1] Step 4 未完成，缺少: 文明ID\n  - [1/1] Step 4 未完成，缺少: 朝代ID\n  - [1/1] Step 4 未完成，缺少: 政权ID\n  - [1/1] Step 4 未完成，缺少: 帝王ID\n  - [1/1] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_053_01] 萧何 缺少有效史略开始年（整数，公元前为负）\n  - [SHIJI_053_01] 萧何 缺少有效史略结束年（整数，公元前为负）\n  - [SHIJI_053_01] 萧何 缺少有效峰值年\n  - [SHIJI_053_01] 萧何 缺少 一级文明坐标\n  - [SHIJI_053_01] 萧何 缺少 二级朝代坐标\n  - [SHIJI_053_01] 萧何 缺少 三级政权坐标\n "
         }
       },
-      "overall": "done",
+      "overall": "failed",
       "blocked_reason": null
     },
     "054": {
@@ -1044,26 +1044,26 @@
       "steps": {
         "1": {
           "status": "done",
-          "at": "2026-06-28T14:20:54Z",
+          "at": "2026-07-25T01:58:55Z",
           "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
         },
         "2": {
           "status": "done",
-          "at": "2026-06-28T14:20:54Z",
+          "at": "2026-07-25T01:58:55Z",
           "detail": "check_format skeleton 通过"
         },
         "3": {
           "status": "done",
-          "at": "2026-06-28T14:20:54Z",
+          "at": "2026-07-25T01:58:55Z",
           "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
         },
         "4": {
-          "status": "done",
-          "at": "2026-06-28T14:22:08Z",
-          "detail": "check_format final 通过（含优先级/年份/归属）"
+          "status": "failed",
+          "at": "2026-07-25T01:58:55Z",
+          "detail": "check_format final 失败 (exit 1)\ntep 4 未完成，缺少: 三级政权坐标\n  ❌ [1/1] Step 4 未完成，缺少: 四级帝王坐标\n  ❌ [1/1] Step 4 未完成，缺少: 文明ID\n  ❌ [1/1] Step 4 未完成，缺少: 朝代ID\n  ❌ [1/1] Step 4 未完成，缺少: 政权ID\n  ❌ [1/1] Step 4 未完成，缺少: 帝王ID\n  ❌ [1/1] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  ❌ [SHIJI_054_01] 曹参 缺少有效史略开始年（整数，公元前为负）\n  ❌ [SHIJI_054_01] 曹参 缺少有效史略结束年（整数，公元前为负）\n  ❌ [SHIJI_054_01] 曹参 缺少有效峰值年\n  ❌ [SHIJI_054_01] 曹参 缺少 一级文明坐标\n  ❌ [SHIJI_054_01] 曹参 缺少 二级朝代坐标\n  ❌ [SHIJI_054_01] 曹参 缺少 三级政权坐标\n  ❌ [SHIJI_054_01] 曹参 缺少 四级帝王坐标\n\n  📊 归属表检查 (共 26 段)\n\n  📄 exclude 内容门\n  ✅ exclude 内容 OK\n\n  👑 君王命名\n  ✅ 君王名称均在帝王.json 枚举内\n\n  🎯 卷主轴身份\n  ✅ skeleton 人物身份 OK\n\n  📅 君王年份\n  ✅ 君王年份无重复区间\n\n  📊 逐段归属表:\n       段01 → [曹参] 文臣\n       段02 → [曹参] 文臣\n       段03 → [曹参] 文臣\n       段04 → [曹参] 文臣\n       段05 → [曹参] 文臣\n       段06 → [曹参] 文臣\n       段07 → [曹参] 文臣\n       段08 → [曹参] 文臣\n       段09 → [曹参] 文臣\n       段10 → [曹参] 文臣\n       段11 → [曹参] 文臣\n       段12 → [曹参] 文臣\n       段13 → [曹参] 文臣\n       段14 → [曹参] 文臣\n       段15 → [曹参] 文臣\n       段16 → [曹参] 文臣\n       段17 → [曹参] 文臣\n       段18 → [曹参] 文臣\n       段19 → [曹参] 文臣\n       段20 → [曹参] 文臣\n       段21 → [曹参] 文臣\n       段22 → [曹参] 文臣\n       段23 → [曹参] 文臣\n       段24 → [曹参] 文臣\n       段25 → [曹参] 文臣\n     ⛔ 段26 → 排除 (太史公曰)\n\n  🔎 原文字句验证\n\n  🤖 知识性决策溯源（LLM 硬门）\n  ✅ Step1/Step4 知识性字段已标记 LLM 溯源\n\n⛔ 发现 22 个错误，修正前不得进入下一步:\n  - [1/1] Step 4 未完成，缺少: 史略开始年\n  - [1/1] Step 4 未完成，缺少: 史略结束年\n  - [1/1] Step 4 未完成，缺少: 峰值年\n  - [1/1] Step 4 未完成，缺少: 峰值原因\n  - [1/1] Step 4 未完成，缺少: 峰值类型\n  - [1/1] Step 4 未完成，缺少: 峰值置信度\n  - [1/1] Step 4 未完成，缺少: 一级文明坐标\n  - [1/1] Step 4 未完成，缺少: 二级朝代坐标\n  - [1/1] Step 4 未完成，缺少: 三级政权坐标\n  - [1/1] Step 4 未完成，缺少: 四级帝王坐标\n  - [1/1] Step 4 未完成，缺少: 文明ID\n  - [1/1] Step 4 未完成，缺少: 朝代ID\n  - [1/1] Step 4 未完成，缺少: 政权ID\n  - [1/1] Step 4 未完成，缺少: 帝王ID\n  - [1/1] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_054_01] 曹参 缺少有效史略开始年（整数，公元前为负）\n  - [SHIJI_054_01] 曹参 缺少有效史略结束年（整数，公元前为负）\n  - [SHIJI_054_01] 曹参 缺少有效峰值年\n  - [SHIJI_054_01] 曹参 缺少 一级文明坐标\n  - [SHIJI_054_01] 曹参 缺少 二级朝代坐标\n  - [SHIJI_054_01] 曹参 缺少 三级政权坐标\n "
         }
       },
-      "overall": "done",
+      "overall": "failed",
       "blocked_reason": null
     },
     "055": {
@@ -1072,26 +1072,26 @@
       "steps": {
         "1": {
           "status": "done",
-          "at": "2026-06-28T14:22:26Z",
+          "at": "2026-07-25T01:59:18Z",
           "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
         },
         "2": {
           "status": "done",
-          "at": "2026-06-28T14:22:26Z",
+          "at": "2026-07-25T01:59:18Z",
           "detail": "check_format skeleton 通过"
         },
         "3": {
           "status": "done",
-          "at": "2026-06-28T14:22:26Z",
+          "at": "2026-07-25T01:59:18Z",
           "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
         },
         "4": {
-          "status": "done",
-          "at": "2026-06-28T14:35:17Z",
-          "detail": "check_format final 通过（含优先级/年份/归属）"
+          "status": "failed",
+          "at": "2026-07-25T01:59:19Z",
+          "detail": "check_format final 失败 (exit 1)\n_055_01] 张良 缺少 一级文明坐标\n  ❌ [SHIJI_055_01] 张良 缺少 二级朝代坐标\n  ❌ [SHIJI_055_01] 张良 缺少 三级政权坐标\n  ❌ [SHIJI_055_01] 张良 缺少 四级帝王坐标\n\n  📊 归属表检查 (共 43 段)\n\n  📄 exclude 内容门\n  ✅ exclude 内容 OK\n\n  👑 君王命名\n  ✅ 君王名称均在帝王.json 枚举内\n\n  🎯 卷主轴身份\n  ✅ skeleton 人物身份 OK\n\n  📅 君王年份\n  ✅ 君王年份无重复区间\n\n  📊 逐段归属表:\n       段01 → [张良] 文臣\n       段02 → [张良] 文臣\n       段03 → [张良] 文臣\n       段04 → [张良] 文臣\n       段05 → [张良] 文臣\n       段06 → [张良] 文臣\n       段07 → [张良] 文臣\n       段08 → [张良] 文臣\n       段09 → [张良] 文臣\n       段10 → [张良] 文臣\n       段11 → [张良] 文臣\n       段12 → [张良] 文臣\n       段13 → [张良] 文臣\n       段14 → [张良] 文臣\n       段15 → [张良] 文臣\n       段16 → [张良] 文臣\n       段17 → [张良] 文臣\n       段18 → [张良] 文臣\n       段19 → [张良] 文臣\n       段20 → [张良] 文臣\n       段21 → [张良] 文臣\n       段22 → [张良] 文臣\n       段23 → [张良] 文臣\n       段24 → [张良] 文臣\n       段25 → [张良] 文臣\n       段26 → [张良] 文臣\n       段27 → [张良] 文臣\n       段28 → [张良] 文臣\n       段29 → [张良] 文臣\n       段30 → [张良] 文臣\n       段31 → [张良] 文臣\n       段32 → [张良] 文臣\n       段33 → [张良] 文臣\n       段34 → [张良] 文臣\n       段35 → [张良] 文臣\n       段36 → [张良] 文臣\n       段37 → [张良] 文臣\n       段38 → [张良] 文臣\n       段39 → [张良] 文臣\n       段40 → [张良] 文臣\n       段41 → [张良] 文臣\n     ⛔ 段42 → 排除 (太史公曰)\n     ⛔ 段43 → 排除 (其他)\n\n  🔎 原文字句验证\n\n  🤖 知识性决策溯源（LLM 硬门）\n  ✅ Step1/Step4 知识性字段已标记 LLM 溯源\n\n⛔ 发现 22 个错误，修正前不得进入下一步:\n  - [1/1] Step 4 未完成，缺少: 史略开始年\n  - [1/1] Step 4 未完成，缺少: 史略结束年\n  - [1/1] Step 4 未完成，缺少: 峰值年\n  - [1/1] Step 4 未完成，缺少: 峰值原因\n  - [1/1] Step 4 未完成，缺少: 峰值类型\n  - [1/1] Step 4 未完成，缺少: 峰值置信度\n  - [1/1] Step 4 未完成，缺少: 一级文明坐标\n  - [1/1] Step 4 未完成，缺少: 二级朝代坐标\n  - [1/1] Step 4 未完成，缺少: 三级政权坐标\n  - [1/1] Step 4 未完成，缺少: 四级帝王坐标\n  - [1/1] Step 4 未完成，缺少: 文明ID\n  - [1/1] Step 4 未完成，缺少: 朝代ID\n  - [1/1] Step 4 未完成，缺少: 政权ID\n  - [1/1] Step 4 未完成，缺少: 帝王ID\n  - [1/1] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_055_01] 张良 缺少有效史略开始年（整数，公元前为负）\n  - [SHIJI_055_01] 张良 缺少有效史略结束年（整数，公元前为负）\n  - [SHIJI_055_01] 张良 缺少有效峰值年\n  - [SHIJI_055_01] 张良 缺少 一级文明坐标\n  - [SHIJI_055_01] 张良 缺少 二级朝代坐标\n  - [SHIJI_055_01] 张良 缺少 三级政权坐标\n "
         }
       },
-      "overall": "done",
+      "overall": "failed",
       "blocked_reason": null
     },
     "056": {
@@ -1100,26 +1100,26 @@
       "steps": {
         "1": {
           "status": "done",
-          "at": "2026-06-28T14:36:37Z",
+          "at": "2026-07-25T01:59:19Z",
           "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
         },
         "2": {
           "status": "done",
-          "at": "2026-06-28T14:36:37Z",
+          "at": "2026-07-25T01:59:19Z",
           "detail": "check_format skeleton 通过"
         },
         "3": {
           "status": "done",
-          "at": "2026-06-28T14:36:37Z",
+          "at": "2026-07-25T01:59:19Z",
           "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
         },
         "4": {
-          "status": "done",
-          "at": "2026-06-28T14:41:35Z",
-          "detail": "check_format final 通过（含优先级/年份/归属）"
+          "status": "failed",
+          "at": "2026-07-25T01:59:19Z",
+          "detail": "check_format final 失败 (exit 1)\n）\n  ❌ [SHIJI_056_01] 陈平 缺少有效史略结束年（整数，公元前为负）\n  ❌ [SHIJI_056_01] 陈平 缺少有效峰值年\n  ❌ [SHIJI_056_01] 陈平 缺少 一级文明坐标\n  ❌ [SHIJI_056_01] 陈平 缺少 二级朝代坐标\n  ❌ [SHIJI_056_01] 陈平 缺少 三级政权坐标\n  ❌ [SHIJI_056_01] 陈平 缺少 四级帝王坐标\n\n  📊 归属表检查 (共 39 段)\n\n  📄 exclude 内容门\n  ✅ exclude 内容 OK\n\n  👑 君王命名\n  ✅ 君王名称均在帝王.json 枚举内\n\n  🎯 卷主轴身份\n  ✅ skeleton 人物身份 OK\n\n  📅 君王年份\n  ✅ 君王年份无重复区间\n\n  📊 逐段归属表:\n       段01 → [陈平] 文臣\n       段02 → [陈平] 文臣\n       段03 → [陈平] 文臣\n       段04 → [陈平] 文臣\n       段05 → [陈平] 文臣\n       段06 → [陈平] 文臣\n       段07 → [陈平] 文臣\n       段08 → [陈平] 文臣\n       段09 → [陈平] 文臣\n       段10 → [陈平] 文臣\n       段11 → [陈平] 文臣\n       段12 → [陈平] 文臣\n       段13 → [陈平] 文臣\n       段14 → [陈平] 文臣\n       段15 → [陈平] 文臣\n       段16 → [陈平] 文臣\n       段17 → [陈平] 文臣\n       段18 → [陈平] 文臣\n       段19 → [陈平] 文臣\n       段20 → [陈平] 文臣\n       段21 → [陈平] 文臣\n       段22 → [陈平] 文臣\n       段23 → [陈平] 文臣\n       段24 → [陈平] 文臣\n       段25 → [陈平] 文臣\n       段26 → [陈平] 文臣\n       段27 → [陈平] 文臣\n       段28 → [陈平] 文臣\n       段29 → [陈平] 文臣\n       段30 → [陈平] 文臣\n       段31 → [陈平] 文臣\n       段32 → [陈平] 文臣\n       段33 → [陈平] 文臣\n       段34 → [陈平] 文臣\n       段35 → [陈平] 文臣\n       段36 → [陈平] 文臣\n       段37 → [陈平] 文臣\n     ⛔ 段38 → 排除 (太史公曰)\n     ⛔ 段39 → 排除 (其他)\n\n  🔎 原文字句验证\n\n  🤖 知识性决策溯源（LLM 硬门）\n  ✅ Step1/Step4 知识性字段已标记 LLM 溯源\n\n⛔ 发现 22 个错误，修正前不得进入下一步:\n  - [1/1] Step 4 未完成，缺少: 史略开始年\n  - [1/1] Step 4 未完成，缺少: 史略结束年\n  - [1/1] Step 4 未完成，缺少: 峰值年\n  - [1/1] Step 4 未完成，缺少: 峰值原因\n  - [1/1] Step 4 未完成，缺少: 峰值类型\n  - [1/1] Step 4 未完成，缺少: 峰值置信度\n  - [1/1] Step 4 未完成，缺少: 一级文明坐标\n  - [1/1] Step 4 未完成，缺少: 二级朝代坐标\n  - [1/1] Step 4 未完成，缺少: 三级政权坐标\n  - [1/1] Step 4 未完成，缺少: 四级帝王坐标\n  - [1/1] Step 4 未完成，缺少: 文明ID\n  - [1/1] Step 4 未完成，缺少: 朝代ID\n  - [1/1] Step 4 未完成，缺少: 政权ID\n  - [1/1] Step 4 未完成，缺少: 帝王ID\n  - [1/1] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_056_01] 陈平 缺少有效史略开始年（整数，公元前为负）\n  - [SHIJI_056_01] 陈平 缺少有效史略结束年（整数，公元前为负）\n  - [SHIJI_056_01] 陈平 缺少有效峰值年\n  - [SHIJI_056_01] 陈平 缺少 一级文明坐标\n  - [SHIJI_056_01] 陈平 缺少 二级朝代坐标\n  - [SHIJI_056_01] 陈平 缺少 三级政权坐标\n "
         }
       },
-      "overall": "done",
+      "overall": "failed",
       "blocked_reason": null
     },
     "057": {
@@ -1128,26 +1128,26 @@
       "steps": {
         "1": {
           "status": "done",
-          "at": "2026-06-28T14:44:20Z",
+          "at": "2026-07-25T01:59:20Z",
           "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
         },
         "2": {
           "status": "done",
-          "at": "2026-06-28T14:44:20Z",
+          "at": "2026-07-25T01:59:20Z",
           "detail": "check_format skeleton 通过"
         },
         "3": {
           "status": "done",
-          "at": "2026-06-28T14:44:20Z",
+          "at": "2026-07-25T01:59:20Z",
           "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
         },
         "4": {
-          "status": "done",
-          "at": "2026-06-28T14:46:57Z",
-          "detail": "check_format final 通过（含优先级/年份/归属）"
+          "status": "failed",
+          "at": "2026-07-25T01:59:20Z",
+          "detail": "check_format final 失败 (exit 1)\n[1/1] Step 4 未完成，缺少: 帝王ID\n  ❌ [1/1] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  ❌ [SHIJI_057_01] 周勃 缺少有效史略开始年（整数，公元前为负）\n  ❌ [SHIJI_057_01] 周勃 缺少有效史略结束年（整数，公元前为负）\n  ❌ [SHIJI_057_01] 周勃 缺少有效峰值年\n  ❌ [SHIJI_057_01] 周勃 缺少 一级文明坐标\n  ❌ [SHIJI_057_01] 周勃 缺少 二级朝代坐标\n  ❌ [SHIJI_057_01] 周勃 缺少 三级政权坐标\n  ❌ [SHIJI_057_01] 周勃 缺少 四级帝王坐标\n\n  📊 归属表检查 (共 33 段)\n\n  📄 exclude 内容门\n  ✅ exclude 内容 OK\n\n  👑 君王命名\n  ✅ 君王名称均在帝王.json 枚举内\n\n  🎯 卷主轴身份\n  ✅ skeleton 人物身份 OK\n\n  📅 君王年份\n  ✅ 君王年份无重复区间\n\n  📊 逐段归属表:\n       段01 → [周勃] 文臣\n       段02 → [周勃] 文臣\n       段03 → [周勃] 文臣\n       段04 → [周勃] 文臣\n       段05 → [周勃] 文臣\n       段06 → [周勃] 文臣\n       段07 → [周勃] 文臣\n       段08 → [周勃] 文臣\n       段09 → [周勃] 文臣\n       段10 → [周勃] 文臣\n       段11 → [周勃] 文臣\n       段12 → [周勃] 文臣\n       段13 → [周勃] 文臣\n       段14 → [周勃] 文臣\n       段15 → [周勃] 文臣\n       段16 → [周勃] 文臣\n       段17 → [周勃] 文臣\n       段18 → [周勃] 文臣\n       段19 → [周勃] 文臣\n       段20 → [周勃] 文臣\n       段21 → [周勃] 文臣\n       段22 → [周勃] 文臣\n       段23 → [周勃] 文臣\n       段24 → [周勃] 文臣\n       段25 → [周勃] 文臣\n       段26 → [周勃] 文臣\n       段27 → [周勃] 文臣\n       段28 → [周勃] 文臣\n       段29 → [周勃] 文臣\n       段30 → [周勃] 文臣\n       段31 → [周勃] 文臣\n     ⛔ 段32 → 排除 (太史公曰)\n     ⛔ 段33 → 排除 (其他)\n\n  🔎 原文字句验证\n\n  🤖 知识性决策溯源（LLM 硬门）\n  ✅ Step1/Step4 知识性字段已标记 LLM 溯源\n\n⛔ 发现 22 个错误，修正前不得进入下一步:\n  - [1/1] Step 4 未完成，缺少: 史略开始年\n  - [1/1] Step 4 未完成，缺少: 史略结束年\n  - [1/1] Step 4 未完成，缺少: 峰值年\n  - [1/1] Step 4 未完成，缺少: 峰值原因\n  - [1/1] Step 4 未完成，缺少: 峰值类型\n  - [1/1] Step 4 未完成，缺少: 峰值置信度\n  - [1/1] Step 4 未完成，缺少: 一级文明坐标\n  - [1/1] Step 4 未完成，缺少: 二级朝代坐标\n  - [1/1] Step 4 未完成，缺少: 三级政权坐标\n  - [1/1] Step 4 未完成，缺少: 四级帝王坐标\n  - [1/1] Step 4 未完成，缺少: 文明ID\n  - [1/1] Step 4 未完成，缺少: 朝代ID\n  - [1/1] Step 4 未完成，缺少: 政权ID\n  - [1/1] Step 4 未完成，缺少: 帝王ID\n  - [1/1] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_057_01] 周勃 缺少有效史略开始年（整数，公元前为负）\n  - [SHIJI_057_01] 周勃 缺少有效史略结束年（整数，公元前为负）\n  - [SHIJI_057_01] 周勃 缺少有效峰值年\n  - [SHIJI_057_01] 周勃 缺少 一级文明坐标\n  - [SHIJI_057_01] 周勃 缺少 二级朝代坐标\n  - [SHIJI_057_01] 周勃 缺少 三级政权坐标\n "
         }
       },
-      "overall": "done",
+      "overall": "failed",
       "blocked_reason": null
     },
     "058": {
@@ -1156,26 +1156,26 @@
       "steps": {
         "1": {
           "status": "done",
-          "at": "2026-06-28T14:47:30Z",
+          "at": "2026-07-25T01:58:56Z",
           "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
         },
         "2": {
           "status": "done",
-          "at": "2026-06-28T14:47:30Z",
+          "at": "2026-07-25T01:58:56Z",
           "detail": "check_format skeleton 通过"
         },
         "3": {
           "status": "done",
-          "at": "2026-06-28T14:47:30Z",
+          "at": "2026-07-25T01:58:56Z",
           "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
         },
         "4": {
-          "status": "done",
-          "at": "2026-06-28T14:47:34Z",
-          "detail": "check_format final 通过（含优先级/年份/归属）"
+          "status": "failed",
+          "at": "2026-07-25T01:58:56Z",
+          "detail": "check_format final 失败 (exit 1)\n\n🔍 Step 2 自检 (final): 梁孝王世家\n   条目数: 1\n\n  👑 参考表检查\n\n  📐 结构检查\n\n  📏 段落数校验（原文对照）\n  ✅ 段落数一致: 37 段 (模式=line)\n\n  📝 条目检查 (1 条)\n\n  📋 主轴人数（LLM Step1a）: 1（世家），整卷 1 条 entry 合法\n  ❌ [1/1] Step 4 未完成，缺少: 史略开始年\n  ❌ [1/1] Step 4 未完成，缺少: 史略结束年\n  ❌ [1/1] Step 4 未完成，缺少: 峰值年\n  ❌ [1/1] Step 4 未完成，缺少: 峰值原因\n  ❌ [1/1] Step 4 未完成，缺少: 峰值类型\n  ❌ [1/1] Step 4 未完成，缺少: 峰值置信度\n  ❌ [1/1] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  ❌ [SHIJI_058_01] 梁孝王 缺少有效史略开始年（整数，公元前为负）\n  ❌ [SHIJI_058_01] 梁孝王 缺少有效史略结束年（整数，公元前为负）\n  ❌ [SHIJI_058_01] 梁孝王 缺少有效峰值年\n\n  📊 归属表检查 (共 37 段)\n\n  📄 exclude 内容门\n  ✅ exclude 内容 OK\n\n  👑 君王命名\n  ✅ 君王名称均在帝王.json 枚举内\n\n  🎯 卷主轴身份\n  ✅ skeleton 人物身份 OK\n\n  📅 君王年份\n  ✅ 君王年份无重复区间\n\n  📊 逐段归属表:\n       段01 → [梁孝王] 宗戚\n       段02 → [梁孝王] 宗戚\n       段03 → [梁孝王] 宗戚\n       段04 → [梁孝王] 宗戚\n       段05 → [梁孝王] 宗戚\n       段06 → [梁孝王] 宗戚\n       段07 → [梁孝王] 宗戚\n       段08 → [梁孝王] 宗戚\n       段09 → [梁孝王] 宗戚\n       段10 → [梁孝王] 宗戚\n       段11 → [梁孝王] 宗戚\n       段12 → [梁孝王] 宗戚\n       段13 → [梁孝王] 宗戚\n       段14 → [梁孝王] 宗戚\n       段15 → [梁孝王] 宗戚\n       段16 → [梁孝王] 宗戚\n       段17 → [梁孝王] 宗戚\n       段18 → [梁孝王] 宗戚\n       段19 → [梁孝王] 宗戚\n       段20 → [梁孝王] 宗戚\n       段21 → [梁孝王] 宗戚\n       段22 → [梁孝王] 宗戚\n       段23 → [梁孝王] 宗戚\n       段24 → [梁孝王] 宗戚\n       段25 → [梁孝王] 宗戚\n       段26 → [梁孝王] 宗戚\n       段27 → [梁孝王] 宗戚\n       段28 → [梁孝王] 宗戚\n       段29 → [梁孝王] 宗戚\n       段30 → [梁孝王] 宗戚\n       段31 → [梁孝王] 宗戚\n       段32 → [梁孝王] 宗戚\n       段33 → [梁孝王] 宗戚\n       段34 → [梁孝王] 宗戚\n       段35 → [梁孝王] 宗戚\n       段36 → [梁孝王] 宗戚\n       段37 → [梁孝王] 宗戚\n\n  🔎 原文字句验证\n\n  🤖 知识性决策溯源（LLM 硬门）\n  ✅ Step1/Step4 知识性字段已标记 LLM 溯源\n\n⛔ 发现 10 个错误，修正前不得进入下一步:\n  - [1/1] Step 4 未完成，缺少: 史略开始年\n  - [1/1] Step 4 未完成，缺少: 史略结束年\n  - [1/1] Step 4 未完成，缺少: 峰值年\n  - [1/1] Step 4 未完成，缺少: 峰值原因\n  - [1/1] Step 4 未完成，缺少: 峰值类型\n  - [1/1] Step 4 未完成，缺少: 峰值置信度\n  - [1/1] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_058_01] 梁孝王 缺少有效史略开始年（整数，公元前为负）\n  - [SHIJI_058_01] 梁孝王 缺少有效史略结束年（整数，公元前为负）\n  - [SHIJI_058_01] 梁孝王 缺少有效峰值年"
         }
       },
-      "overall": "done",
+      "overall": "failed",
       "blocked_reason": null
     },
     "059": {
@@ -1184,26 +1184,26 @@
       "steps": {
         "1": {
           "status": "done",
-          "at": "2026-06-28T15:08:51Z",
+          "at": "2026-07-25T01:58:57Z",
           "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
         },
         "2": {
           "status": "done",
-          "at": "2026-06-28T15:08:51Z",
+          "at": "2026-07-25T01:58:57Z",
           "detail": "check_format skeleton 通过"
         },
         "3": {
           "status": "done",
-          "at": "2026-06-28T15:08:51Z",
+          "at": "2026-07-25T01:58:57Z",
           "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
         },
         "4": {
-          "status": "done",
-          "at": "2026-06-28T15:08:51Z",
-          "detail": "check_format final 通过（含优先级/年份/归属）"
+          "status": "failed",
+          "at": "2026-07-25T01:58:57Z",
+          "detail": "check_format final 失败 (exit 1)\n\n       段25 → [贾夫人] 宗戚\n       段26 → [贾夫人] 宗戚\n       段27 → [唐姬] 宗戚\n       段28 → [唐姬] 宗戚\n       段29 → [唐姬] 宗戚\n       段30 → [唐姬] 宗戚\n       段31 → [儿姁] 宗戚\n       段32 → [儿姁] 宗戚\n       段33 → [儿姁] 宗戚\n       段34 → [儿姁] 宗戚\n       段35 → [儿姁] 宗戚\n       段36 → [儿姁] 宗戚\n       段37 → [儿姁] 宗戚\n       段38 → [儿姁] 宗戚\n       段39 → [儿姁] 宗戚\n       段40 → [儿姁] 宗戚\n       段41 → [儿姁] 宗戚\n       段42 → [儿姁] 宗戚\n       段43 → [儿姁] 宗戚\n       段44 → [儿姁] 宗戚\n       段45 → [儿姁] 宗戚\n       段46 → [儿姁] 宗戚\n     ⛔ 段47 → 排除 (太史公曰)\n\n  🔎 原文字句验证\n\n  🤖 知识性决策溯源（LLM 硬门）\n  ✅ Step1/Step4 知识性字段已标记 LLM 溯源\n\n⛔ 发现 35 个错误，修正前不得进入下一步:\n  - [1/5] Step 4 未完成，缺少: 峰值年\n  - [1/5] Step 4 未完成，缺少: 峰值原因\n  - [1/5] Step 4 未完成，缺少: 峰值类型\n  - [1/5] Step 4 未完成，缺少: 峰值置信度\n  - [1/5] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_059_01] 儿姁 缺少有效峰值年\n  - [2/5] Step 4 未完成，缺少: 峰值年\n  - [2/5] Step 4 未完成，缺少: 峰值原因\n  - [2/5] Step 4 未完成，缺少: 峰值类型\n  - [2/5] Step 4 未完成，缺少: 峰值置信度\n  - [2/5] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_059_02] 唐姬 缺少有效峰值年\n  - [3/5] Step 4 未完成，缺少: 峰值年\n  - [3/5] Step 4 未完成，缺少: 峰值原因\n  - [3/5] Step 4 未完成，缺少: 峰值类型\n  - [3/5] Step 4 未完成，缺少: 峰值置信度\n  - [3/5] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_059_03] 栗姬 缺少有效峰值年\n  - [4/5] Step 4 未完成，缺少: 峰值年\n  - [4/5] Step 4 未完成，缺少: 峰值原因\n  - [4/5] Step 4 未完成，缺少: 峰值类型\n  - [4/5] Step 4 未完成，缺少: 峰值置信度\n  - [4/5] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_059_04] 程姬 缺少有效峰值年\n  - [5/5] Step 4 未完成，缺少: 峰值年\n  - [5/5] Step 4 未完成，缺少: 峰值原因\n  - [5/5] Step 4 未完成，缺少: 峰值类型\n  - [5/5] Step 4 未完成，缺少: 峰值置信度\n  - [5/5] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_059_05] 贾夫人 缺少有效峰值年\n  - [SHIJI_059_01] 儿姁 人物生卒缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_059_02] 唐姬 人物生卒缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_059_03] 栗姬 人物生卒缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_059_04] 程姬 人物生卒缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_059_05] 贾夫人 人物生卒缺 _年LLM依据，禁止脚本占位；"
         }
       },
-      "overall": "done",
+      "overall": "failed",
       "blocked_reason": null
     },
     "060": {
@@ -1212,26 +1212,26 @@
       "steps": {
         "1": {
           "status": "done",
-          "at": "2026-06-28T15:14:08Z",
+          "at": "2026-07-25T01:58:58Z",
           "detail": "原文挑战通过（8 段抽样：归属 + 开篇原文字句）"
         },
         "2": {
           "status": "done",
-          "at": "2026-06-28T15:14:08Z",
+          "at": "2026-07-25T01:58:58Z",
           "detail": "check_format skeleton 通过"
         },
         "3": {
           "status": "done",
-          "at": "2026-06-28T15:14:08Z",
+          "at": "2026-07-25T01:58:58Z",
           "detail": "审计表与 skeleton 一致；抽样段号 8 处已显式提及"
         },
         "4": {
-          "status": "done",
-          "at": "2026-06-28T15:14:08Z",
-          "detail": "check_format final 通过（含优先级/年份/归属）"
+          "status": "failed",
+          "at": "2026-07-25T01:58:59Z",
+          "detail": "check_format final 失败 (exit 1)\n传记篇幅不符\n\n  📊 归属表检查 (共 34 段)\n  ⚠️ 段22 标为「其他」，但 P21 与 P23 均归 [齐王刘闳]，疑为块内中间段落误排除，请复核是否应并入该人物叙事\n\n  📄 exclude 内容门\n  ✅ exclude 内容 OK\n\n  👑 君王命名\n  ✅ 君王名称均在帝王.json 枚举内\n\n  🎯 卷主轴身份\n  ✅ skeleton 人物身份 OK\n\n  📅 君王年份\n  ✅ 君王年份无重复区间\n\n  📊 逐段归属表:\n     ⛔ 段01 → 排除 (其他)\n     ⛔ 段02 → 排除 (其他)\n     ⛔ 段03 → 排除 (其他)\n     ⛔ 段04 → 排除 (其他)\n     ⛔ 段05 → 排除 (其他)\n     ⛔ 段06 → 排除 (其他)\n     ⛔ 段07 → 排除 (其他)\n     ⛔ 段08 → 排除 (其他)\n     ⛔ 段09 → 排除 (其他)\n     ⛔ 段10 → 排除 (其他)\n     ⛔ 段11 → 排除 (其他)\n       段12 → [齐王刘闳] 宗戚\n       段13 → [齐王刘闳] 宗戚\n       段14 → [燕王刘旦] 宗戚\n       段15 → [燕王刘旦] 宗戚\n       段16 → [广陵王刘胥] 宗戚\n       段17 → [广陵王刘胥] 宗戚\n     ⛔ 段18 → 排除 (太史公曰)\n     ⛔ 段19 → 排除 (其他)\n     ⛔ 段20 → 排除 (其他)\n       段21 → [齐王刘闳] 宗戚\n     ⛔ 段22 → 排除 (其他)\n       段23 → [齐王刘闳] 宗戚\n     ⛔ 段24 → 排除 (其他)\n       段25 → [广陵王刘胥] 宗戚\n       段26 → [广陵王刘胥] 宗戚\n       段27 → [广陵王刘胥] 宗戚\n       段28 → [广陵王刘胥] 宗戚\n       段29 → [燕王刘旦] 宗戚\n       段30 → [燕王刘旦] 宗戚\n       段31 → [燕王刘旦] 宗戚\n       段32 → [燕王刘旦] 宗戚\n       段33 → [燕王刘旦] 宗戚\n       段34 → [燕王刘旦] 宗戚\n\n  🔎 原文字句验证\n\n  🤖 知识性决策溯源（LLM 硬门）\n  ✅ Step1/Step4 知识性字段已标记 LLM 溯源\n\n⛔ 发现 22 个错误，修正前不得进入下一步:\n  - [1/3] Step 4 未完成，缺少: 峰值年\n  - [1/3] Step 4 未完成，缺少: 峰值原因\n  - [1/3] Step 4 未完成，缺少: 峰值类型\n  - [1/3] Step 4 未完成，缺少: 峰值置信度\n  - [1/3] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_060_01] 广陵王刘胥 缺少有效峰值年\n  - [2/3] Step 4 未完成，缺少: 峰值年\n  - [2/3] Step 4 未完成，缺少: 峰值原因\n  - [2/3] Step 4 未完成，缺少: 峰值类型\n  - [2/3] Step 4 未完成，缺少: 峰值置信度\n  - [2/3] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_060_02] 燕王刘旦 缺少有效峰值年\n  - [3/3] Step 4 未完成，缺少: 峰值年\n  - [3/3] Step 4 未完成，缺少: 峰值原因\n  - [3/3] Step 4 未完成，缺少: 峰值类型\n  - [3/3] Step 4 未完成，缺少: 峰值置信度\n  - [3/3] 卷级 skeleton 仍含优先级，须 finalize 清除；全局 enrichment 再写入\n  - [SHIJI_060_03] 齐王刘闳 缺少有效峰值年\n  - [SHIJI_060_01] 广陵王刘胥 人物生卒缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_060_02] 燕王刘旦 人物生卒缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_060_03] 齐王刘闳 人物生卒缺 _年LLM依据，禁止脚本占位；须据史料考订并写入 _auto_filled._年LLM依据\n  - [SHIJI_060_03] 齐王刘闳 人物生卒跨"
         }
       },
-      "overall": "done",
+      "overall": "failed",
       "blocked_reason": null
     },
     "079": {

@@ -2,6 +2,11 @@
   "total_paragraphs": 183,
   "excludes": [
     {
+      "paragraph_from": 177,
+      "paragraph_to": 182,
+      "exclude_reason": "其他"
+    },
+    {
       "paragraph_from": 183,
       "paragraph_to": 183,
       "exclude_reason": "太史公曰"
@@ -21,22 +26,70 @@
       "paragraph_to": 44
     },
     {
-      "name": "晋文公",
+      "name": "晋惠公",
       "category": "君王",
       "paragraph_from": 45,
+      "paragraph_to": 61
+    },
+    {
+      "name": "晋文公",
+      "category": "君王",
+      "paragraph_from": 62,
       "paragraph_to": 102
+    },
+    {
+      "name": "晋襄公",
+      "category": "君王",
+      "paragraph_from": 103,
+      "paragraph_to": 109
+    },
+    {
+      "name": "晋灵公",
+      "category": "君王",
+      "paragraph_from": 110,
+      "paragraph_to": 120
     },
     {
       "name": "晋景公",
       "category": "君王",
-      "paragraph_from": 103,
+      "paragraph_from": 121,
+      "paragraph_to": 144
+    },
+    {
+      "name": "晋厉公",
+      "category": "君王",
+      "paragraph_from": 145,
       "paragraph_to": 151
     },
     {
       "name": "晋悼公",
       "category": "君王",
       "paragraph_from": 152,
-      "paragraph_to": 182
+      "paragraph_to": 156
+    },
+    {
+      "name": "晋平公",
+      "category": "君王",
+      "paragraph_from": 157,
+      "paragraph_to": 162
+    },
+    {
+      "name": "晋顷公",
+      "category": "君王",
+      "paragraph_from": 163,
+      "paragraph_to": 167
+    },
+    {
+      "name": "晋定公",
+      "category": "君王",
+      "paragraph_from": 168,
+      "paragraph_to": 172
+    },
+    {
+      "name": "晋出公",
+      "category": "君王",
+      "paragraph_from": 173,
+      "paragraph_to": 176
     }
   ]
 }

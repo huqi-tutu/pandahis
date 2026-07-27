@@ -1,0 +1,25 @@
+{
+  "schema": "qa_repair_ticket/v1",
+  "pipeline": "translate",
+  "entry_id": "GLBL_00314",
+  "entry_name": "子路",
+  "stage": "verify",
+  "fail_count": 1,
+  "errors": [
+    "母本引用过碎: ≤4字「」引用 30 处（阈值25），并列句群应整簇引用"
+  ],
+  "plan": {
+    "root_cause": "QUOTE_FRAGMENT",
+    "disposition": "refine_scope",
+    "action": "merge_short_quotes",
+    "structured_prompt": "【根因：书名号引用过碎】\n并列句群应整簇放入同一对「」内引用，译后统一解释；禁止大量 ≤4 字碎引用。保留母本信息点，减少「」对数。",
+    "refine_scope": "mother",
+    "route_to": "",
+    "next_command": "",
+    "invalidate": [],
+    "max_retries": 2,
+    "extra": {}
+  },
+  "feedback": "【根因：书名号引用过碎】\n并列句群应整簇放入同一对「」内引用，译后统一解释；禁止大量 ≤4 字碎引用。保留母本信息点，减少「」对数。\n\n---\n【原始错误】\n母本引用过碎: ≤4字「」引用 30 处（阈值25），并列句群应整簇引用",
+  "updated_at": "2026-07-26T05:24:02Z"
+}

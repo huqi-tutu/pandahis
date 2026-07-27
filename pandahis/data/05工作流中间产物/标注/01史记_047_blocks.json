@@ -2,7 +2,7 @@
   "total_paragraphs": 108,
   "excludes": [
     {
-      "paragraph_from": 107,
+      "paragraph_from": 108,
       "paragraph_to": 108,
       "exclude_reason": "太史公曰"
     }
@@ -12,7 +12,7 @@
       "name": "孔子",
       "category": "文臣",
       "paragraph_from": 1,
-      "paragraph_to": 106
+      "paragraph_to": 107
     }
   ]
 }

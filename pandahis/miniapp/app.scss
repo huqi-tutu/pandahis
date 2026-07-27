@@ -51,7 +51,7 @@ text {
 
 .card {
   background: var(--bgCard);
-  border: 1rpx solid var(--borderCard);
+  border: none;
   border-radius: var(--radiusLg);
-  box-shadow: var(--shadow1);
+  box-shadow: var(--shadow-card);
 }

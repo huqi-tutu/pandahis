@@ -1,0 +1,109 @@
+{
+  "schema": "translate-coverage-ledger/v1",
+  "史略ID": "GLBL_00713",
+  "updated_at": "2026-07-26T15:30:53.066891+00:00",
+  "entries": {
+    "M001": {
+      "status": "conveyed",
+      "claim_fp": "681591bd753cfe64",
+      "checked_at": "2026-07-26T15:30:31.058522+00:00",
+      "note": "完全对应M001。"
+    },
+    "M002": {
+      "status": "conveyed",
+      "claim_fp": "bcb9d12b54b7b0e9",
+      "checked_at": "2026-07-26T15:30:31.058525+00:00",
+      "note": "完全对应M002。"
+    },
+    "M003–M004": {
+      "status": "conveyed",
+      "claim_fp": "e5aefd87a7f8eccd",
+      "checked_at": "2026-07-26T15:30:31.058526+00:00",
+      "note": "过周无礼、王孙满讥之、弦高犒师等均涵盖。"
+    },
+    "M005": {
+      "status": "conveyed",
+      "claim_fp": "f21962f14a58199a",
+      "checked_at": "2026-07-26T15:30:31.058528+00:00",
+      "note": "完全对应M005。"
+    },
+    "M006": {
+      "status": "conveyed",
+      "claim_fp": "31d6ae1d3e28e218",
+      "checked_at": "2026-07-26T15:30:31.058533+00:00",
+      "note": "先轸和栾枝对话及决定攻击，均传达。"
+    },
+    "M007": {
+      "status": "conveyed",
+      "claim_fp": "84f1cea71b9c20ac",
+      "checked_at": "2026-07-26T15:30:31.058534+00:00",
+      "note": "完全对应M007。"
+    },
+    "M008": {
+      "status": "conveyed",
+      "claim_fp": "adf2c9a9a36288c1",
+      "checked_at": "2026-07-26T15:30:31.058538+00:00",
+      "note": "四月，晋军在殽山大败秦军，把秦国的三员大将——孟明视、西乞秫、白乙丙——全给俘虏了。"
+    },
+    "M009": {
+      "status": "conveyed",
+      "claim_fp": "d5669812c85c3bb8",
+      "checked_at": "2026-07-26T15:30:31.058539+00:00",
+      "note": "打完仗，襄公就穿着这身黑色丧服，安葬了晋文公。"
+    },
+    "M010": {
+      "status": "conveyed",
+      "claim_fp": "fd94c41b5fbd1e0a",
+      "checked_at": "2026-07-26T15:30:31.058540+00:00",
+      "note": "文公的夫人是秦国人，她对襄公说：“秦国想要把这三个败将自己弄回去杀掉。”襄公一听，觉得也行，就答应了，把孟明视、西乞秫、白乙丙给放了。"
+    },
+    "M011": {
+      "status": "conveyed",
+      "claim_fp": "5626eabafc9d8982",
+      "checked_at": "2026-07-26T15:30:31.058541+00:00",
+      "note": "先轸听说之后，气冲冲地来找襄公，说：“祸患要来了！”说完赶紧去追秦将。"
+    },
+    "M012": {
+      "status": "conveyed",
+      "claim_fp": "8e8d2a9039f2d7ef",
+      "checked_at": "2026-07-26T15:30:31.058542+00:00",
+      "note": "可惜没追上。秦将已经渡河，人在船上了。远远地冲着岸上磕了个头，算是谢了不杀之恩——人终究是跑了，没回来。"
+    },
+    "M013–M016": {
+      "status": "conveyed",
+      "claim_fp": "0858368ba7ebc938",
+      "checked_at": "2026-07-26T15:30:31.058547+00:00",
+      "note": "涵盖了M013至M016的全部四件事。"
+    },
+    "M017": {
+      "status": "conveyed",
+      "claim_fp": "2891d985b3be3cca",
+      "checked_at": "2026-07-26T15:30:31.058548+00:00",
+      "note": "赵盾接替了他的父亲赵衰，开始执掌晋国的国政。"
+    },
+    "M018": {
+      "status": "conveyed",
+      "claim_fp": "0d5aaadcb475d59a",
+      "checked_at": "2026-07-26T15:30:31.058549+00:00",
+      "note": "晋襄公七年八月，襄公去世了。"
+    },
+    "M019": {
+      "status": "conveyed",
+      "claim_fp": "db73f26499ddf0f2",
+      "checked_at": "2026-07-26T15:30:53.062212+00:00",
+      "note": "直接对应母本信息。"
+    },
+    "M020": {
+      "status": "conveyed",
+      "claim_fp": "64e7131bfd2104d9",
+      "checked_at": "2026-07-26T15:30:53.062218+00:00",
+      "note": "明确传达了晋人因国难欲立长君。"
+    },
+    "M021": {
+      "status": "conveyed",
+      "claim_fp": "e9b36d7b27c896b6",
+      "checked_at": "2026-07-26T15:30:53.062226+00:00",
+      "note": "所有对话要点均已包含。"
+    }
+  }
+}

@@ -29,19 +29,36 @@
     </view>
   </view>
 
+  <!-- scroll-top 常时绑定：number 与 undefined 切换会在部分基础库把滚动位置重置为 0（收展回顶的根因），勿改回条件绑定 -->
   <scroll-view
     id="matrixScroll"
     class="matrix-scroll"
     scroll-y
     show-scrollbar="{{false}}"
-    scroll-top="{{navDragActive ? matrixScrollTop : undefined}}"
+    scroll-with-animation="{{false}}"
+    scroll-top="{{matrixScrollTop}}"
     scroll-into-view="{{matrixScrollIntoView}}"
     
     style="top: {{scrollAreaTop}}px; height: {{matrixHeight}}px;"
     bindscroll="onMatrixScroll"
     bindscrollend="onMatrixScrollEnd"
   >
-    <view class="matrix-body" style="height: {{matrixTotalH + matrixScrollBottomPad}}rpx;">
+    <view
+      class="matrix-body {{matrixBodyOffset ? 'matrix-body--offset-lock' : ''}}"
+      style="height: {{matrixTotalH + matrixScrollBottomPad}}rpx; transform: translateY({{matrixBodyOffset}}px);"
+    >
+      <!-- 文档流锚点：供 scroll-into-view 精确定位（绝对定位的时间轴行无法用于滚动锚定） -->
+      <view class="matrix-scroll-anchors" aria-hidden="true">
+        <view
+          wx:for="{{matrixRows}}"
+          wx:key="key"
+          wx:for-item="row"
+          id="anchor_{{row.key}}"
+          class="matrix-scroll-anchor"
+          style="height: {{row.h}}rpx;"
+        ></view>
+        <view class="matrix-scroll-anchor matrix-scroll-anchor--pad" style="height: {{matrixScrollBottomPad}}rpx;"></view>
+      </view>
       <view class="matrix-time-col" >
         <view wx:for="{{matrixRows}}" wx:key="key" wx:for-item="row" id="ts_{{row.key}}" class="time-row-abs {{row.showYear ? '' : 'time-row-abs--compact'}}" style="top: {{row.y}}rpx; height: {{row.h}}rpx;">
           <view class="time-label-wrap">
@@ -50,7 +67,7 @@
               <view class="time-year" style="font-size: {{row.yearFontSize}}rpx;">{{row.year}}</view>
               <view class="time-h-line time-h-line--edge"></view>
             </view>
-            <view wx:if="{{row.hxLabel}}" class="time-hx-wrap {{row.expandable ? 'time-hx-wrap--tap' : ''}}" bindtap="{{row.expandable ? 'onDynastyToggle' : ''}}" data-dynasty="{{row.dynastyKey}}">
+            <view wx:if="{{row.hxLabel}}" class="time-hx-wrap {{row.expandable ? 'time-hx-wrap--tap' : ''}}" bindtap="{{row.expandable ? 'onDynastyToggle' : ''}}" data-dynasty="{{row.dynastyKey}}" data-row-key="{{row.key}}">
               <text class="time-dynasty {{row.isMajorNode ? 'time-dynasty--major' : ''}}" style="font-size: {{row.hxFontSize}}rpx;">{{row.hxLabel}}</text>
               <image wx:if="{{row.expandable}}" class="time-expand-arrow {{row.expanded ? 'time-expand-arrow--expanded' : ''}}" src="/配图/icons/kaihe.png" mode="aspectFit" />
             </view>
@@ -64,26 +81,74 @@
             <view class="era-block-highlight" style="border-radius: {{blk.radiusStyle}};"></view>
             <view wx:if="{{blk.strokeStyle}}" class="era-block-stroke" style="border-radius: {{blk.radiusStyle}}; {{blk.strokeStyle}}"></view>
           </view>
+          <!-- 元容器空白区点击层：低于南宋帝王(5)、与元二级卡同层(4)，二级卡后渲染故优先 -->
+          <view wx:for="{{matrixContainerHits}}" wx:key="id" wx:for-item="hit" class="container-hit" style="top: {{hit.top}}rpx; height: {{hit.h}}rpx; left: {{hit.leftPct}}%; width: {{hit.widthPct}}%; z-index: {{hit.zIndex || 4}};" bindtap="onCardTap" data-dynasty="{{hit.dynasty}}" data-display-name="{{hit.displayName}}" data-person="{{hit.person}}" data-civ="{{hit.civ}}" data-anchor-year="{{hit.anchorYear}}" data-entity-type="{{hit.entityType}}" data-entity-id="{{hit.entityId}}" data-dynasty-id="{{hit.dynastyId}}" data-legacy-id="{{hit.legacyId}}" data-container-id="{{hit.containerId}}"></view>
           <!-- 容器内二级帝王卡（等宽等高 · 半透明白底） -->
-          <view wx:for="{{matrixSubCards}}" wx:key="id" wx:for-item="sub" class="container-sub-card" style="top: {{sub.top}}rpx; height: {{sub.h}}rpx; left: {{sub.leftPct}}%; width: {{sub.widthPct}}%; border-radius: {{sub.radiusRpx}}rpx; z-index: {{sub.zIndex || 8}};" hover-class="container-sub-card--hover" bindtap="onCardTap" data-dynasty="{{sub.dynasty}}" data-display-name="{{sub.displayName}}" data-person="{{sub.person}}" data-civ="{{sub.civ}}" data-anchor-year="{{sub.anchorYear}}" data-entity-type="{{sub.entityType}}" data-entity-id="{{sub.entityId}}" data-dynasty-id="{{sub.dynastyId}}" data-legacy-id="{{sub.legacyId}}">
+          <view wx:for="{{matrixSubCards}}" wx:key="id" wx:for-item="sub" class="container-sub-card" style="top: {{sub.top}}rpx; height: {{sub.h}}rpx; left: {{sub.leftPct}}%; width: {{sub.widthPct}}%; border-radius: {{sub.radiusRpx}}rpx; z-index: {{sub.zIndex || 8}};" hover-class="container-sub-card--hover" bindtap="onCardTap" data-dynasty="{{sub.dynasty}}" data-display-name="{{sub.displayName}}" data-person="{{sub.person}}" data-civ="{{sub.civ}}" data-anchor-year="{{sub.anchorYear}}" data-entity-type="{{sub.entityType}}" data-entity-id="{{sub.entityId}}" data-dynasty-id="{{sub.dynastyId}}" data-legacy-id="{{sub.legacyId}}" data-container-id="{{sub.containerId}}">
             <view class="container-sub-card-fill" style="background: {{sub.subCardBg}}; {{sub.subCardStroke}}; border-radius: {{sub.radiusRpx}}rpx;"></view>
             <view class="container-sub-card-highlight" style="border-radius: {{sub.radiusRpx}}rpx;"></view>
           </view>
           <view wx:for="{{matrixOverlays}}" wx:key="id" wx:for-item="ovl" class="entry-chrome" style="z-index: {{ovl.zIndex || 20}};">
-            <view wx:if="{{!ovl.hideLabels}}" class="entry-header-wrap {{ovl.labelLayout === 'stacked' ? 'entry-header-wrap--stacked' : ''}}{{ovl.isRegimeCard ? ' entry-header-wrap--regime' : ''}}" style="top: {{ovl.headerTop}}rpx; left: {{ovl.headerLeftPct}}%; width: {{ovl.headerWidthPct}}%;{{ovl.headerHeight ? ' height: ' + ovl.headerHeight + 'rpx;' : ''}}">
-              <view class="entry-header entry-header--{{ovl.labelLayout}}">
+            <view wx:if="{{!ovl.hideLabels}}" class="entry-header-wrap{{ovl.isContainerDynastyHeader ? ' entry-header-wrap--container-dynasty' : ''}}{{ovl.isContainerDynastyHeaderYuan ? ' entry-header-wrap--container-dynasty-yuan' : ''}}{{ovl.isContainerDynastyHeaderRight ? ' entry-header-wrap--container-dynasty-right' : ''}}{{ovl.labelLayout === 'stacked' && !ovl.isContainerDynastyHeader ? ' entry-header-wrap--stacked' : ''}}{{ovl.isContainerEmperorCard ? ' entry-header-wrap--container-emperor' : ''}}{{ovl.isContainerEmperorInline ? ' entry-header-wrap--container-emperor-inline' : ''}}{{ovl.isContainerEmperorCompact ? ' entry-header-wrap--container-emperor-compact' : ''}}{{ovl.isContainerRegimeLabel ? ' entry-header-wrap--container-regime' : ''}}{{ovl.isWudaiFiveRegimeVertical ? ' entry-header-wrap--container-regime-vertical' : ''}}{{ovl.isRegimeCard && !ovl.isContainerRegimeLabel ? ' entry-header-wrap--regime' : ''}}" style="top: {{ovl.headerTop}}rpx; left: {{ovl.headerLeftPct}}%; width: {{ovl.headerWidthPct}}%;{{ovl.headerHeight ? ' height: ' + ovl.headerHeight + 'rpx;' : ''}}">
+              <view wx:if="{{ovl.isContainerDynastyHeader}}" class="entry-header entry-header--container-dynasty-title" bindtap="onCardTap" data-dynasty="{{ovl.dynasty || ovl.displayName}}" data-display-name="{{ovl.displayName}}" data-dynasty-id="{{ovl.dynastyId}}" data-entity-type="{{ovl.entityType}}" data-entity-id="{{ovl.entityId}}" data-legacy-id="{{ovl.legacyId}}" data-container-id="{{ovl.containerId}}" data-anchor-year="{{ovl.anchorYear}}">
+                <block wx:if="{{ovl.containerTagPlacement === 'inline-name'}}">
+                  <view class="entry-name-tag-row entry-name-tag-row--container-dynasty">
+                    <text class="card-person card-person--wide card-person--serif card-person--container-dynasty">{{ovl.displayName}}</text>
+                    <view wx:if="{{!ovl.hideTags && ovl.highlights.length}}" class="entry-tag-row">
+                      <view wx:for="{{ovl.highlights}}" wx:key="text" wx:for-item="tag" class="entry-tag{{tag.tagClass ? ' ' + tag.tagClass : ''}}" style="{{tag.tagStyle}}">
+                        <view wx:if="{{tag.iconSrc}}" class="entry-tag-icon-slot">
+                          <image class="entry-tag-icon" src="{{tag.iconSrc}}" mode="aspectFit" style="{{tag.iconStyle || ''}}" />
+                        </view>
+                        <view class="entry-tag-text-slot">
+                          <text class="entry-tag-text" style="{{tag.textStyle || ''}}">{{tag.text}}</text>
+                        </view>
+                      </view>
+                    </view>
+                  </view>
+                  <text wx:if="{{!ovl.hideTime}}" class="entry-time-inline entry-time-inline--container-dynasty" style="font-size: {{ovl.timeFontRpx}}rpx;">{{ovl.timeRange}}</text>
+                </block>
+                <block wx:else>
+                  <text class="card-person card-person--wide card-person--serif card-person--container-dynasty">{{ovl.displayName}}</text>
+                  <view wx:if="{{!ovl.hideTags && ovl.highlights.length}}" class="entry-tag-row entry-tag-row--below-name">
+                    <view wx:for="{{ovl.highlights}}" wx:key="text" wx:for-item="tag" class="entry-tag{{tag.tagClass ? ' ' + tag.tagClass : ''}}" style="{{tag.tagStyle}}">
+                      <view wx:if="{{tag.iconSrc}}" class="entry-tag-icon-slot">
+                        <image class="entry-tag-icon" src="{{tag.iconSrc}}" mode="aspectFit" style="{{tag.iconStyle || ''}}" />
+                      </view>
+                      <view class="entry-tag-text-slot">
+                        <text class="entry-tag-text" style="{{tag.textStyle || ''}}">{{tag.text}}</text>
+                      </view>
+                    </view>
+                  </view>
+                  <text wx:if="{{!ovl.hideTime}}" class="entry-time-inline entry-time-inline--container-dynasty" style="font-size: {{ovl.timeFontRpx}}rpx;">{{ovl.timeRange}}</text>
+                </block>
+              </view>
+              <view wx:else class="entry-header entry-header--{{ovl.labelLayout}}">
                 <block wx:if="{{ovl.labelLayout === 'stacked'}}">
-                  <text class="card-person card-person--stacked{{ovl.kind === 'single' ? '' : ' card-person--serif'}}">{{ovl.kind === 'single' ? ovl.person : ovl.displayName}}</text>
-                  <view wx:if="{{!ovl.hideTags && ovl.highlights.length}}" class="entry-tag-row entry-tag-row--stacked">
-                    <view wx:for="{{ovl.highlights}}" wx:key="text" wx:for-item="tag" class="entry-tag" style="{{tag.tagStyle}}">{{tag.text}}</view>
+                  <text class="card-person card-person--stacked{{ovl.kind === 'single' ? '' : (ovl.isContainerRegimeLabel ? ' card-person--sub-regime' : ' card-person--serif')}}">{{ovl.kind === 'single' ? ovl.person : ovl.displayName}}</text>
+                  <view wx:if="{{!ovl.hideTags && ovl.highlights.length}}" class="entry-tag-row entry-tag-row--below-name">
+                    <view wx:for="{{ovl.highlights}}" wx:key="text" wx:for-item="tag" class="entry-tag{{tag.tagClass ? ' ' + tag.tagClass : ''}}" style="{{tag.tagStyle}}">
+                      <view wx:if="{{tag.iconSrc}}" class="entry-tag-icon-slot">
+                        <image class="entry-tag-icon" src="{{tag.iconSrc}}" mode="aspectFit" style="{{tag.iconStyle || ''}}" />
+                      </view>
+                      <view class="entry-tag-text-slot">
+                        <text class="entry-tag-text" style="{{tag.textStyle || ''}}">{{tag.text}}</text>
+                      </view>
+                    </view>
                   </view>
                   <text wx:if="{{!ovl.hideTime}}" class="entry-time-inline entry-time-inline--stacked" style="font-size: {{ovl.timeFontRpx}}rpx;">{{ovl.timeRange}}</text>
                 </block>
                 <block wx:else>
                   <view class="entry-name-tag-row">
-                    <text class="card-person card-person--{{ovl.labelLayout}}{{ovl.kind === 'single' ? '' : ' card-person--serif'}}">{{ovl.kind === 'single' ? ovl.person : ovl.displayName}}</text>
+                    <text class="card-person card-person--{{ovl.labelLayout}}{{ovl.kind === 'single' ? '' : (ovl.isContainerRegimeLabel ? ' card-person--sub-regime' : ' card-person--serif')}}">{{ovl.kind === 'single' ? ovl.person : ovl.displayName}}</text>
                     <view wx:if="{{!ovl.hideTags && ovl.highlights.length}}" class="entry-tag-row">
-                      <view wx:for="{{ovl.highlights}}" wx:key="text" wx:for-item="tag" class="entry-tag" style="{{tag.tagStyle}}">{{tag.text}}</view>
+                      <view wx:for="{{ovl.highlights}}" wx:key="text" wx:for-item="tag" class="entry-tag{{tag.tagClass ? ' ' + tag.tagClass : ''}}" style="{{tag.tagStyle}}">
+                        <view wx:if="{{tag.iconSrc}}" class="entry-tag-icon-slot">
+                          <image class="entry-tag-icon" src="{{tag.iconSrc}}" mode="aspectFit" style="{{tag.iconStyle || ''}}" />
+                        </view>
+                        <view class="entry-tag-text-slot">
+                          <text class="entry-tag-text" style="{{tag.textStyle || ''}}">{{tag.text}}</text>
+                        </view>
+                      </view>
                     </view>
                   </view>
                   <text wx:if="{{!ovl.hideTime}}" class="entry-time-inline" style="font-size: {{ovl.timeFontRpx}}rpx;">{{ovl.timeRange}}</text>

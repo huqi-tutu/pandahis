@@ -84,6 +84,10 @@ python3 dynasty_supplement.py --dynasty 五帝 --step candidates-lunzhu --dry-ru
 # Step 2.5 人物候选（第四分支 · 一次调用六类串行）
 python3 dynasty_supplement.py --dynasty 五帝 --step candidates-renwu --dry-run
 
+# 遗漏审阅提示词（可复制到其他大模型查漏；各生成步骤结束后亦自动更新）
+python3 dynasty_supplement.py --dynasty 五帝 --step export-omission-prompt
+# 产出：data/05工作流中间产物/朝代知识补全/{朝}_遗漏审阅提示词.md
+
 # Step 6 详情（每次仅一条；compose-detail 自动拉维基底稿，可用 wiki-fetch 单独预拉）
 python3 dynasty_supplement.py --dynasty 五帝 --step wiki-fetch --entry-id GLBL_00xxx
 python3 dynasty_supplement.py --dynasty 五帝 --step compose-detail --entry-id GLBL_00xxx --dry-run

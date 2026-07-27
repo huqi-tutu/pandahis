@@ -1,27 +1,45 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.chipBadgeToken = exports.CHIP_BADGE_TOKENS = exports.categoryRailColor = exports.categoryTone = exports.CATEGORY_TONES = void 0;
-const TONE_ZHESHI = { solid: '#A2734F', deep: '#7B573C', bg: '#ECE4DB' }; /* 赭石 */
-const TONE_DAIQING = { solid: '#63899C', deep: '#4B6877', bg: '#E3E7E6' }; /* 黛青 */
-const TONE_QIUXIANG = { solid: '#B99D5B', deep: '#8D7745', bg: '#EFEADD' }; /* 秋香 */
-const TONE_OUHE = { solid: '#9A798F', deep: '#755C6D', bg: '#EBE4E4' }; /* 藕合 */
-const TONE_TAILV = { solid: '#7D8A6A', deep: '#5F6951', bg: '#E7E7DF' }; /* 苔绿 */
-const TONE_WANHONG = { solid: '#A46A65', deep: '#7D514D', bg: '#ECE2DE' }; /* 绾红 */
-exports.CATEGORY_TONES = {
-    junji: TONE_ZHESHI,
-    zongqi: TONE_WANHONG,
-    wenchen: TONE_DAIQING,
-    wujiang: TONE_QIUXIANG,
-    shilue: TONE_TAILV,
-    dianzhi: TONE_OUHE,
-    lunzhu: TONE_DAIQING,
-    huanguan: TONE_ZHESHI,
-    shuzhong: TONE_QIUXIANG,
-    fanzhu: TONE_WANHONG,
-    /* 标注层别名 → 泳道类目 */
-    shichen: TONE_DAIQING,
-    minlu: TONE_QIUXIANG,
-};
+exports.chipBadgeToken = exports.CHIP_BADGE_TOKENS = exports.categoryRailColor = exports.categoryTone = exports.CATEGORY_TONES = exports.SWIM_LANE_CATEGORY_KEYS = exports.SILK_TONES = void 0;
+const TONE_ZHESHI = { solid: '#A2734F', deep: '#7B573C', bg: '#ECE4DB' }; /* c1 赭石 */
+const TONE_DAIQING = { solid: '#63899C', deep: '#4B6877', bg: '#E3E7E6' }; /* c2 黛青 */
+const TONE_QIUXIANG = { solid: '#B99D5B', deep: '#8D7745', bg: '#EFEADD' }; /* c3 秋香 */
+const TONE_OUHE = { solid: '#9A798F', deep: '#755C6D', bg: '#EBE4E4' }; /* c4 藕合 */
+const TONE_TAILV = { solid: '#7D8A6A', deep: '#5F6951', bg: '#E7E7DF' }; /* c5 苔绿 */
+const TONE_WANHONG = { solid: '#A46A65', deep: '#7D514D', bg: '#ECE2DE' }; /* c6 绾红 */
+/** 绢帛六色母色板（固定顺序，勿打乱） */
+exports.SILK_TONES = [
+    TONE_ZHESHI,
+    TONE_DAIQING,
+    TONE_QIUXIANG,
+    TONE_OUHE,
+    TONE_TAILV,
+    TONE_WANHONG,
+];
+/** 朝代详情 11 泳道顺序（与 BoxCategorySupport / PRD_CATEGORY_KEYS 一致） */
+exports.SWIM_LANE_CATEGORY_KEYS = [
+    'junji',
+    'zhuhou',
+    'zongqi',
+    'wenchen',
+    'wujiang',
+    'shilue',
+    'dianzhi',
+    'lunzhu',
+    'huanguan',
+    'shuzhong',
+    'fanzhu',
+];
+function buildCategoryTones() {
+    const tones = {};
+    exports.SWIM_LANE_CATEGORY_KEYS.forEach((key, index) => {
+        tones[key] = exports.SILK_TONES[index % exports.SILK_TONES.length];
+    });
+    tones.shichen = tones.wenchen;
+    tones.minlu = tones.shuzhong;
+    return tones;
+}
+exports.CATEGORY_TONES = buildCategoryTones();
 const FALLBACK_TONE = { solid: '#8C817B', deep: '#5F5854', bg: '#ECE9E5' };
 function categoryTone(categoryKey) {
     const key = String(categoryKey || '').trim();

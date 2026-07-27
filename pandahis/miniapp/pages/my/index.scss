@@ -3,20 +3,36 @@
 $accent: $accent-v5;
 $text-main: $text-title;
 $text-muted: $text-caption;
-$border: $divider;
+
+.page-my-host {
+  overflow: hidden;
+  @include parchment-page-bg;
+}
 
 .page-my {
-  min-height: 100vh;
+  box-sizing: border-box;
   @include parchment-page-bg;
-  @include page-tab-safe-bottom;
   color: $text-main;
+}
+
+.page-my-content {
+  @include page-tab-safe-bottom;
+}
+
+.heatmap-wrap {
+  display: block;
+  margin-bottom: 24rpx;
+}
+
+.heatmap-wrap reading-heatmap {
+  display: block;
 }
 
 .hero-section {
   position: relative;
   background: linear-gradient(145deg, rgba(74, 63, 63, 0.06) 0%, $page-bg 60%);
-  padding: 32rpx 32rpx 0;
-  margin-bottom: 24rpx;
+  padding: 16rpx 32rpx 32rpx;
+  margin-bottom: 8rpx;
   overflow: hidden;
 }
 
@@ -124,10 +140,10 @@ $border: $divider;
   display: flex;
   align-items: center;
   background: #fff;
-  border-radius: 24rpx 24rpx 0 0;
-  padding: 28rpx 0;
-  margin: 0 -32rpx;
-  border-top: 1rpx solid $border;
+  border-radius: 24rpx;
+  padding: 32rpx 0;
+  margin-top: 24rpx;
+  box-shadow: $shadow-card;
 }
 
 .stat-item {
@@ -135,7 +151,7 @@ $border: $divider;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6rpx;
+  gap: 8rpx;
 }
 
 .stat-num {
@@ -154,12 +170,6 @@ $border: $divider;
   color: $text-muted;
 }
 
-.stat-divider {
-  width: 1rpx;
-  height: 56rpx;
-  background: $border;
-}
-
 .main {
   padding: 0 24rpx;
 }
@@ -172,7 +182,6 @@ $border: $divider;
   padding: 24rpx;
   background: rgba(74, 63, 63, 0.04);
   border-radius: 24rpx;
-  border: 1rpx solid $divider;
 }
 
 .vip-promo-left {
@@ -212,7 +221,6 @@ $border: $divider;
   margin-bottom: 24rpx;
   padding: 24rpx;
   border-radius: 24rpx;
-  border: 1rpx solid $divider;
   background: rgba(74, 63, 63, 0.04);
   display: flex;
   align-items: center;
@@ -246,79 +254,55 @@ $border: $divider;
   line-height: 1.45;
 }
 
-reading-heatmap {
-  display: block;
+/* ── 金刚位（每行 4 个，可向下扩展） ── */
+.shortcut-card {
+  background: #fff;
+  border-radius: 24rpx;
+  box-shadow: $shadow-card;
+  padding: 24rpx 8rpx;
   margin-bottom: 24rpx;
 }
 
-.menu-card {
-  background: #fff;
-  border: 1rpx solid $border;
+.shortcut-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8rpx 0;
+}
+
+.shortcut-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12rpx;
+  padding: 8rpx 0;
+}
+
+.shortcut-item--active {
+  opacity: 0.72;
+}
+
+.shortcut-icon {
+  width: 88rpx;
+  height: 88rpx;
   border-radius: 24rpx;
-  overflow: hidden;
-  box-shadow: 0 8rpx 28rpx rgba(74, 50, 48, 0.04);
-  position: relative;
-  z-index: 2;
-}
-
-.menu-item-link {
-  text-decoration: none;
-  color: inherit;
-  box-sizing: border-box;
-}
-
-.menu-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 28rpx 28rpx;
-  border-bottom: 1rpx solid $border;
-}
-
-.menu-item-last {
-  border-bottom: none;
-}
-
-.menu-item:active,
-.menu-item-active {
-  background: $page-bg;
-}
-
-.menu-left {
-  display: flex;
-  align-items: center;
-}
-
-.menu-icon {
-  width: 72rpx;
-  height: 72rpx;
-  border-radius: 16rpx;
   background: $page-bg;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.menu-icon--share {
-  background: rgba(74, 63, 63, 0.06);
+.shortcut-icon-img {
+  width: 48rpx;
+  height: 48rpx;
+  pointer-events: none;
 }
 
-.menu-label {
-  margin-left: 24rpx;
-  font-size: 30rpx;
-  font-weight: 600;
+.shortcut-label {
+  font-size: 24rpx;
+  font-weight: 500;
   color: $text-main;
-}
-
-.menu-right {
-  display: flex;
-  align-items: center;
-  gap: 8rpx;
-}
-
-.menu-extra {
-  font-size: 26rpx;
-  color: $text-muted;
+  line-height: 1.3;
+  text-align: center;
 }
 
 .logout-wrap {
@@ -338,10 +322,4 @@ reading-heatmap {
   width: 48rpx;
   height: 48rpx;
   flex-shrink: 0;
-}
-
-.menu-icon-img {
-  width: 44rpx;
-  height: 44rpx;
-  pointer-events: none;
 }

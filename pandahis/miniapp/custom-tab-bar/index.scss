@@ -3,7 +3,8 @@
 .tabbar-safe {
   padding-bottom: env(safe-area-inset-bottom);
   background: $page-bg;
-  border-top: 1rpx solid $divider;
+  border-top: none;
+  box-shadow: $shadow-bar;
 }
 
 .tabbar {

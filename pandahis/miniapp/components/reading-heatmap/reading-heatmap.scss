@@ -12,9 +12,9 @@ $rh-gutter-gap: 14rpx;
 .rh-card {
   background: #FFFFFF;
   border-radius: 24rpx;
-  border: 1rpx solid $divider;
+  border: none;
   padding: 28rpx 24rpx 24rpx;
-  box-shadow: 0 2rpx 8rpx rgba(74, 63, 63, 0.04);
+  box-shadow: $shadow-card;
 }
 
 .rh-title {
@@ -93,22 +93,28 @@ $rh-gutter-gap: 14rpx;
 }
 
 .rh-cell {
+  position: relative;
   width: $rh-row-h;
   height: $rh-row-h;
   flex-shrink: 0;
   border-radius: 8rpx;
   background: rgba(74, 63, 63, 0.05);
   box-sizing: border-box;
-  border: 2rpx solid transparent;
 }
 
 .rh-cell--future {
   background: transparent;
-  border-color: transparent;
 }
 
-.rh-cell--selected {
-  border-color: rgba(74, 63, 63, 0.55);
+/* 白线向内缩进，悬浮在底色上；不参与布局，也不覆盖格子外沿 */
+.rh-cell--selected::after {
+  content: '';
+  position: absolute;
+  inset: 4rpx;
+  border: 2rpx solid rgba(248, 245, 240, 0.48);
+  border-radius: 4rpx;
+  box-sizing: border-box;
+  pointer-events: none;
 }
 
 .rh-detail {
@@ -121,21 +127,21 @@ $rh-gutter-gap: 14rpx;
   padding: 20rpx 24rpx;
 }
 
-.rh-detail-icon {
+.rh-detail-icon-wrap {
   flex-shrink: 0;
   width: 56rpx;
   height: 56rpx;
-  border-radius: 50%;
-  background: rgba(74, 63, 63, 0.1);
-  color: #FFFFFF;
-  font-size: 28rpx;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
-.rh-detail-icon--on {
-  background: $dyn-c5;
+.rh-detail-icon-img {
+  width: 56rpx;
+  height: 56rpx;
+  display: block;
+  flex-shrink: 0;
 }
 
 .rh-detail-date {

@@ -1,5 +1,7 @@
 /* home-matrix + home-overview (product 1:1) */
 
+@import '../../native-utils/design-tokens.scss';
+
 .muted { color: #8A8A8A; }
 
 /* ── home-matrix (product 1:1) ── */
@@ -150,7 +152,8 @@
   left: 0; right: 0;
   z-index: 100;
   background: rgba(248, 246, 242, 0.97);
-  border-bottom: 1rpx solid #EDEAE6;
+  border-bottom: none;
+  box-shadow: $shadow-nav;
   overflow: hidden;
 }
 
@@ -420,6 +423,27 @@
   overflow: visible;
 }
 
+.matrix-body--offset-lock {
+  will-change: transform;
+}
+
+/* 文档流锚点：撑开滚动高度，scroll-into-view 可精确定位到 row.y */
+.matrix-scroll-anchors {
+  width: 100%;
+  pointer-events: none;
+}
+
+.matrix-scroll-anchor {
+  width: 100%;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.matrix-scroll-anchor--pad {
+  height: 0;
+}
+
 /* 宸︼細鏃堕棿鍒诲害鍒?*/
 .matrix-time-col {
   position: absolute;
@@ -492,6 +516,264 @@
   width: 100%;
 }
 
+/* 展开容器顶部：左上角定位（与一级朝代卡一致） */
+.entry-header-wrap--container-dynasty {
+  z-index: 26;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  width: auto;
+  max-width: 100%;
+  padding: 8rpx 8rpx 8rpx 10rpx;
+  box-sizing: border-box;
+}
+
+.entry-header--container-dynasty-title {
+  flex: none;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 100%;
+  gap: 8rpx;
+}
+
+.entry-name-tag-row--container-dynasty {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6rpx;
+  width: 100%;
+  min-width: 0;
+}
+
+.entry-header-wrap--container-dynasty .entry-name-tag-row--container-dynasty .entry-tag-row {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6rpx;
+  flex: 0 1 auto;
+  min-width: 0;
+}
+
+.entry-header-wrap--container-dynasty .entry-tag {
+  font-size: 13rpx;
+  padding: 2rpx 8rpx;
+  line-height: 1.25;
+}
+
+.entry-header-wrap--container-dynasty .entry-name-tag-row--container-dynasty .card-person--container-dynasty {
+  display: inline;
+  flex: 0 0 auto;
+  text-align: left;
+  align-self: center;
+  width: auto;
+  max-width: 100%;
+}
+
+.entry-header-wrap--container-dynasty .card-person--container-dynasty {
+  display: block;
+  text-align: left;
+  align-self: flex-start;
+  width: auto;
+  max-width: 100%;
+}
+
+.entry-header-wrap--container-dynasty .entry-time-inline--container-dynasty {
+  display: block;
+  text-align: left;
+  align-self: flex-start;
+  width: auto;
+  max-width: 100%;
+}
+
+/* 元容器：朝代标题与元世祖二级卡左对齐 */
+.entry-header-wrap--container-dynasty-yuan {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.entry-header-wrap--container-dynasty-yuan .card-person--container-dynasty,
+.entry-header-wrap--container-dynasty-yuan .entry-time-inline--container-dynasty {
+  text-align: left;
+  align-self: flex-start;
+}
+
+/* 元容器：朝代标题右上角对齐（保留给其他容器） */
+.entry-header-wrap--container-dynasty-right {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.entry-header-wrap--container-dynasty-right .card-person--container-dynasty,
+.entry-header-wrap--container-dynasty-right .entry-time-inline--container-dynasty {
+  text-align: right;
+  align-self: flex-end;
+}
+
+/* 容器内政权名：相对朝代标题降级，整卡居中 */
+.entry-header-wrap--container-regime {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 4rpx 6rpx;
+  box-sizing: border-box;
+}
+
+.entry-header-wrap--container-regime .entry-header,
+.entry-header-wrap--container-regime .entry-header--narrow,
+.entry-header-wrap--container-regime .entry-header--wide {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.entry-header-wrap--container-regime .entry-name-tag-row {
+  justify-content: center;
+}
+
+.entry-header-wrap--container-regime .card-person--wide,
+.entry-header-wrap--container-regime .card-person--narrow,
+.entry-header-wrap--container-regime .card-person--stacked,
+.entry-header-wrap--container-regime .card-person--sub-regime {
+  font-family: 'PingFang SC', -apple-system, sans-serif;
+  font-size: 17rpx;
+  font-weight: 500;
+  line-height: 1.3;
+  color: #6C757D;
+  letter-spacing: 0.2rpx;
+  text-align: center;
+  width: 100%;
+}
+
+/* 五代首行：后梁/后唐/后晋/后汉/后周 竖排居中 */
+.entry-header-wrap--container-regime-vertical {
+  padding: 8rpx 4rpx;
+}
+
+.entry-header-wrap--container-regime-vertical .entry-header,
+.entry-header-wrap--container-regime-vertical .entry-header--narrow,
+.entry-header-wrap--container-regime-vertical .entry-header--wide {
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.entry-header-wrap--container-regime-vertical .entry-name-tag-row {
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.entry-header-wrap--container-regime-vertical .card-person--wide,
+.entry-header-wrap--container-regime-vertical .card-person--narrow,
+.entry-header-wrap--container-regime-vertical .card-person--sub-regime {
+  width: auto;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  letter-spacing: 2rpx;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+/* 三国容器内帝王名：字重较一级帝王卡降低约 30%（600 → 420） */
+.entry-header-wrap--container-emperor .card-person--stacked {
+  font-weight: 420;
+}
+
+/* 辽/金容器内帝王：名称+标签左上排列 */
+.entry-header-wrap--container-emperor-inline {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  padding: 8rpx 8rpx 8rpx 10rpx;
+  box-sizing: border-box;
+}
+
+.entry-header-wrap--container-emperor-inline .entry-header--narrow,
+.entry-header-wrap--container-emperor-inline .entry-header--wide {
+  width: 100%;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 4rpx;
+}
+
+.entry-header-wrap--container-emperor-inline .entry-name-tag-row {
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4rpx;
+  min-width: 0;
+  width: 100%;
+}
+
+/* 与三国容器帝王名一致：20rpx + 字重 420 */
+.entry-header-wrap--container-emperor-inline .card-person--narrow,
+.entry-header-wrap--container-emperor-inline .card-person--wide {
+  font-weight: 420;
+  font-size: 20rpx;
+  line-height: 1.25;
+  flex-shrink: 0;
+  text-align: left;
+}
+
+.entry-header-wrap--container-emperor-inline .entry-tag-row {
+  flex-shrink: 1;
+  min-width: 0;
+}
+
+.entry-header-wrap--container-emperor-inline .entry-tag {
+  font-size: 11rpx;
+  padding: 0 4rpx;
+  line-height: 1.2;
+}
+
+.entry-header-wrap--container-emperor-inline .entry-time-inline {
+  font-size: 11rpx;
+  line-height: 1.2;
+  margin-top: 0;
+  text-align: left;
+  align-self: flex-start;
+}
+
+/* 辽/金：矮卡紧凑排版（不扩容器、不溢出） */
+.entry-header-wrap--container-emperor-compact {
+  padding: 2rpx 6rpx 2rpx 8rpx;
+  overflow: hidden;
+}
+
+.entry-header-wrap--container-emperor-compact .entry-header--narrow,
+.entry-header-wrap--container-emperor-compact .entry-header--wide {
+  gap: 2rpx;
+}
+
+.entry-header-wrap--container-emperor-compact .entry-name-tag-row {
+  gap: 2rpx;
+}
+
+.entry-header-wrap--container-emperor-compact .card-person--narrow,
+.entry-header-wrap--container-emperor-compact .card-person--wide {
+  font-size: 16rpx;
+  line-height: 1.15;
+}
+
+.entry-header-wrap--container-emperor-compact .entry-tag {
+  font-size: 9rpx;
+  padding: 0 3rpx;
+  line-height: 1.1;
+}
+
+.entry-header-wrap--container-emperor-compact .entry-time-inline {
+  font-size: 9rpx;
+  line-height: 1.1;
+}
+
 .era-block--dynasty-container {
   z-index: 0;
   pointer-events: none;
@@ -502,6 +784,13 @@
 }
 
 /* ─── 容器内二级帝王卡（半透明白底 · 统一高度） ─── */
+.container-hit {
+  position: absolute;
+  box-sizing: border-box;
+  z-index: 4;
+  background: transparent;
+}
+
 .container-sub-card {
   position: absolute;
   box-sizing: border-box;
@@ -693,10 +982,6 @@
   gap: 4rpx;
 }
 
-.entry-tag-row--stacked {
-  flex: 0 0 auto;
-}
-
 .entry-time-inline--stacked {
   flex-shrink: 0;
 }
@@ -737,6 +1022,22 @@
   min-width: 0;
 }
 
+.entry-header-wrap--container-dynasty .entry-tag-row--below-name {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6rpx;
+}
+
+/* 须在 .entry-tag-row 之后，否则 row 会覆盖 column */
+.entry-tag-row--stacked {
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  gap: 4rpx;
+}
+
 .entry-tag {
   display: inline-block;
   vertical-align: top;
@@ -751,6 +1052,54 @@
   color: #FFFFFF;
   white-space: nowrap;
   box-sizing: border-box;
+}
+
+/* 新标签视觉：偏白底 + 主题色 Icon + 同色系文字（试点：五帝） */
+.entry-tag.entry-tag--v2 {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0;
+  padding: 4rpx 12rpx 4rpx 8rpx;
+  border-radius: 20rpx;
+  min-height: 26rpx;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.entry-tag--v2 .entry-tag-icon-slot {
+  width: 18rpx;
+  height: 18rpx;
+  flex-shrink: 0;
+  margin-right: 3rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+}
+
+.entry-tag--v2 .entry-tag-icon {
+  flex-shrink: 0;
+  display: block;
+  /* PNG 画布下留白偏多，整体上移与 15rpx 文字光学中心对齐 */
+  transform: translateY(-2rpx);
+}
+
+.entry-tag--v2 .entry-tag-text-slot {
+  height: 18rpx;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: center;
+}
+
+.entry-tag--v2 .entry-tag-text {
+  font-size: 15rpx;
+  line-height: 1;
+  letter-spacing: 0.2rpx;
+  display: block;
 }
 
 .entry-time-inline {
@@ -1069,6 +1418,57 @@
 .entry-chrome .entry-time-inline {
   color: #8D8A84;
   text-shadow: none;
+}
+
+.entry-chrome .entry-header-wrap--container-dynasty .card-person--container-dynasty {
+  color: #2F2A26;
+  text-align: left;
+}
+
+.entry-chrome .entry-header-wrap--container-dynasty .entry-time-inline--container-dynasty {
+  color: #8D8A84;
+  text-align: left;
+}
+
+.entry-chrome .entry-header-wrap--container-regime .card-person--wide,
+.entry-chrome .entry-header-wrap--container-regime .card-person--narrow,
+.entry-chrome .entry-header-wrap--container-regime .card-person--stacked,
+.entry-chrome .entry-header-wrap--container-regime .card-person--sub-regime {
+  font-family: 'PingFang SC', -apple-system, sans-serif;
+  font-size: 17rpx;
+  font-weight: 500;
+  color: #6C757D;
+  text-align: center;
+}
+
+.entry-chrome .entry-header-wrap--container-regime-vertical .card-person--wide,
+.entry-chrome .entry-header-wrap--container-regime-vertical .card-person--narrow,
+.entry-chrome .entry-header-wrap--container-regime-vertical .card-person--sub-regime {
+  color: #6C757D;
+}
+
+.entry-chrome .entry-header-wrap--container-emperor .card-person--stacked {
+  font-weight: 420;
+}
+
+.entry-chrome .entry-header-wrap--container-emperor-inline .card-person--narrow,
+.entry-chrome .entry-header-wrap--container-emperor-inline .card-person--wide {
+  font-weight: 420;
+  text-align: left;
+}
+
+.entry-chrome .entry-header-wrap--container-emperor-inline .entry-time-inline {
+  text-align: left;
+}
+
+.entry-chrome .entry-header-wrap--container-emperor-compact .card-person--narrow,
+.entry-chrome .entry-header-wrap--container-emperor-compact .card-person--wide {
+  font-weight: 420;
+  text-align: left;
+}
+
+.entry-chrome .entry-header-wrap--container-emperor-compact .entry-time-inline {
+  text-align: left;
 }
 
 /* 鍦ㄤ綅鏃堕暱锛堝皬鍗＄瓑閬楃暀锛?*/

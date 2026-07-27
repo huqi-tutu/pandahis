@@ -268,7 +268,9 @@ def main() -> int:
         f"（共 {len(entries)} 条 GLBL_{args.id_min:05d}–{args.id_max:05d}）"
     )
 
-    rows = build_box_rows(entries)
+    rows, skipped = build_box_rows(entries)
+    if skipped:
+        print(f"⚠️ 缺年份跳过 {len(skipped)} 条: {', '.join(skipped[:8])}{'…' if len(skipped) > 8 else ''}")
     details = load_incremental_details(args.id_min, args.id_max)
     print(f"待同步详情: {len(details)} 条（索引 {len(entries)} 条）")
 

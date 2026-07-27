@@ -25,8 +25,8 @@ const NAV_PRIMARY_DYNASTIES = [
   { label: '晋', key: '西晋', start: 266 },
   { label: '隋', key: '隋',   start: 581 },
   { label: '唐', key: '唐',   start: 618 },
-  { label: '宋', key: '北宋', start: 960 },
-  { label: '元', key: '元',   start: 1271 },
+  { label: '宋', key: '宋', start: 960 },
+  { label: '元', key: '元',   start: 1260 },
   { label: '明', key: '明',   start: 1368 },
   { label: '清', key: '清',   start: 1636 },
 ]
@@ -96,14 +96,22 @@ function invalidateHomeEmperorCountCache() {
  *   navItems: 每项 { label, key, start, yPx, emperorCount }
  *   dynYMap:  { [dynastyKey]: yPx } 用于 Mini Map 计算
  */
+function findNavRow(matrixRows, dynasty) {
+  const key = String(dynasty.key || '').trim()
+  const label = String(dynasty.label || '').trim()
+  return (matrixRows || []).find(r =>
+    r.hxDynastyKey === key ||
+    r.dynastyKey === key ||
+    r.hxLabel === key ||
+    r.hxLabel === label
+  ) || null
+}
+
 function buildNavFromRows(matrixRows, ratio, civId) {
   const emperorCounts = getHomeEmperorCountMap(civId)
   const navItems = NAV_PRIMARY_DYNASTIES.map(d => {
-    // 在 matrixRows 中找同 key 的第一行（检查 hxDynastyKey 和 dynastyKey）
-    const row = (matrixRows || []).find(r =>
-      r.hxDynastyKey === d.key || r.dynastyKey === d.key
-    )
-    const yPx = row ? Math.round(row.y * ratio) : 0
+    const row = findNavRow(matrixRows, d)
+    const yPx = row ? Math.round(row.y * ratio) : -1
     return {
       label:   d.label,
       key:     d.key,
@@ -128,28 +136,20 @@ function buildNavFromRows(matrixRows, ratio, civId) {
 }
 
 /**
- * 根据 scrollTop 找到当前所在朝代（navItems 中的 index）
+ * 根据 scrollTop 找到视口顶部对应的朝代（navItems 中的 index）
  *
- * @param {number} scrollTopPx
- * @param {Array} navItems    - buildNavFromRows 返回的 navItems
- * @returns {number} 当前激活的朝代在 navItems 中的索引（-1 表示无匹配）
+ * 规则：取 yPx 不超过视口顶线（+ 阈值）的最后一个索引项；
+ * 五帝等不在 nav 中的顶部段（scrollTop 尚未到达首个索引）返回 -1。
  */
-function findActiveNavIndex(scrollTopPx, navItems) {
+function findActiveNavIndex(scrollTopPx, navItems, thresholdPx) {
   if (!navItems || !navItems.length) return -1
-  // 找到最接近视口顶部的朝代（第一个 yPx 在视口范围内或刚好在视口上方的）
-  var viewportBottom = scrollTopPx + 20
-  var bestIdx = -1
-  var bestDist = Infinity
-  for (var i = 0; i < navItems.length; i++) {
-    var yPx = navItems[i].yPx
-    // 跳过 yPx 无效的项目
-    if (yPx < 0) continue
-    // 取朝代顶边到视口顶边的距离（接近 0 表示在视口顶部）
-    var dist = Math.abs(yPx - scrollTopPx)
-    if (dist < bestDist) {
-      bestDist = dist
-      bestIdx = i
-    }
+  const topLine = Math.max(0, scrollTopPx + (thresholdPx != null ? thresholdPx : 32))
+  let bestIdx = -1
+  for (let i = 0; i < navItems.length; i++) {
+    const yPx = navItems[i].yPx
+    if (yPx <= 0) continue
+    if (yPx <= topLine) bestIdx = i
+    else break
   }
   return bestIdx
 }

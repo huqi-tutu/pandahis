@@ -2,6 +2,26 @@
   "total_paragraphs": 93,
   "excludes": [
     {
+      "paragraph_from": 17,
+      "paragraph_to": 18,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 21,
+      "paragraph_to": 22,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 86,
+      "paragraph_to": 90,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 92,
+      "paragraph_to": 92,
+      "exclude_reason": "其他"
+    },
+    {
       "paragraph_from": 93,
       "paragraph_to": 93,
       "exclude_reason": "太史公曰"
@@ -12,7 +32,103 @@
       "name": "周公旦",
       "category": "君王",
       "paragraph_from": 1,
-      "paragraph_to": 92
+      "paragraph_to": 13
+    },
+    {
+      "name": "鲁公伯禽",
+      "category": "君王",
+      "paragraph_from": 14,
+      "paragraph_to": 16
+    },
+    {
+      "name": "鲁武公",
+      "category": "君王",
+      "paragraph_from": 19,
+      "paragraph_to": 20
+    },
+    {
+      "name": "鲁惠公",
+      "category": "君王",
+      "paragraph_from": 23,
+      "paragraph_to": 24
+    },
+    {
+      "name": "鲁隐公",
+      "category": "君王",
+      "paragraph_from": 25,
+      "paragraph_to": 27
+    },
+    {
+      "name": "鲁桓公",
+      "category": "君王",
+      "paragraph_from": 28,
+      "paragraph_to": 31
+    },
+    {
+      "name": "鲁庄公",
+      "category": "君王",
+      "paragraph_from": 32,
+      "paragraph_to": 35
+    },
+    {
+      "name": "鲁湣公",
+      "category": "君王",
+      "paragraph_from": 36,
+      "paragraph_to": 37
+    },
+    {
+      "name": "鲁釐公",
+      "category": "君王",
+      "paragraph_from": 38,
+      "paragraph_to": 42
+    },
+    {
+      "name": "鲁文公",
+      "category": "君王",
+      "paragraph_from": 43,
+      "paragraph_to": 47
+    },
+    {
+      "name": "鲁宣公",
+      "category": "君王",
+      "paragraph_from": 48,
+      "paragraph_to": 49
+    },
+    {
+      "name": "鲁成公",
+      "category": "君王",
+      "paragraph_from": 50,
+      "paragraph_to": 54
+    },
+    {
+      "name": "鲁襄公",
+      "category": "君王",
+      "paragraph_from": 55,
+      "paragraph_to": 63
+    },
+    {
+      "name": "鲁昭公",
+      "category": "君王",
+      "paragraph_from": 64,
+      "paragraph_to": 73
+    },
+    {
+      "name": "鲁定公",
+      "category": "君王",
+      "paragraph_from": 74,
+      "paragraph_to": 76
+    },
+    {
+      "name": "鲁哀公",
+      "category": "君王",
+      "paragraph_from": 77,
+      "paragraph_to": 85
+    },
+    {
+      "name": "鲁顷公",
+      "category": "君王",
+      "paragraph_from": 91,
+      "paragraph_to": 91
     }
   ]
 }

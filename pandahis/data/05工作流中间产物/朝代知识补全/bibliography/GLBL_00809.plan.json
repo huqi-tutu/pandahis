@@ -1,0 +1,133 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00809",
+  "写作结构": "正史《史记》及《国语》主叙事见翻译详录。拓展文首先引入《诗经·大雅·江汉》补充召穆公征伐淮夷、受封疆土的事功，再结合召伯虎簋铭文揭示其决断土地争讼的权臣一面，最后以《竹书纪年》共伯和异说收尾，交代共和行政的不同传闻。",
+  "候选著作": [
+    {
+      "出处": "《国语·周语上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "原书详录召公谏厉王弭谤及国人围宅、以子代太子等关键情节，为本条目核心叙事的直接来源。",
+      "检索词": "召公谏厉王",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·周本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史叙述召穆公参与共和行政与拥立宣王，可与《国语》互证。",
+      "检索词": "召公周公",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《诗经·大雅·江汉》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "歌颂召穆公奉周宣王之命征伐淮夷，开疆拓土，获赐圭瓒秬鬯，补充其武功事绩。",
+      "检索词": "王命召虎",
+      "采用": true,
+      "原文摘句": "王命召虎：式辟四方，彻我疆土。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "召伯虎簋（五年琱生簋、六年琱生簋）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "青铜铭文记录召伯虎介入琱生家族土地诉讼并收取贿赂，揭示其作为权臣运作利益的一面。",
+      "检索词": "琱生簋",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《竹书纪年》",
+      "tier": "辑佚/出土",
+      "pool": "legend",
+      "与本主题关系": "提供共和行政的异说，认为干王位者为共伯和而非召公、周公，构成传闻层补充。",
+      "检索词": "共伯和",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《国语·周语上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "原书详录召公谏厉王弭谤及国人围宅、以子代太子等关键情节，为本条目核心叙事的直接来源。",
+      "检索词": "召公谏厉王",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·周本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史叙述召穆公参与共和行政与拥立宣王，可与《国语》互证。",
+      "检索词": "召公周公",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《诗经·大雅·江汉》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "歌颂召穆公奉周宣王之命征伐淮夷，开疆拓土，获赐圭瓒秬鬯，补充其武功事绩。",
+      "检索词": "王命召虎",
+      "采用": true,
+      "原文摘句": "王命召虎：式辟四方，彻我疆土。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "召伯虎簋（五年琱生簋、六年琱生簋）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "青铜铭文记录召伯虎介入琱生家族土地诉讼并收取贿赂，揭示其作为权臣运作利益的一面。",
+      "检索词": "琱生簋",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《竹书纪年》",
+      "tier": "辑佚/出土",
+      "pool": "legend",
+      "与本主题关系": "提供共和行政的异说，认为干王位者为共伯和而非召公、周公，构成传闻层补充。",
+      "检索词": "共伯和",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 3,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

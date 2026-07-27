@@ -1,0 +1,181 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00804",
+  "写作结构": "正史叙述见翻译详录（《史记·周本纪》《齐太公世家》）。拓展文写史外异说与延展：以《竹书纪年》补夷王纪年及烹杀之异说；以《礼记》述“下堂见诸侯”的礼制象征。其余叙事留白，不编造细节。",
+  "候选著作": [
+    {
+      "出处": "《史记·周本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记夷王基本在位情况，记载极为简略",
+      "检索词": "周夷王",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·齐太公世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "详载齐哀公被烹杀及胡公继位事，正史核心叙事",
+      "检索词": "哀公 烹 夷王",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《竹书纪年》（古本）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记周夷王纪年及史事，或存烹齐哀公的异说与系年",
+      "检索词": "夷王 烹 齐哀公",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    },
+    {
+      "出处": "《礼记·郊特牲》",
+      "tier": "经注/杂史",
+      "pool": "legend",
+      "与本主题关系": "记天子不下堂之礼，郑玄等注以为自夷王始失礼下堂",
+      "检索词": "下堂 见诸侯 夷王",
+      "采用": true,
+      "原文摘句": "礼；天子不下堂而见诸侯。下堂而见诸侯，天子之失礼也，由夷王以下。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《国语·周语上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "可能涉及西周中期王政兴衰的议论，但无夷王直接事迹",
+      "检索词": "夷王 王室衰",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《世本》辑本",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "列周王世系，可印证夷王为懿王之子、厉王之父",
+      "检索词": "夷王 世系",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《韩非子·说林上》",
+      "tier": "先秦文献",
+      "pool": "legend",
+      "与本主题关系": "载有烹人立威的寓言，非史实，可能为后世附会之源",
+      "检索词": "烹 立威",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·周本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记夷王基本在位情况，记载极为简略",
+      "检索词": "周夷王",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·齐太公世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "详载齐哀公被烹杀及胡公继位事，正史核心叙事",
+      "检索词": "哀公 烹 夷王",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《竹书纪年》（古本）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记周夷王纪年及史事，或存烹齐哀公的异说与系年",
+      "检索词": "夷王 烹 齐哀公",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    },
+    {
+      "出处": "《国语·周语上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "可能涉及西周中期王政兴衰的议论，但无夷王直接事迹",
+      "检索词": "夷王 王室衰",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《世本》辑本",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "列周王世系，可印证夷王为懿王之子、厉王之父",
+      "检索词": "夷王 世系",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《礼记·郊特牲》",
+      "tier": "经注/杂史",
+      "pool": "legend",
+      "与本主题关系": "记天子不下堂之礼，郑玄等注以为自夷王始失礼下堂",
+      "检索词": "下堂 见诸侯 夷王",
+      "采用": true,
+      "原文摘句": "礼；天子不下堂而见诸侯。下堂而见诸侯，天子之失礼也，由夷王以下。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《韩非子·说林上》",
+      "tier": "先秦文献",
+      "pool": "legend",
+      "与本主题关系": "载有烹人立威的寓言，非史实，可能为后世附会之源",
+      "检索词": "烹 立威",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 5,
+    "overall": "B"
+  }
+}

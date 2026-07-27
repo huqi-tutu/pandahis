@@ -1,0 +1,137 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00802",
+  "写作结构": "正史叙述见翻译详录；史外异说：一为宋忠《集解》载懿王迁都犬丘之说，二为《竹书纪年》载‘懿王元年天再旦’之天象。诗人作刺现象已有《史记》提及，无确篇可征，宜留白。",
+  "候选著作": [
+    {
+      "出处": "《史记·周本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史记载周懿王继位、王室衰微、孝王继位等基本史实",
+      "检索词": "周懿王 史记",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《史记集解·周本纪》裴骃引宋忠",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "最早明确记载懿王自镐京迁都犬丘的注引，属史外异说",
+      "检索词": "懿王自镐徙都犬丘",
+      "采用": true,
+      "原文摘句": "宋忠曰：‘懿王自镐徙都犬丘。’",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《竹书纪年》（古本辑佚）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载周懿王元年‘天再旦’的日食现象，为西周年代学提供关键天象参考",
+      "检索词": "懿王元年天再旦",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    },
+    {
+      "出处": "《诗经·小雅》诸篇（如相传刺时之作）",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "传统认为部分诗篇可能反映懿王时王室衰微，但无确定性篇目证据，不宜征引具体文句",
+      "检索词": "懿王 诗人 作刺",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "后世汇纂周王世系，或有懿王衰微、迁都等综合叙述，可备异说",
+      "检索词": "周懿王 帝王世纪",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·周本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史记载周懿王继位、王室衰微、孝王继位等基本史实",
+      "检索词": "周懿王 史记",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《史记集解·周本纪》裴骃引宋忠",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "最早明确记载懿王自镐京迁都犬丘的注引，属史外异说",
+      "检索词": "懿王自镐徙都犬丘",
+      "采用": true,
+      "原文摘句": "宋忠曰：‘懿王自镐徙都犬丘。’",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《竹书纪年》（古本辑佚）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载周懿王元年‘天再旦’的日食现象，为西周年代学提供关键天象参考",
+      "检索词": "懿王元年天再旦",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    },
+    {
+      "出处": "《诗经·小雅》诸篇（如相传刺时之作）",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "传统认为部分诗篇可能反映懿王时王室衰微，但无确定性篇目证据，不宜征引具体文句",
+      "检索词": "懿王 诗人 作刺",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "后世汇纂周王世系，或有懿王衰微、迁都等综合叙述，可备异说",
+      "检索词": "周懿王 帝王世纪",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 3,
+    "overall": "B"
+  }
+}

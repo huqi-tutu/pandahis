@@ -7,7 +7,7 @@ from typing import Any, Dict, List
 
 from lib.citation_mode import enrich_checklist_citation_modes
 from lib.intro_tier import inject_intro_tier
-from lib.mother_sentences import MAX_MUST_PHRASES, extract_must_phrases, is_midword_fragment
+from lib.mother_sentences import extract_must_phrases, is_midword_fragment
 
 # 仅当与母本形成有意义差异时才允许采用
 _EXTERNAL_TYPES = frozenset(
@@ -93,6 +93,22 @@ def finalize_external(plan: Dict[str, Any]) -> None:
             item["与母本关系"] = reason or "须在 enrich 阶段说明相对母本的新增信息"
 
 
+def _checklist_aligned_with_recalled(
+    old_list: List[Any],
+    sents: List[Dict[str, Any]],
+) -> bool:
+    """清单须与 recalled 分句一一对应（条数 + 顺序 + 原文）。"""
+    if not isinstance(old_list, list) or len(old_list) != len(sents):
+        return False
+    for item, sent in zip(old_list, sents):
+        if not isinstance(item, dict):
+            return False
+        orig = str(item.get("原文摘句") or item.get("句子") or item.get("text") or "").strip()
+        if orig != sent["原文摘句"]:
+            return False
+    return True
+
+
 def ensure_mother_checklist(
     plan: Dict[str, Any],
     recalled: Dict[str, Any],
@@ -101,21 +117,25 @@ def ensure_mother_checklist(
 ) -> Dict[str, Any]:
     """以 recalled 母本分句为 SSOT 补齐/纠正 plan 清单（LLM 合并或缺字段时）。"""
     from lib.coverage_info import sanitize_info_point
-    from lib.mother_sentences import (
-        checklist_sentence_violations,
-        extract_mother_sentences,
-        plan_min_sentence_ratio,
-    )
+    from lib.mother_sentences import extract_mother_sentences
 
     out = dict(plan)
     sents = extract_mother_sentences(recalled)
     if not sents:
         return out
-    min_items = max(1, int(len(sents) * plan_min_sentence_ratio()))
     old_list = out.get("母本逐句清单") or []
-    violations = checklist_sentence_violations(old_list) if isinstance(old_list, list) else ["invalid"]
-    if isinstance(old_list, list) and len(old_list) >= min_items and not violations:
+    if isinstance(old_list, list) and _checklist_aligned_with_recalled(old_list, sents):
         return out
+
+    old_n = len(old_list) if isinstance(old_list, list) else 0
+    if old_n and old_n != len(sents):
+        eid = str(out.get("史略ID") or recalled.get("史略ID") or "")
+        name = str(out.get("史略名称") or recalled.get("史略名称") or "")
+        print(
+            f"⚠️ plan 清单与 recall 不一致，按母本重建: {eid} {name} "
+            f"{old_n}→{len(sents)} 句",
+            flush=True,
+        )
 
     old_by_orig: Dict[str, Dict[str, Any]] = {}
     if isinstance(old_list, list):
@@ -158,7 +178,6 @@ def finalize_plan(plan: Dict[str, Any], recalled: Dict[str, Any] | None = None, 
         out = ensure_mother_checklist(out, recalled, id_start=id_start)
         enrich_checklist_citation_modes(out.get("母本逐句清单") or [])
         inject_intro_material(out, recalled)
-        inject_mother_preview(out)
         inject_intro_tier(out, recalled)
         inject_exit_supplements_plan(out, recalled)
     return out
@@ -332,51 +351,6 @@ def inject_intro_material(plan: Dict[str, Any], recalled: Dict[str, Any]) -> Non
 
     if material:
         plan["前置引入素材"] = material
-
-
-def inject_mother_preview(plan: Dict[str, Any]) -> None:
-    """程序化写入母本前三句预览与引入禁区，避免 Phase2 与 M001–M003 重复。"""
-    checklist = plan.get("母本逐句清单") or []
-    if not isinstance(checklist, list) or not checklist:
-        return
-
-    preview: Dict[str, Any] = {}
-    forbidden: List[str] = []
-    for i, item in enumerate(checklist[:3], start=1):
-        if not isinstance(item, dict):
-            continue
-        orig = str(item.get("原文摘句") or "").strip()
-        phrases = item.get("必现词") or extract_must_phrases(orig)
-        preview[f"M{i:03d}摘句"] = orig[:120]
-        preview[f"M{i:03d}必现词"] = phrases[:MAX_MUST_PHRASES]
-        for w in phrases:
-            if len(str(w).strip()) >= 2:
-                forbidden.append(str(w).strip())
-        # 身世/品貌类短语
-        for pat in (
-            r"姓[\u4e00-\u9fff]{1,2}",
-            r"名曰[\u4e00-\u9fff]{1,4}",
-            r"生而神灵",
-            r"弱而能言",
-            r"幼而徇齐",
-            r"长而敦敏",
-            r"成而聪明",
-        ):
-            m = re.search(pat, orig)
-            if m:
-                forbidden.append(m.group(0))
-
-    seen: set[str] = set()
-    deduped: List[str] = []
-    for w in forbidden:
-        if w not in seen:
-            seen.add(w)
-            deduped.append(w)
-
-    if preview:
-        plan["母本首句预览"] = preview
-    if deduped:
-        plan["前置引入禁区"] = deduped
 
 
 def inject_exit_supplements_plan(plan: Dict[str, Any], recalled: Dict[str, Any]) -> None:

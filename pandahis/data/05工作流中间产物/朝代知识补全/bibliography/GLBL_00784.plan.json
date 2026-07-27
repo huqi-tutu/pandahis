@@ -1,0 +1,193 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00784",
+  "写作结构": "正史叙述以《史记·周本纪》为核心，详见翻译详录。拓展部分以出土辑佚《竹书纪年》为时间坐标，辅以《国语·郑语》的预言、《吕氏春秋·疑似》的击鼓异说、《诗经·小雅》的诗证及《列女传》的整合记述，层层揭示犬戎灭周的多元记载。后世异说未予采用，仅录存目。",
+  "候选著作": [
+    {
+      "出处": "《竹书纪年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "提供与《史记》略有差异的灭周过程，可确证幽王伐申导致犬戎介入。",
+      "检索词": "幽王伐申 犬戎",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    },
+    {
+      "出处": "《国语·郑语》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载褒姒出生的预言“檿弧箕服，实亡周国”，为事变提供深层背景。",
+      "检索词": "檿弧箕服",
+      "采用": true,
+      "原文摘句": "且宣王之时有童谣曰：檿弧箕服，实亡周国。……王使妇人不帏而噪之，化为玄鼋入于王府，府之童妾未既龀而遭之，既笄而孕，当宣王时而生，不夫而育，故惧而弃之，为弧服者方戮，夫妇哀其夜号，取之以逸于褒，褒人褒妁有狱，而以为入于王，王遂置之，而嬖是女也。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《吕氏春秋·疑似》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "保存了幽王击鼓戏诸侯导致失信而亡的异说，与《史记》烽火说不同。",
+      "检索词": "幽王击鼓",
+      "采用": true,
+      "原文摘句": "戎寇当至，幽王击鼓，诸侯之兵皆至，褒姒大说，喜之。幽王欲褒姒之笑也，因数击鼓，诸侯之兵数至而无寇。至于后戎寇真至，幽王击鼓，诸侯兵不至。幽王之身，乃死于丽山之下，为天下笑。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《诗经·小雅·正月》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "以“赫赫宗周，褒姒灭之”直接指认褒姒为灭周祸首，是同时代或稍后的诗证。",
+      "检索词": "赫赫宗周 褒姒灭之",
+      "采用": true,
+      "原文摘句": "赫赫宗周，褒姒灭之。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《列女传·孽嬖传·周幽褒姒》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "整合幽王嬖褒姒、烽火戏诸侯及申侯联合犬戎灭周的完整叙事，细节较《史记》更丰富。",
+      "检索词": "褒姒烽火",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/lie-nu-zhuan）",
+      "ctext_urn": "ctp:lie-nu-zhuan",
+      "ctext_url": "https://ctext.org/lie-nu-zhuan",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    },
+    {
+      "出处": "《史记·周本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "二十四史正文，由翻译详录提供，此处不拓展摘句。",
+      "检索词": "犬戎灭周 史记",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《帝王世纪》辑本",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "后世追述褒姒年龄等细节，可作为异闻存目。",
+      "检索词": "幽王嬖褒姒",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《竹书纪年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "提供与《史记》略有差异的灭周过程，可确证幽王伐申导致犬戎介入。",
+      "检索词": "幽王伐申 犬戎",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    },
+    {
+      "出处": "《国语·郑语》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载褒姒出生的预言“檿弧箕服，实亡周国”，为事变提供深层背景。",
+      "检索词": "檿弧箕服",
+      "采用": true,
+      "原文摘句": "且宣王之时有童谣曰：檿弧箕服，实亡周国。……王使妇人不帏而噪之，化为玄鼋入于王府，府之童妾未既龀而遭之，既笄而孕，当宣王时而生，不夫而育，故惧而弃之，为弧服者方戮，夫妇哀其夜号，取之以逸于褒，褒人褒妁有狱，而以为入于王，王遂置之，而嬖是女也。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《吕氏春秋·疑似》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "保存了幽王击鼓戏诸侯导致失信而亡的异说，与《史记》烽火说不同。",
+      "检索词": "幽王击鼓",
+      "采用": true,
+      "原文摘句": "戎寇当至，幽王击鼓，诸侯之兵皆至，褒姒大说，喜之。幽王欲褒姒之笑也，因数击鼓，诸侯之兵数至而无寇。至于后戎寇真至，幽王击鼓，诸侯兵不至。幽王之身，乃死于丽山之下，为天下笑。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《诗经·小雅·正月》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "以“赫赫宗周，褒姒灭之”直接指认褒姒为灭周祸首，是同时代或稍后的诗证。",
+      "检索词": "赫赫宗周 褒姒灭之",
+      "采用": true,
+      "原文摘句": "赫赫宗周，褒姒灭之。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《列女传·孽嬖传·周幽褒姒》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "整合幽王嬖褒姒、烽火戏诸侯及申侯联合犬戎灭周的完整叙事，细节较《史记》更丰富。",
+      "检索词": "褒姒烽火",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/lie-nu-zhuan）",
+      "ctext_urn": "ctp:lie-nu-zhuan",
+      "ctext_url": "https://ctext.org/lie-nu-zhuan",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    },
+    {
+      "出处": "《史记·周本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "二十四史正文，由翻译详录提供，此处不拓展摘句。",
+      "检索词": "犬戎灭周 史记",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《帝王世纪》辑本",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "后世追述褒姒年龄等细节，可作为异闻存目。",
+      "检索词": "幽王嬖褒姒",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 5,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

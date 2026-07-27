@@ -1,24 +1,127 @@
 {
   "total_paragraphs": 76,
-  "excludes": [],
+  "excludes": [
+    {
+      "paragraph_from": 20,
+      "paragraph_to": 26,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 33,
+      "paragraph_to": 33,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 43,
+      "paragraph_to": 43,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 63,
+      "paragraph_to": 64,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 66,
+      "paragraph_to": 75,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 76,
+      "paragraph_to": 76,
+      "exclude_reason": "太史公曰"
+    }
+  ],
   "blocks": [
     {
       "name": "郑桓公",
       "category": "君王",
       "paragraph_from": 1,
-      "paragraph_to": 2
+      "paragraph_to": 3
     },
     {
       "name": "郑武公",
       "category": "君王",
-      "paragraph_from": 3,
+      "paragraph_from": 4,
       "paragraph_to": 4
     },
     {
       "name": "郑庄公",
       "category": "君王",
       "paragraph_from": 5,
-      "paragraph_to": 76
+      "paragraph_to": 12
+    },
+    {
+      "name": "郑厉公",
+      "category": "君王",
+      "paragraph_from": 13,
+      "paragraph_to": 15
+    },
+    {
+      "name": "郑子亹",
+      "category": "君王",
+      "paragraph_from": 16,
+      "paragraph_to": 19
+    },
+    {
+      "name": "郑文公",
+      "category": "君王",
+      "paragraph_from": 27,
+      "paragraph_to": 30
+    },
+    {
+      "name": "郑缪公",
+      "category": "君王",
+      "paragraph_from": 31,
+      "paragraph_to": 32
+    },
+    {
+      "name": "郑灵公",
+      "category": "君王",
+      "paragraph_from": 34,
+      "paragraph_to": 35
+    },
+    {
+      "name": "郑襄公",
+      "category": "君王",
+      "paragraph_from": 36,
+      "paragraph_to": 42
+    },
+    {
+      "name": "郑悼公",
+      "category": "君王",
+      "paragraph_from": 44,
+      "paragraph_to": 46
+    },
+    {
+      "name": "郑成公",
+      "category": "君王",
+      "paragraph_from": 47,
+      "paragraph_to": 49
+    },
+    {
+      "name": "郑釐公",
+      "category": "君王",
+      "paragraph_from": 50,
+      "paragraph_to": 50
+    },
+    {
+      "name": "郑简公",
+      "category": "君王",
+      "paragraph_from": 51,
+      "paragraph_to": 58
+    },
+    {
+      "name": "郑定公",
+      "category": "君王",
+      "paragraph_from": 59,
+      "paragraph_to": 62
+    },
+    {
+      "name": "郑声公",
+      "category": "君王",
+      "paragraph_from": 65,
+      "paragraph_to": 65
     }
   ]
 }

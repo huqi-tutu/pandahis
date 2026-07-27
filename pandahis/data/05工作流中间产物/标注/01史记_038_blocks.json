@@ -2,9 +2,44 @@
   "total_paragraphs": 64,
   "excludes": [
     {
+      "paragraph_from": 4,
+      "paragraph_to": 31,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 34,
+      "paragraph_to": 34,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 36,
+      "paragraph_to": 36,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 45,
+      "paragraph_to": 45,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 55,
+      "paragraph_to": 57,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 60,
+      "paragraph_to": 60,
+      "exclude_reason": "其他"
+    },
+    {
       "paragraph_from": 63,
-      "paragraph_to": 64,
+      "paragraph_to": 63,
       "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph_from": 64,
+      "paragraph_to": 64,
+      "exclude_reason": "其他"
     }
   ],
   "blocks": [
@@ -12,30 +47,60 @@
       "name": "宋微子",
       "category": "君王",
       "paragraph_from": 1,
-      "paragraph_to": 39
+      "paragraph_to": 3
+    },
+    {
+      "name": "宋宣公",
+      "category": "君王",
+      "paragraph_from": 32,
+      "paragraph_to": 33
+    },
+    {
+      "name": "宋殇公",
+      "category": "君王",
+      "paragraph_from": 35,
+      "paragraph_to": 35
+    },
+    {
+      "name": "宋湣公",
+      "category": "君王",
+      "paragraph_from": 37,
+      "paragraph_to": 38
     },
     {
       "name": "宋襄公",
       "category": "君王",
-      "paragraph_from": 40,
+      "paragraph_from": 39,
       "paragraph_to": 44
     },
     {
       "name": "宋昭公",
       "category": "君王",
-      "paragraph_from": 45,
-      "paragraph_to": 57
+      "paragraph_from": 46,
+      "paragraph_to": 47
+    },
+    {
+      "name": "宋文公",
+      "category": "君王",
+      "paragraph_from": 48,
+      "paragraph_to": 52
+    },
+    {
+      "name": "宋共公",
+      "category": "君王",
+      "paragraph_from": 53,
+      "paragraph_to": 54
     },
     {
       "name": "宋景公",
       "category": "君王",
       "paragraph_from": 58,
-      "paragraph_to": 61
+      "paragraph_to": 59
     },
     {
       "name": "宋君偃",
       "category": "君王",
-      "paragraph_from": 62,
+      "paragraph_from": 61,
       "paragraph_to": 62
     }
   ]

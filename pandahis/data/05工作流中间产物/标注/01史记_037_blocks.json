@@ -2,6 +2,31 @@
   "total_paragraphs": 58,
   "excludes": [
     {
+      "paragraph_from": 5,
+      "paragraph_to": 7,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 12,
+      "paragraph_to": 12,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 20,
+      "paragraph_to": 20,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 27,
+      "paragraph_to": 27,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 50,
+      "paragraph_to": 55,
+      "exclude_reason": "其他"
+    },
+    {
       "paragraph_from": 58,
       "paragraph_to": 58,
       "exclude_reason": "太史公曰"
@@ -12,36 +37,90 @@
       "name": "卫康叔",
       "category": "君王",
       "paragraph_from": 1,
+      "paragraph_to": 4
+    },
+    {
+      "name": "卫武公",
+      "category": "君王",
+      "paragraph_from": 8,
+      "paragraph_to": 9
+    },
+    {
+      "name": "卫庄公",
+      "category": "君王",
+      "paragraph_from": 10,
+      "paragraph_to": 10
+    },
+    {
+      "name": "卫桓公",
+      "category": "君王",
+      "paragraph_from": 11,
       "paragraph_to": 11
     },
     {
       "name": "卫宣公",
       "category": "君王",
-      "paragraph_from": 12,
-      "paragraph_to": 16
+      "paragraph_from": 13,
+      "paragraph_to": 15
+    },
+    {
+      "name": "卫惠公",
+      "category": "君王",
+      "paragraph_from": 16,
+      "paragraph_to": 18
     },
     {
       "name": "卫懿公",
       "category": "君王",
-      "paragraph_from": 17,
-      "paragraph_to": 20
+      "paragraph_from": 19,
+      "paragraph_to": 19
     },
     {
       "name": "卫文公",
       "category": "君王",
       "paragraph_from": 21,
-      "paragraph_to": 35
+      "paragraph_to": 24
+    },
+    {
+      "name": "卫成公",
+      "category": "君王",
+      "paragraph_from": 25,
+      "paragraph_to": 26
+    },
+    {
+      "name": "卫献公",
+      "category": "君王",
+      "paragraph_from": 28,
+      "paragraph_to": 33
+    },
+    {
+      "name": "卫襄公",
+      "category": "君王",
+      "paragraph_from": 34,
+      "paragraph_to": 34
     },
     {
       "name": "卫灵公",
       "category": "君王",
-      "paragraph_from": 36,
-      "paragraph_to": 40
+      "paragraph_from": 35,
+      "paragraph_to": 39
     },
     {
       "name": "卫出公",
       "category": "君王",
-      "paragraph_from": 41,
+      "paragraph_from": 40,
+      "paragraph_to": 44
+    },
+    {
+      "name": "卫庄公蒯聩",
+      "category": "君王",
+      "paragraph_from": 45,
+      "paragraph_to": 49
+    },
+    {
+      "name": "卫君角",
+      "category": "君王",
+      "paragraph_from": 56,
       "paragraph_to": 57
     }
   ]

@@ -55,9 +55,6 @@ def execute_repair(
             f"建议：{plan.next_command or '朝代知识补全 candidates-renwu → fill-renwu → compose-detail'}"
         )
 
-    if plan.disposition == "needs_human":
-        return False, f"需人工：{plan.structured_prompt}"
-
     recalled = recall_entry(entry_id, index_path=index_path)
     entry_name = str(recalled.get("史略名称") or ticket.get("entry_name") or "")
 

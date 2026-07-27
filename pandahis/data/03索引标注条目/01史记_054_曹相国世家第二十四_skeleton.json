@@ -250,25 +250,23 @@
           "paragraph_to": 25
         }
       ],
+      "优先级": "P0",
+      "优先级判定理由": "曹参独立叙事块，共25段",
       "五级细坐标": "史记·卷054·文臣·01",
       "六级段落锚点": "[P1-P25]",
       "原文出处": "曹相国世家·P1-P25",
-      "一级文明坐标": "华夏",
-      "文明ID": "HX",
-      "二级朝代坐标": "西汉",
-      "朝代ID": "CD_HX_XIHAN",
-      "三级政权坐标": "西汉",
-      "政权ID": "ZQ_HX_XIHAN_XIHAN",
-      "四级帝王坐标": "汉高祖",
-      "帝王ID": "DW_HX_XIHAN_XIHAN_HANGAOZU",
-      "优先级": "P0",
-      "优先级判定理由": "世家主轴叙事，共25段",
-      "_auto_filled": {
-        "_年LLM依据": "曹参生卒约前210–前190（生年推测）",
-        "_坐标主轴说明": "本世家以从高祖征战、封侯及任丞相清静无为为主线，主轴挂汉高祖；惠帝朝为相见共段事略。"
-      },
-      "史略开始年": -210,
-      "史略结束年": -190
+      "_needs_llm": []
+    }
+  ],
+  "volume_subtype": "世家",
+  "volume_subtype_source": "llm_step1a",
+  "protagonist_count": 1,
+  "protagonist_count_source": "llm_step1a",
+  "protagonists_manifest": [
+    {
+      "name": "曹参",
+      "category": "文臣",
+      "rationale": "《曹相国世家》叙事主轴：曹参（文臣）"
     }
   ]
 }

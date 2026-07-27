@@ -291,8 +291,10 @@ def _kaoding(entry: dict) -> dict:
     return raw if isinstance(raw, dict) else {}
 
 
-def _volume_title_from_source(source: str) -> str:
+def _volume_title_from_source(source: str | list | None) -> str:
     """从《史记·卷86·魏相丙吉传》提取卷名核心「魏相丙吉」。"""
+    if isinstance(source, list):
+        source = source[0] if source else ""
     text = (source or "").strip()
     if "·" in text:
         text = text.rsplit("·", 1)[-1]
@@ -301,7 +303,8 @@ def _volume_title_from_source(source: str) -> str:
 
 def is_joint_biography(entry: dict) -> bool:
     """合传/卷名含多人：易把卷内他人当峰值主体。"""
-    src = entry.get("主要史料出处") or ""
+    raw = entry.get("主要史料出处") or ""
+    src = " ".join(str(s) for s in raw) if isinstance(raw, list) else str(raw)
     if "合传" in src:
         return True
     inner = _volume_title_from_source(src)

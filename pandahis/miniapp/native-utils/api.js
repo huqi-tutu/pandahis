@@ -114,10 +114,10 @@ function parseResponseBody(raw) {
 /** 公开内容 GET 不附带 token，避免登录态触发服务端未迁移的用户表查询导致 500 */
 function isPublicContentPath(path) {
     const p = path.split('?')[0];
+    // /search、/search/suggest 为可选登录接口：有 token 时必须带上，才能读写搜索历史
     return (/^\/units\//.test(p)
         || /^\/boxes\//.test(p)
         || p.startsWith('/home/')
-        || p.startsWith('/search')
         || p === '/health'
         || p.startsWith('/membership/plans'));
 }

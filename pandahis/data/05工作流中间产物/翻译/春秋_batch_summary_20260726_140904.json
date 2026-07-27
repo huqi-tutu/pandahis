@@ -1,0 +1,629 @@
+{
+  "stamp": "20260726_140904",
+  "dynasty": "春秋",
+  "pending_start": 103,
+  "ok": 56,
+  "routed": 31,
+  "skip": 0,
+  "err": 16,
+  "results": [
+    {
+      "id": "GLBL_00029",
+      "name": "周敬王",
+      "status": "routed",
+      "rc": 2
+    },
+    {
+      "id": "GLBL_00034",
+      "name": "周桓王",
+      "status": "routed",
+      "rc": 2
+    },
+    {
+      "id": "GLBL_00042",
+      "name": "周釐王",
+      "status": "routed",
+      "rc": 2
+    },
+    {
+      "id": "GLBL_00099",
+      "name": "秦共公",
+      "status": "routed",
+      "rc": 2
+    },
+    {
+      "id": "GLBL_00107",
+      "name": "秦宣公",
+      "status": "routed",
+      "rc": 2
+    },
+    {
+      "id": "GLBL_00111",
+      "name": "秦德公",
+      "status": "routed",
+      "rc": 2
+    },
+    {
+      "id": "GLBL_00113",
+      "name": "秦悼公",
+      "status": "routed",
+      "rc": 2
+    },
+    {
+      "id": "GLBL_00114",
+      "name": "秦惠公",
+      "status": "routed",
+      "rc": 2
+    },
+    {
+      "id": "GLBL_00120",
+      "name": "秦桓公",
+      "status": "routed",
+      "rc": 2
+    },
+    {
+      "id": "GLBL_00126",
+      "name": "秦简公",
+      "status": "routed",
+      "rc": 2
+    },
+    {
+      "id": "GLBL_00271",
+      "name": "公仪休",
+      "status": "routed",
+      "rc": 2
+    },
+    {
+      "id": "GLBL_00272",
+      "name": "公伯缭",
+      "status": "routed",
+      "rc": 2
+    },
+    {
+      "id": "GLBL_00273",
+      "name": "公冶长",
+      "status": "routed",
+      "rc": 2
+    },
+    {
+      "id": "GLBL_00276",
+      "name": "公皙哀",
+      "status": "routed",
+      "rc": 2
+    },
+    {
+      "id": "GLBL_00277",
+      "name": "公西赤",
+      "status": "routed",
+      "rc": 2
+    },
+    {
+      "id": "GLBL_00278",
+      "name": "冉伯牛",
+      "status": "routed",
+      "rc": 2
+    },
+    {
+      "id": "GLBL_00280",
+      "name": "冉雍",
+      "status": "routed",
+      "rc": 2
+    },
+    {
+      "id": "GLBL_00287",
+      "name": "南宫括",
+      "status": "routed",
+      "rc": 2
+    },
+    {
+      "id": "GLBL_00294",
+      "name": "司马耕",
+      "status": "routed",
+      "rc": 2
+    },
+    {
+      "id": "GLBL_00303",
+      "name": "商瞿",
+      "status": "routed",
+      "rc": 2
+    },
+    {
+      "id": "GLBL_00312",
+      "name": "子游",
+      "status": "routed",
+      "rc": 2
+    },
+    {
+      "id": "GLBL_00325",
+      "name": "宓不齐",
+      "status": "routed",
+      "rc": 2
+    },
+    {
+      "id": "GLBL_00357",
+      "name": "晏婴",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00359",
+      "name": "曾参",
+      "status": "routed",
+      "rc": 2
+    },
+    {
+      "id": "GLBL_00360",
+      "name": "曾蒧",
+      "status": "routed",
+      "rc": 2
+    },
+    {
+      "id": "GLBL_00361",
+      "name": "有若",
+      "status": "error",
+      "rc": 1
+    },
+    {
+      "id": "GLBL_00369",
+      "name": "李离",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00380",
+      "name": "樊须",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00388",
+      "name": "漆彫开",
+      "status": "routed",
+      "rc": 2
+    },
+    {
+      "id": "GLBL_00389",
+      "name": "澹台灭明",
+      "status": "routed",
+      "rc": 2
+    },
+    {
+      "id": "GLBL_00419",
+      "name": "石奢",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00421",
+      "name": "管仲",
+      "status": "error",
+      "rc": 1
+    },
+    {
+      "id": "GLBL_00426",
+      "name": "老子",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00465",
+      "name": "闵子骞",
+      "status": "routed",
+      "rc": 2
+    },
+    {
+      "id": "GLBL_00480",
+      "name": "颜回",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00482",
+      "name": "颜无繇",
+      "status": "routed",
+      "rc": 2
+    },
+    {
+      "id": "GLBL_00485",
+      "name": "高柴",
+      "status": "routed",
+      "rc": 2
+    },
+    {
+      "id": "GLBL_00498",
+      "name": "伍子胥",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00504",
+      "name": "司马穰苴",
+      "status": "error",
+      "rc": 1
+    },
+    {
+      "id": "GLBL_00696",
+      "name": "卫庄公",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00697",
+      "name": "卫庄公蒯聩",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00698",
+      "name": "卫惠公",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00699",
+      "name": "卫成公",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00700",
+      "name": "卫桓公",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00702",
+      "name": "卫献公",
+      "status": "error",
+      "rc": 1
+    },
+    {
+      "id": "GLBL_00703",
+      "name": "宋宣公",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00704",
+      "name": "宋文公",
+      "status": "error",
+      "rc": 1
+    },
+    {
+      "id": "GLBL_00705",
+      "name": "宋殇公",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00706",
+      "name": "宋湣公",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00708",
+      "name": "晋厉公",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00709",
+      "name": "晋定公",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00710",
+      "name": "晋平公",
+      "status": "error",
+      "rc": 1
+    },
+    {
+      "id": "GLBL_00711",
+      "name": "晋惠公",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00712",
+      "name": "晋灵公",
+      "status": "error",
+      "rc": 1
+    },
+    {
+      "id": "GLBL_00713",
+      "name": "晋襄公",
+      "status": "error",
+      "rc": 1
+    },
+    {
+      "id": "GLBL_00714",
+      "name": "晋顷公",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00715",
+      "name": "曹伯阳",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00716",
+      "name": "楚平王",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00717",
+      "name": "楚惠王",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00718",
+      "name": "楚灵王",
+      "status": "error",
+      "rc": 1
+    },
+    {
+      "id": "GLBL_00721",
+      "name": "燕庄公",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00723",
+      "name": "田敬仲完",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00725",
+      "name": "蔡昭侯",
+      "status": "error",
+      "rc": 1
+    },
+    {
+      "id": "GLBL_00726",
+      "name": "蔡灵侯",
+      "status": "routed",
+      "rc": 2
+    },
+    {
+      "id": "GLBL_00730",
+      "name": "赵简子",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00731",
+      "name": "郑厉公",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00732",
+      "name": "郑子亹",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00733",
+      "name": "郑成公",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00734",
+      "name": "郑文公",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00735",
+      "name": "郑灵公",
+      "status": "error",
+      "rc": 1
+    },
+    {
+      "id": "GLBL_00736",
+      "name": "郑简公",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00737",
+      "name": "郑襄公",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00738",
+      "name": "陈厉公",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00739",
+      "name": "陈宣公",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00740",
+      "name": "陈惠公",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00741",
+      "name": "陈成公",
+      "status": "error",
+      "rc": 1
+    },
+    {
+      "id": "GLBL_00742",
+      "name": "陈湣公",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00743",
+      "name": "陈灵公",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00748",
+      "name": "鲁哀公",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00749",
+      "name": "鲁定公",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00750",
+      "name": "鲁宣公",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00751",
+      "name": "鲁庄公",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00752",
+      "name": "鲁成公",
+      "status": "error",
+      "rc": 1
+    },
+    {
+      "id": "GLBL_00753",
+      "name": "鲁文公",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00754",
+      "name": "鲁昭公",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00755",
+      "name": "鲁桓公",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00757",
+      "name": "鲁湣公",
+      "status": "routed",
+      "rc": 2
+    },
+    {
+      "id": "GLBL_00758",
+      "name": "鲁襄公",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00759",
+      "name": "鲁釐公",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00760",
+      "name": "鲁隐公",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00761",
+      "name": "齐孝公",
+      "status": "error",
+      "rc": 1
+    },
+    {
+      "id": "GLBL_00762",
+      "name": "齐平公",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00763",
+      "name": "齐庄公",
+      "status": "error",
+      "rc": 1
+    },
+    {
+      "id": "GLBL_00764",
+      "name": "齐悼公",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00765",
+      "name": "齐惠公",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00766",
+      "name": "齐懿公",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00767",
+      "name": "齐景公",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00768",
+      "name": "齐桓公",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00769",
+      "name": "齐灵公",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00771",
+      "name": "齐简公",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00772",
+      "name": "齐襄公",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00774",
+      "name": "齐釐公",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00775",
+      "name": "齐顷公",
+      "status": "error",
+      "rc": 1
+    }
+  ]
+}

@@ -6,8 +6,7 @@ exports.enrichSwimLaneVisuals = exports.laneTrackBackground = exports.resolveLan
 exports.LANE_HEAD_ALPHA = 0.4;
 /** 90% 透明 = 10% 不透明度 */
 exports.LANE_TRACK_ALPHA = 0.1;
-/* 视觉规范 v3：与绢帛六色对齐（赭石/黛青/秋香/藕合/苔绿/绾红）；
- * 类目固定色见 chip-badge-tokens.ts 的 CATEGORY_TONES */
+/* 视觉规范 v3：绢帛六色按泳道顺序循环（与 chip-badge-tokens.SILK_TONES 一致） */
 exports.SWIM_LANE_PALETTE = [
     { solid: '#a2734f', trackAlpha: exports.LANE_TRACK_ALPHA },
     { solid: '#63899c', trackAlpha: exports.LANE_TRACK_ALPHA },

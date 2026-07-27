@@ -1,0 +1,37 @@
+{
+  "schema": "translate-coverage-ledger/v1",
+  "史略ID": "GLBL_00766",
+  "updated_at": "2026-07-26T17:20:45.304036+00:00",
+  "entries": {
+    "M001": {
+      "status": "conveyed",
+      "claim_fp": "24899cab5356d214",
+      "checked_at": "2026-07-26T17:19:56.817906+00:00",
+      "note": "直接对应"
+    },
+    "M002–M003": {
+      "status": "conveyed",
+      "claim_fp": "43af092cf39139fe",
+      "checked_at": "2026-07-26T17:19:56.817941+00:00",
+      "note": "完整传达了两部分信息"
+    },
+    "M004–M006": {
+      "status": "conveyed",
+      "claim_fp": "22f4ebb5a9465423",
+      "checked_at": "2026-07-26T17:19:56.817945+00:00",
+      "note": "三件事均被传达"
+    },
+    "M007": {
+      "status": "conveyed",
+      "claim_fp": "13cbc3913bff6463",
+      "checked_at": "2026-07-26T17:19:56.817959+00:00",
+      "note": "对话内容与痛苦怨恨均表达清楚"
+    },
+    "M008": {
+      "status": "conveyed",
+      "claim_fp": "b59f2d5cb004a66b",
+      "checked_at": "2026-07-26T17:19:56.817963+00:00",
+      "note": "完整传达了谋杀与逃亡"
+    }
+  }
+}

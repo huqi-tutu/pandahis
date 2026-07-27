@@ -221,7 +221,7 @@
   <!-- 续览提示：fixed + pointer-events:none，不参与任何页面布局 -->
   <view
     wx:if="{{swim}}"
-    class="continuation-cue continuation-cue--right {{continuationCanvasActive && continuationRightCount > 0 && !overlayVisible && !chipTooltipVisible && !showIntroModal ? 'continuation-cue--visible' : ''}}"
+    class="continuation-cue continuation-cue--right {{continuationCanvasActive && continuationRightCount > 0 && !overlayVisible && !chipTooltipVisible && !showIntroModal && !priorityMenuVisible ? 'continuation-cue--visible' : ''}}"
     role="status"
     aria-label="右侧还有 {{continuationRightCount}} 条史略"
   >
@@ -235,7 +235,7 @@
   </view>
   <view
     wx:if="{{swim}}"
-    class="continuation-cue continuation-cue--bottom {{continuationCanvasActive && continuationBottomCount > 0 && !overlayVisible && !chipTooltipVisible && !showIntroModal ? 'continuation-cue--visible' : ''}}"
+    class="continuation-cue continuation-cue--bottom {{continuationCanvasActive && continuationBottomCount > 0 && !overlayVisible && !chipTooltipVisible && !showIntroModal && !priorityMenuVisible ? 'continuation-cue--visible' : ''}}"
     role="status"
     aria-label="下方还有 {{continuationBottomCount}} 条史略"
   >
@@ -248,16 +248,40 @@
     />
   </view>
 
-  <view wx:if="{{unit && swim}}" class="priority-dock">
-    <view class="priority-tabs">
+  <view wx:if="{{unit && swim}}" class="priority-fab-wrap">
+    <view
+      class="priority-fab {{priorityMenuVisible ? 'priority-fab--open' : ''}}"
+      bindtap="togglePriorityMenu"
+      aria-role="button"
+      aria-label="切换展示密度，当前{{activePriorityLabel}}"
+    >
+      <view class="priority-fab-inner">
+        <text class="priority-fab-label">{{activePriorityLabel}}</text>
+        <image
+          class="priority-fab-arrow {{priorityMenuVisible ? '' : 'priority-fab-arrow--down'}}"
+          src="/配图/icons/kaihe.png"
+          mode="aspectFit"
+        />
+      </view>
+    </view>
+  </view>
+
+  <view
+    wx:if="{{priorityMenuVisible}}"
+    class="priority-menu-backdrop"
+    bindtap="closePriorityMenu"
+    catchtouchmove="noop"
+  >
+    <view class="priority-menu" catchtap="noop">
       <view
         wx:for="{{priorityOptions}}"
         wx:key="value"
-        class="priority-tab {{activePriority === item.value ? 'active' : ''}}"
+        class="priority-menu-item {{activePriority === item.value ? 'priority-menu-item--active' : ''}}"
         bindtap="onPriorityTap"
         data-priority="{{item.value}}"
       >
-        <text>{{item.label}}</text>
+        <text class="priority-menu-item-label">{{item.label}}</text>
+        <text wx:if="{{activePriority === item.value}}" class="priority-menu-item-check">✓</text>
       </view>
     </view>
   </view>

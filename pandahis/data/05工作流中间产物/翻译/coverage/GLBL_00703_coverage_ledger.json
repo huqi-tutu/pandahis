@@ -1,0 +1,25 @@
+{
+  "schema": "translate-coverage-ledger/v1",
+  "史略ID": "GLBL_00703",
+  "updated_at": "2026-07-26T14:54:22.508245+00:00",
+  "entries": {
+    "M001": {
+      "status": "conveyed",
+      "claim_fp": "26141a21921340cb",
+      "checked_at": "2026-07-26T14:53:25.939482+00:00",
+      "note": "直接点出太子名为与夷。"
+    },
+    "M002–M003": {
+      "status": "conveyed",
+      "claim_fp": "2e35e59ce4a04f7c",
+      "checked_at": "2026-07-26T14:53:25.939495+00:00",
+      "note": "完整覆盖让位、三让、即位等情节。"
+    },
+    "M004": {
+      "status": "conveyed",
+      "claim_fp": "5901a3c2df5438f3",
+      "checked_at": "2026-07-26T14:53:25.939498+00:00",
+      "note": "召见孔父、要求立与夷、群臣属意公子冯、穆公拒绝并送走公子冯，全部传达。"
+    }
+  }
+}

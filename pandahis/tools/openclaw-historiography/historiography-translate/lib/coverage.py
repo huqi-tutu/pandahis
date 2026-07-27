@@ -271,7 +271,44 @@ def _unit_coverage_score(unit: CoverageUnit, body: str) -> float:
     return item_coverage_score(unit.primary, body)
 
 
+def _coverage_mode() -> str:
+    return os.environ.get("TRANSLATE_COVERAGE_MODE", "semantic").strip().lower()
+
+
 def verify_mother_coverage(
+    detail: str,
+    plan: Dict[str, Any],
+    *,
+    min_ratio: float | None = None,
+    max_report: int = 8,
+    entry_id: str = "",
+    entry_name: str = "",
+    work_dir: Path | None = None,
+) -> Tuple[bool, List[str]]:
+    """母本覆盖验收：默认 semantic（LLM+账本）；legacy 模式见 TRANSLATE_COVERAGE_MODE=l1。"""
+    if _coverage_mode() == "l1":
+        return _verify_mother_coverage_l1(
+            detail,
+            plan,
+            min_ratio=min_ratio,
+            max_report=max_report,
+            entry_id=entry_id,
+            entry_name=entry_name,
+            work_dir=work_dir,
+        )
+    from lib.coverage_l2 import verify_mother_merge_semantic_coverage
+
+    return verify_mother_merge_semantic_coverage(
+        detail,
+        plan,
+        entry_id=entry_id,
+        entry_name=entry_name,
+        work_dir=work_dir,
+        max_report=max_report,
+    )
+
+
+def _verify_mother_coverage_l1(
     detail: str,
     plan: Dict[str, Any],
     *,
@@ -289,7 +326,7 @@ def verify_mother_coverage(
     - 前置引入区不参与计分
     """
     errors: List[str] = []
-    body = body_without_intro_zone(detail)
+    body = body_without_intro_zone(detail, plan=plan)
     checklist = plan.get("母本逐句清单") or []
     if not isinstance(checklist, list) or not checklist:
         errors.append("source plan 缺少「母本逐句清单」，无法校验母本覆盖")

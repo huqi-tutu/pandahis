@@ -2,7 +2,7 @@
   "total_paragraphs": 47,
   "excludes": [
     {
-      "paragraph_from": 46,
+      "paragraph_from": 47,
       "paragraph_to": 47,
       "exclude_reason": "太史公曰"
     }
@@ -36,7 +36,7 @@
       "name": "儿姁",
       "category": "宗戚",
       "paragraph_from": 31,
-      "paragraph_to": 45
+      "paragraph_to": 46
     }
   ]
 }

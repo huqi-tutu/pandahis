@@ -1,11 +1,11 @@
-"""传说层配额：允许「传说/相传」等无书名表述，但禁止喧宾夺主。"""
+"""传说/二手表述层配额：无《》锚点的「据说/传说/有人说」等统一走频次控制，禁止喧宾夺主。"""
 
 from __future__ import annotations
 
 import re
 from dataclasses import dataclass
 
-# 传说层触发（出现即计入传说叙述）
+# 无《》锚点的二手表述触发词（原 legend + vague_citation 并集，统一配额）
 LEGEND_TRIGGERS: tuple[str, ...] = (
     "传说",
     "相传",
@@ -14,14 +14,33 @@ LEGEND_TRIGGERS: tuple[str, ...] = (
     "口传",
     "附会",
     "异说",
+    "有人说",
+    "有传言说",
+    "有资料说",
+    "历史上认为",
+    "一般认为",
+    "后世认为",
+    "有观点认为",
 )
 
-# 不计入传说层配额（固定搭配 / 文献层 framing）
+# 兼容旧 import：prose_sanitize 等仍可从 vague_citation 引用
+UNANCHORED_ATTRIBUTION_TRIGGERS: tuple[str, ...] = (
+    "有人说",
+    "有传言说",
+    "有资料说",
+    "历史上认为",
+    "一般认为",
+    "后世认为",
+    "有观点认为",
+)
+
+# 固定搭配 / 文献层 framing：其中的子串不计入传说触发
 LEGEND_TRIGGER_EXEMPT: tuple[str, ...] = (
     "口耳相传",
     "口传相传",
     "神话传说",
     "民间传说",
+    "后世传说",
     "传说时代",
 )
 
@@ -78,7 +97,6 @@ def _paragraph_is_legend_heavy(paragraph: str) -> bool:
 def _paragraph_has_sourced_anchor(paragraph: str) -> bool:
     if _BOOK.search(paragraph):
         return True
-    # hard 叙述常见 framing
     for token in ("史载", "史书", "太史公", "本纪", "据史", "按《"):
         if token in paragraph:
             return True
@@ -140,7 +158,8 @@ def legend_quota_verify_issues(
         issues.append(
             (
                 "legend_dominance",
-                f"传说层触发词 {m.trigger_count} 处 > 上限 {cap}（传说宜克制，不可当家）",
+                f"无《》二手表述触发词 {m.trigger_count} 处 > 上限 {cap}"
+                f"（传说/据说/有人说等宜克制，不可当家）",
                 "error",
             )
         )
@@ -148,7 +167,7 @@ def legend_quota_verify_issues(
         issues.append(
             (
                 "legend_dominance",
-                f"连续 {m.max_consecutive_legend_paragraphs} 段以传说/相传为主叙事"
+                f"连续 {m.max_consecutive_legend_paragraphs} 段以传说/二手表述为主叙事"
                 f"（上限 {LEGEND_MAX_CONSECUTIVE_PARAGRAPHS} 段）",
                 "error",
             )

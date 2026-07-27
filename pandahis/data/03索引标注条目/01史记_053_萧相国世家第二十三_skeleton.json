@@ -200,25 +200,23 @@
           "paragraph_to": 20
         }
       ],
+      "优先级": "P0",
+      "优先级判定理由": "萧何独立叙事块，共20段",
       "五级细坐标": "史记·卷053·文臣·01",
       "六级段落锚点": "[P1-P20]",
       "原文出处": "萧相国世家·P1-P20",
-      "一级文明坐标": "华夏",
-      "文明ID": "HX",
-      "二级朝代坐标": "西汉",
-      "朝代ID": "CD_HX_XIHAN",
-      "三级政权坐标": "西汉",
-      "政权ID": "ZQ_HX_XIHAN_XIHAN",
-      "四级帝王坐标": "汉高祖",
-      "帝王ID": "DW_HX_XIHAN_XIHAN_HANGAOZU",
-      "优先级": "P0",
-      "优先级判定理由": "世家主轴叙事，共20段",
-      "_auto_filled": {
-        "_坐标主轴说明": "本卷以沛丰起兵、关中定三秦、镇抚关中为主线，主轴挂汉高祖；惠帝朝丞相事见共段事略。",
-        "_年LLM依据": "萧何生卒约前257–前193（生年推测）"
-      },
-      "史略开始年": -257,
-      "史略结束年": -193
+      "_needs_llm": []
+    }
+  ],
+  "volume_subtype": "世家",
+  "volume_subtype_source": "llm_step1a",
+  "protagonist_count": 1,
+  "protagonist_count_source": "llm_step1a",
+  "protagonists_manifest": [
+    {
+      "name": "萧何",
+      "category": "文臣",
+      "rationale": "《萧相国世家》叙事主轴：萧何（文臣）"
     }
   ]
 }

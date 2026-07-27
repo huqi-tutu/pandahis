@@ -124,6 +124,14 @@ CREATE TABLE IF NOT EXISTS app_user (
   read_balance INT NOT NULL DEFAULT 0
 );
 
+CREATE TABLE IF NOT EXISTS user_box_tab_read_ledger (
+  user_id BIGINT NOT NULL,
+  box_id VARCHAR(128) NOT NULL,
+  tab_key VARCHAR(16) NOT NULL,
+  consumed_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (user_id, box_id, tab_key)
+);
+
 CREATE TABLE IF NOT EXISTS user_favorite_box (
   id BIGINT PRIMARY KEY AUTO_INCREMENT,
   user_id BIGINT NOT NULL,
@@ -180,7 +188,8 @@ CREATE TABLE IF NOT EXISTS search_hot_keyword (
   keyword VARCHAR(64) NOT NULL,
   is_hot TINYINT NOT NULL DEFAULT 0,
   sort_order INT NOT NULL DEFAULT 0,
-  status TINYINT NOT NULL DEFAULT 1
+  status TINYINT NOT NULL DEFAULT 1,
+  CONSTRAINT uk_search_hot_keyword UNIQUE (keyword)
 );
 
 CREATE TABLE IF NOT EXISTS app_kv (

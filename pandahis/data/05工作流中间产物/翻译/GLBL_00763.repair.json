@@ -1,0 +1,25 @@
+{
+  "schema": "qa_repair_ticket/v1",
+  "pipeline": "translate",
+  "entry_id": "GLBL_00763",
+  "entry_name": "齐庄公",
+  "stage": "verify",
+  "fail_count": 1,
+  "errors": [
+    "外部补全[0] 补全类型无效或缺失: '补充背景' （须为 ['冲突观点', '异说', '必要上下文', '背景', '补充细节', '评价差异'] 之一）"
+  ],
+  "plan": {
+    "root_cause": "UNKNOWN",
+    "disposition": "retry_llm",
+    "action": "generic_retry",
+    "structured_prompt": "【根因未分类】请据下列 verify 错误逐项修正，勿重复上一轮相同写法。\n外部补全[0] 补全类型无效或缺失: '补充背景' （须为 ['冲突观点', '异说', '必要上下文', '背景', '补充细节', '评价差异'] 之一）",
+    "refine_scope": "",
+    "route_to": "",
+    "next_command": "",
+    "invalidate": [],
+    "max_retries": 2,
+    "extra": {}
+  },
+  "feedback": "【根因未分类】请据下列 verify 错误逐项修正，勿重复上一轮相同写法。\n外部补全[0] 补全类型无效或缺失: '补充背景' （须为 ['冲突观点', '异说', '必要上下文', '背景', '补充细节', '评价差异'] 之一）\n\n---\n【原始错误】\n外部补全[0] 补全类型无效或缺失: '补充背景' （须为 ['冲突观点', '异说', '必要上下文', '背景', '补充细节', '评价差异'] 之一）",
+  "updated_at": "2026-07-26T17:15:03Z"
+}

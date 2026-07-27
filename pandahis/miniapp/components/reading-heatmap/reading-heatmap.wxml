@@ -9,31 +9,33 @@
     </view>
 
     <!-- 右侧网格：单个横向滚动 -->
-    <scroll-view class="rh-scroll" scroll-x enhanced enable-flex show-scrollbar="{{false}}">
+    <scroll-view class="rh-scroll" scroll-x show-scrollbar="{{false}}">
       <view class="rh-grid">
         <view wx:for="{{weeks}}" wx:key="index" wx:for-item="week" class="rh-col">
           <view class="rh-month">{{week.monthLabel}}</view>
-          <view
-            wx:for="{{week.cells}}"
-            wx:key="date"
-            wx:for-item="cell"
-            class="rh-cell {{cell.future ? 'rh-cell--future' : ''}} {{cell.date === selectedDate ? 'rh-cell--selected' : ''}}"
-            style="{{cell.color ? 'background:' + cell.color + ';' : ''}}"
-            data-date="{{cell.date}}"
-            data-count="{{cell.count}}"
-            data-future="{{cell.future}}"
-            bindtap="onCellTap"
-          ></view>
+          <block wx:for="{{week.cells}}" wx:key="date" wx:for-item="cell">
+            <view
+              wx:if="{{!cell.future}}"
+              class="rh-cell {{cell.date === selectedDate ? 'rh-cell--selected' : ''}}"
+              style="{{cell.color ? 'background:' + cell.color + ';' : ''}}"
+              data-date="{{cell.date}}"
+              data-count="{{cell.count}}"
+              catchtap="onCellTap"
+            ></view>
+            <view wx:else class="rh-cell rh-cell--future"></view>
+          </block>
         </view>
       </view>
     </scroll-view>
   </view>
 
   <view class="rh-detail" wx:if="{{selected}}">
-    <view class="rh-detail-icon {{selected.count > 0 ? 'rh-detail-icon--on' : ''}}">✓</view>
+    <view class="rh-detail-icon-wrap">
+      <image class="rh-detail-icon-img" src="{{selected.icon}}" mode="aspectFit" />
+    </view>
     <view class="rh-detail-text">
       <view class="rh-detail-date">{{selected.label}}</view>
-      <view class="rh-detail-sub">{{selected.count > 0 ? '这一天读过 ' + selected.count + ' 篇' : '这一天没有阅读'}}</view>
+      <view class="rh-detail-sub">{{selected.sub}}</view>
     </view>
   </view>
 </view>

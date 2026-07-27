@@ -2,6 +2,56 @@
   "total_paragraphs": 134,
   "excludes": [
     {
+      "paragraph_from": 1,
+      "paragraph_to": 3,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 5,
+      "paragraph_to": 5,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 8,
+      "paragraph_to": 13,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 30,
+      "paragraph_to": 30,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 44,
+      "paragraph_to": 44,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 68,
+      "paragraph_to": 68,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 85,
+      "paragraph_to": 93,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 114,
+      "paragraph_to": 117,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 125,
+      "paragraph_to": 128,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 130,
+      "paragraph_to": 133,
+      "exclude_reason": "其他"
+    },
+    {
       "paragraph_from": 134,
       "paragraph_to": 134,
       "exclude_reason": "太史公曰"
@@ -9,9 +59,27 @@
   ],
   "blocks": [
     {
+      "name": "楚熊绎",
+      "category": "君王",
+      "paragraph_from": 4,
+      "paragraph_to": 4
+    },
+    {
+      "name": "楚熊渠",
+      "category": "君王",
+      "paragraph_from": 6,
+      "paragraph_to": 7
+    },
+    {
       "name": "楚武王",
       "category": "君王",
-      "paragraph_from": 1,
+      "paragraph_from": 14,
+      "paragraph_to": 18
+    },
+    {
+      "name": "楚文王",
+      "category": "君王",
+      "paragraph_from": 19,
       "paragraph_to": 19
     },
     {
@@ -23,20 +91,56 @@
     {
       "name": "楚庄王",
       "category": "君王",
-      "paragraph_from": 30,
-      "paragraph_to": 55
+      "paragraph_from": 31,
+      "paragraph_to": 42
+    },
+    {
+      "name": "楚共王",
+      "category": "君王",
+      "paragraph_from": 43,
+      "paragraph_to": 43
+    },
+    {
+      "name": "楚灵王",
+      "category": "君王",
+      "paragraph_from": 45,
+      "paragraph_to": 54
+    },
+    {
+      "name": "楚平王",
+      "category": "君王",
+      "paragraph_from": 55,
+      "paragraph_to": 67
     },
     {
       "name": "楚昭王",
       "category": "君王",
-      "paragraph_from": 56,
-      "paragraph_to": 93
+      "paragraph_from": 69,
+      "paragraph_to": 82
+    },
+    {
+      "name": "楚惠王",
+      "category": "君王",
+      "paragraph_from": 83,
+      "paragraph_to": 84
     },
     {
       "name": "楚怀王",
       "category": "君王",
       "paragraph_from": 94,
-      "paragraph_to": 133
+      "paragraph_to": 113
+    },
+    {
+      "name": "楚顷襄王",
+      "category": "君王",
+      "paragraph_from": 118,
+      "paragraph_to": 124
+    },
+    {
+      "name": "楚考烈王",
+      "category": "君王",
+      "paragraph_from": 129,
+      "paragraph_to": 129
     }
   ]
 }

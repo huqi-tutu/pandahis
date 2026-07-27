@@ -8,7 +8,7 @@ import {
 } from '../../native-utils/favorite-box'
 import { ROUTES, navigateTo } from '../../native-utils/router'
 import { decodeQueryValue } from '../../native-utils/query-value'
-import { formatHistoryYear } from '../../native-utils/year-format'
+import { formatHistoryYear, formatHistoryYearToken } from '../../native-utils/year-format'
 import { formatEntrySourceLabel } from '../../native-utils/entry-source-label'
 import { buildSharePosterSheetState } from '../../native-utils/share-poster-open'
 import { resolveSelectionBarAnchor } from '../../native-utils/selection-bar-position'
@@ -42,11 +42,16 @@ const {
 type PriorityLevel = 'p0' | 'p1' | 'p2' | 'p3'
 
 const PRIORITY_OPTIONS: { value: PriorityLevel; label: string }[] = [
-  { value: 'p0', label: 'P0' },
-  { value: 'p1', label: 'P1' },
-  { value: 'p2', label: 'P2' },
-  { value: 'p3', label: 'P3' },
+  { value: 'p0', label: '极简' },
+  { value: 'p1', label: '简略' },
+  { value: 'p2', label: '丰富' },
+  { value: 'p3', label: '详尽' },
 ]
+
+function priorityLabel(priority: PriorityLevel): string {
+  const hit = PRIORITY_OPTIONS.find((item) => item.value === priority)
+  return hit?.label || '详尽'
+}
 
 const MAX_LANE_ROWS = 10
 const GRID_RPX = 8
@@ -76,7 +81,7 @@ const AXIS_PIN_AT = 150
 const AXIS_UNPIN_AT = 110
 const CONTINUATION_CUE_THROTTLE_MS = 120
 const CONTINUATION_CUE_TOLERANCE_RPX = 16
-const CONTINUATION_CUE_BOTTOM_RESERVE_RPX = 128
+const CONTINUATION_CUE_BOTTOM_RESERVE_RPX = 48
 
 function roundScrollLeft(left: number): number {
   return Math.round(left)
@@ -107,6 +112,8 @@ function resolveBucketYears(span: number, overflowCount: number): number {
 }
 
 const BUCKET_CHIP_TITLE = '查看更多'
+/** 与后端 UnitSwimMatrixService 一致：君王/诸侯锚定在在位起始年 */
+const ANCHOR_AT_START_LANE_KEYS = new Set(['junji', 'zhuhou'])
 
 function parseBucketMemberCount(title: string): number {
   const match = String(title || '').match(/\+(\d+)$/)
@@ -117,7 +124,16 @@ function bucketTitle(laneLabel: string, count: number): string {
   return BUCKET_CHIP_TITLE
 }
 
-function anchorYearOfBar(bar: ReturnType<typeof prepareLegacyBar>): number {
+function usesAnchorAtStart(laneKey?: string): boolean {
+  return ANCHOR_AT_START_LANE_KEYS.has(String(laneKey || '').trim())
+}
+
+function anchorYearOfBar(bar: Pick<SwimBar, 'startYear' | 'peakYear'>, laneKey?: string): number {
+  if (usesAnchorAtStart(laneKey)) {
+    if (typeof bar.startYear === 'number') return bar.startYear
+    if (typeof bar.peakYear === 'number') return bar.peakYear
+    return 0
+  }
   if (typeof bar.peakYear === 'number') return bar.peakYear
   if (typeof bar.startYear === 'number') return bar.startYear
   return 0
@@ -139,13 +155,14 @@ function placeBucketChips(
   const gapPct = CHIP_GAP_RPX / sheetWidthRpx * 100
   const nextRows = rows.map((row) => [...row])
   const rowEnds = nextRows.map((row) => Math.max(0, ...row.map((bar) => bar._rightPct)))
+  let bucketRowIndex = -1
 
   let cursor = startYear
   let bucketIndex = 0
   while (cursor < endYear) {
     const bucketEnd = Math.min(endYear, cursor + bucketYears)
     const members = overflow.filter((bar) => {
-      const y = anchorYearOfBar(bar)
+      const y = anchorYearOfBar(bar, laneKey)
       return y >= cursor && y < bucketEnd
     })
     if (members.length) {
@@ -185,17 +202,31 @@ function placeBucketChips(
       } as ReturnType<typeof prepareLegacyBar>
 
       let assigned = -1
-      for (let rowIndex = 0; rowIndex < nextRows.length; rowIndex++) {
-        if (rowEnds[rowIndex] + gapPct <= bucketBar._leftPct) {
-          assigned = rowIndex
-          rowEnds[rowIndex] = bucketBar._rightPct
-          nextRows[rowIndex] = [...nextRows[rowIndex], bucketBar].sort((a, b) => a._leftPct - b._leftPct)
-          break
+      if (bucketRowIndex === -1) {
+        for (let rowIndex = 0; rowIndex < nextRows.length; rowIndex++) {
+          if (rowEnds[rowIndex] + gapPct <= bucketBar._leftPct) {
+            assigned = rowIndex
+            rowEnds[rowIndex] = bucketBar._rightPct
+            nextRows[rowIndex] = [...nextRows[rowIndex], bucketBar].sort((a, b) => a._leftPct - b._leftPct)
+            break
+          }
         }
+      } else if (rowEnds[bucketRowIndex] + gapPct <= bucketBar._leftPct) {
+        assigned = bucketRowIndex
+        rowEnds[bucketRowIndex] = bucketBar._rightPct
+        nextRows[bucketRowIndex] = [...nextRows[bucketRowIndex], bucketBar]
+          .sort((a, b) => a._leftPct - b._leftPct)
       }
       if (assigned === -1) {
-        nextRows.push([bucketBar])
-        rowEnds.push(bucketBar._rightPct)
+        if (bucketRowIndex === -1) {
+          bucketRowIndex = nextRows.length
+          nextRows.push([bucketBar])
+          rowEnds.push(bucketBar._rightPct)
+        } else {
+          rowEnds[bucketRowIndex] = Math.max(rowEnds[bucketRowIndex], bucketBar._rightPct)
+          nextRows[bucketRowIndex] = [...nextRows[bucketRowIndex], bucketBar]
+            .sort((a, b) => a._leftPct - b._leftPct)
+        }
       }
       bucketIndex += 1
     }
@@ -522,11 +553,14 @@ function splitTimeRangeLabels(bar: SwimBar | null, fallbackRange: string): { sta
       end: formatHistoryYear(bar.endYear),
     }
   }
-  const parts = String(fallbackRange || '').split(/\s*[—–-]\s*/)
+  const parts = String(fallbackRange || '').split(/\s*[—–]\s*/)
   if (parts.length >= 2) {
-    return { start: parts[0].trim(), end: parts[parts.length - 1].trim() }
+    return {
+      start: formatHistoryYearToken(parts[0]),
+      end: formatHistoryYearToken(parts[parts.length - 1]),
+    }
   }
-  const single = String(fallbackRange || '').trim()
+  const single = formatHistoryYearToken(String(fallbackRange || '').trim())
   return { start: single, end: '' }
 }
 
@@ -742,6 +776,10 @@ function estimateSheetWidth(swim: SwimMatrix): number {
   return Math.max(base, Math.min(base * 4, needed))
 }
 
+function isOverflowBucketBar(bar: SwimBar): boolean {
+  return bar.type === 'overflow_bucket'
+}
+
 function normalizeLegacyLane(
   lane: SwimLane,
   sheetWidthRpx: number,
@@ -749,6 +787,7 @@ function normalizeLegacyLane(
   swim: SwimMatrix,
 ): SwimLane {
   const allBars = [...(lane.collapsedRows || []).flat(), ...(lane.extraBars || [])]
+    .filter((bar) => !isOverflowBucketBar(bar))
     .map((bar) => prepareLegacyBar(bar, sheetWidthRpx))
     .sort(compareLegacyBars)
   const maxPriority = priorityRank(priority)
@@ -920,6 +959,7 @@ function previewIntro(intro: string): { preview: string; canExpand: boolean; par
 
 Page({
   swimScrollLeft: 0,
+  swimSource: null as SwimMatrix | null,
   pageUnloaded: false,
   _loadQuery: null as Record<string, string | undefined> | null,
   continuationItems: [] as OffscreenHintItem[],
@@ -968,6 +1008,8 @@ Page({
     loading: true,
     priorityOptions: PRIORITY_OPTIONS,
     activePriority: 'p3' as PriorityLevel,
+    activePriorityLabel: priorityLabel('p3'),
+    priorityMenuVisible: false,
     chipTooltipVisible: false,
     chipTooltipPhase: 'enter' as 'enter' | 'idle' | 'exit',
     chipTooltipHeldId: '',
@@ -1014,6 +1056,7 @@ Page({
   },
   onUnload() {
     this.pageUnloaded = true
+    this.swimSource = null
     if (this.continuationUpdateTimer) clearTimeout(this.continuationUpdateTimer)
     if (this.chipTooltipExitTimer) clearTimeout(this.chipTooltipExitTimer)
   },
@@ -1088,9 +1131,10 @@ Page({
         const navTitle = dynastyTitle.length <= 4 ? dynastyTitle : dynastyTitle.slice(0, 4)
         const heroSubLine = `${formatHistoryYear(unit.startYear)}–${formatHistoryYear(unit.endYear)}`
         const activePriority = this.data.activePriority || 'p3'
+        this.swimSource = swim
         const prioritySwim = applyPriorityView(swim, activePriority)
         const swimForView = slimSwimMatrixForView(prioritySwim)
-        const matrixBoxIds = collectMatrixBoxIds(prioritySwim)
+        const matrixBoxIds = collectMatrixBoxIds(swim)
         const hasVisibleContent = (prioritySwim.lanes || []).some(hasLaneContent)
         const { preview, canExpand, paragraphs } = previewIntro(unit.summary || '')
         if (!hasVisibleContent) {
@@ -1387,7 +1431,7 @@ Page({
     let bars = lane.extraBars || []
     if (Number.isFinite(bucketStart) && Number.isFinite(bucketEnd)) {
       bars = bars.filter((bar) => {
-        const y = bar.peakYear ?? bar.startYear ?? 0
+        const y = anchorYearOfBar(bar, lane.key)
         return y >= bucketStart && y < bucketEnd
       })
     }
@@ -1490,18 +1534,34 @@ Page({
   },
   onPriorityTap(e: WechatMiniprogram.BaseEvent) {
     const priority = (e.currentTarget as any).dataset.priority as PriorityLevel
-    if (!priority || priority === this.data.activePriority) return
-    const swim = this.data.swim
+    if (!priority) return
+    if (priority === this.data.activePriority) {
+      this.setData({ priorityMenuVisible: false })
+      return
+    }
+    const swim = this.swimSource
     if (!swim) return
     const nextSwim = applyPriorityView(swim, priority)
     this.setData({
       activePriority: priority,
-      swim: nextSwim,
+      activePriorityLabel: priorityLabel(priority),
+      priorityMenuVisible: false,
+      swim: slimSwimMatrixForView(nextSwim),
       overlayVisible: false,
     }, () => {
       this.rebuildContinuationHints(nextSwim)
     })
     this.hideChipTooltip()
+  },
+  togglePriorityMenu() {
+    const nextOpen = !this.data.priorityMenuVisible
+    this.setData({ priorityMenuVisible: nextOpen })
+    if (nextOpen) this.hideChipTooltip()
+  },
+  closePriorityMenu() {
+    if (this.data.priorityMenuVisible) {
+      this.setData({ priorityMenuVisible: false })
+    }
   },
   hideOverlay() {
     this.setData({ overlayVisible: false })

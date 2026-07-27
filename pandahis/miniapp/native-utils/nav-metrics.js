@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getNavBarMetrics = exports.computePageTopPadPx = exports.computeHeaderPadPx = exports.PAGE_CONTENT_GAP_RPX = void 0;
-/** 导航栏底边到首屏内容的标准间距（8px 网格） */
-exports.PAGE_CONTENT_GAP_RPX = 24;
+exports.getNavBarMetrics = exports.computePageHeightPx = exports.computePageTopPadPx = exports.computeHeaderPadPx = exports.PAGE_CONTENT_GAP_RPX = void 0;
+/** 导航栏底边到首屏内容的标准间距；0 = 内容紧贴导航底边 */
+exports.PAGE_CONTENT_GAP_RPX = 0;
 /** 仅导航占位：状态栏 + 88rpx 导航条（固定定位元素用） */
 function computeHeaderPadPx(sys) {
     const info = sys !== null && sys !== void 0 ? sys : wx.getSystemInfoSync();
@@ -17,6 +17,12 @@ function computePageTopPadPx(sys) {
     return computeHeaderPadPx(info) + gapPx;
 }
 exports.computePageTopPadPx = computePageTopPadPx;
+/** 全屏 scroll-view 高度（Tab 页内容铺至窗口底） */
+function computePageHeightPx(sys) {
+    const info = sys !== null && sys !== void 0 ? sys : wx.getSystemInfoSync();
+    return info.windowHeight || 667;
+}
+exports.computePageHeightPx = computePageHeightPx;
 function getNavBarMetrics() {
     return new Promise((resolve, reject) => {
         const rect = wx.getMenuButtonBoundingClientRect();

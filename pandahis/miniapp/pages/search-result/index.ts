@@ -5,6 +5,7 @@ import {
   highlightEmToRich,
   stripHtml,
 } from '../../native-utils/format'
+import { addLocalSearchHistory } from '../../native-utils/search-history-storage'
 import { ROUTES, navigateTo } from '../../native-utils/router'
 import { computePageTopPadPx } from '../../native-utils/nav-metrics'
 
@@ -62,7 +63,10 @@ Page({
     }
     const keyword = decodeURIComponent(query.q || query.keyword || '')
     this.setData({ keyword })
-    if (keyword) void this.doSearch(keyword)
+    if (keyword) {
+      addLocalSearchHistory(keyword)
+      void this.doSearch(keyword)
+    }
   },
   mapResultItems(items: SearchResult['items']): ResultItem[] {
     return (items || []).map((it) => {

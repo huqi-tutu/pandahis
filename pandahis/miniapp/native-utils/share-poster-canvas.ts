@@ -12,8 +12,9 @@ export type SharePosterPayload = {
 }
 
 const POSTER_W = 750
-const POSTER_H = 1150
 const DPR = 2
+
+import { calculateSharePosterLayout, MAX_QUOTE_LINES } from './share-poster-layout'
 
 const COLORS = {
   bg: '#2A2420',
@@ -154,19 +155,28 @@ export async function renderSharePosterToCanvas(
   const brandName = String(payload.brandName || '历史图谱').trim() || '历史图谱'
 
   canvas.width = POSTER_W * DPR
-  canvas.height = POSTER_H * DPR
-
-  const ctx = canvas.getContext('2d') as unknown as CanvasRenderingContext2D
-  ctx.scale(DPR, DPR)
-
-  ctx.fillStyle = COLORS.bg
-  ctx.fillRect(0, 0, POSTER_W, POSTER_H)
+  canvas.height = 1150 * DPR
+  const measureCtx = canvas.getContext('2d') as unknown as CanvasRenderingContext2D
 
   const pad = 56
   const avatarSize = 96
-  let cursorY = pad + 12
+  const quoteMaxWidth = POSTER_W - pad * 2
+  const quoteLineHeight = 58
+  measureCtx.font = '700 34px "Songti SC", "STSong", "Noto Serif SC", serif'
+  const quoteLines = wrapTextLines(measureCtx, quoteText, quoteMaxWidth, MAX_QUOTE_LINES)
+  const pathLine = sourceLine1 || sourceLine2 || ''
+  measureCtx.font = '24px "PingFang SC", sans-serif'
+  const pathLines = pathLine ? wrapTextLines(measureCtx, pathLine, quoteMaxWidth, 2) : []
+  const layout = calculateSharePosterLayout(quoteLines.length, pathLines.length)
 
-  // —— 顶部用户区：头像 → 昵称 → 摘录时间，全部左对齐上下排列 ——
+  canvas.width = POSTER_W * DPR
+  canvas.height = layout.posterHeight * DPR
+  const ctx = canvas.getContext('2d') as unknown as CanvasRenderingContext2D
+  ctx.scale(DPR, DPR)
+  ctx.fillStyle = COLORS.bg
+  ctx.fillRect(0, 0, POSTER_W, layout.posterHeight)
+
+  let cursorY = pad + 12
   const avatarImg = await loadCanvasImage(canvas, payload.userAvatarUrl || '')
   ctx.save()
   ctx.beginPath()
@@ -186,41 +196,26 @@ export async function renderSharePosterToCanvas(
   ctx.font = '600 32px "Songti SC", "STSong", "Noto Serif SC", serif'
   ctx.fillText(userName, pad, cursorY)
   cursorY += 40
-
   ctx.fillStyle = COLORS.meta
   ctx.font = '22px "PingFang SC", sans-serif'
   ctx.fillText(`摘录于 ${excerptDate}`, pad, cursorY)
   cursorY += 56
 
-  // —— 摘录正文：左对齐，自用户区下方自然向下排 ——
   ctx.fillStyle = COLORS.quote
   ctx.font = '700 34px "Songti SC", "STSong", "Noto Serif SC", serif'
-  const quoteMaxWidth = POSTER_W - pad * 2
-  const quoteLines = wrapTextLines(ctx, quoteText, quoteMaxWidth, 10)
-  const quoteLineHeight = 58
-  quoteLines.forEach((line, index) => {
-    ctx.fillText(line, pad, cursorY + index * quoteLineHeight)
-  })
+  quoteLines.forEach((line, index) => ctx.fillText(line, pad, cursorY + index * quoteLineHeight))
   cursorY += quoteLines.length * quoteLineHeight + 48
 
-  // —— 来源路径：左对齐 ——
-  const pathLine =
-    sourceLine1 ||
-    [sourceLine2].filter(Boolean).join('') ||
-    ''
-  if (pathLine) {
+  if (pathLines.length) {
     ctx.fillStyle = COLORS.meta
     ctx.font = '24px "PingFang SC", sans-serif'
-    const pathLines = wrapTextLines(ctx, pathLine, quoteMaxWidth, 2)
-    pathLines.forEach((line, index) => {
-      ctx.fillText(line, pad, cursorY + index * 34)
-    })
+    pathLines.forEach((line, index) => ctx.fillText(line, pad, cursorY + index * 34))
   }
 
   // —— 底部：分割线 + 左侧品牌（含 slogan）与右侧二维码垂直居中 ——
   const qrSize = 120
   const footerInnerPad = 28
-  const footerTop = POSTER_H - pad - qrSize - footerInnerPad * 2
+  const footerTop = layout.footerTop
 
   ctx.strokeStyle = COLORS.divider
   ctx.lineWidth = 1

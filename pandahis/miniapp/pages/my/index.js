@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const api_1 = require("../../native-utils/api");
 const router_1 = require("../../native-utils/router");
 const nav_metrics_1 = require("../../native-utils/nav-metrics");
+const overscroll_bounce_1 = require("../../native-utils/overscroll-bounce");
 const wx_auth_1 = require("../../native-utils/wx-auth");
 const APP_VERSION = '1.0.0';
 /** 兼容 camelCase / snake_case 的 /me 响应 */
@@ -36,13 +37,40 @@ Page({
         vipDesc: '解锁全地域图谱 · 跨时空评述 · 见证 Tab',
         appVersion: APP_VERSION,
         pageTopPadPx: 88,
+        pageHeightPx: 667,
+        scrollEnabled: false,
+        shortcuts: [
+            { id: 'membership', label: '会员', icon: '/images/icons/huiyuan.png', action: 'membership' },
+            { id: 'corrections', label: '纠错', icon: '/images/icons/jiucuo.png', action: 'corrections' },
+            { id: 'invite', label: '邀请', icon: '/images/icons/fenxiang.png', action: 'invite' },
+            { id: 'settings', label: '设置', icon: '/images/icons/shezhi.png', action: 'settings' },
+        ],
     },
     onLoad() {
         try {
-            this.setData({ pageTopPadPx: (0, nav_metrics_1.computePageTopPadPx)() });
+            const sys = wx.getSystemInfoSync();
+            this.setData({
+                pageTopPadPx: (0, nav_metrics_1.computePageTopPadPx)(sys),
+                pageHeightPx: (0, nav_metrics_1.computePageHeightPx)(sys),
+            });
         }
         catch {
-            this.setData({ pageTopPadPx: 88 });
+            this.setData({ pageTopPadPx: 88, pageHeightPx: 667 });
+        }
+    },
+    onReady() {
+        this.scheduleScrollMeasure();
+    },
+    scheduleScrollMeasure() {
+        wx.nextTick(() => {
+            void this.updateScrollEnabled();
+            setTimeout(() => void this.updateScrollEnabled(), 120);
+        });
+    },
+    async updateScrollEnabled() {
+        const scrollEnabled = await (0, overscroll_bounce_1.measureScrollOverflow)(this, '#pageMyScroll', '#pageMyContent');
+        if (scrollEnabled !== this.data.scrollEnabled) {
+            this.setData({ scrollEnabled });
         }
     },
     onShow() {
@@ -65,7 +93,7 @@ Page({
             readCompleteCount: 0,
             vipTitle: '开通年度会员',
             vipDesc: '解锁全地域图谱 · 跨时空评述 · 见证 Tab',
-        });
+        }, () => this.scheduleScrollMeasure());
     },
     async refresh() {
         var _a, _b;
@@ -98,7 +126,7 @@ Page({
                 readCompleteCount: me.readCompleteCount,
                 vipTitle: vip.title,
                 vipDesc: vip.desc,
-            });
+            }, () => this.scheduleScrollMeasure());
         }
         catch (e) {
             const msg = e instanceof Error ? e.message : '';
@@ -126,7 +154,7 @@ Page({
                 readCompleteCount: 0,
                 vipTitle: vip.title,
                 vipDesc: vip.desc,
-            });
+            }, () => this.scheduleScrollMeasure());
         }
     },
     vipCopy(status, endAt) {
@@ -185,5 +213,24 @@ Page({
     },
     goSettings() {
         (0, router_1.navigateTo)(router_1.ROUTES.settings);
+    },
+    onShortcutTap(e) {
+        const action = e.currentTarget.dataset.action;
+        switch (action) {
+            case 'membership':
+                this.goMembership();
+                break;
+            case 'corrections':
+                this.goCorrections();
+                break;
+            case 'invite':
+                this.goInviteFriends();
+                break;
+            case 'settings':
+                this.goSettings();
+                break;
+            default:
+                break;
+        }
     },
 });

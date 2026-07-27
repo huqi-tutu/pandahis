@@ -1,9 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.categoryLabel = exports.highlightEmToRich = exports.extractUnitDynastyHint = exports.formatSearchPath = exports.stripHtml = exports.PRD_CATEGORY_KEYS = void 0;
-/** 朝代详情固定 10 泳道顺序 */
+/** 朝代详情固定 11 泳道顺序 */
 exports.PRD_CATEGORY_KEYS = [
     'junji',
+    'zhuhou',
     'zongqi',
     'wenchen',
     'wujiang',
@@ -70,6 +71,8 @@ function categoryLabel(key) {
     switch (key) {
         case 'junji':
             return '君王';
+        case 'zhuhou':
+            return '诸侯';
         case 'zongqi':
             return '宗戚';
         case 'wenchen':

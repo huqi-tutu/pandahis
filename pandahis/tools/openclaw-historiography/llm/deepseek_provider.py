@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import gzip
 import json
+import os
 import urllib.error
 import urllib.request
 import uuid
@@ -42,6 +43,7 @@ def run_deepseek_turn(
     artifact_paths: Optional[Dict[str, Path]] = None,
     max_attempts: int = 3,
     temperature: Optional[float] = None,
+    response_format: Optional[Dict[str, str]] = None,
 ) -> Dict[str, Any]:
     settings = deepseek_settings()
     api_key = str(settings["api_key"])
@@ -49,11 +51,16 @@ def run_deepseek_turn(
         raise RuntimeError("DeepSeek provider 需要设置环境变量 DEEPSEEK_API_KEY")
 
     sid = session_id or f"ds-{uuid.uuid4().hex[:12]}"
-    payload = {
+    payload: Dict[str, Any] = {
         "model": settings["model"],
         "messages": [{"role": "user", "content": message}],
         "temperature": settings["temperature"] if temperature is None else temperature,
     }
+    max_tokens = int(os.environ.get("DEEPSEEK_MAX_TOKENS", "8192"))
+    if max_tokens > 0:
+        payload["max_tokens"] = max_tokens
+    if response_format is not None:
+        payload["response_format"] = response_format
     last_err: Optional[Exception] = None
     data: Optional[dict] = None
     for attempt in range(1, max_attempts + 1):

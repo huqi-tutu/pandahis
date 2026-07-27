@@ -227,7 +227,7 @@ def main() -> int:
     added, updated = merge_into_main_index(entries)
     print(f"本地索引合并: 新增 {added}，更新 {updated}（共 {len(entries)} 条夏朝补全）")
 
-    rows = build_box_rows(entries)
+    rows, skipped = build_box_rows(entries)
     details = load_xia_details()
     print(f"待同步详情: {len(details)} 条（索引 {len(entries)} 条）")
 

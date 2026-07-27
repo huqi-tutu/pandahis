@@ -5,27 +5,45 @@
   "volume_type_guess": "世家",
   "protagonists": [
     {
-      "name": "韩厥",
-      "category": "文臣",
-      "standard_name_note": "韩世家开篇君主，但非帝王，归士臣",
-      "rationale": "《韩世家》为《史记》三十世家之一，记载韩国诸侯世系。韩厥为韩国始祖，是叙事主轴起点，但韩国君主在周代诸侯体系中属诸侯而非帝王，故归为士臣。"
+      "name": "韩景侯",
+      "category": "君王",
+      "rationale": "《韩世家》叙事主轴：韩景侯（君王）"
     },
     {
       "name": "韩昭侯",
       "category": "君王",
-      "standard_name_note": "韩国著名君主，非帝王",
-      "rationale": "韩昭侯是韩国中兴之主，任用申不害变法，为韩世家重要叙事人物，属诸侯国君，归士臣。"
+      "rationale": "《韩世家》叙事主轴：韩昭侯（君王）"
+    },
+    {
+      "name": "韩宣惠王",
+      "category": "君王",
+      "rationale": "《韩世家》叙事主轴：韩宣惠王（君王）"
+    },
+    {
+      "name": "韩襄王",
+      "category": "君王",
+      "rationale": "《韩世家》叙事主轴：韩襄王（君王）"
+    },
+    {
+      "name": "韩釐王",
+      "category": "君王",
+      "rationale": "《韩世家》叙事主轴：韩釐王（君王）"
+    },
+    {
+      "name": "韩桓惠王",
+      "category": "君王",
+      "rationale": "《韩世家》叙事主轴：韩桓惠王（君王）"
     },
     {
       "name": "韩王安",
       "category": "君王",
-      "standard_name_note": "韩国末代君主，非帝王",
-      "rationale": "韩王安为韩国最后一位国君，被秦所灭，是韩世家叙事终点，归士臣。"
+      "rationale": "《韩世家》叙事主轴：韩王安（君王）"
     }
   ],
   "excluded_kinds_hint": [
     "太史公曰",
     "世系链",
-    "卷首标题"
+    "卷首标题",
+    "其他"
   ]
 }

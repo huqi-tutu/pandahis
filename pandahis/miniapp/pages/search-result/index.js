@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const api_1 = require("../../native-utils/api");
 const format_1 = require("../../native-utils/format");
+const search_history_storage_1 = require("../../native-utils/search-history-storage");
 const router_1 = require("../../native-utils/router");
 const nav_metrics_1 = require("../../native-utils/nav-metrics");
 const FILTER_CATS = ['全部', '君王', '士臣', '典制', '事略', '民录'];
@@ -41,8 +42,10 @@ Page({
         }
         const keyword = decodeURIComponent(query.q || query.keyword || '');
         this.setData({ keyword });
-        if (keyword)
+        if (keyword) {
+            (0, search_history_storage_1.addLocalSearchHistory)(keyword);
             void this.doSearch(keyword);
+        }
     },
     mapResultItems(items) {
         return (items || []).map((it) => {

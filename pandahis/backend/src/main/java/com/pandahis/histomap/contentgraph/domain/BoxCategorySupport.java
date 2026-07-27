@@ -9,29 +9,31 @@ import java.util.Set;
  * 产品层史略分类与泳道配置。
  * <p>
  * 标注层 category_key 与泳道可不完全一致（见 {@link #swimLaneKey}）；
- * 朝代详情页固定 10 泳道，顺序与展示名以本类为准。
+ * 朝代详情页固定 11 泳道，顺序与展示名以本类为准。
  */
 public final class BoxCategorySupport {
 
   public record CategoryDef(String key, String label, String borderColor, String layout) {}
 
-  /** 朝代详情页固定 10 泳道（顺序不可变） */
+  /** 朝代详情页固定 11 泳道（顺序不可变；边框色 = 绢帛六色按序循环 c1→c6） */
   private static final List<CategoryDef> SWIM_LANES = List.of(
-      new CategoryDef("junji", "君王", "#F1A805", "continuous"),
-      new CategoryDef("zongqi", "宗戚", "#D4A5A5", "continuous"),
-      new CategoryDef("wenchen", "文臣", "#E0C088", "shichen"),
-      new CategoryDef("wujiang", "武将", "#C4A882", "shichen"),
-      new CategoryDef("shilue", "事略", "#B3D9E0", "continuous"),
-      new CategoryDef("dianzhi", "典制", "#92ADA4", "continuous"),
-      new CategoryDef("lunzhu", "论著", "#A894B8", "isolated"),
-      new CategoryDef("huanguan", "宦官", "#B8A9C9", "isolated"),
-      new CategoryDef("shuzhong", "庶众", "#EDD5C0", "isolated"),
-      new CategoryDef("fanzhu", "蕃祚", "#92ADA4", "continuous")
+      new CategoryDef("junji", "君王", "#A2734F", "continuous"),
+      new CategoryDef("zhuhou", "诸侯", "#63899C", "continuous"),
+      new CategoryDef("zongqi", "宗戚", "#B99D5B", "continuous"),
+      new CategoryDef("wenchen", "文臣", "#9A798F", "shichen"),
+      new CategoryDef("wujiang", "武将", "#7D8A6A", "shichen"),
+      new CategoryDef("shilue", "事略", "#A46A65", "continuous"),
+      new CategoryDef("dianzhi", "典制", "#A2734F", "continuous"),
+      new CategoryDef("lunzhu", "论著", "#63899C", "isolated"),
+      new CategoryDef("huanguan", "宦官", "#B99D5B", "isolated"),
+      new CategoryDef("shuzhong", "庶众", "#9A798F", "isolated"),
+      new CategoryDef("fanzhu", "蕃祚", "#7D8A6A", "continuous")
   );
 
   /** historical_box.category_key → 泳道 key */
   private static final Map<String, String> SWIM_LANE_BY_BOX_CATEGORY = Map.ofEntries(
       Map.entry("junji", "junji"),
+      Map.entry("zhuhou", "zhuhou"),
       Map.entry("zongqi", "zongqi"),
       Map.entry("wenchen", "wenchen"),
       Map.entry("wujiang", "wujiang"),
@@ -48,6 +50,7 @@ public final class BoxCategorySupport {
   /** 人物六类 + 历史别名；关系 Tab 仅对这些类型开放 */
   private static final Set<String> PERSON_CATEGORY_KEYS = Set.of(
       "junji",
+      "zhuhou",
       "zongqi",
       "wenchen",
       "wujiang",
@@ -59,6 +62,7 @@ public final class BoxCategorySupport {
 
   private static final Map<String, String> DISPLAY_NAMES = Map.ofEntries(
       Map.entry("junji", "君王"),
+      Map.entry("zhuhou", "诸侯"),
       Map.entry("zongqi", "宗戚"),
       Map.entry("wenchen", "文臣"),
       Map.entry("wujiang", "武将"),
@@ -78,7 +82,7 @@ public final class BoxCategorySupport {
     return SWIM_LANES;
   }
 
-  /** 将库表 category_key 映射到 10 泳道之一；未知则丢弃 */
+  /** 将库表 category_key 映射到 11 泳道之一；未知则丢弃 */
   public static Optional<String> swimLaneKey(String boxCategoryKey) {
     if (boxCategoryKey == null || boxCategoryKey.isBlank()) {
       return Optional.empty();
@@ -94,7 +98,7 @@ public final class BoxCategorySupport {
     return DISPLAY_NAMES.getOrDefault(key, key);
   }
 
-  /** 是否为人物类史略（君王/宗戚/文臣/武将/宦官/庶众） */
+  /** 是否为人物类史略（君王/诸侯/宗戚/文臣/武将/宦官/庶众） */
   public static boolean isPersonCategory(String boxCategoryKey) {
     if (boxCategoryKey == null || boxCategoryKey.isBlank()) {
       return false;

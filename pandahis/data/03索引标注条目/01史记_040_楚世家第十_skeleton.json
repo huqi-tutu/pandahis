@@ -6,55 +6,39 @@
   "segment_attribution": [
     {
       "paragraph": 1,
-      "owners": [
-        {
-          "name": "楚武王",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 2,
-      "owners": [
-        {
-          "name": "楚武王",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 3,
-      "owners": [
-        {
-          "name": "楚武王",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 4,
       "owners": [
         {
-          "name": "楚武王",
-          "category": "君王"
+          "name": "楚熊绎",
+          "category": "诸侯"
         }
       ]
     },
     {
       "paragraph": 5,
-      "owners": [
-        {
-          "name": "楚武王",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 6,
       "owners": [
         {
-          "name": "楚武王",
-          "category": "君王"
+          "name": "楚熊渠",
+          "category": "诸侯"
         }
       ]
     },
@@ -62,71 +46,47 @@
       "paragraph": 7,
       "owners": [
         {
-          "name": "楚武王",
-          "category": "君王"
+          "name": "楚熊渠",
+          "category": "诸侯"
         }
       ]
     },
     {
       "paragraph": 8,
-      "owners": [
-        {
-          "name": "楚武王",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 9,
-      "owners": [
-        {
-          "name": "楚武王",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 10,
-      "owners": [
-        {
-          "name": "楚武王",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 11,
-      "owners": [
-        {
-          "name": "楚武王",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 12,
-      "owners": [
-        {
-          "name": "楚武王",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 13,
-      "owners": [
-        {
-          "name": "楚武王",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 14,
       "owners": [
         {
           "name": "楚武王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -135,7 +95,7 @@
       "owners": [
         {
           "name": "楚武王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -144,7 +104,7 @@
       "owners": [
         {
           "name": "楚武王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -153,7 +113,7 @@
       "owners": [
         {
           "name": "楚武王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -162,7 +122,7 @@
       "owners": [
         {
           "name": "楚武王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -170,8 +130,8 @@
       "paragraph": 19,
       "owners": [
         {
-          "name": "楚武王",
-          "category": "君王"
+          "name": "楚文王",
+          "category": "诸侯"
         }
       ]
     },
@@ -180,7 +140,7 @@
       "owners": [
         {
           "name": "楚成王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -189,7 +149,7 @@
       "owners": [
         {
           "name": "楚成王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -198,7 +158,7 @@
       "owners": [
         {
           "name": "楚成王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -207,7 +167,7 @@
       "owners": [
         {
           "name": "楚成王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -216,7 +176,7 @@
       "owners": [
         {
           "name": "楚成王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -225,7 +185,7 @@
       "owners": [
         {
           "name": "楚成王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -234,7 +194,7 @@
       "owners": [
         {
           "name": "楚成王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -243,7 +203,7 @@
       "owners": [
         {
           "name": "楚成王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -252,7 +212,7 @@
       "owners": [
         {
           "name": "楚成王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -261,25 +221,21 @@
       "owners": [
         {
           "name": "楚成王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
     {
       "paragraph": 30,
-      "owners": [
-        {
-          "name": "楚庄王",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 31,
       "owners": [
         {
           "name": "楚庄王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -288,7 +244,7 @@
       "owners": [
         {
           "name": "楚庄王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -297,7 +253,7 @@
       "owners": [
         {
           "name": "楚庄王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -306,7 +262,7 @@
       "owners": [
         {
           "name": "楚庄王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -315,7 +271,7 @@
       "owners": [
         {
           "name": "楚庄王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -324,7 +280,7 @@
       "owners": [
         {
           "name": "楚庄王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -333,7 +289,7 @@
       "owners": [
         {
           "name": "楚庄王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -342,7 +298,7 @@
       "owners": [
         {
           "name": "楚庄王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -351,7 +307,7 @@
       "owners": [
         {
           "name": "楚庄王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -360,7 +316,7 @@
       "owners": [
         {
           "name": "楚庄王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -369,7 +325,7 @@
       "owners": [
         {
           "name": "楚庄王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -378,7 +334,7 @@
       "owners": [
         {
           "name": "楚庄王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -386,26 +342,22 @@
       "paragraph": 43,
       "owners": [
         {
-          "name": "楚庄王",
-          "category": "君王"
+          "name": "楚共王",
+          "category": "诸侯"
         }
       ]
     },
     {
       "paragraph": 44,
-      "owners": [
-        {
-          "name": "楚庄王",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 45,
       "owners": [
         {
-          "name": "楚庄王",
-          "category": "君王"
+          "name": "楚灵王",
+          "category": "诸侯"
         }
       ]
     },
@@ -413,8 +365,8 @@
       "paragraph": 46,
       "owners": [
         {
-          "name": "楚庄王",
-          "category": "君王"
+          "name": "楚灵王",
+          "category": "诸侯"
         }
       ]
     },
@@ -422,8 +374,8 @@
       "paragraph": 47,
       "owners": [
         {
-          "name": "楚庄王",
-          "category": "君王"
+          "name": "楚灵王",
+          "category": "诸侯"
         }
       ]
     },
@@ -431,8 +383,8 @@
       "paragraph": 48,
       "owners": [
         {
-          "name": "楚庄王",
-          "category": "君王"
+          "name": "楚灵王",
+          "category": "诸侯"
         }
       ]
     },
@@ -440,8 +392,8 @@
       "paragraph": 49,
       "owners": [
         {
-          "name": "楚庄王",
-          "category": "君王"
+          "name": "楚灵王",
+          "category": "诸侯"
         }
       ]
     },
@@ -449,8 +401,8 @@
       "paragraph": 50,
       "owners": [
         {
-          "name": "楚庄王",
-          "category": "君王"
+          "name": "楚灵王",
+          "category": "诸侯"
         }
       ]
     },
@@ -458,8 +410,8 @@
       "paragraph": 51,
       "owners": [
         {
-          "name": "楚庄王",
-          "category": "君王"
+          "name": "楚灵王",
+          "category": "诸侯"
         }
       ]
     },
@@ -467,8 +419,8 @@
       "paragraph": 52,
       "owners": [
         {
-          "name": "楚庄王",
-          "category": "君王"
+          "name": "楚灵王",
+          "category": "诸侯"
         }
       ]
     },
@@ -476,8 +428,8 @@
       "paragraph": 53,
       "owners": [
         {
-          "name": "楚庄王",
-          "category": "君王"
+          "name": "楚灵王",
+          "category": "诸侯"
         }
       ]
     },
@@ -485,8 +437,8 @@
       "paragraph": 54,
       "owners": [
         {
-          "name": "楚庄王",
-          "category": "君王"
+          "name": "楚灵王",
+          "category": "诸侯"
         }
       ]
     },
@@ -494,8 +446,8 @@
       "paragraph": 55,
       "owners": [
         {
-          "name": "楚庄王",
-          "category": "君王"
+          "name": "楚平王",
+          "category": "诸侯"
         }
       ]
     },
@@ -503,8 +455,8 @@
       "paragraph": 56,
       "owners": [
         {
-          "name": "楚昭王",
-          "category": "君王"
+          "name": "楚平王",
+          "category": "诸侯"
         }
       ]
     },
@@ -512,8 +464,8 @@
       "paragraph": 57,
       "owners": [
         {
-          "name": "楚昭王",
-          "category": "君王"
+          "name": "楚平王",
+          "category": "诸侯"
         }
       ]
     },
@@ -521,8 +473,8 @@
       "paragraph": 58,
       "owners": [
         {
-          "name": "楚昭王",
-          "category": "君王"
+          "name": "楚平王",
+          "category": "诸侯"
         }
       ]
     },
@@ -530,8 +482,8 @@
       "paragraph": 59,
       "owners": [
         {
-          "name": "楚昭王",
-          "category": "君王"
+          "name": "楚平王",
+          "category": "诸侯"
         }
       ]
     },
@@ -539,8 +491,8 @@
       "paragraph": 60,
       "owners": [
         {
-          "name": "楚昭王",
-          "category": "君王"
+          "name": "楚平王",
+          "category": "诸侯"
         }
       ]
     },
@@ -548,8 +500,8 @@
       "paragraph": 61,
       "owners": [
         {
-          "name": "楚昭王",
-          "category": "君王"
+          "name": "楚平王",
+          "category": "诸侯"
         }
       ]
     },
@@ -557,8 +509,8 @@
       "paragraph": 62,
       "owners": [
         {
-          "name": "楚昭王",
-          "category": "君王"
+          "name": "楚平王",
+          "category": "诸侯"
         }
       ]
     },
@@ -566,8 +518,8 @@
       "paragraph": 63,
       "owners": [
         {
-          "name": "楚昭王",
-          "category": "君王"
+          "name": "楚平王",
+          "category": "诸侯"
         }
       ]
     },
@@ -575,8 +527,8 @@
       "paragraph": 64,
       "owners": [
         {
-          "name": "楚昭王",
-          "category": "君王"
+          "name": "楚平王",
+          "category": "诸侯"
         }
       ]
     },
@@ -584,8 +536,8 @@
       "paragraph": 65,
       "owners": [
         {
-          "name": "楚昭王",
-          "category": "君王"
+          "name": "楚平王",
+          "category": "诸侯"
         }
       ]
     },
@@ -593,8 +545,8 @@
       "paragraph": 66,
       "owners": [
         {
-          "name": "楚昭王",
-          "category": "君王"
+          "name": "楚平王",
+          "category": "诸侯"
         }
       ]
     },
@@ -602,26 +554,22 @@
       "paragraph": 67,
       "owners": [
         {
-          "name": "楚昭王",
-          "category": "君王"
+          "name": "楚平王",
+          "category": "诸侯"
         }
       ]
     },
     {
       "paragraph": 68,
-      "owners": [
-        {
-          "name": "楚昭王",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 69,
       "owners": [
         {
           "name": "楚昭王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -630,7 +578,7 @@
       "owners": [
         {
           "name": "楚昭王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -639,7 +587,7 @@
       "owners": [
         {
           "name": "楚昭王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -648,7 +596,7 @@
       "owners": [
         {
           "name": "楚昭王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -657,7 +605,7 @@
       "owners": [
         {
           "name": "楚昭王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -666,7 +614,7 @@
       "owners": [
         {
           "name": "楚昭王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -675,7 +623,7 @@
       "owners": [
         {
           "name": "楚昭王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -684,7 +632,7 @@
       "owners": [
         {
           "name": "楚昭王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -693,7 +641,7 @@
       "owners": [
         {
           "name": "楚昭王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -702,7 +650,7 @@
       "owners": [
         {
           "name": "楚昭王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -711,7 +659,7 @@
       "owners": [
         {
           "name": "楚昭王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -720,7 +668,7 @@
       "owners": [
         {
           "name": "楚昭王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -729,7 +677,7 @@
       "owners": [
         {
           "name": "楚昭王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -738,7 +686,7 @@
       "owners": [
         {
           "name": "楚昭王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -746,8 +694,8 @@
       "paragraph": 83,
       "owners": [
         {
-          "name": "楚昭王",
-          "category": "君王"
+          "name": "楚惠王",
+          "category": "诸侯"
         }
       ]
     },
@@ -755,98 +703,62 @@
       "paragraph": 84,
       "owners": [
         {
-          "name": "楚昭王",
-          "category": "君王"
+          "name": "楚惠王",
+          "category": "诸侯"
         }
       ]
     },
     {
       "paragraph": 85,
-      "owners": [
-        {
-          "name": "楚昭王",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 86,
-      "owners": [
-        {
-          "name": "楚昭王",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 87,
-      "owners": [
-        {
-          "name": "楚昭王",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 88,
-      "owners": [
-        {
-          "name": "楚昭王",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 89,
-      "owners": [
-        {
-          "name": "楚昭王",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 90,
-      "owners": [
-        {
-          "name": "楚昭王",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 91,
-      "owners": [
-        {
-          "name": "楚昭王",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 92,
-      "owners": [
-        {
-          "name": "楚昭王",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 93,
-      "owners": [
-        {
-          "name": "楚昭王",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 94,
       "owners": [
         {
           "name": "楚怀王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -855,7 +767,7 @@
       "owners": [
         {
           "name": "楚怀王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -864,7 +776,7 @@
       "owners": [
         {
           "name": "楚怀王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -873,7 +785,7 @@
       "owners": [
         {
           "name": "楚怀王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -882,7 +794,7 @@
       "owners": [
         {
           "name": "楚怀王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -891,7 +803,7 @@
       "owners": [
         {
           "name": "楚怀王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -900,7 +812,7 @@
       "owners": [
         {
           "name": "楚怀王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -909,7 +821,7 @@
       "owners": [
         {
           "name": "楚怀王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -918,7 +830,7 @@
       "owners": [
         {
           "name": "楚怀王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -927,7 +839,7 @@
       "owners": [
         {
           "name": "楚怀王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -936,7 +848,7 @@
       "owners": [
         {
           "name": "楚怀王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -945,7 +857,7 @@
       "owners": [
         {
           "name": "楚怀王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -954,7 +866,7 @@
       "owners": [
         {
           "name": "楚怀王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -963,7 +875,7 @@
       "owners": [
         {
           "name": "楚怀王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -972,7 +884,7 @@
       "owners": [
         {
           "name": "楚怀王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -981,7 +893,7 @@
       "owners": [
         {
           "name": "楚怀王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -990,7 +902,7 @@
       "owners": [
         {
           "name": "楚怀王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -999,7 +911,7 @@
       "owners": [
         {
           "name": "楚怀王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -1008,7 +920,7 @@
       "owners": [
         {
           "name": "楚怀王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -1017,52 +929,36 @@
       "owners": [
         {
           "name": "楚怀王",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
     {
       "paragraph": 114,
-      "owners": [
-        {
-          "name": "楚怀王",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 115,
-      "owners": [
-        {
-          "name": "楚怀王",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 116,
-      "owners": [
-        {
-          "name": "楚怀王",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 117,
-      "owners": [
-        {
-          "name": "楚怀王",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 118,
       "owners": [
         {
-          "name": "楚怀王",
-          "category": "君王"
+          "name": "楚顷襄王",
+          "category": "诸侯"
         }
       ]
     },
@@ -1070,8 +966,8 @@
       "paragraph": 119,
       "owners": [
         {
-          "name": "楚怀王",
-          "category": "君王"
+          "name": "楚顷襄王",
+          "category": "诸侯"
         }
       ]
     },
@@ -1079,8 +975,8 @@
       "paragraph": 120,
       "owners": [
         {
-          "name": "楚怀王",
-          "category": "君王"
+          "name": "楚顷襄王",
+          "category": "诸侯"
         }
       ]
     },
@@ -1088,8 +984,8 @@
       "paragraph": 121,
       "owners": [
         {
-          "name": "楚怀王",
-          "category": "君王"
+          "name": "楚顷襄王",
+          "category": "诸侯"
         }
       ]
     },
@@ -1097,8 +993,8 @@
       "paragraph": 122,
       "owners": [
         {
-          "name": "楚怀王",
-          "category": "君王"
+          "name": "楚顷襄王",
+          "category": "诸侯"
         }
       ]
     },
@@ -1106,8 +1002,8 @@
       "paragraph": 123,
       "owners": [
         {
-          "name": "楚怀王",
-          "category": "君王"
+          "name": "楚顷襄王",
+          "category": "诸侯"
         }
       ]
     },
@@ -1115,91 +1011,59 @@
       "paragraph": 124,
       "owners": [
         {
-          "name": "楚怀王",
-          "category": "君王"
+          "name": "楚顷襄王",
+          "category": "诸侯"
         }
       ]
     },
     {
       "paragraph": 125,
-      "owners": [
-        {
-          "name": "楚怀王",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 126,
-      "owners": [
-        {
-          "name": "楚怀王",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 127,
-      "owners": [
-        {
-          "name": "楚怀王",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 128,
-      "owners": [
-        {
-          "name": "楚怀王",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 129,
       "owners": [
         {
-          "name": "楚怀王",
-          "category": "君王"
+          "name": "楚考烈王",
+          "category": "诸侯"
         }
       ]
     },
     {
       "paragraph": 130,
-      "owners": [
-        {
-          "name": "楚怀王",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 131,
-      "owners": [
-        {
-          "name": "楚怀王",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 132,
-      "owners": [
-        {
-          "name": "楚怀王",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 133,
-      "owners": [
-        {
-          "name": "楚怀王",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 134,
@@ -1210,25 +1074,88 @@
   "entries": [
     {
       "史略ID": "SHIJI_040_01",
-      "史略名称": "楚庄王",
-      "史略简介": "楚庄王",
-      "原文字句": "穆王立，以其太子宫予潘崇，使为太师，掌国事。穆王三年，灭江。四年，灭六、蓼。六、蓼，皋陶之后。八年，伐陈。十二年，卒。子庄王侣立。",
-      "史略分类": "君王",
+      "史略名称": "楚共王",
+      "史略简介": "楚共王",
+      "原文字句": "共王十六年，晋伐郑。郑告急，共王救郑。与晋兵战鄢陵，晋败楚，射中共王目。共王召将军子反。子反嗜酒，从者竖阳穀进酒，醉。王怒，射杀子反，遂罢兵归。",
+      "史略分类": "诸侯",
       "主要史料出处": "《史记·卷40·楚世家》",
       "paragraphs": [
         {
           "volume": "楚世家",
-          "paragraph_from": 30,
-          "paragraph_to": 55
+          "paragraph_from": 43,
+          "paragraph_to": 43
+        }
+      ],
+      "史略开始年": -590,
+      "史略结束年": -560,
+      "优先级": "P0",
+      "优先级判定理由": "楚共王独立叙事块，共1段",
+      "五级细坐标": "史记·卷040·诸侯·01",
+      "六级段落锚点": "[P43-P43]",
+      "原文出处": "楚世家·P43-P43",
+      "_needs_llm": [],
+      "四级帝王坐标": "楚共王",
+      "三级政权坐标": "楚",
+      "二级朝代坐标": "春秋",
+      "一级文明坐标": "华夏",
+      "文明ID": "HX",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "政权ID": "ZQ_HX_CHUNQIU_CHU",
+      "帝王ID": "DW_HX_CHUNQIU_CHU_CHUGONGWANG"
+    },
+    {
+      "史略ID": "SHIJI_040_02",
+      "史略名称": "楚平王",
+      "史略简介": "楚平王",
+      "原文字句": "是时楚国虽已立比为王，畏灵王复来，又不闻灵王死，故观从谓初王比曰：“不杀弃疾，虽得国犹受祸。”王曰：“余不忍。”从曰：“人将忍王。”王不听，乃去。弃疾归。国人每",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷40·楚世家》",
+      "paragraphs": [
+        {
+          "volume": "楚世家",
+          "paragraph_from": 55,
+          "paragraph_to": 67
+        }
+      ],
+      "史略开始年": -528,
+      "史略结束年": -516,
+      "优先级": "P0",
+      "优先级判定理由": "楚平王独立叙事块，共13段",
+      "五级细坐标": "史记·卷040·诸侯·02",
+      "六级段落锚点": "[P55-P67]",
+      "原文出处": "楚世家·P55-P67",
+      "_needs_llm": [],
+      "四级帝王坐标": "楚平王",
+      "三级政权坐标": "楚",
+      "二级朝代坐标": "春秋",
+      "一级文明坐标": "华夏",
+      "文明ID": "HX",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "政权ID": "ZQ_HX_CHUNQIU_CHU",
+      "帝王ID": "DW_HX_CHUNQIU_CHU_CHUPINGWANG"
+    },
+    {
+      "史略ID": "SHIJI_040_03",
+      "史略名称": "楚庄王",
+      "史略简介": "楚庄王",
+      "原文字句": "庄王即位三年，不出号令，日夜为乐，令国中曰：“有敢谏者死无赦！”伍举入谏。庄王左抱郑姬，右抱越女，坐锺鼓之间。伍举曰：“愿有进。”隐曰：“有鸟在於阜，三年不蜚不",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷40·楚世家》",
+      "paragraphs": [
+        {
+          "volume": "楚世家",
+          "paragraph_from": 31,
+          "paragraph_to": 42
         }
       ],
       "史略开始年": -613,
       "史略结束年": -591,
       "优先级": "P0",
-      "优先级判定理由": "楚武王开拓，共19段",
-      "五级细坐标": "史记·卷040·君王·01",
-      "六级段落锚点": "[P30-P55]",
-      "原文出处": "楚世家·P30-P55",
+      "优先级判定理由": "楚庄王独立叙事块，共12段",
+      "五级细坐标": "史记·卷040·诸侯·03",
+      "六级段落锚点": "[P31-P42]",
+      "原文出处": "楚世家·P31-P42",
+      "_needs_llm": [],
       "四级帝王坐标": "楚庄王",
       "三级政权坐标": "楚",
       "二级朝代坐标": "春秋",
@@ -1236,35 +1163,30 @@
       "文明ID": "HX",
       "朝代ID": "CD_HX_CHUNQIU",
       "政权ID": "ZQ_HX_CHUNQIU_CHU",
-      "帝王ID": "DW_HX_CHUNQIU_CHU_CHUZHUANGWANG",
-      "_auto_filled": {
-        "_年修正": "君王年与帝王表一致 -613～-591",
-        "_年兜底级别": "君王表",
-        "_年LLM依据": "楚庄王即位前613，崩前591",
-        "_坐标主轴说明": "本世家以楚庄王传世袭国为主线，主轴即楚庄王本身"
-      }
+      "帝王ID": "DW_HX_CHUNQIU_CHU_CHUZHUANGWANG"
     },
     {
-      "史略ID": "SHIJI_040_02",
+      "史略ID": "SHIJI_040_04",
       "史略名称": "楚怀王",
       "史略简介": "楚怀王",
       "原文字句": "十一年，威王卒，子怀王熊槐立。魏闻楚丧，伐楚，取我陉山。",
-      "史略分类": "君王",
+      "史略分类": "诸侯",
       "主要史料出处": "《史记·卷40·楚世家》",
       "paragraphs": [
         {
           "volume": "楚世家",
           "paragraph_from": 94,
-          "paragraph_to": 133
+          "paragraph_to": 113
         }
       ],
       "史略开始年": -328,
       "史略结束年": -299,
       "优先级": "P0",
-      "优先级判定理由": "楚成王，共10段",
-      "五级细坐标": "史记·卷040·君王·02",
-      "六级段落锚点": "[P94-P133]",
-      "原文出处": "楚世家·P94-P133",
+      "优先级判定理由": "楚怀王独立叙事块，共20段",
+      "五级细坐标": "史记·卷040·诸侯·04",
+      "六级段落锚点": "[P94-P113]",
+      "原文出处": "楚世家·P94-P113",
+      "_needs_llm": [],
       "四级帝王坐标": "楚怀王",
       "三级政权坐标": "楚",
       "二级朝代坐标": "战国",
@@ -1272,20 +1194,45 @@
       "文明ID": "HX",
       "朝代ID": "CD_HX_ZHANGUO",
       "政权ID": "ZQ_HX_ZHANGUO_CHU",
-      "帝王ID": "DW_HX_ZHANGUO_CHU_CHUHUAIWANG",
-      "_auto_filled": {
-        "_年修正": "君王年与帝王表一致 -328～-299",
-        "_年兜底级别": "君王表",
-        "_年LLM依据": "楚怀王即位前328，崩前299",
-        "_坐标主轴说明": "本世家以楚怀王传世袭国为主线，主轴即楚怀王本身"
-      }
+      "帝王ID": "DW_HX_ZHANGUO_CHU_CHUHUAIWANG"
     },
     {
-      "史略ID": "SHIJI_040_03",
+      "史略ID": "SHIJI_040_05",
+      "史略名称": "楚惠王",
+      "史略简介": "楚惠王",
+      "原文字句": "惠王二年，子西召故平王太子建之子胜於吴，以为巢大夫，号曰白公。白公好兵而下士，欲报仇。六年，白公请兵令尹子西伐郑。初，白公父建亡在郑，郑杀之，白公亡走吴，子西复",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷40·楚世家》",
+      "paragraphs": [
+        {
+          "volume": "楚世家",
+          "paragraph_from": 83,
+          "paragraph_to": 84
+        }
+      ],
+      "史略开始年": -488,
+      "史略结束年": -432,
+      "优先级": "P0",
+      "优先级判定理由": "楚惠王独立叙事块，共2段",
+      "五级细坐标": "史记·卷040·诸侯·05",
+      "六级段落锚点": "[P83-P84]",
+      "原文出处": "楚世家·P83-P84",
+      "_needs_llm": [],
+      "四级帝王坐标": "楚惠王",
+      "三级政权坐标": "楚",
+      "二级朝代坐标": "春秋",
+      "一级文明坐标": "华夏",
+      "文明ID": "HX",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "政权ID": "ZQ_HX_CHUNQIU_CHU",
+      "帝王ID": "DW_HX_CHUNQIU_CHU_CHUHUIWANG"
+    },
+    {
+      "史略ID": "SHIJI_040_06",
       "史略名称": "楚成王",
       "史略简介": "楚成王",
       "原文字句": "十二年，伐邓，灭之。十三年，卒，子熊囏立，是为庄敖。庄敖五年，欲杀其弟熊惲，惲奔随，与随袭弑庄敖代立，是为成王。",
-      "史略分类": "君王",
+      "史略分类": "诸侯",
       "主要史料出处": "《史记·卷40·楚世家》",
       "paragraphs": [
         {
@@ -1297,10 +1244,11 @@
       "史略开始年": -671,
       "史略结束年": -626,
       "优先级": "P0",
-      "优先级判定理由": "楚庄王称霸，共26段",
-      "五级细坐标": "史记·卷040·君王·03",
+      "优先级判定理由": "楚成王独立叙事块，共10段",
+      "五级细坐标": "史记·卷040·诸侯·06",
       "六级段落锚点": "[P20-P29]",
       "原文出处": "楚世家·P20-P29",
+      "_needs_llm": [],
       "四级帝王坐标": "楚成王",
       "三级政权坐标": "楚",
       "二级朝代坐标": "春秋",
@@ -1308,35 +1256,61 @@
       "文明ID": "HX",
       "朝代ID": "CD_HX_CHUNQIU",
       "政权ID": "ZQ_HX_CHUNQIU_CHU",
-      "帝王ID": "DW_HX_CHUNQIU_CHU_CHUCHENGWANG",
-      "_auto_filled": {
-        "_年修正": "君王年与帝王表一致 -671～-626",
-        "_年兜底级别": "君王表",
-        "_年LLM依据": "楚成王即位前671，崩前626",
-        "_坐标主轴说明": "本世家以楚成王传世袭国为主线，主轴即楚成王本身"
-      }
+      "帝王ID": "DW_HX_CHUNQIU_CHU_CHUCHENGWANG"
     },
     {
-      "史略ID": "SHIJI_040_04",
-      "史略名称": "楚昭王",
-      "史略简介": "楚昭王",
-      "原文字句": "初王及子晳遂自杀。丙辰，弃疾即位为王，改名熊居，是为平王。",
-      "史略分类": "君王",
+      "史略ID": "SHIJI_040_07",
+      "史略名称": "楚文王",
+      "史略简介": "楚文王",
+      "原文字句": "文王二年，伐申过邓，邓人曰“楚王易取”，邓侯不许也。六年，伐蔡，虏蔡哀侯以归，已而释之。楚彊，陵江汉间小国，小国皆畏之。十一年，齐桓公始霸，楚亦始大。",
+      "史略分类": "诸侯",
       "主要史料出处": "《史记·卷40·楚世家》",
       "paragraphs": [
         {
           "volume": "楚世家",
-          "paragraph_from": 56,
-          "paragraph_to": 93
+          "paragraph_from": 19,
+          "paragraph_to": 19
+        }
+      ],
+      "史略开始年": -689,
+      "史略结束年": -677,
+      "优先级": "P0",
+      "优先级判定理由": "楚文王独立叙事块，共1段",
+      "五级细坐标": "史记·卷040·诸侯·07",
+      "六级段落锚点": "[P19-P19]",
+      "原文出处": "楚世家·P19-P19",
+      "_needs_llm": [],
+      "四级帝王坐标": "楚文王",
+      "三级政权坐标": "楚",
+      "二级朝代坐标": "春秋",
+      "一级文明坐标": "华夏",
+      "文明ID": "HX",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "政权ID": "ZQ_HX_CHUNQIU_CHU",
+      "帝王ID": "DW_HX_CHUNQIU_CHU_CHUWENWANG"
+    },
+    {
+      "史略ID": "SHIJI_040_08",
+      "史略名称": "楚昭王",
+      "史略简介": "楚昭王",
+      "原文字句": "欲立令尹子西。子西，平王之庶弟也，有义。子西曰：“国有常法，更立则乱，言之则致诛。”乃立太子珍，是为昭王。",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷40·楚世家》",
+      "paragraphs": [
+        {
+          "volume": "楚世家",
+          "paragraph_from": 69,
+          "paragraph_to": 82
         }
       ],
       "史略开始年": -515,
       "史略结束年": -489,
       "优先级": "P0",
-      "优先级判定理由": "平昭诸王，共38段",
-      "五级细坐标": "史记·卷040·君王·04",
-      "六级段落锚点": "[P56-P93]",
-      "原文出处": "楚世家·P56-P93",
+      "优先级判定理由": "楚昭王独立叙事块，共14段",
+      "五级细坐标": "史记·卷040·诸侯·08",
+      "六级段落锚点": "[P69-P82]",
+      "原文出处": "楚世家·P69-P82",
+      "_needs_llm": [],
       "四级帝王坐标": "楚昭王",
       "三级政权坐标": "楚",
       "二级朝代坐标": "春秋",
@@ -1344,35 +1318,30 @@
       "文明ID": "HX",
       "朝代ID": "CD_HX_CHUNQIU",
       "政权ID": "ZQ_HX_CHUNQIU_CHU",
-      "帝王ID": "DW_HX_CHUNQIU_CHU_CHUZHAOWANG",
-      "_auto_filled": {
-        "_年修正": "君王年与帝王表一致 -515～-489",
-        "_年兜底级别": "君王表",
-        "_年LLM依据": "楚昭王即位前515，崩前489",
-        "_坐标主轴说明": "本世家以楚昭王传世袭国为主线，主轴即楚昭王本身"
-      }
+      "帝王ID": "DW_HX_CHUNQIU_CHU_CHUZHAOWANG"
     },
     {
-      "史略ID": "SHIJI_040_05",
+      "史略ID": "SHIJI_040_09",
       "史略名称": "楚武王",
       "史略简介": "楚武王",
-      "原文字句": "楚之先祖出自帝颛顼高阳。高阳者，黄帝之孙，昌意之子也。高阳生称，称生卷章，卷章生重黎。重黎为帝喾高辛居火正，甚有功，能光融天下，帝喾命曰祝融。共工氏作乱，帝喾使",
-      "史略分类": "君王",
+      "原文字句": "二十七年，若敖卒，子熊坎立，是为霄敖。霄敖六年，卒，子熊眴立，是为蚡冒。蚡冒十三年，晋始乱，以曲沃之故。蚡冒十七年，卒。蚡冒弟熊通弑蚡冒子而代立，是为楚武王。",
+      "史略分类": "诸侯",
       "主要史料出处": "《史记·卷40·楚世家》",
       "paragraphs": [
         {
           "volume": "楚世家",
-          "paragraph_from": 1,
-          "paragraph_to": 19
+          "paragraph_from": 14,
+          "paragraph_to": 18
         }
       ],
       "史略开始年": -740,
       "史略结束年": -690,
       "优先级": "P0",
-      "优先级判定理由": "楚怀王，共40段",
-      "五级细坐标": "史记·卷040·君王·05",
-      "六级段落锚点": "[P1-P19]",
-      "原文出处": "楚世家·P1-P19",
+      "优先级判定理由": "楚武王独立叙事块，共5段",
+      "五级细坐标": "史记·卷040·诸侯·09",
+      "六级段落锚点": "[P14-P18]",
+      "原文出处": "楚世家·P14-P18",
+      "_needs_llm": [],
       "四级帝王坐标": "楚武王",
       "三级政权坐标": "楚",
       "二级朝代坐标": "春秋",
@@ -1380,13 +1349,238 @@
       "文明ID": "HX",
       "朝代ID": "CD_HX_CHUNQIU",
       "政权ID": "ZQ_HX_CHUNQIU_CHU",
-      "帝王ID": "DW_HX_CHUNQIU_CHU_CHUWUWANG",
-      "_auto_filled": {
-        "_年修正": "君王年与帝王表一致 -740～-690",
-        "_年兜底级别": "君王表",
-        "_年LLM依据": "楚武王即位前740，崩前690",
-        "_坐标主轴说明": "本世家以楚武王传世袭国为主线，主轴即楚武王本身"
-      }
+      "帝王ID": "DW_HX_CHUNQIU_CHU_CHUWUWANG"
+    },
+    {
+      "史略ID": "SHIJI_040_10",
+      "史略名称": "楚灵王",
+      "史略简介": "楚灵王",
+      "原文字句": "康王宠弟公子围、子比、子晳、弃疾。郏敖三年，以其季父康王弟公子围为令尹，主兵事。四年，围使郑，道闻王疾而还。十二月己酉，围入问王疾，绞而弑之，遂杀其子莫及平夏。",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷40·楚世家》",
+      "paragraphs": [
+        {
+          "volume": "楚世家",
+          "paragraph_from": 45,
+          "paragraph_to": 54
+        }
+      ],
+      "史略开始年": -540,
+      "史略结束年": -529,
+      "优先级": "P0",
+      "优先级判定理由": "楚灵王独立叙事块，共10段",
+      "五级细坐标": "史记·卷040·诸侯·10",
+      "六级段落锚点": "[P45-P54]",
+      "原文出处": "楚世家·P45-P54",
+      "_needs_llm": [],
+      "四级帝王坐标": "楚灵王",
+      "三级政权坐标": "楚",
+      "二级朝代坐标": "春秋",
+      "一级文明坐标": "华夏",
+      "文明ID": "HX",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "政权ID": "ZQ_HX_CHUNQIU_CHU",
+      "帝王ID": "DW_HX_CHUNQIU_CHU_CHULINGWANG"
+    },
+    {
+      "史略ID": "SHIJI_040_11",
+      "史略名称": "楚熊渠",
+      "史略简介": "楚熊渠",
+      "原文字句": "熊渠生子三人。当周夷王之时，王室微，诸侯或不朝，相伐。熊渠甚得江汉间民和，乃兴兵伐庸、杨粤，至于鄂。熊渠曰：“我蛮夷也，不与中国之号谥。”",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷40·楚世家》",
+      "paragraphs": [
+        {
+          "volume": "楚世家",
+          "paragraph_from": 6,
+          "paragraph_to": 7
+        }
+      ],
+      "史略开始年": -890,
+      "史略结束年": -870,
+      "优先级": "P0",
+      "优先级判定理由": "楚熊渠独立叙事块，共2段",
+      "五级细坐标": "史记·卷040·诸侯·11",
+      "六级段落锚点": "[P6-P7]",
+      "原文出处": "楚世家·P6-P7",
+      "_needs_llm": [],
+      "四级帝王坐标": "楚熊渠",
+      "三级政权坐标": "西周",
+      "二级朝代坐标": "西周",
+      "一级文明坐标": "华夏",
+      "文明ID": "HX",
+      "朝代ID": "CD_HX_XIZHOU",
+      "政权ID": "ZQ_HX_XIZHOU_XIZHOU",
+      "帝王ID": "DW_HX_XIZHOU_XIZHOU_CHUXIONGQU"
+    },
+    {
+      "史略ID": "SHIJI_040_12",
+      "史略名称": "楚熊绎",
+      "史略简介": "楚熊绎",
+      "原文字句": "熊绎当周成王之时，举文、武勤劳之后嗣，而封熊绎於楚蛮，封以子男之田，姓羋氏，居丹阳。楚子熊绎与鲁公伯禽、卫康叔子牟、晋侯燮、齐太公子吕伋俱事成王。",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷40·楚世家》",
+      "paragraphs": [
+        {
+          "volume": "楚世家",
+          "paragraph_from": 4,
+          "paragraph_to": 4
+        }
+      ],
+      "史略开始年": -1042,
+      "史略结束年": -1000,
+      "优先级": "P0",
+      "优先级判定理由": "楚熊绎独立叙事块，共1段",
+      "五级细坐标": "史记·卷040·诸侯·12",
+      "六级段落锚点": "[P4-P4]",
+      "原文出处": "楚世家·P4-P4",
+      "_needs_llm": [],
+      "四级帝王坐标": "楚熊绎",
+      "三级政权坐标": "西周",
+      "二级朝代坐标": "西周",
+      "一级文明坐标": "华夏",
+      "文明ID": "HX",
+      "朝代ID": "CD_HX_XIZHOU",
+      "政权ID": "ZQ_HX_XIZHOU_XIZHOU",
+      "帝王ID": "DW_HX_XIZHOU_XIZHOU_CHUXIONGYI"
+    },
+    {
+      "史略ID": "SHIJI_040_13",
+      "史略名称": "楚考烈王",
+      "史略简介": "楚考烈王",
+      "原文字句": "二十二年，与诸侯共伐秦，不利而去。楚东徙都寿春，命曰郢。",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷40·楚世家》",
+      "paragraphs": [
+        {
+          "volume": "楚世家",
+          "paragraph_from": 129,
+          "paragraph_to": 129
+        }
+      ],
+      "史略开始年": -262,
+      "史略结束年": -238,
+      "优先级": "P0",
+      "优先级判定理由": "楚考烈王独立叙事块，共1段",
+      "五级细坐标": "史记·卷040·诸侯·13",
+      "六级段落锚点": "[P129-P129]",
+      "原文出处": "楚世家·P129-P129",
+      "_needs_llm": [],
+      "四级帝王坐标": "楚考烈王",
+      "三级政权坐标": "楚",
+      "二级朝代坐标": "战国",
+      "一级文明坐标": "华夏",
+      "文明ID": "HX",
+      "朝代ID": "CD_HX_ZHANGUO",
+      "政权ID": "ZQ_HX_ZHANGUO_CHU",
+      "帝王ID": "DW_HX_ZHANGUO_CHU_CHUKAOLIEWANG"
+    },
+    {
+      "史略ID": "SHIJI_040_14",
+      "史略名称": "楚顷襄王",
+      "史略简介": "楚顷襄王",
+      "原文字句": "十八年，楚人有好以弱弓微缴加归雁之上者，顷襄王闻，召而问之。对曰：“小臣之好射鶀雁，罗鸗，小矢之发也，何足为大王道也。且称楚之大，因大王之贤，所弋非直此也。昔者",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷40·楚世家》",
+      "paragraphs": [
+        {
+          "volume": "楚世家",
+          "paragraph_from": 118,
+          "paragraph_to": 124
+        }
+      ],
+      "史略开始年": -298,
+      "史略结束年": -263,
+      "优先级": "P0",
+      "优先级判定理由": "楚顷襄王独立叙事块，共7段",
+      "五级细坐标": "史记·卷040·诸侯·14",
+      "六级段落锚点": "[P118-P124]",
+      "原文出处": "楚世家·P118-P124",
+      "_needs_llm": [],
+      "四级帝王坐标": "楚顷襄王",
+      "三级政权坐标": "楚",
+      "二级朝代坐标": "战国",
+      "一级文明坐标": "华夏",
+      "文明ID": "HX",
+      "朝代ID": "CD_HX_ZHANGUO",
+      "政权ID": "ZQ_HX_ZHANGUO_CHU",
+      "帝王ID": "DW_HX_ZHANGUO_CHU_CHUQINGXIANGWANG"
+    }
+  ],
+  "volume_subtype": "世家",
+  "volume_subtype_source": "llm_step1a",
+  "protagonist_count": 14,
+  "protagonist_count_source": "llm_step1a",
+  "protagonists_manifest": [
+    {
+      "name": "楚熊绎",
+      "category": "君王",
+      "rationale": "《楚世家》叙事主轴：楚熊绎（君王）"
+    },
+    {
+      "name": "楚熊渠",
+      "category": "君王",
+      "rationale": "《楚世家》叙事主轴：楚熊渠（君王）"
+    },
+    {
+      "name": "楚武王",
+      "category": "君王",
+      "rationale": "《楚世家》叙事主轴：楚武王（君王）"
+    },
+    {
+      "name": "楚文王",
+      "category": "君王",
+      "rationale": "《楚世家》叙事主轴：楚文王（君王）"
+    },
+    {
+      "name": "楚成王",
+      "category": "君王",
+      "rationale": "《楚世家》叙事主轴：楚成王（君王）"
+    },
+    {
+      "name": "楚庄王",
+      "category": "君王",
+      "rationale": "《楚世家》叙事主轴：楚庄王（君王）"
+    },
+    {
+      "name": "楚共王",
+      "category": "君王",
+      "rationale": "《楚世家》叙事主轴：楚共王（君王）"
+    },
+    {
+      "name": "楚灵王",
+      "category": "君王",
+      "rationale": "《楚世家》叙事主轴：楚灵王（君王）"
+    },
+    {
+      "name": "楚平王",
+      "category": "君王",
+      "rationale": "《楚世家》叙事主轴：楚平王（君王）"
+    },
+    {
+      "name": "楚昭王",
+      "category": "君王",
+      "rationale": "《楚世家》叙事主轴：楚昭王（君王）"
+    },
+    {
+      "name": "楚惠王",
+      "category": "君王",
+      "rationale": "《楚世家》叙事主轴：楚惠王（君王）"
+    },
+    {
+      "name": "楚怀王",
+      "category": "君王",
+      "rationale": "《楚世家》叙事主轴：楚怀王（君王）"
+    },
+    {
+      "name": "楚顷襄王",
+      "category": "君王",
+      "rationale": "《楚世家》叙事主轴：楚顷襄王（君王）"
+    },
+    {
+      "name": "楚考烈王",
+      "category": "君王",
+      "rationale": "《楚世家》叙事主轴：楚考烈王（君王）"
     }
   ]
 }

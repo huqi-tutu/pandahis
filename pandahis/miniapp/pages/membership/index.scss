@@ -20,6 +20,8 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16rpx;
+  /* 「最划算」标签 translateY(-50%) 会伸出卡顶，需预留不被固定导航盖住 */
+  margin-top: 24rpx;
   margin-bottom: 40rpx;
 }
 

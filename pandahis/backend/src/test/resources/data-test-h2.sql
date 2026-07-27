@@ -21,7 +21,7 @@ INSERT INTO historical_box (
   peak_year, peak_reason, peak_type, person_tag, entry_source, status, detail_md, original_ref_json
 )
 VALUES
-  ('GLBL_01079', 'huaxia_song_shenzong', 'regime_song_hx', 'dyn_song_hx', 'HX', '乌台诗案', 'shilue', '文字狱', 1079, 1079, 'P0', '测试优先级', 0, 1079, '乌台诗案发生', 'event_climax', NULL, 'extract', 1, '苏轼文字狱。', '{}'),
+  ('GLBL_01079', 'huaxia_song_shenzong', 'regime_song_hx', 'dyn_song_hx', 'HX', '乌台诗案', 'shilue', '文字狱', 1079, 1079, 'P0', '测试优先级', 0, 1079, '乌台诗案发生', 'event_climax', NULL, 'extract', 1, '苏轼文字狱。', '{"primarySource":"宋史·苏轼传","originalText":"轼字子瞻，眉州眉山人。"}'),
   ('GLBL_01069', 'huaxia_song_shenzong', 'regime_song_hx', 'dyn_song_hx', 'HX', '熙宁变法', 'dianzhi', '变法', 1069, 1076, 'P0', '测试优先级', 0, 1069, '变法开始', 'reform_start', NULL, 'extract', 1, '变法概述。', '{}');
 
 INSERT INTO box_graph_node (component_id, shilue_id, shilue_name, box_id, node_key, node_type, name, extra_json)

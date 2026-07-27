@@ -75,11 +75,15 @@ VALUES ('王安石变法', 1, 1, 1),
        ('郑和下西洋', 0, 7, 1),
        ('宋神宗', 0, 8, 1),
        ('苏轼', 0, 9, 1),
-       ('贞观之治', 0, 10, 1);
+       ('贞观之治', 0, 10, 1)
+ON DUPLICATE KEY UPDATE
+  is_hot = VALUES(is_hot),
+  sort_order = VALUES(sort_order),
+  status = VALUES(status);
 
 INSERT INTO membership_plan (id, name, price_cent, duration_days, is_default, tag_text, benefits_json, status)
 VALUES
-  ('month','月度',990,30,0,NULL,'["解锁评述","解锁见证","原文对照"]',1),
-  ('quarter','季度',1990,90,0,NULL,'["解锁评述","解锁见证","原文对照"]',1),
-  ('year','年度',4990,365,1,'最划算','["解锁评述","解锁见证","原文对照"]',1)
+  ('month','月度',990,30,0,NULL,'["解锁评述","解锁见证"]',1),
+  ('quarter','季度',1990,90,0,NULL,'["解锁评述","解锁见证"]',1),
+  ('year','年度',4990,365,1,'最划算','["解锁评述","解锁见证"]',1)
 ON DUPLICATE KEY UPDATE name=VALUES(name), price_cent=VALUES(price_cent), duration_days=VALUES(duration_days), is_default=VALUES(is_default), tag_text=VALUES(tag_text), benefits_json=VALUES(benefits_json), status=VALUES(status);

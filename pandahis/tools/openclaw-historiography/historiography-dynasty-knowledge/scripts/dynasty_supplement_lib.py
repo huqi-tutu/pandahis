@@ -33,10 +33,9 @@ from shared.ai_flavor_words import (  # noqa: E402
     ai_flavor_verify_issues,
     ai_flavor_word_counts,
 )
-from shared.vague_citation import detect_unanchored_vague_citations  # noqa: E402
-
-PERSON_CATEGORIES = ("君王", "宗戚", "宦官", "文臣", "武将", "蕃祚", "庶众")
+PERSON_CATEGORIES = ("君王", "诸侯", "宗戚", "宦官", "文臣", "武将", "蕃祚", "庶众")
 PERSON_INDEX_CATEGORIES = frozenset(PERSON_CATEGORIES)
+SOVEREIGN_CATEGORIES = frozenset({"君王", "诸侯"})
 
 # 兼容旧常量名（撰写侧与 verify 共用 shared/ai_flavor_words.py）
 AI_FLAVOR_WORD_MAX_TOTAL = AI_FLAVOR_WORD_FAIL_AT - 1
@@ -83,6 +82,7 @@ CATEGORY_SLUG_TO_CN = {
     "lunzhu": "论著",
     "jundwang": "君王",
     "junwang": "君王",
+    "zhuhou": "诸侯",
     "zongqi": "宗戚",
     "huanguan": "宦官",
     "wenchen": "文臣",
@@ -251,6 +251,21 @@ def allocate_glbl_id(counter: list[int]) -> str:
     return f"GLBL_{counter[0]:05d}"
 
 
+# 帝王表强制补全：仅本朝共主（周天子、先周首领），不含诸侯开国之君
+_MANDATORY_MONARCH_NAME = re.compile(r"^周.+王$")
+_PRE_DYNASTY_MONARCHS = frozenset({"姬昌", "古公亶父", "季历", "后稷"})
+
+
+def is_mandatory_dynasty_monarch(emperor_row: dict[str, Any]) -> bool:
+    """帝王.json 行是否须强制补全为「君王」详情（非诸侯开国之君）。"""
+    name = str(emperor_row.get("帝王名称", "")).strip()
+    if not name:
+        return False
+    if name in _PRE_DYNASTY_MONARCHS:
+        return True
+    return bool(_MANDATORY_MONARCH_NAME.match(name))
+
+
 def load_emperors(histograph_root: Path, dynasty_id: str) -> list[dict[str, Any]]:
     path = histograph_root / "data" / "01历史坐标数据" / "帝王.json"
     rows = json.loads(path.read_text(encoding="utf-8"))
@@ -381,7 +396,7 @@ def determine_attach_emperor_name(
 ) -> str:
     """确定挂靠帝王名：君王=条目名；其余=候选建议挂靠帝王（须为帝王表标准名）。"""
     cat = str(category or "").strip()
-    if cat == "君王":
+    if cat in SOVEREIGN_CATEGORIES:
         return str(entry_name or "").strip()
     return str(candidate.get("建议挂靠帝王") or "").strip()
 
@@ -423,7 +438,7 @@ def align_entry_emperor_coords(
     eid = str(out.get("史略ID", "")).strip()
     attach = (attach_emperor or "").strip()
     if not attach:
-        if cat == "君王":
+        if cat in SOVEREIGN_CATEGORIES:
             attach = str(out.get("史略名称") or "").strip()
         else:
             attach = str(out.get("四级帝王坐标") or "").strip()
@@ -504,7 +519,7 @@ def apply_person_years_for_entry(
         af.pop("_年兜底依据", None)
         out["_auto_filled"] = af
         changes.append(f"{eid} 清除朝代起始年兜底，改取挂靠帝王在位")
-    if cat == "君王":
+    if cat in SOVEREIGN_CATEGORIES:
         aligned = align_junji_entry_with_emperor_list(out, emperors, force=True)
         if aligned.get("史略开始年") != out.get("史略开始年") or aligned.get(
             "史略结束年"
@@ -557,7 +572,7 @@ def align_junji_entry_with_emperor_list(
     force: bool = True,
 ) -> dict[str, Any]:
     """君王条目：即位/退位年强制对齐帝王.json（覆盖 LLM 输出）。"""
-    if str(entry.get("史略分类", "")).strip() != "君王":
+    if str(entry.get("史略分类", "")).strip() not in SOVEREIGN_CATEGORIES:
         return entry
     dynasty_id = str(entry.get("朝代ID", "")).strip() or None
     by_name, by_id = build_emperor_indexes(emperors, dynasty_id=dynasty_id)
@@ -578,7 +593,7 @@ def align_junji_entries_with_emperor_list(
 ) -> tuple[list[dict[str, Any]], list[str]]:
     dynasty_id = ""
     for entry in entries:
-        if str(entry.get("史略分类", "")).strip() == "君王":
+        if str(entry.get("史略分类", "")).strip() in SOVEREIGN_CATEGORIES:
             dynasty_id = str(entry.get("朝代ID", "")).strip()
             break
     by_name, by_id = build_emperor_indexes(
@@ -791,6 +806,10 @@ MIN_DETAIL_CHARS = {
     ("君王", "P1"): 700,
     ("君王", "P2"): 400,
     ("君王", "P3"): 200,
+    ("诸侯", "P0"): 1000,
+    ("诸侯", "P1"): 700,
+    ("诸侯", "P2"): 400,
+    ("诸侯", "P3"): 200,
     ("宗戚", "P0"): 700,
     ("宗戚", "P1"): 500,
     ("宗戚", "P2"): 300,
@@ -994,6 +1013,7 @@ def split_detail_paragraphs(body: str) -> list[str]:
 
 PERSON_CAT_SLUG = {
     "君王": "JUNWANG",
+    "诸侯": "ZHUHOU",
     "宗戚": "ZONGQI",
     "宦官": "HUANGUAN",
     "文臣": "WENCHEN",
@@ -1359,7 +1379,7 @@ def collect_covered_emperor_names(
                 continue
             if str(e.get("朝代ID", "")).strip() != dynasty_id:
                 continue
-            if str(e.get("史略分类", "")).strip() != "君王":
+            if str(e.get("史略分类", "")).strip() not in SOVEREIGN_CATEGORIES:
                 continue
             if not is_phase1_juwang_adequately_covered(e):
                 continue
@@ -1367,13 +1387,13 @@ def collect_covered_emperor_names(
             covered.update(_emperor_name_keys(name, alias_index, alias_map))
 
     for e in load_dynasty_supplement_person_index(histograph_root, dynasty_id):
-        if str(e.get("史略分类", "")).strip() != "君王":
+        if str(e.get("史略分类", "")).strip() not in SOVEREIGN_CATEGORIES:
             continue
         name = str(e.get("史略名称", "")).strip()
         covered.update(_emperor_name_keys(name, alias_index, alias_map))
 
     for e in extra_entries or []:
-        if str(e.get("史略分类", "")).strip() != "君王":
+        if str(e.get("史略分类", "")).strip() not in SOVEREIGN_CATEGORIES:
             continue
         name = str(e.get("史略名称", "")).strip()
         covered.update(_emperor_name_keys(name, alias_index, alias_map))
@@ -1396,6 +1416,8 @@ def load_emperor_gaps(
 
     gaps: list[dict[str, str]] = []
     for row in load_emperors(histograph_root, dynasty_id):
+        if not is_mandatory_dynasty_monarch(row):
+            continue
         name = str(row.get("帝王名称", "")).strip()
         if not name:
             continue
@@ -1470,7 +1492,7 @@ def inject_mandatory_juwang_candidates(
         _add(emperor_gap_to_candidate(gap), mandatory=True)
 
     for row in thin_deferred:
-        if str(row.get("史略分类", "")).strip() != "君王":
+        if str(row.get("史略分类", "")).strip() not in SOVEREIGN_CATEGORIES:
             continue
         seed = thin_deferred_to_candidate(row)
         seed["强制补全"] = True

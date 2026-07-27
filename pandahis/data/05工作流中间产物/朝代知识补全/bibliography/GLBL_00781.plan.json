@@ -1,0 +1,139 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00781",
+  "写作结构": "正史叙述见《史记·周本纪》翻译详录；《国语·周语上》所记厉王专利、监谤、国人暴动、共和行政核心情节，亦在翻译详录中。拓展文可用《左传·昭公二十六年》王子朝语佐证国人驱逐厉王的历史记忆，用《诗经·大雅·板》反映厉王时国人怨愤情绪，末以《竹书纪年》异说补充共和行政的另一种说法。",
+  "候选著作": [
+    {
+      "出处": "《国语·周语上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "本条目主要史料之一，详载厉王专利、监谤、道路以目及国人暴动、共和行政，已在翻译详录中覆盖。",
+      "检索词": "厉王虐 国人谤王",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·周本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史记载，提供全面叙述，由翻译环节服务。",
+      "检索词": "周厉王 专利",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《左传·昭公二十六年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载王子朝告诸侯之辞，提及‘至于厉王，王心戾虐，万民弗忍，居王于彘’，可印证国人驱逐厉王的事实。",
+      "检索词": "万民弗忍 居王于彘",
+      "采用": true,
+      "原文摘句": "至于厉王，王心戾虐，万民弗忍，居王于彘。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《诗经·大雅·板》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "《板》为刺厉王暴政、国人怨愤之作，可作国人怨声载道的背景佐证。",
+      "检索词": "上帝板板 下民卒瘅",
+      "采用": true,
+      "原文摘句": "上帝板板，下民卒瘅。出话不然，为犹不远。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《竹书纪年》（《汲冢纪年》）",
+      "tier": "辑佚/出土",
+      "pool": "legend",
+      "与本主题关系": "记载‘共伯和干王位’，为共和行政之异说来源。",
+      "检索词": "共伯和干王位",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《国语·周语上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "本条目主要史料之一，详载厉王专利、监谤、道路以目及国人暴动、共和行政，已在翻译详录中覆盖。",
+      "检索词": "厉王虐 国人谤王",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·周本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史记载，提供全面叙述，由翻译环节服务。",
+      "检索词": "周厉王 专利",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《左传·昭公二十六年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载王子朝告诸侯之辞，提及‘至于厉王，王心戾虐，万民弗忍，居王于彘’，可印证国人驱逐厉王的事实。",
+      "检索词": "万民弗忍 居王于彘",
+      "采用": true,
+      "原文摘句": "至于厉王，王心戾虐，万民弗忍，居王于彘。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《诗经·大雅·板》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "《板》为刺厉王暴政、国人怨愤之作，可作国人怨声载道的背景佐证。",
+      "检索词": "上帝板板 下民卒瘅",
+      "采用": true,
+      "原文摘句": "上帝板板，下民卒瘅。出话不然，为犹不远。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《竹书纪年》（《汲冢纪年》）",
+      "tier": "辑佚/出土",
+      "pool": "legend",
+      "与本主题关系": "记载‘共伯和干王位’，为共和行政之异说来源。",
+      "检索词": "共伯和干王位",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 3,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

@@ -27,9 +27,9 @@ description: >
 2. source_plan → 母本 M 清单 + 外部补全（默认采用:false）；`前置引入素材` 由编排器自动注入
 3. Phase1     → draft_mother（仅母本，无他书）
 4. verify_mother → 必现词 + 覆盖 + 禁他书
-5. Phase2     → draft_enrich（锚点补异说/背景/细节，禁重复母本）；**先写 100-200 字前置引入，再进入正文**
+5. Phase2     → draft_enrich（锚点补异说/背景/细节，禁重复母本）；**先写笼统引入（60–250 字）再进正文**
 6. postprocess → 段落合并、去加粗、归因清洗、尾部退场补全（自动）
-7. verify     → 全文 + plan 出处 + 引入去重 + **L1 覆盖概率** +（长文灰区）**L2 语义复核**
+7. verify     → 全文 + plan 出处 + **L1 覆盖概率** +（长文灰区）**L2 语义复核**
 8. aggregate  → 史略翻译_汇总.json
 9. sync       → 自动 upsert 线上 historical_box_detail（`TRANSLATE_AUTO_SYNC=1` 默认开）
 ```
@@ -40,11 +40,11 @@ description: >
 史略索引_01至02.json (GLBL_*)
   → recall
   → source_plan（M001… + 必现词 + 外部补全 + 自动注入前置引入素材）
-  → Phase1 draft_mother  → {id}.mother.json
-  → verify_mother_draft
+  → Phase1 draft_mother  → {id}.mother.json（分批时每批译完即本批语义覆盖）
+  → verify_mother_draft（合并后轻量补验 + 必现词全篇）
   → Phase2 draft_enrich   → {前置引入 + 锚点补全} → {id}_{名称}.json
   → postprocess（段落合并/去加粗/去分节词）
-  → verify（含引入检测 + 格式检查）
+  → verify（格式 + 母本覆盖；引入区无程序硬拦）
   → aggregate → sync（单条 upsert 线上 DB）
 ```
 
@@ -59,7 +59,7 @@ cd tools/openclaw-historiography/historiography-translate
 python3 translate.py init
 python3 translate.py recall --id GLBL_00149
 python3 translate.py run-one --id GLBL_00149
-python3 translate.py refine --id GLBL_00149 --scope intro --instructions "收窄引入，不重复母本开头"
+python3 translate.py refine --id GLBL_00149 --scope intro --instructions "补写阅读框架与过渡句"
 python3 translate.py refine --id GLBL_00144 --scope attribution --no-llm  # 规则清洗，零 token
 python3 translate.py verify --id GLBL_00149
 python3 translate.py aggregate
@@ -88,14 +88,24 @@ python3 ../../scripts/import_box_translate_json.py
 | 变量 | 默认 | 说明 |
 |------|------|------|
 | `TRANSLATE_TWO_PHASE` | `1` | `0` 回退单次 draft |
-| `TRANSLATE_COVERAGE_STRICT` | `1` | 覆盖不足则失败 |
+| `TRANSLATE_COVERAGE_MODE` | `semantic` | `semantic`=增量 LLM+账本；`l1`=legacy 脚本比对 |
+| `TRANSLATE_COVERAGE_INCREMENTAL` | `1` | `0` 关闭分批增量语义覆盖（回退合并后全检） |
+| `TRANSLATE_COVERAGE_SEMANTIC_MIN_RATIO` | `0.80` | 合并后语义覆盖传达率下限 |
+| `TRANSLATE_COVERAGE_SEMANTIC_MAX_FAIL` | `3` | 合并后未传达条数上限（与传达率二选一） |
+| `TRANSLATE_COVERAGE_SEMANTIC_BATCH_MIN_RATIO` | `0.90` | 分批本批语义覆盖传达率下限 |
+| `TRANSLATE_COVERAGE_SEMANTIC_BATCH_MAX_FAIL` | `1` | 分批本批未传达条数上限 |
+| `TRANSLATE_COVERAGE_STRICT` | `1` | L1 模式下覆盖不足则失败 |
 | `TRANSLATE_COVERAGE_MIN_RATIO` | `0.70` | 覆盖单元命中率（默认 70%） |
 | `TRANSLATE_COVERAGE_MIN_RATIO_LONG` | `0.65` | 清单 ≥80 条时长文阈值 |
 | `TRANSLATE_COVERAGE_ITEM_MIN` | `0.32` | 单条/句群单元及格线（非逐词硬控） |
+| `TRANSLATE_MUST_PHRASE_MIN_RATIO` | `0.40` | 硬锚点全局命中率下限（低于才阻断） |
+| `TRANSLATE_MUST_PHRASE_MIN_RATIO_LONG` | `0.40` | 清单 ≥80 条时长文硬锚点下限 |
 | `TRANSLATE_COVERAGE_L2` | `1` | L1 灰区时长文启用 LLM 语义复核 |
 | `TRANSLATE_COVERAGE_L2_GRAY_BAND` | `0.12` | L1 低于阈值在此带宽内才触发 L2 |
 | `TRANSLATE_COVERAGE_L2_MIN_CHECKLIST` | `50` | 清单少于此条数不跑 L2 |
-| `TRANSLATE_COVERAGE_L2_MAX_CLAIMS` | `24` | 单次 L2 最多复核弱覆盖单元数 |
+| `TRANSLATE_COVERAGE_L2_BATCH` | `6` | 语义覆盖每批复核条数（原 12，缩小以降低 JSON 失败率） |
+| `TRANSLATE_COVERAGE_L2_DEGRADE` | `1` | 解析失败时本批标 unclear 降级，不阻断整条翻译 |
+| `TRANSLATE_COVERAGE_L2_MAX_CLAIMS` | `24` | L1 灰区路径单次最多复核弱覆盖单元数 |
 | `TRANSLATE_PLAN_MIN_RATIO` | `0.95` | plan 条数 / 母本分句 |
 | `HIST_LLM_PROVIDER` / `DEEPSEEK_API_KEY` | — | LLM |
 

@@ -1,0 +1,97 @@
+{
+  "schema": "translate-coverage-ledger/v1",
+  "史略ID": "GLBL_00758",
+  "updated_at": "2026-07-26T17:05:10.333041+00:00",
+  "entries": {
+    "M001": {
+      "status": "conveyed",
+      "claim_fp": "686d16e629936ba6",
+      "checked_at": "2026-07-26T17:04:46.450393+00:00",
+      "note": "明确说襄公三岁。"
+    },
+    "M002": {
+      "status": "conveyed",
+      "claim_fp": "c750f5cf4741a7a2",
+      "checked_at": "2026-07-26T17:04:46.450407+00:00",
+      "note": "襄公元年，晋国立晋悼公。"
+    },
+    "M003": {
+      "status": "conveyed",
+      "claim_fp": "53f54c7a6e32a4be",
+      "checked_at": "2026-07-26T17:04:46.450411+00:00",
+      "note": "明确提及去年冬天栾书弑厉公。"
+    },
+    "M004": {
+      "status": "conveyed",
+      "claim_fp": "d176900fa3923daa",
+      "checked_at": "2026-07-26T17:04:46.450415+00:00",
+      "note": "直接传达。"
+    },
+    "M005": {
+      "status": "conveyed",
+      "claim_fp": "99b3d1adb3219430",
+      "checked_at": "2026-07-26T17:04:46.450418+00:00",
+      "note": "描述季文子俭朴家风和辅佐三代国君。"
+    },
+    "M006": {
+      "status": "conveyed",
+      "claim_fp": "84d1c888694c2b37",
+      "checked_at": "2026-07-26T17:04:46.450422+00:00",
+      "note": "时人评价廉洁忠诚。"
+    },
+    "M007": {
+      "status": "conveyed",
+      "claim_fp": "ce302d52d1af2caf",
+      "checked_at": "2026-07-26T17:04:46.450425+00:00",
+      "note": "九年，鲁国跟着老大哥出兵，与晋伐郑。"
+    },
+    "M008": {
+      "status": "conveyed",
+      "claim_fp": "4436be5d645503d3",
+      "checked_at": "2026-07-26T17:04:46.450458+00:00",
+      "note": "晋悼公冠襄公于卫，季武子从，相行礼。"
+    },
+    "M009": {
+      "status": "conveyed",
+      "claim_fp": "ad1eda9e649a0f0f",
+      "checked_at": "2026-07-26T17:04:46.450462+00:00",
+      "note": "十一年，鲁国军政结构发生了一次根本性的改变：三桓氏分为三军。"
+    },
+    "M010": {
+      "status": "conveyed",
+      "claim_fp": "2dd90e05e08df850",
+      "checked_at": "2026-07-26T17:04:46.450465+00:00",
+      "note": "十二年，朝晋。"
+    },
+    "M011": {
+      "status": "conveyed",
+      "claim_fp": "00beafdf58962103",
+      "checked_at": "2026-07-26T17:04:46.450468+00:00",
+      "note": "十六年，晋平公即位——晋国又换了一代主人。"
+    },
+    "M012": {
+      "status": "conveyed",
+      "claim_fp": "ecb7d7034999ebd7",
+      "checked_at": "2026-07-26T17:04:46.450471+00:00",
+      "note": "二十一年，朝晋平公。"
+    },
+    "M013": {
+      "status": "conveyed",
+      "claim_fp": "dbc3ff360f9917aa",
+      "checked_at": "2026-07-26T17:04:46.450473+00:00",
+      "note": "明确提到鲁襄公二十二年孔子出生。"
+    },
+    "M014": {
+      "status": "conveyed",
+      "claim_fp": "0686790fd9757b90",
+      "checked_at": "2026-07-26T17:04:46.450476+00:00",
+      "note": "直接复述了母本信息。"
+    },
+    "M015": {
+      "status": "conveyed",
+      "claim_fp": "f1ca984f50eb1be4",
+      "checked_at": "2026-07-26T17:04:46.450478+00:00",
+      "note": "完整传达了延陵季子使鲁问乐且鲁人敬服的事实。"
+    }
+  }
+}

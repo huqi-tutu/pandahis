@@ -1,0 +1,138 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00803",
+  "写作结构": "正史叙述见翻译详录（《史记·周本纪》《秦本纪》）；拓展文以《国语·郑语》追述非子养马封秦之早出记载，《竹书纪年》补孝王七年及气候异象，《毛诗谱》概述秦嬴始封脉络。其余细节留白。",
+  "候选著作": [
+    {
+      "出处": "《史记·周本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "本条目主要史料出处，载孝王崩、诸侯立夷王等核心继承叙事",
+      "检索词": "周孝王崩 诸侯立燮",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《史记·秦本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "详载非子养马、申侯劝谏、封于秦地及和西戎诸事",
+      "检索词": "非子居犬丘 孝王召使主马",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《国语·郑语》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "史伯论兴衰时提及秦之先世与非子为周孝王养马、封秦、续嬴祀，早于《史记》的记载",
+      "检索词": "嬴伯翳之后 非子养马",
+      "采用": true,
+      "原文摘句": "嬴，伯翳之后也。……非子养马，马大蕃息，周孝王封之秦，使复续嬴氏之祀。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《竹书纪年·卷下》（今本）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记录周孝王在位七年及异常气候，补足存年与灾异信息",
+      "检索词": "孝王七年 大雨雹 江汉俱冻",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    },
+    {
+      "出处": "《毛诗谱·秦风谱》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "梳理秦之先世世系，直接叙述周孝王使非子养马、分土为附庸、邑于秦谷、号秦嬴的过程",
+      "检索词": "非子养马汧渭 秦嬴",
+      "采用": true,
+      "原文摘句": "非子为周孝王养马于汧渭之间，马大蕃息，孝王分土为附庸，邑之秦谷，使复续嬴氏之祀，号曰秦嬴。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·周本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "本条目主要史料出处，载孝王崩、诸侯立夷王等核心继承叙事",
+      "检索词": "周孝王崩 诸侯立燮",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《史记·秦本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "详载非子养马、申侯劝谏、封于秦地及和西戎诸事",
+      "检索词": "非子居犬丘 孝王召使主马",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《国语·郑语》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "史伯论兴衰时提及秦之先世与非子为周孝王养马、封秦、续嬴祀，早于《史记》的记载",
+      "检索词": "嬴伯翳之后 非子养马",
+      "采用": true,
+      "原文摘句": "嬴，伯翳之后也。……非子养马，马大蕃息，周孝王封之秦，使复续嬴氏之祀。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《竹书纪年·卷下》（今本）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记录周孝王在位七年及异常气候，补足存年与灾异信息",
+      "检索词": "孝王七年 大雨雹 江汉俱冻",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    },
+    {
+      "出处": "《毛诗谱·秦风谱》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "梳理秦之先世世系，直接叙述周孝王使非子养马、分土为附庸、邑于秦谷、号秦嬴的过程",
+      "检索词": "非子养马汧渭 秦嬴",
+      "采用": true,
+      "原文摘句": "非子为周孝王养马于汧渭之间，马大蕃息，孝王分土为附庸，邑之秦谷，使复续嬴氏之祀，号曰秦嬴。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 3,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

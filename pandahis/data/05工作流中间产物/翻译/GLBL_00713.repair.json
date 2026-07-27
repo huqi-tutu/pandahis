@@ -1,0 +1,27 @@
+{
+  "schema": "qa_repair_ticket/v1",
+  "pipeline": "translate",
+  "entry_id": "GLBL_00713",
+  "entry_name": "晋襄公",
+  "stage": "verify",
+  "fail_count": 1,
+  "errors": [
+    "必现词硬锚点命中率不足: 2/9 (22% < 40%；如 M003, M005, M006, M010, M011, M020）"
+  ],
+  "plan": {
+    "root_cause": "MUST_PHRASE_MISS",
+    "disposition": "retry_llm",
+    "action": "phase1_retry_with_miss_list",
+    "structured_prompt": "【根因：母本必现词/原词锚点缺失】\n逐项对照 plan 母本逐句清单，保留「」内原词锚点，勿漏句、勿跳段。\n仅补缺失锚点，勿改写已正确段落。",
+    "refine_scope": "mother",
+    "route_to": "",
+    "next_command": "",
+    "invalidate": [
+      "mother"
+    ],
+    "max_retries": 2,
+    "extra": {}
+  },
+  "feedback": "【根因：母本必现词/原词锚点缺失】\n逐项对照 plan 母本逐句清单，保留「」内原词锚点，勿漏句、勿跳段。\n仅补缺失锚点，勿改写已正确段落。\n\n---\n【原始错误】\n必现词硬锚点命中率不足: 2/9 (22% < 40%；如 M003, M005, M006, M010, M011, M020）",
+  "updated_at": "2026-07-26T15:30:53Z"
+}

@@ -94,7 +94,7 @@ CREATE TABLE IF NOT EXISTS historical_box (
   regime_name VARCHAR(128) NULL COMMENT '三级政权坐标',
   emperor_name VARCHAR(128) NULL COMMENT '四级帝王坐标',
   title VARCHAR(128) NOT NULL COMMENT '史略名称',
-  category_key VARCHAR(16) NOT NULL COMMENT '史略分类编码：junji=君王, shichen=士臣, dianzhi=典制, shilue=事略, minlu=民录',
+  category_key VARCHAR(16) NOT NULL COMMENT '史略分类编码：junji=君王, zhuhou=诸侯, shichen=士臣, dianzhi=典制, shilue=事略, minlu=民录',
   blurb VARCHAR(64) NULL COMMENT '史略简介',
   start_year INT NOT NULL COMMENT '史略开始年',
   end_year INT NOT NULL COMMENT '史略结束年',

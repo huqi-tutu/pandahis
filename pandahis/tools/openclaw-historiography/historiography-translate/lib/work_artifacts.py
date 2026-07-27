@@ -180,7 +180,11 @@ def verify_plan(
     else:
         expected = len(extract_mother_sentences(recalled))
         min_required = max(1, int(expected * plan_min_sentence_ratio()))
-        if len(checklist) < min_required:
+        if len(checklist) != expected:
+            errors.append(
+                f"母本逐句清单条数与母本不一致: {len(checklist)} != {expected}"
+            )
+        elif len(checklist) < min_required:
             errors.append(
                 f"母本逐句清单过少: {len(checklist)} < 母本 {expected} 句的 "
                 f"{plan_min_sentence_ratio():.0%}（至少 {min_required} 条）"

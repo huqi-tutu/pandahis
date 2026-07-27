@@ -240,8 +240,12 @@
     },
     {
       "paragraph": 27,
-      "owners": [],
-      "exclude_reason": "太史公曰"
+      "owners": [
+        {
+          "name": "梁孝王",
+          "category": "宗戚"
+        }
+      ]
     },
     {
       "paragraph": 28,
@@ -346,14 +350,15 @@
         {
           "volume": "梁孝王世家",
           "paragraph_from": 1,
-          "paragraph_to": 26
-        },
-        {
-          "volume": "梁孝王世家",
-          "paragraph_from": 28,
           "paragraph_to": 37
         }
       ],
+      "优先级": "P0",
+      "优先级判定理由": "梁孝王刘武世家，锚汉文帝，共37段",
+      "五级细坐标": "史记·卷058·宗戚·01",
+      "六级段落锚点": "[P1-P37]",
+      "原文出处": "梁孝王世家·P1-P37",
+      "_needs_llm": [],
       "四级帝王坐标": "汉文帝",
       "三级政权坐标": "西汉",
       "二级朝代坐标": "西汉",
@@ -361,21 +366,18 @@
       "文明ID": "HX",
       "朝代ID": "CD_HX_XIHAN",
       "政权ID": "ZQ_HX_XIHAN_XIHAN",
-      "帝王ID": "DW_HX_XIHAN_XIHAN_HANWENDI",
-      "史略开始年": -178,
-      "史略结束年": -144,
-      "五级细坐标": "史记·卷058·宗戚·01",
-      "六级段落锚点": "[P1-P26],[P28-P37]",
-      "原文出处": "梁孝王世家·P1-P26,P28-P37",
-      "优先级": "P0",
-      "优先级判定理由": "本纪主轴叙事，共35段",
-      "_auto_filled": {
-        "_年兜底级别": "君王表",
-        "_年修正": "君王年与帝王表一致 -178～-144",
-        "_年LLM依据": "梁孝王即位前178，崩前144",
-        "_坐标主轴说明": "梁孝王为汉文帝所封同姓藩王，四级帝王坐标挂册封之君汉文帝。"
-      },
-      "宗戚ID": "ZJ_HX_XIHAN_XIHAN_LIANGXIAOWANG"
+      "帝王ID": "DW_HX_XIHAN_XIHAN_HANWENDI"
+    }
+  ],
+  "volume_subtype": "世家",
+  "volume_subtype_source": "llm_step1a",
+  "protagonist_count": 1,
+  "protagonist_count_source": "llm_step1a",
+  "protagonists_manifest": [
+    {
+      "name": "梁孝王",
+      "category": "宗戚",
+      "rationale": "《梁孝王世家》叙事主轴：梁孝王（宗戚）"
     }
   ]
 }

@@ -86,6 +86,7 @@ type RelicVm = {
   thumbLabel: string
   teaser: string
   location: string
+  cardMeta: string
 }
 
 function relicThumbLabel(name: string): string {
@@ -103,14 +104,18 @@ function mapCritiqueItems(raw: any[]): CritiqueVm[] {
     const era = String(it.eraText || '').trim()
     const yv = it.year
     const y = yv != null && yv !== '' ? Number(yv) : NaN
-    const yearStr = Number.isFinite(y) && y !== 0 ? String(y) : ''
+    const yearStr = Number.isFinite(y) && y !== 0 ? formatHistoryYear(y) : ''
     const eraMeta = [era, yearStr].filter(Boolean).join(' · ')
     const content = String(it.content || '').trim()
     const blurb = String(it.blurb || '').trim()
     const bodyQuote = content || blurb
     const source = String(it.source || it.book || '').trim()
     const cardTitle = title || displayAuthor
-    const cardMeta = [author, eraMeta, source].filter(Boolean).join(' · ')
+    const metaParts: string[] = []
+    if (title && author) metaParts.push(author)
+    if (era) metaParts.push(era)
+    if (source) metaParts.push(source)
+    const cardMeta = metaParts.filter(Boolean).join(' · ')
     return {
       ...it,
       displayAuthor,
@@ -141,6 +146,7 @@ function mapRelicItems(raw: any[]): RelicVm[] {
       thumbLabel: relicThumbLabel(it.name || ''),
       teaser,
       location: museum,
+      cardMeta: museum,
     }
   })
 }
@@ -330,7 +336,11 @@ Page({
     detailReady: false,
     detailErr: '',
     graph: { centerNodeKey: '', nodes: [] as any[], edges: [] as any[] },
+    graphNodeCount: 0,
+    graphPhase: 'idle' as 'idle' | 'loading' | 'ready' | 'error',
     graphReady: false,
+    graphLoading: false,
+    graphRenderHint: '',
     graphErr: '',
     critiques: [] as CritiqueVm[],
     critReady: false,
@@ -473,7 +483,7 @@ Page({
     const tabTop = (sys.statusBarHeight || 20) + navH
     const tabBarPx = Math.round(72 * (sys.windowWidth / 750))
     const bodyTop = tabTop + tabBarPx
-    const zoomBarPx = Math.round(130 * (sys.windowWidth / 750))
+    const zoomBarPx = 0
     const graphCanvasH = Math.max(400, Math.floor((sys.windowHeight || 667) - bodyTop - zoomBarPx))
 
     this._tabBarPx = tabBarPx
@@ -508,6 +518,9 @@ Page({
       await this.refreshFavState()
       await this.recordFootprint()
       await this.ensureTab('content')
+      if (tab === 'relations' && showRelationsTab) {
+        this.loadRelationsGraph()
+      }
     } catch (e: any) {
       wx.showToast({ title: e?.message || '加载失败', icon: 'none' })
     }
@@ -561,6 +574,78 @@ Page({
     }
   },
 
+  /** 关系 Tab：独立拉取，避免 ensureTab 早退导致 Network 无 /graph 请求 */
+  loadRelationsGraph() {
+    if (!this.data.showRelationsTab) return
+    if (!this.data.boxId) {
+      this.setData({
+        graphErr: '史略信息未就绪，请返回后重试',
+        graphPhase: 'error',
+        graphReady: true,
+        graphLoading: false,
+      })
+      return
+    }
+    if (this.data.graphFetched && this.data.graphPhase === 'ready') return
+    void this.fetchRelationsGraph()
+  },
+
+  async fetchRelationsGraph() {
+    if ((this as any)._graphInflight) return (this as any)._graphInflight as Promise<void>
+
+    const boxId = this.data.boxId
+    const enc = encodePathSegment(boxId)
+    this.setData({
+      graphLoading: true,
+      graphPhase: 'loading',
+      graphErr: '',
+      graphRenderHint: '',
+    })
+    console.info('[box-detail] GET /boxes/' + boxId + '/graph')
+
+    const task = (async () => {
+      try {
+        const res = await request<{ centerNodeKey: string | null; nodes: any[]; edges: any[] }>(
+          `/boxes/${enc}/graph`
+        )
+        const nodes = res.data.nodes || []
+        const edges = res.data.edges || []
+        const nodeCount = nodes.length
+        this.setData({
+          graph: {
+            centerNodeKey: res.data.centerNodeKey || '',
+            nodes,
+            edges,
+          },
+          graphNodeCount: nodeCount,
+          graphErr: '',
+          graphPhase: 'ready',
+          graphReady: true,
+          graphFetched: true,
+          graphLoading: false,
+          graphScaleLabel: '100%',
+        })
+        console.info('[box-detail] graph loaded nodes=', nodeCount)
+      } catch (e: any) {
+        console.warn('[box-detail] graph fetch failed', e?.message || e)
+        this.setData({
+          graphErr: e?.message || '加载失败',
+          graph: { centerNodeKey: '', nodes: [], edges: [] },
+          graphNodeCount: 0,
+          graphPhase: 'error',
+          graphReady: true,
+          graphFetched: true,
+          graphLoading: false,
+        })
+      }
+    })()
+
+    ;(this as any)._graphInflight = task.finally(() => {
+      ;(this as any)._graphInflight = undefined
+    })
+    return task
+  },
+
   async ensureTab(tab: 'content' | 'relations' | 'reviews' | 'relics') {
     const boxId = this.data.boxId
     const enc = encodePathSegment(boxId)
@@ -597,29 +682,7 @@ Page({
       return
     }
     if (tab === 'relations') {
-      if (!this.data.showRelationsTab) return
-      if (this.data.graphFetched) return
-      try {
-        const res = await request<{ centerNodeKey: string | null; nodes: any[]; edges: any[] }>(`/boxes/${enc}/graph`)
-        this.setData({
-          graph: {
-            centerNodeKey: res.data.centerNodeKey || '',
-            nodes: res.data.nodes || [],
-            edges: res.data.edges || [],
-          },
-          graphErr: '',
-          graphReady: true,
-          graphFetched: true,
-          graphScaleLabel: '100%',
-        })
-      } catch (e: any) {
-        this.setData({
-          graphErr: e?.message || '加载失败',
-          graph: { centerNodeKey: '', nodes: [], edges: [] },
-          graphReady: true,
-          graphFetched: true,
-        })
-      }
+      this.loadRelationsGraph()
       return
     }
     if (tab === 'reviews') {
@@ -677,10 +740,32 @@ Page({
 
 
 
+  onShow() {
+    if (
+      this.data.tab === 'relations'
+      && this.data.showRelationsTab
+      && this.data.graphPhase !== 'ready'
+      && this.data.graphPhase !== 'error'
+    ) {
+      this.loadRelationsGraph()
+    }
+  },
+
+  onGraphRenderHint(e: WechatMiniprogram.CustomEvent) {
+    const hint = String((e.detail as { hint?: string })?.hint || '').trim()
+    this.setData({ graphRenderHint: hint })
+  },
+
   setTab(e: WechatMiniprogram.BaseEvent) {
     const tab = (e.currentTarget as any).dataset.tab as 'content' | 'relations' | 'reviews' | 'relics'
+    if (!tab) return
     if (tab === 'relations' && !this.data.showRelationsTab) return
-    if (tab === this.data.tab) return
+    if (tab === this.data.tab) {
+      if (tab === 'relations' && this.data.graphPhase !== 'ready') {
+        this.loadRelationsGraph()
+      }
+      return
+    }
     this.hideSelectionBar()
 
     const nextScrollTop = this.data.bodyScrollTop === 0 ? 0.01 : 0
@@ -707,8 +792,12 @@ Page({
       if (nextScrollTop !== 0) {
         this.setData({ bodyScrollTop: 0 })
       }
+      if (tab === 'relations') {
+        this.loadRelationsGraph()
+      } else {
+        void this.ensureTab(tab)
+      }
     })
-    void this.ensureTab(tab)
   },
   onCritiqueTap(e: WechatMiniprogram.BaseEvent) {
     const idx = Number((e.currentTarget as any).dataset.idx)
@@ -930,10 +1019,6 @@ Page({
   },
 
   goOriginal() {
-    const h = this.data.header as BoxHeader | null
-    const o = h?.access?.tabs?.original
-    if (o?.locked) { this.promptLockedTab(o); return }
-
     // 优先使用之前缓存的数据
     const ref = this._rawOriginalRef
     if (ref != null) {
@@ -957,7 +1042,7 @@ Page({
     const run = async () => {
       try {
         const enc = encodePathSegment(this.data.boxId)
-        const res = await request<{ originalRef: unknown }>(`/boxes/${enc}/original-ref`, { auth: hasToken() })
+        const res = await request<{ originalRef: unknown }>(`/boxes/${enc}/original-ref`, { auth: hasToken(), softAuth: true })
         const parsed = this._parseOriginalRef(res.data.originalRef)
         if (!parsed || (!parsed.items.length && !parsed.fallback.length)) {
           this.setData({
@@ -978,20 +1063,9 @@ Page({
           originalItems: parsed.items,
           originalFallback: parsed.fallback,
         })
-      } catch (e: any) {
-        const msg = String(e?.message || '')
-        if (msg.includes('INSUFFICIENT_READS') || msg.includes('NEED_MEMBERSHIP_OR_READS')) {
-          this.setData({ showOriginal: false })
-          wx.showModal({
-            title: '需要会员或阅读点',
-            content: '开通会员可免扣点阅读；也可去会员页邀友助力或查看阅读点。',
-            confirmText: '去开通',
-            success: (r) => { if (r.confirm) wx.switchTab({ url: ROUTES.membership }) },
-          })
-        } else {
-          this.setData({ originalLoading: false, originalEmpty: true })
-          wx.showToast({ title: '加载失败', icon: 'none' })
-        }
+      } catch {
+        this.setData({ originalLoading: false, originalEmpty: true })
+        wx.showToast({ title: '原文暂时无法加载，请稍后重试', icon: 'none' })
       }
     }
     void run()

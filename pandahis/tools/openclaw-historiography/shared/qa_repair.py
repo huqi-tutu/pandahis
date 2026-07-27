@@ -17,7 +17,6 @@ Disposition = Literal[
     "refine_scope",  # 局部改写（intro/mother/attribution）
     "script_fix",  # 规则脚本先修
     "route_pipeline",  # 转另一流水线（如朝代补全）
-    "needs_human",  # 熔断后人审
 ]
 
 
@@ -70,7 +69,7 @@ def classify_translate_failure(
             ),
         )
 
-    if _has_any(e, ("原词锚点", "必现词", "must_phrase", "锚点须在译文中")):
+    if _has_any(e, ("原词锚点", "必现词", "must_phrase", "锚点须在译文中", "命中率不足")):
         return RepairPlan(
             root_cause="MUST_PHRASE_MISS",
             disposition="retry_llm" if fail_count < 2 else "refine_scope",
@@ -85,7 +84,7 @@ def classify_translate_failure(
             max_retries=2,
         )
 
-    if _has_any(e, ("覆盖不足", "覆盖率", "M00", "母本逐句", "未覆盖")):
+    if _has_any(e, ("覆盖不足", "覆盖率", "语义覆盖", "M00", "母本逐句", "未覆盖")):
         return RepairPlan(
             root_cause="COVERAGE_MISS",
             disposition="retry_llm" if fail_count < 2 else "refine_scope",
@@ -95,37 +94,6 @@ def classify_translate_failure(
                 "【根因：母本句意覆盖不足】\n"
                 "对照 plan 中未命中的 M 编号，在对应位置补译母本信息点；\n"
                 "禁止用他书重复母本已述事实。"
-            ),
-            max_retries=2,
-        )
-
-    if _has_any(e, ("引入过长", "硬上限400", "硬上限 400")):
-        return RepairPlan(
-            root_cause="INTRO_TOO_LONG",
-            disposition="retry_llm",
-            action="shorten_intro",
-            refine_scope="intro",
-            structured_prompt=(
-                "【根因：前置引入超长 — 须重写引入区】\n"
-                "引入区不得超过 400 字（建议 100–400）。请整段压缩引入：\n"
-                "1) 只保留出处、人物/时代定位等阅读框架，删除所有正文将写的事件；\n"
-                "2) 越短越好，概括精炼；末句一句过渡到母本（如「《史记·×本纪》这样记载——」）；\n"
-                "3) 勿用「原文如下」；勿保留上一轮超长引入的任何句子。\n"
-                "对照下方【原始错误】中的实际字数与引入区开头，针对性删减。"
-            ),
-            max_retries=2,
-        )
-
-    if _has_any(e, ("前置引入", "引入重复", "intro", "开头与母本")):
-        return RepairPlan(
-            root_cause="INTRO_ISSUE",
-            disposition="retry_llm" if fail_count < 2 else "refine_scope",
-            action="refine_intro",
-            refine_scope="intro",
-            structured_prompt=(
-                "【根因：前置引入与母本开头重复】\n"
-                "收窄引入（建议 100–400 字，硬上限 400）：只写阅读框架与一句过渡，\n"
-                "不重复母本首段将写的身世/事件/专名簇。勿元叙述。"
             ),
             max_retries=2,
         )
@@ -151,10 +119,24 @@ def classify_translate_failure(
             ),
         )
 
+    if _has_any(e, ("传说/据说/有人说", "legend_dominance", "二手表述触发词", "连续", "传说层")):
+        return RepairPlan(
+            root_cause="LEGEND_DOMINANCE",
+            disposition="refine_scope",
+            action="reduce_legend_layer",
+            refine_scope="full",
+            structured_prompt=(
+                "【根因：传说/二手表述过多】\n"
+                "「传说」「据说」「有人说」等无《》表述已超配额或连续成段。\n"
+                "优先改为「《书名·卷》载：…」；删冗余传说句；保留母本主线。"
+            ),
+            max_retries=2,
+        )
+
     if _has_any(e, ("外部出处", "过渡段", "plan", "采用:false", "GLBL_")):
         return RepairPlan(
             root_cause="PLAN_SOURCE",
-            disposition="retry_llm" if fail_count < 1 else "needs_human",
+            disposition="retry_llm",
             action="fix_source_plan",
             structured_prompt=(
                 "【根因：source_plan 外部补全引用无效】\n"
@@ -164,16 +146,15 @@ def classify_translate_failure(
             invalidate=("plan",),
         )
 
-    if _has_any(e, ("引用过碎", "母本引用过碎")):
+    if _has_any(e, ("引用宜以完整摘句", "并列句群为单位", "引用过碎", "母本引用过碎")):
         return RepairPlan(
             root_cause="QUOTE_FRAGMENT",
             disposition="refine_scope" if "母本" in e else "retry_llm",
             action="merge_short_quotes",
             refine_scope="mother",
             structured_prompt=(
-                "【根因：书名号引用过碎】\n"
-                "并列句群应整簇放入同一对「」内引用，译后统一解释；"
-                "禁止大量 ≤4 字碎引用。保留母本信息点，减少「」对数。"
+                "【引用方式】「」用于完整史料摘句、人物对话或并列句群，译后统一解释；"
+                "叙事句中专名与数字融入白话叙述。"
             ),
             max_retries=2,
         )
@@ -184,8 +165,7 @@ def classify_translate_failure(
             disposition="retry_llm",
             action="adjust_chunk_plan",
             structured_prompt=(
-                "【根因：分块后母本过碎】\n"
-                "合并相邻块或放宽分块边界，保证每块上下文连贯后再译。"
+                "【分块边界】合并相邻块或放宽分块边界，保证每块上下文连贯后再译。"
             ),
             max_retries=1,
         )
@@ -193,9 +173,14 @@ def classify_translate_failure(
     if fail_count >= 3:
         return RepairPlan(
             root_cause="RETRY_EXHAUSTED",
-            disposition="needs_human",
-            action="human_review",
-            structured_prompt="【熔断】已重试 3 次，请人工查看 repair_ticket 与 verify 日志。",
+            disposition="retry_llm",
+            action="generic_retry",
+            structured_prompt=(
+                "【已多次重试，须换写法】\n"
+                "勿重复上一轮相同表述；逐项对照下方原始错误修正。\n"
+                + e[:1200]
+            ),
+            max_retries=5,
         )
 
     return RepairPlan(
@@ -254,9 +239,14 @@ def classify_dynasty_failure(
     if fail_count >= 3:
         return RepairPlan(
             root_cause="RETRY_EXHAUSTED",
-            disposition="needs_human",
-            action="human_review",
-            structured_prompt="【熔断】请人工处理 qa_state / verify 产物。",
+            disposition="retry_llm",
+            action="compose_revise",
+            structured_prompt=(
+                "【已多次重试，须换写法】\n"
+                "据 verify 错误逐项修订详情，勿重复上一轮写法。\n"
+                + e[:1200]
+            ),
+            max_retries=5,
         )
 
     return RepairPlan(

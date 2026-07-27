@@ -1,0 +1,49 @@
+{
+  "schema": "translate-coverage-ledger/v1",
+  "史略ID": "GLBL_00750",
+  "updated_at": "2026-07-26T16:46:59.331103+00:00",
+  "entries": {
+    "M001": {
+      "status": "conveyed",
+      "claim_fp": "1251f4b984c148bb",
+      "checked_at": "2026-07-26T16:46:46.803294+00:00",
+      "note": "完全传达了母本信息。"
+    },
+    "M002–M003": {
+      "status": "conveyed",
+      "claim_fp": "772f59645d15d9df",
+      "checked_at": "2026-07-26T16:46:46.803308+00:00",
+      "note": "完全传达了母本信息。"
+    },
+    "M004": {
+      "status": "conveyed",
+      "claim_fp": "f43d27f22668fb5e",
+      "checked_at": "2026-07-26T16:46:46.803311+00:00",
+      "note": "完全传达了母本信息。"
+    },
+    "M005": {
+      "status": "conveyed",
+      "claim_fp": "ae8cdbdac50cddcd",
+      "checked_at": "2026-07-26T16:46:46.803314+00:00",
+      "note": "完全传达了母本信息，包括对话和称谓。"
+    },
+    "M006": {
+      "status": "conveyed",
+      "claim_fp": "c249957dcbc0c99f",
+      "checked_at": "2026-07-26T16:46:46.803316+00:00",
+      "note": "完全传达了母本信息，三桓具体化不影响传达。"
+    },
+    "M007": {
+      "status": "conveyed",
+      "claim_fp": "45260565bac821d1",
+      "checked_at": "2026-07-26T16:46:46.803319+00:00",
+      "note": "母本文本已包含，后续追加内容不影响判断。"
+    },
+    "M008": {
+      "status": "conveyed",
+      "claim_fp": "24e58870479628f3",
+      "checked_at": "2026-07-26T16:46:46.803321+00:00",
+      "note": "鲁宣公俀在位的第十二年，楚庄王正值强盛，出兵包围了郑国的都城。郑伯向楚国投降，楚庄王又恢复了他的国家。"
+    }
+  }
+}

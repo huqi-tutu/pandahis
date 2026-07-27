@@ -1,0 +1,164 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00800",
+  "写作结构": "以《尚书·大诰》为核心直接史料，史外异说由《逸周书》《竹书纪年》及西周金文等先秦文献和出土材料补充，呈现三监之乱与东征背景；正史如《史记》所载东征叙事由翻译详录提供，此处仅作文献线索。",
+  "候选著作": [
+    {
+      "出处": "《逸周书·作雒》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "详细记载三监之乱、周公东征及营建成周始末，可与《大诰》诰命背景互证。",
+      "检索词": "三叔 殷东 徐奄 周公",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《竹书纪年》（古本）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记录周成王初年平定武庚、管蔡叛乱的年代与事件脉络，与《大诰》时间吻合。",
+      "检索词": "成王 殷 三监 武庚",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    },
+    {
+      "出处": "西周金文《小臣单觯》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "铭文记载成王克商后封赏，反映周公东征中的具体封赐事件。",
+      "检索词": "周公 小臣单 贝",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《诗经·豳风·东山》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "以从征士兵视角抒发东征久役归乡之思，侧面印证周公东征的军事行动。",
+      "检索词": "我徂东山 慆慆不归",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《尚书大传》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "汉代伏生所传《尚书》解说，对《大诰》的创作背景及周公摄政事有所说明。",
+      "检索词": "周公摄政 大诰",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·周本纪》《鲁周公世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史系统叙述周初东征与周公行政，可与《大诰》对照，叙事由翻译详录负责。",
+      "检索词": "诛武庚 周公行政",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《逸周书·作雒》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "详细记载三监之乱、周公东征及营建成周始末，可与《大诰》诰命背景互证。",
+      "检索词": "三叔 殷东 徐奄 周公",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《竹书纪年》（古本）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记录周成王初年平定武庚、管蔡叛乱的年代与事件脉络，与《大诰》时间吻合。",
+      "检索词": "成王 殷 三监 武庚",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    },
+    {
+      "出处": "西周金文《小臣单觯》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "铭文记载成王克商后封赏，反映周公东征中的具体封赐事件。",
+      "检索词": "周公 小臣单 贝",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《诗经·豳风·东山》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "以从征士兵视角抒发东征久役归乡之思，侧面印证周公东征的军事行动。",
+      "检索词": "我徂东山 慆慆不归",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《尚书大传》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "汉代伏生所传《尚书》解说，对《大诰》的创作背景及周公摄政事有所说明。",
+      "检索词": "周公摄政 大诰",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·周本纪》《鲁周公世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史系统叙述周初东征与周公行政，可与《大诰》对照，叙事由翻译详录负责。",
+      "检索词": "诛武庚 周公行政",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 5,
+    "C_excluded": 1,
+    "overall": "B"
+  }
+}

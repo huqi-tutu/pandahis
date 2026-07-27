@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const api_1 = require("../../native-utils/api");
 const encode_path_segment_1 = require("../../native-utils/encode-path-segment");
-const router_1 = require("../../native-utils/router");
 const nav_metrics_1 = require("../../native-utils/nav-metrics");
 /** 与后端约定一致：占位 `{}` / `[]` 视为无原文 */
 function isRefMeaningless(ref) {
@@ -94,6 +93,7 @@ Page({
         try {
             const res = await (0, api_1.request)(`/boxes/${(0, encode_path_segment_1.encodePathSegment)(boxId)}/original-ref`, {
                 auth: (0, api_1.hasToken)(),
+                softAuth: true,
             });
             const parsed = parseOriginalRef(res.data.originalRef);
             if (!parsed) {
@@ -109,33 +109,8 @@ Page({
                 refFallback: parsed.fallback,
             });
         }
-        catch (e) {
-            const msg = String((e === null || e === void 0 ? void 0 : e.message) || '');
-            if (msg.includes('INSUFFICIENT_READS') || msg.includes('NEED_MEMBERSHIP_OR_READS')) {
-                wx.showModal({
-                    title: '需要会员或阅读点',
-                    content: '开通会员可免扣点阅读；也可去会员页邀友助力或查看阅读点。',
-                    confirmText: '去开通',
-                    success: (r) => {
-                        if (r.confirm)
-                            wx.switchTab({ url: router_1.ROUTES.membership });
-                    },
-                });
-            }
-            else if (msg === 'UNAUTHORIZED' || msg.includes('login required')) {
-                wx.showModal({
-                    title: '需要登录',
-                    content: '登录后可开通会员或使用阅读点查看原文对照。',
-                    confirmText: '去登录',
-                    success: (r) => {
-                        if (r.confirm)
-                            (0, router_1.navigateTo)(router_1.ROUTES.login);
-                    },
-                });
-            }
-            else {
-                wx.showToast({ title: (e === null || e === void 0 ? void 0 : e.message) || '加载失败', icon: 'none' });
-            }
+        catch {
+            wx.showToast({ title: '原文暂时无法加载，请稍后重试', icon: 'none' });
             this.setData({ empty: true, refTitle: '', refSourceWork: '', refItems: [], refFallback: '' });
         }
     },

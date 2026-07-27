@@ -1,0 +1,189 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00816",
+  "写作结构": "正史基础叙事使用《史记·周本纪》翻译详录；主干拓展依次引《竹书纪年》《左传》《吕氏春秋》《楚辞·天问》及出土金文（墙盘），说明昭王南征、败亡及影响；文末以《帝王世纪》胶船传说作为异说补充，不展开具体情节；对战争过程、对话与楚方策略留白。",
+  "候选著作": [
+    {
+      "出处": "《竹书纪年》（古本辑佚）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载昭王南征、丧失六师及末年南巡不返等关键史实，可补正史之阙",
+      "检索词": "周昭王 十九年 南巡",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "&nbsp;道德真經註&nbsp;世說新語&nbsp;顏氏家訓&nbsp;文心雕龍&nbsp;群書治要&nbsp;藝文類聚&nbsp;黃帝陰符經&nbsp;四書章句集注&nbsp;論語注疏&nbsp;封神演義&nbsp;孝經注疏&nbsp;太平御覽&nbsp;太平廣記&nbsp;朱子語類&nbsp;宋景文公筆記&nbsp;墨經校釋網站有中、英文版本，也有繁、簡體版，可通過每頁左上角的連結隨時調整。《诗说》并非先秦两汉典籍，应该尽快转移到汉之后《诗说》并非先秦两汉典籍，应该尽快转移到汉之后，不然会对文献使用者造成误导。以为它的可信度更高。 [文字與原典鏈接錯誤在瀏覽《太乙金華宗旨》時，發現兩版本之原典鏈接皆指向同一典籍。因在兩版本中《天心章第一》之內容， [如果我說「朕」仍然是存在的你知道，朕在秦始皇帝以前，不分貴賤自稱時都說朕。秦始皇帝以後改成天子專用，因爲這個字被限制，不能 ["
+    },
+    {
+      "出处": "《左传·僖公四年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "齐国伐楚时管仲提及昭王南征不复，可作为早期文献互证",
+      "检索词": "昭王南征而不复",
+      "采用": true,
+      "原文摘句": "昭王南征而不复，君其问诸水滨。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《吕氏春秋·音初》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记录昭王亲征荆楚、渡汉水时桥梁败坏而溺死的过程，为正史之外的重要异说",
+      "检索词": "昭王亲将征荆",
+      "采用": true,
+      "原文摘句": "周昭王亲将征荆……还反涉汉，梁败，王及蔡公抎于汉中。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《楚辞·天问》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "以问句形式影射昭王南征遇白雉之事，揭示南方之行隐含的荒诞意味",
+      "检索词": "昭后成游 南土",
+      "采用": true,
+      "原文摘句": "昭后成游，南土爰底。厥利维何，逢彼白雉？",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "史墙盘（《殷周金文集成》10175）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "西周青铜器铭文颂扬昭王广能楚荆、亲自南行，是昭王南征的实物证据",
+      "检索词": "弘鲁昭王 广能楚荆",
+      "采用": true,
+      "原文摘句": "弘鲁昭王，广能楚荆，唯实南行。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "记录昭王乘胶船渡汉水、船解溺死的传说，为后世附会异说",
+      "检索词": "昭王 胶船 汉水",
+      "采用": true,
+      "原文摘句": "昭王德衰，南征，济于汉，船人恶之，以胶船进王，中流船解，王及祭公俱没于水中而崩。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·周本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，提供昭王继位、南征、死因及周室隐匿死讯等基本叙事",
+      "检索词": "周昭王 南巡狩",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《竹书纪年》（古本辑佚）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载昭王南征、丧失六师及末年南巡不返等关键史实，可补正史之阙",
+      "检索词": "周昭王 十九年 南巡",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "&nbsp;道德真經註&nbsp;世說新語&nbsp;顏氏家訓&nbsp;文心雕龍&nbsp;群書治要&nbsp;藝文類聚&nbsp;黃帝陰符經&nbsp;四書章句集注&nbsp;論語注疏&nbsp;封神演義&nbsp;孝經注疏&nbsp;太平御覽&nbsp;太平廣記&nbsp;朱子語類&nbsp;宋景文公筆記&nbsp;墨經校釋網站有中、英文版本，也有繁、簡體版，可通過每頁左上角的連結隨時調整。《诗说》并非先秦两汉典籍，应该尽快转移到汉之后《诗说》并非先秦两汉典籍，应该尽快转移到汉之后，不然会对文献使用者造成误导。以为它的可信度更高。 [文字與原典鏈接錯誤在瀏覽《太乙金華宗旨》時，發現兩版本之原典鏈接皆指向同一典籍。因在兩版本中《天心章第一》之內容， [如果我說「朕」仍然是存在的你知道，朕在秦始皇帝以前，不分貴賤自稱時都說朕。秦始皇帝以後改成天子專用，因爲這個字被限制，不能 ["
+    },
+    {
+      "出处": "《左传·僖公四年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "齐国伐楚时管仲提及昭王南征不复，可作为早期文献互证",
+      "检索词": "昭王南征而不复",
+      "采用": true,
+      "原文摘句": "昭王南征而不复，君其问诸水滨。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《吕氏春秋·音初》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记录昭王亲征荆楚、渡汉水时桥梁败坏而溺死的过程，为正史之外的重要异说",
+      "检索词": "昭王亲将征荆",
+      "采用": true,
+      "原文摘句": "周昭王亲将征荆……还反涉汉，梁败，王及蔡公抎于汉中。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《楚辞·天问》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "以问句形式影射昭王南征遇白雉之事，揭示南方之行隐含的荒诞意味",
+      "检索词": "昭后成游 南土",
+      "采用": true,
+      "原文摘句": "昭后成游，南土爰底。厥利维何，逢彼白雉？",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "史墙盘（《殷周金文集成》10175）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "西周青铜器铭文颂扬昭王广能楚荆、亲自南行，是昭王南征的实物证据",
+      "检索词": "弘鲁昭王 广能楚荆",
+      "采用": true,
+      "原文摘句": "弘鲁昭王，广能楚荆，唯实南行。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·周本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，提供昭王继位、南征、死因及周室隐匿死讯等基本叙事",
+      "检索词": "周昭王 南巡狩",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "记录昭王乘胶船渡汉水、船解溺死的传说，为后世附会异说",
+      "检索词": "昭王 胶船 汉水",
+      "采用": true,
+      "原文摘句": "昭王德衰，南征，济于汉，船人恶之，以胶船进王，中流船解，王及祭公俱没于水中而崩。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 6,
+    "C_excluded": 1,
+    "overall": "B"
+  }
+}

@@ -14,6 +14,7 @@ from fanzuo_volumes import is_fanzuo_volume as _is_fanzuo_volume
 # ── 合法枚举 ──────────────────────────────────────────────
 VALID_CATS = frozenset({
     "君王",
+    "诸侯",
     "宗戚",
     "宦官",
     "文臣",
@@ -38,6 +39,7 @@ OFFICIAL_CATEGORIES = frozenset({"文臣", "武将", "宦官"})
 CATEGORY_PRIORITY = (
     "君王",
     "宗戚",
+    "诸侯",
     "宦官",
     "文臣",
     "武将",
@@ -114,7 +116,7 @@ def resolve_category_v3(
     name = (name or "").strip()
     cur = normalize_entry_category((current or "").strip())
 
-    if cur in {"君王", "宗戚"}:
+    if cur in {"君王", "诸侯", "宗戚"}:
         return cur
 
     if cur == "蕃祚":

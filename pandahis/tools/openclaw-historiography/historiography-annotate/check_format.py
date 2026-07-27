@@ -461,7 +461,7 @@ def check_entries(entries: list, total_paragraphs: int, phase: str) -> Set[Tuple
         if raw_cat == "宫眷":
             err(f"{prefix}史略分类「宫眷」已废弃，须改为宗戚")
         if raw_cat in LEGACY_CATS:
-            err(f"{prefix}史略分类「{raw_cat}」非法，须为君王/宗戚/宦官/文臣/武将/蕃祚/庶众")
+            err(f"{prefix}史略分类「{raw_cat}」非法，须为君王/诸侯/宗戚/宦官/文臣/武将/蕃祚/庶众")
         if cat and cat not in VALID_CATS:
             err(f"{prefix}非法分类: '{raw_cat}'（合法值: {', '.join(sorted(VALID_CATS))}）")
 
@@ -942,7 +942,7 @@ def check_junji_year_uniqueness(entries: list, *, phase: str) -> None:
     seen: Dict[Tuple[int, int, str], str] = {}
     ok = True
     for entry in entries:
-        if normalize_entry_category(entry.get("史略分类", "")) != "君王":
+        if normalize_entry_category(entry.get("史略分类", "")) not in ("君王", "诸侯"):
             continue
         start, end = entry.get("史略开始年"), entry.get("史略结束年")
         if not isinstance(start, int) or not isinstance(end, int):
@@ -1045,7 +1045,7 @@ def _quality_warnings(
     # 2. 君纪 ≤2段 → 提醒检查是否有独立叙事
     thin_jun = []
     for e in entries:
-        if e.get("史略分类") != "君王":
+        if e.get("史略分类") not in ("君王", "诸侯"):
             continue
         pcount = sum(pr["paragraph_to"] - pr["paragraph_from"] + 1 for pr in e.get("paragraphs", []))
         if pcount <= 2:

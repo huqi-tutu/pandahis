@@ -1,0 +1,19 @@
+{
+  "schema": "translate-coverage-l2/v1",
+  "史略ID": "GLBL_00011",
+  "passed": true,
+  "degraded": false,
+  "summary": "唯一待确认的信息已准确传达。",
+  "l1_ratio": 0.0,
+  "l1_min_ratio": 0.0,
+  "claims": [
+    {
+      "id": "M018",
+      "claim": "寿梦十六年，楚共王伐吴，到达衡山。",
+      "status": "conveyed",
+      "evidence": "十六年后，楚共王咽不下这口气，发动大军反击吴国，一路打到了衡山。",
+      "note": "明确传达寿梦十六年楚共王伐吴至衡山的信息。"
+    }
+  ],
+  "issues": []
+}

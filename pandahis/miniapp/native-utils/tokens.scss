@@ -5,7 +5,10 @@ page {
   --borderCard: #{$divider};
   --text2: #{$text-body};
   --text3: #{$text-caption};
-  --shadow1: 0 8rpx 24rpx rgba(74, 63, 63, 0.06);
+  --shadow1: #{$shadow-elevated};
+  --shadow-card: #{$shadow-card};
+  --shadow-bar: #{$shadow-bar};
+  --shadow-nav: #{$shadow-nav};
   --radiusLg: 24rpx;
   --radiusMd: 18rpx;
 }

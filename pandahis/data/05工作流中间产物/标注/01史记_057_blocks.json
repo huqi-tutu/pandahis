@@ -2,17 +2,22 @@
   "total_paragraphs": 33,
   "excludes": [
     {
+      "paragraph_from": 32,
+      "paragraph_to": 32,
+      "exclude_reason": "太史公曰"
+    },
+    {
       "paragraph_from": 33,
       "paragraph_to": 33,
-      "exclude_reason": "太史公曰"
+      "exclude_reason": "其他"
     }
   ],
   "blocks": [
     {
       "name": "周勃",
-      "category": "武将",
+      "category": "文臣",
       "paragraph_from": 1,
-      "paragraph_to": 32
+      "paragraph_to": 31
     }
   ]
 }

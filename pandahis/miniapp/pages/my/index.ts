@@ -1,6 +1,7 @@
 import { clearAccessToken, hasToken, request } from '../../native-utils/api'
 import { ROUTES, navigateTo } from '../../native-utils/router'
-import { computePageTopPadPx } from '../../native-utils/nav-metrics'
+import { computePageHeightPx, computePageTopPadPx } from '../../native-utils/nav-metrics'
+import { measureScrollOverflow } from '../../native-utils/overscroll-bounce'
 import { trySilentWxLogin } from '../../native-utils/wx-auth'
 
 const APP_VERSION = '1.0.0'
@@ -53,12 +54,39 @@ Page({
     vipDesc: '解锁全地域图谱 · 跨时空评述 · 见证 Tab',
     appVersion: APP_VERSION,
     pageTopPadPx: 88,
+    pageHeightPx: 667,
+    scrollEnabled: false,
+    shortcuts: [
+      { id: 'membership', label: '会员', icon: '/images/icons/huiyuan.png', action: 'membership' },
+      { id: 'corrections', label: '纠错', icon: '/images/icons/jiucuo.png', action: 'corrections' },
+      { id: 'invite', label: '邀请', icon: '/images/icons/fenxiang.png', action: 'invite' },
+      { id: 'settings', label: '设置', icon: '/images/icons/shezhi.png', action: 'settings' },
+    ],
   },
   onLoad() {
     try {
-      this.setData({ pageTopPadPx: computePageTopPadPx() })
+      const sys = wx.getSystemInfoSync()
+      this.setData({
+        pageTopPadPx: computePageTopPadPx(sys),
+        pageHeightPx: computePageHeightPx(sys),
+      })
     } catch {
-      this.setData({ pageTopPadPx: 88 })
+      this.setData({ pageTopPadPx: 88, pageHeightPx: 667 })
+    }
+  },
+  onReady() {
+    this.scheduleScrollMeasure()
+  },
+  scheduleScrollMeasure() {
+    wx.nextTick(() => {
+      void this.updateScrollEnabled()
+      setTimeout(() => void this.updateScrollEnabled(), 120)
+    })
+  },
+  async updateScrollEnabled() {
+    const scrollEnabled = await measureScrollOverflow(this, '#pageMyScroll', '#pageMyContent')
+    if (scrollEnabled !== this.data.scrollEnabled) {
+      this.setData({ scrollEnabled })
     }
   },
   onShow() {
@@ -67,20 +95,23 @@ Page({
     void this.refresh()
   },
   setGuestState() {
-    this.setData({
-      loggedIn: false,
-      isVip: false,
-      nickname: '',
-      avatarUrl: '',
-      avatarInitial: '我',
-      phoneLine: '未绑定手机号',
-      footprintCount: 0,
-      favoriteCount: 0,
-      learnDays: 0,
-      readCompleteCount: 0,
-      vipTitle: '开通年度会员',
-      vipDesc: '解锁全地域图谱 · 跨时空评述 · 见证 Tab',
-    })
+    this.setData(
+      {
+        loggedIn: false,
+        isVip: false,
+        nickname: '',
+        avatarUrl: '',
+        avatarInitial: '我',
+        phoneLine: '未绑定手机号',
+        footprintCount: 0,
+        favoriteCount: 0,
+        learnDays: 0,
+        readCompleteCount: 0,
+        vipTitle: '开通年度会员',
+        vipDesc: '解锁全地域图谱 · 跨时空评述 · 见证 Tab',
+      },
+      () => this.scheduleScrollMeasure(),
+    )
   },
   async refresh() {
     if (!hasToken()) {
@@ -113,7 +144,7 @@ Page({
         readCompleteCount: me.readCompleteCount,
         vipTitle: vip.title,
         vipDesc: vip.desc,
-      })
+      }, () => this.scheduleScrollMeasure())
     } catch (e: unknown) {
       const msg = e instanceof Error ? e.message : ''
       console.error('[my] refresh failed', e)
@@ -140,7 +171,7 @@ Page({
         readCompleteCount: 0,
         vipTitle: vip.title,
         vipDesc: vip.desc,
-      })
+      }, () => this.scheduleScrollMeasure())
     }
   },
   vipCopy(status: string, endAt?: string | null) {
@@ -202,5 +233,24 @@ Page({
   },
   goSettings() {
     navigateTo(ROUTES.settings)
+  },
+  onShortcutTap(e: WechatMiniprogram.BaseEvent) {
+    const action = (e.currentTarget as WechatMiniprogram.IAnyObject).dataset.action as string
+    switch (action) {
+      case 'membership':
+        this.goMembership()
+        break
+      case 'corrections':
+        this.goCorrections()
+        break
+      case 'invite':
+        this.goInviteFriends()
+        break
+      case 'settings':
+        this.goSettings()
+        break
+      default:
+        break
+    }
   },
 })

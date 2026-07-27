@@ -26,3 +26,40 @@
   color: rgba(87, 66, 63, 0.45);
   pointer-events: none;
 }
+
+.zoom-bar {
+  position: absolute;
+  left: 50%;
+  bottom: 24rpx;
+  width: 280rpx;
+  margin-left: -140rpx;
+  height: 72rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16rpx;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.92);
+  border-radius: 999rpx;
+  border: 1rpx solid rgba(0, 0, 0, 0.06);
+}
+
+.zoom-btn {
+  width: 56rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  text-align: center;
+  font-size: 36rpx;
+  font-weight: 500;
+  color: #4a3f3f;
+  background-color: #edeae6;
+  border-radius: 999rpx;
+}
+
+.zoom-label {
+  font-size: 26rpx;
+  color: #6c757d;
+  text-align: center;
+  line-height: 72rpx;
+}

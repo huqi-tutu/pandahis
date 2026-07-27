@@ -8,7 +8,6 @@ import com.pandahis.histomap.contentgraph.domain.BoxCategorySupport;
 import com.pandahis.histomap.common.auth.UserContextHolder;
 import com.pandahis.histomap.common.config.HistomapProperties;
 import com.pandahis.histomap.contentgraph.interfaces.dto.*;
-import com.pandahis.histomap.invite.service.DeepTabReadService;
 import com.pandahis.histomap.user.interfaces.service.ReadCompleteService;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -24,20 +23,17 @@ public class BoxService {
   private final JdbcTemplate jdbcTemplate;
   private final HistomapProperties props;
   private final ObjectMapper objectMapper;
-  private final DeepTabReadService deepTabReadService;
   private final ReadCompleteService readCompleteService;
 
   public BoxService(
       JdbcTemplate jdbcTemplate,
       HistomapProperties props,
       ObjectMapper objectMapper,
-      DeepTabReadService deepTabReadService,
       ReadCompleteService readCompleteService
   ) {
     this.jdbcTemplate = jdbcTemplate;
     this.props = props;
     this.objectMapper = objectMapper;
-    this.deepTabReadService = deepTabReadService;
     this.readCompleteService = readCompleteService;
   }
 
@@ -134,7 +130,6 @@ public class BoxService {
   }
 
   public BoxDetailDTO loadDetail(String boxId) {
-    ensureTabAllowed("detail", boxId);
     Map<String, Object> box = findBox(boxId);
     String detail = loadTranslateDetail(boxId);
     if (detail.isBlank()) {
@@ -142,7 +137,7 @@ public class BoxService {
     }
     String flash = Optional.ofNullable((String) box.get("detail_md_flash")).orElse("");
     String pro = Optional.ofNullable((String) box.get("detail_md_pro")).orElse("");
-    // 原文见 GET /boxes/{id}/original-ref（消耗阅读数）
+    // 原文由公开接口 GET /boxes/{id}/original-ref 单独返回。
     return new BoxDetailDTO(
         detail,
         null,
@@ -167,14 +162,12 @@ public class BoxService {
   }
 
   public BoxOriginalRefDTO loadOriginalRef(String boxId) {
-    ensureDeepTab("original", boxId);
     Map<String, Object> box = findBox(boxId);
     JsonNode ref = resolveOriginalRef(boxId, box);
     return new BoxOriginalRefDTO(ref);
   }
 
   public BoxGraphDTO loadGraph(String boxId) {
-    ensureTabAllowed("graph", boxId);
     Map<String, Object> box = findBox(boxId);
     String boxTitle = Optional.ofNullable((String) box.get("title")).orElse("").trim();
 
@@ -223,7 +216,6 @@ public class BoxService {
   }
 
   public GraphNodeDetailDTO loadGraphNodeDetail(String boxId, String nodeKey) {
-    ensureTabAllowed("graph", boxId);
     List<Map<String, Object>> rows = jdbcTemplate.queryForList(
         "SELECT name, node_type, extra_json FROM box_graph_node WHERE box_id=? AND node_key=? LIMIT 1",
         boxId,
@@ -503,35 +495,7 @@ public class BoxService {
 
   private BoxHeaderDTO.Access buildAccess(String boxId) {
     BoxHeaderDTO.TabAccess unlocked = new BoxHeaderDTO.TabAccess(false, null, null);
-    var ctx = UserContextHolder.get();
-    boolean authed = ctx.authenticated();
-    if (!authed) {
-      BoxHeaderDTO.TabAccess lockedLogin =
-          new BoxHeaderDTO.TabAccess(true, "LOGIN_REQUIRED", new BoxHeaderDTO.UnlockAction("OPEN_LOGIN"));
-      // 评述、见证暂开放；原文 Tab 仍须登录
-      return new BoxHeaderDTO.Access(false, new BoxHeaderDTO.Tabs(unlocked, unlocked, unlocked, lockedLogin));
-    }
-    long uid = ctx.userId();
-    BoxHeaderDTO.TabAccess original = deepTabReadService.tabAccess(uid, boxId, true, "original");
-    return new BoxHeaderDTO.Access(false, new BoxHeaderDTO.Tabs(unlocked, unlocked, unlocked, original));
-  }
-
-  private void ensureTabAllowed(String tab, String boxId) {
-    if (tab.equals("detail") || tab.equals("graph")) {
-      return;
-    }
-    ensureDeepTab(tab, boxId);
-  }
-
-  private void ensureDeepTab(String tab, String boxId) {
-    if (!tab.equals("original")) {
-      return;
-    }
-    var ctx = UserContextHolder.get();
-    if (!ctx.authenticated()) {
-      throw ApiException.unauthorized("login required");
-    }
-    deepTabReadService.ensurePaidDeepTab(ctx.userId(), boxId, tab);
+    return new BoxHeaderDTO.Access(false, new BoxHeaderDTO.Tabs(unlocked, unlocked, unlocked, unlocked));
   }
 
   /**

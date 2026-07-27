@@ -87,6 +87,9 @@ class TestCoverageVerify(unittest.TestCase):
         self.assertGreaterEqual(score, 0.32, msg=f"score={score}")
 
     def test_verify_passes_reasonable_paraphrase(self) -> None:
+        import os
+
+        os.environ["TRANSLATE_COVERAGE_MODE"] = "l1"
         plan = {
             "母本逐句清单": [
                 {
@@ -110,6 +113,28 @@ class TestCoverageVerify(unittest.TestCase):
         )
         ok, errs = verify_mother_coverage(detail, plan, min_ratio=0.5)
         self.assertTrue(ok, msg="; ".join(errs))
+
+
+from lib.coverage_l2 import semantic_coverage_gate_passed  # noqa: E402
+
+
+class TestSemanticCoverageGate(unittest.TestCase):
+    def test_pass_at_eighty_percent(self) -> None:
+        ok, _ = semantic_coverage_gate_passed(16, 20, 4, min_ratio=0.80, max_fail=3)
+        self.assertTrue(ok)
+
+    def test_pass_when_fail_count_within_limit(self) -> None:
+        ok, _ = semantic_coverage_gate_passed(17, 20, 3, min_ratio=0.80, max_fail=3)
+        self.assertTrue(ok)
+
+    def test_fail_when_both_thresholds_missed(self) -> None:
+        ok, note = semantic_coverage_gate_passed(14, 20, 6, min_ratio=0.80, max_fail=3)
+        self.assertFalse(ok)
+        self.assertIn("未传达 6 条", note)
+
+    def test_empty_total_passes(self) -> None:
+        ok, _ = semantic_coverage_gate_passed(0, 0, 0)
+        self.assertTrue(ok)
 
 
 if __name__ == "__main__":

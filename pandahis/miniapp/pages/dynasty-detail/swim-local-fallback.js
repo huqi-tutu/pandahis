@@ -30,6 +30,8 @@ function buildSwimMatrixFromMock(dynastyName) {
   }
 }
 
+const { formatYearRange } = require('../../native-utils/year-format')
+
 function buildHeroFromMock(swimMatrix, unitId, dynastyName) {
   const d = swimMatrix._mock || {}
   const title = d.title || dynastyName || '朝代'
@@ -47,7 +49,7 @@ function buildHeroFromMock(swimMatrix, unitId, dynastyName) {
       name: title,
       dynastyName: title,
       crumbText: d.civ || '',
-      eraText: d.range || `${d.startYear}–${d.endYear}`,
+      eraText: d.range || formatYearRange(d.startYear, d.endYear, '–'),
       startYear: d.startYear,
       endYear: d.endYear,
       durationYears: Math.max(0, d.endYear - d.startYear),

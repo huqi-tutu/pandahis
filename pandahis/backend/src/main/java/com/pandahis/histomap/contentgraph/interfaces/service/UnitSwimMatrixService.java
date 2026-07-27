@@ -52,6 +52,7 @@ public class UnitSwimMatrixService {
             + "ORDER BY start_year ASC, id ASC",
         dynastyId
     );
+    boxes = BoxEntryDeduper.hideThinExtractWhenSupplementExists(boxes);
 
     List<LaneSeed> laneSeeds = buildLaneSeeds(boxes, startYear, endYear);
     List<Integer> anchorYears = collectAnchorYears(laneSeeds);
@@ -121,7 +122,7 @@ public class UnitSwimMatrixService {
             priority(b.get("priority_code"), b.get("importance_level")),
             peakYear,
             peakReason,
-            "junji".equals(def.key()),
+            "junji".equals(def.key()) || "zhuhou".equals(def.key()),
             personTag(b.get("person_tag")),
             priorityReason,
             entrySource(b.get("entry_source"))
@@ -197,6 +198,7 @@ public class UnitSwimMatrixService {
   private static String laneIcon(String key) {
     return switch (key) {
       case "junji" -> "王";
+      case "zhuhou" -> "侯";
       case "zongqi" -> "宗";
       case "wenchen" -> "文";
       case "wujiang" -> "武";

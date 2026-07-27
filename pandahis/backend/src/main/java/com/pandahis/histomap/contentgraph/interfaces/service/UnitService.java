@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 
 @Service
 public class UnitService {
-  /** 朝代详情矩阵：固定 10 泳道 */
+  /** 朝代详情矩阵：固定 11 泳道 */
   private static final List<UnitMatrixDTO.Category> CATEGORIES = BoxCategorySupport.swimLanes().stream()
       .map(def -> new UnitMatrixDTO.Category(def.key(), def.label()))
       .toList();
@@ -124,7 +124,8 @@ public class UnitService {
             def.key(),
             def.label(),
             switch (def.key()) {
-              case "junji" -> "帝王本纪、君主世系、登基册立……";
+              case "junji" -> "帝王本纪、天子皇帝、霸王级共主……";
+              case "zhuhou" -> "封国君主、列国世袭国君、诸侯世家……";
               case "zongqi" -> "外戚、宗室、后妃与宗藩……";
               case "wenchen" -> "行政、刑名、外交、儒学、文学仕宦……";
               case "wujiang" -> "军功、征战、将帅……";

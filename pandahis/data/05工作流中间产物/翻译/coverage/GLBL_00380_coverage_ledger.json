@@ -1,0 +1,31 @@
+{
+  "schema": "translate-coverage-ledger/v1",
+  "史略ID": "GLBL_00380",
+  "updated_at": "2026-07-26T14:16:08.312726+00:00",
+  "entries": {
+    "M001": {
+      "status": "conveyed",
+      "claim_fp": "e96d3606c5155950",
+      "checked_at": "2026-07-26T14:15:55.622202+00:00",
+      "note": "樊须，字子迟"
+    },
+    "M002": {
+      "status": "conveyed",
+      "claim_fp": "8c60ec688e4d20ba",
+      "checked_at": "2026-07-26T14:15:55.622212+00:00",
+      "note": "比孔子小三十六岁"
+    },
+    "M003": {
+      "status": "conveyed",
+      "claim_fp": "189fec93e63a1e71",
+      "checked_at": "2026-07-26T14:15:55.622215+00:00",
+      "note": "请教怎么种庄稼……哪里用得着自己去种地！"
+    },
+    "M004": {
+      "status": "conveyed",
+      "claim_fp": "5760420686ea4e15",
+      "checked_at": "2026-07-26T14:15:55.622217+00:00",
+      "note": "他向孔子请教什么是仁，孔子答：「爱人。」又问什么是智，孔子答：「知人。」"
+    }
+  }
+}

@@ -1,9 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.buildFavoriteSummary = exports.categoryLabel = exports.isPersonBoxCategory = exports.PERSON_BOX_CATEGORY_KEYS = void 0;
-/** 人物六类 category_key（与后端 BoxCategorySupport 一致） */
+/** 人物七类 category_key（与后端 BoxCategorySupport 一致） */
 exports.PERSON_BOX_CATEGORY_KEYS = [
     'junji',
+    'zhuhou',
     'zongqi',
     'wenchen',
     'wujiang',
@@ -12,7 +13,7 @@ exports.PERSON_BOX_CATEGORY_KEYS = [
     'shichen',
     'minlu',
 ];
-/** 是否为人物类史略（君王/宗戚/文臣/武将/宦官/庶众） */
+/** 是否为人物类史略（君王/诸侯/宗戚/文臣/武将/宦官/庶众） */
 function isPersonBoxCategory(key) {
     const k = String(key || '').trim();
     if (!k)
@@ -25,6 +26,8 @@ function categoryLabel(key) {
     switch (key) {
         case 'junji':
             return '君王';
+        case 'zhuhou':
+            return '诸侯';
         case 'zongqi':
             return '宗戚';
         case 'wenchen':

@@ -21,6 +21,7 @@ from lib.stall_watch import (
     stall_threshold_sec,
     touch_heartbeat,
 )
+from lib.mother_sentences import extract_mother_sentences
 from lib.fingerprint import recalled_summary, source_fingerprint
 from lib.index_filter import filter_pending_jobs
 from lib.translate_scope import (
@@ -152,6 +153,20 @@ def cmd_recall(entry_id: str, *, index_path: Path | None = None) -> Dict[str, An
     return recalled
 
 
+def _guard_plan_inflation(
+    recalled: Dict[str, Any],
+    plan_data: Dict[str, Any],
+) -> List[str]:
+    """plan 清单须与 recall 分句一一对应，否则禁止进入 Phase1/2。"""
+    expected = len(extract_mother_sentences(recalled))
+    actual = len(plan_data.get("母本逐句清单") or [])
+    if expected and actual != expected:
+        return [
+            f"plan 清单条数与 recall 不一致: {actual} != {expected}（疑似 plan 膨胀/缩水，已阻断）"
+        ]
+    return []
+
+
 def _should_skip(
     entry_id: str,
     recalled: Dict[str, Any],
@@ -279,13 +294,11 @@ def _record_translate_failure(
         if plan.next_command:
             print(f"   建议：{plan.next_command}", flush=True)
         return 2, plan
-    if plan.disposition == "needs_human":
-        print(f"⏸️  需人工：{plan.structured_prompt[:200]}", flush=True)
-    else:
-        print(
-            f"💡 定向修复：python3 translate.py repair --id {entry_id}",
-            flush=True,
-        )
+    print(
+        f"💡 将自动重试：{plan.disposition} / {plan.action}"
+        + (f"（{plan.root_cause}）" if plan.root_cause else ""),
+        flush=True,
+    )
     return 1, plan
 
 
@@ -315,7 +328,18 @@ def _apply_attribution_polish(
 
 
 def _phase2_max_retries() -> int:
-    return max(0, int(os.environ.get("TRANSLATE_PHASE2_MAX_RETRIES", "2")))
+    return max(0, int(os.environ.get("TRANSLATE_PHASE2_MAX_RETRIES", "5")))
+
+
+def _verify_enrich_with_autofix(
+    entry_id: str,
+    recalled: Dict[str, Any],
+    target: Path,
+    plan_data: Dict[str, Any],
+) -> Tuple[bool, List[str]]:
+    """Phase2 质检；落盘后先跑归因脚本清洗再验。"""
+    _apply_attribution_polish(target, recalled, plan_data)
+    return verify_enrich_draft(entry_id, recalled, target, plan=plan_data)
 
 
 def _mother_batch_size() -> int:
@@ -418,7 +442,7 @@ def _run_phase1_mother_single(
             )
             if miss_lines:
                 retry_note += (
-                    "\n\n--- 以下原词锚点须在译文中保留（可用「」标出）---\n"
+                    "\n\n--- 以下原词须在译文中自然出现（写入白话叙述即可）---\n"
                     + "\n".join(miss_lines)
                 )
         batch_note = ""
@@ -457,18 +481,31 @@ def _run_phase1_mother_single(
             return False, ["Phase1: LLM 未落盘母本顺译"]
         if polish_mother_file(mother_file):
             print("   🔧 已修正 Phase1 误用书名号", flush=True)
-        touch_heartbeat(work_dir, entry_id, stage="verify_mother")
         mother_detail = _load_mother_text(mother_file)
+        touch_heartbeat(
+            work_dir, entry_id, stage="verify_mother", detail=batch_label or ""
+        )
         m_ok, m_errs = verify_mother_draft(
             entry_id,
             recalled,
             mother_file,
             plan=verify_plan_data,
             batch_mode=bool(batch_label),
+            batch_label=batch_label,
         )
         if m_ok:
+            if batch_label:
+                touch_heartbeat(
+                    work_dir, entry_id, stage="mother_batch_done", detail=batch_label
+                )
             return True, []
         print(f"⚠️ Phase1 未通过: {m_errs[0] if m_errs else '?'}", flush=True)
+        if batch_label and attempt < max_retries:
+            from lib.coverage_info import build_coverage_units
+            from lib.coverage_ledger import clear_ledger_labels
+
+            labels = [u.label for u in build_coverage_units(checklist)]
+            clear_ledger_labels(work_dir, entry_id, labels)
     return False, [f"Phase1: {e}" for e in m_errs]
 
 
@@ -514,12 +551,113 @@ def _use_chunked_pipeline(recalled: Dict[str, Any]) -> bool:
     return should_use_chunked_flow(recalled)
 
 
+def _run_phase2_enrich_batched(
+    entry_id: str,
+    recalled: Dict[str, Any],
+    *,
+    plan_data: Dict[str, Any],
+    mother_file: Path,
+    target: Path,
+    session_id: str,
+    work_dir: Path,
+    entry_name: str,
+    t0: float,
+) -> Tuple[bool, List[str], float]:
+    """长母本 Phase2：按 Phase1 分批文件逐批 enrich，再合并终稿。"""
+    from lib.phase2_batch import (
+        build_batch_enrich_prompt,
+        discover_mother_batches,
+        merge_enrich_batches,
+        phase2_batch_char_threshold,
+    )
+
+    batches = discover_mother_batches(mother_file)
+    total = len(batches)
+    print(
+        f"📦 Phase2 分批补全 {entry_id}：{total} 批"
+        f"（母本 >{phase2_batch_char_threshold()} 字，避免单次输出截断）",
+        flush=True,
+    )
+    parts: List[str] = []
+    for bi, batch_file in enumerate(batches, start=1):
+        batch_mother = _load_mother_text(batch_file)
+        batch_target = batch_file.with_suffix(".enrich.json")
+        label = f"第 {bi}/{total} 批"
+        batch_ok = False
+        batch_errs: List[str] = []
+        for attempt in range(_phase2_max_retries() + 1):
+            retry_note = ""
+            if attempt > 0 and batch_errs:
+                plan_fb = classify_translate_failure(
+                    batch_errs, stage="phase2", fail_count=attempt
+                )
+                retry_note = (
+                    "\n\n--- 上轮 Phase2 质检失败，须修正 ---\n"
+                    + format_repair_feedback(plan_fb, batch_errs)
+                )
+            prompt = (
+                build_batch_enrich_prompt(
+                    entry_id,
+                    recalled,
+                    plan_data,
+                    batch_mother,
+                    batch_target,
+                    batch_no=bi,
+                    total_batches=total,
+                    include_intro=(bi == 1),
+                )
+                + retry_note
+                + _repair_feedback_suffix()
+            )
+            print(
+                f"⏳ Phase2 补全 {entry_id} {label} → {batch_target.name}"
+                + (f"（重试 {attempt}/{_phase2_max_retries()}）" if attempt else ""),
+                flush=True,
+            )
+            _llm_turn(
+                work_dir,
+                entry_id,
+                "enrich",
+                prompt,
+                session_id=f"{session_id}-enrich-b{bi}-r{attempt}",
+                timeout_sec=900,
+                artifact_paths={"output": batch_target},
+            )
+            if not batch_target.is_file():
+                batch_errs = [f"Phase2 {label}: LLM 未落盘本批译稿"]
+                print(f"⚠️ {batch_errs[0]}", flush=True)
+                continue
+            parts.append(_load_mother_text(batch_target))
+            batch_ok = True
+            break
+        if not batch_ok:
+            return False, batch_errs or [f"Phase2 {label} 失败"], time.time() - t0
+
+    combined = merge_enrich_batches(entry_id, parts, plan_data, recalled)
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(
+        json.dumps({"史略ID": entry_id, "翻译详情": combined}, ensure_ascii=False, indent=2)
+        + "\n",
+        encoding="utf-8",
+    )
+    if polish_enrich_file_full(target):
+        print("   🔧 已自动修正模糊出处表述", flush=True)
+    touch_heartbeat(work_dir, entry_id, stage="verify_enrich")
+    e_ok, e_errs = _verify_enrich_with_autofix(
+        entry_id, recalled, target, plan_data
+    )
+    if not e_ok:
+        return False, [f"Phase2: {e}" for e in e_errs], time.time() - t0
+    return True, [], time.time() - t0
+
+
 def _run_phase2_enrich(
     entry_id: str,
     recalled: Dict[str, Any],
     *,
     plan_data: Dict[str, Any],
     mother_body: str,
+    mother_file: Path,
     target: Path,
     session_id: str,
     work_dir: Path,
@@ -527,6 +665,21 @@ def _run_phase2_enrich(
     t0: float,
 ) -> Tuple[bool, List[str], float]:
     """Phase2 补全 + 前置质检 + 重试。"""
+    from lib.phase2_batch import discover_mother_batches, phase2_batch_char_threshold
+
+    batch_files = discover_mother_batches(mother_file)
+    if len(mother_body) > phase2_batch_char_threshold() and batch_files:
+        return _run_phase2_enrich_batched(
+            entry_id,
+            recalled,
+            plan_data=plan_data,
+            mother_file=mother_file,
+            target=target,
+            session_id=session_id,
+            work_dir=work_dir,
+            entry_name=entry_name,
+            t0=t0,
+        )
     enrich_plan_json = _plan_json_for_enrich(plan_data)
     e_errs: List[str] = []
     e_ok = False
@@ -564,10 +717,9 @@ def _run_phase2_enrich(
             return False, ["Phase2: LLM 未落盘最终译稿"], time.time() - t0
         if polish_enrich_file_full(target):
             print("   🔧 已自动修正模糊出处表述", flush=True)
-        _apply_attribution_polish(target, recalled, plan_data)
         touch_heartbeat(work_dir, entry_id, stage="verify_enrich")
-        e_ok, e_errs = verify_enrich_draft(
-            entry_id, recalled, target, plan=plan_data
+        e_ok, e_errs = _verify_enrich_with_autofix(
+            entry_id, recalled, target, plan_data
         )
         if e_ok:
             break
@@ -603,6 +755,9 @@ def _run_single_pass(
         return False, plan_errors, 0.0
 
     _, plan_data, _ = load_normalized_plan(plan_file, recalled)
+    inflate_errs = _guard_plan_inflation(recalled, plan_data)
+    if inflate_errs:
+        return False, inflate_errs, 0.0
     t0 = time.time()
     touch_heartbeat(work_dir, entry_id, stage="start", detail=entry_name)
 
@@ -621,6 +776,10 @@ def _run_single_pass(
                 return False, [f"母本顺译未通过: {e}" for e in m_errs], time.time() - t0
             print(f"⏭️ 跳过 Phase1（沿用 {mother_file.name}）", flush=True)
         else:
+            if not mother_file.is_file():
+                from lib.coverage_ledger import clear_ledger
+
+                clear_ledger(work_dir, entry_id)
             m_ok, m_errs = _run_phase1_mother(
                 entry_id,
                 recalled,
@@ -638,6 +797,7 @@ def _run_single_pass(
             recalled,
             plan_data=plan_data,
             mother_body=mother_body,
+            mother_file=mother_file,
             target=target,
             session_id=session_id,
             work_dir=work_dir,

@@ -83,11 +83,6 @@ VOLUME_IDENTITY_RULES: Dict[Tuple[str, str], dict] = {
         "required": [{"name": "汉文帝", "category": "君王"}],
         "forbidden_names": ["孝文皇帝"],
     },
-    ("01史记", "033"): {
-        "volume_hint": "鲁周公世家 → 主轴须为帝王表「周公旦」category=君王（鲁国始祖）；士臣与君王冲突时按优先级链取君王",
-        "required": [{"name": "周公旦", "category": "君王"}],
-        "forbidden_names": ["鲁公伯禽", "鲁考公"],
-    },
     ("01史记", "047"): {
         "volume_hint": "孔子世家 → 主轴「孔子」须为文臣（至圣先师，非帝王叙事）；禁止君王",
         "required": [{"name": "孔子", "category": "文臣"}],
@@ -167,12 +162,6 @@ VOLUME_NAME_PATTERNS: List[dict] = [
         "required": [{"name": "汉文帝", "category": "君王"}],
         "forbidden_names": ["孝文皇帝"],
         "hint": "孝文本纪主轴为汉文帝",
-    },
-    {
-        "name_re": r"鲁周公世家",
-        "required": [{"name": "周公旦", "category": "君王"}],
-        "forbidden_names": ["鲁公伯禽", "鲁考公"],
-        "hint": "鲁周公世家主轴为周公旦（君王），伯禽等鲁国后世君主归入本卷叙事块，不另立主轴",
     },
     {
         "name_re": r"淮南衡山济北王传",
@@ -335,6 +324,8 @@ def identity_hint_for_protagonist_prompt(
         "- 匈奴/南越/东越/朝鲜/西南夷列传（史记）及汉书匈奴传/西南夷两粤朝鲜传/西域传 → "
         "主轴=卷名所指族/国/诸夷集体，category=蕃祚（非帝王.json单君王）；年轴=政权立国至灭亡\n"
         "- 汉书诸侯王合传（如荆燕吴传、淮南衡山济北王传）→ 宗戚，禁止蕃祚\n"
+        "- 诸侯世系世家（鲁/齐/晋/楚等）→ 有独立叙事段的历代君主均应列入 blocks；"
+        "纯世系链 exclude；禁止卷名始祖吞并全卷（见人物标注规则·世家专则）\n"
         "每位 protagonist 须写 rationale，说明依据卷名/常识为何是主轴。"
     )
 
@@ -378,7 +369,7 @@ def validate_protagonists_identity(
         )
     else:
         for name, cat in pairs:
-            if cat == "君王":
+            if cat in ("君王", "诸侯"):
                 errors.extend(
                     _validate_junwang_name(
                         name,
@@ -565,7 +556,7 @@ def _apply_volume_rule(
                 )
 
     for name, cat in pairs:
-        if cat == "君王":
+        if cat in ("君王", "诸侯"):
             errors.extend(
                 _validate_junwang_name(
                     name, work_id=work_id, eidx=eidx, label=f"{prefix}{name!r}"
@@ -595,7 +586,7 @@ def validate_blocks_identity(
         )
     else:
         for name, cat in pairs:
-            if cat == "君王":
+            if cat in ("君王", "诸侯"):
                 errors.extend(
                     _validate_junwang_name(
                         name, work_id=work_id, eidx=eidx, label=f"blocks {name!r}"
@@ -629,7 +620,7 @@ def validate_skeleton_identity(
         )
     else:
         for name, cat in pairs:
-            if cat == "君王":
+            if cat in ("君王", "诸侯"):
                 errors.extend(
                     _validate_junwang_name(
                         name, work_id=work_id, eidx=eidx, label=f"entry {name!r}"
@@ -650,13 +641,13 @@ def validate_skeleton_identity(
                     f"P{pid} 归属 category={ocat!r} 与 entry {oname!r}="
                     f"{entry_cats[oname]!r} 不一致"
                 )
-            if ocat == "君王":
+            if ocat in ("君王", "诸侯"):
                 errors.extend(
                     _validate_junwang_name(
                         oname,
                         work_id=work_id,
                         eidx=eidx,
-                        label=f"P{pid} 君王",
+                        label=f"P{pid} {ocat}",
                     )
                 )
 

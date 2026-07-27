@@ -399,25 +399,23 @@
           "paragraph_to": 41
         }
       ],
+      "优先级": "P0",
+      "优先级判定理由": "张良独立叙事块，共41段",
       "五级细坐标": "史记·卷055·文臣·01",
       "六级段落锚点": "[P1-P41]",
       "原文出处": "留侯世家·P1-P41",
-      "一级文明坐标": "华夏",
-      "文明ID": "HX",
-      "二级朝代坐标": "西汉",
-      "朝代ID": "CD_HX_XIHAN",
-      "三级政权坐标": "西汉",
-      "政权ID": "ZQ_HX_XIHAN_XIHAN",
-      "四级帝王坐标": "汉高祖",
-      "帝王ID": "DW_HX_XIHAN_XIHAN_HANGAOZU",
-      "优先级": "P0",
-      "优先级判定理由": "世家主轴叙事，共42段",
-      "_auto_filled": {
-        "_坐标主轴说明": "本卷以佐汉定策、运筹楚汉为主线，主轴挂汉高祖；惠帝朝卒及留侯传世见共段事略。",
-        "_年LLM依据": "张良生卒约前250–前186（生年推测）"
-      },
-      "史略开始年": -250,
-      "史略结束年": -186
+      "_needs_llm": []
+    }
+  ],
+  "volume_subtype": "世家",
+  "volume_subtype_source": "llm_step1a",
+  "protagonist_count": 1,
+  "protagonist_count_source": "llm_step1a",
+  "protagonists_manifest": [
+    {
+      "name": "张良",
+      "category": "文臣",
+      "rationale": "《留侯世家》叙事主轴：张良（文臣）"
     }
   ]
 }

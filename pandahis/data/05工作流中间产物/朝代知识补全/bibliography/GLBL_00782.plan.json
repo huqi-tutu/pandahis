@@ -1,0 +1,137 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00782",
+  "写作结构": "正史叙述（《史记·周本纪》）见翻译详录。拓展文以《国语·周语上》记录事件脉络，以《竹书纪年》提出“共伯和摄政”异说作为互补延展。禁止编造二公共政的具体措施与斗争。",
+  "候选著作": [
+    {
+      "出处": "《国语·周语上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记录国人暴动、厉王奔彘、共和行政十四年直至宣王即位的完整经过，是《史记》之外最重要的原始史料。",
+      "检索词": "厉王 彘 共和 宣王",
+      "采用": true,
+      "原文摘句": "王不听，于是国莫敢出言。三年，乃流王于彘。……厉王死于彘，共伯和摄行天子事，号曰共和。十四年，厉王死，宣王立。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《竹书纪年》",
+      "tier": "辑佚/出土",
+      "pool": "legend",
+      "与本主题关系": "提供“共伯和干王位”的异说，与周召二公共政的传统说法互补，是锚点中明确标注的传说层文献。",
+      "检索词": "共伯和 干王位",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    },
+    {
+      "出处": "《吕氏春秋·慎行论》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "提及厉王虐，国人逐王，召公、周公共为共和，可作旁证。",
+      "检索词": "厉王 彘 召公 共和",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·周本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史首要记载，叙述流王于彘、召公以子代太子死、共和行政及宣王即位。",
+      "检索词": "周厉王 彘 共和",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "转述共和行政异说，无独立史料价值。",
+      "检索词": "共伯和 干王位",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《国语·周语上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记录国人暴动、厉王奔彘、共和行政十四年直至宣王即位的完整经过，是《史记》之外最重要的原始史料。",
+      "检索词": "厉王 彘 共和 宣王",
+      "采用": true,
+      "原文摘句": "王不听，于是国莫敢出言。三年，乃流王于彘。……厉王死于彘，共伯和摄行天子事，号曰共和。十四年，厉王死，宣王立。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《吕氏春秋·慎行论》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "提及厉王虐，国人逐王，召公、周公共为共和，可作旁证。",
+      "检索词": "厉王 彘 召公 共和",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·周本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史首要记载，叙述流王于彘、召公以子代太子死、共和行政及宣王即位。",
+      "检索词": "周厉王 彘 共和",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《竹书纪年》",
+      "tier": "辑佚/出土",
+      "pool": "legend",
+      "与本主题关系": "提供“共伯和干王位”的异说，与周召二公共政的传统说法互补，是锚点中明确标注的传说层文献。",
+      "检索词": "共伯和 干王位",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    },
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "转述共和行政异说，无独立史料价值。",
+      "检索词": "共伯和 干王位",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 3,
+    "overall": "B"
+  }
+}

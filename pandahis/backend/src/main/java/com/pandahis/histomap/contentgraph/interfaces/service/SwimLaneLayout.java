@@ -125,8 +125,9 @@ final class SwimLaneLayout {
         laneLabel
     );
     double gapPct = CHIP_GAP_RPX / (double) sheetRpx * 100.0;
+    int bucketRowIndex = -1;
     for (OverflowBucket bucket : buckets) {
-      placeBucketChip(rows, rowEnds, bucket, scale, sheetRpx, gapPct);
+      bucketRowIndex = placeBucketChip(rows, rowEnds, bucket, scale, sheetRpx, gapPct, bucketRowIndex);
     }
 
     int rowCount = Math.max(1, rows.size());
@@ -237,13 +238,14 @@ final class SwimLaneLayout {
     return Math.max(MIN_BUCKET_YEARS, Math.min(MAX_BUCKET_YEARS, bucketYears));
   }
 
-  private static void placeBucketChip(
+  private static int placeBucketChip(
       List<List<UnitSwimMatrixDTO.Bar>> rows,
       List<Double> rowEnds,
       OverflowBucket bucket,
       SwimTimeScale scale,
       int sheetRpx,
-      double gapPct
+      double gapPct,
+      int bucketRowIndex
   ) {
     String laneLabel = bucket.laneLabel() == null ? "" : bucket.laneLabel().trim();
     String countTag = bucketCountTag(laneLabel, bucket.members().size());
@@ -255,21 +257,33 @@ final class SwimLaneLayout {
     double right = left + chipPct;
 
     int assigned = -1;
-    for (int row = 0; row < rowEnds.size(); row++) {
-      if (rowEnds.get(row) + gapPct <= left) {
-        assigned = row;
-        rowEnds.set(row, right);
-        break;
+    if (bucketRowIndex == -1) {
+      for (int row = 0; row < rowEnds.size(); row++) {
+        if (rowEnds.get(row) + gapPct <= left) {
+          assigned = row;
+          rowEnds.set(row, right);
+          break;
+        }
       }
+    } else if (bucketRowIndex < rowEnds.size() && rowEnds.get(bucketRowIndex) + gapPct <= left) {
+      assigned = bucketRowIndex;
+      rowEnds.set(bucketRowIndex, right);
     }
 
     if (assigned == -1) {
-      assigned = rowEnds.size();
-      rowEnds.add(right);
-      rows.add(new ArrayList<>());
+      if (bucketRowIndex == -1) {
+        bucketRowIndex = rowEnds.size();
+        rowEnds.add(right);
+        rows.add(new ArrayList<>());
+        assigned = bucketRowIndex;
+      } else {
+        assigned = bucketRowIndex;
+        rowEnds.set(bucketRowIndex, Math.max(rowEnds.get(bucketRowIndex), right));
+      }
     }
 
     rows.get(assigned).add(toBucketBar(bucket, title, countTag, chipRpx, left, chipPct, rows.get(assigned).size()));
+    return bucketRowIndex;
   }
 
   private static String bucketCountTag(String laneLabel, int count) {

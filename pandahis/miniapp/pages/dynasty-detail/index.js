@@ -17,11 +17,15 @@ const offscreen_hints_1 = require("../../native-utils/offscreen-hints");
 const chip_badge_tokens_1 = require("../../native-utils/chip-badge-tokens");
 const { buildSwimMatrixFromMock, buildHeroFromMock, normalizeDynastyKey, isDegradedMockFallback, } = require('./swim-local-fallback');
 const PRIORITY_OPTIONS = [
-    { value: 'p0', label: 'P0' },
-    { value: 'p1', label: 'P1' },
-    { value: 'p2', label: 'P2' },
-    { value: 'p3', label: 'P3' },
+    { value: 'p0', label: '极简' },
+    { value: 'p1', label: '简略' },
+    { value: 'p2', label: '丰富' },
+    { value: 'p3', label: '详尽' },
 ];
+function priorityLabel(priority) {
+    const hit = PRIORITY_OPTIONS.find((item) => item.value === priority);
+    return (hit === null || hit === void 0 ? void 0 : hit.label) || '详尽';
+}
 const MAX_LANE_ROWS = 10;
 const GRID_RPX = 8;
 const LANE_ROW_HEIGHT_RPX = 44;
@@ -50,7 +54,7 @@ const AXIS_PIN_AT = 150;
 const AXIS_UNPIN_AT = 110;
 const CONTINUATION_CUE_THROTTLE_MS = 120;
 const CONTINUATION_CUE_TOLERANCE_RPX = 16;
-const CONTINUATION_CUE_BOTTOM_RESERVE_RPX = 128;
+const CONTINUATION_CUE_BOTTOM_RESERVE_RPX = 48;
 function roundScrollLeft(left) {
     return Math.round(left);
 }
@@ -77,6 +81,8 @@ function resolveBucketYears(span, overflowCount) {
     return Math.max(MIN_BUCKET_YEARS, Math.min(MAX_BUCKET_YEARS, bucketYears));
 }
 const BUCKET_CHIP_TITLE = '查看更多';
+/** 与后端 UnitSwimMatrixService 一致：君王/诸侯锚定在在位起始年 */
+const ANCHOR_AT_START_LANE_KEYS = new Set(['junji', 'zhuhou']);
 function parseBucketMemberCount(title) {
     const match = String(title || '').match(/\+(\d+)$/);
     return match ? Number(match[1]) : 0;
@@ -84,7 +90,17 @@ function parseBucketMemberCount(title) {
 function bucketTitle(laneLabel, count) {
     return BUCKET_CHIP_TITLE;
 }
-function anchorYearOfBar(bar) {
+function usesAnchorAtStart(laneKey) {
+    return ANCHOR_AT_START_LANE_KEYS.has(String(laneKey || '').trim());
+}
+function anchorYearOfBar(bar, laneKey) {
+    if (usesAnchorAtStart(laneKey)) {
+        if (typeof bar.startYear === 'number')
+            return bar.startYear;
+        if (typeof bar.peakYear === 'number')
+            return bar.peakYear;
+        return 0;
+    }
     if (typeof bar.peakYear === 'number')
         return bar.peakYear;
     if (typeof bar.startYear === 'number')
@@ -99,12 +115,13 @@ function placeBucketChips(rows, overflow, laneKey, laneLabel, startYear, endYear
     const gapPct = CHIP_GAP_RPX / sheetWidthRpx * 100;
     const nextRows = rows.map((row) => [...row]);
     const rowEnds = nextRows.map((row) => Math.max(0, ...row.map((bar) => bar._rightPct)));
+    let bucketRowIndex = -1;
     let cursor = startYear;
     let bucketIndex = 0;
     while (cursor < endYear) {
         const bucketEnd = Math.min(endYear, cursor + bucketYears);
         const members = overflow.filter((bar) => {
-            const y = anchorYearOfBar(bar);
+            const y = anchorYearOfBar(bar, laneKey);
             return y >= cursor && y < bucketEnd;
         });
         if (members.length) {
@@ -143,17 +160,33 @@ function placeBucketChips(rows, overflow, laneKey, laneLabel, startYear, endYear
                 _globalIdNumber: 0,
             };
             let assigned = -1;
-            for (let rowIndex = 0; rowIndex < nextRows.length; rowIndex++) {
-                if (rowEnds[rowIndex] + gapPct <= bucketBar._leftPct) {
-                    assigned = rowIndex;
-                    rowEnds[rowIndex] = bucketBar._rightPct;
-                    nextRows[rowIndex] = [...nextRows[rowIndex], bucketBar].sort((a, b) => a._leftPct - b._leftPct);
-                    break;
+            if (bucketRowIndex === -1) {
+                for (let rowIndex = 0; rowIndex < nextRows.length; rowIndex++) {
+                    if (rowEnds[rowIndex] + gapPct <= bucketBar._leftPct) {
+                        assigned = rowIndex;
+                        rowEnds[rowIndex] = bucketBar._rightPct;
+                        nextRows[rowIndex] = [...nextRows[rowIndex], bucketBar].sort((a, b) => a._leftPct - b._leftPct);
+                        break;
+                    }
                 }
             }
+            else if (rowEnds[bucketRowIndex] + gapPct <= bucketBar._leftPct) {
+                assigned = bucketRowIndex;
+                rowEnds[bucketRowIndex] = bucketBar._rightPct;
+                nextRows[bucketRowIndex] = [...nextRows[bucketRowIndex], bucketBar]
+                    .sort((a, b) => a._leftPct - b._leftPct);
+            }
             if (assigned === -1) {
-                nextRows.push([bucketBar]);
-                rowEnds.push(bucketBar._rightPct);
+                if (bucketRowIndex === -1) {
+                    bucketRowIndex = nextRows.length;
+                    nextRows.push([bucketBar]);
+                    rowEnds.push(bucketBar._rightPct);
+                }
+                else {
+                    rowEnds[bucketRowIndex] = Math.max(rowEnds[bucketRowIndex], bucketBar._rightPct);
+                    nextRows[bucketRowIndex] = [...nextRows[bucketRowIndex], bucketBar]
+                        .sort((a, b) => a._leftPct - b._leftPct);
+                }
             }
             bucketIndex += 1;
         }
@@ -358,11 +391,14 @@ function splitTimeRangeLabels(bar, fallbackRange) {
             end: (0, year_format_1.formatHistoryYear)(bar.endYear),
         };
     }
-    const parts = String(fallbackRange || '').split(/\s*[—–-]\s*/);
+    const parts = String(fallbackRange || '').split(/\s*[—–]\s*/);
     if (parts.length >= 2) {
-        return { start: parts[0].trim(), end: parts[parts.length - 1].trim() };
+        return {
+            start: (0, year_format_1.formatHistoryYearToken)(parts[0]),
+            end: (0, year_format_1.formatHistoryYearToken)(parts[parts.length - 1]),
+        };
     }
-    const single = String(fallbackRange || '').trim();
+    const single = (0, year_format_1.formatHistoryYearToken)(String(fallbackRange || '').trim());
     return { start: single, end: '' };
 }
 function estimateChipWidthRpx(title, chipTag) {
@@ -541,9 +577,13 @@ function estimateSheetWidth(swim) {
     const needed = EDGE_GAP_RPX + perRow * CHIP_MAX_RPX + Math.max(0, perRow - 1) * CHIP_GAP_RPX + MORE_GAP_RPX + MORE_WIDTH_RPX + EDGE_GAP_RPX;
     return Math.max(base, Math.min(base * 4, needed));
 }
+function isOverflowBucketBar(bar) {
+    return bar.type === 'overflow_bucket';
+}
 function normalizeLegacyLane(lane, sheetWidthRpx, priority, swim) {
     var _a;
     const allBars = [...(lane.collapsedRows || []).flat(), ...(lane.extraBars || [])]
+        .filter((bar) => !isOverflowBucketBar(bar))
         .map((bar) => prepareLegacyBar(bar, sheetWidthRpx))
         .sort(compareLegacyBars);
     const maxPriority = priorityRank(priority);
@@ -684,6 +724,7 @@ function previewIntro(intro) {
 }
 Page({
     swimScrollLeft: 0,
+    swimSource: null,
     pageUnloaded: false,
     _loadQuery: null,
     continuationItems: [],
@@ -732,6 +773,8 @@ Page({
         loading: true,
         priorityOptions: PRIORITY_OPTIONS,
         activePriority: 'p3',
+        activePriorityLabel: priorityLabel('p3'),
+        priorityMenuVisible: false,
         chipTooltipVisible: false,
         chipTooltipPhase: 'enter',
         chipTooltipHeldId: '',
@@ -778,6 +821,7 @@ Page({
     },
     onUnload() {
         this.pageUnloaded = true;
+        this.swimSource = null;
         if (this.continuationUpdateTimer)
             clearTimeout(this.continuationUpdateTimer);
         if (this.chipTooltipExitTimer)
@@ -850,9 +894,10 @@ Page({
                 const navTitle = dynastyTitle.length <= 4 ? dynastyTitle : dynastyTitle.slice(0, 4);
                 const heroSubLine = `${(0, year_format_1.formatHistoryYear)(unit.startYear)}–${(0, year_format_1.formatHistoryYear)(unit.endYear)}`;
                 const activePriority = this.data.activePriority || 'p3';
+                this.swimSource = swim;
                 const prioritySwim = applyPriorityView(swim, activePriority);
                 const swimForView = slimSwimMatrixForView(prioritySwim);
-                const matrixBoxIds = collectMatrixBoxIds(prioritySwim);
+                const matrixBoxIds = collectMatrixBoxIds(swim);
                 const hasVisibleContent = (prioritySwim.lanes || []).some(hasLaneContent);
                 const { preview, canExpand, paragraphs } = previewIntro(unit.summary || '');
                 if (!hasVisibleContent) {
@@ -1138,8 +1183,7 @@ Page({
         let bars = lane.extraBars || [];
         if (Number.isFinite(bucketStart) && Number.isFinite(bucketEnd)) {
             bars = bars.filter((bar) => {
-                var _a, _b;
-                const y = (_b = (_a = bar.peakYear) !== null && _a !== void 0 ? _a : bar.startYear) !== null && _b !== void 0 ? _b : 0;
+                const y = anchorYearOfBar(bar, lane.key);
                 return y >= bucketStart && y < bucketEnd;
             });
         }
@@ -1243,20 +1287,37 @@ Page({
     },
     onPriorityTap(e) {
         const priority = e.currentTarget.dataset.priority;
-        if (!priority || priority === this.data.activePriority)
+        if (!priority)
             return;
-        const swim = this.data.swim;
+        if (priority === this.data.activePriority) {
+            this.setData({ priorityMenuVisible: false });
+            return;
+        }
+        const swim = this.swimSource;
         if (!swim)
             return;
         const nextSwim = applyPriorityView(swim, priority);
         this.setData({
             activePriority: priority,
-            swim: nextSwim,
+            activePriorityLabel: priorityLabel(priority),
+            priorityMenuVisible: false,
+            swim: slimSwimMatrixForView(nextSwim),
             overlayVisible: false,
         }, () => {
             this.rebuildContinuationHints(nextSwim);
         });
         this.hideChipTooltip();
+    },
+    togglePriorityMenu() {
+        const nextOpen = !this.data.priorityMenuVisible;
+        this.setData({ priorityMenuVisible: nextOpen });
+        if (nextOpen)
+            this.hideChipTooltip();
+    },
+    closePriorityMenu() {
+        if (this.data.priorityMenuVisible) {
+            this.setData({ priorityMenuVisible: false });
+        }
     },
     hideOverlay() {
         this.setData({ overlayVisible: false });

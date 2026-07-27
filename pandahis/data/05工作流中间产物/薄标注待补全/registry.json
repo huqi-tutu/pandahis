@@ -1,9 +1,9 @@
 {
   "schema": "thin_annotation_deferred/v1",
   "rules_ref": "historiography-annotate/reference/史料厚度门规则.md",
-  "updated_at": "2026-07-19T13:32:42Z",
+  "updated_at": "2026-07-25T02:21:26Z",
   "threshold_han_chars": 100,
-  "entry_count": 30,
+  "entry_count": 76,
   "entries": [
     {
       "defer_reason": "glbl_audit_downgrade_recommended",
@@ -874,6 +874,1382 @@
       "offline_at": "2026-07-19T13:32:34Z",
       "online_status": "cleared",
       "offline_action": "historical_box.status=0; DELETE historical_box_detail"
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 44,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_037_08",
+      "史略名称": "卫懿公",
+      "史略分类": "君王",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "二级朝代坐标": "春秋",
+      "主要史料出处": "《史记·卷37·卫康叔世家》",
+      "paragraphs": [
+        {
+          "volume": "卫康叔世家",
+          "paragraph_from": 19,
+          "paragraph_to": 19
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_037_卫康叔世家第七_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_037_08",
+          "work": "01史记",
+          "vol": "037",
+          "vol_name": "卫康叔世家",
+          "source_char_count": 44,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_037_卫康叔世家第七_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 16,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_037_15",
+      "史略名称": "卫襄公",
+      "史略分类": "君王",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "二级朝代坐标": "春秋",
+      "主要史料出处": "《史记·卷37·卫康叔世家》",
+      "paragraphs": [
+        {
+          "volume": "卫康叔世家",
+          "paragraph_from": 34,
+          "paragraph_to": 34
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_037_卫康叔世家第七_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_037_15",
+          "work": "01史记",
+          "vol": "037",
+          "vol_name": "卫康叔世家",
+          "source_char_count": 16,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_037_卫康叔世家第七_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 50,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_038_01",
+      "史略名称": "宋共公",
+      "史略分类": "君王",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "二级朝代坐标": "春秋",
+      "主要史料出处": "《史记·卷38·宋微子世家》",
+      "paragraphs": [
+        {
+          "volume": "宋微子世家",
+          "paragraph_from": 53,
+          "paragraph_to": 54
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_038_宋微子世家第八_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_038_01",
+          "work": "01史记",
+          "vol": "038",
+          "vol_name": "宋微子世家",
+          "source_char_count": 50,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_038_宋微子世家第八_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 63,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_038_06",
+      "史略名称": "宋昭公",
+      "史略分类": "君王",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "二级朝代坐标": "春秋",
+      "主要史料出处": "《史记·卷38·宋微子世家》",
+      "paragraphs": [
+        {
+          "volume": "宋微子世家",
+          "paragraph_from": 46,
+          "paragraph_to": 47
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_038_宋微子世家第八_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_038_06",
+          "work": "01史记",
+          "vol": "038",
+          "vol_name": "宋微子世家",
+          "source_char_count": 63,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_038_宋微子世家第八_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 98,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_035_02",
+      "史略名称": "曹共公",
+      "史略分类": "君王",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "二级朝代坐标": "春秋",
+      "主要史料出处": "《史记·卷35·管蔡世家》",
+      "paragraphs": [
+        {
+          "volume": "管蔡世家",
+          "paragraph_from": 37,
+          "paragraph_to": 37
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_035_管蔡世家第五_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_035_02",
+          "work": "01史记",
+          "vol": "035",
+          "vol_name": "管蔡世家",
+          "source_char_count": 98,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_035_管蔡世家第五_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 22,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_035_03",
+      "史略名称": "曹叔振铎",
+      "史略分类": "君王",
+      "朝代ID": "CD_HX_XIZHOU",
+      "二级朝代坐标": "西周",
+      "主要史料出处": "《史记·卷35·管蔡世家》",
+      "paragraphs": [
+        {
+          "volume": "管蔡世家",
+          "paragraph_from": 28,
+          "paragraph_to": 28
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_035_管蔡世家第五_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_035_03",
+          "work": "01史记",
+          "vol": "035",
+          "vol_name": "管蔡世家",
+          "source_char_count": 22,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_035_管蔡世家第五_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 34,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_035_04",
+      "史略名称": "曹悼公",
+      "史略分类": "君王",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "二级朝代坐标": "春秋",
+      "主要史料出处": "《史记·卷35·管蔡世家》",
+      "paragraphs": [
+        {
+          "volume": "管蔡世家",
+          "paragraph_from": 41,
+          "paragraph_to": 42
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_035_管蔡世家第五_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_035_04",
+          "work": "01史记",
+          "vol": "035",
+          "vol_name": "管蔡世家",
+          "source_char_count": 34,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_035_管蔡世家第五_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 86,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_035_05",
+      "史略名称": "曹成公",
+      "史略分类": "君王",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "二级朝代坐标": "春秋",
+      "主要史料出处": "《史记·卷35·管蔡世家》",
+      "paragraphs": [
+        {
+          "volume": "管蔡世家",
+          "paragraph_from": 39,
+          "paragraph_to": 39
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_035_管蔡世家第五_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_035_05",
+          "work": "01史记",
+          "vol": "035",
+          "vol_name": "管蔡世家",
+          "source_char_count": 86,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_035_管蔡世家第五_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "jiashi_reannotate_thin_downgrade",
+      "source_char_count": 43,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_036_01",
+      "史略名称": "杞东楼公",
+      "史略分类": "君王",
+      "朝代ID": "CD_HX_XIZHOU",
+      "二级朝代坐标": "西周",
+      "主要史料出处": "《史记·卷36·陈杞世家》",
+      "paragraphs": [
+        {
+          "volume": "陈杞世家",
+          "paragraph_from": 29,
+          "paragraph_to": 29
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_036_陈杞世家第六_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_036_01",
+          "work": "01史记",
+          "vol": "036",
+          "vol_name": "陈杞世家",
+          "source_char_count": 43,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_036_陈杞世家第六_skeleton.json"
+        }
+      ],
+      "published_glbl_id": "GLBL_00066",
+      "audit_note": "世家重标后母本仅 43 字 < 100，自 GLBL 降级；原 GLBL_00066",
+      "recommended_action": "defer_to_dynasty_supplement",
+      "offline_at": "2026-07-25T02:21:26Z",
+      "online_status": "pending_offline",
+      "downgrade_snapshot": {
+        "六级段落锚点": "[P29-P34]",
+        "paragraphs": [
+          {
+            "work": "01史记",
+            "vol": "036",
+            "volume": "陈杞世家",
+            "paragraph_from": 29,
+            "paragraph_to": 34,
+            "source_file": "01史记_036_陈杞世家第六.txt",
+            "index_file": "段落索引/01史记_036.json",
+            "source_entry_id": "SHIJI_036_01",
+            "role": "母本"
+          }
+        ]
+      }
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 58,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_040_01",
+      "史略名称": "楚共王",
+      "史略分类": "君王",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "二级朝代坐标": "春秋",
+      "主要史料出处": "《史记·卷40·楚世家》",
+      "paragraphs": [
+        {
+          "volume": "楚世家",
+          "paragraph_from": 43,
+          "paragraph_to": 43
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_040_楚世家第十_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_040_01",
+          "work": "01史记",
+          "vol": "040",
+          "vol_name": "楚世家",
+          "source_char_count": 58,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_040_楚世家第十_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 59,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_040_07",
+      "史略名称": "楚文王",
+      "史略分类": "君王",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "二级朝代坐标": "春秋",
+      "主要史料出处": "《史记·卷40·楚世家》",
+      "paragraphs": [
+        {
+          "volume": "楚世家",
+          "paragraph_from": 19,
+          "paragraph_to": 19
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_040_楚世家第十_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_040_07",
+          "work": "01史记",
+          "vol": "040",
+          "vol_name": "楚世家",
+          "source_char_count": 59,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_040_楚世家第十_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 87,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_040_11",
+      "史略名称": "楚熊渠",
+      "史略分类": "君王",
+      "朝代ID": "CD_HX_XIZHOU",
+      "二级朝代坐标": "西周",
+      "主要史料出处": "《史记·卷40·楚世家》",
+      "paragraphs": [
+        {
+          "volume": "楚世家",
+          "paragraph_from": 6,
+          "paragraph_to": 7
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_040_楚世家第十_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_040_11",
+          "work": "01史记",
+          "vol": "040",
+          "vol_name": "楚世家",
+          "source_char_count": 87,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_040_楚世家第十_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 62,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_040_12",
+      "史略名称": "楚熊绎",
+      "史略分类": "君王",
+      "朝代ID": "CD_HX_XIZHOU",
+      "二级朝代坐标": "西周",
+      "主要史料出处": "《史记·卷40·楚世家》",
+      "paragraphs": [
+        {
+          "volume": "楚世家",
+          "paragraph_from": 4,
+          "paragraph_to": 4
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_040_楚世家第十_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_040_12",
+          "work": "01史记",
+          "vol": "040",
+          "vol_name": "楚世家",
+          "source_char_count": 62,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_040_楚世家第十_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 23,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_040_13",
+      "史略名称": "楚考烈王",
+      "史略分类": "君王",
+      "朝代ID": "CD_HX_ZHANGUO",
+      "二级朝代坐标": "战国",
+      "主要史料出处": "《史记·卷40·楚世家》",
+      "paragraphs": [
+        {
+          "volume": "楚世家",
+          "paragraph_from": 129,
+          "paragraph_to": 129
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_040_楚世家第十_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_040_13",
+          "work": "01史记",
+          "vol": "040",
+          "vol_name": "楚世家",
+          "source_char_count": 23,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_040_楚世家第十_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 73,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_034_04",
+      "史略名称": "燕惠公",
+      "史略分类": "君王",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "二级朝代坐标": "春秋",
+      "主要史料出处": "《史记·卷34·燕召公世家》",
+      "paragraphs": [
+        {
+          "volume": "燕召公世家",
+          "paragraph_from": 16,
+          "paragraph_to": 16
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_034_燕召公世家第四_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_034_04",
+          "work": "01史记",
+          "vol": "034",
+          "vol_name": "燕召公世家",
+          "source_char_count": 73,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_034_燕召公世家第四_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 62,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_034_05",
+      "史略名称": "燕惠王",
+      "史略分类": "君王",
+      "朝代ID": "CD_HX_ZHANGUO",
+      "二级朝代坐标": "战国",
+      "主要史料出处": "《史记·卷34·燕召公世家》",
+      "paragraphs": [
+        {
+          "volume": "燕召公世家",
+          "paragraph_from": 34,
+          "paragraph_to": 34
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_034_燕召公世家第四_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_034_05",
+          "work": "01史记",
+          "vol": "034",
+          "vol_name": "燕召公世家",
+          "source_char_count": 62,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_034_燕召公世家第四_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 89,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_034_06",
+      "史略名称": "燕文公",
+      "史略分类": "君王",
+      "朝代ID": "CD_HX_ZHANGUO",
+      "二级朝代坐标": "战国",
+      "主要史料出处": "《史记·卷34·燕召公世家》",
+      "paragraphs": [
+        {
+          "volume": "燕召公世家",
+          "paragraph_from": 20,
+          "paragraph_to": 21
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_034_燕召公世家第四_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_034_06",
+          "work": "01史记",
+          "vol": "034",
+          "vol_name": "燕召公世家",
+          "source_char_count": 89,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_034_燕召公世家第四_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 80,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_034_07",
+      "史略名称": "燕易王",
+      "史略分类": "君王",
+      "朝代ID": "CD_HX_ZHANGUO",
+      "二级朝代坐标": "战国",
+      "主要史料出处": "《史记·卷34·燕召公世家》",
+      "paragraphs": [
+        {
+          "volume": "燕召公世家",
+          "paragraph_from": 22,
+          "paragraph_to": 23
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_034_燕召公世家第四_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_034_07",
+          "work": "01史记",
+          "vol": "034",
+          "vol_name": "燕召公世家",
+          "source_char_count": 80,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_034_燕召公世家第四_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 57,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_035_07",
+      "史略名称": "蔡仲",
+      "史略分类": "君王",
+      "朝代ID": "CD_HX_XIZHOU",
+      "二级朝代坐标": "西周",
+      "主要史料出处": "《史记·卷35·管蔡世家》",
+      "paragraphs": [
+        {
+          "volume": "管蔡世家",
+          "paragraph_from": 4,
+          "paragraph_to": 4
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_035_管蔡世家第五_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_035_07",
+          "work": "01史记",
+          "vol": "035",
+          "vol_name": "管蔡世家",
+          "source_char_count": 57,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_035_管蔡世家第五_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 24,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_035_08",
+      "史略名称": "蔡侯齐",
+      "史略分类": "君王",
+      "朝代ID": "CD_HX_ZHANGUO",
+      "二级朝代坐标": "战国",
+      "主要史料出处": "《史记·卷35·管蔡世家》",
+      "paragraphs": [
+        {
+          "volume": "管蔡世家",
+          "paragraph_from": 25,
+          "paragraph_to": 25
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_035_管蔡世家第五_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_035_08",
+          "work": "01史记",
+          "vol": "035",
+          "vol_name": "管蔡世家",
+          "source_char_count": 24,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_035_管蔡世家第五_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 87,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_035_09",
+      "史略名称": "蔡哀侯",
+      "史略分类": "君王",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "二级朝代坐标": "春秋",
+      "主要史料出处": "《史记·卷35·管蔡世家》",
+      "paragraphs": [
+        {
+          "volume": "管蔡世家",
+          "paragraph_from": 11,
+          "paragraph_to": 13
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_035_管蔡世家第五_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_035_09",
+          "work": "01史记",
+          "vol": "035",
+          "vol_name": "管蔡世家",
+          "source_char_count": 87,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_035_管蔡世家第五_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 58,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_035_10",
+      "史略名称": "蔡平侯",
+      "史略分类": "君王",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "二级朝代坐标": "春秋",
+      "主要史料出处": "《史记·卷35·管蔡世家》",
+      "paragraphs": [
+        {
+          "volume": "管蔡世家",
+          "paragraph_from": 19,
+          "paragraph_to": 19
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_035_管蔡世家第五_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_035_10",
+          "work": "01史记",
+          "vol": "035",
+          "vol_name": "管蔡世家",
+          "source_char_count": 58,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_035_管蔡世家第五_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 92,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_035_13",
+      "史略名称": "蔡缪侯",
+      "史略分类": "君王",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "二级朝代坐标": "春秋",
+      "主要史料出处": "《史记·卷35·管蔡世家》",
+      "paragraphs": [
+        {
+          "volume": "管蔡世家",
+          "paragraph_from": 14,
+          "paragraph_to": 14
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_035_管蔡世家第五_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_035_13",
+          "work": "01史记",
+          "vol": "035",
+          "vol_name": "管蔡世家",
+          "source_char_count": 92,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_035_管蔡世家第五_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 62,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_043_04",
+      "史略名称": "赵惠文王",
+      "史略分类": "君王",
+      "朝代ID": "CD_HX_ZHANGUO",
+      "二级朝代坐标": "战国",
+      "主要史料出处": "《史记·卷43·赵世家》",
+      "paragraphs": [
+        {
+          "volume": "赵世家",
+          "paragraph_from": 90,
+          "paragraph_to": 90
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_043_赵世家第十三_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_043_04",
+          "work": "01史记",
+          "vol": "043",
+          "vol_name": "赵世家",
+          "source_char_count": 62,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_043_赵世家第十三_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 31,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_043_05",
+      "史略名称": "赵敬侯",
+      "史略分类": "君王",
+      "朝代ID": "CD_HX_ZHANGUO",
+      "二级朝代坐标": "战国",
+      "主要史料出处": "《史记·卷43·赵世家》",
+      "paragraphs": [
+        {
+          "volume": "赵世家",
+          "paragraph_from": 46,
+          "paragraph_to": 46
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_043_赵世家第十三_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_043_05",
+          "work": "01史记",
+          "vol": "043",
+          "vol_name": "赵世家",
+          "source_char_count": 31,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_043_赵世家第十三_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 44,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_043_08",
+      "史略名称": "赵献侯",
+      "史略分类": "君王",
+      "朝代ID": "CD_HX_ZHANGUO",
+      "二级朝代坐标": "战国",
+      "主要史料出处": "《史记·卷43·赵世家》",
+      "paragraphs": [
+        {
+          "volume": "赵世家",
+          "paragraph_from": 39,
+          "paragraph_to": 40
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_043_赵世家第十三_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_043_08",
+          "work": "01史记",
+          "vol": "043",
+          "vol_name": "赵世家",
+          "source_char_count": 44,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_043_赵世家第十三_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 35,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_042_02",
+      "史略名称": "郑声公",
+      "史略分类": "君王",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "二级朝代坐标": "春秋",
+      "主要史料出处": "《史记·卷42·郑世家》",
+      "paragraphs": [
+        {
+          "volume": "郑世家",
+          "paragraph_from": 65,
+          "paragraph_to": 65
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_042_郑世家第十二_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_042_02",
+          "work": "01史记",
+          "vol": "042",
+          "vol_name": "郑世家",
+          "source_char_count": 35,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_042_郑世家第十二_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 98,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_042_04",
+      "史略名称": "郑定公",
+      "史略分类": "君王",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "二级朝代坐标": "春秋",
+      "主要史料出处": "《史记·卷42·郑世家》",
+      "paragraphs": [
+        {
+          "volume": "郑世家",
+          "paragraph_from": 59,
+          "paragraph_to": 62
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_042_郑世家第十二_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_042_04",
+          "work": "01史记",
+          "vol": "042",
+          "vol_name": "郑世家",
+          "source_char_count": 98,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_042_郑世家第十二_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 61,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_042_06",
+      "史略名称": "郑悼公",
+      "史略分类": "君王",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "二级朝代坐标": "春秋",
+      "主要史料出处": "《史记·卷42·郑世家》",
+      "paragraphs": [
+        {
+          "volume": "郑世家",
+          "paragraph_from": 44,
+          "paragraph_to": 46
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_042_郑世家第十二_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_042_06",
+          "work": "01史记",
+          "vol": "042",
+          "vol_name": "郑世家",
+          "source_char_count": 61,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_042_郑世家第十二_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 27,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_042_10",
+      "史略名称": "郑武公",
+      "史略分类": "君王",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "二级朝代坐标": "春秋",
+      "主要史料出处": "《史记·卷42·郑世家》",
+      "paragraphs": [
+        {
+          "volume": "郑世家",
+          "paragraph_from": 4,
+          "paragraph_to": 4
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_042_郑世家第十二_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_042_10",
+          "work": "01史记",
+          "vol": "042",
+          "vol_name": "郑世家",
+          "source_char_count": 27,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_042_郑世家第十二_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 94,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_042_13",
+      "史略名称": "郑缪公",
+      "史略分类": "君王",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "二级朝代坐标": "春秋",
+      "主要史料出处": "《史记·卷42·郑世家》",
+      "paragraphs": [
+        {
+          "volume": "郑世家",
+          "paragraph_from": 31,
+          "paragraph_to": 32
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_042_郑世家第十二_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_042_13",
+          "work": "01史记",
+          "vol": "042",
+          "vol_name": "郑世家",
+          "source_char_count": 94,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_042_郑世家第十二_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 13,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_042_15",
+      "史略名称": "郑釐公",
+      "史略分类": "君王",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "二级朝代坐标": "春秋",
+      "主要史料出处": "《史记·卷42·郑世家》",
+      "paragraphs": [
+        {
+          "volume": "郑世家",
+          "paragraph_from": 50,
+          "paragraph_to": 50
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_042_郑世家第十二_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_042_15",
+          "work": "01史记",
+          "vol": "042",
+          "vol_name": "郑世家",
+          "source_char_count": 13,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_042_郑世家第十二_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 85,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_036_03",
+      "史略名称": "陈哀公",
+      "史略分类": "君王",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "二级朝代坐标": "春秋",
+      "主要史料出处": "《史记·卷36·陈杞世家》",
+      "paragraphs": [
+        {
+          "volume": "陈杞世家",
+          "paragraph_from": 22,
+          "paragraph_to": 22
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_036_陈杞世家第六_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_036_03",
+          "work": "01史记",
+          "vol": "036",
+          "vol_name": "陈杞世家",
+          "source_char_count": 85,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_036_陈杞世家第六_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 76,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_036_05",
+      "史略名称": "陈怀公",
+      "史略分类": "君王",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "二级朝代坐标": "春秋",
+      "主要史料出处": "《史记·卷36·陈杞世家》",
+      "paragraphs": [
+        {
+          "volume": "陈杞世家",
+          "paragraph_from": 26,
+          "paragraph_to": 26
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_036_陈杞世家第六_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_036_05",
+          "work": "01史记",
+          "vol": "036",
+          "vol_name": "陈杞世家",
+          "source_char_count": 76,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_036_陈杞世家第六_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "jiashi_reannotate_thin_downgrade",
+      "source_char_count": 87,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_036_10",
+      "史略名称": "陈胡公满",
+      "史略分类": "君王",
+      "朝代ID": "CD_HX_XIZHOU",
+      "二级朝代坐标": "西周",
+      "主要史料出处": "《史记·卷36·陈杞世家》",
+      "paragraphs": [
+        {
+          "volume": "陈杞世家",
+          "paragraph_from": 1,
+          "paragraph_to": 1
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_036_陈杞世家第六_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_036_10",
+          "work": "01史记",
+          "vol": "036",
+          "vol_name": "陈杞世家",
+          "source_char_count": 87,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_036_陈杞世家第六_skeleton.json"
+        }
+      ],
+      "published_glbl_id": "GLBL_00139",
+      "audit_note": "世家重标后母本仅 87 字 < 100，自 GLBL 降级；原 GLBL_00139",
+      "recommended_action": "defer_to_dynasty_supplement",
+      "offline_at": "2026-07-25T02:21:26Z",
+      "online_status": "pending_offline",
+      "downgrade_snapshot": {
+        "六级段落锚点": "[P1-P28]",
+        "paragraphs": [
+          {
+            "work": "01史记",
+            "vol": "036",
+            "volume": "陈杞世家",
+            "paragraph_from": 1,
+            "paragraph_to": 28,
+            "source_file": "01史记_036_陈杞世家第六.txt",
+            "index_file": "段落索引/01史记_036.json",
+            "source_entry_id": "SHIJI_036_02",
+            "role": "母本"
+          }
+        ]
+      }
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 11,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_045_03",
+      "史略名称": "韩景侯",
+      "史略分类": "君王",
+      "朝代ID": "CD_HX_ZHANGUO",
+      "二级朝代坐标": "战国",
+      "主要史料出处": "《史记·卷45·韩世家》",
+      "paragraphs": [
+        {
+          "volume": "韩世家",
+          "paragraph_from": 10,
+          "paragraph_to": 10
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_045_韩世家第十五_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_045_03",
+          "work": "01史记",
+          "vol": "045",
+          "vol_name": "韩世家",
+          "source_char_count": 11,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_045_韩世家第十五_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 84,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_045_04",
+      "史略名称": "韩桓惠王",
+      "史略分类": "君王",
+      "朝代ID": "CD_HX_ZHANGUO",
+      "二级朝代坐标": "战国",
+      "主要史料出处": "《史记·卷45·韩世家》",
+      "paragraphs": [
+        {
+          "volume": "韩世家",
+          "paragraph_from": 40,
+          "paragraph_to": 40
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_045_韩世家第十五_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_045_04",
+          "work": "01史记",
+          "vol": "045",
+          "vol_name": "韩世家",
+          "source_char_count": 84,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_045_韩世家第十五_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 37,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_045_05",
+      "史略名称": "韩王安",
+      "史略分类": "君王",
+      "朝代ID": "CD_HX_ZHANGUO",
+      "二级朝代坐标": "战国",
+      "主要史料出处": "《史记·卷45·韩世家》",
+      "paragraphs": [
+        {
+          "volume": "韩世家",
+          "paragraph_from": 43,
+          "paragraph_to": 44
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_045_韩世家第十五_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_045_05",
+          "work": "01史记",
+          "vol": "045",
+          "vol_name": "韩世家",
+          "source_char_count": 37,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_045_韩世家第十五_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 56,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_044_04",
+      "史略名称": "魏武侯",
+      "史略分类": "君王",
+      "朝代ID": "CD_HX_ZHANGUO",
+      "二级朝代坐标": "战国",
+      "主要史料出处": "《史记·卷44·魏世家》",
+      "paragraphs": [
+        {
+          "volume": "魏世家",
+          "paragraph_from": 21,
+          "paragraph_to": 21
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_044_魏世家第十四_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_044_04",
+          "work": "01史记",
+          "vol": "044",
+          "vol_name": "魏世家",
+          "source_char_count": 56,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_044_魏世家第十四_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 39,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_033_07",
+      "史略名称": "鲁惠公",
+      "史略分类": "君王",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "二级朝代坐标": "春秋",
+      "主要史料出处": "《史记·卷33·鲁周公世家》",
+      "paragraphs": [
+        {
+          "volume": "鲁周公世家",
+          "paragraph_from": 23,
+          "paragraph_to": 24
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_033_鲁周公世家第三_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_033_07",
+          "work": "01史记",
+          "vol": "033",
+          "vol_name": "鲁周公世家",
+          "source_char_count": 39,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_033_鲁周公世家第三_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 54,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_033_17",
+      "史略名称": "鲁顷公",
+      "史略分类": "君王",
+      "朝代ID": "CD_HX_ZHANGUO",
+      "二级朝代坐标": "战国",
+      "主要史料出处": "《史记·卷33·鲁周公世家》",
+      "paragraphs": [
+        {
+          "volume": "鲁周公世家",
+          "paragraph_from": 91,
+          "paragraph_to": 91
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_033_鲁周公世家第三_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_033_17",
+          "work": "01史记",
+          "vol": "033",
+          "vol_name": "鲁周公世家",
+          "source_char_count": 54,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_033_鲁周公世家第三_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 74,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_032_05",
+      "史略名称": "齐康公",
+      "史略分类": "君王",
+      "朝代ID": "CD_HX_ZHANGUO",
+      "二级朝代坐标": "战国",
+      "主要史料出处": "《史记·卷32·齐太公世家》",
+      "paragraphs": [
+        {
+          "volume": "齐太公世家",
+          "paragraph_from": 94,
+          "paragraph_to": 96
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_032_齐太公世家第二_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_032_05",
+          "work": "01史记",
+          "vol": "032",
+          "vol_name": "齐太公世家",
+          "source_char_count": 74,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_032_齐太公世家第二_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 64,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_032_09",
+      "史略名称": "齐文公",
+      "史略分类": "君王",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "二级朝代坐标": "春秋",
+      "主要史料出处": "《史记·卷32·齐太公世家》",
+      "paragraphs": [
+        {
+          "volume": "齐太公世家",
+          "paragraph_from": 17,
+          "paragraph_to": 17
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_032_齐太公世家第二_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_032_09",
+          "work": "01史记",
+          "vol": "032",
+          "vol_name": "齐太公世家",
+          "source_char_count": 64,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_032_齐太公世家第二_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 84,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_032_10",
+      "史略名称": "齐昭公",
+      "史略分类": "君王",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "二级朝代坐标": "春秋",
+      "主要史料出处": "《史记·卷32·齐太公世家》",
+      "paragraphs": [
+        {
+          "volume": "齐太公世家",
+          "paragraph_from": 54,
+          "paragraph_to": 55
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_032_齐太公世家第二_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_032_10",
+          "work": "01史记",
+          "vol": "032",
+          "vol_name": "齐太公世家",
+          "source_char_count": 84,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_032_齐太公世家第二_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 80,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_046_05",
+      "史略名称": "齐桓公午",
+      "史略分类": "君王",
+      "朝代ID": "CD_HX_ZHANGUO",
+      "二级朝代坐标": "战国",
+      "主要史料出处": "《史记·卷46·田敬仲完世家》",
+      "paragraphs": [
+        {
+          "volume": "田敬仲完世家",
+          "paragraph_from": 29,
+          "paragraph_to": 29
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_046_田敬仲完世家第十六_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_046_05",
+          "work": "01史记",
+          "vol": "046",
+          "vol_name": "田敬仲完世家",
+          "source_char_count": 80,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_046_田敬仲完世家第十六_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 82,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_032_14",
+      "史略名称": "齐献公",
+      "史略分类": "君王",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "二级朝代坐标": "春秋",
+      "主要史料出处": "《史记·卷32·齐太公世家》",
+      "paragraphs": [
+        {
+          "volume": "齐太公世家",
+          "paragraph_from": 13,
+          "paragraph_to": 15
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_032_齐太公世家第二_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_032_14",
+          "work": "01史记",
+          "vol": "032",
+          "vol_name": "齐太公世家",
+          "source_char_count": 82,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/01史记_032_齐太公世家第二_skeleton.json"
+        }
+      ]
     }
   ],
   "sources": [

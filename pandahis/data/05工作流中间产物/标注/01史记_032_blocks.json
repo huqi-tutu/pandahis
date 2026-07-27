@@ -2,6 +2,21 @@
   "total_paragraphs": 97,
   "excludes": [
     {
+      "paragraph_from": 12,
+      "paragraph_to": 12,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 16,
+      "paragraph_to": 16,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 18,
+      "paragraph_to": 18,
+      "exclude_reason": "其他"
+    },
+    {
       "paragraph_from": 97,
       "paragraph_to": 97,
       "exclude_reason": "太史公曰"
@@ -12,6 +27,108 @@
       "name": "齐太公",
       "category": "君王",
       "paragraph_from": 1,
+      "paragraph_to": 11
+    },
+    {
+      "name": "齐献公",
+      "category": "君王",
+      "paragraph_from": 13,
+      "paragraph_to": 15
+    },
+    {
+      "name": "齐文公",
+      "category": "君王",
+      "paragraph_from": 17,
+      "paragraph_to": 17
+    },
+    {
+      "name": "齐釐公",
+      "category": "君王",
+      "paragraph_from": 19,
+      "paragraph_to": 23
+    },
+    {
+      "name": "齐襄公",
+      "category": "君王",
+      "paragraph_from": 24,
+      "paragraph_to": 29
+    },
+    {
+      "name": "齐桓公",
+      "category": "君王",
+      "paragraph_from": 30,
+      "paragraph_to": 51
+    },
+    {
+      "name": "齐孝公",
+      "category": "君王",
+      "paragraph_from": 52,
+      "paragraph_to": 53
+    },
+    {
+      "name": "齐昭公",
+      "category": "君王",
+      "paragraph_from": 54,
+      "paragraph_to": 55
+    },
+    {
+      "name": "齐懿公",
+      "category": "君王",
+      "paragraph_from": 56,
+      "paragraph_to": 58
+    },
+    {
+      "name": "齐惠公",
+      "category": "君王",
+      "paragraph_from": 59,
+      "paragraph_to": 61
+    },
+    {
+      "name": "齐顷公",
+      "category": "君王",
+      "paragraph_from": 62,
+      "paragraph_to": 66
+    },
+    {
+      "name": "齐灵公",
+      "category": "君王",
+      "paragraph_from": 67,
+      "paragraph_to": 69
+    },
+    {
+      "name": "齐庄公",
+      "category": "君王",
+      "paragraph_from": 70,
+      "paragraph_to": 72
+    },
+    {
+      "name": "齐景公",
+      "category": "君王",
+      "paragraph_from": 73,
+      "paragraph_to": 85
+    },
+    {
+      "name": "齐悼公",
+      "category": "君王",
+      "paragraph_from": 86,
+      "paragraph_to": 87
+    },
+    {
+      "name": "齐简公",
+      "category": "君王",
+      "paragraph_from": 88,
+      "paragraph_to": 91
+    },
+    {
+      "name": "齐平公",
+      "category": "君王",
+      "paragraph_from": 92,
+      "paragraph_to": 93
+    },
+    {
+      "name": "齐康公",
+      "category": "君王",
+      "paragraph_from": 94,
       "paragraph_to": 96
     }
   ]

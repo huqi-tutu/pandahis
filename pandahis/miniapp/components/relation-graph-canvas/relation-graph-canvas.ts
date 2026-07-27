@@ -3,76 +3,101 @@ type GraphEdge = { fromKey: string; toKey: string; label?: string }
 type GraphPayload = { centerNodeKey?: string; nodes?: GraphNode[]; edges?: GraphEdge[] }
 
 type EdgeDraw = {
+  fromKey: string
+  toKey: string
   x1: number
   y1: number
   x2: number
   y2: number
-  label: string
   color: string
-  len: number
-  labelX?: number
-  labelY?: number
+  group: string
+  label: string
+  labelX: number
+  labelY: number
+  labelW: number
+  labelH: number
 }
 
 type Pos = {
   key: string
   x: number
   y: number
-  r: number
   fullName: string
-  lines: string[]
+  displayName: string
   fontSize: number
   type: string
   depth: number
-  color: string
-  stroke: string
+  group: string
   targetBoxId?: string
   isCategory?: boolean
-  /** 君王/臣子/父母等二级分组，非真实人物 */
-  isSubcategory?: boolean
-  pillW?: number
+  isCenter?: boolean
+  isExpandNode?: boolean
+  isPerson?: boolean
+  circleR: number
+  boxW: number
+  boxH: number
+  minR: number
 }
 
-const BRANCH = ['#EDEAE6', '#ECE4DB', '#EDEAE6', '#ECE4DB']
-const CENTER_FILL = '#ECE4DB'
-const CENTER_STROKE = 'rgba(162, 115, 79, 0.55)'
+type LayoutResult = {
+  positions: Pos[]
+  edgeList: EdgeDraw[]
+  bounds: { minX: number; minY: number; maxX: number; maxY: number }
+  centerKey: string
+}
+
+const BG = '#F8F6F2'
+const CENTER_FILL = '#B85C48'
+const CENTER_STROKE = 'rgba(140, 72, 58, 0.72)'
+const CENTER_TEXT = '#FAF8F5'
 const CATEGORY_FILL: Record<string, string> = {
-  家庭: 'rgba(250, 246, 242, 0.75)',
-  同僚: 'rgba(248, 246, 244, 0.75)',
-  师从: 'rgba(246, 250, 248, 0.75)',
-  外敌: 'rgba(250, 244, 244, 0.75)',
+  家庭: 'rgba(250, 246, 242, 0.95)',
+  同僚: 'rgba(248, 246, 244, 0.95)',
+  师从: 'rgba(246, 250, 248, 0.95)',
+  外敌: 'rgba(250, 244, 244, 0.95)',
 }
-const CATEGORY_STROKE = 'rgba(162, 115, 79, 0.32)'
-const CATEGORY_TEXT = '#8A8A8A'
-/** 子分类：比一级分类更弱的胶囊样式 */
-const SUBCATEGORY_FILL = 'rgba(248, 246, 242, 0.55)'
-const SUBCATEGORY_STROKE = 'rgba(162, 115, 79, 0.24)'
-const SUBCATEGORY_TEXT = '#B0A89E'
-/** 分组节点标题（非人名），应渲染为子分类胶囊 */
-const SUBCATEGORY_NAMES = new Set([
-  '君王',
-  '臣子',
-  '敌对',
-  '父母',
-  '配偶',
-  '子女',
-  '兄弟',
-  '姐妹',
-  '后裔',
-  '族人',
-  '同僚',
-  '外敌',
-  '师从',
-  '家庭',
-])
-
-type GroupBox = { name: string; x: number; y: number; w: number; h: number }
-
-const SECTOR_BASE: Record<string, number> = {
+const CATEGORY_STROKE: Record<string, string> = {
+  家庭: 'rgba(162, 115, 79, 0.38)',
+  同僚: 'rgba(127, 176, 105, 0.38)',
+  师从: 'rgba(99, 137, 156, 0.38)',
+  外敌: 'rgba(180, 100, 100, 0.35)',
+}
+const CATEGORY_TEXT = '#6C757D'
+const LEAF_FILL = '#FAF8F5'
+const LEAF_STROKE = 'rgba(162, 115, 79, 0.32)'
+const LEAF_TEXT = '#343A40'
+const REL_LABEL_FILL = 'rgba(108, 117, 125, 0.9)'
+const REL_LABEL_TEXT = '#FAF8F5'
+const GROUP_EDGE: Record<string, string> = {
+  家庭: 'rgba(162, 115, 79, 0.45)',
+  同僚: 'rgba(127, 176, 105, 0.45)',
+  师从: 'rgba(99, 137, 156, 0.45)',
+  外敌: 'rgba(180, 100, 100, 0.42)',
+  other: 'rgba(120, 110, 105, 0.38)',
+}
+const SECTOR_ANGLE: Record<string, number> = {
   家庭: -Math.PI / 2,
   师从: Math.PI,
   同僚: 0,
   外敌: Math.PI / 2,
+}
+const CATEGORY_ORDER = ['家庭', '师从', '同僚', '外敌']
+const CENTER_R = 28
+const PERSON_R = 22
+const NODE_GAP = 10
+const CAT_FONT = 11
+const REL_LABEL_H = 13
+const REL_LABEL_FONT = 7
+const CENTER_TO_CAT = 118
+const LINK_L1 = 100
+const LINK_DEEP = 82
+const MIN_FAN = 0.18
+const NODE_D = PERSON_R * 2 + NODE_GAP
+const WEDGE: Record<string, number> = {
+  家庭: Math.PI * 0.88,
+  师从: Math.PI * 0.62,
+  同僚: Math.PI * 0.62,
+  外敌: Math.PI * 0.62,
 }
 
 function normalizeGroupName(raw: string): string {
@@ -82,25 +107,13 @@ function normalizeGroupName(raw: string): string {
   return g
 }
 
-function inferGroupFromLabel(label: string): string {
-  const l = label || ''
-  if (/父|母|妻|子|女|配偶|家庭|兄|弟|姐|妹/.test(l)) return '家庭'
-  if (/师|医|道|问|徒|弟子/.test(l)) return '师从'
-  if (/臣|官|同僚|相|史|乐|牧|君王|政敌/.test(l)) return '同僚'
-  if (/敌|战|逐|伐|对手|反|阪泉|涿鹿|外敌/.test(l)) return '外敌'
-  return 'other'
-}
-
 function parseExtraGroup(extraJson?: string): string {
   if (!extraJson) return ''
   try {
     const o = JSON.parse(extraJson) as Record<string, unknown>
-    if (o.isCategoryNode) {
-      return normalizeGroupName(String(o.关系类别 || ''))
-    }
+    if (o.isCategoryNode) return normalizeGroupName(String(o.关系类别 || ''))
     const raw = String(o.关系类别 || o.group || o.category || o.cat || '')
-    const normalized = normalizeGroupName(raw)
-    const m = normalized.match(/家庭|同僚|师从|外敌/)
+    const m = normalizeGroupName(raw).match(/家庭|同僚|师从|外敌/)
     return m ? m[0] : ''
   } catch {
     return ''
@@ -122,1047 +135,626 @@ function isCategoryNode(meta?: GraphNode): boolean {
   return false
 }
 
-/** 君王/臣子/父母等：分组节点，不是人物 */
-function isSubcategoryNode(meta?: GraphNode): boolean {
-  if (!meta || isCategoryNode(meta)) return false
-  try {
-    if (meta.extraJson) {
-      const o = JSON.parse(meta.extraJson) as Record<string, unknown>
-      if (o.isSubcategoryNode) return true
-    }
-  } catch {
-    /* ignore */
-  }
-  const name = ((meta.name != null && String(meta.name).trim()) || '').trim()
-  return SUBCATEGORY_NAMES.has(name)
-}
-
-function isGroupLikePos(p: Pos): boolean {
-  return !!(p.isCategory || p.isSubcategory)
-}
-
-function assignNodeGroups(
-  root: string,
-  nodes: GraphNode[],
-  edges: GraphEdge[],
-  depthMap: Map<string, number>
-): Map<string, string> {
-  const nodeMap = new Map(nodes.map((n) => [n.key, n]))
-  const groupOf = new Map<string, string>()
-  groupOf.set(root, '')
-
-  for (const n of nodes) {
-    if (isCategoryNode(n)) {
-      const g = normalizeGroupName(String(n.name || '')) || parseExtraGroup(n.extraJson)
-      if (g) groupOf.set(n.key, g)
-      continue
-    }
-    const g = parseExtraGroup(n.extraJson)
-    if (g) groupOf.set(n.key, g)
-  }
-
-  for (const e of edges || []) {
-    const label = e.label || ''
-    if (e.fromKey === root && depthMap.get(e.toKey) === 1) {
-      const g = groupOf.get(e.toKey) || inferGroupFromLabel(label)
-      if (g !== 'other') groupOf.set(e.toKey, g)
-    } else if (e.toKey === root && depthMap.get(e.fromKey) === 1) {
-      const g = groupOf.get(e.fromKey) || inferGroupFromLabel(label)
-      if (g !== 'other') groupOf.set(e.fromKey, g)
-    }
-  }
-
-  for (let pass = 0; pass < 10; pass++) {
-    for (const e of edges || []) {
-      const a = e.fromKey
-      const b = e.toKey
-      const da = depthMap.get(a)
-      const db = depthMap.get(b)
-      if (da == null || db == null) continue
-      if (da < db && groupOf.get(a) && groupOf.get(a) !== 'other' && !groupOf.get(b)) {
-        groupOf.set(b, groupOf.get(a)!)
-      } else if (db < da && groupOf.get(b) && groupOf.get(b) !== 'other' && !groupOf.get(a)) {
-        groupOf.set(a, groupOf.get(b)!)
-      }
-    }
-  }
-
-  for (const n of nodes) {
-    if (!groupOf.get(n.key)) {
-      const g = parseExtraGroup(n.extraJson) || 'other'
-      groupOf.set(n.key, g)
-    }
-  }
-  return groupOf
-}
-
-function countNamedGroups(groupOf: Map<string, string>): number {
-  const s = new Set<string>()
-  for (const g of groupOf.values()) {
-    if (g && g !== 'other') s.add(g)
-  }
-  return s.size
-}
-
-function buildAdj(nodes: GraphNode[], edges: GraphEdge[]) {
-  const adj = new Map<string, Set<string>>()
-  const add = (a: string, b: string) => {
-    if (!a || !b) return
-    if (!adj.has(a)) adj.set(a, new Set())
-    if (!adj.has(b)) adj.set(b, new Set())
-    adj.get(a)!.add(b)
-    adj.get(b)!.add(a)
-  }
-  for (const e of edges || []) add(e.fromKey, e.toKey)
-  for (const n of nodes || []) {
-    if (!adj.has(n.key)) adj.set(n.key, new Set())
-  }
-  return adj
-}
-
-function bfsDepth(root: string, adj: Map<string, Set<string>>) {
-  const depth = new Map<string, number>()
-  const q: string[] = []
-  if (adj.has(root)) {
-    depth.set(root, 0)
-    q.push(root)
-  }
-  while (q.length) {
-    const u = q.shift()!
-    const du = depth.get(u) ?? 0
-    for (const v of adj.get(u) || []) {
-      if (!depth.has(v)) {
-        depth.set(v, du + 1)
-        q.push(v)
-      }
-    }
-  }
-  return depth
-}
-
-function findParentKey(key: string, edges: GraphEdge[], depthMap: Map<string, number>): string {
-  const d = depthMap.get(key)
-  if (d == null || d <= 1) return ''
-  for (const e of edges) {
-    const other = e.fromKey === key ? e.toKey : e.toKey === key ? e.fromKey : ''
-    if (!other) continue
-    const od = depthMap.get(other)
-    if (od === (d as number) - 1) return other
-  }
-  return ''
-}
-
-function hashCode(s: string) {
-  let h = 0
-  for (let i = 0; i < s.length; i++) h = (h << 5) - h + s.charCodeAt(i)
-  return Math.abs(h)
-}
-
-function clamp(v: number, lo: number, hi: number) {
-  return Math.max(lo, Math.min(hi, v))
-}
-
-function shade(hex: string, amt: number) {
-  const n = parseInt(hex.slice(1), 16)
-  let r = (n >> 16) & 255
-  let g = (n >> 8) & 255
-  let b = n & 255
-  r = clamp(r + amt, 0, 255)
-  g = clamp(g + amt, 0, 255)
-  b = clamp(b + amt, 0, 255)
-  return `#${((r << 16) | (g << 8) | b).toString(16).padStart(6, '0')}`
-}
-
-function tint(hex: string, t: number) {
-  const n = parseInt(hex.slice(1), 16)
-  let r = (n >> 16) & 255
-  let g = (n >> 8) & 255
-  let b = n & 255
-  r = Math.round(r + (255 - r) * t)
-  g = Math.round(g + (255 - g) * t)
-  b = Math.round(b + (255 - b) * t)
-  return `#${((r << 16) | (g << 8) | b).toString(16).padStart(6, '0')}`
-}
-
-function rgbaFromHex(hex: string, a: number) {
-  const n = parseInt(hex.slice(1), 16)
-  const r = (n >> 16) & 255
-  const g = (n >> 8) & 255
-  const b = n & 255
-  return `rgba(${r},${g},${b},${a})`
-}
-
-function layoutRadial(
-  nodes: GraphNode[],
-  edges: GraphEdge[],
-  centerKey: string,
-  w: number,
-  h: number
-): { positions: Pos[]; depthMap: Map<string, number> } {
-  const nodeMap = new Map(nodes.map((n) => [n.key, n]))
-  const adj = buildAdj(nodes, edges)
-  let root = centerKey && nodeMap.has(centerKey) ? centerKey : nodes[0]?.key || ''
-  if (!root) return { positions: [], depthMap: new Map() }
-
-  const depthMap = bfsDepth(root, adj)
-  const byDepth = new Map<number, string[]>()
-  for (const n of nodes) {
-    const d = depthMap.has(n.key) ? (depthMap.get(n.key) as number) : 99
-    if (!byDepth.has(d)) byDepth.set(d, [])
-    byDepth.get(d)!.push(n.key)
-  }
-  for (const arr of byDepth.values()) arr.sort()
-
-  const cx = w / 2
-  const cy = h / 2
-  const minDim = Math.min(w, h)
-  const posMap = new Map<string, Pos>()
-
-  const depthRadius = (d: number) => {
-    if (d <= 0) return 0
-    if (d >= 99) return minDim * 0.4
-    return minDim * (0.12 + d * 0.12)
-  }
-
-  const baseDist = (d: number) => {
-    if (d <= 0) return 0
-    if (d >= 99) return depthRadius(99)
-    return depthRadius(d) + 52
-  }
-
-  const sortedDepths = [...byDepth.keys()].sort((a, b) => a - b)
-
-  for (const d of sortedDepths) {
-    const keys = byDepth.get(d) || []
-    const n = keys.length
-    keys.forEach((key, i) => {
-      const meta = nodeMap.get(key)!
-      const fullName = ((meta.name != null && String(meta.name).trim()) || key).trim()
-      const typ = meta.type || 'node'
-      let x: number
-      let y: number
-      if (d === 0) {
-        x = cx
-        y = cy
-      } else if (d >= 99) {
-        const ang = -Math.PI / 2 + (i / Math.max(n, 1)) * Math.PI * 2
-        const dist = baseDist(99)
-        x = cx + dist * Math.cos(ang)
-        y = cy + dist * Math.sin(ang)
-      } else {
-        const angle = -Math.PI / 2 + (i / Math.max(n, 1)) * Math.PI * 2
-        const jitter = ((hashCode(key) % 13) - 6) * 0.016 * minDim
-        const dist = baseDist(d) + jitter
-        x = cx + dist * Math.cos(angle)
-        y = cy + dist * Math.sin(angle)
-      }
-      x = clamp(x, 52, w - 52)
-      y = clamp(y, 52, h - 52)
-
-      let color = BRANCH[i % BRANCH.length]
-      let stroke = color
-      if (d === 0) {
-        color = CENTER_FILL
-        stroke = CENTER_STROKE
-      } else if (d === 1) {
-        color = BRANCH[i % BRANCH.length]
-        stroke = 'rgba(99, 137, 156, 0.5)'
-      } else {
-        const pk = findParentKey(key, edges, depthMap)
-        const parent = pk ? posMap.get(pk) : null
-        color = parent ? tint(parent.color, 0.12) : BRANCH[i % BRANCH.length]
-        stroke = 'rgba(162, 115, 79, 0.45)'
-      }
-
-      const p: Pos = {
-        key,
-        x,
-        y,
-        r: 22,
-        fullName,
-        lines: [fullName],
-        fontSize: 12,
-        type: typ,
-        depth: d,
-        color,
-        stroke,
-        targetBoxId: meta.targetBoxId,
-      }
-      posMap.set(key, p)
-    })
-  }
-
-  const positions = (nodes.map((n) => posMap.get(n.key)).filter((p) => p != null) as Pos[]) || []
-
-  return { positions, depthMap }
-}
-
-function estimatedCenterR(minDim: number): number {
-  const scale = minDim / 800
-  return Math.max(36, 45 * scale)
-}
-
-function estimatedCategoryHalfH(minDim: number): number {
-  const scale = minDim / 800
-  return Math.max(13, 16 * scale)
-}
-
-/** 中心 → 分类：给分类外圈扇形留出空间 */
-function categoryRingDistance(minDim: number, fanLeaves = 1): number {
-  const base = estimatedCenterR(minDim) + estimatedCategoryHalfH(minDim) + 32
-  return base + Math.min(48, Math.max(0, fanLeaves - 1) * 10)
-}
-
-function edgeRadiusAlong(p: Pos, ux: number, uy: number): number {
-  if ((p.isCategory || p.isSubcategory) && p.pillW) {
-    const hw = p.pillW / 2
-    const hh = p.r
-    const ax = Math.abs(ux)
-    const ay = Math.abs(uy)
-    let best = Infinity
-    if (ax > 1e-6) {
-      const t = hw / ax
-      if (ay * t <= hh + 0.5) best = Math.min(best, t)
-    }
-    if (ay > 1e-6) {
-      const t = hh / ay
-      if (ax * t <= hw + 0.5) best = Math.min(best, t)
-    }
-    return Number.isFinite(best) ? best : Math.max(hw, hh)
-  }
-  const strokeHalf = p.depth === 0 ? 0.75 : 0.5
-  return p.r + strokeHalf
+function isExpandNode(meta?: GraphNode, name?: string): boolean {
+  const n = (name || meta?.name || '').trim()
+  return /展开全部|展开更多|\+(\d+)/.test(n) || meta?.type === 'expand'
 }
 
 function childrenOf(parentKey: string, edges: GraphEdge[]): string[] {
-  return (edges || []).filter((e) => e.fromKey === parentKey).map((e) => e.toKey)
+  return (edges || [])
+    .filter((e) => e.fromKey === parentKey)
+    .map((e) => e.toKey)
+    .sort()
 }
 
-/** 子树叶子节点数（决定扇区占角） */
-function countLeaves(key: string, edges: GraphEdge[], nodeMap: Map<string, GraphNode>): number {
-  const kids = childrenOf(key, edges).filter((k) => !isCategoryNode(nodeMap.get(k)))
-  if (!kids.length) return 1
-  return kids.reduce((sum, k) => sum + countLeaves(k, edges, nodeMap), 0)
-}
-
-function parentExtentAlong(parent: Pos, ux: number, uy: number): number {
-  if ((parent.isCategory || parent.isSubcategory) && parent.pillW) {
-    return edgeRadiusAlong(parent, ux, uy)
+function buildParentMap(centerKey: string, edges: GraphEdge[]): Map<string, string> {
+  const parent = new Map<string, string>()
+  const adj = new Map<string, string[]>()
+  for (const e of edges || []) {
+    if (!adj.has(e.fromKey)) adj.set(e.fromKey, [])
+    adj.get(e.fromKey)!.push(e.toKey)
   }
-  return parent.r
+  const q = [centerKey]
+  const seen = new Set([centerKey])
+  while (q.length) {
+    const u = q.shift()!
+    for (const v of adj.get(u) || []) {
+      if (seen.has(v)) continue
+      seen.add(v)
+      parent.set(v, u)
+      q.push(v)
+    }
+  }
+  return parent
+}
+
+function nodeGroup(meta: GraphNode | undefined, fallback = 'other'): string {
+  if (!meta) return fallback
+  if (isCategoryNode(meta)) return normalizeGroupName(String(meta.name || '')) || fallback
+  return parseExtraGroup(meta.extraJson) || fallback
+}
+
+function polar(cx: number, cy: number, angle: number, dist: number) {
+  return { x: cx + Math.cos(angle) * dist, y: cy + Math.sin(angle) * dist }
+}
+
+/** 节点碰撞半径（含安全间距） */
+function collisionRadius(p: Pos): number {
+  if (p.isCenter || p.isCategory) return Math.max(p.boxW, p.boxH) / 2 + 4
+  return p.circleR + NODE_GAP / 2
+}
+
+function nodesOverlap(a: Pos, b: Pos): boolean {
+  if (a.key === b.key) return false
+  const dx = b.x - a.x
+  const dy = b.y - a.y
+  const minDist = collisionRadius(a) + collisionRadius(b)
+  return dx * dx + dy * dy < minDist * minDist
+}
+
+function findFirstOverlap(positions: Pos[]): [Pos, Pos] | null {
+  for (let i = 0; i < positions.length; i++) {
+    for (let j = i + 1; j < positions.length; j++) {
+      if (nodesOverlap(positions[i], positions[j])) return [positions[i], positions[j]]
+    }
+  }
+  return null
+}
+
+function buildChildrenMap(edges: GraphEdge[]): Map<string, string[]> {
+  const m = new Map<string, string[]>()
+  for (const e of edges || []) {
+    if (!m.has(e.fromKey)) m.set(e.fromKey, [])
+    m.get(e.fromKey)!.push(e.toKey)
+  }
+  for (const [k, list] of m) m.set(k, [...list].sort())
+  return m
+}
+
+function moveSubtree(
+  rootKey: string,
+  dx: number,
+  dy: number,
+  childrenMap: Map<string, string[]>,
+  posByKey: Map<string, Pos>
+) {
+  const stack = [rootKey]
+  const seen = new Set<string>()
+  while (stack.length) {
+    const k = stack.pop()!
+    if (seen.has(k)) continue
+    seen.add(k)
+    const p = posByKey.get(k)
+    if (!p) continue
+    p.x += dx
+    p.y += dy
+    if (!p.isCenter) p.minR = Math.max(p.minR, radialOf(p.x, p.y) - 4)
+    for (const c of childrenMap.get(k) || []) stack.push(c)
+  }
+}
+
+/** 沿父→子方向把整棵子树外推（只向外，不往中心撤） */
+function pushSubtreeOutward(
+  nodeKey: string,
+  delta: number,
+  parentMap: Map<string, string>,
+  posByKey: Map<string, Pos>,
+  childrenMap: Map<string, string[]>
+) {
+  const parentKey = parentMap.get(nodeKey)
+  if (!parentKey) return
+  const parent = posByKey.get(parentKey)
+  const node = posByKey.get(nodeKey)
+  if (!parent || !node) return
+  const angle = Math.atan2(node.y - parent.y, node.x - parent.x)
+  moveSubtree(nodeKey, Math.cos(angle) * delta, Math.sin(angle) * delta, childrenMap, posByKey)
+}
+
+/** 固定逻辑：检测到重叠就外推较深子树，直到无重叠或达上限 */
+function ensureNoNodeOverlap(
+  positions: Pos[],
+  parentMap: Map<string, string>,
+  childrenMap: Map<string, string[]>,
+  maxPass = 160
+) {
+  const posByKey = new Map(positions.map((p) => [p.key, p]))
+  for (let pass = 0; pass < maxPass; pass++) {
+    const pair = findFirstOverlap(positions)
+    if (!pair) return
+    const [a, b] = pair
+    if (a.depth === b.depth) {
+      pushSubtreeOutward(a.key, 6, parentMap, posByKey, childrenMap)
+      pushSubtreeOutward(b.key, 6, parentMap, posByKey, childrenMap)
+    } else {
+      const mover = a.depth > b.depth ? a : b
+      pushSubtreeOutward(mover.key, 8, parentMap, posByKey, childrenMap)
+    }
+  }
+}
+
+/** 在角度 sector 内放 n 个兄弟，求满足 NODE_D 的最短连线 */
+function minLinkForSector(sectorRad: number, slotCount: number, base: number): number {
+  if (slotCount <= 1) return base
+  const half = sectorRad / slotCount / 2
+  const need = NODE_D / (2 * Math.sin(Math.max(half, 0.05)))
+  return Math.max(base, need)
+}
+
+function subtreeWeight(
+  key: string,
+  edges: GraphEdge[],
+  nodeMap: Map<string, GraphNode>,
+  cache = new Map<string, number>()
+): number {
+  if (cache.has(key)) return cache.get(key)!
+  const kids = childrenOf(key, edges).filter((k) => {
+    const m = nodeMap.get(k)
+    return m && !isCategoryNode(m)
+  })
+  if (!kids.length) {
+    cache.set(key, 1)
+    return 1
+  }
+  const w = kids.reduce((sum, k) => sum + subtreeWeight(k, edges, nodeMap, cache), 0)
+  cache.set(key, Math.max(w, 1))
+  return cache.get(key)!
+}
+
+
+function personFontSize(name: string): number {
+  const len = name.length
+  if (len <= 2) return 10
+  if (len <= 3) return 9
+  if (len <= 4) return 8
+  return 7
+}
+
+function radialOf(x: number, y: number): number {
+  return Math.hypot(x, y)
+}
+
+function categoryBox(name: string): { w: number; h: number } {
+  return { w: Math.max(56, name.length * 12 + 24), h: 30 }
+}
+
+function truncateName(name: string, maxLen: number): string {
+  if (name.length <= maxLen) return name
+  return `${name.slice(0, Math.max(1, maxLen - 1))}…`
+}
+
+function addPos(
+  posMap: Map<string, Pos>,
+  meta: GraphNode,
+  x: number,
+  y: number,
+  depth: number,
+  group: string,
+  flags: { isCenter?: boolean; isCategory?: boolean; isExpand?: boolean }
+) {
+  const fullName = ((meta.name != null && String(meta.name).trim()) || meta.key).trim()
+  const isCenter = !!flags.isCenter
+  const isCategory = !!flags.isCategory
+  let circleR = 0
+  let boxW = 0
+  let boxH = 0
+  let fontSize = personFontSize(fullName)
+  let displayName = fullName
+
+  if (isCenter) {
+    circleR = CENTER_R
+    boxW = CENTER_R * 2
+    boxH = CENTER_R * 2
+    fontSize = 14
+  } else if (isCategory) {
+    const box = categoryBox(fullName)
+    boxW = box.w
+    boxH = box.h
+    fontSize = CAT_FONT
+  } else {
+    circleR = PERSON_R
+    boxW = PERSON_R * 2
+    boxH = PERSON_R * 2
+    fontSize = personFontSize(fullName)
+  }
+
+  posMap.set(meta.key, {
+    key: meta.key,
+    x,
+    y,
+    fullName,
+    displayName,
+    fontSize,
+    type: meta.type || 'person',
+    depth,
+    group,
+    targetBoxId: meta.targetBoxId,
+    isCategory,
+    isCenter,
+    isExpandNode: !!flags.isExpand,
+    isPerson: !isCenter && !isCategory,
+    circleR,
+    boxW,
+    boxH,
+    minR: isCenter ? 0 : Math.max(0, radialOf(x, y) - 4),
+  })
 }
 
 /**
- * 参考样式：子节点绕父节点做外向弧形扇区排布（中心→分类→人物）。
- * 每个孩子落在以父为圆心、固定步长的圆弧上，角度按叶子权重分配且保证弦长间距。
+ * 思维导图核心：每个节点独占一段角度 [angleStart, angleEnd]，
+ * 子节点在该段内再切分；连线长度由几何公式预先算好，保证兄弟间距 >= NODE_D。
  */
-function layoutOrbitSubtree(
-  parentKey: string,
+function placeSubtree(
+  key: string,
+  hubX: number,
+  hubY: number,
+  angleStart: number,
+  angleEnd: number,
+  linkLen: number,
   depth: number,
-  posMap: Map<string, Pos>,
-  nodeMap: Map<string, GraphNode>,
+  group: string,
   edges: GraphEdge[],
-  cx: number,
-  cy: number
+  nodeMap: Map<string, GraphNode>,
+  posMap: Map<string, Pos>
 ) {
-  const parent = posMap.get(parentKey)
-  if (!parent) return
-  const kids = childrenOf(parentKey, edges).filter((k) => !isCategoryNode(nodeMap.get(k)))
+  const meta = nodeMap.get(key)
+  if (!meta) return
+  const name = ((meta.name != null && String(meta.name).trim()) || key).trim()
+  const midAngle = (angleStart + angleEnd) / 2
+  const pos = polar(hubX, hubY, midAngle, linkLen)
+  addPos(posMap, meta, pos.x, pos.y, depth, group, {
+    isExpand: isExpandNode(meta, name),
+  })
+
+  const kids = childrenOf(key, edges).filter((k) => {
+    const m = nodeMap.get(k)
+    return m && !isCategoryNode(m)
+  })
   if (!kids.length) return
 
-  const outA = Math.atan2(parent.y - cy, parent.x - cx)
-  const leafCounts = kids.map((k) => countLeaves(k, edges, nodeMap))
-  const radii = kids.map((k) => {
-    const meta = nodeMap.get(k)
-    if (isSubcategoryNode(meta)) return posMap.get(k)?.r ?? 12
-    return posMap.get(k)?.r ?? 18
-  })
-  const maxChildR = Math.max(...radii, 18)
-  const gap = isGroupLikePos(parent) ? 38 : 34
-  const parentExt = parentExtentAlong(parent, Math.cos(outA), Math.sin(outA))
-  const step = parentExt + maxChildR + gap
+  const sector = Math.max(angleEnd - angleStart, MIN_FAN)
+  const weights = kids.map((k) => subtreeWeight(k, edges, nodeMap))
+  const total = weights.reduce((a, b) => a + b, 0) || kids.length
+  const nextLink = minLinkForSector(sector, kids.length, LINK_DEEP)
 
-  // 相邻孩子最小圆心距 → 最小夹角
-  const minSep = maxChildR * 2 + 36
-  const minAngle = 2 * Math.asin(Math.min(0.92, minSep / (2 * Math.max(step, minSep))))
-  const angleSpans = leafCounts.map((leaves) => Math.max(minAngle, leaves * minAngle * 0.9))
-  const totalSpan = angleSpans.reduce((a, b) => a + b, 0)
-  // 扇区以父节点外向角为中轴，略收拢避免跨入邻类
-  const maxSpan = isGroupLikePos(parent) ? Math.PI * 0.95 : Math.PI * 0.75
-  const scale = totalSpan > maxSpan ? maxSpan / totalSpan : 1
-  let cursor = outA - (totalSpan * scale) / 2
-
-  kids.forEach((childKey, i) => {
-    const meta = nodeMap.get(childKey)
-    if (!meta) return
-    const span = angleSpans[i] * scale
-    const ang = cursor + span / 2
-    cursor += span
-
-    const childR = radii[i]
-    const childStep = parentExtentAlong(parent, Math.cos(ang), Math.sin(ang)) + childR + gap
-    const x = parent.x + childStep * Math.cos(ang)
-    const y = parent.y + childStep * Math.sin(ang)
-    const existing = posMap.get(childKey)
-    const fullName = ((meta.name != null && String(meta.name).trim()) || childKey).trim()
-    const sub = isSubcategoryNode(meta)
-
-    posMap.set(childKey, {
-      key: childKey,
-      x,
-      y,
-      r: childR,
-      fullName,
-      lines: existing?.lines ?? [fullName],
-      fontSize: existing?.fontSize ?? (sub ? 10 : 11),
-      type: sub ? 'subcategory' : meta.type || 'person',
-      depth,
-      color: sub ? SUBCATEGORY_FILL : existing?.color ?? BRANCH[i % BRANCH.length],
-      stroke: sub ? SUBCATEGORY_STROKE : existing?.stroke ?? 'rgba(162, 115, 79, 0.45)',
-      targetBoxId: meta.targetBoxId,
-      isSubcategory: sub,
-      pillW: sub ? Math.max(44, fullName.length * 12 + 16) : undefined,
-    })
-    layoutOrbitSubtree(childKey, depth + 1, posMap, nodeMap, edges, cx, cy)
+  let cursor = angleStart
+  kids.forEach((kid, i) => {
+    const slice = (weights[i] / total) * sector
+    const a0 = cursor
+    const a1 = cursor + slice
+    cursor += slice
+    placeSubtree(kid, pos.x, pos.y, a0, a1, nextLink, depth + 1, group, edges, nodeMap, posMap)
   })
 }
 
-/** 分离重叠：人物↔人物、人物↔分组胶囊 */
-function separateOverlappingPersons(positions: Pos[], centerKey: string, cx: number, cy: number) {
-  const persons = positions.filter((p) => !isGroupLikePos(p) && p.key !== centerKey)
-  const obstacles = positions.filter((p) => isGroupLikePos(p) || p.key === centerKey)
-
-  for (let pass = 0; pass < 16; pass++) {
-    let moved = false
-    for (let i = 0; i < persons.length; i++) {
-      for (let j = i + 1; j < persons.length; j++) {
-        const a = persons[i]
-        const b = persons[j]
-        const dx = b.x - a.x
-        const dy = b.y - a.y
-        const dist = Math.hypot(dx, dy)
-        const minDist = a.r + b.r + 26
-        if (dist >= minDist) continue
-        const push = dist < 1e-4 ? minDist / 2 : (minDist - dist) / 2 + 1
-        if (dist < 1e-4) {
-          const ang = Math.atan2(a.y - cy, a.x - cx) + Math.PI / 2
-          a.x -= Math.cos(ang) * push
-          a.y -= Math.sin(ang) * push
-          b.x += Math.cos(ang) * push
-          b.y += Math.sin(ang) * push
-        } else {
-          const ux = dx / dist
-          const uy = dy / dist
-          a.x -= ux * push
-          a.y -= uy * push
-          b.x += ux * push
-          b.y += uy * push
-        }
-        moved = true
-      }
-    }
-    for (const p of persons) {
-      for (const obs of obstacles) {
-        const dx = p.x - obs.x
-        const dy = p.y - obs.y
-        const dist = Math.hypot(dx, dy)
-        const obsR =
-          (obs.isCategory || obs.isSubcategory) && obs.pillW
-            ? Math.max(obs.pillW / 2, obs.r) + 6
-            : obs.r + 8
-        const minDist = p.r + obsR + 18
-        if (dist >= minDist) continue
-        const push = dist < 1e-4 ? minDist : minDist - dist + 1
-        if (dist < 1e-4) {
-          const ang = Math.atan2(obs.y - cy, obs.x - cx)
-          p.x = obs.x + Math.cos(ang) * minDist
-          p.y = obs.y + Math.sin(ang) * minDist
-        } else {
-          p.x += (dx / dist) * push
-          p.y += (dy / dist) * push
-        }
-        moved = true
-      }
-    }
-    if (!moved) break
-  }
-}
-
-/** 节点定尺寸后，按真实半径重新绕分类弧形排布 */
-function reflowCompactCategoryTree(
-  positions: Pos[],
-  nodes: GraphNode[],
+function layoutCluster(
+  catMeta: GraphNode,
   edges: GraphEdge[],
-  centerKey: string,
-  w: number,
-  h: number,
-  minDim: number
+  nodeMap: Map<string, GraphNode>,
+  posMap: Map<string, Pos>
 ) {
+  const g = normalizeGroupName(String(catMeta.name || ''))
+  const base = SECTOR_ANGLE[g] ?? -Math.PI / 2
+  const wedge = WEDGE[g] ?? Math.PI * 0.5
+  const catPos = polar(0, 0, base, CENTER_TO_CAT)
+  addPos(posMap, catMeta, catPos.x, catPos.y, 1, g, { isCategory: true })
+
+  const topKids = childrenOf(catMeta.key, edges).filter((k) => {
+    const m = nodeMap.get(k)
+    return m && !isCategoryNode(m)
+  })
+  if (!topKids.length) return
+
+  const weights = topKids.map((k) => subtreeWeight(k, edges, nodeMap))
+  const total = weights.reduce((a, b) => a + b, 0) || topKids.length
+  const start = base - wedge / 2
+  let cursor = start
+  topKids.forEach((kid, i) => {
+    const slice = (weights[i] / total) * wedge
+    const a0 = cursor
+    const a1 = cursor + slice
+    cursor += slice
+    const link = minLinkForSector(slice, 1, LINK_L1)
+    placeSubtree(kid, catPos.x, catPos.y, a0, a1, link, 2, g, edges, nodeMap, posMap)
+  })
+}
+
+function layoutMindMap(nodes: GraphNode[], edges: GraphEdge[], centerKey: string): LayoutResult {
   const nodeMap = new Map(nodes.map((n) => [n.key, n]))
-  const posMap = new Map(positions.map((p) => [p.key, p]))
-  const center = posMap.get(centerKey)
-  if (!center) return
-
-  const cx = w / 2
-  const cy = h / 2
-
-  for (const p of positions) {
-    if (!p.isCategory) continue
-    const g = normalizeGroupName(p.fullName)
-    const ang = SECTOR_BASE[g] ?? Math.atan2(p.y - cy, p.x - cx)
-    const leaves = countLeaves(p.key, edges, nodeMap)
-    const ring = categoryRingDistance(minDim, leaves)
-    p.x = cx + ring * Math.cos(ang)
-    p.y = cy + ring * Math.sin(ang)
+  const posMap = new Map<string, Pos>()
+  const centerMeta = nodeMap.get(centerKey)
+  if (!centerMeta) {
+    return { positions: [], edgeList: [], bounds: { minX: -1, minY: -1, maxX: 1, maxY: 1 }, centerKey }
   }
 
-  for (const p of positions) {
-    if (p.isCategory || p.key === centerKey) continue
-    posMap.delete(p.key)
+  addPos(posMap, centerMeta, 0, 0, 0, '', { isCenter: true })
+
+  const categoryNodes = CATEGORY_ORDER.map((g) =>
+    nodes.find((n) => isCategoryNode(n) && normalizeGroupName(String(n.name || '')) === g)
+  ).filter((n): n is GraphNode => n != null)
+
+  for (const cat of categoryNodes) {
+    layoutCluster(cat, edges, nodeMap, posMap)
   }
 
-  for (const p of positions) {
-    if (!p.isCategory) continue
-    layoutOrbitSubtree(p.key, 2, posMap, nodeMap, edges, cx, cy)
-  }
-
-  for (const p of positions) {
-    if (p.isCategory || p.key === centerKey) continue
-    const u = posMap.get(p.key)
-    if (!u) continue
-    p.x = u.x
-    p.y = u.y
-  }
-
-  separateOverlappingPersons(positions, centerKey, cx, cy)
-}
-
-function labelBoxHitsNode(lx: number, ly: number, hw: number, hh: number, nodes: Pos[]): boolean {
   for (const n of nodes) {
-    const nr =
-      (n.isCategory || n.isSubcategory) && n.pillW ? Math.max(n.pillW / 2, n.r) : n.r
-    const dx = Math.abs(lx - n.x)
-    const dy = Math.abs(ly - n.y)
-    // 余量收紧：允许标签贴线，只避开圆内文字区
-    if (dx < hw + nr + 3 && dy < hh + nr + 3) return true
+    if (posMap.has(n.key)) continue
+    addPos(posMap, n, 160, 160, 2, nodeGroup(n), {})
   }
-  return false
+
+  const positions = nodes.map((n) => posMap.get(n.key)).filter((p): p is Pos => p != null)
+  const parentMap = buildParentMap(centerKey, edges)
+  const childrenMap = buildChildrenMap(edges)
+  ensureNoNodeOverlap(positions, parentMap, childrenMap)
+  const edgeList = buildEdgeList(positions, edges, nodeMap)
+  placeEdgeLabelsOnLine(edgeList, positions)
+  return { positions, edgeList, bounds: computeBounds(positions, edgeList), centerKey }
 }
 
-function labelBoxHitsLabel(
-  lx: number,
-  ly: number,
-  hw: number,
-  hh: number,
-  others: { x: number; y: number; hw: number; hh: number }[]
-): boolean {
-  for (const o of others) {
-    if (Math.abs(lx - o.x) < hw + o.hw + 3 && Math.abs(ly - o.y) < hh + o.hh + 3) return true
-  }
-  return false
+function nodeBounds(p: Pos) {
+  const hw = (p.isCategory ? p.boxW : p.boxW) / 2 + 6
+  const hh = (p.isCategory ? p.boxH : p.boxH) / 2 + 6
+  return { l: p.x - hw, r: p.x + hw, t: p.y - hh, b: p.y + hh }
 }
 
-function layoutEdgeLabels(ctx: CanvasRenderingContext2D, edgeList: EdgeDraw[], positions: Pos[]) {
-  ctx.font = '8px sans-serif'
-  const nodes = positions
-  const placed: { x: number; y: number; hw: number; hh: number }[] = []
-  const labelH = 5
+function labelBox(x: number, y: number, w: number, h: number) {
+  return { l: x - w / 2, r: x + w / 2, t: y - h / 2, b: y + h / 2 }
+}
 
-  // 同文案交替左右，但优先小偏移贴线
-  const labelSide = new Map<string, number>()
+function boxesOverlap(
+  a: { l: number; r: number; t: number; b: number },
+  b: { l: number; r: number; t: number; b: number }
+) {
+  return a.l < b.r && a.r > b.l && a.t < b.b && a.b > b.t
+}
 
-  for (const e of edgeList) {
-    if (!e.label) continue
-    const dx = e.x2 - e.x1
-    const dy = e.y2 - e.y1
-    const len = e.len || Math.hypot(dx, dy) || 1
-    if (len < 26) {
-      e.label = ''
-      continue
-    }
-    const ux = dx / len
-    const uy = dy / len
-    const perpX = -uy
-    const perpY = ux
-    const tw = ctx.measureText(e.label).width
-    const hw = tw / 2 + 2
-    const side = labelSide.get(e.label) || 1
-    labelSide.set(e.label, -side)
+function measureRelLabel(text: string): { w: number; h: number } {
+  const w = Math.max(22, text.length * 7 + 10)
+  return { w, h: REL_LABEL_H }
+}
 
-    // 先贴线中段，偏移从小到大；归属优先于避让
-    const alongTs = [0.5, 0.45, 0.55, 0.4, 0.6]
-    const offsets = [7, 9, 11, 13, 16, 20, 24].flatMap((v) => [v * side, -v * side])
+/** 标签贴在线上；同父多条边按序号错开 t，避免「儿子」叠成一堆 */
+function placeEdgeLabelsOnLine(edgeList: EdgeDraw[], positions: Pos[]) {
+  const placed: { l: number; r: number; t: number; b: number }[] = positions.map((p) => nodeBounds(p))
+  const byKey = new Map(positions.map((p) => [p.key, p]))
+  const labeled = edgeList.filter((e) => e.label)
 
-    let found = false
-    for (const t of alongTs) {
-      for (const off of offsets) {
-        const lx = e.x1 + ux * len * t + perpX * off
-        const ly = e.y1 + uy * len * t + perpY * off
-        if (labelBoxHitsNode(lx, ly, hw, labelH, nodes)) continue
-        if (labelBoxHitsLabel(lx, ly, hw, labelH, placed)) continue
+  const groups = new Map<string, EdgeDraw[]>()
+  for (const e of labeled) {
+    const g = e.fromKey
+    if (!groups.has(g)) groups.set(g, [])
+    groups.get(g)!.push(e)
+  }
+
+  for (const [, edges] of groups) {
+    const from = byKey.get(edges[0].fromKey)
+    edges.sort((ea, eb) => {
+      const ta = byKey.get(ea.toKey)
+      const tb = byKey.get(eb.toKey)
+      if (!from || !ta || !tb) return 0
+      return Math.atan2(ta.y - from.y, ta.x - from.x) - Math.atan2(tb.y - from.y, tb.x - from.x)
+    })
+
+    edges.forEach((e, idx) => {
+      const { w, h } = measureRelLabel(e.label)
+      e.labelW = w
+      e.labelH = h
+      const dx = e.x2 - e.x1
+      const dy = e.y2 - e.y1
+      const len = Math.hypot(dx, dy) || 1
+      const ux = dx / len
+      const uy = dy / len
+      const n = edges.length
+      const baseT = n === 1 ? 0.5 : 0.34 + (idx / Math.max(1, n - 1)) * 0.32
+      const tCandidates = [baseT, baseT - 0.06, baseT + 0.06, baseT - 0.12, baseT + 0.12, 0.5]
+
+      let found = false
+      for (const t of tCandidates) {
+        if (t < 0.28 || t > 0.72) continue
+        const lx = e.x1 + ux * len * t
+        const ly = e.y1 + uy * len * t
+        const box = labelBox(lx, ly, w + 2, h + 2)
+        if (placed.some((b) => boxesOverlap(box, b))) continue
         e.labelX = lx
         e.labelY = ly
-        placed.push({ x: lx, y: ly, hw, hh: labelH })
+        placed.push(box)
         found = true
         break
       }
-      if (found) break
-    }
-    if (!found) {
-      // 贴线兜底：中点旁 8px，保证仍能看出归属哪条边
-      e.labelX = e.x1 + ux * len * 0.5 + perpX * 8 * side
-      e.labelY = e.y1 + uy * len * 0.5 + perpY * 8 * side
-      placed.push({ x: e.labelX, y: e.labelY, hw, hh: labelH })
-    }
-  }
-}
-
-function layoutCategoryTree(
-  nodes: GraphNode[],
-  edges: GraphEdge[],
-  centerKey: string,
-  w: number,
-  h: number
-): { positions: Pos[]; depthMap: Map<string, number>; groupBoxes: GroupBox[]; useSectorLayout: boolean } {
-  const nodeMap = new Map(nodes.map((n) => [n.key, n]))
-  const cx = w / 2
-  const cy = h / 2
-  const minDim = Math.min(w, h)
-  const posMap = new Map<string, Pos>()
-  const depthMap = bfsDepth(centerKey, buildAdj(nodes, edges))
-
-  const rootMeta = nodeMap.get(centerKey)
-  if (!rootMeta) return { positions: [], depthMap, groupBoxes: [], useSectorLayout: true }
-
-  posMap.set(centerKey, {
-    key: centerKey,
-    x: cx,
-    y: cy,
-    r: 22,
-    fullName: ((rootMeta.name != null && String(rootMeta.name).trim()) || centerKey).trim(),
-    lines: [],
-    fontSize: 14,
-    type: rootMeta.type || 'event',
-    depth: 0,
-    color: CENTER_FILL,
-    stroke: CENTER_STROKE,
-    targetBoxId: rootMeta.targetBoxId,
-  })
-
-  const categoryNodes = nodes.filter((n) => isCategoryNode(n))
-  for (const meta of categoryNodes) {
-    const g = normalizeGroupName(String(meta.name || ''))
-    const ang = SECTOR_BASE[g] ?? -Math.PI / 2
-    const fullName = ((meta.name != null && String(meta.name).trim()) || meta.key).trim()
-    const leaves = countLeaves(meta.key, edges, nodeMap)
-    const catRing = categoryRingDistance(minDim, leaves)
-    posMap.set(meta.key, {
-      key: meta.key,
-      x: cx + catRing * Math.cos(ang),
-      y: cy + catRing * Math.sin(ang),
-      r: 16,
-      fullName,
-      lines: [fullName],
-      fontSize: 12,
-      type: 'category',
-      depth: 1,
-      color: CATEGORY_FILL[g] || '#EDEAE6',
-      stroke: CATEGORY_STROKE,
-      targetBoxId: meta.targetBoxId,
-      isCategory: true,
-      pillW: Math.max(58, fullName.length * 14 + 24),
+      if (!found) {
+        e.labelX = e.x1 + ux * len * baseT
+        e.labelY = e.y1 + uy * len * baseT
+        placed.push(labelBox(e.labelX, e.labelY, w + 2, h + 2))
+      }
     })
   }
 
-  for (const meta of categoryNodes) {
-    layoutOrbitSubtree(meta.key, 2, posMap, nodeMap, edges, cx, cy)
+  for (const e of labeled) {
+    if (e.labelW > 0) continue
+    const { w, h } = measureRelLabel(e.label)
+    e.labelW = w
+    e.labelH = h
+    e.labelX = (e.x1 + e.x2) / 2
+    e.labelY = (e.y1 + e.y2) / 2
   }
-
-  const positions = nodes.map((n) => posMap.get(n.key)).filter((p): p is Pos => p != null)
-  return { positions, depthMap, groupBoxes: [], useSectorLayout: true }
 }
 
-function layoutSectorGrouped(
-  nodes: GraphNode[],
-  edges: GraphEdge[],
-  centerKey: string,
-  w: number,
-  h: number
-): { positions: Pos[]; depthMap: Map<string, number>; groupBoxes: GroupBox[]; useSectorLayout: boolean } {
-  const nodeMap = new Map(nodes.map((n) => [n.key, n]))
-  const adj = buildAdj(nodes, edges)
-  let root = centerKey && nodeMap.has(centerKey) ? centerKey : nodes[0]?.key || ''
-  if (!root) return { positions: [], depthMap: new Map(), groupBoxes: [], useSectorLayout: false }
-
-  const depthMap = bfsDepth(root, adj)
-  const groupOf = assignNodeGroups(root, nodes, edges, depthMap)
-  const byDepth = new Map<number, string[]>()
-  for (const n of nodes) {
-    const d = depthMap.has(n.key) ? (depthMap.get(n.key) as number) : 99
-    if (!byDepth.has(d)) byDepth.set(d, [])
-    byDepth.get(d)!.push(n.key)
-  }
-  for (const arr of byDepth.values()) arr.sort()
-
-  const cx = w / 2
-  const cy = h / 2
-  const minDim = Math.min(w, h)
-  const posMap = new Map<string, Pos>()
-
-  const sectorDist = (d: number) => {
-    if (d <= 0) return 0
-    return minDim * (0.1 + d * 0.11) + 48
-  }
-
-  const rootMeta = nodeMap.get(root)!
-  posMap.set(root, {
-    key: root,
-    x: cx,
-    y: cy,
-    r: 22,
-    fullName: ((rootMeta.name != null && String(rootMeta.name).trim()) || root).trim(),
-    lines: [],
-    fontSize: 14,
-    type: rootMeta.type || 'event',
-    depth: 0,
-    color: CENTER_FILL,
-    stroke: CENTER_STROKE,
-    targetBoxId: rootMeta.targetBoxId,
-  })
-
-  const byGroup = new Map<string, string[]>()
-  for (const key of byDepth.get(1) || []) {
-    const meta = nodeMap.get(key)
-    const g = isCategoryNode(meta)
-      ? normalizeGroupName(String(meta?.name || '')) || groupOf.get(key) || 'other'
-      : groupOf.get(key) || 'other'
-    if (!byGroup.has(g)) byGroup.set(g, [])
-    byGroup.get(g)!.push(key)
-  }
-
-  const hasCategoryNodes = (byDepth.get(1) || []).some((k) => isCategoryNode(nodeMap.get(k)))
-
-  const placeInSector = (keys: string[], baseAngle: number, spread: number, dist: number) => {
-    keys.forEach((key, i) => {
-      const meta = nodeMap.get(key)!
-      const cat = isCategoryNode(meta)
-      const n = keys.length
-      const t = n <= 1 ? 0.5 : i / Math.max(n - 1, 1)
-      const ang = baseAngle - spread / 2 + t * spread
-      const jitter = cat ? 0 : ((hashCode(key) % 9) - 4) * 0.008 * minDim
-      let x = cx + (dist + jitter) * Math.cos(ang)
-      let y = cy + (dist + jitter) * Math.sin(ang)
-      x = clamp(x, 52, w - 52)
-      y = clamp(y, 52, h - 52)
-      const fullName = ((meta.name != null && String(meta.name).trim()) || key).trim()
-      const groupName = normalizeGroupName(fullName) || groupOf.get(key) || 'other'
-      posMap.set(key, {
-        key,
-        x,
-        y,
-        r: cat ? 16 : 22,
-        fullName,
-        lines: [fullName],
-        fontSize: cat ? 12 : 11,
-        type: meta.type || 'node',
-        depth: 1,
-        color: cat ? CATEGORY_FILL[groupName] || '#EDEAE6' : BRANCH[i % BRANCH.length],
-        stroke: cat ? CATEGORY_STROKE : 'rgba(99, 137, 156, 0.5)',
-        targetBoxId: meta.targetBoxId,
-        isCategory: cat,
-        pillW: cat ? Math.max(58, fullName.length * 14 + 24) : undefined,
-      })
-    })
-  }
-
-  const groupNames = ['家庭', '师从', '同僚', '外敌', 'other']
-  for (const g of groupNames) {
-    const keys = byGroup.get(g) || []
-    if (!keys.length) continue
-    const base = SECTOR_BASE[g] ?? -Math.PI / 2 + (groupNames.indexOf(g) / groupNames.length) * Math.PI * 2
-    const spread = hasCategoryNodes && keys.length === 1 ? 0 : g === 'other' ? Math.PI * 0.55 : Math.PI / 2.6
-    placeInSector(keys, base, spread, sectorDist(1))
-  }
-
-  for (let d = 2; d <= 6; d++) {
-    const keys = byDepth.get(d) || []
-    keys.forEach((key, i) => {
-      if (posMap.has(key)) return
-      const meta = nodeMap.get(key)!
-      const pk = findParentKey(key, edges, depthMap)
-      const parent = pk ? posMap.get(pk) : null
-      const dist = sectorDist(d)
-      let x: number
-      let y: number
-      if (parent) {
-        const pa = Math.atan2(parent.y - cy, parent.x - cx)
-        const step = Math.max(56, dist - sectorDist(d - 1) * 0.55)
-        x = parent.x + step * Math.cos(pa)
-        y = parent.y + step * Math.sin(pa)
-      } else {
-        const g = groupOf.get(key) || 'other'
-        const base = SECTOR_BASE[g] ?? -Math.PI / 2
-        const spread = 0.35
-        const t = keys.length <= 1 ? 0.5 : i / Math.max(keys.length - 1, 1)
-        const a = base - spread / 2 + t * spread
-        x = cx + dist * Math.cos(a)
-        y = cy + dist * Math.sin(a)
-      }
-      x = clamp(x, 40, w - 40)
-      y = clamp(y, 40, h - 40)
-      const fullName = ((meta.name != null && String(meta.name).trim()) || key).trim()
-      const color = parent ? tint(parent.color, 0.12) : BRANCH[i % BRANCH.length]
-      posMap.set(key, {
-        key,
-        x,
-        y,
-        r: 20,
-        fullName,
-        lines: [fullName],
-        fontSize: 11,
-        type: meta.type || 'node',
-        depth: d,
-        color,
-        stroke: 'rgba(162, 115, 79, 0.45)',
-        targetBoxId: meta.targetBoxId,
-      })
-    })
-  }
-
-  for (const key of byDepth.get(99) || []) {
-    if (posMap.has(key)) continue
-    const meta = nodeMap.get(key)!
-    const fullName = ((meta.name != null && String(meta.name).trim()) || key).trim()
-    posMap.set(key, {
-      key,
-      x: cx,
-      y: cy + sectorDist(3),
-      r: 20,
-      fullName,
-      lines: [fullName],
-      fontSize: 11,
-      type: meta.type || 'node',
-      depth: 99,
-      color: '#ECE4DB',
-      stroke: 'rgba(162, 115, 79, 0.45)',
-      targetBoxId: meta.targetBoxId,
-    })
-  }
-
-  const positions = nodes.map((n) => posMap.get(n.key)).filter((p): p is Pos => p != null)
-
-  const groupBoxes: GroupBox[] = []
-  if (!hasCategoryNodes) {
-    for (const g of ['家庭', '师从', '同僚', '外敌']) {
-      const keys = (byDepth.get(1) || []).filter((k) => groupOf.get(k) === g)
-      if (!keys.length) continue
-      let minX = 1e9
-      let minY = 1e9
-      let maxX = -1e9
-      let maxY = -1e9
-      for (const k of keys) {
-        const p = posMap.get(k)
-        if (!p) continue
-        minX = Math.min(minX, p.x - p.r)
-        minY = Math.min(minY, p.y - p.r)
-        maxX = Math.max(maxX, p.x + p.r)
-        maxY = Math.max(maxY, p.y + p.r)
-      }
-      const pad = 28
-      const bw = Math.max(60, maxX - minX + pad * 2)
-      const bh = 24
-      const bx = (minX + maxX) / 2 - bw / 2
-      const by = minY - bh - 12
-      groupBoxes.push({ name: g, x: bx, y: by, w: bw, h: bh })
-    }
-  }
-
-  return { positions, depthMap, groupBoxes, useSectorLayout: true }
-}
-
-function applyFixedNodeSizes(positions: Pos[], minDim: number) {
-  const scale = minDim / 800
+function computeBounds(positions: Pos[], edgeList: EdgeDraw[]) {
+  let minX = -120
+  let minY = -120
+  let maxX = 120
+  let maxY = 120
   for (const p of positions) {
-    if (p.depth === 0) {
-      p.r = Math.max(36, 45 * scale)
-      p.fontSize = 14
-    } else if (p.isCategory) {
-      p.r = Math.max(13, 15 * scale)
-      p.fontSize = 11
-      p.pillW = Math.max(52, p.fullName.length * 13 + 20)
-    } else if (p.isSubcategory || SUBCATEGORY_NAMES.has(p.fullName)) {
-      p.isSubcategory = true
-      p.r = Math.max(11, 12 * scale)
-      p.fontSize = 10
-      p.pillW = Math.max(44, p.fullName.length * 12 + 16)
-      p.color = SUBCATEGORY_FILL
-      p.stroke = SUBCATEGORY_STROKE
-      p.lines = [p.fullName]
-    } else if (p.depth === 1) {
-      p.r = Math.max(20, 24 * scale)
-      p.fontSize = 11
-    } else {
-      p.r = Math.max(16, 20 * scale)
-      p.fontSize = 11
-    }
-    if (!p.isCategory && !p.isSubcategory) {
-      p.lines = [p.fullName.length > 5 && p.r < 22 ? p.fullName.slice(0, 4) + '…' : p.fullName]
-    }
+    const hw = p.boxW / 2 + 10
+    const hh = p.boxH / 2 + 10
+    minX = Math.min(minX, p.x - hw)
+    maxX = Math.max(maxX, p.x + hw)
+    minY = Math.min(minY, p.y - hh)
+    maxY = Math.max(maxY, p.y + hh)
   }
+  for (const e of edgeList) {
+    if (!e.label) continue
+    const box = labelBox(e.labelX, e.labelY, e.labelW, e.labelH)
+    minX = Math.min(minX, box.l)
+    maxX = Math.max(maxX, box.r)
+    minY = Math.min(minY, box.t)
+    maxY = Math.max(maxY, box.b)
+  }
+  const pad = 64
+  return { minX: minX - pad, minY: minY - pad, maxX: maxX + pad, maxY: maxY + pad }
 }
 
-function chooseLayout(
-  nodes: GraphNode[],
-  edges: GraphEdge[],
-  centerKey: string,
-  w: number,
-  h: number
-): { positions: Pos[]; depthMap: Map<string, number>; groupBoxes: GroupBox[]; useSectorLayout: boolean } {
-  const hasCategoryNodes = nodes.some((n) => isCategoryNode(n))
-  if (hasCategoryNodes) {
-    return layoutCategoryTree(nodes, edges, centerKey, w, h)
-  }
-  const adj = buildAdj(nodes, edges)
-  const root = centerKey && nodes.some((n) => n.key === centerKey) ? centerKey : nodes[0]?.key || ''
-  const depthMap = root ? bfsDepth(root, adj) : new Map<string, number>()
-  const groupOf = assignNodeGroups(root, nodes, edges, depthMap)
-  if (countNamedGroups(groupOf) >= 2) {
-    return layoutSectorGrouped(nodes, edges, centerKey, w, h)
-  }
-  const { positions, depthMap: dm } = layoutRadial(nodes, edges, centerKey, w, h)
-  return { positions, depthMap: dm, groupBoxes: [], useSectorLayout: false }
+function edgeLabelText(e: GraphEdge, a: Pos, b: Pos): string {
+  if (a.isCenter && b.isCategory) return ''
+  const labelRaw = (e.label || '').trim().slice(0, 8)
+  if (!labelRaw) return ''
+  if (b.fullName.includes(`(${labelRaw})`)) return ''
+  return labelRaw
 }
 
-/** 按最大宽度折行（适合中文），最后一行可截断加 … */
-function wrapToWidth(ctx: CanvasRenderingContext2D, text: string, maxW: number, maxLines: number): string[] {
-  const t = (text || '').trim() || '—'
-  const out: string[] = []
-  let i = 0
-  while (i < t.length && out.length < maxLines) {
-    let lo = i + 1
-    let hi = t.length
-    let best = i + 1
-    while (lo <= hi) {
-      const mid = (lo + hi) >> 1
-      const seg = t.slice(i, mid)
-      if (ctx.measureText(seg).width <= maxW) {
-        best = mid
-        lo = mid + 1
-      } else {
-        hi = mid - 1
-      }
-    }
-    if (best <= i) best = i + 1
-    if (out.length === maxLines - 1 && best < t.length) {
-      let tail = t.slice(i)
-      while (tail.length > 1 && ctx.measureText(`${tail}…`).width > maxW) {
-        tail = tail.slice(0, -1)
-      }
-      out.push(`${tail}…`)
-      break
-    }
-    out.push(t.slice(i, best))
-    i = best
+function nodeAnchor(from: Pos, to: Pos): { x: number; y: number } {
+  const dx = to.x - from.x
+  const dy = to.y - from.y
+  const len = Math.hypot(dx, dy) || 1
+  const ux = dx / len
+  const uy = dy / len
+
+  if (from.isCategory || from.isCenter) {
+    const hw = from.boxW / 2
+    const hh = from.boxH / 2
+    const ax = Math.abs(ux)
+    const ay = Math.abs(uy)
+    let t = Infinity
+    if (ax > 1e-6) t = Math.min(t, hw / ax)
+    if (ay > 1e-6) t = Math.min(t, hh / ay)
+    if (!Number.isFinite(t)) t = Math.max(hw, hh)
+    return { x: from.x + ux * t, y: from.y + uy * t }
   }
-  return out.length ? out : [t]
+
+  const r = from.circleR + 2
+  return { x: from.x + ux * r, y: from.y + uy * r }
 }
 
-function sizeNodesForFullText(ctx: CanvasRenderingContext2D, positions: Pos[], minDim: number) {
-  for (const p of positions) {
-    const maxR = minDim * (p.depth === 0 ? 0.2 : p.depth === 1 ? 0.15 : p.depth >= 99 ? 0.13 : 0.12)
-    const minR = minDim * (p.depth === 0 ? 0.048 : 0.036)
-    const maxLines = p.depth === 0 ? 10 : 8
-
-    let bestFs = 11
-    let bestR = minR
-    let bestLines: string[] = [p.fullName]
-
-    for (let fs = p.depth === 0 ? 17 : 14; fs >= 9; fs--) {
-      ctx.font = `${fs}px sans-serif`
-      let lo = minR
-      let hi = maxR
-      for (let b = 0; b < 20; b++) {
-        const mid = (lo + hi) / 2
-        const lines = wrapToWidth(ctx, p.fullName, mid * 1.72, maxLines)
-        const tw = Math.max(6, ...lines.map((ln) => ctx.measureText(ln).width))
-        const need = Math.max(tw / 2 + 10, (lines.length * fs * 1.38) / 2 + 8)
-        if (need <= mid) hi = mid
-        else lo = mid
-      }
-      const rTry = clamp(hi, minR, maxR)
-      const lines = wrapToWidth(ctx, p.fullName, rTry * 1.72, maxLines)
-      const tw = Math.max(6, ...lines.map((ln) => ctx.measureText(ln).width))
-      const need = Math.max(tw / 2 + 10, (lines.length * fs * 1.38) / 2 + 8)
-      if (need <= maxR * 1.04) {
-        bestFs = fs
-        bestR = clamp(need, minR, maxR)
-        bestLines = wrapToWidth(ctx, p.fullName, bestR * 1.72, maxLines)
-        break
-      }
-    }
-    p.fontSize = bestFs
-    p.lines = bestLines
-    p.r = bestR
-  }
-}
-
-function radialReflow(positions: Pos[], cx: number, cy: number, w: number, h: number, minDim: number) {
-  const byDepthMaxR = new Map<number, number>()
-  for (const p of positions) {
-    byDepthMaxR.set(p.depth, Math.max(byDepthMaxR.get(p.depth) || 0, p.r))
-  }
-  const depthRing = (d: number) => {
-    if (d <= 0) return 0
-    if (d >= 99) return minDim * 0.38
-    return minDim * (0.11 + d * 0.11)
-  }
-  for (const p of positions) {
-    if (p.depth === 0) continue
-    const ang = Math.atan2(p.y - cy, p.x - cx)
-    const ring = depthRing(p.depth) + (byDepthMaxR.get(p.depth) || p.r) * 0.5 + p.r * 0.42
-    let x = cx + ring * Math.cos(ang)
-    let y = cy + ring * Math.sin(ang)
-    const m = p.r + 12
-    x = clamp(x, m, w - m)
-    y = clamp(y, m, h - m)
-    p.x = x
-    p.y = y
-  }
-}
-
-function buildEdgeList(positions: Pos[], edges: GraphEdge[]): EdgeDraw[] {
+function buildEdgeList(positions: Pos[], edges: GraphEdge[], nodeMap: Map<string, GraphNode>): EdgeDraw[] {
   const m = new Map(positions.map((p) => [p.key, p]))
   const out: EdgeDraw[] = []
   for (const e of edges || []) {
     const a = m.get(e.fromKey)
     const b = m.get(e.toKey)
     if (!a || !b) continue
-    const dx = b.x - a.x
-    const dy = b.y - a.y
-    const len = Math.hypot(dx, dy) || 1
-    const ux = dx / len
-    const uy = dy / len
-    const ra = edgeRadiusAlong(a, ux, uy)
-    const rb = edgeRadiusAlong(b, -ux, -uy)
-    const isCenterToCat = a.depth === 0 && b.isCategory
-    // 分类→子分类：连线标题与节点名重复时不画，避免「君王」叠两遍
-    const labelRaw = isCenterToCat ? '' : (e.label || '关联').slice(0, 16)
-    const hideDup =
-      (a.isCategory || a.isSubcategory) &&
-      b.isSubcategory &&
-      labelRaw &&
-      (labelRaw === b.fullName || labelRaw === a.fullName)
+    const group =
+      parseExtraGroup(nodeMap.get(e.toKey)?.extraJson) ||
+      parseExtraGroup(nodeMap.get(e.fromKey)?.extraJson) ||
+      a.group ||
+      b.group ||
+      'other'
+    const start = nodeAnchor(a, b)
+    const end = nodeAnchor(b, a)
+    const label = edgeLabelText(e, a, b)
+    const { w, h } = label ? measureRelLabel(label) : { w: 0, h: 0 }
     out.push({
-      x1: a.x + ux * ra,
-      y1: a.y + uy * ra,
-      x2: b.x - ux * rb,
-      y2: b.y - uy * rb,
-      label: hideDup ? '' : labelRaw,
-      color: isCenterToCat ? 'rgba(74, 63, 63, 0.36)' : 'rgba(74, 63, 63, 0.3)',
-      len: Math.hypot(b.x - ux * rb - (a.x + ux * ra), b.y - uy * rb - (a.y + uy * ra)),
+      fromKey: e.fromKey,
+      toKey: e.toKey,
+      x1: start.x,
+      y1: start.y,
+      x2: end.x,
+      y2: end.y,
+      color: GROUP_EDGE[group] || GROUP_EDGE.other,
+      group,
+      label,
+      labelX: (start.x + end.x) / 2,
+      labelY: (start.y + end.y) / 2,
+      labelW: w,
+      labelH: h,
     })
   }
   return out
+}
+
+function pathEdgeKeys(targetKey: string, centerKey: string, parentMap: Map<string, string>): Set<string> {
+  const keys = new Set<string>()
+  let cur = targetKey
+  while (cur && cur !== centerKey) {
+    const parent = parentMap.get(cur)
+    if (!parent) break
+    keys.add(`${parent}|${cur}`)
+    cur = parent
+  }
+  return keys
+}
+
+function pathNodeKeys(targetKey: string, centerKey: string, parentMap: Map<string, string>): Set<string> {
+  const keys = new Set<string>([centerKey])
+  let cur = targetKey
+  const chain: string[] = []
+  while (cur && cur !== centerKey) {
+    chain.push(cur)
+    const parent = parentMap.get(cur)
+    if (!parent) break
+    cur = parent
+  }
+  for (let i = chain.length - 1; i >= 0; i--) keys.add(chain[i])
+  return keys
+}
+
+function roundRectPath(ctx: CanvasRenderingContext2D, x: number, y: number, w: number, h: number, r: number) {
+  const rr = Math.min(r, w / 2, h / 2)
+  ctx.beginPath()
+  ctx.moveTo(x + rr, y)
+  ctx.lineTo(x + w - rr, y)
+  ctx.quadraticCurveTo(x + w, y, x + w, y + rr)
+  ctx.lineTo(x + w, y + h - rr)
+  ctx.quadraticCurveTo(x + w, y + h, x + w - rr, y + h)
+  ctx.lineTo(x + rr, y + h)
+  ctx.quadraticCurveTo(x, y + h, x, y + h - rr)
+  ctx.lineTo(x, y + rr)
+  ctx.quadraticCurveTo(x, y, x + rr, y)
+  ctx.closePath()
+}
+
+function drawRelLabelPill(
+  ctx: CanvasRenderingContext2D,
+  text: string,
+  x: number,
+  y: number,
+  w: number,
+  h: number,
+  dimmed: boolean
+) {
+  if (!text) return
+  roundRectPath(ctx, x - w / 2, y - h / 2, w, h, 5)
+  ctx.fillStyle = dimmed ? 'rgba(108,117,125,0.4)' : REL_LABEL_FILL
+  ctx.fill()
+  ctx.fillStyle = dimmed ? 'rgba(250,248,245,0.55)' : REL_LABEL_TEXT
+  ctx.font = `${REL_LABEL_FONT}px sans-serif`
+  ctx.textAlign = 'center'
+  ctx.textBaseline = 'middle'
+  ctx.fillText(text, x, y)
+}
+
+function drawCatRect(
+  ctx: CanvasRenderingContext2D,
+  p: Pos,
+  highlighted: boolean,
+  dimmed: boolean
+) {
+  ctx.save()
+  ctx.globalAlpha = dimmed ? 0.38 : 1
+  const x = p.x - p.boxW / 2
+  const y = p.y - p.boxH / 2
+  roundRectPath(ctx, x, y, p.boxW, p.boxH, 8)
+  ctx.fillStyle = CATEGORY_FILL[p.group] || 'rgba(248,246,242,0.95)'
+  ctx.fill()
+  ctx.strokeStyle = highlighted
+    ? (GROUP_EDGE[p.group] || GROUP_EDGE.other).replace(/[\d.]+\)$/, '0.75)')
+    : CATEGORY_STROKE[p.group] || 'rgba(162,115,79,0.28)'
+  ctx.lineWidth = highlighted ? 1.5 : 1
+  ctx.stroke()
+  ctx.fillStyle = CATEGORY_TEXT
+  ctx.font = `500 ${p.fontSize}px sans-serif`
+  ctx.textAlign = 'center'
+  ctx.textBaseline = 'middle'
+  ctx.fillText(p.fullName, p.x, p.y)
+  ctx.restore()
 }
 
 Component({
@@ -1175,6 +767,7 @@ Component({
   },
   data: {
     hint: '',
+    scaleLabel: '100%',
   },
   lifetimes: {
     attached() {
@@ -1195,35 +788,60 @@ Component({
       this.draw()
     },
 
+    formatScaleLabel(scale: number) {
+      const pct = Math.round(scale * 100)
+      return `${Math.max(25, Math.min(300, pct))}%`
+    },
+
+    syncScaleLabel() {
+      const scale = (this as any)._zoomScale || 1
+      const label = this.formatScaleLabel(scale)
+      if (label !== this.data.scaleLabel) this.setData({ scaleLabel: label })
+      this.triggerEvent('zoomChange', { scale })
+    },
+
     zoomIn() {
       const cur = (this as any)._zoomScale || 1
-      ;(this as any)._zoomScale = Math.min(2.5, +(cur * 1.18).toFixed(4))
+      ;(this as any)._zoomScale = Math.min(3, +(cur * 1.18).toFixed(4))
+      this.syncScaleLabel()
       this.paintCached()
-      // 缩放过程不向页面抛事件，避免父页 setData 清掉 canvas 造成跳动
     },
 
     zoomOut() {
       const cur = (this as any)._zoomScale || 1
-      ;(this as any)._zoomScale = Math.max(0.52, +(cur / 1.18).toFixed(4))
+      ;(this as any)._zoomScale = Math.max(0.25, +(cur / 1.18).toFixed(4))
+      this.syncScaleLabel()
       this.paintCached()
     },
 
     resetZoom() {
       ;(this as any)._zoomScale = 1
-      ;(this as any)._panX = 0
-      ;(this as any)._panY = 0
+      ;(this as any)._selectedKey = ''
+      this.centerView()
+      this.syncScaleLabel()
       this.paintCached()
+    },
+
+    centerView() {
+      const layout = (this as any)._layout as LayoutResult | undefined
+      if (!layout) {
+        ;(this as any)._panX = 0
+        ;(this as any)._panY = 0
+        return
+      }
+      const s = (this as any)._zoomScale || 1
+      const bcx = (layout.bounds.minX + layout.bounds.maxX) / 2
+      const bcy = (layout.bounds.minY + layout.bounds.maxY) / 2
+      ;(this as any)._panX = -bcx * s
+      ;(this as any)._panY = -bcy * s
     },
 
     getZoomScale() {
       return (this as any)._zoomScale || 1
     },
 
-    /**
-     * 仅重绘变换：不改布局、不 setData、不改 canvas.width（改 width 会清屏闪烁）。
-     */
     paintCached() {
-      const layout = (this as any)._layout
+      const layout = (this as any)._layout as LayoutResult | undefined
       const w = (this as any)._w as number
       const h = (this as any)._h as number
       const dpr = (this as any)._dpr || 1
@@ -1276,23 +894,13 @@ Component({
           ctx.scale(dpr, dpr)
 
           const centerKey = graph.centerNodeKey || nodes[0]?.key || ''
-          const hasCategoryNodes = nodes.some((n) => isCategoryNode(n))
-          const { positions, groupBoxes, useSectorLayout } = chooseLayout(nodes, edges, centerKey, w, h)
-          const minDim = Math.min(w, h)
-          if (useSectorLayout) {
-            applyFixedNodeSizes(positions, minDim)
-            if (hasCategoryNodes) {
-              reflowCompactCategoryTree(positions, nodes, edges, centerKey, w, h, minDim)
-            }
-          } else {
-            sizeNodesForFullText(ctx, positions, minDim)
-            radialReflow(positions, w / 2, h / 2, w, h, minDim)
-          }
-          const edgeList = buildEdgeList(positions, edges)
-          layoutEdgeLabels(ctx, edgeList, positions)
-          const layout = { positions, edgeList, groupBoxes }
+          ;(this as any)._selectedKey = ''
+          const layout = layoutMindMap(nodes, edges, centerKey)
           ;(this as any)._layout = layout
-
+          ;(this as any)._parentMap = buildParentMap(centerKey, edges)
+          ;(this as any)._zoomScale = 1
+          this.centerView()
+          this.syncScaleLabel()
           this.paint(ctx, w, h, layout)
 
           wx.createSelectorQuery()
@@ -1305,140 +913,123 @@ Component({
         })
     },
 
-    drawGroupBoxes(ctx: CanvasRenderingContext2D, boxes: GroupBox[]) {
-      for (const b of boxes) {
-        ctx.save()
-        ctx.fillStyle = '#F8F6F2'
-        ctx.strokeStyle = '#EDEAE6'
-        ctx.lineWidth = 1
-        ctx.setLineDash([4, 4])
-        const r = 6
-        ctx.beginPath()
-        ctx.moveTo(b.x + r, b.y)
-        ctx.lineTo(b.x + b.w - r, b.y)
-        ctx.quadraticCurveTo(b.x + b.w, b.y, b.x + b.w, b.y + r)
-        ctx.lineTo(b.x + b.w, b.y + b.h - r)
-        ctx.quadraticCurveTo(b.x + b.w, b.y + b.h, b.x + b.w - r, b.y + b.h)
-        ctx.lineTo(b.x + r, b.y + b.h)
-        ctx.quadraticCurveTo(b.x, b.y + b.h, b.x, b.y + b.h - r)
-        ctx.lineTo(b.x, b.y + r)
-        ctx.quadraticCurveTo(b.x, b.y, b.x + r, b.y)
-        ctx.closePath()
-        ctx.fill()
-        ctx.stroke()
-        ctx.setLineDash([])
-        ctx.font = '9px sans-serif'
-        ctx.fillStyle = '#8A8A8A'
-        ctx.textAlign = 'center'
-        ctx.textBaseline = 'middle'
-        ctx.fillText(b.name, b.x + b.w / 2, b.y + b.h / 2)
-        ctx.restore()
-      }
-    },
-
-    paint(
-      ctx: CanvasRenderingContext2D,
-      w: number,
-      h: number,
-      layout: {
-        positions: Pos[]
-        edgeList: EdgeDraw[]
-        groupBoxes?: GroupBox[]
-      }
-    ) {
+    paint(ctx: CanvasRenderingContext2D, w: number, h: number, layout: LayoutResult) {
       const s = (this as any)._zoomScale || 1
       const panX = (this as any)._panX || 0
       const panY = (this as any)._panY || 0
+      const selectedKey = ((this as any)._selectedKey as string) || ''
+      const parentMap = ((this as any)._parentMap as Map<string, string>) || new Map()
+      const highlightEdges = selectedKey
+        ? pathEdgeKeys(selectedKey, layout.centerKey, parentMap)
+        : new Set<string>()
+      const highlightNodes = selectedKey
+        ? pathNodeKeys(selectedKey, layout.centerKey, parentMap)
+        : new Set<string>()
+
       ctx.save()
       ctx.clearRect(0, 0, w, h)
-      // 保持浅色底（白/米色），不跟参考图黑底
-      ctx.fillStyle = '#F8F6F2'
+      ctx.fillStyle = BG
       ctx.fillRect(0, 0, w, h)
-
-      // 以画布视口正中心为锚点缩放：先移到中心 → scale → 移回
-      ctx.translate(w / 2, h / 2)
-      ctx.translate(panX, panY)
+      ctx.translate(w / 2 + panX, h / 2 + panY)
       ctx.scale(s, s)
-      ctx.translate(-w / 2, -h / 2)
-
-      if (layout.groupBoxes?.length) {
-        this.drawGroupBoxes(ctx, layout.groupBoxes)
-      }
 
       for (const e of layout.edgeList) {
-        this.drawBezierEdge(ctx, e)
+        const id = `${e.fromKey}|${e.toKey}`
+        const active = !selectedKey || highlightEdges.has(id)
+        const highlighted = highlightEdges.has(id)
+        ctx.beginPath()
+        ctx.moveTo(e.x1, e.y1)
+        ctx.lineTo(e.x2, e.y2)
+        ctx.strokeStyle = active ? e.color : 'rgba(180, 172, 165, 0.12)'
+        ctx.lineWidth = highlighted ? 1.5 : 1
+        ctx.setLineDash([4, 4])
+        ctx.lineCap = 'round'
+        ctx.stroke()
+        ctx.setLineDash([])
       }
 
       for (const p of layout.positions) {
-        if ((p.isCategory || p.isSubcategory) && p.pillW) {
-          const hw = p.pillW / 2
-          const hh = p.r
-          const rx = p.isSubcategory ? 5 : 6
-          ctx.beginPath()
-          ctx.moveTo(p.x - hw + rx, p.y - hh)
-          ctx.lineTo(p.x + hw - rx, p.y - hh)
-          ctx.quadraticCurveTo(p.x + hw, p.y - hh, p.x + hw, p.y - hh + rx)
-          ctx.lineTo(p.x + hw, p.y + hh - rx)
-          ctx.quadraticCurveTo(p.x + hw, p.y + hh, p.x + hw - rx, p.y + hh)
-          ctx.lineTo(p.x - hw + rx, p.y + hh)
-          ctx.quadraticCurveTo(p.x - hw, p.y + hh, p.x - hw, p.y + hh - rx)
-          ctx.lineTo(p.x - hw, p.y - hh + rx)
-          ctx.quadraticCurveTo(p.x - hw, p.y - hh, p.x - hw + rx, p.y - hh)
-          ctx.closePath()
-          ctx.fillStyle = p.color
-          ctx.strokeStyle = p.stroke
-          ctx.lineWidth = 1
-          // 一级分类虚线稍密，子分类更疏、更弱
-          ctx.setLineDash(p.isSubcategory ? [3, 4] : [4, 3])
-          ctx.fill()
-          ctx.stroke()
-          ctx.setLineDash([])
-        } else {
-          ctx.beginPath()
-          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2)
-          ctx.fillStyle = p.color
-          ctx.strokeStyle = p.stroke
-          ctx.lineWidth = p.depth === 0 ? 1.5 : 1
-          ctx.fill()
-          ctx.stroke()
-        }
+        this.drawNode(ctx, p, highlightNodes.has(p.key), !!selectedKey)
+      }
 
-        ctx.fillStyle = p.isCategory || p.isSubcategory ? (p.isSubcategory ? SUBCATEGORY_TEXT : CATEGORY_TEXT) : '#262626'
-        const fontWeight = p.depth === 0 ? '600' : p.isCategory ? '500' : p.isSubcategory ? '500' : '400'
-        ctx.font = `${fontWeight} ${p.fontSize}px sans-serif`
-        ctx.textAlign = 'center'
-        ctx.textBaseline = 'middle'
-        const lh = p.fontSize * 1.36
-        const startY = p.y - ((p.lines.length - 1) * lh) / 2
-        p.lines.forEach((line, idx) => {
-          ctx.fillText(line, p.x, startY + idx * lh)
-        })
+      for (const e of layout.edgeList) {
+        const id = `${e.fromKey}|${e.toKey}`
+        const active = !selectedKey || highlightEdges.has(id)
+        if (!e.label || !active) continue
+        drawRelLabelPill(
+          ctx,
+          e.label,
+          e.labelX,
+          e.labelY,
+          e.labelW,
+          e.labelH,
+          !!selectedKey && !highlightEdges.has(id)
+        )
       }
       ctx.restore()
     },
 
-    drawBezierEdge(ctx: CanvasRenderingContext2D, e: EdgeDraw) {
-      const { x1, y1, x2, y2, color: stroke, label } = e
-      // 参考样式：细虚线直线
-      ctx.beginPath()
-      ctx.moveTo(x1, y1)
-      ctx.lineTo(x2, y2)
-      ctx.strokeStyle = stroke
-      ctx.lineWidth = 1
-      ctx.lineCap = 'round'
-      ctx.setLineDash([3.5, 3.5])
-      ctx.stroke()
-      ctx.setLineDash([])
-
-      if (!label || e.labelX == null || e.labelY == null) return
-
+    drawNode(ctx: CanvasRenderingContext2D, p: Pos, highlighted: boolean, hasSelection: boolean) {
+      const dimmed = hasSelection && !highlighted
       ctx.save()
-      ctx.font = '8px sans-serif'
-      ctx.fillStyle = '#8A8A8A'
+      ctx.globalAlpha = dimmed ? 0.38 : 1
+
+      if (p.isCenter) {
+        const s = p.boxW
+        roundRectPath(ctx, p.x - p.boxW / 2, p.y - p.boxH / 2, s, s, 8)
+        ctx.fillStyle = CENTER_FILL
+        ctx.fill()
+        ctx.strokeStyle = highlighted ? '#8C483A' : CENTER_STROKE
+        ctx.lineWidth = highlighted ? 2 : 1.5
+        ctx.stroke()
+        ctx.fillStyle = CENTER_TEXT
+        ctx.font = `600 ${p.fontSize}px sans-serif`
+        ctx.textAlign = 'center'
+        ctx.textBaseline = 'middle'
+        ctx.fillText(p.fullName, p.x, p.y)
+        ctx.restore()
+        return
+      }
+
+      if (p.isCategory) {
+        drawCatRect(ctx, p, highlighted, dimmed)
+        ctx.restore()
+        return
+      }
+
+      ctx.beginPath()
+      ctx.arc(p.x, p.y, p.circleR, 0, Math.PI * 2)
+      ctx.fillStyle = LEAF_FILL
+      ctx.fill()
+      ctx.strokeStyle = highlighted
+        ? (GROUP_EDGE[p.group] || GROUP_EDGE.other).replace(/[\d.]+\)$/, '0.85)')
+        : LEAF_STROKE
+      ctx.lineWidth = highlighted ? 1.5 : 1
+      ctx.stroke()
+      ctx.fillStyle = LEAF_TEXT
+      const text = p.fullName
+      let fs = p.fontSize
+      for (; fs >= 6; fs--) {
+        ctx.font = `400 ${fs}px sans-serif`
+        if (ctx.measureText(text).width <= p.circleR * 1.7) break
+      }
+      let show = text
+      if (fs === 6 && ctx.measureText(show).width > p.circleR * 1.7) {
+        show = truncateName(text, 4)
+      }
+      ctx.font = `400 ${fs}px sans-serif`
       ctx.textAlign = 'center'
       ctx.textBaseline = 'middle'
-      ctx.fillText(label, e.labelX, e.labelY)
+      ctx.fillText(show, p.x, p.y)
       ctx.restore()
+    },
+
+    onZoomInTap() {
+      this.zoomIn()
+    },
+
+    onZoomOutTap() {
+      this.zoomOut()
     },
 
     touchDistance(touches: WechatMiniprogram.TouchDetail[]) {
@@ -1446,13 +1037,42 @@ Component({
       return Math.hypot(touches[1].clientX - touches[0].clientX, touches[1].clientY - touches[0].clientY)
     },
 
-    redrawCanvas() {
-      this.paintCached()
+    screenToLayout(x: number, y: number) {
+      const w = (this as any)._w as number
+      const h = (this as any)._h as number
+      const s = (this as any)._zoomScale || 1
+      const panX = (this as any)._panX || 0
+      const panY = (this as any)._panY || 0
+      return { x: (x - w / 2 - panX) / s, y: (y - h / 2 - panY) / s }
+    },
+
+    hitTestNode(layout: LayoutResult, lx: number, ly: number): Pos | null {
+      const ordered = [...layout.positions].sort((a, b) => {
+        const pa = (a.isCenter ? 3 : 0) + (a.isCategory ? 2 : 0)
+        const pb = (b.isCenter ? 3 : 0) + (b.isCategory ? 2 : 0)
+        return pa - pb
+      })
+      for (let i = ordered.length - 1; i >= 0; i--) {
+        const p = ordered[i]
+        if (p.isCategory || p.isCenter) {
+          if (
+            lx >= p.x - p.boxW / 2 - 4 &&
+            lx <= p.x + p.boxW / 2 + 4 &&
+            ly >= p.y - p.boxH / 2 - 4 &&
+            ly <= p.y + p.boxH / 2 + 4
+          ) {
+            return p
+          }
+          continue
+        }
+        if (Math.hypot(lx - p.x, ly - p.y) <= p.circleR + 6) return p
+      }
+      return null
     },
 
     onTouchStart(e: WechatMiniprogram.TouchEvent) {
-      const layout = (this as any)._layout as { positions: Pos[] } | null
-      if (!layout || !layout.positions.length) return
+      const layout = (this as any)._layout as LayoutResult | null
+      if (!layout?.positions.length) return
       const touches = e.touches
       if (touches.length >= 2) {
         ;(this as any)._touchMode = 'pinch'
@@ -1474,9 +1094,11 @@ Component({
         const startDist = (this as any)._pinchStartDist as number
         const curDist = this.touchDistance(touches)
         if (startDist > 0 && curDist > 0) {
-          const ratio = curDist / startDist
-          const next = clamp(((this as any)._pinchStartScale || 1) * ratio, 0.52, 2.5)
-          ;(this as any)._zoomScale = next
+          ;(this as any)._zoomScale = Math.max(
+            0.25,
+            Math.min(3, ((this as any)._pinchStartScale || 1) * (curDist / startDist))
+          )
+          this.syncScaleLabel()
           this.paintCached()
         }
         return
@@ -1498,12 +1120,29 @@ Component({
       if ((this as any)._touchMode === 'pinch') {
         if (e.touches.length >= 2) return
         ;(this as any)._touchMode = 'pending'
-        this.triggerEvent('zoomChange', { scale: (this as any)._zoomScale || 1 })
+        this.syncScaleLabel()
         return
       }
       if ((this as any)._touchMode === 'pan') {
         ;(this as any)._touchMode = 'pending'
+        return
       }
+      const layout = (this as any)._layout as LayoutResult | null
+      const rect = (this as any)._rect as WechatMiniprogram.BoundingClientRectCallbackResult | undefined
+      const touch = e.changedTouches?.[0]
+      if (!layout || !rect || !touch) return
+      const pt = this.screenToLayout(touch.clientX - rect.left, touch.clientY - rect.top)
+      const hit = this.hitTestNode(layout, pt.x, pt.y)
+      if (!hit || hit.isCategory) {
+        if ((this as any)._selectedKey) {
+          ;(this as any)._selectedKey = ''
+          this.paintCached()
+        }
+        return
+      }
+      ;(this as any)._selectedKey = hit.key
+      this.paintCached()
+      this.triggerEvent('nodeTap', { key: hit.key, targetBoxId: hit.targetBoxId, nodeType: hit.type })
     },
   },
 })

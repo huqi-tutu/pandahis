@@ -2,28 +2,93 @@
   "total_paragraphs": 76,
   "excludes": [
     {
+      "paragraph_from": 3,
+      "paragraph_to": 25,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 28,
+      "paragraph_to": 28,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 30,
+      "paragraph_to": 32,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 47,
+      "paragraph_to": 48,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 56,
+      "paragraph_to": 59,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 71,
+      "paragraph_to": 71,
+      "exclude_reason": "其他"
+    },
+    {
       "paragraph_from": 75,
-      "paragraph_to": 76,
+      "paragraph_to": 75,
       "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph_from": 76,
+      "paragraph_to": 76,
+      "exclude_reason": "其他"
     }
   ],
   "blocks": [
     {
-      "name": "齐威王",
+      "name": "田敬仲完",
       "category": "君王",
       "paragraph_from": 1,
-      "paragraph_to": 30
+      "paragraph_to": 2
+    },
+    {
+      "name": "田齐太公和",
+      "category": "君王",
+      "paragraph_from": 26,
+      "paragraph_to": 27
+    },
+    {
+      "name": "齐桓公午",
+      "category": "君王",
+      "paragraph_from": 29,
+      "paragraph_to": 29
+    },
+    {
+      "name": "齐威王",
+      "category": "君王",
+      "paragraph_from": 33,
+      "paragraph_to": 46
     },
     {
       "name": "齐宣王",
       "category": "君王",
-      "paragraph_from": 31,
-      "paragraph_to": 50
+      "paragraph_from": 49,
+      "paragraph_to": 55
     },
     {
       "name": "齐湣王",
       "category": "君王",
-      "paragraph_from": 51,
+      "paragraph_from": 60,
+      "paragraph_to": 67
+    },
+    {
+      "name": "齐襄王",
+      "category": "君王",
+      "paragraph_from": 68,
+      "paragraph_to": 70
+    },
+    {
+      "name": "齐王建",
+      "category": "君王",
+      "paragraph_from": 72,
       "paragraph_to": 74
     }
   ]

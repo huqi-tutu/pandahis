@@ -1,0 +1,141 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00779",
+  "写作结构": "正史叙述见《史记·周本纪》翻译详录，不作拓展摘句。拓展部分以《竹书纪年》编年记载为骨架，引入《左传》的诸侯问责视角与《吕氏春秋》的异说细节构成主叙事；最后以《帝王世纪》的传说层补充，合段叙述胶舟之说。禁止编造战斗过程、将领名称及昭王落水细节。",
+  "候选著作": [
+    {
+      "出处": "《史记·周本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史记载昭王南征、丧六师及身死的基本框架，为条目主要史料出处",
+      "检索词": "昭王南巡狩不返",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《竹书纪年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "提供昭王南征的编年细节，包括十六年伐楚、十九年丧六师、末年南巡不返等记载",
+      "检索词": "昭王十六年伐楚",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    },
+    {
+      "出处": "《左传·僖公四年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "齐桓公伐楚时，管仲以昭王南征不复问责，楚人回应将责任推给汉水，揭示此事为春秋诸侯交涉议题",
+      "检索词": "昭王南征而不复",
+      "采用": true,
+      "原文摘句": "管仲对曰：『昭王南征而不复，寡人是问。』对曰：『昭王之不复，君其问诸水滨。』",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《吕氏春秋·音初》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载昭王亲征荆蛮，回师渡汉时桥梁崩塌，王及蔡公坠水身亡，是较早的异说",
+      "检索词": "周昭王亲将征荆",
+      "采用": true,
+      "原文摘句": "周昭王亲将征荆……还反涉汉，梁败，王及蔡公抎于汉中。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "晋人皇甫谧辑录昭王南征故事，整合胶舟传说及当时人对周室的怨刺，为后世附会之重要来源",
+      "检索词": "昭王德衰南征",
+      "采用": true,
+      "原文摘句": "昭王德衰，南征，济于汉，船人恶之，以胶船进王，至中流，胶溶船解，王及祭公俱没于水中。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·周本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史记载昭王南征、丧六师及身死的基本框架，为条目主要史料出处",
+      "检索词": "昭王南巡狩不返",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《竹书纪年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "提供昭王南征的编年细节，包括十六年伐楚、十九年丧六师、末年南巡不返等记载",
+      "检索词": "昭王十六年伐楚",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    },
+    {
+      "出处": "《左传·僖公四年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "齐桓公伐楚时，管仲以昭王南征不复问责，楚人回应将责任推给汉水，揭示此事为春秋诸侯交涉议题",
+      "检索词": "昭王南征而不复",
+      "采用": true,
+      "原文摘句": "管仲对曰：『昭王南征而不复，寡人是问。』对曰：『昭王之不复，君其问诸水滨。』",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《吕氏春秋·音初》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载昭王亲征荆蛮，回师渡汉时桥梁崩塌，王及蔡公坠水身亡，是较早的异说",
+      "检索词": "周昭王亲将征荆",
+      "采用": true,
+      "原文摘句": "周昭王亲将征荆……还反涉汉，梁败，王及蔡公抎于汉中。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "晋人皇甫谧辑录昭王南征故事，整合胶舟传说及当时人对周室的怨刺，为后世附会之重要来源",
+      "检索词": "昭王德衰南征",
+      "采用": true,
+      "原文摘句": "昭王德衰，南征，济于汉，船人恶之，以胶船进王，至中流，胶溶船解，王及祭公俱没于水中。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 4,
+    "C_excluded": 1,
+    "overall": "B"
+  }
+}

@@ -6,14 +6,14 @@
   "protagonists": [
     {
       "name": "周勃",
-      "category": "武将",
-      "standard_name_note": "卷名人物，非帝王",
-      "rationale": "卷名「绛侯周勃世家」明确以周勃为叙事核心，周勃是西汉开国功臣、绛侯，官至太尉、丞相，属于士臣世家类型。"
+      "category": "文臣",
+      "rationale": "《绛侯周勃世家》叙事主轴：周勃（文臣）"
     }
   ],
   "excluded_kinds_hint": [
     "太史公曰",
     "世系链",
-    "卷首标题"
+    "卷首标题",
+    "其他"
   ]
 }

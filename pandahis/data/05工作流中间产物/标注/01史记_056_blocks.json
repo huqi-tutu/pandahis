@@ -3,8 +3,13 @@
   "excludes": [
     {
       "paragraph_from": 38,
-      "paragraph_to": 39,
+      "paragraph_to": 38,
       "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph_from": 39,
+      "paragraph_to": 39,
+      "exclude_reason": "其他"
     }
   ],
   "blocks": [

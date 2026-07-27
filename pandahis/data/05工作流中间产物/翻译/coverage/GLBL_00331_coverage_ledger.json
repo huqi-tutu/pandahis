@@ -1,0 +1,25 @@
+{
+  "schema": "translate-coverage-ledger/v1",
+  "史略ID": "GLBL_00331",
+  "updated_at": "2026-07-26T14:01:15.014566+00:00",
+  "entries": {
+    "M001": {
+      "status": "conveyed",
+      "claim_fp": "a5d8982584a8d1ca",
+      "checked_at": "2026-07-26T14:00:48.653373+00:00",
+      "note": "明确提到人物名字和字"
+    },
+    "M002": {
+      "status": "conveyed",
+      "claim_fp": "f66dad6d10de8bfc",
+      "checked_at": "2026-07-26T14:00:48.653395+00:00",
+      "note": "直接给出年龄差"
+    },
+    "M003": {
+      "status": "conveyed",
+      "claim_fp": "6a4a247d2a95c6b6",
+      "checked_at": "2026-07-26T14:00:48.653400+00:00",
+      "note": "完整覆盖了对话内容，并附有白话解释"
+    }
+  }
+}

@@ -6,8 +6,8 @@ export type NavBarMetrics = {
   paddingRight: number
 }
 
-/** 导航栏底边到首屏内容的标准间距（8px 网格） */
-export const PAGE_CONTENT_GAP_RPX = 24
+/** 导航栏底边到首屏内容的标准间距；0 = 内容紧贴导航底边 */
+export const PAGE_CONTENT_GAP_RPX = 0
 
 /** 仅导航占位：状态栏 + 88rpx 导航条（固定定位元素用） */
 export function computeHeaderPadPx(sys?: WechatMiniprogram.SystemInfo): number {
@@ -21,6 +21,12 @@ export function computePageTopPadPx(sys?: WechatMiniprogram.SystemInfo): number 
   const info = sys ?? wx.getSystemInfoSync()
   const gapPx = (PAGE_CONTENT_GAP_RPX * info.windowWidth) / 750
   return computeHeaderPadPx(info) + gapPx
+}
+
+/** 全屏 scroll-view 高度（Tab 页内容铺至窗口底） */
+export function computePageHeightPx(sys?: WechatMiniprogram.SystemInfo): number {
+  const info = sys ?? wx.getSystemInfoSync()
+  return info.windowHeight || 667
 }
 
 export function getNavBarMetrics(): Promise<NavBarMetrics> {

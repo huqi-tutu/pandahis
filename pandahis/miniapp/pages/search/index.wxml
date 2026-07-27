@@ -29,16 +29,16 @@
         <view
           wx:for="{{hotKeywords}}"
           wx:key="keyword"
-          class="search-tag {{item.isHot ? 'search-tag--hot' : ''}}"
+          class="search-tag"
           bindtap="tapKeyword"
           data-k="{{item.keyword}}"
         >{{item.keyword}}</view>
       </view>
     </view>
 
-    <!-- 历史记录 -->
+    <!-- 最近搜索 -->
     <view class="search-section" wx:if="{{historyKeywords.length}}">
-      <text class="search-section-title">历史记录</text>
+      <text class="search-section-title">最近搜索</text>
       <view class="search-history">
         <view
           wx:for="{{historyKeywords}}"

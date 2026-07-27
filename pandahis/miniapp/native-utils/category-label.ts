@@ -1,6 +1,7 @@
-/** 人物六类 category_key（与后端 BoxCategorySupport 一致） */
+/** 人物七类 category_key（与后端 BoxCategorySupport 一致） */
 export const PERSON_BOX_CATEGORY_KEYS = [
   'junji',
+  'zhuhou',
   'zongqi',
   'wenchen',
   'wujiang',
@@ -10,7 +11,7 @@ export const PERSON_BOX_CATEGORY_KEYS = [
   'minlu',
 ] as const
 
-/** 是否为人物类史略（君王/宗戚/文臣/武将/宦官/庶众） */
+/** 是否为人物类史略（君王/诸侯/宗戚/文臣/武将/宦官/庶众） */
 export function isPersonBoxCategory(key: string): boolean {
   const k = String(key || '').trim()
   if (!k) return false
@@ -22,6 +23,8 @@ export function categoryLabel(key: string): string {
   switch (key) {
     case 'junji':
       return '君王'
+    case 'zhuhou':
+      return '诸侯'
     case 'zongqi':
       return '宗戚'
     case 'wenchen':

@@ -1,0 +1,43 @@
+{
+  "schema": "translate-coverage-ledger/v1",
+  "史略ID": "GLBL_00110",
+  "updated_at": "2026-07-26T12:30:57.249343+00:00",
+  "entries": {
+    "M001": {
+      "status": "conveyed",
+      "claim_fp": "197b5df8a60ebbf7",
+      "checked_at": "2026-07-26T12:29:56.581548+00:00",
+      "note": "明确提到元年"
+    },
+    "M002–M003": {
+      "status": "conveyed",
+      "claim_fp": "9198c202318dd7f7",
+      "checked_at": "2026-07-26T12:29:56.581570+00:00",
+      "note": "完整包含穆公卒年晋襄公亦卒、雍为秦出在秦、赵盾欲立、随会来迎、秦以兵送至令狐"
+    },
+    "M004": {
+      "status": "conveyed",
+      "claim_fp": "e9c344c4e960a35a",
+      "checked_at": "2026-07-26T12:29:56.581575+00:00",
+      "note": "改立晋灵公、反击秦师、秦师败、随会留秦均涉及"
+    },
+    "M005–M007": {
+      "status": "conveyed",
+      "claim_fp": "d8f7406b0671b4e5",
+      "checked_at": "2026-07-26T12:29:56.581580+00:00",
+      "note": "包含二年取武城报令狐、四年晋取少梁、六年秦取羁马"
+    },
+    "M008": {
+      "status": "conveyed",
+      "claim_fp": "a59123faaa4c72ea",
+      "checked_at": "2026-07-26T12:29:56.581583+00:00",
+      "note": "明确河曲交战、秦大败晋军"
+    },
+    "M009": {
+      "status": "conveyed",
+      "claim_fp": "12f6c092ef109d75",
+      "checked_at": "2026-07-26T12:29:56.581587+00:00",
+      "note": "完整传达晋人患随会在秦、魏雠馀详反、合谋诈归随会"
+    }
+  }
+}

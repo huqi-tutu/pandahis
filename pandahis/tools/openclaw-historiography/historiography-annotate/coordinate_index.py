@@ -819,22 +819,23 @@ def validate_entry_coordinates(
             elif exp and not val:
                 issues.append(f"{prefix} 缺少 {f}（应为「{exp}」）")
 
-    if cat == "君王":
+    if cat in ("君王", "诸侯"):
         from emperor_resolve import split_regnal_given_name
 
+        label = "君王" if cat == "君王" else "诸侯"
         if name != coords["四级帝王坐标"]:
             issues.append(
-                f"{prefix} 君王史略名称须与四级帝王坐标、帝王.json「帝王」字段完全一致"
+                f"{prefix} {label}史略名称须与四级帝王坐标、帝王.json「帝王」字段完全一致"
                 f"（现为名称「{name}」坐标「{coords['四级帝王坐标']}」）"
             )
         if name not in emp_set:
-            issues.append(f"{prefix} 君王史略名称「{name}」不在帝王.json")
+            issues.append(f"{prefix} {label}史略名称「{name}」不在帝王.json")
         split = split_regnal_given_name(name)
         if split:
             title, given = split
             if title in emp_set:
                 issues.append(
-                    f"{prefix} 君王史略名称「{name}」含私名「{given}」，"
+                    f"{prefix} {label}史略名称「{name}」含私名「{given}」，"
                     f"应改为帝王表标准名「{title}」（名入帝王.json「帝王原名」）"
                 )
     elif cat in ("士臣", "庶众", "宗戚"):

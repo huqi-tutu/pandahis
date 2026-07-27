@@ -2,6 +2,41 @@
   "total_paragraphs": 35,
   "excludes": [
     {
+      "paragraph_from": 2,
+      "paragraph_to": 7,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 10,
+      "paragraph_to": 10,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 14,
+      "paragraph_to": 15,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 20,
+      "paragraph_to": 21,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 23,
+      "paragraph_to": 23,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 25,
+      "paragraph_to": 25,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 30,
+      "paragraph_to": 34,
+      "exclude_reason": "其他"
+    },
+    {
       "paragraph_from": 35,
       "paragraph_to": 35,
       "exclude_reason": "太史公曰"
@@ -12,13 +47,61 @@
       "name": "陈胡公满",
       "category": "君王",
       "paragraph_from": 1,
+      "paragraph_to": 1
+    },
+    {
+      "name": "陈厉公",
+      "category": "君王",
+      "paragraph_from": 8,
+      "paragraph_to": 9
+    },
+    {
+      "name": "陈宣公",
+      "category": "君王",
+      "paragraph_from": 11,
+      "paragraph_to": 13
+    },
+    {
+      "name": "陈灵公",
+      "category": "君王",
+      "paragraph_from": 16,
+      "paragraph_to": 16
+    },
+    {
+      "name": "陈成公",
+      "category": "君王",
+      "paragraph_from": 17,
+      "paragraph_to": 19
+    },
+    {
+      "name": "陈哀公",
+      "category": "君王",
+      "paragraph_from": 22,
+      "paragraph_to": 22
+    },
+    {
+      "name": "陈惠公",
+      "category": "君王",
+      "paragraph_from": 24,
+      "paragraph_to": 24
+    },
+    {
+      "name": "陈怀公",
+      "category": "君王",
+      "paragraph_from": 26,
+      "paragraph_to": 26
+    },
+    {
+      "name": "陈湣公",
+      "category": "君王",
+      "paragraph_from": 27,
       "paragraph_to": 28
     },
     {
       "name": "杞东楼公",
       "category": "君王",
       "paragraph_from": 29,
-      "paragraph_to": 34
+      "paragraph_to": 29
     }
   ]
 }

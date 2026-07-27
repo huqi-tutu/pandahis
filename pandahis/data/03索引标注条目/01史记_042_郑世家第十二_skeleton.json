@@ -9,7 +9,7 @@
       "owners": [
         {
           "name": "郑桓公",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -18,7 +18,7 @@
       "owners": [
         {
           "name": "郑桓公",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -26,8 +26,8 @@
       "paragraph": 3,
       "owners": [
         {
-          "name": "郑武公",
-          "category": "君王"
+          "name": "郑桓公",
+          "category": "诸侯"
         }
       ]
     },
@@ -36,7 +36,7 @@
       "owners": [
         {
           "name": "郑武公",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -45,7 +45,7 @@
       "owners": [
         {
           "name": "郑庄公",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -54,7 +54,7 @@
       "owners": [
         {
           "name": "郑庄公",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -63,7 +63,7 @@
       "owners": [
         {
           "name": "郑庄公",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -72,7 +72,7 @@
       "owners": [
         {
           "name": "郑庄公",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -81,7 +81,7 @@
       "owners": [
         {
           "name": "郑庄公",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -90,7 +90,7 @@
       "owners": [
         {
           "name": "郑庄公",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -99,7 +99,7 @@
       "owners": [
         {
           "name": "郑庄公",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -108,7 +108,7 @@
       "owners": [
         {
           "name": "郑庄公",
-          "category": "君王"
+          "category": "诸侯"
         }
       ]
     },
@@ -116,8 +116,8 @@
       "paragraph": 13,
       "owners": [
         {
-          "name": "郑庄公",
-          "category": "君王"
+          "name": "郑厉公",
+          "category": "诸侯"
         }
       ]
     },
@@ -125,8 +125,8 @@
       "paragraph": 14,
       "owners": [
         {
-          "name": "郑庄公",
-          "category": "君王"
+          "name": "郑厉公",
+          "category": "诸侯"
         }
       ]
     },
@@ -134,8 +134,8 @@
       "paragraph": 15,
       "owners": [
         {
-          "name": "郑庄公",
-          "category": "君王"
+          "name": "郑厉公",
+          "category": "诸侯"
         }
       ]
     },
@@ -143,8 +143,8 @@
       "paragraph": 16,
       "owners": [
         {
-          "name": "郑庄公",
-          "category": "君王"
+          "name": "郑子亹",
+          "category": "诸侯"
         }
       ]
     },
@@ -152,8 +152,8 @@
       "paragraph": 17,
       "owners": [
         {
-          "name": "郑庄公",
-          "category": "君王"
+          "name": "郑子亹",
+          "category": "诸侯"
         }
       ]
     },
@@ -161,8 +161,8 @@
       "paragraph": 18,
       "owners": [
         {
-          "name": "郑庄公",
-          "category": "君王"
+          "name": "郑子亹",
+          "category": "诸侯"
         }
       ]
     },
@@ -170,80 +170,52 @@
       "paragraph": 19,
       "owners": [
         {
-          "name": "郑庄公",
-          "category": "君王"
+          "name": "郑子亹",
+          "category": "诸侯"
         }
       ]
     },
     {
       "paragraph": 20,
-      "owners": [
-        {
-          "name": "郑庄公",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 21,
-      "owners": [
-        {
-          "name": "郑庄公",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 22,
-      "owners": [
-        {
-          "name": "郑庄公",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 23,
-      "owners": [
-        {
-          "name": "郑庄公",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 24,
-      "owners": [
-        {
-          "name": "郑庄公",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 25,
-      "owners": [
-        {
-          "name": "郑庄公",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 26,
-      "owners": [
-        {
-          "name": "郑庄公",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 27,
       "owners": [
         {
-          "name": "郑庄公",
-          "category": "君王"
+          "name": "郑文公",
+          "category": "诸侯"
         }
       ]
     },
@@ -251,8 +223,8 @@
       "paragraph": 28,
       "owners": [
         {
-          "name": "郑庄公",
-          "category": "君王"
+          "name": "郑文公",
+          "category": "诸侯"
         }
       ]
     },
@@ -260,8 +232,8 @@
       "paragraph": 29,
       "owners": [
         {
-          "name": "郑庄公",
-          "category": "君王"
+          "name": "郑文公",
+          "category": "诸侯"
         }
       ]
     },
@@ -269,8 +241,8 @@
       "paragraph": 30,
       "owners": [
         {
-          "name": "郑庄公",
-          "category": "君王"
+          "name": "郑文公",
+          "category": "诸侯"
         }
       ]
     },
@@ -278,8 +250,8 @@
       "paragraph": 31,
       "owners": [
         {
-          "name": "郑庄公",
-          "category": "君王"
+          "name": "郑缪公",
+          "category": "诸侯"
         }
       ]
     },
@@ -287,26 +259,22 @@
       "paragraph": 32,
       "owners": [
         {
-          "name": "郑庄公",
-          "category": "君王"
+          "name": "郑缪公",
+          "category": "诸侯"
         }
       ]
     },
     {
       "paragraph": 33,
-      "owners": [
-        {
-          "name": "郑庄公",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 34,
       "owners": [
         {
-          "name": "郑庄公",
-          "category": "君王"
+          "name": "郑灵公",
+          "category": "诸侯"
         }
       ]
     },
@@ -314,8 +282,8 @@
       "paragraph": 35,
       "owners": [
         {
-          "name": "郑庄公",
-          "category": "君王"
+          "name": "郑灵公",
+          "category": "诸侯"
         }
       ]
     },
@@ -323,8 +291,8 @@
       "paragraph": 36,
       "owners": [
         {
-          "name": "郑庄公",
-          "category": "君王"
+          "name": "郑襄公",
+          "category": "诸侯"
         }
       ]
     },
@@ -332,8 +300,8 @@
       "paragraph": 37,
       "owners": [
         {
-          "name": "郑庄公",
-          "category": "君王"
+          "name": "郑襄公",
+          "category": "诸侯"
         }
       ]
     },
@@ -341,8 +309,8 @@
       "paragraph": 38,
       "owners": [
         {
-          "name": "郑庄公",
-          "category": "君王"
+          "name": "郑襄公",
+          "category": "诸侯"
         }
       ]
     },
@@ -350,8 +318,8 @@
       "paragraph": 39,
       "owners": [
         {
-          "name": "郑庄公",
-          "category": "君王"
+          "name": "郑襄公",
+          "category": "诸侯"
         }
       ]
     },
@@ -359,8 +327,8 @@
       "paragraph": 40,
       "owners": [
         {
-          "name": "郑庄公",
-          "category": "君王"
+          "name": "郑襄公",
+          "category": "诸侯"
         }
       ]
     },
@@ -368,8 +336,8 @@
       "paragraph": 41,
       "owners": [
         {
-          "name": "郑庄公",
-          "category": "君王"
+          "name": "郑襄公",
+          "category": "诸侯"
         }
       ]
     },
@@ -377,26 +345,22 @@
       "paragraph": 42,
       "owners": [
         {
-          "name": "郑庄公",
-          "category": "君王"
+          "name": "郑襄公",
+          "category": "诸侯"
         }
       ]
     },
     {
       "paragraph": 43,
-      "owners": [
-        {
-          "name": "郑庄公",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 44,
       "owners": [
         {
-          "name": "郑庄公",
-          "category": "君王"
+          "name": "郑悼公",
+          "category": "诸侯"
         }
       ]
     },
@@ -404,8 +368,8 @@
       "paragraph": 45,
       "owners": [
         {
-          "name": "郑庄公",
-          "category": "君王"
+          "name": "郑悼公",
+          "category": "诸侯"
         }
       ]
     },
@@ -413,8 +377,8 @@
       "paragraph": 46,
       "owners": [
         {
-          "name": "郑庄公",
-          "category": "君王"
+          "name": "郑悼公",
+          "category": "诸侯"
         }
       ]
     },
@@ -422,8 +386,8 @@
       "paragraph": 47,
       "owners": [
         {
-          "name": "郑庄公",
-          "category": "君王"
+          "name": "郑成公",
+          "category": "诸侯"
         }
       ]
     },
@@ -431,8 +395,8 @@
       "paragraph": 48,
       "owners": [
         {
-          "name": "郑庄公",
-          "category": "君王"
+          "name": "郑成公",
+          "category": "诸侯"
         }
       ]
     },
@@ -440,8 +404,8 @@
       "paragraph": 49,
       "owners": [
         {
-          "name": "郑庄公",
-          "category": "君王"
+          "name": "郑成公",
+          "category": "诸侯"
         }
       ]
     },
@@ -449,8 +413,8 @@
       "paragraph": 50,
       "owners": [
         {
-          "name": "郑庄公",
-          "category": "君王"
+          "name": "郑釐公",
+          "category": "诸侯"
         }
       ]
     },
@@ -458,8 +422,8 @@
       "paragraph": 51,
       "owners": [
         {
-          "name": "郑庄公",
-          "category": "君王"
+          "name": "郑简公",
+          "category": "诸侯"
         }
       ]
     },
@@ -467,8 +431,8 @@
       "paragraph": 52,
       "owners": [
         {
-          "name": "郑庄公",
-          "category": "君王"
+          "name": "郑简公",
+          "category": "诸侯"
         }
       ]
     },
@@ -476,8 +440,8 @@
       "paragraph": 53,
       "owners": [
         {
-          "name": "郑庄公",
-          "category": "君王"
+          "name": "郑简公",
+          "category": "诸侯"
         }
       ]
     },
@@ -485,8 +449,8 @@
       "paragraph": 54,
       "owners": [
         {
-          "name": "郑庄公",
-          "category": "君王"
+          "name": "郑简公",
+          "category": "诸侯"
         }
       ]
     },
@@ -494,8 +458,8 @@
       "paragraph": 55,
       "owners": [
         {
-          "name": "郑庄公",
-          "category": "君王"
+          "name": "郑简公",
+          "category": "诸侯"
         }
       ]
     },
@@ -503,8 +467,8 @@
       "paragraph": 56,
       "owners": [
         {
-          "name": "郑庄公",
-          "category": "君王"
+          "name": "郑简公",
+          "category": "诸侯"
         }
       ]
     },
@@ -512,8 +476,8 @@
       "paragraph": 57,
       "owners": [
         {
-          "name": "郑庄公",
-          "category": "君王"
+          "name": "郑简公",
+          "category": "诸侯"
         }
       ]
     },
@@ -521,8 +485,8 @@
       "paragraph": 58,
       "owners": [
         {
-          "name": "郑庄公",
-          "category": "君王"
+          "name": "郑简公",
+          "category": "诸侯"
         }
       ]
     },
@@ -530,8 +494,8 @@
       "paragraph": 59,
       "owners": [
         {
-          "name": "郑庄公",
-          "category": "君王"
+          "name": "郑定公",
+          "category": "诸侯"
         }
       ]
     },
@@ -539,8 +503,8 @@
       "paragraph": 60,
       "owners": [
         {
-          "name": "郑庄公",
-          "category": "君王"
+          "name": "郑定公",
+          "category": "诸侯"
         }
       ]
     },
@@ -548,8 +512,8 @@
       "paragraph": 61,
       "owners": [
         {
-          "name": "郑庄公",
-          "category": "君王"
+          "name": "郑定公",
+          "category": "诸侯"
         }
       ]
     },
@@ -557,153 +521,233 @@
       "paragraph": 62,
       "owners": [
         {
-          "name": "郑庄公",
-          "category": "君王"
+          "name": "郑定公",
+          "category": "诸侯"
         }
       ]
     },
     {
       "paragraph": 63,
-      "owners": [
-        {
-          "name": "郑庄公",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 64,
-      "owners": [
-        {
-          "name": "郑庄公",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 65,
       "owners": [
         {
-          "name": "郑庄公",
-          "category": "君王"
+          "name": "郑声公",
+          "category": "诸侯"
         }
       ]
     },
     {
       "paragraph": 66,
-      "owners": [
-        {
-          "name": "郑庄公",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 67,
-      "owners": [
-        {
-          "name": "郑庄公",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 68,
-      "owners": [
-        {
-          "name": "郑庄公",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 69,
-      "owners": [
-        {
-          "name": "郑庄公",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 70,
-      "owners": [
-        {
-          "name": "郑庄公",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 71,
-      "owners": [
-        {
-          "name": "郑庄公",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 72,
-      "owners": [
-        {
-          "name": "郑庄公",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 73,
-      "owners": [
-        {
-          "name": "郑庄公",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 74,
-      "owners": [
-        {
-          "name": "郑庄公",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 75,
-      "owners": [
-        {
-          "name": "郑庄公",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "其他"
     },
     {
       "paragraph": 76,
-      "owners": [
-        {
-          "name": "郑庄公",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "太史公曰"
     }
   ],
   "entries": [
     {
       "史略ID": "SHIJI_042_01",
+      "史略名称": "郑厉公",
+      "史略简介": "郑厉公",
+      "原文字句": "庄公又娶宋雍氏女，生厉公突。雍氏有宠於宋。宋庄公闻祭仲之立忽，乃使人诱召祭仲而执之，曰：“不立突，将死。”亦执突以求赂焉。祭仲许宋，与宋盟。以突归，立之。昭公忽",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷42·郑世家》",
+      "paragraphs": [
+        {
+          "volume": "郑世家",
+          "paragraph_from": 13,
+          "paragraph_to": 15
+        }
+      ],
+      "史略开始年": -700,
+      "史略结束年": -673,
+      "优先级": "P0",
+      "优先级判定理由": "郑厉公独立叙事块，共3段",
+      "五级细坐标": "史记·卷042·诸侯·01",
+      "六级段落锚点": "[P13-P15]",
+      "原文出处": "郑世家·P13-P15",
+      "_needs_llm": [],
+      "四级帝王坐标": "郑厉公",
+      "三级政权坐标": "郑",
+      "二级朝代坐标": "春秋",
+      "一级文明坐标": "华夏",
+      "文明ID": "HX",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "政权ID": "ZQ_HX_CHUNQIU_ZHENG",
+      "帝王ID": "DW_HX_CHUNQIU_ZHENG_ZHENGLIGONG1"
+    },
+    {
+      "史略ID": "SHIJI_042_02",
+      "史略名称": "郑声公",
+      "史略简介": "郑声公",
+      "原文字句": "十三年，定公卒，子献公虿立。献公十三年卒，子声公胜立。当是时，晋六卿彊，侵夺郑，郑遂弱。",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷42·郑世家》",
+      "paragraphs": [
+        {
+          "volume": "郑世家",
+          "paragraph_from": 65,
+          "paragraph_to": 65
+        }
+      ],
+      "史略开始年": -500,
+      "史略结束年": -463,
+      "优先级": "P0",
+      "优先级判定理由": "郑声公独立叙事块，共1段",
+      "五级细坐标": "史记·卷042·诸侯·02",
+      "六级段落锚点": "[P65-P65]",
+      "原文出处": "郑世家·P65-P65",
+      "_needs_llm": [],
+      "四级帝王坐标": "郑声公",
+      "三级政权坐标": "郑",
+      "二级朝代坐标": "春秋",
+      "一级文明坐标": "华夏",
+      "文明ID": "HX",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "政权ID": "ZQ_HX_CHUNQIU_ZHENG",
+      "帝王ID": "DW_HX_CHUNQIU_ZHENG_ZHENGSHENGGONG"
+    },
+    {
+      "史略ID": "SHIJI_042_03",
+      "史略名称": "郑子亹",
+      "史略简介": "郑子亹",
+      "原文字句": "昭公二年，自昭公为太子时，父庄公欲以高渠弥为卿，太子忽恶之，庄公弗听，卒用渠弥为卿。及昭公即位，惧其杀己，冬十月辛卯，渠弥与昭公出猎，射杀昭公於野。祭仲与渠弥不",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷42·郑世家》",
+      "paragraphs": [
+        {
+          "volume": "郑世家",
+          "paragraph_from": 16,
+          "paragraph_to": 19
+        }
+      ],
+      "史略开始年": -694,
+      "史略结束年": -694,
+      "优先级": "P0",
+      "优先级判定理由": "郑子亹独立叙事块，共4段",
+      "五级细坐标": "史记·卷042·诸侯·03",
+      "六级段落锚点": "[P16-P19]",
+      "原文出处": "郑世家·P16-P19",
+      "_needs_llm": [],
+      "四级帝王坐标": "郑子亹",
+      "三级政权坐标": "郑",
+      "二级朝代坐标": "春秋",
+      "一级文明坐标": "华夏",
+      "文明ID": "HX",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "政权ID": "ZQ_HX_CHUNQIU_ZHENG",
+      "帝王ID": "DW_HX_CHUNQIU_ZHENG_ZHENGZIWEI"
+    },
+    {
+      "史略ID": "SHIJI_042_04",
+      "史略名称": "郑定公",
+      "史略简介": "郑定公",
+      "原文字句": "三十六年，简公卒，子定公宁立。秋，定公朝晋昭公。",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷42·郑世家》",
+      "paragraphs": [
+        {
+          "volume": "郑世家",
+          "paragraph_from": 59,
+          "paragraph_to": 62
+        }
+      ],
+      "史略开始年": -529,
+      "史略结束年": -514,
+      "优先级": "P0",
+      "优先级判定理由": "郑定公独立叙事块，共4段",
+      "五级细坐标": "史记·卷042·诸侯·04",
+      "六级段落锚点": "[P59-P62]",
+      "原文出处": "郑世家·P59-P62",
+      "_needs_llm": [],
+      "四级帝王坐标": "郑定公",
+      "三级政权坐标": "郑",
+      "二级朝代坐标": "春秋",
+      "一级文明坐标": "华夏",
+      "文明ID": "HX",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "政权ID": "ZQ_HX_CHUNQIU_ZHENG",
+      "帝王ID": "DW_HX_CHUNQIU_ZHENG_ZHENGDINGGONG"
+    },
+    {
+      "史略ID": "SHIJI_042_05",
       "史略名称": "郑庄公",
       "史略简介": "郑庄公",
       "原文字句": "武公十年，娶申侯女为夫人，曰武姜。生太子寤生，生之难，及生，夫人弗爱。后生少子叔段，段生易，夫人爱之。二十七年，武公疾。夫人请公，欲立段为太子，公弗听。是岁，武",
-      "史略分类": "君王",
+      "史略分类": "诸侯",
       "主要史料出处": "《史记·卷42·郑世家》",
       "paragraphs": [
         {
           "volume": "郑世家",
           "paragraph_from": 5,
-          "paragraph_to": 76
+          "paragraph_to": 12
         }
       ],
+      "史略开始年": -743,
+      "史略结束年": -701,
+      "优先级": "P0",
+      "优先级判定理由": "郑庄公独立叙事块，共8段",
+      "五级细坐标": "史记·卷042·诸侯·05",
+      "六级段落锚点": "[P5-P12]",
+      "原文出处": "郑世家·P5-P12",
+      "_needs_llm": [],
       "四级帝王坐标": "郑庄公",
       "三级政权坐标": "郑",
       "二级朝代坐标": "春秋",
@@ -711,35 +755,123 @@
       "文明ID": "HX",
       "朝代ID": "CD_HX_CHUNQIU",
       "政权ID": "ZQ_HX_CHUNQIU_ZHENG",
-      "帝王ID": "DW_HX_CHUNQIU_ZHENG_ZHENGZHUANGGONG",
-      "史略开始年": -743,
-      "史略结束年": -701,
-      "五级细坐标": "史记·卷042·君王·01",
-      "六级段落锚点": "[P5-P76]",
-      "原文出处": "郑世家·P5-P76",
-      "优先级": "P0",
-      "优先级判定理由": "本纪主轴叙事，共72段",
-      "_auto_filled": {
-        "_年兜底级别": "君王表",
-        "_年修正": "君王年与帝王表一致 -743～-701",
-        "_年LLM依据": "郑庄公即位前743，崩前701",
-        "_坐标主轴说明": "本世家以郑庄公传世袭国为主线，主轴即郑庄公本身"
-      }
+      "帝王ID": "DW_HX_CHUNQIU_ZHENG_ZHENGZHUANGGONG"
     },
     {
-      "史略ID": "SHIJI_042_02",
+      "史略ID": "SHIJI_042_06",
+      "史略名称": "郑悼公",
+      "史略简介": "郑悼公",
+      "原文字句": "十八年，襄公卒，子悼公氵费立。",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷42·郑世家》",
+      "paragraphs": [
+        {
+          "volume": "郑世家",
+          "paragraph_from": 44,
+          "paragraph_to": 46
+        }
+      ],
+      "史略开始年": -586,
+      "史略结束年": -585,
+      "优先级": "P0",
+      "优先级判定理由": "郑悼公独立叙事块，共3段",
+      "五级细坐标": "史记·卷042·诸侯·06",
+      "六级段落锚点": "[P44-P46]",
+      "原文出处": "郑世家·P44-P46",
+      "_needs_llm": [],
+      "四级帝王坐标": "郑悼公",
+      "三级政权坐标": "郑",
+      "二级朝代坐标": "春秋",
+      "一级文明坐标": "华夏",
+      "文明ID": "HX",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "政权ID": "ZQ_HX_CHUNQIU_ZHENG",
+      "帝王ID": "DW_HX_CHUNQIU_ZHENG_ZHENGDAOGONG"
+    },
+    {
+      "史略ID": "SHIJI_042_07",
+      "史略名称": "郑成公",
+      "史略简介": "郑成公",
+      "原文字句": "二年，楚伐郑，晋兵来救。是岁，悼公卒，立其弟睔，是为成公。",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷42·郑世家》",
+      "paragraphs": [
+        {
+          "volume": "郑世家",
+          "paragraph_from": 47,
+          "paragraph_to": 49
+        }
+      ],
+      "史略开始年": -584,
+      "史略结束年": -571,
+      "优先级": "P0",
+      "优先级判定理由": "郑成公独立叙事块，共3段",
+      "五级细坐标": "史记·卷042·诸侯·07",
+      "六级段落锚点": "[P47-P49]",
+      "原文出处": "郑世家·P47-P49",
+      "_needs_llm": [],
+      "四级帝王坐标": "郑成公",
+      "三级政权坐标": "郑",
+      "二级朝代坐标": "春秋",
+      "一级文明坐标": "华夏",
+      "文明ID": "HX",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "政权ID": "ZQ_HX_CHUNQIU_ZHENG",
+      "帝王ID": "DW_HX_CHUNQIU_ZHENG_ZHENGCHENGGONG"
+    },
+    {
+      "史略ID": "SHIJI_042_08",
+      "史略名称": "郑文公",
+      "史略简介": "郑文公",
+      "原文字句": "二十四年，文公之贱妾曰燕姞，梦天与之兰，曰：“余为伯鯈。余，尔祖也。以是为而子，兰有国香。”以梦告文公，文公幸之，而予之草兰为符。遂生子，名曰兰。",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷42·郑世家》",
+      "paragraphs": [
+        {
+          "volume": "郑世家",
+          "paragraph_from": 27,
+          "paragraph_to": 30
+        }
+      ],
+      "史略开始年": -672,
+      "史略结束年": -628,
+      "优先级": "P0",
+      "优先级判定理由": "郑文公独立叙事块，共4段",
+      "五级细坐标": "史记·卷042·诸侯·08",
+      "六级段落锚点": "[P27-P30]",
+      "原文出处": "郑世家·P27-P30",
+      "_needs_llm": [],
+      "四级帝王坐标": "郑文公",
+      "三级政权坐标": "郑",
+      "二级朝代坐标": "春秋",
+      "一级文明坐标": "华夏",
+      "文明ID": "HX",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "政权ID": "ZQ_HX_CHUNQIU_ZHENG",
+      "帝王ID": "DW_HX_CHUNQIU_ZHENG_ZHENGWENGONG"
+    },
+    {
+      "史略ID": "SHIJI_042_09",
       "史略名称": "郑桓公",
       "史略简介": "郑桓公",
       "原文字句": "郑桓公友者，周厉王少子而宣王庶弟也。宣王立二十二年，友初封于郑。封三十三岁，百姓皆便爱之。幽王以为司徒。和集周民，周民皆说，河雒之间，人便思之。为司徒一岁，幽王",
-      "史略分类": "君王",
+      "史略分类": "诸侯",
       "主要史料出处": "《史记·卷42·郑世家》",
       "paragraphs": [
         {
           "volume": "郑世家",
           "paragraph_from": 1,
-          "paragraph_to": 2
+          "paragraph_to": 3
         }
       ],
+      "史略开始年": -806,
+      "史略结束年": -771,
+      "优先级": "P0",
+      "优先级判定理由": "郑桓公独立叙事块，共3段",
+      "五级细坐标": "史记·卷042·诸侯·09",
+      "六级段落锚点": "[P1-P3]",
+      "原文出处": "郑世家·P1-P3",
+      "_needs_llm": [],
       "四级帝王坐标": "郑桓公",
       "三级政权坐标": "西周",
       "二级朝代坐标": "西周",
@@ -747,35 +879,30 @@
       "文明ID": "HX",
       "朝代ID": "CD_HX_XIZHOU",
       "政权ID": "ZQ_HX_XIZHOU_XIZHOU",
-      "帝王ID": "DW_HX_XIZHOU_XIZHOU_ZHENGHUANGONG",
-      "史略开始年": -806,
-      "史略结束年": -771,
-      "五级细坐标": "史记·卷042·君王·02",
-      "六级段落锚点": "[P1-P2]",
-      "原文出处": "郑世家·P1-P2",
-      "优先级": "P1",
-      "优先级判定理由": "合传独立块2段，篇幅次于卷首主轴",
-      "_auto_filled": {
-        "_年兜底级别": "君王表",
-        "_年修正": "君王年与帝王表一致 -806～-771",
-        "_年LLM依据": "郑桓公即位前806，崩前771",
-        "_坐标主轴说明": "本世家以郑桓公传世袭国为主线，主轴即郑桓公本身"
-      }
+      "帝王ID": "DW_HX_XIZHOU_XIZHOU_ZHENGHUANGONG"
     },
     {
-      "史略ID": "SHIJI_042_03",
+      "史略ID": "SHIJI_042_10",
       "史略名称": "郑武公",
       "史略简介": "郑武公",
-      "原文字句": "兴，非郑之利也。”公曰：“吾欲居西方，何如？”对曰：“其民贪而好利，难久居。”公曰：“周衰，何国兴者？”对曰：“齐、秦、晋、楚乎？夫齐，姜姓，伯夷之后也，伯夷佐",
-      "史略分类": "君王",
+      "原文字句": "二岁，犬戎杀幽王於骊山下，并杀桓公。郑人共立其子掘突，是为武公。",
+      "史略分类": "诸侯",
       "主要史料出处": "《史记·卷42·郑世家》",
       "paragraphs": [
         {
           "volume": "郑世家",
-          "paragraph_from": 3,
+          "paragraph_from": 4,
           "paragraph_to": 4
         }
       ],
+      "史略开始年": -770,
+      "史略结束年": -744,
+      "优先级": "P0",
+      "优先级判定理由": "郑武公独立叙事块，共1段",
+      "五级细坐标": "史记·卷042·诸侯·10",
+      "六级段落锚点": "[P4-P4]",
+      "原文出处": "郑世家·P4-P4",
+      "_needs_llm": [],
       "四级帝王坐标": "郑武公",
       "三级政权坐标": "郑",
       "二级朝代坐标": "春秋",
@@ -783,20 +910,243 @@
       "文明ID": "HX",
       "朝代ID": "CD_HX_CHUNQIU",
       "政权ID": "ZQ_HX_CHUNQIU_ZHENG",
-      "帝王ID": "DW_HX_CHUNQIU_ZHENG_ZHENGWUGONG",
-      "史略开始年": -770,
-      "史略结束年": -744,
-      "五级细坐标": "史记·卷042·君王·03",
-      "六级段落锚点": "[P3-P4]",
-      "原文出处": "郑世家·P3-P4",
-      "优先级": "P1",
-      "优先级判定理由": "合传独立块2段，篇幅次于卷首主轴",
-      "_auto_filled": {
-        "_年兜底级别": "君王表",
-        "_年修正": "君王年与帝王表一致 -770～-744",
-        "_年LLM依据": "郑武公即位前770，崩前744",
-        "_坐标主轴说明": "本世家以郑武公传世袭国为主线，主轴即郑武公本身"
-      }
+      "帝王ID": "DW_HX_CHUNQIU_ZHENG_ZHENGWUGONG"
+    },
+    {
+      "史略ID": "SHIJI_042_11",
+      "史略名称": "郑灵公",
+      "史略简介": "郑灵公",
+      "原文字句": "二十二年，郑缪公卒，子夷立，是为灵公。",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷42·郑世家》",
+      "paragraphs": [
+        {
+          "volume": "郑世家",
+          "paragraph_from": 34,
+          "paragraph_to": 35
+        }
+      ],
+      "史略开始年": -605,
+      "史略结束年": -605,
+      "优先级": "P0",
+      "优先级判定理由": "郑灵公独立叙事块，共2段",
+      "五级细坐标": "史记·卷042·诸侯·11",
+      "六级段落锚点": "[P34-P35]",
+      "原文出处": "郑世家·P34-P35",
+      "_needs_llm": [],
+      "四级帝王坐标": "郑灵公",
+      "三级政权坐标": "郑",
+      "二级朝代坐标": "春秋",
+      "一级文明坐标": "华夏",
+      "文明ID": "HX",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "政权ID": "ZQ_HX_CHUNQIU_ZHENG",
+      "帝王ID": "DW_HX_CHUNQIU_ZHENG_ZHENGLINGGONG"
+    },
+    {
+      "史略ID": "SHIJI_042_12",
+      "史略名称": "郑简公",
+      "史略简介": "郑简公",
+      "原文字句": "釐公五年，郑相子驷朝釐公，釐公不礼。子驷怒，使厨人药杀釐公，赴诸侯曰“釐公暴病卒”。立釐公子嘉，嘉时年五岁，是为简公。",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷42·郑世家》",
+      "paragraphs": [
+        {
+          "volume": "郑世家",
+          "paragraph_from": 51,
+          "paragraph_to": 58
+        }
+      ],
+      "史略开始年": -565,
+      "史略结束年": -530,
+      "优先级": "P0",
+      "优先级判定理由": "郑简公独立叙事块，共8段",
+      "五级细坐标": "史记·卷042·诸侯·12",
+      "六级段落锚点": "[P51-P58]",
+      "原文出处": "郑世家·P51-P58",
+      "_needs_llm": [],
+      "四级帝王坐标": "郑简公",
+      "三级政权坐标": "郑",
+      "二级朝代坐标": "春秋",
+      "一级文明坐标": "华夏",
+      "文明ID": "HX",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "政权ID": "ZQ_HX_CHUNQIU_ZHENG",
+      "帝王ID": "DW_HX_CHUNQIU_ZHENG_ZHENGJIANGONG"
+    },
+    {
+      "史略ID": "SHIJI_042_13",
+      "史略名称": "郑缪公",
+      "史略简介": "郑缪公",
+      "原文字句": "四十五年，文公卒，子兰立，是为缪公。",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷42·郑世家》",
+      "paragraphs": [
+        {
+          "volume": "郑世家",
+          "paragraph_from": 31,
+          "paragraph_to": 32
+        }
+      ],
+      "史略开始年": -627,
+      "史略结束年": -606,
+      "优先级": "P0",
+      "优先级判定理由": "郑缪公独立叙事块，共2段",
+      "五级细坐标": "史记·卷042·诸侯·13",
+      "六级段落锚点": "[P31-P32]",
+      "原文出处": "郑世家·P31-P32",
+      "_needs_llm": [],
+      "四级帝王坐标": "郑缪公",
+      "三级政权坐标": "郑",
+      "二级朝代坐标": "春秋",
+      "一级文明坐标": "华夏",
+      "文明ID": "HX",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "政权ID": "ZQ_HX_CHUNQIU_ZHENG",
+      "帝王ID": "DW_HX_CHUNQIU_ZHENG_ZHENGMOUGONG"
+    },
+    {
+      "史略ID": "SHIJI_042_14",
+      "史略名称": "郑襄公",
+      "史略简介": "郑襄公",
+      "原文字句": "於是乃立子坚，是为襄公。",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷42·郑世家》",
+      "paragraphs": [
+        {
+          "volume": "郑世家",
+          "paragraph_from": 36,
+          "paragraph_to": 42
+        }
+      ],
+      "史略开始年": -604,
+      "史略结束年": -587,
+      "优先级": "P0",
+      "优先级判定理由": "郑襄公独立叙事块，共7段",
+      "五级细坐标": "史记·卷042·诸侯·14",
+      "六级段落锚点": "[P36-P42]",
+      "原文出处": "郑世家·P36-P42",
+      "_needs_llm": [],
+      "四级帝王坐标": "郑襄公",
+      "三级政权坐标": "郑",
+      "二级朝代坐标": "春秋",
+      "一级文明坐标": "华夏",
+      "文明ID": "HX",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "政权ID": "ZQ_HX_CHUNQIU_ZHENG",
+      "帝王ID": "DW_HX_CHUNQIU_ZHENG_ZHENGXIANGGONG"
+    },
+    {
+      "史略ID": "SHIJI_042_15",
+      "史略名称": "郑釐公",
+      "史略简介": "郑釐公",
+      "原文字句": "十四年，成公卒，子惲立。是为釐公。",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷42·郑世家》",
+      "paragraphs": [
+        {
+          "volume": "郑世家",
+          "paragraph_from": 50,
+          "paragraph_to": 50
+        }
+      ],
+      "史略开始年": -570,
+      "史略结束年": -566,
+      "优先级": "P0",
+      "优先级判定理由": "郑釐公独立叙事块，共1段",
+      "五级细坐标": "史记·卷042·诸侯·15",
+      "六级段落锚点": "[P50-P50]",
+      "原文出处": "郑世家·P50-P50",
+      "_needs_llm": [],
+      "四级帝王坐标": "郑釐公",
+      "三级政权坐标": "郑",
+      "二级朝代坐标": "春秋",
+      "一级文明坐标": "华夏",
+      "文明ID": "HX",
+      "朝代ID": "CD_HX_CHUNQIU",
+      "政权ID": "ZQ_HX_CHUNQIU_ZHENG",
+      "帝王ID": "DW_HX_CHUNQIU_ZHENG_ZHENGLIGONG2"
+    }
+  ],
+  "volume_subtype": "世家",
+  "volume_subtype_source": "llm_step1a",
+  "protagonist_count": 15,
+  "protagonist_count_source": "llm_step1a",
+  "protagonists_manifest": [
+    {
+      "name": "郑桓公",
+      "category": "君王",
+      "rationale": "《郑世家》叙事主轴：郑桓公（君王）"
+    },
+    {
+      "name": "郑武公",
+      "category": "君王",
+      "rationale": "《郑世家》叙事主轴：郑武公（君王）"
+    },
+    {
+      "name": "郑庄公",
+      "category": "君王",
+      "rationale": "《郑世家》叙事主轴：郑庄公（君王）"
+    },
+    {
+      "name": "郑厉公",
+      "category": "君王",
+      "rationale": "《郑世家》叙事主轴：郑厉公（君王）"
+    },
+    {
+      "name": "郑子亹",
+      "category": "君王",
+      "rationale": "《郑世家》叙事主轴：郑子亹（君王）"
+    },
+    {
+      "name": "郑文公",
+      "category": "君王",
+      "rationale": "《郑世家》叙事主轴：郑文公（君王）"
+    },
+    {
+      "name": "郑缪公",
+      "category": "君王",
+      "rationale": "《郑世家》叙事主轴：郑缪公（君王）"
+    },
+    {
+      "name": "郑灵公",
+      "category": "君王",
+      "rationale": "《郑世家》叙事主轴：郑灵公（君王）"
+    },
+    {
+      "name": "郑襄公",
+      "category": "君王",
+      "rationale": "《郑世家》叙事主轴：郑襄公（君王）"
+    },
+    {
+      "name": "郑悼公",
+      "category": "君王",
+      "rationale": "《郑世家》叙事主轴：郑悼公（君王）"
+    },
+    {
+      "name": "郑成公",
+      "category": "君王",
+      "rationale": "《郑世家》叙事主轴：郑成公（君王）"
+    },
+    {
+      "name": "郑釐公",
+      "category": "君王",
+      "rationale": "《郑世家》叙事主轴：郑釐公（君王）"
+    },
+    {
+      "name": "郑简公",
+      "category": "君王",
+      "rationale": "《郑世家》叙事主轴：郑简公（君王）"
+    },
+    {
+      "name": "郑定公",
+      "category": "君王",
+      "rationale": "《郑世家》叙事主轴：郑定公（君王）"
+    },
+    {
+      "name": "郑声公",
+      "category": "君王",
+      "rationale": "《郑世家》叙事主轴：郑声公（君王）"
     }
   ]
 }

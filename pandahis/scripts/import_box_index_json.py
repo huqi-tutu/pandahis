@@ -30,9 +30,10 @@ CIV_CODE_TO_ID: dict[str, int] = {
     "ZM": 16, "BM": 17, "NM": 18,
 }
 
-# 标注 v3 七类 → historical_box.category_key（与 BoxCategorySupport.java 一致）
+# 标注 v4 八类 → historical_box.category_key（与 BoxCategorySupport.java 一致）
 CATEGORY_MAP: dict[str, str] = {
     "君王": "junji",
+    "诸侯": "zhuhou",
     "君纪": "junji",  # 旧称兼容
     "宗戚": "zongqi",
     "宦官": "huanguan",
@@ -50,6 +51,7 @@ CATEGORY_MAP: dict[str, str] = {
 
 CATEGORY_LABELS: dict[str, str] = {
     "junji": "君王",
+    "zhuhou": "诸侯",
     "zongqi": "宗戚",
     "huanguan": "宦官",
     "wenchen": "文臣",
@@ -177,6 +179,16 @@ def priority_level(raw: str | None) -> int | None:
     return PRIORITY_TO_LEVEL.get(str(raw).strip())
 
 
+def primary_source_str(raw) -> str | None:
+    if raw is None:
+        return None
+    if isinstance(raw, list):
+        parts = [str(x).strip() for x in raw if str(x).strip()]
+        return "；".join(parts) or None
+    text = str(raw).strip()
+    return text or None
+
+
 def build_original_ref_json(item: dict) -> str:
     payload = {
         "primarySource": item.get("主要史料出处"),
@@ -193,9 +205,13 @@ def build_original_ref_json(item: dict) -> str:
     return json.dumps(payload, ensure_ascii=False)
 
 
-def build_box_rows(entries: list[dict]) -> list[dict]:
+def build_box_rows(entries: list[dict]) -> tuple[list[dict], list[str]]:
     rows: list[dict] = []
+    skipped: list[str] = []
     for index, item in enumerate(entries):
+        if item.get("史略开始年") is None or item.get("史略结束年") is None:
+            skipped.append(str(item.get("史略ID", "?")).strip())
+            continue
         priority = str(item.get("优先级", "")).strip() or None
         rows.append(
             {
@@ -228,7 +244,7 @@ def build_box_rows(entries: list[dict]) -> list[dict]:
                     if item.get("人物标签置信度") is not None
                     else None
                 ),
-                "primary_source": str(item.get("主要史料出处", "")).strip() or None,
+                "primary_source": primary_source_str(item.get("主要史料出处")),
                 "original_text": str(item.get("原文字句", "")).strip() or None,
                 "original_location": str(item.get("原文出处", "")).strip() or None,
                 "fine_coordinate": str(item.get("五级细坐标", "")).strip() or None,
@@ -249,7 +265,7 @@ def build_box_rows(entries: list[dict]) -> list[dict]:
                 "status": 1,
             }
         )
-    return rows
+    return rows, skipped
 
 
 def table_exists(cursor, name: str) -> bool:
@@ -615,8 +631,7 @@ def list_orphan_box_ids(cursor, json_ids: list[str]) -> list[str]:
     return [row["id"] for row in cursor.fetchall()]
 
 
-def delete_orphans(cursor, rows: list[dict]) -> int:
-    json_ids = [row["id"] for row in rows]
+def delete_orphans(cursor, json_ids: list[str]) -> int:
     orphan_ids = list_orphan_box_ids(cursor, json_ids)
     if orphan_ids:
         purge_user_refs_for_boxes(cursor, orphan_ids)
@@ -662,13 +677,16 @@ def main() -> int:
     args = parser.parse_args()
 
     entries = load_entries(args.json)
-    rows = build_box_rows(entries)
+    rows, skipped = build_box_rows(entries)
+    json_ids = [str(e["史略ID"]).strip() for e in entries]
 
     if args.dry_run:
         cats: dict[str, int] = {}
         for row in rows:
             cats[row["category_key"]] = cats.get(row["category_key"], 0) + 1
-        print(f"dry-run: 将导入 {len(rows)} 条史略到 historical_box")
+        print(f"dry-run: 将导入 {len(rows)} 条史略到 historical_box（索引共 {len(json_ids)} 条）")
+        if skipped:
+            print(f"跳过缺少年份: {len(skipped)} 条 → {', '.join(skipped)}")
         print("分类分布:", cats)
         return 0
 
@@ -721,7 +739,9 @@ def main() -> int:
             if reused_stats:
                 print("已清理复用 ID 子表/用户引用:", reused_stats)
             upserted = upsert_boxes(cursor, rows)
-            deleted = delete_orphans(cursor, rows)
+            deleted = delete_orphans(cursor, [str(e["史略ID"]).strip() for e in entries])
+            if skipped:
+                print(f"跳过缺少年份（未 upsert）: {len(skipped)} 条 → {', '.join(skipped)}")
             cursor.execute("SELECT COUNT(*) AS cnt FROM historical_box")
             final_count = cursor.fetchone()["cnt"]
             cursor.execute(

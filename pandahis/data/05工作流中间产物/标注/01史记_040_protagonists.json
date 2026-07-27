@@ -5,9 +5,24 @@
   "volume_type_guess": "世家",
   "protagonists": [
     {
+      "name": "楚熊绎",
+      "category": "君王",
+      "rationale": "《楚世家》叙事主轴：楚熊绎（君王）"
+    },
+    {
+      "name": "楚熊渠",
+      "category": "君王",
+      "rationale": "《楚世家》叙事主轴：楚熊渠（君王）"
+    },
+    {
       "name": "楚武王",
       "category": "君王",
       "rationale": "《楚世家》叙事主轴：楚武王（君王）"
+    },
+    {
+      "name": "楚文王",
+      "category": "君王",
+      "rationale": "《楚世家》叙事主轴：楚文王（君王）"
     },
     {
       "name": "楚成王",
@@ -20,14 +35,44 @@
       "rationale": "《楚世家》叙事主轴：楚庄王（君王）"
     },
     {
+      "name": "楚共王",
+      "category": "君王",
+      "rationale": "《楚世家》叙事主轴：楚共王（君王）"
+    },
+    {
+      "name": "楚灵王",
+      "category": "君王",
+      "rationale": "《楚世家》叙事主轴：楚灵王（君王）"
+    },
+    {
+      "name": "楚平王",
+      "category": "君王",
+      "rationale": "《楚世家》叙事主轴：楚平王（君王）"
+    },
+    {
       "name": "楚昭王",
       "category": "君王",
       "rationale": "《楚世家》叙事主轴：楚昭王（君王）"
     },
     {
+      "name": "楚惠王",
+      "category": "君王",
+      "rationale": "《楚世家》叙事主轴：楚惠王（君王）"
+    },
+    {
       "name": "楚怀王",
       "category": "君王",
       "rationale": "《楚世家》叙事主轴：楚怀王（君王）"
+    },
+    {
+      "name": "楚顷襄王",
+      "category": "君王",
+      "rationale": "《楚世家》叙事主轴：楚顷襄王（君王）"
+    },
+    {
+      "name": "楚考烈王",
+      "category": "君王",
+      "rationale": "《楚世家》叙事主轴：楚考烈王（君王）"
     }
   ],
   "excluded_kinds_hint": [

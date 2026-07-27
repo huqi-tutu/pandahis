@@ -1,0 +1,251 @@
+{
+  "dynasty": "西周",
+  "completed": [
+    {
+      "glbl": "GLBL_00004",
+      "name": "卫康叔",
+      "file": "卫康叔关系表.json",
+      "count": 17,
+      "verified_at": "2026-07-25T10:55Z"
+    },
+    {
+      "glbl": "GLBL_00008",
+      "name": "古公亶父",
+      "file": "古公亶父关系表.json",
+      "count": 7,
+      "verified_at": "2026-07-25T10:57Z"
+    },
+    {
+      "glbl": "GLBL_00009",
+      "name": "后稷",
+      "file": "后稷关系表.json",
+      "count": 16,
+      "verified_at": "2026-07-25T10:59Z"
+    },
+    {
+      "glbl": "GLBL_00015",
+      "name": "周公旦",
+      "file": "周公旦关系表.json",
+      "count": 25,
+      "verified_at": "2026-07-25T11:01Z"
+    },
+    {
+      "glbl": "GLBL_00017",
+      "name": "周厉王",
+      "file": "周厉王关系表.json",
+      "count": 9,
+      "verified_at": "2026-07-25T11:02Z"
+    },
+    {
+      "glbl": "GLBL_00021",
+      "name": "周宣王",
+      "file": "周宣王关系表.json",
+      "count": 5,
+      "verified_at": "2026-07-25T11:03Z"
+    },
+    {
+      "glbl": "GLBL_00023",
+      "name": "周幽王",
+      "file": "周幽王关系表.json",
+      "count": 13,
+      "verified_at": "2026-07-25T11:05Z"
+    },
+    {
+      "glbl": "GLBL_00025",
+      "name": "周康王",
+      "file": "周康王关系表.json",
+      "count": 3,
+      "verified_at": "2026-07-25T11:05Z"
+    },
+    {
+      "glbl": "GLBL_00028",
+      "name": "周成王",
+      "file": "周成王关系表.json",
+      "count": 14,
+      "verified_at": "2026-07-25T11:07Z"
+    },
+    {
+      "glbl": "GLBL_00030",
+      "name": "周文王",
+      "file": "周文王关系表.json",
+      "count": 31,
+      "verified_at": "2026-07-25T11:09Z"
+    },
+    {
+      "glbl": "GLBL_00035",
+      "name": "周武王",
+      "file": "周武王关系表.json",
+      "count": 27,
+      "verified_at": "2026-07-25T11:09Z"
+    },
+    {
+      "glbl": "GLBL_00038",
+      "name": "周穆王",
+      "file": "周穆王关系表.json",
+      "count": 9,
+      "verified_at": "2026-07-25T11:10Z"
+    },
+    {
+      "glbl": "GLBL_00050",
+      "name": "宋微子",
+      "file": "宋微子关系表.json",
+      "count": 11,
+      "verified_at": "2026-07-25T11:11Z"
+    },
+    {
+      "glbl": "GLBL_00087",
+      "name": "燕召公",
+      "file": "燕召公关系表.json",
+      "count": 3,
+      "verified_at": "2026-07-25T11:12Z"
+    },
+    {
+      "glbl": "GLBL_00128",
+      "name": "管叔鲜",
+      "file": "管叔鲜关系表.json",
+      "count": 16,
+      "verified_at": "2026-07-25T11:13Z"
+    },
+    {
+      "glbl": "GLBL_00136",
+      "name": "郑桓公",
+      "file": "郑桓公关系表.json",
+      "count": 6,
+      "verified_at": "2026-07-25T11:14Z"
+    },
+    {
+      "glbl": "GLBL_00222",
+      "name": "伯夷",
+      "file": "伯夷关系表.json",
+      "count": 3,
+      "verified_at": "2026-07-25T11:14Z"
+    },
+    {
+      "glbl": "GLBL_00701",
+      "name": "卫武公",
+      "file": "卫武公关系表.json",
+      "count": 6,
+      "verified_at": "2026-07-25T11:16Z"
+    },
+    {
+      "glbl": "GLBL_00747",
+      "name": "鲁公伯禽",
+      "file": "鲁公伯禽关系表.json",
+      "count": 7,
+      "verified_at": "2026-07-25T11:17Z"
+    },
+    {
+      "glbl": "GLBL_00756",
+      "name": "鲁武公",
+      "file": "鲁武公关系表.json",
+      "count": 8,
+      "verified_at": "2026-07-25T11:18Z"
+    },
+    {
+      "glbl": "GLBL_00802",
+      "name": "周懿王",
+      "file": "周懿王关系表.json",
+      "count": 3,
+      "verified_at": "2026-07-25T11:18Z"
+    },
+    {
+      "glbl": "GLBL_00803",
+      "name": "周孝王",
+      "file": "周孝王关系表.json",
+      "count": 6,
+      "verified_at": "2026-07-25T11:19Z"
+    },
+    {
+      "glbl": "GLBL_00804",
+      "name": "周夷王",
+      "file": "周夷王关系表.json",
+      "count": 7,
+      "verified_at": "2026-07-25T11:20Z"
+    },
+    {
+      "glbl": "GLBL_00805",
+      "name": "齐太公",
+      "file": "齐太公关系表.json",
+      "count": 8,
+      "verified_at": "2026-07-25T11:22Z"
+    },
+    {
+      "glbl": "GLBL_00806",
+      "name": "晋唐叔虞",
+      "file": "晋唐叔虞关系表.json",
+      "count": 4,
+      "verified_at": "2026-07-25T11:23Z"
+    },
+    {
+      "glbl": "GLBL_00807",
+      "name": "祭公谋父",
+      "file": "祭公谋父关系表.json",
+      "count": 2,
+      "verified_at": "2026-07-25T11:23Z"
+    },
+    {
+      "glbl": "GLBL_00808",
+      "name": "芮良夫",
+      "file": "芮良夫关系表.json",
+      "count": 2,
+      "verified_at": "2026-07-25T11:24Z"
+    },
+    {
+      "glbl": "GLBL_00809",
+      "name": "召穆公",
+      "file": "召穆公关系表.json",
+      "count": 7,
+      "verified_at": "2026-07-25T11:25Z"
+    },
+    {
+      "glbl": "GLBL_00810",
+      "name": "仲山甫",
+      "file": "仲山甫关系表.json",
+      "count": 2,
+      "verified_at": "2026-07-25T11:25Z"
+    },
+    {
+      "glbl": "GLBL_00811",
+      "name": "史籀",
+      "file": "史籀关系表.json",
+      "count": 1,
+      "verified_at": "2026-07-25T11:25Z"
+    },
+    {
+      "glbl": "GLBL_00812",
+      "name": "虢公长父",
+      "file": "虢公长父关系表.json",
+      "count": 3,
+      "verified_at": "2026-07-25T11:26Z"
+    },
+    {
+      "glbl": "GLBL_00813",
+      "name": "尹吉甫",
+      "file": "尹吉甫关系表.json",
+      "count": 5,
+      "verified_at": "2026-07-25T11:26Z"
+    },
+    {
+      "glbl": "GLBL_00816",
+      "name": "周昭王",
+      "file": "周昭王关系表.json",
+      "count": 4,
+      "verified_at": "2026-07-25T11:27Z"
+    },
+    {
+      "glbl": "GLBL_00817",
+      "name": "周共王",
+      "file": "周共王关系表.json",
+      "count": 4,
+      "verified_at": "2026-07-25T11:28Z"
+    },
+    {
+      "glbl": "GLBL_00818",
+      "name": "季历",
+      "file": "季历关系表.json",
+      "count": 17,
+      "verified_at": "2026-07-25T11:30Z"
+    }
+  ],
+  "updated_at": "2026-07-25T11:30:41.557284+00:00"
+}

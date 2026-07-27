@@ -55,7 +55,8 @@ _PHASE_PREAMBLE: Dict[str, str] = {
     ),
     "draft_mother": (
         "【本阶段】母本顺译（Phase 1）：只写母本 P 段顺译，禁止引用母本以外的著作。"
-        "允许《史记》 framing；dense 句须「引母本原词 + 白话释词」逐项展开；"
+        "允许《史记》 framing；叙事句以白话顺译为主，专名与数字自然写入正文；"
+        "「」用于完整史料摘句、人物对话与并列句群。"
         "按 plan 母本逐句清单 M 编号顺序推进。"
     ),
     "draft_enrich": (

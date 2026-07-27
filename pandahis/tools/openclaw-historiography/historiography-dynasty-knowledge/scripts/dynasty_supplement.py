@@ -42,7 +42,8 @@ import detail_review as dr  # noqa: E402
 import detail_fix as dfix  # noqa: E402
 import coverage_check as cc  # noqa: E402
 import review_warns_summary as rws  # noqa: E402
-import dynasty_supplement_lib as dkl  # noqa: E402
+import dynasty_supplement_lib as dkl
+import omission_prompt_report as opr  # noqa: E402
 import wikipedia_client as wiki  # noqa: E402
 
 HISTOGRAPH_ROOT = get_histograph_root()
@@ -69,6 +70,7 @@ STEPS = (
     "candidates-lunzhu",
     "candidates-renwu",
     "export-review",
+    "export-omission-prompt",
     "fill-shilue",
     "fill-dianzhi",
     "fill-lunzhu",
@@ -492,6 +494,9 @@ def run_candidates_renwu(
     payload["generated_at"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     save_json(paths["candidates"], payload)
     _log(f"✅ 人物候选已写入 {paths['candidates']}")
+    maybe_export_omission_prompt(
+        context, paths, phase="candidates", trigger_step="candidates-renwu", dry_run=dry_run
+    )
 
 
 def filter_renwu_duplicates(
@@ -710,6 +715,9 @@ def run_compose_pending(
         run_compose_detail(paths, eid, dry_run=False)
     if not dry_run:
         _log(f"✅ compose-pending 完成（{len(pending)} 条）")
+        maybe_export_omission_prompt(
+            context, paths, phase="details", trigger_step="compose-pending", dry_run=False
+        )
 
 
 def spawn_background(args: list[str], paths: dict[str, Path], label: str) -> None:
@@ -973,7 +981,7 @@ def compose_detail_prompt(
 
 ## 输出格式（硬性格式，违反则解析失败）
 - **仅**输出上述 JSON；`翻译详情` 值为整篇正文（含换行时用 \\n，或写成单行）
-- **段与段之间必须用 \\n\\n 空行分隔**（单 \\n 不算分段，会导致 paragraph_count 校验失败）
+- **段与段之间必须用 \\n\\n 空行分隔**（单 \\n 不算分段）
 - JSON 字符串内**禁止** ASCII 双引号 `"`（会破坏解析）；史料原文用「」、术语强调亦用「」或不用引号
 - 禁止在 JSON 外写「好的/如下/说明」等前缀后缀
 
@@ -991,7 +999,6 @@ def compose_detail_prompt(
 - 正文（不含开篇引入、不含参考著作）字数不得低于 **{floor}** 字
 - **事实底稿**：{fact_source} 为叙事主体；不得在未授权材料处新增硬史实
 - 起承转合齐全；开篇引入 100-200 字（独立一段）
-- 段落数：P0≥7段、P1≥5段（均含开篇引入）
 - 文末 *参考著作：* 须包含：**索引「主要史料出处」** + **正文实际引用的全部《书名》**（compose 落盘时会自动合并；**禁止**手写与正文卷篇矛盾的参考书目）
 - **引用 ↔ 参考著作双端一致**：正文出现《书名·卷篇》时，文末须**同名同卷**；改正文典籍名须同步改参考著作（fix-detail 亦同；fix 后会按正文重合并参考书目）
 - **史料原文 + 译述**（对齐一期翻译详录）：经典句、金句、异说原文须 `《书名》…「原文」——白话译述`；母本短句对话用 `某说：「原文」——译述`（禁止 `「"…"」`）；长篇誓词可全白话弯引号；**禁止**《书名》载/记/曰 后用弯引号标史料原文
@@ -1036,8 +1043,46 @@ def output_paths(dynasty_name: str) -> dict[str, Path]:
         "source_graph_dir": SOURCE_GRAPH_DIR,
         "approval": WORK_DIR / f"{slug}_人审批准.json",
         "review_md": WORK_DIR / f"{slug}_人审确认表.md",
+        "omission_prompt": WORK_DIR / f"{slug}_遗漏审阅提示词.md",
         "logs_dir": WORK_DIR / "logs",
     }
+
+
+def maybe_export_omission_prompt(
+    context: dict[str, Any],
+    paths: dict[str, Path],
+    *,
+    phase: str = "auto",
+    trigger_step: str = "",
+    dry_run: bool = False,
+) -> None:
+    """各生成步骤结束后自动产出可复制到其他大模型的查漏提示词。"""
+    if dry_run:
+        return
+    out = opr.write_omission_prompt_report(
+        context,
+        paths,
+        histograph_root=HISTOGRAPH_ROOT,
+        phase=phase,
+        trigger_step=trigger_step,
+    )
+    _log(f"📋 遗漏审阅提示词 → {out}")
+
+
+def run_export_omission_prompt(
+    context: dict[str, Any],
+    paths: dict[str, Path],
+    *,
+    phase: str = "auto",
+    trigger_step: str = "",
+) -> None:
+    maybe_export_omission_prompt(
+        context,
+        paths,
+        phase=phase,
+        trigger_step=trigger_step or "export-omission-prompt",
+        dry_run=False,
+    )
 
 
 def _default_candidates_dict() -> dict[str, list]:
@@ -1099,6 +1144,9 @@ def run_research(context: dict[str, Any], paths: dict[str, Path], *, dry_run: bo
         raise RuntimeError(f"研究报告过短: {len(text)} 字")
     paths["research"].write_text(text + "\n", encoding="utf-8")
     _log(f"✅ 研究报告: {paths['research']} ({len(text)} 字)")
+    maybe_export_omission_prompt(
+        context, paths, phase="research", trigger_step="research", dry_run=dry_run
+    )
 
 
 def run_candidates_one(
@@ -1130,6 +1178,13 @@ def run_candidates_one(
     payload["generated_at"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     save_json(paths["candidates"], payload)
     _log(f"✅ {category} 候选 {len(rows)} 条 → {paths['candidates']}")
+    maybe_export_omission_prompt(
+        context,
+        paths,
+        phase="candidates",
+        trigger_step=f"candidates-{CATEGORY_STEP_SUFFIX[category]}",
+        dry_run=dry_run,
+    )
 
 
 def _filled_names(entries_doc: dict[str, Any], category: str) -> set[str]:
@@ -1204,6 +1259,13 @@ def run_fill_category(
 
     if not dry_run:
         _log(f"✅ fill-{CATEGORY_STEP_SUFFIX[category]} 完成 → {paths['entries']}")
+        maybe_export_omission_prompt(
+            context,
+            paths,
+            phase="entries",
+            trigger_step=f"fill-{CATEGORY_STEP_SUFFIX[category]}",
+            dry_run=False,
+        )
 
 
 def _renwu_done_names(entries_doc: dict[str, Any]) -> set[str]:
@@ -1291,6 +1353,9 @@ def run_fill_renwu(
     if dry_run:
         return
     _log(f"✅ fill-renwu 完成 {filled} 条 → {paths['entries_renwu']}")
+    maybe_export_omission_prompt(
+        context, paths, phase="entries", trigger_step="fill-renwu", dry_run=False
+    )
 
 
 def resolve_emperor(name: str, emperors: list[dict[str, Any]]) -> dict[str, str] | None:
@@ -2586,7 +2651,8 @@ def gate_validate_person_entries(
 
         canon = alias_index.get(name) or dkl.normalize_person_name(name, alias_map)
         if canon in phase1_canonicals or name in phase1_canonicals:
-            issues.append(f"[{eid}] {name} 与一期已标注人物重复（含别名）")
+            if not dkl.is_dynasty_supplement_entry(e):
+                issues.append(f"[{eid}] {name} 与一期已标注人物重复（含别名）")
         if canon in seen_canonical:
             issues.append(
                 f"[{eid}] {name} 与本批 {seen_canonical[canon]} 为同一人（别名重复）"
@@ -2605,7 +2671,8 @@ def gate_validate_person_entries(
         if isinstance(start_year, int) and isinstance(end_year, int):
             lo, hi = min(start_year, end_year), max(start_year, end_year)
             if cat == "君王" and start_year == end_year:
-                issues.append(f"[{eid}] {name} 君王开始年=结束年，疑为误标")
+                if not dkl.is_dynasty_supplement_entry(e):
+                    issues.append(f"[{eid}] {name} 君王开始年=结束年，疑为误标")
             if isinstance(peak_year, int) and (peak_year < lo or peak_year > hi):
                 issues.append(
                     f"[{eid}] {name} 峰值年 {peak_year} 不在 [{lo}, {hi}]"
@@ -2928,6 +2995,12 @@ def main() -> int:
         help="export-review 阶段：candidates=候选清单；entries=已产出索引待写详情",
     )
     parser.add_argument(
+        "--omission-phase",
+        choices=("auto", "research", "candidates", "entries", "details"),
+        default="auto",
+        help="export-omission-prompt 审阅阶段；各生成步骤结束后自动导出时用 auto",
+    )
+    parser.add_argument(
         "--skip-verify",
         action="store_true",
         help="compose-detail 落盘后跳过 verify-detail（仅调试）",
@@ -3033,6 +3106,20 @@ def main() -> int:
         run_research(context, paths, dry_run=args.dry_run)
     elif step == "export-review":
         run_export_review(context, paths, phase=args.review_phase)
+        maybe_export_omission_prompt(
+            context,
+            paths,
+            phase=args.omission_phase,
+            trigger_step=f"export-review({args.review_phase})",
+            dry_run=args.dry_run,
+        )
+    elif step == "export-omission-prompt":
+        run_export_omission_prompt(
+            context,
+            paths,
+            phase=args.omission_phase,
+            trigger_step="export-omission-prompt",
+        )
     elif step == "candidates-renwu":
         run_candidates_renwu(context, paths, dry_run=args.dry_run)
     elif step == "fill-renwu":

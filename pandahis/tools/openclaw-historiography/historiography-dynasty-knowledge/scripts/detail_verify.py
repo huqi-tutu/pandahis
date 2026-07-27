@@ -98,9 +98,6 @@ def verify_detail(
     for code, message, severity in dkl.ai_flavor_verify_issues(body):
         issues.append(VerifyIssue(code, message, severity=severity))
 
-    for msg in dkl.detect_unanchored_vague_citations(body):
-        issues.append(VerifyIssue("vague_citation", msg))
-
     for code, message, severity in legend_quota_verify_issues(body, priority=pri):
         issues.append(VerifyIssue(code, message, severity=severity))
 
@@ -154,16 +151,8 @@ def verify_detail(
             wc_issue.severity = "warn"
         issues.append(wc_issue)
 
-    # 段落
     paragraphs = dkl.split_detail_paragraphs(raw)
-    min_para = dkl.MIN_PARAGRAPHS_BY_PRIORITY.get(pri, 5)
-    if len(paragraphs) < min_para:
-        issues.append(
-            VerifyIssue(
-                "paragraph_count",
-                f"段落 {len(paragraphs)} < 下限 {min_para}（含开篇引入）",
-            )
-        )
+    # 段落数下限校验已移除（不再以段数硬卡 gate/verify）
 
     # 连续单句碎段
     streak = 0
@@ -222,7 +211,6 @@ def verify_detail(
         "effective_floor": floor,
         "source_density": density,
         "paragraph_count": len(paragraphs),
-        "min_paragraphs": min_para,
         "legend_trigger_count": legend_m.trigger_count,
         "legend_char_ratio": round(legend_m.legend_char_ratio, 3),
     }

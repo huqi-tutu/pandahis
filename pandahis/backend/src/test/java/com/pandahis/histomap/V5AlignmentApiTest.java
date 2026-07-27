@@ -1,6 +1,9 @@
 package com.pandahis.histomap;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -32,6 +35,55 @@ class V5AlignmentApiTest {
   @BeforeEach
   void cleanHomeMatrixState() {
     jdbcTemplate.update("DELETE FROM user_home_matrix_state WHERE user_id=1");
+    jdbcTemplate.update("DELETE FROM user_box_tab_read_ledger WHERE user_id=1");
+    jdbcTemplate.update("UPDATE app_user SET read_balance=3 WHERE id=1");
+  }
+
+  @Test
+  void anonymousOriginalRef_isPublicAndContainsData() throws Exception {
+    mockMvc.perform(get("/boxes/GLBL_01079/original-ref"))
+        .andExpect(status().isOk())
+        .andExpect(jsonPath("$.code").value("OK"))
+        .andExpect(jsonPath("$.data.originalRef").isNotEmpty());
+  }
+
+  @Test
+  void anonymousHeader_reportsOriginalUnlocked() throws Exception {
+    mockMvc.perform(get("/boxes/GLBL_01079"))
+        .andExpect(status().isOk())
+        .andExpect(jsonPath("$.data.access.tabs.original.locked").value(false));
+  }
+
+  @Test
+  void anonymousFavoriteEndpoints_requireAuthentication() throws Exception {
+    mockMvc.perform(post("/favorites/boxes/GLBL_01079"))
+        .andExpect(status().isUnauthorized());
+    mockMvc.perform(delete("/favorites/boxes/GLBL_01079"))
+        .andExpect(status().isUnauthorized());
+    mockMvc.perform(get("/favorites/boxes"))
+        .andExpect(status().isUnauthorized());
+  }
+
+  @Test
+  void authenticatedOriginalRef_doesNotConsumeReadBalanceOrCreateLedger() throws Exception {
+    Integer balanceBefore = jdbcTemplate.queryForObject(
+        "SELECT read_balance FROM app_user WHERE id=1", Integer.class);
+    Integer ledgerBefore = jdbcTemplate.queryForObject(
+        "SELECT COUNT(1) FROM user_box_tab_read_ledger WHERE user_id=1 AND box_id=? AND tab_key='original'",
+        Integer.class,
+        "GLBL_01079");
+
+    mockMvc.perform(get("/boxes/GLBL_01079/original-ref")
+            .header(HttpHeaders.AUTHORIZATION, AUTH))
+        .andExpect(status().isOk())
+        .andExpect(jsonPath("$.data.originalRef").isNotEmpty());
+
+    assertEquals(balanceBefore, jdbcTemplate.queryForObject(
+        "SELECT read_balance FROM app_user WHERE id=1", Integer.class));
+    assertEquals(ledgerBefore, jdbcTemplate.queryForObject(
+        "SELECT COUNT(1) FROM user_box_tab_read_ledger WHERE user_id=1 AND box_id=? AND tab_key='original'",
+        Integer.class,
+        "GLBL_01079"));
   }
 
   @Test

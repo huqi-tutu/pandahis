@@ -12,6 +12,12 @@ $page-bg: #f8f6f2;
 $card-bg: #ffffff;
 $divider: #edeae6;
 
+/* 层级阴影（与 border 互斥，卡片/浮层优先用阴影） */
+$shadow-card: 0 2rpx 8rpx rgba(74, 63, 63, 0.04);
+$shadow-elevated: 0 8rpx 24rpx rgba(74, 63, 63, 0.06);
+$shadow-bar: 0 -4rpx 16rpx rgba(74, 63, 63, 0.04);
+$shadow-nav: 0 2rpx 8rpx rgba(74, 63, 63, 0.04);
+
 $inactive-bg: #eeecea;
 $inactive-text: #9a9a9a;
 $tab-inactive-text: #9a9690;
@@ -119,6 +125,10 @@ page {
   --page-bg: #{$page-bg};
   --card-bg: #{$card-bg};
   --divider: #{$divider};
+  --shadow-card: #{$shadow-card};
+  --shadow-elevated: #{$shadow-elevated};
+  --shadow-bar: #{$shadow-bar};
+  --shadow-nav: #{$shadow-nav};
   --text-title: #{$text-title};
   --text-body: #{$text-body};
   --text-caption: #{$text-caption};

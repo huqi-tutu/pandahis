@@ -1,15 +1,10 @@
-"""前置引入区边界（计分、去重共用同一套规则）。"""
+"""前置引入区边界（仅用于母本覆盖计分时剔除首段，不作质检硬拦）。"""
 
 from __future__ import annotations
 
-import re
+from typing import Any, Dict
 
-# 过渡标记：命中则当前段视为引入末段。勿用「原文如下」——详情均为白话译文。
-INTRO_BREAK = re.compile(
-    r"让我们|下面|来看一看|按下.*顺序|如何记载|写起[。.]|《[^》]+》[^。]{0,40}(?:载|写道|记)[：:]?"
-)
-
-_MAX_INTRO_PARAS = 3
+_INTRO_TIER_REQUIRES = frozenset({"短引入", "框架引入", "一句过渡"})
 
 
 def _body_paragraphs(detail: str) -> list[str]:
@@ -17,37 +12,43 @@ def _body_paragraphs(detail: str) -> list[str]:
     return [p.strip() for p in body.split("\n\n") if p.strip()]
 
 
-# 无过渡标记时：仅当首段极短且后接正文，才视为单独引入（母本顺译首段往往较长，不剔除）
-_SHORT_STANDALONE_INTRO_MAX = 100
+def _tier_expects_intro(plan: Dict[str, Any] | None) -> bool:
+    if not plan:
+        return False
+    tier = str(plan.get("前置引入档位") or "")
+    return tier in _INTRO_TIER_REQUIRES
 
 
-def intro_paragraph_count(detail: str, *, max_paras: int = _MAX_INTRO_PARAS) -> int:
-    """引入区占前几段；无过渡标记时不剔除（母本顺译等直入叙事）。"""
+def intro_paragraph_count(
+    detail: str,
+    *,
+    max_paras: int = 1,
+    plan: Dict[str, Any] | None = None,
+) -> int:
+    """引入区 = 正文 ≥2 段时的首段（供覆盖计分剔除；不依赖过渡句式）。"""
+    del max_paras  # 固定只认首段，避免多段误判
     paras = _body_paragraphs(detail)
     if not paras:
         return 0
-    for i, p in enumerate(paras[:max_paras]):
-        if INTRO_BREAK.search(p):
-            return i + 1
-    if len(paras) >= 2 and len(paras[0]) <= _SHORT_STANDALONE_INTRO_MAX:
+    if _tier_expects_intro(plan) and len(paras) >= 2:
         return 1
     return 0
 
 
-def intro_zone_text(detail: str) -> str:
-    """引入区正文（用于字数、去重检测）。"""
-    n = intro_paragraph_count(detail)
+def intro_zone_text(detail: str, plan: Dict[str, Any] | None = None) -> str:
+    """引入区正文（不计入母本覆盖）。"""
+    n = intro_paragraph_count(detail, plan=plan)
     if n <= 0:
         return ""
     return "\n\n".join(_body_paragraphs(detail)[:n])
 
 
-def body_without_intro_zone(detail: str) -> str:
+def body_without_intro_zone(detail: str, plan: Dict[str, Any] | None = None) -> str:
     """剔除前置引入区后的正文（母本覆盖计分域）。"""
     paras = _body_paragraphs(detail)
     if not paras:
         return detail.strip()
-    n = intro_paragraph_count(detail)
+    n = intro_paragraph_count(detail, plan=plan)
     if n <= 0 or n >= len(paras):
         return "\n\n".join(paras).strip() if n <= 0 else ""
     return "\n\n".join(paras[n:]).strip()

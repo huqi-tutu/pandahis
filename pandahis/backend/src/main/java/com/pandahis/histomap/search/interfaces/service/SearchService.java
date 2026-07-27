@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -20,10 +21,12 @@ public class SearchService {
   }
 
   public SearchSuggestDTO suggest(Long userId) {
-    List<SearchSuggestDTO.HotKeyword> hot = jdbcTemplate.query(
-        "SELECT keyword,is_hot FROM search_hot_keyword WHERE status=1 ORDER BY sort_order ASC LIMIT 50",
+    // 多取一些再按 keyword 去重：表无唯一约束时，重复灌入种子数据会导致同词多条
+    List<SearchSuggestDTO.HotKeyword> hotRaw = jdbcTemplate.query(
+        "SELECT keyword,is_hot FROM search_hot_keyword WHERE status=1 ORDER BY sort_order ASC, id ASC LIMIT 200",
         (rs, rowNum) -> new SearchSuggestDTO.HotKeyword(rs.getString("keyword"), rs.getInt("is_hot") == 1)
     );
+    List<SearchSuggestDTO.HotKeyword> hot = dedupeHotKeywords(hotRaw, 50);
 
     List<SearchSuggestDTO.HistoryKeyword> history = new ArrayList<>();
     if (userId != null) {
@@ -38,6 +41,21 @@ public class SearchService {
     }
 
     return new SearchSuggestDTO(hot, history);
+  }
+
+  /** 保留首次出现（sort_order 更靠前），最多 limit 条 */
+  static List<SearchSuggestDTO.HotKeyword> dedupeHotKeywords(
+      List<SearchSuggestDTO.HotKeyword> raw, int limit
+  ) {
+    Map<String, SearchSuggestDTO.HotKeyword> uniq = new LinkedHashMap<>();
+    for (SearchSuggestDTO.HotKeyword item : raw) {
+      if (item == null || item.keyword() == null) continue;
+      String key = item.keyword().trim();
+      if (key.isEmpty() || uniq.containsKey(key)) continue;
+      uniq.put(key, new SearchSuggestDTO.HotKeyword(key, item.isHot()));
+      if (uniq.size() >= limit) break;
+    }
+    return new ArrayList<>(uniq.values());
   }
 
   public SearchResultDTO search(Long userId, String q, int page, int pageSize) {

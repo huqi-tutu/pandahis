@@ -110,25 +110,35 @@
 
    <!-- Tab 1：关系图谱 -->
    <view wx:if="{{showRelationsTab && tab === 'relations'}}" class="rel-tab-body">
-    <view wx:if="{{graphErr}}" class="tab-empty">
-     <text class="tab-empty-text">{{graphErr}}</text>
+    <view wx:if="{{graphPhase === 'error' || graphErr}}" class="tab-empty">
+     <text class="tab-empty-text">{{graphErr || '加载失败'}}</text>
     </view>
-    <view wx:elif="{{graphReady && !graph.nodes.length}}" class="tab-empty">
+    <view wx:elif="{{graphPhase === 'ready' && graphNodeCount === 0}}" class="tab-empty">
      <text class="tab-empty-text">暂无关系数据</text>
     </view>
-    <view wx:elif="{{graphReady}}" class="rel-graph-wrap">
+    <view wx:elif="{{graphPhase === 'ready'}}" class="rel-graph-wrap">
      <view class="rel-graph-viewport" style="height: {{graphCanvasH}}px;">
-      <relation-graph-canvas
-       wx:if="{{graph.nodes.length}}"
+      <f6-relation-graph
+       wx:if="{{graphNodeCount > 0}}"
        id="bdRelationGraph"
        class="rel-graph-canvas"
        graph="{{graph}}"
+       viewport-height="{{graphCanvasH}}"
        bind:nodeTap="onGraphNodeTap"
        bind:zoomChange="onGraphZoomChange"
+       bind:renderHint="onGraphRenderHint"
       />
+      <view wx:if="{{graphRenderHint}}" class="tab-empty rel-graph-hint">
+       <text class="tab-empty-text">{{graphRenderHint}}</text>
+      </view>
      </view>
     </view>
-    <view wx:else class="tab-empty">
+    <view wx:elif="{{graphPhase === 'loading'}}" class="tab-empty tab-empty--loading">
+     <view class="tab-empty-loading">
+      <text class="tab-empty-loading-dot">·</text>
+      <text class="tab-empty-loading-dot">·</text>
+      <text class="tab-empty-loading-dot">·</text>
+     </view>
      <text class="tab-empty-text">加载中…</text>
     </view>
    </view>
@@ -145,21 +155,23 @@
      wx:for="{{critiques}}"
      wx:key="_k"
      wx:for-index="idx"
-     class="crit-card"
+     class="ref-card"
      bindtap="onCritiqueTap"
      data-idx="{{idx}}">
-     <view class="crit-head">
-      <view class="crit-avatar" style="background: {{critColors[idx % 6]}};">
-       <text class="crit-avatar-text">{{item.avatarLetter}}</text>
+     <view class="ref-head">
+      <view class="ref-thumb ref-thumb--avatar" style="background: {{critColors[idx % 6]}};">
+       <text class="ref-thumb-text">{{item.avatarLetter}}</text>
       </view>
-      <view class="crit-meta">
-       <text class="crit-author">{{item.cardTitle}}</text>
-       <text class="crit-era muted">{{item.cardMeta}}</text>
+      <view class="ref-meta">
+       <text class="ref-title">{{item.cardTitle}}</text>
+       <view wx:if="{{item.cardMeta}}" class="ref-sub">
+        <text class="ref-sub-mark accent">◎</text>
+        <text class="ref-sub-text muted"> {{item.cardMeta}}</text>
+       </view>
       </view>
       <text class="chev muted">›</text>
      </view>
-     <view class="crit-divider"></view>
-     <text class="crit-body">{{item.cardSummary}}</text>
+     <text wx:if="{{item.cardSummary}}" class="ref-body">{{item.cardSummary}}</text>
     </view>
     <view wx:if="{{!critReady && !critErr}}" class="tab-empty">
      <text class="tab-empty-text">加载中…</text>
@@ -178,23 +190,24 @@
      wx:for="{{relics}}"
      wx:key="name"
      wx:for-index="ri"
-     class="relic-card card-paper"
+     class="ref-card"
      bindtap="onRelicTap"
      data-idx="{{ri}}">
-     <view class="relic-head">
-      <view class="relic-thumb muted">
-       <image wx:if="{{item.imageUrl}}" class="relic-thumb-img" src="{{item.imageUrl}}" mode="aspectFill" />
-       <text wx:else>{{item.thumbLabel}}</text>
+     <view class="ref-head">
+      <view class="ref-thumb ref-thumb--square muted">
+       <image wx:if="{{item.imageUrl}}" class="ref-thumb-img" src="{{item.imageUrl}}" mode="aspectFill" />
+       <text wx:else class="ref-thumb-label">{{item.thumbLabel}}</text>
       </view>
-      <view class="relic-info">
-       <view class="relic-name-row">
-        <text class="relic-name">{{item.name}}</text>
+      <view class="ref-meta">
+       <text class="ref-title">{{item.name}}</text>
+       <view wx:if="{{item.cardMeta || item.location || item.museum}}" class="ref-sub">
+        <text class="ref-sub-mark accent">◎</text>
+        <text class="ref-sub-text muted"> {{item.cardMeta || item.location || item.museum}}</text>
        </view>
-       <text class="relic-summary muted">{{item.summary}}</text>
-       <text class="relic-location accent">◎ {{item.location}}</text>
       </view>
       <text class="chev muted">›</text>
      </view>
+     <text wx:if="{{item.summary}}" class="ref-body">{{item.summary}}</text>
     </view>
     <view wx:if="{{!relicReady && !relicErr}}" class="tab-empty">
      <text class="tab-empty-text">加载中…</text>
@@ -203,16 +216,9 @@
 
    <view wx:if="{{!showRelationsTab || tab !== 'relations'}}" style="height: 96rpx;"></view>
   </scroll-view>
- </view>
+   </view>
 
-  <!-- 关系 Tab 缩放栏：百分比由 canvas 绘制到栏位中线区域，页面不 setData -->
-  <view wx:if="{{showRelationsTab && tab === 'relations' && graph.nodes.length}}" class="graph-zoom-bar">
-   <view class="graph-zoom-btn" bindtap="onGraphZoomOut">−</view>
-   <text class="graph-zoom-label">{{graphScaleLabel}}</text>
-   <view class="graph-zoom-btn" bindtap="onGraphZoomIn">+</view>
-  </view>
-
-
+  <!-- 缩放栏已移入 relation-graph-canvas 的 cover-view，避免被 canvas 原生层遮挡 -->
     <!-- 音频播放浮层 -->
   <view class="box-audio-overlay {{audioOpen ? 'box-audio-overlay--open' : ''}}" hidden="{{!audioOpen}}">
     <!-- 旋转封面 -->

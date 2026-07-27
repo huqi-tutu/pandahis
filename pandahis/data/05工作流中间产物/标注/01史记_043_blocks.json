@@ -2,6 +2,41 @@
   "total_paragraphs": 113,
   "excludes": [
     {
+      "paragraph_from": 1,
+      "paragraph_to": 18,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 44,
+      "paragraph_to": 45,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 47,
+      "paragraph_to": 53,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 77,
+      "paragraph_to": 89,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 91,
+      "paragraph_to": 91,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 104,
+      "paragraph_to": 105,
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph_from": 108,
+      "paragraph_to": 109,
+      "exclude_reason": "其他"
+    },
+    {
       "paragraph_from": 113,
       "paragraph_to": 113,
       "exclude_reason": "太史公曰"
@@ -9,21 +44,63 @@
   ],
   "blocks": [
     {
+      "name": "赵简子",
+      "category": "君王",
+      "paragraph_from": 19,
+      "paragraph_to": 32
+    },
+    {
       "name": "赵襄子",
       "category": "君王",
-      "paragraph_from": 1,
-      "paragraph_to": 53
+      "paragraph_from": 33,
+      "paragraph_to": 38
+    },
+    {
+      "name": "赵献侯",
+      "category": "君王",
+      "paragraph_from": 39,
+      "paragraph_to": 40
+    },
+    {
+      "name": "赵烈侯",
+      "category": "君王",
+      "paragraph_from": 41,
+      "paragraph_to": 43
+    },
+    {
+      "name": "赵敬侯",
+      "category": "君王",
+      "paragraph_from": 46,
+      "paragraph_to": 46
     },
     {
       "name": "赵武灵王",
       "category": "君王",
       "paragraph_from": 54,
+      "paragraph_to": 76
+    },
+    {
+      "name": "赵惠文王",
+      "category": "君王",
+      "paragraph_from": 90,
       "paragraph_to": 90
     },
     {
       "name": "赵孝成王",
       "category": "君王",
-      "paragraph_from": 91,
+      "paragraph_from": 92,
+      "paragraph_to": 103
+    },
+    {
+      "name": "赵悼襄王",
+      "category": "君王",
+      "paragraph_from": 106,
+      "paragraph_to": 107
+    },
+    {
+      "name": "赵幽缪王",
+      "category": "君王",
+      "paragraph_from": 110,
       "paragraph_to": 112
     }
   ]

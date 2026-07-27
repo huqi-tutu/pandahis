@@ -1,0 +1,211 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00785",
+  "写作结构": "正史叙述（以《史记·周本纪》《秦本纪》为核心）留由翻译详录处理；拓展认知侧重史外异说，以《竹书纪年》的诸侯会送、《国语》的西周覆灭背景、《左传》的追述展开，并附《诗经》的东迁情感遗迹；凡镐京残破、东迁决策、封秦等叙事，均依文献可征者落笔，不铺陈途程细节与君臣对白。",
+  "候选著作": [
+    {
+      "出处": "《史记·周本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "平王东迁的最主要系统记载，详记幽王之死、平王立与东迁洛邑的决策及过程。",
+      "检索词": "平王东迁雒邑",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·秦本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记秦襄公将兵救周、护送平王东迁，因功封诸侯，赐岐西之地，为秦国始封之关键叙事。",
+      "检索词": "襄公以兵送周平王",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《竹书纪年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "出土文献记平王东迁事，载有晋、郑、卫、秦等诸侯会师护送，与《史记》互有详略，可作异说。",
+      "检索词": "平王东迁洛邑",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    },
+    {
+      "出处": "《国语·郑语》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "郑桓公与史伯论天下兴亡，预言西周将灭、郑国东迁，为平王东迁提供前因与列国动向背景。",
+      "检索词": "桓公为司徒 王室将卑",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《国语·周语上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记幽王嬖爱褒姒、废申后与宜臼，致申侯与犬戎攻杀幽王，直接关联平王被立与东迁缘起。",
+      "检索词": "幽王伐有褒 褒姒",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《左传·昭公二十六年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "王子朝奔楚告诸侯书中追述“平王东迁，晋郑是依”，提及东迁后周室依仗诸侯之格局。",
+      "检索词": "平王东迁 晋郑是依",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《诗经·王风·黍离》",
+      "tier": "先秦文献",
+      "pool": "legend",
+      "与本主题关系": "毛诗序谓周大夫行役至宗周，见故宗庙宫室尽为禾黍，闵周室之颠覆；虽不直接记事，却折射东迁后的故都情境。",
+      "检索词": "黍离 彼黍离离",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "晋人皇甫谧整合先秦汉晋说，叙平王元年东迁洛邑，可助勾勒后世对东迁的认知传承，但多衍同《史记》。",
+      "检索词": "平王元年 东徙洛邑",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "legend 池最多 1 条采用，已自动关闭"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·周本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "平王东迁的最主要系统记载，详记幽王之死、平王立与东迁洛邑的决策及过程。",
+      "检索词": "平王东迁雒邑",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·秦本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记秦襄公将兵救周、护送平王东迁，因功封诸侯，赐岐西之地，为秦国始封之关键叙事。",
+      "检索词": "襄公以兵送周平王",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《竹书纪年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "出土文献记平王东迁事，载有晋、郑、卫、秦等诸侯会师护送，与《史记》互有详略，可作异说。",
+      "检索词": "平王东迁洛邑",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    },
+    {
+      "出处": "《国语·郑语》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "郑桓公与史伯论天下兴亡，预言西周将灭、郑国东迁，为平王东迁提供前因与列国动向背景。",
+      "检索词": "桓公为司徒 王室将卑",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《国语·周语上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记幽王嬖爱褒姒、废申后与宜臼，致申侯与犬戎攻杀幽王，直接关联平王被立与东迁缘起。",
+      "检索词": "幽王伐有褒 褒姒",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《左传·昭公二十六年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "王子朝奔楚告诸侯书中追述“平王东迁，晋郑是依”，提及东迁后周室依仗诸侯之格局。",
+      "检索词": "平王东迁 晋郑是依",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《诗经·王风·黍离》",
+      "tier": "先秦文献",
+      "pool": "legend",
+      "与本主题关系": "毛诗序谓周大夫行役至宗周，见故宗庙宫室尽为禾黍，闵周室之颠覆；虽不直接记事，却折射东迁后的故都情境。",
+      "检索词": "黍离 彼黍离离",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "晋人皇甫谧整合先秦汉晋说，叙平王元年东迁洛邑，可助勾勒后世对东迁的认知传承，但多衍同《史记》。",
+      "检索词": "平王元年 东徙洛邑",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "legend 池最多 1 条采用，已自动关闭"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 5,
+    "C_excluded": 3,
+    "overall": "B"
+  }
+}

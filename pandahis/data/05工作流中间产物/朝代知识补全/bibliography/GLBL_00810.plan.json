@@ -1,0 +1,155 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00810",
+  "写作结构": "以《诗经·大雅·烝民》《国语·周语上》为基础叙事，展现仲山甫德行、补衮及谏料民；《竹书纪年》可补入具体的筑城纪年（宣王七年）；《毛诗序》可作经注视角佐证；结尾以《潜夫论·志氏姓》追述樊姓始祖，仅作合段补充。正史《史记》载料民而未及仲山甫，不展开。",
+  "候选著作": [
+    {
+      "出处": "《诗经·大雅·烝民》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "全诗颂美仲山甫之德与功，包括受王命城东方、补衮职、柔嘉维则等，为最核心的原始记载",
+      "检索词": "烝民 仲山甫",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《国语·周语上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载仲山甫谏宣王料民，力主修德政而非苛求民数，是展现其谏臣品格的关键史料",
+      "检索词": "仲山父 谏料民",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《竹书纪年·卷下》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "明确系年于宣王七年命樊侯仲山甫城齐，为《烝民》所述筑城提供具体时间坐标",
+      "检索词": "仲山甫城齐",
+      "采用": true,
+      "原文摘句": "（宣王）七年，王命樊侯仲山甫城齐。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《毛诗·大雅·烝民》序",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "汉儒解经认为此诗乃尹吉甫美宣王任贤使能，从侧面佐证仲山甫为中兴贤臣的地位",
+      "检索词": "烝民 尹吉甫美宣王",
+      "采用": true,
+      "原文摘句": "《烝民》，尹吉甫美宣王也，任贤使能，周室中兴焉。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《潜夫论·志氏姓》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "记述樊氏为仲山甫之后，反映后世将其封于樊并尊为樊姓始祖的追述",
+      "检索词": "樊氏 仲山甫之后",
+      "采用": true,
+      "原文摘句": "樊氏，仲山甫之后。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·周本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "载有宣王料民事件，但未提及仲山甫谏言，可与《国语》记载对照，不用于拓展摘句",
+      "检索词": "宣王料民",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《诗经·大雅·烝民》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "全诗颂美仲山甫之德与功，包括受王命城东方、补衮职、柔嘉维则等，为最核心的原始记载",
+      "检索词": "烝民 仲山甫",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《国语·周语上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载仲山甫谏宣王料民，力主修德政而非苛求民数，是展现其谏臣品格的关键史料",
+      "检索词": "仲山父 谏料民",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《竹书纪年·卷下》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "明确系年于宣王七年命樊侯仲山甫城齐，为《烝民》所述筑城提供具体时间坐标",
+      "检索词": "仲山甫城齐",
+      "采用": true,
+      "原文摘句": "（宣王）七年，王命樊侯仲山甫城齐。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《毛诗·大雅·烝民》序",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "汉儒解经认为此诗乃尹吉甫美宣王任贤使能，从侧面佐证仲山甫为中兴贤臣的地位",
+      "检索词": "烝民 尹吉甫美宣王",
+      "采用": true,
+      "原文摘句": "《烝民》，尹吉甫美宣王也，任贤使能，周室中兴焉。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·周本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "载有宣王料民事件，但未提及仲山甫谏言，可与《国语》记载对照，不用于拓展摘句",
+      "检索词": "宣王料民",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《潜夫论·志氏姓》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "记述樊氏为仲山甫之后，反映后世将其封于樊并尊为樊姓始祖的追述",
+      "检索词": "樊氏 仲山甫之后",
+      "采用": true,
+      "原文摘句": "樊氏，仲山甫之后。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 3,
+    "C_excluded": 3,
+    "overall": "B"
+  }
+}

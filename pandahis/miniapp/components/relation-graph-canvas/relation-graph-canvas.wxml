@@ -8,5 +8,10 @@
     bindtouchend="onTouchEnd"
     bindtouchcancel="onTouchEnd"
   ></canvas>
+  <cover-view wx:if="{{!hint}}" class="zoom-bar">
+    <cover-view class="zoom-btn" bindtap="onZoomOutTap">−</cover-view>
+    <cover-view class="zoom-label">{{scaleLabel}}</cover-view>
+    <cover-view class="zoom-btn" bindtap="onZoomInTap">+</cover-view>
+  </cover-view>
   <view wx:if="{{hint}}" class="hint text3">{{hint}}</view>
 </view>

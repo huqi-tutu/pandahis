@@ -1,0 +1,233 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00787",
+  "写作结构": "正史叙述（《史记·周本纪》）由翻译详录负责；拓展叙事先以《国语·周语上》为核心，引出料民与仲山父谏言，再以《诗经·小雅·六月》点明太原地理及军事背景，以《古本竹书纪年》交代千亩之战前因，用韦昭注训释“料”字。后世评论由《通典》收尾，揭示制度意义。全文避免编造具体操作步骤与对话细节。",
+  "候选著作": [
+    {
+      "出处": "《国语·周语上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "直接记载宣王于太原料民及仲山父劝谏全过程，为该事件的核心史料。",
+      "检索词": "料民于太原",
+      "采用": true,
+      "原文摘句": "宣王既丧南国之师，乃料民于太原。仲山父谏曰：‘民不可料也！……’王卒料之。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《诗经·小雅·六月》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "描述宣王伐猃狁至于太原，为料民提供地理与军事背景。",
+      "检索词": "薄伐猃狁 太原",
+      "采用": true,
+      "原文摘句": "薄伐猃狁，至于大原。文武吉甫，万邦为宪。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《古本竹书纪年·周纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载宣王三十九年千亩之战败于姜戎，为太原料民的直接前因。",
+      "检索词": "千亩 王师败逋",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    },
+    {
+      "出处": "《今本竹书纪年·卷下》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "同样记载千亩之战，可与古本互证，确定年份与战况。",
+      "检索词": "王师败绩 姜戎",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    },
+    {
+      "出处": "《国语》韦昭注",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "训释“料”为“数”，辅助理解料民即清查户口。",
+      "检索词": "料数也",
+      "采用": true,
+      "原文摘句": "韦昭注：‘料，数也。’",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·周本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史记载此事件，包含千亩之战及太原料民、仲山甫谏言。",
+      "检索词": "料民于太原",
+      "采用": false,
+      "material_tier": "C",
+      "snippet_verified": false
+    },
+    {
+      "出处": "《后汉书·西羌传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "综述宣王时期对姜戎等战事，引古本竹书纪年提及千亩之败。",
+      "检索词": "千亩 王师败绩",
+      "采用": false,
+      "material_tier": "C",
+      "snippet_verified": false
+    },
+    {
+      "出处": "《诗经·大雅·烝民》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "赞美仲山甫德行，助于了解谏言之臣，但未涉及料民事。",
+      "检索词": "仲山甫之德",
+      "采用": false,
+      "material_tier": "C",
+      "snippet_verified": false
+    },
+    {
+      "出处": "《通典·食货七》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "后世史家将宣王料民视为周代户口制度变化的节点加以评析。",
+      "检索词": "宣王料民",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《国语·周语上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "直接记载宣王于太原料民及仲山父劝谏全过程，为该事件的核心史料。",
+      "检索词": "料民于太原",
+      "采用": true,
+      "原文摘句": "宣王既丧南国之师，乃料民于太原。仲山父谏曰：‘民不可料也！……’王卒料之。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《诗经·小雅·六月》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "描述宣王伐猃狁至于太原，为料民提供地理与军事背景。",
+      "检索词": "薄伐猃狁 太原",
+      "采用": true,
+      "原文摘句": "薄伐猃狁，至于大原。文武吉甫，万邦为宪。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《古本竹书纪年·周纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载宣王三十九年千亩之战败于姜戎，为太原料民的直接前因。",
+      "检索词": "千亩 王师败逋",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    },
+    {
+      "出处": "《今本竹书纪年·卷下》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "同样记载千亩之战，可与古本互证，确定年份与战况。",
+      "检索词": "王师败绩 姜戎",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    },
+    {
+      "出处": "《国语》韦昭注",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "训释“料”为“数”，辅助理解料民即清查户口。",
+      "检索词": "料数也",
+      "采用": true,
+      "原文摘句": "韦昭注：‘料，数也。’",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·周本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史记载此事件，包含千亩之战及太原料民、仲山甫谏言。",
+      "检索词": "料民于太原",
+      "采用": false,
+      "material_tier": "C",
+      "snippet_verified": false
+    },
+    {
+      "出处": "《后汉书·西羌传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "综述宣王时期对姜戎等战事，引古本竹书纪年提及千亩之败。",
+      "检索词": "千亩 王师败绩",
+      "采用": false,
+      "material_tier": "C",
+      "snippet_verified": false
+    },
+    {
+      "出处": "《诗经·大雅·烝民》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "赞美仲山甫德行，助于了解谏言之臣，但未涉及料民事。",
+      "检索词": "仲山甫之德",
+      "采用": false,
+      "material_tier": "C",
+      "snippet_verified": false
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《通典·食货七》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "后世史家将宣王料民视为周代户口制度变化的节点加以评析。",
+      "检索词": "宣王料民",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 6,
+    "C_excluded": 3,
+    "overall": "B"
+  }
+}

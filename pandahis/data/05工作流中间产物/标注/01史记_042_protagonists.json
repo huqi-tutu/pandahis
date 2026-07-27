@@ -7,25 +7,83 @@
     {
       "name": "郑桓公",
       "category": "君王",
-      "standard_name_note": "帝王.json 帝王名称",
-      "rationale": "郑国开国君主，郑世家叙事起点，奠定郑国基业，为卷中世系之首。"
+      "rationale": "《郑世家》叙事主轴：郑桓公（君王）"
     },
     {
       "name": "郑武公",
       "category": "君王",
-      "standard_name_note": "帝王.json 帝王名称",
-      "rationale": "郑桓公之子，东迁后巩固郑国地位，是郑国早期重要君主。"
+      "rationale": "《郑世家》叙事主轴：郑武公（君王）"
     },
     {
       "name": "郑庄公",
       "category": "君王",
-      "standard_name_note": "帝王.json 帝王名称",
-      "rationale": "郑国最强盛时期的君主，小霸诸侯，是郑世家叙事核心人物之一。"
+      "rationale": "《郑世家》叙事主轴：郑庄公（君王）"
+    },
+    {
+      "name": "郑厉公",
+      "category": "君王",
+      "rationale": "《郑世家》叙事主轴：郑厉公（君王）"
+    },
+    {
+      "name": "郑子亹",
+      "category": "君王",
+      "rationale": "《郑世家》叙事主轴：郑子亹（君王）"
+    },
+    {
+      "name": "郑文公",
+      "category": "君王",
+      "rationale": "《郑世家》叙事主轴：郑文公（君王）"
+    },
+    {
+      "name": "郑缪公",
+      "category": "君王",
+      "rationale": "《郑世家》叙事主轴：郑缪公（君王）"
+    },
+    {
+      "name": "郑灵公",
+      "category": "君王",
+      "rationale": "《郑世家》叙事主轴：郑灵公（君王）"
+    },
+    {
+      "name": "郑襄公",
+      "category": "君王",
+      "rationale": "《郑世家》叙事主轴：郑襄公（君王）"
+    },
+    {
+      "name": "郑悼公",
+      "category": "君王",
+      "rationale": "《郑世家》叙事主轴：郑悼公（君王）"
+    },
+    {
+      "name": "郑成公",
+      "category": "君王",
+      "rationale": "《郑世家》叙事主轴：郑成公（君王）"
+    },
+    {
+      "name": "郑釐公",
+      "category": "君王",
+      "rationale": "《郑世家》叙事主轴：郑釐公（君王）"
+    },
+    {
+      "name": "郑简公",
+      "category": "君王",
+      "rationale": "《郑世家》叙事主轴：郑简公（君王）"
+    },
+    {
+      "name": "郑定公",
+      "category": "君王",
+      "rationale": "《郑世家》叙事主轴：郑定公（君王）"
+    },
+    {
+      "name": "郑声公",
+      "category": "君王",
+      "rationale": "《郑世家》叙事主轴：郑声公（君王）"
     }
   ],
   "excluded_kinds_hint": [
     "太史公曰",
     "世系链",
-    "卷首标题"
+    "卷首标题",
+    "其他"
   ]
 }

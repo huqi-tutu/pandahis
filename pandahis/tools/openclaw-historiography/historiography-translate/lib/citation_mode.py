@@ -31,13 +31,12 @@ def detect_citation_mode(orig: str) -> str:
 
 def citation_mode_hint(mode: str) -> str:
     hints = {
-        "narrative": "叙事句：关键专名/数字用「」锚点，普通动词融入白话，禁止逐词引号。",
+        "narrative": "叙事句：专名与数字融入白话叙述；「」用于完整摘句、对话或并列句群。",
         "parallel_cluster": (
-            "并列句群：先整段或整簇引用原文（4-12字一簇），再统一白话解释；"
-            "禁止每个短语单独「」+一句解释。"
+            "并列句群：先整段或整簇引用原文，再作一段白话解释。"
         ),
-        "genealogy": "世系句：可整句引用后串讲谱系，禁止拆到四字一段。",
-        "appraisal": "品评句：整句或对称句群引用后作一段品评，禁止拆词注释。",
+        "genealogy": "世系句：整句引用后串讲谱系。",
+        "appraisal": "品评句：对称句群整段引用后作一段品评。",
     }
     return hints.get(mode, hints["narrative"])
 

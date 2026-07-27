@@ -1,0 +1,19 @@
+{
+  "schema": "translate-coverage-l2/v1",
+  "史略ID": "GLBL_00767",
+  "passed": true,
+  "degraded": false,
+  "summary": "母本信息“崔杼毋归，亦自杀”在译文中得到传达。",
+  "l1_ratio": 0.0,
+  "l1_min_ratio": 0.0,
+  "claims": [
+    {
+      "id": "M017",
+      "claim": "母本信息：崔杼毋归，亦自杀。",
+      "status": "conveyed",
+      "evidence": "崔杼折腾了一圈回到家里，一看家破人亡，也没了活路，自己也抹了脖子。",
+      "note": "虽然“回到家里”字面上与“毋归”相反，但家破人亡导致实际无家可归，随后自杀，信息一致。"
+    }
+  ],
+  "issues": []
+}
