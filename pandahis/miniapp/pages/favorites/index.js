@@ -4,6 +4,38 @@ const api_1 = require("../../native-utils/api");
 const favorite_display_1 = require("../../native-utils/favorite-display");
 const router_1 = require("../../native-utils/router");
 const nav_metrics_1 = require("../../native-utils/nav-metrics");
+async function fetchAllBoxFavorites() {
+    var _a;
+    const all = [];
+    let page = 1;
+    const pageSize = 50;
+    while (true) {
+        const res = await (0, api_1.request)(`/favorites/boxes?page=${page}&pageSize=${pageSize}`, { auth: true });
+        const batch = res.data.items || [];
+        all.push(...batch);
+        const total = (_a = res.data.total) !== null && _a !== void 0 ? _a : all.length;
+        if (batch.length < pageSize || all.length >= total)
+            break;
+        page += 1;
+    }
+    return all;
+}
+async function fetchAllUnitFavorites() {
+    var _a;
+    const all = [];
+    let page = 1;
+    const pageSize = 50;
+    while (true) {
+        const res = await (0, api_1.request)(`/favorites/units?page=${page}&pageSize=${pageSize}`, { auth: true });
+        const batch = res.data.items || [];
+        all.push(...batch);
+        const total = (_a = res.data.total) !== null && _a !== void 0 ? _a : all.length;
+        if (batch.length < pageSize || all.length >= total)
+            break;
+        page += 1;
+    }
+    return all;
+}
 Page({
     data: {
         hasToken: false,
@@ -52,22 +84,13 @@ Page({
         this.setData({ activeTab: tab, visibleItems });
     },
     async load() {
-        var _a;
         try {
-            const all = [];
-            let page = 1;
-            const pageSize = 50;
-            let total = 0;
-            while (true) {
-                const res = await (0, api_1.request)(`/favorites/boxes?page=${page}&pageSize=${pageSize}`, { auth: true });
-                const batch = res.data.items || [];
-                all.push(...batch);
-                total = (_a = res.data.total) !== null && _a !== void 0 ? _a : all.length;
-                if (batch.length < pageSize || all.length >= total)
-                    break;
-                page += 1;
-            }
-            const { dynasty, shilue } = (0, favorite_display_1.splitFavorites)(all);
+            const [unitRaw, boxRaw] = await Promise.all([
+                fetchAllUnitFavorites(),
+                fetchAllBoxFavorites(),
+            ]);
+            const dynasty = unitRaw.map(favorite_display_1.toUnitFavoriteCardView);
+            const shilue = boxRaw.map(favorite_display_1.toFavoriteCardView);
             const activeTab = dynasty.length > 0 ? 'dynasty' : shilue.length > 0 ? 'shilue' : 'dynasty';
             const visibleItems = activeTab === 'dynasty' ? dynasty : shilue;
             this.setData({
@@ -92,9 +115,14 @@ Page({
         }
     },
     go(e) {
-        const id = e.currentTarget.dataset.id;
+        const ds = e.currentTarget.dataset;
+        const id = ds.id || '';
         if (!id)
             return;
+        if (ds.kind === 'dynasty' || this.data.activeTab === 'dynasty') {
+            (0, router_1.navigateTo)(router_1.ROUTES.dynastyDetail, { unitId: id });
+            return;
+        }
         (0, router_1.navigateTo)(router_1.ROUTES.boxDetail, { boxId: id });
     },
 });

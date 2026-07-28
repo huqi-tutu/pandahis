@@ -9,7 +9,7 @@ import sys
 from pathlib import Path
 from typing import Any
 
-VALID_CATEGORIES = {"家庭", "同僚", "师从", "外敌"}
+VALID_CATEGORIES = {"家庭", "同僚", "师从", "外敌", "好友"}
 LEGACY_CATEGORIES = {"君臣", "敌对"}
 VALID_LEVELS = {"一级", "二级", "三级", "四级"}
 LEVEL_NUM = {"一级": 1, "二级": 2, "三级": 3, "四级": 4}

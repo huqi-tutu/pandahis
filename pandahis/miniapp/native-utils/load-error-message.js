@@ -17,6 +17,7 @@ function extractWxErrMsg(error) {
 }
 /** 将 wx.request fail / ApiError 转为用户可操作的提示 */
 function formatApiRequestError(error) {
+    var _a;
     const raw = extractWxErrMsg(error);
     const lower = raw.toLowerCase();
     if (/domain list|合法域名|not in domain/i.test(raw)) {
@@ -34,6 +35,9 @@ function formatApiRequestError(error) {
         return '连接超时，请检查网络后重试。';
     }
     if (/not found|NOT_FOUND|unit not found|不存在/i.test(raw)) {
+        if (/favorites\/units/i.test(String(((_a = error === null || error === void 0 ? void 0 : error.detail) === null || _a === void 0 ? void 0 : _a.url) || ''))) {
+            return '当前接口尚未支持朝代收藏，需部署最新后端；开发版可在「设置→接口地址」切到本机后端联调。';
+        }
         return '未找到该朝代数据，请从首页重新进入或更新小程序后重试。';
     }
     if (/INVALID_RESPONSE|parse|json/i.test(raw)) {

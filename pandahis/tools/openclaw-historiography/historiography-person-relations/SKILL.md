@@ -1,7 +1,7 @@
 ---
 name: historiography-person-relations
 description: >
-  人物史略关系数据补全（家庭/同僚/师从/外敌）。按 GLBL 或朝代批量产出 JSON 至 data/07人物关系/。
+  人物史略关系数据补全（家庭/同僚/师从/外敌/好友）。按 GLBL 或朝代批量产出 JSON 至 data/07人物关系/。
   与 historiography-dynasty-knowledge、historiography-translate 独立。激活词：人物关系、关系补全、关系表、07人物关系。
 origin: ECC
 ---
@@ -128,7 +128,7 @@ python3 verify_relations.py --strict "$HISTOGRAPH_ROOT/data/07人物关系/黄�
 
 verify 通过标准见 `reference/execution-discipline.md`。摘要：
 
-- `关系类别` ∈ {家庭, 同僚, 师从, 外敌}
+- `关系类别` ∈ {家庭, 同僚, 师从, 外敌, 好友}
 - `关系层级` ∈ {一级, 二级, 三级, 四级}（**禁止五级**）
 - 同一文件内 `关联史略名称` 一致
 - `关系ID` 唯一；`所属*关系` 链与层级一致

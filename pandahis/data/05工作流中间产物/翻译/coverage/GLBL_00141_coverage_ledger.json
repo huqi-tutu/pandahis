@@ -1,0 +1,55 @@
+{
+  "schema": "translate-coverage-ledger/v1",
+  "史略ID": "GLBL_00141",
+  "updated_at": "2026-07-28T01:09:16.826264+00:00",
+  "entries": {
+    "M001": {
+      "status": "conveyed",
+      "claim_fp": "a4c265409e31226d",
+      "checked_at": "2026-07-28T01:08:52.811089+00:00",
+      "note": "他即位的第八年，任用申不害为相...在国内推行术治，把国家理顺了；对外呢，诸侯各国也不敢轻易跑来侵犯。"
+    },
+    "M002": {
+      "status": "conveyed",
+      "claim_fp": "b6d14b643a3d6adf",
+      "checked_at": "2026-07-28T01:08:52.811098+00:00",
+      "note": "到了第十年，内部出事了：一个叫韩姬的人杀了国君悼公。"
+    },
+    "M003": {
+      "status": "conveyed",
+      "claim_fp": "fe6fff062d65ca70",
+      "checked_at": "2026-07-28T01:08:52.811101+00:00",
+      "note": "转过年的十一年，昭侯去了一趟秦国。"
+    },
+    "M004": {
+      "status": "conveyed",
+      "claim_fp": "3a12b81344dc6aa6",
+      "checked_at": "2026-07-28T01:08:52.811104+00:00",
+      "note": "到昭侯二十二年，他去世了。"
+    },
+    "M005": {
+      "status": "conveyed",
+      "claim_fp": "72ac9baffc2ba9a5",
+      "checked_at": "2026-07-28T01:08:52.811107+00:00",
+      "note": "二十四年，秦国就打过来了，攻占了韩国的宜阳。"
+    },
+    "M006": {
+      "status": "conveyed",
+      "claim_fp": "ea61ee53ce582532",
+      "checked_at": "2026-07-28T01:08:52.811111+00:00",
+      "note": "可二十五年，韩国遭遇大旱的时候，昭侯却下令修建一座高大的城门，叫“高门”。"
+    },
+    "M007": {
+      "status": "conveyed",
+      "claim_fp": "005681e4f2d37ab9",
+      "checked_at": "2026-07-28T01:08:52.811114+00:00",
+      "note": "信息完全传达。"
+    },
+    "M008": {
+      "status": "conveyed",
+      "claim_fp": "cb1e462cf1eee6c6",
+      "checked_at": "2026-07-28T01:08:52.811117+00:00",
+      "note": "信息完全传达。"
+    }
+  }
+}

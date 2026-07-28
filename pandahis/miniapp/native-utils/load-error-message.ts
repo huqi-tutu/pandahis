@@ -33,6 +33,9 @@ export function formatApiRequestError(error: unknown): string {
     return '连接超时，请检查网络后重试。'
   }
   if (/not found|NOT_FOUND|unit not found|不存在/i.test(raw)) {
+    if (/favorites\/units/i.test(String((error as ApiError)?.detail?.url || ''))) {
+      return '当前接口尚未支持朝代收藏，需部署最新后端；开发版可在「设置→接口地址」切到本机后端联调。'
+    }
     return '未找到该朝代数据，请从首页重新进入或更新小程序后重试。'
   }
   if (/INVALID_RESPONSE|parse|json/i.test(raw)) {

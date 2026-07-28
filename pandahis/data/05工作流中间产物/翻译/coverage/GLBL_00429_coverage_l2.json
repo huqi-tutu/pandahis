@@ -1,0 +1,19 @@
+{
+  "schema": "translate-coverage-l2/v1",
+  "史略ID": "GLBL_00429",
+  "passed": true,
+  "degraded": false,
+  "summary": "昭王召王稽，拜为河东守，并特许三年不上计，信息完整传达。",
+  "l1_ratio": 0.0,
+  "l1_min_ratio": 0.0,
+  "claims": [
+    {
+      "id": "M094",
+      "claim": "母本信息：昭王召王稽，拜为河东守，三岁不上计。",
+      "status": "conveyed",
+      "evidence": "秦昭王立刻召见王稽，提拔他做了河东郡守，还特许他连续三年不用进京上计。",
+      "note": ""
+    }
+  ],
+  "issues": []
+}

@@ -75,10 +75,12 @@ final class SwimCanvasLayout {
           lane.visibleCount()
       ));
 
-      cursor += bandHeight + BAND_GAP_RPX;
+      cursor += bandHeight + BAND_GAP_RPX
     }
 
-    int canvasHeight = snap(Math.max(MIN_BAND_HEIGHT_RPX + BAND_PAD_RPX * 2, cursor + BAND_PAD_RPX));
+    int canvasHeight = bands.isEmpty()
+        ? snap(MIN_BAND_HEIGHT_RPX + BAND_PAD_RPX * 2)
+        : snap(bands.get(bands.size() - 1).topRpx() + bands.get(bands.size() - 1).heightRpx() + BAND_PAD_RPX);
     return new CanvasPlan(canvasHeight, CANVAS_PAD_LEFT_RPX, bands, canvasLanes);
   }
 

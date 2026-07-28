@@ -1,0 +1,41 @@
+{
+  "stamp": "20260728_132141",
+  "dynasty": "战国",
+  "pending_start": 5,
+  "ok": 4,
+  "routed": 0,
+  "skip": 0,
+  "err": 1,
+  "results": [
+    {
+      "id": "GLBL_00146",
+      "name": "魏惠王",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00151",
+      "name": "齐威王",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00241",
+      "name": "淳于髡",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00246",
+      "name": "荆轲",
+      "status": "error",
+      "rc": 1
+    },
+    {
+      "id": "GLBL_00746",
+      "name": "韩釐王",
+      "status": "ok",
+      "rc": 0
+    }
+  ]
+}

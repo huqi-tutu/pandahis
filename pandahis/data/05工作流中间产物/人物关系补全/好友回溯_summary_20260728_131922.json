@@ -1,0 +1,1249 @@
+{
+  "stamp": "20260728_131922",
+  "dynasties": [
+    "五帝",
+    "夏",
+    "商",
+    "西周"
+  ],
+  "total": 138,
+  "ok": 138,
+  "err": 0,
+  "friend_records_added": 1,
+  "results": [
+    {
+      "dynasty": "五帝",
+      "id": "GLBL_00056",
+      "name": "尧",
+      "status": "skip",
+      "fri": 1
+    },
+    {
+      "dynasty": "五帝",
+      "id": "GLBL_00057",
+      "name": "帝喾",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 18
+    },
+    {
+      "dynasty": "五帝",
+      "id": "GLBL_00129",
+      "name": "舜",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 24
+    },
+    {
+      "dynasty": "五帝",
+      "id": "GLBL_00144",
+      "name": "颛顼",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 7
+    },
+    {
+      "dynasty": "五帝",
+      "id": "GLBL_00149",
+      "name": "黄帝",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 14
+    },
+    {
+      "dynasty": "五帝",
+      "id": "GLBL_00574",
+      "name": "嫘祖",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 6
+    },
+    {
+      "dynasty": "五帝",
+      "id": "GLBL_00575",
+      "name": "嫫母",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 1
+    },
+    {
+      "dynasty": "五帝",
+      "id": "GLBL_00576",
+      "name": "娥皇",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 4
+    },
+    {
+      "dynasty": "五帝",
+      "id": "GLBL_00577",
+      "name": "女英",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 3
+    },
+    {
+      "dynasty": "五帝",
+      "id": "GLBL_00578",
+      "name": "丹朱",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 3
+    },
+    {
+      "dynasty": "五帝",
+      "id": "GLBL_00579",
+      "name": "皋陶",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 4
+    },
+    {
+      "dynasty": "五帝",
+      "id": "GLBL_00580",
+      "name": "伯益",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 7
+    },
+    {
+      "dynasty": "五帝",
+      "id": "GLBL_00582",
+      "name": "契",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 17
+    },
+    {
+      "dynasty": "五帝",
+      "id": "GLBL_00583",
+      "name": "弃",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 10
+    },
+    {
+      "dynasty": "五帝",
+      "id": "GLBL_00584",
+      "name": "夔",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 11
+    },
+    {
+      "dynasty": "五帝",
+      "id": "GLBL_00585",
+      "name": "许由",
+      "status": "skip",
+      "fri": 1
+    },
+    {
+      "dynasty": "五帝",
+      "id": "GLBL_00624",
+      "name": "炎帝",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 11
+    },
+    {
+      "dynasty": "五帝",
+      "id": "GLBL_00625",
+      "name": "少昊",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 6
+    },
+    {
+      "dynasty": "五帝",
+      "id": "GLBL_00626",
+      "name": "蚩尤",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 5
+    },
+    {
+      "dynasty": "五帝",
+      "id": "GLBL_00627",
+      "name": "共工",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 4
+    },
+    {
+      "dynasty": "五帝",
+      "id": "GLBL_00628",
+      "name": "彭祖",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 7
+    },
+    {
+      "dynasty": "夏",
+      "id": "GLBL_00010",
+      "name": "启",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 6
+    },
+    {
+      "dynasty": "夏",
+      "id": "GLBL_00067",
+      "name": "桀",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 2
+    },
+    {
+      "dynasty": "夏",
+      "id": "GLBL_00096",
+      "name": "禹",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 11
+    },
+    {
+      "dynasty": "夏",
+      "id": "GLBL_00602",
+      "name": "相",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 13
+    },
+    {
+      "dynasty": "夏",
+      "id": "GLBL_00603",
+      "name": "少康",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 13
+    },
+    {
+      "dynasty": "夏",
+      "id": "GLBL_00604",
+      "name": "杼",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 5
+    },
+    {
+      "dynasty": "夏",
+      "id": "GLBL_00605",
+      "name": "槐",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 3
+    },
+    {
+      "dynasty": "夏",
+      "id": "GLBL_00606",
+      "name": "芒",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 2
+    },
+    {
+      "dynasty": "夏",
+      "id": "GLBL_00607",
+      "name": "泄",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 7
+    },
+    {
+      "dynasty": "夏",
+      "id": "GLBL_00608",
+      "name": "不降",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 4
+    },
+    {
+      "dynasty": "夏",
+      "id": "GLBL_00609",
+      "name": "扃",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 5
+    },
+    {
+      "dynasty": "夏",
+      "id": "GLBL_00610",
+      "name": "廑",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 2
+    },
+    {
+      "dynasty": "夏",
+      "id": "GLBL_00611",
+      "name": "皋",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 2
+    },
+    {
+      "dynasty": "夏",
+      "id": "GLBL_00612",
+      "name": "发",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 3
+    },
+    {
+      "dynasty": "夏",
+      "id": "GLBL_00613",
+      "name": "涂山氏女",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 2
+    },
+    {
+      "dynasty": "夏",
+      "id": "GLBL_00614",
+      "name": "后缗",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 9
+    },
+    {
+      "dynasty": "夏",
+      "id": "GLBL_00615",
+      "name": "妺喜",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 3
+    },
+    {
+      "dynasty": "夏",
+      "id": "GLBL_00616",
+      "name": "关龙逄",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 1
+    },
+    {
+      "dynasty": "夏",
+      "id": "GLBL_00617",
+      "name": "奚仲",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 1
+    },
+    {
+      "dynasty": "夏",
+      "id": "GLBL_00618",
+      "name": "后羿",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 10
+    },
+    {
+      "dynasty": "夏",
+      "id": "GLBL_00619",
+      "name": "寒浞",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 7
+    },
+    {
+      "dynasty": "夏",
+      "id": "GLBL_00620",
+      "name": "靡",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 2
+    },
+    {
+      "dynasty": "夏",
+      "id": "GLBL_00631",
+      "name": "胤侯",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 2
+    },
+    {
+      "dynasty": "夏",
+      "id": "GLBL_00632",
+      "name": "女艾",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 2
+    },
+    {
+      "dynasty": "夏",
+      "id": "GLBL_00633",
+      "name": "寒浇",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 9
+    },
+    {
+      "dynasty": "夏",
+      "id": "GLBL_00634",
+      "name": "寒豷",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 8
+    },
+    {
+      "dynasty": "夏",
+      "id": "GLBL_00635",
+      "name": "中康",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 6
+    },
+    {
+      "dynasty": "夏",
+      "id": "GLBL_00636",
+      "name": "孔甲",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 7
+    },
+    {
+      "dynasty": "夏",
+      "id": "GLBL_00637",
+      "name": "仲康",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 7
+    },
+    {
+      "dynasty": "夏",
+      "id": "GLBL_00638",
+      "name": "太康",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 3
+    },
+    {
+      "dynasty": "夏",
+      "id": "GLBL_00639",
+      "name": "有扈氏",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 3
+    },
+    {
+      "dynasty": "夏",
+      "id": "GLBL_00640",
+      "name": "武观",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 3
+    },
+    {
+      "dynasty": "夏",
+      "id": "GLBL_00641",
+      "name": "女志",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 4
+    },
+    {
+      "dynasty": "夏",
+      "id": "GLBL_00642",
+      "name": "伯益",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 7
+    },
+    {
+      "dynasty": "夏",
+      "id": "GLBL_00643",
+      "name": "彭伯寿",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 2
+    },
+    {
+      "dynasty": "夏",
+      "id": "GLBL_00644",
+      "name": "皋陶",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 4
+    },
+    {
+      "dynasty": "夏",
+      "id": "GLBL_00645",
+      "name": "仪狄",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 1
+    },
+    {
+      "dynasty": "夏",
+      "id": "GLBL_00646",
+      "name": "伯杼",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 10
+    },
+    {
+      "dynasty": "夏",
+      "id": "GLBL_00648",
+      "name": "汝艾",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 1
+    },
+    {
+      "dynasty": "商",
+      "id": "GLBL_00044",
+      "name": "太戊",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 14
+    },
+    {
+      "dynasty": "商",
+      "id": "GLBL_00045",
+      "name": "太甲",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 6
+    },
+    {
+      "dynasty": "商",
+      "id": "GLBL_00046",
+      "name": "契",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 17
+    },
+    {
+      "dynasty": "商",
+      "id": "GLBL_00054",
+      "name": "小乙",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 4
+    },
+    {
+      "dynasty": "商",
+      "id": "GLBL_00055",
+      "name": "小辛",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 2
+    },
+    {
+      "dynasty": "商",
+      "id": "GLBL_00058",
+      "name": "帝辛（纣）",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 22
+    },
+    {
+      "dynasty": "商",
+      "id": "GLBL_00059",
+      "name": "廪辛",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 2
+    },
+    {
+      "dynasty": "商",
+      "id": "GLBL_00060",
+      "name": "成汤",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 16
+    },
+    {
+      "dynasty": "商",
+      "id": "GLBL_00073",
+      "name": "武丁",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 6
+    },
+    {
+      "dynasty": "商",
+      "id": "GLBL_00074",
+      "name": "武乙",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 7
+    },
+    {
+      "dynasty": "商",
+      "id": "GLBL_00086",
+      "name": "沃丁",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 3
+    },
+    {
+      "dynasty": "商",
+      "id": "GLBL_00092",
+      "name": "盘庚",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 4
+    },
+    {
+      "dynasty": "商",
+      "id": "GLBL_00093",
+      "name": "祖乙",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 7
+    },
+    {
+      "dynasty": "商",
+      "id": "GLBL_00094",
+      "name": "祖庚",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 5
+    },
+    {
+      "dynasty": "商",
+      "id": "GLBL_00095",
+      "name": "祖甲",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 10
+    },
+    {
+      "dynasty": "商",
+      "id": "GLBL_00138",
+      "name": "阳甲",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 2
+    },
+    {
+      "dynasty": "商",
+      "id": "GLBL_00659",
+      "name": "外丙",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 5
+    },
+    {
+      "dynasty": "商",
+      "id": "GLBL_00660",
+      "name": "仲壬",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 8
+    },
+    {
+      "dynasty": "商",
+      "id": "GLBL_00661",
+      "name": "太庚",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 8
+    },
+    {
+      "dynasty": "商",
+      "id": "GLBL_00662",
+      "name": "小甲",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 3
+    },
+    {
+      "dynasty": "商",
+      "id": "GLBL_00663",
+      "name": "雍己",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 3
+    },
+    {
+      "dynasty": "商",
+      "id": "GLBL_00664",
+      "name": "仲丁",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 3
+    },
+    {
+      "dynasty": "商",
+      "id": "GLBL_00665",
+      "name": "外壬",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 8
+    },
+    {
+      "dynasty": "商",
+      "id": "GLBL_00666",
+      "name": "河亶甲",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 8
+    },
+    {
+      "dynasty": "商",
+      "id": "GLBL_00667",
+      "name": "祖辛",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 12
+    },
+    {
+      "dynasty": "商",
+      "id": "GLBL_00668",
+      "name": "沃甲",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 8
+    },
+    {
+      "dynasty": "商",
+      "id": "GLBL_00669",
+      "name": "祖丁",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 4
+    },
+    {
+      "dynasty": "商",
+      "id": "GLBL_00670",
+      "name": "南庚",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 3
+    },
+    {
+      "dynasty": "商",
+      "id": "GLBL_00671",
+      "name": "康丁",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 6
+    },
+    {
+      "dynasty": "商",
+      "id": "GLBL_00672",
+      "name": "文丁",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 3
+    },
+    {
+      "dynasty": "商",
+      "id": "GLBL_00673",
+      "name": "帝乙",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 10
+    },
+    {
+      "dynasty": "商",
+      "id": "GLBL_00674",
+      "name": "相土",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 8
+    },
+    {
+      "dynasty": "商",
+      "id": "GLBL_00675",
+      "name": "冥",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 4
+    },
+    {
+      "dynasty": "商",
+      "id": "GLBL_00676",
+      "name": "王亥",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 6
+    },
+    {
+      "dynasty": "商",
+      "id": "GLBL_00677",
+      "name": "妇好",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 5
+    },
+    {
+      "dynasty": "商",
+      "id": "GLBL_00678",
+      "name": "比干",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 9
+    },
+    {
+      "dynasty": "商",
+      "id": "GLBL_00679",
+      "name": "微子启",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 11
+    },
+    {
+      "dynasty": "商",
+      "id": "GLBL_00680",
+      "name": "箕子",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 10
+    },
+    {
+      "dynasty": "商",
+      "id": "GLBL_00681",
+      "name": "妲己",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 3
+    },
+    {
+      "dynasty": "商",
+      "id": "GLBL_00682",
+      "name": "祖己",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 3
+    },
+    {
+      "dynasty": "商",
+      "id": "GLBL_00683",
+      "name": "伊尹",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 14
+    },
+    {
+      "dynasty": "商",
+      "id": "GLBL_00684",
+      "name": "傅说",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 1
+    },
+    {
+      "dynasty": "商",
+      "id": "GLBL_00685",
+      "name": "巫咸",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 3
+    },
+    {
+      "dynasty": "西周",
+      "id": "GLBL_00004",
+      "name": "卫康叔",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 17
+    },
+    {
+      "dynasty": "西周",
+      "id": "GLBL_00008",
+      "name": "古公亶父",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 7
+    },
+    {
+      "dynasty": "西周",
+      "id": "GLBL_00009",
+      "name": "后稷",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 16
+    },
+    {
+      "dynasty": "西周",
+      "id": "GLBL_00015",
+      "name": "周公旦",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 25
+    },
+    {
+      "dynasty": "西周",
+      "id": "GLBL_00017",
+      "name": "周厉王",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 9
+    },
+    {
+      "dynasty": "西周",
+      "id": "GLBL_00021",
+      "name": "周宣王",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 5
+    },
+    {
+      "dynasty": "西周",
+      "id": "GLBL_00023",
+      "name": "周幽王",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 13
+    },
+    {
+      "dynasty": "西周",
+      "id": "GLBL_00025",
+      "name": "周康王",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 3
+    },
+    {
+      "dynasty": "西周",
+      "id": "GLBL_00028",
+      "name": "周成王",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 14
+    },
+    {
+      "dynasty": "西周",
+      "id": "GLBL_00030",
+      "name": "周文王",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 31
+    },
+    {
+      "dynasty": "西周",
+      "id": "GLBL_00035",
+      "name": "周武王",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 27
+    },
+    {
+      "dynasty": "西周",
+      "id": "GLBL_00038",
+      "name": "周穆王",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 9
+    },
+    {
+      "dynasty": "西周",
+      "id": "GLBL_00050",
+      "name": "宋微子",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 11
+    },
+    {
+      "dynasty": "西周",
+      "id": "GLBL_00087",
+      "name": "燕召公",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 3
+    },
+    {
+      "dynasty": "西周",
+      "id": "GLBL_00128",
+      "name": "管叔鲜",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 16
+    },
+    {
+      "dynasty": "西周",
+      "id": "GLBL_00136",
+      "name": "郑桓公",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 1,
+      "count": 7
+    },
+    {
+      "dynasty": "西周",
+      "id": "GLBL_00222",
+      "name": "伯夷",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 3
+    },
+    {
+      "dynasty": "西周",
+      "id": "GLBL_00701",
+      "name": "卫武公",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 6
+    },
+    {
+      "dynasty": "西周",
+      "id": "GLBL_00747",
+      "name": "鲁公伯禽",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 7
+    },
+    {
+      "dynasty": "西周",
+      "id": "GLBL_00756",
+      "name": "鲁武公",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 8
+    },
+    {
+      "dynasty": "西周",
+      "id": "GLBL_00802",
+      "name": "周懿王",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 3
+    },
+    {
+      "dynasty": "西周",
+      "id": "GLBL_00803",
+      "name": "周孝王",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 6
+    },
+    {
+      "dynasty": "西周",
+      "id": "GLBL_00804",
+      "name": "周夷王",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 7
+    },
+    {
+      "dynasty": "西周",
+      "id": "GLBL_00805",
+      "name": "齐太公",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 8
+    },
+    {
+      "dynasty": "西周",
+      "id": "GLBL_00806",
+      "name": "晋唐叔虞",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 4
+    },
+    {
+      "dynasty": "西周",
+      "id": "GLBL_00807",
+      "name": "祭公谋父",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 2
+    },
+    {
+      "dynasty": "西周",
+      "id": "GLBL_00808",
+      "name": "芮良夫",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 2
+    },
+    {
+      "dynasty": "西周",
+      "id": "GLBL_00809",
+      "name": "召穆公",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 7
+    },
+    {
+      "dynasty": "西周",
+      "id": "GLBL_00810",
+      "name": "仲山甫",
+      "status": "skip",
+      "fri": 1
+    },
+    {
+      "dynasty": "西周",
+      "id": "GLBL_00811",
+      "name": "史籀",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 1
+    },
+    {
+      "dynasty": "西周",
+      "id": "GLBL_00812",
+      "name": "虢公长父",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 3
+    },
+    {
+      "dynasty": "西周",
+      "id": "GLBL_00813",
+      "name": "尹吉甫",
+      "status": "skip",
+      "fri": 2
+    },
+    {
+      "dynasty": "西周",
+      "id": "GLBL_00816",
+      "name": "周昭王",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 4
+    },
+    {
+      "dynasty": "西周",
+      "id": "GLBL_00817",
+      "name": "周共王",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 4
+    },
+    {
+      "dynasty": "西周",
+      "id": "GLBL_00818",
+      "name": "季历",
+      "status": "ok",
+      "fri_before": 0,
+      "fri_after": 0,
+      "count": 17
+    }
+  ]
+}

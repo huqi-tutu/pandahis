@@ -31,19 +31,15 @@ type Pos = LayoutPoint & {
 const NODE_GAP = 10
 const NODE_D = LAYOUT_NODE_R.person * 2 + NODE_GAP
 const MIN_FAN = 0.16
-const CATEGORY_ORDER = ['家庭', '师从', '同僚', '外敌']
-const SECTOR_ANGLE: Record<string, number> = {
-  家庭: -Math.PI / 2,
-  师从: Math.PI,
-  同僚: 0,
-  外敌: Math.PI / 2,
-}
-const WEDGE: Record<string, number> = {
-  家庭: Math.PI * 0.9,
-  师从: Math.PI * 0.62,
-  同僚: Math.PI * 0.62,
-  外敌: Math.PI * 0.62,
-}
+const CATEGORY_ORDER = ['家庭', '师从', '同僚', '好友', '外敌']
+const SECTOR_ANGLE: Record<string, number> = {}
+const WEDGE: Record<string, number> = {}
+const SECTOR_SPAN = (Math.PI * 2) / CATEGORY_ORDER.length
+const WEDGE_SPAN = SECTOR_SPAN * 0.88
+CATEGORY_ORDER.forEach((cat, i) => {
+  SECTOR_ANGLE[cat] = -Math.PI / 2 + i * SECTOR_SPAN
+  WEDGE[cat] = WEDGE_SPAN
+})
 
 type LayoutMetrics = {
   nodeCount: number
@@ -64,7 +60,7 @@ function parseExtraGroup(extraJson?: string): string {
     const o = JSON.parse(extraJson) as Record<string, unknown>
     if (o.isCategoryNode) return normalizeGroupName(String(o.关系类别 || ''))
     const raw = String(o.关系类别 || o.group || o.category || o.cat || '')
-    const m = normalizeGroupName(raw).match(/家庭|同僚|师从|外敌/)
+    const m = normalizeGroupName(raw).match(/家庭|同僚|师从|外敌|好友/)
     return m ? m[0] : ''
   } catch {
     return ''

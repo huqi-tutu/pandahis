@@ -14,7 +14,7 @@
 - 禁止一次 prompt 输出多人物合并 JSON
 - 禁止 `关系层级` 为 `五级` 或更深
 - 禁止跳过 verify 直接声称完成
-- 禁止将外部敌手写入 `同僚·敌对`，或将同朝政敌写入 `外敌`
+- 禁止将外部敌手写入 `同僚·敌对`，或将同朝政敌写入 `外敌`；私交情谊写入 `好友` 而非 `同僚`
 
 ## Verify 严重级别
 
@@ -29,7 +29,7 @@
 ```
 relations.py compose-one --id GLBL_xxx
     ↓
-DeepSeek v4 Pro 成稿（relations_lib.call_llm）
+DeepSeek v4 Pro 成稿（relations_lib：按类别分轮调用 + 失败重试）
     ↓
 写入 data/07人物关系/{名称}关系表.json
     ↓

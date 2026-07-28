@@ -69,5 +69,11 @@ if [[ "${AVATAR_CODE}" == "NOT_FOUND" ]]; then
   echo "警告：头像接口仍为 NOT_FOUND（可能未加载新 JAR）" >&2
   exit 1
 fi
+UNITS_CODE=$(curl -sS "https://www.pandahis.com/api/v1/favorites/units" | python3 -c 'import sys,json; print(json.load(sys.stdin).get("code"))')
+echo "smoke favorites/units=${UNITS_CODE}"
+if [[ "${UNITS_CODE}" == "NOT_FOUND" ]]; then
+  echo "警告：朝代收藏接口仍为 NOT_FOUND（请确认已执行 schema_user_favorite_unit.sql 并部署新 JAR）" >&2
+  exit 1
+fi
 echo
 echo "部署完成。"

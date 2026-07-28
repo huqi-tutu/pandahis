@@ -1,0 +1,25 @@
+{
+  "schema": "translate-coverage-ledger/v1",
+  "史略ID": "GLBL_00243",
+  "updated_at": "2026-07-28T01:41:09.518222+00:00",
+  "entries": {
+    "M001": {
+      "status": "conveyed",
+      "claim_fp": "376c12914c133e27",
+      "checked_at": "2026-07-28T01:40:30.590328+00:00",
+      "note": "直接用白话解释原文，信息完整传达"
+    },
+    "M002–M004": {
+      "status": "conveyed",
+      "claim_fp": "8652a71d4cddac5b",
+      "checked_at": "2026-07-28T01:40:30.590336+00:00",
+      "note": "三段母本信息全部得到对应白话说解，无遗漏"
+    },
+    "M005": {
+      "status": "conveyed",
+      "claim_fp": "a08b8a72d5f84dc5",
+      "checked_at": "2026-07-28T01:40:30.590339+00:00",
+      "note": "直接引用并解释，母本信息明确呈现"
+    }
+  }
+}

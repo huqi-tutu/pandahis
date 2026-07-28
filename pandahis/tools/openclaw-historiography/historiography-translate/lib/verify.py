@@ -66,6 +66,35 @@ def _must_phrase_min_ratio(checklist_size: int) -> float:
         return float(os.environ.get("TRANSLATE_MUST_PHRASE_MIN_RATIO_LONG", "0.40"))
     return base
 
+
+def _must_phrase_min_total_for_ratio() -> int:
+    """硬锚点总数低于此值时不用比例阻断（避免 0/1→0% 误杀）。"""
+    return int(os.environ.get("TRANSLATE_MUST_PHRASE_MIN_TOTAL_FOR_RATIO", "5"))
+
+
+def _must_phrase_max_miss_absolute() -> int:
+    """小样本硬锚点：绝对缺失数达到此值才阻断。"""
+    return int(os.environ.get("TRANSLATE_MUST_PHRASE_MAX_MISS_ABSOLUTE", "4"))
+
+
+def _must_phrase_block_decision(
+    total: int,
+    hits: int,
+    checklist_size: int,
+) -> tuple[bool, float, float, int]:
+    """返回 (是否阻断, 命中率, 比例阈值, 缺失数)。"""
+    if total <= 0:
+        return False, 1.0, _must_phrase_min_ratio(checklist_size), 0
+
+    misses = total - hits
+    ratio = hits / total
+    min_ratio = _must_phrase_min_ratio(checklist_size)
+
+    if total < _must_phrase_min_total_for_ratio():
+        return misses >= _must_phrase_max_miss_absolute(), ratio, min_ratio, misses
+
+    return ratio < min_ratio, ratio, min_ratio, misses
+
 # 段落破折号结尾检测
 # 段末破折号：不再硬拦（自然过渡常用 —— 收束，改由人工审读）
 _DASH_ENDING_PATTERN = re.compile(r"——\s*$", re.MULTILINE)
@@ -539,15 +568,22 @@ def _verify_must_phrases(
     if total == 0:
         return []
 
-    ratio = hits / total
-    min_ratio = _must_phrase_min_ratio(len(checklist))
-    if ratio >= min_ratio:
+    should_block, ratio, min_ratio, miss_count = _must_phrase_block_decision(
+        total, hits, len(checklist)
+    )
+    if not should_block:
         return []
 
     sample_ids = [sid for sid, _ in misses[:6]]
+    sid_hint = f"；如 {', '.join(sample_ids)}" if sample_ids else ""
+    if total < _must_phrase_min_total_for_ratio():
+        max_miss = _must_phrase_max_miss_absolute()
+        return [
+            f"必现词硬锚点缺失过多: {miss_count}/{total}（硬锚点总数<{_must_phrase_min_total_for_ratio()}，"
+            f"用绝对阈值≥{max_miss}才阻断{sid_hint}）"
+        ]
     return [
-        f"必现词硬锚点命中率不足: {hits}/{total} ({ratio:.0%} < {min_ratio:.0%}"
-        f"；如 {', '.join(sample_ids)}）"
+        f"必现词硬锚点命中率不足: {hits}/{total} ({ratio:.0%} < {min_ratio:.0%}{sid_hint}）"
     ]
 
 

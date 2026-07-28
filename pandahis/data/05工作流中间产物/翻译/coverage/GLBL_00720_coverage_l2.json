@@ -1,0 +1,21 @@
+{
+  "schema": "translate-coverage-l2/v1",
+  "史略ID": "GLBL_00720",
+  "passed": false,
+  "degraded": false,
+  "summary": "M009主张的子之送给苏代百金已传达，但听从驱使未提及，故整体信息缺失。",
+  "l1_ratio": 0.0,
+  "l1_min_ratio": 0.0,
+  "claims": [
+    {
+      "id": "M009",
+      "claim": "子之于是送给苏代百金，听从苏代的驱使",
+      "status": "missing",
+      "evidence": "子之当然也懂事，马上派人给苏代送去了一百镒黄金，随便他怎么花。",
+      "note": "译文只提及送百金，未提及“听从苏代的驱使”这一事实。"
+    }
+  ],
+  "issues": [
+    "missing [M009]: 子之于是送给苏代百金，听从苏代的驱使"
+  ]
+}

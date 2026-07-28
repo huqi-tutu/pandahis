@@ -116,6 +116,7 @@ RULES = {
     "典制思想分界": MODULE_ROOT / "reference" / "典制与思想分界.md",
     "论著": MODULE_ROOT / "reference" / "论著补全规则.md",
     "人物": MODULE_ROOT / "reference" / "人物补全规则.md",
+    "跨朝代归属": MODULE_ROOT / "reference" / "跨朝代归属规则.md",
     "人物标注": ANNOTATE_DIR / "reference" / "人物标注规则.md",
     "人物年份": ANNOTATE_DIR / "reference" / "人物年份规则.md",
     "翻译规则": COMPOSE_DIR / "references" / "翻译规则.md",
@@ -251,6 +252,9 @@ def research_prompt(context: dict[str, Any], rules: dict[str, str]) -> str:
 
 ## 规范（全文 · 朝代知识补全总则.md）
 {rules.get('总则', '')}
+
+## 跨朝代归属（候选与附录盘点须遵守 · 全文）
+{rules.get('跨朝代归属', '')}
 """
 
 
@@ -304,6 +308,10 @@ def candidates_prompt(
 
 ## 规范（全文）
 {rules.get(category, '')}
+
+## 跨朝代归属（硬纪律 · 全文）
+{rules.get('跨朝代归属', '')}
+**本批仅输出归属「{context.get('朝代名称', '')}」的条目**：先估算每条 pick year（见跨朝代归属规则 §二），落点不在本朝区间内者**一律不得输出**。
 
 ## 输出
 JSON 数组，每项含：名称、建议年份、建议挂靠帝王、主要史料出处、边界备注、审核状态(pending)。
@@ -399,6 +407,10 @@ def candidates_renwu_prompt(
 
 ## 人物补全规则摘要
 {renwu_rules}
+
+## 跨朝代归属（硬纪律 · 全文）
+{rules.get('跨朝代归属', '')}
+**本批仅输出归属「{context.get('朝代名称', '')}」的人物/蕃祚**：非君王/非诸侯者以**峰值年**定归属；君王/诸侯以**即位年**定归属。pick year 落点不在本朝区间内者**一律不得输出**。
 
 ## 输出格式
 

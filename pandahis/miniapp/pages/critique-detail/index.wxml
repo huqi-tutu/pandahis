@@ -1,13 +1,32 @@
 <view class="proto-shell">
-  <proto-nav title="{{title || '评述详情'}}" show-back="{{true}}"></proto-nav>
+  <proto-nav title="{{navTitle || '评述详情'}}" show-back="{{true}}"></proto-nav>
 
   <view class="detail-body" style="padding-top: {{pageTopPadPx}}px;">
-    <view class="meta card-paper">
-      <view class="row"><text class="lab muted">评述人</text><text class="val">{{author}}</text></view>
-      <view wx:if="{{book}}" class="row"><text class="lab muted">评述著作</text><text class="val">{{book}}</text></view>
-      <view wx:if="{{era}}" class="row"><text class="lab muted">评述时代</text><text class="val">{{era}}</text></view>
+    <view class="info-card card-paper">
+      <view class="info-header">
+        <text class="critique-title">{{title || '暂无主题'}}</text>
+      </view>
+      <view wx:if="{{author || book || era}}" class="info-divider"></view>
+      <view wx:if="{{author}}" class="info-row">
+        <text class="info-label muted">评述人</text>
+        <text class="info-value">{{author}}</text>
+      </view>
+      <view wx:if="{{book}}" class="info-row">
+        <text class="info-label muted">评述著作</text>
+        <text class="info-value">{{book}}</text>
+      </view>
+      <view wx:if="{{era}}" class="info-row">
+        <text class="info-label muted">评述时代</text>
+        <text class="info-value">{{era}}</text>
+      </view>
     </view>
-    <text class="sec accent">评述内容</text>
-    <view class="text-card card-paper">{{body}}</view>
+
+    <view class="section-card card-paper">
+      <view class="section-header">
+        <view class="section-bar"></view>
+        <text class="section-title">评述详情</text>
+      </view>
+      <text class="section-body">{{body || '暂无评述详情'}}</text>
+    </view>
   </view>
 </view>

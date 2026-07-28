@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const nav_metrics_1 = require("../../native-utils/nav-metrics");
 Page({
     data: {
+        navTitle: '',
         title: '',
         author: '',
         book: '',
@@ -17,8 +18,11 @@ Page({
         catch {
             this.setData({ pageTopPadPx: 88 });
         }
+        const title = decodeURIComponent(query.title || '');
+        const navTitle = decodeURIComponent(query.navTitle || '') || title || '评述详情';
         this.setData({
-            title: decodeURIComponent(query.title || ''),
+            navTitle,
+            title,
             author: decodeURIComponent(query.author || ''),
             book: decodeURIComponent(query.book || ''),
             era: decodeURIComponent(query.era || ''),

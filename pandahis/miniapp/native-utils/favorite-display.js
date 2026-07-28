@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.toReadCompleteCardView = exports.toFootprintCardView = exports.formatVisitTime = exports.splitFavorites = exports.isDynastyFavorite = exports.toFavoriteCardView = exports.formatFavoriteDate = exports.formatYearRange = exports.formatHistoryYear = void 0;
+exports.toReadCompleteCardView = exports.toFootprintCardView = exports.formatVisitTime = exports.toUnitFavoriteCardView = exports.toFavoriteCardView = exports.formatFavoriteDate = exports.formatYearRange = exports.formatHistoryYear = void 0;
 const year_format_1 = require("./year-format");
 Object.defineProperty(exports, "formatHistoryYear", { enumerable: true, get: function () { return year_format_1.formatHistoryYear; } });
 Object.defineProperty(exports, "formatYearRange", { enumerable: true, get: function () { return year_format_1.formatYearRange; } });
@@ -35,25 +35,16 @@ function toFavoriteCardView(item) {
     };
 }
 exports.toFavoriteCardView = toFavoriteCardView;
-function isDynastyFavorite(categoryKey) {
-    return categoryKey === 'junji';
+function toUnitFavoriteCardView(item) {
+    const pathLabel = item.pathLabel || item.subText || '';
+    return {
+        ...item,
+        dateLabel: formatFavoriteDate(item.favoritedAt),
+        yearRange: (0, year_format_1.formatYearRange)(item.startYear, item.endYear),
+        pathLabel,
+    };
 }
-exports.isDynastyFavorite = isDynastyFavorite;
-function splitFavorites(items) {
-    const dynasty = [];
-    const shilue = [];
-    for (const raw of items) {
-        const card = toFavoriteCardView(raw);
-        if (isDynastyFavorite(raw.categoryKey)) {
-            dynasty.push(card);
-        }
-        else {
-            shilue.push(card);
-        }
-    }
-    return { dynasty, shilue };
-}
-exports.splitFavorites = splitFavorites;
+exports.toUnitFavoriteCardView = toUnitFavoriteCardView;
 /** 足迹访问时间：刚刚 / N 分钟前 / 昨天 / MM-DD */
 function formatVisitTime(iso) {
     if (!iso)

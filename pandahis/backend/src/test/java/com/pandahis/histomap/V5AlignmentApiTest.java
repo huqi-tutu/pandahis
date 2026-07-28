@@ -62,6 +62,37 @@ class V5AlignmentApiTest {
         .andExpect(status().isUnauthorized());
     mockMvc.perform(get("/favorites/boxes"))
         .andExpect(status().isUnauthorized());
+    mockMvc.perform(post("/favorites/units/dyn_song_hx"))
+        .andExpect(status().isUnauthorized());
+    mockMvc.perform(delete("/favorites/units/dyn_song_hx"))
+        .andExpect(status().isUnauthorized());
+    mockMvc.perform(get("/favorites/units"))
+        .andExpect(status().isUnauthorized());
+  }
+
+  @Test
+  void authenticatedUnitFavorite_isSeparateFromBoxFavorite() throws Exception {
+    mockMvc.perform(post("/favorites/units/dyn_song_hx")
+            .header(HttpHeaders.AUTHORIZATION, AUTH))
+        .andExpect(status().isOk());
+
+    mockMvc.perform(get("/favorites/units")
+            .header(HttpHeaders.AUTHORIZATION, AUTH))
+        .andExpect(status().isOk())
+        .andExpect(jsonPath("$.data.total").value(1))
+        .andExpect(jsonPath("$.data.items[0].unitId").value("dyn_song_hx"));
+
+    mockMvc.perform(get("/me").header(HttpHeaders.AUTHORIZATION, AUTH))
+        .andExpect(status().isOk())
+        .andExpect(jsonPath("$.data.favoriteCount").value(1));
+
+    mockMvc.perform(post("/favorites/boxes/GLBL_01079")
+            .header(HttpHeaders.AUTHORIZATION, AUTH))
+        .andExpect(status().isOk());
+
+    mockMvc.perform(get("/me").header(HttpHeaders.AUTHORIZATION, AUTH))
+        .andExpect(status().isOk())
+        .andExpect(jsonPath("$.data.favoriteCount").value(2));
   }
 
   @Test
@@ -131,13 +162,14 @@ class V5AlignmentApiTest {
   }
 
   @Test
-  void unitSwimMatrix_returnsTenLanes() throws Exception {
+  void unitSwimMatrix_returnsElevenLanes() throws Exception {
     mockMvc.perform(get("/units/huaxia_song_shenzong/swim-matrix"))
         .andExpect(status().isOk())
         .andExpect(jsonPath("$.code").value("OK"))
-        .andExpect(jsonPath("$.data.lanes.length()").value(10))
+        .andExpect(jsonPath("$.data.lanes.length()").value(11))
         .andExpect(jsonPath("$.data.lanes[0].label").value("君王"))
-        .andExpect(jsonPath("$.data.lanes[9].label").value("蕃祚"))
+        .andExpect(jsonPath("$.data.lanes[1].label").value("诸侯"))
+        .andExpect(jsonPath("$.data.lanes[10].label").value("蕃祚"))
         .andExpect(jsonPath("$.data.lanes[0].layout").exists())
         .andExpect(jsonPath("$.data.lanes[0].key").exists())
         .andExpect(jsonPath("$.data.lanes[0].icon").exists())

@@ -1,0 +1,27 @@
+{
+  "schema": "qa_repair_ticket/v1",
+  "pipeline": "translate",
+  "entry_id": "GLBL_00146",
+  "entry_name": "魏惠王",
+  "stage": "verify",
+  "fail_count": 1,
+  "errors": [
+    "缺少 source plan: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/翻译/GLBL_00146_魏惠王.plan.json"
+  ],
+  "plan": {
+    "root_cause": "PLAN_SOURCE",
+    "disposition": "retry_llm",
+    "action": "fix_source_plan",
+    "structured_prompt": "【根因：source_plan 外部补全引用无效】\n删除不存在的 GLBL·过渡段引用；仅保留真实条目或改为采用:false。\n重跑 plan 后再 Phase2。",
+    "refine_scope": "",
+    "route_to": "",
+    "next_command": "",
+    "invalidate": [
+      "plan"
+    ],
+    "max_retries": 2,
+    "extra": {}
+  },
+  "feedback": "【根因：source_plan 外部补全引用无效】\n删除不存在的 GLBL·过渡段引用；仅保留真实条目或改为采用:false。\n重跑 plan 后再 Phase2。\n\n---\n【原始错误】\n缺少 source plan: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/翻译/GLBL_00146_魏惠王.plan.json",
+  "updated_at": "2026-07-28T01:19:21Z"
+}

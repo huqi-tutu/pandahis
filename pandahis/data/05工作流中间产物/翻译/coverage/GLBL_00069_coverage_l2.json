@@ -1,0 +1,19 @@
+{
+  "schema": "translate-coverage-l2/v1",
+  "史略ID": "GLBL_00069",
+  "passed": true,
+  "degraded": false,
+  "summary": "母本信息已完全传达。",
+  "l1_ratio": 0.0,
+  "l1_min_ratio": 0.0,
+  "claims": [
+    {
+      "id": "M055",
+      "claim": "母本信息：楚怀王大怒，悔不用昭子言。",
+      "status": "conveyed",
+      "evidence": "译文第23行：“楚怀王这才大怒，后悔没听昭雎的话。”第24行：“楚怀王这才回过味来，后悔当初没听昭雎的话。”",
+      "note": "明确写出了楚怀王后悔没听昭雎（昭子）的话，完全传达母本信息。"
+    }
+  ],
+  "issues": []
+}

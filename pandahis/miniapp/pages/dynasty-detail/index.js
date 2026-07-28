@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const api_1 = require("../../native-utils/api");
 const encode_path_segment_1 = require("../../native-utils/encode-path-segment");
-const favorite_box_1 = require("../../native-utils/favorite-box");
+const favorite_unit_1 = require("../../native-utils/favorite-unit");
 const router_1 = require("../../native-utils/router");
 const query_value_1 = require("../../native-utils/query-value");
 const year_format_1 = require("../../native-utils/year-format");
@@ -15,6 +15,7 @@ const matrix_adapter_1 = require("../home/matrix-adapter");
 const runtime_env_1 = require("../../native-utils/runtime-env");
 const offscreen_hints_1 = require("../../native-utils/offscreen-hints");
 const chip_badge_tokens_1 = require("../../native-utils/chip-badge-tokens");
+const format_1 = require("../../native-utils/format");
 const { buildSwimMatrixFromMock, buildHeroFromMock, normalizeDynastyKey, isDegradedMockFallback, } = require('./swim-local-fallback');
 const PRIORITY_OPTIONS = [
     { value: 'p0', label: '极简' },
@@ -458,34 +459,54 @@ function hasLaneContent(lane) {
     const rows = lane.collapsedRows || [];
     return rows.some((row) => (row || []).length > 0);
 }
+function orderSwimLanes(lanes) {
+    const byKey = new Map(lanes.map((lane) => [lane.key, lane]));
+    return format_1.PRD_CATEGORY_KEYS
+        .map((key) => byKey.get(key))
+        .filter((lane) => !!lane);
+}
+function resolveCanvasHeightRpx(categoryBands) {
+    if (!categoryBands.length) {
+        return snapRpx(MIN_BAND_HEIGHT_RPX + BAND_PAD_RPX * 2);
+    }
+    const last = categoryBands[categoryBands.length - 1];
+    return snapRpx(last.topRpx + last.heightRpx + BAND_PAD_RPX);
+}
 function composeCanvasLayout(swim, lanes) {
     var _a, _b, _c, _d, _e;
     const categoryBands = [];
     const canvasLanes = [];
     let cursor = BAND_PAD_RPX;
     const sheetWidthRpx = swim.sheetWidthRpx || 1440;
-    const visibleLanes = lanes.filter(hasLaneContent);
+    const visibleLanes = orderSwimLanes(lanes);
     for (const lane of visibleLanes) {
-        const rowCount = Math.max(1, lane.rowCount || ((_a = lane.collapsedRows) === null || _a === void 0 ? void 0 : _a.length) || 1);
+        const contentRows = lane.collapsedRows || [];
+        const hasRows = contentRows.some((row) => (row || []).length > 0);
+        const rowCount = Math.max(1, hasRows ? (lane.rowCount || contentRows.length || 1) : 1);
         const trackHeight = snapRpx(LANE_TRACK_PAD_VERTICAL_RPX + rowCount * CHIP_HEIGHT_RPX + (rowCount - 1) * ROW_GAP_RPX);
         const bandHeight = Math.max(MIN_BAND_HEIGHT_RPX, trackHeight);
         const canvasRows = [];
-        (lane.collapsedRows || []).forEach((row, rowIndex) => {
-            const topRpx = snapRpx(cursor + BAND_PAD_RPX + rowIndex * (CHIP_HEIGHT_RPX + ROW_GAP_RPX));
-            canvasRows.push(row.map((bar) => {
-                const enriched = withBucketChipMeta(bar, lane.label);
-                const chipW = chipWidthRpxFromBar(enriched);
-                const left = adjustLeftForChipWidth(enriched, chipW, sheetWidthRpx);
-                return {
-                    ...enriched,
-                    left,
-                    topRpx,
-                    heightRpx: chipHeightRpx(enriched),
-                    chipWidth: `${chipW}rpx`,
-                    width: `${(chipW / sheetWidthRpx * 100).toFixed(2)}%`,
-                };
-            }));
-        });
+        if (hasRows) {
+            contentRows.forEach((row, rowIndex) => {
+                const topRpx = snapRpx(cursor + BAND_PAD_RPX + rowIndex * (CHIP_HEIGHT_RPX + ROW_GAP_RPX));
+                canvasRows.push(row.map((bar) => {
+                    const enriched = withBucketChipMeta(bar, lane.label);
+                    const chipW = chipWidthRpxFromBar(enriched);
+                    const left = adjustLeftForChipWidth(enriched, chipW, sheetWidthRpx);
+                    return {
+                        ...enriched,
+                        left,
+                        topRpx,
+                        heightRpx: chipHeightRpx(enriched),
+                        chipWidth: `${chipW}rpx`,
+                        width: `${(chipW / sheetWidthRpx * 100).toFixed(2)}%`,
+                    };
+                }));
+            });
+        }
+        else {
+            canvasRows.push([]);
+        }
         categoryBands.push({
             key: lane.key,
             label: lane.label,
@@ -510,7 +531,7 @@ function composeCanvasLayout(swim, lanes) {
         ...swim,
         lanes: canvasLanes,
         categoryBands,
-        canvasHeightRpx: snapRpx(Math.max(MIN_BAND_HEIGHT_RPX + BAND_PAD_RPX * 2, cursor + BAND_PAD_RPX)),
+        canvasHeightRpx: resolveCanvasHeightRpx(categoryBands),
         canvasPadLeftRpx: (_d = swim.canvasPadLeftRpx) !== null && _d !== void 0 ? _d : CANVAS_PAD_LEFT_RPX,
         canvasWidthRpx: (swim.sheetWidthRpx || 1440) + ((_e = swim.canvasPadLeftRpx) !== null && _e !== void 0 ? _e : CANVAS_PAD_LEFT_RPX),
     };
@@ -715,6 +736,14 @@ function computeChipTooltipPlacement(rect, opts) {
 function chipTooltipTransformWithScale(baseTransform, scale) {
     return `${baseTransform} scale(${scale.toFixed(2)})`;
 }
+function heroCivilizationLine(crumbText) {
+    var _a;
+    const normalized = String(crumbText || '').trim().replace(/[·・]/g, ' · ');
+    const civ = (0, correction_1.parseCivilizationFromCrumb)(normalized);
+    if (civ)
+        return civ;
+    return ((_a = normalized.split(' · ')[0]) === null || _a === void 0 ? void 0 : _a.trim()) || '';
+}
 function previewIntro(intro) {
     const paragraphs = splitIntroParagraphs(intro);
     if (paragraphs.length <= 1) {
@@ -743,6 +772,7 @@ Page({
         dynastyTitle: '',
         navTitle: '',
         heroSubLine: '',
+        heroCivLine: '',
         swim: null,
         concurrentItems: [],
         relatedUnits: [],
@@ -775,6 +805,8 @@ Page({
         activePriority: 'p3',
         activePriorityLabel: priorityLabel('p3'),
         priorityMenuVisible: false,
+        priorityMenuTopPx: 0,
+        priorityMenuRightPx: 24,
         chipTooltipVisible: false,
         chipTooltipPhase: 'enter',
         chipTooltipHeldId: '',
@@ -893,6 +925,7 @@ Page({
                 const dynastyTitle = (unit.dynastyName && unit.dynastyName.trim()) || unit.name;
                 const navTitle = dynastyTitle.length <= 4 ? dynastyTitle : dynastyTitle.slice(0, 4);
                 const heroSubLine = `${(0, year_format_1.formatHistoryYear)(unit.startYear)}–${(0, year_format_1.formatHistoryYear)(unit.endYear)}`;
+                const heroCivLine = heroCivilizationLine(unit.crumbText);
                 const activePriority = this.data.activePriority || 'p3';
                 this.swimSource = swim;
                 const prioritySwim = applyPriorityView(swim, activePriority);
@@ -906,6 +939,7 @@ Page({
                         dynastyTitle,
                         navTitle,
                         heroSubLine,
+                        heroCivLine,
                         swim: null,
                         concurrentItems: [],
                         relatedUnits: hero.relatedUnits || [],
@@ -927,6 +961,7 @@ Page({
                     dynastyTitle,
                     navTitle,
                     heroSubLine,
+                    heroCivLine,
                     swim: swimForView,
                     concurrentItems: prioritySwim.concurrentItems || [],
                     relatedUnits: hero.relatedUnits || [],
@@ -1286,8 +1321,9 @@ Page({
         this.openOverlaySheet(lane, bars, label);
     },
     onPriorityTap(e) {
-        const priority = e.currentTarget.dataset.priority;
-        if (!priority)
+        const ds = e.currentTarget.dataset;
+        const priority = String(ds.priority || '').trim();
+        if (!priority || !PRIORITY_OPTIONS.some((item) => item.value === priority))
             return;
         if (priority === this.data.activePriority) {
             this.setData({ priorityMenuVisible: false });
@@ -1310,9 +1346,26 @@ Page({
     },
     togglePriorityMenu() {
         const nextOpen = !this.data.priorityMenuVisible;
-        this.setData({ priorityMenuVisible: nextOpen });
-        if (nextOpen)
-            this.hideChipTooltip();
+        if (!nextOpen) {
+            this.setData({ priorityMenuVisible: false });
+            return;
+        }
+        this.hideChipTooltip();
+        wx.createSelectorQuery()
+            .in(this)
+            .select('.unit-hero-priority-wrap')
+            .boundingClientRect()
+            .exec((res) => {
+            const rect = res === null || res === void 0 ? void 0 : res[0];
+            const sys = wx.getSystemInfoSync();
+            const top = rect ? Math.round(rect.bottom + 4) : this.data.scrollTop + 100;
+            const right = rect ? Math.max(8, Math.round(sys.windowWidth - rect.right)) : 24;
+            this.setData({
+                priorityMenuVisible: true,
+                priorityMenuTopPx: top,
+                priorityMenuRightPx: right,
+            });
+        });
     },
     closePriorityMenu() {
         if (this.data.priorityMenuVisible) {
@@ -1381,38 +1434,42 @@ Page({
     },
     noop() { },
     async refreshFavState() {
-        const boxIds = this.data.matrixBoxIds;
-        if (!boxIds.length || !(0, api_1.hasToken)()) {
+        var _a;
+        const unitId = String(((_a = this.data.unit) === null || _a === void 0 ? void 0 : _a.id) || '').trim();
+        if (!unitId || !(0, api_1.hasToken)()) {
             this.setData({ isFav: false, favPartial: false });
             return;
         }
-        const favorited = await (0, favorite_box_1.fetchFavoritedBoxIdSet)();
-        const st = (0, favorite_box_1.computeUnitFavoriteState)(boxIds, favorited);
-        this.setData({ isFav: st.allFavorited, favPartial: st.anyFavorited && !st.allFavorited });
+        const favorited = await (0, favorite_unit_1.fetchFavoritedUnitIdSet)();
+        this.setData({ isFav: favorited.has(unitId), favPartial: false });
     },
     async onFavoriteTap() {
+        var _a;
         if (this.data.favToggling || !(0, api_1.hasToken)()) {
             if (!(0, api_1.hasToken)())
-                (0, favorite_box_1.promptLoginForFavorite)();
+                (0, favorite_unit_1.promptLoginForUnitFavorite)();
             return;
         }
-        const boxIds = this.data.matrixBoxIds;
-        if (!boxIds.length) {
-            wx.showToast({ title: '当前朝代暂无史略可收藏', icon: 'none' });
+        const unitId = String(((_a = this.data.unit) === null || _a === void 0 ? void 0 : _a.id) || '').trim();
+        if (!unitId) {
+            wx.showToast({ title: '当前朝代无法收藏', icon: 'none' });
             return;
         }
-        const favorited = await (0, favorite_box_1.fetchFavoritedBoxIdSet)();
-        const st = (0, favorite_box_1.computeUnitFavoriteState)(boxIds, favorited);
-        const nextFav = !st.allFavorited;
+        const nextFav = !this.data.isFav;
         this.setData({ favToggling: true });
         try {
-            await (0, favorite_box_1.setBoxesFavorited)(boxIds, nextFav);
+            if (nextFav) {
+                await (0, favorite_unit_1.favoriteUnit)(unitId);
+            }
+            else {
+                await (0, favorite_unit_1.unfavoriteUnit)(unitId);
+            }
             await this.refreshFavState();
-            wx.showToast({ title: nextFav ? '已收藏本朝史略' : '已取消收藏', icon: 'success' });
+            wx.showToast({ title: nextFav ? '已收藏本朝' : '已取消收藏', icon: 'success' });
         }
         catch (e) {
             wx.showToast({
-                title: (0, load_error_message_1.formatUserFacingError)(e, (0, runtime_env_1.isDevelopEnv)(), '操作失败，请稍后重试'),
+                title: (0, load_error_message_1.formatApiRequestError)(e) || (0, load_error_message_1.formatUserFacingError)(e, (0, runtime_env_1.isDevelopEnv)(), '收藏失败，请稍后重试'),
                 icon: 'none',
             });
         }

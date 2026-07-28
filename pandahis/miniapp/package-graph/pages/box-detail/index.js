@@ -20,33 +20,163 @@ function relicThumbLabel(name) {
         return n;
     return n.slice(-4);
 }
+/** 从「史略名称·评述角度」取 · 后的评述角度 */
+function critiqueAngleTitle(fullTitle) {
+    const t = String(fullTitle || '').trim();
+    if (!t)
+        return '';
+    const dotIdx = t.indexOf('·');
+    if (dotIdx >= 0) {
+        const rest = t.slice(dotIdx + 1).trim();
+        return rest || t;
+    }
+    return t;
+}
+const TRADITIONAL_DYNASTIES = [
+    '北宋', '南宋', '西汉', '东汉', '南北朝',
+    '战国末期', '战国', '春秋末期', '春秋', '五帝', '三皇', '上古',
+    '东晋', '西晋', '三国', '五代', '魏晋',
+    '夏', '商', '周', '秦', '隋', '唐', '宋', '元', '明', '清',
+];
+const MODERN_PERIOD_LABELS = [
+    '近现代', '近代', '现代', '当代', '中华民国', '二十世纪', '20世纪',
+];
+function isYearLikeFragment(text) {
+    const s = String(text || '').trim();
+    if (!s)
+        return false;
+    return /^(约)?\s*公元前/u.test(s)
+        || /^(约)?\s*[\d０-９]+/u.test(s)
+        || /世纪|年代|^\d+年$/u.test(s);
+}
+/** 从评述年代取传统朝代（清及以前），去掉括号内年份与 · 后的具体时间 */
+function critiqueDynastyLabel(eraText) {
+    var _a;
+    let s = String(eraText || '').trim();
+    if (!s)
+        return '';
+    const trailing = s.match(/[（(]([^）)]+)[）)]\s*$/);
+    const beforeParens = s.replace(/[（(][^）)]+[）)]/gu, '').trim();
+    if (isYearLikeFragment(beforeParens) && trailing && isDynastyLikeLabel(trailing[1])) {
+        s = trailing[1].trim();
+    }
+    else {
+        s = s.replace(/[（(][^）)]+[）)]/gu, '').trim();
+    }
+    for (const sep of ['·', '・']) {
+        if (s.includes(sep)) {
+            const head = (_a = s.split(sep)[0]) === null || _a === void 0 ? void 0 : _a.trim();
+            if (head) {
+                s = head;
+                break;
+            }
+        }
+    }
+    s = s.replace(/\s+约?公元前.*$/u, '').trim();
+    s = s.replace(/[，,]\s*约?.*$/u, '').trim();
+    s = s.replace(/\s+约?\d+.*$/u, '').trim();
+    for (const d of [...TRADITIONAL_DYNASTIES, ...MODERN_PERIOD_LABELS].sort((a, b) => b.length - a.length)) {
+        if (s === d || s.startsWith(d))
+            return d;
+    }
+    const short = s.match(/^(清|明|元|宋|唐|隋|秦|周|商|夏)/u);
+    if (short)
+        return short[1];
+    return s;
+}
+function isDynastyLikeLabel(text) {
+    const s = String(text || '').trim();
+    if (!s)
+        return false;
+    if ([...TRADITIONAL_DYNASTIES, ...MODERN_PERIOD_LABELS].some((d) => s === d || s.startsWith(d)))
+        return true;
+    return /^(春|战|西|东|南|北|五|三|上|近|现)/u.test(s);
+}
+function isTraditionalDynasty(label) {
+    const s = String(label || '').trim();
+    if (!s || isYearLikeFragment(s))
+        return false;
+    if (MODERN_PERIOD_LABELS.some((m) => s === m || s.startsWith(m)))
+        return false;
+    return TRADITIONAL_DYNASTIES.some((d) => s === d || s.startsWith(d))
+        || /^(清|明|元|宋|唐|隋|秦|周|商|夏)/u.test(s);
+}
+/** 1912 年后无法归入传统朝代时，提取年份/世纪/年代 */
+function critiqueYearLabel(eraText) {
+    const raw = String(eraText || '').trim();
+    if (!raw)
+        return '';
+    const parenParts = [];
+    const parenRe = /[（(]([^）)]+)[）)]/gu;
+    let parenMatch;
+    while ((parenMatch = parenRe.exec(raw)) !== null) {
+        const part = parenMatch[1].trim();
+        if (isYearLikeFragment(part))
+            parenParts.push(part);
+    }
+    if (parenParts.length) {
+        const exact = parenParts.find((t) => /^\d+年$/u.test(t));
+        if (exact)
+            return exact;
+        const withYear = parenParts.find((t) => /\d/u.test(t));
+        if (withYear)
+            return withYear.replace(/^约\s*/u, '约');
+    }
+    for (const sep of ['·', '・']) {
+        if (raw.includes(sep)) {
+            const tail = raw.split(sep).slice(1).join(sep).replace(/[（(][^）)]+[）)]/gu, '').trim();
+            if (tail && isYearLikeFragment(tail))
+                return tail.replace(/^约\s*/u, '约');
+        }
+    }
+    const stripped = raw.replace(/[（(][^）)]+[）)]/gu, '').trim();
+    if (isYearLikeFragment(stripped))
+        return stripped.replace(/^约\s*/u, '约');
+    const embedded = stripped.match(/(\d{4}年(?:代)?|20世纪[^\s，,）)]*|约?\d+世纪[^\s，,）)]*|\d{2,4}年代)/u);
+    if (embedded)
+        return embedded[1];
+    return '';
+}
+/** 列表/详情时代展示：传统朝代只显示朝代；1912 年后只显示年份，不同时出现 */
+function critiqueEraDisplay(eraText) {
+    const era = String(eraText || '').trim();
+    if (!era)
+        return '';
+    const dynasty = critiqueDynastyLabel(era);
+    if (isTraditionalDynasty(dynasty))
+        return dynasty;
+    const year = critiqueYearLabel(era);
+    if (year)
+        return year;
+    if (dynasty && !isYearLikeFragment(dynasty))
+        return dynasty;
+    return '';
+}
 function mapCritiqueItems(raw) {
     return (raw || []).map((it, idx) => {
         const author = String(it.author || '').trim();
         const title = String(it.title || '').trim();
-        const displayAuthor = author || title || '佚名';
+        const angleTitle = critiqueAngleTitle(title);
+        const displayAuthor = author || angleTitle || title || '佚名';
         const era = String(it.eraText || '').trim();
-        const yv = it.year;
-        const y = yv != null && yv !== '' ? Number(yv) : NaN;
-        const yearStr = Number.isFinite(y) && y !== 0 ? (0, year_format_1.formatHistoryYear)(y) : '';
-        const eraMeta = [era, yearStr].filter(Boolean).join(' · ');
+        const dynasty = critiqueEraDisplay(era);
         const content = String(it.content || '').trim();
         const blurb = String(it.blurb || '').trim();
         const bodyQuote = content || blurb;
         const source = String(it.source || it.book || '').trim();
-        const cardTitle = title || displayAuthor;
+        const cardTitle = angleTitle || displayAuthor;
         const metaParts = [];
         if (title && author)
             metaParts.push(author);
-        if (era)
-            metaParts.push(era);
+        if (dynasty)
+            metaParts.push(dynasty);
         if (source)
             metaParts.push(source);
         const cardMeta = metaParts.filter(Boolean).join(' · ');
         return {
             ...it,
             displayAuthor,
-            eraMeta,
+            eraMeta: dynasty,
             bodyQuote,
             avatarLetter: displayAuthor.charAt(0) || '评',
             cardTitle,
@@ -721,13 +851,15 @@ Page({
         const c = list[idx];
         if (!c)
             return;
-        const body = String(c.content || c.bodyQuote || '').trim();
+        const boxName = String(this.data.navTitle || '').trim();
+        const angleTitle = critiqueAngleTitle(String(c.title || ''));
         (0, router_1.navigateTo)(router_1.ROUTES.critiqueDetail, {
-            title: c.title || '',
+            navTitle: boxName ? `${boxName}・评述` : '评述',
+            title: angleTitle || String(c.title || '').trim(),
             author: c.displayAuthor || '',
             book: c.source || '',
             era: c.eraMeta || '',
-            body,
+            body: String(c.content || c.bodyQuote || '').trim(),
         });
     },
     onRelicTap(e) {

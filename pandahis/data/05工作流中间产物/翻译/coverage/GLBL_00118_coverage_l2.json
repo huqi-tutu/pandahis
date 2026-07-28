@@ -1,0 +1,21 @@
+{
+  "schema": "translate-coverage-l2/v1",
+  "史略ID": "GLBL_00118",
+  "passed": false,
+  "degraded": false,
+  "summary": "一条内容矛盾：免相人物不符。",
+  "l1_ratio": 0.0,
+  "l1_min_ratio": 0.0,
+  "claims": [
+    {
+      "id": "M042–M043",
+      "claim": "冉免，封公子市宛，公子悝邓，魏冉陶，为诸侯。；十七年，城阳君入朝，及东周君来朝。",
+      "status": "contradicted",
+      "evidence": "译文写'芈戎被免了丞相之位'，而母本主张'冉免'（魏冉被免），存在事实矛盾。",
+      "note": "母本'冉免'指穰侯魏冉免相，译文误为芈戎免相，未传达冉免信息。"
+    }
+  ],
+  "issues": [
+    "contradicted [M042–M043]: 冉免，封公子市宛，公子悝邓，魏冉陶，为诸侯。；十七年，城阳君入朝，及东周君来朝。"
+  ]
+}

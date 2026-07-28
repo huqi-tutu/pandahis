@@ -1,0 +1,145 @@
+{
+  "stamp": "20260727_233010",
+  "results": [
+    {
+      "id": "GLBL_00068",
+      "name": "楚庄王",
+      "status": "done",
+      "path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/09见证/GLBL_00068_楚庄王_见证.json",
+      "manifest": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/09见证/春秋_见证_manifest.json",
+      "entry_count": 2,
+      "issues": []
+    },
+    {
+      "id": "GLBL_00125",
+      "name": "秦穆公",
+      "status": "done",
+      "path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/09见证/GLBL_00125_秦穆公_见证.json",
+      "manifest": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/09见证/春秋_见证_manifest.json",
+      "entry_count": 1,
+      "issues": []
+    },
+    {
+      "id": "GLBL_00065",
+      "name": "晋献公",
+      "status": "done",
+      "path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/09见证/GLBL_00065_晋献公_见证.json",
+      "manifest": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/09见证/春秋_见证_manifest.json",
+      "entry_count": 2,
+      "issues": []
+    },
+    {
+      "id": "GLBL_00063",
+      "name": "晋景公",
+      "status": "done",
+      "path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/09见证/GLBL_00063_晋景公_见证.json",
+      "manifest": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/09见证/春秋_见证_manifest.json",
+      "entry_count": 1,
+      "issues": []
+    },
+    {
+      "id": "GLBL_00133",
+      "name": "赵襄子",
+      "status": "done",
+      "path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/09见证/GLBL_00133_赵襄子_见证.json",
+      "manifest": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/09见证/春秋_见证_manifest.json",
+      "entry_count": 2,
+      "issues": []
+    },
+    {
+      "id": "GLBL_00712",
+      "name": "晋灵公",
+      "status": "done",
+      "path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/09见证/GLBL_00712_晋灵公_见证.json",
+      "manifest": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/09见证/春秋_见证_manifest.json",
+      "entry_count": 1,
+      "issues": []
+    },
+    {
+      "id": "GLBL_00708",
+      "name": "晋厉公",
+      "status": "done",
+      "path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/09见证/GLBL_00708_晋厉公_见证.json",
+      "manifest": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/09见证/春秋_见证_manifest.json",
+      "entry_count": 1,
+      "issues": []
+    },
+    {
+      "id": "GLBL_00711",
+      "name": "晋惠公",
+      "status": "done",
+      "path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/09见证/GLBL_00711_晋惠公_见证.json",
+      "manifest": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/09见证/春秋_见证_manifest.json",
+      "entry_count": 1,
+      "issues": [
+        {
+          "level": "WARN",
+          "msg": "[1] 现藏地点建议「国家·机构」格式"
+        }
+      ]
+    },
+    {
+      "id": "GLBL_00714",
+      "name": "晋顷公",
+      "status": "done",
+      "path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/09见证/GLBL_00714_晋顷公_见证.json",
+      "manifest": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/09见证/春秋_见证_manifest.json",
+      "entry_count": 1,
+      "issues": []
+    },
+    {
+      "id": "GLBL_00007",
+      "name": "卫灵公",
+      "status": "done",
+      "path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/09见证/GLBL_00007_卫灵公_见证.json",
+      "manifest": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/09见证/春秋_见证_manifest.json",
+      "entry_count": 1,
+      "issues": []
+    },
+    {
+      "id": "GLBL_00772",
+      "name": "齐襄公",
+      "status": "done",
+      "path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/09见证/GLBL_00772_齐襄公_见证.json",
+      "manifest": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/09见证/春秋_见证_manifest.json",
+      "entry_count": 1,
+      "issues": []
+    },
+    {
+      "id": "GLBL_00769",
+      "name": "齐灵公",
+      "status": "done",
+      "path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/09见证/GLBL_00769_齐灵公_见证.json",
+      "manifest": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/09见证/春秋_见证_manifest.json",
+      "entry_count": 1,
+      "issues": []
+    },
+    {
+      "id": "GLBL_00763",
+      "name": "齐庄公",
+      "status": "done",
+      "path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/09见证/GLBL_00763_齐庄公_见证.json",
+      "manifest": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/09见证/春秋_见证_manifest.json",
+      "entry_count": 1,
+      "issues": []
+    },
+    {
+      "id": "GLBL_00064",
+      "name": "晋武公",
+      "status": "done",
+      "path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/09见证/GLBL_00064_晋武公_见证.json",
+      "manifest": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/09见证/春秋_见证_manifest.json",
+      "entry_count": 1,
+      "issues": []
+    },
+    {
+      "id": "GLBL_00734",
+      "name": "郑文公",
+      "status": "done",
+      "path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/09见证/GLBL_00734_郑文公_见证.json",
+      "manifest": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/09见证/春秋_见证_manifest.json",
+      "entry_count": 1,
+      "issues": []
+    }
+  ]
+}

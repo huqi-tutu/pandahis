@@ -59,12 +59,14 @@ const CATEGORY_FILL: Record<string, string> = {
   同僚: 'rgba(248, 246, 244, 0.95)',
   师从: 'rgba(246, 250, 248, 0.95)',
   外敌: 'rgba(250, 244, 244, 0.95)',
+  好友: 'rgba(246, 248, 252, 0.95)',
 }
 const CATEGORY_STROKE: Record<string, string> = {
   家庭: 'rgba(162, 115, 79, 0.38)',
   同僚: 'rgba(127, 176, 105, 0.38)',
   师从: 'rgba(99, 137, 156, 0.38)',
   外敌: 'rgba(180, 100, 100, 0.35)',
+  好友: 'rgba(120, 140, 180, 0.38)',
 }
 const CATEGORY_TEXT = '#6C757D'
 const LEAF_FILL = '#FAF8F5'
@@ -77,6 +79,7 @@ const GROUP_EDGE: Record<string, string> = {
   同僚: 'rgba(127, 176, 105, 0.45)',
   师从: 'rgba(99, 137, 156, 0.45)',
   外敌: 'rgba(180, 100, 100, 0.42)',
+  好友: 'rgba(120, 140, 180, 0.42)',
   other: 'rgba(120, 110, 105, 0.38)',
 }
 const CENTER_R = 28
@@ -99,7 +102,7 @@ function parseExtraGroup(extraJson?: string): string {
     const o = JSON.parse(extraJson) as Record<string, unknown>
     if (o.isCategoryNode) return normalizeGroupName(String(o.关系类别 || ''))
     const raw = String(o.关系类别 || o.group || o.category || o.cat || '')
-    const m = normalizeGroupName(raw).match(/家庭|同僚|师从|外敌/)
+    const m = normalizeGroupName(raw).match(/家庭|同僚|师从|外敌|好友/)
     return m ? m[0] : ''
   } catch {
     return ''

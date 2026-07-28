@@ -2,12 +2,51 @@ import { hasToken, request } from '../../native-utils/api'
 import {
   FavoriteCardView,
   FavoriteItemRaw,
-  splitFavorites,
+  UnitFavoriteCardView,
+  UnitFavoriteItemRaw,
+  toFavoriteCardView,
+  toUnitFavoriteCardView,
 } from '../../native-utils/favorite-display'
 import { ROUTES, navigateTo } from '../../native-utils/router'
 import { computePageTopPadPx } from '../../native-utils/nav-metrics'
 
 type TabKey = 'dynasty' | 'shilue'
+
+async function fetchAllBoxFavorites(): Promise<FavoriteItemRaw[]> {
+  const all: FavoriteItemRaw[] = []
+  let page = 1
+  const pageSize = 50
+  while (true) {
+    const res = await request<{ items: FavoriteItemRaw[]; total: number }>(
+      `/favorites/boxes?page=${page}&pageSize=${pageSize}`,
+      { auth: true }
+    )
+    const batch = res.data.items || []
+    all.push(...batch)
+    const total = res.data.total ?? all.length
+    if (batch.length < pageSize || all.length >= total) break
+    page += 1
+  }
+  return all
+}
+
+async function fetchAllUnitFavorites(): Promise<UnitFavoriteItemRaw[]> {
+  const all: UnitFavoriteItemRaw[] = []
+  let page = 1
+  const pageSize = 50
+  while (true) {
+    const res = await request<{ items: UnitFavoriteItemRaw[]; total: number }>(
+      `/favorites/units?page=${page}&pageSize=${pageSize}`,
+      { auth: true }
+    )
+    const batch = res.data.items || []
+    all.push(...batch)
+    const total = res.data.total ?? all.length
+    if (batch.length < pageSize || all.length >= total) break
+    page += 1
+  }
+  return all
+}
 
 Page({
   data: {
@@ -16,8 +55,8 @@ Page({
     activeTab: 'dynasty' as TabKey,
     dynastyCount: 0,
     shilueCount: 0,
-    visibleItems: [] as FavoriteCardView[],
-    dynastyItems: [] as FavoriteCardView[],
+    visibleItems: [] as Array<FavoriteCardView | UnitFavoriteCardView>,
+    dynastyItems: [] as UnitFavoriteCardView[],
     shilueItems: [] as FavoriteCardView[],
     pageTopPadPx: 88,
   },
@@ -55,22 +94,12 @@ Page({
   },
   async load() {
     try {
-      const all: FavoriteItemRaw[] = []
-      let page = 1
-      const pageSize = 50
-      let total = 0
-      while (true) {
-        const res = await request<{ items: FavoriteItemRaw[]; total: number }>(
-          `/favorites/boxes?page=${page}&pageSize=${pageSize}`,
-          { auth: true }
-        )
-        const batch = res.data.items || []
-        all.push(...batch)
-        total = res.data.total ?? all.length
-        if (batch.length < pageSize || all.length >= total) break
-        page += 1
-      }
-      const { dynasty, shilue } = splitFavorites(all)
+      const [unitRaw, boxRaw] = await Promise.all([
+        fetchAllUnitFavorites(),
+        fetchAllBoxFavorites(),
+      ])
+      const dynasty = unitRaw.map(toUnitFavoriteCardView)
+      const shilue = boxRaw.map(toFavoriteCardView)
       const activeTab: TabKey =
         dynasty.length > 0 ? 'dynasty' : shilue.length > 0 ? 'shilue' : 'dynasty'
       const visibleItems = activeTab === 'dynasty' ? dynasty : shilue
@@ -95,8 +124,16 @@ Page({
     }
   },
   go(e: WechatMiniprogram.BaseEvent) {
-    const id = (e.currentTarget as WechatMiniprogram.IAnyObject).dataset.id as string
+    const ds = (e.currentTarget as WechatMiniprogram.IAnyObject).dataset as {
+      id?: string
+      kind?: TabKey
+    }
+    const id = ds.id || ''
     if (!id) return
+    if (ds.kind === 'dynasty' || this.data.activeTab === 'dynasty') {
+      navigateTo(ROUTES.dynastyDetail, { unitId: id })
+      return
+    }
     navigateTo(ROUTES.boxDetail, { boxId: id })
   },
 })

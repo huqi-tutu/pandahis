@@ -1,11 +1,11 @@
 import { hasToken, request } from '../../native-utils/api'
 import { encodePathSegment } from '../../native-utils/encode-path-segment'
 import {
-  computeUnitFavoriteState,
-  fetchFavoritedBoxIdSet,
-  promptLoginForFavorite,
-  setBoxesFavorited,
-} from '../../native-utils/favorite-box'
+  favoriteUnit,
+  fetchFavoritedUnitIdSet,
+  promptLoginForUnitFavorite,
+  unfavoriteUnit,
+} from '../../native-utils/favorite-unit'
 import { ROUTES, navigateTo } from '../../native-utils/router'
 import { decodeQueryValue } from '../../native-utils/query-value'
 import { formatHistoryYear, formatHistoryYearToken } from '../../native-utils/year-format'
@@ -19,6 +19,7 @@ import {
 } from '../../native-utils/correction'
 import {
   formatApiErrorDetail,
+  formatApiRequestError,
   formatDynastyLoadError,
   formatEmptySwimError,
   formatUserFacingError,
@@ -32,6 +33,7 @@ import {
   type OffscreenHintItem,
 } from '../../native-utils/offscreen-hints'
 import { categoryRailColor } from '../../native-utils/chip-badge-tokens'
+import { PRD_CATEGORY_KEYS } from '../../native-utils/format'
 const {
   buildSwimMatrixFromMock,
   buildHeroFromMock,
@@ -620,39 +622,63 @@ function hasLaneContent(lane: SwimLane): boolean {
   return rows.some((row) => (row || []).length > 0)
 }
 
+function orderSwimLanes(lanes: SwimLane[]): SwimLane[] {
+  const byKey = new Map(lanes.map((lane) => [lane.key, lane]))
+  return PRD_CATEGORY_KEYS
+    .map((key) => byKey.get(key))
+    .filter((lane): lane is SwimLane => !!lane)
+}
+
+function resolveCanvasHeightRpx(categoryBands: CategoryBand[]): number {
+  if (!categoryBands.length) {
+    return snapRpx(MIN_BAND_HEIGHT_RPX + BAND_PAD_RPX * 2)
+  }
+  const last = categoryBands[categoryBands.length - 1]
+  return snapRpx(last.topRpx + last.heightRpx + BAND_PAD_RPX)
+}
+
 function composeCanvasLayout(swim: SwimMatrix, lanes: SwimLane[]): SwimMatrix {
   const categoryBands: CategoryBand[] = []
   const canvasLanes: SwimLane[] = []
   let cursor = BAND_PAD_RPX
   const sheetWidthRpx = swim.sheetWidthRpx || 1440
-  const visibleLanes = lanes.filter(hasLaneContent)
+  const visibleLanes = orderSwimLanes(lanes)
 
   for (const lane of visibleLanes) {
-    const rowCount = Math.max(1, lane.rowCount || lane.collapsedRows?.length || 1)
+    const contentRows = lane.collapsedRows || []
+    const hasRows = contentRows.some((row) => (row || []).length > 0)
+    const rowCount = Math.max(
+      1,
+      hasRows ? (lane.rowCount || contentRows.length || 1) : 1,
+    )
     const trackHeight = snapRpx(
       LANE_TRACK_PAD_VERTICAL_RPX + rowCount * CHIP_HEIGHT_RPX + (rowCount - 1) * ROW_GAP_RPX,
     )
     const bandHeight = Math.max(MIN_BAND_HEIGHT_RPX, trackHeight)
 
     const canvasRows: SwimBar[][] = []
-    ;(lane.collapsedRows || []).forEach((row, rowIndex) => {
-      const topRpx = snapRpx(cursor + BAND_PAD_RPX + rowIndex * (CHIP_HEIGHT_RPX + ROW_GAP_RPX))
-      canvasRows.push(
-        row.map((bar) => {
-          const enriched = withBucketChipMeta(bar, lane.label)
-          const chipW = chipWidthRpxFromBar(enriched)
-          const left = adjustLeftForChipWidth(enriched, chipW, sheetWidthRpx)
-          return {
-            ...enriched,
-            left,
-            topRpx,
-            heightRpx: chipHeightRpx(enriched),
-            chipWidth: `${chipW}rpx`,
-            width: `${(chipW / sheetWidthRpx * 100).toFixed(2)}%`,
-          }
-        }),
-      )
-    })
+    if (hasRows) {
+      contentRows.forEach((row, rowIndex) => {
+        const topRpx = snapRpx(cursor + BAND_PAD_RPX + rowIndex * (CHIP_HEIGHT_RPX + ROW_GAP_RPX))
+        canvasRows.push(
+          row.map((bar) => {
+            const enriched = withBucketChipMeta(bar, lane.label)
+            const chipW = chipWidthRpxFromBar(enriched)
+            const left = adjustLeftForChipWidth(enriched, chipW, sheetWidthRpx)
+            return {
+              ...enriched,
+              left,
+              topRpx,
+              heightRpx: chipHeightRpx(enriched),
+              chipWidth: `${chipW}rpx`,
+              width: `${(chipW / sheetWidthRpx * 100).toFixed(2)}%`,
+            }
+          }),
+        )
+      })
+    } else {
+      canvasRows.push([])
+    }
 
     categoryBands.push({
       key: lane.key,
@@ -681,7 +707,7 @@ function composeCanvasLayout(swim: SwimMatrix, lanes: SwimLane[]): SwimMatrix {
     ...swim,
     lanes: canvasLanes,
     categoryBands,
-    canvasHeightRpx: snapRpx(Math.max(MIN_BAND_HEIGHT_RPX + BAND_PAD_RPX * 2, cursor + BAND_PAD_RPX)),
+    canvasHeightRpx: resolveCanvasHeightRpx(categoryBands),
     canvasPadLeftRpx: swim.canvasPadLeftRpx ?? CANVAS_PAD_LEFT_RPX,
     canvasWidthRpx: (swim.sheetWidthRpx || 1440) + (swim.canvasPadLeftRpx ?? CANVAS_PAD_LEFT_RPX),
   }
@@ -949,6 +975,13 @@ function chipTooltipTransformWithScale(baseTransform: string, scale: number): st
   return `${baseTransform} scale(${scale.toFixed(2)})`
 }
 
+function heroCivilizationLine(crumbText: string): string {
+  const normalized = String(crumbText || '').trim().replace(/[·・]/g, ' · ')
+  const civ = parseCivilizationFromCrumb(normalized)
+  if (civ) return civ
+  return normalized.split(' · ')[0]?.trim() || ''
+}
+
 function previewIntro(intro: string): { preview: string; canExpand: boolean; paragraphs: string[] } {
   const paragraphs = splitIntroParagraphs(intro)
   if (paragraphs.length <= 1) {
@@ -978,6 +1011,7 @@ Page({
     dynastyTitle: '',
     navTitle: '',
     heroSubLine: '',
+    heroCivLine: '',
     swim: null as SwimMatrix | null,
     concurrentItems: [] as string[],
     relatedUnits: [] as NonNullable<UnitHero['relatedUnits']>,
@@ -1010,6 +1044,8 @@ Page({
     activePriority: 'p3' as PriorityLevel,
     activePriorityLabel: priorityLabel('p3'),
     priorityMenuVisible: false,
+    priorityMenuTopPx: 0,
+    priorityMenuRightPx: 24,
     chipTooltipVisible: false,
     chipTooltipPhase: 'enter' as 'enter' | 'idle' | 'exit',
     chipTooltipHeldId: '',
@@ -1130,6 +1166,7 @@ Page({
         const dynastyTitle = (unit.dynastyName && unit.dynastyName.trim()) || unit.name
         const navTitle = dynastyTitle.length <= 4 ? dynastyTitle : dynastyTitle.slice(0, 4)
         const heroSubLine = `${formatHistoryYear(unit.startYear)}–${formatHistoryYear(unit.endYear)}`
+        const heroCivLine = heroCivilizationLine(unit.crumbText)
         const activePriority = this.data.activePriority || 'p3'
         this.swimSource = swim
         const prioritySwim = applyPriorityView(swim, activePriority)
@@ -1143,6 +1180,7 @@ Page({
             dynastyTitle,
             navTitle,
             heroSubLine,
+            heroCivLine,
             swim: null,
             concurrentItems: [],
             relatedUnits: hero.relatedUnits || [],
@@ -1164,6 +1202,7 @@ Page({
           dynastyTitle,
           navTitle,
           heroSubLine,
+          heroCivLine,
           swim: swimForView,
           concurrentItems: prioritySwim.concurrentItems || [],
           relatedUnits: hero.relatedUnits || [],
@@ -1533,8 +1572,9 @@ Page({
     this.openOverlaySheet(lane, bars, label)
   },
   onPriorityTap(e: WechatMiniprogram.BaseEvent) {
-    const priority = (e.currentTarget as any).dataset.priority as PriorityLevel
-    if (!priority) return
+    const ds = (e.currentTarget as WechatMiniprogram.IAnyObject).dataset as { priority?: string }
+    const priority = String(ds.priority || '').trim() as PriorityLevel
+    if (!priority || !PRIORITY_OPTIONS.some((item) => item.value === priority)) return
     if (priority === this.data.activePriority) {
       this.setData({ priorityMenuVisible: false })
       return
@@ -1555,8 +1595,26 @@ Page({
   },
   togglePriorityMenu() {
     const nextOpen = !this.data.priorityMenuVisible
-    this.setData({ priorityMenuVisible: nextOpen })
-    if (nextOpen) this.hideChipTooltip()
+    if (!nextOpen) {
+      this.setData({ priorityMenuVisible: false })
+      return
+    }
+    this.hideChipTooltip()
+    wx.createSelectorQuery()
+      .in(this)
+      .select('.unit-hero-priority-wrap')
+      .boundingClientRect()
+      .exec((res) => {
+        const rect = res?.[0] as WechatMiniprogram.BoundingClientRectCallbackResult | undefined
+        const sys = wx.getSystemInfoSync()
+        const top = rect ? Math.round(rect.bottom + 4) : this.data.scrollTop + 100
+        const right = rect ? Math.max(8, Math.round(sys.windowWidth - rect.right)) : 24
+        this.setData({
+          priorityMenuVisible: true,
+          priorityMenuTopPx: top,
+          priorityMenuRightPx: right,
+        })
+      })
   },
   closePriorityMenu() {
     if (this.data.priorityMenuVisible) {
@@ -1621,36 +1679,37 @@ Page({
   },
   noop() {},
   async refreshFavState() {
-    const boxIds = this.data.matrixBoxIds
-    if (!boxIds.length || !hasToken()) {
+    const unitId = String(this.data.unit?.id || '').trim()
+    if (!unitId || !hasToken()) {
       this.setData({ isFav: false, favPartial: false })
       return
     }
-    const favorited = await fetchFavoritedBoxIdSet()
-    const st = computeUnitFavoriteState(boxIds, favorited)
-    this.setData({ isFav: st.allFavorited, favPartial: st.anyFavorited && !st.allFavorited })
+    const favorited = await fetchFavoritedUnitIdSet()
+    this.setData({ isFav: favorited.has(unitId), favPartial: false })
   },
   async onFavoriteTap() {
     if (this.data.favToggling || !hasToken()) {
-      if (!hasToken()) promptLoginForFavorite()
+      if (!hasToken()) promptLoginForUnitFavorite()
       return
     }
-    const boxIds = this.data.matrixBoxIds
-    if (!boxIds.length) {
-      wx.showToast({ title: '当前朝代暂无史略可收藏', icon: 'none' })
+    const unitId = String(this.data.unit?.id || '').trim()
+    if (!unitId) {
+      wx.showToast({ title: '当前朝代无法收藏', icon: 'none' })
       return
     }
-    const favorited = await fetchFavoritedBoxIdSet()
-    const st = computeUnitFavoriteState(boxIds, favorited)
-    const nextFav = !st.allFavorited
+    const nextFav = !this.data.isFav
     this.setData({ favToggling: true })
     try {
-      await setBoxesFavorited(boxIds, nextFav)
+      if (nextFav) {
+        await favoriteUnit(unitId)
+      } else {
+        await unfavoriteUnit(unitId)
+      }
       await this.refreshFavState()
-      wx.showToast({ title: nextFav ? '已收藏本朝史略' : '已取消收藏', icon: 'success' })
+      wx.showToast({ title: nextFav ? '已收藏本朝' : '已取消收藏', icon: 'success' })
     } catch (e: unknown) {
       wx.showToast({
-        title: formatUserFacingError(e, isDevelopEnv(), '操作失败，请稍后重试'),
+        title: formatApiRequestError(e) || formatUserFacingError(e, isDevelopEnv(), '收藏失败，请稍后重试'),
         icon: 'none',
       })
     } finally {

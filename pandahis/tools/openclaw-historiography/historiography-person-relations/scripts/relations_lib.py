@@ -24,11 +24,14 @@ from paths_config import histograph_paths, validate_histograph_root  # noqa: E40
 
 REQUIRED_MODEL = "deepseek-v4-pro"
 PERSON_CATEGORIES = frozenset({"君王", "诸侯", "宗戚", "文臣", "武将", "宦官", "庶众"})
+RELATION_CATEGORIES = ("家庭", "同僚", "师从", "外敌", "好友")
+MAX_CATEGORY_LLM_ATTEMPTS = 3
 CATEGORY_ID_PREFIX = {
     "家庭": "HD-FAM",
     "同僚": "HD-COL",
     "师从": "HD-MAS",
     "外敌": "HD-FOE",
+    "好友": "HD-FRI",
 }
 
 
@@ -181,10 +184,26 @@ def load_grounding(entry: dict[str, Any], paths: dict[str, Path]) -> str:
     return "\n".join(meta) + "\n\n" + "\n\n".join(chunks)
 
 
-def build_prompt(entry: dict[str, Any], grounding: str, paths: dict[str, Path]) -> str:
+def _category_rules(category: str) -> str:
+    prefix = CATEGORY_ID_PREFIX.get(category, "HD-REL")
+    return f"""本次**只整理「{category}」类别**的关系；不要输出其他类别。
+- `关系类别` 必须全部为 **{category}**
+- `关系ID` 前缀：**{prefix}**
+- 无可靠史料的不写；有史料则**尽量写全**该类别下的关键人物，不设条数上限
+- 同一 `关系类别` + `关系层级` + `关系节点标题` 只能一条；多面关系合并入 `关系简述`"""
+
+
+def build_category_prompt(
+    entry: dict[str, Any],
+    grounding: str,
+    paths: dict[str, Path],
+    category: str,
+) -> str:
     taxonomy = read_text(paths["root"] / "关系数据整理提示词.md")
     schema = read_text(SKILL_ROOT / "reference" / "schema.md")
     subject = str(entry.get("史略名称", "")).strip()
+    if category not in RELATION_CATEGORIES:
+        raise ValueError(f"invalid category: {category!r}")
     return f"""你是 pandahis 人物关系数据整理员。请为下列人物产出关系图谱 JSON。
 
 # 硬性要求
@@ -192,12 +211,10 @@ def build_prompt(entry: dict[str, Any], grounding: str, paths: dict[str, Path]) 
 1. **只输出一个 JSON 数组**，不要 markdown 说明、不要代码块外的文字。
 2. 每条记录字段：`关联史略名称`、`关系ID`、`关系类别`、`关系层级`、`关系节点标题`、`上级连接线标题`、`关系简述`；层级 ≥ 二级时填 `所属一级关系` 等链字段（见 schema）。
 3. `关联史略名称` 固定为 **{subject}**。
-4. `关系类别` 只能是：**家庭、同僚、师从、外敌**（禁止 君臣/敌对 旧名）。
+4. {_category_rules(category)}
 5. 任意路径 **最多四级**；禁止五级与 `所属四级关系`。
 6. 无可靠史料不编造；`关系简述` 1–2 句写依据要点。
-7. `关系ID` 建议前缀：HD-FAM / HD-COL / HD-MAS / HD-FOE。
-8. **禁止同类别重复节点**：同一 `关系类别` + `关系层级` + `关系节点标题` 只能出现**一条**记录。若同一人兼有君臣、政敌等多面关系，**合并为一条**，在 `关系简述` 中写清；不得因 `上级连接线标题` 不同而拆成两条。
-9. **跨类别可并存**：同一人可同时出现在不同 `关系类别`（如家庭中为父亲、同僚中为君王），这是允许的。
+7. 禁止 君臣/敌对 旧类别名（同僚·敌对 → `同僚`；外部阵营 → `外敌`）。
 
 # 关系 taxonomy（SSOT）
 
@@ -211,8 +228,16 @@ def build_prompt(entry: dict[str, Any], grounding: str, paths: dict[str, Path]) 
 
 {grounding}
 
-请直接输出 JSON 数组：
+请直接输出「{category}」类别的 JSON 数组（若无任何可写条目，输出 `[]`）：
 """
+
+
+def build_prompt(entry: dict[str, Any], grounding: str, paths: dict[str, Path]) -> str:
+    """兼容 dry-run：拼接全部类别 prompt。"""
+    parts = [
+        build_category_prompt(entry, grounding, paths, cat) for cat in RELATION_CATEGORIES
+    ]
+    return "\n\n---\n\n".join(parts)
 
 
 def normalize_records(records: list[dict[str, Any]], subject: str) -> list[dict[str, Any]]:
@@ -238,6 +263,82 @@ def normalize_records(records: list[dict[str, Any]], subject: str) -> list[dict[
             row["record_id"] = f"rec{uuid.uuid4().hex[:12]}"
         out.append(row)
     return out
+
+
+def reassign_relation_ids(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """合并多轮类别产出后，按类别重新顺序编号。"""
+    counters = {prefix: 0 for prefix in CATEGORY_ID_PREFIX.values()}
+    out: list[dict[str, Any]] = []
+    for rec in records:
+        row = dict(rec)
+        cat = str(row.get("关系类别", "")).strip()
+        prefix = CATEGORY_ID_PREFIX.get(cat, "HD-REL")
+        counters[prefix] = counters.get(prefix, 0) + 1
+        row["关系ID"] = f"{prefix}-{counters[prefix]:03d}"
+        out.append(row)
+    return out
+
+
+def _looks_truncated(raw: str) -> bool:
+    text = raw.strip()
+    if not text or extract_json_array(text):
+        return False
+    if text.rstrip().endswith("]") or text.rstrip().endswith("```"):
+        return False
+    return "[" in text
+
+
+def _retry_category_prompt(
+    base_prompt: str,
+    *,
+    category: str,
+    subject: str,
+    last_raw: str,
+    attempt: int,
+) -> str:
+    if not last_raw.strip():
+        return base_prompt + f"\n\n【重试 {attempt}】上次 API 返回空响应，请重新输出完整的「{category}」JSON 数组。\n"
+    if _looks_truncated(last_raw):
+        tail = last_raw[-1800:]
+        return (
+            f"{base_prompt}\n\n"
+            f"【重试 {attempt}】上次输出在传输中被截断（末尾不完整）。"
+            f"请重新输出**完整**的「{category}」JSON 数组，可尽量详细，不要省略关键人物。\n"
+            f"截断末尾片段（勿重复已完整输出的前半）：\n```\n{tail}\n```\n"
+        )
+    return base_prompt + f"\n\n【重试 {attempt}】上次 JSON 无法解析，请只输出合法 JSON 数组。\n"
+
+
+def _compose_category_records(
+    entry: dict[str, Any],
+    subject: str,
+    eid: str,
+    grounding: str,
+    paths: dict[str, Path],
+    category: str,
+) -> list[dict[str, Any]]:
+    base_prompt = build_category_prompt(entry, grounding, paths, category)
+    last_raw = ""
+    for attempt in range(1, MAX_CATEGORY_LLM_ATTEMPTS + 1):
+        prompt = (
+            base_prompt
+            if attempt == 1
+            else _retry_category_prompt(
+                base_prompt,
+                category=category,
+                subject=subject,
+                last_raw=last_raw,
+                attempt=attempt,
+            )
+        )
+        last_raw = call_llm(prompt, session_prefix=f"rel-{eid}-{category}-a{attempt}-")
+        log_artifact(paths, eid, f"response_{category}_a{attempt}", last_raw)
+        batch = normalize_records(extract_json_array(last_raw), subject)
+        batch = [r for r in batch if str(r.get("关系类别", "")).strip() == category]
+        if batch:
+            return batch
+    print(f"    ⚠️ 类别 {category}：{MAX_CATEGORY_LLM_ATTEMPTS} 轮均无有效产出，跳过")
+    return []
 
 
 def output_path(paths: dict[str, Path], subject: str) -> Path:
@@ -307,11 +408,18 @@ def compose_one(
     if no_llm:
         raise RuntimeError("--no-llm 不可用于 compose")
 
-    raw = call_llm(prompt, session_prefix=f"rel-{eid}-")
-    log_artifact(paths, eid, "response", raw)
-    records = normalize_records(extract_json_array(raw), subject)
+    all_records: list[dict[str, Any]] = []
+    for category in RELATION_CATEGORIES:
+        print(f"  → 类别 {category} …")
+        cat_records = _compose_category_records(
+            entry, subject, eid, grounding, paths, category
+        )
+        print(f"    {len(cat_records)} 条")
+        all_records.extend(cat_records)
+
+    records = reassign_relation_ids(all_records)
     if not records:
-        raise RuntimeError("LLM 未返回有效 JSON 数组")
+        raise RuntimeError("全部类别均无有效产出")
 
     write_output(out_path, records)
     ok, verify_out = run_verify(out_path, strict=True)
@@ -336,7 +444,7 @@ def compose_one(
 当前 JSON：
 {json.dumps(records, ensure_ascii=False, indent=2)}
 
-规则 SSOT 摘要：关系类别仅 家庭/同僚/师从/外敌；最多四级；禁止 所属四级关系 与五级。
+规则 SSOT 摘要：关系类别仅 家庭/同僚/师从/外敌/好友；最多四级；禁止 所属四级关系 与五级。
 
 请输出修正后的 JSON 数组：
 """
@@ -351,6 +459,120 @@ def compose_one(
     if not ok2:
         raise RuntimeError(f"修订后 verify 仍失败:\n{verify_out2}")
     print(f"✅ verify 通过（修订后）: {out_path}")
+    if sync_db:
+        import_json_file(out_path, entry_id=eid, index_path=index_path, sql_out=sql_out, mysql=mysql)
+    return out_path
+
+
+def _verify_and_maybe_revise(
+    *,
+    out_path: Path,
+    records: list[dict[str, Any]],
+    subject: str,
+    eid: str,
+    paths: dict[str, Path],
+    revise_on_fail: bool,
+) -> list[dict[str, Any]]:
+    ok, verify_out = run_verify(out_path, strict=True)
+    print(verify_out)
+    if ok:
+        print(f"✅ verify 通过: {out_path}")
+        return records
+
+    if not revise_on_fail:
+        raise RuntimeError(f"verify 失败:\n{verify_out}")
+
+    fix_prompt = f"""下列人物关系 JSON 校验失败。请**只输出修正后的完整 JSON 数组**。
+
+人物：{subject}
+
+校验输出：
+{verify_out}
+
+当前 JSON：
+{json.dumps(records, ensure_ascii=False, indent=2)}
+
+规则 SSOT 摘要：关系类别仅 家庭/同僚/师从/外敌/好友；最多四级；禁止 所属四级关系 与五级。
+
+请输出修正后的 JSON 数组：
+"""
+    raw2 = call_llm(fix_prompt, session_prefix=f"rel-fix-{eid}-")
+    log_artifact(paths, eid, "response_revise", raw2)
+    records2 = normalize_records(extract_json_array(raw2), subject)
+    if not records2:
+        raise RuntimeError(f"修订轮未返回有效 JSON\n{verify_out}")
+    write_output(out_path, records2)
+    ok2, verify_out2 = run_verify(out_path, strict=True)
+    print(verify_out2)
+    if not ok2:
+        raise RuntimeError(f"修订后 verify 仍失败:\n{verify_out2}")
+    print(f"✅ verify 通过（修订后）: {out_path}")
+    return records2
+
+
+def backfill_category_one(
+    *,
+    category: str = "好友",
+    entry_id: str | None = None,
+    name: str | None = None,
+    index_path: Path | None = None,
+    revise_on_fail: bool = True,
+    sync_db: bool = False,
+    sql_out: Path | None = None,
+    mysql: dict[str, Any] | None = None,
+    skip_if_present: bool = False,
+) -> Path | None:
+    """在已有关系表上回溯补全单个类别（保留其他类别，重新编号）。"""
+    if category not in RELATION_CATEGORIES:
+        raise ValueError(f"invalid category: {category!r}")
+
+    validate_histograph_root()
+    paths = histograph_paths()
+    label = ensure_deepseek_v4_pro()
+    entry = find_entry(entry_id=entry_id, name=name, index_path=index_path)
+    if not is_person_entry(entry):
+        raise RuntimeError(
+            f"{entry.get('史略ID')} {entry.get('史略名称')} 非人物六类（{entry.get('史略分类')}），跳过关系补全"
+        )
+
+    subject = str(entry.get("史略名称", "")).strip()
+    eid = str(entry.get("史略ID", "")).strip()
+    out_path = output_path(paths, subject)
+    if not out_path.is_file():
+        raise FileNotFoundError(f"尚无关系表，请先 compose-one: {out_path}")
+
+    existing = json.loads(out_path.read_text(encoding="utf-8"))
+    if not isinstance(existing, list):
+        raise ValueError(f"invalid JSON: {out_path}")
+
+    has_category = any(str(r.get("关系类别", "")).strip() == category for r in existing)
+    if skip_if_present and has_category:
+        print(f"⏭ {eid} {subject} 已有「{category}」，跳过")
+        return out_path
+
+    kept = [dict(r) for r in existing if str(r.get("关系类别", "")).strip() != category]
+    grounding = load_grounding(entry, paths)
+
+    print(f"LLM: {label}")
+    print(f"回溯补全: {eid} {subject} → 类别 {category}")
+    print(f"  保留其他类别 {len(kept)} 条")
+    print(f"  → 类别 {category} …")
+    cat_records = _compose_category_records(entry, subject, eid, grounding, paths, category)
+    print(f"    新增 {len(cat_records)} 条")
+
+    records = reassign_relation_ids(kept + cat_records)
+    if not records:
+        raise RuntimeError("合并后关系表为空")
+
+    write_output(out_path, records)
+    records = _verify_and_maybe_revise(
+        out_path=out_path,
+        records=records,
+        subject=subject,
+        eid=eid,
+        paths=paths,
+        revise_on_fail=revise_on_fail,
+    )
     if sync_db:
         import_json_file(out_path, entry_id=eid, index_path=index_path, sql_out=sql_out, mysql=mysql)
     return out_path

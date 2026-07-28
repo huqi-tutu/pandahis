@@ -100,6 +100,8 @@ python3 ../../scripts/import_box_translate_json.py
 | `TRANSLATE_COVERAGE_ITEM_MIN` | `0.32` | 单条/句群单元及格线（非逐词硬控） |
 | `TRANSLATE_MUST_PHRASE_MIN_RATIO` | `0.40` | 硬锚点全局命中率下限（低于才阻断） |
 | `TRANSLATE_MUST_PHRASE_MIN_RATIO_LONG` | `0.40` | 清单 ≥80 条时长文硬锚点下限 |
+| `TRANSLATE_MUST_PHRASE_MIN_TOTAL_FOR_RATIO` | `5` | 硬锚点总数低于此值时不用比例，改看绝对缺失数 |
+| `TRANSLATE_MUST_PHRASE_MAX_MISS_ABSOLUTE` | `4` | 小样本（硬锚点 <5）时绝对缺失数 ≥ 此值才阻断 |
 | `TRANSLATE_COVERAGE_L2` | `1` | L1 灰区时长文启用 LLM 语义复核 |
 | `TRANSLATE_COVERAGE_L2_GRAY_BAND` | `0.12` | L1 低于阈值在此带宽内才触发 L2 |
 | `TRANSLATE_COVERAGE_L2_MIN_CHECKLIST` | `50` | 清单少于此条数不跑 L2 |

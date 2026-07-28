@@ -61,6 +61,8 @@ CREATE TABLE IF NOT EXISTS historical_box (
   regime_id VARCHAR(128) NOT NULL,
   dynasty_id VARCHAR(64) NOT NULL,
   civilization_code VARCHAR(16) NOT NULL,
+  civilization_name VARCHAR(64) NULL,
+  dynasty_name VARCHAR(128) NULL,
   title VARCHAR(128) NOT NULL,
   category_key VARCHAR(16) NOT NULL,
   blurb VARCHAR(64) NULL,
@@ -76,7 +78,16 @@ CREATE TABLE IF NOT EXISTS historical_box (
   entry_source VARCHAR(16) NOT NULL DEFAULT 'extract',
   status TINYINT NOT NULL DEFAULT 1,
   detail_md TEXT,
+  detail_md_flash TEXT,
+  detail_md_pro TEXT,
   original_ref_json TEXT
+);
+
+CREATE TABLE IF NOT EXISTS historical_box_detail (
+  box_id VARCHAR(128) PRIMARY KEY,
+  translate_detail LONGTEXT NOT NULL,
+  source_original_json LONGTEXT NULL,
+  source_citation VARCHAR(256) NULL
 );
 
 CREATE TABLE IF NOT EXISTS box_graph_node (
@@ -99,6 +110,23 @@ CREATE TABLE IF NOT EXISTS box_graph_edge (
   from_node_key VARCHAR(64) NOT NULL,
   to_node_key VARCHAR(64) NOT NULL,
   label VARCHAR(32) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS box_critique (
+  id BIGINT PRIMARY KEY AUTO_INCREMENT,
+  component_id VARCHAR(64) NOT NULL,
+  shilue_id VARCHAR(128) NOT NULL,
+  shilue_name VARCHAR(128) NOT NULL,
+  box_id VARCHAR(128) NOT NULL,
+  title VARCHAR(128) NULL,
+  author VARCHAR(64) NOT NULL,
+  era_text VARCHAR(64) NOT NULL,
+  year_value INT,
+  content TEXT NOT NULL,
+  source VARCHAR(256),
+  blurb VARCHAR(256) NULL,
+  sort_order INT NOT NULL DEFAULT 0,
+  UNIQUE (component_id)
 );
 
 CREATE TABLE IF NOT EXISTS box_relic (
@@ -138,6 +166,14 @@ CREATE TABLE IF NOT EXISTS user_favorite_box (
   box_id VARCHAR(128) NOT NULL,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   UNIQUE (user_id, box_id)
+);
+
+CREATE TABLE IF NOT EXISTS user_favorite_unit (
+  id BIGINT PRIMARY KEY AUTO_INCREMENT,
+  user_id BIGINT NOT NULL,
+  unit_id VARCHAR(64) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  UNIQUE (user_id, unit_id)
 );
 
 CREATE TABLE IF NOT EXISTS user_footprint (

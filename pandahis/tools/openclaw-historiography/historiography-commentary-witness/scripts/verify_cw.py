@@ -25,9 +25,10 @@ TRANSLATION_MARKERS = re.compile(
     r"(原文\s*[:：]|白话\s*[:：]|译文\s*[:：]|今译\s*[:：]|意思是\s*[:：])"
 )
 
-# 教材级争议框架（角度词 / 标题侧）
+# 教材级争议框架（正文语义；与评述标题角度词无关）
+# 仅匹配五帝禅让/疑古专题 discourse，勿用宽泛词（如单字「篡位」）误伤春秋弑君叙事
 FRAME_LAYERED = re.compile(r"(层累|古史辨|疑古辨伪|神话历史化|神话剥离|神话解构|造神)")
-FRAME_SHANRANG = re.compile(r"(禅让真假|逼尧|囚尧|篡位|逼篡|舜逼)")
+FRAME_SHANRANG = re.compile(r"(禅让真假|逼尧|囚尧|逼篡|舜逼|尧舜.*逼|禅让.*(伪|假)|疑古.*禅让)")
 FRAME_MYTH_HIST = re.compile(r"(信史|传说符号|神话人物|是否真实)")
 
 # 软关联 / 现代纪念（见证 P0 禁）

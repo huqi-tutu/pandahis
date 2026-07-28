@@ -15,12 +15,13 @@ PARENT_FIELD = {
 PREV_LEVEL = {"二级": "一级", "三级": "二级", "四级": "三级"}
 CENTER_KEY = "center"
 LEGACY_CATEGORY = {"君臣": "同僚", "敌对": "外敌"}
-CATEGORY_ORDER = ["家庭", "同僚", "师从", "外敌"]
+CATEGORY_ORDER = ["家庭", "同僚", "师从", "外敌", "好友"]
 CATEGORY_NODE_KEYS = {
     "家庭": "cat_fam",
     "同僚": "cat_col",
     "师从": "cat_mas",
     "外敌": "cat_foe",
+    "好友": "cat_fri",
 }
 
 

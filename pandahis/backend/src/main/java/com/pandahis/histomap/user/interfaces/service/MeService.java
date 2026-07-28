@@ -4,6 +4,7 @@ import com.pandahis.histomap.common.api.ApiException;
 import com.pandahis.histomap.common.jdbc.JdbcDates;
 import com.pandahis.histomap.user.interfaces.dto.MeDTO;
 import com.pandahis.histomap.user.interfaces.service.ReadCompleteService;
+import com.pandahis.histomap.user.interfaces.service.FavoriteService;
 import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.Map;
@@ -20,10 +21,16 @@ public class MeService {
 
   private final JdbcTemplate jdbcTemplate;
   private final ReadCompleteService readCompleteService;
+  private final FavoriteService favoriteService;
 
-  public MeService(JdbcTemplate jdbcTemplate, ReadCompleteService readCompleteService) {
+  public MeService(
+      JdbcTemplate jdbcTemplate,
+      ReadCompleteService readCompleteService,
+      FavoriteService favoriteService
+  ) {
     this.jdbcTemplate = jdbcTemplate;
     this.readCompleteService = readCompleteService;
+    this.favoriteService = favoriteService;
   }
 
   public MeDTO load(Long userId) {
@@ -33,7 +40,7 @@ public class MeService {
     } catch (EmptyResultDataAccessException e) {
       throw ApiException.unauthorized("login required");
     }
-    long fav = safeCount("SELECT COUNT(1) FROM user_favorite_box WHERE user_id=?", userId);
+    long fav = favoriteService.countAllFavorites(userId);
     // 与热力图 daily 表合并口径：索引重建会清空 user_footprint，但 user_reading_daily 仍保留历史。
     long fp = safeCount(
         "SELECT COUNT(DISTINCT box_id) FROM ("

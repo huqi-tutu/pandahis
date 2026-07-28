@@ -7,7 +7,7 @@ const router_1 = require("./router");
 function promptLoginForFavorite() {
     wx.showModal({
         title: '需要登录',
-        content: '登录后可收藏史略，并在「我的收藏」中查看。',
+        content: '登录后可收藏，并在「我的收藏」中查看。',
         confirmText: '去登录',
         success: (r) => {
             if (r.confirm)
@@ -56,7 +56,7 @@ async function isBoxFavorited(boxId) {
     return set.has(boxId);
 }
 exports.isBoxFavorited = isBoxFavorited;
-/** 批量收藏 / 取消（用于朝代矩阵：与收藏列表页同一 boxId 维度） */
+/** 批量收藏 / 取消（遗留接口，朝代收藏请使用 favorite-unit） */
 async function setBoxesFavorited(boxIds, favorited) {
     const ids = [...new Set(boxIds.filter(Boolean))];
     if (!ids.length)

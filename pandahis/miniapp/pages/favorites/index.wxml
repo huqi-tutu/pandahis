@@ -31,15 +31,17 @@
       <view wx:if="{{!visibleItems.length}}" class="empty-state">
         <text class="empty-icon">☆</text>
         <text class="empty-text">{{activeTab === 'dynasty' ? '暂无朝代收藏' : '暂无史略收藏'}}</text>
-        <text class="empty-hint">在历史盒子详情页点亮红心即可收藏</text>
+        <text class="empty-hint">{{activeTab === 'dynasty' ? '在朝代详情页点亮红心即可收藏' : '在史略详情页点亮红心即可收藏'}}</text>
       </view>
 
       <view wx:else class="card-list">
         <view
           class="card card-paper"
           wx:for="{{visibleItems}}"
-          wx:key="boxId"
-          data-id="{{item.boxId}}"
+          wx:for-index="idx"
+          wx:key="idx"
+          data-id="{{activeTab === 'dynasty' ? item.unitId : item.boxId}}"
+          data-kind="{{activeTab}}"
           bindtap="go"
         >
           <view class="top">

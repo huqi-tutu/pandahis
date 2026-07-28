@@ -11,7 +11,23 @@ export type FavoriteItemRaw = {
   pathLabel?: string
 }
 
+export type UnitFavoriteItemRaw = {
+  unitId: string
+  title: string
+  subText?: string
+  favoritedAt?: string
+  startYear?: number
+  endYear?: number
+  pathLabel?: string
+}
+
 export type FavoriteCardView = FavoriteItemRaw & {
+  dateLabel: string
+  yearRange: string
+  pathLabel: string
+}
+
+export type UnitFavoriteCardView = UnitFavoriteItemRaw & {
   dateLabel: string
   yearRange: string
   pathLabel: string
@@ -46,25 +62,14 @@ export function toFavoriteCardView(item: FavoriteItemRaw): FavoriteCardView {
   }
 }
 
-export function isDynastyFavorite(categoryKey?: string): boolean {
-  return categoryKey === 'junji'
-}
-
-export function splitFavorites(items: FavoriteItemRaw[]): {
-  dynasty: FavoriteCardView[]
-  shilue: FavoriteCardView[]
-} {
-  const dynasty: FavoriteCardView[] = []
-  const shilue: FavoriteCardView[] = []
-  for (const raw of items) {
-    const card = toFavoriteCardView(raw)
-    if (isDynastyFavorite(raw.categoryKey)) {
-      dynasty.push(card)
-    } else {
-      shilue.push(card)
-    }
+export function toUnitFavoriteCardView(item: UnitFavoriteItemRaw): UnitFavoriteCardView {
+  const pathLabel = item.pathLabel || item.subText || ''
+  return {
+    ...item,
+    dateLabel: formatFavoriteDate(item.favoritedAt),
+    yearRange: formatYearRange(item.startYear, item.endYear),
+    pathLabel,
   }
-  return { dynasty, shilue }
 }
 
 export type FootprintItemRaw = {

@@ -1,0 +1,19 @@
+{
+  "schema": "translate-coverage-l2/v1",
+  "史略ID": "GLBL_00497",
+  "passed": true,
+  "degraded": false,
+  "summary": "母本信息已完整传达，明确提及乐瑕公、乐臣公及逃亡至高密之事。",
+  "l1_ratio": 0.0,
+  "l1_min_ratio": 0.0,
+  "claims": [
+    {
+      "id": "M077",
+      "claim": "母本信息：而乐氏之族有乐瑕公、乐臣公，赵且为秦所灭，亡之齐高密。",
+      "status": "conveyed",
+      "evidence": "而乐氏家族中还有乐瑕公、乐臣公，在赵国快要被秦国灭亡时，逃亡到了齐国的高密。",
+      "note": ""
+    }
+  ],
+  "issues": []
+}

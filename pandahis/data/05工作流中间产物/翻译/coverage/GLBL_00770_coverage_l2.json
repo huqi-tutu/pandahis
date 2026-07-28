@@ -1,0 +1,21 @@
+{
+  "schema": "translate-coverage-l2/v1",
+  "史略ID": "GLBL_00770",
+  "passed": false,
+  "degraded": false,
+  "summary": "M006未传达东郡设立与齐国边境的关系",
+  "l1_ratio": 0.0,
+  "l1_min_ratio": 0.0,
+  "claims": [
+    {
+      "id": "M006",
+      "claim": "齐王建二十三年，秦国设立东郡（这是从齐国边境夺取的地盘）。",
+      "status": "missing",
+      "evidence": "二十三年，秦国在自己新打下来的地盘上设置了东郡。",
+      "note": "未提及东郡是从齐国边境夺取的地盘"
+    }
+  ],
+  "issues": [
+    "missing [M006]: 齐王建二十三年，秦国设立东郡（这是从齐国边境夺取的地盘）。"
+  ]
+}
