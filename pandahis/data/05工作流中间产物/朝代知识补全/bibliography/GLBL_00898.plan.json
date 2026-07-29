@@ -1,0 +1,173 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00898",
+  "写作结构": "正史叙述见《史记·秦本纪》《后汉书·西羌传》等翻译详录；拓展文以《竹书纪年》《战国策》《逸周书》《墨子》等史外文献补充义渠与秦的和战、早期朝贡及葬俗，展示其作为西戎强国的多元面貌；诱杀灭国等核心事件正史所载已备，史外无可靠异说，相应段落以留白为主",
+  "候选著作": [
+    {
+      "出处": "《史记·秦本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "义渠事迹主要出处，详载秦与义渠和战、设县、灭国",
+      "检索词": "义渠",
+      "采用": false,
+      "material_tier": "C",
+      "snippet_verified": false
+    },
+    {
+      "出处": "《后汉书·西羌传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "系统记载西羌及义渠始末，追述其国祚与秦兴灭过程",
+      "检索词": "义渠",
+      "采用": false,
+      "material_tier": "C",
+      "snippet_verified": false
+    },
+    {
+      "出处": "《竹书纪年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "战国时期秦伐义渠的具体纪年，可补《史记》编年之略",
+      "检索词": "义渠",
+      "采用": true,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    },
+    {
+      "出处": "《战国策·秦策二》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "载义渠君入秦及叛服之事，反映义渠与秦的外交角力",
+      "检索词": "义渠君",
+      "采用": true,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《逸周书·王会解》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记周成王成周之会，义渠以兹白献，可溯义渠早期与中原交往",
+      "检索词": "义渠以兹白",
+      "采用": true,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《墨子·节葬下》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "载义渠火葬之俗，可证其社会礼俗与华夏迥异",
+      "检索词": "义渠之国",
+      "采用": true,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《风俗通义》佚文",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "汉末文献，或存义渠别号、异闻，可作传说层补充",
+      "检索词": "义渠",
+      "采用": true,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·秦本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "义渠事迹主要出处，详载秦与义渠和战、设县、灭国",
+      "检索词": "义渠",
+      "采用": false,
+      "material_tier": "C",
+      "snippet_verified": false
+    },
+    {
+      "出处": "《后汉书·西羌传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "系统记载西羌及义渠始末，追述其国祚与秦兴灭过程",
+      "检索词": "义渠",
+      "采用": false,
+      "material_tier": "C",
+      "snippet_verified": false
+    },
+    {
+      "出处": "《竹书纪年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "战国时期秦伐义渠的具体纪年，可补《史记》编年之略",
+      "检索词": "义渠",
+      "采用": true,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    },
+    {
+      "出处": "《战国策·秦策二》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "载义渠君入秦及叛服之事，反映义渠与秦的外交角力",
+      "检索词": "义渠君",
+      "采用": true,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《逸周书·王会解》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记周成王成周之会，义渠以兹白献，可溯义渠早期与中原交往",
+      "检索词": "义渠以兹白",
+      "采用": true,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《墨子·节葬下》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "载义渠火葬之俗，可证其社会礼俗与华夏迥异",
+      "检索词": "义渠之国",
+      "采用": true,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《风俗通义》佚文",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "汉末文献，或存义渠别号、异闻，可作传说层补充",
+      "检索词": "义渠",
+      "采用": true,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 5,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

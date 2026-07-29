@@ -1,0 +1,87 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00904",
+  "写作结构": "主干叙事以《史记·赵世家》《匈奴列传》翻译详录为主，拓展部分引《括地志》补充林胡地望，引《史记索隐》说明后世“澹林”异说，内部制度（世系、社会结构）统一留白。",
+  "候选著作": [
+    {
+      "出处": "《史记·赵世家》《匈奴列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "战国林胡活动的主要传世记载，多涉及赵武灵王略胡地与林胡王献马等事件。",
+      "检索词": "林胡",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《括地志·朔州》（辑本）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "唐代地志指明林胡故国方位，补充先秦文献所缺的地理证据。",
+      "检索词": "林胡国",
+      "采用": true,
+      "原文摘句": "林胡国，在朔州北。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记索隐·匈奴列传》",
+      "tier": "经注/杂史",
+      "pool": "legend",
+      "与本主题关系": "唐代注家提出林胡即澹林之异说，反映后世对林胡族属的推测。",
+      "检索词": "澹林",
+      "采用": true,
+      "原文摘句": "林胡，即澹林也。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·赵世家》《匈奴列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "战国林胡活动的主要传世记载，多涉及赵武灵王略胡地与林胡王献马等事件。",
+      "检索词": "林胡",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《括地志·朔州》（辑本）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "唐代地志指明林胡故国方位，补充先秦文献所缺的地理证据。",
+      "检索词": "林胡国",
+      "采用": true,
+      "原文摘句": "林胡国，在朔州北。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《史记索隐·匈奴列传》",
+      "tier": "经注/杂史",
+      "pool": "legend",
+      "与本主题关系": "唐代注家提出林胡即澹林之异说，反映后世对林胡族属的推测。",
+      "检索词": "澹林",
+      "采用": true,
+      "原文摘句": "林胡，即澹林也。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 1,
+    "overall": "B"
+  }
+}

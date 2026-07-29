@@ -1,0 +1,131 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00867",
+  "写作结构": "正史叙述见翻译详录（《史记·秦始皇本纪》）。史外异说可引地理志、注疏补充屯留长安君封地信息；叛乱原因、过程留白，不编造。",
+  "候选著作": [
+    {
+      "出处": "《史记·秦始皇本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载成蟜封长安君，击赵反叛，死屯留，军吏皆斩，民迁临洮",
+      "检索词": "成蟜 长安君",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《汉书·五行志》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "载有成蟜叛乱事，或归于灾异之应",
+      "检索词": "长安君 屯留",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《史记索隐》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "注疏长安君的身份及屯留地理",
+      "检索词": "成蟜 长安君 索隐",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《水经注·浊漳水》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载屯留县故城，或提及长安君成蟜封邑",
+      "检索词": "屯留 长安君",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《资治通鉴·秦纪一》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "概述秦王政八年成蟜叛死事件，基本同《史记》",
+      "检索词": "成蟜 屯留",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·秦始皇本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载成蟜封长安君，击赵反叛，死屯留，军吏皆斩，民迁临洮",
+      "检索词": "成蟜 长安君",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《汉书·五行志》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "载有成蟜叛乱事，或归于灾异之应",
+      "检索词": "长安君 屯留",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《史记索隐》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "注疏长安君的身份及屯留地理",
+      "检索词": "成蟜 长安君 索隐",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《水经注·浊漳水》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载屯留县故城，或提及长安君成蟜封邑",
+      "检索词": "屯留 长安君",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《资治通鉴·秦纪一》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "概述秦王政八年成蟜叛死事件，基本同《史记》",
+      "检索词": "成蟜 屯留",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 3,
+    "overall": "B"
+  }
+}

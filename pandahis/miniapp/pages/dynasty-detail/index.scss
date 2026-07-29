@@ -127,6 +127,12 @@
   overflow: hidden;
 }
 
+.dynasty-scroll-tail {
+  height: 32rpx;
+  padding-bottom: env(safe-area-inset-bottom);
+  box-sizing: content-box;
+}
+
 
 /* ── 朝代信息卡片 ── */
 .unit-hero-card {
@@ -331,13 +337,14 @@ $cat-index-w: 28rpx;
 }
 
 .dyn-panel-board {
-  padding: 0 24rpx 24rpx;
+  padding: 0 24rpx 16rpx;
   box-sizing: border-box;
 }
 
 .dyn-panel-hscroll {
   width: 100%;
   overflow: hidden !important;
+  display: block;
 }
 
 .dyn-panel-sheet {

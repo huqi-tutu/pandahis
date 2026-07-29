@@ -1,0 +1,85 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00032",
+  "写作结构": "正史叙述见翻译详录；拓展文采摭《战国策》等先秦文献，展现东西周分治时的具体情态与矛盾，以补原文之简略。",
+  "候选著作": [
+    {
+      "出处": "《战国策·西周策》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载周赧王时东周与西周相互掣肘、诸策士往来事，可为“东西周分治”提供生动例证。",
+      "检索词": "东周欲为稻",
+      "采用": true,
+      "原文摘句": "东周欲为稻，西周不下水，东周患之。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《竹书纪年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "可对照周显王、慎靓王、赧王在位年数与纪事，但与《史记》所载无根本歧异，且无涉封赐之事。",
+      "检索词": "周显王",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《资治通鉴·周纪三》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "依《史记》编年录显王崩至赧王徙都，无出正史范围，可供后世叙事参考。",
+      "检索词": "显王崩",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《战国策·西周策》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载周赧王时东周与西周相互掣肘、诸策士往来事，可为“东西周分治”提供生动例证。",
+      "检索词": "东周欲为稻",
+      "采用": true,
+      "原文摘句": "东周欲为稻，西周不下水，东周患之。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《竹书纪年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "可对照周显王、慎靓王、赧王在位年数与纪事，但与《史记》所载无根本歧异，且无涉封赐之事。",
+      "检索词": "周显王",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《资治通鉴·周纪三》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "依《史记》编年录显王崩至赧王徙都，无出正史范围，可供后世叙事参考。",
+      "检索词": "显王崩",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 1,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

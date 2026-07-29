@@ -1,0 +1,19 @@
+{
+  "schema": "translate-coverage-l2/v1",
+  "史略ID": "GLBL_00544",
+  "passed": true,
+  "degraded": false,
+  "summary": "本条信息已通过白话译文传达，读者可明确读到斩韩生事件。",
+  "l1_ratio": 0.0,
+  "l1_min_ratio": 0.0,
+  "claims": [
+    {
+      "id": "M053",
+      "claim": "母本信息：斩韩生。",
+      "status": "conveyed",
+      "evidence": "项羽二话不说，直接把韩生扔进锅里烹了。",
+      "note": "译文用'烹了'表达杀韩生，读者可明确获知韩生被杀"
+    }
+  ],
+  "issues": []
+}

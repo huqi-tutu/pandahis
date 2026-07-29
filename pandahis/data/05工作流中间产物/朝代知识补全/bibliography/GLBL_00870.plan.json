@@ -1,0 +1,110 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00870",
+  "写作结构": "正史叙事见《史记·屈原贾生列传》翻译详录；史外异说以《新序·节士》《离骚经序》等补出靳尚之名，并叙其进谗致屈原失位过程；《战国策·楚策》另载靳尚说郑袖左右楚王、助张仪脱困，可侧写其宠臣面貌；后世指其为阉宦一说无确凿早期史源，于文末略提异说即可，不展开。",
+  "候选著作": [
+    {
+      "出处": "《史记·屈原贾生列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "本条目核心叙事来源，载上官大夫谗害屈原始末，但未称其名",
+      "检索词": "上官大夫 屈平",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《新序·节士》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "明确将谗害屈原者称为靳尚，并详述其与屈原争宠相诽之事，补《史记》未载之名",
+      "检索词": "靳尚 屈原 节士",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《楚辞章句·离骚经序》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "王逸注骚时称谗臣为靳尚，为后世公认靳尚之名与事迹提供关键依据",
+      "检索词": "离骚经序 靳尚",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《战国策·楚策》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "载靳尚为楚怀王宠臣，用事时与郑袖勾结，劝说怀王释放张仪，是靳尚另一面宠臣行迹的直接记录",
+      "检索词": "靳尚 郑袖 张仪",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·屈原贾生列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "本条目核心叙事来源，载上官大夫谗害屈原始末，但未称其名",
+      "检索词": "上官大夫 屈平",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《新序·节士》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "明确将谗害屈原者称为靳尚，并详述其与屈原争宠相诽之事，补《史记》未载之名",
+      "检索词": "靳尚 屈原 节士",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《楚辞章句·离骚经序》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "王逸注骚时称谗臣为靳尚，为后世公认靳尚之名与事迹提供关键依据",
+      "检索词": "离骚经序 靳尚",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《战国策·楚策》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "载靳尚为楚怀王宠臣，用事时与郑袖勾结，劝说怀王释放张仪，是靳尚另一面宠臣行迹的直接记录",
+      "检索词": "靳尚 郑袖 张仪",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 3,
+    "C_excluded": 1,
+    "overall": "B"
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00825",
+  "写作结构": "正史《史记》的记载由翻译详录负责，拓展部分以《战国策》所记相王程序为核心叙事，辅以《竹书纪年》的纪年佐证，并以《水经注》说明战国徐州即薛城的地理位置，最后引《资治通鉴》作为后世编年参照，其余细节依法留白，不虚构盟誓与对话。",
+  "候选著作": [
+    {
+      "出处": "《史记·魏世家》《史记·田敬仲完世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史中最基本的相王记载，包含双方互尊为王、地点在徐州等核心要素",
+      "检索词": "徐州相王",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《战国策·魏策二》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "明确记录魏、齐二王在徐州互相承认王号，提供相王的具体表述",
+      "检索词": "魏王齐王会于徐州以相王",
+      "采用": true,
+      "原文摘句": "魏王、齐王会于徐州以相王。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《竹书纪年》（辑佚）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "提供魏惠王后元元年相王的确切纪年，可补正史记年之异同",
+      "检索词": "魏惠王后元元年 徐州相王",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    },
+    {
+      "出处": "《水经注·泗水注》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "辨明战国徐州即薛城所在，位于今山东滕州东南，纠正后世误指江苏徐州的地理混淆",
+      "检索词": "薛城 徐州 泗水注",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《资治通鉴·周纪二》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋代编年体总结，整合战国史料述魏齐徐州相王，为后世理解此事提供编年依托",
+      "检索词": "显王三十六年 魏齐徐州相王",
+      "采用": true,
+      "原文摘句": "显王三十六年，魏、齐会徐州以相王。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·魏世家》《史记·田敬仲完世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史中最基本的相王记载，包含双方互尊为王、地点在徐州等核心要素",
+      "检索词": "徐州相王",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《战国策·魏策二》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "明确记录魏、齐二王在徐州互相承认王号，提供相王的具体表述",
+      "检索词": "魏王齐王会于徐州以相王",
+      "采用": true,
+      "原文摘句": "魏王、齐王会于徐州以相王。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《竹书纪年》（辑佚）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "提供魏惠王后元元年相王的确切纪年，可补正史记年之异同",
+      "检索词": "魏惠王后元元年 徐州相王",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    },
+    {
+      "出处": "《水经注·泗水注》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "辨明战国徐州即薛城所在，位于今山东滕州东南，纠正后世误指江苏徐州的地理混淆",
+      "检索词": "薛城 徐州 泗水注",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《资治通鉴·周纪二》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋代编年体总结，整合战国史料述魏齐徐州相王，为后世理解此事提供编年依托",
+      "检索词": "显王三十六年 魏齐徐州相王",
+      "采用": true,
+      "原文摘句": "显王三十六年，魏、齐会徐州以相王。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 4,
+    "C_excluded": 1,
+    "overall": "B"
+  }
+}

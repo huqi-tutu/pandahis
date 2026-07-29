@@ -107,6 +107,18 @@ def load_index(index_path: Path | None = None) -> dict[str, Any]:
     return json.loads(p.read_text(encoding="utf-8"))
 
 
+def _index_entries(doc: dict[str, Any] | list[Any]) -> list[dict[str, Any]]:
+    if isinstance(doc, list):
+        return [e for e in doc if isinstance(e, dict)]
+    entries = doc.get("entries")
+    if isinstance(entries, list):
+        return entries
+    for v in doc.values():
+        if isinstance(v, list) and v and isinstance(v[0], dict) and "史略ID" in v[0]:
+            return v
+    return []
+
+
 def find_entry(
     *,
     entry_id: str | None = None,
@@ -114,7 +126,7 @@ def find_entry(
     index_path: Path | None = None,
 ) -> dict[str, Any]:
     doc = load_index(index_path)
-    entries = doc.get("entries") or []
+    entries = _index_entries(doc)
     if entry_id:
         for e in entries:
             if str(e.get("史略ID", "")).strip() == entry_id.strip():
@@ -138,7 +150,7 @@ def list_entries_by_dynasty(
 ) -> list[dict[str, Any]]:
     doc = load_index(index_path)
     out = []
-    for e in doc.get("entries") or []:
+    for e in _index_entries(doc):
         if str(e.get("二级朝代坐标") or "").strip() == dynasty.strip():
             out.append(e)
     return out
@@ -404,8 +416,8 @@ def normalize_commentary_entries(
                 "史略名称": name,
                 "评述人": str(row.get("评述人") or "").strip(),
                 "评述著作": str(row.get("评述著作") or "").strip(),
-                "评述内容": clamp_han(str(row.get("评述内容") or "").strip(), 200),
-                "评述简介": clamp_han(str(row.get("评述简介") or "").strip(), 20),
+                "评述内容": str(row.get("评述内容") or "").strip(),
+                "评述简介": str(row.get("评述简介") or "").strip(),
                 "评述年代": str(row.get("评述年代") or "").strip(),
             }
         )

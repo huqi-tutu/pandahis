@@ -1,0 +1,177 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00878",
+  "写作结构": "正史叙述见翻译详录（《史记·韩世家》为本条目核心源，已在主要史料出处中索引，不额外摘句）。拓展文可综合 primary 池中的《资治通鉴》与《战国策》记载，补充公仲连谏言的背景及影响，并适当引入《韩非子》的法家视角作为思想延展。严禁对 anchor 中 forbidden_inventions 描述的情节进行编造。",
+  "候选著作": [
+    {
+      "出处": "《史记·韩世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "条目主要史料出处，记载公仲连相韩、称病谏言及推荐牛畜、荀欣、徐越变法的核心经过。",
+      "检索词": "公仲 韩",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《资治通鉴·周纪一》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "编年体通史，对战国初期韩国公仲连改革及韩哀侯时期政局有系统梳理，可补充《史记》的叙事脉络。",
+      "检索词": "公仲 韩哀侯",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《战国策·韩策》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载韩国纵横家与君臣事迹，可能包含公仲连相关的邦交策略或变法期间的外部反应。",
+      "检索词": "公仲 韩",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《韩非子·定法》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "集中论述法家变法思想，可用来参照理解公仲连时期韩国推行“修术”与“任能”的理论背景。",
+      "检索词": "韩 变法",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《韩非子·外储说》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "收录战国时期故事，其中可能涉及对韩国政治变革及选贤思想的评述。",
+      "检索词": "韩 贤 臣",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《世本》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "辑本记录战国诸侯世系及卿大夫谱系，可用于考证公仲连的姓氏源流与韩国相邦世系。",
+      "检索词": "公仲 韩",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《七国考》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "明清时期对战国制度的集辑，可能引用佚文对韩国官制或变法职官有所考订。",
+      "检索词": "韩 职官",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·韩世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "条目主要史料出处，记载公仲连相韩、称病谏言及推荐牛畜、荀欣、徐越变法的核心经过。",
+      "检索词": "公仲 韩",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《资治通鉴·周纪一》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "编年体通史，对战国初期韩国公仲连改革及韩哀侯时期政局有系统梳理，可补充《史记》的叙事脉络。",
+      "检索词": "公仲 韩哀侯",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《战国策·韩策》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载韩国纵横家与君臣事迹，可能包含公仲连相关的邦交策略或变法期间的外部反应。",
+      "检索词": "公仲 韩",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《韩非子·定法》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "集中论述法家变法思想，可用来参照理解公仲连时期韩国推行“修术”与“任能”的理论背景。",
+      "检索词": "韩 变法",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《韩非子·外储说》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "收录战国时期故事，其中可能涉及对韩国政治变革及选贤思想的评述。",
+      "检索词": "韩 贤 臣",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《世本》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "辑本记录战国诸侯世系及卿大夫谱系，可用于考证公仲连的姓氏源流与韩国相邦世系。",
+      "检索词": "公仲 韩",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《七国考》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "明清时期对战国制度的集辑，可能引用佚文对韩国官制或变法职官有所考订。",
+      "检索词": "韩 职官",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 3,
+    "C_excluded": 4,
+    "overall": "B"
+  }
+}

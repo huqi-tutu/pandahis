@@ -1,0 +1,86 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00482",
+  "写作结构": "正史叙述见翻译详录；史外文献《孔子家语·七十二弟子解》《论语注疏》等仅重复其父子关系，无新增事迹；叙事宜简洁留白。",
+  "候选著作": [
+    {
+      "出处": "《孔子家语·七十二弟子解》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "记载颜无繇为颜回之父，与《史记》记载一致，提供异文来源",
+      "检索词": "颜无繇字路",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用",
+      "material_tier": "B"
+    },
+    {
+      "出处": "《论语注疏·先进》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "邢昺疏提及颜回之父名无繇，同为孔子弟子，可资参证",
+      "检索词": "颜无繇",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用",
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记索隐》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "引《孔子家语》以注《史记》，内容相同，无新增",
+      "检索词": "无繇",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《孔子家语·七十二弟子解》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "记载颜无繇为颜回之父，与《史记》记载一致，提供异文来源",
+      "检索词": "颜无繇字路",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用",
+      "material_tier": "B"
+    },
+    {
+      "出处": "《论语注疏·先进》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "邢昺疏提及颜回之父名无繇，同为孔子弟子，可资参证",
+      "检索词": "颜无繇",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用",
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记索隐》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "引《孔子家语》以注《史记》，内容相同，无新增",
+      "检索词": "无繇",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "legend_sources": [],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 1,
+    "overall": "B"
+  }
+}

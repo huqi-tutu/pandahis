@@ -1,0 +1,109 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00894",
+  "写作结构": "正史核心叙事（暴鸢为韩将、伊阙之战败于白起）见翻译详录；拓展以《战国策》展现暴鸢在韩国内政中的活动，补充其多维身份；《资治通鉴》明确其战败逃走，可作简要补述，不展开细节。",
+  "候选著作": [
+    {
+      "出处": "《史记·白起列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载伊阙之战秦军斩首二十四万、虏公孙喜，未明确出现暴鸢之名，正史叙述由翻译环节提供。",
+      "检索词": "暴鸢",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·韩世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "战国韩国纪年，或载韩釐王三年伊阙之战，韩将暴鸢登场，正史部分由翻译详录。",
+      "检索词": "暴鸢",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《战国策·韩策》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "暴鸢见于多篇策文，与周最等议论韩内政及外交，表明其兼具谋臣身份，可丰富人物形象。",
+      "检索词": "暴鸢",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《资治通鉴·周纪四》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "综合前史，明确记伊阙之战“韩将暴鸢走”，交代战后去向，可作为战败结局的补充记述。",
+      "检索词": "暴鸢 走",
+      "采用": true,
+      "原文摘句": "秦败韩师于伊阙，斩首二十四万级，虏公孙喜。韩将暴鸢走。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·白起列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载伊阙之战秦军斩首二十四万、虏公孙喜，未明确出现暴鸢之名，正史叙述由翻译环节提供。",
+      "检索词": "暴鸢",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·韩世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "战国韩国纪年，或载韩釐王三年伊阙之战，韩将暴鸢登场，正史部分由翻译详录。",
+      "检索词": "暴鸢",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《战国策·韩策》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "暴鸢见于多篇策文，与周最等议论韩内政及外交，表明其兼具谋臣身份，可丰富人物形象。",
+      "检索词": "暴鸢",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《资治通鉴·周纪四》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "综合前史，明确记伊阙之战“韩将暴鸢走”，交代战后去向，可作为战败结局的补充记述。",
+      "检索词": "暴鸢 走",
+      "采用": true,
+      "原文摘句": "秦败韩师于伊阙，斩首二十四万级，虏公孙喜。韩将暴鸢走。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

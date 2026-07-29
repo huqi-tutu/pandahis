@@ -1,0 +1,105 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00896",
+  "写作结构": "正史（《史记》）叙述见翻译详录，本拓展文以《史记》记载为主干。史外文献查无独立新增异说，后世编年《资治通鉴》等均转抄《史记》而无实质补益，故留白处理，不作额外推演。",
+  "候选著作": [
+    {
+      "出处": "《史记·白起列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "王陵事迹唯一详载，见于长平之战为副将、攻邯郸失利、白起拒绝接替等叙述",
+      "检索词": "王陵",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《资治通鉴·周纪五》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "编年记述秦昭襄王四十八年至五十年王陵攻邯郸事，文本全依《史记》而无异闻",
+      "检索词": "王陵 邯郸",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《战国策》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "先秦策士言论汇编，偶涉秦将，但检今本未见王陵专条或旁涉记载",
+      "检索词": "王陵",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《吕氏春秋》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "秦相吕不韦门客所著，可能因秦事提及秦将，但今本未检得王陵相关文字",
+      "检索词": "王陵",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·白起列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "王陵事迹唯一详载，见于长平之战为副将、攻邯郸失利、白起拒绝接替等叙述",
+      "检索词": "王陵",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《战国策》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "先秦策士言论汇编，偶涉秦将，但检今本未见王陵专条或旁涉记载",
+      "检索词": "王陵",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《吕氏春秋》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "秦相吕不韦门客所著，可能因秦事提及秦将，但今本未检得王陵相关文字",
+      "检索词": "王陵",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《资治通鉴·周纪五》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "编年记述秦昭襄王四十八年至五十年王陵攻邯郸事，文本全依《史记》而无异闻",
+      "检索词": "王陵 邯郸",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 0,
+    "C_excluded": 4,
+    "overall": "C"
+  }
+}

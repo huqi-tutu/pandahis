@@ -1,0 +1,129 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00906",
+  "写作结构": "正史《史记·魏公子列传》记载具足，见翻译详录；史外异说甚少，仅《论衡》有极简短评可供点缀，其余文献仅存书目互见而无新增事实，叙事留白处理。",
+  "候选著作": [
+    {
+      "出处": "《史记·魏公子列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，完整记载侯嬴献窃符救赵策、荐朱亥、自刎等全部核心情节。",
+      "检索词": "侯嬴 夷门 信陵君",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《战国策·魏策四》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "该篇“信陵君杀晋鄙”章记信陵君救赵后遭魏王猜忌之语，不直接叙侯嬴，但可作为窃符事件后续背景了解。",
+      "检索词": "信陵君杀晋鄙",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《说苑·复恩》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "西汉刘向纂辑，转录信陵君请如姬窃符、侯嬴献计等事，内容与《史记》大略相同，可作互见本。",
+      "检索词": "侯生 如姬 虎符",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《论衡·逢遇篇》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "东汉王充援引侯嬴出身卑贱而终得信陵君重用以论遇合之理，属后世评点而非事实记载。",
+      "检索词": "侯嬴抱关",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《资治通鉴·周纪五》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "北宋编年史，转录窃符救赵事务，基本沿袭《史记》，无新增信息。",
+      "检索词": "侯嬴 窃符 晋鄙",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·魏公子列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，完整记载侯嬴献窃符救赵策、荐朱亥、自刎等全部核心情节。",
+      "检索词": "侯嬴 夷门 信陵君",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《战国策·魏策四》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "该篇“信陵君杀晋鄙”章记信陵君救赵后遭魏王猜忌之语，不直接叙侯嬴，但可作为窃符事件后续背景了解。",
+      "检索词": "信陵君杀晋鄙",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《说苑·复恩》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "西汉刘向纂辑，转录信陵君请如姬窃符、侯嬴献计等事，内容与《史记》大略相同，可作互见本。",
+      "检索词": "侯生 如姬 虎符",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《资治通鉴·周纪五》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "北宋编年史，转录窃符救赵事务，基本沿袭《史记》，无新增信息。",
+      "检索词": "侯嬴 窃符 晋鄙",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《论衡·逢遇篇》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "东汉王充援引侯嬴出身卑贱而终得信陵君重用以论遇合之理，属后世评点而非事实记载。",
+      "检索词": "侯嬴抱关",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 1,
+    "C_excluded": 4,
+    "overall": "B"
+  }
+}

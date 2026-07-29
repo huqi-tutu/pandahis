@@ -8,6 +8,7 @@ from typing import Any, Dict, List
 from lib.citation_mode import enrich_checklist_citation_modes
 from lib.intro_tier import inject_intro_tier
 from lib.mother_sentences import extract_must_phrases, is_midword_fragment
+from lib.source_citation import display_work_name, native_volume_from_source_file
 
 # 仅当与母本形成有意义差异时才允许采用
 _EXTERNAL_TYPES = frozenset(
@@ -183,6 +184,7 @@ def finalize_plan(plan: Dict[str, Any], recalled: Dict[str, Any] | None = None, 
         enrich_checklist_citation_modes(out.get("母本逐句清单") or [])
         inject_intro_material(out, recalled)
         inject_intro_tier(out, recalled)
+        inject_index_supplements_plan(out, recalled)
         inject_exit_supplements_plan(out, recalled)
     return out
 
@@ -355,6 +357,88 @@ def inject_intro_material(plan: Dict[str, Any], recalled: Dict[str, Any]) -> Non
 
     if material:
         plan["前置引入素材"] = material
+
+
+def _block_plain_text(block: Dict[str, Any]) -> str:
+    text = str(block.get("text") or "").strip()
+    if text:
+        return text
+    paras = block.get("paragraphs") or []
+    return "\n".join(str(p.get("text") or "") for p in paras if isinstance(p, dict)).strip()
+
+
+def _supplement_citation(block: Dict[str, Any]) -> str:
+    work = display_work_name(str(block.get("work") or ""))
+    vol = str(block.get("volume") or "").strip()
+    if not vol:
+        vol = native_volume_from_source_file(str(block.get("source_file") or ""))
+    if work and vol:
+        return f"《{work}·{vol}》"
+    return vol or work or "索引补充"
+
+
+def _plain_overlap_ratio(shorter: str, longer: str) -> float:
+    """较短文本中有多少字出现在较长文本中（去标点）。"""
+    def norm(s: str) -> str:
+        return re.sub(r"[\s，。、；：\"\"''「」？！]", "", s)
+
+    a, b = norm(shorter), norm(longer)
+    if not a or not b:
+        return 0.0
+    if len(a) > len(b):
+        a, b = b, a
+    hits = sum(1 for ch in a if ch in b)
+    return hits / max(len(a), 1)
+
+
+def inject_index_supplements_plan(plan: Dict[str, Any], recalled: Dict[str, Any]) -> None:
+    """召回侧有 role=补充 block 时，若 plan 未写索引补充处理则程序化补全。"""
+    existing = plan.get("索引补充处理") or []
+    if isinstance(existing, list) and existing:
+        return
+
+    supplement_blocks = [
+        b
+        for b in (recalled.get("blocks") or [])
+        if isinstance(b, dict) and str(b.get("role") or "") == "补充"
+    ]
+    if not supplement_blocks:
+        return
+
+    mother_work = str(recalled.get("母本著作") or plan.get("母本著作") or "").strip()
+    mother_text = ""
+    for block in recalled.get("blocks") or []:
+        if not isinstance(block, dict) or str(block.get("role") or "母本") != "母本":
+            continue
+        mother_text = _block_plain_text(block)
+        break
+
+    entries: List[Dict[str, Any]] = []
+    for block in supplement_blocks:
+        src = _supplement_citation(block)
+        sup_text = _block_plain_text(block)
+        overlap = _plain_overlap_ratio(sup_text, mother_text) if mother_text else 0.0
+        same_work = str(block.get("work") or "").strip() == mother_work
+
+        if same_work or overlap >= 0.82:
+            entries.append(
+                {
+                    "出处": src,
+                    "处理": "去重不用",
+                    "理由": "与母本主体/事件/结果一致，编排器自动判定",
+                }
+            )
+        else:
+            entries.append(
+                {
+                    "出处": src,
+                    "处理": "引入",
+                    "锚点": "M001 前",
+                    "理由": "索引补充著作为异文或补充视角，在对应母本锚点处融入",
+                }
+            )
+
+    plan["索引补充处理"] = entries
 
 
 def inject_exit_supplements_plan(plan: Dict[str, Any], recalled: Dict[str, Any]) -> None:

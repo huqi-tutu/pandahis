@@ -79,6 +79,8 @@ const CANVAS_PAD_LEFT_RPX = 40
 const BAND_GAP_RPX = 24
 const BAND_PAD_RPX = 16
 const MIN_BAND_HEIGHT_RPX = 56
+/** 时间轴行 / 吸顶占位块高度（与 dyn-panel-axis-spacer 一致） */
+const PANEL_AXIS_BLOCK_RPX = 86
 const AXIS_PIN_AT = 150
 const AXIS_UNPIN_AT = 110
 const CONTINUATION_CUE_THROTTLE_MS = 120
@@ -387,6 +389,7 @@ type SwimMatrix = {
   concurrentItems: string[]
   sheetWidthRpx: number
   canvasHeightRpx?: number
+  panelSheetHeightRpx?: number
   canvasPadLeftRpx?: number
   canvasWidthRpx?: number
   categoryBands?: CategoryBand[]
@@ -647,10 +650,7 @@ function composeCanvasLayout(swim: SwimMatrix, lanes: SwimLane[]): SwimMatrix {
   for (const lane of visibleLanes) {
     const contentRows = lane.collapsedRows || []
     const hasRows = contentRows.some((row) => (row || []).length > 0)
-    const rowCount = Math.max(
-      1,
-      hasRows ? (lane.rowCount || contentRows.length || 1) : 1,
-    )
+    const rowCount = Math.max(1, hasRows ? contentRows.length : 1)
     const trackHeight = snapRpx(
       LANE_TRACK_PAD_VERTICAL_RPX + rowCount * CHIP_HEIGHT_RPX + (rowCount - 1) * ROW_GAP_RPX,
     )
@@ -703,11 +703,15 @@ function composeCanvasLayout(swim: SwimMatrix, lanes: SwimLane[]): SwimMatrix {
     cursor += bandHeight + BAND_GAP_RPX
   }
 
+  const canvasHeightRpx = resolveCanvasHeightRpx(categoryBands)
+  const panelSheetHeightRpx = snapRpx(PANEL_AXIS_BLOCK_RPX + canvasHeightRpx)
+
   return {
     ...swim,
     lanes: canvasLanes,
     categoryBands,
-    canvasHeightRpx: resolveCanvasHeightRpx(categoryBands),
+    canvasHeightRpx,
+    panelSheetHeightRpx,
     canvasPadLeftRpx: swim.canvasPadLeftRpx ?? CANVAS_PAD_LEFT_RPX,
     canvasWidthRpx: (swim.sheetWidthRpx || 1440) + (swim.canvasPadLeftRpx ?? CANVAS_PAD_LEFT_RPX),
   }

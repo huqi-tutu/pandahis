@@ -1,0 +1,129 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00868",
+  "写作结构": "正史叙述见《史记·商君列传》翻译详录；拓展无更多史外异说，可结合《史记评林》后世评论点明景监嬖臣身份，并分析战国宦官参政机制，余处留白。",
+  "候选著作": [
+    {
+      "出处": "《史记·商君列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "本条目所依据的原始史料，完整记载景监荐鞅、三次游说始末。",
+      "检索词": "景监 商君列传",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《战国策·秦策一》卫鞅亡魏入秦章",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记述商鞅入秦后见孝公的过程，未及景监，可作背景参照。",
+      "检索词": "卫鞅亡魏入秦",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《韩非子·和氏》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "论及商鞅变法刑法之酷，未涉及景监，有益于理解变法背景。",
+      "检索词": "商君 和氏",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《资治通鉴·周纪二》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "几乎全文照录《史记》原文，无新增史实。",
+      "检索词": "景监 通鉴",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记评林·商君列传》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "收录明人评点，其中指出景监乃嬖近之臣，其荐鞅非正途，可作后世评价。",
+      "检索词": "景监 嬖臣",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·商君列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "本条目所依据的原始史料，完整记载景监荐鞅、三次游说始末。",
+      "检索词": "景监 商君列传",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《战国策·秦策一》卫鞅亡魏入秦章",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记述商鞅入秦后见孝公的过程，未及景监，可作背景参照。",
+      "检索词": "卫鞅亡魏入秦",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《韩非子·和氏》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "论及商鞅变法刑法之酷，未涉及景监，有益于理解变法背景。",
+      "检索词": "商君 和氏",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《资治通鉴·周纪二》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "几乎全文照录《史记》原文，无新增史实。",
+      "检索词": "景监 通鉴",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记评林·商君列传》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "收录明人评点，其中指出景监乃嬖近之臣，其荐鞅非正途，可作后世评价。",
+      "检索词": "景监 嬖臣",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 1,
+    "C_excluded": 4,
+    "overall": "B"
+  }
+}

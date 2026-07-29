@@ -1,0 +1,131 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00892",
+  "写作结构": "正史叙述见翻译详录，以《史记·孙子吴起列传》为本，涵盖赛马、推荐、桂陵与马陵之战的核心过程。史外异说可提及《孙膑兵法·禽庞涓》等出土文献佐证战术部署，但禁止展开战斗细节；关于田忌晚年，《战国策》有与邹忌矛盾、亡命楚国的传说，可作异说简述，但须标明属后世传说且留白结局，符合 anchor 禁补要求。",
+  "候选著作": [
+    {
+      "出处": "《史记·孙子吴起列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "田忌主要记载来源，提供赛马、推荐孙膑、桂陵、马陵战事框架。",
+      "检索词": "田忌 孙膑 围魏救赵",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《孙膑兵法·禽庞涓》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "银雀山汉简出土文献，记录桂陵之战田忌与孙膑的协同作战、兵力部署，为信史之外的重要战术佐证。",
+      "检索词": "田忌 禽庞涓",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《战国策·齐策·成侯邹忌为齐相》",
+      "tier": "先秦文献",
+      "pool": "legend",
+      "与本主题关系": "记载邹忌设计陷害田忌、迫其亡楚的异说，补充《史记》未述的田忌政治结局。",
+      "检索词": "田忌亡齐 之楚",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《孙膑兵法·见威王》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "可能涉及田忌引荐孙膑见齐威王的细节，但残简内容未完全对应。",
+      "检索词": "田忌 见威王",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《吕氏春秋·慎大览·不广》",
+      "tier": "先秦文献",
+      "pool": "legend",
+      "与本主题关系": "提及齐将田忌的简略事迹，或为后世评述，信息量有限。",
+      "检索词": "田忌",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·孙子吴起列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "田忌主要记载来源，提供赛马、推荐孙膑、桂陵、马陵战事框架。",
+      "检索词": "田忌 孙膑 围魏救赵",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《孙膑兵法·禽庞涓》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "银雀山汉简出土文献，记录桂陵之战田忌与孙膑的协同作战、兵力部署，为信史之外的重要战术佐证。",
+      "检索词": "田忌 禽庞涓",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《孙膑兵法·见威王》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "可能涉及田忌引荐孙膑见齐威王的细节，但残简内容未完全对应。",
+      "检索词": "田忌 见威王",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《战国策·齐策·成侯邹忌为齐相》",
+      "tier": "先秦文献",
+      "pool": "legend",
+      "与本主题关系": "记载邹忌设计陷害田忌、迫其亡楚的异说，补充《史记》未述的田忌政治结局。",
+      "检索词": "田忌亡齐 之楚",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《吕氏春秋·慎大览·不广》",
+      "tier": "先秦文献",
+      "pool": "legend",
+      "与本主题关系": "提及齐将田忌的简略事迹，或为后世评述，信息量有限。",
+      "检索词": "田忌",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 3,
+    "overall": "B"
+  }
+}

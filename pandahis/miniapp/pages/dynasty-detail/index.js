@@ -51,6 +51,7 @@ const CANVAS_PAD_LEFT_RPX = 40;
 const BAND_GAP_RPX = 24;
 const BAND_PAD_RPX = 16;
 const MIN_BAND_HEIGHT_RPX = 56;
+const PANEL_AXIS_BLOCK_RPX = 86;
 const AXIS_PIN_AT = 150;
 const AXIS_UNPIN_AT = 110;
 const CONTINUATION_CUE_THROTTLE_MS = 120;
@@ -482,7 +483,7 @@ function composeCanvasLayout(swim, lanes) {
     for (const lane of visibleLanes) {
         const contentRows = lane.collapsedRows || [];
         const hasRows = contentRows.some((row) => (row || []).length > 0);
-        const rowCount = Math.max(1, hasRows ? (lane.rowCount || contentRows.length || 1) : 1);
+        const rowCount = Math.max(1, hasRows ? contentRows.length : 1);
         const trackHeight = snapRpx(LANE_TRACK_PAD_VERTICAL_RPX + rowCount * CHIP_HEIGHT_RPX + (rowCount - 1) * ROW_GAP_RPX);
         const bandHeight = Math.max(MIN_BAND_HEIGHT_RPX, trackHeight);
         const canvasRows = [];
@@ -527,11 +528,14 @@ function composeCanvasLayout(swim, lanes) {
         });
         cursor += bandHeight + BAND_GAP_RPX;
     }
+    const canvasHeightRpx = resolveCanvasHeightRpx(categoryBands);
+    const panelSheetHeightRpx = snapRpx(PANEL_AXIS_BLOCK_RPX + canvasHeightRpx);
     return {
         ...swim,
         lanes: canvasLanes,
         categoryBands,
-        canvasHeightRpx: resolveCanvasHeightRpx(categoryBands),
+        canvasHeightRpx,
+        panelSheetHeightRpx,
         canvasPadLeftRpx: (_d = swim.canvasPadLeftRpx) !== null && _d !== void 0 ? _d : CANVAS_PAD_LEFT_RPX,
         canvasWidthRpx: (swim.sheetWidthRpx || 1440) + ((_e = swim.canvasPadLeftRpx) !== null && _e !== void 0 ? _e : CANVAS_PAD_LEFT_RPX),
     };

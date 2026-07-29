@@ -1,0 +1,153 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00828",
+  "写作结构": "正史叙述见翻译详录；拓展文先引睡虎地秦简《编年记》证实战役年份与置南郡，次述《水经注》所载引水灌鄢传说，并提示此说后出、正史未载；其余战斗过程、战术细节一概留白。",
+  "候选著作": [
+    {
+      "出处": "《史记·白起王翦列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载白起生平及鄢郢之战的经过与战功，为正史主源。",
+      "检索词": "白起 拔郢",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《史记·楚世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载楚顷襄王时期秦拔郢、楚东迁陈的史事。",
+      "检索词": "秦拔郢 楚",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "睡虎地秦墓竹简《编年记》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "出土秦简记载秦昭襄王廿九年攻楚取郢、置南郡，可印证正史纪年与政区变动。",
+      "检索词": "廿九年 攻楚 取郢",
+      "采用": true,
+      "原文摘句": "廿九年，攻楚，取郢为南郡。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《水经注·沔水注》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "载白起攻鄢时筑堰引水灌城，致使军民溺死数十万，属后出传说，正史不载。",
+      "检索词": "白起 引水 灌鄢",
+      "采用": true,
+      "原文摘句": "白起攻楚，引西山长谷水……水溃城东北角，百姓随水流，死于城东者数十万。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《战国策·中山策》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "载白起论鄢郢之战时楚国弊政，可丰富战略背景分析，但未直接提供不同战斗细节。",
+      "检索词": "白起 中山策",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《资治通鉴·周纪五》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "北宋编年史，叙鄢郢之战多采《史记》，无新增异说。",
+      "检索词": "鄢郢 白起",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·白起王翦列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载白起生平及鄢郢之战的经过与战功，为正史主源。",
+      "检索词": "白起 拔郢",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《史记·楚世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载楚顷襄王时期秦拔郢、楚东迁陈的史事。",
+      "检索词": "秦拔郢 楚",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "睡虎地秦墓竹简《编年记》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "出土秦简记载秦昭襄王廿九年攻楚取郢、置南郡，可印证正史纪年与政区变动。",
+      "检索词": "廿九年 攻楚 取郢",
+      "采用": true,
+      "原文摘句": "廿九年，攻楚，取郢为南郡。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《战国策·中山策》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "载白起论鄢郢之战时楚国弊政，可丰富战略背景分析，但未直接提供不同战斗细节。",
+      "检索词": "白起 中山策",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《水经注·沔水注》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "载白起攻鄢时筑堰引水灌城，致使军民溺死数十万，属后出传说，正史不载。",
+      "检索词": "白起 引水 灌鄢",
+      "采用": true,
+      "原文摘句": "白起攻楚，引西山长谷水……水溃城东北角，百姓随水流，死于城东者数十万。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《资治通鉴·周纪五》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "北宋编年史，叙鄢郢之战多采《史记》，无新增异说。",
+      "检索词": "鄢郢 白起",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 4,
+    "overall": "B"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00843",
+  "写作结构": "正史叙述见《汉书·食货志》翻译详录；拓展文仅取《通典·食货十二》对平籴法与常平仓谱系关系的记载，以 legend 池合段补充；其余制度细节留白，不编造具体行政流程与数据。",
+  "候选著作": [
+    {
+      "出处": "《汉书·食货志》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "现存最早完整记载平籴法的核心文献，详述三等丰年收购与三等饥年抛售的制度程序，为本条目主要史料出处。",
+      "检索词": "平籴 上熟 中熟 下熟 小饥 中饥 大饥",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《通典·食货十二·轻重》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "杜佑在记述常平仓制度起源时，明确将李悝平籴法推为常平仓的始祖，属后世制度史谱系的建构性叙述。",
+      "检索词": "李悝 平籴 常平仓",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《管子·国蓄》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "阐述‘岁有凶穰，故谷有贵贱’与‘人君泄有余而调不足’的国家调节思想，为平籴法提供了理论先导，但未直接记载魏国平籴制度。",
+      "检索词": "国蓄 轻重 调不足",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《汉书·食货志》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "现存最早完整记载平籴法的核心文献，详述三等丰年收购与三等饥年抛售的制度程序，为本条目主要史料出处。",
+      "检索词": "平籴 上熟 中熟 下熟 小饥 中饥 大饥",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《管子·国蓄》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "阐述‘岁有凶穰，故谷有贵贱’与‘人君泄有余而调不足’的国家调节思想，为平籴法提供了理论先导，但未直接记载魏国平籴制度。",
+      "检索词": "国蓄 轻重 调不足",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《通典·食货十二·轻重》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "杜佑在记述常平仓制度起源时，明确将李悝平籴法推为常平仓的始祖，属后世制度史谱系的建构性叙述。",
+      "检索词": "李悝 平籴 常平仓",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 1,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

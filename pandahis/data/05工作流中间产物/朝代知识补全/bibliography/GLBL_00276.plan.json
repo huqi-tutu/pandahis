@@ -1,0 +1,86 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00276",
+  "写作结构": "正史叙述见翻译详录（《史记·仲尼弟子列传》仅载姓名及孔子一语）；拓展部分引《孔子家语》存孔子评其不仕之文，引郑玄《目录》辑本补其籍贯；其余事迹全无可述，严守留白。",
+  "候选著作": [
+    {
+      "出处": "《史记·卷67·仲尼弟子列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "本条目的主要史料出处，载公皙哀字季次及孔子称其未尝仕。",
+      "检索词": "公皙哀",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《孔子家语·七十二弟子解》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "收录孔子对公皙哀的评价，与《史记》相合而文字稍异，可作史外印证。",
+      "检索词": "公皙哀 季次",
+      "采用": true,
+      "原文摘句": "公皙哀字季次。孔子曰：“天下无行，多为家臣，仕于都，唯季次未尝仕。”",
+      "snippet_verified": false,
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用",
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记索隐》引郑玄《论语孔子弟子目录》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "郑玄《目录》补充公皙哀为鲁人，补正史未载之籍贯。",
+      "检索词": "公皙哀 鲁人",
+      "采用": true,
+      "原文摘句": "公皙哀字季次，鲁人。",
+      "snippet_verified": false,
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用",
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·卷67·仲尼弟子列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "本条目的主要史料出处，载公皙哀字季次及孔子称其未尝仕。",
+      "检索词": "公皙哀",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《孔子家语·七十二弟子解》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "收录孔子对公皙哀的评价，与《史记》相合而文字稍异，可作史外印证。",
+      "检索词": "公皙哀 季次",
+      "采用": true,
+      "原文摘句": "公皙哀字季次。孔子曰：“天下无行，多为家臣，仕于都，唯季次未尝仕。”",
+      "snippet_verified": false,
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用",
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记索隐》引郑玄《论语孔子弟子目录》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "郑玄《目录》补充公皙哀为鲁人，补正史未载之籍贯。",
+      "检索词": "公皙哀 鲁人",
+      "采用": true,
+      "原文摘句": "公皙哀字季次，鲁人。",
+      "snippet_verified": false,
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用",
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 1,
+    "overall": "B"
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00838",
+  "写作结构": "正史《汉书·百官公卿表》及《史记》等叙述，见翻译详录，拓展文不摘句；主体叙事以《商君书·境内》的赏格为核心，辅以出土秦简《军爵律》补充律令细节，再引《韩非子·定法》的批评作为异说层，展现制度运行与评价。",
+  "候选著作": [
+    {
+      "出处": "《商君书·境内》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "直接记载秦军功爵制的具体赏格与计算方法，是 anchor c04 的核心文献来源。",
+      "检索词": "能得爵首 赏爵一级 益田",
+      "采用": true,
+      "原文摘句": "能得爵首一者，赏爵一级，益田一顷，益宅九亩，一除庶子一人，乃得入兵官之吏。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《商君书·赏刑》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "阐述利禄官爵皆出于兵，无军功者虽富无所芬华，补充军功爵的社会导向意义。",
+      "检索词": "利禄官爵 皆出于兵",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《韩非子·定法》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "从批评角度复述商君之法斩首计功、爵级与官职匹配的规定，提供时人观察。",
+      "检索词": "斩一首者爵一级 欲为官",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《睡虎地秦墓竹简·军爵律》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "出土律文，规定军功爵的授予、继承、赎免及归还程序，可验证制度的成文规范，补充 anchor c05。",
+      "检索词": "军爵律 爵 当 赐",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《里耶秦简》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "行政文书包含基层吏民的爵称记录，用来佐证军功爵在行政与社会身份中的实际使用，呼应 anchor c06。",
+      "检索词": "公士 上造 簪袅 里耶",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《汉书·百官公卿表》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "完整收录汉初二十等爵的名称与秩次，是 anchor c07 的文献依据，正史见翻译详录。",
+      "检索词": "爵 一级 公士 二十 彻侯",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《史记·商君列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载商鞅变法“有军功者，各以率受上爵”等概述，正史见翻译详录。",
+      "检索词": "有军功者 各以率 受上爵",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《商君书·境内》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "直接记载秦军功爵制的具体赏格与计算方法，是 anchor c04 的核心文献来源。",
+      "检索词": "能得爵首 赏爵一级 益田",
+      "采用": true,
+      "原文摘句": "能得爵首一者，赏爵一级，益田一顷，益宅九亩，一除庶子一人，乃得入兵官之吏。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《商君书·赏刑》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "阐述利禄官爵皆出于兵，无军功者虽富无所芬华，补充军功爵的社会导向意义。",
+      "检索词": "利禄官爵 皆出于兵",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《韩非子·定法》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "从批评角度复述商君之法斩首计功、爵级与官职匹配的规定，提供时人观察。",
+      "检索词": "斩一首者爵一级 欲为官",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《睡虎地秦墓竹简·军爵律》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "出土律文，规定军功爵的授予、继承、赎免及归还程序，可验证制度的成文规范，补充 anchor c05。",
+      "检索词": "军爵律 爵 当 赐",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《里耶秦简》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "行政文书包含基层吏民的爵称记录，用来佐证军功爵在行政与社会身份中的实际使用，呼应 anchor c06。",
+      "检索词": "公士 上造 簪袅 里耶",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《汉书·百官公卿表》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "完整收录汉初二十等爵的名称与秩次，是 anchor c07 的文献依据，正史见翻译详录。",
+      "检索词": "爵 一级 公士 二十 彻侯",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《史记·商君列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载商鞅变法“有军功者，各以率受上爵”等概述，正史见翻译详录。",
+      "检索词": "有军功者 各以率 受上爵",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    }
+  ],
+  "legend_sources": [],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 5,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

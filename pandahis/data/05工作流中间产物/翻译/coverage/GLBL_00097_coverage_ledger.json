@@ -1,0 +1,631 @@
+{
+  "schema": "translate-coverage-ledger/v1",
+  "史略ID": "GLBL_00097",
+  "updated_at": "2026-07-29T00:06:52.644420+00:00",
+  "entries": {
+    "M001": {
+      "status": "conveyed",
+      "claim_fp": "83711eea69c6a87b",
+      "checked_at": "2026-07-28T14:50:22.418145+00:00",
+      "note": "夷公没有真正坐上国君的位置"
+    },
+    "M002": {
+      "status": "conveyed",
+      "claim_fp": "e4c0173959b24fcb",
+      "checked_at": "2026-07-28T14:50:22.418150+00:00",
+      "note": "去世后就葬在了左宫"
+    },
+    "M003": {
+      "status": "conveyed",
+      "claim_fp": "4ce5616837ee8e33",
+      "checked_at": "2026-07-28T14:50:22.418151+00:00",
+      "note": "不过他留下了一个儿子，这就是后来的惠公"
+    },
+    "M004": {
+      "status": "conveyed",
+      "claim_fp": "edb6d86c904c0d1d",
+      "checked_at": "2026-07-28T14:50:22.418153+00:00",
+      "note": "惠公在位十年"
+    },
+    "M005": {
+      "status": "conveyed",
+      "claim_fp": "63f5813375013e6a",
+      "checked_at": "2026-07-28T14:50:22.418155+00:00",
+      "note": "死后葬在车里"
+    },
+    "M006": {
+      "status": "conveyed",
+      "claim_fp": "37ce5580bbaadfc5",
+      "checked_at": "2026-07-28T14:50:22.418156+00:00",
+      "note": "他往下传的儿子是悼公"
+    },
+    "M007": {
+      "status": "conveyed",
+      "claim_fp": "a27b89b3b8aa3a6d",
+      "checked_at": "2026-07-28T14:50:22.418158+00:00",
+      "note": "悼公在位的十五年里"
+    },
+    "M008": {
+      "status": "conveyed",
+      "claim_fp": "9dfa520c5a0863f1",
+      "checked_at": "2026-07-28T14:50:22.418167+00:00",
+      "note": "在僖公陵墓西侧给自己选定了归宿"
+    },
+    "M009": {
+      "status": "conveyed",
+      "claim_fp": "c130ba5c7984b82e",
+      "checked_at": "2026-07-28T14:50:22.418169+00:00",
+      "note": "在雍地筑城"
+    },
+    "M010": {
+      "status": "conveyed",
+      "claim_fp": "a25c233a7c02e479",
+      "checked_at": "2026-07-28T14:50:22.418170+00:00",
+      "note": "悼公的儿子叫剌龚公"
+    },
+    "M011": {
+      "status": "conveyed",
+      "claim_fp": "36642f732872640a",
+      "checked_at": "2026-07-28T14:50:22.418172+00:00",
+      "note": "剌龚公在位的三十四年间"
+    },
+    "M012": {
+      "status": "conveyed",
+      "claim_fp": "5c110f94160f5b55",
+      "checked_at": "2026-07-28T14:50:22.418174+00:00",
+      "note": "葬在了入里"
+    },
+    "M013": {
+      "status": "conveyed",
+      "claim_fp": "cfaa3d6b6c8d237e",
+      "checked_at": "2026-07-28T14:50:22.418175+00:00",
+      "note": "他留下了两个儿子：躁公和怀公。"
+    },
+    "M014": {
+      "status": "conveyed",
+      "claim_fp": "6134f654a9e19e7c",
+      "checked_at": "2026-07-28T14:50:22.418177+00:00",
+      "note": "而在他执政的第十年，天上出现了一个异象——彗星划过。"
+    },
+    "M015": {
+      "status": "conveyed",
+      "claim_fp": "f93594200ea232ac",
+      "checked_at": "2026-07-28T14:50:22.418178+00:00",
+      "note": "躁公，他在位十四年"
+    },
+    "M016": {
+      "status": "conveyed",
+      "claim_fp": "c1c106d28c999101",
+      "checked_at": "2026-07-28T14:50:22.418180+00:00",
+      "note": "住在受寝"
+    },
+    "M017": {
+      "status": "conveyed",
+      "claim_fp": "8c9e4ef5a83fcc6a",
+      "checked_at": "2026-07-28T14:50:22.418181+00:00",
+      "note": "死后葬在悼公陵墓的南边"
+    },
+    "M018": {
+      "status": "conveyed",
+      "claim_fp": "3eb52d8806313ccc",
+      "checked_at": "2026-07-28T14:50:22.418183+00:00",
+      "note": "躁公继位的元年，天空再次出现了彗星"
+    },
+    "M019": {
+      "status": "conveyed",
+      "claim_fp": "e5f66564af903313",
+      "checked_at": "2026-07-28T14:50:57.061212+00:00",
+      "note": "怀公是从晋国返回秦国的"
+    },
+    "M020": {
+      "status": "conveyed",
+      "claim_fp": "767cffd8fa828466",
+      "checked_at": "2026-07-28T14:50:57.061221+00:00",
+      "note": "他在位四年"
+    },
+    "M021": {
+      "status": "conveyed",
+      "claim_fp": "aa670b2421177620",
+      "checked_at": "2026-07-28T14:50:57.061225+00:00",
+      "note": "死后葬在栎圉氏"
+    },
+    "M022": {
+      "status": "conveyed",
+      "claim_fp": "14894dde7a6c696e",
+      "checked_at": "2026-07-28T14:50:57.061231+00:00",
+      "note": "怀公有儿子，名为灵公"
+    },
+    "M023": {
+      "status": "conveyed",
+      "claim_fp": "90dfa7851e5019a9",
+      "checked_at": "2026-07-28T14:50:57.061233+00:00",
+      "note": "他是被大臣们围攻，最后被迫自杀的"
+    },
+    "M024": {
+      "status": "conveyed",
+      "claim_fp": "c61a25f8e6ee62e5",
+      "checked_at": "2026-07-28T14:50:57.061236+00:00",
+      "note": "肃灵公，他是昭子的儿子"
+    },
+    "M025": {
+      "status": "conveyed",
+      "claim_fp": "7ede7e06dc11b9d7",
+      "checked_at": "2026-07-28T14:50:57.061240+00:00",
+      "note": "明确提到灵公居住在泾阳"
+    },
+    "M026": {
+      "status": "conveyed",
+      "claim_fp": "d1e38b8f41048c11",
+      "checked_at": "2026-07-28T14:50:57.061243+00:00",
+      "note": "明确提到在位十年"
+    },
+    "M027": {
+      "status": "conveyed",
+      "claim_fp": "75ccac57deb28ac7",
+      "checked_at": "2026-07-28T14:50:57.061246+00:00",
+      "note": "明确提到葬在悼公西"
+    },
+    "M028": {
+      "status": "conveyed",
+      "claim_fp": "9a424c31fce8bc0e",
+      "checked_at": "2026-07-28T14:50:57.061250+00:00",
+      "note": "明确提到生简公"
+    },
+    "M029": {
+      "status": "conveyed",
+      "claim_fp": "58bd605ae69a76af",
+      "checked_at": "2026-07-28T14:50:57.061252+00:00",
+      "note": "明确提到简公从晋来"
+    },
+    "M030": {
+      "status": "conveyed",
+      "claim_fp": "a3a5b8c11bbc261d",
+      "checked_at": "2026-07-28T14:50:57.061256+00:00",
+      "note": "明确提到享国十五年"
+    },
+    "M031": {
+      "status": "conveyed",
+      "claim_fp": "ec0adaa7c6669002",
+      "checked_at": "2026-07-28T14:50:57.061259+00:00",
+      "note": "简公...死后葬在僖公陵墓的西边"
+    },
+    "M032": {
+      "status": "conveyed",
+      "claim_fp": "2d86338e9defc74d",
+      "checked_at": "2026-07-28T14:50:57.061262+00:00",
+      "note": "他的儿子是惠公"
+    },
+    "M033": {
+      "status": "conveyed",
+      "claim_fp": "7fb52db5d6d126ca",
+      "checked_at": "2026-07-28T14:50:57.061264+00:00",
+      "note": "简公在位的第七年"
+    },
+    "M034": {
+      "status": "conveyed",
+      "claim_fp": "7b655fb28c84e9f5",
+      "checked_at": "2026-07-28T14:50:57.061266+00:00",
+      "note": "百姓开始被允许佩剑了"
+    },
+    "M035": {
+      "status": "conveyed",
+      "claim_fp": "7db94565b0e168c7",
+      "checked_at": "2026-07-28T14:50:57.061269+00:00",
+      "note": "惠公在位十三年"
+    },
+    "M036": {
+      "status": "conveyed",
+      "claim_fp": "560bb0a59894187f",
+      "checked_at": "2026-07-28T14:50:57.061271+00:00",
+      "note": "死后葬在陵圉"
+    },
+    "M037": {
+      "status": "conveyed",
+      "claim_fp": "34cdd16184fcbdad",
+      "checked_at": "2026-07-28T14:51:33.541592+00:00",
+      "note": "生下了出公"
+    },
+    "M038": {
+      "status": "conveyed",
+      "claim_fp": "12cce62d9470d70f",
+      "checked_at": "2026-07-28T14:51:33.541600+00:00",
+      "note": "出公在位两年"
+    },
+    "M039": {
+      "status": "conveyed",
+      "claim_fp": "2716bd15f1c4be6a",
+      "checked_at": "2026-07-28T14:51:33.541603+00:00",
+      "note": "最后自杀身亡，葬在雍地"
+    },
+    "M040": {
+      "status": "conveyed",
+      "claim_fp": "482fa5ff4a1d1aa9",
+      "checked_at": "2026-07-28T14:51:33.541606+00:00",
+      "note": "献公在位二十三年"
+    },
+    "M041": {
+      "status": "conveyed",
+      "claim_fp": "ec79b3fc128063dc",
+      "checked_at": "2026-07-28T14:51:33.541609+00:00",
+      "note": "葬在嚣圉"
+    },
+    "M042": {
+      "status": "conveyed",
+      "claim_fp": "7f929787c968793f",
+      "checked_at": "2026-07-28T14:51:33.541612+00:00",
+      "note": "生下了孝公"
+    },
+    "M043": {
+      "status": "conveyed",
+      "claim_fp": "9ec8bf94f3f9afce",
+      "checked_at": "2026-07-28T14:51:33.541615+00:00",
+      "note": "“孝公在位二十四年”"
+    },
+    "M044": {
+      "status": "conveyed",
+      "claim_fp": "116eb04ddc73e967",
+      "checked_at": "2026-07-28T14:51:33.541618+00:00",
+      "note": "“葬在弟圉”"
+    },
+    "M045": {
+      "status": "conveyed",
+      "claim_fp": "b0fb4eb95e7057b2",
+      "checked_at": "2026-07-28T14:51:33.541621+00:00",
+      "note": "“生下了惠文王”"
+    },
+    "M046": {
+      "status": "conveyed",
+      "claim_fp": "4c98b5bab77fc93b",
+      "checked_at": "2026-07-28T14:51:33.541623+00:00",
+      "note": "“他在位的第十三年，秦国开始把都城迁到了咸阳。”"
+    },
+    "M047": {
+      "status": "conveyed",
+      "claim_fp": "8864a3f206b92fbf",
+      "checked_at": "2026-07-28T14:51:33.541626+00:00",
+      "note": "“惠文王在位二十七年”"
+    },
+    "M048": {
+      "status": "conveyed",
+      "claim_fp": "d460f50d3f2b0ef4",
+      "checked_at": "2026-07-28T14:51:33.541629+00:00",
+      "note": "“葬在公陵”"
+    },
+    "M049": {
+      "status": "conveyed",
+      "claim_fp": "d0b62192d4a055e1",
+      "checked_at": "2026-07-28T14:51:33.541631+00:00",
+      "note": "生下了悼武王"
+    },
+    "M050": {
+      "status": "conveyed",
+      "claim_fp": "2d2be9d81d349f02",
+      "checked_at": "2026-07-28T14:51:33.541634+00:00",
+      "note": "悼武王在位四年，葬在永陵"
+    },
+    "M051": {
+      "status": "conveyed",
+      "claim_fp": "3ae56b647506d7d3",
+      "checked_at": "2026-07-28T14:51:33.541636+00:00",
+      "note": "昭襄王在位五十六年"
+    },
+    "M052": {
+      "status": "conveyed",
+      "claim_fp": "fad140273312f533",
+      "checked_at": "2026-07-28T14:51:33.541639+00:00",
+      "note": "葬在茝阳"
+    },
+    "M053": {
+      "status": "conveyed",
+      "claim_fp": "fe7b8edf0b3f2cd8",
+      "checked_at": "2026-07-28T14:51:33.541641+00:00",
+      "note": "生下了孝文王"
+    },
+    "M054": {
+      "status": "conveyed",
+      "claim_fp": "7ca40ee09a64941d",
+      "checked_at": "2026-07-28T14:51:33.541643+00:00",
+      "note": "孝文王在位仅一年"
+    },
+    "M055": {
+      "status": "conveyed",
+      "claim_fp": "8db7dc8b18384cdb",
+      "checked_at": "2026-07-28T14:52:25.846716+00:00",
+      "note": "往下看孝文王，他在位仅一年，葬寿陵。"
+    },
+    "M056": {
+      "status": "conveyed",
+      "claim_fp": "4106c887ad6fccc4",
+      "checked_at": "2026-07-28T14:52:25.846734+00:00",
+      "note": "他的儿子是庄襄王。"
+    },
+    "M057": {
+      "status": "conveyed",
+      "claim_fp": "59b8facd149e49fa",
+      "checked_at": "2026-07-28T14:52:25.846738+00:00",
+      "note": "庄襄王在位三年"
+    },
+    "M058": {
+      "status": "conveyed",
+      "claim_fp": "0a779d0832f48922",
+      "checked_at": "2026-07-28T14:52:25.846741+00:00",
+      "note": "葬茝阳"
+    },
+    "M059": {
+      "status": "conveyed",
+      "claim_fp": "6adebef6922ced24",
+      "checked_at": "2026-07-28T14:52:25.846744+00:00",
+      "note": "他生下了一个彻底改变中国历史走向的儿子——始皇帝"
+    },
+    "M060": {
+      "status": "conveyed",
+      "claim_fp": "e1f47532360a970a",
+      "checked_at": "2026-07-28T14:52:25.846747+00:00",
+      "note": "此时的相国，是吕不韦"
+    },
+    "M061": {
+      "status": "conveyed",
+      "claim_fp": "2a99378e6be33da6",
+      "checked_at": "2026-07-28T14:52:25.846751+00:00",
+      "note": "献公在位第七年...秦国开始设立正规的市场"
+    },
+    "M062": {
+      "status": "conveyed",
+      "claim_fp": "f6c9d0bee2a44937",
+      "checked_at": "2026-07-28T14:52:25.846754+00:00",
+      "note": "到了第十年，又推行了户籍相伍制度"
+    },
+    "M063": {
+      "status": "conveyed",
+      "claim_fp": "a93a46977020a9fa",
+      "checked_at": "2026-07-28T14:52:25.846757+00:00",
+      "note": "孝公在位第十六年"
+    },
+    "M064": {
+      "status": "conveyed",
+      "claim_fp": "c36ca79e99548f64",
+      "checked_at": "2026-07-28T14:52:25.846759+00:00",
+      "note": "冬天桃树李树竟然开了花"
+    },
+    "M065": {
+      "status": "conveyed",
+      "claim_fp": "82d03997acaf3d6a",
+      "checked_at": "2026-07-28T14:52:25.846782+00:00",
+      "note": "惠文王十九岁即位"
+    },
+    "M066": {
+      "status": "conveyed",
+      "claim_fp": "807d6a61c34b47a4",
+      "checked_at": "2026-07-28T14:52:25.846789+00:00",
+      "note": "他登基的第二年，秦国开始正式发行钱币"
+    },
+    "M067": {
+      "status": "conveyed",
+      "claim_fp": "86dd49b2e565c594",
+      "checked_at": "2026-07-28T14:52:25.846793+00:00",
+      "note": "明确提及新生婴儿说“秦且王”。"
+    },
+    "M068": {
+      "status": "conveyed",
+      "claim_fp": "2dbc10a7265475d4",
+      "checked_at": "2026-07-28T14:52:25.846797+00:00",
+      "note": "明确传达悼武王十九岁即位。"
+    },
+    "M069": {
+      "status": "conveyed",
+      "claim_fp": "55e089f0c7b3a699",
+      "checked_at": "2026-07-28T14:52:25.846799+00:00",
+      "note": "明确提及渭水红三日。"
+    },
+    "M070": {
+      "status": "conveyed",
+      "claim_fp": "8226b2193a5a538d",
+      "checked_at": "2026-07-28T14:52:25.846802+00:00",
+      "note": "明确传达昭襄王十九岁即位。"
+    },
+    "M071": {
+      "status": "conveyed",
+      "claim_fp": "c2d38d51dadbc55e",
+      "checked_at": "2026-07-28T14:52:25.846805+00:00",
+      "note": "明确提及田开阡陌。"
+    },
+    "M072": {
+      "status": "conveyed",
+      "claim_fp": "94d9d2f85950f8d3",
+      "checked_at": "2026-07-28T14:55:06.395050+00:00",
+      "note": "孝文王呢，足足当了五十三年太子才即位。"
+    },
+    "M073": {
+      "status": "conveyed",
+      "claim_fp": "089313bc699c99fe",
+      "checked_at": "2026-07-28T14:53:29.071610+00:00",
+      "note": "庄襄王三十二岁即位。"
+    },
+    "M074": {
+      "status": "conveyed",
+      "claim_fp": "07739b292e01a84a",
+      "checked_at": "2026-07-28T14:53:29.071617+00:00",
+      "note": "在位两年，攻取了太原地区。"
+    },
+    "M075–M076": {
+      "status": "conveyed",
+      "claim_fp": "0189f22136b3807c",
+      "checked_at": "2026-07-28T14:53:29.071620+00:00",
+      "note": "庄襄王元年，他办了几件大事：大赦天下，褒奖先王的功臣，厚待宗族骨肉，并向百姓施以恩惠。东周君与诸侯密谋对付秦国，秦庄襄王派相国吕不韦领兵诛灭了东周，将其国土全部并入秦国版图。"
+    },
+    "M077": {
+      "status": "conveyed",
+      "claim_fp": "4be9ed555b119d46",
+      "checked_at": "2026-07-28T14:53:29.071622+00:00",
+      "note": "不过秦国没有断绝周室的祭祀，把阳人这个地方赐给了周君，让他继续供奉先祖的香火。"
+    },
+    "M078": {
+      "status": "conveyed",
+      "claim_fp": "59ce2e81fa81db3f",
+      "checked_at": "2026-07-28T14:53:29.071624+00:00",
+      "note": "始皇在位三十七年。"
+    },
+    "M079": {
+      "status": "conveyed",
+      "claim_fp": "b877f056fcee4a60",
+      "checked_at": "2026-07-28T14:53:29.071626+00:00",
+      "note": "死后葬在郦邑。"
+    },
+    "M080": {
+      "status": "conveyed",
+      "claim_fp": "e32315ceb3820a74",
+      "checked_at": "2026-07-28T14:53:29.071629+00:00",
+      "note": "儿子二世皇帝继位。"
+    },
+    "M081": {
+      "status": "conveyed",
+      "claim_fp": "893f635844520ef3",
+      "checked_at": "2026-07-28T14:53:29.071631+00:00",
+      "note": "始皇是十三岁即位的。"
+    },
+    "M082": {
+      "status": "conveyed",
+      "claim_fp": "a5c143db48e6cec9",
+      "checked_at": "2026-07-28T14:53:29.071633+00:00",
+      "note": "二世皇帝在位三年。"
+    },
+    "M083": {
+      "status": "conveyed",
+      "claim_fp": "a3830088668cba7c",
+      "checked_at": "2026-07-28T14:53:29.071635+00:00",
+      "note": "死后葬在宜春。"
+    },
+    "M084": {
+      "status": "conveyed",
+      "claim_fp": "9a42b95f6b560c79",
+      "checked_at": "2026-07-28T14:53:29.071637+00:00",
+      "note": "赵高出任丞相，封安武侯。"
+    },
+    "M085": {
+      "status": "conveyed",
+      "claim_fp": "f599a4a16069e7b7",
+      "checked_at": "2026-07-28T14:53:29.071639+00:00",
+      "note": "二世是十二岁即位的。"
+    },
+    "M086": {
+      "status": "conveyed",
+      "claim_fp": "9fc5bf977eb91825",
+      "checked_at": "2026-07-28T14:53:29.071641+00:00",
+      "note": "以上从秦襄公到二世皇帝，共计六百一十年。"
+    },
+    "M087": {
+      "status": "conveyed",
+      "claim_fp": "b5688f1b07b2fc48",
+      "checked_at": "2026-07-28T14:53:29.071642+00:00",
+      "note": "东汉孝明皇帝十七年十月十五日，班固在「典引」中写了一篇评论，...说：周朝的国运已经终结，按照五德终始的规律，仁义之德并不能永远庇护子孙。"
+    },
+    "M088": {
+      "status": "conveyed",
+      "claim_fp": "6ffd456dd8dfbb61",
+      "checked_at": "2026-07-28T14:53:29.071644+00:00",
+      "note": "秦朝正好承接了这个空缺，但吕不韦的儿子嬴政（即始皇）施政残酷暴虐。"
+    },
+    "M089–M090": {
+      "status": "conveyed",
+      "claim_fp": "26f4921223ccd4b7",
+      "checked_at": "2026-07-28T14:53:29.071646+00:00",
+      "note": "不过，他以诸侯之子的身份，十三岁即位，最终兼并了天下，随后便放纵欲望，一心养护自己的宗亲。在位的三十七年里，兵力无处不及，他制定的法度政令，也延续到了后世的君王手中。"
+    },
+    "M091": {
+      "status": "conveyed",
+      "claim_fp": "32c210298cbc9fb6",
+      "checked_at": "2026-07-28T14:54:55.230098+00:00",
+      "note": "译文开头解释该句，包括河神授图、上应天象、佐政驱除等。"
+    },
+    "M092": {
+      "status": "conveyed",
+      "claim_fp": "da1a6cf45f611b1d",
+      "checked_at": "2026-07-28T14:54:55.230113+00:00",
+      "note": "译文直接引用并解释：胡亥极愚，骊山陵墓未完工又修阿房宫。"
+    },
+    "M093": {
+      "status": "conveyed",
+      "claim_fp": "59f9b1f07b5d00b3",
+      "checked_at": "2026-07-28T14:54:55.230117+00:00",
+      "note": "译文引用并解释胡亥的话：肆意极欲，大臣想罢先君所为。"
+    },
+    "M094": {
+      "status": "conveyed",
+      "claim_fp": "861ad3a83b60b643",
+      "checked_at": "2026-07-28T14:54:55.230120+00:00",
+      "note": "译文明确说：诛斯、去疾，任用赵高，杀了李斯，逼死冯去疾。"
+    },
+    "M095": {
+      "status": "conveyed",
+      "claim_fp": "d83b02eacc7d4dc4",
+      "checked_at": "2026-07-28T14:54:55.230123+00:00",
+      "note": "译文：痛哉言乎！这话说得让人多痛心。"
+    },
+    "M096": {
+      "status": "conveyed",
+      "claim_fp": "08636f71e916f5e6",
+      "checked_at": "2026-07-28T14:54:55.230126+00:00",
+      "note": "译文：人头畜鸣，解释为长着人样却发出畜生嘶鸣。"
+    },
+    "M097": {
+      "status": "conveyed",
+      "claim_fp": "569402b41659db88",
+      "checked_at": "2026-07-28T14:54:55.230128+00:00",
+      "note": "直接引用并解释原句，信息完整传达。"
+    },
+    "M098–M100": {
+      "status": "conveyed",
+      "claim_fp": "c180d7eeec41a127",
+      "checked_at": "2026-07-28T14:54:55.230131+00:00",
+      "note": "三段信息均以白话译出，完整传达。"
+    },
+    "M101": {
+      "status": "conveyed",
+      "claim_fp": "57108a34ef2243a9",
+      "checked_at": "2026-07-28T14:54:55.230133+00:00",
+      "note": "直接引用并解释典故，信息完整。"
+    },
+    "M102": {
+      "status": "conveyed",
+      "claim_fp": "3828db6b8e8f8d04",
+      "checked_at": "2026-07-28T14:54:55.230135+00:00",
+      "note": "直接引用并解释，信息完整。"
+    },
+    "M103": {
+      "status": "conveyed",
+      "claim_fp": "2a909c13503f43d3",
+      "checked_at": "2026-07-28T14:54:55.230138+00:00",
+      "note": "完整翻译引述了贾谊司马迁的评价及后续驳议和俗传，信息完整。"
+    },
+    "M104": {
+      "status": "conveyed",
+      "claim_fp": "c161ac7b102cf136",
+      "checked_at": "2026-07-28T14:54:55.230140+00:00",
+      "note": "直接引用并解释，信息完整。"
+    },
+    "M105": {
+      "status": "conveyed",
+      "claim_fp": "86c202920132f7fd",
+      "checked_at": "2026-07-28T14:54:55.230142+00:00",
+      "note": "直接解释了该典故，传达了纪季献邑而春秋不名的信息，并以子婴类比。"
+    },
+    "M106": {
+      "status": "conveyed",
+      "claim_fp": "2299d24b097c18a2",
+      "checked_at": "2026-07-28T14:54:55.230147+00:00",
+      "note": "原文引用并白话解释，明确传达了读秦纪至于子婴车裂赵高而健决怜志的信息。"
+    },
+    "M107": {
+      "status": "conveyed",
+      "claim_fp": "405ae96e069fe5af",
+      "checked_at": "2026-07-28T14:54:55.230149+00:00",
+      "note": "原文引用并白话解释，明确传达了子婴死生之义完备的信息。"
+    },
+    "M089–M091": {
+      "status": "conveyed",
+      "claim_fp": "dffb6002423cdf98",
+      "checked_at": "2026-07-28T14:55:06.395069+00:00",
+      "note": "他以诸侯之子的身份，十三岁即位，最终兼并了天下，随后便放纵欲望，一心养护自己的宗亲。在位的三十七年里，兵力无处不及，他制定的法度政令，也延续到了后世的君王手中。他大概是获得了圣人的威势，得到了河神授予的符命图谶，凭借着天上的狼星、狐星以及参星、伐星所对应的地域之力，辅佐王业、驱除障碍，直到称帝号为始皇帝。"
+    }
+  }
+}

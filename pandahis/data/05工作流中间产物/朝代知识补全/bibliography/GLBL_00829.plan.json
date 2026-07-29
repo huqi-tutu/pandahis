@@ -1,0 +1,163 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00829",
+  "写作结构": "正史叙述以《史记》秦本纪、六国年表等为据（见翻译详录）；拓展部分主要依据《战国策》诸策、《战国纵横家书》等先秦出土文献，揭示合纵策划与诸侯异心的内幕，并用《竹书纪年》异文印证修鱼之战的斩首数。严禁编造具体行军、战阵细节，仅陈述可考背景与后果，突显五国各怀盘算导致合纵瓦解。",
+  "候选著作": [
+    {
+      "出处": "《战国策·赵策二·苏秦从燕之赵始合从》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "载苏秦倡导合纵的说辞及赵王许诺，为五国攻秦提供直接背景与动机。",
+      "检索词": "苏秦 合纵 纵亲",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《战国策·楚策一·苏秦为赵合纵说楚威王》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "涉及推楚王为纵长的游说，呼应 anchor 中楚怀王为纵长之说，展现纵约之初的诸侯心态。",
+      "检索词": "纵长 楚王 合从",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《战国纵横家书》（马王堆汉墓帛书）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "收录苏秦等人书信，透露齐、魏等国在合纵攻秦时的观望与私心，可补证 anchor 中五国不能同心而秦得分化瓦解之论。",
+      "检索词": "苏秦 合纵 帛书",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《古本竹书纪年·魏纪》辑本",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "载秦庶长疾与韩、魏、赵战于修鱼，斩首八万二千，提供不同于《史记》的纪年与战果记载，可印证修鱼之战的规模。",
+      "检索词": "修鱼 庶长疾 八万",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    },
+    {
+      "出处": "《史记·秦本纪》《史记·六国年表》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史对五国攻秦、修鱼之战的基本记载，是本条目的主要史料出处，由翻译环节详录。",
+      "检索词": "五国 攻秦 修鱼",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《盐铁论·非鞅》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "论辩中提及合纵连横使诸侯疲敝，可作为后世对五国攻秦失败的宏观评价，但不涉具体史实。",
+      "检索词": "合纵 连横 苏秦",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《战国策·赵策二·苏秦从燕之赵始合从》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "载苏秦倡导合纵的说辞及赵王许诺，为五国攻秦提供直接背景与动机。",
+      "检索词": "苏秦 合纵 纵亲",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《战国策·楚策一·苏秦为赵合纵说楚威王》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "涉及推楚王为纵长的游说，呼应 anchor 中楚怀王为纵长之说，展现纵约之初的诸侯心态。",
+      "检索词": "纵长 楚王 合从",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《战国纵横家书》（马王堆汉墓帛书）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "收录苏秦等人书信，透露齐、魏等国在合纵攻秦时的观望与私心，可补证 anchor 中五国不能同心而秦得分化瓦解之论。",
+      "检索词": "苏秦 合纵 帛书",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《古本竹书纪年·魏纪》辑本",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "载秦庶长疾与韩、魏、赵战于修鱼，斩首八万二千，提供不同于《史记》的纪年与战果记载，可印证修鱼之战的规模。",
+      "检索词": "修鱼 庶长疾 八万",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    },
+    {
+      "出处": "《史记·秦本纪》《史记·六国年表》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史对五国攻秦、修鱼之战的基本记载，是本条目的主要史料出处，由翻译环节详录。",
+      "检索词": "五国 攻秦 修鱼",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《盐铁论·非鞅》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "论辩中提及合纵连横使诸侯疲敝，可作为后世对五国攻秦失败的宏观评价，但不涉具体史实。",
+      "检索词": "合纵 连横 苏秦",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 4,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

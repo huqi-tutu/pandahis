@@ -1,0 +1,199 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00884",
+  "写作结构": "正史《史记·孟子荀卿列传》的基本叙述由翻译详录承担；拓展文段主要引入《别录》《列子》的吹律传说及《文选》注所引《邹子》佚文说明五德终始的具体形态，其余留白。",
+  "候选著作": [
+    {
+      "出处": "《史记·孟子荀卿列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史本传，记载邹衍生平、阴阳家学说大要，为基本史料",
+      "检索词": "邹衍",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·封禅书》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载邹衍五德终始之说对秦始皇封禅观的影响",
+      "检索词": "邹衍 终始",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《别录》佚文（见《艺文类聚》卷五引）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载邹衍在燕吹律使寒谷变暖、禾黍生长的传说，补充传奇事迹",
+      "检索词": "邹衍吹律",
+      "采用": true,
+      "原文摘句": "燕有谷，地寒不生五谷，邹衍吹律，暖气至，禾黍生。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《列子·汤问》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "较早记载邹衍吹律故事的传世文献，可与他本对勘",
+      "检索词": "邹衍之吹律",
+      "采用": true,
+      "原文摘句": "邹衍之吹律，北方之谷，无风自鸣，寒谷变暖，禾黍遂生。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《文选·齐故安陆昭王碑文》李善注引《邹子》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "保存邹衍五德终始说的具体佚文，揭示五德相胜的顺序",
+      "检索词": "五德之次 邹子",
+      "采用": true,
+      "原文摘句": "五德之次，从所不胜，故虞土、夏木、殷金、周火。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《汉书·艺文志》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "著录《邹子》四十九篇、《邹子终始》五十六篇，说明其著作存目",
+      "检索词": "邹子 四十九篇",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《盐铁论·论儒》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "讨论儒生时提及邹衍，反映西汉人对他的评价",
+      "检索词": "邹衍 论儒",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《论衡·寒温》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "引述邹衍吹律故事并加以评论，属后世的解释层",
+      "检索词": "邹衍吹律 寒温",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·孟子荀卿列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史本传，记载邹衍生平、阴阳家学说大要，为基本史料",
+      "检索词": "邹衍",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·封禅书》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载邹衍五德终始之说对秦始皇封禅观的影响",
+      "检索词": "邹衍 终始",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《别录》佚文（见《艺文类聚》卷五引）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载邹衍在燕吹律使寒谷变暖、禾黍生长的传说，补充传奇事迹",
+      "检索词": "邹衍吹律",
+      "采用": true,
+      "原文摘句": "燕有谷，地寒不生五谷，邹衍吹律，暖气至，禾黍生。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《列子·汤问》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "较早记载邹衍吹律故事的传世文献，可与他本对勘",
+      "检索词": "邹衍之吹律",
+      "采用": true,
+      "原文摘句": "邹衍之吹律，北方之谷，无风自鸣，寒谷变暖，禾黍遂生。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《文选·齐故安陆昭王碑文》李善注引《邹子》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "保存邹衍五德终始说的具体佚文，揭示五德相胜的顺序",
+      "检索词": "五德之次 邹子",
+      "采用": true,
+      "原文摘句": "五德之次，从所不胜，故虞土、夏木、殷金、周火。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《汉书·艺文志》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "著录《邹子》四十九篇、《邹子终始》五十六篇，说明其著作存目",
+      "检索词": "邹子 四十九篇",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《盐铁论·论儒》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "讨论儒生时提及邹衍，反映西汉人对他的评价",
+      "检索词": "邹衍 论儒",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《论衡·寒温》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "引述邹衍吹律故事并加以评论，属后世的解释层",
+      "检索词": "邹衍吹律 寒温",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 3,
+    "C_excluded": 5,
+    "overall": "B"
+  }
+}

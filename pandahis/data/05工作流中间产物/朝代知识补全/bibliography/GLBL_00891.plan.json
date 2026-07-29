@@ -1,0 +1,109 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00891",
+  "写作结构": "正史叙述以《史记·白起王翦列传》为主，由翻译详录保底；拓展文引入《战国策·燕策三》作为先秦平行记载的异说映照（仅表有此记录），并以《资治通鉴》作为后世综述简笔合段补充，不展开新细节。",
+  "候选著作": [
+    {
+      "出处": "《史记·白起王翦列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "李信事迹主要载于王翦列传部分，包括少壮追燕太子丹、伐楚论兵、战败及后续平定燕齐等核心叙述。",
+      "检索词": "李信 王翦",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《史记·刺客列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "荆轲刺秦后秦伐燕事联带提及李信追击燕王、燕杀太子丹的情节。",
+      "检索词": "李信 燕太子丹",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《战国策·燕策三》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "载有秦将李信追燕王、燕王斩太子丹献秦的经过，与《史记》互见，可作先秦一手异说。",
+      "检索词": "李信 燕太子丹",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《资治通鉴·秦纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "糅合《史记》等诸书，简要叙述李信求学、伐楚及后续功绩，代表宋代以前的综合认知。",
+      "检索词": "李信 始皇 伐楚",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·白起王翦列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "李信事迹主要载于王翦列传部分，包括少壮追燕太子丹、伐楚论兵、战败及后续平定燕齐等核心叙述。",
+      "检索词": "李信 王翦",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《史记·刺客列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "荆轲刺秦后秦伐燕事联带提及李信追击燕王、燕杀太子丹的情节。",
+      "检索词": "李信 燕太子丹",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《战国策·燕策三》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "载有秦将李信追燕王、燕王斩太子丹献秦的经过，与《史记》互见，可作先秦一手异说。",
+      "检索词": "李信 燕太子丹",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《资治通鉴·秦纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "糅合《史记》等诸书，简要叙述李信求学、伐楚及后续功绩，代表宋代以前的综合认知。",
+      "检索词": "李信 始皇 伐楚",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

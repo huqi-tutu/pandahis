@@ -1,0 +1,86 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00824",
+  "写作结构": "正史叙述见《史记·孙子吴起列传》翻译详录；拓展文以《战国策·齐策一》互见异文与出土《孙膑兵法·陈忌问垒》所载伏击战术为补充。异说部分不作展开，无可信legend层。",
+  "候选著作": [
+    {
+      "出处": "《史记·孙子吴起列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载减灶诱敌、马陵伏击、庞涓自刎、虏太子申等核心情节",
+      "检索词": "孙膑 减灶 马陵",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《战国策·齐策一·南梁之难》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载孙膑减灶计与马陵伏击的异文，与《史记》互见，部分叙述次序有别，可资比对",
+      "检索词": "马陵 减灶 十万灶",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《孙膑兵法·陈忌问垒》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "银雀山汉墓出土简文，载孙膑与田忌总结马陵设伏的战术，涉及蒺藜、沟池、壁垒等细节，可补正史之阙",
+      "检索词": "陈忌问垒 马陵",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·孙子吴起列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载减灶诱敌、马陵伏击、庞涓自刎、虏太子申等核心情节",
+      "检索词": "孙膑 减灶 马陵",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《战国策·齐策一·南梁之难》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载孙膑减灶计与马陵伏击的异文，与《史记》互见，部分叙述次序有别，可资比对",
+      "检索词": "马陵 减灶 十万灶",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《孙膑兵法·陈忌问垒》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "银雀山汉墓出土简文，载孙膑与田忌总结马陵设伏的战术，涉及蒺藜、沟池、壁垒等细节，可补正史之阙",
+      "检索词": "陈忌问垒 马陵",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 1,
+    "overall": "B"
+  }
+}

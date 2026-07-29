@@ -1,0 +1,130 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00724",
+  "写作结构": "正史叙述见翻译详录，拓展文主要采战国策、竹书纪年等史外异说，以资治通鉴为后世综述补充。",
+  "候选著作": [
+    {
+      "出处": "《史记·卷46·田敬仲完世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载田和迁康公基本过程",
+      "检索词": "田和 迁康公 海上",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《史记·卷32·齐太公世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "姜齐世系，可能提及康公被迁",
+      "检索词": "康公 贷 田氏",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《战国策·齐策》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "载有田氏代齐过程及当时人议论，可补充政治背景",
+      "检索词": "田和 齐康公 迁",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "[dry-run] 将尝试 ctext 检索"
+    },
+    {
+      "出处": "《竹书纪年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载战国年代，可对齐康公、田和纪年提供异文或补充",
+      "检索词": "康公 田和 年",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "[dry-run] 将尝试 ctext 检索"
+    },
+    {
+      "出处": "《资治通鉴·卷1·周纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋人综合记述田氏代齐，可作后世叙事参考",
+      "检索词": "田和 迁康公 海上",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "[dry-run] 将尝试 ctext 检索"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·卷46·田敬仲完世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载田和迁康公基本过程",
+      "检索词": "田和 迁康公 海上",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《史记·卷32·齐太公世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "姜齐世系，可能提及康公被迁",
+      "检索词": "康公 贷 田氏",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《战国策·齐策》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "载有田氏代齐过程及当时人议论，可补充政治背景",
+      "检索词": "田和 齐康公 迁",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《竹书纪年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载战国年代，可对齐康公、田和纪年提供异文或补充",
+      "检索词": "康公 田和 年",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《资治通鉴·卷1·周纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋人综合记述田氏代齐，可作后世叙事参考",
+      "检索词": "田和 迁康公 海上",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 3,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

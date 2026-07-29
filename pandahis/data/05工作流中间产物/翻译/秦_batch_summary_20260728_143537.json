@@ -1,0 +1,17 @@
+{
+  "stamp": "20260728_143537",
+  "dynasty": "秦",
+  "pending_start": 1,
+  "ok": 0,
+  "routed": 0,
+  "skip": 0,
+  "err": 1,
+  "results": [
+    {
+      "id": "GLBL_00249",
+      "name": "陈涉",
+      "status": "error",
+      "rc": 1
+    }
+  ]
+}

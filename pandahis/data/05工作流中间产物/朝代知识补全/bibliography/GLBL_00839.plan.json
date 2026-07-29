@@ -1,0 +1,159 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00839",
+  "写作结构": "正史叙述（《史记·商君列传》）见翻译详录；拓展部分以《商君书》诸篇及《韩非子》追述阐明连坐之法理与设计，再以睡虎地秦简等出土文献印证秦什伍连坐在基层司法中的具体运作。",
+  "候选著作": [
+    {
+      "出处": "《商君书·去强》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "提出“重刑而连其罪”以制民，是商鞅连坐思想的直接阐述。",
+      "检索词": "重刑而连其罪",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《韩非子·和氏》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "韩非追述商鞅变法“连什伍，设告坐之过”，提供了战国晚期对商鞅什伍连坐制的描述。",
+      "检索词": "连什伍",
+      "采用": true,
+      "原文摘句": "商君教秦孝公以连什伍，设告坐之过，燔诗书而明法令，塞私门之请而遂公家之劳，禁游宦之民而显耕战之士。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《韩非子·定法》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "明确记载商鞅“设告相坐而责其实，连什伍而同其罪”，揭示连坐与告奸制度相互配合。",
+      "检索词": "告相坐",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《睡虎地秦墓竹简·法律答问》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "出土秦律中四邻、伍人的定义及连坐案例，直接呈现什伍连坐在基层司法中的运作。",
+      "检索词": "四邻即伍人",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《汉书·刑法志》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "班固对秦连坐之法的评论，反映汉代对商鞅什伍连坐的认识与批判。",
+      "检索词": "连相坐之法",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C",
+      "fetch_note": "二十四史由翻译详录服务，拓展路不摘句"
+    },
+    {
+      "出处": "《岳麓书院藏秦简（叁）》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "秦代司法文书涉及伍人告发、连坐处置等实例，可补证秦连坐制的实施。",
+      "检索词": "伍人 告",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《商君书·去强》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "提出“重刑而连其罪”以制民，是商鞅连坐思想的直接阐述。",
+      "检索词": "重刑而连其罪",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《韩非子·和氏》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "韩非追述商鞅变法“连什伍，设告坐之过”，提供了战国晚期对商鞅什伍连坐制的描述。",
+      "检索词": "连什伍",
+      "采用": true,
+      "原文摘句": "商君教秦孝公以连什伍，设告坐之过，燔诗书而明法令，塞私门之请而遂公家之劳，禁游宦之民而显耕战之士。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《韩非子·定法》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "明确记载商鞅“设告相坐而责其实，连什伍而同其罪”，揭示连坐与告奸制度相互配合。",
+      "检索词": "告相坐",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《睡虎地秦墓竹简·法律答问》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "出土秦律中四邻、伍人的定义及连坐案例，直接呈现什伍连坐在基层司法中的运作。",
+      "检索词": "四邻即伍人",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《岳麓书院藏秦简（叁）》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "秦代司法文书涉及伍人告发、连坐处置等实例，可补证秦连坐制的实施。",
+      "检索词": "伍人 告",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《汉书·刑法志》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "班固对秦连坐之法的评论，反映汉代对商鞅什伍连坐的认识与批判。",
+      "检索词": "连相坐之法",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C",
+      "fetch_note": "二十四史由翻译详录服务，拓展路不摘句"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 4,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

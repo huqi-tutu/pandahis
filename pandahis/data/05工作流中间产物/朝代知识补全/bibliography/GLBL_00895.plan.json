@@ -1,0 +1,138 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00895",
+  "写作结构": "正史叙述见《史记·白起列传》翻译详录；拓展部分引用《战国策》中公孙喜战前参与韩国外交的记载，以及伊阙之战结果在《战国策·赵策》中的记述，以丰富人物活动与战事影响；并参校《竹书纪年》异文，呈现先秦史籍对此事的多元记载。",
+  "候选著作": [
+    {
+      "出处": "《史记·白起列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，详述伊阙之战过程与结果，由翻译详录处理。",
+      "检索词": "公孙喜 伊阙",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·秦本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "秦官方视角记载伊阙之战年份、斩首数与虏获公孙喜，与白起列传互补。",
+      "检索词": "秦昭襄王 伊阙",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《战国策·韩策三·韩氏逐向晋于周》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载公孙喜在伊阙之战前参与韩国外交，联络韩公叔，展现其政治活动。",
+      "检索词": "公孙喜 韩公叔",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《战国策·赵策一·秦败魏韩于伊阙》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "从赵国视角记述伊阙之战结果及其对魏、赵地缘政治的影响，提及斩首数与俘获公孙喜。",
+      "检索词": "伊阙 斩首 公孙喜",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《竹书纪年·魏纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "独立记载伊阙之战年份与斩首数，与《史记》形成异源参校。",
+      "检索词": "秦与韩魏战于伊阙",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·白起列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，详述伊阙之战过程与结果，由翻译详录处理。",
+      "检索词": "公孙喜 伊阙",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·秦本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "秦官方视角记载伊阙之战年份、斩首数与虏获公孙喜，与白起列传互补。",
+      "检索词": "秦昭襄王 伊阙",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《战国策·韩策三·韩氏逐向晋于周》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载公孙喜在伊阙之战前参与韩国外交，联络韩公叔，展现其政治活动。",
+      "检索词": "公孙喜 韩公叔",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《战国策·赵策一·秦败魏韩于伊阙》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "从赵国视角记述伊阙之战结果及其对魏、赵地缘政治的影响，提及斩首数与俘获公孙喜。",
+      "检索词": "伊阙 斩首 公孙喜",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《竹书纪年·魏纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "独立记载伊阙之战年份与斩首数，与《史记》形成异源参校。",
+      "检索词": "秦与韩魏战于伊阙",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    }
+  ],
+  "legend_sources": [],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 3,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

@@ -1,0 +1,175 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00861",
+  "写作结构": "正史叙述见翻译详录（《史记·秦本纪》《穰侯列传》等），拓展文以《战国策·秦策二》关于宣太后临终殉葬一事作为史外异说加入主叙事，以《资治通鉴》相关内容合段补充义渠诱杀等事的后世编年视角，其余书目仅作备查留白。",
+  "候选著作": [
+    {
+      "出处": "《史记·秦本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，载昭襄王元年宣太后临朝、魏冉为将军等基本行迹",
+      "检索词": "宣太后",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《史记·穰侯列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "详载魏冉辅政与宣太后掌权之关联",
+      "检索词": "宣太后 魏冉",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《战国策·秦策二》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "载宣太后临终欲以情人魏丑夫殉葬、被庸芮劝止一事，展现其个人情感与性格",
+      "检索词": "宣太后 魏丑夫",
+      "采用": true,
+      "原文摘句": "秦宣太后爱魏丑夫。太后病将死，出令曰：‘为我葬，必以魏子为殉。’",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《后汉书·西羌传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "载义渠王与宣太后事迹及秦灭义渠经过，可作义渠相关叙事补充",
+      "检索词": "义渠 宣太后",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《资治通鉴·周纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "编年梳理宣太后掌权、诱杀义渠王等事，反映后世综合叙述",
+      "检索词": "秦宣太后 义渠",
+      "采用": true,
+      "原文摘句": "秦宣太后诱杀义渠王于甘泉宫，遂起兵伐残义渠。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《太平御览·皇王部》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "引《帝王世纪》《史记》等片段，有秦宣太后相关类文",
+      "检索词": "宣太后",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《古本竹书纪年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "可能提供战国秦纪年锚点，无宣太后叙事细节",
+      "检索词": "秦昭襄王 元年",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·秦本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，载昭襄王元年宣太后临朝、魏冉为将军等基本行迹",
+      "检索词": "宣太后",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《史记·穰侯列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "详载魏冉辅政与宣太后掌权之关联",
+      "检索词": "宣太后 魏冉",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《战国策·秦策二》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "载宣太后临终欲以情人魏丑夫殉葬、被庸芮劝止一事，展现其个人情感与性格",
+      "检索词": "宣太后 魏丑夫",
+      "采用": true,
+      "原文摘句": "秦宣太后爱魏丑夫。太后病将死，出令曰：‘为我葬，必以魏子为殉。’",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《后汉书·西羌传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "载义渠王与宣太后事迹及秦灭义渠经过，可作义渠相关叙事补充",
+      "检索词": "义渠 宣太后",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《古本竹书纪年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "可能提供战国秦纪年锚点，无宣太后叙事细节",
+      "检索词": "秦昭襄王 元年",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《资治通鉴·周纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "编年梳理宣太后掌权、诱杀义渠王等事，反映后世综合叙述",
+      "检索词": "秦宣太后 义渠",
+      "采用": true,
+      "原文摘句": "秦宣太后诱杀义渠王于甘泉宫，遂起兵伐残义渠。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《太平御览·皇王部》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "引《帝王世纪》《史记》等片段，有秦宣太后相关类文",
+      "检索词": "宣太后",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 5,
+    "overall": "B"
+  }
+}

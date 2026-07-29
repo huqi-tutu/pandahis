@@ -152,19 +152,21 @@ def save_llm_prompt(
     return path
 
 
-def save_compose_raw(
+def save_llm_raw(
     logs_dir: Path,
     entry_id: str,
     attempt: int,
     label: str,
     raw_text: str,
+    *,
+    subdir: str,
 ) -> Path:
-    """compose 解析失败时落盘 LLM 原始回复，便于排查。"""
-    out_dir = logs_dir / "compose_raw"
+    """LLM 解析失败时落盘原始回复，便于排查。"""
+    out_dir = logs_dir / subdir
     out_dir.mkdir(parents=True, exist_ok=True)
     path = out_dir / f"{entry_id}_{label}_r{attempt}.txt"
     header = (
-        f"# compose LLM 原始回复\n"
+        f"# LLM 原始回复\n"
         f"# 史略ID: {entry_id}\n"
         f"# 步骤: {label}\n"
         f"# 尝试: {attempt}\n"
@@ -174,6 +176,18 @@ def save_compose_raw(
     return path
 
 
+def save_compose_raw(
+    logs_dir: Path,
+    entry_id: str,
+    attempt: int,
+    label: str,
+    raw_text: str,
+) -> Path:
+    return save_llm_raw(
+        logs_dir, entry_id, attempt, label, raw_text, subdir="compose_raw"
+    )
+
+
 def _compose_json_retry_suffix(attempt: int) -> str:
     if attempt <= 1:
         return ""
@@ -181,6 +195,26 @@ def _compose_json_retry_suffix(attempt: int) -> str:
         f"\n\n## ⚠️ 第 {attempt} 次重试\n"
         "上次输出无法解析为合法 JSON。请务必：只输出 {{\"史略ID\":\"...\",\"翻译详情\":\"...\"}}；"
         "正文内不要使用 ASCII 双引号 `\"`，换行用 \\n；不要 markdown 代码块外的说明文字。\n"
+    )
+
+
+def _anchor_json_retry_suffix(attempt: int) -> str:
+    if attempt <= 1:
+        return ""
+    return (
+        f"\n\n## ⚠️ 第 {attempt} 次重试\n"
+        "上次输出无法解析为合法 JSON。请务必：只输出一个 JSON 对象（含 schema、coverage_claims 等）；"
+        "不要 markdown 代码块外的说明文字。\n"
+    )
+
+
+def _bibliography_json_retry_suffix(attempt: int) -> str:
+    if attempt <= 1:
+        return ""
+    return (
+        f"\n\n## ⚠️ 第 {attempt} 次重试\n"
+        "上次输出无法解析为合法 JSON。请务必：只输出书目 plan 的 JSON 对象；"
+        "不要 markdown 代码块外的说明文字。\n"
     )
 
 
@@ -739,14 +773,39 @@ def run_compose_pending(
         _log("⚠️ 无待撰写详情条目")
         return
     _log(f"📝 compose-pending：{len(pending)} 条")
+    failures: list[dict[str, str]] = []
     for i, (eid, name) in enumerate(pending, start=1):
         if dry_run:
             _log(f"  [{i}/{len(pending)}] {eid} {name}")
             continue
         _log(f"  [{i}/{len(pending)}] compose-detail {eid} {name}")
-        run_compose_detail(paths, eid, dry_run=False)
+        try:
+            run_compose_detail(paths, eid, dry_run=False)
+        except Exception as exc:
+            err = f"{type(exc).__name__}: {exc}"
+            _log(f"  ❌ compose-detail 失败 {eid} {name} — {err}")
+            failures.append({"史略ID": eid, "史略名称": name, "error": err})
+            continue
     if not dry_run:
-        _log(f"✅ compose-pending 完成（{len(pending)} 条）")
+        ok = len(pending) - len(failures)
+        if failures:
+            fail_path = paths["logs_dir"] / "compose_pending_failures.json"
+            save_json(
+                fail_path,
+                {
+                    "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+                    "ok_count": ok,
+                    "fail_count": len(failures),
+                    "failures": failures,
+                },
+            )
+            _log(f"⚠️ compose-pending 部分完成：成功 {ok}，失败 {len(failures)} → {fail_path}")
+            for row in failures[:10]:
+                _log(f"   · {row['史略ID']} {row['史略名称']}: {row['error']}")
+            if len(failures) > 10:
+                _log(f"   … 另有 {len(failures) - 10} 条见 failures.json")
+        else:
+            _log(f"✅ compose-pending 完成（{len(pending)} 条）")
         maybe_export_omission_prompt(
             context, paths, phase="details", trigger_step="compose-pending", dry_run=False
         )
@@ -1497,15 +1556,40 @@ def run_anchor_research(
         return
     _log(f"🤖 anchor-research {entry_id} …")
     _log(f"  📄 prompt 快照: {prompt_path}")
-    text = dkl.call_llm(
-        prompt,
-        session_prefix=f"dk-anc-{entry_id}-",
-        timeout_sec=600,
-        temperature=0,
-    )
-    data = dkl.extract_json_object(text)
+    data: dict[str, Any] | None = None
+    last_raw = ""
+    for attempt in range(1, dkl.MAX_ANCHOR_PARSE_ATTEMPTS + 1):
+        eff_prompt = prompt + _anchor_json_retry_suffix(attempt)
+        if attempt > 1:
+            _log(f"  ↻ anchor JSON 解析重试 {attempt}/{dkl.MAX_ANCHOR_PARSE_ATTEMPTS} …")
+        text = dkl.call_llm(
+            eff_prompt,
+            session_prefix=f"dk-anc-{entry_id}-a{attempt}-",
+            timeout_sec=600,
+            temperature=0,
+        )
+        last_raw = text
+        data = dkl.extract_json_object(text)
+        if data:
+            if attempt > 1:
+                _log(f"  ✅ 第 {attempt} 次解析成功")
+            break
+        save_llm_raw(
+            paths["logs_dir"],
+            entry_id,
+            attempt,
+            "anchor-research",
+            text,
+            subdir="anchor_raw",
+        )
+        _log(
+            f"  ⚠️ anchor 第 {attempt} 次输出非合法 JSON → anchor_raw/{entry_id}_anchor-research_r{attempt}.txt"
+        )
     if not data:
-        raise RuntimeError(f"{entry_id} 锚点解析失败")
+        raise RuntimeError(
+            f"{entry_id} 锚点解析失败（{dkl.MAX_ANCHOR_PARSE_ATTEMPTS} 次尝试）；"
+            f"见 logs/anchor_raw/{entry_id}_anchor-research_r*.txt"
+        )
     data["史略ID"] = entry_id
     data.setdefault("schema", "dynasty-knowledge-anchor/v1")
     dkl.save_anchor(paths["anchors_dir"], entry_id, data)
@@ -1591,15 +1675,40 @@ def run_bibliography_plan(
         return
     _log(f"🤖 bibliography-plan {entry_id} …")
     _log(f"  📄 prompt 快照: {prompt_path}")
-    text = dkl.call_llm(
-        prompt,
-        session_prefix=f"dk-bib-{entry_id}-",
-        timeout_sec=600,
-        temperature=0,
-    )
-    data = dkl.extract_json_object(text)
+    data: dict[str, Any] | None = None
+    for attempt in range(1, dkl.MAX_BIBLIOGRAPHY_PARSE_ATTEMPTS + 1):
+        eff_prompt = prompt + _bibliography_json_retry_suffix(attempt)
+        if attempt > 1:
+            _log(
+                f"  ↻ bibliography JSON 解析重试 {attempt}/{dkl.MAX_BIBLIOGRAPHY_PARSE_ATTEMPTS} …"
+            )
+        text = dkl.call_llm(
+            eff_prompt,
+            session_prefix=f"dk-bib-{entry_id}-a{attempt}-",
+            timeout_sec=600,
+            temperature=0,
+        )
+        data = dkl.extract_json_object(text)
+        if data:
+            if attempt > 1:
+                _log(f"  ✅ 第 {attempt} 次解析成功")
+            break
+        save_llm_raw(
+            paths["logs_dir"],
+            entry_id,
+            attempt,
+            "bibliography-plan",
+            text,
+            subdir="bibliography_raw",
+        )
+        _log(
+            f"  ⚠️ bibliography 第 {attempt} 次输出非合法 JSON → bibliography_raw/{entry_id}_bibliography-plan_r{attempt}.txt"
+        )
     if not data:
-        raise RuntimeError(f"{entry_id} 书目 plan 解析失败")
+        raise RuntimeError(
+            f"{entry_id} 书目 plan 解析失败（{dkl.MAX_BIBLIOGRAPHY_PARSE_ATTEMPTS} 次尝试）；"
+            f"见 logs/bibliography_raw/{entry_id}_bibliography-plan_r*.txt"
+        )
     data["史略ID"] = entry_id
     data.setdefault("schema", blib.SCHEMA)
     data = blib.normalize_plan_pools(data)

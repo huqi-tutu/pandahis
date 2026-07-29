@@ -1,0 +1,175 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00881",
+  "写作结构": "正史叙述见翻译详录（《史记·楚世家》无景翠明确记载，锚点禁止声称见于该篇）；拓展文以史外异说延展为主，若能从《战国策》等先秦文献获取记载，则围绕其身份与战事进行有限叙事；北屈襄城之战可引《秦本纪》或编年相关记载作背景旁引，但不得虚构景翠具体行动。",
+  "候选著作": [
+    {
+      "出处": "《战国策·楚策》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "战国策多载楚将景翠言行，或录其救韩、与秦战等事，可补史阙。",
+      "检索词": "景翠",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·秦本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "可能存有秦楚北屈襄城一带战役的宏观记录，可作背景坐标，不宜径引为景翠本人事迹。",
+      "检索词": "北屈 襄城",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《史记·楚世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "条目所标主要史料出处，但锚点禁止声称景翠见于此篇，实际楚世家中未检得确载，仅作索引参照。",
+      "检索词": "景翠",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《史记·六国年表》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "或录楚、秦间战役系年，可与北屈襄城之战时间对应作参照。",
+      "检索词": "北屈",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《战国策·韩策》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "载有楚将景翠援韩及与秦交涉事，可能包含北屈襄城之战的前后脉络。",
+      "检索词": "景翠",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《战国策·东周策》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "策文偶涉楚将景翠参与合纵连横的对话，可充实人物活动背景。",
+      "检索词": "景翠",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《太平御览·兵部》引《战国策》佚文",
+      "tier": "辑佚/出土",
+      "pool": "legend",
+      "与本主题关系": "后世类书或辑录《战国策》佚文提及景翠，可作异说参考。",
+      "检索词": "景翠",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《战国策·楚策》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "战国策多载楚将景翠言行，或录其救韩、与秦战等事，可补史阙。",
+      "检索词": "景翠",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·秦本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "可能存有秦楚北屈襄城一带战役的宏观记录，可作背景坐标，不宜径引为景翠本人事迹。",
+      "检索词": "北屈 襄城",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《史记·楚世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "条目所标主要史料出处，但锚点禁止声称景翠见于此篇，实际楚世家中未检得确载，仅作索引参照。",
+      "检索词": "景翠",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《史记·六国年表》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "或录楚、秦间战役系年，可与北屈襄城之战时间对应作参照。",
+      "检索词": "北屈",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《战国策·韩策》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "载有楚将景翠援韩及与秦交涉事，可能包含北屈襄城之战的前后脉络。",
+      "检索词": "景翠",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《战国策·东周策》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "策文偶涉楚将景翠参与合纵连横的对话，可充实人物活动背景。",
+      "检索词": "景翠",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《太平御览·兵部》引《战国策》佚文",
+      "tier": "辑佚/出土",
+      "pool": "legend",
+      "与本主题关系": "后世类书或辑录《战国策》佚文提及景翠，可作异说参考。",
+      "检索词": "景翠",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 5,
+    "overall": "B"
+  }
+}

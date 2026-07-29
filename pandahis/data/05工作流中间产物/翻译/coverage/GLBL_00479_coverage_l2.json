@@ -1,0 +1,19 @@
+{
+  "schema": "translate-coverage-l2/v1",
+  "史略ID": "GLBL_00479",
+  "passed": true,
+  "degraded": false,
+  "summary": "译文明确传达了“此之不可不知也”的核心信息，没有缺失或矛盾。",
+  "l1_ratio": 0.0,
+  "l1_min_ratio": 0.0,
+  "claims": [
+    {
+      "id": "M034",
+      "claim": "母本信息：此之不可不知也。",
+      "status": "conveyed",
+      "evidence": "这就是游说的难处，做臣子的不能不明白啊。",
+      "note": "直接对应母本信息，传达了游说之难不可不知的意思。"
+    }
+  ],
+  "issues": []
+}

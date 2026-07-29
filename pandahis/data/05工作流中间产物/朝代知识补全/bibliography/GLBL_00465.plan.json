@@ -1,0 +1,133 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00465",
+  "写作结构": "正史《史记·仲尼弟子列传》记其姓名、年龄等基本事实，见翻译详录。拓展文以《论语》德行科评价与拒季氏之言为核心史外记载，并略及后世《二十四孝》演绎的“芦衣顺母”异说，不编造具体情节。",
+  "候选著作": [
+    {
+      "出处": "《史记·卷67·仲尼弟子列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记其姓字、年齿及基本事迹。",
+      "检索词": "闵子骞 少孔子十五岁",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《论语·先进》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "孔子列举德行科弟子，闵子骞位列其中，是其德行卓著的早期记载。",
+      "检索词": "德行 闵子骞",
+      "采用": true,
+      "原文摘句": "德行：颜渊，闵子骞，冉伯牛，仲弓。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《论语·雍也》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载季氏召闵子骞为费宰，其坚辞不受并表明去意，凸显其不仕大夫的品格。",
+      "检索词": "季氏使闵子骞",
+      "采用": true,
+      "原文摘句": "季氏使闵子骞为费宰。闵子骞曰：‘善为我辞焉！如有复我者，则吾必在汶上矣。’",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《孔子家语·七十二弟子解》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "另记闵子骞少孔子十五岁等基本事实，与《史记》重复，无新增实质内容。",
+      "检索词": "闵子骞",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《二十四孝·芦衣顺母》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "后世演绎闵子骞忍受继母虐待、以孝感化家庭的故事，形成“芦衣顺母”典故。",
+      "检索词": "芦衣顺母",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·卷67·仲尼弟子列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记其姓字、年齿及基本事迹。",
+      "检索词": "闵子骞 少孔子十五岁",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《论语·先进》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "孔子列举德行科弟子，闵子骞位列其中，是其德行卓著的早期记载。",
+      "检索词": "德行 闵子骞",
+      "采用": true,
+      "原文摘句": "德行：颜渊，闵子骞，冉伯牛，仲弓。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《论语·雍也》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载季氏召闵子骞为费宰，其坚辞不受并表明去意，凸显其不仕大夫的品格。",
+      "检索词": "季氏使闵子骞",
+      "采用": true,
+      "原文摘句": "季氏使闵子骞为费宰。闵子骞曰：‘善为我辞焉！如有复我者，则吾必在汶上矣。’",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《孔子家语·七十二弟子解》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "另记闵子骞少孔子十五岁等基本事实，与《史记》重复，无新增实质内容。",
+      "检索词": "闵子骞",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《二十四孝·芦衣顺母》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "后世演绎闵子骞忍受继母虐待、以孝感化家庭的故事，形成“芦衣顺母”典故。",
+      "检索词": "芦衣顺母",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 3,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

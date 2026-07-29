@@ -1,0 +1,21 @@
+{
+  "schema": "dynasty-knowledge-anchor/v1",
+  "史略ID": "GLBL_00359",
+  "史料丰度": "S1",
+  "coverage_claims": [
+    {
+      "id": "c01",
+      "claim": "曾参是南武城人，字子舆。"
+    },
+    {
+      "id": "c02",
+      "claim": "曾参年少孔子四十六岁，为孔子弟子。"
+    }
+  ],
+  "legend_facts": [],
+  "forbidden_inventions": [
+    "编造曾参作《孝经》的具体过程或对话",
+    "编造《论语》中‘吾日三省吾身’等言论的出处背景",
+    "编造曾参的其他生平事迹，如杀猪教子等"
+  ]
+}

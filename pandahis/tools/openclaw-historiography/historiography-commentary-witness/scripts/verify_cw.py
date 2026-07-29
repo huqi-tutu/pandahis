@@ -166,14 +166,23 @@ def verify_commentary_entries(doc: dict[str, Any]) -> list[dict[str, str]]:
         if is_zhengshi_lunzan(row):
             has_lunzan = True
         brief = str(row.get("评述简介") or "")
-        if count_han(brief) > 20:
+        bc = count_han(brief)
+        if bc > 20:
             issues.append(
-                _issue("CRITICAL", f"{prefix} 评述简介汉字数 {count_han(brief)} > 20")
+                _issue("WARN", f"{prefix} 评述简介汉字数 {bc} > 20（建议上限，不截断）")
             )
+        if brief and not re.search(r"[。！？；」』\"'\)\]】]$", brief.strip()):
+            issues.append(_issue("CRITICAL", f"{prefix} 评述简介句末不完整（疑似截断）"))
         body = str(row.get("评述内容") or "")
         hc = count_han(body)
-        if hc < 50 or hc > 200:
-            issues.append(_issue("CRITICAL", f"{prefix} 评述内容汉字数 {hc} 不在 50–200"))
+        if hc < 50:
+            issues.append(_issue("CRITICAL", f"{prefix} 评述内容汉字数 {hc} < 50"))
+        elif hc > 200:
+            issues.append(
+                _issue("WARN", f"{prefix} 评述内容汉字数 {hc} > 200（建议上限，不截断）")
+            )
+        if body and not re.search(r"[。！？；」』\"'\)\]】]$", body.strip()):
+            issues.append(_issue("CRITICAL", f"{prefix} 评述内容句末不完整（疑似截断）"))
         if TRANSLATION_MARKERS.search(body):
             issues.append(
                 _issue(

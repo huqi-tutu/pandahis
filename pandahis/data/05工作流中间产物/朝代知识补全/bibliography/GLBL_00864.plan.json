@@ -1,0 +1,129 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00864",
+  "写作结构": "正史记载（《史记·吕不韦列传》《秦本纪》等）见翻译详录；史外异说层以《战国策》佚文一条（司马贞《索隐》引）为核心，揭示高陵君为庄襄王弟的异说；其余事迹因史料匮乏一律留白。",
+  "候选著作": [
+    {
+      "出处": "《史记·吕不韦列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "高陵君的主要出处，提及庄襄王即位后对宗室的处理，但未详述其个人事迹",
+      "检索词": "高陵君",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": null
+    },
+    {
+      "出处": "《史记·秦本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "可能涉及秦昭襄王诸子及太子更迭背景，无高陵君专条",
+      "检索词": "昭襄王 子",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": null
+    },
+    {
+      "出处": "《史记·六国年表》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "编年框架可标记公元前250年前后秦国王位更迭，高陵君活动之时间参照",
+      "检索词": "昭襄王 四十年",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": null
+    },
+    {
+      "出处": "《战国策·秦策》佚文（司马贞《索隐》引）",
+      "tier": "先秦文献",
+      "pool": "legend",
+      "与本主题关系": "提供高陵君身份异说，谓其为安国君之子、庄襄王之弟，而非昭襄王之子，与《史记》昭襄王之子的记载相歧",
+      "检索词": "高陵君 庄襄王弟",
+      "采用": true,
+      "原文摘句": "庄襄王有弟二人，曰高陵君、泾阳君。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《资治通鉴·秦纪一》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "综述秦昭襄王至庄襄王之际的宗室状况，转述《史记》内容，无新增史料",
+      "检索词": "高陵君",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": null
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·吕不韦列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "高陵君的主要出处，提及庄襄王即位后对宗室的处理，但未详述其个人事迹",
+      "检索词": "高陵君",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": null
+    },
+    {
+      "出处": "《史记·秦本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "可能涉及秦昭襄王诸子及太子更迭背景，无高陵君专条",
+      "检索词": "昭襄王 子",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": null
+    },
+    {
+      "出处": "《史记·六国年表》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "编年框架可标记公元前250年前后秦国王位更迭，高陵君活动之时间参照",
+      "检索词": "昭襄王 四十年",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": null
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《战国策·秦策》佚文（司马贞《索隐》引）",
+      "tier": "先秦文献",
+      "pool": "legend",
+      "与本主题关系": "提供高陵君身份异说，谓其为安国君之子、庄襄王之弟，而非昭襄王之子，与《史记》昭襄王之子的记载相歧",
+      "检索词": "高陵君 庄襄王弟",
+      "采用": true,
+      "原文摘句": "庄襄王有弟二人，曰高陵君、泾阳君。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《资治通鉴·秦纪一》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "综述秦昭襄王至庄襄王之际的宗室状况，转述《史记》内容，无新增史料",
+      "检索词": "高陵君",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": null
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 1,
+    "C_excluded": 4,
+    "overall": "B"
+  }
+}

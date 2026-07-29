@@ -224,7 +224,15 @@ def _mother_source_text(recalled: Dict[str, Any]) -> str:
     return "\n".join(parts)
 
 
-def _detect_dash_ending(detail: str) -> List[str]:
+def _detect_reference_section_format(detail: str) -> List[str]:
+    """参考著作须独立成段：正文末段结束后空一行再写「参考著作：」。"""
+    if "参考著作" not in detail:
+        return []
+    if re.search(r"\n\n参考著作\s*[:：]", detail):
+        return []
+    return ["参考著作须独立成段（前有空行 \\n\\n），禁止与正文末句同段"]
+
+
     """段末破折号已放宽，不再作为 verify 硬失败项。"""
     _ = detail
     return []
@@ -347,6 +355,7 @@ def verify_mother_draft(
                     print(f"   ℹ️ {line[7:]}", flush=True)
 
     errors.extend(_detect_markdown_bold(detail))
+    errors.extend(_detect_reference_section_format(detail))
     errors.extend(detect_forbidden_gloss(detail))
     if not batch_mode:
         short_q = count_short_quote_density(detail, threshold_len=4)
@@ -694,6 +703,7 @@ def verify_enrich_draft(
     allowed = _collect_allowed_titles(recalled, plan, mother_work)
     _log_verify_warnings(_unauthorized_citations(detail, allowed, mother_src)[:5])
 
+    errors.extend(_detect_reference_section_format(detail))
     errors.extend(detect_forbidden_gloss(detail))
     errors.extend(_detect_dash_ending(detail))
     errors.extend(_detect_excessive_descriptive_refs(detail))
@@ -787,6 +797,7 @@ def verify_output(
         tongjia_errs = _invalid_tongjia_annotations(detail)
         errors.extend(tongjia_errs)
 
+        errors.extend(_detect_reference_section_format(detail))
         errors.extend(detect_forbidden_gloss(detail))
         errors.extend(_detect_dash_ending(detail))
         errors.extend(_detect_excessive_descriptive_refs(detail))

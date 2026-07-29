@@ -1,0 +1,101 @@
+{
+  "stamp": "20260728_144831",
+  "dynasty": "秦",
+  "pending_start": 15,
+  "ok": 14,
+  "routed": 0,
+  "skip": 0,
+  "err": 1,
+  "results": [
+    {
+      "id": "GLBL_00097",
+      "name": "秦二世",
+      "status": "error",
+      "rc": 1
+    },
+    {
+      "id": "GLBL_00103",
+      "name": "秦始皇",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00221",
+      "name": "优旃",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00230",
+      "name": "卓氏",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00233",
+      "name": "宛孔氏",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00235",
+      "name": "巴寡妇清",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00238",
+      "name": "曹邴氏",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00244",
+      "name": "程郑",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00297",
+      "name": "吕不韦",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00368",
+      "name": "李斯",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00479",
+      "name": "韩非",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00522",
+      "name": "王翦",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00524",
+      "name": "田儋",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00532",
+      "name": "蒙恬",
+      "status": "ok",
+      "rc": 0
+    },
+    {
+      "id": "GLBL_00544",
+      "name": "项籍",
+      "status": "ok",
+      "rc": 0
+    }
+  ]
+}

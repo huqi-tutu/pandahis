@@ -160,10 +160,15 @@ def ensure_emperor_refs(cursor, rows: list[dict], emperor_json: Path) -> dict[st
 def load_entries(json_path: Path) -> list[dict]:
     with json_path.open(encoding="utf-8") as fp:
         payload = json.load(fp)
+    if isinstance(payload, list):
+        return payload
     entries = payload.get("entries")
-    if not isinstance(entries, list):
-        raise ValueError("JSON 顶层须含 entries 数组")
-    return entries
+    if isinstance(entries, list):
+        return entries
+    for v in payload.values():
+        if isinstance(v, list) and v and isinstance(v[0], dict) and "史略ID" in v[0]:
+            return v
+    raise ValueError("JSON 顶层须含 entries 数组或史略条目列表")
 
 
 def category_key(raw: str) -> str:
@@ -192,7 +197,7 @@ def primary_source_str(raw) -> str | None:
 def build_original_ref_json(item: dict) -> str:
     payload = {
         "primarySource": item.get("主要史料出处"),
-        "originalText": item.get("原文字句"),
+        "originalText": None,
         "originalLocation": item.get("原文出处"),
         "fineCoordinate": item.get("五级细坐标"),
         "paragraphAnchor": item.get("六级段落锚点"),
@@ -673,7 +678,11 @@ def main() -> int:
         action="store_true",
         help="只按 JSON 更新优先级/峰值/人物标签字段，不清理子表、不更新其他列",
     )
-    parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument(
+        "--purge-child-tables",
+        action="store_true",
+        help="导入前清除本次 upsert 的 box_id 在子表中的旧数据（默认不清，避免误删评述/见证/关系）",
+    )
     args = parser.parse_args()
 
     entries = load_entries(args.json)
@@ -735,7 +744,7 @@ def main() -> int:
             emperor_stats = ensure_emperor_refs(cursor, rows, args.emperor_json)
             if emperor_stats:
                 print("帝王 FK 预处理:", emperor_stats)
-            reused_stats = cleanup_reused_box_ids(cursor, json_ids)
+            reused_stats = cleanup_reused_box_ids(cursor, json_ids) if args.purge_child_tables else {}
             if reused_stats:
                 print("已清理复用 ID 子表/用户引用:", reused_stats)
             upserted = upsert_boxes(cursor, rows)

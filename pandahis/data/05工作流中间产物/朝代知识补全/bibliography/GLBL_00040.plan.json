@@ -1,0 +1,91 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00040",
+  "写作结构": "正史《周本纪》已收入翻译详录，仅有即位、崩年及三子相残之简述。拓展文侧重「无记载即历史本身」：以《竹书纪年》等辑佚文献中周贞定王时期诸侯征伐、内乱记录为证，反衬周天子权力真空与史官笔法。天子个人事迹全部留白，不编造任何会盟、政令或对话。崩后杀废之事见正史翻译。",
+  "候选著作": [
+    {
+      "出处": "《史记·周本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "母本，仅载即位、崩年及崩后三子相杀，无在位事迹",
+      "检索词": "周贞定王",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《竹书纪年·周纪·贞定王》（今本/辑本）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "逐年记录晋、越等诸侯大事，无一字提及天子行事，反证周王室已成空壳",
+      "检索词": "贞定王 元年",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    },
+    {
+      "出处": "《帝王世纪》（皇甫谧）",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "辑录周代王年、世系，可与《史记》对读，无新事迹",
+      "检索词": "周贞定王 在位",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·周本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "母本，仅载即位、崩年及崩后三子相杀，无在位事迹",
+      "检索词": "周贞定王",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《竹书纪年·周纪·贞定王》（今本/辑本）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "逐年记录晋、越等诸侯大事，无一字提及天子行事，反证周王室已成空壳",
+      "检索词": "贞定王 元年",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《帝王世纪》（皇甫谧）",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "辑录周代王年、世系，可与《史记》对读，无新事迹",
+      "检索词": "周贞定王 在位",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 1,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

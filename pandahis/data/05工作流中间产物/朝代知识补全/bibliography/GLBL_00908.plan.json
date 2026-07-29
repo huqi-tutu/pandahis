@@ -1,0 +1,129 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00908",
+  "写作结构": "正史叙述见翻译详录（《史记·平原君虞卿列传》）。史外文献无独立异说，后世地方志存有毛遂墓传说，可作合段补充，其余叙事留白。",
+  "候选著作": [
+    {
+      "出处": "《史记·平原君虞卿列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，详细记载毛遂自荐与歃血定盟全过程",
+      "检索词": "毛遂自荐",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《资治通鉴·周纪五》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "依据《史记》整理毛遂使楚始末，无新增异说",
+      "检索词": "毛遂 赵孝成王",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《太平御览·人事部·宾客》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "转录《史记》毛遂事迹，未补充新细节",
+      "检索词": "毛遂 平原君",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《艺文类聚·人部·盟誓》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "节引《史记》中毛遂歃血定盟内容，无独立记载",
+      "检索词": "毛遂 歃血",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《大明一统志·卷四·广平府》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "记载毛遂墓在永年县，属后世地方传说，为毛遂事迹的民间附会",
+      "检索词": "毛遂墓 永年",
+      "采用": true,
+      "原文摘句": "毛遂墓在府城西南五里，故赵平原君客，与楚合从者。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·平原君虞卿列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，详细记载毛遂自荐与歃血定盟全过程",
+      "检索词": "毛遂自荐",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《资治通鉴·周纪五》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "依据《史记》整理毛遂使楚始末，无新增异说",
+      "检索词": "毛遂 赵孝成王",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《太平御览·人事部·宾客》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "转录《史记》毛遂事迹，未补充新细节",
+      "检索词": "毛遂 平原君",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《艺文类聚·人部·盟誓》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "节引《史记》中毛遂歃血定盟内容，无独立记载",
+      "检索词": "毛遂 歃血",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《大明一统志·卷四·广平府》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "记载毛遂墓在永年县，属后世地方传说，为毛遂事迹的民间附会",
+      "检索词": "毛遂墓 永年",
+      "采用": true,
+      "原文摘句": "毛遂墓在府城西南五里，故赵平原君客，与楚合从者。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 1,
+    "C_excluded": 4,
+    "overall": "B"
+  }
+}

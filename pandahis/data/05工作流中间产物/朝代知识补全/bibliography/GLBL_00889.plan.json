@@ -1,0 +1,133 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00889",
+  "写作结构": "正史叙述以《史记·春申君列传》为主，见翻译详录；拓展部分以《战国策·燕策一》补充庞煖破燕杀剧辛的具体结果，《战国策·赵策》及《鹖冠子》展现其论兵思想与师承；合纵攻秦的具体战斗过程因史料缺失且禁止编造，叙事留白。",
+  "候选著作": [
+    {
+      "出处": "《史记·春申君列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "庞煖事迹的核心记载，包含攻燕杀剧辛与合纵攻秦，列传借春申君之言论赵国良将。",
+      "检索词": "庞煖 春申君列传",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《战国策·燕策一》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "详述庞煖攻燕斩剧辛一役的战国策文本，可与《史记》互补，提供燕国决策视角。",
+      "检索词": "庞煖 剧辛",
+      "采用": true,
+      "原文摘句": "剧辛曰：‘赵人不知兵也。’……燕王乃使剧辛攻赵，赵使庞煖击之，取燕军二万，杀剧辛。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《战国策·赵策》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载庞煖答赵悼襄王问，展现其治国用兵的军事思想，为理解庞煖能力提供文本依据。",
+      "检索词": "赵悼襄王 问庞煖",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《鹖冠子》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "书中多篇以庞子（庞煖）问鹖冠子形式展开，反映庞煖的师承及道家兵学背景。",
+      "检索词": "庞子 鹖冠子",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《资治通鉴·秦纪一》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "综述战国末合纵攻秦与庞煖事迹，可作编年参照，但不作为原始叙事来源。",
+      "检索词": "庞煖 五国攻秦",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·春申君列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "庞煖事迹的核心记载，包含攻燕杀剧辛与合纵攻秦，列传借春申君之言论赵国良将。",
+      "检索词": "庞煖 春申君列传",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《战国策·燕策一》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "详述庞煖攻燕斩剧辛一役的战国策文本，可与《史记》互补，提供燕国决策视角。",
+      "检索词": "庞煖 剧辛",
+      "采用": true,
+      "原文摘句": "剧辛曰：‘赵人不知兵也。’……燕王乃使剧辛攻赵，赵使庞煖击之，取燕军二万，杀剧辛。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《战国策·赵策》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载庞煖答赵悼襄王问，展现其治国用兵的军事思想，为理解庞煖能力提供文本依据。",
+      "检索词": "赵悼襄王 问庞煖",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《鹖冠子》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "书中多篇以庞子（庞煖）问鹖冠子形式展开，反映庞煖的师承及道家兵学背景。",
+      "检索词": "庞子 鹖冠子",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《资治通鉴·秦纪一》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "综述战国末合纵攻秦与庞煖事迹，可作编年参照，但不作为原始叙事来源。",
+      "检索词": "庞煖 五国攻秦",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 3,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "schema": "translate-coverage-ledger/v1",
+  "史略ID": "GLBL_00230",
+  "updated_at": "2026-07-28T15:57:35.243656+00:00",
+  "entries": {
+    "M001": {
+      "status": "conveyed",
+      "claim_fp": "5e25f9fb79763540",
+      "checked_at": "2026-07-28T15:57:09.518140+00:00",
+      "note": "直接对应，无矛盾。"
+    },
+    "M002": {
+      "status": "conveyed",
+      "claim_fp": "38ba2ad26ec5119b",
+      "checked_at": "2026-07-28T15:57:09.518148+00:00",
+      "note": "强制迁徙被明确写出。"
+    },
+    "M003–M004": {
+      "status": "conveyed",
+      "claim_fp": "2a9f6e0fce3fff27",
+      "checked_at": "2026-07-28T15:57:09.518152+00:00",
+      "note": "其他迁虏争求近处葭萌，卓氏独夫妻推辇行诣迁处，均已体现。"
+    },
+    "M005": {
+      "status": "conveyed",
+      "claim_fp": "a7036cb06ee29523",
+      "checked_at": "2026-07-28T15:57:09.518156+00:00",
+      "note": "地狭土薄、沃野蹲鸱(芋头)、善交易、主动远迁，信息完整。"
+    },
+    "M006": {
+      "status": "conveyed",
+      "claim_fp": "c4792cceca751d70",
+      "checked_at": "2026-07-28T15:57:09.518159+00:00",
+      "note": "发现铁矿、冶铸、垄断滇蜀市场、家僮千人，全部传达。"
+    },
+    "M007": {
+      "status": "conveyed",
+      "claim_fp": "9cd9403272fcbded",
+      "checked_at": "2026-07-28T15:57:09.518163+00:00",
+      "note": "田池园囿、打猎游乐、排场比肩诸侯王，准确传达。"
+    }
+  }
+}

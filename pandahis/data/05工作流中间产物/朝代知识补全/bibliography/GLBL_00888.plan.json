@@ -1,0 +1,127 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00888",
+  "写作结构": "正史叙述见《史记·白起列传》翻译详录，拓展文可在此基础上梳理王龁征战脉络，避免增添史外细节。如有出土文献新证再行补入。",
+  "候选著作": [
+    {
+      "出处": "《史记·白起列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要记载王龁参与长平之战及邯郸攻战的事迹",
+      "检索词": "王龁",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·秦本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载秦昭襄王时期重大军事行动，可旁证王龁征战的时间线",
+      "检索词": "秦本纪 昭襄王",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《睡虎地秦墓竹简·编年记》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "出土秦国编年料简，记录秦昭王历年征伐，可能包含王龁攻取上党、围邯郸等时间的坐标性记载",
+      "检索词": "编年记 昭王 攻邯郸",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《战国策·赵策三·秦攻赵于长平章》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "略述长平之战过程，未提主将姓名，可作为背景铺陈",
+      "检索词": "秦攻赵 长平",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《资治通鉴·周纪五》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "据《史记》编年整理长平之战及邯郸围战，叙述王龁事略",
+      "检索词": "王龁 长平",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·白起列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要记载王龁参与长平之战及邯郸攻战的事迹",
+      "检索词": "王龁",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·秦本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载秦昭襄王时期重大军事行动，可旁证王龁征战的时间线",
+      "检索词": "秦本纪 昭襄王",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《睡虎地秦墓竹简·编年记》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "出土秦国编年料简，记录秦昭王历年征伐，可能包含王龁攻取上党、围邯郸等时间的坐标性记载",
+      "检索词": "编年记 昭王 攻邯郸",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《战国策·赵策三·秦攻赵于长平章》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "略述长平之战过程，未提主将姓名，可作为背景铺陈",
+      "检索词": "秦攻赵 长平",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《资治通鉴·周纪五》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "据《史记》编年整理长平之战及邯郸围战，叙述王龁事略",
+      "检索词": "王龁 长平",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 0,
+    "C_excluded": 5,
+    "overall": "C"
+  }
+}

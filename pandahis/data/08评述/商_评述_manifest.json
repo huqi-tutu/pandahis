@@ -179,14 +179,6 @@
       "verified_at": "2026-07-23T14:29:02Z"
     },
     {
-      "glbl": "GLBL_00655",
-      "name": "人祭制度",
-      "file": "GLBL_00655_人祭制度_评述.json",
-      "status": "done",
-      "entry_count": 5,
-      "verified_at": "2026-07-23T14:29:44Z"
-    },
-    {
       "glbl": "GLBL_00656",
       "name": "《盘庚》",
       "file": "GLBL_00656_《盘庚》_评述.json",
@@ -497,7 +489,15 @@
       "status": "done",
       "entry_count": 5,
       "verified_at": "2026-07-23T16:17:43Z"
+    },
+    {
+      "glbl": "GLBL_00655",
+      "name": "人祭制度",
+      "file": "GLBL_00655_人祭制度_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-07-29T16:59:29Z"
     }
   ],
-  "updated_at": "2026-07-23T16:17:43Z"
+  "updated_at": "2026-07-29T16:59:29Z"
 }

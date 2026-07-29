@@ -1,0 +1,109 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00890",
+  "写作结构": "正史叙述见翻译详录（主要为《史记·项羽本纪》《秦始皇本纪》《白起王翦列传》等），拓展文从史外文献补充项氏世系与楚南公语流播：先引《世本》辑佚说明项燕为楚将世系先祖，再引《楚汉春秋》辑佚旁证项燕之死对项氏家族的心理影响，后世综述只作参考不展开细节。叙事以 anchor 六项 claims 为框架，禁止添加交战过程、自杀场面及早年事迹。",
+  "候选著作": [
+    {
+      "出处": "《史记·项羽本纪》《秦始皇本纪》《白起王翦列传》等",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，提供项燕身份、败亡经过、楚南公语等基本事实",
+      "检索词": "项燕 王翦 项氏",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《世本·氏姓篇》辑佚",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载楚国公族氏姓，可证项氏世为楚将，明确项燕在项氏世系中的位置并系连项羽",
+      "检索词": "项氏世系 项燕",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《楚汉春秋》辑佚",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "西汉陆贾撰楚汉间事，可能涉及项燕遗事及「楚虽三户」在项氏内部的流传，为距战国最近的私家撰述",
+      "检索词": "项燕 楚虽三户",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《资治通鉴·卷七 秦纪二》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋人综合《史记》与当时可见的杂史，记载王翦破项燕、项燕自杀事，可为时间线确认，但无新增异说",
+      "检索词": "项燕 王翦 二十四年",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·项羽本纪》《秦始皇本纪》《白起王翦列传》等",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，提供项燕身份、败亡经过、楚南公语等基本事实",
+      "检索词": "项燕 王翦 项氏",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《世本·氏姓篇》辑佚",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载楚国公族氏姓，可证项氏世为楚将，明确项燕在项氏世系中的位置并系连项羽",
+      "检索词": "项氏世系 项燕",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《楚汉春秋》辑佚",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "西汉陆贾撰楚汉间事，可能涉及项燕遗事及「楚虽三户」在项氏内部的流传，为距战国最近的私家撰述",
+      "检索词": "项燕 楚虽三户",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《资治通鉴·卷七 秦纪二》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋人综合《史记》与当时可见的杂史，记载王翦破项燕、项燕自杀事，可为时间线确认，但无新增异说",
+      "检索词": "项燕 王翦 二十四年",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

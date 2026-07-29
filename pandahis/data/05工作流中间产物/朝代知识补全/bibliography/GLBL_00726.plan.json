@@ -1,0 +1,129 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00726",
+  "写作结构": "正史叙述见翻译详录，拓展部分以《左传》同日记载为史外印证，以《列女传》异说为后世演绎补充，其余留白。",
+  "候选著作": [
+    {
+      "出处": "《左传·襄公三十年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "与《史记》同记蔡景侯为太子般娶楚女、私通及太子弑父事件，为最早的编年记载，可作史外印证",
+      "检索词": "蔡景侯 太子般 娶于楚",
+      "采用": true,
+      "原文摘句": "蔡景侯为太子般娶于楚，通焉。太子弑景侯。",
+      "snippet_verified": true,
+      "material_tier": "A",
+      "fetch_note": "[dry-run] 将尝试 ctext 检索"
+    },
+    {
+      "出处": "《列女传·孽嬖传》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "后世演绎楚国女子的身份与私通细节，与《史记》记载形成异说层",
+      "检索词": "蔡 楚女 孽嬖",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "[dry-run] 将尝试 ctext 检索"
+    },
+    {
+      "出处": "《公羊传·襄公三十年》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "对《春秋》经文“蔡世子般弑其君固”进行义例解释，无新增史实",
+      "检索词": "蔡世子般 弑其君固",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《穀梁传·襄公三十年》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "同《公羊传》侧重书法义例，不提事件细节",
+      "检索词": "蔡世子般 弑其君固",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《清华简·系年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "提及蔡灵侯后续被楚灵王诱杀事，超出本条目范围，不适用",
+      "检索词": "蔡灵侯 楚灵王 申",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《左传·襄公三十年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "与《史记》同记蔡景侯为太子般娶楚女、私通及太子弑父事件，为最早的编年记载，可作史外印证",
+      "检索词": "蔡景侯 太子般 娶于楚",
+      "采用": true,
+      "原文摘句": "蔡景侯为太子般娶于楚，通焉。太子弑景侯。",
+      "snippet_verified": true,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《公羊传·襄公三十年》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "对《春秋》经文“蔡世子般弑其君固”进行义例解释，无新增史实",
+      "检索词": "蔡世子般 弑其君固",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《穀梁传·襄公三十年》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "同《公羊传》侧重书法义例，不提事件细节",
+      "检索词": "蔡世子般 弑其君固",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《清华简·系年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "提及蔡灵侯后续被楚灵王诱杀事，超出本条目范围，不适用",
+      "检索词": "蔡灵侯 楚灵王 申",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《列女传·孽嬖传》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "后世演绎楚国女子的身份与私通细节，与《史记》记载形成异说层",
+      "检索词": "蔡 楚女 孽嬖",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 1,
+    "B_bibliography_only": 1,
+    "C_excluded": 3,
+    "overall": "A"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00880",
+  "写作结构": "正史叙述见翻译详录（《史记·燕召公世家》《赵世家》）；拓展部分主要提及《战国策》可能存有片段但细节无存，以“亦载其事”留白；三家注或可辨析“禽”“杀”异文；《资治通鉴》系年月，不另增情节。",
+  "候选著作": [
+    {
+      "出处": "《战国策·燕策》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "可能载有剧辛相关言论或使赵、议将庞煖的片段，细节待查，或存异说。",
+      "检索词": "剧辛",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记索隐》《史记正义》等三家注",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "注释《史记》中“禽其将剧辛”与“杀剧辛”的措辞歧异，可能提供校勘或辨析。",
+      "检索词": "禽其将剧辛",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《资治通鉴·秦纪一》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "编年载燕王喜十三年攻赵、杀剧辛事，系年月，主要承袭《史记》，无新增异说。",
+      "检索词": "剧辛",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《战国策·燕策》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "可能载有剧辛相关言论或使赵、议将庞煖的片段，细节待查，或存异说。",
+      "检索词": "剧辛",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记索隐》《史记正义》等三家注",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "注释《史记》中“禽其将剧辛”与“杀剧辛”的措辞歧异，可能提供校勘或辨析。",
+      "检索词": "禽其将剧辛",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《资治通鉴·秦纪一》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "编年载燕王喜十三年攻赵、杀剧辛事，系年月，主要承袭《史记》，无新增异说。",
+      "检索词": "剧辛",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 1,
+    "overall": "B"
+  }
+}

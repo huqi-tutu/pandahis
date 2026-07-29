@@ -1,0 +1,319 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00874",
+  "写作结构": "正史叙述见翻译详录（《史记·苏秦列传》《张仪列传》《魏世家》《秦本纪》《六国年表》等）；史外异说与延展以《战国策》为核心，兼采《韩非子》《吕氏春秋》及《资治通鉴》综述，不编造细节。",
+  "候选著作": [
+    {
+      "出处": "《史记·苏秦列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载公孙衍合纵事迹，与苏秦形象交织",
+      "检索词": "公孙衍",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·张仪列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "兼记公孙衍与张仪对立，连横合纵之争",
+      "检索词": "公孙衍",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·魏世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记述魏惠王用人及公孙衍为将之事",
+      "检索词": "犀首",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·秦本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "涉及公孙衍合纵攻秦战事",
+      "检索词": "公孙衍",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·六国年表》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "纪年涉及五国相王、合纵攻秦等事件",
+      "检索词": "五国相王",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《战国策·魏策一》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载公孙衍为魏将时与相田需、张仪的政治博弈，及犀首见梁君等言谈",
+      "检索词": "犀首见梁君",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《战国策·秦策一》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "提及公孙衍在秦活动及与张仪不合",
+      "检索词": "公孙衍",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《战国策·中山策》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "详记五国相王经过，中山与燕、赵等相互称王以抗秦",
+      "检索词": "中山与燕赵为王",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《战国策·赵策二》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "涉及公孙衍合纵时联络赵国",
+      "检索词": "公孙衍",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《战国策·韩策三》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "公孙衍说韩公叔合纵事",
+      "检索词": "公孙衍",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《韩非子·说林上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "提及犀首事迹，有犀首伐齐等片段",
+      "检索词": "犀首",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《吕氏春秋·开春论》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记公孙衍与魏王论事，体现其谋略",
+      "检索词": "公孙衍",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《资治通鉴·卷二》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋代编年体综述公孙衍合纵活动，整合战国策、史记记录",
+      "检索词": "公孙衍合纵",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·苏秦列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载公孙衍合纵事迹，与苏秦形象交织",
+      "检索词": "公孙衍",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·张仪列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "兼记公孙衍与张仪对立，连横合纵之争",
+      "检索词": "公孙衍",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·魏世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记述魏惠王用人及公孙衍为将之事",
+      "检索词": "犀首",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·秦本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "涉及公孙衍合纵攻秦战事",
+      "检索词": "公孙衍",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·六国年表》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "纪年涉及五国相王、合纵攻秦等事件",
+      "检索词": "五国相王",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《战国策·魏策一》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载公孙衍为魏将时与相田需、张仪的政治博弈，及犀首见梁君等言谈",
+      "检索词": "犀首见梁君",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《战国策·秦策一》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "提及公孙衍在秦活动及与张仪不合",
+      "检索词": "公孙衍",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《战国策·中山策》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "详记五国相王经过，中山与燕、赵等相互称王以抗秦",
+      "检索词": "中山与燕赵为王",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《战国策·赵策二》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "涉及公孙衍合纵时联络赵国",
+      "检索词": "公孙衍",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《战国策·韩策三》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "公孙衍说韩公叔合纵事",
+      "检索词": "公孙衍",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《韩非子·说林上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "提及犀首事迹，有犀首伐齐等片段",
+      "检索词": "犀首",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《吕氏春秋·开春论》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记公孙衍与魏王论事，体现其谋略",
+      "检索词": "公孙衍",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《资治通鉴·卷二》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋代编年体综述公孙衍合纵活动，整合战国策、史记记录",
+      "检索词": "公孙衍合纵",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 8,
+    "C_excluded": 5,
+    "overall": "B"
+  }
+}

@@ -138,6 +138,7 @@
           scroll-left="{{panelScrollLeft}}"
           data-axis-pinned="{{axisPinned}}"
           bindscroll="{{panelScroll.onScroll}}"
+          style="height: {{swim.panelSheetHeightRpx}}rpx;"
         >
           <view class="dyn-panel-sheet" style="width: {{swim.canvasWidthRpx || swim.sheetWidthRpx}}rpx;">
             <!-- 时间轴行（未吸顶时随面板横滑；吸顶后由占位撑高 + 顶部镜像） -->
@@ -224,7 +225,7 @@
         </scroll-view>
       </view>
 
-      <view style="height: 190rpx;"></view>
+      <view class="dynasty-scroll-tail"></view>
     </scroll-view>
 
   </view>

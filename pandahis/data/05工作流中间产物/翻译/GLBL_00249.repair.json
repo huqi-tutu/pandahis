@@ -1,0 +1,27 @@
+{
+  "schema": "qa_repair_ticket/v1",
+  "pipeline": "translate",
+  "entry_id": "GLBL_00249",
+  "entry_name": "陈涉",
+  "stage": "verify",
+  "fail_count": 1,
+  "errors": [
+    "有索引补充 block，但 source plan 未说明补充处理"
+  ],
+  "plan": {
+    "root_cause": "PLAN_SOURCE",
+    "disposition": "retry_llm",
+    "action": "fix_source_plan",
+    "structured_prompt": "【根因：source_plan 外部补全引用无效】\n删除不存在的 GLBL·过渡段引用；仅保留真实条目或改为采用:false。\n重跑 plan 后再 Phase2。",
+    "refine_scope": "",
+    "route_to": "",
+    "next_command": "",
+    "invalidate": [
+      "plan"
+    ],
+    "max_retries": 2,
+    "extra": {}
+  },
+  "feedback": "【根因：source_plan 外部补全引用无效】\n删除不存在的 GLBL·过渡段引用；仅保留真实条目或改为采用:false。\n重跑 plan 后再 Phase2。\n\n---\n【原始错误】\n有索引补充 block，但 source plan 未说明补充处理",
+  "updated_at": "2026-07-28T14:37:23Z"
+}

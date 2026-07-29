@@ -1,0 +1,71 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00018",
+  "写作结构": "正史叙述见《史记·周本纪》翻译详录，拓展部分补充《竹书纪年》关于周威烈王册命三晋的异文，以《资治通鉴》司马光评论作为后世史观提炼。",
+  "候选著作": [
+    {
+      "出处": "《竹书纪年·周纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "出土文献，可能载有周威烈王纪年及命韩、赵、魏为诸侯的异文，可补《史记》纪年与叙事之缺。",
+      "检索词": "威烈王 命侯",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    },
+    {
+      "出处": "《资治通鉴·周纪一》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "明确记载威烈王二十三年初命三晋为诸侯，并附长篇史论，为后世理解战国开端提供经典评述。",
+      "检索词": "威烈王 初命晋大夫",
+      "采用": true,
+      "原文摘句": "威烈王二十三年，初命晋大夫魏斯、赵籍、韩虔为诸侯。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《竹书纪年·周纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "出土文献，可能载有周威烈王纪年及命韩、赵、魏为诸侯的异文，可补《史记》纪年与叙事之缺。",
+      "检索词": "威烈王 命侯",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《资治通鉴·周纪一》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "明确记载威烈王二十三年初命三晋为诸侯，并附长篇史论，为后世理解战国开端提供经典评述。",
+      "检索词": "威烈王 初命晋大夫",
+      "采用": true,
+      "原文摘句": "威烈王二十三年，初命晋大夫魏斯、赵籍、韩虔为诸侯。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 0,
+    "overall": "B"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00886",
+  "写作结构": "正史叙述见翻译详录；拓展部分可引《战国策·赵策三》所载阏与之战决策与过程，与《史记》互证，无他史外细节则留白。",
+  "候选著作": [
+    {
+      "出处": "《史记·廉颇蔺相如列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "赵奢主要事迹的原始记载，涵盖阏与之战、收税、马服君封号及评价赵括等",
+      "检索词": "赵奢",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《战国策·赵策三·赵奢解阏与之围》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记述阏与战前决策、坚壁示弱、急行军据北山等情节，可与《史记》互为参证",
+      "检索词": "赵奢解阏与之围",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《资治通鉴·周纪五》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "脉络整合阏与之战，主要依据《史记》，无史料新增",
+      "检索词": "赵奢",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·廉颇蔺相如列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "赵奢主要事迹的原始记载，涵盖阏与之战、收税、马服君封号及评价赵括等",
+      "检索词": "赵奢",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《战国策·赵策三·赵奢解阏与之围》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记述阏与战前决策、坚壁示弱、急行军据北山等情节，可与《史记》互为参证",
+      "检索词": "赵奢解阏与之围",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《资治通鉴·周纪五》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "脉络整合阏与之战，主要依据《史记》，无史料新增",
+      "检索词": "赵奢",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 1,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

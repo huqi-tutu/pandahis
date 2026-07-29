@@ -1,0 +1,127 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00865",
+  "写作结构": "正史叙述见翻译详录（仅《史记·楚世家》一笔带过）。无史外异说可采，其余先秦典籍未见其人其事。建议正文仅提取正史中公子兰的名号位置信息，不展开叙事，留白处理。",
+  "候选著作": [
+    {
+      "出处": "《史记·楚世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "唯一原始记载，仅在叙述考烈王世系时提及公子兰之名，无任何事迹",
+      "检索词": "公子兰",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《战国策》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "收录楚考烈王时期多篇策文，涉及春申君、李园等，但全未出现公子兰",
+      "检索词": "公子兰 楚",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《史记·春申君列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "详细记载与公子兰同时的春申君活动，为考烈王朝重要史料，然无涉公子兰",
+      "检索词": "公子兰 春申君",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《国语·楚语》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载楚国公族言论制度，但纪年止于战国前期，不涉及考烈王时代",
+      "检索词": "楚公子",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《楚辞》",
+      "tier": "先秦文献",
+      "pool": "legend",
+      "与本主题关系": "战国楚地文学，部分作品涉楚宗室人物，无公子兰相关印证",
+      "检索词": "兰 公子 楚",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·楚世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "唯一原始记载，仅在叙述考烈王世系时提及公子兰之名，无任何事迹",
+      "检索词": "公子兰",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《战国策》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "收录楚考烈王时期多篇策文，涉及春申君、李园等，但全未出现公子兰",
+      "检索词": "公子兰 楚",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《史记·春申君列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "详细记载与公子兰同时的春申君活动，为考烈王朝重要史料，然无涉公子兰",
+      "检索词": "公子兰 春申君",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《国语·楚语》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载楚国公族言论制度，但纪年止于战国前期，不涉及考烈王时代",
+      "检索词": "楚公子",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《楚辞》",
+      "tier": "先秦文献",
+      "pool": "legend",
+      "与本主题关系": "战国楚地文学，部分作品涉楚宗室人物，无公子兰相关印证",
+      "检索词": "兰 公子 楚",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 0,
+    "C_excluded": 5,
+    "overall": "C"
+  }
+}

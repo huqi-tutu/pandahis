@@ -43,14 +43,6 @@
       "verified_at": "2026-07-25T13:46:56Z"
     },
     {
-      "glbl": "GLBL_00017",
-      "name": "周厉王",
-      "file": "GLBL_00017_周厉王_评述.json",
-      "status": "done",
-      "entry_count": 5,
-      "verified_at": "2026-07-25T13:48:04Z"
-    },
-    {
       "glbl": "GLBL_00021",
       "name": "周宣王",
       "file": "GLBL_00021_周宣王_评述.json",
@@ -227,14 +219,6 @@
       "verified_at": "2026-07-25T14:21:29Z"
     },
     {
-      "glbl": "GLBL_00781",
-      "name": "国人暴动",
-      "file": "GLBL_00781_国人暴动_评述.json",
-      "status": "done",
-      "entry_count": 5,
-      "verified_at": "2026-07-25T14:22:10Z"
-    },
-    {
       "glbl": "GLBL_00782",
       "name": "共和行政",
       "file": "GLBL_00782_共和行政_评述.json",
@@ -265,14 +249,6 @@
       "status": "done",
       "entry_count": 4,
       "verified_at": "2026-07-25T14:29:59Z"
-    },
-    {
-      "glbl": "GLBL_00786",
-      "name": "不籍千亩",
-      "file": "GLBL_00786_不籍千亩_评述.json",
-      "status": "done",
-      "entry_count": 3,
-      "verified_at": "2026-07-25T14:31:36Z"
     },
     {
       "glbl": "GLBL_00787",
@@ -529,7 +505,31 @@
       "status": "done",
       "entry_count": 4,
       "verified_at": "2026-07-25T15:23:33Z"
+    },
+    {
+      "glbl": "GLBL_00781",
+      "name": "国人暴动",
+      "file": "GLBL_00781_国人暴动_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-07-29T15:58:01Z"
+    },
+    {
+      "glbl": "GLBL_00017",
+      "name": "周厉王",
+      "file": "GLBL_00017_周厉王_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-07-29T16:52:51Z"
+    },
+    {
+      "glbl": "GLBL_00786",
+      "name": "不籍千亩",
+      "file": "GLBL_00786_不籍千亩_评述.json",
+      "status": "done",
+      "entry_count": 4,
+      "verified_at": "2026-07-29T17:10:26Z"
     }
   ],
-  "updated_at": "2026-07-25T15:23:33Z"
+  "updated_at": "2026-07-29T17:10:26Z"
 }

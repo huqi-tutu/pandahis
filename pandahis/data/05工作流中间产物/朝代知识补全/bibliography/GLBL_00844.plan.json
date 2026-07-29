@@ -1,0 +1,133 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00844",
+  "写作结构": "正史叙述见翻译详录（《史记·商君列传》）；拓展文以《战国策·秦策》早期封君实例揭示制度先声，《商君书》军功爵篇佐证功赏与封邑关联，睡虎地秦简法律条文反映食邑管理原则；秦制渊源与演变由《汉书·百官公卿表》综述留白，不展开细节。",
+  "候选著作": [
+    {
+      "出处": "《战国策·秦策一》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载商鞅因功受封於、商之地，号商君，为封君食邑制的早期实例，可与秦惠文王制度衔接",
+      "检索词": "卫鞅亡魏入秦",
+      "采用": true,
+      "原文摘句": "卫鞅亡魏入秦，孝公以为相，封之于商，号曰商君。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《商君书·境内》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "详述秦军功授爵制度，其中获爵者可得税邑或食邑，为封君食邑提供制度背景",
+      "检索词": "能得爵首一者",
+      "采用": true,
+      "原文摘句": "能得甲首一者，赏爵一级，益田一顷，益宅九亩，一除庶子一人，乃得入兵官之吏。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《睡虎地秦墓竹简·秦律十八种·军爵律》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "出土秦律反映军功爵与免役、赐爵等规定，侧面印证封君食邑制的法律基础与管理实践",
+      "检索词": "从军当以劳论",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·商君列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "条目主要史料出处，记载商鞅受封商於十五邑及制度缘起，翻译详录已覆盖",
+      "检索词": "商君受封十五邑",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《汉书·百官公卿表上》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "综述秦二十等爵制，说明彻侯等爵位享有食邑，沿袭自秦封君食邑制",
+      "检索词": "爵一级曰公士",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《战国策·秦策一》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载商鞅因功受封於、商之地，号商君，为封君食邑制的早期实例，可与秦惠文王制度衔接",
+      "检索词": "卫鞅亡魏入秦",
+      "采用": true,
+      "原文摘句": "卫鞅亡魏入秦，孝公以为相，封之于商，号曰商君。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《商君书·境内》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "详述秦军功授爵制度，其中获爵者可得税邑或食邑，为封君食邑提供制度背景",
+      "检索词": "能得爵首一者",
+      "采用": true,
+      "原文摘句": "能得甲首一者，赏爵一级，益田一顷，益宅九亩，一除庶子一人，乃得入兵官之吏。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《睡虎地秦墓竹简·秦律十八种·军爵律》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "出土秦律反映军功爵与免役、赐爵等规定，侧面印证封君食邑制的法律基础与管理实践",
+      "检索词": "从军当以劳论",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·商君列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "条目主要史料出处，记载商鞅受封商於十五邑及制度缘起，翻译详录已覆盖",
+      "检索词": "商君受封十五邑",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《汉书·百官公卿表上》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "综述秦二十等爵制，说明彻侯等爵位享有食邑，沿袭自秦封君食邑制",
+      "检索词": "爵一级曰公士",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 3,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

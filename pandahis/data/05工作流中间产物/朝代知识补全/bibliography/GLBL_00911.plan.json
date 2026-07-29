@@ -1,0 +1,127 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00911",
+  "写作结构": "正史叙述见翻译详录；拓展文写史外异说与延展。由于郭纵唯有《史记·货殖列传》一条可靠记载，其他传世文献暂无独立新增信息，故以正史为基石，拓展部分侧重战国冶铁业背景的旁证，不作具体情节扩展。",
+  "候选著作": [
+    {
+      "出处": "《史记·货殖列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "唯一原始记载，提供郭纵籍贯、行业、财富等级，是anchor和compose的根叙事",
+      "检索词": "郭纵",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《盐铁论·通有第三》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "整理大夫与文学关于盐铁专营的辩论，列举往古豪强，可能暗涉战国铁商，但未见郭纵专名",
+      "检索词": "邯郸 铁冶",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《太平御览·卷八百三十六·资产部·冶铁》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋代类书汇辑冶铁掌故，或引《史记》外佚文，可作旁证检索",
+      "检索词": "郭纵 冶铁",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《睡虎地秦墓竹简·秦律杂抄》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "出土秦简记载战国晚期秦的冶铁管理职官与刑律，为郭纵经营的制度背景提供考古证据",
+      "检索词": "右采铁 冶",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《战国策·赵策》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "涉及赵国邯郸的经济与富庶，未见郭纵，可映衬邯郸商业氛围",
+      "检索词": "邯郸 富",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·货殖列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "唯一原始记载，提供郭纵籍贯、行业、财富等级，是anchor和compose的根叙事",
+      "检索词": "郭纵",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《盐铁论·通有第三》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "整理大夫与文学关于盐铁专营的辩论，列举往古豪强，可能暗涉战国铁商，但未见郭纵专名",
+      "检索词": "邯郸 铁冶",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《睡虎地秦墓竹简·秦律杂抄》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "出土秦简记载战国晚期秦的冶铁管理职官与刑律，为郭纵经营的制度背景提供考古证据",
+      "检索词": "右采铁 冶",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《战国策·赵策》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "涉及赵国邯郸的经济与富庶，未见郭纵，可映衬邯郸商业氛围",
+      "检索词": "邯郸 富",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《太平御览·卷八百三十六·资产部·冶铁》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋代类书汇辑冶铁掌故，或引《史记》外佚文，可作旁证检索",
+      "检索词": "郭纵 冶铁",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 0,
+    "C_excluded": 5,
+    "overall": "C"
+  }
+}

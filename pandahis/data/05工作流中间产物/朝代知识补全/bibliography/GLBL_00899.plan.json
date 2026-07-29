@@ -1,0 +1,177 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00899",
+  "写作结构": "以《史记·赵世家》正史叙述为主干（见翻译详录），拓展文引《战国策·中山策》所载策论及外交形势，并佐以出土中山王厝方壶铭文所述先王与战争；另可参考《水经注》关于中山故城的地理记载。",
+  "候选著作": [
+    {
+      "出处": "《史记·赵世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，详记赵伐中山过程，已由翻译环节服务",
+      "检索词": "赵世家 中山",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《战国策·中山策》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记录中山国与赵、魏、齐等国的外交策论，补充赵灭中山前后的谋略与形势",
+      "检索词": "中山 赵 伐",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "中山王厝方壶铭文（出土铜器）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "中山国王室铭文，提及其先祖桓王、成王及与燕、赵的战争，为白狄中山史的出土实证",
+      "检索词": "中山王厝 方壶 铭文",
+      "采用": true,
+      "原文摘句": "唯朕皇祖桓王、考成王……慈爱简强，以靖燕疆……",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《世本》辑本",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记有中山国世系，然残佚过甚，且具体世系为 anchor 所禁编造，可存书目备考",
+      "检索词": "中山 世本",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《韩非子》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "《说林》《内储说》等篇涉及中山伐赵故事，多寓言性质，不适合直接补入战史细节",
+      "检索词": "中山 赵",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《吕氏春秋》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "《权勋》等篇提到中山之亡因，有“中山之盗”等记载，可作异说参考",
+      "检索词": "中山 亡",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《水经注·易水》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "记有中山国故城、陵墓等地理遗迹，可作为地理背景补充",
+      "检索词": "中山 故城",
+      "采用": true,
+      "原文摘句": "中山城……俗谓之鼓城，今有中山夫人祠云。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·赵世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，详记赵伐中山过程，已由翻译环节服务",
+      "检索词": "赵世家 中山",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《战国策·中山策》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记录中山国与赵、魏、齐等国的外交策论，补充赵灭中山前后的谋略与形势",
+      "检索词": "中山 赵 伐",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "中山王厝方壶铭文（出土铜器）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "中山国王室铭文，提及其先祖桓王、成王及与燕、赵的战争，为白狄中山史的出土实证",
+      "检索词": "中山王厝 方壶 铭文",
+      "采用": true,
+      "原文摘句": "唯朕皇祖桓王、考成王……慈爱简强，以靖燕疆……",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《世本》辑本",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记有中山国世系，然残佚过甚，且具体世系为 anchor 所禁编造，可存书目备考",
+      "检索词": "中山 世本",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《韩非子》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "《说林》《内储说》等篇涉及中山伐赵故事，多寓言性质，不适合直接补入战史细节",
+      "检索词": "中山 赵",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《吕氏春秋》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "《权勋》等篇提到中山之亡因，有“中山之盗”等记载，可作异说参考",
+      "检索词": "中山 亡",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《水经注·易水》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "记有中山国故城、陵墓等地理遗迹，可作为地理背景补充",
+      "检索词": "中山 故城",
+      "采用": true,
+      "原文摘句": "中山城……俗谓之鼓城，今有中山夫人祠云。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 3,
+    "C_excluded": 4,
+    "overall": "B"
+  }
+}

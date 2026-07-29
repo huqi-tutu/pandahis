@@ -1,0 +1,133 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00871",
+  "写作结构": "正史叙事先见翻译详录《史记·魏世家》；拓展部分征引《韩诗外传》《说苑》所载类似问对，呈现汉代文献中的异说；对李悝法家身份及其著作，据《汉书·艺文志》著录略作点明，不作具体内容展开；变法等后世叙述留白，不虚构细节。",
+  "候选著作": [
+    {
+      "出处": "《史记·魏世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载李悝（李克）应答魏文侯问相、论述识人标准及举荐魏成子等事",
+      "检索词": "魏文侯问李克",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《韩诗外传·卷三》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "记载李克答魏文侯选相之问，与《史记》互见，措辞或有小异，可作异说补充",
+      "检索词": "李克对魏文侯",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《说苑·臣术》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "记录魏文侯问李克为相之道，情节与《史记》相近，反映同一故事的流传",
+      "检索词": "魏文侯问李克",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《汉书·艺文志·诸子略》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "著录《李子》三十二篇于法家，说明汉人将李悝与法家密切关联，系李悝著作存目的重要线索",
+      "检索词": "李子 三十二篇",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C",
+      "fetch_note": "二十四史由翻译详录服务，拓展路不摘句"
+    },
+    {
+      "出处": "《晋书·刑法志》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "提及李悝撰《法经》的传说，是后世构建李悝法家形象的文献源头之一",
+      "检索词": "李悝 法经",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·魏世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载李悝（李克）应答魏文侯问相、论述识人标准及举荐魏成子等事",
+      "检索词": "魏文侯问李克",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《韩诗外传·卷三》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "记载李克答魏文侯选相之问，与《史记》互见，措辞或有小异，可作异说补充",
+      "检索词": "李克对魏文侯",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《说苑·臣术》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "记录魏文侯问李克为相之道，情节与《史记》相近，反映同一故事的流传",
+      "检索词": "魏文侯问李克",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《汉书·艺文志·诸子略》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "著录《李子》三十二篇于法家，说明汉人将李悝与法家密切关联，系李悝著作存目的重要线索",
+      "检索词": "李子 三十二篇",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C",
+      "fetch_note": "二十四史由翻译详录服务，拓展路不摘句"
+    },
+    {
+      "出处": "《晋书·刑法志》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "提及李悝撰《法经》的传说，是后世构建李悝法家形象的文献源头之一",
+      "检索词": "李悝 法经",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 3,
+    "overall": "B"
+  }
+}

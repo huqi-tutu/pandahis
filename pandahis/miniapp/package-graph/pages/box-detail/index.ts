@@ -626,7 +626,10 @@ Page({
       graphCanvasH,
     })
     try {
-      const res = await request<BoxHeader>(`/boxes/${encodePathSegment(boxId)}`)
+      const res = await request<BoxHeader>(`/boxes/${encodePathSegment(boxId)}`, {
+        auth: hasToken(),
+        softAuth: true,
+      })
       const header = res.data
       const y0 = yearLabel(header.box.startYear)
       const y1 = yearLabel(header.box.endYear)

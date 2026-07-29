@@ -1,0 +1,149 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00905",
+  "写作结构": "正史叙述见翻译详录；《史记·赵世家》《匈奴列传》等已由翻译环节覆盖核心征服史实。其余史外异说暂未获可核查记载，可以《汉书·地理志》等简要延伸楼烦地名沿革，叙事留白，严禁编造战斗与对话细节。",
+  "候选著作": [
+    {
+      "出处": "《史记·赵世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载赵武灵王征服楼烦的核心过程。",
+      "检索词": "楼烦 赵武灵王",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·匈奴列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载林胡、楼烦与赵国的关系，补充楼烦作为胡人部落的背景。",
+      "检索词": "林胡 楼烦",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《战国策·赵策》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "可能涉及赵武灵王胡服骑射及北略楼烦之地的记事，提供战国纵横家视角。",
+      "检索词": "楼烦 骑射",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《逸周书·王会解》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载周成王成周之会时楼烦部落献贡，显示楼烦在西周初期已活跃于北方。",
+      "检索词": "楼烦 王会",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《汉书·地理志》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载雁门郡楼烦县，反映楼烦被灭后地名的长期延续。",
+      "检索词": "楼烦县 雁门",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《水经注》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "可能记载楼烦故城、楼烦王城的地理位置，为地名沿革提供异说。",
+      "检索词": "楼烦故城",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·赵世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载赵武灵王征服楼烦的核心过程。",
+      "检索词": "楼烦 赵武灵王",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·匈奴列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载林胡、楼烦与赵国的关系，补充楼烦作为胡人部落的背景。",
+      "检索词": "林胡 楼烦",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《战国策·赵策》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "可能涉及赵武灵王胡服骑射及北略楼烦之地的记事，提供战国纵横家视角。",
+      "检索词": "楼烦 骑射",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《逸周书·王会解》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载周成王成周之会时楼烦部落献贡，显示楼烦在西周初期已活跃于北方。",
+      "检索词": "楼烦 王会",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《汉书·地理志》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载雁门郡楼烦县，反映楼烦被灭后地名的长期延续。",
+      "检索词": "楼烦县 雁门",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《水经注》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "可能记载楼烦故城、楼烦王城的地理位置，为地名沿革提供异说。",
+      "检索词": "楼烦故城",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 0,
+    "C_excluded": 6,
+    "overall": "C"
+  }
+}

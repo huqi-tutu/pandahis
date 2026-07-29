@@ -110,6 +110,18 @@ def load_index(index_path: Path | None = None) -> dict[str, Any]:
     return json.loads(p.read_text(encoding="utf-8"))
 
 
+def _index_entries(doc: dict[str, Any] | list[Any]) -> list[dict[str, Any]]:
+    if isinstance(doc, list):
+        return [e for e in doc if isinstance(e, dict)]
+    entries = doc.get("entries")
+    if isinstance(entries, list):
+        return entries
+    for v in doc.values():
+        if isinstance(v, list) and v and isinstance(v[0], dict) and "史略ID" in v[0]:
+            return v
+    return []
+
+
 def find_entry(
     *,
     entry_id: str | None = None,
@@ -117,7 +129,7 @@ def find_entry(
     index_path: Path | None = None,
 ) -> dict[str, Any]:
     doc = load_index(index_path)
-    entries = doc.get("entries") or []
+    entries = _index_entries(doc)
     if entry_id:
         for e in entries:
             if str(e.get("史略ID", "")).strip() == entry_id.strip():
@@ -666,7 +678,7 @@ def list_dynasty_persons(dynasty: str, index_path: Path | None = None) -> list[d
     doc = load_index(index_path)
     dynasty = dynasty.strip()
     out: list[dict[str, Any]] = []
-    for e in doc.get("entries") or []:
+    for e in _index_entries(doc):
         if not is_person_entry(e):
             continue
         d2 = str(e.get("二级朝代坐标", "")).strip()

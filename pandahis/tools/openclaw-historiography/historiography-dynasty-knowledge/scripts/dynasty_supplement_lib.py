@@ -72,6 +72,8 @@ MIN_PARAGRAPHS_BY_PRIORITY = {
 # 质检/撰写 retry 上限（防 agent 或脚本死循环）
 MAX_COMPOSE_REVISE_ROUNDS = 1
 MAX_COMPOSE_PARSE_ATTEMPTS = 3  # compose LLM 输出 JSON 解析失败时重试
+MAX_ANCHOR_PARSE_ATTEMPTS = 3  # anchor-research JSON 解析失败时重试
+MAX_BIBLIOGRAPHY_PARSE_ATTEMPTS = 3  # bibliography-plan JSON 解析失败时重试
 MAX_PATCH_ROUNDS = 3  # Kimi 精准改稿 + review↔fix 循环上限（轮）
 MAX_REVIEW_FIX_ROUNDS = 3  # Kimi 事实核查最多 3 轮；第 3 轮仍有问题则 forced_pass
 MAX_QA_DETAIL_ROUNDS = 2  # compose + 1 revise，整条 qa 链路上限

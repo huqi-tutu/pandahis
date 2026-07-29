@@ -1,0 +1,105 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00862",
+  "写作结构": "正史叙述见翻译详录（《史记·商君列传》）；拓展文以《吕氏春秋·无义》为史外异说，简述商鞅遗书约盟、伏甲虏卬之过程，不引书信原文；以《竹书纪年》辑佚句佐证秦商鞅伐魏、魏败河西的背景。公子卬被俘后结局无考，相关记述留白。",
+  "候选著作": [
+    {
+      "出处": "《史记·商君列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，完整记载商鞅诈盟虏公子卬、魏割河西之地等事",
+      "检索词": "",
+      "采用": false,
+      "material_tier": "C",
+      "snippet_verified": false
+    },
+    {
+      "出处": "《吕氏春秋·慎大览·无义》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "详述商鞅攻魏、遗书约盟、伏甲虏公子卬经过，可与《史记》互证，有书信内容细节",
+      "检索词": "公孙鞅攻魏公子卬",
+      "采用": true,
+      "原文摘句": "公孙鞅之攻魏也，使公子卬将而御之。……公孙鞅因伏卒与车骑以取公子卬。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《竹书纪年》辑佚（清·朱右曾辑）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "载有秦商鞅伐魏、败魏于河西之事，为公子卬被俘后的魏军大败提供旁证",
+      "检索词": "秦商鞅伐魏",
+      "采用": true,
+      "原文摘句": "秦商鞅伐魏，败之于河西。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《资治通鉴·周纪二》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "转录《史记》商鞅虏公子卬并魏割地之事，无新增信息",
+      "检索词": "",
+      "采用": false,
+      "material_tier": "C",
+      "snippet_verified": false
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·商君列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，完整记载商鞅诈盟虏公子卬、魏割河西之地等事",
+      "检索词": "",
+      "采用": false,
+      "material_tier": "C",
+      "snippet_verified": false
+    },
+    {
+      "出处": "《吕氏春秋·慎大览·无义》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "详述商鞅攻魏、遗书约盟、伏甲虏公子卬经过，可与《史记》互证，有书信内容细节",
+      "检索词": "公孙鞅攻魏公子卬",
+      "采用": true,
+      "原文摘句": "公孙鞅之攻魏也，使公子卬将而御之。……公孙鞅因伏卒与车骑以取公子卬。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《竹书纪年》辑佚（清·朱右曾辑）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "载有秦商鞅伐魏、败魏于河西之事，为公子卬被俘后的魏军大败提供旁证",
+      "检索词": "秦商鞅伐魏",
+      "采用": true,
+      "原文摘句": "秦商鞅伐魏，败之于河西。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《资治通鉴·周纪二》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "转录《史记》商鞅虏公子卬并魏割地之事，无新增信息",
+      "检索词": "",
+      "采用": false,
+      "material_tier": "C",
+      "snippet_verified": false
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00014",
+  "写作结构": "正史叙述（《史记·周本纪》）极简，仅记在位年数及崩逝，见翻译详录。拓展文应着重于：1) 援引《竹书纪年》等出土文献的异说纪年，解释战国起点的争议；2) 以《左传》终年及清华简《系年》佐证春秋末至战国初的历史空白与转折；3) 发挥《资治通鉴》作为后世综述的断代标志意义，说明“周失其序”的政治现实。核心叙事围绕“空位”与“分期标志”展开，避免编造元王本人事迹。",
+  "候选著作": [
+    {
+      "出处": "《史记·卷4·周本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "本条目主要史料出处，记载周元王即位、在位七年崩及其子定王继位事",
+      "检索词": "周元王",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《竹书纪年·周纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载战国初年周王室纪年，或可提供与《史记》不同的周元王在位年数或重大事件记载，是考订战国起始年代的关键异说来源",
+      "检索词": "元王 贞定王",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    },
+    {
+      "出处": "《左传·哀公二十七年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "《左传》编年止于周元王元年之前一年（或当年），其终篇附记智伯之亡，暗示了周元王时期的历史遗落，可用于说明春秋笔法与战国叙事的断裂",
+      "检索词": "哀公二十七年",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《清华简·系年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "战国楚简史书，记载两周之际至战国早期的历史大事，或涉及周元王前后晋、越、楚等国霸业交替，可补周王室叙事之缺",
+      "检索词": "晋越 战国初",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《资治通鉴·周纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "司马光以周威烈王二十三年为战国起点，但其卷首详论周元王时王室衰微之态，以此作为“礼崩乐坏”的起点性评价，是后世如何看待周元王非作为时代标志的核心综述",
+      "检索词": "周纪 威烈王",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《国语·周语》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "主要记载春秋时期王言，周元王时无记载，其叙事空白本身可作为周王室彻底失声的证据",
+      "检索词": "周语 春秋末",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·卷4·周本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "本条目主要史料出处，记载周元王即位、在位七年崩及其子定王继位事",
+      "检索词": "周元王",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《竹书纪年·周纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载战国初年周王室纪年，或可提供与《史记》不同的周元王在位年数或重大事件记载，是考订战国起始年代的关键异说来源",
+      "检索词": "元王 贞定王",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    },
+    {
+      "出处": "《左传·哀公二十七年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "《左传》编年止于周元王元年之前一年（或当年），其终篇附记智伯之亡，暗示了周元王时期的历史遗落，可用于说明春秋笔法与战国叙事的断裂",
+      "检索词": "哀公二十七年",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《清华简·系年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "战国楚简史书，记载两周之际至战国早期的历史大事，或涉及周元王前后晋、越、楚等国霸业交替，可补周王室叙事之缺",
+      "检索词": "晋越 战国初",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《国语·周语》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "主要记载春秋时期王言，周元王时无记载，其叙事空白本身可作为周王室彻底失声的证据",
+      "检索词": "周语 春秋末",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《资治通鉴·周纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "司马光以周威烈王二十三年为战国起点，但其卷首详论周元王时王室衰微之态，以此作为“礼崩乐坏”的起点性评价，是后世如何看待周元王非作为时代标志的核心综述",
+      "检索词": "周纪 威烈王",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 4,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

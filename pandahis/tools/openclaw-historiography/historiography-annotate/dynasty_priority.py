@@ -193,7 +193,7 @@ def build_prompt(
         f"你是历史图谱编辑。为「{dynasty_name}」（{dynasty_id}）内下列史略主题判定**朝代全局优先级** P0–P3。",
         "【主体锁定】每条只判「判定主题」（=史略名称）本人或该政权/事件本身，勿与卷内他人混淆。",
         RULES_BRIEF,
-        f"本朝共 {len(p0_assigned) + len(batch)} 条量级；全朝 P0 上限约 {p0_cap} 条（当前已标 P0: {len(p0_assigned)}）。",
+        f"本朝共 {len(p0_assigned) + len(batch)} 条量级；按影响力独立定级，不受 P0 名额限制。",
         f"已标 P0 示例：{', '.join(p0_names) if p0_names else '（尚无）'}",
         f"本批为第 {batch_index}/{total_batches} 批；须与已标 P0 保持尺度一致。",
         "",
@@ -251,7 +251,6 @@ def run_dynasty_llm(
 
     stats = {"llm": 0, "fallback": 0, "flagged": 0}
     ordered = _sort_dynasty_entries(entries)
-    cap = dynasty_p0_cap(len(ordered))
     batches = _chunk(ordered, batch_size if len(ordered) > 35 else len(ordered))
     p0_assigned: List[dict] = []
 
@@ -260,13 +259,13 @@ def run_dynasty_llm(
             dynasty_name,
             dynasty_id,
             batch,
-            p0_cap=cap,
+            p0_cap=0,
             p0_assigned=p0_assigned,
             batch_index=bi,
             total_batches=len(batches),
         )
         sid = "dpri-" + hashlib.sha1(prompt.encode("utf-8")).hexdigest()[:12]
-        _log(f"  🤖 [{dynasty_name}] 第 {bi}/{len(batches)} 批 ({len(batch)} 条) P0={len(p0_assigned)}/{cap}")
+        _log(f"  🤖 [{dynasty_name}] 第 {bi}/{len(batches)} 批 ({len(batch)} 条) P0={len(p0_assigned)}")
         try:
             res = run_agent_turn(prompt, session_id=sid, timeout_sec=timeout_sec, temperature=0)
             rows = _extract_json_array(str(res.get("result", "")))
@@ -293,9 +292,6 @@ def run_dynasty_llm(
         if on_batch_done:
             on_batch_done()
 
-    demoted = enforce_p0_cap(ordered, cap)
-    if demoted:
-        _log(f"     ↳ P0 超配额，降级 {demoted} 条")
     return stats
 
 

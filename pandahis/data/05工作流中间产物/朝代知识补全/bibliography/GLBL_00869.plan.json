@@ -1,0 +1,105 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00869",
+  "写作结构": "正史记载《史记·刺客列传》实无缪贤事迹，主要记载见于《史记·廉颇蔺相如列传》，但因索引出处限制，拓展认知不做摘录与展开；史外文献未见独立记载，叙事性留白。仅可陈述赵宦者令缪贤荐蔺相如使秦这一基础事实，不得铺演。",
+  "候选著作": [
+    {
+      "出处": "《战国策·赵策三》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载蔺相如完璧归赵事，未提及缪贤",
+      "检索词": "蔺相如 赵策",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记索隐·廉颇蔺相如列传》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "司马贞注引述缪贤举荐始末，但文本依附正史",
+      "检索词": "缪贤 索隐",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《资治通鉴·周纪四》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "撮录缪贤荐相如事，源自《史记》，无新增史源",
+      "检索词": "缪贤 通鉴",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《太平御览·卷四百五十四·人事部九十五·谏诤四》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "引《史记》缪贤语，属类书摘抄，非新史料",
+      "检索词": "缪贤 御览",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《战国策·赵策三》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载蔺相如完璧归赵事，未提及缪贤",
+      "检索词": "蔺相如 赵策",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记索隐·廉颇蔺相如列传》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "司马贞注引述缪贤举荐始末，但文本依附正史",
+      "检索词": "缪贤 索隐",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《资治通鉴·周纪四》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "撮录缪贤荐相如事，源自《史记》，无新增史源",
+      "检索词": "缪贤 通鉴",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《太平御览·卷四百五十四·人事部九十五·谏诤四》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "引《史记》缪贤语，属类书摘抄，非新史料",
+      "检索词": "缪贤 御览",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 0,
+    "C_excluded": 4,
+    "overall": "C"
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00863",
+  "写作结构": "正史叙述见翻译详录，以《史记·秦本纪》‘六年，泾阳君质于齐’及《孟尝君列传》所载质齐背景为纲。拓展部分以《战国策·秦策三》范睢语补证其宗室权贵地位，合段后点明其与穰侯、太后并提的政治格局。质齐具体过程、在齐事迹等留白，不作虚构。",
+  "候选著作": [
+    {
+      "出处": "《史记·秦本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载泾阳君质于齐的明确年份，是coverage_claims的主证",
+      "检索词": "泾阳君质于齐",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《史记·孟尝君列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "说明秦昭王遣泾阳君入质于齐以换取孟尝君入秦的背景",
+      "检索词": "泾阳君 质齐 孟尝君",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《战国策·秦策三》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "范睢批评秦昭王时并提太后、穰侯与泾阳君等，直接佐证泾阳君为昭王同母弟且专权宗戚，可补证coverage_claims中宗室身份与地位",
+      "检索词": "闻秦之有太后穰侯泾阳",
+      "采用": true,
+      "原文摘句": "闻秦之有太后、穰侯、泾阳、华阳、高陵，不闻其有王也。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·秦本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载泾阳君质于齐的明确年份，是coverage_claims的主证",
+      "检索词": "泾阳君质于齐",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《史记·孟尝君列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "说明秦昭王遣泾阳君入质于齐以换取孟尝君入秦的背景",
+      "检索词": "泾阳君 质齐 孟尝君",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《战国策·秦策三》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "范睢批评秦昭王时并提太后、穰侯与泾阳君等，直接佐证泾阳君为昭王同母弟且专权宗戚，可补证coverage_claims中宗室身份与地位",
+      "检索词": "闻秦之有太后穰侯泾阳",
+      "采用": true,
+      "原文摘句": "闻秦之有太后、穰侯、泾阳、华阳、高陵，不闻其有王也。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 1,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}
