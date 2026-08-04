@@ -1,0 +1,32 @@
+{
+  "work": "01史记",
+  "vol": "055",
+  "total_paragraphs": 43,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 42,
+      "paragraph_to": 42,
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph_from": 43,
+      "paragraph_to": 43,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "张良",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 41,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "留侯张良者，其先韩人也。大父开地，相韩昭侯、宣惠王、襄哀王。父平，相釐王、悼惠王",
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

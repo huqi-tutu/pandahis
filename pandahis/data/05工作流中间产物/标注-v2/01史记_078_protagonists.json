@@ -1,0 +1,19 @@
+{
+  "work": "01史记",
+  "vol": "078",
+  "volume_name": "春申君列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "黄歇",
+      "category": "文臣",
+      "rationale": "《春申君列传》为战国四公子之一春申君黄歇的单人列传，卷名即人名，整卷以黄歇生平事迹为叙事主轴。黄歇以辩士、令尹（相国）身份辅佐楚考烈王，属于以行政、外交、谋略仕宦为主轴的文臣，而非封国世袭君主，故分类为文臣。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

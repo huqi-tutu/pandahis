@@ -1,0 +1,94 @@
+{
+  "work": "02汉书",
+  "vol": "082",
+  "total_paragraphs": 42,
+  "volume_subtype": "hezhuan",
+  "derived_from": "02汉书_082_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 42,
+      "paragraph_to": 42,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "傅介子",
+      "category": "武将",
+      "paragraph_from": 2,
+      "paragraph_to": 6,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "傅介子，北地人也，以从军为官。先是，龟兹、楼兰皆尝杀汉使者，语在《西域传》。至元",
+        "close_paragraph": 6,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P6"
+      }
+    },
+    {
+      "name": "常惠",
+      "category": "武将",
+      "paragraph_from": 7,
+      "paragraph_to": 10,
+      "boundary_evidence": {
+        "open_paragraph": 7,
+        "open_phrase": "常惠，太原人也。少时家贫，自奋应募，随移中监苏武使匈奴，并见拘留十余年，昭帝时乃",
+        "close_paragraph": 10,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P7–P10"
+      }
+    },
+    {
+      "name": "郑吉",
+      "category": "武将",
+      "paragraph_from": 11,
+      "paragraph_to": 15,
+      "boundary_evidence": {
+        "open_paragraph": 11,
+        "open_phrase": "郑吉，会稽人也，以卒伍从军，数出西域，由是为郎。吉为人强执，习外国事。自张骞通西",
+        "close_paragraph": 15,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P11–P15"
+      }
+    },
+    {
+      "name": "甘延寿",
+      "category": "武将",
+      "paragraph_from": 16,
+      "paragraph_to": 16,
+      "boundary_evidence": {
+        "open_paragraph": 16,
+        "open_phrase": "甘延寿字君况，北地郁郅人也。少以良家子善骑射为羽林，投石拔距绝于等伦，尝超逾羽林",
+        "close_paragraph": 16,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P16–P16"
+      }
+    },
+    {
+      "name": "陈汤",
+      "category": "武将",
+      "paragraph_from": 17,
+      "paragraph_to": 35,
+      "boundary_evidence": {
+        "open_paragraph": 17,
+        "open_phrase": "陈汤字子公，山阳瑕兵人也。少好书，博达善属文。家贫匄贷无节，不为州里所称。西至长",
+        "close_paragraph": 35,
+        "close_note": "人工修正：P17–35 主轴陈汤（P19–28 不单挂甘延寿）"
+      }
+    },
+    {
+      "name": "段会宗",
+      "category": "武将",
+      "paragraph_from": 36,
+      "paragraph_to": 41,
+      "boundary_evidence": {
+        "open_paragraph": 36,
+        "open_phrase": "段会宗字子孙，天水上邽人也。竟宁中，以杜陵令五府举为西域都护、骑都尉、光禄大夫。",
+        "close_paragraph": 41,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P36–P41"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

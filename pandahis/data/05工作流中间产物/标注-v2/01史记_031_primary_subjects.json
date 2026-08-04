@@ -1,0 +1,351 @@
+{
+  "work": "01史记",
+  "vol": "031",
+  "total_paragraphs": 52,
+  "method": "Step1b-α 回归（自 blocks 反推，验证 β 聚合）",
+  "paragraphs": [
+    {
+      "paragraph": 1,
+      "primary_subject": "吴太伯",
+      "disposition": "block",
+      "text_snippet": "吴太伯，太伯弟仲雍，皆周太王之子，而王季历之兄也。季历贤，而有圣子昌，太王欲立季…"
+    },
+    {
+      "paragraph": 2,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "太伯卒，无子，弟仲雍立，是为吴仲雍。仲雍卒，子季简立。季简卒，子叔达立。叔达卒，…"
+    },
+    {
+      "paragraph": 3,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "周章卒，子熊遂立，熊遂卒，子柯相立。柯相卒，子彊鸠夷立。彊鸠夷卒，子馀桥疑吾立。…"
+    },
+    {
+      "paragraph": 4,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "屈羽卒，子夷吾立。夷吾卒，子禽处立。禽处卒，子转立。转卒，子颇高立。颇高卒，子句…"
+    },
+    {
+      "paragraph": 5,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "去齐卒，子寿梦立。寿梦立而吴始益大，称王。"
+    },
+    {
+      "paragraph": 6,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "自太伯作吴，五世而武王克殷，封其后为二：其一虞，在中国；其一吴，在夷蛮。十二世而…"
+    },
+    {
+      "paragraph": 7,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "王寿梦二年，楚之亡大夫申公巫臣怨楚将子反而奔晋，自晋使吴，教吴用兵乘车，令其子为…"
+    },
+    {
+      "paragraph": 8,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "二十五年，王寿梦卒。寿梦有子四人，长曰诸樊，次曰馀祭，次曰馀眜，次曰季札。季札贤…"
+    },
+    {
+      "paragraph": 9,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "王诸樊元年，诸樊已除丧，让位季札。季札谢曰：“曹宣公之卒也，诸侯与曹人不义曹君，…"
+    },
+    {
+      "paragraph": 10,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "十三年，王诸樊卒。有命授弟馀祭，欲传以次，必致国於季札而止，以称先王寿梦之意，且…"
+    },
+    {
+      "paragraph": 11,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "王馀祭三年，齐相庆封有罪，自齐来奔吴。吴予庆封朱方之县，以为奉邑，以女妻之，富於…"
+    },
+    {
+      "paragraph": 12,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "四年，吴使季札聘於鲁，请观周乐。为歌周南、召南。曰：“美哉，始基之矣，犹未也。然…"
+    },
+    {
+      "paragraph": 13,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "吾闻卫康叔、武公之德如是，是其卫风乎？”歌王。曰：“美哉，思而不惧，其周之东乎？…"
+    },
+    {
+      "paragraph": 14,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "见舞象箾、南籥者，曰：“美哉，犹有感。”见舞大武，曰：“美哉，周之盛也其若此乎？…"
+    },
+    {
+      "paragraph": 15,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "去鲁，遂使齐。说晏平仲曰：“子速纳邑与政。无邑无政，乃免於难。齐国之政将有所归；…"
+    },
+    {
+      "paragraph": 16,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "去齐，使於郑。见子产，如旧交。谓子产曰：“郑之执政侈，难将至矣，政必及子。子为政…"
+    },
+    {
+      "paragraph": 17,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "自卫如晋，将舍於宿，闻锺声，曰：“异哉！吾闻之，辩而不德，必加於戮。"
+    },
+    {
+      "paragraph": 18,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "夫子获罪於君以在此，惧犹不足，而又可以畔乎？夫子之在此，犹燕之巢于幕也。"
+    },
+    {
+      "paragraph": 19,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "君在殡而可以乐乎？”遂去之。文子闻之，终身不听琴瑟。"
+    },
+    {
+      "paragraph": 20,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "適晋，说赵文子、韩宣子、魏献子曰：“晋国其萃於三家乎！”将去，谓叔向曰：“吾子勉…"
+    },
+    {
+      "paragraph": 21,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "季札之初使，北过徐君。徐君好季札剑，口弗敢言。季札心知之，为使上国，未献。还至徐…"
+    },
+    {
+      "paragraph": 22,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "七年，楚公子围弑其王夹敖而代立，是为灵王。十年，楚灵王会诸侯而以伐吴之朱方，以诛…"
+    },
+    {
+      "paragraph": 23,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "十七年，王馀祭卒，弟馀眜立。王馀眜二年，楚公子弃疾弑其君灵王代立焉。"
+    },
+    {
+      "paragraph": 24,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "四年，王馀眜卒，欲授弟季札。季札让，逃去。於是吴人曰：“先王有命，兄卒弟代立，必…"
+    },
+    {
+      "paragraph": 25,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "王僚二年，公子光伐楚，败而亡王舟。光惧，袭楚，复得王舟而还。"
+    },
+    {
+      "paragraph": 26,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "五年，楚之亡臣伍子胥来奔，公子光客之。公子光者，王诸樊之子也。常以为吾父兄弟四人…"
+    },
+    {
+      "paragraph": 27,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "阴纳贤士，欲以袭王僚。"
+    },
+    {
+      "paragraph": 28,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "八年，吴使公子光伐楚，败楚师，迎楚故太子建母於居巢以归。因北伐，败陈、蔡之师。九…"
+    },
+    {
+      "paragraph": 29,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "伍子胥之初奔吴，说吴王僚以伐楚之利。公子光曰：“胥之父兄为僇於楚，欲自报其仇耳。…"
+    },
+    {
+      "paragraph": 30,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "十二年冬，楚平王卒。十三年春，吴欲因楚丧而伐之，使公子盖馀、烛庸以兵围楚之六、灊…"
+    },
+    {
+      "paragraph": 31,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "於是吴公子光曰：“此时不可失也。”告专诸曰：“不索何获！我真王嗣，当立，吾欲求之…"
+    },
+    {
+      "paragraph": 32,
+      "primary_subject": "吴王阖闾",
+      "disposition": "block",
+      "text_snippet": "光曰：“我身，子之身也。”四月丙子，光伏甲士於窟室，而谒王僚饮。王僚使兵陈於道，…"
+    },
+    {
+      "paragraph": 33,
+      "primary_subject": "吴王阖闾",
+      "disposition": "block",
+      "text_snippet": "季子至，曰：“苟先君无废祀，民人无废主，社稷有奉，乃吾君也。吾敢谁怨乎？哀死事生…"
+    },
+    {
+      "paragraph": 34,
+      "primary_subject": "吴王阖闾",
+      "disposition": "block",
+      "text_snippet": "王阖庐元年，举伍子胥为行人而与谋国事。楚诛伯州犁，其孙伯嚭亡奔吴，吴以为大夫。"
+    },
+    {
+      "paragraph": 35,
+      "primary_subject": "吴王阖闾",
+      "disposition": "block",
+      "text_snippet": "三年，吴王阖庐与子胥、伯嚭将兵伐楚，拔舒，杀吴亡将二公子。光谋欲入郢，将军孙武曰…"
+    },
+    {
+      "paragraph": 36,
+      "primary_subject": "吴王阖闾",
+      "disposition": "block",
+      "text_snippet": "九年，吴王阖庐请伍子胥、孙武曰：“始子之言郢未可入，今果如何？”二子对曰：“楚将…"
+    },
+    {
+      "paragraph": 37,
+      "primary_subject": "吴王阖闾",
+      "disposition": "block",
+      "text_snippet": "十年春，越闻吴王之在郢，国空，乃伐吴。吴使别兵击越。楚告急秦，秦遣兵救楚击吴，吴…"
+    },
+    {
+      "paragraph": 38,
+      "primary_subject": "吴王阖闾",
+      "disposition": "block",
+      "text_snippet": "十五年，孔子相鲁。"
+    },
+    {
+      "paragraph": 39,
+      "primary_subject": "吴王阖闾",
+      "disposition": "block",
+      "text_snippet": "十九年夏，吴伐越，越王句践迎击之槜李。越使死士挑战，三行造吴师，呼，自刭。吴师观…"
+    },
+    {
+      "paragraph": 40,
+      "primary_subject": "吴王夫差",
+      "disposition": "block",
+      "text_snippet": "王夫差元年，以大夫伯嚭为太宰。习战射，常以报越为志。二年，吴王悉精兵以伐越，败之…"
+    },
+    {
+      "paragraph": 41,
+      "primary_subject": "吴王夫差",
+      "disposition": "block",
+      "text_snippet": "七年，吴王夫差闻齐景公死而大臣争宠，新君弱，乃兴师北伐齐。子胥谏曰：“越王句践食…"
+    },
+    {
+      "paragraph": 42,
+      "primary_subject": "吴王夫差",
+      "disposition": "block",
+      "text_snippet": "因留略地於齐鲁之南。九年，为驺伐鲁，，至，与鲁盟乃去。十年，因伐齐而归。"
+    },
+    {
+      "paragraph": 43,
+      "primary_subject": "吴王夫差",
+      "disposition": "block",
+      "text_snippet": "十一年，复北伐齐。"
+    },
+    {
+      "paragraph": 44,
+      "primary_subject": "吴王夫差",
+      "disposition": "block",
+      "text_snippet": "越王句践率其众以朝吴，厚献遗之，吴王喜。唯子胥惧，曰：“是弃吴也。”"
+    },
+    {
+      "paragraph": 45,
+      "primary_subject": "吴王夫差",
+      "disposition": "block",
+      "text_snippet": "谏曰：“越在腹心，今得志於齐，犹石田，无所用。且盘庚之诰有颠越勿遗，商之以兴。”…"
+    },
+    {
+      "paragraph": 46,
+      "primary_subject": "吴王夫差",
+      "disposition": "block",
+      "text_snippet": "齐鲍氏弑齐悼公。吴王闻之，哭於军门外三日，乃从海上攻齐。齐人败吴，吴王乃引兵归。"
+    },
+    {
+      "paragraph": 47,
+      "primary_subject": "吴王夫差",
+      "disposition": "block",
+      "text_snippet": "十三年，吴召鲁、卫之君会於橐皋。"
+    },
+    {
+      "paragraph": 48,
+      "primary_subject": "吴王夫差",
+      "disposition": "block",
+      "text_snippet": "十四年春，吴王北会诸侯於黄池，欲霸中国以全周室。六月丙子，越王句践伐吴。乙酉，越…"
+    },
+    {
+      "paragraph": 49,
+      "primary_subject": "吴王夫差",
+      "disposition": "block",
+      "text_snippet": "十五年，齐田常杀简公。"
+    },
+    {
+      "paragraph": 50,
+      "primary_subject": "吴王夫差",
+      "disposition": "block",
+      "text_snippet": "十八年，越益彊。越王句践率兵复伐败吴师於笠泽。楚灭陈。"
+    },
+    {
+      "paragraph": 51,
+      "primary_subject": "吴王夫差",
+      "disposition": "block",
+      "text_snippet": "二十年，越王句践复伐吴。二十一年，遂围吴。二十三年十一月丁卯，越败吴。越王句践欲…"
+    },
+    {
+      "paragraph": 52,
+      "primary_subject": "太史公曰",
+      "disposition": "exclude",
+      "exclude_reason": "太史公曰",
+      "text_snippet": "太史公曰：孔子言“太伯可谓至德矣，三以天下让，民无得而称焉”。余读春秋古文，乃知…"
+    }
+  ]
+}

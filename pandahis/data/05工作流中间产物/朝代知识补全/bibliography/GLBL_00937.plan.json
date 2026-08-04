@@ -1,0 +1,175 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00937",
+  "写作结构": "正史叙述以《史记·秦始皇本纪》为基，翻译详录覆盖卢生求药、谏言、逃匿及坑儒始末。拓展部分从汉代评论文献中选取对卢生事件的道德批判与理性观察，再配以魏晋仙话传说，呈现卢生从方士到仙人的形象嬗变。",
+  "候选著作": [
+    {
+      "出处": "《史记·秦始皇本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，完整记载卢生求仙、建议微行避鬼、与侯生私议始皇、逃亡及引发坑儒全过程。",
+      "检索词": "卢生 入海 求仙药",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《史记·封禅书》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "涉及秦始皇封禅及齐燕方士群体的活动背景，提及卢生、侯生、徐市等求仙事迹。",
+      "检索词": "卢生 侯生 仙药",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《论衡·道虚篇》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "东汉王充从理性立场批评秦始皇求仙的虚妄，引述卢生等方士事，提供不同于正史的哲学评述。",
+      "检索词": "秦始皇 卢生 求仙药",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《列仙传·卢敖》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "魏晋仙传文献，称卢敖为秦代方士，入海求仙去而不返，后来得道成仙，形成与正史对立的仙化叙事。",
+      "检索词": "卢敖 求仙 列仙传",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《资治通鉴·秦纪二》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋代编年体史书，综合《史记》述卢生事件，无新增原始史源，仅作为通鉴叙事参考。",
+      "检索词": "卢生 侯生 坑儒",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《说苑·反质》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "西汉刘向编录，其中存有秦始皇坑术士的异说片段，或可映照时人对坑儒起因的另一种解释。",
+      "检索词": "秦始皇 坑术士",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《盐铁论·散不足》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "贤良文学批判秦始皇奢侈迷信，涉及遣方士入海求神仙，可资旁证当时人对卢生事迹的社会评论。",
+      "检索词": "秦始皇 求仙 卢生",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·秦始皇本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，完整记载卢生求仙、建议微行避鬼、与侯生私议始皇、逃亡及引发坑儒全过程。",
+      "检索词": "卢生 入海 求仙药",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《史记·封禅书》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "涉及秦始皇封禅及齐燕方士群体的活动背景，提及卢生、侯生、徐市等求仙事迹。",
+      "检索词": "卢生 侯生 仙药",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《论衡·道虚篇》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "东汉王充从理性立场批评秦始皇求仙的虚妄，引述卢生等方士事，提供不同于正史的哲学评述。",
+      "检索词": "秦始皇 卢生 求仙药",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《说苑·反质》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "西汉刘向编录，其中存有秦始皇坑术士的异说片段，或可映照时人对坑儒起因的另一种解释。",
+      "检索词": "秦始皇 坑术士",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《盐铁论·散不足》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "贤良文学批判秦始皇奢侈迷信，涉及遣方士入海求神仙，可资旁证当时人对卢生事迹的社会评论。",
+      "检索词": "秦始皇 求仙 卢生",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《列仙传·卢敖》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "魏晋仙传文献，称卢敖为秦代方士，入海求仙去而不返，后来得道成仙，形成与正史对立的仙化叙事。",
+      "检索词": "卢敖 求仙 列仙传",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《资治通鉴·秦纪二》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋代编年体史书，综合《史记》述卢生事件，无新增原始史源，仅作为通鉴叙事参考。",
+      "检索词": "卢生 侯生 坑儒",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 5,
+    "overall": "B"
+  }
+}

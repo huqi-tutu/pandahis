@@ -1,0 +1,701 @@
+{
+  "volume": "扁鹊仓公列传",
+  "source_file": "01史记_105_扁鹊仓公列传第四十五.txt",
+  "total_paragraphs": 73,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [
+        {
+          "name": "扁鹊",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "扁鹊",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "扁鹊",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "扁鹊",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "扁鹊",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "扁鹊",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "扁鹊",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "扁鹊",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "扁鹊",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "扁鹊",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "扁鹊",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "扁鹊",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "扁鹊",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "扁鹊",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "扁鹊",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "扁鹊",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "扁鹊",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 47,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 48,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 49,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 50,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 51,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 52,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 53,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 54,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 55,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 56,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 57,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 58,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 59,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 60,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 61,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 62,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 63,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 64,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 65,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 66,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 67,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 68,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 69,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 70,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 71,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 72,
+      "owners": [
+        {
+          "name": "仓公",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 73,
+      "owners": [],
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SHIJI_105_01",
+      "史略名称": "扁鹊",
+      "史略简介": "扁鹊",
+      "原文字句": "扁鹊者，勃海郡郑人也，姓秦氏，名越人。少时为人舍长。舍客长桑君过，扁鹊独奇之，常谨遇之。长桑君亦知扁鹊非常人也。出入十馀年，乃呼扁鹊私坐，间与语曰：“我有禁方，年老，欲传与公，公毋泄。”扁鹊曰：“敬诺。”乃出其怀中药予扁鹊：“饮是以上池之水，三十日当知物矣。”乃悉取其禁方书尽与扁鹊。忽然不见，殆非人也。扁鹊以其言饮药三十日，视见垣一方人。以此视病，尽见五藏症结，特以诊脉为名耳。为医或在齐，或在赵。",
+      "史略分类": "庶众",
+      "主要史料出处": "《史记·卷105·扁鹊仓公列传》",
+      "paragraphs": [
+        {
+          "volume": "扁鹊仓公列传",
+          "paragraph_from": 1,
+          "paragraph_to": 17
+        }
+      ],
+      "五级细坐标": "史记·卷105·庶众·01",
+      "六级段落锚点": "[P1-P17]",
+      "原文出处": "扁鹊仓公列传·P1-P17"
+    },
+    {
+      "史略ID": "SHIJI_105_02",
+      "史略名称": "仓公",
+      "史略简介": "仓公",
+      "原文字句": "太仓公者，齐太仓长，临菑人也，姓淳于氏，名意。少而喜医方术。高后八年，更受师同郡元里公乘阳庆。庆年七十馀，无子，使意尽去其故方，更悉以禁方予之，传黄帝、扁鹊之脉书，五色诊病，知人死生，决嫌疑，定可治，及药论，甚精。受之三年，为人治病，决死生多验。然左右行游诸侯，不以家为家，或不为人治病，病家多怨之者。",
+      "史略分类": "庶众",
+      "主要史料出处": "《史记·卷105·扁鹊仓公列传》",
+      "paragraphs": [
+        {
+          "volume": "扁鹊仓公列传",
+          "paragraph_from": 18,
+          "paragraph_to": 72
+        }
+      ],
+      "五级细坐标": "史记·卷105·庶众·02",
+      "六级段落锚点": "[P18-P72]",
+      "原文出处": "扁鹊仓公列传·P18-P72"
+    }
+  ]
+}

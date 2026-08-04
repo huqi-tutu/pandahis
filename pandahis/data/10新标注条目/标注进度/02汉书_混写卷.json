@@ -1,0 +1,123 @@
+{
+  "work": "02汉书",
+  "updated_at": "2026-08-02T13:31:48Z",
+  "volumes": {
+    "042": {
+      "volume_name": "张耳陈馀传",
+      "volume_texture": "interleaved",
+      "reason": "explicit",
+      "noncontiguous_entries": [
+        "张耳",
+        "陈馀"
+      ],
+      "skeleton_file": "02汉书_042_张耳陈馀传第二_skeleton.json",
+      "note": "混写卷：同一人物段落非连续。翻译/质检须按 entry.paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。",
+      "registered_at": "2026-08-02T09:35:50Z"
+    },
+    "052": {
+      "volume_name": "张周赵任申屠传第十二",
+      "volume_texture": "interleaved",
+      "reason": "explicit",
+      "noncontiguous_entries": [
+        "张苍",
+        "周昌",
+        "赵尧"
+      ],
+      "skeleton_file": "02汉书_052_张周赵任申屠传第十二_skeleton.json",
+      "note": "混写卷：同一人物段落非连续。翻译/质检须按 entry.paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。",
+      "registered_at": "2026-08-02T09:51:25Z"
+    },
+    "054": {
+      "volume_name": "淮南衡山济北王传",
+      "volume_texture": "interleaved",
+      "reason": "explicit",
+      "noncontiguous_entries": [
+        "刘安",
+        "刘赐",
+        "刘勃"
+      ],
+      "skeleton_file": "02汉书_054_淮南衡山济北王传第十四_skeleton.json",
+      "note": "混写卷：同一人物段落非连续。翻译/质检须按 entry.paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。",
+      "registered_at": "2026-08-02T09:51:44Z"
+    },
+    "057": {
+      "volume_name": "文三王传",
+      "volume_texture": "interleaved",
+      "reason": "explicit",
+      "noncontiguous_entries": [],
+      "skeleton_file": "02汉书_057_文三王传第十七_skeleton.json",
+      "note": "混写卷：同一人物段落非连续。翻译/质检须按 entry.paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。",
+      "registered_at": "2026-08-02T09:53:19Z"
+    },
+    "062": {
+      "volume_name": "窦田灌韩传",
+      "volume_texture": "interleaved",
+      "reason": "explicit",
+      "noncontiguous_entries": [
+        "窦婴",
+        "田蚡",
+        "灌夫"
+      ],
+      "skeleton_file": "02汉书_062_窦田灌韩传第二十二_skeleton.json",
+      "note": "混写卷：同一人物段落非连续。翻译/质检须按 entry.paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。",
+      "registered_at": "2026-08-02T10:43:37Z"
+    },
+    "065": {
+      "volume_name": "卫青霍去病传",
+      "volume_texture": "interleaved",
+      "reason": "explicit",
+      "noncontiguous_entries": [
+        "卫青",
+        "霍去病"
+      ],
+      "skeleton_file": "02汉书_065_卫青霍去病传第二十五_skeleton.json",
+      "note": "混写卷：同一人物段落非连续。翻译/质检须按 entry.paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。",
+      "registered_at": "2026-08-02T10:45:24Z"
+    },
+    "072": {
+      "volume_name": "张骞李广利传",
+      "volume_texture": "interleaved",
+      "reason": "explicit",
+      "noncontiguous_entries": [
+        "张骞"
+      ],
+      "skeleton_file": "02汉书_072_张骞李广利传第三十一_skeleton.json",
+      "note": "混写卷：同一人物段落非连续。翻译/质检须按 entry.paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。",
+      "registered_at": "2026-08-02T10:52:14Z"
+    },
+    "082": {
+      "volume_name": "傅常郑甘陈段传",
+      "volume_texture": "interleaved",
+      "reason": "explicit",
+      "noncontiguous_entries": [
+        "甘延寿"
+      ],
+      "skeleton_file": "02汉书_082_傅常郑甘陈段传第四十_skeleton.json",
+      "note": "混写卷：同一人物段落非连续。翻译/质检须按 entry.paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。",
+      "registered_at": "2026-08-02T13:31:19Z"
+    },
+    "083": {
+      "volume_name": "隽疏于薛平彭传",
+      "volume_texture": "interleaved",
+      "reason": "explicit",
+      "noncontiguous_entries": [
+        "疏广",
+        "疏受"
+      ],
+      "skeleton_file": "02汉书_083_隽疏于薛平彭传第四十一_skeleton.json",
+      "note": "混写卷：同一人物段落非连续。翻译/质检须按 entry.paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。",
+      "registered_at": "2026-08-02T13:31:31Z"
+    },
+    "084": {
+      "volume_name": "王贡两龚鲍传",
+      "volume_texture": "interleaved",
+      "reason": "explicit",
+      "noncontiguous_entries": [
+        "龚胜"
+      ],
+      "skeleton_file": "02汉书_084_王贡两龚鲍传第四十二_skeleton.json",
+      "note": "混写卷：同一人物段落非连续。翻译/质检须按 entry.paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。",
+      "registered_at": "2026-08-02T13:31:48Z"
+    }
+  }
+}

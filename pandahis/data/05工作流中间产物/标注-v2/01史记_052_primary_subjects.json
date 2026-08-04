@@ -1,0 +1,377 @@
+{
+  "work": "01史记",
+  "vol": "052",
+  "total_paragraphs": 57,
+  "method": "Step1b-α LLM",
+  "paragraphs": [
+    {
+      "paragraph": 1,
+      "primary_subject": "刘肥",
+      "disposition": "block",
+      "text_snippet": "齐悼惠王刘肥者，高祖长庶男也。其母外妇也，曰曹氏。高祖六年，立肥为齐王，食七十城，诸民能齐言者皆予齐王。"
+    },
+    {
+      "paragraph": 2,
+      "primary_subject": "刘肥",
+      "disposition": "block",
+      "text_snippet": "齐王，孝惠帝兄也。孝惠帝二年，齐王入朝。惠帝与齐王燕饮，亢礼如家人。"
+    },
+    {
+      "paragraph": 3,
+      "primary_subject": "刘肥",
+      "disposition": "block",
+      "text_snippet": "吕太后怒，且诛齐王。齐王惧不得脱，乃用其内史勋计，献城阳郡，以为鲁元公主汤沐邑。吕太后喜，乃得辞就国。"
+    },
+    {
+      "paragraph": 4,
+      "primary_subject": "刘襄",
+      "co_owner": "刘肥",
+      "disposition": "block",
+      "text_snippet": "悼惠王即位十三年，以惠帝六年卒。子襄立，是为哀王。"
+    },
+    {
+      "paragraph": 5,
+      "primary_subject": "刘襄",
+      "disposition": "block",
+      "text_snippet": "哀王元年，孝惠帝崩，吕太后称制，天下事皆决於高后。二年，高后立其兄子郦侯吕台为吕王，割齐之济南郡为吕王奉邑。"
+    },
+    {
+      "paragraph": 6,
+      "primary_subject": "刘襄",
+      "disposition": "block",
+      "text_snippet": "哀王三年，其弟章入宿卫於汉，吕太后封为朱虚侯，以吕禄女妻之。后四年，封章弟兴居为东牟侯，皆宿卫长安中。"
+    },
+    {
+      "paragraph": 7,
+      "primary_subject": "刘襄",
+      "disposition": "block",
+      "text_snippet": "哀王八年，高后割齐琅邪郡立营陵侯刘泽为琅邪王。"
+    },
+    {
+      "paragraph": 8,
+      "primary_subject": "刘襄",
+      "disposition": "block",
+      "text_snippet": "其明年，赵王友入朝，幽死于邸。三赵王皆废。高后立诸吕为三王，擅权用事。"
+    },
+    {
+      "paragraph": 9,
+      "primary_subject": "刘肥",
+      "disposition": "block",
+      "text_snippet": "朱虚侯年二十，有气力，忿刘氏不得职。尝入侍高后燕饮，高后令朱虚侯刘章为酒吏。"
+    },
+    {
+      "paragraph": 10,
+      "primary_subject": "刘肥",
+      "disposition": "block",
+      "text_snippet": "顷之，诸吕有一人醉，亡酒，章追，拔剑斩之，而还报曰：“有亡酒一人，臣谨行法斩之。”太后左右皆大惊。"
+    },
+    {
+      "paragraph": 11,
+      "primary_subject": "刘襄",
+      "disposition": "block",
+      "text_snippet": "其明年，高后崩。赵王吕禄为上将军，吕王产为相国，皆居长安中，聚兵以威大臣，欲为乱。朱虚侯章以吕禄女为妇，知其谋，乃使人阴出告其兄齐王，欲令发兵西，朱虚侯、东牟侯为内应，以诛诸吕，因立齐王为帝。"
+    },
+    {
+      "paragraph": 12,
+      "primary_subject": "刘襄",
+      "disposition": "block",
+      "text_snippet": "齐王既闻此计，乃与其舅父驷钧、郎中令祝午、中尉魏勃阴谋发兵。齐相召平闻之，乃发卒卫王宫。"
+    },
+    {
+      "paragraph": 13,
+      "primary_subject": "刘襄",
+      "disposition": "block",
+      "text_snippet": "遂自杀。於是齐王以驷钧为相，魏勃为将军，祝午为内史，悉发国中兵。使祝午东诈琅邪王曰：“吕氏作乱，齐王发兵欲西诛之。"
+    },
+    {
+      "paragraph": 14,
+      "primary_subject": "刘襄",
+      "disposition": "block",
+      "text_snippet": "琅邪王刘泽既见欺，不得反国，乃说齐王曰：“齐悼惠王高皇帝长子，推本言之，而大王高皇帝適长孙也，当立。"
+    },
+    {
+      "paragraph": 15,
+      "primary_subject": "刘襄",
+      "disposition": "block",
+      "text_snippet": "琅邪王既行，齐遂举兵西攻吕国之济南。於是齐哀王遗诸侯王书曰：“高帝平定天下，王诸子弟，悼惠王於齐。"
+    },
+    {
+      "paragraph": 16,
+      "primary_subject": "刘襄",
+      "disposition": "block",
+      "text_snippet": "汉闻齐发兵而西，相国吕产乃遣大将军灌婴东击之。灌婴至荥阳，乃谋曰：“诸吕将兵居关中，欲危刘氏而自立。"
+    },
+    {
+      "paragraph": 17,
+      "primary_subject": "刘襄",
+      "disposition": "block",
+      "text_snippet": "吕禄、吕产欲作乱关中，朱虚侯与太尉勃、丞相平等诛之。朱虚侯首先斩吕产，於是太尉勃等乃得尽诛诸吕。而琅邪王亦从齐至长安。"
+    },
+    {
+      "paragraph": 18,
+      "primary_subject": "刘襄",
+      "disposition": "block",
+      "text_snippet": "大臣议欲立齐王，而琅邪王及大臣曰：“齐王母家驷钧，恶戾，虎而冠者也。"
+    },
+    {
+      "paragraph": 19,
+      "primary_subject": "刘襄",
+      "disposition": "block",
+      "text_snippet": "方以吕氏故几乱天下，今又立齐王，是欲复为吕氏也。代王母家薄氏，君子长者；且代王又亲高帝子，於今见在，且最为长。"
+    },
+    {
+      "paragraph": 20,
+      "primary_subject": "刘襄",
+      "disposition": "block",
+      "text_snippet": "灌婴在荥阳，闻魏勃本教齐王反，既诛吕氏，罢齐兵，使使召责问魏勃。勃曰：“失火之家，岂暇先言大人而后救火乎！”"
+    },
+    {
+      "paragraph": 21,
+      "primary_subject": "刘襄",
+      "disposition": "block",
+      "text_snippet": "魏勃父以善鼓琴见秦皇帝。及魏勃少时，欲求见齐相曹参，家贫无以自通，乃常独早夜埽齐相舍人门外。"
+    },
+    {
+      "paragraph": 22,
+      "primary_subject": "刘襄",
+      "disposition": "block",
+      "text_snippet": "王既罢兵归，而代王来立，是为孝文帝。"
+    },
+    {
+      "paragraph": 23,
+      "primary_subject": "刘襄",
+      "disposition": "block",
+      "text_snippet": "孝文帝元年，尽以高后时所割齐之城阳、琅邪、济南郡复与齐，而徙琅邪王王燕，益封朱虚侯、东牟侯各二千户。"
+    },
+    {
+      "paragraph": 24,
+      "primary_subject": "刘则",
+      "co_owner": "刘襄",
+      "disposition": "block",
+      "text_snippet": "是岁，齐哀王卒，太子则立，是为文王。"
+    },
+    {
+      "paragraph": 25,
+      "primary_subject": "刘则",
+      "disposition": "block",
+      "text_snippet": "齐文王元年，汉以齐之城阳郡立朱虚侯为城阳王，以齐济北郡立东牟侯为济北王。"
+    },
+    {
+      "paragraph": 26,
+      "primary_subject": "刘则",
+      "disposition": "block",
+      "text_snippet": "二年，济北王反，汉诛杀之，地入于汉。"
+    },
+    {
+      "paragraph": 27,
+      "primary_subject": "刘则",
+      "disposition": "block",
+      "text_snippet": "后二年，孝文帝尽封齐悼惠王子罢军等七人皆为列侯。"
+    },
+    {
+      "paragraph": 28,
+      "primary_subject": "刘则",
+      "disposition": "block",
+      "text_snippet": "齐文王立十四年卒，无子，国除，地入于汉。"
+    },
+    {
+      "paragraph": 29,
+      "primary_subject": "刘将闾",
+      "disposition": "block",
+      "text_snippet": "后一岁，孝文帝以所封悼惠王子分齐为王，齐孝王将闾以悼惠王子杨虚侯为齐王。故齐别郡尽以王悼惠王子：子志为济北王，子辟光为济南王，子贤为菑川王，子卬为胶西王，子雄渠为胶东王，与城阳、齐凡七王。"
+    },
+    {
+      "paragraph": 30,
+      "primary_subject": "刘将闾",
+      "disposition": "block",
+      "text_snippet": "齐孝王十一年，吴王濞、楚王戊反，兴兵西，告诸侯曰“将诛汉贼臣晁错以安宗庙”。胶西、胶东、菑川、济南皆擅发兵应吴楚。"
+    },
+    {
+      "paragraph": 31,
+      "primary_subject": "刘将闾",
+      "disposition": "block",
+      "text_snippet": "齐初围急，阴与三国通谋，约未定，会闻路中大夫从汉来，喜，及其大臣乃复劝王毋下三国。居无何，汉将栾布、平阳侯等兵至齐，击破三国兵，解齐围。"
+    },
+    {
+      "paragraph": 32,
+      "primary_subject": "刘将闾",
+      "disposition": "block",
+      "text_snippet": "已而复闻齐初与三国有谋，将欲移兵伐齐。齐孝王惧，乃饮药自杀。景帝闻之，以为齐首善，以迫劫有谋，非其罪也，乃立孝王太子寿为齐王，是为懿王，续齐后。"
+    },
+    {
+      "paragraph": 33,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "齐厉王，其母曰纪太后。太后取其弟纪氏女为厉王后。王不爱纪氏女。"
+    },
+    {
+      "paragraph": 34,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "王因与其姊翁主奸。"
+    },
+    {
+      "paragraph": 35,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "齐有宦者徐甲，入事汉皇太后。皇太后有爱女曰脩成君，脩成君非刘氏，太后怜之。"
+    },
+    {
+      "paragraph": 36,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "主父偃方幸於天子，用事，因言：“齐临菑十万户，市租千金，人众殷富，巨於长安，此非天子亲弟爱子不得王此。"
+    },
+    {
+      "paragraph": 37,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "是时赵王惧主父偃一出废齐，恐其渐疏骨肉，乃上书言偃受金及轻重之短。"
+    },
+    {
+      "paragraph": 38,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "天子亦既囚偃。公孙弘言：“齐王以忧死毋后，国入汉，非诛偃无以塞天下之望。”"
+    },
+    {
+      "paragraph": 39,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "遂诛偃。"
+    },
+    {
+      "paragraph": 40,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "齐厉王立五年死，毋后，国入于汉。"
+    },
+    {
+      "paragraph": 41,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "齐悼惠王后尚有二国，城阳及菑川。菑川地比齐。天子怜齐，为悼惠王冢园在郡，割临菑东环悼惠王冢园邑尽以予菑川，以奉悼惠王祭祀。"
+    },
+    {
+      "paragraph": 42,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "城阳景王章，齐悼惠王子，以朱虚侯与大臣共诛诸吕，而章身首先斩相国吕王产於未央宫。"
+    },
+    {
+      "paragraph": 43,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "共王八年，徙王淮南。四年，复还王城阳。凡三十三年卒，子延立，是为顷王。"
+    },
+    {
+      "paragraph": 44,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "顷王二十六年卒，子义立，是为敬王。敬王九年卒，子武立，是为惠王。惠王十一年卒，子顺立，是为荒王。"
+    },
+    {
+      "paragraph": 45,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "济北王兴居，齐悼惠王子，以东牟侯助大臣诛诸吕，功少。及文帝从代来，兴居曰：“请与太仆婴入清宫。”"
+    },
+    {
+      "paragraph": 46,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "孝文帝二年，以齐之济北郡立兴居为济北王，与城阳王俱立。立二年，反。"
+    },
+    {
+      "paragraph": 47,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "始大臣诛吕氏时，朱虚侯功尤大，许尽以赵地王朱虚侯，尽以梁地王东牟侯。及孝文帝立，闻朱虚、东牟之初欲立齐王，故绌其功。"
+    },
+    {
+      "paragraph": 48,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "后十三年，文帝十六年，复以齐悼惠王子安都侯志为济北王。十一年，吴楚反时，志坚守，不与诸侯合谋。吴楚已平，徙志王菑川。"
+    },
+    {
+      "paragraph": 49,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "济南王辟光，齐悼惠王子，以勒侯孝文十六年为济南王。十一年，与吴楚反。"
+    },
+    {
+      "paragraph": 50,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "汉击破，杀辟光，以济南为郡，地入于汉。"
+    },
+    {
+      "paragraph": 51,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "菑川王贤，齐悼惠王子，以武城侯文帝十六年为菑川王。十一年，与吴楚反，汉击破，杀贤。"
+    },
+    {
+      "paragraph": 52,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "天子因徙济北王志王菑川。志亦齐悼惠王子，以安都侯王济北。菑川王反，毋后，乃徙济北王王菑川。凡立三十五年卒，谥为懿王。子建代立，是为靖王。"
+    },
+    {
+      "paragraph": 53,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "二十年卒，子遗代立，是为顷王。三十六年卒，子终古立，是为思王。二十八年卒，子尚立，是为孝王。五年卒，子横立，至建始三年，十一岁，卒。"
+    },
+    {
+      "paragraph": 54,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "胶西王卬，齐悼惠王子，以昌平侯文帝十六年为胶西王。十一年，与吴楚反。"
+    },
+    {
+      "paragraph": 55,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "汉击破，杀卬，地入于汉，为胶西郡。"
+    },
+    {
+      "paragraph": 56,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "胶东王雄渠，齐悼惠王子，以白石侯文帝十六年为胶东王。十一年，与吴楚反，汉击破，杀雄渠，地入于汉，为胶东郡。"
+    },
+    {
+      "paragraph": 57,
+      "primary_subject": "太史公曰",
+      "disposition": "exclude",
+      "exclude_reason": "太史公曰",
+      "text_snippet": "太史公曰：诸侯大国无过齐悼惠王。以海内初定，子弟少，激秦之无尺土封，故大封同姓，以填万民之心。"
+    }
+  ]
+}

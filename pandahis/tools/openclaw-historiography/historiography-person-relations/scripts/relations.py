@@ -124,17 +124,25 @@ def main() -> int:
 
         if args.cmd == "compose":
             persons = rl.list_dynasty_persons(args.dynasty, args.index)
+            failed = 0
             for e in persons[: args.max]:
                 eid = str(e.get("史略ID", "")).strip()
-                rl.compose_one(
-                    entry_id=eid,
-                    index_path=args.index,
-                    dry_run=args.dry_run,
-                    sync_db=args.sync,
-                    sql_out=args.sql_out,
-                    mysql=mysql,
-                )
-            return 0
+                name = str(e.get("史略名称", "")).strip()
+                try:
+                    rl.compose_one(
+                        entry_id=eid,
+                        index_path=args.index,
+                        dry_run=args.dry_run,
+                        sync_db=args.sync,
+                        sql_out=args.sql_out,
+                        mysql=mysql,
+                    )
+                except Exception as exc:
+                    failed += 1
+                    print(f"❌ {eid} {name}: {exc}", file=sys.stderr)
+            if not args.dry_run:
+                rl.write_dynasty_manifest(args.dynasty, index_path=args.index)
+            return 1 if failed else 0
 
         if args.cmd == "import-one":
             rl.import_one(

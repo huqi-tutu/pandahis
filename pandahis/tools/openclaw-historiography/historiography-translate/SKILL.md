@@ -28,7 +28,7 @@ description: >
 3. Phase1     → draft_mother（仅母本，无他书）
 4. verify_mother → 必现词 + 覆盖 + 禁他书
 5. Phase2     → draft_enrich（锚点补异说/背景/细节，禁重复母本）；**先写笼统引入（60–250 字）再进正文**
-6. postprocess → 段落合并、去加粗、归因清洗、尾部退场补全（自动）
+6. postprocess → 段落合并、去加粗、归因清洗、**条件性**尾部退场补全（仅母本缺退场时；见规则二）
 7. verify     → 全文 + plan 出处 + **L1 覆盖概率** +（长文灰区）**L2 语义复核**
 8. aggregate  → 史略翻译_汇总.json
 9. sync       → 自动 upsert 线上 historical_box_detail（`TRANSLATE_AUTO_SYNC=1` 默认开）
@@ -83,6 +83,16 @@ python3 ../../scripts/import_box_translate_json.py
 仅当相对母本有 **异说 / 冲突观点 / 必要背景 / 母本未载细节 / 评价差异** 时 `采用:true`。  
 **禁止**把母本已述事实换说法再引他书。
 
+## 本传主退场与交接段（写作提示 · 必读）
+
+与 v2 标注配套：交接可双挂；译文按**本传主镜头**，同篇退场不重复。
+
+1. **先检后补**：Phase2 动笔前对照 Phase1——若正文已译出本传主崩/薨/卒/自沈等 → **禁止**再写尾部退场补叙。
+2. **缺则补一句**：仅当 `本传缺漏补全` / plan 项 `本传退场/收束` 且母本段落域确无退场 → 篇末 **1 句**收束，优先采用 snippet 白话顺译，不扩写。
+3. **交接不对称**：后君开篇遇「前君卒+本君立」→ 前君侧一两句过渡，不展开别人故事；前君收尾详写退场，后君「立」点到为止。
+
+SSOT：[`翻译规则.md`](../historiography-compose/references/翻译规则.md) · 规则二「本传主退场完整性」「交接双挂段 · 角色不对称」。
+
 ## 环境变量
 
 | 变量 | 默认 | 说明 |
@@ -110,6 +120,7 @@ python3 ../../scripts/import_box_translate_json.py
 | `TRANSLATE_COVERAGE_L2_MAX_CLAIMS` | `24` | L1 灰区路径单次最多复核弱覆盖单元数 |
 | `TRANSLATE_PLAN_MIN_RATIO` | `0.95` | plan 条数 / 母本分句 |
 | `HIST_LLM_PROVIDER` / `DEEPSEEK_API_KEY` | — | LLM |
+| **模型（写死）** | `deepseek-v4-pro` | `lib/openclaw.run_agent_turn` 入口调用 `ensure_deepseek_v4_pro()` |
 
 ## 相关 Skill
 

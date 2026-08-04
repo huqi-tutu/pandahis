@@ -1,0 +1,553 @@
+{
+  "volume": "韩彭英卢吴传",
+  "source_file": "02汉书_044_韩彭英卢吴传第四.txt",
+  "total_paragraphs": 51,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "淮阴侯韩信",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "淮阴侯韩信",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "淮阴侯韩信",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "淮阴侯韩信",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "淮阴侯韩信",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "淮阴侯韩信",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "淮阴侯韩信",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "淮阴侯韩信",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "淮阴侯韩信",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "淮阴侯韩信",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "淮阴侯韩信",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "淮阴侯韩信",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "淮阴侯韩信",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "淮阴侯韩信",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "淮阴侯韩信",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "淮阴侯韩信",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "淮阴侯韩信",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "淮阴侯韩信",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "淮阴侯韩信",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "淮阴侯韩信",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "淮阴侯韩信",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "淮阴侯韩信",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "彭越",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "彭越",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "彭越",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "彭越",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "彭越",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "彭越",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "英布",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "英布",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "英布",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "英布",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "英布",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "英布",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "英布",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "英布",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "英布",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "英布",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "英布",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "英布",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "英布",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "卢绾",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "卢绾",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "卢绾",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [
+        {
+          "name": "卢绾",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 47,
+      "owners": [
+        {
+          "name": "卢绾",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 48,
+      "owners": [
+        {
+          "name": "卢绾",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 49,
+      "owners": [
+        {
+          "name": "卢绾",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 50,
+      "owners": [
+        {
+          "name": "吴芮",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 51,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HANSHU_044_01",
+      "史略名称": "淮阴侯韩信",
+      "史略简介": "淮阴侯韩信",
+      "原文字句": "韩信，淮阴人也。家贫无行，不得推择为吏，又不能治生为商贾，常从人寄食。其母死无以葬，乃行营高燥地，令傍可置万家者。信从下乡南昌亭长食，亭长妻苦之，乃晨炊蓐食。食时信往，不为具食。信亦知其意，自绝去。至城下钓，有一漂母哀之，饭信，意漂数十日。信谓漂母曰：“吾必重报母。”母怒曰：“大丈夫不能自食，吾哀王孙而进食，岂望报乎！”淮阴少年又侮信曰：“虽长大，好带刀剑，怯耳。”众辱信曰：“能死，刺我；不能，出",
+      "史略分类": "武将",
+      "主要史料出处": "《02汉书·卷44·韩彭英卢吴传》",
+      "paragraphs": [
+        {
+          "volume": "韩彭英卢吴传",
+          "paragraph_from": 2,
+          "paragraph_to": 23
+        }
+      ],
+      "五级细坐标": "汉书·卷044·武将·01",
+      "六级段落锚点": "[P2-P23]",
+      "原文出处": "韩彭英卢吴传·P2-P23"
+    },
+    {
+      "史略ID": "HANSHU_044_02",
+      "史略名称": "彭越",
+      "史略简介": "彭越",
+      "原文字句": "彭越字仲，昌邑人也。常渔巨野泽中，为盗。陈胜起，或谓越曰：“豪桀相立畔秦，仲可效之。越曰：“两龙方斗，且待之。”",
+      "史略分类": "武将",
+      "主要史料出处": "《02汉书·卷44·韩彭英卢吴传》",
+      "paragraphs": [
+        {
+          "volume": "韩彭英卢吴传",
+          "paragraph_from": 24,
+          "paragraph_to": 29
+        }
+      ],
+      "五级细坐标": "汉书·卷044·武将·02",
+      "六级段落锚点": "[P24-P29]",
+      "原文出处": "韩彭英卢吴传·P24-P29"
+    },
+    {
+      "史略ID": "HANSHU_044_03",
+      "史略名称": "英布",
+      "史略简介": "英布",
+      "原文字句": "黥布，六人也，姓英氏。少时客相之，当刑而王。及壮，坐法黥，布欣然笑曰：“人相我当刑而王，几是乎？”人有闻者，共戏笑之。布以论输骊山，骊山之徒数十万人，布皆与其徒长豪桀交通，乃率其曹耦，亡之江中为群盗。",
+      "史略分类": "武将",
+      "主要史料出处": "《02汉书·卷44·韩彭英卢吴传》",
+      "paragraphs": [
+        {
+          "volume": "韩彭英卢吴传",
+          "paragraph_from": 30,
+          "paragraph_to": 42
+        }
+      ],
+      "五级细坐标": "汉书·卷044·武将·03",
+      "六级段落锚点": "[P30-P42]",
+      "原文出处": "韩彭英卢吴传·P30-P42"
+    },
+    {
+      "史略ID": "HANSHU_044_04",
+      "史略名称": "卢绾",
+      "史略简介": "卢绾",
+      "原文字句": "卢绾，丰人也，与高祖同里。绾亲与高祖太上皇相爱，及生男，高祖、绾同日生，里中持羊、酒贺两家。及高祖、绾壮，学书，又相爱也。里中嘉两家亲相爱，生子同日，壮又相爱，复贺羊、酒。高祖为布衣时，有吏事避宅，绾常随上下。及高祖初起沛，绾以客从，入汉为将军，常侍中。从东击项籍，以太尉常从，出入卧内，衣被食饮赏赐，群臣莫敢望。虽萧、曹等，特以事见礼，至其亲幸，莫及绾者。封为长安侯。长安，故咸阳也。",
+      "史略分类": "武将",
+      "主要史料出处": "《02汉书·卷44·韩彭英卢吴传》",
+      "paragraphs": [
+        {
+          "volume": "韩彭英卢吴传",
+          "paragraph_from": 43,
+          "paragraph_to": 49
+        }
+      ],
+      "五级细坐标": "汉书·卷044·武将·04",
+      "六级段落锚点": "[P43-P49]",
+      "原文出处": "韩彭英卢吴传·P43-P49"
+    },
+    {
+      "史略ID": "HANSHU_044_05",
+      "史略名称": "吴芮",
+      "史略简介": "吴芮",
+      "原文字句": "吴芮，秦时番阳令也，甚得江湖间民心，号曰番君。天下之初叛秦也，黥布归芮，芮妻之，因率越人举兵以应诸侯。沛公攻南阳，乃遇芮之将梅鋗，与偕攻析、郦，降之。及项羽相王，以芮率百越佐诸侯，从入关，故立芮为衡山王，都邾。其将梅鋗功多，封十万户，为列侯。项籍死，上以鋗有功，从入武关，故德芮，徙为长沙王，都临湘，一年薨，谥曰文王，子成王臣嗣。薨，子哀王回嗣。薨，子共王右嗣。薨，子靖王差嗣。孝文后七年薨，无子，国",
+      "史略分类": "武将",
+      "主要史料出处": "《02汉书·卷44·韩彭英卢吴传》",
+      "paragraphs": [
+        {
+          "volume": "韩彭英卢吴传",
+          "paragraph_from": 50,
+          "paragraph_to": 50
+        }
+      ],
+      "五级细坐标": "汉书·卷044·武将·05",
+      "六级段落锚点": "[P50]",
+      "原文出处": "韩彭英卢吴传·P50"
+    }
+  ]
+}

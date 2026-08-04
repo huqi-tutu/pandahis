@@ -1,0 +1,30 @@
+{
+  "work": "02汉书",
+  "vol": "094",
+  "volume_name": "王商史丹傅喜传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "王商",
+      "category": "文臣",
+      "rationale": "卷名首列人物，西汉成帝时丞相，以行政辅政为主轴，属文臣列传合传之一。"
+    },
+    {
+      "name": "史丹",
+      "category": "文臣",
+      "rationale": "卷名次列人物，西汉元帝、成帝时近臣，以谏诤辅政为事，属文臣列传合传之一。"
+    },
+    {
+      "name": "傅喜",
+      "category": "文臣",
+      "rationale": "卷名第三人物，西汉哀帝时大司马，以正直辅政见称，属文臣列传合传之一。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

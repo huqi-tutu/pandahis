@@ -1,0 +1,42 @@
+{
+  "work": "02汉书",
+  "vol": "104",
+  "volume_name": "货殖传",
+  "volume_type_guess": "列传",
+  "volume_arc": "C",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "范蠡",
+      "category": "庶众",
+      "rationale": "《货殖传》用户指定史略主人公，叙事块 P6–P6。"
+    },
+    {
+      "name": "白圭",
+      "category": "庶众",
+      "rationale": "《货殖传》用户指定史略主人公，叙事块 P8–P8。"
+    },
+    {
+      "name": "猗顿",
+      "category": "庶众",
+      "rationale": "《货殖传》用户指定史略主人公，叙事块 P9–P9。"
+    },
+    {
+      "name": "蜀卓氏",
+      "category": "庶众",
+      "rationale": "《货殖传》用户指定史略主人公，叙事块 P14–P14。"
+    },
+    {
+      "name": "罗裒",
+      "category": "庶众",
+      "rationale": "《货殖传》用户指定史略主人公，叙事块 P16–P16。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "共段总述"
+  ]
+}

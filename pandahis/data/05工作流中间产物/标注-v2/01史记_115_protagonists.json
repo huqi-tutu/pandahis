@@ -1,0 +1,19 @@
+{
+  "work": "01史记",
+  "vol": "115",
+  "volume_name": "朝鲜列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "fanzuo",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "朝鲜",
+      "category": "蕃祚",
+      "rationale": "《朝鲜列传》为史记四夷传之一，卷名所指为边陲政权/部族集体主题，主轴为朝鲜国（卫氏朝鲜）之立国至灭亡，非单一人君，符合蕃祚卷型准入。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

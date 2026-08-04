@@ -1,0 +1,35 @@
+{
+  "work": "02汉书",
+  "vol": "050",
+  "volume_name": "张陈王周传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "张良",
+      "category": "文臣",
+      "rationale": "卷名『张陈王周传』首字，西汉开国功臣，以谋略辅佐高祖，属文臣主轴。"
+    },
+    {
+      "name": "陈平",
+      "category": "文臣",
+      "rationale": "卷名『张陈王周传』第二人，西汉开国功臣，以奇计佐高祖定天下，属文臣主轴。"
+    },
+    {
+      "name": "王陵",
+      "category": "文臣",
+      "rationale": "卷名『张陈王周传』第三人，西汉开国功臣，官至右丞相，属文臣主轴。"
+    },
+    {
+      "name": "周勃",
+      "category": "武将",
+      "rationale": "卷名『张陈王周传』末字，西汉开国功臣，以军功封绛侯，平定诸吕，属武将主轴。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "work": "02汉书",
+  "vol": "072",
+  "volume_name": "张骞李广利传",
+  "volume_type_guess": "列传",
+  "volume_arc": "C",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "张骞",
+      "category": "文臣",
+      "rationale": "《张骞李广利传》卷名首列人物，以出使西域、开拓丝绸之路的外交事迹为主轴，属外交仕宦型文臣。"
+    },
+    {
+      "name": "李广利",
+      "category": "武将",
+      "rationale": "《张骞李广利传》卷名并列人物，以征伐大宛等军功征战事迹为主轴，属将帅型武将。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

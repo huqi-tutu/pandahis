@@ -1,0 +1,19 @@
+{
+  "work": "01史记",
+  "vol": "048",
+  "volume_name": "陈涉世家",
+  "volume_type_guess": "世家",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "陈涉",
+      "category": "庶众",
+      "rationale": "《陈涉世家》以秦末起义领袖陈涉（陈胜）为主轴，属起义世家类型。陈涉虽自立为王，但非天下共主，亦非封国世袭君主，按史略分类v4准入标准，起义未成帝业者应归庶众。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

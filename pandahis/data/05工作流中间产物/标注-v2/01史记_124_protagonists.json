@@ -1,0 +1,18 @@
+{
+  "work": "01史记",
+  "vol": "124",
+  "volume_name": "游侠列传",
+  "narrative_mode": "hezhuan",
+  "protagonists": [
+    {
+      "name": "朱家",
+      "category": "庶众",
+      "rationale": "汉初任侠，本卷首传。"
+    },
+    {
+      "name": "郭解",
+      "category": "庶众",
+      "rationale": "轵县游侠，本卷末传。"
+    }
+  ]
+}

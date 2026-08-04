@@ -1,0 +1,24 @@
+{
+  "work": "01史记",
+  "vol": "079",
+  "volume_name": "范睢蔡泽列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "范睢",
+      "category": "文臣",
+      "rationale": "卷名首列人物，以游说、外交、辅政为叙事主轴，属文臣列传合传主人公。"
+    },
+    {
+      "name": "蔡泽",
+      "category": "文臣",
+      "rationale": "卷名次列人物，与范睢并列合传，以游说、外交、辅政为叙事主轴，属文臣列传合传主人公。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

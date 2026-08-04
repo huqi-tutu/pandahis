@@ -1,0 +1,113 @@
+{
+  "work": "01史记",
+  "vol": "074",
+  "total_paragraphs": 18,
+  "method": "Step1b-α LLM",
+  "paragraphs": [
+    {
+      "paragraph": 1,
+      "primary_subject": "太史公曰",
+      "disposition": "exclude",
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph": 2,
+      "primary_subject": "论赞",
+      "disposition": "exclude",
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 3,
+      "primary_subject": "孟子",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 4,
+      "primary_subject": "孟子",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 5,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 6,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 7,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 8,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 9,
+      "primary_subject": "论赞",
+      "disposition": "exclude",
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 10,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 11,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 12,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 13,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 14,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 15,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 16,
+      "primary_subject": "荀卿",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 17,
+      "primary_subject": "论赞",
+      "disposition": "exclude",
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 18,
+      "primary_subject": "论赞",
+      "disposition": "exclude",
+      "exclude_reason": "论赞"
+    }
+  ]
+}

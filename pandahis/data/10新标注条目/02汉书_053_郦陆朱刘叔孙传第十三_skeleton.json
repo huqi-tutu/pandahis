@@ -1,0 +1,427 @@
+{
+  "volume": "郦陆朱刘叔孙传",
+  "source_file": "02汉书_053_郦陆朱刘叔孙传第十三.txt",
+  "total_paragraphs": 37,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "郦食其",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "郦食其",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "郦食其",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "郦食其",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "郦食其",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "郦食其",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "郦食其",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "郦食其",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "陆贾",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "陆贾",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "陆贾",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "陆贾",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "陆贾",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "陆贾",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "陆贾",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "朱建",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "朱建",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "朱建",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "朱建",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "朱建",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "刘敬",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "刘敬",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "刘敬",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "刘敬",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "刘敬",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "叔孙通",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "叔孙通",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "叔孙通",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "叔孙通",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "叔孙通",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "叔孙通",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "叔孙通",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "叔孙通",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "叔孙通",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "叔孙通",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HANSHU_053_01",
+      "史略名称": "郦食其",
+      "史略简介": "郦食其",
+      "原文字句": "郦食其，陈留高阳人也。好读书，家贫落魄，无衣食业。为里监门，然吏县中贤豪不敢役，皆谓之狂生。",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷53·郦陆朱刘叔孙传》",
+      "paragraphs": [
+        {
+          "volume": "郦陆朱刘叔孙传",
+          "paragraph_from": 2,
+          "paragraph_to": 9
+        }
+      ],
+      "五级细坐标": "汉书·卷053·文臣·01",
+      "六级段落锚点": "[P2-P9]",
+      "原文出处": "郦陆朱刘叔孙传·P2-P9"
+    },
+    {
+      "史略ID": "HANSHU_053_02",
+      "史略名称": "陆贾",
+      "史略简介": "陆贾",
+      "原文字句": "陆贾，楚人也。以客从高祖定天下，名有口辩，居左右，常使诸侯。",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷53·郦陆朱刘叔孙传》",
+      "paragraphs": [
+        {
+          "volume": "郦陆朱刘叔孙传",
+          "paragraph_from": 10,
+          "paragraph_to": 16
+        }
+      ],
+      "五级细坐标": "汉书·卷053·文臣·02",
+      "六级段落锚点": "[P10-P16]",
+      "原文出处": "郦陆朱刘叔孙传·P10-P16"
+    },
+    {
+      "史略ID": "HANSHU_053_03",
+      "史略名称": "朱建",
+      "史略简介": "朱建",
+      "原文字句": "朱建，楚人也。故尝为淮南王黥布相，有罪去，后复事布。布欲反时，问建，建谏止之。布不听，听梁父侯，遂反。汉既诛布，闻建谏之，高祖赐建号平原君，家徙长安。",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷53·郦陆朱刘叔孙传》",
+      "paragraphs": [
+        {
+          "volume": "郦陆朱刘叔孙传",
+          "paragraph_from": 17,
+          "paragraph_to": 21
+        }
+      ],
+      "五级细坐标": "汉书·卷053·文臣·03",
+      "六级段落锚点": "[P17-P21]",
+      "原文出处": "郦陆朱刘叔孙传·P17-P21"
+    },
+    {
+      "史略ID": "HANSHU_053_04",
+      "史略名称": "刘敬",
+      "史略简介": "刘敬",
+      "原文字句": "娄敬，齐人也。汉五年，戍陇西，过雒阳，高帝在焉。敬脱挽辂，见齐人虞将军曰：“臣愿见上言便宜。”虞将军欲与鲜衣，敬曰：“臣衣帛，衣帛见，衣褐，衣褐见，不敢易衣。”虞将军入言上，上召见，赐食。",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷53·郦陆朱刘叔孙传》",
+      "paragraphs": [
+        {
+          "volume": "郦陆朱刘叔孙传",
+          "paragraph_from": 22,
+          "paragraph_to": 26
+        }
+      ],
+      "五级细坐标": "汉书·卷053·文臣·04",
+      "六级段落锚点": "[P22-P26]",
+      "原文出处": "郦陆朱刘叔孙传·P22-P26"
+    },
+    {
+      "史略ID": "HANSHU_053_05",
+      "史略名称": "叔孙通",
+      "史略简介": "叔孙通",
+      "原文字句": "叔孙通，薛人也。秦时以文学征，待诏博士。数岁，陈胜起，二世召博士诸儒生问曰：“楚戍卒攻蕲入陈，于公何如？”博士诸生三十余人前曰：“人臣无将，将则反，罪死无赦。愿陛下急发兵击之。”二世怒，作色。通前曰：“诸生言皆非。夫天下为一家，毁郡县城，铄其兵，视天下弗复用。且明主在上，法令具于下，吏人人奉职，四方辐辏，安有反者！此特群盗鼠窃狗盗，何足置齿牙间哉？郡守尉今捕诛，何足忧？”二世喜，尽问诸生，诸生或言",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷53·郦陆朱刘叔孙传》",
+      "paragraphs": [
+        {
+          "volume": "郦陆朱刘叔孙传",
+          "paragraph_from": 27,
+          "paragraph_to": 36
+        }
+      ],
+      "五级细坐标": "汉书·卷053·文臣·05",
+      "六级段落锚点": "[P27-P36]",
+      "原文出处": "郦陆朱刘叔孙传·P27-P36"
+    }
+  ]
+}

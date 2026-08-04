@@ -1,0 +1,46 @@
+{
+  "work": "01史记",
+  "vol": "071",
+  "total_paragraphs": 35,
+  "volume_subtype": "hezhuan",
+  "derived_from": "01史记_071_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 28,
+      "paragraph_to": 34,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 35,
+      "paragraph_to": 35,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "樗里子",
+      "category": "宗戚",
+      "paragraph_from": 1,
+      "paragraph_to": 7,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "樗里子者，名疾，秦惠王之弟也，与惠王异母。母，韩女也。樗里子滑稽多智，秦人号曰“",
+        "close_paragraph": 7,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P1–P7"
+      }
+    },
+    {
+      "name": "甘茂",
+      "category": "文臣",
+      "paragraph_from": 8,
+      "paragraph_to": 27,
+      "boundary_evidence": {
+        "open_paragraph": 8,
+        "open_phrase": "甘茂者，下蔡人也。事下蔡史举先生，学百家之术。因张仪、樗里子而求见秦惠王。王见而",
+        "close_paragraph": 27,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P8–P27"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

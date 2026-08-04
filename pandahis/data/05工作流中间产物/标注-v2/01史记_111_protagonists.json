@@ -1,0 +1,24 @@
+{
+  "work": "01史记",
+  "vol": "111",
+  "volume_name": "卫将军骠骑列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "卫青",
+      "category": "武将",
+      "rationale": "卷名『卫将军骠骑列传』，卫青为卫将军，是西汉抗击匈奴的主帅，以军功征战为卷主轴，符合武将准入标准。"
+    },
+    {
+      "name": "霍去病",
+      "category": "武将",
+      "rationale": "卷名『卫将军骠骑列传』，霍去病为骠骑将军，与卫青并列合传，以军功征战为卷主轴，符合武将准入标准。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

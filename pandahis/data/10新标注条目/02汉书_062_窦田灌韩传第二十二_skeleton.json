@@ -1,0 +1,610 @@
+{
+  "volume": "窦田灌韩传",
+  "source_file": "02汉书_062_窦田灌韩传第二十二.txt",
+  "total_paragraphs": 52,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "interleaved",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "窦婴",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "窦婴",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "窦婴",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "窦婴",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "窦婴",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "田蚡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "田蚡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "田蚡",
+          "category": "文臣"
+        },
+        {
+          "name": "窦婴",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "田蚡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "田蚡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "田蚡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "窦婴",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "灌夫",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "灌夫",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "灌夫",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "灌夫",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "灌夫",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "窦婴",
+          "category": "文臣"
+        },
+        {
+          "name": "灌夫",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "田蚡",
+          "category": "文臣"
+        },
+        {
+          "name": "灌夫",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "田蚡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "田蚡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "田蚡",
+          "category": "文臣"
+        },
+        {
+          "name": "灌夫",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "窦婴",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "田蚡",
+          "category": "文臣"
+        },
+        {
+          "name": "窦婴",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "田蚡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "窦婴",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "田蚡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "田蚡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "韩安国",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "韩安国",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "韩安国",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "韩安国",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "韩安国",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "韩安国",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "韩安国",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "韩安国",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "韩安国",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "韩安国",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "韩安国",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "韩安国",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "韩安国",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "韩安国",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "韩安国",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "韩安国",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [
+        {
+          "name": "韩安国",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 47,
+      "owners": [
+        {
+          "name": "韩安国",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 48,
+      "owners": [
+        {
+          "name": "韩安国",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 49,
+      "owners": [
+        {
+          "name": "韩安国",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 50,
+      "owners": [
+        {
+          "name": "韩安国",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 51,
+      "owners": [
+        {
+          "name": "韩安国",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 52,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HANSHU_062_01",
+      "史略名称": "窦婴",
+      "史略简介": "窦婴",
+      "原文字句": "窦婴字王孙，孝文皇后从兄子也。父世观津人也。喜宾客。孝文时为吴相，病免。孝景即位，为詹事。",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷62·窦田灌韩传》",
+      "paragraphs": [
+        {
+          "volume": "窦田灌韩传",
+          "paragraph_from": 2,
+          "paragraph_to": 6
+        },
+        {
+          "volume": "窦田灌韩传",
+          "paragraph_from": 9,
+          "paragraph_to": 9
+        },
+        {
+          "volume": "窦田灌韩传",
+          "paragraph_from": 13,
+          "paragraph_to": 13
+        },
+        {
+          "volume": "窦田灌韩传",
+          "paragraph_from": 19,
+          "paragraph_to": 19
+        },
+        {
+          "volume": "窦田灌韩传",
+          "paragraph_from": 24,
+          "paragraph_to": 25
+        },
+        {
+          "volume": "窦田灌韩传",
+          "paragraph_from": 27,
+          "paragraph_to": 27
+        }
+      ],
+      "五级细坐标": "汉书·卷062·文臣·01",
+      "六级段落锚点": "[P2-P6],[P9],[P13],[P19],[P24-P25],[P27]",
+      "原文出处": "窦田灌韩传·P2-P6,P9,P13,P19,P24-P25,P27"
+    },
+    {
+      "史略ID": "HANSHU_062_02",
+      "史略名称": "田蚡",
+      "史略简介": "田蚡",
+      "原文字句": "田蚡，孝景王皇后同母弟也，生长陵。窦婴已为大将军，方盛，蚡为诸曹郎，未贵，往来侍酒婴所，跪起如子姓。及孝景晚节，蚡益贵幸，为中大夫。辩有口，学《盘盂》诸书，王皇后贤之。",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷62·窦田灌韩传》",
+      "paragraphs": [
+        {
+          "volume": "窦田灌韩传",
+          "paragraph_from": 7,
+          "paragraph_to": 12
+        },
+        {
+          "volume": "窦田灌韩传",
+          "paragraph_from": 20,
+          "paragraph_to": 23
+        },
+        {
+          "volume": "窦田灌韩传",
+          "paragraph_from": 25,
+          "paragraph_to": 26
+        },
+        {
+          "volume": "窦田灌韩传",
+          "paragraph_from": 28,
+          "paragraph_to": 29
+        }
+      ],
+      "五级细坐标": "汉书·卷062·文臣·02",
+      "六级段落锚点": "[P7-P12],[P20-P23],[P25-P26],[P28-P29]",
+      "原文出处": "窦田灌韩传·P7-P12,P20-P23,P25-P26,P28-P29"
+    },
+    {
+      "史略ID": "HANSHU_062_03",
+      "史略名称": "灌夫",
+      "史略简介": "灌夫",
+      "原文字句": "灌夫字仲孺，颍阴人也。父张孟，尝为颍阴侯灌婴舍人，得幸，因进之，至二千石，故蒙灌氏姓为灌孟。吴、楚反时，颍阴侯灌婴为将军，属太尉，请孟为校尉。夫以千人与父俱。孟年老，颍阴侯强请之，郁郁不得意，故战常陷坚，遂死吴军中。汉法，父子俱，有死事，得与丧归，夫不肯随丧归。奋曰：“愿取吴王若将军头以报父仇！”于是夫被甲持戟，募军中壮士所善愿从数十人。及出壁门，莫敢前。独两人及从奴十余骑驰入吴军，至戏下，所杀伤",
+      "史略分类": "武将",
+      "主要史料出处": "《02汉书·卷62·窦田灌韩传》",
+      "paragraphs": [
+        {
+          "volume": "窦田灌韩传",
+          "paragraph_from": 14,
+          "paragraph_to": 20
+        },
+        {
+          "volume": "窦田灌韩传",
+          "paragraph_from": 23,
+          "paragraph_to": 23
+        }
+      ],
+      "五级细坐标": "汉书·卷062·武将·03",
+      "六级段落锚点": "[P14-P20],[P23]",
+      "原文出处": "窦田灌韩传·P14-P20,P23"
+    },
+    {
+      "史略ID": "HANSHU_062_04",
+      "史略名称": "韩安国",
+      "史略简介": "韩安国",
+      "原文字句": "韩安国字长孺，梁成安人也，后徒睢阳。尝受《韩子》、杂说邹田生所。事梁孝王，为中大夫。吴、楚反时，孝王使安国及张羽为将，扞吴兵于东界。张羽力战，安国持重，以故吴不能过梁。吴、楚破、安国、张羽名由此显梁。",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷62·窦田灌韩传》",
+      "paragraphs": [
+        {
+          "volume": "窦田灌韩传",
+          "paragraph_from": 30,
+          "paragraph_to": 51
+        }
+      ],
+      "五级细坐标": "汉书·卷062·文臣·04",
+      "六级段落锚点": "[P30-P51]",
+      "原文出处": "窦田灌韩传·P30-P51"
+    }
+  ],
+  "translation_qa_hint": "混写卷：人物段落非连续。翻译质检须按 entries[].paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。"
+}

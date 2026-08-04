@@ -1,0 +1,94 @@
+{
+  "work": "01史记",
+  "vol": "107",
+  "total_paragraphs": 37,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "01史记_107_primary_subjects.json (manual)",
+  "excludes": [
+    {
+      "paragraph_from": 37,
+      "paragraph_to": 37,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "窦婴",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 5,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "魏其侯窦婴者，孝文后从兄子也。父世观津人。喜宾客。孝文时，婴为吴相，病免。孝景初",
+        "close_note": "P1–P5 窦婴传首"
+      }
+    },
+    {
+      "name": "田蚡",
+      "category": "文臣",
+      "paragraph_from": 6,
+      "paragraph_to": 16,
+      "boundary_evidence": {
+        "open_paragraph": 6,
+        "open_phrase": "武安侯田蚡者，孝景后同母弟也，生长陵。魏其已为大将军后，方盛，蚡为诸郎，未贵，往",
+        "close_note": "P6–P16 武安侯叙事"
+      }
+    },
+    {
+      "name": "灌夫",
+      "category": "武将",
+      "paragraph_from": 17,
+      "paragraph_to": 28,
+      "boundary_evidence": {
+        "open_paragraph": 17,
+        "open_phrase": "灌将军夫者，颍阴人也。夫父张孟，尝为颍阴侯婴舍人，得幸，因进之至二千石，故蒙灌氏",
+        "close_note": "P17–P28 灌将军叙事"
+      }
+    },
+    {
+      "name": "窦婴",
+      "category": "文臣",
+      "paragraph_from": 29,
+      "paragraph_to": 31,
+      "boundary_evidence": {
+        "open_paragraph": 29,
+        "open_phrase": "魏其侯大媿，为资使宾客请，莫能解。武安吏皆为耳目，诸灌氏皆亡匿，夫系，遂不得告言",
+        "close_note": "P29–P31 廷辩·魏其救灌夫"
+      }
+    },
+    {
+      "name": "田蚡",
+      "category": "文臣",
+      "paragraph_from": 32,
+      "paragraph_to": 33,
+      "boundary_evidence": {
+        "open_paragraph": 32,
+        "open_phrase": "上怒内史曰：“公平生数言魏其、武安长短，今日廷论，局趣效辕下驹，吾并斩若属矣。”",
+        "close_note": "P32–P33 武安朝后"
+      }
+    },
+    {
+      "name": "窦婴",
+      "category": "文臣",
+      "paragraph_from": 34,
+      "paragraph_to": 34,
+      "boundary_evidence": {
+        "open_paragraph": 34,
+        "open_phrase": "於是上使御史簿责魏其所言灌夫，颇不雠，欺谩。劾系都司空。孝景时，魏其常受遗诏，曰",
+        "close_note": "P34 魏其弃市"
+      }
+    },
+    {
+      "name": "田蚡",
+      "category": "文臣",
+      "paragraph_from": 35,
+      "paragraph_to": 36,
+      "boundary_evidence": {
+        "open_paragraph": 35,
+        "open_phrase": "其春，武安侯病，专呼服谢罪。使巫视鬼者视之，见魏其、灌夫共守，欲杀之。竟死。子恬",
+        "close_note": "P35–P36 武安之死"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

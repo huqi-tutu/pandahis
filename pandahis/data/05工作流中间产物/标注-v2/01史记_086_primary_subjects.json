@@ -1,0 +1,357 @@
+{
+  "work": "01史记",
+  "vol": "086",
+  "total_paragraphs": 57,
+  "method": "Step1b-α LLM",
+  "paragraphs": [
+    {
+      "paragraph": 1,
+      "primary_subject": "曹沫",
+      "disposition": "block",
+      "text_snippet": "曹沫者，鲁人也，以勇力事鲁庄公。庄公好力。曹沫为鲁将，与齐战，三败北。"
+    },
+    {
+      "paragraph": 2,
+      "primary_subject": "曹沫",
+      "disposition": "block",
+      "text_snippet": "齐桓公许与鲁会于柯而盟。桓公与庄公既盟於坛上，曹沫执匕首劫齐桓公"
+    },
+    {
+      "paragraph": 3,
+      "primary_subject": "曹沫",
+      "disposition": "block",
+      "text_snippet": "管仲曰：“不可。夫贪小利以自快，弃信於诸侯，失天下之援，不如与之。”"
+    },
+    {
+      "paragraph": 4,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述",
+      "text_snippet": "其后百六十有七年而吴有专诸之事。"
+    },
+    {
+      "paragraph": 5,
+      "primary_subject": "专诸",
+      "disposition": "block",
+      "text_snippet": "专诸者，吴堂邑人也。伍子胥之亡楚而如吴也，知专诸之能。"
+    },
+    {
+      "paragraph": 6,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "光之父曰吴王诸樊。诸樊弟三人：次曰馀祭，次曰夷眜，次曰季子札。"
+    },
+    {
+      "paragraph": 7,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "馀祭死，传夷眜。夷眜死，当传季子札；季子札逃不肯立，吴人乃立夷眜之子僚为王。"
+    },
+    {
+      "paragraph": 8,
+      "primary_subject": "专诸",
+      "disposition": "block",
+      "text_snippet": "故尝阴养谋臣以求立。"
+    },
+    {
+      "paragraph": 9,
+      "primary_subject": "专诸",
+      "disposition": "block",
+      "text_snippet": "光既得专诸，善客待之。九年而楚平王死。"
+    },
+    {
+      "paragraph": 10,
+      "primary_subject": "专诸",
+      "disposition": "block",
+      "text_snippet": "且光真王嗣，当立，季子虽来，不吾废也。”专诸曰：“王僚可杀也。"
+    },
+    {
+      "paragraph": 11,
+      "primary_subject": "专诸",
+      "disposition": "block",
+      "text_snippet": "公子光顿首曰：“光之身，子之身也。”"
+    },
+    {
+      "paragraph": 12,
+      "primary_subject": "专诸",
+      "disposition": "block",
+      "text_snippet": "四月丙子，光伏甲士於窟室中，而具酒请王僚。"
+    },
+    {
+      "paragraph": 13,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述",
+      "text_snippet": "其后七十馀年而晋有豫让之事。"
+    },
+    {
+      "paragraph": 14,
+      "primary_subject": "豫让",
+      "disposition": "block",
+      "text_snippet": "豫让者，晋人也，故尝事范氏及中行氏，而无所知名。"
+    },
+    {
+      "paragraph": 15,
+      "primary_subject": "豫让",
+      "disposition": "block",
+      "text_snippet": "赵襄子最怨智伯，漆其头以为饮器。豫让遁逃山中"
+    },
+    {
+      "paragraph": 16,
+      "primary_subject": "豫让",
+      "disposition": "block",
+      "text_snippet": "乃变名姓为刑人，入宫涂厕，中挟匕首，欲以刺襄子。"
+    },
+    {
+      "paragraph": 17,
+      "primary_subject": "豫让",
+      "disposition": "block",
+      "text_snippet": "卒醳去之。"
+    },
+    {
+      "paragraph": 18,
+      "primary_subject": "豫让",
+      "disposition": "block",
+      "text_snippet": "居顷之，豫让又漆身为厉，吞炭为哑，使形状不可知，行乞於市。"
+    },
+    {
+      "paragraph": 19,
+      "primary_subject": "豫让",
+      "disposition": "block",
+      "text_snippet": "既去，顷之，襄子当出，豫让伏於所当过之桥下。"
+    },
+    {
+      "paragraph": 20,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述",
+      "text_snippet": "其后四十馀年而轵有聂政之事。"
+    },
+    {
+      "paragraph": 21,
+      "primary_subject": "聂政",
+      "disposition": "block",
+      "text_snippet": "聂政者，轵深井里人也。杀人避仇，与母、姊如齐，以屠为事。"
+    },
+    {
+      "paragraph": 22,
+      "primary_subject": "聂政",
+      "disposition": "block",
+      "text_snippet": "久之，濮阳严仲子事韩哀侯，与韩相侠累有卻。"
+    },
+    {
+      "paragraph": 23,
+      "primary_subject": "聂政",
+      "disposition": "block",
+      "text_snippet": "聂政惊怪其厚，固谢严仲子。严仲子固进，而聂政谢曰"
+    },
+    {
+      "paragraph": 24,
+      "primary_subject": "聂政",
+      "disposition": "block",
+      "text_snippet": "严仲子固让，聂政竟不肯受也。然严仲子卒备宾主之礼而去。"
+    },
+    {
+      "paragraph": 25,
+      "primary_subject": "聂政",
+      "disposition": "block",
+      "text_snippet": "久之，聂政母死。既已葬，除服，聂政曰"
+    },
+    {
+      "paragraph": 26,
+      "primary_subject": "聂政",
+      "disposition": "block",
+      "text_snippet": "杖剑至韩，韩相侠累方坐府上，持兵戟而卫侍者甚众。"
+    },
+    {
+      "paragraph": 27,
+      "primary_subject": "聂政",
+      "disposition": "block",
+      "text_snippet": "韩取聂政尸暴於市，购问莫知谁子。"
+    },
+    {
+      "paragraph": 28,
+      "primary_subject": "聂政",
+      "disposition": "block",
+      "text_snippet": "政姊荣闻人有刺杀韩相者，贼不得，国不知其名姓"
+    },
+    {
+      "paragraph": 29,
+      "primary_subject": "聂政",
+      "disposition": "block",
+      "text_snippet": "士固为知己者死，今乃以妾尚在之故，重自刑以绝从"
+    },
+    {
+      "paragraph": 30,
+      "primary_subject": "聂政",
+      "disposition": "block",
+      "text_snippet": "晋、楚、齐、卫闻之，皆曰：“非独政能也，乃其姊亦烈女也。”"
+    },
+    {
+      "paragraph": 31,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述",
+      "text_snippet": "其后二百二十馀年秦有荆轲之事。"
+    },
+    {
+      "paragraph": 32,
+      "primary_subject": "荆轲",
+      "disposition": "block",
+      "text_snippet": "荆轲者，卫人也。其先乃齐人，徙於卫，卫人谓之庆卿。"
+    },
+    {
+      "paragraph": 33,
+      "primary_subject": "荆轲",
+      "disposition": "block",
+      "text_snippet": "荆卿好读书击剑，以术说卫元君，卫元君不用。"
+    },
+    {
+      "paragraph": 34,
+      "primary_subject": "荆轲",
+      "disposition": "block",
+      "text_snippet": "荆轲尝游过榆次，与盖聂论剑，盖聂怒而目之。"
+    },
+    {
+      "paragraph": 35,
+      "primary_subject": "荆轲",
+      "disposition": "block",
+      "text_snippet": "盖聂曰：“曩者吾与论剑有不称者，吾目之；试往，是宜去，不敢留。”"
+    },
+    {
+      "paragraph": 36,
+      "primary_subject": "荆轲",
+      "disposition": "block",
+      "text_snippet": "荆轲游於邯郸，鲁句践与荆轲博，争道，鲁句践怒而叱之"
+    },
+    {
+      "paragraph": 37,
+      "primary_subject": "荆轲",
+      "disposition": "block",
+      "text_snippet": "荆轲既至燕，爱燕之狗屠及善击筑者高渐离。"
+    },
+    {
+      "paragraph": 38,
+      "primary_subject": "荆轲",
+      "disposition": "block",
+      "text_snippet": "居顷之，会燕太子丹质秦亡归燕。"
+    },
+    {
+      "paragraph": 39,
+      "primary_subject": "荆轲",
+      "disposition": "block",
+      "text_snippet": "武对曰：“秦地遍天下，威胁韩、魏、赵氏，北有甘泉、谷口之固"
+    },
+    {
+      "paragraph": 40,
+      "primary_subject": "荆轲",
+      "disposition": "block",
+      "text_snippet": "意有所出，则长城之南，易水以北，未有所定也。"
+    },
+    {
+      "paragraph": 41,
+      "primary_subject": "荆轲",
+      "disposition": "block",
+      "text_snippet": "居有间，秦将樊於期得罪於秦王，亡之燕，太子受而舍之。"
+    },
+    {
+      "paragraph": 42,
+      "primary_subject": "荆轲",
+      "disposition": "block",
+      "text_snippet": "太子逢迎，卻行为导，跪而蔽席。"
+    },
+    {
+      "paragraph": 43,
+      "primary_subject": "荆轲",
+      "disposition": "block",
+      "text_snippet": "荆轲遂见太子，言田光已死，致光之言。"
+    },
+    {
+      "paragraph": 44,
+      "primary_subject": "荆轲",
+      "disposition": "block",
+      "text_snippet": "於是尊荆卿为上卿，舍上舍。"
+    },
+    {
+      "paragraph": 45,
+      "primary_subject": "荆轲",
+      "disposition": "block",
+      "text_snippet": "久之，荆轲未有行意。秦将王翦破赵，虏赵王"
+    },
+    {
+      "paragraph": 46,
+      "primary_subject": "荆轲",
+      "disposition": "block",
+      "text_snippet": "荆轲知太子不忍，乃遂私见樊於期曰"
+    },
+    {
+      "paragraph": 47,
+      "primary_subject": "荆轲",
+      "disposition": "block",
+      "text_snippet": "既已不可柰何，乃遂盛樊於期首函封之。"
+    },
+    {
+      "paragraph": 48,
+      "primary_subject": "荆轲",
+      "disposition": "block",
+      "text_snippet": "於是太子豫求天下之利匕首，得赵人徐夫人匕首"
+    },
+    {
+      "paragraph": 49,
+      "primary_subject": "荆轲",
+      "disposition": "block",
+      "text_snippet": "太子及宾客知其事者，皆白衣冠以送之。"
+    },
+    {
+      "paragraph": 50,
+      "primary_subject": "荆轲",
+      "disposition": "block",
+      "text_snippet": "遂至秦，持千金之资币物，厚遗秦王宠臣中庶子蒙嘉。"
+    },
+    {
+      "paragraph": 51,
+      "primary_subject": "荆轲",
+      "disposition": "block",
+      "text_snippet": "轲自知事不就，倚柱而笑，箕踞以骂曰"
+    },
+    {
+      "paragraph": 52,
+      "primary_subject": "荆轲",
+      "disposition": "block",
+      "text_snippet": "於是秦王大怒，益发兵诣赵，诏王翦军以伐燕。"
+    },
+    {
+      "paragraph": 53,
+      "primary_subject": "荆轲",
+      "disposition": "block",
+      "text_snippet": "其明年，秦并天下，立号为皇帝。"
+    },
+    {
+      "paragraph": 54,
+      "primary_subject": "荆轲",
+      "disposition": "block",
+      "text_snippet": "每出言曰：“彼有善有不善。”从者以告其主"
+    },
+    {
+      "paragraph": 55,
+      "primary_subject": "荆轲",
+      "disposition": "block",
+      "text_snippet": "家丈人召使前击筑，一坐称善，赐酒。"
+    },
+    {
+      "paragraph": 56,
+      "primary_subject": "荆轲",
+      "disposition": "block",
+      "text_snippet": "鲁句践已闻荆轲之刺秦王，私曰"
+    },
+    {
+      "paragraph": 57,
+      "primary_subject": "太史公曰",
+      "disposition": "exclude",
+      "exclude_reason": "太史公曰",
+      "text_snippet": "太史公曰：世言荆轲，其称太子丹之命，“天雨粟，马生角”也，太过。"
+    }
+  ]
+}

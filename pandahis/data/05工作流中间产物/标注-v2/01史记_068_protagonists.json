@@ -1,0 +1,19 @@
+{
+  "work": "01史记",
+  "vol": "068",
+  "volume_name": "商君列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "商鞅",
+      "category": "文臣",
+      "rationale": "《商君列传》为单人列传，卷名即主人公商鞅（卫鞅）。商鞅以变法图强、推行刑名法术之策辅佐秦孝公，其主轴身份为行政、刑名之臣，非封国世袭君主，亦非天下共主，故归文臣。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

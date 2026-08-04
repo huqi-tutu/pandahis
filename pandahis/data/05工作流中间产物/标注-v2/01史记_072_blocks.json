@@ -1,0 +1,27 @@
+{
+  "work": "01史记",
+  "vol": "072",
+  "total_paragraphs": 19,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 19,
+      "paragraph_to": 19,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "魏冉",
+      "category": "宗戚",
+      "paragraph_from": 1,
+      "paragraph_to": 18,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "穰侯魏者，秦昭王母宣太后弟也。其先楚人，姓羋氏。",
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

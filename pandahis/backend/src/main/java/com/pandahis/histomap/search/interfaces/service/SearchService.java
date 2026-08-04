@@ -9,11 +9,16 @@ import org.springframework.stereotype.Service;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 @Service
 public class SearchService {
+  private static final int HOT_TOP_N = 10;
+  private static final int MATCH_LIMIT = 100;
+
   private final JdbcTemplate jdbcTemplate;
 
   public SearchService(JdbcTemplate jdbcTemplate) {
@@ -21,12 +26,7 @@ public class SearchService {
   }
 
   public SearchSuggestDTO suggest(Long userId) {
-    // 多取一些再按 keyword 去重：表无唯一约束时，重复灌入种子数据会导致同词多条
-    List<SearchSuggestDTO.HotKeyword> hotRaw = jdbcTemplate.query(
-        "SELECT keyword,is_hot FROM search_hot_keyword WHERE status=1 ORDER BY sort_order ASC, id ASC LIMIT 200",
-        (rs, rowNum) -> new SearchSuggestDTO.HotKeyword(rs.getString("keyword"), rs.getInt("is_hot") == 1)
-    );
-    List<SearchSuggestDTO.HotKeyword> hot = dedupeHotKeywords(hotRaw, 50);
+    List<SearchSuggestDTO.HotKeyword> hot = loadHotKeywordsByVolume(HOT_TOP_N);
 
     List<SearchSuggestDTO.HistoryKeyword> history = new ArrayList<>();
     if (userId != null) {
@@ -41,6 +41,38 @@ public class SearchService {
     }
 
     return new SearchSuggestDTO(hot, history);
+  }
+
+  /**
+   * 热门：优先小程序真实搜索量 TOP N；不足时用运营种子词补齐。
+   */
+  List<SearchSuggestDTO.HotKeyword> loadHotKeywordsByVolume(int limit) {
+    List<SearchSuggestDTO.HotKeyword> volume = jdbcTemplate.query(
+        "SELECT keyword, SUM(search_count) AS cnt FROM user_search_history "
+            + "GROUP BY keyword ORDER BY cnt DESC, MAX(last_searched_at) DESC LIMIT ?",
+        (rs, rowNum) -> new SearchSuggestDTO.HotKeyword(rs.getString("keyword"), true),
+        limit
+    );
+    List<SearchSuggestDTO.HotKeyword> out = dedupeHotKeywords(volume, limit);
+    if (out.size() >= limit) {
+      return out;
+    }
+
+    List<SearchSuggestDTO.HotKeyword> seeds = jdbcTemplate.query(
+        "SELECT keyword,is_hot FROM search_hot_keyword WHERE status=1 ORDER BY sort_order ASC, id ASC LIMIT 200",
+        (rs, rowNum) -> new SearchSuggestDTO.HotKeyword(rs.getString("keyword"), rs.getInt("is_hot") == 1)
+    );
+    Set<String> seen = new LinkedHashSet<>();
+    for (SearchSuggestDTO.HotKeyword item : out) {
+      seen.add(item.keyword());
+    }
+    for (SearchSuggestDTO.HotKeyword seed : dedupeHotKeywords(seeds, 50)) {
+      if (seen.contains(seed.keyword())) continue;
+      out.add(seed);
+      seen.add(seed.keyword());
+      if (out.size() >= limit) break;
+    }
+    return out;
   }
 
   /** 保留首次出现（sort_order 更靠前），最多 limit 条 */
@@ -61,7 +93,7 @@ public class SearchService {
   public SearchResultDTO search(Long userId, String q, int page, int pageSize) {
     String keyword = q.trim();
     if (keyword.isEmpty()) {
-      return new SearchResultDTO(0, page, pageSize, List.of());
+      return new SearchResultDTO(0, page, pageSize, 0, 0, List.of(), List.of(), List.of());
     }
 
     if (userId != null) {
@@ -73,78 +105,144 @@ public class SearchService {
     }
 
     String like = "%" + escapeLike(keyword) + "%";
+    int tierLimit = Math.max(1, Math.min(pageSize, MATCH_LIMIT));
 
-    // boxes
-    List<Map<String, Object>> boxRows = jdbcTemplate.queryForList(
-        "SELECT b.id,b.title,b.category_key,b.start_year,b.parent_entry_id,b.blurb,u.name AS unit_name,u.ruler_name,u.civilization_l1_id "
-            + "FROM historical_box b LEFT JOIN historical_emperor u ON u.id=b.emperor_id "
-            + "WHERE b.status=1 AND (b.id LIKE ? ESCAPE '\\\\' OR b.title LIKE ? ESCAPE '\\\\' OR b.parent_entry_id LIKE ? ESCAPE '\\\\' OR b.blurb LIKE ? ESCAPE '\\\\') "
-            + "ORDER BY b.importance_level DESC, b.start_year ASC LIMIT 100",
+    // 精准：史略名称或简介
+    List<Map<String, Object>> preciseRows = jdbcTemplate.queryForList(
+        "SELECT b.id, b.title, b.category_key, b.blurb, b.start_year, b.end_year, "
+            + "b.civilization_name, b.dynasty_name, b.regime_name, b.person_tag, b.importance_level "
+            + "FROM historical_box b "
+            + "WHERE b.status=1 AND (b.title LIKE ? ESCAPE '\\\\' OR IFNULL(b.blurb,'') LIKE ? ESCAPE '\\\\') "
+            + "ORDER BY b.importance_level DESC, b.start_year ASC LIMIT " + MATCH_LIMIT,
+        like, like
+    );
+
+    Set<String> preciseIds = new LinkedHashSet<>();
+    for (Map<String, Object> r : preciseRows) {
+      preciseIds.add(String.valueOf(r.get("id")));
+    }
+
+    // 相关：详情正文命中，且未进入精准
+    List<Map<String, Object>> relatedRows = jdbcTemplate.queryForList(
+        "SELECT b.id, b.title, b.category_key, b.blurb, b.start_year, b.end_year, "
+            + "b.civilization_name, b.dynasty_name, b.regime_name, b.person_tag, b.importance_level "
+            + "FROM historical_box b "
+            + "LEFT JOIN historical_box_detail d ON d.box_id = b.id "
+            + "WHERE b.status=1 "
+            + "AND (IFNULL(d.translate_detail,'') LIKE ? ESCAPE '\\\\' OR IFNULL(b.detail_md,'') LIKE ? ESCAPE '\\\\') "
+            + "AND NOT (b.title LIKE ? ESCAPE '\\\\' OR IFNULL(b.blurb,'') LIKE ? ESCAPE '\\\\') "
+            + "ORDER BY b.importance_level DESC, b.start_year ASC LIMIT " + MATCH_LIMIT,
         like, like, like, like
     );
 
-    // units
-    List<Map<String, Object>> unitRows = jdbcTemplate.queryForList(
-        "SELECT id,name,ruler_name,civilization_l1_id,enthronement_year FROM historical_emperor "
-            + "WHERE status=1 AND (name LIKE ? ESCAPE '\\\\' OR ruler_name LIKE ? ESCAPE '\\\\' OR dynasty_name LIKE ? ESCAPE '\\\\' OR era_name LIKE ? ESCAPE '\\\\' OR tags LIKE ? ESCAPE '\\\\') "
-            + "ORDER BY enthronement_year ASC LIMIT 100",
-        like, like, like, like, like
+    List<SearchResultDTO.Item> preciseAll = mapBoxRows(preciseRows, keyword, "precise");
+    List<SearchResultDTO.Item> relatedAll = new ArrayList<>();
+    for (SearchResultDTO.Item item : mapBoxRows(relatedRows, keyword, "related")) {
+      if (preciseIds.contains(item.id())) continue;
+      relatedAll.add(item);
+    }
+
+    // 两档各自按 page/pageSize 切片，避免扁平分页把相关档挤掉
+    List<SearchResultDTO.Item> preciseItems = slicePage(preciseAll, page, tierLimit);
+    List<SearchResultDTO.Item> relatedItems = slicePage(relatedAll, page, tierLimit);
+
+    List<SearchResultDTO.Item> merged = new ArrayList<>(preciseItems.size() + relatedItems.size());
+    merged.addAll(preciseItems);
+    merged.addAll(relatedItems);
+
+    return new SearchResultDTO(
+        preciseAll.size() + relatedAll.size(),
+        page,
+        pageSize,
+        preciseAll.size(),
+        relatedAll.size(),
+        List.copyOf(preciseItems),
+        List.copyOf(relatedItems),
+        List.copyOf(merged)
     );
+  }
 
-    List<SearchResultDTO.Item> items = new ArrayList<>();
-    for (Map<String, Object> r : boxRows) {
-      String id = (String) r.get("id");
-      String title = (String) r.get("title");
-      String unitName = (String) r.get("unit_name");
-      if (unitName == null) unitName = "";
-      String cat = (String) r.get("category_key");
-      Object civObj = r.get("civilization_l1_id");
-      String civName = "";
-      if (civObj != null) {
-        long civId = ((Number) civObj).longValue();
-        civName = jdbcTemplate.queryForObject("SELECT display_name FROM civilization_l1 WHERE id=?", String.class, civId);
-      }
-      if (civName == null) civName = "";
-      String pathText = civName.isEmpty() ? (unitName + " › " + categoryName(cat)) : (civName + " › " + unitName + " › " + categoryName(cat));
-      String blurb = r.get("blurb") != null ? String.valueOf(r.get("blurb")) : "";
-      items.add(new SearchResultDTO.Item(
-          "box",
-          id,
-          pathText,
-          highlight(title, keyword),
-          highlight(truncate(blurb, 160), keyword)
-      ));
-    }
-
-    for (Map<String, Object> r : unitRows) {
-      String id = (String) r.get("id");
-      String name = (String) r.get("name");
-      long civId = ((Number) r.get("civilization_l1_id")).longValue();
-      String civName = jdbcTemplate.queryForObject("SELECT display_name FROM civilization_l1 WHERE id=?", String.class, civId);
-      String pathText = (civName == null ? "" : civName) + " › " + name;
-      String ruler = r.get("ruler_name") != null ? String.valueOf(r.get("ruler_name")) : "";
-      items.add(new SearchResultDTO.Item(
-          "unit",
-          id,
-          pathText,
-          highlight(name, keyword),
-          highlight(truncate(ruler, 160), keyword)
-      ));
-    }
-
-    long total = items.size();
-    int from = Math.min((page - 1) * pageSize, items.size());
-    int to = Math.min(from + pageSize, items.size());
-    List<SearchResultDTO.Item> paged = items.subList(from, to);
-    return new SearchResultDTO(total, page, pageSize, paged);
+  static <T> List<T> slicePage(List<T> all, int page, int pageSize) {
+    if (all == null || all.isEmpty() || pageSize <= 0) return List.of();
+    int safePage = Math.max(1, page);
+    int from = Math.min((safePage - 1) * pageSize, all.size());
+    int to = Math.min(from + pageSize, all.size());
+    if (from >= to) return List.of();
+    return all.subList(from, to);
   }
 
   public void deleteHistory(Long userId, String keyword) {
     jdbcTemplate.update("DELETE FROM user_search_history WHERE user_id=? AND keyword=?", userId, keyword.trim());
   }
 
+  private List<SearchResultDTO.Item> mapBoxRows(List<Map<String, Object>> rows, String keyword, String matchTier) {
+    List<SearchResultDTO.Item> items = new ArrayList<>(rows.size());
+    for (Map<String, Object> r : rows) {
+      items.add(toItem(r, keyword, matchTier));
+    }
+    return items;
+  }
+
+  private static SearchResultDTO.Item toItem(Map<String, Object> r, String keyword, String matchTier) {
+    String id = String.valueOf(r.get("id"));
+    String title = r.get("title") != null ? String.valueOf(r.get("title")) : "";
+    String categoryKey = r.get("category_key") != null ? String.valueOf(r.get("category_key")) : "";
+    String categoryName = categoryName(categoryKey);
+    String civ = trimText(r.get("civilization_name"));
+    String dynasty = trimText(r.get("dynasty_name"));
+    String regime = trimText(r.get("regime_name"));
+    String coordinateText = joinCoordinate(civ, dynasty, regime);
+    String pathText = coordinateText.isEmpty()
+        ? categoryName
+        : (categoryName.isEmpty() ? coordinateText : coordinateText + " › " + categoryName);
+    String blurb = r.get("blurb") != null ? String.valueOf(r.get("blurb")) : "";
+    Integer startYear = toInt(r.get("start_year"));
+    Integer endYear = toInt(r.get("end_year"));
+    String personTag = "";
+    if (BoxCategorySupport.isPersonCategory(categoryKey)) {
+      personTag = trimText(r.get("person_tag"));
+    }
+    return new SearchResultDTO.Item(
+        "box",
+        id,
+        pathText,
+        highlight(title, keyword),
+        highlight(truncate(blurb, 160), keyword),
+        matchTier,
+        categoryKey,
+        categoryName,
+        coordinateText,
+        startYear,
+        endYear,
+        personTag.isEmpty() ? null : personTag
+    );
+  }
+
+  static String joinCoordinate(String civ, String dynasty, String regime) {
+    List<String> parts = new ArrayList<>(3);
+    if (!civ.isEmpty()) parts.add(civ);
+    if (!dynasty.isEmpty()) parts.add(dynasty);
+    if (!regime.isEmpty()) parts.add(regime);
+    return String.join(".", parts);
+  }
+
   private static String categoryName(String key) {
     return BoxCategorySupport.displayName(key);
+  }
+
+  private static String trimText(Object raw) {
+    if (raw == null) return "";
+    return String.valueOf(raw).trim();
+  }
+
+  private static Integer toInt(Object raw) {
+    if (raw instanceof Number n) return n.intValue();
+    if (raw == null) return null;
+    try {
+      return Integer.parseInt(String.valueOf(raw).trim());
+    } catch (NumberFormatException e) {
+      return null;
+    }
   }
 
   private static String escapeLike(String s) {
@@ -174,4 +272,3 @@ public class SearchService {
     return safe.replace(safeKeyword, "<em>" + safeKeyword + "</em>");
   }
 }
-

@@ -1,0 +1,409 @@
+{
+  "volume": "蒯伍江息夫传",
+  "source_file": "02汉书_055_蒯伍江息夫传第十五.txt",
+  "total_paragraphs": 37,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "蒯通",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "蒯通",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "蒯通",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "蒯通",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "蒯通",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "蒯通",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "蒯通",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "蒯通",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "蒯通",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "蒯通",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "伍被",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "伍被",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "伍被",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "伍被",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "伍被",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "伍被",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "伍被",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "江充",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "江充",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "江充",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "江充",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "江充",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "江充",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "江充",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "息夫躬",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "息夫躬",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "息夫躬",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "息夫躬",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "息夫躬",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "息夫躬",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "息夫躬",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "息夫躬",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "息夫躬",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "息夫躬",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "息夫躬",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HANSHU_055_01",
+      "史略名称": "蒯通",
+      "史略简介": "蒯通",
+      "原文字句": "蒯通，范阳人也，本与武帝同讳。楚汉初起，武臣略定赵地，号武信君。通说范阳令徐公曰：“臣，范阳百姓蒯通也，窃闵公之将死，故吊之。虽然，贺公得通而生也。”徐公再拜曰：“何以吊之？”通曰：“足下为令十余年矣，杀之父，孤人之子，断人之足，黥人之首，甚众。慈父孝子所以不敢事刃于公之腹者，畏秦法也。今天下大乱，秦政不施，然则慈父孝子将争接刃于公之腹，以复其怨而成其名。此通之所以吊者也。”曰：“何以贺得子而生也",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷55·蒯伍江息夫传》",
+      "paragraphs": [
+        {
+          "volume": "蒯伍江息夫传",
+          "paragraph_from": 2,
+          "paragraph_to": 11
+        }
+      ],
+      "五级细坐标": "汉书·卷055·文臣·01",
+      "六级段落锚点": "[P2-P11]",
+      "原文出处": "蒯伍江息夫传·P2-P11"
+    },
+    {
+      "史略ID": "HANSHU_055_02",
+      "史略名称": "伍被",
+      "史略简介": "伍被",
+      "原文字句": "伍被，楚人也。或言其先伍子胥后也。被以材能称，为淮南中郎。是时淮南王安好术学，折节下士，招致英隽以百数，被为冠首。",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷55·蒯伍江息夫传》",
+      "paragraphs": [
+        {
+          "volume": "蒯伍江息夫传",
+          "paragraph_from": 12,
+          "paragraph_to": 18
+        }
+      ],
+      "五级细坐标": "汉书·卷055·文臣·02",
+      "六级段落锚点": "[P12-P18]",
+      "原文出处": "蒯伍江息夫传·P12-P18"
+    },
+    {
+      "史略ID": "HANSHU_055_03",
+      "史略名称": "江充",
+      "史略简介": "江充",
+      "原文字句": "江充字次倩，赵国邯郸人也。充本名齐，有女弟善鼓琴歌舞，嫁之赵太子丹。齐得幸于敬肃王，为上客。久之，太子疑齐以己阴私告王，与齐忤，使吏逐捕齐，不得，收系其父兄，按验，皆弃市。齐遂绝迹亡，西人关，更名充。诣阙告太子丹与同产姊及王后宫奸乱，交通郡国豪猾，攻剽为奸，吏不能禁。书奏，天子怒，遣使者诏郡发吏卒围赵王宫，收捕太子丹，移系魏郡诏狱，与廷尉杂治，法至死。",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷55·蒯伍江息夫传》",
+      "paragraphs": [
+        {
+          "volume": "蒯伍江息夫传",
+          "paragraph_from": 19,
+          "paragraph_to": 25
+        }
+      ],
+      "五级细坐标": "汉书·卷055·文臣·03",
+      "六级段落锚点": "[P19-P25]",
+      "原文出处": "蒯伍江息夫传·P19-P25"
+    },
+    {
+      "史略ID": "HANSHU_055_04",
+      "史略名称": "息夫躬",
+      "史略简介": "息夫躬",
+      "原文字句": "息夫躬字子微，河内河阳人也。少为博士弟子，受《春秋》，通览记书。容貌壮丽，为众所异。",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷55·蒯伍江息夫传》",
+      "paragraphs": [
+        {
+          "volume": "蒯伍江息夫传",
+          "paragraph_from": 26,
+          "paragraph_to": 36
+        }
+      ],
+      "五级细坐标": "汉书·卷055·文臣·04",
+      "六级段落锚点": "[P26-P36]",
+      "原文出处": "蒯伍江息夫传·P26-P36"
+    }
+  ]
+}

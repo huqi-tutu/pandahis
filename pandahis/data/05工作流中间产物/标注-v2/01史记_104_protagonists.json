@@ -1,0 +1,24 @@
+{
+  "work": "01史记",
+  "vol": "104",
+  "volume_name": "田叔列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "田叔",
+      "category": "文臣",
+      "rationale": "卷名首列人物，田叔为西汉初年文臣，以忠直廉洁著称，曾任赵王郎中令、汉中守等职，其行政、刑名事迹为列传主轴，符合文臣准入标准。"
+    },
+    {
+      "name": "田仁",
+      "category": "文臣",
+      "rationale": "田叔之子，列传后半部分以田仁事迹为主，父子合传，田仁亦为文臣仕宦，曾任丞相司直等职，符合文臣准入标准。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

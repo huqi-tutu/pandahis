@@ -1,0 +1,33 @@
+{
+  "work": "01史记",
+  "vol": "047",
+  "total_paragraphs": 108,
+  "volume_subtype": "liezhuan_single",
+  "excludes": [
+    {
+      "paragraph_from": 108,
+      "paragraph_to": 108,
+      "exclude_reason": "太史公曰",
+      "boundary_evidence": {
+        "open_paragraph": 108,
+        "open_phrase": "太史公曰：诗有之",
+        "close_note": "卷末论赞；P107 孔子后裔谱系收束"
+      }
+    }
+  ],
+  "blocks": [
+    {
+      "name": "孔子",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 107,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "孔子生鲁昌平乡陬邑",
+        "close_paragraph": 107,
+        "close_note": "P1 先世身世开篇归孔子；P102–107 后裔谱系为传内收束；P108 起太史公曰"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

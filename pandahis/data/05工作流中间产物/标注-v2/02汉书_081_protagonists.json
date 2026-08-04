@@ -1,0 +1,27 @@
+{
+  "work": "02汉书",
+  "vol": "081",
+  "volume_name": "赵充国辛庆忌传",
+  "volume_type_guess": "列传",
+  "volume_arc": "C",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "赵充国",
+      "category": "武将",
+      "rationale": "卷名首列人物，西汉名将，以军功征战为主轴，符合武将准入标准。"
+    },
+    {
+      "name": "辛庆忌",
+      "category": "武将",
+      "rationale": "卷名次列人物，西汉将领，以军功将帅为主轴，符合武将准入标准。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "work": "01史记",
+  "vol": "092",
+  "volume_name": "淮阴侯列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "韩信",
+      "category": "武将",
+      "rationale": "《淮阴侯列传》为单人列传，卷名即指韩信（淮阴侯）。韩信以军功、征战、将帅为叙事主轴，符合武将准入标准。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

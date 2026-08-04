@@ -1,0 +1,56 @@
+{
+  "work": "01史记",
+  "vol": "035",
+  "total_paragraphs": 47,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "01史记_035_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 5,
+      "paragraph_to": 26,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 27,
+      "paragraph_to": 27,
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph_from": 28,
+      "paragraph_to": 46,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 47,
+      "paragraph_to": 47,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "管叔鲜",
+      "category": "宗戚",
+      "paragraph_from": 1,
+      "paragraph_to": 3,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "管叔鲜、蔡叔度者，周文王子而武王弟也。武王同母兄弟十人。母曰太姒，文王正妃也。其",
+        "close_paragraph": 3,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P1–P3"
+      }
+    },
+    {
+      "name": "蔡叔度",
+      "category": "宗戚",
+      "paragraph_from": 4,
+      "paragraph_to": 4,
+      "boundary_evidence": {
+        "open_paragraph": 4,
+        "open_phrase": "蔡叔度既迁而死。其子曰胡，胡乃改行，率德驯善。周公闻之，而举胡以为鲁卿士，鲁国治",
+        "close_paragraph": 4,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P4–P4"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

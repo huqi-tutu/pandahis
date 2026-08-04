@@ -1,0 +1,15 @@
+{
+  "work": "02汉书",
+  "vol": "119",
+  "volume_name": "叙传第七十下",
+  "volume_type_guess": "列传",
+  "narrative_mode": "skip",
+  "skip_reason": "《汉书·叙传下》为各篇述赞总览与著史凡例，全卷不提取人物 entry。",
+  "protagonists": [],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "篇内小标题",
+    "论赞",
+    "赞曰"
+  ]
+}

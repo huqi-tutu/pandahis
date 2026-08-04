@@ -1,0 +1,99 @@
+{
+  "work": "01史记",
+  "vol": "103",
+  "total_paragraphs": 30,
+  "volume_subtype": "hezhuan",
+  "derived_from": "01史记_103_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 7,
+      "paragraph_to": 7,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 10,
+      "paragraph_to": 15,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 30,
+      "paragraph_to": 30,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "石奋",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 6,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "万石君名奋，其父赵人也，姓石氏。赵亡，徙居温。高祖东击项籍，过河内，时奋年十五，",
+        "close_paragraph": 6,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P1–P6"
+      }
+    },
+    {
+      "name": "石奋",
+      "category": "文臣",
+      "paragraph_from": 8,
+      "paragraph_to": 9,
+      "boundary_evidence": {
+        "open_paragraph": 8,
+        "open_phrase": "万石君徙居陵里。内史庆醉归，入外门不下车。万石君闻之，不食。庆恐，肉袒请罪，不许",
+        "close_paragraph": 9,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P8–P9"
+      }
+    },
+    {
+      "name": "卫绾",
+      "category": "文臣",
+      "paragraph_from": 16,
+      "paragraph_to": 20,
+      "boundary_evidence": {
+        "open_paragraph": 16,
+        "open_phrase": "建陵侯卫绾者，代大陵人也。绾以戏车为郎，事文帝，功次迁为中郎将，醇谨无他。孝景为",
+        "close_paragraph": 20,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P16–P20"
+      }
+    },
+    {
+      "name": "直不疑",
+      "category": "文臣",
+      "paragraph_from": 21,
+      "paragraph_to": 23,
+      "boundary_evidence": {
+        "open_paragraph": 21,
+        "open_phrase": "塞侯直不疑者，南阳人也。为郎，事文帝。其同舍有告归，误持同舍郎金去，已而金主觉，",
+        "close_paragraph": 23,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P21–P23"
+      }
+    },
+    {
+      "name": "周仁",
+      "category": "文臣",
+      "paragraph_from": 24,
+      "paragraph_to": 26,
+      "boundary_evidence": {
+        "open_paragraph": 24,
+        "open_phrase": "郎中令周文者，名仁，其先故任城人也。以医见。景帝为太子时，拜为舍人，积功稍迁，孝",
+        "close_paragraph": 26,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P24–P26"
+      }
+    },
+    {
+      "name": "张欧",
+      "category": "文臣",
+      "paragraph_from": 27,
+      "paragraph_to": 29,
+      "boundary_evidence": {
+        "open_paragraph": 27,
+        "open_phrase": "御史大夫张叔者，名欧，安丘侯说之庶子也。孝文时以治刑名言事太子。然欧虽治刑名家，",
+        "close_paragraph": 29,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P27–P29"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

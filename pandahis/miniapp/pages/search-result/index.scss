@@ -3,6 +3,7 @@
 .page-shell {
   min-height: 100vh;
   background: $page-bg;
+  box-sizing: border-box;
 }
 
 /* ─── 结果区域 ─── */
@@ -10,116 +11,169 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .kw-bar {
   display: flex;
   align-items: baseline;
   gap: 16rpx;
-  padding: 0 32rpx 16rpx;
+  padding: 24rpx 32rpx 16rpx;
+  flex-shrink: 0;
 }
 
 .kw-text {
-  font-family: 'PingFang SC', serif;
+  flex: 1;
+  min-width: 0;
+  font-family: 'Noto Serif SC', 'Songti SC', 'PingFang SC', serif;
   font-size: 34rpx;
   font-weight: 700;
   color: $text-title;
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-.kw-count { font-size: 22rpx; }
-
-/* ─── 筛选栏 ─── */
-.filter-bar {
-  padding: 0 24rpx 16rpx;
-}
-
-.filter-scroll { width: 100%; white-space: nowrap; }
-
-.filter-inner {
-  display: inline-flex;
-  gap: 12rpx;
-  padding-bottom: 4rpx;
-}
-
-.filter-tag {
+.kw-count {
   flex-shrink: 0;
-  padding: 10rpx 28rpx;
-  border-radius: 999rpx;
-  font-size: 24rpx;
-  font-weight: 500;
-  background: $inactive-bg;
-  color: $inactive-text;
-  border: 1rpx solid transparent;
+  font-size: 22rpx;
+  color: $text-time;
 }
 
-.filter-tag.active {
-  background: $theme-primary;
-  color: #FFFFFF;
+.muted {
+  color: $text-caption;
+}
+
+.faint {
+  color: $text-time;
+}
+
+/* ─── 档位分区 ─── */
+.result-scroll {
+  flex: 1;
+  height: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.result-list {
+  padding: 0 32rpx;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.result-section {
+  margin-bottom: 32rpx;
+}
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  gap: 12rpx;
+  margin-bottom: 16rpx;
+  padding: 0 4rpx;
+}
+
+.section-title {
+  font-size: 24rpx;
+  font-weight: 600;
+  color: $text-caption;
+  letter-spacing: 4rpx;
+}
+
+.section-count {
+  font-size: 22rpx;
 }
 
 /* ─── 结果卡 ─── */
-.result-scroll {
-  flex: 1;
-  padding: 0 24rpx;
-}
-
 .result-card {
-  display: flex;
-  align-items: flex-start;
-  gap: 20rpx;
   background: $card-bg;
   border-radius: 16rpx;
-  border: 1rpx solid $divider;
+  box-shadow: $shadow-card;
   padding: 24rpx;
-  margin-bottom: 12rpx;
-}
-
-.result-cat-badge {
-  flex-shrink: 0;
-  padding: 6rpx 16rpx;
-  border-radius: 999rpx;
-  font-size: 20rpx;
-  font-weight: 600;
-  margin-top: 4rpx;
-  white-space: nowrap;
-  color: $accent-v5;
-  background: rgba(74, 63, 63, 0.08);
-}
-
-.result-main { flex: 1; min-width: 0; }
-
-.result-title {
-  font-size: 30rpx;
-  font-weight: 600;
-  color: $text-title;
-  display: block;
-  margin-bottom: 6rpx;
-  line-height: 1.3;
-}
-
-.result-sub {
-  font-size: 22rpx;
-  display: block;
-  margin-bottom: 8rpx;
-}
-
-.result-snippet {
-  font-size: 24rpx;
-  line-height: 1.55;
-  display: block;
+  margin-bottom: 16rpx;
+  box-sizing: border-box;
+  width: 100%;
   overflow: hidden;
 }
 
-.result-arrow {
-  font-size: 32rpx;
-  padding-top: 4rpx;
+.card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16rpx;
+  margin-bottom: 12rpx;
+}
+
+.result-title {
+  flex: 1;
+  min-width: 0;
+  font-size: 30rpx;
+  font-weight: 600;
+  color: $text-title;
+  line-height: 1.35;
+  word-break: break-all;
+}
+
+.cat-badge {
   flex-shrink: 0;
+  max-width: 140rpx;
+  padding: 6rpx 16rpx;
+  border-radius: 8rpx;
+  font-size: 20rpx;
+  font-weight: 600;
+  line-height: 1.3;
+  color: $theme-primary;
+  background: rgba(74, 63, 63, 0.08);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.result-coord {
+  display: block;
+  font-size: 22rpx;
+  color: $text-time;
+  line-height: 1.4;
+  margin-bottom: 12rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.card-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12rpx 16rpx;
+}
+
+.result-year {
+  font-size: 22rpx;
+  color: $text-caption;
+  line-height: 1.4;
+}
+
+.person-tag {
+  font-size: 20rpx;
+  font-weight: 500;
+  line-height: 1.3;
+  padding: 4rpx 12rpx;
+  border-radius: 8rpx;
+  color: $dyn-c6-deep;
+  background: $dyn-c6-active;
+}
+
+.result-bottom-space {
+  height: 48rpx;
 }
 
 /* ─── 状态 ─── */
 .loading {
   text-align: center;
-  padding: 48rpx;
+  padding: 48rpx 32rpx;
   font-size: 26rpx;
 }
 
@@ -127,14 +181,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12rpx;
+  gap: 16rpx;
   padding: 96rpx 32rpx;
 }
-
-.empty-icon { font-size: 64rpx; }
 
 .empty-text {
   font-size: 28rpx;
   color: $text-body;
   font-weight: 500;
+}
+
+.empty-hint {
+  font-size: 24rpx;
 }

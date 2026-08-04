@@ -1,0 +1,406 @@
+{
+  "volume": "殷本纪",
+  "source_file": "01史记_003_殷本纪第三.txt",
+  "total_paragraphs": 41,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "benji_multi",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 2,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "成汤",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "成汤",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "成汤",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "成汤",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "成汤",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "成汤",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "成汤",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "成汤",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "成汤",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "太甲",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "太甲",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 15,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 16,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 17,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 18,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 19,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 20,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 21,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "盘庚",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "盘庚",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "盘庚",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "武丁",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "武丁",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "武丁",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 29,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 30,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 31,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 32,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "帝辛（纣）",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "帝辛（纣）",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "帝辛（纣）",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "帝辛（纣）",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "帝辛（纣）",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "帝辛（纣）",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "帝辛（纣）",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "帝辛（纣）",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [],
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SHIJI_003_01",
+      "史略名称": "太甲",
+      "史略简介": "太甲",
+      "原文字句": "帝太甲既立三年，不明，暴虐，不遵汤法，乱德，於是伊尹放之於桐宫。三年，伊尹摄行政当国，以朝诸侯。",
+      "史略分类": "君王",
+      "主要史料出处": "《史记·卷3·殷本纪》",
+      "paragraphs": [
+        {
+          "volume": "殷本纪",
+          "paragraph_from": 12,
+          "paragraph_to": 13
+        }
+      ],
+      "五级细坐标": "史记·卷003·君王·01",
+      "六级段落锚点": "[P12-P13]",
+      "原文出处": "殷本纪·P12-P13"
+    },
+    {
+      "史略ID": "SHIJI_003_02",
+      "史略名称": "帝辛（纣）",
+      "史略简介": "帝辛（纣）",
+      "原文字句": "帝乙长子曰微子启，启母贱，不得嗣。少子辛，辛母正后，辛为嗣。帝乙崩，子辛立，是为帝辛，天下谓之纣。",
+      "史略分类": "君王",
+      "主要史料出处": "《史记·卷3·殷本纪》",
+      "paragraphs": [
+        {
+          "volume": "殷本纪",
+          "paragraph_from": 33,
+          "paragraph_to": 40
+        }
+      ],
+      "五级细坐标": "史记·卷003·君王·02",
+      "六级段落锚点": "[P33-P40]",
+      "原文出处": "殷本纪·P33-P40"
+    },
+    {
+      "史略ID": "SHIJI_003_03",
+      "史略名称": "成汤",
+      "史略简介": "成汤",
+      "原文字句": "成汤，自契至汤八迁。汤始居亳，从先王居，作帝诰。",
+      "史略分类": "君王",
+      "主要史料出处": "《史记·卷3·殷本纪》",
+      "paragraphs": [
+        {
+          "volume": "殷本纪",
+          "paragraph_from": 3,
+          "paragraph_to": 11
+        }
+      ],
+      "五级细坐标": "史记·卷003·君王·03",
+      "六级段落锚点": "[P3-P11]",
+      "原文出处": "殷本纪·P3-P11"
+    },
+    {
+      "史略ID": "SHIJI_003_04",
+      "史略名称": "武丁",
+      "史略简介": "武丁",
+      "原文字句": "帝小乙崩，子帝武丁立。帝武丁即位，思复兴殷，而未得其佐。三年不言，政事决定於冢宰，以观国风。武丁夜梦得圣人，名曰说。以梦所见视群臣百吏，皆非也。於是乃使百工营求之野，得说於傅险中。是时说为胥靡，筑於傅险。见於武丁，武丁曰是也。得而与之语，果圣人，举以为相，殷国大治。故遂以傅险姓之，号曰傅说。",
+      "史略分类": "君王",
+      "主要史料出处": "《史记·卷3·殷本纪》",
+      "paragraphs": [
+        {
+          "volume": "殷本纪",
+          "paragraph_from": 25,
+          "paragraph_to": 27
+        }
+      ],
+      "五级细坐标": "史记·卷003·君王·04",
+      "六级段落锚点": "[P25-P27]",
+      "原文出处": "殷本纪·P25-P27"
+    },
+    {
+      "史略ID": "SHIJI_003_05",
+      "史略名称": "盘庚",
+      "史略简介": "盘庚",
+      "原文字句": "帝阳甲崩，弟盘庚立，是为帝盘庚。帝盘庚之时，殷已都河北，盘庚渡河南，复居成汤之故居，乃五迁，无定处。殷民咨胥皆怨，不欲徙。盘庚乃告谕诸侯大臣曰：“昔高后成汤与尔之先祖俱定天下，法则可修。舍而弗勉，何以成德！”",
+      "史略分类": "君王",
+      "主要史料出处": "《史记·卷3·殷本纪》",
+      "paragraphs": [
+        {
+          "volume": "殷本纪",
+          "paragraph_from": 22,
+          "paragraph_to": 24
+        }
+      ],
+      "五级细坐标": "史记·卷003·君王·05",
+      "六级段落锚点": "[P22-P24]",
+      "原文出处": "殷本纪·P22-P24"
+    }
+  ]
+}

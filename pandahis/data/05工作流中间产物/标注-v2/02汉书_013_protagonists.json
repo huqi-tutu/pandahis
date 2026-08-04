@@ -1,0 +1,20 @@
+{
+  "work": "02汉书",
+  "vol": "013",
+  "volume_name": "平帝纪",
+  "volume_type_guess": "本纪",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "汉平帝",
+      "category": "君王",
+      "rationale": "卷名『平帝纪』为西汉皇帝本纪，主轴为当朝天子汉平帝（刘衎），属天下共主，符合君王准入标准。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

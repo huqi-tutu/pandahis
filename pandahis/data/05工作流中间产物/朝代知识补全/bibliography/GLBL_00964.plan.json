@@ -1,0 +1,87 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00964",
+  "写作结构": "正史叙述见《史记·韩世家》等翻译详录；拓展部分可引《楚汉春秋》辑文以补充张良拥立细节，并引《资治通鉴》记载项羽杀韩成之原委。",
+  "候选著作": [
+    {
+      "出处": "《史记·韩世家》《留侯世家》等",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "韩成事迹核心史源，已由二十四史翻译详录处理",
+      "检索词": "韩成",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《楚汉春秋》（辑本，清·洪颐煊辑）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "载张良说项梁立韩成为韩王等细节，可补正史之略",
+      "检索词": "横阳君 韩成",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《资治通鉴·卷九·汉纪一》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "详载项羽项韩成无军功、不遣之国及后杀之，为后世编年整合",
+      "检索词": "韩王成 无军功",
+      "采用": true,
+      "原文摘句": "項羽以韓王成無軍功，張良又為漢王謀，故不遣之國，與俱至彭城，廢以為侯，已又殺之。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·韩世家》《留侯世家》等",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "韩成事迹核心史源，已由二十四史翻译详录处理",
+      "检索词": "韩成",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《楚汉春秋》（辑本，清·洪颐煊辑）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "载张良说项梁立韩成为韩王等细节，可补正史之略",
+      "检索词": "横阳君 韩成",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《资治通鉴·卷九·汉纪一》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "详载项羽项韩成无军功、不遣之国及后杀之，为后世编年整合",
+      "检索词": "韩王成 无军功",
+      "采用": true,
+      "原文摘句": "項羽以韓王成無軍功，張良又為漢王謀，故不遣之國，與俱至彭城，廢以為侯，已又殺之。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 1,
+    "overall": "B"
+  }
+}

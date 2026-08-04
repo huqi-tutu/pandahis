@@ -1,0 +1,27 @@
+{
+  "work": "01史记",
+  "vol": "091",
+  "total_paragraphs": 27,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 27,
+      "paragraph_to": 27,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "黥布",
+      "category": "武将",
+      "paragraph_from": 1,
+      "paragraph_to": 26,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "黥布者，六人也，姓英氏。秦时为布衣。少年，有客相之曰：“当刑而王。”",
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

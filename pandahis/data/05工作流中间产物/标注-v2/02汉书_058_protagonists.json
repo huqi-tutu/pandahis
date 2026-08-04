@@ -1,0 +1,19 @@
+{
+  "work": "02汉书",
+  "vol": "058",
+  "volume_name": "贾谊传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "贾谊",
+      "category": "文臣",
+      "rationale": "卷名《贾谊传》为单人列传，贾谊为西汉著名政论家、文学家，以文学仕宦、政论建言为主轴，属文臣。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "work": "01史记",
+  "vol": "058",
+  "volume_name": "梁孝王世家",
+  "volume_type_guess": "世家",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "刘武",
+      "category": "宗戚",
+      "rationale": "《梁孝王世家》以汉文帝之子、景帝之弟梁孝王刘武为主轴，属同姓藩王，按史略分类v4宗戚专则，同姓藩王归宗戚，非君王或诸侯。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

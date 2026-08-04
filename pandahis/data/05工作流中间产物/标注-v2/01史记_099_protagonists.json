@@ -1,0 +1,24 @@
+{
+  "work": "01史记",
+  "vol": "099",
+  "volume_name": "刘敬叔孙通列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "刘敬",
+      "category": "文臣",
+      "rationale": "卷名首列人物，合传主人公之一。刘敬本名娄敬，以献策定都关中、和亲匈奴、徙六国豪强实关中，为汉初重要谋臣，属行政/外交/谋略型文臣，非武将或宗戚。"
+    },
+    {
+      "name": "叔孙通",
+      "category": "文臣",
+      "rationale": "卷名次列人物，合传主人公之一。叔孙通为汉初儒学博士，制礼作乐、定朝仪，以儒学仕宦为汉廷制礼，属文臣类（儒学文学仕宦主轴），非武将或宗戚。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

@@ -1,0 +1,255 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00941",
+  "写作结构": "正史叙述（《史记·匈奴列传》及《汉书》《后汉书》相关传）见翻译详录；拓展以先秦文献揭示匈奴早期称谓与地理分布（《逸周书》《山海经》《国语》），辅以汉代杂说（《淮南子》）补充环境特征；汉匈战争细节仍归正史，不另展开传奇细节；后世评说仅列书目备参。",
+  "候选著作": [
+    {
+      "出处": "《史记·匈奴列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "匈奴主体叙事的基本史料，为本条目 anchor 的主要依据",
+      "检索词": "匈奴列传",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《逸周书·王会解》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "先秦文献最早明确记载‘匈奴’国名，证明其名称在商周之际已见",
+      "检索词": "匈奴",
+      "采用": true,
+      "原文摘句": "正北空同、大夏、莎车、姑他、旦略、貌胡、戎翟、匈奴、楼烦、月氏、孅犁、其龙、东胡，请令以橐驼、白玉、野马、騊駼、駃騠、良弓为献。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《山海经·海内南经》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "将匈奴列为西北之国，体现战国时人对匈奴方国的认知",
+      "检索词": "匈奴",
+      "采用": true,
+      "原文摘句": "匈奴、开题之国、列人之国并在西北。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《国语·周语上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记述周穆王征犬戎，从戎狄系统追溯匈奴先祖活动背景",
+      "检索词": "穆王将征犬戎",
+      "采用": true,
+      "原文摘句": "穆王将征犬戎，祭公谋父谏曰：‘不可。先王耀德不观兵……’",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《竹书纪年》（辑本）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载殷周时征伐鬼戎等北方部族，为追溯匈奴先世提供线索",
+      "检索词": "伐西落鬼戎",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    },
+    {
+      "出处": "《战国策·赵策二》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "赵武灵王胡服骑射、对付林胡楼烦，勾勒匈奴崛起前的北边形势",
+      "检索词": "胡服骑射",
+      "采用": true,
+      "原文摘句": "今吾国北有燕，东有胡，西有林胡、楼烦、秦、韩之边……",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《淮南子·原道训》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "提及匈奴所处的严寒地理与皮裘物产，可作侧面描述",
+      "检索词": "匈奴出穢裘",
+      "采用": true,
+      "原文摘句": "匈奴出穢裘，于越生葛絺。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《盐铁论·备胡》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "西汉后期关于匈奴政策的辩论，反映汉人对匈奴的认识",
+      "检索词": "备胡",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《汉书·匈奴传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "继《史记》之后的匈奴专传，增补昭宣以后史事，属正史系统",
+      "检索词": "匈奴传",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《后汉书·南匈奴列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载东汉时期南匈奴内附与北匈奴西迁等事，属正史后续",
+      "检索词": "南匈奴列传",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·匈奴列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "匈奴主体叙事的基本史料，为本条目 anchor 的主要依据",
+      "检索词": "匈奴列传",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《逸周书·王会解》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "先秦文献最早明确记载‘匈奴’国名，证明其名称在商周之际已见",
+      "检索词": "匈奴",
+      "采用": true,
+      "原文摘句": "正北空同、大夏、莎车、姑他、旦略、貌胡、戎翟、匈奴、楼烦、月氏、孅犁、其龙、东胡，请令以橐驼、白玉、野马、騊駼、駃騠、良弓为献。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《山海经·海内南经》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "将匈奴列为西北之国，体现战国时人对匈奴方国的认知",
+      "检索词": "匈奴",
+      "采用": true,
+      "原文摘句": "匈奴、开题之国、列人之国并在西北。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《国语·周语上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记述周穆王征犬戎，从戎狄系统追溯匈奴先祖活动背景",
+      "检索词": "穆王将征犬戎",
+      "采用": true,
+      "原文摘句": "穆王将征犬戎，祭公谋父谏曰：‘不可。先王耀德不观兵……’",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《竹书纪年》（辑本）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载殷周时征伐鬼戎等北方部族，为追溯匈奴先世提供线索",
+      "检索词": "伐西落鬼戎",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    },
+    {
+      "出处": "《战国策·赵策二》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "赵武灵王胡服骑射、对付林胡楼烦，勾勒匈奴崛起前的北边形势",
+      "检索词": "胡服骑射",
+      "采用": true,
+      "原文摘句": "今吾国北有燕，东有胡，西有林胡、楼烦、秦、韩之边……",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《淮南子·原道训》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "提及匈奴所处的严寒地理与皮裘物产，可作侧面描述",
+      "检索词": "匈奴出穢裘",
+      "采用": true,
+      "原文摘句": "匈奴出穢裘，于越生葛絺。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《汉书·匈奴传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "继《史记》之后的匈奴专传，增补昭宣以后史事，属正史系统",
+      "检索词": "匈奴传",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《后汉书·南匈奴列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载东汉时期南匈奴内附与北匈奴西迁等事，属正史后续",
+      "检索词": "南匈奴列传",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《盐铁论·备胡》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "西汉后期关于匈奴政策的辩论，反映汉人对匈奴的认识",
+      "检索词": "备胡",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 6,
+    "C_excluded": 4,
+    "overall": "B"
+  }
+}

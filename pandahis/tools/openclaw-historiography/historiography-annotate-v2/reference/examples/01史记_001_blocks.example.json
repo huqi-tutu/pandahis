@@ -1,0 +1,72 @@
+{
+  "work": "01史记",
+  "vol": "001",
+  "total_paragraphs": 42,
+  "volume_subtype": "benji_multi",
+  "excludes": [
+    {"paragraph_from": 40, "paragraph_to": 40, "exclude_reason": "共段总述"},
+    {"paragraph_from": 41, "paragraph_to": 41, "exclude_reason": "太史公曰"},
+    {"paragraph_from": 42, "paragraph_to": 42, "exclude_reason": "论赞"}
+  ],
+  "blocks": [
+    {
+      "name": "黄帝",
+      "category": "君王",
+      "paragraph_from": 1,
+      "paragraph_to": 8,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "黄帝者，少典之子",
+        "close_paragraph": 8,
+        "close_note": "P8 玄嚣昌意收束，P9 起颛顼继统"
+      }
+    },
+    {
+      "name": "颛顼",
+      "category": "君王",
+      "paragraph_from": 9,
+      "paragraph_to": 10,
+      "boundary_evidence": {
+        "open_paragraph": 9,
+        "open_phrase": "昌意娶蜀山氏女",
+        "close_note": "P10 颛顼治国；P11 起帝喾"
+      }
+    },
+    {
+      "name": "帝喾",
+      "category": "君王",
+      "paragraph_from": 11,
+      "paragraph_to": 13,
+      "boundary_evidence": {
+        "open_paragraph": 11,
+        "open_phrase": "帝颛顼生子曰穷蝉",
+        "close_note": "P13 帝喾德政；P14 起尧"
+      }
+    },
+    {
+      "name": "尧",
+      "category": "君王",
+      "paragraph_from": 14,
+      "paragraph_to": 27,
+      "boundary_evidence": {
+        "open_paragraph": 14,
+        "open_phrase": "帝喾娶陈锋氏女",
+        "close_paragraph": 27,
+        "close_note": "P27 尧崩禅让收束，末句「是为帝舜」仍归尧"
+      }
+    },
+    {
+      "name": "舜",
+      "category": "君王",
+      "paragraph_from": 28,
+      "paragraph_to": 39,
+      "boundary_evidence": {
+        "open_paragraph": 28,
+        "open_phrase": "虞舜者，名曰重华",
+        "close_paragraph": 39,
+        "close_note": "P39 舜传收束；P40 五帝并列总述 → 共段总述 exclude"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

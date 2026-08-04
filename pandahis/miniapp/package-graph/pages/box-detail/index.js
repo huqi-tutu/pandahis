@@ -545,7 +545,10 @@ Page({
             graphCanvasH,
         });
         try {
-            const res = await (0, api_1.request)(`/boxes/${(0, encode_path_segment_1.encodePathSegment)(boxId)}`, { auth: (0, api_1.hasToken)(), softAuth: true });
+            const res = await (0, api_1.request)(`/boxes/${(0, encode_path_segment_1.encodePathSegment)(boxId)}`, {
+                auth: (0, api_1.hasToken)(),
+                softAuth: true,
+            });
             const header = res.data;
             const y0 = yearLabel(header.box.startYear);
             const y1 = yearLabel(header.box.endYear);

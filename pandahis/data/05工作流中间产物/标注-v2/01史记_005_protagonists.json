@@ -1,0 +1,35 @@
+{
+  "work": "01史记",
+  "vol": "005",
+  "volume_name": "秦本纪",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "benji_multi",
+  "volume_type_guess": "本纪（多人·Top5）",
+  "protagonists": [
+    {
+      "name": "非子",
+      "category": "君王",
+      "rationale": "受封秦嬴续祀；叙事仅 P8–P9，非卷首远祖谱。"
+    },
+    {
+      "name": "秦穆公",
+      "category": "君王",
+      "rationale": "称霸西戎、东服强晋；叙事 P30–58（缪公任好元年起）。"
+    },
+    {
+      "name": "秦孝公",
+      "category": "君王",
+      "rationale": "商鞅变法、强秦奠基。"
+    },
+    {
+      "name": "秦昭襄王",
+      "category": "君王",
+      "rationale": "远交近攻、白起破赵，秦势东扩。"
+    },
+    {
+      "name": "秦庄襄王",
+      "category": "君王",
+      "rationale": "本纪叙事收束于子政立为秦王；始皇统一见 006。"
+    }
+  ]
+}

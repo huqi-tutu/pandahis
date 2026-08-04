@@ -1,0 +1,662 @@
+{
+  "volume": "田敬仲完世家",
+  "source_file": "01史记_046_田敬仲完世家第十六.txt",
+  "total_paragraphs": 76,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "田敬仲完",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "田敬仲完",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 5,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 6,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 7,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 8,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 9,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 10,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 11,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 12,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 13,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 14,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 15,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 16,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 17,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 18,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 19,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 20,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 21,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 22,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 23,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 24,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 25,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 26,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 27,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "齐桓公午",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "齐桓公午",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "齐桓公午",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "齐桓公午",
+          "category": "诸侯"
+        },
+        {
+          "name": "齐威王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "齐威王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "齐威王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "齐威王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "齐威王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "齐威王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "齐威王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "齐威王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "齐威王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "齐威王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "齐威王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "齐威王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "齐威王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "齐威王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "齐威王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [
+        {
+          "name": "齐威王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 47,
+      "owners": [
+        {
+          "name": "齐威王",
+          "category": "诸侯"
+        },
+        {
+          "name": "齐宣王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 48,
+      "owners": [
+        {
+          "name": "齐宣王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 49,
+      "owners": [
+        {
+          "name": "齐宣王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 50,
+      "owners": [
+        {
+          "name": "齐宣王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 51,
+      "owners": [
+        {
+          "name": "齐宣王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 52,
+      "owners": [
+        {
+          "name": "齐宣王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 53,
+      "owners": [
+        {
+          "name": "齐宣王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 54,
+      "owners": [
+        {
+          "name": "齐宣王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 55,
+      "owners": [
+        {
+          "name": "齐宣王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 56,
+      "owners": [
+        {
+          "name": "齐宣王",
+          "category": "诸侯"
+        },
+        {
+          "name": "齐湣王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 57,
+      "owners": [
+        {
+          "name": "齐湣王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 58,
+      "owners": [
+        {
+          "name": "齐湣王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 59,
+      "owners": [
+        {
+          "name": "齐湣王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 60,
+      "owners": [
+        {
+          "name": "齐湣王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 61,
+      "owners": [
+        {
+          "name": "齐湣王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 62,
+      "owners": [
+        {
+          "name": "齐湣王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 63,
+      "owners": [
+        {
+          "name": "齐湣王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 64,
+      "owners": [
+        {
+          "name": "齐湣王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 65,
+      "owners": [
+        {
+          "name": "齐湣王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 66,
+      "owners": [
+        {
+          "name": "齐湣王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 67,
+      "owners": [
+        {
+          "name": "齐湣王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 68,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 69,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 70,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 71,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 72,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 73,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 74,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 75,
+      "owners": [],
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph": 76,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SHIJI_046_01",
+      "史略名称": "田敬仲完",
+      "史略简介": "田敬仲完",
+      "原文字句": "庄公卒，立弟杵臼，是为宣公。宣公二十一年，杀其太子御寇。御寇与完相爱，恐祸及己，完故奔齐。齐桓公欲使为卿，辞曰：“羁旅之臣幸得免负檐，君之惠也，不敢当高位。”桓公使为工正。齐懿仲欲妻完，卜之，占曰：“是谓凤皇于蜚，和鸣锵锵。有妫之后，将育于姜。五世其昌，并于正卿。八世之后，莫之与京。”卒妻完。完之奔齐，齐桓公立十四年矣。",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷46·田敬仲完世家》",
+      "paragraphs": [
+        {
+          "volume": "田敬仲完世家",
+          "paragraph_from": 2,
+          "paragraph_to": 3
+        }
+      ],
+      "五级细坐标": "史记·卷046·诸侯·01",
+      "六级段落锚点": "[P2-P3]",
+      "原文出处": "田敬仲完世家·P2-P3"
+    },
+    {
+      "史略ID": "SHIJI_046_02",
+      "史略名称": "齐桓公午",
+      "史略简介": "齐桓公午",
+      "原文字句": "齐侯太公和立二年，和卒，子桓公午立。桓公午五年，秦、魏攻韩，韩求救於齐。齐桓公召大臣而谋曰：“蚤救之孰与晚救之？”驺忌曰：“不若勿救。”",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷46·田敬仲完世家》",
+      "paragraphs": [
+        {
+          "volume": "田敬仲完世家",
+          "paragraph_from": 28,
+          "paragraph_to": 31
+        }
+      ],
+      "五级细坐标": "史记·卷046·诸侯·02",
+      "六级段落锚点": "[P28-P31]",
+      "原文出处": "田敬仲完世家·P28-P31"
+    },
+    {
+      "史略ID": "SHIJI_046_03",
+      "史略名称": "齐威王",
+      "史略简介": "齐威王",
+      "原文字句": "六年，救卫。桓公卒，子威王因齐立。是岁，故齐康公卒，绝无后，奉邑皆入田氏。",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷46·田敬仲完世家》",
+      "paragraphs": [
+        {
+          "volume": "田敬仲完世家",
+          "paragraph_from": 31,
+          "paragraph_to": 47
+        }
+      ],
+      "五级细坐标": "史记·卷046·诸侯·03",
+      "六级段落锚点": "[P31-P47]",
+      "原文出处": "田敬仲完世家·P31-P47"
+    },
+    {
+      "史略ID": "SHIJI_046_04",
+      "史略名称": "齐宣王",
+      "史略简介": "齐宣王",
+      "原文字句": "三十六年，威王卒，子宣王辟彊立。",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷46·田敬仲完世家》",
+      "paragraphs": [
+        {
+          "volume": "田敬仲完世家",
+          "paragraph_from": 47,
+          "paragraph_to": 56
+        }
+      ],
+      "五级细坐标": "史记·卷046·诸侯·04",
+      "六级段落锚点": "[P47-P56]",
+      "原文出处": "田敬仲完世家·P47-P56"
+    },
+    {
+      "史略ID": "SHIJI_046_05",
+      "史略名称": "齐湣王",
+      "史略简介": "齐湣王",
+      "原文字句": "十九年，宣王卒，子湣王地立。",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷46·田敬仲完世家》",
+      "paragraphs": [
+        {
+          "volume": "田敬仲完世家",
+          "paragraph_from": 56,
+          "paragraph_to": 67
+        }
+      ],
+      "五级细坐标": "史记·卷046·诸侯·05",
+      "六级段落锚点": "[P56-P67]",
+      "原文出处": "田敬仲完世家·P56-P67"
+    }
+  ]
+}

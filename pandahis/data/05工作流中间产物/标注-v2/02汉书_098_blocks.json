@@ -1,0 +1,58 @@
+{
+  "work": "02汉书",
+  "vol": "098",
+  "total_paragraphs": 41,
+  "volume_subtype": "hezhuan",
+  "derived_from": "02汉书_098_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 41,
+      "paragraph_to": 41,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "何武",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 14,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "何武字君公，蜀郡郫县人也。宣帝时，天下和平，四夷宾服，神爵、五凤之间娄蒙瑞应。而",
+        "close_paragraph": 14,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P14"
+      }
+    },
+    {
+      "name": "王嘉",
+      "category": "文臣",
+      "paragraph_from": 15,
+      "paragraph_to": 33,
+      "boundary_evidence": {
+        "open_paragraph": 15,
+        "open_phrase": "王嘉字公仲，平陵人也。以明经射策甲科为郎，坐户殿门失阑免。光禄勋于永除为掾，察廉",
+        "close_paragraph": 33,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P15–P33"
+      }
+    },
+    {
+      "name": "师丹",
+      "category": "文臣",
+      "paragraph_from": 34,
+      "paragraph_to": 40,
+      "boundary_evidence": {
+        "open_paragraph": 34,
+        "open_phrase": "师丹字仲公，琅邪东武人也。治《诗》，事匡衡。举孝廉为郎。元帝末，为博士，免。建始",
+        "close_paragraph": 40,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P34–P40"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

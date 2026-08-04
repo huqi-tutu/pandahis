@@ -1,0 +1,446 @@
+{
+  "schema": "v2-reuse-translations/v1",
+  "source": "data/04史料翻译",
+  "target": "data/11新标注条目翻译",
+  "criteria": "V1/V2 母本段落配对一致且已有翻译详情",
+  "count": 81,
+  "entries": [
+    {
+      "id": "GLBL_00004",
+      "name": "卫康叔",
+      "file": "GLBL_00004_卫康叔.json"
+    },
+    {
+      "id": "GLBL_00012",
+      "name": "吴王夫差",
+      "file": "GLBL_00012_吴王夫差.json"
+    },
+    {
+      "id": "GLBL_00015",
+      "name": "周公旦",
+      "file": "GLBL_00015_周公旦.json"
+    },
+    {
+      "id": "GLBL_00023",
+      "name": "00023_周幽王",
+      "file": "GLBL_00023_周幽王.json",
+      "note": "开头P44-P45 patch-integrate"
+    },
+    {
+      "id": "GLBL_00028",
+      "name": "00028_周成王",
+      "file": "GLBL_00028_周成王.json",
+      "note": "开头P27 prepend patch-integrate"
+    },
+    {
+      "id": "GLBL_00030",
+      "name": "周文王",
+      "file": "GLBL_00030_周文王.json"
+    },
+    {
+      "id": "GLBL_00035",
+      "name": "周武王",
+      "file": "GLBL_00035_周武王.json"
+    },
+    {
+      "id": "GLBL_00038",
+      "name": "00038_周穆王",
+      "file": "GLBL_00038_周穆王.json",
+      "note": "首尾润色后人工确认 promote"
+    },
+    {
+      "id": "GLBL_00052",
+      "name": "00052_宋景公",
+      "file": "GLBL_00052_宋景公.json",
+      "note": "首尾润色后人工确认 promote"
+    },
+    {
+      "id": "GLBL_00053",
+      "name": "宋襄公",
+      "file": "GLBL_00053_宋襄公.json"
+    },
+    {
+      "id": "GLBL_00056",
+      "name": "尧",
+      "file": "GLBL_00056_尧.json"
+    },
+    {
+      "id": "GLBL_00057",
+      "name": "00057_帝喾",
+      "file": "GLBL_00057_帝喾.json",
+      "note": "首尾润色后人工确认 promote"
+    },
+    {
+      "id": "GLBL_00058",
+      "name": "00058_帝辛（纣）",
+      "file": "GLBL_00058_帝辛（纣）.json",
+      "note": "首尾润色后人工确认 promote"
+    },
+    {
+      "id": "GLBL_00060",
+      "name": "00060_成汤",
+      "file": "GLBL_00060_成汤.json",
+      "note": "首尾审计合格，人工确认 promote"
+    },
+    {
+      "id": "GLBL_00061",
+      "name": "00061_晋悼公",
+      "file": "GLBL_00061_晋悼公.json",
+      "note": "首尾润色后人工确认 promote"
+    },
+    {
+      "id": "GLBL_00062",
+      "name": "00062_晋文公",
+      "file": "GLBL_00062_晋文公.json",
+      "note": "首尾润色后人工确认 promote"
+    },
+    {
+      "id": "GLBL_00065",
+      "name": "00065_晋献公",
+      "file": "GLBL_00065_晋献公.json",
+      "note": "首尾润色后人工确认 promote"
+    },
+    {
+      "id": "GLBL_00067",
+      "name": "桀",
+      "file": "GLBL_00067_桀.json"
+    },
+    {
+      "id": "GLBL_00068",
+      "name": "00068_楚庄王",
+      "file": "GLBL_00068_楚庄王.json",
+      "note": "首尾润色后人工确认 promote"
+    },
+    {
+      "id": "GLBL_00069",
+      "name": "00069_楚怀王",
+      "file": "GLBL_00069_楚怀王.json",
+      "note": "首尾审计合格，人工确认 promote"
+    },
+    {
+      "id": "GLBL_00072",
+      "name": "楚武王",
+      "file": "GLBL_00072_楚武王.json"
+    },
+    {
+      "id": "GLBL_00073",
+      "name": "00073_武丁",
+      "file": "GLBL_00073_武丁.json",
+      "note": "首尾润色后人工确认 promote"
+    },
+    {
+      "id": "GLBL_00089",
+      "name": "燕昭王",
+      "file": "GLBL_00089_燕昭王.json"
+    },
+    {
+      "id": "GLBL_00092",
+      "name": "00092_盘庚",
+      "file": "GLBL_00092_盘庚.json",
+      "note": "首尾审计合格，人工确认 promote"
+    },
+    {
+      "id": "GLBL_00096",
+      "name": "00096_禹",
+      "file": "GLBL_00096_禹.json",
+      "note": "首尾润色后人工确认 promote"
+    },
+    {
+      "id": "GLBL_00104",
+      "name": "秦孝公",
+      "file": "GLBL_00104_秦孝公.json"
+    },
+    {
+      "id": "GLBL_00109",
+      "name": "秦庄襄王",
+      "file": "GLBL_00109_秦庄襄王.json"
+    },
+    {
+      "id": "GLBL_00128",
+      "name": "管叔鲜",
+      "file": "GLBL_00128_管叔鲜.json"
+    },
+    {
+      "id": "GLBL_00129",
+      "name": "舜",
+      "file": "GLBL_00129_舜.json"
+    },
+    {
+      "id": "GLBL_00133",
+      "name": "赵襄子",
+      "file": "GLBL_00133_赵襄子.json"
+    },
+    {
+      "id": "GLBL_00134",
+      "name": "越王句践",
+      "file": "GLBL_00134_越王句践.json"
+    },
+    {
+      "id": "GLBL_00135",
+      "name": "郑庄公",
+      "file": "GLBL_00135_郑庄公.json"
+    },
+    {
+      "id": "GLBL_00136",
+      "name": "00136_郑桓公",
+      "file": "GLBL_00136_郑桓公.json",
+      "note": "首尾审计合格，人工确认 promote"
+    },
+    {
+      "id": "GLBL_00141",
+      "name": "00141_韩昭侯",
+      "file": "GLBL_00141_韩昭侯.json",
+      "note": "首尾审计合格，人工确认 promote"
+    },
+    {
+      "id": "GLBL_00144",
+      "name": "00144_颛顼",
+      "file": "GLBL_00144_颛顼.json",
+      "note": "首尾审计合格，人工确认 promote"
+    },
+    {
+      "id": "GLBL_00147",
+      "name": "00147_魏文侯",
+      "file": "GLBL_00147_魏文侯.json",
+      "note": "首尾润色后人工确认 promote"
+    },
+    {
+      "id": "GLBL_00148",
+      "name": "00148_魏武侯",
+      "file": "GLBL_00148_魏武侯.json",
+      "note": "首尾润色后人工确认 promote"
+    },
+    {
+      "id": "GLBL_00149",
+      "name": "黄帝",
+      "file": "GLBL_00149_黄帝.json",
+      "note": "V1译文+末尾P9 patch-integrate"
+    },
+    {
+      "id": "GLBL_00150",
+      "name": "齐太公",
+      "file": "GLBL_00150_齐太公.json"
+    },
+    {
+      "id": "GLBL_00219",
+      "name": "专诸",
+      "file": "GLBL_00219_专诸.json"
+    },
+    {
+      "id": "GLBL_00220",
+      "name": "优孟",
+      "file": "GLBL_00220_优孟.json"
+    },
+    {
+      "id": "GLBL_00221",
+      "name": "优旃",
+      "file": "GLBL_00221_优旃.json"
+    },
+    {
+      "id": "GLBL_00222",
+      "name": "伯夷",
+      "file": "GLBL_00222_伯夷.json"
+    },
+    {
+      "id": "GLBL_00230",
+      "name": "卓氏",
+      "file": "GLBL_00230_卓氏.json"
+    },
+    {
+      "id": "GLBL_00243",
+      "name": "白圭",
+      "file": "GLBL_00243_白圭.json"
+    },
+    {
+      "id": "GLBL_00249",
+      "name": "陈胜",
+      "file": "GLBL_00249_陈涉.json"
+    },
+    {
+      "id": "GLBL_00279",
+      "name": "冉求",
+      "file": "GLBL_00279_冉有.json"
+    },
+    {
+      "id": "GLBL_00297",
+      "name": "吕不韦",
+      "file": "GLBL_00297_吕不韦.json"
+    },
+    {
+      "id": "GLBL_00304",
+      "name": "商鞅",
+      "file": "GLBL_00304_商鞅.json"
+    },
+    {
+      "id": "GLBL_00310",
+      "name": "子夏",
+      "file": "GLBL_00310_子夏.json"
+    },
+    {
+      "id": "GLBL_00311",
+      "name": "子张",
+      "file": "GLBL_00311_子张.json"
+    },
+    {
+      "id": "GLBL_00313",
+      "name": "子贡",
+      "file": "GLBL_00313_子贡.json"
+    },
+    {
+      "id": "GLBL_00314",
+      "name": "子路",
+      "file": "GLBL_00314_子路.json"
+    },
+    {
+      "id": "GLBL_00316",
+      "name": "孔子",
+      "file": "GLBL_00316_孔子.json"
+    },
+    {
+      "id": "GLBL_00323",
+      "name": "孟尝君",
+      "file": "GLBL_00323_孟尝君.json"
+    },
+    {
+      "id": "GLBL_00326",
+      "name": "宰予",
+      "file": "GLBL_00326_宰予.json"
+    },
+    {
+      "id": "GLBL_00352",
+      "name": "扁鹊",
+      "file": "GLBL_00352_扁鹊.json"
+    },
+    {
+      "id": "GLBL_00421",
+      "name": "00421_管仲",
+      "file": "GLBL_00421_管仲.json",
+      "note": "首尾润色后人工确认 promote"
+    },
+    {
+      "id": "GLBL_00429",
+      "name": "00429_范睢",
+      "file": "GLBL_00429_范睢.json",
+      "note": "首尾润色后人工确认 promote"
+    },
+    {
+      "id": "GLBL_00442",
+      "name": "00442_虞卿",
+      "file": "GLBL_00442_虞卿.json",
+      "note": "首尾润色后人工确认 promote"
+    },
+    {
+      "id": "GLBL_00480",
+      "name": "颜回",
+      "file": "GLBL_00480_颜回.json"
+    },
+    {
+      "id": "GLBL_00487",
+      "name": "魏冉",
+      "file": "GLBL_00487_魏冉.json"
+    },
+    {
+      "id": "GLBL_00490",
+      "name": "鲁仲连",
+      "file": "GLBL_00490_鲁仲连.json"
+    },
+    {
+      "id": "GLBL_00492",
+      "name": "00492_黄歇",
+      "file": "GLBL_00492_黄歇.json",
+      "note": "首尾审计合格，人工确认 promote"
+    },
+    {
+      "id": "GLBL_00497",
+      "name": "乐毅",
+      "file": "GLBL_00497_乐毅.json"
+    },
+    {
+      "id": "GLBL_00498",
+      "name": "伍子胥",
+      "file": "GLBL_00498_伍子胥.json"
+    },
+    {
+      "id": "GLBL_00504",
+      "name": "司马穰苴",
+      "file": "GLBL_00504_司马穰苴.json"
+    },
+    {
+      "id": "GLBL_00506",
+      "name": "吴起",
+      "file": "GLBL_00506_吴起.json"
+    },
+    {
+      "id": "GLBL_00528",
+      "name": "00528_白起",
+      "file": "GLBL_00528_白起.json",
+      "note": "首尾审计合格，人工确认 promote"
+    },
+    {
+      "id": "GLBL_00532",
+      "name": "蒙恬",
+      "file": "GLBL_00532_蒙恬.json"
+    },
+    {
+      "id": "GLBL_00696",
+      "name": "00696_卫庄公",
+      "file": "GLBL_00696_卫庄公.json",
+      "note": "首尾润色后人工确认 promote"
+    },
+    {
+      "id": "GLBL_00701",
+      "name": "卫武公",
+      "file": "GLBL_00701_卫武公.json"
+    },
+    {
+      "id": "GLBL_00704",
+      "name": "00704_宋文公",
+      "file": "GLBL_00704_宋文公.json",
+      "note": "首尾润色后人工确认 promote"
+    },
+    {
+      "id": "GLBL_00718",
+      "name": "00718_楚灵王",
+      "file": "GLBL_00718_楚灵王.json",
+      "note": "首尾润色后人工确认 promote"
+    },
+    {
+      "id": "GLBL_00721",
+      "name": "燕庄公",
+      "file": "GLBL_00721_燕庄公.json"
+    },
+    {
+      "id": "GLBL_00730",
+      "name": "00730_赵简子",
+      "file": "GLBL_00730_赵简子.json",
+      "note": "首尾审计合格，人工确认 promote"
+    },
+    {
+      "id": "GLBL_00736",
+      "name": "00736_郑简公",
+      "file": "GLBL_00736_郑简公.json",
+      "note": "首尾润色后人工确认 promote"
+    },
+    {
+      "id": "GLBL_00746",
+      "name": "00746_韩釐王",
+      "file": "GLBL_00746_韩釐王.json",
+      "note": "首尾润色后人工确认 promote"
+    },
+    {
+      "id": "GLBL_00762",
+      "name": "齐平公",
+      "file": "GLBL_00762_齐平公.json"
+    },
+    {
+      "id": "GLBL_00767",
+      "name": "齐景公",
+      "file": "GLBL_00767_齐景公.json"
+    },
+    {
+      "id": "GLBL_00772",
+      "name": "齐襄公",
+      "file": "GLBL_00772_齐襄公.json"
+    }
+  ]
+}

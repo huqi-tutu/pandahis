@@ -1,0 +1,27 @@
+{
+  "work": "01史记",
+  "vol": "115",
+  "total_paragraphs": 16,
+  "volume_subtype": "fanzuo",
+  "excludes": [
+    {
+      "paragraph_from": 16,
+      "paragraph_to": 16,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "朝鲜",
+      "category": "蕃祚",
+      "paragraph_from": 1,
+      "paragraph_to": 15,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "朝鲜王满者，故燕人也。自始全燕时尝略属真番、朝鲜，为置吏，筑鄣塞。",
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

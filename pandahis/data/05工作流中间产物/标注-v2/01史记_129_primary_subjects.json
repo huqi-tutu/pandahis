@@ -1,0 +1,304 @@
+{
+  "work": "01史记",
+  "vol": "129",
+  "total_paragraphs": 52,
+  "method": "Step1b-α LLM",
+  "paragraphs": [
+    {
+      "paragraph": 1,
+      "primary_subject": "太史公曰",
+      "disposition": "exclude",
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph": 2,
+      "primary_subject": "太史公曰",
+      "disposition": "exclude",
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph": 3,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 4,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 5,
+      "primary_subject": "范蠡",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 6,
+      "primary_subject": "范蠡",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 7,
+      "primary_subject": "范蠡",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 8,
+      "primary_subject": "子贡",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 9,
+      "primary_subject": "白圭",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 10,
+      "primary_subject": "白圭",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 11,
+      "primary_subject": "猗顿",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 12,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 13,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 14,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 15,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 16,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 17,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 18,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 19,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 20,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 21,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 22,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 23,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 24,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 25,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 26,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 27,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 28,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 29,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 30,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 31,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 32,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 33,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 34,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 35,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 36,
+      "primary_subject": "卓氏",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 37,
+      "primary_subject": "程郑",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 38,
+      "primary_subject": "宛孔氏",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 39,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 40,
+      "primary_subject": "刀间",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 41,
+      "primary_subject": "师史",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 42,
+      "primary_subject": "任氏",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 43,
+      "primary_subject": "任氏",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 44,
+      "primary_subject": "任氏",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 45,
+      "primary_subject": "桥姚",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 46,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 47,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 48,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 49,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 50,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 51,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 52,
+      "primary_subject": "论赞",
+      "disposition": "exclude",
+      "exclude_reason": "论赞"
+    }
+  ]
+}

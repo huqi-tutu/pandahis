@@ -1,0 +1,480 @@
+{
+  "volume": "五帝本纪",
+  "source_file": "01史记_001_五帝本纪第一.txt",
+  "total_paragraphs": 42,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "benji_multi",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [
+        {
+          "name": "黄帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "黄帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "黄帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "黄帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "黄帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "黄帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "黄帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "黄帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "黄帝",
+          "category": "君王"
+        },
+        {
+          "name": "颛顼",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "颛顼",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "颛顼",
+          "category": "君王"
+        },
+        {
+          "name": "帝喾",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "帝喾",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "帝喾",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "帝喾",
+          "category": "君王"
+        },
+        {
+          "name": "尧",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "尧",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "尧",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "尧",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "尧",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "尧",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "尧",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "尧",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "尧",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "尧",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "尧",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "尧",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "尧",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "尧",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "舜",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "舜",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "舜",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "舜",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "舜",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "舜",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "舜",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "舜",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "舜",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "舜",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "舜",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "舜",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 41,
+      "owners": [],
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph": 42,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SHIJI_001_01",
+      "史略名称": "黄帝",
+      "史略简介": "黄帝",
+      "原文字句": "黄帝者，少典之子，姓公孙，名曰轩辕。生而神灵，弱而能言，幼而徇齐，长而敦敏，成而聪明。轩辕之时，神农氏世衰。诸侯相侵伐，暴虐百姓，而神农氏弗能征。於是轩辕乃习用干戈，以征不享，诸侯咸来宾从。而蚩尤最为暴，莫能伐。炎帝欲侵陵诸侯，诸侯咸归轩辕。轩辕乃修德振兵，治五气，蓺五种，抚万民，度四方，教熊罴貔貅貙虎，以与炎帝战於阪泉之野。三战，然后得其志。",
+      "史略分类": "君王",
+      "主要史料出处": "《史记·卷1·五帝本纪》",
+      "paragraphs": [
+        {
+          "volume": "五帝本纪",
+          "paragraph_from": 1,
+          "paragraph_to": 9
+        }
+      ],
+      "五级细坐标": "史记·卷001·君王·01",
+      "六级段落锚点": "[P1-P9]",
+      "原文出处": "五帝本纪·P1-P9"
+    },
+    {
+      "史略ID": "SHIJI_001_02",
+      "史略名称": "颛顼",
+      "史略简介": "颛顼",
+      "原文字句": "昌意娶蜀山氏女，曰昌仆，生高阳，高阳有圣德焉。黄帝崩，葬桥山。其孙昌意之子高阳立，是为帝颛顼也。",
+      "史略分类": "君王",
+      "主要史料出处": "《史记·卷1·五帝本纪》",
+      "paragraphs": [
+        {
+          "volume": "五帝本纪",
+          "paragraph_from": 9,
+          "paragraph_to": 11
+        }
+      ],
+      "五级细坐标": "史记·卷001·君王·02",
+      "六级段落锚点": "[P9-P11]",
+      "原文出处": "五帝本纪·P9-P11"
+    },
+    {
+      "史略ID": "SHIJI_001_03",
+      "史略名称": "帝喾",
+      "史略简介": "帝喾",
+      "原文字句": "帝颛顼生子曰穷蝉。颛顼崩，而玄嚣之孙高辛立，是为帝喾。",
+      "史略分类": "君王",
+      "主要史料出处": "《史记·卷1·五帝本纪》",
+      "paragraphs": [
+        {
+          "volume": "五帝本纪",
+          "paragraph_from": 11,
+          "paragraph_to": 14
+        }
+      ],
+      "五级细坐标": "史记·卷001·君王·03",
+      "六级段落锚点": "[P11-P14]",
+      "原文出处": "五帝本纪·P11-P14"
+    },
+    {
+      "史略ID": "SHIJI_001_04",
+      "史略名称": "尧",
+      "史略简介": "尧",
+      "原文字句": "帝喾娶陈锋氏女，生放勋。娶娵訾氏女，生挚。帝喾崩，而挚代立。帝挚立，不善，而弟放勋立，是为帝尧。",
+      "史略分类": "君王",
+      "主要史料出处": "《史记·卷1·五帝本纪》",
+      "paragraphs": [
+        {
+          "volume": "五帝本纪",
+          "paragraph_from": 14,
+          "paragraph_to": 27
+        }
+      ],
+      "五级细坐标": "史记·卷001·君王·04",
+      "六级段落锚点": "[P14-P27]",
+      "原文出处": "五帝本纪·P14-P27"
+    },
+    {
+      "史略ID": "SHIJI_001_05",
+      "史略名称": "舜",
+      "史略简介": "舜",
+      "原文字句": "虞舜者，名曰重华。重华父曰瞽叟，瞽叟父曰桥牛，桥牛父曰句望，句望父曰敬康，敬康父曰穷蝉，穷蝉父曰帝颛顼，颛顼父曰昌意：以至舜七世矣。自从穷蝉以至帝舜，皆微为庶人。",
+      "史略分类": "君王",
+      "主要史料出处": "《史记·卷1·五帝本纪》",
+      "paragraphs": [
+        {
+          "volume": "五帝本纪",
+          "paragraph_from": 28,
+          "paragraph_to": 39
+        }
+      ],
+      "五级细坐标": "史记·卷001·君王·05",
+      "六级段落锚点": "[P28-P39]",
+      "原文出处": "五帝本纪·P28-P39"
+    }
+  ]
+}

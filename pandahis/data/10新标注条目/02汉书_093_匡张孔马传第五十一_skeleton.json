@@ -1,0 +1,589 @@
+{
+  "volume": "匡张孔马传",
+  "source_file": "02汉书_093_匡张孔马传第五十一.txt",
+  "total_paragraphs": 57,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "匡衡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "匡衡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "匡衡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "匡衡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "匡衡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "匡衡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "匡衡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "匡衡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "匡衡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "匡衡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "匡衡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "匡衡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "匡衡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "匡衡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "匡衡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "匡衡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "匡衡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "匡衡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "匡衡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "匡衡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "匡衡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "匡衡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "匡衡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "匡衡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "张禹",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "张禹",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "张禹",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "张禹",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "张禹",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "张禹",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "张禹",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "张禹",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "张禹",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "孔光",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "孔光",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "孔光",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "孔光",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "孔光",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "孔光",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "孔光",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "孔光",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "孔光",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "孔光",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "孔光",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [
+        {
+          "name": "孔光",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 47,
+      "owners": [
+        {
+          "name": "孔光",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 48,
+      "owners": [
+        {
+          "name": "孔光",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 49,
+      "owners": [
+        {
+          "name": "孔光",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 50,
+      "owners": [
+        {
+          "name": "孔光",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 51,
+      "owners": [
+        {
+          "name": "孔光",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 52,
+      "owners": [
+        {
+          "name": "马宫",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 53,
+      "owners": [
+        {
+          "name": "马宫",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 54,
+      "owners": [
+        {
+          "name": "马宫",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 55,
+      "owners": [
+        {
+          "name": "马宫",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 56,
+      "owners": [
+        {
+          "name": "马宫",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 57,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HANSHU_093_01",
+      "史略名称": "匡衡",
+      "史略简介": "匡衡",
+      "原文字句": "匡衡字稚圭，东海承人也。父世农夫，至衡好学，家贫，庸作以供资用，尤精力过绝人。诸儒为之语曰：“无说《诗》，匡鼎来；匡语《诗》，解人颐。”",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷93·匡张孔马传》",
+      "paragraphs": [
+        {
+          "volume": "匡张孔马传",
+          "paragraph_from": 2,
+          "paragraph_to": 25
+        }
+      ],
+      "五级细坐标": "汉书·卷093·文臣·01",
+      "六级段落锚点": "[P2-P25]",
+      "原文出处": "匡张孔马传·P2-P25"
+    },
+    {
+      "史略ID": "HANSHU_093_02",
+      "史略名称": "张禹",
+      "史略简介": "张禹",
+      "原文字句": "张禹字子文，河内轵人也。至禹父徙家莲勺。禹为儿，数随家至市，喜观于卜相者前。久之，颇晓其别蓍布卦意，时从旁言。卜者爱之，又奇其面貌，谓禹父：“是儿多知，可令学经。”及禹壮，至长安学，从沛郡施雠受《易》，琅邪王阳、胶东庸生问《论语》，既皆明习，有徒众，举为郡文学。甘露中，诸儒荐禹，有诏太子太傅萧望之问。禹对《易》及《论语》大义，望之善焉，奏禹经学精习，有师法，可试事。奏寝，罢归故宫。久之，试为博士。",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷93·匡张孔马传》",
+      "paragraphs": [
+        {
+          "volume": "匡张孔马传",
+          "paragraph_from": 26,
+          "paragraph_to": 34
+        }
+      ],
+      "五级细坐标": "汉书·卷093·文臣·02",
+      "六级段落锚点": "[P26-P34]",
+      "原文出处": "匡张孔马传·P26-P34"
+    },
+    {
+      "史略ID": "HANSHU_093_03",
+      "史略名称": "孔光",
+      "史略简介": "孔光",
+      "原文字句": "孔光字子夏，孔子十四世之孙也。孔子生伯鱼鲤，鲤生子思伋，伋生子上帛，帛生子家求，求生子真箕，箕生子高穿。穿生顺，顺为魏相。顺生鲋，鲋为陈涉博士，死陈下。鲋弟子襄为孝惠博士、长沙太博。襄生忠，忠生武及安国，武生延年。延年生霸，字次儒。霸生光焉。安国、延年皆以治《尚书》为武帝博士。安国至临淮太守。霸亦治《尚书》，事太傅夏侯胜，昭帝末年为博士，宣帝时为太中大夫，以选授皇太子经，迁詹事、高密相。是时，诸侯",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷93·匡张孔马传》",
+      "paragraphs": [
+        {
+          "volume": "匡张孔马传",
+          "paragraph_from": 35,
+          "paragraph_to": 51
+        }
+      ],
+      "五级细坐标": "汉书·卷093·文臣·03",
+      "六级段落锚点": "[P35-P51]",
+      "原文出处": "匡张孔马传·P35-P51"
+    },
+    {
+      "史略ID": "HANSHU_093_04",
+      "史略名称": "马宫",
+      "史略简介": "马宫",
+      "原文字句": "马宫字游卿，东海戚人也。治《春秋》严氏，以射策甲科为郎，迁楚长史，免官。后为丞相史司直。师丹荐宫行能高洁，迁廷尉平，青州刺史，汝南、九江太守，所在见称。征为詹事，光禄勋，右将军，代孔光为大司徒，封扶德侯。光为太师薨，宫复代光为太师，兼司徒官。",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷93·匡张孔马传》",
+      "paragraphs": [
+        {
+          "volume": "匡张孔马传",
+          "paragraph_from": 52,
+          "paragraph_to": 56
+        }
+      ],
+      "五级细坐标": "汉书·卷093·文臣·04",
+      "六级段落锚点": "[P52-P56]",
+      "原文出处": "匡张孔马传·P52-P56"
+    }
+  ]
+}

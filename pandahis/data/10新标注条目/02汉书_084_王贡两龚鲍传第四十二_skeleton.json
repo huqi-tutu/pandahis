@@ -1,0 +1,717 @@
+{
+  "volume": "王贡两龚鲍传",
+  "source_file": "02汉书_084_王贡两龚鲍传第四十二.txt",
+  "total_paragraphs": 76,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "interleaved",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 3,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 4,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 5,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "王吉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "王吉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "王吉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "王吉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "王吉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "王吉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "王吉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "王吉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "王吉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "王吉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "王吉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "王吉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "王吉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "王吉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "王吉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "王吉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "王吉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "王吉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "王吉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "贡禹",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "贡禹",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "贡禹",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "贡禹",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "贡禹",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "贡禹",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "贡禹",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "贡禹",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "贡禹",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "贡禹",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "贡禹",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "贡禹",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "贡禹",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "贡禹",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "贡禹",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "贡禹",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "贡禹",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "贡禹",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "龚胜",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "龚胜",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "龚胜",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [
+        {
+          "name": "龚胜",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 47,
+      "owners": [
+        {
+          "name": "龚胜",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 48,
+      "owners": [
+        {
+          "name": "龚胜",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 49,
+      "owners": [
+        {
+          "name": "龚胜",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 50,
+      "owners": [
+        {
+          "name": "龚胜",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 51,
+      "owners": [
+        {
+          "name": "龚胜",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 52,
+      "owners": [
+        {
+          "name": "龚胜",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 53,
+      "owners": [
+        {
+          "name": "龚胜",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 54,
+      "owners": [
+        {
+          "name": "鲍宣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 55,
+      "owners": [
+        {
+          "name": "鲍宣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 56,
+      "owners": [
+        {
+          "name": "鲍宣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 57,
+      "owners": [
+        {
+          "name": "鲍宣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 58,
+      "owners": [
+        {
+          "name": "鲍宣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 59,
+      "owners": [
+        {
+          "name": "鲍宣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 60,
+      "owners": [
+        {
+          "name": "鲍宣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 61,
+      "owners": [
+        {
+          "name": "鲍宣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 62,
+      "owners": [
+        {
+          "name": "鲍宣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 63,
+      "owners": [
+        {
+          "name": "鲍宣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 64,
+      "owners": [
+        {
+          "name": "鲍宣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 65,
+      "owners": [
+        {
+          "name": "鲍宣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 66,
+      "owners": [
+        {
+          "name": "鲍宣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 67,
+      "owners": [
+        {
+          "name": "鲍宣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 68,
+      "owners": [
+        {
+          "name": "鲍宣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 69,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 70,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 71,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 72,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 73,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 74,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 75,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 76,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HANSHU_084_01",
+      "史略名称": "王吉",
+      "史略简介": "王吉",
+      "原文字句": "王吉字子阳，琅邪皋虞人也。少好学明经，以郡吏举孝廉为郎，补若卢右丞，迁云阳令。举贤良为昌邑中尉，而王好游猎，驱驰国中，动作亡节，吉上疏谏，曰：",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷84·王贡两龚鲍传》",
+      "paragraphs": [
+        {
+          "volume": "王贡两龚鲍传",
+          "paragraph_from": 6,
+          "paragraph_to": 24
+        }
+      ],
+      "五级细坐标": "汉书·卷084·文臣·01",
+      "六级段落锚点": "[P6-P24]",
+      "原文出处": "王贡两龚鲍传·P6-P24"
+    },
+    {
+      "史略ID": "HANSHU_084_02",
+      "史略名称": "贡禹",
+      "史略简介": "贡禹",
+      "原文字句": "贡禹字少翁，琅邪人也。以明经洁行著闻，征为博士、凉州刺史，病去官。复举贤良为河南令。岁余，以职事为府官所责，免冠谢。禹曰：“冠一免，安复可冠也！”遂去官。",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷84·王贡两龚鲍传》",
+      "paragraphs": [
+        {
+          "volume": "王贡两龚鲍传",
+          "paragraph_from": 25,
+          "paragraph_to": 42
+        }
+      ],
+      "五级细坐标": "汉书·卷084·文臣·02",
+      "六级段落锚点": "[P25-P42]",
+      "原文出处": "王贡两龚鲍传·P25-P42"
+    },
+    {
+      "史略ID": "HANSHU_084_03",
+      "史略名称": "龚胜",
+      "史略简介": "龚胜",
+      "原文字句": "两龚皆楚人也，胜字君宾，舍字君倩。二人相友，并著名节，故世谓之楚两龚。少皆好学明经，胜为郡吏，舍不仕。",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷84·王贡两龚鲍传》",
+      "paragraphs": [
+        {
+          "volume": "王贡两龚鲍传",
+          "paragraph_from": 43,
+          "paragraph_to": 53
+        }
+      ],
+      "五级细坐标": "汉书·卷084·文臣·03",
+      "六级段落锚点": "[P43-P53]",
+      "原文出处": "王贡两龚鲍传·P43-P53"
+    },
+    {
+      "史略ID": "HANSHU_084_04",
+      "史略名称": "鲍宣",
+      "史略简介": "鲍宣",
+      "原文字句": "鲍宣字子都，渤海高城人也。好学，明经，为县乡啬夫，守束州丞。后为都尉、太守功曹，举孝廉为郎，病去官，复为州从事。大司马、卫将军王商辟宣，荐为议郎，后以病去。哀帝初，大司空何武除宣为西曹掾，甚敬重焉，荐宣为谏大夫，迁豫州牧。岁余，丞相司直郭钦奏“宣举错烦苛，代二千石署吏听讼，所察过诏条。行部乘传去法驾，驾一马，舍宿乡亭，为众所非。”宣坐免。归家数月，复征为谏大夫。",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷84·王贡两龚鲍传》",
+      "paragraphs": [
+        {
+          "volume": "王贡两龚鲍传",
+          "paragraph_from": 54,
+          "paragraph_to": 68
+        }
+      ],
+      "五级细坐标": "汉书·卷084·文臣·04",
+      "六级段落锚点": "[P54-P68]",
+      "原文出处": "王贡两龚鲍传·P54-P68"
+    }
+  ],
+  "translation_qa_hint": "混写卷：人物段落非连续。翻译质检须按 entries[].paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。"
+}

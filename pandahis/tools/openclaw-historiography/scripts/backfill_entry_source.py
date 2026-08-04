@@ -36,7 +36,8 @@ def main() -> int:
     paths = histograph_paths()
     index_path = args.index or paths["global_index"]
     data = json.loads(index_path.read_text(encoding="utf-8"))
-    entries = data.get("entries") or []
+    is_list = isinstance(data, list)
+    entries = data if is_list else (data.get("entries") or [])
 
     new_entries, changed = backfill_entries(entries)
     extract_n = sum(1 for e in new_entries if infer_entry_source(e) == SOURCE_EXTRACT)
@@ -51,11 +52,16 @@ def main() -> int:
     if args.dry_run or changed == 0:
         return 0
 
-    data["entries"] = new_entries
-    data["entry_source_backfill_at"] = datetime.now(timezone.utc).strftime(
-        "%Y-%m-%dT%H:%M:%SZ"
-    )
-    index_path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    backfill_at = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    if is_list:
+        index_path.write_text(
+            json.dumps(new_entries, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
+    else:
+        data["entries"] = new_entries
+        data["entry_source_backfill_at"] = backfill_at
+        index_path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"已写入 {index_path}")
     return 0
 

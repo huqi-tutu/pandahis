@@ -14,6 +14,7 @@ _PATH_PATTERNS: tuple[tuple[str, str], ...] = (
     ("markdown", r"分块正文路径:\s*(\S+)"),
     ("skeleton", r"skeleton 产出路径:\s*(\S+)"),
     ("blocks", r"blocks 产出路径:\s*(\S+)"),
+    ("primary_subjects", r"primary_subjects 产出路径:\s*(\S+)"),
     ("protagonists", r"protagonists 产出路径:\s*(\S+)"),
     ("markdown_append", r"审计落盘路径:\s*(\S+)"),
     ("markdown_append", r"参考资料路径:\s*(\S+)"),
@@ -132,6 +133,37 @@ def blocks_payload_errors(obj: Any, *, expected_total: int = 0) -> List[str]:
         errors.append("blocks 草稿禁止含 entries")
     if obj.get("segment_attribution"):
         errors.append("blocks 草稿禁止含 segment_attribution")
+    return errors
+
+
+def primary_subjects_payload_errors(obj: Any, *, expected_total: int = 0) -> List[str]:
+    """Step1b-α 逐段主语最低结构。"""
+    if not isinstance(obj, dict):
+        return ["须为 JSON 对象"]
+    errors: List[str] = []
+    total = obj.get("total_paragraphs")
+    if not isinstance(total, int) or total <= 0:
+        errors.append("total_paragraphs 须为正整数")
+    elif expected_total and total != expected_total:
+        errors.append(f"total_paragraphs={total} ≠ 段落索引 {expected_total}")
+    paragraphs = obj.get("paragraphs")
+    if not isinstance(paragraphs, list) or not paragraphs:
+        errors.append("paragraphs 须为非空数组")
+    else:
+        if expected_total and len(paragraphs) != expected_total:
+            errors.append(f"paragraphs 段数 {len(paragraphs)} ≠ {expected_total}")
+        for item in paragraphs[:5]:
+            if not isinstance(item, dict):
+                errors.append("paragraphs 每项须为对象")
+                break
+            if not isinstance(item.get("paragraph"), int):
+                errors.append("paragraphs 缺少 paragraph")
+                break
+            if not (item.get("primary_subject") or "").strip():
+                errors.append("paragraphs 缺少 primary_subject")
+                break
+    if obj.get("blocks") or obj.get("entries"):
+        errors.append("primary_subjects 禁止含 blocks/entries")
     return errors
 
 
@@ -326,6 +358,13 @@ def extract_best_json(text: str) -> Optional[Any]:
         if isinstance(obj, dict) and "protagonists" in obj and "blocks" not in obj:
             return obj
 
+    # Step1b-α primary_subjects（逐段主语，无 blocks）
+    for obj in objects:
+        if isinstance(obj, dict) and isinstance(obj.get("paragraphs"), list) and "blocks" not in obj:
+            if obj.get("paragraphs") and isinstance(obj["paragraphs"][0], dict):
+                if "primary_subject" in obj["paragraphs"][0]:
+                    return obj
+
     # Step1 blocks 草稿（仅 blocks，无 entries）
     for obj in objects:
         if isinstance(obj, dict) and "blocks" in obj and "entries" not in obj:
@@ -367,7 +406,7 @@ def persist_artifacts(
     if json_payload is None:
         json_payload = extract_translate_payload(message, response_text)
 
-    for key in ("plan", "output", "skeleton", "blocks", "protagonists"):
+    for key in ("plan", "output", "skeleton", "blocks", "primary_subjects", "protagonists"):
         path = merged.get(key)
         if path and json_payload is not None:
             payload = json_payload
@@ -386,6 +425,13 @@ def persist_artifacts(
                     raise ValueError(
                         "LLM 未返回合法 blocks 草稿："
                         + "；".join(blk_errs)
+                    )
+            elif key == "primary_subjects":
+                ps_errs = primary_subjects_payload_errors(payload)
+                if ps_errs:
+                    raise ValueError(
+                        "LLM 未返回合法 primary_subjects："
+                        + "；".join(ps_errs)
                     )
             elif key == "protagonists":
                 p_errs = protagonists_payload_errors(payload)

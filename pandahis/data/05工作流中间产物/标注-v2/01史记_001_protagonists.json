@@ -1,0 +1,35 @@
+{
+  "work": "01史记",
+  "vol": "001",
+  "volume_name": "五帝本纪",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "benji_multi",
+  "volume_type_guess": "本纪（多人）",
+  "protagonists": [
+    {
+      "name": "黄帝",
+      "category": "君王",
+      "rationale": "五帝本纪首位，阪泉涿鹿定天下。"
+    },
+    {
+      "name": "颛顼",
+      "category": "君王",
+      "rationale": "高阳继黄帝，静渊疏通。"
+    },
+    {
+      "name": "帝喾",
+      "category": "君王",
+      "rationale": "高辛继颛顼，生尧挚。"
+    },
+    {
+      "name": "尧",
+      "category": "君王",
+      "rationale": "陶唐禅舜，治历选贤。"
+    },
+    {
+      "name": "舜",
+      "category": "君王",
+      "rationale": "有虞摄政即位，禅禹。"
+    }
+  ]
+}

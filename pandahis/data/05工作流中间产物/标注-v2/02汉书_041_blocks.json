@@ -1,0 +1,46 @@
+{
+  "work": "02汉书",
+  "vol": "041",
+  "total_paragraphs": 54,
+  "volume_subtype": "hezhuan",
+  "derived_from": "02汉书_041_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 47,
+      "paragraph_to": 54,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "陈胜",
+      "category": "庶众",
+      "paragraph_from": 2,
+      "paragraph_to": 15,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "陈胜字涉，阳城人。吴广，字叔，阳夏人也。胜少时，尝与人佣耕。辍耕之垄上，怅然甚久",
+        "close_paragraph": 15,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P15"
+      }
+    },
+    {
+      "name": "项羽",
+      "category": "君王",
+      "paragraph_from": 16,
+      "paragraph_to": 46,
+      "boundary_evidence": {
+        "open_paragraph": 16,
+        "open_phrase": "项籍字羽，下相人也。初起，年二十四。其季父梁，梁父即楚名将项燕者也。家世楚将，封",
+        "close_paragraph": 46,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P16–P46"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

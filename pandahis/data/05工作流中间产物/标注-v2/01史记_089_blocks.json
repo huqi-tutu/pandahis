@@ -1,0 +1,125 @@
+{
+  "work": "01史记",
+  "vol": "089",
+  "total_paragraphs": 41,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "01史记_089_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 41,
+      "paragraph_to": 41,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "张耳",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 4,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "张耳者，大梁人也。其少时，及魏公子毋忌为客。张耳尝亡命游外黄。外黄富人女甚美，嫁",
+        "close_paragraph": 4,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P1–P4"
+      }
+    },
+    {
+      "name": "陈馀",
+      "category": "文臣",
+      "paragraph_from": 5,
+      "paragraph_to": 5,
+      "boundary_evidence": {
+        "open_paragraph": 5,
+        "open_phrase": "陈馀乃复说陈王曰：“大王举梁、楚而西，务在入关，未及收河北也。臣尝游赵，知其豪桀",
+        "close_paragraph": 5,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P5–P5"
+      }
+    },
+    {
+      "name": "张耳",
+      "category": "文臣",
+      "paragraph_from": 6,
+      "paragraph_to": 18,
+      "boundary_evidence": {
+        "open_paragraph": 6,
+        "open_phrase": "武臣等从白马渡河，至诸县，说其豪桀曰：“秦为乱政虐刑以残贼天下，数十年矣。北有长",
+        "close_paragraph": 18,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P6–P18"
+      }
+    },
+    {
+      "name": "陈馀",
+      "category": "文臣",
+      "paragraph_from": 19,
+      "paragraph_to": 19,
+      "boundary_evidence": {
+        "open_paragraph": 19,
+        "open_phrase": "陈馀曰：“吾死顾以为无益。必如公言。”乃使五千人令张黡、陈泽先尝秦军，至皆没。",
+        "close_paragraph": 19,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P19–P19"
+      }
+    },
+    {
+      "name": "张耳",
+      "category": "文臣",
+      "paragraph_from": 20,
+      "paragraph_to": 23,
+      "boundary_evidence": {
+        "open_paragraph": 20,
+        "open_phrase": "当是时，燕、齐、楚闻赵急，皆来救。张敖亦北收代兵，得万馀人，来，皆壁馀旁，未敢击",
+        "close_paragraph": 23,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P20–P23"
+      }
+    },
+    {
+      "name": "陈馀",
+      "category": "文臣",
+      "paragraph_from": 24,
+      "paragraph_to": 25,
+      "boundary_evidence": {
+        "open_paragraph": 24,
+        "open_phrase": "陈馀客多说项羽曰：“陈馀、张耳一体有功於赵。”项羽以陈馀不从入关，闻其在南皮，即",
+        "close_paragraph": 25,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P24–P25"
+      }
+    },
+    {
+      "name": "张耳",
+      "category": "文臣",
+      "paragraph_from": 26,
+      "paragraph_to": 27,
+      "boundary_evidence": {
+        "open_paragraph": 26,
+        "open_phrase": "田荣欲树党於赵以反楚，乃遣兵从陈馀。陈馀因悉三县兵袭常山王张耳。张耳败走，念诸侯",
+        "close_paragraph": 27,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P26–P27"
+      }
+    },
+    {
+      "name": "陈馀",
+      "category": "文臣",
+      "paragraph_from": 28,
+      "paragraph_to": 29,
+      "boundary_evidence": {
+        "open_paragraph": 28,
+        "open_phrase": "陈馀已败张耳，皆复收赵地，迎赵王於代，复为赵王。赵王德陈馀，立以为代王。陈馀为赵",
+        "close_paragraph": 29,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P28–P29"
+      }
+    },
+    {
+      "name": "张耳",
+      "category": "文臣",
+      "paragraph_from": 30,
+      "paragraph_to": 40,
+      "boundary_evidence": {
+        "open_paragraph": 30,
+        "open_phrase": "汉三年，韩信已定魏地，遣张耳与韩信击破赵井陉，斩陈馀泜水上，追杀赵王歇襄国。汉立",
+        "close_paragraph": 40,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P30–P40"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

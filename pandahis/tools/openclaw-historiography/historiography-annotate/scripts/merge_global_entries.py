@@ -27,6 +27,7 @@ import sys
 _ANNOTATE_DIR = Path(__file__).resolve().parents[1]
 if str(_ANNOTATE_DIR) not in sys.path:
     sys.path.insert(0, str(_ANNOTATE_DIR))
+from canonical_resolve import resolve_canonical  # noqa: E402
 from source_thickness import (  # noqa: E402
     apply_thickness_mub_swap,
     build_deferred_record,
@@ -137,6 +138,9 @@ def _canonical_name(name: str) -> str:
     n = (name or "").strip()
     if not n:
         return n
+    unified = resolve_canonical(n).canonical
+    if unified and unified != n:
+        return unified
     if n in NAME_ALIASES:
         return NAME_ALIASES[n]
     return _zongqi_alias_map().get(n, n)

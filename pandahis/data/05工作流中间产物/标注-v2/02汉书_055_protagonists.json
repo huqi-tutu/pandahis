@@ -1,0 +1,36 @@
+{
+  "work": "02汉书",
+  "vol": "055",
+  "volume_name": "蒯伍江息夫传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "蒯通",
+      "category": "文臣",
+      "rationale": "卷名首列人物，合传主人公之一。蒯通为纵横辩士，以游说谋略事主，属文臣类。"
+    },
+    {
+      "name": "伍被",
+      "category": "文臣",
+      "rationale": "卷名次列人物，合传主人公之一。伍被为淮南王刘安谋士，以文士身份参与谋议，属文臣类。"
+    },
+    {
+      "name": "江充",
+      "category": "文臣",
+      "rationale": "卷名第三位人物，合传主人公之一。江充以告讦起家，为汉武帝近臣，虽行酷烈，然以刑名事君，属文臣类。"
+    },
+    {
+      "name": "息夫躬",
+      "category": "文臣",
+      "rationale": "卷名末位人物，合传主人公之一。息夫躬以博学通经为哀帝所宠，建言朝政，属文臣类。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

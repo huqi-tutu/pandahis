@@ -1,0 +1,45 @@
+{
+  "work": "02汉书",
+  "vol": "087",
+  "volume_name": "眭两夏侯京翼李传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "眭弘",
+      "category": "文臣",
+      "rationale": "卷名首姓，眭弘为西汉经学家，以明经术、推灾异言政事为主轴，属儒学仕宦之文臣。"
+    },
+    {
+      "name": "夏侯始昌",
+      "category": "文臣",
+      "rationale": "卷名『两夏侯』之一，夏侯始昌为西汉今文尚书学重要传人，以经术传业为轴，属文臣。"
+    },
+    {
+      "name": "夏侯胜",
+      "category": "文臣",
+      "rationale": "卷名『两夏侯』之一，夏侯胜以尚书学立身，参与石渠阁议，为儒学文臣主轴。"
+    },
+    {
+      "name": "京房",
+      "category": "文臣",
+      "rationale": "卷名『京』指京房，西汉易学大家，以灾异占验、律历推演为学，仕宦为郎官，属文臣。"
+    },
+    {
+      "name": "翼奉",
+      "category": "文臣",
+      "rationale": "卷名『翼』指翼奉，西汉经学家，以齐诗传业，言灾异时政，属文臣。"
+    },
+    {
+      "name": "李寻",
+      "category": "文臣",
+      "rationale": "卷名『李』指李寻，西汉方士化儒生，以星历灾异说进言朝廷，属文臣。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

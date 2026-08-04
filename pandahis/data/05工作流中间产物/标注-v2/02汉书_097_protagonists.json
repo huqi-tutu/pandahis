@@ -1,0 +1,25 @@
+{
+  "work": "02汉书",
+  "vol": "097",
+  "volume_name": "谷永杜邺传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "谷永",
+      "category": "文臣",
+      "rationale": "《谷永杜邺传》卷名首列人物，西汉大臣，以经学、灾异论说进谏成帝，属行政儒学仕宦为主轴的文臣列传合传主人公。"
+    },
+    {
+      "name": "杜邺",
+      "category": "文臣",
+      "rationale": "《谷永杜邺传》卷名并列人物，西汉大臣，以经学、灾异论说进谏成帝，属行政儒学仕宦为主轴的文臣列传合传主人公。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

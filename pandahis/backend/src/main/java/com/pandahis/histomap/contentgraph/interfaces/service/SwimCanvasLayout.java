@@ -75,7 +75,7 @@ final class SwimCanvasLayout {
           lane.visibleCount()
       ));
 
-      cursor += bandHeight + BAND_GAP_RPX
+      cursor += bandHeight + BAND_GAP_RPX;
     }
 
     int canvasHeight = bands.isEmpty()
@@ -112,7 +112,12 @@ final class SwimCanvasLayout {
         SwimLaneLayout.CHIP_HEIGHT_RPX,
         bar.chipTag(),
         bar.priorityReason(),
-        bar.entrySource()
+        bar.entrySource(),
+        bar.detailSource(),
+        bar.civilizationName(),
+        bar.dynastyName(),
+        bar.regimeName(),
+        bar.emperorName()
     );
   }
 

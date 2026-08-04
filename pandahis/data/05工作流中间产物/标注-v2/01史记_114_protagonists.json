@@ -1,0 +1,19 @@
+{
+  "work": "01史记",
+  "vol": "114",
+  "volume_name": "东越列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "fanzuo",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "东越",
+      "category": "蕃祚",
+      "rationale": "《史记·东越列传》为四夷蕃国列传，主轴为东越（闽越/东瓯）政权整体，非单一人君；年轴为东越立国至灭亡。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

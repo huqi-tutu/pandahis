@@ -1,0 +1,29 @@
+{
+  "work": "01史记",
+  "vol": "107",
+  "volume_name": "魏其武安侯列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "窦婴",
+      "category": "文臣",
+      "rationale": "卷名首列魏其侯窦婴，合传主人公之一。窦婴为外戚出身但以丞相、大将军身份参政，属行政仕宦主轴，非以藩王或后妃身份立传，故归文臣。"
+    },
+    {
+      "name": "田蚡",
+      "category": "文臣",
+      "rationale": "卷名次列武安侯田蚡，合传主人公之一。田蚡以外戚封侯、官至丞相，以权臣政治斗争为叙事主轴，属行政仕宦，归文臣。"
+    },
+    {
+      "name": "灌夫",
+      "category": "武将",
+      "rationale": "卷名末列灌夫，合传主人公之一。灌夫以军功起家（七国之乱中以勇猛闻名），叙事主轴为军功武将与权臣冲突，归武将。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

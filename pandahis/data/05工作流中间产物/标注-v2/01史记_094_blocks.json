@@ -1,0 +1,58 @@
+{
+  "work": "01史记",
+  "vol": "094",
+  "total_paragraphs": 20,
+  "volume_subtype": "hezhuan",
+  "derived_from": "01史记_094_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 4,
+      "paragraph_to": 4,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 20,
+      "paragraph_to": 20,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "田儋",
+      "category": "庶众",
+      "paragraph_from": 1,
+      "paragraph_to": 3,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "田儋者，狄人也，故齐王田氏族也。儋从弟田荣，荣弟田横，皆豪，宗彊，能得人。",
+        "close_paragraph": 3,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P1–P3"
+      }
+    },
+    {
+      "name": "田荣",
+      "category": "庶众",
+      "paragraph_from": 5,
+      "paragraph_to": 10,
+      "boundary_evidence": {
+        "open_paragraph": 5,
+        "open_phrase": "田荣之走东阿，章邯追围之。项梁闻田荣之急，乃引兵击破章邯军东阿下。",
+        "close_paragraph": 10,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P5–P10"
+      }
+    },
+    {
+      "name": "田横",
+      "category": "庶众",
+      "paragraph_from": 11,
+      "paragraph_to": 19,
+      "boundary_evidence": {
+        "open_paragraph": 11,
+        "open_phrase": "项王闻之，大怒，乃北伐齐。齐王田荣兵败，走平原，平原人杀荣。项王遂烧夷齐城郭，所",
+        "close_paragraph": 19,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P11–P19"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

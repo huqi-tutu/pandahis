@@ -1,0 +1,28 @@
+{
+  "volume": "百官公卿表第七下",
+  "source_file": "02汉书_120_百官公卿表第七下.txt",
+  "total_paragraphs": 3,
+  "volume_type": "表",
+  "volume_subtype": "skip",
+  "volume_texture": "sequential",
+  "narrative_mode": "skip",
+  "翻译视角说明": "表卷无叙事主轴，全卷不提取人物 entry。",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 3,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": []
+}

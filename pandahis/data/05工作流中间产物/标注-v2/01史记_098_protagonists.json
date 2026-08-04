@@ -1,0 +1,29 @@
+{
+  "work": "01史记",
+  "vol": "098",
+  "volume_name": "傅靳蒯成列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "傅宽",
+      "category": "武将",
+      "rationale": "卷名首列人物，以军功封侯为列传主轴，属武将类。"
+    },
+    {
+      "name": "靳歙",
+      "category": "武将",
+      "rationale": "卷名次列人物，以征战军功为列传主轴，属武将类。"
+    },
+    {
+      "name": "蒯成侯",
+      "category": "武将",
+      "rationale": "卷名末列人物，以军功封侯为列传主轴，属武将类。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

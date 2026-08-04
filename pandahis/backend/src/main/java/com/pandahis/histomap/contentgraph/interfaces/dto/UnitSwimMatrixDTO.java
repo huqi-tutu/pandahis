@@ -110,6 +110,11 @@ public record UnitSwimMatrixDTO(
       int heightRpx,
       String chipTag,
       String priorityReason,
-      String entrySource
+      String entrySource,
+      String detailSource,
+      String civilizationName,
+      String dynastyName,
+      String regimeName,
+      String emperorName
   ) {}
 }

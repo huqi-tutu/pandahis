@@ -1,0 +1,32 @@
+{
+  "work": "02汉书",
+  "vol": "090",
+  "total_paragraphs": 28,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 28,
+      "paragraph_to": 28,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "萧望之",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 27,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "萧望之字长倩，东海兰陵人也，徙杜陵。家世以田为业，至望之，好学，治《齐诗》，事同",
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

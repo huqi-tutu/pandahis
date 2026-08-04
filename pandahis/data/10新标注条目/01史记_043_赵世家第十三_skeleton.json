@@ -1,0 +1,978 @@
+{
+  "volume": "赵世家",
+  "source_file": "01史记_043_赵世家第十三.txt",
+  "total_paragraphs": 113,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "interleaved",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 2,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 3,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 4,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 5,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 6,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 7,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 8,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 9,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 10,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 11,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 12,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 13,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 14,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 15,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 16,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 17,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 18,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "赵简子",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "赵简子",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "赵简子",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "赵简子",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "赵简子",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "赵简子",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "赵简子",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "赵简子",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "赵简子",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "赵简子",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "赵简子",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "赵简子",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "赵简子",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "赵简子",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "赵简子",
+          "category": "诸侯"
+        },
+        {
+          "name": "赵襄子",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "赵襄子",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "赵襄子",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "赵襄子",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "赵襄子",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "赵襄子",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 40,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 41,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 42,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 43,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 44,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 45,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 46,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 47,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 48,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 49,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 50,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 51,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 52,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 53,
+      "owners": [
+        {
+          "name": "赵武灵王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 54,
+      "owners": [
+        {
+          "name": "赵武灵王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 55,
+      "owners": [
+        {
+          "name": "赵武灵王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 56,
+      "owners": [
+        {
+          "name": "赵武灵王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 57,
+      "owners": [
+        {
+          "name": "赵武灵王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 58,
+      "owners": [
+        {
+          "name": "赵武灵王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 59,
+      "owners": [
+        {
+          "name": "赵武灵王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 60,
+      "owners": [
+        {
+          "name": "赵武灵王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 61,
+      "owners": [
+        {
+          "name": "赵武灵王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 62,
+      "owners": [
+        {
+          "name": "赵武灵王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 63,
+      "owners": [
+        {
+          "name": "赵武灵王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 64,
+      "owners": [
+        {
+          "name": "赵武灵王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 65,
+      "owners": [
+        {
+          "name": "赵武灵王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 66,
+      "owners": [
+        {
+          "name": "赵武灵王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 67,
+      "owners": [
+        {
+          "name": "赵武灵王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 68,
+      "owners": [
+        {
+          "name": "赵惠文王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 69,
+      "owners": [
+        {
+          "name": "赵武灵王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 70,
+      "owners": [
+        {
+          "name": "赵武灵王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 71,
+      "owners": [
+        {
+          "name": "赵武灵王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 72,
+      "owners": [
+        {
+          "name": "赵武灵王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 73,
+      "owners": [
+        {
+          "name": "赵武灵王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 74,
+      "owners": [
+        {
+          "name": "赵武灵王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 75,
+      "owners": [
+        {
+          "name": "赵武灵王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 76,
+      "owners": [
+        {
+          "name": "赵武灵王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 77,
+      "owners": [
+        {
+          "name": "赵惠文王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 78,
+      "owners": [
+        {
+          "name": "赵惠文王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 79,
+      "owners": [
+        {
+          "name": "赵惠文王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 80,
+      "owners": [
+        {
+          "name": "赵惠文王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 81,
+      "owners": [
+        {
+          "name": "赵惠文王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 82,
+      "owners": [
+        {
+          "name": "赵惠文王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 83,
+      "owners": [
+        {
+          "name": "赵惠文王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 84,
+      "owners": [
+        {
+          "name": "赵惠文王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 85,
+      "owners": [
+        {
+          "name": "赵惠文王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 86,
+      "owners": [
+        {
+          "name": "赵惠文王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 87,
+      "owners": [
+        {
+          "name": "赵惠文王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 88,
+      "owners": [
+        {
+          "name": "赵惠文王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 89,
+      "owners": [
+        {
+          "name": "赵惠文王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 90,
+      "owners": [
+        {
+          "name": "赵惠文王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 91,
+      "owners": [
+        {
+          "name": "赵惠文王",
+          "category": "诸侯"
+        },
+        {
+          "name": "赵孝成王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 92,
+      "owners": [
+        {
+          "name": "赵孝成王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 93,
+      "owners": [
+        {
+          "name": "赵孝成王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 94,
+      "owners": [
+        {
+          "name": "赵孝成王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 95,
+      "owners": [
+        {
+          "name": "赵孝成王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 96,
+      "owners": [
+        {
+          "name": "赵孝成王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 97,
+      "owners": [
+        {
+          "name": "赵孝成王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 98,
+      "owners": [
+        {
+          "name": "赵孝成王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 99,
+      "owners": [
+        {
+          "name": "赵孝成王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 100,
+      "owners": [
+        {
+          "name": "赵孝成王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 101,
+      "owners": [
+        {
+          "name": "赵孝成王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 102,
+      "owners": [
+        {
+          "name": "赵孝成王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 103,
+      "owners": [
+        {
+          "name": "赵孝成王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 104,
+      "owners": [
+        {
+          "name": "赵孝成王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 105,
+      "owners": [
+        {
+          "name": "赵孝成王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 106,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 107,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 108,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 109,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 110,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 111,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 112,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 113,
+      "owners": [],
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SHIJI_043_01",
+      "史略名称": "赵简子",
+      "史略简介": "赵简子",
+      "原文字句": "赵景叔卒，生赵鞅，是为简子。",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷43·赵世家》",
+      "paragraphs": [
+        {
+          "volume": "赵世家",
+          "paragraph_from": 19,
+          "paragraph_to": 33
+        }
+      ],
+      "五级细坐标": "史记·卷043·诸侯·01",
+      "六级段落锚点": "[P19-P33]",
+      "原文出处": "赵世家·P19-P33"
+    },
+    {
+      "史略ID": "SHIJI_043_02",
+      "史略名称": "赵襄子",
+      "史略简介": "赵襄子",
+      "原文字句": "晋出公十七年，简子卒，太子毋恤代立，是为襄子。赵襄子元年，越围吴。襄子降丧食，使楚隆问吴王。",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷43·赵世家》",
+      "paragraphs": [
+        {
+          "volume": "赵世家",
+          "paragraph_from": 33,
+          "paragraph_to": 38
+        }
+      ],
+      "五级细坐标": "史记·卷043·诸侯·02",
+      "六级段落锚点": "[P33-P38]",
+      "原文出处": "赵世家·P33-P38"
+    },
+    {
+      "史略ID": "SHIJI_043_03",
+      "史略名称": "赵武灵王",
+      "史略简介": "赵武灵王",
+      "原文字句": "二十四年，肃侯卒。秦、楚、燕、齐、魏出锐师各万人来会葬。子武灵王立。",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷43·赵世家》",
+      "paragraphs": [
+        {
+          "volume": "赵世家",
+          "paragraph_from": 53,
+          "paragraph_to": 67
+        },
+        {
+          "volume": "赵世家",
+          "paragraph_from": 69,
+          "paragraph_to": 76
+        }
+      ],
+      "五级细坐标": "史记·卷043·诸侯·03",
+      "六级段落锚点": "[P53-P67],[P69-P76]",
+      "原文出处": "赵世家·P53-P67,P69-P76"
+    },
+    {
+      "史略ID": "SHIJI_043_04",
+      "史略名称": "赵惠文王",
+      "史略简介": "赵惠文王",
+      "原文字句": "二十七年五月戊申，大朝於东宫，传国，立王子何以为王。王庙见礼毕，出临朝。大夫悉为臣，肥义为相国，并傅王。是为惠文王。惠文王，惠后吴娃子也。武灵王自号为主父。",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷43·赵世家》",
+      "paragraphs": [
+        {
+          "volume": "赵世家",
+          "paragraph_from": 68,
+          "paragraph_to": 68
+        },
+        {
+          "volume": "赵世家",
+          "paragraph_from": 77,
+          "paragraph_to": 91
+        }
+      ],
+      "五级细坐标": "史记·卷043·诸侯·04",
+      "六级段落锚点": "[P68],[P77-P91]",
+      "原文出处": "赵世家·P68,P77-P91"
+    },
+    {
+      "史略ID": "SHIJI_043_05",
+      "史略名称": "赵孝成王",
+      "史略简介": "赵孝成王",
+      "原文字句": "三十三年，惠文王卒，太子丹立，是为孝成王。",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷43·赵世家》",
+      "paragraphs": [
+        {
+          "volume": "赵世家",
+          "paragraph_from": 91,
+          "paragraph_to": 105
+        }
+      ],
+      "五级细坐标": "史记·卷043·诸侯·05",
+      "六级段落锚点": "[P91-P105]",
+      "原文出处": "赵世家·P91-P105"
+    }
+  ],
+  "translation_qa_hint": "混写卷：人物段落非连续。翻译质检须按 entries[].paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。"
+}

@@ -1,0 +1,45 @@
+{
+  "work": "01史记",
+  "vol": "050",
+  "total_paragraphs": 12,
+  "volume_subtype": "hezhuan",
+  "excludes": [
+    {
+      "paragraph_from": 6,
+      "paragraph_to": 11,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 12,
+      "paragraph_to": 12,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "刘交",
+      "category": "宗戚",
+      "paragraph_from": 1,
+      "paragraph_to": 3,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "楚元王刘交者，高祖之同母少弟也，字游。",
+        "close_paragraph": 3,
+        "close_note": "人工订正"
+      }
+    },
+    {
+      "name": "刘戊",
+      "category": "宗戚",
+      "paragraph_from": 4,
+      "paragraph_to": 5,
+      "boundary_evidence": {
+        "open_paragraph": 4,
+        "open_phrase": "王戊立二十年，冬，坐为薄太后服私奸，削东海郡。春，戊与吴王合谋反，其相张尚、太傅",
+        "close_paragraph": 5,
+        "close_note": "人工订正"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

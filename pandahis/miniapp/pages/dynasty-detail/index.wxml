@@ -310,29 +310,31 @@
           <text class="chip-tooltip-correction-label">纠错</text>
         </view>
       </view>
+      <view wx:if="{{chipTooltipCoordinate}}" class="chip-tooltip-coords">
+        <view class="chip-tooltip-foot-row">
+          <text class="chip-tooltip-foot-label">坐标</text>
+          <text class="chip-tooltip-foot-highlight">{{chipTooltipCoordinate}}</text>
+        </view>
+      </view>
       <view
-        wx:if="{{chipTooltipPeakYear || chipTooltipPeakReason || chipTooltipPriority || chipTooltipPriorityReason || chipTooltipEntrySource}}"
+        wx:if="{{chipTooltipPeakSummary || chipTooltipPrioritySummary || chipTooltipEntrySource || chipTooltipDetailSource}}"
         class="chip-tooltip-foot"
       >
-        <view wx:if="{{chipTooltipPeakYear || chipTooltipPeakReason}}" class="chip-tooltip-foot-row">
+        <view wx:if="{{chipTooltipPeakSummary}}" class="chip-tooltip-foot-row chip-tooltip-foot-row--narrative">
           <text class="chip-tooltip-foot-label">峰值年</text>
-          <text
-            wx:if="{{chipTooltipPeakYear}}"
-            class="chip-tooltip-foot-highlight chip-tooltip-foot-highlight--cat-{{chipTooltipLaneKey}}"
-          >{{chipTooltipPeakYear}}</text>
-          <text wx:if="{{chipTooltipPeakReason}}" class="chip-tooltip-foot-reason">{{chipTooltipPeakReason}}</text>
+          <text class="chip-tooltip-foot-value">{{chipTooltipPeakSummary}}</text>
         </view>
-        <view wx:if="{{chipTooltipPriority || chipTooltipPriorityReason}}" class="chip-tooltip-foot-row">
+        <view wx:if="{{chipTooltipPrioritySummary}}" class="chip-tooltip-foot-row chip-tooltip-foot-row--narrative">
           <text class="chip-tooltip-foot-label">优先级</text>
-          <text
-            wx:if="{{chipTooltipPriority}}"
-            class="chip-tooltip-foot-highlight chip-tooltip-foot-highlight--cat-{{chipTooltipLaneKey}}"
-          >{{chipTooltipPriority}}</text>
-          <text wx:if="{{chipTooltipPriorityReason}}" class="chip-tooltip-foot-reason">{{chipTooltipPriorityReason}}</text>
+          <text class="chip-tooltip-foot-value">{{chipTooltipPrioritySummary}}</text>
         </view>
         <view wx:if="{{chipTooltipEntrySource}}" class="chip-tooltip-foot-row">
-          <text class="chip-tooltip-foot-label">数据来源</text>
+          <text class="chip-tooltip-foot-label">条目来源</text>
           <text class="chip-tooltip-foot-highlight">{{chipTooltipEntrySource}}</text>
+        </view>
+        <view wx:if="{{chipTooltipDetailSource}}" class="chip-tooltip-foot-row">
+          <text class="chip-tooltip-foot-label">详情来源</text>
+          <text class="chip-tooltip-foot-highlight">{{chipTooltipDetailSource}}</text>
         </view>
       </view>
     </view>

@@ -1,0 +1,85 @@
+{
+  "work": "01史记",
+  "vol": "050",
+  "total_paragraphs": 12,
+  "method": "Step1b-α LLM",
+  "paragraphs": [
+    {
+      "paragraph": 1,
+      "primary_subject": "刘交",
+      "disposition": "block",
+      "text_snippet": "楚元王刘交者，高祖之同母少弟也，字游。"
+    },
+    {
+      "paragraph": 2,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "高祖兄弟四人，长兄伯，伯蚤卒。始高祖微时，尝辟事，时时与宾客过巨嫂食。"
+    },
+    {
+      "paragraph": 3,
+      "primary_subject": "刘交",
+      "disposition": "block",
+      "text_snippet": "高祖六年，已禽楚王韩信於陈，乃以弟交为楚王，都彭城。即位二十三年卒，子夷王郢立。"
+    },
+    {
+      "paragraph": 4,
+      "primary_subject": "刘戊",
+      "disposition": "block",
+      "text_snippet": "王戊立二十年，冬，坐为薄太后服私奸，削东海郡。春，戊与吴王合谋反，其相张尚、太傅赵夷吾谏，不听。"
+    },
+    {
+      "paragraph": 5,
+      "primary_subject": "刘戊",
+      "disposition": "block",
+      "text_snippet": "至昌邑南，与汉将周亚夫战。汉绝吴楚粮道，士卒饥，吴王走，楚王戊自杀，军遂降汉。"
+    },
+    {
+      "paragraph": 6,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "汉已平吴楚，孝景帝欲以德侯子续吴，以元王子礼续楚。窦太后曰：吴王，老人也，宜为宗室顺善。"
+    },
+    {
+      "paragraph": 7,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "文王立三年卒，子安王道立。安王二十二年卒，子襄王注立。襄王立十四年卒，子王纯代立。"
+    },
+    {
+      "paragraph": 8,
+      "primary_subject": "刘遂",
+      "disposition": "block",
+      "text_snippet": "赵王刘遂者，其父高祖中子，名友，谥曰幽。幽王以忧死，故为幽。"
+    },
+    {
+      "paragraph": 9,
+      "primary_subject": "刘遂",
+      "disposition": "block",
+      "text_snippet": "高后王吕禄於赵，一岁而高后崩。大臣诛诸吕吕禄等，乃立幽王子遂为赵王。"
+    },
+    {
+      "paragraph": 10,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "孝文帝即位二年，立遂弟辟彊，取赵之河间郡为河间王，是为文王。立十三年卒，子哀王福立。"
+    },
+    {
+      "paragraph": 11,
+      "primary_subject": "刘遂",
+      "disposition": "block",
+      "text_snippet": "遂既王赵二十六年，孝景帝时坐晁错以適削赵王常山之郡。吴楚反，赵王遂与合谋起兵。"
+    },
+    {
+      "paragraph": 12,
+      "primary_subject": "太史公曰",
+      "disposition": "exclude",
+      "exclude_reason": "太史公曰",
+      "text_snippet": "太史公曰：国之将兴，必有祯祥，君子用而小人退。"
+    }
+  ]
+}

@@ -1,0 +1,349 @@
+{
+  "volume": "老子韩非列传",
+  "source_file": "01史记_063_老子韩非列传第三.txt",
+  "total_paragraphs": 30,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "interleaved",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [
+        {
+          "name": "老子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "老子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "老子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "老子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "老子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "老子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "庄子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "庄子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "庄子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "申不害",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "申不害",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "韩非",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "韩非",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "韩非",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "韩非",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "韩非",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "韩非",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "韩非",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "韩非",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "韩非",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "韩非",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "韩非",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "韩非",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "韩非",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "韩非",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "韩非",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 30,
+      "owners": [],
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SHIJI_063_01",
+      "史略名称": "老子",
+      "史略简介": "老子",
+      "原文字句": "老子者，楚苦县厉乡曲仁里人也，姓李氏，名耳，字聃，周守藏室之史也。",
+      "史略分类": "文臣",
+      "主要史料出处": "《史记·卷63·老子韩非列传》",
+      "paragraphs": [
+        {
+          "volume": "老子韩非列传",
+          "paragraph_from": 1,
+          "paragraph_to": 3
+        },
+        {
+          "volume": "老子韩非列传",
+          "paragraph_from": 5,
+          "paragraph_to": 6
+        },
+        {
+          "volume": "老子韩非列传",
+          "paragraph_from": 8,
+          "paragraph_to": 8
+        }
+      ],
+      "五级细坐标": "史记·卷063·文臣·01",
+      "六级段落锚点": "[P1-P3],[P5-P6],[P8]",
+      "原文出处": "老子韩非列传·P1-P3,P5-P6,P8"
+    },
+    {
+      "史略ID": "SHIJI_063_02",
+      "史略名称": "庄子",
+      "史略简介": "庄子",
+      "原文字句": "庄子者，蒙人也，名周。周尝为蒙漆园吏，与梁惠王、齐宣王同时。其学无所不闚，然其要本归於老子之言。故其著书十馀万言，大抵率寓言也。作渔父、盗跖、胠箧，以诋訿孔子之徒，以明老子之术。畏累虚、亢桑子之属，皆空语无事实。然善属书离辞，指事类情，用剽剥儒、墨，虽当世宿学不能自解免也。",
+      "史略分类": "文臣",
+      "主要史料出处": "《史记·卷63·老子韩非列传》",
+      "paragraphs": [
+        {
+          "volume": "老子韩非列传",
+          "paragraph_from": 9,
+          "paragraph_to": 11
+        }
+      ],
+      "五级细坐标": "史记·卷063·文臣·02",
+      "六级段落锚点": "[P9-P11]",
+      "原文出处": "老子韩非列传·P9-P11"
+    },
+    {
+      "史略ID": "SHIJI_063_03",
+      "史略名称": "申不害",
+      "史略简介": "申不害",
+      "原文字句": "申不害者，京人也，故郑之贱臣。学术以干韩昭侯，昭侯用为相。内脩政教，外应诸侯，十五年。终申子之身，国治兵彊，无侵韩者。",
+      "史略分类": "文臣",
+      "主要史料出处": "《史记·卷63·老子韩非列传》",
+      "paragraphs": [
+        {
+          "volume": "老子韩非列传",
+          "paragraph_from": 12,
+          "paragraph_to": 13
+        }
+      ],
+      "五级细坐标": "史记·卷063·文臣·03",
+      "六级段落锚点": "[P12-P13]",
+      "原文出处": "老子韩非列传·P12-P13"
+    },
+    {
+      "史略ID": "SHIJI_063_04",
+      "史略名称": "韩非",
+      "史略简介": "韩非",
+      "原文字句": "韩非者，韩之诸公子也。喜刑名法术之学，而其归本於黄老。非为人口吃，不能道说，而善著书。与李斯俱事荀卿，斯自以为不如非。",
+      "史略分类": "文臣",
+      "主要史料出处": "《史记·卷63·老子韩非列传》",
+      "paragraphs": [
+        {
+          "volume": "老子韩非列传",
+          "paragraph_from": 14,
+          "paragraph_to": 28
+        }
+      ],
+      "五级细坐标": "史记·卷063·文臣·04",
+      "六级段落锚点": "[P14-P28]",
+      "原文出处": "老子韩非列传·P14-P28"
+    }
+  ],
+  "translation_qa_hint": "混写卷：人物段落非连续。翻译质检须按 entries[].paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。"
+}

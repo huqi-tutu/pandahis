@@ -1,0 +1,68 @@
+{
+  "work": "01史记",
+  "vol": "125",
+  "total_paragraphs": 16,
+  "volume_subtype": "hezhuan",
+  "derived_from": "01史记_125_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 3,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 8,
+      "paragraph_to": 8,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 15,
+      "paragraph_to": 15,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 16,
+      "paragraph_to": 16,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "邓通",
+      "category": "文臣",
+      "paragraph_from": 4,
+      "paragraph_to": 7,
+      "boundary_evidence": {
+        "open_paragraph": 4,
+        "open_phrase": "孝文时中宠臣，士人则邓通，宦者则赵同、北宫伯子。北宫伯子以爱人长者；而赵同以星气",
+        "close_paragraph": 7,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P4–P7"
+      }
+    },
+    {
+      "name": "韩嫣",
+      "category": "文臣",
+      "paragraph_from": 9,
+      "paragraph_to": 11,
+      "boundary_evidence": {
+        "open_paragraph": 9,
+        "open_phrase": "今天子中宠臣，士人则韩王孙嫣，宦者则李延年。嫣者，弓高侯孽孙也。今上为胶东王时，",
+        "close_paragraph": 11,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P9–P11"
+      }
+    },
+    {
+      "name": "李延年",
+      "category": "宦官",
+      "paragraph_from": 12,
+      "paragraph_to": 14,
+      "boundary_evidence": {
+        "open_paragraph": 12,
+        "open_phrase": "李延年，中山人也。父母及身兄弟及女，皆故倡也。延年坐法腐，给事狗中。",
+        "close_paragraph": 14,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P12–P14"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

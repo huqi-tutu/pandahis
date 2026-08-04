@@ -1,0 +1,53 @@
+{
+  "work": "01史记",
+  "vol": "118",
+  "total_paragraphs": 52,
+  "volume_subtype": "hezhuan",
+  "derived_from": "01史记_118_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 52,
+      "paragraph_to": 52,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "刘长",
+      "category": "宗戚",
+      "paragraph_from": 1,
+      "paragraph_to": 18,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "淮南厉王长者，高祖少子也，其母故赵王张敖美人。高祖八年，从东垣过赵，赵王献之美人",
+        "close_paragraph": 18,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P1–P18"
+      }
+    },
+    {
+      "name": "刘安",
+      "category": "宗戚",
+      "paragraph_from": 19,
+      "paragraph_to": 43,
+      "boundary_evidence": {
+        "open_paragraph": 19,
+        "open_phrase": "孝景三年，吴楚七国反，吴使者至淮南，淮南王欲发兵应之。其相曰：“大王必欲发兵应吴",
+        "close_paragraph": 43,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P19–P43"
+      }
+    },
+    {
+      "name": "刘赐",
+      "category": "宗戚",
+      "paragraph_from": 44,
+      "paragraph_to": 51,
+      "boundary_evidence": {
+        "open_paragraph": 44,
+        "open_phrase": "衡山王赐，王后乘舒生子三人，长男爽为太子，次男孝，次女无采。又姬徐来生子男女四人",
+        "close_paragraph": 51,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P44–P51"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

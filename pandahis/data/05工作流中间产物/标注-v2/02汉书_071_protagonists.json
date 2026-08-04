@@ -1,0 +1,21 @@
+{
+  "work": "02汉书",
+  "vol": "071",
+  "volume_name": "杜周传",
+  "volume_type_guess": "列传",
+  "volume_arc": "A",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "杜周",
+      "category": "文臣",
+      "rationale": "《杜周传》为单人列传，卷名即传主。杜周为西汉酷吏，以廷尉、御史大夫等行政刑名之职著称，属文臣类。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

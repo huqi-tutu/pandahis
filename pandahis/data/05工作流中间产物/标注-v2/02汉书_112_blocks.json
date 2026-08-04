@@ -1,0 +1,90 @@
+{
+  "work": "02汉书",
+  "vol": "112",
+  "total_paragraphs": 64,
+  "volume_subtype": "hezhuan",
+  "derived_from": "02汉书_112_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 2,
+      "paragraph_to": 3,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 4,
+      "paragraph_to": 11,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 22,
+      "paragraph_to": 22,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 29,
+      "paragraph_to": 31,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 35,
+      "paragraph_to": 64,
+      "exclude_reason": "世系链"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "薄太后",
+      "category": "宗戚",
+      "paragraph_from": 12,
+      "paragraph_to": 15,
+      "boundary_evidence": {
+        "open_paragraph": 12,
+        "open_phrase": "高祖薄姬，文帝母也。父吴人，秦时与故魏王宗女魏媪通，生薄姬。而薄姬父死山阴，因葬",
+        "close_paragraph": 15,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P12–P15"
+      }
+    },
+    {
+      "name": "窦太后",
+      "category": "宗戚",
+      "paragraph_from": 16,
+      "paragraph_to": 21,
+      "boundary_evidence": {
+        "open_paragraph": 16,
+        "open_phrase": "孝文窦皇后，景帝母也，吕太后时以良家子选入宫。太后出宫人以赐诸王各五人，窦姬与在",
+        "close_paragraph": 21,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P16–P21"
+      }
+    },
+    {
+      "name": "王太后",
+      "category": "宗戚",
+      "paragraph_from": 23,
+      "paragraph_to": 28,
+      "boundary_evidence": {
+        "open_paragraph": 23,
+        "open_phrase": "孝景王皇后，武帝母也。父王仲，槐里人也。母臧兒，故燕王臧荼孙也，为仲妻，生男信与",
+        "close_paragraph": 28,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P23–P28"
+      }
+    },
+    {
+      "name": "卫子夫",
+      "category": "宗戚",
+      "paragraph_from": 32,
+      "paragraph_to": 34,
+      "boundary_evidence": {
+        "open_paragraph": 32,
+        "open_phrase": "孝武卫皇后字子夫，生微也。其家号曰卫氏，出平阳侯邑。子夫为平阳主讴者，武帝即位，",
+        "close_paragraph": 34,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P32–P34"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

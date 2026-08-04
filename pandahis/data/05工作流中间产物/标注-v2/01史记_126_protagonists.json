@@ -1,0 +1,29 @@
+{
+  "work": "01史记",
+  "vol": "126",
+  "volume_name": "滑稽列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "淳于髡",
+      "category": "文臣",
+      "rationale": "《滑稽列传》为合传，淳于髡为卷首第一位滑稽人物，以善谏著称，属文臣类。"
+    },
+    {
+      "name": "优孟",
+      "category": "文臣",
+      "rationale": "《滑稽列传》合传主人公之一，楚国乐人，以滑稽讽谏闻名，属文臣类。"
+    },
+    {
+      "name": "优旃",
+      "category": "文臣",
+      "rationale": "《滑稽列传》合传主人公之一，秦代倡优，以诙谐谏言著称，属文臣类。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

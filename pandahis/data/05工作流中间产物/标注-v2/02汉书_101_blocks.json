@@ -1,0 +1,107 @@
+{
+  "work": "02汉书",
+  "vol": "101",
+  "total_paragraphs": 40,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "02汉书_101_user_protagonists.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 2,
+      "paragraph_to": 10,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 12,
+      "paragraph_to": 17,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 19,
+      "paragraph_to": 20,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 22,
+      "paragraph_to": 23,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 26,
+      "paragraph_to": 39,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 40,
+      "paragraph_to": 40,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "丁宽",
+      "category": "文臣",
+      "paragraph_from": 11,
+      "paragraph_to": 11,
+      "boundary_evidence": {
+        "open_paragraph": 11,
+        "open_phrase": "丁宽字子襄，梁人也。初，梁项生从田何受《易》，时宽为项生从者，读《易》精敏，材过项生，遂事何。学成，何谢宽。宽东归，何谓",
+        "close_paragraph": 11,
+        "close_note": "用户白名单 manual repair P11–P11"
+      }
+    },
+    {
+      "name": "伏生",
+      "category": "文臣",
+      "paragraph_from": 18,
+      "paragraph_to": 18,
+      "boundary_evidence": {
+        "open_paragraph": 18,
+        "open_phrase": "伏生，济南人也，故为秦博士。孝文时，求能治《尚书》者，天下亡有，闻伏生治之，欲召。时伏生年九十余，老不能行，于是诏太常，",
+        "close_paragraph": 18,
+        "close_note": "用户白名单 manual repair P18–P18"
+      }
+    },
+    {
+      "name": "夏侯胜",
+      "category": "文臣",
+      "paragraph_from": 21,
+      "paragraph_to": 21,
+      "boundary_evidence": {
+        "open_paragraph": 21,
+        "open_phrase": "夏侯胜，其先夏侯都尉，从济南张生受《尚书》以传族子始昌。始昌传胜，胜又事同郡蕳卿。蕳卿者，倪宽门人。胜传从兄子建，建又事",
+        "close_paragraph": 21,
+        "close_note": "用户白名单 manual repair P21–P21"
+      }
+    },
+    {
+      "name": "孔安国",
+      "category": "文臣",
+      "paragraph_from": 24,
+      "paragraph_to": 24,
+      "boundary_evidence": {
+        "open_paragraph": 24,
+        "open_phrase": "孔氏有古文《尚书》，孔安国以今文字读之，因以起其家逸《书》，得十余篇，盖《尚书》兹多于是矣。遭巫蛊，未立于学官。安国为谏",
+        "close_paragraph": 24,
+        "close_note": "用户白名单 manual repair P24–P24"
+      }
+    },
+    {
+      "name": "申公",
+      "category": "文臣",
+      "paragraph_from": 25,
+      "paragraph_to": 25,
+      "boundary_evidence": {
+        "open_paragraph": 25,
+        "open_phrase": "申公，鲁人也。少与楚元王交俱事齐人浮丘伯受《诗》。汉兴，高祖过鲁，申公以弟子从师入见于鲁南宫。吕太后时，浮丘伯在长安，楚",
+        "close_paragraph": 25,
+        "close_note": "用户白名单 manual repair P25–P25"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

@@ -66,7 +66,8 @@ Page({
         lastSearchedAt: '',
       }))
     }
-    this.setData({ hotKeywords, historyKeywords })
+    // 热门固定展示 TOP10（后端已按搜索量聚合）
+    this.setData({ hotKeywords: hotKeywords.slice(0, 10), historyKeywords })
   },
   onInput(e: WechatMiniprogram.Input) {
     this.setData({ keyword: e.detail.value || '' })

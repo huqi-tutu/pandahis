@@ -1,0 +1,310 @@
+{
+  "volume": "高五王传",
+  "source_file": "02汉书_048_高五王传第八.txt",
+  "total_paragraphs": 36,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "齐悼惠王刘肥",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "刘如意",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "刘友",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "刘友",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "刘友",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "刘恢",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "燕王刘建",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 11,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 12,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 13,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 14,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 15,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 16,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 17,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 18,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 19,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 20,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 21,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 22,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 23,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 24,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 25,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 26,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 27,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 28,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 29,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 30,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 31,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 32,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 33,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 34,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 35,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 36,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HANSHU_048_01",
+      "史略名称": "齐悼惠王刘肥",
+      "史略简介": "齐悼惠王刘肥",
+      "原文字句": "齐倬惠王肥，其母高祖微时外妇也。高祖六年立，食七十余城。诸民能齐言者皆与齐。孝惠二年，入朝。帝与齐王燕饮太后前，置齐王上坐，如家人礼。太后怒，乃令人酌两卮鸩酒置前，令齐王为寿。齐王起，帝亦起，欲俱为寿。太后恐，自起反卮。齐王怪之，因不敢饮，阳醉去。问，知其鸩，乃忧，自以为不得脱长安。内史士曰：“太后独有帝与鲁元公主，今王有七十余城，而公主乃食数城。王诚以一郡上太后为公主汤沐邑，太后必喜，王无患矣。",
+      "史略分类": "宗戚",
+      "主要史料出处": "《02汉书·卷48·高五王传》",
+      "paragraphs": [
+        {
+          "volume": "高五王传",
+          "paragraph_from": 3,
+          "paragraph_to": 3
+        }
+      ],
+      "五级细坐标": "汉书·卷048·宗戚·01",
+      "六级段落锚点": "[P3]",
+      "原文出处": "高五王传·P3"
+    },
+    {
+      "史略ID": "HANSHU_048_02",
+      "史略名称": "刘如意",
+      "史略简介": "刘如意",
+      "原文字句": "赵隐王如意，九年位。四年，高祖崩，吕太后征王到长安，鸩杀之。无子，绝。",
+      "史略分类": "宗戚",
+      "主要史料出处": "《02汉书·卷48·高五王传》",
+      "paragraphs": [
+        {
+          "volume": "高五王传",
+          "paragraph_from": 4,
+          "paragraph_to": 4
+        }
+      ],
+      "五级细坐标": "汉书·卷048·宗戚·02",
+      "六级段落锚点": "[P4]",
+      "原文出处": "高五王传·P4"
+    },
+    {
+      "史略ID": "HANSHU_048_03",
+      "史略名称": "刘友",
+      "史略简介": "刘友",
+      "原文字句": "赵幽王友，十一年立为淮阳王。赵隐王如意死，孝惠元年，徙友王赵，凡立十四年。友以诸吕女为后，不爱，爱它姬。诸吕女怒去，谗之于太后曰：“王曰‘吕氏安得王？太后百岁后，吾必击之。’”太后怒，以故召赵王。赵王至，置邸不见，令卫国守之，不得食。其群臣或窃馈之，辄捕论之。赵王饿，乃歌曰：“诸吕用事兮，刘氏微；迫胁王侯兮，强授我妃。我妃既妒兮，诬我以恶；谗女乱国兮，上曾不寤。我无忠臣兮，何故弃国？自快中野兮，苍",
+      "史略分类": "宗戚",
+      "主要史料出处": "《02汉书·卷48·高五王传》",
+      "paragraphs": [
+        {
+          "volume": "高五王传",
+          "paragraph_from": 5,
+          "paragraph_to": 7
+        }
+      ],
+      "五级细坐标": "汉书·卷048·宗戚·03",
+      "六级段落锚点": "[P5-P7]",
+      "原文出处": "高五王传·P5-P7"
+    },
+    {
+      "史略ID": "HANSHU_048_04",
+      "史略名称": "刘恢",
+      "史略简介": "刘恢",
+      "原文字句": "赵共王恢。十一年，梁王彭越诛，立恢为梁王。十六年，赵幽王死，吕后徙恢王赵，恢心不乐。太后以吕产女为赵王后，王后从官皆诸吕也，内擅权，微司赵王，王不得自恣。王有爱姬，王后鸩杀之。王乃为歌诗四章，令乐人歌之。王悲思，六月自杀。太后闻之，以为用妇人故自杀，无思奉宗庙礼，废其嗣。",
+      "史略分类": "宗戚",
+      "主要史料出处": "《02汉书·卷48·高五王传》",
+      "paragraphs": [
+        {
+          "volume": "高五王传",
+          "paragraph_from": 8,
+          "paragraph_to": 8
+        }
+      ],
+      "五级细坐标": "汉书·卷048·宗戚·04",
+      "六级段落锚点": "[P8]",
+      "原文出处": "高五王传·P8"
+    },
+    {
+      "史略ID": "HANSHU_048_05",
+      "史略名称": "燕王刘建",
+      "史略简介": "燕王刘建",
+      "原文字句": "燕灵王建。十一年，燕王卢绾亡入匈奴，明年，立建为燕王。十五年薨，有美人子，太后使人杀之，绝后。",
+      "史略分类": "宗戚",
+      "主要史料出处": "《02汉书·卷48·高五王传》",
+      "paragraphs": [
+        {
+          "volume": "高五王传",
+          "paragraph_from": 9,
+          "paragraph_to": 9
+        }
+      ],
+      "五级细坐标": "汉书·卷048·宗戚·05",
+      "六级段落锚点": "[P9]",
+      "原文出处": "高五王传·P9"
+    }
+  ]
+}

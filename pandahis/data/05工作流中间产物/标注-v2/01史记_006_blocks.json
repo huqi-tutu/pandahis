@@ -1,0 +1,66 @@
+{
+  "work": "01史记",
+  "vol": "006",
+  "total_paragraphs": 139,
+  "volume_subtype": "benji_single",
+  "excludes": [
+    {
+      "paragraph_from": 77,
+      "paragraph_to": 77,
+      "exclude_reason": "太史公曰",
+      "boundary_evidence": {
+        "open_paragraph": 77,
+        "open_phrase": "太史公曰：秦之先伯翳",
+        "close_note": "卷末论赞起笔；P76 秦始皇叙事已收束"
+      }
+    },
+    {
+      "paragraph_from": 78,
+      "paragraph_to": 92,
+      "exclude_reason": "论赞",
+      "boundary_evidence": {
+        "open_paragraph": 78,
+        "open_phrase": "至周之衰，秦兴，邑于西垂",
+        "close_paragraph": 92,
+        "close_note": "司马迁论+贾生《过秦论》；非编年叙事；P93 起世系链非秦始皇叙事回归"
+      }
+    },
+    {
+      "paragraph_from": 93,
+      "paragraph_to": 135,
+      "exclude_reason": "世系链",
+      "boundary_evidence": {
+        "open_paragraph": 93,
+        "open_phrase": "襄公立，享国十二年",
+        "close_paragraph": 135,
+        "close_note": "秦君享国年表附录；与秦始皇无直接身世叙事关系"
+      }
+    },
+    {
+      "paragraph_from": 136,
+      "paragraph_to": 139,
+      "exclude_reason": "论赞",
+      "boundary_evidence": {
+        "open_paragraph": 136,
+        "open_phrase": "孝明皇帝十七年十月十五日",
+        "close_paragraph": 139,
+        "close_note": "后补论赞；卷末无传主叙事回归"
+      }
+    }
+  ],
+  "blocks": [
+    {
+      "name": "秦始皇",
+      "category": "君王",
+      "paragraph_from": 1,
+      "paragraph_to": 76,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "秦始皇帝者，秦庄襄王子也",
+        "close_paragraph": 76,
+        "close_note": "P76 叙事收束（三秦、项羽分封、汉定天下）；P77 起卷末论赞"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

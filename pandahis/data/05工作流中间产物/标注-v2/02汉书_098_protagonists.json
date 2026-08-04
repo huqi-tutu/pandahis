@@ -1,0 +1,30 @@
+{
+  "work": "02汉书",
+  "vol": "098",
+  "volume_name": "何武王嘉师丹传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "何武",
+      "category": "文臣",
+      "rationale": "卷名首列人物，西汉成帝、哀帝时期以明经射策入仕，历官至大司空，封氾乡侯，以行政、刑名、荐举为仕宦主轴，属文臣列传合传主人公。"
+    },
+    {
+      "name": "王嘉",
+      "category": "文臣",
+      "rationale": "卷名次列人物，西汉哀帝时官至丞相，封新甫侯，以谏诤、行政、儒学仕宦为主轴，属文臣列传合传主人公。"
+    },
+    {
+      "name": "师丹",
+      "category": "文臣",
+      "rationale": "卷名第三人物，西汉哀帝时官至大司空，以儒学经术、礼制议论、行政仕宦为主轴，属文臣列传合传主人公。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

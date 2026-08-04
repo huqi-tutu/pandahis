@@ -1,0 +1,155 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00479",
+  "写作结构": "正史叙述见《史记·老子韩非列传》翻译详录。拓展可从《韩非子》相关篇目印证韩非学说，并以《战国策·秦策》所载姚贾与韩非的辩论提供史外异说，丰富叙事层次。",
+  "候选著作": [
+    {
+      "出处": "《韩非子》中《孤愤》《五蠹》《说难》等篇",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "韩非本人著作，直接体现其‘刑名法术’思想体系，可与本传所载‘著书十馀万言’相印证。",
+      "检索词": "五蠹 孤愤 说难",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《战国策·秦策五》‘四国为一将以攻秦’章",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "载韩非在秦时因姚贾使四国而进谗，被秦王责问，与《史记》李斯谗言形成异说，补充韩非之死的另一面。",
+      "检索词": "韩非短姚贾",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《荀子》",
+      "tier": "先秦文献",
+      "pool": "legend",
+      "与本主题关系": "韩非曾师从荀子，荀子书间接反映其学术渊源，但未见直接提及韩非。",
+      "检索词": "韩非 荀卿",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《论衡·非韩篇》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "王充梳理并批评韩非子学说，提供东汉思想界对韩非的接受与批判视角。",
+      "检索词": "非韩 论衡",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·秦始皇本纪》《李斯列传》等",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史中有关韩非入秦、下狱死等记载，属翻译详录范畴，此处不作摘句拓展。",
+      "检索词": "韩非",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《史记索隐》《史记正义》",
+      "tier": "经注/杂史",
+      "pool": "legend",
+      "与本主题关系": "唐人对《老子韩非列传》的注疏，可能对韩非身世、著作有考证性补充。",
+      "检索词": "韩非 索隐",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《韩非子》中《孤愤》《五蠹》《说难》等篇",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "韩非本人著作，直接体现其‘刑名法术’思想体系，可与本传所载‘著书十馀万言’相印证。",
+      "检索词": "五蠹 孤愤 说难",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《战国策·秦策五》‘四国为一将以攻秦’章",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "载韩非在秦时因姚贾使四国而进谗，被秦王责问，与《史记》李斯谗言形成异说，补充韩非之死的另一面。",
+      "检索词": "韩非短姚贾",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·秦始皇本纪》《李斯列传》等",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史中有关韩非入秦、下狱死等记载，属翻译详录范畴，此处不作摘句拓展。",
+      "检索词": "韩非",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《荀子》",
+      "tier": "先秦文献",
+      "pool": "legend",
+      "与本主题关系": "韩非曾师从荀子，荀子书间接反映其学术渊源，但未见直接提及韩非。",
+      "检索词": "韩非 荀卿",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《论衡·非韩篇》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "王充梳理并批评韩非子学说，提供东汉思想界对韩非的接受与批判视角。",
+      "检索词": "非韩 论衡",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记索隐》《史记正义》",
+      "tier": "经注/杂史",
+      "pool": "legend",
+      "与本主题关系": "唐人对《老子韩非列传》的注疏，可能对韩非身世、著作有考证性补充。",
+      "检索词": "韩非 索隐",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 3,
+    "C_excluded": 3,
+    "overall": "B"
+  }
+}

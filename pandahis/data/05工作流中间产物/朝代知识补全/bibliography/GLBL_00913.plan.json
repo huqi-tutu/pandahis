@@ -1,0 +1,86 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00913",
+  "写作结构": "正史叙述见翻译详录，拓展文以《淮南子》简述蒙恬北击的战略震慑，并提及《括地志》佚文对河南地地形的记载，避免虚构战场细节与对话。",
+  "候选著作": [
+    {
+      "出处": "《史记·秦始皇本纪》《史记·蒙恬列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "原始记载，锚定事件基本框架，已由二十四史翻译环节处理",
+      "检索词": "蒙恬北击匈奴",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《淮南子·人间训》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "追述蒙恬北却匈奴七百余里，胡人不敢南下牧马，侧面体现北击的战略震慑效果",
+      "检索词": "蒙恬北筑长城",
+      "采用": true,
+      "原文摘句": "乃使蒙恬北筑长城而守藩篱，却匈奴七百余里，胡人不敢南下而牧马，士不敢弯弓而报怨。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《括地志》佚文（《史记正义》引）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载蒙恬北逐匈奴收河南地并因河为塞，补充地理信息，可与正史互证",
+      "检索词": "蒙恬收河南地",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·秦始皇本纪》《史记·蒙恬列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "原始记载，锚定事件基本框架，已由二十四史翻译环节处理",
+      "检索词": "蒙恬北击匈奴",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《淮南子·人间训》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "追述蒙恬北却匈奴七百余里，胡人不敢南下牧马，侧面体现北击的战略震慑效果",
+      "检索词": "蒙恬北筑长城",
+      "采用": true,
+      "原文摘句": "乃使蒙恬北筑长城而守藩篱，却匈奴七百余里，胡人不敢南下而牧马，士不敢弯弓而报怨。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《括地志》佚文（《史记正义》引）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载蒙恬北逐匈奴收河南地并因河为塞，补充地理信息，可与正史互证",
+      "检索词": "蒙恬收河南地",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 1,
+    "overall": "B"
+  }
+}

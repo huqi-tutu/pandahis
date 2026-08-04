@@ -1,0 +1,94 @@
+{
+  "work": "02汉书",
+  "vol": "088",
+  "total_paragraphs": 57,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "02汉书_088_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 57,
+      "paragraph_to": 57,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "赵广汉",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 12,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "赵广汉字子都，涿郡蠡吾人也，故属河间。少为郡吏、州从事，以廉洁通敏下士为名。举茂",
+        "close_paragraph": 12,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P12"
+      }
+    },
+    {
+      "name": "尹翁归",
+      "category": "文臣",
+      "paragraph_from": 13,
+      "paragraph_to": 19,
+      "boundary_evidence": {
+        "open_paragraph": 13,
+        "open_phrase": "尹翁归字子兄，河东平阳人也，徙杜陵。翁归少孤，与季父居。为狱小吏，晓习文法。喜击",
+        "close_paragraph": 19,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P13–P19"
+      }
+    },
+    {
+      "name": "韩延寿",
+      "category": "文臣",
+      "paragraph_from": 20,
+      "paragraph_to": 27,
+      "boundary_evidence": {
+        "open_paragraph": 20,
+        "open_phrase": "韩延寿字长公，燕人也，徙杜陵。少为郡文学。父义为燕郎中。刺王之谋逆也，义谏而死，",
+        "close_paragraph": 27,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P20–P27"
+      }
+    },
+    {
+      "name": "张敞",
+      "category": "文臣",
+      "paragraph_from": 28,
+      "paragraph_to": 40,
+      "boundary_evidence": {
+        "open_paragraph": 28,
+        "open_phrase": "张敞字子高，本河东平阳人也。祖父孺为上谷太守，徙茂陵。敞父福事孝武帝，官至光禄大",
+        "close_paragraph": 40,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P28–P40"
+      }
+    },
+    {
+      "name": "王尊",
+      "category": "文臣",
+      "paragraph_from": 41,
+      "paragraph_to": 51,
+      "boundary_evidence": {
+        "open_paragraph": 41,
+        "open_phrase": "王尊字子赣，涿郡高阳人也。少孤，归诸父，使牧羊泽中。尊窃学问，能史书。年十三，求",
+        "close_paragraph": 51,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P41–P51"
+      }
+    },
+    {
+      "name": "王章",
+      "category": "文臣",
+      "paragraph_from": 52,
+      "paragraph_to": 56,
+      "boundary_evidence": {
+        "open_paragraph": 52,
+        "open_phrase": "王章字仲卿，泰山巨平人也。少以文学为官，稍迁至谏大夫，在朝廷名敢直言。元帝初，擢",
+        "close_paragraph": 56,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P52–P56"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

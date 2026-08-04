@@ -1,0 +1,373 @@
+{
+  "work": "02汉书",
+  "vol": "112",
+  "total_paragraphs": 64,
+  "method": "Step1b-α LLM",
+  "paragraphs": [
+    {
+      "paragraph": 1,
+      "primary_subject": "卷首标题",
+      "disposition": "exclude",
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 3,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 4,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 5,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 6,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 7,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 8,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 9,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 10,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 11,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 12,
+      "primary_subject": "薄太后",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 13,
+      "primary_subject": "薄太后",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 14,
+      "primary_subject": "薄太后",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 15,
+      "primary_subject": "薄太后",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 16,
+      "primary_subject": "窦太后",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 17,
+      "primary_subject": "窦太后",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 18,
+      "primary_subject": "窦太后",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 19,
+      "primary_subject": "窦太后",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 20,
+      "primary_subject": "窦太后",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 21,
+      "primary_subject": "窦太后",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 22,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 23,
+      "primary_subject": "王太后",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 24,
+      "primary_subject": "王太后",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 25,
+      "primary_subject": "王太后",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 26,
+      "primary_subject": "王太后",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 27,
+      "primary_subject": "王太后",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 28,
+      "primary_subject": "王太后",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 29,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 30,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 31,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 32,
+      "primary_subject": "卫子夫",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 33,
+      "primary_subject": "卫子夫",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 34,
+      "primary_subject": "卫子夫",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 35,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 36,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 37,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 38,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 39,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 40,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 41,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 42,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 43,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 44,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 45,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 46,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 47,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 48,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 49,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 50,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 51,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 52,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 53,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 54,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 55,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 56,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 57,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 58,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 59,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 60,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 61,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 62,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 63,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 64,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    }
+  ]
+}

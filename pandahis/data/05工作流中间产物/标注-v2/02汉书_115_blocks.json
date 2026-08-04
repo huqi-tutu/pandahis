@@ -1,0 +1,28 @@
+{
+  "work": "02汉书",
+  "vol": "115",
+  "total_paragraphs": 82,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "王莽",
+      "category": "君王",
+      "paragraph_from": 2,
+      "paragraph_to": 82,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "王莽字巨君，孝元皇后之弟子也。元后父及兄弟皆以元、成世封侯，居位辅政，家凡九侯、",
+        "close_paragraph": 82,
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

@@ -1,0 +1,143 @@
+{
+  "work": "01史记",
+  "vol": "043",
+  "total_paragraphs": 113,
+  "volume_subtype": "hezhuan",
+  "derived_from": "01史记_043_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 18,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 39,
+      "paragraph_to": 52,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 106,
+      "paragraph_to": 112,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 113,
+      "paragraph_to": 113,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "赵简子",
+      "category": "诸侯",
+      "paragraph_from": 19,
+      "paragraph_to": 32,
+      "boundary_evidence": {
+        "open_paragraph": 19,
+        "open_phrase": "赵景叔卒，生赵鞅，是为简子。",
+        "close_paragraph": 32,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P19–P32"
+      }
+    },
+    {
+      "name": "赵襄子",
+      "category": "诸侯",
+      "paragraph_from": 33,
+      "paragraph_to": 38,
+      "boundary_evidence": {
+        "open_paragraph": 33,
+        "open_phrase": "晋出公十七年，简子卒，太子毋恤代立，是为襄子。赵襄子元年，越围吴。襄子降丧食，使",
+        "close_paragraph": 38,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P33–P38"
+      }
+    },
+    {
+      "name": "赵武灵王",
+      "category": "诸侯",
+      "paragraph_from": 53,
+      "paragraph_to": 67,
+      "boundary_evidence": {
+        "open_paragraph": 53,
+        "open_phrase": "二十四年，肃侯卒。秦、楚、燕、齐、魏出锐师各万人来会葬。子武灵王立。",
+        "close_paragraph": 67,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P53–P67"
+      }
+    },
+    {
+      "name": "赵惠文王",
+      "category": "诸侯",
+      "paragraph_from": 68,
+      "paragraph_to": 68,
+      "boundary_evidence": {
+        "open_paragraph": 68,
+        "open_phrase": "二十七年五月戊申，大朝於东宫，传国，立王子何以为王。王庙见礼毕，出临朝。大夫悉为",
+        "close_paragraph": 68,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P68–P68"
+      }
+    },
+    {
+      "name": "赵武灵王",
+      "category": "诸侯",
+      "paragraph_from": 69,
+      "paragraph_to": 76,
+      "boundary_evidence": {
+        "open_paragraph": 69,
+        "open_phrase": "主父欲令子主治国，而身胡服将士大夫西北略胡地，而欲从云中、九原直南袭秦，於是诈自",
+        "close_paragraph": 76,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P69–P76"
+      }
+    },
+    {
+      "name": "赵惠文王",
+      "category": "诸侯",
+      "paragraph_from": 77,
+      "paragraph_to": 90,
+      "boundary_evidence": {
+        "open_paragraph": 77,
+        "open_phrase": "五年，与燕鄚、易。八年，城南行唐。九年，赵梁将，与齐合军攻韩，至鲁关下。及十年，",
+        "close_paragraph": 90,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P77–P90"
+      }
+    },
+    {
+      "name": "赵孝成王",
+      "category": "诸侯",
+      "paragraph_from": 91,
+      "paragraph_to": 105,
+      "boundary_evidence": {
+        "open_paragraph": 91,
+        "open_phrase": "三十三年，惠文王卒，太子丹立，是为孝成王。",
+        "close_paragraph": 105,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P91–P105"
+      }
+    }
+  ],
+  "multi_owner_segments": [
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "赵简子",
+          "category": "诸侯"
+        },
+        {
+          "name": "赵襄子",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 91,
+      "owners": [
+        {
+          "name": "赵惠文王",
+          "category": "诸侯"
+        },
+        {
+          "name": "赵孝成王",
+          "category": "诸侯"
+        }
+      ]
+    }
+  ]
+}

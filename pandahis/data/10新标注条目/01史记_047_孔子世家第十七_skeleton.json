@@ -1,0 +1,997 @@
+{
+  "volume": "孔子世家",
+  "source_file": "01史记_047_孔子世家第十七.txt",
+  "total_paragraphs": 108,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "liezhuan_single",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 47,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 48,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 49,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 50,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 51,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 52,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 53,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 54,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 55,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 56,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 57,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 58,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 59,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 60,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 61,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 62,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 63,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 64,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 65,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 66,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 67,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 68,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 69,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 70,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 71,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 72,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 73,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 74,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 75,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 76,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 77,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 78,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 79,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 80,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 81,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 82,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 83,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 84,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 85,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 86,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 87,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 88,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 89,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 90,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 91,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 92,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 93,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 94,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 95,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 96,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 97,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 98,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 99,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 100,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 101,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 102,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 103,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 104,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 105,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 106,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 107,
+      "owners": [
+        {
+          "name": "孔子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 108,
+      "owners": [],
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SHIJI_047_01",
+      "史略名称": "孔子",
+      "史略简介": "孔子",
+      "原文字句": "孔子生鲁昌平乡陬邑。其先宋人也，曰孔防叔。防叔生伯夏，伯夏生叔梁纥。",
+      "史略分类": "文臣",
+      "主要史料出处": "《史记·卷47·孔子世家》",
+      "paragraphs": [
+        {
+          "volume": "孔子世家",
+          "paragraph_from": 1,
+          "paragraph_to": 107
+        }
+      ],
+      "五级细坐标": "史记·卷047·文臣·01",
+      "六级段落锚点": "[P1-P107]",
+      "原文出处": "孔子世家·P1-P107"
+    }
+  ]
+}

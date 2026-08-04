@@ -1,0 +1,24 @@
+{
+  "work": "01史记",
+  "vol": "076",
+  "volume_name": "平原君虞卿列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "平原君赵胜",
+      "category": "宗戚",
+      "rationale": "卷名首列人物，赵国公子、赵惠文王之弟，属同姓宗室藩王类，非天下共主亦非封国世袭国君，按宗戚专则归宗戚。"
+    },
+    {
+      "name": "虞卿",
+      "category": "文臣",
+      "rationale": "卷名并列人物，战国游说之士、赵国上卿，以纵横外交、谋略进谏为主轴，属文臣。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

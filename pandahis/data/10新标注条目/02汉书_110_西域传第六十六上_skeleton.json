@@ -1,0 +1,571 @@
+{
+  "volume": "西域传第六十六上",
+  "source_file": "02汉书_110_西域传第六十六上.txt",
+  "total_paragraphs": 61,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "fanzuo",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [],
+      "exclude_reason": "篇内小标题"
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 47,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 48,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 49,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 50,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 51,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 52,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 53,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 54,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 55,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 56,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 57,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 58,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 59,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 60,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 61,
+      "owners": [
+        {
+          "name": "西域诸国",
+          "category": "蕃祚"
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HANSHU_110_01",
+      "史略名称": "西域诸国",
+      "史略简介": "西域诸国",
+      "原文字句": "西域传第六十六上",
+      "史略分类": "蕃祚",
+      "主要史料出处": "《02汉书·卷110·西域传第六十六上》",
+      "paragraphs": [
+        {
+          "volume": "西域传第六十六上",
+          "paragraph_from": 3,
+          "paragraph_to": 61
+        }
+      ],
+      "五级细坐标": "汉书·卷110·蕃祚·01",
+      "六级段落锚点": "[P3-P61]",
+      "原文出处": "西域传第六十六上·P3-P61"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "work": "02汉书",
+  "vol": "064",
+  "total_paragraphs": 43,
+  "volume_subtype": "hezhuan",
+  "derived_from": "02汉书_064_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 43,
+      "paragraph_to": 43,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "李广",
+      "category": "武将",
+      "paragraph_from": 2,
+      "paragraph_to": 26,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "李广，陇西成纪人也。其先曰李信，秦时为将，逐得燕太子丹者也。广世世受射。孝文十四",
+        "close_paragraph": 26,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P26"
+      }
+    },
+    {
+      "name": "苏建",
+      "category": "武将",
+      "paragraph_from": 27,
+      "paragraph_to": 42,
+      "boundary_evidence": {
+        "open_paragraph": 27,
+        "open_phrase": "苏建，杜陵人也。以校尉从大将军青击匈奴，封平陵侯。以将军筑朔方。后以卫尉为游击将",
+        "close_paragraph": 42,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P27–P42"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

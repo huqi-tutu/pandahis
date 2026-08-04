@@ -1,0 +1,102 @@
+{
+  "work": "01史记",
+  "vol": "032",
+  "total_paragraphs": 97,
+  "volume_subtype": "shijia_zhuhou",
+  "derived_from": "01史记_032_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 12,
+      "paragraph_to": 23,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 30,
+      "paragraph_to": 30,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 53,
+      "paragraph_to": 72,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 86,
+      "paragraph_to": 91,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 94,
+      "paragraph_to": 96,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 97,
+      "paragraph_to": 97,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "齐太公",
+      "category": "诸侯",
+      "paragraph_from": 1,
+      "paragraph_to": 11,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "太公望吕尚者，东海上人。其先祖尝为四岳，佐禹平水土甚有功。虞夏之际封於吕，或封於",
+        "close_paragraph": 11,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P1–P11"
+      }
+    },
+    {
+      "name": "齐襄公",
+      "category": "诸侯",
+      "paragraph_from": 24,
+      "paragraph_to": 29,
+      "boundary_evidence": {
+        "open_paragraph": 24,
+        "open_phrase": "三十三年，釐公卒，太子诸儿立，是为襄公。",
+        "close_paragraph": 29,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P24–P29"
+      }
+    },
+    {
+      "name": "齐桓公",
+      "category": "诸侯",
+      "paragraph_from": 31,
+      "paragraph_to": 52,
+      "boundary_evidence": {
+        "open_paragraph": 31,
+        "open_phrase": "初，襄公之醉杀鲁桓公，通其夫人，杀诛数不当，淫於妇人，数欺大臣，群弟恐祸及，故次",
+        "close_paragraph": 52,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P31–P52"
+      }
+    },
+    {
+      "name": "齐景公",
+      "category": "诸侯",
+      "paragraph_from": 73,
+      "paragraph_to": 85,
+      "boundary_evidence": {
+        "open_paragraph": 73,
+        "open_phrase": "丁丑，崔杼立庄公异母弟杵臼，是为景公。景公母，鲁叔孙宣伯女也。景公立，以崔杼为右",
+        "close_paragraph": 85,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P73–P85"
+      }
+    },
+    {
+      "name": "齐平公",
+      "category": "诸侯",
+      "paragraph_from": 92,
+      "paragraph_to": 93,
+      "boundary_evidence": {
+        "open_paragraph": 92,
+        "open_phrase": "子我归，属徒攻闱与大门，皆弗胜，乃出。田氏追之。丰丘人执子我以告，杀之郭关。成子",
+        "close_paragraph": 93,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P92–P93"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

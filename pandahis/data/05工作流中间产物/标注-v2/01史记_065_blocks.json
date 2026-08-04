@@ -1,0 +1,53 @@
+{
+  "work": "01史记",
+  "vol": "065",
+  "total_paragraphs": 21,
+  "volume_subtype": "hezhuan",
+  "derived_from": "01史记_065_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 21,
+      "paragraph_to": 21,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "孙武",
+      "category": "武将",
+      "paragraph_from": 1,
+      "paragraph_to": 2,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "孙子武者，齐人也。以兵法见於吴王阖庐。阖庐曰：“子之十三篇，吾尽观之矣，可以小试",
+        "close_paragraph": 2,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P1–P2"
+      }
+    },
+    {
+      "name": "孙膑",
+      "category": "武将",
+      "paragraph_from": 3,
+      "paragraph_to": 7,
+      "boundary_evidence": {
+        "open_paragraph": 3,
+        "open_phrase": "孙武既死，后百馀岁有孙膑。膑生阿鄄之间，膑亦孙武之后世子孙也。孙膑尝与庞涓俱学兵",
+        "close_paragraph": 7,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P3–P7"
+      }
+    },
+    {
+      "name": "吴起",
+      "category": "武将",
+      "paragraph_from": 8,
+      "paragraph_to": 20,
+      "boundary_evidence": {
+        "open_paragraph": 8,
+        "open_phrase": "吴起者，卫人也，好用兵。尝学於曾子，事鲁君。齐人攻鲁，鲁欲将吴起，吴起取齐女为妻",
+        "close_paragraph": 20,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P8–P20"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

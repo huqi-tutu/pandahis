@@ -1,0 +1,32 @@
+{
+  "work": "02汉书",
+  "vol": "007",
+  "total_paragraphs": 271,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 271,
+      "paragraph_to": 271,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "汉武帝",
+      "category": "君王",
+      "paragraph_from": 2,
+      "paragraph_to": 270,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "孝武皇帝，景帝中子也，母曰王美人。年四岁立为胶东王。七岁为皇太子，母为皇后。十六",
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

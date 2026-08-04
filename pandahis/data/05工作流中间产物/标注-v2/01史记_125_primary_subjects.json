@@ -1,0 +1,94 @@
+{
+  "work": "01史记",
+  "vol": "125",
+  "total_paragraphs": 16,
+  "method": "Step1b-α LLM",
+  "paragraphs": [
+    {
+      "paragraph": 1,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 2,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 3,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 4,
+      "primary_subject": "邓通",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 5,
+      "primary_subject": "邓通",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 6,
+      "primary_subject": "邓通",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 7,
+      "primary_subject": "邓通",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 8,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 9,
+      "primary_subject": "韩嫣",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 10,
+      "primary_subject": "韩嫣",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 11,
+      "primary_subject": "韩嫣",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 12,
+      "primary_subject": "李延年",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 13,
+      "primary_subject": "李延年",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 14,
+      "primary_subject": "李延年",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 15,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 16,
+      "primary_subject": "太史公曰",
+      "disposition": "exclude",
+      "exclude_reason": "太史公曰"
+    }
+  ]
+}

@@ -1,0 +1,379 @@
+{
+  "volume": "游侠传",
+  "source_file": "02汉书_105_游侠传第六十二.txt",
+  "total_paragraphs": 45,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 3,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 4,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 5,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 6,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "朱家",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "剧孟",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "剧孟",
+          "category": "庶众"
+        },
+        {
+          "name": "王孟",
+          "category": "庶众"
+        },
+        {
+          "name": "薛况",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "郭解",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "郭解",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "郭解",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "郭解",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "郭解",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "郭解",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "郭解",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "郭解",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 19,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 20,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 21,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 22,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 23,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 24,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 25,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 26,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 27,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 28,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 29,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 30,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 31,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 32,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 33,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 34,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 35,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 36,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 37,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 38,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 39,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 40,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 41,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 42,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 43,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 44,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 45,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HANSHU_105_01",
+      "史略名称": "朱家",
+      "史略简介": "朱家",
+      "原文字句": "朱家，鲁人，高祖同时也。鲁人皆以儒教，而朱家用侠闻。所臧活豪士以百数，其余庸人不可胜言。然终不伐其能，饮其德，诸所尝施，唯恐见之。振人不赡，先从贫贱始。家亡余财，衣不兼采，食不重味，乘不过軥牛。专趋人之急，甚于己私。既阴脱季布之厄，及布尊贵，终身不见。自关以东，莫不延颈愿交。",
+      "史略分类": "庶众",
+      "主要史料出处": "《02汉书·卷105·游侠传》",
+      "paragraphs": [
+        {
+          "volume": "游侠传",
+          "paragraph_from": 7,
+          "paragraph_to": 7
+        }
+      ],
+      "五级细坐标": "汉书·卷105·庶众·01",
+      "六级段落锚点": "[P7]",
+      "原文出处": "游侠传·P7"
+    },
+    {
+      "史略ID": "HANSHU_105_02",
+      "史略名称": "剧孟",
+      "史略简介": "剧孟",
+      "原文字句": "楚田仲以侠闻，父事朱家，自以为行弗及也。田仲死后，有剧孟。",
+      "史略分类": "庶众",
+      "主要史料出处": "《02汉书·卷105·游侠传》",
+      "paragraphs": [
+        {
+          "volume": "游侠传",
+          "paragraph_from": 8,
+          "paragraph_to": 9
+        }
+      ],
+      "五级细坐标": "汉书·卷105·庶众·02",
+      "六级段落锚点": "[P8-P9]",
+      "原文出处": "游侠传·P8-P9"
+    },
+    {
+      "史略ID": "HANSHU_105_03",
+      "史略名称": "郭解",
+      "史略简介": "郭解",
+      "原文字句": "郭解，河内轵人也，温善相人许负外孙也。解父任侠，孝文时诛死。解为人静悍，不饮酒。少时阴贼感概，不快意，所杀甚众。以躯借友报仇，臧命作奸剽攻，休乃铸钱掘冢，不可胜数。适有天幸，窘急常得脱，若遇赦。",
+      "史略分类": "庶众",
+      "主要史料出处": "《02汉书·卷105·游侠传》",
+      "paragraphs": [
+        {
+          "volume": "游侠传",
+          "paragraph_from": 10,
+          "paragraph_to": 17
+        }
+      ],
+      "五级细坐标": "汉书·卷105·庶众·03",
+      "六级段落锚点": "[P10-P17]",
+      "原文出处": "游侠传·P10-P17"
+    },
+    {
+      "史略ID": "HANSHU_105_04",
+      "史略名称": "王孟",
+      "史略简介": "王孟",
+      "原文字句": "剧孟者，洛阳人也。周人以商贾为资，剧孟以侠显。吴、楚反时，条侯为太尉，乘传东，将至河南，得剧孟，喜曰：“吴、楚举大事而不求剧孟，吾知其无能为已。”天下骚动，大将军得之若一敌国云。剧孟行大类朱家，而好博，多少年之戏。然孟母死，自远方送丧盖千乘。及孟死，家无十金之财。而符离王孟，亦以侠称江、淮之间。是时，济南瞷氏、陈周肤亦以豪闻。景帝闻之，使使尽诛此属。其后，代诸白、梁韩毋辟、阳翟薛况、陕寒孺，纷纷复",
+      "史略分类": "庶众",
+      "主要史料出处": "《02汉书·卷105·游侠传》",
+      "paragraphs": [
+        {
+          "volume": "游侠传",
+          "paragraph_from": 9,
+          "paragraph_to": 9
+        }
+      ],
+      "五级细坐标": "汉书·卷105·庶众·04",
+      "六级段落锚点": "[P9]",
+      "原文出处": "游侠传·P9"
+    },
+    {
+      "史略ID": "HANSHU_105_05",
+      "史略名称": "薛况",
+      "史略简介": "薛况",
+      "原文字句": "剧孟者，洛阳人也。周人以商贾为资，剧孟以侠显。吴、楚反时，条侯为太尉，乘传东，将至河南，得剧孟，喜曰：“吴、楚举大事而不求剧孟，吾知其无能为已。”天下骚动，大将军得之若一敌国云。剧孟行大类朱家，而好博，多少年之戏。然孟母死，自远方送丧盖千乘。及孟死，家无十金之财。而符离王孟，亦以侠称江、淮之间。是时，济南瞷氏、陈周肤亦以豪闻。景帝闻之，使使尽诛此属。其后，代诸白、梁韩毋辟、阳翟薛况、陕寒孺，纷纷复",
+      "史略分类": "庶众",
+      "主要史料出处": "《02汉书·卷105·游侠传》",
+      "paragraphs": [
+        {
+          "volume": "游侠传",
+          "paragraph_from": 9,
+          "paragraph_to": 9
+        }
+      ],
+      "五级细坐标": "汉书·卷105·庶众·05",
+      "六级段落锚点": "[P9]",
+      "原文出处": "游侠传·P9"
+    }
+  ]
+}

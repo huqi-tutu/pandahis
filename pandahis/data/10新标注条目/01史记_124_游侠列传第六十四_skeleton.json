@@ -1,0 +1,210 @@
+{
+  "volume": "游侠列传",
+  "source_file": "01史记_124_游侠列传第六十四.txt",
+  "total_paragraphs": 22,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 2,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 3,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 4,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 5,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 6,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "朱家",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "朱家",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "朱家",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "郭解",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "郭解",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "郭解",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "郭解",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "郭解",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "郭解",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "郭解",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "郭解",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "郭解",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "郭解",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 22,
+      "owners": [],
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SHIJI_124_01",
+      "史略名称": "朱家",
+      "史略简介": "朱家",
+      "原文字句": "鲁朱家者，与高祖同时。鲁人皆以儒教，而朱家用侠闻。所藏活豪士以百数，其馀庸人不可胜言。然终不伐其能，歆其德，诸所尝施，唯恐见之。振人不赡，先从贫贱始。家无馀财，衣不完采，食不重味，乘不过軥牛。专趋人之急，甚己之私。既阴脱季布将军之阸，及布尊贵，终身不见也。自关以东，莫不延颈愿交焉。",
+      "史略分类": "庶众",
+      "主要史料出处": "《史记·卷124·游侠列传》",
+      "paragraphs": [
+        {
+          "volume": "游侠列传",
+          "paragraph_from": 7,
+          "paragraph_to": 9
+        }
+      ],
+      "五级细坐标": "史记·卷124·庶众·01",
+      "六级段落锚点": "[P7-P9]",
+      "原文出处": "游侠列传·P7-P9"
+    },
+    {
+      "史略ID": "SHIJI_124_02",
+      "史略名称": "郭解",
+      "史略简介": "郭解",
+      "原文字句": "郭解，轵人也，字翁伯，善相人者许负外孙也。解父以任侠，孝文时诛死。",
+      "史略分类": "庶众",
+      "主要史料出处": "《史记·卷124·游侠列传》",
+      "paragraphs": [
+        {
+          "volume": "游侠列传",
+          "paragraph_from": 11,
+          "paragraph_to": 20
+        }
+      ],
+      "五级细坐标": "史记·卷124·庶众·02",
+      "六级段落锚点": "[P11-P20]",
+      "原文出处": "游侠列传·P11-P20"
+    }
+  ]
+}

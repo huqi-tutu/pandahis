@@ -1,0 +1,33 @@
+{
+  "work": "01史记",
+  "vol": "119",
+  "volume_name": "循吏列传",
+  "narrative_mode": "hezhuan",
+  "protagonists": [
+    {
+      "name": "孙叔敖",
+      "category": "文臣",
+      "rationale": "楚相循吏，本卷首传。"
+    },
+    {
+      "name": "子产",
+      "category": "文臣",
+      "rationale": "郑相循吏。"
+    },
+    {
+      "name": "公仪休",
+      "category": "文臣",
+      "rationale": "鲁相循吏。"
+    },
+    {
+      "name": "石奢",
+      "category": "文臣",
+      "rationale": "楚昭王相，执法自刎。"
+    },
+    {
+      "name": "李离",
+      "category": "文臣",
+      "rationale": "晋理官，伏剑而死。"
+    }
+  ]
+}

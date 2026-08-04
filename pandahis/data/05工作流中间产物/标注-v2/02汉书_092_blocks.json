@@ -1,0 +1,104 @@
+{
+  "work": "02汉书",
+  "vol": "092",
+  "total_paragraphs": 29,
+  "volume_subtype": "hezhuan",
+  "derived_from": "02汉书_092_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 2,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 3,
+      "paragraph_to": 3,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 25,
+      "paragraph_to": 25,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 29,
+      "paragraph_to": 29,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "刘钦",
+      "category": "宗戚",
+      "paragraph_from": 4,
+      "paragraph_to": 13,
+      "boundary_evidence": {
+        "open_paragraph": 4,
+        "open_phrase": "淮阳宪王钦，元康三年立，母张婕妤有宠于宣帝。霍皇后废后，上欲立张婕妤为后。久之，",
+        "close_paragraph": 13,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P4–P13"
+      }
+    },
+    {
+      "name": "刘嚣",
+      "category": "宗戚",
+      "paragraph_from": 14,
+      "paragraph_to": 15,
+      "boundary_evidence": {
+        "open_paragraph": 14,
+        "open_phrase": "楚孝王嚣，甘露二年立为定陶王，三年徙楚，成帝河平中入朝，时被疾，天子闵之，下诏曰",
+        "close_paragraph": 15,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P14–P15"
+      }
+    },
+    {
+      "name": "刘宇",
+      "category": "宗戚",
+      "paragraph_from": 16,
+      "paragraph_to": 23,
+      "boundary_evidence": {
+        "open_paragraph": 16,
+        "open_phrase": "东平思王宇，甘露二年立。元帝即位，就国。壮大，通奸犯法，上以至亲贳弗罪，傅相连坐",
+        "close_paragraph": 23,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P16–P23"
+      }
+    },
+    {
+      "name": "刘竟",
+      "category": "宗戚",
+      "paragraph_from": 24,
+      "paragraph_to": 24,
+      "boundary_evidence": {
+        "open_paragraph": 24,
+        "open_phrase": "中山哀王竟，初元二年立为清河王。三年，徙中山，以幼少未之国。建昭四年，薨邸，葬杜",
+        "close_paragraph": 24,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P24–P24"
+      }
+    },
+    {
+      "name": "刘康",
+      "category": "宗戚",
+      "paragraph_from": 26,
+      "paragraph_to": 27,
+      "boundary_evidence": {
+        "open_paragraph": 26,
+        "open_phrase": "定陶共王康，永光三年立为济阳王。八年，徙为山阳王。八年，徙定陶。王少而爱，长多材",
+        "close_paragraph": 27,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P26–P27"
+      }
+    },
+    {
+      "name": "刘兴",
+      "category": "宗戚",
+      "paragraph_from": 28,
+      "paragraph_to": 28,
+      "boundary_evidence": {
+        "open_paragraph": 28,
+        "open_phrase": "中山孝王兴，建昭二年立为信都王。十四年，徙中山。成帝之议立太子也，御史大夫孔光以",
+        "close_paragraph": 28,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P28–P28"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

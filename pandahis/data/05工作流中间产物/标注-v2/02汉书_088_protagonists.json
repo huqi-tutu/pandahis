@@ -1,0 +1,47 @@
+{
+  "work": "02汉书",
+  "vol": "088",
+  "volume_name": "赵尹韩张两王传",
+  "volume_type_guess": "列传",
+  "volume_arc": "C",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "赵广汉",
+      "category": "文臣",
+      "rationale": "卷名首姓，合传主人公之一。赵广汉为西汉名臣，以行政、刑名、治郡著称，属文臣列传主轴。"
+    },
+    {
+      "name": "尹翁归",
+      "category": "文臣",
+      "rationale": "卷名第二姓，合传主人公之一。尹翁归为西汉循吏，以治郡有方、执法严明著称，属文臣列传主轴。"
+    },
+    {
+      "name": "韩延寿",
+      "category": "文臣",
+      "rationale": "卷名第三姓，合传主人公之一。韩延寿为西汉循吏，以礼义治郡、教化百姓著称，属文臣列传主轴。"
+    },
+    {
+      "name": "张敞",
+      "category": "文臣",
+      "rationale": "卷名第四姓，合传主人公之一。张敞为西汉名臣，以经术自辅、治理京兆著称，属文臣列传主轴。"
+    },
+    {
+      "name": "王尊",
+      "category": "文臣",
+      "rationale": "卷名「两王」之首，合传主人公之一。王尊为西汉名臣，以刚直敢谏、治理有方著称，属文臣列传主轴。"
+    },
+    {
+      "name": "王章",
+      "category": "文臣",
+      "rationale": "卷名「两王」之次，合传主人公之一。王章为西汉直臣，以忠直敢言、弹劾权贵著称，属文臣列传主轴。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

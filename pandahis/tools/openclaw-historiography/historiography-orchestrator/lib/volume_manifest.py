@@ -12,6 +12,7 @@ if str(ANNOTATE_DIR) not in sys.path:
     sys.path.insert(0, str(ANNOTATE_DIR))
 
 from paragraph_utils import classify_paragraph_header  # noqa: E402
+from category_v3 import VALID_CATS  # noqa: E402
 
 VALID_NARRATIVE_MODES = frozenset({"skip", "single", "hezhuan", "fanzuo"})
 VALID_VOLUME_TYPES = frozenset(
@@ -115,9 +116,7 @@ def manifest_payload_errors(obj: Any, *, work: str = "", vol: str = "") -> List[
                     errors.append(f"protagonists[{i}] 缺少 {key}")
                     break
             cat = (item.get("category") or "").strip()
-            if cat and cat not in (
-                "君王", "宗戚", "宦官", "文臣", "武将", "蕃祚", "庶众"
-            ):
+            if cat and cat not in VALID_CATS:
                 errors.append(f"protagonists[{i}] category 非法: {cat!r}")
     if "blocks" in obj or "entries" in obj:
         errors.append("protagonists 草稿禁止含 blocks/entries")

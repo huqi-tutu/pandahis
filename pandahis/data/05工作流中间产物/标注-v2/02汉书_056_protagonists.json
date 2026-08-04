@@ -1,0 +1,42 @@
+{
+  "work": "02汉书",
+  "vol": "056",
+  "volume_name": "万石卫直周张传",
+  "volume_type_guess": "列传",
+  "volume_arc": "C",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "石奋",
+      "category": "文臣",
+      "rationale": "卷名首字「万石」即指石奋（号万石君），为西汉文臣，历仕高祖至武帝，以恭谨著称，是合传主轴人物之一。"
+    },
+    {
+      "name": "卫绾",
+      "category": "文臣",
+      "rationale": "卷名「卫直周张」中「卫」即卫绾，西汉文臣，以戏车为郎，历仕文帝、景帝，官至丞相，为合传主轴人物之一。"
+    },
+    {
+      "name": "直不疑",
+      "category": "文臣",
+      "rationale": "卷名「卫直周张」中「直」即直不疑，西汉文臣，以长者称，景帝时官至御史大夫，为合传主轴人物之一。"
+    },
+    {
+      "name": "周仁",
+      "category": "文臣",
+      "rationale": "卷名「卫直周张」中「周」即周仁（周文），西汉文臣，以医术得幸于景帝，官至郎中令，为合传主轴人物之一。"
+    },
+    {
+      "name": "张欧",
+      "category": "文臣",
+      "rationale": "卷名「卫直周张」中「张」即张欧（张叔），西汉文臣，以治刑名事景帝，官至御史大夫，为合传主轴人物之一。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

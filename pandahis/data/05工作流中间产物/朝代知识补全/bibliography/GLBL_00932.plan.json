@@ -1,0 +1,153 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00932",
+  "写作结构": "正史叙述见翻译详录（《史记·秦始皇本纪》等），拓展文以地理遗迹（扶苏墓）与身世异说（子婴为扶苏子）作补充，不展开子嬰世系辩白，其余留白。",
+  "候选著作": [
+    {
+      "出处": "《史记·秦始皇本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，系统记载扶苏生平、自杀及沙丘之谋，翻译详录负责。",
+      "检索词": "扶苏 监军 赐死",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《史记·李斯列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "涉及沙丘之谋中赵高、李斯、胡亥合谋伪造遗诏赐死扶苏的详细过程。",
+      "检索词": "沙丘 阴谋 扶苏",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《史记·蒙恬列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载扶苏监军上郡、与蒙恬关系及蒙恬劝谏扶苏的内容。",
+      "检索词": "蒙恬 扶苏 使臣",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《水经注·卷三》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "记载奢延水经扶苏墓南的遗迹，补充扶苏死后葬地信息。",
+      "检索词": "扶苏墓",
+      "采用": true,
+      "原文摘句": "奢延水……又东，径扶苏墓南。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记索隐·秦始皇本纪》",
+      "tier": "经注/杂史",
+      "pool": "legend",
+      "与本主题关系": "注释“二世兄子”时引刘氏说以为公子婴是扶苏之子，反映后世附会异说。",
+      "检索词": "子婴 扶苏之子",
+      "采用": true,
+      "原文摘句": "刘氏云：兄子，谓扶苏之子也。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《资治通鉴·秦纪二》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "作为后世编年体史书，依据《史记》叙述扶苏之死，无超出正史的新增细节。",
+      "检索词": "扶苏 自杀",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·秦始皇本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，系统记载扶苏生平、自杀及沙丘之谋，翻译详录负责。",
+      "检索词": "扶苏 监军 赐死",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《史记·李斯列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "涉及沙丘之谋中赵高、李斯、胡亥合谋伪造遗诏赐死扶苏的详细过程。",
+      "检索词": "沙丘 阴谋 扶苏",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《史记·蒙恬列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载扶苏监军上郡、与蒙恬关系及蒙恬劝谏扶苏的内容。",
+      "检索词": "蒙恬 扶苏 使臣",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《水经注·卷三》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "记载奢延水经扶苏墓南的遗迹，补充扶苏死后葬地信息。",
+      "检索词": "扶苏墓",
+      "采用": true,
+      "原文摘句": "奢延水……又东，径扶苏墓南。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《史记索隐·秦始皇本纪》",
+      "tier": "经注/杂史",
+      "pool": "legend",
+      "与本主题关系": "注释“二世兄子”时引刘氏说以为公子婴是扶苏之子，反映后世附会异说。",
+      "检索词": "子婴 扶苏之子",
+      "采用": true,
+      "原文摘句": "刘氏云：兄子，谓扶苏之子也。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《资治通鉴·秦纪二》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "作为后世编年体史书，依据《史记》叙述扶苏之死，无超出正史的新增细节。",
+      "检索词": "扶苏 自杀",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 4,
+    "overall": "B"
+  }
+}

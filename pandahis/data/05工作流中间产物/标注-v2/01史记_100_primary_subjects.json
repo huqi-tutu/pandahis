@@ -1,0 +1,100 @@
+{
+  "work": "01史记",
+  "vol": "100",
+  "total_paragraphs": 15,
+  "method": "Step1b-α LLM",
+  "paragraphs": [
+    {
+      "paragraph": 1,
+      "primary_subject": "季布",
+      "disposition": "block",
+      "text_snippet": "季布者，楚人也。为气任侠，有名於楚。项籍使将兵，数窘汉王。"
+    },
+    {
+      "paragraph": 2,
+      "primary_subject": "季布",
+      "disposition": "block",
+      "text_snippet": "孝惠时，为中郎将。单于尝为书嫚吕后，不逊，吕后大怒，召诸将议之。"
+    },
+    {
+      "paragraph": 3,
+      "primary_subject": "季布",
+      "disposition": "block",
+      "text_snippet": "季布为河东守，孝文时，人有言其贤者，孝文召，欲以为御史大夫。"
+    },
+    {
+      "paragraph": 4,
+      "primary_subject": "季布",
+      "disposition": "block",
+      "text_snippet": "陛下无故召臣，此人必有以臣欺陛下者；今臣至，无所受事，罢去，此人必有以毁臣者。"
+    },
+    {
+      "paragraph": 5,
+      "primary_subject": "季布",
+      "disposition": "block",
+      "text_snippet": "楚人曹丘生，辩士，数招权顾金钱。事贵人赵同等，与窦长君善。季布闻之，寄书谏窦长君曰"
+    },
+    {
+      "paragraph": 6,
+      "primary_subject": "季布",
+      "disposition": "block",
+      "text_snippet": "窦长君曰：“季将军不说足下，足下无往。”固请书，遂行。使人先发书，季布果大怒，待曹丘。"
+    },
+    {
+      "paragraph": 7,
+      "primary_subject": "季布",
+      "disposition": "block",
+      "text_snippet": "季布弟季心，气盖关中，遇人恭谨，为任侠，方数千里，士皆争为之死。"
+    },
+    {
+      "paragraph": 8,
+      "primary_subject": "季布",
+      "disposition": "block",
+      "text_snippet": "季布母弟丁公，为楚将。丁公为项羽逐窘高祖彭城西，短兵接，高祖急，顾丁公曰"
+    },
+    {
+      "paragraph": 9,
+      "primary_subject": "栾布",
+      "disposition": "block",
+      "text_snippet": "栾布者，梁人也。始梁王彭越为家人时，尝与布游。穷困，赁佣於齐，为酒人保。"
+    },
+    {
+      "paragraph": 10,
+      "primary_subject": "栾布",
+      "disposition": "block",
+      "text_snippet": "使於齐，未还，汉召彭越，责以谋反，夷三族。已而枭彭越头於雒阳下，诏曰"
+    },
+    {
+      "paragraph": 11,
+      "primary_subject": "栾布",
+      "disposition": "block",
+      "text_snippet": "趣亨之。”方提趣汤，布顾曰：“愿一言而死。”上曰：“何言？”"
+    },
+    {
+      "paragraph": 12,
+      "primary_subject": "栾布",
+      "disposition": "block",
+      "text_snippet": "孝文时，为燕相，至将军。布乃称曰：“穷困不能辱身下志，非人也；富贵不能快意，非贤也。”"
+    },
+    {
+      "paragraph": 13,
+      "primary_subject": "栾布",
+      "disposition": "block",
+      "text_snippet": "景帝中五年薨。子贲嗣，为太常，牺牲不如令，国除。"
+    },
+    {
+      "paragraph": 14,
+      "primary_subject": "太史公曰",
+      "disposition": "exclude",
+      "exclude_reason": "太史公曰",
+      "text_snippet": "太史公曰：以项羽之气，而季布以勇显於楚，身屦军搴旗者数矣，可谓壮士。"
+    },
+    {
+      "paragraph": 15,
+      "primary_subject": "论赞",
+      "disposition": "exclude",
+      "exclude_reason": "论赞",
+      "text_snippet": "然至被刑戮，为人奴而不死，何其下也！彼必自负其材，故受辱而不羞，欲有所用其未足也，故终为汉名将。"
+    }
+  ]
+}

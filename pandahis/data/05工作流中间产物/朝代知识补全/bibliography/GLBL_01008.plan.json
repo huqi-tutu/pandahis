@@ -1,0 +1,135 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01008",
+  "写作结构": "以《左传·僖公十五年》原文为核心叙事，摘录其记“晋于是乎作爰田”并展开背景。引用《国语·晋语》相关段落补叙战败后赏赐与国人反应，结合杜预注等经解说明“易其疆畔”及经学家对“爰田”的解释分歧。正史《史记·晋世家》记载见翻译详录，不另行摘句；后世综述可合段引《日知录》辨析“爰”“辕”异同，但不对具体田制细节做过度推演。",
+  "候选著作": [
+    {
+      "出处": "《左传·僖公十五年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "直接记载“作爰田”及韩原之战后局势，为全条核心原始出处",
+      "检索词": "作爰田",
+      "采用": true,
+      "原文摘句": "晋于是乎作爰田。……众说，晋于是乎作州兵。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《国语·晋语三》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记晋惠公归后赏众、提及“作辕田”及众人之态，可与《左传》互证",
+      "检索词": "作辕田",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《春秋左传正义·僖公十五年》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "杜预注、孔颖达疏解释“爰田”为“易其疆畔”“分公田之税”等，体现经学分歧",
+      "检索词": "爰田 易其疆畔",
+      "采用": true,
+      "原文摘句": "杜预注：“分公田之税应入公者，爰之于所赏之众，易其疆畔。”",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·晋世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载晋惠公战败归国行赏，提及等同“作爰田”之事，正史叙事另由翻译详录",
+      "检索词": "作爰田 惠公",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《日知录·卷四》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "顾炎武考证“爰田”与“辕田”之异同，代表后世对制度名称与演变的认知",
+      "检索词": "爰田 日知录",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《左传·僖公十五年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "直接记载“作爰田”及韩原之战后局势，为全条核心原始出处",
+      "检索词": "作爰田",
+      "采用": true,
+      "原文摘句": "晋于是乎作爰田。……众说，晋于是乎作州兵。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《国语·晋语三》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记晋惠公归后赏众、提及“作辕田”及众人之态，可与《左传》互证",
+      "检索词": "作辕田",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《春秋左传正义·僖公十五年》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "杜预注、孔颖达疏解释“爰田”为“易其疆畔”“分公田之税”等，体现经学分歧",
+      "检索词": "爰田 易其疆畔",
+      "采用": true,
+      "原文摘句": "杜预注：“分公田之税应入公者，爰之于所赏之众，易其疆畔。”",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·晋世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载晋惠公战败归国行赏，提及等同“作爰田”之事，正史叙事另由翻译详录",
+      "检索词": "作爰田 惠公",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《日知录·卷四》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "顾炎武考证“爰田”与“辕田”之异同，代表后世对制度名称与演变的认知",
+      "检索词": "爰田 日知录",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 4,
+    "C_excluded": 1,
+    "overall": "B"
+  }
+}

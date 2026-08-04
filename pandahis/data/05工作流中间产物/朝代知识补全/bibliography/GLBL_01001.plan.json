@@ -1,0 +1,241 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01001",
+  "写作结构": "以《左传·哀公十一年》为叙事核心，正史《史记》相关世家记载见翻译详录，不另摘句。拓展以《国语·吴语》为辅证补充细节，另取《吴越春秋·夫差内传》异说作为legend层合段补充，其余经传仅存目参考。",
+  "候选著作": [
+    {
+      "出处": "《左传·哀公十一年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "艾陵之战最原始、最完整的记载，anchor 主要依据",
+      "检索词": "哀公十一年 艾陵",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《国语·吴语》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "载有吴王夫差伐齐、艾陵战胜后遣使及与晋争盟等情节，补充《左传》细节",
+      "检索词": "吴王夫差 艾陵",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《春秋公羊传·哀公十一年》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "对《春秋》经文‘五月，公会吴伐齐。甲戌，齐国书帅师及吴战于艾陵，齐师败绩’的义例解说",
+      "检索词": "哀公十一年 齐师败绩",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《春秋谷梁传·哀公十一年》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "对同条经文的另一角度解说，强调败绩之甚及吴国主战之义",
+      "检索词": "艾陵 齐师败绩",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《吴越春秋·夫差内传》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "记述夫差争霸、艾陵之战经过及处置国书等情节，含后世渲染与传说成分，可作异说补充",
+      "检索词": "艾陵 夫差 国书",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《越绝书·记吴地传》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "涉及吴国北伐齐鲁及艾陵地理，可间接参考",
+      "检索词": "艾陵 吴伐齐",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《竹书纪年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "或载有‘吴伐齐’之事，可与传世文献比勘",
+      "检索词": "吴伐齐 周敬王",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·吴太伯世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记夫差十年（前484年）‘北伐齐，败齐师于艾陵’，与《左传》基本一致",
+      "检索词": "败齐师于艾陵",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《史记·齐太公世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "载‘吴王夫差强，伐齐，至缯，齐人败之’等事，视角略异",
+      "检索词": "吴王夫差伐齐",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《史记·鲁周公世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "提及鲁哀公会吴伐齐，‘大破齐师于艾陵’",
+      "检索词": "大破齐师于艾陵",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《左传·哀公十一年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "艾陵之战最原始、最完整的记载，anchor 主要依据",
+      "检索词": "哀公十一年 艾陵",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《国语·吴语》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "载有吴王夫差伐齐、艾陵战胜后遣使及与晋争盟等情节，补充《左传》细节",
+      "检索词": "吴王夫差 艾陵",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《春秋公羊传·哀公十一年》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "对《春秋》经文‘五月，公会吴伐齐。甲戌，齐国书帅师及吴战于艾陵，齐师败绩’的义例解说",
+      "检索词": "哀公十一年 齐师败绩",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《春秋谷梁传·哀公十一年》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "对同条经文的另一角度解说，强调败绩之甚及吴国主战之义",
+      "检索词": "艾陵 齐师败绩",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《竹书纪年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "或载有‘吴伐齐’之事，可与传世文献比勘",
+      "检索词": "吴伐齐 周敬王",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·吴太伯世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记夫差十年（前484年）‘北伐齐，败齐师于艾陵’，与《左传》基本一致",
+      "检索词": "败齐师于艾陵",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《史记·齐太公世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "载‘吴王夫差强，伐齐，至缯，齐人败之’等事，视角略异",
+      "检索词": "吴王夫差伐齐",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《史记·鲁周公世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "提及鲁哀公会吴伐齐，‘大破齐师于艾陵’",
+      "检索词": "大破齐师于艾陵",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《吴越春秋·夫差内传》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "记述夫差争霸、艾陵之战经过及处置国书等情节，含后世渲染与传说成分，可作异说补充",
+      "检索词": "艾陵 夫差 国书",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《越绝书·记吴地传》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "涉及吴国北伐齐鲁及艾陵地理，可间接参考",
+      "检索词": "艾陵 吴伐齐",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 8,
+    "overall": "B"
+  }
+}

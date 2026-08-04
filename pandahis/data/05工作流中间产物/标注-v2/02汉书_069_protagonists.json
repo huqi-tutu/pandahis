@@ -1,0 +1,32 @@
+{
+  "work": "02汉书",
+  "vol": "069",
+  "volume_name": "公孙弘卜式儿宽传",
+  "volume_type_guess": "列传",
+  "volume_arc": "C",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "公孙弘",
+      "category": "文臣",
+      "rationale": "《公孙弘卜式儿宽传》卷名首列人物，合传主人公之一。公孙弘以儒术仕宦至丞相，属行政儒学文臣主轴，符合文臣准入标准。"
+    },
+    {
+      "name": "卜式",
+      "category": "文臣",
+      "rationale": "《公孙弘卜式儿宽传》卷名次列人物，合传主人公之一。卜式以输财助边、牧羊治民见用，属行政仕宦文臣主轴，符合文臣准入标准。"
+    },
+    {
+      "name": "儿宽",
+      "category": "文臣",
+      "rationale": "《公孙弘卜式儿宽传》卷名末列人物，合传主人公之一。儿宽以儒学经术仕宦至御史大夫，属儒学文臣主轴，符合文臣准入标准。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "work": "01史记",
+  "vol": "063",
+  "total_paragraphs": 30,
+  "volume_subtype": "hezhuan",
+  "derived_from": "01史记_063_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 4,
+      "paragraph_to": 4,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 7,
+      "paragraph_to": 7,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 29,
+      "paragraph_to": 29,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 30,
+      "paragraph_to": 30,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "老子",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 3,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "老子者，楚苦县厉乡曲仁里人也，姓李氏，名耳，字聃，周守藏室之史也。",
+        "close_paragraph": 3,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P1–P3"
+      }
+    },
+    {
+      "name": "老子",
+      "category": "文臣",
+      "paragraph_from": 5,
+      "paragraph_to": 6,
+      "boundary_evidence": {
+        "open_paragraph": 5,
+        "open_phrase": "盖老子百有六十馀岁，或言二百馀岁，以其脩道而养寿也。",
+        "close_paragraph": 6,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P5–P6"
+      }
+    },
+    {
+      "name": "老子",
+      "category": "文臣",
+      "paragraph_from": 8,
+      "paragraph_to": 8,
+      "boundary_evidence": {
+        "open_paragraph": 8,
+        "open_phrase": "世之学老子者则绌儒学，儒学亦绌老子。“道不同不相为谋”，岂谓是邪？李耳无为自化，",
+        "close_paragraph": 8,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P8–P8"
+      }
+    },
+    {
+      "name": "庄子",
+      "category": "文臣",
+      "paragraph_from": 9,
+      "paragraph_to": 11,
+      "boundary_evidence": {
+        "open_paragraph": 9,
+        "open_phrase": "庄子者，蒙人也，名周。周尝为蒙漆园吏，与梁惠王、齐宣王同时。其学无所不闚，然其要",
+        "close_paragraph": 11,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P9–P11"
+      }
+    },
+    {
+      "name": "申不害",
+      "category": "文臣",
+      "paragraph_from": 12,
+      "paragraph_to": 13,
+      "boundary_evidence": {
+        "open_paragraph": 12,
+        "open_phrase": "申不害者，京人也，故郑之贱臣。学术以干韩昭侯，昭侯用为相。内脩政教，外应诸侯，十",
+        "close_paragraph": 13,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P12–P13"
+      }
+    },
+    {
+      "name": "韩非",
+      "category": "文臣",
+      "paragraph_from": 14,
+      "paragraph_to": 28,
+      "boundary_evidence": {
+        "open_paragraph": 14,
+        "open_phrase": "韩非者，韩之诸公子也。喜刑名法术之学，而其归本於黄老。非为人口吃，不能道说，而善",
+        "close_paragraph": 28,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P14–P28"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

@@ -1,0 +1,573 @@
+{
+  "volume": "鲁周公世家",
+  "source_file": "01史记_033_鲁周公世家第三.txt",
+  "total_paragraphs": 93,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "shijia_zhuhou",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [
+        {
+          "name": "周公旦",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "周公旦",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "周公旦",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "周公旦",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "周公旦",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "周公旦",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "周公旦",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "周公旦",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "周公旦",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "周公旦",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "周公旦",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "周公旦",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "周公旦",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "鲁公伯禽",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "鲁公伯禽",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 17,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 18,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 19,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 20,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 21,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 22,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 23,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 24,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 25,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 26,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 27,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 28,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 29,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 30,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 31,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 32,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 33,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 34,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 35,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 36,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 37,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 38,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 39,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 40,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 41,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 42,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 43,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 44,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 45,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 46,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 47,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 48,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 49,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 50,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 51,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 52,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 53,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 54,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 55,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 56,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 57,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 58,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 59,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 60,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 61,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 62,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 63,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 64,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 65,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 66,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 67,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 68,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 69,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 70,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 71,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 72,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 73,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 74,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 75,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 76,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 77,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 78,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 79,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 80,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 81,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 82,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 83,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 84,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 85,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 86,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 87,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 88,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 89,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 90,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 91,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 92,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 93,
+      "owners": [],
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SHIJI_033_01",
+      "史略名称": "周公旦",
+      "史略简介": "周公旦",
+      "原文字句": "周公旦者，周武王弟也。自文王在时，旦为子孝，笃仁，异於群子。及武王即位，旦常辅翼武王，用事居多。武王九年，东伐至盟津，周公辅行。十一年，伐纣，至牧野，周公佐武王，作牧誓。破殷，入商宫。已杀纣，周公把大钺，召公把小钺，以夹武王，衅社，告纣之罪于天，及殷民。释箕子之囚。封纣子武庚禄父，使管叔、蔡叔傅之，以续殷祀。遍封功臣同姓戚者。封周公旦於少昊之虚曲阜，是为鲁公。周公不就封，留佐武王。",
+      "史略分类": "宗戚",
+      "主要史料出处": "《史记·卷33·鲁周公世家》",
+      "paragraphs": [
+        {
+          "volume": "鲁周公世家",
+          "paragraph_from": 1,
+          "paragraph_to": 13
+        }
+      ],
+      "五级细坐标": "史记·卷033·宗戚·01",
+      "六级段落锚点": "[P1-P13]",
+      "原文出处": "鲁周公世家·P1-P13"
+    },
+    {
+      "史略ID": "SHIJI_033_02",
+      "史略名称": "鲁公伯禽",
+      "史略简介": "鲁公伯禽",
+      "原文字句": "周公卒，子伯禽固已前受封，是为鲁公。鲁公伯禽之初受封之鲁，三年而后报政周公。周公曰：“何迟也？”伯禽曰：“变其俗，革其礼，丧三年然后除之，故迟。”太公亦封於齐，五月而报政周公。周公曰：“何疾也？”曰：“吾简其君臣礼，从其俗为也。”及后闻伯禽报政迟，乃叹曰：“呜呼，鲁后世其北面事齐矣！夫政不简不易，民不有近；平易近民，民必归之。”",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷33·鲁周公世家》",
+      "paragraphs": [
+        {
+          "volume": "鲁周公世家",
+          "paragraph_from": 14,
+          "paragraph_to": 15
+        }
+      ],
+      "五级细坐标": "史记·卷033·诸侯·02",
+      "六级段落锚点": "[P14-P15]",
+      "原文出处": "鲁周公世家·P14-P15"
+    }
+  ]
+}

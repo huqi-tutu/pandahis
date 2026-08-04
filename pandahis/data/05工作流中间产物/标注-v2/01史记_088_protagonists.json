@@ -1,0 +1,19 @@
+{
+  "work": "01史记",
+  "vol": "088",
+  "volume_name": "蒙恬列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "蒙恬",
+      "category": "武将",
+      "rationale": "《蒙恬列传》为单人列传，卷名即主人公。蒙恬以率军北击匈奴、修筑长城、戍边御敌为一生主轴，属军功征战型将帅，符合武将准入标准（军功、征战、将帅为主轴）。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

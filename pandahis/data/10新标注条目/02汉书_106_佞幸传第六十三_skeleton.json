@@ -1,0 +1,377 @@
+{
+  "volume": "佞幸传",
+  "source_file": "02汉书_106_佞幸传第六十三.txt",
+  "total_paragraphs": 35,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "邓通",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "邓通",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "邓通",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "邓通",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "韩嫣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "韩嫣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "韩嫣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "韩嫣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "李延年",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "石显",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "石显",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "石显",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "石显",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "石显",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "石显",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "石显",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 22,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 23,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 24,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 25,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "董贤",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "董贤",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "董贤",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "董贤",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "董贤",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "董贤",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "董贤",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "董贤",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "董贤",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HANSHU_106_01",
+      "史略名称": "邓通",
+      "史略简介": "邓通",
+      "原文字句": "邓通，蜀郡南安人也，以濯船为黄头郎。文帝尝梦欲上天，不能，有一黄头郎推上天，顾见其衣尻带后穿。觉而之渐台，以梦中阴目求推者郎，见邓通，其衣后穿，梦中所见也。召问其名姓，姓邓，名通。邓犹登也，文帝甚说，尊幸之，日日异。通亦愿谨，不好外交，虽赐洗沐，不欲出。于是文帝赏赐通巨万以十数，官至上大夫。",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷106·佞幸传》",
+      "paragraphs": [
+        {
+          "volume": "佞幸传",
+          "paragraph_from": 3,
+          "paragraph_to": 6
+        }
+      ],
+      "五级细坐标": "汉书·卷106·文臣·01",
+      "六级段落锚点": "[P3-P6]",
+      "原文出处": "佞幸传·P3-P6"
+    },
+    {
+      "史略ID": "HANSHU_106_02",
+      "史略名称": "韩嫣",
+      "史略简介": "韩嫣",
+      "原文字句": "韩嫣字王孙，弓高侯穨当之孙也。武帝为胶东王时，嫣与上学书相爱。及上为太子，愈益亲嫣。嫣善骑射，聪慧。上即位，欲事伐胡，而嫣先习兵，以故益尊贵，官至上大夫，赏赐拟邓通。",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷106·佞幸传》",
+      "paragraphs": [
+        {
+          "volume": "佞幸传",
+          "paragraph_from": 8,
+          "paragraph_to": 11
+        }
+      ],
+      "五级细坐标": "汉书·卷106·文臣·02",
+      "六级段落锚点": "[P8-P11]",
+      "原文出处": "佞幸传·P8-P11"
+    },
+    {
+      "史略ID": "HANSHU_106_03",
+      "史略名称": "李延年",
+      "史略简介": "李延年",
+      "原文字句": "李延年，中山人，身及父母兄弟皆故倡也。延年坐法腐刑，给事狗监中。女弟得幸于上，号李夫人，列《外戚传》。延年善歌，为新变声。是时，上方兴天地祠，欲造乐，令司马相如等作诗颂。延年辄承意弦歌所造诗，为之新声曲。而李夫人产昌邑王，延年由是贵为协律都尉，佩二千石印绶，而与上卧起，其爱幸埒韩嫣。久之，延年弟季与中人乱，出入骄恣。及李夫人卒后，其爱弛，上遂诛延年兄弟宗族。",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷106·佞幸传》",
+      "paragraphs": [
+        {
+          "volume": "佞幸传",
+          "paragraph_from": 12,
+          "paragraph_to": 12
+        }
+      ],
+      "五级细坐标": "汉书·卷106·文臣·03",
+      "六级段落锚点": "[P12]",
+      "原文出处": "佞幸传·P12"
+    },
+    {
+      "史略ID": "HANSHU_106_04",
+      "史略名称": "石显",
+      "史略简介": "石显",
+      "原文字句": "石显字君房，济南人；弘恭，沛人也。皆少坐法腐刑，为中黄门，以选为中尚书。宣帝时任中书官，恭明习法令故事，善为请奏，能称其职。恭为令，显为仆射。元帝即位数年，恭死，显代为中书令。",
+      "史略分类": "宦官",
+      "主要史料出处": "《02汉书·卷106·佞幸传》",
+      "paragraphs": [
+        {
+          "volume": "佞幸传",
+          "paragraph_from": 14,
+          "paragraph_to": 20
+        }
+      ],
+      "五级细坐标": "汉书·卷106·宦官·04",
+      "六级段落锚点": "[P14-P20]",
+      "原文出处": "佞幸传·P14-P20"
+    },
+    {
+      "史略ID": "HANSHU_106_05",
+      "史略名称": "董贤",
+      "史略简介": "董贤",
+      "原文字句": "董贤字圣卿，云阳人也。父恭，为御史，任贤为太子舍人。哀帝立，贤随太子官为郎。二岁余，贤传漏在殿下，为人美丽自喜，哀帝望见，说其仪貌，识而问之，曰：“是舍人董贤邪？”因引上与语，拜为黄门郎，由是始幸。问及其父为云中侯，即日征为霸陵令，迁光禄大夫。贤宠爱日甚，为驸马都尉侍中，出则参乘，入御左右，旬月间赏赐累巨万，贵震朝廷。常与上卧起。尝昼寝，偏藉上袖，上欲起，贤未觉，不欲动贤，乃断袖而起。其恩爱至此。",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷106·佞幸传》",
+      "paragraphs": [
+        {
+          "volume": "佞幸传",
+          "paragraph_from": 26,
+          "paragraph_to": 34
+        }
+      ],
+      "五级细坐标": "汉书·卷106·文臣·05",
+      "六级段落锚点": "[P26-P34]",
+      "原文出处": "佞幸传·P26-P34"
+    }
+  ]
+}

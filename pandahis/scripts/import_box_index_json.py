@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-将 data/史略索引_01至02.json 全量同步到 histomap.historical_box。
+将线上史略索引 JSON 全量同步到 histomap.historical_box。
 
-约定：
-  - id = 史略ID（主键，唯一业务 ID）
-  - parent_entry_id = 母本史略ID（可检索，非唯一）
+默认：data/12线上史略索引/史略索引_online.json（V2 + 06 合并）
+V1 索引（03/史略索引_01至02.json）仅作本地归档，请用 --json 显式指定。
 """
 
 from __future__ import annotations
@@ -21,7 +20,8 @@ if str(TOOLS) not in sys.path:
     sys.path.insert(0, str(TOOLS))
 from entry_source import entry_source_to_db, infer_entry_source  # noqa: E402
 
-DEFAULT_JSON = ROOT / "data" / "03索引标注条目" / "史略索引_01至02.json"
+DEFAULT_JSON = ROOT / "data" / "12线上史略索引" / "史略索引_online.json"
+DEFAULT_JSON_V1 = ROOT / "data" / "03索引标注条目" / "史略索引_01至02.json"
 DEFAULT_EMPEROR_JSON = ROOT / "data" / "01历史坐标数据" / "帝王.json"
 
 CIV_CODE_TO_ID: dict[str, int] = {
@@ -213,29 +213,40 @@ def build_original_ref_json(item: dict) -> str:
 def build_box_rows(entries: list[dict]) -> tuple[list[dict], list[str]]:
     rows: list[dict] = []
     skipped: list[str] = []
+    coord_keys = ("帝王ID", "政权ID", "朝代ID", "文明ID")
     for index, item in enumerate(entries):
-        if item.get("史略开始年") is None or item.get("史略结束年") is None:
-            skipped.append(str(item.get("史略ID", "?")).strip())
+        box_id = str(item.get("史略ID", "?")).strip()
+        start_year = item.get("史略开始年")
+        end_year = item.get("史略结束年")
+        if start_year is None and item.get("峰值年") is not None:
+            start_year = int(item["峰值年"])
+        if end_year is None and start_year is not None:
+            end_year = start_year
+        if start_year is None or end_year is None:
+            skipped.append(box_id)
+            continue
+        if any(not str(item.get(k) or "").strip() for k in coord_keys):
+            skipped.append(box_id)
             continue
         priority = str(item.get("优先级", "")).strip() or None
         rows.append(
             {
-                "id": str(item["史略ID"]).strip(),
-                "parent_entry_id": str(item["母本史略ID"]).strip(),
+                "id": box_id,
+                "parent_entry_id": str(item.get("母本史略ID") or box_id).strip(),
                 "emperor_id": str(item["帝王ID"]).strip(),
                 "regime_id": str(item["政权ID"]).strip(),
                 "dynasty_id": str(item["朝代ID"]).strip(),
                 "civilization_code": str(item["文明ID"]).strip(),
-                "civilization_name": str(item["一级文明坐标"]).strip(),
-                "dynasty_name": str(item["二级朝代坐标"]).strip(),
-                "regime_name": str(item["三级政权坐标"]).strip(),
-                "emperor_name": str(item["四级帝王坐标"]).strip(),
-                "title": str(item["史略名称"]).strip(),
+                "civilization_name": str(item.get("一级文明坐标") or "华夏").strip(),
+                "dynasty_name": str(item.get("二级朝代坐标") or "").strip(),
+                "regime_name": str(item.get("三级政权坐标") or "").strip(),
+                "emperor_name": str(item.get("四级帝王坐标") or "").strip(),
+                "title": str(item.get("史略名称") or "").strip(),
                 "category_key": category_key(item["史略分类"]),
                 "entry_source": entry_source_to_db(infer_entry_source(item)),
-                "blurb": str(item["史略简介"]).strip(),
-                "start_year": int(item["史略开始年"]),
-                "end_year": int(item["史略结束年"]),
+                "blurb": str(item.get("史略简介") or "").strip(),
+                "start_year": int(start_year),
+                "end_year": int(end_year),
                 "priority_code": priority,
                 "priority_reason": str(item.get("优先级判定理由", "")).strip() or None,
                 "importance_level": priority_level(priority),
@@ -591,6 +602,41 @@ def update_priority_peak_fields(cursor, rows: list[dict]) -> int:
     return update_enrichment_fields(cursor, rows)
 
 
+def sync_metadata_from_entries(cursor, entries: list[dict]) -> int:
+    """将 JSON 中的名称/分类/简介同步到已有 historical_box（不要求坐标齐全）。"""
+    sql = """
+        UPDATE historical_box
+        SET title = %(title)s,
+            category_key = %(category_key)s,
+            blurb = %(blurb)s,
+            fine_coordinate = %(fine_coordinate)s,
+            peak_year = COALESCE(%(peak_year)s, peak_year)
+        WHERE id = %(id)s
+    """
+    count = 0
+    for item in entries:
+        box_id = str(item.get("史略ID") or "").strip()
+        if not box_id:
+            continue
+        cat_raw = str(item.get("史略分类") or "").strip()
+        if not cat_raw:
+            continue
+        peak = item.get("峰值年")
+        cursor.execute(
+            sql,
+            {
+                "id": box_id,
+                "title": str(item.get("史略名称") or "").strip(),
+                "category_key": category_key(cat_raw),
+                "blurb": str(item.get("史略简介") or "").strip(),
+                "fine_coordinate": str(item.get("五级细坐标") or "").strip() or None,
+                "peak_year": int(peak) if peak is not None else None,
+            },
+        )
+        count += cursor.rowcount
+    return count
+
+
 def delete_child_rows_for_boxes(cursor, box_ids: list[str]) -> dict[str, int]:
     """删除引用 historical_box 的子表行（FK 为 NO ACTION，须先于父表删除）。"""
     if not box_ids:
@@ -683,6 +729,7 @@ def main() -> int:
         action="store_true",
         help="导入前清除本次 upsert 的 box_id 在子表中的旧数据（默认不清，避免误删评述/见证/关系）",
     )
+    parser.add_argument("--dry-run", action="store_true", help="只统计，不写 MySQL")
     args = parser.parse_args()
 
     entries = load_entries(args.json)
@@ -748,9 +795,12 @@ def main() -> int:
             if reused_stats:
                 print("已清理复用 ID 子表/用户引用:", reused_stats)
             upserted = upsert_boxes(cursor, rows)
+            meta_updated = sync_metadata_from_entries(cursor, entries)
             deleted = delete_orphans(cursor, [str(e["史略ID"]).strip() for e in entries])
             if skipped:
-                print(f"跳过缺少年份（未 upsert）: {len(skipped)} 条 → {', '.join(skipped)}")
+                print(f"跳过缺少年份/坐标（未全量 upsert）: {len(skipped)} 条 → {', '.join(skipped[:20])}{'...' if len(skipped)>20 else ''}")
+            if meta_updated:
+                print(f"元数据同步（名称/分类）: {meta_updated} 条")
             cursor.execute("SELECT COUNT(*) AS cnt FROM historical_box")
             final_count = cursor.fetchone()["cnt"]
             cursor.execute(

@@ -12,6 +12,9 @@
   python3 translate.py verify --id GLBL_00001
   python3 translate.py aggregate
   python3 translate.py status
+  python3 translate.py patch-paragraphs --id GLBL_00149 [--dry-run] [--force]
+  python3 translate.py patch-paragraphs --id GLBL_00730 --source-only
+  # 产出默认写入 待补全段落翻译/_patch_output/，基稿不动，待人工确认后再 promote
 """
 
 from __future__ import annotations
@@ -112,6 +115,27 @@ def main() -> int:
     p.add_argument("--dry-run", action="store_true")
     p.add_argument("--execute", action="store_true", help="执行修复（默认仅展示工单）")
 
+    p = sub.add_parser("patch-paragraphs", help="V1 成稿补译 V2 缺失母本段并落盘到 11 复用目录")
+    p.add_argument("--id", required=True, dest="entry_id")
+    p.add_argument("--index", type=Path, default=None, help="V2 索引（默认 10新标注条目/史略索引_史记汉书.json）")
+    p.add_argument("--base", type=Path, default=None, help="V1 基稿 JSON（默认 11/待补全段落翻译/）")
+    p.add_argument("--out-dir", type=Path, default=None, help="产出目录（默认 待补全段落翻译/_patch_output/）")
+    p.add_argument("--manifest", type=Path, default=None, help="待补全清单.json")
+    p.add_argument("--dry-run", action="store_true")
+    p.add_argument("--force", action="store_true", help="跳过去重门控，强制 Phase1 顺译")
+    p.add_argument(
+        "--boundary-paras",
+        type=int,
+        default=None,
+        help="integrate 模式替换的 V1 边界段数（默认按 patch_mode 自动：append/prepend=0）",
+    )
+    p.add_argument("--source-only", action="store_true", help="仅补全史料原文，不改翻译详情（如赵简子）")
+
+    p = sub.add_parser("patch-promote", help="人工确认后将 _patch_output 产出 promote 至 11 第一层并清理待补全")
+    p.add_argument("--id", required=True, dest="entry_id")
+    p.add_argument("--from", dest="patch_file", type=Path, default=None, help="指定产出 JSON（默认 _patch_output/）")
+    p.add_argument("--note", default="", help="写入复用清单的备注")
+
     args = parser.parse_args()
     index = args.index if hasattr(args, "index") else None
 
@@ -211,6 +235,42 @@ def main() -> int:
             out_dir=paths()["translate_output"],
             index_path=index,
             dry_run=args.dry_run,
+        )
+        print(msg)
+        return 0 if ok else 1
+
+    if args.cmd == "patch-paragraphs":
+        from lib.patch_paragraphs import patch_paragraphs, promote_source_only
+
+        index = args.index if hasattr(args, "index") else None
+        if args.source_only:
+            ok, msg = promote_source_only(
+                args.entry_id,
+                base_file=args.base,
+                output_dir=args.out_dir,
+                index_path=index,
+            )
+        else:
+            ok, msg = patch_paragraphs(
+                args.entry_id,
+                base_file=args.base,
+                output_dir=args.out_dir,
+                manifest_path=args.manifest,
+                index_path=index,
+                dry_run=args.dry_run,
+                force=args.force,
+                boundary_paras=args.boundary_paras,
+            )
+        print(msg)
+        return 0 if ok else 1
+
+    if args.cmd == "patch-promote":
+        from lib.patch_paragraphs import promote_patched_entry
+
+        ok, msg = promote_patched_entry(
+            args.entry_id,
+            patch_file=getattr(args, "patch_file", None),
+            note=getattr(args, "note", "") or "",
         )
         print(msg)
         return 0 if ok else 1

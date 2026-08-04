@@ -1,0 +1,46 @@
+{
+  "work": "01史记",
+  "vol": "033",
+  "total_paragraphs": 93,
+  "volume_subtype": "shijia_zhuhou",
+  "derived_from": "01史记_033_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 16,
+      "paragraph_to": 92,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 93,
+      "paragraph_to": 93,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "周公旦",
+      "category": "宗戚",
+      "paragraph_from": 1,
+      "paragraph_to": 13,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "周公旦者，周武王弟也。自文王在时，旦为子孝，笃仁，异於群子。及武王即位，旦常辅翼",
+        "close_paragraph": 13,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P1–P13"
+      }
+    },
+    {
+      "name": "鲁公伯禽",
+      "category": "诸侯",
+      "paragraph_from": 14,
+      "paragraph_to": 15,
+      "boundary_evidence": {
+        "open_paragraph": 14,
+        "open_phrase": "周公卒，子伯禽固已前受封，是为鲁公。鲁公伯禽之初受封之鲁，三年而后报政周公。周公",
+        "close_paragraph": 15,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P14–P15"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

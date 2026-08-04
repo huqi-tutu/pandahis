@@ -5,55 +5,72 @@
     <!-- 关键词展示 + 结果数 -->
     <view class="kw-bar">
       <text class="kw-text">「{{keyword}}」</text>
-      <text class="kw-count muted">共 {{resultTotal}} 条</text>
+      <text class="kw-count muted">共 {{preciseResults.length + relatedResults.length}} 条</text>
     </view>
 
-    <!-- 类别筛选 -->
-    <view class="filter-bar" wx:if="{{results.length}}">
-      <scroll-view scroll-x class="filter-scroll" enhanced show-scrollbar="{{false}}">
-        <view class="filter-inner">
-          <view
-            wx:for="{{filterCats}}"
-            wx:key="*this"
-            class="filter-tag {{filterIndex === index ? 'active' : ''}}"
-            data-i="{{index}}"
-            bindtap="onFilter"
-          >{{item}}</view>
-        </view>
-      </scroll-view>
-    </view>
-
-    <!-- 结果列表 -->
     <view wx:if="{{searching}}" class="loading muted">搜索中…</view>
 
-    <view wx:elif="{{!filteredResults.length}}" class="empty-state">
-      <text class="empty-icon">🔍</text>
+    <view wx:elif="{{!preciseResults.length && !relatedResults.length}}" class="empty-state">
       <text class="empty-text">未找到结果</text>
-      <text class="muted" style="font-size:24rpx;">换个关键词试试？</text>
+      <text class="empty-hint muted">换个关键词试试？</text>
     </view>
 
     <scroll-view wx:else scroll-y class="result-scroll" enhanced show-scrollbar="{{false}}">
-      <view
-        class="result-card"
-        wx:for="{{filteredResults}}"
-        wx:key="key"
-        bindtap="go"
-        data-type="{{item.type}}"
-        data-id="{{item.id}}"
-        data-dynasty="{{item.dynastyHint}}"
-      >
-        <view wx:if="{{item.category}}" class="result-cat-badge">
-          <text>{{item.category}}</text>
+      <view class="result-list">
+        <!-- 精准匹配 -->
+        <view class="result-section" wx:if="{{preciseResults.length}}">
+          <view class="section-head">
+            <text class="section-title">精准匹配</text>
+            <text class="section-count muted">{{preciseResults.length}}</text>
+          </view>
+          <view
+            class="result-card"
+            wx:for="{{preciseResults}}"
+            wx:key="key"
+            bindtap="go"
+            data-type="{{item.type}}"
+            data-id="{{item.id}}"
+          >
+            <view class="card-top">
+              <text class="result-title">{{item.titlePlain}}</text>
+              <text wx:if="{{item.category}}" class="cat-badge">{{item.category}}</text>
+            </view>
+            <text wx:if="{{item.coordinateText}}" class="result-coord faint">{{item.coordinateText}}</text>
+            <view class="card-meta">
+              <text wx:if="{{item.yearText}}" class="result-year muted">{{item.yearText}}</text>
+              <text wx:if="{{item.hasPersonTag}}" class="person-tag">{{item.personTag}}</text>
+            </view>
+          </view>
         </view>
-        <view class="result-main">
-          <rich-text class="result-title" nodes="{{item.titleRich}}"></rich-text>
-          <text class="result-sub faint">{{item.pathText}}</text>
-          <rich-text wx:if="{{item.hasDesc}}" class="result-snippet muted" nodes="{{item.descRich}}"></rich-text>
-        </view>
-        <text class="result-arrow muted">›</text>
-      </view>
 
-      <view style="height: 60rpx;"></view>
+        <!-- 相关史略 -->
+        <view class="result-section" wx:if="{{relatedResults.length}}">
+          <view class="section-head">
+            <text class="section-title">相关史略</text>
+            <text class="section-count muted">{{relatedResults.length}}</text>
+          </view>
+          <view
+            class="result-card"
+            wx:for="{{relatedResults}}"
+            wx:key="key"
+            bindtap="go"
+            data-type="{{item.type}}"
+            data-id="{{item.id}}"
+          >
+            <view class="card-top">
+              <text class="result-title">{{item.titlePlain}}</text>
+              <text wx:if="{{item.category}}" class="cat-badge">{{item.category}}</text>
+            </view>
+            <text wx:if="{{item.coordinateText}}" class="result-coord faint">{{item.coordinateText}}</text>
+            <view class="card-meta">
+              <text wx:if="{{item.yearText}}" class="result-year muted">{{item.yearText}}</text>
+              <text wx:if="{{item.hasPersonTag}}" class="person-tag">{{item.personTag}}</text>
+            </view>
+          </view>
+        </view>
+
+        <view class="result-bottom-space"></view>
+      </view>
     </scroll-view>
   </view>
 </view>

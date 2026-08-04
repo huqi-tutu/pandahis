@@ -1,0 +1,184 @@
+{
+  "volume": "孟子荀卿列传",
+  "source_file": "01史记_074_孟子荀卿列传第十四.txt",
+  "total_paragraphs": 18,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph": 2,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "孟子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "孟子",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "邹衍",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "邹衍",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "邹衍",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "邹衍",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 11,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 12,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 13,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 14,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 15,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "荀卿",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 18,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SHIJI_074_01",
+      "史略名称": "孟子",
+      "史略简介": "孟子",
+      "原文字句": "孟轲，驺人也。受业子思之门人。道既通，游事齐宣王，宣王不能用。適梁，梁惠王不果所言，则见以为迂远而阔於事情。当是之时，秦用商君，富国彊兵；楚、魏用吴起，战胜弱敌；齐威王、宣王用孙子、田忌之徒，而诸侯东面朝齐。",
+      "史略分类": "文臣",
+      "主要史料出处": "《史记·卷74·孟子荀卿列传》",
+      "paragraphs": [
+        {
+          "volume": "孟子荀卿列传",
+          "paragraph_from": 3,
+          "paragraph_to": 4
+        }
+      ],
+      "五级细坐标": "史记·卷074·文臣·01",
+      "六级段落锚点": "[P3-P4]",
+      "原文出处": "孟子荀卿列传·P3-P4"
+    },
+    {
+      "史略ID": "SHIJI_074_02",
+      "史略名称": "邹衍",
+      "史略简介": "邹衍",
+      "原文字句": "其次驺衍，后孟子。驺衍睹有国者益淫侈，不能尚德，若大雅整之於身，施及黎庶矣。乃深观阴阳消息而作怪迂之变，终始、大圣之篇十馀万言。",
+      "史略分类": "文臣",
+      "主要史料出处": "《史记·卷74·孟子荀卿列传》",
+      "paragraphs": [
+        {
+          "volume": "孟子荀卿列传",
+          "paragraph_from": 6,
+          "paragraph_to": 9
+        }
+      ],
+      "五级细坐标": "史记·卷074·文臣·02",
+      "六级段落锚点": "[P6-P9]",
+      "原文出处": "孟子荀卿列传·P6-P9"
+    },
+    {
+      "史略ID": "SHIJI_074_03",
+      "史略名称": "荀卿",
+      "史略简介": "荀卿",
+      "原文字句": "荀卿，赵人。年五十始来游学於齐。驺衍之术迂大而闳辩；奭也文具难施；淳于髡久与处，时有得善言。故齐人颂曰：“谈天衍，雕龙奭，炙毂过髡。”田骈之属皆已死齐襄王时，而荀卿最为老师。齐尚脩列大夫之缺，而荀卿三为祭酒焉。齐人或谗荀卿，荀卿乃適楚，而春申君以为兰陵令。春申君死而荀卿废，因家兰陵。李斯尝为弟子，已而相秦。荀卿嫉浊世之政，亡国乱君相属，不遂大道而营於巫祝，信禨祥，鄙儒小拘，如庄周等又猾稽乱俗，於是",
+      "史略分类": "文臣",
+      "主要史料出处": "《史记·卷74·孟子荀卿列传》",
+      "paragraphs": [
+        {
+          "volume": "孟子荀卿列传",
+          "paragraph_from": 16,
+          "paragraph_to": 16
+        }
+      ],
+      "五级细坐标": "史记·卷074·文臣·03",
+      "六级段落锚点": "[P16]",
+      "原文出处": "孟子荀卿列传·P16"
+    }
+  ]
+}

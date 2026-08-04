@@ -1,0 +1,58 @@
+{
+  "work": "02汉书",
+  "vol": "043",
+  "total_paragraphs": 23,
+  "volume_subtype": "hezhuan",
+  "derived_from": "02汉书_043_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 23,
+      "paragraph_to": 23,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "魏豹",
+      "category": "武将",
+      "paragraph_from": 2,
+      "paragraph_to": 4,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "魏豹，故魏诸公子也。其兄魏咎，故魏时封为宁陵君，秦灭魏，为庶人。陈胜之王也，咎往",
+        "close_paragraph": 4,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P4"
+      }
+    },
+    {
+      "name": "田儋",
+      "category": "武将",
+      "paragraph_from": 5,
+      "paragraph_to": 15,
+      "boundary_evidence": {
+        "open_paragraph": 5,
+        "open_phrase": "田儋，狄人也，故齐王田氏之族也。儋从弟荣，荣弟横，皆豪桀，宗强，能得人。陈涉使周",
+        "close_paragraph": 15,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P5–P15"
+      }
+    },
+    {
+      "name": "韩王信",
+      "category": "武将",
+      "paragraph_from": 16,
+      "paragraph_to": 22,
+      "boundary_evidence": {
+        "open_paragraph": 16,
+        "open_phrase": "韩王信，故韩襄王孽孙也，长八尺五寸。项梁立楚怀王，燕、齐、赵、魏皆已前王，唯韩无",
+        "close_paragraph": 22,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P16–P22"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

@@ -1,0 +1,84 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00982",
+  "写作结构": "正史叙述见翻译详录（任嚣临终托孤、权力交接核心情节依据《史记·南越列传》），拓展文重点补入任嚣修筑番禺城的史外异说，其余事迹缺乏可靠记载，禁编造战斗过程。",
+  "候选著作": [
+    {
+      "出处": "《史记·南越列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "本条目主要史料出处，记载任嚣临终召集赵佗分析形势并托付南海郡尉职权，奠定南越国基础。",
+      "检索词": "任嚣 赵佗 南海尉",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《汉书·西南夷两粤朝鲜传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "班固转录《史记》相关记载，内容略同，可作为互校参考。",
+      "检索词": "任嚣 南海尉",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "佚书《广州记》（《水经·泿水注》引）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记录任嚣筑番禺城一事，为 anchor c02 提供史外异说依据，补充正史未载之军政中心建设。",
+      "检索词": "任嚣城 番禺",
+      "采用": true,
+      "原文摘句": "泿水又东径番禺城南，《广州记》曰：昔有任嚣城。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·南越列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "本条目主要史料出处，记载任嚣临终召集赵佗分析形势并托付南海郡尉职权，奠定南越国基础。",
+      "检索词": "任嚣 赵佗 南海尉",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《汉书·西南夷两粤朝鲜传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "班固转录《史记》相关记载，内容略同，可作为互校参考。",
+      "检索词": "任嚣 南海尉",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "佚书《广州记》（《水经·泿水注》引）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记录任嚣筑番禺城一事，为 anchor c02 提供史外异说依据，补充正史未载之军政中心建设。",
+      "检索词": "任嚣城 番禺",
+      "采用": true,
+      "原文摘句": "泿水又东径番禺城南，《广州记》曰：昔有任嚣城。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 1,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "work": "01史记",
+  "vol": "004",
+  "volume_name": "周本纪",
+  "volume_type_guess": "本纪",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "benji_multi",
+  "volume_arc": "B",
+  "volume_texture": "sequential",
+  "protagonists_cap_note": "周本纪破 Top5：补周穆王（犬戎/甫刑），本卷允许 6 人",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "周文王",
+      "category": "君王",
+      "rationale": "西伯曰文王，P8 正式开传。"
+    },
+    {
+      "name": "周武王",
+      "category": "君王",
+      "rationale": "克商建周叙事高峰。"
+    },
+    {
+      "name": "周成王",
+      "category": "君王",
+      "rationale": "周公摄政、成王初定。"
+    },
+    {
+      "name": "周穆王",
+      "category": "君王",
+      "rationale": "P32 是为穆王；征犬戎、甫刑；本卷破≤5 补入。"
+    },
+    {
+      "name": "周厉王",
+      "category": "君王",
+      "rationale": "专利弭谤、国人暴动。"
+    },
+    {
+      "name": "周幽王",
+      "category": "君王",
+      "rationale": "P44 立；烽火戏诸侯至西周亡。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链"
+  ]
+}

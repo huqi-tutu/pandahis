@@ -1,0 +1,335 @@
+{
+  "volume": "滑稽列传",
+  "source_file": "01史记_126_滑稽列传第六十六.txt",
+  "total_paragraphs": 39,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "interleaved",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [
+        {
+          "name": "淳于髡",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "淳于髡",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "淳于髡",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "淳于髡",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "淳于髡",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "淳于髡",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "优孟",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "优孟",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "优孟",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "优孟",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "优旃",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "优旃",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "优旃",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "优旃",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "优旃",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [],
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph": 19,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 20,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 21,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 22,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 23,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 24,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 25,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 26,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 27,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "淳于髡",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "淳于髡",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 31,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 32,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 33,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 34,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 35,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 36,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 37,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 38,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 39,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SHIJI_126_01",
+      "史略名称": "淳于髡",
+      "史略简介": "淳于髡",
+      "原文字句": "淳于髡者，齐之赘婿也。长不满七尺，滑稽多辩，数使诸侯，未尝屈辱。齐威王之时喜隐，好为淫乐长夜之饮，沈湎不治，委政卿大夫。百官荒乱，诸侯并侵，国且危亡，在於旦暮，左右莫敢谏。淳于髡说之以隐曰：“国中有大鸟，止王之庭，三年不蜚又不鸣，王知此鸟何也？”王曰：“此鸟不飞则已，一飞冲天；不鸣则已，一鸣惊人。”於是乃朝诸县令长七十二人，赏一人，诛一人，奋兵而出。诸侯振惊，皆还齐侵地。威行三十六年。语在田完世家",
+      "史略分类": "庶众",
+      "主要史料出处": "《史记·卷126·滑稽列传》",
+      "paragraphs": [
+        {
+          "volume": "滑稽列传",
+          "paragraph_from": 1,
+          "paragraph_to": 6
+        },
+        {
+          "volume": "滑稽列传",
+          "paragraph_from": 28,
+          "paragraph_to": 29
+        }
+      ],
+      "五级细坐标": "史记·卷126·庶众·01",
+      "六级段落锚点": "[P1-P6],[P28-P29]",
+      "原文出处": "滑稽列传·P1-P6,P28-P29"
+    },
+    {
+      "史略ID": "SHIJI_126_02",
+      "史略名称": "优孟",
+      "史略简介": "优孟",
+      "原文字句": "其后百馀年，楚有优孟。",
+      "史略分类": "庶众",
+      "主要史料出处": "《史记·卷126·滑稽列传》",
+      "paragraphs": [
+        {
+          "volume": "滑稽列传",
+          "paragraph_from": 8,
+          "paragraph_to": 11
+        }
+      ],
+      "五级细坐标": "史记·卷126·庶众·02",
+      "六级段落锚点": "[P8-P11]",
+      "原文出处": "滑稽列传·P8-P11"
+    },
+    {
+      "史略ID": "SHIJI_126_03",
+      "史略名称": "优旃",
+      "史略简介": "优旃",
+      "原文字句": "其后二百馀年，秦有优旃。",
+      "史略分类": "庶众",
+      "主要史料出处": "《史记·卷126·滑稽列传》",
+      "paragraphs": [
+        {
+          "volume": "滑稽列传",
+          "paragraph_from": 13,
+          "paragraph_to": 17
+        }
+      ],
+      "五级细坐标": "史记·卷126·庶众·03",
+      "六级段落锚点": "[P13-P17]",
+      "原文出处": "滑稽列传·P13-P17"
+    }
+  ],
+  "translation_qa_hint": "混写卷：人物段落非连续。翻译质检须按 entries[].paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。"
+}

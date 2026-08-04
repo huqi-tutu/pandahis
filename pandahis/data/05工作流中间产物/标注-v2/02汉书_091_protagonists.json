@@ -1,0 +1,20 @@
+{
+  "work": "02汉书",
+  "vol": "091",
+  "volume_name": "冯奉世传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "冯奉世",
+      "category": "武将",
+      "rationale": "卷名《冯奉世传》为单人列传，冯奉世以征讨莎车、平定羌乱等军功著称，属武将列传主轴。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

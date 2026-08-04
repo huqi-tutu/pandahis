@@ -159,8 +159,11 @@ def call_llm(
     temperature: float | None = 0.2,
 ) -> str:
     load_env()
+    from llm.config import ensure_deepseek_v4_pro, get_provider_name, PROVIDER_DEEPSEEK  # noqa: WPS433
     from llm.provider import run_agent_turn  # noqa: WPS433
 
+    if get_provider_name() == PROVIDER_DEEPSEEK:
+        ensure_deepseek_v4_pro()
     sid = session_prefix + hashlib.sha1(prompt.encode("utf-8")).hexdigest()[:12]
     res = run_agent_turn(
         prompt,
@@ -1379,7 +1382,8 @@ def collect_covered_emperor_names(
     index_path = histograph_root / "data" / "03索引标注条目" / "史略索引_01至02.json"
     if index_path.is_file():
         root = json.loads(index_path.read_text(encoding="utf-8"))
-        for e in root.get("entries") or []:
+        index_entries = root.get("entries") if isinstance(root, dict) else root
+        for e in index_entries or []:
             if not isinstance(e, dict):
                 continue
             if str(e.get("朝代ID", "")).strip() != dynasty_id:

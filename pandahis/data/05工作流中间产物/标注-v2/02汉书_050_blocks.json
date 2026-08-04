@@ -1,0 +1,90 @@
+{
+  "work": "02汉书",
+  "vol": "050",
+  "total_paragraphs": 79,
+  "volume_subtype": "hezhuan",
+  "derived_from": "manual_fix_20260802",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 67,
+      "paragraph_to": 78,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 79,
+      "paragraph_to": 79,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "张良",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 28,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "张良字子房，其先韩人也。大父开地，相韩昭侯",
+        "close_paragraph": 28,
+        "close_note": "含 P28 嗣子国除，仍属张良传收束"
+      }
+    },
+    {
+      "name": "陈平",
+      "category": "文臣",
+      "paragraph_from": 29,
+      "paragraph_to": 54,
+      "boundary_evidence": {
+        "open_paragraph": 29,
+        "open_phrase": "陈平，阳武户牖乡人也。少时家贫，好读书，治黄帝",
+        "close_paragraph": 54,
+        "close_note": "陈平全传 P29–54；P47–48 与王陵双挂"
+      }
+    },
+    {
+      "name": "周勃",
+      "category": "武将",
+      "paragraph_from": 55,
+      "paragraph_to": 66,
+      "boundary_evidence": {
+        "open_paragraph": 55,
+        "open_phrase": "周勃，沛人。其先卷人也，徙沛。勃以织薄曲为生",
+        "close_paragraph": 66,
+        "close_note": "周勃块"
+      }
+    }
+  ],
+  "multi_owner_segments": [
+    {
+      "paragraph": 47,
+      "owners": [
+        {
+          "name": "陈平",
+          "category": "文臣"
+        },
+        {
+          "name": "王陵",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 48,
+      "owners": [
+        {
+          "name": "陈平",
+          "category": "文臣"
+        },
+        {
+          "name": "王陵",
+          "category": "文臣"
+        }
+      ]
+    }
+  ]
+}

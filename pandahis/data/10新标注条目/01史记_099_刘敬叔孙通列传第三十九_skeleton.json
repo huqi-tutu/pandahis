@@ -1,0 +1,305 @@
+{
+  "volume": "刘敬叔孙通列传",
+  "source_file": "01史记_099_刘敬叔孙通列传第三十九.txt",
+  "total_paragraphs": 29,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [
+        {
+          "name": "刘敬",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "刘敬",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "刘敬",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "刘敬",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "刘敬",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "刘敬",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "刘敬",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "刘敬",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "刘敬",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "刘敬",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "刘敬",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "刘敬",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "刘敬",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "叔孙通",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "叔孙通",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "叔孙通",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "叔孙通",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "叔孙通",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "叔孙通",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "叔孙通",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "叔孙通",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "叔孙通",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "叔孙通",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "叔孙通",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "叔孙通",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "叔孙通",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "叔孙通",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "叔孙通",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [],
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SHIJI_099_01",
+      "史略名称": "刘敬",
+      "史略简介": "刘敬",
+      "原文字句": "刘敬者，齐人也。汉五年，戍陇西，过洛阳，高帝在焉。娄敬脱輓辂，衣其羊裘，见齐人虞将军曰：“臣愿见上言便事。”虞将军欲与之鲜衣，娄敬曰：“臣衣帛，衣帛见；衣褐，衣褐见：终不敢易衣。”於是虞将军入言上。上召入见，赐食。",
+      "史略分类": "文臣",
+      "主要史料出处": "《史记·卷99·刘敬叔孙通列传》",
+      "paragraphs": [
+        {
+          "volume": "刘敬叔孙通列传",
+          "paragraph_from": 1,
+          "paragraph_to": 13
+        }
+      ],
+      "五级细坐标": "史记·卷099·文臣·01",
+      "六级段落锚点": "[P1-P13]",
+      "原文出处": "刘敬叔孙通列传·P1-P13"
+    },
+    {
+      "史略ID": "SHIJI_099_02",
+      "史略名称": "叔孙通",
+      "史略简介": "叔孙通",
+      "原文字句": "叔孙通者，薛人也。秦时以文学徵，待诏博士。数岁，陈胜起山东，使者以闻，二世召博士诸儒生问曰：“楚戍卒攻蕲入陈，於公如何？”博士诸生三十馀人前曰：“人臣无将，将即反，罪死无赦。愿陛下急发兵击之。”二世怒，作色。",
+      "史略分类": "文臣",
+      "主要史料出处": "《史记·卷99·刘敬叔孙通列传》",
+      "paragraphs": [
+        {
+          "volume": "刘敬叔孙通列传",
+          "paragraph_from": 14,
+          "paragraph_to": 28
+        }
+      ],
+      "五级细坐标": "史记·卷099·文臣·02",
+      "六级段落锚点": "[P14-P28]",
+      "原文出处": "刘敬叔孙通列传·P14-P28"
+    }
+  ]
+}

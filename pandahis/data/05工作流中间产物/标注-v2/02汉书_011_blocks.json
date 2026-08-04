@@ -1,0 +1,32 @@
+{
+  "work": "02汉书",
+  "vol": "011",
+  "total_paragraphs": 141,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 141,
+      "paragraph_to": 141,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "汉成帝",
+      "category": "君王",
+      "paragraph_from": 2,
+      "paragraph_to": 140,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "孝成皇帝，元帝太子也。母曰王皇后。元帝在太子宫生甲观画堂，为世嫡皇孙。宣帝爱之，",
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

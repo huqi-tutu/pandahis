@@ -1,0 +1,19 @@
+{
+  "work": "01史记",
+  "vol": "056",
+  "volume_name": "陈丞相世家",
+  "volume_type_guess": "世家",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "陈平",
+      "category": "文臣",
+      "rationale": "卷名『陈丞相世家』，主轴为汉初丞相陈平一人。陈平以谋略、行政辅佐高祖、惠帝、吕后、文帝，属文臣而非君王或诸侯。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

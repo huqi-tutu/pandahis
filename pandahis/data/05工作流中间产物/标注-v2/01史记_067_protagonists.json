@@ -1,0 +1,70 @@
+{
+  "work": "01史记",
+  "vol": "067",
+  "volume_name": "仲尼弟子列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "颜回",
+      "category": "文臣",
+      "rationale": "孔子弟子德行科代表，卷首独立叙事段最长之一。"
+    },
+    {
+      "name": "子路",
+      "category": "文臣",
+      "rationale": "政事科代表，有独立多段叙事与结局。"
+    },
+    {
+      "name": "宰予",
+      "category": "文臣",
+      "rationale": "言语科代表，有独立叙事段。"
+    },
+    {
+      "name": "子贡",
+      "category": "文臣",
+      "rationale": "言语科代表，事迹跨多国，叙事篇幅大。"
+    },
+    {
+      "name": "子夏",
+      "category": "文臣",
+      "rationale": "文学科代表，有独立叙事段与后世影响。"
+    },
+    {
+      "name": "冉雍",
+      "category": "文臣",
+      "rationale": "德行科代表，问政与「可使南面」。"
+    },
+    {
+      "name": "冉求",
+      "category": "文臣",
+      "rationale": "政事科代表，季氏宰与闻斯行诸。"
+    },
+    {
+      "name": "子游",
+      "category": "文臣",
+      "rationale": "文学科代表，武城弦歌。"
+    },
+    {
+      "name": "子张",
+      "category": "文臣",
+      "rationale": "干禄达问，后世影响大。"
+    },
+    {
+      "name": "曾参",
+      "category": "文臣",
+      "rationale": "孝道、《孝经》正传。"
+    },
+    {
+      "name": "澹台灭明",
+      "category": "文臣",
+      "rationale": "以貌取人之训，南游弟子三百。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "其他"
+  ]
+}

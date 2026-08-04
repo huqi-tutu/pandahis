@@ -1,0 +1,27 @@
+{
+  "work": "01史记",
+  "vol": "080",
+  "total_paragraphs": 24,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 24,
+      "paragraph_to": 24,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "乐毅",
+      "category": "武将",
+      "paragraph_from": 1,
+      "paragraph_to": 23,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "乐毅者，其先祖曰乐羊。乐羊为魏文侯将，伐取中山，魏文侯封乐羊以灵寿。",
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

@@ -1,0 +1,131 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00955",
+  "写作结构": "正史叙述见翻译详录；拓展以出土秦简所见户口核算与赋钱征收实迹补证制度落地，再引汉人议论（《盐铁论》）补充秦赋敛繁苛的政治批判，不虚构具体税率与征课细节。",
+  "候选著作": [
+    {
+      "出处": "《史记·秦始皇本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载秦始皇三十一年“使黔首自实田”等背景，为口赋征收的户口基础提供正史依据",
+      "检索词": "黔首自实田",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《汉书·食货志》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "详载秦“田租口赋盐铁之利二十倍于古”及“头会箕敛”之辞，乃本条目核心史源",
+      "检索词": "口赋盐铁",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《里耶秦简》（相关简牍，如《里耶秦简牍校释》）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "出土秦代县级文书常见“口赋”“户赋”记录，直接反映按人口征收货币税的行政实态，可补史书记载之缺",
+      "检索词": "口赋 赋钱 里耶",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《盐铁论·非鞅》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "汉人追述商鞅变法后赋敛繁数，常与秦口赋钱食之弊对照，可作政治批判的异说补充",
+      "检索词": "商君 赋敛 烦数",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《通典·食货四·赋税上》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "唐代政书撮述秦汉口赋沿革，可作为后世归纳，但无新增史料",
+      "检索词": "秦 口赋",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·秦始皇本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载秦始皇三十一年“使黔首自实田”等背景，为口赋征收的户口基础提供正史依据",
+      "检索词": "黔首自实田",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《汉书·食货志》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "详载秦“田租口赋盐铁之利二十倍于古”及“头会箕敛”之辞，乃本条目核心史源",
+      "检索词": "口赋盐铁",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《里耶秦简》（相关简牍，如《里耶秦简牍校释》）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "出土秦代县级文书常见“口赋”“户赋”记录，直接反映按人口征收货币税的行政实态，可补史书记载之缺",
+      "检索词": "口赋 赋钱 里耶",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《盐铁论·非鞅》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "汉人追述商鞅变法后赋敛繁数，常与秦口赋钱食之弊对照，可作政治批判的异说补充",
+      "检索词": "商君 赋敛 烦数",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《通典·食货四·赋税上》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "唐代政书撮述秦汉口赋沿革，可作为后世归纳，但无新增史料",
+      "检索词": "秦 口赋",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 3,
+    "overall": "B"
+  }
+}

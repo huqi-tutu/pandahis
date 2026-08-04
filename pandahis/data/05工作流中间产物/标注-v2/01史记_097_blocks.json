@@ -1,0 +1,63 @@
+{
+  "work": "01史记",
+  "vol": "097",
+  "total_paragraphs": 33,
+  "volume_subtype": "hezhuan",
+  "derived_from": "01史记_097_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 22,
+      "paragraph_to": 26,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 32,
+      "paragraph_to": 32,
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph_from": 33,
+      "paragraph_to": 33,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "郦食其",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 10,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "郦生食其者，陈留高阳人也。好读书，家贫落魄，无以为衣食业，为里监门吏。然县中贤豪",
+        "close_paragraph": 10,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P1–P10"
+      }
+    },
+    {
+      "name": "陆贾",
+      "category": "文臣",
+      "paragraph_from": 11,
+      "paragraph_to": 21,
+      "boundary_evidence": {
+        "open_paragraph": 11,
+        "open_phrase": "陆贾者，楚人也。以客从高祖定天下，名为有口辩士，居左右，常使诸侯。",
+        "close_paragraph": 21,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P11–P21"
+      }
+    },
+    {
+      "name": "郦食其",
+      "category": "文臣",
+      "paragraph_from": 27,
+      "paragraph_to": 31,
+      "boundary_evidence": {
+        "open_paragraph": 27,
+        "open_phrase": "初，沛公引兵过陈留，郦生踵军门上谒曰：“高阳贱民郦食其，窃闻沛公暴露，将兵助楚讨",
+        "close_paragraph": 31,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P27–P31"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

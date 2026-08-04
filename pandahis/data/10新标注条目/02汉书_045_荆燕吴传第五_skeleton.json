@@ -1,0 +1,310 @@
+{
+  "volume": "荆燕吴传",
+  "source_file": "02汉书_045_荆燕吴传第五.txt",
+  "total_paragraphs": 28,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "荆王刘贾",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "荆王刘贾",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "荆王刘贾",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "燕王刘泽",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "燕王刘泽",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "燕王刘泽",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "燕王刘泽",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "吴王刘濞",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "吴王刘濞",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "吴王刘濞",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "吴王刘濞",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "吴王刘濞",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "吴王刘濞",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "吴王刘濞",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "吴王刘濞",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "吴王刘濞",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "吴王刘濞",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "吴王刘濞",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "吴王刘濞",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "吴王刘濞",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "吴王刘濞",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "吴王刘濞",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "吴王刘濞",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "吴王刘濞",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "吴王刘濞",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "吴王刘濞",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HANSHU_045_01",
+      "史略名称": "荆王刘贾",
+      "史略简介": "荆王刘贾",
+      "原文字句": "荆王刘贾，高帝从父兄也，不知其初起时。汉元年，还定三秦，贾为将军，定塞地，从东击项籍。",
+      "史略分类": "宗戚",
+      "主要史料出处": "《02汉书·卷45·荆燕吴传》",
+      "paragraphs": [
+        {
+          "volume": "荆燕吴传",
+          "paragraph_from": 2,
+          "paragraph_to": 4
+        }
+      ],
+      "五级细坐标": "汉书·卷045·宗戚·01",
+      "六级段落锚点": "[P2-P4]",
+      "原文出处": "荆燕吴传·P2-P4"
+    },
+    {
+      "史略ID": "HANSHU_045_02",
+      "史略名称": "燕王刘泽",
+      "史略简介": "燕王刘泽",
+      "原文字句": "燕王刘泽，高祖从祖昆弟也。高祖三年，泽为郎中。十一年，以将军击陈狶将王黄，封为营陵侯。",
+      "史略分类": "宗戚",
+      "主要史料出处": "《02汉书·卷45·荆燕吴传》",
+      "paragraphs": [
+        {
+          "volume": "荆燕吴传",
+          "paragraph_from": 5,
+          "paragraph_to": 8
+        }
+      ],
+      "五级细坐标": "汉书·卷045·宗戚·02",
+      "六级段落锚点": "[P5-P8]",
+      "原文出处": "荆燕吴传·P5-P8"
+    },
+    {
+      "史略ID": "HANSHU_045_03",
+      "史略名称": "吴王刘濞",
+      "史略简介": "吴王刘濞",
+      "原文字句": "吴王濞，高帝兄仲之子也。高帝立仲为代王。匈奴攻代，仲不能坚守，弃国间行，走雒阳，自归，天子不忍致法，废为合阳侯。子濞，封为沛侯。黥布反，高祖自将往诛之。濞年二十，以骑将从破布军。荆王刘贾为布所杀，无后。上患吴会稽轻悍，无壮王填之，诸子少，乃立濞于沛，为吴王，王三郡五十三城。已拜受印，高祖召濞相之，曰：“若状有反相。”独悔，业已拜，因拊其背曰：“汉后五十年东南有乱，岂若邪？然天下同姓一家，慎无反！”",
+      "史略分类": "宗戚",
+      "主要史料出处": "《02汉书·卷45·荆燕吴传》",
+      "paragraphs": [
+        {
+          "volume": "荆燕吴传",
+          "paragraph_from": 9,
+          "paragraph_to": 27
+        }
+      ],
+      "五级细坐标": "汉书·卷045·宗戚·03",
+      "六级段落锚点": "[P9-P27]",
+      "原文出处": "荆燕吴传·P9-P27"
+    }
+  ]
+}

@@ -1,0 +1,174 @@
+{
+  "work": "01史记",
+  "vol": "129",
+  "total_paragraphs": 52,
+  "volume_subtype": "hezhuan",
+  "derived_from": "01史记_129_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 2,
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph_from": 3,
+      "paragraph_to": 4,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 12,
+      "paragraph_to": 35,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 39,
+      "paragraph_to": 39,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 46,
+      "paragraph_to": 51,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 52,
+      "paragraph_to": 52,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "范蠡",
+      "category": "庶众",
+      "paragraph_from": 5,
+      "paragraph_to": 7,
+      "boundary_evidence": {
+        "open_paragraph": 5,
+        "open_phrase": "昔者越王句践困於会稽之上，乃用范蠡、计然。计然曰：“知斗则修备，时用则知物，二者",
+        "close_paragraph": 7,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P5–P7"
+      }
+    },
+    {
+      "name": "子贡",
+      "category": "文臣",
+      "paragraph_from": 8,
+      "paragraph_to": 8,
+      "boundary_evidence": {
+        "open_paragraph": 8,
+        "open_phrase": "子赣既学於仲尼，退而仕於卫，废著鬻财於曹、鲁之间，七十子之徒，赐最为饶益。原宪不",
+        "close_paragraph": 8,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P8–P8"
+      }
+    },
+    {
+      "name": "白圭",
+      "category": "庶众",
+      "paragraph_from": 9,
+      "paragraph_to": 10,
+      "boundary_evidence": {
+        "open_paragraph": 9,
+        "open_phrase": "至卯，积著率岁倍。欲长钱，取下穀；长石斗，取上种。能薄饮食，忍嗜欲，节衣服，与用",
+        "close_paragraph": 10,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P9–P10"
+      }
+    },
+    {
+      "name": "猗顿",
+      "category": "庶众",
+      "paragraph_from": 11,
+      "paragraph_to": 11,
+      "boundary_evidence": {
+        "open_paragraph": 11,
+        "open_phrase": "猗顿用盬盐起。而邯郸郭纵以铁冶成业，与王者埒富。",
+        "close_paragraph": 11,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P11–P11"
+      }
+    },
+    {
+      "name": "卓氏",
+      "category": "庶众",
+      "paragraph_from": 36,
+      "paragraph_to": 36,
+      "boundary_evidence": {
+        "open_paragraph": 36,
+        "open_phrase": "蜀卓氏之先，赵人也，用铁冶富。秦破赵，迁卓氏。卓氏见虏略，独夫妻推辇，行诣迁处。",
+        "close_paragraph": 36,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P36–P36"
+      }
+    },
+    {
+      "name": "程郑",
+      "category": "庶众",
+      "paragraph_from": 37,
+      "paragraph_to": 37,
+      "boundary_evidence": {
+        "open_paragraph": 37,
+        "open_phrase": "程郑，山东迁虏也，亦冶铸，贾椎髻之民，富埒卓氏，俱居临邛。",
+        "close_paragraph": 37,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P37–P37"
+      }
+    },
+    {
+      "name": "宛孔氏",
+      "category": "庶众",
+      "paragraph_from": 38,
+      "paragraph_to": 38,
+      "boundary_evidence": {
+        "open_paragraph": 38,
+        "open_phrase": "宛孔氏之先，梁人也，用铁冶为业。秦伐魏，迁孔氏南阳。大鼓铸，规陂池，连车骑，游诸",
+        "close_paragraph": 38,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P38–P38"
+      }
+    },
+    {
+      "name": "刀间",
+      "category": "庶众",
+      "paragraph_from": 40,
+      "paragraph_to": 40,
+      "boundary_evidence": {
+        "open_paragraph": 40,
+        "open_phrase": "齐俗贱奴虏，而刀间独爱贵之。桀黠奴，人之所患也，唯刀间收取，使之逐渔盐商贾之利，",
+        "close_paragraph": 40,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P40–P40"
+      }
+    },
+    {
+      "name": "师史",
+      "category": "庶众",
+      "paragraph_from": 41,
+      "paragraph_to": 41,
+      "boundary_evidence": {
+        "open_paragraph": 41,
+        "open_phrase": "周人既纤，而师史尤甚，转毂以百数，贾郡国，无所不至。洛阳街居在齐秦楚赵之中，贫人",
+        "close_paragraph": 41,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P41–P41"
+      }
+    },
+    {
+      "name": "任氏",
+      "category": "庶众",
+      "paragraph_from": 42,
+      "paragraph_to": 44,
+      "boundary_evidence": {
+        "open_paragraph": 42,
+        "open_phrase": "宣曲任氏之先，为督道仓吏。秦之败也，豪杰皆争取金玉，而任氏独窖仓粟。",
+        "close_paragraph": 44,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P42–P44"
+      }
+    },
+    {
+      "name": "桥姚",
+      "category": "庶众",
+      "paragraph_from": 45,
+      "paragraph_to": 45,
+      "boundary_evidence": {
+        "open_paragraph": 45,
+        "open_phrase": "塞之斥也，唯桥姚已致马千匹，牛倍之，羊万头，粟以万锺计。吴楚七国兵起时，长安中列",
+        "close_paragraph": 45,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P45–P45"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

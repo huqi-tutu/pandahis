@@ -1,0 +1,28 @@
+{
+  "work": "02汉书",
+  "vol": "116",
+  "total_paragraphs": 94,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "王莽",
+      "category": "君王",
+      "paragraph_from": 2,
+      "paragraph_to": 94,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "王莽传第六十九中",
+        "close_paragraph": 94,
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

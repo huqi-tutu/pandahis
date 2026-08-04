@@ -1,0 +1,46 @@
+{
+  "work": "01史记",
+  "vol": "051",
+  "total_paragraphs": 13,
+  "volume_subtype": "hezhuan",
+  "derived_from": "01史记_051_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 12,
+      "paragraph_to": 12,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 13,
+      "paragraph_to": 13,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "刘贾",
+      "category": "宗戚",
+      "paragraph_from": 1,
+      "paragraph_to": 5,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "荆王刘贾者，诸刘，不知其何属初起时。汉王元年，还定三秦，刘贾为将军，定塞地，从东",
+        "close_paragraph": 5,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P1–P5"
+      }
+    },
+    {
+      "name": "刘泽",
+      "category": "宗戚",
+      "paragraph_from": 6,
+      "paragraph_to": 11,
+      "boundary_evidence": {
+        "open_paragraph": 6,
+        "open_phrase": "燕王刘泽者，诸刘远属也。高帝三年，泽为郎中。高帝十一年，泽以将军击陈豨，得王黄，",
+        "close_paragraph": 11,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P6–P11"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

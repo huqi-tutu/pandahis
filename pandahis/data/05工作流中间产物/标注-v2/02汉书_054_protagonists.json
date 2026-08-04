@@ -1,0 +1,35 @@
+{
+  "work": "02汉书",
+  "vol": "054",
+  "volume_name": "淮南衡山济北王传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "刘长",
+      "category": "宗戚",
+      "rationale": "卷名《淮南衡山济北王传》为西汉同姓诸侯王合传，淮南王刘长为淮南国首封王，属同姓藩王，按宗戚专则应归宗戚。"
+    },
+    {
+      "name": "刘安",
+      "category": "宗戚",
+      "rationale": "淮南王刘安为刘长之子，袭封淮南王，卷名所指淮南王系核心人物，同姓藩王，属宗戚。"
+    },
+    {
+      "name": "刘赐",
+      "category": "宗戚",
+      "rationale": "衡山王刘赐为刘长之子、刘安之弟，卷名含衡山王，同姓藩王，属宗戚。"
+    },
+    {
+      "name": "刘勃",
+      "category": "宗戚",
+      "rationale": "济北王刘勃为刘长之子，卷名含济北王，同姓藩王，属宗戚。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

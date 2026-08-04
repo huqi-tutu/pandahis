@@ -1,0 +1,183 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00994",
+  "写作结构": "正史叙述见翻译详录（主要依据《史记·越王勾践世家》等）；拓展部分以《左传》《国语》等先秦文献补充出兵时机（哀十三年黄池之会）、太子友被俘、夫差归国求和、最终灭吴（哀二十二年）及北上争雄诸细节；编年节点可参辑佚《竹书纪年》；夫差之死按《左传》记辞甬东自缢，严禁编造遗言；‘卧薪尝胆’系后世附会，仅以legend附注说明，不写入正文；战斗过程、对话、心理活动亦不编造；西施等民间人物概不引入。legend池仅保留《吴越春秋》一条泛述异文，仅供合段补充。",
+  "候选著作": [
+    {
+      "出处": "《左传·哀公二十二年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "明确记载越灭吴、夫差拒迁甬东而自缢的核心事件，提供精确月日与结局。",
+      "检索词": "越灭吴 哀公二十二年",
+      "采用": true,
+      "原文摘句": "冬十一月丁卯，越灭吴，请使吴王居甬东。辞曰：‘孤老矣，焉能事君？’乃缢。越人以归。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《左传·哀公十三年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记录黄池之会期间越军趁虚攻入吴国、俘杀太子友的过程，是勾践灭吴的起始节点。",
+      "检索词": "黄池 越入吴",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《国语·吴语》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "详述黄池争霸、越王袭吴及夫差自杀前对话，可补《左传》未载的战略论辩与交涉细节。",
+      "检索词": "吴语 黄池 越王",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《国语·越语上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载勾践灭吴的谋略、与夫差的往来及最终灭吴部署，可作为越国视角的补充。",
+      "检索词": "越语 勾践灭吴",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《竹书纪年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "存有越灭吴的纪年，可用于校订灭吴时间及越国称霸年份。",
+      "检索词": "竹书纪年 於越灭吴",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·越王勾践世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "二十四正史中的系统叙事，涵盖灭吴全过程及北上称霸、周王赐命。",
+      "检索词": "越王勾践世家",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《吴越春秋·夫差内传》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "东汉杂史，详述夫差之死与越灭吴情景，多文学演绎，不宜作主叙，可存异说。",
+      "检索词": "吴越春秋 夫差 死",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《左传·哀公二十二年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "明确记载越灭吴、夫差拒迁甬东而自缢的核心事件，提供精确月日与结局。",
+      "检索词": "越灭吴 哀公二十二年",
+      "采用": true,
+      "原文摘句": "冬十一月丁卯，越灭吴，请使吴王居甬东。辞曰：‘孤老矣，焉能事君？’乃缢。越人以归。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《左传·哀公十三年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记录黄池之会期间越军趁虚攻入吴国、俘杀太子友的过程，是勾践灭吴的起始节点。",
+      "检索词": "黄池 越入吴",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《国语·吴语》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "详述黄池争霸、越王袭吴及夫差自杀前对话，可补《左传》未载的战略论辩与交涉细节。",
+      "检索词": "吴语 黄池 越王",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《国语·越语上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载勾践灭吴的谋略、与夫差的往来及最终灭吴部署，可作为越国视角的补充。",
+      "检索词": "越语 勾践灭吴",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《竹书纪年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "存有越灭吴的纪年，可用于校订灭吴时间及越国称霸年份。",
+      "检索词": "竹书纪年 於越灭吴",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·越王勾践世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "二十四正史中的系统叙事，涵盖灭吴全过程及北上称霸、周王赐命。",
+      "检索词": "越王勾践世家",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《吴越春秋·夫差内传》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "东汉杂史，详述夫差之死与越灭吴情景，多文学演绎，不宜作主叙，可存异说。",
+      "检索词": "吴越春秋 夫差 死",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 6,
+    "C_excluded": 1,
+    "overall": "B"
+  }
+}

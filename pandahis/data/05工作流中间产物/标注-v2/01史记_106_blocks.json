@@ -1,0 +1,27 @@
+{
+  "work": "01史记",
+  "vol": "106",
+  "total_paragraphs": 38,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 38,
+      "paragraph_to": 38,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "刘濞",
+      "category": "宗戚",
+      "paragraph_from": 1,
+      "paragraph_to": 37,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "吴王濞者，高帝兄刘仲之子也。高帝已定天下七年，立刘仲为代王。而匈奴攻代，刘仲不能",
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

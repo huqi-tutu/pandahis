@@ -1,0 +1,70 @@
+{
+  "work": "02汉书",
+  "vol": "055",
+  "total_paragraphs": 37,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "02汉书_055_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 37,
+      "paragraph_to": 37,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "蒯通",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 11,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "蒯通，范阳人也，本与武帝同讳。楚汉初起，武臣略定赵地，号武信君。通说范阳令徐公曰",
+        "close_paragraph": 11,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P11"
+      }
+    },
+    {
+      "name": "伍被",
+      "category": "文臣",
+      "paragraph_from": 12,
+      "paragraph_to": 18,
+      "boundary_evidence": {
+        "open_paragraph": 12,
+        "open_phrase": "伍被，楚人也。或言其先伍子胥后也。被以材能称，为淮南中郎。是时淮南王安好术学，折",
+        "close_paragraph": 18,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P12–P18"
+      }
+    },
+    {
+      "name": "江充",
+      "category": "文臣",
+      "paragraph_from": 19,
+      "paragraph_to": 25,
+      "boundary_evidence": {
+        "open_paragraph": 19,
+        "open_phrase": "江充字次倩，赵国邯郸人也。充本名齐，有女弟善鼓琴歌舞，嫁之赵太子丹。齐得幸于敬肃",
+        "close_paragraph": 25,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P19–P25"
+      }
+    },
+    {
+      "name": "息夫躬",
+      "category": "文臣",
+      "paragraph_from": 26,
+      "paragraph_to": 36,
+      "boundary_evidence": {
+        "open_paragraph": 26,
+        "open_phrase": "息夫躬字子微，河内河阳人也。少为博士弟子，受《春秋》，通览记书。容貌壮丽，为众所",
+        "close_paragraph": 36,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P26–P36"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

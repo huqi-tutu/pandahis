@@ -1,0 +1,27 @@
+{
+  "work": "01史记",
+  "vol": "033",
+  "volume_name": "鲁周公世家",
+  "volume_type_guess": "世家",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "shijia_zhuhou",
+  "volume_arc": "B",
+  "volume_texture": "sequential",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "周公旦",
+      "category": "宗戚",
+      "rationale": "卷名始祖；P1–13 辅政至卒后金縢；退场后不得整卷归属。"
+    },
+    {
+      "name": "鲁公伯禽",
+      "category": "诸侯",
+      "rationale": "P14 受封为鲁公；P14–15 报政/肸誓；其后鲁君享国链。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链"
+  ]
+}

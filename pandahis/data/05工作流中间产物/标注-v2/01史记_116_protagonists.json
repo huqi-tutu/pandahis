@@ -1,0 +1,19 @@
+{
+  "work": "01史记",
+  "vol": "116",
+  "volume_name": "西南夷列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "fanzuo",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "西南夷",
+      "category": "蕃祚",
+      "rationale": "《史记·西南夷列传》为蕃祚卷型，主轴为卷名所指西南夷诸族集体（夜郎、滇、邛都、筰都、冉駹、白马等），非单一君王，符合蕃祚准入标准。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

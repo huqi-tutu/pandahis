@@ -1,0 +1,20 @@
+{
+  "work": "02汉书",
+  "vol": "066",
+  "volume_name": "董仲舒传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "董仲舒",
+      "category": "文臣",
+      "rationale": "《汉书》卷六十六为《董仲舒传》，属单人列传。董仲舒为西汉大儒，以贤良对策、天人三策及春秋公羊学著称，其主轴身份为儒学仕宦之士，符合文臣准入标准（行政、儒学、文学仕宦为主轴），非天子或封国君主，故不得归为君王或诸侯。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

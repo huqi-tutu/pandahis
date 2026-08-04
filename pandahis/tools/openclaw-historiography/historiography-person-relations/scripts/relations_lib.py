@@ -21,8 +21,9 @@ if str(OPENCLAW_ROOT) not in sys.path:
     sys.path.insert(0, str(OPENCLAW_ROOT))
 
 from paths_config import histograph_paths, validate_histograph_root  # noqa: E402
+from llm.config import MODEL_PRO, ensure_deepseek_v4_pro as pin_deepseek_v4_pro  # noqa: E402
 
-REQUIRED_MODEL = "deepseek-v4-pro"
+REQUIRED_MODEL = MODEL_PRO
 PERSON_CATEGORIES = frozenset({"君王", "诸侯", "宗戚", "文臣", "武将", "宦官", "庶众"})
 RELATION_CATEGORIES = ("家庭", "同僚", "师从", "外敌", "好友")
 MAX_CATEGORY_LLM_ATTEMPTS = 3
@@ -50,18 +51,14 @@ def load_env() -> None:
 def ensure_deepseek_v4_pro() -> str:
     """固定使用 DeepSeek v4 Pro；返回 model label。"""
     load_env()
-    os.environ["HIST_LLM_PROVIDER"] = "deepseek"
-    os.environ["DEEPSEEK_MODEL"] = REQUIRED_MODEL
-    from llm.config import deepseek_settings, get_provider_name, provider_label  # noqa: WPS433
+    from llm.config import deepseek_settings, get_provider_name  # noqa: WPS433
 
     if get_provider_name() != "deepseek":
         raise RuntimeError("人物关系补全仅支持 HIST_LLM_PROVIDER=deepseek")
     settings = deepseek_settings()
     if str(settings.get("api_key", "")).strip() == "":
         raise RuntimeError("请设置 DEEPSEEK_API_KEY（tools/openclaw-historiography/.env）")
-    if str(settings.get("model", "")) != REQUIRED_MODEL:
-        raise RuntimeError(f"模型必须为 {REQUIRED_MODEL}，当前为 {settings.get('model')!r}")
-    return provider_label()
+    return pin_deepseek_v4_pro()
 
 
 def call_llm(prompt: str, *, session_prefix: str, timeout_sec: int = 900) -> str:
@@ -604,14 +601,19 @@ def import_json_file(
     validate_histograph_root()
     paths = histograph_paths()
     records = json.loads(path.read_text(encoding="utf-8"))
-    if not isinstance(records, list) or not records:
-        raise ValueError(f"empty or invalid JSON: {path}")
+    if not isinstance(records, list):
+        raise ValueError(f"invalid JSON: {path}")
 
-    subjects = {str(r.get("关联史略名称", "")).strip() for r in records}
-    subjects.discard("")
-    if len(subjects) != 1:
-        raise ValueError(f"关联史略名称 must be single value in {path}")
-    subject = next(iter(subjects))
+    if records:
+        subjects = {str(r.get("关联史略名称", "")).strip() for r in records}
+        subjects.discard("")
+        if len(subjects) != 1:
+            raise ValueError(f"关联史略名称 must be single value in {path}")
+        subject = next(iter(subjects))
+    else:
+        subject = path.stem.replace("关系表", "").strip()
+        if not subject:
+            raise ValueError(f"cannot infer subject from empty file: {path}")
 
     entry = find_entry(entry_id=entry_id, name=subject if not entry_id else None, index_path=index_path)
     if not is_person_entry(entry):
@@ -690,42 +692,67 @@ def list_dynasty_persons(dynasty: str, index_path: Path | None = None) -> list[d
     return out
 
 
+def write_dynasty_manifest(
+    dynasty: str,
+    *,
+    index_path: Path | None = None,
+) -> Path:
+    """扫描已产出关系表，增量写入 {朝代}_关系补全_manifest.json。"""
+    paths = histograph_paths()
+    persons = list_dynasty_persons(dynasty, index_path)
+    rel_dir = paths["person_relations"]
+    manifest: list[dict[str, Any]] = []
+    for e in persons:
+        name = str(e.get("史略名称", "")).strip()
+        fp = rel_dir / f"{name}关系表.json"
+        if not fp.exists():
+            continue
+        recs = json.loads(fp.read_text(encoding="utf-8"))
+        manifest.append(
+            {
+                "glbl": str(e.get("史略ID", "")).strip(),
+                "name": name,
+                "file": fp.name,
+                "count": len(recs),
+                "verified_at": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
+            }
+        )
+    mf = rel_dir / f"{dynasty}_关系补全_manifest.json"
+    mf.write_text(
+        json.dumps({"dynasty": dynasty, "completed": manifest}, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    return mf
+
+
 def compose_dynasty(
     dynasty: str,
     *,
     max_count: int = 1,
     index_path: Path | None = None,
     dry_run: bool = False,
+    fail_fast: bool = False,
 ) -> list[Path]:
     persons = list_dynasty_persons(dynasty, index_path)
     if not persons:
         raise RuntimeError(f"朝代 {dynasty!r} 下未找到人物六类条目")
     print(f"朝代 {dynasty}: {len(persons)} 位人物，本次最多 {max_count} 位")
     written: list[Path] = []
-    manifest: list[dict[str, Any]] = []
-    paths = histograph_paths()
     for e in persons[:max_count]:
         eid = str(e.get("史略ID", "")).strip()
+        name = str(e.get("史略名称", "")).strip()
         try:
             fp = compose_one(entry_id=eid, index_path=index_path, dry_run=dry_run)
             if fp:
                 written.append(fp)
-                manifest.append(
-                    {
-                        "glbl": eid,
-                        "name": e.get("史略名称"),
-                        "file": fp.name,
-                        "verified_at": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
-                    }
-                )
+                print(f"✅ {eid} {name}")
         except Exception as exc:
-            print(f"❌ {eid} {e.get('史略名称')}: {exc}")
-            raise
-    if manifest and not dry_run:
-        mf = paths["person_relations"] / f"{dynasty}_关系补全_manifest.json"
-        mf.write_text(
-            json.dumps({"dynasty": dynasty, "completed": manifest}, ensure_ascii=False, indent=2) + "\n",
-            encoding="utf-8",
-        )
-        print(f"manifest: {mf}")
+            print(f"❌ {eid} {name}: {exc}")
+            if fail_fast:
+                raise
+        if not dry_run:
+            write_dynasty_manifest(dynasty, index_path=index_path)
+    if not dry_run:
+        mf = write_dynasty_manifest(dynasty, index_path=index_path)
+        print(f"manifest: {mf} ({len(written)} 新增)")
     return written

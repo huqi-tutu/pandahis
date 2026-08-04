@@ -1,0 +1,19 @@
+{
+  "work": "01史记",
+  "vol": "064",
+  "volume_name": "司马穰苴列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "司马穰苴",
+      "category": "武将",
+      "rationale": "卷名即人名，列传单人传，主轴为司马穰苴。其以军功、将帅征战为叙事核心，符合武将准入标准（军功、征战、将帅为主轴）。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

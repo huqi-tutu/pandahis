@@ -1,0 +1,58 @@
+{
+  "work": "02汉书",
+  "vol": "069",
+  "total_paragraphs": 38,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "02汉书_069_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 2,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 38,
+      "paragraph_to": 38,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "公孙弘",
+      "category": "文臣",
+      "paragraph_from": 3,
+      "paragraph_to": 24,
+      "boundary_evidence": {
+        "open_paragraph": 3,
+        "open_phrase": "公孙弘，菑川薛人也。少时为狱吏，有罪，免。家贫，牧豕海上。年四十余，乃学《春秋》",
+        "close_paragraph": 24,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P3–P24"
+      }
+    },
+    {
+      "name": "卜式",
+      "category": "文臣",
+      "paragraph_from": 25,
+      "paragraph_to": 30,
+      "boundary_evidence": {
+        "open_paragraph": 25,
+        "open_phrase": "卜式，河南人也。以田畜为事。有少弟，弟壮，式脱身出，独取畜羊百余，田宅财物尽与弟",
+        "close_paragraph": 30,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P25–P30"
+      }
+    },
+    {
+      "name": "儿宽",
+      "category": "文臣",
+      "paragraph_from": 31,
+      "paragraph_to": 37,
+      "boundary_evidence": {
+        "open_paragraph": 31,
+        "open_phrase": "兒宽，千乘人也。治《尚书》，事欧阳生。以郡国选诣博士，受业孔安国。贫无资用，尝为",
+        "close_paragraph": 37,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P31–P37"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

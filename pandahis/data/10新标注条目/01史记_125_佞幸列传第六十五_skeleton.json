@@ -1,0 +1,186 @@
+{
+  "volume": "佞幸列传",
+  "source_file": "01史记_125_佞幸列传第六十五.txt",
+  "total_paragraphs": 16,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 2,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 3,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "邓通",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "邓通",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "邓通",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "邓通",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "韩嫣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "韩嫣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "韩嫣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "李延年",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "李延年",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "李延年",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 16,
+      "owners": [],
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SHIJI_125_01",
+      "史略名称": "邓通",
+      "史略简介": "邓通",
+      "原文字句": "孝文时中宠臣，士人则邓通，宦者则赵同、北宫伯子。北宫伯子以爱人长者；而赵同以星气幸，常为文帝参乘；邓通无伎能。邓通，蜀郡南安人也，以濯船为黄头郎。孝文帝梦欲上天，不能，有一黄头郎从后推之上天，顾见其衣裻带后穿。",
+      "史略分类": "文臣",
+      "主要史料出处": "《史记·卷125·佞幸列传》",
+      "paragraphs": [
+        {
+          "volume": "佞幸列传",
+          "paragraph_from": 4,
+          "paragraph_to": 7
+        }
+      ],
+      "五级细坐标": "史记·卷125·文臣·01",
+      "六级段落锚点": "[P4-P7]",
+      "原文出处": "佞幸列传·P4-P7"
+    },
+    {
+      "史略ID": "SHIJI_125_02",
+      "史略名称": "韩嫣",
+      "史略简介": "韩嫣",
+      "原文字句": "今天子中宠臣，士人则韩王孙嫣，宦者则李延年。嫣者，弓高侯孽孙也。今上为胶东王时，嫣与上学书相爱。及上为太子，愈益亲嫣。嫣善骑射，善佞。上即位，欲事伐匈奴，而嫣先习胡兵，以故益尊贵，官至上大夫，赏赐拟於邓通。",
+      "史略分类": "文臣",
+      "主要史料出处": "《史记·卷125·佞幸列传》",
+      "paragraphs": [
+        {
+          "volume": "佞幸列传",
+          "paragraph_from": 9,
+          "paragraph_to": 11
+        }
+      ],
+      "五级细坐标": "史记·卷125·文臣·02",
+      "六级段落锚点": "[P9-P11]",
+      "原文出处": "佞幸列传·P9-P11"
+    },
+    {
+      "史略ID": "SHIJI_125_03",
+      "史略名称": "李延年",
+      "史略简介": "李延年",
+      "原文字句": "李延年，中山人也。父母及身兄弟及女，皆故倡也。延年坐法腐，给事狗中。",
+      "史略分类": "文臣",
+      "主要史料出处": "《史记·卷125·佞幸列传》",
+      "paragraphs": [
+        {
+          "volume": "佞幸列传",
+          "paragraph_from": 12,
+          "paragraph_to": 14
+        }
+      ],
+      "五级细坐标": "史记·卷125·文臣·03",
+      "六级段落锚点": "[P12-P14]",
+      "原文出处": "佞幸列传·P12-P14"
+    }
+  ]
+}

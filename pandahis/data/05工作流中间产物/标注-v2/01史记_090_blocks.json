@@ -1,0 +1,41 @@
+{
+  "work": "01史记",
+  "vol": "090",
+  "total_paragraphs": 13,
+  "volume_subtype": "hezhuan",
+  "derived_from": "01史记_090_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 13,
+      "paragraph_to": 13,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "魏豹",
+      "category": "武将",
+      "paragraph_from": 1,
+      "paragraph_to": 5,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "魏豹者，故魏诸公子也。其兄魏咎，故魏时封为宁陵君。秦灭魏，迁咎为家人。陈胜之起王",
+        "close_paragraph": 5,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P1–P5"
+      }
+    },
+    {
+      "name": "彭越",
+      "category": "武将",
+      "paragraph_from": 6,
+      "paragraph_to": 12,
+      "boundary_evidence": {
+        "open_paragraph": 6,
+        "open_phrase": "彭越者，昌邑人也，字仲。常渔钜野泽中，为群盗。陈胜、项梁之起，少年或谓越曰：“诸",
+        "close_paragraph": 12,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P6–P12"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

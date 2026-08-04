@@ -28,4 +28,20 @@ class SearchServiceDedupeTest {
     assertEquals(false, out.get(1).isHot());
     assertEquals("苏轼", out.get(2).keyword());
   }
+
+  @Test
+  void joinCoordinateUsesDotSeparator() {
+    assertEquals("华夏.北宋.北宋", SearchService.joinCoordinate("华夏", "北宋", "北宋"));
+    assertEquals("华夏.夏", SearchService.joinCoordinate("华夏", "夏", ""));
+    assertEquals("", SearchService.joinCoordinate("", "", ""));
+  }
+
+  @Test
+  void slicePageRespectsOffsetAndLimit() {
+    List<String> all = List.of("a", "b", "c", "d", "e");
+    assertEquals(List.of("a", "b"), SearchService.slicePage(all, 1, 2));
+    assertEquals(List.of("c", "d"), SearchService.slicePage(all, 2, 2));
+    assertEquals(List.of("e"), SearchService.slicePage(all, 3, 2));
+    assertEquals(List.of(), SearchService.slicePage(all, 4, 2));
+  }
 }

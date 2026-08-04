@@ -1,0 +1,27 @@
+{
+  "work": "01史记",
+  "vol": "011",
+  "total_paragraphs": 22,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 22,
+      "paragraph_to": 22,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "汉景帝",
+      "category": "君王",
+      "paragraph_from": 1,
+      "paragraph_to": 21,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "孝景皇帝者，孝文之中子也。母窦太后。孝文在代时，前后有三男，及窦太后得幸，前后死",
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

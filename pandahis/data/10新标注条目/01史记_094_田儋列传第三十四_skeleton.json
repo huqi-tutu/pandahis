@@ -1,0 +1,244 @@
+{
+  "volume": "田儋列传",
+  "source_file": "01史记_094_田儋列传第三十四.txt",
+  "total_paragraphs": 20,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [
+        {
+          "name": "田儋",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "田儋",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "田儋",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "田荣",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "田荣",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "田荣",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "田荣",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "田荣",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "田荣",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "田荣",
+          "category": "武将"
+        },
+        {
+          "name": "田横",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "田横",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "田横",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "田横",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "田横",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "田横",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "田横",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "田横",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "田横",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [],
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SHIJI_094_01",
+      "史略名称": "田儋",
+      "史略简介": "田儋",
+      "原文字句": "田儋者，狄人也，故齐王田氏族也。儋从弟田荣，荣弟田横，皆豪，宗彊，能得人。",
+      "史略分类": "武将",
+      "主要史料出处": "《史记·卷94·田儋列传》",
+      "paragraphs": [
+        {
+          "volume": "田儋列传",
+          "paragraph_from": 1,
+          "paragraph_to": 3
+        }
+      ],
+      "五级细坐标": "史记·卷094·武将·01",
+      "六级段落锚点": "[P1-P3]",
+      "原文出处": "田儋列传·P1-P3"
+    },
+    {
+      "史略ID": "SHIJI_094_02",
+      "史略名称": "田荣",
+      "史略简介": "田荣",
+      "原文字句": "田荣之走东阿，章邯追围之。项梁闻田荣之急，乃引兵击破章邯军东阿下。",
+      "史略分类": "武将",
+      "主要史料出处": "《史记·卷94·田儋列传》",
+      "paragraphs": [
+        {
+          "volume": "田儋列传",
+          "paragraph_from": 5,
+          "paragraph_to": 11
+        }
+      ],
+      "五级细坐标": "史记·卷094·武将·02",
+      "六级段落锚点": "[P5-P11]",
+      "原文出处": "田儋列传·P5-P11"
+    },
+    {
+      "史略ID": "SHIJI_094_03",
+      "史略名称": "田横",
+      "史略简介": "田横",
+      "原文字句": "项王闻之，大怒，乃北伐齐。齐王田荣兵败，走平原，平原人杀荣。项王遂烧夷齐城郭，所过者尽屠之。齐人相聚畔之。荣弟横，收齐散兵，得数万人，反击项羽於城阳。而汉王率诸侯败楚，入彭城。项羽闻之，乃醳齐而归，击汉於彭城，因连与汉战，相距荥阳。以故田横复得收齐城邑，立田荣子广为齐王，而横相之，专国政，政无巨细皆断於相。",
+      "史略分类": "武将",
+      "主要史料出处": "《史记·卷94·田儋列传》",
+      "paragraphs": [
+        {
+          "volume": "田儋列传",
+          "paragraph_from": 11,
+          "paragraph_to": 19
+        }
+      ],
+      "五级细坐标": "史记·卷094·武将·03",
+      "六级段落锚点": "[P11-P19]",
+      "原文出处": "田儋列传·P11-P19"
+    }
+  ],
+  "volume_coupling": "shared_paragraphs",
+  "翻译视角说明": "P11为田荣败亡与田横继起之交接段，双挂田荣、田横。"
+}

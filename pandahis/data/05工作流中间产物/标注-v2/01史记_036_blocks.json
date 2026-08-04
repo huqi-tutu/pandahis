@@ -1,0 +1,56 @@
+{
+  "work": "01史记",
+  "vol": "036",
+  "total_paragraphs": 35,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "01史记_036_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 2,
+      "paragraph_to": 28,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 30,
+      "paragraph_to": 32,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 33,
+      "paragraph_to": 34,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 35,
+      "paragraph_to": 35,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "陈胡公满",
+      "category": "诸侯",
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "陈胡公满者，虞帝舜之后也。昔舜为庶人时，尧妻之二女，居于妫汭，其后因为氏姓，姓妫",
+        "close_paragraph": 1,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P1–P1"
+      }
+    },
+    {
+      "name": "杞东楼公",
+      "category": "诸侯",
+      "paragraph_from": 29,
+      "paragraph_to": 29,
+      "boundary_evidence": {
+        "open_paragraph": 29,
+        "open_phrase": "杞东楼公者，夏后禹之后苗裔也。殷时或封或绝。周武王克殷纣，求禹之后，得东楼公，封",
+        "close_paragraph": 29,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P29–P29"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

@@ -1,0 +1,107 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00966",
+  "写作结构": "正史叙述见翻译详录（《史记·陈涉世家》为主，《项羽本纪》为辅）。史外文献极度匮乏，拓展层仅可引后世编年重述（如《资治通鉴》）作为异说旁证，不作细节铺展。叙事应严格依循 anchor 六条 coverage_claims，避免任何编造，情节留白处坦然留白。",
+  "候选著作": [
+    {
+      "出处": "《史记·陈涉世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载景驹被秦嘉拥立、项梁攻击秦嘉及景驹败亡全过程",
+      "检索词": "景驹 秦嘉 楚王",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《史记·项羽本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "提及项梁击秦嘉、景驹，为项羽起兵背景",
+      "检索词": "项梁 秦嘉 景驹",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《汉书·陈胜项籍传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "班固整合《史记》相关记载，叙述景驹事件，内容基本因袭《史记》",
+      "检索词": "景驹 秦嘉",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《资治通鉴·秦纪三》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "司马光整合《史记》《汉书》记载，按编年重述景驹事件，叙事有所剪裁",
+      "检索词": "景驹 项梁 秦嘉",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·陈涉世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载景驹被秦嘉拥立、项梁攻击秦嘉及景驹败亡全过程",
+      "检索词": "景驹 秦嘉 楚王",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《史记·项羽本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "提及项梁击秦嘉、景驹，为项羽起兵背景",
+      "检索词": "项梁 秦嘉 景驹",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《汉书·陈胜项籍传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "班固整合《史记》相关记载，叙述景驹事件，内容基本因袭《史记》",
+      "检索词": "景驹 秦嘉",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《资治通鉴·秦纪三》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "司马光整合《史记》《汉书》记载，按编年重述景驹事件，叙事有所剪裁",
+      "检索词": "景驹 项梁 秦嘉",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 1,
+    "C_excluded": 3,
+    "overall": "B"
+  }
+}

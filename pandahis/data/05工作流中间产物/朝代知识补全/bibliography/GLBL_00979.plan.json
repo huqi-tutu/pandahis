@@ -1,0 +1,85 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00979",
+  "写作结构": "正史叙述见《史记·项羽本纪》翻译详录；拓展可提及里耶秦简中‘王离’相关行政文书，反映其早期任职，作为史外佐证；对巨鹿之战及被俘后下落严格执行留白。",
+  "候选著作": [
+    {
+      "出处": "《史记·项羽本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要记载巨鹿之战，王离统军被项羽击败被俘。",
+      "检索词": "王离 项羽本纪",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《里耶秦简》简8-63等",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "出土秦代行政文书中出现‘迁陵丞王离’等记载，可补王离早期任官信息。",
+      "检索词": "里耶秦简 王离",
+      "采用": true,
+      "原文摘句": "迁陵丞王离敢言之：令曰：……",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《资治通鉴·秦纪三》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "转述巨鹿之役，王离兵败被俘，内容不出《史记》。",
+      "检索词": "王离 巨鹿 通鉴",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·项羽本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要记载巨鹿之战，王离统军被项羽击败被俘。",
+      "检索词": "王离 项羽本纪",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《里耶秦简》简8-63等",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "出土秦代行政文书中出现‘迁陵丞王离’等记载，可补王离早期任官信息。",
+      "检索词": "里耶秦简 王离",
+      "采用": true,
+      "原文摘句": "迁陵丞王离敢言之：令曰：……",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《资治通鉴·秦纪三》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "转述巨鹿之役，王离兵败被俘，内容不出《史记》。",
+      "检索词": "王离 巨鹿 通鉴",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 1,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

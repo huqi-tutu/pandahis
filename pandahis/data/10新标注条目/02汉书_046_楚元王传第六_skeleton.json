@@ -1,0 +1,650 @@
+{
+  "volume": "楚元王传",
+  "source_file": "02汉书_046_楚元王传第六.txt",
+  "total_paragraphs": 66,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "楚元王刘交",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "楚元王刘交",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "楚元王刘交",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "楚元王刘交",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "楚元王刘交",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "楚元王刘交",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "楚王刘戊",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "楚王刘戊",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 11,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 12,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 13,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 14,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "刘向",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "刘向",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "刘向",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "刘向",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "刘向",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "刘向",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "刘向",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "刘向",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "刘向",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "刘向",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "刘向",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "刘向",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "刘向",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "刘向",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "刘向",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "刘向",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "刘向",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "刘向",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "刘向",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "刘向",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "刘向",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "刘向",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "刘向",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "刘向",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "刘向",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "刘向",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "刘向",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "刘向",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "刘向",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "刘向",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "刘向",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [
+        {
+          "name": "刘向",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 47,
+      "owners": [
+        {
+          "name": "刘向",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 48,
+      "owners": [
+        {
+          "name": "刘向",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 49,
+      "owners": [
+        {
+          "name": "刘向",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 50,
+      "owners": [
+        {
+          "name": "刘向",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 51,
+      "owners": [
+        {
+          "name": "刘向",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 52,
+      "owners": [
+        {
+          "name": "刘向",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 53,
+      "owners": [
+        {
+          "name": "刘向",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 54,
+      "owners": [
+        {
+          "name": "刘向",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 55,
+      "owners": [
+        {
+          "name": "刘歆",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 56,
+      "owners": [
+        {
+          "name": "刘歆",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 57,
+      "owners": [
+        {
+          "name": "刘歆",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 58,
+      "owners": [
+        {
+          "name": "刘歆",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 59,
+      "owners": [
+        {
+          "name": "刘歆",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 60,
+      "owners": [
+        {
+          "name": "刘歆",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 61,
+      "owners": [
+        {
+          "name": "刘歆",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 62,
+      "owners": [
+        {
+          "name": "刘歆",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 63,
+      "owners": [
+        {
+          "name": "刘歆",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 64,
+      "owners": [
+        {
+          "name": "刘歆",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 65,
+      "owners": [
+        {
+          "name": "刘歆",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 66,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HANSHU_046_01",
+      "史略名称": "楚元王刘交",
+      "史略简介": "楚元王刘交",
+      "原文字句": "楚元王交字游，高祖同父少弟也。好书，多材艺。少时尝与鲁穆生、白生、申公俱受《诗》于浮丘伯。伯者，孙卿门人也。及秦焚书，各别去。",
+      "史略分类": "宗戚",
+      "主要史料出处": "《02汉书·卷46·楚元王传》",
+      "paragraphs": [
+        {
+          "volume": "楚元王传",
+          "paragraph_from": 2,
+          "paragraph_to": 7
+        }
+      ],
+      "五级细坐标": "汉书·卷046·宗戚·01",
+      "六级段落锚点": "[P2-P7]",
+      "原文出处": "楚元王传·P2-P7"
+    },
+    {
+      "史略ID": "HANSHU_046_02",
+      "史略名称": "楚王刘戊",
+      "史略简介": "楚王刘戊",
+      "原文字句": "初，元王敬礼申公等，穆生不耆酒，元王每置酒，常为穆生设醴。及王戊即位，常设，后忘设焉。穆生退曰：“可以逝矣！醴酒不设，王之意怠，不去，焚人将钳我于市。”称疾卧。申公、白生强起之曰：“独不念先王之德与？今王一旦失小礼，何足至此！”穆生曰：“《易》称‘知几其神乎！几者动之微，吉凶之先见者也。君子见几而作，不俟终日’。先王之所以礼吾三人者，为道之存故也；今而忽之，是忘道也。忘道之人，胡可与久处！岂为区区",
+      "史略分类": "宗戚",
+      "主要史料出处": "《02汉书·卷46·楚元王传》",
+      "paragraphs": [
+        {
+          "volume": "楚元王传",
+          "paragraph_from": 8,
+          "paragraph_to": 9
+        }
+      ],
+      "五级细坐标": "汉书·卷046·宗戚·02",
+      "六级段落锚点": "[P8-P9]",
+      "原文出处": "楚元王传·P8-P9"
+    },
+    {
+      "史略ID": "HANSHU_046_03",
+      "史略名称": "刘向",
+      "史略简介": "刘向",
+      "原文字句": "向字子政，本名更生。年十二，以父德任为辇郎。既冠，以行修饬擢为谏大夫。是时，宣帝循武帝故事，招选名儒俊材置左右。更生以通达能属文辞，与王褒、张子侨等并进对，献赋颂凡数十篇。上复兴神仙方术之事，而淮南有《枕中鸿宝苑秘书》。书言神仙使鬼物为金之术，及邹衍重道延命方，世人莫见，而更生父德武帝时治淮南狱得其书。更生幼而读诵，以为奇，献之，言黄金可成。上令典尚方铸作事，费甚多，方不验。上乃下更生吏，吏劾更生",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷46·楚元王传》",
+      "paragraphs": [
+        {
+          "volume": "楚元王传",
+          "paragraph_from": 15,
+          "paragraph_to": 54
+        }
+      ],
+      "五级细坐标": "汉书·卷046·文臣·03",
+      "六级段落锚点": "[P15-P54]",
+      "原文出处": "楚元王传·P15-P54"
+    },
+    {
+      "史略ID": "HANSHU_046_04",
+      "史略名称": "刘歆",
+      "史略简介": "刘歆",
+      "原文字句": "向三子皆好学：长子伋，以《易》教授，官至郡守；中子赐，九卿丞，蚤卒；少子歆，最知名。",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷46·楚元王传》",
+      "paragraphs": [
+        {
+          "volume": "楚元王传",
+          "paragraph_from": 55,
+          "paragraph_to": 65
+        }
+      ],
+      "五级细坐标": "汉书·卷046·文臣·04",
+      "六级段落锚点": "[P55-P65]",
+      "原文出处": "楚元王传·P55-P65"
+    }
+  ]
+}

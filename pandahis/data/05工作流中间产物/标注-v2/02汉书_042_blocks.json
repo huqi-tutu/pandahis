@@ -1,0 +1,174 @@
+{
+  "work": "02汉书",
+  "vol": "042",
+  "total_paragraphs": 24,
+  "volume_subtype": "hezhuan",
+  "derived_from": "02汉书_042_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 24,
+      "paragraph_to": 24,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "张耳",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 2,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "张耳，大梁人也，少时及魏公子毋忌为客。尝亡命游外黄，外黄富人女甚美，庸奴其夫，亡",
+        "close_paragraph": 2,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P2"
+      }
+    },
+    {
+      "name": "陈馀",
+      "category": "文臣",
+      "paragraph_from": 3,
+      "paragraph_to": 3,
+      "boundary_evidence": {
+        "open_paragraph": 3,
+        "open_phrase": "陈余，亦大梁人，好儒术。游赵苦陉，富人公乘氏以其女妻之。余年少，父事耳，相与为刎",
+        "close_paragraph": 3,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P3–P3"
+      }
+    },
+    {
+      "name": "张耳",
+      "category": "文臣",
+      "paragraph_from": 4,
+      "paragraph_to": 12,
+      "boundary_evidence": {
+        "open_paragraph": 4,
+        "open_phrase": "高祖为布衣时，尝从耳游。秦灭魏，购求耳千金，余五百金。两人变名姓，俱之陈，为里监",
+        "close_paragraph": 12,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P4–P12"
+      }
+    },
+    {
+      "name": "陈馀",
+      "category": "文臣",
+      "paragraph_from": 13,
+      "paragraph_to": 15,
+      "boundary_evidence": {
+        "open_paragraph": 13,
+        "open_phrase": "余客多说项羽：“陈余、张耳一体有功于赵。”羽以余不从入关，闻其在南皮，即以南皮旁",
+        "close_paragraph": 15,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P13–P15"
+      }
+    },
+    {
+      "name": "张耳",
+      "category": "文臣",
+      "paragraph_from": 16,
+      "paragraph_to": 23,
+      "boundary_evidence": {
+        "open_paragraph": 16,
+        "open_phrase": "四年夏，立耳为赵王。五年秋，耳薨，谥曰景王。子敖嗣立为王，尚高祖长女鲁元公主，为",
+        "close_paragraph": 23,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P16–P23"
+      }
+    }
+  ],
+  "multi_owner_segments": [
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "陈馀",
+          "category": "文臣"
+        },
+        {
+          "name": "张耳",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "陈馀",
+          "category": "文臣"
+        },
+        {
+          "name": "张耳",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "陈馀",
+          "category": "文臣"
+        },
+        {
+          "name": "张耳",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "陈馀",
+          "category": "文臣"
+        },
+        {
+          "name": "张耳",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "陈馀",
+          "category": "文臣"
+        },
+        {
+          "name": "张耳",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "陈馀",
+          "category": "文臣"
+        },
+        {
+          "name": "张耳",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "陈馀",
+          "category": "文臣"
+        },
+        {
+          "name": "张耳",
+          "category": "文臣"
+        }
+      ]
+    }
+  ]
+}

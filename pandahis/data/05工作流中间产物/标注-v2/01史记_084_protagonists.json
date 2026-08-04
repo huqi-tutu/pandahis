@@ -1,0 +1,19 @@
+{
+  "work": "01史记",
+  "vol": "084",
+  "volume_name": "屈原贾生列传",
+  "narrative_mode": "hezhuan",
+  "volume_type_guess": "列传（合传）",
+  "protagonists": [
+    {
+      "name": "屈原",
+      "category": "文臣",
+      "rationale": "卷名「屈原贾生列传」以屈原为首；战国楚大夫、左徒，本卷前半主轴。"
+    },
+    {
+      "name": "贾谊",
+      "category": "文臣",
+      "rationale": "卷名并列贾生（贾谊）；西汉文帝朝博士、太傅，本卷后半主轴。"
+    }
+  ]
+}

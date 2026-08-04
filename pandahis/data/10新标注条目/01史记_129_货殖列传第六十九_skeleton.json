@@ -1,0 +1,403 @@
+{
+  "volume": "货殖列传",
+  "source_file": "01史记_129_货殖列传第六十九.txt",
+  "total_paragraphs": 52,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "interleaved",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 2,
+      "owners": [],
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph": 3,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 4,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "范蠡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "范蠡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "范蠡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "子贡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "白圭",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "白圭",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 12,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 13,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 14,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 15,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 16,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 17,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 18,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 19,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 20,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 21,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 22,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 23,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 24,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 25,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 26,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 27,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 28,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 29,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 30,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 31,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 32,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 33,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 34,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 35,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "卓氏",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 38,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 39,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 40,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 41,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "任氏",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "任氏",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "任氏",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 46,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 47,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 48,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 49,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 50,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 51,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 52,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SHIJI_129_01",
+      "史略名称": "范蠡",
+      "史略简介": "范蠡",
+      "原文字句": "昔者越王句践困於会稽之上，乃用范蠡、计然。计然曰：“知斗则修备，时用则知物，二者形则万货之情可得而观已。故岁在金，穰；水，毁；木，饥；火，旱。旱则资舟，水则资车，物之理也。六岁穰，六岁旱，十二岁一大饥。夫粜，二十病农，九十病末。末病则财不出",
+      "史略分类": "文臣",
+      "主要史料出处": "《史记·卷129·货殖列传》",
+      "paragraphs": [
+        {
+          "volume": "货殖列传",
+          "paragraph_from": 5,
+          "paragraph_to": 7
+        }
+      ],
+      "五级细坐标": "史记·卷129·文臣·01",
+      "六级段落锚点": "[P5-P7]",
+      "原文出处": "货殖列传·P5-P7"
+    },
+    {
+      "史略ID": "SHIJI_129_02",
+      "史略名称": "子贡",
+      "史略简介": "子贡",
+      "原文字句": "子赣既学於仲尼，退而仕於卫，废著鬻财於曹、鲁之间，七十子之徒，赐最为饶益。原宪不厌糟糠，匿於穷巷。子贡结驷连骑，束帛之币以聘享诸侯，所至，国君无不分庭与之抗礼。夫使孔子名布扬於天下者，子贡先后之也。此所谓得埶而益彰者乎？白圭，周人也。当魏文",
+      "史略分类": "文臣",
+      "主要史料出处": "《史记·卷129·货殖列传》",
+      "paragraphs": [
+        {
+          "volume": "货殖列传",
+          "paragraph_from": 8,
+          "paragraph_to": 8
+        }
+      ],
+      "五级细坐标": "史记·卷129·文臣·02",
+      "六级段落锚点": "[P8]",
+      "原文出处": "货殖列传·P8"
+    },
+    {
+      "史略ID": "SHIJI_129_03",
+      "史略名称": "白圭",
+      "史略简介": "白圭",
+      "原文字句": "至卯，积著率岁倍。欲长钱，取下穀；长石斗，取上种。能薄饮食，忍嗜欲，节衣服，与用事僮仆同苦乐，趋时若猛兽挚鸟之发。故曰：“吾治生产，犹伊尹、吕尚之谋，孙吴用兵，商鞅行法是也。是故其智不足与权变，勇不足以决断，仁不能以取予，彊不能有所守，虽欲",
+      "史略分类": "庶众",
+      "主要史料出处": "《史记·卷129·货殖列传》",
+      "paragraphs": [
+        {
+          "volume": "货殖列传",
+          "paragraph_from": 9,
+          "paragraph_to": 10
+        }
+      ],
+      "五级细坐标": "史记·卷129·庶众·03",
+      "六级段落锚点": "[P9-P10]",
+      "原文出处": "货殖列传·P9-P10"
+    },
+    {
+      "史略ID": "SHIJI_129_04",
+      "史略名称": "任氏",
+      "史略简介": "任氏",
+      "原文字句": "宣曲任氏之先，为督道仓吏。秦之败也，豪杰皆争取金玉，而任氏独窖仓粟。",
+      "史略分类": "庶众",
+      "主要史料出处": "《史记·卷129·货殖列传》",
+      "paragraphs": [
+        {
+          "volume": "货殖列传",
+          "paragraph_from": 42,
+          "paragraph_to": 44
+        }
+      ],
+      "五级细坐标": "史记·卷129·庶众·04",
+      "六级段落锚点": "[P42-P44]",
+      "原文出处": "货殖列传·P42-P44"
+    },
+    {
+      "史略ID": "SHIJI_129_05",
+      "史略名称": "卓氏",
+      "史略简介": "卓氏",
+      "原文字句": "蜀卓氏之先，赵人也，用铁冶富。秦破赵，迁卓氏。卓氏见虏略，独夫妻推辇，行诣迁处。诸迁虏少有馀财，争与吏，求近处，处葭萌。唯卓氏曰：“此地狭薄。吾闻汶山之下，沃野，下有蹲鸱，至死不饥。民工於市，易贾。”乃求远迁。致之临邛，大喜，即铁山鼓铸，运",
+      "史略分类": "庶众",
+      "主要史料出处": "《史记·卷129·货殖列传》",
+      "paragraphs": [
+        {
+          "volume": "货殖列传",
+          "paragraph_from": 36,
+          "paragraph_to": 36
+        }
+      ],
+      "五级细坐标": "史记·卷129·庶众·05",
+      "六级段落锚点": "[P36]",
+      "原文出处": "货殖列传·P36"
+    }
+  ],
+  "translation_qa_hint": "混写卷：地域总述段多 exclude；entry 仅取五位富商主轴，段落非连续处见 paragraphs 多段。"
+}

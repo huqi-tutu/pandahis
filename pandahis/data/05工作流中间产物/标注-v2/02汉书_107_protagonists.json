@@ -1,0 +1,20 @@
+{
+  "work": "02汉书",
+  "vol": "107",
+  "volume_name": "匈奴传第六十四上",
+  "volume_type_guess": "列传",
+  "narrative_mode": "fanzuo",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "匈奴",
+      "category": "蕃祚",
+      "rationale": "《汉书·匈奴传》以匈奴政权/部族为整体叙事主轴，属边陲政权集体主题，符合蕃祚准入标准；非帝王.json单君王。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

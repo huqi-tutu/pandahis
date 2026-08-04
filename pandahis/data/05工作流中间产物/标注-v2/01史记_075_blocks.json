@@ -1,0 +1,27 @@
+{
+  "work": "01史记",
+  "vol": "075",
+  "total_paragraphs": 28,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 28,
+      "paragraph_to": 28,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "孟尝君",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 27,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "孟尝君名文，姓田氏。文之父曰靖郭君田婴。田婴者，齐威王少子而齐宣王庶弟也。田婴自",
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

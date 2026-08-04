@@ -1,0 +1,92 @@
+{
+  "work": "01史记",
+  "vol": "096",
+  "total_paragraphs": 35,
+  "volume_subtype": "hezhuan",
+  "derived_from": "01史记_096_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 23,
+      "paragraph_to": 23,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 24,
+      "paragraph_to": 24,
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph_from": 25,
+      "paragraph_to": 34,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 35,
+      "paragraph_to": 35,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "张苍",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 3,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "张丞相苍者，阳武人也。好书律历。秦时为御史，主柱下方书。有罪，亡归。",
+        "close_paragraph": 3,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P1–P3"
+      }
+    },
+    {
+      "name": "周昌",
+      "category": "文臣",
+      "paragraph_from": 4,
+      "paragraph_to": 10,
+      "boundary_evidence": {
+        "open_paragraph": 4,
+        "open_phrase": "周昌者，沛人也。其从兄曰周苛，秦时皆为泗水卒史。及高祖起沛，击破泗水守监，於是周",
+        "close_paragraph": 10,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P4–P10"
+      }
+    },
+    {
+      "name": "任敖",
+      "category": "文臣",
+      "paragraph_from": 11,
+      "paragraph_to": 12,
+      "boundary_evidence": {
+        "open_paragraph": 11,
+        "open_phrase": "后五岁，高后闻御史大夫江邑侯赵尧高祖时定赵王如意之画，乃抵尧罪，以广阿侯任敖为御",
+        "close_paragraph": 12,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P11–P12"
+      }
+    },
+    {
+      "name": "张苍",
+      "category": "文臣",
+      "paragraph_from": 13,
+      "paragraph_to": 18,
+      "boundary_evidence": {
+        "open_paragraph": 13,
+        "open_phrase": "苍与绛侯等尊立代王为孝文皇帝。四年，丞相灌婴卒，张苍为丞相。",
+        "close_paragraph": 18,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P13–P18"
+      }
+    },
+    {
+      "name": "申屠嘉",
+      "category": "文臣",
+      "paragraph_from": 19,
+      "paragraph_to": 22,
+      "boundary_evidence": {
+        "open_paragraph": 19,
+        "open_phrase": "申屠丞相嘉者，梁人，以材官蹶张从高帝击项籍，迁为队率。从击黥布军，为都尉。孝惠时",
+        "close_paragraph": 22,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P19–P22"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

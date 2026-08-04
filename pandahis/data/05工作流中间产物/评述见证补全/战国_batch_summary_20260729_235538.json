@@ -1,0 +1,2688 @@
+{
+  "stamp": "20260729_235538",
+  "dynasty": "战国",
+  "total_entries": 167,
+  "merged_index": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/评述见证补全/战国_merged_index.json",
+  "results": [
+    {
+      "id": "GLBL_00014",
+      "name": "周元王",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00018",
+      "name": "周威烈王",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00019",
+      "name": "周安王",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00027",
+      "name": "周慎靓王",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00032",
+      "name": "周显王",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00037",
+      "name": "周烈王",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00040",
+      "name": "周贞定王",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00041",
+      "name": "周赧王",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00049",
+      "name": "宋君偃",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00069",
+      "name": "楚怀王",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00088",
+      "name": "燕惠王",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00089",
+      "name": "燕昭王",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00090",
+      "name": "燕王喜",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00104",
+      "name": "秦孝公",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00105",
+      "name": "秦孝文王",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00109",
+      "name": "秦庄襄王",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00115",
+      "name": "秦惠文王",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00118",
+      "name": "秦昭襄王",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00122",
+      "name": "秦武王",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00124",
+      "name": "秦献公",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00131",
+      "name": "赵孝成王",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00132",
+      "name": "赵武灵王",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00141",
+      "name": "韩昭侯",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00142",
+      "name": "韩王安",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00145",
+      "name": "魏安釐王",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00146",
+      "name": "魏惠王",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00147",
+      "name": "魏文侯",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00148",
+      "name": "魏武侯",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00151",
+      "name": "齐威王",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00152",
+      "name": "齐宣王",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00153",
+      "name": "齐湣王",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00241",
+      "name": "淳于髡",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00242",
+      "name": "猗顿",
+      "mode": "commentary",
+      "status": "error",
+      "error": "verify 未通过 (GLBL_00242_猗顿_评述.json): [1] 评述简介句末不完整（疑似截断）; [2] 评述简介句末不完整（疑似截断）; [3] 评述简介句末不完整（疑似截断）; [4] 评述简介句末不完整（疑似截断）; [5] 评述简介句末不完整（疑似截断）"
+    },
+    {
+      "id": "GLBL_00243",
+      "name": "白圭",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00245",
+      "name": "聂政",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00246",
+      "name": "荆轲",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 6
+    },
+    {
+      "id": "GLBL_00304",
+      "name": "商鞅",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 6
+    },
+    {
+      "id": "GLBL_00310",
+      "name": "子夏",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00322",
+      "name": "孟子",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 6
+    },
+    {
+      "id": "GLBL_00323",
+      "name": "孟尝君",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00330",
+      "name": "屈原",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 6
+    },
+    {
+      "id": "GLBL_00333",
+      "name": "平原君赵胜",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00335",
+      "name": "张仪",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 6
+    },
+    {
+      "id": "GLBL_00381",
+      "name": "樗里子",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00403",
+      "name": "甘茂",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00428",
+      "name": "苏秦",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 6
+    },
+    {
+      "id": "GLBL_00429",
+      "name": "范睢",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00430",
+      "name": "荀卿",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00438",
+      "name": "蔡泽",
+      "mode": "commentary",
+      "status": "error",
+      "error": "verify 未通过 (GLBL_00438_蔡泽_评述.json): [1] 评述简介句末不完整（疑似截断）; [2] 评述简介句末不完整（疑似截断）; [3] 评述简介句末不完整（疑似截断）; [4] 评述简介句末不完整（疑似截断）; [5] 评述简介句末不完整（疑似截断）; [6] 评述简介句末不完整（疑似截断）"
+    },
+    {
+      "id": "GLBL_00439",
+      "name": "蔺相如",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00442",
+      "name": "虞卿",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00487",
+      "name": "魏冉",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00488",
+      "name": "魏无忌",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00490",
+      "name": "鲁仲连",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00492",
+      "name": "黄歇",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 6
+    },
+    {
+      "id": "GLBL_00497",
+      "name": "乐毅",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 6
+    },
+    {
+      "id": "GLBL_00506",
+      "name": "吴起",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 6
+    },
+    {
+      "id": "GLBL_00512",
+      "name": "廉颇",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00525",
+      "name": "田单",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00528",
+      "name": "白起",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00695",
+      "name": "卫君角",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00707",
+      "name": "晋出公",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00719",
+      "name": "楚顷襄王",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00720",
+      "name": "燕哙",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00722",
+      "name": "王无彊",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00724",
+      "name": "田齐太公和",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00727",
+      "name": "赵幽缪王",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00728",
+      "name": "赵悼襄王",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00729",
+      "name": "赵烈侯",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00744",
+      "name": "韩宣惠王",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00745",
+      "name": "韩襄王",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00746",
+      "name": "韩釐王",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00770",
+      "name": "齐王建",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00773",
+      "name": "齐襄王",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00819",
+      "name": "三家分晋",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00820",
+      "name": "田氏代齐",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00821",
+      "name": "李悝变法",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00822",
+      "name": "商鞅变法",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 6
+    },
+    {
+      "id": "GLBL_00823",
+      "name": "桂陵之战",
+      "mode": "commentary",
+      "status": "error",
+      "error": "verify 未通过 (GLBL_00823_桂陵之战_评述.json): [1] 评述简介句末不完整（疑似截断）; [2] 评述简介句末不完整（疑似截断）; [3] 评述简介句末不完整（疑似截断）; [4] 评述简介句末不完整（疑似截断）; [5] 评述简介句末不完整（疑似截断）"
+    },
+    {
+      "id": "GLBL_00824",
+      "name": "马陵之战",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00825",
+      "name": "徐州相王",
+      "mode": "commentary",
+      "status": "error",
+      "error": "verify 未通过 (GLBL_00825_徐州相王_评述.json): [1] 评述简介句末不完整（疑似截断）; [2] 评述简介句末不完整（疑似截断）; [3] 评述简介句末不完整（疑似截断）"
+    },
+    {
+      "id": "GLBL_00826",
+      "name": "秦灭巴蜀",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00827",
+      "name": "伊阙之战",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00828",
+      "name": "鄢郢之战",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00829",
+      "name": "五国合纵攻秦",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00830",
+      "name": "五国伐齐",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00831",
+      "name": "田单火牛复齐",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00832",
+      "name": "赵武灵王胡服骑射",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00833",
+      "name": "长平之战",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 6
+    },
+    {
+      "id": "GLBL_00834",
+      "name": "邯郸保卫战",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00835",
+      "name": "远交近攻",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00836",
+      "name": "郑国渠",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00837",
+      "name": "成文法典（李悝法经）",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00838",
+      "name": "军功爵制",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00839",
+      "name": "什伍连坐制",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 6
+    },
+    {
+      "id": "GLBL_00840",
+      "name": "上计制",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00841",
+      "name": "虎符调兵制",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00842",
+      "name": "郡县制",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00843",
+      "name": "平籴法",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00844",
+      "name": "封君食邑制",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00845",
+      "name": "按亩征租",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00846",
+      "name": "《孙子兵法》",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 6
+    },
+    {
+      "id": "GLBL_00847",
+      "name": "《孙膑兵法》",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00848",
+      "name": "《墨子》",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00849",
+      "name": "《孟子》",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00850",
+      "name": "《庄子》",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 6
+    },
+    {
+      "id": "GLBL_00851",
+      "name": "《荀子》",
+      "mode": "commentary",
+      "status": "error",
+      "error": "verify 未通过 (GLBL_00851_《荀子》_评述.json): [1] 评述简介句末不完整（疑似截断）; [2] 评述简介句末不完整（疑似截断）; [3] 评述简介句末不完整（疑似截断）; [4] 评述简介句末不完整（疑似截断）; [5] 评述简介句末不完整（疑似截断）"
+    },
+    {
+      "id": "GLBL_00852",
+      "name": "《韩非子》",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00853",
+      "name": "《国语》",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00854",
+      "name": "《吕氏春秋》",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00855",
+      "name": "《离骚》",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00856",
+      "name": "《劝学》",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00857",
+      "name": "楚考烈王",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00858",
+      "name": "赵惠文王",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00859",
+      "name": "赵长安君",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00860",
+      "name": "秦华阳夫人",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00861",
+      "name": "秦宣太后",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00862",
+      "name": "魏公子卬",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00863",
+      "name": "秦泾阳君",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00864",
+      "name": "秦高陵君",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00865",
+      "name": "楚公子兰",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00866",
+      "name": "赵公子章",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00867",
+      "name": "秦成蟜",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00868",
+      "name": "景监",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00869",
+      "name": "缪贤",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00870",
+      "name": "靳尚",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00871",
+      "name": "李悝",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00872",
+      "name": "申不害",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00873",
+      "name": "邹忌",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00874",
+      "name": "公孙衍",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00875",
+      "name": "司马错",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00876",
+      "name": "张孟谈",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00877",
+      "name": "冯亭",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00878",
+      "name": "公仲连",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00879",
+      "name": "顿弱",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00880",
+      "name": "剧辛",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00881",
+      "name": "景翠",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00882",
+      "name": "触龙",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00883",
+      "name": "甘罗",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00884",
+      "name": "邹衍",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00885",
+      "name": "李牧",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00886",
+      "name": "赵奢",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00887",
+      "name": "蒙骜",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00888",
+      "name": "王龁",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00889",
+      "name": "庞煖",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00890",
+      "name": "项燕",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00891",
+      "name": "李信",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00892",
+      "name": "田忌",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00893",
+      "name": "秦开",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00894",
+      "name": "暴鸢",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00895",
+      "name": "公孙喜",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00896",
+      "name": "王陵",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00897",
+      "name": "乐羊",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00898",
+      "name": "义渠",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00899",
+      "name": "中山国",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00900",
+      "name": "巴国",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00901",
+      "name": "蜀国",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00902",
+      "name": "滇国",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 6
+    },
+    {
+      "id": "GLBL_00903",
+      "name": "东胡",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00904",
+      "name": "林胡",
+      "mode": "commentary",
+      "status": "error",
+      "error": "verify 未通过 (GLBL_00904_林胡_评述.json): [1] 评述简介句末不完整（疑似截断）; [2] 评述简介句末不完整（疑似截断）; [3] 评述简介句末不完整（疑似截断）; [4] 评述简介句末不完整（疑似截断）"
+    },
+    {
+      "id": "GLBL_00905",
+      "name": "楼烦",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00906",
+      "name": "侯嬴",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00907",
+      "name": "朱亥",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00908",
+      "name": "毛遂",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00909",
+      "name": "寡妇清",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00910",
+      "name": "冯谖",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00911",
+      "name": "郭纵",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00014",
+      "name": "周元王",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00018",
+      "name": "周威烈王",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 2
+    },
+    {
+      "id": "GLBL_00019",
+      "name": "周安王",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00027",
+      "name": "周慎靓王",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00032",
+      "name": "周显王",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00037",
+      "name": "周烈王",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00040",
+      "name": "周贞定王",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00041",
+      "name": "周赧王",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00049",
+      "name": "宋君偃",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 1
+    },
+    {
+      "id": "GLBL_00069",
+      "name": "楚怀王",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 2
+    },
+    {
+      "id": "GLBL_00088",
+      "name": "燕惠王",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 2
+    },
+    {
+      "id": "GLBL_00089",
+      "name": "燕昭王",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00090",
+      "name": "燕王喜",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 2
+    },
+    {
+      "id": "GLBL_00104",
+      "name": "秦孝公",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00105",
+      "name": "秦孝文王",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00109",
+      "name": "秦庄襄王",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 1
+    },
+    {
+      "id": "GLBL_00115",
+      "name": "秦惠文王",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00118",
+      "name": "秦昭襄王",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00122",
+      "name": "秦武王",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 2
+    },
+    {
+      "id": "GLBL_00124",
+      "name": "秦献公",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 1
+    },
+    {
+      "id": "GLBL_00131",
+      "name": "赵孝成王",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 2
+    },
+    {
+      "id": "GLBL_00132",
+      "name": "赵武灵王",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00141",
+      "name": "韩昭侯",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 1
+    },
+    {
+      "id": "GLBL_00142",
+      "name": "韩王安",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 1
+    },
+    {
+      "id": "GLBL_00145",
+      "name": "魏安釐王",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 2
+    },
+    {
+      "id": "GLBL_00146",
+      "name": "魏惠王",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 1
+    },
+    {
+      "id": "GLBL_00147",
+      "name": "魏文侯",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 2
+    },
+    {
+      "id": "GLBL_00148",
+      "name": "魏武侯",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 2
+    },
+    {
+      "id": "GLBL_00151",
+      "name": "齐威王",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00152",
+      "name": "齐宣王",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00153",
+      "name": "齐湣王",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00241",
+      "name": "淳于髡",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00242",
+      "name": "猗顿",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 1
+    },
+    {
+      "id": "GLBL_00243",
+      "name": "白圭",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00245",
+      "name": "聂政",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 2
+    },
+    {
+      "id": "GLBL_00246",
+      "name": "荆轲",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 2
+    },
+    {
+      "id": "GLBL_00304",
+      "name": "商鞅",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00310",
+      "name": "子夏",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00322",
+      "name": "孟子",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00323",
+      "name": "孟尝君",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 2
+    },
+    {
+      "id": "GLBL_00330",
+      "name": "屈原",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00333",
+      "name": "平原君赵胜",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 2
+    },
+    {
+      "id": "GLBL_00335",
+      "name": "张仪",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 2
+    },
+    {
+      "id": "GLBL_00381",
+      "name": "樗里子",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 1
+    },
+    {
+      "id": "GLBL_00403",
+      "name": "甘茂",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00428",
+      "name": "苏秦",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 1
+    },
+    {
+      "id": "GLBL_00429",
+      "name": "范睢",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00430",
+      "name": "荀卿",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 1
+    },
+    {
+      "id": "GLBL_00438",
+      "name": "蔡泽",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00439",
+      "name": "蔺相如",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00442",
+      "name": "虞卿",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00487",
+      "name": "魏冉",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00488",
+      "name": "魏无忌",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 2
+    },
+    {
+      "id": "GLBL_00490",
+      "name": "鲁仲连",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 2
+    },
+    {
+      "id": "GLBL_00492",
+      "name": "黄歇",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00497",
+      "name": "乐毅",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 2
+    },
+    {
+      "id": "GLBL_00506",
+      "name": "吴起",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00512",
+      "name": "廉颇",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00525",
+      "name": "田单",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00528",
+      "name": "白起",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 2
+    },
+    {
+      "id": "GLBL_00695",
+      "name": "卫君角",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00707",
+      "name": "晋出公",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00719",
+      "name": "楚顷襄王",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00720",
+      "name": "燕哙",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00722",
+      "name": "王无彊",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 1
+    },
+    {
+      "id": "GLBL_00724",
+      "name": "田齐太公和",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00727",
+      "name": "赵幽缪王",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 1
+    },
+    {
+      "id": "GLBL_00728",
+      "name": "赵悼襄王",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 1
+    },
+    {
+      "id": "GLBL_00729",
+      "name": "赵烈侯",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 1
+    },
+    {
+      "id": "GLBL_00744",
+      "name": "韩宣惠王",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 1
+    },
+    {
+      "id": "GLBL_00745",
+      "name": "韩襄王",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 1
+    },
+    {
+      "id": "GLBL_00746",
+      "name": "韩釐王",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00770",
+      "name": "齐王建",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 1
+    },
+    {
+      "id": "GLBL_00773",
+      "name": "齐襄王",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00819",
+      "name": "三家分晋",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00820",
+      "name": "田氏代齐",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00821",
+      "name": "李悝变法",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00822",
+      "name": "商鞅变法",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00823",
+      "name": "桂陵之战",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 1
+    },
+    {
+      "id": "GLBL_00824",
+      "name": "马陵之战",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00825",
+      "name": "徐州相王",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00826",
+      "name": "秦灭巴蜀",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00827",
+      "name": "伊阙之战",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00828",
+      "name": "鄢郢之战",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00829",
+      "name": "五国合纵攻秦",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 1
+    },
+    {
+      "id": "GLBL_00830",
+      "name": "五国伐齐",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 2
+    },
+    {
+      "id": "GLBL_00831",
+      "name": "田单火牛复齐",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 2
+    },
+    {
+      "id": "GLBL_00832",
+      "name": "赵武灵王胡服骑射",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00833",
+      "name": "长平之战",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 2
+    },
+    {
+      "id": "GLBL_00834",
+      "name": "邯郸保卫战",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 1
+    },
+    {
+      "id": "GLBL_00835",
+      "name": "远交近攻",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00836",
+      "name": "郑国渠",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00837",
+      "name": "成文法典（李悝法经）",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00838",
+      "name": "军功爵制",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00839",
+      "name": "什伍连坐制",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 2
+    },
+    {
+      "id": "GLBL_00840",
+      "name": "上计制",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 2
+    },
+    {
+      "id": "GLBL_00841",
+      "name": "虎符调兵制",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00842",
+      "name": "郡县制",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00843",
+      "name": "平籴法",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00844",
+      "name": "封君食邑制",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00845",
+      "name": "按亩征租",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 2
+    },
+    {
+      "id": "GLBL_00846",
+      "name": "《孙子兵法》",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 2
+    },
+    {
+      "id": "GLBL_00847",
+      "name": "《孙膑兵法》",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 2
+    },
+    {
+      "id": "GLBL_00848",
+      "name": "《墨子》",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 2
+    },
+    {
+      "id": "GLBL_00849",
+      "name": "《孟子》",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00850",
+      "name": "《庄子》",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00851",
+      "name": "《荀子》",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00852",
+      "name": "《韩非子》",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 2
+    },
+    {
+      "id": "GLBL_00853",
+      "name": "《国语》",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00854",
+      "name": "《吕氏春秋》",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 2
+    },
+    {
+      "id": "GLBL_00855",
+      "name": "《离骚》",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00856",
+      "name": "《劝学》",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 2
+    },
+    {
+      "id": "GLBL_00857",
+      "name": "楚考烈王",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 2
+    },
+    {
+      "id": "GLBL_00858",
+      "name": "赵惠文王",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 2
+    },
+    {
+      "id": "GLBL_00859",
+      "name": "赵长安君",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 1
+    },
+    {
+      "id": "GLBL_00860",
+      "name": "秦华阳夫人",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00861",
+      "name": "秦宣太后",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00862",
+      "name": "魏公子卬",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00863",
+      "name": "秦泾阳君",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 2
+    },
+    {
+      "id": "GLBL_00864",
+      "name": "秦高陵君",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00865",
+      "name": "楚公子兰",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00866",
+      "name": "赵公子章",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 1
+    },
+    {
+      "id": "GLBL_00867",
+      "name": "秦成蟜",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00868",
+      "name": "景监",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00869",
+      "name": "缪贤",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00870",
+      "name": "靳尚",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00871",
+      "name": "李悝",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00872",
+      "name": "申不害",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00873",
+      "name": "邹忌",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00874",
+      "name": "公孙衍",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00875",
+      "name": "司马错",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00876",
+      "name": "张孟谈",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 1
+    },
+    {
+      "id": "GLBL_00877",
+      "name": "冯亭",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00878",
+      "name": "公仲连",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00879",
+      "name": "顿弱",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00880",
+      "name": "剧辛",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00881",
+      "name": "景翠",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00882",
+      "name": "触龙",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00883",
+      "name": "甘罗",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00884",
+      "name": "邹衍",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 2
+    },
+    {
+      "id": "GLBL_00885",
+      "name": "李牧",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 2
+    },
+    {
+      "id": "GLBL_00886",
+      "name": "赵奢",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 2
+    },
+    {
+      "id": "GLBL_00887",
+      "name": "蒙骜",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 2
+    },
+    {
+      "id": "GLBL_00888",
+      "name": "王龁",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00889",
+      "name": "庞煖",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00890",
+      "name": "项燕",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00891",
+      "name": "李信",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00892",
+      "name": "田忌",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00893",
+      "name": "秦开",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 1
+    },
+    {
+      "id": "GLBL_00894",
+      "name": "暴鸢",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00895",
+      "name": "公孙喜",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 2
+    },
+    {
+      "id": "GLBL_00896",
+      "name": "王陵",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00897",
+      "name": "乐羊",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00898",
+      "name": "义渠",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00899",
+      "name": "中山国",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00900",
+      "name": "巴国",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00901",
+      "name": "蜀国",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00902",
+      "name": "滇国",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00903",
+      "name": "东胡",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 2
+    },
+    {
+      "id": "GLBL_00904",
+      "name": "林胡",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00905",
+      "name": "楼烦",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 2
+    },
+    {
+      "id": "GLBL_00906",
+      "name": "侯嬴",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00907",
+      "name": "朱亥",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 1
+    },
+    {
+      "id": "GLBL_00908",
+      "name": "毛遂",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 1
+    },
+    {
+      "id": "GLBL_00909",
+      "name": "寡妇清",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 1
+    },
+    {
+      "id": "GLBL_00910",
+      "name": "冯谖",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00911",
+      "name": "郭纵",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    }
+  ],
+  "dynasty_issues": [
+    {
+      "level": "WARN",
+      "msg": "角度词「刻薄少恩」跨文件出现 4 次（如 GLBL_00304:商鞅, GLBL_00822:商鞅变法, GLBL_00838:军功爵制, GLBL_00839:什伍连坐制），疑同质化模板"
+    },
+    {
+      "level": "WARN",
+      "msg": "角度词「战略短视」跨文件出现 3 次（如 GLBL_00069:楚怀王, GLBL_00090:燕王喜, GLBL_00828:鄢郢之战），疑同质化模板"
+    },
+    {
+      "level": "WARN",
+      "msg": "角度词「匹夫之勇」跨文件出现 3 次（如 GLBL_00122:秦武王, GLBL_00245:聂政, GLBL_00246:荆轲），疑同质化模板"
+    }
+  ]
+}

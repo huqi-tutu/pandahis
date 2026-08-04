@@ -1,0 +1,35 @@
+{
+  "work": "02汉书",
+  "vol": "084",
+  "volume_name": "王贡两龚鲍传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "王吉",
+      "category": "文臣",
+      "rationale": "卷名首姓，合传主人公之一。王吉为西汉谏大夫，以儒学行政、谏诤为主轴，属文臣。"
+    },
+    {
+      "name": "贡禹",
+      "category": "文臣",
+      "rationale": "卷名第二人，合传主人公之一。贡禹以明经洁行、谏言朝政著称，属文臣。"
+    },
+    {
+      "name": "龚胜",
+      "category": "文臣",
+      "rationale": "卷名「两龚」之一，合传主人公。龚胜以节操清名、不仕王莽著称，属文臣。"
+    },
+    {
+      "name": "鲍宣",
+      "category": "文臣",
+      "rationale": "卷名末姓，合传主人公之一。鲍宣为谏大夫，以直言极谏、抨击时弊为主轴，属文臣。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

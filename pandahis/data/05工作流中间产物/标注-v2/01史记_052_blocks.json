@@ -1,0 +1,108 @@
+{
+  "work": "01史记",
+  "vol": "052",
+  "total_paragraphs": 57,
+  "volume_subtype": "hezhuan",
+  "excludes": [
+    {
+      "paragraph_from": 41,
+      "paragraph_to": 56,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 57,
+      "paragraph_to": 57,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "刘肥",
+      "category": "宗戚",
+      "paragraph_from": 1,
+      "paragraph_to": 4,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "齐悼惠王刘肥者，高祖长庶男也。其母外妇也，曰曹氏。高祖六年，立肥为齐王，食七十城",
+        "close_paragraph": 4,
+        "close_note": "人工订正"
+      }
+    },
+    {
+      "name": "刘襄",
+      "category": "宗戚",
+      "paragraph_from": 5,
+      "paragraph_to": 24,
+      "boundary_evidence": {
+        "open_paragraph": 5,
+        "open_phrase": "哀王元年，孝惠帝崩，吕太后称制，天下事皆决於高后。二年，高后立其兄子郦侯吕台为吕",
+        "close_paragraph": 24,
+        "close_note": "人工订正"
+      }
+    },
+    {
+      "name": "刘则",
+      "category": "宗戚",
+      "paragraph_from": 25,
+      "paragraph_to": 28,
+      "boundary_evidence": {
+        "open_paragraph": 25,
+        "open_phrase": "齐文王元年，汉以齐之城阳郡立朱虚侯为城阳王，以齐济北郡立东牟侯为济北王。",
+        "close_paragraph": 28,
+        "close_note": "人工订正"
+      }
+    },
+    {
+      "name": "刘将闾",
+      "category": "宗戚",
+      "paragraph_from": 29,
+      "paragraph_to": 31,
+      "boundary_evidence": {
+        "open_paragraph": 29,
+        "open_phrase": "后一岁，孝文帝以所封悼惠王子分齐为王，齐孝王将闾以悼惠王子杨虚侯为齐王。故齐别郡",
+        "close_paragraph": 31,
+        "close_note": "人工订正"
+      }
+    },
+    {
+      "name": "刘次景",
+      "category": "宗戚",
+      "paragraph_from": 32,
+      "paragraph_to": 40,
+      "boundary_evidence": {
+        "open_paragraph": 32,
+        "open_phrase": "已而复闻齐初与三国有谋，将欲移兵伐齐。齐孝王惧，乃饮药自杀。景帝闻之，以为齐首善",
+        "close_paragraph": 40,
+        "close_note": "人工订正"
+      }
+    }
+  ],
+  "multi_owner_segments": [
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "刘肥",
+          "category": "宗戚"
+        },
+        {
+          "name": "刘襄",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "刘襄",
+          "category": "宗戚"
+        },
+        {
+          "name": "刘则",
+          "category": "宗戚"
+        }
+      ]
+    }
+  ]
+}

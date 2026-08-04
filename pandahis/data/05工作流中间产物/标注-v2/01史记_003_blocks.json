@@ -1,0 +1,124 @@
+{
+  "work": "01史记",
+  "vol": "003",
+  "total_paragraphs": 41,
+  "volume_subtype": "benji_multi",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 2,
+      "exclude_reason": "世系链",
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "殷契，母曰简狄，有娀氏之女",
+        "close_paragraph": 2,
+        "close_note": "契及昭明至天乙继嗣；P3 起成汤叙事"
+      }
+    },
+    {
+      "paragraph_from": 14,
+      "paragraph_to": 20,
+      "exclude_reason": "世系链",
+      "boundary_evidence": {
+        "open_paragraph": 14,
+        "open_phrase": "太宗崩，子沃丁立",
+        "close_paragraph": 20,
+        "close_note": "沃丁至阳甲，非 Top5"
+      }
+    },
+    {
+      "paragraph_from": 21,
+      "paragraph_to": 21,
+      "exclude_reason": "论赞",
+      "boundary_evidence": {
+        "open_paragraph": 21,
+        "open_phrase": "自中丁以来，废適而更立",
+        "close_note": "九世乱总述"
+      }
+    },
+    {
+      "paragraph_from": 28,
+      "paragraph_to": 32,
+      "exclude_reason": "世系链",
+      "boundary_evidence": {
+        "open_paragraph": 28,
+        "open_phrase": "帝祖庚崩，弟祖甲立",
+        "close_paragraph": 32,
+        "close_note": "祖甲至帝乙；P33 起帝辛"
+      }
+    },
+    {
+      "paragraph_from": 41,
+      "paragraph_to": 41,
+      "exclude_reason": "太史公曰",
+      "boundary_evidence": {
+        "open_paragraph": 41,
+        "open_phrase": "太史公曰：余以颂次契之事",
+        "close_note": "卷末论赞"
+      }
+    }
+  ],
+  "blocks": [
+    {
+      "name": "成汤",
+      "category": "君王",
+      "paragraph_from": 3,
+      "paragraph_to": 11,
+      "boundary_evidence": {
+        "open_paragraph": 3,
+        "open_phrase": "成汤，自契至汤八迁",
+        "close_paragraph": 11,
+        "close_note": "P11 汤崩、外丙中壬至立太甲，成汤收束；P12 起太甲叙事"
+      }
+    },
+    {
+      "name": "太甲",
+      "category": "君王",
+      "paragraph_from": 12,
+      "paragraph_to": 13,
+      "boundary_evidence": {
+        "open_paragraph": 12,
+        "open_phrase": "帝太甲既立三年，不明",
+        "close_paragraph": 13,
+        "close_note": "伊尹放还，称太宗；P14 沃丁世系链"
+      }
+    },
+    {
+      "name": "盘庚",
+      "category": "君王",
+      "paragraph_from": 22,
+      "paragraph_to": 24,
+      "boundary_evidence": {
+        "open_paragraph": 22,
+        "open_phrase": "帝阳甲崩，弟盘庚立",
+        "close_paragraph": 24,
+        "close_note": "P24 盘庚崩、小辛小乙继嗣，盘庚收束；P25 起武丁"
+      }
+    },
+    {
+      "name": "武丁",
+      "category": "君王",
+      "paragraph_from": 25,
+      "paragraph_to": 27,
+      "boundary_evidence": {
+        "open_paragraph": 25,
+        "open_phrase": "帝小乙崩，子帝武丁立",
+        "close_paragraph": 27,
+        "close_note": "傅说、高宗；P27 武丁崩收束含立祖庚"
+      }
+    },
+    {
+      "name": "帝辛（纣）",
+      "category": "君王",
+      "paragraph_from": 33,
+      "paragraph_to": 40,
+      "boundary_evidence": {
+        "open_paragraph": 33,
+        "open_phrase": "帝乙长子曰微子启，启母贱",
+        "close_paragraph": 40,
+        "close_note": "立辛至牧野、武庚之乱收束；P41 太史公曰"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

@@ -1,0 +1,116 @@
+{
+  "work": "01史记",
+  "vol": "002",
+  "total_paragraphs": 48,
+  "volume_subtype": "benji_multi",
+  "excludes": [
+    {
+      "paragraph_from": 43,
+      "paragraph_to": 43,
+      "exclude_reason": "世系链",
+      "boundary_evidence": {
+        "open_paragraph": 43,
+        "open_phrase": "太康崩，弟中康立，是为帝中康",
+        "close_note": "中康单段，非 Top5；P44 起长链"
+      }
+    },
+    {
+      "paragraph_from": 44,
+      "paragraph_to": 44,
+      "exclude_reason": "世系链",
+      "boundary_evidence": {
+        "open_paragraph": 44,
+        "open_phrase": "中康崩，子帝相立。帝相崩",
+        "close_paragraph": 44,
+        "close_note": "相至少康至孔甲继嗣罗列；P45 起孔甲叙事"
+      }
+    },
+    {
+      "paragraph_from": 48,
+      "paragraph_to": 48,
+      "exclude_reason": "太史公曰",
+      "boundary_evidence": {
+        "open_paragraph": 48,
+        "open_phrase": "太史公曰：禹为姒姓",
+        "close_note": "卷末论赞"
+      }
+    }
+  ],
+  "blocks": [
+    {
+      "name": "禹",
+      "category": "君王",
+      "paragraph_from": 1,
+      "paragraph_to": 38,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "夏禹，名曰文命",
+        "close_paragraph": 38,
+        "close_note": "P38 东巡崩、授益、诸侯归启，禹收束；P39 起启定语开传"
+      }
+    },
+    {
+      "name": "启",
+      "category": "君王",
+      "paragraph_from": 39,
+      "paragraph_to": 41,
+      "boundary_evidence": {
+        "open_paragraph": 39,
+        "open_phrase": "夏后帝启，禹之子，其母涂山氏之女也",
+        "close_paragraph": 41,
+        "close_note": "甘誓灭有扈；P42 起太康"
+      }
+    },
+    {
+      "name": "太康",
+      "category": "君王",
+      "paragraph_from": 42,
+      "paragraph_to": 42,
+      "boundary_evidence": {
+        "open_paragraph": 42,
+        "open_phrase": "夏后帝启崩，子帝太康立",
+        "close_paragraph": 42,
+        "close_note": "太康失国；P43 中康世系链"
+      }
+    },
+    {
+      "name": "孔甲",
+      "category": "君王",
+      "paragraph_from": 45,
+      "paragraph_to": 46,
+      "boundary_evidence": {
+        "open_paragraph": 45,
+        "open_phrase": "帝孔甲立，好方鬼神，事淫乱",
+        "close_paragraph": 46,
+        "close_note": "御龙氏；P47 起桀"
+      }
+    },
+    {
+      "name": "桀",
+      "category": "君王",
+      "paragraph_from": 47,
+      "paragraph_to": 47,
+      "boundary_evidence": {
+        "open_paragraph": 47,
+        "open_phrase": "帝履癸立，是为桀",
+        "close_paragraph": 47,
+        "close_note": "段首皋发继嗣为钩；桀亡国、汤代夏；P48 太史公曰"
+      }
+    }
+  ],
+  "multi_owner_segments": [
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "启",
+          "category": "君王"
+        },
+        {
+          "name": "太康",
+          "category": "君王"
+        }
+      ]
+    }
+  ]
+}

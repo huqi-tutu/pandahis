@@ -1,0 +1,21 @@
+{
+  "work": "02汉书",
+  "vol": "077",
+  "volume_name": "东方朔传",
+  "volume_type_guess": "列传",
+  "volume_arc": "A",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "东方朔",
+      "category": "文臣",
+      "rationale": "卷名《东方朔传》为单人列传，东方朔以文学言语仕于汉武帝朝，属文学仕宦之士，故归文臣。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

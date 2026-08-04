@@ -1,0 +1,46 @@
+{
+  "work": "02汉书",
+  "vol": "049",
+  "total_paragraphs": 30,
+  "volume_subtype": "hezhuan",
+  "derived_from": "02汉书_049_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 30,
+      "paragraph_to": 30,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "萧何",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 14,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "萧何，沛人也。以文毋害为沛主吏掾。高祖为布衣时，数以吏事护高祖。高祖为亭长，常佑",
+        "close_paragraph": 14,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P14"
+      }
+    },
+    {
+      "name": "曹参",
+      "category": "文臣",
+      "paragraph_from": 15,
+      "paragraph_to": 29,
+      "boundary_evidence": {
+        "open_paragraph": 15,
+        "open_phrase": "曹参，沛人也。秦时为狱掾，而萧何为主吏，居县为豪吏矣。高祖为沛公也，参以中涓从击",
+        "close_paragraph": 29,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P15–P29"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

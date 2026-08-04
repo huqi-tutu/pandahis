@@ -1,0 +1,70 @@
+{
+  "work": "01史记",
+  "vol": "128",
+  "total_paragraphs": 135,
+  "volume_subtype": "hezhuan",
+  "derived_from": "01史记_128_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph_from": 8,
+      "paragraph_to": 8,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "太卜",
+      "category": "庶众",
+      "paragraph_from": 2,
+      "paragraph_to": 7,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "蛮夷氐羌虽无君臣之序，亦有决疑之卜。或以金石，或以草木，国不同俗。",
+        "close_paragraph": 7,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P7"
+      }
+    },
+    {
+      "name": "太卜",
+      "category": "庶众",
+      "paragraph_from": 9,
+      "paragraph_to": 16,
+      "boundary_evidence": {
+        "open_paragraph": 9,
+        "open_phrase": "又其所生，兽无虎狼，草无毒螫。江傍家人常畜龟饮食之，以为能导引致气，有益於助衰养",
+        "close_paragraph": 16,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P9–P16"
+      }
+    },
+    {
+      "name": "卫平",
+      "category": "庶众",
+      "paragraph_from": 17,
+      "paragraph_to": 38,
+      "boundary_evidence": {
+        "open_paragraph": 17,
+        "open_phrase": "宋元王二年，江使神龟使於河，至於泉阳，渔者豫且举网得而囚之。置之笼中。夜半，龟来",
+        "close_paragraph": 38,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P17–P38"
+      }
+    },
+    {
+      "name": "太卜",
+      "category": "庶众",
+      "paragraph_from": 39,
+      "paragraph_to": 135,
+      "boundary_evidence": {
+        "open_paragraph": 39,
+        "open_phrase": "褚先生曰：渔者举网而得神龟，龟自见梦宋元王，元王召博士卫平告以梦龟状，平运式，定",
+        "close_paragraph": 135,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P39–P135"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

@@ -1,0 +1,27 @@
+{
+  "work": "01史记",
+  "vol": "066",
+  "total_paragraphs": 36,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 36,
+      "paragraph_to": 36,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "伍子胥",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 35,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "伍子胥者，楚人也，名员。员父曰伍奢。员兄曰伍尚。其先曰伍举，以直谏事楚庄王，有显",
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

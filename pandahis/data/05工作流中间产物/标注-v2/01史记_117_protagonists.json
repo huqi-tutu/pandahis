@@ -1,0 +1,19 @@
+{
+  "work": "01史记",
+  "vol": "117",
+  "volume_name": "司马相如列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "司马相如",
+      "category": "文臣",
+      "rationale": "卷名为《司马相如列传》，属单人列传，主轴为司马相如本人。司马相如以辞赋文学著称，曾任郎、中郎将等官职，属文学仕宦为主轴的文臣列传，符合文臣准入标准。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

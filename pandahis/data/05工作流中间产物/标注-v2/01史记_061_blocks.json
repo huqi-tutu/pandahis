@@ -1,0 +1,21 @@
+{
+  "work": "01史记",
+  "vol": "061",
+  "total_paragraphs": 4,
+  "volume_subtype": "single",
+  "excludes": [],
+  "blocks": [
+    {
+      "name": "伯夷",
+      "category": "庶众",
+      "paragraph_from": 1,
+      "paragraph_to": 4,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "夫学者载籍极博，犹考信於六蓺。诗书虽缺，然虞夏之文可知也。尧将逊位，让於虞舜，舜",
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

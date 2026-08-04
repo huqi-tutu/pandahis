@@ -1,0 +1,27 @@
+{
+  "work": "01史记",
+  "vol": "008",
+  "total_paragraphs": 118,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 118,
+      "paragraph_to": 118,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "汉高祖",
+      "category": "君王",
+      "paragraph_from": 1,
+      "paragraph_to": 117,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "高祖，沛丰邑中阳里人，姓刘氏，字季。父曰太公，母曰刘媪。其先刘媪尝息大泽之陂，梦",
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

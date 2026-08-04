@@ -1,0 +1,27 @@
+{
+  "work": "01史记",
+  "vol": "123",
+  "total_paragraphs": 53,
+  "volume_subtype": "fanzuo",
+  "excludes": [
+    {
+      "paragraph_from": 53,
+      "paragraph_to": 53,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "大宛",
+      "category": "蕃祚",
+      "paragraph_from": 1,
+      "paragraph_to": 52,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "大宛之迹，见自张骞。张骞，汉中人。建元中为郎。是时天子问匈奴降者，皆言匈奴破月氏",
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

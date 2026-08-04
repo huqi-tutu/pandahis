@@ -1,0 +1,20 @@
+{
+  "work": "02汉书",
+  "vol": "067",
+  "volume_name": "司马相如传第二十七上",
+  "volume_type_guess": "列传",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "司马相如",
+      "category": "文臣",
+      "rationale": "卷名《司马相如传》为单人列传，司马相如为西汉著名辞赋家、文学家，以文学仕宦为主轴，符合文臣准入标准。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

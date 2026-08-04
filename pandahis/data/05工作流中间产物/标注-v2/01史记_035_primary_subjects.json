@@ -1,0 +1,333 @@
+{
+  "work": "01史记",
+  "vol": "035",
+  "total_paragraphs": 47,
+  "method": "Step1b-α LLM",
+  "paragraphs": [
+    {
+      "paragraph": 1,
+      "primary_subject": "管叔鲜",
+      "disposition": "block",
+      "text_snippet": "管叔鲜、蔡叔度者，周文王子而武王弟也。"
+    },
+    {
+      "paragraph": 2,
+      "primary_subject": "管叔鲜",
+      "disposition": "block",
+      "text_snippet": "武王已克殷纣，平天下，封功臣昆弟。"
+    },
+    {
+      "paragraph": 3,
+      "primary_subject": "管叔鲜",
+      "disposition": "block",
+      "text_snippet": "武王既崩，成王少，周公旦专王室。"
+    },
+    {
+      "paragraph": 4,
+      "primary_subject": "蔡叔度",
+      "disposition": "block",
+      "text_snippet": "蔡叔度既迁而死。其子曰胡，胡乃改行"
+    },
+    {
+      "paragraph": 5,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "馀五叔皆就国，无为天子吏者。"
+    },
+    {
+      "paragraph": 6,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "蔡仲卒，子蔡伯荒立。蔡伯荒卒，子宫侯立。"
+    },
+    {
+      "paragraph": 7,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "武侯卒，子夷侯立。夷侯十一年，周宣王即位。"
+    },
+    {
+      "paragraph": 8,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "釐侯三十九年，周幽王为犬戎所杀"
+    },
+    {
+      "paragraph": 9,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "四十八年，釐侯卒，子共侯兴立。"
+    },
+    {
+      "paragraph": 10,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "宣侯二十八年，鲁隐公初立。"
+    },
+    {
+      "paragraph": 11,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "哀侯十一年，初，哀侯娶陈，息侯亦娶陈。"
+    },
+    {
+      "paragraph": 12,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "息侯怒，请楚文王：“来伐我，我求救於蔡"
+    },
+    {
+      "paragraph": 13,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "楚文王从之，虏蔡哀侯以归。"
+    },
+    {
+      "paragraph": 14,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "缪侯以其女弟为齐桓公夫人。"
+    },
+    {
+      "paragraph": 15,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "庄侯三年，齐桓公卒。"
+    },
+    {
+      "paragraph": 16,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "文侯十四年，楚庄王伐陈，杀夏徵舒。"
+    },
+    {
+      "paragraph": 17,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "景侯元年，楚庄王卒。"
+    },
+    {
+      "paragraph": 18,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "灵侯二年，楚公子围弑其王郏敖而自立"
+    },
+    {
+      "paragraph": 19,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "楚灭蔡三岁，楚公子弃疾弑其君灵王代立"
+    },
+    {
+      "paragraph": 20,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "平侯九年卒，灵侯般之孙东国攻平侯子而自立"
+    },
+    {
+      "paragraph": 21,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "昭侯十年，朝楚昭王，持美裘二"
+    },
+    {
+      "paragraph": 22,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "十三年春，与卫灵公会邵陵。"
+    },
+    {
+      "paragraph": 23,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "楚昭王伐蔡，蔡恐，告急於吴。"
+    },
+    {
+      "paragraph": 24,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "成侯四年，宋灭曹。"
+    },
+    {
+      "paragraph": 25,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "侯齐四年，楚惠王灭蔡，蔡侯齐亡"
+    },
+    {
+      "paragraph": 26,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "伯邑考，其后不知所封。"
+    },
+    {
+      "paragraph": 27,
+      "primary_subject": "太史公曰",
+      "disposition": "exclude",
+      "exclude_reason": "太史公曰",
+      "text_snippet": "太史公曰：管蔡作乱，无足载者。"
+    },
+    {
+      "paragraph": 28,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "曹叔振铎者，周武王弟也。"
+    },
+    {
+      "paragraph": 29,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "叔振铎卒，子太伯脾立。"
+    },
+    {
+      "paragraph": 30,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "夷伯二十三年，周厉王奔于彘。"
+    },
+    {
+      "paragraph": 31,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "三十年卒，弟幽伯彊立。"
+    },
+    {
+      "paragraph": 32,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "惠伯二十五年，周幽王为犬戎所杀"
+    },
+    {
+      "paragraph": 33,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "三十六，惠伯卒，子石甫立"
+    },
+    {
+      "paragraph": 34,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "桓公三十五年，鲁隐公立。"
+    },
+    {
+      "paragraph": 35,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "庄公二十三年，齐桓公始霸。"
+    },
+    {
+      "paragraph": 36,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "三十一年，庄公卒，子釐公夷立。"
+    },
+    {
+      "paragraph": 37,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "共公十六年，初，晋公子重耳其亡过曹"
+    },
+    {
+      "paragraph": 38,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "二十五年，晋文公卒。"
+    },
+    {
+      "paragraph": 39,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "成公三年，晋厉公伐曹，虏成公以归"
+    },
+    {
+      "paragraph": 40,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "是岁，宋、卫、陈、郑皆火。"
+    },
+    {
+      "paragraph": 41,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "悼公八年，宋景公立。"
+    },
+    {
+      "paragraph": 42,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "悼公死於宋，归葬。"
+    },
+    {
+      "paragraph": 43,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "声公五年，平公弟通弑声公代立"
+    },
+    {
+      "paragraph": 44,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "伯阳三年，国人有梦众君子立于社宫"
+    },
+    {
+      "paragraph": 45,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "梦者之子乃亡去。"
+    },
+    {
+      "paragraph": 46,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "text_snippet": "公孙彊言霸说於曹伯。"
+    },
+    {
+      "paragraph": 47,
+      "primary_subject": "太史公曰",
+      "disposition": "exclude",
+      "exclude_reason": "太史公曰",
+      "text_snippet": "太史公曰：余寻曹共公之不用僖负羁"
+    }
+  ]
+}

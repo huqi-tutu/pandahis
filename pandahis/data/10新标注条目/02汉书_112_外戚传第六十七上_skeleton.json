@@ -1,0 +1,480 @@
+{
+  "volume": "外戚传第六十七上",
+  "source_file": "02汉书_112_外戚传第六十七上.txt",
+  "total_paragraphs": 64,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 3,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 4,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 5,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 6,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 7,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 8,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 9,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 10,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 11,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "薄太后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "薄太后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "薄太后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "薄太后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "窦太后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "窦太后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "窦太后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "窦太后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "窦太后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "窦太后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "王太后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "王太后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "王太后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "王太后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "王太后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "王太后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 30,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 31,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "卫子夫",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "卫子夫",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "卫子夫",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 36,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 37,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 38,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 39,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 40,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 41,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 42,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 43,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 44,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 45,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 46,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 47,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 48,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 49,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 50,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 51,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 52,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 53,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 54,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 55,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 56,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 57,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 58,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 59,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 60,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 61,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 62,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 63,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 64,
+      "owners": [],
+      "exclude_reason": "世系链"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HANSHU_112_01",
+      "史略名称": "薄太后",
+      "史略简介": "薄太后",
+      "原文字句": "高祖薄姬，文帝母也。父吴人，秦时与故魏王宗女魏媪通，生薄姬。而薄姬父死山阴，因葬焉。及诸侯畔秦，魏豹立为王，而魏媪内其女于魏宫。许负相薄姬，当生天子。是时，项羽方与汉王相距荥阳，天下未有所定。豹初与汉击楚，及闻许负言，心喜，因背汉而中立，与楚连和。汉使曹参等虏魏王豹，以其国为郡，而薄姬输织室。豹已死，汉王入织室，见薄姬，有诏内后宫，岁余不得幸。",
+      "史略分类": "宗戚",
+      "主要史料出处": "《02汉书·卷112·外戚传第六十七上》",
+      "paragraphs": [
+        {
+          "volume": "外戚传第六十七上",
+          "paragraph_from": 12,
+          "paragraph_to": 15
+        }
+      ],
+      "五级细坐标": "汉书·卷112·宗戚·01",
+      "六级段落锚点": "[P12-P15]",
+      "原文出处": "外戚传第六十七上·P12-P15"
+    },
+    {
+      "史略ID": "HANSHU_112_02",
+      "史略名称": "窦太后",
+      "史略简介": "窦太后",
+      "原文字句": "孝文窦皇后，景帝母也，吕太后时以良家子选入宫。太后出宫人以赐诸王各五人，窦姬与在行中。家在清河，愿如赵，近家，请其主遣宦者吏“必置我籍赵之伍中”。宦者忘之，误置籍代伍中。籍奏，诏可。当行，窦姬涕泣，怨其宦者，不欲往，相强乃肯行。至代，代王独幸窦姬，生女嫖。孝惠七年，生景帝。",
+      "史略分类": "宗戚",
+      "主要史料出处": "《02汉书·卷112·外戚传第六十七上》",
+      "paragraphs": [
+        {
+          "volume": "外戚传第六十七上",
+          "paragraph_from": 16,
+          "paragraph_to": 21
+        }
+      ],
+      "五级细坐标": "汉书·卷112·宗戚·02",
+      "六级段落锚点": "[P16-P21]",
+      "原文出处": "外戚传第六十七上·P16-P21"
+    },
+    {
+      "史略ID": "HANSHU_112_03",
+      "史略名称": "王太后",
+      "史略简介": "王太后",
+      "原文字句": "孝景王皇后，武帝母也。父王仲，槐里人也。母臧兒，故燕王臧荼孙也，为仲妻，生男信与两女。而仲死，臧兒更嫁为长陵田氏妇，生男蚡、胜。臧兒长女嫁为金王孙妇，生一女矣，而臧兒卜筮曰两女当贵，欲倚两女，夺金氏。金氏怒，不肯与决，乃内太子宫。太子幸爱子，生三女一男。男方在身时，王夫人梦日入其怀，以告太子，太子曰：“此贵征也。”未生而文帝崩，景帝即位，王夫人生男。是时，薄皇后无子。后数岁，景帝立齐栗姬男为太子，",
+      "史略分类": "宗戚",
+      "主要史料出处": "《02汉书·卷112·外戚传第六十七上》",
+      "paragraphs": [
+        {
+          "volume": "外戚传第六十七上",
+          "paragraph_from": 23,
+          "paragraph_to": 28
+        }
+      ],
+      "五级细坐标": "汉书·卷112·宗戚·03",
+      "六级段落锚点": "[P23-P28]",
+      "原文出处": "外戚传第六十七上·P23-P28"
+    },
+    {
+      "史略ID": "HANSHU_112_04",
+      "史略名称": "卫子夫",
+      "史略简介": "卫子夫",
+      "原文字句": "孝武卫皇后字子夫，生微也。其家号曰卫氏，出平阳侯邑。子夫为平阳主讴者，武帝即位，数年无子。平阳主求良家女十余人，饰置家。帝祓霸上，还过平阳主。主见所偫美人，帝不说。既饮，讴者进，帝独说子夫。帝起更衣，子夫侍尚衣轩中，得幸。还坐欢甚，赐平阳主金千斤。主因奏子夫送入宫。子夫上车，主拊其背曰：“行矣！强饭勉之。即贵，愿无相忘！”入宫岁余，不复幸。武帝择宫人不中用者斥出之，子夫得见，涕泣请出。上怜之，复幸",
+      "史略分类": "宗戚",
+      "主要史料出处": "《02汉书·卷112·外戚传第六十七上》",
+      "paragraphs": [
+        {
+          "volume": "外戚传第六十七上",
+          "paragraph_from": 32,
+          "paragraph_to": 34
+        }
+      ],
+      "五级细坐标": "汉书·卷112·宗戚·04",
+      "六级段落锚点": "[P32-P34]",
+      "原文出处": "外戚传第六十七上·P32-P34"
+    }
+  ]
+}

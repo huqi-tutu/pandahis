@@ -1,0 +1,587 @@
+{
+  "stamp": "20260801_081245",
+  "scope": "supplement_34",
+  "ids": [
+    "GLBL_00986",
+    "GLBL_00987",
+    "GLBL_00988",
+    "GLBL_00989",
+    "GLBL_00990",
+    "GLBL_00991",
+    "GLBL_00992",
+    "GLBL_00994",
+    "GLBL_00995",
+    "GLBL_00996",
+    "GLBL_00997",
+    "GLBL_00998",
+    "GLBL_00999",
+    "GLBL_01000",
+    "GLBL_01001",
+    "GLBL_01002",
+    "GLBL_01003",
+    "GLBL_01004",
+    "GLBL_01005",
+    "GLBL_01006",
+    "GLBL_01007",
+    "GLBL_01008",
+    "GLBL_01009",
+    "GLBL_01010",
+    "GLBL_01011",
+    "GLBL_01012",
+    "GLBL_01013",
+    "GLBL_01014",
+    "GLBL_01015",
+    "GLBL_01016",
+    "GLBL_01017",
+    "GLBL_01018",
+    "GLBL_01019",
+    "GLBL_01020"
+  ],
+  "total_entries": 34,
+  "results": [
+    {
+      "id": "GLBL_00986",
+      "name": "平王东迁",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00987",
+      "name": "繻葛之战",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00988",
+      "name": "葵丘之会",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00989",
+      "name": "泓水之战",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00990",
+      "name": "城濮之战",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00991",
+      "name": "践土之盟",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00992",
+      "name": "弭兵之会",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00994",
+      "name": "勾践灭吴",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00995",
+      "name": "长勺之战",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00996",
+      "name": "假虞灭虢",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00997",
+      "name": "卫狄之乱",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_00998",
+      "name": "鞌之战",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00999",
+      "name": "鄢陵之战",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_01000",
+      "name": "吴入郢都",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_01001",
+      "name": "艾陵之战",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_01002",
+      "name": "王子带之乱",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_01003",
+      "name": "霸主制度",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 6
+    },
+    {
+      "id": "GLBL_01004",
+      "name": "初税亩",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_01005",
+      "name": "县制",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_01006",
+      "name": "作州兵",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_01007",
+      "name": "管仲相地而衰征",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_01008",
+      "name": "晋国作爰田",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_01009",
+      "name": "鲁国作丘甲",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_01010",
+      "name": "子产铸刑书",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_01011",
+      "name": "晋国铸刑鼎",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_01012",
+      "name": "蒐礼军制",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_01013",
+      "name": "《诗经》",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_01014",
+      "name": "《春秋》",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_01015",
+      "name": "《孙子兵法》",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 6
+    },
+    {
+      "id": "GLBL_01016",
+      "name": "仁学思想",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_01017",
+      "name": "《老子》",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_01018",
+      "name": "《关雎》",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_01019",
+      "name": "《鹿鸣》",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 5
+    },
+    {
+      "id": "GLBL_01020",
+      "name": "《晏子春秋》",
+      "mode": "commentary",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_00986",
+      "name": "平王东迁",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_00987",
+      "name": "繻葛之战",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00988",
+      "name": "葵丘之会",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 1
+    },
+    {
+      "id": "GLBL_00989",
+      "name": "泓水之战",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 2
+    },
+    {
+      "id": "GLBL_00990",
+      "name": "城濮之战",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 1
+    },
+    {
+      "id": "GLBL_00991",
+      "name": "践土之盟",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 1
+    },
+    {
+      "id": "GLBL_00992",
+      "name": "弭兵之会",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00994",
+      "name": "勾践灭吴",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 2
+    },
+    {
+      "id": "GLBL_00995",
+      "name": "长勺之战",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 1
+    },
+    {
+      "id": "GLBL_00996",
+      "name": "假虞灭虢",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 2
+    },
+    {
+      "id": "GLBL_00997",
+      "name": "卫狄之乱",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 2
+    },
+    {
+      "id": "GLBL_00998",
+      "name": "鞌之战",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_00999",
+      "name": "鄢陵之战",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 1
+    },
+    {
+      "id": "GLBL_01000",
+      "name": "吴入郢都",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_01001",
+      "name": "艾陵之战",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 1
+    },
+    {
+      "id": "GLBL_01002",
+      "name": "王子带之乱",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_01003",
+      "name": "霸主制度",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_01004",
+      "name": "初税亩",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 1
+    },
+    {
+      "id": "GLBL_01005",
+      "name": "县制",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_01006",
+      "name": "作州兵",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_01007",
+      "name": "管仲相地而衰征",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_01008",
+      "name": "晋国作爰田",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_01009",
+      "name": "鲁国作丘甲",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_01010",
+      "name": "子产铸刑书",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_01011",
+      "name": "晋国铸刑鼎",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "已处理·无可用",
+      "entry_count": 0
+    },
+    {
+      "id": "GLBL_01012",
+      "name": "蒐礼军制",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 1
+    },
+    {
+      "id": "GLBL_01013",
+      "name": "《诗经》",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_01014",
+      "name": "《春秋》",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_01015",
+      "name": "《孙子兵法》",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 1
+    },
+    {
+      "id": "GLBL_01016",
+      "name": "仁学思想",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_01017",
+      "name": "《老子》",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_01018",
+      "name": "《关雎》",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 3
+    },
+    {
+      "id": "GLBL_01019",
+      "name": "《鹿鸣》",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 4
+    },
+    {
+      "id": "GLBL_01020",
+      "name": "《晏子春秋》",
+      "mode": "witness",
+      "status": "ok",
+      "doc_status": "done",
+      "entry_count": 2
+    }
+  ]
+}

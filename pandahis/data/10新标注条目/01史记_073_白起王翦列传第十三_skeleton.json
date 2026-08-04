@@ -1,0 +1,206 @@
+{
+  "volume": "白起王翦列传",
+  "source_file": "01史记_073_白起王翦列传第十三.txt",
+  "total_paragraphs": 18,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [
+        {
+          "name": "白起",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "白起",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "白起",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "白起",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "白起",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "白起",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "白起",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "白起",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "白起",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "白起",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "白起",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "王翦",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "王翦",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "王翦",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "王翦",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "王翦",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "王翦",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [],
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SHIJI_073_01",
+      "史略名称": "白起",
+      "史略简介": "白起",
+      "原文字句": "白起者，郿人也。善用兵，事秦昭王。昭王十三年，而白起为左庶长，将而击韩之新城。是岁，穰侯相秦，举任鄙以为汉中守。其明年，白起为左更，攻韩、魏於伊阙，斩首二十四万，又虏其将公孙喜，拔五城。起迁为国尉。涉河取韩安邑以东，到乾河。明年，白起为大良造。攻魏，拔之，取城小大六十一。明年，起与客卿错攻垣城，拔之。后五年，白起攻赵，拔光狼城。后七年，白起攻楚，拔鄢、邓五城。其明年，攻楚，拔郢，烧夷陵，遂东至竟陵",
+      "史略分类": "武将",
+      "主要史料出处": "《史记·卷73·白起王翦列传》",
+      "paragraphs": [
+        {
+          "volume": "白起王翦列传",
+          "paragraph_from": 1,
+          "paragraph_to": 11
+        }
+      ],
+      "五级细坐标": "史记·卷073·武将·01",
+      "六级段落锚点": "[P1-P11]",
+      "原文出处": "白起王翦列传·P1-P11"
+    },
+    {
+      "史略ID": "SHIJI_073_02",
+      "史略名称": "王翦",
+      "史略简介": "王翦",
+      "原文字句": "王翦者，频阳东乡人也。少而好兵，事秦始皇。始皇十一年，翦将攻赵阏与，破之，拔九城，十八年，翦将攻赵。岁馀，遂拔赵，赵王降，尽定赵地为郡。明年，燕使荆轲为贼於秦，秦王使王翦攻燕。燕王喜走辽东，翦遂定燕蓟而还。秦使翦子王贲击荆，荆兵败。还击魏，魏王降，遂定魏地。",
+      "史略分类": "武将",
+      "主要史料出处": "《史记·卷73·白起王翦列传》",
+      "paragraphs": [
+        {
+          "volume": "白起王翦列传",
+          "paragraph_from": 12,
+          "paragraph_to": 17
+        }
+      ],
+      "五级细坐标": "史记·卷073·武将·02",
+      "六级段落锚点": "[P12-P17]",
+      "原文出处": "白起王翦列传·P12-P17"
+    }
+  ]
+}

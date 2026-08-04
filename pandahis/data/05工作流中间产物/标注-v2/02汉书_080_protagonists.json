@@ -1,0 +1,27 @@
+{
+  "work": "02汉书",
+  "vol": "080",
+  "volume_name": "霍光金日磾传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_arc": "C",
+  "volume_subtype": "liezhuan_hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "霍光",
+      "category": "文臣",
+      "rationale": "卷名首列人物，西汉权臣、托孤重臣，以大司马大将军辅政，属行政中枢主轴，非君王亦非武将，故定文臣。"
+    },
+    {
+      "name": "金日磾",
+      "category": "文臣",
+      "rationale": "卷名并列人物，匈奴休屠王太子降汉，为武帝近臣、托孤重臣，以忠谨著称，属行政近幸主轴，定文臣。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

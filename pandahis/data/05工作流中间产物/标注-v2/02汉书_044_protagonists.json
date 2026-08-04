@@ -1,0 +1,42 @@
+{
+  "work": "02汉书",
+  "vol": "044",
+  "volume_name": "韩彭英卢吴传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_arc": "C",
+  "volume_subtype": "liezhuan_hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "韩信",
+      "category": "武将",
+      "rationale": "《韩彭英卢吴传》卷名首姓，韩信为汉初三大将之首，以军功征战为主轴，属武将列传合传主人公。"
+    },
+    {
+      "name": "彭越",
+      "category": "武将",
+      "rationale": "卷名第二人，彭越为汉初梁王，以军功征伐、游击战著称，属武将列传合传主人公。"
+    },
+    {
+      "name": "英布",
+      "category": "武将",
+      "rationale": "卷名第三人，英布（黥布）为汉初淮南王，以军功封王、后反汉被诛，属武将列传合传主人公。"
+    },
+    {
+      "name": "卢绾",
+      "category": "武将",
+      "rationale": "卷名第四人，卢绾为汉高祖同乡重臣，封燕王，以军功及与高祖关系为主线，属武将列传合传主人公。"
+    },
+    {
+      "name": "吴芮",
+      "category": "武将",
+      "rationale": "卷名第五人，吴芮为汉初长沙王，系封国世袭君主，非天下共主，属诸侯列传合传主人公。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

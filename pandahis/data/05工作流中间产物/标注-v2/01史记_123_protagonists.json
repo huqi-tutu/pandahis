@@ -1,0 +1,19 @@
+{
+  "work": "01史记",
+  "vol": "123",
+  "volume_name": "大宛列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "fanzuo",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "大宛",
+      "category": "蕃祚",
+      "rationale": "《大宛列传》为史记西域诸国合传，卷名所指为西域政权/部族集体主题，主轴为张骞所通西域诸国（大宛为核心），非单一君王，符合蕃祚卷型准入。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

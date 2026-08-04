@@ -1,0 +1,27 @@
+{
+  "work": "01史记",
+  "vol": "113",
+  "total_paragraphs": 21,
+  "volume_subtype": "fanzuo",
+  "excludes": [
+    {
+      "paragraph_from": 21,
+      "paragraph_to": 21,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "南越",
+      "category": "蕃祚",
+      "paragraph_from": 1,
+      "paragraph_to": 20,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "南越王尉佗者，真定人也，姓赵氏。秦时已并天下，略定杨越，置桂林、南海、象郡，以谪",
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

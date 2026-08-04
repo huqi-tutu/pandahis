@@ -1,0 +1,112 @@
+{
+  "work": "02汉书",
+  "vol": "104",
+  "total_paragraphs": 26,
+  "volume_subtype": "hezhuan",
+  "derived_from": "02汉书_104_user_protagonists.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 2,
+      "paragraph_to": 2,
+      "exclude_reason": "篇内小标题"
+    },
+    {
+      "paragraph_from": 3,
+      "paragraph_to": 5,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 7,
+      "paragraph_to": 7,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 10,
+      "paragraph_to": 13,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 15,
+      "paragraph_to": 15,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 17,
+      "paragraph_to": 25,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 26,
+      "paragraph_to": 26,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "范蠡",
+      "category": "庶众",
+      "paragraph_from": 6,
+      "paragraph_to": 6,
+      "boundary_evidence": {
+        "open_paragraph": 6,
+        "open_phrase": "昔粤王勾践困于会稽之上，乃用范蠡、计然。计然曰：“知斗则修备，时用则知物，二者形则万货之情可得见矣。故旱则资舟，水则资车",
+        "close_paragraph": 6,
+        "close_note": "用户白名单 manual repair P6–P6"
+      }
+    },
+    {
+      "name": "白圭",
+      "category": "庶众",
+      "paragraph_from": 8,
+      "paragraph_to": 8,
+      "boundary_evidence": {
+        "open_paragraph": 8,
+        "open_phrase": "白圭，周人也。当魏文侯时，李史务尽地力，而白圭乐观时变，故人弃我取，人取我予。能薄饮食，忍嗜欲，节衣服，与用事僮仆同苦乐",
+        "close_paragraph": 8,
+        "close_note": "用户白名单 manual repair P8–P8"
+      }
+    },
+    {
+      "name": "猗顿",
+      "category": "庶众",
+      "paragraph_from": 9,
+      "paragraph_to": 9,
+      "boundary_evidence": {
+        "open_paragraph": 9,
+        "open_phrase": "猗顿用盬盐起，邯郸郭纵以铸冶成业，与王者埒富。",
+        "close_paragraph": 9,
+        "close_note": "用户白名单 manual repair P9–P9"
+      }
+    },
+    {
+      "name": "蜀卓氏",
+      "category": "庶众",
+      "paragraph_from": 14,
+      "paragraph_to": 14,
+      "boundary_evidence": {
+        "open_paragraph": 14,
+        "open_phrase": "蜀卓氏之先，赵人也，用铁冶富。秦破赵，迁卓氏之蜀，夫妻推辇行。诸迁虏少有余财，急与吏，求近处，处葭萌。唯卓氏曰：“此地狭",
+        "close_paragraph": 14,
+        "close_note": "用户白名单 manual repair P14–P14"
+      }
+    },
+    {
+      "name": "罗裒",
+      "category": "庶众",
+      "paragraph_from": 16,
+      "paragraph_to": 16,
+      "boundary_evidence": {
+        "open_paragraph": 16,
+        "open_phrase": "程、卓既衰，至成、哀间，成都罗裒訾至巨万。初，裒贾京师，随身数十百万，为平陵石氏持钱。其人强力。石氏訾次如、苴，亲信，厚",
+        "close_paragraph": 16,
+        "close_note": "用户白名单 manual repair P16–P16"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

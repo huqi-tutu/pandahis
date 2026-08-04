@@ -1,0 +1,34 @@
+{
+  "work": "01史记",
+  "vol": "095",
+  "volume_name": "樊郦滕灌列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "樊哙",
+      "category": "武将",
+      "rationale": "卷名首列人物，以军功征战为叙事主轴，属列传合传主人公，分类为武将。"
+    },
+    {
+      "name": "郦商",
+      "category": "武将",
+      "rationale": "卷名次列人物，以军功征战为叙事主轴，属列传合传主人公，分类为武将。"
+    },
+    {
+      "name": "滕公（夏侯婴）",
+      "category": "武将",
+      "rationale": "卷名第三人物，滕公即夏侯婴，以军功及近侍征战为叙事主轴，属列传合传主人公，分类为武将。"
+    },
+    {
+      "name": "灌婴",
+      "category": "武将",
+      "rationale": "卷名末列人物，以军功征战为叙事主轴，属列传合传主人公，分类为武将。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

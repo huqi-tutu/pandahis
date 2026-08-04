@@ -1,0 +1,82 @@
+{
+  "work": "02汉书",
+  "vol": "056",
+  "total_paragraphs": 28,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "02汉书_056_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 28,
+      "paragraph_to": 28,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "石奋",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 15,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "万石君石奋，其父赵人也。赵亡，徙温。高祖东击项籍，过河内，时奋年十五，为小吏，侍",
+        "close_paragraph": 15,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P15"
+      }
+    },
+    {
+      "name": "卫绾",
+      "category": "文臣",
+      "paragraph_from": 16,
+      "paragraph_to": 20,
+      "boundary_evidence": {
+        "open_paragraph": 16,
+        "open_phrase": "卫绾，代人陵人也，以戏车为郎，事文帝，功次迁中郎将，醇谨无它。孝景为太子时，召上",
+        "close_paragraph": 20,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P16–P20"
+      }
+    },
+    {
+      "name": "直不疑",
+      "category": "文臣",
+      "paragraph_from": 21,
+      "paragraph_to": 23,
+      "boundary_evidence": {
+        "open_paragraph": 21,
+        "open_phrase": "直不疑，南阳人也。为郎，事文帝。其同舍有告归，误持其同舍郎金去。已而同舍郎觉，亡",
+        "close_paragraph": 23,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P21–P23"
+      }
+    },
+    {
+      "name": "周仁",
+      "category": "文臣",
+      "paragraph_from": 24,
+      "paragraph_to": 25,
+      "boundary_evidence": {
+        "open_paragraph": 24,
+        "open_phrase": "周仁，其先任城人也。以医见。景帝为太子时，为舍人，积功迁至太中大夫。景帝初立，拜",
+        "close_paragraph": 25,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P24–P25"
+      }
+    },
+    {
+      "name": "张欧",
+      "category": "文臣",
+      "paragraph_from": 26,
+      "paragraph_to": 27,
+      "boundary_evidence": {
+        "open_paragraph": 26,
+        "open_phrase": "张欧字叔，高祖功臣安丘侯说少子也。欧孝文时以治刑名侍太子，然其人长者。景帝时尊重",
+        "close_paragraph": 27,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P26–P27"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

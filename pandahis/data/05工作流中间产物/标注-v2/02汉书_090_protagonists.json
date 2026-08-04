@@ -1,0 +1,20 @@
+{
+  "work": "02汉书",
+  "vol": "090",
+  "volume_name": "萧望之传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "萧望之",
+      "category": "文臣",
+      "rationale": "《汉书》卷九十为《萧望之传》，卷名即单人传主。萧望之为西汉名儒，官至御史大夫、太子太傅，以儒学行政、谏诤辅政为主轴，属文臣列传。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

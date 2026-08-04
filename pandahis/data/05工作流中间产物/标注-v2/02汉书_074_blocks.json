@@ -1,0 +1,102 @@
+{
+  "work": "02汉书",
+  "vol": "074",
+  "total_paragraphs": 44,
+  "volume_subtype": "hezhuan",
+  "derived_from": "02汉书_074_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 2,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 3,
+      "paragraph_to": 3,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 27,
+      "paragraph_to": 27,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 33,
+      "paragraph_to": 34,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 43,
+      "paragraph_to": 43,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 44,
+      "paragraph_to": 44,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "刘据",
+      "category": "宗戚",
+      "paragraph_from": 4,
+      "paragraph_to": 13,
+      "boundary_evidence": {
+        "open_paragraph": 4,
+        "open_phrase": "戾太子据，元狩元年立为皇太子，年七岁矣。初，上年二十九乃得太子，甚喜，为立禖，使",
+        "close_paragraph": 13,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P4–P13"
+      }
+    },
+    {
+      "name": "刘闳",
+      "category": "宗戚",
+      "paragraph_from": 14,
+      "paragraph_to": 14,
+      "boundary_evidence": {
+        "open_paragraph": 14,
+        "open_phrase": "齐怀王闳与燕王旦、广陵王胥同日立，皆赐策，各以国土风俗申戒焉，曰：“惟元狩六年四",
+        "close_paragraph": 14,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P14–P14"
+      }
+    },
+    {
+      "name": "刘旦",
+      "category": "宗戚",
+      "paragraph_from": 15,
+      "paragraph_to": 26,
+      "boundary_evidence": {
+        "open_paragraph": 15,
+        "open_phrase": "燕刺王旦赐策曰：“呜呼！小子旦，受兹玄社，建尔国家，封于北土，世为汉藩辅。呜呼！",
+        "close_paragraph": 26,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P15–P26"
+      }
+    },
+    {
+      "name": "刘胥",
+      "category": "宗戚",
+      "paragraph_from": 28,
+      "paragraph_to": 32,
+      "boundary_evidence": {
+        "open_paragraph": 28,
+        "open_phrase": "广陵厉王胥赐策曰：“呜呼！小子胥，受兹赤社，建尔国家，封于南土，世世为汉藩辅。古",
+        "close_paragraph": 32,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P28–P32"
+      }
+    },
+    {
+      "name": "刘贺",
+      "category": "宗戚",
+      "paragraph_from": 35,
+      "paragraph_to": 42,
+      "boundary_evidence": {
+        "open_paragraph": 35,
+        "open_phrase": "昌邑哀王髆，天汉四年立，十一年薨，子贺嗣。立十三年，昭帝崩，无嗣，大将军霍光征王",
+        "close_paragraph": 42,
+        "close_note": "人工修正：P35–P42 主轴为刘贺（昌邑王、汉废帝）"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

@@ -1,0 +1,186 @@
+{
+  "work": "01史记",
+  "vol": "005",
+  "total_paragraphs": 118,
+  "volume_subtype": "benji_multi",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 7,
+      "exclude_reason": "世系链",
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "秦之先，帝颛顼之苗裔",
+        "close_paragraph": 7,
+        "close_note": "远祖谱至造父/非子名；P8 起非子叙事"
+      }
+    },
+    {
+      "paragraph_from": 10,
+      "paragraph_to": 29,
+      "exclude_reason": "世系链",
+      "boundary_evidence": {
+        "open_paragraph": 10,
+        "open_phrase": "秦嬴生秦侯。秦侯立十年",
+        "close_paragraph": 29,
+        "close_note": "秦侯至成公继嗣链；P26–P29 德公/宣公/成公，末句立缪公仍归前君；P30 起穆公叙事"
+      }
+    },
+    {
+      "paragraph_from": 59,
+      "paragraph_to": 60,
+      "exclude_reason": "论赞",
+      "boundary_evidence": {
+        "open_paragraph": 59,
+        "open_phrase": "君子曰：“秦缪公广地益国",
+        "close_paragraph": 60,
+        "close_note": "论缪公；P60 末康公立为世系钩"
+      }
+    },
+    {
+      "paragraph_from": 61,
+      "paragraph_to": 79,
+      "exclude_reason": "世系链",
+      "boundary_evidence": {
+        "open_paragraph": 61,
+        "open_phrase": "康公元年。往岁缪公之卒",
+        "close_paragraph": 79,
+        "close_note": "康公至出子，非 Top5"
+      }
+    },
+    {
+      "paragraph_from": 80,
+      "paragraph_to": 80,
+      "exclude_reason": "论赞",
+      "boundary_evidence": {
+        "open_paragraph": 80,
+        "open_phrase": "秦以往者数易君，君臣乖乱",
+        "close_note": "数易君总述"
+      }
+    },
+    {
+      "paragraph_from": 81,
+      "paragraph_to": 81,
+      "exclude_reason": "世系链",
+      "boundary_evidence": {
+        "open_paragraph": 81,
+        "open_phrase": "献公元年，止从死",
+        "close_note": "献公单段，非 Top5"
+      }
+    },
+    {
+      "paragraph_from": 94,
+      "paragraph_to": 99,
+      "exclude_reason": "世系链",
+      "boundary_evidence": {
+        "open_paragraph": 94,
+        "open_phrase": "惠文君元年，楚、韩、赵、蜀人来朝",
+        "close_paragraph": 99,
+        "close_note": "惠文王、武王及立昭襄过渡；P100 昭襄王元年起叙事"
+      }
+    },
+    {
+      "paragraph_from": 114,
+      "paragraph_to": 114,
+      "exclude_reason": "世系链",
+      "boundary_evidence": {
+        "open_paragraph": 114,
+        "open_phrase": "孝文王元年，赦罪人",
+        "close_note": "孝文王单段过渡"
+      }
+    },
+    {
+      "paragraph_from": 116,
+      "paragraph_to": 116,
+      "exclude_reason": "论赞",
+      "boundary_evidence": {
+        "open_paragraph": 116,
+        "open_phrase": "秦王政立二十六年，初并天下",
+        "close_note": "始皇事详见 006，跨卷摘要"
+      }
+    },
+    {
+      "paragraph_from": 117,
+      "paragraph_to": 117,
+      "exclude_reason": "太史公曰",
+      "boundary_evidence": {
+        "open_paragraph": 117,
+        "open_phrase": "太史公曰：秦之先为嬴姓",
+        "close_note": "卷末论赞起笔"
+      }
+    },
+    {
+      "paragraph_from": 118,
+      "paragraph_to": 118,
+      "exclude_reason": "论赞",
+      "boundary_evidence": {
+        "open_paragraph": 118,
+        "open_phrase": "然秦以其先造父封赵城",
+        "close_note": "太史公曰续段"
+      }
+    }
+  ],
+  "blocks": [
+    {
+      "name": "非子",
+      "category": "君王",
+      "paragraph_from": 8,
+      "paragraph_to": 9,
+      "boundary_evidence": {
+        "open_paragraph": 8,
+        "open_phrase": "非子居犬丘，好马及畜",
+        "close_paragraph": 9,
+        "close_note": "受封秦嬴；P10 起秦侯继嗣链"
+      }
+    },
+    {
+      "name": "秦穆公",
+      "category": "君王",
+      "paragraph_from": 30,
+      "paragraph_to": 58,
+      "boundary_evidence": {
+        "open_paragraph": 30,
+        "open_phrase": "缪公任好元年，自将伐茅津",
+        "close_paragraph": 58,
+        "close_note": "穆公霸业至卒；P59 君子曰论赞"
+      }
+    },
+    {
+      "name": "秦孝公",
+      "category": "君王",
+      "paragraph_from": 82,
+      "paragraph_to": 93,
+      "boundary_evidence": {
+        "open_paragraph": 82,
+        "open_phrase": "孝公元年，河山以东彊国六",
+        "close_paragraph": 93,
+        "close_note": "含商鞅变法至孝公卒、诛鞅收束；P94 起惠文王世系链"
+      }
+    },
+    {
+      "name": "秦昭襄王",
+      "category": "君王",
+      "paragraph_from": 100,
+      "paragraph_to": 113,
+      "boundary_evidence": {
+        "open_paragraph": 100,
+        "open_phrase": "昭襄王元年，严君疾为相",
+        "close_paragraph": 113,
+        "close_note": "昭襄世至卒；P114 孝文王世系链"
+      }
+    },
+    {
+      "name": "秦庄襄王",
+      "category": "君王",
+      "paragraph_from": 115,
+      "paragraph_to": 115,
+      "boundary_evidence": {
+        "open_paragraph": 115,
+        "open_phrase": "庄襄王元年，大赦罪人",
+        "close_paragraph": 115,
+        "close_note": "子政立为秦王，本纪叙事收束"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

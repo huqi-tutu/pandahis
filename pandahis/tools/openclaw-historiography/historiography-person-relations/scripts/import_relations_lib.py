@@ -111,8 +111,6 @@ def node_type_for_record(rec: dict[str, Any]) -> str:
 
 
 def build_import_sql(box_id: str, subject: str, records: list[dict[str, Any]]) -> list[str]:
-    if not records:
-        raise ValueError("empty records")
     subject = subject.strip()
     stmts: list[str] = []
 
@@ -125,6 +123,9 @@ def build_import_sql(box_id: str, subject: str, records: list[dict[str, Any]]) -
         f"VALUES ({box_component_columns(center_cid, box_id, subject)}, {sql_escape(CENTER_KEY)}, 'event', "
         f"{sql_escape(subject)}, '{{}}');"
     )
+
+    if not records:
+        return stmts
 
     categories = collect_categories(records)
     cat_key_by_name: dict[str, str] = {}

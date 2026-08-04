@@ -1,0 +1,118 @@
+{
+  "work": "02汉书",
+  "vol": "078",
+  "total_paragraphs": 47,
+  "volume_subtype": "hezhuan",
+  "derived_from": "02汉书_078_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 47,
+      "paragraph_to": 47,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "公孙贺",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 5,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "公孙贺字子叔，北地义渠人也。贺祖父昆邪，景帝时为陇西守，以将军击吴、楚有功，封平",
+        "close_paragraph": 5,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P5"
+      }
+    },
+    {
+      "name": "刘屈氂",
+      "category": "宗戚",
+      "paragraph_from": 6,
+      "paragraph_to": 10,
+      "boundary_evidence": {
+        "open_paragraph": 6,
+        "open_phrase": "刘屈氂，武帝庶兄中山靖王子也，不知其始所以进。",
+        "close_paragraph": 10,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P6–P10"
+      }
+    },
+    {
+      "name": "田千秋",
+      "category": "文臣",
+      "paragraph_from": 11,
+      "paragraph_to": 15,
+      "boundary_evidence": {
+        "open_paragraph": 11,
+        "open_phrase": "车千秋，本姓田氏，其先齐诸田徙长陵。千秋为高寝郎。会卫太子为江充所谮败，久之，千",
+        "close_paragraph": 15,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P11–P15"
+      }
+    },
+    {
+      "name": "王䜣",
+      "category": "文臣",
+      "paragraph_from": 16,
+      "paragraph_to": 18,
+      "boundary_evidence": {
+        "open_paragraph": 16,
+        "open_phrase": "王，济南人也。以郡县吏积功，稍迁为被阳令。武帝末，军旅数发，郡国盗贼群起，绣衣",
+        "close_paragraph": 18,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P16–P18"
+      }
+    },
+    {
+      "name": "杨敞",
+      "category": "文臣",
+      "paragraph_from": 19,
+      "paragraph_to": 35,
+      "boundary_evidence": {
+        "open_paragraph": 19,
+        "open_phrase": "杨敞，华阴人也。给事大将军莫府，为军司马，霍光爱厚之，稍迁至大司农。元凤中，稻田",
+        "close_paragraph": 35,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P19–P35"
+      }
+    },
+    {
+      "name": "蔡义",
+      "category": "文臣",
+      "paragraph_from": 36,
+      "paragraph_to": 39,
+      "boundary_evidence": {
+        "open_paragraph": 36,
+        "open_phrase": "蔡义，河内温人也。以明经给事大将军莫府。家贫，常步行，资礼不逮众门下，好事者相合",
+        "close_paragraph": 39,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P36–P39"
+      }
+    },
+    {
+      "name": "陈万年",
+      "category": "文臣",
+      "paragraph_from": 40,
+      "paragraph_to": 45,
+      "boundary_evidence": {
+        "open_paragraph": 40,
+        "open_phrase": "陈万年字幼公，沛郡相人也。为郡吏，察举，至县令，迁广陵太守，以高弟入为右扶风，迁",
+        "close_paragraph": 45,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P40–P45"
+      }
+    },
+    {
+      "name": "郑弘",
+      "category": "文臣",
+      "paragraph_from": 46,
+      "paragraph_to": 46,
+      "boundary_evidence": {
+        "open_paragraph": 46,
+        "open_phrase": "郑弘字稚卿，泰山刚人也。兄昌字次卿，亦好学，皆明经，通法律政事。次卿为太原、涿郡",
+        "close_paragraph": 46,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P46–P46"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

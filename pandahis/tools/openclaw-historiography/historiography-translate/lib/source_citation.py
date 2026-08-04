@@ -98,6 +98,20 @@ def _cite_from_block(block: Dict[str, Any], parent_work: str) -> str:
     return ""
 
 
+def build_source_citation_from_entry(entry: Dict[str, Any]) -> str:
+    """从 V2 索引条目构建「原文出处」（母本 block）。"""
+    parent_work = str(entry.get("母本著作") or "").strip()
+    for block in entry.get("paragraphs") or []:
+        if not isinstance(block, dict):
+            continue
+        if str(block.get("role") or "母本") != "母本":
+            continue
+        cite = _cite_from_block(block, parent_work)
+        if cite:
+            return cite
+    return ""
+
+
 def mother_source_file(recalled: Dict[str, Any]) -> Optional[str]:
     """调试/校验用：返回母本 source_file。"""
     for block in list(recalled.get("blocks") or []) + list(recalled.get("paragraphs") or []):

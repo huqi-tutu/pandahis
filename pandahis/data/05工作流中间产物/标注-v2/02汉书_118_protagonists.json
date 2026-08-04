@@ -1,0 +1,15 @@
+{
+  "work": "02汉书",
+  "vol": "118",
+  "volume_name": "叙传第七十上",
+  "volume_type_guess": "列传",
+  "narrative_mode": "skip",
+  "skip_reason": "《汉书·叙传上》为班固著史自述与凡例总述，全卷不提取人物 entry。",
+  "protagonists": [],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "篇内小标题",
+    "论赞",
+    "赞曰"
+  ]
+}

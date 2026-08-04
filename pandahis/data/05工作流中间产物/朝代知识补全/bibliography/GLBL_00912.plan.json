@@ -1,0 +1,205 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00912",
+  "写作结构": "正史叙述见《史记·秦始皇本纪》翻译详录；拓展文可据《战国策》《韩非子》《尉缭子》等先秦文献补充统一前的论争与策略细节，用出土秦简印证郡县制与统一法令的推行，避免虚构战斗经过与人物对话；传说异说层以《帝王世纪》等后世文献提示秦始皇身世附会，作简要交代而不展开。",
+  "候选著作": [
+    {
+      "出处": "《战国策·秦策五》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "收录秦王政接见顿弱、韩非说秦等策辞，反映统一前夕秦廷战略讨论与谏止逐客等议题，可补六国灭亡前后的外交说辞",
+      "检索词": "顿弱 秦王 说者",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《韩非子·存韩》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记录韩非上书秦王请求保全韩国，李斯反对存韩的论辩，直接呈现灭六国决策中的存废分歧",
+      "检索词": "存韩 非子",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《尉缭子》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "相传尉缭为秦王政军事顾问，书中论及军事统一方略与严明法令，为理解秦统一战争思想提供侧据",
+      "检索词": "尉缭 兵力",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《睡虎地秦墓竹简·秦律十八种》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "出土秦律明确统一度量衡、文书、官制等细节，可直接印证秦统一后郡县制与标准化法令的实行",
+      "检索词": "度量衡 郡县 律",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《里耶秦简》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "秦代洞庭郡行政文书，记录县、乡官吏任免与邮传制度，实证秦统一早期郡县制的实际运行",
+      "检索词": "洞庭 迁陵 丞",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "晋人皇甫谧辑录的帝王世系中传承秦始皇为吕不韦子的异说，附会层可作后世传说的例证",
+      "检索词": "帝王世纪 秦始皇 吕不韦",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《新书·过秦上》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "西汉贾谊总结秦统一与速亡的历史教训，涉及灭六国武力与暴政论述，但属后世评述",
+      "检索词": "过秦 吞二周",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《史记·秦始皇本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，提供灭六国次序、称帝、置郡等主干叙事，本计划不摘句拓展",
+      "检索词": "秦始皇本纪",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《战国策·秦策五》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "收录秦王政接见顿弱、韩非说秦等策辞，反映统一前夕秦廷战略讨论与谏止逐客等议题，可补六国灭亡前后的外交说辞",
+      "检索词": "顿弱 秦王 说者",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《韩非子·存韩》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记录韩非上书秦王请求保全韩国，李斯反对存韩的论辩，直接呈现灭六国决策中的存废分歧",
+      "检索词": "存韩 非子",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《尉缭子》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "相传尉缭为秦王政军事顾问，书中论及军事统一方略与严明法令，为理解秦统一战争思想提供侧据",
+      "检索词": "尉缭 兵力",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《睡虎地秦墓竹简·秦律十八种》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "出土秦律明确统一度量衡、文书、官制等细节，可直接印证秦统一后郡县制与标准化法令的实行",
+      "检索词": "度量衡 郡县 律",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《里耶秦简》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "秦代洞庭郡行政文书，记录县、乡官吏任免与邮传制度，实证秦统一早期郡县制的实际运行",
+      "检索词": "洞庭 迁陵 丞",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《新书·过秦上》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "西汉贾谊总结秦统一与速亡的历史教训，涉及灭六国武力与暴政论述，但属后世评述",
+      "检索词": "过秦 吞二周",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《史记·秦始皇本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，提供灭六国次序、称帝、置郡等主干叙事，本计划不摘句拓展",
+      "检索词": "秦始皇本纪",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "晋人皇甫谧辑录的帝王世系中传承秦始皇为吕不韦子的异说，附会层可作后世传说的例证",
+      "检索词": "帝王世纪 秦始皇 吕不韦",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 6,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

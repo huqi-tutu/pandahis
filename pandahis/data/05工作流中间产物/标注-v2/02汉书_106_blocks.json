@@ -1,0 +1,102 @@
+{
+  "work": "02汉书",
+  "vol": "106",
+  "total_paragraphs": 35,
+  "volume_subtype": "hezhuan",
+  "derived_from": "02汉书_106_user_protagonists.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 2,
+      "paragraph_to": 2,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 7,
+      "paragraph_to": 7,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 13,
+      "paragraph_to": 13,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 21,
+      "paragraph_to": 25,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 35,
+      "paragraph_to": 35,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "邓通",
+      "category": "庶众",
+      "paragraph_from": 3,
+      "paragraph_to": 6,
+      "boundary_evidence": {
+        "open_paragraph": 3,
+        "open_phrase": "邓通，蜀郡南安人也，以濯船为黄头郎。文帝尝梦欲上天，不能，有一黄头郎推上天，顾见其衣尻带后穿。觉而之渐台，以梦中阴目求推",
+        "close_paragraph": 6,
+        "close_note": "用户白名单 manual repair P3–P6"
+      }
+    },
+    {
+      "name": "韩嫣",
+      "category": "庶众",
+      "paragraph_from": 8,
+      "paragraph_to": 11,
+      "boundary_evidence": {
+        "open_paragraph": 8,
+        "open_phrase": "韩嫣字王孙，弓高侯穨当之孙也。武帝为胶东王时，嫣与上学书相爱。及上为太子，愈益亲嫣。嫣善骑射，聪慧。上即位，欲事伐胡，而",
+        "close_paragraph": 11,
+        "close_note": "用户白名单 manual repair P8–P11"
+      }
+    },
+    {
+      "name": "李延年",
+      "category": "庶众",
+      "paragraph_from": 12,
+      "paragraph_to": 12,
+      "boundary_evidence": {
+        "open_paragraph": 12,
+        "open_phrase": "李延年，中山人，身及父母兄弟皆故倡也。延年坐法腐刑，给事狗监中。女弟得幸于上，号李夫人，列《外戚传》。延年善歌，为新变声",
+        "close_paragraph": 12,
+        "close_note": "用户白名单 manual repair P12–P12"
+      }
+    },
+    {
+      "name": "石显",
+      "category": "宦官",
+      "paragraph_from": 14,
+      "paragraph_to": 20,
+      "boundary_evidence": {
+        "open_paragraph": 14,
+        "open_phrase": "石显字君房，济南人；弘恭，沛人也。皆少坐法腐刑，为中黄门，以选为中尚书。宣帝时任中书官，恭明习法令故事，善为请奏，能称其",
+        "close_paragraph": 20,
+        "close_note": "用户白名单 manual repair P14–P20"
+      }
+    },
+    {
+      "name": "董贤",
+      "category": "庶众",
+      "paragraph_from": 26,
+      "paragraph_to": 34,
+      "boundary_evidence": {
+        "open_paragraph": 26,
+        "open_phrase": "董贤字圣卿，云阳人也。父恭，为御史，任贤为太子舍人。哀帝立，贤随太子官为郎。二岁余，贤传漏在殿下，为人美丽自喜，哀帝望见",
+        "close_paragraph": 34,
+        "close_note": "用户白名单 manual repair P26–P34"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

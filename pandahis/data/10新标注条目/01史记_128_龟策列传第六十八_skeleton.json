@@ -1,0 +1,794 @@
+{
+  "volume": "龟策列传",
+  "source_file": "01史记_128_龟策列传第六十八.txt",
+  "total_paragraphs": 135,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "single",
+  "volume_texture": "sequential",
+  "翻译视角说明": "卷首至 P16 为卜龟通论（exclude）；P17–38 为博士卫平相宋元王、占验神龟之叙事主轴；P39 起为褚先生补述及卜法条目（exclude）。太卜为官职非人物，不设 entry。",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph": 2,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 3,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 4,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 5,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 6,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 7,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 8,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 9,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 10,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 11,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 12,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 13,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 14,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 15,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 16,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "卫平",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "卫平",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "卫平",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "卫平",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "卫平",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "卫平",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "卫平",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "卫平",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "卫平",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "卫平",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "卫平",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "卫平",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "卫平",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "卫平",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "卫平",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "卫平",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "卫平",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "卫平",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "卫平",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "卫平",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "卫平",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "卫平",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 40,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 41,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 42,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 43,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 44,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 45,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 46,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 47,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 48,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 49,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 50,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 51,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 52,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 53,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 54,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 55,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 56,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 57,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 58,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 59,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 60,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 61,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 62,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 63,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 64,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 65,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 66,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 67,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 68,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 69,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 70,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 71,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 72,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 73,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 74,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 75,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 76,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 77,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 78,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 79,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 80,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 81,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 82,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 83,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 84,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 85,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 86,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 87,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 88,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 89,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 90,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 91,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 92,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 93,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 94,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 95,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 96,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 97,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 98,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 99,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 100,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 101,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 102,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 103,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 104,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 105,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 106,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 107,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 108,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 109,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 110,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 111,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 112,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 113,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 114,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 115,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 116,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 117,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 118,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 119,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 120,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 121,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 122,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 123,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 124,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 125,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 126,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 127,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 128,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 129,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 130,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 131,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 132,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 133,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 134,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 135,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SHIJI_128_01",
+      "史略名称": "卫平",
+      "史略简介": "卫平",
+      "原文字句": "乃召博士卫平而问之曰：“今寡人梦见一丈夫，延颈而长头，衣玄绣之衣而乘辎车，来见梦於寡人曰：‘我为江使於河，而幕网当吾路。泉阳豫且得我，我不能去。身在患中，莫可告语。王有德义，故来告诉。’是何物也？”卫平乃援式而起，仰天而视月之光，观斗所指，定日处乡。规矩为辅，副以权衡。四维已定，八卦相望。视其吉凶，介虫先见。乃对元王曰：“今昔壬子，宿在牵牛。河水大会，鬼神相谋。汉正南北，江河固期，南风新至，江使先",
+      "史略分类": "庶众",
+      "主要史料出处": "《史记·卷128·龟策列传》",
+      "paragraphs": [
+        {
+          "volume": "龟策列传",
+          "paragraph_from": 17,
+          "paragraph_to": 38
+        }
+      ],
+      "五级细坐标": "史记·卷128·庶众·01",
+      "六级段落锚点": "[P17-P38]",
+      "原文出处": "龟策列传·P17-P38"
+    }
+  ]
+}

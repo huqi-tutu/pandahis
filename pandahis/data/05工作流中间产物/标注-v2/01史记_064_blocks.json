@@ -1,0 +1,27 @@
+{
+  "work": "01史记",
+  "vol": "064",
+  "total_paragraphs": 6,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 6,
+      "paragraph_to": 6,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "司马穰苴",
+      "category": "武将",
+      "paragraph_from": 1,
+      "paragraph_to": 5,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "司马穰苴者，田完之苗裔也。齐景公时，晋伐阿、甄，而燕侵河上，齐师败绩。景公患之。",
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

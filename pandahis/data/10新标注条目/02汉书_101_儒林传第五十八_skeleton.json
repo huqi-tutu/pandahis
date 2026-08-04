@@ -1,0 +1,322 @@
+{
+  "volume": "儒林传",
+  "source_file": "02汉书_101_儒林传第五十八.txt",
+  "total_paragraphs": 40,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 3,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 4,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 5,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 6,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 7,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 8,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 9,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 10,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "丁宽",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 13,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 14,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 15,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 16,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 17,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "伏生",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 20,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "夏侯胜",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 23,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "孔安国",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "申公",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 27,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 28,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 29,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 30,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 31,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 32,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 33,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 34,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 35,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 36,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 37,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 38,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 39,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 40,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HANSHU_101_01",
+      "史略名称": "丁宽",
+      "史略简介": "丁宽",
+      "原文字句": "丁宽字子襄，梁人也。初，梁项生从田何受《易》，时宽为项生从者，读《易》精敏，材过项生，遂事何。学成，何谢宽。宽东归，何谓门人曰：“《易》以东矣。”宽至雒阳，复从周王孙受古义，号《周氏传》。景帝时，宽为梁孝王将军距吴、楚，号丁将军，作《易说》三万言，训故举大谊而已，今《小章句》是也。宽授同郡砀田王孙。王孙授施雠、孟喜、梁丘贺。繇是《易》有施、孟、梁丘之学。",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷101·儒林传》",
+      "paragraphs": [
+        {
+          "volume": "儒林传",
+          "paragraph_from": 11,
+          "paragraph_to": 11
+        }
+      ],
+      "五级细坐标": "汉书·卷101·文臣·01",
+      "六级段落锚点": "[P11]",
+      "原文出处": "儒林传·P11"
+    },
+    {
+      "史略ID": "HANSHU_101_02",
+      "史略名称": "伏生",
+      "史略简介": "伏生",
+      "原文字句": "伏生，济南人也，故为秦博士。孝文时，求能治《尚书》者，天下亡有，闻伏生治之，欲召。时伏生年九十余，老不能行，于是诏太常，使掌故朝错往受之。秦时禁《书》，伏生壁藏之，其后大兵起，流亡。汉定，伏生求其《书》，亡数十篇，独得二十九篇，即以教于齐、鲁之间。齐学者由此颇能言《尚书》，山东大师亡不涉《尚书》以教。伏生教济南张生及欧阳生。张生为博士，而伏生孙以治《尚书》征，弗能明定。是后鲁周霸、雒阳贾嘉颇能言《",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷101·儒林传》",
+      "paragraphs": [
+        {
+          "volume": "儒林传",
+          "paragraph_from": 18,
+          "paragraph_to": 18
+        }
+      ],
+      "五级细坐标": "汉书·卷101·文臣·02",
+      "六级段落锚点": "[P18]",
+      "原文出处": "儒林传·P18"
+    },
+    {
+      "史略ID": "HANSHU_101_03",
+      "史略名称": "夏侯胜",
+      "史略简介": "夏侯胜",
+      "原文字句": "夏侯胜，其先夏侯都尉，从济南张生受《尚书》以传族子始昌。始昌传胜，胜又事同郡蕳卿。蕳卿者，倪宽门人。胜传从兄子建，建又事欧阳高。胜至长信少府，建太子太傅，自有传。由是《尚书》有大小夏侯之学。",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷101·儒林传》",
+      "paragraphs": [
+        {
+          "volume": "儒林传",
+          "paragraph_from": 21,
+          "paragraph_to": 21
+        }
+      ],
+      "五级细坐标": "汉书·卷101·文臣·03",
+      "六级段落锚点": "[P21]",
+      "原文出处": "儒林传·P21"
+    },
+    {
+      "史略ID": "HANSHU_101_04",
+      "史略名称": "孔安国",
+      "史略简介": "孔安国",
+      "原文字句": "孔氏有古文《尚书》，孔安国以今文字读之，因以起其家逸《书》，得十余篇，盖《尚书》兹多于是矣。遭巫蛊，未立于学官。安国为谏大夫，授都尉朝，而司马迁亦从安国问故。迁书载《尧典》《禹贡》《洪范》《微子》《金縢》诸篇，多古文说。都尉朝授胶东庸生。庸生授清河胡常少子，以明《谷梁春秋》为博士、部刺史，又传《左氏》。常授虢徐敖。敖为右扶风掾，又传《毛诗》，授王璜、平陵涂恽子真。子真授河南桑钦君长。王莽时，诸学皆",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷101·儒林传》",
+      "paragraphs": [
+        {
+          "volume": "儒林传",
+          "paragraph_from": 24,
+          "paragraph_to": 24
+        }
+      ],
+      "五级细坐标": "汉书·卷101·文臣·04",
+      "六级段落锚点": "[P24]",
+      "原文出处": "儒林传·P24"
+    },
+    {
+      "史略ID": "HANSHU_101_05",
+      "史略名称": "申公",
+      "史略简介": "申公",
+      "原文字句": "申公，鲁人也。少与楚元王交俱事齐人浮丘伯受《诗》。汉兴，高祖过鲁，申公以弟子从师入见于鲁南宫。吕太后时，浮丘伯在长安，楚元王遣子郢与申公俱卒学。元王薨，郢嗣立为楚王，令申公傅太子戊。戊不好学，病申公。及戊立为王，胥靡申公。申公愧之，归鲁退居家教，终身不出门。复谢宾客，独王命召之乃往。弟子自远方至受业者千余人，申公独以《诗经》为训故以教，亡传，疑者则阙弗传。兰陵王臧既从受《诗》，已通，事景帝为太子少",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷101·儒林传》",
+      "paragraphs": [
+        {
+          "volume": "儒林传",
+          "paragraph_from": 25,
+          "paragraph_to": 25
+        }
+      ],
+      "五级细坐标": "汉书·卷101·文臣·05",
+      "六级段落锚点": "[P25]",
+      "原文出处": "儒林传·P25"
+    }
+  ]
+}

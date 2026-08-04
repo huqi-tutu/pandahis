@@ -1,0 +1,576 @@
+{
+  "volume": "魏世家",
+  "source_file": "01史记_044_魏世家第十四.txt",
+  "total_paragraphs": 64,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 3,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 4,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 5,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 6,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 7,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 8,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 9,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "魏文侯",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "魏文侯",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "魏文侯",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "魏文侯",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "魏文侯",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "魏文侯",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "魏文侯",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "魏文侯",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "魏文侯",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "魏文侯",
+          "category": "诸侯"
+        },
+        {
+          "name": "魏武侯",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "魏武侯",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "魏武侯",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "魏武侯",
+          "category": "诸侯"
+        },
+        {
+          "name": "魏惠王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "魏惠王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "魏惠王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "魏惠王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "魏惠王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "魏惠王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "魏惠王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "魏惠王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "魏惠王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "魏惠王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "魏惠王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "魏惠王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 35,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 36,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 37,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 38,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 39,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 40,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 41,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 42,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 43,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 44,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "魏安釐王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [
+        {
+          "name": "魏安釐王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 47,
+      "owners": [
+        {
+          "name": "魏安釐王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 48,
+      "owners": [
+        {
+          "name": "魏安釐王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 49,
+      "owners": [
+        {
+          "name": "魏安釐王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 50,
+      "owners": [
+        {
+          "name": "魏安釐王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 51,
+      "owners": [
+        {
+          "name": "魏安釐王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 52,
+      "owners": [
+        {
+          "name": "魏安釐王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 53,
+      "owners": [
+        {
+          "name": "魏安釐王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 54,
+      "owners": [
+        {
+          "name": "魏安釐王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 55,
+      "owners": [
+        {
+          "name": "魏安釐王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 56,
+      "owners": [
+        {
+          "name": "魏安釐王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 57,
+      "owners": [
+        {
+          "name": "魏安釐王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 58,
+      "owners": [
+        {
+          "name": "魏安釐王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 59,
+      "owners": [
+        {
+          "name": "魏安釐王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 60,
+      "owners": [
+        {
+          "name": "魏安釐王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 61,
+      "owners": [
+        {
+          "name": "魏安釐王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 62,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 63,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 64,
+      "owners": [],
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SHIJI_044_01",
+      "史略名称": "魏文侯",
+      "史略简介": "魏文侯",
+      "原文字句": "桓子之孙曰文侯都。魏文侯元年，秦灵公之元年也。与韩武子、赵桓子、周威王同时。",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷44·魏世家》",
+      "paragraphs": [
+        {
+          "volume": "魏世家",
+          "paragraph_from": 10,
+          "paragraph_to": 19
+        }
+      ],
+      "五级细坐标": "史记·卷044·诸侯·01",
+      "六级段落锚点": "[P10-P19]",
+      "原文出处": "魏世家·P10-P19"
+    },
+    {
+      "史略ID": "SHIJI_044_02",
+      "史略名称": "魏武侯",
+      "史略简介": "魏武侯",
+      "原文字句": "三十八年，伐秦，败我武下，得其将识。是岁，文侯卒，子击立，是为武侯。",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷44·魏世家》",
+      "paragraphs": [
+        {
+          "volume": "魏世家",
+          "paragraph_from": 19,
+          "paragraph_to": 22
+        }
+      ],
+      "五级细坐标": "史记·卷044·诸侯·02",
+      "六级段落锚点": "[P19-P22]",
+      "原文出处": "魏世家·P19-P22"
+    },
+    {
+      "史略ID": "SHIJI_044_03",
+      "史略名称": "魏惠王",
+      "史略简介": "魏惠王",
+      "原文字句": "十六年，伐楚，取鲁阳。武侯卒，子罃立，是为惠王。",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷44·魏世家》",
+      "paragraphs": [
+        {
+          "volume": "魏世家",
+          "paragraph_from": 22,
+          "paragraph_to": 33
+        }
+      ],
+      "五级细坐标": "史记·卷044·诸侯·03",
+      "六级段落锚点": "[P22-P33]",
+      "原文出处": "魏世家·P22-P33"
+    },
+    {
+      "史略ID": "SHIJI_044_04",
+      "史略名称": "魏安釐王",
+      "史略简介": "魏安釐王",
+      "原文字句": "十三年，秦拔我安城。兵到大梁，去。十八年，秦拔郢，楚王徙陈。十九年，昭王卒，子安釐王立。",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷44·魏世家》",
+      "paragraphs": [
+        {
+          "volume": "魏世家",
+          "paragraph_from": 45,
+          "paragraph_to": 61
+        }
+      ],
+      "五级细坐标": "史记·卷044·诸侯·04",
+      "六级段落锚点": "[P45-P61]",
+      "原文出处": "魏世家·P45-P61"
+    }
+  ]
+}

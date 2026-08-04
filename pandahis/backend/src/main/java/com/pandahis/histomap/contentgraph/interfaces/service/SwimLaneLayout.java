@@ -49,7 +49,12 @@ final class SwimLaneLayout {
       boolean anchorAtStart,
       String personTag,
       String priorityReason,
-      String entrySource
+      String entrySource,
+      String detailSource,
+      String civilizationName,
+      String dynastyName,
+      String regimeName,
+      String emperorName
   ) {}
 
   private SwimLaneLayout() {}
@@ -328,7 +333,12 @@ final class SwimLaneLayout {
         tag,
         chipWidthRpx(input.title(), tag),
         trimOrNull(input.priorityReason()),
-        normalizeEntrySource(input.entrySource())
+        normalizeEntrySource(input.entrySource()),
+        trimOrEmpty(input.detailSource()),
+        trimOrEmpty(input.civilizationName()),
+        trimOrEmpty(input.dynastyName()),
+        trimOrEmpty(input.regimeName()),
+        trimOrEmpty(input.emperorName())
     );
   }
 
@@ -396,7 +406,12 @@ final class SwimLaneLayout {
         CHIP_HEIGHT_RPX,
         bar.chipTag,
         bar.priorityReason,
-        bar.entrySource
+        bar.entrySource,
+        bar.detailSource,
+        bar.civilizationName,
+        bar.dynastyName,
+        bar.regimeName,
+        bar.emperorName
     );
   }
 
@@ -438,7 +453,12 @@ final class SwimLaneLayout {
         CHIP_HEIGHT_RPX,
         countTag,
         null,
-        null
+        null,
+        "",
+        "",
+        "",
+        "",
+        ""
     );
   }
 
@@ -471,7 +491,12 @@ final class SwimLaneLayout {
         CHIP_HEIGHT_RPX,
         bar.chipTag,
         bar.priorityReason,
-        bar.entrySource
+        bar.entrySource,
+        bar.detailSource,
+        bar.civilizationName,
+        bar.dynastyName,
+        bar.regimeName,
+        bar.emperorName
     );
   }
 
@@ -481,6 +506,13 @@ final class SwimLaneLayout {
     }
     String trimmed = value.trim();
     return trimmed.isEmpty() ? null : trimmed;
+  }
+
+  private static String trimOrEmpty(String value) {
+    if (value == null) {
+      return "";
+    }
+    return value.trim();
   }
 
   private static String chipTag(String personTag) {
@@ -556,7 +588,12 @@ final class SwimLaneLayout {
       String chipTag,
       int chipWidthRpx,
       String priorityReason,
-      String entrySource
+      String entrySource,
+      String detailSource,
+      String civilizationName,
+      String dynastyName,
+      String regimeName,
+      String emperorName
   ) {
     static final Comparator<PreparedBar> ORDER = Comparator
         .comparingInt((PreparedBar bar) -> bar.priorityRank)

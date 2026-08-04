@@ -12,6 +12,7 @@ if str(ROOT) not in sys.path:
 
 from llm.openclaw_provider import default_state_dir, resolve_agent_id  # noqa: E402
 from llm.provider import run_agent_turn as _run_agent_turn  # noqa: E402
+from llm.config import PROVIDER_DEEPSEEK, ensure_deepseek_v4_pro, get_provider_name  # noqa: E402
 
 from lib.config import DEFAULT_AGENT, TRANSLATE_DIR  # noqa: E402
 from lib.mother_sentences import extract_mother_sentences, plan_min_sentence_ratio  # noqa: E402
@@ -239,6 +240,8 @@ def build_chunk_translate_prompt(
 
 
 def run_agent_turn(*args, **kwargs):
+    if get_provider_name() == PROVIDER_DEEPSEEK:
+        ensure_deepseek_v4_pro()
     kwargs.setdefault("openclaw_env_key", "TRANSLATE_AGENT")
     kwargs.setdefault("openclaw_local_env_key", "TRANSLATE_OPENCLAW_LOCAL")
     kwargs.setdefault(

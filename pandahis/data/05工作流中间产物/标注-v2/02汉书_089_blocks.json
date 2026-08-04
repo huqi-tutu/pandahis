@@ -1,0 +1,106 @@
+{
+  "work": "02汉书",
+  "vol": "089",
+  "total_paragraphs": 33,
+  "volume_subtype": "hezhuan",
+  "derived_from": "02汉书_089_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 33,
+      "paragraph_to": 33,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "盖宽饶",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 7,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "盖宽饶字次公，魏郡人也。明经为郡文学，以孝廉为郎。举方正，对策高第，迁谏大夫，行",
+        "close_paragraph": 7,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P7"
+      }
+    },
+    {
+      "name": "诸葛丰",
+      "category": "文臣",
+      "paragraph_from": 8,
+      "paragraph_to": 12,
+      "boundary_evidence": {
+        "open_paragraph": 8,
+        "open_phrase": "诸葛丰字少季，琅邪人也。以明经为郡文学，名特立刚直。贡禹为御史大夫，除丰为属，举",
+        "close_paragraph": 12,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P8–P12"
+      }
+    },
+    {
+      "name": "刘辅",
+      "category": "宗戚",
+      "paragraph_from": 13,
+      "paragraph_to": 15,
+      "boundary_evidence": {
+        "open_paragraph": 13,
+        "open_phrase": "刘辅，河间宗室人也。举孝廉，为襄贲令。上书言得失，召见，上美其材，擢为谏大夫。会",
+        "close_paragraph": 15,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P13–P15"
+      }
+    },
+    {
+      "name": "郑崇",
+      "category": "文臣",
+      "paragraph_from": 16,
+      "paragraph_to": 18,
+      "boundary_evidence": {
+        "open_paragraph": 16,
+        "open_phrase": "郑崇字子游，本高密大族，世与王家相嫁娶。祖父以訾徙平陵。父宾明法令，为御史，事贡",
+        "close_paragraph": 18,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P16–P18"
+      }
+    },
+    {
+      "name": "孙宝",
+      "category": "文臣",
+      "paragraph_from": 19,
+      "paragraph_to": 25,
+      "boundary_evidence": {
+        "open_paragraph": 19,
+        "open_phrase": "孙宝字子严，颍川鄢陵人也，以明经为郡吏。御史大夫张忠辟宝为属，欲令授子经，更为除",
+        "close_paragraph": 25,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P19–P25"
+      }
+    },
+    {
+      "name": "毋将隆",
+      "category": "文臣",
+      "paragraph_from": 26,
+      "paragraph_to": 29,
+      "boundary_evidence": {
+        "open_paragraph": 26,
+        "open_phrase": "毌将隆字君房，东海兰陵人也。大司马车骑将军王音内领尚书，外典兵马，踵故选置从事中",
+        "close_paragraph": 29,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P26–P29"
+      }
+    },
+    {
+      "name": "何并",
+      "category": "文臣",
+      "paragraph_from": 30,
+      "paragraph_to": 32,
+      "boundary_evidence": {
+        "open_paragraph": 30,
+        "open_phrase": "何并字子廉，祖父以吏二千石自平舆徙平陵。并为郡吏，至大司空掾，事何武。武高其志节",
+        "close_paragraph": 32,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P30–P32"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

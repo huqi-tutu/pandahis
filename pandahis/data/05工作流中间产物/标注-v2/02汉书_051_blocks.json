@@ -1,0 +1,106 @@
+{
+  "work": "02汉书",
+  "vol": "051",
+  "total_paragraphs": 46,
+  "volume_subtype": "hezhuan",
+  "derived_from": "02汉书_051_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 46,
+      "paragraph_to": 46,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "樊哙",
+      "category": "武将",
+      "paragraph_from": 2,
+      "paragraph_to": 10,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "樊哙，沛人也，以屠狗为事。后与高祖俱隐于芒砀山泽间。",
+        "close_paragraph": 10,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P10"
+      }
+    },
+    {
+      "name": "郦商",
+      "category": "武将",
+      "paragraph_from": 11,
+      "paragraph_to": 15,
+      "boundary_evidence": {
+        "open_paragraph": 11,
+        "open_phrase": "郦商，高阳人也。陈胜起，商聚少年得数千人。沛公略地六月余，商以所将四千人属沛公于",
+        "close_paragraph": 15,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P11–P15"
+      }
+    },
+    {
+      "name": "夏侯婴",
+      "category": "武将",
+      "paragraph_from": 16,
+      "paragraph_to": 21,
+      "boundary_evidence": {
+        "open_paragraph": 16,
+        "open_phrase": "夏侯婴，沛人也。为沛厩司御，每送使客，还过泗上亭，与高祖语，未尝不移日也。婴已而",
+        "close_paragraph": 21,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P16–P21"
+      }
+    },
+    {
+      "name": "灌婴",
+      "category": "武将",
+      "paragraph_from": 22,
+      "paragraph_to": 33,
+      "boundary_evidence": {
+        "open_paragraph": 22,
+        "open_phrase": "灌婴，睢阳贩缯者也。高祖为沛公，略地至雍丘，章邯杀项梁，而沛公还军于砀，婴以中涓",
+        "close_paragraph": 33,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P22–P33"
+      }
+    },
+    {
+      "name": "傅宽",
+      "category": "武将",
+      "paragraph_from": 34,
+      "paragraph_to": 36,
+      "boundary_evidence": {
+        "open_paragraph": 34,
+        "open_phrase": "傅宽，以魏五大夫骑将从，为舍人，起横阳。从攻安阳、杠里，赵贲军于开封，及击杨熊曲",
+        "close_paragraph": 36,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P34–P36"
+      }
+    },
+    {
+      "name": "靳歙",
+      "category": "武将",
+      "paragraph_from": 37,
+      "paragraph_to": 42,
+      "boundary_evidence": {
+        "open_paragraph": 37,
+        "open_phrase": "靳歙，以中涓从，起宛朐。攻济阳。破李由军。击秦军开封东，斩骑千人将一人，首五十七",
+        "close_paragraph": 42,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P37–P42"
+      }
+    },
+    {
+      "name": "周緤",
+      "category": "武将",
+      "paragraph_from": 43,
+      "paragraph_to": 45,
+      "boundary_evidence": {
+        "open_paragraph": 43,
+        "open_phrase": "周緤，沛人也。以舍人从高祖起沛。至霸上，西入蜀汉，还定三秦，常为参乘，赐食邑池阳",
+        "close_paragraph": 45,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P43–P45"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

@@ -1,0 +1,466 @@
+{
+  "volume": "武五子传",
+  "source_file": "02汉书_074_武五子传第三十三.txt",
+  "total_paragraphs": 44,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [],
+      "exclude_reason": "篇内小标题"
+    },
+    {
+      "paragraph": 3,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "刘据",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "刘据",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "刘据",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "刘据",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "刘据",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "刘据",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "刘据",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "刘据",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "刘据",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "刘据",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "刘闳",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "刘旦",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "刘旦",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "刘旦",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "刘旦",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "刘旦",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "刘旦",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "刘旦",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "刘旦",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "刘旦",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "刘旦",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "刘旦",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "刘旦",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "刘胥",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "刘胥",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "刘胥",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "刘胥",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "刘胥",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 34,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "昌邑王刘贺",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "昌邑王刘贺",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "昌邑王刘贺",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "昌邑王刘贺",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "昌邑王刘贺",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "昌邑王刘贺",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "昌邑王刘贺",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "昌邑王刘贺",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 44,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HANSHU_074_01",
+      "史略名称": "刘据",
+      "史略简介": "刘据",
+      "原文字句": "戾太子据，元狩元年立为皇太子，年七岁矣。初，上年二十九乃得太子，甚喜，为立禖，使东方朔、枚皋作禖祝。少壮，诏受《公羊春秋》，又从瑕丘江公受《谷梁》。及冠就宫，上为立博望苑，使通宾客，从其所好，故多以异端进者。元鼎四年，纳史良娣，产子男进，号曰史皇孙。",
+      "史略分类": "宗戚",
+      "主要史料出处": "《02汉书·卷74·武五子传》",
+      "paragraphs": [
+        {
+          "volume": "武五子传",
+          "paragraph_from": 4,
+          "paragraph_to": 13
+        }
+      ],
+      "五级细坐标": "汉书·卷074·宗戚·01",
+      "六级段落锚点": "[P4-P13]",
+      "原文出处": "武五子传·P4-P13"
+    },
+    {
+      "史略ID": "HANSHU_074_02",
+      "史略名称": "刘闳",
+      "史略简介": "刘闳",
+      "原文字句": "齐怀王闳与燕王旦、广陵王胥同日立，皆赐策，各以国土风俗申戒焉，曰：“惟元狩六年四月乙巳，皇帝使御史大夫汤庙立子闳为齐王，曰：‘乌呼！小子闳，受兹青社。朕承天序，惟稽古，建尔国家，封于东土，世为汉藩辅。乌呼！念哉，共朕之诏。惟命于不常，人之好德，克明显光；义之不图，俾君子怠。悉尔心，允执其中，天禄永终；厥有愆不臧，乃凶于乃国，而害于尔躬。呜呼！保国乂民，可不敬与！王其戒之！”闳母王夫人有宠，闳尤爱幸",
+      "史略分类": "宗戚",
+      "主要史料出处": "《02汉书·卷74·武五子传》",
+      "paragraphs": [
+        {
+          "volume": "武五子传",
+          "paragraph_from": 14,
+          "paragraph_to": 14
+        }
+      ],
+      "五级细坐标": "汉书·卷074·宗戚·02",
+      "六级段落锚点": "[P14]",
+      "原文出处": "武五子传·P14"
+    },
+    {
+      "史略ID": "HANSHU_074_03",
+      "史略名称": "刘旦",
+      "史略简介": "刘旦",
+      "原文字句": "燕刺王旦赐策曰：“呜呼！小子旦，受兹玄社，建尔国家，封于北土，世为汉藩辅。呜呼！薰鬻氏虐老兽心，以奸巧边甿。朕命将率，租征厥罪。万夫长、千夫长，三十有二帅，降旗奔师。薰鬻徙域，北州以妥。悉尔心，毋作怨，毋作棐德，毋乃废备。非教士不得从征。王其戒之！”",
+      "史略分类": "宗戚",
+      "主要史料出处": "《02汉书·卷74·武五子传》",
+      "paragraphs": [
+        {
+          "volume": "武五子传",
+          "paragraph_from": 15,
+          "paragraph_to": 26
+        }
+      ],
+      "五级细坐标": "汉书·卷074·宗戚·03",
+      "六级段落锚点": "[P15-P26]",
+      "原文出处": "武五子传·P15-P26"
+    },
+    {
+      "史略ID": "HANSHU_074_04",
+      "史略名称": "刘胥",
+      "史略简介": "刘胥",
+      "原文字句": "广陵厉王胥赐策曰：“呜呼！小子胥，受兹赤社，建尔国家，封于南土，世世为汉藩辅。古人有言曰：‘大江之南，五湖之间，其人轻心。扬州保强，三代要服，不及以正。’呜呼！悉尔心，祗祗兢兢，乃惠乃顺，毋桐好逸，毋迩宵人，惟法惟则！《书》云‘臣不作福，不作威’，靡有后羞。王其戒之！”",
+      "史略分类": "宗戚",
+      "主要史料出处": "《02汉书·卷74·武五子传》",
+      "paragraphs": [
+        {
+          "volume": "武五子传",
+          "paragraph_from": 28,
+          "paragraph_to": 32
+        }
+      ],
+      "五级细坐标": "汉书·卷074·宗戚·04",
+      "六级段落锚点": "[P28-P32]",
+      "原文出处": "武五子传·P28-P32"
+    },
+    {
+      "史略ID": "HANSHU_074_05",
+      "史略名称": "昌邑王刘贺",
+      "史略简介": "昌邑王刘贺",
+      "原文字句": "昌邑哀王髆，天汉四年立，十一年薨，子贺嗣。立十三年，昭帝崩，无嗣，大将军霍光征王贺典丧。玺书曰：“制诏昌邑王：使行大鸿胪事少府乐成，宗正德、光禄大夫吉、中郎将利汉征王，乘七乘传诣长安邸。”夜漏未尽一刻，以火发书。其日中，贺发，晡时至定陶，行百三十五里，侍从者马死相望于道。郎中令龚遂谏王，令还郎谒者五十余人。贺到济阳，求长鸣鸡，道买积竹杖。过弘农，使大奴善以衣车载女子。至湖，使者以让相安乐。安乐告遂",
+      "史略分类": "宗戚",
+      "主要史料出处": "《02汉书·卷74·武五子传》",
+      "paragraphs": [
+        {
+          "volume": "武五子传",
+          "paragraph_from": 35,
+          "paragraph_to": 42
+        }
+      ],
+      "五级细坐标": "汉书·卷074·宗戚·05",
+      "六级段落锚点": "[P35-P42]",
+      "原文出处": "武五子传·P35-P42"
+    }
+  ]
+}

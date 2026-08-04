@@ -1,0 +1,119 @@
+{
+  "work": "01史记",
+  "vol": "045",
+  "total_paragraphs": 45,
+  "volume_subtype": "hezhuan",
+  "derived_from": "01史记_045_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 5,
+      "paragraph_to": 17,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 39,
+      "paragraph_to": 44,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 45,
+      "paragraph_to": 45,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "韩厥",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 4,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "韩厥，晋景公之三年，晋司寇屠岸贾将作乱，诛灵公之贼赵盾。赵盾已死矣，欲诛其子赵朔",
+        "close_paragraph": 4,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P4"
+      }
+    },
+    {
+      "name": "韩昭侯",
+      "category": "诸侯",
+      "paragraph_from": 18,
+      "paragraph_to": 21,
+      "boundary_evidence": {
+        "open_paragraph": 18,
+        "open_phrase": "昭侯元年，秦败我西山。二年，宋取我黄池。魏取朱。六年，伐东周，取陵观、邢丘。",
+        "close_paragraph": 21,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P18–P21"
+      }
+    },
+    {
+      "name": "韩宣惠王",
+      "category": "诸侯",
+      "paragraph_from": 22,
+      "paragraph_to": 27,
+      "boundary_evidence": {
+        "open_paragraph": 22,
+        "open_phrase": "宣惠王五年，张仪相秦。八年，魏败我将韩举。十一年，君号为王。与赵会区鼠。十四年，",
+        "close_paragraph": 27,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P22–P27"
+      }
+    },
+    {
+      "name": "韩襄王",
+      "category": "诸侯",
+      "paragraph_from": 28,
+      "paragraph_to": 34,
+      "boundary_evidence": {
+        "open_paragraph": 28,
+        "open_phrase": "二十一年，与秦共攻楚，败楚将屈丐，斩首八万於丹阳。”是岁，宣惠王卒，太子仓立，是",
+        "close_paragraph": 34,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P28–P34"
+      }
+    },
+    {
+      "name": "韩釐王",
+      "category": "诸侯",
+      "paragraph_from": 35,
+      "paragraph_to": 38,
+      "boundary_evidence": {
+        "open_paragraph": 35,
+        "open_phrase": "襄王卒，太子咎立，是为釐王。",
+        "close_paragraph": 38,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P35–P38"
+      }
+    }
+  ],
+  "multi_owner_segments": [
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "韩宣惠王",
+          "category": "诸侯"
+        },
+        {
+          "name": "韩襄王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "韩襄王",
+          "category": "诸侯"
+        },
+        {
+          "name": "韩釐王",
+          "category": "诸侯"
+        }
+      ]
+    }
+  ]
+}

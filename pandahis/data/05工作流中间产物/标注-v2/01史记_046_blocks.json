@@ -1,0 +1,137 @@
+{
+  "work": "01史记",
+  "vol": "046",
+  "total_paragraphs": 76,
+  "volume_subtype": "hezhuan",
+  "derived_from": "01史记_046_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 4,
+      "paragraph_to": 27,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 68,
+      "paragraph_to": 74,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 75,
+      "paragraph_to": 75,
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph_from": 76,
+      "paragraph_to": 76,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "田敬仲完",
+      "category": "诸侯",
+      "paragraph_from": 2,
+      "paragraph_to": 3,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "庄公卒，立弟杵臼，是为宣公。宣公二十一年，杀其太子御寇。御寇与完相爱，恐祸及己，",
+        "close_paragraph": 3,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P3"
+      }
+    },
+    {
+      "name": "齐桓公午",
+      "category": "诸侯",
+      "paragraph_from": 28,
+      "paragraph_to": 30,
+      "boundary_evidence": {
+        "open_paragraph": 28,
+        "open_phrase": "齐侯太公和立二年，和卒，子桓公午立。桓公午五年，秦、魏攻韩，韩求救於齐。齐桓公召",
+        "close_paragraph": 30,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P28–P30"
+      }
+    },
+    {
+      "name": "齐威王",
+      "category": "诸侯",
+      "paragraph_from": 31,
+      "paragraph_to": 46,
+      "boundary_evidence": {
+        "open_paragraph": 31,
+        "open_phrase": "六年，救卫。桓公卒，子威王因齐立。是岁，故齐康公卒，绝无后，奉邑皆入田氏。",
+        "close_paragraph": 46,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P31–P46"
+      }
+    },
+    {
+      "name": "齐宣王",
+      "category": "诸侯",
+      "paragraph_from": 47,
+      "paragraph_to": 55,
+      "boundary_evidence": {
+        "open_paragraph": 47,
+        "open_phrase": "三十六年，威王卒，子宣王辟彊立。",
+        "close_paragraph": 55,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P47–P55"
+      }
+    },
+    {
+      "name": "齐湣王",
+      "category": "诸侯",
+      "paragraph_from": 56,
+      "paragraph_to": 67,
+      "boundary_evidence": {
+        "open_paragraph": 56,
+        "open_phrase": "十九年，宣王卒，子湣王地立。",
+        "close_paragraph": 67,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P56–P67"
+      }
+    }
+  ],
+  "multi_owner_segments": [
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "齐桓公午",
+          "category": "诸侯"
+        },
+        {
+          "name": "齐威王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 47,
+      "owners": [
+        {
+          "name": "齐威王",
+          "category": "诸侯"
+        },
+        {
+          "name": "齐宣王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 56,
+      "owners": [
+        {
+          "name": "齐宣王",
+          "category": "诸侯"
+        },
+        {
+          "name": "齐湣王",
+          "category": "诸侯"
+        }
+      ]
+    }
+  ]
+}

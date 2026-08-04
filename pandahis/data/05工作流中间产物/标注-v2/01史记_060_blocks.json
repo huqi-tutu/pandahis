@@ -1,0 +1,25 @@
+{
+  "work": "01史记",
+  "vol": "060",
+  "total_paragraphs": 34,
+  "volume_subtype": "hezhuan",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 17,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 18,
+      "paragraph_to": 18,
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph_from": 19,
+      "paragraph_to": 34,
+      "exclude_reason": "世系链"
+    }
+  ],
+  "blocks": [],
+  "multi_owner_segments": []
+}

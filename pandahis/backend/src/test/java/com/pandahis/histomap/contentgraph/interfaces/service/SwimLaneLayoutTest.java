@@ -162,7 +162,12 @@ class SwimLaneLayoutTest {
             true,
             null,
             null,
-            "extract"
+            "extract",
+            "",
+            "",
+            "",
+            "",
+            ""
         )),
         1000,
         100,
@@ -190,7 +195,12 @@ class SwimLaneLayoutTest {
             false,
             "国士无双",
             null,
-            "extract"
+            "extract",
+            "",
+            "",
+            "",
+            "",
+            ""
         )),
         1000,
         100,
@@ -229,7 +239,12 @@ class SwimLaneLayoutTest {
             false,
             "国士无双",
             null,
-            "extract"
+            "extract",
+            "",
+            "",
+            "",
+            "",
+            ""
         )),
         1000,
         100,
@@ -261,7 +276,7 @@ class SwimLaneLayoutTest {
       int end,
       String priority
   ) {
-    return new SwimLaneLayout.SwimBarInput(boxId, title, start, end, priority, null, null, false, null, null, "extract");
+    return new SwimLaneLayout.SwimBarInput(boxId, title, start, end, priority, null, null, false, null, null, "extract", "", "", "", "", "");
   }
 
   private static SwimLaneLayout.SwimBarInput bar(
@@ -272,7 +287,7 @@ class SwimLaneLayoutTest {
       String priority,
       Integer peakYear
   ) {
-    return new SwimLaneLayout.SwimBarInput(boxId, title, start, end, priority, peakYear, null, false, null, null, "extract");
+    return new SwimLaneLayout.SwimBarInput(boxId, title, start, end, priority, peakYear, null, false, null, null, "extract", "", "", "", "", "");
   }
 
   private static int rowOf(UnitSwimMatrixDTO.LaneView view, String boxId) {

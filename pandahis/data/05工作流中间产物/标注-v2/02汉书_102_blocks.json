@@ -1,0 +1,87 @@
+{
+  "work": "02汉书",
+  "vol": "102",
+  "total_paragraphs": 31,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "02汉书_102_user_protagonists.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 2,
+      "paragraph_to": 5,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 9,
+      "paragraph_to": 9,
+      "exclude_reason": "共段总述"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "文翁",
+      "category": "文臣",
+      "paragraph_from": 6,
+      "paragraph_to": 8,
+      "boundary_evidence": {
+        "open_paragraph": 6,
+        "open_phrase": "文翁，庐江舒人也。少好学，通《春秋》，以郡县吏察举。景帝末，为蜀郡守，仁爱好教化。见蜀地辟陋有蛮夷风，文翁欲诱进之，乃选",
+        "close_paragraph": 8,
+        "close_note": "用户白名单 manual repair P6–P8"
+      }
+    },
+    {
+      "name": "黄霸",
+      "category": "文臣",
+      "paragraph_from": 10,
+      "paragraph_to": 19,
+      "boundary_evidence": {
+        "open_paragraph": 10,
+        "open_phrase": "黄霸字次公，淮阳阳夏人也，以豪杰役使徙云陵。霸少学律令，喜为吏，武帝末以待诏入钱赏官，补侍郎谒者，坐同产有罪劾免。后复入",
+        "close_paragraph": 19,
+        "close_note": "用户白名单 manual repair P10–P19"
+      }
+    },
+    {
+      "name": "朱邑",
+      "category": "文臣",
+      "paragraph_from": 20,
+      "paragraph_to": 23,
+      "boundary_evidence": {
+        "open_paragraph": 20,
+        "open_phrase": "朱邑字仲卿，庐江舒人也。少时为舒桐乡啬夫，廉平不苛，以爱利为行，未尝笞辱人，存问耆老孤寡，遇之有恩，所部吏民爱敬焉。迁补",
+        "close_paragraph": 23,
+        "close_note": "用户白名单 manual repair P20–P23"
+      }
+    },
+    {
+      "name": "龚遂",
+      "category": "文臣",
+      "paragraph_from": 24,
+      "paragraph_to": 27,
+      "boundary_evidence": {
+        "open_paragraph": 24,
+        "open_phrase": "龚遂字少卿，山阳南平阳人也。以明经为官，至昌邑郎中令，事王贺。贺动作多不正，遂为人忠厚，刚毅有大节，内谏争于王，外责傅相",
+        "close_paragraph": 27,
+        "close_note": "用户白名单 manual repair P24–P27"
+      }
+    },
+    {
+      "name": "召信臣",
+      "category": "文臣",
+      "paragraph_from": 28,
+      "paragraph_to": 31,
+      "boundary_evidence": {
+        "open_paragraph": 28,
+        "open_phrase": "召信臣字翁卿，九江寿春人也。以明经甲科为郎，出补谷阳长。举高第，迁上蔡长。其治视民如子，所居见称述，超为零陵太守，病归。",
+        "close_paragraph": 31,
+        "close_note": "用户白名单 manual repair P28–P31"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

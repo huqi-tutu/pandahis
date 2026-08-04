@@ -1,0 +1,31 @@
+{
+  "work": "02汉书",
+  "vol": "109",
+  "volume_name": "西南夷两粤朝鲜传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "西南夷",
+      "category": "蕃祚",
+      "rationale": "卷名首列西南夷，为边陲诸夷部族集体主题，属蕃祚卷型，非单一君王。"
+    },
+    {
+      "name": "两粤",
+      "category": "蕃祚",
+      "rationale": "卷名次列两粤（南越、东越），为边陲政权集体主题，属蕃祚卷型，非单一君王。"
+    },
+    {
+      "name": "朝鲜",
+      "category": "蕃祚",
+      "rationale": "卷名末列朝鲜，为边陲政权集体主题，属蕃祚卷型，非单一君王。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

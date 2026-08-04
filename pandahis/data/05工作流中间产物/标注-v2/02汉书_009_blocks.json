@@ -1,0 +1,32 @@
+{
+  "work": "02汉书",
+  "vol": "009",
+  "total_paragraphs": 146,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 146,
+      "paragraph_to": 146,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "汉宣帝",
+      "category": "君王",
+      "paragraph_from": 2,
+      "paragraph_to": 145,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "孝宣皇帝，武帝曾孙，戾太子孙也。太子纳史良娣，生史皇孙。皇孙纳王夫人，生宣帝，号",
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

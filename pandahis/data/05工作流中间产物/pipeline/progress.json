@@ -1,0 +1,172 @@
+{
+  "updated_at": "2026-08-02T00:55:41Z",
+  "dynasties": {
+    "春秋": {
+      "dynasty": "春秋",
+      "track": "extract",
+      "total": 202,
+      "global_count": 202,
+      "persons": 167,
+      "supplement_count": 34,
+      "unmerged_06": [
+        "GLBL_01021",
+        "GLBL_01022",
+        "GLBL_01023",
+        "GLBL_01024",
+        "GLBL_01025",
+        "GLBL_01026",
+        "GLBL_01027",
+        "GLBL_01028",
+        "GLBL_01029",
+        "GLBL_01030",
+        "GLBL_01031",
+        "GLBL_01032",
+        "GLBL_01033",
+        "GLBL_01034",
+        "GLBL_01035",
+        "GLBL_01036",
+        "GLBL_01037",
+        "GLBL_01038",
+        "GLBL_01039",
+        "GLBL_01040",
+        "GLBL_01041",
+        "GLBL_01042",
+        "GLBL_01043",
+        "GLBL_01044",
+        "GLBL_01045",
+        "GLBL_01046",
+        "GLBL_01047",
+        "GLBL_01048",
+        "GLBL_01049",
+        "GLBL_01050",
+        "GLBL_01051",
+        "GLBL_01052",
+        "GLBL_01053",
+        "GLBL_01054",
+        "GLBL_01055",
+        "GLBL_01056",
+        "GLBL_01057",
+        "GLBL_01058",
+        "GLBL_01059",
+        "GLBL_01060",
+        "GLBL_01061",
+        "GLBL_01062",
+        "GLBL_01063",
+        "GLBL_01064",
+        "GLBL_01065",
+        "GLBL_01066",
+        "GLBL_01067",
+        "GLBL_01068",
+        "GLBL_01069",
+        "GLBL_01070",
+        "GLBL_01071",
+        "GLBL_01072",
+        "GLBL_01073",
+        "GLBL_01074",
+        "GLBL_01075",
+        "GLBL_01076",
+        "GLBL_01077",
+        "GLBL_01078",
+        "GLBL_01079",
+        "GLBL_01080",
+        "GLBL_01081",
+        "GLBL_01082",
+        "GLBL_01083",
+        "GLBL_01084",
+        "GLBL_01085",
+        "GLBL_01086"
+      ],
+      "knowledge_expected": 119,
+      "knowledge_filled": 119,
+      "knowledge_active": true,
+      "S1": {
+        "status": "done",
+        "count": "202/202",
+        "blockers": []
+      },
+      "S2": {
+        "status": "done",
+        "count": "202/202",
+        "blockers": []
+      },
+      "S3": {
+        "status": "done",
+        "count": "peak 202/202 tag 167/167 (留空27)",
+        "blockers": []
+      },
+      "S4": {
+        "status": "done",
+        "count": "202/202",
+        "blockers": []
+      },
+      "S5": {
+        "status": "done",
+        "count": "202/202",
+        "blockers": []
+      },
+      "S6": {
+        "status": "done",
+        "count": "pass",
+        "blockers": []
+      },
+      "P1": {
+        "status": "done",
+        "count": "local 202/202 db 202/202",
+        "blockers": []
+      },
+      "P2": {
+        "status": "done",
+        "count": "local 167/167 db 167/167",
+        "blockers": []
+      },
+      "K1": {
+        "status": "done",
+        "count": "119/119",
+        "blockers": []
+      },
+      "K2": {
+        "status": "done",
+        "count": "yes",
+        "blockers": []
+      },
+      "K3": {
+        "status": "done",
+        "count": "119/119",
+        "blockers": []
+      },
+      "K4": {
+        "status": "blocked",
+        "count": "59/119",
+        "blockers": [
+          "缺 compose 详情 60/119"
+        ]
+      },
+      "K5": {
+        "status": "blocked",
+        "count": "59/119",
+        "blockers": [
+          "全局索引缺 60 条候选"
+        ]
+      },
+      "K6": {
+        "status": "blocked",
+        "count": "idx 59/119 detail 59/119",
+        "blockers": [
+          "须先完成 K5 merge（59/119）"
+        ]
+      },
+      "extract_complete": true,
+      "knowledge_complete": false,
+      "current_step": "K4",
+      "current_k_step": "K4",
+      "blockers": [
+        "缺 compose 详情 60/119",
+        "全局索引缺 60 条候选",
+        "须先完成 K5 merge（59/119）",
+        "缺 compose 详情 60/119",
+        "全局索引缺 60 条候选",
+        "须先完成 K5 merge（59/119）"
+      ]
+    }
+  }
+}

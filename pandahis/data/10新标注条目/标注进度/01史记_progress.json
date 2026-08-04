@@ -1,0 +1,31 @@
+{
+  "work": "01史记",
+  "updated_at": "2026-07-31T13:20:42Z",
+  "volumes": {
+    "084": {
+      "skeleton_file": "01史记_084_屈原贾生列传第二十四_skeleton.json",
+      "volume_name": "屈原贾生列传",
+      "steps": {
+        "1": {
+          "status": "failed",
+          "at": "2026-07-31T13:20:42Z",
+          "detail": "缺少段落索引: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/段落索引/01史记_084.json"
+        },
+        "2": {
+          "status": "pending",
+          "at": null
+        },
+        "3": {
+          "status": "pending",
+          "at": null
+        },
+        "4": {
+          "status": "pending",
+          "at": null
+        }
+      },
+      "overall": "failed",
+      "blocked_reason": null
+    }
+  }
+}

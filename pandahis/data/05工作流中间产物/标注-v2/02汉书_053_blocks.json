@@ -1,0 +1,82 @@
+{
+  "work": "02汉书",
+  "vol": "053",
+  "total_paragraphs": 37,
+  "volume_subtype": "hezhuan",
+  "derived_from": "02汉书_053_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 37,
+      "paragraph_to": 37,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "郦食其",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 9,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "郦食其，陈留高阳人也。好读书，家贫落魄，无衣食业。为里监门，然吏县中贤豪不敢役，",
+        "close_paragraph": 9,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P9"
+      }
+    },
+    {
+      "name": "陆贾",
+      "category": "文臣",
+      "paragraph_from": 10,
+      "paragraph_to": 16,
+      "boundary_evidence": {
+        "open_paragraph": 10,
+        "open_phrase": "陆贾，楚人也。以客从高祖定天下，名有口辩，居左右，常使诸侯。",
+        "close_paragraph": 16,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P10–P16"
+      }
+    },
+    {
+      "name": "朱建",
+      "category": "文臣",
+      "paragraph_from": 17,
+      "paragraph_to": 21,
+      "boundary_evidence": {
+        "open_paragraph": 17,
+        "open_phrase": "朱建，楚人也。故尝为淮南王黥布相，有罪去，后复事布。布欲反时，问建，建谏止之。布",
+        "close_paragraph": 21,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P17–P21"
+      }
+    },
+    {
+      "name": "刘敬",
+      "category": "文臣",
+      "paragraph_from": 22,
+      "paragraph_to": 26,
+      "boundary_evidence": {
+        "open_paragraph": 22,
+        "open_phrase": "娄敬，齐人也。汉五年，戍陇西，过雒阳，高帝在焉。敬脱挽辂，见齐人虞将军曰：“臣愿",
+        "close_paragraph": 26,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P22–P26"
+      }
+    },
+    {
+      "name": "叔孙通",
+      "category": "文臣",
+      "paragraph_from": 27,
+      "paragraph_to": 36,
+      "boundary_evidence": {
+        "open_paragraph": 27,
+        "open_phrase": "叔孙通，薛人也。秦时以文学征，待诏博士。数岁，陈胜起，二世召博士诸儒生问曰：“楚",
+        "close_paragraph": 36,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P27–P36"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

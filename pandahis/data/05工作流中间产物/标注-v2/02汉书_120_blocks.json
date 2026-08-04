@@ -1,0 +1,32 @@
+{
+  "work": "02汉书",
+  "total_paragraphs": 3,
+  "volume_subtype": "skip",
+  "narrative_mode": "skip",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 3,
+      "paragraph_to": 3,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "班固",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 2,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "百官公卿表第七下",
+        "close_note": "skip 卷占位 block，skeleton 全 exclude"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

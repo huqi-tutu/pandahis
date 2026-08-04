@@ -1,0 +1,46 @@
+{
+  "work": "01史记",
+  "vol": "120",
+  "total_paragraphs": 26,
+  "volume_subtype": "hezhuan",
+  "derived_from": "01史记_120_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 25,
+      "paragraph_to": 25,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 26,
+      "paragraph_to": 26,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "汲黯",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 18,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "汲黯字长孺，濮阳人也。其先有宠於古之卫君。至黯七世，世为卿大夫。黯以父任，孝景时",
+        "close_paragraph": 18,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P1–P18"
+      }
+    },
+    {
+      "name": "郑当时",
+      "category": "文臣",
+      "paragraph_from": 19,
+      "paragraph_to": 24,
+      "boundary_evidence": {
+        "open_paragraph": 19,
+        "open_phrase": "郑当时者，字庄，陈人也。其先郑君尝为项籍将；籍死，已而属汉。高祖令诸故项籍臣名籍",
+        "close_paragraph": 24,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P19–P24"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

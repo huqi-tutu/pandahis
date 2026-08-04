@@ -1,0 +1,27 @@
+{
+  "work": "01史记",
+  "vol": "108",
+  "total_paragraphs": 22,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 22,
+      "paragraph_to": 22,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "韩安国",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 21,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "御史大夫韩安国者，梁成安人也，后徙睢阳。尝受韩子、杂家说於驺田生所。",
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

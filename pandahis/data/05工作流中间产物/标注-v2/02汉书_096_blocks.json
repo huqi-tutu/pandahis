@@ -1,0 +1,27 @@
+{
+  "work": "02汉书",
+  "vol": "096",
+  "total_paragraphs": 40,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "翟方进",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 40,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "翟方进字子威，汝南上蔡人也。家世微贱，至方进父翟公，好学，为郡文学。方进年十二三",
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

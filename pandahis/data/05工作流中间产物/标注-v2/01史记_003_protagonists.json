@@ -1,0 +1,35 @@
+{
+  "work": "01史记",
+  "vol": "003",
+  "volume_name": "殷本纪",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "benji_multi",
+  "volume_type_guess": "本纪（Top5）",
+  "protagonists": [
+    {
+      "name": "成汤",
+      "category": "君王",
+      "rationale": "灭桀建商；含 P11 汤崩收束（P3–P11）。"
+    },
+    {
+      "name": "太甲",
+      "category": "君王",
+      "rationale": "伊尹放太甲、还政，太宗故事。"
+    },
+    {
+      "name": "盘庚",
+      "category": "君王",
+      "rationale": "五迁复亳，殷道复兴。"
+    },
+    {
+      "name": "武丁",
+      "category": "君王",
+      "rationale": "傅说相殷、高宗中兴。"
+    },
+    {
+      "name": "帝辛（纣）",
+      "category": "君王",
+      "rationale": "纣王亡国，牧野之败。"
+    }
+  ]
+}

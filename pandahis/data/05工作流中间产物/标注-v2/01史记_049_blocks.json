@@ -1,0 +1,45 @@
+{
+  "work": "01史记",
+  "vol": "049",
+  "total_paragraphs": 56,
+  "volume_subtype": "hezhuan",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 15,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 35,
+      "paragraph_to": 56,
+      "exclude_reason": "世系链"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "王皇后",
+      "category": "宗戚",
+      "paragraph_from": 16,
+      "paragraph_to": 28,
+      "boundary_evidence": {
+        "open_paragraph": 16,
+        "open_phrase": "王太后，槐里人，母曰臧儿。臧儿者，故燕王臧荼孙也。臧儿嫁为槐里王仲妻，生男曰信，",
+        "close_paragraph": 28,
+        "close_note": "人工订正"
+      }
+    },
+    {
+      "name": "卫子夫",
+      "category": "宗戚",
+      "paragraph_from": 29,
+      "paragraph_to": 34,
+      "boundary_evidence": {
+        "open_paragraph": 29,
+        "open_phrase": "卫皇后字子夫，生微矣。盖其家号曰卫氏，出平阳侯邑。子夫为平阳主讴者。",
+        "close_paragraph": 34,
+        "close_note": "人工订正"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

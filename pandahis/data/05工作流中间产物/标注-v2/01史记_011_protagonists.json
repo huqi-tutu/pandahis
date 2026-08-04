@@ -1,0 +1,18 @@
+{
+  "work": "01史记",
+  "vol": "011",
+  "volume_name": "孝景本纪",
+  "volume_type_guess": "本纪",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "汉景帝",
+      "category": "君王",
+      "rationale": "卷名《孝景本纪》为西汉景帝刘启之专纪，属单人本纪，主轴即汉景帝本人。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰"
+  ]
+}

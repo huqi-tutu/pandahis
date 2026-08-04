@@ -1,0 +1,124 @@
+{
+  "work": "01史记",
+  "vol": "038",
+  "total_paragraphs": 64,
+  "volume_subtype": "hezhuan",
+  "derived_from": "01史记_038_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 4,
+      "paragraph_to": 5,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 8,
+      "paragraph_to": 25,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 27,
+      "paragraph_to": 38,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 45,
+      "paragraph_to": 47,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 54,
+      "paragraph_to": 57,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 61,
+      "paragraph_to": 62,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 63,
+      "paragraph_to": 63,
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph_from": 64,
+      "paragraph_to": 64,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "微子启",
+      "category": "宗戚",
+      "paragraph_from": 1,
+      "paragraph_to": 3,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "微子开者，殷帝乙之首子而帝纣之庶兄也。纣既立，不明，淫乱於政，微子数谏，纣不听。",
+        "close_paragraph": 3,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P1–P3"
+      }
+    },
+    {
+      "name": "微子启",
+      "category": "宗戚",
+      "paragraph_from": 6,
+      "paragraph_to": 7,
+      "boundary_evidence": {
+        "open_paragraph": 6,
+        "open_phrase": "微子曰：“父子有骨肉，而臣主以义属。故父有过，子三谏不听，则随而号之；人臣三谏不",
+        "close_paragraph": 7,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P6–P7"
+      }
+    },
+    {
+      "name": "微子启",
+      "category": "宗戚",
+      "paragraph_from": 26,
+      "paragraph_to": 26,
+      "boundary_evidence": {
+        "open_paragraph": 26,
+        "open_phrase": "武王崩，成王少，周公旦代行政当国。管、蔡疑之，乃与武庚作乱，欲袭成王、周公。周公",
+        "close_paragraph": 26,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P26–P26"
+      }
+    },
+    {
+      "name": "宋襄公",
+      "category": "君王",
+      "paragraph_from": 39,
+      "paragraph_to": 44,
+      "boundary_evidence": {
+        "open_paragraph": 39,
+        "open_phrase": "桓公二年，诸侯伐宋，至郊而去。三年，齐桓公始霸。二十三年，迎卫公子燬於齐，立之，",
+        "close_paragraph": 44,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P39–P44"
+      }
+    },
+    {
+      "name": "宋文公",
+      "category": "君王",
+      "paragraph_from": 48,
+      "paragraph_to": 53,
+      "boundary_evidence": {
+        "open_paragraph": 48,
+        "open_phrase": "九年，昭公无道，国人不附。昭公弟鲍革贤而下士。先，襄公夫人欲通於公子鲍，不可，乃",
+        "close_paragraph": 53,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P48–P53"
+      }
+    },
+    {
+      "name": "宋景公",
+      "category": "君王",
+      "paragraph_from": 58,
+      "paragraph_to": 60,
+      "boundary_evidence": {
+        "open_paragraph": 58,
+        "open_phrase": "景公十六年，鲁阳虎来奔，已复去。二十五年，孔子过宋，宋司马桓魋恶之，欲杀孔子，孔",
+        "close_paragraph": 60,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P58–P60"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

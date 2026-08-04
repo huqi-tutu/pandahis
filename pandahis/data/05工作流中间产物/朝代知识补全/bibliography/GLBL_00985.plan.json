@@ -1,0 +1,86 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00985",
+  "写作结构": "正史叙述见翻译详录（《史记·南越列传》赵佗与西瓯相关内容）。拓展文先以《逸周书·王会解》所载南贡瓯人，点明西瓯为南方古老部族；再引《淮南子·人间训》记秦征五岭、杀西呕君译吁宋，呼应秦时瓯越未设郡县却遭征伐的背景。其余内部组织、外交细节及具体战斗过程留白，不编造。",
+  "候选著作": [
+    {
+      "出处": "《史记·南越列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "西瓯依附南越及赵佗上书见本传，是条目主要史料出处",
+      "检索词": "西瓯",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《逸周书·王会解》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "载正南方国瓯邓等以珠玑、象齿等为献，学者认为其中之瓯即西瓯先族，可彰其源出古老",
+      "检索词": "瓯邓",
+      "采用": true,
+      "原文摘句": "正南瓯邓、桂国、损子、产里、百濮、九菌，请令以珠玑、玳瑁、象齿、文犀、翠羽、菌鹤、短狗为献。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《淮南子·人间训》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "记秦始皇发卒攻越，杀西呕君译吁宋，是西瓯抵抗秦军的异说补充",
+      "检索词": "西呕君译吁宋",
+      "采用": true,
+      "原文摘句": "以与越人战，杀西呕君译吁宋。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·南越列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "西瓯依附南越及赵佗上书见本传，是条目主要史料出处",
+      "检索词": "西瓯",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《逸周书·王会解》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "载正南方国瓯邓等以珠玑、象齿等为献，学者认为其中之瓯即西瓯先族，可彰其源出古老",
+      "检索词": "瓯邓",
+      "采用": true,
+      "原文摘句": "正南瓯邓、桂国、损子、产里、百濮、九菌，请令以珠玑、玳瑁、象齿、文犀、翠羽、菌鹤、短狗为献。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《淮南子·人间训》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "记秦始皇发卒攻越，杀西呕君译吁宋，是西瓯抵抗秦军的异说补充",
+      "检索词": "西呕君译吁宋",
+      "采用": true,
+      "原文摘句": "以与越人战，杀西呕君译吁宋。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 1,
+    "overall": "B"
+  }
+}

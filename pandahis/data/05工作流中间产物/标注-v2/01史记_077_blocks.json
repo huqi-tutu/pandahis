@@ -1,0 +1,27 @@
+{
+  "work": "01史记",
+  "vol": "077",
+  "total_paragraphs": 26,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 26,
+      "paragraph_to": 26,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "魏公子无忌",
+      "category": "宗戚",
+      "paragraph_from": 1,
+      "paragraph_to": 25,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "魏公子无忌者，魏昭王少子而魏安釐王异母弟也。昭王薨，安釐王即位，封公子为信陵君。",
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

@@ -1,0 +1,41 @@
+{
+  "work": "01史记",
+  "vol": "121",
+  "volume_name": "儒林列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "申公",
+      "category": "文臣",
+      "rationale": "《儒林列传》以汉代儒学传承诸儒为主轴，申公为《诗》学鲁诗派开创者，有独立叙事段。"
+    },
+    {
+      "name": "辕固生",
+      "category": "文臣",
+      "rationale": "《儒林列传》以汉代儒学传承诸儒为主轴，辕固生为《诗》学齐诗派代表，有独立叙事段。"
+    },
+    {
+      "name": "韩婴",
+      "category": "文臣",
+      "rationale": "《儒林列传》以汉代儒学传承诸儒为主轴，韩婴为《诗》学韩诗派开创者，有独立叙事段。"
+    },
+    {
+      "name": "伏生",
+      "category": "文臣",
+      "rationale": "《儒林列传》以汉代儒学传承诸儒为主轴，伏生为《尚书》学传承关键人物，有独立叙事段。"
+    },
+    {
+      "name": "董仲舒",
+      "category": "文臣",
+      "rationale": "《儒林列传》以汉代儒学传承诸儒为主轴，董仲舒为《春秋》公羊学大师，有独立叙事段。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ],
+  "volume_arc": "B",
+  "volume_subtype": "liezhuan_hezhuan"
+}

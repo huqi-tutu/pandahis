@@ -247,8 +247,11 @@ def run_dynasty_llm(
     timeout_sec: int = 180,
     on_batch_done: Optional[Callable[[], None]] = None,
 ) -> Dict[str, int]:
+    from llm.config import ensure_annotate_model, get_provider_name, PROVIDER_DEEPSEEK  # noqa: E402
     from llm.provider import run_agent_turn  # noqa: E402
 
+    if get_provider_name() == PROVIDER_DEEPSEEK:
+        ensure_annotate_model()
     stats = {"llm": 0, "fallback": 0, "flagged": 0}
     ordered = _sort_dynasty_entries(entries)
     batches = _chunk(ordered, batch_size if len(ordered) > 35 else len(ordered))

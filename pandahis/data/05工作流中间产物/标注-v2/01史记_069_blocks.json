@@ -1,0 +1,32 @@
+{
+  "work": "01史记",
+  "vol": "069",
+  "total_paragraphs": 83,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 82,
+      "paragraph_to": 82,
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph_from": 83,
+      "paragraph_to": 83,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "苏秦",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 81,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "苏秦者，东周雒阳人也。东事师於齐，而习之於鬼谷先生。",
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

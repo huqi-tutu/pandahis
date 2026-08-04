@@ -1,0 +1,32 @@
+{
+  "work": "02汉书",
+  "vol": "003",
+  "total_paragraphs": 31,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 31,
+      "paragraph_to": 31,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "汉惠帝",
+      "category": "君王",
+      "paragraph_from": 2,
+      "paragraph_to": 30,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "孝惠皇帝，高祖太子也，母曰吕皇后。帝年五岁，高祖初为汉王。二年，立为太子。十二年",
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

@@ -11,7 +11,9 @@ sys.path.insert(0, str(ROOT))
 
 from paths_config import (  # noqa: E402
     DEFAULT_HISTOGRAPH_ROOT,
+    ENV_ANNOTATE_TRACK,
     FORBIDDEN_ROOTS,
+    get_annotate_track,
     histograph_paths,
     validate_histograph_root,
 )
@@ -32,6 +34,8 @@ def main() -> int:
         return 1
 
     p = histograph_paths()
+    track = get_annotate_track()
+    print(f"ℹ️  当前标注轨道: {track} ({ENV_ANNOTATE_TRACK})")
     checks = [
         ("原文", p["sources"]),
         ("标注索引", p["annotations"]),
@@ -74,6 +78,7 @@ def main() -> int:
     print("\n建议环境变量（写入 shell profile 或 .env）：")
     print("  export HIST_LLM_PROVIDER=deepseek")
     print(f"  export HISTOGRAPH_ROOT={DEFAULT_HISTOGRAPH_ROOT}")
+    print("  export HIST_ANNOTATE_TRACK=v2   # 新版标注时使用")
 
     return 0 if ok else 1
 

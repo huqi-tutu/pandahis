@@ -1,0 +1,37 @@
+{
+  "work": "02汉书",
+  "vol": "013",
+  "total_paragraphs": 49,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 2,
+      "paragraph_to": 2,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 49,
+      "paragraph_to": 49,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "汉平帝",
+      "category": "君王",
+      "paragraph_from": 3,
+      "paragraph_to": 48,
+      "boundary_evidence": {
+        "open_paragraph": 3,
+        "open_phrase": "孝平皇帝，元帝庶孙，中山孝王子也。母曰卫姬。年三岁嗣立为王。元寿二年六月，哀帝崩",
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

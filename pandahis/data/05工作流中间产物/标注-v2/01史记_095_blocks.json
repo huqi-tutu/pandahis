@@ -1,0 +1,80 @@
+{
+  "work": "01史记",
+  "vol": "095",
+  "total_paragraphs": 46,
+  "volume_subtype": "hezhuan",
+  "derived_from": "01史记_095_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 15,
+      "paragraph_to": 15,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 22,
+      "paragraph_to": 22,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 30,
+      "paragraph_to": 30,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 46,
+      "paragraph_to": 46,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "樊哙",
+      "category": "武将",
+      "paragraph_from": 1,
+      "paragraph_to": 14,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "舞阳侯樊哙者，沛人也。以屠狗为事，与高祖俱隐。",
+        "close_paragraph": 14,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P1–P14"
+      }
+    },
+    {
+      "name": "郦商",
+      "category": "武将",
+      "paragraph_from": 16,
+      "paragraph_to": 21,
+      "boundary_evidence": {
+        "open_paragraph": 16,
+        "open_phrase": "曲周侯郦商者，高阳人。陈胜起时，商聚少年东西略人，得数千。沛公略地至陈留，六月馀",
+        "close_paragraph": 21,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P16–P21"
+      }
+    },
+    {
+      "name": "滕公（夏侯婴）",
+      "category": "武将",
+      "paragraph_from": 23,
+      "paragraph_to": 29,
+      "boundary_evidence": {
+        "open_paragraph": 23,
+        "open_phrase": "汝阴侯夏侯婴，沛人也。为沛厩司御。每送使客还，过沛泗上亭，与高祖语，未尝不移日也",
+        "close_paragraph": 29,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P23–P29"
+      }
+    },
+    {
+      "name": "灌婴",
+      "category": "武将",
+      "paragraph_from": 31,
+      "paragraph_to": 45,
+      "boundary_evidence": {
+        "open_paragraph": 31,
+        "open_phrase": "颍阴侯灌婴者，睢阳贩缯者也。高祖之为沛公，略地至雍丘下，章邯败杀项梁，而沛公还军",
+        "close_paragraph": 45,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P31–P45"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

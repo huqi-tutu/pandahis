@@ -45,10 +45,12 @@ def unit_to_claim(unit: CoverageUnit) -> ClaimSpec:
 
 def _translate_llm_call(entry_id: str, prompt: str) -> str:
     """语义覆盖专用：DeepSeek JSON 模式 + temperature=0，避免非 JSON 输出。"""
-    from llm.config import PROVIDER_DEEPSEEK, get_provider_name
+    from llm.config import PROVIDER_DEEPSEEK, ensure_deepseek_v4_pro, get_provider_name
     from llm.deepseek_provider import run_deepseek_turn
     from lib.openclaw import run_agent_turn
 
+    if get_provider_name() == PROVIDER_DEEPSEEK:
+        ensure_deepseek_v4_pro()
     nonce = uuid.uuid4().hex[:8]
     session_id = f"tr-cov-{entry_id.replace('_', '-').lower()}-{nonce}"
     if get_provider_name() == PROVIDER_DEEPSEEK:

@@ -1,0 +1,27 @@
+{
+  "work": "02汉书",
+  "vol": "099",
+  "total_paragraphs": 41,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "扬雄",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 41,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "扬雄字子云，蜀郡成都人也。其先出自有周伯侨者，以支庶初食采于晋之扬，因氏焉，不知",
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

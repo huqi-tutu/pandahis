@@ -1,0 +1,41 @@
+{
+  "work": "01史记",
+  "vol": "083",
+  "total_paragraphs": 33,
+  "volume_subtype": "hezhuan",
+  "derived_from": "01史记_083_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 33,
+      "paragraph_to": 33,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "鲁仲连",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 16,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "鲁仲连者，齐人也。好奇伟俶傥之画策，而不肯仕宦任职，好持高节。游於赵。",
+        "close_paragraph": 16,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P1–P16"
+      }
+    },
+    {
+      "name": "邹阳",
+      "category": "文臣",
+      "paragraph_from": 17,
+      "paragraph_to": 32,
+      "boundary_evidence": {
+        "open_paragraph": 17,
+        "open_phrase": "邹阳者，齐人也。游於梁，与故吴人庄忌夫子、淮阴枚生之徒交。上书而介於羊胜、公孙诡",
+        "close_paragraph": 32,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P17–P32"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

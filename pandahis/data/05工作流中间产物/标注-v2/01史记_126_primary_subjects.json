@@ -1,0 +1,224 @@
+{
+  "work": "01史记",
+  "vol": "126",
+  "total_paragraphs": 39,
+  "method": "Step1b-α LLM",
+  "paragraphs": [
+    {
+      "paragraph": 1,
+      "primary_subject": "太史公曰",
+      "disposition": "exclude",
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph": 2,
+      "primary_subject": "淳于髡",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 3,
+      "primary_subject": "淳于髡",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 4,
+      "primary_subject": "淳于髡",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 5,
+      "primary_subject": "淳于髡",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 6,
+      "primary_subject": "淳于髡",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 7,
+      "primary_subject": "优孟",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 8,
+      "primary_subject": "优孟",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 9,
+      "primary_subject": "优孟",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 10,
+      "primary_subject": "优孟",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 11,
+      "primary_subject": "优孟",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 12,
+      "primary_subject": "优旃",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 13,
+      "primary_subject": "优旃",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 14,
+      "primary_subject": "优旃",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 15,
+      "primary_subject": "优旃",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 16,
+      "primary_subject": "优旃",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 17,
+      "primary_subject": "优旃",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 18,
+      "primary_subject": "太史公曰",
+      "disposition": "exclude",
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph": 19,
+      "primary_subject": "褚先生曰",
+      "disposition": "exclude",
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 20,
+      "primary_subject": "郭舍人",
+      "disposition": "exclude",
+      "exclude_reason": "非主轴人物"
+    },
+    {
+      "paragraph": 21,
+      "primary_subject": "东方朔",
+      "disposition": "exclude",
+      "exclude_reason": "非主轴人物"
+    },
+    {
+      "paragraph": 22,
+      "primary_subject": "东方朔",
+      "disposition": "exclude",
+      "exclude_reason": "非主轴人物"
+    },
+    {
+      "paragraph": 23,
+      "primary_subject": "东方朔",
+      "disposition": "exclude",
+      "exclude_reason": "非主轴人物"
+    },
+    {
+      "paragraph": 24,
+      "primary_subject": "东方朔",
+      "disposition": "exclude",
+      "exclude_reason": "非主轴人物"
+    },
+    {
+      "paragraph": 25,
+      "primary_subject": "东方朔",
+      "disposition": "exclude",
+      "exclude_reason": "非主轴人物"
+    },
+    {
+      "paragraph": 26,
+      "primary_subject": "东方朔",
+      "disposition": "exclude",
+      "exclude_reason": "非主轴人物"
+    },
+    {
+      "paragraph": 27,
+      "primary_subject": "东郭先生",
+      "disposition": "exclude",
+      "exclude_reason": "非主轴人物"
+    },
+    {
+      "paragraph": 28,
+      "primary_subject": "淳于髡",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 29,
+      "primary_subject": "淳于髡",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 30,
+      "primary_subject": "王先生",
+      "disposition": "exclude",
+      "exclude_reason": "非主轴人物"
+    },
+    {
+      "paragraph": 31,
+      "primary_subject": "王先生",
+      "disposition": "exclude",
+      "exclude_reason": "非主轴人物"
+    },
+    {
+      "paragraph": 32,
+      "primary_subject": "王先生",
+      "disposition": "exclude",
+      "exclude_reason": "非主轴人物"
+    },
+    {
+      "paragraph": 33,
+      "primary_subject": "西门豹",
+      "disposition": "exclude",
+      "exclude_reason": "非主轴人物"
+    },
+    {
+      "paragraph": 34,
+      "primary_subject": "西门豹",
+      "disposition": "exclude",
+      "exclude_reason": "非主轴人物"
+    },
+    {
+      "paragraph": 35,
+      "primary_subject": "西门豹",
+      "disposition": "exclude",
+      "exclude_reason": "非主轴人物"
+    },
+    {
+      "paragraph": 36,
+      "primary_subject": "西门豹",
+      "disposition": "exclude",
+      "exclude_reason": "非主轴人物"
+    },
+    {
+      "paragraph": 37,
+      "primary_subject": "西门豹",
+      "disposition": "exclude",
+      "exclude_reason": "非主轴人物"
+    },
+    {
+      "paragraph": 38,
+      "primary_subject": "西门豹",
+      "disposition": "exclude",
+      "exclude_reason": "非主轴人物"
+    },
+    {
+      "paragraph": 39,
+      "primary_subject": "论赞",
+      "disposition": "exclude",
+      "exclude_reason": "论赞"
+    }
+  ]
+}

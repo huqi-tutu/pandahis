@@ -1,0 +1,141 @@
+{
+  "volume": "田单列传",
+  "source_file": "01史记_082_田单列传第二十二.txt",
+  "total_paragraphs": 15,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "single",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [
+        {
+          "name": "田单",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "田单",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "田单",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "田单",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "田单",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "田单",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "田单",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "田单",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "田单",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [],
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph": 11,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 12,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 13,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 14,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 15,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SHIJI_082_01",
+      "史略名称": "田单",
+      "史略简介": "田单",
+      "原文字句": "田单者，齐诸田疏属也。湣王时，单为临菑市掾，不见知。及燕使乐毅伐破齐，齐湣王出奔，已而保莒城。燕师长驱平齐，而田单走安平，令其宗人尽断其车轴末而傅铁笼。已而燕军攻安平，城坏，齐人走，争涂，以轊折车败，为燕所虏，唯田单宗人以铁笼故得脱，东保即墨。燕既尽降齐城，唯独莒、即墨不下。",
+      "史略分类": "武将",
+      "主要史料出处": "《史记·卷82·田单列传》",
+      "paragraphs": [
+        {
+          "volume": "田单列传",
+          "paragraph_from": 1,
+          "paragraph_to": 9
+        }
+      ],
+      "五级细坐标": "史记·卷082·武将·01",
+      "六级段落锚点": "[P1-P9]",
+      "原文出处": "田单列传·P1-P9"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "work": "01史记",
+  "vol": "122",
+  "volume_name": "酷吏列传",
+  "narrative_mode": "hezhuan",
+  "protagonists": [
+    {
+      "name": "郅都",
+      "category": "文臣",
+      "rationale": "酷吏列传主轴，P5-P9。"
+    },
+    {
+      "name": "义纵",
+      "category": "文臣",
+      "rationale": "酷吏列传主轴，P36-P40。"
+    },
+    {
+      "name": "张汤",
+      "category": "文臣",
+      "rationale": "酷吏列传主轴，P23-P33。"
+    },
+    {
+      "name": "王温舒",
+      "category": "文臣",
+      "rationale": "酷吏列传主轴，P41-P43。"
+    },
+    {
+      "name": "杜周",
+      "category": "文臣",
+      "rationale": "酷吏列传主轴，P58-P60。"
+    }
+  ]
+}

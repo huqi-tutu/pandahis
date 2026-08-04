@@ -1,0 +1,106 @@
+{
+  "work": "02汉书",
+  "vol": "083",
+  "total_paragraphs": 31,
+  "volume_subtype": "hezhuan",
+  "derived_from": "02汉书_083_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 31,
+      "paragraph_to": 31,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "隽不疑",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 6,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "隽不疑字曼倩，勃海人也。治《春秋》，为郡文学，进退必以礼，名闻州郡。",
+        "close_paragraph": 6,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P6"
+      }
+    },
+    {
+      "name": "疏广",
+      "category": "文臣",
+      "paragraph_from": 7,
+      "paragraph_to": 11,
+      "boundary_evidence": {
+        "open_paragraph": 7,
+        "open_phrase": "疏广字仲翁，东海兰陵人也。少好学，明《春秋》，家居教授，学者自远方至。征为博士、",
+        "close_paragraph": 11,
+        "close_note": "人工修正：P7–11 主轴疏广（疏受不设条目）"
+      }
+    },
+    {
+      "name": "疏广",
+      "category": "文臣",
+      "paragraph_from": 7,
+      "paragraph_to": 11,
+      "boundary_evidence": {
+        "open_paragraph": 9,
+        "open_phrase": "太子外祖父特进平恩侯许伯以为太子少，白使其弟中郎将舜监护太子家。上以问广，广对曰",
+        "close_paragraph": 11,
+        "close_note": "人工修正：P7–11 主轴疏广（疏受不设条目）"
+      }
+    },
+    {
+      "name": "于定国",
+      "category": "文臣",
+      "paragraph_from": 12,
+      "paragraph_to": 19,
+      "boundary_evidence": {
+        "open_paragraph": 12,
+        "open_phrase": "于定国字曼倩，东海郯人也。其父于公为县狱吏、郡决曹，决狱平，罗文法者于公所决皆不",
+        "close_paragraph": 19,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P12–P19"
+      }
+    },
+    {
+      "name": "薛广德",
+      "category": "文臣",
+      "paragraph_from": 20,
+      "paragraph_to": 22,
+      "boundary_evidence": {
+        "open_paragraph": 20,
+        "open_phrase": "薛广德字长卿，沛郡相人也。以《鲁诗》教授楚国，龚胜、舍师事焉。萧望之为御史大夫，",
+        "close_paragraph": 22,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P20–P22"
+      }
+    },
+    {
+      "name": "平当",
+      "category": "文臣",
+      "paragraph_from": 23,
+      "paragraph_to": 27,
+      "boundary_evidence": {
+        "open_paragraph": 23,
+        "open_phrase": "平当字子思，祖父以訾百万，自下邑徙平陵。当少为大行治礼丞，功次补大鸿胪文学，察廉",
+        "close_paragraph": 27,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P23–P27"
+      }
+    },
+    {
+      "name": "彭宣",
+      "category": "文臣",
+      "paragraph_from": 28,
+      "paragraph_to": 30,
+      "boundary_evidence": {
+        "open_paragraph": 28,
+        "open_phrase": "鼓宣字子佩，淮阳阳夏人也。治《易》，事张禹，举为博士，迁东平太傅。禹以帝师见尊信",
+        "close_paragraph": 30,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P28–P30"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

@@ -44,9 +44,11 @@ ssh "${SSH_OPTS[@]}" "$REMOTE" "mkdir -p '${REMOTE_DIR}'"
 scp "${SSH_OPTS[@]}" "$JAR" "${REMOTE}:${REMOTE_DIR}/histomap-api-0.1.0.jar"
 
 echo "==> 3/4 重启 ${SERVICE_NAME}"
+# 释放 8080：历史上曾有脱离 PM2 的 orphan java 占端口，导致 PM2 新进程起不来但 health 仍由旧进程应答
+ssh "${SSH_OPTS[@]}" "$REMOTE" "fuser -k 8080/tcp >/dev/null 2>&1 || true; sleep 1"
 if ssh "${SSH_OPTS[@]}" "$REMOTE" "systemctl is-enabled ${SERVICE_NAME} >/dev/null 2>&1"; then
   ssh "${SSH_OPTS[@]}" "$REMOTE" "sudo systemctl restart ${SERVICE_NAME} && sudo systemctl is-active ${SERVICE_NAME}"
-elif ssh "${SSH_OPTS[@]}" "$REMOTE" "command -v pm2 >/dev/null 2>&1 && pm2 describe ${SERVICE_NAME} >/dev/null 2>&1"; then
+elif ssh "${SSH_OPTS[@]}" "$REMOTE" "command -v pm2 >/dev/null 2>&1"; then
   # 确保进程从正确目录以绝对路径启动，避免仍跑旧 JAR
   ssh "${SSH_OPTS[@]}" "$REMOTE" "pm2 delete ${SERVICE_NAME} >/dev/null 2>&1 || true; pm2 start java --name ${SERVICE_NAME} --cwd '${REMOTE_DIR}' -- -jar '${REMOTE_DIR}/histomap-api-0.1.0.jar' && pm2 save"
 else
@@ -55,7 +57,16 @@ else
 fi
 
 echo "==> 4/4 健康检查"
-sleep 8
+sleep 12
+# 确认 8080 由 PM2/systemd 管理的进程监听（非 orphan）
+ssh "${SSH_OPTS[@]}" "$REMOTE" "ss -tlnp | grep ':8080' || (echo '错误：8080 无监听进程' >&2; exit 1)"
+if ssh "${SSH_OPTS[@]}" "$REMOTE" "command -v pm2 >/dev/null 2>&1 && pm2 describe ${SERVICE_NAME} >/dev/null 2>&1"; then
+  RESTARTS=$(ssh "${SSH_OPTS[@]}" "$REMOTE" "pm2 jlist 2>/dev/null | python3 -c \"import sys,json; apps=json.load(sys.stdin); print(next((a.get('pm2_env',{}).get('restart_time',99) for a in apps if a.get('name')=='${SERVICE_NAME}'),99))\"")
+  if [[ "${RESTARTS}" != "0" ]]; then
+    echo "警告：${SERVICE_NAME} PM2 重启次数=${RESTARTS}，请 ssh 查看 pm2 logs" >&2
+    exit 1
+  fi
+fi
 curl -fsS "https://www.pandahis.com/api/v1/health" | python3 -m json.tool
 # 冒烟：搜索不应再 INTERNAL_ERROR；头像路由应存在（无登录为 UNAUTHORIZED/INVALID，不是 NOT_FOUND）
 SEARCH_CODE=$(curl -sS "https://www.pandahis.com/api/v1/search?q=test" | python3 -c 'import sys,json; print(json.load(sys.stdin).get("code"))')

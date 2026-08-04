@@ -1,0 +1,27 @@
+{
+  "work": "01史记",
+  "vol": "092",
+  "total_paragraphs": 45,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 45,
+      "paragraph_to": 45,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "韩信",
+      "category": "武将",
+      "paragraph_from": 1,
+      "paragraph_to": 44,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "淮阴侯韩信者，淮阴人也。始为布衣时，贫无行，不得推择为吏，又不能治生商贾，常从人",
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

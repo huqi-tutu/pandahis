@@ -1,0 +1,24 @@
+{
+  "work": "01史记",
+  "vol": "112",
+  "volume_name": "平津侯主父列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "公孙弘",
+      "category": "文臣",
+      "rationale": "卷名『平津侯』即公孙弘封号，平津侯主父列传为合传，公孙弘为卷名首列人物，以儒学仕宦至丞相封侯，属文臣主轴。"
+    },
+    {
+      "name": "主父偃",
+      "category": "文臣",
+      "rationale": "卷名『主父』即主父偃，与公孙弘并列合传，以纵横策论游说武帝得用，属文臣主轴。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

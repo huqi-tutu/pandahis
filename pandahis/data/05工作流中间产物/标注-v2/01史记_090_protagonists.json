@@ -1,0 +1,24 @@
+{
+  "work": "01史记",
+  "vol": "090",
+  "volume_name": "魏豹彭越列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "魏豹",
+      "category": "武将",
+      "rationale": "秦末汉初魏王，合传主轴之一；旧标注取武将（非帝王.json列国君主）。"
+    },
+    {
+      "name": "彭越",
+      "category": "武将",
+      "rationale": "梁王、汉初名将，合传双主轴。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

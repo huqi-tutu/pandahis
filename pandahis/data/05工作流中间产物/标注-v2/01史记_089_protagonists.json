@@ -1,0 +1,26 @@
+{
+  "work": "01史记",
+  "vol": "089",
+  "volume_name": "张耳陈馀列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_arc": "C",
+  "volume_subtype": "liezhuan_hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "张耳",
+      "category": "文臣",
+      "rationale": "秦末汉初名士、赵王；封王但史略分类取文臣（同旧标注），非帝王.json列国君主。"
+    },
+    {
+      "name": "陈馀",
+      "category": "文臣",
+      "rationale": "与张耳合传双主轴；代王但史略分类取文臣（同旧标注）。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "work": "01史记",
+  "vol": "070",
+  "total_paragraphs": 77,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 76,
+      "paragraph_to": 76,
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph_from": 77,
+      "paragraph_to": 77,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "张仪",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 75,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "张仪者，魏人也。始尝与苏秦俱事鬼谷先生，学术，苏秦自以不及张仪。",
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

@@ -1,0 +1,116 @@
+{
+  "work": "02汉书",
+  "vol": "113",
+  "total_paragraphs": 63,
+  "volume_subtype": "hezhuan",
+  "derived_from": "02汉书_113_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 2,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 3,
+      "paragraph_to": 3,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 58,
+      "paragraph_to": 62,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 63,
+      "paragraph_to": 63,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "孝成许皇后",
+      "category": "宗戚",
+      "paragraph_from": 4,
+      "paragraph_to": 15,
+      "boundary_evidence": {
+        "open_paragraph": 4,
+        "open_phrase": "孝成许皇后，大司马车骑将军平恩侯嘉女也。元帝悼伤母恭哀后居位日浅而遭霍氏之辜，故",
+        "close_paragraph": 15,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P4–P15"
+      }
+    },
+    {
+      "name": "孝成班婕妤",
+      "category": "宗戚",
+      "paragraph_from": 16,
+      "paragraph_to": 22,
+      "boundary_evidence": {
+        "open_paragraph": 16,
+        "open_phrase": "孝成班婕妤。帝初即位选入后宫。始为少使，蛾而大幸，为婕妤，居增成舍，再就馆，有男",
+        "close_paragraph": 22,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P16–P22"
+      }
+    },
+    {
+      "name": "孝成赵皇后",
+      "category": "宗戚",
+      "paragraph_from": 23,
+      "paragraph_to": 40,
+      "boundary_evidence": {
+        "open_paragraph": 23,
+        "open_phrase": "孝成赵皇后，本长安宫人。初生时，父母不举，三日不死，乃收养之。及壮，属阳阿主家，",
+        "close_paragraph": 40,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P23–P40"
+      }
+    },
+    {
+      "name": "孝元傅昭仪",
+      "category": "宗戚",
+      "paragraph_from": 41,
+      "paragraph_to": 45,
+      "boundary_evidence": {
+        "open_paragraph": 41,
+        "open_phrase": "孝元傅昭仪，哀帝祖母也。父河内温人，蚤卒，母更嫁为魏郡郑翁妻，生男恽。昭仪少为上",
+        "close_paragraph": 45,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P41–P45"
+      }
+    },
+    {
+      "name": "孝哀丁姬",
+      "category": "宗戚",
+      "paragraph_from": 46,
+      "paragraph_to": 50,
+      "boundary_evidence": {
+        "open_paragraph": 46,
+        "open_phrase": "定陶丁姬，哀帝母也，《易》祖师丁将军之玄孙。家在山阳瑕丘，父至庐江太守。始，定陶",
+        "close_paragraph": 50,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P46–P50"
+      }
+    },
+    {
+      "name": "孝哀傅皇后",
+      "category": "宗戚",
+      "paragraph_from": 51,
+      "paragraph_to": 51,
+      "boundary_evidence": {
+        "open_paragraph": 51,
+        "open_phrase": "孝哀傅皇后，定陶太后从弟子也。哀帝为定陶王时，傅太后欲重亲，取以配王。王入为汉太",
+        "close_paragraph": 51,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P51–P51"
+      }
+    },
+    {
+      "name": "孝元冯昭仪",
+      "category": "宗戚",
+      "paragraph_from": 52,
+      "paragraph_to": 57,
+      "boundary_evidence": {
+        "open_paragraph": 52,
+        "open_phrase": "孝元冯昭仪，平帝祖母也。元帝即位二年，以选入后宫。时父奉世为执金吾。昭仪始为长使",
+        "close_paragraph": 57,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P52–P57"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

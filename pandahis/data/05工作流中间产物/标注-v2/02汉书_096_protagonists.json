@@ -1,0 +1,20 @@
+{
+  "work": "02汉书",
+  "vol": "096",
+  "volume_name": "翟方进传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "翟方进",
+      "category": "文臣",
+      "rationale": "卷名《翟方进传》为单人列传，翟方进为西汉成帝朝丞相，以行政、刑名、儒学仕宦为主轴，符合文臣准入标准。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

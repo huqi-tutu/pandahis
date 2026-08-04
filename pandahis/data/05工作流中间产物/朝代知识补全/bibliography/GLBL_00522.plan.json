@@ -1,0 +1,85 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00522",
+  "写作结构": "正史叙述以《史记·白起王翦列传》及《秦始皇本纪》等为主体，由翻译详录完成；拓展部分重点引入出土文献《睡虎地秦简·编年纪》做时间与战役节点印证，可简要展示秦简原文；《资治通鉴》因全录《史记》而无新增信息，仅作后世编年标记，不独立展开；与anchor冲突的一切细节均不写入。",
+  "候选著作": [
+    {
+      "出处": "《睡虎地秦墓竹简·编年纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载秦始皇二十三年攻荆（楚）等大事，可印证王翦破楚的时间节点与战况，属新增史外信息。",
+      "检索词": "编年纪 廿三年 攻荆",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《资治通鉴·秦纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "北宋编年体通史，收录王翦伐楚、请田等事，全依《史记》，无传闻异辞。",
+      "检索词": "王翦 六十万",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·秦始皇本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "秦本纪包含王翦攻赵、灭楚等事，属正史体系，不拓展摘句。",
+      "检索词": "",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《睡虎地秦墓竹简·编年纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载秦始皇二十三年攻荆（楚）等大事，可印证王翦破楚的时间节点与战况，属新增史外信息。",
+      "检索词": "编年纪 廿三年 攻荆",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·秦始皇本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "秦本纪包含王翦攻赵、灭楚等事，属正史体系，不拓展摘句。",
+      "检索词": "",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《资治通鉴·秦纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "北宋编年体通史，收录王翦伐楚、请田等事，全依《史记》，无传闻异辞。",
+      "检索词": "王翦 六十万",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 1,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

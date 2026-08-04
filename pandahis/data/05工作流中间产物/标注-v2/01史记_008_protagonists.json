@@ -1,0 +1,19 @@
+{
+  "work": "01史记",
+  "vol": "008",
+  "volume_name": "高祖本纪",
+  "volume_type_guess": "本纪",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "汉高祖",
+      "category": "君王",
+      "rationale": "《高祖本纪》为西汉开国皇帝刘邦之专纪，卷名即指汉高祖，整卷以其生平与功业为主轴叙事，属单人本纪。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

@@ -1,0 +1,193 @@
+{
+  "volume": "管晏列传",
+  "source_file": "01史记_062_管晏列传第二.txt",
+  "total_paragraphs": 17,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [
+        {
+          "name": "管仲",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "管仲",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "管仲",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "管仲",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "管仲",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "管仲",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "管仲",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "管仲",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "管仲",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "晏婴",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "晏婴",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "晏婴",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "晏婴",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "晏婴",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "晏婴",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [],
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph": 17,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SHIJI_062_01",
+      "史略名称": "管仲",
+      "史略简介": "管仲",
+      "原文字句": "管仲夷吾者，颍上人也。少时常与鲍叔牙游，鲍叔知其贤。管仲贫困，常欺鲍叔，鲍叔终善遇之，不以为言。已而鲍叔事齐公子小白，管仲事公子纠。及小白立，为桓公，公子纠死，管仲囚焉。鲍叔遂进管仲。管仲既用，任政於齐，齐桓公以霸，九合诸侯，一匡天下，管仲之谋也。",
+      "史略分类": "文臣",
+      "主要史料出处": "《史记·卷62·管晏列传》",
+      "paragraphs": [
+        {
+          "volume": "管晏列传",
+          "paragraph_from": 1,
+          "paragraph_to": 9
+        }
+      ],
+      "五级细坐标": "史记·卷062·文臣·01",
+      "六级段落锚点": "[P1-P9]",
+      "原文出处": "管晏列传·P1-P9"
+    },
+    {
+      "史略ID": "SHIJI_062_02",
+      "史略名称": "晏婴",
+      "史略简介": "晏婴",
+      "原文字句": "晏平仲婴者，莱之夷维人也。事齐灵公、庄公、景公，以节俭力行重於齐。",
+      "史略分类": "文臣",
+      "主要史料出处": "《史记·卷62·管晏列传》",
+      "paragraphs": [
+        {
+          "volume": "管晏列传",
+          "paragraph_from": 10,
+          "paragraph_to": 15
+        }
+      ],
+      "五级细坐标": "史记·卷062·文臣·02",
+      "六级段落锚点": "[P10-P15]",
+      "原文出处": "管晏列传·P10-P15"
+    }
+  ]
+}

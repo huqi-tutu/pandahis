@@ -1,0 +1,32 @@
+{
+  "work": "02汉书",
+  "vol": "004",
+  "total_paragraphs": 18,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 18,
+      "paragraph_to": 18,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "吕太后",
+      "category": "宗戚",
+      "paragraph_from": 2,
+      "paragraph_to": 17,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "高皇后吕氏，生惠帝。佐高祖定天下，父兄及高祖而侯者三人。惠帝即位，尊吕后为太后。",
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

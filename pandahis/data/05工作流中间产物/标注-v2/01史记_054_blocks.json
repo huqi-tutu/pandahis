@@ -1,0 +1,27 @@
+{
+  "work": "01史记",
+  "vol": "054",
+  "total_paragraphs": 26,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 26,
+      "paragraph_to": 26,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "曹参",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 25,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "平阳侯曹参者，沛人也。秦时为沛狱掾，而萧何为主吏，居县为豪吏矣。",
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

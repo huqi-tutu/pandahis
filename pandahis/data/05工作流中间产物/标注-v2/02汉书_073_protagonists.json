@@ -1,0 +1,20 @@
+{
+  "work": "02汉书",
+  "vol": "073",
+  "volume_name": "司马迁传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "司马迁",
+      "category": "文臣",
+      "rationale": "《汉书》卷七十三为《司马迁传》，属单人列传。司马迁为太史令、史官，以文学、史学仕宦为主轴，虽受宫刑但非以宦官身份为卷主轴，依史略分类v4准入标准，应归文臣。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "work": "01史记",
+  "vol": "051",
+  "volume_name": "荆燕世家",
+  "volume_type_guess": "世家",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "刘贾",
+      "category": "宗戚",
+      "rationale": "《荆燕世家》为汉初同姓诸侯王合传，刘贾为荆王，属高祖从父兄，同姓藩王，按宗戚专则应归宗戚。"
+    },
+    {
+      "name": "刘泽",
+      "category": "宗戚",
+      "rationale": "《荆燕世家》卷名所指燕王刘泽，属高祖从祖昆弟，同姓藩王，按宗戚专则应归宗戚。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

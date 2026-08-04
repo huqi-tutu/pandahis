@@ -1,0 +1,32 @@
+{
+  "work": "02汉书",
+  "vol": "047",
+  "volume_name": "季布栾布田叔传",
+  "volume_type_guess": "列传",
+  "volume_arc": "C",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "季布",
+      "category": "武将",
+      "rationale": "《季布栾布田叔传》卷名首列人物，合传主人公之一。季布本为项羽将，后仕汉，以军功、任侠著称，主轴为武将。"
+    },
+    {
+      "name": "栾布",
+      "category": "武将",
+      "rationale": "《季布栾布田叔传》卷名次列人物，合传主人公之一。栾布以军功封侯，曾为梁王彭越大夫，后仕汉为将，主轴为武将。"
+    },
+    {
+      "name": "田叔",
+      "category": "文臣",
+      "rationale": "《季布栾布田叔传》卷名末列人物，合传主人公之一。田叔以廉直、贤良著称，仕赵王、汉中守等职，以行政、德行为主轴，属文臣。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

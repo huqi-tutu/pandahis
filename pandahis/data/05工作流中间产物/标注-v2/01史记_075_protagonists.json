@@ -1,0 +1,19 @@
+{
+  "work": "01史记",
+  "vol": "075",
+  "volume_name": "孟尝君列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "孟尝君",
+      "category": "文臣",
+      "rationale": "战国四公子之一，卷名主轴；封君非列国君主，史略分类取文臣（同旧标注口径）。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

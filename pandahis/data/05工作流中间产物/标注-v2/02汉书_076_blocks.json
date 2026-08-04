@@ -1,0 +1,70 @@
+{
+  "work": "02汉书",
+  "vol": "076",
+  "total_paragraphs": 40,
+  "volume_subtype": "hezhuan",
+  "derived_from": "02汉书_076_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 40,
+      "paragraph_to": 40,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "严安",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 7,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "严安者，临菑人也。以故丞相史上书，曰：",
+        "close_paragraph": 7,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P7"
+      }
+    },
+    {
+      "name": "终军",
+      "category": "文臣",
+      "paragraph_from": 8,
+      "paragraph_to": 17,
+      "boundary_evidence": {
+        "open_paragraph": 8,
+        "open_phrase": "终军字子云，济南人也。少好学，以辩博能属文闻于郡中。年十八，选为博士弟子。至府受",
+        "close_paragraph": 17,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P8–P17"
+      }
+    },
+    {
+      "name": "王褒",
+      "category": "文臣",
+      "paragraph_from": 18,
+      "paragraph_to": 27,
+      "boundary_evidence": {
+        "open_paragraph": 18,
+        "open_phrase": "王褒字子渊，蜀人也。宣帝时修武帝故事，讲论六艺群书，博尽奇异之好，征能为《楚辞》",
+        "close_paragraph": 27,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P18–P27"
+      }
+    },
+    {
+      "name": "贾捐之",
+      "category": "文臣",
+      "paragraph_from": 28,
+      "paragraph_to": 39,
+      "boundary_evidence": {
+        "open_paragraph": 28,
+        "open_phrase": "贾捐之字君房，贾谊之曾孙也。元帝初即位，上疏言得失，召待诏金马门。",
+        "close_paragraph": 39,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P28–P39"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

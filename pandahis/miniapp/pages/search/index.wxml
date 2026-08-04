@@ -18,22 +18,32 @@
           adjust-position="{{true}}"
           cursor-spacing="{{40}}"
         />
-        <text wx:if="{{keyword}}" class="search-clear" catchtap="onClear">✕</text>
+        <view wx:if="{{keyword}}" class="search-clear" catchtap="onClear">
+          <text class="search-clear-ico">✕</text>
+        </view>
       </view>
     </view>
 
-    <!-- 热门搜索 -->
+    <!-- 热门搜索：TOP10 横滑 -->
     <view class="search-section" wx:if="{{hotKeywords.length}}">
       <text class="search-section-title">热门搜索</text>
-      <view class="search-tags">
-        <view
-          wx:for="{{hotKeywords}}"
-          wx:key="keyword"
-          class="search-tag"
-          bindtap="tapKeyword"
-          data-k="{{item.keyword}}"
-        >{{item.keyword}}</view>
-      </view>
+      <scroll-view
+        class="hot-scroll"
+        scroll-x
+        enhanced
+        show-scrollbar="{{false}}"
+        enable-flex
+      >
+        <view class="hot-inner">
+          <view
+            wx:for="{{hotKeywords}}"
+            wx:key="keyword"
+            class="search-tag {{item.isHot ? 'hot' : ''}}"
+            bindtap="tapKeyword"
+            data-k="{{item.keyword}}"
+          >{{item.keyword}}</view>
+        </view>
+      </scroll-view>
     </view>
 
     <!-- 最近搜索 -->
@@ -45,16 +55,20 @@
           wx:key="keyword"
           class="search-history-item"
         >
-          <text
+          <view
             class="search-history-text"
             bindtap="tapKeyword"
             data-k="{{item.keyword}}"
-          >{{item.keyword}}</text>
-          <text
+          >{{item.keyword}}</view>
+          <view
             class="search-history-del"
             catchtap="removeHistory"
             data-k="{{item.keyword}}"
-          >✕</text>
+            hover-class="search-history-del--hover"
+            hover-stay-time="80"
+          >
+            <text class="search-history-del-ico">✕</text>
+          </view>
         </view>
       </view>
     </view>

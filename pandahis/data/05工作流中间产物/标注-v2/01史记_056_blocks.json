@@ -1,0 +1,32 @@
+{
+  "work": "01史记",
+  "vol": "056",
+  "total_paragraphs": 39,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 38,
+      "paragraph_to": 38,
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph_from": 39,
+      "paragraph_to": 39,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "陈平",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 37,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "陈丞相平者，阳武户牖乡人也。少时家贫，好读书，有田三十亩，独与兄伯居。伯常耕田，",
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

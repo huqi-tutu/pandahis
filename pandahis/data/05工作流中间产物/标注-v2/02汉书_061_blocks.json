@@ -1,0 +1,70 @@
+{
+  "work": "02汉书",
+  "vol": "061",
+  "total_paragraphs": 62,
+  "volume_subtype": "hezhuan",
+  "derived_from": "02汉书_061_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 62,
+      "paragraph_to": 62,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "贾山",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 12,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "贾山，颍川人也。祖父祛，故魏王时博士弟子也。山受学祛，所言涉猎书记，不能为醇儒。",
+        "close_paragraph": 12,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P12"
+      }
+    },
+    {
+      "name": "邹阳",
+      "category": "文臣",
+      "paragraph_from": 13,
+      "paragraph_to": 35,
+      "boundary_evidence": {
+        "open_paragraph": 13,
+        "open_phrase": "邹阳，齐人也。汉兴，诸侯王皆自治民聘贤。吴王濞招致四方游士，阳与吴严忌、枚乘等俱",
+        "close_paragraph": 35,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P13–P35"
+      }
+    },
+    {
+      "name": "枚乘",
+      "category": "文臣",
+      "paragraph_from": 36,
+      "paragraph_to": 52,
+      "boundary_evidence": {
+        "open_paragraph": 36,
+        "open_phrase": "枚乘字叔，淮阴人也，为吴王濞郎中。吴王之初怨望谋为逆也，乘奏书谏曰：",
+        "close_paragraph": 52,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P36–P52"
+      }
+    },
+    {
+      "name": "路温舒",
+      "category": "文臣",
+      "paragraph_from": 53,
+      "paragraph_to": 61,
+      "boundary_evidence": {
+        "open_paragraph": 53,
+        "open_phrase": "路温舒字长君，巨鹿东里人也。父为里监门。使温舒牧羊，温舒取泽中蒲，截以为牒，编用",
+        "close_paragraph": 61,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P53–P61"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

@@ -1,0 +1,343 @@
+[
+  {
+    "id": "GLBL_00038",
+    "name": "周穆王",
+    "side": "末尾",
+    "missing": [
+      35,
+      36
+    ],
+    "v1_range": "P32-P34",
+    "status": "enrich_lost",
+    "lost_count": 0,
+    "lost_samples": [],
+    "enrich_lost": [
+      "西王母",
+      "八骏",
+      "侧面反映"
+    ],
+    "append_redundant": [],
+    "patch_mode_old": "append",
+    "append_mode_old": true
+  },
+  {
+    "id": "GLBL_00052",
+    "name": "宋景公",
+    "side": "末尾",
+    "missing": [
+      60
+    ],
+    "v1_range": "P58-P59",
+    "status": "ok",
+    "lost_count": 0,
+    "lost_samples": [],
+    "enrich_lost": [],
+    "append_redundant": [],
+    "patch_mode_old": "append",
+    "append_mode_old": true
+  },
+  {
+    "id": "GLBL_00057",
+    "name": "帝喾",
+    "side": "末尾",
+    "missing": [
+      14
+    ],
+    "v1_range": "P11-P13",
+    "status": "ok",
+    "lost_count": 0,
+    "lost_samples": [],
+    "enrich_lost": [],
+    "append_redundant": [],
+    "patch_mode_old": "append",
+    "append_mode_old": true
+  },
+  {
+    "id": "GLBL_00058",
+    "name": "帝辛（纣）",
+    "side": "末尾",
+    "missing": [
+      40
+    ],
+    "v1_range": "P33-P39",
+    "status": "enrich_lost",
+    "lost_count": 0,
+    "lost_samples": [],
+    "enrich_lost": [
+      "至此"
+    ],
+    "append_redundant": [],
+    "patch_mode_old": "append",
+    "append_mode_old": true
+  },
+  {
+    "id": "GLBL_00061",
+    "name": "晋悼公",
+    "side": "开头",
+    "missing": [
+      151
+    ],
+    "v1_range": "P152-P156",
+    "status": "mother_lost",
+    "lost_count": 1,
+    "lost_samples": [
+      "悼公元年正月庚申"
+    ],
+    "enrich_lost": [],
+    "append_redundant": [],
+    "patch_mode_old": "prepend",
+    "append_mode_old": false
+  },
+  {
+    "id": "GLBL_00062",
+    "name": "晋文公",
+    "side": "末尾",
+    "missing": [
+      103
+    ],
+    "v1_range": "P62-P102",
+    "status": "ok",
+    "lost_count": 0,
+    "lost_samples": [],
+    "enrich_lost": [],
+    "append_redundant": [],
+    "patch_mode_old": "append",
+    "append_mode_old": true
+  },
+  {
+    "id": "GLBL_00065",
+    "name": "晋献公",
+    "side": "开头",
+    "missing": [
+      23
+    ],
+    "v1_range": "P24-P44",
+    "status": "ok",
+    "lost_count": 0,
+    "lost_samples": [],
+    "enrich_lost": [],
+    "append_redundant": [],
+    "patch_mode_old": "prepend",
+    "append_mode_old": false
+  },
+  {
+    "id": "GLBL_00068",
+    "name": "楚庄王",
+    "side": "开头",
+    "missing": [
+      30
+    ],
+    "v1_range": "P31-P42",
+    "status": "ok",
+    "lost_count": 0,
+    "lost_samples": [],
+    "enrich_lost": [],
+    "append_redundant": [],
+    "patch_mode_old": "prepend",
+    "append_mode_old": false
+  },
+  {
+    "id": "GLBL_00073",
+    "name": "武丁",
+    "side": "开头",
+    "missing": [
+      25
+    ],
+    "v1_range": "P26-P27",
+    "status": "ok",
+    "lost_count": 0,
+    "lost_samples": [],
+    "enrich_lost": [],
+    "append_redundant": [],
+    "patch_mode_old": "prepend",
+    "append_mode_old": false
+  },
+  {
+    "id": "GLBL_00096",
+    "name": "禹",
+    "side": "末尾",
+    "missing": [
+      38
+    ],
+    "v1_range": "P1-P37",
+    "status": "ok",
+    "lost_count": 0,
+    "lost_samples": [],
+    "enrich_lost": [],
+    "append_redundant": [],
+    "patch_mode_old": "append",
+    "append_mode_old": true
+  },
+  {
+    "id": "GLBL_00147",
+    "name": "魏文侯",
+    "side": "末尾",
+    "missing": [
+      17,
+      18,
+      19
+    ],
+    "v1_range": "P10-P16",
+    "status": "enrich_lost",
+    "lost_count": 0,
+    "lost_samples": [],
+    "enrich_lost": [
+      "至此"
+    ],
+    "append_redundant": [],
+    "patch_mode_old": "append",
+    "append_mode_old": true
+  },
+  {
+    "id": "GLBL_00148",
+    "name": "魏武侯",
+    "side": "开头",
+    "missing": [
+      19
+    ],
+    "v1_range": "P20-P22",
+    "status": "ok",
+    "lost_count": 0,
+    "lost_samples": [],
+    "enrich_lost": [],
+    "append_redundant": [],
+    "patch_mode_old": "prepend",
+    "append_mode_old": false
+  },
+  {
+    "id": "GLBL_00421",
+    "name": "管仲",
+    "side": "末尾",
+    "missing": [
+      9
+    ],
+    "v1_range": "P1-P8",
+    "status": "ok",
+    "lost_count": 0,
+    "lost_samples": [],
+    "enrich_lost": [],
+    "append_redundant": [],
+    "patch_mode_old": "append",
+    "append_mode_old": true
+  },
+  {
+    "id": "GLBL_00429",
+    "name": "范睢",
+    "side": "末尾",
+    "missing": [
+      41,
+      42,
+      43
+    ],
+    "v1_range": "P1-P40",
+    "status": "enrich_lost",
+    "lost_count": 0,
+    "lost_samples": [],
+    "enrich_lost": [
+      "至此",
+      "最高处"
+    ],
+    "append_redundant": [],
+    "patch_mode_old": "append",
+    "append_mode_old": true
+  },
+  {
+    "id": "GLBL_00442",
+    "name": "虞卿",
+    "side": "开头",
+    "missing": [
+      14
+    ],
+    "v1_range": "P15-P27",
+    "status": "ok",
+    "lost_count": 0,
+    "lost_samples": [],
+    "enrich_lost": [],
+    "append_redundant": [],
+    "patch_mode_old": "prepend",
+    "append_mode_old": false
+  },
+  {
+    "id": "GLBL_00696",
+    "name": "卫庄公",
+    "side": "开头",
+    "missing": [
+      9
+    ],
+    "v1_range": "P10-P10",
+    "status": "enrich_lost",
+    "lost_count": 0,
+    "lost_samples": [],
+    "enrich_lost": [
+      "政治遗产"
+    ],
+    "append_redundant": [],
+    "patch_mode_old": "prepend",
+    "append_mode_old": false
+  },
+  {
+    "id": "GLBL_00704",
+    "name": "宋文公",
+    "side": "末尾",
+    "missing": [
+      53
+    ],
+    "v1_range": "P48-P52",
+    "status": "ok",
+    "lost_count": 0,
+    "lost_samples": [],
+    "enrich_lost": [],
+    "append_redundant": [],
+    "patch_mode_old": "append",
+    "append_mode_old": true
+  },
+  {
+    "id": "GLBL_00718",
+    "name": "楚灵王",
+    "side": "末尾",
+    "missing": [
+      55
+    ],
+    "v1_range": "P45-P54",
+    "status": "ok",
+    "lost_count": 0,
+    "lost_samples": [],
+    "enrich_lost": [],
+    "append_redundant": [],
+    "patch_mode_old": "append",
+    "append_mode_old": true
+  },
+  {
+    "id": "GLBL_00736",
+    "name": "郑简公",
+    "side": "末尾",
+    "missing": [
+      59
+    ],
+    "v1_range": "P51-P58",
+    "status": "ok",
+    "lost_count": 0,
+    "lost_samples": [],
+    "enrich_lost": [],
+    "append_redundant": [],
+    "patch_mode_old": "append",
+    "append_mode_old": true
+  },
+  {
+    "id": "GLBL_00746",
+    "name": "韩釐王",
+    "side": "开头",
+    "missing": [
+      35,
+      36
+    ],
+    "v1_range": "P37-P38",
+    "status": "ok",
+    "lost_count": 0,
+    "lost_samples": [],
+    "enrich_lost": [],
+    "append_redundant": [],
+    "patch_mode_old": "prepend",
+    "append_mode_old": false
+  }
+]

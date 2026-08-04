@@ -1,0 +1,75 @@
+{
+  "work": "01史记",
+  "vol": "101",
+  "total_paragraphs": 31,
+  "volume_subtype": "hezhuan",
+  "derived_from": "01史记_101_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 29,
+      "paragraph_to": 29,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 30,
+      "paragraph_to": 30,
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph_from": 31,
+      "paragraph_to": 31,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "袁盎",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 14,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "袁盎者，楚人也，字丝。父故为群盗，徙处安陵。高后时，盎尝为吕禄舍人。",
+        "close_paragraph": 14,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P1–P14"
+      }
+    },
+    {
+      "name": "晁错",
+      "category": "文臣",
+      "paragraph_from": 15,
+      "paragraph_to": 15,
+      "boundary_evidence": {
+        "open_paragraph": 15,
+        "open_phrase": "吴楚反，闻，晁错谓丞史曰：“夫袁盎多受吴王金钱，专为蔽匿，言不反。",
+        "close_paragraph": 15,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P15–P15"
+      }
+    },
+    {
+      "name": "袁盎",
+      "category": "文臣",
+      "paragraph_from": 16,
+      "paragraph_to": 21,
+      "boundary_evidence": {
+        "open_paragraph": 16,
+        "open_phrase": "今果反，欲请治盎宜知计谋。”丞史曰：“事未发，治之有绝。今兵西乡，治之何益！且袁",
+        "close_paragraph": 21,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P16–P21"
+      }
+    },
+    {
+      "name": "晁错",
+      "category": "文臣",
+      "paragraph_from": 22,
+      "paragraph_to": 28,
+      "boundary_evidence": {
+        "open_paragraph": 22,
+        "open_phrase": "晁错者，颍川人也。学申商刑名於轵张恢先所，与雒阳宋孟及刘礼同师。以文学为太常掌故",
+        "close_paragraph": 28,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P22–P28"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

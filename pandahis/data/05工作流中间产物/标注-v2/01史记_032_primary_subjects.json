@@ -1,0 +1,590 @@
+{
+  "work": "01史记",
+  "vol": "032",
+  "total_paragraphs": 97,
+  "method": "Step1b-α 逐段叙事主语（mention≠narrative；开传句定 incoming block）",
+  "paragraphs": [
+    {
+      "paragraph": 1,
+      "primary_subject": "齐太公",
+      "disposition": "block",
+      "text_snippet": "太公望吕尚者，东海上人。其先祖尝为四岳，佐禹平水土甚有功。虞夏之际封於吕，或封於申，姓姜氏。夏商…"
+    },
+    {
+      "paragraph": 2,
+      "primary_subject": "齐太公",
+      "disposition": "block",
+      "text_snippet": "吕尚盖尝穷困，年老矣，以渔钓奸周西伯。西伯将出猎，卜之，曰“所获非龙非彨，非虎非罴；所获霸王之辅…"
+    },
+    {
+      "paragraph": 3,
+      "primary_subject": "齐太公",
+      "disposition": "block",
+      "text_snippet": "或曰，太公博闻，尝事纣。纣无道，去之。游说诸侯，无所遇，而卒西归周西伯。或曰，吕尚处士，隐海滨。…"
+    },
+    {
+      "paragraph": 4,
+      "primary_subject": "齐太公",
+      "disposition": "block",
+      "text_snippet": "吕尚亦曰“吾闻西伯贤，又善养老，盍往焉”。三人者为西伯求美女奇物，献之於纣，以赎西伯。西伯得以出…"
+    },
+    {
+      "paragraph": 5,
+      "primary_subject": "齐太公",
+      "disposition": "block",
+      "text_snippet": "周西伯昌之脱羑里归，与吕尚阴谋修德以倾商政，其事多兵权与奇计，故后世之言兵及周之阴权皆宗太公为本…"
+    },
+    {
+      "paragraph": 6,
+      "primary_subject": "齐太公",
+      "disposition": "block",
+      "text_snippet": "文王崩，武王即位。九年，欲修文王业，东伐以观诸侯集否。师行，师尚父左杖黄钺，右把白旄以誓，曰：“…"
+    },
+    {
+      "paragraph": 7,
+      "primary_subject": "齐太公",
+      "disposition": "block",
+      "text_snippet": "遂至盟津。诸侯不期而会者八百诸侯。诸侯皆曰：“纣可伐也。”武王曰：“未可。”还师，与太公作此太誓…"
+    },
+    {
+      "paragraph": 8,
+      "primary_subject": "齐太公",
+      "disposition": "block",
+      "text_snippet": "居二年，纣杀王子比干，囚箕子。武王将伐纣，卜龟兆，不吉，风雨暴至。"
+    },
+    {
+      "paragraph": 9,
+      "primary_subject": "齐太公",
+      "disposition": "block",
+      "text_snippet": "群公尽惧，唯太公彊之劝武王，武王於是遂行。十一年正月甲子，誓於牧野，伐商纣。纣师败绩。纣反走，登…"
+    },
+    {
+      "paragraph": 10,
+      "primary_subject": "齐太公",
+      "disposition": "block",
+      "text_snippet": "於是武王已平商而王天下，封师尚父於齐营丘。东就国，道宿行迟。逆旅之人曰：“吾闻时难得而易失。客寝…"
+    },
+    {
+      "paragraph": 11,
+      "primary_subject": "齐太公",
+      "disposition": "block",
+      "text_snippet": "太公至国，脩政，因其俗，简其礼，通商工之业，便鱼盐之利，而人民多归齐，齐为大国。及周成王少时，管…"
+    },
+    {
+      "paragraph": 12,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "text_snippet": "盖太公之卒百有馀年，子丁公吕伋立。丁公卒，子乙公得立。乙公卒，子癸公慈母立。癸公卒，子哀公不辰立…"
+    },
+    {
+      "paragraph": 13,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "text_snippet": "哀公时，纪侯谮之周，周烹哀公而立其弟静，是为胡公。胡公徙都薄姑，而当周夷王之时。"
+    },
+    {
+      "paragraph": 14,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "text_snippet": "哀公之同母少弟山怨胡公，乃与其党率营丘人袭攻杀胡公而自立，是为献公。"
+    },
+    {
+      "paragraph": 15,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "text_snippet": "献公元年，尽逐胡公子，因徙薄姑都，治临菑。"
+    },
+    {
+      "paragraph": 16,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "text_snippet": "九年，献公卒，子武公寿立。武公九年，周厉王出奔，居彘。十年，王室乱，大臣行政，号曰“共和”。二十…"
+    },
+    {
+      "paragraph": 17,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "text_snippet": "二十六年，武公卒，子厉公无忌立。厉公暴虐，故胡公子复入齐，齐人欲立之，乃与攻杀厉公。胡公子亦战死…"
+    },
+    {
+      "paragraph": 18,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "text_snippet": "文公十二年卒，子成公脱立。成公九年卒，子庄公购立。"
+    },
+    {
+      "paragraph": 19,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "text_snippet": "庄公二十四年，犬戎杀幽王，周东徙雒。秦始列为诸侯。五十六年，晋弑其君昭侯。"
+    },
+    {
+      "paragraph": 20,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "text_snippet": "六十四年，庄公卒，子釐公禄甫立。"
+    },
+    {
+      "paragraph": 21,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "text_snippet": "釐公九年，鲁隐公初立。十九年，鲁桓公弑其兄隐公而自立为君。"
+    },
+    {
+      "paragraph": 22,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "text_snippet": "二十五年，北戎伐齐。郑使太子忽来救齐，齐欲妻之。忽曰：“郑小齐大，非我敌。”遂辞之。"
+    },
+    {
+      "paragraph": 23,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "text_snippet": "三十二年，釐公同母弟夷仲年死。其子曰公孙无知，釐公爱之，令其秩服奉养比太子。"
+    },
+    {
+      "paragraph": 24,
+      "primary_subject": "齐襄公",
+      "disposition": "block",
+      "text_snippet": "三十三年，釐公卒，太子诸儿立，是为襄公。"
+    },
+    {
+      "paragraph": 25,
+      "primary_subject": "齐襄公",
+      "disposition": "block",
+      "text_snippet": "襄公元年，始为太子时，尝与无知斗，及立，绌无知秩服，无知怨。"
+    },
+    {
+      "paragraph": 26,
+      "primary_subject": "齐襄公",
+      "disposition": "block",
+      "text_snippet": "四年，鲁桓公与夫人如齐。齐襄公故尝私通鲁夫人。鲁夫人者，襄公女弟也，自釐公时嫁为鲁桓公妇，及桓公…"
+    },
+    {
+      "paragraph": 27,
+      "primary_subject": "齐襄公",
+      "disposition": "block",
+      "text_snippet": "八年，伐纪，纪迁去其邑。"
+    },
+    {
+      "paragraph": 28,
+      "primary_subject": "齐襄公",
+      "disposition": "block",
+      "text_snippet": "十二年，初，襄公使连称、管至父戍葵丘，瓜时而往，及瓜而代。往戍一岁，卒瓜时而公弗为发代。或为请代…"
+    },
+    {
+      "paragraph": 29,
+      "primary_subject": "齐襄公",
+      "disposition": "block",
+      "text_snippet": "无知弗信，茀示之创，乃信之。待宫外，令茀先入。茀先入，即匿襄公户间。良久，无知等恐，遂入宫。茀反…"
+    },
+    {
+      "paragraph": 30,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "text_snippet": "桓公元年春，齐君无知游於雍林。雍林人尝有怨无知，及其往游，雍林人袭杀无知，告齐大夫曰：“无知弑襄…"
+    },
+    {
+      "paragraph": 31,
+      "primary_subject": "齐桓公",
+      "disposition": "block",
+      "text_snippet": "初，襄公之醉杀鲁桓公，通其夫人，杀诛数不当，淫於妇人，数欺大臣，群弟恐祸及，故次弟纠奔鲁。其母鲁…"
+    },
+    {
+      "paragraph": 32,
+      "primary_subject": "齐桓公",
+      "disposition": "block",
+      "text_snippet": "桓公之中钩，详死以误管仲，已而载温车中驰行，亦有高、国内应，故得先入立，发兵距鲁。秋，与鲁战于乾…"
+    },
+    {
+      "paragraph": 33,
+      "primary_subject": "齐桓公",
+      "disposition": "block",
+      "text_snippet": "君将治齐，即高傒与叔牙足也。君且欲霸王，非管夷吾不可。夷吾所居国国重，不可失也。”於是桓公从之。…"
+    },
+    {
+      "paragraph": 34,
+      "primary_subject": "齐桓公",
+      "disposition": "block",
+      "text_snippet": "桓公既得管仲，与鲍叔、隰朋、高傒修齐国政，连五家之兵，设轻重鱼盐之利，以赡贫穷，禄贤能，齐人皆说…"
+    },
+    {
+      "paragraph": 35,
+      "primary_subject": "齐桓公",
+      "disposition": "block",
+      "text_snippet": "二年，伐灭郯，郯子奔莒。初，桓公亡时，过郯，郯无礼，故伐之。"
+    },
+    {
+      "paragraph": 36,
+      "primary_subject": "齐桓公",
+      "disposition": "block",
+      "text_snippet": "五年，伐鲁，鲁将师败。鲁庄公请献遂邑以平，桓公许，与鲁会柯而盟。鲁将盟，曹沬以匕首劫桓公於坛上，…"
+    },
+    {
+      "paragraph": 37,
+      "primary_subject": "齐桓公",
+      "disposition": "block",
+      "text_snippet": "十四年，陈厉公子完，号敬仲，来奔齐。齐桓公欲以为卿，让；於是以为工正。田成子常之祖也。"
+    },
+    {
+      "paragraph": 38,
+      "primary_subject": "齐桓公",
+      "disposition": "block",
+      "text_snippet": "二十三年，山戎伐燕，燕告急於齐。齐桓公救燕，遂伐山戎，至于孤竹而还。"
+    },
+    {
+      "paragraph": 39,
+      "primary_subject": "齐桓公",
+      "disposition": "block",
+      "text_snippet": "燕庄公遂送桓公入齐境。桓公曰：“非天子，诸侯相送不出境，吾不可以无礼於燕。”於是分沟割燕君所至与…"
+    },
+    {
+      "paragraph": 40,
+      "primary_subject": "齐桓公",
+      "disposition": "block",
+      "text_snippet": "诸侯闻之，皆从齐。"
+    },
+    {
+      "paragraph": 41,
+      "primary_subject": "齐桓公",
+      "disposition": "block",
+      "text_snippet": "二十七年，鲁湣公母曰哀姜，桓公女弟也。哀姜淫於鲁公子庆父，庆父弑湣公，哀姜欲立庆父，鲁人更立釐公…"
+    },
+    {
+      "paragraph": 42,
+      "primary_subject": "齐桓公",
+      "disposition": "block",
+      "text_snippet": "二十八年，卫文公有狄乱，告急於齐。齐率诸侯城楚丘而立卫君。"
+    },
+    {
+      "paragraph": 43,
+      "primary_subject": "齐桓公",
+      "disposition": "block",
+      "text_snippet": "二十九年，桓公与夫人蔡姬戏船中。蔡姬习水，荡公，公惧，止之，不止，出船，怒，归蔡姬，弗绝。蔡亦怒…"
+    },
+    {
+      "paragraph": 44,
+      "primary_subject": "齐桓公",
+      "disposition": "block",
+      "text_snippet": "三十年春，齐桓公率诸侯伐蔡，蔡溃。遂伐楚。楚成王兴师问曰：“何故涉吾地？”管仲对曰：“昔召康公命…"
+    },
+    {
+      "paragraph": 45,
+      "primary_subject": "齐桓公",
+      "disposition": "block",
+      "text_snippet": "三十五年夏，会诸侯于葵丘。周襄王使宰孔赐桓公文武胙、彤弓矢、大路，命无拜。桓公欲许之，管仲曰“不…"
+    },
+    {
+      "paragraph": 46,
+      "primary_subject": "齐桓公",
+      "disposition": "block",
+      "text_snippet": "是时周室微，唯齐、楚、秦、晋为彊。晋初与会，献公死，国内乱。秦穆公辟远，不与中国会盟。楚成王初收…"
+    },
+    {
+      "paragraph": 47,
+      "primary_subject": "齐桓公",
+      "disposition": "block",
+      "text_snippet": "三十八年，周襄王弟带与戎、翟合谋伐周，齐使管仲平戎於周。周欲以上卿礼管仲，管仲顿首曰：“臣陪臣，…"
+    },
+    {
+      "paragraph": 48,
+      "primary_subject": "齐桓公",
+      "disposition": "block",
+      "text_snippet": "四十一年，秦穆公虏晋惠公，复归之。是岁，管仲、隰朋皆卒。管仲病，桓公问曰：“群臣谁可相者？”管仲…"
+    },
+    {
+      "paragraph": 49,
+      "primary_subject": "齐桓公",
+      "disposition": "block",
+      "text_snippet": "四十二年，戎伐周，周告急於齐，齐令诸侯各发卒戍周。是岁，晋公子重耳来，桓公妻之。"
+    },
+    {
+      "paragraph": 50,
+      "primary_subject": "齐桓公",
+      "disposition": "block",
+      "text_snippet": "四十三年。初，齐桓公之夫人三：曰王姬、徐姬、蔡姬，皆无子。桓公好内，多内宠，如夫人者六人，长卫姬…"
+    },
+    {
+      "paragraph": 51,
+      "primary_subject": "齐桓公",
+      "disposition": "block",
+      "text_snippet": "桓公病，五公子各树党争立。及桓公卒，遂相攻，以故宫中空，莫敢棺。桓公尸在床上六十七日，尸虫出于户…"
+    },
+    {
+      "paragraph": 52,
+      "primary_subject": "齐桓公",
+      "disposition": "block",
+      "text_snippet": "桓公十有馀子，要其后立者五人：无诡立三月死，无谥；次孝公；次昭公；次懿公；次惠公。孝公元年三月，…"
+    },
+    {
+      "paragraph": 53,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "text_snippet": "六年春，齐伐宋，以其不同盟于齐也。夏，宋襄公卒。七年，晋文公立。"
+    },
+    {
+      "paragraph": 54,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "text_snippet": "十年，孝公卒，孝公弟潘因卫公子开方杀孝公子而立潘，是为昭公。昭公，桓公子也，其母曰葛嬴。"
+    },
+    {
+      "paragraph": 55,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "text_snippet": "昭公元年，晋文公败楚於城濮，而会诸侯践土，朝周，天子使晋称伯。六年，翟侵齐。晋文公卒。秦兵败於殽…"
+    },
+    {
+      "paragraph": 56,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "text_snippet": "十九年五月，昭公卒，子舍立为齐君。舍之母无宠於昭公，国人莫畏。昭公之弟商人以桓公死争立而不得，阴…"
+    },
+    {
+      "paragraph": 57,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "text_snippet": "懿公四年春，初，懿公为公子时，与丙戎之父猎，争获不胜，及即位，断丙戎父足，而使丙戎仆。庸职之妻好…"
+    },
+    {
+      "paragraph": 58,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "text_snippet": "谋与公游竹中，二人弑懿公车上，弃竹中而亡去。"
+    },
+    {
+      "paragraph": 59,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "text_snippet": "懿公之立，骄，民不附。齐人废其子而迎公子元於卫，立之，是为惠公。惠公，桓公子也。其母卫女，曰少卫…"
+    },
+    {
+      "paragraph": 60,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "text_snippet": "惠公二年，长翟来，王子城父攻杀之，埋之於北门。晋赵穿弑其君灵公。"
+    },
+    {
+      "paragraph": 61,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "text_snippet": "十年，惠公卒，子顷公无野立。初，崔杼有宠於惠公，惠公卒，高、国畏其偪也，逐之，崔杼奔卫。"
+    },
+    {
+      "paragraph": 62,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "text_snippet": "顷公元年，楚庄王彊，伐陈；二年，围郑，郑伯降，已复国郑伯。"
+    },
+    {
+      "paragraph": 63,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "text_snippet": "六年春，晋使郤克於齐，齐使夫人帷中而观之。郤克上，夫人笑之。郤克曰：“不是报，不复涉河！”归，请…"
+    },
+    {
+      "paragraph": 64,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "text_snippet": "鲁、卫大夫如晋请师，皆因郤克。晋使郤克以车八百乘为中军将，士燮将上军，栾书将下军，以救鲁、卫，伐…"
+    },
+    {
+      "paragraph": 65,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "text_snippet": "逄丑父为齐顷公右。顷公曰：“驰之，破晋军会食。”射伤郤克，流血至履。克欲还入壁，其御曰：“我始入…"
+    },
+    {
+      "paragraph": 66,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "text_snippet": "十一年，晋初置六卿，赏鞍之功。齐顷公朝晋，欲尊王晋景公，晋景公不敢受，乃归。归而顷公弛苑囿，薄赋…"
+    },
+    {
+      "paragraph": 67,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "text_snippet": "十七年，顷公卒，子灵公环立。"
+    },
+    {
+      "paragraph": 68,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "text_snippet": "灵公九年，晋栾书弑其君厉公。十年，晋悼公伐齐，齐令公子光质晋。十九年，立子光为太子，高厚傅之，令…"
+    },
+    {
+      "paragraph": 69,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "text_snippet": "二十八年，初，灵公取鲁女，生子光，以为太子。仲姬，戎姬。戎姬嬖，仲姬生子牙，属之戎姬。戎姬请以为…"
+    },
+    {
+      "paragraph": 70,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "text_snippet": "庄公三年，晋大夫栾盈奔齐，庄公厚客待之。晏婴、田文子谏，公弗听。四年，齐庄公使栾盈间入晋曲沃为内…"
+    },
+    {
+      "paragraph": 71,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "text_snippet": "六年，初，棠公妻好，棠公死，崔杼取之。庄公通之，数如崔氏，以崔杼之冠赐人。待者曰：“不可。”崔杼…"
+    },
+    {
+      "paragraph": 72,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "text_snippet": "公登台而请解，不许；请盟，不许；请自杀於庙，不许。皆曰：“君之臣杼疾病，不能听命。近於公宫。陪臣…"
+    },
+    {
+      "paragraph": 73,
+      "primary_subject": "齐景公",
+      "disposition": "block",
+      "text_snippet": "丁丑，崔杼立庄公异母弟杵臼，是为景公。景公母，鲁叔孙宣伯女也。景公立，以崔杼为右相，庆封为左相。…"
+    },
+    {
+      "paragraph": 74,
+      "primary_subject": "齐景公",
+      "disposition": "block",
+      "text_snippet": "晏子仰天曰：“婴所不获，唯忠於君利社稷者是从！”不肯盟。庆封欲杀晏子，崔杼曰：“忠臣也，舍之。”…"
+    },
+    {
+      "paragraph": 75,
+      "primary_subject": "齐景公",
+      "disposition": "block",
+      "text_snippet": "景公元年，初，崔杼生子成及彊，其母死，取东郭女，生明。东郭女使其前夫子无咎与其弟偃相崔氏。成有罪…"
+    },
+    {
+      "paragraph": 76,
+      "primary_subject": "齐景公",
+      "disposition": "block",
+      "text_snippet": "三年十月，庆封出猎。初，庆封已杀崔杼，益骄，嗜酒好猎，不听政令。庆舍用政，已有内郤。田文子谓桓子…"
+    },
+    {
+      "paragraph": 77,
+      "primary_subject": "齐景公",
+      "disposition": "block",
+      "text_snippet": "九年，景公使晏婴之晋，与叔向私语曰：“齐政卒归田氏。田氏虽无大德，以公权私，有德於民，民爱之。”…"
+    },
+    {
+      "paragraph": 78,
+      "primary_subject": "齐景公",
+      "disposition": "block",
+      "text_snippet": "三十二年，彗星见。景公坐柏寝，叹曰：“堂堂！谁有此乎？”群臣皆泣，晏子笑，公怒。晏子曰：“臣笑群…"
+    },
+    {
+      "paragraph": 79,
+      "primary_subject": "齐景公",
+      "disposition": "block",
+      "text_snippet": "百姓苦怨以万数，而君令一人禳之，安能胜众口乎？”是时景公好治宫室，聚狗马，奢侈，厚赋重刑，故晏子…"
+    },
+    {
+      "paragraph": 80,
+      "primary_subject": "齐景公",
+      "disposition": "block",
+      "text_snippet": "四十二年，吴王阖闾伐楚，入郢。"
+    },
+    {
+      "paragraph": 81,
+      "primary_subject": "齐景公",
+      "disposition": "block",
+      "text_snippet": "四十七年，鲁阳虎攻其君，不胜，奔齐，请齐伐鲁。鲍子谏景公，乃囚阳虎。"
+    },
+    {
+      "paragraph": 82,
+      "primary_subject": "齐景公",
+      "disposition": "block",
+      "text_snippet": "阳虎得亡，奔晋。"
+    },
+    {
+      "paragraph": 83,
+      "primary_subject": "齐景公",
+      "disposition": "block",
+      "text_snippet": "四十八年，与鲁定公好会夹谷。犁鉏曰：“孔丘知礼而怯，请令莱人为乐，因执鲁君，可得志。”景公害孔丘…"
+    },
+    {
+      "paragraph": 84,
+      "primary_subject": "齐景公",
+      "disposition": "block",
+      "text_snippet": "五十五年，范、中行反其君於晋，晋攻之急，来请粟。田乞欲为乱，树党於逆臣，说景公曰：“范、中行数有…"
+    },
+    {
+      "paragraph": 85,
+      "primary_subject": "齐景公",
+      "disposition": "block",
+      "text_snippet": "五十八年夏，景公夫人燕姬適子死。景公宠妾芮姬生子荼，荼少，其母贱，无行，诸大夫恐其为嗣，乃言愿择…"
+    },
+    {
+      "paragraph": 86,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "text_snippet": "悼公元年，齐伐鲁，取讙、阐。初，阳生亡在鲁，季康子以其妹妻之。及归即位，使迎之。季姬与季鲂侯通，…"
+    },
+    {
+      "paragraph": 87,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "text_snippet": "鲍子与悼公有郤，不善。四年，吴、鲁伐齐南方。鲍子弑悼公，赴于吴。吴王夫差哭於军门外三日，将从海入…"
+    },
+    {
+      "paragraph": 88,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "text_snippet": "简公四年春，初，简公与父阳生俱在鲁也，监止有宠焉。及及即位，使为政。"
+    },
+    {
+      "paragraph": 89,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "text_snippet": "田成子惮之，骤顾於朝。御鞅言简公曰：“田、监不可并也，君其择焉。”弗听。"
+    },
+    {
+      "paragraph": 90,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "text_snippet": "子我夕，田逆杀人，逢之，遂捕以入。田氏方睦，使囚病而遗守囚者酒，醉而杀守者，得亡。子我盟诸田於陈…"
+    },
+    {
+      "paragraph": 91,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "text_snippet": "夏五月壬申，成子兄弟四乘如公。子我在幄，出迎之，遂入，闭门。宦者御之，子行杀宦者。公与妇人饮酒於…"
+    },
+    {
+      "paragraph": 92,
+      "primary_subject": "齐平公",
+      "disposition": "block",
+      "text_snippet": "子我归，属徒攻闱与大门，皆弗胜，乃出。田氏追之。丰丘人执子我以告，杀之郭关。成子将杀大陆子方，田…"
+    },
+    {
+      "paragraph": 93,
+      "primary_subject": "齐平公",
+      "disposition": "block",
+      "text_snippet": "平公八年，越灭吴。二十五年卒，子宣公积立。"
+    },
+    {
+      "paragraph": 94,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "text_snippet": "宣公五十一年卒，子康公贷立。田会反廪丘。"
+    },
+    {
+      "paragraph": 95,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "text_snippet": "康公二年，韩、魏、赵始列为诸侯。十九年，田常曾孙田和始为诸侯，迁康公海滨。"
+    },
+    {
+      "paragraph": 96,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "text_snippet": "二十六年，康公卒，吕氏遂绝其祀。田氏卒有齐国，为齐威王，彊於天下。"
+    },
+    {
+      "paragraph": 97,
+      "primary_subject": "太史公曰",
+      "disposition": "exclude",
+      "text_snippet": "太史公曰：吾適齐，自泰山属之琅邪，北被于海，膏壤二千里，其民阔达多匿知，其天性也。以太公之圣，建…"
+    }
+  ]
+}

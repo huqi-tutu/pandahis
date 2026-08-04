@@ -13,15 +13,15 @@
 
 /* ─── 搜索框 ─── */
 .search-bar-wrap {
-  padding: 24rpx 40rpx 40rpx;
+  padding: 24rpx 32rpx 32rpx;
 }
 
 .search-bar {
   display: flex;
   align-items: center;
-  gap: 20rpx;
+  gap: 16rpx;
   height: 88rpx;
-  padding: 0 32rpx;
+  padding: 0 24rpx 0 32rpx;
   border-radius: 44rpx;
   background: rgba(74, 63, 63, 0.06);
   box-sizing: border-box;
@@ -36,6 +36,7 @@
 
 .search-input {
   flex: 1;
+  min-width: 0;
   font-size: 28rpx;
   color: $text-title;
   background: transparent;
@@ -49,15 +50,23 @@
 }
 
 .search-clear {
-  font-size: 28rpx;
-  color: $text-time;
-  padding: 8rpx;
+  width: 56rpx;
+  height: 56rpx;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-clear-ico {
+  font-size: 24rpx;
+  color: $text-time;
+  line-height: 1;
 }
 
 /* ─── 区块 ─── */
 .search-section {
-  padding: 0 40rpx 40rpx;
+  padding: 0 32rpx 40rpx;
 }
 
 .search-section-title {
@@ -66,16 +75,25 @@
   color: $text-time;
   letter-spacing: 4rpx;
   margin-bottom: 24rpx;
+  font-weight: 500;
 }
 
-/* ─── 热门标签 ─── */
-.search-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16rpx 24rpx;
+/* ─── 热门标签（横滑） ─── */
+.hot-scroll {
+  width: 100%;
+  white-space: nowrap;
+}
+
+.hot-inner {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16rpx;
+  padding-right: 8rpx;
 }
 
 .search-tag {
+  flex-shrink: 0;
   font-size: 26rpx;
   letter-spacing: 1rpx;
   line-height: 1.4;
@@ -86,13 +104,19 @@
   font-weight: 500;
 }
 
+.search-tag.hot {
+  background: rgba(74, 63, 63, 0.1);
+}
+
 /* ─── 历史记录 ─── */
 .search-history-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 24rpx 0;
+  min-height: 88rpx;
+  padding: 8rpx 0;
   border-bottom: 1rpx solid $divider;
+  box-sizing: border-box;
 }
 
 .search-history-item:last-child {
@@ -101,21 +125,42 @@
 
 .search-history-text {
   flex: 1;
+  min-width: 0;
   font-size: 28rpx;
   color: $text-body;
   letter-spacing: 0.5rpx;
+  line-height: 1.4;
+  padding: 16rpx 16rpx 16rpx 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
+/* 扩大删除热区，避免点不中 */
 .search-history-del {
+  width: 80rpx;
+  height: 80rpx;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: -16rpx;
+}
+
+.search-history-del--hover {
+  opacity: 0.55;
+}
+
+.search-history-del-ico {
   font-size: 28rpx;
   color: $text-time;
-  padding: 8rpx 0 8rpx 24rpx;
-  flex-shrink: 0;
+  line-height: 1;
+  pointer-events: none;
 }
 
 /* ─── 空态 ─── */
 .search-empty {
-  padding: 48rpx 40rpx;
+  padding: 48rpx 32rpx;
   text-align: center;
   font-size: 28rpx;
   color: $text-caption;

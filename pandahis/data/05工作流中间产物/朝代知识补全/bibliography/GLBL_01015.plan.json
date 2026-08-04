@@ -1,0 +1,182 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01015",
+  "写作结构": "正史叙述见翻译详录（《史记·孙子吴起列传》）；史外异说以东汉杂史《吴越春秋》《越绝书》为核心延展，辅以战国子书《韩非子》《尉缭子》《荀子》等对孙子影响的佐证；兼顾银雀山汉简《孙子兵法》说明文本流传与异文；不演绎具体对话、战术细节或神话化情节。",
+  "候选著作": [
+    {
+      "出处": "《史记·孙子吴起列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史本传，记载孙武见吴王、练兵斩姬、破楚威齐晋等核心情节",
+      "检索词": "孙子吴起列传",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《韩非子·五蠹》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "反映战国时期孙、吴兵书已家藏户有，证明《孙子兵法》广泛流传",
+      "检索词": "藏孙吴之书",
+      "采用": true,
+      "原文摘句": "境内皆言兵，藏孙、吴之书者家有之。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《尉缭子·制谈》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "称孙武（武子）以三万之众即可横行天下，补充其率兵规模与声威",
+      "检索词": "武子也",
+      "采用": true,
+      "原文摘句": "有提三万之众而天下莫当者，谁？曰武子也。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《荀子·议兵》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "将孙武与吴起并称，论其用兵之效，凸显孙子在战国兵学中的地位",
+      "检索词": "孙吴用兵",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "银雀山汉墓竹简《孙子兵法》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "西汉早期抄本，印证十三篇的基本形态，存有异文、佚文，反映汉代传本面貌",
+      "检索词": "银雀山孙子兵法",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《吴越春秋·阖闾内传》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "东汉杂史，详述孙武事迹，包括伍子胥引荐、练兵斩姬等，有《史记》之外的细节补充",
+      "检索词": "孙子者名武",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《越绝书》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "东汉杂史，提及孙武在吴的军事活动，可与《吴越春秋》互参",
+      "检索词": "孙武",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·孙子吴起列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史本传，记载孙武见吴王、练兵斩姬、破楚威齐晋等核心情节",
+      "检索词": "孙子吴起列传",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《韩非子·五蠹》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "反映战国时期孙、吴兵书已家藏户有，证明《孙子兵法》广泛流传",
+      "检索词": "藏孙吴之书",
+      "采用": true,
+      "原文摘句": "境内皆言兵，藏孙、吴之书者家有之。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《尉缭子·制谈》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "称孙武（武子）以三万之众即可横行天下，补充其率兵规模与声威",
+      "检索词": "武子也",
+      "采用": true,
+      "原文摘句": "有提三万之众而天下莫当者，谁？曰武子也。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《荀子·议兵》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "将孙武与吴起并称，论其用兵之效，凸显孙子在战国兵学中的地位",
+      "检索词": "孙吴用兵",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "银雀山汉墓竹简《孙子兵法》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "西汉早期抄本，印证十三篇的基本形态，存有异文、佚文，反映汉代传本面貌",
+      "检索词": "银雀山孙子兵法",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《吴越春秋·阖闾内传》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "东汉杂史，详述孙武事迹，包括伍子胥引荐、练兵斩姬等，有《史记》之外的细节补充",
+      "检索词": "孙子者名武",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《越绝书》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "东汉杂史，提及孙武在吴的军事活动，可与《吴越春秋》互参",
+      "检索词": "孙武",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 6,
+    "C_excluded": 1,
+    "overall": "B"
+  }
+}

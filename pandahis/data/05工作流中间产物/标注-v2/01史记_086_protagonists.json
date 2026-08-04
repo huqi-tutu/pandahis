@@ -1,0 +1,39 @@
+{
+  "work": "01史记",
+  "vol": "086",
+  "volume_name": "刺客列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "曹沫",
+      "category": "庶众",
+      "rationale": "《刺客列传》为刺客合传，曹沫为卷首第一位刺客，以劫持齐桓公闻名，属庶众类游侠刺客主轴。"
+    },
+    {
+      "name": "专诸",
+      "category": "庶众",
+      "rationale": "《刺客列传》合传主人公之一，以鱼肠剑刺杀吴王僚，属庶众类刺客主轴。"
+    },
+    {
+      "name": "豫让",
+      "category": "庶众",
+      "rationale": "《刺客列传》合传主人公之一，漆身吞炭为智伯报仇，属庶众类刺客主轴。"
+    },
+    {
+      "name": "聂政",
+      "category": "庶众",
+      "rationale": "《刺客列传》合传主人公之一，为严仲子刺杀韩相侠累，属庶众类刺客主轴。"
+    },
+    {
+      "name": "荆轲",
+      "category": "庶众",
+      "rationale": "《刺客列传》合传主人公之一，刺秦王之事为全卷叙事高峰，属庶众类刺客主轴。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

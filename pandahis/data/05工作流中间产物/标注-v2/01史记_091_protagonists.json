@@ -1,0 +1,19 @@
+{
+  "work": "01史记",
+  "vol": "091",
+  "volume_name": "黥布列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "黥布",
+      "category": "武将",
+      "rationale": "《黥布列传》为单人列传，卷名即主人公。黥布（英布）为秦末汉初名将，以军功征战为主轴，先随项羽、后归刘邦，最终反汉被杀，属列传武将主轴，故分类为武将。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

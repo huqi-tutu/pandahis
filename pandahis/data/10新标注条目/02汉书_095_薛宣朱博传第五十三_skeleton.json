@@ -1,0 +1,391 @@
+{
+  "volume": "薛宣朱博传",
+  "source_file": "02汉书_095_薛宣朱博传第五十三.txt",
+  "total_paragraphs": 39,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "薛宣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "薛宣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "薛宣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "薛宣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "薛宣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "薛宣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "薛宣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "薛宣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "薛宣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "薛宣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "薛宣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "薛宣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "薛宣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "薛宣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "薛宣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "薛宣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "薛宣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "薛宣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "薛宣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "薛宣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "朱博",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "朱博",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "朱博",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "朱博",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "朱博",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "朱博",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "朱博",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "朱博",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "朱博",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "朱博",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "朱博",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "朱博",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "朱博",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "朱博",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "朱博",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "朱博",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "朱博",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HANSHU_095_01",
+      "史略名称": "薛宣",
+      "史略简介": "薛宣",
+      "原文字句": "薛宣字赣君，东海郯人也。少为廷尉书佐、都船狱吏。后以大司农斗食属察廉，补不其丞。琅邪太守赵贡行县，见宣，甚说其能。从宣历行属县，还至府，令妻子与相见，戒曰：“赣君至丞相，我两子亦中丞相史。”察宣廉，迁乐浪都尉丞。幽州刺史举茂材，为宛句令。大将军王凤闻其能，荐宣为长安令，治果有名，以明习文法诏补御史中丞。",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷95·薛宣朱博传》",
+      "paragraphs": [
+        {
+          "volume": "薛宣朱博传",
+          "paragraph_from": 2,
+          "paragraph_to": 21
+        }
+      ],
+      "五级细坐标": "汉书·卷095·文臣·01",
+      "六级段落锚点": "[P2-P21]",
+      "原文出处": "薛宣朱博传·P2-P21"
+    },
+    {
+      "史略ID": "HANSHU_095_02",
+      "史略名称": "朱博",
+      "史略简介": "朱博",
+      "原文字句": "朱博字子元，杜陵人也。家贫，少时给事县为亭长，好客少年，捕搏敢行。稍迁为功曹，伉侠好交，随从士大夫，不避风雨。是时，前将军望之子萧育，御史大夫万年子陈咸以公卿子著材知名，博皆友之矣。时，诸陵县属太常，博以太常掾察廉，补安陵丞。后去官入京兆，历曹史列掾。出为督邮书掾，所部职办，郡中称之。",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷95·薛宣朱博传》",
+      "paragraphs": [
+        {
+          "volume": "薛宣朱博传",
+          "paragraph_from": 22,
+          "paragraph_to": 38
+        }
+      ],
+      "五级细坐标": "汉书·卷095·文臣·02",
+      "六级段落锚点": "[P22-P38]",
+      "原文出处": "薛宣朱博传·P22-P38"
+    }
+  ]
+}

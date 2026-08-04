@@ -1,0 +1,60 @@
+{
+  "work": "02汉书",
+  "vol": "075",
+  "volume_name": "严朱吾丘主父徐严终王贾传第三十四上",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "严助",
+      "category": "文臣",
+      "rationale": "卷名首姓，汉书合传以传主姓氏并列，严助为卷名第一人，属文臣列传主轴。"
+    },
+    {
+      "name": "朱买臣",
+      "category": "文臣",
+      "rationale": "卷名第二姓，汉书合传传主之一，以文学仕宦为主轴，属文臣。"
+    },
+    {
+      "name": "吾丘寿王",
+      "category": "文臣",
+      "rationale": "卷名第三姓，汉书合传传主之一，以文学仕宦为主轴，属文臣。"
+    },
+    {
+      "name": "主父偃",
+      "category": "文臣",
+      "rationale": "卷名第四姓，汉书合传传主之一，以纵横策论仕宦为主轴，属文臣。"
+    },
+    {
+      "name": "徐乐",
+      "category": "文臣",
+      "rationale": "卷名第五姓，汉书合传传主之一，以文学上书言事为主轴，属文臣。"
+    },
+    {
+      "name": "严安",
+      "category": "文臣",
+      "rationale": "卷名第六姓，汉书合传传主之一，以文学上书言事为主轴，属文臣。"
+    },
+    {
+      "name": "终军",
+      "category": "文臣",
+      "rationale": "卷名第七姓，汉书合传传主之一，以文学外交仕宦为主轴，属文臣。"
+    },
+    {
+      "name": "王褒",
+      "category": "文臣",
+      "rationale": "卷名第八姓，汉书合传传主之一，以辞赋文学仕宦为主轴，属文臣。"
+    },
+    {
+      "name": "贾捐之",
+      "category": "文臣",
+      "rationale": "卷名末姓，汉书合传传主之一，以文学议论仕宦为主轴，属文臣。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

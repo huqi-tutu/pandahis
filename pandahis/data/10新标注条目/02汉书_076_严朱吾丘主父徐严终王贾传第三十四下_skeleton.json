@@ -1,0 +1,436 @@
+{
+  "volume": "严朱吾丘主父徐严终王贾传第三十四下",
+  "source_file": "02汉书_076_严朱吾丘主父徐严终王贾传第三十四下.txt",
+  "total_paragraphs": 40,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "严安",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "严安",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "严安",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "严安",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "严安",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "严安",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "终军",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "终军",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "终军",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "终军",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "终军",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "终军",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "终军",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "终军",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "终军",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "终军",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "王褒",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "王褒",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "王褒",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "王褒",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "王褒",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "王褒",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "王褒",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "王褒",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "王褒",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "王褒",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "贾捐之",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "贾捐之",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "贾捐之",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "贾捐之",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "贾捐之",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "贾捐之",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "贾捐之",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "贾捐之",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "贾捐之",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "贾捐之",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "贾捐之",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "贾捐之",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HANSHU_076_01",
+      "史略名称": "严安",
+      "史略简介": "严安",
+      "原文字句": "严安者，临菑人也。以故丞相史上书，曰：",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷76·严朱吾丘主父徐严终王贾传第三十四下》",
+      "paragraphs": [
+        {
+          "volume": "严朱吾丘主父徐严终王贾传第三十四下",
+          "paragraph_from": 2,
+          "paragraph_to": 7
+        }
+      ],
+      "五级细坐标": "汉书·卷076·文臣·01",
+      "六级段落锚点": "[P2-P7]",
+      "原文出处": "严朱吾丘主父徐严终王贾传第三十四下·P2-P7"
+    },
+    {
+      "史略ID": "HANSHU_076_02",
+      "史略名称": "终军",
+      "史略简介": "终军",
+      "原文字句": "终军字子云，济南人也。少好学，以辩博能属文闻于郡中。年十八，选为博士弟子。至府受遣，太守闻其有异材，召见军。甚奇之，与交结。军揖太守而去，至长安上书言事。武帝异其文，拜军为谒者给事中。",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷76·严朱吾丘主父徐严终王贾传第三十四下》",
+      "paragraphs": [
+        {
+          "volume": "严朱吾丘主父徐严终王贾传第三十四下",
+          "paragraph_from": 8,
+          "paragraph_to": 17
+        }
+      ],
+      "五级细坐标": "汉书·卷076·文臣·02",
+      "六级段落锚点": "[P8-P17]",
+      "原文出处": "严朱吾丘主父徐严终王贾传第三十四下·P8-P17"
+    },
+    {
+      "史略ID": "HANSHU_076_03",
+      "史略名称": "王褒",
+      "史略简介": "王褒",
+      "原文字句": "王褒字子渊，蜀人也。宣帝时修武帝故事，讲论六艺群书，博尽奇异之好，征能为《楚辞》九江被公，召见诵读，益召高材刘向、张子侨、华龙、柳褒等侍诏金马门。神爵、五凤之间，天下殷富，数有嘉应。上颇作歌诗，欲兴协律之事，丞相魏相奏言知音善鼓雅琴者渤海赵定、梁国龚德，皆召见待诏。于是益州刺史王襄欲宣风化于众庶，闻王褒有俊材，请与相见，使褒作《中和》《乐职》《宣布》诗，选好事者令依《鹿鸣》之声习而歌之。时，汜乡侯",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷76·严朱吾丘主父徐严终王贾传第三十四下》",
+      "paragraphs": [
+        {
+          "volume": "严朱吾丘主父徐严终王贾传第三十四下",
+          "paragraph_from": 18,
+          "paragraph_to": 27
+        }
+      ],
+      "五级细坐标": "汉书·卷076·文臣·03",
+      "六级段落锚点": "[P18-P27]",
+      "原文出处": "严朱吾丘主父徐严终王贾传第三十四下·P18-P27"
+    },
+    {
+      "史略ID": "HANSHU_076_04",
+      "史略名称": "贾捐之",
+      "史略简介": "贾捐之",
+      "原文字句": "贾捐之字君房，贾谊之曾孙也。元帝初即位，上疏言得失，召待诏金马门。",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷76·严朱吾丘主父徐严终王贾传第三十四下》",
+      "paragraphs": [
+        {
+          "volume": "严朱吾丘主父徐严终王贾传第三十四下",
+          "paragraph_from": 28,
+          "paragraph_to": 39
+        }
+      ],
+      "五级细坐标": "汉书·卷076·文臣·04",
+      "六级段落锚点": "[P28-P39]",
+      "原文出处": "严朱吾丘主父徐严终王贾传第三十四下·P28-P39"
+    }
+  ]
+}

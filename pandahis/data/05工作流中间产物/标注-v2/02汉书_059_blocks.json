@@ -1,0 +1,56 @@
+{
+  "work": "02汉书",
+  "vol": "059",
+  "total_paragraphs": 50,
+  "volume_subtype": "hezhuan",
+  "derived_from": "02汉书_059_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 2,
+      "paragraph_to": 2,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 49,
+      "paragraph_to": 49,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 50,
+      "paragraph_to": 50,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "爰盎",
+      "category": "文臣",
+      "paragraph_from": 3,
+      "paragraph_to": 15,
+      "boundary_evidence": {
+        "open_paragraph": 3,
+        "open_phrase": "爰盎字丝。其父楚人也，故为群盗，徙安陵。高后时，盎为吕禄舍人。孝文即位，盎兄哙任",
+        "close_paragraph": 15,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P3–P15"
+      }
+    },
+    {
+      "name": "晁错",
+      "category": "文臣",
+      "paragraph_from": 16,
+      "paragraph_to": 48,
+      "boundary_evidence": {
+        "open_paragraph": 16,
+        "open_phrase": "晁错，颍川人也。学申、商刑名于轵张恢生所，与洛阳宋孟及刘带同师。以文学为太常掌故",
+        "close_paragraph": 48,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P16–P48"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

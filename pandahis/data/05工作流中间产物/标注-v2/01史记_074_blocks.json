@@ -1,0 +1,66 @@
+{
+  "work": "01史记",
+  "vol": "074",
+  "total_paragraphs": 18,
+  "volume_subtype": "hezhuan",
+  "derived_from": "01史记_074_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph_from": 2,
+      "paragraph_to": 2,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 5,
+      "paragraph_to": 8,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 9,
+      "paragraph_to": 9,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 10,
+      "paragraph_to": 15,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 17,
+      "paragraph_to": 18,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "孟子",
+      "category": "文臣",
+      "paragraph_from": 3,
+      "paragraph_to": 4,
+      "boundary_evidence": {
+        "open_paragraph": 3,
+        "open_phrase": "孟轲，驺人也。受业子思之门人。道既通，游事齐宣王，宣王不能用。適梁，梁惠王不果所",
+        "close_paragraph": 4,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P3–P4"
+      }
+    },
+    {
+      "name": "荀卿",
+      "category": "文臣",
+      "paragraph_from": 16,
+      "paragraph_to": 16,
+      "boundary_evidence": {
+        "open_paragraph": 16,
+        "open_phrase": "荀卿，赵人。年五十始来游学於齐。驺衍之术迂大而闳辩；奭也文具难施；淳于髡久与处，",
+        "close_paragraph": 16,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P16–P16"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

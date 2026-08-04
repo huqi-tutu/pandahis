@@ -1,0 +1,184 @@
+{
+  "volume": "高后纪",
+  "source_file": "02汉书_004_高后纪第三.txt",
+  "total_paragraphs": 18,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "single",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "吕太后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "吕太后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "吕太后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "吕太后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "吕太后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "吕太后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "吕太后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "吕太后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "吕太后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "吕太后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "吕太后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "吕太后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "吕太后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "吕太后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "吕太后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "吕太后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [],
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HANSHU_004_01",
+      "史略名称": "吕太后",
+      "史略简介": "吕太后",
+      "原文字句": "高皇后吕氏，生惠帝。佐高祖定天下，父兄及高祖而侯者三人。惠帝即位，尊吕后为太后。太后立帝姊鲁元公主女为皇后，无子，取后宫美人子名之以为太子。惠帝崩，太子立为皇帝，年幼，太后临朝称制，大赦天下。乃立兄子吕台、产、禄、台子通四人为王，封诸吕六人为列侯。语在《外戚传》。",
+      "史略分类": "宗戚",
+      "主要史料出处": "《02汉书·卷4·高后纪》",
+      "paragraphs": [
+        {
+          "volume": "高后纪",
+          "paragraph_from": 2,
+          "paragraph_to": 17
+        }
+      ],
+      "五级细坐标": "汉书·卷004·宗戚·01",
+      "六级段落锚点": "[P2-P17]",
+      "原文出处": "高后纪·P2-P17"
+    }
+  ]
+}

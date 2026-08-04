@@ -1,0 +1,205 @@
+{
+  "schema": "v2-pending-paragraph-patch/v1",
+  "description": "V1已有翻译，V2母本仅在头/尾多1-3段；不可直接复用，需补译缺失段落后拼接",
+  "count": 0,
+  "entries": [],
+  "excluded": [],
+  "excluded_count": 0,
+  "notes": [
+    "GLBL_00007 卫灵公翻译已删除（空转括注/质量差），待整篇重译，不再走头尾补全"
+  ],
+  "completed": [
+    {
+      "id": "GLBL_00149",
+      "name": "黄帝",
+      "promoted_to": "data/11新标注条目翻译/GLBL_00149_黄帝.json",
+      "method": "patch-integrate"
+    },
+    {
+      "id": "GLBL_00023",
+      "name": "周幽王",
+      "promoted_to": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/11新标注条目翻译/GLBL_00023_周幽王.json",
+      "method": "patch-integrate"
+    },
+    {
+      "id": "GLBL_00028",
+      "name": "周成王",
+      "promoted_to": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/11新标注条目翻译/GLBL_00028_周成王.json",
+      "method": "patch-integrate"
+    },
+    {
+      "id": "GLBL_00060",
+      "name": "成汤",
+      "promoted_to": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/11新标注条目翻译/GLBL_00060_成汤.json",
+      "method": "patch-integrate"
+    },
+    {
+      "id": "GLBL_00069",
+      "name": "楚怀王",
+      "promoted_to": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/11新标注条目翻译/GLBL_00069_楚怀王.json",
+      "method": "patch-integrate"
+    },
+    {
+      "id": "GLBL_00092",
+      "name": "盘庚",
+      "promoted_to": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/11新标注条目翻译/GLBL_00092_盘庚.json",
+      "method": "patch-integrate"
+    },
+    {
+      "id": "GLBL_00136",
+      "name": "郑桓公",
+      "promoted_to": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/11新标注条目翻译/GLBL_00136_郑桓公.json",
+      "method": "patch-integrate"
+    },
+    {
+      "id": "GLBL_00141",
+      "name": "韩昭侯",
+      "promoted_to": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/11新标注条目翻译/GLBL_00141_韩昭侯.json",
+      "method": "patch-integrate"
+    },
+    {
+      "id": "GLBL_00144",
+      "name": "颛顼",
+      "promoted_to": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/11新标注条目翻译/GLBL_00144_颛顼.json",
+      "method": "patch-integrate"
+    },
+    {
+      "id": "GLBL_00492",
+      "name": "黄歇",
+      "promoted_to": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/11新标注条目翻译/GLBL_00492_黄歇.json",
+      "method": "patch-integrate"
+    },
+    {
+      "id": "GLBL_00528",
+      "name": "白起",
+      "promoted_to": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/11新标注条目翻译/GLBL_00528_白起.json",
+      "method": "patch-integrate"
+    },
+    {
+      "id": "GLBL_00730",
+      "name": "赵简子",
+      "promoted_to": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/11新标注条目翻译/GLBL_00730_赵简子.json",
+      "method": "patch-integrate"
+    },
+    {
+      "id": "GLBL_00038",
+      "name": "周穆王",
+      "promoted_to": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/11新标注条目翻译/GLBL_00038_周穆王.json",
+      "method": "patch-integrate"
+    },
+    {
+      "id": "GLBL_00052",
+      "name": "宋景公",
+      "promoted_to": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/11新标注条目翻译/GLBL_00052_宋景公.json",
+      "method": "patch-integrate"
+    },
+    {
+      "id": "GLBL_00057",
+      "name": "帝喾",
+      "promoted_to": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/11新标注条目翻译/GLBL_00057_帝喾.json",
+      "method": "patch-integrate"
+    },
+    {
+      "id": "GLBL_00058",
+      "name": "帝辛（纣）",
+      "promoted_to": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/11新标注条目翻译/GLBL_00058_帝辛（纣）.json",
+      "method": "patch-integrate"
+    },
+    {
+      "id": "GLBL_00061",
+      "name": "晋悼公",
+      "promoted_to": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/11新标注条目翻译/GLBL_00061_晋悼公.json",
+      "method": "patch-integrate"
+    },
+    {
+      "id": "GLBL_00062",
+      "name": "晋文公",
+      "promoted_to": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/11新标注条目翻译/GLBL_00062_晋文公.json",
+      "method": "patch-integrate"
+    },
+    {
+      "id": "GLBL_00065",
+      "name": "晋献公",
+      "promoted_to": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/11新标注条目翻译/GLBL_00065_晋献公.json",
+      "method": "patch-integrate"
+    },
+    {
+      "id": "GLBL_00068",
+      "name": "楚庄王",
+      "promoted_to": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/11新标注条目翻译/GLBL_00068_楚庄王.json",
+      "method": "patch-integrate"
+    },
+    {
+      "id": "GLBL_00073",
+      "name": "武丁",
+      "promoted_to": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/11新标注条目翻译/GLBL_00073_武丁.json",
+      "method": "patch-integrate"
+    },
+    {
+      "id": "GLBL_00096",
+      "name": "禹",
+      "promoted_to": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/11新标注条目翻译/GLBL_00096_禹.json",
+      "method": "patch-integrate"
+    },
+    {
+      "id": "GLBL_00147",
+      "name": "魏文侯",
+      "promoted_to": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/11新标注条目翻译/GLBL_00147_魏文侯.json",
+      "method": "patch-integrate"
+    },
+    {
+      "id": "GLBL_00148",
+      "name": "魏武侯",
+      "promoted_to": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/11新标注条目翻译/GLBL_00148_魏武侯.json",
+      "method": "patch-integrate"
+    },
+    {
+      "id": "GLBL_00421",
+      "name": "管仲",
+      "promoted_to": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/11新标注条目翻译/GLBL_00421_管仲.json",
+      "method": "patch-integrate"
+    },
+    {
+      "id": "GLBL_00429",
+      "name": "范睢",
+      "promoted_to": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/11新标注条目翻译/GLBL_00429_范睢.json",
+      "method": "patch-integrate"
+    },
+    {
+      "id": "GLBL_00442",
+      "name": "虞卿",
+      "promoted_to": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/11新标注条目翻译/GLBL_00442_虞卿.json",
+      "method": "patch-integrate"
+    },
+    {
+      "id": "GLBL_00696",
+      "name": "卫庄公",
+      "promoted_to": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/11新标注条目翻译/GLBL_00696_卫庄公.json",
+      "method": "patch-integrate"
+    },
+    {
+      "id": "GLBL_00704",
+      "name": "宋文公",
+      "promoted_to": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/11新标注条目翻译/GLBL_00704_宋文公.json",
+      "method": "patch-integrate"
+    },
+    {
+      "id": "GLBL_00718",
+      "name": "楚灵王",
+      "promoted_to": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/11新标注条目翻译/GLBL_00718_楚灵王.json",
+      "method": "patch-integrate"
+    },
+    {
+      "id": "GLBL_00736",
+      "name": "郑简公",
+      "promoted_to": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/11新标注条目翻译/GLBL_00736_郑简公.json",
+      "method": "patch-integrate"
+    },
+    {
+      "id": "GLBL_00746",
+      "name": "韩釐王",
+      "promoted_to": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/11新标注条目翻译/GLBL_00746_韩釐王.json",
+      "method": "patch-integrate"
+    }
+  ]
+}

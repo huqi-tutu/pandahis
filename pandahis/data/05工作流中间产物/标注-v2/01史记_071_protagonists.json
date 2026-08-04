@@ -1,0 +1,24 @@
+{
+  "work": "01史记",
+  "vol": "071",
+  "volume_name": "樗里子甘茂列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "樗里子",
+      "category": "宗戚",
+      "rationale": "樗里子名嬴疾，秦惠文王异母弟，属同姓宗室，卷名首列人物，为合传主轴之一。按史略分类v4宗戚专则，同姓藩王/宗室归宗戚，非诸侯或君王。"
+    },
+    {
+      "name": "甘茂",
+      "category": "文臣",
+      "rationale": "甘茂为秦国丞相，以纵横谋略、外交行政事秦，属文臣主轴。卷名并列第二人物，为合传主轴之一。按史略分类v4，行政外交仕宦为主轴者归文臣。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

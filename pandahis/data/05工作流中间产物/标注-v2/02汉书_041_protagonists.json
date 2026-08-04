@@ -1,0 +1,25 @@
+{
+  "work": "02汉书",
+  "vol": "041",
+  "volume_name": "陈胜项籍传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "陈胜",
+      "category": "庶众",
+      "rationale": "卷名《陈胜项籍传》首列陈胜，为秦末起义领袖，未称帝建制，依史略分类v4准入标准，起义未称帝者归庶众。"
+    },
+    {
+      "name": "项羽",
+      "category": "君王",
+      "rationale": "卷名《陈胜项籍传》次列项籍（项羽），为秦末霸王级天下共主，依史略分类v4准入标准，霸王级本纪共主归君王。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

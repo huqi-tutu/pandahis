@@ -1,0 +1,27 @@
+{
+  "work": "01史记",
+  "vol": "116",
+  "total_paragraphs": 16,
+  "volume_subtype": "fanzuo",
+  "excludes": [
+    {
+      "paragraph_from": 16,
+      "paragraph_to": 16,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "西南夷",
+      "category": "蕃祚",
+      "paragraph_from": 1,
+      "paragraph_to": 15,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "西南夷君长以什数，夜郎最大；其西靡莫之属以什数，滇最大；自滇以北君长以什数，邛都",
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

@@ -63,6 +63,7 @@ CREATE TABLE IF NOT EXISTS historical_box (
   civilization_code VARCHAR(16) NOT NULL,
   civilization_name VARCHAR(64) NULL,
   dynasty_name VARCHAR(128) NULL,
+  regime_name VARCHAR(128) NULL,
   title VARCHAR(128) NOT NULL,
   category_key VARCHAR(16) NOT NULL,
   blurb VARCHAR(64) NULL,
@@ -226,6 +227,15 @@ CREATE TABLE IF NOT EXISTS search_hot_keyword (
   sort_order INT NOT NULL DEFAULT 0,
   status TINYINT NOT NULL DEFAULT 1,
   CONSTRAINT uk_search_hot_keyword UNIQUE (keyword)
+);
+
+CREATE TABLE IF NOT EXISTS user_search_history (
+  id BIGINT PRIMARY KEY AUTO_INCREMENT,
+  user_id BIGINT NOT NULL,
+  keyword VARCHAR(64) NOT NULL,
+  last_searched_at TIMESTAMP NOT NULL,
+  search_count INT NOT NULL DEFAULT 1,
+  UNIQUE (user_id, keyword)
 );
 
 CREATE TABLE IF NOT EXISTS app_kv (

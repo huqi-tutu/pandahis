@@ -1,0 +1,26 @@
+{
+  "work": "01史记",
+  "vol": "035",
+  "volume_name": "管蔡世家",
+  "volume_type_guess": "世家",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "管叔鲜",
+      "category": "宗戚",
+      "rationale": "卷名『管蔡世家』，管叔鲜为卷名首指之人，周武王之弟，与蔡叔度并列为合传主轴。（武王弟，无本纪，分类宗戚非君王）"
+    },
+    {
+      "name": "蔡叔度",
+      "category": "宗戚",
+      "rationale": "卷名『管蔡世家』，蔡叔度为卷名所指第二人，周武王之弟，与管叔鲜并列为合传主轴。（武王弟，无本纪，分类宗戚非君王）"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "其他"
+  ],
+  "volume_subtype": "liezhuan_hezhuan"
+}

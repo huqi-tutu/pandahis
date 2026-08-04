@@ -1,0 +1,19 @@
+{
+  "work": "01史记",
+  "vol": "054",
+  "volume_name": "曹相国世家",
+  "volume_type_guess": "世家",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "曹参",
+      "category": "文臣",
+      "rationale": "《曹相国世家》以曹参一人为叙事主轴，卷名即其封号。曹参虽封平阳侯，但本卷主轴为其相国政治生涯与萧规曹随之治绩，非以封国世袭君主治国为卷，故归文臣而非诸侯。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

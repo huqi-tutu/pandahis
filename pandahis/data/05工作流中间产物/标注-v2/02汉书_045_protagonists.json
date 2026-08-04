@@ -1,0 +1,30 @@
+{
+  "work": "02汉书",
+  "vol": "045",
+  "volume_name": "荆燕吴传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "刘贾",
+      "category": "宗戚",
+      "rationale": "《荆燕吴传》为汉书诸侯王合传，卷名首列荆王刘贾，为高祖从父兄、同姓藩王，属宗戚而非君王或诸侯。"
+    },
+    {
+      "name": "刘泽",
+      "category": "宗戚",
+      "rationale": "卷名「燕」对应燕王刘泽，高祖从祖昆弟，同姓藩王叙事块，属宗戚。"
+    },
+    {
+      "name": "刘濞",
+      "category": "宗戚",
+      "rationale": "《荆燕吴传》卷名末列吴王刘濞，为高祖兄刘仲之子、同姓藩王，属宗戚而非君王或诸侯。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

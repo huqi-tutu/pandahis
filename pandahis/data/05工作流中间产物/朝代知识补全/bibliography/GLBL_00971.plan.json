@@ -1,0 +1,83 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00971",
+  "写作结构": "正史系统叙述已见翻译详录（《史记·秦始皇本纪》等）；史外文献无独立异说，仅后世编年复述同一事件，故不额外拓展。条目细节以 anchor 硬事实为准，不虚构后续生平、封赏或对话。",
+  "候选著作": [
+    {
+      "出处": "《史记·秦始皇本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "韩谈事迹的唯一原始记载：子婴与宦者韩谈及其子谋杀赵高于斋宫",
+      "检索词": "韩谈",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《资治通鉴·秦纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋代编年体重述《史记》所载韩谈刺杀赵高过程，无新增信息",
+      "检索词": "韩谈 赵高",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《通志·秦纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "抄撮《史记》及《通鉴》，无独立史料价值",
+      "检索词": "韩谈",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·秦始皇本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "韩谈事迹的唯一原始记载：子婴与宦者韩谈及其子谋杀赵高于斋宫",
+      "检索词": "韩谈",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《资治通鉴·秦纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋代编年体重述《史记》所载韩谈刺杀赵高过程，无新增信息",
+      "检索词": "韩谈 赵高",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《通志·秦纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "抄撮《史记》及《通鉴》，无独立史料价值",
+      "检索词": "韩谈",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 0,
+    "C_excluded": 3,
+    "overall": "C"
+  }
+}

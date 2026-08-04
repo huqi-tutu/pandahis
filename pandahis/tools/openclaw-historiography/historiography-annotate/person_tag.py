@@ -297,8 +297,11 @@ def build_llm_prompt(batch: List[dict], *, no_empty: bool = False) -> str:
 
 
 def run_llm_batch(batch: List[dict], *, batch_index: int, no_empty: bool = False) -> Dict[str, dict]:
+    from llm.config import ensure_annotate_model, get_provider_name, PROVIDER_DEEPSEEK  # noqa: WPS433
     from llm.provider import run_agent_turn  # noqa: WPS433
 
+    if get_provider_name() == PROVIDER_DEEPSEEK:
+        ensure_annotate_model()
     prompt = build_llm_prompt(batch, no_empty=no_empty)
     sid = "ptag-" + hashlib.sha1(prompt.encode("utf-8")).hexdigest()[:12]
     _log(f"  🤖 LLM 人物标签 第 {batch_index} 批 ({len(batch)} 条)")

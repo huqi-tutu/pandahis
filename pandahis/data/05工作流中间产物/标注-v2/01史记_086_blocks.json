@@ -1,0 +1,114 @@
+{
+  "work": "01史记",
+  "vol": "086",
+  "total_paragraphs": 57,
+  "volume_subtype": "hezhuan",
+  "derived_from": "01史记_086_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 4,
+      "paragraph_to": 4,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 6,
+      "paragraph_to": 7,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 13,
+      "paragraph_to": 13,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 20,
+      "paragraph_to": 20,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 31,
+      "paragraph_to": 31,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 57,
+      "paragraph_to": 57,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "曹沫",
+      "category": "庶众",
+      "paragraph_from": 1,
+      "paragraph_to": 3,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "曹沫者，鲁人也，以勇力事鲁庄公。庄公好力。曹沫为鲁将，与齐战，三败北。鲁庄公惧，",
+        "close_paragraph": 3,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P1–P3"
+      }
+    },
+    {
+      "name": "专诸",
+      "category": "庶众",
+      "paragraph_from": 5,
+      "paragraph_to": 5,
+      "boundary_evidence": {
+        "open_paragraph": 5,
+        "open_phrase": "专诸者，吴堂邑人也。伍子胥之亡楚而如吴也，知专诸之能。伍子胥既见吴王僚，说以伐楚",
+        "close_paragraph": 5,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P5–P5"
+      }
+    },
+    {
+      "name": "专诸",
+      "category": "庶众",
+      "paragraph_from": 8,
+      "paragraph_to": 12,
+      "boundary_evidence": {
+        "open_paragraph": 8,
+        "open_phrase": "故尝阴养谋臣以求立。",
+        "close_paragraph": 12,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P8–P12"
+      }
+    },
+    {
+      "name": "豫让",
+      "category": "庶众",
+      "paragraph_from": 14,
+      "paragraph_to": 19,
+      "boundary_evidence": {
+        "open_paragraph": 14,
+        "open_phrase": "豫让者，晋人也，故尝事范氏及中行氏，而无所知名。去而事智伯，智伯甚尊宠之。及智伯",
+        "close_paragraph": 19,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P14–P19"
+      }
+    },
+    {
+      "name": "聂政",
+      "category": "庶众",
+      "paragraph_from": 21,
+      "paragraph_to": 30,
+      "boundary_evidence": {
+        "open_paragraph": 21,
+        "open_phrase": "聂政者，轵深井里人也。杀人避仇，与母、姊如齐，以屠为事。",
+        "close_paragraph": 30,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P21–P30"
+      }
+    },
+    {
+      "name": "荆轲",
+      "category": "庶众",
+      "paragraph_from": 32,
+      "paragraph_to": 56,
+      "boundary_evidence": {
+        "open_paragraph": 32,
+        "open_phrase": "荆轲者，卫人也。其先乃齐人，徙於卫，卫人谓之庆卿。而之燕，燕人谓之荆卿。",
+        "close_paragraph": 56,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P32–P56"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

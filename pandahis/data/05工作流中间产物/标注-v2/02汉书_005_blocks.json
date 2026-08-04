@@ -1,0 +1,32 @@
+{
+  "work": "02汉书",
+  "vol": "005",
+  "total_paragraphs": 78,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 78,
+      "paragraph_to": 78,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "汉文帝",
+      "category": "君王",
+      "paragraph_from": 2,
+      "paragraph_to": 77,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "孝文皇帝，高祖中子也，母曰薄姬。高祖十一年，诛陈狶，定代地，立为代王，都中都。十",
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

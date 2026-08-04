@@ -1,0 +1,596 @@
+{
+  "volume": "刺客列传",
+  "source_file": "01史记_086_刺客列传第二十六.txt",
+  "total_paragraphs": 57,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "interleaved",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [
+        {
+          "name": "曹沫",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "曹沫",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "曹沫",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "专诸",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "专诸",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "专诸",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "专诸",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "专诸",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "专诸",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "专诸",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "专诸",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "豫让",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "豫让",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "豫让",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "豫让",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "豫让",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "豫让",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "聂政",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "聂政",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "聂政",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "聂政",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "聂政",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "聂政",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "聂政",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "聂政",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "聂政",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "聂政",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "荆轲",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "荆轲",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "荆轲",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "荆轲",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "荆轲",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "荆轲",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "荆轲",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "荆轲",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "荆轲",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "荆轲",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "荆轲",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "荆轲",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "荆轲",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "荆轲",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [
+        {
+          "name": "荆轲",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 47,
+      "owners": [
+        {
+          "name": "荆轲",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 48,
+      "owners": [
+        {
+          "name": "荆轲",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 49,
+      "owners": [
+        {
+          "name": "荆轲",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 50,
+      "owners": [
+        {
+          "name": "荆轲",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 51,
+      "owners": [
+        {
+          "name": "荆轲",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 52,
+      "owners": [
+        {
+          "name": "荆轲",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 53,
+      "owners": [
+        {
+          "name": "荆轲",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 54,
+      "owners": [
+        {
+          "name": "荆轲",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 55,
+      "owners": [
+        {
+          "name": "荆轲",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 56,
+      "owners": [
+        {
+          "name": "荆轲",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 57,
+      "owners": [],
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SHIJI_086_01",
+      "史略名称": "曹沫",
+      "史略简介": "曹沫",
+      "原文字句": "曹沫者，鲁人也，以勇力事鲁庄公。庄公好力。曹沫为鲁将，与齐战，三败北。鲁庄公惧，乃献遂邑之地以和。犹复以为将。",
+      "史略分类": "庶众",
+      "主要史料出处": "《史记·卷86·刺客列传》",
+      "paragraphs": [
+        {
+          "volume": "刺客列传",
+          "paragraph_from": 1,
+          "paragraph_to": 3
+        }
+      ],
+      "五级细坐标": "史记·卷086·庶众·01",
+      "六级段落锚点": "[P1-P3]",
+      "原文出处": "刺客列传·P1-P3"
+    },
+    {
+      "史略ID": "SHIJI_086_02",
+      "史略名称": "专诸",
+      "史略简介": "专诸",
+      "原文字句": "专诸者，吴堂邑人也。伍子胥之亡楚而如吴也，知专诸之能。伍子胥既见吴王僚，说以伐楚之利。吴公子光曰：“彼伍员父兄皆死於楚而员言伐楚，欲自为报私雠也，非能为吴。”吴王乃止。伍子胥知公子光之欲杀吴王僚，乃曰：“彼光将有内志，未可说以外事。”乃进专诸於公子光。",
+      "史略分类": "庶众",
+      "主要史料出处": "《史记·卷86·刺客列传》",
+      "paragraphs": [
+        {
+          "volume": "刺客列传",
+          "paragraph_from": 5,
+          "paragraph_to": 12
+        }
+      ],
+      "五级细坐标": "史记·卷086·庶众·02",
+      "六级段落锚点": "[P5-P12]",
+      "原文出处": "刺客列传·P5-P12"
+    },
+    {
+      "史略ID": "SHIJI_086_03",
+      "史略名称": "豫让",
+      "史略简介": "豫让",
+      "原文字句": "豫让者，晋人也，故尝事范氏及中行氏，而无所知名。去而事智伯，智伯甚尊宠之。及智伯伐赵襄子，赵襄子与韩、魏合谋灭智伯，灭智伯之后而三分其地。",
+      "史略分类": "庶众",
+      "主要史料出处": "《史记·卷86·刺客列传》",
+      "paragraphs": [
+        {
+          "volume": "刺客列传",
+          "paragraph_from": 14,
+          "paragraph_to": 19
+        }
+      ],
+      "五级细坐标": "史记·卷086·庶众·03",
+      "六级段落锚点": "[P14-P19]",
+      "原文出处": "刺客列传·P14-P19"
+    },
+    {
+      "史略ID": "SHIJI_086_04",
+      "史略名称": "聂政",
+      "史略简介": "聂政",
+      "原文字句": "聂政者，轵深井里人也。杀人避仇，与母、姊如齐，以屠为事。",
+      "史略分类": "庶众",
+      "主要史料出处": "《史记·卷86·刺客列传》",
+      "paragraphs": [
+        {
+          "volume": "刺客列传",
+          "paragraph_from": 21,
+          "paragraph_to": 30
+        }
+      ],
+      "五级细坐标": "史记·卷086·庶众·04",
+      "六级段落锚点": "[P21-P30]",
+      "原文出处": "刺客列传·P21-P30"
+    },
+    {
+      "史略ID": "SHIJI_086_05",
+      "史略名称": "荆轲",
+      "史略简介": "荆轲",
+      "原文字句": "荆轲者，卫人也。其先乃齐人，徙於卫，卫人谓之庆卿。而之燕，燕人谓之荆卿。",
+      "史略分类": "庶众",
+      "主要史料出处": "《史记·卷86·刺客列传》",
+      "paragraphs": [
+        {
+          "volume": "刺客列传",
+          "paragraph_from": 32,
+          "paragraph_to": 56
+        }
+      ],
+      "五级细坐标": "史记·卷086·庶众·05",
+      "六级段落锚点": "[P32-P56]",
+      "原文出处": "刺客列传·P32-P56"
+    }
+  ],
+  "translation_qa_hint": "混写卷：人物段落非连续。翻译质检须按 entries[].paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。"
+}

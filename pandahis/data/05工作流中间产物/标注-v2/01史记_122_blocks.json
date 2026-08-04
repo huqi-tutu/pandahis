@@ -1,0 +1,293 @@
+{
+  "work": "01史记",
+  "vol": "122",
+  "total_paragraphs": 62,
+  "volume_subtype": "hezhuan",
+  "derived_from": "01史记_122_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph_from": 2,
+      "paragraph_to": 2,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 3,
+      "paragraph_to": 4,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 16,
+      "paragraph_to": 16,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 52,
+      "paragraph_to": 53,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 61,
+      "paragraph_to": 61,
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph_from": 62,
+      "paragraph_to": 62,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "郅都",
+      "category": "文臣",
+      "paragraph_from": 5,
+      "paragraph_to": 9,
+      "boundary_evidence": {
+        "open_paragraph": 5,
+        "open_phrase": "郅都者，杨人也。以郎事孝文帝。孝景时，都为中郎将，敢直谏，面折大臣於朝。尝从入上",
+        "close_paragraph": 9,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P5–P9"
+      }
+    },
+    {
+      "name": "宁成",
+      "category": "文臣",
+      "paragraph_from": 10,
+      "paragraph_to": 12,
+      "boundary_evidence": {
+        "open_paragraph": 10,
+        "open_phrase": "宁成者，穰人也。以郎谒者事景帝。好气，为人小吏，必陵其长吏；为人上，操下如束湿薪",
+        "close_paragraph": 12,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P10–P12"
+      }
+    },
+    {
+      "name": "周阳由",
+      "category": "文臣",
+      "paragraph_from": 13,
+      "paragraph_to": 15,
+      "boundary_evidence": {
+        "open_paragraph": 13,
+        "open_phrase": "周阳由者，其父赵兼以淮南王舅父侯周阳，故因姓周阳氏。由以宗家任为郎，事孝文及景帝",
+        "close_paragraph": 15,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P13–P15"
+      }
+    },
+    {
+      "name": "赵禹",
+      "category": "文臣",
+      "paragraph_from": 17,
+      "paragraph_to": 18,
+      "boundary_evidence": {
+        "open_paragraph": 17,
+        "open_phrase": "赵禹者，斄人。以佐史补中都官，用廉为令史，事太尉亚夫。亚夫为丞相，禹为丞相史，府",
+        "close_paragraph": 18,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P17–P18"
+      }
+    },
+    {
+      "name": "张汤",
+      "category": "文臣",
+      "paragraph_from": 19,
+      "paragraph_to": 33,
+      "boundary_evidence": {
+        "open_paragraph": 19,
+        "open_phrase": "张汤者，杜人也。其父为长安丞，出，汤为儿守舍。还而鼠盗肉，其父怒，笞汤。汤掘窟得",
+        "close_paragraph": 33,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P19–P33"
+      }
+    },
+    {
+      "name": "赵禹",
+      "category": "文臣",
+      "paragraph_from": 34,
+      "paragraph_to": 35,
+      "boundary_evidence": {
+        "open_paragraph": 34,
+        "open_phrase": "赵禹中废，已而为廷尉。始条侯以为禹贼深，弗任。及禹为少府，比九卿。",
+        "close_paragraph": 35,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P34–P35"
+      }
+    },
+    {
+      "name": "义纵",
+      "category": "文臣",
+      "paragraph_from": 36,
+      "paragraph_to": 40,
+      "boundary_evidence": {
+        "open_paragraph": 36,
+        "open_phrase": "义纵者，河东人也。为少年时，尝与张次公俱攻剽为群盗。纵有姊姁，以医幸王太后。王太",
+        "close_paragraph": 40,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P36–P40"
+      }
+    },
+    {
+      "name": "王温舒",
+      "category": "文臣",
+      "paragraph_from": 41,
+      "paragraph_to": 43,
+      "boundary_evidence": {
+        "open_paragraph": 41,
+        "open_phrase": "王温舒者，阳陵人也。少时椎埋为奸。已而试补县亭长，数废。为吏，以治狱至廷史。事张",
+        "close_paragraph": 43,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P41–P43"
+      }
+    },
+    {
+      "name": "尹齐",
+      "category": "文臣",
+      "paragraph_from": 44,
+      "paragraph_to": 44,
+      "boundary_evidence": {
+        "open_paragraph": 44,
+        "open_phrase": "尹齐者，东郡茌平人。以刀笔稍迁至御史。事张汤，张汤数称以为廉武，使督盗贼，所斩伐",
+        "close_paragraph": 44,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P44–P44"
+      }
+    },
+    {
+      "name": "王温舒",
+      "category": "文臣",
+      "paragraph_from": 45,
+      "paragraph_to": 45,
+      "boundary_evidence": {
+        "open_paragraph": 45,
+        "open_phrase": "上复徙温舒为中尉，而杨仆以严酷为主爵都尉。",
+        "close_paragraph": 45,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P45–P45"
+      }
+    },
+    {
+      "name": "杨仆",
+      "category": "武将",
+      "paragraph_from": 46,
+      "paragraph_to": 46,
+      "boundary_evidence": {
+        "open_paragraph": 46,
+        "open_phrase": "杨仆者，宜阳人也。以千夫为吏。河南守案举以为能，迁为御史，使督盗贼关东。治放尹齐",
+        "close_paragraph": 46,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P46–P46"
+      }
+    },
+    {
+      "name": "王温舒",
+      "category": "文臣",
+      "paragraph_from": 47,
+      "paragraph_to": 50,
+      "boundary_evidence": {
+        "open_paragraph": 47,
+        "open_phrase": "而温舒复为中尉。为人少文，居廷惛惛不辩，至於中尉则心开。督盗贼，素习关中俗，知豪",
+        "close_paragraph": 50,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P47–P50"
+      }
+    },
+    {
+      "name": "尹齐",
+      "category": "文臣",
+      "paragraph_from": 51,
+      "paragraph_to": 51,
+      "boundary_evidence": {
+        "open_paragraph": 51,
+        "open_phrase": "所诛灭淮阳甚多，及死，仇家欲烧其尸，尸亡去归葬。",
+        "close_paragraph": 51,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P51–P51"
+      }
+    },
+    {
+      "name": "减宣",
+      "category": "文臣",
+      "paragraph_from": 54,
+      "paragraph_to": 55,
+      "boundary_evidence": {
+        "open_paragraph": 54,
+        "open_phrase": "减宣者，杨人也。以佐史无害给事河东守府。卫将军青使买马河东，见宣无害，言上，徵为",
+        "close_paragraph": 55,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P54–P55"
+      }
+    },
+    {
+      "name": "杜周",
+      "category": "文臣",
+      "paragraph_from": 56,
+      "paragraph_to": 60,
+      "boundary_evidence": {
+        "open_paragraph": 56,
+        "open_phrase": "杜周者，南阳杜衍人。义纵为南阳守，以为爪牙，举为廷尉史。事张汤，汤数言其无害，至",
+        "close_paragraph": 60,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P56–P60"
+      }
+    }
+  ],
+  "multi_owner_segments": [
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "张汤",
+          "category": "文臣"
+        },
+        {
+          "name": "赵禹",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "赵禹",
+          "category": "文臣"
+        },
+        {
+          "name": "张汤",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "杨仆",
+          "category": "武将"
+        },
+        {
+          "name": "王温舒",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 50,
+      "owners": [
+        {
+          "name": "尹齐",
+          "category": "文臣"
+        },
+        {
+          "name": "王温舒",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 57,
+      "owners": [
+        {
+          "name": "减宣",
+          "category": "文臣"
+        },
+        {
+          "name": "杜周",
+          "category": "文臣"
+        }
+      ]
+    }
+  ]
+}

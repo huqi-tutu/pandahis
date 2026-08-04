@@ -1,0 +1,29 @@
+{
+  "work": "01史记",
+  "vol": "093",
+  "volume_name": "韩信卢绾列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "韩王信",
+      "category": "武将",
+      "rationale": "韩襄王孽孙，封韩王、守太原，后叛入匈奴；非淮阴侯韩信。"
+    },
+    {
+      "name": "卢绾",
+      "category": "武将",
+      "rationale": "高祖同乡功臣，封燕王，本卷中段主轴。"
+    },
+    {
+      "name": "陈豨",
+      "category": "武将",
+      "rationale": "赵相国监边兵，后反代自立，本卷末附传。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

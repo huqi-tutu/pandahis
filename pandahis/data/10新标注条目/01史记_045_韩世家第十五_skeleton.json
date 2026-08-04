@@ -1,0 +1,431 @@
+{
+  "volume": "韩世家",
+  "source_file": "01史记_045_韩世家第十五.txt",
+  "total_paragraphs": 45,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "韩厥",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "韩厥",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "韩厥",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 6,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 7,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 8,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 9,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 10,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 11,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 12,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 13,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 14,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 15,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 16,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 17,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "韩昭侯",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "韩昭侯",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "韩昭侯",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "韩昭侯",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "韩宣惠王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "韩宣惠王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "韩宣惠王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "韩宣惠王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "韩宣惠王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "韩宣惠王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "韩宣惠王",
+          "category": "诸侯"
+        },
+        {
+          "name": "韩襄王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "韩襄王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "韩襄王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "韩襄王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "韩襄王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "韩襄王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "韩襄王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "韩襄王",
+          "category": "诸侯"
+        },
+        {
+          "name": "韩釐王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "韩釐王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "韩釐王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "韩釐王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 40,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 41,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 42,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 43,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 44,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 45,
+      "owners": [],
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SHIJI_045_01",
+      "史略名称": "韩厥",
+      "史略简介": "韩厥",
+      "原文字句": "韩厥，晋景公之三年，晋司寇屠岸贾将作乱，诛灵公之贼赵盾。赵盾已死矣，欲诛其子赵朔。韩厥止贾，贾不听。厥告赵朔令亡。朔曰：“子必能不绝赵祀，死不恨矣。”韩厥许之。及贾诛赵氏，厥称疾不出。程婴、公孙杵臼之藏赵孤赵武也，厥知之。",
+      "史略分类": "文臣",
+      "主要史料出处": "《史记·卷45·韩世家》",
+      "paragraphs": [
+        {
+          "volume": "韩世家",
+          "paragraph_from": 2,
+          "paragraph_to": 4
+        }
+      ],
+      "五级细坐标": "史记·卷045·文臣·01",
+      "六级段落锚点": "[P2-P4]",
+      "原文出处": "韩世家·P2-P4"
+    },
+    {
+      "史略ID": "SHIJI_045_02",
+      "史略名称": "韩昭侯",
+      "史略简介": "韩昭侯",
+      "原文字句": "昭侯元年，秦败我西山。二年，宋取我黄池。魏取朱。六年，伐东周，取陵观、邢丘。",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷45·韩世家》",
+      "paragraphs": [
+        {
+          "volume": "韩世家",
+          "paragraph_from": 18,
+          "paragraph_to": 21
+        }
+      ],
+      "五级细坐标": "史记·卷045·诸侯·02",
+      "六级段落锚点": "[P18-P21]",
+      "原文出处": "韩世家·P18-P21"
+    },
+    {
+      "史略ID": "SHIJI_045_03",
+      "史略名称": "韩宣惠王",
+      "史略简介": "韩宣惠王",
+      "原文字句": "宣惠王五年，张仪相秦。八年，魏败我将韩举。十一年，君号为王。与赵会区鼠。十四年，秦伐败我鄢。",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷45·韩世家》",
+      "paragraphs": [
+        {
+          "volume": "韩世家",
+          "paragraph_from": 22,
+          "paragraph_to": 28
+        }
+      ],
+      "五级细坐标": "史记·卷045·诸侯·03",
+      "六级段落锚点": "[P22-P28]",
+      "原文出处": "韩世家·P22-P28"
+    },
+    {
+      "史略ID": "SHIJI_045_04",
+      "史略名称": "韩襄王",
+      "史略简介": "韩襄王",
+      "原文字句": "二十一年，与秦共攻楚，败楚将屈丐，斩首八万於丹阳。”是岁，宣惠王卒，太子仓立，是为襄王。",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷45·韩世家》",
+      "paragraphs": [
+        {
+          "volume": "韩世家",
+          "paragraph_from": 28,
+          "paragraph_to": 35
+        }
+      ],
+      "五级细坐标": "史记·卷045·诸侯·04",
+      "六级段落锚点": "[P28-P35]",
+      "原文出处": "韩世家·P28-P35"
+    },
+    {
+      "史略ID": "SHIJI_045_05",
+      "史略名称": "韩釐王",
+      "史略简介": "韩釐王",
+      "原文字句": "襄王卒，太子咎立，是为釐王。",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷45·韩世家》",
+      "paragraphs": [
+        {
+          "volume": "韩世家",
+          "paragraph_from": 35,
+          "paragraph_to": 38
+        }
+      ],
+      "五级细坐标": "史记·卷045·诸侯·05",
+      "六级段落锚点": "[P35-P38]",
+      "原文出处": "韩世家·P35-P38"
+    }
+  ]
+}

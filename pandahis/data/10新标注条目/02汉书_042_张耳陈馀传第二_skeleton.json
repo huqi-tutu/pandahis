@@ -1,0 +1,305 @@
+{
+  "volume": "张耳陈馀传",
+  "source_file": "02汉书_042_张耳陈馀传第二.txt",
+  "total_paragraphs": 24,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "interleaved",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "张耳",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "陈馀",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "张耳",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "陈馀",
+          "category": "文臣"
+        },
+        {
+          "name": "张耳",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "陈馀",
+          "category": "文臣"
+        },
+        {
+          "name": "张耳",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "陈馀",
+          "category": "文臣"
+        },
+        {
+          "name": "张耳",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "陈馀",
+          "category": "文臣"
+        },
+        {
+          "name": "张耳",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "陈馀",
+          "category": "文臣"
+        },
+        {
+          "name": "张耳",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "陈馀",
+          "category": "文臣"
+        },
+        {
+          "name": "张耳",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "陈馀",
+          "category": "文臣"
+        },
+        {
+          "name": "张耳",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "张耳",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "陈馀",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "陈馀",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "陈馀",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "张耳",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "张耳",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "张耳",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "张耳",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "张耳",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "张耳",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "张耳",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "张耳",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HANSHU_042_01",
+      "史略名称": "张耳",
+      "史略简介": "张耳",
+      "原文字句": "张耳，大梁人也，少时及魏公子毋忌为客。尝亡命游外黄，外黄富人女甚美，庸奴其夫，亡邸父客。父客谓曰：“必欲求贤夫，从张耳。”女听，为请决，嫁之。女家厚奉给耳，耳以故致千里客，宦为外黄令。",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷42·张耳陈馀传》",
+      "paragraphs": [
+        {
+          "volume": "张耳陈馀传",
+          "paragraph_from": 2,
+          "paragraph_to": 2
+        },
+        {
+          "volume": "张耳陈馀传",
+          "paragraph_from": 4,
+          "paragraph_to": 12
+        },
+        {
+          "volume": "张耳陈馀传",
+          "paragraph_from": 16,
+          "paragraph_to": 23
+        }
+      ],
+      "五级细坐标": "汉书·卷042·文臣·01",
+      "六级段落锚点": "[P2],[P4-P12],[P16-P23]",
+      "原文出处": "张耳陈馀传·P2,P4-P12,P16-P23"
+    },
+    {
+      "史略ID": "HANSHU_042_02",
+      "史略名称": "陈馀",
+      "史略简介": "陈馀",
+      "原文字句": "陈余，亦大梁人，好儒术。游赵苦陉，富人公乘氏以其女妻之。余年少，父事耳，相与为刎颈交。",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷42·张耳陈馀传》",
+      "paragraphs": [
+        {
+          "volume": "张耳陈馀传",
+          "paragraph_from": 3,
+          "paragraph_to": 3
+        },
+        {
+          "volume": "张耳陈馀传",
+          "paragraph_from": 5,
+          "paragraph_to": 11
+        },
+        {
+          "volume": "张耳陈馀传",
+          "paragraph_from": 13,
+          "paragraph_to": 15
+        }
+      ],
+      "五级细坐标": "汉书·卷042·文臣·02",
+      "六级段落锚点": "[P3],[P5-P11],[P13-P15]",
+      "原文出处": "张耳陈馀传·P3,P5-P11,P13-P15"
+    }
+  ],
+  "translation_qa_hint": "混写卷：人物段落非连续。翻译质检须按 entries[].paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。"
+}

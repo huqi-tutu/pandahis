@@ -1,0 +1,190 @@
+{
+  "work": "01史记",
+  "vol": "121",
+  "total_paragraphs": 33,
+  "method": "Step1b-α LLM",
+  "paragraphs": [
+    {
+      "paragraph": 1,
+      "primary_subject": "太史公曰",
+      "disposition": "exclude",
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph": 2,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 3,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 4,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 5,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 6,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 7,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 8,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 9,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 10,
+      "primary_subject": "申公",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 11,
+      "primary_subject": "申公",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 12,
+      "primary_subject": "申公",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 13,
+      "primary_subject": "辕固生",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 14,
+      "primary_subject": "辕固生",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 15,
+      "primary_subject": "辕固生",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 16,
+      "primary_subject": "辕固生",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 17,
+      "primary_subject": "辕固生",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 18,
+      "primary_subject": "韩婴",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 19,
+      "primary_subject": "伏生",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 20,
+      "primary_subject": "伏生",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 21,
+      "primary_subject": "伏生",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 22,
+      "primary_subject": "伏生",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 23,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 24,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 25,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 26,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 27,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 28,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 29,
+      "primary_subject": "董仲舒",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 30,
+      "primary_subject": "董仲舒",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 31,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 32,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 33,
+      "primary_subject": "董仲舒",
+      "disposition": "block"
+    }
+  ]
+}

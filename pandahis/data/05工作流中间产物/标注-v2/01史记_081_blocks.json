@@ -1,0 +1,123 @@
+{
+  "work": "01史记",
+  "vol": "081",
+  "total_paragraphs": 36,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "01史记_081_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 8,
+      "paragraph_to": 8,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 22,
+      "paragraph_to": 22,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 36,
+      "paragraph_to": 36,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "廉颇",
+      "category": "武将",
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "廉颇者，赵之良将也。赵惠文王十六年，廉颇为赵将伐齐，大破之，取阳晋，拜为上卿，以",
+        "close_paragraph": 1,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P1–P1"
+      }
+    },
+    {
+      "name": "蔺相如",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 7,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "赵惠文王时，得楚和氏璧。秦昭王闻之，使人遗赵王书，愿以十五城请易璧。",
+        "close_paragraph": 7,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P7"
+      }
+    },
+    {
+      "name": "蔺相如",
+      "category": "文臣",
+      "paragraph_from": 9,
+      "paragraph_to": 10,
+      "boundary_evidence": {
+        "open_paragraph": 9,
+        "open_phrase": "秦王使使者告赵王，欲与王为好会於西河外渑池。赵王畏秦，欲毋行。廉颇、蔺相如计曰：",
+        "close_paragraph": 10,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P9–P10"
+      }
+    },
+    {
+      "name": "廉颇",
+      "category": "武将",
+      "paragraph_from": 11,
+      "paragraph_to": 11,
+      "boundary_evidence": {
+        "open_paragraph": 11,
+        "open_phrase": "是岁，廉颇东攻齐，破其一军。居二年，廉颇复伐齐几，拔之。后三年，廉颇攻魏之防陵、",
+        "close_paragraph": 11,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P11–P11"
+      }
+    },
+    {
+      "name": "赵奢",
+      "category": "武将",
+      "paragraph_from": 12,
+      "paragraph_to": 15,
+      "boundary_evidence": {
+        "open_paragraph": 12,
+        "open_phrase": "赵奢者，赵之田部吏也。收租税而平原君家不肯出租，奢以法治之，杀平原君用事者九人。",
+        "close_paragraph": 15,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P12–P15"
+      }
+    },
+    {
+      "name": "廉颇",
+      "category": "武将",
+      "paragraph_from": 16,
+      "paragraph_to": 21,
+      "boundary_evidence": {
+        "open_paragraph": 16,
+        "open_phrase": "后四年，赵惠文王卒，子孝成王立。七年，秦与赵兵相距长平，时赵奢已死，而蔺相如病笃",
+        "close_paragraph": 21,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P16–P21"
+      }
+    },
+    {
+      "name": "廉颇",
+      "category": "武将",
+      "paragraph_from": 23,
+      "paragraph_to": 29,
+      "boundary_evidence": {
+        "open_paragraph": 23,
+        "open_phrase": "赵王亦以括母先言，竟不诛也。",
+        "close_paragraph": 29,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P23–P29"
+      }
+    },
+    {
+      "name": "李牧",
+      "category": "武将",
+      "paragraph_from": 30,
+      "paragraph_to": 35,
+      "boundary_evidence": {
+        "open_paragraph": 30,
+        "open_phrase": "李牧者，赵之北边良将也。常居代雁门，备匈奴。以便宜置吏，市租皆输入莫府，为士卒费",
+        "close_paragraph": 35,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P30–P35"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

@@ -1,0 +1,39 @@
+{
+  "work": "01史记",
+  "vol": "103",
+  "volume_name": "万石张叔列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "石奋",
+      "category": "文臣",
+      "rationale": "卷名首字人物，万石君石奋为西汉文臣，以恭谨孝谨闻名，官至九卿、诸侯相，是合传主轴之一。"
+    },
+    {
+      "name": "卫绾",
+      "category": "文臣",
+      "rationale": "卷名『张叔』即卫绾（字叔），以醇谨敦厚为官，历仕文景武三朝，官至丞相，为合传主轴之一。"
+    },
+    {
+      "name": "直不疑",
+      "category": "文臣",
+      "rationale": "《万石张叔列传》合传人物之一，以长者恭谨著称，官至御史大夫，为文臣主轴。"
+    },
+    {
+      "name": "周仁",
+      "category": "文臣",
+      "rationale": "《万石张叔列传》合传人物之一，以阴重不泄、谨厚事君著称，官至郎中令，为文臣主轴。"
+    },
+    {
+      "name": "张欧",
+      "category": "文臣",
+      "rationale": "《万石张叔列传》合传人物之一，以笃行长者著称，官至御史大夫，为文臣主轴。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

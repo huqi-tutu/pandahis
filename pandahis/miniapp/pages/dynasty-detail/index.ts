@@ -9,7 +9,7 @@ import {
 import { ROUTES, navigateTo } from '../../native-utils/router'
 import { decodeQueryValue } from '../../native-utils/query-value'
 import { formatHistoryYear, formatHistoryYearToken } from '../../native-utils/year-format'
-import { formatEntrySourceLabel } from '../../native-utils/entry-source-label'
+import { formatDetailSourceLabel, formatEntrySourceLabel } from '../../native-utils/entry-source-label'
 import { buildSharePosterSheetState } from '../../native-utils/share-poster-open'
 import { resolveSelectionBarAnchor } from '../../native-utils/selection-bar-position'
 import {
@@ -311,6 +311,11 @@ type SwimBar = {
   peakReason?: string
   priorityReason?: string
   entrySource?: string
+  detailSource?: string
+  civilizationName?: string
+  dynastyName?: string
+  regimeName?: string
+  emperorName?: string
   globalIdNumber?: number
   topRpx?: number
   heightRpx?: number
@@ -549,6 +554,28 @@ function formatPriorityLabel(priority: string): string {
   const p = String(priority || '').trim().toLowerCase()
   if (!p) return ''
   return p.toUpperCase()
+}
+
+function formatCoordinateLabel(raw: unknown): string {
+  return String(raw ?? '').trim()
+}
+
+function formatCoordinatePath(bar: SwimBar | null | undefined): string {
+  return [
+    formatCoordinateLabel(bar?.civilizationName),
+    formatCoordinateLabel(bar?.dynastyName),
+    formatCoordinateLabel(bar?.regimeName),
+    formatCoordinateLabel(bar?.emperorName),
+  ]
+    .filter(Boolean)
+    .join('・')
+}
+
+function formatPeakSummary(year: string, reason: string): string {
+  const y = String(year ?? '').trim()
+  const r = String(reason ?? '').trim()
+  if (y && r) return `${y}，${r}`
+  return y || r
 }
 
 function splitTimeRangeLabels(bar: SwimBar | null, fallbackRange: string): { start: string; end: string } {
@@ -1056,11 +1083,12 @@ Page({
     chipTooltipTitle: '',
     chipTooltipRange: '',
     chipTooltipTag: '',
-    chipTooltipPeakYear: '',
-    chipTooltipPeakReason: '',
+    chipTooltipPeakSummary: '',
     chipTooltipPriority: '',
-    chipTooltipPriorityReason: '',
+    chipTooltipPrioritySummary: '',
     chipTooltipEntrySource: '',
+    chipTooltipDetailSource: '',
+    chipTooltipCoordinate: '',
     chipTooltipLaneKey: '',
     chipTooltipStartYear: '',
     chipTooltipEndYear: '',
@@ -1539,11 +1567,18 @@ Page({
         chipTooltipEndYear: endYearLabel,
         chipTooltipTag: chipTag,
         chipTooltipLaneKey: laneKey,
-        chipTooltipPeakYear: peakYearNum == null ? '' : formatHistoryYear(peakYearNum),
-        chipTooltipPeakReason: peakReason,
+        chipTooltipPeakSummary: formatPeakSummary(
+          peakYearNum == null ? '' : formatHistoryYear(peakYearNum),
+          peakReason,
+        ),
         chipTooltipPriority: formatPriorityLabel(bar?.priority || ''),
-        chipTooltipPriorityReason: priorityReason,
+        chipTooltipPrioritySummary: formatPeakSummary(
+          formatPriorityLabel(bar?.priority || ''),
+          priorityReason,
+        ),
         chipTooltipEntrySource: formatEntrySourceLabel(bar?.entrySource || ''),
+        chipTooltipDetailSource: formatDetailSourceLabel(bar?.detailSource || ''),
+        chipTooltipCoordinate: formatCoordinatePath(bar),
         chipTooltipLeftPx: placement.left,
         chipTooltipTopPx: placement.top,
         chipTooltipBaseTransform: placement.transform,

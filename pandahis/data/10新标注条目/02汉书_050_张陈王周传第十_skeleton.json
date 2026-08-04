@@ -1,0 +1,747 @@
+{
+  "volume": "张陈王周传",
+  "source_file": "02汉书_050_张陈王周传第十.txt",
+  "total_paragraphs": 79,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "留侯张良",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "留侯张良",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "留侯张良",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "留侯张良",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "留侯张良",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "留侯张良",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "留侯张良",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "留侯张良",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "留侯张良",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "留侯张良",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "留侯张良",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "留侯张良",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "留侯张良",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "留侯张良",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "留侯张良",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "留侯张良",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "留侯张良",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "留侯张良",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "留侯张良",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "留侯张良",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "留侯张良",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "留侯张良",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "留侯张良",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "留侯张良",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "留侯张良",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "留侯张良",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "留侯张良",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "户牖侯陈平",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "户牖侯陈平",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "户牖侯陈平",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "户牖侯陈平",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "户牖侯陈平",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "户牖侯陈平",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "户牖侯陈平",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "户牖侯陈平",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "户牖侯陈平",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "户牖侯陈平",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "户牖侯陈平",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "户牖侯陈平",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "户牖侯陈平",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "户牖侯陈平",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "户牖侯陈平",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "户牖侯陈平",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "户牖侯陈平",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [
+        {
+          "name": "户牖侯陈平",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 47,
+      "owners": [
+        {
+          "name": "户牖侯陈平",
+          "category": "文臣"
+        },
+        {
+          "name": "安国侯王陵",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 48,
+      "owners": [
+        {
+          "name": "户牖侯陈平",
+          "category": "文臣"
+        },
+        {
+          "name": "安国侯王陵",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 49,
+      "owners": [
+        {
+          "name": "户牖侯陈平",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 50,
+      "owners": [
+        {
+          "name": "户牖侯陈平",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 51,
+      "owners": [
+        {
+          "name": "户牖侯陈平",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 52,
+      "owners": [
+        {
+          "name": "户牖侯陈平",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 53,
+      "owners": [
+        {
+          "name": "户牖侯陈平",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 54,
+      "owners": [
+        {
+          "name": "户牖侯陈平",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 55,
+      "owners": [
+        {
+          "name": "绛侯周勃",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 56,
+      "owners": [
+        {
+          "name": "绛侯周勃",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 57,
+      "owners": [
+        {
+          "name": "绛侯周勃",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 58,
+      "owners": [
+        {
+          "name": "绛侯周勃",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 59,
+      "owners": [
+        {
+          "name": "绛侯周勃",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 60,
+      "owners": [
+        {
+          "name": "绛侯周勃",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 61,
+      "owners": [
+        {
+          "name": "绛侯周勃",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 62,
+      "owners": [
+        {
+          "name": "绛侯周勃",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 63,
+      "owners": [
+        {
+          "name": "绛侯周勃",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 64,
+      "owners": [
+        {
+          "name": "绛侯周勃",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 65,
+      "owners": [
+        {
+          "name": "绛侯周勃",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 66,
+      "owners": [
+        {
+          "name": "绛侯周勃",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 67,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 68,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 69,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 70,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 71,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 72,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 73,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 74,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 75,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 76,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 77,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 78,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 79,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HANSHU_050_01",
+      "史略名称": "留侯张良",
+      "史略简介": "留侯张良",
+      "原文字句": "张良字子房，其先韩人也。大父开地，相韩昭侯、宣惠王、襄哀王。父平，相釐王、悼惠王。悼惠王二十三年，平卒，卒二十岁，秦灭韩。良少，未宦事韩。韩破，良家僮三百人，弟死不葬，悉以家财求客刺秦王，为韩报仇，以五世相韩故。",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷50·张陈王周传》",
+      "paragraphs": [
+        {
+          "volume": "张陈王周传",
+          "paragraph_from": 2,
+          "paragraph_to": 28
+        }
+      ],
+      "五级细坐标": "汉书·卷050·文臣·01",
+      "六级段落锚点": "[P2-P28]",
+      "原文出处": "张陈王周传·P2-P28"
+    },
+    {
+      "史略ID": "HANSHU_050_02",
+      "史略名称": "户牖侯陈平",
+      "史略简介": "户牖侯陈平",
+      "原文字句": "陈平，阳武户牖乡人也。少时家贫，好读书，治黄帝、老子之术。有田三十亩，与兄伯居。伯常耕田，纵平使游学。平为人长大美色，人或谓平：“贫何食而肥若是？”其嫂疾平之不亲家生产，曰：“亦食糠覈耳。有叔如此，不如无有！”伯闻之，逐其妇弃之。",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷50·张陈王周传》",
+      "paragraphs": [
+        {
+          "volume": "张陈王周传",
+          "paragraph_from": 29,
+          "paragraph_to": 54
+        }
+      ],
+      "五级细坐标": "汉书·卷050·文臣·02",
+      "六级段落锚点": "[P29-P54]",
+      "原文出处": "张陈王周传·P29-P54"
+    },
+    {
+      "史略ID": "HANSHU_050_03",
+      "史略名称": "绛侯周勃",
+      "史略简介": "绛侯周勃",
+      "原文字句": "周勃，沛人。其先卷人也，徙沛。勃以织薄曲为生，常以吹箫给丧事，材官引强。",
+      "史略分类": "武将",
+      "主要史料出处": "《02汉书·卷50·张陈王周传》",
+      "paragraphs": [
+        {
+          "volume": "张陈王周传",
+          "paragraph_from": 55,
+          "paragraph_to": 66
+        }
+      ],
+      "五级细坐标": "汉书·卷050·武将·03",
+      "六级段落锚点": "[P55-P66]",
+      "原文出处": "张陈王周传·P55-P66"
+    },
+    {
+      "史略ID": "HANSHU_050_04",
+      "史略名称": "安国侯王陵",
+      "史略简介": "安国侯王陵",
+      "原文字句": "王陵，沛人也。始为县豪，高祖微时兄事陵。及高祖起沛，人咸阳，陵亦聚党数千人，居南阳，不肯从沛公。及汉王之还击项籍，陵乃以兵属汉。项羽取陵母置军中，陵使至，则东乡坐陵母，欲以招陵。陵母既私送使者，泣曰：“愿为老妾语陵，善事汉王。汉王长者，母以老妾故持二心。妾以死送使者。”遂伏剑而死。项王怒，亨陵母。陵卒从汉王定天下。以善雍齿，雍齿，高祖之仇。陵又本无从汉之意，以故后封陵，为安国侯。",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷50·张陈王周传》",
+      "paragraphs": [
+        {
+          "volume": "张陈王周传",
+          "paragraph_from": 47,
+          "paragraph_to": 48
+        }
+      ],
+      "五级细坐标": "汉书·卷050·文臣·04",
+      "六级段落锚点": "[P47-P48]",
+      "原文出处": "张陈王周传·P47-P48"
+    }
+  ]
+}

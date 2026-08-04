@@ -1,0 +1,35 @@
+{
+  "work": "01史记",
+  "vol": "084",
+  "total_paragraphs": 45,
+  "volume_subtype": "liezhuan_hezhuan",
+  "excludes": [
+    {"paragraph_from": 45, "paragraph_to": 45, "exclude_reason": "太史公曰"}
+  ],
+  "blocks": [
+    {
+      "name": "屈原",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 21,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "屈原者，名平",
+        "close_paragraph": 21,
+        "close_note": "P21 楚灭收束屈原传；P22 起合传过渡"
+      }
+    },
+    {
+      "name": "贾谊",
+      "category": "文臣",
+      "paragraph_from": 22,
+      "paragraph_to": 44,
+      "boundary_evidence": {
+        "open_paragraph": 22,
+        "open_phrase": "自屈原沈汨罗后",
+        "close_note": "P22 合传过渡归贾谊；P23 正式传记开篇"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

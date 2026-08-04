@@ -1,0 +1,46 @@
+{
+  "work": "02汉书",
+  "vol": "086",
+  "total_paragraphs": 21,
+  "volume_subtype": "hezhuan",
+  "derived_from": "02汉书_086_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 21,
+      "paragraph_to": 21,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "魏相",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 10,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "魏相字弱翁，济阴定陶人也，徙平陵。少学《易》，为郡卒史，举贤良，以对策高第，为茂",
+        "close_paragraph": 10,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P10"
+      }
+    },
+    {
+      "name": "丙吉",
+      "category": "文臣",
+      "paragraph_from": 11,
+      "paragraph_to": 20,
+      "boundary_evidence": {
+        "open_paragraph": 11,
+        "open_phrase": "丙吉字少卿，鲁国人也。治律令，为鲁狱史。积功劳，稍迁至廷尉右监。坐法失官，归为州",
+        "close_paragraph": 20,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P11–P20"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

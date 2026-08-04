@@ -1,0 +1,20 @@
+{
+  "work": "02汉书",
+  "vol": "116",
+  "volume_name": "王莽传第六十九中",
+  "volume_type_guess": "列传",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "王莽",
+      "category": "君王",
+      "rationale": "《汉书·王莽传》为单人长篇传记，王莽为全卷唯一主轴人物。王莽建立新朝，称帝改制，为天下共主（皇帝），符合君王分类准入标准。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

@@ -2,25 +2,60 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "search-result.schema.json",
   "type": "object",
-  "required": ["total", "page", "pageSize", "items"],
+  "required": [
+    "total",
+    "page",
+    "pageSize",
+    "preciseTotal",
+    "relatedTotal",
+    "preciseItems",
+    "relatedItems",
+    "items"
+  ],
   "properties": {
     "total": { "type": "integer", "minimum": 0 },
     "page": { "type": "integer", "minimum": 1 },
     "pageSize": { "type": "integer", "minimum": 1 },
+    "preciseTotal": { "type": "integer", "minimum": 0 },
+    "relatedTotal": { "type": "integer", "minimum": 0 },
+    "preciseItems": { "$ref": "#/$defs/itemList" },
+    "relatedItems": { "$ref": "#/$defs/itemList" },
     "items": {
+      "description": "兼容扁平列表：精准在前、相关在后",
+      "$ref": "#/$defs/itemList"
+    }
+  },
+  "$defs": {
+    "itemList": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["type", "id", "pathText", "titleHighlight", "descHighlight"],
+        "required": [
+          "type",
+          "id",
+          "pathText",
+          "titleHighlight",
+          "descHighlight",
+          "matchTier",
+          "categoryKey",
+          "categoryName",
+          "coordinateText"
+        ],
         "properties": {
-          "type": { "type": "string", "enum": ["box", "unit"] },
+          "type": { "type": "string", "enum": ["box"] },
           "id": { "type": "string" },
           "pathText": { "type": "string" },
           "titleHighlight": { "type": "string" },
-          "descHighlight": { "type": "string" }
+          "descHighlight": { "type": "string" },
+          "matchTier": { "type": "string", "enum": ["precise", "related"] },
+          "categoryKey": { "type": "string" },
+          "categoryName": { "type": "string" },
+          "coordinateText": { "type": "string", "description": "文明.朝代.政权" },
+          "startYear": { "type": ["integer", "null"] },
+          "endYear": { "type": ["integer", "null"] },
+          "personTag": { "type": ["string", "null"] }
         }
       }
     }
   }
 }
-

@@ -1,0 +1,27 @@
+{
+  "work": "01史记",
+  "vol": "012",
+  "total_paragraphs": 71,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 71,
+      "paragraph_to": 71,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "汉武帝",
+      "category": "君王",
+      "paragraph_from": 1,
+      "paragraph_to": 70,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "孝武皇帝者，孝景中子也。母曰王太后。孝景四年，以皇子为胶东王。孝景七年，栗太子废",
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

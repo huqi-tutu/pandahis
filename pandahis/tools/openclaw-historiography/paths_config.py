@@ -14,7 +14,9 @@ DIR_AUTH_SOURCES = "00原文母本"
 SUBDIR_AUTH_SOURCES = "二十四史原文"
 DIR_SOURCES = "02二十四史拆分后"
 DIR_ANNOTATIONS = "03索引标注条目"
+DIR_ANNOTATIONS_V2 = "10新标注条目"
 DIR_TRANSLATIONS = "04史料翻译"
+DIR_TRANSLATIONS_V2 = "11新标注条目翻译"
 DIR_INTERMEDIATE = "05工作流中间产物"
 DIR_DYNASTY_KNOWLEDGE = "06朝代知识补全"
 DIR_PERSON_RELATIONS = "07人物关系"
@@ -22,6 +24,7 @@ DIR_COMMENTARY = "08评述"
 DIR_WITNESS = "09见证"
 
 SUBDIR_INTERMEDIATE_ANNOTATE = "标注"
+SUBDIR_INTERMEDIATE_ANNOTATE_V2 = "标注-v2"
 SUBDIR_INTERMEDIATE_DYNASTY_KNOWLEDGE = "朝代知识补全"
 SUBDIR_INTERMEDIATE_PERSON_RELATIONS = "人物关系补全"
 SUBDIR_INTERMEDIATE_COMMENTARY_WITNESS = "评述见证补全"
@@ -39,6 +42,13 @@ SUBDIR_STATS = "标注统计"
 SUBDIR_REFS = "参考文献"
 
 DEFAULT_GLOBAL_INDEX = "史略索引_01至02.json"
+DEFAULT_GLOBAL_INDEX_V2 = "史略索引_史记汉书.json"
+DEFAULT_GLOBAL_INDEX_ONLINE = "史略索引_online.json"
+
+DIR_ONLINE_INDEX = "12线上史略索引"
+
+VALID_ANNOTATE_TRACKS = frozenset({"v1", "v2"})
+ENV_ANNOTATE_TRACK = "HIST_ANNOTATE_TRACK"
 TRANSLATE_AGGREGATE_FILENAME = "史略翻译_汇总.json"
 DYNASTY_KNOWLEDGE_DETAIL_AGGREGATE = "朝代知识详情_汇总.json"
 
@@ -54,27 +64,58 @@ def get_histograph_root() -> Path:
     return Path(os.environ.get("HISTOGRAPH_ROOT", DEFAULT_HISTOGRAPH_ROOT))
 
 
+def get_annotate_track() -> str:
+    """标注轨道：v1 → data/03；v2 → data/10。环境变量 HIST_ANNOTATE_TRACK。"""
+    track = (os.environ.get(ENV_ANNOTATE_TRACK) or "v1").strip().lower()
+    if track not in VALID_ANNOTATE_TRACKS:
+        raise RuntimeError(
+            f"{ENV_ANNOTATE_TRACK} 非法: {track!r}，允许 {sorted(VALID_ANNOTATE_TRACKS)}"
+        )
+    return track
+
+
+def _annotations_dir(data: Path, track: str) -> Path:
+    if track == "v2":
+        return data / DIR_ANNOTATIONS_V2
+    return data / DIR_ANNOTATIONS
+
+
+def _paragraph_index_dir(data: Path, track: str, annotations: Path) -> Path:
+    """段落索引 SSOT：仅 data/03索引标注条目/段落索引/（v1/v2 共用，与原文拆分绑定）。"""
+    _ = (track, annotations)  # v2 不在 10 下维护段落索引副本
+    return data / DIR_ANNOTATIONS / SUBDIR_PARAGRAPH_INDEX
+
+
 def ensure_workflow_data_dirs(data: Path) -> None:
     """确保 data 下各产出 / 中间产物目录存在。"""
     for name in (
         DIR_SOURCES,
         DIR_ANNOTATIONS,
+        DIR_ANNOTATIONS_V2,
         DIR_TRANSLATIONS,
         DIR_INTERMEDIATE,
         DIR_DYNASTY_KNOWLEDGE,
         DIR_PERSON_RELATIONS,
         DIR_COMMENTARY,
         DIR_WITNESS,
+        DIR_ONLINE_INDEX,
     ):
         (data / name).mkdir(parents=True, exist_ok=True)
     intermediate = data / DIR_INTERMEDIATE
     for sub in (
         SUBDIR_INTERMEDIATE_ANNOTATE,
+        SUBDIR_INTERMEDIATE_ANNOTATE_V2,
         SUBDIR_INTERMEDIATE_DYNASTY_KNOWLEDGE,
         SUBDIR_INTERMEDIATE_TRANSLATE,
         SUBDIR_INTERMEDIATE_ORCHESTRATOR,
     ):
         (intermediate / sub).mkdir(parents=True, exist_ok=True)
+    ann_v1 = data / DIR_ANNOTATIONS
+    for sub in (SUBDIR_PARAGRAPH_INDEX, SUBDIR_PROGRESS, SUBDIR_AUDIT, SUBDIR_STATS):
+        (ann_v1 / sub).mkdir(parents=True, exist_ok=True)
+    ann_v2 = data / DIR_ANNOTATIONS_V2
+    for sub in (SUBDIR_PROGRESS, SUBDIR_AUDIT, SUBDIR_STATS):
+        (ann_v2 / sub).mkdir(parents=True, exist_ok=True)
     (intermediate / SUBDIR_INTERMEDIATE_TRANSLATE / SUBDIR_TRANSLATE_QUEUE).mkdir(
         parents=True, exist_ok=True
     )
@@ -133,23 +174,36 @@ def validate_histograph_root(root: Path | None = None) -> Path:
 def histograph_paths() -> Dict[str, Path]:
     root = validate_histograph_root()
     data = root / DIR_DATA
+    track = get_annotate_track()
     sources = data / DIR_SOURCES
-    annotations = data / DIR_ANNOTATIONS
+    annotations = _annotations_dir(data, track)
+    annotations_v1 = data / DIR_ANNOTATIONS
+    global_index_name = (
+        DEFAULT_GLOBAL_INDEX_V2 if track == "v2" else DEFAULT_GLOBAL_INDEX
+    )
     translations = data / DIR_TRANSLATIONS
     intermediate = data / DIR_INTERMEDIATE
     orchestrator_state = intermediate / SUBDIR_INTERMEDIATE_ORCHESTRATOR
     translate_work = intermediate / SUBDIR_INTERMEDIATE_TRANSLATE
     translate_state = translate_work / SUBDIR_TRANSLATE_QUEUE
+    annotate_work = (
+        intermediate / SUBDIR_INTERMEDIATE_ANNOTATE_V2
+        if track == "v2"
+        else intermediate / SUBDIR_INTERMEDIATE_ANNOTATE
+    )
     return {
         "root": root,
         "data": data,
+        "annotate_track": track,  # type: ignore[dict-item]
         "auth_sources": data / DIR_AUTH_SOURCES / SUBDIR_AUTH_SOURCES,
         "sources": sources,
         "annotations": annotations,
-        "paragraph_index": annotations / SUBDIR_PARAGRAPH_INDEX,
+        "annotations_v1": annotations_v1,
+        "paragraph_index": _paragraph_index_dir(data, track, annotations),
         "translate_output": translations,
+        "translate_output_v2": data / DIR_TRANSLATIONS_V2,
         "intermediate": intermediate,
-        "annotate_work": intermediate / SUBDIR_INTERMEDIATE_ANNOTATE,
+        "annotate_work": annotate_work,
         "dynasty_knowledge_work": intermediate / SUBDIR_INTERMEDIATE_DYNASTY_KNOWLEDGE,
         "dynasty_knowledge": data / DIR_DYNASTY_KNOWLEDGE,
         "dynasty_knowledge_entries": data / DIR_DYNASTY_KNOWLEDGE / SUBDIR_DYNASTY_KNOWLEDGE_ENTRIES,
@@ -164,7 +218,9 @@ def histograph_paths() -> Dict[str, Path]:
         "commentary_witness_work": intermediate / SUBDIR_INTERMEDIATE_COMMENTARY_WITNESS,
         "translate_work": translate_work,
         "translate_state": translate_state,
-        "global_index": annotations / DEFAULT_GLOBAL_INDEX,
+        "global_index": annotations / global_index_name,
+        "global_index_online": data / DIR_ONLINE_INDEX / DEFAULT_GLOBAL_INDEX_ONLINE,
+        "online_index_dir": data / DIR_ONLINE_INDEX,
         "stats": annotations / SUBDIR_STATS,
         "refs": annotations / SUBDIR_REFS / "参考资料清单.md",
         "audit": annotations / SUBDIR_AUDIT,

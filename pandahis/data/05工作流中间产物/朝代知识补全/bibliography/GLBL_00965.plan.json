@@ -1,0 +1,173 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00965",
+  "写作结构": "正史叙述见翻译详录（主要依据《史记·田敬仲完世家》及《项羽本纪》等篇章），拓展文可引《资治通鉴》对应编年记述作为时序佐证，不发掘田市心理或对话细节，仅陈述事实链条，其余留白。",
+  "候选著作": [
+    {
+      "出处": "《史记·田敬仲完世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载田儋、田市、田荣事件始末",
+      "检索词": "田市 田荣 胶东",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《史记·项羽本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载项羽分封诸王时徙齐王田市为胶东王及田荣之叛",
+      "检索词": "田市 胶东王",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《史记·秦楚之际月表》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "表列田市在位月日及胶东徙封时间节点",
+      "检索词": "田市 胶东",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《汉书·项籍传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "同记项羽分封及田荣击杀田市事，与《史记》互见",
+      "检索词": "田市 胶东王",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《汉书·异姓诸侯王表》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "表格记录田市为胶东王及被田荣所杀年月",
+      "检索词": "田市 胶东",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《资治通鉴·卷第九·汉纪一》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "编年叙述项羽分封、田市徙胶东及被田荣追杀即墨之事，可作为时序佐证",
+      "检索词": "田市 胶东王 即墨",
+      "采用": true,
+      "原文摘句": "春正月，项籍分天下……徙齐王田市为胶东王。……田荣怒，不肯遣市之胶东；五月，荣追杀市于即墨，自立为齐王。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《文献通考·封建考七》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "综述秦楚之际封建诸王，提及田市被徙胶东之事",
+      "检索词": "田市 胶东王",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·田敬仲完世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载田儋、田市、田荣事件始末",
+      "检索词": "田市 田荣 胶东",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《史记·项羽本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载项羽分封诸王时徙齐王田市为胶东王及田荣之叛",
+      "检索词": "田市 胶东王",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《史记·秦楚之际月表》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "表列田市在位月日及胶东徙封时间节点",
+      "检索词": "田市 胶东",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《汉书·项籍传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "同记项羽分封及田荣击杀田市事，与《史记》互见",
+      "检索词": "田市 胶东王",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《汉书·异姓诸侯王表》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "表格记录田市为胶东王及被田荣所杀年月",
+      "检索词": "田市 胶东",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《资治通鉴·卷第九·汉纪一》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "编年叙述项羽分封、田市徙胶东及被田荣追杀即墨之事，可作为时序佐证",
+      "检索词": "田市 胶东王 即墨",
+      "采用": true,
+      "原文摘句": "春正月，项籍分天下……徙齐王田市为胶东王。……田荣怒，不肯遣市之胶东；五月，荣追杀市于即墨，自立为齐王。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《文献通考·封建考七》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "综述秦楚之际封建诸王，提及田市被徙胶东之事",
+      "检索词": "田市 胶东王",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 1,
+    "C_excluded": 6,
+    "overall": "B"
+  }
+}

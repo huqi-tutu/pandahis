@@ -1,0 +1,27 @@
+{
+  "work": "01史记",
+  "vol": "053",
+  "total_paragraphs": 20,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 20,
+      "paragraph_to": 20,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "萧何",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 19,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "萧相国何者，沛丰人也。以文无害为沛主吏掾。",
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

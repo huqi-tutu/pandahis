@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[3]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from llm.config import PROVIDER_DEEPSEEK, get_provider_name  # noqa: E402
+from llm.config import PROVIDER_DEEPSEEK, ensure_annotate_model, get_provider_name  # noqa: E402
 from llm.openclaw_provider import default_state_dir, resolve_agent_id  # noqa: E402
 from llm.provider import run_agent_turn as _run_agent_turn  # noqa: E402
 
@@ -220,6 +220,8 @@ LLM provider: {provider}
 
 
 def run_agent_turn(*args, **kwargs):
+    if get_provider_name() == PROVIDER_DEEPSEEK:
+        ensure_annotate_model()
     kwargs.setdefault("openclaw_env_key", "HIST_OPENCLAW_AGENT")
     kwargs.setdefault("openclaw_local_env_key", "HIST_OPENCLAW_LOCAL")
     kwargs.setdefault(

@@ -1,0 +1,58 @@
+{
+  "work": "01史记",
+  "vol": "031",
+  "total_paragraphs": 52,
+  "volume_subtype": "shijia_zhuhou",
+  "derived_from": "01史记_031_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 2,
+      "paragraph_to": 31,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 52,
+      "paragraph_to": 52,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "吴太伯",
+      "category": "诸侯",
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "吴太伯，太伯弟仲雍，皆周太王之子，而王季历之兄也。季历贤，而有圣子昌，太王欲立季",
+        "close_paragraph": 1,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P1–P1"
+      }
+    },
+    {
+      "name": "吴王阖闾",
+      "category": "诸侯",
+      "paragraph_from": 32,
+      "paragraph_to": 39,
+      "boundary_evidence": {
+        "open_paragraph": 32,
+        "open_phrase": "光曰：“我身，子之身也。”四月丙子，光伏甲士於窟室，而谒王僚饮。王僚使兵陈於道，",
+        "close_paragraph": 39,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P32–P39"
+      }
+    },
+    {
+      "name": "吴王夫差",
+      "category": "诸侯",
+      "paragraph_from": 40,
+      "paragraph_to": 51,
+      "boundary_evidence": {
+        "open_paragraph": 40,
+        "open_phrase": "王夫差元年，以大夫伯嚭为太宰。习战射，常以报越为志。二年，吴王悉精兵以伐越，败之",
+        "close_paragraph": 51,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P40–P51"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

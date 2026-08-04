@@ -1,0 +1,520 @@
+{
+  "volume": "酷吏列传",
+  "source_file": "01史记_122_酷吏列传第六十二.txt",
+  "total_paragraphs": 62,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 2,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 3,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 4,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "郅都",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "郅都",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "郅都",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "郅都",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "郅都",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 11,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 12,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 13,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 14,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 15,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 16,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 17,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 18,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 19,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 20,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 21,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 22,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "张汤",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "张汤",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "张汤",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "张汤",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "张汤",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "张汤",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "张汤",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "张汤",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "张汤",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "张汤",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "张汤",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 35,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "义纵",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "义纵",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "义纵",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "义纵",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "义纵",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "王温舒",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "王温舒",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "王温舒",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 45,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 46,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 47,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 48,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 49,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 50,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 51,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 52,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 53,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 54,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 55,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 56,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 57,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 58,
+      "owners": [
+        {
+          "name": "杜周",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 59,
+      "owners": [
+        {
+          "name": "杜周",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 60,
+      "owners": [
+        {
+          "name": "杜周",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 61,
+      "owners": [],
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph": 62,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SHIJI_122_01",
+      "史略名称": "郅都",
+      "史略简介": "郅都",
+      "原文字句": "郅都者，杨人也。以郎事孝文帝。孝景时，都为中郎将，敢直谏，面折大臣於朝。尝从入上林，贾姬如厕，野彘卒入厕。上目都，都不行。上欲自持兵救贾姬，都伏上前曰：“亡一姬复一姬进，天下所少宁贾姬等乎？陛下纵自轻，柰宗庙太后何！”上还，彘亦去。太后闻之",
+      "史略分类": "文臣",
+      "主要史料出处": "《史记·卷122·酷吏列传》",
+      "paragraphs": [
+        {
+          "volume": "酷吏列传",
+          "paragraph_from": 5,
+          "paragraph_to": 9
+        }
+      ],
+      "五级细坐标": "史记·卷122·文臣·01",
+      "六级段落锚点": "[P5-P9]",
+      "原文出处": "酷吏列传·P5-P9"
+    },
+    {
+      "史略ID": "SHIJI_122_02",
+      "史略名称": "义纵",
+      "史略简介": "义纵",
+      "原文字句": "义纵者，河东人也。为少年时，尝与张次公俱攻剽为群盗。纵有姊姁，以医幸王太后。王太后问：“有子兄弟为官者乎？”姊曰：“有弟无行，不可。”",
+      "史略分类": "文臣",
+      "主要史料出处": "《史记·卷122·酷吏列传》",
+      "paragraphs": [
+        {
+          "volume": "酷吏列传",
+          "paragraph_from": 36,
+          "paragraph_to": 40
+        }
+      ],
+      "五级细坐标": "史记·卷122·文臣·02",
+      "六级段落锚点": "[P36-P40]",
+      "原文出处": "酷吏列传·P36-P40"
+    },
+    {
+      "史略ID": "SHIJI_122_03",
+      "史略名称": "张汤",
+      "史略简介": "张汤",
+      "原文字句": "是时上方乡文学，汤决大狱，欲傅古义，乃请博士弟子治尚书、春秋补廷尉史，亭疑法。奏谳疑事，必豫先为上分别其原，上所是，受而著谳决法廷尉絜令，扬主之明。奏事即谴，汤应谢，乡上意所便，必引正、监、掾史贤者，曰：“固为臣议，如上责臣，臣弗用，愚抵於",
+      "史略分类": "文臣",
+      "主要史料出处": "《史记·卷122·酷吏列传》",
+      "paragraphs": [
+        {
+          "volume": "酷吏列传",
+          "paragraph_from": 23,
+          "paragraph_to": 33
+        }
+      ],
+      "五级细坐标": "史记·卷122·文臣·03",
+      "六级段落锚点": "[P23-P33]",
+      "原文出处": "酷吏列传·P23-P33"
+    },
+    {
+      "史略ID": "SHIJI_122_04",
+      "史略名称": "王温舒",
+      "史略简介": "王温舒",
+      "原文字句": "王温舒者，阳陵人也。少时椎埋为奸。已而试补县亭长，数废。为吏，以治狱至廷史。事张汤，迁为御史。督盗贼，杀伤甚多，稍迁至广平都尉。择郡中豪敢任吏十馀人，以为爪牙，皆把其阴重罪，而纵使督盗贼，快其意所欲得。此人虽有百罪，弗法；即有避，因其事夷之",
+      "史略分类": "文臣",
+      "主要史料出处": "《史记·卷122·酷吏列传》",
+      "paragraphs": [
+        {
+          "volume": "酷吏列传",
+          "paragraph_from": 41,
+          "paragraph_to": 43
+        }
+      ],
+      "五级细坐标": "史记·卷122·文臣·04",
+      "六级段落锚点": "[P41-P43]",
+      "原文出处": "酷吏列传·P41-P43"
+    },
+    {
+      "史略ID": "SHIJI_122_05",
+      "史略名称": "杜周",
+      "史略简介": "杜周",
+      "原文字句": "客有让周曰：“君为天子决平，不循三尺法，专以人主意指为狱。狱者固如是乎？”周曰：“三尺安出哉？前主所是著为律，后主所是疏为令，当时为是，何古之法乎！”",
+      "史略分类": "文臣",
+      "主要史料出处": "《史记·卷122·酷吏列传》",
+      "paragraphs": [
+        {
+          "volume": "酷吏列传",
+          "paragraph_from": 58,
+          "paragraph_to": 60
+        }
+      ],
+      "五级细坐标": "史记·卷122·文臣·05",
+      "六级段落锚点": "[P58-P60]",
+      "原文出处": "酷吏列传·P58-P60"
+    }
+  ]
+}

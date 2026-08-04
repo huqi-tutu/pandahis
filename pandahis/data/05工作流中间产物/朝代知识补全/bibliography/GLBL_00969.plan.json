@@ -1,0 +1,83 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00969",
+  "写作结构": "正史叙述见翻译详录；史外文献目前未发现能提供新增细节的可靠记载，宜留白处理，可简要提及后世类书引录情况。",
+  "候选著作": [
+    {
+      "出处": "《史记·秦始皇本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载将闾兄弟被囚、抗辩、自杀的完整经过，是本条目核心史源",
+      "检索词": "将闾",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《资治通鉴·秦纪二》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "据《史记》转录将闾事件，无新增史实",
+      "检索词": "将闾",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《太平御览·皇亲部二》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "类书引《史记》公子将闾条，仅存文句而无考异",
+      "检索词": "将闾",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·秦始皇本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载将闾兄弟被囚、抗辩、自杀的完整经过，是本条目核心史源",
+      "检索词": "将闾",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《资治通鉴·秦纪二》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "据《史记》转录将闾事件，无新增史实",
+      "检索词": "将闾",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《太平御览·皇亲部二》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "类书引《史记》公子将闾条，仅存文句而无考异",
+      "检索词": "将闾",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 0,
+    "C_excluded": 3,
+    "overall": "C"
+  }
+}

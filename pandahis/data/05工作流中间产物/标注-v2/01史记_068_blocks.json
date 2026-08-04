@@ -1,0 +1,27 @@
+{
+  "work": "01史记",
+  "vol": "068",
+  "total_paragraphs": 18,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 18,
+      "paragraph_to": 18,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "商鞅",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 17,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "商君者，卫之诸庶孽公子也，名鞅，姓公孙氏，其祖本姬姓也。鞅少好刑名之学，事魏相公",
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

@@ -1,0 +1,27 @@
+{
+  "work": "01史记",
+  "vol": "114",
+  "total_paragraphs": 17,
+  "volume_subtype": "fanzuo",
+  "excludes": [
+    {
+      "paragraph_from": 17,
+      "paragraph_to": 17,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "东越",
+      "category": "蕃祚",
+      "paragraph_from": 1,
+      "paragraph_to": 16,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "闽越王无诸及越东海王摇者，其先皆越王句践之后也，姓驺氏。秦已并天下，皆废为君长，",
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

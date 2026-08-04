@@ -1,0 +1,90 @@
+{
+  "work": "01史记",
+  "vol": "126",
+  "total_paragraphs": 39,
+  "volume_subtype": "hezhuan",
+  "derived_from": "01史记_126_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph_from": 18,
+      "paragraph_to": 18,
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph_from": 19,
+      "paragraph_to": 19,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 20,
+      "paragraph_to": 27,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 30,
+      "paragraph_to": 38,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 39,
+      "paragraph_to": 39,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "淳于髡",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 6,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "淳于髡者，齐之赘婿也。长不满七尺，滑稽多辩，数使诸侯，未尝屈辱。齐威王之时喜隐，",
+        "close_paragraph": 6,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P6"
+      }
+    },
+    {
+      "name": "优孟",
+      "category": "文臣",
+      "paragraph_from": 7,
+      "paragraph_to": 11,
+      "boundary_evidence": {
+        "open_paragraph": 7,
+        "open_phrase": "其后百馀年，楚有优孟。",
+        "close_paragraph": 11,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P7–P11"
+      }
+    },
+    {
+      "name": "优旃",
+      "category": "文臣",
+      "paragraph_from": 12,
+      "paragraph_to": 17,
+      "boundary_evidence": {
+        "open_paragraph": 12,
+        "open_phrase": "其后二百馀年，秦有优旃。",
+        "close_paragraph": 17,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P12–P17"
+      }
+    },
+    {
+      "name": "淳于髡",
+      "category": "文臣",
+      "paragraph_from": 28,
+      "paragraph_to": 29,
+      "boundary_evidence": {
+        "open_paragraph": 28,
+        "open_phrase": "昔者，齐王使淳于髡献鹄於楚。出邑门，道飞其鹄，徒揭空笼，造诈成辞，往见楚王曰：“",
+        "close_paragraph": 29,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P28–P29"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

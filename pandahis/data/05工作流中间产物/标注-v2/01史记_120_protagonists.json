@@ -1,0 +1,24 @@
+{
+  "work": "01史记",
+  "vol": "120",
+  "volume_name": "汲郑列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "汲黯",
+      "category": "文臣",
+      "rationale": "《汲郑列传》卷名首列汲黯，为西汉名臣，以直谏著称，历任谒者、中大夫、东海太守、主爵都尉等文职，属行政谏诤之臣，符合文臣准入标准。"
+    },
+    {
+      "name": "郑当时",
+      "category": "文臣",
+      "rationale": "《汲郑列传》卷名并列郑当时，为西汉大臣，历任太子舍人、济南太守、大司农等文职，以廉洁、好宾客闻名，属行政仕宦之臣，符合文臣准入标准。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "work": "02汉书",
+  "total_paragraphs": 38,
+  "volume_subtype": "skip",
+  "narrative_mode": "skip",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 2,
+      "paragraph_to": 2,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 4,
+      "paragraph_to": 38,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "班固",
+      "category": "文臣",
+      "paragraph_from": 3,
+      "paragraph_to": 3,
+      "boundary_evidence": {
+        "open_paragraph": 3,
+        "open_phrase": "班氏之先，与楚同姓，令尹子文之后也",
+        "close_note": "skip 卷占位 block，skeleton 全 exclude"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

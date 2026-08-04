@@ -585,6 +585,12 @@ def cmd_mark(
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="史料标注单卷流水线（白名单）")
+    parser.add_argument(
+        "--track",
+        choices=["v1", "v2"],
+        default=None,
+        help="标注轨道：v1=data/03，v2=data/10（等同 export HIST_ANNOTATE_TRACK）",
+    )
     sub = parser.add_subparsers(dest="command", required=True)
 
     p_status = sub.add_parser("status", help="查看著作进度")
@@ -623,6 +629,10 @@ def main() -> int:
     p_mark.add_argument("--force-order", action="store_true")
 
     args = parser.parse_args()
+    if args.track:
+        import os
+
+        os.environ["HIST_ANNOTATE_TRACK"] = args.track
     if args.command == "status":
         return cmd_status(args.work)
     if args.command == "init":

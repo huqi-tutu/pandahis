@@ -61,6 +61,11 @@ def run_deepseek_turn(
         payload["max_tokens"] = max_tokens
     if response_format is not None:
         payload["response_format"] = response_format
+    # V4 默认开启 thinking：推理 token 计入 max_tokens，易耗尽导致 content 空。
+    # 标注默认关闭；需要推理时设 DEEPSEEK_THINKING=enabled。
+    thinking_mode = (os.environ.get("DEEPSEEK_THINKING") or "disabled").strip().lower()
+    if thinking_mode in ("enabled", "disabled"):
+        payload["thinking"] = {"type": thinking_mode}
     last_err: Optional[Exception] = None
     data: Optional[dict] = None
     for attempt in range(1, max_attempts + 1):

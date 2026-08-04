@@ -1,0 +1,27 @@
+{
+  "work": "01史记",
+  "vol": "109",
+  "total_paragraphs": 28,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 28,
+      "paragraph_to": 28,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "李广",
+      "category": "武将",
+      "paragraph_from": 1,
+      "paragraph_to": 27,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "李将军广者，陇西成纪人也。其先曰李信，秦时为将，逐得燕太子丹者也。",
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

@@ -1,0 +1,315 @@
+{
+  "work": "01史记",
+  "vol": "111",
+  "total_paragraphs": 57,
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_coupling": "shared_paragraphs",
+  "derived_from": "01史记_111_blocks.json (manual: P54-56 exclude)",
+  "excludes": [
+    {
+      "paragraph_from": 54,
+      "paragraph_to": 56,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 57,
+      "paragraph_to": 57,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "卫青",
+      "category": "武将",
+      "paragraph_from": 1,
+      "paragraph_to": 12,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "大将军卫青者，平阳人也。其父郑季，为吏，给事平阳侯家，与侯妾卫媪通，生青。青同母",
+        "close_note": "P1–P12 卫青传首"
+      }
+    },
+    {
+      "name": "霍去病",
+      "category": "武将",
+      "paragraph_from": 13,
+      "paragraph_to": 31,
+      "boundary_evidence": {
+        "open_paragraph": 13,
+        "open_phrase": "是岁也，大将军姊子霍去病年十八，幸，为天子侍中。善骑射，再从大将军，受诏与壮士，",
+        "close_note": "P13–P31 骠骑合战段（双挂卫霍）"
+      }
+    },
+    {
+      "name": "卫青",
+      "category": "武将",
+      "paragraph_from": 32,
+      "paragraph_to": 51,
+      "boundary_evidence": {
+        "open_paragraph": 32,
+        "open_phrase": "自骠骑将军死后，大将军长子宜春侯伉坐法失侯。后五岁，伉弟二人，阴安侯不疑及发干侯",
+        "close_note": "P32–P51 骠骑死后·大将军及诸将"
+      }
+    },
+    {
+      "name": "霍去病",
+      "category": "武将",
+      "paragraph_from": 52,
+      "paragraph_to": 53,
+      "boundary_evidence": {
+        "open_paragraph": 52,
+        "open_phrase": "最骠骑将军去病，凡六出击匈奴，其四出以将军，斩捕首虏十一万馀级。及浑邪王以众降数",
+        "close_note": "P52–P53 骠骑军功总述及附传收束"
+      }
+    }
+  ],
+  "multi_owner_segments": [
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "卫青",
+          "category": "武将"
+        },
+        {
+          "name": "霍去病",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "卫青",
+          "category": "武将"
+        },
+        {
+          "name": "霍去病",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "卫青",
+          "category": "武将"
+        },
+        {
+          "name": "霍去病",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "卫青",
+          "category": "武将"
+        },
+        {
+          "name": "霍去病",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "卫青",
+          "category": "武将"
+        },
+        {
+          "name": "霍去病",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "卫青",
+          "category": "武将"
+        },
+        {
+          "name": "霍去病",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "卫青",
+          "category": "武将"
+        },
+        {
+          "name": "霍去病",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "卫青",
+          "category": "武将"
+        },
+        {
+          "name": "霍去病",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "卫青",
+          "category": "武将"
+        },
+        {
+          "name": "霍去病",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "卫青",
+          "category": "武将"
+        },
+        {
+          "name": "霍去病",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "卫青",
+          "category": "武将"
+        },
+        {
+          "name": "霍去病",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "卫青",
+          "category": "武将"
+        },
+        {
+          "name": "霍去病",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "卫青",
+          "category": "武将"
+        },
+        {
+          "name": "霍去病",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "卫青",
+          "category": "武将"
+        },
+        {
+          "name": "霍去病",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "卫青",
+          "category": "武将"
+        },
+        {
+          "name": "霍去病",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "卫青",
+          "category": "武将"
+        },
+        {
+          "name": "霍去病",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "卫青",
+          "category": "武将"
+        },
+        {
+          "name": "霍去病",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "卫青",
+          "category": "武将"
+        },
+        {
+          "name": "霍去病",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "卫青",
+          "category": "武将"
+        },
+        {
+          "name": "霍去病",
+          "category": "武将"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "work": "02汉书",
+  "vol": "068",
+  "total_paragraphs": 44,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 44,
+      "paragraph_to": 44,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "司马相如",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 43,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "司马相如传第二十七下",
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

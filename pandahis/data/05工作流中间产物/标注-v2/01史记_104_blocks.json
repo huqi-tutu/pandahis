@@ -1,0 +1,58 @@
+{
+  "work": "01史记",
+  "vol": "104",
+  "total_paragraphs": 23,
+  "volume_subtype": "hezhuan",
+  "derived_from": "01史记_104_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 12,
+      "paragraph_to": 12,
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph_from": 22,
+      "paragraph_to": 23,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "田叔",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 10,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "田叔者，赵陉城人也。其先，齐田氏苗裔也。叔喜剑，学黄老术於乐巨公所。",
+        "close_paragraph": 10,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P1–P10"
+      }
+    },
+    {
+      "name": "田仁",
+      "category": "文臣",
+      "paragraph_from": 11,
+      "paragraph_to": 11,
+      "boundary_evidence": {
+        "open_paragraph": 11,
+        "open_phrase": "仁以壮健为卫将军舍人，数从击匈奴。卫将军进言仁，仁为郎中。数岁，为二千石丞相长史",
+        "close_paragraph": 11,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P11–P11"
+      }
+    },
+    {
+      "name": "田仁",
+      "category": "文臣",
+      "paragraph_from": 13,
+      "paragraph_to": 21,
+      "boundary_evidence": {
+        "open_paragraph": 13,
+        "open_phrase": "褚先生曰：臣为郎时，闻之曰田仁故与任安相善。任安，荥阳人也。少孤贫困，为人将车之",
+        "close_paragraph": 21,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P13–P21"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

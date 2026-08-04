@@ -1,0 +1,41 @@
+{
+  "work": "01史记",
+  "vol": "099",
+  "total_paragraphs": 29,
+  "volume_subtype": "hezhuan",
+  "derived_from": "01史记_099_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 29,
+      "paragraph_to": 29,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "刘敬",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 13,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "刘敬者，齐人也。汉五年，戍陇西，过洛阳，高帝在焉。娄敬脱輓辂，衣其羊裘，见齐人虞",
+        "close_paragraph": 13,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P1–P13"
+      }
+    },
+    {
+      "name": "叔孙通",
+      "category": "文臣",
+      "paragraph_from": 14,
+      "paragraph_to": 28,
+      "boundary_evidence": {
+        "open_paragraph": 14,
+        "open_phrase": "叔孙通者，薛人也。秦时以文学徵，待诏博士。数岁，陈胜起山东，使者以闻，二世召博士",
+        "close_paragraph": 28,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P14–P28"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

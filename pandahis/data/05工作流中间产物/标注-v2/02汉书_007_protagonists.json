@@ -1,0 +1,19 @@
+{
+  "work": "02汉书",
+  "vol": "007",
+  "volume_name": "武帝纪",
+  "volume_type_guess": "本纪",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "汉武帝",
+      "category": "君王",
+      "rationale": "《汉书·武帝纪》为西汉皇帝刘彻的本纪，以汉武帝在位五十四年的军政大事、诏令制度为叙事主轴，属天下共主之天子本纪，故分类为君王。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰"
+  ]
+}

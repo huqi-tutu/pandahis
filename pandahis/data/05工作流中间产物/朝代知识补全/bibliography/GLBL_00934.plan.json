@@ -1,0 +1,131 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00934",
+  "写作结构": "正史叙述（沙丘矫诏、指鹿为马、诛杀宗亲大臣、逼杀胡亥、被子婴刺杀等）见《史记》翻译详录，可直接依托 anchor 中 coverage_claims 进行白话展开。拓展部分先出《赵正书》异说，展示秦始皇临终遗言及立嗣的不同记载；再补《拾遗记》所载赵高为赵国公子复仇自宫的传说，作为后世附会补充。叙述时不编造史书未载的对话、动作细节。",
+  "候选著作": [
+    {
+      "出处": "《史记·秦始皇本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载沙丘之变、指鹿为马等赵高核心事迹",
+      "检索词": "赵高 沙丘 遗诏",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《史记·李斯列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "详载赵高与李斯合谋篡改遗诏、陷害李斯诸事",
+      "检索词": "赵高 李斯 遗诏",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《史记·蒙恬列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "提及赵高出身及与蒙氏结怨的背景",
+      "检索词": "赵高 蒙恬 疏属",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《赵正书》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "西汉竹书，记秦始皇临终言及赵高、李斯谋立胡亥的不同叙说，与《史记》形成异说",
+      "检索词": "赵正书 赵高",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《拾遗记·卷四》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "收录赵高为赵国公子、自宫入秦以图复仇的传说，应 anchor 中 legend_facts",
+      "检索词": "赵高 自宫 复仇",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·秦始皇本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载沙丘之变、指鹿为马等赵高核心事迹",
+      "检索词": "赵高 沙丘 遗诏",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《史记·李斯列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "详载赵高与李斯合谋篡改遗诏、陷害李斯诸事",
+      "检索词": "赵高 李斯 遗诏",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《史记·蒙恬列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "提及赵高出身及与蒙氏结怨的背景",
+      "检索词": "赵高 蒙恬 疏属",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《赵正书》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "西汉竹书，记秦始皇临终言及赵高、李斯谋立胡亥的不同叙说，与《史记》形成异说",
+      "检索词": "赵正书 赵高",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《拾遗记·卷四》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "收录赵高为赵国公子、自宫入秦以图复仇的传说，应 anchor 中 legend_facts",
+      "检索词": "赵高 自宫 复仇",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 3,
+    "overall": "B"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "work": "01史记",
+  "vol": "129",
+  "volume_name": "货殖列传",
+  "narrative_mode": "hezhuan",
+  "protagonists": [
+    {
+      "name": "范蠡",
+      "category": "庶众",
+      "rationale": "货殖列传 Top5 富商。"
+    },
+    {
+      "name": "子贡",
+      "category": "文臣",
+      "rationale": "货殖列传 Top5 富商。"
+    },
+    {
+      "name": "白圭",
+      "category": "庶众",
+      "rationale": "货殖列传 Top5 富商。"
+    },
+    {
+      "name": "任氏",
+      "category": "庶众",
+      "rationale": "货殖列传 Top5 富商。"
+    },
+    {
+      "name": "卓氏",
+      "category": "庶众",
+      "rationale": "货殖列传 Top5 富商。"
+    }
+  ]
+}

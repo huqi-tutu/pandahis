@@ -1,0 +1,1306 @@
+{
+  "volume": "仲尼弟子列传",
+  "source_file": "01史记_067_仲尼弟子列传第七.txt",
+  "total_paragraphs": 164,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 2,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "颜回",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "颜回",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "颜回",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "颜回",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "颜回",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "颜回",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 10,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 11,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 12,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "冉雍",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "冉雍",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "冉雍",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "冉求",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "冉求",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "冉求",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "子路",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "子路",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "子路",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "子路",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "子路",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "子路",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "子路",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "子路",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "子路",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "子路",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "子路",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "子路",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "子路",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "子路",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "子路",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "宰予",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "宰予",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "宰予",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "宰予",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "宰予",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "宰予",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "子贡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "子贡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "子贡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "子贡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "子贡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "子贡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [
+        {
+          "name": "子贡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 47,
+      "owners": [
+        {
+          "name": "子贡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 48,
+      "owners": [
+        {
+          "name": "子贡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 49,
+      "owners": [
+        {
+          "name": "子贡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 50,
+      "owners": [
+        {
+          "name": "子贡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 51,
+      "owners": [
+        {
+          "name": "子贡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 52,
+      "owners": [
+        {
+          "name": "子贡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 53,
+      "owners": [
+        {
+          "name": "子贡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 54,
+      "owners": [
+        {
+          "name": "子贡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 55,
+      "owners": [
+        {
+          "name": "子贡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 56,
+      "owners": [
+        {
+          "name": "子贡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 57,
+      "owners": [
+        {
+          "name": "子贡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 58,
+      "owners": [
+        {
+          "name": "子贡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 59,
+      "owners": [
+        {
+          "name": "子游",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 60,
+      "owners": [
+        {
+          "name": "子游",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 61,
+      "owners": [
+        {
+          "name": "子游",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 62,
+      "owners": [
+        {
+          "name": "子夏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 63,
+      "owners": [
+        {
+          "name": "子夏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 64,
+      "owners": [
+        {
+          "name": "子夏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 65,
+      "owners": [
+        {
+          "name": "子夏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 66,
+      "owners": [
+        {
+          "name": "子夏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 67,
+      "owners": [
+        {
+          "name": "子张",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 68,
+      "owners": [
+        {
+          "name": "子张",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 69,
+      "owners": [
+        {
+          "name": "子张",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 70,
+      "owners": [
+        {
+          "name": "子张",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 71,
+      "owners": [
+        {
+          "name": "曾参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 72,
+      "owners": [
+        {
+          "name": "曾参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 73,
+      "owners": [
+        {
+          "name": "澹台灭明",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 74,
+      "owners": [
+        {
+          "name": "澹台灭明",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 75,
+      "owners": [
+        {
+          "name": "澹台灭明",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 76,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 77,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 78,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 79,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 80,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 81,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 82,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 83,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 84,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 85,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 86,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 87,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 88,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 89,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 90,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 91,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 92,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 93,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 94,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 95,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 96,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 97,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 98,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 99,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 100,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 101,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 102,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 103,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 104,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 105,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 106,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 107,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 108,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 109,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 110,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 111,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 112,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 113,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 114,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 115,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 116,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 117,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 118,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 119,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 120,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 121,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 122,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 123,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 124,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 125,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 126,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 127,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 128,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 129,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 130,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 131,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 132,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 133,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 134,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 135,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 136,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 137,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 138,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 139,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 140,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 141,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 142,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 143,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 144,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 145,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 146,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 147,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 148,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 149,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 150,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 151,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 152,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 153,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 154,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 155,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 156,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 157,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 158,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 159,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 160,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 161,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 162,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 163,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 164,
+      "owners": [],
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SHIJI_067_01",
+      "史略名称": "颜回",
+      "史略简介": "颜回",
+      "原文字句": "颜回者，鲁人也，字子渊。少孔子三十岁。",
+      "史略分类": "文臣",
+      "主要史料出处": "《史记·卷67·仲尼弟子列传》",
+      "paragraphs": [
+        {
+          "volume": "仲尼弟子列传",
+          "paragraph_from": 3,
+          "paragraph_to": 8
+        }
+      ],
+      "五级细坐标": "史记·卷067·文臣·01",
+      "六级段落锚点": "[P3-P8]",
+      "原文出处": "仲尼弟子列传·P3-P8"
+    },
+    {
+      "史略ID": "SHIJI_067_02",
+      "史略名称": "冉雍",
+      "史略简介": "冉雍",
+      "原文字句": "冉雍字仲弓。",
+      "史略分类": "文臣",
+      "主要史料出处": "《史记·卷67·仲尼弟子列传》",
+      "paragraphs": [
+        {
+          "volume": "仲尼弟子列传",
+          "paragraph_from": 13,
+          "paragraph_to": 15
+        }
+      ],
+      "五级细坐标": "史记·卷067·文臣·02",
+      "六级段落锚点": "[P13-P15]",
+      "原文出处": "仲尼弟子列传·P13-P15"
+    },
+    {
+      "史略ID": "SHIJI_067_03",
+      "史略名称": "冉求",
+      "史略简介": "冉求",
+      "原文字句": "冉求字子有，少孔子二十九岁。为季氏宰。",
+      "史略分类": "文臣",
+      "主要史料出处": "《史记·卷67·仲尼弟子列传》",
+      "paragraphs": [
+        {
+          "volume": "仲尼弟子列传",
+          "paragraph_from": 16,
+          "paragraph_to": 18
+        }
+      ],
+      "五级细坐标": "史记·卷067·文臣·03",
+      "六级段落锚点": "[P16-P18]",
+      "原文出处": "仲尼弟子列传·P16-P18"
+    },
+    {
+      "史略ID": "SHIJI_067_04",
+      "史略名称": "子路",
+      "史略简介": "子路",
+      "原文字句": "仲由字子路，卞人也。少孔子九岁。",
+      "史略分类": "文臣",
+      "主要史料出处": "《史记·卷67·仲尼弟子列传》",
+      "paragraphs": [
+        {
+          "volume": "仲尼弟子列传",
+          "paragraph_from": 19,
+          "paragraph_to": 33
+        }
+      ],
+      "五级细坐标": "史记·卷067·文臣·04",
+      "六级段落锚点": "[P19-P33]",
+      "原文出处": "仲尼弟子列传·P19-P33"
+    },
+    {
+      "史略ID": "SHIJI_067_05",
+      "史略名称": "宰予",
+      "史略简介": "宰予",
+      "原文字句": "宰予字子我。利口辩辞。既受业，问：“三年之丧不已久乎？君子三年不为礼，礼必坏；三年不为乐，乐必崩。旧穀既没，新穀既升，钻燧改火，期可已矣。”",
+      "史略分类": "文臣",
+      "主要史料出处": "《史记·卷67·仲尼弟子列传》",
+      "paragraphs": [
+        {
+          "volume": "仲尼弟子列传",
+          "paragraph_from": 34,
+          "paragraph_to": 39
+        }
+      ],
+      "五级细坐标": "史记·卷067·文臣·05",
+      "六级段落锚点": "[P34-P39]",
+      "原文出处": "仲尼弟子列传·P34-P39"
+    },
+    {
+      "史略ID": "SHIJI_067_06",
+      "史略名称": "子贡",
+      "史略简介": "子贡",
+      "原文字句": "端沐赐，卫人，字子贡。少孔子三十一岁。",
+      "史略分类": "文臣",
+      "主要史料出处": "《史记·卷67·仲尼弟子列传》",
+      "paragraphs": [
+        {
+          "volume": "仲尼弟子列传",
+          "paragraph_from": 40,
+          "paragraph_to": 58
+        }
+      ],
+      "五级细坐标": "史记·卷067·文臣·06",
+      "六级段落锚点": "[P40-P58]",
+      "原文出处": "仲尼弟子列传·P40-P58"
+    },
+    {
+      "史略ID": "SHIJI_067_07",
+      "史略名称": "子游",
+      "史略简介": "子游",
+      "原文字句": "言偃，吴人，字子游。少孔子四十五岁。",
+      "史略分类": "文臣",
+      "主要史料出处": "《史记·卷67·仲尼弟子列传》",
+      "paragraphs": [
+        {
+          "volume": "仲尼弟子列传",
+          "paragraph_from": 59,
+          "paragraph_to": 61
+        }
+      ],
+      "五级细坐标": "史记·卷067·文臣·07",
+      "六级段落锚点": "[P59-P61]",
+      "原文出处": "仲尼弟子列传·P59-P61"
+    },
+    {
+      "史略ID": "SHIJI_067_08",
+      "史略名称": "子夏",
+      "史略简介": "子夏",
+      "原文字句": "卜商字子夏。少孔子四十四岁。",
+      "史略分类": "文臣",
+      "主要史料出处": "《史记·卷67·仲尼弟子列传》",
+      "paragraphs": [
+        {
+          "volume": "仲尼弟子列传",
+          "paragraph_from": 62,
+          "paragraph_to": 66
+        }
+      ],
+      "五级细坐标": "史记·卷067·文臣·08",
+      "六级段落锚点": "[P62-P66]",
+      "原文出处": "仲尼弟子列传·P62-P66"
+    },
+    {
+      "史略ID": "SHIJI_067_09",
+      "史略名称": "子张",
+      "史略简介": "子张",
+      "原文字句": "颛孙师，陈人，字子张。少孔子四十八岁。",
+      "史略分类": "文臣",
+      "主要史料出处": "《史记·卷67·仲尼弟子列传》",
+      "paragraphs": [
+        {
+          "volume": "仲尼弟子列传",
+          "paragraph_from": 67,
+          "paragraph_to": 70
+        }
+      ],
+      "五级细坐标": "史记·卷067·文臣·09",
+      "六级段落锚点": "[P67-P70]",
+      "原文出处": "仲尼弟子列传·P67-P70"
+    },
+    {
+      "史略ID": "SHIJI_067_10",
+      "史略名称": "曾参",
+      "史略简介": "曾参",
+      "原文字句": "曾参，南武城人，字子舆。少孔子四十六岁。",
+      "史略分类": "文臣",
+      "主要史料出处": "《史记·卷67·仲尼弟子列传》",
+      "paragraphs": [
+        {
+          "volume": "仲尼弟子列传",
+          "paragraph_from": 71,
+          "paragraph_to": 72
+        }
+      ],
+      "五级细坐标": "史记·卷067·文臣·10",
+      "六级段落锚点": "[P71-P72]",
+      "原文出处": "仲尼弟子列传·P71-P72"
+    },
+    {
+      "史略ID": "SHIJI_067_11",
+      "史略名称": "澹台灭明",
+      "史略简介": "澹台灭明",
+      "原文字句": "澹台灭明，武城人，字子羽。少孔子三十九岁。",
+      "史略分类": "文臣",
+      "主要史料出处": "《史记·卷67·仲尼弟子列传》",
+      "paragraphs": [
+        {
+          "volume": "仲尼弟子列传",
+          "paragraph_from": 73,
+          "paragraph_to": 75
+        }
+      ],
+      "五级细坐标": "史记·卷067·文臣·11",
+      "六级段落锚点": "[P73-P75]",
+      "原文出处": "仲尼弟子列传·P73-P75"
+    }
+  ]
+}

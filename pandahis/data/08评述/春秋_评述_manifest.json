@@ -3,14 +3,6 @@
   "mode": "commentary",
   "completed": [
     {
-      "glbl": "GLBL_00421",
-      "name": "管仲",
-      "file": "GLBL_00421_管仲_评述.json",
-      "status": "done",
-      "entry_count": 5,
-      "verified_at": "2026-07-27T15:30:23Z"
-    },
-    {
       "glbl": "GLBL_00002",
       "name": "卫出公",
       "file": "GLBL_00002_卫出公_评述.json",
@@ -27,44 +19,12 @@
       "verified_at": "2026-07-27T15:33:53Z"
     },
     {
-      "glbl": "GLBL_00005",
-      "name": "卫懿公",
-      "file": "GLBL_00005_卫懿公_评述.json",
-      "status": "done",
-      "entry_count": 4,
-      "verified_at": "2026-07-27T15:35:20Z"
-    },
-    {
-      "glbl": "GLBL_00006",
-      "name": "卫文公",
-      "file": "GLBL_00006_卫文公_评述.json",
-      "status": "done",
-      "entry_count": 2,
-      "verified_at": "2026-07-27T15:36:42Z"
-    },
-    {
-      "glbl": "GLBL_00007",
-      "name": "卫灵公",
-      "file": "GLBL_00007_卫灵公_评述.json",
-      "status": "done",
-      "entry_count": 5,
-      "verified_at": "2026-07-27T15:37:53Z"
-    },
-    {
       "glbl": "GLBL_00012",
       "name": "吴王夫差",
       "file": "GLBL_00012_吴王夫差_评述.json",
       "status": "done",
       "entry_count": 5,
       "verified_at": "2026-07-27T15:40:12Z"
-    },
-    {
-      "glbl": "GLBL_00013",
-      "name": "吴王阖闾",
-      "file": "GLBL_00013_吴王阖闾_评述.json",
-      "status": "done",
-      "entry_count": 5,
-      "verified_at": "2026-07-27T15:42:14Z"
     },
     {
       "glbl": "GLBL_00020",
@@ -75,52 +35,12 @@
       "verified_at": "2026-07-27T15:44:19Z"
     },
     {
-      "glbl": "GLBL_00022",
-      "name": "周平王",
-      "file": "GLBL_00022_周平王_评述.json",
-      "status": "done",
-      "entry_count": 5,
-      "verified_at": "2026-07-27T15:45:49Z"
-    },
-    {
-      "glbl": "GLBL_00024",
-      "name": "周庄王",
-      "file": "GLBL_00024_周庄王_评述.json",
-      "status": "done",
-      "entry_count": 3,
-      "verified_at": "2026-07-27T15:46:19Z"
-    },
-    {
-      "glbl": "GLBL_00026",
-      "name": "周惠王",
-      "file": "GLBL_00026_周惠王_评述.json",
-      "status": "done",
-      "entry_count": 3,
-      "verified_at": "2026-07-27T15:48:23Z"
-    },
-    {
       "glbl": "GLBL_00029",
       "name": "周敬王",
       "file": "GLBL_00029_周敬王_评述.json",
       "status": "已处理·无可用",
       "entry_count": 0,
       "verified_at": "2026-07-27T15:51:15Z"
-    },
-    {
-      "glbl": "GLBL_00033",
-      "name": "周景王",
-      "file": "GLBL_00033_周景王_评述.json",
-      "status": "done",
-      "entry_count": 4,
-      "verified_at": "2026-07-27T15:52:33Z"
-    },
-    {
-      "glbl": "GLBL_00034",
-      "name": "周桓王",
-      "file": "GLBL_00034_周桓王_评述.json",
-      "status": "done",
-      "entry_count": 4,
-      "verified_at": "2026-07-27T15:53:38Z"
     },
     {
       "glbl": "GLBL_00036",
@@ -139,22 +59,6 @@
       "verified_at": "2026-07-27T15:55:58Z"
     },
     {
-      "glbl": "GLBL_00042",
-      "name": "周釐王",
-      "file": "GLBL_00042_周釐王_评述.json",
-      "status": "done",
-      "entry_count": 4,
-      "verified_at": "2026-07-27T15:56:31Z"
-    },
-    {
-      "glbl": "GLBL_00051",
-      "name": "宋昭公",
-      "file": "GLBL_00051_宋昭公_评述.json",
-      "status": "done",
-      "entry_count": 5,
-      "verified_at": "2026-07-27T15:59:01Z"
-    },
-    {
       "glbl": "GLBL_00052",
       "name": "宋景公",
       "file": "GLBL_00052_宋景公_评述.json",
@@ -169,62 +73,6 @@
       "status": "done",
       "entry_count": 5,
       "verified_at": "2026-07-27T16:05:47Z"
-    },
-    {
-      "glbl": "GLBL_00061",
-      "name": "晋悼公",
-      "file": "GLBL_00061_晋悼公_评述.json",
-      "status": "done",
-      "entry_count": 5,
-      "verified_at": "2026-07-27T16:06:55Z"
-    },
-    {
-      "glbl": "GLBL_00062",
-      "name": "晋文公",
-      "file": "GLBL_00062_晋文公_评述.json",
-      "status": "done",
-      "entry_count": 6,
-      "verified_at": "2026-07-27T16:08:35Z"
-    },
-    {
-      "glbl": "GLBL_00064",
-      "name": "晋武公",
-      "file": "GLBL_00064_晋武公_评述.json",
-      "status": "done",
-      "entry_count": 5,
-      "verified_at": "2026-07-27T16:12:36Z"
-    },
-    {
-      "glbl": "GLBL_00065",
-      "name": "晋献公",
-      "file": "GLBL_00065_晋献公_评述.json",
-      "status": "done",
-      "entry_count": 5,
-      "verified_at": "2026-07-27T16:13:21Z"
-    },
-    {
-      "glbl": "GLBL_00070",
-      "name": "楚成王",
-      "file": "GLBL_00070_楚成王_评述.json",
-      "status": "done",
-      "entry_count": 4,
-      "verified_at": "2026-07-27T16:17:23Z"
-    },
-    {
-      "glbl": "GLBL_00071",
-      "name": "楚昭王",
-      "file": "GLBL_00071_楚昭王_评述.json",
-      "status": "done",
-      "entry_count": 3,
-      "verified_at": "2026-07-27T16:19:07Z"
-    },
-    {
-      "glbl": "GLBL_00072",
-      "name": "楚武王",
-      "file": "GLBL_00072_楚武王_评述.json",
-      "status": "done",
-      "entry_count": 3,
-      "verified_at": "2026-07-27T16:20:23Z"
     },
     {
       "glbl": "GLBL_00099",
@@ -249,14 +97,6 @@
       "status": "已处理·无可用",
       "entry_count": 0,
       "verified_at": "2026-07-27T16:22:51Z"
-    },
-    {
-      "glbl": "GLBL_00102",
-      "name": "秦哀公",
-      "file": "GLBL_00102_秦哀公_评述.json",
-      "status": "done",
-      "entry_count": 6,
-      "verified_at": "2026-07-27T16:23:35Z"
     },
     {
       "glbl": "GLBL_00106",
@@ -289,14 +129,6 @@
       "status": "已处理·无可用",
       "entry_count": 0,
       "verified_at": "2026-07-27T16:30:12Z"
-    },
-    {
-      "glbl": "GLBL_00112",
-      "name": "秦怀公",
-      "file": "GLBL_00112_秦怀公_评述.json",
-      "status": "done",
-      "entry_count": 5,
-      "verified_at": "2026-07-27T16:31:25Z"
     },
     {
       "glbl": "GLBL_00113",
@@ -371,44 +203,12 @@
       "verified_at": "2026-07-27T16:43:46Z"
     },
     {
-      "glbl": "GLBL_00126",
-      "name": "秦简公",
-      "file": "GLBL_00126_秦简公_评述.json",
-      "status": "done",
-      "entry_count": 5,
-      "verified_at": "2026-07-27T16:45:32Z"
-    },
-    {
-      "glbl": "GLBL_00127",
-      "name": "秦襄公",
-      "file": "GLBL_00127_秦襄公_评述.json",
-      "status": "done",
-      "entry_count": 6,
-      "verified_at": "2026-07-27T16:47:30Z"
-    },
-    {
       "glbl": "GLBL_00133",
       "name": "赵襄子",
       "file": "GLBL_00133_赵襄子_评述.json",
       "status": "done",
       "entry_count": 5,
       "verified_at": "2026-07-27T16:49:15Z"
-    },
-    {
-      "glbl": "GLBL_00135",
-      "name": "郑庄公",
-      "file": "GLBL_00135_郑庄公_评述.json",
-      "status": "done",
-      "entry_count": 5,
-      "verified_at": "2026-07-27T16:52:12Z"
-    },
-    {
-      "glbl": "GLBL_00137",
-      "name": "郑武公",
-      "file": "GLBL_00137_郑武公_评述.json",
-      "status": "done",
-      "entry_count": 4,
-      "verified_at": "2026-07-27T16:54:10Z"
     },
     {
       "glbl": "GLBL_00140",
@@ -419,36 +219,12 @@
       "verified_at": "2026-07-27T16:56:13Z"
     },
     {
-      "glbl": "GLBL_00150",
-      "name": "齐太公",
-      "file": "GLBL_00150_齐太公_评述.json",
-      "status": "done",
-      "entry_count": 5,
-      "verified_at": "2026-07-27T16:57:54Z"
-    },
-    {
       "glbl": "GLBL_00219",
       "name": "专诸",
       "file": "GLBL_00219_专诸_评述.json",
       "status": "done",
       "entry_count": 5,
       "verified_at": "2026-07-27T16:59:40Z"
-    },
-    {
-      "glbl": "GLBL_00220",
-      "name": "优孟",
-      "file": "GLBL_00220_优孟_评述.json",
-      "status": "done",
-      "entry_count": 5,
-      "verified_at": "2026-07-27T17:01:04Z"
-    },
-    {
-      "glbl": "GLBL_00237",
-      "name": "曹沫",
-      "file": "GLBL_00237_曹沫_评述.json",
-      "status": "done",
-      "entry_count": 5,
-      "verified_at": "2026-07-27T17:03:03Z"
     },
     {
       "glbl": "GLBL_00247",
@@ -459,22 +235,6 @@
       "verified_at": "2026-07-27T17:03:44Z"
     },
     {
-      "glbl": "GLBL_00251",
-      "name": "陶朱公",
-      "file": "GLBL_00251_陶朱公_评述.json",
-      "status": "done",
-      "entry_count": 5,
-      "verified_at": "2026-07-27T17:05:04Z"
-    },
-    {
-      "glbl": "GLBL_00271",
-      "name": "公仪休",
-      "file": "GLBL_00271_公仪休_评述.json",
-      "status": "done",
-      "entry_count": 6,
-      "verified_at": "2026-07-27T17:06:33Z"
-    },
-    {
       "glbl": "GLBL_00272",
       "name": "公伯缭",
       "file": "GLBL_00272_公伯缭_评述.json",
@@ -483,84 +243,12 @@
       "verified_at": "2026-07-27T17:07:41Z"
     },
     {
-      "glbl": "GLBL_00273",
-      "name": "公冶长",
-      "file": "GLBL_00273_公冶长_评述.json",
-      "status": "done",
-      "entry_count": 5,
-      "verified_at": "2026-07-27T17:09:02Z"
-    },
-    {
-      "glbl": "GLBL_00276",
-      "name": "公皙哀",
-      "file": "GLBL_00276_公皙哀_评述.json",
-      "status": "done",
-      "entry_count": 3,
-      "verified_at": "2026-07-27T17:10:58Z"
-    },
-    {
-      "glbl": "GLBL_00277",
-      "name": "公西赤",
-      "file": "GLBL_00277_公西赤_评述.json",
-      "status": "done",
-      "entry_count": 3,
-      "verified_at": "2026-07-27T17:11:52Z"
-    },
-    {
-      "glbl": "GLBL_00278",
-      "name": "冉伯牛",
-      "file": "GLBL_00278_冉伯牛_评述.json",
-      "status": "done",
-      "entry_count": 5,
-      "verified_at": "2026-07-27T17:13:16Z"
-    },
-    {
       "glbl": "GLBL_00279",
       "name": "冉有",
       "file": "GLBL_00279_冉有_评述.json",
       "status": "done",
       "entry_count": 4,
       "verified_at": "2026-07-27T17:15:24Z"
-    },
-    {
-      "glbl": "GLBL_00280",
-      "name": "冉雍",
-      "file": "GLBL_00280_冉雍_评述.json",
-      "status": "done",
-      "entry_count": 5,
-      "verified_at": "2026-07-27T17:16:43Z"
-    },
-    {
-      "glbl": "GLBL_00287",
-      "name": "南宫括",
-      "file": "GLBL_00287_南宫括_评述.json",
-      "status": "done",
-      "entry_count": 5,
-      "verified_at": "2026-07-27T17:17:18Z"
-    },
-    {
-      "glbl": "GLBL_00290",
-      "name": "原宪",
-      "file": "GLBL_00290_原宪_评述.json",
-      "status": "done",
-      "entry_count": 4,
-      "verified_at": "2026-07-27T17:18:48Z"
-    },
-    {
-      "glbl": "GLBL_00294",
-      "name": "司马耕",
-      "file": "GLBL_00294_司马耕_评述.json",
-      "status": "done",
-      "entry_count": 4,
-      "verified_at": "2026-07-27T17:20:04Z"
-    },
-    {
-      "glbl": "GLBL_00303",
-      "name": "商瞿",
-      "file": "GLBL_00303_商瞿_评述.json",
-      "status": "done",
-      "entry_count": 4,
-      "verified_at": "2026-07-27T17:21:31Z"
     },
     {
       "glbl": "GLBL_00309",
@@ -595,14 +283,6 @@
       "verified_at": "2026-07-27T17:28:17Z"
     },
     {
-      "glbl": "GLBL_00314",
-      "name": "子路",
-      "file": "GLBL_00314_子路_评述.json",
-      "status": "done",
-      "entry_count": 4,
-      "verified_at": "2026-07-27T17:28:51Z"
-    },
-    {
       "glbl": "GLBL_00316",
       "name": "孔子",
       "file": "GLBL_00316_孔子_评述.json",
@@ -617,38 +297,6 @@
       "status": "done",
       "entry_count": 5,
       "verified_at": "2026-07-27T17:32:08Z"
-    },
-    {
-      "glbl": "GLBL_00320",
-      "name": "孙武",
-      "file": "GLBL_00320_孙武_评述.json",
-      "status": "done",
-      "entry_count": 5,
-      "verified_at": "2026-07-27T17:33:43Z"
-    },
-    {
-      "glbl": "GLBL_00325",
-      "name": "宓不齐",
-      "file": "GLBL_00325_宓不齐_评述.json",
-      "status": "done",
-      "entry_count": 4,
-      "verified_at": "2026-07-27T17:35:15Z"
-    },
-    {
-      "glbl": "GLBL_00326",
-      "name": "宰予",
-      "file": "GLBL_00326_宰予_评述.json",
-      "status": "done",
-      "entry_count": 4,
-      "verified_at": "2026-07-27T17:36:39Z"
-    },
-    {
-      "glbl": "GLBL_00331",
-      "name": "巫马施",
-      "file": "GLBL_00331_巫马施_评述.json",
-      "status": "done",
-      "entry_count": 5,
-      "verified_at": "2026-07-27T17:39:05Z"
     },
     {
       "glbl": "GLBL_00352",
@@ -667,94 +315,6 @@
       "verified_at": "2026-07-27T17:42:13Z"
     },
     {
-      "glbl": "GLBL_00359",
-      "name": "曾参",
-      "file": "GLBL_00359_曾参_评述.json",
-      "status": "done",
-      "entry_count": 5,
-      "verified_at": "2026-07-27T17:43:46Z"
-    },
-    {
-      "glbl": "GLBL_00360",
-      "name": "曾蒧",
-      "file": "GLBL_00360_曾蒧_评述.json",
-      "status": "done",
-      "entry_count": 4,
-      "verified_at": "2026-07-27T17:45:29Z"
-    },
-    {
-      "glbl": "GLBL_00361",
-      "name": "有若",
-      "file": "GLBL_00361_有若_评述.json",
-      "status": "done",
-      "entry_count": 4,
-      "verified_at": "2026-07-27T17:47:02Z"
-    },
-    {
-      "glbl": "GLBL_00369",
-      "name": "李离",
-      "file": "GLBL_00369_李离_评述.json",
-      "status": "done",
-      "entry_count": 5,
-      "verified_at": "2026-07-27T17:48:53Z"
-    },
-    {
-      "glbl": "GLBL_00380",
-      "name": "樊须",
-      "file": "GLBL_00380_樊须_评述.json",
-      "status": "done",
-      "entry_count": 5,
-      "verified_at": "2026-07-27T17:50:56Z"
-    },
-    {
-      "glbl": "GLBL_00388",
-      "name": "漆彫开",
-      "file": "GLBL_00388_漆彫开_评述.json",
-      "status": "done",
-      "entry_count": 4,
-      "verified_at": "2026-07-27T17:52:13Z"
-    },
-    {
-      "glbl": "GLBL_00389",
-      "name": "澹台灭明",
-      "file": "GLBL_00389_澹台灭明_评述.json",
-      "status": "done",
-      "entry_count": 5,
-      "verified_at": "2026-07-27T17:53:48Z"
-    },
-    {
-      "glbl": "GLBL_00419",
-      "name": "石奢",
-      "file": "GLBL_00419_石奢_评述.json",
-      "status": "done",
-      "entry_count": 3,
-      "verified_at": "2026-07-27T17:55:09Z"
-    },
-    {
-      "glbl": "GLBL_00426",
-      "name": "老子",
-      "file": "GLBL_00426_老子_评述.json",
-      "status": "done",
-      "entry_count": 6,
-      "verified_at": "2026-07-27T17:56:27Z"
-    },
-    {
-      "glbl": "GLBL_00465",
-      "name": "闵子骞",
-      "file": "GLBL_00465_闵子骞_评述.json",
-      "status": "done",
-      "entry_count": 3,
-      "verified_at": "2026-07-27T17:58:55Z"
-    },
-    {
-      "glbl": "GLBL_00480",
-      "name": "颜回",
-      "file": "GLBL_00480_颜回_评述.json",
-      "status": "done",
-      "entry_count": 5,
-      "verified_at": "2026-07-27T18:00:19Z"
-    },
-    {
       "glbl": "GLBL_00482",
       "name": "颜无繇",
       "file": "GLBL_00482_颜无繇_评述.json",
@@ -769,22 +329,6 @@
       "status": "已处理·无可用",
       "entry_count": 0,
       "verified_at": "2026-07-27T18:05:09Z"
-    },
-    {
-      "glbl": "GLBL_00498",
-      "name": "伍子胥",
-      "file": "GLBL_00498_伍子胥_评述.json",
-      "status": "done",
-      "entry_count": 6,
-      "verified_at": "2026-07-27T18:05:50Z"
-    },
-    {
-      "glbl": "GLBL_00504",
-      "name": "司马穰苴",
-      "file": "GLBL_00504_司马穰苴_评述.json",
-      "status": "done",
-      "entry_count": 5,
-      "verified_at": "2026-07-27T18:07:19Z"
     },
     {
       "glbl": "GLBL_00696",
@@ -803,86 +347,6 @@
       "verified_at": "2026-07-27T18:10:14Z"
     },
     {
-      "glbl": "GLBL_00698",
-      "name": "卫惠公",
-      "file": "GLBL_00698_卫惠公_评述.json",
-      "status": "done",
-      "entry_count": 4,
-      "verified_at": "2026-07-27T18:11:54Z"
-    },
-    {
-      "glbl": "GLBL_00702",
-      "name": "卫献公",
-      "file": "GLBL_00702_卫献公_评述.json",
-      "status": "done",
-      "entry_count": 4,
-      "verified_at": "2026-07-27T18:18:29Z"
-    },
-    {
-      "glbl": "GLBL_00703",
-      "name": "宋宣公",
-      "file": "GLBL_00703_宋宣公_评述.json",
-      "status": "done",
-      "entry_count": 3,
-      "verified_at": "2026-07-27T18:19:39Z"
-    },
-    {
-      "glbl": "GLBL_00704",
-      "name": "宋文公",
-      "file": "GLBL_00704_宋文公_评述.json",
-      "status": "done",
-      "entry_count": 4,
-      "verified_at": "2026-07-27T18:21:19Z"
-    },
-    {
-      "glbl": "GLBL_00705",
-      "name": "宋殇公",
-      "file": "GLBL_00705_宋殇公_评述.json",
-      "status": "done",
-      "entry_count": 5,
-      "verified_at": "2026-07-27T18:22:51Z"
-    },
-    {
-      "glbl": "GLBL_00706",
-      "name": "宋湣公",
-      "file": "GLBL_00706_宋湣公_评述.json",
-      "status": "done",
-      "entry_count": 5,
-      "verified_at": "2026-07-27T18:24:17Z"
-    },
-    {
-      "glbl": "GLBL_00708",
-      "name": "晋厉公",
-      "file": "GLBL_00708_晋厉公_评述.json",
-      "status": "done",
-      "entry_count": 5,
-      "verified_at": "2026-07-27T18:25:51Z"
-    },
-    {
-      "glbl": "GLBL_00709",
-      "name": "晋定公",
-      "file": "GLBL_00709_晋定公_评述.json",
-      "status": "done",
-      "entry_count": 4,
-      "verified_at": "2026-07-27T18:27:57Z"
-    },
-    {
-      "glbl": "GLBL_00710",
-      "name": "晋平公",
-      "file": "GLBL_00710_晋平公_评述.json",
-      "status": "done",
-      "entry_count": 5,
-      "verified_at": "2026-07-27T18:29:23Z"
-    },
-    {
-      "glbl": "GLBL_00711",
-      "name": "晋惠公",
-      "file": "GLBL_00711_晋惠公_评述.json",
-      "status": "done",
-      "entry_count": 4,
-      "verified_at": "2026-07-27T18:31:18Z"
-    },
-    {
       "glbl": "GLBL_00712",
       "name": "晋灵公",
       "file": "GLBL_00712_晋灵公_评述.json",
@@ -899,28 +363,12 @@
       "verified_at": "2026-07-27T18:34:58Z"
     },
     {
-      "glbl": "GLBL_00714",
-      "name": "晋顷公",
-      "file": "GLBL_00714_晋顷公_评述.json",
-      "status": "done",
-      "entry_count": 2,
-      "verified_at": "2026-07-27T18:36:18Z"
-    },
-    {
       "glbl": "GLBL_00715",
       "name": "曹伯阳",
       "file": "GLBL_00715_曹伯阳_评述.json",
       "status": "done",
       "entry_count": 5,
       "verified_at": "2026-07-27T18:37:27Z"
-    },
-    {
-      "glbl": "GLBL_00716",
-      "name": "楚平王",
-      "file": "GLBL_00716_楚平王_评述.json",
-      "status": "done",
-      "entry_count": 5,
-      "verified_at": "2026-07-27T18:39:40Z"
     },
     {
       "glbl": "GLBL_00717",
@@ -945,22 +393,6 @@
       "status": "已处理·无可用",
       "entry_count": 0,
       "verified_at": "2026-07-27T18:44:44Z"
-    },
-    {
-      "glbl": "GLBL_00723",
-      "name": "田敬仲完",
-      "file": "GLBL_00723_田敬仲完_评述.json",
-      "status": "done",
-      "entry_count": 4,
-      "verified_at": "2026-07-27T18:46:28Z"
-    },
-    {
-      "glbl": "GLBL_00725",
-      "name": "蔡昭侯",
-      "file": "GLBL_00725_蔡昭侯_评述.json",
-      "status": "done",
-      "entry_count": 5,
-      "verified_at": "2026-07-27T18:48:13Z"
     },
     {
       "glbl": "GLBL_00730",
@@ -1315,14 +747,6 @@
       "verified_at": "2026-07-29T16:57:29Z"
     },
     {
-      "glbl": "GLBL_00726",
-      "name": "蔡灵侯",
-      "file": "GLBL_00726_蔡灵侯_评述.json",
-      "status": "done",
-      "entry_count": 4,
-      "verified_at": "2026-07-29T17:03:50Z"
-    },
-    {
       "glbl": "GLBL_00751",
       "name": "鲁庄公",
       "file": "GLBL_00751_鲁庄公_评述.json",
@@ -1345,7 +769,855 @@
       "status": "done",
       "entry_count": 4,
       "verified_at": "2026-07-29T17:11:51Z"
+    },
+    {
+      "glbl": "GLBL_00005",
+      "name": "卫懿公",
+      "file": "GLBL_00005_卫懿公_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-01T05:39:56Z"
+    },
+    {
+      "glbl": "GLBL_00006",
+      "name": "卫文公",
+      "file": "GLBL_00006_卫文公_评述.json",
+      "status": "done",
+      "entry_count": 4,
+      "verified_at": "2026-08-01T05:42:18Z"
+    },
+    {
+      "glbl": "GLBL_00007",
+      "name": "卫灵公",
+      "file": "GLBL_00007_卫灵公_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-01T05:43:52Z"
+    },
+    {
+      "glbl": "GLBL_00013",
+      "name": "吴王阖闾",
+      "file": "GLBL_00013_吴王阖闾_评述.json",
+      "status": "done",
+      "entry_count": 3,
+      "verified_at": "2026-08-01T05:45:43Z"
+    },
+    {
+      "glbl": "GLBL_00022",
+      "name": "周平王",
+      "file": "GLBL_00022_周平王_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-01T05:47:28Z"
+    },
+    {
+      "glbl": "GLBL_00024",
+      "name": "周庄王",
+      "file": "GLBL_00024_周庄王_评述.json",
+      "status": "done",
+      "entry_count": 3,
+      "verified_at": "2026-08-01T05:49:21Z"
+    },
+    {
+      "glbl": "GLBL_00026",
+      "name": "周惠王",
+      "file": "GLBL_00026_周惠王_评述.json",
+      "status": "done",
+      "entry_count": 3,
+      "verified_at": "2026-08-01T05:52:10Z"
+    },
+    {
+      "glbl": "GLBL_00033",
+      "name": "周景王",
+      "file": "GLBL_00033_周景王_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-01T05:54:40Z"
+    },
+    {
+      "glbl": "GLBL_00034",
+      "name": "周桓王",
+      "file": "GLBL_00034_周桓王_评述.json",
+      "status": "done",
+      "entry_count": 4,
+      "verified_at": "2026-08-01T05:57:23Z"
+    },
+    {
+      "glbl": "GLBL_00042",
+      "name": "周釐王",
+      "file": "GLBL_00042_周釐王_评述.json",
+      "status": "已处理·无可用",
+      "entry_count": 0,
+      "verified_at": "2026-08-01T05:57:53Z"
+    },
+    {
+      "glbl": "GLBL_00051",
+      "name": "宋昭公",
+      "file": "GLBL_00051_宋昭公_评述.json",
+      "status": "done",
+      "entry_count": 3,
+      "verified_at": "2026-08-01T06:00:06Z"
+    },
+    {
+      "glbl": "GLBL_00061",
+      "name": "晋悼公",
+      "file": "GLBL_00061_晋悼公_评述.json",
+      "status": "done",
+      "entry_count": 1,
+      "verified_at": "2026-08-01T06:01:57Z"
+    },
+    {
+      "glbl": "GLBL_00062",
+      "name": "晋文公",
+      "file": "GLBL_00062_晋文公_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-01T06:05:08Z"
+    },
+    {
+      "glbl": "GLBL_00064",
+      "name": "晋武公",
+      "file": "GLBL_00064_晋武公_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-01T06:08:03Z"
+    },
+    {
+      "glbl": "GLBL_00065",
+      "name": "晋献公",
+      "file": "GLBL_00065_晋献公_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-01T06:10:20Z"
+    },
+    {
+      "glbl": "GLBL_00070",
+      "name": "楚成王",
+      "file": "GLBL_00070_楚成王_评述.json",
+      "status": "done",
+      "entry_count": 3,
+      "verified_at": "2026-08-01T06:12:54Z"
+    },
+    {
+      "glbl": "GLBL_00071",
+      "name": "楚昭王",
+      "file": "GLBL_00071_楚昭王_评述.json",
+      "status": "done",
+      "entry_count": 3,
+      "verified_at": "2026-08-01T06:15:05Z"
+    },
+    {
+      "glbl": "GLBL_00072",
+      "name": "楚武王",
+      "file": "GLBL_00072_楚武王_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-01T06:16:44Z"
+    },
+    {
+      "glbl": "GLBL_00102",
+      "name": "秦哀公",
+      "file": "GLBL_00102_秦哀公_评述.json",
+      "status": "已处理·无可用",
+      "entry_count": 0,
+      "verified_at": "2026-08-01T06:17:49Z"
+    },
+    {
+      "glbl": "GLBL_00112",
+      "name": "秦怀公",
+      "file": "GLBL_00112_秦怀公_评述.json",
+      "status": "已处理·无可用",
+      "entry_count": 0,
+      "verified_at": "2026-08-01T06:18:20Z"
+    },
+    {
+      "glbl": "GLBL_00126",
+      "name": "秦简公",
+      "file": "GLBL_00126_秦简公_评述.json",
+      "status": "已处理·无可用",
+      "entry_count": 0,
+      "verified_at": "2026-08-01T06:19:14Z"
+    },
+    {
+      "glbl": "GLBL_00127",
+      "name": "秦襄公",
+      "file": "GLBL_00127_秦襄公_评述.json",
+      "status": "done",
+      "entry_count": 6,
+      "verified_at": "2026-08-01T06:20:53Z"
+    },
+    {
+      "glbl": "GLBL_00135",
+      "name": "郑庄公",
+      "file": "GLBL_00135_郑庄公_评述.json",
+      "status": "done",
+      "entry_count": 4,
+      "verified_at": "2026-08-01T06:22:02Z"
+    },
+    {
+      "glbl": "GLBL_00137",
+      "name": "郑武公",
+      "file": "GLBL_00137_郑武公_评述.json",
+      "status": "done",
+      "entry_count": 3,
+      "verified_at": "2026-08-01T06:23:45Z"
+    },
+    {
+      "glbl": "GLBL_00150",
+      "name": "齐太公",
+      "file": "GLBL_00150_齐太公_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-01T06:25:41Z"
+    },
+    {
+      "glbl": "GLBL_00220",
+      "name": "优孟",
+      "file": "GLBL_00220_优孟_评述.json",
+      "status": "done",
+      "entry_count": 4,
+      "verified_at": "2026-08-01T06:27:04Z"
+    },
+    {
+      "glbl": "GLBL_00237",
+      "name": "曹沫",
+      "file": "GLBL_00237_曹沫_评述.json",
+      "status": "done",
+      "entry_count": 4,
+      "verified_at": "2026-08-01T06:27:41Z"
+    },
+    {
+      "glbl": "GLBL_00251",
+      "name": "陶朱公",
+      "file": "GLBL_00251_陶朱公_评述.json",
+      "status": "done",
+      "entry_count": 4,
+      "verified_at": "2026-08-01T06:31:42Z"
+    },
+    {
+      "glbl": "GLBL_00271",
+      "name": "公仪休",
+      "file": "GLBL_00271_公仪休_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-01T06:34:15Z"
+    },
+    {
+      "glbl": "GLBL_00273",
+      "name": "公冶长",
+      "file": "GLBL_00273_公冶长_评述.json",
+      "status": "done",
+      "entry_count": 3,
+      "verified_at": "2026-08-01T06:37:14Z"
+    },
+    {
+      "glbl": "GLBL_00276",
+      "name": "公皙哀",
+      "file": "GLBL_00276_公皙哀_评述.json",
+      "status": "done",
+      "entry_count": 4,
+      "verified_at": "2026-08-01T06:39:36Z"
+    },
+    {
+      "glbl": "GLBL_00277",
+      "name": "公西赤",
+      "file": "GLBL_00277_公西赤_评述.json",
+      "status": "done",
+      "entry_count": 4,
+      "verified_at": "2026-08-01T06:40:58Z"
+    },
+    {
+      "glbl": "GLBL_00278",
+      "name": "冉伯牛",
+      "file": "GLBL_00278_冉伯牛_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-01T06:42:50Z"
+    },
+    {
+      "glbl": "GLBL_00280",
+      "name": "冉雍",
+      "file": "GLBL_00280_冉雍_评述.json",
+      "status": "done",
+      "entry_count": 4,
+      "verified_at": "2026-08-01T06:44:21Z"
+    },
+    {
+      "glbl": "GLBL_00287",
+      "name": "南宫括",
+      "file": "GLBL_00287_南宫括_评述.json",
+      "status": "已处理·无可用",
+      "entry_count": 0,
+      "verified_at": "2026-08-01T06:45:26Z"
+    },
+    {
+      "glbl": "GLBL_00290",
+      "name": "原宪",
+      "file": "GLBL_00290_原宪_评述.json",
+      "status": "done",
+      "entry_count": 4,
+      "verified_at": "2026-08-01T06:47:05Z"
+    },
+    {
+      "glbl": "GLBL_00294",
+      "name": "司马耕",
+      "file": "GLBL_00294_司马耕_评述.json",
+      "status": "done",
+      "entry_count": 3,
+      "verified_at": "2026-08-01T06:49:00Z"
+    },
+    {
+      "glbl": "GLBL_00303",
+      "name": "商瞿",
+      "file": "GLBL_00303_商瞿_评述.json",
+      "status": "done",
+      "entry_count": 4,
+      "verified_at": "2026-08-01T06:51:31Z"
+    },
+    {
+      "glbl": "GLBL_00314",
+      "name": "子路",
+      "file": "GLBL_00314_子路_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-01T06:57:31Z"
+    },
+    {
+      "glbl": "GLBL_00320",
+      "name": "孙武",
+      "file": "GLBL_00320_孙武_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-01T06:59:08Z"
+    },
+    {
+      "glbl": "GLBL_00325",
+      "name": "宓不齐",
+      "file": "GLBL_00325_宓不齐_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-01T07:02:46Z"
+    },
+    {
+      "glbl": "GLBL_00326",
+      "name": "宰予",
+      "file": "GLBL_00326_宰予_评述.json",
+      "status": "done",
+      "entry_count": 4,
+      "verified_at": "2026-08-01T07:04:08Z"
+    },
+    {
+      "glbl": "GLBL_00331",
+      "name": "巫马施",
+      "file": "GLBL_00331_巫马施_评述.json",
+      "status": "done",
+      "entry_count": 4,
+      "verified_at": "2026-08-01T07:06:55Z"
+    },
+    {
+      "glbl": "GLBL_00359",
+      "name": "曾参",
+      "file": "GLBL_00359_曾参_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-01T07:08:31Z"
+    },
+    {
+      "glbl": "GLBL_00360",
+      "name": "曾蒧",
+      "file": "GLBL_00360_曾蒧_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-01T07:10:18Z"
+    },
+    {
+      "glbl": "GLBL_00361",
+      "name": "有若",
+      "file": "GLBL_00361_有若_评述.json",
+      "status": "done",
+      "entry_count": 3,
+      "verified_at": "2026-08-01T07:11:26Z"
+    },
+    {
+      "glbl": "GLBL_00369",
+      "name": "李离",
+      "file": "GLBL_00369_李离_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-01T07:12:29Z"
+    },
+    {
+      "glbl": "GLBL_00380",
+      "name": "樊须",
+      "file": "GLBL_00380_樊须_评述.json",
+      "status": "done",
+      "entry_count": 4,
+      "verified_at": "2026-08-01T07:14:02Z"
+    },
+    {
+      "glbl": "GLBL_00388",
+      "name": "漆彫开",
+      "file": "GLBL_00388_漆彫开_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-01T07:16:24Z"
+    },
+    {
+      "glbl": "GLBL_00389",
+      "name": "澹台灭明",
+      "file": "GLBL_00389_澹台灭明_评述.json",
+      "status": "done",
+      "entry_count": 4,
+      "verified_at": "2026-08-01T07:18:16Z"
+    },
+    {
+      "glbl": "GLBL_00419",
+      "name": "石奢",
+      "file": "GLBL_00419_石奢_评述.json",
+      "status": "done",
+      "entry_count": 4,
+      "verified_at": "2026-08-01T07:20:42Z"
+    },
+    {
+      "glbl": "GLBL_00421",
+      "name": "管仲",
+      "file": "GLBL_00421_管仲_评述.json",
+      "status": "done",
+      "entry_count": 6,
+      "verified_at": "2026-08-01T07:22:06Z"
+    },
+    {
+      "glbl": "GLBL_00426",
+      "name": "老子",
+      "file": "GLBL_00426_老子_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-01T07:23:30Z"
+    },
+    {
+      "glbl": "GLBL_00465",
+      "name": "闵子骞",
+      "file": "GLBL_00465_闵子骞_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-01T07:24:18Z"
+    },
+    {
+      "glbl": "GLBL_00480",
+      "name": "颜回",
+      "file": "GLBL_00480_颜回_评述.json",
+      "status": "done",
+      "entry_count": 6,
+      "verified_at": "2026-08-01T07:26:03Z"
+    },
+    {
+      "glbl": "GLBL_00498",
+      "name": "伍子胥",
+      "file": "GLBL_00498_伍子胥_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-01T07:27:50Z"
+    },
+    {
+      "glbl": "GLBL_00504",
+      "name": "司马穰苴",
+      "file": "GLBL_00504_司马穰苴_评述.json",
+      "status": "done",
+      "entry_count": 6,
+      "verified_at": "2026-08-01T07:29:48Z"
+    },
+    {
+      "glbl": "GLBL_00698",
+      "name": "卫惠公",
+      "file": "GLBL_00698_卫惠公_评述.json",
+      "status": "done",
+      "entry_count": 4,
+      "verified_at": "2026-08-01T07:34:17Z"
+    },
+    {
+      "glbl": "GLBL_00702",
+      "name": "卫献公",
+      "file": "GLBL_00702_卫献公_评述.json",
+      "status": "done",
+      "entry_count": 4,
+      "verified_at": "2026-08-01T07:37:00Z"
+    },
+    {
+      "glbl": "GLBL_00703",
+      "name": "宋宣公",
+      "file": "GLBL_00703_宋宣公_评述.json",
+      "status": "done",
+      "entry_count": 3,
+      "verified_at": "2026-08-01T07:37:38Z"
+    },
+    {
+      "glbl": "GLBL_00704",
+      "name": "宋文公",
+      "file": "GLBL_00704_宋文公_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-01T07:40:41Z"
+    },
+    {
+      "glbl": "GLBL_00705",
+      "name": "宋殇公",
+      "file": "GLBL_00705_宋殇公_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-01T07:43:14Z"
+    },
+    {
+      "glbl": "GLBL_00706",
+      "name": "宋湣公",
+      "file": "GLBL_00706_宋湣公_评述.json",
+      "status": "done",
+      "entry_count": 3,
+      "verified_at": "2026-08-01T07:44:58Z"
+    },
+    {
+      "glbl": "GLBL_00708",
+      "name": "晋厉公",
+      "file": "GLBL_00708_晋厉公_评述.json",
+      "status": "done",
+      "entry_count": 4,
+      "verified_at": "2026-08-01T07:46:46Z"
+    },
+    {
+      "glbl": "GLBL_00709",
+      "name": "晋定公",
+      "file": "GLBL_00709_晋定公_评述.json",
+      "status": "done",
+      "entry_count": 3,
+      "verified_at": "2026-08-01T07:48:28Z"
+    },
+    {
+      "glbl": "GLBL_00710",
+      "name": "晋平公",
+      "file": "GLBL_00710_晋平公_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-01T07:50:34Z"
+    },
+    {
+      "glbl": "GLBL_00711",
+      "name": "晋惠公",
+      "file": "GLBL_00711_晋惠公_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-01T07:52:45Z"
+    },
+    {
+      "glbl": "GLBL_00714",
+      "name": "晋顷公",
+      "file": "GLBL_00714_晋顷公_评述.json",
+      "status": "done",
+      "entry_count": 1,
+      "verified_at": "2026-08-01T08:00:42Z"
+    },
+    {
+      "glbl": "GLBL_00716",
+      "name": "楚平王",
+      "file": "GLBL_00716_楚平王_评述.json",
+      "status": "done",
+      "entry_count": 6,
+      "verified_at": "2026-08-01T08:03:38Z"
+    },
+    {
+      "glbl": "GLBL_00723",
+      "name": "田敬仲完",
+      "file": "GLBL_00723_田敬仲完_评述.json",
+      "status": "done",
+      "entry_count": 6,
+      "verified_at": "2026-08-01T08:06:11Z"
+    },
+    {
+      "glbl": "GLBL_00725",
+      "name": "蔡昭侯",
+      "file": "GLBL_00725_蔡昭侯_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-01T08:07:28Z"
+    },
+    {
+      "glbl": "GLBL_00726",
+      "name": "蔡灵侯",
+      "file": "GLBL_00726_蔡灵侯_评述.json",
+      "status": "done",
+      "entry_count": 4,
+      "verified_at": "2026-08-01T08:10:56Z"
+    },
+    {
+      "glbl": "GLBL_00986",
+      "name": "平王东迁",
+      "file": "GLBL_00986_平王东迁_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-01T08:14:41Z"
+    },
+    {
+      "glbl": "GLBL_00987",
+      "name": "繻葛之战",
+      "file": "GLBL_00987_繻葛之战_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-01T08:17:39Z"
+    },
+    {
+      "glbl": "GLBL_00988",
+      "name": "葵丘之会",
+      "file": "GLBL_00988_葵丘之会_评述.json",
+      "status": "done",
+      "entry_count": 4,
+      "verified_at": "2026-08-01T08:19:53Z"
+    },
+    {
+      "glbl": "GLBL_00989",
+      "name": "泓水之战",
+      "file": "GLBL_00989_泓水之战_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-01T08:21:51Z"
+    },
+    {
+      "glbl": "GLBL_00990",
+      "name": "城濮之战",
+      "file": "GLBL_00990_城濮之战_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-01T08:24:05Z"
+    },
+    {
+      "glbl": "GLBL_00991",
+      "name": "践土之盟",
+      "file": "GLBL_00991_践土之盟_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-01T08:26:50Z"
+    },
+    {
+      "glbl": "GLBL_00992",
+      "name": "弭兵之会",
+      "file": "GLBL_00992_弭兵之会_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-01T08:29:25Z"
+    },
+    {
+      "glbl": "GLBL_00994",
+      "name": "勾践灭吴",
+      "file": "GLBL_00994_勾践灭吴_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-01T08:31:53Z"
+    },
+    {
+      "glbl": "GLBL_00995",
+      "name": "长勺之战",
+      "file": "GLBL_00995_长勺之战_评述.json",
+      "status": "done",
+      "entry_count": 3,
+      "verified_at": "2026-08-01T08:33:30Z"
+    },
+    {
+      "glbl": "GLBL_00996",
+      "name": "假虞灭虢",
+      "file": "GLBL_00996_假虞灭虢_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-01T08:36:16Z"
+    },
+    {
+      "glbl": "GLBL_00997",
+      "name": "卫狄之乱",
+      "file": "GLBL_00997_卫狄之乱_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-01T08:38:51Z"
+    },
+    {
+      "glbl": "GLBL_00998",
+      "name": "鞌之战",
+      "file": "GLBL_00998_鞌之战_评述.json",
+      "status": "done",
+      "entry_count": 4,
+      "verified_at": "2026-08-01T08:41:32Z"
+    },
+    {
+      "glbl": "GLBL_00999",
+      "name": "鄢陵之战",
+      "file": "GLBL_00999_鄢陵之战_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-01T08:43:34Z"
+    },
+    {
+      "glbl": "GLBL_01000",
+      "name": "吴入郢都",
+      "file": "GLBL_01000_吴入郢都_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-01T08:45:34Z"
+    },
+    {
+      "glbl": "GLBL_01001",
+      "name": "艾陵之战",
+      "file": "GLBL_01001_艾陵之战_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-01T08:47:33Z"
+    },
+    {
+      "glbl": "GLBL_01002",
+      "name": "王子带之乱",
+      "file": "GLBL_01002_王子带之乱_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-01T08:49:42Z"
+    },
+    {
+      "glbl": "GLBL_01003",
+      "name": "霸主制度",
+      "file": "GLBL_01003_霸主制度_评述.json",
+      "status": "done",
+      "entry_count": 6,
+      "verified_at": "2026-08-01T08:53:38Z"
+    },
+    {
+      "glbl": "GLBL_01004",
+      "name": "初税亩",
+      "file": "GLBL_01004_初税亩_评述.json",
+      "status": "done",
+      "entry_count": 4,
+      "verified_at": "2026-08-01T08:55:21Z"
+    },
+    {
+      "glbl": "GLBL_01005",
+      "name": "县制",
+      "file": "GLBL_01005_县制_评述.json",
+      "status": "done",
+      "entry_count": 4,
+      "verified_at": "2026-08-01T08:56:54Z"
+    },
+    {
+      "glbl": "GLBL_01006",
+      "name": "作州兵",
+      "file": "GLBL_01006_作州兵_评述.json",
+      "status": "done",
+      "entry_count": 3,
+      "verified_at": "2026-08-01T08:59:09Z"
+    },
+    {
+      "glbl": "GLBL_01007",
+      "name": "管仲相地而衰征",
+      "file": "GLBL_01007_管仲相地而衰征_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-01T09:01:09Z"
+    },
+    {
+      "glbl": "GLBL_01008",
+      "name": "晋国作爰田",
+      "file": "GLBL_01008_晋国作爰田_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-01T09:03:06Z"
+    },
+    {
+      "glbl": "GLBL_01009",
+      "name": "鲁国作丘甲",
+      "file": "GLBL_01009_鲁国作丘甲_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-01T09:04:33Z"
+    },
+    {
+      "glbl": "GLBL_01010",
+      "name": "子产铸刑书",
+      "file": "GLBL_01010_子产铸刑书_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-01T09:06:27Z"
+    },
+    {
+      "glbl": "GLBL_01011",
+      "name": "晋国铸刑鼎",
+      "file": "GLBL_01011_晋国铸刑鼎_评述.json",
+      "status": "done",
+      "entry_count": 3,
+      "verified_at": "2026-08-01T09:07:06Z"
+    },
+    {
+      "glbl": "GLBL_01012",
+      "name": "蒐礼军制",
+      "file": "GLBL_01012_蒐礼军制_评述.json",
+      "status": "done",
+      "entry_count": 3,
+      "verified_at": "2026-08-01T09:09:19Z"
+    },
+    {
+      "glbl": "GLBL_01013",
+      "name": "《诗经》",
+      "file": "GLBL_01013_《诗经》_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-01T09:11:17Z"
+    },
+    {
+      "glbl": "GLBL_01014",
+      "name": "《春秋》",
+      "file": "GLBL_01014_《春秋》_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-01T09:13:26Z"
+    },
+    {
+      "glbl": "GLBL_01015",
+      "name": "《孙子兵法》",
+      "file": "GLBL_01015_《孙子兵法》_评述.json",
+      "status": "done",
+      "entry_count": 6,
+      "verified_at": "2026-08-01T09:15:47Z"
+    },
+    {
+      "glbl": "GLBL_01016",
+      "name": "仁学思想",
+      "file": "GLBL_01016_仁学思想_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-01T09:16:59Z"
+    },
+    {
+      "glbl": "GLBL_01017",
+      "name": "《老子》",
+      "file": "GLBL_01017_《老子》_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-01T09:18:33Z"
+    },
+    {
+      "glbl": "GLBL_01018",
+      "name": "《关雎》",
+      "file": "GLBL_01018_《关雎》_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-01T09:20:25Z"
+    },
+    {
+      "glbl": "GLBL_01019",
+      "name": "《鹿鸣》",
+      "file": "GLBL_01019_《鹿鸣》_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-01T09:21:52Z"
+    },
+    {
+      "glbl": "GLBL_01020",
+      "name": "《晏子春秋》",
+      "file": "GLBL_01020_《晏子春秋》_评述.json",
+      "status": "done",
+      "entry_count": 4,
+      "verified_at": "2026-08-01T09:23:13Z"
     }
   ],
-  "updated_at": "2026-07-29T17:11:51Z"
+  "updated_at": "2026-08-01T09:23:13Z"
 }

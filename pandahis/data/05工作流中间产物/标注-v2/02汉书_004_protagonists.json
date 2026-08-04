@@ -1,0 +1,20 @@
+{
+  "work": "02汉书",
+  "vol": "004",
+  "volume_name": "高后纪",
+  "volume_type_guess": "本纪",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "吕太后",
+      "category": "宗戚",
+      "rationale": "《汉书·高后纪》以吕太后（吕雉）临朝称制之政迹为卷主轴，立纪不等于君王分类；吕太后为高祖皇后、太后，属后妃，依宗戚专则准入为宗戚。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

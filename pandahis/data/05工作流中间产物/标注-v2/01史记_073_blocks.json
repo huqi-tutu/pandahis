@@ -1,0 +1,41 @@
+{
+  "work": "01史记",
+  "vol": "073",
+  "total_paragraphs": 18,
+  "volume_subtype": "hezhuan",
+  "derived_from": "01史记_073_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 18,
+      "paragraph_to": 18,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "白起",
+      "category": "武将",
+      "paragraph_from": 1,
+      "paragraph_to": 11,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "白起者，郿人也。善用兵，事秦昭王。昭王十三年，而白起为左庶长，将而击韩之新城。是",
+        "close_paragraph": 11,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P1–P11"
+      }
+    },
+    {
+      "name": "王翦",
+      "category": "武将",
+      "paragraph_from": 12,
+      "paragraph_to": 17,
+      "boundary_evidence": {
+        "open_paragraph": 12,
+        "open_phrase": "王翦者，频阳东乡人也。少而好兵，事秦始皇。始皇十一年，翦将攻赵阏与，破之，拔九城",
+        "close_paragraph": 17,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P12–P17"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

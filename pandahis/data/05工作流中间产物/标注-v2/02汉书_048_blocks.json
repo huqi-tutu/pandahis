@@ -1,0 +1,97 @@
+{
+  "work": "02汉书",
+  "vol": "048",
+  "total_paragraphs": 36,
+  "volume_subtype": "hezhuan",
+  "derived_from": "manual_fix_20260802",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 2,
+      "paragraph_to": 2,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 10,
+      "paragraph_to": 10,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 11,
+      "paragraph_to": 35,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 36,
+      "paragraph_to": 36,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "刘肥",
+      "category": "宗戚",
+      "paragraph_from": 3,
+      "paragraph_to": 3,
+      "boundary_evidence": {
+        "open_paragraph": 3,
+        "open_phrase": "齐倬惠王肥，其母高祖微时外妇也。高祖六年立，食七十余城",
+        "close_paragraph": 3,
+        "close_note": "悼惠王本传仅 P3；P11–35 为齐嗣世系链"
+      }
+    },
+    {
+      "name": "刘如意",
+      "category": "宗戚",
+      "paragraph_from": 4,
+      "paragraph_to": 4,
+      "boundary_evidence": {
+        "open_paragraph": 4,
+        "open_phrase": "赵隐王如意，九年位。四年，高祖崩，吕太后征王到长安",
+        "close_paragraph": 4,
+        "close_note": "赵隐王"
+      }
+    },
+    {
+      "name": "刘友",
+      "category": "宗戚",
+      "paragraph_from": 5,
+      "paragraph_to": 7,
+      "boundary_evidence": {
+        "open_paragraph": 5,
+        "open_phrase": "赵幽王友，十一年立为淮阳王。赵隐王如意死，孝惠元年",
+        "close_paragraph": 7,
+        "close_note": "赵幽王及子遂"
+      }
+    },
+    {
+      "name": "刘恢",
+      "category": "宗戚",
+      "paragraph_from": 8,
+      "paragraph_to": 8,
+      "boundary_evidence": {
+        "open_paragraph": 8,
+        "open_phrase": "赵共王恢。十一年，梁王彭越诛，立恢为梁王。十六年",
+        "close_paragraph": 8,
+        "close_note": "赵共王"
+      }
+    },
+    {
+      "name": "刘建",
+      "category": "宗戚",
+      "paragraph_from": 9,
+      "paragraph_to": 9,
+      "boundary_evidence": {
+        "open_paragraph": 9,
+        "open_phrase": "燕灵王建。十一年，燕王卢绾亡入匈奴，明年，立建为燕王",
+        "close_paragraph": 9,
+        "close_note": "燕灵王"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

@@ -1,0 +1,35 @@
+{
+  "work": "01史记",
+  "vol": "038",
+  "volume_name": "宋微子世家",
+  "volume_type_guess": "世家",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "微子启",
+      "category": "宗戚",
+      "rationale": "卷名『宋微子世家』，微子启为宋国始祖，殷商宗室，武王灭商后封于宋，为卷首核心人物。"
+    },
+    {
+      "name": "宋襄公",
+      "category": "君王",
+      "rationale": "宋国历史上最具叙事分量的君主之一，春秋五霸之一，泓水之战等事迹构成独立叙事高峰。"
+    },
+    {
+      "name": "宋文公",
+      "category": "君王",
+      "rationale": "宋国中期重要君主，有独立叙事段落，在位期间有较为完整的史事记载。"
+    },
+    {
+      "name": "宋景公",
+      "category": "君王",
+      "rationale": "宋国晚期重要君主，有独立叙事段落，在位期间有较为完整的史事记载。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "其他"
+  ]
+}

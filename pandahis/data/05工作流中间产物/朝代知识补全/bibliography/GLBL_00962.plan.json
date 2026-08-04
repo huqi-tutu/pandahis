@@ -1,0 +1,110 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00962",
+  "写作结构": "正史叙述见《史记·项羽本纪》翻译详录；拓展文写《楚汉春秋》所载怀王出身细节、《水经注》所载义帝祠墓地理沿革，异说层以《新序》相关故事为补充，均为B档无摘句。",
+  "候选著作": [
+    {
+      "出处": "《史记·项羽本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "为熊心事迹的主要记载，包括拥立、收兵权、派将入关、被弑等全过程",
+      "检索词": "楚怀王心",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《楚汉春秋》辑本",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "汉初陆贾所著秦末汉初杂史，原书已佚，清人辑本有数条涉及楚怀王身世与项梁拥立细节，可补《史记》之略",
+      "检索词": "怀王孙心",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《水经注·耒水》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "记载郴县义帝冢及庙，为熊心被弑后葬地及后世祭祀提供地理证据",
+      "检索词": "义帝庙",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《新序·善谋下》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "刘向编录的战国至汉初轶事，或有楚怀王与宋义、范增等议事的训诫性记载",
+      "检索词": "楚怀王宋义",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·项羽本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "为熊心事迹的主要记载，包括拥立、收兵权、派将入关、被弑等全过程",
+      "检索词": "楚怀王心",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《楚汉春秋》辑本",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "汉初陆贾所著秦末汉初杂史，原书已佚，清人辑本有数条涉及楚怀王身世与项梁拥立细节，可补《史记》之略",
+      "检索词": "怀王孙心",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《水经注·耒水》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "记载郴县义帝冢及庙，为熊心被弑后葬地及后世祭祀提供地理证据",
+      "检索词": "义帝庙",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《新序·善谋下》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "刘向编录的战国至汉初轶事，或有楚怀王与宋义、范增等议事的训诫性记载",
+      "检索词": "楚怀王宋义",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 3,
+    "C_excluded": 1,
+    "overall": "B"
+  }
+}

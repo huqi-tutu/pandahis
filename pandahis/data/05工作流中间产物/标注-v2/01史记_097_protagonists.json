@@ -1,0 +1,24 @@
+{
+  "work": "01史记",
+  "vol": "097",
+  "volume_name": "郦生陆贾列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "郦食其",
+      "category": "文臣",
+      "rationale": "卷名首列人物，以说客/外交谋士身份辅佐刘邦，属文臣类列传主轴。"
+    },
+    {
+      "name": "陆贾",
+      "category": "文臣",
+      "rationale": "卷名次列人物，以辩士/外交家身份出使南越、著《新语》谏高祖，属文臣类列传主轴。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

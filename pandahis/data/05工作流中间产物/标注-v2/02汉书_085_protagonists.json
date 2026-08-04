@@ -1,0 +1,21 @@
+{
+  "work": "02汉书",
+  "vol": "085",
+  "volume_name": "韦贤传",
+  "volume_type_guess": "列传",
+  "volume_arc": "A",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "韦贤",
+      "category": "文臣",
+      "rationale": "《韦贤传》为单人列传，卷名即传主。韦贤为西汉名儒，官至丞相，以经学致仕，属儒学仕宦之文臣主轴，符合文臣准入标准。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

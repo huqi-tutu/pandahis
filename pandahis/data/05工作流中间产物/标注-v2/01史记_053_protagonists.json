@@ -1,0 +1,19 @@
+{
+  "work": "01史记",
+  "vol": "053",
+  "volume_name": "萧相国世家",
+  "volume_type_guess": "世家",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "萧何",
+      "category": "文臣",
+      "rationale": "卷名为《萧相国世家》，以汉初丞相萧何一生功业为叙事主轴。萧何虽封酂侯，但其主轴身份为汉朝开国丞相、行政奠基者，属文臣而非诸侯或君王。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

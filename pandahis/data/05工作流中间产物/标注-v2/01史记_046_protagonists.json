@@ -1,0 +1,40 @@
+{
+  "work": "01史记",
+  "vol": "046",
+  "volume_name": "田敬仲完世家",
+  "volume_type_guess": "世家",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "田敬仲完",
+      "category": "诸侯",
+      "rationale": "卷名『田敬仲完世家』始祖（帝王表标准名田敬仲完），田氏入齐之始，属诸侯世系主轴。"
+    },
+    {
+      "name": "齐桓公午",
+      "category": "诸侯",
+      "rationale": "田齐桓公午（帝王表标准名），田氏列为诸侯后之关键国君，属诸侯。"
+    },
+    {
+      "name": "齐威王",
+      "category": "诸侯",
+      "rationale": "田齐称王后之重要君主，为田齐政权鼎盛期主轴人物，属封国世袭君主，符合『诸侯』准入。"
+    },
+    {
+      "name": "齐宣王",
+      "category": "诸侯",
+      "rationale": "田齐继威王之后之重要国君，为田齐政权延续主轴人物，属封国世袭君主，符合『诸侯』准入。"
+    },
+    {
+      "name": "齐湣王",
+      "category": "诸侯",
+      "rationale": "田齐后期关键君主，其败亡标志田齐由盛转衰，属封国世袭君主，符合『诸侯』准入。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "其他"
+  ]
+}

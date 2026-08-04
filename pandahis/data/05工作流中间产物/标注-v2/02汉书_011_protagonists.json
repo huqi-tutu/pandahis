@@ -1,0 +1,20 @@
+{
+  "work": "02汉书",
+  "vol": "011",
+  "volume_name": "成帝纪",
+  "volume_type_guess": "本纪",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "汉成帝",
+      "category": "君王",
+      "rationale": "《成帝纪》为汉书本纪之一，以汉成帝刘骜在位期间军政大事为叙事主轴，属天下共主之天子本纪，故分类为君王。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

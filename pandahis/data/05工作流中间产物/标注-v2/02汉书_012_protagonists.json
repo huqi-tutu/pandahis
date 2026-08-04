@@ -1,0 +1,20 @@
+{
+  "work": "02汉书",
+  "vol": "012",
+  "volume_name": "哀帝纪",
+  "volume_type_guess": "本纪",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "汉哀帝",
+      "category": "君王",
+      "rationale": "《哀帝纪》为汉书帝王本纪，卷名即指明本卷主轴为西汉哀帝刘欣。本纪体例以天子在位事迹为纲，哀帝为天下共主，符合君王分类准入标准。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

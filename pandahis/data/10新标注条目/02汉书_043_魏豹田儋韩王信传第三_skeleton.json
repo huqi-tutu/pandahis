@@ -1,0 +1,265 @@
+{
+  "volume": "魏豹田儋韩王信传",
+  "source_file": "02汉书_043_魏豹田儋韩王信传第三.txt",
+  "total_paragraphs": 23,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "魏豹",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "魏豹",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "魏豹",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "田儋",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "田儋",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "田儋",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "田儋",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "田儋",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "田儋",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "田儋",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "田儋",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "田儋",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "田儋",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "田儋",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "韩王信",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "韩王信",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "韩王信",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "韩王信",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "韩王信",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "韩王信",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "韩王信",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HANSHU_043_01",
+      "史略名称": "魏豹",
+      "史略简介": "魏豹",
+      "原文字句": "魏豹，故魏诸公子也。其兄魏咎，故魏时封为宁陵君，秦灭魏，为庶人。陈胜之王也，咎往从之。胜使魏人周市徇魏地，魏地已下，欲立周市为魏王。市曰：“天下昏乱，忠臣乃见。今天下共畔秦，其谊必立魏王后乃可。”齐、赵使车各五十乘，立市为王。市不受，迎魏咎于陈，五反，陈王乃遣立咎为魏王。",
+      "史略分类": "武将",
+      "主要史料出处": "《02汉书·卷43·魏豹田儋韩王信传》",
+      "paragraphs": [
+        {
+          "volume": "魏豹田儋韩王信传",
+          "paragraph_from": 2,
+          "paragraph_to": 4
+        }
+      ],
+      "五级细坐标": "汉书·卷043·武将·01",
+      "六级段落锚点": "[P2-P4]",
+      "原文出处": "魏豹田儋韩王信传·P2-P4"
+    },
+    {
+      "史略ID": "HANSHU_043_02",
+      "史略名称": "田儋",
+      "史略简介": "田儋",
+      "原文字句": "田儋，狄人也，故齐王田氏之族也。儋从弟荣，荣弟横，皆豪桀，宗强，能得人。陈涉使周市略地，北至狄，狄城守。儋阳为缚其奴，从少年之廷，欲谒杀奴。见狄令，因击杀令，而召豪吏子弟曰：“诸侯皆反秦自立，齐，古之建国，儋，田氏，当王。”遂自立为齐王，发兵击周市。市军还去，儋因率兵东略定齐地。",
+      "史略分类": "武将",
+      "主要史料出处": "《02汉书·卷43·魏豹田儋韩王信传》",
+      "paragraphs": [
+        {
+          "volume": "魏豹田儋韩王信传",
+          "paragraph_from": 5,
+          "paragraph_to": 15
+        }
+      ],
+      "五级细坐标": "汉书·卷043·武将·02",
+      "六级段落锚点": "[P5-P15]",
+      "原文出处": "魏豹田儋韩王信传·P5-P15"
+    },
+    {
+      "史略ID": "HANSHU_043_03",
+      "史略名称": "韩王信",
+      "史略简介": "韩王信",
+      "原文字句": "韩王信，故韩襄王孽孙也，长八尺五寸。项梁立楚怀王，燕、齐、赵、魏皆已前王，唯韩无有后，故立韩公子横阳君成为韩王，欲以抚定韩地。项梁死定陶，成奔怀王。沛公引兵击阳城，使张良以韩司徒徇韩地，得信，以为韩将，将其兵从入武关。",
+      "史略分类": "武将",
+      "主要史料出处": "《02汉书·卷43·魏豹田儋韩王信传》",
+      "paragraphs": [
+        {
+          "volume": "魏豹田儋韩王信传",
+          "paragraph_from": 16,
+          "paragraph_to": 22
+        }
+      ],
+      "五级细坐标": "汉书·卷043·武将·03",
+      "六级段落锚点": "[P16-P22]",
+      "原文出处": "魏豹田儋韩王信传·P16-P22"
+    }
+  ]
+}

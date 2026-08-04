@@ -1,0 +1,119 @@
+{
+  "work": "01史记",
+  "vol": "040",
+  "total_paragraphs": 134,
+  "volume_subtype": "hezhuan",
+  "derived_from": "01史记_040_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 3,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 5,
+      "paragraph_to": 13,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 19,
+      "paragraph_to": 29,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 43,
+      "paragraph_to": 44,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 70,
+      "paragraph_to": 93,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 115,
+      "paragraph_to": 133,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 134,
+      "paragraph_to": 134,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "楚熊绎",
+      "category": "诸侯",
+      "paragraph_from": 4,
+      "paragraph_to": 4,
+      "boundary_evidence": {
+        "open_paragraph": 4,
+        "open_phrase": "熊绎当周成王之时，举文、武勤劳之后嗣，而封熊绎於楚蛮，封以子男之田，姓羋氏，居丹",
+        "close_paragraph": 4,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P4–P4"
+      }
+    },
+    {
+      "name": "楚武王",
+      "category": "诸侯",
+      "paragraph_from": 14,
+      "paragraph_to": 18,
+      "boundary_evidence": {
+        "open_paragraph": 14,
+        "open_phrase": "二十七年，若敖卒，子熊坎立，是为霄敖。霄敖六年，卒，子熊眴立，是为蚡冒。蚡冒十三",
+        "close_paragraph": 18,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P14–P18"
+      }
+    },
+    {
+      "name": "楚庄王",
+      "category": "诸侯",
+      "paragraph_from": 30,
+      "paragraph_to": 42,
+      "boundary_evidence": {
+        "open_paragraph": 30,
+        "open_phrase": "穆王立，以其太子宫予潘崇，使为太师，掌国事。穆王三年，灭江。四年，灭六、蓼。六、",
+        "close_paragraph": 42,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P30–P42"
+      }
+    },
+    {
+      "name": "楚灵王",
+      "category": "诸侯",
+      "paragraph_from": 45,
+      "paragraph_to": 55,
+      "boundary_evidence": {
+        "open_paragraph": 45,
+        "open_phrase": "康王宠弟公子围、子比、子晳、弃疾。郏敖三年，以其季父康王弟公子围为令尹，主兵事。",
+        "close_paragraph": 55,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P45–P55"
+      }
+    },
+    {
+      "name": "楚平王",
+      "category": "诸侯",
+      "paragraph_from": 56,
+      "paragraph_to": 69,
+      "boundary_evidence": {
+        "open_paragraph": 56,
+        "open_phrase": "初王及子晳遂自杀。丙辰，弃疾即位为王，改名熊居，是为平王。",
+        "close_paragraph": 69,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P56–P69"
+      }
+    },
+    {
+      "name": "楚怀王",
+      "category": "诸侯",
+      "paragraph_from": 94,
+      "paragraph_to": 114,
+      "boundary_evidence": {
+        "open_paragraph": 94,
+        "open_phrase": "十一年，威王卒，子怀王熊槐立。魏闻楚丧，伐楚，取我陉山。",
+        "close_paragraph": 114,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P94–P114"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

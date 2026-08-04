@@ -51,6 +51,7 @@ const CANVAS_PAD_LEFT_RPX = 40;
 const BAND_GAP_RPX = 24;
 const BAND_PAD_RPX = 16;
 const MIN_BAND_HEIGHT_RPX = 56;
+/** 时间轴行 / 吸顶占位块高度（与 dyn-panel-axis-spacer 一致） */
 const PANEL_AXIS_BLOCK_RPX = 86;
 const AXIS_PIN_AT = 150;
 const AXIS_UNPIN_AT = 110;
@@ -386,6 +387,26 @@ function formatPriorityLabel(priority) {
         return '';
     return p.toUpperCase();
 }
+function formatCoordinateLabel(raw) {
+    return String(raw !== null && raw !== void 0 ? raw : '').trim();
+}
+function formatCoordinatePath(bar) {
+    return [
+        formatCoordinateLabel(bar === null || bar === void 0 ? void 0 : bar.civilizationName),
+        formatCoordinateLabel(bar === null || bar === void 0 ? void 0 : bar.dynastyName),
+        formatCoordinateLabel(bar === null || bar === void 0 ? void 0 : bar.regimeName),
+        formatCoordinateLabel(bar === null || bar === void 0 ? void 0 : bar.emperorName),
+    ]
+        .filter(Boolean)
+        .join('・');
+}
+function formatPeakSummary(year, reason) {
+    const y = String(year !== null && year !== void 0 ? year : '').trim();
+    const r = String(reason !== null && reason !== void 0 ? reason : '').trim();
+    if (y && r)
+        return `${y}，${r}`;
+    return y || r;
+}
 function splitTimeRangeLabels(bar, fallbackRange) {
     if ((bar === null || bar === void 0 ? void 0 : bar.startYear) != null && (bar === null || bar === void 0 ? void 0 : bar.endYear) != null) {
         return {
@@ -474,7 +495,7 @@ function resolveCanvasHeightRpx(categoryBands) {
     return snapRpx(last.topRpx + last.heightRpx + BAND_PAD_RPX);
 }
 function composeCanvasLayout(swim, lanes) {
-    var _a, _b, _c, _d, _e;
+    var _a, _b, _c, _d;
     const categoryBands = [];
     const canvasLanes = [];
     let cursor = BAND_PAD_RPX;
@@ -515,7 +536,7 @@ function composeCanvasLayout(swim, lanes) {
             borderColor: (0, chip_badge_tokens_1.categoryRailColor)(lane.key, lane.borderColor),
             topRpx: cursor,
             heightRpx: bandHeight,
-            readProgressText: lane.readProgressText || `${(_b = lane.readCount) !== null && _b !== void 0 ? _b : 0}/${(_c = lane.totalCount) !== null && _c !== void 0 ? _c : 0}`,
+            readProgressText: lane.readProgressText || `${(_a = lane.readCount) !== null && _a !== void 0 ? _a : 0}/${(_b = lane.totalCount) !== null && _b !== void 0 ? _b : 0}`,
             totalCount: lane.totalCount,
         });
         canvasLanes.push({
@@ -536,8 +557,8 @@ function composeCanvasLayout(swim, lanes) {
         categoryBands,
         canvasHeightRpx,
         panelSheetHeightRpx,
-        canvasPadLeftRpx: (_d = swim.canvasPadLeftRpx) !== null && _d !== void 0 ? _d : CANVAS_PAD_LEFT_RPX,
-        canvasWidthRpx: (swim.sheetWidthRpx || 1440) + ((_e = swim.canvasPadLeftRpx) !== null && _e !== void 0 ? _e : CANVAS_PAD_LEFT_RPX),
+        canvasPadLeftRpx: (_c = swim.canvasPadLeftRpx) !== null && _c !== void 0 ? _c : CANVAS_PAD_LEFT_RPX,
+        canvasWidthRpx: (swim.sheetWidthRpx || 1440) + ((_d = swim.canvasPadLeftRpx) !== null && _d !== void 0 ? _d : CANVAS_PAD_LEFT_RPX),
     };
 }
 function stripLegacyBarFields(bar) {
@@ -817,11 +838,12 @@ Page({
         chipTooltipTitle: '',
         chipTooltipRange: '',
         chipTooltipTag: '',
-        chipTooltipPeakYear: '',
-        chipTooltipPeakReason: '',
+        chipTooltipPeakSummary: '',
         chipTooltipPriority: '',
-        chipTooltipPriorityReason: '',
+        chipTooltipPrioritySummary: '',
         chipTooltipEntrySource: '',
+        chipTooltipDetailSource: '',
+        chipTooltipCoordinate: '',
         chipTooltipLaneKey: '',
         chipTooltipStartYear: '',
         chipTooltipEndYear: '',
@@ -1286,11 +1308,12 @@ Page({
                 chipTooltipEndYear: endYearLabel,
                 chipTooltipTag: chipTag,
                 chipTooltipLaneKey: laneKey,
-                chipTooltipPeakYear: peakYearNum == null ? '' : (0, year_format_1.formatHistoryYear)(peakYearNum),
-                chipTooltipPeakReason: peakReason,
+                chipTooltipPeakSummary: formatPeakSummary(peakYearNum == null ? '' : (0, year_format_1.formatHistoryYear)(peakYearNum), peakReason),
                 chipTooltipPriority: formatPriorityLabel((bar === null || bar === void 0 ? void 0 : bar.priority) || ''),
-                chipTooltipPriorityReason: priorityReason,
+                chipTooltipPrioritySummary: formatPeakSummary(formatPriorityLabel((bar === null || bar === void 0 ? void 0 : bar.priority) || ''), priorityReason),
                 chipTooltipEntrySource: (0, entry_source_label_1.formatEntrySourceLabel)((bar === null || bar === void 0 ? void 0 : bar.entrySource) || ''),
+                chipTooltipDetailSource: (0, entry_source_label_1.formatDetailSourceLabel)((bar === null || bar === void 0 ? void 0 : bar.detailSource) || ''),
+                chipTooltipCoordinate: formatCoordinatePath(bar),
                 chipTooltipLeftPx: placement.left,
                 chipTooltipTopPx: placement.top,
                 chipTooltipBaseTransform: placement.transform,

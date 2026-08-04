@@ -1,0 +1,19 @@
+{
+  "work": "02汉书",
+  "vol": "005",
+  "volume_name": "文帝纪",
+  "volume_type_guess": "本纪",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "汉文帝",
+      "category": "君王",
+      "rationale": "《汉书·文帝纪》为西汉文帝刘恒之专纪，属天子本纪，为天下共主，符合君王准入标准（天子/皇帝/霸王级本纪共主）。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰"
+  ]
+}

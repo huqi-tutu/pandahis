@@ -1,0 +1,32 @@
+{
+  "work": "01史记",
+  "vol": "007",
+  "total_paragraphs": 83,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 82,
+      "paragraph_to": 82,
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph_from": 83,
+      "paragraph_to": 83,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "项羽",
+      "category": "君王",
+      "paragraph_from": 1,
+      "paragraph_to": 81,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "项籍者，下相人也，字羽。初起时，年二十四。其季父项梁，梁父即楚将项燕，为秦将王翦",
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

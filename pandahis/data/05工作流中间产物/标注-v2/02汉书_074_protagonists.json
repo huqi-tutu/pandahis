@@ -1,0 +1,40 @@
+{
+  "work": "02汉书",
+  "vol": "074",
+  "volume_name": "武五子传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "刘据",
+      "category": "宗戚",
+      "rationale": "《武五子传》为汉武帝五子合传，刘据为武帝长子（戾太子），同姓藩王/宗室，属宗戚类。"
+    },
+    {
+      "name": "刘闳",
+      "category": "宗戚",
+      "rationale": "汉武帝五子之一，齐王，同姓藩王，属宗戚类。"
+    },
+    {
+      "name": "刘旦",
+      "category": "宗戚",
+      "rationale": "汉武帝五子之一，燕王，同姓藩王，属宗戚类。"
+    },
+    {
+      "name": "刘胥",
+      "category": "宗戚",
+      "rationale": "汉武帝五子之一，广陵王，同姓藩王，属宗戚类。"
+    },
+    {
+      "name": "刘贺",
+      "category": "宗戚",
+      "rationale": "昌邑王刘贺，刘髆之子，继父位后被霍光立为帝（汉废帝），P35–P42 叙事主轴；武五子传末段以贺为实际主人公。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

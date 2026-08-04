@@ -1,0 +1,25 @@
+{
+  "work": "02汉书",
+  "vol": "042",
+  "volume_name": "张耳陈馀传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "张耳",
+      "category": "文臣",
+      "rationale": "《张耳陈馀传》卷名首列人物，合传双主角之一。张耳曾封赵王，为封国世袭君主，非天下共主，符合诸侯准入标准。"
+    },
+    {
+      "name": "陈馀",
+      "category": "文臣",
+      "rationale": "《张耳陈馀传》卷名并列人物，合传双主角之一。陈馀曾封代王，为封国世袭君主，非天下共主，符合诸侯准入标准。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

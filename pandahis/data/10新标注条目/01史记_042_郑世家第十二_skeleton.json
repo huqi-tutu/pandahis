@@ -1,0 +1,642 @@
+{
+  "volume": "郑世家",
+  "source_file": "01史记_042_郑世家第十二.txt",
+  "total_paragraphs": 76,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [
+        {
+          "name": "郑桓公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "郑桓公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "郑桓公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "郑桓公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "郑庄公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "郑庄公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "郑庄公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "郑庄公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "郑庄公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "郑庄公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "郑庄公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "郑庄公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "郑厉公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "郑厉公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "郑厉公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "郑厉公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "郑厉公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "郑厉公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "郑厉公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "郑厉公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "郑厉公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "郑厉公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "郑厉公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "郑厉公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "郑厉公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 27,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 28,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 29,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 30,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 31,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 32,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 33,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 34,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 35,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 36,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 37,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 38,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 39,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 40,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 41,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 42,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 43,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 44,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 45,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 46,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 47,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 48,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 49,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 50,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 51,
+      "owners": [
+        {
+          "name": "郑简公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 52,
+      "owners": [
+        {
+          "name": "郑简公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 53,
+      "owners": [
+        {
+          "name": "郑简公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 54,
+      "owners": [
+        {
+          "name": "郑简公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 55,
+      "owners": [
+        {
+          "name": "郑简公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 56,
+      "owners": [
+        {
+          "name": "郑简公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 57,
+      "owners": [
+        {
+          "name": "郑简公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 58,
+      "owners": [
+        {
+          "name": "郑简公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 59,
+      "owners": [
+        {
+          "name": "郑简公",
+          "category": "诸侯"
+        },
+        {
+          "name": "郑定公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 60,
+      "owners": [
+        {
+          "name": "郑定公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 61,
+      "owners": [
+        {
+          "name": "郑定公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 62,
+      "owners": [
+        {
+          "name": "郑定公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 63,
+      "owners": [
+        {
+          "name": "郑定公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 64,
+      "owners": [
+        {
+          "name": "郑定公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 65,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 66,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 67,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 68,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 69,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 70,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 71,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 72,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 73,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 74,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 75,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 76,
+      "owners": [],
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SHIJI_042_01",
+      "史略名称": "郑桓公",
+      "史略简介": "郑桓公",
+      "原文字句": "郑桓公友者，周厉王少子而宣王庶弟也。宣王立二十二年，友初封于郑。封三十三岁，百姓皆便爱之。幽王以为司徒。和集周民，周民皆说，河雒之间，人便思之。为司徒一岁，幽王以襃后故，王室治多邪，诸侯或畔之。於是桓公问太史伯曰：“王室多故，予安逃死乎？”太史伯对曰：“独雒之东土，河济之南可居。”公曰：“何以？”对曰：“地近虢、郐，虢、郐之君贪而好利，百姓不附。",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷42·郑世家》",
+      "paragraphs": [
+        {
+          "volume": "郑世家",
+          "paragraph_from": 1,
+          "paragraph_to": 4
+        }
+      ],
+      "五级细坐标": "史记·卷042·诸侯·01",
+      "六级段落锚点": "[P1-P4]",
+      "原文出处": "郑世家·P1-P4"
+    },
+    {
+      "史略ID": "SHIJI_042_02",
+      "史略名称": "郑庄公",
+      "史略简介": "郑庄公",
+      "原文字句": "武公十年，娶申侯女为夫人，曰武姜。生太子寤生，生之难，及生，夫人弗爱。后生少子叔段，段生易，夫人爱之。二十七年，武公疾。夫人请公，欲立段为太子，公弗听。是岁，武公卒，寤生立，是为庄公。",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷42·郑世家》",
+      "paragraphs": [
+        {
+          "volume": "郑世家",
+          "paragraph_from": 5,
+          "paragraph_to": 12
+        }
+      ],
+      "五级细坐标": "史记·卷042·诸侯·02",
+      "六级段落锚点": "[P5-P12]",
+      "原文出处": "郑世家·P5-P12"
+    },
+    {
+      "史略ID": "SHIJI_042_03",
+      "史略名称": "郑厉公",
+      "史略简介": "郑厉公",
+      "原文字句": "庄公又娶宋雍氏女，生厉公突。雍氏有宠於宋。宋庄公闻祭仲之立忽，乃使人诱召祭仲而执之，曰：“不立突，将死。”亦执突以求赂焉。祭仲许宋，与宋盟。以突归，立之。昭公忽闻祭仲以宋要立其弟突，九月丁亥，忽出奔卫。己亥，突至郑，立，是为厉公。",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷42·郑世家》",
+      "paragraphs": [
+        {
+          "volume": "郑世家",
+          "paragraph_from": 13,
+          "paragraph_to": 25
+        }
+      ],
+      "五级细坐标": "史记·卷042·诸侯·03",
+      "六级段落锚点": "[P13-P25]",
+      "原文出处": "郑世家·P13-P25"
+    },
+    {
+      "史略ID": "SHIJI_042_04",
+      "史略名称": "郑简公",
+      "史略简介": "郑简公",
+      "原文字句": "釐公五年，郑相子驷朝釐公，釐公不礼。子驷怒，使厨人药杀釐公，赴诸侯曰“釐公暴病卒”。立釐公子嘉，嘉时年五岁，是为简公。",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷42·郑世家》",
+      "paragraphs": [
+        {
+          "volume": "郑世家",
+          "paragraph_from": 51,
+          "paragraph_to": 59
+        }
+      ],
+      "五级细坐标": "史记·卷042·诸侯·04",
+      "六级段落锚点": "[P51-P59]",
+      "原文出处": "郑世家·P51-P59"
+    },
+    {
+      "史略ID": "SHIJI_042_05",
+      "史略名称": "郑定公",
+      "史略简介": "郑定公",
+      "原文字句": "三十六年，简公卒，子定公宁立。秋，定公朝晋昭公。",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷42·郑世家》",
+      "paragraphs": [
+        {
+          "volume": "郑世家",
+          "paragraph_from": 59,
+          "paragraph_to": 64
+        }
+      ],
+      "五级细坐标": "史记·卷042·诸侯·05",
+      "六级段落锚点": "[P59-P64]",
+      "原文出处": "郑世家·P59-P64"
+    }
+  ]
+}

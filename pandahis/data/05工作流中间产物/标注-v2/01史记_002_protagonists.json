@@ -1,0 +1,35 @@
+{
+  "work": "01史记",
+  "vol": "002",
+  "volume_name": "夏本纪",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "benji_multi",
+  "volume_type_guess": "本纪（Top5·禹主卷）",
+  "protagonists": [
+    {
+      "name": "禹",
+      "category": "君王",
+      "rationale": "治水、九州、舜禅即位；含 P38 崩于会稽、授益（P1–P38）。"
+    },
+    {
+      "name": "启",
+      "category": "君王",
+      "rationale": "受禅代益、甘誓灭有扈；P39 正式开传起（P38 归禹）。"
+    },
+    {
+      "name": "太康",
+      "category": "君王",
+      "rationale": "失国、五子之歌；P42。"
+    },
+    {
+      "name": "孔甲",
+      "category": "君王",
+      "rationale": "好鬼神、豢龙；P45–P46。"
+    },
+    {
+      "name": "桀",
+      "category": "君王",
+      "rationale": "夏亡、鸣条；P47。"
+    }
+  ]
+}

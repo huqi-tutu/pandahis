@@ -47,7 +47,11 @@ public class UnitSwimMatrixService {
 
     List<Map<String, Object>> boxes = jdbcTemplate.queryForList(
         "SELECT id, title, category_key, start_year, end_year, priority_code, priority_reason, importance_level, "
-            + "peak_year, peak_reason, person_tag, blurb, entry_source "
+            + "peak_year, peak_reason, person_tag, blurb, entry_source, detail_source, "
+            + "COALESCE(NULLIF(TRIM(civilization_name), ''), '') AS civilization_name, "
+            + "COALESCE(NULLIF(TRIM(dynasty_name), ''), '') AS dynasty_name, "
+            + "COALESCE(NULLIF(TRIM(regime_name), ''), '') AS regime_name, "
+            + "COALESCE(NULLIF(TRIM(emperor_name), ''), '') AS emperor_name "
             + "FROM historical_box WHERE dynasty_id=? AND status=1 "
             + "ORDER BY start_year ASC, id ASC",
         dynastyId
@@ -125,7 +129,12 @@ public class UnitSwimMatrixService {
             "junji".equals(def.key()) || "zhuhou".equals(def.key()),
             personTag(b.get("person_tag")),
             priorityReason,
-            entrySource(b.get("entry_source"))
+            entrySource(b.get("entry_source")),
+            detailSource(b.get("detail_source")),
+            trimText(b.get("civilization_name")),
+            trimText(b.get("dynasty_name")),
+            trimText(b.get("regime_name")),
+            trimText(b.get("emperor_name"))
         ));
       }
       laneSeeds.add(new LaneSeed(def, bars));
@@ -243,6 +252,13 @@ public class UnitSwimMatrixService {
     return value.isEmpty() ? null : value;
   }
 
+  private static String trimText(Object raw) {
+    if (raw == null) {
+      return "";
+    }
+    return String.valueOf(raw).trim();
+  }
+
   private static String priority(Object priorityCode, Object imp) {
     if (priorityCode != null) {
       String code = String.valueOf(priorityCode).trim().toLowerCase();
@@ -263,6 +279,20 @@ public class UnitSwimMatrixService {
     }
     String value = String.valueOf(raw).trim().toLowerCase();
     return "supplement".equals(value) ? "supplement" : "extract";
+  }
+
+  private static String detailSource(Object raw) {
+    if (raw == null) {
+      return "";
+    }
+    String value = String.valueOf(raw).trim().toLowerCase();
+    if ("compose".equals(value)) {
+      return "compose";
+    }
+    if ("translate".equals(value)) {
+      return "translate";
+    }
+    return "";
   }
 
   private Set<String> loadCompletedBoxIds(UserContext ctx, String dynastyId) {

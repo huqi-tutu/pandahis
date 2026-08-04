@@ -1,0 +1,42 @@
+{
+  "work": "02汉书",
+  "vol": "102",
+  "volume_name": "循吏传",
+  "volume_type_guess": "列传",
+  "volume_arc": "C",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "文翁",
+      "category": "文臣",
+      "rationale": "《循吏传》用户指定史略主人公，叙事块 P6–P8。"
+    },
+    {
+      "name": "黄霸",
+      "category": "文臣",
+      "rationale": "《循吏传》用户指定史略主人公，叙事块 P10–P19。"
+    },
+    {
+      "name": "朱邑",
+      "category": "文臣",
+      "rationale": "《循吏传》用户指定史略主人公，叙事块 P20–P23。"
+    },
+    {
+      "name": "龚遂",
+      "category": "文臣",
+      "rationale": "《循吏传》用户指定史略主人公，叙事块 P24–P27。"
+    },
+    {
+      "name": "召信臣",
+      "category": "文臣",
+      "rationale": "《循吏传》用户指定史略主人公，叙事块 P28–P31。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "共段总述"
+  ]
+}

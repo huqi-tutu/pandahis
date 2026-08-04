@@ -1,0 +1,7 @@
+{
+  "schema": "llm_verify_queue/v1",
+  "generated_at": "2026-08-03T14:13:40.218071+00:00",
+  "policy": "confidence < 1.0 须 LLM 同人判定后方可统一名称",
+  "count": 0,
+  "items": []
+}

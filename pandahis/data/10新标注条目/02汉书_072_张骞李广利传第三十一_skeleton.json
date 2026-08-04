@@ -1,0 +1,262 @@
+{
+  "volume": "张骞李广利传",
+  "source_file": "02汉书_072_张骞李广利传第三十一.txt",
+  "total_paragraphs": 25,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "interleaved",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [],
+      "exclude_reason": "篇内小标题"
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "张骞",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "张骞",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "张骞",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "张骞",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "张骞",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "张骞",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "张骞",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "张骞",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "张骞",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "张骞",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "张骞",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "张骞",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "张骞",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "张骞",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "张骞",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "张骞",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "李广利",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "李广利",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "李广利",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "李广利",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "李广利",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "李广利",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HANSHU_072_01",
+      "史略名称": "张骞",
+      "史略简介": "张骞",
+      "原文字句": "张骞，汉中人也，建元中为郎。时，匈奴降者言匈奴破月氏王，以其头为饮器，月氏遁而怨匈奴，无与共击之。汉方欲事灭胡，闻此言，欲通使，道必更匈奴中，乃募能使者。骞以郎应募，使月氏，与堂邑氏奴甘父俱出陇西。径匈奴，匈奴得之，传诣单于。单于曰：“月氏在吾北，汉何以得往使？吾欲使越，汉肯听我乎？”留骞十余岁，予妻，有子，然骞持汉节不失。",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷72·张骞李广利传》",
+      "paragraphs": [
+        {
+          "volume": "张骞李广利传",
+          "paragraph_from": 3,
+          "paragraph_to": 18
+        }
+      ],
+      "五级细坐标": "汉书·卷072·文臣·01",
+      "六级段落锚点": "[P3-P18]",
+      "原文出处": "张骞李广利传·P3-P18"
+    },
+    {
+      "史略ID": "HANSHU_072_02",
+      "史略名称": "李广利",
+      "史略简介": "李广利",
+      "原文字句": "李广利，女弟李夫人有宠于上，产昌邑哀王。太初元年，以广利为贰师将军，发属国六千骑及郡国恶少年数万人以往，期至贰师城取善马，故号“贰师将军”。故浩侯王恢使道军。既西过盐水，当道小国各坚城守，不肯给食，攻之不能下。下者得食，不下者数日则去。比至郁成，士财有数千，皆饥罢。攻郁成城，郁成距之，所杀伤甚众。贰师将军与左右计：“至郁成尚不能举，况至其王都乎？”引而还。往来二岁，至敦煌，士不过什一二。使使上书言",
+      "史略分类": "武将",
+      "主要史料出处": "《02汉书·卷72·张骞李广利传》",
+      "paragraphs": [
+        {
+          "volume": "张骞李广利传",
+          "paragraph_from": 19,
+          "paragraph_to": 24
+        }
+      ],
+      "五级细坐标": "汉书·卷072·武将·02",
+      "六级段落锚点": "[P19-P24]",
+      "原文出处": "张骞李广利传·P19-P24"
+    }
+  ],
+  "translation_qa_hint": "混写卷：人物段落非连续。翻译质检须按 entries[].paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。"
+}

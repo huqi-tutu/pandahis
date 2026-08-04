@@ -1,0 +1,25 @@
+{
+  "work": "01史记",
+  "vol": "041",
+  "volume_name": "越王句践世家",
+  "volume_type_guess": "世家",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "越王句践",
+      "category": "诸侯",
+      "rationale": "卷名『越王句践世家』，句践为越国国君，属封国/列国世袭君主，非天下共主，依史略分类v4准入标准应归为诸侯。"
+    },
+    {
+      "name": "范蠡",
+      "category": "文臣",
+      "rationale": "范蠡为句践主要谋臣，辅佐句践灭吴，后功成身退，以行政、外交、谋略为主轴，属文臣。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "其他"
+  ]
+}

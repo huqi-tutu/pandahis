@@ -1,0 +1,41 @@
+{
+  "work": "01史记",
+  "vol": "079",
+  "total_paragraphs": 52,
+  "volume_subtype": "hezhuan",
+  "derived_from": "01史记_079_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 52,
+      "paragraph_to": 52,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "范睢",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 43,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "范睢者，魏人也，字叔。游说诸侯，欲事魏王，家贫无以自资，乃先事魏中大夫须贾。",
+        "close_paragraph": 43,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P1–P43"
+      }
+    },
+    {
+      "name": "蔡泽",
+      "category": "文臣",
+      "paragraph_from": 44,
+      "paragraph_to": 51,
+      "boundary_evidence": {
+        "open_paragraph": 44,
+        "open_phrase": "蔡泽者，燕人也。游学干诸侯小大甚众，不遇。而从唐举相，曰：“吾闻先生相李兑，曰‘",
+        "close_paragraph": 51,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P44–P51"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

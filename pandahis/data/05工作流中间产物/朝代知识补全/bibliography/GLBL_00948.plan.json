@@ -1,0 +1,157 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00948",
+  "写作结构": "正史叙述见《史记》翻译详录，拓展文以史外异说为主：子婴身份异说采《史记索隐》与《资治通鉴考异》，《楚汉春秋》佚文可作背景参考（不编造具体对话）；地理辅助用《三辅黄图》；其余叙事留白，不虚构峣关战斗细节、劝谏言辞及投降场景。",
+  "候选著作": [
+    {
+      "出处": "《史记·秦始皇本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "本条目主要史料出处，记载刘邦入武关、子婴降、约法三章等核心情节",
+      "检索词": "刘邦 武关 子婴降",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "陆贾《楚汉春秋》辑本（见《玉函山房辑佚书》等）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "汉初杂史，可能保存了《史记》未录的刘邦入关前后细节，可与正史对照",
+      "检索词": "楚汉春秋 刘邦 入关",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记索隐·秦始皇本纪》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "司马贞注注意到子婴身份异说，称有谓子婴为始皇弟者，可作辨疑",
+      "检索词": "子婴 始皇弟",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《资治通鉴考异》卷一",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "司马光考辨子婴为二世兄子抑或始皇弟，引《史记》异文并加辨析，可作为异说补充",
+      "检索词": "子婴 二世兄子 始皇弟",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《汉书·高帝纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "因袭《史记》叙述刘邦入关、子婴降，基本无新增内容",
+      "检索词": "高帝纪 秦王子婴降",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《三辅黄图》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "记载秦汉咸阳宫室方位，可侧面印证刘邦入咸阳所见秦宫格局与轵道方位",
+      "检索词": "咸阳 秦宫 轵道",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·秦始皇本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "本条目主要史料出处，记载刘邦入武关、子婴降、约法三章等核心情节",
+      "检索词": "刘邦 武关 子婴降",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "陆贾《楚汉春秋》辑本（见《玉函山房辑佚书》等）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "汉初杂史，可能保存了《史记》未录的刘邦入关前后细节，可与正史对照",
+      "检索词": "楚汉春秋 刘邦 入关",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记索隐·秦始皇本纪》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "司马贞注注意到子婴身份异说，称有谓子婴为始皇弟者，可作辨疑",
+      "检索词": "子婴 始皇弟",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《汉书·高帝纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "因袭《史记》叙述刘邦入关、子婴降，基本无新增内容",
+      "检索词": "高帝纪 秦王子婴降",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《三辅黄图》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "记载秦汉咸阳宫室方位，可侧面印证刘邦入咸阳所见秦宫格局与轵道方位",
+      "检索词": "咸阳 秦宫 轵道",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《资治通鉴考异》卷一",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "司马光考辨子婴为二世兄子抑或始皇弟，引《史记》异文并加辨析，可作为异说补充",
+      "检索词": "子婴 二世兄子 始皇弟",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 4,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

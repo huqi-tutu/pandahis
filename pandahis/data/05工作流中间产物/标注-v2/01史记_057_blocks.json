@@ -1,0 +1,64 @@
+{
+  "work": "01史记",
+  "vol": "057",
+  "total_paragraphs": 33,
+  "volume_subtype": "hezhuan",
+  "excludes": [
+    {
+      "paragraph_from": 30,
+      "paragraph_to": 31,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 32,
+      "paragraph_to": 32,
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph_from": 33,
+      "paragraph_to": 33,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "周勃",
+      "category": "武将",
+      "paragraph_from": 1,
+      "paragraph_to": 14,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "绛侯周勃者，沛人也。其先卷人，徙沛。勃以织薄曲为生，常为人吹箫给丧事，材官引彊。",
+        "close_paragraph": 14,
+        "close_note": "人工订正"
+      }
+    },
+    {
+      "name": "周亚夫",
+      "category": "武将",
+      "paragraph_from": 15,
+      "paragraph_to": 29,
+      "boundary_evidence": {
+        "open_paragraph": 15,
+        "open_phrase": "绛侯复就国。孝文帝十一年卒，谥为武侯。子胜之代侯。六岁，尚公主，不相中，坐杀人，",
+        "close_paragraph": 29,
+        "close_note": "人工订正"
+      }
+    }
+  ],
+  "multi_owner_segments": [
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "周勃",
+          "category": "武将"
+        },
+        {
+          "name": "周亚夫",
+          "category": "武将"
+        }
+      ]
+    }
+  ]
+}

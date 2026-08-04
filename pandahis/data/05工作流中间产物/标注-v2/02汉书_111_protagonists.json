@@ -1,0 +1,21 @@
+{
+  "work": "02汉书",
+  "vol": "111",
+  "volume_name": "西域传第六十六下",
+  "volume_type_guess": "列传",
+  "volume_arc": "B",
+  "narrative_mode": "fanzuo",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "西域诸国",
+      "category": "蕃祚",
+      "rationale": "《汉书·西域传》为蕃祚卷型，主轴为西域诸国集体（含乌孙、大宛、疏勒、于阗等），非单一君王；据卷名与常识，本卷为西域传下篇，延续上篇叙述西域诸国与汉朝关系，category=蕃祚。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "work": "01史记",
+  "vol": "093",
+  "total_paragraphs": 29,
+  "volume_subtype": "hezhuan",
+  "derived_from": "01史记_093_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 19,
+      "paragraph_to": 28,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 29,
+      "paragraph_to": 29,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "韩信",
+      "category": "武将",
+      "paragraph_from": 1,
+      "paragraph_to": 10,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "韩王信者，故韩襄王孽孙也，长八尺五寸。及项梁之立楚后怀王也，燕、齐、赵、魏皆已前",
+        "close_paragraph": 10,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P1–P10"
+      }
+    },
+    {
+      "name": "卢绾",
+      "category": "武将",
+      "paragraph_from": 11,
+      "paragraph_to": 18,
+      "boundary_evidence": {
+        "open_paragraph": 11,
+        "open_phrase": "卢绾者，丰人也，与高祖同里。卢绾亲与高祖太上皇相爱，及生男，高祖、卢绾同日生，里",
+        "close_paragraph": 18,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P11–P18"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

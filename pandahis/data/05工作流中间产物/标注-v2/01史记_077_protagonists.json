@@ -1,0 +1,19 @@
+{
+  "work": "01史记",
+  "vol": "077",
+  "volume_name": "魏公子列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "魏公子无忌",
+      "category": "宗戚",
+      "rationale": "《魏公子列传》以战国四公子之一魏公子无忌（信陵君）为主轴，属单人列传。魏无忌为魏昭王少子、魏安釐王异母弟，属同姓宗室藩王，按史略分类v4宗戚专则（同姓藩王），应归宗戚而非诸侯或君王。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "dynasty": "战国",
+  "failures": [
+    {
+      "glbl": "GLBL_00875",
+      "name": "司马错",
+      "error": "verify 未通过:\nCRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/司马错关系表.json#[1]: parent '同僚' at 一级 not found\n\nFAILED: 1 critical issue(s) in 1 file(s)\n"
+    }
+  ]
+}

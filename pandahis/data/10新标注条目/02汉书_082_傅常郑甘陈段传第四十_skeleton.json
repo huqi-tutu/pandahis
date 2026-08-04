@@ -1,0 +1,491 @@
+{
+  "volume": "傅常郑甘陈段传",
+  "source_file": "02汉书_082_傅常郑甘陈段传第四十.txt",
+  "total_paragraphs": 42,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "interleaved",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "傅介子",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "傅介子",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "傅介子",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "傅介子",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "傅介子",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "常惠",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "常惠",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "常惠",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "常惠",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "郑吉",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "郑吉",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "郑吉",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "郑吉",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "郑吉",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "甘延寿",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "陈汤",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "陈汤",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "陈汤",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "陈汤",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "陈汤",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "陈汤",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "陈汤",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "陈汤",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "陈汤",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "陈汤",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "陈汤",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "陈汤",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "陈汤",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "陈汤",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "陈汤",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "陈汤",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "陈汤",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "陈汤",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "陈汤",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "段会宗",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "段会宗",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "段会宗",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "段会宗",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "段会宗",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "段会宗",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HANSHU_082_01",
+      "史略名称": "傅介子",
+      "史略简介": "傅介子",
+      "原文字句": "傅介子，北地人也，以从军为官。先是，龟兹、楼兰皆尝杀汉使者，语在《西域传》。至元凤中，介子以骏马监求使大宛，因诏令青楼兰、龟兹国。",
+      "史略分类": "武将",
+      "主要史料出处": "《02汉书·卷82·傅常郑甘陈段传》",
+      "paragraphs": [
+        {
+          "volume": "傅常郑甘陈段传",
+          "paragraph_from": 2,
+          "paragraph_to": 6
+        }
+      ],
+      "五级细坐标": "汉书·卷082·武将·01",
+      "六级段落锚点": "[P2-P6]",
+      "原文出处": "傅常郑甘陈段传·P2-P6"
+    },
+    {
+      "史略ID": "HANSHU_082_02",
+      "史略名称": "常惠",
+      "史略简介": "常惠",
+      "原文字句": "常惠，太原人也。少时家贫，自奋应募，随移中监苏武使匈奴，并见拘留十余年，昭帝时乃还。汉嘉其勤劳，拜为光禄大夫。",
+      "史略分类": "武将",
+      "主要史料出处": "《02汉书·卷82·傅常郑甘陈段传》",
+      "paragraphs": [
+        {
+          "volume": "傅常郑甘陈段传",
+          "paragraph_from": 7,
+          "paragraph_to": 10
+        }
+      ],
+      "五级细坐标": "汉书·卷082·武将·02",
+      "六级段落锚点": "[P7-P10]",
+      "原文出处": "傅常郑甘陈段传·P7-P10"
+    },
+    {
+      "史略ID": "HANSHU_082_03",
+      "史略名称": "郑吉",
+      "史略简介": "郑吉",
+      "原文字句": "郑吉，会稽人也，以卒伍从军，数出西域，由是为郎。吉为人强执，习外国事。自张骞通西域，李广利征伐之后，初置校尉，屯田渠黎。至宣帝时，吉以侍郎田渠黎，积谷，因发诸国兵攻破车师，迁卫司马，使护鄯善以西南道。",
+      "史略分类": "武将",
+      "主要史料出处": "《02汉书·卷82·傅常郑甘陈段传》",
+      "paragraphs": [
+        {
+          "volume": "傅常郑甘陈段传",
+          "paragraph_from": 11,
+          "paragraph_to": 15
+        }
+      ],
+      "五级细坐标": "汉书·卷082·武将·03",
+      "六级段落锚点": "[P11-P15]",
+      "原文出处": "傅常郑甘陈段传·P11-P15"
+    },
+    {
+      "史略ID": "HANSHU_082_04",
+      "史略名称": "甘延寿",
+      "史略简介": "甘延寿",
+      "原文字句": "甘延寿字君况，北地郁郅人也。少以良家子善骑射为羽林，投石拔距绝于等伦，尝超逾羽林亭楼，由是迁为郎。试弁，为朝门，以材力爱幸。稍迁至辽东太守，免官。车骑将军许嘉荐延寿为郎中，谏大夫，使西域都护、骑都尉，与副校尉陈汤共诛斩郅支单于，封义成侯。薨，谥曰壮侯。传国至曾孙，王莽败，乃绝。",
+      "史略分类": "武将",
+      "主要史料出处": "《02汉书·卷82·傅常郑甘陈段传》",
+      "paragraphs": [
+        {
+          "volume": "傅常郑甘陈段传",
+          "paragraph_from": 16,
+          "paragraph_to": 16
+        }
+      ],
+      "五级细坐标": "汉书·卷082·武将·04",
+      "六级段落锚点": "[P16]",
+      "原文出处": "傅常郑甘陈段传·P16"
+    },
+    {
+      "史略ID": "HANSHU_082_05",
+      "史略名称": "陈汤",
+      "史略简介": "陈汤",
+      "原文字句": "陈汤字子公，山阳瑕兵人也。少好书，博达善属文。家贫匄贷无节，不为州里所称。西至长安求官，得太官献食丞。数岁，富平侯张勃与汤交，高其能。初元二年，元帝诏列侯举茂材，勃举汤。汤待迁，父死不奔丧，司隶奏汤无循行，勃选举故不以实，坐削户二百，会薨，因赐谥曰缪侯。汤下狱论。后复以荐为郎，数求使外国。久之，迁西域副校尉，与甘延寿俱出。",
+      "史略分类": "武将",
+      "主要史料出处": "《02汉书·卷82·傅常郑甘陈段传》",
+      "paragraphs": [
+        {
+          "volume": "傅常郑甘陈段传",
+          "paragraph_from": 17,
+          "paragraph_to": 35
+        }
+      ],
+      "五级细坐标": "汉书·卷082·武将·05",
+      "六级段落锚点": "[P17-P35]",
+      "原文出处": "傅常郑甘陈段传·P17-P35"
+    },
+    {
+      "史略ID": "HANSHU_082_06",
+      "史略名称": "段会宗",
+      "史略简介": "段会宗",
+      "原文字句": "段会宗字子孙，天水上邽人也。竟宁中，以杜陵令五府举为西域都护、骑都尉、光禄大夫。西域敬其威信。三岁，更尽还，拜为沛郡太守。以单于当朝，徙为雁门太守。数年，坐法免。西域诸国上书愿得会宗，阳朔中复为都护。",
+      "史略分类": "武将",
+      "主要史料出处": "《02汉书·卷82·傅常郑甘陈段传》",
+      "paragraphs": [
+        {
+          "volume": "傅常郑甘陈段传",
+          "paragraph_from": 36,
+          "paragraph_to": 41
+        }
+      ],
+      "五级细坐标": "汉书·卷082·武将·06",
+      "六级段落锚点": "[P36-P41]",
+      "原文出处": "傅常郑甘陈段传·P36-P41"
+    }
+  ],
+  "translation_qa_hint": "混写卷：人物段落非连续。翻译质检须按 entries[].paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。"
+}

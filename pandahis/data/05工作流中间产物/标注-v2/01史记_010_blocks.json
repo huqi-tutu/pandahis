@@ -1,0 +1,27 @@
+{
+  "work": "01史记",
+  "vol": "010",
+  "total_paragraphs": 58,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 58,
+      "paragraph_to": 58,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "汉文帝",
+      "category": "君王",
+      "paragraph_from": 1,
+      "paragraph_to": 57,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "孝文皇帝，高祖中子也。高祖十一年春，已破陈豨军，定代地，立为代王，都中都。太后薄",
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

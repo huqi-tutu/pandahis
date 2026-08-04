@@ -1,0 +1,94 @@
+{
+  "work": "02汉书",
+  "vol": "087",
+  "total_paragraphs": 56,
+  "volume_subtype": "hezhuan",
+  "derived_from": "02汉书_087_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 56,
+      "paragraph_to": 56,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "眭弘",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 3,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "眭弘字孟，鲁国蕃人也。少时好侠，斗鸡走马，长乃变节，从嬴公受《春秋》。以明经为议",
+        "close_paragraph": 3,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P3"
+      }
+    },
+    {
+      "name": "夏侯始昌",
+      "category": "文臣",
+      "paragraph_from": 4,
+      "paragraph_to": 4,
+      "boundary_evidence": {
+        "open_paragraph": 4,
+        "open_phrase": "夏侯始昌，鲁人也。通《五经》，以《齐诗》《尚书》教授。自董仲舒、韩婴死后，武帝得",
+        "close_paragraph": 4,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P4–P4"
+      }
+    },
+    {
+      "name": "夏侯胜",
+      "category": "文臣",
+      "paragraph_from": 5,
+      "paragraph_to": 12,
+      "boundary_evidence": {
+        "open_paragraph": 5,
+        "open_phrase": "夏侯胜字长公。初，鲁共王分鲁西宁乡以封子节侯，别属大河，大河后更名东平，故胜为东",
+        "close_paragraph": 12,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P5–P12"
+      }
+    },
+    {
+      "name": "京房",
+      "category": "文臣",
+      "paragraph_from": 13,
+      "paragraph_to": 20,
+      "boundary_evidence": {
+        "open_paragraph": 13,
+        "open_phrase": "京房字君明，东郡顿丘人也。治《易》，事梁人焦延寿。延寿字赣。赣贫贱，以好学得幸梁",
+        "close_paragraph": 20,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P13–P20"
+      }
+    },
+    {
+      "name": "翼奉",
+      "category": "文臣",
+      "paragraph_from": 21,
+      "paragraph_to": 35,
+      "boundary_evidence": {
+        "open_paragraph": 21,
+        "open_phrase": "翼奉字少君，东海下邳人也。治《齐诗》，与萧望之、匡衡同师。三人经术皆明，衡为后进",
+        "close_paragraph": 35,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P21–P35"
+      }
+    },
+    {
+      "name": "李寻",
+      "category": "文臣",
+      "paragraph_from": 36,
+      "paragraph_to": 55,
+      "boundary_evidence": {
+        "open_paragraph": 36,
+        "open_phrase": "李寻字子长，平陵人也。治《尚书》，与张孺、郑宽中同师。宽中等守师法教授，寻独好《",
+        "close_paragraph": 55,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P36–P55"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

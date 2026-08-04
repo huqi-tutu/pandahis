@@ -1,0 +1,142 @@
+{
+  "work": "02汉书",
+  "vol": "072",
+  "total_paragraphs": 25,
+  "method": "Step1b-α LLM",
+  "paragraphs": [
+    {
+      "paragraph": 1,
+      "primary_subject": "卷首标题",
+      "disposition": "exclude",
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "primary_subject": "卷首标题",
+      "disposition": "exclude",
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 3,
+      "primary_subject": "张骞",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 4,
+      "primary_subject": "张骞",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 5,
+      "primary_subject": "张骞",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 6,
+      "primary_subject": "张骞",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 7,
+      "primary_subject": "张骞",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 8,
+      "primary_subject": "张骞",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 9,
+      "primary_subject": "张骞",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 10,
+      "primary_subject": "张骞",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 11,
+      "primary_subject": "张骞",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 12,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 13,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 14,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 15,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 16,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 17,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 18,
+      "primary_subject": "张骞",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 19,
+      "primary_subject": "李广利",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 20,
+      "primary_subject": "李广利",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 21,
+      "primary_subject": "李广利",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 22,
+      "primary_subject": "李广利",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 23,
+      "primary_subject": "李广利",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 24,
+      "primary_subject": "李广利",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 25,
+      "primary_subject": "论赞",
+      "disposition": "exclude",
+      "exclude_reason": "论赞"
+    }
+  ]
+}

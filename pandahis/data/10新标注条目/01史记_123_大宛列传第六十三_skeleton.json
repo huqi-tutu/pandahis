@@ -1,0 +1,503 @@
+{
+  "volume": "大宛列传",
+  "source_file": "01史记_123_大宛列传第六十三.txt",
+  "total_paragraphs": 53,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "fanzuo",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [
+        {
+          "name": "大宛",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "大宛",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "大宛",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "大宛",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "大宛",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "大宛",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "大宛",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "大宛",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "大宛",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "大宛",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "大宛",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "大宛",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "大宛",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "大宛",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "大宛",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "大宛",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "大宛",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "大宛",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "大宛",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "大宛",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "大宛",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "大宛",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "大宛",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "大宛",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "大宛",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "大宛",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "大宛",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "大宛",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "大宛",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "大宛",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "大宛",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "大宛",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "大宛",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "大宛",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "大宛",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "大宛",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "大宛",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "大宛",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "大宛",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "大宛",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "大宛",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "大宛",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "大宛",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "大宛",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "大宛",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [
+        {
+          "name": "大宛",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 47,
+      "owners": [
+        {
+          "name": "大宛",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 48,
+      "owners": [
+        {
+          "name": "大宛",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 49,
+      "owners": [
+        {
+          "name": "大宛",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 50,
+      "owners": [
+        {
+          "name": "大宛",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 51,
+      "owners": [
+        {
+          "name": "大宛",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 52,
+      "owners": [
+        {
+          "name": "大宛",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 53,
+      "owners": [],
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SHIJI_123_01",
+      "史略名称": "大宛",
+      "史略简介": "大宛",
+      "原文字句": "大宛之迹，见自张骞。张骞，汉中人。建元中为郎。是时天子问匈奴降者，皆言匈奴破月氏王，以其头为饮器，月氏遁逃而常怨仇匈奴，无与共击之。汉方欲事灭胡，闻此言，因欲通使。道必更匈奴中，乃募能使者。骞以郎应募，使月氏，与堂邑氏胡奴甘父俱出陇西。经匈奴，匈奴得之，传诣单于。单于留之，曰：“月氏在吾北，汉何以得往使？吾欲使越，汉肯听我乎？”留骞十馀岁，与妻，有子，然骞持汉节不失。",
+      "史略分类": "蕃祚",
+      "主要史料出处": "《史记·卷123·大宛列传》",
+      "paragraphs": [
+        {
+          "volume": "大宛列传",
+          "paragraph_from": 1,
+          "paragraph_to": 52
+        }
+      ],
+      "五级细坐标": "史记·卷123·蕃祚·01",
+      "六级段落锚点": "[P1-P52]",
+      "原文出处": "大宛列传·P1-P52"
+    }
+  ]
+}

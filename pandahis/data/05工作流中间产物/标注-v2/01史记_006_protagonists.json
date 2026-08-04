@@ -1,0 +1,15 @@
+{
+  "work": "01史记",
+  "vol": "006",
+  "volume_name": "秦始皇本纪",
+  "narrative_mode": "single",
+  "volume_subtype": "benji_single",
+  "volume_type_guess": "本纪（单人）",
+  "protagonists": [
+    {
+      "name": "秦始皇",
+      "category": "君王",
+      "rationale": "卷名本纪主轴；叙事自庄襄子生政至子婴降汉，含二世段与秦系享国附录。"
+    }
+  ]
+}

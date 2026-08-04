@@ -1,0 +1,68 @@
+{
+  "work": "01史记",
+  "vol": "098",
+  "total_paragraphs": 18,
+  "volume_subtype": "hezhuan",
+  "derived_from": "01史记_098_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 7,
+      "paragraph_to": 7,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 14,
+      "paragraph_to": 14,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 17,
+      "paragraph_to": 17,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 18,
+      "paragraph_to": 18,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "傅宽",
+      "category": "武将",
+      "paragraph_from": 1,
+      "paragraph_to": 6,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "阳陵侯傅宽，以魏五大夫骑将从，为舍人，起横阳。从攻安阳、杠里，击赵贲军於开封，及",
+        "close_paragraph": 6,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P1–P6"
+      }
+    },
+    {
+      "name": "靳歙",
+      "category": "武将",
+      "paragraph_from": 8,
+      "paragraph_to": 13,
+      "boundary_evidence": {
+        "open_paragraph": 8,
+        "open_phrase": "信武侯靳歙，以中涓从，起宛朐。攻济阳。破李由军。击秦军亳南、开封东北，斩骑千人将",
+        "close_paragraph": 13,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P8–P13"
+      }
+    },
+    {
+      "name": "蒯成侯",
+      "category": "武将",
+      "paragraph_from": 15,
+      "paragraph_to": 16,
+      "boundary_evidence": {
+        "open_paragraph": 15,
+        "open_phrase": "蒯成侯緤者，沛人也，姓周氏。常为高祖参乘，以舍人从起沛。至霸上，西入蜀、汉，还定",
+        "close_paragraph": 16,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P15–P16"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

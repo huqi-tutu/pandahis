@@ -1,0 +1,46 @@
+{
+  "work": "02汉书",
+  "vol": "072",
+  "total_paragraphs": 25,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "02汉书_072_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 2,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 25,
+      "paragraph_to": 25,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "张骞",
+      "category": "文臣",
+      "paragraph_from": 3,
+      "paragraph_to": 18,
+      "boundary_evidence": {
+        "open_paragraph": 3,
+        "open_phrase": "张骞，汉中人也，建元中为郎。时，匈奴降者言匈奴破月氏王，以其头为饮器，月氏遁而怨",
+        "close_paragraph": 18,
+        "close_note": "人工修正：P3–P18 主轴为张骞（含 P12–17 西域通使续段）"
+      }
+    },
+    {
+      "name": "李广利",
+      "category": "武将",
+      "paragraph_from": 19,
+      "paragraph_to": 24,
+      "boundary_evidence": {
+        "open_paragraph": 19,
+        "open_phrase": "李广利，女弟李夫人有宠于上，产昌邑哀王。太初元年，以广利为贰师将军，发属国六千骑",
+        "close_paragraph": 24,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P19–P24"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

@@ -1,0 +1,414 @@
+{
+  "volume": "张冯汲郑传",
+  "source_file": "02汉书_060_张冯汲郑传第二十.txt",
+  "total_paragraphs": 38,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "张释之",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "张释之",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "张释之",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "张释之",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "张释之",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "张释之",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "张释之",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "张释之",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "张释之",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "张释之",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "冯唐",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "冯唐",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "冯唐",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "汲黯",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "汲黯",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "汲黯",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "汲黯",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "汲黯",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "汲黯",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "汲黯",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "汲黯",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "汲黯",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "汲黯",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "汲黯",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "汲黯",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "汲黯",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "汲黯",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "汲黯",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "汲黯",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "郑当时",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "郑当时",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "郑当时",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "郑当时",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "郑当时",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "郑当时",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 38,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HANSHU_060_01",
+      "史略名称": "张释之",
+      "史略简介": "张释之",
+      "原文字句": "张释之字季，南阳堵阳人也。与兄仲同居，以赀为骑郎，事文帝，十年不得调，亡所知名。释之曰：“久宦减仲之产，不遂。”欲免归。中郎将爰盎知其贤，惜其去，乃请徙释之补谒者。释之既朝毕，因前言便宜事。文帝曰：“卑之，毋甚高论，令今可行也。”于是释之言秦、汉之间事，秦所以失，汉所以兴者。文帝称善，拜释之为谒者仆射。",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷60·张冯汲郑传》",
+      "paragraphs": [
+        {
+          "volume": "张冯汲郑传",
+          "paragraph_from": 2,
+          "paragraph_to": 11
+        }
+      ],
+      "五级细坐标": "汉书·卷060·文臣·01",
+      "六级段落锚点": "[P2-P11]",
+      "原文出处": "张冯汲郑传·P2-P11"
+    },
+    {
+      "史略ID": "HANSHU_060_02",
+      "史略名称": "冯唐",
+      "史略简介": "冯唐",
+      "原文字句": "冯唐，祖父赵人也。父徙代。汉兴徙安陵。唐以孝著，为郎中署长，事文帝。帝辇过，问唐曰：“父老何自为郎？家安在？”具以实言。文帝曰：“吾居代时，吾尚食监高祛数为我言赵将李齐之贤，战于巨鹿下。吾每饮食，意未尝不在巨鹿也。父老知之乎？”唐对曰：“齐尚不如廉颇、李牧之为将也。”上曰：“何已？”唐曰：“臣大父在赵时，为官帅将，善李牧。臣父故为代相，善李齐，知其为人也。”上既闻廉颇、李牧为人，良说，乃拊髀曰：“",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷60·张冯汲郑传》",
+      "paragraphs": [
+        {
+          "volume": "张冯汲郑传",
+          "paragraph_from": 12,
+          "paragraph_to": 14
+        }
+      ],
+      "五级细坐标": "汉书·卷060·文臣·02",
+      "六级段落锚点": "[P12-P14]",
+      "原文出处": "张冯汲郑传·P12-P14"
+    },
+    {
+      "史略ID": "HANSHU_060_03",
+      "史略名称": "汲黯",
+      "史略简介": "汲黯",
+      "原文字句": "汲黯字长孺，濮阳人也。其行有宠于古之卫君也。至黯十世，世为卿大夫。以父任，孝景时为太子洗马，以严见惮。",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷60·张冯汲郑传》",
+      "paragraphs": [
+        {
+          "volume": "张冯汲郑传",
+          "paragraph_from": 15,
+          "paragraph_to": 30
+        }
+      ],
+      "五级细坐标": "汉书·卷060·文臣·03",
+      "六级段落锚点": "[P15-P30]",
+      "原文出处": "张冯汲郑传·P15-P30"
+    },
+    {
+      "史略ID": "HANSHU_060_04",
+      "史略名称": "郑当时",
+      "史略简介": "郑当时",
+      "原文字句": "郑当时字庄，陈人也。其先郑君尝事项籍，籍死而属汉。高祖令诸故项籍臣名籍，郑君独不奉诏。诏尽拜名籍者为大夫，而逐郑君。郑君死孝文时。",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷60·张冯汲郑传》",
+      "paragraphs": [
+        {
+          "volume": "张冯汲郑传",
+          "paragraph_from": 31,
+          "paragraph_to": 36
+        }
+      ],
+      "五级细坐标": "汉书·卷060·文臣·04",
+      "六级段落锚点": "[P31-P36]",
+      "原文出处": "张冯汲郑传·P31-P36"
+    }
+  ]
+}

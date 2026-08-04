@@ -1,0 +1,19 @@
+{
+  "work": "01史记",
+  "vol": "127",
+  "volume_name": "日者列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "司马季主",
+      "category": "庶众",
+      "rationale": "《日者列传》为方术之士合传，司马季主为卷中核心人物，属卜筮日者之流，非仕宦文臣或军功武将，按史略分类归入庶众。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

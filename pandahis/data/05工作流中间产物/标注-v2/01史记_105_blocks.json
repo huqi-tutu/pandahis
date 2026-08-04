@@ -1,0 +1,41 @@
+{
+  "work": "01史记",
+  "vol": "105",
+  "total_paragraphs": 73,
+  "volume_subtype": "hezhuan",
+  "derived_from": "01史记_105_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 73,
+      "paragraph_to": 73,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "扁鹊",
+      "category": "庶众",
+      "paragraph_from": 1,
+      "paragraph_to": 17,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "扁鹊者，勃海郡郑人也，姓秦氏，名越人。少时为人舍长。舍客长桑君过，扁鹊独奇之，常",
+        "close_paragraph": 17,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P1–P17"
+      }
+    },
+    {
+      "name": "仓公",
+      "category": "庶众",
+      "paragraph_from": 18,
+      "paragraph_to": 72,
+      "boundary_evidence": {
+        "open_paragraph": 18,
+        "open_phrase": "太仓公者，齐太仓长，临菑人也，姓淳于氏，名意。少而喜医方术。高后八年，更受师同郡",
+        "close_paragraph": 72,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P18–P72"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

@@ -1,0 +1,15 @@
+{
+  "work": "01史记",
+  "vol": "047",
+  "volume_name": "孔子世家",
+  "narrative_mode": "single",
+  "volume_subtype": "liezhuan_single",
+  "volume_type_guess": "世家（单人）",
+  "protagonists": [
+    {
+      "name": "孔子",
+      "category": "文臣",
+      "rationale": "《孔子世家》全卷叙事主轴；生平、周游、删述六经及身后影响。"
+    }
+  ]
+}

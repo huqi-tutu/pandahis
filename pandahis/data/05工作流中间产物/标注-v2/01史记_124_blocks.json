@@ -1,0 +1,83 @@
+{
+  "work": "01史记",
+  "vol": "124",
+  "total_paragraphs": 22,
+  "volume_subtype": "hezhuan",
+  "derived_from": "01史记_124_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 2,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 3,
+      "paragraph_to": 3,
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph_from": 4,
+      "paragraph_to": 6,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 8,
+      "paragraph_to": 8,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 10,
+      "paragraph_to": 10,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 21,
+      "paragraph_to": 21,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 22,
+      "paragraph_to": 22,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "朱家",
+      "category": "庶众",
+      "paragraph_from": 7,
+      "paragraph_to": 7,
+      "boundary_evidence": {
+        "open_paragraph": 7,
+        "open_phrase": "鲁朱家者，与高祖同时。鲁人皆以儒教，而朱家用侠闻。所藏活豪士以百数，其馀庸人不可",
+        "close_paragraph": 7,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P7–P7"
+      }
+    },
+    {
+      "name": "剧孟",
+      "category": "庶众",
+      "paragraph_from": 9,
+      "paragraph_to": 9,
+      "boundary_evidence": {
+        "open_paragraph": 9,
+        "open_phrase": "周人以商贾为资，而剧孟以任侠显诸侯。吴楚反时，条侯为太尉，乘传车将至河南，得剧孟",
+        "close_paragraph": 9,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P9–P9"
+      }
+    },
+    {
+      "name": "郭解",
+      "category": "庶众",
+      "paragraph_from": 11,
+      "paragraph_to": 20,
+      "boundary_evidence": {
+        "open_paragraph": 11,
+        "open_phrase": "郭解，轵人也，字翁伯，善相人者许负外孙也。解父以任侠，孝文时诛死。",
+        "close_paragraph": 20,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P11–P20"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

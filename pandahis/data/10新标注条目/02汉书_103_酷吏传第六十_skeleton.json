@@ -1,0 +1,366 @@
+{
+  "volume": "酷吏传",
+  "source_file": "02汉书_103_酷吏传第六十.txt",
+  "total_paragraphs": 42,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 3,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "郅都",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "郅都",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "郅都",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "郅都",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "郅都",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 10,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 11,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 12,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 13,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 14,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 15,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 16,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 17,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 18,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "王温舒",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "王温舒",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "王温舒",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "王温舒",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "王温舒",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 25,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 26,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 27,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 28,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 29,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "田延年",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "田延年",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "严延年",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "严延年",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "严延年",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "严延年",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "严延年",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "严延年",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 39,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 40,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 41,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 42,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HANSHU_103_01",
+      "史略名称": "郅都",
+      "史略简介": "郅都",
+      "原文字句": "郅都，河东大阳人也。以郎事文帝。景帝时为中郎将，敢直谏，面折大臣于朝。尝从入上林，贾姬在厕，野彘入厕。上目都，都不行。上欲自持兵救贾姬，都伏上前曰：“亡一姬复一姬进，天下所少宁姬等邪？陛下纵自轻，奈宗庙太后何？”上还，彘亦不伤贾姬。太后闻之，赐都金百斤，上亦赐金百斤，由此重都。",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷103·酷吏传》",
+      "paragraphs": [
+        {
+          "volume": "酷吏传",
+          "paragraph_from": 4,
+          "paragraph_to": 8
+        }
+      ],
+      "五级细坐标": "汉书·卷103·文臣·01",
+      "六级段落锚点": "[P4-P8]",
+      "原文出处": "酷吏传·P4-P8"
+    },
+    {
+      "史略ID": "HANSHU_103_02",
+      "史略名称": "王温舒",
+      "史略简介": "王温舒",
+      "原文字句": "王温舒，阳陵人也。少时椎埋为奸。已而试县亭长，数废。数为吏，以治狱至廷尉史。事张汤，迁为御史，督盗贼，杀伤甚多。稍迁至广平都尉，择郡中豪敢往吏十余人为爪牙，皆把其阴重罪，而纵使督盗贼，快其意所欲得。此人虽有百罪，弗法；即有避回，夷之，亦灭宗。以故齐赵之郊盗不敢近广平，广平声为道不拾遗。上闻，迁为河内太守。",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷103·酷吏传》",
+      "paragraphs": [
+        {
+          "volume": "酷吏传",
+          "paragraph_from": 19,
+          "paragraph_to": 23
+        }
+      ],
+      "五级细坐标": "汉书·卷103·文臣·02",
+      "六级段落锚点": "[P19-P23]",
+      "原文出处": "酷吏传·P19-P23"
+    },
+    {
+      "史略ID": "HANSHU_103_03",
+      "史略名称": "田延年",
+      "史略简介": "田延年",
+      "原文字句": "田延年字子宾，先齐诸田也，徙阳陵。延年以材略给事大将军莫府，霍光重之，迁为长史。出为河东太守，选拔尹翁归等以为爪牙，诛鉏豪强，奸邪不敢发。以选入为大司农。会昭帝崩，昌邑王嗣立，淫乱，霍将军忧惧，与公卿议废之，莫敢发言。延年按剑，廷叱群臣，即日议决，语在《光传》。宣帝即位，延年以决疑定策封阳成侯。",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷103·酷吏传》",
+      "paragraphs": [
+        {
+          "volume": "酷吏传",
+          "paragraph_from": 30,
+          "paragraph_to": 31
+        }
+      ],
+      "五级细坐标": "汉书·卷103·文臣·03",
+      "六级段落锚点": "[P30-P31]",
+      "原文出处": "酷吏传·P30-P31"
+    },
+    {
+      "史略ID": "HANSHU_103_04",
+      "史略名称": "严延年",
+      "史略简介": "严延年",
+      "原文字句": "严延年字次卿，东海下邳人也。其父为丞相掾，延年少学法律丞相府，归为郡吏。以选除补御史掾，举侍御史。是时，大将军霍光废昌邑王，尊立宣帝。宣帝初即位，延年劾奏光“擅废立主，无人臣礼，不道”。奏虽寝，然朝廷肃焉敬惮。延年后复劾大司农田延年持兵干属车，大司农自讼不干属车。事下御史中丞，谴责延年何以不移书宫殿门禁止大司农，而令得出入宫。于是覆劾延年阑内罪人，法至死。延年亡命。会赦出，丞相、御史府征书同日到，",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷103·酷吏传》",
+      "paragraphs": [
+        {
+          "volume": "酷吏传",
+          "paragraph_from": 32,
+          "paragraph_to": 37
+        }
+      ],
+      "五级细坐标": "汉书·卷103·文臣·04",
+      "六级段落锚点": "[P32-P37]",
+      "原文出处": "酷吏传·P32-P37"
+    }
+  ]
+}

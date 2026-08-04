@@ -1,0 +1,417 @@
+{
+  "volume": "廉颇蔺相如列传",
+  "source_file": "01史记_081_廉颇蔺相如列传第二十一.txt",
+  "total_paragraphs": 36,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "interleaved",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [
+        {
+          "name": "廉颇",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "蔺相如",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "蔺相如",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "蔺相如",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "蔺相如",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "蔺相如",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "蔺相如",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "蔺相如",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "蔺相如",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "廉颇",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "赵奢",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "赵奢",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "赵奢",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "赵奢",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "廉颇",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "廉颇",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "廉颇",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "廉颇",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "廉颇",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "廉颇",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "廉颇",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "廉颇",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "廉颇",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "廉颇",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "廉颇",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "廉颇",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "廉颇",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "李牧",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "李牧",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "李牧",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "李牧",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "李牧",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "李牧",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [],
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SHIJI_081_01",
+      "史略名称": "廉颇",
+      "史略简介": "廉颇",
+      "原文字句": "廉颇者，赵之良将也。赵惠文王十六年，廉颇为赵将伐齐，大破之，取阳晋，拜为上卿，以勇气闻於诸侯。蔺相如者，赵人也，为赵宦者令缪贤舍人。",
+      "史略分类": "武将",
+      "主要史料出处": "《史记·卷81·廉颇蔺相如列传》",
+      "paragraphs": [
+        {
+          "volume": "廉颇蔺相如列传",
+          "paragraph_from": 1,
+          "paragraph_to": 1
+        },
+        {
+          "volume": "廉颇蔺相如列传",
+          "paragraph_from": 11,
+          "paragraph_to": 11
+        },
+        {
+          "volume": "廉颇蔺相如列传",
+          "paragraph_from": 16,
+          "paragraph_to": 21
+        },
+        {
+          "volume": "廉颇蔺相如列传",
+          "paragraph_from": 23,
+          "paragraph_to": 29
+        }
+      ],
+      "五级细坐标": "史记·卷081·武将·01",
+      "六级段落锚点": "[P1],[P11],[P16-P21],[P23-P29]",
+      "原文出处": "廉颇蔺相如列传·P1,P11,P16-P21,P23-P29"
+    },
+    {
+      "史略ID": "SHIJI_081_02",
+      "史略名称": "李牧",
+      "史略简介": "李牧",
+      "原文字句": "李牧者，赵之北边良将也。常居代雁门，备匈奴。以便宜置吏，市租皆输入莫府，为士卒费。日击数牛飨士，习射骑，谨烽火，多间谍，厚遇战士。为约曰：“匈奴即入盗，急入收保，有敢捕虏者斩。”匈奴每入，烽火谨，辄入收保，不敢战。如是数岁，亦不亡失。然匈奴以李牧为怯，虽赵边兵亦以为吾将怯。赵王让李牧，李牧如故。赵王怒，召之，使他人代将。",
+      "史略分类": "武将",
+      "主要史料出处": "《史记·卷81·廉颇蔺相如列传》",
+      "paragraphs": [
+        {
+          "volume": "廉颇蔺相如列传",
+          "paragraph_from": 30,
+          "paragraph_to": 35
+        }
+      ],
+      "五级细坐标": "史记·卷081·武将·02",
+      "六级段落锚点": "[P30-P35]",
+      "原文出处": "廉颇蔺相如列传·P30-P35"
+    },
+    {
+      "史略ID": "SHIJI_081_03",
+      "史略名称": "蔺相如",
+      "史略简介": "蔺相如",
+      "原文字句": "赵惠文王时，得楚和氏璧。秦昭王闻之，使人遗赵王书，愿以十五城请易璧。",
+      "史略分类": "文臣",
+      "主要史料出处": "《史记·卷81·廉颇蔺相如列传》",
+      "paragraphs": [
+        {
+          "volume": "廉颇蔺相如列传",
+          "paragraph_from": 2,
+          "paragraph_to": 7
+        },
+        {
+          "volume": "廉颇蔺相如列传",
+          "paragraph_from": 9,
+          "paragraph_to": 10
+        }
+      ],
+      "五级细坐标": "史记·卷081·文臣·03",
+      "六级段落锚点": "[P2-P7],[P9-P10]",
+      "原文出处": "廉颇蔺相如列传·P2-P7,P9-P10"
+    },
+    {
+      "史略ID": "SHIJI_081_04",
+      "史略名称": "赵奢",
+      "史略简介": "赵奢",
+      "原文字句": "赵奢者，赵之田部吏也。收租税而平原君家不肯出租，奢以法治之，杀平原君用事者九人。平原君怒，将杀奢。奢因说曰：“君於赵为贵公子，今纵君家而不奉公则法削，法削则国弱，国弱则诸侯加兵，诸侯加兵是无赵也，君安得有此富乎？以君之贵，奉公如法则上下平，上下平则国彊，国彊则赵固，而君为贵戚，岂轻於天下邪？”平原君以为贤，言之於王。王用之治国赋，国赋大平，民富而府库实。",
+      "史略分类": "武将",
+      "主要史料出处": "《史记·卷81·廉颇蔺相如列传》",
+      "paragraphs": [
+        {
+          "volume": "廉颇蔺相如列传",
+          "paragraph_from": 12,
+          "paragraph_to": 15
+        }
+      ],
+      "五级细坐标": "史记·卷081·武将·04",
+      "六级段落锚点": "[P12-P15]",
+      "原文出处": "廉颇蔺相如列传·P12-P15"
+    }
+  ],
+  "translation_qa_hint": "混写卷：人物段落非连续。翻译质检须按 entries[].paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。"
+}

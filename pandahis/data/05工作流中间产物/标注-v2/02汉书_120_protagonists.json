@@ -1,0 +1,15 @@
+{
+  "work": "02汉书",
+  "vol": "120",
+  "volume_name": "百官公卿表第七下",
+  "volume_type_guess": "表",
+  "narrative_mode": "skip",
+  "skip_reason": "表卷无叙事主轴，全卷不提取人物 entry。",
+  "protagonists": [],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "篇内小标题",
+    "论赞",
+    "赞曰"
+  ]
+}

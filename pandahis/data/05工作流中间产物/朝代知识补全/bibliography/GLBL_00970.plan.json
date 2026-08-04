@@ -1,0 +1,153 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00970",
+  "写作结构": "正史叙述见翻译详录；拓展文引入出土文献《赵正书》异说，铺叙子婴继位及诛赵高经过；再引《史记索隐》异文说明身份争议，不展开后世传说的对话与细节，保持留白。",
+  "候选著作": [
+    {
+      "出处": "《史记·秦始皇本纪》及《李斯列传》等",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史源，记载子婴继立、杀赵高、降刘邦、遇害等全部核心事迹",
+      "检索词": "子婴",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《汉书·高帝纪》《异姓诸侯王表》等",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "继承《史记》记载，录子婴降汉与项羽屠戮等事",
+      "检索词": "子婴",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《赵正书》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "西汉早期竹书，独立叙述秦二世死后子婴被立为王、并诛杀赵高，情节与《史记》有别，可资异说补充",
+      "检索词": "赵正书 子婴",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记索隐·秦始皇本纪》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "对‘二世兄子婴’的训解，引刘氏云子婴为始皇之弟，揭示身份争议的直接文献依据",
+      "检索词": "二世兄子婴 索隐",
+      "采用": true,
+      "原文摘句": "刘氏云：‘子婴，始皇之弟也。’",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "晋人皇甫谧辑录古史，或载子婴身世异说",
+      "检索词": "子婴 帝王世纪",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《资治通鉴·秦纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋代编年体史书，综合《史记》《汉书》叙事，无新出史料",
+      "检索词": "子婴 资治通鉴",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·秦始皇本纪》及《李斯列传》等",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史源，记载子婴继立、杀赵高、降刘邦、遇害等全部核心事迹",
+      "检索词": "子婴",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《汉书·高帝纪》《异姓诸侯王表》等",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "继承《史记》记载，录子婴降汉与项羽屠戮等事",
+      "检索词": "子婴",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《赵正书》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "西汉早期竹书，独立叙述秦二世死后子婴被立为王、并诛杀赵高，情节与《史记》有别，可资异说补充",
+      "检索词": "赵正书 子婴",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记索隐·秦始皇本纪》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "对‘二世兄子婴’的训解，引刘氏云子婴为始皇之弟，揭示身份争议的直接文献依据",
+      "检索词": "二世兄子婴 索隐",
+      "采用": true,
+      "原文摘句": "刘氏云：‘子婴，始皇之弟也。’",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "晋人皇甫谧辑录古史，或载子婴身世异说",
+      "检索词": "子婴 帝王世纪",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《资治通鉴·秦纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋代编年体史书，综合《史记》《汉书》叙事，无新出史料",
+      "检索词": "子婴 资治通鉴",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 4,
+    "overall": "B"
+  }
+}

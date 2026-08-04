@@ -1,0 +1,616 @@
+{
+  "volume": "眭两夏侯京翼李传",
+  "source_file": "02汉书_087_眭两夏侯京翼李传第四十五.txt",
+  "total_paragraphs": 56,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "眭弘",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "眭弘",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "夏侯始昌",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "夏侯胜",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "夏侯胜",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "夏侯胜",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "夏侯胜",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "夏侯胜",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "夏侯胜",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "夏侯胜",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "夏侯胜",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "京房",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "京房",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "京房",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "京房",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "京房",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "京房",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "京房",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "京房",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "翼奉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "翼奉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "翼奉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "翼奉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "翼奉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "翼奉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "翼奉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "翼奉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "翼奉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "翼奉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "翼奉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "翼奉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "翼奉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "翼奉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "翼奉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "李寻",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "李寻",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "李寻",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "李寻",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "李寻",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "李寻",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "李寻",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "李寻",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "李寻",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "李寻",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [
+        {
+          "name": "李寻",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 47,
+      "owners": [
+        {
+          "name": "李寻",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 48,
+      "owners": [
+        {
+          "name": "李寻",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 49,
+      "owners": [
+        {
+          "name": "李寻",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 50,
+      "owners": [
+        {
+          "name": "李寻",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 51,
+      "owners": [
+        {
+          "name": "李寻",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 52,
+      "owners": [
+        {
+          "name": "李寻",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 53,
+      "owners": [
+        {
+          "name": "李寻",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 54,
+      "owners": [
+        {
+          "name": "李寻",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 55,
+      "owners": [
+        {
+          "name": "李寻",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 56,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HANSHU_087_01",
+      "史略名称": "眭弘",
+      "史略简介": "眭弘",
+      "原文字句": "眭弘字孟，鲁国蕃人也。少时好侠，斗鸡走马，长乃变节，从嬴公受《春秋》。以明经为议郎，至符节令。",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷87·眭两夏侯京翼李传》",
+      "paragraphs": [
+        {
+          "volume": "眭两夏侯京翼李传",
+          "paragraph_from": 2,
+          "paragraph_to": 3
+        }
+      ],
+      "五级细坐标": "汉书·卷087·文臣·01",
+      "六级段落锚点": "[P2-P3]",
+      "原文出处": "眭两夏侯京翼李传·P2-P3"
+    },
+    {
+      "史略ID": "HANSHU_087_02",
+      "史略名称": "夏侯始昌",
+      "史略简介": "夏侯始昌",
+      "原文字句": "夏侯始昌，鲁人也。通《五经》，以《齐诗》《尚书》教授。自董仲舒、韩婴死后，武帝得始昌，甚重之。始昌明于阴阳，先言柏梁台灾曰，至期日果灾。时，昌邑王以少子爱，上为选师，始昌为太傅。年老，以寿终。族子胜亦以儒显名。",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷87·眭两夏侯京翼李传》",
+      "paragraphs": [
+        {
+          "volume": "眭两夏侯京翼李传",
+          "paragraph_from": 4,
+          "paragraph_to": 4
+        }
+      ],
+      "五级细坐标": "汉书·卷087·文臣·02",
+      "六级段落锚点": "[P4]",
+      "原文出处": "眭两夏侯京翼李传·P4"
+    },
+    {
+      "史略ID": "HANSHU_087_03",
+      "史略名称": "夏侯胜",
+      "史略简介": "夏侯胜",
+      "原文字句": "夏侯胜字长公。初，鲁共王分鲁西宁乡以封子节侯，别属大河，大河后更名东平，故胜为东平人。胜少孤，好学，从始昌受《尚书》及《洪范五行传》，说灾异。后事蕳卿，又从欧阳氏问。为学精孰，所问非一师也。善说礼服。征为博士、光禄大夫。会昭帝崩，昌邑王嗣立，数出。胜当乘舆前谏曰：“天久阴而不雨，臣下有谋上者，陛下出欲何之？”王怒，谓胜为袄言，缚以属吏。吏白大将军霍光，光不举法。是时，光与车骑将军张安世谋欲废昌邑王",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷87·眭两夏侯京翼李传》",
+      "paragraphs": [
+        {
+          "volume": "眭两夏侯京翼李传",
+          "paragraph_from": 5,
+          "paragraph_to": 12
+        }
+      ],
+      "五级细坐标": "汉书·卷087·文臣·03",
+      "六级段落锚点": "[P5-P12]",
+      "原文出处": "眭两夏侯京翼李传·P5-P12"
+    },
+    {
+      "史略ID": "HANSHU_087_04",
+      "史略名称": "京房",
+      "史略简介": "京房",
+      "原文字句": "京房字君明，东郡顿丘人也。治《易》，事梁人焦延寿。延寿字赣。赣贫贱，以好学得幸梁王。梁王共其资用，令极意学。既成，为郡史，察举补小黄令。以候司先知奸邪，盗贼不得发。爱养吏民，化行县中。举最当迁，三老官属上书愿留赣，有诏许增秩留，卒于小黄。赣常曰：“得我道以亡身者，必京生也。”其说长于灾变，分六十四卦，更直日用事，以风雨寒温为候：各有占验。房用之尤精。好钟律，知音声。初元四年以孝廉为郎。",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷87·眭两夏侯京翼李传》",
+      "paragraphs": [
+        {
+          "volume": "眭两夏侯京翼李传",
+          "paragraph_from": 13,
+          "paragraph_to": 20
+        }
+      ],
+      "五级细坐标": "汉书·卷087·文臣·04",
+      "六级段落锚点": "[P13-P20]",
+      "原文出处": "眭两夏侯京翼李传·P13-P20"
+    },
+    {
+      "史略ID": "HANSHU_087_05",
+      "史略名称": "翼奉",
+      "史略简介": "翼奉",
+      "原文字句": "翼奉字少君，东海下邳人也。治《齐诗》，与萧望之、匡衡同师。三人经术皆明，衡为后进，望之施之政事，而奉惇学不仕，好律历阴阳之占。元帝初即位，诸儒荐之，征待诏宦者署，数言事宴见，天子敬焉。",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷87·眭两夏侯京翼李传》",
+      "paragraphs": [
+        {
+          "volume": "眭两夏侯京翼李传",
+          "paragraph_from": 21,
+          "paragraph_to": 35
+        }
+      ],
+      "五级细坐标": "汉书·卷087·文臣·05",
+      "六级段落锚点": "[P21-P35]",
+      "原文出处": "眭两夏侯京翼李传·P21-P35"
+    },
+    {
+      "史略ID": "HANSHU_087_06",
+      "史略名称": "李寻",
+      "史略简介": "李寻",
+      "原文字句": "李寻字子长，平陵人也。治《尚书》，与张孺、郑宽中同师。宽中等守师法教授，寻独好《洪范》灾异，又学天文月令阴阳。事丞相翟方进，方进亦善为星历，除寻为吏，数为翟侯言事。帝舅曲阳侯王根为大司马票骑将军，厚遇寻。是时多灾异，根辅政，数虚己问寻。寻见汉家有中衰厄会之象，其意以为且有洪水为灾，乃说根曰：",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷87·眭两夏侯京翼李传》",
+      "paragraphs": [
+        {
+          "volume": "眭两夏侯京翼李传",
+          "paragraph_from": 36,
+          "paragraph_to": 55
+        }
+      ],
+      "五级细坐标": "汉书·卷087·文臣·06",
+      "六级段落锚点": "[P36-P55]",
+      "原文出处": "眭两夏侯京翼李传·P36-P55"
+    }
+  ]
+}

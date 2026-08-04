@@ -1,0 +1,24 @@
+{
+  "work": "01史记",
+  "vol": "083",
+  "volume_name": "鲁仲连邹阳列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "鲁仲连",
+      "category": "文臣",
+      "rationale": "卷名首列人物，战国齐之高士，以雄辩智谋游说诸侯、排难解纷，属文臣类主轴。"
+    },
+    {
+      "name": "邹阳",
+      "category": "文臣",
+      "rationale": "卷名次列人物，西汉文学家，以辞赋谏书闻名，属文臣类主轴。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

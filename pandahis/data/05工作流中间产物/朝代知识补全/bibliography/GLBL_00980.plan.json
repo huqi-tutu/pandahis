@@ -1,0 +1,38 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00980",
+  "写作结构": "正史叙述见翻译详录（《史记·项羽本纪》载涉间不降楚，自烧杀）。涉间事迹仅见于此，无其他传世文献可征。拓展文留白，禁止编造情节。",
+  "候选著作": [
+    {
+      "出处": "《史记·项羽本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "涉间事迹的唯一原始出处。记载巨鹿之战中涉间不降楚军而自焚而死。",
+      "检索词": "涉间 不降楚 自烧杀",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·项羽本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "涉间事迹的唯一原始出处。记载巨鹿之战中涉间不降楚军而自焚而死。",
+      "检索词": "涉间 不降楚 自烧杀",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 0,
+    "C_excluded": 1,
+    "overall": "C"
+  }
+}

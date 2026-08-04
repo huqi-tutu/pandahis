@@ -1,0 +1,42 @@
+{
+  "work": "02汉书",
+  "vol": "105",
+  "volume_name": "游侠传",
+  "volume_type_guess": "列传",
+  "volume_arc": "C",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "朱家",
+      "category": "庶众",
+      "rationale": "《游侠传》用户指定史略主人公，叙事块 P7–P7。"
+    },
+    {
+      "name": "剧孟",
+      "category": "庶众",
+      "rationale": "《游侠传》用户指定史略主人公，叙事块 P8–P9。"
+    },
+    {
+      "name": "郭解",
+      "category": "庶众",
+      "rationale": "《游侠传》用户指定史略主人公，叙事块 P10–P17。"
+    },
+    {
+      "name": "王孟",
+      "category": "庶众",
+      "rationale": "《游侠传》用户指定史略主人公，叙事块 P9–P9。"
+    },
+    {
+      "name": "薛况",
+      "category": "庶众",
+      "rationale": "《游侠传》用户指定史略主人公，叙事块 P9–P9。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "共段总述"
+  ]
+}

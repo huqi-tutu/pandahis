@@ -1,0 +1,46 @@
+{
+  "work": "01史记",
+  "vol": "102",
+  "total_paragraphs": 18,
+  "volume_subtype": "hezhuan",
+  "derived_from": "01史记_102_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 17,
+      "paragraph_to": 17,
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph_from": 18,
+      "paragraph_to": 18,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "张释之",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 13,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "张廷尉释之者，堵阳人也，字季。有兄仲同居。以訾为骑郎，事孝文帝，十岁不得调，无所",
+        "close_paragraph": 13,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P1–P13"
+      }
+    },
+    {
+      "name": "冯唐",
+      "category": "文臣",
+      "paragraph_from": 14,
+      "paragraph_to": 16,
+      "boundary_evidence": {
+        "open_paragraph": 14,
+        "open_phrase": "冯唐者，其大父赵人。父徙代。汉兴徙安陵。唐以孝著，为中郎署长，事文帝。文帝辇过，",
+        "close_paragraph": 16,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P14–P16"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

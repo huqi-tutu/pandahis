@@ -1,0 +1,35 @@
+{
+  "work": "02汉书",
+  "vol": "061",
+  "volume_name": "贾邹枚路传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "贾山",
+      "category": "文臣",
+      "rationale": "《贾邹枚路传》卷名首姓，贾山为合传主人公之一，以文学政论仕宦为主轴，属文臣。"
+    },
+    {
+      "name": "邹阳",
+      "category": "文臣",
+      "rationale": "卷名第二姓，邹阳为合传主人公之一，以辞赋游说、文学仕宦为主轴，属文臣。"
+    },
+    {
+      "name": "枚乘",
+      "category": "文臣",
+      "rationale": "卷名第三姓，枚乘为合传主人公之一，以辞赋文学著称，仕宦于吴梁，属文臣。"
+    },
+    {
+      "name": "路温舒",
+      "category": "文臣",
+      "rationale": "卷名第四姓，路温舒为合传主人公之一，以法学吏治、上书言事为主轴，属文臣。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

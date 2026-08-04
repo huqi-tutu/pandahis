@@ -1,0 +1,244 @@
+{
+  "work": "02汉书",
+  "vol": "062",
+  "total_paragraphs": 52,
+  "volume_subtype": "hezhuan",
+  "derived_from": "02汉书_062_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 52,
+      "paragraph_to": 52,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "窦婴",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 6,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "窦婴字王孙，孝文皇后从兄子也。父世观津人也。喜宾客。孝文时为吴相，病免。孝景即位",
+        "close_paragraph": 6,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P6"
+      }
+    },
+    {
+      "name": "田蚡",
+      "category": "文臣",
+      "paragraph_from": 7,
+      "paragraph_to": 8,
+      "boundary_evidence": {
+        "open_paragraph": 7,
+        "open_phrase": "田蚡，孝景王皇后同母弟也，生长陵。窦婴已为大将军，方盛，蚡为诸曹郎，未贵，往来侍",
+        "close_paragraph": 8,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P7–P8"
+      }
+    },
+    {
+      "name": "窦婴",
+      "category": "文臣",
+      "paragraph_from": 9,
+      "paragraph_to": 9,
+      "boundary_evidence": {
+        "open_paragraph": 9,
+        "open_phrase": "婴、蚡俱好儒术，推毂赵绾为御史大夫，王臧为郎中令。迎鲁申公，欲设明堂，令列侯就国",
+        "close_paragraph": 9,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P9–P9"
+      }
+    },
+    {
+      "name": "田蚡",
+      "category": "文臣",
+      "paragraph_from": 10,
+      "paragraph_to": 12,
+      "boundary_evidence": {
+        "open_paragraph": 10,
+        "open_phrase": "二年，御史大夫赵绾请毋奏事东宫。窦太后大怒，曰：“此欲复为新垣平邪！”乃罢逐赵绾",
+        "close_paragraph": 12,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P10–P12"
+      }
+    },
+    {
+      "name": "窦婴",
+      "category": "文臣",
+      "paragraph_from": 13,
+      "paragraph_to": 13,
+      "boundary_evidence": {
+        "open_paragraph": 13,
+        "open_phrase": "而婴失窦太后，益疏不用，无势，诸公稍自引而怠骜，唯灌夫独否。故婴墨墨不得意，而厚",
+        "close_paragraph": 13,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P13–P13"
+      }
+    },
+    {
+      "name": "灌夫",
+      "category": "武将",
+      "paragraph_from": 14,
+      "paragraph_to": 20,
+      "boundary_evidence": {
+        "open_paragraph": 14,
+        "open_phrase": "灌夫字仲孺，颍阴人也。父张孟，尝为颍阴侯灌婴舍人，得幸，因进之，至二千石，故蒙灌",
+        "close_paragraph": 20,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P14–P20"
+      }
+    },
+    {
+      "name": "田蚡",
+      "category": "文臣",
+      "paragraph_from": 21,
+      "paragraph_to": 22,
+      "boundary_evidence": {
+        "open_paragraph": 21,
+        "open_phrase": "后蚡使藉福请婴城南田，婴大望曰：“老仆虽弃，将军虽贵，宁可以势相夺乎！”不许。夫",
+        "close_paragraph": 22,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P21–P22"
+      }
+    },
+    {
+      "name": "灌夫",
+      "category": "武将",
+      "paragraph_from": 23,
+      "paragraph_to": 23,
+      "boundary_evidence": {
+        "open_paragraph": 23,
+        "open_phrase": "夏，蚡取燕王女为夫人，太后诏召列侯宗室皆往贺。婴过夫，欲与俱。夫谢曰：“夫数以酒",
+        "close_paragraph": 23,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P23–P23"
+      }
+    },
+    {
+      "name": "窦婴",
+      "category": "文臣",
+      "paragraph_from": 24,
+      "paragraph_to": 25,
+      "boundary_evidence": {
+        "open_paragraph": 24,
+        "open_phrase": "婴锐为救夫，婴夫人谏曰：“灌将军得罪丞相，与太后家迕，宁可救邪？”婴曰：“侯自我",
+        "close_paragraph": 25,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P24–P25"
+      }
+    },
+    {
+      "name": "田蚡",
+      "category": "文臣",
+      "paragraph_from": 26,
+      "paragraph_to": 26,
+      "boundary_evidence": {
+        "open_paragraph": 26,
+        "open_phrase": "蚡已罢朝，出止车门，召御史大夫安国载，怒曰：“与长孺共一秃翁，何为首鼠两端？”安",
+        "close_paragraph": 26,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P26–P26"
+      }
+    },
+    {
+      "name": "窦婴",
+      "category": "文臣",
+      "paragraph_from": 27,
+      "paragraph_to": 27,
+      "boundary_evidence": {
+        "open_paragraph": 27,
+        "open_phrase": "于是上使御史簿责婴所言灌夫颇不雠，劾系都司空。孝景时，婴尝受遗诏，曰“事有不便，",
+        "close_paragraph": 27,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P27–P27"
+      }
+    },
+    {
+      "name": "田蚡",
+      "category": "文臣",
+      "paragraph_from": 28,
+      "paragraph_to": 29,
+      "boundary_evidence": {
+        "open_paragraph": 28,
+        "open_phrase": "春，蚡疾，一身尽痛，若有击者，呼服谢罪。上使视鬼者瞻之，曰：“魏其侯与灌夫共守，",
+        "close_paragraph": 29,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P28–P29"
+      }
+    },
+    {
+      "name": "韩安国",
+      "category": "文臣",
+      "paragraph_from": 30,
+      "paragraph_to": 51,
+      "boundary_evidence": {
+        "open_paragraph": 30,
+        "open_phrase": "韩安国字长孺，梁成安人也，后徒睢阳。尝受《韩子》、杂说邹田生所。事梁孝王，为中大",
+        "close_paragraph": 51,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P30–P51"
+      }
+    }
+  ],
+  "multi_owner_segments": [
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "田蚡",
+          "category": "文臣"
+        },
+        {
+          "name": "窦婴",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "窦婴",
+          "category": "文臣"
+        },
+        {
+          "name": "灌夫",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "田蚡",
+          "category": "文臣"
+        },
+        {
+          "name": "灌夫",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "田蚡",
+          "category": "文臣"
+        },
+        {
+          "name": "灌夫",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "田蚡",
+          "category": "文臣"
+        },
+        {
+          "name": "窦婴",
+          "category": "文臣"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,484 @@
+{
+  "volume": "景十三王传",
+  "source_file": "02汉书_063_景十三王传第二十三.txt",
+  "total_paragraphs": 54,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [],
+      "exclude_reason": "篇内小标题"
+    },
+    {
+      "paragraph": 3,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "刘德",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "刘德",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "刘德",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "刘德",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "刘德",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "刘荣",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "刘荣",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 13,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 14,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "江都王刘非",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "江都王刘非",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "江都王刘非",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "江都王刘非",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "江都王刘非",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "江都王刘非",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "江都王刘非",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 23,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 24,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "刘彭祖",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "刘彭祖",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "刘彭祖",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "刘彭祖",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "刘彭祖",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "中山靖王刘胜",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "中山靖王刘胜",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "中山靖王刘胜",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "中山靖王刘胜",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "中山靖王刘胜",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "中山靖王刘胜",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "中山靖王刘胜",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "中山靖王刘胜",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "中山靖王刘胜",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 40,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 41,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 42,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 43,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 44,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 45,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 46,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 47,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 48,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 49,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 50,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 51,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 52,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 53,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 54,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HANSHU_063_01",
+      "史略名称": "刘德",
+      "史略简介": "刘德",
+      "原文字句": "河间献王德以孝景前二年立，修学好古，实事求是。从民得善书，必为好写与之，留其真，加金帛赐以招之。繇是四方道术之人不远千里，或有先祖旧书，多奉以奏献王者，故得书多，与汉朝等。是时，淮南王安亦好书，所招致率多浮辩。献王所得书皆古文先秦旧书，《周官》《尚书》《礼》《礼记》《孟子》《老子》之属，皆经传说记，七十子之徒所论。其学举六艺，立《毛氏诗》《左氏春秋》博士。修礼乐，被服儒术，造次必于儒者。山东诸儒多",
+      "史略分类": "宗戚",
+      "主要史料出处": "《02汉书·卷63·景十三王传》",
+      "paragraphs": [
+        {
+          "volume": "景十三王传",
+          "paragraph_from": 4,
+          "paragraph_to": 8
+        }
+      ],
+      "五级细坐标": "汉书·卷063·宗戚·01",
+      "六级段落锚点": "[P4-P8]",
+      "原文出处": "景十三王传·P4-P8"
+    },
+    {
+      "史略ID": "HANSHU_063_02",
+      "史略名称": "刘荣",
+      "史略简介": "刘荣",
+      "原文字句": "临江闵王荣以孝景前四年为皇太子，四岁废为临江王。三岁，坐侵庙壖地为为宫，上征荣。荣行，祖于江陵北门，既上车，轴折车废。江陵父老流涕窃言曰：“吾王不反矣！”荣至，诣中尉府对簿。中尉郅都簿责讯王，王恐，自杀。葬蓝田，燕数万衔土置冢上。百姓怜之。",
+      "史略分类": "宗戚",
+      "主要史料出处": "《02汉书·卷63·景十三王传》",
+      "paragraphs": [
+        {
+          "volume": "景十三王传",
+          "paragraph_from": 10,
+          "paragraph_to": 11
+        }
+      ],
+      "五级细坐标": "汉书·卷063·宗戚·02",
+      "六级段落锚点": "[P10-P11]",
+      "原文出处": "景十三王传·P10-P11"
+    },
+    {
+      "史略ID": "HANSHU_063_03",
+      "史略名称": "江都王刘非",
+      "史略简介": "江都王刘非",
+      "原文字句": "江都易王非以孝景前二年立为汝南王。吴、楚反时，非年十五，有材气，上书自请击吴。景帝赐非将军印，击吴。吴已破，徙王江都，治故吴国，以军功赐天子旗。元光中，匈奴大入汉边，非上书愿击匈奴，上不许。非好气力，治宫馆，招四方豪杰，骄奢甚。二十七年薨，子建嗣。",
+      "史略分类": "宗戚",
+      "主要史料出处": "《02汉书·卷63·景十三王传》",
+      "paragraphs": [
+        {
+          "volume": "景十三王传",
+          "paragraph_from": 15,
+          "paragraph_to": 21
+        }
+      ],
+      "五级细坐标": "汉书·卷063·宗戚·03",
+      "六级段落锚点": "[P15-P21]",
+      "原文出处": "景十三王传·P15-P21"
+    },
+    {
+      "史略ID": "HANSHU_063_04",
+      "史略名称": "刘彭祖",
+      "史略简介": "刘彭祖",
+      "原文字句": "赵敬肃王彭祖以孝景前二年立为广川王。赵王遂反破后，徙王赵。彭祖为人巧佞，卑谄足共，而心刻深，好法律，持诡辩以中人。多内宠姬及子孙。相二千石欲奉汉法以治，则害于王家。是以每相二千石至，彭祖衣帛布单衣，自行迎除舍，多设疑事以诈动之，得二千石失言，中忌讳，辄书之。二千石欲治者，则以此迫劫；不听，乃上书告之，及污以奸利事。彭祖立六十余年，相二千石无能满二岁，辄以罪去，大者死，小者刑。以故二千石莫敢治，而赵",
+      "史略分类": "宗戚",
+      "主要史料出处": "《02汉书·卷63·景十三王传》",
+      "paragraphs": [
+        {
+          "volume": "景十三王传",
+          "paragraph_from": 25,
+          "paragraph_to": 29
+        }
+      ],
+      "五级细坐标": "汉书·卷063·宗戚·04",
+      "六级段落锚点": "[P25-P29]",
+      "原文出处": "景十三王传·P25-P29"
+    },
+    {
+      "史略ID": "HANSHU_063_05",
+      "史略名称": "中山靖王刘胜",
+      "史略简介": "中山靖王刘胜",
+      "原文字句": "中山靖王胜以孝景前三年立。武帝初即位，大臣惩吴、楚七国行事，议者多冤晁错之策，皆以诸侯连城数十，泰强，欲稍侵削，数奏暴其过惩。诸侯王自以骨肉至亲，先帝所以广封连城，犬牙相错者，为盘石宗也。今或无罪，为臣下所侵辱，有司吹毛求疵，笞服其臣，使证其君，多自以侵冤。",
+      "史略分类": "宗戚",
+      "主要史料出处": "《02汉书·卷63·景十三王传》",
+      "paragraphs": [
+        {
+          "volume": "景十三王传",
+          "paragraph_from": 30,
+          "paragraph_to": 38
+        }
+      ],
+      "五级细坐标": "汉书·卷063·宗戚·05",
+      "六级段落锚点": "[P30-P38]",
+      "原文出处": "景十三王传·P30-P38"
+    }
+  ]
+}

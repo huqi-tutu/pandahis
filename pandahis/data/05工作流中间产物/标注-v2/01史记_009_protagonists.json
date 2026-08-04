@@ -1,0 +1,19 @@
+{
+  "work": "01史记",
+  "vol": "009",
+  "volume_name": "吕太后本纪",
+  "volume_type_guess": "本纪",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "吕太后",
+      "category": "宗戚",
+      "rationale": "《吕太后本纪》以吕太后为卷名主轴，虽立纪但非君王，依史略分类链归宗戚。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

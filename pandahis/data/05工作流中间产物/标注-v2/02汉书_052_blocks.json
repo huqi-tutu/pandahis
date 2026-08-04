@@ -1,0 +1,87 @@
+{
+  "work": "02汉书",
+  "vol": "052",
+  "total_paragraphs": 22,
+  "volume_subtype": "hezhuan",
+  "derived_from": "02汉书_052_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 21,
+      "paragraph_to": 21,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 22,
+      "paragraph_to": 22,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "张苍",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 4,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "张苍，阳武人也，好书律历。秦时为御史，主柱下方书。有罪，亡归。及沛公略地过阳武，",
+        "close_paragraph": 4,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P4"
+      }
+    },
+    {
+      "name": "周昌",
+      "category": "文臣",
+      "paragraph_from": 5,
+      "paragraph_to": 11,
+      "boundary_evidence": {
+        "open_paragraph": 5,
+        "open_phrase": "周昌者，沛人也。其从兄苛，秦时皆为泗水卒史。及高祖起沛，击破泗水守监，于是苛、昌",
+        "close_paragraph": 11,
+        "close_note": "人工修正：P5–P11 主轴为周昌（含护赵王、相赵王段）；赵尧无独立条目"
+      }
+    },
+    {
+      "name": "任敖",
+      "category": "文臣",
+      "paragraph_from": 12,
+      "paragraph_to": 12,
+      "boundary_evidence": {
+        "open_paragraph": 12,
+        "open_phrase": "任敖，沛人也，少为狱吏。高祖尝避吏，吏系吕后，遇之不谨。任敖素善高祖，怒，击伤主",
+        "close_paragraph": 12,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P12–P12"
+      }
+    },
+    {
+      "name": "张苍",
+      "category": "文臣",
+      "paragraph_from": 13,
+      "paragraph_to": 17,
+      "boundary_evidence": {
+        "open_paragraph": 13,
+        "open_phrase": "初任敖免，平阳侯曹窋代敖为御史大夫。高后崩，与大臣共诛诸吕。后坐事免，以淮南相张",
+        "close_paragraph": 17,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P13–P17"
+      }
+    },
+    {
+      "name": "申屠嘉",
+      "category": "文臣",
+      "paragraph_from": 18,
+      "paragraph_to": 20,
+      "boundary_evidence": {
+        "open_paragraph": 18,
+        "open_phrase": "申屠嘉，梁人也。以材官蹶张从高帝击项籍，迁为队率。从击黥布，为都尉。孝惠时，为淮",
+        "close_paragraph": 20,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P18–P20"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

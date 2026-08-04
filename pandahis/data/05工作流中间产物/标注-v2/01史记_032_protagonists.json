@@ -1,0 +1,41 @@
+{
+  "work": "01史记",
+  "vol": "032",
+  "volume_name": "齐太公世家第二",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "shijia_zhuhou",
+  "volume_type_guess": "世家（诸侯·Top5）",
+  "selection_criteria": "按卷内叙事峰值与史迁笔墨权重：开国→乱政转折→称霸→晚期谏诤与田氏→专权代齐；非享国长短或帝王.json评级机械排序",
+  "protagonists": [
+    {
+      "name": "齐太公",
+      "category": "诸侯",
+      "rationale": "卷名主人公；遇周文武、封齐营丘、定国本（P1–11）。"
+    },
+    {
+      "name": "齐襄公",
+      "category": "诸侯",
+      "rationale": "第一个完整乱政故事弧：私通鲁夫人、弑鲁桓公、被弑（P24 开传「是为襄公」–P29）。"
+    },
+    {
+      "name": "齐桓公",
+      "category": "诸侯",
+      "rationale": "卷中笔墨与结构重心；九合诸侯、一匡天下；含霸后崩逝收束（P31–P52）。"
+    },
+    {
+      "name": "齐景公",
+      "category": "诸侯",
+      "rationale": "后半卷主轴；晏婴谏政、田氏坐大、立嗣之乱（P73 开传「是为景公」–P85 景公卒收束）。"
+    },
+    {
+      "name": "齐平公",
+      "category": "诸侯",
+      "rationale": "田常弑君后专权，接卷末田氏代齐叙事收束（P92 开传「是为平公」–P93）。"
+    }
+  ],
+  "not_selected_examples": [
+    "齐顷公（鞍战虽重，但属非 Top5 小君世系链 P53–72）",
+    "齐悼公/齐简公（P86–91，非 Top5，归世系链 exclude）",
+    "齐康公（P94–96 继嗣与代齐表，世系链）"
+  ]
+}

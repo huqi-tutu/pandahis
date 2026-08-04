@@ -1,0 +1,332 @@
+{
+  "work": "01史记",
+  "vol": "122",
+  "total_paragraphs": 62,
+  "method": "Step1b-α LLM",
+  "paragraphs": [
+    {
+      "paragraph": 1,
+      "primary_subject": "太史公曰",
+      "disposition": "exclude",
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph": 2,
+      "primary_subject": "论赞",
+      "disposition": "exclude",
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 3,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 4,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 5,
+      "primary_subject": "郅都",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 6,
+      "primary_subject": "郅都",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 7,
+      "primary_subject": "郅都",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 8,
+      "primary_subject": "郅都",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 9,
+      "primary_subject": "郅都",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 10,
+      "primary_subject": "宁成",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 11,
+      "primary_subject": "宁成",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 12,
+      "primary_subject": "宁成",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 13,
+      "primary_subject": "周阳由",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 14,
+      "primary_subject": "周阳由",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 15,
+      "primary_subject": "周阳由",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 16,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 17,
+      "primary_subject": "赵禹",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 18,
+      "primary_subject": "赵禹",
+      "co_owner": "张汤",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 19,
+      "primary_subject": "张汤",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 20,
+      "primary_subject": "张汤",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 21,
+      "primary_subject": "张汤",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 22,
+      "primary_subject": "张汤",
+      "co_owner": "赵禹",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 23,
+      "primary_subject": "张汤",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 24,
+      "primary_subject": "张汤",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 25,
+      "primary_subject": "张汤",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 26,
+      "primary_subject": "张汤",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 27,
+      "primary_subject": "张汤",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 28,
+      "primary_subject": "张汤",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 29,
+      "primary_subject": "张汤",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 30,
+      "primary_subject": "张汤",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 31,
+      "primary_subject": "张汤",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 32,
+      "primary_subject": "张汤",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 33,
+      "primary_subject": "张汤",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 34,
+      "primary_subject": "赵禹",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 35,
+      "primary_subject": "赵禹",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 36,
+      "primary_subject": "义纵",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 37,
+      "primary_subject": "义纵",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 38,
+      "primary_subject": "义纵",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 39,
+      "primary_subject": "义纵",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 40,
+      "primary_subject": "义纵",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 41,
+      "primary_subject": "王温舒",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 42,
+      "primary_subject": "王温舒",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 43,
+      "primary_subject": "王温舒",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 44,
+      "primary_subject": "尹齐",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 45,
+      "primary_subject": "王温舒",
+      "co_owner": "杨仆",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 46,
+      "primary_subject": "杨仆",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 47,
+      "primary_subject": "王温舒",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 48,
+      "primary_subject": "王温舒",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 49,
+      "primary_subject": "王温舒",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 50,
+      "primary_subject": "王温舒",
+      "co_owner": "尹齐",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 51,
+      "primary_subject": "尹齐",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 52,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 53,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 54,
+      "primary_subject": "减宣",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 55,
+      "primary_subject": "减宣",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 56,
+      "primary_subject": "杜周",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 57,
+      "primary_subject": "杜周",
+      "co_owner": "减宣",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 58,
+      "primary_subject": "杜周",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 59,
+      "primary_subject": "杜周",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 60,
+      "primary_subject": "杜周",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 61,
+      "primary_subject": "太史公曰",
+      "disposition": "exclude",
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph": 62,
+      "primary_subject": "论赞",
+      "disposition": "exclude",
+      "exclude_reason": "论赞"
+    }
+  ]
+}

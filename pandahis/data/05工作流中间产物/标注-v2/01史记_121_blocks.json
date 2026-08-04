@@ -1,0 +1,104 @@
+{
+  "work": "01史记",
+  "vol": "121",
+  "total_paragraphs": 33,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "01史记_121_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph_from": 2,
+      "paragraph_to": 9,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 23,
+      "paragraph_to": 28,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 31,
+      "paragraph_to": 32,
+      "exclude_reason": "共段总述"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "申公",
+      "category": "文臣",
+      "paragraph_from": 10,
+      "paragraph_to": 12,
+      "boundary_evidence": {
+        "open_paragraph": 10,
+        "open_phrase": "申公者，鲁人也。高祖过鲁，申公以弟子从师入见高祖于鲁南宫。吕太后时，申公游学长安",
+        "close_paragraph": 12,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P10–P12"
+      }
+    },
+    {
+      "name": "辕固生",
+      "category": "文臣",
+      "paragraph_from": 13,
+      "paragraph_to": 17,
+      "boundary_evidence": {
+        "open_paragraph": 13,
+        "open_phrase": "清河王太傅辕固生者，齐人也。以治诗，孝景时为博士。与黄生争论景帝前。",
+        "close_paragraph": 17,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P13–P17"
+      }
+    },
+    {
+      "name": "韩婴",
+      "category": "文臣",
+      "paragraph_from": 18,
+      "paragraph_to": 18,
+      "boundary_evidence": {
+        "open_paragraph": 18,
+        "open_phrase": "韩生者，燕人也。孝文帝时为博士，景帝时为常山王太傅。韩生推诗之意而为内外传数万言",
+        "close_paragraph": 18,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P18–P18"
+      }
+    },
+    {
+      "name": "伏生",
+      "category": "文臣",
+      "paragraph_from": 19,
+      "paragraph_to": 22,
+      "boundary_evidence": {
+        "open_paragraph": 19,
+        "open_phrase": "伏生者，济南人也。故为秦博士。孝文帝时，欲求能治尚书者，天下无有，乃闻伏生能治，",
+        "close_paragraph": 22,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P19–P22"
+      }
+    },
+    {
+      "name": "董仲舒",
+      "category": "文臣",
+      "paragraph_from": 29,
+      "paragraph_to": 30,
+      "boundary_evidence": {
+        "open_paragraph": 29,
+        "open_phrase": "董仲舒，广川人也。以治春秋，孝景时为博士。下帷讲诵，弟子传以久次相受业，或莫见其",
+        "close_paragraph": 30,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P29–P30"
+      }
+    },
+    {
+      "name": "董仲舒",
+      "category": "文臣",
+      "paragraph_from": 33,
+      "paragraph_to": 33,
+      "boundary_evidence": {
+        "open_paragraph": 33,
+        "open_phrase": "仲舒弟子遂者：兰陵褚大，广川殷忠，温吕步舒。褚大至梁相。步舒至长史，持节使决淮南",
+        "close_paragraph": 33,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P33–P33"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

@@ -1,0 +1,117 @@
+{
+  "work": "02汉书",
+  "vol": "063",
+  "total_paragraphs": 54,
+  "volume_subtype": "hezhuan",
+  "derived_from": "02汉书_063_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 2,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 3,
+      "paragraph_to": 3,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 9,
+      "paragraph_to": 9,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 12,
+      "paragraph_to": 14,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 22,
+      "paragraph_to": 24,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 39,
+      "paragraph_to": 39,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 40,
+      "paragraph_to": 46,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 47,
+      "paragraph_to": 49,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 50,
+      "paragraph_to": 53,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 54,
+      "paragraph_to": 54,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "刘德",
+      "category": "宗戚",
+      "paragraph_from": 4,
+      "paragraph_to": 8,
+      "boundary_evidence": {
+        "open_paragraph": 4,
+        "open_phrase": "河间献王德以孝景前二年立，修学好古，实事",
+        "close_note": "收敛至5人"
+      }
+    },
+    {
+      "name": "刘荣",
+      "category": "宗戚",
+      "paragraph_from": 10,
+      "paragraph_to": 11,
+      "boundary_evidence": {
+        "open_paragraph": 10,
+        "open_phrase": "临江闵王荣以孝景前四年为皇太子，四岁废为",
+        "close_note": "收敛至5人"
+      }
+    },
+    {
+      "name": "刘非",
+      "category": "宗戚",
+      "paragraph_from": 15,
+      "paragraph_to": 21,
+      "boundary_evidence": {
+        "open_paragraph": 15,
+        "open_phrase": "江都易王非以孝景前二年立为汝南王。吴、楚",
+        "close_note": "收敛至5人"
+      }
+    },
+    {
+      "name": "刘彭祖",
+      "category": "宗戚",
+      "paragraph_from": 25,
+      "paragraph_to": 29,
+      "boundary_evidence": {
+        "open_paragraph": 25,
+        "open_phrase": "赵敬肃王彭祖以孝景前二年立为广川王。赵王",
+        "close_note": "收敛至5人"
+      }
+    },
+    {
+      "name": "刘胜",
+      "category": "宗戚",
+      "paragraph_from": 30,
+      "paragraph_to": 38,
+      "boundary_evidence": {
+        "open_paragraph": 30,
+        "open_phrase": "中山靖王胜以孝景前三年立。武帝初即位，大",
+        "close_note": "收敛至5人"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

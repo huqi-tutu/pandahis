@@ -2796,6 +2796,8 @@ def gate_validate_person_entries(
         eid = str(e.get("史略ID", ""))
         name = str(e.get("史略名称", ""))
         cat = str(e.get("史略分类", ""))
+        if not dkl.is_dynasty_supplement_entry(e):
+            continue
         start_year = e.get("史略开始年")
         end_year = e.get("史略结束年")
         peak_year = e.get("峰值年")
@@ -2816,12 +2818,22 @@ def gate_validate_person_entries(
             seen_canonical[canon] = eid
 
         if dynasty_start is not None and dynasty_end is not None:
-            for label, yr in (("史略开始年", start_year), ("史略结束年", end_year)):
-                if isinstance(yr, int) and (yr < dynasty_start or yr > dynasty_end):
-                    issues.append(
-                        f"[{eid}] {name} {label} {yr} 不在朝代"
-                        f" [{dynasty_start}, {dynasty_end}] 区间内"
-                    )
+            if cat in ("君王", "诸侯"):
+                pick_year = start_year
+                pick_label = "史略开始年(即位年)"
+            elif cat == "蕃祚":
+                pick_year = start_year
+                pick_label = "史略开始年(立国年)"
+            else:
+                pick_year = peak_year
+                pick_label = "峰值年"
+            if isinstance(pick_year, int) and (
+                pick_year < dynasty_start or pick_year > dynasty_end
+            ):
+                issues.append(
+                    f"[{eid}] {name} {pick_label} {pick_year} 不在朝代"
+                    f" [{dynasty_start}, {dynasty_end}] 区间内"
+                )
 
         if isinstance(start_year, int) and isinstance(end_year, int):
             lo, hi = min(start_year, end_year), max(start_year, end_year)
@@ -2916,6 +2928,8 @@ def run_gate_renwu(paths: dict[str, Path], context: dict[str, Any], *, require_r
         )
     )
     for e in entries:
+        if not dkl.is_dynasty_supplement_entry(e):
+            continue
         eid = str(e.get("史略ID", ""))
         name = str(e.get("史略名称", ""))
         cat = str(e.get("史略分类", ""))
@@ -2935,7 +2949,8 @@ def run_gate_renwu(paths: dict[str, Path], context: dict[str, Any], *, require_r
     _report_gate(issues)
     if issues:
         return 1
-    _log(f"✅ gate-renwu 通过（{len(entries)} 条）")
+    supp_count = sum(1 for e in entries if dkl.is_dynasty_supplement_entry(e))
+    _log(f"✅ gate-renwu 通过（{supp_count} 条）")
     return 0
 
 

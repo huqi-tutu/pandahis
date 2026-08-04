@@ -1,0 +1,34 @@
+{
+  "work": "01史记",
+  "vol": "096",
+  "volume_name": "张丞相列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "张苍",
+      "category": "文臣",
+      "rationale": "《张丞相列传》卷名首姓，张苍为汉初丞相，以行政、历律、刑名之学仕宦为列传主轴，符合文臣准入标准。"
+    },
+    {
+      "name": "周昌",
+      "category": "文臣",
+      "rationale": "卷名「张丞相列传」实为汉初丞相合传，周昌为汉高祖御史大夫、赵相，以直谏辅政为传，属文臣主轴。"
+    },
+    {
+      "name": "任敖",
+      "category": "文臣",
+      "rationale": "任敖为汉初御史大夫，以吏职仕宦入传，属合传中文臣主轴之一。"
+    },
+    {
+      "name": "申屠嘉",
+      "category": "文臣",
+      "rationale": "申屠嘉为汉文帝丞相，以刚直守正为传，属合传中文臣主轴之一。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

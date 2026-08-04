@@ -1,0 +1,128 @@
+{
+  "work": "01史记",
+  "vol": "124",
+  "total_paragraphs": 22,
+  "method": "Step1b-α LLM",
+  "paragraphs": [
+    {
+      "paragraph": 1,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 2,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 3,
+      "primary_subject": "太史公曰",
+      "disposition": "exclude",
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph": 4,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 5,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 6,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 7,
+      "primary_subject": "朱家",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 8,
+      "primary_subject": "田仲",
+      "disposition": "exclude",
+      "exclude_reason": "非主轴人物"
+    },
+    {
+      "paragraph": 9,
+      "primary_subject": "剧孟",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 10,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 11,
+      "primary_subject": "郭解",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 12,
+      "primary_subject": "郭解",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 13,
+      "primary_subject": "郭解",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 14,
+      "primary_subject": "郭解",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 15,
+      "primary_subject": "郭解",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 16,
+      "primary_subject": "郭解",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 17,
+      "primary_subject": "郭解",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 18,
+      "primary_subject": "郭解",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 19,
+      "primary_subject": "郭解",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 20,
+      "primary_subject": "郭解",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 21,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 22,
+      "primary_subject": "太史公曰",
+      "disposition": "exclude",
+      "exclude_reason": "太史公曰"
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00919",
+  "写作结构": "正史叙述以《史记·陈涉世家》为主干，见翻译详录。拓展文以《新书·过秦论》点明陈涉底层身份与起义的历史意义，并引《容斋随笔》等后世议论作为余论。出土秦简中有关失期的律文可与锚点并陈解释法律背景，但不宜作为否定“当斩”的依据，仅可作附注。",
+  "候选著作": [
+    {
+      "出处": "《新书·过秦论》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "汉初贾谊论述陈涉出身、才干与起义的客观条件，强调其“瓮牖绳枢”的底层身份和首难之功。",
+      "检索词": "陈涉 瓮牖绳枢",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《睡虎地秦墓竹简·徭律》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载秦代征发徭役和失期处罚的一般规定，可作为了解秦律严苛与失期后果的参照，但需注意军法与徭律之别。",
+      "检索词": "失期 赀 甲 徭律",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《容斋随笔·卷十四》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "洪迈评议陈涉首事的意义，认为虽败犹荣，可备后世史论的一说。",
+      "检索词": "陈涉 首事",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·陈涉世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要叙事来源，记起义全过程，正史翻译详录负责。",
+      "检索词": "陈涉世家",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《新书·过秦论》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "汉初贾谊论述陈涉出身、才干与起义的客观条件，强调其“瓮牖绳枢”的底层身份和首难之功。",
+      "检索词": "陈涉 瓮牖绳枢",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《睡虎地秦墓竹简·徭律》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载秦代征发徭役和失期处罚的一般规定，可作为了解秦律严苛与失期后果的参照，但需注意军法与徭律之别。",
+      "检索词": "失期 赀 甲 徭律",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·陈涉世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要叙事来源，记起义全过程，正史翻译详录负责。",
+      "检索词": "陈涉世家",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《容斋随笔·卷十四》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "洪迈评议陈涉首事的意义，认为虽败犹荣，可备后世史论的一说。",
+      "检索词": "陈涉 首事",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

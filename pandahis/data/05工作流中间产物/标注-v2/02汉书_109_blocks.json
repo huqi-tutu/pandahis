@@ -1,0 +1,58 @@
+{
+  "work": "02汉书",
+  "vol": "109",
+  "total_paragraphs": 46,
+  "volume_subtype": "hezhuan",
+  "derived_from": "02汉书_109_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 2,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 46,
+      "paragraph_to": 46,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "西南夷",
+      "category": "蕃祚",
+      "paragraph_from": 3,
+      "paragraph_to": 12,
+      "boundary_evidence": {
+        "open_paragraph": 3,
+        "open_phrase": "南夷君长以十数，夜郎最大。其西，靡莫之属以十数，滇最大。自滇以北，君长以十数，邛",
+        "close_paragraph": 12,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P3–P12"
+      }
+    },
+    {
+      "name": "两粤",
+      "category": "蕃祚",
+      "paragraph_from": 13,
+      "paragraph_to": 37,
+      "boundary_evidence": {
+        "open_paragraph": 13,
+        "open_phrase": "南粤王赵佗，真定人也。秦并天下，略定扬粤，置桂林、南海、象郡，以適徙民与粤杂处。",
+        "close_paragraph": 37,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P13–P37"
+      }
+    },
+    {
+      "name": "朝鲜",
+      "category": "蕃祚",
+      "paragraph_from": 38,
+      "paragraph_to": 45,
+      "boundary_evidence": {
+        "open_paragraph": 38,
+        "open_phrase": "朝鲜王满，燕人。自始燕时，尝略属真番、朝鲜，为置吏筑障。秦灭燕，属辽东外徼。汉兴",
+        "close_paragraph": 45,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P38–P45"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

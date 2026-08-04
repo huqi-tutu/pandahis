@@ -1,0 +1,229 @@
+{
+  "volume": "魏相丙吉传",
+  "source_file": "02汉书_086_魏相丙吉传第四十四.txt",
+  "total_paragraphs": 21,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "魏相",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "魏相",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "魏相",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "魏相",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "魏相",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "魏相",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "魏相",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "魏相",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "魏相",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "丙吉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "丙吉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "丙吉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "丙吉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "丙吉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "丙吉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "丙吉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "丙吉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "丙吉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "丙吉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HANSHU_086_01",
+      "史略名称": "魏相",
+      "史略简介": "魏相",
+      "原文字句": "魏相字弱翁，济阴定陶人也，徙平陵。少学《易》，为郡卒史，举贤良，以对策高第，为茂陵令。顷之，御史大夫桑弘羊客诈称御史止传，丞不以时谒，客怒缚丞。相疑其有奸，收捕，案致其罪，论弃客市，茂陵大治。",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷86·魏相丙吉传》",
+      "paragraphs": [
+        {
+          "volume": "魏相丙吉传",
+          "paragraph_from": 2,
+          "paragraph_to": 10
+        }
+      ],
+      "五级细坐标": "汉书·卷086·文臣·01",
+      "六级段落锚点": "[P2-P10]",
+      "原文出处": "魏相丙吉传·P2-P10"
+    },
+    {
+      "史略ID": "HANSHU_086_02",
+      "史略名称": "丙吉",
+      "史略简介": "丙吉",
+      "原文字句": "丙吉字少卿，鲁国人也。治律令，为鲁狱史。积功劳，稍迁至廷尉右监。坐法失官，归为州从事。武帝末，巫蛊事起，吉以故廷尉监征，诏治巫蛊郡邸狱。时，宣帝生数月，以皇曾孙坐卫太子事系，吉见而怜之。又心知太子无事实，重哀曾孙无辜，吉择谨厚女徒，令保养曾孙，置闲燥处。吉治巫蛊事，连岁不决。后元二年，武帝疾，往来长杨、五柞宫，望气者言长安狱中有天子气，于是上遣使者分条中都官诏狱系者，亡轻重一切皆杀之。内谒者令郭穰",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷86·魏相丙吉传》",
+      "paragraphs": [
+        {
+          "volume": "魏相丙吉传",
+          "paragraph_from": 11,
+          "paragraph_to": 20
+        }
+      ],
+      "五级细坐标": "汉书·卷086·文臣·02",
+      "六级段落锚点": "[P11-P20]",
+      "原文出处": "魏相丙吉传·P11-P20"
+    }
+  ]
+}

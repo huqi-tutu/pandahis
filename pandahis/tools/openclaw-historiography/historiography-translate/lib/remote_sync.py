@@ -136,6 +136,8 @@ def upsert_translate_detail(
     translate_detail: str,
     source_original_json: str | None = None,
     source_citation: str | None = None,
+    *,
+    detail_source: str | None = None,
 ) -> None:
     source_json = source_original_json if source_original_json is not None else None
     citation = (source_citation or "").strip() or None
@@ -157,6 +159,50 @@ def upsert_translate_detail(
             "source_citation": citation,
         },
     )
+    if detail_source:
+        _update_box_detail_source(cursor, box_id, detail_source)
+
+
+def _column_exists_on_box(cursor, column_name: str) -> bool:
+    cursor.execute(
+        """
+        SELECT COUNT(*) AS cnt FROM information_schema.COLUMNS
+        WHERE TABLE_SCHEMA = DATABASE()
+          AND TABLE_NAME = 'historical_box'
+          AND COLUMN_NAME = %s
+        """,
+        (column_name,),
+    )
+    return cursor.fetchone()["cnt"] > 0
+
+
+def _ensure_detail_source_column(cursor) -> None:
+    if _column_exists_on_box(cursor, "detail_source"):
+        return
+    cursor.execute(
+        """
+        ALTER TABLE historical_box
+          ADD COLUMN detail_source VARCHAR(16) NULL
+            COMMENT '详情来源: translate=史料顺译 compose=大模型撰写'
+            AFTER entry_source
+        """
+    )
+
+
+def _update_box_detail_source(cursor, box_id: str, detail_source: str) -> None:
+    value = str(detail_source or "").strip().lower()
+    if value not in {"translate", "compose"}:
+        return
+    if not _column_exists_on_box(cursor, "detail_source"):
+        _ensure_detail_source_column(cursor)
+    cursor.execute(
+        """
+        UPDATE historical_box
+        SET detail_source=%s
+        WHERE id=%s
+        """,
+        (value, box_id),
+    )
 
 
 def sync_translate_detail(
@@ -167,6 +213,7 @@ def sync_translate_detail(
     source_original: Any = None,
     source_citation: str | None = None,
     dry_run: bool = False,
+    detail_source: str | None = "translate",
 ) -> Tuple[bool, str]:
     """将单条翻译详情 upsert 到线上 DB（不删除其它记录）。"""
     detail = str(translate_detail or "").strip()
@@ -198,7 +245,7 @@ def sync_translate_detail(
         with conn.cursor() as cursor:
             ensure_schema(cursor)
             upsert_translate_detail(
-                cursor, entry_id, detail, source_json, citation
+                cursor, entry_id, detail, source_json, citation, detail_source=detail_source
             )
         conn.commit()
         return True, f"{len(detail)} 字已写入 historical_box_detail"
@@ -228,6 +275,7 @@ def sync_output_entry(
         source_original=source_original,
         source_citation=str(citation).strip() if citation else None,
         dry_run=dry_run,
+        detail_source="translate",
     )
 
 
@@ -254,6 +302,7 @@ def _rows_from_aggregate_json(json_path: Path) -> List[Dict[str, Any]]:
                 "source_citation": (
                     str(citation).strip() if isinstance(citation, str) and citation.strip() else None
                 ),
+                "detail_source": "translate",
             }
         )
     return rows
@@ -278,6 +327,7 @@ def sync_all_box_details(
     if dynasty_detail_json and dynasty_detail_json.is_file():
         dk_rows = _rows_from_aggregate_json(dynasty_detail_json)
         for row in dk_rows:
+            row["detail_source"] = "compose"
             existing = merged.get(row["box_id"])
             if existing and existing["translate_detail"].strip():
                 continue
@@ -295,6 +345,7 @@ def sync_all_box_details(
     try:
         with conn.cursor() as cursor:
             ensure_schema(cursor)
+            _ensure_detail_source_column(cursor)
             for row in rows:
                 upsert_translate_detail(
                     cursor,
@@ -302,6 +353,7 @@ def sync_all_box_details(
                     row["translate_detail"],
                     row.get("source_original_json"),
                     row.get("source_citation"),
+                    detail_source=row.get("detail_source"),
                 )
             deleted = 0
             if prune_orphans:

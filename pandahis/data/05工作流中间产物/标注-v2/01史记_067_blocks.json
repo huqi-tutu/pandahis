@@ -1,0 +1,97 @@
+{
+  "work": "01史记",
+  "vol": "067",
+  "total_paragraphs": 164,
+  "volume_subtype": "hezhuan",
+  "derived_from": "01史记_067_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 2,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 9,
+      "paragraph_to": 18,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 59,
+      "paragraph_to": 61,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 67,
+      "paragraph_to": 163,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 164,
+      "paragraph_to": 164,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "颜回",
+      "category": "文臣",
+      "paragraph_from": 3,
+      "paragraph_to": 8,
+      "boundary_evidence": {
+        "open_paragraph": 3,
+        "open_phrase": "颜回者，鲁人也，字子渊。少孔子三十岁。",
+        "close_paragraph": 8,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P3–P8"
+      }
+    },
+    {
+      "name": "子路",
+      "category": "文臣",
+      "paragraph_from": 19,
+      "paragraph_to": 33,
+      "boundary_evidence": {
+        "open_paragraph": 19,
+        "open_phrase": "仲由字子路，卞人也。少孔子九岁。",
+        "close_paragraph": 33,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P19–P33"
+      }
+    },
+    {
+      "name": "宰予",
+      "category": "文臣",
+      "paragraph_from": 34,
+      "paragraph_to": 39,
+      "boundary_evidence": {
+        "open_paragraph": 34,
+        "open_phrase": "宰予字子我。利口辩辞。既受业，问：“三年之丧不已久乎？君子三年不为礼，礼必坏；三",
+        "close_paragraph": 39,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P34–P39"
+      }
+    },
+    {
+      "name": "子贡",
+      "category": "文臣",
+      "paragraph_from": 40,
+      "paragraph_to": 58,
+      "boundary_evidence": {
+        "open_paragraph": 40,
+        "open_phrase": "端沐赐，卫人，字子贡。少孔子三十一岁。",
+        "close_paragraph": 58,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P40–P58"
+      }
+    },
+    {
+      "name": "子夏",
+      "category": "文臣",
+      "paragraph_from": 62,
+      "paragraph_to": 66,
+      "boundary_evidence": {
+        "open_paragraph": 62,
+        "open_phrase": "卜商字子夏。少孔子四十四岁。",
+        "close_paragraph": 66,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P62–P66"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

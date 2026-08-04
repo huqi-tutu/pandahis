@@ -511,8 +511,11 @@ def run_llm_batch(
     timeout_sec: int = 180,
 ) -> Dict[str, dict]:
     """单批 LLM 调用，返回 {史略ID: 结果dict}。"""
+    from llm.config import ensure_annotate_model, get_provider_name, PROVIDER_DEEPSEEK  # 延迟导入
     from llm.provider import run_agent_turn  # 延迟导入
 
+    if get_provider_name() == PROVIDER_DEEPSEEK:
+        ensure_annotate_model()
     risk_n = sum(1 for e in batch if is_high_risk_entry(e))
     prompt = build_llm_prompt(category, batch)
     sid = "peak-" + hashlib.sha1(prompt.encode("utf-8")).hexdigest()[:12]

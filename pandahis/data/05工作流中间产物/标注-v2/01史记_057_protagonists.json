@@ -1,0 +1,24 @@
+{
+  "work": "01史记",
+  "vol": "057",
+  "volume_name": "绛侯周勃世家",
+  "volume_type_guess": "世家",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "周勃",
+      "category": "武将",
+      "reason": "人工订正"
+    },
+    {
+      "name": "周亚夫",
+      "category": "武将",
+      "reason": "人工订正"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

@@ -10,6 +10,7 @@ import re
 from typing import Any, Dict, List, Optional, Set, Tuple
 
 from coordinate_index import normalize_entry_category
+from canonical_resolve import resolve_canonical
 from emperor_resolve import (
     build_alias_to_canonical,
     build_emperor_info_index,
@@ -31,6 +32,9 @@ def _canon_name(name: str) -> str:
     n = (name or "").strip()
     if not n:
         return n
+    unified = resolve_canonical(n).canonical
+    if unified:
+        return unified
     return _alias_map().get(n, n)
 
 # LLM 常见误名（全局禁止作为 blocks/君王 最终名）
@@ -70,10 +74,10 @@ VOLUME_IDENTITY_RULES: Dict[Tuple[str, str], dict] = {
         "forbidden_categories": ["蕃祚"],
     },
     ("02汉书", "057"): {
-        "volume_hint": "文三王传 → 汉文帝三王合传，刘参、梁孝王、刘揖均须为宗戚；禁止回退为单主角或君王口径",
+        "volume_hint": "文三王传 → 汉文帝三王合传，刘参、刘武、刘揖均须为宗戚；禁止回退为单主角或君王口径",
         "required": [
             {"name": "刘参", "category": "宗戚"},
-            {"name": "梁孝王", "category": "宗戚"},
+            {"name": "刘武", "category": "宗戚"},
             {"name": "刘揖", "category": "宗戚"},
         ],
         "min_protagonists": 3,
@@ -94,31 +98,23 @@ VOLUME_IDENTITY_RULES: Dict[Tuple[str, str], dict] = {
     },
     ("01史记", "049"): {
         "volume_hint": (
-            "外戚世家 → 主轴为外戚女性（宗戚），按薄太后/窦太后/王太后/卫子夫分块；"
-            "P1–3 卷首总论（吕后事）exclude，吕太后主轴在 009 本纪；"
+            "外戚世家 → 新口径仅取王皇后（P16–28）、卫子夫（P29–34）；"
+            "薄太后/窦太后及余段世系链 exclude；吕太后主轴在 009 本纪；"
             "禁止以汉高祖/汉文帝/汉武帝为 protagonist"
         ),
         "required": [
-            {"name": "薄太后", "category": "宗戚"},
-            {"name": "窦太后", "category": "宗戚"},
-            {"name": "王太后", "category": "宗戚"},
+            {"name": "王皇后", "category": "宗戚"},
             {"name": "卫子夫", "category": "宗戚"},
         ],
         "forbidden_names": ["汉高祖", "汉文帝", "汉武帝", "吕太后"],
-        "min_protagonists": 4,
+        "min_protagonists": 2,
     },
     ("01史记", "059"): {
         "volume_hint": (
-            "五宗世家 → 景帝五母宗支合传（栗姬/程姬/贾夫人/唐姬/儿姁），"
-            "主轴为宗戚（同母宗亲），按五母分块；禁止藩王、汉景帝为 protagonist"
+            "五宗世家 → 新口径不取条目（全卷 exclude）；"
+            "禁止藩王、汉景帝及五母为 protagonist"
         ),
-        "required": [
-            {"name": "栗姬", "category": "宗戚"},
-            {"name": "程姬", "category": "宗戚"},
-            {"name": "贾夫人", "category": "宗戚"},
-            {"name": "唐姬", "category": "宗戚"},
-            {"name": "儿姁", "category": "宗戚"},
-        ],
+        "required": [],
         "forbidden_names": [
             "汉景帝",
             "河间献王",
@@ -127,18 +123,24 @@ VOLUME_IDENTITY_RULES: Dict[Tuple[str, str], dict] = {
             "长沙定王",
             "常山宪王",
             "临江闵王荣",
+            "栗姬",
+            "程姬",
+            "贾夫人",
+            "唐姬",
+            "儿姁",
         ],
-        "min_protagonists": 5,
+        "min_protagonists": 0,
+        "allow_empty_entries": True,
     },
     ("01史记", "060"): {
         "volume_hint": (
-            "三王世家 → 齐王刘闳、燕王旦、广陵王刘胥 各一块；"
-            "P12–17 为三王册命策，P18 仅太史公曰 exclude，"
-            "P19 起褚先生补述须归入三王块（禁止整段误标太史公曰）；"
-            "禁止以汉武帝为 protagonist"
+            "三王世家 → 新口径不取条目（全卷 exclude）；"
+            "禁止以汉武帝及三王为 protagonist"
         ),
-        "forbidden_names": ["汉武帝"],
-        "min_protagonists": 3,
+        "required": [],
+        "forbidden_names": ["汉武帝", "刘闳", "刘旦", "刘胥"],
+        "min_protagonists": 0,
+        "allow_empty_entries": True,
     },
 }
 
@@ -178,11 +180,11 @@ VOLUME_NAME_PATTERNS: List[dict] = [
         "name_re": r"文三王传",
         "required": [
             {"name": "刘参", "category": "宗戚"},
-            {"name": "梁孝王", "category": "宗戚"},
+            {"name": "刘武", "category": "宗戚"},
             {"name": "刘揖", "category": "宗戚"},
         ],
         "min_protagonists": 3,
-        "hint": "文帝三王合传 → 刘参、梁孝王、刘揖三主轴并立，分类为宗戚",
+        "hint": "文帝三王合传 → 刘参、刘武、刘揖三主轴并立，分类为宗戚",
     },
     {
         "name_re": r"匈奴传",
@@ -230,8 +232,8 @@ VOLUME_NAME_PATTERNS: List[dict] = [
             {"name": "子夏", "category": "文臣"},
         ],
         "forbidden_names": ["孔子", "仲尼弟子列传", "仲尼"],
-        "min_protagonists": 10,
-        "hint": "仲尼弟子列传：仅有独立叙事段的弟子为传主；P116 起名册/仅年名字一句带过须 exclude，禁止立条；禁止以孔子为卷主轴",
+        "min_protagonists": 5,
+        "hint": "仲尼弟子列传（v2）：Top5 主轴颜回/子路/宰予/子贡/子夏（须用通称，勿填仲由/端木赐/卜商）；其余弟子段落 Step1b 按独立叙事段归对应人或 exclude（名册/一句带过→世系链）",
     },
     {
         "name_re": r"儒林列传",

@@ -1,0 +1,35 @@
+{
+  "work": "01史记",
+  "vol": "037",
+  "volume_name": "卫康叔世家",
+  "volume_type_guess": "世家",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "卫康叔",
+      "category": "诸侯",
+      "rationale": "卷名『卫康叔世家』，卫康叔为卫国始封君，属封国世袭君主，非天下共主，故分类为诸侯。"
+    },
+    {
+      "name": "卫武公",
+      "category": "诸侯",
+      "rationale": "卫国历代重要国君之一，卫国由弱转强的关键君主，属封国世袭君主，分类为诸侯。"
+    },
+    {
+      "name": "卫庄公",
+      "category": "诸侯",
+      "rationale": "卫国重要国君，其时期卫国政局动荡，为卫国历史叙事的重要节点，属封国世袭君主，分类为诸侯。"
+    },
+    {
+      "name": "卫灵公",
+      "category": "诸侯",
+      "rationale": "卫国在位时间较长的国君，其时期卫国政治、外交活动丰富，为卫国世系中重要叙事段落，属封国世袭君主，分类为诸侯。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链",
+    "其他"
+  ]
+}

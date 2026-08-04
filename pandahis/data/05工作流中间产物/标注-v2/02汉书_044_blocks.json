@@ -1,0 +1,82 @@
+{
+  "work": "02汉书",
+  "vol": "044",
+  "total_paragraphs": 51,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "02汉书_044_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 51,
+      "paragraph_to": 51,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "韩信",
+      "category": "武将",
+      "paragraph_from": 2,
+      "paragraph_to": 23,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "韩信，淮阴人也。家贫无行，不得推择为吏，又不能治生为商贾，常从人寄食。其母死无以",
+        "close_paragraph": 23,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P23"
+      }
+    },
+    {
+      "name": "彭越",
+      "category": "武将",
+      "paragraph_from": 24,
+      "paragraph_to": 29,
+      "boundary_evidence": {
+        "open_paragraph": 24,
+        "open_phrase": "彭越字仲，昌邑人也。常渔巨野泽中，为盗。陈胜起，或谓越曰：“豪桀相立畔秦，仲可效",
+        "close_paragraph": 29,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P24–P29"
+      }
+    },
+    {
+      "name": "英布",
+      "category": "武将",
+      "paragraph_from": 30,
+      "paragraph_to": 42,
+      "boundary_evidence": {
+        "open_paragraph": 30,
+        "open_phrase": "黥布，六人也，姓英氏。少时客相之，当刑而王。及壮，坐法黥，布欣然笑曰：“人相我当",
+        "close_paragraph": 42,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P30–P42"
+      }
+    },
+    {
+      "name": "卢绾",
+      "category": "武将",
+      "paragraph_from": 43,
+      "paragraph_to": 49,
+      "boundary_evidence": {
+        "open_paragraph": 43,
+        "open_phrase": "卢绾，丰人也，与高祖同里。绾亲与高祖太上皇相爱，及生男，高祖、绾同日生，里中持羊",
+        "close_paragraph": 49,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P43–P49"
+      }
+    },
+    {
+      "name": "吴芮",
+      "category": "武将",
+      "paragraph_from": 50,
+      "paragraph_to": 50,
+      "boundary_evidence": {
+        "open_paragraph": 50,
+        "open_phrase": "吴芮，秦时番阳令也，甚得江湖间民心，号曰番君。天下之初叛秦也，黥布归芮，芮妻之，",
+        "close_paragraph": 50,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P50–P50"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

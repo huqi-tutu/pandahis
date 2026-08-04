@@ -1,72 +1,16 @@
 {
-  "五帝": {
-    "cw": {
-      "commentary_files": 37,
-      "witness_files": 37,
-      "commentary_rows": 180,
-      "witness_rows": 71,
-      "ids": 37
-    },
-    "relations": {
-      "files": 21,
-      "edges": 179,
-      "errors": 0
-    }
-  },
-  "夏": {
-    "cw": {
-      "commentary_files": 57,
-      "witness_files": 57,
-      "commentary_rows": 227,
-      "witness_rows": 29,
-      "ids": 57
-    },
-    "relations": {
-      "files": 39,
-      "edges": 192,
-      "errors": 0
-    }
-  },
-  "商": {
-    "cw": {
-      "commentary_files": 62,
-      "witness_files": 62,
-      "commentary_rows": 226,
-      "witness_rows": 114,
-      "ids": 62
-    },
-    "relations": {
-      "files": 43,
-      "edges": 296,
-      "errors": 0
-    }
-  },
-  "西周": {
-    "cw": {
-      "commentary_files": 66,
-      "witness_files": 66,
-      "commentary_rows": 288,
-      "witness_rows": 138,
-      "ids": 66
-    },
-    "relations": {
-      "files": 35,
-      "edges": 315,
-      "errors": 0
-    }
-  },
   "春秋": {
     "cw": {
       "commentary_files": 168,
       "witness_files": 168,
-      "commentary_rows": 646,
+      "commentary_rows": 649,
       "witness_rows": 187,
       "ids": 168
     },
     "relations": {
-      "files": 168,
-      "edges": 1396,
-      "errors": 0
+      "files": 167,
+      "edges": 1391,
+      "errors": 1
     }
   }
 }

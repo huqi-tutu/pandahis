@@ -1,0 +1,82 @@
+{
+  "work": "02汉书",
+  "vol": "079",
+  "total_paragraphs": 28,
+  "volume_subtype": "hezhuan",
+  "derived_from": "02汉书_079_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 28,
+      "paragraph_to": 28,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "杨王孙",
+      "category": "庶众",
+      "paragraph_from": 2,
+      "paragraph_to": 5,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "杨王孙者，孝武时人也。学黄、老之术，家业千余，厚自奉养生，亡所不致。及病且终，先",
+        "close_paragraph": 5,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P5"
+      }
+    },
+    {
+      "name": "胡建",
+      "category": "文臣",
+      "paragraph_from": 6,
+      "paragraph_to": 7,
+      "boundary_evidence": {
+        "open_paragraph": 6,
+        "open_phrase": "胡建字子孟，河东人也。孝武天汉中，守军正丞，贫亡车马，常步与走卒起居，所以尉荐走",
+        "close_paragraph": 7,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P6–P7"
+      }
+    },
+    {
+      "name": "朱云",
+      "category": "文臣",
+      "paragraph_from": 8,
+      "paragraph_to": 15,
+      "boundary_evidence": {
+        "open_paragraph": 8,
+        "open_phrase": "朱云字游，鲁人也，徙平陵。少时通轻侠，借客报仇。长八尺余，容貌甚壮，以勇力闻。年",
+        "close_paragraph": 15,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P8–P15"
+      }
+    },
+    {
+      "name": "梅福",
+      "category": "文臣",
+      "paragraph_from": 16,
+      "paragraph_to": 26,
+      "boundary_evidence": {
+        "open_paragraph": 16,
+        "open_phrase": "梅福字子真，九江寿春人也。少学长安，明《尚书》《谷梁春秋》，为郡文学，补南昌尉。",
+        "close_paragraph": 26,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P16–P26"
+      }
+    },
+    {
+      "name": "云敞",
+      "category": "文臣",
+      "paragraph_from": 27,
+      "paragraph_to": 27,
+      "boundary_evidence": {
+        "open_paragraph": 27,
+        "open_phrase": "云敞字幼孺，平陵人也。师事同县吴章，章治《尚书经》为博士。平帝以中山王即帝位，年",
+        "close_paragraph": 27,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P27–P27"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

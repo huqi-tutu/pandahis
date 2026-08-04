@@ -464,7 +464,7 @@ def inject_exit_supplements_plan(plan: Dict[str, Any], recalled: Dict[str, Any])
                     "主题": "本传退场/收束",
                     "出处": raw_src,
                     "补全类型": "补充细节",
-                    "与母本关系": "母本段落域未收录该退场句，须在正文尾部补入",
+                    "与母本关系": "母本段落域未收录该退场句，须在正文尾部补入（1句）；若 Phase1 已译出同传主退场则禁止采用",
                     "母本锚点": "tail",
                     "采用": adopt,
                     "理由": text,

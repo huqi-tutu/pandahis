@@ -1,0 +1,107 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00944",
+  "写作结构": "正史叙述以《史记·秦始皇本纪》为基底，已由翻译详录支撑。史外拓展可点出《汉书·贾山传》等正史另有形制异说，但出于禁用细节不展开；重点采用出土秦简（如岳麓简）中驰道管理律令，揭示行政运作；其余后世综述留白不录。",
+  "候选著作": [
+    {
+      "出处": "《史记·秦始皇本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载始皇二十七年治驰道，为条目核心叙事来源",
+      "检索词": "治驰道",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《汉书·贾山传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "载有秦驰道形制(道广五十步等)，因属二十四史且包含禁止细节，仅作异说存在提示",
+      "检索词": "秦为驰道",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《岳麓书院藏秦简（肆）·关市律/行书律相关》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "出土秦简中发现与驰道使用、养护、通行限制相关的律令条文，反映驰道管理行政细节",
+      "检索词": "驰道 律",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《资治通鉴·秦纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋人综述秦修驰道事，无超出正史的新记载，仅作编年整理",
+      "检索词": "秦王二十七年 驰道",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·秦始皇本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载始皇二十七年治驰道，为条目核心叙事来源",
+      "检索词": "治驰道",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《汉书·贾山传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "载有秦驰道形制(道广五十步等)，因属二十四史且包含禁止细节，仅作异说存在提示",
+      "检索词": "秦为驰道",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《岳麓书院藏秦简（肆）·关市律/行书律相关》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "出土秦简中发现与驰道使用、养护、通行限制相关的律令条文，反映驰道管理行政细节",
+      "检索词": "驰道 律",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《资治通鉴·秦纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋人综述秦修驰道事，无超出正史的新记载，仅作编年整理",
+      "检索词": "秦王二十七年 驰道",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 1,
+    "C_excluded": 3,
+    "overall": "B"
+  }
+}

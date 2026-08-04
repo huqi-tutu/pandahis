@@ -1,0 +1,25 @@
+{
+  "work": "02汉书",
+  "vol": "086",
+  "volume_name": "魏相丙吉传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "魏相",
+      "category": "文臣",
+      "rationale": "《魏相丙吉传》卷名首列魏相，为西汉宣帝朝丞相，以行政辅政为主轴，属文臣列传合传主人公。"
+    },
+    {
+      "name": "丙吉",
+      "category": "文臣",
+      "rationale": "《魏相丙吉传》卷名并列丙吉，为西汉宣帝朝丞相，以行政辅政为主轴，属文臣列传合传主人公。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

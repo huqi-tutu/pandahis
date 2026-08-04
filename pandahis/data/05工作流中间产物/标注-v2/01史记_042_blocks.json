@@ -1,0 +1,101 @@
+{
+  "work": "01史记",
+  "vol": "042",
+  "total_paragraphs": 76,
+  "volume_subtype": "hezhuan",
+  "derived_from": "01史记_042_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 26,
+      "paragraph_to": 50,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 65,
+      "paragraph_to": 75,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 76,
+      "paragraph_to": 76,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "郑桓公",
+      "category": "诸侯",
+      "paragraph_from": 1,
+      "paragraph_to": 4,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "郑桓公友者，周厉王少子而宣王庶弟也。宣王立二十二年，友初封于郑。封三十三岁，百姓",
+        "close_paragraph": 4,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P1–P4"
+      }
+    },
+    {
+      "name": "郑庄公",
+      "category": "诸侯",
+      "paragraph_from": 5,
+      "paragraph_to": 12,
+      "boundary_evidence": {
+        "open_paragraph": 5,
+        "open_phrase": "武公十年，娶申侯女为夫人，曰武姜。生太子寤生，生之难，及生，夫人弗爱。后生少子叔",
+        "close_paragraph": 12,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P5–P12"
+      }
+    },
+    {
+      "name": "郑厉公",
+      "category": "诸侯",
+      "paragraph_from": 13,
+      "paragraph_to": 25,
+      "boundary_evidence": {
+        "open_paragraph": 13,
+        "open_phrase": "庄公又娶宋雍氏女，生厉公突。雍氏有宠於宋。宋庄公闻祭仲之立忽，乃使人诱召祭仲而执",
+        "close_paragraph": 25,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P13–P25"
+      }
+    },
+    {
+      "name": "郑简公",
+      "category": "诸侯",
+      "paragraph_from": 51,
+      "paragraph_to": 58,
+      "boundary_evidence": {
+        "open_paragraph": 51,
+        "open_phrase": "釐公五年，郑相子驷朝釐公，釐公不礼。子驷怒，使厨人药杀釐公，赴诸侯曰“釐公暴病卒",
+        "close_paragraph": 58,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P51–P58"
+      }
+    },
+    {
+      "name": "郑定公",
+      "category": "诸侯",
+      "paragraph_from": 59,
+      "paragraph_to": 64,
+      "boundary_evidence": {
+        "open_paragraph": 59,
+        "open_phrase": "三十六年，简公卒，子定公宁立。秋，定公朝晋昭公。",
+        "close_paragraph": 64,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P59–P64"
+      }
+    }
+  ],
+  "multi_owner_segments": [
+    {
+      "paragraph": 59,
+      "owners": [
+        {
+          "name": "郑简公",
+          "category": "诸侯"
+        },
+        {
+          "name": "郑定公",
+          "category": "诸侯"
+        }
+      ]
+    }
+  ]
+}

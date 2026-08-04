@@ -1,0 +1,1050 @@
+{
+  "volume": "楚世家",
+  "source_file": "01史记_040_楚世家第十.txt",
+  "total_paragraphs": 134,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 2,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 3,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "楚熊绎",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 6,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 7,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 8,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 9,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 10,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 11,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 12,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 13,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "楚武王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "楚武王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "楚武王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "楚武王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "楚武王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 20,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 21,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 22,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 23,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 24,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 25,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 26,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 27,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 28,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 29,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "楚庄王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "楚庄王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "楚庄王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "楚庄王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "楚庄王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "楚庄王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "楚庄王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "楚庄王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "楚庄王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "楚庄王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "楚庄王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "楚庄王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "楚庄王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 44,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "楚灵王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [
+        {
+          "name": "楚灵王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 47,
+      "owners": [
+        {
+          "name": "楚灵王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 48,
+      "owners": [
+        {
+          "name": "楚灵王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 49,
+      "owners": [
+        {
+          "name": "楚灵王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 50,
+      "owners": [
+        {
+          "name": "楚灵王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 51,
+      "owners": [
+        {
+          "name": "楚灵王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 52,
+      "owners": [
+        {
+          "name": "楚灵王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 53,
+      "owners": [
+        {
+          "name": "楚灵王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 54,
+      "owners": [
+        {
+          "name": "楚灵王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 55,
+      "owners": [
+        {
+          "name": "楚灵王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 56,
+      "owners": [
+        {
+          "name": "楚平王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 57,
+      "owners": [
+        {
+          "name": "楚平王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 58,
+      "owners": [
+        {
+          "name": "楚平王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 59,
+      "owners": [
+        {
+          "name": "楚平王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 60,
+      "owners": [
+        {
+          "name": "楚平王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 61,
+      "owners": [
+        {
+          "name": "楚平王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 62,
+      "owners": [
+        {
+          "name": "楚平王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 63,
+      "owners": [
+        {
+          "name": "楚平王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 64,
+      "owners": [
+        {
+          "name": "楚平王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 65,
+      "owners": [
+        {
+          "name": "楚平王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 66,
+      "owners": [
+        {
+          "name": "楚平王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 67,
+      "owners": [
+        {
+          "name": "楚平王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 68,
+      "owners": [
+        {
+          "name": "楚平王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 69,
+      "owners": [
+        {
+          "name": "楚平王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 70,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 71,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 72,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 73,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 74,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 75,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 76,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 77,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 78,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 79,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 80,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 81,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 82,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 83,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 84,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 85,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 86,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 87,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 88,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 89,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 90,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 91,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 92,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 93,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 94,
+      "owners": [
+        {
+          "name": "楚怀王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 95,
+      "owners": [
+        {
+          "name": "楚怀王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 96,
+      "owners": [
+        {
+          "name": "楚怀王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 97,
+      "owners": [
+        {
+          "name": "楚怀王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 98,
+      "owners": [
+        {
+          "name": "楚怀王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 99,
+      "owners": [
+        {
+          "name": "楚怀王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 100,
+      "owners": [
+        {
+          "name": "楚怀王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 101,
+      "owners": [
+        {
+          "name": "楚怀王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 102,
+      "owners": [
+        {
+          "name": "楚怀王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 103,
+      "owners": [
+        {
+          "name": "楚怀王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 104,
+      "owners": [
+        {
+          "name": "楚怀王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 105,
+      "owners": [
+        {
+          "name": "楚怀王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 106,
+      "owners": [
+        {
+          "name": "楚怀王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 107,
+      "owners": [
+        {
+          "name": "楚怀王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 108,
+      "owners": [
+        {
+          "name": "楚怀王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 109,
+      "owners": [
+        {
+          "name": "楚怀王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 110,
+      "owners": [
+        {
+          "name": "楚怀王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 111,
+      "owners": [
+        {
+          "name": "楚怀王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 112,
+      "owners": [
+        {
+          "name": "楚怀王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 113,
+      "owners": [
+        {
+          "name": "楚怀王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 114,
+      "owners": [
+        {
+          "name": "楚怀王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 115,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 116,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 117,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 118,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 119,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 120,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 121,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 122,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 123,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 124,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 125,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 126,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 127,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 128,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 129,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 130,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 131,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 132,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 133,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 134,
+      "owners": [],
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SHIJI_040_01",
+      "史略名称": "楚平王",
+      "史略简介": "楚平王",
+      "原文字句": "初王及子晳遂自杀。丙辰，弃疾即位为王，改名熊居，是为平王。",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷40·楚世家》",
+      "paragraphs": [
+        {
+          "volume": "楚世家",
+          "paragraph_from": 56,
+          "paragraph_to": 69
+        }
+      ],
+      "五级细坐标": "史记·卷040·诸侯·01",
+      "六级段落锚点": "[P56-P69]",
+      "原文出处": "楚世家·P56-P69"
+    },
+    {
+      "史略ID": "SHIJI_040_02",
+      "史略名称": "楚庄王",
+      "史略简介": "楚庄王",
+      "原文字句": "穆王立，以其太子宫予潘崇，使为太师，掌国事。穆王三年，灭江。四年，灭六、蓼。六、蓼，皋陶之后。八年，伐陈。十二年，卒。子庄王侣立。",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷40·楚世家》",
+      "paragraphs": [
+        {
+          "volume": "楚世家",
+          "paragraph_from": 30,
+          "paragraph_to": 42
+        }
+      ],
+      "五级细坐标": "史记·卷040·诸侯·02",
+      "六级段落锚点": "[P30-P42]",
+      "原文出处": "楚世家·P30-P42"
+    },
+    {
+      "史略ID": "SHIJI_040_03",
+      "史略名称": "楚怀王",
+      "史略简介": "楚怀王",
+      "原文字句": "十一年，威王卒，子怀王熊槐立。魏闻楚丧，伐楚，取我陉山。",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷40·楚世家》",
+      "paragraphs": [
+        {
+          "volume": "楚世家",
+          "paragraph_from": 94,
+          "paragraph_to": 114
+        }
+      ],
+      "五级细坐标": "史记·卷040·诸侯·03",
+      "六级段落锚点": "[P94-P114]",
+      "原文出处": "楚世家·P94-P114"
+    },
+    {
+      "史略ID": "SHIJI_040_04",
+      "史略名称": "楚武王",
+      "史略简介": "楚武王",
+      "原文字句": "二十七年，若敖卒，子熊坎立，是为霄敖。霄敖六年，卒，子熊眴立，是为蚡冒。蚡冒十三年，晋始乱，以曲沃之故。蚡冒十七年，卒。蚡冒弟熊通弑蚡冒子而代立，是为楚武王。",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷40·楚世家》",
+      "paragraphs": [
+        {
+          "volume": "楚世家",
+          "paragraph_from": 14,
+          "paragraph_to": 18
+        }
+      ],
+      "五级细坐标": "史记·卷040·诸侯·04",
+      "六级段落锚点": "[P14-P18]",
+      "原文出处": "楚世家·P14-P18"
+    },
+    {
+      "史略ID": "SHIJI_040_05",
+      "史略名称": "楚灵王",
+      "史略简介": "楚灵王",
+      "原文字句": "康王宠弟公子围、子比、子晳、弃疾。郏敖三年，以其季父康王弟公子围为令尹，主兵事。四年，围使郑，道闻王疾而还。十二月己酉，围入问王疾，绞而弑之，遂杀其子莫及平夏。使使赴於郑。伍举问曰：“谁为后？”对曰：“寡大夫围。”伍举更曰：“共王之子围为长。”子比奔晋，而围立，是为灵王。",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷40·楚世家》",
+      "paragraphs": [
+        {
+          "volume": "楚世家",
+          "paragraph_from": 45,
+          "paragraph_to": 55
+        }
+      ],
+      "五级细坐标": "史记·卷040·诸侯·05",
+      "六级段落锚点": "[P45-P55]",
+      "原文出处": "楚世家·P45-P55"
+    },
+    {
+      "史略ID": "SHIJI_040_06",
+      "史略名称": "楚熊绎",
+      "史略简介": "楚熊绎",
+      "原文字句": "熊绎当周成王之时，举文、武勤劳之后嗣，而封熊绎於楚蛮，封以子男之田，姓羋氏，居丹阳。楚子熊绎与鲁公伯禽、卫康叔子牟、晋侯燮、齐太公子吕伋俱事成王。",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷40·楚世家》",
+      "paragraphs": [
+        {
+          "volume": "楚世家",
+          "paragraph_from": 4,
+          "paragraph_to": 4
+        }
+      ],
+      "五级细坐标": "史记·卷040·诸侯·06",
+      "六级段落锚点": "[P4]",
+      "原文出处": "楚世家·P4"
+    }
+  ]
+}

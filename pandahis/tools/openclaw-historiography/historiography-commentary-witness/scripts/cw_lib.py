@@ -20,8 +20,9 @@ if str(OPENCLAW_ROOT) not in sys.path:
     sys.path.insert(0, str(OPENCLAW_ROOT))
 
 from paths_config import histograph_paths, validate_histograph_root  # noqa: E402
+from llm.config import MODEL_PRO, ensure_deepseek_v4_pro as pin_deepseek_v4_pro  # noqa: E402
 
-REQUIRED_MODEL = "deepseek-v4-pro"
+REQUIRED_MODEL = MODEL_PRO
 Mode = Literal["commentary", "witness"]
 
 STATUS_DONE = "done"
@@ -56,18 +57,14 @@ def load_env() -> None:
 
 def ensure_deepseek_v4_pro() -> str:
     load_env()
-    os.environ["HIST_LLM_PROVIDER"] = "deepseek"
-    os.environ["DEEPSEEK_MODEL"] = REQUIRED_MODEL
-    from llm.config import deepseek_settings, get_provider_name, provider_label  # noqa: WPS433
+    from llm.config import deepseek_settings, get_provider_name  # noqa: WPS433
 
     if get_provider_name() != "deepseek":
         raise RuntimeError("评述/见证补全仅支持 HIST_LLM_PROVIDER=deepseek")
     settings = deepseek_settings()
     if str(settings.get("api_key", "")).strip() == "":
         raise RuntimeError("请设置 DEEPSEEK_API_KEY（tools/openclaw-historiography/.env）")
-    if str(settings.get("model", "")) != REQUIRED_MODEL:
-        raise RuntimeError(f"模型必须为 {REQUIRED_MODEL}，当前为 {settings.get('model')!r}")
-    return provider_label()
+    return pin_deepseek_v4_pro()
 
 
 def call_llm(prompt: str, *, session_prefix: str, timeout_sec: int = 900) -> str:
@@ -375,7 +372,13 @@ def build_prompt(
             f"- 史略分类: {category}\n\n"
             "## 质量要求\n"
             "- 见证力分层：A+本人造物 > A确证陵墓/出土 > B早期存在性（上古）"
-            " > C专属空间 > D后世纪念 > E软关联。\n"
+            " > C专属空间 > D后世纪念 > F文学见证 > E软关联。\n"
+            "- **附加 F 文学见证**：额外 0–1 条，不计入 1–5 主名额；"
+            "取全史略最知名、影响力最大的艺术创作一条；字段 `附加文学见证: true`；"
+            "- 附加 F 排 entries 末尾；`附加文学见证: true`；诗歌须引原文"
+            "（≤8句全文，>8句引2–8句）；**介绍须全中文，禁止夹杂英文**。\n"
+            "- **F 层（主名额内仍禁止多条诗词）**：后世诗、词、曲、赋、杂剧、小说等；"
+            "证明文化记忆与艺术再现。本人著作/作品仍归 A+；学术论赞归 08 评述。\n"
             "- **E 层（现代纪念碑、纯传说软关联、「传为」陵墓）不得标 P0**；"
             "仅有 E 时优先输出 []（空结果勇气）。\n"
             "- 上古人物：确有的早期存在性物证（如陈侯因齐敦类）必须纳入。\n"
@@ -502,6 +505,11 @@ def normalize_witness_entries(
                 "文物图片": "",
                 "文物优先级": pri,
                 "优先级判定理由": str(row.get("优先级判定理由") or "").strip(),
+                **(
+                    {"附加文学见证": True}
+                    if row.get("附加文学见证") is True
+                    else {}
+                ),
             }
         )
     return out
@@ -619,8 +627,9 @@ def compose_one(
             )
         else:
             bib_hint = (
-                "\n见证分层：A+造物>A确证陵墓>B早期存在性>C专属>D纪念>E软关联；"
-                "E不得P0；仅有E则输出[]；制度类须写时间跨度。\n"
+                "\n见证分层：A+造物>A确证陵墓>B早期存在性>C专属>D纪念>F文学见证>E软关联；"
+                "E/F不得P0；仅有E则输出[]；制度类须写时间跨度；"
+                "文学见证须写定本出处与后世观点。\n"
             )
         if extra_prompt.strip():
             bib_hint += f"\n本批次额外约束：\n{extra_prompt.strip()}\n"

@@ -1,0 +1,52 @@
+{
+  "work": "01史记",
+  "vol": "082",
+  "total_paragraphs": 15,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 10,
+      "paragraph_to": 10,
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph_from": 11,
+      "paragraph_to": 11,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 12,
+      "paragraph_to": 12,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 13,
+      "paragraph_to": 13,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 14,
+      "paragraph_to": 14,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 15,
+      "paragraph_to": 15,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "田单",
+      "category": "武将",
+      "paragraph_from": 1,
+      "paragraph_to": 9,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "田单者，齐诸田疏属也。湣王时，单为临菑市掾，不见知。及燕使乐毅伐破齐，齐湣王出奔",
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

@@ -1,0 +1,37 @@
+{
+  "work": "02汉书",
+  "vol": "103",
+  "volume_name": "酷吏传",
+  "volume_type_guess": "列传",
+  "volume_arc": "C",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "郅都",
+      "category": "文臣",
+      "rationale": "《酷吏传》用户指定史略主人公，叙事块 P4–P8。"
+    },
+    {
+      "name": "王温舒",
+      "category": "文臣",
+      "rationale": "《酷吏传》用户指定史略主人公，叙事块 P19–P23。"
+    },
+    {
+      "name": "田延年",
+      "category": "文臣",
+      "rationale": "《酷吏传》用户指定史略主人公，叙事块 P30–P31。"
+    },
+    {
+      "name": "严延年",
+      "category": "文臣",
+      "rationale": "《酷吏传》用户指定史略主人公，叙事块 P32–P37。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "共段总述"
+  ]
+}

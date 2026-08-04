@@ -38,8 +38,13 @@ Step 1 负责「该不该建条、块归谁」；Step 3（audit）负责语义�
 默认根目录为项目 `pandahis/pandahis`（`paths_config.py` 自动推导），可通过环境变量覆盖：
 
 ```bash
-export HISTOGRAPH_ROOT=/path/to/pandahis/pandahis   # 可选
+export HISTOGRAPH_ROOT=/path/to/padanhis/pandahis   # 可选
+export HIST_LLM_PROVIDER=deepseek
+# 标注模型由代码写死：llm.config.ensure_annotate_model() → deepseek-v4-flash
+# DEEPSEEK_API_KEY 见 tools/openclaw-historiography/.env
 ```
+
+**LLM 通道（Step1 / Step3 / Step4）**：编排器 `lib/adapters/openclaw.run_agent_turn` 与 annotate 附属脚本调用前 **`ensure_annotate_model()`** → **`deepseek-v4-flash`**；与 `.env` 中 `DEEPSEEK_MODEL`（默认 Pro）无关。
 
 | 用途 | 路径（相对 HISTOGRAPH_ROOT） |
 |------|------------------------------|

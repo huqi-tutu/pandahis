@@ -1,0 +1,25 @@
+{
+  "work": "02汉书",
+  "vol": "095",
+  "volume_name": "薛宣朱博传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "薛宣",
+      "category": "文臣",
+      "rationale": "《薛宣朱博传》卷名首列人物，合传主人公之一。薛宣为西汉丞相，以行政刑名仕宦为主轴，属文臣。"
+    },
+    {
+      "name": "朱博",
+      "category": "文臣",
+      "rationale": "《薛宣朱博传》卷名并列人物，合传主人公之一。朱博为西汉御史大夫、丞相，以行政仕宦为主轴，属文臣。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

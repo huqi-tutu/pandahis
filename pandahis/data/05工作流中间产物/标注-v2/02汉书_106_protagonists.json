@@ -1,0 +1,42 @@
+{
+  "work": "02汉书",
+  "vol": "106",
+  "volume_name": "佞幸传",
+  "volume_type_guess": "列传",
+  "volume_arc": "C",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "邓通",
+      "category": "庶众",
+      "rationale": "《佞幸传》用户指定史略主人公，叙事块 P3–P6。"
+    },
+    {
+      "name": "韩嫣",
+      "category": "庶众",
+      "rationale": "《佞幸传》用户指定史略主人公，叙事块 P8–P11。"
+    },
+    {
+      "name": "李延年",
+      "category": "庶众",
+      "rationale": "《佞幸传》用户指定史略主人公，叙事块 P12–P12。"
+    },
+    {
+      "name": "石显",
+      "category": "宦官",
+      "rationale": "《佞幸传》用户指定史略主人公，叙事块 P14–P20。"
+    },
+    {
+      "name": "董贤",
+      "category": "庶众",
+      "rationale": "《佞幸传》用户指定史略主人公，叙事块 P26–P34。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "共段总述"
+  ]
+}

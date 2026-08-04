@@ -1,0 +1,58 @@
+{
+  "work": "02汉书",
+  "vol": "047",
+  "total_paragraphs": 19,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "02汉书_047_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 19,
+      "paragraph_to": 19,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "季布",
+      "category": "武将",
+      "paragraph_from": 2,
+      "paragraph_to": 7,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "季布，楚人也，为任侠有名。项籍使将兵，数窘汉王。顶籍灭，高祖购求布千金，敢有舍匿",
+        "close_paragraph": 7,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P7"
+      }
+    },
+    {
+      "name": "栾布",
+      "category": "武将",
+      "paragraph_from": 8,
+      "paragraph_to": 10,
+      "boundary_evidence": {
+        "open_paragraph": 8,
+        "open_phrase": "栾布，梁人也。彭越为家人时，尝与布游，穷困，卖庸于齐，为酒家保。数岁别去，而布为",
+        "close_paragraph": 10,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P8–P10"
+      }
+    },
+    {
+      "name": "田叔",
+      "category": "文臣",
+      "paragraph_from": 11,
+      "paragraph_to": 18,
+      "boundary_evidence": {
+        "open_paragraph": 11,
+        "open_phrase": "田叔，赵陉城人也。其先，齐田氏也。叔好俞，学黄老术于乐巨公。为人廉直，喜任侠。游",
+        "close_paragraph": 18,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P11–P18"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

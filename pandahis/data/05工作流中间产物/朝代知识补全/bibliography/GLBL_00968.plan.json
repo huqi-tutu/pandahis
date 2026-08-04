@@ -1,0 +1,133 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00968",
+  "写作结构": "正史叙述以《史记·项羽本纪》《高祖本纪》《汉书·吴芮传》为主，见翻译详录；拓展文补入《楚汉春秋》佚文、《水经注》地理遗踪、《搜神记》冢墓异说等史外文献，呈现长沙国初封面貌与后世传说。",
+  "候选著作": [
+    {
+      "出处": "《楚汉春秋·辑佚》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "为陆贾所撰记楚汉间事，存有吴芮居番阳时得民心的佚文，可补正史细节",
+      "检索词": "吴芮番君",
+      "采用": true,
+      "原文摘句": "吴芮为番阳令，甚得江湖间心，号曰番君。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《水经注·卷三十八》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "记载长沙城为吴芮始筑，提供长沙国都地理遗踪",
+      "检索词": "吴芮长沙城",
+      "采用": true,
+      "原文摘句": "县故长沙郡治，汉高祖五年封吴芮为长沙王，城即芮筑也。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《搜神记·卷十五》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "记录吴芮冢被掘、尸身不腐及显灵异事，属后世志怪传说",
+      "检索词": "长沙王吴芮冢",
+      "采用": true,
+      "原文摘句": "汉长沙王吴芮冢……开之，见芮尸容貌如生，微有生气，棺前器物并朽，唯手中玉卮俨然。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《汉书·韩彭英卢吴传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史系统记载吴芮生平，内容由翻译详录处理",
+      "检索词": "吴芮",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "N/A"
+    },
+    {
+      "出处": "《史记·高祖功臣侯者年表》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "列吴芮封长沙王侯国世系，属正史表志，翻译详录处理",
+      "检索词": "吴芮",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "N/A"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《楚汉春秋·辑佚》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "为陆贾所撰记楚汉间事，存有吴芮居番阳时得民心的佚文，可补正史细节",
+      "检索词": "吴芮番君",
+      "采用": true,
+      "原文摘句": "吴芮为番阳令，甚得江湖间心，号曰番君。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《水经注·卷三十八》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "记载长沙城为吴芮始筑，提供长沙国都地理遗踪",
+      "检索词": "吴芮长沙城",
+      "采用": true,
+      "原文摘句": "县故长沙郡治，汉高祖五年封吴芮为长沙王，城即芮筑也。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《汉书·韩彭英卢吴传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史系统记载吴芮生平，内容由翻译详录处理",
+      "检索词": "吴芮",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "N/A"
+    },
+    {
+      "出处": "《史记·高祖功臣侯者年表》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "列吴芮封长沙王侯国世系，属正史表志，翻译详录处理",
+      "检索词": "吴芮",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "N/A"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《搜神记·卷十五》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "记录吴芮冢被掘、尸身不腐及显灵异事，属后世志怪传说",
+      "检索词": "长沙王吴芮冢",
+      "采用": true,
+      "原文摘句": "汉长沙王吴芮冢……开之，见芮尸容貌如生，微有生气，棺前器物并朽，唯手中玉卮俨然。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 3,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

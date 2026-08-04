@@ -1,0 +1,19 @@
+{
+  "work": "01史记",
+  "vol": "108",
+  "volume_name": "韩长孺列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "韩安国",
+      "category": "文臣",
+      "rationale": "卷名『韩长孺列传』，韩长孺即韩安国之字，本卷为单人列传，主轴为韩安国。韩安国历仕汉景帝、汉武帝朝，以御史大夫、材官将军等文职与军事参谋身份参与朝政与边疆事务，属以行政、外交、谋略仕宦为主轴的文臣列传。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "work": "02汉书",
+  "vol": "081",
+  "total_paragraphs": 46,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "02汉书_081_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 46,
+      "paragraph_to": 46,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "赵充国",
+      "category": "武将",
+      "paragraph_from": 2,
+      "paragraph_to": 40,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "赵充国字翁孙，陇西上邽人也，后徙金城邻居。始为骑士，以六郡良家子善骑射补羽林。为",
+        "close_paragraph": 40,
+        "close_note": "人工修正：P40 与辛庆忌双挂交接"
+      }
+    },
+    {
+      "name": "辛庆忌",
+      "category": "武将",
+      "paragraph_from": 40,
+      "paragraph_to": 45,
+      "boundary_evidence": {
+        "open_paragraph": 40,
+        "open_phrase": "充国为后将军，徙杜陵。辛观自羌军还后七年，复为破羌将军，征乌孙至敦煌，后不出，征",
+        "close_paragraph": 45,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P40–P45"
+      }
+    }
+  ],
+  "multi_owner_segments": [
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "赵充国",
+          "category": "武将"
+        },
+        {
+          "name": "辛庆忌",
+          "category": "武将"
+        }
+      ]
+    }
+  ]
+}

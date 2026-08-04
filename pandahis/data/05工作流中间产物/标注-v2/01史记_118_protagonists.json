@@ -1,0 +1,29 @@
+{
+  "work": "01史记",
+  "vol": "118",
+  "volume_name": "淮南衡山列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "刘长",
+      "category": "宗戚",
+      "rationale": "卷名『淮南衡山列传』，淮南王刘长为汉高祖之子、同姓藩王，卷中主轴人物之一，按史略分类归宗戚。"
+    },
+    {
+      "name": "刘安",
+      "category": "宗戚",
+      "rationale": "卷名『淮南衡山列传』，淮南王刘安为刘长之子、同姓藩王，卷中主轴人物之一，按史略分类归宗戚。"
+    },
+    {
+      "name": "刘赐",
+      "category": "宗戚",
+      "rationale": "卷名『淮南衡山列传』，衡山王刘赐为刘长之子、同姓藩王，卷中主轴人物之一，按史略分类归宗戚。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

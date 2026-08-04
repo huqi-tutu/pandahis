@@ -1,0 +1,339 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01000",
+  "写作结构": "核心叙事以《左传·定公四年》为本（事略定义已含），正史如《史记》本纪、世家、列传的相关记载由翻译详录提供。拓展文献优先采用清华简《系年》以见异同，并以《公羊传》《穀梁传》补充春秋经义层面的不同说法；《国语》《战国策》等注重因果与纵横之辞，可资旁证。后世演义如《吴越春秋》《越绝书》因传奇附会较多，按锚点回避原则不予采信；笔记、子书中的片断只在确有异说且无演绎细节时以B档引用。",
+  "候选著作": [
+    {
+      "出处": "《公羊传·定公四年》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "以问答体释经，可提供与《左传》侧重点不同的解释，如对‘吴入楚’书法的义例阐发。",
+      "检索词": "吴入楚",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《穀梁传·定公四年》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "同样释《春秋》经文，可能在吴子称谓、入郢名义上与《左传》《公羊》有别，可示异说。",
+      "检索词": "吴入郢",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《清华简·系年》第十五章",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "战国楚系史书，记载伍员奔吴、吴师入郢及楚昭王出奔等事，与《左传》叙事框架有重合亦有差异，是重要的出土异本。",
+      "检索词": "系年 吴入郢",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《国语·吴语》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "载有吴王阖闾、伍子胥等人的谋划与行事，可能涉及伐楚前后的决策背景。",
+      "检索词": "阖闾 伐楚",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《战国策·楚一》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "策士追述楚昭王出奔、申包胥哭秦庭等情，带游说辩辞色彩，可侧面反映事件在后人心中的政治喻义。",
+      "检索词": "包胥 哭秦庭",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《韩非子·喻老》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "借吴王阖闾战胜后骄逸的事例说理，可补战事影响方面的零散记载。",
+      "检索词": "阖闾 郢都",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《吕氏春秋·简选》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "提及吴王阖闾选士练兵，或与伐楚前军事准备有关。",
+      "检索词": "阖闾 选士",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·吴太伯世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史系统叙述吴国世系及阖闾破楚之事，由翻译详录处理，不额外摘句。",
+      "检索词": "",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《史记·楚世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史载楚昭王出奔、申包胥求救等，由翻译详录处理。",
+      "检索词": "",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《史记·伍子胥列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史详载伍员复仇过程，由翻译详录处理。",
+      "检索词": "",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《淮南子·泰族训》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "或引用吴楚战争的成败论述，属后世阐发，不作史实凭据。",
+      "检索词": "吴入郢 泰族",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《说苑·至公》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "记载申包胥等故事，细节或带铺演，按规则不采入正文。",
+      "检索词": "申包胥 秦庭",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《吴越春秋·阖闾内传》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "东汉成书，糅合大量传奇情节，正属锚点禁止的后世演义化描写，不予采用。",
+      "检索词": "吴入郢 阖闾内传",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《越绝书·吴内传》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "与《吴越春秋》同为后世杂史小说，多附会，不予采用。",
+      "检索词": "吴入郢 越绝书",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《公羊传·定公四年》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "以问答体释经，可提供与《左传》侧重点不同的解释，如对‘吴入楚’书法的义例阐发。",
+      "检索词": "吴入楚",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《穀梁传·定公四年》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "同样释《春秋》经文，可能在吴子称谓、入郢名义上与《左传》《公羊》有别，可示异说。",
+      "检索词": "吴入郢",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《清华简·系年》第十五章",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "战国楚系史书，记载伍员奔吴、吴师入郢及楚昭王出奔等事，与《左传》叙事框架有重合亦有差异，是重要的出土异本。",
+      "检索词": "系年 吴入郢",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《国语·吴语》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "载有吴王阖闾、伍子胥等人的谋划与行事，可能涉及伐楚前后的决策背景。",
+      "检索词": "阖闾 伐楚",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《战国策·楚一》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "策士追述楚昭王出奔、申包胥哭秦庭等情，带游说辩辞色彩，可侧面反映事件在后人心中的政治喻义。",
+      "检索词": "包胥 哭秦庭",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《韩非子·喻老》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "借吴王阖闾战胜后骄逸的事例说理，可补战事影响方面的零散记载。",
+      "检索词": "阖闾 郢都",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《吕氏春秋·简选》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "提及吴王阖闾选士练兵，或与伐楚前军事准备有关。",
+      "检索词": "阖闾 选士",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·吴太伯世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史系统叙述吴国世系及阖闾破楚之事，由翻译详录处理，不额外摘句。",
+      "检索词": "",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《史记·楚世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史载楚昭王出奔、申包胥求救等，由翻译详录处理。",
+      "检索词": "",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《史记·伍子胥列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史详载伍员复仇过程，由翻译详录处理。",
+      "检索词": "",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《淮南子·泰族训》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "或引用吴楚战争的成败论述，属后世阐发，不作史实凭据。",
+      "检索词": "吴入郢 泰族",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《说苑·至公》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "记载申包胥等故事，细节或带铺演，按规则不采入正文。",
+      "检索词": "申包胥 秦庭",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《吴越春秋·阖闾内传》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "东汉成书，糅合大量传奇情节，正属锚点禁止的后世演义化描写，不予采用。",
+      "检索词": "吴入郢 阖闾内传",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《越绝书·吴内传》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "与《吴越春秋》同为后世杂史小说，多附会，不予采用。",
+      "检索词": "吴入郢 越绝书",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 7,
+    "C_excluded": 7,
+    "overall": "B"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "work": "02汉书",
+  "vol": "057",
+  "volume_name": "文三王传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_arc": "C",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "interleaved",
+  "protagonists": [
+    {
+      "name": "刘参",
+      "category": "宗戚",
+      "rationale": "卷名所列文帝诸王之一，代孝王刘参，属合传明确主角。"
+    },
+    {
+      "name": "刘武",
+      "category": "宗戚",
+      "rationale": "卷名所列文帝次子，讳武，封梁孝王；史略名称取本名刘武，与刘参、刘揖体例一致。"
+    },
+    {
+      "name": "刘揖",
+      "category": "宗戚",
+      "rationale": "卷名所列三王之一，梁怀王，有独立段落记其好学、坠马而薨。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "世系链"
+  ]
+}

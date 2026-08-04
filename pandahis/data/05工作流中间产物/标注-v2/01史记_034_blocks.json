@@ -1,0 +1,80 @@
+{
+  "work": "01史记",
+  "vol": "034",
+  "total_paragraphs": 44,
+  "volume_subtype": "shijia_zhuhou",
+  "derived_from": "01史记_034_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 5,
+      "paragraph_to": 10,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 12,
+      "paragraph_to": 29,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 34,
+      "paragraph_to": 37,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 44,
+      "paragraph_to": 44,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "召公奭",
+      "category": "宗戚",
+      "paragraph_from": 1,
+      "paragraph_to": 4,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "召公奭与周同姓，姓姬氏。周武王之灭纣，封召公於北燕。",
+        "close_paragraph": 4,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P1–P4"
+      }
+    },
+    {
+      "name": "燕庄公",
+      "category": "君王",
+      "paragraph_from": 11,
+      "paragraph_to": 11,
+      "boundary_evidence": {
+        "open_paragraph": 11,
+        "open_phrase": "庄公十二年，齐桓公始霸。十六年，与宋、卫共伐周惠王，惠王出奔温，立惠王弟穨为周王",
+        "close_paragraph": 11,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P11–P11"
+      }
+    },
+    {
+      "name": "燕昭王",
+      "category": "君王",
+      "paragraph_from": 30,
+      "paragraph_to": 33,
+      "boundary_evidence": {
+        "open_paragraph": 30,
+        "open_phrase": "燕子之亡二年，而燕人共立太子平，是为燕昭王。",
+        "close_paragraph": 33,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P30–P33"
+      }
+    },
+    {
+      "name": "燕王喜",
+      "category": "君王",
+      "paragraph_from": 38,
+      "paragraph_to": 43,
+      "boundary_evidence": {
+        "open_paragraph": 38,
+        "open_phrase": "今王喜四年，秦昭王卒。燕王命相栗腹约欢赵，以五百金为赵王酒。还报燕王曰：“赵王壮",
+        "close_paragraph": 43,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P38–P43"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

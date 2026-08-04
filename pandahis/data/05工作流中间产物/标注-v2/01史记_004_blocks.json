@@ -1,0 +1,128 @@
+{
+  "work": "01史记",
+  "vol": "004",
+  "total_paragraphs": 100,
+  "volume_subtype": "benji_multi",
+  "derived_from": "01史记_004_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 7,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 30,
+      "paragraph_to": 31,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 37,
+      "paragraph_to": 37,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 41,
+      "paragraph_to": 43,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 53,
+      "paragraph_to": 99,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 100,
+      "paragraph_to": 100,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "周文王",
+      "category": "君王",
+      "paragraph_from": 8,
+      "paragraph_to": 13,
+      "boundary_evidence": {
+        "open_paragraph": 8,
+        "open_phrase": "公季卒，子昌立，是为西伯。西伯曰文王，遵后稷、公刘之业，则古公、公季之法，笃仁，",
+        "close_paragraph": 13,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P8–P13"
+      }
+    },
+    {
+      "name": "周武王",
+      "category": "君王",
+      "paragraph_from": 14,
+      "paragraph_to": 26,
+      "boundary_evidence": {
+        "open_paragraph": 14,
+        "open_phrase": "武王即位，太公望为师，周公旦为辅，召公、毕公之徒左右王，师脩文王绪业。",
+        "close_paragraph": 26,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P14–P26"
+      }
+    },
+    {
+      "name": "周成王",
+      "category": "君王",
+      "paragraph_from": 27,
+      "paragraph_to": 29,
+      "boundary_evidence": {
+        "open_paragraph": 27,
+        "open_phrase": "武王病。天下未集，群公惧，穆卜，周公乃祓斋，自为质，欲代武王，武王有瘳。后而崩，",
+        "close_paragraph": 29,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P27–P29"
+      }
+    },
+    {
+      "name": "周穆王",
+      "category": "君王",
+      "paragraph_from": 32,
+      "paragraph_to": 36,
+      "boundary_evidence": {
+        "open_paragraph": 32,
+        "open_phrase": "其卒不赴告，讳之也。立昭王子满，是为穆王。穆王即位，春秋已五十矣。王道衰微，穆王",
+        "close_paragraph": 36,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P32–P36"
+      }
+    },
+    {
+      "name": "周厉王",
+      "category": "君王",
+      "paragraph_from": 38,
+      "paragraph_to": 40,
+      "boundary_evidence": {
+        "open_paragraph": 38,
+        "open_phrase": "夷王崩，子厉王胡立。厉王即位三十年，好利，近荣夷公。大夫芮良夫谏厉王曰：“王室其",
+        "close_paragraph": 40,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P38–P40"
+      }
+    },
+    {
+      "name": "周幽王",
+      "category": "君王",
+      "paragraph_from": 44,
+      "paragraph_to": 52,
+      "boundary_evidence": {
+        "open_paragraph": 44,
+        "open_phrase": "四十六年，宣王崩，子幽王宫湦立。幽王二年，西周三川皆震。伯阳甫曰：“周将亡矣。夫",
+        "close_paragraph": 52,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P44–P52"
+      }
+    }
+  ],
+  "multi_owner_segments": [
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "周武王",
+          "category": "君王"
+        },
+        {
+          "name": "周成王",
+          "category": "君王"
+        }
+      ]
+    }
+  ]
+}

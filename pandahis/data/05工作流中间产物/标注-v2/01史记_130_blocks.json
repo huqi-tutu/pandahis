@@ -1,0 +1,727 @@
+{
+  "work": "01史记",
+  "vol": "130",
+  "total_paragraphs": 157,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 17,
+      "paragraph_to": 17,
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph_from": 18,
+      "paragraph_to": 18,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 19,
+      "paragraph_to": 19,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 20,
+      "paragraph_to": 20,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 21,
+      "paragraph_to": 21,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 22,
+      "paragraph_to": 22,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 23,
+      "paragraph_to": 23,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 24,
+      "paragraph_to": 24,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 25,
+      "paragraph_to": 25,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 26,
+      "paragraph_to": 26,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 27,
+      "paragraph_to": 27,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 28,
+      "paragraph_to": 28,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 29,
+      "paragraph_to": 29,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 30,
+      "paragraph_to": 30,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 31,
+      "paragraph_to": 31,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 32,
+      "paragraph_to": 32,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 33,
+      "paragraph_to": 33,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 34,
+      "paragraph_to": 34,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 35,
+      "paragraph_to": 35,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 36,
+      "paragraph_to": 36,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 37,
+      "paragraph_to": 37,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 38,
+      "paragraph_to": 38,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 39,
+      "paragraph_to": 39,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 40,
+      "paragraph_to": 40,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 41,
+      "paragraph_to": 41,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 42,
+      "paragraph_to": 42,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 43,
+      "paragraph_to": 43,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 44,
+      "paragraph_to": 44,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 45,
+      "paragraph_to": 45,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 46,
+      "paragraph_to": 46,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 47,
+      "paragraph_to": 47,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 48,
+      "paragraph_to": 48,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 49,
+      "paragraph_to": 49,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 50,
+      "paragraph_to": 50,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 51,
+      "paragraph_to": 51,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 52,
+      "paragraph_to": 52,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 53,
+      "paragraph_to": 53,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 54,
+      "paragraph_to": 54,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 55,
+      "paragraph_to": 55,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 56,
+      "paragraph_to": 56,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 57,
+      "paragraph_to": 57,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 58,
+      "paragraph_to": 58,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 59,
+      "paragraph_to": 59,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 60,
+      "paragraph_to": 60,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 61,
+      "paragraph_to": 61,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 62,
+      "paragraph_to": 62,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 63,
+      "paragraph_to": 63,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 64,
+      "paragraph_to": 64,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 65,
+      "paragraph_to": 65,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 66,
+      "paragraph_to": 66,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 67,
+      "paragraph_to": 67,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 68,
+      "paragraph_to": 68,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 69,
+      "paragraph_to": 69,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 70,
+      "paragraph_to": 70,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 71,
+      "paragraph_to": 71,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 72,
+      "paragraph_to": 72,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 73,
+      "paragraph_to": 73,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 74,
+      "paragraph_to": 74,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 75,
+      "paragraph_to": 75,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 76,
+      "paragraph_to": 76,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 77,
+      "paragraph_to": 77,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 78,
+      "paragraph_to": 78,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 79,
+      "paragraph_to": 79,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 80,
+      "paragraph_to": 80,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 81,
+      "paragraph_to": 81,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 82,
+      "paragraph_to": 82,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 83,
+      "paragraph_to": 83,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 84,
+      "paragraph_to": 84,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 85,
+      "paragraph_to": 85,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 86,
+      "paragraph_to": 86,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 87,
+      "paragraph_to": 87,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 88,
+      "paragraph_to": 88,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 89,
+      "paragraph_to": 89,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 90,
+      "paragraph_to": 90,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 91,
+      "paragraph_to": 91,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 92,
+      "paragraph_to": 92,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 93,
+      "paragraph_to": 93,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 94,
+      "paragraph_to": 94,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 95,
+      "paragraph_to": 95,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 96,
+      "paragraph_to": 96,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 97,
+      "paragraph_to": 97,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 98,
+      "paragraph_to": 98,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 99,
+      "paragraph_to": 99,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 100,
+      "paragraph_to": 100,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 101,
+      "paragraph_to": 101,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 102,
+      "paragraph_to": 102,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 103,
+      "paragraph_to": 103,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 104,
+      "paragraph_to": 104,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 105,
+      "paragraph_to": 105,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 106,
+      "paragraph_to": 106,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 107,
+      "paragraph_to": 107,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 108,
+      "paragraph_to": 108,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 109,
+      "paragraph_to": 109,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 110,
+      "paragraph_to": 110,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 111,
+      "paragraph_to": 111,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 112,
+      "paragraph_to": 112,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 113,
+      "paragraph_to": 113,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 114,
+      "paragraph_to": 114,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 115,
+      "paragraph_to": 115,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 116,
+      "paragraph_to": 116,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 117,
+      "paragraph_to": 117,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 118,
+      "paragraph_to": 118,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 119,
+      "paragraph_to": 119,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 120,
+      "paragraph_to": 120,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 121,
+      "paragraph_to": 121,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 122,
+      "paragraph_to": 122,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 123,
+      "paragraph_to": 123,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 124,
+      "paragraph_to": 124,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 125,
+      "paragraph_to": 125,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 126,
+      "paragraph_to": 126,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 127,
+      "paragraph_to": 127,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 128,
+      "paragraph_to": 128,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 129,
+      "paragraph_to": 129,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 130,
+      "paragraph_to": 130,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 131,
+      "paragraph_to": 131,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 132,
+      "paragraph_to": 132,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 133,
+      "paragraph_to": 133,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 134,
+      "paragraph_to": 134,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 135,
+      "paragraph_to": 135,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 136,
+      "paragraph_to": 136,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 137,
+      "paragraph_to": 137,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 138,
+      "paragraph_to": 138,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 139,
+      "paragraph_to": 139,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 140,
+      "paragraph_to": 140,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 141,
+      "paragraph_to": 141,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 142,
+      "paragraph_to": 142,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 143,
+      "paragraph_to": 143,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 144,
+      "paragraph_to": 144,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 145,
+      "paragraph_to": 145,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 146,
+      "paragraph_to": 146,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 147,
+      "paragraph_to": 147,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 148,
+      "paragraph_to": 148,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 149,
+      "paragraph_to": 149,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 150,
+      "paragraph_to": 150,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 151,
+      "paragraph_to": 151,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 152,
+      "paragraph_to": 152,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 153,
+      "paragraph_to": 153,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 154,
+      "paragraph_to": 154,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 155,
+      "paragraph_to": 155,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 156,
+      "paragraph_to": 156,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 157,
+      "paragraph_to": 157,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "司马迁",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 16,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "昔在颛顼，命南正重以司天，北正黎以司地。唐虞之际，绍重黎之后，使复典之，至于夏商",
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

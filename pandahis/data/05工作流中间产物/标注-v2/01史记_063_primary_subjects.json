@@ -1,0 +1,162 @@
+{
+  "work": "01史记",
+  "vol": "063",
+  "total_paragraphs": 30,
+  "method": "Step1b-α LLM",
+  "paragraphs": [
+    {
+      "paragraph": 1,
+      "primary_subject": "老子",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 2,
+      "primary_subject": "老子",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 3,
+      "primary_subject": "老子",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 4,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 5,
+      "primary_subject": "老子",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 6,
+      "primary_subject": "老子",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 7,
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 8,
+      "primary_subject": "老子",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 9,
+      "primary_subject": "庄子",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 10,
+      "primary_subject": "庄子",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 11,
+      "primary_subject": "庄子",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 12,
+      "primary_subject": "申不害",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 13,
+      "primary_subject": "申不害",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 14,
+      "primary_subject": "韩非",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 15,
+      "primary_subject": "韩非",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 16,
+      "primary_subject": "韩非",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 17,
+      "primary_subject": "韩非",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 18,
+      "primary_subject": "韩非",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 19,
+      "primary_subject": "韩非",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 20,
+      "primary_subject": "韩非",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 21,
+      "primary_subject": "韩非",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 22,
+      "primary_subject": "韩非",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 23,
+      "primary_subject": "韩非",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 24,
+      "primary_subject": "韩非",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 25,
+      "primary_subject": "韩非",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 26,
+      "primary_subject": "韩非",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 27,
+      "primary_subject": "韩非",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 28,
+      "primary_subject": "韩非",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 29,
+      "primary_subject": "论赞",
+      "disposition": "exclude",
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 30,
+      "primary_subject": "太史公曰",
+      "disposition": "exclude",
+      "exclude_reason": "太史公曰"
+    }
+  ]
+}

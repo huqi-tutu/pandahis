@@ -1,0 +1,923 @@
+{
+  "volume": "秦本纪",
+  "source_file": "01史记_005_秦本纪第五.txt",
+  "total_paragraphs": 118,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "benji_multi",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 2,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 3,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 4,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 5,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 6,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 7,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "非子",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "非子",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 11,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 12,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 13,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 14,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 15,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 16,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 17,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 18,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 19,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 20,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 21,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 22,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 23,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 24,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 25,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 26,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 27,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 28,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 29,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "秦穆公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "秦穆公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "秦穆公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "秦穆公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "秦穆公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "秦穆公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "秦穆公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "秦穆公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "秦穆公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "秦穆公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "秦穆公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "秦穆公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "秦穆公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "秦穆公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "秦穆公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "秦穆公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [
+        {
+          "name": "秦穆公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 47,
+      "owners": [
+        {
+          "name": "秦穆公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 48,
+      "owners": [
+        {
+          "name": "秦穆公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 49,
+      "owners": [
+        {
+          "name": "秦穆公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 50,
+      "owners": [
+        {
+          "name": "秦穆公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 51,
+      "owners": [
+        {
+          "name": "秦穆公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 52,
+      "owners": [
+        {
+          "name": "秦穆公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 53,
+      "owners": [
+        {
+          "name": "秦穆公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 54,
+      "owners": [
+        {
+          "name": "秦穆公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 55,
+      "owners": [
+        {
+          "name": "秦穆公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 56,
+      "owners": [
+        {
+          "name": "秦穆公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 57,
+      "owners": [
+        {
+          "name": "秦穆公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 58,
+      "owners": [
+        {
+          "name": "秦穆公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 59,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 60,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 61,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 62,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 63,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 64,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 65,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 66,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 67,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 68,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 69,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 70,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 71,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 72,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 73,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 74,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 75,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 76,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 77,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 78,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 79,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 80,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 81,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 82,
+      "owners": [
+        {
+          "name": "秦孝公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 83,
+      "owners": [
+        {
+          "name": "秦孝公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 84,
+      "owners": [
+        {
+          "name": "秦孝公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 85,
+      "owners": [
+        {
+          "name": "秦孝公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 86,
+      "owners": [
+        {
+          "name": "秦孝公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 87,
+      "owners": [
+        {
+          "name": "秦孝公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 88,
+      "owners": [
+        {
+          "name": "秦孝公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 89,
+      "owners": [
+        {
+          "name": "秦孝公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 90,
+      "owners": [
+        {
+          "name": "秦孝公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 91,
+      "owners": [
+        {
+          "name": "秦孝公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 92,
+      "owners": [
+        {
+          "name": "秦孝公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 93,
+      "owners": [
+        {
+          "name": "秦孝公",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 94,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 95,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 96,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 97,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 98,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 99,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 100,
+      "owners": [
+        {
+          "name": "秦昭襄王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 101,
+      "owners": [
+        {
+          "name": "秦昭襄王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 102,
+      "owners": [
+        {
+          "name": "秦昭襄王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 103,
+      "owners": [
+        {
+          "name": "秦昭襄王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 104,
+      "owners": [
+        {
+          "name": "秦昭襄王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 105,
+      "owners": [
+        {
+          "name": "秦昭襄王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 106,
+      "owners": [
+        {
+          "name": "秦昭襄王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 107,
+      "owners": [
+        {
+          "name": "秦昭襄王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 108,
+      "owners": [
+        {
+          "name": "秦昭襄王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 109,
+      "owners": [
+        {
+          "name": "秦昭襄王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 110,
+      "owners": [
+        {
+          "name": "秦昭襄王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 111,
+      "owners": [
+        {
+          "name": "秦昭襄王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 112,
+      "owners": [
+        {
+          "name": "秦昭襄王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 113,
+      "owners": [
+        {
+          "name": "秦昭襄王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 114,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 115,
+      "owners": [
+        {
+          "name": "秦庄襄王",
+          "category": "诸侯"
+        }
+      ]
+    },
+    {
+      "paragraph": 116,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 117,
+      "owners": [],
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph": 118,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SHIJI_005_01",
+      "史略名称": "秦孝公",
+      "史略简介": "秦孝公",
+      "原文字句": "孝公元年，河山以东彊国六，与齐威、楚宣、魏惠、燕悼、韩哀、赵成侯并。",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷5·秦本纪》",
+      "paragraphs": [
+        {
+          "volume": "秦本纪",
+          "paragraph_from": 82,
+          "paragraph_to": 93
+        }
+      ],
+      "五级细坐标": "史记·卷005·诸侯·01",
+      "六级段落锚点": "[P82-P93]",
+      "原文出处": "秦本纪·P82-P93"
+    },
+    {
+      "史略ID": "SHIJI_005_02",
+      "史略名称": "秦庄襄王",
+      "史略简介": "秦庄襄王",
+      "原文字句": "庄襄王元年，大赦罪人，修先王功臣，施德厚骨肉而布惠於民。东周君与诸侯谋秦，秦使相国吕不韦诛之，尽入其国。秦不绝其祀，以阳人地赐周君，奉其祭祀。使蒙骜伐韩，韩献成皋、巩。秦界至大梁，初置三川郡。二年，使蒙骜攻赵，定太原。三年，蒙骜攻魏高都、汲，拔之。攻赵榆次、新城、狼孟，取三十七城。四月日食。王龁攻上党。初置太原郡。魏将无忌率五国兵击秦，秦卻於河外。蒙骜败，解而去。五月丙午，庄襄王卒，子政立，是为秦",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷5·秦本纪》",
+      "paragraphs": [
+        {
+          "volume": "秦本纪",
+          "paragraph_from": 115,
+          "paragraph_to": 115
+        }
+      ],
+      "五级细坐标": "史记·卷005·诸侯·02",
+      "六级段落锚点": "[P115]",
+      "原文出处": "秦本纪·P115"
+    },
+    {
+      "史略ID": "SHIJI_005_03",
+      "史略名称": "秦昭襄王",
+      "史略简介": "秦昭襄王",
+      "原文字句": "昭襄王元年，严君疾为相。甘茂出之魏。二年，彗星见。庶长壮与大臣、诸侯、公子为逆，皆诛，及惠文后皆不得良死。悼武王后出归魏。三年，王冠。与楚王会黄棘，与楚上庸。四年，取蒲阪。彗星见。五年，魏王来朝应亭，复与魏蒲阪。六年，蜀侯煇反，司马错定蜀。庶长奂伐楚，斩首二万。泾阳君质於齐。",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷5·秦本纪》",
+      "paragraphs": [
+        {
+          "volume": "秦本纪",
+          "paragraph_from": 100,
+          "paragraph_to": 113
+        }
+      ],
+      "五级细坐标": "史记·卷005·诸侯·03",
+      "六级段落锚点": "[P100-P113]",
+      "原文出处": "秦本纪·P100-P113"
+    },
+    {
+      "史略ID": "SHIJI_005_04",
+      "史略名称": "秦穆公",
+      "史略简介": "秦穆公",
+      "原文字句": "缪公任好元年，自将伐茅津，胜之。四年，迎妇於晋，晋太子申生姊也。其岁，齐桓公伐楚，至邵陵。",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷5·秦本纪》",
+      "paragraphs": [
+        {
+          "volume": "秦本纪",
+          "paragraph_from": 30,
+          "paragraph_to": 58
+        }
+      ],
+      "五级细坐标": "史记·卷005·诸侯·04",
+      "六级段落锚点": "[P30-P58]",
+      "原文出处": "秦本纪·P30-P58"
+    },
+    {
+      "史略ID": "SHIJI_005_05",
+      "史略名称": "非子",
+      "史略简介": "非子",
+      "原文字句": "非子居犬丘，好马及畜，善养息之。犬丘人言之周孝王，孝王召使主马于汧渭之间，马大蕃息。孝王欲以为大骆適嗣。申侯之女为大骆妻，生子成为適。申侯乃言孝王曰：“昔我先郦山之女，为戎胥轩妻，生中潏，以亲故归周，保西垂，西垂以其故和睦。今我复与大骆妻，生適子成。申骆重婚，西戎皆服，所以为王。",
+      "史略分类": "诸侯",
+      "主要史料出处": "《史记·卷5·秦本纪》",
+      "paragraphs": [
+        {
+          "volume": "秦本纪",
+          "paragraph_from": 8,
+          "paragraph_to": 9
+        }
+      ],
+      "五级细坐标": "史记·卷005·诸侯·05",
+      "六级段落锚点": "[P8-P9]",
+      "原文出处": "秦本纪·P8-P9"
+    }
+  ]
+}

@@ -1,0 +1,163 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00993",
+  "写作结构": "正史主干见《史记·夏本纪》翻译详录；拓展以《尚书·五子之歌》为失国、五子怨叹之文本内核，《左传》《竹书纪年》揭示后羿代夏的异说脉络，《楚辞·天问》补神话色彩，其余留白。",
+  "候选著作": [
+    {
+      "出处": "《史记·夏本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史所载太康失国基本经过，为后世叙事基础。",
+      "检索词": "太康失国",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《尚书·五子之歌》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "伪古文《尚书》篇章，记述太康尸位逸豫、五子作歌劝诫，是太康失国故事的核心文献。",
+      "检索词": "五子之歌",
+      "采用": true,
+      "原文摘句": "太康尸位，以逸豫灭厥德，黎民咸贰。乃盘游无度，畋于有洛之表，十旬弗反。厥弟五人，御其母以从，徯于洛之汭。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《左传·襄公四年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载有穷后羿代夏政及寒浞篡羿之事，提供了后羿代夏的异说。",
+      "检索词": "后羿自鉏迁于穷石",
+      "采用": true,
+      "原文摘句": "昔有夏之方衰也，后羿自鉏迁于穷石，因夏民以代夏政。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《竹书纪年·夏纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "编年体记载太康失邦、后羿代夏及仲康继位等史事，年代线索清晰，可补世系。",
+      "检索词": "太康居斟鄩",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    },
+    {
+      "出处": "《楚辞·天问》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "以问难形式提及后羿与夏室的关系，神话色彩浓厚，可作旁证。",
+      "检索词": "帝降夷羿",
+      "采用": true,
+      "原文摘句": "帝降夷羿，革孽夏民。胡射夫河伯，而妻彼雒嫔？",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "晋皇甫谧辑录，综理夏代世系与太康失国细节，但成书晚，多采传说。",
+      "检索词": "太康失国",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·夏本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史所载太康失国基本经过，为后世叙事基础。",
+      "检索词": "太康失国",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《尚书·五子之歌》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "伪古文《尚书》篇章，记述太康尸位逸豫、五子作歌劝诫，是太康失国故事的核心文献。",
+      "检索词": "五子之歌",
+      "采用": true,
+      "原文摘句": "太康尸位，以逸豫灭厥德，黎民咸贰。乃盘游无度，畋于有洛之表，十旬弗反。厥弟五人，御其母以从，徯于洛之汭。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《左传·襄公四年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载有穷后羿代夏政及寒浞篡羿之事，提供了后羿代夏的异说。",
+      "检索词": "后羿自鉏迁于穷石",
+      "采用": true,
+      "原文摘句": "昔有夏之方衰也，后羿自鉏迁于穷石，因夏民以代夏政。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《竹书纪年·夏纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "编年体记载太康失邦、后羿代夏及仲康继位等史事，年代线索清晰，可补世系。",
+      "检索词": "太康居斟鄩",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    },
+    {
+      "出处": "《楚辞·天问》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "以问难形式提及后羿与夏室的关系，神话色彩浓厚，可作旁证。",
+      "检索词": "帝降夷羿",
+      "采用": true,
+      "原文摘句": "帝降夷羿，革孽夏民。胡射夫河伯，而妻彼雒嫔？",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《帝王世纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "晋皇甫谧辑录，综理夏代世系与太康失国细节，但成书晚，多采传说。",
+      "检索词": "太康失国",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 4,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

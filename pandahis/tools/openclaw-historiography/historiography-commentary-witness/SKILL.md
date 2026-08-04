@@ -1,9 +1,9 @@
 ---
 name: historiography-commentary-witness
 description: >
-  史略评述（08）与见证文物（09）数据补全。同一 Skill、子命令分开；按 GLBL 或朝代批量，
-  固定 DeepSeek v4 Pro。激活词：评述补全、见证补全、文物补全、08评述、09见证、
-  commentary、witness。
+  史略评述（08）与见证（09）数据补全。见证含实物文物与文学虚拟见证（后世诗歌、词曲、戏剧等）。
+  同一 Skill、子命令分开；按 GLBL 或朝代批量，固定 DeepSeek v4 Pro。激活词：评述补全、见证补全、
+  文物补全、文学见证、08评述、09见证、commentary、witness。
 origin: ECC
 ---
 
@@ -28,19 +28,19 @@ origin: ECC
 | **historiography-annotate** | 一期卷级人物标注 | 03 索引 |
 | **historiography-dynasty-knowledge** | 朝代知识 + 详情 | 06 |
 | **historiography-person-relations** | 人物关系图谱 | 07 |
-| **historiography-commentary-witness**（本 skill） | **评述 + 见证文物** | **08 / 09** |
+| **historiography-commentary-witness**（本 skill） | **评述 + 见证（实物 + 文学）** | **08 / 09** |
 
 - **覆盖全部史略分类**（君王/宗戚/文臣/武将/宦官/庶众/蕃祚/论著/典制/事略…）
 - **输入**：史略 ID、名称、朝代 + 遴选规则；评述会读取 `04`/`06` 详情文末**参考著作**作排除清单
 - **评述**：增量、评价性、差异化；**优先正史论赞**（太史公曰/赞曰/史臣曰等，可破主书名排除）；禁止翻译体；上古存在性质疑可选但非片尾
-- **见证**：A+→E 分层；E 不得 P0；宁空勿凑；制度类写时间跨度
+- **见证**：实物 A+→F→E 分层；附加 F **额外 0–1 条**（最知名名作，不计 1–5 主名额）；E/F 不得 P0
 - **子命令分开**：`commentary-*` 与 `witness-*` 独立
 - **批次**：结束后 `python3 cw.py verify-dynasty-commentary --dynasty <朝代>`
 
 ## When to Activate
 
-- 「梳理某朝代所有史略的评述 / 见证（文物）」
-- 「给某某史略补评述 / 补文物」
+- 「梳理某朝代所有史略的评述 / 见证（文物或文学）」
+- 「给某某史略补评述 / 补见证 / 补文学见证」
 - 提到 `08评述`、`09见证`、`GLBL_*_P01`、`GLBL_*_W01`
 
 ## 路径（相对 `HISTOGRAPH_ROOT` = `pandahis/pandahis`）

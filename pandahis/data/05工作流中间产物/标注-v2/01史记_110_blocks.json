@@ -1,0 +1,27 @@
+{
+  "work": "01史记",
+  "vol": "110",
+  "total_paragraphs": 78,
+  "volume_subtype": "fanzuo",
+  "excludes": [
+    {
+      "paragraph_from": 78,
+      "paragraph_to": 78,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "匈奴",
+      "category": "蕃祚",
+      "paragraph_from": 1,
+      "paragraph_to": 77,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "匈奴，其先祖夏后氏之苗裔也，曰淳维。唐虞以上有山戎、猃狁、荤粥，居于北蛮，随畜牧",
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

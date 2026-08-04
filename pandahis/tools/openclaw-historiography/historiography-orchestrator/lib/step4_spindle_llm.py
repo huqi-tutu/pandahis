@@ -9,6 +9,7 @@ from pathlib import Path
 from typing import Dict, List, Optional, Set
 
 from llm.artifacts import extract_json_objects
+from llm.config import ensure_annotate_model, get_provider_name, PROVIDER_DEEPSEEK
 from llm.provider import run_agent_turn
 
 from lib import events
@@ -157,6 +158,8 @@ def run_spindle_llm_supplement(
 
     last_err = ""
     for attempt in range(1, max_attempts + 1):
+        if get_provider_name() == PROVIDER_DEEPSEEK:
+            ensure_annotate_model()
         events.log(
             "llm_start",
             work=work,

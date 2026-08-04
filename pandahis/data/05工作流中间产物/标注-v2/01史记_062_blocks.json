@@ -1,0 +1,46 @@
+{
+  "work": "01史记",
+  "vol": "062",
+  "total_paragraphs": 17,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "01史记_062_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 16,
+      "paragraph_to": 16,
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph_from": 17,
+      "paragraph_to": 17,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "管仲",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 9,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "管仲夷吾者，颍上人也。少时常与鲍叔牙游，鲍叔知其贤。管仲贫困，常欺鲍叔，鲍叔终善",
+        "close_paragraph": 9,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P1–P9"
+      }
+    },
+    {
+      "name": "晏婴",
+      "category": "文臣",
+      "paragraph_from": 10,
+      "paragraph_to": 15,
+      "boundary_evidence": {
+        "open_paragraph": 10,
+        "open_phrase": "晏平仲婴者，莱之夷维人也。事齐灵公、庄公、景公，以节俭力行重於齐。",
+        "close_paragraph": 15,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P10–P15"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

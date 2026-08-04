@@ -1,0 +1,199 @@
+{
+  "work": "01史记",
+  "updated_at": "2026-08-02T07:01:10Z",
+  "volumes": {
+    "081": {
+      "volume_name": "廉颇蔺相如列传",
+      "volume_texture": "interleaved",
+      "reason": "explicit",
+      "noncontiguous_entries": [
+        "廉颇",
+        "蔺相如"
+      ],
+      "skeleton_file": "01史记_081_廉颇蔺相如列传第二十一_skeleton.json",
+      "note": "混写卷：同一人物段落非连续。翻译/质检须按 entry.paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。",
+      "registered_at": "2026-08-01T10:07:45Z"
+    },
+    "038": {
+      "volume_name": "宋微子世家",
+      "volume_texture": "interleaved",
+      "reason": "explicit",
+      "noncontiguous_entries": [
+        "微子启"
+      ],
+      "skeleton_file": "01史记_038_宋微子世家第八_skeleton.json",
+      "note": "混写卷：同一人物段落非连续。翻译/质检须按 entry.paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。",
+      "registered_at": "2026-08-01T12:53:08Z"
+    },
+    "043": {
+      "volume_name": "赵世家",
+      "volume_texture": "interleaved",
+      "reason": "explicit",
+      "noncontiguous_entries": [
+        "赵武灵王",
+        "赵惠文王"
+      ],
+      "skeleton_file": "01史记_043_赵世家第十三_skeleton.json",
+      "note": "混写卷：同一人物段落非连续。翻译/质检须按 entry.paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。",
+      "registered_at": "2026-08-01T15:05:46Z"
+    },
+    "063": {
+      "volume_name": "老子韩非列传",
+      "volume_texture": "interleaved",
+      "reason": "explicit",
+      "noncontiguous_entries": [
+        "老子"
+      ],
+      "skeleton_file": "01史记_063_老子韩非列传第三_skeleton.json",
+      "note": "混写卷：同一人物段落非连续。翻译/质检须按 entry.paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。",
+      "registered_at": "2026-08-02T02:21:52Z"
+    },
+    "086": {
+      "volume_name": "刺客列传",
+      "volume_texture": "interleaved",
+      "reason": "explicit",
+      "noncontiguous_entries": [
+        "专诸"
+      ],
+      "skeleton_file": "01史记_086_刺客列传第二十六_skeleton.json",
+      "note": "混写卷：同一人物段落非连续。翻译/质检须按 entry.paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。",
+      "registered_at": "2026-08-02T03:15:08Z"
+    },
+    "089": {
+      "volume_name": "张耳陈馀列传",
+      "volume_texture": "interleaved",
+      "volume_coupling": "shared_paragraphs",
+      "reason": "explicit",
+      "noncontiguous_entries": [],
+      "skeleton_file": "01史记_089_张耳陈馀列传第二十九_skeleton.json",
+      "note": "共用段落合传：张耳、陈馀两条 entry 均 P1–P40 双挂。翻译按本传主镜头（交接双挂段·角色不对称）；P1 合传引入段非本传主侧弱化。",
+      "registered_at": "2026-08-02T03:15:30Z"
+    },
+    "096": {
+      "volume_name": "张丞相列传",
+      "volume_texture": "interleaved",
+      "reason": "explicit",
+      "noncontiguous_entries": [
+        "张苍"
+      ],
+      "skeleton_file": "01史记_096_张丞相列传第三十六_skeleton.json",
+      "note": "混写卷：同一人物段落非连续。翻译/质检须按 entry.paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。",
+      "registered_at": "2026-08-02T03:54:51Z"
+    },
+    "097": {
+      "volume_name": "郦生陆贾列传",
+      "volume_texture": "interleaved",
+      "reason": "explicit",
+      "noncontiguous_entries": [
+        "郦食其"
+      ],
+      "skeleton_file": "01史记_097_郦生陆贾列传第三十七_skeleton.json",
+      "note": "混写卷：同一人物段落非连续。翻译/质检须按 entry.paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。",
+      "registered_at": "2026-08-02T03:55:08Z"
+    },
+    "101": {
+      "volume_name": "袁盎晁错列传",
+      "volume_texture": "interleaved",
+      "reason": "explicit",
+      "noncontiguous_entries": [
+        "袁盎",
+        "晁错"
+      ],
+      "skeleton_file": "01史记_101_袁盎晁错列传第四十一_skeleton.json",
+      "note": "混写卷：同一人物段落非连续。翻译/质检须按 entry.paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。",
+      "registered_at": "2026-08-02T03:56:03Z"
+    },
+    "103": {
+      "volume_name": "万石张叔列传",
+      "volume_texture": "interleaved",
+      "reason": "explicit",
+      "noncontiguous_entries": [
+        "石奋"
+      ],
+      "skeleton_file": "01史记_103_万石张叔列传第四十三_skeleton.json",
+      "note": "混写卷：同一人物段落非连续。翻译/质检须按 entry.paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。",
+      "registered_at": "2026-08-02T03:56:36Z"
+    },
+    "104": {
+      "volume_name": "田叔列传",
+      "volume_texture": "interleaved",
+      "reason": "explicit",
+      "noncontiguous_entries": [
+        "田仁"
+      ],
+      "skeleton_file": "01史记_104_田叔列传第四十四_skeleton.json",
+      "note": "混写卷：同一人物段落非连续。翻译/质检须按 entry.paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。",
+      "registered_at": "2026-08-02T03:56:50Z"
+    },
+    "107": {
+      "volume_name": "魏其武安侯列传",
+      "volume_texture": "interleaved",
+      "reason": "explicit",
+      "noncontiguous_entries": [
+        "窦婴",
+        "田蚡"
+      ],
+      "skeleton_file": "01史记_107_魏其武安侯列传第四十七_skeleton.json",
+      "note": "混写卷：同一人物段落非连续。翻译/质检须按 entry.paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。",
+      "registered_at": "2026-08-02T06:54:44Z"
+    },
+    "111": {
+      "volume_name": "卫将军骠骑列传",
+      "volume_texture": "interleaved",
+      "reason": "explicit",
+      "noncontiguous_entries": [
+        "霍去病"
+      ],
+      "skeleton_file": "01史记_111_卫将军骠骑列传第五十一_skeleton.json",
+      "note": "混写卷：同一人物段落非连续。翻译/质检须按 entry.paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。",
+      "registered_at": "2026-08-02T07:01:10Z"
+    },
+    "122": {
+      "volume_name": "酷吏列传",
+      "volume_texture": "interleaved",
+      "reason": "explicit",
+      "noncontiguous_entries": [
+        "赵禹",
+        "王温舒",
+        "尹齐",
+        "减宣"
+      ],
+      "skeleton_file": "01史记_122_酷吏列传第六十二_skeleton.json",
+      "note": "混写卷：同一人物段落非连续。翻译/质检须按 entry.paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。",
+      "registered_at": "2026-08-02T06:55:19Z"
+    },
+    "126": {
+      "volume_name": "滑稽列传",
+      "volume_texture": "interleaved",
+      "reason": "explicit",
+      "noncontiguous_entries": [
+        "淳于髡"
+      ],
+      "skeleton_file": "01史记_126_滑稽列传第六十六_skeleton.json",
+      "note": "混写卷：同一人物段落非连续。翻译/质检须按 entry.paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。",
+      "registered_at": "2026-08-02T06:55:46Z"
+    },
+    "127": {
+      "volume_name": "日者列传",
+      "volume_texture": "interleaved",
+      "reason": "explicit",
+      "noncontiguous_entries": [
+        "司马季主"
+      ],
+      "skeleton_file": "01史记_127_日者列传第六十七_skeleton.json",
+      "note": "混写卷：同一人物段落非连续。翻译/质检须按 entry.paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。",
+      "registered_at": "2026-08-02T06:55:53Z"
+    },
+    "128": {
+      "volume_name": "龟策列传",
+      "volume_texture": "interleaved",
+      "reason": "explicit",
+      "noncontiguous_entries": [
+        "太卜"
+      ],
+      "skeleton_file": "01史记_128_龟策列传第六十八_skeleton.json",
+      "note": "混写卷：同一人物段落非连续。翻译/质检须按 entry.paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。",
+      "registered_at": "2026-08-02T06:56:13Z"
+    }
+  }
+}

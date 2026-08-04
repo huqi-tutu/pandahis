@@ -1,0 +1,128 @@
+{
+  "volume": "楚元王世家",
+  "source_file": "01史记_050_楚元王世家第二十.txt",
+  "total_paragraphs": 12,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [
+        {
+          "name": "楚元王刘交",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "楚元王刘交",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "楚元王刘交",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "楚王刘戊",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "楚王刘戊",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 7,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 8,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 9,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 10,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 11,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 12,
+      "owners": [],
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SHIJI_050_01",
+      "史略名称": "楚元王刘交",
+      "史略简介": "楚元王刘交",
+      "原文字句": "楚元王刘交者，高祖之同母少弟也，字游。",
+      "史略分类": "宗戚",
+      "主要史料出处": "《史记·卷50·楚元王世家》",
+      "paragraphs": [
+        {
+          "volume": "楚元王世家",
+          "paragraph_from": 1,
+          "paragraph_to": 3
+        }
+      ],
+      "五级细坐标": "史记·卷050·宗戚·01",
+      "六级段落锚点": "[P1-P3]",
+      "原文出处": "楚元王世家·P1-P3"
+    },
+    {
+      "史略ID": "SHIJI_050_02",
+      "史略名称": "楚王刘戊",
+      "史略简介": "楚王刘戊",
+      "原文字句": "王戊立二十年，冬，坐为薄太后服私奸，削东海郡。春，戊与吴王合谋反，其相张尚、太傅赵夷吾谏，不听。戊则杀尚、夷吾，起兵与吴西攻梁，破棘壁。",
+      "史略分类": "宗戚",
+      "主要史料出处": "《史记·卷50·楚元王世家》",
+      "paragraphs": [
+        {
+          "volume": "楚元王世家",
+          "paragraph_from": 4,
+          "paragraph_to": 5
+        }
+      ],
+      "五级细坐标": "史记·卷050·宗戚·02",
+      "六级段落锚点": "[P4-P5]",
+      "原文出处": "楚元王世家·P4-P5"
+    }
+  ]
+}

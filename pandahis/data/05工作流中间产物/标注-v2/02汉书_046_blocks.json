@@ -1,0 +1,80 @@
+{
+  "work": "02汉书",
+  "vol": "046",
+  "total_paragraphs": 66,
+  "volume_subtype": "hezhuan",
+  "derived_from": "manual_fix_20260802",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 10,
+      "paragraph_to": 13,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 14,
+      "paragraph_to": 14,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 66,
+      "paragraph_to": 66,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "刘交",
+      "category": "宗戚",
+      "paragraph_from": 2,
+      "paragraph_to": 7,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "楚元王交字游，高祖同父少弟也",
+        "close_paragraph": 7,
+        "close_note": "人工修正：P5 归入刘交（高祖兄弟/羹颉侯），非世系链"
+      }
+    },
+    {
+      "name": "刘戊",
+      "category": "宗戚",
+      "paragraph_from": 8,
+      "paragraph_to": 9,
+      "boundary_evidence": {
+        "open_paragraph": 8,
+        "open_phrase": "初，元王敬礼申公等",
+        "close_paragraph": 9,
+        "close_note": "刘戊块"
+      }
+    },
+    {
+      "name": "刘向",
+      "category": "文臣",
+      "paragraph_from": 15,
+      "paragraph_to": 54,
+      "boundary_evidence": {
+        "open_paragraph": 15,
+        "open_phrase": "向字子政，本名更生",
+        "close_paragraph": 54,
+        "close_note": "P14 排除（刘德过渡），自 P15 开传"
+      }
+    },
+    {
+      "name": "刘歆",
+      "category": "文臣",
+      "paragraph_from": 55,
+      "paragraph_to": 65,
+      "boundary_evidence": {
+        "open_paragraph": 55,
+        "open_phrase": "向三子皆好学",
+        "close_paragraph": 65,
+        "close_note": "刘歆块"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

@@ -1,0 +1,19 @@
+{
+  "work": "01史记",
+  "vol": "113",
+  "volume_name": "南越列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "fanzuo",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "南越",
+      "category": "蕃祚",
+      "rationale": "《史记·南越列传》为边陲政权列传，卷名所指为南越国这一政权/部族集体主题，非单一人物的单人传，亦非华夏诸侯世系国君，符合蕃祚准入标准。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

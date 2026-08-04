@@ -1,0 +1,618 @@
+{
+  "schema": "thin_annotation_deferred/v2",
+  "source": "10新标注条目",
+  "generated_at": "2026-08-03T15:16:41Z",
+  "threshold_han_chars": 100,
+  "entry_count": 21,
+  "entries": [
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 28,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_002_03",
+      "史略名称": "太康",
+      "史略分类": "君王",
+      "朝代ID": "",
+      "二级朝代坐标": "",
+      "主要史料出处": "《史记·卷2·夏本纪》",
+      "paragraphs": [
+        {
+          "volume": "夏本纪",
+          "paragraph_from": 42,
+          "paragraph_to": 42
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/01史记_002_夏本纪第二_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_002_03",
+          "work": "01史记",
+          "vol": "002",
+          "vol_name": "夏本纪",
+          "source_char_count": 28,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/01史记_002_夏本纪第二_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 98,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_003_01",
+      "史略名称": "太甲",
+      "史略分类": "君王",
+      "朝代ID": "",
+      "二级朝代坐标": "",
+      "主要史料出处": "《史记·卷3·殷本纪》",
+      "paragraphs": [
+        {
+          "volume": "殷本纪",
+          "paragraph_from": 12,
+          "paragraph_to": 13
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/01史记_003_殷本纪第三_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_003_01",
+          "work": "01史记",
+          "vol": "003",
+          "vol_name": "殷本纪",
+          "source_char_count": 98,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/01史记_003_殷本纪第三_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 87,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_002_04",
+      "史略名称": "孔甲",
+      "史略分类": "君王",
+      "朝代ID": "",
+      "二级朝代坐标": "",
+      "主要史料出处": "《史记·卷2·夏本纪》",
+      "paragraphs": [
+        {
+          "volume": "夏本纪",
+          "paragraph_from": 45,
+          "paragraph_to": 46
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/01史记_002_夏本纪第二_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_002_04",
+          "work": "01史记",
+          "vol": "002",
+          "vol_name": "夏本纪",
+          "source_char_count": 87,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/01史记_002_夏本纪第二_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 99,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_052_03",
+      "史略名称": "刘则",
+      "史略分类": "宗戚",
+      "朝代ID": "",
+      "二级朝代坐标": "",
+      "主要史料出处": "《史记·卷52·齐悼惠王世家》",
+      "paragraphs": [
+        {
+          "volume": "齐悼惠王世家",
+          "paragraph_from": 24,
+          "paragraph_to": 28
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/01史记_052_齐悼惠王世家第二十二_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_052_03",
+          "work": "01史记",
+          "vol": "052",
+          "vol_name": "齐悼惠王世家",
+          "source_char_count": 99,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/01史记_052_齐悼惠王世家第二十二_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 89,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "HANSHU_054_04",
+      "史略名称": "刘勃",
+      "史略分类": "宗戚",
+      "朝代ID": "",
+      "二级朝代坐标": "",
+      "主要史料出处": "《02汉书·卷54·淮南衡山济北王传》",
+      "paragraphs": [
+        {
+          "volume": "淮南衡山济北王传",
+          "paragraph_from": 31,
+          "paragraph_to": 31
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/02汉书_054_淮南衡山济北王传第十四_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "HANSHU_054_04",
+          "work": "02汉书",
+          "vol": "054",
+          "vol_name": "淮南衡山济北王传",
+          "source_char_count": 89,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/02汉书_054_淮南衡山济北王传第十四_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 27,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "HANSHU_048_02",
+      "史略名称": "刘如意",
+      "史略分类": "宗戚",
+      "朝代ID": "",
+      "二级朝代坐标": "",
+      "主要史料出处": "《02汉书·卷48·高五王传》",
+      "paragraphs": [
+        {
+          "volume": "高五王传",
+          "paragraph_from": 4,
+          "paragraph_to": 4
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/02汉书_048_高五王传第八_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "HANSHU_048_02",
+          "work": "02汉书",
+          "vol": "048",
+          "vol_name": "高五王传",
+          "source_char_count": 27,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/02汉书_048_高五王传第八_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 45,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "HANSHU_092_04",
+      "史略名称": "刘竟",
+      "史略分类": "宗戚",
+      "朝代ID": "",
+      "二级朝代坐标": "",
+      "主要史料出处": "《02汉书·卷92·宣元六王传》",
+      "paragraphs": [
+        {
+          "volume": "宣元六王传",
+          "paragraph_from": 24,
+          "paragraph_to": 24
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/02汉书_092_宣元六王传第五十_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "HANSHU_092_04",
+          "work": "02汉书",
+          "vol": "092",
+          "vol_name": "宣元六王传",
+          "source_char_count": 45,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/02汉书_092_宣元六王传第五十_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 48,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "HANSHU_057_03",
+      "史略名称": "太原王刘揖",
+      "史略分类": "宗戚",
+      "朝代ID": "",
+      "二级朝代坐标": "",
+      "主要史料出处": "《02汉书·卷57·文三王传》",
+      "paragraphs": [
+        {
+          "volume": "文三王传",
+          "paragraph_from": 17,
+          "paragraph_to": 17
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/02汉书_057_文三王传第十七_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "HANSHU_057_03",
+          "work": "02汉书",
+          "vol": "057",
+          "vol_name": "文三王传",
+          "source_char_count": 48,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/02汉书_057_文三王传第十七_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 38,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "HANSHU_048_05",
+      "史略名称": "燕王刘建",
+      "史略分类": "宗戚",
+      "朝代ID": "",
+      "二级朝代坐标": "",
+      "主要史料出处": "《02汉书·卷48·高五王传》",
+      "paragraphs": [
+        {
+          "volume": "高五王传",
+          "paragraph_from": 9,
+          "paragraph_to": 9
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/02汉书_048_高五王传第八_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "HANSHU_048_05",
+          "work": "02汉书",
+          "vol": "048",
+          "vol_name": "高五王传",
+          "source_char_count": 38,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/02汉书_048_高五王传第八_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 57,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_035_02",
+      "史略名称": "蔡叔度",
+      "史略分类": "宗戚",
+      "朝代ID": "",
+      "二级朝代坐标": "",
+      "主要史料出处": "《史记·卷35·管蔡世家》",
+      "paragraphs": [
+        {
+          "volume": "管蔡世家",
+          "paragraph_from": 4,
+          "paragraph_to": 4
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/01史记_035_管蔡世家第五_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_035_02",
+          "work": "01史记",
+          "vol": "035",
+          "vol_name": "管蔡世家",
+          "source_char_count": 57,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/01史记_035_管蔡世家第五_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 20,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "HANSHU_104_03",
+      "史略名称": "猗顿",
+      "史略分类": "庶众",
+      "朝代ID": "",
+      "二级朝代坐标": "",
+      "主要史料出处": "《02汉书·卷104·货殖传》",
+      "paragraphs": [
+        {
+          "volume": "货殖传",
+          "paragraph_from": 9,
+          "paragraph_to": 9
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/02汉书_104_货殖传第六十一_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "HANSHU_104_03",
+          "work": "02汉书",
+          "vol": "104",
+          "vol_name": "货殖传",
+          "source_char_count": 20,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/02汉书_104_货殖传第六十一_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 48,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_067_02",
+      "史略名称": "冉雍",
+      "史略分类": "文臣",
+      "朝代ID": "",
+      "二级朝代坐标": "",
+      "主要史料出处": "《史记·卷67·仲尼弟子列传》",
+      "paragraphs": [
+        {
+          "volume": "仲尼弟子列传",
+          "paragraph_from": 13,
+          "paragraph_to": 15
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/01史记_067_仲尼弟子列传第七_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_067_02",
+          "work": "01史记",
+          "vol": "067",
+          "vol_name": "仲尼弟子列传",
+          "source_char_count": 48,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/01史记_067_仲尼弟子列传第七_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 81,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "HANSHU_087_02",
+      "史略名称": "夏侯始昌",
+      "史略分类": "文臣",
+      "朝代ID": "",
+      "二级朝代坐标": "",
+      "主要史料出处": "《02汉书·卷87·眭两夏侯京翼李传》",
+      "paragraphs": [
+        {
+          "volume": "眭两夏侯京翼李传",
+          "paragraph_from": 4,
+          "paragraph_to": 4
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/02汉书_087_眭两夏侯京翼李传第四十五_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "HANSHU_087_02",
+          "work": "02汉书",
+          "vol": "087",
+          "vol_name": "眭两夏侯京翼李传",
+          "source_char_count": 81,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/02汉书_087_眭两夏侯京翼李传第四十五_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 96,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_067_07",
+      "史略名称": "子游",
+      "史略分类": "文臣",
+      "朝代ID": "",
+      "二级朝代坐标": "",
+      "主要史料出处": "《史记·卷67·仲尼弟子列传》",
+      "paragraphs": [
+        {
+          "volume": "仲尼弟子列传",
+          "paragraph_from": 59,
+          "paragraph_to": 61
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/01史记_067_仲尼弟子列传第七_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_067_07",
+          "work": "01史记",
+          "vol": "067",
+          "vol_name": "仲尼弟子列传",
+          "source_char_count": 96,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/01史记_067_仲尼弟子列传第七_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 34,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_067_10",
+      "史略名称": "曾参",
+      "史略分类": "文臣",
+      "朝代ID": "",
+      "二级朝代坐标": "",
+      "主要史料出处": "《史记·卷67·仲尼弟子列传》",
+      "paragraphs": [
+        {
+          "volume": "仲尼弟子列传",
+          "paragraph_from": 71,
+          "paragraph_to": 72
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/01史记_067_仲尼弟子列传第七_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_067_10",
+          "work": "01史记",
+          "vol": "067",
+          "vol_name": "仲尼弟子列传",
+          "source_char_count": 34,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/01史记_067_仲尼弟子列传第七_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 93,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_067_11",
+      "史略名称": "澹台灭明",
+      "史略分类": "文臣",
+      "朝代ID": "",
+      "二级朝代坐标": "",
+      "主要史料出处": "《史记·卷67·仲尼弟子列传》",
+      "paragraphs": [
+        {
+          "volume": "仲尼弟子列传",
+          "paragraph_from": 73,
+          "paragraph_to": 75
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/01史记_067_仲尼弟子列传第七_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_067_11",
+          "work": "01史记",
+          "vol": "067",
+          "vol_name": "仲尼弟子列传",
+          "source_char_count": 93,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/01史记_067_仲尼弟子列传第七_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 68,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_063_03",
+      "史略名称": "申不害",
+      "史略分类": "文臣",
+      "朝代ID": "",
+      "二级朝代坐标": "",
+      "主要史料出处": "《史记·卷63·老子韩非列传》",
+      "paragraphs": [
+        {
+          "volume": "老子韩非列传",
+          "paragraph_from": 12,
+          "paragraph_to": 13
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/01史记_063_老子韩非列传第三_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_063_03",
+          "work": "01史记",
+          "vol": "063",
+          "vol_name": "老子韩非列传",
+          "source_char_count": 68,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/01史记_063_老子韩非列传第三_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 78,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_121_05",
+      "史略名称": "韩婴",
+      "史略分类": "文臣",
+      "朝代ID": "",
+      "二级朝代坐标": "",
+      "主要史料出处": "《史记·卷121·儒林列传》",
+      "paragraphs": [
+        {
+          "volume": "儒林列传",
+          "paragraph_from": 18,
+          "paragraph_to": 18
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/01史记_121_儒林列传第六十一_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_121_05",
+          "work": "01史记",
+          "vol": "121",
+          "vol_name": "儒林列传",
+          "source_char_count": 78,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/01史记_121_儒林列传第六十一_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 43,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_036_01",
+      "史略名称": "杞东楼公",
+      "史略分类": "诸侯",
+      "朝代ID": "",
+      "二级朝代坐标": "",
+      "主要史料出处": "《史记·卷36·陈杞世家》",
+      "paragraphs": [
+        {
+          "volume": "陈杞世家",
+          "paragraph_from": 29,
+          "paragraph_to": 29
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/01史记_036_陈杞世家第六_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_036_01",
+          "work": "01史记",
+          "vol": "036",
+          "vol_name": "陈杞世家",
+          "source_char_count": 43,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/01史记_036_陈杞世家第六_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 62,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_040_06",
+      "史略名称": "楚熊绎",
+      "史略分类": "诸侯",
+      "朝代ID": "",
+      "二级朝代坐标": "",
+      "主要史料出处": "《史记·卷40·楚世家》",
+      "paragraphs": [
+        {
+          "volume": "楚世家",
+          "paragraph_from": 4,
+          "paragraph_to": 4
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/01史记_040_楚世家第十_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_040_06",
+          "work": "01史记",
+          "vol": "040",
+          "vol_name": "楚世家",
+          "source_char_count": 62,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/01史记_040_楚世家第十_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 87,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SHIJI_036_02",
+      "史略名称": "陈胡公满",
+      "史略分类": "诸侯",
+      "朝代ID": "",
+      "二级朝代坐标": "",
+      "主要史料出处": "《史记·卷36·陈杞世家》",
+      "paragraphs": [
+        {
+          "volume": "陈杞世家",
+          "paragraph_from": 1,
+          "paragraph_to": 1
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/01史记_036_陈杞世家第六_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SHIJI_036_02",
+          "work": "01史记",
+          "vol": "036",
+          "vol_name": "陈杞世家",
+          "source_char_count": 87,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/01史记_036_陈杞世家第六_skeleton.json"
+        }
+      ]
+    }
+  ]
+}

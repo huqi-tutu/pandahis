@@ -1,0 +1,46 @@
+{
+  "work": "01史记",
+  "vol": "100",
+  "total_paragraphs": 15,
+  "volume_subtype": "hezhuan",
+  "derived_from": "01史记_100_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 14,
+      "paragraph_to": 14,
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph_from": 15,
+      "paragraph_to": 15,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "季布",
+      "category": "武将",
+      "paragraph_from": 1,
+      "paragraph_to": 8,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "季布者，楚人也。为气任侠，有名於楚。项籍使将兵，数窘汉王。及项羽灭，高祖购求布千",
+        "close_paragraph": 8,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P1–P8"
+      }
+    },
+    {
+      "name": "栾布",
+      "category": "武将",
+      "paragraph_from": 9,
+      "paragraph_to": 13,
+      "boundary_evidence": {
+        "open_paragraph": 9,
+        "open_phrase": "栾布者，梁人也。始梁王彭越为家人时，尝与布游。穷困，赁佣於齐，为酒人保。数岁，彭",
+        "close_paragraph": 13,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P9–P13"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

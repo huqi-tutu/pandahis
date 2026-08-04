@@ -1,0 +1,20 @@
+{
+  "work": "02汉书",
+  "vol": "008",
+  "volume_name": "昭帝纪",
+  "volume_type_guess": "本纪",
+  "volume_arc": "A",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "汉昭帝",
+      "category": "君王",
+      "rationale": "《汉书·昭帝纪》为西汉皇帝刘弗陵（汉昭帝）的编年本纪，属天下共主之天子本纪，故为君王。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰"
+  ]
+}

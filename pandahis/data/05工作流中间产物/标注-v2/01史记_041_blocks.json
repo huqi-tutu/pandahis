@@ -1,0 +1,46 @@
+{
+  "work": "01史记",
+  "vol": "041",
+  "total_paragraphs": 36,
+  "volume_subtype": "hezhuan",
+  "derived_from": "01史记_041_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 17,
+      "paragraph_to": 22,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 36,
+      "paragraph_to": 36,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "越王句践",
+      "category": "诸侯",
+      "paragraph_from": 1,
+      "paragraph_to": 16,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "越王句践，其先禹之苗裔，而夏后帝少康之庶子也。封於会稽，以奉守禹之祀。文身断发，",
+        "close_paragraph": 16,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P1–P16"
+      }
+    },
+    {
+      "name": "范蠡",
+      "category": "文臣",
+      "paragraph_from": 23,
+      "paragraph_to": 35,
+      "boundary_evidence": {
+        "open_paragraph": 23,
+        "open_phrase": "范蠡事越王句践，既苦身戮力，与句践深谋二十馀年，竟灭吴，报会稽之耻，北渡兵於淮以",
+        "close_paragraph": 35,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P23–P35"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

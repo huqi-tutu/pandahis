@@ -275,6 +275,18 @@ def verify_commentary_entries(doc: dict[str, Any]) -> list[dict[str, str]]:
     return issues
 
 
+def is_literary_extra(row: dict[str, Any]) -> bool:
+    if row.get("附加文学见证") is True:
+        return True
+    reason = str(row.get("优先级判定理由") or "")
+    if "附加名额" in reason or "附加文学" in reason:
+        return True
+    loc = str(row.get("现藏地点") or "")
+    if loc.startswith("传世文本"):
+        return True
+    return False
+
+
 def verify_witness_entries(doc: dict[str, Any]) -> list[dict[str, str]]:
     issues: list[dict[str, str]] = []
     eid = str(doc.get("史略ID") or "").strip()
@@ -283,6 +295,7 @@ def verify_witness_entries(doc: dict[str, Any]) -> list[dict[str, str]]:
     seen_id: set[str] = set()
     seen_pri: set[str] = set()
     soft_count = 0
+    extra_count = 0
     for i, row in enumerate(doc.get("entries") or [], start=1):
         prefix = f"[{i}]"
         if not isinstance(row, dict):
@@ -309,7 +322,8 @@ def verify_witness_entries(doc: dict[str, Any]) -> list[dict[str, str]]:
         if pri not in PRI_OK:
             issues.append(_issue("CRITICAL", f"{prefix} 非法优先级: {pri!r}"))
         elif pri in seen_pri:
-            issues.append(_issue("CRITICAL", f"{prefix} 优先级重复: {pri}"))
+            if not (is_literary_extra(row) and pri == "P4"):
+                issues.append(_issue("CRITICAL", f"{prefix} 优先级重复: {pri}"))
         seen_pri.add(pri)
         intro = str(row.get("文物介绍") or "")
         reason = str(row.get("优先级判定理由") or "")
@@ -323,6 +337,13 @@ def verify_witness_entries(doc: dict[str, Any]) -> list[dict[str, str]]:
         loc = str(row.get("现藏地点") or "")
         if "·" not in loc:
             issues.append(_issue("WARN", f"{prefix} 现藏地点建议「国家·机构」格式"))
+
+        if is_literary_extra(row):
+            extra_count += 1
+            if pri == "P0":
+                issues.append(
+                    _issue("CRITICAL", f"{prefix} 附加文学见证不得标 P0")
+                )
 
         soft_blob = f"{title}\n{intro}\n{reason}"
         is_soft = bool(SOFT_P0.search(soft_blob)) or ("证据力弱" in reason)
@@ -350,8 +371,18 @@ def verify_witness_entries(doc: dict[str, Any]) -> list[dict[str, str]]:
                 )
 
     n = len(doc.get("entries") or [])
-    if doc.get("status") == STATUS_DONE and (n < 1 or n > 5):
-        issues.append(_issue("WARN", f"文物件数 {n} 超出建议 1–5"))
+    physical = n - extra_count
+    if extra_count > 1:
+        issues.append(_issue("CRITICAL", f"附加文学见证最多 1 条，当前 {extra_count}"))
+    if doc.get("status") == STATUS_DONE:
+        if physical < 1 or physical > 5:
+            issues.append(
+                _issue("WARN", f"实物见证件数 {physical} 超出建议 1–5（附加 F {extra_count} 条不计入）")
+            )
+        if n > 6:
+            issues.append(_issue("CRITICAL", f"总条目 {n} 超过上限 6（5 实物 + 1 附加 F）"))
+    elif n > 0 and (physical > 5 or n > 6):
+        issues.append(_issue("WARN", f"条目数 {n}（实物 {physical} + 附加 F {extra_count}）超限"))
     if soft_count >= 2:
         issues.append(
             _issue(

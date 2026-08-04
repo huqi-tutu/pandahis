@@ -1,0 +1,72 @@
+{
+  "work": "01史记",
+  "vol": "119",
+  "total_paragraphs": 12,
+  "method": "Step1b-α LLM",
+  "paragraphs": [
+    {
+      "paragraph": 1,
+      "primary_subject": "太史公曰",
+      "disposition": "exclude",
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph": 2,
+      "primary_subject": "孙叔敖",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 3,
+      "primary_subject": "孙叔敖",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 4,
+      "primary_subject": "孙叔敖",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 5,
+      "primary_subject": "孙叔敖",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 6,
+      "primary_subject": "子产",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 7,
+      "primary_subject": "子产",
+      "co_owner": "公仪休",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 8,
+      "primary_subject": "公仪休",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 9,
+      "primary_subject": "公仪休",
+      "co_owner": "石奢",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 10,
+      "primary_subject": "李离",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 11,
+      "primary_subject": "李离",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 12,
+      "primary_subject": "太史公曰",
+      "disposition": "exclude",
+      "exclude_reason": "太史公曰"
+    }
+  ]
+}

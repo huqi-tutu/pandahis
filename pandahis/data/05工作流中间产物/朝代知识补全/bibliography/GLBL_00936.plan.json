@@ -1,0 +1,131 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00936",
+  "写作结构": "正史叙述见翻译详录，主要事迹以《史记·秦始皇本纪》为纲；史外异说与延展围绕《尉缭子》及其作者争议展开，可引后世书目著录，但不引兵书具体内容，亦不虚构尉缭入秦细节、战术行动及心理描写；其余背景留白。",
+  "候选著作": [
+    {
+      "出处": "《史记·秦始皇本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "尉缭籍贯、入秦时间、献策内容、被任为国尉等主体事迹的唯一正史来源",
+      "检索词": "尉缭 秦王政十年 国尉",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《尉缭子》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "传为尉缭所著兵书，集中体现其军事理论，与秦始皇时期尉缭的思想有直接关联，为拓展其军事家形象的核心文献",
+      "检索词": "尉缭子",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《战国策》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "载有以财物离间诸侯的相似策略，可作为尉缭献策的横向参照，但无直接提及尉缭之名",
+      "检索词": "赂豪臣 三十万金",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《汉书·艺文志》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "著录《尉缭》二十九篇，反映汉代对该书的分类与认知，有助于追溯《尉缭子》流传",
+      "检索词": "尉缭 二十九篇",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "宋·晁公武《郡斋读书志》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋代目录对《尉缭子》的著录，推测作者为秦始皇时尉缭，是作者争议的关键异说之一",
+      "检索词": "尉缭子 晁公武",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·秦始皇本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "尉缭籍贯、入秦时间、献策内容、被任为国尉等主体事迹的唯一正史来源",
+      "检索词": "尉缭 秦王政十年 国尉",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《尉缭子》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "传为尉缭所著兵书，集中体现其军事理论，与秦始皇时期尉缭的思想有直接关联，为拓展其军事家形象的核心文献",
+      "检索词": "尉缭子",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《战国策》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "载有以财物离间诸侯的相似策略，可作为尉缭献策的横向参照，但无直接提及尉缭之名",
+      "检索词": "赂豪臣 三十万金",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《汉书·艺文志》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "著录《尉缭》二十九篇，反映汉代对该书的分类与认知，有助于追溯《尉缭子》流传",
+      "检索词": "尉缭 二十九篇",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "宋·晁公武《郡斋读书志》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋代目录对《尉缭子》的著录，推测作者为秦始皇时尉缭，是作者争议的关键异说之一",
+      "检索词": "尉缭子 晁公武",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 3,
+    "overall": "B"
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00949",
+  "写作结构": "正文叙事以《史记·秦始皇本纪》为纲（详见翻译详录），不赘述正史已载内容。拓展部分可引秦简律令说明驰道营建的徭役与制度框架；《汉书·贾山传》等后世文献虽有详细规制描述，但需标注为异说而不作为秦代原始记录展开。",
+  "候选著作": [
+    {
+      "出处": "《史记·秦始皇本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载始皇二十七年治驰道，为基本史料",
+      "检索词": "治驰道 始皇二十七年",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《汉书·贾山传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "详细描述秦驰道形制，属后世追述，与《史记》记载不同",
+      "检索词": "贾山 至言 驰道",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《睡虎地秦墓竹简·秦律十八种·徭律》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "秦律对修路徭役的征发、验收标准有规定，可反映驰道营建的制度背景",
+      "检索词": "秦律 徭 道路",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《三辅黄图》卷一",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "后世地理著作提及秦驰道走向与规制，属传说层累",
+      "检索词": "秦驰道 三辅黄图",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·秦始皇本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载始皇二十七年治驰道，为基本史料",
+      "检索词": "治驰道 始皇二十七年",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《汉书·贾山传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "详细描述秦驰道形制，属后世追述，与《史记》记载不同",
+      "检索词": "贾山 至言 驰道",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《睡虎地秦墓竹简·秦律十八种·徭律》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "秦律对修路徭役的征发、验收标准有规定，可反映驰道营建的制度背景",
+      "检索词": "秦律 徭 道路",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《三辅黄图》卷一",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "后世地理著作提及秦驰道走向与规制，属传说层累",
+      "检索词": "秦驰道 三辅黄图",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 1,
+    "C_excluded": 3,
+    "overall": "B"
+  }
+}

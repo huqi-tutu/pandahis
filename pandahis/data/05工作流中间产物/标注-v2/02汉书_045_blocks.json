@@ -1,0 +1,58 @@
+{
+  "work": "02汉书",
+  "vol": "045",
+  "total_paragraphs": 28,
+  "volume_subtype": "hezhuan",
+  "derived_from": "02汉书_045_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 28,
+      "paragraph_to": 28,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "刘贾",
+      "category": "宗戚",
+      "paragraph_from": 2,
+      "paragraph_to": 4,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "荆王刘贾，高帝从父兄也，不知其初起时。汉元年，还定三秦，贾为将军，定塞地，从东击",
+        "close_paragraph": 4,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P4"
+      }
+    },
+    {
+      "name": "刘泽",
+      "category": "宗戚",
+      "paragraph_from": 5,
+      "paragraph_to": 8,
+      "boundary_evidence": {
+        "open_paragraph": 5,
+        "open_phrase": "燕王刘泽，高祖从祖昆弟也。高祖三年，泽为郎中。十一年，以将军击陈狶将王黄，封为营",
+        "close_paragraph": 8,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P5–P8"
+      }
+    },
+    {
+      "name": "刘濞",
+      "category": "宗戚",
+      "paragraph_from": 9,
+      "paragraph_to": 27,
+      "boundary_evidence": {
+        "open_paragraph": 9,
+        "open_phrase": "吴王濞，高帝兄仲之子也。高帝立仲为代王。匈奴攻代，仲不能坚守，弃国间行，走雒阳，",
+        "close_paragraph": 27,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P9–P27"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

@@ -1,0 +1,19 @@
+{
+  "work": "01史记",
+  "vol": "106",
+  "volume_name": "吴王濞列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "刘濞",
+      "category": "宗戚",
+      "rationale": "《吴王濞列传》以吴王刘濞为主轴的列传，卷名即主人公。刘濞为汉高祖刘邦之侄，封吴王，后发动七国之乱，属宗室诸侯，按分类链君王＞宗戚，其非正统帝王，故归宗戚。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

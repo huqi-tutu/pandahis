@@ -1,0 +1,19 @@
+{
+  "work": "01史记",
+  "vol": "085",
+  "volume_name": "吕不韦列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "吕不韦",
+      "category": "文臣",
+      "rationale": "《吕不韦列传》为单人列传，卷名即主人公。吕不韦以商贾之身辅佐秦庄襄王、任秦相国，主持编撰《吕氏春秋》，其身份为秦国执政文臣，非天下共主或封国世袭君主，故归文臣。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

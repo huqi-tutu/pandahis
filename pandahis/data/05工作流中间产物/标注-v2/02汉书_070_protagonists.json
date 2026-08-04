@@ -1,0 +1,21 @@
+{
+  "work": "02汉书",
+  "vol": "070",
+  "volume_name": "张汤传",
+  "volume_type_guess": "列传",
+  "volume_arc": "A",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "张汤",
+      "category": "文臣",
+      "rationale": "卷名《张汤传》为单人列传，张汤为西汉武帝朝著名酷吏，以刑名文法仕宦为官，官至御史大夫，属行政刑名之文臣主轴。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

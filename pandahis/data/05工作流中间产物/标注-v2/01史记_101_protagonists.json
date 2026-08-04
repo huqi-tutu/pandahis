@@ -1,0 +1,24 @@
+{
+  "work": "01史记",
+  "vol": "101",
+  "volume_name": "袁盎晁错列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "袁盎",
+      "category": "文臣",
+      "rationale": "卷名首列人物，西汉文景时期以直谏、守正著称之大臣，属行政谏议仕宦，符合文臣准入。"
+    },
+    {
+      "name": "晁错",
+      "category": "文臣",
+      "rationale": "卷名并列人物，西汉文景时期以刑名法术、削藩策闻名之大臣，属行政刑名仕宦，符合文臣准入。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

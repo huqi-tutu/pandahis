@@ -1,0 +1,73 @@
+{
+  "work": "02汉书",
+  "vol": "057",
+  "total_paragraphs": 36,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "02汉书_057_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 2,
+      "paragraph_to": 2,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 15,
+      "paragraph_to": 16,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 18,
+      "paragraph_to": 35,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 36,
+      "paragraph_to": 36,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "刘武",
+      "category": "宗戚",
+      "paragraph_from": 3,
+      "paragraph_to": 13,
+      "boundary_evidence": {
+        "open_paragraph": 3,
+        "open_phrase": "梁孝王武以孝文二年与太原王参、梁王揖同日立。武为代王，四年徙为淮阳王，十二年徙梁",
+        "close_paragraph": 13,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P3–P13"
+      }
+    },
+    {
+      "name": "刘参",
+      "category": "宗戚",
+      "paragraph_from": 14,
+      "paragraph_to": 14,
+      "boundary_evidence": {
+        "open_paragraph": 14,
+        "open_phrase": "代孝王参初立为太原王。四年，代王武徙为淮阳王，而参徙为代王，复并得太原，都晋阳如",
+        "close_paragraph": 14,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P14–P14"
+      }
+    },
+    {
+      "name": "刘揖",
+      "category": "宗戚",
+      "paragraph_from": 17,
+      "paragraph_to": 17,
+      "boundary_evidence": {
+        "open_paragraph": 17,
+        "open_phrase": "梁怀王揖，文帝少子也。好《诗》《书》，帝爱之，异于他子。五年一朝，凡再入朝。因堕",
+        "close_paragraph": 17,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P17–P17"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

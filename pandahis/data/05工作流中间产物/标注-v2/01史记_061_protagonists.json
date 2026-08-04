@@ -1,0 +1,19 @@
+{
+  "work": "01史记",
+  "vol": "061",
+  "volume_name": "伯夷列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "伯夷",
+      "category": "庶众",
+      "rationale": "《伯夷列传》为列传体单人传，卷名即主人公。伯夷为商末孤竹君之子，让国隐居，不仕周朝，非封国世袭君主，亦非天子/皇帝，属隐逸贤人，归入庶众类。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

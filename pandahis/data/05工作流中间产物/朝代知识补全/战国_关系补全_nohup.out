@@ -1,0 +1,818 @@
+--- batch start pending=41 ---
+LLM: DeepSeek (deepseek-v4-pro)
+人物: GLBL_00243 白圭 (庶众)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/白圭关系表.json
+  → 类别 家庭 …
+    ⚠️ 类别 家庭：3 轮均无有效产出，跳过
+    0 条
+  → 类别 同僚 …
+    ⚠️ 类别 同僚：3 轮均无有效产出，跳过
+    0 条
+  → 类别 师从 …
+    ⚠️ 类别 师从：3 轮均无有效产出，跳过
+    0 条
+  → 类别 外敌 …
+    ⚠️ 类别 外敌：3 轮均无有效产出，跳过
+    0 条
+  → 类别 好友 …
+    ⚠️ 类别 好友：3 轮均无有效产出，跳过
+    0 条
+FAIL GLBL_00243 白圭: 全部类别均无有效产出
+LLM: DeepSeek (deepseek-v4-pro)
+人物: GLBL_00245 聂政 (庶众)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/聂政关系表.json
+  → 类别 家庭 …
+    2 条
+  → 类别 同僚 …
+    2 条
+  → 类别 师从 …
+    ⚠️ 类别 师从：3 轮均无有效产出，跳过
+    0 条
+  → 类别 外敌 …
+    2 条
+  → 类别 好友 …
+    2 条
+
+OK: 1 file(s)
+
+✅ verify 通过: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/聂政关系表.json
+OK GLBL_00245 聂政 (8条)
+LLM: DeepSeek (deepseek-v4-pro)
+人物: GLBL_00246 荆轲 (庶众)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/荆轲关系表.json
+  → 类别 家庭 …
+    ⚠️ 类别 家庭：3 轮均无有效产出，跳过
+    0 条
+  → 类别 同僚 …
+    6 条
+  → 类别 师从 …
+    ⚠️ 类别 师从：3 轮均无有效产出，跳过
+    0 条
+  → 类别 外敌 …
+    4 条
+  → 类别 好友 …
+    4 条
+
+OK: 1 file(s)
+
+✅ verify 通过: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/荆轲关系表.json
+OK GLBL_00246 荆轲 (14条)
+LLM: DeepSeek (deepseek-v4-pro)
+人物: GLBL_00304 商鞅 (文臣)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/商鞅关系表.json
+  → 类别 家庭 …
+    ⚠️ 类别 家庭：3 轮均无有效产出，跳过
+    0 条
+  → 类别 同僚 …
+    9 条
+  → 类别 师从 …
+    2 条
+  → 类别 外敌 …
+    3 条
+  → 类别 好友 …
+    1 条
+
+OK: 1 file(s)
+
+✅ verify 通过: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/商鞅关系表.json
+OK GLBL_00304 商鞅 (15条)
+LLM: DeepSeek (deepseek-v4-pro)
+人物: GLBL_00310 子夏 (文臣)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/子夏关系表.json
+  → 类别 家庭 …
+    2 条
+  → 类别 同僚 …
+    4 条
+  → 类别 师从 …
+    15 条
+  → 类别 外敌 …
+    ⚠️ 类别 外敌：3 轮均无有效产出，跳过
+    0 条
+  → 类别 好友 …
+    ⚠️ 类别 好友：3 轮均无有效产出，跳过
+    0 条
+
+OK: 1 file(s)
+
+✅ verify 通过: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/子夏关系表.json
+OK GLBL_00310 子夏 (21条)
+LLM: DeepSeek (deepseek-v4-pro)
+人物: GLBL_00322 孟子 (文臣)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/孟子关系表.json
+  → 类别 家庭 …
+    1 条
+  → 类别 同僚 …
+    2 条
+  → 类别 师从 …
+    5 条
+  → 类别 外敌 …
+    ⚠️ 类别 外敌：3 轮均无有效产出，跳过
+    0 条
+  → 类别 好友 …
+    ⚠️ 类别 好友：3 轮均无有效产出，跳过
+    0 条
+
+OK: 1 file(s)
+
+✅ verify 通过: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/孟子关系表.json
+OK GLBL_00322 孟子 (8条)
+LLM: DeepSeek (deepseek-v4-pro)
+人物: GLBL_00323 孟尝君 (文臣)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/孟尝君关系表.json
+  → 类别 家庭 …
+    5 条
+  → 类别 同僚 …
+    6 条
+  → 类别 师从 …
+    ⚠️ 类别 师从：3 轮均无有效产出，跳过
+    0 条
+  → 类别 外敌 …
+    3 条
+  → 类别 好友 …
+    3 条
+
+OK: 1 file(s)
+
+✅ verify 通过: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/孟尝君关系表.json
+OK GLBL_00323 孟尝君 (17条)
+LLM: DeepSeek (deepseek-v4-pro)
+人物: GLBL_00330 屈原 (文臣)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/屈原关系表.json
+  → 类别 家庭 …
+    2 条
+  → 类别 同僚 …
+    7 条
+  → 类别 师从 …
+    ⚠️ 类别 师从：3 轮均无有效产出，跳过
+    0 条
+  → 类别 外敌 …
+    3 条
+  → 类别 好友 …
+    ⚠️ 类别 好友：3 轮均无有效产出，跳过
+    0 条
+
+OK: 1 file(s)
+
+✅ verify 通过: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/屈原关系表.json
+OK GLBL_00330 屈原 (12条)
+LLM: DeepSeek (deepseek-v4-pro)
+人物: GLBL_00333 平原君赵胜 (文臣)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/平原君赵胜关系表.json
+  → 类别 家庭 …
+    8 条
+  → 类别 同僚 …
+    8 条
+  → 类别 师从 …
+    ⚠️ 类别 师从：3 轮均无有效产出，跳过
+    0 条
+  → 类别 外敌 …
+    2 条
+  → 类别 好友 …
+    1 条
+
+OK: 1 file(s)
+
+✅ verify 通过: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/平原君赵胜关系表.json
+OK GLBL_00333 平原君赵胜 (19条)
+LLM: DeepSeek (deepseek-v4-pro)
+人物: GLBL_00335 张仪 (文臣)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/张仪关系表.json
+  → 类别 家庭 …
+    1 条
+  → 类别 同僚 …
+    8 条
+  → 类别 师从 …
+    3 条
+  → 类别 外敌 …
+    5 条
+  → 类别 好友 …
+    1 条
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/张仪关系表.json#[11]: parent '鬼谷先生' at 一级 not found
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/张仪关系表.json#[11]: parent '老师' at 二级 not found
+
+FAILED: 2 critical issue(s) in 1 file(s)
+
+
+OK: 1 file(s)
+
+✅ verify 通过（修订后）: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/张仪关系表.json
+OK GLBL_00335 张仪 (18条)
+LLM: DeepSeek (deepseek-v4-pro)
+人物: GLBL_00381 樗里子 (文臣)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/樗里子关系表.json
+  → 类别 家庭 …
+    3 条
+  → 类别 同僚 …
+    8 条
+  → 类别 师从 …
+    ⚠️ 类别 师从：3 轮均无有效产出，跳过
+    0 条
+  → 类别 外敌 …
+    6 条
+  → 类别 好友 …
+    ⚠️ 类别 好友：3 轮均无有效产出，跳过
+    0 条
+
+OK: 1 file(s)
+
+✅ verify 通过: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/樗里子关系表.json
+OK GLBL_00381 樗里子 (17条)
+LLM: DeepSeek (deepseek-v4-pro)
+人物: GLBL_00403 甘茂 (文臣)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/甘茂关系表.json
+  → 类别 家庭 …
+    1 条
+  → 类别 同僚 …
+    10 条
+  → 类别 师从 …
+    2 条
+  → 类别 外敌 …
+    3 条
+  → 类别 好友 …
+    1 条
+
+OK: 1 file(s)
+
+✅ verify 通过: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/甘茂关系表.json
+OK GLBL_00403 甘茂 (17条)
+LLM: DeepSeek (deepseek-v4-pro)
+人物: GLBL_00428 苏秦 (文臣)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/苏秦关系表.json
+  → 类别 家庭 …
+    3 条
+  → 类别 同僚 …
+    7 条
+  → 类别 师从 …
+    2 条
+  → 类别 外敌 …
+    4 条
+  → 类别 好友 …
+    ⚠️ 类别 好友：3 轮均无有效产出，跳过
+    0 条
+
+OK: 1 file(s)
+
+✅ verify 通过: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/苏秦关系表.json
+OK GLBL_00428 苏秦 (16条)
+LLM: DeepSeek (deepseek-v4-pro)
+人物: GLBL_00429 范睢 (文臣)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/范睢关系表.json
+  → 类别 家庭 …
+    ⚠️ 类别 家庭：3 轮均无有效产出，跳过
+    0 条
+  → 类别 同僚 …
+    11 条
+  → 类别 师从 …
+    ⚠️ 类别 师从：3 轮均无有效产出，跳过
+    0 条
+  → 类别 外敌 …
+    6 条
+  → 类别 好友 …
+    1 条
+
+OK: 1 file(s)
+
+✅ verify 通过: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/范睢关系表.json
+OK GLBL_00429 范睢 (18条)
+LLM: DeepSeek (deepseek-v4-pro)
+人物: GLBL_00430 荀卿 (文臣)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/荀卿关系表.json
+  → 类别 家庭 …
+    ⚠️ 类别 家庭：3 轮均无有效产出，跳过
+    0 条
+  → 类别 同僚 …
+    3 条
+  → 类别 师从 …
+    10 条
+  → 类别 外敌 …
+    ⚠️ 类别 外敌：3 轮均无有效产出，跳过
+    0 条
+  → 类别 好友 …
+    ⚠️ 类别 好友：3 轮均无有效产出，跳过
+    0 条
+
+OK: 1 file(s)
+
+✅ verify 通过: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/荀卿关系表.json
+OK GLBL_00430 荀卿 (13条)
+LLM: DeepSeek (deepseek-v4-pro)
+人物: GLBL_00438 蔡泽 (文臣)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/蔡泽关系表.json
+  → 类别 家庭 …
+    1 条
+  → 类别 同僚 …
+    5 条
+  → 类别 师从 …
+    ⚠️ 类别 师从：3 轮均无有效产出，跳过
+    0 条
+  → 类别 外敌 …
+    1 条
+  → 类别 好友 …
+    ⚠️ 类别 好友：3 轮均无有效产出，跳过
+    0 条
+
+OK: 1 file(s)
+
+✅ verify 通过: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/蔡泽关系表.json
+OK GLBL_00438 蔡泽 (7条)
+LLM: DeepSeek (deepseek-v4-pro)
+人物: GLBL_00439 蔺相如 (文臣)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/蔺相如关系表.json
+  → 类别 家庭 …
+    ⚠️ 类别 家庭：3 轮均无有效产出，跳过
+    0 条
+  → 类别 同僚 …
+    6 条
+  → 类别 师从 …
+    ⚠️ 类别 师从：3 轮均无有效产出，跳过
+    0 条
+  → 类别 外敌 …
+    1 条
+  → 类别 好友 …
+    2 条
+
+OK: 1 file(s)
+
+✅ verify 通过: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/蔺相如关系表.json
+OK GLBL_00439 蔺相如 (9条)
+LLM: DeepSeek (deepseek-v4-pro)
+人物: GLBL_00442 虞卿 (文臣)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/虞卿关系表.json
+  → 类别 家庭 …
+    ⚠️ 类别 家庭：3 轮均无有效产出，跳过
+    0 条
+  → 类别 同僚 …
+    5 条
+  → 类别 师从 …
+    ⚠️ 类别 师从：3 轮均无有效产出，跳过
+    0 条
+  → 类别 外敌 …
+    2 条
+  → 类别 好友 …
+    1 条
+
+OK: 1 file(s)
+
+✅ verify 通过: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/虞卿关系表.json
+OK GLBL_00442 虞卿 (8条)
+LLM: DeepSeek (deepseek-v4-pro)
+人物: GLBL_00487 魏冉 (文臣)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/魏冉关系表.json
+  → 类别 家庭 …
+    10 条
+  → 类别 同僚 …
+    15 条
+  → 类别 师从 …
+    ⚠️ 类别 师从：3 轮均无有效产出，跳过
+    0 条
+  → 类别 外敌 …
+    5 条
+  → 类别 好友 …
+    2 条
+
+OK: 1 file(s)
+
+✅ verify 通过: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/魏冉关系表.json
+OK GLBL_00487 魏冉 (32条)
+LLM: DeepSeek (deepseek-v4-pro)
+人物: GLBL_00488 魏无忌 (文臣)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/魏无忌关系表.json
+  → 类别 家庭 …
+    5 条
+  → 类别 同僚 …
+    2 条
+  → 类别 师从 …
+    ⚠️ 类别 师从：3 轮均无有效产出，跳过
+    0 条
+  → 类别 外敌 …
+    4 条
+  → 类别 好友 …
+    5 条
+
+OK: 1 file(s)
+
+✅ verify 通过: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/魏无忌关系表.json
+OK GLBL_00488 魏无忌 (16条)
+LLM: DeepSeek (deepseek-v4-pro)
+人物: GLBL_00490 鲁仲连 (文臣)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/鲁仲连关系表.json
+  → 类别 家庭 …
+    ⚠️ 类别 家庭：3 轮均无有效产出，跳过
+    0 条
+  → 类别 同僚 …
+    4 条
+  → 类别 师从 …
+    ⚠️ 类别 师从：3 轮均无有效产出，跳过
+    0 条
+  → 类别 外敌 …
+    2 条
+  → 类别 好友 …
+    ⚠️ 类别 好友：3 轮均无有效产出，跳过
+    0 条
+
+OK: 1 file(s)
+
+✅ verify 通过: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/鲁仲连关系表.json
+OK GLBL_00490 鲁仲连 (6条)
+LLM: DeepSeek (deepseek-v4-pro)
+人物: GLBL_00492 黄歇 (文臣)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/黄歇关系表.json
+  → 类别 家庭 …
+    2 条
+  → 类别 同僚 …
+    3 条
+  → 类别 师从 …
+    ⚠️ 类别 师从：3 轮均无有效产出，跳过
+    0 条
+  → 类别 外敌 …
+    5 条
+  → 类别 好友 …
+    ⚠️ 类别 好友：3 轮均无有效产出，跳过
+    0 条
+
+OK: 1 file(s)
+
+✅ verify 通过: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/黄歇关系表.json
+OK GLBL_00492 黄歇 (10条)
+LLM: DeepSeek (deepseek-v4-pro)
+人物: GLBL_00497 乐毅 (武将)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/乐毅关系表.json
+  → 类别 家庭 …
+    3 条
+  → 类别 同僚 …
+    7 条
+  → 类别 师从 …
+    ⚠️ 类别 师从：3 轮均无有效产出，跳过
+    0 条
+  → 类别 外敌 …
+    2 条
+  → 类别 好友 …
+    ⚠️ 类别 好友：3 轮均无有效产出，跳过
+    0 条
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/乐毅关系表.json#[8] id=HD-COL-006: duplicate node ('燕惠王', 一级, '同僚')
+
+FAILED: 1 critical issue(s) in 1 file(s)
+
+
+OK: 1 file(s)
+
+✅ verify 通过（修订后）: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/乐毅关系表.json
+OK GLBL_00497 乐毅 (11条)
+LLM: DeepSeek (deepseek-v4-pro)
+人物: GLBL_00506 吴起 (武将)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/吴起关系表.json
+  → 类别 家庭 …
+    3 条
+  → 类别 同僚 …
+    7 条
+  → 类别 师从 …
+    2 条
+  → 类别 外敌 …
+    8 条
+  → 类别 好友 …
+    ⚠️ 类别 好友：3 轮均无有效产出，跳过
+    0 条
+
+OK: 1 file(s)
+
+✅ verify 通过: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/吴起关系表.json
+OK GLBL_00506 吴起 (20条)
+LLM: DeepSeek (deepseek-v4-pro)
+人物: GLBL_00512 廉颇 (武将)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/廉颇关系表.json
+  → 类别 家庭 …
+    ⚠️ 类别 家庭：3 轮均无有效产出，跳过
+    0 条
+  → 类别 同僚 …
+    7 条
+  → 类别 师从 …
+    ⚠️ 类别 师从：3 轮均无有效产出，跳过
+    0 条
+  → 类别 外敌 …
+    1 条
+  → 类别 好友 …
+    1 条
+
+OK: 1 file(s)
+
+✅ verify 通过: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/廉颇关系表.json
+OK GLBL_00512 廉颇 (9条)
+LLM: DeepSeek (deepseek-v4-pro)
+人物: GLBL_00525 田单 (武将)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/田单关系表.json
+  → 类别 家庭 …
+    2 条
+  → 类别 同僚 …
+    2 条
+  → 类别 师从 …
+    2 条
+  → 类别 外敌 …
+    3 条
+  → 类别 好友 …
+    ⚠️ 类别 好友：3 轮均无有效产出，跳过
+    0 条
+
+OK: 1 file(s)
+
+✅ verify 通过: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/田单关系表.json
+OK GLBL_00525 田单 (9条)
+LLM: DeepSeek (deepseek-v4-pro)
+人物: GLBL_00528 白起 (武将)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/白起关系表.json
+  → 类别 家庭 …
+    ⚠️ 类别 家庭：3 轮均无有效产出，跳过
+    0 条
+  → 类别 同僚 …
+    10 条
+  → 类别 师从 …
+    ⚠️ 类别 师从：3 轮均无有效产出，跳过
+    0 条
+  → 类别 外敌 …
+    5 条
+  → 类别 好友 …
+    ⚠️ 类别 好友：3 轮均无有效产出，跳过
+    0 条
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/白起关系表.json#[10]: parent '外敌' at 一级 not found
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/白起关系表.json#[11]: parent '外敌' at 一级 not found
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/白起关系表.json#[12]: parent '外敌' at 一级 not found
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/白起关系表.json#[13]: parent '外敌' at 一级 not found
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/白起关系表.json#[14]: parent '外敌' at 一级 not found
+
+FAILED: 5 critical issue(s) in 1 file(s)
+
+
+OK: 1 file(s)
+
+✅ verify 通过（修订后）: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/白起关系表.json
+OK GLBL_00528 白起 (16条)
+LLM: DeepSeek (deepseek-v4-pro)
+人物: GLBL_00695 卫君角 (诸侯)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/卫君角关系表.json
+  → 类别 家庭 …
+    1 条
+  → 类别 同僚 …
+    2 条
+  → 类别 师从 …
+    ⚠️ 类别 师从：3 轮均无有效产出，跳过
+    0 条
+  → 类别 外敌 …
+    3 条
+  → 类别 好友 …
+    ⚠️ 类别 好友：3 轮均无有效产出，跳过
+    0 条
+
+OK: 1 file(s)
+
+✅ verify 通过: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/卫君角关系表.json
+OK GLBL_00695 卫君角 (6条)
+LLM: DeepSeek (deepseek-v4-pro)
+人物: GLBL_00707 晋出公 (诸侯)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/晋出公关系表.json
+  → 类别 家庭 …
+    ⚠️ 类别 家庭：3 轮均无有效产出，跳过
+    0 条
+  → 类别 同僚 …
+    5 条
+  → 类别 师从 …
+    ⚠️ 类别 师从：3 轮均无有效产出，跳过
+    0 条
+  → 类别 外敌 …
+    ⚠️ 类别 外敌：3 轮均无有效产出，跳过
+    0 条
+  → 类别 好友 …
+    ⚠️ 类别 好友：3 轮均无有效产出，跳过
+    0 条
+
+OK: 1 file(s)
+
+✅ verify 通过: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/晋出公关系表.json
+OK GLBL_00707 晋出公 (5条)
+LLM: DeepSeek (deepseek-v4-pro)
+人物: GLBL_00719 楚顷襄王 (诸侯)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/楚顷襄王关系表.json
+  → 类别 家庭 …
+    2 条
+  → 类别 同僚 …
+    3 条
+  → 类别 师从 …
+    ⚠️ 类别 师从：3 轮均无有效产出，跳过
+    0 条
+  → 类别 外敌 …
+    3 条
+  → 类别 好友 …
+    ⚠️ 类别 好友：3 轮均无有效产出，跳过
+    0 条
+
+OK: 1 file(s)
+
+✅ verify 通过: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/楚顷襄王关系表.json
+OK GLBL_00719 楚顷襄王 (8条)
+LLM: DeepSeek (deepseek-v4-pro)
+人物: GLBL_00720 燕哙 (诸侯)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/燕哙关系表.json
+  → 类别 家庭 …
+    5 条
+  → 类别 同僚 …
+    3 条
+  → 类别 师从 …
+    ⚠️ 类别 师从：3 轮均无有效产出，跳过
+    0 条
+  → 类别 外敌 …
+    2 条
+  → 类别 好友 …
+    ⚠️ 类别 好友：3 轮均无有效产出，跳过
+    0 条
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/燕哙关系表.json#[6] id=HD-COL-002: duplicate node ('子之', 一级, '同僚')
+WARN /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/燕哙关系表.json#[0] id=HD-FAM-001: 关系简述 very short
+
+FAILED: 1 critical issue(s) in 1 file(s)
+
+
+OK: 1 file(s)
+
+✅ verify 通过（修订后）: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/燕哙关系表.json
+OK GLBL_00720 燕哙 (10条)
+LLM: DeepSeek (deepseek-v4-pro)
+人物: GLBL_00722 王无彊 (诸侯)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/王无彊关系表.json
+  → 类别 家庭 …
+    1 条
+  → 类别 同僚 …
+    ⚠️ 类别 同僚：3 轮均无有效产出，跳过
+    0 条
+  → 类别 师从 …
+    ⚠️ 类别 师从：3 轮均无有效产出，跳过
+    0 条
+  → 类别 外敌 …
+    3 条
+  → 类别 好友 …
+    ⚠️ 类别 好友：3 轮均无有效产出，跳过
+    0 条
+
+OK: 1 file(s)
+
+✅ verify 通过: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/王无彊关系表.json
+OK GLBL_00722 王无彊 (4条)
+LLM: DeepSeek (deepseek-v4-pro)
+人物: GLBL_00724 田齐太公和 (诸侯)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/田齐太公和关系表.json
+  → 类别 家庭 …
+    5 条
+  → 类别 同僚 …
+    2 条
+  → 类别 师从 …
+    ⚠️ 类别 师从：3 轮均无有效产出，跳过
+    0 条
+  → 类别 外敌 …
+    1 条
+  → 类别 好友 …
+    ⚠️ 类别 好友：3 轮均无有效产出，跳过
+    0 条
+
+OK: 1 file(s)
+
+✅ verify 通过: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/田齐太公和关系表.json
+OK GLBL_00724 田齐太公和 (8条)
+LLM: DeepSeek (deepseek-v4-pro)
+人物: GLBL_00727 赵幽缪王 (诸侯)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/赵幽缪王关系表.json
+  → 类别 家庭 …
+    3 条
+  → 类别 同僚 …
+    8 条
+  → 类别 师从 …
+    ⚠️ 类别 师从：3 轮均无有效产出，跳过
+    0 条
+  → 类别 外敌 …
+    5 条
+  → 类别 好友 …
+    3 条
+
+OK: 1 file(s)
+
+✅ verify 通过: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/赵幽缪王关系表.json
+OK GLBL_00727 赵幽缪王 (19条)
+LLM: DeepSeek (deepseek-v4-pro)
+人物: GLBL_00728 赵悼襄王 (诸侯)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/赵悼襄王关系表.json
+  → 类别 家庭 …
+    5 条
+  → 类别 同僚 …
+    8 条
+  → 类别 师从 …
+    ⚠️ 类别 师从：3 轮均无有效产出，跳过
+    0 条
+  → 类别 外敌 …
+    5 条
+  → 类别 好友 …
+    ⚠️ 类别 好友：3 轮均无有效产出，跳过
+    0 条
+
+OK: 1 file(s)
+
+✅ verify 通过: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/赵悼襄王关系表.json
+OK GLBL_00728 赵悼襄王 (18条)
+LLM: DeepSeek (deepseek-v4-pro)
+人物: GLBL_00729 赵烈侯 (诸侯)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/赵烈侯关系表.json
+  → 类别 家庭 …
+    2 条
+  → 类别 同僚 …
+    6 条
+  → 类别 师从 …
+ (deepseek-v4-pro)
+人物: GLBL_00707 晋出公 (诸侯)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/晋出公关系表.json
+  → 类别 家庭 …
+    2 条
+  → 类别 同僚 …
+--- batch start pending=54 (isolated subprocess) ---
+    9 条
+  → 类别 师从 …
+    ⚠️ 类别 师从：3 轮均无有效产出，跳过
+    0 条
+  → 类别 外敌 …
+OK GLBL_00722 王无彊 (5条)
+    ⚠️ 类别 外敌：3 轮均无有效产出，跳过
+    0 条
+  → 类别 好友 …
+    ⚠️ 类别 好友：3 轮均无有效产出，跳过
+    0 条
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/晋出公关系表.json#[6] id=HD-COL-005: duplicate node ('知伯瑶', 一级, '同僚')
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/晋出公关系表.json#[7] id=HD-COL-006: duplicate node ('赵襄子', 一级, '同僚')
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/晋出公关系表.json#[8] id=HD-COL-007: duplicate node ('韩康子', 一级, '同僚')
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/晋出公关系表.json#[9] id=HD-COL-008: duplicate node ('魏桓子', 一级, '同僚')
+WARN /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/晋出公关系表.json#[0] id=HD-FAM-001: 关系简述 very short
+
+FAILED: 4 critical issue(s) in 1 file(s)
+
+
+OK: 1 file(s)
+
+✅ verify 通过（修订后）: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/晋出公关系表.json
+OK GLBL_00707 晋出公 (7条)
+LLM: DeepSeek (deepseek-v4-pro)
+人物: GLBL_00719 楚顷襄王 (诸侯)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/楚顷襄王关系表.json
+  → 类别 家庭 …
+    1 条
+  → 类别 同僚 …
+OK GLBL_00728 赵悼襄王 (17条)
+--- batch start pending=53 (isolated subprocess) ---
+    8 条
+  → 类别 师从 …
+--- batch start pending=53 (isolated subprocess) ---
+OK GLBL_00729 赵烈侯 (9条)
+OK GLBL_00744 韩宣惠王 (9条)
+OK GLBL_00745 韩襄王 (12条)
+OK GLBL_00746 韩釐王 (15条)
+OK GLBL_00770 齐王建 (8条)
+OK GLBL_00773 齐襄王 (11条)
+OK GLBL_00857 楚考烈王 (14条)
+OK GLBL_00858 赵惠文王 (27条)
+OK GLBL_00859 赵长安君 (6条)
+OK GLBL_00860 秦华阳夫人 (9条)
+OK GLBL_00861 秦宣太后 (21条)
+OK GLBL_00862 魏公子卬 (5条)
+OK GLBL_00863 秦泾阳君 (10条)
+OK GLBL_00864 秦高陵君 (3条)
+FAIL GLBL_00865 楚公子兰: ERROR: 全部类别均无有效产出
+OK GLBL_00866 赵公子章 (11条)
+OK GLBL_00867 秦成蟜 (10条)
+OK GLBL_00868 景监 (3条)
+OK GLBL_00869 缪贤 (3条)
+OK GLBL_00870 靳尚 (8条)
+OK GLBL_00871 李悝 (11条)
+OK GLBL_00872 申不害 (3条)
+OK GLBL_00873 邹忌 (10条)
+OK GLBL_00874 公孙衍 (13条)
+FAIL GLBL_00875 司马错: FAILED: 1 critical issue(s) in 1 file(s)
+OK GLBL_00876 张孟谈 (6条)
+OK GLBL_00877 冯亭 (8条)
+OK GLBL_00878 公仲连 (6条)
+OK GLBL_00879 顿弱 (2条)
+OK GLBL_00880 剧辛 (4条)
+OK GLBL_00881 景翠 (2条)
+OK GLBL_00882 触龙 (5条)
+OK GLBL_00883 甘罗 (6条)
+FAIL GLBL_00884 邹衍: FAILED: 3 critical issue(s) in 1 file(s)
+OK GLBL_00885 李牧 (14条)
+OK GLBL_00886 赵奢 (11条)
+OK GLBL_00887 蒙骜 (10条)
+OK GLBL_00888 王龁 (11条)
+OK GLBL_00889 庞煖 (13条)
+OK GLBL_00890 项燕 (9条)
+OK GLBL_00891 李信 (13条)
+OK GLBL_00892 田忌 (8条)
+OK GLBL_00893 秦开 (6条)
+OK GLBL_00894 暴鸢 (5条)
+OK GLBL_00895 公孙喜 (4条)
+OK GLBL_00896 王陵 (8条)
+OK GLBL_00897 乐羊 (4条)
+OK GLBL_00906 侯嬴 (6条)
+OK GLBL_00907 朱亥 (7条)
+OK GLBL_00908 毛遂 (4条)
+OK GLBL_00909 寡妇清 (1条)
+OK GLBL_00910 冯谖 (2条)
+FAIL GLBL_00911 郭纵: ERROR: 全部类别均无有效产出
+--- batch done completed=119/121 ok=49 fail=4 ---

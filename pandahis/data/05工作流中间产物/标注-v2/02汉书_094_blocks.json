@@ -1,0 +1,58 @@
+{
+  "work": "02汉书",
+  "vol": "094",
+  "total_paragraphs": 23,
+  "volume_subtype": "hezhuan",
+  "derived_from": "02汉书_094_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 23,
+      "paragraph_to": 23,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "王商",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 11,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "王商字子威，涿郡蠡吾人也，徙杜陵。商公武、武兄无故，皆以宣帝舅封。无故为平昌侯，",
+        "close_paragraph": 11,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P11"
+      }
+    },
+    {
+      "name": "史丹",
+      "category": "文臣",
+      "paragraph_from": 12,
+      "paragraph_to": 18,
+      "boundary_evidence": {
+        "open_paragraph": 12,
+        "open_phrase": "史丹字君仲，鲁国人也，徙杜陵。祖父恭有女弟，武帝时为卫太子良娣，产悼皇考。皇考者",
+        "close_paragraph": 18,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P12–P18"
+      }
+    },
+    {
+      "name": "傅喜",
+      "category": "文臣",
+      "paragraph_from": 19,
+      "paragraph_to": 22,
+      "boundary_evidence": {
+        "open_paragraph": 19,
+        "open_phrase": "傅喜字稚游，河内温人也，哀帝祖母定陶傅太后从父弟。少好学问，有志行。哀帝立为太子",
+        "close_paragraph": 22,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P19–P22"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

@@ -1,0 +1,42 @@
+{
+  "work": "02汉书",
+  "vol": "101",
+  "volume_name": "儒林传",
+  "volume_type_guess": "列传",
+  "volume_arc": "C",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "丁宽",
+      "category": "文臣",
+      "rationale": "《儒林传》用户指定史略主人公，叙事块 P11–P11。"
+    },
+    {
+      "name": "伏生",
+      "category": "文臣",
+      "rationale": "《儒林传》用户指定史略主人公，叙事块 P18–P18。"
+    },
+    {
+      "name": "夏侯胜",
+      "category": "文臣",
+      "rationale": "《儒林传》用户指定史略主人公，叙事块 P21–P21。"
+    },
+    {
+      "name": "孔安国",
+      "category": "文臣",
+      "rationale": "《儒林传》用户指定史略主人公，叙事块 P24–P24。"
+    },
+    {
+      "name": "申公",
+      "category": "文臣",
+      "rationale": "《儒林传》用户指定史略主人公，叙事块 P25–P25。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "共段总述"
+  ]
+}

@@ -1,0 +1,261 @@
+{
+  "count_with_translation": 32,
+  "entries_with_translation": [
+    {
+      "id": "GLBL_00023",
+      "name": "周幽王",
+      "side": "开头",
+      "extra_paras": 2,
+      "detail": "('01史记', '004') P44-P45(+2)",
+      "has_translation": true
+    },
+    {
+      "id": "GLBL_00028",
+      "name": "周成王",
+      "side": "开头",
+      "extra_paras": 1,
+      "detail": "('01史记', '004') P27-P27(+1)",
+      "has_translation": true
+    },
+    {
+      "id": "GLBL_00038",
+      "name": "周穆王",
+      "side": "末尾",
+      "extra_paras": 2,
+      "detail": "('01史记', '004') P35-P36(+2)",
+      "has_translation": true
+    },
+    {
+      "id": "GLBL_00052",
+      "name": "宋景公",
+      "side": "末尾",
+      "extra_paras": 1,
+      "detail": "('01史记', '038') P60-P60(+1)",
+      "has_translation": true
+    },
+    {
+      "id": "GLBL_00057",
+      "name": "帝喾",
+      "side": "末尾",
+      "extra_paras": 1,
+      "detail": "('01史记', '001') P14-P14(+1)",
+      "has_translation": true
+    },
+    {
+      "id": "GLBL_00058",
+      "name": "帝辛（纣）",
+      "side": "末尾",
+      "extra_paras": 1,
+      "detail": "('01史记', '003') P40-P40(+1)",
+      "has_translation": true
+    },
+    {
+      "id": "GLBL_00060",
+      "name": "成汤",
+      "side": "末尾",
+      "extra_paras": 1,
+      "detail": "('01史记', '003') P11-P11(+1)",
+      "has_translation": true
+    },
+    {
+      "id": "GLBL_00061",
+      "name": "晋悼公",
+      "side": "开头",
+      "extra_paras": 1,
+      "detail": "('01史记', '039') P151-P151(+1)",
+      "has_translation": true
+    },
+    {
+      "id": "GLBL_00062",
+      "name": "晋文公",
+      "side": "末尾",
+      "extra_paras": 1,
+      "detail": "('01史记', '039') P103-P103(+1)",
+      "has_translation": true
+    },
+    {
+      "id": "GLBL_00065",
+      "name": "晋献公",
+      "side": "开头",
+      "extra_paras": 1,
+      "detail": "('01史记', '039') P23-P23(+1)",
+      "has_translation": true
+    },
+    {
+      "id": "GLBL_00068",
+      "name": "楚庄王",
+      "side": "开头",
+      "extra_paras": 1,
+      "detail": "('01史记', '040') P30-P30(+1)",
+      "has_translation": true
+    },
+    {
+      "id": "GLBL_00069",
+      "name": "楚怀王",
+      "side": "末尾",
+      "extra_paras": 1,
+      "detail": "('01史记', '040') P114-P114(+1)",
+      "has_translation": true
+    },
+    {
+      "id": "GLBL_00073",
+      "name": "武丁",
+      "side": "开头",
+      "extra_paras": 1,
+      "detail": "('01史记', '003') P25-P25(+1)",
+      "has_translation": true
+    },
+    {
+      "id": "GLBL_00092",
+      "name": "盘庚",
+      "side": "末尾",
+      "extra_paras": 1,
+      "detail": "('01史记', '003') P24-P24(+1)",
+      "has_translation": true
+    },
+    {
+      "id": "GLBL_00096",
+      "name": "禹",
+      "side": "末尾",
+      "extra_paras": 1,
+      "detail": "('01史记', '002') P38-P38(+1)",
+      "has_translation": true
+    },
+    {
+      "id": "GLBL_00136",
+      "name": "郑桓公",
+      "side": "末尾",
+      "extra_paras": 1,
+      "detail": "('01史记', '042') P4-P4(+1)",
+      "has_translation": true
+    },
+    {
+      "id": "GLBL_00141",
+      "name": "韩昭侯",
+      "side": "开头",
+      "extra_paras": 1,
+      "detail": "('01史记', '045') P18-P18(+1)",
+      "has_translation": true
+    },
+    {
+      "id": "GLBL_00144",
+      "name": "颛顼",
+      "side": "末尾",
+      "extra_paras": 1,
+      "detail": "('01史记', '001') P11-P11(+1)",
+      "has_translation": true
+    },
+    {
+      "id": "GLBL_00147",
+      "name": "魏文侯",
+      "side": "末尾",
+      "extra_paras": 3,
+      "detail": "('01史记', '044') P17-P19(+3)",
+      "has_translation": true
+    },
+    {
+      "id": "GLBL_00148",
+      "name": "魏武侯",
+      "side": "开头",
+      "extra_paras": 1,
+      "detail": "('01史记', '044') P19-P19(+1)",
+      "has_translation": true
+    },
+    {
+      "id": "GLBL_00149",
+      "name": "黄帝",
+      "side": "末尾",
+      "extra_paras": 1,
+      "detail": "('01史记', '001') P9-P9(+1)",
+      "has_translation": true
+    },
+    {
+      "id": "GLBL_00421",
+      "name": "管仲",
+      "side": "末尾",
+      "extra_paras": 1,
+      "detail": "('01史记', '062') P9-P9(+1)",
+      "has_translation": true
+    },
+    {
+      "id": "GLBL_00429",
+      "name": "范睢",
+      "side": "末尾",
+      "extra_paras": 3,
+      "detail": "('01史记', '079') P41-P43(+3)",
+      "has_translation": true
+    },
+    {
+      "id": "GLBL_00442",
+      "name": "虞卿",
+      "side": "开头",
+      "extra_paras": 1,
+      "detail": "('01史记', '076') P14-P14(+1)",
+      "has_translation": true
+    },
+    {
+      "id": "GLBL_00492",
+      "name": "黄歇",
+      "side": "末尾",
+      "extra_paras": 1,
+      "detail": "('01史记', '078') P26-P26(+1)",
+      "has_translation": true
+    },
+    {
+      "id": "GLBL_00528",
+      "name": "白起",
+      "side": "末尾",
+      "extra_paras": 2,
+      "detail": "('01史记', '073') P10-P11(+2)",
+      "has_translation": true
+    },
+    {
+      "id": "GLBL_00696",
+      "name": "卫庄公",
+      "side": "开头",
+      "extra_paras": 1,
+      "detail": "('01史记', '037') P9-P9(+1)",
+      "has_translation": true
+    },
+    {
+      "id": "GLBL_00704",
+      "name": "宋文公",
+      "side": "末尾",
+      "extra_paras": 1,
+      "detail": "('01史记', '038') P53-P53(+1)",
+      "has_translation": true
+    },
+    {
+      "id": "GLBL_00718",
+      "name": "楚灵王",
+      "side": "末尾",
+      "extra_paras": 1,
+      "detail": "('01史记', '040') P55-P55(+1)",
+      "has_translation": true
+    },
+    {
+      "id": "GLBL_00730",
+      "name": "赵简子",
+      "side": "末尾",
+      "extra_paras": 1,
+      "detail": "('01史记', '043') P33-P33(+1)",
+      "has_translation": true
+    },
+    {
+      "id": "GLBL_00736",
+      "name": "郑简公",
+      "side": "末尾",
+      "extra_paras": 1,
+      "detail": "('01史记', '042') P59-P59(+1)",
+      "has_translation": true
+    },
+    {
+      "id": "GLBL_00746",
+      "name": "韩釐王",
+      "side": "开头",
+      "extra_paras": 2,
+      "detail": "('01史记', '045') P35-P36(+2)",
+      "has_translation": true
+    }
+  ]
+}

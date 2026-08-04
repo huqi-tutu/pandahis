@@ -1,0 +1,157 @@
+{
+  "volume": "荆燕世家",
+  "source_file": "01史记_051_荆燕世家第二十一.txt",
+  "total_paragraphs": 13,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [
+        {
+          "name": "荆王刘贾",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "荆王刘贾",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "荆王刘贾",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "荆王刘贾",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "荆王刘贾",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "燕王刘泽",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "燕王刘泽",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "燕王刘泽",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "燕王刘泽",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "燕王刘泽",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "燕王刘泽",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 13,
+      "owners": [],
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SHIJI_051_01",
+      "史略名称": "荆王刘贾",
+      "史略简介": "荆王刘贾",
+      "原文字句": "荆王刘贾者，诸刘，不知其何属初起时。汉王元年，还定三秦，刘贾为将军，定塞地，从东击项籍。",
+      "史略分类": "宗戚",
+      "主要史料出处": "《史记·卷51·荆燕世家》",
+      "paragraphs": [
+        {
+          "volume": "荆燕世家",
+          "paragraph_from": 1,
+          "paragraph_to": 5
+        }
+      ],
+      "五级细坐标": "史记·卷051·宗戚·01",
+      "六级段落锚点": "[P1-P5]",
+      "原文出处": "荆燕世家·P1-P5"
+    },
+    {
+      "史略ID": "SHIJI_051_02",
+      "史略名称": "燕王刘泽",
+      "史略简介": "燕王刘泽",
+      "原文字句": "燕王刘泽者，诸刘远属也。高帝三年，泽为郎中。高帝十一年，泽以将军击陈豨，得王黄，为营陵侯。",
+      "史略分类": "宗戚",
+      "主要史料出处": "《史记·卷51·荆燕世家》",
+      "paragraphs": [
+        {
+          "volume": "荆燕世家",
+          "paragraph_from": 6,
+          "paragraph_to": 11
+        }
+      ],
+      "五级细坐标": "史记·卷051·宗戚·02",
+      "六级段落锚点": "[P6-P11]",
+      "原文出处": "荆燕世家·P6-P11"
+    }
+  ]
+}

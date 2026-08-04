@@ -1,0 +1,28 @@
+{
+  "work": "02汉书",
+  "vol": "114",
+  "total_paragraphs": 42,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "王政君",
+      "category": "宗戚",
+      "paragraph_from": 2,
+      "paragraph_to": 42,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "孝元皇后，王莽姑也。莽自谓黄帝之后，其《自本》曰：黄帝姓姚氏，八世生虞舜。舜起妫",
+        "close_paragraph": 42,
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

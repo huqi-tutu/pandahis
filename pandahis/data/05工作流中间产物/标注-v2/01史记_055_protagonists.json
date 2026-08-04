@@ -1,0 +1,19 @@
+{
+  "work": "01史记",
+  "vol": "055",
+  "volume_name": "留侯世家",
+  "volume_type_guess": "世家",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "张良",
+      "category": "文臣",
+      "rationale": "《留侯世家》以张良（留侯）个人生平为叙事主轴，属单人世家卷型（A 单人卷）。张良为汉初开国谋臣，以运筹帷幄、辅佐刘邦定天下为一生功业，非封国世袭君主，亦非天子，按史略分类 v4 准入标准应归文臣。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

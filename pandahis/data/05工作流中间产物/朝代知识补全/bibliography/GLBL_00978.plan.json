@@ -1,0 +1,129 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00978",
+  "写作结构": "正史叙述见翻译详录，重点覆盖张苍为秦御史、计相、定律历、水德之争及晚年食乳长寿等核心事实；拓展文仅引《论衡》‘张苍由妇人得乳乃寿’的议论，作为后世对其长寿异说的评论补充，不作细节发挥；计相、律历等制度细节正史已备，史外无重大补充，其余留白。",
+  "候选著作": [
+    {
+      "出处": "《史记·张丞相列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "本条目主要史料出处，详载张苍生平、为计相、定律历、水德说及晚年食乳等事",
+      "检索词": "张丞相苍",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《汉书·张苍传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史张苍本传，与《史记》互有详略，提供汉初制度背景",
+      "检索词": "张苍 北平侯",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《论衡·命义篇》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "王充对张苍食人乳得寿一事进行评论，反映东汉士人对该异闻的看法",
+      "检索词": "张苍 食乳 命义",
+      "采用": true,
+      "原文摘句": "张苍由妇人得乳乃寿，此本无德而然。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《资治通鉴·汉纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "编年叙述张苍仕宦经历，无超出正史的新增细节",
+      "检索词": "张苍 计相",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《汉纪》（荀悦）",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "改编《汉书》而成，叙张苍事简略，可作参考但不提供新史料",
+      "检索词": "张苍",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·张丞相列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "本条目主要史料出处，详载张苍生平、为计相、定律历、水德说及晚年食乳等事",
+      "检索词": "张丞相苍",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《汉书·张苍传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史张苍本传，与《史记》互有详略，提供汉初制度背景",
+      "检索词": "张苍 北平侯",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "A"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《论衡·命义篇》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "王充对张苍食人乳得寿一事进行评论，反映东汉士人对该异闻的看法",
+      "检索词": "张苍 食乳 命义",
+      "采用": true,
+      "原文摘句": "张苍由妇人得乳乃寿，此本无德而然。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《资治通鉴·汉纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "编年叙述张苍仕宦经历，无超出正史的新增细节",
+      "检索词": "张苍 计相",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《汉纪》（荀悦）",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "改编《汉书》而成，叙张苍事简略，可作参考但不提供新史料",
+      "检索词": "张苍",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 1,
+    "C_excluded": 4,
+    "overall": "B"
+  }
+}

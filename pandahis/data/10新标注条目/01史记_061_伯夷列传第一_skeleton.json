@@ -1,0 +1,66 @@
+{
+  "volume": "伯夷列传",
+  "source_file": "01史记_061_伯夷列传第一.txt",
+  "total_paragraphs": 4,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "single",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [
+        {
+          "name": "伯夷",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "伯夷",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "伯夷",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "伯夷",
+          "category": "庶众"
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SHIJI_061_01",
+      "史略名称": "伯夷",
+      "史略简介": "伯夷",
+      "原文字句": "夫学者载籍极博，犹考信於六蓺。诗书虽缺，然虞夏之文可知也。尧将逊位，让於虞舜，舜禹之间，岳牧咸荐，乃试之於位，典职数十年，功用既兴，然后授政。示天下重器，王者大统，传天下若斯之难也。而说者曰尧让天下於许由，许由不受，耻之逃隐。及夏之时，有卞随、务光者。此何以称焉？太史公曰：余登箕山，其上盖有许由冢云。孔子序列古之仁圣贤人，如吴太伯、伯夷之伦详矣。",
+      "史略分类": "庶众",
+      "主要史料出处": "《史记·卷61·伯夷列传》",
+      "paragraphs": [
+        {
+          "volume": "伯夷列传",
+          "paragraph_from": 1,
+          "paragraph_to": 4
+        }
+      ],
+      "五级细坐标": "史记·卷061·庶众·01",
+      "六级段落锚点": "[P1-P4]",
+      "原文出处": "伯夷列传·P1-P4"
+    }
+  ]
+}

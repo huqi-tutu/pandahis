@@ -1,0 +1,299 @@
+{
+  "volume": "文三王传",
+  "source_file": "02汉书_057_文三王传第十七.txt",
+  "total_paragraphs": 36,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "interleaved",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "梁孝王刘武",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "梁孝王刘武",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "梁孝王刘武",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "梁孝王刘武",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "梁孝王刘武",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "梁孝王刘武",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "梁孝王刘武",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "梁孝王刘武",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "梁孝王刘武",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "梁孝王刘武",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "梁孝王刘武",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "代王刘参",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 16,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "太原王刘揖",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 19,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 20,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 21,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 22,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 23,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 24,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 25,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 26,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 27,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 28,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 29,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 30,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 31,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 32,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 33,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 34,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 35,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 36,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HANSHU_057_01",
+      "史略名称": "梁孝王刘武",
+      "史略简介": "梁孝王刘武",
+      "原文字句": "梁孝王武以孝文二年与太原王参、梁王揖同日立。武为代王，四年徙为淮阳王，十二年徙梁，自初王通历已十一年矣。",
+      "史略分类": "宗戚",
+      "主要史料出处": "《02汉书·卷57·文三王传》",
+      "paragraphs": [
+        {
+          "volume": "文三王传",
+          "paragraph_from": 3,
+          "paragraph_to": 13
+        }
+      ],
+      "五级细坐标": "汉书·卷057·宗戚·01",
+      "六级段落锚点": "[P3-P13]",
+      "原文出处": "文三王传·P3-P13"
+    },
+    {
+      "史略ID": "HANSHU_057_02",
+      "史略名称": "代王刘参",
+      "史略简介": "代王刘参",
+      "原文字句": "代孝王参初立为太原王。四年，代王武徙为淮阳王，而参徙为代王，复并得太原，都晋阳如故。五年一朝，凡三朝。十七年薨，子共王登嗣。二十九年薨，子义嗣。元鼎中，汉广关，以常山为阻。徙代王于清河，是为刚王。并前在代凡立四十年薨，子顷王汤嗣。二十四年薨，子年嗣。",
+      "史略分类": "宗戚",
+      "主要史料出处": "《02汉书·卷57·文三王传》",
+      "paragraphs": [
+        {
+          "volume": "文三王传",
+          "paragraph_from": 14,
+          "paragraph_to": 14
+        }
+      ],
+      "五级细坐标": "汉书·卷057·宗戚·02",
+      "六级段落锚点": "[P14]",
+      "原文出处": "文三王传·P14"
+    },
+    {
+      "史略ID": "HANSHU_057_03",
+      "史略名称": "太原王刘揖",
+      "史略简介": "太原王刘揖",
+      "原文字句": "梁怀王揖，文帝少子也。好《诗》《书》，帝爱之，异于他子。五年一朝，凡再入朝。因堕马死，立十年薨。无子，国除。明年，梁孝王武徙王梁。",
+      "史略分类": "宗戚",
+      "主要史料出处": "《02汉书·卷57·文三王传》",
+      "paragraphs": [
+        {
+          "volume": "文三王传",
+          "paragraph_from": 17,
+          "paragraph_to": 17
+        }
+      ],
+      "五级细坐标": "汉书·卷057·宗戚·03",
+      "六级段落锚点": "[P17]",
+      "原文出处": "文三王传·P17"
+    }
+  ],
+  "translation_qa_hint": "混写卷：人物段落非连续。翻译质检须按 entries[].paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。"
+}

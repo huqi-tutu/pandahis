@@ -1,0 +1,46 @@
+{
+  "work": "02汉书",
+  "vol": "097",
+  "total_paragraphs": 47,
+  "volume_subtype": "hezhuan",
+  "derived_from": "02汉书_097_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 47,
+      "paragraph_to": 47,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "谷永",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 38,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "谷永字子云，长安人也。父吉，为卫司马，使送郅支单于侍子，为郅支所杀，语在《陈汤传",
+        "close_paragraph": 38,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P38"
+      }
+    },
+    {
+      "name": "杜邺",
+      "category": "文臣",
+      "paragraph_from": 39,
+      "paragraph_to": 46,
+      "boundary_evidence": {
+        "open_paragraph": 39,
+        "open_phrase": "杜邺字子夏，本魏郡繁阳人也。祖父及父积功劳皆至郡守，武帝时徙茂陵。邺少孤，其母张",
+        "close_paragraph": 46,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P39–P46"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

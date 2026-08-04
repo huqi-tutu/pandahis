@@ -1,0 +1,20 @@
+{
+  "work": "02汉书",
+  "vol": "108",
+  "volume_name": "匈奴传第六十四下",
+  "volume_type_guess": "列传",
+  "narrative_mode": "fanzuo",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "匈奴",
+      "category": "蕃祚",
+      "rationale": "《匈奴传》以匈奴政权/部族集体为叙事主轴，属蕃祚卷型，非帝王.json单君王；年轴为匈奴政权立国至灭亡。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

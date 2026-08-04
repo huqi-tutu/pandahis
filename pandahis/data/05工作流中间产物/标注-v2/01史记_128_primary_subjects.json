@@ -1,0 +1,685 @@
+{
+  "work": "01史记",
+  "vol": "128",
+  "total_paragraphs": 135,
+  "method": "Step1b-α LLM",
+  "paragraphs": [
+    {
+      "paragraph": 1,
+      "primary_subject": "太史公曰",
+      "disposition": "exclude",
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph": 2,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 3,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 4,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 5,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 6,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 7,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 8,
+      "primary_subject": "太史公曰",
+      "disposition": "exclude",
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph": 9,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 10,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 11,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 12,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 13,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 14,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 15,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 16,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 17,
+      "primary_subject": "卫平",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 18,
+      "primary_subject": "卫平",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 19,
+      "primary_subject": "卫平",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 20,
+      "primary_subject": "卫平",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 21,
+      "primary_subject": "卫平",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 22,
+      "primary_subject": "卫平",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 23,
+      "primary_subject": "卫平",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 24,
+      "primary_subject": "卫平",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 25,
+      "primary_subject": "卫平",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 26,
+      "primary_subject": "卫平",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 27,
+      "primary_subject": "卫平",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 28,
+      "primary_subject": "卫平",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 29,
+      "primary_subject": "卫平",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 30,
+      "primary_subject": "卫平",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 31,
+      "primary_subject": "卫平",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 32,
+      "primary_subject": "卫平",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 33,
+      "primary_subject": "卫平",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 34,
+      "primary_subject": "卫平",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 35,
+      "primary_subject": "卫平",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 36,
+      "primary_subject": "卫平",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 37,
+      "primary_subject": "卫平",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 38,
+      "primary_subject": "卫平",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 39,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 40,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 41,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 42,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 43,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 44,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 45,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 46,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 47,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 48,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 49,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 50,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 51,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 52,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 53,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 54,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 55,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 56,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 57,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 58,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 59,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 60,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 61,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 62,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 63,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 64,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 65,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 66,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 67,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 68,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 69,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 70,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 71,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 72,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 73,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 74,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 75,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 76,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 77,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 78,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 79,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 80,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 81,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 82,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 83,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 84,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 85,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 86,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 87,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 88,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 89,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 90,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 91,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 92,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 93,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 94,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 95,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 96,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 97,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 98,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 99,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 100,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 101,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 102,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 103,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 104,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 105,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 106,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 107,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 108,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 109,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 110,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 111,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 112,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 113,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 114,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 115,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 116,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 117,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 118,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 119,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 120,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 121,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 122,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 123,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 124,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 125,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 126,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 127,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 128,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 129,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 130,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 131,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 132,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 133,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 134,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 135,
+      "primary_subject": "太卜",
+      "disposition": "block"
+    }
+  ]
+}

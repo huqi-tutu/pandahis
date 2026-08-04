@@ -1,0 +1,27 @@
+{
+  "work": "01史记",
+  "vol": "085",
+  "total_paragraphs": 23,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 23,
+      "paragraph_to": 23,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "吕不韦",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 22,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "吕不韦者，阳翟大贾人也。往来贩贱卖贵，家累千金。",
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

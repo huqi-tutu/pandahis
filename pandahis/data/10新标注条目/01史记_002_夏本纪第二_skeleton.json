@@ -1,0 +1,526 @@
+{
+  "volume": "夏本纪",
+  "source_file": "01史记_002_夏本纪第二.txt",
+  "total_paragraphs": 48,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "benji_multi",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [
+        {
+          "name": "禹",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "禹",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "禹",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "禹",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "禹",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "禹",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "禹",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "禹",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "禹",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "禹",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "禹",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "禹",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "禹",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "禹",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "禹",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "禹",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "禹",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "禹",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "禹",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "禹",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "禹",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "禹",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "禹",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "禹",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "禹",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "禹",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "禹",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "禹",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "禹",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "禹",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "禹",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "禹",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "禹",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "禹",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "禹",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "禹",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "禹",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "禹",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "启",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "启",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "启",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "启",
+          "category": "君王"
+        },
+        {
+          "name": "太康",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 44,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "孔甲",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [
+        {
+          "name": "孔甲",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 47,
+      "owners": [
+        {
+          "name": "桀",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 48,
+      "owners": [],
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SHIJI_002_01",
+      "史略名称": "禹",
+      "史略简介": "禹",
+      "原文字句": "夏禹，名曰文命。禹之父曰鲧，鲧之父曰帝颛顼，颛顼之父曰昌意，昌意之父曰黄帝。禹者，黄帝之玄孙而帝颛顼之孙也。禹之曾大父昌意及父鲧皆不得在帝位，为人臣。当帝尧之时，鸿水滔天，浩浩怀山襄陵，下民其忧。尧求能治水者，群臣四岳皆曰鲧可。尧曰：“鲧为人负命毁族，不可。”四岳曰：“等之未有贤於鲧者，愿帝试之。”於是尧听四岳，用鲧治水。九年而水不息，功用不成。",
+      "史略分类": "君王",
+      "主要史料出处": "《史记·卷2·夏本纪》",
+      "paragraphs": [
+        {
+          "volume": "夏本纪",
+          "paragraph_from": 1,
+          "paragraph_to": 38
+        }
+      ],
+      "五级细坐标": "史记·卷002·君王·01",
+      "六级段落锚点": "[P1-P38]",
+      "原文出处": "夏本纪·P1-P38"
+    },
+    {
+      "史略ID": "SHIJI_002_02",
+      "史略名称": "启",
+      "史略简介": "启",
+      "原文字句": "夏后帝启，禹之子，其母涂山氏之女也。",
+      "史略分类": "君王",
+      "主要史料出处": "《史记·卷2·夏本纪》",
+      "paragraphs": [
+        {
+          "volume": "夏本纪",
+          "paragraph_from": 39,
+          "paragraph_to": 42
+        }
+      ],
+      "五级细坐标": "史记·卷002·君王·02",
+      "六级段落锚点": "[P39-P42]",
+      "原文出处": "夏本纪·P39-P42"
+    },
+    {
+      "史略ID": "SHIJI_002_03",
+      "史略名称": "太康",
+      "史略简介": "太康",
+      "原文字句": "夏后帝启崩，子帝太康立。帝太康失国，昆弟五人，须于洛汭，作五子之歌。",
+      "史略分类": "君王",
+      "主要史料出处": "《史记·卷2·夏本纪》",
+      "paragraphs": [
+        {
+          "volume": "夏本纪",
+          "paragraph_from": 42,
+          "paragraph_to": 42
+        }
+      ],
+      "五级细坐标": "史记·卷002·君王·03",
+      "六级段落锚点": "[P42]",
+      "原文出处": "夏本纪·P42"
+    },
+    {
+      "史略ID": "SHIJI_002_04",
+      "史略名称": "孔甲",
+      "史略简介": "孔甲",
+      "原文字句": "帝孔甲立，好方鬼神，事淫乱。夏后氏德衰，诸侯畔之。天降龙二，有雌雄，孔甲不能食，未得豢龙氏。陶唐既衰，其后有刘累，学扰龙于豢龙氏，以事孔甲。",
+      "史略分类": "君王",
+      "主要史料出处": "《史记·卷2·夏本纪》",
+      "paragraphs": [
+        {
+          "volume": "夏本纪",
+          "paragraph_from": 45,
+          "paragraph_to": 46
+        }
+      ],
+      "五级细坐标": "史记·卷002·君王·04",
+      "六级段落锚点": "[P45-P46]",
+      "原文出处": "夏本纪·P45-P46"
+    },
+    {
+      "史略ID": "SHIJI_002_05",
+      "史略名称": "桀",
+      "史略简介": "桀",
+      "原文字句": "孔甲崩，子帝皋立。帝皋崩，子帝发立。帝发崩，子帝履癸立，是为桀。帝桀之时，自孔甲以来而诸侯多畔夏，桀不务德而武伤百姓，百姓弗堪。乃召汤而囚之夏台，已而释之。汤修德，诸侯皆归汤，汤遂率兵以伐夏桀。桀走鸣条，遂放而死。桀谓人曰：“吾悔不遂杀汤於夏台，使至此。”汤乃践天子位，代夏朝天下。汤封夏之后，至周封於杞也。",
+      "史略分类": "君王",
+      "主要史料出处": "《史记·卷2·夏本纪》",
+      "paragraphs": [
+        {
+          "volume": "夏本纪",
+          "paragraph_from": 47,
+          "paragraph_to": 47
+        }
+      ],
+      "五级细坐标": "史记·卷002·君王·05",
+      "六级段落锚点": "[P47]",
+      "原文出处": "夏本纪·P47"
+    }
+  ]
+}

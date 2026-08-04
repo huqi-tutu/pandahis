@@ -1,0 +1,32 @@
+{
+  "work": "02汉书",
+  "vol": "070",
+  "total_paragraphs": 34,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 34,
+      "paragraph_to": 34,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "张汤",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 33,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "张汤，杜陵人也。父为长安丞，出，汤为儿守舍。还，鼠盗肉，父怨，笞汤。汤掘熏得鼠及",
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

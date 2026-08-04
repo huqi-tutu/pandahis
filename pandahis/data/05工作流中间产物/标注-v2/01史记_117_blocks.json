@@ -1,0 +1,27 @@
+{
+  "work": "01史记",
+  "vol": "117",
+  "total_paragraphs": 82,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 82,
+      "paragraph_to": 82,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "司马相如",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 81,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "司马相如者，蜀郡成都人也，字长卿。少时好读书，学击剑，故其亲名之曰犬子。相如既学",
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

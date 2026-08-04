@@ -1,0 +1,18 @@
+{
+  "work": "01史记",
+  "vol": "007",
+  "volume_name": "项羽本纪",
+  "volume_type_guess": "本纪",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "项羽",
+      "category": "君王",
+      "rationale": "卷名《项羽本纪》以项羽为叙事主轴，项羽虽未称帝，但司马迁以本纪体例独纪其兴亡，为秦末西楚霸王，故为唯一主人公。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰"
+  ]
+}

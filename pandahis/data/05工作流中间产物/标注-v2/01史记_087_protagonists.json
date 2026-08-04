@@ -1,0 +1,19 @@
+{
+  "work": "01史记",
+  "vol": "087",
+  "volume_name": "李斯列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "李斯",
+      "category": "文臣",
+      "rationale": "卷名《李斯列传》为单人列传，主轴即李斯本人。李斯为秦朝丞相，以刑名法术、行政辅政为仕宦主轴，属文臣而非君王或诸侯。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00958",
+  "写作结构": "正史叙述《史记·匈奴列传》已记蒙恬筑亭障烽燧，详录见翻译详录。拓展部分先引《墨子》城守诸篇说明烽火信号传警原则为秦所因，次以睡虎地秦简《行书律》与里耶秦简公文展示秦边郡预警传递的律令与行政运作，再以张家山汉简《二年律令·津关令》佐证秦制下预警与塞防结合的实态；最后可略提汉代居延汉简的烽燧品约作为制度延续的参照，以补秦简直接材料之不足。全文杜绝编造具体信号编码、排班表及人名。",
+  "候选著作": [
+    {
+      "出处": "《墨子·旗帜》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载先秦城守中举旗、举火、举表等信号传递制度，是秦烽燧预警方法的先导。",
+      "检索词": "烽表 举火 预警",
+      "采用": true,
+      "原文摘句": "城上以麾指之，斥步鼓整旗，以备战守。寇至则举烽，举垂表，夜以火。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "睡虎地秦墓竹简《秦律十八种·行书律》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "规定秦代紧急文书传递的时限与管理，间接反映烽燧警报随行文上达的律令基础。",
+      "检索词": "行书 急者 传到",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "里耶秦简（多则）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "迁陵县廷文书涉及边吏警戒、戍卒调配与敌情上报，展示秦边郡预警行政的实际运作。",
+      "检索词": "迁陵 警 报 卒",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "张家山汉墓竹简《二年律令·津关令》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "汉初法令继承秦制，明示塞防烽燧的使用与关津警备一体，可逆推秦制。",
+      "检索词": "津关 烽燧 严",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《居延汉简》EPF16.1-17（举例）",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "汉简中存有烽燧品约实例，体现秦制的延续与细化，可作制度演进的旁证。",
+      "检索词": "居延汉简 烽燧品约 举",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·匈奴列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，已由翻译详录处理，不在此处拓展摘句。",
+      "检索词": "",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《墨子·旗帜》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载先秦城守中举旗、举火、举表等信号传递制度，是秦烽燧预警方法的先导。",
+      "检索词": "烽表 举火 预警",
+      "采用": true,
+      "原文摘句": "城上以麾指之，斥步鼓整旗，以备战守。寇至则举烽，举垂表，夜以火。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "睡虎地秦墓竹简《秦律十八种·行书律》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "规定秦代紧急文书传递的时限与管理，间接反映烽燧警报随行文上达的律令基础。",
+      "检索词": "行书 急者 传到",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "里耶秦简（多则）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "迁陵县廷文书涉及边吏警戒、戍卒调配与敌情上报，展示秦边郡预警行政的实际运作。",
+      "检索词": "迁陵 警 报 卒",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "张家山汉墓竹简《二年律令·津关令》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "汉初法令继承秦制，明示塞防烽燧的使用与关津警备一体，可逆推秦制。",
+      "检索词": "津关 烽燧 严",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·匈奴列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，已由翻译详录处理，不在此处拓展摘句。",
+      "检索词": "",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《居延汉简》EPF16.1-17（举例）",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "汉简中存有烽燧品约实例，体现秦制的延续与细化，可作制度演进的旁证。",
+      "检索词": "居延汉简 烽燧品约 举",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 5,
+    "C_excluded": 1,
+    "overall": "B"
+  }
+}

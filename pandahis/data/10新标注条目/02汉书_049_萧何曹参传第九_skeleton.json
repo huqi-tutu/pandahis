@@ -1,0 +1,310 @@
+{
+  "volume": "萧何曹参传",
+  "source_file": "02汉书_049_萧何曹参传第九.txt",
+  "total_paragraphs": 30,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "酂侯萧何",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "酂侯萧何",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "酂侯萧何",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "酂侯萧何",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "酂侯萧何",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "酂侯萧何",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "酂侯萧何",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "酂侯萧何",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "酂侯萧何",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "酂侯萧何",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "酂侯萧何",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "酂侯萧何",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "酂侯萧何",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "平阳侯曹参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "平阳侯曹参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "平阳侯曹参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "平阳侯曹参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "平阳侯曹参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "平阳侯曹参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "平阳侯曹参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "平阳侯曹参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "平阳侯曹参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "平阳侯曹参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "平阳侯曹参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "平阳侯曹参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "平阳侯曹参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "平阳侯曹参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "平阳侯曹参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HANSHU_049_01",
+      "史略名称": "酂侯萧何",
+      "史略简介": "酂侯萧何",
+      "原文字句": "萧何，沛人也。以文毋害为沛主吏掾。高祖为布衣时，数以吏事护高祖。高祖为亭长，常佑之。高祖以吏繇咸阳，吏皆送奉钱三，何独以五。秦御史监郡者，与从事辩之。何乃给泗水卒史事，第一。秦御史欲入言征何，何固请，得毋行。",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷49·萧何曹参传》",
+      "paragraphs": [
+        {
+          "volume": "萧何曹参传",
+          "paragraph_from": 2,
+          "paragraph_to": 14
+        }
+      ],
+      "五级细坐标": "汉书·卷049·文臣·01",
+      "六级段落锚点": "[P2-P14]",
+      "原文出处": "萧何曹参传·P2-P14"
+    },
+    {
+      "史略ID": "HANSHU_049_02",
+      "史略名称": "平阳侯曹参",
+      "史略简介": "平阳侯曹参",
+      "原文字句": "曹参，沛人也。秦时为狱掾，而萧何为主吏，居县为豪吏矣。高祖为沛公也，参以中涓从击胡陵、方与，攻秦监公军，大破之。东下薛，击泗水守军薛郭西。复攻胡陵，取之。徙守方与。方与反为魏，击之。丰反为魏，攻之。赐爵七大夫。北击司马欣军砀东，取狐父、祁善置。又攻下邑以西，至虞，击秦将章邯车骑。攻辕戚及亢父，先登。迁为五大夫。北救东阿，击章邯军，陷陈，追至濮阳。攻定陶，取临济。南救雍丘，击李由军，破之，杀李由，虏",
+      "史略分类": "文臣",
+      "主要史料出处": "《02汉书·卷49·萧何曹参传》",
+      "paragraphs": [
+        {
+          "volume": "萧何曹参传",
+          "paragraph_from": 15,
+          "paragraph_to": 29
+        }
+      ],
+      "五级细坐标": "汉书·卷049·文臣·02",
+      "六级段落锚点": "[P15-P29]",
+      "原文出处": "萧何曹参传·P15-P29"
+    }
+  ]
+}

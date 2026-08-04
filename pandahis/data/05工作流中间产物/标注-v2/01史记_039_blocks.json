@@ -1,0 +1,85 @@
+{
+  "work": "01史记",
+  "vol": "039",
+  "total_paragraphs": 183,
+  "volume_subtype": "hezhuan",
+  "derived_from": "01史记_039_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 3,
+      "paragraph_to": 22,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 45,
+      "paragraph_to": 61,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 104,
+      "paragraph_to": 150,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 157,
+      "paragraph_to": 182,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 183,
+      "paragraph_to": 183,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "晋唐叔虞",
+      "category": "诸侯",
+      "paragraph_from": 1,
+      "paragraph_to": 2,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "晋唐叔虞者，周武王子而成王弟。初，武王与叔虞母会时，梦天谓武王曰：“余命女生子，",
+        "close_paragraph": 2,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P1–P2"
+      }
+    },
+    {
+      "name": "晋献公",
+      "category": "诸侯",
+      "paragraph_from": 23,
+      "paragraph_to": 44,
+      "boundary_evidence": {
+        "open_paragraph": 23,
+        "open_phrase": "武公称者，先晋穆侯曾孙也，曲沃桓叔孙也。桓叔者，始封曲沃。武公，庄伯子也。自桓叔",
+        "close_paragraph": 44,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P23–P44"
+      }
+    },
+    {
+      "name": "晋文公",
+      "category": "诸侯",
+      "paragraph_from": 62,
+      "paragraph_to": 103,
+      "boundary_evidence": {
+        "open_paragraph": 62,
+        "open_phrase": "何以教之？”怀公卒杀狐突。秦缪公乃发兵送内重耳，使人告栾、郤之党为内应，杀怀公於",
+        "close_paragraph": 103,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P62–P103"
+      }
+    },
+    {
+      "name": "晋悼公",
+      "category": "诸侯",
+      "paragraph_from": 151,
+      "paragraph_to": 156,
+      "boundary_evidence": {
+        "open_paragraph": 151,
+        "open_phrase": "公弗听，谢栾书等以诛郤氏罪：“大夫复位。”二子顿首曰：“幸甚幸甚！”公使胥童为卿",
+        "close_paragraph": 156,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P151–P156"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

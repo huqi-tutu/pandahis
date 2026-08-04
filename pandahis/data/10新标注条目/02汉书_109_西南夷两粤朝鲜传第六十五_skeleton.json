@@ -1,0 +1,468 @@
+{
+  "volume": "西南夷两粤朝鲜传",
+  "source_file": "02汉书_109_西南夷两粤朝鲜传第六十五.txt",
+  "total_paragraphs": 46,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [],
+      "exclude_reason": "篇内小标题"
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "西南夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "西南夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "西南夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "西南夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "西南夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "西南夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "西南夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "西南夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "西南夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "西南夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "两粤",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "两粤",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "两粤",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "两粤",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "两粤",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "两粤",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "两粤",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "两粤",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "两粤",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "两粤",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "两粤",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "两粤",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "两粤",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "两粤",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "两粤",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "两粤",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "两粤",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "两粤",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "两粤",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "两粤",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "两粤",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "两粤",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "两粤",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "两粤",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "两粤",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "朝鲜",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "朝鲜",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "朝鲜",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "朝鲜",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "朝鲜",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "朝鲜",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "朝鲜",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "朝鲜",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HANSHU_109_01",
+      "史略名称": "西南夷",
+      "史略简介": "西南夷",
+      "原文字句": "南夷君长以十数，夜郎最大。其西，靡莫之属以十数，滇最大。自滇以北，君长以十数，邛都最大。此皆椎结，耕田，有邑聚。其外，西自桐师以东，北至叶榆，名为巂、昆明、编发，随畜移徙，亡常处，亡君长，地方可数千里。自巂以东北，君长以十数，徙、莋都最大。自莋以东北，君长以十数，冉駹最大。其俗，或土著，或移徙。在蜀之西。自駹以东北，君长以十数，白马最大，皆氐类也。此皆巴、蜀西南外蛮夷也。",
+      "史略分类": "蕃祚",
+      "主要史料出处": "《02汉书·卷109·西南夷两粤朝鲜传》",
+      "paragraphs": [
+        {
+          "volume": "西南夷两粤朝鲜传",
+          "paragraph_from": 3,
+          "paragraph_to": 12
+        }
+      ],
+      "五级细坐标": "汉书·卷109·蕃祚·01",
+      "六级段落锚点": "[P3-P12]",
+      "原文出处": "西南夷两粤朝鲜传·P3-P12"
+    },
+    {
+      "史略ID": "HANSHU_109_02",
+      "史略名称": "两粤",
+      "史略简介": "两粤",
+      "原文字句": "南粤王赵佗，真定人也。秦并天下，略定扬粤，置桂林、南海、象郡，以適徙民与粤杂处。十三岁，至二世时，南海尉任嚣病且死，召龙川令赵佗语曰：“闻陈胜等作乱，豪桀叛秦相立，南海辟远，恐盗兵侵此。吾欲兴兵绝新道，自备侍诸侯变，会疾甚。且番禺负山险阻，南北东西数千里，颇有中国人相辅，此亦一州之主，可为国。郡中长吏亡足与谋者，故召公告之。”即被佗书，行南海尉事。嚣死，佗即移檄告横浦、阳山、湟溪关曰：“盗兵且至，",
+      "史略分类": "蕃祚",
+      "主要史料出处": "《02汉书·卷109·西南夷两粤朝鲜传》",
+      "paragraphs": [
+        {
+          "volume": "西南夷两粤朝鲜传",
+          "paragraph_from": 13,
+          "paragraph_to": 37
+        }
+      ],
+      "五级细坐标": "汉书·卷109·蕃祚·02",
+      "六级段落锚点": "[P13-P37]",
+      "原文出处": "西南夷两粤朝鲜传·P13-P37"
+    },
+    {
+      "史略ID": "HANSHU_109_03",
+      "史略名称": "朝鲜",
+      "史略简介": "朝鲜",
+      "原文字句": "朝鲜王满，燕人。自始燕时，尝略属真番、朝鲜，为置吏筑障。秦灭燕，属辽东外徼。汉兴，为远难守，复修辽东故塞，至浿水为界，属燕。燕王卢绾反，入匈奴，满亡命，聚党千余人，椎结蛮夷服而东走出塞，渡浿水，居秦故空地上下障，稍伇属真番、朝鲜蛮夷及故燕、齐亡在者王之，都王险。",
+      "史略分类": "蕃祚",
+      "主要史料出处": "《02汉书·卷109·西南夷两粤朝鲜传》",
+      "paragraphs": [
+        {
+          "volume": "西南夷两粤朝鲜传",
+          "paragraph_from": 38,
+          "paragraph_to": 45
+        }
+      ],
+      "五级细坐标": "汉书·卷109·蕃祚·03",
+      "六级段落锚点": "[P38-P45]",
+      "原文出处": "西南夷两粤朝鲜传·P38-P45"
+    }
+  ]
+}

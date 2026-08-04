@@ -1,0 +1,29 @@
+{
+  "work": "01史记",
+  "vol": "031",
+  "volume_name": "吴太伯世家",
+  "volume_type_guess": "世家",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "shijia_zhuhou",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "吴太伯",
+      "category": "诸侯",
+      "rationale": "卷名始祖；开国让国奔吴（P1）。"
+    },
+    {
+      "name": "吴王阖闾",
+      "category": "诸侯",
+      "rationale": "专诸弑僚即位（P32 是为吴王阖庐）；破楚入郢至槜李伤死（P32–39）。"
+    },
+    {
+      "name": "吴王夫差",
+      "category": "诸侯",
+      "rationale": "王夫差元年至自刭、吴亡（P40–51）。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰"
+  ]
+}

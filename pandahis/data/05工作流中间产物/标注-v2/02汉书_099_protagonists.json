@@ -1,0 +1,20 @@
+{
+  "work": "02汉书",
+  "vol": "099",
+  "volume_name": "扬雄传第五十七上",
+  "volume_type_guess": "列传",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "扬雄",
+      "category": "文臣",
+      "rationale": "《汉书·扬雄传》为单人列传，卷名即传主姓名。扬雄为西汉著名文学家、哲学家、辞赋家，以辞赋、学术著述（《太玄》《法言》）仕宦显名，属文学仕宦为主轴的文臣列传。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "work": "01史记",
+  "vol": "087",
+  "total_paragraphs": 53,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 52,
+      "paragraph_to": 52,
+      "exclude_reason": "太史公曰"
+    },
+    {
+      "paragraph_from": 53,
+      "paragraph_to": 53,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "李斯",
+      "category": "文臣",
+      "paragraph_from": 1,
+      "paragraph_to": 51,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "李斯者，楚上蔡人也。年少时，为郡小吏，见吏舍厕中鼠食不絜，近人犬，数惊恐之。斯入",
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

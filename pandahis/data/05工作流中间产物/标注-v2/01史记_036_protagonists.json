@@ -1,0 +1,26 @@
+{
+  "work": "01史记",
+  "vol": "036",
+  "volume_name": "陈杞世家",
+  "volume_type_guess": "世家",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_arc": "C",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "陈胡公满",
+      "category": "诸侯",
+      "rationale": "卷名陈国始封君妫满，谥胡公；合传陈支主轴。"
+    },
+    {
+      "name": "杞东楼公",
+      "category": "诸侯",
+      "rationale": "卷名杞国始封君；合传杞支主轴。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "世系链"
+  ]
+}

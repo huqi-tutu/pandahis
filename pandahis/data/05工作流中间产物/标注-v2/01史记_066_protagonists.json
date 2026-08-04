@@ -1,0 +1,19 @@
+{
+  "work": "01史记",
+  "vol": "066",
+  "volume_name": "伍子胥列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "伍子胥",
+      "category": "文臣",
+      "rationale": "卷名《伍子胥列传》为单人列传，主轴为伍子胥。伍子胥虽以军事才能辅佐吴王阖闾破楚，但其身份为吴国大夫、谋臣，以政治谋略、复仇雪耻、谏诤忠直为叙事主线，非割据一方之将帅，故归文臣。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰",
+    "其他"
+  ]
+}

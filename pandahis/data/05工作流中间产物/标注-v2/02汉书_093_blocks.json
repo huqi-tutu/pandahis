@@ -1,0 +1,70 @@
+{
+  "work": "02汉书",
+  "vol": "093",
+  "total_paragraphs": 57,
+  "volume_subtype": "hezhuan",
+  "derived_from": "02汉书_093_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 57,
+      "paragraph_to": 57,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "匡衡",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 25,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "匡衡字稚圭，东海承人也。父世农夫，至衡好学，家贫，庸作以供资用，尤精力过绝人。诸",
+        "close_paragraph": 25,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P25"
+      }
+    },
+    {
+      "name": "张禹",
+      "category": "文臣",
+      "paragraph_from": 26,
+      "paragraph_to": 34,
+      "boundary_evidence": {
+        "open_paragraph": 26,
+        "open_phrase": "张禹字子文，河内轵人也。至禹父徙家莲勺。禹为儿，数随家至市，喜观于卜相者前。久之",
+        "close_paragraph": 34,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P26–P34"
+      }
+    },
+    {
+      "name": "孔光",
+      "category": "文臣",
+      "paragraph_from": 35,
+      "paragraph_to": 51,
+      "boundary_evidence": {
+        "open_paragraph": 35,
+        "open_phrase": "孔光字子夏，孔子十四世之孙也。孔子生伯鱼鲤，鲤生子思伋，伋生子上帛，帛生子家求，",
+        "close_paragraph": 51,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P35–P51"
+      }
+    },
+    {
+      "name": "马宫",
+      "category": "文臣",
+      "paragraph_from": 52,
+      "paragraph_to": 56,
+      "boundary_evidence": {
+        "open_paragraph": 52,
+        "open_phrase": "马宫字游卿，东海戚人也。治《春秋》严氏，以射策甲科为郎，迁楚长史，免官。后为丞相",
+        "close_paragraph": 56,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P52–P56"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

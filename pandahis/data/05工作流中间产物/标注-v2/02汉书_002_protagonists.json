@@ -1,0 +1,20 @@
+{
+  "work": "02汉书",
+  "vol": "002",
+  "volume_name": "高帝纪第一下",
+  "volume_type_guess": "本纪",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "汉高祖",
+      "category": "君王",
+      "rationale": "《高帝纪》为汉高祖刘邦之本纪，属天下共主之天子本纪，故为君王。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

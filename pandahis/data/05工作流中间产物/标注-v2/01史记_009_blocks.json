@@ -1,0 +1,27 @@
+{
+  "work": "01史记",
+  "vol": "009",
+  "total_paragraphs": 52,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 52,
+      "paragraph_to": 52,
+      "exclude_reason": "太史公曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "吕太后",
+      "category": "宗戚",
+      "paragraph_from": 1,
+      "paragraph_to": 51,
+      "boundary_evidence": {
+        "open_paragraph": 1,
+        "open_phrase": "吕太后者，高祖微时妃也，生孝惠帝、女鲁元太后。及高祖为汉王，得定陶戚姬，爱幸，生",
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

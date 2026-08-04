@@ -1,0 +1,35 @@
+{
+  "work": "02汉书",
+  "vol": "052",
+  "volume_name": "张周赵任申屠传第十二",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "张苍",
+      "category": "文臣",
+      "rationale": "卷名首姓，汉初历算、律历名家，官至丞相，属行政文臣主轴。"
+    },
+    {
+      "name": "周昌",
+      "category": "文臣",
+      "rationale": "卷名次姓，汉初御史大夫，以直言敢谏著称，属文臣主轴。"
+    },
+    {
+      "name": "任敖",
+      "category": "文臣",
+      "rationale": "卷名第四姓，汉初上党太守、御史大夫，属文臣主轴。"
+    },
+    {
+      "name": "申屠嘉",
+      "category": "文臣",
+      "rationale": "卷名末姓，汉文帝丞相，以刚直廉正著称，属文臣主轴。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "work": "02汉书",
+  "vol": "006",
+  "total_paragraphs": 83,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 83,
+      "paragraph_to": 83,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "汉景帝",
+      "category": "君王",
+      "paragraph_from": 2,
+      "paragraph_to": 82,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "孝景皇帝，文帝太子也。母曰窦皇后。后七年六月，文帝崩。丁未，太子即皇帝位，尊皇太",
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

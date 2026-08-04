@@ -1,0 +1,18 @@
+{
+  "work": "01史记",
+  "vol": "010",
+  "volume_name": "孝文本纪",
+  "volume_type_guess": "本纪",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "汉文帝",
+      "category": "君王",
+      "rationale": "卷名『孝文本纪』，本卷为汉文帝刘恒之专纪，主轴为汉文帝本人。据帝王表标准名，应为『汉文帝』（非『孝文皇帝』）。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "太史公曰"
+  ]
+}

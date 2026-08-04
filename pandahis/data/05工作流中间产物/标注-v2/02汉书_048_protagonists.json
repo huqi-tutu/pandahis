@@ -1,0 +1,45 @@
+{
+  "work": "02汉书",
+  "vol": "048",
+  "volume_name": "高五王传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "刘肥",
+      "category": "宗戚",
+      "rationale": "《高五王传》为汉高祖刘邦五子合传，刘肥为高祖庶长子、齐悼惠王，同姓藩王，属宗戚。"
+    },
+    {
+      "name": "刘盈",
+      "category": "宗戚",
+      "rationale": "《高五王传》所记高祖五子中，刘盈即汉惠帝，虽为皇帝但本卷以其为高祖之子身份列入五王叙事，属同姓宗室，归宗戚。"
+    },
+    {
+      "name": "刘如意",
+      "category": "宗戚",
+      "rationale": "《高五王传》所记高祖五子之一，赵隐王，同姓藩王，属宗戚。"
+    },
+    {
+      "name": "刘恢",
+      "category": "宗戚",
+      "rationale": "《高五王传》所记高祖五子之一，赵共王，同姓藩王，属宗戚。"
+    },
+    {
+      "name": "刘友",
+      "category": "宗戚",
+      "rationale": "《高五王传》所记高祖五子之一，赵幽王，同姓藩王，属宗戚。"
+    },
+    {
+      "name": "刘建",
+      "category": "宗戚",
+      "rationale": "《高五王传》所记高祖五子之一，燕灵王，同姓藩王，属宗戚。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}
