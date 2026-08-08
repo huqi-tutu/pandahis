@@ -179,12 +179,28 @@ def _strip_first_second_markers(text: str) -> str:
     return text
 
 
+def fix_reference_section_format(detail: str) -> str:
+    """正文末段与「参考著作」之间强制空一行（匹配 verify 规则）。"""
+    if "参考著作" not in detail:
+        return detail
+    if re.search(r"\n\n参考著作\s*[:：]", detail):
+        return detail
+    m = re.search(r"\*?参考著作\s*[:：]\*?", detail)
+    if not m:
+        return detail
+    before = detail[: m.start()].rstrip()
+    after = detail[m.start() :]
+    after = re.sub(r"^\*?参考著作\s*[:：]\*?", "参考著作：", after.lstrip())
+    return f"{before}\n\n{after}"
+
+
 def sanitize_enrich_detail_full(detail: str) -> str:
-    """增强版后处理：段落合并 + 去加粗 + 去分节词。"""
+    """增强版后处理：段落合并 + 去加粗 + 去分节词 + 参考著作段格式。"""
     text = sanitize_enrich_detail(detail)
     text = _merge_short_paragraphs(text)
     text = _remove_bold_markers(text)
     text = _strip_first_second_markers(text)
+    text = fix_reference_section_format(text)
     return text
 
 

@@ -22,7 +22,11 @@ NATIONAL_REGIME_IDS = frozenset({
     "东周", "西周", "周", "夏", "商", "殷", "汉", "新", "秦",  # 秦帝国期
 })
 
-# 明确裁定：有本纪但未统一天下（项羽除外，用户裁定归君王）
+# 用户裁定：项羽虽有本纪但归君王（非诸侯）
+FORCE_JUNWANG_IDS = frozenset({"GLBL_00143"})
+FORCE_JUNWANG_NAMES = frozenset({"项羽"})
+
+# 明确裁定：有本纪但未统一天下（项羽除外，见 FORCE_JUNWANG_*）
 FORCE_ZHUHOU_IDS = frozenset()
 
 FORCE_ZHUHOU_NAMES = frozenset()
@@ -44,11 +48,9 @@ def _source_text(entry: dict) -> str:
 def should_be_zhuhou(entry: dict) -> bool:
     """判断是否应从君王降为诸侯。"""
     eid = str(entry.get("史略ID") or "").strip()
-    if eid in FORCE_ZHUHOU_IDS:
-        return True
     name = str(entry.get("史略名称") or "").strip()
-    if name in FORCE_ZHUHOU_NAMES:
-        return True
+    if eid in FORCE_JUNWANG_IDS or name in FORCE_JUNWANG_NAMES:
+        return False
 
     cat = str(entry.get("史略分类") or "").strip()
     if cat != "君王":
@@ -81,7 +83,7 @@ def should_be_zhuhou(entry: dict) -> bool:
         return True
 
     if regime == "西楚":
-        return True
+        return False  # 项羽等 FORCE_JUNWANG 已单独处理；其余西楚条目保持原分类
 
     return False
 
@@ -97,9 +99,19 @@ def _patch_fine_coordinate(entry: dict, new_cat: str) -> None:
 def normalize_entry_category(entry: dict, *, in_place: bool = False) -> tuple[dict, bool]:
     """
     若条目应为诸侯而非君王，修正 史略分类 与五级细坐标。
+    若条目强制为君王（如项羽），从诸侯升回君王。
     返回 (entry, changed)。
     """
     e = entry if in_place else deepcopy(entry)
+    eid = str(e.get("史略ID") or "").strip()
+    name = str(e.get("史略名称") or "").strip()
+    if eid in FORCE_JUNWANG_IDS or name in FORCE_JUNWANG_NAMES:
+        old = str(e.get("史略分类") or "").strip()
+        if old != "君王":
+            e["史略分类"] = "君王"
+            _patch_fine_coordinate(e, "君王")
+            return e, True
+        return e, False
     if not should_be_zhuhou(e):
         return e, False
     old = str(e.get("史略分类") or "").strip()

@@ -14,6 +14,7 @@ export type LayoutViewport = {
 export const LAYOUT_NODE_R = {
   center: 28,
   category: 24,
+  subcategory: 20,
   person: 22,
 } as const
 
@@ -22,6 +23,7 @@ type Pos = LayoutPoint & {
   depth: number
   isCenter?: boolean
   isCategory?: boolean
+  isSubCategory?: boolean
   circleR: number
   boxW: number
   boxH: number
@@ -31,7 +33,7 @@ type Pos = LayoutPoint & {
 const NODE_GAP = 10
 const NODE_D = LAYOUT_NODE_R.person * 2 + NODE_GAP
 const MIN_FAN = 0.16
-const CATEGORY_ORDER = ['家庭', '师从', '同僚', '好友', '外敌']
+const CATEGORY_ORDER = ['家庭', '同僚', '敌对', '师徒', '好友']
 const SECTOR_ANGLE: Record<string, number> = {}
 const WEDGE: Record<string, number> = {}
 const SECTOR_SPAN = (Math.PI * 2) / CATEGORY_ORDER.length
@@ -50,7 +52,8 @@ type LayoutMetrics = {
 function normalizeGroupName(raw: string): string {
   const g = (raw || '').trim()
   if (g === '君臣') return '同僚'
-  if (g === '敌对') return '外敌'
+  if (g === '师从') return '师徒'
+  if (g === '外敌') return '敌对'
   return g
 }
 
@@ -58,17 +61,34 @@ function parseExtraGroup(extraJson?: string): string {
   if (!extraJson) return ''
   try {
     const o = JSON.parse(extraJson) as Record<string, unknown>
-    if (o.isCategoryNode) return normalizeGroupName(String(o.关系类别 || ''))
+    if (o.isCategoryNode || o.isSubCategoryNode) {
+      return normalizeGroupName(String(o.关系类别 || ''))
+    }
     const raw = String(o.关系类别 || o.group || o.category || o.cat || '')
-    const m = normalizeGroupName(raw).match(/家庭|同僚|师从|外敌|好友/)
+    const m = normalizeGroupName(raw).match(/家庭|同僚|敌对|师徒|好友/)
     return m ? m[0] : ''
   } catch {
     return ''
   }
 }
 
+function isSubCategoryNode(meta?: GraphNode): boolean {
+  if (!meta) return false
+  if (meta.type === 'subcategory') return true
+  try {
+    if (meta.extraJson) {
+      const o = JSON.parse(meta.extraJson) as Record<string, unknown>
+      if (o.isSubCategoryNode || o.节点类型 === '二级分类') return true
+    }
+  } catch {
+    /* ignore */
+  }
+  return false
+}
+
 function isCategoryNode(meta?: GraphNode): boolean {
   if (!meta) return false
+  if (isSubCategoryNode(meta)) return false
   if (meta.type === 'category') return true
   if (String(meta.key || '').startsWith('cat_')) return true
   try {
@@ -152,17 +172,20 @@ function radialOf(x: number, y: number): number {
   return Math.hypot(x, y)
 }
 
-function categoryBox(name: string): { w: number; h: number } {
+function categoryBox(name: string, compact = false): { w: number; h: number } {
+  if (compact) return { w: Math.max(48, name.length * 10 + 18), h: 26 }
   return { w: Math.max(56, name.length * 11 + 22), h: 30 }
 }
 
-function categoryRadius(name: string): number {
-  const box = categoryBox(name)
+function categoryRadius(name: string, compact = false): number {
+  const box = categoryBox(name, compact)
   return Math.max(box.w, box.h) / 2
 }
 
 function collisionRadius(p: Pos): number {
-  if (p.isCenter || p.isCategory) return Math.max(p.boxW, p.boxH) / 2 + NODE_GAP * 0.45
+  if (p.isCenter || p.isCategory || p.isSubCategory) {
+    return Math.max(p.boxW, p.boxH) / 2 + NODE_GAP * 0.45
+  }
   return p.circleR + NODE_GAP * 0.45
 }
 
@@ -330,11 +353,12 @@ function addPos(
   x: number,
   y: number,
   depth: number,
-  flags: { isCenter?: boolean; isCategory?: boolean }
+  flags: { isCenter?: boolean; isCategory?: boolean; isSubCategory?: boolean }
 ) {
   const fullName = ((meta.name != null && String(meta.name).trim()) || meta.key).trim()
   const isCenter = !!flags.isCenter
   const isCategory = !!flags.isCategory
+  const isSubCategory = !!flags.isSubCategory
   let circleR: number = LAYOUT_NODE_R.person
   let boxW = LAYOUT_NODE_R.person * 2
   let boxH = LAYOUT_NODE_R.person * 2
@@ -348,6 +372,11 @@ function addPos(
     boxW = box.w
     boxH = box.h
     circleR = categoryRadius(fullName)
+  } else if (isSubCategory) {
+    const box = categoryBox(fullName, true)
+    boxW = box.w
+    boxH = box.h
+    circleR = categoryRadius(fullName, true)
   }
 
   posMap.set(meta.key, {
@@ -357,6 +386,7 @@ function addPos(
     depth,
     isCenter,
     isCategory,
+    isSubCategory,
     circleR,
     boxW,
     boxH,
@@ -380,7 +410,8 @@ function placeSubtree(
   if (!meta) return
   const midAngle = (angleStart + angleEnd) / 2
   const pos = polar(hubX, hubY, midAngle, linkLen)
-  addPos(posMap, meta, pos.x, pos.y, depth, {})
+  const sub = isSubCategoryNode(meta)
+  addPos(posMap, meta, pos.x, pos.y, depth, { isSubCategory: sub })
 
   const kids = childrenOf(key, edges).filter((k) => {
     const m = nodeMap.get(k)
@@ -391,7 +422,8 @@ function placeSubtree(
   const sector = Math.max(angleEnd - angleStart, MIN_FAN)
   const weights = kids.map((k) => subtreeWeight(k, edges, nodeMap))
   const total = weights.reduce((a, b) => a + b, 0) || kids.length
-  const nextLink = hubLinkLength(LAYOUT_NODE_R.person, LAYOUT_NODE_R.person, sector, kids.length)
+  const fromR = sub ? categoryRadius(String(meta.name || ''), true) : LAYOUT_NODE_R.person
+  const nextLink = hubLinkLength(fromR, LAYOUT_NODE_R.person, sector, kids.length)
 
   let cursor = angleStart
   kids.forEach((kid, i) => {
@@ -439,7 +471,11 @@ function layoutCluster(
     const a0 = cursor
     const a1 = cursor + slice
     cursor += slice
-    const link = hubLinkLength(catR, LAYOUT_NODE_R.person, slice, Math.max(1, topKids.length))
+    const kidMeta = nodeMap.get(kid)
+    const toR = kidMeta && isSubCategoryNode(kidMeta)
+      ? categoryRadius(String(kidMeta.name || ''), true)
+      : LAYOUT_NODE_R.person
+    const link = hubLinkLength(catR, toR, slice, Math.max(1, topKids.length))
     placeSubtree(kid, catPos.x, catPos.y, a0, a1, link, 2, edges, nodeMap, posMap)
   })
 }

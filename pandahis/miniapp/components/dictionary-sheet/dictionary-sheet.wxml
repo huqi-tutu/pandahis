@@ -6,42 +6,64 @@
       </view>
     </view>
 
-    <view wx:if="{{loading}}" class="dictionary-sheet-state">
-      <text class="dictionary-sheet-state-text">正在查询</text>
-    </view>
-
-    <view wx:elif="{{errorText}}" class="dictionary-sheet-state">
-      <text class="dictionary-sheet-state-text">{{errorText}}</text>
-    </view>
-
-    <view
-      wx:else
-      class="dictionary-sheet-body"
-      style="{{layout.layoutStyle}}"
+    <scroll-view
+      class="dictionary-sheet-scroll"
+      scroll-y
+      enhanced
+      show-scrollbar="{{false}}"
+      lower-threshold="80"
+      bindscrolltolower="onWikiScrollToLower"
     >
-      <view class="dictionary-sheet-list">
-        <view
-          wx:for="{{entries}}"
-          wx:key="index"
-          class="pronounce-card"
-        >
-          <view class="pinyin-zone">
-            <view class="pinyin-lines" aria-hidden="true">
-              <view class="pinyin-line pinyin-line-edge"></view>
-              <view class="pinyin-line pinyin-line-inner"></view>
-              <view class="pinyin-line pinyin-line-inner"></view>
-              <view class="pinyin-line pinyin-line-edge"></view>
-            </view>
-            <text class="pinyin-text">{{item.displayPinyin}}</text>
+      <!-- 检索词：汉字整体在左，拼音整体在右 -->
+      <view class="dictionary-query-row">
+        <view wx:if="{{showPinyin && !pinyinLoading && !pinyinError && pinyinEntries.length}}" class="query-with-pinyin">
+          <text class="query-chars">{{pinyinCharsText}}</text>
+          <text class="query-readings">{{pinyinReadingsText}}</text>
+        </view>
+        <block wx:else>
+          <text class="query-plain">{{queryDisplay}}</text>
+          <text wx:if="{{showPinyin && pinyinLoading}}" class="query-pinyin-hint">查音中…</text>
+          <text wx:elif="{{showPinyin && pinyinError}}" class="query-pinyin-hint">{{pinyinError}}</text>
+        </block>
+      </view>
+
+      <!-- 百科（槽位保留） -->
+      <view class="dictionary-block dictionary-block-wiki">
+        <text class="dictionary-block-label">百科</text>
+        <view class="dictionary-block-body">
+          <view wx:if="{{wikiLoading}}" class="dictionary-section-state">
+            <text class="dictionary-section-state-text">正在查询百科</text>
           </view>
 
-          <view class="char-grid-box">
-            <view class="grid-line grid-h" aria-hidden="true"></view>
-            <view class="grid-line grid-v" aria-hidden="true"></view>
-            <view class="char-text">{{item.displayCharacter}}</view>
-          </view>
+          <block wx:else>
+            <view wx:if="{{wikiTitle}}" class="wiki-title-row">
+              <text class="wiki-title">{{wikiTitle}}</text>
+            </view>
+
+            <view wx:if="{{wikiError}}" class="dictionary-section-state">
+              <text class="dictionary-section-state-text">{{wikiError}}</text>
+            </view>
+
+            <view wx:elif="{{wikiEmpty}}" class="dictionary-section-state">
+              <text class="dictionary-section-state-text">未找到相关百科条目</text>
+            </view>
+
+            <view wx:else class="wiki-body">
+              <text
+                wx:for="{{wikiParagraphs}}"
+                wx:key="index"
+                class="wiki-paragraph"
+              >{{item}}</text>
+              <view wx:if="{{wikiLoadingMore}}" class="dictionary-section-state dictionary-section-state-inline">
+                <text class="dictionary-section-state-text">加载更多…</text>
+              </view>
+              <view wx:elif="{{!wikiHasMore && wikiParagraphs.length}}" class="dictionary-section-state dictionary-section-state-inline">
+                <text class="dictionary-section-state-text">已全部加载</text>
+              </view>
+            </view>
+          </block>
         </view>
       </view>
-    </view>
+    </scroll-view>
   </view>
 </view>

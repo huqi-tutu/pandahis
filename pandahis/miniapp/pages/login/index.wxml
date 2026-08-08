@@ -9,16 +9,13 @@
   <view class="login-body">
     <glass-card wx:if="{{pendingInvite}}" className="invite-banner">
       <view class="invite-title">好友邀请</view>
-      <view class="invite-desc muted">检测到邀请码，登录后将自动为邀请人记录奖励（仅新用户首次注册生效）。</view>
+      <view class="invite-desc muted">检测到邀请码，新用户注册后双方各得阅读点；已注册用户可在「邀请加入」页绑定。</view>
     </glass-card>
 
     <view class="login-center">
       <!-- 品牌区 -->
       <view class="brand-zone">
-        <view class="logo-icon">
-          <image class="logo-img" src="/images/icons/history-logo.png" mode="aspectFill" />
-        </view>
-        <text class="logo-title">历史图谱</text>
+        <image class="brand-logo" src="{{brandLogoUrl}}" mode="widthFix" />
         <text class="logo-sub">时间 · 空间 · 文明</text>
       </view>
 

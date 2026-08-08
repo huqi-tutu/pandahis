@@ -28,6 +28,7 @@ function rpxToPx(rpx: number, windowWidth: number): number {
 export function resolveSelectionBarAnchor(
   rect: RangeRect | null | undefined,
   fallback: { left: number; top: number; placement?: SelectionBarPlacement },
+  options?: { buttonCount?: number },
 ): SelectionBarAnchor {
   const placementFallback = fallback.placement || 'above'
   if (!rect || rect.left == null || rect.top == null) {
@@ -43,8 +44,9 @@ export function resolveSelectionBarAnchor(
   const safeBottom = rpxToPx(48, ww)
   const edge = rpxToPx(16, ww)
 
-  // 与 text-selection-bar.scss 尺寸对齐：4×84 + gap×3 + padding
-  const barW = rpxToPx(84 * 4 + 4 * 3 + 8 * 2, ww)
+  // 与 text-selection-bar.scss 尺寸对齐：N×84 + gap×(N-1) + padding
+  const buttonCount = Math.max(1, Math.floor(options?.buttonCount ?? 4))
+  const barW = rpxToPx(84 * buttonCount + 4 * Math.max(buttonCount - 1, 0) + 8 * 2, ww)
   const barH = rpxToPx(16 + 14 + 40 + 8 + 28, ww)
   const gap = rpxToPx(14, ww)
 

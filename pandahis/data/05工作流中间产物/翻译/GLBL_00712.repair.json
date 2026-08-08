@@ -4,15 +4,15 @@
   "entry_id": "GLBL_00712",
   "entry_name": "晋灵公",
   "stage": "verify",
-  "fail_count": 2,
+  "fail_count": 1,
   "errors": [
-    "Phase2: LLM 未落盘最终译稿"
+    "Phase2: 参考著作须独立成段（前有空行 \\n\\n），禁止与正文末句同段"
   ],
   "plan": {
     "root_cause": "UNKNOWN",
     "disposition": "retry_llm",
     "action": "generic_retry",
-    "structured_prompt": "【根因未分类】请据下列 verify 错误逐项修正，勿重复上一轮相同写法。\nPhase2: LLM 未落盘最终译稿",
+    "structured_prompt": "【根因未分类】请据下列 verify 错误逐项修正，勿重复上一轮相同写法。\nPhase2: 参考著作须独立成段（前有空行 \\n\\n），禁止与正文末句同段",
     "refine_scope": "",
     "route_to": "",
     "next_command": "",
@@ -20,6 +20,6 @@
     "max_retries": 2,
     "extra": {}
   },
-  "feedback": "【根因未分类】请据下列 verify 错误逐项修正，勿重复上一轮相同写法。\nPhase2: LLM 未落盘最终译稿\n\n---\n【原始错误】\nPhase2: LLM 未落盘最终译稿",
-  "updated_at": "2026-07-27T00:12:38Z"
+  "feedback": "【根因未分类】请据下列 verify 错误逐项修正，勿重复上一轮相同写法。\nPhase2: 参考著作须独立成段（前有空行 \\n\\n），禁止与正文末句同段\n\n---\n【原始错误】\nPhase2: 参考著作须独立成段（前有空行 \\n\\n），禁止与正文末句同段",
+  "updated_at": "2026-08-05T17:53:24Z"
 }

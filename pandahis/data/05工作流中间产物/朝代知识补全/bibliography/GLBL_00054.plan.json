@@ -1,0 +1,211 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00054",
+  "写作结构": "正史叙述见翻译详录。小乙事迹极简，仅记继位与崩逝，无具体政治作为。拓展文应聚焦于史外文献对商王世系的异说与武丁求傅说之事的延展记载，以补充背景。",
+  "候选著作": [
+    {
+      "出处": "《竹书纪年·殷纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载商王世系，可核对小乙在位年数及继位顺序的异说。",
+      "检索词": "小乙 名敛",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    },
+    {
+      "出处": "《今本竹书纪年·卷上》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载小乙在位年数及具体干支纪年，可补充其在位时间信息。",
+      "检索词": "小乙 六年",
+      "采用": true,
+      "原文摘句": "小乙，名敛。元年丁酉，王即位，居殷。六年，命世子武丁居于河，学于甘盘。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《尚书·商书·说命上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "虽为伪古文尚书，但系统记载了武丁得傅说的经过，可作叙事延展。",
+      "检索词": "高宗梦得说",
+      "采用": true,
+      "原文摘句": "高宗梦得说，使百工营求诸野，得诸傅岩。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《国语·楚语上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载武丁求贤与傅说事迹，可补充武丁继位背景。",
+      "检索词": "武丁 求贤",
+      "采用": true,
+      "原文摘句": "昔殷武丁能耸其德，至于神明，以入于河，自河徂亳，于是乎三年，默以思道。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《帝王世纪》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "辑录上古帝王世系，可能包含小乙的异名或在位年数异说。",
+      "检索词": "小乙 商",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·卷三·殷本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载小乙继位与崩逝，为母本。",
+      "检索词": "帝小乙崩",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《甲骨文合集》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "商代甲骨卜辞中可能包含对小乙的祭祀记录，可印证其王位。",
+      "检索词": "小乙 卜辞",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《太平御览·皇王部》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋代类书，引述前代文献中关于小乙的记载，可作为异说汇总。",
+      "检索词": "小乙 商",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《竹书纪年·殷纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载商王世系，可核对小乙在位年数及继位顺序的异说。",
+      "检索词": "小乙 名敛",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    },
+    {
+      "出处": "《今本竹书纪年·卷上》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载小乙在位年数及具体干支纪年，可补充其在位时间信息。",
+      "检索词": "小乙 六年",
+      "采用": true,
+      "原文摘句": "小乙，名敛。元年丁酉，王即位，居殷。六年，命世子武丁居于河，学于甘盘。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《尚书·商书·说命上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "虽为伪古文尚书，但系统记载了武丁得傅说的经过，可作叙事延展。",
+      "检索词": "高宗梦得说",
+      "采用": true,
+      "原文摘句": "高宗梦得说，使百工营求诸野，得诸傅岩。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《国语·楚语上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载武丁求贤与傅说事迹，可补充武丁继位背景。",
+      "检索词": "武丁 求贤",
+      "采用": true,
+      "原文摘句": "昔殷武丁能耸其德，至于神明，以入于河，自河徂亳，于是乎三年，默以思道。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《帝王世纪》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "辑录上古帝王世系，可能包含小乙的异名或在位年数异说。",
+      "检索词": "小乙 商",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·卷三·殷本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载小乙继位与崩逝，为母本。",
+      "检索词": "帝小乙崩",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《甲骨文合集》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "商代甲骨卜辞中可能包含对小乙的祭祀记录，可印证其王位。",
+      "检索词": "小乙 卜辞",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《太平御览·皇王部》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋代类书，引述前代文献中关于小乙的记载，可作为异说汇总。",
+      "检索词": "小乙 商",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 6,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

@@ -1,0 +1,457 @@
+{
+  "schema": "translate-coverage-ledger/v1",
+  "史略ID": "GLBL_01119",
+  "updated_at": "2026-08-06T01:55:48.353818+00:00",
+  "entries": {
+    "M001": {
+      "status": "conveyed",
+      "claim_fp": "24c087071ba055d0",
+      "checked_at": "2026-08-05T21:54:59.051111+00:00",
+      "note": "白话译文完整传达了时间、地点、事件和立王信息。"
+    },
+    "M002": {
+      "status": "conveyed",
+      "claim_fp": "6515c3eeae17b8d3",
+      "checked_at": "2026-08-05T21:54:59.051119+00:00",
+      "note": "译文描述了庙见礼毕和出临朝的过程。"
+    },
+    "M003": {
+      "status": "conveyed",
+      "claim_fp": "eae9ff36db49cfb3",
+      "checked_at": "2026-08-05T21:54:59.051123+00:00",
+      "note": "译文明确提到大夫为臣、肥义为相国并傅王。"
+    },
+    "M004": {
+      "status": "conveyed",
+      "claim_fp": "3fccb348a2e5bc9d",
+      "checked_at": "2026-08-05T21:54:59.051127+00:00",
+      "note": "直接点明是为惠文王。"
+    },
+    "M005": {
+      "status": "conveyed",
+      "claim_fp": "786794530c0d5e75",
+      "checked_at": "2026-08-05T21:54:59.051129+00:00",
+      "note": "译文说明了惠文王的母亲是吴娃。"
+    },
+    "M006": {
+      "status": "conveyed",
+      "claim_fp": "4075ab9adcd3d440",
+      "checked_at": "2026-08-05T21:54:59.051132+00:00",
+      "note": "译文传达了武灵王自号主父的信息。"
+    },
+    "M007": {
+      "status": "conveyed",
+      "claim_fp": "1b182c61208c8bfe",
+      "checked_at": "2026-08-05T21:54:59.051135+00:00",
+      "note": "明确提到五年将鄚、易给燕国，与母本信息一致。"
+    },
+    "M008": {
+      "status": "conveyed",
+      "claim_fp": "6ed4131424ceae3f",
+      "checked_at": "2026-08-05T21:54:59.051145+00:00",
+      "note": "明确提到八年城南行唐，与母本信息一致。"
+    },
+    "M009": {
+      "status": "conveyed",
+      "claim_fp": "89b868c2aeacce69",
+      "checked_at": "2026-08-05T21:54:59.051148+00:00",
+      "note": "明确提到九年赵梁与齐合军攻韩至鲁关下，与母本信息一致。"
+    },
+    "M010": {
+      "status": "conveyed",
+      "claim_fp": "b08c7ca37d786f27",
+      "checked_at": "2026-08-05T21:54:59.051152+00:00",
+      "note": "明确提到十年秦自置为西帝，与母本信息一致。"
+    },
+    "M011": {
+      "status": "conveyed",
+      "claim_fp": "dc22f9b60ad0b689",
+      "checked_at": "2026-08-05T21:54:59.051154+00:00",
+      "note": "明确提到十一年董叔与魏伐宋，得河阳于魏，与母本信息一致。"
+    },
+    "M012": {
+      "status": "conveyed",
+      "claim_fp": "7e9078509e036753",
+      "checked_at": "2026-08-05T21:54:59.051157+00:00",
+      "note": "明确提到秦取梗阳，与母本信息一致。"
+    },
+    "M013": {
+      "status": "conveyed",
+      "claim_fp": "afe71786a9141848",
+      "checked_at": "2026-08-05T21:54:59.051160+00:00",
+      "note": "直接对应母本信息，明确传达。"
+    },
+    "M014": {
+      "status": "conveyed",
+      "claim_fp": "18ca71249b6175d7",
+      "checked_at": "2026-08-05T21:54:59.051164+00:00",
+      "note": "直接对应母本信息，明确传达。"
+    },
+    "M015": {
+      "status": "conveyed",
+      "claim_fp": "fa4b96397ab9f0fd",
+      "checked_at": "2026-08-05T21:54:59.051166+00:00",
+      "note": "直接对应母本信息，明确传达。"
+    },
+    "M016": {
+      "status": "conveyed",
+      "claim_fp": "70a09afe05ebece4",
+      "checked_at": "2026-08-05T21:54:59.051169+00:00",
+      "note": "直接对应母本信息，明确传达。"
+    },
+    "M017": {
+      "status": "conveyed",
+      "claim_fp": "bbdb691c914e5fd0",
+      "checked_at": "2026-08-05T21:54:59.051172+00:00",
+      "note": "直接对应母本信息，明确传达。"
+    },
+    "M018": {
+      "status": "conveyed",
+      "claim_fp": "87ebe3271a76596b",
+      "checked_at": "2026-08-05T21:54:59.051175+00:00",
+      "note": "直接对应母本信息，明确传达。"
+    },
+    "M019": {
+      "status": "conveyed",
+      "claim_fp": "e5c333c0dd9c9179",
+      "checked_at": "2026-08-05T21:55:32.767891+00:00",
+      "note": "译文直接复述了母本信息，完全一致。"
+    },
+    "M020": {
+      "status": "conveyed",
+      "claim_fp": "0ea14f9300e93f36",
+      "checked_at": "2026-08-05T21:55:32.767900+00:00",
+      "note": "译文直接复述了母本信息，完全一致。"
+    },
+    "M021": {
+      "status": "conveyed",
+      "claim_fp": "35c6f3e46b1218a3",
+      "checked_at": "2026-08-05T21:55:32.767903+00:00",
+      "note": "译文直接复述了母本信息，完全一致。"
+    },
+    "M022": {
+      "status": "conveyed",
+      "claim_fp": "9c73c0ec20fa6b57",
+      "checked_at": "2026-08-05T21:55:32.767906+00:00",
+      "note": "译文直接复述了母本信息，完全一致。"
+    },
+    "M023": {
+      "status": "conveyed",
+      "claim_fp": "6e9f24731ada77a3",
+      "checked_at": "2026-08-05T21:55:32.767909+00:00",
+      "note": "译文直接复述了母本信息，完全一致。"
+    },
+    "M024": {
+      "status": "conveyed",
+      "claim_fp": "ed27451c2b7eac20",
+      "checked_at": "2026-08-05T21:55:32.767912+00:00",
+      "note": "译文直接复述了母本信息，完全一致。"
+    },
+    "M025–M026": {
+      "status": "conveyed",
+      "claim_fp": "3200ed17d9eb402e",
+      "checked_at": "2026-08-05T21:55:32.767915+00:00",
+      "note": "白话译文中直接引用了这段原文，信息完整传达。"
+    },
+    "M027": {
+      "status": "conveyed",
+      "claim_fp": "075d80a220feaf4e",
+      "checked_at": "2026-08-05T21:55:32.767918+00:00",
+      "note": "白话译文中直接引用了这段原文，信息完整传达。"
+    },
+    "M028": {
+      "status": "conveyed",
+      "claim_fp": "1bbe4e7b0d1279c5",
+      "checked_at": "2026-08-05T21:55:32.767921+00:00",
+      "note": "白话译文中直接引用了这段原文，信息完整传达。"
+    },
+    "M029": {
+      "status": "conveyed",
+      "claim_fp": "dea797b146a81550",
+      "checked_at": "2026-08-05T21:55:32.767924+00:00",
+      "note": "白话译文中直接引用了这段原文，信息完整传达。"
+    },
+    "M030": {
+      "status": "conveyed",
+      "claim_fp": "d93abe8ad2e7c686",
+      "checked_at": "2026-08-05T21:55:32.767926+00:00",
+      "note": "白话译文中直接引用了这段原文，信息完整传达。"
+    },
+    "M031": {
+      "status": "conveyed",
+      "claim_fp": "12bc7b64d684ba4d",
+      "checked_at": "2026-08-05T21:55:32.767929+00:00",
+      "note": "白话译文中直接引用了这段原文，信息完整传达。"
+    },
+    "M032": {
+      "status": "conveyed",
+      "claim_fp": "871cc05d81a07624",
+      "checked_at": "2026-08-05T21:55:32.767932+00:00",
+      "note": "白话译文中直接引用了该句，读者已读到。"
+    },
+    "M033": {
+      "status": "conveyed",
+      "claim_fp": "7f69449804b7b186",
+      "checked_at": "2026-08-05T21:55:32.767934+00:00",
+      "note": "白话译文中直接引用了该句，读者已读到。"
+    },
+    "M034": {
+      "status": "conveyed",
+      "claim_fp": "8a50a5ad6bc1b2e7",
+      "checked_at": "2026-08-05T21:55:32.767936+00:00",
+      "note": "白话译文中直接引用了该句，读者已读到。"
+    },
+    "M035": {
+      "status": "conveyed",
+      "claim_fp": "236b89f8f16b6868",
+      "checked_at": "2026-08-05T21:55:32.767939+00:00",
+      "note": "白话译文中直接引用了该句，读者已读到。"
+    },
+    "M036": {
+      "status": "conveyed",
+      "claim_fp": "e906e9a7ca24e214",
+      "checked_at": "2026-08-05T21:55:32.767942+00:00",
+      "note": "白话译文中直接引用了该段，读者已读到。"
+    },
+    "M037–M039": {
+      "status": "conveyed",
+      "claim_fp": "6fc5ebf875c8738c",
+      "checked_at": "2026-08-05T21:56:19.463678+00:00",
+      "note": "完整传达了地理威胁和后果"
+    },
+    "M040": {
+      "status": "conveyed",
+      "claim_fp": "31713343531d668e",
+      "checked_at": "2026-08-05T21:56:19.463686+00:00",
+      "note": "直接对应"
+    },
+    "M041": {
+      "status": "conveyed",
+      "claim_fp": "013d3dcf966fd400",
+      "checked_at": "2026-08-05T21:56:19.463689+00:00",
+      "note": "完整传达"
+    },
+    "M042": {
+      "status": "conveyed",
+      "claim_fp": "a6c4cf95a0788f5d",
+      "checked_at": "2026-08-05T21:56:19.463691+00:00",
+      "note": "完整传达"
+    },
+    "M043–M044": {
+      "status": "conveyed",
+      "claim_fp": "0d35dcd28e459dc5",
+      "checked_at": "2026-08-05T21:56:19.463694+00:00",
+      "note": "完整传达了齐国过去的功劳和现在的委屈"
+    },
+    "M045": {
+      "status": "conveyed",
+      "claim_fp": "e8195cf1eb1ad631",
+      "checked_at": "2026-08-05T21:56:19.463697+00:00",
+      "note": "直接对应"
+    },
+    "M046": {
+      "status": "conveyed",
+      "claim_fp": "506a594b3a15cee7",
+      "checked_at": "2026-08-05T21:56:19.463700+00:00",
+      "note": "直接引用并翻译了原文，信息完整传达。"
+    },
+    "M047": {
+      "status": "conveyed",
+      "claim_fp": "8abef0558a1ccdf6",
+      "checked_at": "2026-08-05T21:56:19.463702+00:00",
+      "note": "直接引用并翻译了原文，信息完整传达。"
+    },
+    "M048": {
+      "status": "conveyed",
+      "claim_fp": "4b4201a5d3102375",
+      "checked_at": "2026-08-05T21:56:19.463705+00:00",
+      "note": "直接引用并翻译了原文，信息完整传达。"
+    },
+    "M049": {
+      "status": "conveyed",
+      "claim_fp": "e0483bb579f720c7",
+      "checked_at": "2026-08-05T21:56:19.463708+00:00",
+      "note": "明确表达了赵国停止出兵、谢绝秦国、不攻打齐国，与母本信息一致。"
+    },
+    "M050": {
+      "status": "conveyed",
+      "claim_fp": "131a324a7951c710",
+      "checked_at": "2026-08-05T21:56:19.463710+00:00",
+      "note": "明确提到赵惠文王与燕王会晤，信息传达。"
+    },
+    "M051": {
+      "status": "conveyed",
+      "claim_fp": "fd7c62834fb0180a",
+      "checked_at": "2026-08-05T21:56:19.463713+00:00",
+      "note": "明确提到廉颇为主将攻取昔阳，信息完整。"
+    },
+    "M052": {
+      "status": "conveyed",
+      "claim_fp": "92ef23a0fba9e3b2",
+      "checked_at": "2026-08-05T21:56:19.463715+00:00",
+      "note": "直接对应母本信息，时间、人物、事件一致。"
+    },
+    "M053": {
+      "status": "conveyed",
+      "claim_fp": "b408619ac01557fc",
+      "checked_at": "2026-08-05T21:56:19.463718+00:00",
+      "note": "明确传达了秦怨赵不与击齐，伐赵并拔两城。"
+    },
+    "M054": {
+      "status": "conveyed",
+      "claim_fp": "ef578d4b8a97fdef",
+      "checked_at": "2026-08-05T21:56:19.463720+00:00",
+      "note": "时间、事件与母本信息完全吻合。"
+    },
+    "M055": {
+      "status": "conveyed",
+      "claim_fp": "69e63d1018360011",
+      "checked_at": "2026-08-05T21:56:41.451001+00:00",
+      "note": "白话译文明确提到王再之卫东阳，决河水，伐魏氏。"
+    },
+    "M056": {
+      "status": "conveyed",
+      "claim_fp": "42ec443a3257ca1a",
+      "checked_at": "2026-08-05T21:56:41.451010+00:00",
+      "note": "大潦，漳水出。"
+    },
+    "M057": {
+      "status": "conveyed",
+      "claim_fp": "35cc9d56f50bc1f8",
+      "checked_at": "2026-08-05T21:56:41.451013+00:00",
+      "note": "魏冉来相赵。"
+    },
+    "M058": {
+      "status": "conveyed",
+      "claim_fp": "f91df1ab72a847e4",
+      "checked_at": "2026-08-05T21:56:41.451017+00:00",
+      "note": "秦取我二城。"
+    },
+    "M059": {
+      "status": "conveyed",
+      "claim_fp": "4a08c5cf0dd75af3",
+      "checked_at": "2026-08-05T21:56:41.451020+00:00",
+      "note": "赵与魏伯阳。"
+    },
+    "M060": {
+      "status": "conveyed",
+      "claim_fp": "5f10de791e97fd14",
+      "checked_at": "2026-08-05T21:56:41.451023+00:00",
+      "note": "赵奢将，攻齐麦丘，取之。"
+    },
+    "M061": {
+      "status": "conveyed",
+      "claim_fp": "8ce55e0ffa18a7bb",
+      "checked_at": "2026-08-05T21:56:41.451026+00:00",
+      "note": "完全对应母本信息。"
+    },
+    "M062": {
+      "status": "conveyed",
+      "claim_fp": "7b5fc43b98ab3f17",
+      "checked_at": "2026-08-05T21:56:41.451029+00:00",
+      "note": "完全对应母本信息。"
+    },
+    "M063": {
+      "status": "conveyed",
+      "claim_fp": "f6fd6faa8327b806",
+      "checked_at": "2026-08-05T21:56:41.451031+00:00",
+      "note": "完全对应母本信息。"
+    },
+    "M064": {
+      "status": "conveyed",
+      "claim_fp": "037b448406552dc7",
+      "checked_at": "2026-08-05T21:56:41.451034+00:00",
+      "note": "完全对应母本信息。"
+    },
+    "M065": {
+      "status": "conveyed",
+      "claim_fp": "5e0870df724bc5be",
+      "checked_at": "2026-08-05T21:56:41.451037+00:00",
+      "note": "完全对应母本信息。"
+    },
+    "M066–M068": {
+      "status": "conveyed",
+      "claim_fp": "818f7734a2608e30",
+      "checked_at": "2026-08-05T21:56:41.451040+00:00",
+      "note": "包含了母本中三句信息：楼昌攻几不能取、廉颇攻几取之、廉颇攻房子拔之并因城而还。"
+    },
+    "M069": {
+      "status": "conveyed",
+      "claim_fp": "c6568d691f5c3641",
+      "checked_at": "2026-08-05T21:56:41.451044+00:00",
+      "note": "直接对应母本信息"
+    },
+    "M070": {
+      "status": "conveyed",
+      "claim_fp": "88525759622aa18a",
+      "checked_at": "2026-08-05T21:56:41.451047+00:00",
+      "note": "直接对应母本信息"
+    },
+    "M071": {
+      "status": "conveyed",
+      "claim_fp": "c2acde9c90e706c4",
+      "checked_at": "2026-08-05T21:56:41.451049+00:00",
+      "note": "直接对应母本信息"
+    },
+    "M072": {
+      "status": "conveyed",
+      "claim_fp": "11725c78ffd8078b",
+      "checked_at": "2026-08-05T21:56:41.451052+00:00",
+      "note": "直接对应母本信息"
+    },
+    "M073": {
+      "status": "conveyed",
+      "claim_fp": "be2e5e54cb30cd25",
+      "checked_at": "2026-08-05T21:56:55.582094+00:00",
+      "note": "直接对应母本信息。"
+    },
+    "M074": {
+      "status": "conveyed",
+      "claim_fp": "c1e5ed20f4c1fd74",
+      "checked_at": "2026-08-05T21:56:55.582110+00:00",
+      "note": "徙漳水武平南，白话改写为改道引向武平以南，事实一致。"
+    },
+    "M075": {
+      "status": "conveyed",
+      "claim_fp": "350b0a1487949020",
+      "checked_at": "2026-08-05T21:56:55.582116+00:00",
+      "note": "完全一致。"
+    },
+    "M076": {
+      "status": "conveyed",
+      "claim_fp": "7876295bcb17cb2f",
+      "checked_at": "2026-08-05T21:56:55.582122+00:00",
+      "note": "河水出，大潦，译为黄河水泛滥，大洪灾，信息传达。"
+    },
+    "M077": {
+      "status": "conveyed",
+      "claim_fp": "eebb7235b8713477",
+      "checked_at": "2026-08-05T21:56:55.582128+00:00",
+      "note": "伐齐至平邑，译为攻打齐国打到平邑，事实一致。"
+    },
+    "M078": {
+      "status": "conveyed",
+      "claim_fp": "f1a7c947a78bdb35",
+      "checked_at": "2026-08-05T21:56:55.582133+00:00",
+      "note": "罢城北九门大城，译为停止修筑北九门的大城工程，信息传达。"
+    },
+    "M079": {
+      "status": "conveyed",
+      "claim_fp": "f1c4c93608e61c0b",
+      "checked_at": "2026-08-05T21:56:55.582139+00:00",
+      "note": "白话译文明确提到公孙操弑君，与母本信息一致。"
+    },
+    "M080–M081": {
+      "status": "conveyed",
+      "claim_fp": "826adc157941c983",
+      "checked_at": "2026-08-05T21:56:55.582144+00:00",
+      "note": "译文完整包含了秦韩相攻、围阏与、赵奢破秦、赐号马服君等所有要素。"
+    },
+    "M082": {
+      "status": "conveyed",
+      "claim_fp": "15d36887f1df8428",
+      "checked_at": "2026-08-05T21:56:55.582149+00:00",
+      "note": "译文准确传达了惠文王卒、太子丹立、是为孝成王的信息。"
+    }
+  }
+}

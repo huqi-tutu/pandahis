@@ -4,7 +4,7 @@ const test = require('node:test')
 const assert = require('node:assert/strict')
 const { hasNodeOverlap, layoutMaxRadius } = require('../utils/relation-mindmap-layout')
 
-test('mindmap layout avoids overlap for dense family siblings', () => {
+test('mindmap layout avoids overlap for dense family siblings under 配偶 hub', () => {
   const sons = [
     '伯邑考',
     '武王',
@@ -20,10 +20,20 @@ test('mindmap layout avoids overlap for dense family siblings', () => {
   const nodes = [
     { key: 'center', name: '周文王', type: 'person' },
     {
-      key: 'cat_family',
+      key: 'cat_fam',
       name: '家庭',
       type: 'category',
       extraJson: JSON.stringify({ isCategoryNode: true, 关系类别: '家庭' }),
+    },
+    {
+      key: 'sub_spouses',
+      name: '配偶',
+      type: 'subcategory',
+      extraJson: JSON.stringify({
+        isSubCategoryNode: true,
+        节点类型: '二级分类',
+        关系类别: '家庭',
+      }),
     },
     { key: 'wife', name: '太姒', type: 'person', extraJson: JSON.stringify({ 关系类别: '家庭' }) },
     ...sons.map((name, i) => ({
@@ -34,11 +44,12 @@ test('mindmap layout avoids overlap for dense family siblings', () => {
     })),
   ]
   const edges = [
-    { fromKey: 'center', toKey: 'cat_family', label: '' },
-    { fromKey: 'cat_family', toKey: 'wife', label: '妻' },
-    ...sons.map((_, i) => ({ fromKey: 'wife', toKey: `son${i}`, label: '儿子' })),
+    { fromKey: 'center', toKey: 'cat_fam', label: '' },
+    { fromKey: 'cat_fam', toKey: 'sub_spouses', label: '' },
+    { fromKey: 'sub_spouses', toKey: 'wife', label: '正妻' },
+    ...sons.map((_, i) => ({ fromKey: 'wife', toKey: `son${i}`, label: '子' })),
   ]
   assert.equal(hasNodeOverlap('center', nodes, edges), false)
   const spread = layoutMaxRadius('center', nodes, edges)
-  assert.ok(spread < 480, `layout too spread out: ${spread}`)
+  assert.ok(spread < 720, `layout too spread out: ${spread}`)
 })

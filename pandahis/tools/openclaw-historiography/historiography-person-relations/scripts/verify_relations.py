@@ -9,8 +9,8 @@ import sys
 from pathlib import Path
 from typing import Any
 
-VALID_CATEGORIES = {"家庭", "同僚", "师从", "外敌", "好友"}
-LEGACY_CATEGORIES = {"君臣", "敌对"}
+VALID_CATEGORIES = {"家庭", "同僚", "敌对", "师徒", "好友"}
+LEGACY_CATEGORIES = {"君臣", "外敌", "师从"}
 VALID_LEVELS = {"一级", "二级", "三级", "四级"}
 LEVEL_NUM = {"一级": 1, "二级": 2, "三级": 3, "四级": 4}
 PARENT_FIELDS = [
@@ -27,11 +27,8 @@ REQUIRED_FIELDS = [
     "关系类别",
     "关系层级",
     "关系节点标题",
-    "上级连接线标题",
     "关系简述",
 ]
-
-
 def load_records(path: Path) -> list[dict[str, Any]]:
     raw = json.loads(path.read_text(encoding="utf-8"))
     if not isinstance(raw, list):
@@ -74,16 +71,24 @@ def verify_file(path: Path, *, strict: bool) -> list[str]:
             if val is None or (isinstance(val, str) and not val.strip()):
                 errors.append(f"CRITICAL {loc}: missing {field}")
 
+        if "上级连接线标题" not in rec:
+            errors.append(f"CRITICAL {loc}: missing 上级连接线标题")
+
         cat = str(rec.get("关系类别", "")).strip()
         if cat in LEGACY_CATEGORIES:
             if strict:
                 errors.append(
-                    f"CRITICAL {loc}: legacy 关系类别 {cat!r}; use 同僚 or 外敌"
+                    f"CRITICAL {loc}: legacy 关系类别 {cat!r}; "
+                    "use 家庭/同僚/敌对/师徒/好友"
                 )
             else:
                 warns.append(f"INFO {loc}: legacy 关系类别 {cat!r}")
         elif cat not in VALID_CATEGORIES:
             errors.append(f"CRITICAL {loc}: invalid 关系类别 {cat!r}")
+
+        node_kind = str(rec.get("节点类型", "")).strip()
+        if node_kind == "二级分类" and str(rec.get("关系层级", "")).strip() != "一级":
+            errors.append(f"CRITICAL {loc}: 二级分类 hub must be 关系层级=一级")
 
         level = str(rec.get("关系层级", "")).strip()
         if level not in VALID_LEVELS:
@@ -170,7 +175,7 @@ def main() -> int:
     parser.add_argument(
         "--strict",
         action="store_true",
-        help="Reject legacy 君臣/敌对 and require new category names",
+        help="Reject legacy 君臣/外敌/师从 and require new category names",
     )
     args = parser.parse_args()
 

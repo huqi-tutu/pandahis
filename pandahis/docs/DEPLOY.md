@@ -37,7 +37,16 @@
 3. `schema_search.sql`
 4. `schema_membership.sql`
 5. `schema_user_correction.sql`（用户纠错）
-6. 按需执行 `data.sql` 作为种子数据（或自行导入）
+6. `schema_user_feedback.sql`（帮助与反馈；增量上线时单独执行亦可）
+7. 按需执行 `data.sql` 作为种子数据（或自行导入）
+
+**增量迁移（已有库）**：若生产库已初始化，本次发布至少执行：
+
+```bash
+mysql -u … -p histomap < backend/src/main/resources/schema_user_feedback.sql
+```
+
+可用 `SHOW TABLES LIKE 'user_feedback';` 确认表已存在后再发版，否则反馈接口会 500。
 
 ### 1.4 后台持续运行（不要只在前台 `java -jar`）
 

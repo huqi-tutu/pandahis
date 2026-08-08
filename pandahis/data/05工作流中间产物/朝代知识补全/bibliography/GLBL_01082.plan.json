@@ -1,0 +1,151 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01082",
+  "写作结构": "正史叙述见翻译详录（《左传》）。拓展文以《国语》《春秋公羊传》等先秦文献为史外异说核心，说明百濮的族群属性、与楚国的盟会关系及叛离过程。后世综述仅作补充，不展开具体细节。",
+  "候选著作": [
+    {
+      "出处": "《左传·文公十六年》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载百濮叛楚及楚国迁都之议。",
+      "检索词": "百濮 麇人 率",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《国语·郑语》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载史伯对郑桓公论南方诸族，提及濮人为楚国南方重要族群，可证百濮的分布与族群属性。",
+      "检索词": "濮 蛮 楚",
+      "采用": true,
+      "原文摘句": "叔熊逃难于濮而蛮……楚蚡冒于是乎始启濮。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《春秋公羊传·僖公四年》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "记载齐桓公伐楚盟于召陵，提及楚国势力范围，可间接反映百濮被纳入楚国势力圈的时代背景。",
+      "检索词": "楚 盟 召陵",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·楚世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载楚成王时期楚国扩张，为百濮被征伐提供宏观背景。",
+      "检索词": "成王 初即位 布德施惠",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《竹书纪年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "或有楚国南方征伐的异说纪年，可与《左传》互证。",
+      "检索词": "楚 伐 濮",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《通典·边防典》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "唐代杜佑对百濮历史的综述，可提供后世对百濮族群流变的认知。",
+      "检索词": "百濮 南蛮",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《左传·文公十六年》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载百濮叛楚及楚国迁都之议。",
+      "检索词": "百濮 麇人 率",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《国语·郑语》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载史伯对郑桓公论南方诸族，提及濮人为楚国南方重要族群，可证百濮的分布与族群属性。",
+      "检索词": "濮 蛮 楚",
+      "采用": true,
+      "原文摘句": "叔熊逃难于濮而蛮……楚蚡冒于是乎始启濮。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《春秋公羊传·僖公四年》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "记载齐桓公伐楚盟于召陵，提及楚国势力范围，可间接反映百濮被纳入楚国势力圈的时代背景。",
+      "检索词": "楚 盟 召陵",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·楚世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载楚成王时期楚国扩张，为百濮被征伐提供宏观背景。",
+      "检索词": "成王 初即位 布德施惠",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《竹书纪年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "或有楚国南方征伐的异说纪年，可与《左传》互证。",
+      "检索词": "楚 伐 濮",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《通典·边防典》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "唐代杜佑对百濮历史的综述，可提供后世对百濮族群流变的认知。",
+      "检索词": "百濮 南蛮",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 1,
+    "C_excluded": 5,
+    "overall": "B"
+  }
+}

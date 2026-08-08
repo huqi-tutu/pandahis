@@ -1,0 +1,203 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01070",
+  "写作结构": "正史叙述见翻译详录（《左传》《史记》等）。拓展文以先秦文献及经注杂史中的“管鲍之交”细节与异说为主，重点呈现《管子》所载早年事迹及后世评论，避免编造对话与心理描写。",
+  "候选著作": [
+    {
+      "出处": "《管子·小匡》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载管仲自述与鲍叔牙早年交往及鲍叔牙知遇之恩，是“管鲍之交”的核心文献。",
+      "检索词": "鲍叔 知我",
+      "采用": true,
+      "原文摘句": "吾始困时，尝与鲍叔贾，分财利多自与，鲍叔不以我为贪，知我贫也。吾尝为鲍叔谋事而更穷困，鲍叔不以我为愚，知时有利不利也。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《吕氏春秋·孟冬纪·异宝》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "提及鲍叔牙辅佐公子小白及举荐管仲之事，可补充其识人之明。",
+      "检索词": "鲍叔 小白",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《韩诗外传·卷十》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "记载鲍叔牙劝谏齐桓公勿忘昔日逃亡之苦，展现其谏臣形象。",
+      "检索词": "鲍叔 祝酒",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《说苑·复恩》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "详述鲍叔牙与管仲的交往细节及鲍叔牙向齐桓公力荐管仲的言辞。",
+      "检索词": "鲍叔 进管仲",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·管晏列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史中关于管仲与鲍叔牙交往的经典记载，为叙事基础。",
+      "检索词": "管仲 鲍叔牙",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《左传·庄公八年》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载齐国内乱，公子纠与公子小白出奔，为鲍叔牙辅佐小白之背景。",
+      "检索词": "鲍叔牙 公子小白",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《国语·齐语》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载齐桓公返回齐国及任用管仲的经过，涉及鲍叔牙的推荐。",
+      "检索词": "鲍叔 为宰",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《列子·力命》",
+      "tier": "先秦文献",
+      "pool": "legend",
+      "与本主题关系": "以寓言形式讨论管仲与鲍叔牙的命运际会，带有道家思想色彩。",
+      "检索词": "管鲍 之交",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《管子·小匡》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载管仲自述与鲍叔牙早年交往及鲍叔牙知遇之恩，是“管鲍之交”的核心文献。",
+      "检索词": "鲍叔 知我",
+      "采用": true,
+      "原文摘句": "吾始困时，尝与鲍叔贾，分财利多自与，鲍叔不以我为贪，知我贫也。吾尝为鲍叔谋事而更穷困，鲍叔不以我为愚，知时有利不利也。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《吕氏春秋·孟冬纪·异宝》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "提及鲍叔牙辅佐公子小白及举荐管仲之事，可补充其识人之明。",
+      "检索词": "鲍叔 小白",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《韩诗外传·卷十》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "记载鲍叔牙劝谏齐桓公勿忘昔日逃亡之苦，展现其谏臣形象。",
+      "检索词": "鲍叔 祝酒",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《说苑·复恩》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "详述鲍叔牙与管仲的交往细节及鲍叔牙向齐桓公力荐管仲的言辞。",
+      "检索词": "鲍叔 进管仲",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·管晏列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史中关于管仲与鲍叔牙交往的经典记载，为叙事基础。",
+      "检索词": "管仲 鲍叔牙",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《左传·庄公八年》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载齐国内乱，公子纠与公子小白出奔，为鲍叔牙辅佐小白之背景。",
+      "检索词": "鲍叔牙 公子小白",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《国语·齐语》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载齐桓公返回齐国及任用管仲的经过，涉及鲍叔牙的推荐。",
+      "检索词": "鲍叔 为宰",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《列子·力命》",
+      "tier": "先秦文献",
+      "pool": "legend",
+      "与本主题关系": "以寓言形式讨论管仲与鲍叔牙的命运际会，带有道家思想色彩。",
+      "检索词": "管鲍 之交",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 5,
+    "C_excluded": 3,
+    "overall": "B"
+  }
+}

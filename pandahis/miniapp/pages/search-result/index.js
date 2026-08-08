@@ -40,7 +40,10 @@ Page({
         const titlePlain = (0, format_1.stripHtml)(it.titleHighlight || '');
         const category = String(it.categoryName || '').trim() ||
             (0, category_label_1.categoryLabel)(String(it.categoryKey || ''));
-        const coordinateText = String(it.coordinateText || '').trim();
+        // 仅兼容旧接口 ASCII「.」分隔；勿改写层级名内部的「·」（如「战国·秦」）
+        const coordinateText = String(it.coordinateText || '')
+            .trim()
+            .replace(/\s*\.\s*/g, ' · ');
         const startYear = typeof it.startYear === 'number' ? it.startYear : undefined;
         const endYear = typeof it.endYear === 'number' ? it.endYear : undefined;
         const yearText = startYear !== undefined || endYear !== undefined

@@ -118,9 +118,17 @@ SSOT：[`翻译规则.md`](../historiography-compose/references/翻译规则.md)
 | `TRANSLATE_COVERAGE_L2_BATCH` | `6` | 语义覆盖每批复核条数（原 12，缩小以降低 JSON 失败率） |
 | `TRANSLATE_COVERAGE_L2_DEGRADE` | `1` | 解析失败时本批标 unclear 降级，不阻断整条翻译 |
 | `TRANSLATE_COVERAGE_L2_MAX_CLAIMS` | `24` | L1 灰区路径单次最多复核弱覆盖单元数 |
-| `TRANSLATE_PLAN_MIN_RATIO` | `0.95` | plan 条数 / 母本分句 |
+| `TRANSLATE_LENGTH_RATIO` | `1.2` | 成稿/母本顺译字数软警告：低于 `史料原文字符数×比例` 时 ⚠️ 提示，**不阻断** verify |
 | `HIST_LLM_PROVIDER` / `DEEPSEEK_API_KEY` | — | LLM |
-| **模型（写死）** | `deepseek-v4-pro` | `lib/openclaw.run_agent_turn` 入口调用 `ensure_deepseek_v4_pro()` |
+| **模型（写死）** | `deepseek-v4-flash` | `lib/openclaw.run_agent_turn` 入口调用 `ensure_deepseek_v4_pro()` |
+
+## Token 优化（不改翻译规则 / 终检门槛）
+
+- **队列 done**：`scripts/run_v2_translate_queue.py` 与 Skill 对齐，以 `verify_output()` 为准（非仅 `has_11`）。
+- **Phase2 分批**：每批 enrich 落盘后 `verify_enrich_batch_slice` 早停；终检仍走完整 `verify_output`。
+- **语义覆盖账本**：`claim_fp` 未变则跳过 LLM；Phase1 重试仅 `clear_ledger_labels(本批)`，不全清 ledger。
+- **repair 分流**：`infer_translate_retry_from_phase` — 母本已验过则 `from_phase=phase2`；字数不足分 phase1/终稿归类。
+- **重试 feedback**：`format_retry_feedback` 压缩错误堆栈；**规则 bundle 仍全量注入主 prompt**。
 
 ## 相关 Skill
 

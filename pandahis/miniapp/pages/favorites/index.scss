@@ -10,40 +10,65 @@
   box-sizing: border-box;
 }
 
+.fav-inner {
+  padding-top: 24rpx;
+}
+
 /* ─────────────────────────────────────
-   分段切换
+   分段切换（对齐全局 v3：无线框卡片底 + 墨色短横选中）
 ───────────────────────────────────── */
 .tabs {
   display: flex;
-  gap: 12rpx;
+  gap: 8rpx;
   margin-bottom: 24rpx;
   background: $card-bg;
-  border-radius: 16rpx;
+  border-radius: 24rpx;
   padding: 8rpx;
-  border: 1rpx solid $divider;
+  box-shadow: $shadow-card;
+  border: none;
 }
 
 .tab {
+  position: relative;
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8rpx;
-  padding: 16rpx;
-  border-radius: 10rpx;
+  padding: 16rpx 12rpx 20rpx;
+  border-radius: 16rpx;
   font-size: 26rpx;
-  color: $inactive-text;
+  font-weight: 400;
+  color: $tab-inactive-text;
+  letter-spacing: 1rpx;
+  transition: color 0.18s ease;
 }
 
 .tab.on {
   font-weight: 600;
-  color: $theme-on-primary;
+  color: $text-title;
+  background: transparent;
+}
+
+.tab.on::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 6rpx;
+  transform: translateX(-50%);
+  width: 40rpx;
+  height: 4rpx;
+  border-radius: 2rpx;
   background: $theme-primary;
 }
 
 .tab-count {
   font-size: 22rpx;
-  opacity: 0.7;
+  color: $text-time;
+}
+
+.tab.on .tab-count {
+  color: $text-caption;
 }
 
 /* ─────────────────────────────────────

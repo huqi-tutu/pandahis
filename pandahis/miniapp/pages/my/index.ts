@@ -57,7 +57,7 @@ Page({
     pageHeightPx: 667,
     scrollEnabled: false,
     shortcuts: [
-      { id: 'membership', label: '会员', icon: '/images/icons/huiyuan.png', action: 'membership' },
+      // 会员入口二期再开放；一期保留页码与后端能力
       { id: 'corrections', label: '纠错', icon: '/images/icons/jiucuo.png', action: 'corrections' },
       { id: 'invite', label: '邀请', icon: '/images/icons/fenxiang.png', action: 'invite' },
       { id: 'settings', label: '设置', icon: '/images/icons/shezhi.png', action: 'settings' },
@@ -208,7 +208,8 @@ Page({
     this.requireLogin(() => navigateTo(ROUTES.profileEdit))
   },
   goMembership() {
-    wx.switchTab({ url: ROUTES.membership })
+    // 二期：会员页保留，当前非 Tab，用 navigateTo
+    navigateTo(ROUTES.membership)
   },
   goFootprints() {
     this.requireLogin(() => navigateTo(ROUTES.footprints))
@@ -223,7 +224,11 @@ Page({
     this.requireLogin(() => navigateTo(ROUTES.corrections))
   },
   goInviteFriends() {
-    wx.navigateTo({
+    if (!hasToken()) {
+      navigateTo(ROUTES.login, { from: 'invite' })
+      return
+    }
+    wx.switchTab({
       url: ROUTES.invite,
       fail(err) {
         console.error('[my] goInviteFriends failed', err)

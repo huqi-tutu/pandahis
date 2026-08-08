@@ -92,4 +92,4 @@ python3 cw.py verify-witness --id GLBL_00129 --strict
 python3 cw.py verify-dynasty-commentary --dynasty 五帝
 ```
 
-**LLM**：`HIST_LLM_PROVIDER=deepseek`、`DEEPSEEK_MODEL=deepseek-v4-pro`。
+**LLM**：`HIST_LLM_PROVIDER=deepseek`、`DEEPSEEK_MODEL=deepseek-v4-flash`。

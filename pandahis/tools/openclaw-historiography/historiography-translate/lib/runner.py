@@ -9,7 +9,12 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
 from lib import db
-from lib.config import default_index_path, paths
+from lib.config import (
+    default_index_path,
+    paths,
+    resolve_output_dir,
+    translation_version_for_output_dir,
+)
 from lib.plan_postprocess import plan_for_enrich_phase, plan_for_mother_phase
 from lib.prose_sanitize import polish_enrich_file, polish_enrich_file_full, polish_mother_file, sanitize_mother_detail
 from lib.attribution import apply_attribution_fixes
@@ -48,13 +53,14 @@ from lib.verify import (
     collect_must_phrase_misses,
     load_output,
     output_path,
+    verify_enrich_batch_slice,
     verify_enrich_draft,
     verify_mother_draft,
     verify_output,
     verify_source_thickness,
 )
 from lib.repair_ticket import save_repair_ticket
-from shared.qa_repair import classify_translate_failure, format_repair_feedback
+from shared.qa_repair import classify_translate_failure, format_retry_feedback
 from lib.work_artifacts import (
     load_normalized_plan,
     load_plan,
@@ -65,10 +71,12 @@ from lib.work_artifacts import (
 )
 
 
-def _ensure_output_dir() -> Path:
-    out = paths()["translate_output"]
-    out.mkdir(parents=True, exist_ok=True)
-    return out
+def _ensure_output_dir(
+    *,
+    index_path: Path | None = None,
+    output_dir: Path | None = None,
+) -> Path:
+    return resolve_output_dir(index_path=index_path, output_dir=output_dir)
 
 
 def _dynasty_detail_aggregate_path() -> Path | None:
@@ -172,9 +180,10 @@ def _should_skip(
     recalled: Dict[str, Any],
     job: Optional[Dict[str, Any]],
     plan_file: Path,
+    *,
+    out_dir: Path,
 ) -> bool:
     fp = source_fingerprint(recalled)
-    out_dir = _ensure_output_dir()
     entry_name = str(
         recalled.get("史略名称") or (job.get("entry_name") if job else "") or ""
     )
@@ -438,7 +447,7 @@ def _run_phase1_mother_single(
             )
             retry_note = (
                 "\n\n--- 上轮 Phase1 质检失败，须逐项修正 ---\n"
-                + format_repair_feedback(plan, m_errs)
+                + format_retry_feedback(plan, m_errs)
             )
             if miss_lines:
                 retry_note += (
@@ -593,7 +602,7 @@ def _run_phase2_enrich_batched(
                 )
                 retry_note = (
                     "\n\n--- 上轮 Phase2 质检失败，须修正 ---\n"
-                    + format_repair_feedback(plan_fb, batch_errs)
+                    + format_retry_feedback(plan_fb, batch_errs)
                 )
             prompt = (
                 build_batch_enrich_prompt(
@@ -626,6 +635,19 @@ def _run_phase2_enrich_batched(
             if not batch_target.is_file():
                 batch_errs = [f"Phase2 {label}: LLM 未落盘本批译稿"]
                 print(f"⚠️ {batch_errs[0]}", flush=True)
+                continue
+            if polish_enrich_file(batch_target):
+                print("   🔧 已自动修正本批模糊出处表述", flush=True)
+            slice_ok, slice_errs = verify_enrich_batch_slice(
+                entry_id,
+                recalled,
+                batch_target,
+                batch_mother_text=batch_mother,
+                batch_label=label,
+            )
+            if not slice_ok:
+                batch_errs = slice_errs or [f"Phase2 {label}: 本批质检未通过"]
+                print(f"⚠️ Phase2 {label} 未通过: {batch_errs[0]}", flush=True)
                 continue
             parts.append(_load_mother_text(batch_target))
             batch_ok = True
@@ -689,7 +711,7 @@ def _run_phase2_enrich(
             plan_fb = classify_translate_failure(e_errs, stage="phase2", fail_count=attempt)
             retry_note = (
                 "\n\n--- 上轮 Phase2 质检失败，须修正 ---\n"
-                + format_repair_feedback(plan_fb, e_errs)
+                + format_retry_feedback(plan_fb, e_errs)
             )
         e_prompt = build_translate_enrich_prompt(
             entry_id,
@@ -744,6 +766,7 @@ def _run_single_pass(
     work_dir: Path,
     use_llm: bool = True,
     from_phase: str | None = None,
+    translation_version: str | None = None,
 ) -> Tuple[bool, List[str], float]:
     """plan + (Phase1 母本 + Phase2 补全) 或 legacy 单次 draft。"""
     plan_ok, plan_errors = ensure_source_plan(
@@ -809,7 +832,7 @@ def _run_single_pass(
         )
         if not ok2:
             return ok2, errs2, elapsed
-        attach_source_original(target, recalled)
+        attach_source_original(target, recalled, translation_version=translation_version)
         return True, [], elapsed
     else:
         plan_json = json.dumps(plan_data, ensure_ascii=False, indent=2) if plan_data else "{}"
@@ -838,7 +861,7 @@ def _run_single_pass(
         if not target.is_file():
             return False, ["LLM 未落盘译稿"], time.time() - t0
 
-    attach_source_original(target, recalled)
+    attach_source_original(target, recalled, translation_version=translation_version)
     return True, [], time.time() - t0
 
 
@@ -868,6 +891,7 @@ def run_one(
     entry_id: str,
     *,
     index_path: Path | None = None,
+    output_dir: Path | None = None,
     dry_run: bool = False,
     recall_only: bool = False,
     use_llm: bool = True,
@@ -890,7 +914,8 @@ def run_one(
         return 1
 
     fp = source_fingerprint(recalled)
-    out_dir = _ensure_output_dir()
+    out_dir = _ensure_output_dir(index_path=index_path, output_dir=output_dir)
+    trans_version = translation_version_for_output_dir(out_dir)
     work_dir = _ensure_work_dir()
     entry_name = str(recalled.get("史略名称") or job.get("entry_name") or "")
     target = output_path(entry_id, out_dir, entry_name)
@@ -914,7 +939,7 @@ def run_one(
         )
         return rc
 
-    if _should_skip(entry_id, recalled, job, plan_file):
+    if _should_skip(entry_id, recalled, job, plan_file, out_dir=out_dir):
         print(f"⏭️ 跳过 {entry_id}（产出已有效 fp={fp}）")
         return 0
 
@@ -1007,6 +1032,7 @@ def run_one(
                 target=target,
                 session_id=session_id,
                 use_llm=use_llm,
+                translation_version=trans_version,
             )
         else:
             ok, errs, elapsed = _run_single_pass(
@@ -1020,6 +1046,7 @@ def run_one(
                 work_dir=work_dir,
                 use_llm=use_llm,
                 from_phase=from_phase,
+                translation_version=trans_version,
             )
     except RuntimeError as exc:
         fail = int(job.get("fail_count") or 0) + 1
@@ -1080,12 +1107,13 @@ def run_one(
         output_word_count=wc,
         detail=f"ok {mode} {elapsed:.0f}s",
     )
-    print(f"✅ {entry_id} 完成 {wc} 字 ({mode}, {elapsed:.0f}s)")
-    try:
-        agg_path, agg_count = rebuild_aggregate(out_dir)
-        print(f"📦 汇总已更新 → {agg_path}（{agg_count} 条）")
-    except OSError as exc:
-        print(f"⚠️ 汇总更新失败（单条产出已保留）: {exc}")
+    print(f"✅ {entry_id} 完成 {wc} 字 ({mode}, {elapsed:.0f}s) → {out_dir.name}/")
+    if not trans_version:
+        try:
+            agg_path, agg_count = rebuild_aggregate(out_dir)
+            print(f"📦 汇总已更新 → {agg_path}（{agg_count} 条）")
+        except OSError as exc:
+            print(f"⚠️ 汇总更新失败（单条产出已保留）: {exc}")
 
     if auto_sync_enabled():
         from lib.remote_sync import sync_output_entry

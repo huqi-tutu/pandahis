@@ -1,4 +1,4 @@
-<view class="proto-shell">
+<view class="proto-shell" bindtap="onPageTap">
   <proto-nav title="{{navTitle || '评述详情'}}" show-back="{{true}}"></proto-nav>
 
   <view class="detail-body" style="padding-top: {{pageTopPadPx}}px;">
@@ -26,7 +26,41 @@
         <view class="section-bar"></view>
         <text class="section-title">评述详情</text>
       </view>
-      <text class="section-body">{{body || '暂无评述详情'}}</text>
+      <block wx:for="{{[selectionMountKey]}}" wx:key="*this">
+        <selection id="critiqueBodySelection" disable-context-menu bindselectionchange="onDetailSelectionChange">
+          <text class="section-body" user-select>{{body || '暂无评述详情'}}</text>
+        </selection>
+      </block>
     </view>
   </view>
+
+  <correction-modal
+    visible="{{correctionVisible}}"
+    mode="edit"
+    civilizationName="{{civilizationName}}"
+    dynastyName="{{dynastyName}}"
+    boxTitle="{{boxTitle}}"
+    selectedText="{{correctionSelectedText}}"
+    sourceType="critique_detail_selection"
+    submitting="{{correctionSubmitting}}"
+    bind:close="closeCorrection"
+    bind:submit="onCorrectionSubmit"
+  />
+
+  <dictionary-sheet
+    visible="{{dictionaryVisible}}"
+    query="{{dictionaryQuery}}"
+    bind:close="closeDictionary"
+  />
+
+  <text-selection-bar
+    visible="{{selectionBarVisible}}"
+    left="{{selectionBarLeft}}"
+    top="{{selectionBarTop}}"
+    placement="{{selectionBarPlacement}}"
+    showShare="{{false}}"
+    bind:copy="onSelectionCopy"
+    bind:query="onSelectionQuery"
+    bind:correction="onSelectionCorrection"
+  />
 </view>

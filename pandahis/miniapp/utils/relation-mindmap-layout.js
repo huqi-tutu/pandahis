@@ -5,12 +5,13 @@ exports.layoutMaxRadius = exports.hasNodeOverlap = exports.computeMindmapPositio
 exports.LAYOUT_NODE_R = {
     center: 28,
     category: 24,
+    subcategory: 20,
     person: 22,
 };
 const NODE_GAP = 10;
 const NODE_D = exports.LAYOUT_NODE_R.person * 2 + NODE_GAP;
 const MIN_FAN = 0.16;
-const CATEGORY_ORDER = ['家庭', '师从', '同僚', '好友', '外敌'];
+const CATEGORY_ORDER = ['家庭', '同僚', '敌对', '师徒', '好友'];
 const SECTOR_ANGLE = {};
 const WEDGE = {};
 const SECTOR_SPAN = (Math.PI * 2) / CATEGORY_ORDER.length;
@@ -23,8 +24,10 @@ function normalizeGroupName(raw) {
     const g = (raw || '').trim();
     if (g === '君臣')
         return '同僚';
-    if (g === '敌对')
-        return '外敌';
+    if (g === '师从')
+        return '师徒';
+    if (g === '外敌')
+        return '敌对';
     return g;
 }
 function parseExtraGroup(extraJson) {
@@ -32,18 +35,38 @@ function parseExtraGroup(extraJson) {
         return '';
     try {
         const o = JSON.parse(extraJson);
-        if (o.isCategoryNode)
+        if (o.isCategoryNode || o.isSubCategoryNode) {
             return normalizeGroupName(String(o.关系类别 || ''));
+        }
         const raw = String(o.关系类别 || o.group || o.category || o.cat || '');
-        const m = normalizeGroupName(raw).match(/家庭|同僚|师从|外敌|好友/);
+        const m = normalizeGroupName(raw).match(/家庭|同僚|敌对|师徒|好友/);
         return m ? m[0] : '';
     }
     catch {
         return '';
     }
 }
+function isSubCategoryNode(meta) {
+    if (!meta)
+        return false;
+    if (meta.type === 'subcategory')
+        return true;
+    try {
+        if (meta.extraJson) {
+            const o = JSON.parse(meta.extraJson);
+            if (o.isSubCategoryNode || o.节点类型 === '二级分类')
+                return true;
+        }
+    }
+    catch {
+        /* ignore */
+    }
+    return false;
+}
 function isCategoryNode(meta) {
     if (!meta)
+        return false;
+    if (isSubCategoryNode(meta))
         return false;
     if (meta.type === 'category')
         return true;
@@ -127,16 +150,19 @@ function polar(cx, cy, angle, dist) {
 function radialOf(x, y) {
     return Math.hypot(x, y);
 }
-function categoryBox(name) {
+function categoryBox(name, compact = false) {
+    if (compact)
+        return { w: Math.max(48, name.length * 10 + 18), h: 26 };
     return { w: Math.max(56, name.length * 11 + 22), h: 30 };
 }
-function categoryRadius(name) {
-    const box = categoryBox(name);
+function categoryRadius(name, compact = false) {
+    const box = categoryBox(name, compact);
     return Math.max(box.w, box.h) / 2;
 }
 function collisionRadius(p) {
-    if (p.isCenter || p.isCategory)
+    if (p.isCenter || p.isCategory || p.isSubCategory) {
         return Math.max(p.boxW, p.boxH) / 2 + NODE_GAP * 0.45;
+    }
     return p.circleR + NODE_GAP * 0.45;
 }
 function nodesOverlap(a, b) {
@@ -276,6 +302,7 @@ function addPos(posMap, meta, x, y, depth, flags) {
     const fullName = ((meta.name != null && String(meta.name).trim()) || meta.key).trim();
     const isCenter = !!flags.isCenter;
     const isCategory = !!flags.isCategory;
+    const isSubCategory = !!flags.isSubCategory;
     let circleR = exports.LAYOUT_NODE_R.person;
     let boxW = exports.LAYOUT_NODE_R.person * 2;
     let boxH = exports.LAYOUT_NODE_R.person * 2;
@@ -290,6 +317,12 @@ function addPos(posMap, meta, x, y, depth, flags) {
         boxH = box.h;
         circleR = categoryRadius(fullName);
     }
+    else if (isSubCategory) {
+        const box = categoryBox(fullName, true);
+        boxW = box.w;
+        boxH = box.h;
+        circleR = categoryRadius(fullName, true);
+    }
     posMap.set(meta.key, {
         key: meta.key,
         x,
@@ -297,6 +330,7 @@ function addPos(posMap, meta, x, y, depth, flags) {
         depth,
         isCenter,
         isCategory,
+        isSubCategory,
         circleR,
         boxW,
         boxH,
@@ -309,7 +343,8 @@ function placeSubtree(key, hubX, hubY, angleStart, angleEnd, linkLen, depth, edg
         return;
     const midAngle = (angleStart + angleEnd) / 2;
     const pos = polar(hubX, hubY, midAngle, linkLen);
-    addPos(posMap, meta, pos.x, pos.y, depth, {});
+    const sub = isSubCategoryNode(meta);
+    addPos(posMap, meta, pos.x, pos.y, depth, { isSubCategory: sub });
     const kids = childrenOf(key, edges).filter((k) => {
         const m = nodeMap.get(k);
         return m && !isCategoryNode(m);
@@ -319,7 +354,8 @@ function placeSubtree(key, hubX, hubY, angleStart, angleEnd, linkLen, depth, edg
     const sector = Math.max(angleEnd - angleStart, MIN_FAN);
     const weights = kids.map((k) => subtreeWeight(k, edges, nodeMap));
     const total = weights.reduce((a, b) => a + b, 0) || kids.length;
-    const nextLink = hubLinkLength(exports.LAYOUT_NODE_R.person, exports.LAYOUT_NODE_R.person, sector, kids.length);
+    const fromR = sub ? categoryRadius(String(meta.name || ''), true) : exports.LAYOUT_NODE_R.person;
+    const nextLink = hubLinkLength(fromR, exports.LAYOUT_NODE_R.person, sector, kids.length);
     let cursor = angleStart;
     kids.forEach((kid, i) => {
         const slice = (weights[i] / total) * sector;
@@ -354,7 +390,11 @@ function layoutCluster(catMeta, edges, nodeMap, posMap, metrics) {
         const a0 = cursor;
         const a1 = cursor + slice;
         cursor += slice;
-        const link = hubLinkLength(catR, exports.LAYOUT_NODE_R.person, slice, Math.max(1, topKids.length));
+        const kidMeta = nodeMap.get(kid);
+        const toR = kidMeta && isSubCategoryNode(kidMeta)
+            ? categoryRadius(String(kidMeta.name || ''), true)
+            : exports.LAYOUT_NODE_R.person;
+        const link = hubLinkLength(catR, toR, slice, Math.max(1, topKids.length));
         placeSubtree(kid, catPos.x, catPos.y, a0, a1, link, 2, edges, nodeMap, posMap);
     });
 }

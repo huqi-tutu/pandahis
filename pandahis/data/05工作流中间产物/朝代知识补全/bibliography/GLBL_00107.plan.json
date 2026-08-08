@@ -1,0 +1,153 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00107",
+  "写作结构": "正史叙述见翻译详录。拓展文以史外异说与延展为主，重点补充《春秋》经传对秦宣公时期秦晋关系的记载，以及后世对秦国继位动荡的评述。秦宣公本人事迹留白。",
+  "候选著作": [
+    {
+      "出处": "《史记·卷5·秦本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载秦宣公继位始末及在位年数",
+      "检索词": "秦宣公",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《春秋左传·桓公》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载秦宣公时期秦与芮国、周王室的互动，可补秦本纪之缺",
+      "检索词": "秦师 芮伯",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《春秋左传·庄公》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载秦宣公时期秦晋之间的早期冲突与联姻",
+      "检索词": "秦 晋 武公",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《国语·晋语》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "可能涉及秦晋关系背景，为秦宣公时期提供周边环境参照",
+      "检索词": "秦 晋 始大",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《竹书纪年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "或载秦宣公纪年与同期列国大事，可校补《史记》年代",
+      "检索词": "秦宣公",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《资治通鉴外纪·卷四》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋人刘恕对春秋秦事的编年整理，或引他书异说",
+      "检索词": "秦宣公",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·卷5·秦本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载秦宣公继位始末及在位年数",
+      "检索词": "秦宣公",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《春秋左传·桓公》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载秦宣公时期秦与芮国、周王室的互动，可补秦本纪之缺",
+      "检索词": "秦师 芮伯",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《春秋左传·庄公》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载秦宣公时期秦晋之间的早期冲突与联姻",
+      "检索词": "秦 晋 武公",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《国语·晋语》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "可能涉及秦晋关系背景，为秦宣公时期提供周边环境参照",
+      "检索词": "秦 晋 始大",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《竹书纪年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "或载秦宣公纪年与同期列国大事，可校补《史记》年代",
+      "检索词": "秦宣公",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《资治通鉴外纪·卷四》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋人刘恕对春秋秦事的编年整理，或引他书异说",
+      "检索词": "秦宣公",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 4,
+    "overall": "B"
+  }
+}

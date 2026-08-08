@@ -1,0 +1,257 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00029",
+  "写作结构": "正史叙述见翻译详录。拓展文以《左传》为核心补充王子朝之乱与敬王复位经过，以《春秋》经传互证楚灭陈、孔子卒之年，以《国语》补周室言论，以《竹书纪年》提供异说年代参照。",
+  "候选著作": [
+    {
+      "出处": "《春秋左传·昭公二十二年至三十二年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "详载王子朝之乱始末及周敬王在晋国帮助下入居王城、恢复王位的经过，是理解敬王即位背景的核心文献。",
+      "检索词": "王子朝 敬王 入于王城",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《春秋左传·哀公十七年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载楚国灭陈之事，可与《史记》互证。",
+      "检索词": "楚灭陈",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《春秋左传·哀公十六年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载孔子去世，与《史记》所载周敬王四十一年孔子卒相合。",
+      "检索词": "孔丘卒",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《国语·周语下》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "载有周景王铸大钱、铸无射钟及单穆公、伶州鸠谏言，涉及王子朝之乱前周室内部矛盾与言论背景。",
+      "检索词": "景王 铸大钱 无射",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《竹书纪年·周纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "提供周敬王在位年数及纪年的异说，可与《史记》年代参照。",
+      "检索词": "敬王 元年",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "&nbsp;道德真經註&nbsp;世說新語&nbsp;顏氏家訓&nbsp;文心雕龍&nbsp;群書治要&nbsp;藝文類聚&nbsp;黃帝陰符經&nbsp;四書章句集注&nbsp;論語注疏&nbsp;封神演義&nbsp;孝經注疏&nbsp;太平御覽&nbsp;太平廣記&nbsp;朱子語類&nbsp;宋景文公筆記&nbsp;墨經校釋網站有中、英文版本，也有繁、簡體版，可通過每頁左上角的連結隨時調整。從由．《漢語大詞典》拾遺之五十三從由一詞未見《漢語大詞典》立項。1．所由也（以下詩文正此義）金李奎報《次韻其禪師觀音 [《诗说》并非先秦两汉典籍，应该尽快转移到汉之后《诗说》并非先秦两汉典籍，应该尽快转移到汉之后，不然会对文献使用者造成误导。以为它的可信度更高。 [文字與原典鏈接錯誤在瀏覽《太乙金華宗旨》時，發現兩版本之原典鏈接皆指向同一典籍。因在兩版本中《天心章第一》之內容， ["
+    },
+    {
+      "出处": "《史记·卷47·孔子世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "详载孔子卒年及相关事迹，与周本纪互证。",
+      "检索词": "孔子 卒 哀公十六年",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·卷36·陈杞世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载陈国被楚所灭的经过。",
+      "检索词": "楚惠王 灭陈",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《春秋公羊传·哀公十四年》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "公羊家以获麟为孔子绝笔，与孔子卒年相近，可提供经学视角的孔子晚年叙事。",
+      "检索词": "西狩获麟 孔子",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《吕氏春秋·先识览》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "载有周室衰微、王子朝之乱前后周室大夫的预见性言论，可作背景补充。",
+      "检索词": "周鼎 王子朝",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《皇王大纪·卷》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋代胡宏所撰，综述周敬王时期大事，可提供后世对敬王时代的整合叙述。",
+      "检索词": "周敬王 四十一年",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《春秋左传·昭公二十二年至三十二年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "详载王子朝之乱始末及周敬王在晋国帮助下入居王城、恢复王位的经过，是理解敬王即位背景的核心文献。",
+      "检索词": "王子朝 敬王 入于王城",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《春秋左传·哀公十七年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载楚国灭陈之事，可与《史记》互证。",
+      "检索词": "楚灭陈",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《春秋左传·哀公十六年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载孔子去世，与《史记》所载周敬王四十一年孔子卒相合。",
+      "检索词": "孔丘卒",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《国语·周语下》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "载有周景王铸大钱、铸无射钟及单穆公、伶州鸠谏言，涉及王子朝之乱前周室内部矛盾与言论背景。",
+      "检索词": "景王 铸大钱 无射",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《竹书纪年·周纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "提供周敬王在位年数及纪年的异说，可与《史记》年代参照。",
+      "检索词": "敬王 元年",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "&nbsp;道德真經註&nbsp;世說新語&nbsp;顏氏家訓&nbsp;文心雕龍&nbsp;群書治要&nbsp;藝文類聚&nbsp;黃帝陰符經&nbsp;四書章句集注&nbsp;論語注疏&nbsp;封神演義&nbsp;孝經注疏&nbsp;太平御覽&nbsp;太平廣記&nbsp;朱子語類&nbsp;宋景文公筆記&nbsp;墨經校釋網站有中、英文版本，也有繁、簡體版，可通過每頁左上角的連結隨時調整。從由．《漢語大詞典》拾遺之五十三從由一詞未見《漢語大詞典》立項。1．所由也（以下詩文正此義）金李奎報《次韻其禪師觀音 [《诗说》并非先秦两汉典籍，应该尽快转移到汉之后《诗说》并非先秦两汉典籍，应该尽快转移到汉之后，不然会对文献使用者造成误导。以为它的可信度更高。 [文字與原典鏈接錯誤在瀏覽《太乙金華宗旨》時，發現兩版本之原典鏈接皆指向同一典籍。因在兩版本中《天心章第一》之內容， ["
+    },
+    {
+      "出处": "《史记·卷47·孔子世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "详载孔子卒年及相关事迹，与周本纪互证。",
+      "检索词": "孔子 卒 哀公十六年",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·卷36·陈杞世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载陈国被楚所灭的经过。",
+      "检索词": "楚惠王 灭陈",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《春秋公羊传·哀公十四年》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "公羊家以获麟为孔子绝笔，与孔子卒年相近，可提供经学视角的孔子晚年叙事。",
+      "检索词": "西狩获麟 孔子",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《吕氏春秋·先识览》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "载有周室衰微、王子朝之乱前后周室大夫的预见性言论，可作背景补充。",
+      "检索词": "周鼎 王子朝",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《皇王大纪·卷》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋代胡宏所撰，综述周敬王时期大事，可提供后世对敬王时代的整合叙述。",
+      "检索词": "周敬王 四十一年",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 7,
+    "C_excluded": 3,
+    "overall": "B"
+  }
+}

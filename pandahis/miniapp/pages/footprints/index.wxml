@@ -2,41 +2,52 @@
   <proto-nav title="浏览足迹" show-back="{{true}}"></proto-nav>
 
   <view class="fp-body" style="padding-top: {{pageTopPadPx}}px;">
-    <view wx:if="{{!hasToken}}" class="empty-state">
-      <text class="empty-icon">🔒</text>
-      <text class="empty-text">登录后会自动记录盒子浏览足迹</text>
-      <view class="login-btn btn-primary" bindtap="goLogin">去登录</view>
-    </view>
-
-    <block wx:elif="{{loaded}}">
-      <view wx:if="{{!items.length}}" class="empty-state">
-        <text class="empty-icon">🕔</text>
-        <text class="empty-text">暂无足迹</text>
-        <text class="empty-hint">打开任意历史盒子详情页即可记录</text>
+    <view class="fp-inner">
+      <view wx:if="{{!hasToken}}" class="empty-state">
+        <text class="empty-icon">🔒</text>
+        <text class="empty-text">登录后会自动记录盒子浏览足迹</text>
+        <view class="login-btn btn-primary" bindtap="goLogin">去登录</view>
       </view>
 
-      <block wx:else>
-        <text class="summary muted">{{summaryText}}</text>
-
-        <view class="card-list">
-          <view
-            class="card card-paper"
-            wx:for="{{items}}"
-            wx:key="boxId"
-            data-id="{{item.boxId}}"
-            bindtap="go"
-          >
-            <view class="top">
-              <text class="t">{{item.title}}</text>
-              <text class="time muted">{{item.timeLabel}}</text>
-            </view>
-            <text class="era accent">{{item.yearRange}}</text>
-            <text wx:if="{{item.pathLabel}}" class="path muted">{{item.pathLabel}}</text>
-          </view>
+      <block wx:elif="{{loaded}}">
+        <view wx:if="{{!groups.length}}" class="empty-state">
+          <text class="empty-icon">🕔</text>
+          <text class="empty-text">暂无足迹</text>
+          <text class="empty-hint">打开任意历史盒子详情页即可记录</text>
         </view>
-      </block>
-    </block>
 
-    <view wx:else class="loading">加载中…</view>
+        <block wx:else>
+          <text class="summary muted">{{summaryText}}</text>
+
+          <view class="date-group" wx:for="{{groups}}" wx:key="dateKey" wx:for-item="group">
+            <text class="date-heading">{{group.dateLabel}}</text>
+            <view class="card-list">
+              <view
+                class="card card-paper"
+                wx:for="{{group.items}}"
+                wx:key="boxId"
+                data-id="{{item.boxId}}"
+                bindtap="go"
+              >
+                <view class="top">
+                  <text class="t">{{item.title}}</text>
+                  <text class="time muted">{{item.timeLabel}}</text>
+                </view>
+                <text class="era accent">{{item.yearRange}}</text>
+                <text wx:if="{{item.pathLabel}}" class="path muted">{{item.pathLabel}}</text>
+              </view>
+            </view>
+          </view>
+
+          <view class="list-footer">
+            <text wx:if="{{loadingMore}}" class="footer-text muted">加载中…</text>
+            <text wx:elif="{{loadFinished}}" class="footer-text muted">已加载完毕</text>
+            <text wx:elif="{{hasMore}}" class="footer-text muted">上拉加载更多</text>
+          </view>
+        </block>
+      </block>
+
+      <view wx:else class="loading">加载中…</view>
+    </view>
   </view>
 </view>

@@ -1,0 +1,199 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01022",
+  "写作结构": "正史叙述见翻译详录（《史记·齐太公世家》）。拓展文以《左传》为核心补充齐昭公即位、会盟征伐及身后动乱的具体史实，辅以《春秋经》的简要记录。可提及《公羊传》《谷梁传》对相关事件的异说，但仅作简要说明，不展开具体细节。",
+  "候选著作": [
+    {
+      "出处": "《春秋左传·僖公》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "详细记载了齐桓公死后诸子争立、齐昭公参与践土之盟、以及其去世后其子舍被弑的过程，是补充anchor核心事实的关键文献。",
+      "检索词": "齐昭公 公子潘",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《春秋左传·文公》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载了齐昭公在位后期参与诸侯会盟及征伐，以及其去世后其子舍被公子商人（齐懿公）所弑的经过。",
+      "检索词": "齐昭公 公子商人",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《春秋经·僖公》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "以编年形式记录了齐昭公在位期间齐国参与的重大事件，如践土之盟、伐楚等，可与《左传》记载相互印证。",
+      "检索词": "齐侯潘",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《春秋公羊传·僖公》",
+      "tier": "经注/杂史",
+      "pool": "legend",
+      "与本主题关系": "对宋襄公伐齐、齐人杀无亏等事件有不同于《左传》的阐释，可提供异说视角。",
+      "检索词": "齐 无亏",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《春秋谷梁传·僖公》",
+      "tier": "经注/杂史",
+      "pool": "legend",
+      "与本主题关系": "对宋襄公伐齐、齐人杀无亏等事件有不同于《左传》的阐释，可提供异说视角。",
+      "检索词": "齐 无亏",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·卷32·齐太公世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "为齐昭公生平的主要史料出处，提供了完整的叙事框架，由翻译详录环节负责。",
+      "检索词": "齐昭公",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《国语·齐语》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "主要记载齐桓公霸业，对齐桓公晚年立储及身后之乱可能有所涉及，可作为背景补充。",
+      "检索词": "齐桓公 卒",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《管子》",
+      "tier": "先秦文献",
+      "pool": "legend",
+      "与本主题关系": "虽托名管仲，但成书于战国至汉代，其中部分篇章可能反映齐国后期政治动荡的背景，但无直接记载齐昭公事迹。",
+      "检索词": "齐 霸业 衰",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《春秋左传·僖公》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "详细记载了齐桓公死后诸子争立、齐昭公参与践土之盟、以及其去世后其子舍被弑的过程，是补充anchor核心事实的关键文献。",
+      "检索词": "齐昭公 公子潘",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《春秋左传·文公》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载了齐昭公在位后期参与诸侯会盟及征伐，以及其去世后其子舍被公子商人（齐懿公）所弑的经过。",
+      "检索词": "齐昭公 公子商人",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《春秋经·僖公》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "以编年形式记录了齐昭公在位期间齐国参与的重大事件，如践土之盟、伐楚等，可与《左传》记载相互印证。",
+      "检索词": "齐侯潘",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·卷32·齐太公世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "为齐昭公生平的主要史料出处，提供了完整的叙事框架，由翻译详录环节负责。",
+      "检索词": "齐昭公",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《国语·齐语》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "主要记载齐桓公霸业，对齐桓公晚年立储及身后之乱可能有所涉及，可作为背景补充。",
+      "检索词": "齐桓公 卒",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《春秋公羊传·僖公》",
+      "tier": "经注/杂史",
+      "pool": "legend",
+      "与本主题关系": "对宋襄公伐齐、齐人杀无亏等事件有不同于《左传》的阐释，可提供异说视角。",
+      "检索词": "齐 无亏",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《春秋谷梁传·僖公》",
+      "tier": "经注/杂史",
+      "pool": "legend",
+      "与本主题关系": "对宋襄公伐齐、齐人杀无亏等事件有不同于《左传》的阐释，可提供异说视角。",
+      "检索词": "齐 无亏",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《管子》",
+      "tier": "先秦文献",
+      "pool": "legend",
+      "与本主题关系": "虽托名管仲，但成书于战国至汉代，其中部分篇章可能反映齐国后期政治动荡的背景，但无直接记载齐昭公事迹。",
+      "检索词": "齐 霸业 衰",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 3,
+    "C_excluded": 5,
+    "overall": "B"
+  }
+}

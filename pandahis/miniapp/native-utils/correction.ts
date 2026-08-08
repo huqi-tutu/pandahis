@@ -2,7 +2,11 @@ import { hasToken, request } from './api'
 import { encodePathSegment } from './encode-path-segment'
 import { ROUTES, navigateTo } from './router'
 
-export type CorrectionSourceType = 'dynasty_canvas' | 'box_detail_selection'
+export type CorrectionSourceType =
+  | 'dynasty_canvas'
+  | 'box_detail_selection'
+  | 'critique_detail_selection'
+  | 'relic_detail_selection'
 
 export type CorrectionStatus = 'pending' | 'reviewed' | 'resolved'
 
@@ -37,6 +41,8 @@ export const CORRECTION_STATUS_LABEL: Record<string, string> = {
 export const CORRECTION_SOURCE_LABEL: Record<string, string> = {
   dynasty_canvas: '朝代详情页',
   box_detail_selection: '史略详情页',
+  critique_detail_selection: '评述',
+  relic_detail_selection: '见证',
 }
 
 export function correctionStatusLabel(status: string): string {

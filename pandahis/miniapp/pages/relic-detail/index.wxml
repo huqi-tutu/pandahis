@@ -1,5 +1,5 @@
-<view class="proto-shell">
-  <proto-nav title="{{name}}" show-back="{{true}}"></proto-nav>
+<view class="proto-shell" bindtap="onPageTap">
+  <proto-nav title="{{navTitle || name || '见证'}}" show-back="{{true}}"></proto-nav>
 
   <view class="detail-body" style="padding-top: {{pageTopPadPx}}px;">
     <image wx:if="{{imageUrl}}" class="hero-img-real" src="{{imageUrl}}" mode="aspectFill" />
@@ -21,7 +21,41 @@
         <view class="section-bar"></view>
         <text class="section-title">详细介绍</text>
       </view>
-      <text class="section-body">{{detail || '暂无详细介绍'}}</text>
+      <block wx:for="{{[selectionMountKey]}}" wx:key="*this">
+        <selection id="relicBodySelection" disable-context-menu bindselectionchange="onDetailSelectionChange">
+          <text class="section-body" user-select>{{detail || '暂无详细介绍'}}</text>
+        </selection>
+      </block>
     </view>
   </view>
+
+  <correction-modal
+    visible="{{correctionVisible}}"
+    mode="edit"
+    civilizationName="{{civilizationName}}"
+    dynastyName="{{dynastyName}}"
+    boxTitle="{{boxTitle}}"
+    selectedText="{{correctionSelectedText}}"
+    sourceType="relic_detail_selection"
+    submitting="{{correctionSubmitting}}"
+    bind:close="closeCorrection"
+    bind:submit="onCorrectionSubmit"
+  />
+
+  <dictionary-sheet
+    visible="{{dictionaryVisible}}"
+    query="{{dictionaryQuery}}"
+    bind:close="closeDictionary"
+  />
+
+  <text-selection-bar
+    visible="{{selectionBarVisible}}"
+    left="{{selectionBarLeft}}"
+    top="{{selectionBarTop}}"
+    placement="{{selectionBarPlacement}}"
+    showShare="{{false}}"
+    bind:copy="onSelectionCopy"
+    bind:query="onSelectionQuery"
+    bind:correction="onSelectionCorrection"
+  />
 </view>

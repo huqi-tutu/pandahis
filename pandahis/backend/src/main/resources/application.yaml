@@ -8,6 +8,7 @@ spring:
     name: histomap-api
   servlet:
     multipart:
+      # 头像仍可至 2MB；反馈图业务上限 1MB，由 FeedbackImageStorageService 再校验
       max-file-size: 2MB
       max-request-size: 3MB
   datasource:
@@ -71,6 +72,20 @@ histomap:
       maxCount: 5
     relics:
       maxCount: 5
+  wikipedia:
+    api-base: ${HISTOMAP_WIKI_API_BASE:https://zh.wikipedia.org/w/api.php}
+    lang: ${HISTOMAP_WIKI_LANG:zh}
+    user-agent: "${HISTOMAP_WIKI_USER_AGENT:PadanhisHistomap/1.0 (dictionary-lookup; contact: support@padanhis.local)}"
+    access-token: "${HISTOMAP_WIKI_ACCESS_TOKEN:}"
+    connect-timeout-seconds: 8
+    request-timeout-seconds: 12
+    cache-ttl-seconds: 21600
+    max-extract-chars: 12000
+    default-limit: 3
+    max-limit: 8
   avatar:
     # 用户头像本地存储目录；生产可用 HISTOMAP_AVATAR_DIR / HISTOMAP_AVATAR_PUBLIC_BASE 覆盖
     storage-dir: ${HISTOMAP_AVATAR_DIR:./data/avatars}
+  feedback:
+    # 反馈截图本地存储目录；生产可用 HISTOMAP_FEEDBACK_DIR / HISTOMAP_FEEDBACK_PUBLIC_BASE 覆盖
+    storage-dir: ${HISTOMAP_FEEDBACK_DIR:./data/feedback}

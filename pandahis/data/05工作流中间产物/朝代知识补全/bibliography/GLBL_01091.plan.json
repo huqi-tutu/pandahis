@@ -1,0 +1,251 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01091",
+  "写作结构": "正史叙述见翻译详录（《史记·燕召公世家》）。拓展文重点呈现史外异说与延展：1）召公奭身世与宗室地位的早期文献佐证（《逸周书》《诗经》等）；2）封燕之事的异源记载与出土文献印证（《克罍》《克盉》铭文）；3）召公奭辅政事迹的经注杂史补充（《尚书序》《韩诗外传》等）。禁止编造召公奭具体战斗、受封仪式、就国行程等细节。",
+  "候选著作": [
+    {
+      "出处": "《史记·卷34·燕召公世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "本条目的主要史料出处，记载召公奭姬姓、封燕等核心史实",
+      "检索词": "召公奭 北燕",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《逸周书·作雒解》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载周初封建诸侯，提及召公奭在武王伐纣后的地位与分封背景",
+      "检索词": "召公 作雒",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《克罍》《克盉》铭文（北京房山琉璃河出土）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "西周早期燕国青铜器，铭文记载周王封克于燕，印证召公奭家族就封北燕的史实",
+      "检索词": "克罍 克盉 燕",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《诗经·召南·甘棠》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "诗序及传统注疏认为此诗系怀念召公奭德政之作，可佐证召公奭在宗周辅政的历史形象",
+      "检索词": "甘棠 召伯",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《尚书·君奭》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "周公旦与召公奭的对话记录，反映召公奭在周初辅政中的核心地位",
+      "检索词": "君奭 召公",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《尚书序》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "记载召公奭作《召诰》等篇的背景，说明其在营建洛邑等大事中的角色",
+      "检索词": "召诰 召公",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《韩诗外传·卷1》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "载有召公奭辅政、巡行民间的事迹传说，可补充其德政形象",
+      "检索词": "召公 巡行",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《左传·僖公二十四年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "富辰谏周襄王时列举周初封建同姓诸侯，提及召公受封，可佐证其宗室身份",
+      "检索词": "召公 封建",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《白虎通义·姓名》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "东汉班固等讨论周代姓氏制度，涉及召公奭姬姓的来源与宗法意义",
+      "检索词": "召公 姬姓",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·卷4·周本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载武王伐纣后分封诸侯的总体背景，提及召公奭参与封建",
+      "检索词": "召公 分封",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·卷34·燕召公世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "本条目的主要史料出处，记载召公奭姬姓、封燕等核心史实",
+      "检索词": "召公奭 北燕",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《逸周书·作雒解》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载周初封建诸侯，提及召公奭在武王伐纣后的地位与分封背景",
+      "检索词": "召公 作雒",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《克罍》《克盉》铭文（北京房山琉璃河出土）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "西周早期燕国青铜器，铭文记载周王封克于燕，印证召公奭家族就封北燕的史实",
+      "检索词": "克罍 克盉 燕",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《诗经·召南·甘棠》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "诗序及传统注疏认为此诗系怀念召公奭德政之作，可佐证召公奭在宗周辅政的历史形象",
+      "检索词": "甘棠 召伯",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《尚书·君奭》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "周公旦与召公奭的对话记录，反映召公奭在周初辅政中的核心地位",
+      "检索词": "君奭 召公",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《尚书序》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "记载召公奭作《召诰》等篇的背景，说明其在营建洛邑等大事中的角色",
+      "检索词": "召诰 召公",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《韩诗外传·卷1》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "载有召公奭辅政、巡行民间的事迹传说，可补充其德政形象",
+      "检索词": "召公 巡行",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《左传·僖公二十四年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "富辰谏周襄王时列举周初封建同姓诸侯，提及召公受封，可佐证其宗室身份",
+      "检索词": "召公 封建",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·卷4·周本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载武王伐纣后分封诸侯的总体背景，提及召公奭参与封建",
+      "检索词": "召公 分封",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《白虎通义·姓名》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "东汉班固等讨论周代姓氏制度，涉及召公奭姬姓的来源与宗法意义",
+      "检索词": "召公 姬姓",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 7,
+    "C_excluded": 3,
+    "overall": "B"
+  }
+}

@@ -53,7 +53,7 @@
     <block wx:elif="{{detailReady}}">
 
      <view wx:if="{{!detailParagraphs.length && header.box.blurb}}" class="detail-body">
-      <block wx:key="selectionMountKey">
+      <block wx:for="{{[selectionMountKey]}}" wx:key="*this">
        <selection id="detailBodySelection" disable-context-menu bindselectionchange="onDetailSelectionChange">
         <text class="box-p" user-select>
          <block wx:for="{{blurbSegs}}" wx:for-item="seg" wx:for-index="segIndex" wx:key="segIndex">
@@ -64,7 +64,7 @@
       </block>
      </view>
      <view wx:elif="{{detailParagraphs.length}}" class="detail-body">
-      <block wx:key="selectionMountKey">
+      <block wx:for="{{[selectionMountKey]}}" wx:key="*this">
        <selection id="detailBodySelection" disable-context-menu bindselectionchange="onDetailSelectionChange">
         <block wx:for="{{detailParagraphs}}" wx:for-item="para" wx:for-index="pIndex" wx:key="pIndex">
          <text class="box-p {{pIndex === detailParagraphs.length - 1 ? 'box-p--last' : ''}}" user-select>

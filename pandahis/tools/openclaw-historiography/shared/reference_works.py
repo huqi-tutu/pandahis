@@ -55,37 +55,50 @@ def _title_key(title: str) -> str:
     return t
 
 
+def _volume_suffixes(refs: list[str]) -> set[str]:
+    """带卷篇书目的末段篇名（如 《尚书·康诰》→ 康诰）。"""
+    suffixes: set[str] = set()
+    for ref in refs:
+        inner = _normalize_ref(ref).strip("《》")
+        if "·" in inner:
+            suffixes.add(inner.rsplit("·", 1)[-1])
+    return suffixes
+
+
 def dedupe_reference_works(refs: list[str]) -> list[str]:
     """去重：同卷篇只留一条；同一母书的不同卷篇均保留。"""
+    normalized = [_normalize_ref(r) for r in refs if str(r).strip()]
+    vol_suffixes = _volume_suffixes(normalized)
     mother_plain: dict[str, str] = {}
-    for ref in refs:
-        r = _normalize_ref(ref)
-        inner = r.strip("《》")
+    for ref in normalized:
+        inner = ref.strip("《》")
         if "·" in inner:
             continue
-        key = _title_key(r)
+        key = _title_key(ref)
         prev = mother_plain.get(key)
-        if prev is None or len(r) > len(prev):
-            mother_plain[key] = r
+        if prev is None or len(ref) > len(prev):
+            mother_plain[key] = ref
 
     mothers_with_volume = {
         _title_key(r.strip("《》").split("·", 1)[0])
-        for r in (_normalize_ref(x) for x in refs)
+        for r in normalized
         if "·" in r.strip("《》")
     }
 
     seen: set[str] = set()
     out: list[str] = []
-    for ref in refs:
-        r = _normalize_ref(ref)
-        inner = r.strip("《》")
+    for ref in normalized:
+        inner = ref.strip("《》")
         if "·" in inner:
-            if r in seen:
+            if ref in seen:
                 continue
-            seen.add(r)
-            out.append(r)
+            seen.add(ref)
+            out.append(ref)
             continue
-        key = _title_key(r)
+        key = _title_key(ref)
+        # 《康诰》与《尚书·康诰》等同名末段，保留带卷篇者
+        if inner in vol_suffixes:
+            continue
         if key in mothers_with_volume:
             continue
         best = mother_plain.get(key)

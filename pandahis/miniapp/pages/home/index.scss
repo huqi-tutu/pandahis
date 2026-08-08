@@ -1108,7 +1108,7 @@
 
 .entry-tag--v2 .entry-tag-icon-slot {
   width: 18rpx;
-  height: 18rpx;
+  height: 15rpx;
   flex-shrink: 0;
   margin-right: 3rpx;
   display: flex;
@@ -1120,12 +1120,12 @@
 .entry-tag--v2 .entry-tag-icon {
   flex-shrink: 0;
   display: block;
-  /* PNG 画布下留白偏多，整体上移与 15rpx 文字光学中心对齐 */
-  transform: translateY(-2rpx);
+  width: 18rpx;
+  height: 15rpx;
 }
 
 .entry-tag--v2 .entry-tag-text-slot {
-  height: 18rpx;
+  height: 15rpx;
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -1135,7 +1135,7 @@
 
 .entry-tag--v2 .entry-tag-text {
   font-size: 15rpx;
-  line-height: 1;
+  line-height: 15rpx;
   letter-spacing: 0.2rpx;
   display: block;
 }

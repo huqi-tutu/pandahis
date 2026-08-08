@@ -1,7 +1,7 @@
 {
   "schema": "translate-coverage-ledger/v1",
   "史略ID": "GLBL_00115",
-  "updated_at": "2026-07-28T00:31:29.001856+00:00",
+  "updated_at": "2026-08-05T15:08:02.514466+00:00",
   "entries": {
     "M001": {
       "status": "conveyed",
@@ -284,6 +284,12 @@
       "claim_fp": "d740a0b1f7b3d80b",
       "checked_at": "2026-07-28T00:30:44.639470+00:00",
       "note": "当时天下的主要大国，包括「韩、魏、齐、楚、越皆宾从」"
+    },
+    "M037–M038": {
+      "status": "conveyed",
+      "claim_fp": "bfcfa9ff6bfc9fcf",
+      "checked_at": "2026-08-05T15:07:29.170930+00:00",
+      "note": "译文完整包含了攻魏焦城并降之、败韩岸门斩首万、犀首逃走的信息。"
     }
   }
 }

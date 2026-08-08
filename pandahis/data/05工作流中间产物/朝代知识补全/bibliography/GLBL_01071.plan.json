@@ -1,0 +1,201 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01071",
+  "写作结构": "正史叙述见翻译详录（《左传》《史记》等）。拓展文以《国语》为核心，详述狐偃在流亡、内政、城濮之战及殽之战中的言论与决策，辅以《韩非子》《吕氏春秋》等诸子异说，展现其作为首席谋臣的多维形象。",
+  "候选著作": [
+    {
+      "出处": "《国语·晋语四》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "详细记载狐偃在重耳流亡期间及返国后的重要谏言，如劝重耳辞谢怀嬴、归国后教导民众知义、知信、知礼等，是了解狐偃思想的核心文献。",
+      "检索词": "狐偃 舅犯 晋语四",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《国语·晋语五》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载狐偃在晋文公去世后，支持晋襄公在殽之战中袭击秦军，展现其延续的军事战略思想。",
+      "检索词": "殽之战 舅犯",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《韩非子·说林上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载狐偃在城濮之战前关于“战阵之间，不厌诈伪”的论述，提供了与《左传》不同的战术思想视角。",
+      "检索词": "舅犯 战阵 不厌诈伪",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《吕氏春秋·义赏》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载城濮之战后，狐偃与雍季关于“诈术”与“百世之利”的辩论，深化了狐偃的功利主义思想形象。",
+      "检索词": "舅犯 雍季 百世之利",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·晋世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "系统记载狐偃随重耳流亡及辅佐称霸的史实，是基础叙事框架。",
+      "检索词": "狐偃 咎犯 晋世家",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《左传》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "条目主要史料出处，详载城濮之战、践土之盟等核心事件中狐偃的言行。",
+      "检索词": "狐偃 子犯 城濮",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《说苑·权谋》",
+      "tier": "经注/杂史",
+      "pool": "legend",
+      "与本主题关系": "汉代文献，收录狐偃劝谏晋文公的轶事，可能包含后世演绎成分。",
+      "检索词": "狐偃 权谋",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《水经注·河水》",
+      "tier": "经注/杂史",
+      "pool": "legend",
+      "与本主题关系": "提及与狐偃相关的地名或遗迹，如“狐偃冢”等，可作为地理附会参考。",
+      "检索词": "狐偃 冢",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《国语·晋语四》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "详细记载狐偃在重耳流亡期间及返国后的重要谏言，如劝重耳辞谢怀嬴、归国后教导民众知义、知信、知礼等，是了解狐偃思想的核心文献。",
+      "检索词": "狐偃 舅犯 晋语四",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《国语·晋语五》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载狐偃在晋文公去世后，支持晋襄公在殽之战中袭击秦军，展现其延续的军事战略思想。",
+      "检索词": "殽之战 舅犯",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《韩非子·说林上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载狐偃在城濮之战前关于“战阵之间，不厌诈伪”的论述，提供了与《左传》不同的战术思想视角。",
+      "检索词": "舅犯 战阵 不厌诈伪",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《吕氏春秋·义赏》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载城濮之战后，狐偃与雍季关于“诈术”与“百世之利”的辩论，深化了狐偃的功利主义思想形象。",
+      "检索词": "舅犯 雍季 百世之利",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·晋世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "系统记载狐偃随重耳流亡及辅佐称霸的史实，是基础叙事框架。",
+      "检索词": "狐偃 咎犯 晋世家",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《左传》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "条目主要史料出处，详载城濮之战、践土之盟等核心事件中狐偃的言行。",
+      "检索词": "狐偃 子犯 城濮",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《说苑·权谋》",
+      "tier": "经注/杂史",
+      "pool": "legend",
+      "与本主题关系": "汉代文献，收录狐偃劝谏晋文公的轶事，可能包含后世演绎成分。",
+      "检索词": "狐偃 权谋",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《水经注·河水》",
+      "tier": "经注/杂史",
+      "pool": "legend",
+      "与本主题关系": "提及与狐偃相关的地名或遗迹，如“狐偃冢”等，可作为地理附会参考。",
+      "检索词": "狐偃 冢",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 4,
+    "C_excluded": 4,
+    "overall": "B"
+  }
+}

@@ -1,6 +1,9 @@
 {
   "usingComponents": {
-    "proto-nav": "/components/proto-nav/proto-nav"
+    "proto-nav": "/components/proto-nav/proto-nav",
+    "correction-modal": "/components/correction-modal/correction-modal",
+    "dictionary-sheet": "/components/dictionary-sheet/dictionary-sheet",
+    "text-selection-bar": "/components/text-selection-bar/text-selection-bar"
   },
   "navigationStyle": "custom"
 }

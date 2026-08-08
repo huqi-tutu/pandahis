@@ -1,0 +1,25 @@
+{
+  "schema": "qa_repair_ticket/v1",
+  "pipeline": "translate",
+  "entry_id": "GLBL_01104",
+  "entry_name": "刘歆",
+  "stage": "verify",
+  "fail_count": 3,
+  "errors": [
+    "母本顺译未通过: 「」引用宜以完整摘句、对话或并列句群为单位（当前 74 处，阈值 62）"
+  ],
+  "plan": {
+    "root_cause": "QUOTE_FRAGMENT",
+    "disposition": "refine_scope",
+    "action": "merge_short_quotes",
+    "structured_prompt": "【引用方式】「」用于完整史料摘句、人物对话或并列句群，译后统一解释；叙事句中专名与数字融入白话叙述。",
+    "refine_scope": "mother",
+    "route_to": "",
+    "next_command": "",
+    "invalidate": [],
+    "max_retries": 2,
+    "extra": {}
+  },
+  "feedback": "【引用方式】「」用于完整史料摘句、人物对话或并列句群，译后统一解释；叙事句中专名与数字融入白话叙述。\n\n---\n【原始错误】\n母本顺译未通过: 「」引用宜以完整摘句、对话或并列句群为单位（当前 74 处，阈值 62）",
+  "updated_at": "2026-08-06T13:41:10Z"
+}

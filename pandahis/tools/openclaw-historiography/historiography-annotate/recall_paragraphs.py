@@ -123,7 +123,12 @@ def load_global_index(index_path: Path) -> dict:
     fp = Path(index_path)
     if not fp.is_file():
         raise RecallError(f"全局索引不存在: {fp}")
-    return json.loads(fp.read_text(encoding="utf-8"))
+    data = json.loads(fp.read_text(encoding="utf-8"))
+    if isinstance(data, list):
+        return {"entries": data}
+    if isinstance(data, dict):
+        return data
+    raise RecallError(f"全局索引格式无效（需 list 或 {{entries}} dict）: {fp}")
 
 
 def find_global_entry(index: dict, entry_id: str) -> dict:

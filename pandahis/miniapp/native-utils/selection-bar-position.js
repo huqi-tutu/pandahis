@@ -11,7 +11,8 @@ function rpxToPx(rpx, windowWidth) {
  * - placement=above：条在选区上方（默认）
  * - placement=below：条在选区下方（顶部空间不够时）
  */
-function resolveSelectionBarAnchor(rect, fallback) {
+function resolveSelectionBarAnchor(rect, fallback, options) {
+    var _a;
     const placementFallback = fallback.placement || 'above';
     if (!rect || rect.left == null || rect.top == null) {
         return { left: fallback.left, top: fallback.top, placement: placementFallback };
@@ -24,8 +25,9 @@ function resolveSelectionBarAnchor(rect, fallback) {
     const safeTop = statusBar + rpxToPx(88 + 72, ww);
     const safeBottom = rpxToPx(48, ww);
     const edge = rpxToPx(16, ww);
-    // 与 text-selection-bar.scss 尺寸对齐：4×84 + gap×3 + padding
-    const barW = rpxToPx(84 * 4 + 4 * 3 + 8 * 2, ww);
+    // 与 text-selection-bar.scss 尺寸对齐：N×84 + gap×(N-1) + padding
+    const buttonCount = Math.max(1, Math.floor((_a = options === null || options === void 0 ? void 0 : options.buttonCount) !== null && _a !== void 0 ? _a : 4));
+    const barW = rpxToPx(84 * buttonCount + 4 * Math.max(buttonCount - 1, 0) + 8 * 2, ww);
     const barH = rpxToPx(16 + 14 + 40 + 8 + 28, ww);
     const gap = rpxToPx(14, ww);
     const selLeft = Number(rect.left) || 0;

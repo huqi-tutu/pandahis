@@ -1,4 +1,4 @@
-"""独立质检/审校 LLM provider（OpenAI Chat Completions 兼容，默认 Moonshot Kimi）。"""
+"""详情质检/审校 LLM provider（OpenAI Chat Completions 兼容，默认 DeepSeek Flash）。"""
 
 from __future__ import annotations
 
@@ -37,12 +37,12 @@ def run_review_turn(
     max_attempts: int = 3,
     temperature: Optional[float] = None,
 ) -> Dict[str, Any]:
-    """调用审校模型（Kimi）；与撰写 DeepSeek 通道隔离。"""
+    """调用详情审校模型（默认 DeepSeek Flash）。"""
     settings = review_settings()
     api_key = str(settings["api_key"])
     if not api_key:
         raise RuntimeError(
-            "Review LLM 需要设置环境变量 REVIEW_API_KEY（见 .env.example）"
+            "Review LLM 需要 REVIEW_API_KEY 或 DEEPSEEK_API_KEY（见 .env.example）"
         )
 
     effective_timeout = (

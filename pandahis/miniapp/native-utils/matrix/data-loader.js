@@ -17,11 +17,14 @@ function getRelations(boxTitle) {
   const filtered = RELATIONS.filter(r => r['关联史略名称'] === boxTitle)
 
   // 按关系类别分组
-  const categoryOrder = ['家庭', '同僚', '师从', '外敌']
+  const categoryOrder = ['家庭', '同僚', '敌对', '师徒', '好友']
   const categoryMap = {}
 
   filtered.forEach(item => {
-    const cat = item['关系类别'] || '其他'
+    let cat = item['关系类别'] || '其他'
+    if (cat === '外敌') cat = '敌对'
+    if (cat === '师从') cat = '师徒'
+    if (cat === '君臣') cat = '同僚'
     if (!categoryMap[cat]) categoryMap[cat] = []
     categoryMap[cat].push({
       id:        item['关系ID'],
@@ -63,15 +66,17 @@ function getRelations(boxTitle) {
 const CATEGORY_ICON = {
   '家庭': '👨‍👩‍👧‍👦',
   '同僚': '⚔️',
-  '师从': '📖',
-  '外敌': '🔥',
+  '敌对': '🔥',
+  '师徒': '📖',
+  '好友': '🤝',
 }
 
 const CATEGORY_COLOR = {
   '家庭': '#5b8a72',
   '同僚': '#8e7ca8',
-  '师从': '#5b7fa8',
-  '外敌': '#b87a6b',
+  '敌对': '#b87a6b',
+  '师徒': '#5b7fa8',
+  '好友': '#6b7fa0',
 }
 
 /**

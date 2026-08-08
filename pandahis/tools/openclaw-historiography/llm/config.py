@@ -10,9 +10,10 @@ PROVIDER_DEEPSEEK = "deepseek"
 VALID_PROVIDERS = frozenset({PROVIDER_OPENCLAW, PROVIDER_DEEPSEEK})
 
 # 按流水线写死模型（覆盖 DEEPSEEK_MODEL 环境变量）
-MODEL_ANNOTATE = "deepseek-v4-flash"
-MODEL_PRO = "deepseek-v4-pro"
-DEFAULT_DEEPSEEK_MODEL = MODEL_PRO
+MODEL_FLASH = "deepseek-v4-flash"
+MODEL_ANNOTATE = MODEL_FLASH
+MODEL_PRO = MODEL_FLASH  # 翻译·见证·详情·关系等主流水线
+DEFAULT_DEEPSEEK_MODEL = MODEL_FLASH
 
 
 def _load_env_file() -> None:
@@ -58,7 +59,7 @@ def deepseek_settings() -> dict[str, str | float]:
 
 
 def pin_deepseek_model(required_model: str) -> str:
-    """强制 DeepSeek 通道与模型（标注 Flash / 翻译·补全 Pro 等）。"""
+    """强制 DeepSeek 通道与模型（标注 / 翻译·补全·见证·关系等）。"""
     os.environ["HIST_LLM_PROVIDER"] = PROVIDER_DEEPSEEK
     os.environ["DEEPSEEK_MODEL"] = required_model
     actual = deepseek_settings()["model"]
@@ -73,19 +74,22 @@ def ensure_annotate_model() -> str:
 
 
 def ensure_deepseek_v4_pro() -> str:
-    """翻译、朝代知识补全、人物关系、评述见证等。"""
+    """翻译、朝代知识补全、人物关系、评述见证等（deepseek-v4-flash）。"""
     return pin_deepseek_model(MODEL_PRO)
 
 
 def review_settings() -> dict[str, str | float]:
-    """独立质检/审校 LLM（OpenAI 兼容，默认 Moonshot Kimi）。"""
-    base = os.environ.get("REVIEW_BASE_URL", "https://api.moonshot.cn").rstrip("/")
+    """详情质检/审校 LLM（OpenAI 兼容，默认 DeepSeek Flash）。"""
+    ds = deepseek_settings()
+    base = os.environ.get("REVIEW_BASE_URL") or str(ds["base_url"])
+    base = base.rstrip("/")
     if not base.endswith("/v1"):
         base = f"{base}/v1"
+    api_key = os.environ.get("REVIEW_API_KEY") or str(ds["api_key"])
     return {
-        "api_key": os.environ.get("REVIEW_API_KEY", ""),
+        "api_key": api_key,
         "base_url": base.rstrip("/"),
-        "model": os.environ.get("REVIEW_MODEL", "kimi-k2.6"),
-        "temperature": float(os.environ.get("REVIEW_TEMPERATURE", "1")),
+        "model": os.environ.get("REVIEW_MODEL", MODEL_FLASH),
+        "temperature": float(os.environ.get("REVIEW_TEMPERATURE", "0.2")),
         "timeout_sec": int(os.environ.get("REVIEW_TIMEOUT_SEC", "900")),
     }

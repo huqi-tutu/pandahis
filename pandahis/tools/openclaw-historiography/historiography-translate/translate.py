@@ -52,6 +52,12 @@ def main() -> int:
     p.add_argument("--retry-failed", action="store_true", help="先重置 failed 为 pending 再跑")
     p.add_argument("--single-source-only", action="store_true")
     p.add_argument("--index", type=Path, default=None)
+    p.add_argument(
+        "--output-dir",
+        type=Path,
+        default=None,
+        help="产出目录（V2 索引默认 11新标注条目翻译）",
+    )
     p.add_argument("--dry-run", action="store_true")
     p.add_argument("--recall-only", action="store_true")
     p.add_argument("--no-llm", action="store_true")
@@ -59,6 +65,12 @@ def main() -> int:
     p = sub.add_parser("run-one", help="跑单条")
     p.add_argument("--id", required=True, dest="entry_id")
     p.add_argument("--index", type=Path, default=None)
+    p.add_argument(
+        "--output-dir",
+        type=Path,
+        default=None,
+        help="产出目录（V2 索引默认 11新标注条目翻译）",
+    )
     p.add_argument("--dry-run", action="store_true")
     p.add_argument("--recall-only", action="store_true")
     p.add_argument("--no-llm", action="store_true")
@@ -112,6 +124,12 @@ def main() -> int:
     p = sub.add_parser("repair", help="按工单定向修复（非盲重跑）")
     p.add_argument("--id", required=True, dest="entry_id")
     p.add_argument("--index", type=Path, default=None)
+    p.add_argument(
+        "--output-dir",
+        type=Path,
+        default=None,
+        help="产出目录（V2 默认 11新标注条目翻译）",
+    )
     p.add_argument("--dry-run", action="store_true")
     p.add_argument("--execute", action="store_true", help="执行修复（默认仅展示工单）")
 
@@ -165,6 +183,7 @@ def main() -> int:
         return runner.run_one(
             args.entry_id,
             index_path=index,
+            output_dir=getattr(args, "output_dir", None),
             dry_run=args.dry_run,
             recall_only=args.recall_only,
             use_llm=not args.no_llm,
@@ -223,16 +242,20 @@ def main() -> int:
         return print_repair_status(paths()["translate_work"], args.entry_id)
 
     if args.cmd == "repair":
-        from lib.config import paths
+        from lib.config import paths, resolve_output_dir
         from lib.repair_executor import execute_repair, print_repair_status
 
         index = args.index if hasattr(args, "index") else None
+        out_dir = resolve_output_dir(
+            index_path=index,
+            output_dir=getattr(args, "output_dir", None),
+        )
         if not args.execute:
             return print_repair_status(paths()["translate_work"], args.entry_id)
         ok, msg = execute_repair(
             args.entry_id,
             work_dir=paths()["translate_work"],
-            out_dir=paths()["translate_output"],
+            out_dir=out_dir,
             index_path=index,
             dry_run=args.dry_run,
         )

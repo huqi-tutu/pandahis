@@ -1,7 +1,7 @@
 {
   "schema": "translate-coverage-ledger/v1",
   "史略ID": "GLBL_00770",
-  "updated_at": "2026-07-28T06:38:40.057079+00:00",
+  "updated_at": "2026-08-05T16:06:53.351592+00:00",
   "entries": {
     "M001–M002": {
       "status": "conveyed",
@@ -28,10 +28,10 @@
       "note": "齐王建十六年，秦国灭了周王室。"
     },
     "M006": {
-      "status": "missing",
+      "status": "conveyed",
       "claim_fp": "8ff4900731902781",
-      "checked_at": "2026-07-28T06:38:40.057050+00:00",
-      "note": "未提及东郡是从齐国边境夺取的地盘"
+      "checked_at": "2026-08-05T16:06:30.478062+00:00",
+      "note": "译文明确提到齐王建二十三年秦国设置东郡，与主张一致。"
     },
     "M007": {
       "status": "conveyed",

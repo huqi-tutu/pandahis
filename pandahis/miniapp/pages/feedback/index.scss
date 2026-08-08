@@ -1,0 +1,166 @@
+@import '../../native-utils/design-tokens.scss';
+
+.page-feedback {
+  min-height: 100vh;
+  @include parchment-page-bg;
+  box-sizing: border-box;
+  padding: 0 32rpx calc(48rpx + env(safe-area-inset-bottom));
+}
+
+.feedback-inner {
+  padding-top: 24rpx;
+}
+
+.section {
+  padding: 24rpx;
+  margin-bottom: 24rpx;
+}
+
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16rpx;
+}
+
+.section-title {
+  display: block;
+  margin-bottom: 16rpx;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: $text-title;
+  line-height: 1.3;
+}
+
+.section-head .section-title {
+  margin-bottom: 0;
+}
+
+.section-hint {
+  display: block;
+  margin: -8rpx 0 16rpx;
+  font-size: 22rpx;
+  line-height: 1.5;
+}
+
+.count {
+  font-size: 22rpx;
+}
+
+.type-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16rpx;
+}
+
+.type-chip {
+  padding: 12rpx 24rpx;
+  border-radius: 16rpx;
+  background: $page-bg;
+  color: $text-body;
+  font-size: 24rpx;
+  letter-spacing: 1rpx;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+.type-chip.on {
+  background: rgba(74, 63, 63, 0.1);
+  color: $text-title;
+  font-weight: 600;
+}
+
+.content-input {
+  width: 100%;
+  min-height: 220rpx;
+  padding: 20rpx 24rpx;
+  box-sizing: border-box;
+  border-radius: 16rpx;
+  background: $page-bg;
+  font-size: 28rpx;
+  line-height: 1.6;
+  color: $text-title;
+}
+
+.content-ph {
+  color: $text-time;
+}
+
+.image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16rpx;
+}
+
+.image-item,
+.image-add {
+  position: relative;
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 16rpx;
+  overflow: hidden;
+  background: $page-bg;
+}
+
+.image-thumb {
+  width: 100%;
+  height: 100%;
+}
+
+.image-remove {
+  position: absolute;
+  top: 8rpx;
+  right: 8rpx;
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 20rpx;
+  background: rgba(38, 38, 38, 0.55);
+  color: #fdfcfa;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  text-align: center;
+}
+
+.image-add {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4rpx;
+  box-shadow: inset 0 0 0 1rpx $divider;
+}
+
+.image-add-plus {
+  font-size: 40rpx;
+  color: $text-caption;
+  line-height: 1;
+}
+
+.image-add-label {
+  font-size: 20rpx;
+  color: $text-time;
+}
+
+.submit-wrap {
+  margin-top: 8rpx;
+  padding: 0 8rpx;
+}
+
+.submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 88rpx;
+  border-radius: 16rpx;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.submit-btn.disabled {
+  opacity: 0.45;
+}
+
+.submit-hint {
+  display: block;
+  margin-top: 16rpx;
+  text-align: center;
+  font-size: 22rpx;
+}

@@ -1,13 +1,13 @@
 {
   "schema": "translate-coverage-ledger/v1",
   "史略ID": "GLBL_00071",
-  "updated_at": "2026-07-26T12:22:02.235834+00:00",
+  "updated_at": "2026-08-05T17:32:21.507008+00:00",
   "entries": {
     "M001": {
-      "status": "missing",
+      "status": "conveyed",
       "claim_fp": "350e04bdd2e2ac2d",
-      "checked_at": "2026-07-26T12:22:02.235799+00:00",
-      "note": "译文将子常改为群臣，未提及子常个人意图，读者无从得知是子常想立子西。"
+      "checked_at": "2026-08-05T17:31:11.674177+00:00",
+      "note": "译文明确提到子常想立子西为王，与主张一致。"
     },
     "M002": {
       "status": "conveyed",

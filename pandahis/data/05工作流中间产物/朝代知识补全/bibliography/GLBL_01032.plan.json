@@ -1,0 +1,199 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01032",
+  "写作结构": "正史叙述见翻译详录（《史记·郑世家》）。拓展文以《左传》为叙事主干，补充郑声公时期郑国在晋楚之间的外交困境、参与范氏中行氏之乱始末、子产去世与子大叔继任执政等史实。可引《韩非子》说明子产治国理念，引《清华简》提供异说线索。叙事性留白：具体战斗过程、君臣对话细节、声公个人情感。",
+  "候选著作": [
+    {
+      "出处": "《春秋左传·哀公》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "详细记载郑声公在位期间郑国参与晋国内乱（范氏、中行氏之乱）、与齐卫结盟、子产去世及子大叔为政等核心史事，是除《史记》外最系统的同时期记录。",
+      "检索词": "郑声公 子大叔 范氏",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·郑世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载郑声公世系、在位年限及基本事迹。",
+      "检索词": "郑声公",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《韩非子·难三》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载子产治国理念与郑国政治生态，可侧面反映郑声公时期郑国执政风格与政治思想背景。",
+      "检索词": "子产 郑 简公",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《清华简·系年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "战国楚简史书，可能提供郑声公时期郑国与晋楚关系的异说或补充记载，可与传世文献互证。",
+      "检索词": "郑 声公 晋",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《国语·郑语》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载郑国历史兴衰与政治言论，虽主要涉及早期郑国，但可提供郑国政治传统与外交策略的背景认知。",
+      "检索词": "郑 桓公 武公",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《吕氏春秋·先识览》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载子产相关事迹与郑国政治智慧，可补充郑声公时期执政群体的政治形象。",
+      "检索词": "子产 郑",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《春秋左传正义》",
+      "tier": "经注/杂史",
+      "pool": "legend",
+      "与本主题关系": "唐代注疏，对《左传》中郑声公时期史事有详细解释与补充，可提供后世学者的理解视角。",
+      "检索词": "郑声公 正义",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记会注考证》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "日本学者泷川资言对《史记·郑世家》的汇注考证，汇集历代注家对郑声公世系与事迹的考辨。",
+      "检索词": "郑声公 考证",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《春秋左传·哀公》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "详细记载郑声公在位期间郑国参与晋国内乱（范氏、中行氏之乱）、与齐卫结盟、子产去世及子大叔为政等核心史事，是除《史记》外最系统的同时期记录。",
+      "检索词": "郑声公 子大叔 范氏",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·郑世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载郑声公世系、在位年限及基本事迹。",
+      "检索词": "郑声公",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《韩非子·难三》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载子产治国理念与郑国政治生态，可侧面反映郑声公时期郑国执政风格与政治思想背景。",
+      "检索词": "子产 郑 简公",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《清华简·系年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "战国楚简史书，可能提供郑声公时期郑国与晋楚关系的异说或补充记载，可与传世文献互证。",
+      "检索词": "郑 声公 晋",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《国语·郑语》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载郑国历史兴衰与政治言论，虽主要涉及早期郑国，但可提供郑国政治传统与外交策略的背景认知。",
+      "检索词": "郑 桓公 武公",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《吕氏春秋·先识览》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载子产相关事迹与郑国政治智慧，可补充郑声公时期执政群体的政治形象。",
+      "检索词": "子产 郑",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《春秋左传正义》",
+      "tier": "经注/杂史",
+      "pool": "legend",
+      "与本主题关系": "唐代注疏，对《左传》中郑声公时期史事有详细解释与补充，可提供后世学者的理解视角。",
+      "检索词": "郑声公 正义",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记会注考证》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "日本学者泷川资言对《史记·郑世家》的汇注考证，汇集历代注家对郑声公世系与事迹的考辨。",
+      "检索词": "郑声公 考证",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 3,
+    "C_excluded": 5,
+    "overall": "B"
+  }
+}

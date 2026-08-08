@@ -1,0 +1,29 @@
+{
+  "schema": "translate-coverage-l2/v1",
+  "史略ID": "GLBL_00151",
+  "passed": false,
+  "degraded": false,
+  "summary": "译文为纯白话叙述，未体现母本中引用原文再品评或解释的句群结构。",
+  "l1_ratio": 0.0,
+  "l1_min_ratio": 0.0,
+  "claims": [
+    {
+      "id": "M017",
+      "claim": "品评句：对称句群整段引用后作一段品评。",
+      "status": "missing",
+      "evidence": "",
+      "note": "译文中没有出现对称句群整段引用后作一段品评的结构。"
+    },
+    {
+      "id": "M028",
+      "claim": "并列句群：先整段或整簇引用原文，再作一段白话解释。",
+      "status": "missing",
+      "evidence": "",
+      "note": "译文中没有出现先整段或整簇引用原文，再作一段白话解释的结构。"
+    }
+  ],
+  "issues": [
+    "missing [M017]: 品评句：对称句群整段引用后作一段品评。",
+    "missing [M028]: 并列句群：先整段或整簇引用原文，再作一段白话解释。"
+  ]
+}

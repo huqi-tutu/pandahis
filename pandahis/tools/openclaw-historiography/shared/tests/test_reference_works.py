@@ -74,6 +74,37 @@ def test_dedupe_keeps_multiple_volumes_same_mother():
     assert "夏本纪" in joined
 
 
+def test_dedupe_shangshu_chapter_alias():
+    """《康诰》与《尚书·康诰》只保留后者。"""
+    from reference_works import dedupe_reference_works
+
+    refs = dedupe_reference_works(
+        [
+            "《康诰》",
+            "《酒诰》",
+            "《梓材》",
+            "《尚书·康诰》",
+            "《尚书·酒诰》",
+            "《尚书·梓材》",
+        ]
+    )
+    joined = "".join(refs)
+    assert "尚书·康诰" in joined
+    assert "《康诰》" not in joined
+    assert joined.count("康诰") == 1
+
+
+def test_merge_weikangshu_no_duplicate_shangshu():
+    entry = {"主要史料出处": "《史记·卷37·卫康叔世家》"}
+    body = (
+        "见《左传·定公四年》及《尚书·康诰》《尚书·酒诰》《尚书·梓材》，"
+        "亦言《康诰》《酒诰》《梓材》。"
+    )
+    refs = merge_reference_works(entry, body, None)
+    assert "《康诰》" not in refs
+    assert "《尚书·康诰》" in refs
+
+
 def test_verify_catches_volume_mismatch():
     entry = {"主要史料出处": "《吕氏春秋·贵公》"}
     raw = (

@@ -138,9 +138,44 @@ def resolve_output_path(
 
 
 def min_word_count(paragraph_count: int) -> int:
+    """Legacy：分块模式等仍引用；终检/母本质检已改母本×比例软警告。"""
     base = 400
     extra = max(0, paragraph_count - 3) * 150
     return base + extra
+
+
+def _source_char_len(text: str) -> int:
+    """母本/史料原文字符数（去空白）。"""
+    return len(re.sub(r"\s+", "", text or ""))
+
+
+def translation_length_ratio() -> float:
+    return float(os.environ.get("TRANSLATE_LENGTH_RATIO", "1.2"))
+
+
+def expected_translation_min_chars(source_len: int) -> int:
+    if source_len <= 0:
+        return 0
+    return max(1, int(source_len * translation_length_ratio()))
+
+
+def translation_length_warning(
+    wc: int,
+    source_len: int,
+    *,
+    label: str = "成稿",
+) -> str | None:
+    """低于母本×比例时返回 [warn] 文案（不阻断 verify）。"""
+    if source_len <= 0:
+        return None
+    floor = expected_translation_min_chars(source_len)
+    if wc >= floor:
+        return None
+    ratio = translation_length_ratio()
+    return (
+        f"[warn] {label}字数偏少: {wc} < 母本×{ratio}={floor} "
+        f"（软警告，不阻断落盘；请抽查是否漏译或 Phase2 补全不足）"
+    )
 
 
 _HAN_CHAR_RE = re.compile(r"[\u4e00-\u9fff]")
@@ -233,6 +268,7 @@ def _detect_reference_section_format(detail: str) -> List[str]:
     return ["参考著作须独立成段（前有空行 \\n\\n），禁止与正文末句同段"]
 
 
+def _detect_dash_ending(detail: str) -> List[str]:
     """段末破折号已放宽，不再作为 verify 硬失败项。"""
     _ = detail
     return []
@@ -370,13 +406,10 @@ def verify_mother_draft(
 
     wc = len(detail)
     if not batch_mode:
-        mother_src = _mother_source_text(recalled)
-        src_len = len(re.sub(r"\s+", "", mother_src))
-        para_floor = int(min_word_count(int(recalled.get("paragraph_count") or 1)) * 0.55)
-        src_floor = max(80, int(src_len * 2.2))
-        floor = min(para_floor, src_floor) if src_len < 120 else para_floor
-        if wc < floor:
-            errors.append(f"母本顺译字数偏少: {wc} < {floor}")
+        src_len = _source_char_len(_mother_source_text(recalled))
+        warn = translation_length_warning(wc, src_len, label="母本顺译")
+        if warn:
+            _log_verify_warnings([warn])
 
     return len(errors) == 0, errors
 
@@ -711,6 +744,52 @@ def verify_enrich_draft(
     return len(errors) == 0, errors
 
 
+def verify_enrich_batch_slice(
+    entry_id: str,
+    recalled: Dict[str, Any],
+    output_path: Path,
+    *,
+    batch_mother_text: str = "",
+    batch_label: str = "",
+) -> Tuple[bool, List[str]]:
+    """Phase2 分批落盘质检（不含参考著作节；终检仍走 verify_output）。"""
+    errors: List[str] = []
+    if not output_path.is_file():
+        return False, [f"缺少本批译稿: {output_path}"]
+    try:
+        data = json.loads(output_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        return False, [f"本批译稿 JSON 解析失败: {exc}"]
+
+    if data.get("史略ID") not in (entry_id, None):
+        errors.append(f"本批译稿 史略ID 不一致: {data.get('史略ID')!r}")
+
+    detail = (data.get("翻译详情") or "").strip()
+    if not detail:
+        errors.append("本批翻译详情为空")
+        return False, errors
+
+    if re.search(r"^本条\s*\d+\s*段（母本", detail) or "已读完" in detail[:120]:
+        errors.append("正文含「喊数/进度汇报」元叙述，须删除后再落盘")
+
+    if "*参考著作*" in detail or detail.rstrip().endswith("参考著作"):
+        errors.append("分批 Phase2 本批不应含「参考著作」节")
+
+    errors.extend(_detect_markdown_bold(detail))
+    errors.extend(detect_forbidden_gloss(detail))
+    errors.extend(_detect_dash_ending(detail))
+
+    wc = len(detail)
+    src = _source_char_len(batch_mother_text)
+    warn = translation_length_warning(
+        wc, src, label=batch_label or "本批成稿"
+    )
+    if warn:
+        _log_verify_warnings([warn])
+
+    return len(errors) == 0, errors
+
+
 def verify_output(
     entry_id: str,
     recalled: Dict[str, Any],
@@ -726,7 +805,7 @@ def verify_output(
 
     keys = set(data.keys())
     required = {"史略ID", "翻译详情", "史料原文"}
-    allowed = required | {"原文出处"}
+    allowed = required | {"原文出处", "翻译版本"}
     extra = keys - allowed
     missing = required - keys
     if extra:
@@ -770,13 +849,10 @@ def verify_output(
             errors.append("正文含「喊数/进度汇报」元叙述，须删除")
 
         wc = len(detail)
-        para_count = int(recalled.get("paragraph_count") or 1)
-        para_floor = min_word_count(para_count)
-        src_len = len(re.sub(r"\s+", "", str(expected_source or "")))
-        src_floor = max(100, int(src_len * 3.5))
-        floor = min(para_floor, src_floor) if src_len < 150 else para_floor
-        if wc < floor:
-            errors.append(f"字数不足: {wc} < 下限 {floor}")
+        src_len = _source_char_len(str(expected_source or ""))
+        warn = translation_length_warning(wc, src_len, label="成稿")
+        if warn:
+            _log_verify_warnings([warn])
 
         if "*参考著作*" not in detail and "参考著作" not in detail:
             errors.append("文末缺少「参考著作」列表")

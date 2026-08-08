@@ -1,7 +1,7 @@
 {
   "schema": "translate-coverage-ledger/v1",
   "史略ID": "GLBL_00720",
-  "updated_at": "2026-07-28T06:02:17.029804+00:00",
+  "updated_at": "2026-08-05T15:57:58.305374+00:00",
   "entries": {
     "M001": {
       "status": "conveyed",
@@ -46,10 +46,10 @@
       "note": "燕王从此对子之深信不疑"
     },
     "M009": {
-      "status": "missing",
+      "status": "conveyed",
       "claim_fp": "3724b608ca1000c5",
-      "checked_at": "2026-07-28T06:02:17.029773+00:00",
-      "note": "译文只提及送百金，未提及“听从苏代的驱使”这一事实。"
+      "checked_at": "2026-08-05T15:57:22.096194+00:00",
+      "note": "译文明确提到子之送给苏代百金（一百镒黄金）并听从其驱使（对他言听计从），与主张完全一致。"
     },
     "M010": {
       "status": "conveyed",

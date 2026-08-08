@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const brand_assets_1 = require("../../native-utils/brand-assets");
 const api_1 = require("../../native-utils/api");
 const invite_storage_1 = require("../../native-utils/invite-storage");
 const load_error_message_1 = require("../../native-utils/load-error-message");
@@ -8,6 +9,7 @@ const router_1 = require("../../native-utils/router");
 const runtime_env_1 = require("../../native-utils/runtime-env");
 Page({
     data: {
+        brandLogoUrl: brand_assets_1.BRAND_LOGO_URL,
         loggingIn: false,
         pendingInvite: '',
         inviteCodeInput: '',
@@ -23,10 +25,14 @@ Page({
         guestHeight: 32,
     },
     _countdownTimer: null,
+    _afterLoginTab: '',
     onLoad(query) {
         const reauth = query.reauth === '1' || query.reauth === 'true';
         if (reauth) {
             (0, api_1.clearToken)();
+        }
+        if (query.from === 'invite') {
+            this._afterLoginTab = router_1.ROUTES.invite;
         }
         // 「立即体验」与右上角胶囊按钮上下居中对齐
         const rect = wx.getMenuButtonBoundingClientRect();
@@ -36,6 +42,9 @@ Page({
             guestTop: rect.top,
             guestHeight: rect.height,
         });
+    },
+    leaveAfterLoginSafe(delayMs = 400) {
+        (0, wx_auth_1.leaveAfterLogin)(delayMs, this._afterLoginTab ? { switchTab: this._afterLoginTab } : undefined);
     },
     onUnload() {
         if (this._countdownTimer)
@@ -63,7 +72,7 @@ Page({
         });
         if ((0, api_1.hasToken)() && !this.data.reauth) {
             void (0, api_1.request)('/me', { auth: true, softAuth: true })
-                .then(() => (0, wx_auth_1.leaveAfterLogin)(0))
+                .then(() => this.leaveAfterLoginSafe(0))
                 .catch(() => {
                 (0, api_1.clearAccessToken)();
                 this.setData({ hasToken: false });
@@ -108,7 +117,7 @@ Page({
         (0, api_1.setToken)('dev-local-token');
         this.setData({ apiBase: (0, api_1.getBaseUrl)() });
         wx.showToast({ title: '本机 API + dev Token', icon: 'success' });
-        (0, wx_auth_1.leaveAfterLogin)();
+        this.leaveAfterLoginSafe();
     },
     useProdApi() {
         (0, api_1.useProductionApi)();
@@ -135,7 +144,7 @@ Page({
             const data = await (0, wx_auth_1.loginWithWxCode)({ inviteCode: manual || undefined });
             this.setData({ reauth: false, hasToken: true });
             (0, wx_auth_1.loginSuccessToast)(data);
-            (0, wx_auth_1.leaveAfterLogin)();
+            this.leaveAfterLoginSafe();
         }
         catch (e) {
             const msg = (0, load_error_message_1.formatApiRequestError)(e);

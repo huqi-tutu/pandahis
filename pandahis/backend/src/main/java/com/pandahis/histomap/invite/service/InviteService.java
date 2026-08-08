@@ -1,7 +1,10 @@
 package com.pandahis.histomap.invite.service;
 
+import com.pandahis.histomap.common.jdbc.JdbcDates;
+import com.pandahis.histomap.invite.interfaces.dto.InviteeDTO;
 import com.pandahis.histomap.membership.interfaces.dto.AssistParticipantDTO;
 import java.security.SecureRandom;
+import java.time.OffsetDateTime;
 import java.util.List;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -10,7 +13,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class InviteService {
-  public static final int INVITE_REWARD_READS = 10;
+  /** 邀请成功时，邀请人与被邀请人各自获得的阅读点数。 */
+  public static final int INVITE_REWARD_READS = 100;
   private static final String CODE_ALPHABET = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
   private static final SecureRandom RNG = new SecureRandom();
 
@@ -20,7 +24,7 @@ public class InviteService {
     this.jdbcTemplate = jdbcTemplate;
   }
 
-  /** 新用户首次注册且带有效邀请码时：写邀请关系并给邀请人加阅读数（幂等）。 */
+  /** 新用户首次注册且带有效邀请码时：写邀请关系并给双方加阅读数（幂等）。 */
   @Transactional
   public boolean recordNewUserFromInvite(long inviteeUserId, String inviteCodeRaw) {
     return bindInviteCode(inviteeUserId, inviteCodeRaw).bound();
@@ -28,6 +32,7 @@ public class InviteService {
 
   /**
    * 已登录用户补填邀请码（仅当被邀请人尚未绑定过邀请关系时生效）。
+   * 成功时邀请人与被邀请人各增加 {@link #INVITE_REWARD_READS} 阅读点。
    */
   @Transactional
   public BindResult bindInviteCode(long inviteeUserId, String inviteCodeRaw) {
@@ -73,7 +78,11 @@ public class InviteService {
         "UPDATE app_user SET read_balance = read_balance + ? WHERE id=?",
         INVITE_REWARD_READS,
         inviter);
-    return BindResult.ok("邀请码已生效，你已获得 " + INVITE_REWARD_READS + " 点阅读数");
+    jdbcTemplate.update(
+        "UPDATE app_user SET read_balance = read_balance + ? WHERE id=?",
+        INVITE_REWARD_READS,
+        inviteeUserId);
+    return BindResult.ok("邀请码已生效，双方各获得 " + INVITE_REWARD_READS + " 点阅读数");
   }
 
   public record BindResult(boolean bound, String message) {
@@ -118,6 +127,27 @@ public class InviteService {
                 rs.getString("nickname"),
                 rs.getString("avatar_url")
             ),
+        inviterUserId,
+        limit
+    );
+  }
+
+  /** 邀请成功列表（注册建立关系时写入），含注册/绑定时间与本次发放阅读点。 */
+  public List<InviteeDTO> listInvitees(long inviterUserId, int limit) {
+    return jdbcTemplate.query(
+        "SELECT u.nickname, u.avatar_url, e.created_at, e.reward_granted FROM user_invite_event e "
+            + "INNER JOIN app_user u ON u.id = e.invitee_user_id "
+            + "WHERE e.inviter_user_id=? ORDER BY e.created_at DESC LIMIT ?",
+        (rs, i) -> {
+          OffsetDateTime at = JdbcDates.toOffsetDateTime(rs.getObject("created_at"));
+          boolean granted = rs.getInt("reward_granted") == 1;
+          return new InviteeDTO(
+              rs.getString("nickname"),
+              rs.getString("avatar_url"),
+              at == null ? null : at.toString(),
+              granted ? INVITE_REWARD_READS : 0
+          );
+        },
         inviterUserId,
         limit
     );

@@ -1,0 +1,187 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01051",
+  "写作结构": "正史叙述见翻译详录（《史记·周本纪》等）。拓展文以《竹书纪年》异说为核心，辅以《国语》《左传》记载，说明拥立、东迁及周郑交质等事件，并引《诗经》相关篇章反映时人对东迁的复杂情感。最后以《春秋公羊传》等后世经说补充‘弑父嫌疑’的争议，合段呈现。",
+  "候选著作": [
+    {
+      "出处": "《史记·周本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载平王东迁始末、诸侯拥立等核心史实，为基本叙事框架。",
+      "检索词": "平王东迁雒邑",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·秦本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载秦襄公护送平王东迁有功，始封为诸侯，赐岐以西之地。",
+      "检索词": "襄公以兵送周平王",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《竹书纪年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "提供与正统记载不同的说法，如‘幽王死，申侯立平王于申’及‘周二王并立’等，可补充平王得位不正的争议。",
+      "检索词": "平王奔西申",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    },
+    {
+      "出处": "《国语·郑语》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载史伯对郑桓公论天下大势，预言西周将亡，间接涉及平王东迁的历史背景。",
+      "检索词": "王室将卑",
+      "采用": true,
+      "原文摘句": "王室将卑，戎狄必昌，不可偪也。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《左传·隐公三年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "详细记载周平王与郑庄公交换人质（周郑交质）及后续交恶事件，是天子威信受损的关键证据。",
+      "检索词": "周郑交质",
+      "采用": true,
+      "原文摘句": "郑武公、庄公为平王卿士。王贰于虢，郑伯怨王。王曰：‘无之。’故周郑交质。王子狐为质于郑，郑公子忽为质于周。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《诗经·王风·黍离》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "传统认为此诗为周大夫行役至宗周，见故宗庙宫室尽为禾黍，闵周室之颠覆而作，反映东迁后的故国之思。",
+      "检索词": "彼黍离离",
+      "采用": true,
+      "原文摘句": "彼黍离离，彼稷之苗。行迈靡靡，中心摇摇。知我者谓我心忧，不知我者谓我何求。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《春秋公羊传·桓公十一年》",
+      "tier": "经注/杂史",
+      "pool": "legend",
+      "与本主题关系": "后世经学家在注解中引申讨论平王得位问题，涉及‘弑父嫌疑’的伦理争议。",
+      "检索词": "春秋公羊传 平王",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·周本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载平王东迁始末、诸侯拥立等核心史实，为基本叙事框架。",
+      "检索词": "平王东迁雒邑",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·秦本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载秦襄公护送平王东迁有功，始封为诸侯，赐岐以西之地。",
+      "检索词": "襄公以兵送周平王",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《竹书纪年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "提供与正统记载不同的说法，如‘幽王死，申侯立平王于申’及‘周二王并立’等，可补充平王得位不正的争议。",
+      "检索词": "平王奔西申",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    },
+    {
+      "出处": "《国语·郑语》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载史伯对郑桓公论天下大势，预言西周将亡，间接涉及平王东迁的历史背景。",
+      "检索词": "王室将卑",
+      "采用": true,
+      "原文摘句": "王室将卑，戎狄必昌，不可偪也。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《左传·隐公三年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "详细记载周平王与郑庄公交换人质（周郑交质）及后续交恶事件，是天子威信受损的关键证据。",
+      "检索词": "周郑交质",
+      "采用": true,
+      "原文摘句": "郑武公、庄公为平王卿士。王贰于虢，郑伯怨王。王曰：‘无之。’故周郑交质。王子狐为质于郑，郑公子忽为质于周。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《诗经·王风·黍离》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "传统认为此诗为周大夫行役至宗周，见故宗庙宫室尽为禾黍，闵周室之颠覆而作，反映东迁后的故国之思。",
+      "检索词": "彼黍离离",
+      "采用": true,
+      "原文摘句": "彼黍离离，彼稷之苗。行迈靡靡，中心摇摇。知我者谓我心忧，不知我者谓我何求。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《春秋公羊传·桓公十一年》",
+      "tier": "经注/杂史",
+      "pool": "legend",
+      "与本主题关系": "后世经学家在注解中引申讨论平王得位问题，涉及‘弑父嫌疑’的伦理争议。",
+      "检索词": "春秋公羊传 平王",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 5,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

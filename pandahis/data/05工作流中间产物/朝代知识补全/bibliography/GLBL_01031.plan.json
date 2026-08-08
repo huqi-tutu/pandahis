@@ -1,0 +1,155 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01031",
+  "写作结构": "正史叙述见翻译详录（《史记·郑世家》）。拓展文主要围绕子产执政的尾声与郑国世系传承展开，可引《左传》昭公年间记载作为史外异说补充，说明郑定公时期郑国在内政外交上的延续性。其余留白。",
+  "候选著作": [
+    {
+      "出处": "《左传·昭公十六年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载郑定公二年（前528年）子产执政下郑国应对诸侯事务，可侧面反映定公初年政局。",
+      "检索词": "郑定公 子产",
+      "采用": true,
+      "原文摘句": "（若ctext可查）",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《左传·昭公二十年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载子产临终前对子大叔的为政遗言，时在郑定公八年（前522年），是理解定公朝后期政治的关键。",
+      "检索词": "子产 有疾 谓子大叔",
+      "采用": true,
+      "原文摘句": "（若ctext可查）",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《左传·昭公二十八年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载郑定公去世前后郑国参与诸侯会盟的情况，可佐证其卒年与继位信息。",
+      "检索词": "郑定公 卒",
+      "采用": true,
+      "原文摘句": "（若ctext可查）",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·郑世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载郑定公名宁、即位、在位年数及子产执政等核心信息。",
+      "检索词": "郑定公",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《春秋左传正义》",
+      "tier": "经注/杂史",
+      "pool": "legend",
+      "与本主题关系": "杜预注、孔颖达疏对《左传》相关记载的训解，可提供后世对郑定公时期制度的理解。",
+      "检索词": "郑定公",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《竹书纪年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "可能载有郑定公在位年数与战国人追记的郑国纪年，可与《史记》互校。",
+      "检索词": "郑定公",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《左传·昭公十六年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载郑定公二年（前528年）子产执政下郑国应对诸侯事务，可侧面反映定公初年政局。",
+      "检索词": "郑定公 子产",
+      "采用": true,
+      "原文摘句": "（若ctext可查）",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《左传·昭公二十年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载子产临终前对子大叔的为政遗言，时在郑定公八年（前522年），是理解定公朝后期政治的关键。",
+      "检索词": "子产 有疾 谓子大叔",
+      "采用": true,
+      "原文摘句": "（若ctext可查）",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《左传·昭公二十八年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载郑定公去世前后郑国参与诸侯会盟的情况，可佐证其卒年与继位信息。",
+      "检索词": "郑定公 卒",
+      "采用": true,
+      "原文摘句": "（若ctext可查）",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·郑世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载郑定公名宁、即位、在位年数及子产执政等核心信息。",
+      "检索词": "郑定公",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《竹书纪年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "可能载有郑定公在位年数与战国人追记的郑国纪年，可与《史记》互校。",
+      "检索词": "郑定公",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《春秋左传正义》",
+      "tier": "经注/杂史",
+      "pool": "legend",
+      "与本主题关系": "杜预注、孔颖达疏对《左传》相关记载的训解，可提供后世对郑定公时期制度的理解。",
+      "检索词": "郑定公",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 3,
+    "C_excluded": 3,
+    "overall": "B"
+  }
+}

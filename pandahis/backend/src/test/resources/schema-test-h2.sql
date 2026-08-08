@@ -64,6 +64,7 @@ CREATE TABLE IF NOT EXISTS historical_box (
   civilization_name VARCHAR(64) NULL,
   dynasty_name VARCHAR(128) NULL,
   regime_name VARCHAR(128) NULL,
+  emperor_name VARCHAR(128) NULL,
   title VARCHAR(128) NOT NULL,
   category_key VARCHAR(16) NOT NULL,
   blurb VARCHAR(64) NULL,
@@ -199,6 +200,17 @@ CREATE TABLE IF NOT EXISTS user_box_read_completion (
   box_id VARCHAR(128) NOT NULL,
   completed_at TIMESTAMP NOT NULL,
   PRIMARY KEY (user_id, box_id)
+);
+
+CREATE TABLE IF NOT EXISTS user_feedback (
+  id BIGINT PRIMARY KEY AUTO_INCREMENT,
+  user_id BIGINT NOT NULL,
+  feedback_type VARCHAR(32) NOT NULL,
+  content VARCHAR(1000) NOT NULL,
+  image_urls_json TEXT NULL,
+  status VARCHAR(16) NOT NULL DEFAULT 'pending',
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE IF NOT EXISTS user_home_matrix_state (

@@ -1,0 +1,251 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01079",
+  "写作结构": "正史叙述见翻译详录。拓展文以《左传》等先秦文献为核心，勾勒白狄与秦、晋的军事外交互动；以《春秋》经传及《国语》异说补充其内迁与中山国建立线索；以《穀梁传》等经注说明其‘尚白’文化特征。后世综述仅作合段补充，不展开细节。",
+  "候选著作": [
+    {
+      "出处": "《左传》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载白狄与晋、秦的军事冲突及政治互动，如白狄伐晋、与秦交好等，是白狄史事最核心的编年记录。",
+      "检索词": "白狄 晋 秦",
+      "采用": true,
+      "原文摘句": "白狄及君同州，君之仇雠，而我之婚姻也。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《春秋穀梁传》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "解释白狄名称由来，明确其‘尚白’的文化特征，区别于赤狄等其他狄人支系。",
+      "检索词": "白狄 尚白",
+      "采用": true,
+      "原文摘句": "其曰白狄，何也？以其尚白，故曰白狄。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《国语·齐语》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载齐桓公时期北方戎狄势力概况，包含对白狄等部族活动范围的宏观描述。",
+      "检索词": "白狄 西戎",
+      "采用": true,
+      "原文摘句": "筑葵兹、晏、负夏、领釜丘，以御戎狄之地，所以禁暴于诸侯也。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《春秋左传正义》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "唐代孔颖达等对《左传》中白狄记载的注疏，包含对白狄族姓、地望的考证。",
+      "检索词": "白狄 姬姓",
+      "采用": true,
+      "原文摘句": "白狄，狄之别种也。故西河郡有白部胡。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《世本》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "辑本中记载鲜虞氏为白狄之后，建立了中山国，是白狄内迁建国的重要线索。",
+      "检索词": "鲜虞 中山 白狄",
+      "采用": true,
+      "原文摘句": "鲜虞，白狄也。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·晋世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载晋国与白狄的战争与交往，如晋文公流亡期间曾居狄地，与白狄相关。",
+      "检索词": "晋 狄 白狄",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·秦本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载秦穆公时期与白狄的外交关系，如白狄与秦交好等史事。",
+      "检索词": "秦 白狄",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《后汉书·西羌传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "追溯戎狄源流时提及白狄，将其纳入春秋戎狄活动的宏观叙述中。",
+      "检索词": "白狄 春秋",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《春秋释例》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "西晋杜预所著，对《春秋》经传中白狄的地望分布有系统考证。",
+      "检索词": "白狄 地望",
+      "采用": true,
+      "原文摘句": "白狄，狄之别种，今西河郡有白部胡。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《中山国史话》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "现代研究著作，系统梳理白狄支系鲜虞氏建立中山国的历史脉络与文化融合过程。",
+      "检索词": "白狄 中山国 鲜虞",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《左传》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载白狄与晋、秦的军事冲突及政治互动，如白狄伐晋、与秦交好等，是白狄史事最核心的编年记录。",
+      "检索词": "白狄 晋 秦",
+      "采用": true,
+      "原文摘句": "白狄及君同州，君之仇雠，而我之婚姻也。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《春秋穀梁传》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "解释白狄名称由来，明确其‘尚白’的文化特征，区别于赤狄等其他狄人支系。",
+      "检索词": "白狄 尚白",
+      "采用": true,
+      "原文摘句": "其曰白狄，何也？以其尚白，故曰白狄。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《国语·齐语》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载齐桓公时期北方戎狄势力概况，包含对白狄等部族活动范围的宏观描述。",
+      "检索词": "白狄 西戎",
+      "采用": true,
+      "原文摘句": "筑葵兹、晏、负夏、领釜丘，以御戎狄之地，所以禁暴于诸侯也。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《春秋左传正义》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "唐代孔颖达等对《左传》中白狄记载的注疏，包含对白狄族姓、地望的考证。",
+      "检索词": "白狄 姬姓",
+      "采用": true,
+      "原文摘句": "白狄，狄之别种也。故西河郡有白部胡。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《世本》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "辑本中记载鲜虞氏为白狄之后，建立了中山国，是白狄内迁建国的重要线索。",
+      "检索词": "鲜虞 中山 白狄",
+      "采用": true,
+      "原文摘句": "鲜虞，白狄也。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·晋世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载晋国与白狄的战争与交往，如晋文公流亡期间曾居狄地，与白狄相关。",
+      "检索词": "晋 狄 白狄",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·秦本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载秦穆公时期与白狄的外交关系，如白狄与秦交好等史事。",
+      "检索词": "秦 白狄",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《后汉书·西羌传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "追溯戎狄源流时提及白狄，将其纳入春秋戎狄活动的宏观叙述中。",
+      "检索词": "白狄 春秋",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《春秋释例》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "西晋杜预所著，对《春秋》经传中白狄的地望分布有系统考证。",
+      "检索词": "白狄 地望",
+      "采用": true,
+      "原文摘句": "白狄，狄之别种，今西河郡有白部胡。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《中山国史话》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "现代研究著作，系统梳理白狄支系鲜虞氏建立中山国的历史脉络与文化融合过程。",
+      "检索词": "白狄 中山国 鲜虞",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 7,
+    "C_excluded": 3,
+    "overall": "B"
+  }
+}

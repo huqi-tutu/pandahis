@@ -1,0 +1,165 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01021",
+  "写作结构": "正史叙述见翻译详录（《史记·齐太公世家》）。拓展文以《竹书纪年》等辑佚/出土文献为史外异说核心，辅以《毛诗正义》等经注说明哀公被烹的舆论背景，以《国语》等先秦文献延展齐国早期政治生态。迁都临淄的奠基作用可引后世综述点明，但禁止展开具体营建细节。",
+  "候选著作": [
+    {
+      "出处": "《史记·卷32·齐太公世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载献公即位、迁都、在位年数等核心史实。",
+      "检索词": "齐献公",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《竹书纪年·周夷王》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载周夷王烹杀齐哀公的异说，可与《史记》互证，提供献公即位前的关键背景。",
+      "检索词": "烹齐哀公",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    },
+    {
+      "出处": "《毛诗正义·齐风·鸡鸣》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "郑玄笺注提及齐哀公被烹后，齐国政治动荡，为献公攻杀胡公自立提供舆论与民心背景。",
+      "检索词": "哀公荒淫",
+      "采用": true,
+      "原文摘句": "哀公政衰，荒淫怠慢，纪侯谮之于周，周烹之。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《国语·郑语》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "史伯论齐，提及齐国早期姜姓诸侯的兴衰，可侧面印证献公迁都临淄前齐国的地缘困境。",
+      "检索词": "齐，国也",
+      "采用": true,
+      "原文摘句": "夫齐，姜姓之国也，伯夷之后也。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《晏子春秋·内篇谏下》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "晏子追述齐国迁都临淄后的地理形胜，可佐证献公迁都的奠基作用。",
+      "检索词": "临淄三百闾",
+      "采用": true,
+      "原文摘句": "临淄三百闾，张袂成阴，挥汗成雨，比肩继踵而在。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《水经注·卷26·淄水》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "郦道元考证临淄城地理沿革，提及献公迁都于此，可作地理背景补充。",
+      "检索词": "献公徙临淄",
+      "采用": true,
+      "原文摘句": "淄水又北径其城东，城临淄水，故曰临淄。……齐献公自薄姑徙都此。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·卷32·齐太公世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载献公即位、迁都、在位年数等核心史实。",
+      "检索词": "齐献公",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《竹书纪年·周夷王》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载周夷王烹杀齐哀公的异说，可与《史记》互证，提供献公即位前的关键背景。",
+      "检索词": "烹齐哀公",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    },
+    {
+      "出处": "《毛诗正义·齐风·鸡鸣》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "郑玄笺注提及齐哀公被烹后，齐国政治动荡，为献公攻杀胡公自立提供舆论与民心背景。",
+      "检索词": "哀公荒淫",
+      "采用": true,
+      "原文摘句": "哀公政衰，荒淫怠慢，纪侯谮之于周，周烹之。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《国语·郑语》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "史伯论齐，提及齐国早期姜姓诸侯的兴衰，可侧面印证献公迁都临淄前齐国的地缘困境。",
+      "检索词": "齐，国也",
+      "采用": true,
+      "原文摘句": "夫齐，姜姓之国也，伯夷之后也。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《晏子春秋·内篇谏下》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "晏子追述齐国迁都临淄后的地理形胜，可佐证献公迁都的奠基作用。",
+      "检索词": "临淄三百闾",
+      "采用": true,
+      "原文摘句": "临淄三百闾，张袂成阴，挥汗成雨，比肩继踵而在。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《水经注·卷26·淄水》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "郦道元考证临淄城地理沿革，提及献公迁都于此，可作地理背景补充。",
+      "检索词": "献公徙临淄",
+      "采用": true,
+      "原文摘句": "淄水又北径其城东，城临淄水，故曰临淄。……齐献公自薄姑徙都此。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 5,
+    "C_excluded": 1,
+    "overall": "B"
+  }
+}

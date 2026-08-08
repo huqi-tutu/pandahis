@@ -4,24 +4,22 @@
   "entry_id": "GLBL_00320",
   "entry_name": "孙武",
   "stage": "verify",
-  "fail_count": 1,
+  "fail_count": 2,
   "errors": [
-    "必现词命中不足: 11 条 M 未保留硬锚点（如 M007, M008, M009, M011, M013, M015）"
+    "Phase2: Phase2: LLM 未落盘最终译稿"
   ],
   "plan": {
-    "root_cause": "MUST_PHRASE_MISS",
+    "root_cause": "UNKNOWN",
     "disposition": "retry_llm",
-    "action": "phase1_retry_with_miss_list",
-    "structured_prompt": "【根因：母本必现词/原词锚点缺失】\n逐项对照 plan 母本逐句清单，保留「」内原词锚点，勿漏句、勿跳段。\n仅补缺失锚点，勿改写已正确段落。",
-    "refine_scope": "mother",
+    "action": "generic_retry",
+    "structured_prompt": "【根因未分类】请据下列 verify 错误逐项修正，勿重复上一轮相同写法。\nPhase2: Phase2: LLM 未落盘最终译稿",
+    "refine_scope": "",
     "route_to": "",
     "next_command": "",
-    "invalidate": [
-      "mother"
-    ],
+    "invalidate": [],
     "max_retries": 2,
     "extra": {}
   },
-  "feedback": "【根因：母本必现词/原词锚点缺失】\n逐项对照 plan 母本逐句清单，保留「」内原词锚点，勿漏句、勿跳段。\n仅补缺失锚点，勿改写已正确段落。\n\n---\n【原始错误】\n必现词命中不足: 11 条 M 未保留硬锚点（如 M007, M008, M009, M011, M013, M015）",
-  "updated_at": "2026-07-26T05:47:58Z"
+  "feedback": "【根因未分类】请据下列 verify 错误逐项修正，勿重复上一轮相同写法。\nPhase2: Phase2: LLM 未落盘最终译稿\n\n---\n【原始错误】\nPhase2: Phase2: LLM 未落盘最终译稿",
+  "updated_at": "2026-08-05T17:42:20Z"
 }

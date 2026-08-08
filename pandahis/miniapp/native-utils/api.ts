@@ -133,6 +133,8 @@ function isPublicContentPath(path: string): boolean {
     || p.startsWith('/home/')
     || p === '/health'
     || p.startsWith('/membership/plans')
+    || p.startsWith('/dictionary/')
+    || p.startsWith('/wikipedia/')
   )
 }
 

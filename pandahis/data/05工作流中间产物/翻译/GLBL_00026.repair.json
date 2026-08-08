@@ -4,24 +4,22 @@
   "entry_id": "GLBL_00026",
   "entry_name": "周惠王",
   "stage": "verify",
-  "fail_count": 1,
+  "fail_count": 3,
   "errors": [
-    "必现词硬锚点命中率不足: 7/11 (64% < 65%；如 M007, M009, M010, M018）"
+    "Phase2: 参考著作须独立成段（前有空行 \\n\\n），禁止与正文末句同段"
   ],
   "plan": {
-    "root_cause": "MUST_PHRASE_MISS",
+    "root_cause": "RETRY_EXHAUSTED",
     "disposition": "retry_llm",
-    "action": "phase1_retry_with_miss_list",
-    "structured_prompt": "【根因：母本必现词/原词锚点缺失】\n逐项对照 plan 母本逐句清单，保留「」内原词锚点，勿漏句、勿跳段。\n仅补缺失锚点，勿改写已正确段落。",
-    "refine_scope": "mother",
+    "action": "generic_retry",
+    "structured_prompt": "【已多次重试，须换写法】\n勿重复上一轮相同表述；逐项对照下方原始错误修正。\nPhase2: 参考著作须独立成段（前有空行 \\n\\n），禁止与正文末句同段",
+    "refine_scope": "",
     "route_to": "",
     "next_command": "",
-    "invalidate": [
-      "mother"
-    ],
-    "max_retries": 2,
+    "invalidate": [],
+    "max_retries": 5,
     "extra": {}
   },
-  "feedback": "【根因：母本必现词/原词锚点缺失】\n逐项对照 plan 母本逐句清单，保留「」内原词锚点，勿漏句、勿跳段。\n仅补缺失锚点，勿改写已正确段落。\n\n---\n【原始错误】\n必现词硬锚点命中率不足: 7/11 (64% < 65%；如 M007, M009, M010, M018）",
-  "updated_at": "2026-07-26T11:25:09Z"
+  "feedback": "【已多次重试，须换写法】\n勿重复上一轮相同表述；逐项对照下方原始错误修正。\nPhase2: 参考著作须独立成段（前有空行 \\n\\n），禁止与正文末句同段\n\n---\n【原始错误】\nPhase2: 参考著作须独立成段（前有空行 \\n\\n），禁止与正文末句同段",
+  "updated_at": "2026-08-06T01:46:48Z"
 }

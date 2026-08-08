@@ -6,15 +6,45 @@
 }
 
 .fp-body {
+  /* 左右/底边距；顶距由内联 pageTopPadPx（仅导航占位）负责 */
   padding: 0 32rpx calc(48rpx + env(safe-area-inset-bottom));
   box-sizing: border-box;
 }
 
+/* 与导航的呼吸间距：内容层本地加距，不改全局 PAGE_CONTENT_GAP_RPX */
+.fp-inner {
+  padding-top: 24rpx;
+}
+
 .summary {
   display: block;
-  margin-bottom: 20rpx;
+  margin-bottom: 24rpx;
   font-size: 22rpx;
   letter-spacing: 2rpx;
+}
+
+.date-group + .date-group {
+  margin-top: 8rpx;
+}
+
+.date-heading {
+  display: block;
+  margin: 8rpx 0 16rpx;
+  font-size: 26rpx;
+  font-weight: 600;
+  color: $text-title;
+  letter-spacing: 1rpx;
+  line-height: 1.3;
+}
+
+.list-footer {
+  padding: 24rpx 0 8rpx;
+  text-align: center;
+}
+
+.footer-text {
+  font-size: 22rpx;
+  letter-spacing: 1rpx;
 }
 
 /* ─────────────────────────────────────

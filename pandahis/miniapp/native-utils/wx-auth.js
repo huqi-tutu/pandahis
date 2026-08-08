@@ -37,9 +37,16 @@ async function loginWithWxCode(options) {
     return res.data;
 }
 exports.loginWithWxCode = loginWithWxCode;
-/** 登录成功后离开登录页：优先返回上一页，失败则切到「我的」Tab */
-function leaveAfterLogin(delayMs = 400) {
+/** 登录成功后离开登录页：可指定 Tab；否则优先返回上一页，失败则切到「我的」 */
+function leaveAfterLogin(delayMs = 400, options) {
     const go = () => {
+        if (options === null || options === void 0 ? void 0 : options.switchTab) {
+            wx.switchTab({
+                url: options.switchTab,
+                fail: () => wx.switchTab({ url: router_1.ROUTES.mine }),
+            });
+            return;
+        }
         const pages = getCurrentPages();
         const prev = pages.length > 1 ? pages[pages.length - 2] : null;
         const notifyPrev = () => {

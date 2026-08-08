@@ -32,9 +32,10 @@ public class InviteController {
     String code = inviteService.ensureInviteCode(userId);
     int balance = inviteService.readBalance(userId);
     int invited = inviteService.countSuccessfulInvites(userId);
+    var invitees = inviteService.listInvitees(userId, 100);
     return ApiResponse.ok(
         RequestIdHolder.get(),
-        new InviteMeDTO(code, balance, invited, InviteService.INVITE_REWARD_READS)
+        new InviteMeDTO(code, balance, invited, InviteService.INVITE_REWARD_READS, invitees)
     );
   }
 

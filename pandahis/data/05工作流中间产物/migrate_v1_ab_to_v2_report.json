@@ -1,0 +1,669 @@
+{
+  "schema": "migrate-v1-ab-to-v2/v1",
+  "generated_at": "2026-08-05T12:38:13.512141+00:00",
+  "total_names": 90,
+  "index_added": [
+    {
+      "name": "卫文公",
+      "tier": "A",
+      "canonical_id": "GLBL_00006",
+      "v1_id": "GLBL_00006"
+    },
+    {
+      "name": "古公亶父",
+      "tier": "A",
+      "canonical_id": "GLBL_00008",
+      "v1_id": "GLBL_00008"
+    },
+    {
+      "name": "后稷",
+      "tier": "A",
+      "canonical_id": "GLBL_00009",
+      "v1_id": "GLBL_00009"
+    },
+    {
+      "name": "周定王",
+      "tier": "A",
+      "canonical_id": "GLBL_00020",
+      "v1_id": "GLBL_00020"
+    },
+    {
+      "name": "周宣王",
+      "tier": "A",
+      "canonical_id": "GLBL_00021",
+      "v1_id": "GLBL_00021"
+    },
+    {
+      "name": "周康王",
+      "tier": "A",
+      "canonical_id": "GLBL_00025",
+      "v1_id": "GLBL_00025"
+    },
+    {
+      "name": "周惠王",
+      "tier": "A",
+      "canonical_id": "GLBL_00026",
+      "v1_id": "GLBL_00026"
+    },
+    {
+      "name": "周敬王",
+      "tier": "A",
+      "canonical_id": "GLBL_00029",
+      "v1_id": "GLBL_00029"
+    },
+    {
+      "name": "周襄王",
+      "tier": "A",
+      "canonical_id": "GLBL_00039",
+      "v1_id": "GLBL_00039"
+    },
+    {
+      "name": "周赧王",
+      "tier": "A",
+      "canonical_id": "GLBL_00041",
+      "v1_id": "GLBL_00041"
+    },
+    {
+      "name": "太甲",
+      "tier": "A",
+      "canonical_id": "GLBL_00045",
+      "v1_id": "GLBL_00045"
+    },
+    {
+      "name": "宋微子",
+      "tier": "A",
+      "canonical_id": "GLBL_00050",
+      "v1_id": "GLBL_00050"
+    },
+    {
+      "name": "晋景公",
+      "tier": "A",
+      "canonical_id": "GLBL_00063",
+      "v1_id": "GLBL_00063"
+    },
+    {
+      "name": "晋武公",
+      "tier": "A",
+      "canonical_id": "GLBL_00064",
+      "v1_id": "GLBL_00064"
+    },
+    {
+      "name": "晋襄公",
+      "tier": "A",
+      "canonical_id": "GLBL_00713",
+      "v1_id": "GLBL_00713"
+    },
+    {
+      "name": "楚成王",
+      "tier": "A",
+      "canonical_id": "GLBL_00070",
+      "v1_id": "GLBL_00070"
+    },
+    {
+      "name": "燕召公",
+      "tier": "A",
+      "canonical_id": "GLBL_00087",
+      "v1_id": "GLBL_00087"
+    },
+    {
+      "name": "秦惠文王",
+      "tier": "A",
+      "canonical_id": "GLBL_00115",
+      "v1_id": "GLBL_00115"
+    },
+    {
+      "name": "秦文公",
+      "tier": "A",
+      "canonical_id": "GLBL_00117",
+      "v1_id": "GLBL_00117"
+    },
+    {
+      "name": "秦献公",
+      "tier": "A",
+      "canonical_id": "GLBL_00124",
+      "v1_id": "GLBL_00124"
+    },
+    {
+      "name": "秦襄公",
+      "tier": "A",
+      "canonical_id": "GLBL_00127",
+      "v1_id": "GLBL_00127"
+    },
+    {
+      "name": "赵幽缪王",
+      "tier": "A",
+      "canonical_id": "GLBL_00727",
+      "v1_id": "GLBL_00727"
+    },
+    {
+      "name": "赵烈侯",
+      "tier": "A",
+      "canonical_id": "GLBL_00729",
+      "v1_id": "GLBL_00729"
+    },
+    {
+      "name": "郑文公",
+      "tier": "A",
+      "canonical_id": "GLBL_00734",
+      "v1_id": "GLBL_00734"
+    },
+    {
+      "name": "陶朱公",
+      "tier": "A",
+      "canonical_id": "GLBL_00251",
+      "v1_id": "GLBL_00251"
+    },
+    {
+      "name": "魏无忌",
+      "tier": "A",
+      "canonical_id": "GLBL_00488",
+      "v1_id": "GLBL_00488"
+    },
+    {
+      "name": "鲁庄公",
+      "tier": "A",
+      "canonical_id": "GLBL_00751",
+      "v1_id": "GLBL_00751"
+    },
+    {
+      "name": "鲁昭公",
+      "tier": "A",
+      "canonical_id": "GLBL_00754",
+      "v1_id": "GLBL_00754"
+    },
+    {
+      "name": "鲁隐公",
+      "tier": "A",
+      "canonical_id": "GLBL_00760",
+      "v1_id": "GLBL_00760"
+    },
+    {
+      "name": "齐王建",
+      "tier": "A",
+      "canonical_id": "GLBL_00770",
+      "v1_id": "GLBL_00770"
+    },
+    {
+      "name": "卫出公",
+      "tier": "B",
+      "canonical_id": "GLBL_00002",
+      "v1_id": "GLBL_00002"
+    },
+    {
+      "name": "卫宣公",
+      "tier": "B",
+      "canonical_id": "GLBL_00003",
+      "v1_id": "GLBL_00003"
+    },
+    {
+      "name": "卫庄公蒯聩",
+      "tier": "B",
+      "canonical_id": "GLBL_00697",
+      "v1_id": "GLBL_00697"
+    },
+    {
+      "name": "卫成公",
+      "tier": "B",
+      "canonical_id": "GLBL_00699",
+      "v1_id": "GLBL_00699"
+    },
+    {
+      "name": "原宪",
+      "tier": "B",
+      "canonical_id": "GLBL_00290",
+      "v1_id": "GLBL_00290"
+    },
+    {
+      "name": "太戊",
+      "tier": "B",
+      "canonical_id": "GLBL_00044",
+      "v1_id": "GLBL_00044"
+    },
+    {
+      "name": "宋君偃",
+      "tier": "B",
+      "canonical_id": "GLBL_00049",
+      "v1_id": "GLBL_00049"
+    },
+    {
+      "name": "宋宣公",
+      "tier": "B",
+      "canonical_id": "GLBL_00703",
+      "v1_id": "GLBL_00703"
+    },
+    {
+      "name": "宋殇公",
+      "tier": "B",
+      "canonical_id": "GLBL_00705",
+      "v1_id": "GLBL_00705"
+    },
+    {
+      "name": "宋湣公",
+      "tier": "B",
+      "canonical_id": "GLBL_00706",
+      "v1_id": "GLBL_00706"
+    },
+    {
+      "name": "小乙",
+      "tier": "B",
+      "canonical_id": "GLBL_00054",
+      "v1_id": "GLBL_00054"
+    },
+    {
+      "name": "巫马施",
+      "tier": "B",
+      "canonical_id": "GLBL_00331",
+      "v1_id": "GLBL_00331"
+    },
+    {
+      "name": "晋出公",
+      "tier": "B",
+      "canonical_id": "GLBL_00707",
+      "v1_id": "GLBL_00707"
+    },
+    {
+      "name": "晋厉公",
+      "tier": "B",
+      "canonical_id": "GLBL_00708",
+      "v1_id": "GLBL_00708"
+    },
+    {
+      "name": "晋平公",
+      "tier": "B",
+      "canonical_id": "GLBL_00710",
+      "v1_id": "GLBL_00710"
+    },
+    {
+      "name": "晋灵公",
+      "tier": "B",
+      "canonical_id": "GLBL_00712",
+      "v1_id": "GLBL_00712"
+    },
+    {
+      "name": "有若",
+      "tier": "B",
+      "canonical_id": "GLBL_00361",
+      "v1_id": "GLBL_00361"
+    },
+    {
+      "name": "楚惠王",
+      "tier": "B",
+      "canonical_id": "GLBL_00717",
+      "v1_id": "GLBL_00717"
+    },
+    {
+      "name": "楚昭王",
+      "tier": "B",
+      "canonical_id": "GLBL_00071",
+      "v1_id": "GLBL_00071"
+    },
+    {
+      "name": "楚顷襄王",
+      "tier": "B",
+      "canonical_id": "GLBL_00719",
+      "v1_id": "GLBL_00719"
+    },
+    {
+      "name": "樊须",
+      "tier": "B",
+      "canonical_id": "GLBL_00380",
+      "v1_id": "GLBL_00380"
+    },
+    {
+      "name": "燕哙",
+      "tier": "B",
+      "canonical_id": "GLBL_00720",
+      "v1_id": "GLBL_00720"
+    },
+    {
+      "name": "燕惠王",
+      "tier": "B",
+      "canonical_id": "GLBL_00088",
+      "v1_id": "GLBL_00088"
+    },
+    {
+      "name": "王无彊",
+      "tier": "B",
+      "canonical_id": "GLBL_00722",
+      "v1_id": "GLBL_00722"
+    },
+    {
+      "name": "秦哀公",
+      "tier": "B",
+      "canonical_id": "GLBL_00102",
+      "v1_id": "GLBL_00102"
+    },
+    {
+      "name": "秦宣公",
+      "tier": "B",
+      "canonical_id": "GLBL_00107",
+      "v1_id": "GLBL_00107"
+    },
+    {
+      "name": "秦康公",
+      "tier": "B",
+      "canonical_id": "GLBL_00110",
+      "v1_id": "GLBL_00110"
+    },
+    {
+      "name": "秦德公",
+      "tier": "B",
+      "canonical_id": "GLBL_00111",
+      "v1_id": "GLBL_00111"
+    },
+    {
+      "name": "秦成公",
+      "tier": "B",
+      "canonical_id": "GLBL_00116",
+      "v1_id": "GLBL_00116"
+    },
+    {
+      "name": "秦景公",
+      "tier": "B",
+      "canonical_id": "GLBL_00119",
+      "v1_id": "GLBL_00119"
+    },
+    {
+      "name": "秦桓公",
+      "tier": "B",
+      "canonical_id": "GLBL_00120",
+      "v1_id": "GLBL_00120"
+    },
+    {
+      "name": "秦武公",
+      "tier": "B",
+      "canonical_id": "GLBL_00121",
+      "v1_id": "GLBL_00121"
+    },
+    {
+      "name": "秦武王",
+      "tier": "B",
+      "canonical_id": "GLBL_00122",
+      "v1_id": "GLBL_00122"
+    },
+    {
+      "name": "郑成公",
+      "tier": "B",
+      "canonical_id": "GLBL_00733",
+      "v1_id": "GLBL_00733"
+    },
+    {
+      "name": "郑襄公",
+      "tier": "B",
+      "canonical_id": "GLBL_00737",
+      "v1_id": "GLBL_00737"
+    },
+    {
+      "name": "陈湣公",
+      "tier": "B",
+      "canonical_id": "GLBL_00742",
+      "v1_id": "GLBL_00742"
+    },
+    {
+      "name": "陈灵公",
+      "tier": "B",
+      "canonical_id": "GLBL_00743",
+      "v1_id": "GLBL_00743"
+    },
+    {
+      "name": "鲁桓公",
+      "tier": "B",
+      "canonical_id": "GLBL_00755",
+      "v1_id": "GLBL_00755"
+    },
+    {
+      "name": "鲁釐公",
+      "tier": "B",
+      "canonical_id": "GLBL_00759",
+      "v1_id": "GLBL_00759"
+    },
+    {
+      "name": "齐孝公",
+      "tier": "B",
+      "canonical_id": "GLBL_00761",
+      "v1_id": "GLBL_00761"
+    },
+    {
+      "name": "齐庄公",
+      "tier": "B",
+      "canonical_id": "GLBL_00763",
+      "v1_id": "GLBL_00763"
+    },
+    {
+      "name": "齐悼公",
+      "tier": "B",
+      "canonical_id": "GLBL_00764",
+      "v1_id": "GLBL_00764"
+    },
+    {
+      "name": "齐惠公",
+      "tier": "B",
+      "canonical_id": "GLBL_00765",
+      "v1_id": "GLBL_00765"
+    },
+    {
+      "name": "齐懿公",
+      "tier": "B",
+      "canonical_id": "GLBL_00766",
+      "v1_id": "GLBL_00766"
+    },
+    {
+      "name": "齐灵公",
+      "tier": "B",
+      "canonical_id": "GLBL_00769",
+      "v1_id": "GLBL_00769"
+    },
+    {
+      "name": "齐简公",
+      "tier": "B",
+      "canonical_id": "GLBL_00771",
+      "v1_id": "GLBL_00771"
+    },
+    {
+      "name": "齐襄王",
+      "tier": "B",
+      "canonical_id": "GLBL_00773",
+      "v1_id": "GLBL_00773"
+    },
+    {
+      "name": "齐釐公",
+      "tier": "B",
+      "canonical_id": "GLBL_00774",
+      "v1_id": "GLBL_00774"
+    },
+    {
+      "name": "齐顷公",
+      "tier": "B",
+      "canonical_id": "GLBL_00775",
+      "v1_id": "GLBL_00775"
+    }
+  ],
+  "index_skipped_existing": [
+    {
+      "name": "卫懿公",
+      "tier": "A",
+      "canonical_id": "GLBL_01045",
+      "v1_id": "GLBL_00005"
+    },
+    {
+      "name": "周平王",
+      "tier": "A",
+      "canonical_id": "GLBL_01051",
+      "v1_id": "GLBL_00022"
+    },
+    {
+      "name": "周庄王",
+      "tier": "A",
+      "canonical_id": "GLBL_01049",
+      "v1_id": "GLBL_00024"
+    },
+    {
+      "name": "周景王",
+      "tier": "A",
+      "canonical_id": "GLBL_01046",
+      "v1_id": "GLBL_00033"
+    },
+    {
+      "name": "周桓王",
+      "tier": "A",
+      "canonical_id": "GLBL_01050",
+      "v1_id": "GLBL_00034"
+    },
+    {
+      "name": "周灵王",
+      "tier": "A",
+      "canonical_id": "GLBL_01047",
+      "v1_id": "GLBL_00036"
+    },
+    {
+      "name": "周釐王",
+      "tier": "A",
+      "canonical_id": "GLBL_01048",
+      "v1_id": "GLBL_00042"
+    },
+    {
+      "name": "郑武公",
+      "tier": "A",
+      "canonical_id": "GLBL_01029",
+      "v1_id": "GLBL_00137"
+    },
+    {
+      "name": "周共王",
+      "tier": "B",
+      "canonical_id": "GLBL_00817",
+      "v1_id": "GLBL_00016"
+    },
+    {
+      "name": "周昭王",
+      "tier": "B",
+      "canonical_id": "GLBL_00816",
+      "v1_id": "GLBL_00031"
+    },
+    {
+      "name": "季历",
+      "tier": "B",
+      "canonical_id": "GLBL_00818",
+      "v1_id": "GLBL_00048"
+    }
+  ],
+  "detail_copied": [],
+  "detail_skipped_06": [
+    {
+      "name": "周共王",
+      "canonical_id": "GLBL_00817",
+      "reason": "以06模型补全为准"
+    },
+    {
+      "name": "周昭王",
+      "canonical_id": "GLBL_00816",
+      "reason": "以06模型补全为准"
+    },
+    {
+      "name": "季历",
+      "canonical_id": "GLBL_00818",
+      "reason": "以06模型补全为准"
+    }
+  ],
+  "detail_missing": [],
+  "errors": [],
+  "v2_before": 849,
+  "v2_after": 928,
+  "category_normalize": [],
+  "backup": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/史略索引_史记汉书.json.pre_ab_migrate_bak",
+  "detail_removed_from_v11": {
+    "removed_at": "2026-08-05T12:41:23.513234+00:00",
+    "reason": "V1迁移翻译为脏数据，从11新标注条目翻译移除",
+    "count": 87,
+    "files": [
+      "data/11新标注条目翻译/GLBL_00006_卫文公.json",
+      "data/11新标注条目翻译/GLBL_00008_古公亶父.json",
+      "data/11新标注条目翻译/GLBL_00009_后稷.json",
+      "data/11新标注条目翻译/GLBL_00020_周定王.json",
+      "data/11新标注条目翻译/GLBL_00021_周宣王.json",
+      "data/11新标注条目翻译/GLBL_00025_周康王.json",
+      "data/11新标注条目翻译/GLBL_00026_周惠王.json",
+      "data/11新标注条目翻译/GLBL_00029_周敬王.json",
+      "data/11新标注条目翻译/GLBL_00039_周襄王.json",
+      "data/11新标注条目翻译/GLBL_00041_周赧王.json",
+      "data/11新标注条目翻译/GLBL_00045_太甲.json",
+      "data/11新标注条目翻译/GLBL_00050_宋微子.json",
+      "data/11新标注条目翻译/GLBL_00063_晋景公.json",
+      "data/11新标注条目翻译/GLBL_00064_晋武公.json",
+      "data/11新标注条目翻译/GLBL_00713_晋襄公.json",
+      "data/11新标注条目翻译/GLBL_00070_楚成王.json",
+      "data/11新标注条目翻译/GLBL_00087_燕召公.json",
+      "data/11新标注条目翻译/GLBL_00115_秦惠文王.json",
+      "data/11新标注条目翻译/GLBL_00117_秦文公.json",
+      "data/11新标注条目翻译/GLBL_00124_秦献公.json",
+      "data/11新标注条目翻译/GLBL_00127_秦襄公.json",
+      "data/11新标注条目翻译/GLBL_00727_赵幽缪王.json",
+      "data/11新标注条目翻译/GLBL_00729_赵烈侯.json",
+      "data/11新标注条目翻译/GLBL_00734_郑文公.json",
+      "data/11新标注条目翻译/GLBL_00251_陶朱公.json",
+      "data/11新标注条目翻译/GLBL_00488_魏无忌.json",
+      "data/11新标注条目翻译/GLBL_00751_鲁庄公.json",
+      "data/11新标注条目翻译/GLBL_00754_鲁昭公.json",
+      "data/11新标注条目翻译/GLBL_00760_鲁隐公.json",
+      "data/11新标注条目翻译/GLBL_00770_齐王建.json",
+      "data/11新标注条目翻译/GLBL_00002_卫出公.json",
+      "data/11新标注条目翻译/GLBL_00003_卫宣公.json",
+      "data/11新标注条目翻译/GLBL_00697_卫庄公蒯聩.json",
+      "data/11新标注条目翻译/GLBL_00699_卫成公.json",
+      "data/11新标注条目翻译/GLBL_00290_原宪.json",
+      "data/11新标注条目翻译/GLBL_00044_太戊.json",
+      "data/11新标注条目翻译/GLBL_00049_宋君偃.json",
+      "data/11新标注条目翻译/GLBL_00703_宋宣公.json",
+      "data/11新标注条目翻译/GLBL_00705_宋殇公.json",
+      "data/11新标注条目翻译/GLBL_00706_宋湣公.json",
+      "data/11新标注条目翻译/GLBL_00054_小乙.json",
+      "data/11新标注条目翻译/GLBL_00331_巫马施.json",
+      "data/11新标注条目翻译/GLBL_00707_晋出公.json",
+      "data/11新标注条目翻译/GLBL_00708_晋厉公.json",
+      "data/11新标注条目翻译/GLBL_00710_晋平公.json",
+      "data/11新标注条目翻译/GLBL_00712_晋灵公.json",
+      "data/11新标注条目翻译/GLBL_00361_有若.json",
+      "data/11新标注条目翻译/GLBL_00717_楚惠王.json",
+      "data/11新标注条目翻译/GLBL_00071_楚昭王.json",
+      "data/11新标注条目翻译/GLBL_00719_楚顷襄王.json",
+      "data/11新标注条目翻译/GLBL_00380_樊须.json",
+      "data/11新标注条目翻译/GLBL_00720_燕哙.json",
+      "data/11新标注条目翻译/GLBL_00088_燕惠王.json",
+      "data/11新标注条目翻译/GLBL_00722_王无彊.json",
+      "data/11新标注条目翻译/GLBL_00102_秦哀公.json",
+      "data/11新标注条目翻译/GLBL_00107_秦宣公.json",
+      "data/11新标注条目翻译/GLBL_00110_秦康公.json",
+      "data/11新标注条目翻译/GLBL_00111_秦德公.json",
+      "data/11新标注条目翻译/GLBL_00116_秦成公.json",
+      "data/11新标注条目翻译/GLBL_00119_秦景公.json",
+      "data/11新标注条目翻译/GLBL_00120_秦桓公.json",
+      "data/11新标注条目翻译/GLBL_00121_秦武公.json",
+      "data/11新标注条目翻译/GLBL_00122_秦武王.json",
+      "data/11新标注条目翻译/GLBL_00733_郑成公.json",
+      "data/11新标注条目翻译/GLBL_00737_郑襄公.json",
+      "data/11新标注条目翻译/GLBL_00742_陈湣公.json",
+      "data/11新标注条目翻译/GLBL_00743_陈灵公.json",
+      "data/11新标注条目翻译/GLBL_00755_鲁桓公.json",
+      "data/11新标注条目翻译/GLBL_00759_鲁釐公.json",
+      "data/11新标注条目翻译/GLBL_00761_齐孝公.json",
+      "data/11新标注条目翻译/GLBL_00763_齐庄公.json",
+      "data/11新标注条目翻译/GLBL_00764_齐悼公.json",
+      "data/11新标注条目翻译/GLBL_00765_齐惠公.json",
+      "data/11新标注条目翻译/GLBL_00766_齐懿公.json",
+      "data/11新标注条目翻译/GLBL_00769_齐灵公.json",
+      "data/11新标注条目翻译/GLBL_00771_齐简公.json",
+      "data/11新标注条目翻译/GLBL_00773_齐襄王.json",
+      "data/11新标注条目翻译/GLBL_00774_齐釐公.json",
+      "data/11新标注条目翻译/GLBL_00775_齐顷公.json",
+      "data/11新标注条目翻译/GLBL_01045_卫懿公.json",
+      "data/11新标注条目翻译/GLBL_01051_周平王.json",
+      "data/11新标注条目翻译/GLBL_01049_周庄王.json",
+      "data/11新标注条目翻译/GLBL_01046_周景王.json",
+      "data/11新标注条目翻译/GLBL_01050_周桓王.json",
+      "data/11新标注条目翻译/GLBL_01047_周灵王.json",
+      "data/11新标注条目翻译/GLBL_01048_周釐王.json",
+      "data/11新标注条目翻译/GLBL_01029_郑武公.json"
+    ],
+    "missing": [],
+    "remapped_batch_removed_at": "2026-08-05T12:44:31.710517+00:00"
+  }
+}

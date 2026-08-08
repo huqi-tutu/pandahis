@@ -1,56 +1,37 @@
 <proto-nav title="设置" show-back="{{true}}"></proto-nav>
 
 <scroll-view class="page-settings" scroll-y enhanced show-scrollbar="{{false}}" style="padding-top: {{pageTopPadPx}}px;">
-  <view class="card-paper menu-card" wx:if="{{loggedIn}}">
-    <view class="list-row" bindtap="goProfileEdit" hover-class="row-hover" hover-stay-time="60">
-      <text class="list-label">编辑资料</text>
-      <text class="list-arrow">›</text>
-    </view>
-    <view class="list-row list-row-col">
-      <text class="list-label">补填好友邀请码</text>
-      <view class="bind-row">
-        <input
-          class="bind-input"
-          value="{{bindCode}}"
-          maxlength="32"
-          placeholder="邀请码"
-          placeholder-class="bind-input-ph"
-          bindinput="onBindInput"
-          adjust-position="{{true}}"
-          cursor-spacing="{{80}}"
-        />
-        <view class="bind-btn {{bindSubmitting ? 'disabled' : ''}}" bindtap="submitBindCode">
-          {{bindSubmitting ? '…' : '绑定'}}
-        </view>
+  <view class="settings-inner">
+    <view class="card-paper menu-card">
+      <view class="list-row" bindtap="goContact" hover-class="row-hover" hover-stay-time="60">
+        <text class="list-label">联系我们</text>
+        <text class="list-arrow">›</text>
+      </view>
+      <view class="list-row" bindtap="goFeedback" hover-class="row-hover" hover-stay-time="60">
+        <text class="list-label">帮助与反馈</text>
+        <text class="list-arrow">›</text>
+      </view>
+      <view class="list-row" bindtap="goAbout" hover-class="row-hover" hover-stay-time="60">
+        <text class="list-label">关于历史图谱</text>
+        <text class="list-value">v{{appVersion}}</text>
+        <text class="list-arrow">›</text>
       </view>
     </view>
-  </view>
 
-  <view class="card-paper menu-card">
-    <view class="list-row" bindtap="goHelp" hover-class="row-hover" hover-stay-time="60">
-      <text class="list-label">帮助与反馈</text>
-      <text class="list-arrow">›</text>
+    <view class="card-paper menu-card">
+      <view class="list-row" bindtap="clearCache" hover-class="row-hover" hover-stay-time="60">
+        <text class="list-label">清除本地缓存</text>
+        <text class="list-value">图片与临时数据</text>
+      </view>
+      <view class="list-row list-row-col" bindtap="onApiBaseTap" hover-class="row-hover" hover-stay-time="60">
+        <text class="list-label">接口地址</text>
+        <text class="menu-url">{{apiBase}}</text>
+        <text class="menu-url-hint">点击切换或检测连接（开发版）</text>
+      </view>
     </view>
-    <view class="list-row" bindtap="goAbout" hover-class="row-hover" hover-stay-time="60">
-      <text class="list-label">关于历史图谱</text>
-      <text class="list-value">v{{appVersion}}</text>
-      <text class="list-arrow">›</text>
-    </view>
-  </view>
 
-  <view class="card-paper menu-card">
-    <view class="list-row" bindtap="clearCache" hover-class="row-hover" hover-stay-time="60">
-      <text class="list-label">清除本地缓存</text>
-      <text class="list-value">图片与临时数据</text>
+    <view wx:if="{{loggedIn}}" class="logout-wrap">
+      <view class="logout-btn" bindtap="logout" hover-class="logout-hover" hover-stay-time="60">退出登录</view>
     </view>
-    <view class="list-row list-row-col" bindtap="onApiBaseTap" hover-class="row-hover" hover-stay-time="60">
-      <text class="list-label">接口地址</text>
-      <text class="menu-url">{{apiBase}}</text>
-      <text class="menu-url-hint">点击切换或检测连接（开发版）</text>
-    </view>
-  </view>
-
-  <view wx:if="{{loggedIn}}" class="logout-wrap">
-    <view class="logout-btn" bindtap="logout" hover-class="logout-hover" hover-stay-time="60">退出登录</view>
   </view>
 </scroll-view>

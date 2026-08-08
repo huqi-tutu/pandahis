@@ -1,0 +1,251 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01066",
+  "写作结构": "正史叙述见翻译详录（《左传》《国语》）。拓展文以史外异说与延展为主：可引《世本》证其族氏源流，引《说苑》《新序》补其轶事与言论，引《孔子家语》载孔子评价，引《韩非子》《吕氏春秋》见战国诸子对其思想之引申，引清华简等出土文献提供异文参照。",
+  "候选著作": [
+    {
+      "出处": "《世本·氏姓篇》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载羊舌氏为晋国公族之后，可补叔向族氏源流与世系。",
+      "检索词": "羊舌氏",
+      "采用": true,
+      "原文摘句": "羊舌氏，晋之公族。羊舌，其所食邑也。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《说苑·善说》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "载叔向与师旷论治国之道，展现其政治思想与贤大夫形象。",
+      "检索词": "叔向 师旷",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《新序·杂事》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "载叔向谏晋平公事，可补其直言敢谏之臣形象。",
+      "检索词": "叔向谏",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《孔子家语·正论解》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "载孔子对叔向的评价，称其“古之遗直”，为后世定评。",
+      "检索词": "古之遗直",
+      "采用": true,
+      "原文摘句": "孔子曰：‘叔向，古之遗直也。治国制刑，不隐于亲。’",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《韩非子·外储说左上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "载叔向以“悬书”讽喻晋平公，反映战国法家对叔向故事的引用与改造。",
+      "检索词": "叔向 悬书",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《吕氏春秋·去私》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "载叔向不偏袒其弟羊舌虎，赞其公正无私，与锚点囚禁事件形成互补。",
+      "检索词": "叔向 不隐于亲",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "清华简《系年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "提供春秋晋国史事的战国写本异文，可与传世文献对读叔向所处时代背景。",
+      "检索词": "晋平公",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《左传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载叔向生平、外交、言论等核心事迹。",
+      "检索词": "叔向",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《国语·晋语》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，载叔向谏言及对晋国政局的观察。",
+      "检索词": "叔向",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《春秋左传正义》",
+      "tier": "经注/杂史",
+      "pool": "legend",
+      "与本主题关系": "晋杜预注、唐孔颖达疏，对叔向事迹有后世经学阐释。",
+      "检索词": "叔向",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《世本·氏姓篇》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "记载羊舌氏为晋国公族之后，可补叔向族氏源流与世系。",
+      "检索词": "羊舌氏",
+      "采用": true,
+      "原文摘句": "羊舌氏，晋之公族。羊舌，其所食邑也。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《说苑·善说》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "载叔向与师旷论治国之道，展现其政治思想与贤大夫形象。",
+      "检索词": "叔向 师旷",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《新序·杂事》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "载叔向谏晋平公事，可补其直言敢谏之臣形象。",
+      "检索词": "叔向谏",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《孔子家语·正论解》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "载孔子对叔向的评价，称其“古之遗直”，为后世定评。",
+      "检索词": "古之遗直",
+      "采用": true,
+      "原文摘句": "孔子曰：‘叔向，古之遗直也。治国制刑，不隐于亲。’",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《韩非子·外储说左上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "载叔向以“悬书”讽喻晋平公，反映战国法家对叔向故事的引用与改造。",
+      "检索词": "叔向 悬书",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《吕氏春秋·去私》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "载叔向不偏袒其弟羊舌虎，赞其公正无私，与锚点囚禁事件形成互补。",
+      "检索词": "叔向 不隐于亲",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "清华简《系年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "提供春秋晋国史事的战国写本异文，可与传世文献对读叔向所处时代背景。",
+      "检索词": "晋平公",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《左传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载叔向生平、外交、言论等核心事迹。",
+      "检索词": "叔向",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《国语·晋语》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，载叔向谏言及对晋国政局的观察。",
+      "检索词": "叔向",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《春秋左传正义》",
+      "tier": "经注/杂史",
+      "pool": "legend",
+      "与本主题关系": "晋杜预注、唐孔颖达疏，对叔向事迹有后世经学阐释。",
+      "检索词": "叔向",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 7,
+    "C_excluded": 3,
+    "overall": "B"
+  }
+}

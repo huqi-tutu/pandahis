@@ -1,3 +1,4 @@
+import { BRAND_LOGO_URL } from '../../native-utils/brand-assets'
 import {
   clearAccessToken,
   clearToken,
@@ -16,6 +17,7 @@ import { isDevtoolsClient } from '../../native-utils/runtime-env'
 
 Page({
   data: {
+    brandLogoUrl: BRAND_LOGO_URL,
     loggingIn: false,
     pendingInvite: '',
     inviteCodeInput: '',
@@ -31,10 +33,14 @@ Page({
     guestHeight: 32,
   },
   _countdownTimer: null as ReturnType<typeof setInterval> | null,
+  _afterLoginTab: '' as string,
   onLoad(query: Record<string, string | undefined>) {
     const reauth = query.reauth === '1' || query.reauth === 'true'
     if (reauth) {
       clearToken()
+    }
+    if (query.from === 'invite') {
+      this._afterLoginTab = ROUTES.invite
     }
     // 「立即体验」与右上角胶囊按钮上下居中对齐
     const rect = wx.getMenuButtonBoundingClientRect()
@@ -44,6 +50,12 @@ Page({
       guestTop: rect.top,
       guestHeight: rect.height,
     })
+  },
+  leaveAfterLoginSafe(delayMs = 400) {
+    leaveAfterLogin(
+      delayMs,
+      this._afterLoginTab ? { switchTab: this._afterLoginTab } : undefined
+    )
   },
   onUnload() {
     if (this._countdownTimer) clearInterval(this._countdownTimer)
@@ -69,7 +81,7 @@ Page({
     })
     if (hasToken() && !this.data.reauth) {
       void request('/me', { auth: true, softAuth: true })
-        .then(() => leaveAfterLogin(0))
+        .then(() => this.leaveAfterLoginSafe(0))
         .catch(() => {
           clearAccessToken()
           this.setData({ hasToken: false })
@@ -113,7 +125,7 @@ Page({
     setToken('dev-local-token')
     this.setData({ apiBase: getBaseUrl() })
     wx.showToast({ title: '本机 API + dev Token', icon: 'success' })
-    leaveAfterLogin()
+    this.leaveAfterLoginSafe()
   },
   useProdApi() {
     useProductionApi()
@@ -138,7 +150,7 @@ Page({
       const data = await loginWithWxCode({ inviteCode: manual || undefined })
       this.setData({ reauth: false, hasToken: true })
       loginSuccessToast(data)
-      leaveAfterLogin()
+      this.leaveAfterLoginSafe()
     } catch (e: unknown) {
       const msg = formatApiRequestError(e)
       wx.showModal({

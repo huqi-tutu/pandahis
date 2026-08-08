@@ -12,25 +12,15 @@
   padding: 48rpx 0 40rpx;
 }
 
-.logo {
-  width: 128rpx;
-  height: 128rpx;
+.brand-logo {
+  display: block;
+  width: 280rpx;
+  max-width: 100%;
   margin: 0 auto;
-  border-radius: 28rpx;
-  background: $theme-primary;
-  color: #fff;
-  font-size: 56rpx;
-  font-weight: 700;
-  line-height: 128rpx;
-  box-shadow: 0 8rpx 24rpx rgba(74, 63, 63, 0.18);
-}
-
-.app-name {
-  margin-top: 24rpx;
 }
 
 .version {
-  margin-top: 8rpx;
+  margin-top: 24rpx;
   font-size: 24rpx;
   color: $text-time;
   letter-spacing: 0.04em;

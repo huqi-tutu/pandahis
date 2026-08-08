@@ -1,0 +1,19 @@
+{
+  "schema": "translate-coverage-l2/v1",
+  "史略ID": "GLBL_00080",
+  "passed": true,
+  "degraded": false,
+  "summary": "所有信息均已传达。",
+  "l1_ratio": 0.0,
+  "l1_min_ratio": 0.0,
+  "claims": [
+    {
+      "id": "M181",
+      "claim": "母本信息：廷尉孔光使持节赐贵人许氏药，饮药死。",
+      "status": "conveyed",
+      "evidence": "白话译文中明确提到：'廷尉孔光派使者持节赐贵人许氏药，许氏饮药而死。'",
+      "note": "信息完整传达，包括人物、动作和结果。"
+    }
+  ],
+  "issues": []
+}

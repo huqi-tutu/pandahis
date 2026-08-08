@@ -32,14 +32,14 @@
             data-id="{{item.id}}"
           >
             <view class="card-top">
-              <text class="result-title">{{item.titlePlain}}</text>
+              <view class="title-row">
+                <text class="result-title">{{item.titlePlain}}</text>
+                <text wx:if="{{item.hasPersonTag}}" class="person-tag">{{item.personTag}}</text>
+              </view>
               <text wx:if="{{item.category}}" class="cat-badge">{{item.category}}</text>
             </view>
+            <text wx:if="{{item.yearText}}" class="result-year muted">{{item.yearText}}</text>
             <text wx:if="{{item.coordinateText}}" class="result-coord faint">{{item.coordinateText}}</text>
-            <view class="card-meta">
-              <text wx:if="{{item.yearText}}" class="result-year muted">{{item.yearText}}</text>
-              <text wx:if="{{item.hasPersonTag}}" class="person-tag">{{item.personTag}}</text>
-            </view>
           </view>
         </view>
 
@@ -58,14 +58,14 @@
             data-id="{{item.id}}"
           >
             <view class="card-top">
-              <text class="result-title">{{item.titlePlain}}</text>
+              <view class="title-row">
+                <text class="result-title">{{item.titlePlain}}</text>
+                <text wx:if="{{item.hasPersonTag}}" class="person-tag">{{item.personTag}}</text>
+              </view>
               <text wx:if="{{item.category}}" class="cat-badge">{{item.category}}</text>
             </view>
+            <text wx:if="{{item.yearText}}" class="result-year muted">{{item.yearText}}</text>
             <text wx:if="{{item.coordinateText}}" class="result-coord faint">{{item.coordinateText}}</text>
-            <view class="card-meta">
-              <text wx:if="{{item.yearText}}" class="result-year muted">{{item.yearText}}</text>
-              <text wx:if="{{item.hasPersonTag}}" class="person-tag">{{item.personTag}}</text>
-            </view>
           </view>
         </view>
 

@@ -14,7 +14,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class CorrectionService {
   private static final int MAX_SUBMISSIONS_PER_BOX = 20;
-  private static final Set<String> SOURCE_TYPES = Set.of("dynasty_canvas", "box_detail_selection");
+  private static final Set<String> SOURCE_TYPES = Set.of(
+      "dynasty_canvas",
+      "box_detail_selection",
+      "critique_detail_selection",
+      "relic_detail_selection");
 
   private final JdbcTemplate jdbcTemplate;
 

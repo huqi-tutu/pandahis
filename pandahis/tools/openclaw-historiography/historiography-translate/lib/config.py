@@ -22,6 +22,10 @@ COMPOSE_DIR = SKILLS_DIR / "historiography-compose"
 DEFAULT_INDEX = DEFAULT_GLOBAL_INDEX
 DEFAULT_AGENT = os.environ.get("TRANSLATE_AGENT", "hist-worker")
 
+# V2 顺译产出目录（11）与版本标记
+TRANSLATION_VERSION_V2 = "v2"
+V2_INDEX_BASENAME = "史略索引_史记汉书.json"
+
 
 def load_dotenv() -> None:
     """加载 openclaw-historiography/.env（不覆盖已有环境变量）。"""
@@ -61,6 +65,35 @@ def default_index_path() -> Path:
     if env:
         return Path(env)
     return paths()["global_index"]
+
+
+def resolve_output_dir(
+    *,
+    index_path: Path | None = None,
+    output_dir: Path | None = None,
+) -> Path:
+    """V2 索引（史记汉书）默认写入 11新标注条目翻译；V1 仍写 04。"""
+    p = paths()
+    if output_dir is not None:
+        resolved = Path(output_dir)
+        if not resolved.is_absolute():
+            resolved = p["root"] / resolved
+    elif index_path is not None and V2_INDEX_BASENAME in Path(index_path).name:
+        resolved = p["translate_output_v2"]
+    else:
+        resolved = p["translate_output"]
+    resolved.mkdir(parents=True, exist_ok=True)
+    return resolved
+
+
+def translation_version_for_output_dir(out_dir: Path) -> str | None:
+    """11 目录产出标记 v2，与 V1 留档 04 区分。"""
+    try:
+        if out_dir.resolve() == paths()["translate_output_v2"].resolve():
+            return TRANSLATION_VERSION_V2
+    except OSError:
+        pass
+    return None
 
 
 def chunk_settings() -> Dict[str, int]:

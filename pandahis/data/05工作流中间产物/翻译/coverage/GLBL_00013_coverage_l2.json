@@ -1,0 +1,21 @@
+{
+  "schema": "translate-coverage-l2/v1",
+  "史略ID": "GLBL_00013",
+  "passed": false,
+  "degraded": false,
+  "summary": "译文未包含品评句，缺少对称句群引用后的品评段落。",
+  "l1_ratio": 0.0,
+  "l1_min_ratio": 0.0,
+  "claims": [
+    {
+      "id": "M032",
+      "claim": "品评句：对称句群整段引用后作一段品评。",
+      "status": "missing",
+      "evidence": "",
+      "note": "译文中没有出现对称句群整段引用后作一段品评的结构，也没有任何品评段落。"
+    }
+  ],
+  "issues": [
+    "missing [M032]: 品评句：对称句群整段引用后作一段品评。"
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "schema": "translate-coverage-ledger/v1",
+  "史略ID": "GLBL_01120",
+  "updated_at": "2026-08-05T22:15:42.916854+00:00",
+  "entries": {
+    "M001": {
+      "status": "conveyed",
+      "claim_fp": "4b175340be2e8ba1",
+      "checked_at": "2026-08-05T22:15:23.041182+00:00",
+      "note": "直接对应"
+    },
+    "M002": {
+      "status": "conveyed",
+      "claim_fp": "babb7f274eac0b3c",
+      "checked_at": "2026-08-05T22:15:23.041190+00:00",
+      "note": "明确提及弑杀楚灵王并自立"
+    },
+    "M003": {
+      "status": "conveyed",
+      "claim_fp": "ca49affd68302fe5",
+      "checked_at": "2026-08-05T22:15:23.041195+00:00",
+      "note": "意译为想施行德政"
+    },
+    "M004": {
+      "status": "conveyed",
+      "claim_fp": "e4ae87e4a9b77e74",
+      "checked_at": "2026-08-05T22:15:23.041198+00:00",
+      "note": "明确归还土地"
+    },
+    "M005": {
+      "status": "conveyed",
+      "claim_fp": "25bf9c1994562531",
+      "checked_at": "2026-08-05T22:15:23.041201+00:00",
+      "note": "直接引用并解释，对应以德为本、不忘根基"
+    },
+    "M006": {
+      "status": "conveyed",
+      "claim_fp": "cbfef55c71fe899a",
+      "checked_at": "2026-08-05T22:15:23.041205+00:00",
+      "note": "明确火灾和想用祭祀禳灾"
+    },
+    "M007": {
+      "status": "conveyed",
+      "claim_fp": "746709b096e95a72",
+      "checked_at": "2026-08-05T22:15:23.041208+00:00",
+      "note": "明确传达了子产建议修德而非禳灾。"
+    },
+    "M008": {
+      "status": "conveyed",
+      "claim_fp": "9d13c6ed83cc3913",
+      "checked_at": "2026-08-05T22:15:23.041221+00:00",
+      "note": "直接对应。"
+    },
+    "M009": {
+      "status": "conveyed",
+      "claim_fp": "df252642adec2520",
+      "checked_at": "2026-08-05T22:15:23.041225+00:00",
+      "note": "明确提到太子建与晋国合谋袭击郑国。"
+    },
+    "M010": {
+      "status": "conveyed",
+      "claim_fp": "20136439d5e6ec2e",
+      "checked_at": "2026-08-05T22:15:23.041228+00:00",
+      "note": "完整传达了郑杀太子建、胜奔吴。"
+    },
+    "M011": {
+      "status": "conveyed",
+      "claim_fp": "9e762fbbc165d7f0",
+      "checked_at": "2026-08-05T22:15:23.041231+00:00",
+      "note": "直接对应。"
+    },
+    "M012": {
+      "status": "conveyed",
+      "claim_fp": "89923b6a5c0d4c8e",
+      "checked_at": "2026-08-05T22:15:23.041234+00:00",
+      "note": "明确传达了晋郑合谋诛乱臣、送周敬王回王城。"
+    }
+  }
+}

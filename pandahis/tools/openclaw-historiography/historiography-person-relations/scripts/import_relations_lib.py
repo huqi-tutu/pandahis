@@ -14,14 +14,22 @@ PARENT_FIELD = {
 }
 PREV_LEVEL = {"二级": "一级", "三级": "二级", "四级": "三级"}
 CENTER_KEY = "center"
-LEGACY_CATEGORY = {"君臣": "同僚", "敌对": "外敌"}
-CATEGORY_ORDER = ["家庭", "同僚", "师从", "外敌", "好友"]
+# 旧一级分类名 → 新一级分类名（只读兼容）
+LEGACY_CATEGORY = {
+    "君臣": "同僚",
+    "师从": "师徒",
+    "外敌": "敌对",
+}
+CATEGORY_ORDER = ["家庭", "同僚", "敌对", "师徒", "好友"]
 CATEGORY_NODE_KEYS = {
     "家庭": "cat_fam",
     "同僚": "cat_col",
-    "师从": "cat_mas",
-    "外敌": "cat_foe",
+    "敌对": "cat_foe",
+    "师徒": "cat_mas",
     "好友": "cat_fri",
+    # legacy keys still resolve if normalize skipped
+    "外敌": "cat_foe",
+    "师从": "cat_mas",
 }
 
 
@@ -66,6 +74,10 @@ def normalize_category(raw: str) -> str:
     return LEGACY_CATEGORY.get(cat, cat)
 
 
+def is_subcategory_record(rec: dict[str, Any]) -> bool:
+    return str(rec.get("节点类型") or "").strip() == "二级分类"
+
+
 def node_key_from_rid(rid: str) -> str:
     key = re.sub(r"[^a-zA-Z0-9_]+", "_", str(rid or "").strip().lower())
     return key[:60] or "rel_node"
@@ -82,13 +94,20 @@ def build_lineage(subject: str, rec: dict[str, Any]) -> str:
 
 def extra_json_from_record(rec: dict[str, Any], subject: str) -> dict[str, Any]:
     """extra_json 与 07 JSON 字段对齐（SSOT）。"""
+    cat = normalize_category(str(rec.get("关系类别") or ""))
     ej: dict[str, Any] = {
         "关系ID": str(rec.get("关系ID") or "").strip(),
-        "关系类别": normalize_category(str(rec.get("关系类别") or "")),
+        "关系类别": cat,
         "关系层级": str(rec.get("关系层级") or "").strip(),
-        "上级连接线标题": str(rec.get("上级连接线标题") or "").strip(),
+        "上级连接线标题": str(rec.get("上级连接线标题") if rec.get("上级连接线标题") is not None else "").strip(),
         "关系简述": str(rec.get("关系简述") or "").strip(),
     }
+    if is_subcategory_record(rec):
+        ej["节点类型"] = "二级分类"
+        ej["isSubCategoryNode"] = True
+    node_type = str(rec.get("节点类型") or "").strip()
+    if node_type and "节点类型" not in ej:
+        ej["节点类型"] = node_type
     for field in ("所属一级关系", "所属二级关系", "所属三级关系"):
         val = str(rec.get(field) or "").strip()
         if val:
@@ -102,12 +121,17 @@ def extra_json_from_record(rec: dict[str, Any], subject: str) -> dict[str, Any]:
     return ej
 
 
-def node_type_for_category(cat: str) -> str:
-    return "person"
-
-
 def node_type_for_record(rec: dict[str, Any]) -> str:
+    if is_subcategory_record(rec):
+        return "subcategory"
     return "person"
+
+
+def edge_label_from_record(rec: dict[str, Any]) -> str:
+    """允许空边标题；不再默认填「关系」。"""
+    if "上级连接线标题" not in rec or rec.get("上级连接线标题") is None:
+        return ""
+    return str(rec.get("上级连接线标题") or "").strip()[:32]
 
 
 def build_import_sql(box_id: str, subject: str, records: list[dict[str, Any]]) -> list[str]:
@@ -154,7 +178,6 @@ def build_import_sql(box_id: str, subject: str, records: list[dict[str, Any]]) -
         if not title or level not in LEVEL_NUM:
             raise ValueError(f"invalid record: {rid or title!r} level={level!r}")
         nk = node_key_from_rid(rid or f"{title}_{level}")
-        cat = normalize_category(str(rec.get("关系类别") or ""))
         ej = extra_json_from_record(rec, subject)
         cid = component_id("REL", box_id, rid) if rid else component_id("REL", box_id, nk)
         parsed.append((rec, nk, cid, ej))
@@ -172,7 +195,7 @@ def build_import_sql(box_id: str, subject: str, records: list[dict[str, Any]]) -
             f"{sql_escape(title)}, {sql_escape(ej_str)});"
         )
 
-        edge_label = str(rec.get("上级连接线标题") or "关系").strip()[:32]
+        edge_label = edge_label_from_record(rec)
         if level == "一级":
             from_key = cat_key_by_name.get(cat, CENTER_KEY)
         else:

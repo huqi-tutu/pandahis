@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -107,33 +108,36 @@ public class SearchService {
     String like = "%" + escapeLike(keyword) + "%";
     int tierLimit = Math.max(1, Math.min(pageSize, MATCH_LIMIT));
 
-    // 精准：史略名称或简介
+    // 精准：史略名称或简介；SQL 先按「标题全等 → 优先级高」取 LIMIT，再 Java 稳定排序
     List<Map<String, Object>> preciseRows = jdbcTemplate.queryForList(
         "SELECT b.id, b.title, b.category_key, b.blurb, b.start_year, b.end_year, "
-            + "b.civilization_name, b.dynasty_name, b.regime_name, b.person_tag, b.importance_level "
+            + "b.civilization_name, b.dynasty_name, b.regime_name, b.emperor_name, b.person_tag, b.importance_level "
             + "FROM historical_box b "
             + "WHERE b.status=1 AND (b.title LIKE ? ESCAPE '\\\\' OR IFNULL(b.blurb,'') LIKE ? ESCAPE '\\\\') "
-            + "ORDER BY b.importance_level DESC, b.start_year ASC LIMIT " + MATCH_LIMIT,
-        like, like
+            + "ORDER BY CASE WHEN TRIM(b.title) = ? THEN 0 ELSE 1 END ASC, "
+            + "COALESCE(b.importance_level, 99) ASC, b.start_year ASC LIMIT " + MATCH_LIMIT,
+        like, like, keyword
     );
+    sortPreciseRows(preciseRows, keyword);
 
     Set<String> preciseIds = new LinkedHashSet<>();
     for (Map<String, Object> r : preciseRows) {
       preciseIds.add(String.valueOf(r.get("id")));
     }
 
-    // 相关：详情正文命中，且未进入精准
+    // 相关：详情正文命中，且未进入精准；优先级越高（数字越小）越靠前
     List<Map<String, Object>> relatedRows = jdbcTemplate.queryForList(
         "SELECT b.id, b.title, b.category_key, b.blurb, b.start_year, b.end_year, "
-            + "b.civilization_name, b.dynasty_name, b.regime_name, b.person_tag, b.importance_level "
+            + "b.civilization_name, b.dynasty_name, b.regime_name, b.emperor_name, b.person_tag, b.importance_level "
             + "FROM historical_box b "
             + "LEFT JOIN historical_box_detail d ON d.box_id = b.id "
             + "WHERE b.status=1 "
             + "AND (IFNULL(d.translate_detail,'') LIKE ? ESCAPE '\\\\' OR IFNULL(b.detail_md,'') LIKE ? ESCAPE '\\\\') "
             + "AND NOT (b.title LIKE ? ESCAPE '\\\\' OR IFNULL(b.blurb,'') LIKE ? ESCAPE '\\\\') "
-            + "ORDER BY b.importance_level DESC, b.start_year ASC LIMIT " + MATCH_LIMIT,
+            + "ORDER BY COALESCE(b.importance_level, 99) ASC, b.start_year ASC LIMIT " + MATCH_LIMIT,
         like, like, like, like
     );
+    sortRelatedRows(relatedRows);
 
     List<SearchResultDTO.Item> preciseAll = mapBoxRows(preciseRows, keyword, "precise");
     List<SearchResultDTO.Item> relatedAll = new ArrayList<>();
@@ -171,6 +175,45 @@ public class SearchService {
     return all.subList(from, to);
   }
 
+  /**
+   * 精准排序：史略名称完整匹配优先；其余（含简介命中）按优先级升序（P0=0 最前），再按开始年升序。
+   */
+  static void sortPreciseRows(List<Map<String, Object>> rows, String keyword) {
+    if (rows == null || rows.isEmpty()) return;
+    String kw = keyword == null ? "" : keyword.trim();
+    rows.sort(
+        Comparator
+            .comparingInt((Map<String, Object> r) -> isExactTitleMatch(r.get("title"), kw) ? 0 : 1)
+            .thenComparingInt(r -> importanceOrMax(r.get("importance_level")))
+            .thenComparingInt(r -> yearOrMax(r.get("start_year")))
+    );
+  }
+
+  /** 相关排序：优先级越高越靠前，同级按开始年升序。 */
+  static void sortRelatedRows(List<Map<String, Object>> rows) {
+    if (rows == null || rows.isEmpty()) return;
+    rows.sort(
+        Comparator
+            .comparingInt((Map<String, Object> r) -> importanceOrMax(r.get("importance_level")))
+            .thenComparingInt(r -> yearOrMax(r.get("start_year")))
+    );
+  }
+
+  static boolean isExactTitleMatch(Object titleRaw, String keyword) {
+    if (keyword == null || keyword.isEmpty()) return false;
+    return keyword.equals(trimText(titleRaw));
+  }
+
+  private static int importanceOrMax(Object raw) {
+    Integer v = toInt(raw);
+    return v == null ? 99 : v;
+  }
+
+  private static int yearOrMax(Object raw) {
+    Integer v = toInt(raw);
+    return v == null ? Integer.MAX_VALUE : v;
+  }
+
   public void deleteHistory(Long userId, String keyword) {
     jdbcTemplate.update("DELETE FROM user_search_history WHERE user_id=? AND keyword=?", userId, keyword.trim());
   }
@@ -191,7 +234,8 @@ public class SearchService {
     String civ = trimText(r.get("civilization_name"));
     String dynasty = trimText(r.get("dynasty_name"));
     String regime = trimText(r.get("regime_name"));
-    String coordinateText = joinCoordinate(civ, dynasty, regime);
+    String emperor = trimText(r.get("emperor_name"));
+    String coordinateText = joinCoordinate(civ, dynasty, regime, emperor);
     String pathText = coordinateText.isEmpty()
         ? categoryName
         : (categoryName.isEmpty() ? coordinateText : coordinateText + " › " + categoryName);
@@ -218,12 +262,20 @@ public class SearchService {
     );
   }
 
-  static String joinCoordinate(String civ, String dynasty, String regime) {
-    List<String> parts = new ArrayList<>(3);
-    if (!civ.isEmpty()) parts.add(civ);
-    if (!dynasty.isEmpty()) parts.add(dynasty);
-    if (!regime.isEmpty()) parts.add(regime);
-    return String.join(".", parts);
+  /** 四级坐标：文明 · 朝代 · 政权 · 君王（居中间隔号；相邻同名去重） */
+  static String joinCoordinate(String civ, String dynasty, String regime, String emperor) {
+    List<String> parts = new ArrayList<>(4);
+    appendCoordPart(parts, civ);
+    appendCoordPart(parts, dynasty);
+    appendCoordPart(parts, regime);
+    appendCoordPart(parts, emperor);
+    return String.join(" · ", parts);
+  }
+
+  private static void appendCoordPart(List<String> parts, String part) {
+    if (part == null || part.isEmpty()) return;
+    if (!parts.isEmpty() && parts.get(parts.size() - 1).equals(part)) return;
+    parts.add(part);
   }
 
   private static String categoryName(String key) {

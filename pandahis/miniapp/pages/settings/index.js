@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const api_1 = require("../../native-utils/api");
-const invite_bind_1 = require("../../native-utils/invite-bind");
 const load_error_message_1 = require("../../native-utils/load-error-message");
 const nav_metrics_1 = require("../../native-utils/nav-metrics");
 const runtime_env_1 = require("../../native-utils/runtime-env");
@@ -11,8 +10,6 @@ Page({
     data: {
         loggedIn: false,
         apiBase: '',
-        bindCode: '',
-        bindSubmitting: false,
         pageTopPadPx: 88,
         appVersion: APP_VERSION,
     },
@@ -30,42 +27,9 @@ Page({
             apiBase: (0, api_1.getBaseUrl)(),
         });
     },
-    onBindInput(e) {
-        this.setData({ bindCode: (e.detail.value || '').toUpperCase() });
-    },
-    async submitBindCode() {
-        if (!(0, api_1.hasToken)()) {
-            (0, router_1.navigateTo)(router_1.ROUTES.login);
-            return;
-        }
-        if (this.data.bindSubmitting)
-            return;
-        const code = (this.data.bindCode || '').trim();
-        if (!code) {
-            wx.showToast({ title: '请输入邀请码', icon: 'none' });
-            return;
-        }
-        this.setData({ bindSubmitting: true });
-        try {
-            const res = await (0, invite_bind_1.bindInviteCode)(code);
-            wx.showToast({
-                title: res.message || (res.bound ? '已绑定' : '绑定失败'),
-                icon: res.bound ? 'success' : 'none',
-            });
-            if (res.bound)
-                this.setData({ bindCode: '' });
-        }
-        catch (e) {
-            const msg = e instanceof Error ? e.message : '提交失败';
-            wx.showToast({ title: msg.length > 18 ? `${msg.slice(0, 16)}…` : msg, icon: 'none' });
-        }
-        finally {
-            this.setData({ bindSubmitting: false });
-        }
-    },
-    goHelp() {
+    goContact() {
         wx.showModal({
-            title: '帮助与反馈',
+            title: '联系我们',
             content: `如有问题或建议，请发送邮件至：\n${router_1.SUPPORT_EMAIL}`,
             confirmText: '复制邮箱',
             cancelText: '关闭',
@@ -78,6 +42,21 @@ Page({
                 });
             },
         });
+    },
+    goFeedback() {
+        if (!(0, api_1.hasToken)()) {
+            wx.showModal({
+                title: '需要登录',
+                content: '登录后可提交帮助与反馈。',
+                confirmText: '去登录',
+                success: (r) => {
+                    if (r.confirm)
+                        (0, router_1.navigateTo)(router_1.ROUTES.login);
+                },
+            });
+            return;
+        }
+        (0, router_1.navigateTo)(router_1.ROUTES.feedback);
     },
     goAbout() {
         (0, router_1.navigateTo)(router_1.ROUTES.about);
@@ -141,13 +120,6 @@ Page({
                 }
             },
         });
-    },
-    goProfileEdit() {
-        if (!(0, api_1.hasToken)()) {
-            (0, router_1.navigateTo)(router_1.ROUTES.login);
-            return;
-        }
-        (0, router_1.navigateTo)(router_1.ROUTES.profileEdit);
     },
     clearCache() {
         wx.showModal({

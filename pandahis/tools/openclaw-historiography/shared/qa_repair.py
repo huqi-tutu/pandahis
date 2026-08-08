@@ -159,6 +159,32 @@ def classify_translate_failure(
             max_retries=2,
         )
 
+    if _has_any(e, ("字数不足", "字数偏少", "低于下限")):
+        if _has_any(e, ("母本顺译", "母本", "Phase1")) or "phase1" in s or "mother" in s:
+            return RepairPlan(
+                root_cause="WORD_COUNT_PHASE1",
+                disposition="retry_llm" if fail_count < 2 else "refine_scope",
+                action="phase1_expand_mother",
+                refine_scope="mother",
+                structured_prompt=(
+                    "【根因：母本顺译字数不足】\n"
+                    "对照 plan 母本逐句清单补全漏句，勿删已有正确锚点。"
+                ),
+                max_retries=2,
+            )
+        return RepairPlan(
+            root_cause="WORD_COUNT_FINAL",
+            disposition="retry_llm" if fail_count < 2 else "refine_scope",
+            action="phase2_expand_enrich",
+            refine_scope="full",
+            structured_prompt=(
+                "【根因：成稿字数不足】\n"
+                "在母本顺译基础上补全 Phase2 他书补全与叙述，勿重复母本已述事实。"
+            ),
+            extra={"from_phase": "phase2"},
+            max_retries=2,
+        )
+
     if _has_any(e, ("母本引用过碎", "分块")):
         return RepairPlan(
             root_cause="CHUNK_FRAGMENT",
@@ -266,3 +292,44 @@ def format_repair_feedback(plan: RepairPlan, errors: list[str], *, max_raw: int 
     if raw:
         body += f"\n\n---\n【原始错误】\n{raw}"
     return body
+
+
+def format_retry_feedback(
+    plan: RepairPlan,
+    errors: list[str],
+    *,
+    max_errors: int = 8,
+    max_raw: int = 800,
+) -> str:
+    """重试专用反馈：保留 structured_prompt，压缩重复 verify 堆栈（规则 bundle 仍在主 prompt）。"""
+    uniq: list[str] = []
+    seen: set[str] = set()
+    for err in errors:
+        line = str(err).strip()
+        if not line or line in seen:
+            continue
+        seen.add(line)
+        uniq.append(line)
+        if len(uniq) >= max_errors:
+            break
+    return format_repair_feedback(plan, uniq, max_raw=max_raw)
+
+
+def infer_translate_retry_from_phase(
+    errors: list[str],
+    *,
+    stage: str = "",
+    mother_verified: bool = False,
+) -> str | None:
+    """retry_llm 时推断 from_phase；None 表示全量 run-one。"""
+    s = (stage or "").strip().lower()
+    e = "\n".join(errors)
+    if not mother_verified:
+        return None
+    if s.startswith("phase2") or "enrich" in s or s == "verify":
+        return "phase2"
+    if _has_any(e, ("字数不足", "字数偏少", "低于下限")) and "母本" not in e:
+        return "phase2"
+    if _has_any(e, ("参考著作", "史料原文", "未授权引用", "AI味", "传说层")):
+        return "phase2"
+    return None

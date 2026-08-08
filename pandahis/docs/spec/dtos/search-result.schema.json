@@ -50,7 +50,7 @@
           "matchTier": { "type": "string", "enum": ["precise", "related"] },
           "categoryKey": { "type": "string" },
           "categoryName": { "type": "string" },
-          "coordinateText": { "type": "string", "description": "文明.朝代.政权" },
+          "coordinateText": { "type": "string", "description": "文明 · 朝代 · 政权 · 君王" },
           "startYear": { "type": ["integer", "null"] },
           "endYear": { "type": ["integer", "null"] },
           "personTag": { "type": ["string", "null"] }

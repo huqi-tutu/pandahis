@@ -8,7 +8,7 @@ SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 JAR="$ROOT/backend/target/histomap-api-0.1.0.jar"
 SSH_TARGET="${SSH_TARGET:-histomap}"
-REMOTE_DIR="${REMOTE_DIR:-/opt/histomap}"
+REMOTE_DIR="${REMOTE_DIR:-/opt/histomap-api}"
 SERVICE_NAME="${SERVICE_NAME:-histomap-api}"
 CONTROL_PATH="$HOME/.ssh/cm-%r@%h:%p"
 

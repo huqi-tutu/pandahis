@@ -9,7 +9,7 @@
       <image class="text-selection-bar-icon" src="/images/icons/fuzhi.png" mode="aspectFit" />
       <text class="text-selection-bar-label">复制</text>
     </view>
-    <view class="text-selection-bar-item" catchtap="onShare">
+    <view wx:if="{{showShare}}" class="text-selection-bar-item" catchtap="onShare">
       <image class="text-selection-bar-icon" src="/images/icons/fenxiang.png" mode="aspectFit" />
       <text class="text-selection-bar-label">分享</text>
     </view>

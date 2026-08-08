@@ -242,16 +242,23 @@ const TAG_TIER_STYLE = {
 /** 与首页六色轮巡一致，用于 Icon 文件名后缀 */
 const TAG_THEME_HEX = ['A2734F', '63899C', 'B99D5B', '9A798F', '7D8A6A', 'A46A65']
 
-const TAG_ICON_BASE = '/配图/icons/首页标签icon/'
+/** 首页标签 Icon（COS；与文明 Tab 同域名，改代码即生效，无需发版后端） */
+const TAG_ICON_BASE =
+  'https://pandahis-1300045339.cos.ap-chengdu.myqcloud.com/histomap/home-tag-icon/'
+const TAG_ICON_CACHE_VER = '2026080624'
 
-/** 分类 → 偏白胶囊底 + Icon 视觉尺寸（统一 20rpx 槽位内按图形占比微调） */
+/** 分类 → 偏白胶囊底（Icon 尺寸与文字统一，见 TAG_ICON_*） */
 const TAG_CATEGORY_STYLE = {
-  立国治世: { bg: '#FAF8F5', text: '#6E5C4A', iconSize: 14 },
-  制度变革: { bg: '#F7F8FA', text: '#4F5F6E', iconSize: 16 },
-  战争动荡: { bg: '#FAF7F5', text: '#7A5648', iconSize: 16 },
-  文化学术: { bg: '#F5F9F7', text: '#2A6650', iconSize: 17 },
-  交流融合: { bg: '#F5F8F9', text: '#4A7579', iconSize: 16 },
+  立国治世: { bg: '#FAF8F5', text: '#6E5C4A' },
+  制度变革: { bg: '#F7F8FA', text: '#4F5F6E' },
+  战争动荡: { bg: '#FAF7F5', text: '#7A5648' },
+  文化学术: { bg: '#F5F9F7', text: '#2A6650' },
+  交流融合: { bg: '#F5F8F9', text: '#4A7579' },
 }
+
+/** 与 .entry-tag-text 字号一致；宽度略留余量容纳最宽 Icon（文化学术 ≈1.18） */
+const TAG_ICON_HEIGHT_RPX = 15
+const TAG_ICON_WIDTH_RPX = 18
 
 /** 主题色 → 文字色（与 Icon 同色系，避免 Icon / 文字脱节） */
 const TAG_THEME_TEXT = {
@@ -273,7 +280,9 @@ const TAG_PRIORITY_META = {
 function resolveTagIconSrc(category, themeIndex) {
   if (!category || !TAG_CATEGORY_STYLE[category]) return ''
   const hex = TAG_THEME_HEX[(themeIndex || 0) % TAG_THEME_HEX.length]
-  return `${TAG_ICON_BASE}${category}_${hex}.png`
+  // 中文文件名需 encode，否则真机部分环境加载失败
+  const file = `${encodeURIComponent(category)}_${hex}.png`
+  return `${TAG_ICON_BASE}${file}?v=${TAG_ICON_CACHE_VER}`
 }
 
 function buildDynastyTagVisual(item, themeIndex) {
@@ -283,12 +292,11 @@ function buildDynastyTagVisual(item, themeIndex) {
   const catStyle = TAG_CATEGORY_STYLE[category] || TAG_CATEGORY_STYLE['文化学术']
   const themeHex = TAG_THEME_HEX[(themeIndex || 0) % TAG_THEME_HEX.length]
   const textColor = TAG_THEME_TEXT[themeHex] || catStyle.text
-  const iconSize = catStyle.iconSize || 20
   return {
     text: item.text,
     category,
     iconSrc: resolveTagIconSrc(category, themeIndex),
-    iconStyle: `width:${iconSize}rpx;height:${iconSize}rpx;`,
+    iconStyle: `width:${TAG_ICON_WIDTH_RPX}rpx;height:${TAG_ICON_HEIGHT_RPX}rpx;`,
     textStyle: `font-weight:${meta.fontWeight};color:${textColor};`,
     tagStyle: `background-color:${catStyle.bg};color:${textColor};opacity:${meta.pillOpacity};border:none;`,
     tagClass: 'entry-tag--v2',

@@ -1,0 +1,71 @@
+<proto-nav title="帮助与反馈" show-back="{{true}}"></proto-nav>
+
+<scroll-view
+  class="page-feedback"
+  scroll-y
+  enhanced
+  show-scrollbar="{{false}}"
+  style="padding-top: {{pageTopPadPx}}px; padding-bottom: {{keyboardPadPx}}px;"
+>
+  <view class="feedback-inner">
+  <view class="card-paper section">
+    <text class="section-title">反馈类型</text>
+    <view class="type-row">
+      <view
+        wx:for="{{typeOptions}}"
+        wx:key="value"
+        class="type-chip {{feedbackType === item.value ? 'on' : ''}}"
+        data-value="{{item.value}}"
+        bindtap="onTypeTap"
+      >{{item.label}}</view>
+    </view>
+  </view>
+
+  <view class="card-paper section">
+    <view class="section-head">
+      <text class="section-title">问题描述</text>
+      <text class="count muted">{{contentLength}}/{{contentMax}}</text>
+    </view>
+    <textarea
+      class="content-input"
+      value="{{content}}"
+      maxlength="{{contentMax}}"
+      placeholder="请描述你遇到的问题或建议（必填）"
+      placeholder-class="content-ph"
+      auto-height
+      bindinput="onContentInput"
+      show-confirm-bar="{{false}}"
+    />
+  </view>
+
+  <view class="card-paper section">
+    <view class="section-head">
+      <text class="section-title">图片（可选）</text>
+      <text class="count muted">{{images.length}}/{{imageMax}}</text>
+    </view>
+    <text class="section-hint muted">从相册选择，最多 3 张，上传前自动压缩至 1MB 以内</text>
+    <view class="image-grid">
+      <view class="image-item" wx:for="{{images}}" wx:key="localPath">
+        <image class="image-thumb" src="{{item.localPath}}" mode="aspectFill" bindtap="onPreview" data-index="{{index}}" />
+        <view class="image-remove" catchtap="onRemoveImage" data-index="{{index}}">×</view>
+      </view>
+      <view
+        wx:if="{{images.length < imageMax}}"
+        class="image-add"
+        bindtap="onPickImages"
+      >
+        <text class="image-add-plus">＋</text>
+        <text class="image-add-label">相册</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="submit-wrap">
+    <view
+      class="submit-btn btn-primary {{canSubmit && !submitting ? '' : 'disabled'}}"
+      bindtap="onSubmit"
+    >{{submitting ? '提交中…' : '提交反馈'}}</view>
+    <text class="submit-hint muted">每天最多提交 {{dailyLimit}} 次</text>
+  </view>
+  </view>
+</scroll-view>

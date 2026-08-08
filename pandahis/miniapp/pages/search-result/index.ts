@@ -74,7 +74,10 @@ Page({
     const category =
       String(it.categoryName || '').trim() ||
       categoryLabel(String(it.categoryKey || ''))
-    const coordinateText = String(it.coordinateText || '').trim()
+    // 仅兼容旧接口 ASCII「.」分隔；勿改写层级名内部的「·」（如「战国·秦」）
+    const coordinateText = String(it.coordinateText || '')
+      .trim()
+      .replace(/\s*\.\s*/g, ' · ')
     const startYear = typeof it.startYear === 'number' ? it.startYear : undefined
     const endYear = typeof it.endYear === 'number' ? it.endYear : undefined
     const yearText =

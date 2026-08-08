@@ -1,0 +1,727 @@
+{
+  "schema": "translate-coverage-ledger/v1",
+  "史略ID": "GLBL_00075",
+  "updated_at": "2026-08-08T03:03:57.065176+00:00",
+  "entries": {
+    "M001": {
+      "status": "conveyed",
+      "claim_fp": "2e74227f118b4a4a",
+      "checked_at": "2026-08-07T01:07:08.456105+00:00",
+      "note": "直接说明是宣帝太子。"
+    },
+    "M002": {
+      "status": "conveyed",
+      "claim_fp": "1cfefb3fbde30ee7",
+      "checked_at": "2026-08-07T01:07:08.456112+00:00",
+      "note": "明确提到母亲和微时生民间。"
+    },
+    "M003": {
+      "status": "conveyed",
+      "claim_fp": "7b5148a318d64d0c",
+      "checked_at": "2026-08-07T01:07:08.456114+00:00",
+      "note": "直接对应。"
+    },
+    "M004": {
+      "status": "conveyed",
+      "claim_fp": "0c7efa31efedae2b",
+      "checked_at": "2026-08-07T01:07:08.456118+00:00",
+      "note": "直接对应。"
+    },
+    "M005": {
+      "status": "conveyed",
+      "claim_fp": "7d2c408868dcdc27",
+      "checked_at": "2026-08-07T01:07:08.456120+00:00",
+      "note": "直接对应。"
+    },
+    "M006": {
+      "status": "conveyed",
+      "claim_fp": "50c000055b2a6351",
+      "checked_at": "2026-08-07T01:07:08.456122+00:00",
+      "note": "完整传达了M006的全部内容，包括对话和后续。"
+    },
+    "M007": {
+      "status": "conveyed",
+      "claim_fp": "7b43845592b89ffa",
+      "checked_at": "2026-08-07T01:07:08.456125+00:00",
+      "note": "白话译文明确表达了宣帝想用淮阳王代太子，但因与许氏微贱起家而未背弃，与母本信息一致。"
+    },
+    "M008": {
+      "status": "conveyed",
+      "claim_fp": "dfdca0e78df1054c",
+      "checked_at": "2026-08-07T01:07:08.456133+00:00",
+      "note": "直接对应母本信息，传达了即位和谒高庙。"
+    },
+    "M009": {
+      "status": "conveyed",
+      "claim_fp": "5698d22b3e57e03f",
+      "checked_at": "2026-08-07T01:07:08.456135+00:00",
+      "note": "与母本信息完全一致。"
+    },
+    "M010": {
+      "status": "conveyed",
+      "claim_fp": "5cccc55aaff4b37b",
+      "checked_at": "2026-08-07T01:07:08.456137+00:00",
+      "note": "传达了葬杜陵的时间和事件。"
+    },
+    "M011": {
+      "status": "conveyed",
+      "claim_fp": "05ac8245cc89f054",
+      "checked_at": "2026-08-07T01:07:08.456139+00:00",
+      "note": "传达了赏赐对象和各有差等，与母本信息一致。"
+    },
+    "M012": {
+      "status": "conveyed",
+      "claim_fp": "1daa1e6f6b52873c",
+      "checked_at": "2026-08-07T01:07:08.456141+00:00",
+      "note": "直接对应母本信息。"
+    },
+    "M013": {
+      "status": "conveyed",
+      "claim_fp": "31cf8bb18e3e4b13",
+      "checked_at": "2026-08-07T01:07:08.456143+00:00",
+      "note": "译文明确写出封王舜为安平侯，与母本信息一致。"
+    },
+    "M014": {
+      "status": "conveyed",
+      "claim_fp": "746ca7878ab5af6a",
+      "checked_at": "2026-08-07T01:07:08.456145+00:00",
+      "note": "译文直接包含立后信息。"
+    },
+    "M015": {
+      "status": "conveyed",
+      "claim_fp": "5cd5c7d93ea3333e",
+      "checked_at": "2026-08-07T01:07:08.456147+00:00",
+      "note": "译文完整传达了振业贫民、赋贷种食的内容。"
+    },
+    "M016": {
+      "status": "conveyed",
+      "claim_fp": "7d9c4f22369ca43a",
+      "checked_at": "2026-08-07T01:07:08.456149+00:00",
+      "note": "译文准确表达了封许嘉为平恩侯、奉戴侯后的信息。"
+    },
+    "M017": {
+      "status": "conveyed",
+      "claim_fp": "09b137b406d63ffb",
+      "checked_at": "2026-08-07T01:07:08.456152+00:00",
+      "note": "译文包含了诏书全文及后续措施，母本信息已全部传达。"
+    },
+    "M018": {
+      "status": "conveyed",
+      "claim_fp": "e3094cb92e07785f",
+      "checked_at": "2026-08-07T01:07:08.456154+00:00",
+      "note": "译文完整覆盖了因疾疫而采取的减膳、减乐府、省苑马、振困乏等措施。"
+    },
+    "M019": {
+      "status": "conveyed",
+      "claim_fp": "61d1f3e5f1ce9ef2",
+      "checked_at": "2026-08-07T01:07:52.513968+00:00",
+      "note": "完全传达了母本信息。"
+    },
+    "M020–M021": {
+      "status": "conveyed",
+      "claim_fp": "28fce77e044be3e2",
+      "checked_at": "2026-08-07T01:07:52.513976+00:00",
+      "note": "包含了关东十一郡国大水、饥荒、人相食、转旁郡钱谷相救，以及诏书全文，信息完整。"
+    },
+    "M022": {
+      "status": "conveyed",
+      "claim_fp": "c3393f0713ce3cb9",
+      "checked_at": "2026-08-07T01:07:52.513980+00:00",
+      "note": "传达了行幸甘泉、郊泰畤。"
+    },
+    "M023": {
+      "status": "conveyed",
+      "claim_fp": "1ba29fdf338e0f63",
+      "checked_at": "2026-08-07T01:07:52.513983+00:00",
+      "note": "传达了赐云阳民爵一级，女子百户牛酒。"
+    },
+    "M024": {
+      "status": "conveyed",
+      "claim_fp": "76ad6322ae1e7bd1",
+      "checked_at": "2026-08-07T01:07:52.513986+00:00",
+      "note": "传达了立弟竟为清河王。"
+    },
+    "M025": {
+      "status": "conveyed",
+      "claim_fp": "897a15235e9a8482",
+      "checked_at": "2026-08-07T01:07:52.513989+00:00",
+      "note": "传达了立广陵厉王太子霸为王。"
+    },
+    "M026": {
+      "status": "conveyed",
+      "claim_fp": "fc5f4a60725e455e",
+      "checked_at": "2026-08-07T01:07:52.513992+00:00",
+      "note": "白话译文完整传达了母本信息，包括黄门乘舆狗马、水衡禁囿、宜春下苑、少府佽飞外池、严籞池田假与贫民。"
+    },
+    "M027": {
+      "status": "conveyed",
+      "claim_fp": "8e77c1da37118144",
+      "checked_at": "2026-08-07T01:07:52.513995+00:00",
+      "note": "译文直接引用了诏书全文，并加以白话解释，完整传达了母本信息。"
+    },
+    "M028": {
+      "status": "conveyed",
+      "claim_fp": "ae2eac8366bb441b",
+      "checked_at": "2026-08-07T01:07:52.513998+00:00",
+      "note": "明确传达了立皇太子的事件和时间。"
+    },
+    "M029": {
+      "status": "conveyed",
+      "claim_fp": "b8808a632243b810",
+      "checked_at": "2026-08-07T01:07:52.514001+00:00",
+      "note": "完整传达了赐爵和赏钱的对象与数量。"
+    },
+    "M030": {
+      "status": "conveyed",
+      "claim_fp": "9853c72815e2ab60",
+      "checked_at": "2026-08-07T01:07:52.514003+00:00",
+      "note": "明确传达了关东饥荒和齐地人相食的信息。"
+    },
+    "M031": {
+      "status": "conveyed",
+      "claim_fp": "8fb6d7c7e0f6effd",
+      "checked_at": "2026-08-07T01:07:52.514006+00:00",
+      "note": "译文直接引用了诏书全文，并加以白话解释，完整传达了母本信息。"
+    },
+    "M032": {
+      "status": "conveyed",
+      "claim_fp": "eee3b325ff16bd2e",
+      "checked_at": "2026-08-07T01:07:52.514009+00:00",
+      "note": "译文完整引用了诏书内容，传达了尊师、赐爵、食邑、朝朔望等信息。"
+    },
+    "M033": {
+      "status": "conveyed",
+      "claim_fp": "da81c34eb9389413",
+      "checked_at": "2026-08-07T01:07:52.514012+00:00",
+      "note": "明确提到弘恭、石显诬陷萧望之，令其自杀。"
+    },
+    "M034": {
+      "status": "conveyed",
+      "claim_fp": "424ecfbf7a8c0cd9",
+      "checked_at": "2026-08-07T01:07:52.514014+00:00",
+      "note": "明确传达了诸侯相位在郡守下的信息。"
+    },
+    "M035": {
+      "status": "conveyed",
+      "claim_fp": "dc1fe81fc56be9da",
+      "checked_at": "2026-08-07T01:07:52.514017+00:00",
+      "note": "明确提到珠厓郡山南县反，博谋群臣。"
+    },
+    "M036": {
+      "status": "conveyed",
+      "claim_fp": "aeaabda599fb76e3",
+      "checked_at": "2026-08-07T01:07:52.514020+00:00",
+      "note": "传达了贾捐之建议弃珠厓、救民饥馑的主张。"
+    },
+    "M037": {
+      "status": "conveyed",
+      "claim_fp": "16ebcab8b547ecee",
+      "checked_at": "2026-08-07T01:08:34.602134+00:00",
+      "note": "直接对应放弃珠厓。"
+    },
+    "M038": {
+      "status": "conveyed",
+      "claim_fp": "7630b8b1d411b1fe",
+      "checked_at": "2026-08-07T01:08:34.602143+00:00",
+      "note": "时间、地点、事件完全吻合。"
+    },
+    "M039": {
+      "status": "conveyed",
+      "claim_fp": "180d5033f2a7c463",
+      "checked_at": "2026-08-07T01:08:34.602146+00:00",
+      "note": "诏书内容完整传达，包括火灾、自责、求言、百姓困苦、大赦。"
+    },
+    "M040": {
+      "status": "conveyed",
+      "claim_fp": "6c270bc695ac86aa",
+      "checked_at": "2026-08-07T01:08:34.602149+00:00",
+      "note": "明确提到夏旱。"
+    },
+    "M041": {
+      "status": "conveyed",
+      "claim_fp": "3641b00e412819ac",
+      "checked_at": "2026-08-07T01:08:34.602152+00:00",
+      "note": "立长沙炀王弟宗为王，信息一致。"
+    },
+    "M042": {
+      "status": "conveyed",
+      "claim_fp": "ca26e0a882fe71b1",
+      "checked_at": "2026-08-07T01:08:34.602155+00:00",
+      "note": "封贺子代宗为侯，信息一致。"
+    },
+    "M043": {
+      "status": "conveyed",
+      "claim_fp": "11453186506c420b",
+      "checked_at": "2026-08-07T01:08:34.602158+00:00",
+      "note": "译文完整传达了诏书内容和后续效果，与母本信息一致。"
+    },
+    "M044": {
+      "status": "conveyed",
+      "claim_fp": "c0115dc9b7a7c069",
+      "checked_at": "2026-08-07T01:08:34.602161+00:00",
+      "note": "直接对应母本信息。"
+    },
+    "M045": {
+      "status": "conveyed",
+      "claim_fp": "32566fc45d27e7a0",
+      "checked_at": "2026-08-07T01:08:34.602164+00:00",
+      "note": "直接对应母本信息。"
+    },
+    "M046": {
+      "status": "conveyed",
+      "claim_fp": "1e26bf27aa2314bc",
+      "checked_at": "2026-08-07T01:08:34.602166+00:00",
+      "note": "直接对应母本信息。"
+    },
+    "M047": {
+      "status": "conveyed",
+      "claim_fp": "7a40ed59ce30fd23",
+      "checked_at": "2026-08-07T01:08:34.602169+00:00",
+      "note": "直接对应母本信息，细节完整。"
+    },
+    "M048": {
+      "status": "conveyed",
+      "claim_fp": "e29b3306916051a5",
+      "checked_at": "2026-08-07T01:08:34.602171+00:00",
+      "note": "直接对应母本信息。"
+    },
+    "M049": {
+      "status": "conveyed",
+      "claim_fp": "dc2438b666c1a4d9",
+      "checked_at": "2026-08-07T01:08:34.602174+00:00",
+      "note": "直接对应母本信息，时间、封号、位次均一致。"
+    },
+    "M050": {
+      "status": "conveyed",
+      "claim_fp": "912b4e168a7bd8e1",
+      "checked_at": "2026-08-07T01:08:34.602176+00:00",
+      "note": "直接对应母本信息，时间、地点、事件均一致。"
+    },
+    "M051": {
+      "status": "conveyed",
+      "claim_fp": "f3e4d1b75e433a0c",
+      "checked_at": "2026-08-07T01:08:34.602179+00:00",
+      "note": "直接对应母本信息，时间、天象均一致。"
+    },
+    "M052": {
+      "status": "conveyed",
+      "claim_fp": "a15b05b2a3bf99bc",
+      "checked_at": "2026-08-07T01:08:34.602181+00:00",
+      "note": "诏书内容完整覆盖母本信息，包括自责、灾害描述、引诗、各项减省和赏赐措施，以及减省刑罚。"
+    },
+    "M053": {
+      "status": "conveyed",
+      "claim_fp": "b822dddb5c62169c",
+      "checked_at": "2026-08-07T01:08:34.602183+00:00",
+      "note": "直接对应母本信息，废除保父母同产之令。"
+    },
+    "M054": {
+      "status": "conveyed",
+      "claim_fp": "c67069ecda52d0cd",
+      "checked_at": "2026-08-07T01:08:34.602186+00:00",
+      "note": "直接对应母本信息，允许从官给事宫司马中者为大父母、父母、兄弟通籍。"
+    },
+    "M055": {
+      "status": "conveyed",
+      "claim_fp": "afe80b8f582fa258",
+      "checked_at": "2026-08-07T01:09:12.179670+00:00",
+      "note": "直接对应母本信息。"
+    },
+    "M056": {
+      "status": "conveyed",
+      "claim_fp": "ae6c509dae8c68c7",
+      "checked_at": "2026-08-07T01:09:12.179690+00:00",
+      "note": "直接对应母本信息。"
+    },
+    "M057": {
+      "status": "conveyed",
+      "claim_fp": "6a2ddd1a2e253923",
+      "checked_at": "2026-08-07T01:09:12.179695+00:00",
+      "note": "直接对应母本信息。"
+    },
+    "M058": {
+      "status": "conveyed",
+      "claim_fp": "2db107a2f0b40036",
+      "checked_at": "2026-08-07T01:09:12.179700+00:00",
+      "note": "直接对应母本信息。"
+    },
+    "M059": {
+      "status": "conveyed",
+      "claim_fp": "f62ff92c45e5c027",
+      "checked_at": "2026-08-07T01:09:12.179704+00:00",
+      "note": "直接对应母本信息。"
+    },
+    "M060": {
+      "status": "conveyed",
+      "claim_fp": "7cf3743577b9c3c9",
+      "checked_at": "2026-08-07T01:09:12.179708+00:00",
+      "note": "直接对应母本信息。"
+    },
+    "M061": {
+      "status": "conveyed",
+      "claim_fp": "6a3b6fa49649b1a9",
+      "checked_at": "2026-08-07T01:09:12.179712+00:00",
+      "note": "白话译文完整传达了诏书内容及后续雨雪伤稼、秋罢的信息。"
+    },
+    "M062": {
+      "status": "conveyed",
+      "claim_fp": "06335940b2949f13",
+      "checked_at": "2026-08-07T01:09:12.179715+00:00",
+      "note": "白话译文完整传达了诏书内容及后续赏赐细节。"
+    },
+    "M063": {
+      "status": "conveyed",
+      "claim_fp": "b641b65dd1f72ad4",
+      "checked_at": "2026-08-07T01:09:12.179718+00:00",
+      "note": "明确记载了日食事件。"
+    },
+    "M064": {
+      "status": "conveyed",
+      "claim_fp": "b94f685b1151c9e1",
+      "checked_at": "2026-08-07T01:09:12.179721+00:00",
+      "note": "白话译文完整传达了诏书内容，包括日食后的反思和举荐人才的要求。"
+    },
+    "M065": {
+      "status": "conveyed",
+      "claim_fp": "8b6565bba6eba3ad",
+      "checked_at": "2026-08-07T01:09:12.179724+00:00",
+      "note": "白话译文完整传达了诏书内容。"
+    },
+    "M066": {
+      "status": "conveyed",
+      "claim_fp": "749dcf808107ef54",
+      "checked_at": "2026-08-07T01:09:12.179751+00:00",
+      "note": "明确记载了西羌反叛和派遣冯奉世征讨。"
+    },
+    "M067": {
+      "status": "conveyed",
+      "claim_fp": "9cf1f9162b300cb5",
+      "checked_at": "2026-08-07T01:09:12.179755+00:00",
+      "note": "与母本信息一致，白话表达清晰。"
+    },
+    "M068": {
+      "status": "conveyed",
+      "claim_fp": "0bf543ed50f93e01",
+      "checked_at": "2026-08-07T01:09:12.179758+00:00",
+      "note": "时间、事件、结果均与母本吻合。"
+    },
+    "M069": {
+      "status": "conveyed",
+      "claim_fp": "76e1cac83eb2a418",
+      "checked_at": "2026-08-07T01:09:12.179761+00:00",
+      "note": "直接对应母本信息。"
+    },
+    "M070": {
+      "status": "conveyed",
+      "claim_fp": "28065a279ff71c35",
+      "checked_at": "2026-08-07T01:09:12.179763+00:00",
+      "note": "诏书内容完整，包含地震、天气异常、盗贼、责问官吏等要素。"
+    },
+    "M071": {
+      "status": "conveyed",
+      "claim_fp": "4507d8aa5715b1d8",
+      "checked_at": "2026-08-07T01:09:12.179765+00:00",
+      "note": "明确提及恢复盐铁官和博士弟子员。"
+    },
+    "M072": {
+      "status": "conveyed",
+      "claim_fp": "26a533aa996e295f",
+      "checked_at": "2026-08-07T01:09:12.179769+00:00",
+      "note": "解释了恢复盐铁官和博士弟子员的原因，与母本信息一致。"
+    },
+    "M073": {
+      "status": "conveyed",
+      "claim_fp": "65e7b0053a4e1988",
+      "checked_at": "2026-08-07T01:09:52.511434+00:00",
+      "note": "译文完整引用了诏书原文并附白话解释，完全传达了母本信息。"
+    },
+    "M074": {
+      "status": "conveyed",
+      "claim_fp": "bb555be465b2a7a2",
+      "checked_at": "2026-08-07T01:09:52.511442+00:00",
+      "note": "明确提到三月行幸雍、祠五畤，与母本一致。"
+    },
+    "M075": {
+      "status": "conveyed",
+      "claim_fp": "05150e5a76c7f4dc",
+      "checked_at": "2026-08-07T01:09:52.511445+00:00",
+      "note": "孝宣园东阙灾即宣帝陵园东阙门火灾，信息已传达。"
+    },
+    "M076": {
+      "status": "conveyed",
+      "claim_fp": "0dca49ef5f01926b",
+      "checked_at": "2026-08-07T01:09:52.511448+00:00",
+      "note": "明确提到戊寅晦日有日食，与母本一致。"
+    },
+    "M077": {
+      "status": "conveyed",
+      "claim_fp": "a7c413643ef95401",
+      "checked_at": "2026-08-07T01:09:52.511451+00:00",
+      "note": "译文完整引用了诏书原文并附白话解释，完全传达了母本信息。"
+    },
+    "M078": {
+      "status": "conveyed",
+      "claim_fp": "01de3fdd9faa17b1",
+      "checked_at": "2026-08-07T01:09:52.511454+00:00",
+      "note": "明确提到九月戊子罢卫思后园及戾园，与母本一致。"
+    },
+    "M079": {
+      "status": "conveyed",
+      "claim_fp": "cda4516ec3777365",
+      "checked_at": "2026-08-07T01:09:52.511456+00:00",
+      "note": "直接对应母本信息，时间、事件一致。"
+    },
+    "M080": {
+      "status": "conveyed",
+      "claim_fp": "d98108a654832280",
+      "checked_at": "2026-08-07T01:09:52.511459+00:00",
+      "note": "明确提到诸陵分属三辅。"
+    },
+    "M081": {
+      "status": "conveyed",
+      "claim_fp": "d5f0d80ef8562983",
+      "checked_at": "2026-08-07T01:09:52.511461+00:00",
+      "note": "地点和用途与母本一致。"
+    },
+    "M082": {
+      "status": "conveyed",
+      "claim_fp": "ff0fde53db5c612b",
+      "checked_at": "2026-08-07T01:09:52.511464+00:00",
+      "note": "诏书内容完整传达，包括罢奉邑。"
+    },
+    "M083": {
+      "status": "conveyed",
+      "claim_fp": "421a06860ab74c11",
+      "checked_at": "2026-08-07T01:09:52.511467+00:00",
+      "note": "时间、地点、事件均匹配。"
+    },
+    "M084": {
+      "status": "conveyed",
+      "claim_fp": "64a7be1621ccb0c2",
+      "checked_at": "2026-08-07T01:09:52.511470+00:00",
+      "note": "时间、地点、事件均匹配。"
+    },
+    "M085": {
+      "status": "conveyed",
+      "claim_fp": "9895e908870d1c99",
+      "checked_at": "2026-08-07T01:09:52.511472+00:00",
+      "note": "明确提到颍川水灾，流杀人民。"
+    },
+    "M086": {
+      "status": "conveyed",
+      "claim_fp": "99b141f48192780e",
+      "checked_at": "2026-08-07T01:09:52.511475+00:00",
+      "note": "明确提到幸长杨射熊馆，布车骑，大猎。"
+    },
+    "M087": {
+      "status": "conveyed",
+      "claim_fp": "53325d6f594d7db0",
+      "checked_at": "2026-08-07T01:09:52.511477+00:00",
+      "note": "明确提到毁太上皇、孝惠皇帝寝庙园。"
+    },
+    "M088": {
+      "status": "conveyed",
+      "claim_fp": "1139d8bf9586d7b5",
+      "checked_at": "2026-08-07T01:09:52.511480+00:00",
+      "note": "明确提到上幸雍，祠五畤。"
+    },
+    "M089": {
+      "status": "conveyed",
+      "claim_fp": "6e2d1efe9a17e932",
+      "checked_at": "2026-08-07T01:09:52.511483+00:00",
+      "note": "明确提到白蛾群飞蔽日，从东都门至枳道。"
+    },
+    "M090": {
+      "status": "conveyed",
+      "claim_fp": "57ed45e986fb02e8",
+      "checked_at": "2026-08-07T01:09:52.511485+00:00",
+      "note": "明确提到河间王元有罪，废迁房陵。"
+    },
+    "M091": {
+      "status": "conveyed",
+      "claim_fp": "b961a45575a1d0ec",
+      "checked_at": "2026-08-07T01:10:27.621245+00:00",
+      "note": "直接对应母本信息，明确传达。"
+    },
+    "M092": {
+      "status": "conveyed",
+      "claim_fp": "4cc22e754be867d1",
+      "checked_at": "2026-08-07T01:10:27.621257+00:00",
+      "note": "时间、地点、事件均与母本一致。"
+    },
+    "M093": {
+      "status": "conveyed",
+      "claim_fp": "3b06503d5cb6a3e7",
+      "checked_at": "2026-08-07T01:10:27.621260+00:00",
+      "note": "明确提到三月巡行河东祭祀后土。"
+    },
+    "M094": {
+      "status": "conveyed",
+      "claim_fp": "7738940188b97ddf",
+      "checked_at": "2026-08-07T01:10:27.621263+00:00",
+      "note": "传达了提高三河大郡太守俸禄的信息。"
+    },
+    "M095": {
+      "status": "conveyed",
+      "claim_fp": "b5ae81ccae893b6c",
+      "checked_at": "2026-08-07T01:10:27.621267+00:00",
+      "note": "明确说明户十二万为大郡的标准。"
+    },
+    "M096": {
+      "status": "conveyed",
+      "claim_fp": "37af70771d53e131",
+      "checked_at": "2026-08-07T01:10:27.621270+00:00",
+      "note": "直接对应母本信息。"
+    },
+    "M097": {
+      "status": "conveyed",
+      "claim_fp": "91fab70677dfcfca",
+      "checked_at": "2026-08-07T01:10:27.621273+00:00",
+      "note": "完全对应母本信息。"
+    },
+    "M098": {
+      "status": "conveyed",
+      "claim_fp": "fe9a0254890bcfce",
+      "checked_at": "2026-08-07T01:10:27.621275+00:00",
+      "note": "完全对应母本信息。"
+    },
+    "M099": {
+      "status": "conveyed",
+      "claim_fp": "6901bbabe01b916d",
+      "checked_at": "2026-08-07T01:10:27.621278+00:00",
+      "note": "完全对应母本信息。"
+    },
+    "M100": {
+      "status": "conveyed",
+      "claim_fp": "9793a14e0473d3a0",
+      "checked_at": "2026-08-07T01:10:27.621280+00:00",
+      "note": "完全对应母本信息。"
+    },
+    "M101": {
+      "status": "conveyed",
+      "claim_fp": "3d9bf140fcaed1c1",
+      "checked_at": "2026-08-07T01:10:27.621283+00:00",
+      "note": "完全对应母本信息。"
+    },
+    "M102": {
+      "status": "conveyed",
+      "claim_fp": "14b968567d39d166",
+      "checked_at": "2026-08-07T01:10:27.621285+00:00",
+      "note": "完全对应母本信息。"
+    },
+    "M103": {
+      "status": "conveyed",
+      "claim_fp": "f57b29699bf424d7",
+      "checked_at": "2026-08-07T01:10:27.621287+00:00",
+      "note": "直接对应"
+    },
+    "M104": {
+      "status": "conveyed",
+      "claim_fp": "cce63970ce52144a",
+      "checked_at": "2026-08-07T01:10:27.621290+00:00",
+      "note": "直接对应"
+    },
+    "M105": {
+      "status": "conveyed",
+      "claim_fp": "bc7053c22fd9efbc",
+      "checked_at": "2026-08-07T01:10:27.621292+00:00",
+      "note": "直接对应"
+    },
+    "M106": {
+      "status": "conveyed",
+      "claim_fp": "c6daef862c4eb6e5",
+      "checked_at": "2026-08-07T01:10:27.621294+00:00",
+      "note": "完整意译"
+    },
+    "M107": {
+      "status": "conveyed",
+      "claim_fp": "39dd7cef79f8f06d",
+      "checked_at": "2026-08-07T01:10:27.621297+00:00",
+      "note": "完整意译"
+    },
+    "M108": {
+      "status": "conveyed",
+      "claim_fp": "20e41298867b3ce3",
+      "checked_at": "2026-08-07T01:10:27.621299+00:00",
+      "note": "直接对应"
+    },
+    "M109": {
+      "status": "conveyed",
+      "claim_fp": "79b75820de144e1b",
+      "checked_at": "2026-08-07T01:10:46.862759+00:00",
+      "note": "明确提到壬申日发生日食，与母本信息一致。"
+    },
+    "M110": {
+      "status": "conveyed",
+      "claim_fp": "aef682a04a775d8f",
+      "checked_at": "2026-08-07T01:10:46.862768+00:00",
+      "note": "完整传达了恢复各寝庙园的信息，日期和对象均匹配。"
+    },
+    "M111": {
+      "status": "conveyed",
+      "claim_fp": "dac481a6c2f95edf",
+      "checked_at": "2026-08-07T01:10:46.862772+00:00",
+      "note": "明确写出呼韩邪单于来朝，时间正确。"
+    },
+    "M112": {
+      "status": "conveyed",
+      "claim_fp": "e59b86e10f5dac8d",
+      "checked_at": "2026-08-07T01:10:46.862775+00:00",
+      "note": "诏书内容完整，包含改元竟宁和赐王樯为阏氏，与母本一致。"
+    },
+    "M113": {
+      "status": "conveyed",
+      "claim_fp": "21367e8ce9d09133",
+      "checked_at": "2026-08-07T01:10:46.862779+00:00",
+      "note": "明确提到皇太子冠礼，信息传达完整。"
+    },
+    "M114": {
+      "status": "conveyed",
+      "claim_fp": "7d96879caf19d8ee",
+      "checked_at": "2026-08-07T01:10:46.862781+00:00",
+      "note": "赏赐内容与母本一致，列侯嗣子爵五大夫，为父后者爵一级。"
+    },
+    "M115": {
+      "status": "conveyed",
+      "claim_fp": "3a6394d210ada079",
+      "checked_at": "2026-08-07T01:10:46.862784+00:00",
+      "note": "完全对应母本信息，只是将“复”译为“恢复”，将“寝园”译为“寝园”，信息一致。"
+    },
+    "M116": {
+      "status": "conveyed",
+      "claim_fp": "27f85710aabe593c",
+      "checked_at": "2026-08-07T01:10:46.862787+00:00",
+      "note": "直接对应“封骑都尉甘延寿为列侯”，信息完整。"
+    },
+    "M117": {
+      "status": "conveyed",
+      "claim_fp": "5cdf61ec86b74c6b",
+      "checked_at": "2026-08-07T01:10:46.862789+00:00",
+      "note": "对应“赐副校尉陈汤爵关内侯、黄金百斤”，信息一致。"
+    },
+    "M118": {
+      "status": "conveyed",
+      "claim_fp": "28e9a8cbb6304920",
+      "checked_at": "2026-08-07T01:10:46.862792+00:00",
+      "note": "对应“五月壬辰，帝崩于未央宫”，信息一致。"
+    },
+    "M119": {
+      "status": "conveyed",
+      "claim_fp": "0283be4303319a09",
+      "checked_at": "2026-08-07T01:10:46.862795+00:00",
+      "note": "对应“毁太上皇、孝惠、孝景皇帝庙”，信息一致。"
+    },
+    "M120": {
+      "status": "conveyed",
+      "claim_fp": "9cb75205b1217c20",
+      "checked_at": "2026-08-07T01:10:46.862798+00:00",
+      "note": "对应“罢孝文、孝昭太后、昭灵后、武哀王、昭哀后寝园”，信息一致。"
+    },
+    "M121": {
+      "status": "conveyed",
+      "claim_fp": "a66db439f4e7873f",
+      "checked_at": "2026-08-07T01:10:46.862800+00:00",
+      "note": "译文明确提到安葬于渭陵，与母本信息一致。"
+    }
+  }
+}

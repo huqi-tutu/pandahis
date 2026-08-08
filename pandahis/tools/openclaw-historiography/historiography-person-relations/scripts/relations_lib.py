@@ -25,13 +25,13 @@ from llm.config import MODEL_PRO, ensure_deepseek_v4_pro as pin_deepseek_v4_pro 
 
 REQUIRED_MODEL = MODEL_PRO
 PERSON_CATEGORIES = frozenset({"君王", "诸侯", "宗戚", "文臣", "武将", "宦官", "庶众"})
-RELATION_CATEGORIES = ("家庭", "同僚", "师从", "外敌", "好友")
+RELATION_CATEGORIES = ("家庭", "同僚", "敌对", "师徒", "好友")
 MAX_CATEGORY_LLM_ATTEMPTS = 3
 CATEGORY_ID_PREFIX = {
     "家庭": "HD-FAM",
     "同僚": "HD-COL",
-    "师从": "HD-MAS",
-    "外敌": "HD-FOE",
+    "敌对": "HD-FOE",
+    "师徒": "HD-MAS",
     "好友": "HD-FRI",
 }
 
@@ -218,12 +218,15 @@ def build_category_prompt(
 # 硬性要求
 
 1. **只输出一个 JSON 数组**，不要 markdown 说明、不要代码块外的文字。
-2. 每条记录字段：`关联史略名称`、`关系ID`、`关系类别`、`关系层级`、`关系节点标题`、`上级连接线标题`、`关系简述`；层级 ≥ 二级时填 `所属一级关系` 等链字段（见 schema）。
+2. 每条记录字段：`关联史略名称`、`关系ID`、`关系类别`、`关系层级`、`关系节点标题`、`上级连接线标题`、`关系简述`；二级分类枢纽须含 `节点类型":"二级分类"`；层级 ≥ 二级时填 `所属一级关系` 等链字段（见 schema）。
 3. `关联史略名称` 固定为 **{subject}**。
 4. {_category_rules(category)}
-5. 任意路径 **最多四级**；禁止五级与 `所属四级关系`。
-6. 无可靠史料不编造；`关系简述` 1–2 句写依据要点。
-7. 禁止 君臣/敌对 旧类别名（同僚·敌对 → `同僚`；外部阵营 → `外敌`）。
+5. **仅依据下方 grounding**（06详情/04译文/索引）写关系；无依据不编造；不得凭通识补节点。
+6. 除「好友」外，须先写二级分类枢纽（`关系层级=一级`，`上级连接线标题=""`），再挂具体人物；好友人物直接一级挂出且边标题为空。**无具体人物的二级枢纽不要写**（不适用则整类输出 `[]`）。
+7. 除「家庭·配偶→子女」外，人物均为叶节点；禁止孙辈、徒孙、兄弟姐妹之子女。
+8. 同僚/敌对/师徒：二级枢纽→人物的 `上级连接线标题` 必须为 `""`；家庭边标题按 taxonomy（父亲/母亲、正妻/妾/嫔妃/丈夫、兄/弟/姐/妹、子/女）。配偶边标题**必须站在条目主人公视角**（对方是主人公的正妻/妾/嫔妃，或主人公的丈夫；如嫘祖→黄帝用「丈夫」，黄帝→嫘祖用「正妻」）。婚姻关系只写「家庭·配偶」，禁止再挂到同僚或好友。
+9. 禁止旧类别名：`君臣`→`同僚`；顶级`外敌`→`敌对`；`师从`→`师徒`。好友**禁止**写成二级分类枢纽。
+10. `关系简述` 1–2 句写依据要点（可追溯到 grounding）。
 
 # 关系 taxonomy（SSOT）
 
@@ -233,7 +236,7 @@ def build_category_prompt(
 
 {schema}
 
-# 待整理人物
+# 待整理人物（grounding · 唯一事实源）
 
 {grounding}
 
@@ -260,8 +263,10 @@ def normalize_records(records: list[dict[str, Any]], subject: str) -> list[dict[
         cat = str(row.get("关系类别", "")).strip()
         if cat == "君臣":
             cat = "同僚"
-        if cat == "敌对":
-            cat = "外敌"
+        elif cat == "外敌":
+            cat = "敌对"
+        elif cat == "师从":
+            cat = "师徒"
         row["关系类别"] = cat
         rid = str(row.get("关系ID", "")).strip()
         prefix = CATEGORY_ID_PREFIX.get(cat, "HD-REL")
@@ -453,7 +458,7 @@ def compose_one(
 当前 JSON：
 {json.dumps(records, ensure_ascii=False, indent=2)}
 
-规则 SSOT 摘要：关系类别仅 家庭/同僚/师从/外敌/好友；最多四级；禁止 所属四级关系 与五级。
+规则 SSOT 摘要：关系类别仅 家庭/同僚/敌对/师徒/好友；二级分类为枢纽节点；除配偶→子女外人物为叶；禁止 所属四级关系 与五级。
 
 请输出修正后的 JSON 数组：
 """
@@ -501,7 +506,7 @@ def _verify_and_maybe_revise(
 当前 JSON：
 {json.dumps(records, ensure_ascii=False, indent=2)}
 
-规则 SSOT 摘要：关系类别仅 家庭/同僚/师从/外敌/好友；最多四级；禁止 所属四级关系 与五级。
+规则 SSOT 摘要：关系类别仅 家庭/同僚/敌对/师徒/好友；二级分类为枢纽节点；除配偶→子女外人物为叶；禁止 所属四级关系 与五级。
 
 请输出修正后的 JSON 数组：
 """

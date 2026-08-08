@@ -68,7 +68,12 @@ def source_original_fingerprint(text: str) -> str:
     return text
 
 
-def attach_source_original(output_file, recalled: Dict[str, Any]) -> None:
+def attach_source_original(
+    output_file,
+    recalled: Dict[str, Any],
+    *,
+    translation_version: str | None = None,
+) -> None:
     """将「史料原文」「原文出处」写入产出 JSON（编排器调用，不由 LLM 生成）。"""
     from pathlib import Path
 
@@ -80,6 +85,23 @@ def attach_source_original(output_file, recalled: Dict[str, Any]) -> None:
         data["原文出处"] = citation
     else:
         data.pop("原文出处", None)
+    if translation_version:
+        data["翻译版本"] = translation_version
+    path.write_text(
+        json.dumps(data, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+
+
+def stamp_translation_version(output_file, translation_version: str) -> None:
+    """为已落盘产出补写翻译版本（repair/legacy 路径）。"""
+    path = Path(output_file)
+    if not path.is_file() or not translation_version:
+        return
+    data = json.loads(path.read_text(encoding="utf-8"))
+    if data.get("翻译版本") == translation_version:
+        return
+    data["翻译版本"] = translation_version
     path.write_text(
         json.dumps(data, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",

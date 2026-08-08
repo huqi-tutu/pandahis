@@ -1,0 +1,133 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01063",
+  "写作结构": "正史叙述见翻译详录（《左传》襄公二十六年传）。拓展文重点呈现史外异说与延展：可引《国语》或《韩非子》等先秦文献中的相关议论或异辞，说明此事在当时的流传与评价；后世综述可引《史通》等对宦官干政的评点，但仅作合段补充，不展开具体情节。叙事留白处为太子痤自杀场景、伊戾被烹杀过程等，禁止编造。",
+  "候选著作": [
+    {
+      "出处": "《左传·襄公二十六年》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "本条目的主要史料出处，详细记载伊戾构陷太子痤的全过程。",
+      "检索词": "伊戾 太子痤",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《国语·楚语上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载楚大夫申无宇论及内宠（宦官）干政之害，或可作为春秋时期对宦官乱政的普遍认知背景。",
+      "检索词": "内宠 干政",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《韩非子·说难》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "韩非子论说人主近臣（含宦官）构陷之易，可引为对伊戾一类事件的机制性分析。",
+      "检索词": "近臣 构陷",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史通·内篇·品藻》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "刘知幾评点春秋人物，或涉及对伊戾等宦官祸乱储君的史论。",
+      "检索词": "伊戾 宦官",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《册府元龟·内臣部·构陷》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋代类书辑录历代宦官构陷事例，可能收录伊戾事并附有评语。",
+      "检索词": "伊戾 构陷",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《左传·襄公二十六年》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "本条目的主要史料出处，详细记载伊戾构陷太子痤的全过程。",
+      "检索词": "伊戾 太子痤",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《国语·楚语上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载楚大夫申无宇论及内宠（宦官）干政之害，或可作为春秋时期对宦官乱政的普遍认知背景。",
+      "检索词": "内宠 干政",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《韩非子·说难》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "韩非子论说人主近臣（含宦官）构陷之易，可引为对伊戾一类事件的机制性分析。",
+      "检索词": "近臣 构陷",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《史通·内篇·品藻》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "刘知幾评点春秋人物，或涉及对伊戾等宦官祸乱储君的史论。",
+      "检索词": "伊戾 宦官",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《册府元龟·内臣部·构陷》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋代类书辑录历代宦官构陷事例，可能收录伊戾事并附有评语。",
+      "检索词": "伊戾 构陷",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 3,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

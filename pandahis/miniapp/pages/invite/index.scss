@@ -5,250 +5,369 @@
   background: $page-bg;
 }
 
+.nav-rules {
+  padding: 8rpx 4rpx 8rpx 16rpx;
+  font-size: 26rpx;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: $theme-primary;
+  line-height: 1.2;
+}
+
 .page-invite {
   box-sizing: border-box;
-  min-height: 100vh;
-  padding-left: 24rpx;
-  padding-right: 24rpx;
-  padding-bottom: calc(48rpx + env(safe-area-inset-bottom));
+  height: 100vh;
+  padding-left: 32rpx;
+  padding-right: 32rpx;
+  padding-bottom: calc(140rpx + env(safe-area-inset-bottom));
 }
 
-/* ─── Hero ─── */
-.hero {
-  margin-top: 24rpx;
-  padding: 28rpx;
+/* ─── 上卡 ─── */
+.hero-card {
+  margin-top: 32rpx;
+  padding: 40rpx 32rpx 40rpx;
   border-radius: 24rpx;
   background: $card-bg;
-  border: 1rpx solid $divider;
-  box-shadow: 0 2rpx 12rpx rgba(74, 63, 63, 0.05);
+  box-shadow: $shadow-card;
 }
 
-.hero-tag {
-  font-size: 22rpx;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  color: $accent-v5;
-  text-transform: uppercase;
+.slogan-sub {
+  display: block;
+  text-align: center;
+  font-size: 24rpx;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.1em;
+  color: $text-caption;
 }
 
-.hero-desc {
-  margin-top: 8rpx;
-  font-size: 28rpx;
+.slogan-main {
+  margin-top: 16rpx;
+  text-align: center;
+  font-size: 44rpx;
   font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 0.06em;
   color: $text-title;
-  line-height: 1.45;
 }
 
-.hero-stats {
-  margin-top: 24rpx;
+.slogan-desc {
+  margin-top: 16rpx;
+  text-align: center;
+  font-size: 24rpx;
+  line-height: 1.6;
+  color: $text-caption;
+  padding: 0 8rpx;
+}
+
+.stats-row {
+  margin-top: 32rpx;
   display: flex;
-  align-items: stretch;
+  gap: 16rpx;
 }
 
-.stat {
+.stats-card {
   flex: 1;
+  min-width: 0;
+  padding: 24rpx 16rpx;
+  border-radius: 16rpx;
+  background: rgba(74, 63, 63, 0.04);
   text-align: center;
 }
 
-.stat-val {
-  font-size: 56rpx;
-  font-weight: 800;
+.stats-label {
+  font-size: 22rpx;
+  line-height: 1.4;
+  color: $text-caption;
+}
+
+.stats-val {
+  margin-top: 12rpx;
+  font-size: 48rpx;
+  font-weight: 700;
   line-height: 1.1;
   color: $theme-primary;
   font-variant-numeric: tabular-nums;
 }
 
-.stat-label {
-  margin-top: 6rpx;
-  font-size: 22rpx;
-}
-
-.stat-divider {
-  width: 1rpx;
-  margin: 8rpx 0;
-  background: $divider;
-}
-
-.hero-hint {
-  margin-top: 20rpx;
-  padding-top: 16rpx;
-  border-top: 1rpx solid $divider;
-  font-size: 24rpx;
-  color: $accent-v5;
-  line-height: 1.5;
-}
-
-/* ─── 卡片 ─── */
-.card {
-  margin-top: 20rpx;
-  padding: 24rpx;
-}
-
-.card-title {
-  font-size: 30rpx;
-  font-weight: 700;
-  color: $text-title;
-}
-
-.card-note,
-.rules {
-  margin-top: 12rpx;
-  font-size: 24rpx;
-  line-height: 1.55;
-}
-
-.em {
-  font-weight: 700;
-  color: $accent-v5;
-}
-
-/* ─── 邀请码 ─── */
-.code-row {
-  margin-top: 16rpx;
+.share-btn {
+  margin-top: 32rpx;
+  width: 100%;
+  height: 96rpx;
+  border-radius: 999rpx;
+  background: $theme-primary;
+  color: $theme-on-primary;
+  border: none;
+  padding: 0;
   display: flex;
   align-items: center;
-  gap: 16rpx;
+  justify-content: center;
+  box-shadow: $shadow-elevated;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-.code {
-  flex: 1;
-  min-width: 0;
-  font-size: 36rpx;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  color: $text-title;
-  font-family: $font-family-mono;
+.share-btn::after {
+  border: none;
 }
 
-.code-skeleton {
-  flex: 1;
-  height: 44rpx;
-  border-radius: 10rpx;
-  background: linear-gradient(
-    90deg,
-    rgba(237, 234, 230, 0.9) 0%,
-    rgba(237, 234, 230, 0.45) 50%,
-    rgba(237, 234, 230, 0.9) 100%
-  );
-  background-size: 200% 100%;
-  animation: shimmer 1.2s ease-in-out infinite;
+.share-btn:active {
+  opacity: 0.92;
+  transform: translateY(-2rpx);
 }
 
-@keyframes shimmer {
-  0% { background-position: 100% 0; }
-  100% { background-position: -100% 0; }
-}
-
-.btn-copy {
-  flex-shrink: 0;
-  padding: 12rpx 24rpx;
-  font-size: 24rpx;
-  font-weight: 700;
-  color: $theme-primary;
-  border-radius: 999rpx;
-  border: 1rpx solid $divider;
-  background: $page-bg;
-}
-
-.btn-copy.disabled {
+.share-btn.disabled {
   opacity: 0.45;
   pointer-events: none;
 }
 
-/* ─── 绑定 ─── */
-.bind-row {
-  margin-top: 16rpx;
+.share-btn-inner {
   display: flex;
   align-items: center;
+  justify-content: center;
+  gap: 12rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+}
+
+.share-btn-icon {
+  /* 素材四周有透明留白，略放大以与文字视觉等高 */
+  width: 40rpx;
+  height: 40rpx;
+  display: block;
+  flex-shrink: 0;
+}
+
+.share-btn-text {
+  font-size: 28rpx;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  line-height: 40rpx;
+  height: 40rpx;
+  color: $theme-on-primary;
+}
+
+/* ─── 列表卡 ─── */
+.list-card {
+  margin-top: 24rpx;
+  padding: 32rpx;
+  border-radius: 24rpx;
+  background: $card-bg;
+  box-shadow: $shadow-card;
+}
+
+.list-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
   gap: 16rpx;
 }
 
-.bind-input {
-  flex: 1;
-  min-width: 0;
-  height: 72rpx;
-  line-height: 72rpx;
-  padding: 0 20rpx;
-  border-radius: 12rpx;
-  border: 1rpx solid $divider;
-  background: $page-bg;
-  font-size: 28rpx;
-  letter-spacing: 0.08em;
-  font-family: $font-family-mono;
-  box-sizing: border-box;
+.list-title {
+  font-size: 30rpx;
+  font-weight: 700;
   color: $text-title;
+  line-height: 1.2;
 }
 
-.input-placeholder {
-  color: $text-time;
+.list-count {
+  font-size: 22rpx;
+  color: $text-caption;
 }
 
-/* ─── 分享 ─── */
-.share-title {
-  margin-top: 20rpx;
-  padding-top: 20rpx;
+.list-empty {
+  margin-top: 40rpx;
+  padding: 32rpx 0 16rpx;
+  font-size: 24rpx;
+  line-height: 1.6;
+  text-align: center;
+  color: $text-caption;
+}
+
+.list-empty--action {
+  color: $text-body;
+  text-decoration: underline;
+  text-underline-offset: 6rpx;
+}
+
+.invitee-list {
+  margin-top: 8rpx;
+}
+
+.invitee-row {
+  display: flex;
+  align-items: center;
+  gap: 24rpx;
+  padding: 24rpx 0;
+}
+
+.invitee-row + .invitee-row {
   border-top: 1rpx solid $divider;
 }
 
-.share-notice {
-  color: $accent-v5;
-  font-size: 24rpx;
-  line-height: 1.5;
+.invitee-avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  background: rgba(74, 63, 63, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
-.btn-share {
-  margin-top: 16rpx;
+.invitee-img {
   width: 100%;
-  padding: 22rpx;
+  height: 100%;
+}
+
+.invitee-initial {
   font-size: 28rpx;
-  font-weight: 700;
-  border-radius: 16rpx;
-  background: $theme-primary;
-  color: #fff;
-  text-align: center;
-  line-height: 1.2;
-  box-shadow: 0 4rpx 16rpx rgba(74, 63, 63, 0.18);
+  font-weight: 600;
+  color: $theme-primary;
 }
 
-.btn-share.disabled {
-  opacity: 0.5;
-  pointer-events: none;
+.invitee-meta {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8rpx;
 }
 
-/* ─── 未登录 ─── */
-.login-banner {
-  margin-top: 24rpx;
-  padding: 32rpx 28rpx;
+.invitee-name {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: $text-title;
+  line-height: 1.3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-.login-title {
-  font-size: 32rpx;
+.invitee-time {
+  font-size: 22rpx;
+  line-height: 1.4;
+  color: $text-caption;
+}
+
+.invitee-reward {
+  flex-shrink: 0;
+  font-size: 24rpx;
+  font-weight: 600;
+  line-height: 1.4;
+  color: $theme-primary;
+  font-variant-numeric: tabular-nums;
+}
+
+.bottom-safe {
+  height: 48rpx;
+}
+
+/* ─── 规则弹层 ─── */
+.rules-mask {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(38, 38, 38, 0.36);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.rules-sheet {
+  width: 100%;
+  max-height: 72vh;
+  background: $card-bg;
+  border-radius: 32rpx 32rpx 0 0;
+  padding: 16rpx 40rpx calc(40rpx + env(safe-area-inset-bottom));
+  box-sizing: border-box;
+  box-shadow: $shadow-elevated;
+  animation: rules-up 0.22s ease;
+}
+
+@keyframes rules-up {
+  from {
+    transform: translateY(24rpx);
+    opacity: 0.6;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.rules-handle {
+  width: 64rpx;
+  height: 6rpx;
+  margin: 0 auto 24rpx;
+  border-radius: 999rpx;
+  background: $divider;
+}
+
+.rules-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16rpx;
+}
+
+.rules-title {
+  font-size: 34rpx;
   font-weight: 700;
   color: $text-title;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
 }
 
-.login-desc {
-  margin-top: 10rpx;
-  font-size: 26rpx;
-  line-height: 1.55;
-}
-
-.btn-cta {
-  margin-top: 24rpx;
-  padding: 22rpx;
-  text-align: center;
+.rules-close {
+  width: 56rpx;
+  height: 56rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 28rpx;
-  font-weight: 700;
-  border-radius: 16rpx;
-  background: $theme-primary;
-  color: #fff;
-  box-shadow: 0 4rpx 16rpx rgba(74, 63, 63, 0.18);
+  color: $text-caption;
+  border-radius: 50%;
+  background: rgba(74, 63, 63, 0.05);
 }
 
-/* ─── 底部提示 ─── */
-.hint {
-  margin-top: 20rpx;
-  padding: 0 4rpx;
-  font-size: 22rpx;
-  line-height: 1.5;
+.rules-body {
+  max-height: 52vh;
+}
+
+.rules-item {
+  display: flex;
+  gap: 20rpx;
+  padding: 20rpx 0;
+}
+
+.rules-item + .rules-item {
+  border-top: 1rpx solid $divider;
+}
+
+.rules-num {
+  @include font-title;
+  flex-shrink: 0;
+  width: 48rpx;
+  font-size: 24rpx;
+  font-weight: 700;
+  line-height: 1.6;
+  color: $text-caption;
+}
+
+.rules-text {
+  flex: 1;
+  font-size: 26rpx;
+  line-height: 1.65;
+  color: $text-body;
+}
+
+.rules-foot {
+  margin-top: 24rpx;
+  padding-bottom: 8rpx;
+  text-align: center;
+  font-size: 20rpx;
+  letter-spacing: 0.1em;
+  color: $text-time;
 }

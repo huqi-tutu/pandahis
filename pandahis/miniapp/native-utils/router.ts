@@ -13,6 +13,7 @@ export const ROUTES = {
   footprints: '/pages/footprints/index',
   originalText: '/pages/original-text/index',
   settings: '/pages/settings/index',
+  feedback: '/pages/feedback/index',
   about: '/pages/about/index',
   membership: '/pages/membership/index',
   inviteAssist: '/pages/invite-assist/index',

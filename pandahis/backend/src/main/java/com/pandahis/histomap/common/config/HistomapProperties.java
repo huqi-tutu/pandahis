@@ -13,6 +13,7 @@ public class HistomapProperties {
   private final Box box = new Box();
   private final WeChat weChat = new WeChat();
   private final Auth auth = new Auth();
+  private final Wikipedia wikipedia = new Wikipedia();
 
   @PostConstruct
   void applyWeChatMiniappDefaults() {
@@ -35,6 +36,10 @@ public class HistomapProperties {
 
   public Auth getAuth() {
     return auth;
+  }
+
+  public Wikipedia getWikipedia() {
+    return wikipedia;
   }
 
   public static class WeChat {
@@ -107,6 +112,101 @@ public class HistomapProperties {
       public void setExpiresDays(int expiresDays) {
         this.expiresDays = expiresDays;
       }
+    }
+  }
+
+  public static class Wikipedia {
+    /** MediaWiki API 根地址 */
+    private String apiBase = "https://zh.wikipedia.org/w/api.php";
+    private String lang = "zh";
+    private String userAgent = "PadanhisHistomap/1.0 (dictionary-lookup; contact: support@padanhis.local)";
+    /** 可选 OAuth access token；为空则匿名访问 */
+    private String accessToken = "";
+    private int connectTimeoutSeconds = 8;
+    private int requestTimeoutSeconds = 12;
+    private int cacheTtlSeconds = 21600;
+    private int maxExtractChars = 12000;
+    private int defaultLimit = 3;
+    private int maxLimit = 8;
+
+    public String getApiBase() {
+      return apiBase;
+    }
+
+    public void setApiBase(String apiBase) {
+      this.apiBase = apiBase;
+    }
+
+    public String getLang() {
+      return lang;
+    }
+
+    public void setLang(String lang) {
+      this.lang = lang;
+    }
+
+    public String getUserAgent() {
+      return userAgent;
+    }
+
+    public void setUserAgent(String userAgent) {
+      this.userAgent = userAgent;
+    }
+
+    public String getAccessToken() {
+      return accessToken;
+    }
+
+    public void setAccessToken(String accessToken) {
+      this.accessToken = accessToken;
+    }
+
+    public int getConnectTimeoutSeconds() {
+      return connectTimeoutSeconds;
+    }
+
+    public void setConnectTimeoutSeconds(int connectTimeoutSeconds) {
+      this.connectTimeoutSeconds = connectTimeoutSeconds;
+    }
+
+    public int getRequestTimeoutSeconds() {
+      return requestTimeoutSeconds;
+    }
+
+    public void setRequestTimeoutSeconds(int requestTimeoutSeconds) {
+      this.requestTimeoutSeconds = requestTimeoutSeconds;
+    }
+
+    public int getCacheTtlSeconds() {
+      return cacheTtlSeconds;
+    }
+
+    public void setCacheTtlSeconds(int cacheTtlSeconds) {
+      this.cacheTtlSeconds = cacheTtlSeconds;
+    }
+
+    public int getMaxExtractChars() {
+      return maxExtractChars;
+    }
+
+    public void setMaxExtractChars(int maxExtractChars) {
+      this.maxExtractChars = maxExtractChars;
+    }
+
+    public int getDefaultLimit() {
+      return defaultLimit;
+    }
+
+    public void setDefaultLimit(int defaultLimit) {
+      this.defaultLimit = defaultLimit;
+    }
+
+    public int getMaxLimit() {
+      return maxLimit;
+    }
+
+    public void setMaxLimit(int maxLimit) {
+      this.maxLimit = maxLimit;
     }
   }
 

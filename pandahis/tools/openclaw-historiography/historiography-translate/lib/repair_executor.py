@@ -6,7 +6,12 @@ from dataclasses import fields
 from pathlib import Path
 from typing import Any, List, Tuple
 
-from shared.qa_repair import RepairPlan, classify_translate_failure  # noqa: E402
+from shared.qa_repair import (
+    RepairPlan,
+    classify_translate_failure,
+    format_repair_feedback,
+    infer_translate_retry_from_phase,
+)  # noqa: E402
 
 from lib.attribution import apply_attribution_fixes  # noqa: E402
 from lib.plan_postprocess import finalize_plan  # noqa: E402
@@ -14,7 +19,7 @@ from lib.recall import recall_entry  # noqa: E402
 from lib.refine import refine_entry  # noqa: E402
 from lib.repair_ticket import load_repair_ticket, save_repair_ticket  # noqa: E402
 from lib.verify import load_output, verify_output  # noqa: E402
-from lib.work_artifacts import plan_path  # noqa: E402
+from lib.work_artifacts import load_normalized_plan, plan_path  # noqa: E402
 
 
 def _plan_from_dict(data: dict[str, Any]) -> RepairPlan:
@@ -80,6 +85,12 @@ def execute_repair(
             __import__("json").dumps(data, ensure_ascii=False, indent=2) + "\n",
             encoding="utf-8",
         )
+        from lib.config import translation_version_for_output_dir
+        from lib.source_text import stamp_translation_version
+
+        ver = translation_version_for_output_dir(out_dir)
+        if ver:
+            stamp_translation_version(target, ver)
         v_ok, v_errs = verify_output(entry_id, recalled, out_dir, plan=plan_data)
         if v_ok:
             return True, f"归因修复完成：{changes}"
@@ -111,6 +122,9 @@ def execute_repair(
         from lib import runner
         import os
 
+        from lib.verify import verify_mother_draft
+        from lib.work_artifacts import load_normalized_plan, mother_draft_path
+
         feedback = str(ticket.get("feedback") or "").strip()
         if feedback:
             os.environ["TRANSLATE_REPAIR_FEEDBACK"] = feedback[:3500]
@@ -119,10 +133,25 @@ def execute_repair(
                 pf = plan_path(entry_id, entry_name, work_dir)
                 if pf.is_file():
                     pf.unlink()
-            from_phase = "phase2" if stage.startswith("phase2") or "enrich" in stage else None
+            mother_verified = False
+            mf = mother_draft_path(entry_id, entry_name, work_dir)
+            pf = plan_path(entry_id, entry_name, work_dir)
+            plan_data = {}
+            if pf.is_file():
+                _, plan_data, _ = load_normalized_plan(pf, recalled)
+            if mf.is_file() and plan_data:
+                mother_verified, _ = verify_mother_draft(
+                    entry_id, recalled, mf, plan=plan_data, batch_mode=False
+                )
+            from_phase = infer_translate_retry_from_phase(
+                errors, stage=stage, mother_verified=mother_verified
+            )
+            if from_phase is None and str((plan.extra or {}).get("from_phase") or "") == "phase2":
+                from_phase = "phase2"
             rc = runner.run_one(
                 entry_id,
                 index_path=index_path,
+                output_dir=out_dir,
                 use_llm=True,
                 from_phase=from_phase,
             )

@@ -528,10 +528,15 @@ Page({
     sharePosterExcerptDate: '',
   },
   _selectionContext: null as WechatMiniprogram.IAnyObject | null,
+  /** 详情 Tab 实时滚动位置（沉浸态判定用） */
   _detailScrollTop: 0,
+  /** 离开详情 Tab 时缓存的阅读进度（当次访问有效） */
+  _contentScrollTop: 0,
+  _contentReadingProgress: 0,
   _tabBarPx: 0,
   _suppressChromeHide: false,
   _suppressChromeHideTimer: null as ReturnType<typeof setTimeout> | null,
+  _restoreContentScrollTimer: null as ReturnType<typeof setTimeout> | null,
   _rawOriginalRef: null,
   onReady() {
     this.bindDetailSelectionContext()
@@ -564,8 +569,56 @@ Page({
       clearTimeout(this._suppressChromeHideTimer)
       this._suppressChromeHideTimer = null
     }
+    if (this._restoreContentScrollTimer) {
+      clearTimeout(this._restoreContentScrollTimer)
+      this._restoreContentScrollTimer = null
+    }
     stopNarration()
     this.setData({ audioOpen: false })
+  },
+  /** 强制设置 scroll-view 的 scroll-top（同值时需先 bump 再设回） */
+  applyBodyScrollTop(target: number, after?: () => void) {
+    const safeTarget = Math.max(0, target)
+    const bump = this.data.bodyScrollTop === safeTarget
+      ? (safeTarget === 0 ? 0.01 : safeTarget - 0.01)
+      : safeTarget
+    this.setData({ bodyScrollTop: bump }, () => {
+      if (bump !== safeTarget) {
+        this.setData({ bodyScrollTop: safeTarget }, after)
+      } else {
+        after?.()
+      }
+    })
+  },
+  /** 详情 DOM 重建后恢复阅读进度（scrollHeight 就绪前会短间隔重试） */
+  restoreContentScrollTop(target: number, attempt = 0) {
+    const safeTarget = Math.max(0, target)
+    if (safeTarget <= 0) {
+      this.applyBodyScrollTop(0, () => this.bindDetailSelectionContext())
+      return
+    }
+    const maxAttempts = 8
+    wx.createSelectorQuery()
+      .in(this)
+      .select('#boxBodyScroll')
+      .scrollOffset()
+      .select('#boxBodyScroll')
+      .boundingClientRect()
+      .exec((res) => {
+        const scroll = (res && res[0]) as { scrollHeight?: number } | undefined
+        const rect = (res && res[1]) as { height?: number } | undefined
+        const scrollHeight = Number(scroll?.scrollHeight) || 0
+        const viewportH = Number(rect?.height) || 0
+        const ready = scrollHeight >= safeTarget + Math.max(viewportH * 0.35, 64)
+        if (ready || attempt >= maxAttempts) {
+          this.applyBodyScrollTop(safeTarget, () => this.bindDetailSelectionContext())
+          return
+        }
+        this._restoreContentScrollTimer = setTimeout(() => {
+          this._restoreContentScrollTimer = null
+          this.restoreContentScrollTop(safeTarget, attempt + 1)
+        }, 40 + attempt * 24) as unknown as number
+      })
   },
   onShareAppMessage() {
     const h = this.data.header as BoxHeader | null
@@ -683,7 +736,7 @@ Page({
     if (reason === 'LOGIN_REQUIRED' || action === 'OPEN_LOGIN') {
       wx.showModal({
         title: '需要登录',
-        content: '登录后可开通会员或使用阅读点查看评述、见证与原文。',
+        content: '登录后可使用阅读点查看评述、见证与原文。',
         confirmText: '去登录',
         success: (r) => {
           if (r.confirm) navigateTo(ROUTES.login)
@@ -698,11 +751,11 @@ Page({
       action === 'OPEN_MEMBERSHIP_PAGE'
     ) {
       wx.showModal({
-        title: '需要会员或阅读点',
-        content: '开通会员可免扣点阅读评述、见证与原文；也可邀友助力免费领季卡，或在设置中查看阅读点。',
-        confirmText: '去开通',
+        title: '需要阅读点',
+        content: '深度阅读需消耗阅读点。可邀请好友注册获取阅读点，或稍后再试。',
+        confirmText: '去邀请',
         success: (r) => {
-          if (r.confirm) wx.switchTab({ url: ROUTES.membership })
+          if (r.confirm) wx.switchTab({ url: ROUTES.invite })
         },
       })
     }
@@ -835,7 +888,7 @@ Page({
         if (msg === 'UNAUTHORIZED' || msg.includes('login required')) {
           err = '请先登录后查看评述'
         } else if (msg.includes('INSUFFICIENT_READS') || msg.includes('NEED_MEMBERSHIP_OR_READS')) {
-          err = '需要会员或阅读点，请前往「会员」页开通或邀友助力'
+          err = '阅读点不足，可前往「邀请」页邀请好友获取'
         }
         this.setData({
           critiques: [],
@@ -858,7 +911,7 @@ Page({
         if (msg === 'UNAUTHORIZED' || msg.includes('login required')) {
           err = '请先登录后查看见证'
         } else if (msg.includes('INSUFFICIENT_READS') || msg.includes('NEED_MEMBERSHIP_OR_READS')) {
-          err = '需要会员或阅读点，请前往「会员」页开通或邀友助力'
+          err = '阅读点不足，可前往「邀请」页邀请好友获取'
         }
         this.setData({
           relics: [],
@@ -902,11 +955,15 @@ Page({
     }
     this.hideSelectionBar()
 
-    const nextScrollTop = this.data.bodyScrollTop === 0 ? 0.01 : 0
+    const prevTab = this.data.tab
+    // 离开详情 Tab：缓存当次阅读进度
+    if (prevTab === 'content') {
+      this._contentScrollTop = this._detailScrollTop || 0
+      this._contentReadingProgress = this.data.readingProgress || 0
+    }
 
     // 防止同一次点击冒泡到 onPageTap 后又被切成阅读全屏态
     this._ignoreTapFromBar = true
-    this._detailScrollTop = 0
     this._suppressChromeHide = true
     if (this._suppressChromeHideTimer) {
       clearTimeout(this._suppressChromeHideTimer)
@@ -916,20 +973,36 @@ Page({
       this._suppressChromeHideTimer = null
     }, 280) as unknown as number
 
+    if (this._restoreContentScrollTimer) {
+      clearTimeout(this._restoreContentScrollTimer)
+      this._restoreContentScrollTimer = null
+    }
+
+    const restoreContent = tab === 'content'
+    const restoreTop = restoreContent ? Math.max(0, this._contentScrollTop || 0) : 0
+    this._detailScrollTop = restoreTop
+
     // 切换 Tab 时始终显示顶部四 Tab（非详情阅读沉浸态）
     this.setData({
       tab,
       uiFocused: true,
-      readingProgress: 0,
-      bodyScrollTop: nextScrollTop,
+      readingProgress: restoreContent ? this._contentReadingProgress || 0 : 0,
     }, () => {
-      if (nextScrollTop !== 0) {
-        this.setData({ bodyScrollTop: 0 })
+      if (restoreContent) {
+        this.applyBodyScrollTop(0)
+        this._restoreContentScrollTimer = setTimeout(() => {
+          this._restoreContentScrollTimer = null
+          this.restoreContentScrollTop(restoreTop)
+        }, 32) as unknown as number
+      } else {
+        this.applyBodyScrollTop(0)
       }
       if (tab === 'relations') {
         this.loadRelationsGraph()
       } else {
-        void this.ensureTab(tab)
+        void this.ensureTab(tab).then(() => {
+          if (restoreContent) this.bindDetailSelectionContext()
+        })
       }
     })
   },
@@ -940,6 +1013,8 @@ Page({
     if (!c) return
     const boxName = String(this.data.navTitle || '').trim()
     const angleTitle = critiqueAngleTitle(String(c.title || ''))
+    const header = this.data.header as BoxHeader | null
+    const { civ, dynasty } = readBoxLocationNames(header?.box)
     navigateTo(ROUTES.critiqueDetail, {
       navTitle: boxName ? `${boxName}・评述` : '评述',
       title: angleTitle || String(c.title || '').trim(),
@@ -947,6 +1022,10 @@ Page({
       book: c.source || '',
       era: c.eraMeta || '',
       body: String(c.content || c.bodyQuote || '').trim(),
+      boxId: this.data.boxId || '',
+      boxTitle: boxName || header?.box?.title || '',
+      civilizationName: civ,
+      dynastyName: dynasty,
     })
   },
   onRelicTap(e: WechatMiniprogram.BaseEvent) {
@@ -954,12 +1033,20 @@ Page({
     const list = this.data.relics as RelicVm[]
     const r = list[idx]
     if (!r) return
+    const boxName = String(this.data.navTitle || '').trim()
+    const header = this.data.header as BoxHeader | null
+    const { civ, dynasty } = readBoxLocationNames(header?.box)
     navigateTo(ROUTES.relicDetail, {
+      navTitle: boxName ? `${boxName}・见证` : '见证',
       name: r.name || '',
       museum: r.museum || '',
       // 只用完整介绍；summary 入库时会截断并加「…」，拼进去会像「没写完」
       detail: String(r.description || r.teaser || '').trim(),
       imageUrl: r.imageUrl || '',
+      boxId: this.data.boxId || '',
+      boxTitle: boxName || header?.box?.title || '',
+      civilizationName: civ,
+      dynastyName: dynasty,
     })
   },
   async onPlayIntro() {
@@ -972,7 +1059,11 @@ Page({
       return
     }
     if (cur === 'loading') {
-      wx.showToast({ title: '正在准备朗读…', icon: 'none', duration: 1500 })
+      wx.showToast({
+        title: this.data.audioOpen ? '正在加载音频…' : '正在准备朗读…',
+        icon: 'none',
+        duration: 1500,
+      })
       return
     }
 
@@ -992,6 +1083,7 @@ Page({
     }
 
     let loadingVisible = false
+    let initialReady = false
     try {
       wx.showLoading({ title: '正在准备朗读', mask: true })
       loadingVisible = true
@@ -1003,13 +1095,28 @@ Page({
           if (s === 'playing' && loadingVisible) {
             wx.hideLoading()
             loadingVisible = false
+            initialReady = true
           }
-          if (s === 'idle') {
+          // 拖进度到未缓存片：短暂提示，不关浮层
+          if (s === 'loading' && initialReady && this.data.audioOpen) {
+            wx.showToast({ title: '加载中…', icon: 'none', duration: 800 })
+          }
+          // seek 完成进入 playing/paused 后再允许 timeUpdate 写回进度
+          if ((s === 'playing' || s === 'paused' || s === 'idle') && this._audioSeeking) {
+            this._audioSeeking = false
+          }
+          // 仅在已经成功开播过之后，idle 才关闭浮层（避免启动失败/重启时闪退）
+          if (s === 'idle' && initialReady) {
             this.setData({ audioOpen: false, audioProgress: 0 })
           }
           this.setData({ narrationState: s })
         },
         (p) => {
+          // 拖动进度条时以手势为准，避免 timeUpdate 回跳
+          if (this._audioSeeking) {
+            this.setData({ audioDuration: p.duration })
+            return
+          }
           this.setData({
             audioProgress: p.progress,
             audioCurrentTime: p.current,
@@ -1017,10 +1124,15 @@ Page({
           })
         }
       )
+      // start 成功返回时若仍未 playing（极端情况），以当前引擎状态为准
+      if (getNarrationState() === 'playing' || getNarrationState() === 'paused') {
+        initialReady = true
+      }
     } catch (e: unknown) {
       const msg = e instanceof Error ? e.message : '朗读失败'
       wx.showToast({ title: msg.slice(0, 28), icon: 'none', duration: 2800 })
-      this.setData({ narrationState: 'idle', audioOpen: false })
+      // 启动失败保留浮层，便于用户重试；仅复位状态
+      this.setData({ narrationState: 'idle' })
     } finally {
       if (loadingVisible) wx.hideLoading()
     }
@@ -1037,6 +1149,11 @@ Page({
     if (getNarrationState() === 'idle') void this.onPlayIntro()
   },
   toggleAudioPlayback() {
+    const cur = getNarrationState()
+    if (cur === 'loading') {
+      wx.showToast({ title: '正在加载音频…', icon: 'none', duration: 1200 })
+      return
+    }
     toggleNarrationPlayback()
     this.setData({ narrationState: getNarrationState() })
   },
@@ -1050,9 +1167,24 @@ Page({
   },
 
   _audioSeekStartX: 0,
+  _audioSeeking: false,
 
   onAudioSeekStart() {
     this._audioSeekStartX = 0
+    this._audioSeeking = true
+  },
+
+  _formatAudioMmSs(sec: number): string {
+    if (!Number.isFinite(sec) || sec < 0) return '0:00'
+    const m = Math.floor(sec / 60)
+    const s = Math.floor(sec % 60)
+    return `${m}:${s < 10 ? '0' : ''}${s}`
+  },
+
+  _parseAudioMmSs(text: string): number {
+    const m = String(text || '0:00').match(/^(\d+):(\d{1,2})$/)
+    if (!m) return 0
+    return Number(m[1]) * 60 + Number(m[2])
   },
 
   onAudioSeekMove(e: WechatMiniprogram.TouchEvent) {
@@ -1064,20 +1196,39 @@ Page({
       const x = touch.clientX - rect.left
       const ratio = Math.max(0, Math.min(1, x / rect.width))
       const pct = Math.round(ratio * 100)
-      this.setData({ audioProgress: pct })
+      const totalSec = this._parseAudioMmSs(this.data.audioDuration)
+      const curSec = totalSec > 0 ? (pct / 100) * totalSec : 0
+      this.setData({
+        audioProgress: pct,
+        audioCurrentTime: this._formatAudioMmSs(curSec),
+      })
     }).exec()
   },
 
   onAudioSeekEnd(e: WechatMiniprogram.TouchEvent) {
     const touch = e.changedTouches?.[0]
-    if (!touch) return
+    if (!touch) {
+      // 保持 _audioSeeking，等 playing 回调再清，避免旧 timeUpdate 回跳
+      setTimeout(() => {
+        if (this._audioSeeking && getNarrationState() !== 'loading') this._audioSeeking = false
+      }, 600)
+      return
+    }
     const query = wx.createSelectorQuery().in(this)
     query.select('.box-audio-scrub-track').boundingClientRect((rect) => {
-      if (!rect || rect.width <= 0) return
+      if (!rect || rect.width <= 0) {
+        this._audioSeeking = false
+        return
+      }
       const x = touch.clientX - rect.left
       const ratio = Math.max(0, Math.min(1, x / rect.width))
       const pct = Math.round(ratio * 100)
+      this.setData({ audioProgress: pct })
+      // 松手后仍短暂锁进度，待引擎 seek 完成（state→playing）再解锁
       seekNarrationPct(pct)
+      setTimeout(() => {
+        if (this._audioSeeking && getNarrationState() !== 'loading') this._audioSeeking = false
+      }, 1200)
     }).exec()
   },
 

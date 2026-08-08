@@ -1,4 +1,9 @@
+import { hasToken } from '../native-utils/api'
+import { ROUTES, navigateTo } from '../native-utils/router'
+
 type TabItem = { pagePath: string }
+
+const INVITE_TAB_INDEX = 2
 
 Component({
   data: {
@@ -6,7 +11,7 @@ Component({
     list: [
       { pagePath: '/pages/home/index' },
       { pagePath: '/pages/search/index' },
-      { pagePath: '/pages/membership/index' },
+      { pagePath: '/pages/invite/index' },
       { pagePath: '/pages/my/index' },
     ] as TabItem[],
   },
@@ -19,6 +24,10 @@ Component({
       const index = Number(indexStr)
       const item = this.data.list[index]
       if (!item) return
+      if (index === INVITE_TAB_INDEX && !hasToken()) {
+        navigateTo(ROUTES.login, { from: 'invite' })
+        return
+      }
       wx.switchTab({ url: item.pagePath })
     },
   },

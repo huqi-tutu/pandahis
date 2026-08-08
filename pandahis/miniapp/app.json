@@ -14,6 +14,7 @@
     "pages/read-completed/index",
     "pages/original-text/index",
     "pages/settings/index",
+    "pages/feedback/index",
     "pages/about/index",
     "pages/membership/index",
     "pages/invite-assist/index",
@@ -46,7 +47,7 @@
     "list": [
       { "pagePath": "pages/home/index", "text": "图谱" },
       { "pagePath": "pages/search/index", "text": "搜索" },
-      { "pagePath": "pages/membership/index", "text": "会员" },
+      { "pagePath": "pages/invite/index", "text": "邀请" },
       { "pagePath": "pages/my/index", "text": "我的" }
     ]
   },

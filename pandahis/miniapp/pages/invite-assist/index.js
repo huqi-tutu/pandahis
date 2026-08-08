@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const api_1 = require("../../native-utils/api");
+const brand_assets_1 = require("../../native-utils/brand-assets");
 const router_1 = require("../../native-utils/router");
 const share_invite_1 = require("../../native-utils/share-invite");
 const nav_metrics_1 = require("../../native-utils/nav-metrics");
@@ -151,6 +152,7 @@ Page({
         return {
             title: '帮我助力，一起读历史图谱',
             path: path.startsWith('/') ? path : `/${path}`,
+            imageUrl: brand_assets_1.INVITE_SHARE_COVER_URL,
         };
     },
     onShareTimeline() {

@@ -119,7 +119,9 @@ function isPublicContentPath(path) {
         || /^\/boxes\//.test(p)
         || p.startsWith('/home/')
         || p === '/health'
-        || p.startsWith('/membership/plans'));
+        || p.startsWith('/membership/plans')
+        || p.startsWith('/dictionary/')
+        || p.startsWith('/wikipedia/'));
 }
 function shouldAttachBearerToken(path, method, auth) {
     if (!getToken())

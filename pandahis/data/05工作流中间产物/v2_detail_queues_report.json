@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-08-05T14:52:40.835421+00:00",
+  "counts": {
+    "translate": 129,
+    "translate_with_v1_04留档": 112,
+    "compose": 66
+  },
+  "skipped": {
+    "skip_done": 478,
+    "skip_xihan": 255
+  },
+  "files": {
+    "policy": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/v2_detail_policy.json",
+    "translate": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/v2_translate_queue.json",
+    "compose": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/v2_compose_queue.json",
+    "report": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/v2_detail_queues_report.json"
+  },
+  "deprecated_promote_queue": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/v2_promote_04_queue.json"
+}

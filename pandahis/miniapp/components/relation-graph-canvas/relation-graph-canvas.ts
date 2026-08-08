@@ -34,6 +34,7 @@ type Pos = {
   group: string
   targetBoxId?: string
   isCategory?: boolean
+  isSubCategory?: boolean
   isCenter?: boolean
   isExpandNode?: boolean
   isPerson?: boolean
@@ -57,15 +58,15 @@ const CENTER_TEXT = '#FAF8F5'
 const CATEGORY_FILL: Record<string, string> = {
   家庭: 'rgba(250, 246, 242, 0.95)',
   同僚: 'rgba(248, 246, 244, 0.95)',
-  师从: 'rgba(246, 250, 248, 0.95)',
-  外敌: 'rgba(250, 244, 244, 0.95)',
+  敌对: 'rgba(250, 244, 244, 0.95)',
+  师徒: 'rgba(246, 250, 248, 0.95)',
   好友: 'rgba(246, 248, 252, 0.95)',
 }
 const CATEGORY_STROKE: Record<string, string> = {
   家庭: 'rgba(162, 115, 79, 0.38)',
   同僚: 'rgba(127, 176, 105, 0.38)',
-  师从: 'rgba(99, 137, 156, 0.38)',
-  外敌: 'rgba(180, 100, 100, 0.35)',
+  敌对: 'rgba(180, 100, 100, 0.35)',
+  师徒: 'rgba(99, 137, 156, 0.38)',
   好友: 'rgba(120, 140, 180, 0.38)',
 }
 const CATEGORY_TEXT = '#6C757D'
@@ -77,11 +78,12 @@ const REL_LABEL_TEXT = '#FAF8F5'
 const GROUP_EDGE: Record<string, string> = {
   家庭: 'rgba(162, 115, 79, 0.45)',
   同僚: 'rgba(127, 176, 105, 0.45)',
-  师从: 'rgba(99, 137, 156, 0.45)',
-  外敌: 'rgba(180, 100, 100, 0.42)',
+  敌对: 'rgba(180, 100, 100, 0.42)',
+  师徒: 'rgba(99, 137, 156, 0.45)',
   好友: 'rgba(120, 140, 180, 0.42)',
   other: 'rgba(120, 110, 105, 0.38)',
 }
+const NO_EDGE_LABEL_GROUPS = new Set(['同僚', '敌对', '师徒', '好友'])
 const CENTER_R = 28
 const PERSON_R = 22
 const NODE_GAP = 10
@@ -92,7 +94,8 @@ const REL_LABEL_FONT = 7
 function normalizeGroupName(raw: string): string {
   const g = (raw || '').trim()
   if (g === '君臣') return '同僚'
-  if (g === '敌对') return '外敌'
+  if (g === '师从') return '师徒'
+  if (g === '外敌') return '敌对'
   return g
 }
 
@@ -100,17 +103,34 @@ function parseExtraGroup(extraJson?: string): string {
   if (!extraJson) return ''
   try {
     const o = JSON.parse(extraJson) as Record<string, unknown>
-    if (o.isCategoryNode) return normalizeGroupName(String(o.关系类别 || ''))
+    if (o.isCategoryNode || o.isSubCategoryNode) {
+      return normalizeGroupName(String(o.关系类别 || ''))
+    }
     const raw = String(o.关系类别 || o.group || o.category || o.cat || '')
-    const m = normalizeGroupName(raw).match(/家庭|同僚|师从|外敌|好友/)
+    const m = normalizeGroupName(raw).match(/家庭|同僚|敌对|师徒|好友/)
     return m ? m[0] : ''
   } catch {
     return ''
   }
 }
 
+function isSubCategoryNode(meta?: GraphNode): boolean {
+  if (!meta) return false
+  if (meta.type === 'subcategory') return true
+  try {
+    if (meta.extraJson) {
+      const o = JSON.parse(meta.extraJson) as Record<string, unknown>
+      if (o.isSubCategoryNode || o.节点类型 === '二级分类') return true
+    }
+  } catch {
+    /* ignore */
+  }
+  return false
+}
+
 function isCategoryNode(meta?: GraphNode): boolean {
   if (!meta) return false
+  if (isSubCategoryNode(meta)) return false
   if (meta.type === 'category') return true
   if (String(meta.key || '').startsWith('cat_')) return true
   try {
@@ -168,7 +188,8 @@ function radialOf(x: number, y: number): number {
   return Math.hypot(x, y)
 }
 
-function categoryBox(name: string): { w: number; h: number } {
+function categoryBox(name: string, compact = false): { w: number; h: number } {
+  if (compact) return { w: Math.max(48, name.length * 10 + 18), h: 26 }
   return { w: Math.max(56, name.length * 12 + 24), h: 30 }
 }
 
@@ -184,11 +205,12 @@ function addPos(
   y: number,
   depth: number,
   group: string,
-  flags: { isCenter?: boolean; isCategory?: boolean; isExpand?: boolean }
+  flags: { isCenter?: boolean; isCategory?: boolean; isSubCategory?: boolean; isExpand?: boolean }
 ) {
   const fullName = ((meta.name != null && String(meta.name).trim()) || meta.key).trim()
   const isCenter = !!flags.isCenter
   const isCategory = !!flags.isCategory
+  const isSubCategory = !!flags.isSubCategory
   let circleR = 0
   let boxW = 0
   let boxH = 0
@@ -205,6 +227,11 @@ function addPos(
     boxW = box.w
     boxH = box.h
     fontSize = CAT_FONT
+  } else if (isSubCategory) {
+    const box = categoryBox(fullName, true)
+    boxW = box.w
+    boxH = box.h
+    fontSize = Math.max(9, CAT_FONT - 1)
   } else {
     circleR = PERSON_R
     boxW = PERSON_R * 2
@@ -224,9 +251,10 @@ function addPos(
     group,
     targetBoxId: meta.targetBoxId,
     isCategory,
+    isSubCategory,
     isCenter,
     isExpandNode: !!flags.isExpand,
-    isPerson: !isCenter && !isCategory,
+    isPerson: !isCenter && !isCategory && !isSubCategory,
     circleR,
     boxW,
     boxH,
@@ -256,6 +284,7 @@ function posFromNode(meta: GraphNode, x: number, y: number, depth: number, cente
   addPos(posMap, meta, x, y, depth, nodeGroup(meta), {
     isCenter: meta.key === centerKey,
     isCategory: isCategoryNode(meta),
+    isSubCategory: isSubCategoryNode(meta),
     isExpand: isExpandNode(meta, name),
   })
   return posMap.get(meta.key)!
@@ -469,7 +498,13 @@ function computeBounds(positions: Pos[], edgeList: EdgeDraw[]) {
 }
 
 function edgeLabelText(e: GraphEdge, a: Pos, b: Pos): string {
-  if (a.isCenter && b.isCategory) return ''
+  if (a.isCenter && (b.isCategory || b.isSubCategory)) return ''
+  // 一级分类 → 二级枢纽：不显示边标题
+  if (a.isCategory && b.isSubCategory) return ''
+  // 同僚 / 敌对 / 师徒 / 好友：二级→人物（或好友一级→人物）不显示边标题
+  if (NO_EDGE_LABEL_GROUPS.has(a.group || b.group)) {
+    if (a.isSubCategory || a.isCategory) return ''
+  }
   const labelRaw = (e.label || '').trim().slice(0, 8)
   if (!labelRaw) return ''
   if (b.fullName.includes(`(${labelRaw})`)) return ''
@@ -483,7 +518,7 @@ function nodeAnchor(from: Pos, to: Pos): { x: number; y: number } {
   const ux = dx / len
   const uy = dy / len
 
-  if (from.isCategory || from.isCenter) {
+  if (from.isCategory || from.isSubCategory || from.isCenter) {
     const hw = from.boxW / 2
     const hh = from.boxH / 2
     const ax = Math.abs(ux)
@@ -852,7 +887,7 @@ Component({
         return
       }
 
-      if (p.isCategory) {
+      if (p.isCategory || p.isSubCategory) {
         drawCatRect(ctx, p, highlighted, dimmed)
         ctx.restore()
         return
@@ -909,13 +944,13 @@ Component({
 
     hitTestNode(layout: LayoutResult, lx: number, ly: number): Pos | null {
       const ordered = [...layout.positions].sort((a, b) => {
-        const pa = (a.isCenter ? 3 : 0) + (a.isCategory ? 2 : 0)
-        const pb = (b.isCenter ? 3 : 0) + (b.isCategory ? 2 : 0)
+        const pa = (a.isCenter ? 3 : 0) + (a.isCategory ? 2 : 0) + (a.isSubCategory ? 1 : 0)
+        const pb = (b.isCenter ? 3 : 0) + (b.isCategory ? 2 : 0) + (b.isSubCategory ? 1 : 0)
         return pa - pb
       })
       for (let i = ordered.length - 1; i >= 0; i--) {
         const p = ordered[i]
-        if (p.isCategory || p.isCenter) {
+        if (p.isCategory || p.isSubCategory || p.isCenter) {
           if (
             lx >= p.x - p.boxW / 2 - 4 &&
             lx <= p.x + p.boxW / 2 + 4 &&
@@ -994,7 +1029,7 @@ Component({
       if (!layout || !rect || !touch) return
       const pt = this.screenToLayout(touch.clientX - rect.left, touch.clientY - rect.top)
       const hit = this.hitTestNode(layout, pt.x, pt.y)
-      if (!hit || hit.isCategory) {
+      if (!hit || hit.isCategory || hit.isSubCategory) {
         if ((this as any)._selectedKey) {
           ;(this as any)._selectedKey = ''
           this.paintCached()

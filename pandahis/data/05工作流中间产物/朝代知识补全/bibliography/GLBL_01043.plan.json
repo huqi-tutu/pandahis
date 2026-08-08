@@ -1,0 +1,155 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01043",
+  "写作结构": "正史叙述见翻译详录（《史记·宋微子世家》）。拓展文以《左传》为核心，补充宋共公即位、华元弭兵尝试、荡泽之乱及平公继位等关键事件的编年记载。可提及《国语》中可能的异说，其余留白。",
+  "候选著作": [
+    {
+      "出处": "《左传·成公二年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载宋文公去世及宋共公即位。",
+      "检索词": "宋文公卒",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《左传·成公十二年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载宋共公在位期间，华元促成晋楚第一次弭兵之盟。",
+      "检索词": "华元 弭兵",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《左传·成公十五年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载宋共公去世后，荡泽作乱杀公子肥，以及华元平乱拥立宋平公。",
+      "检索词": "宋共公卒 荡泽",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《国语·晋语六》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "可能涉及晋楚弭兵前后对宋国外交的讨论，提供侧面背景。",
+      "检索词": "宋 弭兵",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·卷38·宋微子世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "宋共公的主要史料出处，记载其即位、在位年数及身后之乱。",
+      "检索词": "宋共公",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《春秋左传正义·成公十五年》",
+      "tier": "经注/杂史",
+      "pool": "legend",
+      "与本主题关系": "杜预注、孔颖达疏对荡泽之乱及华元功过有后世解读。",
+      "检索词": "荡泽 杀 公子肥",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《左传·成公二年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载宋文公去世及宋共公即位。",
+      "检索词": "宋文公卒",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《左传·成公十二年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载宋共公在位期间，华元促成晋楚第一次弭兵之盟。",
+      "检索词": "华元 弭兵",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《左传·成公十五年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载宋共公去世后，荡泽作乱杀公子肥，以及华元平乱拥立宋平公。",
+      "检索词": "宋共公卒 荡泽",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《国语·晋语六》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "可能涉及晋楚弭兵前后对宋国外交的讨论，提供侧面背景。",
+      "检索词": "宋 弭兵",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史记·卷38·宋微子世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "宋共公的主要史料出处，记载其即位、在位年数及身后之乱。",
+      "检索词": "宋共公",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《春秋左传正义·成公十五年》",
+      "tier": "经注/杂史",
+      "pool": "legend",
+      "与本主题关系": "杜预注、孔颖达疏对荡泽之乱及华元功过有后世解读。",
+      "检索词": "荡泽 杀 公子肥",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 3,
+    "C_excluded": 3,
+    "overall": "B"
+  }
+}

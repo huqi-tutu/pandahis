@@ -1,0 +1,25 @@
+{
+  "schema": "qa_repair_ticket/v1",
+  "pipeline": "translate",
+  "entry_id": "GLBL_00002",
+  "entry_name": "卫出公",
+  "stage": "verify_final",
+  "fail_count": 2,
+  "errors": [
+    "字数不足: 676 < 下限 700"
+  ],
+  "plan": {
+    "root_cause": "UNKNOWN",
+    "disposition": "retry_llm",
+    "action": "generic_retry",
+    "structured_prompt": "【根因未分类】请据下列 verify 错误逐项修正，勿重复上一轮相同写法。\n字数不足: 676 < 下限 700",
+    "refine_scope": "",
+    "route_to": "",
+    "next_command": "",
+    "invalidate": [],
+    "max_retries": 2,
+    "extra": {}
+  },
+  "feedback": "【根因未分类】请据下列 verify 错误逐项修正，勿重复上一轮相同写法。\n字数不足: 676 < 下限 700\n\n---\n【原始错误】\n字数不足: 676 < 下限 700",
+  "updated_at": "2026-08-06T00:25:46Z"
+}

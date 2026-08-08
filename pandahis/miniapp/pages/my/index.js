@@ -40,7 +40,7 @@ Page({
         pageHeightPx: 667,
         scrollEnabled: false,
         shortcuts: [
-            { id: 'membership', label: '会员', icon: '/images/icons/huiyuan.png', action: 'membership' },
+            // 会员入口二期再开放；一期保留页码与后端能力
             { id: 'corrections', label: '纠错', icon: '/images/icons/jiucuo.png', action: 'corrections' },
             { id: 'invite', label: '邀请', icon: '/images/icons/fenxiang.png', action: 'invite' },
             { id: 'settings', label: '设置', icon: '/images/icons/shezhi.png', action: 'settings' },
@@ -188,7 +188,8 @@ Page({
         this.requireLogin(() => (0, router_1.navigateTo)(router_1.ROUTES.profileEdit));
     },
     goMembership() {
-        wx.switchTab({ url: router_1.ROUTES.membership });
+        // 二期：会员页保留，当前非 Tab，用 navigateTo
+        (0, router_1.navigateTo)(router_1.ROUTES.membership);
     },
     goFootprints() {
         this.requireLogin(() => (0, router_1.navigateTo)(router_1.ROUTES.footprints));
@@ -203,7 +204,11 @@ Page({
         this.requireLogin(() => (0, router_1.navigateTo)(router_1.ROUTES.corrections));
     },
     goInviteFriends() {
-        wx.navigateTo({
+        if (!(0, api_1.hasToken)()) {
+            (0, router_1.navigateTo)(router_1.ROUTES.login, { from: 'invite' });
+            return;
+        }
+        wx.switchTab({
             url: router_1.ROUTES.invite,
             fail(err) {
                 console.error('[my] goInviteFriends failed', err);

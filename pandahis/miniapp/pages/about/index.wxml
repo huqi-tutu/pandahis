@@ -2,8 +2,7 @@
 
 <scroll-view class="page-about" scroll-y enhanced show-scrollbar="{{false}}" style="padding-top: {{pageTopPadPx}}px;">
   <view class="logo-wrap">
-    <view class="logo">史</view>
-    <view class="app-name text-h2">历史图谱</view>
+    <image class="brand-logo" src="{{brandLogoUrl}}" mode="widthFix" />
     <view class="version">Chronicle · Cartography v{{version}}</view>
   </view>
 

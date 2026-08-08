@@ -1,0 +1,159 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01023",
+  "写作结构": "正史叙述见翻译详录（《史记·齐太公世家》）。拓展文可引《竹书纪年》异说（若有）及《左传》相关背景，其余留白。",
+  "候选著作": [
+    {
+      "出处": "《史记·卷32·齐太公世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载齐文公复国、诛杀七十余人及在位年数。",
+      "检索词": "齐文公",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《竹书纪年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "可能提供与《史记》不同的纪年或事件表述，用于比对异说。",
+      "检索词": "齐文公",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    },
+    {
+      "出处": "《左传》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载春秋初期齐国政局背景，虽未直接详述文公，但可提供齐厉公暴政及国人攻杀事件的周边政治环境。",
+      "检索词": "齐厉公",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《国语·齐语》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "主要记载管仲以后事，对齐文公时期记载可能性低，但可作为齐国早期历史背景参考。",
+      "检索词": "齐",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《史记·卷14·十二诸侯年表》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "可核对齐文公在位起止年份，与《齐太公世家》互证。",
+      "检索词": "齐文公",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《绎史·齐太公世家》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "清代马骕编纂，汇编先秦史料，可能整合了关于齐文公的零散记载或评述。",
+      "检索词": "齐文公",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·卷32·齐太公世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载齐文公复国、诛杀七十余人及在位年数。",
+      "检索词": "齐文公",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《竹书纪年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "可能提供与《史记》不同的纪年或事件表述，用于比对异说。",
+      "检索词": "齐文公",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    },
+    {
+      "出处": "《左传》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载春秋初期齐国政局背景，虽未直接详述文公，但可提供齐厉公暴政及国人攻杀事件的周边政治环境。",
+      "检索词": "齐厉公",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《国语·齐语》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "主要记载管仲以后事，对齐文公时期记载可能性低，但可作为齐国早期历史背景参考。",
+      "检索词": "齐",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《史记·卷14·十二诸侯年表》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "可核对齐文公在位起止年份，与《齐太公世家》互证。",
+      "检索词": "齐文公",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《绎史·齐太公世家》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "清代马骕编纂，汇编先秦史料，可能整合了关于齐文公的零散记载或评述。",
+      "检索词": "齐文公",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 4,
+    "overall": "B"
+  }
+}

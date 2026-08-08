@@ -1,0 +1,61 @@
+{
+  "schema": "translate-coverage-ledger/v1",
+  "史略ID": "GLBL_01105",
+  "updated_at": "2026-08-05T21:43:35.226315+00:00",
+  "entries": {
+    "M001": {
+      "status": "conveyed",
+      "claim_fp": "dd7e69b12ae925ed",
+      "checked_at": "2026-08-05T21:42:40.026169+00:00",
+      "note": "直接对应"
+    },
+    "M002": {
+      "status": "conveyed",
+      "claim_fp": "f34e59ecdf638255",
+      "checked_at": "2026-08-05T21:42:40.026184+00:00",
+      "note": "直接对应"
+    },
+    "M003": {
+      "status": "conveyed",
+      "claim_fp": "6866ee3b9fa31702",
+      "checked_at": "2026-08-05T21:42:40.026189+00:00",
+      "note": "直接对应"
+    },
+    "M004": {
+      "status": "conveyed",
+      "claim_fp": "c651ff70f17b525e",
+      "checked_at": "2026-08-05T21:42:40.026193+00:00",
+      "note": "直接对应"
+    },
+    "M005": {
+      "status": "conveyed",
+      "claim_fp": "95064fa52eec8ba3",
+      "checked_at": "2026-08-05T21:42:40.026197+00:00",
+      "note": "直接对应"
+    },
+    "M006": {
+      "status": "conveyed",
+      "claim_fp": "3683dd8ca909d2db",
+      "checked_at": "2026-08-05T21:42:40.026202+00:00",
+      "note": "直接对应"
+    },
+    "M007": {
+      "status": "conveyed",
+      "claim_fp": "cfa804c37716aaf4",
+      "checked_at": "2026-08-05T21:42:40.026206+00:00",
+      "note": "译文明确表达了庄子善文辞、借事喻理、攻击儒墨、宿学不能辩驳，与母本信息一致。"
+    },
+    "M008": {
+      "status": "conveyed",
+      "claim_fp": "fcf5d92c04cd483f",
+      "checked_at": "2026-08-05T21:42:40.026218+00:00",
+      "note": "译文直接对应母本“言论汪洋恣肆，只求自己适意，王公大人无法任用”。"
+    },
+    "M009–M010": {
+      "status": "conveyed",
+      "claim_fp": "9ddc7341b63c63e3",
+      "checked_at": "2026-08-05T21:42:40.026221+00:00",
+      "note": "译文完整包含了楚威王厚币迎之、许以为相，以及庄子以牺牛为喻拒绝、宁游戏污渎自快、终身不仕以快吾志的情节，与母本信息一致。"
+    }
+  }
+}

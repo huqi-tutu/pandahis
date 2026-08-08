@@ -1,0 +1,273 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01033",
+  "写作结构": "正史叙述见翻译详录（《史记·管蔡世家》）。拓展文主要围绕齐蔡联姻与交恶事件，从《左传》《国语》等先秦文献中钩沉史外细节与异说，补充蔡姬身份、事件起因的不同记载，以及齐桓公伐蔡与召陵之盟的关联。后世综述仅作点缀，不展开。",
+  "候选著作": [
+    {
+      "出处": "《左传·僖公三年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载齐桓公与蔡姬乘舟、蔡姬荡舟、齐桓公惧而怒归蔡姬之事，是事件核心出处之一。",
+      "检索词": "蔡姬 荡舟",
+      "采用": true,
+      "原文摘句": "齐侯与蔡姬乘舟于囿，荡公。公惧，变色；禁之，不可。公怒，归之，未之绝也。蔡人嫁之。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《左传·僖公四年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载齐桓公因蔡姬改嫁而伐蔡，蔡溃败，并由此引出齐楚召陵之盟，是事件后续发展的关键记载。",
+      "检索词": "齐侯伐蔡 蔡溃",
+      "采用": true,
+      "原文摘句": "四年春，齐侯以诸侯之师侵蔡。蔡溃，遂伐楚。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《国语·齐语》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载齐桓公伐蔡的军事行动及其与诸侯会盟的关系，可补充《左传》记载。",
+      "检索词": "桓公 伐蔡",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《韩非子·外储说左上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "提及齐桓公因怒蔡姬而伐蔡，作为君主因私怒而兴师的历史案例，可提供战国时期对此事的评价视角。",
+      "检索词": "蔡姬 桓公",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·卷32·齐太公世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "从齐国视角记载齐桓公与蔡姬之事及伐蔡经过，可与《管蔡世家》互参，但属正史翻译范畴。",
+      "检索词": "蔡姬 齐桓公",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《史记·卷35·管蔡世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载蔡缪侯世系、在位年数及与齐桓公冲突始末。",
+      "检索词": "缪侯 蔡姬",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《春秋公羊传·僖公四年》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "对《春秋》经文'侵蔡'的解释，可能提供不同于《左传》的经义阐释。",
+      "检索词": "侵蔡 齐侯",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《春秋谷梁传·僖公四年》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "对《春秋》经文'侵蔡'的解释，可与《公羊传》《左传》形成三传互参。",
+      "检索词": "侵蔡 齐侯",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《吕氏春秋·权勋》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "可能提及齐桓公伐蔡的决策过程，作为战国时期对春秋史事的追述。",
+      "检索词": "齐桓 蔡",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《清华简·系年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "战国楚简史书，可能提供不同于传世文献的蔡国世系或齐蔡关系记载。",
+      "检索词": "蔡 齐桓公",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《列女传·孽嬖传》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "汉代刘向编纂，可能将蔡姬作为女性祸国的案例收录，带有后世道德评判色彩。",
+      "检索词": "蔡姬 齐桓",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《左传·僖公三年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载齐桓公与蔡姬乘舟、蔡姬荡舟、齐桓公惧而怒归蔡姬之事，是事件核心出处之一。",
+      "检索词": "蔡姬 荡舟",
+      "采用": true,
+      "原文摘句": "齐侯与蔡姬乘舟于囿，荡公。公惧，变色；禁之，不可。公怒，归之，未之绝也。蔡人嫁之。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《左传·僖公四年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载齐桓公因蔡姬改嫁而伐蔡，蔡溃败，并由此引出齐楚召陵之盟，是事件后续发展的关键记载。",
+      "检索词": "齐侯伐蔡 蔡溃",
+      "采用": true,
+      "原文摘句": "四年春，齐侯以诸侯之师侵蔡。蔡溃，遂伐楚。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《国语·齐语》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载齐桓公伐蔡的军事行动及其与诸侯会盟的关系，可补充《左传》记载。",
+      "检索词": "桓公 伐蔡",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《韩非子·外储说左上》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "提及齐桓公因怒蔡姬而伐蔡，作为君主因私怒而兴师的历史案例，可提供战国时期对此事的评价视角。",
+      "检索词": "蔡姬 桓公",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·卷32·齐太公世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "从齐国视角记载齐桓公与蔡姬之事及伐蔡经过，可与《管蔡世家》互参，但属正史翻译范畴。",
+      "检索词": "蔡姬 齐桓公",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《史记·卷35·管蔡世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载蔡缪侯世系、在位年数及与齐桓公冲突始末。",
+      "检索词": "缪侯 蔡姬",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《春秋公羊传·僖公四年》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "对《春秋》经文'侵蔡'的解释，可能提供不同于《左传》的经义阐释。",
+      "检索词": "侵蔡 齐侯",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《春秋谷梁传·僖公四年》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "对《春秋》经文'侵蔡'的解释，可与《公羊传》《左传》形成三传互参。",
+      "检索词": "侵蔡 齐侯",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《吕氏春秋·权勋》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "可能提及齐桓公伐蔡的决策过程，作为战国时期对春秋史事的追述。",
+      "检索词": "齐桓 蔡",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《清华简·系年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "战国楚简史书，可能提供不同于传世文献的蔡国世系或齐蔡关系记载。",
+      "检索词": "蔡 齐桓公",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《列女传·孽嬖传》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "汉代刘向编纂，可能将蔡姬作为女性祸国的案例收录，带有后世道德评判色彩。",
+      "检索词": "蔡姬 齐桓",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 7,
+    "C_excluded": 4,
+    "overall": "B"
+  }
+}

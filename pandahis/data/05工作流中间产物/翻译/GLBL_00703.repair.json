@@ -1,0 +1,25 @@
+{
+  "schema": "qa_repair_ticket/v1",
+  "pipeline": "translate",
+  "entry_id": "GLBL_00703",
+  "entry_name": "宋宣公",
+  "stage": "verify",
+  "fail_count": 2,
+  "errors": [
+    "Phase2: 参考著作须独立成段（前有空行 \\n\\n），禁止与正文末句同段"
+  ],
+  "plan": {
+    "root_cause": "UNKNOWN",
+    "disposition": "retry_llm",
+    "action": "generic_retry",
+    "structured_prompt": "【根因未分类】请据下列 verify 错误逐项修正，勿重复上一轮相同写法。\nPhase2: 参考著作须独立成段（前有空行 \\n\\n），禁止与正文末句同段",
+    "refine_scope": "",
+    "route_to": "",
+    "next_command": "",
+    "invalidate": [],
+    "max_retries": 2,
+    "extra": {}
+  },
+  "feedback": "【根因未分类】请据下列 verify 错误逐项修正，勿重复上一轮相同写法。\nPhase2: 参考著作须独立成段（前有空行 \\n\\n），禁止与正文末句同段\n\n---\n【原始错误】\nPhase2: 参考著作须独立成段（前有空行 \\n\\n），禁止与正文末句同段",
+  "updated_at": "2026-08-06T00:28:34Z"
+}

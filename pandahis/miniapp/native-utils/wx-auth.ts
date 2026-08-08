@@ -40,9 +40,21 @@ export async function loginWithWxCode(options?: {
   return res.data
 }
 
-/** 登录成功后离开登录页：优先返回上一页，失败则切到「我的」Tab */
-export function leaveAfterLogin(delayMs = 400) {
+export type LeaveAfterLoginOptions = {
+  /** 登录后强制切到指定 Tab（如邀请页） */
+  switchTab?: string
+}
+
+/** 登录成功后离开登录页：可指定 Tab；否则优先返回上一页，失败则切到「我的」 */
+export function leaveAfterLogin(delayMs = 400, options?: LeaveAfterLoginOptions) {
   const go = () => {
+    if (options?.switchTab) {
+      wx.switchTab({
+        url: options.switchTab,
+        fail: () => wx.switchTab({ url: ROUTES.mine }),
+      })
+      return
+    }
     const pages = getCurrentPages()
     const prev = pages.length > 1 ? pages[pages.length - 2] : null
     const notifyPrev = () => {

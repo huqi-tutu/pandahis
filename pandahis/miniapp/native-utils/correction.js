@@ -12,6 +12,8 @@ exports.CORRECTION_STATUS_LABEL = {
 exports.CORRECTION_SOURCE_LABEL = {
     dynasty_canvas: '朝代详情页',
     box_detail_selection: '史略详情页',
+    critique_detail_selection: '评述',
+    relic_detail_selection: '见证',
 };
 function correctionStatusLabel(status) {
     return exports.CORRECTION_STATUS_LABEL[status] || status || '待处理';

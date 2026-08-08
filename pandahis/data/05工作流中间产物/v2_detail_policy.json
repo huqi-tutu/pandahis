@@ -1,0 +1,11 @@
+{
+  "exclude_dynasties": [
+    "西汉"
+  ],
+  "order": [
+    "translate",
+    "compose"
+  ],
+  "v1_04_policy": "04史料翻译仅留档，禁止 promote 至 11；须 translate skill 重译",
+  "note": "西汉之前无详情：先顺译至 11，不满足顺译条件才 compose"
+}

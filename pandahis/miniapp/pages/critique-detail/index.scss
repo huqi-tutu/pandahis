@@ -41,7 +41,9 @@
   justify-content: space-between;
   align-items: center;
   gap: 24rpx;
-  padding: 10rpx 0;
+  box-sizing: border-box;
+  min-height: 80rpx;
+  padding: 16rpx 0;
 }
 
 .info-row + .info-row {
@@ -54,8 +56,11 @@
 }
 
 .info-value {
+  flex: 1;
+  min-width: 0;
   text-align: right;
   font-size: 28rpx;
+  line-height: 1.4;
   font-weight: 500;
   color: $text-title;
 }

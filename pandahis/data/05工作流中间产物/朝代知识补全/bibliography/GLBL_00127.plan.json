@@ -1,0 +1,229 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_00127",
+  "写作结构": "正史叙述见翻译详录。拓展文重点说明秦襄公在《史记·秦本纪》中仅存即位记录而无具体事迹的史料现状，可引《帝王世纪》等辑佚文献补充其在位年代信息，其余部分保持叙事性留白，不虚构任何具体事件。",
+  "候选著作": [
+    {
+      "出处": "《史记·卷5·秦本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "母本出处，记载秦襄公即位及世系，但无具体事迹",
+      "检索词": "秦襄公",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《史记·卷14·十二诸侯年表》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "可查秦襄公在位年代及与周王室纪年对应关系",
+      "检索词": "秦襄公",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《帝王世纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "辑佚文献，可能存有秦襄公在位年数或世系补充信息",
+      "检索词": "秦襄公",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《竹书纪年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "战国魏国史书，可能存有秦襄公时期的纪年或事件线索",
+      "检索词": "秦襄公",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    },
+    {
+      "出处": "《国语·郑语》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "史伯对郑桓公论天下形势，提及秦嬴在西戎之地兴起，可作秦早期背景参考",
+      "检索词": "秦嬴",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《诗经·秦风》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "秦风诸篇反映秦地风俗与早期历史背景，可作秦文化背景参考",
+      "检索词": "秦风",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《汉书·卷20·古今人表》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "班固对秦襄公的品第分类，可反映后世对其历史地位的认知",
+      "检索词": "秦襄公",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《通志·卷三·三王纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "郑樵综述上古帝王诸侯世系，可能提及秦襄公世系传承",
+      "检索词": "秦襄公",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《文献通考·卷二百六十五·封建考》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "马端临考述秦之封建始末，可能涉及秦襄公时期的秦国地位",
+      "检索词": "秦襄公",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·卷5·秦本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "母本出处，记载秦襄公即位及世系，但无具体事迹",
+      "检索词": "秦襄公",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《史记·卷14·十二诸侯年表》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "可查秦襄公在位年代及与周王室纪年对应关系",
+      "检索词": "秦襄公",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《帝王世纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "辑佚文献，可能存有秦襄公在位年数或世系补充信息",
+      "检索词": "秦襄公",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《竹书纪年》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "战国魏国史书，可能存有秦襄公时期的纪年或事件线索",
+      "检索词": "秦襄公",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    },
+    {
+      "出处": "《国语·郑语》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "史伯对郑桓公论天下形势，提及秦嬴在西戎之地兴起，可作秦早期背景参考",
+      "检索词": "秦嬴",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《诗经·秦风》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "秦风诸篇反映秦地风俗与早期历史背景，可作秦文化背景参考",
+      "检索词": "秦风",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《汉书·卷20·古今人表》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "班固对秦襄公的品第分类，可反映后世对其历史地位的认知",
+      "检索词": "秦襄公",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《通志·卷三·三王纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "郑樵综述上古帝王诸侯世系，可能提及秦襄公世系传承",
+      "检索词": "秦襄公",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《文献通考·卷二百六十五·封建考》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "马端临考述秦之封建始末，可能涉及秦襄公时期的秦国地位",
+      "检索词": "秦襄公",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 4,
+    "C_excluded": 5,
+    "overall": "B"
+  }
+}

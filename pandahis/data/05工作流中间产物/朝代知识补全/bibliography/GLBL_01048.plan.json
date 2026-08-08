@@ -1,0 +1,251 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01048",
+  "写作结构": "正史叙述见翻译详录（《史记·周本纪》）。拓展文以《左传》为史外核心叙事，说明周釐王元年齐桓公始霸及王室册命背景；辅以《国语》补管仲佐霸之策；《竹书纪年》提供异说纪年参照。其余后世综述留白。",
+  "候选著作": [
+    {
+      "出处": "《左传·庄公十五年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载周釐王元年（前681年）齐桓公始霸诸侯的会盟事件，是理解周釐王在位时政治格局的核心文献。",
+      "检索词": "齐始霸也",
+      "采用": true,
+      "原文摘句": "十五年春，复会焉，齐始霸也。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《左传·庄公十六年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载周釐王二年（前680年）王室承认齐桓公霸主地位并参与会盟之事。",
+      "检索词": "王使虢公命曲沃伯以一军为晋侯",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《国语·齐语》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "详述管仲辅佐齐桓公称霸的内政外交策略，为周釐王时期齐桓公始霸提供背景。",
+      "检索词": "桓公自莒反于齐",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《竹书纪年·周釐王》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "提供周釐王纪年及在位期间大事的异说记载，可与《史记》纪年参照。",
+      "检索词": "釐王",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    },
+    {
+      "出处": "《史记·周本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载周釐王世系及在位时间，正史叙述见翻译详录。",
+      "检索词": "釐王",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《史记·齐太公世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载齐桓公始霸过程及与周王室关系，正史叙述见翻译详录。",
+      "检索词": "桓公",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《春秋公羊传·庄公十五年》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "对《春秋》经文的解释，涉及齐桓公始霸的义理阐发。",
+      "检索词": "齐始霸",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《春秋穀梁传·庄公十五年》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "对《春秋》经文的另一派解释，可参照理解齐桓公始霸的意义。",
+      "检索词": "齐始霸",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《管子·大匡》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载管仲辅佐齐桓公初期的谋划，涉及周釐王时期齐国内政改革背景。",
+      "检索词": "桓公践位",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《吕氏春秋·贵信》",
+      "tier": "先秦文献",
+      "pool": "legend",
+      "与本主题关系": "战国末期对春秋霸政的追述，论及齐桓公守信用而得诸侯，属后世阐发。",
+      "检索词": "齐桓公伐鲁",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《左传·庄公十五年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载周釐王元年（前681年）齐桓公始霸诸侯的会盟事件，是理解周釐王在位时政治格局的核心文献。",
+      "检索词": "齐始霸也",
+      "采用": true,
+      "原文摘句": "十五年春，复会焉，齐始霸也。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《左传·庄公十六年》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载周釐王二年（前680年）王室承认齐桓公霸主地位并参与会盟之事。",
+      "检索词": "王使虢公命曲沃伯以一军为晋侯",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《国语·齐语》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "详述管仲辅佐齐桓公称霸的内政外交策略，为周釐王时期齐桓公始霸提供背景。",
+      "检索词": "桓公自莒反于齐",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《竹书纪年·周釐王》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "提供周釐王纪年及在位期间大事的异说记载，可与《史记》纪年参照。",
+      "检索词": "釐王",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    },
+    {
+      "出处": "《史记·周本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载周釐王世系及在位时间，正史叙述见翻译详录。",
+      "检索词": "釐王",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《史记·齐太公世家》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载齐桓公始霸过程及与周王室关系，正史叙述见翻译详录。",
+      "检索词": "桓公",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《春秋公羊传·庄公十五年》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "对《春秋》经文的解释，涉及齐桓公始霸的义理阐发。",
+      "检索词": "齐始霸",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《春秋穀梁传·庄公十五年》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "对《春秋》经文的另一派解释，可参照理解齐桓公始霸的意义。",
+      "检索词": "齐始霸",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《管子·大匡》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载管仲辅佐齐桓公初期的谋划，涉及周釐王时期齐国内政改革背景。",
+      "检索词": "桓公践位",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《吕氏春秋·贵信》",
+      "tier": "先秦文献",
+      "pool": "legend",
+      "与本主题关系": "战国末期对春秋霸政的追述，论及齐桓公守信用而得诸侯，属后世阐发。",
+      "检索词": "齐桓公伐鲁",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 4,
+    "C_excluded": 6,
+    "overall": "B"
+  }
+}

@@ -107,9 +107,16 @@
   margin-bottom: 12rpx;
 }
 
-.result-title {
+.title-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
   flex: 1;
   min-width: 0;
+  gap: 12rpx;
+}
+
+.result-title {
   font-size: 30rpx;
   font-weight: 600;
   color: $text-title;
@@ -132,31 +139,26 @@
   white-space: nowrap;
 }
 
+.result-year {
+  display: block;
+  font-size: 22rpx;
+  color: $text-caption;
+  line-height: 1.4;
+  margin-bottom: 8rpx;
+}
+
 .result-coord {
   display: block;
   font-size: 22rpx;
   color: $text-time;
   line-height: 1.4;
-  margin-bottom: 12rpx;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.card-meta {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12rpx 16rpx;
-}
-
-.result-year {
-  font-size: 22rpx;
-  color: $text-caption;
-  line-height: 1.4;
-}
-
 .person-tag {
+  flex-shrink: 0;
   font-size: 20rpx;
   font-weight: 500;
   line-height: 1.3;

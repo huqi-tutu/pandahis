@@ -1,0 +1,27 @@
+{
+  "schema": "qa_repair_ticket/v1",
+  "pipeline": "translate",
+  "entry_id": "GLBL_00091",
+  "entry_name": "王莽",
+  "stage": "verify",
+  "fail_count": 1,
+  "errors": [
+    "Phase2: 无《》二手表述触发词 9 处 > 上限 5（传说/据说/有人说等宜克制，不可当家）",
+    "Phase2: 连续 2 段以传说/二手表述为主叙事（上限 1 段）",
+    "Phase2: AI 腔词全文合计 5 次 ≥ 5（单篇最多 4 次；「此外」×1、「则是」×4）"
+  ],
+  "plan": {
+    "root_cause": "LEGEND_DOMINANCE",
+    "disposition": "refine_scope",
+    "action": "reduce_legend_layer",
+    "structured_prompt": "【根因：传说/二手表述过多】\n「传说」「据说」「有人说」等无《》表述已超配额或连续成段。\n优先改为「《书名·卷》载：…」；删冗余传说句；保留母本主线。",
+    "refine_scope": "full",
+    "route_to": "",
+    "next_command": "",
+    "invalidate": [],
+    "max_retries": 2,
+    "extra": {}
+  },
+  "feedback": "【根因：传说/二手表述过多】\n「传说」「据说」「有人说」等无《》表述已超配额或连续成段。\n优先改为「《书名·卷》载：…」；删冗余传说句；保留母本主线。\n\n---\n【原始错误】\nPhase2: 无《》二手表述触发词 9 处 > 上限 5（传说/据说/有人说等宜克制，不可当家）\nPhase2: 连续 2 段以传说/二手表述为主叙事（上限 1 段）\nPhase2: AI 腔词全文合计 5 次 ≥ 5（单篇最多 4 次；「此外」×1、「则是」×4）",
+  "updated_at": "2026-08-05T17:17:17Z"
+}

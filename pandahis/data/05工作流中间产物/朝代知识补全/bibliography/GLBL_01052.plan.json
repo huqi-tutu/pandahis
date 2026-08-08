@@ -1,0 +1,185 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01052",
+  "写作结构": "正史叙述（《史记·周本纪》《左传》）见翻译详录。拓展文以《国语》记载补充晋楚争霸及鄢陵之战前后列国形势，以《竹书纪年》异说校正年代，以《韩非子》等诸子文献补充时人对事件的评述。周简王本人事迹因史料匮乏，仅作背景性留白。",
+  "候选著作": [
+    {
+      "出处": "《国语·晋语六》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "详细记载了鄢陵之战前后晋国内部的讨论、战况及战后晋厉公被杀事件，是《左传》之外最重要的补充史料。",
+      "检索词": "鄢陵之战 晋厉公",
+      "采用": true,
+      "原文摘句": "鄢陵之役，晋伐郑，荆救之。大夫欲战，范文子不欲...",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《国语·周语下》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载了周简王时期周王室与诸侯的交往，以及单襄公等周室大夫对晋国局势的评论。",
+      "检索词": "单襄公 晋厉公",
+      "采用": true,
+      "原文摘句": "晋孙谈之子周适周，事单襄公...",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《竹书纪年·周简王》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "提供周简王在位期间晋楚争霸事件的编年记载，可与《左传》纪年互校，提供异说。",
+      "检索词": "周简王 晋厉公",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    },
+    {
+      "出处": "《韩非子·十过》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "以鄢陵之战后晋厉公因骄奢被杀为例，阐述君主失德之祸，反映了战国时期对此事件的评价。",
+      "检索词": "鄢陵 晋厉公",
+      "采用": true,
+      "原文摘句": "昔者晋厉公南伐楚，东伐齐，西伐秦，北伐燕，兵横行天下而无所绌，威服四方而无所诎，遂合诸侯于嘉陵...",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·周本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载周简王继位、去世及子灵王继位等基本史实。",
+      "检索词": "周简王",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《左传·成公》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，详细记载周简王在位期间晋楚鄢陵之战及晋国内乱。",
+      "检索词": "鄢陵之战",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《淮南子·人间训》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "提及鄢陵之战前晋国内部的战略分歧，作为后世对先秦史事的综合论述。",
+      "检索词": "鄢陵 范文子",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《国语·晋语六》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "详细记载了鄢陵之战前后晋国内部的讨论、战况及战后晋厉公被杀事件，是《左传》之外最重要的补充史料。",
+      "检索词": "鄢陵之战 晋厉公",
+      "采用": true,
+      "原文摘句": "鄢陵之役，晋伐郑，荆救之。大夫欲战，范文子不欲...",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《国语·周语下》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "记载了周简王时期周王室与诸侯的交往，以及单襄公等周室大夫对晋国局势的评论。",
+      "检索词": "单襄公 晋厉公",
+      "采用": true,
+      "原文摘句": "晋孙谈之子周适周，事单襄公...",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《竹书纪年·周简王》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "提供周简王在位期间晋楚争霸事件的编年记载，可与《左传》纪年互校，提供异说。",
+      "检索词": "周简王 晋厉公",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "已拉原文但摘句未校验，compose 仅可书目级引用（ctext HTML https://ctext.org/bamboo-annals）",
+      "ctext_urn": "ctp:bamboo-annals",
+      "ctext_url": "https://ctext.org/bamboo-annals",
+      "corpus_excerpt": "Please confirm that you are human! 敬請輸入認證圖案Please confirm that you are human! 敬請輸入認證圖案請輸入下述認證圖案中的字並點擊“OK”，以便確認您是真人而並非電腦軟體：輸入上述認證圖案中的字：若您經常遇到此一頁面，這就代表ctext.org認為您目前的使用方式似乎有可疑之處。這種判斷是根據各種指標而定的，特別是其它與您訪問記錄類似的使用者過去的訪問記錄。本站越信任您，它就越少要求您輸入驗證碼。若希望讓本站更信任您的使用，建議採取以下手段：若從學術性機構訪問，請建議您的學術構建立帳戶並參與維基區的編輯活動。請留意：所有編輯活動將會經過人工驗證後系統才會作信任判斷。敬請參考相關的使用說明和政策再進行編輯。"
+    },
+    {
+      "出处": "《韩非子·十过》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "以鄢陵之战后晋厉公因骄奢被杀为例，阐述君主失德之祸，反映了战国时期对此事件的评价。",
+      "检索词": "鄢陵 晋厉公",
+      "采用": true,
+      "原文摘句": "昔者晋厉公南伐楚，东伐齐，西伐秦，北伐燕，兵横行天下而无所绌，威服四方而无所诎，遂合诸侯于嘉陵...",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《史记·周本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载周简王继位、去世及子灵王继位等基本史实。",
+      "检索词": "周简王",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    },
+    {
+      "出处": "《左传·成公》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，详细记载周简王在位期间晋楚鄢陵之战及晋国内乱。",
+      "检索词": "鄢陵之战",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "A"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《淮南子·人间训》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "提及鄢陵之战前晋国内部的战略分歧，作为后世对先秦史事的综合论述。",
+      "检索词": "鄢陵 范文子",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 4,
+    "C_excluded": 3,
+    "overall": "B"
+  }
+}

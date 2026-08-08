@@ -135,12 +135,15 @@ def write_final_output(
     *,
     source_original: str | None = None,
     source_citation: str | None = None,
+    translation_version: str | None = None,
 ) -> None:
     payload: Dict[str, Any] = {"史略ID": entry_id, "翻译详情": detail}
     if source_original is not None:
         payload["史料原文"] = source_original
     if source_citation:
         payload["原文出处"] = source_citation
+    if translation_version:
+        payload["翻译版本"] = translation_version
     output_file.parent.mkdir(parents=True, exist_ok=True)
     output_file.write_text(
         json.dumps(payload, ensure_ascii=False, indent=2) + "\n",

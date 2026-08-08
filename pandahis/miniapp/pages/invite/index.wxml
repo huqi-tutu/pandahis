@@ -1,88 +1,125 @@
 <view class="page-shell">
-  <proto-nav title="邀请好友" show-back="{{true}}"></proto-nav>
+  <proto-nav title="邀请" show-back="{{false}}">
+    <view slot="right" class="nav-rules" bindtap="onOpenRules">规则</view>
+  </proto-nav>
 
-  <view class="page-invite" style="padding-top: {{pageTopPadPx}}px;">
-    <view wx:if="{{!hasToken}}" class="login-banner card-paper">
-      <view class="login-title">登录后使用邀请功能</view>
-      <view class="login-desc muted">查看阅读数、邀请码，并邀请好友一起读史。</view>
-      <view class="btn-cta" bindtap="goLogin">去登录</view>
+  <scroll-view
+    class="page-invite"
+    scroll-y
+    enhanced
+    show-scrollbar="{{false}}"
+    style="padding-top: {{pageTopPadPx}}px;"
+  >
+    <!-- 上卡：slogan + 统计 + 邀请 -->
+    <view class="hero-card">
+      <text class="slogan-sub">邀请阅读搭子</text>
+      <view class="slogan-main font-title">一起探索时间脉络</view>
+      <view class="slogan-desc">
+        好友完成注册，双方各得 {{inviteRewardReads}} 阅读点
+      </view>
+
+      <view class="stats-row">
+        <view class="stats-card">
+          <view class="stats-label">累计获得阅读点</view>
+          <view class="stats-val font-title">{{loading ? '—' : earnedReads}}</view>
+        </view>
+        <view class="stats-card">
+          <view class="stats-label">累计邀请好友</view>
+          <view class="stats-val font-title">{{loading ? '—' : invitedCount}}</view>
+        </view>
+      </view>
+
+      <button
+        wx:if="{{canShare}}"
+        class="share-btn"
+        open-type="share"
+      >
+        <view class="share-btn-inner">
+          <image class="share-btn-icon" src="/images/icons/weixin-white.png" mode="aspectFit" />
+          <text class="share-btn-text">邀请好友</text>
+        </view>
+      </button>
+      <view
+        wx:else
+        class="share-btn {{loading ? 'disabled' : ''}}"
+        bindtap="onInviteFriends"
+      >
+        <view class="share-btn-inner">
+          <image class="share-btn-icon" src="/images/icons/weixin-white.png" mode="aspectFit" />
+          <text class="share-btn-text">邀请好友</text>
+        </view>
+      </view>
     </view>
 
-    <block wx:else>
-      <view class="hero">
-        <view class="hero-tag">邀请有礼</view>
-        <view class="hero-desc">邀请好友注册，双方各得阅读点</view>
-        <view class="hero-stats">
-          <view class="stat">
-            <view class="stat-val">{{loading ? '—' : readBalance}}</view>
-            <view class="stat-label muted">阅读点</view>
+    <!-- 下卡：邀请好友列表 -->
+    <view class="list-card">
+      <view class="list-head">
+        <text class="list-title font-title">我的邀请</text>
+        <text class="list-count">{{loading ? '' : invitedCount + ' 人'}}</text>
+      </view>
+
+      <view wx:if="{{loading}}" class="list-empty">加载中…</view>
+      <view wx:elif="{{loadError}}" class="list-empty list-empty--action" bindtap="onRetryLoad">
+        加载失败，点击重试
+      </view>
+      <view wx:elif="{{invitees.length === 0}}" class="list-empty">
+        暂无邀请好友
+      </view>
+      <view wx:else class="invitee-list">
+        <view class="invitee-row" wx:for="{{invitees}}" wx:key="key">
+          <view class="invitee-avatar">
+            <image
+              wx:if="{{item.avatarUrl}}"
+              class="invitee-img"
+              src="{{item.avatarUrl}}"
+              mode="aspectFill"
+            />
+            <text wx:else class="invitee-initial">{{item.initial}}</text>
           </view>
-          <view class="stat-divider"></view>
-          <view class="stat">
-            <view class="stat-val">{{loading ? '—' : invitedCount}}</view>
-            <view class="stat-label muted">已邀请</view>
+          <view class="invitee-meta">
+            <text class="invitee-name">{{item.nickname}}</text>
+            <text class="invitee-time">注册于 {{item.registeredLabel}}</text>
           </view>
-          <view class="stat-divider"></view>
-          <view class="stat">
-            <view class="stat-val">{{loading ? '—' : inviteRewardReads}}</view>
-            <view class="stat-label muted">每人奖励</view>
-          </view>
-        </view>
-        <view wx:if="{{!loading && readBalance === 0}}" class="hero-hint" bindtap="goHome">
-          去图谱打开评述、见证或原文，即可使用阅读点 →
+          <text wx:if="{{item.rewardLabel}}" class="invitee-reward">{{item.rewardLabel}}</text>
         </view>
       </view>
+    </view>
 
-      <view class="card card-paper">
-        <view class="card-title">我的邀请码</view>
-        <view class="code-row">
-          <view wx:if="{{loading}}" class="code-skeleton"></view>
-          <text wx:else class="code">{{inviteCode || '暂无'}}</text>
-          <view
-            class="btn-copy {{loading || !inviteCode ? 'disabled' : ''}}"
-            bindtap="copyCode"
-          >复制</view>
-        </view>
-        <view class="card-note muted">
-          每邀请 1 位新用户注册，你可获得 <text class="em">{{inviteRewardReads}}</text> 点阅读数
-        </view>
+    <view class="bottom-safe"></view>
+  </scroll-view>
+
+  <!-- 规则弹层 -->
+  <view
+    wx:if="{{showRules}}"
+    class="rules-mask"
+    bindtap="onCloseRules"
+    catchtouchmove="noop"
+  >
+    <view class="rules-sheet" catchtap="noop">
+      <view class="rules-handle"></view>
+      <view class="rules-head">
+        <text class="rules-title font-title">邀请规则</text>
+        <view class="rules-close" bindtap="onCloseRules">✕</view>
       </view>
-
-      <view class="card card-paper">
-        <view class="card-title">填写好友邀请码</view>
-        <view class="card-note muted">若注册时未通过链接进入，可在此补填（仅首次绑定有效）。</view>
-        <view class="bind-row">
-          <input
-            class="bind-input"
-            value="{{bindCode}}"
-            maxlength="32"
-            placeholder="输入邀请码"
-            placeholder-class="input-placeholder"
-            bindinput="onBindInput"
-            adjust-position="{{true}}"
-            cursor-spacing="{{80}}"
-          />
-          <view
-            class="btn-copy {{bindSubmitting ? 'disabled' : ''}}"
-            bindtap="submitBindCode"
-          >{{bindSubmitting ? '…' : '绑定'}}</view>
+      <scroll-view class="rules-body" scroll-y enhanced show-scrollbar="{{false}}">
+        <view class="rules-item">
+          <text class="rules-num">01</text>
+          <text class="rules-text">分享邀请给好友，好友通过你的邀请完成注册后，双方各获得 {{inviteRewardReads}} 阅读点。</text>
         </view>
-      </view>
-
-      <view class="card card-paper">
-        <view class="card-title">阅读点说明</view>
-        <view class="rules muted">
-          <text>首次打开「评述 / 见证 / 原文」各消耗 1 点；重复进入同一 Tab 不重复扣。</text>
+        <view class="rules-item">
+          <text class="rules-num">02</text>
+          <text class="rules-text">每位新用户仅可绑定一次邀请关系；重复注册或异常账号不计入奖励。</text>
         </view>
-        <view class="card-title share-title">邀请好友</view>
-        <view class="rules share-notice">小程序未认证前无法使用分享卡片，请复制邀请码发给好友。</view>
-        <view
-          class="btn-share {{loading || !inviteCode ? 'disabled' : ''}}"
-          bindtap="onInviteFriends"
-        >复制邀请码邀请好友</view>
-      </view>
-    </block>
-
-    <view class="hint muted">好友在「邀请加入」页登录并完成首次注册后，邀请生效。</view>
+        <view class="rules-item">
+          <text class="rules-num">03</text>
+          <text class="rules-text">阅读点将用于兑换深度阅读等权益。具体使用规则敬请期待，我们会陆续开放更多玩法。</text>
+        </view>
+        <view class="rules-item">
+          <text class="rules-num">04</text>
+          <text class="rules-text">奖励以实际到账为准；若发现作弊等行为，平台有权取消相关奖励。</text>
+        </view>
+        <view class="rules-foot">时络历史 · Chronos Thread</view>
+      </scroll-view>
+    </view>
   </view>
 </view>

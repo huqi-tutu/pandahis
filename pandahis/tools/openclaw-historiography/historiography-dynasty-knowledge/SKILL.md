@@ -50,7 +50,7 @@ description: >
 
 与 `dynasty_priority.py` / `peak_year.py` **不同通道**：
 
-- **朝代知识补全**：`dynasty_supplement_lib.call_llm` 入口 **`ensure_deepseek_v4_pro()`** → **`deepseek-v4-pro`**
+- **朝代知识补全**：`dynasty_supplement_lib.call_llm` 入口 **`ensure_deepseek_v4_pro()`** → **`deepseek-v4-flash`**
 - **标注附属**（峰值年/优先级/人物标签）：`ensure_annotate_model()` → `deepseek-v4-flash`
 
 补全**创作**阶段遵守 `执行纪律.md`：三类分步、详情逐条；**不得**照搬 enrichment 默认批量（≤20 条/批）。

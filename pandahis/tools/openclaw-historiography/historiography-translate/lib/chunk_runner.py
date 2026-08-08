@@ -192,6 +192,7 @@ def run_chunked_pipeline(
     session_id: str,
     dry_run: bool = False,
     use_llm: bool = True,
+    translation_version: str | None = None,
 ) -> Tuple[bool, List[str]]:
     manifest, specs, rebuilt = ensure_manifest(recalled, work_dir, entry_name)
     mpath = manifest_path(entry_id, entry_name, work_dir)
@@ -290,6 +291,7 @@ def run_chunked_pipeline(
         detail,
         target,
         source_original=build_source_original(recalled),
+        translation_version=translation_version,
     )
     elapsed = time.time() - t0
     print(f"🔗 分块合并完成 {len(detail)} 字 ({elapsed:.0f}s) → {target}")

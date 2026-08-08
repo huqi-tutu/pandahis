@@ -6,7 +6,7 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 JAR="$ROOT/backend/target/histomap-api-0.1.0.jar"
 REMOTE="root@49.235.165.220"
-REMOTE_DIR="/opt/histomap"
+REMOTE_DIR="/opt/histomap-api"
 
 echo "==> 上传 JAR..."
 scp "$JAR" "${REMOTE}:${REMOTE_DIR}/histomap-api-0.1.0.jar"

@@ -7,6 +7,10 @@
   padding: 0 32rpx calc(48rpx + env(safe-area-inset-bottom));
 }
 
+.settings-inner {
+  padding-top: 24rpx;
+}
+
 .menu-card {
   overflow: hidden;
 }
@@ -19,52 +23,11 @@
   background: $page-bg;
 }
 
-/* 纵向列表项（带输入框 / 长文本） */
+/* 纵向列表项（长文本） */
 .list-row-col {
   flex-direction: column;
   align-items: flex-start;
   gap: 16rpx;
-}
-
-.bind-row {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  gap: 16rpx;
-}
-
-.bind-input {
-  flex: 1;
-  min-width: 0;
-  height: 72rpx;
-  line-height: 72rpx;
-  padding: 0 24rpx;
-  border-radius: 12rpx;
-  background: $page-bg;
-  border: 1rpx solid $divider;
-  font-size: 26rpx;
-  color: $text-title;
-  letter-spacing: 0.06em;
-  box-sizing: border-box;
-}
-
-.bind-input-ph {
-  color: $text-caption;
-}
-
-.bind-btn {
-  flex-shrink: 0;
-  padding: 18rpx 32rpx;
-  border-radius: 12rpx;
-  background: $theme-primary;
-  color: #fff;
-  font-size: 26rpx;
-  font-weight: 600;
-  transition: opacity 0.2s ease;
-}
-
-.bind-btn.disabled {
-  opacity: 0.55;
 }
 
 .menu-url {
