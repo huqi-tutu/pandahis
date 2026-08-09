@@ -1,0 +1,83 @@
+{
+  "work": "03后汉书",
+  "updated_at": "2026-08-09T13:34:31Z",
+  "rule_ref": "标注索引条目合并规则.md §三·规则3（同书分卷=一卷）",
+  "groups": [
+    {
+      "group": "冯衍列传第十八",
+      "史略名称": "冯衍",
+      "parts": [
+        {
+          "vol": "030",
+          "史略ID": "HOUHANSHU_030_02",
+          "source_file": "03后汉书_030_桓谭冯衍列传第十八上.txt",
+          "paragraphs": [
+            {
+              "volume": "桓谭冯衍列传第十八上",
+              "paragraph_from": 17,
+              "paragraph_to": 38
+            }
+          ],
+          "role_in_split": "上"
+        },
+        {
+          "vol": "031",
+          "史略ID": "HOUHANSHU_031_01",
+          "source_file": "03后汉书_031_冯衍列传第十八下.txt",
+          "paragraphs": [
+            {
+              "volume": "冯衍列传第十八下",
+              "paragraph_from": 2,
+              "paragraph_to": 17
+            }
+          ],
+          "role_in_split": "下"
+        }
+      ],
+      "merge_instruction": "合并时两卷段落一并召回并拼接；翻译产出同一篇详情（单一 GLBL）。",
+      "translate_instruction": "详情一篇；母本按同书分卷整体赋 role，勿拆成两篇。"
+    },
+    {
+      "group": "班彪列传第三十",
+      "史略名称": "班固",
+      "parts": [
+        {
+          "vol": "044",
+          "史略ID": "HOUHANSHU_044_02",
+          "source_file": "03后汉书_044_班彪列传第三十上（自东都主人以下分为下卷）.txt",
+          "paragraphs": [
+            {
+              "volume": "班彪列传第三十上",
+              "paragraph_from": 16,
+              "paragraph_to": 31
+            }
+          ],
+          "role_in_split": "上"
+        },
+        {
+          "vol": "045",
+          "史略ID": "HOUHANSHU_045_01",
+          "source_file": "03后汉书_045_班彪列传第三十下.txt",
+          "paragraphs": [
+            {
+              "volume": "班彪列传第三十下",
+              "paragraph_from": 2,
+              "paragraph_to": 25
+            }
+          ],
+          "role_in_split": "下"
+        }
+      ],
+      "related_entries": [
+        {
+          "vol": "044",
+          "史略ID": "HOUHANSHU_044_01",
+          "史略名称": "班彪",
+          "note": "仅上卷，不跨卷"
+        }
+      ],
+      "merge_instruction": "合并时两卷班固段落一并召回并拼接；翻译产出同一篇详情（单一 GLBL）。",
+      "translate_instruction": "详情一篇；母本按同书分卷整体赋 role，勿拆成两篇。"
+    }
+  ]
+}

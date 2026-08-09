@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # 无人值守批量标注：逐卷 LLM（Step1/3/4），编排器自动循环。
-# 用法见 historiography-orchestrator/SKILL.md「批量跑批」
+# 用法见 historiography-orchestrator/README.md（v1 维护；生产标注见 pipeline-v2）
 
 set -euo pipefail
 

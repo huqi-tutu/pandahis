@@ -195,14 +195,6 @@
       "verified_at": "2026-07-30T05:52:14Z"
     },
     {
-      "glbl": "GLBL_00145",
-      "name": "魏安釐王",
-      "file": "GLBL_00145_魏安釐王_见证.json",
-      "status": "done",
-      "entry_count": 2,
-      "verified_at": "2026-07-30T05:52:42Z"
-    },
-    {
       "glbl": "GLBL_00146",
       "name": "魏惠王",
       "file": "GLBL_00146_魏惠王_见证.json",
@@ -1337,7 +1329,71 @@
       "status": "已处理·无可用",
       "entry_count": 0,
       "verified_at": "2026-07-30T07:55:29Z"
+    },
+    {
+      "glbl": "GLBL_01096",
+      "name": "魏公子无忌",
+      "file": "GLBL_01096_魏公子无忌_见证.json",
+      "status": "done",
+      "entry_count": 2,
+      "verified_at": "2026-08-08T11:47:43Z"
+    },
+    {
+      "glbl": "GLBL_01109",
+      "name": "邹衍",
+      "file": "GLBL_01109_邹衍_见证.json",
+      "status": "done",
+      "entry_count": 2,
+      "verified_at": "2026-08-08T11:48:40Z"
+    },
+    {
+      "glbl": "GLBL_01113",
+      "name": "李牧",
+      "file": "GLBL_01113_李牧_见证.json",
+      "status": "done",
+      "entry_count": 2,
+      "verified_at": "2026-08-08T11:49:37Z"
+    },
+    {
+      "glbl": "GLBL_01114",
+      "name": "赵奢",
+      "file": "GLBL_01114_赵奢_见证.json",
+      "status": "done",
+      "entry_count": 2,
+      "verified_at": "2026-08-08T11:49:37Z"
+    },
+    {
+      "glbl": "GLBL_01119",
+      "name": "赵惠文王",
+      "file": "GLBL_01119_赵惠文王_见证.json",
+      "status": "done",
+      "entry_count": 2,
+      "verified_at": "2026-08-08T11:49:37Z"
+    },
+    {
+      "glbl": "GLBL_00145",
+      "name": "魏安釐王",
+      "file": "GLBL_00145_魏安釐王_见证.json",
+      "status": "done",
+      "entry_count": 1,
+      "verified_at": "2026-08-09T00:53:29Z"
+    },
+    {
+      "glbl": "GLBL_01121",
+      "name": "齐桓公午",
+      "file": "GLBL_01121_齐桓公午_见证.json",
+      "status": "done",
+      "entry_count": 4,
+      "verified_at": "2026-08-09T00:53:29Z"
+    },
+    {
+      "glbl": "GLBL_01105",
+      "name": "庄子",
+      "file": "GLBL_01105_庄子_见证.json",
+      "status": "done",
+      "entry_count": 4,
+      "verified_at": "2026-08-09T00:58:40Z"
     }
   ],
-  "updated_at": "2026-07-30T07:55:29Z"
+  "updated_at": "2026-08-09T00:58:40Z"
 }

@@ -1,0 +1,26 @@
+{
+  "work": "03后汉书",
+  "vol": "005",
+  "volume_name": "孝和孝殇帝纪",
+  "volume_type_guess": "本纪",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "汉和帝",
+      "category": "君王",
+      "rationale": "卷名「孝和孝殇帝纪」为东汉本纪，孝和帝即汉和帝刘肇，为天下共主（皇帝），本卷主体叙事围绕其在位期间政事展开，符合君王准入标准。"
+    },
+    {
+      "name": "汉殇帝",
+      "category": "君王",
+      "rationale": "卷名「孝和孝殇帝纪」并列两位皇帝，孝殇帝即汉殇帝刘隆，为东汉皇帝（天下共主），虽在位极短，但本卷为其立纪，属本纪体例中的独立叙事主轴，符合君王准入标准。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "论曰",
+    "赞曰",
+    "其他"
+  ]
+}

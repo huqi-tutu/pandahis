@@ -1,0 +1,30 @@
+{
+  "work": "03后汉书",
+  "vol": "019",
+  "volume_name": "冯岑贾列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "冯异",
+      "category": "武将",
+      "rationale": "卷名首列人物，东汉开国功臣、云台二十八将之一，以军功征战为主轴，符合武将准入标准。"
+    },
+    {
+      "name": "岑彭",
+      "category": "武将",
+      "rationale": "卷名次列人物，东汉开国名将，以征伐四方、军功卓著为主轴，符合武将准入标准。"
+    },
+    {
+      "name": "贾复",
+      "category": "武将",
+      "rationale": "卷名末列人物，东汉开国功臣、云台二十八将之一，以将帅征战为主轴，符合武将准入标准。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

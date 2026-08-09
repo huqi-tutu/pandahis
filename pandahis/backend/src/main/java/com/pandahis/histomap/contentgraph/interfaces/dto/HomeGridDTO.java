@@ -6,8 +6,17 @@ public record HomeGridDTO(
     List<TimeAxisItem> timeAxis,
     List<Civilization> civilizations,
     List<Cell> cells,
-    Overview overview
+    Overview overview,
+    FeatureFlags flags
 ) {
+  /** 与 GET /config/features 一致，供首页无需二次请求 */
+  public record FeatureFlags(boolean civSwitchEnabled) {}
+
+  public HomeGridDTO {
+    if (flags == null) {
+      flags = new FeatureFlags(true);
+    }
+  }
   /** rowHeightPx：与小程序矩阵行 min-height 一致，使用 rpx 数值（如 56–180） */
   public record TimeAxisItem(int year, String label, int rowHeightPx) {}
 

@@ -1,0 +1,38 @@
+{
+  "work": "03后汉书",
+  "vol": "006",
+  "total_paragraphs": 217,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 216,
+      "paragraph_to": 216,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 217,
+      "paragraph_to": 217,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "汉安帝",
+      "category": "君王",
+      "paragraph_from": 2,
+      "paragraph_to": 215,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "恭宗孝安皇帝讳祜，肃宗孙也。父清河孝王庆，母左姬。帝自在邸第，数有神光照室，又有",
+        "close_paragraph": 215,
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

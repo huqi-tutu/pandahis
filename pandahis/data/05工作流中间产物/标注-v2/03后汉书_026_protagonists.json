@@ -1,0 +1,39 @@
+{
+  "work": "03后汉书",
+  "vol": "026",
+  "volume_name": "马援列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_arc": "C",
+  "volume_texture": "sequential",
+  "skip_reason": null,
+  "protagonists_cap_note": "马援+廖/防/严；马棱不取。",
+  "protagonists": [
+    {
+      "name": "马援",
+      "category": "武将",
+      "rationale": "P2–P43。"
+    },
+    {
+      "name": "马廖",
+      "category": "武将",
+      "rationale": "P45–P51（含嗣封）。"
+    },
+    {
+      "name": "马防",
+      "category": "武将",
+      "rationale": "P52–P57（含嗣封）。"
+    },
+    {
+      "name": "马严",
+      "category": "文臣",
+      "rationale": "P58–P64。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "论赞",
+    "其他"
+  ]
+}

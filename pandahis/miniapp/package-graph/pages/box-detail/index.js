@@ -12,6 +12,7 @@ const correction_1 = require("../../../native-utils/correction");
 const category_label_1 = require("../../../native-utils/category-label");
 const read_complete_1 = require("../../../native-utils/read-complete");
 const selection_bar_position_1 = require("../../../native-utils/selection-bar-position");
+const brand_assets_1 = require("../../../native-utils/brand-assets");
 function relicThumbLabel(name) {
     const n = (name || '').trim();
     if (!n)
@@ -154,6 +155,7 @@ function critiqueEraDisplay(eraText) {
 }
 function mapCritiqueItems(raw) {
     return (raw || []).map((it, idx) => {
+        const idNum = Number(it.id);
         const author = String(it.author || '').trim();
         const title = String(it.title || '').trim();
         const angleTitle = critiqueAngleTitle(title);
@@ -175,6 +177,7 @@ function mapCritiqueItems(raw) {
         const cardMeta = metaParts.filter(Boolean).join(' · ');
         return {
             ...it,
+            id: Number.isFinite(idNum) && idNum > 0 ? idNum : null,
             displayAuthor,
             eraMeta: dynasty,
             bodyQuote,
@@ -188,11 +191,13 @@ function mapCritiqueItems(raw) {
 }
 function mapRelicItems(raw) {
     return (raw || []).map((it) => {
+        const idNum = Number(it.id);
         const full = String(it.description || it.summary || '').trim();
         // 列表简介：优先用服务端 summary；勿把截断摘要拼进详情全文
         const teaser = String(it.summary || it.description || '').trim();
         const museum = it.museum || '馆藏待补充';
         return {
+            id: Number.isFinite(idNum) && idNum > 0 ? idNum : null,
             name: it.name || '',
             imageUrl: it.imageUrl,
             summary: teaser,
@@ -218,13 +223,29 @@ function yearLabel(y) {
         return '';
     return (0, year_format_1.formatHistoryYear)(y);
 }
+/** 君王/诸侯的起止年语义为在位年，展示时加「在位」前缀，避免被读成生卒 */
+const REIGN_YEAR_CATEGORY_KEYS = new Set(['junji', 'zhuhou']);
 function buildDetailMetaFromBox(box) {
+    var _a, _b;
+    const cat = String(box.categoryKey || '').trim();
+    const y0 = yearLabel(box.startYear);
+    const y1 = yearLabel(box.endYear);
+    const raw = box;
+    const civ = String((_b = (_a = raw.civilizationName) !== null && _a !== void 0 ? _a : raw.civilization_name) !== null && _b !== void 0 ? _b : '').trim();
+    const catName = (0, category_label_1.categoryLabel)(cat);
+    if (REIGN_YEAR_CATEGORY_KEYS.has(cat) && y0) {
+        const range = y1 && y1 !== y0 ? `${y0} — ${y1}` : y0;
+        const parts = [`在位 ${range}`];
+        if (civ)
+            parts.push(civ);
+        if (catName)
+            parts.push(catName);
+        return parts.join(' · ');
+    }
     const fromSub = formatDetailMetaLine(box.subText);
     if (fromSub)
         return fromSub;
     const parts = [];
-    const y0 = yearLabel(box.startYear);
-    const y1 = yearLabel(box.endYear);
     if (y0 && y1 && y0 !== y1)
         parts.push(`${y0} — ${y1}`);
     else if (y0)
@@ -397,6 +418,7 @@ Page({
         critFetched: false,
         relicFetched: false,
         narrationState: 'idle',
+        narrationCoverLogoUrl: brand_assets_1.NARRATION_COVER_LOGO_URL,
         audioOpen: false,
         audioProgress: 0,
         audioCurrentTime: '0:00',
@@ -624,7 +646,8 @@ Page({
             await this.refreshFavState();
             await this.recordFootprint();
             await this.ensureTab('content');
-            if (tab === 'relations' && showRelationsTab) {
+            // 详情正文就绪后预取关系图，切换 Tab 时无需再等
+            if (showRelationsTab) {
                 this.loadRelationsGraph();
             }
         }
@@ -923,51 +946,30 @@ Page({
         });
     },
     onCritiqueTap(e) {
-        var _a;
         const idx = Number(e.currentTarget.dataset.idx);
         const list = this.data.critiques;
         const c = list[idx];
         if (!c)
             return;
-        const boxName = String(this.data.navTitle || '').trim();
-        const angleTitle = critiqueAngleTitle(String(c.title || ''));
-        const header = this.data.header;
-        const { civ, dynasty } = readBoxLocationNames(header === null || header === void 0 ? void 0 : header.box);
-        (0, router_1.navigateTo)(router_1.ROUTES.critiqueDetail, {
-            navTitle: boxName ? `${boxName}・评述` : '评述',
-            title: angleTitle || String(c.title || '').trim(),
-            author: c.displayAuthor || '',
-            book: c.source || '',
-            era: c.eraMeta || '',
-            body: String(c.content || c.bodyQuote || '').trim(),
-            boxId: this.data.boxId || '',
-            boxTitle: boxName || ((_a = header === null || header === void 0 ? void 0 : header.box) === null || _a === void 0 ? void 0 : _a.title) || '',
-            civilizationName: civ,
-            dynastyName: dynasty,
-        });
+        const critiqueId = Number(c.id || 0);
+        if (!(critiqueId > 0)) {
+            wx.showToast({ title: '评述暂不可用', icon: 'none' });
+            return;
+        }
+        (0, router_1.navigateTo)(router_1.ROUTES.critiqueDetail, { critiqueId });
     },
     onRelicTap(e) {
-        var _a;
         const idx = Number(e.currentTarget.dataset.idx);
         const list = this.data.relics;
         const r = list[idx];
         if (!r)
             return;
-        const boxName = String(this.data.navTitle || '').trim();
-        const header = this.data.header;
-        const { civ, dynasty } = readBoxLocationNames(header === null || header === void 0 ? void 0 : header.box);
-        (0, router_1.navigateTo)(router_1.ROUTES.relicDetail, {
-            navTitle: boxName ? `${boxName}・见证` : '见证',
-            name: r.name || '',
-            museum: r.museum || '',
-            // 只用完整介绍；summary 入库时会截断并加「…」，拼进去会像「没写完」
-            detail: String(r.description || r.teaser || '').trim(),
-            imageUrl: r.imageUrl || '',
-            boxId: this.data.boxId || '',
-            boxTitle: boxName || ((_a = header === null || header === void 0 ? void 0 : header.box) === null || _a === void 0 ? void 0 : _a.title) || '',
-            civilizationName: civ,
-            dynastyName: dynasty,
-        });
+        const relicId = Number(r.id || 0);
+        if (!(relicId > 0)) {
+            wx.showToast({ title: '见证暂不可用', icon: 'none' });
+            return;
+        }
+        (0, router_1.navigateTo)(router_1.ROUTES.relicDetail, { relicId });
     },
     async onPlayIntro() {
         var _a, _b;

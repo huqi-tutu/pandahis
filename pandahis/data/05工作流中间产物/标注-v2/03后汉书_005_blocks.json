@@ -1,0 +1,51 @@
+{
+  "work": "03后汉书",
+  "vol": "005",
+  "total_paragraphs": 173,
+  "volume_subtype": "hezhuan",
+  "derived_from": "03后汉书_005_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 162,
+      "paragraph_to": 162,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 173,
+      "paragraph_to": 173,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "汉和帝",
+      "category": "君王",
+      "paragraph_from": 2,
+      "paragraph_to": 161,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "孝和皇帝讳肇，肃宗第四子也。母梁贵人，为窦皇后所谮，忧卒，窦后养帝以为己子。建初",
+        "close_paragraph": 161,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P161"
+      }
+    },
+    {
+      "name": "汉殇帝",
+      "category": "君王",
+      "paragraph_from": 163,
+      "paragraph_to": 172,
+      "boundary_evidence": {
+        "open_paragraph": 163,
+        "open_phrase": "孝殇皇帝讳隆，和帝少子也。元兴元年十二月辛未夜，即皇帝位，时诞育百余日。尊皇后曰",
+        "close_paragraph": 172,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P163–P172"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

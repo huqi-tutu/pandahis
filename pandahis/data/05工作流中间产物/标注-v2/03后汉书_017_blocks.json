@@ -1,0 +1,92 @@
+{
+  "work": "03后汉书",
+  "vol": "017",
+  "total_paragraphs": 38,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_017_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 10,
+      "paragraph_to": 10,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 33,
+      "paragraph_to": 33,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 38,
+      "paragraph_to": 38,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "李通",
+      "category": "武将",
+      "paragraph_from": 2,
+      "paragraph_to": 9,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "李通，字次元，南阳宛人也。世以贷殖著姓。父守，身长九尺，容貌绝异，为人严毅，居家",
+        "close_paragraph": 9,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P9"
+      }
+    },
+    {
+      "name": "王常",
+      "category": "武将",
+      "paragraph_from": 11,
+      "paragraph_to": 16,
+      "boundary_evidence": {
+        "open_paragraph": 11,
+        "open_phrase": "王常字颜卿，颍川舞阳人也。王莽未，为弟报仇，亡命江夏。久之，与王凤、王匡等起兵云",
+        "close_paragraph": 16,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P11–P16"
+      }
+    },
+    {
+      "name": "邓晨",
+      "category": "武将",
+      "paragraph_from": 17,
+      "paragraph_to": 22,
+      "boundary_evidence": {
+        "open_paragraph": 17,
+        "open_phrase": "邓晨字伟卿，南阳新野人也。世吏二千石。父宏，预章都尉。晨初聚光武姊元。王莽末，光",
+        "close_paragraph": 22,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P17–P22"
+      }
+    },
+    {
+      "name": "来歙",
+      "category": "武将",
+      "paragraph_from": 23,
+      "paragraph_to": 32,
+      "boundary_evidence": {
+        "open_paragraph": 23,
+        "open_phrase": "来歙字君叔，南阳新野人也。六世祖汉，有才力，武帝世，以光禄大夫副楼船将军杨仆，击",
+        "close_paragraph": 32,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P23–P32"
+      }
+    },
+    {
+      "name": "来历",
+      "category": "文臣",
+      "paragraph_from": 34,
+      "paragraph_to": 37,
+      "boundary_evidence": {
+        "open_paragraph": 34,
+        "open_phrase": "历字伯珍，少袭爵，以公主子，永元中为侍中，监羽林右骑。永初三年，迁射声校尉。永宁",
+        "close_paragraph": 37,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P34–P37"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

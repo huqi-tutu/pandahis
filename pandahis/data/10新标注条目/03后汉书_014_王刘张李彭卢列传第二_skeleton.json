@@ -1,0 +1,475 @@
+{
+  "volume": "王刘张李彭卢列传",
+  "source_file": "03后汉书_014_王刘张李彭卢列传第二.txt",
+  "total_paragraphs": 41,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "interleaved",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "王昌",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "王昌",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "王昌",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "王昌",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "刘永",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "刘永",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "刘永",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "刘永",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "刘永",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "刘永",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "刘永",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "刘永",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "刘永",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "刘永",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "刘永",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "张步",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "张步",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "张步",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "张步",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "张步",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "张步",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "王闳",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "李宪",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "李宪",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "李宪",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "彭宠",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "彭宠",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "彭宠",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "彭宠",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "彭宠",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "彭宠",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "彭宠",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "卢芳",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "卢芳",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "卢芳",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "卢芳",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "卢芳",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "卢芳",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 41,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HOUHANSHU_014_01",
+      "史略名称": "王昌",
+      "史略简介": "王昌",
+      "原文字句": "王昌一名郎，赵国邯郸人也。素为卜相工，明星历，常以为河北有天子气。时赵缪王子林好奇数，任侠于赵、魏间，多通豪猾，而郎与之亲善。初，王莽篡位，长安中或自称成帝子子舆者，莽杀之。郎缘是诈称真子舆，云“母故成帝讴者，尝下殿卒僵，须臾有黄气从上下，半日乃解，遂妊身就馆。赵后欲害之，伪易他人子，以故得全。子舆年十二，识命者郎中李曼卿，与俱至蜀；十七，到丹阳；二十，还长安；展转中山，来往燕、赵，以须天时”。林",
+      "史略分类": "庶众",
+      "主要史料出处": "《03后汉书·卷14·王刘张李彭卢列传》",
+      "paragraphs": [
+        {
+          "volume": "王刘张李彭卢列传",
+          "paragraph_from": 2,
+          "paragraph_to": 5
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_014_02",
+      "史略名称": "刘永",
+      "史略简介": "刘永",
+      "原文字句": "刘永者，梁郡睢阳人，梁孝王八世孙也。传国至父立。元始中，立与平帝外家卫氏交通，为王莽所诛。",
+      "史略分类": "宗戚",
+      "主要史料出处": "《03后汉书·卷14·王刘张李彭卢列传》",
+      "paragraphs": [
+        {
+          "volume": "王刘张李彭卢列传",
+          "paragraph_from": 6,
+          "paragraph_to": 16
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_014_03",
+      "史略名称": "张步",
+      "史略简介": "张步",
+      "原文字句": "张步字文公，琅邪不其人也。汉兵之起，步亦聚众数千，转攻傍县，下数城，自为五威将军，遂据本郡。",
+      "史略分类": "武将",
+      "主要史料出处": "《03后汉书·卷14·王刘张李彭卢列传》",
+      "paragraphs": [
+        {
+          "volume": "王刘张李彭卢列传",
+          "paragraph_from": 17,
+          "paragraph_to": 22
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_014_04",
+      "史略名称": "王闳",
+      "史略简介": "王闳",
+      "原文字句": "王闳者，王莽叔父平阿侯谭之子也，哀帝时为中常侍。时幸臣董贤为大司马，宠爱贵盛，闳屡谏，忤旨。哀帝临崩，以玺绶付贤曰：“无妄以与人。”时国无嗣主，内外恇惧，闳白元后，请夺之；即带剑至宣德后闼，举手叱贤曰：“宫车晏驾，国嗣未立，公受恩深重，当俯伏号泣，何事久持玺绶以待祸至邪！”贤知闳必死，不敢拒之，乃跪授玺绶。闳持上太后，朝廷壮之。及王莽篡位，僭忌闳，乃出为东郡太守。闳惧诛，常系药手内。莽败，汉兵起，",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷14·王刘张李彭卢列传》",
+      "paragraphs": [
+        {
+          "volume": "王刘张李彭卢列传",
+          "paragraph_from": 23,
+          "paragraph_to": 23
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_014_05",
+      "史略名称": "李宪",
+      "史略简介": "李宪",
+      "原文字句": "李宪者，颍川许昌人也。王莽时为庐江属令。莽末，江贼王州公等起，众十余万，攻掠郡县，莽以宪为偏将军、庐江连率，击破州公。莽败，宪据郡自守。更始元年，自称淮南王。建武三年，遂自立为天子，置公卿百官，拥九城，众十余万。",
+      "史略分类": "武将",
+      "主要史料出处": "《03后汉书·卷14·王刘张李彭卢列传》",
+      "paragraphs": [
+        {
+          "volume": "王刘张李彭卢列传",
+          "paragraph_from": 24,
+          "paragraph_to": 26
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_014_06",
+      "史略名称": "彭宠",
+      "史略简介": "彭宠",
+      "原文字句": "彭宠字伯通，南阳宛人也。父宏，哀帝时为渔阳太守，伟容貌，能饮饭，有威于边。王莽居摄，诛不附己者，宏与何武、鲍宣并遇害。",
+      "史略分类": "武将",
+      "主要史料出处": "《03后汉书·卷14·王刘张李彭卢列传》",
+      "paragraphs": [
+        {
+          "volume": "王刘张李彭卢列传",
+          "paragraph_from": 27,
+          "paragraph_to": 33
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_014_07",
+      "史略名称": "卢芳",
+      "史略简介": "卢芳",
+      "原文字句": "卢芳字君期，安定三水人入，居左谷中。王莽时，天下咸思汉德，芳由是诈自称武帝曾孙刘文伯。曾祖母匈奴谷蠡浑邪王之姊为武帝皇后，生三子。遭江充之乱，太子诛，皇后坐死，中子次卿亡之长陵，小子回卿逃于左谷。霍将军立次卿，迎回卿。回卿不出，因居左谷，生子孙卿，孙卿生文伯。常以是言诳惑安定间。王莽末，乃与三水属国羌胡起兵。更始至长安，征芳为骑都尉，使镇抚安定以西。",
+      "史略分类": "武将",
+      "主要史料出处": "《03后汉书·卷14·王刘张李彭卢列传》",
+      "paragraphs": [
+        {
+          "volume": "王刘张李彭卢列传",
+          "paragraph_from": 34,
+          "paragraph_to": 39
+        }
+      ]
+    }
+  ],
+  "translation_qa_hint": "混写卷：人物段落非连续。翻译质检须按 entries[].paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。"
+}

@@ -322,7 +322,9 @@ def candidates_prompt(
         extra = (
             "须为国家/联盟强制落地的规则（见典制与思想分界.md）。"
             "制度与事略可同主题并存（禅让制+尧舜禅让）。"
-            "不与同概念思想双条（禅让制 vs 禅让思想）。"
+            "不与同概念思想双条（禅让制 vs 禅让思想）。\n"
+            "【条数 · 强制】候选池目标 **10–18** 条；禁止同制度拆条/近义重复"
+            "（如均输与均输法、推恩令与推恩制只留一条）；字段宜短，勿灌水。"
         )
     other_note = ""
     for cat, items in existing_other.items():
@@ -448,21 +450,16 @@ def candidates_renwu_prompt(
 
 ## 输出格式
 
-只输出一个 JSON 对象（不要 Markdown），键为六类，值为候选数组。每类数组内每项：
+只输出一个 JSON 对象（不要 Markdown），键为八类：
+君王、诸侯、宗戚、宦官、文臣、武将、蕃祚、庶众（值为候选数组）。
 
-```json
-{{
-  "名称": "标准名（君王须对齐帝王.json）",
-  "史略分类": "君王|宗戚|宦官|文臣|武将|庶众",
-  "分类判定理由": "为何归此类、为何不属其他类",
-  "补全来源": "帝王表强制|择优推荐",
-  "建议挂靠帝王": "",
-  "主要史料出处": "",
-  "边界备注": "",
-  "去重自检": "说明未与一期哪几条重复、未用哪些别名",
-  "审核状态": "pending"
-}}
-```
+每项字段：
+名称、史略分类、分类判定理由(≤40字)、补全来源(帝王表强制|择优推荐)、
+建议挂靠帝王、主要史料出处、边界备注(可空)、去重自检(≤30字)、审核状态(pending)。
+
+【条数 · 强制】合计 **35–55** 条；单类建议上限：
+君王=缺口强制项(+≤3)、诸侯≤8、宗戚≤6、宦官≤4、文臣≤12、武将≤10、蕃祚≤6、庶众≤4。
+字段宜短，禁止灌水；输出必须完整可解析的 JSON（勿中途截断）。
 
 **禁止**输出已标注人物。若无合适候选，该类返回 `[]`。
 """
@@ -510,8 +507,11 @@ def run_candidates_renwu(
 
     _log(f"🤖 LLM candidates-renwu（一期已标注 {len(phase1)} 条，禁止重复）…")
     text = dkl.call_llm(prompt, session_prefix="dk-cand-renwu-", timeout_sec=900, temperature=0)
-    data = dkl.extract_json_object(text)
+    data = dkl.extract_json_object(text) or dkl.extract_person_candidates_object(text)
     if not data:
+        dump = paths["logs_dir"] / f"{context['朝代名称']}_人物_candidates_raw.txt"
+        dump.write_text(text or "", encoding="utf-8")
+        _log(f"❌ 人物候选解析失败，原文已保存: {dump} ({len(text or '')} 字)")
         raise RuntimeError("人物候选解析失败（须为 JSON 对象）")
 
     phase1_canonicals = {str(p.get("标准名", "")) for p in phase1}
@@ -1267,6 +1267,9 @@ def run_candidates_one(
     text = dkl.call_llm(prompt, session_prefix=f"dk-cand-{category}-", timeout_sec=900)
     rows = dkl.extract_json_array(text)
     if not rows:
+        dump = paths["logs_dir"] / f"{context['朝代名称']}_{category}_candidates_raw.txt"
+        dump.write_text(text or "", encoding="utf-8")
+        _log(f"❌ 候选解析失败，原文已保存: {dump} ({len(text or '')} 字)")
         raise RuntimeError(f"{category} 候选解析失败")
     for row in rows:
         row.setdefault("审核状态", "pending")
@@ -1322,7 +1325,17 @@ def run_fill_category(
         if not name or name in done_names:
             continue
         glbl_id = dkl.allocate_glbl_id(counter)
-        attach = dkl.determine_attach_emperor_name(category, cand, name)
+        attach, healed = dkl.ensure_candidate_attach_emperor(
+            cand,
+            category=category,
+            entry_name=name,
+            emperors=emperors,
+            histograph_root=HISTOGRAPH_ROOT,
+            dynasty_id=str(context.get("朝代ID") or ""),
+        )
+        if healed:
+            _log(f"  🔧 自动回填挂靠帝王「{attach}」← 一期索引（{name}）")
+            save_json(paths["candidates"], cand_doc)
         try:
             dkl.validate_attach_emperor_name(attach, emperors, entry_id=glbl_id)
         except ValueError as exc:
@@ -1415,7 +1428,17 @@ def run_fill_renwu(
             if not name or name in done_names:
                 continue
             glbl_id = dkl.allocate_glbl_id(counter)
-            attach = dkl.determine_attach_emperor_name(cat, cand, name)
+            attach, healed = dkl.ensure_candidate_attach_emperor(
+                cand,
+                category=cat,
+                entry_name=name,
+                emperors=emperors,
+                histograph_root=HISTOGRAPH_ROOT,
+                dynasty_id=str(context.get("朝代ID") or ""),
+            )
+            if healed:
+                _log(f"  🔧 自动回填挂靠帝王「{attach}」← 一期索引（{name}）")
+                save_json(paths["candidates"], cand_doc)
             try:
                 dkl.validate_attach_emperor_name(attach, emperors, entry_id=glbl_id)
             except ValueError as exc:

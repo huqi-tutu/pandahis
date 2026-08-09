@@ -1,0 +1,21 @@
+{
+  "schema": "translate-coverage-l2/v1",
+  "史略ID": "GLBL_00370",
+  "passed": false,
+  "degraded": false,
+  "summary": "白话译文未传达母本中'语在《元后传》'的指示信息。",
+  "l1_ratio": 0.0,
+  "l1_min_ratio": 0.0,
+  "claims": [
+    {
+      "id": "M091",
+      "claim": "母本信息：语在《元后传》。",
+      "status": "missing",
+      "evidence": "白话译文中未提及《元后传》或相关指示。",
+      "note": "母本信息为'语在《元后传》'，即提示读者相关记载见于《元后传》。白话译文通篇未出现此指示，读者无法得知该信息。"
+    }
+  ],
+  "issues": [
+    "missing [M091]: 母本信息：语在《元后传》。"
+  ]
+}

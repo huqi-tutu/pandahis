@@ -18,6 +18,7 @@ export type CorrectionDetail = {
   civilizationName: string
   dynastyName: string
   sourceType: CorrectionSourceType
+  sourceRefId?: number | null
   selectedText?: string | null
   reason?: string | null
   status: CorrectionStatus
@@ -61,6 +62,12 @@ export function formatCorrectionTime(iso: string): string {
   return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`
 }
 
+function toNullableNumber(raw: unknown): number | null {
+  if (raw === undefined || raw === null || raw === '') return null
+  const n = Number(raw)
+  return Number.isFinite(n) && n > 0 ? n : null
+}
+
 function normalizeDetail(raw: Record<string, unknown>): CorrectionDetail {
   return {
     id: Number(raw.id ?? raw['id'] ?? 0),
@@ -70,6 +77,7 @@ function normalizeDetail(raw: Record<string, unknown>): CorrectionDetail {
     civilizationName: String(raw.civilizationName ?? raw['civilization_name'] ?? ''),
     dynastyName: String(raw.dynastyName ?? raw['dynasty_name'] ?? ''),
     sourceType: String(raw.sourceType ?? raw['source_type'] ?? '') as CorrectionSourceType,
+    sourceRefId: toNullableNumber(raw.sourceRefId ?? raw['source_ref_id']),
     selectedText: (raw.selectedText ?? raw['selected_text'] ?? null) as string | null,
     reason: (raw.reason ?? null) as string | null,
     status: String(raw.status ?? 'pending') as CorrectionStatus,
@@ -103,6 +111,7 @@ export type SubmitCorrectionPayload = {
   sourceType: CorrectionSourceType
   reason?: string
   selectedText?: string
+  sourceRefId?: number | null
 }
 
 export async function submitCorrection(payload: SubmitCorrectionPayload): Promise<CorrectionDetail> {
@@ -114,6 +123,7 @@ export async function submitCorrection(payload: SubmitCorrectionPayload): Promis
       sourceType: payload.sourceType,
       reason: payload.reason || undefined,
       selectedText: payload.selectedText || undefined,
+      sourceRefId: payload.sourceRefId || undefined,
     },
   })
   return normalizeDetail((res.data || {}) as Record<string, unknown>)
@@ -148,4 +158,62 @@ export function parseCivilizationFromCrumb(crumbText: string): string {
   if (!text) return ''
   const idx = text.indexOf(' · ')
   return idx >= 0 ? text.slice(0, idx).trim() : text
+}
+
+/** 解析纠错来源对应的跳转目标；无法跳转时返回 error */
+export function resolveCorrectionSourceNav(
+  detail: Pick<CorrectionDetail, 'sourceType' | 'boxId' | 'unitId' | 'sourceRefId' | 'boxTitle' | 'dynastyName'>
+): { path: string; query: Record<string, string | number> } | { error: string } {
+  const sourceType = detail.sourceType
+  if (sourceType === 'dynasty_canvas') {
+    const unitId = String(detail.unitId || '').trim()
+    if (!unitId) return { error: '缺少朝代信息，无法跳转' }
+    return {
+      path: ROUTES.dynastyDetail,
+      query: {
+        unitId,
+        dynasty: String(detail.dynastyName || '').trim(),
+      },
+    }
+  }
+  if (sourceType === 'box_detail_selection') {
+    const boxId = String(detail.boxId || '').trim()
+    if (!boxId) return { error: '缺少史略信息，无法跳转' }
+    return {
+      path: ROUTES.boxDetail,
+      query: {
+        boxId,
+        title: String(detail.boxTitle || '').trim(),
+      },
+    }
+  }
+  if (sourceType === 'critique_detail_selection') {
+    const critiqueId = toNullableNumber(detail.sourceRefId)
+    if (!critiqueId) return { error: '缺少评述信息，无法跳转' }
+    return {
+      path: ROUTES.critiqueDetail,
+      query: { critiqueId },
+    }
+  }
+  if (sourceType === 'relic_detail_selection') {
+    const relicId = toNullableNumber(detail.sourceRefId)
+    if (!relicId) return { error: '缺少见证信息，无法跳转' }
+    return {
+      path: ROUTES.relicDetail,
+      query: { relicId },
+    }
+  }
+  return { error: '未知来源，无法跳转' }
+}
+
+export function navigateToCorrectionSource(
+  detail: Pick<CorrectionDetail, 'sourceType' | 'boxId' | 'unitId' | 'sourceRefId' | 'boxTitle' | 'dynastyName'>
+): boolean {
+  const nav = resolveCorrectionSourceNav(detail)
+  if ('error' in nav) {
+    wx.showToast({ title: nav.error, icon: 'none' })
+    return false
+  }
+  navigateTo(nav.path, nav.query)
+  return true
 }

@@ -1,0 +1,21 @@
+{
+  "work": "03后汉书",
+  "vol": "006",
+  "volume_name": "孝安帝纪",
+  "volume_type_guess": "本纪",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "汉安帝",
+      "category": "君王",
+      "rationale": "《后汉书·孝安帝纪》为东汉安帝刘祜的本纪，属帝王本纪体例，以安帝一朝军政大事为叙事主轴。安帝为天下共主（皇帝），符合君王分类准入标准。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "论曰",
+    "赞曰",
+    "其他"
+  ]
+}

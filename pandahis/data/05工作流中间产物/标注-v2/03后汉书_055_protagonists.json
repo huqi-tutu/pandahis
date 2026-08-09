@@ -1,0 +1,39 @@
+{
+  "work": "03后汉书",
+  "vol": "055",
+  "volume_name": "孝明八王列传",
+  "volume_type_guess": "传",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_arc": "C",
+  "volume_texture": "sequential",
+  "skip_reason": null,
+  "protagonists_cap_note": "合传主轴≤5：按赞词取羡/恭/党/衍/畅；嗣封段归各王。",
+  "protagonists": [
+    {
+      "name": "刘羡",
+      "category": "宗戚",
+      "rationale": "陈敬王，赞「陈敬严重」。"
+    },
+    {
+      "name": "刘恭",
+      "category": "宗戚",
+      "rationale": "彭城靖王，赞「彭城厚德」。"
+    },
+    {
+      "name": "刘党",
+      "category": "宗戚",
+      "rationale": "乐成靖王，赞「党惟荒忒」。"
+    },
+    {
+      "name": "刘衍",
+      "category": "宗戚",
+      "rationale": "下邳惠王，赞「下邳婴疴」。"
+    },
+    {
+      "name": "刘畅",
+      "category": "宗戚",
+      "rationale": "梁节王，赞「梁节邪惑」。"
+    }
+  ]
+}

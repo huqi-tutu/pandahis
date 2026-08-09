@@ -2,6 +2,7 @@ package com.pandahis.histomap.contentgraph.interfaces.service;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.pandahis.histomap.common.feature.FeatureFlagService;
 import com.pandahis.histomap.common.util.HistoryYearFormat;
 import com.pandahis.histomap.contentgraph.interfaces.dto.HomeGridDTO;
 import org.springframework.beans.factory.annotation.Value;
@@ -24,15 +25,18 @@ public class HomeGridService {
 
   private final JdbcTemplate jdbcTemplate;
   private final UnitCardImageResolver unitCardImageResolver;
+  private final FeatureFlagService featureFlagService;
   /** 非空时拼到 civilization tab 图 URL 后，避免微信小程序按 URL 强缓存旧图（换 COS 图后 bump 一次即可） */
   private final String civTabImageCacheBust;
 
   public HomeGridService(
       JdbcTemplate jdbcTemplate,
       UnitCardImageResolver unitCardImageResolver,
+      FeatureFlagService featureFlagService,
       @Value("${histomap.civ-tab.image-cache-bust:}") String civTabImageCacheBust) {
     this.jdbcTemplate = jdbcTemplate;
     this.unitCardImageResolver = unitCardImageResolver;
+    this.featureFlagService = featureFlagService;
     this.civTabImageCacheBust = civTabImageCacheBust == null ? "" : civTabImageCacheBust.trim();
   }
 
@@ -132,8 +136,9 @@ public class HomeGridService {
             .toList();
 
     HomeGridDTO.Overview overview = loadOverview();
+    HomeGridDTO.FeatureFlags flags = new HomeGridDTO.FeatureFlags(featureFlagService.isCivSwitchEnabled());
 
-    return new HomeGridDTO(timeAxis, civilizations, cells, overview);
+    return new HomeGridDTO(timeAxis, civilizations, cells, overview, flags);
   }
 
   private static int cardMinHeightRpx(HomeGridDTO.UnitCard card) {

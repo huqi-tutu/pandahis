@@ -15,6 +15,7 @@ const POSTER_W = 750
 const DPR = 2
 
 import { calculateSharePosterLayout, MAX_QUOTE_LINES } from './share-poster-layout'
+import { APP_DISPLAY_NAME } from './brand-assets'
 
 const COLORS = {
   bg: '#2A2420',
@@ -152,7 +153,7 @@ export async function renderSharePosterToCanvas(
   const sourceLine1 = String(payload.sourceLine1 || '').trim()
   const sourceLine2 = String(payload.sourceLine2 || '').trim()
   const excerptDate = formatExcerptDate(payload.excerptDate)
-  const brandName = String(payload.brandName || '历史图谱').trim() || '历史图谱'
+  const brandName = String(payload.brandName || APP_DISPLAY_NAME).trim() || APP_DISPLAY_NAME
 
   canvas.width = POSTER_W * DPR
   canvas.height = 1150 * DPR

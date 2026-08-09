@@ -1,0 +1,157 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01146",
+  "写作结构": "正史叙述见翻译详录（《史记·平准书》《汉书·食货志》），拓展文写史外异说与延展：以《盐铁论》为主干，辅以《资治通鉴》编年定位，再以《西汉会要》制度条目补足典制细节；后世综述（如《廿二史札记》）仅作legend池合段补充，不展开具体过程。",
+  "候选著作": [
+    {
+      "出处": "《史记·平准书》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载算缗告缗制度始末及实施后果",
+      "检索词": "算缗",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《汉书·食货志》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "班固对武帝经济政策的系统记载，与史记互证",
+      "检索词": "告缗",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《盐铁论·错币》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "昭帝时盐铁会议记录，反映时人对算缗告缗等武帝经济政策的批评与辩护，为史外重要异说",
+      "检索词": "算缗",
+      "采用": true,
+      "原文摘句": "文学曰：『往者财用不足，战士或不得禄，而山东被灾，齐赵大饥，赖均输之畜，仓廪之积，战士以奉，饥民以赈。』",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《资治通鉴·汉纪》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "司马光编年系事，将算缗告缗置于元狩四年（前119）时间轴，便于定位",
+      "检索词": "告缗",
+      "采用": true,
+      "原文摘句": "（元狩四年）冬，有司言：‘县官用度大空，而富商大贾财或累万金，不佐国家之急。请更钱造币以赡用，而摧浮淫并兼之徒。’",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《西汉会要·食货》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "徐天麟分类汇编西汉典制，将算缗告缗相关诏令与条目归入食货类，便于制度检索",
+      "检索词": "算缗",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《廿二史札记·汉武用兵》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "赵翼论汉武帝敛财政策之得失，为后世史评，可作合段补充",
+      "检索词": "告缗",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·平准书》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载算缗告缗制度始末及实施后果",
+      "检索词": "算缗",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《汉书·食货志》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "班固对武帝经济政策的系统记载，与史记互证",
+      "检索词": "告缗",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《盐铁论·错币》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "昭帝时盐铁会议记录，反映时人对算缗告缗等武帝经济政策的批评与辩护，为史外重要异说",
+      "检索词": "算缗",
+      "采用": true,
+      "原文摘句": "文学曰：『往者财用不足，战士或不得禄，而山东被灾，齐赵大饥，赖均输之畜，仓廪之积，战士以奉，饥民以赈。』",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《资治通鉴·汉纪》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "司马光编年系事，将算缗告缗置于元狩四年（前119）时间轴，便于定位",
+      "检索词": "告缗",
+      "采用": true,
+      "原文摘句": "（元狩四年）冬，有司言：‘县官用度大空，而富商大贾财或累万金，不佐国家之急。请更钱造币以赡用，而摧浮淫并兼之徒。’",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《西汉会要·食货》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "徐天麟分类汇编西汉典制，将算缗告缗相关诏令与条目归入食货类，便于制度检索",
+      "检索词": "算缗",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《廿二史札记·汉武用兵》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "赵翼论汉武帝敛财政策之得失，为后世史评，可作合段补充",
+      "检索词": "告缗",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 4,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

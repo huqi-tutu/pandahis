@@ -1,15 +1,15 @@
 ---
 name: historiography-annotate-v2
 description: >
-  新版史料标注 Step 1/2/4（v2 轨道）。批量/多卷须走 historiography-pipeline-v2。
+  史料标注 Step 1/2/4（v2 轨道，唯一 Agent 入口）。批量/多卷须走 historiography-pipeline-v2。
   先定卷主轴（≤5人）再整卷划块、脚本展开；单人/蕃祚不调 LLM 划块。
-  激活词：新版标注、新版史料标注、标注v2。
+  激活词：史料标注、人物标注、史略标注、新版标注、标注v2。
 ---
 
-# 新版史料标注工作流（v2 · 整卷划块）
+# 史料标注工作流（v2 · 整卷划块）
 
-> 老版 skill：`historiography-annotate`（激活词：史料标注、人物标注）**保留不动**。  
-> v2 产出写入 **`data/10新标注条目/`**，与 v1 的 `data/03` 并行。
+> 产出写入 **`data/10新标注条目/`**。Step 2–4 与硬检脚本共用 `historiography-annotate/`（见该目录 README）。  
+> 老版 v1 Agent Skill 已移除；`data/03` 历史索引只读保留。
 
 ## 设计原则（v2.5）
 
@@ -31,13 +31,12 @@ LLM prompt：`prompts/step1b_primary_subjects.md`（Step1b-α）
 
 ## When NOT to Activate
 
-- 用户要老版标注 / 未提「新版」→ 用 **`historiography-annotate`**
-- 批量标注 → 必须先走 **`historiography-pipeline-v2`**
+- 批量标注 / 标下一卷 / 查进度 → 必须先走 **`historiography-pipeline-v2`**
 - **禁止**在本 skill 内自写批量脚本
 
 ## When to Activate
 
-- 用户说「**新版标注**」「**新版史料标注**」「标注 v2」
+- 用户说「**史料标注**」「**人物标注**」「史略标注」「新版标注」「标注 v2」
 - `historiography-pipeline-v2` 指示 Step 1 或 Step 4
 - v2 轨道 Step 3 审计退回后重标
 

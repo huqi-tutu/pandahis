@@ -1,0 +1,498 @@
+{
+  "volume": "卓鲁魏刘列传",
+  "source_file": "03后汉书_027_卓鲁魏刘列传第十五.txt",
+  "total_paragraphs": 47,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "卓茂",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "卓茂",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "卓茂",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "卓茂",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "卓茂",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "卓茂",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "卓茂",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "卓茂",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "鲁恭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "鲁恭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "鲁恭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "鲁恭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "鲁恭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "鲁恭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "鲁恭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "鲁恭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "鲁恭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "鲁恭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "鲁恭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "鲁恭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "鲁恭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "鲁恭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "鲁恭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "鲁恭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "鲁恭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "鲁恭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "鲁恭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "鲁恭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "鲁丕",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "鲁丕",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "鲁丕",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "鲁丕",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "鲁丕",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "鲁丕",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "鲁丕",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "魏霸",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "魏霸",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "魏霸",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "魏霸",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "刘宽",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "刘宽",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "刘宽",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "刘宽",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [
+        {
+          "name": "刘宽",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 47,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HOUHANSHU_027_01",
+      "史略名称": "卓茂",
+      "史略简介": "卓茂",
+      "原文字句": "卓茂字子康，南阳宛人也。父祖皆至郡守。茂，元帝时学于长安，事博士江生，习《诗》《礼》及历算。究极师法，称为通儒。性宽仁恭爱。乡党故旧，虽行能与茂不同，而皆爱慕欣欣焉。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷27·卓鲁魏刘列传》",
+      "paragraphs": [
+        {
+          "volume": "卓鲁魏刘列传",
+          "paragraph_from": 2,
+          "paragraph_to": 9
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_027_02",
+      "史略名称": "鲁恭",
+      "史略简介": "鲁恭",
+      "原文字句": "鲁恭字仲康，扶风平陵人也。其先出于鲁顷公，为楚所灭，迁于下邑，因氏焉。世吏二千石，哀、平间，自鲁而徙。祖父匡，王莽时，为羲和，有权数，号曰“智囊”。父某。建武初，为武陵太守，卒官。时恭年十二，弟丕七岁，昼夜号踊不绝声，郡中赙赠无所受，乃归服丧，礼过成人，乡里奇之。十五，与母及丕俱居太学，习《鲁诗》，闭户讲诵，绝人间事，兄弟俱为诸儒所称，学士争归之。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷27·卓鲁魏刘列传》",
+      "paragraphs": [
+        {
+          "volume": "卓鲁魏刘列传",
+          "paragraph_from": 11,
+          "paragraph_to": 30
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_027_03",
+      "史略名称": "鲁丕",
+      "史略简介": "鲁丕",
+      "原文字句": "丕字叔陵，性沉深好学，孳孳不倦，遂杜绝交游，不答候问之礼。士友常以此短之，而丕欣然自得。遂兼通《五经》，以《鲁诗》《尚书》教授，为当世名儒。后归郡，为督邮功曹，所事之将，无不师友待之。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷27·卓鲁魏刘列传》",
+      "paragraphs": [
+        {
+          "volume": "卓鲁魏刘列传",
+          "paragraph_from": 31,
+          "paragraph_to": 37
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_027_04",
+      "史略名称": "魏霸",
+      "史略简介": "魏霸",
+      "原文字句": "魏霸字乔卿，济阴句阳人也。世有礼义。霸少丧亲，兄弟同居，州里慕其雍和。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷27·卓鲁魏刘列传》",
+      "paragraphs": [
+        {
+          "volume": "卓鲁魏刘列传",
+          "paragraph_from": 38,
+          "paragraph_to": 41
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_027_05",
+      "史略名称": "刘宽",
+      "史略简介": "刘宽",
+      "原文字句": "刘宽字文饶，弘农华阴人也。父崎，顺帝时为司徒。宽尝行，有人失牛者，乃就宽车中认之。宽无所言，下驾步归。有顷，认者得牛而送还，叩头谢曰：“惭负长者，随所刑罪。”宽曰：“物有相类，事容脱误，幸劳见归，何为谢之？”州里服其不校。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷27·卓鲁魏刘列传》",
+      "paragraphs": [
+        {
+          "volume": "卓鲁魏刘列传",
+          "paragraph_from": 42,
+          "paragraph_to": 46
+        }
+      ]
+    }
+  ]
+}

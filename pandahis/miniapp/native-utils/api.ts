@@ -133,6 +133,7 @@ function isPublicContentPath(path: string): boolean {
     || p.startsWith('/home/')
     || p === '/health'
     || p.startsWith('/membership/plans')
+    || p.startsWith('/config/')
     || p.startsWith('/dictionary/')
     || p.startsWith('/wikipedia/')
   )
@@ -143,6 +144,21 @@ function shouldAttachBearerToken(path: string, method: string, auth?: boolean): 
   if (auth) return true
   if (method === 'GET' && isPublicContentPath(path)) return false
   return true
+}
+
+function buildRequestHeaders(
+  path: string,
+  method: string,
+  auth?: boolean,
+  contentType = 'application/json'
+): Record<string, string> {
+  const header: Record<string, string> = { 'content-type': contentType }
+  const envVersion = getEnvVersion()
+  if (envVersion) header['X-Miniapp-Env'] = envVersion
+  if (shouldAttachBearerToken(path, method, auth)) {
+    header.Authorization = `Bearer ${getToken()}`
+  }
+  return header
 }
 
 export function setDevelopApiBaseUrl(url: string) {
@@ -233,10 +249,7 @@ export function request<T>(
   const baseUrl = getBaseUrl()
   const url = baseUrl.replace(/\/$/, '') + (path.startsWith('/') ? path : `/${path}`)
   const method = opts?.method || 'GET'
-  const header: Record<string, string> = { 'content-type': 'application/json' }
-  if (shouldAttachBearerToken(path, method, opts?.auth)) {
-    header.Authorization = `Bearer ${getToken()}`
-  }
+  const header = buildRequestHeaders(path, method, opts?.auth)
 
   return new Promise<ApiResponse<T>>((resolve, reject) => {
     wx.request({
@@ -309,9 +322,8 @@ export function uploadFile<T>(
   const baseUrl = getBaseUrl()
   const url = baseUrl.replace(/\/$/, '') + (path.startsWith('/') ? path : `/${path}`)
   const name = opts?.name || 'file'
-  const header: Record<string, string> = {}
-  const token = getToken()
-  if (token) header.Authorization = `Bearer ${token}`
+  const header = buildRequestHeaders(path, 'POST', true, '')
+  delete header['content-type']
 
   return new Promise<ApiResponse<T>>((resolve, reject) => {
     wx.uploadFile({

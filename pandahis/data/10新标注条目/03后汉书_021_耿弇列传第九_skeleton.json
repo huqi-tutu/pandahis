@@ -1,0 +1,445 @@
+{
+  "volume": "耿弇列传",
+  "source_file": "03后汉书_021_耿弇列传第九.txt",
+  "total_paragraphs": 46,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "耿弇",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "耿弇",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "耿弇",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "耿弇",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "耿弇",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "耿弇",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "耿弇",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "耿弇",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "耿弇",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "耿弇",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "耿弇",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "耿弇",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "耿弇",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "耿弇",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "耿弇",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 18,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 19,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 20,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 21,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "耿国",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "耿国",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "耿秉",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "耿秉",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "耿秉",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "耿秉",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "耿秉",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "耿秉",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 32,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "耿夔",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "耿夔",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "耿夔",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "耿恭",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "耿恭",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "耿恭",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "耿恭",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "耿恭",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "耿恭",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 43,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 44,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 45,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 46,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HOUHANSHU_021_01",
+      "史略名称": "耿弇",
+      "史略简介": "耿弇",
+      "原文字句": "耿弇字伯昭，扶风茂陵人也。其先武帝时以吏二千石自巨鹿徙焉。父况，字侠游，以明经为郎，与王莽从弟伋共学《老子》于安丘先生，后为朔调连率。弇少好学，习父业。常见郡尉试骑士，建旗鼓，肄驰射，由是好将帅之事。",
+      "史略分类": "武将",
+      "主要史料出处": "《03后汉书·卷21·耿弇列传》",
+      "paragraphs": [
+        {
+          "volume": "耿弇列传",
+          "paragraph_from": 2,
+          "paragraph_to": 16
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_021_02",
+      "史略名称": "耿国",
+      "史略简介": "耿国",
+      "原文字句": "国字叔虑，建武四年初入侍，光武拜为黄门侍郎，应对左右，帝以为能，迁射声校尉。七年，射声官罢，拜驸马都尉。父况卒，国于次当嗣，上疏以先侯爱少子霸，固自陈让，有诏许焉。后历顿丘、阳翟、上蔡令，所在吏人称之。征为五官中郎将。",
+      "史略分类": "武将",
+      "主要史料出处": "《03后汉书·卷21·耿弇列传》",
+      "paragraphs": [
+        {
+          "volume": "耿弇列传",
+          "paragraph_from": 22,
+          "paragraph_to": 23
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_021_03",
+      "史略名称": "耿秉",
+      "史略简介": "耿秉",
+      "原文字句": "秉字伯初，有伟体，腰带八围。博通书记，能说《司马兵法》，尤好将帅之略。以父任为郎，数上言兵事。常以中国虚费，边陲不宁，其患专在匈奴。以战去战，盛王之道。显宗既有志北伐，阴然其言。永平中，召诣省闼，问前后所上便宜方略，拜谒者仆射，遂见亲幸。每公卿会议，常引秉上殿，访以边事，多简帝心。",
+      "史略分类": "武将",
+      "主要史料出处": "《03后汉书·卷21·耿弇列传》",
+      "paragraphs": [
+        {
+          "volume": "耿弇列传",
+          "paragraph_from": 25,
+          "paragraph_to": 30
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_021_04",
+      "史略名称": "耿夔",
+      "史略简介": "耿夔",
+      "原文字句": "夔字定公。少有气决。永元初，为车骑将军窦宪假司马，北击匈奴，转骑都尉。三年，宪复出河西，以夔为大将军左校尉。将精骑八百，出居延塞，直奔北单于廷，于金微山斩阏氏、名王以下五千余级，单于与数骑脱亡，尽获其匈奴珍宝财畜，去塞五千余里而还，自汉出师所未尝至也。乃封夔粟邑侯。会北单于弟左鹿蠡王于除鞬自立为单于，众八部二万余人，来居蒲类海上，遣使款塞。以夔为中郎将，持节卫护之。及窦宪败，夔亦免官夺爵士。",
+      "史略分类": "武将",
+      "主要史料出处": "《03后汉书·卷21·耿弇列传》",
+      "paragraphs": [
+        {
+          "volume": "耿弇列传",
+          "paragraph_from": 33,
+          "paragraph_to": 35
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_021_05",
+      "史略名称": "耿恭",
+      "史略简介": "耿恭",
+      "原文字句": "恭字伯宗，国弟广之子也。少孤。慷慨多大略，有将帅才。永平十七年冬，骑都尉刘张出击车师，请恭为司马，与奉车都尉窦固及从弟驸马都尉秉破降之。始置西域都护、戊己校尉，乃以恭为戊己校尉，屯后王部金蒲城，谒者关宠为戊己校尉，屯前王柳中城，屯各置数百人。恭至部，移檄乌孙，示汉威德，大昆弥以下皆欢喜，遣使献名马，及奉宣帝时所赐公主博具，愿遣子入侍。恭乃发使赍金帛，迎其侍子。",
+      "史略分类": "武将",
+      "主要史料出处": "《03后汉书·卷21·耿弇列传》",
+      "paragraphs": [
+        {
+          "volume": "耿弇列传",
+          "paragraph_from": 36,
+          "paragraph_to": 41
+        }
+      ]
+    }
+  ]
+}

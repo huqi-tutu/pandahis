@@ -1,0 +1,341 @@
+{
+  "dynasty": "秦",
+  "completed": [
+    {
+      "glbl": "GLBL_00097",
+      "name": "秦二世",
+      "file": "秦二世关系表.json",
+      "count": 27,
+      "verified_at": "2026-08-09"
+    },
+    {
+      "glbl": "GLBL_00103",
+      "name": "秦始皇",
+      "file": "秦始皇关系表.json",
+      "count": 57,
+      "verified_at": "2026-08-09"
+    },
+    {
+      "glbl": "GLBL_00221",
+      "name": "优旃",
+      "file": "优旃关系表.json",
+      "count": 8,
+      "verified_at": "2026-08-09"
+    },
+    {
+      "glbl": "GLBL_00230",
+      "name": "卓氏",
+      "file": "卓氏关系表.json",
+      "count": 8,
+      "verified_at": "2026-08-09"
+    },
+    {
+      "glbl": "GLBL_00233",
+      "name": "宛孔氏",
+      "file": "宛孔氏关系表.json",
+      "count": 2,
+      "verified_at": "2026-08-09"
+    },
+    {
+      "glbl": "GLBL_00235",
+      "name": "巴寡妇清",
+      "file": "巴寡妇清关系表.json",
+      "count": 6,
+      "verified_at": "2026-08-09"
+    },
+    {
+      "glbl": "GLBL_00238",
+      "name": "曹邴氏",
+      "file": "曹邴氏关系表.json",
+      "count": 8,
+      "verified_at": "2026-08-09"
+    },
+    {
+      "glbl": "GLBL_00244",
+      "name": "程郑",
+      "file": "程郑关系表.json",
+      "count": 2,
+      "verified_at": "2026-08-09"
+    },
+    {
+      "glbl": "GLBL_00249",
+      "name": "陈胜",
+      "file": "陈胜关系表.json",
+      "count": 26,
+      "verified_at": "2026-08-09"
+    },
+    {
+      "glbl": "GLBL_00297",
+      "name": "吕不韦",
+      "file": "吕不韦关系表.json",
+      "count": 15,
+      "verified_at": "2026-08-09"
+    },
+    {
+      "glbl": "GLBL_00368",
+      "name": "李斯",
+      "file": "李斯关系表.json",
+      "count": 29,
+      "verified_at": "2026-08-09"
+    },
+    {
+      "glbl": "GLBL_00479",
+      "name": "韩非",
+      "file": "韩非关系表.json",
+      "count": 13,
+      "verified_at": "2026-08-09"
+    },
+    {
+      "glbl": "GLBL_00522",
+      "name": "王翦",
+      "file": "王翦关系表.json",
+      "count": 18,
+      "verified_at": "2026-08-09"
+    },
+    {
+      "glbl": "GLBL_00524",
+      "name": "田儋",
+      "file": "田儋关系表.json",
+      "count": 13,
+      "verified_at": "2026-08-09"
+    },
+    {
+      "glbl": "GLBL_00532",
+      "name": "蒙恬",
+      "file": "蒙恬关系表.json",
+      "count": 23,
+      "verified_at": "2026-08-09"
+    },
+    {
+      "glbl": "GLBL_00932",
+      "name": "扶苏",
+      "file": "扶苏关系表.json",
+      "count": 10,
+      "verified_at": "2026-08-09"
+    },
+    {
+      "glbl": "GLBL_00933",
+      "name": "公子高",
+      "file": "公子高关系表.json",
+      "count": 13,
+      "verified_at": "2026-08-09"
+    },
+    {
+      "glbl": "GLBL_00934",
+      "name": "赵高",
+      "file": "赵高关系表.json",
+      "count": 23,
+      "verified_at": "2026-08-09"
+    },
+    {
+      "glbl": "GLBL_00935",
+      "name": "冯去疾",
+      "file": "冯去疾关系表.json",
+      "count": 8,
+      "verified_at": "2026-08-09"
+    },
+    {
+      "glbl": "GLBL_00936",
+      "name": "尉缭",
+      "file": "尉缭关系表.json",
+      "count": 10,
+      "verified_at": "2026-08-09"
+    },
+    {
+      "glbl": "GLBL_00937",
+      "name": "卢生",
+      "file": "卢生关系表.json",
+      "count": 8,
+      "verified_at": "2026-08-09"
+    },
+    {
+      "glbl": "GLBL_00938",
+      "name": "王贲",
+      "file": "王贲关系表.json",
+      "count": 14,
+      "verified_at": "2026-08-09"
+    },
+    {
+      "glbl": "GLBL_00939",
+      "name": "章邯",
+      "file": "章邯关系表.json",
+      "count": 16,
+      "verified_at": "2026-08-09"
+    },
+    {
+      "glbl": "GLBL_00942",
+      "name": "高渐离",
+      "file": "高渐离关系表.json",
+      "count": 6,
+      "verified_at": "2026-08-09"
+    },
+    {
+      "glbl": "GLBL_00943",
+      "name": "徐福",
+      "file": "徐福关系表.json",
+      "count": 4,
+      "verified_at": "2026-08-09"
+    },
+    {
+      "glbl": "GLBL_00961",
+      "name": "魏咎",
+      "file": "魏咎关系表.json",
+      "count": 10,
+      "verified_at": "2026-08-09"
+    },
+    {
+      "glbl": "GLBL_00962",
+      "name": "熊心",
+      "file": "熊心关系表.json",
+      "count": 21,
+      "verified_at": "2026-08-09"
+    },
+    {
+      "glbl": "GLBL_00963",
+      "name": "赵歇",
+      "file": "赵歇关系表.json",
+      "count": 10,
+      "verified_at": "2026-08-09"
+    },
+    {
+      "glbl": "GLBL_00964",
+      "name": "韩成",
+      "file": "韩成关系表.json",
+      "count": 10,
+      "verified_at": "2026-08-09"
+    },
+    {
+      "glbl": "GLBL_00965",
+      "name": "田市",
+      "file": "田市关系表.json",
+      "count": 10,
+      "verified_at": "2026-08-09"
+    },
+    {
+      "glbl": "GLBL_00966",
+      "name": "景驹",
+      "file": "景驹关系表.json",
+      "count": 6,
+      "verified_at": "2026-08-09"
+    },
+    {
+      "glbl": "GLBL_00967",
+      "name": "韩广",
+      "file": "韩广关系表.json",
+      "count": 13,
+      "verified_at": "2026-08-09"
+    },
+    {
+      "glbl": "GLBL_00968",
+      "name": "吴芮",
+      "file": "吴芮关系表.json",
+      "count": 9,
+      "verified_at": "2026-08-09"
+    },
+    {
+      "glbl": "GLBL_00969",
+      "name": "公子将闾",
+      "file": "公子将闾关系表.json",
+      "count": 16,
+      "verified_at": "2026-08-09"
+    },
+    {
+      "glbl": "GLBL_00970",
+      "name": "子婴",
+      "file": "子婴关系表.json",
+      "count": 18,
+      "verified_at": "2026-08-09"
+    },
+    {
+      "glbl": "GLBL_00971",
+      "name": "韩谈",
+      "file": "韩谈关系表.json",
+      "count": 7,
+      "verified_at": "2026-08-09"
+    },
+    {
+      "glbl": "GLBL_00972",
+      "name": "姚贾",
+      "file": "姚贾关系表.json",
+      "count": 10,
+      "verified_at": "2026-08-09"
+    },
+    {
+      "glbl": "GLBL_00973",
+      "name": "淳于越",
+      "file": "淳于越关系表.json",
+      "count": 8,
+      "verified_at": "2026-08-09"
+    },
+    {
+      "glbl": "GLBL_00974",
+      "name": "伏生",
+      "file": "伏生关系表.json",
+      "count": 11,
+      "verified_at": "2026-08-09"
+    },
+    {
+      "glbl": "GLBL_00975",
+      "name": "程邈",
+      "file": "程邈关系表.json",
+      "count": 2,
+      "verified_at": "2026-08-09"
+    },
+    {
+      "glbl": "GLBL_00976",
+      "name": "王绾",
+      "file": "王绾关系表.json",
+      "count": 8,
+      "verified_at": "2026-08-09"
+    },
+    {
+      "glbl": "GLBL_00977",
+      "name": "冯劫",
+      "file": "冯劫关系表.json",
+      "count": 8,
+      "verified_at": "2026-08-09"
+    },
+    {
+      "glbl": "GLBL_00978",
+      "name": "张苍",
+      "file": "张苍关系表.json",
+      "count": 18,
+      "verified_at": "2026-08-09"
+    },
+    {
+      "glbl": "GLBL_00979",
+      "name": "王离",
+      "file": "王离关系表.json",
+      "count": 14,
+      "verified_at": "2026-08-09"
+    },
+    {
+      "glbl": "GLBL_00980",
+      "name": "涉间",
+      "file": "涉间关系表.json",
+      "count": 6,
+      "verified_at": "2026-08-09"
+    },
+    {
+      "glbl": "GLBL_00981",
+      "name": "赵佗",
+      "file": "赵佗关系表.json",
+      "count": 17,
+      "verified_at": "2026-08-09"
+    },
+    {
+      "glbl": "GLBL_00982",
+      "name": "任嚣",
+      "file": "任嚣关系表.json",
+      "count": 11,
+      "verified_at": "2026-08-09"
+    }
+  ],
+  "updated_at": "2026-08-09T11:23:09.644721+00:00",
+  "_notes": [
+    {
+      "at": "2026-08-09T11:23:09.644721+00:00",
+      "note": "移除 GLBL_00544（已合并废弃至 GLBL_00143）"
+    }
+  ]
+}

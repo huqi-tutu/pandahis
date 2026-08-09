@@ -1,0 +1,107 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01123",
+  "写作结构": "正史叙述见翻译详录（《史记·吕太后本纪》等）；拓展文以史外异说与延展为主：先述《汉书·王陵传》对盟誓内容的转引与异文，再引《资治通鉴》对盟誓背景的综述，最后以《西汉年纪》等后世编年作为补充；具体仪式细节与功臣名单留白。",
+  "候选著作": [
+    {
+      "出处": "《史记·吕太后本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "索引主要史料出处，记载白马之盟的核心内容",
+      "检索词": "白马之盟",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《汉书·王陵传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "转引白马之盟盟辞，与史记记载略有异文，可作对照",
+      "检索词": "白马盟",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《资治通鉴·汉纪三》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "后世编年对白马之盟背景与意义的综述，可作延展参考",
+      "检索词": "白马之盟",
+      "采用": true,
+      "原文摘句": "帝乃与功臣剖符作誓，丹书铁契，金匮石室，藏之宗庙。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《西汉年纪·卷三》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "南宋编年体西汉史，对白马之盟有综合叙述，可作补充",
+      "检索词": "白马之盟",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·吕太后本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "索引主要史料出处，记载白马之盟的核心内容",
+      "检索词": "白马之盟",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《汉书·王陵传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "转引白马之盟盟辞，与史记记载略有异文，可作对照",
+      "检索词": "白马盟",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《资治通鉴·汉纪三》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "后世编年对白马之盟背景与意义的综述，可作延展参考",
+      "检索词": "白马之盟",
+      "采用": true,
+      "原文摘句": "帝乃与功臣剖符作誓，丹书铁契，金匮石室，藏之宗庙。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《西汉年纪·卷三》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "南宋编年体西汉史，对白马之盟有综合叙述，可作补充",
+      "检索词": "白马之盟",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 1,
+    "C_excluded": 3,
+    "overall": "B"
+  }
+}

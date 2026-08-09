@@ -1,0 +1,312 @@
+{
+  "work": "03后汉书",
+  "vol": "016",
+  "total_paragraphs": 53,
+  "paragraphs": [
+    {
+      "paragraph": 1,
+      "disposition": "exclude",
+      "exclude_reason": "卷首标题",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 2,
+      "disposition": "block",
+      "primary_subject": "刘縯"
+    },
+    {
+      "paragraph": 3,
+      "disposition": "block",
+      "primary_subject": "刘縯"
+    },
+    {
+      "paragraph": 4,
+      "disposition": "block",
+      "primary_subject": "刘縯"
+    },
+    {
+      "paragraph": 5,
+      "disposition": "block",
+      "primary_subject": "刘縯"
+    },
+    {
+      "paragraph": 6,
+      "disposition": "block",
+      "primary_subject": "刘縯"
+    },
+    {
+      "paragraph": 7,
+      "disposition": "block",
+      "primary_subject": "刘縯"
+    },
+    {
+      "paragraph": 8,
+      "disposition": "block",
+      "primary_subject": "刘縯"
+    },
+    {
+      "paragraph": 9,
+      "disposition": "block",
+      "primary_subject": "刘縯"
+    },
+    {
+      "paragraph": 10,
+      "disposition": "block",
+      "primary_subject": "刘縯"
+    },
+    {
+      "paragraph": 11,
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 12,
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 13,
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 14,
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 15,
+      "disposition": "exclude",
+      "exclude_reason": "论赞",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 16,
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 17,
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 18,
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 19,
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 20,
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 21,
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 22,
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 23,
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 24,
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 25,
+      "disposition": "block",
+      "primary_subject": "刘良"
+    },
+    {
+      "paragraph": 26,
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 27,
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 28,
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 29,
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 30,
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 31,
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 32,
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 33,
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 34,
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 35,
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 36,
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 37,
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 38,
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 39,
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 40,
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 41,
+      "disposition": "block",
+      "primary_subject": "刘赐"
+    },
+    {
+      "paragraph": 42,
+      "disposition": "block",
+      "primary_subject": "刘赐"
+    },
+    {
+      "paragraph": 43,
+      "disposition": "block",
+      "primary_subject": "刘赐"
+    },
+    {
+      "paragraph": 44,
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 45,
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 46,
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 47,
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 48,
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 49,
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 50,
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 51,
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 52,
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 53,
+      "disposition": "exclude",
+      "exclude_reason": "论赞",
+      "primary_subject": null
+    }
+  ]
+}

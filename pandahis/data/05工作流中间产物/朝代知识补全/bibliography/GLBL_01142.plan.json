@@ -1,0 +1,157 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01142",
+  "写作结构": "正史叙述见翻译详录（《史记·平津侯主父列传》及《汉书·主父偃传》），拓展文写史外异说与延展：以《资治通鉴·汉纪》为编年参照，补充推恩令颁布的时间背景与主父偃建议的朝堂语境；以《西汉会要·帝系》辑录推恩令相关诏令格式与分封制度沿革；以《通典·职官·王国》说明王国官制与推恩令后封国体制的变化；以《文献通考·封建考》综述推恩令在历代封建制度演变中的位置。留白处：不虚构具体诏书原文、不虚构主父偃与汉武帝对话、不编造具体诸侯王分封细节。",
+  "候选著作": [
+    {
+      "出处": "《史记·平津侯主父列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "推恩令的直接史料出处，主父偃建议及武帝采纳的记载",
+      "检索词": "推恩",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《汉书·主父偃传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "与史记互为补充，记载主父偃上言推恩之策及武帝施行",
+      "检索词": "推恩",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《资治通鉴·汉纪·武帝》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "编年体记载推恩令颁布时间（元朔二年）及前后政治背景，可补正史时间线",
+      "检索词": "推恩",
+      "采用": true,
+      "原文摘句": "春，正月，诏曰：‘诸侯王或欲推私恩分子弟邑者，令各条上，朕且临定其号名。’",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《西汉会要·帝系·封建》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "辑录西汉分封制度相关诏令与事例，可佐证推恩令的制度化过程",
+      "检索词": "推恩",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《通典·职官·王国》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "记载汉代王国官制及推恩令后王国辖境缩小、官属减损的制度变化",
+      "检索词": "推恩",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《文献通考·封建考》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "后世对推恩令在历代封建制度演变中的评价与综述，属异说层",
+      "检索词": "推恩",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·平津侯主父列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "推恩令的直接史料出处，主父偃建议及武帝采纳的记载",
+      "检索词": "推恩",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《汉书·主父偃传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "与史记互为补充，记载主父偃上言推恩之策及武帝施行",
+      "检索词": "推恩",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《资治通鉴·汉纪·武帝》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "编年体记载推恩令颁布时间（元朔二年）及前后政治背景，可补正史时间线",
+      "检索词": "推恩",
+      "采用": true,
+      "原文摘句": "春，正月，诏曰：‘诸侯王或欲推私恩分子弟邑者，令各条上，朕且临定其号名。’",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《西汉会要·帝系·封建》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "辑录西汉分封制度相关诏令与事例，可佐证推恩令的制度化过程",
+      "检索词": "推恩",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《通典·职官·王国》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "记载汉代王国官制及推恩令后王国辖境缩小、官属减损的制度变化",
+      "检索词": "推恩",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《文献通考·封建考》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "后世对推恩令在历代封建制度演变中的评价与综述，属异说层",
+      "检索词": "推恩",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 4,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

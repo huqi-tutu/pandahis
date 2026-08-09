@@ -1,0 +1,55 @@
+{
+  "schema": "translate-coverage-ledger/v1",
+  "史略ID": "GLBL_00285",
+  "updated_at": "2026-08-09T08:32:24.844536+00:00",
+  "entries": {
+    "M001": {
+      "status": "conveyed",
+      "claim_fp": "1bf9fbc108a47551",
+      "checked_at": "2026-08-09T08:32:11.295926+00:00",
+      "note": "刘辅是河间人，出身宗室。"
+    },
+    "M002": {
+      "status": "conveyed",
+      "claim_fp": "56c3cfeafd5263af",
+      "checked_at": "2026-08-09T08:32:11.295939+00:00",
+      "note": "他通过举孝廉入仕，出任襄贲县令。"
+    },
+    "M003": {
+      "status": "conveyed",
+      "claim_fp": "47b27c4ffda56fa0",
+      "checked_at": "2026-08-09T08:32:11.295942+00:00",
+      "note": "后来他上书议论朝政得失，被皇帝召见，成帝赏识他的才能，提拔他为谏大夫。"
+    },
+    "M004": {
+      "status": "conveyed",
+      "claim_fp": "2fb5381d5299ad8f",
+      "checked_at": "2026-08-09T08:32:11.295945+00:00",
+      "note": "恰逢成帝想立赵婕妤为皇后，先下诏封婕妤的父亲赵临为列侯。"
+    },
+    "M005": {
+      "status": "conveyed",
+      "claim_fp": "ef67b5a950ed5c71",
+      "checked_at": "2026-08-09T08:32:11.295948+00:00",
+      "note": "译文完整呈现了母本信息中的上书内容。"
+    },
+    "M006": {
+      "status": "conveyed",
+      "claim_fp": "ddb6a9169240e6ed",
+      "checked_at": "2026-08-09T08:32:11.295951+00:00",
+      "note": "译文完整呈现了母本信息中的上书内容。"
+    },
+    "M007": {
+      "status": "conveyed",
+      "claim_fp": "6db6d5bec2b98867",
+      "checked_at": "2026-08-09T08:32:11.295953+00:00",
+      "note": "成帝于是把刘辅改押到共工狱，减死罪一等，判处鬼薪之刑。"
+    },
+    "M008": {
+      "status": "conveyed",
+      "claim_fp": "78e891f7c7b8e636",
+      "checked_at": "2026-08-09T08:32:11.295963+00:00",
+      "note": "刘辅最终死在家中。"
+    }
+  }
+}

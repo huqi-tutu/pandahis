@@ -1,0 +1,121 @@
+{
+  "work": "03后汉书",
+  "vol": "031",
+  "total_paragraphs": 19,
+  "paragraphs": [
+    {
+      "paragraph": 1,
+      "primary_subject": "卷首标题",
+      "disposition": "exclude",
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "primary_subject": "冯衍",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 3,
+      "primary_subject": "冯衍",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 4,
+      "primary_subject": "冯衍",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 5,
+      "primary_subject": "冯衍",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 6,
+      "primary_subject": "冯衍",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 7,
+      "primary_subject": "冯衍",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 8,
+      "primary_subject": "冯衍",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 9,
+      "primary_subject": "冯衍",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 10,
+      "primary_subject": "冯衍",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 11,
+      "primary_subject": "冯衍",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 12,
+      "primary_subject": "冯衍",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 13,
+      "primary_subject": "冯衍",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 14,
+      "primary_subject": "冯衍",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 15,
+      "primary_subject": "冯衍",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 16,
+      "primary_subject": "冯衍",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 17,
+      "primary_subject": "冯衍",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 18,
+      "primary_subject": "论赞",
+      "disposition": "exclude",
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 19,
+      "primary_subject": "论赞",
+      "disposition": "exclude",
+      "exclude_reason": "论赞"
+    }
+  ]
+}

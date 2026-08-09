@@ -25,7 +25,7 @@ origin: ECC
 
 | 模块 | 职责 | 产出 |
 |------|------|------|
-| **historiography-annotate** | 一期卷级人物标注 | 03 索引 |
+| **historiography-annotate-v2** | 卷级人物标注 | 10 索引 |
 | **historiography-dynasty-knowledge** | 朝代知识 + 详情 | 06 |
 | **historiography-person-relations** | 人物关系图谱 | 07 |
 | **historiography-commentary-witness**（本 skill） | **评述 + 见证（实物 + 文学）** | **08 / 09** |

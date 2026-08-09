@@ -1,4 +1,4 @@
-<proto-nav title="关于历史图谱" show-back="{{true}}"></proto-nav>
+<proto-nav title="{{aboutNavTitle}}" show-back="{{true}}"></proto-nav>
 
 <scroll-view class="page-about" scroll-y enhanced show-scrollbar="{{false}}" style="padding-top: {{pageTopPadPx}}px;">
   <view class="logo-wrap">
@@ -7,7 +7,7 @@
   </view>
 
   <view class="card-paper intro-card">
-    <view class="para text-body">历史图谱以时空坐标组织史料，帮助你在朝代、人物与事件之间建立可浏览、可深读的知识网络。</view>
+    <view class="para text-body">{{introLead}}</view>
     <view class="divider intro-divider"></view>
     <view class="para text-body">评述、见证、原文等深度 Tab 支持按次阅读；邀请好友可获得阅读点奖励。</view>
   </view>

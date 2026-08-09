@@ -1,0 +1,54 @@
+{
+  "work": "03后汉书",
+  "vol": "014",
+  "volume_name": "王刘张李彭卢列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_arc": "C",
+  "volume_texture": "interleaved",
+  "skip_reason": null,
+  "protagonists_cap_note": "合传6姓+王闳附传；割据将帅归武将，王昌诈称帝归庶众。",
+  "protagonists": [
+    {
+      "name": "王昌",
+      "category": "庶众",
+      "rationale": "卜相工诈称成帝子自立，非军功将帅主轴，归庶众。"
+    },
+    {
+      "name": "刘永",
+      "category": "宗戚",
+      "rationale": "梁孝王八世孙、梁王，宗室割据。"
+    },
+    {
+      "name": "张步",
+      "category": "武将",
+      "rationale": "据齐地之军事割据首领，以征战拓地为主轴，归武将。"
+    },
+    {
+      "name": "王闳",
+      "category": "文臣",
+      "rationale": "卷内「王闳者」独立开传，琅邪太守，谏争为主，归文臣。"
+    },
+    {
+      "name": "李宪",
+      "category": "武将",
+      "rationale": "庐江割据称帝之军事首领，归武将。"
+    },
+    {
+      "name": "彭宠",
+      "category": "武将",
+      "rationale": "渔阳太守反叛之军事首领，归武将。"
+    },
+    {
+      "name": "卢芳",
+      "category": "武将",
+      "rationale": "安定起兵称帝、连匈奴之军事首领，归武将。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "论赞",
+    "赞曰"
+  ]
+}

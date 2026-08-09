@@ -1,0 +1,107 @@
+{
+  "work": "03后汉书",
+  "vol": "029",
+  "total_paragraphs": 52,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_029_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 4,
+      "paragraph_to": 14,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 19,
+      "paragraph_to": 19,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 30,
+      "paragraph_to": 30,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 31,
+      "paragraph_to": 40,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 48,
+      "paragraph_to": 51,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 52,
+      "paragraph_to": 52,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "宣秉",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 3,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "宣秉字巨公，冯翊云阳人也。少修高节，显名三辅。哀、平际，见王氏据权专政，侵削宗室",
+        "close_paragraph": 3,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P3"
+      }
+    },
+    {
+      "name": "王良",
+      "category": "文臣",
+      "paragraph_from": 15,
+      "paragraph_to": 18,
+      "boundary_evidence": {
+        "open_paragraph": 15,
+        "open_phrase": "王良字仲子，东海兰陵人也。少好学，习《小夏侯尚书》。王莽时，寝病不仕，教授诸生千",
+        "close_paragraph": 18,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P15–P18"
+      }
+    },
+    {
+      "name": "杜林",
+      "category": "文臣",
+      "paragraph_from": 20,
+      "paragraph_to": 29,
+      "boundary_evidence": {
+        "open_paragraph": 20,
+        "open_phrase": "杜林字伯山，扶风茂陵人也。父邺，成、哀间为凉州刺史。林少好学沉深，家既多书，又外",
+        "close_paragraph": 29,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P20–P29"
+      }
+    },
+    {
+      "name": "郑均",
+      "category": "文臣",
+      "paragraph_from": 41,
+      "paragraph_to": 43,
+      "boundary_evidence": {
+        "open_paragraph": 41,
+        "open_phrase": "郑均字仲虞，东平任城人也。少好黄、老书。兄为县吏，颇受礼遗，均数谏止，不听。即脱",
+        "close_paragraph": 43,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P41–P43"
+      }
+    },
+    {
+      "name": "赵典",
+      "category": "文臣",
+      "paragraph_from": 44,
+      "paragraph_to": 47,
+      "boundary_evidence": {
+        "open_paragraph": 44,
+        "open_phrase": "赵典字仲经，蜀郡成都人也。父戒，为太尉，桓帝立，以定策封厨亭侯。典少笃行隐约，博",
+        "close_paragraph": 47,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P44–P47"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

@@ -1,0 +1,20 @@
+{
+  "work": "03后汉书",
+  "vol": "003",
+  "volume_name": "显宗孝明帝纪",
+  "volume_type_guess": "本纪",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "汉明帝",
+      "category": "君王",
+      "rationale": "《后汉书》卷三为《显宗孝明帝纪》，显宗孝明帝即东汉明帝刘庄，属本纪体例，为天下共主（皇帝），故主轴为汉明帝一人，分类为君王。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

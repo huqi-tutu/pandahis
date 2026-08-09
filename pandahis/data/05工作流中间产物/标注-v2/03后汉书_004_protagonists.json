@@ -1,0 +1,20 @@
+{
+  "work": "03后汉书",
+  "vol": "004",
+  "volume_name": "肃宗孝章帝纪",
+  "volume_type_guess": "本纪",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "汉章帝",
+      "category": "君王",
+      "rationale": "卷名「肃宗孝章帝纪」为东汉章帝刘炟之本纪，属天下共主之天子本纪，符合君王准入标准（天子/皇帝/霸王级本纪共主）。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

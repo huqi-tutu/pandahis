@@ -24,6 +24,12 @@ import {
   formatEmptySwimError,
   formatUserFacingError,
 } from '../../native-utils/load-error-message'
+import {
+  isCivSwitchEnabled,
+  isHuaxiaUnitId,
+  loadFeatureFlags,
+  toastCivLocked,
+} from '../../native-utils/feature-flags'
 import { resolveDetailUnitIds } from '../home/matrix-adapter'
 import { isDevtoolsClient, isDevelopEnv } from '../../native-utils/runtime-env'
 import {
@@ -81,8 +87,8 @@ const BAND_PAD_RPX = 16
 const MIN_BAND_HEIGHT_RPX = 56
 /** 时间轴行 / 吸顶占位块高度（与 dyn-panel-axis-spacer 一致） */
 const PANEL_AXIS_BLOCK_RPX = 86
-const AXIS_PIN_AT = 150
-const AXIS_UNPIN_AT = 110
+/** 外框吸顶解绑滞后（px），仅防临界抖动，不能大到露出「过冲再弹回」 */
+const AXIS_PIN_HYSTERESIS_PX = 2
 const CONTINUATION_CUE_THROTTLE_MS = 120
 const CONTINUATION_CUE_TOLERANCE_RPX = 16
 const CONTINUATION_CUE_BOTTOM_RESERVE_RPX = 48
@@ -392,12 +398,61 @@ type SwimMatrix = {
   timeScaleMode?: string
   lanes: SwimLane[]
   concurrentItems: string[]
+  concurrentTabs?: ConcurrentTab[]
   sheetWidthRpx: number
   canvasHeightRpx?: number
   panelSheetHeightRpx?: number
   canvasPadLeftRpx?: number
   canvasWidthRpx?: number
   categoryBands?: CategoryBand[]
+}
+
+type ConcurrentTab = {
+  label: string
+  civilizationName: string
+  dynastyId: string
+}
+
+function parseConcurrentLabel(label: string): { civ: string; title: string } {
+  const sep = label.indexOf('·')
+  if (sep < 0) return { civ: '', title: String(label || '').trim() }
+  return { civ: label.slice(0, sep).trim(), title: label.slice(sep + 1).trim() }
+}
+
+function isHuaxiaCivName(civ: string): boolean {
+  return String(civ || '').trim() === '华夏'
+}
+
+function resolveConcurrentTabs(
+  swim: SwimMatrix,
+  currentUnitId: string,
+  heroCivLine: string,
+  dynastyTitle: string,
+): ConcurrentTab[] {
+  if (swim.concurrentTabs?.length) return swim.concurrentTabs
+  const selfLabel = `${heroCivLine || '华夏'}·${dynastyTitle}`
+  return (swim.concurrentItems || []).map((label) => {
+    const parsed = parseConcurrentLabel(label)
+    const civ = parsed.civ || heroCivLine || '华夏'
+    const title = parsed.title || label
+    const isSelf = label === selfLabel || (civ === heroCivLine && title === dynastyTitle)
+    const dynastyId = isSelf
+      ? currentUnitId
+      : (resolveDetailUnitIds('', title)[0] || '')
+    return { label, civilizationName: civ, dynastyId }
+  })
+}
+
+function resolveActiveConcurrentIndex(
+  tabs: ConcurrentTab[],
+  unitId: string,
+  selfLabel: string,
+): number {
+  const byId = tabs.findIndex((tab) => tab.dynastyId && tab.dynastyId === unitId)
+  if (byId >= 0) return byId
+  const byLabel = tabs.findIndex((tab) => tab.label === selfLabel)
+  if (byLabel >= 0) return byLabel
+  return 0
 }
 
 function continuationWeight(bar: SwimBar): number {
@@ -967,7 +1022,8 @@ function rpxToPx(rpx: number, windowWidth: number): number {
 type ChipTooltipPlacement = { left: number; top: number; transform: string; origin: string }
 
 function computeChipTooltipSafeTop(axisPinned: boolean, scrollViewTopPx: number, windowWidth: number): number {
-  const axisHeightPx = axisPinned ? rpxToPx(86, windowWidth) + 8 : 0
+  // 吸顶条无顶 padding，高度≈外框 70rpx + 底 padding 12rpx
+  const axisHeightPx = axisPinned ? rpxToPx(PANEL_AXIS_BLOCK_RPX, windowWidth) : 0
   return scrollViewTopPx + axisHeightPx + 8
 }
 
@@ -1037,6 +1093,9 @@ Page({
   continuationLastUpdateAt: 0,
   continuationUpdateTimer: null as ReturnType<typeof setTimeout> | null,
   chipTooltipExitTimer: null as ReturnType<typeof setTimeout> | null,
+  /** 外框顶边对齐吸顶线时的 page scrollTop；<0 表示尚未测得 */
+  axisPinOffsetPx: -1,
+  axisPinMeasureTimer: null as ReturnType<typeof setTimeout> | null,
   data: {
     unit: null as UnitHero['unit'] | null,
     dynastyTitle: '',
@@ -1045,6 +1104,8 @@ Page({
     heroCivLine: '',
     swim: null as SwimMatrix | null,
     concurrentItems: [] as string[],
+    concurrentTabs: [] as ConcurrentTab[],
+    activeConcurrentIndex: 0,
     relatedUnits: [] as NonNullable<UnitHero['relatedUnits']>,
     nextUnit: null as UnitHero['nextUnit'] | null,
     introPreview: '',
@@ -1092,6 +1153,7 @@ Page({
     chipTooltipLaneKey: '',
     chipTooltipStartYear: '',
     chipTooltipEndYear: '',
+    chipTooltipReignLabel: '',
     chipTooltipLeftPx: 0,
     chipTooltipTopPx: 0,
     chipTooltipBaseTransform: 'translate(-50%, -100%)',
@@ -1118,6 +1180,7 @@ Page({
     sharePosterUserName: '历史读者',
     sharePosterUserAvatar: '',
     sharePosterExcerptDate: '',
+    civSwitchEnabled: true,
   },
   onShow() {
     void this.refreshFavState()
@@ -1127,6 +1190,7 @@ Page({
     this.swimSource = null
     if (this.continuationUpdateTimer) clearTimeout(this.continuationUpdateTimer)
     if (this.chipTooltipExitTimer) clearTimeout(this.chipTooltipExitTimer)
+    if (this.axisPinMeasureTimer) clearTimeout(this.axisPinMeasureTimer)
   },
   onShareAppMessage() {
     const u = this.data.unit
@@ -1137,6 +1201,7 @@ Page({
   },
   async onLoad(query: Record<string, string | undefined>) {
     this._loadQuery = query
+    await loadFeatureFlags()
     await this.loadDynastyPage(query)
   },
   async retryLoad() {
@@ -1156,6 +1221,21 @@ Page({
     const rawUnitId = query.unitId || query.id || ''
     const dynastyHint = decodeQueryValue(query.dynasty || query.displayName || '')
     const unitCandidates = resolveDetailUnitIds(rawUnitId, dynastyHint)
+    const civSwitchEnabled = isCivSwitchEnabled()
+    this.setData({ civSwitchEnabled })
+
+    if (!civSwitchEnabled) {
+      const idsToCheck = unitCandidates.length
+        ? unitCandidates
+        : (rawUnitId ? [rawUnitId] : [])
+      const blocked = idsToCheck.some((id) => id && !isHuaxiaUnitId(id))
+      if (blocked) {
+        toastCivLocked()
+        this.setData({ loading: false, loadError: '该内容筹备中，敬请期待' })
+        setTimeout(() => wx.navigateBack(), 1200)
+        return
+      }
+    }
 
     if (!unitCandidates.length && !dynastyHint) {
       this.setData({ loading: false, loadError: '缺少朝代参数，无法加载' })
@@ -1166,7 +1246,8 @@ Page({
     const navH = Math.round(88 * (sys.windowWidth / 750))
     const headerPadPx = (sys.statusBarHeight || 20) + navH
     const tabBarH = Math.round(72 * (sys.windowWidth / 750))
-    const scrollTop = headerPadPx + tabBarH
+    // 有并发 Tab 时吸顶线 = Tab 底；无 Tab 时 = 导航底（不再预留空白）
+    const scrollTop = headerPadPx
     this.continuationRatio = sys.windowWidth / 750
     this.continuationViewportWidthPx = sys.windowWidth - 48 * this.continuationRatio
     this.continuationWindowHeightPx = sys.windowHeight
@@ -1206,6 +1287,12 @@ Page({
         const matrixBoxIds = collectMatrixBoxIds(swim)
         const hasVisibleContent = (prioritySwim.lanes || []).some(hasLaneContent)
         const { preview, canExpand, paragraphs } = previewIntro(unit.summary || '')
+        const concurrentTabs = resolveConcurrentTabs(prioritySwim, unit.id, heroCivLine, dynastyTitle)
+        const selfConcurrentLabel = `${heroCivLine || '华夏'}·${dynastyTitle}`
+        const activeConcurrentIndex = resolveActiveConcurrentIndex(concurrentTabs, unit.id, selfConcurrentLabel)
+        const concurrentItems = concurrentTabs.map((tab) => tab.label)
+        const contentTopPx = headerPadPx + (concurrentTabs.length > 0 ? tabBarH : 0)
+        this.axisPinOffsetPx = -1
         if (!hasVisibleContent) {
           finishLoading({
             unit,
@@ -1215,11 +1302,13 @@ Page({
             heroCivLine,
             swim: null,
             concurrentItems: [],
+            concurrentTabs: [],
+            activeConcurrentIndex: 0,
             relatedUnits: hero.relatedUnits || [],
             nextUnit: hero.nextUnit ?? null,
             matrixBoxIds: [],
             headerPadPx,
-            scrollTop,
+            scrollTop: headerPadPx,
             introPreview: preview,
             introDisplay: preview,
             introCanExpand: canExpand,
@@ -1236,12 +1325,16 @@ Page({
           heroSubLine,
           heroCivLine,
           swim: swimForView,
-          concurrentItems: prioritySwim.concurrentItems || [],
+          concurrentItems,
+          concurrentTabs,
+          activeConcurrentIndex,
           relatedUnits: hero.relatedUnits || [],
           nextUnit: hero.nextUnit ?? null,
           matrixBoxIds,
           headerPadPx,
-          scrollTop,
+          scrollTop: contentTopPx,
+          axisPinned: false,
+          axisMirrorLeft: 0,
           introPreview: preview,
           introDisplay: preview,
           introCanExpand: canExpand,
@@ -1251,6 +1344,7 @@ Page({
           loading: false,
         }, () => {
           this.rebuildContinuationHints(prioritySwim)
+          this.scheduleMeasureAxisPinOffset()
         })
         void this.refreshFavState()
         if (!Number.isNaN(anchorYear)) {
@@ -1457,19 +1551,73 @@ Page({
     this.swimScrollLeft = left
     this.scheduleContinuationHintUpdate()
   },
-  onDynastyScroll(e: WechatMiniprogram.ScrollViewScroll) {
-    const top = e.detail.scrollTop
-    this.continuationPageScrollTop = top
-    this.scheduleContinuationHintUpdate()
+  /**
+   * 测量时间轴外框（.dyn-axis-pin-anchor）顶边相对 scroll-view 内容顶端的偏移。
+   * 吸顶条件：pageScrollTop >= 该偏移（外框碰到 Tab/导航底）。
+   */
+  measureAxisPinOffset() {
+    if (this.pageUnloaded || !this.data.swim) return
+    wx.createSelectorQuery()
+      .in(this)
+      .select('.dynasty-scroll')
+      .boundingClientRect()
+      .select('.dyn-axis-pin-anchor')
+      .boundingClientRect()
+      .select('.dynasty-scroll')
+      .scrollOffset()
+      .exec((rects: any[]) => {
+        if (this.pageUnloaded) return
+        const scrollRect = rects?.[0]
+        const anchorRect = rects?.[1]
+        const scrollOffset = rects?.[2]
+        if (!scrollRect || !anchorRect || !scrollOffset) return
+        const offset = Math.max(
+          0,
+          Math.round(
+            Number(scrollOffset.scrollTop || 0) +
+              Number(anchorRect.top) -
+              Number(scrollRect.top),
+          ),
+        )
+        if (offset === this.axisPinOffsetPx) {
+          this.applyAxisPinForScroll(this.continuationPageScrollTop)
+          return
+        }
+        this.axisPinOffsetPx = offset
+        this.applyAxisPinForScroll(this.continuationPageScrollTop)
+      })
+  },
+  scheduleMeasureAxisPinOffset() {
+    if (this.pageUnloaded) return
+    wx.nextTick(() => {
+      if (this.pageUnloaded) return
+      this.measureAxisPinOffset()
+    })
+    if (this.axisPinMeasureTimer) clearTimeout(this.axisPinMeasureTimer)
+    // 英雄区/字体二次布局后再测一次，避免阈值偏大导致外框钻进 Tab 后才钉住
+    this.axisPinMeasureTimer = setTimeout(() => {
+      this.axisPinMeasureTimer = null
+      this.measureAxisPinOffset()
+    }, 120)
+  },
+  applyAxisPinForScroll(top: number) {
+    const offset = this.axisPinOffsetPx
+    if (offset < 0) return
     let pinned = this.data.axisPinned
-    if (!pinned && top > AXIS_PIN_AT) pinned = true
-    else if (pinned && top < AXIS_UNPIN_AT) pinned = false
+    if (!pinned && top >= offset) pinned = true
+    else if (pinned && top < offset - AXIS_PIN_HYSTERESIS_PX) pinned = false
     if (pinned !== this.data.axisPinned) {
       this.setData({
         axisPinned: pinned,
         axisMirrorLeft: this.swimScrollLeft,
       })
     }
+  },
+  onDynastyScroll(e: WechatMiniprogram.ScrollViewScroll) {
+    const top = e.detail.scrollTop
+    this.continuationPageScrollTop = top
+    this.scheduleContinuationHintUpdate()
+    this.applyAxisPinForScroll(top)
     if (this.data.chipTooltipVisible) {
       this.hideChipTooltip()
     }
@@ -1565,6 +1713,7 @@ Page({
         chipTooltipTitle: bar?.title || ds.title || '',
         chipTooltipStartYear: startYearLabel,
         chipTooltipEndYear: endYearLabel,
+        chipTooltipReignLabel: (laneKey === 'junji' || laneKey === 'zhuhou') ? '在位' : '',
         chipTooltipTag: chipTag,
         chipTooltipLaneKey: laneKey,
         chipTooltipPeakSummary: formatPeakSummary(
@@ -1702,6 +1851,36 @@ Page({
     navigateTo(ROUTES.dynastyDetail, {
       unitId: ds.id,
       dynasty: ds.dynasty || '',
+    })
+  },
+  onConcurrentTabTap(e: WechatMiniprogram.BaseEvent) {
+    const index = Number((e.currentTarget as WechatMiniprogram.IAnyObject).dataset?.index)
+    if (!Number.isFinite(index) || index < 0) return
+    if (index === this.data.activeConcurrentIndex) return
+
+    const tab = this.data.concurrentTabs[index]
+    if (!tab) return
+
+    const isHuaxia = isHuaxiaCivName(tab.civilizationName) || isHuaxiaUnitId(tab.dynastyId)
+    if (!isCivSwitchEnabled() && !isHuaxia) {
+      toastCivLocked()
+      return
+    }
+
+    const { title } = parseConcurrentLabel(tab.label)
+    const targetId = tab.dynastyId || resolveDetailUnitIds('', title)[0] || ''
+    if (!targetId) {
+      wx.showToast({ title: '暂未收录该朝代', icon: 'none' })
+      return
+    }
+    if (!isCivSwitchEnabled() && !isHuaxiaUnitId(targetId)) {
+      toastCivLocked()
+      return
+    }
+
+    navigateTo(ROUTES.dynastyDetail, {
+      unitId: targetId,
+      dynasty: title,
     })
   },
   goNext() {

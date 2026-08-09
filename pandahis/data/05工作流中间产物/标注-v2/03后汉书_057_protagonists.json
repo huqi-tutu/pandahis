@@ -1,0 +1,29 @@
+{
+  "work": "03后汉书",
+  "vol": "057",
+  "volume_name": "崔骃列传",
+  "volume_type_guess": "传",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_arc": "C",
+  "volume_texture": "sequential",
+  "skip_reason": null,
+  "protagonists_cap_note": null,
+  "protagonists": [
+    {
+      "name": "崔骃",
+      "category": "文臣",
+      "rationale": "本卷主轴文宗。"
+    },
+    {
+      "name": "崔瑗",
+      "category": "文臣",
+      "rationale": "骃子厚附。"
+    },
+    {
+      "name": "崔寔",
+      "category": "文臣",
+      "rationale": "瑗子；从兄烈短附归寔。"
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "work": "03后汉书",
+  "vol": "025",
+  "total_paragraphs": 46,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_025_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 24,
+      "paragraph_to": 24,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 41,
+      "paragraph_to": 41,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 46,
+      "paragraph_to": 46,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "窦融",
+      "category": "武将",
+      "paragraph_from": 2,
+      "paragraph_to": 23,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "窦融字周公，扶风平陵人也。七世祖广国，孝文皇后之弟，封章武侯。融高祖父，宣帝时以",
+        "close_paragraph": 23,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P23"
+      }
+    },
+    {
+      "name": "窦固",
+      "category": "武将",
+      "paragraph_from": 25,
+      "paragraph_to": 28,
+      "boundary_evidence": {
+        "open_paragraph": 25,
+        "open_phrase": "固字孟孙，少以尚公主为黄门侍郎。好览书传，喜兵法，贵显用事。中元元年，袭父友封显",
+        "close_paragraph": 28,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P25–P28"
+      }
+    },
+    {
+      "name": "窦宪",
+      "category": "武将",
+      "paragraph_from": 29,
+      "paragraph_to": 40,
+      "boundary_evidence": {
+        "open_paragraph": 29,
+        "open_phrase": "宪字伯度。父勋被诛，宪少孤。建初二年，女弟立为皇后，拜宪为郎，稍迁侍中、虎贲中郎",
+        "close_paragraph": 40,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P29–P40"
+      }
+    },
+    {
+      "name": "窦章",
+      "category": "文臣",
+      "paragraph_from": 42,
+      "paragraph_to": 45,
+      "boundary_evidence": {
+        "open_paragraph": 42,
+        "open_phrase": "章字伯向。少好学，有文章，与马融、崔瑗同好，更相推荐。",
+        "close_paragraph": 45,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P42–P45"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

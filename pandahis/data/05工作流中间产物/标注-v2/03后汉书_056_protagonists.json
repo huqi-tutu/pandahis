@@ -1,0 +1,39 @@
+{
+  "work": "03后汉书",
+  "vol": "056",
+  "volume_name": "李陈庞陈桥列传",
+  "volume_type_guess": "传",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_arc": "C",
+  "volume_texture": "sequential",
+  "skip_reason": null,
+  "protagonists_cap_note": "卷名五人；流水线误标李固/陈蕃已纠正。",
+  "protagonists": [
+    {
+      "name": "李恂",
+      "category": "文臣",
+      "rationale": "卷名首轴。"
+    },
+    {
+      "name": "陈禅",
+      "category": "文臣",
+      "rationale": "卷名次轴。"
+    },
+    {
+      "name": "庞参",
+      "category": "文臣",
+      "rationale": "卷名第三，太尉。"
+    },
+    {
+      "name": "陈龟",
+      "category": "武将",
+      "rationale": "卷名边将。"
+    },
+    {
+      "name": "桥玄",
+      "category": "文臣",
+      "rationale": "卷名末轴，太尉。"
+    }
+  ]
+}

@@ -1,0 +1,549 @@
+{
+  "volume": "王充王符仲长统列传",
+  "source_file": "03后汉书_054_王充王符仲长统列传第三十九.txt",
+  "total_paragraphs": 56,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "王充",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "王充",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "王充",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "王符",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "王符",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "王符",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "王符",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "王符",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "王符",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "王符",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "王符",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "王符",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "王符",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "王符",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "王符",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "王符",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "王符",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "王符",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "王符",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "王符",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "王符",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "王符",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "王符",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "王符",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "王符",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "王符",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "王符",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "仲长统",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "仲长统",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "仲长统",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "仲长统",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "仲长统",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "仲长统",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "仲长统",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "仲长统",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "仲长统",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "仲长统",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "仲长统",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "仲长统",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "仲长统",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "仲长统",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "仲长统",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "仲长统",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "仲长统",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [
+        {
+          "name": "仲长统",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 47,
+      "owners": [
+        {
+          "name": "仲长统",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 48,
+      "owners": [
+        {
+          "name": "仲长统",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 49,
+      "owners": [
+        {
+          "name": "仲长统",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 50,
+      "owners": [
+        {
+          "name": "仲长统",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 51,
+      "owners": [
+        {
+          "name": "仲长统",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 52,
+      "owners": [
+        {
+          "name": "仲长统",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 53,
+      "owners": [
+        {
+          "name": "仲长统",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 54,
+      "owners": [
+        {
+          "name": "仲长统",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 55,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 56,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HOUHANSHU_054_01",
+      "史略名称": "王充",
+      "史略简介": "王充",
+      "原文字句": "王充字仲任，会稽上虞人也，其先自魏郡元城徒焉。充少孤，乡里称孝。后到京师，受业太学，师事扶风班彪。好博览而不守章句。家贫无书，常游洛阳市肆，阅所卖书，一见辄能诵忆，遂博通众流百家之言。后归乡里，屏居教授。仕郡为功曹，以数谏争不合去。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷54·王充王符仲长统列传》",
+      "paragraphs": [
+        {
+          "volume": "王充王符仲长统列传",
+          "paragraph_from": 2,
+          "paragraph_to": 4
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_054_02",
+      "史略名称": "王符",
+      "史略简介": "王符",
+      "原文字句": "王符字节信，安定临泾人也。少好学，有志操，与马融、窦章、张衡、崔瑗等友善。安定俗鄙庶孽，而符无外家，为乡人所贱。自和、安之后，世务游宦，当涂者更相荐引，而符独耿介不同于俗，以此遂不得升进。志意蕴愤，乃隐居著书三十余篇，以讥当时失得，不欲章显其名，故号曰《潜夫论》。其指讦时短，讨谪物情，足以观见当时风政，著其五篇云尔。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷54·王充王符仲长统列传》",
+      "paragraphs": [
+        {
+          "volume": "王充王符仲长统列传",
+          "paragraph_from": 5,
+          "paragraph_to": 28
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_054_03",
+      "史略名称": "仲长统",
+      "史略简介": "仲长统",
+      "原文字句": "仲长统字公理，山阳高平人也。少好学，博涉书记，赡于文辞。年二十余，游学青、徐、并、冀之间，与交友者多异之。并州刺史高幹，袁绍甥也。素贵有名，招致四方游土，士多归附。统过幹，幹善待遇，访以当时之事。统谓幹曰：“君有雄志而无雄才，好士而不能择人，所以为君深戒也。”幹雅自多，不纳其言，统遂去之。无几，幹以并州叛，卒至于败。并、冀之士皆以是异统。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷54·王充王符仲长统列传》",
+      "paragraphs": [
+        {
+          "volume": "王充王符仲长统列传",
+          "paragraph_from": 29,
+          "paragraph_to": 54
+        }
+      ]
+    }
+  ]
+}

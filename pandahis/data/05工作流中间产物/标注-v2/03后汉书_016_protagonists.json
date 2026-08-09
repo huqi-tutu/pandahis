@@ -1,0 +1,34 @@
+{
+  "work": "03后汉书",
+  "vol": "016",
+  "volume_name": "宗室四王三侯列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_arc": "C",
+  "skip_reason": null,
+  "protagonists_cap_note": "本卷只取齐武王縯、赵孝王良、安成孝侯赐三人；其余宗室侯王附见不建条。",
+  "protagonists": [
+    {
+      "name": "刘縯",
+      "category": "宗戚",
+      "rationale": "齐武王，字伯升，光武长兄；P2–P10。"
+    },
+    {
+      "name": "刘良",
+      "category": "宗戚",
+      "rationale": "赵孝王，字次伯，光武叔父；P25。"
+    },
+    {
+      "name": "刘赐",
+      "category": "宗戚",
+      "rationale": "安成孝侯，字子琴，光武族兄；P41–P43。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "世系链",
+    "论赞",
+    "赞曰"
+  ]
+}

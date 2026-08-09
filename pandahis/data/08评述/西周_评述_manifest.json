@@ -529,7 +529,23 @@
       "status": "done",
       "entry_count": 4,
       "verified_at": "2026-07-29T17:10:26Z"
+    },
+    {
+      "glbl": "GLBL_01091",
+      "name": "召公奭",
+      "file": "GLBL_01091_召公奭_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-08T11:47:29Z"
+    },
+    {
+      "glbl": "GLBL_01118",
+      "name": "晋唐叔虞",
+      "file": "GLBL_01118_晋唐叔虞_评述.json",
+      "status": "done",
+      "entry_count": 3,
+      "verified_at": "2026-08-08T11:49:37Z"
     }
   ],
-  "updated_at": "2026-07-29T17:10:26Z"
+  "updated_at": "2026-08-08T11:49:37Z"
 }

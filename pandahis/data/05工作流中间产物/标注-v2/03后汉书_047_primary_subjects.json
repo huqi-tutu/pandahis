@@ -1,0 +1,583 @@
+{
+  "work": "03后汉书",
+  "vol": "047",
+  "total_paragraphs": 96,
+  "paragraphs": [
+    {
+      "paragraph": 1,
+      "primary_subject": "卷首标题",
+      "disposition": "exclude",
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 3,
+      "primary_subject": "刘彊",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 4,
+      "primary_subject": "刘彊",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 5,
+      "primary_subject": "刘彊",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 6,
+      "primary_subject": "刘彊",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 7,
+      "primary_subject": "刘彊",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 8,
+      "primary_subject": "刘彊",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 9,
+      "primary_subject": "刘彊",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 10,
+      "primary_subject": "刘彊",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 11,
+      "primary_subject": "刘彊",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 12,
+      "primary_subject": "刘辅",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 13,
+      "primary_subject": "刘辅",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 14,
+      "primary_subject": "刘辅",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 15,
+      "primary_subject": "刘辅",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 16,
+      "primary_subject": "刘辅",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 17,
+      "primary_subject": "刘辅",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 18,
+      "primary_subject": "刘辅",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 19,
+      "primary_subject": "刘英",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 20,
+      "primary_subject": "刘英",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 21,
+      "primary_subject": "刘英",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 22,
+      "primary_subject": "刘英",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 23,
+      "primary_subject": "刘英",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 24,
+      "primary_subject": "刘英",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 25,
+      "primary_subject": "济南康不取",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 26,
+      "primary_subject": "济南康不取",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 27,
+      "primary_subject": "济南康不取",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 28,
+      "primary_subject": "济南康不取",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 29,
+      "primary_subject": "济南康不取",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 30,
+      "primary_subject": "济南康不取",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 31,
+      "primary_subject": "济南康不取",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 32,
+      "primary_subject": "济南康不取",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 33,
+      "primary_subject": "济南康不取",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 34,
+      "primary_subject": "济南康不取",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 35,
+      "primary_subject": "刘苍",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 36,
+      "primary_subject": "刘苍",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 37,
+      "primary_subject": "刘苍",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 38,
+      "primary_subject": "刘苍",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 39,
+      "primary_subject": "刘苍",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 40,
+      "primary_subject": "刘苍",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 41,
+      "primary_subject": "刘苍",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 42,
+      "primary_subject": "刘苍",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 43,
+      "primary_subject": "刘苍",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 44,
+      "primary_subject": "刘苍",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 45,
+      "primary_subject": "刘苍",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 46,
+      "primary_subject": "刘苍",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 47,
+      "primary_subject": "刘苍",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 48,
+      "primary_subject": "刘苍",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 49,
+      "primary_subject": "刘苍",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 50,
+      "primary_subject": "刘苍",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 51,
+      "primary_subject": "刘苍",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 52,
+      "primary_subject": "刘苍",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 53,
+      "primary_subject": "刘苍",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 54,
+      "primary_subject": "刘苍",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 55,
+      "primary_subject": "刘苍",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 56,
+      "primary_subject": "刘苍",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 57,
+      "primary_subject": "论赞",
+      "disposition": "exclude",
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 58,
+      "primary_subject": "任城尚等不取",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 59,
+      "primary_subject": "任城尚等不取",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 60,
+      "primary_subject": "任城尚等不取",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 61,
+      "primary_subject": "任城尚等不取",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 62,
+      "primary_subject": "任城尚等不取",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 63,
+      "primary_subject": "阜陵延不取",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 64,
+      "primary_subject": "阜陵延不取",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 65,
+      "primary_subject": "阜陵延不取",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 66,
+      "primary_subject": "阜陵延不取",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 67,
+      "primary_subject": "阜陵延不取",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 68,
+      "primary_subject": "阜陵延不取",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 69,
+      "primary_subject": "阜陵延不取",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 70,
+      "primary_subject": "阜陵延不取",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 71,
+      "primary_subject": "阜陵延不取",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 72,
+      "primary_subject": "阜陵延不取",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 73,
+      "primary_subject": "刘荆",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 74,
+      "primary_subject": "刘荆",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 75,
+      "primary_subject": "刘荆",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 76,
+      "primary_subject": "刘荆",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 77,
+      "primary_subject": "刘荆",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 78,
+      "primary_subject": "刘荆",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 79,
+      "primary_subject": "刘荆",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 80,
+      "primary_subject": "临淮衡不取",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 81,
+      "primary_subject": "中山焉不取",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 82,
+      "primary_subject": "中山焉不取",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 83,
+      "primary_subject": "中山焉不取",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 84,
+      "primary_subject": "中山焉不取",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 85,
+      "primary_subject": "中山焉不取",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 86,
+      "primary_subject": "中山焉不取",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 87,
+      "primary_subject": "琅邪京不取",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 88,
+      "primary_subject": "琅邪京不取",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 89,
+      "primary_subject": "琅邪京不取",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 90,
+      "primary_subject": "琅邪京不取",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 91,
+      "primary_subject": "琅邪京不取",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 92,
+      "primary_subject": "琅邪京不取",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 93,
+      "primary_subject": "琅邪京不取",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 94,
+      "primary_subject": "琅邪京不取",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 95,
+      "primary_subject": "琅邪京不取",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 96,
+      "primary_subject": "论赞",
+      "disposition": "exclude",
+      "exclude_reason": "论赞"
+    }
+  ]
+}

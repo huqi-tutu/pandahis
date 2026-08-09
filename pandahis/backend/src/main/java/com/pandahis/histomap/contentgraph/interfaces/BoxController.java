@@ -6,6 +6,7 @@ import com.pandahis.histomap.contentgraph.interfaces.dto.*;
 import com.pandahis.histomap.contentgraph.interfaces.service.BoxService;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.Positive;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -56,11 +57,21 @@ public class BoxController {
     return ApiResponse.ok(RequestIdHolder.get(), boxService.loadCritiques(boxId));
   }
 
+  @GetMapping("/critiques/{id}")
+  public ApiResponse<CritiqueDetailDTO> critique(@PathVariable @Positive long id) {
+    return ApiResponse.ok(RequestIdHolder.get(), boxService.loadCritique(id));
+  }
+
   @GetMapping("/boxes/{boxId}/relics")
   public ApiResponse<BoxRelicsDTO> relics(
       @PathVariable @NotBlank @Size(max = 128) String boxId
   ) {
     return ApiResponse.ok(RequestIdHolder.get(), boxService.loadRelics(boxId));
+  }
+
+  @GetMapping("/relics/{id}")
+  public ApiResponse<RelicDetailDTO> relic(@PathVariable @Positive long id) {
+    return ApiResponse.ok(RequestIdHolder.get(), boxService.loadRelic(id));
   }
 
   @GetMapping("/boxes/{boxId}/graph/nodes/{nodeKey}")

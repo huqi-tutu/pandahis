@@ -1,0 +1,39 @@
+{
+  "work": "03后汉书",
+  "vol": "041",
+  "volume_name": "桓荣丁鸿列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_arc": "C",
+  "volume_texture": "sequential",
+  "skip_reason": null,
+  "protagonists_cap_note": "桓荣/郁/焉/典+丁鸿；鸾彬等薄附不取。",
+  "protagonists": [
+    {
+      "name": "桓荣",
+      "category": "文臣",
+      "rationale": "P2–P9。"
+    },
+    {
+      "name": "桓郁",
+      "category": "文臣",
+      "rationale": "荣子，授二帝；P11–P18。"
+    },
+    {
+      "name": "桓焉",
+      "category": "文臣",
+      "rationale": "郁子，太傅；P19–P21。"
+    },
+    {
+      "name": "桓典",
+      "category": "文臣",
+      "rationale": "焉孙，骢马御史；P22–P25。"
+    },
+    {
+      "name": "丁鸿",
+      "category": "文臣",
+      "rationale": "P36–P49（含嗣封）。"
+    }
+  ]
+}

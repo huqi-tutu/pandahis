@@ -282,7 +282,7 @@ def _coord_matches_hints(info: dict, dynasty_hint: str, regime_hint: str) -> boo
         d = (info.get("dynasty") or "").strip()
         if d == dynasty_hint:
             return True
-        if dynasty_hint in ("西汉", "东汉") and d in ("西汉", "东汉", "秦末汉初"):
+        if dynasty_hint in ("西汉", "东汉") and d in ("西汉", "东汉", "楚汉"):
             return True
     return not dynasty_hint and not regime_hint
 
@@ -374,7 +374,7 @@ def default_emperor_for_hints(
     regime_hint: str = "",
 ) -> Optional[dict]:
     """序论/无纪年段落：按政权/朝代取默认主轴（如西汉 → 汉高祖）。"""
-    if regime_hint == "汉" or dynasty_hint in ("西汉", "东汉", "秦末汉初"):
+    if regime_hint == "汉" or dynasty_hint in ("西汉", "东汉", "楚汉"):
         for name in ("汉高祖", "汉文帝", "汉武帝"):
             if name in emperor_index:
                 return emperor_index[name]
@@ -1124,13 +1124,13 @@ def _emperor_context_mismatch(
     cur_dyn = (current.get("dynasty") or "").strip()
     new_dyn = (inferred.get("dynasty") or "").strip()
     if cur_dyn in ("三国", "南北朝", "北魏", "东晋", "西晋") and new_dyn in (
-        "西汉", "东汉", "秦末汉初",
+        "西汉", "东汉", "楚汉",
     ):
         return True
     if work_id == "01史记" and cur_dyn not in (
-        "西汉", "东汉", "秦末汉初", "西周", "东周", "春秋", "战国", "秦", "商", "夏",
+        "西汉", "东汉", "楚汉", "西周", "东周", "春秋", "战国", "秦", "商", "夏",
     ):
-        if new_dyn in ("西汉", "东汉", "秦末汉初"):
+        if new_dyn in ("西汉", "东汉", "楚汉"):
             return True
     return False
 
@@ -1469,9 +1469,9 @@ def merge_regime_supplements() -> Tuple[int, List[str]]:
     rows.append({
         "政权": "西楚",
         "政权ID": "ZQ_HX_QINMOHANCHU_XICHU",
-        "朝代": "秦末汉初",
+        "朝代": "楚汉",
         "朝代ID": "CD_HX_QINMOHANCHU",
-        "dynasty_zy": "秦末汉初",
+        "dynasty_zy": "楚汉",
         "文明": "华夏",
         "文明ID": "HX",
         "开始时间": "-206",
@@ -1488,11 +1488,11 @@ def merge_dynasty_supplements() -> Tuple[int, List[str]]:
     with open(dynasty_path, encoding="utf-8-sig") as f:
         rows = json.load(f)
     names = {(r.get("朝代") or r.get("\ufeff朝代") or "").strip() for r in rows}
-    if "秦末汉初" in names:
-        return 0, ["秦末汉初朝代已存在"]
+    if "楚汉" in names:
+        return 0, ["楚汉朝代已存在"]
 
     rows.append({
-        "朝代": "秦末汉初",
+        "朝代": "楚汉",
         "文明": "华夏",
         "开始时间": "-206",
         "结束时间": "-202",
@@ -1500,4 +1500,4 @@ def merge_dynasty_supplements() -> Tuple[int, List[str]]:
     with open(dynasty_path, "w", encoding="utf-8") as f:
         json.dump(rows, f, ensure_ascii=False, indent=2)
         f.write("\n")
-    return 1, ["补录朝代「秦末汉初」"]
+    return 1, ["补录朝代「楚汉」"]

@@ -1,15 +1,36 @@
 {
-  "春秋": {
-    "cw": {
-      "commentary_files": 168,
-      "witness_files": 168,
-      "commentary_rows": 649,
-      "witness_rows": 187,
-      "ids": 168
-    },
+  "夏": {
     "relations": {
-      "files": 167,
-      "edges": 1391,
+      "files": 39,
+      "edges": 192,
+      "errors": 0
+    }
+  },
+  "商": {
+    "relations": {
+      "files": 43,
+      "edges": 296,
+      "errors": 0
+    }
+  },
+  "西周": {
+    "relations": {
+      "files": 34,
+      "edges": 307,
+      "errors": 1
+    }
+  },
+  "春秋": {
+    "relations": {
+      "files": 127,
+      "edges": 1118,
+      "errors": 41
+    }
+  },
+  "战国": {
+    "relations": {
+      "files": 120,
+      "edges": 1410,
       "errors": 1
     }
   }

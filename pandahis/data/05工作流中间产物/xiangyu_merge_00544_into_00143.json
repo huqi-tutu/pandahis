@@ -1,0 +1,40 @@
+{
+  "schema": "merge-deprecate/v1",
+  "at": "2026-08-09T11:23:09.644721+00:00",
+  "keep": {
+    "id": "GLBL_00143",
+    "name": "项羽",
+    "dynasty": "楚汉",
+    "keeps": [
+      "坐标",
+      "详情",
+      "全局史略ID"
+    ]
+  },
+  "from": {
+    "id": "GLBL_00544",
+    "name": "项籍",
+    "moved": [
+      "人物关系",
+      "评述",
+      "见证"
+    ]
+  },
+  "online": {
+    "GLBL_00143": {
+      "critique": 4,
+      "relic": 3,
+      "graph_nodes": 56,
+      "graph_edges": 55,
+      "detail_chars": 19355,
+      "source_chars": 17824,
+      "status": 1
+    },
+    "GLBL_00544": {
+      "status": 0,
+      "components_cleared": true,
+      "detail_untouched": true
+    }
+  },
+  "archive": "data/05工作流中间产物/废弃条目_GLBL_00544_项籍"
+}

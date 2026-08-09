@@ -1,0 +1,43 @@
+{
+  "work": "03后汉书",
+  "vol": "027",
+  "volume_name": "卓鲁魏刘列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_arc": "C",
+  "volume_texture": "sequential",
+  "skip_reason": null,
+  "protagonists_cap_note": "卓茂/鲁恭/鲁丕/魏霸/刘宽；嗣封归各传主。",
+  "protagonists": [
+    {
+      "name": "卓茂",
+      "category": "文臣",
+      "rationale": "P2–P9（含嗣封与同志六人）。"
+    },
+    {
+      "name": "鲁恭",
+      "category": "文臣",
+      "rationale": "P11–P30（含诸子）。"
+    },
+    {
+      "name": "鲁丕",
+      "category": "文臣",
+      "rationale": "P31–P37。"
+    },
+    {
+      "name": "魏霸",
+      "category": "文臣",
+      "rationale": "P38–P41。"
+    },
+    {
+      "name": "刘宽",
+      "category": "文臣",
+      "rationale": "P42–P46。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "论赞"
+  ]
+}

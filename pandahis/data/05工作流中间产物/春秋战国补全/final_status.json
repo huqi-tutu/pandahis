@@ -1,0 +1,125 @@
+{
+  "schema": "cq-zg-peak-priority-backfill-final/v1",
+  "generated_at": "2026-08-08T11:04:03.624415+00:00",
+  "constraints": [
+    "only_fill_missing",
+    "no_v1",
+    "dedupe_via_sibling_align"
+  ],
+  "summary": {
+    "春秋": {
+      "total": 232,
+      "miss_priority": 0,
+      "miss_peak": 0,
+      "placeholder_year": 0
+    },
+    "战国": {
+      "total": 173,
+      "miss_priority": 0,
+      "miss_peak": 0,
+      "placeholder_year": 0
+    }
+  },
+  "sibling_aligned": [
+    [
+      "GLBL_01096",
+      "魏公子无忌",
+      "←",
+      "GLBL_00488",
+      "魏无忌"
+    ],
+    [
+      "GLBL_01109",
+      "邹衍",
+      "←",
+      "GLBL_00884"
+    ],
+    [
+      "GLBL_01113",
+      "李牧",
+      "←",
+      "GLBL_00885"
+    ],
+    [
+      "GLBL_01114",
+      "赵奢",
+      "←",
+      "GLBL_00886"
+    ],
+    [
+      "GLBL_01119",
+      "赵惠文王",
+      "←",
+      "GLBL_00858"
+    ]
+  ],
+  "fanzuo_manual_peak": [
+    "GLBL_01078",
+    "GLBL_01079",
+    "GLBL_01080",
+    "GLBL_01081"
+  ],
+  "note": "曾误对整朝重判优先级，已从 git HEAD 恢复非缺口条目；仅保留原88条缺口上的补全结果。脚本已改为只送缺失子集给 LLM。",
+  "samples": {
+    "GLBL_01051": {
+      "name": "周平王",
+      "P": "P0",
+      "peak": -770,
+      "years": [
+        -770,
+        -719
+      ],
+      "src": "模型补全"
+    },
+    "GLBL_01065": {
+      "name": "百里奚",
+      "P": "P1",
+      "peak": -640,
+      "years": [
+        -659,
+        -621
+      ],
+      "src": "模型补全"
+    },
+    "GLBL_01108": {
+      "name": "范蠡",
+      "P": "P0",
+      "peak": -473,
+      "years": [
+        -496,
+        -448
+      ],
+      "src": "史料提取"
+    },
+    "GLBL_01121": {
+      "name": "齐桓公午",
+      "P": "P2",
+      "peak": -370,
+      "years": [
+        -374,
+        -357
+      ],
+      "src": "史料提取"
+    },
+    "GLBL_01096": {
+      "name": "魏公子无忌",
+      "P": "P0",
+      "peak": -257,
+      "years": [
+        -276,
+        -243
+      ],
+      "src": "史料提取"
+    },
+    "GLBL_01078": {
+      "name": "赤狄",
+      "P": "P1",
+      "peak": -660,
+      "years": [
+        -668,
+        -660
+      ],
+      "src": "模型补全"
+    }
+  }
+}

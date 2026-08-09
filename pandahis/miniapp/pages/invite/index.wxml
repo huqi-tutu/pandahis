@@ -12,6 +12,8 @@
   >
     <!-- 上卡：slogan + 统计 + 邀请 -->
     <view class="hero-card">
+      <image class="hero-card-bg" src="{{heroCardBgUrl}}" mode="aspectFill" />
+      <view class="hero-card-content">
       <text class="slogan-sub">邀请阅读搭子</text>
       <view class="slogan-main font-title">一起探索时间脉络</view>
       <view class="slogan-desc">
@@ -49,13 +51,13 @@
           <text class="share-btn-text">邀请好友</text>
         </view>
       </view>
+      </view>
     </view>
 
     <!-- 下卡：邀请好友列表 -->
     <view class="list-card">
       <view class="list-head">
         <text class="list-title font-title">我的邀请</text>
-        <text class="list-count">{{loading ? '' : invitedCount + ' 人'}}</text>
       </view>
 
       <view wx:if="{{loading}}" class="list-empty">加载中…</view>

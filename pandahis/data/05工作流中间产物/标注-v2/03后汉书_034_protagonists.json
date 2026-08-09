@@ -1,0 +1,25 @@
+{
+  "work": "03后汉书",
+  "vol": "034",
+  "volume_name": "郎顗襄楷列传第二十下",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "郎顗",
+      "category": "文臣",
+      "rationale": "卷名首列人物，郎顗以通经术、上灾异对策闻名，属儒学仕宦之列，为合传主轴之一。"
+    },
+    {
+      "name": "襄楷",
+      "category": "文臣",
+      "rationale": "卷名次列人物，襄楷以方术、上疏言事著称，属方士而仕宦言事者，为合传主轴之一。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

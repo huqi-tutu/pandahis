@@ -1,0 +1,80 @@
+{
+  "work": "03后汉书",
+  "vol": "050",
+  "total_paragraphs": 57,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_050_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 13,
+      "paragraph_to": 31,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 32,
+      "paragraph_to": 32,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 57,
+      "paragraph_to": 57,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "袁安",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 12,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "袁安字邵公，汝南汝阳人也。祖父良，习《孟氏易》，平帝时举明经，为太子舍人；建武初",
+        "close_paragraph": 12,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P12"
+      }
+    },
+    {
+      "name": "张酺",
+      "category": "文臣",
+      "paragraph_from": 33,
+      "paragraph_to": 44,
+      "boundary_evidence": {
+        "open_paragraph": 33,
+        "open_phrase": "张酺字孟侯，汝南细阳人，赵王张敖之后也。敖子寿，封细阳之池阳乡，后废，因家焉。",
+        "close_paragraph": 44,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P33–P44"
+      }
+    },
+    {
+      "name": "韩棱",
+      "category": "文臣",
+      "paragraph_from": 45,
+      "paragraph_to": 50,
+      "boundary_evidence": {
+        "open_paragraph": 45,
+        "open_phrase": "韩棱字伯师，颍川舞阳人，弓高侯穨当之后也。世为乡里著姓。父寻，建武中为陇西太守。",
+        "close_paragraph": 50,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P45–P50"
+      }
+    },
+    {
+      "name": "周荣",
+      "category": "文臣",
+      "paragraph_from": 51,
+      "paragraph_to": 56,
+      "boundary_evidence": {
+        "open_paragraph": 51,
+        "open_phrase": "周荣字平孙，庐江舒人也。肃宗时，举明经，辟司徒袁安府。安数与论议，甚器之。及安举",
+        "close_paragraph": 56,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P51–P56"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

@@ -1,0 +1,38 @@
+{
+  "work": "03后汉书",
+  "vol": "046",
+  "volume_name": "第五钟离宋寒列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_arc": "C",
+  "volume_texture": "sequential",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "第五伦",
+      "category": "文臣",
+      "rationale": "P2–P20。"
+    },
+    {
+      "name": "第五种",
+      "category": "文臣",
+      "rationale": "伦曾孙；P22–P27。"
+    },
+    {
+      "name": "钟离意",
+      "category": "文臣",
+      "rationale": "P28–P39。"
+    },
+    {
+      "name": "宋均",
+      "category": "文臣",
+      "rationale": "P40–P53。"
+    },
+    {
+      "name": "寒朗",
+      "category": "文臣",
+      "rationale": "P54–P57。"
+    }
+  ]
+}

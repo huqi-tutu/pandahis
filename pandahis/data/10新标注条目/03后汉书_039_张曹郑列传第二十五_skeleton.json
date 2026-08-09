@@ -1,0 +1,362 @@
+{
+  "volume": "张曹郑列传",
+  "source_file": "03后汉书_039_张曹郑列传第二十五.txt",
+  "total_paragraphs": 34,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "张纯",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "张纯",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "张纯",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "张纯",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "张纯",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "张纯",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "张纯",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "张奋",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "张奋",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "张奋",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "张奋",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "张奋",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "曹褒",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "曹褒",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "曹褒",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "曹褒",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "曹褒",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "曹褒",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "曹褒",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "曹褒",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "郑玄",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "郑玄",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "郑玄",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "郑玄",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "郑玄",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "郑玄",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "郑玄",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "郑玄",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "郑玄",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "郑玄",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 34,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HOUHANSHU_039_01",
+      "史略名称": "张纯",
+      "史略简介": "张纯",
+      "原文字句": "张纯字伯仁，京兆杜陵人也。高祖父安世，宣帝时为大司马卫将军，封富平侯。父放，为成帝侍中。纯少袭爵士，哀、平间为侍中，王莽时至列卿。遭值篡伪，多亡爵士，纯以敦谨守约，保全前封。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷39·张曹郑列传》",
+      "paragraphs": [
+        {
+          "volume": "张曹郑列传",
+          "paragraph_from": 2,
+          "paragraph_to": 8
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_039_02",
+      "史略名称": "张奋",
+      "史略简介": "张奋",
+      "原文字句": "奋字稚通。父纯，临终敕家丞曰：“司空无功于时，猥蒙爵士，身死之后，勿议传国。”奋兄根，少被病，光武诏奋嗣爵，奋称纯遗敕，固不肯受。帝以奋违诏，敕收下狱，奋惶怖，乃袭封。永平四年，随例归国。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷39·张曹郑列传》",
+      "paragraphs": [
+        {
+          "volume": "张曹郑列传",
+          "paragraph_from": 9,
+          "paragraph_to": 13
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_039_03",
+      "史略名称": "曹褒",
+      "史略简介": "曹褒",
+      "原文字句": "曹褒字叔通，鲁国薛人也。父充，持《庆氏礼》，建武中为博士，从巡狩岱宗，定封禅礼，还，受诏议立七郊、三雍、大射、养老礼仪。显宗即位，充上言：“汉再受命，仍有封禅之事，而礼乐崩阙，不可为后嗣法。五帝不相沿乐，三王不相袭礼，大汉当自制礼，以示百世。”帝问：“制礼乐云何？”充对曰：“《河图括地象》曰：‘有汉世礼乐文雅出。’《尚书璇机钤》曰：‘有帝汉出，德洽作乐，名予。’”帝善之，下诏曰：“今且改太乐官曰太",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷39·张曹郑列传》",
+      "paragraphs": [
+        {
+          "volume": "张曹郑列传",
+          "paragraph_from": 14,
+          "paragraph_to": 21
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_039_04",
+      "史略名称": "郑玄",
+      "史略简介": "郑玄",
+      "原文字句": "郑玄字康成，北海高密人也。八世祖崇，哀帝时尚书仆射。玄少为乡啬夫，得休归，尝诣学官，不乐为吏，父数怒之，不能禁。遂造太学受业，师事京兆第五元先，始通《京氏易》《公羊春秋》《三统历》《九章算术》。又从东郡张恭祖受《周官》《礼记》《左氏春秋》《韩诗》《古文尚书》。以山东无兄问者，乃西入关，因涿郡卢植，事扶风马融。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷39·张曹郑列传》",
+      "paragraphs": [
+        {
+          "volume": "张曹郑列传",
+          "paragraph_from": 23,
+          "paragraph_to": 32
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "work": "03后汉书",
+  "vol": "044",
+  "total_paragraphs": 31,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_044_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 15,
+      "paragraph_to": 15,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "班彪",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 14,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "班彪字叔皮，扶风安陵人也。祖况，成帝时为越骑校尉。父稚，哀帝时为广平太守。",
+        "close_paragraph": 14,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P14"
+      }
+    },
+    {
+      "name": "班固",
+      "category": "文臣",
+      "paragraph_from": 16,
+      "paragraph_to": 31,
+      "boundary_evidence": {
+        "open_paragraph": 16,
+        "open_phrase": "固字孟坚。年九岁，能属文诵诗赋，及长，遂博贯载籍，九流百家之言，无不穷究。所学无",
+        "close_paragraph": 31,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P16–P31"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

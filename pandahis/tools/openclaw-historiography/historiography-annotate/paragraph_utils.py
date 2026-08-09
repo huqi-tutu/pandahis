@@ -12,6 +12,8 @@ from lib_config import get_histograph_root, paths
 WORK_SPLIT_MODE = {
     "01史记": "line",  # 拆分 txt 按行分段；勿因少量全角缩进误判 indent
     "01A尚书": "line",  # 已归一化（无全角缩进），与史记统一
+    "02汉书": "line",
+    "03后汉书": "line",
 }
 
 YUANWEN_MARK = "【原文】"

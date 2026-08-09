@@ -1,0 +1,87 @@
+{
+  "work": "03后汉书",
+  "vol": "040",
+  "total_paragraphs": 62,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_040_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 49,
+      "paragraph_to": 49,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 62,
+      "paragraph_to": 62,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "郑兴",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 18,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "郑兴字少赣，河南开封人也。少学《公羊春秋》。晚善《左氏传》，遂积精深思，通达其旨",
+        "close_paragraph": 18,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P18"
+      }
+    },
+    {
+      "name": "范升",
+      "category": "文臣",
+      "paragraph_from": 19,
+      "paragraph_to": 25,
+      "boundary_evidence": {
+        "open_paragraph": 19,
+        "open_phrase": "范升字辩卿，代郡人也。少孤，依外家居。九岁通《论语》《孝经》，及长，习《梁丘易》",
+        "close_paragraph": 25,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P19–P25"
+      }
+    },
+    {
+      "name": "陈元",
+      "category": "文臣",
+      "paragraph_from": 26,
+      "paragraph_to": 35,
+      "boundary_evidence": {
+        "open_paragraph": 26,
+        "open_phrase": "陈元字长孙，苍梧广信人也。父钦，习《左氏春秋》，事黎阳贾护，与刘歆同时而别自名家",
+        "close_paragraph": 35,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P26–P35"
+      }
+    },
+    {
+      "name": "贾逵",
+      "category": "文臣",
+      "paragraph_from": 36,
+      "paragraph_to": 48,
+      "boundary_evidence": {
+        "open_paragraph": 36,
+        "open_phrase": "贾逵字景伯，扶风平陵人也。九世祖谊，文帝时为梁王太傅。曾祖父光，为常山太守，宣帝",
+        "close_paragraph": 48,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P36–P48"
+      }
+    },
+    {
+      "name": "张霸",
+      "category": "文臣",
+      "paragraph_from": 50,
+      "paragraph_to": 61,
+      "boundary_evidence": {
+        "open_paragraph": 50,
+        "open_phrase": "张霸字伯饶，蜀郡成都人也。年数岁而知孝让，虽出入饮食，自然合礼，乡人号为“张曾子",
+        "close_paragraph": 61,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P50–P61"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

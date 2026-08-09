@@ -5,6 +5,8 @@ import {
   correctionStatusLabel,
   fetchCorrectionDetail,
   formatCorrectionTime,
+  navigateToCorrectionSource,
+  resolveCorrectionSourceNav,
 } from '../../native-utils/correction'
 import { ROUTES, navigateTo } from '../../native-utils/router'
 import { computePageTopPadPx } from '../../native-utils/nav-metrics'
@@ -21,6 +23,7 @@ const EMPTY_DETAIL: CorrectionDetail = {
   civilizationName: '',
   dynastyName: '',
   sourceType: 'dynasty_canvas',
+  sourceRefId: null,
   status: 'pending',
   createdAt: '',
 }
@@ -32,6 +35,7 @@ Page({
     items: [] as CorrectionListVm[],
     detailVisible: false,
     detail: EMPTY_DETAIL,
+    canViewSource: false,
     pageTopPadPx: 88,
   },
   onLoad() {
@@ -89,7 +93,8 @@ Page({
       wx.showLoading({ title: '加载中', mask: true })
       const detail = await fetchCorrectionDetail(id)
       wx.hideLoading()
-      this.setData({ detail, detailVisible: true })
+      const canViewSource = !('error' in resolveCorrectionSourceNav(detail))
+      this.setData({ detail, detailVisible: true, canViewSource })
     } catch (err: unknown) {
       wx.hideLoading()
       const msg = err instanceof Error ? err.message : '加载失败'
@@ -97,6 +102,12 @@ Page({
     }
   },
   closeDetail() {
-    this.setData({ detailVisible: false })
+    this.setData({ detailVisible: false, canViewSource: false })
+  },
+  onViewSource() {
+    const detail = this.data.detail as CorrectionDetail
+    if (!detail || !detail.id || !this.data.canViewSource) return
+    const ok = navigateToCorrectionSource(detail)
+    if (ok) this.setData({ detailVisible: false, canViewSource: false })
   },
 })

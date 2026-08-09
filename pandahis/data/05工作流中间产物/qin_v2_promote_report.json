@@ -1,0 +1,19 @@
+{
+  "schema": "qin-v2-promote-offline-retranslate/v1",
+  "at": "2026-08-09T10:45:33.932200+00:00",
+  "promoted_to_11_and_online": [
+    "吕不韦",
+    "蒙恬",
+    "秦始皇",
+    "李斯",
+    "韩非"
+  ],
+  "hanfei_note": "补了翻译详情第一段前的导语开头",
+  "offline_and_retranslating_v2": [
+    "优旃",
+    "卓氏",
+    "王翦",
+    "田儋"
+  ],
+  "archive": "data/11新标注条目翻译/_archive_pre_v2_qin/"
+}

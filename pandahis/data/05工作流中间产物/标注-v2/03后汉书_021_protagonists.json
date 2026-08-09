@@ -1,0 +1,45 @@
+{
+  "work": "03后汉书",
+  "vol": "021",
+  "volume_name": "耿弇列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_arc": "C",
+  "volume_texture": "sequential",
+  "skip_reason": null,
+  "protagonists_cap_note": "耿氏一门：弇为主轴；国/秉/夔/恭有独立开传厚度，单立；薄附传与世系链 exclude。",
+  "protagonists": [
+    {
+      "name": "耿弇",
+      "category": "武将",
+      "rationale": "卷名主传，建威大将军，定齐地；P2–P16。"
+    },
+    {
+      "name": "耿国",
+      "category": "武将",
+      "rationale": "弇弟，图边策、劝立南单于；P22–P23。"
+    },
+    {
+      "name": "耿秉",
+      "category": "武将",
+      "rationale": "国子，征西/度辽，伐匈奴车师；P25–P30。"
+    },
+    {
+      "name": "耿夔",
+      "category": "武将",
+      "rationale": "秉弟，从窦宪击匈奴，度辽将军；P33–P35。"
+    },
+    {
+      "name": "耿恭",
+      "category": "武将",
+      "rationale": "国弟广之子，疏勒城守，西域名将；P36–P41。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "世系链",
+    "论赞",
+    "其他"
+  ]
+}

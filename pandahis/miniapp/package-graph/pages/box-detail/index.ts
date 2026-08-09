@@ -32,6 +32,7 @@ import {
   unmarkBoxReadComplete,
 } from '../../../native-utils/read-complete'
 import { resolveSelectionBarAnchor } from '../../../native-utils/selection-bar-position'
+import { NARRATION_COVER_LOGO_URL } from '../../../native-utils/brand-assets'
 
 type TabAccess = { locked?: boolean; lockedReason?: string | null; unlockAction?: { type?: string } | null }
 
@@ -59,6 +60,7 @@ type BoxHeader = {
 }
 
 type CritiqueVm = {
+  id?: number | null
   title?: string | null
   blurb?: string | null
   author?: string | null
@@ -77,6 +79,7 @@ type CritiqueVm = {
 }
 
 type RelicVm = {
+  id?: number | null
   name: string
   imageUrl?: string | null
   summary?: string | null
@@ -231,6 +234,7 @@ function critiqueEraDisplay(eraText: string): string {
 
 function mapCritiqueItems(raw: any[]): CritiqueVm[] {
   return (raw || []).map((it, idx) => {
+    const idNum = Number(it.id)
     const author = String(it.author || '').trim()
     const title = String(it.title || '').trim()
     const angleTitle = critiqueAngleTitle(title)
@@ -249,6 +253,7 @@ function mapCritiqueItems(raw: any[]): CritiqueVm[] {
     const cardMeta = metaParts.filter(Boolean).join(' · ')
     return {
       ...it,
+      id: Number.isFinite(idNum) && idNum > 0 ? idNum : null,
       displayAuthor,
       eraMeta: dynasty,
       bodyQuote,
@@ -263,11 +268,13 @@ function mapCritiqueItems(raw: any[]): CritiqueVm[] {
 
 function mapRelicItems(raw: any[]): RelicVm[] {
   return (raw || []).map((it) => {
+    const idNum = Number(it.id)
     const full = String(it.description || it.summary || '').trim()
     // 列表简介：优先用服务端 summary；勿把截断摘要拼进详情全文
     const teaser = String(it.summary || it.description || '').trim()
     const museum = it.museum || '馆藏待补充'
     return {
+      id: Number.isFinite(idNum) && idNum > 0 ? idNum : null,
       name: it.name || '',
       imageUrl: it.imageUrl,
       summary: teaser,
@@ -295,12 +302,28 @@ function yearLabel(y: number): string {
   return formatHistoryYear(y)
 }
 
+/** 君王/诸侯的起止年语义为在位年，展示时加「在位」前缀，避免被读成生卒 */
+const REIGN_YEAR_CATEGORY_KEYS = new Set(['junji', 'zhuhou'])
+
 function buildDetailMetaFromBox(box: BoxHeader['box']): string {
+  const cat = String(box.categoryKey || '').trim()
+  const y0 = yearLabel(box.startYear)
+  const y1 = yearLabel(box.endYear)
+  const raw = box as Record<string, unknown>
+  const civ = String(raw.civilizationName ?? raw.civilization_name ?? '').trim()
+  const catName = categoryLabel(cat)
+
+  if (REIGN_YEAR_CATEGORY_KEYS.has(cat) && y0) {
+    const range = y1 && y1 !== y0 ? `${y0} — ${y1}` : y0
+    const parts = [`在位 ${range}`]
+    if (civ) parts.push(civ)
+    if (catName) parts.push(catName)
+    return parts.join(' · ')
+  }
+
   const fromSub = formatDetailMetaLine(box.subText)
   if (fromSub) return fromSub
   const parts: string[] = []
-  const y0 = yearLabel(box.startYear)
-  const y1 = yearLabel(box.endYear)
   if (y0 && y1 && y0 !== y1) parts.push(`${y0} — ${y1}`)
   else if (y0) parts.push(y0)
   return parts.join(' · ')
@@ -484,6 +507,7 @@ Page({
     critFetched: false,
     relicFetched: false,
     narrationState: 'idle' as NarrationState,
+    narrationCoverLogoUrl: NARRATION_COVER_LOGO_URL,
     audioOpen: false,
     audioProgress: 0,
     audioCurrentTime: '0:00',
@@ -705,7 +729,8 @@ Page({
       await this.refreshFavState()
       await this.recordFootprint()
       await this.ensureTab('content')
-      if (tab === 'relations' && showRelationsTab) {
+      // 详情正文就绪后预取关系图，切换 Tab 时无需再等
+      if (showRelationsTab) {
         this.loadRelationsGraph()
       }
     } catch (e: any) {
@@ -1011,43 +1036,24 @@ Page({
     const list = this.data.critiques as CritiqueVm[]
     const c = list[idx]
     if (!c) return
-    const boxName = String(this.data.navTitle || '').trim()
-    const angleTitle = critiqueAngleTitle(String(c.title || ''))
-    const header = this.data.header as BoxHeader | null
-    const { civ, dynasty } = readBoxLocationNames(header?.box)
-    navigateTo(ROUTES.critiqueDetail, {
-      navTitle: boxName ? `${boxName}・评述` : '评述',
-      title: angleTitle || String(c.title || '').trim(),
-      author: c.displayAuthor || '',
-      book: c.source || '',
-      era: c.eraMeta || '',
-      body: String(c.content || c.bodyQuote || '').trim(),
-      boxId: this.data.boxId || '',
-      boxTitle: boxName || header?.box?.title || '',
-      civilizationName: civ,
-      dynastyName: dynasty,
-    })
+    const critiqueId = Number(c.id || 0)
+    if (!(critiqueId > 0)) {
+      wx.showToast({ title: '评述暂不可用', icon: 'none' })
+      return
+    }
+    navigateTo(ROUTES.critiqueDetail, { critiqueId })
   },
   onRelicTap(e: WechatMiniprogram.BaseEvent) {
     const idx = Number((e.currentTarget as any).dataset.idx)
     const list = this.data.relics as RelicVm[]
     const r = list[idx]
     if (!r) return
-    const boxName = String(this.data.navTitle || '').trim()
-    const header = this.data.header as BoxHeader | null
-    const { civ, dynasty } = readBoxLocationNames(header?.box)
-    navigateTo(ROUTES.relicDetail, {
-      navTitle: boxName ? `${boxName}・见证` : '见证',
-      name: r.name || '',
-      museum: r.museum || '',
-      // 只用完整介绍；summary 入库时会截断并加「…」，拼进去会像「没写完」
-      detail: String(r.description || r.teaser || '').trim(),
-      imageUrl: r.imageUrl || '',
-      boxId: this.data.boxId || '',
-      boxTitle: boxName || header?.box?.title || '',
-      civilizationName: civ,
-      dynastyName: dynasty,
-    })
+    const relicId = Number(r.id || 0)
+    if (!(relicId > 0)) {
+      wx.showToast({ title: '见证暂不可用', icon: 'none' })
+      return
+    }
+    navigateTo(ROUTES.relicDetail, { relicId })
   },
   async onPlayIntro() {
     const cur = getNarrationState()

@@ -1,0 +1,35 @@
+{
+  "work": "03后汉书",
+  "vol": "024",
+  "volume_name": "朱景王杜马刘傅坚马列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_arc": "C",
+  "volume_texture": "sequential",
+  "skip_reason": null,
+  "protagonists_cap_note": "本卷Top3：朱祐（仲先）、刘隆（元伯）、马武（子张）；其余云台诸将与云台名录 exclude。用户稿「王霸（元伯）」按本卷字元伯之刘隆处理。",
+  "protagonists": [
+    {
+      "name": "朱祐",
+      "category": "武将",
+      "rationale": "字仲先，建义大将军；P2–P7（含嗣封）。"
+    },
+    {
+      "name": "刘隆",
+      "category": "武将",
+      "rationale": "字元伯，慎侯；P28–P31。"
+    },
+    {
+      "name": "马武",
+      "category": "武将",
+      "rationale": "字子张，捕虏将军；P38–P45（含嗣封）。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "论赞",
+    "共段总述",
+    "其他"
+  ]
+}

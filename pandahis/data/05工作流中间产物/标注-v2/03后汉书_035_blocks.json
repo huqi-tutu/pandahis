@@ -1,0 +1,107 @@
+{
+  "work": "03后汉书",
+  "vol": "035",
+  "total_paragraphs": 57,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_035_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 18,
+      "paragraph_to": 23,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 28,
+      "paragraph_to": 33,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 34,
+      "paragraph_to": 34,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 35,
+      "paragraph_to": 43,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 53,
+      "paragraph_to": 56,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 57,
+      "paragraph_to": 57,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "郭伋",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 8,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "郭伋字细侯，扶风茂陵人也。高祖父解，武帝时以任侠闻。父梵，为蜀郡太守。伋少有志行",
+        "close_paragraph": 8,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P8"
+      }
+    },
+    {
+      "name": "杜诗",
+      "category": "文臣",
+      "paragraph_from": 9,
+      "paragraph_to": 17,
+      "boundary_evidence": {
+        "open_paragraph": 9,
+        "open_phrase": "杜诗字君公，河内汲人也。少有才能，仕郡功曹，有公平称。更始时，辟大司马府。建武元",
+        "close_paragraph": 17,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P9–P17"
+      }
+    },
+    {
+      "name": "张堪",
+      "category": "文臣",
+      "paragraph_from": 24,
+      "paragraph_to": 27,
+      "boundary_evidence": {
+        "open_paragraph": 24,
+        "open_phrase": "张堪字君游，南阳宛人也，为郡族姓。堪早孤。让先父余财数百万与兄子。年十六，受业长",
+        "close_paragraph": 27,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P24–P27"
+      }
+    },
+    {
+      "name": "羊续",
+      "category": "文臣",
+      "paragraph_from": 44,
+      "paragraph_to": 48,
+      "boundary_evidence": {
+        "open_paragraph": 44,
+        "open_phrase": "羊续字兴祖，太山平阳人也。其先七世二千石卿校，祖父侵，安帝时司隶校尉。父儒，桓帝",
+        "close_paragraph": 48,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P44–P48"
+      }
+    },
+    {
+      "name": "贾琮",
+      "category": "文臣",
+      "paragraph_from": 49,
+      "paragraph_to": 52,
+      "boundary_evidence": {
+        "open_paragraph": 49,
+        "open_phrase": "贾琮字孟坚，东郡聊城人也。举孝廉，再迁为京令，有政理迹。",
+        "close_paragraph": 52,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P49–P52"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

@@ -1,0 +1,87 @@
+{
+  "work": "03后汉书",
+  "vol": "036",
+  "total_paragraphs": 36,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_036_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 7,
+      "paragraph_to": 7,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 36,
+      "paragraph_to": 36,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "樊宏",
+      "category": "宗戚",
+      "paragraph_from": 2,
+      "paragraph_to": 6,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "樊宏字靡卿，南阳湖阳人也，世祖之舅。其先周仲山甫，封于樊，因而氏焉，为乡里著姓。",
+        "close_paragraph": 6,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P6"
+      }
+    },
+    {
+      "name": "樊鯈",
+      "category": "宗戚",
+      "paragraph_from": 8,
+      "paragraph_to": 14,
+      "boundary_evidence": {
+        "open_paragraph": 8,
+        "open_phrase": "鯈字长鱼，谨约有父风。事后母至孝，及母卒，哀思过礼，毁病不自支，世祖常遣中黄门朝",
+        "close_paragraph": 14,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P8–P14"
+      }
+    },
+    {
+      "name": "樊准",
+      "category": "文臣",
+      "paragraph_from": 15,
+      "paragraph_to": 23,
+      "boundary_evidence": {
+        "open_paragraph": 15,
+        "open_phrase": "准字幼陵，宏之族曾孙也。父瑞，好黄老言，清静少欲。准少励志行，修儒术，以先父产业",
+        "close_paragraph": 23,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P15–P23"
+      }
+    },
+    {
+      "name": "阴识",
+      "category": "宗戚",
+      "paragraph_from": 24,
+      "paragraph_to": 29,
+      "boundary_evidence": {
+        "open_paragraph": 24,
+        "open_phrase": "阴识字次伯，南阳新野人也，光烈皇后之前母兄也。其先出自管仲，管仲七世孙修，自齐适",
+        "close_paragraph": 29,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P24–P29"
+      }
+    },
+    {
+      "name": "阴兴",
+      "category": "宗戚",
+      "paragraph_from": 30,
+      "paragraph_to": 35,
+      "boundary_evidence": {
+        "open_paragraph": 30,
+        "open_phrase": "兴字君陵，光烈皇后母弟也，为人有膂力。建武二年，为黄门侍郎，守期门仆射，典将武骑",
+        "close_paragraph": 35,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P30–P35"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

@@ -1,0 +1,34 @@
+{
+  "work": "03后汉书",
+  "vol": "045",
+  "total_paragraphs": 27,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_045_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 26,
+      "paragraph_to": 27,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "班固",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 25,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "主人喟然而叹曰：“痛乎风俗之移人也！子实秦人，矜夸馆室，保界河山，信识昭、襄而知",
+        "close_paragraph": 25,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P25"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

@@ -1,0 +1,106 @@
+{
+  "work": "03后汉书",
+  "vol": "014",
+  "total_paragraphs": 41,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_014_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 40,
+      "paragraph_to": 41,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "王昌",
+      "category": "庶众",
+      "paragraph_from": 2,
+      "paragraph_to": 5,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "王昌一名郎，赵国邯郸人也。素为卜相工，明星历，常以为河北有天子气。时赵缪王子林好",
+        "close_paragraph": 5,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P5"
+      }
+    },
+    {
+      "name": "刘永",
+      "category": "宗戚",
+      "paragraph_from": 6,
+      "paragraph_to": 16,
+      "boundary_evidence": {
+        "open_paragraph": 6,
+        "open_phrase": "刘永者，梁郡睢阳人，梁孝王八世孙也。传国至父立。元始中，立与平帝外家卫氏交通，为",
+        "close_paragraph": 16,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P6–P16"
+      }
+    },
+    {
+      "name": "张步",
+      "category": "武将",
+      "paragraph_from": 17,
+      "paragraph_to": 22,
+      "boundary_evidence": {
+        "open_paragraph": 17,
+        "open_phrase": "张步字文公，琅邪不其人也。汉兵之起，步亦聚众数千，转攻傍县，下数城，自为五威将军",
+        "close_paragraph": 22,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P17–P22"
+      }
+    },
+    {
+      "name": "王闳",
+      "category": "文臣",
+      "paragraph_from": 23,
+      "paragraph_to": 23,
+      "boundary_evidence": {
+        "open_paragraph": 23,
+        "open_phrase": "王闳者，王莽叔父平阿侯谭之子也，哀帝时为中常侍。时幸臣董贤为大司马，宠爱贵盛，闳",
+        "close_paragraph": 23,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P23–P23"
+      }
+    },
+    {
+      "name": "李宪",
+      "category": "武将",
+      "paragraph_from": 24,
+      "paragraph_to": 26,
+      "boundary_evidence": {
+        "open_paragraph": 24,
+        "open_phrase": "李宪者，颍川许昌人也。王莽时为庐江属令。莽末，江贼王州公等起，众十余万，攻掠郡县",
+        "close_paragraph": 26,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P24–P26"
+      }
+    },
+    {
+      "name": "彭宠",
+      "category": "武将",
+      "paragraph_from": 27,
+      "paragraph_to": 33,
+      "boundary_evidence": {
+        "open_paragraph": 27,
+        "open_phrase": "彭宠字伯通，南阳宛人也。父宏，哀帝时为渔阳太守，伟容貌，能饮饭，有威于边。王莽居",
+        "close_paragraph": 33,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P27–P33"
+      }
+    },
+    {
+      "name": "卢芳",
+      "category": "武将",
+      "paragraph_from": 34,
+      "paragraph_to": 39,
+      "boundary_evidence": {
+        "open_paragraph": 34,
+        "open_phrase": "卢芳字君期，安定三水人入，居左谷中。王莽时，天下咸思汉德，芳由是诈自称武帝曾孙刘",
+        "close_paragraph": 39,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P34–P39"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

@@ -67,6 +67,9 @@ histomap:
     matrix:
       highlight:
         importanceThreshold: 4
+  features:
+    # 一级文明切换：false 时各环境仅华夏可切，非华夏点击 Toast；app_kv 可热更新
+    civ-switch-enabled: false
   box:
     critiques:
       maxCount: 5

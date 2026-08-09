@@ -1,0 +1,342 @@
+{
+  "volume": "张法滕冯度杨列传",
+  "source_file": "03后汉书_042_张法滕冯度杨列传第二十八.txt",
+  "total_paragraphs": 31,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "张宗",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "张宗",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "张宗",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "法雄",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "法雄",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "法雄",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "法雄",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "法雄",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "滕抚",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "滕抚",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "滕抚",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "冯绲",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "冯绲",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "冯绲",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "冯绲",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "冯绲",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "冯绲",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "冯绲",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "度尚",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "度尚",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "度尚",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "度尚",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "度尚",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "度尚",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "度尚",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 28,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 29,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 30,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 31,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HOUHANSHU_042_01",
+      "史略名称": "张宗",
+      "史略简介": "张宗",
+      "原文字句": "张宗字诸君，南阳鲁阳人也。王莽时，为县阳泉乡佐。会莽败，义兵起，宗乃率阳泉民三四百人起兵略地，西至长安，更始以宗为偏将军。宗见更始政乱，因将家属客安邑。",
+      "史略分类": "武将",
+      "主要史料出处": "《03后汉书·卷42·张法滕冯度杨列传》",
+      "paragraphs": [
+        {
+          "volume": "张法滕冯度杨列传",
+          "paragraph_from": 2,
+          "paragraph_to": 4
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_042_02",
+      "史略名称": "法雄",
+      "史略简介": "法雄",
+      "原文字句": "法雄字文强，扶风郿人也，齐襄王法章之后。秦灭齐，子孙不敢称田姓，故以法为氏。宣帝时，徙三辅，世为二千石。雄初仕郡功曹，辟太傅张禹府，举雄高第，除平氏长。善政事，好发擿奸伏，盗贼稀发，吏人畏爱之。南阳太守鲍得上其理状，迁宛陵令。",
+      "史略分类": "武将",
+      "主要史料出处": "《03后汉书·卷42·张法滕冯度杨列传》",
+      "paragraphs": [
+        {
+          "volume": "张法滕冯度杨列传",
+          "paragraph_from": 5,
+          "paragraph_to": 9
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_042_03",
+      "史略名称": "滕抚",
+      "史略简介": "滕抚",
+      "原文字句": "滕抚字叔辅，北海剧人也。初仕州郡，稍迁为涿令，有文武才用。太守以其能，委任郡职，兼领六县。风政修明，流爱于人，在事七年，道不拾遗。",
+      "史略分类": "武将",
+      "主要史料出处": "《03后汉书·卷42·张法滕冯度杨列传》",
+      "paragraphs": [
+        {
+          "volume": "张法滕冯度杨列传",
+          "paragraph_from": 10,
+          "paragraph_to": 12
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_042_04",
+      "史略名称": "冯绲",
+      "史略简介": "冯绲",
+      "原文字句": "冯绲字鸿卿，巴郡宕渠人也，少学《春秋》《司马兵法》。父焕，安帝时为幽州刺史，疾忌奸恶，数致其罪。时玄菟太守姚光亦失人和。建光元年，怨者乃诈作玺书谴责焕、光，赐以欧刀。又下辽东都尉庞奋使速行刑，奋即斩光收焕。焕欲自杀，绲疑诏文有异，止焕曰：“大人在州，志欲去恶，实无他故，必是凶人妄诈，规肆奸毒。愿以事自上，甘罪无晚。”焕从其言，上书自讼，果诈者所为，征奋抵罪。会焕病死狱中，帝愍之，赐焕、光钱各十万，",
+      "史略分类": "武将",
+      "主要史料出处": "《03后汉书·卷42·张法滕冯度杨列传》",
+      "paragraphs": [
+        {
+          "volume": "张法滕冯度杨列传",
+          "paragraph_from": 13,
+          "paragraph_to": 19
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_042_05",
+      "史略名称": "度尚",
+      "史略简介": "度尚",
+      "原文字句": "度尚字博平，山阳湖陆人也。家贫，不修学行，不为乡里所推举。积困穷，乃为宦者同郡侯览视田，得为郡上计吏，拜郎中，除上虞长。为政严峻，明于发擿奸非，吏人谓之神明。迁文安令，遇时疾疫，谷贵人饥，尚开仓廪给，营救疾者，百姓蒙其济。时冀州刺史朱穆行部，见尚甚奇之。",
+      "史略分类": "武将",
+      "主要史料出处": "《03后汉书·卷42·张法滕冯度杨列传》",
+      "paragraphs": [
+        {
+          "volume": "张法滕冯度杨列传",
+          "paragraph_from": 20,
+          "paragraph_to": 26
+        }
+      ]
+    }
+  ]
+}

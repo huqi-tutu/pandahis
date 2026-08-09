@@ -1,0 +1,107 @@
+{
+  "work": "03后汉书",
+  "vol": "047",
+  "total_paragraphs": 96,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_047_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 2,
+      "paragraph_to": 2,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 25,
+      "paragraph_to": 34,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 57,
+      "paragraph_to": 57,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 58,
+      "paragraph_to": 72,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 80,
+      "paragraph_to": 95,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 96,
+      "paragraph_to": 96,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "刘彊",
+      "category": "宗戚",
+      "paragraph_from": 3,
+      "paragraph_to": 11,
+      "boundary_evidence": {
+        "open_paragraph": 3,
+        "open_phrase": "东海恭王强。建武二年，立母郭氏为皇后，强为皇太子。十七年而郭后废，强常戚戚不自安",
+        "close_paragraph": 11,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P3–P11"
+      }
+    },
+    {
+      "name": "刘辅",
+      "category": "宗戚",
+      "paragraph_from": 12,
+      "paragraph_to": 18,
+      "boundary_evidence": {
+        "open_paragraph": 12,
+        "open_phrase": "沛献王辅，建武十五年封右翊公。十七年，郭后废为中山太后，故徙辅为中山王，并食常山",
+        "close_paragraph": 18,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P12–P18"
+      }
+    },
+    {
+      "name": "刘英",
+      "category": "宗戚",
+      "paragraph_from": 19,
+      "paragraph_to": 24,
+      "boundary_evidence": {
+        "open_paragraph": 19,
+        "open_phrase": "楚王英，以建武十五年封为楚公，十七年进爵为王，二十八年就国。母许氏无宠，故英国最",
+        "close_paragraph": 24,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P19–P24"
+      }
+    },
+    {
+      "name": "刘苍",
+      "category": "宗戚",
+      "paragraph_from": 35,
+      "paragraph_to": 56,
+      "boundary_evidence": {
+        "open_paragraph": 35,
+        "open_phrase": "东平宪王苍，建武十五年封东平公，十七年进爵为王。",
+        "close_paragraph": 56,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P35–P56"
+      }
+    },
+    {
+      "name": "刘荆",
+      "category": "宗戚",
+      "paragraph_from": 73,
+      "paragraph_to": 79,
+      "boundary_evidence": {
+        "open_paragraph": 73,
+        "open_phrase": "广陵思王荆，建武十五年封山阳公，十七年进爵为王。",
+        "close_paragraph": 79,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P73–P79"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

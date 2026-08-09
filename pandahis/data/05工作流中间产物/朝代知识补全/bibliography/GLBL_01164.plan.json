@@ -1,0 +1,152 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01164",
+  "写作结构": "正史叙述见翻译详录（《史记·吕太后本纪》《汉书·高后纪》），拓展文以史外异说与延展为主：先述吕后立少帝及临朝称制的背景（可引《资治通鉴》编年异说），再述少帝怨言与废黜的史外记载（如《前汉纪》），最后以《通鉴》对吕后废立之事的评论收束；具体废杀过程细节留白。",
+  "候选著作": [
+    {
+      "出处": "《史记·吕太后本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "汉前少帝事迹的主要正史来源，记载其被立、怨言、废黜及被杀",
+      "检索词": "少帝",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《汉书·高后纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "班固所记吕后临朝及少帝废立，与史记互证",
+      "检索词": "少帝",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《资治通鉴·汉纪五》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "司马光编年记载少帝被立、怨言、幽禁及废杀，并附史论，可作史外异说与延展",
+      "检索词": "少帝",
+      "采用": true,
+      "原文摘句": "太后遂幽杀少帝于永巷，更立恒山王弘为帝。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《前汉纪·高后纪》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "荀悦《汉纪》为编年体汉史，对少帝废立有简略记载，可补充正史之外的叙述",
+      "检索词": "少帝",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《汉书·外戚传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "涉及吕后及惠帝后宫，可佐证少帝出身及生母被杀之事",
+      "检索词": "少帝",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《史记·吕太后本纪》索隐",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "司马贞索隐对少帝身份及废杀有注释，可作史外异说参考",
+      "检索词": "少帝",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·吕太后本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "汉前少帝事迹的主要正史来源，记载其被立、怨言、废黜及被杀",
+      "检索词": "少帝",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《汉书·高后纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "班固所记吕后临朝及少帝废立，与史记互证",
+      "检索词": "少帝",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《资治通鉴·汉纪五》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "司马光编年记载少帝被立、怨言、幽禁及废杀，并附史论，可作史外异说与延展",
+      "检索词": "少帝",
+      "采用": true,
+      "原文摘句": "太后遂幽杀少帝于永巷，更立恒山王弘为帝。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《前汉纪·高后纪》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "荀悦《汉纪》为编年体汉史，对少帝废立有简略记载，可补充正史之外的叙述",
+      "检索词": "少帝",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《汉书·外戚传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "涉及吕后及惠帝后宫，可佐证少帝出身及生母被杀之事",
+      "检索词": "少帝",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《史记·吕太后本纪》索隐",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "司马贞索隐对少帝身份及废杀有注释，可作史外异说参考",
+      "检索词": "少帝",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 4,
+    "overall": "B"
+  }
+}

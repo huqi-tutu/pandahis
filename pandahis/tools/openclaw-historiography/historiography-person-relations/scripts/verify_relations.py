@@ -12,7 +12,23 @@ from typing import Any
 VALID_CATEGORIES = {"家庭", "同僚", "敌对", "师徒", "好友"}
 LEGACY_CATEGORIES = {"君臣", "外敌", "师从"}
 VALID_LEVELS = {"一级", "二级", "三级", "四级"}
+# 二级分类枢纽名：禁止作为非枢纽叶子标题，也禁止出现在所属二级/三级关系
+HUB_TITLES = {
+    "父母",
+    "配偶",
+    "兄弟姐妹",
+    "君王",
+    "同僚",
+    "臣子",
+    "内敌",
+    "外敌",
+    "老师",
+    "学生",
+    "好友",
+    "正妻",
+}
 LEVEL_NUM = {"一级": 1, "二级": 2, "三级": 3, "四级": 4}
+MAX_PERSONS_PER_HUB = 10
 PARENT_FIELDS = [
     ("二级", "所属一级关系"),
     ("三级", "所属一级关系"),
@@ -29,6 +45,36 @@ REQUIRED_FIELDS = [
     "关系节点标题",
     "关系简述",
 ]
+FAMILY_EDGE_LABELS = {
+    "",
+    "父",
+    "母",
+    "妻",
+    "妾",
+    "妃",
+    "夫",
+    "子",
+    "女",
+    "兄",
+    "弟",
+    "姐",
+    "妹",
+    "兄弟",
+    "姐妹",
+}
+LEGACY_EDGE_LABELS = {
+    "父亲",
+    "母亲",
+    "正妻",
+    "正室",
+    "正妃",
+    "嫔妃",
+    "丈夫",
+    "儿子",
+    "女儿",
+    "小妾",
+    "侧室",
+}
 def load_records(path: Path) -> list[dict[str, Any]]:
     raw = json.loads(path.read_text(encoding="utf-8"))
     if not isinstance(raw, list):
@@ -91,6 +137,19 @@ def verify_file(path: Path, *, strict: bool) -> list[str]:
             errors.append(f"CRITICAL {loc}: 二级分类 hub must be 关系层级=一级")
 
         level = str(rec.get("关系层级", "")).strip()
+        title = str(rec.get("关系节点标题", "")).strip()
+        if title in HUB_TITLES and node_kind != "二级分类":
+            errors.append(
+                f"CRITICAL {loc}: hub title {title!r} used as person leaf "
+                f"(关系层级={level!r}); only 节点类型=二级分类 allowed"
+            )
+        for pf in ("所属二级关系", "所属三级关系"):
+            pv = str(rec.get(pf) or "").strip()
+            if pv in HUB_TITLES:
+                errors.append(
+                    f"CRITICAL {loc}: {pf} must be a person name, not hub {pv!r}"
+                )
+
         if level not in VALID_LEVELS:
             if level == "五级":
                 errors.append(f"CRITICAL {loc}: 五级 forbidden; max 四级")
@@ -103,7 +162,6 @@ def verify_file(path: Path, *, strict: bool) -> list[str]:
                 errors.append(f"CRITICAL {loc}: duplicate 关系ID {rid!r}")
             seen_ids.add(rid)
 
-        title = str(rec.get("关系节点标题", "")).strip()
         if title and level in VALID_LEVELS:
             cat_key = cat if cat in VALID_CATEGORIES else str(rec.get("关系类别", "")).strip()
             key = (title, level, cat_key)
@@ -136,6 +194,28 @@ def verify_file(path: Path, *, strict: bool) -> list[str]:
         if not rec.get("record_id"):
             warns.append(f"WARN {loc}: missing record_id (optional for new files)")
 
+        # 边标题
+        edge = str(rec.get("上级连接线标题") if rec.get("上级连接线标题") is not None else "")
+        is_hub = node_kind == "二级分类"
+        if is_hub and edge.strip():
+            errors.append(f"CRITICAL {loc}: 二级分类 hub edge label must be empty")
+        elif cat == "家庭" and not is_hub:
+            if edge in LEGACY_EDGE_LABELS:
+                msg = f"legacy family edge {edge!r}; use single-char whitelist"
+                (errors if strict else warns).append(
+                    f"{'CRITICAL' if strict else 'WARN'} {loc}: {msg}"
+                )
+            elif edge not in FAMILY_EDGE_LABELS:
+                msg = f"invalid family edge {edge!r}"
+                (errors if strict else warns).append(
+                    f"{'CRITICAL' if strict else 'WARN'} {loc}: {msg}"
+                )
+        elif cat in VALID_CATEGORIES and cat != "家庭" and not is_hub and edge.strip():
+            msg = f"non-family edge must be empty, got {edge!r}"
+            (errors if strict else warns).append(
+                f"{'CRITICAL' if strict else 'WARN'} {loc}: {msg}"
+            )
+
     # chain consistency: each 所属*关系 must reference an existing node at the prior level
     for idx, rec in enumerate(records):
         loc = f"{path}#[{idx}]"
@@ -161,6 +241,71 @@ def verify_file(path: Path, *, strict: bool) -> list[str]:
                 errors.append(
                     f"CRITICAL {loc}: parent {ptitle!r} at {parent_level} not found"
                 )
+
+    # 好友须有二级枢纽（若存在好友人物）
+    fri_people = [
+        r
+        for r in records
+        if str(r.get("关系类别", "")).strip() == "好友"
+        and str(r.get("节点类型", "")).strip() != "二级分类"
+    ]
+    fri_hub = any(
+        str(r.get("关系类别", "")).strip() == "好友"
+        and str(r.get("节点类型", "")).strip() == "二级分类"
+        and str(r.get("关系节点标题", "")).strip() == "好友"
+        for r in records
+    )
+    if fri_people and not fri_hub:
+        msg = "好友人物存在但缺少二级分类枢纽「好友」"
+        (errors if strict else warns).append(
+            f"{'CRITICAL' if strict else 'WARN'} {path}: {msg}"
+        )
+
+    # 二级枢纽下直接人物 ≤10
+    hub_people: dict[tuple[str, str], list[str]] = {}
+    for r in records:
+        if str(r.get("节点类型", "")).strip() == "二级分类":
+            continue
+        if str(r.get("关系层级", "")).strip() != "二级":
+            continue
+        hub = str(r.get("所属一级关系", "")).strip()
+        cat = str(r.get("关系类别", "")).strip()
+        title = str(r.get("关系节点标题", "")).strip()
+        if not hub or not title:
+            continue
+        hub_people.setdefault((cat, hub), []).append(title)
+    for (cat, hub), people in hub_people.items():
+        if len(people) > MAX_PERSONS_PER_HUB:
+            msg = (
+                f"hub {cat}/{hub} has {len(people)} direct persons; "
+                f"max {MAX_PERSONS_PER_HUB}"
+            )
+            (errors if strict else warns).append(
+                f"{'CRITICAL' if strict else 'WARN'} {path}: {msg}"
+            )
+
+    # 互斥
+    titles: dict[str, set[str]] = {c: set() for c in VALID_CATEGORIES}
+    for r in records:
+        if str(r.get("节点类型", "")).strip() == "二级分类":
+            continue
+        c = str(r.get("关系类别", "")).strip()
+        t = str(r.get("关系节点标题", "")).strip()
+        if c in titles and t:
+            titles[c].add(t)
+    for t in titles["家庭"]:
+        for c in ("同僚", "好友", "师徒"):
+            if t in titles[c]:
+                msg = f"mutex: {t!r} in 家庭 and {c}"
+                (errors if strict else warns).append(
+                    f"{'CRITICAL' if strict else 'WARN'} {path}: {msg}"
+                )
+    for t in titles["同僚"]:
+        if t in titles["好友"] and t not in titles["家庭"]:
+            msg = f"mutex: {t!r} in 同僚 and 好友"
+            (errors if strict else warns).append(
+                f"{'CRITICAL' if strict else 'WARN'} {path}: {msg}"
+            )
 
     return errors + warns
 

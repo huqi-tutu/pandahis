@@ -1,0 +1,51 @@
+{
+  "work": "03后汉书",
+  "vol": "015",
+  "total_paragraphs": 59,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_015_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 39,
+      "paragraph_to": 39,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 58,
+      "paragraph_to": 59,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "隗嚣",
+      "category": "武将",
+      "paragraph_from": 2,
+      "paragraph_to": 38,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "隗嚣字季孟，天水成纪人也。少仕州郡。王莽国师刘歆引嚣为士。歆死，嚣归乡里。季父崔",
+        "close_paragraph": 38,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P38"
+      }
+    },
+    {
+      "name": "公孙述",
+      "category": "武将",
+      "paragraph_from": 40,
+      "paragraph_to": 57,
+      "boundary_evidence": {
+        "open_paragraph": 40,
+        "open_phrase": "公孙述字子阳，扶风茂陵人也。哀帝时，以父任为郎，后父仁为河南都尉，而述补清水长。",
+        "close_paragraph": 57,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P40–P57"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

@@ -1,0 +1,326 @@
+{
+  "work": "03后汉书",
+  "vol": "034",
+  "total_paragraphs": 53,
+  "method": "Step1b-α LLM",
+  "paragraphs": [
+    {
+      "paragraph": 1,
+      "primary_subject": "卷首标题",
+      "disposition": "exclude",
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "primary_subject": "郎顗",
+      "disposition": "block",
+      "text_snippet": "郎顗字雅光，北海安丘人也。父宗，字仲绥，学《京氏易》"
+    },
+    {
+      "paragraph": 3,
+      "primary_subject": "郎顗",
+      "disposition": "block",
+      "text_snippet": "顗少传父业，兼明经典，隐居海畔"
+    },
+    {
+      "paragraph": 4,
+      "primary_subject": "郎顗",
+      "disposition": "block",
+      "text_snippet": "顺帝时，灾异屡见，阳嘉二年正月，公正征，顗乃诣阙拜章曰"
+    },
+    {
+      "paragraph": 5,
+      "primary_subject": "郎顗",
+      "disposition": "block",
+      "text_snippet": "臣闻天垂妖象，地见灾符"
+    },
+    {
+      "paragraph": 6,
+      "primary_subject": "郎顗",
+      "disposition": "block",
+      "text_snippet": "方今时俗奢佚，浅恩薄义"
+    },
+    {
+      "paragraph": 7,
+      "primary_subject": "郎顗",
+      "disposition": "block",
+      "text_snippet": "土者地祇，阴性澄静"
+    },
+    {
+      "paragraph": 8,
+      "primary_subject": "郎顗",
+      "disposition": "block",
+      "text_snippet": "臣伏案《飞侯》，参察众政"
+    },
+    {
+      "paragraph": 9,
+      "primary_subject": "郎顗",
+      "disposition": "block",
+      "text_snippet": "臣生长草野，不晓禁忌"
+    },
+    {
+      "paragraph": 10,
+      "primary_subject": "郎顗",
+      "disposition": "block",
+      "text_snippet": "书奏，帝复使对尚书。顗对曰"
+    },
+    {
+      "paragraph": 11,
+      "primary_subject": "郎顗",
+      "disposition": "block",
+      "text_snippet": "臣闻明王圣主好闻其过"
+    },
+    {
+      "paragraph": 12,
+      "primary_subject": "郎顗",
+      "disposition": "block",
+      "text_snippet": "一事：陵园至重，圣神攸冯"
+    },
+    {
+      "paragraph": 13,
+      "primary_subject": "郎顗",
+      "disposition": "block",
+      "text_snippet": "二事：去年以来，《兑卦》用事"
+    },
+    {
+      "paragraph": 14,
+      "primary_subject": "郎顗",
+      "disposition": "block",
+      "text_snippet": "三事：臣闻天道不远，三五复反"
+    },
+    {
+      "paragraph": 15,
+      "primary_subject": "郎顗",
+      "disposition": "block",
+      "text_snippet": "四事：臣窃见皇子未立，储宫无主"
+    },
+    {
+      "paragraph": 16,
+      "primary_subject": "郎顗",
+      "disposition": "block",
+      "text_snippet": "五事：臣窃见去年闰月十七日己丑夜"
+    },
+    {
+      "paragraph": 17,
+      "primary_subject": "郎顗",
+      "disposition": "block",
+      "text_snippet": "六事：臣窃见今月十四日乙卯巳时"
+    },
+    {
+      "paragraph": 18,
+      "primary_subject": "郎顗",
+      "disposition": "block",
+      "text_snippet": "七事：臣伏惟汉兴以来三百三十九岁"
+    },
+    {
+      "paragraph": 19,
+      "primary_subject": "郎顗",
+      "disposition": "block",
+      "text_snippet": "臣陈引际会，恐犯忌讳"
+    },
+    {
+      "paragraph": 20,
+      "primary_subject": "郎顗",
+      "disposition": "block",
+      "text_snippet": "台诘顗曰"
+    },
+    {
+      "paragraph": 21,
+      "primary_subject": "郎顗",
+      "disposition": "block",
+      "text_snippet": "方春东作，布德之元"
+    },
+    {
+      "paragraph": 22,
+      "primary_subject": "郎顗",
+      "disposition": "block",
+      "text_snippet": "臣顗愚蔽，不足以答圣问"
+    },
+    {
+      "paragraph": 23,
+      "primary_subject": "郎顗",
+      "disposition": "block",
+      "text_snippet": "顗又上书荐黄琼、李固"
+    },
+    {
+      "paragraph": 24,
+      "primary_subject": "郎顗",
+      "disposition": "block",
+      "text_snippet": "臣前对七事，要政急务"
+    },
+    {
+      "paragraph": 25,
+      "primary_subject": "郎顗",
+      "disposition": "block",
+      "text_snippet": "臣闻刳舟剡楫，将欲济江海也"
+    },
+    {
+      "paragraph": 26,
+      "primary_subject": "郎顗",
+      "disposition": "block",
+      "text_snippet": "臣伏见光禄大夫江夏黄琼"
+    },
+    {
+      "paragraph": 27,
+      "primary_subject": "郎顗",
+      "disposition": "block",
+      "text_snippet": "谨复条便宜四事，附奏于左"
+    },
+    {
+      "paragraph": 28,
+      "primary_subject": "郎顗",
+      "disposition": "block",
+      "text_snippet": "一事：孔子作《春秋》，书“正月”者"
+    },
+    {
+      "paragraph": 29,
+      "primary_subject": "郎顗",
+      "disposition": "block",
+      "text_snippet": "二事：孔子曰：“雷之始发《大壮》始”"
+    },
+    {
+      "paragraph": 30,
+      "primary_subject": "郎顗",
+      "disposition": "block",
+      "text_snippet": "三事：去年十月二十日癸亥"
+    },
+    {
+      "paragraph": 31,
+      "primary_subject": "郎顗",
+      "disposition": "block",
+      "text_snippet": "四事：《易传》曰：“阳无德则旱”"
+    },
+    {
+      "paragraph": 32,
+      "primary_subject": "郎顗",
+      "disposition": "block",
+      "text_snippet": "书奏，特诏拜郎中，辞病不就"
+    },
+    {
+      "paragraph": 33,
+      "primary_subject": "郎顗",
+      "disposition": "block",
+      "text_snippet": "同县孙礼者，积恶凶暴"
+    },
+    {
+      "paragraph": 34,
+      "primary_subject": "襄楷",
+      "disposition": "block",
+      "text_snippet": "襄楷字公矩，平原隰阴人也"
+    },
+    {
+      "paragraph": 35,
+      "primary_subject": "襄楷",
+      "disposition": "block",
+      "text_snippet": "桓帝时，宦官专朝，政刑暴滥"
+    },
+    {
+      "paragraph": 36,
+      "primary_subject": "襄楷",
+      "disposition": "block",
+      "text_snippet": "臣闻皇天不言，以文象设教"
+    },
+    {
+      "paragraph": 37,
+      "primary_subject": "襄楷",
+      "disposition": "block",
+      "text_snippet": "太原太守刘瓆、南阳太守成瑨"
+    },
+    {
+      "paragraph": 38,
+      "primary_subject": "襄楷",
+      "disposition": "block",
+      "text_snippet": "臣闻杀无罪，诛贤者，祸及三世"
+    },
+    {
+      "paragraph": 39,
+      "primary_subject": "襄楷",
+      "disposition": "block",
+      "text_snippet": "永平旧典，诸当重论皆须冬狱"
+    },
+    {
+      "paragraph": 40,
+      "primary_subject": "襄楷",
+      "disposition": "block",
+      "text_snippet": "又七年六月十三日，河内野王山上有龙死"
+    },
+    {
+      "paragraph": 41,
+      "primary_subject": "襄楷",
+      "disposition": "block",
+      "text_snippet": "案春秋以来及古帝王，未有河清及学门自坏者也"
+    },
+    {
+      "paragraph": 42,
+      "primary_subject": "襄楷",
+      "disposition": "block",
+      "text_snippet": "臣前上琅邪宫崇受干吉神书"
+    },
+    {
+      "paragraph": 43,
+      "primary_subject": "襄楷",
+      "disposition": "block",
+      "text_snippet": "书奏不省"
+    },
+    {
+      "paragraph": 44,
+      "primary_subject": "襄楷",
+      "disposition": "block",
+      "text_snippet": "十余日，复上书曰"
+    },
+    {
+      "paragraph": 45,
+      "primary_subject": "襄楷",
+      "disposition": "block",
+      "text_snippet": "臣伏见太白北入数日，复出东方"
+    },
+    {
+      "paragraph": 46,
+      "primary_subject": "襄楷",
+      "disposition": "block",
+      "text_snippet": "夫天子事天不孝，则日食星斗"
+    },
+    {
+      "paragraph": 47,
+      "primary_subject": "襄楷",
+      "disposition": "block",
+      "text_snippet": "臣又闻之，得主所好，自非正道"
+    },
+    {
+      "paragraph": 48,
+      "primary_subject": "襄楷",
+      "disposition": "block",
+      "text_snippet": "又闻宫中立黄、老、浮屠之祠"
+    },
+    {
+      "paragraph": 49,
+      "primary_subject": "襄楷",
+      "disposition": "block",
+      "text_snippet": "书上，即召诣尚书问状"
+    },
+    {
+      "paragraph": 50,
+      "primary_subject": "襄楷",
+      "disposition": "block",
+      "text_snippet": "初，顺帝时，琅邪宫崇诣阙"
+    },
+    {
+      "paragraph": 51,
+      "primary_subject": "襄楷",
+      "disposition": "block",
+      "text_snippet": "及灵帝即位，以楷书为然"
+    },
+    {
+      "paragraph": 52,
+      "primary_subject": "论赞",
+      "disposition": "exclude",
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 53,
+      "primary_subject": "论赞",
+      "disposition": "exclude",
+      "exclude_reason": "论赞"
+    }
+  ]
+}

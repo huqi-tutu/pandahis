@@ -1,0 +1,58 @@
+{
+  "work": "03后汉书",
+  "vol": "052",
+  "total_paragraphs": 47,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_052_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 46,
+      "paragraph_to": 47,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "班超",
+      "category": "武将",
+      "paragraph_from": 2,
+      "paragraph_to": 27,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "班超字仲升，扶风平陵人，徐令彪之少子也。为人有大志，不修细节。然内孝谨，居家常执",
+        "close_paragraph": 27,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P27"
+      }
+    },
+    {
+      "name": "班勇",
+      "category": "武将",
+      "paragraph_from": 28,
+      "paragraph_to": 37,
+      "boundary_evidence": {
+        "open_paragraph": 28,
+        "open_phrase": "勇字宜僚，少有父风。永初元年，西域反叛，以勇为军司马。与兄雄俱出敦煌，迎都护及西",
+        "close_paragraph": 37,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P28–P37"
+      }
+    },
+    {
+      "name": "梁慬",
+      "category": "武将",
+      "paragraph_from": 38,
+      "paragraph_to": 45,
+      "boundary_evidence": {
+        "open_paragraph": 38,
+        "open_phrase": "梁慬字伯威，北地弋居人也。父讽，历州宰。永元元年，车骑将军窦宪出征匈奴，除讽为军",
+        "close_paragraph": 45,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P38–P45"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

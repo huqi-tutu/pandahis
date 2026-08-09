@@ -1,15 +1,44 @@
+import { request } from '../../native-utils/api'
 import {
   requireLoginForCorrection,
   submitCorrection,
   type CorrectionSourceType,
 } from '../../native-utils/correction'
+import { encodePathSegment } from '../../native-utils/encode-path-segment'
 import { computePageTopPadPx } from '../../native-utils/nav-metrics'
 import { resolveSelectionBarAnchor } from '../../native-utils/selection-bar-position'
 
 const SOURCE_TYPE: CorrectionSourceType = 'critique_detail_selection'
 
+/** 从「史略名称·评述角度」取 · 后的评述角度 */
+function critiqueAngleTitle(fullTitle: string): string {
+  const t = String(fullTitle || '').trim()
+  if (!t) return ''
+  const dotIdx = t.indexOf('·')
+  if (dotIdx >= 0) {
+    const rest = t.slice(dotIdx + 1).trim()
+    return rest || t
+  }
+  return t
+}
+
+type CritiqueApiDetail = {
+  id?: number
+  boxId?: string
+  boxTitle?: string
+  civilizationName?: string
+  dynastyName?: string
+  title?: string
+  author?: string
+  eraText?: string
+  content?: string
+  source?: string
+  blurb?: string
+}
+
 Page({
   data: {
+    critiqueId: 0,
     navTitle: '',
     title: '',
     author: '',
@@ -34,11 +63,17 @@ Page({
     correctionSelectedText: '',
   },
   _selectionContext: null as WechatMiniprogram.IAnyObject | null,
-  onLoad(query: Record<string, string | undefined>) {
+  async onLoad(query: Record<string, string | undefined>) {
     try {
       this.setData({ pageTopPadPx: computePageTopPadPx() })
     } catch {
       this.setData({ pageTopPadPx: 88 })
+    }
+    const critiqueId = Number(query.critiqueId || 0)
+    if (critiqueId > 0) {
+      this.setData({ critiqueId })
+      await this.loadById(critiqueId)
+      return
     }
     const title = decodeURIComponent(query.title || '')
     const navTitle = decodeURIComponent(query.navTitle || '') || title || '评述详情'
@@ -55,6 +90,34 @@ Page({
       civilizationName: decodeURIComponent(query.civilizationName || ''),
       dynastyName: decodeURIComponent(query.dynastyName || ''),
     })
+  },
+  async loadById(critiqueId: number) {
+    try {
+      wx.showLoading({ title: '加载中', mask: true })
+      const res = await request<CritiqueApiDetail>(`/critiques/${encodePathSegment(String(critiqueId))}`)
+      wx.hideLoading()
+      const d = res.data || {}
+      const boxTitle = String(d.boxTitle || '').trim()
+      const fullTitle = String(d.title || '').trim()
+      const angleTitle = critiqueAngleTitle(fullTitle)
+      this.setData({
+        critiqueId,
+        boxId: String(d.boxId || '').trim(),
+        boxTitle,
+        civilizationName: String(d.civilizationName || '').trim(),
+        dynastyName: String(d.dynastyName || '').trim(),
+        navTitle: boxTitle ? `${boxTitle}・评述` : '评述详情',
+        title: angleTitle || fullTitle || '暂无主题',
+        author: String(d.author || '').trim(),
+        book: String(d.source || '').trim(),
+        era: String(d.eraText || '').trim(),
+        body: String(d.content || d.blurb || '').trim(),
+      })
+    } catch (err: unknown) {
+      wx.hideLoading()
+      const msg = err instanceof Error ? err.message : '加载失败'
+      wx.showToast({ title: msg, icon: 'none' })
+    }
   },
   onReady() {
     this.bindBodySelectionContext()
@@ -162,8 +225,13 @@ Page({
   async onCorrectionSubmit(e: WechatMiniprogram.CustomEvent) {
     const reason = String((e.detail as { reason?: string })?.reason || '')
     const boxId = this.data.boxId
+    const critiqueId = Number(this.data.critiqueId || 0)
     if (!boxId || this.data.correctionSubmitting) {
       if (!boxId) wx.showToast({ title: '缺少史略信息，无法提交', icon: 'none' })
+      return
+    }
+    if (!(critiqueId > 0)) {
+      wx.showToast({ title: '缺少评述信息，无法提交', icon: 'none' })
       return
     }
     this.setData({ correctionSubmitting: true })
@@ -173,6 +241,7 @@ Page({
         sourceType: SOURCE_TYPE,
         reason,
         selectedText: this.data.correctionSelectedText,
+        sourceRefId: critiqueId,
       })
       wx.showToast({ title: '提交成功，感谢反馈', icon: 'success' })
       this.setData({ correctionVisible: false, correctionSubmitting: false })

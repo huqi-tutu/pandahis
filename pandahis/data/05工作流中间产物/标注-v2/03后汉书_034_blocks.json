@@ -1,0 +1,46 @@
+{
+  "work": "03后汉书",
+  "vol": "034",
+  "total_paragraphs": 53,
+  "volume_subtype": "hezhuan",
+  "derived_from": "03后汉书_034_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 52,
+      "paragraph_to": 53,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "郎顗",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 33,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "郎顗字雅光，北海安丘人也。父宗，字仲绥，学《京氏易》，善风角、星算、六日七分，能",
+        "close_paragraph": 33,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P33"
+      }
+    },
+    {
+      "name": "襄楷",
+      "category": "文臣",
+      "paragraph_from": 34,
+      "paragraph_to": 51,
+      "boundary_evidence": {
+        "open_paragraph": 34,
+        "open_phrase": "襄楷字公矩，平原隰阴人也。好学博古，善天文阴阳之术。",
+        "close_paragraph": 51,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P34–P51"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

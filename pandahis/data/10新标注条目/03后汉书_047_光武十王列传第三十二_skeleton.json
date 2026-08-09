@@ -1,0 +1,771 @@
+{
+  "volume": "光武十王列传",
+  "source_file": "03后汉书_047_光武十王列传第三十二.txt",
+  "total_paragraphs": 96,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "刘彊",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "刘彊",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "刘彊",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "刘彊",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "刘彊",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "刘彊",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "刘彊",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "刘彊",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "刘彊",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "刘辅",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "刘辅",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "刘辅",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "刘辅",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "刘辅",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "刘辅",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "刘辅",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "刘英",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "刘英",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "刘英",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "刘英",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "刘英",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "刘英",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 26,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 27,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 28,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 29,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 30,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 31,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 32,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 33,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 34,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "刘苍",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "刘苍",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "刘苍",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "刘苍",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "刘苍",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "刘苍",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "刘苍",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "刘苍",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "刘苍",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "刘苍",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "刘苍",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [
+        {
+          "name": "刘苍",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 47,
+      "owners": [
+        {
+          "name": "刘苍",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 48,
+      "owners": [
+        {
+          "name": "刘苍",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 49,
+      "owners": [
+        {
+          "name": "刘苍",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 50,
+      "owners": [
+        {
+          "name": "刘苍",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 51,
+      "owners": [
+        {
+          "name": "刘苍",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 52,
+      "owners": [
+        {
+          "name": "刘苍",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 53,
+      "owners": [
+        {
+          "name": "刘苍",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 54,
+      "owners": [
+        {
+          "name": "刘苍",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 55,
+      "owners": [
+        {
+          "name": "刘苍",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 56,
+      "owners": [
+        {
+          "name": "刘苍",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 57,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 58,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 59,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 60,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 61,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 62,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 63,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 64,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 65,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 66,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 67,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 68,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 69,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 70,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 71,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 72,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 73,
+      "owners": [
+        {
+          "name": "刘荆",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 74,
+      "owners": [
+        {
+          "name": "刘荆",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 75,
+      "owners": [
+        {
+          "name": "刘荆",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 76,
+      "owners": [
+        {
+          "name": "刘荆",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 77,
+      "owners": [
+        {
+          "name": "刘荆",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 78,
+      "owners": [
+        {
+          "name": "刘荆",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 79,
+      "owners": [
+        {
+          "name": "刘荆",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 80,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 81,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 82,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 83,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 84,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 85,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 86,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 87,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 88,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 89,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 90,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 91,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 92,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 93,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 94,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 95,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 96,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HOUHANSHU_047_01",
+      "史略名称": "刘彊",
+      "史略简介": "刘彊",
+      "原文字句": "东海恭王强。建武二年，立母郭氏为皇后，强为皇太子。十七年而郭后废，强常戚戚不自安，数因左右及诸王陈其恳诚，愿备蕃国。光武不忍，迟回者数岁，乃许焉。十九年，封为东海王，二十八年，就国。帝以强废不以过，去就有礼，故优以大封，兼食鲁郡，合二十九县。赐虎贲旄头，宫殿设钟虡之县，拟于乘舆。强临之国，数上书让还东海，又因皇太子固辞。帝不许，深嘉叹之，以强章宣示公卿。初，鲁恭王好宫室，起灵光殿，甚壮丽，是时犹存",
+      "史略分类": "宗戚",
+      "主要史料出处": "《03后汉书·卷47·光武十王列传》",
+      "paragraphs": [
+        {
+          "volume": "光武十王列传",
+          "paragraph_from": 3,
+          "paragraph_to": 11
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_047_02",
+      "史略名称": "刘辅",
+      "史略简介": "刘辅",
+      "原文字句": "沛献王辅，建武十五年封右翊公。十七年，郭后废为中山太后，故徙辅为中山王，并食常山郡。二十年，复徙封沛王。",
+      "史略分类": "宗戚",
+      "主要史料出处": "《03后汉书·卷47·光武十王列传》",
+      "paragraphs": [
+        {
+          "volume": "光武十王列传",
+          "paragraph_from": 12,
+          "paragraph_to": 18
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_047_03",
+      "史略名称": "刘英",
+      "史略简介": "刘英",
+      "原文字句": "楚王英，以建武十五年封为楚公，十七年进爵为王，二十八年就国。母许氏无宠，故英国最贫小。三十年，以临淮之取虑、须昌二县益楚国。自显宗为太子时，英常独归附太子，太子特亲爱之。及即位，数受赏赐。永平元年，特封英舅子许昌为龙舒侯。",
+      "史略分类": "宗戚",
+      "主要史料出处": "《03后汉书·卷47·光武十王列传》",
+      "paragraphs": [
+        {
+          "volume": "光武十王列传",
+          "paragraph_from": 19,
+          "paragraph_to": 24
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_047_04",
+      "史略名称": "刘苍",
+      "史略简介": "刘苍",
+      "原文字句": "东平宪王苍，建武十五年封东平公，十七年进爵为王。",
+      "史略分类": "宗戚",
+      "主要史料出处": "《03后汉书·卷47·光武十王列传》",
+      "paragraphs": [
+        {
+          "volume": "光武十王列传",
+          "paragraph_from": 35,
+          "paragraph_to": 56
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_047_05",
+      "史略名称": "刘荆",
+      "史略简介": "刘荆",
+      "原文字句": "广陵思王荆，建武十五年封山阳公，十七年进爵为王。",
+      "史略分类": "宗戚",
+      "主要史料出处": "《03后汉书·卷47·光武十王列传》",
+      "paragraphs": [
+        {
+          "volume": "光武十王列传",
+          "paragraph_from": 73,
+          "paragraph_to": 79
+        }
+      ]
+    }
+  ]
+}

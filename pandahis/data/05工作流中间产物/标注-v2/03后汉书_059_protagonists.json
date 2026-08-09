@@ -1,0 +1,34 @@
+{
+  "work": "03后汉书",
+  "vol": "059",
+  "volume_name": "杨震列传",
+  "volume_type_guess": "传",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_arc": "C",
+  "volume_texture": "sequential",
+  "skip_reason": null,
+  "protagonists_cap_note": "四世厚附传单立；P24短句归震以免边界 pad。",
+  "protagonists": [
+    {
+      "name": "杨震",
+      "category": "文臣",
+      "rationale": "本卷始祖，太尉。"
+    },
+    {
+      "name": "杨秉",
+      "category": "文臣",
+      "rationale": "震子厚附，自「秉字叔节」起。"
+    },
+    {
+      "name": "杨赐",
+      "category": "文臣",
+      "rationale": "秉子厚附，司空。"
+    },
+    {
+      "name": "杨彪",
+      "category": "文臣",
+      "rationale": "赐子厚附，太尉。"
+    }
+  ]
+}

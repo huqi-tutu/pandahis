@@ -1,0 +1,20 @@
+{
+  "work": "03后汉书",
+  "vol": "002",
+  "volume_name": "光武帝纪第一下",
+  "volume_type_guess": "本纪",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "汉光武帝",
+      "category": "君王",
+      "rationale": "卷名为「光武帝纪」，属本纪体，为东汉开国皇帝刘秀之编年传记。光武帝为天下共主、皇帝，符合君王准入标准（天子/皇帝级本纪共主）。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

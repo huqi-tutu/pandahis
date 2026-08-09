@@ -1,0 +1,118 @@
+{
+  "started": "2026-08-09T14:24:42.136547+00:00",
+  "ok": [
+    {
+      "id": "GLBL_00078",
+      "name": "汉平帝",
+      "file": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉平帝关系表.json",
+      "sec": 29.6
+    },
+    {
+      "id": "GLBL_00079",
+      "name": "汉惠帝",
+      "file": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉惠帝关系表.json",
+      "sec": 18.3
+    },
+    {
+      "id": "GLBL_00080",
+      "name": "汉成帝",
+      "file": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉成帝关系表.json",
+      "sec": 42.0
+    },
+    {
+      "id": "GLBL_00081",
+      "name": "汉文帝",
+      "file": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉文帝关系表.json",
+      "sec": 38.0
+    },
+    {
+      "id": "GLBL_00082",
+      "name": "汉昭帝",
+      "file": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉昭帝关系表.json",
+      "sec": 33.5
+    },
+    {
+      "id": "GLBL_00084",
+      "name": "汉武帝",
+      "file": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉武帝关系表.json",
+      "sec": 51.6
+    },
+    {
+      "id": "GLBL_00085",
+      "name": "汉高祖",
+      "file": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉高祖关系表.json",
+      "sec": 161.5
+    },
+    {
+      "id": "GLBL_00157",
+      "name": "刘兴",
+      "file": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/刘兴关系表.json",
+      "sec": 22.6
+    },
+    {
+      "id": "GLBL_00159",
+      "name": "代王刘参",
+      "file": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/代王刘参关系表.json",
+      "sec": 20.5
+    },
+    {
+      "id": "GLBL_00161",
+      "name": "刘嚣",
+      "file": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/刘嚣关系表.json",
+      "sec": 20.2
+    },
+    {
+      "id": "GLBL_00162",
+      "name": "刘宇",
+      "file": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/刘宇关系表.json",
+      "sec": 31.6
+    },
+    {
+      "id": "GLBL_00163",
+      "name": "淮南王刘安",
+      "file": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/淮南王刘安关系表.json",
+      "sec": 50.2
+    },
+    {
+      "id": "GLBL_00165",
+      "name": "刘康",
+      "file": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/刘康关系表.json",
+      "sec": 24.2
+    },
+    {
+      "id": "GLBL_00166",
+      "name": "刘彭祖",
+      "file": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/刘彭祖关系表.json",
+      "sec": 30.3
+    }
+  ],
+  "skip": [
+    {
+      "id": "GLBL_00075",
+      "name": "汉元帝"
+    },
+    {
+      "id": "GLBL_00076",
+      "name": "汉哀帝"
+    },
+    {
+      "id": "GLBL_00077",
+      "name": "汉宣帝"
+    }
+  ],
+  "fail": [
+    {
+      "id": "GLBL_00083",
+      "name": "汉景帝",
+      "error": "修订后 verify 仍失败:\nCRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉景帝关系表.json#[31] id=HD-FAM-032: duplicate node ('刘舜', 三级, '家庭')\nWARN /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉景帝关系表.json#[68] id=HD-MAS-001: 关系简述 very short\n\nFAILED: 1 critical issue(s) in 1 file(s)\n",
+      "sec": 91.9
+    },
+    {
+      "id": "GLBL_00154",
+      "name": "傅喜",
+      "error": "修订后 verify 仍失败:\nCRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/傅喜关系表.json#[3] id=HD-FAM-004: duplicate node ('不详', 二级, '家庭')\nWARN /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/傅喜关系表.json#[2] id=HD-FAM-003: 关系简述 very short\nWARN /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/傅喜关系表.json#[20] id=HD-MAS-001: 关系简述 very short\n\nFAILED: 1 critical issue(s) in 1 file(s)\n",
+      "sec": 30.6
+    }
+  ],
+  "updated": "2026-08-09T14:36:19.278384+00:00"
+}

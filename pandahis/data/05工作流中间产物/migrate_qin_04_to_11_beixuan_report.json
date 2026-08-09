@@ -1,0 +1,90 @@
+{
+  "schema": "migrate-qin-04-to-11-beixuan/v1",
+  "generated_at": "2026-08-09T10:14:06.634049+00:00",
+  "source": "data/04史料翻译",
+  "target": "data/11新标注条目翻译/备选",
+  "note": "备选：未直接写入11根目录正式位；含V2已有5条与V2暂无条目5条",
+  "ok": [
+    {
+      "id": "GLBL_00103",
+      "name": "秦始皇",
+      "file": "data/11新标注条目翻译/备选/GLBL_00103_秦始皇.json",
+      "chars": 42526,
+      "has_source": true,
+      "citation": "《史记秦始皇本纪》"
+    },
+    {
+      "id": "GLBL_00368",
+      "name": "李斯",
+      "file": "data/11新标注条目翻译/备选/GLBL_00368_李斯.json",
+      "chars": 17564,
+      "has_source": true,
+      "citation": "《史记李斯列传》"
+    },
+    {
+      "id": "GLBL_00479",
+      "name": "韩非",
+      "file": "data/11新标注条目翻译/备选/GLBL_00479_韩非.json",
+      "chars": 4626,
+      "has_source": true,
+      "citation": "《史记老子韩非列传》"
+    },
+    {
+      "id": "GLBL_00522",
+      "name": "王翦",
+      "file": "data/11新标注条目翻译/备选/GLBL_00522_王翦.json",
+      "chars": 2845,
+      "has_source": true,
+      "citation": "《史记白起王翦列传》"
+    },
+    {
+      "id": "GLBL_00524",
+      "name": "田儋",
+      "file": "data/11新标注条目翻译/备选/GLBL_00524_田儋.json",
+      "chars": 1761,
+      "has_source": true,
+      "citation": "《史记田儋列传》"
+    },
+    {
+      "id": "GLBL_00097",
+      "name": "秦二世",
+      "file": "data/11新标注条目翻译/备选/GLBL_00097_秦二世.json",
+      "chars": 5355,
+      "has_source": true,
+      "citation": "《史记秦始皇本纪》"
+    },
+    {
+      "id": "GLBL_00233",
+      "name": "宛孔氏",
+      "file": "data/11新标注条目翻译/备选/GLBL_00233_宛孔氏.json",
+      "chars": 1937,
+      "has_source": true,
+      "citation": "《汉书货殖传》"
+    },
+    {
+      "id": "GLBL_00235",
+      "name": "巴寡妇清",
+      "file": "data/11新标注条目翻译/备选/GLBL_00235_巴寡妇清.json",
+      "chars": 1466,
+      "has_source": true,
+      "citation": "《史记货殖列传》"
+    },
+    {
+      "id": "GLBL_00238",
+      "name": "曹邴氏",
+      "file": "data/11新标注条目翻译/备选/GLBL_00238_曹邴氏.json",
+      "chars": 2093,
+      "has_source": true,
+      "citation": "《汉书货殖传》"
+    },
+    {
+      "id": "GLBL_00244",
+      "name": "程郑",
+      "file": "data/11新标注条目翻译/备选/GLBL_00244_程郑.json",
+      "chars": 1451,
+      "has_source": true,
+      "citation": "《汉书货殖传》"
+    }
+  ],
+  "fail": []
+}

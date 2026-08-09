@@ -1,0 +1,19 @@
+{
+  "schema": "translate-coverage-l2/v1",
+  "史略ID": "GLBL_00462",
+  "passed": true,
+  "degraded": false,
+  "summary": "所有主张均已传达。",
+  "l1_ratio": 0.0,
+  "l1_min_ratio": 0.0,
+  "claims": [
+    {
+      "id": "M018–M019",
+      "claim": "未尝名吏，与官属言，若恐伤之。；闻人之善言，进之上，唯恐后。",
+      "status": "conveyed",
+      "evidence": "译文中有'从不直呼属吏之名，与属官说话，唯恐伤害他们。'和'听到别人的善言，就上报给皇上，唯恐落后。'",
+      "note": ""
+    }
+  ],
+  "issues": []
+}

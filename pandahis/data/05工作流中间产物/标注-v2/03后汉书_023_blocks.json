@@ -1,0 +1,104 @@
+{
+  "work": "03后汉书",
+  "vol": "023",
+  "total_paragraphs": 39,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_023_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 7,
+      "paragraph_to": 10,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 25,
+      "paragraph_to": 25,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 39,
+      "paragraph_to": 39,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "任光",
+      "category": "武将",
+      "paragraph_from": 2,
+      "paragraph_to": 6,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "任光字伯卿，南阳宛人也。少忠厚，为乡里所爱。初为乡啬夫、郡县吏。汉兵至宛，军人见",
+        "close_paragraph": 6,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P6"
+      }
+    },
+    {
+      "name": "李忠",
+      "category": "武将",
+      "paragraph_from": 11,
+      "paragraph_to": 15,
+      "boundary_evidence": {
+        "open_paragraph": 11,
+        "open_phrase": "李忠字仲都，东莱黄人也。父为高密都尉。忠元始中以父任为郎，署中数十人，而忠独以好",
+        "close_paragraph": 15,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P11–P15"
+      }
+    },
+    {
+      "name": "万脩",
+      "category": "武将",
+      "paragraph_from": 16,
+      "paragraph_to": 17,
+      "boundary_evidence": {
+        "open_paragraph": 16,
+        "open_phrase": "万脩字君游，扶风茂陵人也。更始时，为信都令，与太守任光、都尉李忠共城守，迎世祖，",
+        "close_paragraph": 17,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P16–P17"
+      }
+    },
+    {
+      "name": "邳彤",
+      "category": "武将",
+      "paragraph_from": 18,
+      "paragraph_to": 24,
+      "boundary_evidence": {
+        "open_paragraph": 18,
+        "open_phrase": "邳彤字伟君，信都人也。父吉，为辽西太守。彤初为王莽和成卒正。世祖徇河北，至下曲阳",
+        "close_paragraph": 24,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P18–P24"
+      }
+    },
+    {
+      "name": "刘植",
+      "category": "武将",
+      "paragraph_from": 26,
+      "paragraph_to": 27,
+      "boundary_evidence": {
+        "open_paragraph": 26,
+        "open_phrase": "刘植字伯先，巨鹿昌城人也。王郎起，植与弟喜、从兄歆率宗族宾客，聚兵数千人据昌城。",
+        "close_paragraph": 27,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P26–P27"
+      }
+    },
+    {
+      "name": "耿纯",
+      "category": "武将",
+      "paragraph_from": 28,
+      "paragraph_to": 38,
+      "boundary_evidence": {
+        "open_paragraph": 28,
+        "open_phrase": "耿纯字伯山，巨鹿宋子人也。父艾，为王莽济平尹。纯学于长安，因除为纳言士。",
+        "close_paragraph": 38,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P28–P38"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

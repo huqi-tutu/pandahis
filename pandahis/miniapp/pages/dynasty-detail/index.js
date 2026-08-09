@@ -11,6 +11,7 @@ const share_poster_open_1 = require("../../native-utils/share-poster-open");
 const selection_bar_position_1 = require("../../native-utils/selection-bar-position");
 const correction_1 = require("../../native-utils/correction");
 const load_error_message_1 = require("../../native-utils/load-error-message");
+const feature_flags_1 = require("../../native-utils/feature-flags");
 const matrix_adapter_1 = require("../home/matrix-adapter");
 const runtime_env_1 = require("../../native-utils/runtime-env");
 const offscreen_hints_1 = require("../../native-utils/offscreen-hints");
@@ -53,8 +54,8 @@ const BAND_PAD_RPX = 16;
 const MIN_BAND_HEIGHT_RPX = 56;
 /** 时间轴行 / 吸顶占位块高度（与 dyn-panel-axis-spacer 一致） */
 const PANEL_AXIS_BLOCK_RPX = 86;
-const AXIS_PIN_AT = 150;
-const AXIS_UNPIN_AT = 110;
+/** 外框吸顶解绑滞后（px），仅防临界抖动，不能大到露出「过冲再弹回」 */
+const AXIS_PIN_HYSTERESIS_PX = 2;
 const CONTINUATION_CUE_THROTTLE_MS = 120;
 const CONTINUATION_CUE_TOLERANCE_RPX = 16;
 const CONTINUATION_CUE_BOTTOM_RESERVE_RPX = 48;
@@ -234,6 +235,40 @@ function findSwimBar(swim, boxId) {
         }
     }
     return null;
+}
+function parseConcurrentLabel(label) {
+    const sep = label.indexOf('·');
+    if (sep < 0)
+        return { civ: '', title: String(label || '').trim() };
+    return { civ: label.slice(0, sep).trim(), title: label.slice(sep + 1).trim() };
+}
+function isHuaxiaCivName(civ) {
+    return String(civ || '').trim() === '华夏';
+}
+function resolveConcurrentTabs(swim, currentUnitId, heroCivLine, dynastyTitle) {
+    var _a;
+    if ((_a = swim.concurrentTabs) === null || _a === void 0 ? void 0 : _a.length)
+        return swim.concurrentTabs;
+    const selfLabel = `${heroCivLine || '华夏'}·${dynastyTitle}`;
+    return (swim.concurrentItems || []).map((label) => {
+        const parsed = parseConcurrentLabel(label);
+        const civ = parsed.civ || heroCivLine || '华夏';
+        const title = parsed.title || label;
+        const isSelf = label === selfLabel || (civ === heroCivLine && title === dynastyTitle);
+        const dynastyId = isSelf
+            ? currentUnitId
+            : ((0, matrix_adapter_1.resolveDetailUnitIds)('', title)[0] || '');
+        return { label, civilizationName: civ, dynastyId };
+    });
+}
+function resolveActiveConcurrentIndex(tabs, unitId, selfLabel) {
+    const byId = tabs.findIndex((tab) => tab.dynastyId && tab.dynastyId === unitId);
+    if (byId >= 0)
+        return byId;
+    const byLabel = tabs.findIndex((tab) => tab.label === selfLabel);
+    if (byLabel >= 0)
+        return byLabel;
+    return 0;
 }
 function continuationWeight(bar) {
     var _a;
@@ -729,7 +764,8 @@ function rpxToPx(rpx, windowWidth) {
     return Math.round(rpx * (windowWidth / 750));
 }
 function computeChipTooltipSafeTop(axisPinned, scrollViewTopPx, windowWidth) {
-    const axisHeightPx = axisPinned ? rpxToPx(86, windowWidth) + 8 : 0;
+    // 吸顶条无顶 padding，高度≈外框 70rpx + 底 padding 12rpx
+    const axisHeightPx = axisPinned ? rpxToPx(PANEL_AXIS_BLOCK_RPX, windowWidth) : 0;
     return scrollViewTopPx + axisHeightPx + 8;
 }
 function computeChipTooltipSafeBottom(windowHeight, windowWidth, safeAreaBottom = 0) {
@@ -792,6 +828,9 @@ Page({
     continuationLastUpdateAt: 0,
     continuationUpdateTimer: null,
     chipTooltipExitTimer: null,
+    /** 外框顶边对齐吸顶线时的 page scrollTop；<0 表示尚未测得 */
+    axisPinOffsetPx: -1,
+    axisPinMeasureTimer: null,
     data: {
         unit: null,
         dynastyTitle: '',
@@ -800,6 +839,8 @@ Page({
         heroCivLine: '',
         swim: null,
         concurrentItems: [],
+        concurrentTabs: [],
+        activeConcurrentIndex: 0,
         relatedUnits: [],
         nextUnit: null,
         introPreview: '',
@@ -847,6 +888,7 @@ Page({
         chipTooltipLaneKey: '',
         chipTooltipStartYear: '',
         chipTooltipEndYear: '',
+        chipTooltipReignLabel: '',
         chipTooltipLeftPx: 0,
         chipTooltipTopPx: 0,
         chipTooltipBaseTransform: 'translate(-50%, -100%)',
@@ -873,6 +915,7 @@ Page({
         sharePosterUserName: '历史读者',
         sharePosterUserAvatar: '',
         sharePosterExcerptDate: '',
+        civSwitchEnabled: true,
     },
     onShow() {
         void this.refreshFavState();
@@ -884,6 +927,8 @@ Page({
             clearTimeout(this.continuationUpdateTimer);
         if (this.chipTooltipExitTimer)
             clearTimeout(this.chipTooltipExitTimer);
+        if (this.axisPinMeasureTimer)
+            clearTimeout(this.axisPinMeasureTimer);
     },
     onShareAppMessage() {
         const u = this.data.unit;
@@ -894,6 +939,7 @@ Page({
     },
     async onLoad(query) {
         this._loadQuery = query;
+        await (0, feature_flags_1.loadFeatureFlags)();
         await this.loadDynastyPage(query);
     },
     async retryLoad() {
@@ -916,6 +962,20 @@ Page({
         const rawUnitId = query.unitId || query.id || '';
         const dynastyHint = (0, query_value_1.decodeQueryValue)(query.dynasty || query.displayName || '');
         const unitCandidates = (0, matrix_adapter_1.resolveDetailUnitIds)(rawUnitId, dynastyHint);
+        const civSwitchEnabled = (0, feature_flags_1.isCivSwitchEnabled)();
+        this.setData({ civSwitchEnabled });
+        if (!civSwitchEnabled) {
+            const idsToCheck = unitCandidates.length
+                ? unitCandidates
+                : (rawUnitId ? [rawUnitId] : []);
+            const blocked = idsToCheck.some((id) => id && !(0, feature_flags_1.isHuaxiaUnitId)(id));
+            if (blocked) {
+                (0, feature_flags_1.toastCivLocked)();
+                this.setData({ loading: false, loadError: '该内容筹备中，敬请期待' });
+                setTimeout(() => wx.navigateBack(), 1200);
+                return;
+            }
+        }
         if (!unitCandidates.length && !dynastyHint) {
             this.setData({ loading: false, loadError: '缺少朝代参数，无法加载' });
             return;
@@ -924,7 +984,8 @@ Page({
         const navH = Math.round(88 * (sys.windowWidth / 750));
         const headerPadPx = (sys.statusBarHeight || 20) + navH;
         const tabBarH = Math.round(72 * (sys.windowWidth / 750));
-        const scrollTop = headerPadPx + tabBarH;
+        // 有并发 Tab 时吸顶线 = Tab 底；无 Tab 时 = 导航底（不再预留空白）
+        const scrollTop = headerPadPx;
         this.continuationRatio = sys.windowWidth / 750;
         this.continuationViewportWidthPx = sys.windowWidth - 48 * this.continuationRatio;
         this.continuationWindowHeightPx = sys.windowHeight;
@@ -959,6 +1020,12 @@ Page({
                 const matrixBoxIds = collectMatrixBoxIds(swim);
                 const hasVisibleContent = (prioritySwim.lanes || []).some(hasLaneContent);
                 const { preview, canExpand, paragraphs } = previewIntro(unit.summary || '');
+                const concurrentTabs = resolveConcurrentTabs(prioritySwim, unit.id, heroCivLine, dynastyTitle);
+                const selfConcurrentLabel = `${heroCivLine || '华夏'}·${dynastyTitle}`;
+                const activeConcurrentIndex = resolveActiveConcurrentIndex(concurrentTabs, unit.id, selfConcurrentLabel);
+                const concurrentItems = concurrentTabs.map((tab) => tab.label);
+                const contentTopPx = headerPadPx + (concurrentTabs.length > 0 ? tabBarH : 0);
+                this.axisPinOffsetPx = -1;
                 if (!hasVisibleContent) {
                     finishLoading({
                         unit,
@@ -968,11 +1035,13 @@ Page({
                         heroCivLine,
                         swim: null,
                         concurrentItems: [],
+                        concurrentTabs: [],
+                        activeConcurrentIndex: 0,
                         relatedUnits: hero.relatedUnits || [],
                         nextUnit: (_a = hero.nextUnit) !== null && _a !== void 0 ? _a : null,
                         matrixBoxIds: [],
                         headerPadPx,
-                        scrollTop,
+                        scrollTop: headerPadPx,
                         introPreview: preview,
                         introDisplay: preview,
                         introCanExpand: canExpand,
@@ -989,12 +1058,16 @@ Page({
                     heroSubLine,
                     heroCivLine,
                     swim: swimForView,
-                    concurrentItems: prioritySwim.concurrentItems || [],
+                    concurrentItems,
+                    concurrentTabs,
+                    activeConcurrentIndex,
                     relatedUnits: hero.relatedUnits || [],
                     nextUnit: (_b = hero.nextUnit) !== null && _b !== void 0 ? _b : null,
                     matrixBoxIds,
                     headerPadPx,
-                    scrollTop,
+                    scrollTop: contentTopPx,
+                    axisPinned: false,
+                    axisMirrorLeft: 0,
                     introPreview: preview,
                     introDisplay: preview,
                     introCanExpand: canExpand,
@@ -1004,6 +1077,7 @@ Page({
                     loading: false,
                 }, () => {
                     this.rebuildContinuationHints(prioritySwim);
+                    this.scheduleMeasureAxisPinOffset();
                 });
                 void this.refreshFavState();
                 if (!Number.isNaN(anchorYear)) {
@@ -1194,14 +1268,64 @@ Page({
         this.swimScrollLeft = left;
         this.scheduleContinuationHintUpdate();
     },
-    onDynastyScroll(e) {
-        const top = e.detail.scrollTop;
-        this.continuationPageScrollTop = top;
-        this.scheduleContinuationHintUpdate();
+    /**
+     * 测量时间轴外框（.dyn-axis-pin-anchor）顶边相对 scroll-view 内容顶端的偏移。
+     * 吸顶条件：pageScrollTop >= 该偏移（外框碰到 Tab/导航底）。
+     */
+    measureAxisPinOffset() {
+        if (this.pageUnloaded || !this.data.swim)
+            return;
+        wx.createSelectorQuery()
+            .in(this)
+            .select('.dynasty-scroll')
+            .boundingClientRect()
+            .select('.dyn-axis-pin-anchor')
+            .boundingClientRect()
+            .select('.dynasty-scroll')
+            .scrollOffset()
+            .exec((rects) => {
+            if (this.pageUnloaded)
+                return;
+            const scrollRect = rects === null || rects === void 0 ? void 0 : rects[0];
+            const anchorRect = rects === null || rects === void 0 ? void 0 : rects[1];
+            const scrollOffset = rects === null || rects === void 0 ? void 0 : rects[2];
+            if (!scrollRect || !anchorRect || !scrollOffset)
+                return;
+            const offset = Math.max(0, Math.round(Number(scrollOffset.scrollTop || 0) +
+                Number(anchorRect.top) -
+                Number(scrollRect.top)));
+            if (offset === this.axisPinOffsetPx) {
+                this.applyAxisPinForScroll(this.continuationPageScrollTop);
+                return;
+            }
+            this.axisPinOffsetPx = offset;
+            this.applyAxisPinForScroll(this.continuationPageScrollTop);
+        });
+    },
+    scheduleMeasureAxisPinOffset() {
+        if (this.pageUnloaded)
+            return;
+        wx.nextTick(() => {
+            if (this.pageUnloaded)
+                return;
+            this.measureAxisPinOffset();
+        });
+        if (this.axisPinMeasureTimer)
+            clearTimeout(this.axisPinMeasureTimer);
+        // 英雄区/字体二次布局后再测一次，避免阈值偏大导致外框钻进 Tab 后才钉住
+        this.axisPinMeasureTimer = setTimeout(() => {
+            this.axisPinMeasureTimer = null;
+            this.measureAxisPinOffset();
+        }, 120);
+    },
+    applyAxisPinForScroll(top) {
+        const offset = this.axisPinOffsetPx;
+        if (offset < 0)
+            return;
         let pinned = this.data.axisPinned;
-        if (!pinned && top > AXIS_PIN_AT)
+        if (!pinned && top >= offset)
             pinned = true;
-        else if (pinned && top < AXIS_UNPIN_AT)
+        else if (pinned && top < offset - AXIS_PIN_HYSTERESIS_PX)
             pinned = false;
         if (pinned !== this.data.axisPinned) {
             this.setData({
@@ -1209,6 +1333,12 @@ Page({
                 axisMirrorLeft: this.swimScrollLeft,
             });
         }
+    },
+    onDynastyScroll(e) {
+        const top = e.detail.scrollTop;
+        this.continuationPageScrollTop = top;
+        this.scheduleContinuationHintUpdate();
+        this.applyAxisPinForScroll(top);
         if (this.data.chipTooltipVisible) {
             this.hideChipTooltip();
         }
@@ -1306,6 +1436,7 @@ Page({
                 chipTooltipTitle: (bar === null || bar === void 0 ? void 0 : bar.title) || ds.title || '',
                 chipTooltipStartYear: startYearLabel,
                 chipTooltipEndYear: endYearLabel,
+                chipTooltipReignLabel: (laneKey === 'junji' || laneKey === 'zhuhou') ? '在位' : '',
                 chipTooltipTag: chipTag,
                 chipTooltipLaneKey: laneKey,
                 chipTooltipPeakSummary: formatPeakSummary(peakYearNum == null ? '' : (0, year_format_1.formatHistoryYear)(peakYearNum), peakReason),
@@ -1443,6 +1574,36 @@ Page({
         (0, router_1.navigateTo)(router_1.ROUTES.dynastyDetail, {
             unitId: ds.id,
             dynasty: ds.dynasty || '',
+        });
+    },
+    onConcurrentTabTap(e) {
+        var _a;
+        const index = Number((_a = e.currentTarget.dataset) === null || _a === void 0 ? void 0 : _a.index);
+        if (!Number.isFinite(index) || index < 0)
+            return;
+        if (index === this.data.activeConcurrentIndex)
+            return;
+        const tab = this.data.concurrentTabs[index];
+        if (!tab)
+            return;
+        const isHuaxia = isHuaxiaCivName(tab.civilizationName) || (0, feature_flags_1.isHuaxiaUnitId)(tab.dynastyId);
+        if (!(0, feature_flags_1.isCivSwitchEnabled)() && !isHuaxia) {
+            (0, feature_flags_1.toastCivLocked)();
+            return;
+        }
+        const { title } = parseConcurrentLabel(tab.label);
+        const targetId = tab.dynastyId || (0, matrix_adapter_1.resolveDetailUnitIds)('', title)[0] || '';
+        if (!targetId) {
+            wx.showToast({ title: '暂未收录该朝代', icon: 'none' });
+            return;
+        }
+        if (!(0, feature_flags_1.isCivSwitchEnabled)() && !(0, feature_flags_1.isHuaxiaUnitId)(targetId)) {
+            (0, feature_flags_1.toastCivLocked)();
+            return;
+        }
+        (0, router_1.navigateTo)(router_1.ROUTES.dynastyDetail, {
+            unitId: targetId,
+            dynasty: title,
         });
     },
     goNext() {

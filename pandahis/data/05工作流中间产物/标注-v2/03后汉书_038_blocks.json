@@ -1,0 +1,82 @@
+{
+  "work": "03后汉书",
+  "vol": "038",
+  "total_paragraphs": 55,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_038_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 54,
+      "paragraph_to": 55,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "梁统",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 15,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "梁统字仲宁，安定乌氏人，晋大夫梁益耳，即其先也。统高祖父子都，自河东迁居北地，子",
+        "close_paragraph": 15,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P15"
+      }
+    },
+    {
+      "name": "梁松",
+      "category": "宗戚",
+      "paragraph_from": 16,
+      "paragraph_to": 18,
+      "boundary_evidence": {
+        "open_paragraph": 16,
+        "open_phrase": "松字伯孙，少为郎，尚光武女舞阴长公主，再迁虎贲中郎将。松博通经书，明习故事，与诸",
+        "close_paragraph": 18,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P16–P18"
+      }
+    },
+    {
+      "name": "梁竦",
+      "category": "宗戚",
+      "paragraph_from": 19,
+      "paragraph_to": 27,
+      "boundary_evidence": {
+        "open_paragraph": 19,
+        "open_phrase": "竦字叔敬，少习《孟习易》，弱冠能教授。后坐兄松事，与弟恭俱徙九真。既徂南土，历江",
+        "close_paragraph": 27,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P19–P27"
+      }
+    },
+    {
+      "name": "梁商",
+      "category": "宗戚",
+      "paragraph_from": 28,
+      "paragraph_to": 32,
+      "boundary_evidence": {
+        "open_paragraph": 28,
+        "open_phrase": "商字伯夏，雍之子也。少以外戚拜郎中，迁黄门侍郎。永建元年，袭父封乘氏侯。三年，顺",
+        "close_paragraph": 32,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P28–P32"
+      }
+    },
+    {
+      "name": "梁冀",
+      "category": "宗戚",
+      "paragraph_from": 33,
+      "paragraph_to": 53,
+      "boundary_evidence": {
+        "open_paragraph": 33,
+        "open_phrase": "冀字伯卓。为人鸢肩豺目，洞精目党眄，口吟舌言，裁能书计。少为贵戚，逸游自恣。性嗜",
+        "close_paragraph": 53,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P33–P53"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

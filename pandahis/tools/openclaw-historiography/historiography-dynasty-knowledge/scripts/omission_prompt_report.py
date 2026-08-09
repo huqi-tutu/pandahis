@@ -3,10 +3,23 @@
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 from typing import Any
 
 import dynasty_supplement_lib as dkl
+
+
+def _strip_peerage_prefix(name: str) -> str:
+    """酂侯萧何 → 萧何；夏侯等复姓不剥离。"""
+    n = (name or "").strip()
+    if not n or n.startswith("夏侯"):
+        return n
+    # 仅当「…侯 + 2–4 字名」时剥离封号，避免误伤复姓/单名
+    m = re.match(r"^(.+?侯)([\u4e00-\u9fff]{2,4})$", n)
+    if not m:
+        return n
+    return m.group(2)
 
 CATEGORIES = ("事略", "典制", "论著")
 PERSON_CATEGORIES = tuple(c for c in dkl.PERSON_CATEGORIES if c != "君王")
@@ -35,24 +48,47 @@ def _name_from_row(row: dict[str, Any]) -> str:
     return ""
 
 
-def load_phase1_names(histograph_root: Path, dynasty_id: str) -> dict[str, list[str]]:
-    index_path = histograph_root / "data" / "03索引标注条目" / "史略索引_01至02.json"
+def load_phase1_names(
+    histograph_root: Path,
+    dynasty_id: str,
+    dynasty_name: str = "",
+) -> dict[str, list[str]]:
+    # 现行一期 = V2：10新标注条目/史略索引_史记汉书.json（不用 03 V1）
+    index_paths = [
+        histograph_root / "data" / "10新标注条目" / "史略索引_史记汉书.json",
+    ]
     out: dict[str, list[str]] = {c: [] for c in PROMPT_CATEGORIES}
-    if not index_path.is_file():
-        return out
-    root = json.loads(index_path.read_text(encoding="utf-8"))
-    entries = root.get("entries") if isinstance(root, dict) else root
-    if not isinstance(entries, list):
-        return out
-    for e in entries:
-        if not isinstance(e, dict):
+    seen: dict[str, set[str]] = {c: set() for c in PROMPT_CATEGORIES}
+
+    def _add(cat: str, name: str) -> None:
+        if cat not in out or not name or name in seen[cat]:
+            return
+        seen[cat].add(name)
+        out[cat].append(name)
+        short = _strip_peerage_prefix(name)
+        if short != name and short not in seen[cat]:
+            seen[cat].add(short)
+            out[cat].append(short)
+
+    for index_path in index_paths:
+        if not index_path.is_file():
             continue
-        if str(e.get("朝代ID", "")).strip() != dynasty_id:
+        root = json.loads(index_path.read_text(encoding="utf-8"))
+        entries = root.get("entries") if isinstance(root, dict) else root
+        if not isinstance(entries, list):
             continue
-        cat = str(e.get("史略分类", "")).strip()
-        name = str(e.get("史略名称", "")).strip()
-        if cat in out and name:
-            out[cat].append(name)
+        for e in entries:
+            if not isinstance(e, dict):
+                continue
+            did = str(e.get("朝代ID", "")).strip()
+            coord = str(e.get("二级朝代坐标", "")).strip()
+            matched = did == dynasty_id or (dynasty_name and coord == dynasty_name)
+            orphan = (not did and not coord) and dynasty_id == "CD_HX_XIHAN"
+            if not matched and not orphan:
+                continue
+            cat = str(e.get("史略分类", "")).strip()
+            name = str(e.get("史略名称", "")).strip()
+            _add(cat, name)
     return out
 
 
@@ -135,7 +171,7 @@ def build_omission_prompt(
     dynasty_id = str(context.get("朝代ID") or "")
 
     extracted = _pick_source_names(paths, phase)
-    phase1 = load_phase1_names(histograph_root, dynasty_id)
+    phase1 = load_phase1_names(histograph_root, dynasty_id, dynasty_name=dynasty_name)
     supplement_cats = "、".join(PROMPT_CATEGORIES)
 
     lines: list[str] = [
@@ -182,7 +218,7 @@ def build_omission_prompt(
             "- **有记忆点**：读者能用一个标签记住；",
             "- **粒度适中**：一条一个主题，不要太细。",
             "",
-            "**请勿重复**上文已列的任何名称（含同义、别名）。若无补充，直接说「无」。",
+            "**请勿重复**上文已列的任何名称（含同义、别名、爵号变体，如「酂侯萧何」=「萧何」）。若无补充，直接说「无」。",
             "",
             "## 跨朝代归属（硬纪律）",
             "",
@@ -190,6 +226,7 @@ def build_omission_prompt(
             f"**仅列 pick year 落在 {dynasty_name}（约 {start}—{end}）区间内的条目**；若应归相邻朝代，**不得列出**。",
             "",
             "**典型错误**：把 pick year 主要落在下一朝的人物/事略/典制/论著塞进本朝（如跑批战国时误列李斯、吕不韦、蒙恬、秦灭六国统一等应归秦者）。",
+            "**相邻朝已建条**：王莽已在「新」朝以君王建条，本朝勿再补人物「王莽」（事略「王莽篡汉」若已在上方「我已提取」中则勿重复）。",
         ]
     )
     if trigger_step:

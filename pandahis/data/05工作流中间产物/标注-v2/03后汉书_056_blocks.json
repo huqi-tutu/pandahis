@@ -1,0 +1,82 @@
+{
+  "work": "03后汉书",
+  "vol": "056",
+  "total_paragraphs": 43,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_056_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 42,
+      "paragraph_to": 43,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "李恂",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 5,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "李恂字叔英，安定临泾人也。少习《韩诗》，教授诸生常数百人。太守颍川李鸿请署功曹，",
+        "close_paragraph": 5,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P5"
+      }
+    },
+    {
+      "name": "陈禅",
+      "category": "文臣",
+      "paragraph_from": 6,
+      "paragraph_to": 10,
+      "boundary_evidence": {
+        "open_paragraph": 6,
+        "open_phrase": "陈禅字纪山，巴郡安汉人也。仕郡功曹，举善黜恶，为邦内所畏。察孝廉，州辟治中从事。",
+        "close_paragraph": 10,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P6–P10"
+      }
+    },
+    {
+      "name": "庞参",
+      "category": "文臣",
+      "paragraph_from": 11,
+      "paragraph_to": 26,
+      "boundary_evidence": {
+        "open_paragraph": 11,
+        "open_phrase": "庞参字仲达，河南缑氏人也。初仕郡，未知名，河南尹庞奋见而奇之，举为孝廉，拜左校令",
+        "close_paragraph": 26,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P11–P26"
+      }
+    },
+    {
+      "name": "陈龟",
+      "category": "武将",
+      "paragraph_from": 27,
+      "paragraph_to": 32,
+      "boundary_evidence": {
+        "open_paragraph": 27,
+        "open_phrase": "陈龟字叔珍，上党泫氏人也。家世边将，便习弓马，雄于北州。",
+        "close_paragraph": 32,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P27–P32"
+      }
+    },
+    {
+      "name": "桥玄",
+      "category": "文臣",
+      "paragraph_from": 33,
+      "paragraph_to": 41,
+      "boundary_evidence": {
+        "open_paragraph": 33,
+        "open_phrase": "桥玄字公祖，梁国睢阳人也。七世祖仁，从同郡戴德学，著《礼记章句》四十九篇，号曰“",
+        "close_paragraph": 41,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P33–P41"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

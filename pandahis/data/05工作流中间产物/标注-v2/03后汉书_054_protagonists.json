@@ -1,0 +1,30 @@
+{
+  "work": "03后汉书",
+  "vol": "054",
+  "volume_name": "王充王符仲长统列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "王充",
+      "category": "文臣",
+      "rationale": "卷名首列人物，东汉思想家、文学批评家，以《论衡》著称，属儒学文士，符合文臣准入。"
+    },
+    {
+      "name": "王符",
+      "category": "文臣",
+      "rationale": "卷名次列人物，东汉思想家、政论家，著《潜夫论》，终身不仕，以学术文论为主轴，符合文臣准入。"
+    },
+    {
+      "name": "仲长统",
+      "category": "文臣",
+      "rationale": "卷名末列人物，东汉政论家，著《昌言》，曾任尚书郎，以政论学术为主轴，符合文臣准入。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

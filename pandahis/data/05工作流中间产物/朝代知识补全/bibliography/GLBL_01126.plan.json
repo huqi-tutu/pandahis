@@ -1,0 +1,177 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01126",
+  "写作结构": "正史叙述见翻译详录（《史记·韩长孺列传》《汉书·武帝纪》）；拓展文写史外异说与延展：以《资治通鉴·汉纪》为史外主干（司马光对马邑之谋的叙事与评论），辅以《通鉴纪事本末》的专题汇编，再以《西汉年纪》补充编年细节；留白处为汉军具体布阵、单于与部下对话、王恢与武帝奏对等细节，不作文本虚构。",
+  "候选著作": [
+    {
+      "出处": "《史记·韩长孺列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "马邑之谋最原始记载，含聂壹诈降、单于识破、王恢纵兵等细节",
+      "检索词": "马邑",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《汉书·武帝纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "官方编年记载，系于元光二年，记汉匈和亲关系终结",
+      "检索词": "马邑",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《资治通鉴·汉纪十》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "司马光综合《史记》《汉书》重述马邑之谋，并附『臣光曰』评论，为史外重要异说与延展",
+      "检索词": "马邑",
+      "采用": true,
+      "原文摘句": "上使聂壹为间，亡入匈奴，谓单于曰：『吾能斩马邑令丞，以城降，财物可尽得。』单于爱信之，以为然，而许之。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《通鉴纪事本末·武帝伐匈奴》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "袁枢将马邑之谋作为『武帝伐匈奴』专题之首，便于整体把握汉匈战争转折",
+      "检索词": "马邑",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《西汉年纪·卷十一》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "南宋王益之编年体西汉史，对马邑之谋时间、人物有补充考异",
+      "检索词": "马邑",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《汉纪·孝武皇帝纪二》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "荀悦《汉纪》为东汉改编《汉书》之作，可作早期异说参照",
+      "检索词": "马邑",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《资治通鉴考异·汉纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "司马光对马邑之谋相关史料异同的考辨，可作异说层补充",
+      "检索词": "马邑",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·韩长孺列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "马邑之谋最原始记载，含聂壹诈降、单于识破、王恢纵兵等细节",
+      "检索词": "马邑",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《汉书·武帝纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "官方编年记载，系于元光二年，记汉匈和亲关系终结",
+      "检索词": "马邑",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《资治通鉴·汉纪十》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "司马光综合《史记》《汉书》重述马邑之谋，并附『臣光曰』评论，为史外重要异说与延展",
+      "检索词": "马邑",
+      "采用": true,
+      "原文摘句": "上使聂壹为间，亡入匈奴，谓单于曰：『吾能斩马邑令丞，以城降，财物可尽得。』单于爱信之，以为然，而许之。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《通鉴纪事本末·武帝伐匈奴》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "袁枢将马邑之谋作为『武帝伐匈奴』专题之首，便于整体把握汉匈战争转折",
+      "检索词": "马邑",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《西汉年纪·卷十一》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "南宋王益之编年体西汉史，对马邑之谋时间、人物有补充考异",
+      "检索词": "马邑",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《汉纪·孝武皇帝纪二》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "荀悦《汉纪》为东汉改编《汉书》之作，可作早期异说参照",
+      "检索词": "马邑",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《资治通鉴考异·汉纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "司马光对马邑之谋相关史料异同的考辨，可作异说层补充",
+      "检索词": "马邑",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 3,
+    "C_excluded": 4,
+    "overall": "B"
+  }
+}

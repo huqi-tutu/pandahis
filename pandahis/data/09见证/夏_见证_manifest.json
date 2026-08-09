@@ -457,7 +457,15 @@
       "status": "已处理·无可用",
       "entry_count": 0,
       "verified_at": "2026-07-22T14:50:53Z"
+    },
+    {
+      "glbl": "GLBL_00993",
+      "name": "太康失国",
+      "file": "GLBL_00993_太康失国_见证.json",
+      "status": "done",
+      "entry_count": 2,
+      "verified_at": "2026-08-09T00:58:40Z"
     }
   ],
-  "updated_at": "2026-07-22T15:29:51Z"
+  "updated_at": "2026-08-09T00:58:40Z"
 }

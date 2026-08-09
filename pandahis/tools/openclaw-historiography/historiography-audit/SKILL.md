@@ -1,14 +1,14 @@
 ---
 name: historiography-audit
 description: >
-  史料标注 Step 3（须 historiography-pipeline 调度）。预检 + LLM 六条语义审计。
+  史料标注 Step 3（须 historiography-pipeline-v2 调度）。预检 + LLM 六条语义审计。
   激活词：史料审计、Step 3、人物标注审计。
 ---
 
 # 史料标注质量审计（Step 3 · 人物标注）
 
-上游：`historiography-annotate` Step 1–2  
-下游：Step 4 `fill_fields.py`
+上游：`historiography-annotate-v2` Step 1–2（硬检脚本在 `historiography-annotate/`）  
+下游：Step 4 `historiography-annotate/fill_fields.py`
 
 ## Prerequisites
 

@@ -19,6 +19,7 @@ WORK_ENTRY_PREFIX: Dict[str, str] = {
     "01史记": "SHIJI",
     "01A尚书": "SHANGSHU",
     "02汉书": "HANSHU",
+    "03后汉书": "HOUHANSHU",
 }
 
 # LLM 常见误名 → 帝王.json「帝王名称」

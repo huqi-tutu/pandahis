@@ -1,0 +1,391 @@
+{
+  "work": "03后汉书",
+  "vol": "024",
+  "total_paragraphs": 64,
+  "paragraphs": [
+    {
+      "paragraph": 1,
+      "primary_subject": "卷首标题",
+      "disposition": "exclude",
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "primary_subject": "朱祐",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 3,
+      "primary_subject": "朱祐",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 4,
+      "primary_subject": "朱祐",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 5,
+      "primary_subject": "朱祐",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 6,
+      "primary_subject": "朱祐",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 7,
+      "primary_subject": "朱祐",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 8,
+      "primary_subject": "非Top主轴:景丹",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 9,
+      "primary_subject": "非Top主轴:景丹",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 10,
+      "primary_subject": "非Top主轴:景丹",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 11,
+      "primary_subject": "非Top主轴:景丹",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 12,
+      "primary_subject": "非Top主轴:景丹",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 13,
+      "primary_subject": "非Top主轴:王梁",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 14,
+      "primary_subject": "非Top主轴:王梁",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 15,
+      "primary_subject": "非Top主轴:王梁",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 16,
+      "primary_subject": "非Top主轴:王梁",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 17,
+      "primary_subject": "非Top主轴:杜茂",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 18,
+      "primary_subject": "非Top主轴:杜茂",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 19,
+      "primary_subject": "非Top主轴:郭凉",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 20,
+      "primary_subject": "非Top主轴:杜茂",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 21,
+      "primary_subject": "非Top主轴:杜茂",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 22,
+      "primary_subject": "非Top主轴:马成",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 23,
+      "primary_subject": "非Top主轴:马成",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 24,
+      "primary_subject": "非Top主轴:马成",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 25,
+      "primary_subject": "非Top主轴:马成",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 26,
+      "primary_subject": "非Top主轴:马成",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 27,
+      "primary_subject": "非Top主轴:马成",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 28,
+      "primary_subject": "刘隆",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 29,
+      "primary_subject": "刘隆",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 30,
+      "primary_subject": "刘隆",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 31,
+      "primary_subject": "刘隆",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 32,
+      "primary_subject": "非Top主轴:傅俊",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 33,
+      "primary_subject": "非Top主轴:傅俊",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 34,
+      "primary_subject": "非Top主轴:傅俊",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 35,
+      "primary_subject": "非Top主轴:坚镡",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 36,
+      "primary_subject": "非Top主轴:坚镡",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 37,
+      "primary_subject": "非Top主轴:坚镡",
+      "disposition": "exclude",
+      "exclude_reason": "其他"
+    },
+    {
+      "paragraph": 38,
+      "primary_subject": "马武",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 39,
+      "primary_subject": "马武",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 40,
+      "primary_subject": "马武",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 41,
+      "primary_subject": "马武",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 42,
+      "primary_subject": "马武",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 43,
+      "primary_subject": "马武",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 44,
+      "primary_subject": "马武",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 45,
+      "primary_subject": "马武",
+      "disposition": "block",
+      "exclude_reason": null
+    },
+    {
+      "paragraph": 46,
+      "primary_subject": "论赞",
+      "disposition": "exclude",
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 47,
+      "primary_subject": "论赞",
+      "disposition": "exclude",
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 48,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 49,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 50,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 51,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 52,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 53,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 54,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 55,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 56,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 57,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 58,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 59,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 60,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 61,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 62,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 63,
+      "primary_subject": "共段总述",
+      "disposition": "exclude",
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 64,
+      "primary_subject": "论赞",
+      "disposition": "exclude",
+      "exclude_reason": "论赞"
+    }
+  ]
+}

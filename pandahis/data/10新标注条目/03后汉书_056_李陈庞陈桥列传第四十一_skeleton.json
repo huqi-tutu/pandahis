@@ -1,0 +1,462 @@
+{
+  "volume": "李陈庞陈桥列传",
+  "source_file": "03后汉书_056_李陈庞陈桥列传第四十一.txt",
+  "total_paragraphs": 43,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "李恂",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "李恂",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "李恂",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "李恂",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "陈禅",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "陈禅",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "陈禅",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "陈禅",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "陈禅",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "庞参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "庞参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "庞参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "庞参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "庞参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "庞参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "庞参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "庞参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "庞参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "庞参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "庞参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "庞参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "庞参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "庞参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "庞参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "庞参",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "陈龟",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "陈龟",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "陈龟",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "陈龟",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "陈龟",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "陈龟",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "桥玄",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "桥玄",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "桥玄",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "桥玄",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "桥玄",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "桥玄",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "桥玄",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "桥玄",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "桥玄",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 43,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HOUHANSHU_056_01",
+      "史略名称": "李恂",
+      "史略简介": "李恂",
+      "原文字句": "李恂字叔英，安定临泾人也。少习《韩诗》，教授诸生常数百人。太守颍川李鸿请署功曹，未及到，而州辟为从事。会鸿卒，恂不应州命，而送鸿丧还乡里。既葬，留起冢坟，持丧三年。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷56·李陈庞陈桥列传》",
+      "paragraphs": [
+        {
+          "volume": "李陈庞陈桥列传",
+          "paragraph_from": 2,
+          "paragraph_to": 5
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_056_02",
+      "史略名称": "陈禅",
+      "史略简介": "陈禅",
+      "原文字句": "陈禅字纪山，巴郡安汉人也。仕郡功曹，举善黜恶，为邦内所畏。察孝廉，州辟治中从事。时刺史为人所上受纳臧赂，禅当传考，无它所赍，但持丧敛之具而已。及至，笞掠无算，五毒毕加，禅神意自若，辞对无变，事遂散释。车骑将军邓骘闻其名而辟焉，举茂才。时汉中蛮夷反畔，以禅为汉中太守。夷贼素闻其声，即时降服。迁左冯翊，入拜谏议大夫。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷56·李陈庞陈桥列传》",
+      "paragraphs": [
+        {
+          "volume": "李陈庞陈桥列传",
+          "paragraph_from": 6,
+          "paragraph_to": 10
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_056_03",
+      "史略名称": "庞参",
+      "史略简介": "庞参",
+      "原文字句": "庞参字仲达，河南缑氏人也。初仕郡，未知名，河南尹庞奋见而奇之，举为孝廉，拜左校令。坐法输作若卢。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷56·李陈庞陈桥列传》",
+      "paragraphs": [
+        {
+          "volume": "李陈庞陈桥列传",
+          "paragraph_from": 11,
+          "paragraph_to": 26
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_056_04",
+      "史略名称": "陈龟",
+      "史略简介": "陈龟",
+      "原文字句": "陈龟字叔珍，上党泫氏人也。家世边将，便习弓马，雄于北州。",
+      "史略分类": "武将",
+      "主要史料出处": "《03后汉书·卷56·李陈庞陈桥列传》",
+      "paragraphs": [
+        {
+          "volume": "李陈庞陈桥列传",
+          "paragraph_from": 27,
+          "paragraph_to": 32
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_056_05",
+      "史略名称": "桥玄",
+      "史略简介": "桥玄",
+      "原文字句": "桥玄字公祖，梁国睢阳人也。七世祖仁，从同郡戴德学，著《礼记章句》四十九篇，号曰“桥君学”。成帝时为大鸿胪。祖父基，广陵太守。父肃，东莱太守。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷56·李陈庞陈桥列传》",
+      "paragraphs": [
+        {
+          "volume": "李陈庞陈桥列传",
+          "paragraph_from": 33,
+          "paragraph_to": 41
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2245 @@
+{
+  "missing": 224,
+  "results": [
+    {
+      "id": "GLBL_00004",
+      "name": "卫康叔",
+      "dynasty": "西周",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00010",
+      "name": "启",
+      "dynasty": "夏",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00015",
+      "name": "周公旦",
+      "dynasty": "西周",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00017",
+      "name": "周厉王",
+      "dynasty": "西周",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00021",
+      "name": "周宣王",
+      "dynasty": "西周",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00023",
+      "name": "周幽王",
+      "dynasty": "西周",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00025",
+      "name": "周康王",
+      "dynasty": "西周",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00028",
+      "name": "周成王",
+      "dynasty": "西周",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00035",
+      "name": "周武王",
+      "dynasty": "西周",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00038",
+      "name": "周穆王",
+      "dynasty": "西周",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00044",
+      "name": "太戊",
+      "dynasty": "商",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00046",
+      "name": "契",
+      "dynasty": "商",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00050",
+      "name": "宋微子",
+      "dynasty": "西周",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00054",
+      "name": "小乙",
+      "dynasty": "商",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00057",
+      "name": "帝喾",
+      "dynasty": "五帝",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00058",
+      "name": "帝辛（纣）",
+      "dynasty": "商",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00059",
+      "name": "廪辛",
+      "dynasty": "商",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00060",
+      "name": "成汤",
+      "dynasty": "商",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00067",
+      "name": "桀",
+      "dynasty": "夏",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00073",
+      "name": "武丁",
+      "dynasty": "商",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00074",
+      "name": "武乙",
+      "dynasty": "商",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00086",
+      "name": "沃丁",
+      "dynasty": "商",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00087",
+      "name": "燕召公",
+      "dynasty": "西周",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00095",
+      "name": "祖甲",
+      "dynasty": "商",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00096",
+      "name": "禹",
+      "dynasty": "夏",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00104",
+      "name": "秦孝公",
+      "dynasty": "战国",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00129",
+      "name": "舜",
+      "dynasty": "五帝",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00136",
+      "name": "郑桓公",
+      "dynasty": "西周",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00144",
+      "name": "颛顼",
+      "dynasty": "五帝",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00149",
+      "name": "黄帝",
+      "dynasty": "五帝",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00222",
+      "name": "伯夷",
+      "dynasty": "西周",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00247",
+      "name": "豫让",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00272",
+      "name": "公伯缭",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00279",
+      "name": "冉求",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00313",
+      "name": "子贡",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00562",
+      "name": "涿鹿之战",
+      "dynasty": "五帝",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00565",
+      "name": "鲧禹治水",
+      "dynasty": "五帝",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00567",
+      "name": "禅让制",
+      "dynasty": "五帝",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00568",
+      "name": "部落联盟共主制",
+      "dynasty": "五帝",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00570",
+      "name": "九官制",
+      "dynasty": "五帝",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00571",
+      "name": "羲和观象授时",
+      "dynasty": "五帝",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00579",
+      "name": "皋陶",
+      "dynasty": "五帝",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00580",
+      "name": "伯益",
+      "dynasty": "五帝",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00582",
+      "name": "契",
+      "dynasty": "五帝",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00586",
+      "name": "涂山大会",
+      "dynasty": "夏",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00587",
+      "name": "启伐有扈氏",
+      "dynasty": "夏",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00588",
+      "name": "后羿代夏",
+      "dynasty": "夏",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00590",
+      "name": "少康中兴",
+      "dynasty": "夏",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00593",
+      "name": "鸣条之战",
+      "dynasty": "夏",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00595",
+      "name": "方国羁縻制度",
+      "dynasty": "夏",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00598",
+      "name": "夏正历法",
+      "dynasty": "夏",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00599",
+      "name": "井田制雏形",
+      "dynasty": "夏",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00600",
+      "name": "《候人歌》",
+      "dynasty": "夏",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00603",
+      "name": "少康",
+      "dynasty": "夏",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00604",
+      "name": "杼",
+      "dynasty": "夏",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00608",
+      "name": "不降",
+      "dynasty": "夏",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00610",
+      "name": "廑",
+      "dynasty": "夏",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00613",
+      "name": "涂山氏女",
+      "dynasty": "夏",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00616",
+      "name": "关龙逄",
+      "dynasty": "夏",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00618",
+      "name": "后羿",
+      "dynasty": "夏",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00619",
+      "name": "寒浞",
+      "dynasty": "夏",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00620",
+      "name": "靡",
+      "dynasty": "夏",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00625",
+      "name": "少昊",
+      "dynasty": "五帝",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00626",
+      "name": "蚩尤",
+      "dynasty": "五帝",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00630",
+      "name": "《胤征》",
+      "dynasty": "夏",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00631",
+      "name": "胤侯",
+      "dynasty": "夏",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00634",
+      "name": "寒豷",
+      "dynasty": "夏",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00635",
+      "name": "中康",
+      "dynasty": "夏",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00636",
+      "name": "孔甲",
+      "dynasty": "夏",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00637",
+      "name": "仲康",
+      "dynasty": "夏",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00638",
+      "name": "太康",
+      "dynasty": "夏",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00639",
+      "name": "有扈氏",
+      "dynasty": "夏",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00640",
+      "name": "武观",
+      "dynasty": "夏",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00641",
+      "name": "女志",
+      "dynasty": "夏",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00642",
+      "name": "伯益",
+      "dynasty": "夏",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00643",
+      "name": "彭伯寿",
+      "dynasty": "夏",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00644",
+      "name": "皋陶",
+      "dynasty": "夏",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00648",
+      "name": "汝艾",
+      "dynasty": "夏",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00650",
+      "name": "九世之乱",
+      "dynasty": "商",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00651",
+      "name": "盘庚迁殷",
+      "dynasty": "商",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00653",
+      "name": "内外服制度",
+      "dynasty": "商",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00654",
+      "name": "贞卜制度",
+      "dynasty": "商",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00656",
+      "name": "《盘庚》",
+      "dynasty": "商",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00659",
+      "name": "外丙",
+      "dynasty": "商",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00666",
+      "name": "河亶甲",
+      "dynasty": "商",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00669",
+      "name": "祖丁",
+      "dynasty": "商",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00670",
+      "name": "南庚",
+      "dynasty": "商",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00674",
+      "name": "相土",
+      "dynasty": "商",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00678",
+      "name": "比干",
+      "dynasty": "商",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00680",
+      "name": "箕子",
+      "dynasty": "商",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00683",
+      "name": "伊尹",
+      "dynasty": "商",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00684",
+      "name": "傅说",
+      "dynasty": "商",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00687",
+      "name": "土方",
+      "dynasty": "商",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00689",
+      "name": "牧野之战",
+      "dynasty": "商",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00690",
+      "name": "帝辛征东夷",
+      "dynasty": "商",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00693",
+      "name": "人殉制度",
+      "dynasty": "商",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00694",
+      "name": "青铜礼器制度",
+      "dynasty": "商",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00696",
+      "name": "卫庄公",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00701",
+      "name": "卫武公",
+      "dynasty": "西周",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00712",
+      "name": "晋灵公",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00713",
+      "name": "晋襄公",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00731",
+      "name": "郑厉公",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00733",
+      "name": "郑成公",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00734",
+      "name": "郑文公",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00736",
+      "name": "郑简公",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00737",
+      "name": "郑襄公",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00742",
+      "name": "陈湣公",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00743",
+      "name": "陈灵公",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00747",
+      "name": "鲁公伯禽",
+      "dynasty": "西周",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00754",
+      "name": "鲁昭公",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00755",
+      "name": "鲁桓公",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00757",
+      "name": "鲁湣公",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00759",
+      "name": "鲁釐公",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00764",
+      "name": "齐悼公",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00766",
+      "name": "齐懿公",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00768",
+      "name": "齐桓公",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00769",
+      "name": "齐灵公",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00771",
+      "name": "齐简公",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00775",
+      "name": "齐顷公",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00776",
+      "name": "牧野之战",
+      "dynasty": "西周",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00778",
+      "name": "营建东都洛邑",
+      "dynasty": "西周",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00779",
+      "name": "昭王南征",
+      "dynasty": "西周",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00780",
+      "name": "穆王西征",
+      "dynasty": "西周",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00783",
+      "name": "千亩之战",
+      "dynasty": "西周",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00784",
+      "name": "犬戎灭周",
+      "dynasty": "西周",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00785",
+      "name": "平王东迁",
+      "dynasty": "西周",
+      "sibling": "GLBL_00986",
+      "actions": {
+        "commentary": "clone",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00787",
+      "name": "料民于太原",
+      "dynasty": "西周",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00788",
+      "name": "分封制",
+      "dynasty": "西周",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00790",
+      "name": "礼乐制度",
+      "dynasty": "西周",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00794",
+      "name": "国野制",
+      "dynasty": "西周",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00796",
+      "name": "明德慎罚",
+      "dynasty": "西周",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00798",
+      "name": "《清庙》",
+      "dynasty": "西周",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00800",
+      "name": "《大诰》",
+      "dynasty": "西周",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00801",
+      "name": "《酒诰》",
+      "dynasty": "西周",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00803",
+      "name": "周孝王",
+      "dynasty": "西周",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00804",
+      "name": "周夷王",
+      "dynasty": "西周",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00807",
+      "name": "祭公谋父",
+      "dynasty": "西周",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00808",
+      "name": "芮良夫",
+      "dynasty": "西周",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00810",
+      "name": "仲山甫",
+      "dynasty": "西周",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00812",
+      "name": "虢公长父",
+      "dynasty": "西周",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00813",
+      "name": "尹吉甫",
+      "dynasty": "西周",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00814",
+      "name": "荆楚方国",
+      "dynasty": "西周",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00818",
+      "name": "季历",
+      "dynasty": "西周",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "skip"
+      }
+    },
+    {
+      "id": "GLBL_00993",
+      "name": "太康失国",
+      "dynasty": "夏",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01021",
+      "name": "齐献公",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01022",
+      "name": "齐昭公",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01023",
+      "name": "齐文公",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01024",
+      "name": "鲁惠公",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01025",
+      "name": "陈怀公",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01026",
+      "name": "陈哀公",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01027",
+      "name": "郑釐公",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01028",
+      "name": "郑缪公",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01029",
+      "name": "郑武公",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01030",
+      "name": "郑悼公",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01031",
+      "name": "郑定公",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01032",
+      "name": "郑声公",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01033",
+      "name": "蔡缪侯",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01034",
+      "name": "蔡平侯",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01035",
+      "name": "蔡哀侯",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01036",
+      "name": "燕惠公",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01037",
+      "name": "楚文王",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01038",
+      "name": "楚共王",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01039",
+      "name": "曹成公",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01040",
+      "name": "曹悼公",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01041",
+      "name": "曹共公",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01042",
+      "name": "宋昭公",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01043",
+      "name": "宋共公",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01044",
+      "name": "卫襄公",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01045",
+      "name": "卫懿公",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01046",
+      "name": "周景王",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01047",
+      "name": "周灵王",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01048",
+      "name": "周釐王",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01049",
+      "name": "周庄王",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01050",
+      "name": "周桓王",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01051",
+      "name": "周平王",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01052",
+      "name": "周简王",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01053",
+      "name": "周顷王",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01054",
+      "name": "周匡王",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01055",
+      "name": "骊姬",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01056",
+      "name": "夏姬",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01057",
+      "name": "共叔段",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01058",
+      "name": "公子纠",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01059",
+      "name": "赵夙",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01060",
+      "name": "韩万",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01061",
+      "name": "竖刁",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01062",
+      "name": "费无极",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01063",
+      "name": "伊戾",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01064",
+      "name": "赵盾",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01065",
+      "name": "百里奚",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01066",
+      "name": "叔向",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01067",
+      "name": "季札",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01068",
+      "name": "师旷",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01069",
+      "name": "卜商",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01070",
+      "name": "鲍叔牙",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01071",
+      "name": "狐偃",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01072",
+      "name": "文种",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01073",
+      "name": "先轸",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01074",
+      "name": "孟明视",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01075",
+      "name": "曹刿",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01076",
+      "name": "郤克",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01077",
+      "name": "申包胥",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01078",
+      "name": "赤狄",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01079",
+      "name": "白狄",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01080",
+      "name": "山戎",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01081",
+      "name": "陆浑戎",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01082",
+      "name": "百濮",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01083",
+      "name": "钟子期",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01084",
+      "name": "柳下惠",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01085",
+      "name": "程婴",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01086",
+      "name": "弦高",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01091",
+      "name": "召公奭",
+      "dynasty": "西周",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01093",
+      "name": "微子启",
+      "dynasty": "商",
+      "sibling": "GLBL_00679",
+      "actions": {
+        "commentary": "clone",
+        "witness": "clone"
+      }
+    },
+    {
+      "id": "GLBL_01096",
+      "name": "魏公子无忌",
+      "dynasty": "战国",
+      "sibling": "GLBL_00488",
+      "actions": {
+        "commentary": "clone",
+        "witness": "clone"
+      }
+    },
+    {
+      "id": "GLBL_01105",
+      "name": "庄子",
+      "dynasty": "战国",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01108",
+      "name": "范蠡",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01109",
+      "name": "邹衍",
+      "dynasty": "战国",
+      "sibling": "GLBL_00884",
+      "actions": {
+        "commentary": "clone",
+        "witness": "clone"
+      }
+    },
+    {
+      "id": "GLBL_01110",
+      "name": "韩厥",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01112",
+      "name": "孙膑",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01113",
+      "name": "李牧",
+      "dynasty": "战国",
+      "sibling": "GLBL_00885",
+      "actions": {
+        "commentary": "clone",
+        "witness": "clone"
+      }
+    },
+    {
+      "id": "GLBL_01114",
+      "name": "赵奢",
+      "dynasty": "战国",
+      "sibling": "GLBL_00886",
+      "actions": {
+        "commentary": "clone",
+        "witness": "clone"
+      }
+    },
+    {
+      "id": "GLBL_01118",
+      "name": "晋唐叔虞",
+      "dynasty": "西周",
+      "sibling": "GLBL_00806",
+      "actions": {
+        "commentary": "clone",
+        "witness": "clone"
+      }
+    },
+    {
+      "id": "GLBL_01119",
+      "name": "赵惠文王",
+      "dynasty": "战国",
+      "sibling": "GLBL_00858",
+      "actions": {
+        "commentary": "clone",
+        "witness": "clone"
+      }
+    },
+    {
+      "id": "GLBL_01120",
+      "name": "郑定公",
+      "dynasty": "春秋",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_01121",
+      "name": "齐桓公午",
+      "dynasty": "战国",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    }
+  ]
+}

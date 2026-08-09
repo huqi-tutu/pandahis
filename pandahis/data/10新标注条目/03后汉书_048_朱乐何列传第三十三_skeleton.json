@@ -1,0 +1,524 @@
+{
+  "volume": "朱乐何列传",
+  "source_file": "03后汉书_048_朱乐何列传第三十三.txt",
+  "total_paragraphs": 52,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "朱晖",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "朱晖",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "朱晖",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "朱晖",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "朱晖",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "朱晖",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "朱晖",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "朱晖",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "朱晖",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "朱穆",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "朱穆",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "朱穆",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "朱穆",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "朱穆",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "朱穆",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "朱穆",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "朱穆",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "朱穆",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "朱穆",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "朱穆",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "朱穆",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "朱穆",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "朱穆",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "朱穆",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "朱穆",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "朱穆",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "朱穆",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "朱穆",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "朱穆",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "乐恢",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "乐恢",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "乐恢",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "乐恢",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "乐恢",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "乐恢",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "何敞",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "何敞",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "何敞",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "何敞",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "何敞",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "何敞",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "何敞",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "何敞",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [
+        {
+          "name": "何敞",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 47,
+      "owners": [
+        {
+          "name": "何敞",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 48,
+      "owners": [
+        {
+          "name": "何敞",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 49,
+      "owners": [
+        {
+          "name": "何敞",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 50,
+      "owners": [
+        {
+          "name": "何敞",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 51,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 52,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HOUHANSHU_048_01",
+      "史略名称": "朱晖",
+      "史略简介": "朱晖",
+      "原文字句": "朱晖字文季，南阳宛人也。家世衣冠。晖早孤，有气决。年十三，王莽败，天下乱，与外氏家属从田间奔入宛城。道遇群贼，白刃劫诸妇女，略夺衣物。昆弟宾客皆惶迫，伏地莫敢动。晖拔剑前曰：“财物皆可取耳，诸母衣不可得。今日朱晖死日也！”贼见其小，壮其志，笑曰：“童子内刀。”遂舍之而去。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷48·朱乐何列传》",
+      "paragraphs": [
+        {
+          "volume": "朱乐何列传",
+          "paragraph_from": 2,
+          "paragraph_to": 10
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_048_02",
+      "史略名称": "朱穆",
+      "史略简介": "朱穆",
+      "原文字句": "穆字公叔。年五岁，便有孝称。父母有病，辄不饮食，差乃复常。及壮耽学，锐意讲诵，或时思至，不自知亡失衣冠，颠队坑岸。其父常以为专愚，几不知数马足。穆愈更精笃。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷48·朱乐何列传》",
+      "paragraphs": [
+        {
+          "volume": "朱乐何列传",
+          "paragraph_from": 11,
+          "paragraph_to": 30
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_048_03",
+      "史略名称": "乐恢",
+      "史略简介": "乐恢",
+      "原文字句": "乐恢字伯奇，京兆长陵人也。父亲，为县吏，得罪于令，收将杀之。恢年十一，常俯伏寺门，昼夜号泣。令闻而矜之，即解出亲。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷48·朱乐何列传》",
+      "paragraphs": [
+        {
+          "volume": "朱乐何列传",
+          "paragraph_from": 32,
+          "paragraph_to": 37
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_048_04",
+      "史略名称": "何敞",
+      "史略简介": "何敞",
+      "原文字句": "何敞字文高，扶风平陵人也。其先家于汝阴。六世祖比干，学《尚书》于朝错，武帝时为廷尉正，与张汤同时。汤持法深而比干务仁恕，数与汤争，虽不能尽得，然所济活者以千数。后迁丹阳都尉，因徙居平陵。敞父宠，建武中为千乘都尉，以病免，遂隐居不仕。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷48·朱乐何列传》",
+      "paragraphs": [
+        {
+          "volume": "朱乐何列传",
+          "paragraph_from": 38,
+          "paragraph_to": 50
+        }
+      ]
+    }
+  ]
+}

@@ -10,6 +10,7 @@ import { formatApiRequestError } from '../../native-utils/load-error-message'
 import { computePageTopPadPx } from '../../native-utils/nav-metrics'
 import { getEnvVersion, isDevtoolsClient } from '../../native-utils/runtime-env'
 import { ROUTES, SUPPORT_EMAIL, navigateTo } from '../../native-utils/router'
+import { APP_DISPLAY_NAME } from '../../native-utils/brand-assets'
 
 const APP_VERSION = '1.0.0'
 
@@ -19,6 +20,7 @@ Page({
     apiBase: '',
     pageTopPadPx: 88,
     appVersion: APP_VERSION,
+    aboutNavTitle: `关于${APP_DISPLAY_NAME}`,
   },
   onLoad() {
     try {

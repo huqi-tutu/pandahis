@@ -1,0 +1,38 @@
+{
+  "work": "03后汉书",
+  "vol": "022",
+  "volume_name": "铫期王霸祭遵列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_arc": "C",
+  "volume_texture": "sequential",
+  "skip_reason": null,
+  "protagonists_cap_note": "卷名三人+祭肜；传末嗣封/无子国除段归该传主，不单 exclude。",
+  "protagonists": [
+    {
+      "name": "铫期",
+      "category": "武将",
+      "rationale": "云台功臣；P2–P7（含嗣封）。"
+    },
+    {
+      "name": "王霸",
+      "category": "武将",
+      "rationale": "云台功臣字元伯；P8–P16（含嗣封）。"
+    },
+    {
+      "name": "祭遵",
+      "category": "武将",
+      "rationale": "征虏将军；P17–P24（含无子国除、引出从弟）。"
+    },
+    {
+      "name": "祭肜",
+      "category": "武将",
+      "rationale": "遵从弟，辽东守边；P25–P31（含子参）。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "论赞"
+  ]
+}

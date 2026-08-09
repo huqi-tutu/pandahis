@@ -1,0 +1,153 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01163",
+  "写作结构": "正史叙述见翻译详录（《汉书·扬雄传》）；拓展文以史外文献为主，先述《法言》成书背景与主旨（据《汉书·艺文志》著录及扬雄《自序》线索），再引《论衡·对作》等东汉文献对扬雄著作的评述，辅以《隋书·经籍志》著录信息说明其流传；具体章节内容与谶纬论辩过程留白。",
+  "候选著作": [
+    {
+      "出处": "《汉书·扬雄传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史中扬雄生平及著作记载的主要来源，含《法言》成书背景",
+      "检索词": "扬雄传",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《汉书·艺文志》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "著录扬雄所著书，可证《法言》在汉代目录学中的位置",
+      "检索词": "扬雄",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《论衡·对作》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "东汉王充对扬雄著作的评论，可佐证《法言》在东汉初的流传与影响",
+      "检索词": "扬雄",
+      "采用": true,
+      "原文摘句": "扬子云作《太玄》，造《法言》，以为经莫大于《易》，故作《太玄》；传莫大于《论语》，故作《法言》。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《隋书·经籍志》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "著录《法言》历代注本，反映其学术传承",
+      "检索词": "法言",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《法言·序》（扬雄自序）",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "《法言》篇首自序，说明撰著宗旨，为理解全书关键",
+      "检索词": "法言序",
+      "采用": true,
+      "原文摘句": "夫有意而不至者有矣，未有无意而至者也。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《四库全书总目提要·子部·儒家类》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "清代官修目录对《法言》的提要，综述其学术价值与版本源流",
+      "检索词": "法言",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《汉书·扬雄传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史中扬雄生平及著作记载的主要来源，含《法言》成书背景",
+      "检索词": "扬雄传",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《汉书·艺文志》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "著录扬雄所著书，可证《法言》在汉代目录学中的位置",
+      "检索词": "扬雄",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《论衡·对作》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "东汉王充对扬雄著作的评论，可佐证《法言》在东汉初的流传与影响",
+      "检索词": "扬雄",
+      "采用": true,
+      "原文摘句": "扬子云作《太玄》，造《法言》，以为经莫大于《易》，故作《太玄》；传莫大于《论语》，故作《法言》。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《隋书·经籍志》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "著录《法言》历代注本，反映其学术传承",
+      "检索词": "法言",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《法言·序》（扬雄自序）",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "《法言》篇首自序，说明撰著宗旨，为理解全书关键",
+      "检索词": "法言序",
+      "采用": true,
+      "原文摘句": "夫有意而不至者有矣，未有无意而至者也。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《四库全书总目提要·子部·儒家类》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "清代官修目录对《法言》的提要，综述其学术价值与版本源流",
+      "检索词": "法言",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 4,
+    "overall": "B"
+  }
+}

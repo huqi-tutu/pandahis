@@ -1,0 +1,39 @@
+{
+  "work": "03后汉书",
+  "vol": "060",
+  "volume_name": "章帝八王列传",
+  "volume_type_guess": "传",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_arc": "C",
+  "volume_texture": "sequential",
+  "skip_reason": null,
+  "protagonists_cap_note": "合传主轴≤5；嗣封归各王；和帝有本纪不建条；平原胜不建条。",
+  "protagonists": [
+    {
+      "name": "刘伉",
+      "category": "宗戚",
+      "rationale": "千乘贞王，质帝所出支系。"
+    },
+    {
+      "name": "刘庆",
+      "category": "宗戚",
+      "rationale": "清河孝王，安帝父；最厚。"
+    },
+    {
+      "name": "刘寿",
+      "category": "宗戚",
+      "rationale": "济北惠王。"
+    },
+    {
+      "name": "刘开",
+      "category": "宗戚",
+      "rationale": "河间孝王，桓帝/灵帝支系所出。"
+    },
+    {
+      "name": "刘淑",
+      "category": "宗戚",
+      "rationale": "城阳怀王；解渎亭侯淑支归刘开。"
+    }
+  ]
+}

@@ -152,20 +152,20 @@ def load_grounding(entry: dict[str, Any], paths: dict[str, Path]) -> str:
     name = str(entry.get("史略名称", "")).strip()
     chunks: list[str] = []
 
-    # 04 单条译文
-    trans_dir = paths["translate_output"]
+    # 11 新标注条目翻译（v2 译文 SSOT；不再读 04）
+    trans_dir = paths.get("translate_output_v2") or paths["translate_output"]
     if trans_dir.is_dir():
         for fp in trans_dir.glob(f"{entry_id}_*.json"):
             try:
                 doc = json.loads(fp.read_text(encoding="utf-8"))
                 detail = str(doc.get("翻译详情") or "").strip()
                 if detail:
-                    chunks.append(f"## 04史料翻译 · {fp.name}\n\n{detail}")
+                    chunks.append(f"## 11新标注条目翻译 · {fp.name}\n\n{detail}")
                     break
             except (OSError, json.JSONDecodeError):
                 continue
 
-    # 06 详情
+    # 06 详情（可选加厚，非门禁）
     detail_dir = paths["dynasty_knowledge_details"]
     if detail_dir.is_dir():
         for fp in detail_dir.glob(f"{entry_id}_*.json"):
@@ -198,7 +198,7 @@ def _category_rules(category: str) -> str:
     return f"""本次**只整理「{category}」类别**的关系；不要输出其他类别。
 - `关系类别` 必须全部为 **{category}**
 - `关系ID` 前缀：**{prefix}**
-- 无可靠史料的不写；有史料则**尽量写全**该类别下的关键人物，不设条数上限
+- 无可靠史料的不写；有史料时优先写**最重要、最紧密**的人物，**每个二级枢纽下直接人物不得超过 10 人**（不是写全朝所有出现过的人名）
 - 同一 `关系类别` + `关系层级` + `关系节点标题` 只能一条；多面关系合并入 `关系简述`"""
 
 
@@ -221,12 +221,13 @@ def build_category_prompt(
 2. 每条记录字段：`关联史略名称`、`关系ID`、`关系类别`、`关系层级`、`关系节点标题`、`上级连接线标题`、`关系简述`；二级分类枢纽须含 `节点类型":"二级分类"`；层级 ≥ 二级时填 `所属一级关系` 等链字段（见 schema）。
 3. `关联史略名称` 固定为 **{subject}**。
 4. {_category_rules(category)}
-5. **仅依据下方 grounding**（06详情/04译文/索引）写关系；无依据不编造；不得凭通识补节点。
-6. 除「好友」外，须先写二级分类枢纽（`关系层级=一级`，`上级连接线标题=""`），再挂具体人物；好友人物直接一级挂出且边标题为空。**无具体人物的二级枢纽不要写**（不适用则整类输出 `[]`）。
-7. 除「家庭·配偶→子女」外，人物均为叶节点；禁止孙辈、徒孙、兄弟姐妹之子女。
-8. 同僚/敌对/师徒：二级枢纽→人物的 `上级连接线标题` 必须为 `""`；家庭边标题按 taxonomy（父亲/母亲、正妻/妾/嫔妃/丈夫、兄/弟/姐/妹、子/女）。配偶边标题**必须站在条目主人公视角**（对方是主人公的正妻/妾/嫔妃，或主人公的丈夫；如嫘祖→黄帝用「丈夫」，黄帝→嫘祖用「正妻」）。婚姻关系只写「家庭·配偶」，禁止再挂到同僚或好友。
-9. 禁止旧类别名：`君臣`→`同僚`；顶级`外敌`→`敌对`；`师从`→`师徒`。好友**禁止**写成二级分类枢纽。
-10. `关系简述` 1–2 句写依据要点（可追溯到 grounding）。
+5. **仅依据下方 grounding**（11译文/06详情/索引）写关系；无依据不编造；不得凭通识补节点。
+6. **所有类别**（含好友）须先写二级分类枢纽（`关系层级=一级`，`节点类型=二级分类`，`上级连接线标题=""`），再挂具体人物。好友一级名与二级枢纽名同为「好友」。**无具体人物的二级枢纽不要写**（不适用则整类输出 `[]`）。
+7. **每个二级枢纽下直接人物（关系层级=二级）最多 10 人（硬上限）**；超过则只输出最重要、最紧密的 10 人。选取优先：至亲/核心君臣/关键战和政争主角 > 史料笔墨多者 > 已有独立史略者；禁止堆砌满朝文武、全体宗室。不满 10 不必凑数。
+8. 展开深度：家庭·配偶支最多四级（配偶→子女→孙辈）；其余人物为叶节点。禁止曾孙、徒孙、兄弟姐妹之子女。生母不详时配偶节点标题用「不详」。
+9. 同僚/敌对/师徒/好友：二级枢纽→人物的 `上级连接线标题` 必须为 `""`。家庭边标题**仅允许**白名单单字/词：父/母、妻/妾/妃/夫、兄/弟/姐/妹（分不清用兄弟/姐妹）、子/女。**禁止**祖父/祖母/孙/侄/婿等（祖辈不入表；孙辈只能挂在配偶→子女下用子/女）。配偶边标题**必须站在条目主人公视角**（如嫘祖→黄帝用「夫」，黄帝→嫘祖用「妻」）。
+10. 互斥：家庭排斥同僚/好友/师徒；同僚排斥好友；敌对可与他类共现。禁止旧类别名：`君臣`→`同僚`；顶级`外敌`→`敌对`；`师从`→`师徒`。`关系简述` 1–2 句写依据要点（可追溯到 grounding）。
+11. **节点资格**：叶子节点只写**具体人物**；家族/氏姓（鲍氏、高氏）可写。禁止国家/政权/方国（秦国、齐国）、少数民族/部族（犬戎、淮夷、三苗）、职衔空名（东周君、中山国君）、战役名。敌对外敌须写具体君主/将领；名失载则不写该节点。
 
 # 关系 taxonomy（SSOT）
 
@@ -277,6 +278,47 @@ def normalize_records(records: list[dict[str, Any]], subject: str) -> list[dict[
             row["record_id"] = f"rec{uuid.uuid4().hex[:12]}"
         out.append(row)
     return out
+
+
+def _index_person_names(index_path: Path | None = None) -> set[str]:
+    try:
+        doc = load_index(index_path)
+    except Exception:
+        return set()
+    names: set[str] = set()
+    for e in _index_entries(doc):
+        if not is_person_entry(e):
+            continue
+        name = str(e.get("史略名称") or "").strip()
+        if name:
+            names.add(name)
+    return names
+
+
+def sanitize_and_reid(
+    records: list[dict[str, Any]],
+    subject: str,
+    *,
+    index_path: Path | None = None,
+    index_names: set[str] | None = None,
+) -> tuple[list[dict[str, Any]], list[str]]:
+    """确定性清洗（边标题/互斥/枢纽≤10）后重新编号。"""
+    from sanitize_relations import sanitize_relation_records  # noqa: WPS433
+
+    names = index_names if index_names is not None else _index_person_names(index_path)
+    cleaned, notes = sanitize_relation_records(records, index_names=names)
+    cleaned = normalize_records(cleaned, subject)
+    cleaned = reassign_relation_ids(cleaned)
+    return cleaned, notes
+
+
+REVISE_RULES = """硬性修正规则（必须全部满足）：
+1. 关系类别仅 家庭/同僚/敌对/师徒/好友；二级分类为枢纽（含好友）。
+2. 每个二级枢纽下直接人物（关系层级=二级）**最多 10 人**；超出只保留最重要、最紧密的 10 人，删除其余及其子孙。
+3. 家庭边标题白名单仅：父/母/妻/妾/妃/夫/兄/弟/姐/妹/兄弟/姐妹/子/女；禁止祖父/祖母/孙/侄等；旧称父亲→父、儿子→子。
+4. 非家庭人物边标题必须为 ""。
+5. 互斥：家庭 > 同僚 > 好友；家庭亦排斥师徒。
+6. 配偶支可至四级孙辈；禁止曾孙/五级。"""
 
 
 def reassign_relation_ids(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -435,6 +477,19 @@ def compose_one(
     if not records:
         raise RuntimeError("全部类别均无有效产出")
 
+    index_names = _index_person_names(index_path)
+    records, san_notes = sanitize_and_reid(
+        records, subject, index_path=index_path, index_names=index_names
+    )
+    if san_notes:
+        print("sanitize:")
+        for n in san_notes[:40]:
+            print(f"  - {n}")
+        if len(san_notes) > 40:
+            print(f"  …另有 {len(san_notes)-40} 条")
+    if not records:
+        raise RuntimeError("清洗后关系表为空")
+
     write_output(out_path, records)
     ok, verify_out = run_verify(out_path, strict=True)
     print(verify_out)
@@ -458,7 +513,7 @@ def compose_one(
 当前 JSON：
 {json.dumps(records, ensure_ascii=False, indent=2)}
 
-规则 SSOT 摘要：关系类别仅 家庭/同僚/敌对/师徒/好友；二级分类为枢纽节点；除配偶→子女外人物为叶；禁止 所属四级关系 与五级。
+{REVISE_RULES}
 
 请输出修正后的 JSON 数组：
 """
@@ -467,6 +522,15 @@ def compose_one(
     records2 = normalize_records(extract_json_array(raw2), subject)
     if not records2:
         raise RuntimeError(f"修订轮未返回有效 JSON\n{verify_out}")
+    records2, san_notes2 = sanitize_and_reid(
+        records2, subject, index_path=index_path, index_names=index_names
+    )
+    if san_notes2:
+        print("sanitize(after revise):")
+        for n in san_notes2[:40]:
+            print(f"  - {n}")
+    if not records2:
+        raise RuntimeError(f"修订清洗后为空\n{verify_out}")
     write_output(out_path, records2)
     ok2, verify_out2 = run_verify(out_path, strict=True)
     print(verify_out2)
@@ -486,7 +550,18 @@ def _verify_and_maybe_revise(
     eid: str,
     paths: dict[str, Path],
     revise_on_fail: bool,
+    index_path: Path | None = None,
 ) -> list[dict[str, Any]]:
+    index_names = _index_person_names(index_path)
+    records, san_notes = sanitize_and_reid(
+        records, subject, index_path=index_path, index_names=index_names
+    )
+    if san_notes:
+        print("sanitize:")
+        for n in san_notes[:40]:
+            print(f"  - {n}")
+    write_output(out_path, records)
+
     ok, verify_out = run_verify(out_path, strict=True)
     print(verify_out)
     if ok:
@@ -506,7 +581,7 @@ def _verify_and_maybe_revise(
 当前 JSON：
 {json.dumps(records, ensure_ascii=False, indent=2)}
 
-规则 SSOT 摘要：关系类别仅 家庭/同僚/敌对/师徒/好友；二级分类为枢纽节点；除配偶→子女外人物为叶；禁止 所属四级关系 与五级。
+{REVISE_RULES}
 
 请输出修正后的 JSON 数组：
 """
@@ -515,6 +590,13 @@ def _verify_and_maybe_revise(
     records2 = normalize_records(extract_json_array(raw2), subject)
     if not records2:
         raise RuntimeError(f"修订轮未返回有效 JSON\n{verify_out}")
+    records2, san_notes2 = sanitize_and_reid(
+        records2, subject, index_path=index_path, index_names=index_names
+    )
+    if san_notes2:
+        print("sanitize(after revise):")
+        for n in san_notes2[:40]:
+            print(f"  - {n}")
     write_output(out_path, records2)
     ok2, verify_out2 = run_verify(out_path, strict=True)
     print(verify_out2)
@@ -586,6 +668,7 @@ def backfill_category_one(
         eid=eid,
         paths=paths,
         revise_on_fail=revise_on_fail,
+        index_path=index_path,
     )
     if sync_db:
         import_json_file(out_path, entry_id=eid, index_path=index_path, sql_out=sql_out, mysql=mysql)

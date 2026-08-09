@@ -48372,3 +48372,5 @@
 {"ts": "2026-07-04T19:24:06Z", "event": "llm_end", "work": "02汉书", "vol": "119", "step": "4", "elapsed_sec": 56.0, "artifacts": ["/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/02汉书_119_叙传第七十下_skeleton.json", "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/02汉书_119_叙传第七十下_skeleton.json"]}
 {"ts": "2026-07-04T19:24:06Z", "event": "step4_artifacts_written", "work": "02汉书", "vol": "119", "artifacts": ["/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/02汉书_119_叙传第七十下_skeleton.json", "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/03索引标注条目/02汉书_119_叙传第七十下_skeleton.json"]}
 {"ts": "2026-07-04T19:24:09Z", "event": "job_done", "work": "02汉书", "vol": "119", "step": "4"}
+{"ts": "2026-08-08T08:24:54Z", "event": "bootstrap_start", "work": "03后汉书"}
+{"ts": "2026-08-08T08:24:55Z", "event": "bootstrap_done", "work": "03后汉书", "volumes": 130}

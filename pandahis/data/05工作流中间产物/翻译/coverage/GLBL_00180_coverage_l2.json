@@ -1,0 +1,19 @@
+{
+  "schema": "translate-coverage-l2/v1",
+  "史略ID": "GLBL_00180",
+  "passed": true,
+  "degraded": false,
+  "summary": "该句信息已传达。",
+  "l1_ratio": 0.0,
+  "l1_min_ratio": 0.0,
+  "claims": [
+    {
+      "id": "M018",
+      "claim": "当时张博的女婿京房因通晓《易》阴阳之学得宠于皇帝，多次被召见言事。",
+      "status": "conveyed",
+      "evidence": "当时，张博的女婿京房因为精通「易经」阴阳之学，在皇帝面前很得宠，多次被召见言事。",
+      "note": ""
+    }
+  ],
+  "issues": []
+}

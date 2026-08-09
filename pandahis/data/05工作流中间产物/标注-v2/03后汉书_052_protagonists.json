@@ -1,0 +1,29 @@
+{
+  "work": "03后汉书",
+  "vol": "052",
+  "volume_name": "班梁列传",
+  "volume_type_guess": "传",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_arc": "C",
+  "volume_texture": "sequential",
+  "skip_reason": null,
+  "protagonists_cap_note": "班勇厚附单立；何熙短传归梁慬。",
+  "protagonists": [
+    {
+      "name": "班超",
+      "category": "武将",
+      "rationale": "定远侯，通西域主轴。"
+    },
+    {
+      "name": "班勇",
+      "category": "武将",
+      "rationale": "超子厚附传，复通西域。"
+    },
+    {
+      "name": "梁慬",
+      "category": "武将",
+      "rationale": "卷名梁氏主轴；何熙短附归慬。"
+    }
+  ]
+}

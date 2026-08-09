@@ -49,6 +49,8 @@
     status="{{detail.status}}"
     sourceType="{{detail.sourceType}}"
     submittedAt="{{detail.createdAt}}"
+    showViewSource="{{canViewSource}}"
     bind:close="closeDetail"
+    bind:viewsource="onViewSource"
   />
 </view>

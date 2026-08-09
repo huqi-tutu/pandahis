@@ -1,0 +1,40 @@
+{
+  "work": "03后汉书",
+  "vol": "018",
+  "volume_name": "邓寇列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_arc": "C",
+  "volume_texture": "interleaved",
+  "skip_reason": null,
+  "protagonists_cap_note": "邓氏三代（禹/训/骘）+寇恂；寇荣附传不建条。",
+  "protagonists": [
+    {
+      "name": "邓禹",
+      "category": "武将",
+      "rationale": "开国元功；P2–P19（含诸子封爵叙事）。"
+    },
+    {
+      "name": "邓训",
+      "category": "武将",
+      "rationale": "禹第六子，护羌校尉等；P21–P31。"
+    },
+    {
+      "name": "邓骘",
+      "category": "武将",
+      "rationale": "训子，大将军，定策安帝；P32–P42。"
+    },
+    {
+      "name": "寇恂",
+      "category": "文臣",
+      "rationale": "治河内、转输名臣；P48–P59。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "世系链",
+    "论赞",
+    "赞曰"
+  ]
+}

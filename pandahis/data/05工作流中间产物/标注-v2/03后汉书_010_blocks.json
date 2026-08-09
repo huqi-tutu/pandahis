@@ -1,0 +1,38 @@
+{
+  "work": "03后汉书",
+  "vol": "010",
+  "total_paragraphs": 175,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 174,
+      "paragraph_to": 174,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 175,
+      "paragraph_to": 175,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "汉献帝",
+      "category": "君王",
+      "paragraph_from": 2,
+      "paragraph_to": 173,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "孝献皇帝讳协，灵帝中子也。母王美人，为何皇后所害。中平六年四月，少帝即位，封帝为",
+        "close_paragraph": 173,
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

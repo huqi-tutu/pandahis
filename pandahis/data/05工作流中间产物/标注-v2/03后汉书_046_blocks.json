@@ -1,0 +1,87 @@
+{
+  "work": "03后汉书",
+  "vol": "046",
+  "total_paragraphs": 59,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_046_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 21,
+      "paragraph_to": 21,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 58,
+      "paragraph_to": 59,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "第五伦",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 20,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "第五伦字伯鱼，京兆长陵人也。其先齐诸田，诸田徙园陵者多，故以次第为氏。",
+        "close_paragraph": 20,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P20"
+      }
+    },
+    {
+      "name": "第五种",
+      "category": "文臣",
+      "paragraph_from": 22,
+      "paragraph_to": 27,
+      "boundary_evidence": {
+        "open_paragraph": 22,
+        "open_phrase": "种字兴先，少厉志义，为吏，冠名州郡。永寿中，以司徒掾清诏使冀州，廉察灾害，举奏刺",
+        "close_paragraph": 27,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P22–P27"
+      }
+    },
+    {
+      "name": "钟离意",
+      "category": "文臣",
+      "paragraph_from": 28,
+      "paragraph_to": 39,
+      "boundary_evidence": {
+        "open_paragraph": 28,
+        "open_phrase": "钟离意字子阿，会稽山阴人也。少为郡督邮。时部县亭长有受人酒礼者，府下记案考之。意",
+        "close_paragraph": 39,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P28–P39"
+      }
+    },
+    {
+      "name": "宋均",
+      "category": "文臣",
+      "paragraph_from": 40,
+      "paragraph_to": 53,
+      "boundary_evidence": {
+        "open_paragraph": 40,
+        "open_phrase": "宋均字叔庠，南阳安众人也。父伯，建武初为五官中郎将。均以父任为郎，时年十五，好经",
+        "close_paragraph": 53,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P40–P53"
+      }
+    },
+    {
+      "name": "寒朗",
+      "category": "文臣",
+      "paragraph_from": 54,
+      "paragraph_to": 57,
+      "boundary_evidence": {
+        "open_paragraph": 54,
+        "open_phrase": "寒朗字伯奇，鲁国薛人也。生三日，遭天下乱，弃之荆刺；数日兵解，母往视，犹尚气息，",
+        "close_paragraph": 57,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P54–P57"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

@@ -1,0 +1,66 @@
+{
+  "work": "03后汉书",
+  "updated_at": "2026-08-09T14:10:42Z",
+  "volumes": {
+    "011": {
+      "volume_name": "皇后纪第十上",
+      "volume_texture": "interleaved",
+      "reason": "explicit",
+      "noncontiguous_entries": [
+        "章德窦皇后"
+      ],
+      "skeleton_file": "03后汉书_011_皇后纪第十上_skeleton.json",
+      "note": "混写卷：同一人物段落非连续。翻译/质检须按 entry.paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。",
+      "registered_at": "2026-08-08T10:05:43Z"
+    },
+    "012": {
+      "volume_name": "皇后纪第十下",
+      "volume_texture": "interleaved",
+      "reason": "explicit",
+      "noncontiguous_entries": [
+        "灵思何皇后"
+      ],
+      "skeleton_file": "03后汉书_012_皇后纪第十下_skeleton.json",
+      "note": "混写卷：同一人物段落非连续。翻译/质检须按 entry.paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。",
+      "registered_at": "2026-08-08T10:05:43Z"
+    },
+    "017": {
+      "volume_name": "李王邓来列传",
+      "volume_texture": "interleaved",
+      "reason": "explicit",
+      "noncontiguous_entries": [],
+      "skeleton_file": "03后汉书_017_李王邓来列传第五_skeleton.json",
+      "note": "混写卷：同一人物段落非连续。翻译/质检须按 entry.paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。",
+      "registered_at": "2026-08-09T02:27:33Z"
+    },
+    "013": {
+      "volume_name": "刘玄刘盆子列传",
+      "volume_texture": "interleaved",
+      "reason": "explicit",
+      "noncontiguous_entries": [
+        "刘盆子"
+      ],
+      "skeleton_file": "03后汉书_013_刘玄刘盆子列传第一_skeleton.json",
+      "note": "混写卷：同一人物段落非连续。翻译/质检须按 entry.paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。",
+      "registered_at": "2026-08-09T02:27:32Z"
+    },
+    "014": {
+      "volume_name": "王刘张李彭卢列传",
+      "volume_texture": "interleaved",
+      "reason": "explicit",
+      "noncontiguous_entries": [],
+      "skeleton_file": "03后汉书_014_王刘张李彭卢列传第二_skeleton.json",
+      "note": "混写卷：同一人物段落非连续。翻译/质检须按 entry.paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。",
+      "registered_at": "2026-08-09T02:27:32Z"
+    },
+    "018": {
+      "volume_name": "邓寇列传",
+      "volume_texture": "interleaved",
+      "reason": "explicit",
+      "noncontiguous_entries": [],
+      "skeleton_file": "03后汉书_018_邓寇列传第六_skeleton.json",
+      "note": "混写卷：同一人物段落非连续。翻译/质检须按 entry.paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。",
+      "registered_at": "2026-08-09T02:27:33Z"
+    }
+  }
+}

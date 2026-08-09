@@ -1,0 +1,110 @@
+{
+  "work": "03后汉书",
+  "vol": "012",
+  "total_paragraphs": 85,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_012_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 8,
+      "paragraph_to": 8,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 15,
+      "paragraph_to": 16,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 17,
+      "paragraph_to": 17,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 18,
+      "paragraph_to": 30,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 33,
+      "paragraph_to": 33,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 37,
+      "paragraph_to": 45,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 46,
+      "paragraph_to": 46,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 47,
+      "paragraph_to": 47,
+      "exclude_reason": "赞曰"
+    },
+    {
+      "paragraph_from": 48,
+      "paragraph_to": 85,
+      "exclude_reason": "世系链"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "安思阎皇后",
+      "category": "宗戚",
+      "paragraph_from": 2,
+      "paragraph_to": 7,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "安思阎皇后讳姬，河南荥阳人也。祖父章，永平中为尚书，以二妹为贵人。章精力晓旧典，",
+        "close_paragraph": 7,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P7"
+      }
+    },
+    {
+      "name": "顺烈梁皇后",
+      "category": "宗戚",
+      "paragraph_from": 9,
+      "paragraph_to": 14,
+      "boundary_evidence": {
+        "open_paragraph": 9,
+        "open_phrase": "顺烈梁皇后讳妠，大将军商之女，恭怀皇后弟之孙也。后生，有光景之祥。少善女工。好《",
+        "close_paragraph": 14,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P9–P14"
+      }
+    },
+    {
+      "name": "灵思何皇后",
+      "category": "宗戚",
+      "paragraph_from": 31,
+      "paragraph_to": 32,
+      "boundary_evidence": {
+        "open_paragraph": 31,
+        "open_phrase": "灵思何皇后讳某，南阳宛人。家本屠者，以选入掖庭。长七尺一寸。生皇子辩，养于史道人",
+        "close_paragraph": 32,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P31–P32"
+      }
+    },
+    {
+      "name": "灵思何皇后",
+      "category": "宗戚",
+      "paragraph_from": 34,
+      "paragraph_to": 36,
+      "boundary_evidence": {
+        "open_paragraph": 34,
+        "open_phrase": "中平六年，帝崩，皇子辩即位，尊后为皇太后。太后临朝。后兄大将军进欲诛宦官，反为所",
+        "close_paragraph": 36,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P34–P36"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

@@ -87,6 +87,10 @@
   white-space: nowrap;
 }
 
+.unit-civ-tab-hover {
+  color: #5C5C5C;
+}
+
 /* 选中态：文字变墨 + 底部短横线（v3 去掉胶囊底） */
 .unit-civ-tab.active {
   color: #262626;
@@ -321,10 +325,18 @@ $cat-index-w: 28rpx;
   left: 0;
   right: 0;
   z-index: 85;
-  padding: 8rpx 24rpx 12rpx;
+  /* 顶 padding 必须为 0：外框顶边贴齐 Tab 底，否则会像「撞到内尺才定住」 */
+  padding: 0 24rpx 12rpx;
   background: rgba(248, 246, 242, 0.98);
   border-bottom: 1rpx solid #EDEAE6;
   box-sizing: border-box;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.dyn-axis-fixed.is-pinned {
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .dyn-axis-fixed-clip {
@@ -692,10 +704,17 @@ $cat-index-w: 28rpx;
   display: flex;
   flex-direction: row;
   align-items: stretch;
-  padding: 8rpx 24rpx 12rpx;
+  padding: 0 24rpx 12rpx;
   background: rgba(248, 246, 242, 0.98);
   border-bottom: 1rpx solid #EDEAE6;
   box-sizing: border-box;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.dyn-axis-fixed.is-pinned {
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .dyn-axis-fixed .dyn-swim-lane-head-spacer {
@@ -1719,6 +1738,14 @@ $cat-index-w: 28rpx;
   flex-direction: row;
   align-items: center;
   gap: 6rpx;
+}
+
+.chip-tooltip-time-prefix {
+  font-size: 20rpx;
+  font-weight: 500;
+  line-height: 28rpx;
+  color: rgba(74, 63, 63, 0.72);
+  white-space: nowrap;
 }
 
 .chip-tooltip-time-start,

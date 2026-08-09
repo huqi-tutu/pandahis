@@ -1,0 +1,155 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01150",
+  "写作结构": "正史叙述见翻译详录（《汉书·郑吉传》及《西域传》），拓展文写史外异说与延展：以《资治通鉴》补宣帝神爵二年（前60年）西域都护设立之编年与郑吉事迹；以《通典·边防》述都护之职掌与西域诸国形势；以《西汉会要》辑录都护相关制度条目；以《太平寰宇记》存西域地理沿革之异说；留白处不虚构行政编制与运作规程。",
+  "候选著作": [
+    {
+      "出处": "《汉书·郑吉传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "索引主要史料出处，记郑吉为第一任西域都护及设立始末",
+      "检索词": "郑吉",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《汉书·西域传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "详载西域诸国与都护府之关系，为设立背景之正史依据",
+      "检索词": "西域都护",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《资治通鉴·汉纪》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "编年记载神爵二年（前60年）西域都护之设，可补正史时间坐标",
+      "检索词": "西域都护",
+      "采用": true,
+      "原文摘句": "神爵二年，匈奴日逐王先贤掸将众万余降汉，郑吉迎之，遂因吉并护车师以西北道，故号都护。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《通典·边防七·西戎》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "杜佑综述西域都护之职掌与西域诸国形势，可作制度延展",
+      "检索词": "都护",
+      "采用": true,
+      "原文摘句": "宣帝时，郑吉为都护，督察乌孙、康居诸国动静，有变以闻，可安辑，安辑之。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《西汉会要·职官》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "辑录西汉都护相关制度条目，便于制度史对照",
+      "检索词": "都护",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《太平寰宇记·陇右道》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "存西域地理沿革与都护府治所之异说，可作后世附会层补充",
+      "检索词": "都护府",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《汉书·郑吉传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "索引主要史料出处，记郑吉为第一任西域都护及设立始末",
+      "检索词": "郑吉",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《汉书·西域传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "详载西域诸国与都护府之关系，为设立背景之正史依据",
+      "检索词": "西域都护",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《资治通鉴·汉纪》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "编年记载神爵二年（前60年）西域都护之设，可补正史时间坐标",
+      "检索词": "西域都护",
+      "采用": true,
+      "原文摘句": "神爵二年，匈奴日逐王先贤掸将众万余降汉，郑吉迎之，遂因吉并护车师以西北道，故号都护。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《通典·边防七·西戎》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "杜佑综述西域都护之职掌与西域诸国形势，可作制度延展",
+      "检索词": "都护",
+      "采用": true,
+      "原文摘句": "宣帝时，郑吉为都护，督察乌孙、康居诸国动静，有变以闻，可安辑，安辑之。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《西汉会要·职官》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "辑录西汉都护相关制度条目，便于制度史对照",
+      "检索词": "都护",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《太平寰宇记·陇右道》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "存西域地理沿革与都护府治所之异说，可作后世附会层补充",
+      "检索词": "都护府",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 3,
+    "C_excluded": 3,
+    "overall": "B"
+  }
+}

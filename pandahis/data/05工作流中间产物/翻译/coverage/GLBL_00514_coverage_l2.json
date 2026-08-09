@@ -1,0 +1,19 @@
+{
+  "schema": "translate-coverage-l2/v1",
+  "史略ID": "GLBL_00514",
+  "passed": true,
+  "degraded": false,
+  "summary": "该句母本信息已完整传达。",
+  "l1_ratio": 0.0,
+  "l1_min_ratio": 0.0,
+  "claims": [
+    {
+      "id": "M108–M109",
+      "claim": "广子三人，曰当户、椒、敢，为郎。；天子与韩嫣戏，嫣少不逊，当户击嫣，嫣走。",
+      "status": "conveyed",
+      "evidence": "译文末尾明确提到：李广有三个儿子，名叫当户、椒、敢，都在宫中做郎官。有一次天子跟韩嫣嬉戏，韩嫣年少无礼，当户出手打韩嫣，韩嫣吓得跑开了。",
+      "note": ""
+    }
+  ],
+  "issues": []
+}

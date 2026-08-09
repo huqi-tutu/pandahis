@@ -1,0 +1,75 @@
+{
+  "work": "03后汉书",
+  "vol": "039",
+  "total_paragraphs": 34,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_039_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 22,
+      "paragraph_to": 22,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 33,
+      "paragraph_to": 34,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "张纯",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 8,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "张纯字伯仁，京兆杜陵人也。高祖父安世，宣帝时为大司马卫将军，封富平侯。父放，为成",
+        "close_paragraph": 8,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P8"
+      }
+    },
+    {
+      "name": "张奋",
+      "category": "文臣",
+      "paragraph_from": 9,
+      "paragraph_to": 13,
+      "boundary_evidence": {
+        "open_paragraph": 9,
+        "open_phrase": "奋字稚通。父纯，临终敕家丞曰：“司空无功于时，猥蒙爵士，身死之后，勿议传国。”奋",
+        "close_paragraph": 13,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P9–P13"
+      }
+    },
+    {
+      "name": "曹褒",
+      "category": "文臣",
+      "paragraph_from": 14,
+      "paragraph_to": 21,
+      "boundary_evidence": {
+        "open_paragraph": 14,
+        "open_phrase": "曹褒字叔通，鲁国薛人也。父充，持《庆氏礼》，建武中为博士，从巡狩岱宗，定封禅礼，",
+        "close_paragraph": 21,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P14–P21"
+      }
+    },
+    {
+      "name": "郑玄",
+      "category": "文臣",
+      "paragraph_from": 23,
+      "paragraph_to": 32,
+      "boundary_evidence": {
+        "open_paragraph": 23,
+        "open_phrase": "郑玄字康成，北海高密人也。八世祖崇，哀帝时尚书仆射。玄少为乡啬夫，得休归，尝诣学",
+        "close_paragraph": 32,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P23–P32"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

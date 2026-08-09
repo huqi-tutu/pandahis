@@ -1,0 +1,85 @@
+{
+  "work": "03后汉书",
+  "vol": "051",
+  "total_paragraphs": 51,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_051_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 10,
+      "paragraph_to": 12,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 13,
+      "paragraph_to": 13,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 31,
+      "paragraph_to": 32,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 50,
+      "paragraph_to": 51,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "郭躬",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 4,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "郭躬字仲孙，颍川阳翟人也。家世衣冠。父弘，习《小杜律》。太守寇恂以弘为决曹掾，断",
+        "close_paragraph": 4,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P4"
+      }
+    },
+    {
+      "name": "郭镇",
+      "category": "文臣",
+      "paragraph_from": 5,
+      "paragraph_to": 9,
+      "boundary_evidence": {
+        "open_paragraph": 5,
+        "open_phrase": "镇字桓钟，少修家业。辟太尉府，再迁，延光中为尚书。及中黄门孙程诛中常侍江京等而立",
+        "close_paragraph": 9,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P5–P9"
+      }
+    },
+    {
+      "name": "陈宠",
+      "category": "文臣",
+      "paragraph_from": 14,
+      "paragraph_to": 30,
+      "boundary_evidence": {
+        "open_paragraph": 14,
+        "open_phrase": "陈宠字昭公，沛国洨人也。曾祖父咸，成、哀间以律令为尚书。平帝时，王莽辅政，多改汉",
+        "close_paragraph": 30,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P14–P30"
+      }
+    },
+    {
+      "name": "陈忠",
+      "category": "文臣",
+      "paragraph_from": 33,
+      "paragraph_to": 49,
+      "boundary_evidence": {
+        "open_paragraph": 33,
+        "open_phrase": "忠字伯始，永初中辟司徒府，三迁廷尉正，以才能有声称。司徒刘恺举忠明习法律，宜备机",
+        "close_paragraph": 49,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P33–P49"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

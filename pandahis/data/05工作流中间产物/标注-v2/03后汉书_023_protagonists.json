@@ -1,0 +1,49 @@
+{
+  "work": "03后汉书",
+  "vol": "023",
+  "volume_name": "任李万邳刘耿列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_arc": "C",
+  "volume_texture": "sequential",
+  "skip_reason": null,
+  "protagonists_cap_note": "信都群将合传；P4–5城头子路/力子都插叙归任光；嗣封归各传主。",
+  "protagonists": [
+    {
+      "name": "任光",
+      "category": "武将",
+      "rationale": "信都太守；P2–P6（含P4–5插叙）。"
+    },
+    {
+      "name": "李忠",
+      "category": "武将",
+      "rationale": "P11–P15（含嗣封）。"
+    },
+    {
+      "name": "万脩",
+      "category": "武将",
+      "rationale": "P16–P17（含嗣封）。"
+    },
+    {
+      "name": "邳彤",
+      "category": "武将",
+      "rationale": "P18–P24（含嗣封与张万尹绥）。"
+    },
+    {
+      "name": "刘植",
+      "category": "武将",
+      "rationale": "P26–P27。"
+    },
+    {
+      "name": "耿纯",
+      "category": "武将",
+      "rationale": "P28–P38（含宗族封爵收束）。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "论赞",
+    "其他"
+  ]
+}

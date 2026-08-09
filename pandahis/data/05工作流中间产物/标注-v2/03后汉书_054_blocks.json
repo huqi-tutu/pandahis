@@ -1,0 +1,58 @@
+{
+  "work": "03后汉书",
+  "vol": "054",
+  "total_paragraphs": 56,
+  "volume_subtype": "hezhuan",
+  "derived_from": "03后汉书_054_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 55,
+      "paragraph_to": 56,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "王充",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 4,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "王充字仲任，会稽上虞人也，其先自魏郡元城徒焉。充少孤，乡里称孝。后到京师，受业太",
+        "close_paragraph": 4,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P4"
+      }
+    },
+    {
+      "name": "王符",
+      "category": "文臣",
+      "paragraph_from": 5,
+      "paragraph_to": 28,
+      "boundary_evidence": {
+        "open_paragraph": 5,
+        "open_phrase": "王符字节信，安定临泾人也。少好学，有志操，与马融、窦章、张衡、崔瑗等友善。安定俗",
+        "close_paragraph": 28,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P5–P28"
+      }
+    },
+    {
+      "name": "仲长统",
+      "category": "文臣",
+      "paragraph_from": 29,
+      "paragraph_to": 54,
+      "boundary_evidence": {
+        "open_paragraph": 29,
+        "open_phrase": "仲长统字公理，山阳高平人也。少好学，博涉书记，赡于文辞。年二十余，游学青、徐、并",
+        "close_paragraph": 54,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P29–P54"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

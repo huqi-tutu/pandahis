@@ -1,0 +1,133 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01139",
+  "写作结构": "正史叙述见翻译详录（《史记·匈奴列传》），拓展文写史外异说与延展：先述和亲制度确立背景（白登之围后），再引《汉书·匈奴传》补充运作程序与效果，后引《资治通鉴》编年记载，最后以《通典》或《文献通考》综述制度沿革；不展开王昭君等传说人物。",
+  "候选著作": [
+    {
+      "出处": "《史记·匈奴列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "索引主要史料出处，记载和亲政策确立及汉初实施情况",
+      "检索词": "和亲",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《汉书·匈奴传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "补充汉初和亲具体运作（宗室女嫁单于、财物馈赠）及后续效果，与史记互证",
+      "检索词": "和亲",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《资治通鉴·汉纪》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "编年体记载汉高祖白登之围后和亲政策的提出与实施，可作时间线参照",
+      "检索词": "和亲",
+      "采用": true,
+      "原文摘句": "（汉高祖）乃使刘敬奉宗室女翁主为单于阏氏，岁奉匈奴絮缯酒食物各有数，约为兄弟以和亲。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《通典·边防典》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "唐代典志综述和亲制度沿革，可作制度史视角的补充",
+      "检索词": "和亲",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《文献通考·四裔考》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋末元初综述历代和亲政策，含后世评价与异说，可作延展",
+      "检索词": "和亲",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·匈奴列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "索引主要史料出处，记载和亲政策确立及汉初实施情况",
+      "检索词": "和亲",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《汉书·匈奴传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "补充汉初和亲具体运作（宗室女嫁单于、财物馈赠）及后续效果，与史记互证",
+      "检索词": "和亲",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《资治通鉴·汉纪》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "编年体记载汉高祖白登之围后和亲政策的提出与实施，可作时间线参照",
+      "检索词": "和亲",
+      "采用": true,
+      "原文摘句": "（汉高祖）乃使刘敬奉宗室女翁主为单于阏氏，岁奉匈奴絮缯酒食物各有数，约为兄弟以和亲。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《通典·边防典》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "唐代典志综述和亲制度沿革，可作制度史视角的补充",
+      "检索词": "和亲",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《文献通考·四裔考》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋末元初综述历代和亲政策，含后世评价与异说，可作延展",
+      "检索词": "和亲",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 3,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

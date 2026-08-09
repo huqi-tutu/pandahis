@@ -1,0 +1,117 @@
+{
+  "work": "03后汉书",
+  "vol": "028",
+  "total_paragraphs": 75,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_028_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 14,
+      "paragraph_to": 17,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 22,
+      "paragraph_to": 24,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 31,
+      "paragraph_to": 33,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 34,
+      "paragraph_to": 34,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 35,
+      "paragraph_to": 46,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 59,
+      "paragraph_to": 62,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 71,
+      "paragraph_to": 74,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 75,
+      "paragraph_to": 75,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "伏湛",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 13,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "伏湛字惠公，琅邪东武人也。九世祖胜，字子贱，所谓济南伏生者也。湛高祖父孺，武帝时",
+        "close_paragraph": 13,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P13"
+      }
+    },
+    {
+      "name": "侯霸",
+      "category": "文臣",
+      "paragraph_from": 18,
+      "paragraph_to": 21,
+      "boundary_evidence": {
+        "open_paragraph": 18,
+        "open_phrase": "侯霸字君房，河南密人也。族父渊，以宦者有才辩，任职元帝时，佐右显等领中书，号曰大",
+        "close_paragraph": 21,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P18–P21"
+      }
+    },
+    {
+      "name": "宋弘",
+      "category": "文臣",
+      "paragraph_from": 25,
+      "paragraph_to": 30,
+      "boundary_evidence": {
+        "open_paragraph": 25,
+        "open_phrase": "宋弘字仲子，京兆长安人也。父尚，成帝时至少府。哀帝立，以不附董贤，违忤抵罪。弘少",
+        "close_paragraph": 30,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P25–P30"
+      }
+    },
+    {
+      "name": "赵熹",
+      "category": "文臣",
+      "paragraph_from": 47,
+      "paragraph_to": 58,
+      "boundary_evidence": {
+        "open_paragraph": 47,
+        "open_phrase": "赵憙字伯阳，南阳宛人也。少有节操。从兄为人所杀，无子，憙年十五，常思报之。乃挟兵",
+        "close_paragraph": 58,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P47–P58"
+      }
+    },
+    {
+      "name": "韦彪",
+      "category": "文臣",
+      "paragraph_from": 63,
+      "paragraph_to": 70,
+      "boundary_evidence": {
+        "open_paragraph": 63,
+        "open_phrase": "韦彪字孟达，扶风平陵人也。高祖贤，宣帝时为丞相。祖赏，哀帝时为大司马。",
+        "close_paragraph": 70,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P63–P70"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

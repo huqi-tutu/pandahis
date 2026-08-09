@@ -1,0 +1,39 @@
+{
+  "work": "03后汉书",
+  "vol": "047",
+  "volume_name": "光武十王列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_arc": "C",
+  "volume_texture": "sequential",
+  "skip_reason": null,
+  "protagonists_cap_note": "≤5：东平苍、东海彊、楚英、广陵荆、沛辅；嗣封归各王。",
+  "protagonists": [
+    {
+      "name": "刘苍",
+      "category": "宗戚",
+      "rationale": "东平宪王；P35–P56。"
+    },
+    {
+      "name": "刘彊",
+      "category": "宗戚",
+      "rationale": "东海恭王；P3–P11。"
+    },
+    {
+      "name": "刘英",
+      "category": "宗戚",
+      "rationale": "楚王；P19–P24。"
+    },
+    {
+      "name": "刘荆",
+      "category": "宗戚",
+      "rationale": "广陵思王；P73–P79。"
+    },
+    {
+      "name": "刘辅",
+      "category": "宗戚",
+      "rationale": "沛献王；P12–P18。"
+    }
+  ]
+}

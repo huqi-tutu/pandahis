@@ -1,0 +1,19 @@
+{
+  "schema": "translate-coverage-l2/v1",
+  "史略ID": "GLBL_00342",
+  "passed": true,
+  "degraded": false,
+  "summary": "该条信息已完整传达。",
+  "l1_ratio": 0.0,
+  "l1_min_ratio": 0.0,
+  "claims": [
+    {
+      "id": "M108–M109",
+      "claim": "汉十二年，上从击破布军归，疾益甚，愈欲易太子。；留侯谏，不听，因疾不视事。",
+      "status": "conveyed",
+      "evidence": "白话译文中明确提到：汉十二年，刘邦击败黥布归来，病重，更想改立太子；留侯张良劝谏，刘邦不听，张良称病不处理政事。",
+      "note": ""
+    }
+  ],
+  "issues": []
+}

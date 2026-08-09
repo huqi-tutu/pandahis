@@ -17,6 +17,7 @@ Page({
         invitees: [],
         pageTopPadPx: 88,
         showRules: false,
+        heroCardBgUrl: brand_assets_1.INVITE_HERO_CARD_BG_URL,
     },
     onLoad() {
         try {
@@ -137,7 +138,7 @@ Page({
             ? (0, router_1.buildUrl)(router_1.ROUTES.inviteAccept, { inviteCode: code })
             : router_1.ROUTES.inviteAccept;
         return {
-            title: '邀请你一起读历史图谱',
+            title: `邀请你一起读${brand_assets_1.APP_DISPLAY_NAME}`,
             path: path.startsWith('/') ? path : `/${path}`,
             imageUrl: brand_assets_1.INVITE_SHARE_COVER_URL,
         };
@@ -145,7 +146,7 @@ Page({
     onShareTimeline() {
         const code = (this.data.inviteCode || '').trim();
         return {
-            title: '历史图谱 · 邀请你一起读',
+            title: `${brand_assets_1.APP_DISPLAY_NAME} · 邀请你一起读`,
             ...(code ? { query: `inviteCode=${encodeURIComponent(code)}` } : {}),
         };
     },

@@ -1,0 +1,102 @@
+{
+  "work": "03后汉书",
+  "vol": "055",
+  "total_paragraphs": 44,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_055_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 2,
+      "paragraph_to": 2,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 3,
+      "paragraph_to": 3,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 10,
+      "paragraph_to": 10,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 36,
+      "paragraph_to": 42,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 43,
+      "paragraph_to": 44,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "刘羡",
+      "category": "宗戚",
+      "paragraph_from": 4,
+      "paragraph_to": 9,
+      "boundary_evidence": {
+        "open_paragraph": 4,
+        "open_phrase": "陈敬王羡，永平三年封广平王。建初三年，有司奏遣羡与巨鹿王恭、乐成王党俱就国。肃宗",
+        "close_paragraph": 9,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P4–P9"
+      }
+    },
+    {
+      "name": "刘恭",
+      "category": "宗戚",
+      "paragraph_from": 11,
+      "paragraph_to": 16,
+      "boundary_evidence": {
+        "open_paragraph": 11,
+        "open_phrase": "彭城靖王恭，永平九年赐号灵寿王。十五年，封为臣鹿王。建初三年，徙封江陵王，改南郡",
+        "close_paragraph": 16,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P11–P16"
+      }
+    },
+    {
+      "name": "刘党",
+      "category": "宗戚",
+      "paragraph_from": 17,
+      "paragraph_to": 22,
+      "boundary_evidence": {
+        "open_paragraph": 17,
+        "open_phrase": "乐成靖王党，永平九年赐号重熹王，十五年封乐成王。党聪惠，善《史书》，喜正文字。与",
+        "close_paragraph": 22,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P17–P22"
+      }
+    },
+    {
+      "name": "刘衍",
+      "category": "宗戚",
+      "paragraph_from": 23,
+      "paragraph_to": 26,
+      "boundary_evidence": {
+        "open_paragraph": 23,
+        "open_phrase": "下邳惠王衍，永平十五年封。衍有容貌，肃宗即位，常在左右。建初初冠，诏赐衍师傅已下",
+        "close_paragraph": 26,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P23–P26"
+      }
+    },
+    {
+      "name": "刘畅",
+      "category": "宗戚",
+      "paragraph_from": 27,
+      "paragraph_to": 35,
+      "boundary_evidence": {
+        "open_paragraph": 27,
+        "open_phrase": "梁节王畅，永平十五年封为汝南王。母阴贵人有宠，畅尤被爱幸，国土租入倍于诸国。肃宗",
+        "close_paragraph": 35,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P27–P35"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

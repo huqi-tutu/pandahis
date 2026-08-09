@@ -1,0 +1,497 @@
+{
+  "volume": "袁张韩周列传",
+  "source_file": "03后汉书_050_袁张韩周列传第三十五.txt",
+  "total_paragraphs": 57,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "袁安",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "袁安",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "袁安",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "袁安",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "袁安",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "袁安",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "袁安",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "袁安",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "袁安",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "袁安",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "袁安",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 14,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 15,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 16,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 17,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 18,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 19,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 20,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 21,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 22,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 23,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 24,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 25,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 26,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 27,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 28,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 29,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 30,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 31,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 32,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "张酺",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "张酺",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "张酺",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "张酺",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "张酺",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "张酺",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "张酺",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "张酺",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "张酺",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "张酺",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "张酺",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "张酺",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "韩棱",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [
+        {
+          "name": "韩棱",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 47,
+      "owners": [
+        {
+          "name": "韩棱",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 48,
+      "owners": [
+        {
+          "name": "韩棱",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 49,
+      "owners": [
+        {
+          "name": "韩棱",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 50,
+      "owners": [
+        {
+          "name": "韩棱",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 51,
+      "owners": [
+        {
+          "name": "周荣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 52,
+      "owners": [
+        {
+          "name": "周荣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 53,
+      "owners": [
+        {
+          "name": "周荣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 54,
+      "owners": [
+        {
+          "name": "周荣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 55,
+      "owners": [
+        {
+          "name": "周荣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 56,
+      "owners": [
+        {
+          "name": "周荣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 57,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HOUHANSHU_050_01",
+      "史略名称": "袁安",
+      "史略简介": "袁安",
+      "原文字句": "袁安字邵公，汝南汝阳人也。祖父良，习《孟氏易》，平帝时举明经，为太子舍人；建武初，至成武令。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷50·袁张韩周列传》",
+      "paragraphs": [
+        {
+          "volume": "袁张韩周列传",
+          "paragraph_from": 2,
+          "paragraph_to": 12
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_050_02",
+      "史略名称": "张酺",
+      "史略简介": "张酺",
+      "原文字句": "张酺字孟侯，汝南细阳人，赵王张敖之后也。敖子寿，封细阳之池阳乡，后废，因家焉。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷50·袁张韩周列传》",
+      "paragraphs": [
+        {
+          "volume": "袁张韩周列传",
+          "paragraph_from": 33,
+          "paragraph_to": 44
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_050_03",
+      "史略名称": "韩棱",
+      "史略简介": "韩棱",
+      "原文字句": "韩棱字伯师，颍川舞阳人，弓高侯穨当之后也。世为乡里著姓。父寻，建武中为陇西太守。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷50·袁张韩周列传》",
+      "paragraphs": [
+        {
+          "volume": "袁张韩周列传",
+          "paragraph_from": 45,
+          "paragraph_to": 50
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_050_04",
+      "史略名称": "周荣",
+      "史略简介": "周荣",
+      "原文字句": "周荣字平孙，庐江舒人也。肃宗时，举明经，辟司徒袁安府。安数与论议，甚器之。及安举奏窦景及与窦宪争立北单于事，皆荣所具草。窦氏客太尉掾徐齮深恶之，胁荣曰：“子为袁公腹心之谋，排奏窦氏，窦氏悍士刺客满城中，谨备之矣！”荣曰：“荣江淮孤生，蒙先帝大恩，以历宰二城。今复得备宰士，纵为窦氏所害，诚所甘心。”故常敕妻子，若卒遇飞祸，无得殡敛，冀以区区腐身觉悟朝廷。及窦氏败，荣由此显名。自郾令擢为尚书令。出为颍",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷50·袁张韩周列传》",
+      "paragraphs": [
+        {
+          "volume": "袁张韩周列传",
+          "paragraph_from": 51,
+          "paragraph_to": 56
+        }
+      ]
+    }
+  ]
+}

@@ -12,7 +12,7 @@
         <text class="list-arrow">›</text>
       </view>
       <view class="list-row" bindtap="goAbout" hover-class="row-hover" hover-stay-time="60">
-        <text class="list-label">关于历史图谱</text>
+        <text class="list-label">{{aboutNavTitle}}</text>
         <text class="list-value">v{{appVersion}}</text>
         <text class="list-arrow">›</text>
       </view>

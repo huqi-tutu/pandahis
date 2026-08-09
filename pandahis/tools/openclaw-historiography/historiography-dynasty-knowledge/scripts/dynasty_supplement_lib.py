@@ -174,48 +174,155 @@ def call_llm(
     return str(res.get("result") or "").strip()
 
 
+def _coerce_candidate_list(data: Any) -> list[dict[str, Any]]:
+    """接受数组，或常见包装对象（candidates/事略/典制/论著/人物）。"""
+    if isinstance(data, list):
+        return [x for x in data if isinstance(x, dict)]
+    if not isinstance(data, dict):
+        return []
+    for key in ("candidates", "事略", "典制", "论著", "人物", "items", "data"):
+        val = data.get(key)
+        if isinstance(val, list):
+            return [x for x in val if isinstance(x, dict)]
+    # 单层 {类别: [...]} 且仅一类
+    lists = [v for v in data.values() if isinstance(v, list)]
+    if len(lists) == 1:
+        return [x for x in lists[0] if isinstance(x, dict)]
+    return []
+
+
 def extract_json_array(text: str) -> list[dict[str, Any]]:
     if not text:
         return []
-    m = re.search(r"```(?:json)?\s*(\[.*?\])\s*```", text, re.DOTALL)
-    raw = m.group(1) if m else None
-    if raw is None:
-        s, e = text.find("["), text.rfind("]")
-        raw = text[s : e + 1] if s != -1 and e > s else None
-    if not raw:
+    dec = json.JSONDecoder()
+    # 1) fenced JSON（贪婪取 fence 内全文，避免嵌套 ] 截断）
+    m = re.search(r"```(?:json)?\s*([\s\S]*?)\s*```", text)
+    if m:
+        block = m.group(1).strip()
+        try:
+            data = json.loads(block)
+            rows = _coerce_candidate_list(data)
+            if rows:
+                return rows
+        except json.JSONDecodeError:
+            pass
+        for opener in ("[", "{"):
+            start = block.find(opener)
+            if start == -1:
+                continue
+            try:
+                data, _ = dec.raw_decode(block[start:])
+                rows = _coerce_candidate_list(data)
+                if rows:
+                    return rows
+            except json.JSONDecodeError:
+                continue
+    # 2) 全文首个 [ 或 { 起 raw_decode
+    for opener in ("[", "{"):
+        start = text.find(opener)
+        if start == -1:
+            continue
+        try:
+            data, _ = dec.raw_decode(text[start:])
+            rows = _coerce_candidate_list(data)
+            if rows:
+                return rows
+        except json.JSONDecodeError:
+            continue
+    # 3) 回退：首 [ 到末 ]
+    s, e = text.find("["), text.rfind("]")
+    if s != -1 and e > s:
+        try:
+            data = json.loads(text[s : e + 1])
+            return _coerce_candidate_list(data)
+        except json.JSONDecodeError:
+            pass
+    # 4) 截断容错：补全未闭合的数组（max_tokens 截断常见）
+    start = text.find("[")
+    if start != -1:
+        repaired = _repair_truncated_json_array(text[start:])
+        if repaired:
+            return repaired
+    return []
+
+
+def _repair_truncated_json_array(raw: str) -> list[dict[str, Any]]:
+    """从被截断的 JSON 数组中尽力救出已完整的对象。"""
+    # 逐对象 raw_decode：成功则收下，失败则停
+    rows: list[dict[str, Any]] = []
+    i = raw.find("[")
+    if i == -1:
         return []
-    try:
-        data = json.loads(raw)
-        return data if isinstance(data, list) else []
-    except json.JSONDecodeError:
-        return []
+    i += 1
+    dec = json.JSONDecoder()
+    n = len(raw)
+    while i < n:
+        while i < n and raw[i] in " \t\r\n,":
+            i += 1
+        if i >= n or raw[i] == "]":
+            break
+        if raw[i] != "{":
+            break
+        try:
+            obj, end = dec.raw_decode(raw[i:])
+        except json.JSONDecodeError:
+            break
+        if isinstance(obj, dict):
+            rows.append(obj)
+        i += end
+    return rows
 
 
 def extract_json_object(text: str) -> dict[str, Any] | None:
     if not text:
         return None
-    m = re.search(r"```(?:json)?\s*(\{.*\})\s*```", text, re.DOTALL)
-    raw = m.group(1) if m else None
-    if raw is None:
-        s, e = text.find("{"), text.rfind("}")
-        raw = text[s : e + 1] if s != -1 and e > s else None
-    if not raw:
-        return None
-    try:
-        data = json.loads(raw)
-        return data if isinstance(data, dict) else None
-    except json.JSONDecodeError:
-        pass
-    # 容错：从首个 { 起 raw_decode（应对尾部多余文字）
-    dec = json.JSONDecoder()
+    m = re.search(r"```(?:json)?\s*([\s\S]*?)\s*```", text)
+    candidates: list[str] = []
+    if m:
+        candidates.append(m.group(1).strip())
+    s, e = text.find("{"), text.rfind("}")
+    if s != -1 and e > s:
+        candidates.append(text[s : e + 1])
     start = text.find("{")
     if start != -1:
+        candidates.append(text[start:])
+    dec = json.JSONDecoder()
+    for raw in candidates:
+        if not raw:
+            continue
         try:
-            data, _ = dec.raw_decode(text[start:])
-            return data if isinstance(data, dict) else None
+            data = json.loads(raw)
+            if isinstance(data, dict):
+                return data
         except json.JSONDecodeError:
-            return None
+            pass
+        try:
+            data, _ = dec.raw_decode(raw[raw.find("{") :] if "{" in raw else raw)
+            if isinstance(data, dict):
+                return data
+        except json.JSONDecodeError:
+            continue
     return None
+
+
+def extract_person_candidates_object(text: str) -> dict[str, Any] | None:
+    """从截断的人物候选 JSON 中按类救出已完整条目。"""
+    if not text:
+        return None
+    keys = ("君王", "诸侯", "宗戚", "宦官", "文臣", "武将", "蕃祚", "庶众")
+    out: dict[str, list[dict[str, Any]]] = {k: [] for k in keys}
+    found_any = False
+    for key in keys:
+        # "君王": [ ...
+        m = re.search(rf'"{re.escape(key)}"\s*:\s*\[', text)
+        if not m:
+            continue
+        arr_start = m.end() - 1  # points to [
+        rows = _repair_truncated_json_array(text[arr_start:])
+        if rows:
+            out[key] = rows
+            found_any = True
+    return out if found_any else None
 
 
 def parse_compose_detail_response(text: str) -> dict[str, Any] | None:
@@ -229,13 +336,25 @@ def parse_compose_detail_response(text: str) -> dict[str, Any] | None:
     return data
 
 
+def v2_global_index_path(histograph_root: Path) -> Path:
+    """现行标注全局索引（V2）：data/10新标注条目/史略索引_史记汉书.json。"""
+    return histograph_root / "data" / "10新标注条目" / "史略索引_史记汉书.json"
+
+
+def phase1_index_paths(histograph_root: Path) -> list[Path]:
+    """一期去重/回填只读 V2 全局索引（不再使用 03 V1）。"""
+    path = v2_global_index_path(histograph_root)
+    return [path] if path.is_file() else []
+
+
 def max_glbl_num(histograph_root: Path) -> int:
-    index_path = histograph_root / "data" / "03索引标注条目" / "史略索引_01至02.json"
-    supplement_glob = list(
-        (histograph_root / "data" / "06朝代知识补全" / "索引条目").glob("*.json")
-    )
+    paths = [
+        *phase1_index_paths(histograph_root),
+        histograph_root / "data" / "12线上史略索引" / "史略索引_online.json",
+        *list((histograph_root / "data" / "06朝代知识补全" / "索引条目").glob("*.json")),
+    ]
     nums: list[int] = []
-    for path in [index_path, *supplement_glob]:
+    for path in paths:
         if not path.is_file():
             continue
         root = json.loads(path.read_text(encoding="utf-8"))
@@ -404,6 +523,64 @@ def determine_attach_emperor_name(
     if cat in SOVEREIGN_CATEGORIES:
         return str(entry_name or "").strip()
     return str(candidate.get("建议挂靠帝王") or "").strip()
+
+
+def lookup_phase1_attach_emperor(
+    histograph_root: Path,
+    *,
+    name: str,
+    dynasty_id: str = "",
+) -> tuple[str, Any | None]:
+    """从 V2 一期索引按名称回填挂靠帝王与峰值年；（attach, peak_year）。"""
+    if not name:
+        return "", None
+    for index_path in phase1_index_paths(histograph_root):
+        root = json.loads(index_path.read_text(encoding="utf-8"))
+        entries = root.get("entries") if isinstance(root, dict) else root
+        if not isinstance(entries, list):
+            continue
+        for e in entries:
+            if not isinstance(e, dict):
+                continue
+            if str(e.get("史略名称", "")).strip() != name:
+                continue
+            if dynasty_id and str(e.get("朝代ID", "")).strip() not in ("", dynasty_id):
+                if str(e.get("朝代ID", "")).strip() and str(e.get("朝代ID", "")).strip() != dynasty_id:
+                    continue
+            attach = str(e.get("四级帝王坐标") or "").strip()
+            peak = e.get("峰值年")
+            return attach, peak
+    return "", None
+
+
+def ensure_candidate_attach_emperor(
+    candidate: dict[str, Any],
+    *,
+    category: str,
+    entry_name: str,
+    emperors: list[dict[str, Any]],
+    histograph_root: Path | None = None,
+    dynasty_id: str = "",
+) -> tuple[str, bool]:
+    """解析并必要时回填挂靠帝王。返回 (attach_name, healed)。"""
+    attach = determine_attach_emperor_name(category, candidate, entry_name)
+    if attach and find_emperor_row_exact(attach, emperors) is not None:
+        return attach, False
+    healed = False
+    if histograph_root is not None and str(category or "").strip() not in SOVEREIGN_CATEGORIES:
+        phase1_attach, peak = lookup_phase1_attach_emperor(
+            histograph_root, name=entry_name, dynasty_id=dynasty_id
+        )
+        if phase1_attach and find_emperor_row_exact(phase1_attach, emperors) is not None:
+            candidate["建议挂靠帝王"] = phase1_attach
+            attach = phase1_attach
+            healed = True
+            if peak is not None and candidate.get("建议年份") in (None, ""):
+                try:
+                    candidate["建议年份"] = int(peak)
+                except (TypeError, ValueError):
+                    candidate["建议年份"] = peak
+    return attach, healed
 
 
 def validate_attach_emperor_name(
@@ -1238,20 +1415,28 @@ def normalize_person_name(name: str, alias_map: dict[str, str]) -> str:
     return cur
 
 
+def _strip_peerage_prefix_for_alias(name: str) -> str:
+    """酂侯萧何 → 萧何；夏侯复姓不剥。"""
+    n = (name or "").strip()
+    if not n or n.startswith("夏侯"):
+        return n
+    m = re.match(r"^(.+?侯)([\u4e00-\u9fff]{2,4})$", n)
+    return m.group(2) if m else n
+
+
 def load_phase1_person_index(
     histograph_root: Path,
     dynasty_id: str,
 ) -> tuple[list[dict[str, Any]], dict[str, str]]:
-    """一期已标注人物（本朝）+ 别名→标准名索引。"""
+    """一期已标注人物（本朝 · V2）+ 别名→标准名索引。"""
     alias_map = load_person_alias_maps()
-    index_path = histograph_root / "data" / "03索引标注条目" / "史略索引_01至02.json"
-    if not index_path.is_file():
+    index_paths = phase1_index_paths(histograph_root)
+    if not index_paths:
         return [], alias_map
 
-    root = json.loads(index_path.read_text(encoding="utf-8"))
-    entries = root.get("entries") if isinstance(root, dict) else root
     persons: list[dict[str, Any]] = []
     canonical_to_aliases: dict[str, set[str]] = {}
+    seen_ids: set[str] = set()
 
     emperor_path = histograph_root / "data" / "01历史坐标数据" / "帝王.json"
     orig_to_std: dict[str, str] = {}
@@ -1262,38 +1447,49 @@ def load_phase1_person_index(
             if std and orig:
                 orig_to_std[orig] = std
 
-    if not isinstance(entries, list):
-        return [], alias_map
-
-    for e in entries:
-        if not isinstance(e, dict):
+    for index_path in index_paths:
+        root = json.loads(index_path.read_text(encoding="utf-8"))
+        entries = root.get("entries") if isinstance(root, dict) else root
+        if not isinstance(entries, list):
             continue
-        if str(e.get("朝代ID", "")).strip() != dynasty_id:
-            continue
-        cat = str(e.get("史略分类", "")).strip()
-        if cat not in PERSON_INDEX_CATEGORIES:
-            continue
-        name = str(e.get("史略名称", "")).strip()
-        if not name:
-            continue
-        canonical = normalize_person_name(name, alias_map)
-        persons.append(
-            {
-                "史略ID": e.get("史略ID"),
-                "史略名称": name,
-                "标准名": canonical,
-                "史略分类": cat,
-            }
-        )
-        canonical_to_aliases.setdefault(canonical, set()).add(name)
-        for alias, std in alias_map.items():
-            if std == canonical or std == name:
-                canonical_to_aliases[canonical].add(alias)
-        if name in orig_to_std:
-            canonical_to_aliases[canonical].add(orig_to_std[name])
-        for orig, std in orig_to_std.items():
-            if std == canonical:
-                canonical_to_aliases[canonical].add(orig)
+        for e in entries:
+            if not isinstance(e, dict):
+                continue
+            if str(e.get("朝代ID", "")).strip() != dynasty_id:
+                continue
+            cat = str(e.get("史略分类", "")).strip()
+            if cat not in PERSON_INDEX_CATEGORIES:
+                continue
+            name = str(e.get("史略名称", "")).strip()
+            if not name:
+                continue
+            eid = str(e.get("史略ID") or "").strip()
+            if eid and eid in seen_ids:
+                continue
+            if eid:
+                seen_ids.add(eid)
+            canonical = normalize_person_name(name, alias_map)
+            persons.append(
+                {
+                    "史略ID": e.get("史略ID"),
+                    "史略名称": name,
+                    "标准名": canonical,
+                    "史略分类": cat,
+                }
+            )
+            aliases = canonical_to_aliases.setdefault(canonical, set())
+            aliases.add(name)
+            short = _strip_peerage_prefix_for_alias(name)
+            if short and short != name:
+                aliases.add(short)
+            for alias, std in alias_map.items():
+                if std == canonical or std == name:
+                    aliases.add(alias)
+            if name in orig_to_std:
+                aliases.add(orig_to_std[name])
+            for orig, std in orig_to_std.items():
+                if std == canonical:
+                    aliases.add(orig)
 
     alias_index: dict[str, str] = {}
     for canonical, aliases in canonical_to_aliases.items():
@@ -1379,8 +1575,7 @@ def collect_covered_emperor_names(
     alias_map = load_person_alias_maps()
     covered: set[str] = set()
 
-    index_path = histograph_root / "data" / "03索引标注条目" / "史略索引_01至02.json"
-    if index_path.is_file():
+    for index_path in phase1_index_paths(histograph_root):
         root = json.loads(index_path.read_text(encoding="utf-8"))
         index_entries = root.get("entries") if isinstance(root, dict) else root
         for e in index_entries or []:
@@ -1554,7 +1749,9 @@ def thin_deferred_to_candidate(row: dict[str, Any]) -> dict[str, Any]:
         f"{r.get('work', '')}{r.get('vol', '')}({r.get('source_char_count', '?')}字)"
         for r in refs[:3]
     )
-    return {
+    attach = str(row.get("四级帝王坐标") or "").strip()
+    peak = row.get("峰值年")
+    out: dict[str, Any] = {
         "名称": name,
         "史略分类": row.get("史略分类"),
         "补全来源": "薄标注待补",
@@ -1564,3 +1761,11 @@ def thin_deferred_to_candidate(row: dict[str, Any]) -> dict[str, Any]:
         "审核状态": "pending",
         "去重自检": "来自薄标注注册表，一期无 GLBL",
     }
+    if attach:
+        out["建议挂靠帝王"] = attach
+    if peak is not None and str(peak).strip() != "":
+        try:
+            out["建议年份"] = int(peak)
+        except (TypeError, ValueError):
+            out["建议年份"] = peak
+    return out

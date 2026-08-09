@@ -1,0 +1,26 @@
+{
+  "work": "03后汉书",
+  "vol": "030",
+  "volume_name": "桓谭冯衍列传第十八上",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "桓谭",
+      "category": "文臣",
+      "rationale": "卷名首列人物，桓谭为东汉初著名学者、政论家，以儒学、天文历算及政论仕宦为主轴，属文臣列传。"
+    },
+    {
+      "name": "冯衍",
+      "category": "文臣",
+      "rationale": "卷名次列人物，冯衍为东汉初辞赋家、政论家，以文学辞赋与仕宦经历为主轴，属文臣列传。 冯衍与031下卷同书分卷，合并/翻译须两卷并召。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ],
+  "volume_split_note": "冯衍与031下卷同书分卷，合并/翻译须两卷并召。"
+}

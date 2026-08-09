@@ -32,7 +32,17 @@
       </view>
       <view class="correction-field">
         <text class="correction-label">史略</text>
-        <text class="correction-value">{{boxTitle || '—'}}</text>
+        <view class="correction-value-row">
+          <text class="correction-value correction-value--inline">{{boxTitle || '—'}}</text>
+          <view
+            wx:if="{{mode === 'view' && showViewSource}}"
+            class="correction-view-source"
+            catchtap="onViewSource"
+          >
+            <text class="correction-view-source-text">去查看</text>
+            <text class="correction-view-source-arrow">›</text>
+          </view>
+        </view>
       </view>
 
       <view wx:if="{{selectedText}}" class="correction-field correction-field--block">

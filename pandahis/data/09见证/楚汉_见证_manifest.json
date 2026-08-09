@@ -1,0 +1,15 @@
+{
+  "dynasty": "楚汉",
+  "mode": "witness",
+  "completed": [
+    {
+      "glbl": "GLBL_00143",
+      "name": "项羽",
+      "file": "GLBL_00143_项羽_见证.json",
+      "status": "done",
+      "merged_from": "GLBL_00544",
+      "merged_at": "2026-08-09T11:23:09.644721+00:00"
+    }
+  ],
+  "updated_at": "2026-08-09T11:23:09.644721+00:00"
+}

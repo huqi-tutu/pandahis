@@ -1,0 +1,39 @@
+{
+  "work": "03后汉书",
+  "vol": "058",
+  "volume_name": "周黄徐姜申屠列传",
+  "volume_type_guess": "传",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_arc": "C",
+  "volume_texture": "sequential",
+  "skip_reason": null,
+  "protagonists_cap_note": null,
+  "protagonists": [
+    {
+      "name": "周燮",
+      "category": "庶众",
+      "rationale": "卷名首轴隐士。"
+    },
+    {
+      "name": "黄宪",
+      "category": "庶众",
+      "rationale": "卷名次轴。"
+    },
+    {
+      "name": "徐稚",
+      "category": "庶众",
+      "rationale": "卷名徐稺。"
+    },
+    {
+      "name": "姜肱",
+      "category": "庶众",
+      "rationale": "卷名姜氏。"
+    },
+    {
+      "name": "申屠蟠",
+      "category": "庶众",
+      "rationale": "卷名末轴。"
+    }
+  ]
+}

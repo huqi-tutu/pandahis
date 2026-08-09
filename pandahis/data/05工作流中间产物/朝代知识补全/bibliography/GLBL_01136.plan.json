@@ -1,0 +1,227 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01136",
+  "写作结构": "正史叙述见翻译详录（《汉书·百官公卿表》），拓展文写史外异说与延展：先以《通典·职官》梳理三公九卿沿革与秦制承袭，再以《西汉会要》补职官细节，以《唐六典》说明后世影响，以《历代职官表》作整体对照；留白处为具体官员任免与诏令细节。",
+  "候选著作": [
+    {
+      "出处": "《汉书·百官公卿表》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "条目主要史料出处，系统记载西汉三公九卿官职设置与职掌",
+      "检索词": "百官公卿表",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《通典·职官》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "唐代杜佑所撰典志体通史，系统梳理三公九卿自秦至唐的沿革，可补《汉书》未详之制度演变",
+      "检索词": "三公九卿",
+      "采用": true,
+      "原文摘句": "秦兼天下，建皇帝之号，立百官之职。汉因循而不革，明简易，随时宜也。其后颇有所改。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《西汉会要·职官》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "南宋徐天麟编撰，分类汇编西汉典章制度，可补充三公九卿具体职掌与属官设置",
+      "检索词": "三公九卿",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《唐六典》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "唐代官制典籍，开篇追溯三公九卿源流，可证汉代制度对后世中央官制的基础性影响",
+      "检索词": "三公",
+      "采用": true,
+      "原文摘句": "三公，周之三公也。汉以丞相、太尉、御史大夫为三公。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《历代职官表》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "清代黄本骥编撰，以表格对照历代官制，可宏观呈现三公九卿制在历代职官体系中的位置",
+      "检索词": "三公九卿",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《秦会要订补》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "辑录秦代制度资料，可佐证三公九卿制承秦制之说",
+      "检索词": "三公九卿",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《汉官仪》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "东汉应劭撰，专记汉代官制仪礼，可补三公九卿具体职掌与属官细节",
+      "检索词": "三公",
+      "采用": true,
+      "原文摘句": "丞相、太尉、御史大夫，是为三公。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《汉官六种》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "清人辑录汉代官制佚书，含《汉官》《汉官解诂》等，可补《汉书·百官公卿表》未载之细节",
+      "检索词": "九卿",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《西汉年纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "南宋王益之编年体西汉史，可提供三公九卿制在汉初运作的编年线索，但属后世综述，仅作补充",
+      "检索词": "三公",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《汉书·百官公卿表》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "条目主要史料出处，系统记载西汉三公九卿官职设置与职掌",
+      "检索词": "百官公卿表",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《通典·职官》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "唐代杜佑所撰典志体通史，系统梳理三公九卿自秦至唐的沿革，可补《汉书》未详之制度演变",
+      "检索词": "三公九卿",
+      "采用": true,
+      "原文摘句": "秦兼天下，建皇帝之号，立百官之职。汉因循而不革，明简易，随时宜也。其后颇有所改。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《西汉会要·职官》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "南宋徐天麟编撰，分类汇编西汉典章制度，可补充三公九卿具体职掌与属官设置",
+      "检索词": "三公九卿",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《唐六典》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "唐代官制典籍，开篇追溯三公九卿源流，可证汉代制度对后世中央官制的基础性影响",
+      "检索词": "三公",
+      "采用": true,
+      "原文摘句": "三公，周之三公也。汉以丞相、太尉、御史大夫为三公。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《历代职官表》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "清代黄本骥编撰，以表格对照历代官制，可宏观呈现三公九卿制在历代职官体系中的位置",
+      "检索词": "三公九卿",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《秦会要订补》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "辑录秦代制度资料，可佐证三公九卿制承秦制之说",
+      "检索词": "三公九卿",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《汉官仪》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "东汉应劭撰，专记汉代官制仪礼，可补三公九卿具体职掌与属官细节",
+      "检索词": "三公",
+      "采用": true,
+      "原文摘句": "丞相、太尉、御史大夫，是为三公。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《汉官六种》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "清人辑录汉代官制佚书，含《汉官》《汉官解诂》等，可补《汉书·百官公卿表》未载之细节",
+      "检索词": "九卿",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《西汉年纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "南宋王益之编年体西汉史，可提供三公九卿制在汉初运作的编年线索，但属后世综述，仅作补充",
+      "检索词": "三公",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 6,
+    "C_excluded": 3,
+    "overall": "B"
+  }
+}

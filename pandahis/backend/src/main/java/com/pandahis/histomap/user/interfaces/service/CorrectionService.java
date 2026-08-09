@@ -14,11 +14,15 @@ import org.springframework.stereotype.Service;
 @Service
 public class CorrectionService {
   private static final int MAX_SUBMISSIONS_PER_BOX = 20;
+  private static final String SOURCE_DYNASTY = "dynasty_canvas";
+  private static final String SOURCE_BOX_DETAIL = "box_detail_selection";
+  private static final String SOURCE_CRITIQUE = "critique_detail_selection";
+  private static final String SOURCE_RELIC = "relic_detail_selection";
   private static final Set<String> SOURCE_TYPES = Set.of(
-      "dynasty_canvas",
-      "box_detail_selection",
-      "critique_detail_selection",
-      "relic_detail_selection");
+      SOURCE_DYNASTY,
+      SOURCE_BOX_DETAIL,
+      SOURCE_CRITIQUE,
+      SOURCE_RELIC);
 
   private final JdbcTemplate jdbcTemplate;
 
@@ -41,13 +45,14 @@ public class CorrectionService {
     }
 
     BoxMeta meta = requireBoxMeta(req.boxId());
+    Long sourceRefId = resolveSourceRefId(sourceType, meta.boxId(), req.sourceRefId());
     enforceSubmissionLimit(userId, meta.boxId());
 
     jdbcTemplate.update(
         "INSERT INTO user_box_correction("
             + "user_id, box_id, box_title, unit_id, civilization_name, dynasty_name, "
-            + "source_type, selected_text, reason, status"
-            + ") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 'pending')",
+            + "source_type, source_ref_id, selected_text, reason, status"
+            + ") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'pending')",
         userId,
         meta.boxId(),
         meta.boxTitle(),
@@ -55,6 +60,7 @@ public class CorrectionService {
         meta.civilizationName(),
         meta.dynastyName(),
         sourceType,
+        sourceRefId,
         selectedText,
         reason
     );
@@ -98,6 +104,31 @@ public class CorrectionService {
     return requireOwnedDetail(userId, correctionId);
   }
 
+  private Long resolveSourceRefId(String sourceType, String boxId, Long sourceRefId) {
+    if (SOURCE_CRITIQUE.equals(sourceType)) {
+      if (sourceRefId == null || sourceRefId <= 0) {
+        throw ApiException.invalidArgument("sourceRefId required for critique");
+      }
+      requireOwnedSourceRef("SELECT COUNT(1) FROM box_critique WHERE id=? AND box_id=?", sourceRefId, boxId);
+      return sourceRefId;
+    }
+    if (SOURCE_RELIC.equals(sourceType)) {
+      if (sourceRefId == null || sourceRefId <= 0) {
+        throw ApiException.invalidArgument("sourceRefId required for relic");
+      }
+      requireOwnedSourceRef("SELECT COUNT(1) FROM box_relic WHERE id=? AND box_id=?", sourceRefId, boxId);
+      return sourceRefId;
+    }
+    return null;
+  }
+
+  private void requireOwnedSourceRef(String sql, long sourceRefId, String boxId) {
+    Integer count = jdbcTemplate.queryForObject(sql, Integer.class, sourceRefId, boxId);
+    if (count == null || count == 0) {
+      throw ApiException.invalidArgument("invalid sourceRefId");
+    }
+  }
+
   private void enforceSubmissionLimit(Long userId, String boxId) {
     Integer count = jdbcTemplate.queryForObject(
         "SELECT COUNT(1) FROM user_box_correction WHERE user_id=? AND box_id=?",
@@ -114,7 +145,7 @@ public class CorrectionService {
     try {
       return jdbcTemplate.queryForObject(
           "SELECT id, box_id, box_title, unit_id, civilization_name, dynasty_name, "
-              + "source_type, selected_text, reason, status, created_at "
+              + "source_type, source_ref_id, selected_text, reason, status, created_at "
               + "FROM user_box_correction WHERE id=? AND user_id=?",
           (rs, rowNum) -> new CorrectionDetailDTO(
               rs.getLong("id"),
@@ -124,6 +155,7 @@ public class CorrectionService {
               rs.getString("civilization_name"),
               rs.getString("dynasty_name"),
               rs.getString("source_type"),
+              (Long) rs.getObject("source_ref_id"),
               rs.getString("selected_text"),
               rs.getString("reason"),
               rs.getString("status"),

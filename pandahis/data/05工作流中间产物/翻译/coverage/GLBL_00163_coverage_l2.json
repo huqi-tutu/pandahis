@@ -1,0 +1,19 @@
+{
+  "schema": "translate-coverage-l2/v1",
+  "史略ID": "GLBL_00163",
+  "passed": true,
+  "degraded": false,
+  "summary": "该句母本信息已被读者读到。",
+  "l1_ratio": 0.0,
+  "l1_min_ratio": 0.0,
+  "claims": [
+    {
+      "id": "M018–M019",
+      "claim": "王爱陵，常多予金钱，为中诇长安，约结上左右。；元朔三年，上赐淮南王几杖，不朝。",
+      "status": "conveyed",
+      "evidence": "白话译文中明确提到：淮南王刘安宠爱女儿刘陵，常给她很多钱，让她在长安做密探，结交皇上的左右亲信；元朔三年，皇上赐给淮南王几案和手杖，允许他不必上朝。",
+      "note": ""
+    }
+  ],
+  "issues": []
+}

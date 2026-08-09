@@ -44,9 +44,11 @@
 
 ```bash
 mysql -u … -p histomap < backend/src/main/resources/schema_user_feedback.sql
+mysql -u … -p histomap < backend/src/main/resources/schema_upgrade_correction_source_ref.sql
 ```
 
-可用 `SHOW TABLES LIKE 'user_feedback';` 确认表已存在后再发版，否则反馈接口会 500。
+可用 `SHOW TABLES LIKE 'user_feedback';` 确认表已存在后再发版，否则反馈接口会 500。  
+纠错「去查看」依赖 `user_box_correction.source_ref_id` 列，可用 `SHOW COLUMNS FROM user_box_correction LIKE 'source_ref_id';` 确认。
 
 ### 1.4 后台持续运行（不要只在前台 `java -jar`）
 

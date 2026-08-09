@@ -1,0 +1,488 @@
+{
+  "volume": "郭杜孔张廉王苏羊贾陆列传",
+  "source_file": "03后汉书_035_郭杜孔张廉王苏羊贾陆列传第二十一.txt",
+  "total_paragraphs": 57,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "郭伋",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "郭伋",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "郭伋",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "郭伋",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "郭伋",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "郭伋",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "郭伋",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "杜诗",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "杜诗",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "杜诗",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "杜诗",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "杜诗",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "杜诗",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "杜诗",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "杜诗",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "杜诗",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 19,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 20,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 21,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 22,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 23,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "张堪",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "张堪",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "张堪",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "张堪",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 29,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 30,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 31,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 32,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 33,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 34,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 35,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 36,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 37,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 38,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 39,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 40,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 41,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 42,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 43,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "羊续",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "羊续",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [
+        {
+          "name": "羊续",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 47,
+      "owners": [
+        {
+          "name": "羊续",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 48,
+      "owners": [
+        {
+          "name": "羊续",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 49,
+      "owners": [
+        {
+          "name": "贾琮",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 50,
+      "owners": [
+        {
+          "name": "贾琮",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 51,
+      "owners": [
+        {
+          "name": "贾琮",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 52,
+      "owners": [
+        {
+          "name": "贾琮",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 53,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 54,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 55,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 56,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 57,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HOUHANSHU_035_01",
+      "史略名称": "郭伋",
+      "史略简介": "郭伋",
+      "原文字句": "郭伋字细侯，扶风茂陵人也。高祖父解，武帝时以任侠闻。父梵，为蜀郡太守。伋少有志行，哀、平间辟大司空府，三迁为渔阳都尉。王莽时为上谷大尹，迁并州牧。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷35·郭杜孔张廉王苏羊贾陆列传》",
+      "paragraphs": [
+        {
+          "volume": "郭杜孔张廉王苏羊贾陆列传",
+          "paragraph_from": 2,
+          "paragraph_to": 8
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_035_02",
+      "史略名称": "杜诗",
+      "史略简介": "杜诗",
+      "原文字句": "杜诗字君公，河内汲人也。少有才能，仕郡功曹，有公平称。更始时，辟大司马府。建武元年，岁中三迁为侍御史，安集洛阳。时，将军萧广放纵兵士，暴横民间，百姓惶扰，诗敕晓不改，遂格杀广，还以状闻。世祖召见，赐以棨戟，复使之河东，诛降逆贼杨异等。诗到大阳，闻贼规欲北度，乃与长史急焚其船，部勒郡兵，将突骑趁击，斩异等，贼遂剪灭。拜成皋令，视事三岁，举政尤异。再迁为沛郡都尉，转汝南都尉，所在称治。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷35·郭杜孔张廉王苏羊贾陆列传》",
+      "paragraphs": [
+        {
+          "volume": "郭杜孔张廉王苏羊贾陆列传",
+          "paragraph_from": 9,
+          "paragraph_to": 17
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_035_03",
+      "史略名称": "张堪",
+      "史略简介": "张堪",
+      "原文字句": "张堪字君游，南阳宛人也，为郡族姓。堪早孤。让先父余财数百万与兄子。年十六，受业长安，志美行厉，诸儒号曰“圣童”。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷35·郭杜孔张廉王苏羊贾陆列传》",
+      "paragraphs": [
+        {
+          "volume": "郭杜孔张廉王苏羊贾陆列传",
+          "paragraph_from": 24,
+          "paragraph_to": 27
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_035_04",
+      "史略名称": "羊续",
+      "史略简介": "羊续",
+      "原文字句": "羊续字兴祖，太山平阳人也。其先七世二千石卿校，祖父侵，安帝时司隶校尉。父儒，桓帝时为太常。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷35·郭杜孔张廉王苏羊贾陆列传》",
+      "paragraphs": [
+        {
+          "volume": "郭杜孔张廉王苏羊贾陆列传",
+          "paragraph_from": 44,
+          "paragraph_to": 48
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_035_05",
+      "史略名称": "贾琮",
+      "史略简介": "贾琮",
+      "原文字句": "贾琮字孟坚，东郡聊城人也。举孝廉，再迁为京令，有政理迹。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷35·郭杜孔张廉王苏羊贾陆列传》",
+      "paragraphs": [
+        {
+          "volume": "郭杜孔张廉王苏羊贾陆列传",
+          "paragraph_from": 49,
+          "paragraph_to": 52
+        }
+      ]
+    }
+  ]
+}

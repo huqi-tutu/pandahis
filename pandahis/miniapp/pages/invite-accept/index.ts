@@ -1,3 +1,4 @@
+import { APP_DISPLAY_NAME } from '../../native-utils/brand-assets'
 import { hasToken } from '../../native-utils/api'
 import { bindInviteCode } from '../../native-utils/invite-bind'
 import {
@@ -16,6 +17,7 @@ Page({
     loggingIn: false,
     inviteCodeInput: '',
     pageTopPadPx: 88,
+    welcomeTitle: `欢迎通过好友邀请来到${APP_DISPLAY_NAME}`,
   },
   onLoad(query: Record<string, string | undefined>) {
     try {

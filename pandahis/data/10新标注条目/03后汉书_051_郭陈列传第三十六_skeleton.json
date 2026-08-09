@@ -1,0 +1,495 @@
+{
+  "volume": "郭陈列传",
+  "source_file": "03后汉书_051_郭陈列传第三十六.txt",
+  "total_paragraphs": 51,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "郭躬",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "郭躬",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "郭躬",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "郭镇",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "郭镇",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "郭镇",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "郭镇",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "郭镇",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 11,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 12,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 13,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "陈宠",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "陈宠",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "陈宠",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "陈宠",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "陈宠",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "陈宠",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "陈宠",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "陈宠",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "陈宠",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "陈宠",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "陈宠",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "陈宠",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "陈宠",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "陈宠",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "陈宠",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "陈宠",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "陈宠",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 32,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "陈忠",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "陈忠",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "陈忠",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "陈忠",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "陈忠",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "陈忠",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "陈忠",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "陈忠",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "陈忠",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "陈忠",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "陈忠",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "陈忠",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "陈忠",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [
+        {
+          "name": "陈忠",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 47,
+      "owners": [
+        {
+          "name": "陈忠",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 48,
+      "owners": [
+        {
+          "name": "陈忠",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 49,
+      "owners": [
+        {
+          "name": "陈忠",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 50,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 51,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HOUHANSHU_051_01",
+      "史略名称": "郭躬",
+      "史略简介": "郭躬",
+      "原文字句": "郭躬字仲孙，颍川阳翟人也。家世衣冠。父弘，习《小杜律》。太守寇恂以弘为决曹掾，断狱至三十年，用法平。诸为弘所决者，退无怨情，郡内比之东海于公。年九十五卒。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷51·郭陈列传》",
+      "paragraphs": [
+        {
+          "volume": "郭陈列传",
+          "paragraph_from": 2,
+          "paragraph_to": 4
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_051_02",
+      "史略名称": "郭镇",
+      "史略简介": "郭镇",
+      "原文字句": "镇字桓钟，少修家业。辟太尉府，再迁，延光中为尚书。及中黄门孙程诛中常侍江京等而立济阴王，镇率羽林士击杀卫尉阎景，以成大功，事在《宦者传》。再迁尚书令。太傅、三公奏镇冒犯白刃，手剑贼臣，奸党殄灭，宗庙以宁，功比刘章，宜显爵土，以励忠贞。乃封镇为定颍侯，食邑二千户。拜河南尹，转廷尉，免。水建四年，卒于家。诏赐冢茔地。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷51·郭陈列传》",
+      "paragraphs": [
+        {
+          "volume": "郭陈列传",
+          "paragraph_from": 5,
+          "paragraph_to": 9
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_051_03",
+      "史略名称": "陈宠",
+      "史略简介": "陈宠",
+      "原文字句": "陈宠字昭公，沛国洨人也。曾祖父咸，成、哀间以律令为尚书。平帝时，王莽辅政，多改汉制，咸心非之。及莽因吕宽事诛不附己者何武、鲍宣等，咸乃叹曰：“《易》称‘君子见几而作，不俟终日’，吾可以逝矣！”即乞骸骨去职。及莽篡位，召咸以为掌寇大夫，谢病不肯应。时，三子参、丰、钦皆在位，乃悉令解宫，父子相与归乡里，闭门不出入，犹用汉家祖腊。人问其故，咸曰：“我先人岂知王氏腊乎？”其后莽复征咸，遂称病笃。于是乃收敛",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷51·郭陈列传》",
+      "paragraphs": [
+        {
+          "volume": "郭陈列传",
+          "paragraph_from": 14,
+          "paragraph_to": 30
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_051_04",
+      "史略名称": "陈忠",
+      "史略简介": "陈忠",
+      "原文字句": "忠字伯始，永初中辟司徒府，三迁廷尉正，以才能有声称。司徒刘恺举忠明习法律，宜备机密，于是擢拜尚书，使居三公曹。忠自以世典刑法，用心务在宽详。初，父宠在廷尉，上除汉法溢于《甫刑》者，未施行，及宠免后遂寝。而苛法稍繁，人不堪之。忠略依宠意，奏上二十三条，为《决事比》，以省请谳之敝。又上除蚕室刑；解臧吏三世禁锢；狂易杀人，得减重论；母子兄弟相代死，听，赦所代者。事皆施行。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷51·郭陈列传》",
+      "paragraphs": [
+        {
+          "volume": "郭陈列传",
+          "paragraph_from": 33,
+          "paragraph_to": 49
+        }
+      ]
+    }
+  ]
+}

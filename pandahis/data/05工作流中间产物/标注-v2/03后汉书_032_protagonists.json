@@ -1,0 +1,38 @@
+{
+  "work": "03后汉书",
+  "vol": "032",
+  "volume_name": "申屠刚鲍永郅恽列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_arc": "C",
+  "volume_texture": "sequential",
+  "skip_reason": null,
+  "protagonists_cap_note": "卷名三人+鲍昱（永子，独立开传）。",
+  "protagonists": [
+    {
+      "name": "申屠刚",
+      "category": "文臣",
+      "rationale": "P2–P11。"
+    },
+    {
+      "name": "鲍永",
+      "category": "文臣",
+      "rationale": "P12–P19。"
+    },
+    {
+      "name": "鲍昱",
+      "category": "文臣",
+      "rationale": "永子，司徒；P21–P27。"
+    },
+    {
+      "name": "郅恽",
+      "category": "文臣",
+      "rationale": "P28–P40。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "论赞"
+  ]
+}

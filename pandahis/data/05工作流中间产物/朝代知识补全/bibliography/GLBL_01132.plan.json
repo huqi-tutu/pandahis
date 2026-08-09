@@ -1,0 +1,151 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01132",
+  "写作结构": "正史叙述见翻译详录（《汉书·宣帝纪》《汉书·儒林传》）。拓展文以史外文献为主：先述《汉书·艺文志》所录《石渠议奏》书目信息（已佚），再引《后汉书》等对石渠阁会议经学统绪的追述，最后以《通典》《唐会要》等后世文献说明其礼制影响。具体辩论过程、发言细节依anchor留白。",
+  "候选著作": [
+    {
+      "出处": "《汉书·艺文志》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "著录《石渠议奏》百四十一篇，为会议原始文献之目录存证",
+      "检索词": "石渠议奏",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《后汉书·郑玄传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "郑玄论石渠会议为今文经学统一之关键，可作后世经学史视角",
+      "检索词": "石渠",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《后汉书·儒林列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "追述石渠阁会议后增立博士之传承，如梁丘易、夏侯尚书等",
+      "检索词": "石渠",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《通典·礼典》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "后世礼制文献引石渠议奏中关于礼制之议，可作延展",
+      "检索词": "石渠",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《唐会要·经籍》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "唐代经籍志著录石渠议奏残本，反映其流传与散佚",
+      "检索词": "石渠议奏",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《玉海·艺文》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋代类书辑录石渠阁会议相关文献条目，可作书目线索",
+      "检索词": "石渠阁",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《汉书·艺文志》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "著录《石渠议奏》百四十一篇，为会议原始文献之目录存证",
+      "检索词": "石渠议奏",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《后汉书·郑玄传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "郑玄论石渠会议为今文经学统一之关键，可作后世经学史视角",
+      "检索词": "石渠",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《后汉书·儒林列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "追述石渠阁会议后增立博士之传承，如梁丘易、夏侯尚书等",
+      "检索词": "石渠",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《通典·礼典》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "后世礼制文献引石渠议奏中关于礼制之议，可作延展",
+      "检索词": "石渠",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《唐会要·经籍》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "唐代经籍志著录石渠议奏残本，反映其流传与散佚",
+      "检索词": "石渠议奏",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《玉海·艺文》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋代类书辑录石渠阁会议相关文献条目，可作书目线索",
+      "检索词": "石渠阁",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 1,
+    "C_excluded": 5,
+    "overall": "B"
+  }
+}

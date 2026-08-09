@@ -1,0 +1,21 @@
+{
+  "started": "2026-08-09T02:38:21.474648+00:00",
+  "ok": [
+    {
+      "id": "GLBL_00911",
+      "name": "郭纵",
+      "file": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/郭纵关系表.json",
+      "sec": 16.8
+    }
+  ],
+  "skip": [],
+  "fail": [
+    {
+      "id": "GLBL_00527",
+      "name": "田荣",
+      "error": "修订后 verify 仍失败:\nCRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/田荣关系表.json: mutex: '田横' in 家庭 and 同僚\nCRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/田荣关系表.json: mutex: '田儋' in 家庭 and 同僚\nWARN /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/田荣关系表.json#[0] id=HD-FAM-001: 关系简述 very short\nWARN /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/田荣关系表.json#[1] id=HD-FAM-002: 关系简述 very short\nWARN /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/田荣关系表.json#[21] id=HD-MAS-001: 关系简述 very short\nWARN /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/田荣关系表.json#[22] id=HD-MAS-002: 关系简述 very short\nWARN /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/田荣关系表.json#[23] id=",
+      "sec": 35.8
+    }
+  ],
+  "updated": "2026-08-09T02:39:14.113817+00:00"
+}

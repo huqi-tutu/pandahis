@@ -1,0 +1,20 @@
+{
+  "work": "03后汉书",
+  "vol": "009",
+  "volume_name": "孝灵帝纪",
+  "volume_type_guess": "本纪",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "汉灵帝",
+      "category": "君王",
+      "rationale": "《孝灵帝纪》为东汉皇帝刘宏（汉灵帝）的本纪，卷名即以其谥号命名，属于天下共主（皇帝）单人本纪，符合君王准入标准。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "论赞",
+    "其他"
+  ]
+}

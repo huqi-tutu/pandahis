@@ -101,6 +101,43 @@
   word-break: break-word;
 }
 
+.correction-value-row {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8rpx 12rpx;
+}
+
+.correction-value-row .correction-value--inline {
+  flex: 0 1 auto;
+  min-width: 0;
+}
+
+.correction-view-source {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 2rpx;
+  padding: 0;
+  font-size: 26rpx;
+  line-height: 1.5;
+  color: #2A7A5D;
+  font-weight: 600;
+}
+
+.correction-view-source-text {
+  color: inherit;
+}
+
+.correction-view-source-arrow {
+  color: inherit;
+  font-size: 28rpx;
+  line-height: 1;
+  margin-top: -1rpx;
+}
+
 .correction-quote {
   font-size: 26rpx;
   color: $text-body;

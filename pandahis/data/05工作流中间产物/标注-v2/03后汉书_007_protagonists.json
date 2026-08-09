@@ -1,0 +1,31 @@
+{
+  "work": "03后汉书",
+  "vol": "007",
+  "volume_name": "孝顺孝冲孝质帝纪",
+  "volume_type_guess": "本纪",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "汉顺帝",
+      "category": "君王",
+      "rationale": "卷名首列「孝顺」，即汉顺帝（刘保），东汉第七位皇帝，天下共主，本卷本纪主轴人物之一。"
+    },
+    {
+      "name": "汉冲帝",
+      "category": "君王",
+      "rationale": "卷名次列「孝冲」，即汉冲帝（刘炳），东汉第八位皇帝，在位虽短但为本卷本纪主轴人物之一。"
+    },
+    {
+      "name": "汉质帝",
+      "category": "君王",
+      "rationale": "卷名末列「孝质」，即汉质帝（刘缵），东汉第九位皇帝，本卷本纪主轴人物之一。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "论曰",
+    "赞曰",
+    "其他"
+  ]
+}

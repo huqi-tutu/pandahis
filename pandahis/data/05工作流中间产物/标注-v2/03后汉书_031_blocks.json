@@ -1,0 +1,34 @@
+{
+  "work": "03后汉书",
+  "vol": "031",
+  "total_paragraphs": 19,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_031_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 18,
+      "paragraph_to": 19,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "冯衍",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 17,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "建武末，上疏自陈曰：",
+        "close_paragraph": 17,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P17"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

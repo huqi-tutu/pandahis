@@ -1,0 +1,80 @@
+{
+  "work": "03后汉书",
+  "vol": "026",
+  "total_paragraphs": 67,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_026_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 44,
+      "paragraph_to": 44,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 65,
+      "paragraph_to": 66,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 67,
+      "paragraph_to": 67,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "马援",
+      "category": "武将",
+      "paragraph_from": 2,
+      "paragraph_to": 43,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "马援字文渊，扶风茂陵人也。其先赵奢为赵将，号曰马服君，子孙因为氏。武帝时，以吏二",
+        "close_paragraph": 43,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P43"
+      }
+    },
+    {
+      "name": "马廖",
+      "category": "武将",
+      "paragraph_from": 45,
+      "paragraph_to": 51,
+      "boundary_evidence": {
+        "open_paragraph": 45,
+        "open_phrase": "廖字敬平，少以父任为郎。明德皇后既立，拜廖为羽林左监、虎贲中郎将。显宗崩，受遗诏",
+        "close_paragraph": 51,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P45–P51"
+      }
+    },
+    {
+      "name": "马防",
+      "category": "武将",
+      "paragraph_from": 52,
+      "paragraph_to": 57,
+      "boundary_evidence": {
+        "open_paragraph": 52,
+        "open_phrase": "防字江平，永平十二年，与弟光俱为黄门侍郎。肃宗即位，拜防中郎将，稍迁城门校尉。",
+        "close_paragraph": 57,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P52–P57"
+      }
+    },
+    {
+      "name": "马严",
+      "category": "文臣",
+      "paragraph_from": 58,
+      "paragraph_to": 64,
+      "boundary_evidence": {
+        "open_paragraph": 58,
+        "open_phrase": "严字威卿。父余。王莽时为杨州牧。严少孤，而好击剑，习骑射。后乃白援，从平原杨太伯",
+        "close_paragraph": 64,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P58–P64"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

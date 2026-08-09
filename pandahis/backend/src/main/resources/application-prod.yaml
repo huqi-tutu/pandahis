@@ -27,6 +27,9 @@ spring:
 histomap:
   civ-tab:
     image-cache-bust: "2025052401"
+  features:
+    # 生产 trial/release 默认关
+    civ-switch-enabled: false
 
   wechat:
     miniapp:
@@ -34,7 +37,7 @@ histomap:
       app-secret: ${HISTOMAP_WECHAT_MINIAPP_APP_SECRET:bd3eaaab354744ccdfda38dee822920a}
   auth:
     jwt:
-      secret: ${HISTOMAP_AUTH_JWT_SECRET:}
+      secret: ${HISTOMAP_AUTH_JWT_SECRET:dev-only-change-me-32bytes-min________}
       expires-days: ${HISTOMAP_AUTH_JWT_EXPIRES_DAYS:7}
     dev-bypass-token: ${HISTOMAP_AUTH_DEV_BYPASS_TOKEN:}
 

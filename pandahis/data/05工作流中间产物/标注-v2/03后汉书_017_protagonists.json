@@ -1,0 +1,43 @@
+{
+  "work": "03后汉书",
+  "vol": "017",
+  "volume_name": "李王邓来列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_arc": "C",
+  "volume_texture": "interleaved",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "李通",
+      "category": "武将",
+      "rationale": "开国功臣；P2–P9。"
+    },
+    {
+      "name": "王常",
+      "category": "武将",
+      "rationale": "下江将、开国功臣；P11–P16。"
+    },
+    {
+      "name": "邓晨",
+      "category": "武将",
+      "rationale": "开国功臣、光武姻亲；P17–P22。"
+    },
+    {
+      "name": "来歙",
+      "category": "武将",
+      "rationale": "征陇名将；P23–P32（不含来历传）。"
+    },
+    {
+      "name": "来历",
+      "category": "文臣",
+      "rationale": "歙孙，字伯珍；卷内P34起独立续传，卫尉/太仆等，归文臣。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "论赞",
+    "赞曰"
+  ]
+}

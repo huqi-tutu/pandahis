@@ -1,0 +1,25 @@
+{
+  "work": "03后汉书",
+  "vol": "033",
+  "volume_name": "苏竟杨厚列传第二十上",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "苏竟",
+      "category": "文臣",
+      "rationale": "卷名首列人物，合传主人公之一。苏竟为东汉初名士，以儒学、天文历法见称，曾仕光武帝朝，属文臣列传主轴。"
+    },
+    {
+      "name": "杨厚",
+      "category": "文臣",
+      "rationale": "卷名次列人物，合传主人公之一。杨厚为东汉经学家，以图谶、灾异之学闻名，累官至侍中，属文臣列传主轴。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

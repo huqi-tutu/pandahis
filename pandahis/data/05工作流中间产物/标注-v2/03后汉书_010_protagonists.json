@@ -1,0 +1,21 @@
+{
+  "work": "03后汉书",
+  "vol": "010",
+  "volume_name": "孝献帝纪",
+  "volume_type_guess": "本纪",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "汉献帝",
+      "category": "君王",
+      "rationale": "《后汉书·孝献帝纪》为东汉末代皇帝刘协的本纪，卷名即帝王谥号，属天下共主（天子）单人本纪，故为主轴且分类为君王。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "论曰",
+    "赞曰",
+    "其他"
+  ]
+}

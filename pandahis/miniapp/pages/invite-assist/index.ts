@@ -1,5 +1,5 @@
 import { hasToken, request } from '../../native-utils/api'
-import { INVITE_SHARE_COVER_URL } from '../../native-utils/brand-assets'
+import { APP_DISPLAY_NAME, INVITE_SHARE_COVER_URL } from '../../native-utils/brand-assets'
 import { ROUTES, buildUrl, navigateTo } from '../../native-utils/router'
 import { promptInviteByCode } from '../../native-utils/share-invite'
 import { computePageTopPadPx } from '../../native-utils/nav-metrics'
@@ -162,7 +162,7 @@ Page({
       ? buildUrl(ROUTES.inviteAccept, { inviteCode: code })
       : ROUTES.inviteAccept
     return {
-      title: '帮我助力，一起读历史图谱',
+      title: `帮我助力，一起读${APP_DISPLAY_NAME}`,
       path: path.startsWith('/') ? path : `/${path}`,
       imageUrl: INVITE_SHARE_COVER_URL,
     }
@@ -170,7 +170,7 @@ Page({
   onShareTimeline() {
     const code = (this.data.inviteCode || '').trim()
     return {
-      title: '历史图谱 · 邀你助力领会员',
+      title: `${APP_DISPLAY_NAME} · 邀你助力领会员`,
       ...(code ? { query: `inviteCode=${encodeURIComponent(code)}` } : {}),
     }
   },

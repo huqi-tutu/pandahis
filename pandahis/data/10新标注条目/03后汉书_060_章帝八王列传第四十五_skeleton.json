@@ -1,0 +1,469 @@
+{
+  "volume": "章帝八王列传",
+  "source_file": "03后汉书_060_章帝八王列传第四十五.txt",
+  "total_paragraphs": 46,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "刘伉",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "刘伉",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "刘伉",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "刘伉",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "刘伉",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "刘庆",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "刘庆",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "刘庆",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "刘庆",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "刘庆",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "刘庆",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "刘庆",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "刘庆",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "刘庆",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "刘庆",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "刘庆",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "刘庆",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "刘庆",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "刘庆",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "刘庆",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "刘庆",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "刘庆",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "刘庆",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "刘寿",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "刘寿",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "刘寿",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "刘寿",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "刘寿",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "刘寿",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "刘开",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "刘开",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "刘开",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "刘开",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "刘开",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "刘开",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "刘开",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "刘开",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "刘淑",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 43,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 44,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 45,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 46,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HOUHANSHU_060_01",
+      "史略名称": "刘伉",
+      "史略简介": "刘伉",
+      "原文字句": "千乘贞王伉，建初四年封。和帝即位，以伉长兄，甚见尊礼立十五年薨。",
+      "史略分类": "宗戚",
+      "主要史料出处": "《03后汉书·卷60·章帝八王列传》",
+      "paragraphs": [
+        {
+          "volume": "章帝八王列传",
+          "paragraph_from": 3,
+          "paragraph_to": 7
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_060_02",
+      "史略名称": "刘庆",
+      "史略简介": "刘庆",
+      "原文字句": "清河孝王庆，母宋贵人。贵人，宋昌八世孙，扶风平陵人也。父杨，以恭孝称于乡闾，不应州郡之命。杨姑即明德马后之外祖母也。马后闻杨二女皆有才色，迎而训之。永平末，选入太子宫，甚有宠。肃宗即位，并为贵人。建初三年，大贵人生庆，明年立为皇太子，征杨为议郎，褒赐甚渥。贵人长于人事，供奉长乐宫，身执馈馔，太后怜之。太后崩后，窦皇后宠盛，以贵人姊妹并幸，庆为太子，心内恶之，与母比阳主谋陷宋氏。外令兄弟求其纤过，内",
+      "史略分类": "宗戚",
+      "主要史料出处": "《03后汉书·卷60·章帝八王列传》",
+      "paragraphs": [
+        {
+          "volume": "章帝八王列传",
+          "paragraph_from": 9,
+          "paragraph_to": 26
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_060_03",
+      "史略名称": "刘寿",
+      "史略简介": "刘寿",
+      "原文字句": "济北惠王寿，母申贵人，颍川人也，世吏二千石。贵人年十三，入掖庭。寿以永元二年封，分太山郡为国。和帝遵肃宗故事，兄弟皆留京师，恩宠笃密。有司请遣诸王归藩，不忍许之，及帝崩，乃就国。永初元年，邓太后封寿舅申转为新亭侯。寿立三十一年薨，自永初己后，戎狄叛乱，国用不足，始封王薨，减赙钱为千万，布万区；嗣王薨五百万，布五千匹。时，唯寿最尊亲，特赙钱三千万，布三万匹。",
+      "史略分类": "宗戚",
+      "主要史料出处": "《03后汉书·卷60·章帝八王列传》",
+      "paragraphs": [
+        {
+          "volume": "章帝八王列传",
+          "paragraph_from": 27,
+          "paragraph_to": 32
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_060_04",
+      "史略名称": "刘开",
+      "史略简介": "刘开",
+      "原文字句": "河间孝王开，以永元二年封，分乐成、勃海、涿郡为国。延平元年就国。开奉遵法度，吏人敬之。永宁元年，邓太后封开子翼为平原王，奉怀王胜祀；子德为安平王，奉乐成王党祀。",
+      "史略分类": "宗戚",
+      "主要史料出处": "《03后汉书·卷60·章帝八王列传》",
+      "paragraphs": [
+        {
+          "volume": "章帝八王列传",
+          "paragraph_from": 33,
+          "paragraph_to": 40
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_060_05",
+      "史略名称": "刘淑",
+      "史略简介": "刘淑",
+      "原文字句": "城阳怀王淑，以永元二年分济阴为国。立五年薨，葬于京师，无子，国除，还并济阴。",
+      "史略分类": "宗戚",
+      "主要史料出处": "《03后汉书·卷60·章帝八王列传》",
+      "paragraphs": [
+        {
+          "volume": "章帝八王列传",
+          "paragraph_from": 41,
+          "paragraph_to": 41
+        }
+      ]
+    }
+  ]
+}

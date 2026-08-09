@@ -1,0 +1,38 @@
+{
+  "work": "03后汉书",
+  "vol": "004",
+  "total_paragraphs": 112,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 111,
+      "paragraph_to": 111,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 112,
+      "paragraph_to": 112,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "汉章帝",
+      "category": "君王",
+      "paragraph_from": 2,
+      "paragraph_to": 110,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "肃宗孝章皇帝讳炟，显宗第五子也。母贾贵人。永平三年，立为皇太子。少宽容，好儒术，",
+        "close_paragraph": 110,
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

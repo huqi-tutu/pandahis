@@ -1,0 +1,44 @@
+{
+  "work": "03后汉书",
+  "vol": "028",
+  "volume_name": "伏侯宋蔡冯赵牟韦列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_arc": "C",
+  "volume_texture": "sequential",
+  "skip_reason": null,
+  "protagonists_cap_note": "合传主轴≤5：取伏湛、侯霸、宋弘、赵熹、韦彪（与卷末赞「湛、霸…弘…憙…彪」一致）；蔡茂/冯勤/牟融及附传 exclude。",
+  "protagonists": [
+    {
+      "name": "伏湛",
+      "category": "文臣",
+      "rationale": "大司徒；P2–P13（含嗣封/伏氏）。"
+    },
+    {
+      "name": "侯霸",
+      "category": "文臣",
+      "rationale": "尚书令；P18–P21。"
+    },
+    {
+      "name": "宋弘",
+      "category": "文臣",
+      "rationale": "大司空；P25–P30。"
+    },
+    {
+      "name": "赵熹",
+      "category": "文臣",
+      "rationale": "太尉；P47–P58（含嗣封）。"
+    },
+    {
+      "name": "韦彪",
+      "category": "文臣",
+      "rationale": "P63–P70。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "论赞",
+    "其他"
+  ]
+}

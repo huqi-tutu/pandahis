@@ -1,5 +1,6 @@
 package com.pandahis.histomap.search.interfaces.service;
 
+import com.pandahis.histomap.common.feature.FeatureFlagService;
 import com.pandahis.histomap.contentgraph.domain.BoxCategorySupport;
 import com.pandahis.histomap.search.interfaces.dto.SearchResultDTO;
 import com.pandahis.histomap.search.interfaces.dto.SearchSuggestDTO;
@@ -21,9 +22,11 @@ public class SearchService {
   private static final int MATCH_LIMIT = 100;
 
   private final JdbcTemplate jdbcTemplate;
+  private final FeatureFlagService featureFlagService;
 
-  public SearchService(JdbcTemplate jdbcTemplate) {
+  public SearchService(JdbcTemplate jdbcTemplate, FeatureFlagService featureFlagService) {
     this.jdbcTemplate = jdbcTemplate;
+    this.featureFlagService = featureFlagService;
   }
 
   public SearchSuggestDTO suggest(Long userId) {
@@ -107,13 +110,15 @@ public class SearchService {
 
     String like = "%" + escapeLike(keyword) + "%";
     int tierLimit = Math.max(1, Math.min(pageSize, MATCH_LIMIT));
+    String civFilterSql = civFilterClause();
 
     // 精准：史略名称或简介；SQL 先按「标题全等 → 优先级高」取 LIMIT，再 Java 稳定排序
     List<Map<String, Object>> preciseRows = jdbcTemplate.queryForList(
         "SELECT b.id, b.title, b.category_key, b.blurb, b.start_year, b.end_year, "
             + "b.civilization_name, b.dynasty_name, b.regime_name, b.emperor_name, b.person_tag, b.importance_level "
             + "FROM historical_box b "
-            + "WHERE b.status=1 AND (b.title LIKE ? ESCAPE '\\\\' OR IFNULL(b.blurb,'') LIKE ? ESCAPE '\\\\') "
+            + "WHERE b.status=1 " + civFilterSql
+            + "AND (b.title LIKE ? ESCAPE '\\\\' OR IFNULL(b.blurb,'') LIKE ? ESCAPE '\\\\') "
             + "ORDER BY CASE WHEN TRIM(b.title) = ? THEN 0 ELSE 1 END ASC, "
             + "COALESCE(b.importance_level, 99) ASC, b.start_year ASC LIMIT " + MATCH_LIMIT,
         like, like, keyword
@@ -131,7 +136,7 @@ public class SearchService {
             + "b.civilization_name, b.dynasty_name, b.regime_name, b.emperor_name, b.person_tag, b.importance_level "
             + "FROM historical_box b "
             + "LEFT JOIN historical_box_detail d ON d.box_id = b.id "
-            + "WHERE b.status=1 "
+            + "WHERE b.status=1 " + civFilterSql
             + "AND (IFNULL(d.translate_detail,'') LIKE ? ESCAPE '\\\\' OR IFNULL(b.detail_md,'') LIKE ? ESCAPE '\\\\') "
             + "AND NOT (b.title LIKE ? ESCAPE '\\\\' OR IFNULL(b.blurb,'') LIKE ? ESCAPE '\\\\') "
             + "ORDER BY COALESCE(b.importance_level, 99) ASC, b.start_year ASC LIMIT " + MATCH_LIMIT,
@@ -216,6 +221,14 @@ public class SearchService {
 
   public void deleteHistory(Long userId, String keyword) {
     jdbcTemplate.update("DELETE FROM user_search_history WHERE user_id=? AND keyword=?", userId, keyword.trim());
+  }
+
+  /** 开关关闭时仅召回华夏（HX）史略 */
+  private String civFilterClause() {
+    if (featureFlagService.isCivSwitchEnabled()) {
+      return "";
+    }
+    return "AND b.civilization_code='" + FeatureFlagService.DEFAULT_CIVILIZATION_CODE + "' ";
   }
 
   private List<SearchResultDTO.Item> mapBoxRows(List<Map<String, Object>> rows, String keyword, String matchTier) {

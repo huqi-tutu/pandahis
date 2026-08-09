@@ -1,0 +1,43 @@
+{
+  "work": "03后汉书",
+  "vol": "038",
+  "volume_name": "梁统列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_arc": "C",
+  "volume_texture": "sequential",
+  "skip_reason": null,
+  "protagonists_cap_note": "梁氏：统/松/竦/商/冀五人；嗣封归各传主。",
+  "protagonists": [
+    {
+      "name": "梁统",
+      "category": "文臣",
+      "rationale": "河西归汉，九江太守；P2–P15。"
+    },
+    {
+      "name": "梁松",
+      "category": "宗戚",
+      "rationale": "统子，尚公主；P16–P18。"
+    },
+    {
+      "name": "梁竦",
+      "category": "宗戚",
+      "rationale": "统子，恭怀后父；P19–P27。"
+    },
+    {
+      "name": "梁商",
+      "category": "宗戚",
+      "rationale": "大将军；P28–P32（含子冀嗣）。"
+    },
+    {
+      "name": "梁冀",
+      "category": "宗戚",
+      "rationale": "跋扈将军；P33–P53。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "论赞"
+  ]
+}

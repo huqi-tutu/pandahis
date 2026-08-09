@@ -1,0 +1,38 @@
+{
+  "work": "03后汉书",
+  "vol": "009",
+  "total_paragraphs": 254,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 253,
+      "paragraph_to": 253,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 254,
+      "paragraph_to": 254,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "汉灵帝",
+      "category": "君王",
+      "paragraph_from": 2,
+      "paragraph_to": 252,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "孝灵皇帝讳宏，肃宗玄孙也。曾祖河间孝王开，祖淑，父苌。世封解渎亭侯，帝袭侯爵。母",
+        "close_paragraph": 252,
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

@@ -1,0 +1,671 @@
+
+[1/247] compose GLBL_00075 汉元帝 …
+LLM: DeepSeek (deepseek-v4-flash)
+人物: GLBL_00075 汉元帝 (君王)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉元帝关系表.json
+  → 类别 家庭 …
+    13 条
+  → 类别 同僚 …
+    16 条
+  → 类别 敌对 …
+    7 条
+  → 类别 师徒 …
+    2 条
+  → 类别 好友 …
+    1 条
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉元帝关系表.json: hub 同僚/臣子 has 13 direct persons; max 10
+WARN /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉元帝关系表.json#[36] id=HD-MAS-001: 关系简述 very short
+
+FAILED: 1 critical issue(s) in 1 file(s)
+
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉元帝关系表.json: hub 同僚/臣子 has 13 direct persons; max 10
+
+FAILED: 1 critical issue(s) in 1 file(s)
+
+FAIL GLBL_00075 汉元帝: 修订后 verify 仍失败:
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉元帝关系表.json: hub 同僚/臣子 has 13 direct persons; max 10
+
+FAILED: 1 critical issue(s) in 1 file(s)
+
+Traceback (most recent call last):
+  File "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/tools/openclaw-historiography/historiography-person-relations/scripts/batch_compose_missing.py", line 108, in main
+    fp = rl.compose_one(
+         ^^^^^^^^^^^^^^^
+  File "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/tools/openclaw-historiography/historiography-person-relations/scripts/relations_lib.py", line 475, in compose_one
+    raise RuntimeError(f"修订后 verify 仍失败:\n{verify_out2}")
+RuntimeError: 修订后 verify 仍失败:
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉元帝关系表.json: hub 同僚/臣子 has 13 direct persons; max 10
+
+FAILED: 1 critical issue(s) in 1 file(s)
+
+
+[2/247] compose GLBL_00076 汉哀帝 …
+LLM: DeepSeek (deepseek-v4-flash)
+人物: GLBL_00076 汉哀帝 (君王)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉哀帝关系表.json
+  → 类别 家庭 …
+    7 条
+  → 类别 同僚 …
+    33 条
+  → 类别 敌对 …
+    13 条
+  → 类别 师徒 …
+    2 条
+  → 类别 好友 …
+    1 条
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉哀帝关系表.json#[1] id=HD-FAM-002: invalid family edge '祖父'
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉哀帝关系表.json#[20] id=HD-COL-014: duplicate node ('丁明', 二级, '同僚')
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉哀帝关系表.json#[22] id=HD-COL-016: duplicate node ('傅晏', 二级, '同僚')
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉哀帝关系表.json: hub 同僚/君王 has 11 direct persons; max 10
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉哀帝关系表.json: hub 同僚/臣子 has 20 direct persons; max 10
+WARN /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉哀帝关系表.json#[0] id=HD-FAM-001: 关系简述 very short
+WARN /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉哀帝关系表.json#[4] id=HD-FAM-005: 关系简述 very short
+WARN /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉哀帝关系表.json#[53] id=HD-MAS-001: 关系简述 very short
+
+FAILED: 5 critical issue(s) in 1 file(s)
+
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉哀帝关系表.json#[1] id=HD-FAM-002: invalid family edge '祖父'
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉哀帝关系表.json: hub 同僚/君王 has 11 direct persons; max 10
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉哀帝关系表.json: hub 同僚/臣子 has 18 direct persons; max 10
+WARN /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉哀帝关系表.json#[0] id=HD-FAM-001: 关系简述 very short
+WARN /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉哀帝关系表.json#[4] id=HD-FAM-005: 关系简述 very short
+WARN /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉哀帝关系表.json#[51] id=HD-MAS-001: 关系简述 very short
+
+FAILED: 3 critical issue(s) in 1 file(s)
+
+FAIL GLBL_00076 汉哀帝: 修订后 verify 仍失败:
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉哀帝关系表.json#[1] id=HD-FAM-002: invalid family edge '祖父'
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉哀帝关系表.json: hub 同僚/君王 has 11 direct persons; max 10
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉哀帝关系表.json: hub 同僚/臣子 has 18 direct persons; max 10
+WARN /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉哀帝关系表.json#[0] id=HD-FAM-001: 关系简述 very short
+WARN /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉哀帝关系表.json#[4] id=HD-FAM-005: 关系简述 very short
+WARN /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉哀帝关系表.json#[51] id=HD-MAS-001: 关系简述 very short
+
+FAILED: 3 critical issue(s) in 1 file(s)
+
+Traceback (most recent call last):
+  File "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/tools/openclaw-historiography/historiography-person-relations/scripts/batch_compose_missing.py", line 108, in main
+    fp = rl.compose_one(
+         ^^^^^^^^^^^^^^^
+  File "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/tools/openclaw-historiography/historiography-person-relations/scripts/relations_lib.py", line 475, in compose_one
+    raise RuntimeError(f"修订后 verify 仍失败:\n{verify_out2}")
+RuntimeError: 修订后 verify 仍失败:
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉哀帝关系表.json#[1] id=HD-FAM-002: invalid family edge '祖父'
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉哀帝关系表.json: hub 同僚/君王 has 11 direct persons; max 10
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉哀帝关系表.json: hub 同僚/臣子 has 18 direct persons; max 10
+WARN /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉哀帝关系表.json#[0] id=HD-FAM-001: 关系简述 very short
+WARN /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉哀帝关系表.json#[4] id=HD-FAM-005: 关系简述 very short
+WARN /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉哀帝关系表.json#[51] id=HD-MAS-001: 关系简述 very short
+
+FAILED: 3 critical issue(s) in 1 file(s)
+
+
+[3/247] compose GLBL_00077 汉宣帝 …
+LLM: DeepSeek (deepseek-v4-flash)
+人物: GLBL_00077 汉宣帝 (君王)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉宣帝关系表.json
+  → 类别 家庭 …
+    12 条
+  → 类别 同僚 …
+    48 条
+  → 类别 敌对 …
+    33 条
+  → 类别 师徒 …
+    4 条
+  → 类别 好友 …
+    9 条
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉宣帝关系表.json: hub 同僚/臣子 has 46 direct persons; max 10
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉宣帝关系表.json: hub 敌对/内敌 has 26 direct persons; max 10
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉宣帝关系表.json: mutex: '史玄' in 同僚 and 好友
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉宣帝关系表.json: mutex: '丙吉' in 同僚 and 好友
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉宣帝关系表.json: mutex: '许舜' in 同僚 and 好友
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉宣帝关系表.json: mutex: '许延寿' in 同僚 and 好友
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉宣帝关系表.json: mutex: '张贺' in 同僚 and 好友
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉宣帝关系表.json: mutex: '史曾' in 同僚 and 好友
+WARN /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉宣帝关系表.json#[93] id=HD-MAS-001: 关系简述 very short
+WARN /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉宣帝关系表.json#[95] id=HD-MAS-003: 关系简述 very short
+
+FAILED: 8 critical issue(s) in 1 file(s)
+
+===== RESTART 2026-08-09T14:24:42Z =====
+[1/247] skip existing GLBL_00075 汉元帝
+[2/247] skip existing GLBL_00076 汉哀帝
+[3/247] skip existing GLBL_00077 汉宣帝
+
+[4/247] compose GLBL_00078 汉平帝 …
+LLM: DeepSeek (deepseek-v4-flash)
+人物: GLBL_00078 汉平帝 (君王)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉平帝关系表.json
+  → 类别 家庭 …
+    7 条
+  → 类别 同僚 …
+    19 条
+  → 类别 敌对 …
+    4 条
+  → 类别 师徒 …
+    2 条
+  → 类别 好友 …
+    1 条
+sanitize:
+  - cap 同僚/同僚: 13→10 keep=['孔光', '刘歆', '左咸', '王舜', '甄丰', '王恽', '陈茂', '石诩', '刘不恶', '任岑'] drop=['孔永', '姚恂', '孙建']
+  - drop empty hub 好友/好友
+WARN /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉平帝关系表.json#[27] id=HD-MAS-001: 关系简述 very short
+
+OK: 1 file(s)
+
+✅ verify 通过: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉平帝关系表.json
+import: 汉平帝关系表.json → box_id=GLBL_00078 nodes=29+1 edges=29
+MySQL applied: 49.235.165.220/histomap
+OK GLBL_00078 汉平帝 (30s)
+
+[5/247] compose GLBL_00079 汉惠帝 …
+LLM: DeepSeek (deepseek-v4-flash)
+人物: GLBL_00079 汉惠帝 (君王)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉惠帝关系表.json
+  → 类别 家庭 …
+    8 条
+  → 类别 同僚 …
+    7 条
+  → 类别 敌对 …
+    2 条
+  → 类别 师徒 …
+    1 条
+  → 类别 好友 …
+    1 条
+sanitize:
+  - drop empty hub 同僚/君王
+  - drop empty hub 师徒/老师
+  - drop empty hub 好友/好友
+
+OK: 1 file(s)
+
+✅ verify 通过: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉惠帝关系表.json
+import: 汉惠帝关系表.json → box_id=GLBL_00079 nodes=16+1 edges=16
+MySQL applied: 49.235.165.220/histomap
+OK GLBL_00079 汉惠帝 (18s)
+
+[6/247] compose GLBL_00080 汉成帝 …
+LLM: DeepSeek (deepseek-v4-flash)
+人物: GLBL_00080 汉成帝 (君王)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉成帝关系表.json
+  → 类别 家庭 …
+    13 条
+  → 类别 同僚 …
+    31 条
+  → 类别 敌对 …
+    11 条
+  → 类别 师徒 …
+    2 条
+  → 类别 好友 …
+    2 条
+sanitize:
+  - cap 同僚/君王: 30→10 keep=['李谭', '刘宇', '王凤', '王莽', '王商', '王章', '刘向', '孔光', '尹忠', '刘欣'] drop=['严䜣', '淳于长', '王闳', '解万年', '王延世', '赵护', '孔吉', '王谭', '王立', '王根', '王逢时', '云客', '赵临', '冯参', '刘良', '刘景', '王崇', '刘俚', '刘守', '萧喜']
+WARN /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉成帝关系表.json#[0] id=HD-FAM-001: 关系简述 very short
+WARN /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉成帝关系表.json#[3] id=HD-FAM-004: 关系简述 very short
+
+OK: 1 file(s)
+
+✅ verify 通过: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉成帝关系表.json
+import: 汉成帝关系表.json → box_id=GLBL_00080 nodes=39+1 edges=39
+MySQL applied: 49.235.165.220/histomap
+OK GLBL_00080 汉成帝 (42s)
+
+[7/247] compose GLBL_00081 汉文帝 …
+LLM: DeepSeek (deepseek-v4-flash)
+人物: GLBL_00081 汉文帝 (君王)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉文帝关系表.json
+  → 类别 家庭 …
+    13 条
+  → 类别 同僚 …
+    11 条
+  → 类别 敌对 …
+    7 条
+  → 类别 师徒 …
+    2 条
+  → 类别 好友 …
+    1 条
+sanitize:
+  - drop empty hub 好友/好友
+WARN /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉文帝关系表.json#[31] id=HD-MAS-001: 关系简述 very short
+
+OK: 1 file(s)
+
+✅ verify 通过: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉文帝关系表.json
+import: 汉文帝关系表.json → box_id=GLBL_00081 nodes=33+1 edges=33
+MySQL applied: 49.235.165.220/histomap
+OK GLBL_00081 汉文帝 (38s)
+
+[8/247] compose GLBL_00082 汉昭帝 …
+LLM: DeepSeek (deepseek-v4-flash)
+人物: GLBL_00082 汉昭帝 (君王)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉昭帝关系表.json
+  → 类别 家庭 …
+    10 条
+  → 类别 同僚 …
+    17 条
+  → 类别 敌对 …
+    10 条
+  → 类别 师徒 …
+    2 条
+  → 类别 好友 …
+    1 条
+sanitize:
+  - cap 同僚/臣子: 16→10 keep=['霍光', '隽不疑', '杨敞', '金日磾', '上官桀', '傅介子', '桑弘羊', '上官安', '燕仓', '杜延年'] drop=['王寿', '任宫', '苏武', '田广明', '范明友', '张安世']
+  - drop empty hub 好友/好友
+WARN /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉昭帝关系表.json#[31] id=HD-MAS-001: 关系简述 very short
+
+OK: 1 file(s)
+
+✅ verify 通过: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉昭帝关系表.json
+import: 汉昭帝关系表.json → box_id=GLBL_00082 nodes=33+1 edges=33
+MySQL applied: 49.235.165.220/histomap
+OK GLBL_00082 汉昭帝 (34s)
+
+[9/247] compose GLBL_00083 汉景帝 …
+LLM: DeepSeek (deepseek-v4-flash)
+人物: GLBL_00083 汉景帝 (君王)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉景帝关系表.json
+  → 类别 家庭 …
+    57 条
+  → 类别 同僚 …
+    37 条
+  → 类别 敌对 …
+    12 条
+  → 类别 师徒 …
+    4 条
+  → 类别 好友 …
+    1 条
+sanitize:
+  - mutex drop 同僚/刘馀 (kept in 家庭)
+  - mutex drop 同僚/刘非 (kept in 家庭)
+  - mutex drop 同僚/刘明 (kept in 家庭)
+  - mutex drop 同僚/刘彭离 (kept in 家庭)
+  - mutex drop 同僚/刘定 (kept in 家庭)
+  - mutex drop 同僚/刘不识 (kept in 家庭)
+  - mutex drop 同僚/刘彻 (kept in 家庭)
+  - mutex drop 同僚/刘端 (kept in 家庭)
+  - mutex drop 同僚/刘胜 (kept in 家庭)
+  - mutex drop 同僚/刘越 (kept in 家庭)
+  - mutex drop 同僚/刘寄 (kept in 家庭)
+  - mutex drop 同僚/刘方乘 (kept in 家庭)
+  - mutex drop 同僚/刘舜 (kept in 家庭)
+  - mutex drop 同僚/刘荣 (kept in 家庭)
+  - mutex drop 同僚/刘武 (kept in 家庭)
+  - mutex drop 同僚/刘嫖 (kept in 家庭)
+  - mutex drop 师徒/刘彻 (kept in 家庭)
+  - cap 同僚/君王: 12→10 keep=['周亚夫', '卫绾', '窦婴', '晁错', '刘舍', '陶青', '袁盎', '栾布', '程嘉', '嘉'] drop=['郅将军', '浑邪']
+  - drop empty hub 师徒/学生
+  - drop empty hub 好友/好友
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉景帝关系表.json#[31] id=HD-FAM-032: duplicate node ('刘舜', 三级, '家庭')
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉景帝关系表.json#[32] id=HD-FAM-033: duplicate node ('刘彻', 三级, '家庭')
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉景帝关系表.json#[33] id=HD-FAM-034: duplicate node ('刘荣', 三级, '家庭')
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉景帝关系表.json#[34] id=HD-FAM-035: duplicate node ('刘馀', 三级, '家庭')
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉景帝关系表.json#[35] id=HD-FAM-036: duplicate node ('刘非', 三级, '家庭')
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉景帝关系表.json#[36] id=HD-FAM-037: duplicate node ('刘彭祖', 三级, '家庭')
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉景帝关系表.json#[37] id=HD-FAM-038: duplicate node ('刘胜', 三级, '家庭')
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉景帝关系表.json#[38] id=HD-FAM-039: duplicate node ('刘发', 三级, '家庭')
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉景帝关系表.json#[39] id=HD-FAM-040: duplicate node ('刘越', 三级, '家庭')
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉景帝关系表.json#[40] id=HD-FAM-041: duplicate node ('刘寄', 三级, '家庭')
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉景帝关系表.json#[41] id=HD-FAM-042: duplicate node ('刘乘', 三级, '家庭')
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉景帝关系表.json#[42] id=HD-FAM-043: duplicate node ('刘舜', 三级, '家庭')
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉景帝关系表.json#[43] id=HD-FAM-044: duplicate node ('刘端', 三级, '家庭')
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉景帝关系表.json#[44] id=HD-FAM-045: duplicate node ('刘阏于', 三级, '家庭')
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉景帝关系表.json#[45] id=HD-FAM-046: duplicate node ('刘平', 三级, '家庭')
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉景帝关系表.json#[46] id=HD-FAM-047: duplicate node ('刘明', 三级, '家庭')
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉景帝关系表.json#[47] id=HD-FAM-048: duplicate node ('刘彭离', 三级, '家庭')
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉景帝关系表.json#[48] id=HD-FAM-049: duplicate node ('刘定', 三级, '家庭')
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉景帝关系表.json#[49] id=HD-FAM-050: duplicate node ('刘不识', 三级, '家庭')
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉景帝关系表.json#[50] id=HD-FAM-051: duplicate node ('刘方乘', 三级, '家庭')
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉景帝关系表.json#[51] id=HD-FAM-052: duplicate node ('刘舜', 三级, '家庭')
+WARN /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉景帝关系表.json#[88] id=HD-MAS-001: 关系简述 very short
+
+FAILED: 21 critical issue(s) in 1 file(s)
+
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉景帝关系表.json#[31] id=HD-FAM-032: duplicate node ('刘舜', 三级, '家庭')
+WARN /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉景帝关系表.json#[68] id=HD-MAS-001: 关系简述 very short
+
+FAILED: 1 critical issue(s) in 1 file(s)
+
+FAIL GLBL_00083 汉景帝: 修订后 verify 仍失败:
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉景帝关系表.json#[31] id=HD-FAM-032: duplicate node ('刘舜', 三级, '家庭')
+WARN /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉景帝关系表.json#[68] id=HD-MAS-001: 关系简述 very short
+
+FAILED: 1 critical issue(s) in 1 file(s)
+
+Traceback (most recent call last):
+  File "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/tools/openclaw-historiography/historiography-person-relations/scripts/batch_compose_missing.py", line 108, in main
+    fp = rl.compose_one(
+         ^^^^^^^^^^^^^^^
+  File "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/tools/openclaw-historiography/historiography-person-relations/scripts/relations_lib.py", line 538, in compose_one
+    raise RuntimeError(f"修订后 verify 仍失败:\n{verify_out2}")
+RuntimeError: 修订后 verify 仍失败:
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉景帝关系表.json#[31] id=HD-FAM-032: duplicate node ('刘舜', 三级, '家庭')
+WARN /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉景帝关系表.json#[68] id=HD-MAS-001: 关系简述 very short
+
+FAILED: 1 critical issue(s) in 1 file(s)
+
+
+[10/247] compose GLBL_00084 汉武帝 …
+LLM: DeepSeek (deepseek-v4-flash)
+人物: GLBL_00084 汉武帝 (君王)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉武帝关系表.json
+  → 类别 家庭 …
+    6 条
+  → 类别 同僚 …
+    21 条
+  → 类别 敌对 …
+    8 条
+  → 类别 师徒 …
+    8 条
+  → 类别 好友 …
+    10 条
+sanitize:
+  - drop invalid family edge 栾大: '婿'
+  - mutex drop 好友/李少君 (kept in 同僚)
+  - mutex drop 好友/公孙卿 (kept in 同僚)
+  - mutex drop 好友/少翁 (kept in 同僚)
+  - mutex drop 好友/李延年 (kept in 同僚)
+  - mutex drop 好友/薄诱忌 (kept in 同僚)
+  - mutex drop 好友/宽舒 (kept in 同僚)
+  - mutex drop 好友/勇之 (kept in 同僚)
+  - mutex drop 好友/公玊带 (kept in 同僚)
+  - cap 同僚/同僚: 12→10 keep=['田蚡', '李延年', '少翁', '李少君', '公孙卿', '勇之', '宽舒', '所忠', '薄诱忌', '公玊带'] drop=['游水发根', '王朔']
+  - drop empty hub 同僚/君王
+  - drop empty hub 好友/好友
+
+OK: 1 file(s)
+
+✅ verify 通过: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉武帝关系表.json
+import: 汉武帝关系表.json → box_id=GLBL_00084 nodes=36+1 edges=36
+MySQL applied: 49.235.165.220/histomap
+OK GLBL_00084 汉武帝 (52s)
+
+[11/247] compose GLBL_00085 汉高祖 …
+LLM: DeepSeek (deepseek-v4-flash)
+人物: GLBL_00085 汉高祖 (君王)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉高祖关系表.json
+  → 类别 家庭 …
+    21 条
+  → 类别 同僚 …
+    ⚠️ 类别 同僚：3 轮均无有效产出，跳过
+    0 条
+  → 类别 敌对 …
+    17 条
+  → 类别 师徒 …
+    4 条
+  → 类别 好友 …
+    4 条
+sanitize:
+  - mutex drop 师徒/刘盈 (kept in 家庭)
+  - drop empty hub 师徒/学生
+WARN /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉高祖关系表.json#[38] id=HD-MAS-001: 关系简述 very short
+
+OK: 1 file(s)
+
+✅ verify 通过: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/汉高祖关系表.json
+import: 汉高祖关系表.json → box_id=GLBL_00085 nodes=44+1 edges=44
+MySQL applied: 49.235.165.220/histomap
+OK GLBL_00085 汉高祖 (162s)
+
+[12/247] compose GLBL_00154 傅喜 …
+LLM: DeepSeek (deepseek-v4-flash)
+人物: GLBL_00154 傅喜 (宗戚)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/傅喜关系表.json
+  → 类别 家庭 …
+    8 条
+  → 类别 同僚 …
+    8 条
+  → 类别 敌对 …
+    4 条
+  → 类别 师徒 …
+    2 条
+  → 类别 好友 …
+    2 条
+sanitize:
+  - mutex drop 好友/傅晏 (kept in 家庭)
+  - drop empty hub 好友/好友
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/傅喜关系表.json#[3] id=HD-FAM-004: duplicate node ('不详', 二级, '家庭')
+WARN /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/傅喜关系表.json#[2] id=HD-FAM-003: 关系简述 very short
+WARN /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/傅喜关系表.json#[20] id=HD-MAS-001: 关系简述 very short
+
+FAILED: 1 critical issue(s) in 1 file(s)
+
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/傅喜关系表.json#[3] id=HD-FAM-004: duplicate node ('不详', 二级, '家庭')
+WARN /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/傅喜关系表.json#[2] id=HD-FAM-003: 关系简述 very short
+WARN /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/傅喜关系表.json#[20] id=HD-MAS-001: 关系简述 very short
+
+FAILED: 1 critical issue(s) in 1 file(s)
+
+FAIL GLBL_00154 傅喜: 修订后 verify 仍失败:
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/傅喜关系表.json#[3] id=HD-FAM-004: duplicate node ('不详', 二级, '家庭')
+WARN /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/傅喜关系表.json#[2] id=HD-FAM-003: 关系简述 very short
+WARN /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/傅喜关系表.json#[20] id=HD-MAS-001: 关系简述 very short
+
+FAILED: 1 critical issue(s) in 1 file(s)
+
+Traceback (most recent call last):
+  File "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/tools/openclaw-historiography/historiography-person-relations/scripts/batch_compose_missing.py", line 108, in main
+    fp = rl.compose_one(
+         ^^^^^^^^^^^^^^^
+  File "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/tools/openclaw-historiography/historiography-person-relations/scripts/relations_lib.py", line 538, in compose_one
+    raise RuntimeError(f"修订后 verify 仍失败:\n{verify_out2}")
+RuntimeError: 修订后 verify 仍失败:
+CRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/傅喜关系表.json#[3] id=HD-FAM-004: duplicate node ('不详', 二级, '家庭')
+WARN /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/傅喜关系表.json#[2] id=HD-FAM-003: 关系简述 very short
+WARN /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/傅喜关系表.json#[20] id=HD-MAS-001: 关系简述 very short
+
+FAILED: 1 critical issue(s) in 1 file(s)
+
+
+[13/247] compose GLBL_00157 刘兴 …
+LLM: DeepSeek (deepseek-v4-flash)
+人物: GLBL_00157 刘兴 (宗戚)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/刘兴关系表.json
+  → 类别 家庭 …
+    8 条
+  → 类别 同僚 …
+    8 条
+  → 类别 敌对 …
+    3 条
+  → 类别 师徒 …
+    2 条
+  → 类别 好友 …
+    1 条
+sanitize:
+  - mutex drop 同僚/汉元帝 (kept in 家庭)
+  - mutex drop 同僚/汉成帝 (kept in 家庭)
+  - mutex drop 同僚/刘衎 (kept in 家庭)
+  - drop empty hub 同僚/君王
+  - drop empty hub 同僚/臣子
+  - drop empty hub 好友/好友
+WARN /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/刘兴关系表.json#[2] id=HD-FAM-003: 关系简述 very short
+WARN /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/刘兴关系表.json#[14] id=HD-MAS-001: 关系简述 very short
+
+OK: 1 file(s)
+
+✅ verify 通过: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/刘兴关系表.json
+import: 刘兴关系表.json → box_id=GLBL_00157 nodes=16+1 edges=16
+MySQL applied: 49.235.165.220/histomap
+OK GLBL_00157 刘兴 (23s)
+
+[14/247] compose GLBL_00159 代王刘参 …
+LLM: DeepSeek (deepseek-v4-flash)
+人物: GLBL_00159 代王刘参 (宗戚)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/代王刘参关系表.json
+  → 类别 家庭 …
+    9 条
+  → 类别 同僚 …
+    4 条
+  → 类别 敌对 …
+    2 条
+  → 类别 师徒 …
+    ⚠️ 类别 师徒：3 轮均无有效产出，跳过
+    0 条
+  → 类别 好友 …
+    ⚠️ 类别 好友：3 轮均无有效产出，跳过
+    0 条
+sanitize:
+  - mutex drop 同僚/汉文帝 (kept in 家庭)
+  - mutex drop 同僚/刘武 (kept in 家庭)
+  - drop empty hub 同僚/君王
+  - drop empty hub 同僚/同僚
+  - drop empty hub 敌对/内敌
+  - drop empty hub 敌对/外敌
+
+OK: 1 file(s)
+
+✅ verify 通过: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/代王刘参关系表.json
+import: 代王刘参关系表.json → box_id=GLBL_00159 nodes=9+1 edges=9
+MySQL applied: 49.235.165.220/histomap
+OK GLBL_00159 代王刘参 (20s)
+
+[15/247] compose GLBL_00161 刘嚣 …
+LLM: DeepSeek (deepseek-v4-flash)
+人物: GLBL_00161 刘嚣 (宗戚)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/刘嚣关系表.json
+  → 类别 家庭 …
+    8 条
+  → 类别 同僚 …
+    7 条
+  → 类别 敌对 …
+    5 条
+  → 类别 师徒 …
+    2 条
+  → 类别 好友 …
+    1 条
+sanitize:
+  - mutex drop 同僚/汉宣帝 (kept in 家庭)
+  - mutex drop 同僚/刘衍 (kept in 家庭)
+  - mutex drop 同僚/刘景 (kept in 家庭)
+  - drop empty hub 师徒/老师
+  - drop empty hub 师徒/学生
+  - drop empty hub 好友/好友
+
+OK: 1 file(s)
+
+✅ verify 通过: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/刘嚣关系表.json
+import: 刘嚣关系表.json → box_id=GLBL_00161 nodes=17+1 edges=17
+MySQL applied: 49.235.165.220/histomap
+OK GLBL_00161 刘嚣 (20s)
+
+[16/247] compose GLBL_00162 刘宇 …
+LLM: DeepSeek (deepseek-v4-flash)
+人物: GLBL_00162 刘宇 (宗戚)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/刘宇关系表.json
+  → 类别 家庭 …
+    7 条
+  → 类别 同僚 …
+    16 条
+  → 类别 敌对 …
+    6 条
+  → 类别 师徒 …
+    3 条
+  → 类别 好友 …
+    1 条
+sanitize:
+  - drop empty hub 好友/好友
+WARN /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/刘宇关系表.json#[3] id=HD-FAM-004: 关系简述 very short
+
+OK: 1 file(s)
+
+✅ verify 通过: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/刘宇关系表.json
+import: 刘宇关系表.json → box_id=GLBL_00162 nodes=32+1 edges=32
+MySQL applied: 49.235.165.220/histomap
+OK GLBL_00162 刘宇 (32s)
+
+[17/247] compose GLBL_00163 淮南王刘安 …
+LLM: DeepSeek (deepseek-v4-flash)
+人物: GLBL_00163 淮南王刘安 (宗戚)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/淮南王刘安关系表.json
+  → 类别 家庭 …
+    11 条
+  → 类别 同僚 …
+    21 条
+  → 类别 敌对 …
+    14 条
+  → 类别 师徒 …
+    10 条
+  → 类别 好友 …
+    4 条
+sanitize:
+  - drop invalid family edge 刘邦: '祖父'
+  - mutex drop 好友/田蚡 (kept in 同僚)
+  - mutex drop 好友/伍被 (kept in 同僚)
+  - mutex drop 好友/左吴 (kept in 同僚)
+  - cap 同僚/同僚: 12→10 keep=['张汤', '伍被', '田蚡', '公孙弘', '雷被', '周被', '赵贤', '朱骄如', '陈定', '楼缓'] drop=['左吴', '殷宏']
+  - drop empty hub 好友/好友
+
+OK: 1 file(s)
+
+✅ verify 通过: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/淮南王刘安关系表.json
+import: 淮南王刘安关系表.json → box_id=GLBL_00163 nodes=53+1 edges=53
+MySQL applied: 49.235.165.220/histomap
+OK GLBL_00163 淮南王刘安 (50s)
+
+[18/247] compose GLBL_00165 刘康 …
+LLM: DeepSeek (deepseek-v4-flash)
+人物: GLBL_00165 刘康 (宗戚)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/刘康关系表.json
+  → 类别 家庭 …
+    8 条
+  → 类别 同僚 …
+    7 条
+  → 类别 敌对 …
+    3 条
+  → 类别 师徒 …
+    2 条
+  → 类别 好友 …
+    1 条
+sanitize:
+  - mutex drop 同僚/刘骜 (kept in 家庭)
+  - mutex drop 师徒/汉元帝 (kept in 家庭)
+  - drop empty hub 师徒/老师
+  - drop empty hub 好友/好友
+WARN /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/刘康关系表.json#[3] id=HD-FAM-004: 关系简述 very short
+
+OK: 1 file(s)
+
+✅ verify 通过: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/刘康关系表.json
+import: 刘康关系表.json → box_id=GLBL_00165 nodes=17+1 edges=17
+MySQL applied: 49.235.165.220/histomap
+OK GLBL_00165 刘康 (24s)
+
+[19/247] compose GLBL_00166 刘彭祖 …
+LLM: DeepSeek (deepseek-v4-flash)
+人物: GLBL_00166 刘彭祖 (宗戚)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/刘彭祖关系表.json
+  → 类别 家庭 …
+    12 条
+  → 类别 同僚 …
+    11 条
+  → 类别 敌对 …
+    6 条
+  → 类别 师徒 …
+    2 条
+  → 类别 好友 …
+    1 条
+sanitize:
+  - mutex drop 同僚/平阳公主 (kept in 家庭)
+  - mutex drop 同僚/隆虑公主 (kept in 家庭)
+  - drop empty hub 师徒/老师
+  - drop empty hub 师徒/学生
+  - drop empty hub 好友/好友
+
+OK: 1 file(s)
+
+✅ verify 通过: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/刘彭祖关系表.json
+import: 刘彭祖关系表.json → box_id=GLBL_00166 nodes=27+1 edges=27
+MySQL applied: 49.235.165.220/histomap
+OK GLBL_00166 刘彭祖 (30s)
+
+[20/247] compose GLBL_00167 刘德 …
+LLM: DeepSeek (deepseek-v4-flash)
+人物: GLBL_00167 刘德 (宗戚)
+产出: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/刘德关系表.json
+  → 类别 家庭 …
+    9 条
+  → 类别 同僚 …
+    4 条
+  → 类别 敌对 …
+    2 条
+  → 类别 师徒 …

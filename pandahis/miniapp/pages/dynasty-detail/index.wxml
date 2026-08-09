@@ -20,24 +20,29 @@
   <view wx:elif="{{unit && swim}}">
 
     <!-- 并发政权 Tab 栏（fixed，紧贴 proto-nav 底部） -->
-    <view class="unit-civ-tabs" style="top: {{headerPadPx}}px;">
+    <view wx:if="{{concurrentTabs.length}}" class="unit-civ-tabs" style="top: {{headerPadPx}}px;">
       <scroll-view class="unit-region-scroll" scroll-x show-scrollbar="{{false}}" enhanced>
         <view class="unit-region-inner">
           <view
-            wx:for="{{concurrentItems}}"
-            wx:key="*this"
-            class="unit-civ-tab {{index === 0 ? 'active' : ''}}"
-          >{{item}}</view>
+            wx:for="{{concurrentTabs}}"
+            wx:key="label"
+            class="unit-civ-tab {{index === activeConcurrentIndex ? 'active' : ''}}"
+            bindtap="onConcurrentTabTap"
+            data-index="{{index}}"
+            hover-class="unit-civ-tab-hover"
+            hover-stay-time="60"
+          >{{item.label}}</view>
         </view>
       </scroll-view>
       <view class="unit-civ-fade"></view>
     </view>
 
-    <!-- 吸顶后：固定时间轴镜像（由 WXS 跟面板横滑实时同步，非独立 scroll-view） -->
+    <!-- 吸顶镜像常驻（隐藏/显示），避免 wx:if 挂载延迟造成外框过冲再弹回 -->
     <view
-      wx:if="{{axisPinned && swim}}"
-      class="dyn-axis-fixed"
+      wx:if="{{swim}}"
+      class="dyn-axis-fixed {{axisPinned ? 'is-pinned' : ''}}"
       style="top: {{scrollTop}}px;"
+      aria-hidden="{{axisPinned ? false : true}}"
     >
       <view class="dyn-axis-fixed-clip">
         <view
@@ -141,9 +146,10 @@
           style="height: {{swim.panelSheetHeightRpx}}rpx;"
         >
           <view class="dyn-panel-sheet" style="width: {{swim.canvasWidthRpx || swim.sheetWidthRpx}}rpx;">
-            <!-- 时间轴行（未吸顶时随面板横滑；吸顶后由占位撑高 + 顶部镜像） -->
+            <!-- 时间轴行（未吸顶时随面板横滑；吸顶后由占位撑高 + 顶部镜像）
+                 dyn-axis-pin-anchor = 外框顶边锚点（非整条内尺），碰到 Tab 底即吸顶 -->
             <view wx:if="{{!axisPinned}}" class="dyn-panel-axis">
-              <view class="dyn-axis-scroll-sheet" style="width: {{swim.canvasWidthRpx || swim.sheetWidthRpx}}rpx;">
+              <view class="dyn-axis-scroll-sheet dyn-axis-pin-anchor" style="width: {{swim.canvasWidthRpx || swim.sheetWidthRpx}}rpx;">
                 <view class="dyn-axis-pad" style="width: {{swim.canvasPadLeftRpx || 40}}rpx;"></view>
                 <view class="dyn-axis-sheet" style="width: {{swim.sheetWidthRpx}}rpx;">
                   <view class="dyn-swim-axis">
@@ -160,7 +166,7 @@
                 </view>
               </view>
             </view>
-            <view wx:else class="dyn-panel-axis-spacer"></view>
+            <view wx:else class="dyn-panel-axis-spacer dyn-axis-pin-anchor"></view>
 
             <!-- 史略画布 -->
             <view
@@ -300,6 +306,7 @@
             class="chip-tooltip-tag chip-tooltip-tag--cat-{{chipTooltipLaneKey}}"
           >{{chipTooltipTag}}</text>
           <view class="chip-tooltip-time">
+            <text wx:if="{{chipTooltipReignLabel}}" class="chip-tooltip-time-prefix">{{chipTooltipReignLabel}}</text>
             <text class="chip-tooltip-time-start">{{chipTooltipStartYear}}</text>
             <text wx:if="{{chipTooltipEndYear}}" class="chip-tooltip-time-sep">—</text>
             <text wx:if="{{chipTooltipEndYear}}" class="chip-tooltip-time-end">{{chipTooltipEndYear}}</text>

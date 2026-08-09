@@ -1,0 +1,58 @@
+{
+  "work": "03后汉书",
+  "vol": "057",
+  "total_paragraphs": 42,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_057_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 41,
+      "paragraph_to": 42,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "崔骃",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 20,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "崔骃字亭伯，涿郡安平人也。高祖父朝，昭帝时为幽州从事，谏刺史无与燕剌王通。及剌王",
+        "close_paragraph": 20,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P20"
+      }
+    },
+    {
+      "name": "崔瑗",
+      "category": "文臣",
+      "paragraph_from": 21,
+      "paragraph_to": 26,
+      "boundary_evidence": {
+        "open_paragraph": 21,
+        "open_phrase": "瑗字子玉，早孤，锐志好学，尽能传其父业。年十八，至京师，从侍中贾逵质正大义，逵善",
+        "close_paragraph": 26,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P21–P26"
+      }
+    },
+    {
+      "name": "崔寔",
+      "category": "文臣",
+      "paragraph_from": 27,
+      "paragraph_to": 40,
+      "boundary_evidence": {
+        "open_paragraph": 27,
+        "open_phrase": "寔字子真，一名台，字元始。少沉静，好典籍。父卒，隐居墓侧。服竟，三公并辟，皆不就",
+        "close_paragraph": 40,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P27–P40"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

@@ -1,0 +1,19 @@
+{
+  "schema": "translate-coverage-l2/v1",
+  "史略ID": "GLBL_00259",
+  "passed": true,
+  "degraded": false,
+  "summary": "M055信息已传达。",
+  "l1_ratio": 0.0,
+  "l1_min_ratio": 0.0,
+  "claims": [
+    {
+      "id": "M055",
+      "claim": "母本信息：安则陛下何求而不得，何为而不成，何征而不服乎哉！。",
+      "status": "conveyed",
+      "evidence": "徐乐的上书中提到：'安定之后，陛下还有什么求不到、什么做不成、什么征伐不能降服的呢！'",
+      "note": "白话译文以反问句形式传达了母本信息中'安则陛下何求而不得，何为而不成，何征而不服乎哉'的意思。"
+    }
+  ],
+  "issues": []
+}

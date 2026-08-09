@@ -79,7 +79,8 @@ public class UnitSwimMatrixService {
 
     SwimCanvasLayout.CanvasPlan canvas = SwimCanvasLayout.build(lanes);
 
-    List<String> concurrent = loadConcurrentItems(civName, dynastyName, startYear, endYear);
+    List<UnitSwimMatrixDTO.ConcurrentTab> concurrentTabs = loadConcurrentTabs(civName, dynastyName, startYear, endYear, dynastyId);
+    List<String> concurrent = concurrentTabs.stream().map(UnitSwimMatrixDTO.ConcurrentTab::label).toList();
 
     return new UnitSwimMatrixDTO(
         startYear,
@@ -91,6 +92,7 @@ public class UnitSwimMatrixService {
         finalPlan.timeScaleMode(),
         canvas.lanes(),
         concurrent,
+        concurrentTabs,
         sheetWidthRpx,
         canvas.canvasHeightRpx(),
         canvas.canvasPadLeftRpx(),
@@ -221,28 +223,35 @@ public class UnitSwimMatrixService {
     };
   }
 
-  private List<String> loadConcurrentItems(String civName, String dynastyName, int start, int end) {
+  private List<UnitSwimMatrixDTO.ConcurrentTab> loadConcurrentTabs(
+      String civName, String dynastyName, int start, int end, String selfDynastyId
+  ) {
     List<Map<String, Object>> rows = jdbcTemplate.queryForList(
         "SELECT DISTINCT COALESCE(NULLIF(TRIM(r.civilization_name),''), c.display_name) AS civ, "
-            + "COALESCE(NULLIF(TRIM(r.name),''), r.dynasty_name) AS title "
+            + "COALESCE(NULLIF(TRIM(r.name),''), r.dynasty_name) AS title, "
+            + "r.dynasty_id AS dynasty_id "
             + "FROM historical_regime r "
             + "JOIN civilization_l1 c ON c.id=r.civilization_l1_id "
             + "WHERE r.status=1 AND r.start_year IS NOT NULL AND r.end_year IS NOT NULL "
-            + "AND r.start_year<? AND r.end_year>? "
-            + "LIMIT 24",
+            + "AND r.start_year<? AND r.end_year>? AND r.dynasty_id IS NOT NULL "
+            + "LIMIT 48",
         end,
         start
     );
-    List<String> out = new ArrayList<>();
+    List<UnitSwimMatrixDTO.ConcurrentTab> out = new ArrayList<>();
     String self = civName + "·" + dynastyName;
-    out.add(self);
+    out.add(new UnitSwimMatrixDTO.ConcurrentTab(self, civName, selfDynastyId));
     for (Map<String, Object> r : rows) {
-      String item = r.get("civ") + "·" + r.get("title");
-      if (!out.contains(item)) out.add(item);
+      String civ = trimText(r.get("civ"));
+      String title = trimText(r.get("title"));
+      String dynastyId = trimText(r.get("dynasty_id"));
+      if (civ.isEmpty() || title.isEmpty() || dynastyId.isEmpty()) continue;
+      String label = civ + "·" + title;
+      if (out.stream().anyMatch(t -> t.label().equals(label))) continue;
+      out.add(new UnitSwimMatrixDTO.ConcurrentTab(label, civ, dynastyId));
     }
     return out;
   }
-
 
   private static String personTag(Object raw) {
     if (raw == null) {

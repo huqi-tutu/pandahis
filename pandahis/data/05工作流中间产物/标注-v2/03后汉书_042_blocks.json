@@ -1,0 +1,87 @@
+{
+  "work": "03后汉书",
+  "vol": "042",
+  "total_paragraphs": 31,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_042_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 27,
+      "paragraph_to": 29,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 30,
+      "paragraph_to": 31,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "张宗",
+      "category": "武将",
+      "paragraph_from": 2,
+      "paragraph_to": 4,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "张宗字诸君，南阳鲁阳人也。王莽时，为县阳泉乡佐。会莽败，义兵起，宗乃率阳泉民三四",
+        "close_paragraph": 4,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P4"
+      }
+    },
+    {
+      "name": "法雄",
+      "category": "武将",
+      "paragraph_from": 5,
+      "paragraph_to": 9,
+      "boundary_evidence": {
+        "open_paragraph": 5,
+        "open_phrase": "法雄字文强，扶风郿人也，齐襄王法章之后。秦灭齐，子孙不敢称田姓，故以法为氏。宣帝",
+        "close_paragraph": 9,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P5–P9"
+      }
+    },
+    {
+      "name": "滕抚",
+      "category": "武将",
+      "paragraph_from": 10,
+      "paragraph_to": 12,
+      "boundary_evidence": {
+        "open_paragraph": 10,
+        "open_phrase": "滕抚字叔辅，北海剧人也。初仕州郡，稍迁为涿令，有文武才用。太守以其能，委任郡职，",
+        "close_paragraph": 12,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P10–P12"
+      }
+    },
+    {
+      "name": "冯绲",
+      "category": "武将",
+      "paragraph_from": 13,
+      "paragraph_to": 19,
+      "boundary_evidence": {
+        "open_paragraph": 13,
+        "open_phrase": "冯绲字鸿卿，巴郡宕渠人也，少学《春秋》《司马兵法》。父焕，安帝时为幽州刺史，疾忌",
+        "close_paragraph": 19,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P13–P19"
+      }
+    },
+    {
+      "name": "度尚",
+      "category": "武将",
+      "paragraph_from": 20,
+      "paragraph_to": 26,
+      "boundary_evidence": {
+        "open_paragraph": 20,
+        "open_phrase": "度尚字博平，山阳湖陆人也。家贫，不修学行，不为乡里所推举。积困穷，乃为宦者同郡侯",
+        "close_paragraph": 26,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P20–P26"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

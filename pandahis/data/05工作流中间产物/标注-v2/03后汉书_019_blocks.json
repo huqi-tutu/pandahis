@@ -1,0 +1,73 @@
+{
+  "work": "03后汉书",
+  "vol": "019",
+  "total_paragraphs": 53,
+  "volume_subtype": "hezhuan",
+  "derived_from": "03后汉书_019_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 23,
+      "paragraph_to": 24,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 40,
+      "paragraph_to": 42,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 49,
+      "paragraph_to": 51,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 52,
+      "paragraph_to": 53,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "冯异",
+      "category": "武将",
+      "paragraph_from": 2,
+      "paragraph_to": 22,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "冯异字公孙，颍川父城人也。好读书，能《左氏春秋》《孙子兵法》。",
+        "close_paragraph": 22,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P22"
+      }
+    },
+    {
+      "name": "岑彭",
+      "category": "武将",
+      "paragraph_from": 25,
+      "paragraph_to": 39,
+      "boundary_evidence": {
+        "open_paragraph": 25,
+        "open_phrase": "岑彭字君然，南阳棘阳人也。王莽时，守本县长。汉兵起，攻拔棘阳，彭将家属奔前队大夫",
+        "close_paragraph": 39,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P25–P39"
+      }
+    },
+    {
+      "name": "贾复",
+      "category": "武将",
+      "paragraph_from": 43,
+      "paragraph_to": 48,
+      "boundary_evidence": {
+        "open_paragraph": 43,
+        "open_phrase": "贾复字君文，南阳冠军人也。少好学，习《尚书》。事舞阴李生，李生奇之，谓门人曰：“",
+        "close_paragraph": 48,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P43–P48"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

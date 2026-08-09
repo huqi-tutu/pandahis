@@ -1,0 +1,425 @@
+{
+  "volume": "任李万邳刘耿列传",
+  "source_file": "03后汉书_023_任李万邳刘耿列传第十一.txt",
+  "total_paragraphs": 39,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "任光",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "任光",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "任光",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "任光",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "任光",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 8,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 9,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 10,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "李忠",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "李忠",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "李忠",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "李忠",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "李忠",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "万脩",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "万脩",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "邳彤",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "邳彤",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "邳彤",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "邳彤",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "邳彤",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "邳彤",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "邳彤",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "刘植",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "刘植",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "耿纯",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "耿纯",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "耿纯",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "耿纯",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "耿纯",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "耿纯",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "耿纯",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "耿纯",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "耿纯",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "耿纯",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "耿纯",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HOUHANSHU_023_01",
+      "史略名称": "任光",
+      "史略简介": "任光",
+      "原文字句": "任光字伯卿，南阳宛人也。少忠厚，为乡里所爱。初为乡啬夫、郡县吏。汉兵至宛，军人见光冠服鲜明，令解衣，将杀而夺之。会光禄勋刘赐适至，视光容貌长者，乃救全之。光因率党与从赐，为安集掾，拜偏将军，与世祖破王寻、王邑。",
+      "史略分类": "武将",
+      "主要史料出处": "《03后汉书·卷23·任李万邳刘耿列传》",
+      "paragraphs": [
+        {
+          "volume": "任李万邳刘耿列传",
+          "paragraph_from": 2,
+          "paragraph_to": 6
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_023_02",
+      "史略名称": "李忠",
+      "史略简介": "李忠",
+      "原文字句": "李忠字仲都，东莱黄人也。父为高密都尉。忠元始中以父任为郎，署中数十人，而忠独以好礼修整称。王莽时为新博属长，郡中咸敬信之。",
+      "史略分类": "武将",
+      "主要史料出处": "《03后汉书·卷23·任李万邳刘耿列传》",
+      "paragraphs": [
+        {
+          "volume": "任李万邳刘耿列传",
+          "paragraph_from": 11,
+          "paragraph_to": 15
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_023_03",
+      "史略名称": "万脩",
+      "史略简介": "万脩",
+      "原文字句": "万脩字君游，扶风茂陵人也。更始时，为信都令，与太守任光、都尉李忠共城守，迎世祖，拜为偏将军，封造义侯。及破邯郸，拜右将军，从平河北。建武二年，更封槐里侯。与扬化将军坚镡俱击南阳，未克而病，卒于军。",
+      "史略分类": "武将",
+      "主要史料出处": "《03后汉书·卷23·任李万邳刘耿列传》",
+      "paragraphs": [
+        {
+          "volume": "任李万邳刘耿列传",
+          "paragraph_from": 16,
+          "paragraph_to": 17
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_023_04",
+      "史略名称": "邳彤",
+      "史略简介": "邳彤",
+      "原文字句": "邳彤字伟君，信都人也。父吉，为辽西太守。彤初为王莽和成卒正。世祖徇河北，至下曲阳，彤举城降，复以为太守，留止数日。世祖北至蓟，会王郎兵起，使其将徇地，所到县莫不奉迎，唯和成、信都坚守不下。彤闻世祖从蓟还，失军，欲至信都，乃先使五官掾张万、督邮尹绥，选精骑二千余匹，缘路迎世祖军。彤寻与世祖会信都。世祖虽得二郡之助，而兵众未合，议者多言可因信都兵自送，西还长安。彤廷对曰：",
+      "史略分类": "武将",
+      "主要史料出处": "《03后汉书·卷23·任李万邳刘耿列传》",
+      "paragraphs": [
+        {
+          "volume": "任李万邳刘耿列传",
+          "paragraph_from": 18,
+          "paragraph_to": 24
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_023_05",
+      "史略名称": "刘植",
+      "史略简介": "刘植",
+      "原文字句": "刘植字伯先，巨鹿昌城人也。王郎起，植与弟喜、从兄歆率宗族宾客，聚兵数千人据昌城。闻世祖从蓟还，乃开门迎世祖，以植为骁骑将军，喜、歆偏将军，皆为列侯。时真定王刘扬起兵以附王郎，众十余万，世祖遣植说扬，扬乃降。世祖因留真定，纳郭后，后即扬之甥也，故以此结之。乃与扬及诸将置酒郭氏漆里舍，扬击筑为欢，因得进兵拔邯郸，从平河北。",
+      "史略分类": "武将",
+      "主要史料出处": "《03后汉书·卷23·任李万邳刘耿列传》",
+      "paragraphs": [
+        {
+          "volume": "任李万邳刘耿列传",
+          "paragraph_from": 26,
+          "paragraph_to": 27
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_023_06",
+      "史略名称": "耿纯",
+      "史略简介": "耿纯",
+      "原文字句": "耿纯字伯山，巨鹿宋子人也。父艾，为王莽济平尹。纯学于长安，因除为纳言士。",
+      "史略分类": "武将",
+      "主要史料出处": "《03后汉书·卷23·任李万邳刘耿列传》",
+      "paragraphs": [
+        {
+          "volume": "任李万邳刘耿列传",
+          "paragraph_from": 28,
+          "paragraph_to": 38
+        }
+      ]
+    }
+  ]
+}

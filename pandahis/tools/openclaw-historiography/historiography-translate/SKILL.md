@@ -133,4 +133,5 @@ SSOT：[`翻译规则.md`](../historiography-compose/references/翻译规则.md)
 ## 相关 Skill
 
 - [`historiography-compose`](../historiography-compose/SKILL.md) — 规则 SSOT 与手工 compose
-- [`historiography-annotate`](../historiography-annotate/SKILL.md) — 召回与索引（非翻译入口）
+- [`historiography-annotate`](../historiography-annotate/README.md) — 共享规则与召回脚本（非 Agent 入口）
+- [`historiography-annotate-v2`](../historiography-annotate-v2/SKILL.md) — 标注索引产出（data/10）

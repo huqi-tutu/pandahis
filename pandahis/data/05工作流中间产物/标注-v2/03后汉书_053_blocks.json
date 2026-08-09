@@ -1,0 +1,87 @@
+{
+  "work": "03后汉书",
+  "vol": "053",
+  "total_paragraphs": 61,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_053_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 51,
+      "paragraph_to": 59,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 60,
+      "paragraph_to": 61,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "杨终",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 10,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "杨终字子山，蜀郡成都人也。年十三，为郡小吏，太守奇其才，遣诣京师受业，习《春秋》",
+        "close_paragraph": 10,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P10"
+      }
+    },
+    {
+      "name": "李法",
+      "category": "文臣",
+      "paragraph_from": 11,
+      "paragraph_to": 11,
+      "boundary_evidence": {
+        "open_paragraph": 11,
+        "open_phrase": "李法字伯度，汉中南郑人也。博通群书，性刚而有节。和帝永元九年，应贤艮方正对策。除",
+        "close_paragraph": 11,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P11–P11"
+      }
+    },
+    {
+      "name": "翟酺",
+      "category": "文臣",
+      "paragraph_from": 12,
+      "paragraph_to": 22,
+      "boundary_evidence": {
+        "open_paragraph": 12,
+        "open_phrase": "翟酺字子超，广汉雒人也。四世传《诗》。酺好《老子》，尤善图纬、天文、历算。以报舅",
+        "close_paragraph": 22,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P12–P22"
+      }
+    },
+    {
+      "name": "应奉",
+      "category": "文臣",
+      "paragraph_from": 23,
+      "paragraph_to": 44,
+      "boundary_evidence": {
+        "open_paragraph": 23,
+        "open_phrase": "应奉字世叔，汝南南顿人也。曾祖父顺，字华仲，和帝时为河南尹、将作大匠，公廉约己，",
+        "close_paragraph": 44,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P23–P44"
+      }
+    },
+    {
+      "name": "霍谞",
+      "category": "文臣",
+      "paragraph_from": 45,
+      "paragraph_to": 50,
+      "boundary_evidence": {
+        "open_paragraph": 45,
+        "open_phrase": "霍谞字叔智，魏郡邺人也。少为诸生，明经。有人诬谞舅宋光于大将军梁商者，以为妄刊章",
+        "close_paragraph": 50,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P45–P50"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

@@ -1,11 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const api_1 = require("../../native-utils/api");
 const correction_1 = require("../../native-utils/correction");
+const encode_path_segment_1 = require("../../native-utils/encode-path-segment");
 const nav_metrics_1 = require("../../native-utils/nav-metrics");
 const selection_bar_position_1 = require("../../native-utils/selection-bar-position");
 const SOURCE_TYPE = 'relic_detail_selection';
 Page({
     data: {
+        relicId: 0,
         navTitle: '',
         name: '',
         museum: '',
@@ -29,12 +32,18 @@ Page({
         correctionSelectedText: '',
     },
     _selectionContext: null,
-    onLoad(query) {
+    async onLoad(query) {
         try {
             this.setData({ pageTopPadPx: (0, nav_metrics_1.computePageTopPadPx)() });
         }
         catch {
             this.setData({ pageTopPadPx: 88 });
+        }
+        const relicId = Number(query.relicId || 0);
+        if (relicId > 0) {
+            this.setData({ relicId });
+            await this.loadById(relicId);
+            return;
         }
         const name = decodeURIComponent(query.name || '');
         const navTitle = decodeURIComponent(query.navTitle || '') || name || '见证';
@@ -50,6 +59,33 @@ Page({
             civilizationName: decodeURIComponent(query.civilizationName || ''),
             dynastyName: decodeURIComponent(query.dynastyName || ''),
         });
+    },
+    async loadById(relicId) {
+        try {
+            wx.showLoading({ title: '加载中', mask: true });
+            const res = await (0, api_1.request)(`/relics/${(0, encode_path_segment_1.encodePathSegment)(String(relicId))}`);
+            wx.hideLoading();
+            const d = res.data || {};
+            const boxTitle = String(d.boxTitle || '').trim();
+            const name = String(d.name || '').trim();
+            this.setData({
+                relicId,
+                boxId: String(d.boxId || '').trim(),
+                boxTitle,
+                civilizationName: String(d.civilizationName || '').trim(),
+                dynastyName: String(d.dynastyName || '').trim(),
+                navTitle: boxTitle ? `${boxTitle}・见证` : '见证',
+                name,
+                museum: String(d.museum || '').trim(),
+                detail: String(d.description || d.summary || '').trim(),
+                imageUrl: String(d.imageUrl || '').trim(),
+            });
+        }
+        catch (err) {
+            wx.hideLoading();
+            const msg = err instanceof Error ? err.message : '加载失败';
+            wx.showToast({ title: msg, icon: 'none' });
+        }
     },
     onReady() {
         this.bindBodySelectionContext();
@@ -156,9 +192,14 @@ Page({
         var _a;
         const reason = String(((_a = e.detail) === null || _a === void 0 ? void 0 : _a.reason) || '');
         const boxId = this.data.boxId;
+        const relicId = Number(this.data.relicId || 0);
         if (!boxId || this.data.correctionSubmitting) {
             if (!boxId)
                 wx.showToast({ title: '缺少史略信息，无法提交', icon: 'none' });
+            return;
+        }
+        if (!(relicId > 0)) {
+            wx.showToast({ title: '缺少见证信息，无法提交', icon: 'none' });
             return;
         }
         this.setData({ correctionSubmitting: true });
@@ -168,6 +209,7 @@ Page({
                 sourceType: SOURCE_TYPE,
                 reason,
                 selectedText: this.data.correctionSelectedText,
+                sourceRefId: relicId,
             });
             wx.showToast({ title: '提交成功，感谢反馈', icon: 'success' });
             this.setData({ correctionVisible: false, correctionSubmitting: false });

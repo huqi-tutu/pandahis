@@ -1,0 +1,374 @@
+{
+  "volume": "宗室四王三侯列传",
+  "source_file": "03后汉书_016_宗室四王三侯列传第四.txt",
+  "total_paragraphs": 53,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "刘縯",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "刘縯",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "刘縯",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "刘縯",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "刘縯",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "刘縯",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "刘縯",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "刘縯",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "刘縯",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 12,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 13,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 14,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 15,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 16,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 17,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 18,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 19,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 20,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 21,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 22,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 23,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 24,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "刘良",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 27,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 28,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 29,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 30,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 31,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 32,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 33,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 34,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 35,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 36,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 37,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 38,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 39,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 40,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "刘赐",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "刘赐",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "刘赐",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 45,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 46,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 47,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 48,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 49,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 50,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 51,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 52,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 53,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HOUHANSHU_016_01",
+      "史略名称": "刘縯",
+      "史略简介": "刘縯",
+      "原文字句": "齐武王縯字伯升，光武之长兄也。性刚毅，慷慨有大节。自王莽篡汉，常愤愤，怀复社稷之虑，不事家人居业，倾身破产，交结天下雄俊。",
+      "史略分类": "宗戚",
+      "主要史料出处": "《03后汉书·卷16·宗室四王三侯列传》",
+      "paragraphs": [
+        {
+          "volume": "宗室四王三侯列传",
+          "paragraph_from": 2,
+          "paragraph_to": 10
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_016_02",
+      "史略名称": "刘良",
+      "史略简介": "刘良",
+      "原文字句": "赵孝王良字次伯，光武之叔父也。平帝时举孝廉，为萧令。光武兄弟少孤，良抚循甚笃。及光武起兵，以事告，良大怒，曰：“汝与伯升志操不同，今家欲危亡，而反共谋如是！”既而不得已，从军至小长安，汉兵大败，良妻及二子皆被害。更始立，以良为国三老，从入关。更始败。良闻光武即位，乃亡奔洛阳。建武二年，封良为广阳王。五年，徙为赵王，始就国。十三年，降为赵公。频岁来朝。十七年，薨于京师。凡六十六年。子节王栩嗣。建武三",
+      "史略分类": "宗戚",
+      "主要史料出处": "《03后汉书·卷16·宗室四王三侯列传》",
+      "paragraphs": [
+        {
+          "volume": "宗室四王三侯列传",
+          "paragraph_from": 25,
+          "paragraph_to": 25
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_016_03",
+      "史略名称": "刘赐",
+      "史略简介": "刘赐",
+      "原文字句": "安城孝侯赐字子琴，光武族兄也。祖父利，苍梧太守。赐少孤。兄显报怨杀人，吏捕显杀之。赐与显子信卖田宅，同抛财产，结客报吏，皆亡命逃伏遭赦日。会伯升起兵，乃随从攻击诸县。",
+      "史略分类": "宗戚",
+      "主要史料出处": "《03后汉书·卷16·宗室四王三侯列传》",
+      "paragraphs": [
+        {
+          "volume": "宗室四王三侯列传",
+          "paragraph_from": 41,
+          "paragraph_to": 43
+        }
+      ]
+    }
+  ]
+}

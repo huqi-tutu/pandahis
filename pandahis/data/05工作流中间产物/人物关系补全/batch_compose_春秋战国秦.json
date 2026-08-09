@@ -1,0 +1,33 @@
+{
+  "started": "2026-08-09T02:28:21.718515+00:00",
+  "ok": [
+    {
+      "id": "GLBL_00896",
+      "name": "安国侯王陵",
+      "file": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/安国侯王陵关系表.json",
+      "sec": 21.1
+    },
+    {
+      "id": "GLBL_00911",
+      "name": "郭纵",
+      "file": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/郭纵关系表.json",
+      "sec": 22.6
+    },
+    {
+      "id": "GLBL_00097",
+      "name": "秦二世",
+      "file": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/秦二世关系表.json",
+      "sec": 28.2
+    }
+  ],
+  "skip": [],
+  "fail": [
+    {
+      "id": "GLBL_00279",
+      "name": "冉求",
+      "error": "修订后 verify 仍失败:\nCRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/冉求关系表.json: mutex: '公西华' in 同僚 and 好友\nCRITICAL /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/07人物关系/冉求关系表.json: mutex: '子路' in 同僚 and 好友\n\nFAILED: 2 critical issue(s) in 1 file(s)\n",
+      "sec": 27.8
+    }
+  ],
+  "updated": "2026-08-09T02:30:01.509376+00:00"
+}

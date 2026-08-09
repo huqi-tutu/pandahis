@@ -1,0 +1,38 @@
+{
+  "work": "03后汉书",
+  "vol": "049",
+  "volume_name": "邓张徐张胡列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_arc": "C",
+  "volume_texture": "sequential",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "邓彪",
+      "category": "文臣",
+      "rationale": "字智伯，太傅；P2–P4。"
+    },
+    {
+      "name": "张禹",
+      "category": "文臣",
+      "rationale": "P5–P12（含祖况）。"
+    },
+    {
+      "name": "徐防",
+      "category": "文臣",
+      "rationale": "P13–P20。"
+    },
+    {
+      "name": "张敏",
+      "category": "文臣",
+      "rationale": "P21–P27。"
+    },
+    {
+      "name": "胡广",
+      "category": "文臣",
+      "rationale": "P28–P41。"
+    }
+  ]
+}

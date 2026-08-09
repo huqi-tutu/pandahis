@@ -1,7 +1,7 @@
 ---
 name: historiography-dynasty-knowledge
 description: >
-  朝代知识补全（事略/典制/论著/人物七类）。与 historiography-annotate（二十四史卷级人物标注）完全独立。
+  朝代知识补全（事略/典制/论著/人物七类）。与 historiography-annotate-v2（二十四史卷级标注）完全独立。
   按朝代 + LLM 史学共识补全，不经著作抽取。激活词：朝代补全、事略补全、典制补全、论著补全、人物补全、帝王补全。
 ---
 
@@ -11,7 +11,7 @@ description: >
 
 | 模块 | 职责 | 输入 |
 |------|------|------|
-| **historiography-annotate** | 一期：人物七类，从二十四史卷抽取 | 著作 + 卷 |
+| **historiography-annotate-v2** | 卷级人物标注（v2 → data/10） | 著作 + 卷 |
 | **historiography-dynasty-knowledge**（本 skill） | 二期：事略 / 典制 / 论著 + 人物缺口补全，按朝代 LLM 补全 | 朝代 |
 
 **禁止**在标注 skill 中引用本目录 `reference/`；**禁止**在本 skill 中跑 Step1 卷级切块。

@@ -1,0 +1,131 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01128",
+  "写作结构": "正史叙述见翻译详录（《史记·卫将军骠骑列传》《汉书·匈奴传》）。拓展文以史外异说与延展为主：先引《资治通鉴》对漠北之战的时间、统帅及结果的综合记载（B档，仅概述不写细节）；再引《盐铁论》中关于汉匈战争后果的议论（B档，仅概述）；最后可引《太平御览》所存《汉书》异文或后世类书转引（B档，仅概述）。具体战斗过程、兵力数字、对话等一律留白。",
+  "候选著作": [
+    {
+      "出处": "《史记·卫将军骠骑列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史主要出处，记载卫青、霍去病出击匈奴及漠北之战经过",
+      "检索词": "漠北",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《汉书·匈奴传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史主要出处，记载匈奴远遁及汉匈关系变化",
+      "检索词": "漠北",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《资治通鉴·汉纪十一》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "后世编年史，综合《史记》《汉书》记载漠北之战，可作时间、统帅、结果的旁证",
+      "检索词": "漠北",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《盐铁论·西域》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "西汉昭帝时盐铁会议记录，论及汉武帝征匈奴之耗费与后果，可作战役影响的时人议论",
+      "检索词": "匈奴",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《太平御览·兵部》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋代类书，转引前代文献中关于漠北之战及卫霍事迹的片段，可作异说或补充",
+      "检索词": "卫青",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·卫将军骠骑列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史主要出处，记载卫青、霍去病出击匈奴及漠北之战经过",
+      "检索词": "漠北",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《汉书·匈奴传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史主要出处，记载匈奴远遁及汉匈关系变化",
+      "检索词": "漠北",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《资治通鉴·汉纪十一》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "后世编年史，综合《史记》《汉书》记载漠北之战，可作时间、统帅、结果的旁证",
+      "检索词": "漠北",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《盐铁论·西域》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "西汉昭帝时盐铁会议记录，论及汉武帝征匈奴之耗费与后果，可作战役影响的时人议论",
+      "检索词": "匈奴",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《太平御览·兵部》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋代类书，转引前代文献中关于漠北之战及卫霍事迹的片段，可作异说或补充",
+      "检索词": "卫青",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 3,
+    "overall": "B"
+  }
+}

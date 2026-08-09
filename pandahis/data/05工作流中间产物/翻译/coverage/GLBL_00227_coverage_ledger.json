@@ -1,0 +1,13 @@
+{
+  "schema": "translate-coverage-ledger/v1",
+  "史略ID": "GLBL_00227",
+  "updated_at": "2026-08-09T08:09:46.829677+00:00",
+  "entries": {
+    "M001": {
+      "status": "conveyed",
+      "claim_fp": "5001c585b65c67d2",
+      "checked_at": "2026-08-09T08:09:32.788939+00:00",
+      "note": "白话译文完整包含了同日封王、策书内容、母亲受宠、八年后去世无子国除等信息。"
+    }
+  }
+}

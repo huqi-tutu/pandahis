@@ -1,0 +1,85 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01175",
+  "写作结构": "正史叙述见翻译详录（《史记·樊郦滕灌列传》等），拓展文写史外异说与延展：以《史记·佞幸列传》为索引，说明籍孺为汉高祖宠臣、以婉佞得幸，影响限于宫廷；可引《汉书·佞幸传》互证，并提及后世类书（如《太平御览》）对佞幸现象的综述；无具体言行细节，叙事性留白。",
+  "候选著作": [
+    {
+      "出处": "《史记·佞幸列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史中籍孺的直接出处，记载其以婉佞得幸于汉高祖，为宠臣典型。",
+      "检索词": "籍孺",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《汉书·佞幸传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "班固承《史记》而作，对籍孺有类似记载，可作互证。",
+      "检索词": "籍孺",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《太平御览·人事部·宠幸》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋代类书辑录历代宠臣事迹，可反映籍孺在后世认知中的佞幸定位。",
+      "检索词": "籍孺",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·佞幸列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史中籍孺的直接出处，记载其以婉佞得幸于汉高祖，为宠臣典型。",
+      "检索词": "籍孺",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《汉书·佞幸传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "班固承《史记》而作，对籍孺有类似记载，可作互证。",
+      "检索词": "籍孺",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《太平御览·人事部·宠幸》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋代类书辑录历代宠臣事迹，可反映籍孺在后世认知中的佞幸定位。",
+      "检索词": "籍孺",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 1,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

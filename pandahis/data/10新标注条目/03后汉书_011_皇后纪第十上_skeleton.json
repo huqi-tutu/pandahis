@@ -1,0 +1,576 @@
+{
+  "volume": "皇后纪第十上",
+  "source_file": "03后汉书_011_皇后纪第十上.txt",
+  "total_paragraphs": 59,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "interleaved",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 3,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 4,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 5,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "光武郭皇后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "光武郭皇后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "光武郭皇后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "光武郭皇后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "光武郭皇后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "光烈阴皇后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "光烈阴皇后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "光烈阴皇后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "光烈阴皇后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "光烈阴皇后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "明德马皇后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "明德马皇后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "明德马皇后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "明德马皇后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "明德马皇后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "明德马皇后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "明德马皇后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "明德马皇后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "明德马皇后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "明德马皇后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "明德马皇后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "明德马皇后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "明德马皇后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "章德窦皇后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "章德窦皇后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "章德窦皇后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "章德窦皇后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 37,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 38,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "和熹邓皇后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "和熹邓皇后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "和熹邓皇后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "和熹邓皇后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "和熹邓皇后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "和熹邓皇后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "和熹邓皇后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [
+        {
+          "name": "和熹邓皇后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 47,
+      "owners": [
+        {
+          "name": "和熹邓皇后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 48,
+      "owners": [
+        {
+          "name": "和熹邓皇后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 49,
+      "owners": [
+        {
+          "name": "和熹邓皇后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 50,
+      "owners": [
+        {
+          "name": "和熹邓皇后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 51,
+      "owners": [
+        {
+          "name": "和熹邓皇后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 52,
+      "owners": [
+        {
+          "name": "和熹邓皇后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 53,
+      "owners": [
+        {
+          "name": "和熹邓皇后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 54,
+      "owners": [
+        {
+          "name": "和熹邓皇后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 55,
+      "owners": [
+        {
+          "name": "和熹邓皇后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 56,
+      "owners": [
+        {
+          "name": "和熹邓皇后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 57,
+      "owners": [
+        {
+          "name": "和熹邓皇后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 58,
+      "owners": [
+        {
+          "name": "和熹邓皇后",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 59,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HOUHANSHU_011_01",
+      "史略名称": "光武郭皇后",
+      "史略简介": "光武郭皇后",
+      "原文字句": "光武郭皇后讳圣通，真定稿人也。为郡著姓。父昌，让田宅财产数百万与异母弟，国人义之。仕郡功曹。娶真定恭王女，号郭主，生后及子况。昌早卒。郭主虽王家女，而好礼节俭，有母仪之德。更始二年春，光武击王郎，至真定，因纳后，有宠。及即位，以为贵人。",
+      "史略分类": "宗戚",
+      "主要史料出处": "《03后汉书·卷11·皇后纪第十上》",
+      "paragraphs": [
+        {
+          "volume": "皇后纪第十上",
+          "paragraph_from": 6,
+          "paragraph_to": 10
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_011_02",
+      "史略名称": "光烈阴皇后",
+      "史略简介": "光烈阴皇后",
+      "原文字句": "光烈阴皇后讳丽华，南阳新野人。初，光武适新野，闻后美，心悦之。后至长安，见执金吾车骑甚盛，因叹曰：“仕宦当作执金吾，娶妻当得阴丽华。”更始元年六月，遂纳后于宛当成里，时年十九。及光武为司隶校尉，方西之洛阳，令后归新野。及邓奉起兵，后兄识为之将，后随家属徙淯阴，止于奉舍。",
+      "史略分类": "宗戚",
+      "主要史料出处": "《03后汉书·卷11·皇后纪第十上》",
+      "paragraphs": [
+        {
+          "volume": "皇后纪第十上",
+          "paragraph_from": 12,
+          "paragraph_to": 16
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_011_03",
+      "史略名称": "明德马皇后",
+      "史略简介": "明德马皇后",
+      "原文字句": "明德马皇后讳某，伏波将军援之小女也。少丧父母。兄客卿惠敏早夭，母蔺夫人悲伤发疾慌惚。后时年十岁，干理家事，敕制僮御，内外咨禀，事同成人。初，诸家莫知者，后闻之，咸叹异焉。后尝久疾，太夫人令筮之，筮者曰：“此女虽有患状而当大贵，兆不可言也。”后又呼相者使占诸女，见后，大惊曰：“我必为此女称臣。然贵而少子，若养它子者得力，乃当逾于所生。”",
+      "史略分类": "宗戚",
+      "主要史料出处": "《03后汉书·卷11·皇后纪第十上》",
+      "paragraphs": [
+        {
+          "volume": "皇后纪第十上",
+          "paragraph_from": 17,
+          "paragraph_to": 29
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_011_04",
+      "史略名称": "章德窦皇后",
+      "史略简介": "章德窦皇后",
+      "原文字句": "章德窦皇后讳某，扶风平陵人，大司空融之曾孙也。祖穆，父勋，坐事死，事在《窦融传》。勋尚东海恭王强女沘阳公主，后其长女也。家既废坏，数呼相工问息耗，见后者皆言当大尊贵，非臣妾容貌。年六岁能书，亲家皆奇之。建初二年，后与女弟俱以选例入见长乐宫，进止有序，风容甚盛。肃宗先闻后有才色，数以讯诸姬傅。及见，雅以为美，马太后亦异焉，因入掖庭，见于北宫章德殿。后性敏给，倾心承接，称誉日闻。明年，遂立为皇后，妹为",
+      "史略分类": "宗戚",
+      "主要史料出处": "《03后汉书·卷11·皇后纪第十上》",
+      "paragraphs": [
+        {
+          "volume": "皇后纪第十上",
+          "paragraph_from": 31,
+          "paragraph_to": 32
+        },
+        {
+          "volume": "皇后纪第十上",
+          "paragraph_from": 34,
+          "paragraph_to": 35
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_011_05",
+      "史略名称": "和熹邓皇后",
+      "史略简介": "和熹邓皇后",
+      "原文字句": "和熹邓皇后讳绥，太傅禹之孙也。父训，护羌校尉；母阴氏，光烈皇后从弟女也。后年五岁，太傅夫人爱之，自为剪发。夫人年高目冥，误伤后额，忍痛不言。左右见者怪而问之，后曰：“非不痛也，太夫人哀怜为断发，难伤老人意，故忍之耳。”六岁能《史书》，十二通《诗》《论语》。诸兄每读经传，辄下意难问。志在典籍，不问居家之事。母常非之，曰：“汝不习女工以供衣服，乃更务学，宁当举博士邪？”后重违母言，昼修妇业，暮诵经典，",
+      "史略分类": "宗戚",
+      "主要史料出处": "《03后汉书·卷11·皇后纪第十上》",
+      "paragraphs": [
+        {
+          "volume": "皇后纪第十上",
+          "paragraph_from": 39,
+          "paragraph_to": 58
+        }
+      ]
+    }
+  ],
+  "translation_qa_hint": "混写卷：人物段落非连续。翻译质检须按 entries[].paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。"
+}

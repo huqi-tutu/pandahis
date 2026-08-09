@@ -1,0 +1,34 @@
+{
+  "work": "03后汉书",
+  "vol": "050",
+  "volume_name": "袁张韩周列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_arc": "C",
+  "volume_texture": "sequential",
+  "skip_reason": null,
+  "protagonists_cap_note": "袁安/张酺/韩棱/周荣；袁氏诸子世系过厚不单立（除必要收束归安）。",
+  "protagonists": [
+    {
+      "name": "袁安",
+      "category": "文臣",
+      "rationale": "P2–P12；其后族系 exclude。"
+    },
+    {
+      "name": "张酺",
+      "category": "文臣",
+      "rationale": "P33–P44（含曾孙）。"
+    },
+    {
+      "name": "韩棱",
+      "category": "文臣",
+      "rationale": "P45–P50（含子嗣）。"
+    },
+    {
+      "name": "周荣",
+      "category": "文臣",
+      "rationale": "P51–P56（含兴景等）。"
+    }
+  ]
+}

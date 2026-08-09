@@ -1337,7 +1337,63 @@
       "status": "已处理·无可用",
       "entry_count": 0,
       "verified_at": "2026-07-30T12:13:03Z"
+    },
+    {
+      "glbl": "GLBL_01096",
+      "name": "魏公子无忌",
+      "file": "GLBL_01096_魏公子无忌_评述.json",
+      "status": "done",
+      "entry_count": 4,
+      "verified_at": "2026-08-08T11:47:43Z"
+    },
+    {
+      "glbl": "GLBL_01105",
+      "name": "庄子",
+      "file": "GLBL_01105_庄子_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-08T11:47:55Z"
+    },
+    {
+      "glbl": "GLBL_01109",
+      "name": "邹衍",
+      "file": "GLBL_01109_邹衍_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-08T11:48:40Z"
+    },
+    {
+      "glbl": "GLBL_01113",
+      "name": "李牧",
+      "file": "GLBL_01113_李牧_评述.json",
+      "status": "done",
+      "entry_count": 4,
+      "verified_at": "2026-08-08T11:49:37Z"
+    },
+    {
+      "glbl": "GLBL_01114",
+      "name": "赵奢",
+      "file": "GLBL_01114_赵奢_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-08T11:49:37Z"
+    },
+    {
+      "glbl": "GLBL_01119",
+      "name": "赵惠文王",
+      "file": "GLBL_01119_赵惠文王_评述.json",
+      "status": "done",
+      "entry_count": 4,
+      "verified_at": "2026-08-08T11:49:37Z"
+    },
+    {
+      "glbl": "GLBL_01121",
+      "name": "齐桓公午",
+      "file": "GLBL_01121_齐桓公午_评述.json",
+      "status": "done",
+      "entry_count": 5,
+      "verified_at": "2026-08-08T11:49:53Z"
     }
   ],
-  "updated_at": "2026-07-30T12:13:03Z"
+  "updated_at": "2026-08-08T11:49:53Z"
 }

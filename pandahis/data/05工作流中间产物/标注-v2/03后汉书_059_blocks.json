@@ -1,0 +1,70 @@
+{
+  "work": "03后汉书",
+  "vol": "059",
+  "total_paragraphs": 63,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_059_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 62,
+      "paragraph_to": 63,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "杨震",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 24,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "杨震字伯起，弘农华阴人也。八世祖喜，高祖时有功，封赤泉侯。高祖敞，昭帝时为丞相，",
+        "close_paragraph": 24,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P24"
+      }
+    },
+    {
+      "name": "杨秉",
+      "category": "文臣",
+      "paragraph_from": 25,
+      "paragraph_to": 37,
+      "boundary_evidence": {
+        "open_paragraph": 25,
+        "open_phrase": "秉字叔节，少传父业，兼明《京氏易》，博通书传，常隐居教授。年四十余，乃应司空辟，",
+        "close_paragraph": 37,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P25–P37"
+      }
+    },
+    {
+      "name": "杨赐",
+      "category": "文臣",
+      "paragraph_from": 38,
+      "paragraph_to": 53,
+      "boundary_evidence": {
+        "open_paragraph": 38,
+        "open_phrase": "赐字伯献。少传家学，笃志博闻。常退居隐约，教授门徒，不答州郡礼命。后辟大将军梁冀",
+        "close_paragraph": 53,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P38–P53"
+      }
+    },
+    {
+      "name": "杨彪",
+      "category": "文臣",
+      "paragraph_from": 54,
+      "paragraph_to": 61,
+      "boundary_evidence": {
+        "open_paragraph": 54,
+        "open_phrase": "彪字文先，少传家学。初举孝廉，州举茂才，辟公府，皆不应。熹平中，以博习旧闻，公车",
+        "close_paragraph": 61,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P54–P61"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

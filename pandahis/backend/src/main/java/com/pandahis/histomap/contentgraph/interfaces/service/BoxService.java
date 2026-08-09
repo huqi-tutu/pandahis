@@ -66,7 +66,7 @@ public class BoxService {
     }
     String dynastyName = Optional.ofNullable((String) box.get("dynasty_name")).orElse("").trim();
 
-    String subText = HistoryYearFormat.label(startYear) + " · " + civilizationName + " · " + categoryName(categoryKey);
+    String subText = buildSubText(categoryKey, startYear, endYear, civilizationName);
     String blurb = Optional.ofNullable((String) box.get("blurb")).orElse("").trim();
 
     boolean hasGraphFromDb = exists("SELECT COUNT(1) FROM box_graph_node WHERE box_id=?", boxId);
@@ -412,8 +412,9 @@ public class BoxService {
     findBox(boxId);
     int max = props.getBox().getCritiques().getMaxCount();
     List<BoxCritiquesDTO.Item> items = jdbcTemplate.query(
-        "SELECT title,blurb,author,era_text,year_value,content,source FROM box_critique WHERE box_id=? ORDER BY sort_order ASC, id ASC LIMIT ?",
+        "SELECT id,title,blurb,author,era_text,year_value,content,source FROM box_critique WHERE box_id=? ORDER BY sort_order ASC, id ASC LIMIT ?",
         (rs, rowNum) -> new BoxCritiquesDTO.Item(
+            rs.getLong("id"),
             rs.getString("title"),
             rs.getString("blurb"),
             rs.getString("author"),
@@ -428,12 +429,45 @@ public class BoxService {
     return new BoxCritiquesDTO(items);
   }
 
+  public CritiqueDetailDTO loadCritique(long critiqueId) {
+    try {
+      return jdbcTemplate.queryForObject(
+          "SELECT c.id, c.box_id, "
+              + "COALESCE(NULLIF(TRIM(b.title), ''), '') AS box_title, "
+              + "COALESCE(NULLIF(TRIM(b.civilization_name), ''), '') AS civilization_name, "
+              + "COALESCE(NULLIF(TRIM(b.dynasty_name), ''), '') AS dynasty_name, "
+              + "c.title, c.blurb, c.author, c.era_text, c.year_value, c.content, c.source "
+              + "FROM box_critique c "
+              + "JOIN historical_box b ON b.id = c.box_id "
+              + "WHERE c.id=?",
+          (rs, rowNum) -> new CritiqueDetailDTO(
+              rs.getLong("id"),
+              rs.getString("box_id"),
+              rs.getString("box_title"),
+              rs.getString("civilization_name"),
+              rs.getString("dynasty_name"),
+              rs.getString("title"),
+              rs.getString("blurb"),
+              rs.getString("author"),
+              rs.getString("era_text"),
+              (Integer) rs.getObject("year_value"),
+              rs.getString("content"),
+              rs.getString("source")
+          ),
+          critiqueId
+      );
+    } catch (EmptyResultDataAccessException e) {
+      throw ApiException.notFound("critique not found");
+    }
+  }
+
   public BoxRelicsDTO loadRelics(String boxId) {
     findBox(boxId);
     int max = props.getBox().getRelics().getMaxCount();
     List<BoxRelicsDTO.Item> items = jdbcTemplate.query(
-        "SELECT name,image_url,summary,description,museum,priority_code FROM box_relic WHERE box_id=? ORDER BY sort_order ASC, id ASC LIMIT ?",
+        "SELECT id,name,image_url,summary,description,museum,priority_code FROM box_relic WHERE box_id=? ORDER BY sort_order ASC, id ASC LIMIT ?",
         (rs, rowNum) -> new BoxRelicsDTO.Item(
+            rs.getLong("id"),
             rs.getString("name"),
             rs.getString("image_url"),
             rs.getString("summary"),
@@ -445,6 +479,37 @@ public class BoxService {
         max
     );
     return new BoxRelicsDTO(items);
+  }
+
+  public RelicDetailDTO loadRelic(long relicId) {
+    try {
+      return jdbcTemplate.queryForObject(
+          "SELECT r.id, r.box_id, "
+              + "COALESCE(NULLIF(TRIM(b.title), ''), '') AS box_title, "
+              + "COALESCE(NULLIF(TRIM(b.civilization_name), ''), '') AS civilization_name, "
+              + "COALESCE(NULLIF(TRIM(b.dynasty_name), ''), '') AS dynasty_name, "
+              + "r.name, r.image_url, r.summary, r.description, r.museum, r.priority_code "
+              + "FROM box_relic r "
+              + "JOIN historical_box b ON b.id = r.box_id "
+              + "WHERE r.id=?",
+          (rs, rowNum) -> new RelicDetailDTO(
+              rs.getLong("id"),
+              rs.getString("box_id"),
+              rs.getString("box_title"),
+              rs.getString("civilization_name"),
+              rs.getString("dynasty_name"),
+              rs.getString("name"),
+              rs.getString("image_url"),
+              rs.getString("summary"),
+              rs.getString("description"),
+              rs.getString("museum"),
+              rs.getString("priority_code")
+          ),
+          relicId
+      );
+    } catch (EmptyResultDataAccessException e) {
+      throw ApiException.notFound("relic not found");
+    }
   }
 
   private Map<String, Object> findBox(String boxId) {
@@ -487,6 +552,26 @@ public class BoxService {
   private boolean exists(String sql, Object... args) {
     Integer v = jdbcTemplate.queryForObject(sql, Integer.class, args);
     return v != null && v > 0;
+  }
+
+  /** 君王/诸侯起止年为在位年；subText 加「在位」前缀，避免被读成生卒。 */
+  private static String buildSubText(String categoryKey, int startYear, int endYear, String civilizationName) {
+    String cat = categoryName(categoryKey);
+    String civ = civilizationName == null ? "" : civilizationName.trim();
+    boolean reign = "junji".equals(categoryKey) || "zhuhou".equals(categoryKey);
+    String yearPart;
+    if (reign) {
+      String y0 = HistoryYearFormat.label(startYear);
+      String y1 = HistoryYearFormat.label(endYear);
+      String range = y1.equals(y0) ? y0 : y0 + " — " + y1;
+      yearPart = "在位 " + range;
+    } else {
+      yearPart = HistoryYearFormat.label(startYear);
+    }
+    if (!civ.isEmpty()) {
+      return yearPart + " · " + civ + " · " + cat;
+    }
+    return yearPart + " · " + cat;
   }
 
   private static String categoryName(String key) {

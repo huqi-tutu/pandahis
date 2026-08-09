@@ -5,6 +5,7 @@ const load_error_message_1 = require("../../native-utils/load-error-message");
 const nav_metrics_1 = require("../../native-utils/nav-metrics");
 const runtime_env_1 = require("../../native-utils/runtime-env");
 const router_1 = require("../../native-utils/router");
+const brand_assets_1 = require("../../native-utils/brand-assets");
 const APP_VERSION = '1.0.0';
 Page({
     data: {
@@ -12,6 +13,7 @@ Page({
         apiBase: '',
         pageTopPadPx: 88,
         appVersion: APP_VERSION,
+        aboutNavTitle: `关于${brand_assets_1.APP_DISPLAY_NAME}`,
     },
     onLoad() {
         try {

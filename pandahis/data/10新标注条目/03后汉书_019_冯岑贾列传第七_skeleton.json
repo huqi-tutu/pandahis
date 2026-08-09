@@ -1,0 +1,490 @@
+{
+  "volume": "冯岑贾列传",
+  "source_file": "03后汉书_019_冯岑贾列传第七.txt",
+  "total_paragraphs": 53,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "冯异",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "冯异",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "冯异",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "冯异",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "冯异",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "冯异",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "冯异",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "冯异",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "冯异",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "冯异",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "冯异",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "冯异",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "冯异",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "冯异",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "冯异",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "冯异",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "冯异",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "冯异",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "冯异",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "冯异",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "冯异",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 24,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "岑彭",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "岑彭",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "岑彭",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "岑彭",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "岑彭",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "岑彭",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "岑彭",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "岑彭",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "岑彭",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "岑彭",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "岑彭",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "岑彭",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "岑彭",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "岑彭",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "岑彭",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 41,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 42,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "贾复",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "贾复",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "贾复",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [
+        {
+          "name": "贾复",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 47,
+      "owners": [
+        {
+          "name": "贾复",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 48,
+      "owners": [
+        {
+          "name": "贾复",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 49,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 50,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 51,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 52,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 53,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HOUHANSHU_019_01",
+      "史略名称": "冯异",
+      "史略简介": "冯异",
+      "原文字句": "冯异字公孙，颍川父城人也。好读书，能《左氏春秋》《孙子兵法》。",
+      "史略分类": "武将",
+      "主要史料出处": "《03后汉书·卷19·冯岑贾列传》",
+      "paragraphs": [
+        {
+          "volume": "冯岑贾列传",
+          "paragraph_from": 2,
+          "paragraph_to": 22
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_019_02",
+      "史略名称": "岑彭",
+      "史略简介": "岑彭",
+      "原文字句": "岑彭字君然，南阳棘阳人也。王莽时，守本县长。汉兵起，攻拔棘阳，彭将家属奔前队大夫甄阜。阜怒彭不能固守，拘彭母妻，令效功自衬。彭将宾客战斗甚力。及甄阜死，彭被创，亡归宛，与前队贰严说共城守。汉兵攻之数月，城中粮尽，人相食，彭乃与说举城降。",
+      "史略分类": "武将",
+      "主要史料出处": "《03后汉书·卷19·冯岑贾列传》",
+      "paragraphs": [
+        {
+          "volume": "冯岑贾列传",
+          "paragraph_from": 25,
+          "paragraph_to": 39
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_019_03",
+      "史略名称": "贾复",
+      "史略简介": "贾复",
+      "原文字句": "贾复字君文，南阳冠军人也。少好学，习《尚书》。事舞阴李生，李生奇之，谓门人曰：“贾君之容貌志气如此，而勤于学，将相之器也。”王莽末，为县掾，迎盐河东，会遇盗贼，等比十余人皆放散其盐，复独完以还县，县中称其信。",
+      "史略分类": "武将",
+      "主要史料出处": "《03后汉书·卷19·冯岑贾列传》",
+      "paragraphs": [
+        {
+          "volume": "冯岑贾列传",
+          "paragraph_from": 43,
+          "paragraph_to": 48
+        }
+      ]
+    }
+  ]
+}

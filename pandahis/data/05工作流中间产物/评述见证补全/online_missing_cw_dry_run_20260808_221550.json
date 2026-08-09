@@ -1,0 +1,905 @@
+{
+  "missing": 90,
+  "results": [
+    {
+      "id": "GLBL_00097",
+      "name": "秦二世",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00103",
+      "name": "秦始皇",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00221",
+      "name": "优旃",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00230",
+      "name": "卓氏",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00233",
+      "name": "宛孔氏",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00235",
+      "name": "巴寡妇清",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00238",
+      "name": "曹邴氏",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00244",
+      "name": "程郑",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00249",
+      "name": "陈胜",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00297",
+      "name": "吕不韦",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00368",
+      "name": "李斯",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00479",
+      "name": "韩非",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00522",
+      "name": "王翦",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00524",
+      "name": "田儋",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00532",
+      "name": "蒙恬",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00544",
+      "name": "项籍",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00912",
+      "name": "秦灭六国统一",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00913",
+      "name": "北击匈奴",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00914",
+      "name": "南征百越",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00915",
+      "name": "灵渠开凿",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00916",
+      "name": "焚书坑儒",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00917",
+      "name": "骊山陵与阿房宫",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00918",
+      "name": "沙丘之变",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00919",
+      "name": "陈涉起义",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00920",
+      "name": "指鹿为马",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00921",
+      "name": "徐福东渡",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00922",
+      "name": "皇帝制度",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00923",
+      "name": "三公九卿制",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00924",
+      "name": "统一度量衡",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00925",
+      "name": "书同文",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00926",
+      "name": "统一货币",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00927",
+      "name": "统一车轨",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00928",
+      "name": "秦律",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00929",
+      "name": "郡县制全国推行",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00930",
+      "name": "徭役征发制",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00931",
+      "name": "重农抑商",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00932",
+      "name": "扶苏",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00933",
+      "name": "公子高",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00934",
+      "name": "赵高",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00935",
+      "name": "冯去疾",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00936",
+      "name": "尉缭",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00937",
+      "name": "卢生",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00938",
+      "name": "王贲",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00939",
+      "name": "章邯",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00940",
+      "name": "百越",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00941",
+      "name": "匈奴",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00942",
+      "name": "高渐离",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00943",
+      "name": "徐福",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00944",
+      "name": "驰道系统全线竣工",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00945",
+      "name": "秦始皇封禅泰山",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00946",
+      "name": "戏之战",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00947",
+      "name": "巨鹿之战",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00948",
+      "name": "刘邦入关秦亡",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00949",
+      "name": "驰道营建通行规制",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00950",
+      "name": "挟书律",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00951",
+      "name": "编户齐民连坐细则",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00952",
+      "name": "地方上计考核定制",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00953",
+      "name": "二十等爵制全域推行",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00954",
+      "name": "铜虎符竹使符调兵制",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00955",
+      "name": "民口赋钱征收条例",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00956",
+      "name": "司空职官工程管理制",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00957",
+      "name": "夷三族刑制",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00958",
+      "name": "边郡亭障烽燧预警制",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00959",
+      "name": "秦代识字三篇（仓颉/爰历/博学）",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00960",
+      "name": "《秦律十八种》",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00961",
+      "name": "魏咎",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00962",
+      "name": "熊心",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00963",
+      "name": "赵歇",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00964",
+      "name": "韩成",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00965",
+      "name": "田市",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00966",
+      "name": "景驹",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00967",
+      "name": "韩广",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00968",
+      "name": "吴芮",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00969",
+      "name": "公子将闾",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00970",
+      "name": "子婴",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00971",
+      "name": "韩谈",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00972",
+      "name": "姚贾",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00973",
+      "name": "淳于越",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00974",
+      "name": "伏生",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00975",
+      "name": "程邈",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00976",
+      "name": "王绾",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00977",
+      "name": "冯劫",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00978",
+      "name": "张苍",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00979",
+      "name": "王离",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00980",
+      "name": "涉间",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00981",
+      "name": "赵佗",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00982",
+      "name": "任嚣",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00983",
+      "name": "西羌",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00984",
+      "name": "西南夷",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    },
+    {
+      "id": "GLBL_00985",
+      "name": "瓯越",
+      "dynasty": "秦",
+      "sibling": null,
+      "actions": {
+        "commentary": "llm",
+        "witness": "llm"
+      }
+    }
+  ]
+}

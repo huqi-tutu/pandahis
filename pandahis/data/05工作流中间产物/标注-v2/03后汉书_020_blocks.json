@@ -1,0 +1,75 @@
+{
+  "work": "03后汉书",
+  "vol": "020",
+  "total_paragraphs": 47,
+  "volume_subtype": "hezhuan",
+  "derived_from": "03后汉书_020_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 22,
+      "paragraph_to": 22,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 46,
+      "paragraph_to": 47,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "吴汉",
+      "category": "武将",
+      "paragraph_from": 2,
+      "paragraph_to": 21,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "吴汉字子颜，南阳宛人也。家贫，给事县为亭长。王莽末，以宾客犯法，乃亡命至渔阳，资",
+        "close_paragraph": 21,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P21"
+      }
+    },
+    {
+      "name": "盖延",
+      "category": "武将",
+      "paragraph_from": 23,
+      "paragraph_to": 30,
+      "boundary_evidence": {
+        "open_paragraph": 23,
+        "open_phrase": "盖延字巨卿，渔阳要阳人也。身长八尺，弯弓三百斤。边俗尚勇力，而延以气闻，历郡列掾",
+        "close_paragraph": 30,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P23–P30"
+      }
+    },
+    {
+      "name": "陈俊",
+      "category": "武将",
+      "paragraph_from": 31,
+      "paragraph_to": 36,
+      "boundary_evidence": {
+        "open_paragraph": 31,
+        "open_phrase": "陈俊字子昭，西阳西鄂人也。少为郡吏，更始立，以宗室刘嘉为太常将军，俊为长史。光武",
+        "close_paragraph": 36,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P31–P36"
+      }
+    },
+    {
+      "name": "臧宫",
+      "category": "武将",
+      "paragraph_from": 37,
+      "paragraph_to": 45,
+      "boundary_evidence": {
+        "open_paragraph": 37,
+        "open_phrase": "臧宫字君翁，颍川郏人也。少为县亭长、游徼，后率宾客入下江兵中为校尉，因从光武征战",
+        "close_paragraph": 45,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P37–P45"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

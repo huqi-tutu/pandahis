@@ -1,9 +1,11 @@
 const protoPage = require('../../behaviors/proto-page.js')
+const { APP_DISPLAY_NAME } = require('../../native-utils/brand-assets.js')
 const { navBarPx } = require('../../native-utils/matrix/layout.js')
 const { computePageTopPadPx } = require('../../native-utils/nav-metrics')
 const { CIV_TABS, buildRows, initialCiv, buildAllExpanded, toggleDynastyExpanded, isDynastyExpanded } = require('../../native-utils/matrix/mock-home-matrix.js')
 const { fetchHomeMatrixData } = require('../../native-utils/matrix/matrix-cloud.js')
 const { hasToken, request } = require('../../native-utils/api.js')
+const { isCivSwitchEnabled, toastCivLocked } = require('../../native-utils/feature-flags.js')
 const { trySilentWxLogin } = require('../../native-utils/wx-auth.js')
 const { collapsedForCiv, hasRestorableViewport, mergePersistPayload, mergeRemoteHomeState, stripViewportFields, updateCollapsedForCiv } = require('../../native-utils/home-state.js')
 const { mergeRemoteLoadResult, isViewportReadCurrent } = require('../../native-utils/home-state-coordinator.js')
@@ -19,6 +21,14 @@ const {
 } = require('./matrix-adapter.js')
 
 const DEFAULT_OVERVIEW_MAP = '/images/world-history-dynasty-map.png'
+
+function allCivTextItems() {
+  return CIV_TABS.map((t, i) => ({ id: t.id, name: t.name, realIdx: i }))
+}
+
+function allCivPickerItems() {
+  return CIV_TABS.map((t, i) => Object.assign({}, t, { realIdx: i }))
+}
 const HOME_MATRIX_STATE_PATH = '/me/home-matrix-state'
 const HOME_MATRIX_STATE_LOCAL_KEY = 'homeMatrixState'
 const HOME_STATE_SAVE_DELAY = 400
@@ -42,16 +52,22 @@ function calcMatrixScrollBottomPad(screenW, safeAreaBottomPx) {
 
 const N = CIV_TABS.length  // 18
 
-/** 时间轴列宽（rpx），与 home-matrix.wxss 中 .matrix-time-col 保持一致 */
+/** 时间轴列宽（rpx），与 index.scss 中 .matrix-time-col 保持一致 */
 const MAJOR_NODE_KEYS = new Set(['夏','商','西周','秦','西汉','两晋','隋','唐','宋','元','明','清'])
 
 const MATRIX_TIME_COL_RPX = 84
+/** index.scss .matrix-time-col 左右内边距合计（8 + 4） */
+const TIME_COL_PAD_LR_RPX = 12
+/** index.scss .time-h-line--edge 刻度线宽（左右各一条） */
+const TIME_EDGE_TICK_RPX = 8
+/** index.scss .time-year 左右 padding 合计（2 + 2） */
+const TIME_YEAR_PAD_RPX = 4
 const HX_LABEL_FONT_MAX = 16
 const HX_LABEL_FONT_MIN = 9
 const YEAR_FONT_MAX = 14
 const YEAR_FONT_MIN = 10
 /** 与 .time-year 的 letter-spacing 保持一致，供自适应字号估算 */
-const YEAR_LETTER_SPACING_RPX = 2
+const YEAR_LETTER_SPACING_RPX = 0.5
 
 /** 按列宽估算朝代名可用字号（放不下则逐级缩小） */
 function fitHxLabelFontSize(label, expandable) {
@@ -72,12 +88,13 @@ function fitYearFontSize(year) {
   const s = String(year)
   let units = 0
   for (const ch of s) {
-    units += (ch >= '0' && ch <= '9') ? 0.62 : 1
+    units += (ch >= '0' && ch <= '9') ? 0.66 : 1
   }
   const spacingExtra = Math.max(0, s.length - 1) * YEAR_LETTER_SPACING_RPX
-  const avail = MATRIX_TIME_COL_RPX - 8 - spacingExtra
+  // 按真实布局估算可用宽度：列内边距 + 两侧刻度线 + 文字自身 padding
+  const avail = MATRIX_TIME_COL_RPX - TIME_COL_PAD_LR_RPX - 2 * TIME_EDGE_TICK_RPX - TIME_YEAR_PAD_RPX - spacingExtra
   for (let fs = YEAR_FONT_MAX; fs >= YEAR_FONT_MIN; fs--) {
-    if (units * fs * 1.06 <= avail) return fs
+    if (units * fs * 1.1 <= avail) return fs
   }
   return YEAR_FONT_MIN
 }
@@ -390,6 +407,16 @@ const STACK_UI_SCALE   = 0.7   // 图片 Tab 整体等比缩小 30%
 const STACK_CARD_W_RPX = Math.round(148 * STACK_UI_SCALE)  // 104
 /** 与 COS 文明卡素材比例 468×546 对齐，避免 aspectFill 裁切错位 */
 const STACK_CARD_H_RPX = Math.round(STACK_CARD_W_RPX * 546 / 468)
+/** 文明 Tab PNG 视觉圆角（实测 COS 素材，宽 468） */
+const CIV_TAB_ASSET_W = 468
+const CIV_TAB_RADIUS_TOP_PX = 100
+const CIV_TAB_RADIUS_BOTTOM_PX = 139
+
+function civPickerCardRadius(cardW) {
+  const rt = Math.round(cardW * CIV_TAB_RADIUS_TOP_PX / CIV_TAB_ASSET_W)
+  const rb = Math.round(cardW * CIV_TAB_RADIUS_BOTTOM_PX / CIV_TAB_ASSET_W)
+  return `${rt}rpx ${rt}rpx ${rb}rpx ${rb}rpx`
+}
 const STACK_STEP_RPX   = Math.round(166 * STACK_UI_SCALE)  // 116
 const STACK_BAR_RPX    = Math.round(210 * STACK_UI_SCALE)  // 147
 const STACK_LAYER_SHIFT_PX = Math.round(22 * STACK_UI_SCALE)  // 15
@@ -421,7 +448,12 @@ function calcCivPickerMetrics(windowHeight, headerPadPx, screenW) {
   const cardW = Math.round(cardWBase * CIV_PICKER_CARD_SCALE)
   const cardHFinal = Math.round(cardW * STACK_CARD_H_RPX / STACK_CARD_W_RPX)
   const sheetH = PAD * 2 + ROWS * cardHFinal + GAP * (ROWS - 1)
-  return { civPickerCardW: cardW, civPickerCardH: cardHFinal, civPickerSheetH: sheetH }
+  return {
+    civPickerCardW: cardW,
+    civPickerCardH: cardHFinal,
+    civPickerSheetH: sheetH,
+    civPickerCardRadius: civPickerCardRadius(cardW),
+  }
 }
 
 function calcTextScroll(civIndex, screenW) {
@@ -490,6 +522,7 @@ Page({
   behaviors: [protoPage],
 
   data: {
+    appDisplayName: APP_DISPLAY_NAME,
     mode:              'immersive',
     civSpots:          OVERVIEW_CIV_SPOTS,
     overviewMapUrl:    DEFAULT_OVERVIEW_MAP,
@@ -498,7 +531,8 @@ Page({
     // 层叠卡片模式数据
     civStackItems:     [],
     // 文字 Tab 数据（向下滑动后展示）
-    civTextItems:      CIV_TABS.map((t, i) => ({ id: t.id, name: t.name, realIdx: i })),
+    civTextItems:      allCivTextItems(),
+    civSwitchEnabled:  true,
     civTextScrollLeft: 0,
     // 图片→文字渐变进度（0=图片，1=文字），由 onMatrixScroll 驱动
     tabAlpha:          1,
@@ -551,6 +585,7 @@ Page({
     civPickerCardW:    156,
     civPickerCardH:    177,
     civPickerSheetH:   960,
+    civPickerCardRadius: civPickerCardRadius(156),
   },
 
   onLoad() {
@@ -648,9 +683,20 @@ Page({
     wx.nextTick(() => this._syncTabAlphaFromDom())
   },
 
+  _applyCivSwitchFlag(enabled) {
+    const civSwitchEnabled = enabled !== false
+    this.setData({ civSwitchEnabled })
+    // 内容仍停在华夏，Tab 栏完整展示供预热；非华夏点击由 _selectCiv 弹 Toast
+    if (!civSwitchEnabled && this.data.activeCiv !== initialCiv) {
+      this._selectCiv(initialCiv, 0, { silent: true })
+    }
+  },
+
   _loadGridData() {
     return request('/home/grid').then(res => {
       const data = (res && res.data) || {}
+      const flags = data.flags || {}
+      this._applyCivSwitchFlag(flags.civSwitchEnabled)
       const overview = data.overview || {}
       const mapUrl = String(overview.mapImageUrl || '').trim() || DEFAULT_OVERVIEW_MAP
       const dynastyUnitMap = buildDynastyUnitMap(data.cells || [])
@@ -668,7 +714,7 @@ Page({
       CIV_TABS.forEach(t => {
         if (urlBySlug[t.id]) t.img = urlBySlug[t.id]
       })
-      const civPickerItems = CIV_TABS.map((t, i) => Object.assign({}, t, { realIdx: i }))
+      const civPickerItems = allCivPickerItems()
       const civSpots = (this.data.civSpots || OVERVIEW_CIV_SPOTS).map(spot => {
         const matrixSlug = OVERVIEW_SPOT_TO_MATRIX_SLUG[spot.id] || spot.id
         const img = urlBySlug[matrixSlug] || spot.img
@@ -1421,7 +1467,14 @@ Page({
     this.setData(updates)
   },
 
-  _selectCiv(activeCiv, civIndex) {
+  _selectCiv(activeCiv, civIndex, options) {
+    const silent = options && options.silent
+    if (!isCivSwitchEnabled()) {
+      if (activeCiv !== initialCiv || civIndex !== 0) {
+        if (!silent) toastCivLocked()
+        return
+      }
+    }
     if (civIndex === this.data.civIndex && activeCiv === this.data.activeCiv) return
     this._homeStateGeneration = (this._homeStateGeneration || 0) + 1
     const previousCiv = this.data.activeCiv || initialCiv
@@ -1491,10 +1544,15 @@ Page({
     // 仅在图片模式、水平滑动足够大、垂直偏移不超过水平的 1.5 倍时触发切换
     const isHSwipe = Math.abs(dx) > 40 && Math.abs(dy) < Math.abs(dx) * 1.5 && dt < 500
     if (isHSwipe && (this._tabAlpha || 0) < 0.6) {
-      this._wasSwiped  = true
       const delta  = dx < 0 ? 1 : -1
       const newIdx = ((this.data.civIndex + delta) + N) % N
-      this._selectCiv(CIV_TABS[newIdx].id, newIdx)
+      const target = CIV_TABS[newIdx]
+      if (!isCivSwitchEnabled() && target.id !== initialCiv) {
+        toastCivLocked()
+        return
+      }
+      this._wasSwiped  = true
+      this._selectCiv(target.id, newIdx)
     }
   },
 
@@ -1898,6 +1956,10 @@ Page({
 
   _enterCivFromOverview(spotId) {
     const matrixSlug = OVERVIEW_SPOT_TO_MATRIX_SLUG[spotId] || spotId
+    if (!isCivSwitchEnabled() && matrixSlug !== initialCiv) {
+      toastCivLocked()
+      return
+    }
     const idx = CIV_TABS.findIndex(c => c.id === matrixSlug)
     if (idx < 0) return
     const app = getApp()

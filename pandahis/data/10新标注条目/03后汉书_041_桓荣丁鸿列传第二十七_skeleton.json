@@ -1,0 +1,490 @@
+{
+  "volume": "桓荣丁鸿列传",
+  "source_file": "03后汉书_041_桓荣丁鸿列传第二十七.txt",
+  "total_paragraphs": 51,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "桓荣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "桓荣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "桓荣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "桓荣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "桓荣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "桓荣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "桓荣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "桓荣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "桓郁",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "桓郁",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "桓郁",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "桓郁",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "桓郁",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "桓郁",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "桓郁",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "桓郁",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "桓焉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "桓焉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "桓焉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "桓典",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "桓典",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "桓典",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "桓典",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 27,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 28,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 29,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 30,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 31,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 32,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 33,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 34,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 35,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "丁鸿",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "丁鸿",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "丁鸿",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "丁鸿",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "丁鸿",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "丁鸿",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "丁鸿",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "丁鸿",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "丁鸿",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "丁鸿",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [
+        {
+          "name": "丁鸿",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 47,
+      "owners": [
+        {
+          "name": "丁鸿",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 48,
+      "owners": [
+        {
+          "name": "丁鸿",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 49,
+      "owners": [
+        {
+          "name": "丁鸿",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 50,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 51,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HOUHANSHU_041_01",
+      "史略名称": "桓荣",
+      "史略简介": "桓荣",
+      "原文字句": "桓荣字春卿，沛郡龙亢人也。少学长安，习《欧阳尚书》，事博士九江朱普。贫窭无资，常客佣以自给，精力不倦，十五年不窥家园。至王莽篡位乃归。会朱普卒，荣奔丧九江，负土成坟，因留教授，徒众数百人。莽败，天下乱。荣抱其经书与弟子逃匿山谷，虽常饥困而讲论不辍，后复客授江淮间。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷41·桓荣丁鸿列传》",
+      "paragraphs": [
+        {
+          "volume": "桓荣丁鸿列传",
+          "paragraph_from": 2,
+          "paragraph_to": 9
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_041_02",
+      "史略名称": "桓郁",
+      "史略简介": "桓郁",
+      "原文字句": "郁字仲恩，少以父任为郎。敦厚笃学，传父业，以《尚书》教授，门徒常数百人。荣卒，郁当袭爵，上书让于兄子汎，显宗不许，不得已受封，悉以租入与之。帝以郁先师子，有礼让，甚见亲厚，常居中论经书，问以政事，稍迁侍中。帝自制《五家要说章句》，令郁校定于宣明殿，以侍中监虎贲中郎将。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷41·桓荣丁鸿列传》",
+      "paragraphs": [
+        {
+          "volume": "桓荣丁鸿列传",
+          "paragraph_from": 11,
+          "paragraph_to": 18
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_041_03",
+      "史略名称": "桓焉",
+      "史略简介": "桓焉",
+      "原文字句": "焉字叔元，少以父任为郎。明经笃行，有名称。永初元年，入授安帝，三迁为侍中步兵校尉。永宁中，顺帝立为皇太子，以焉为太子少傅，月余，迁太傅，以母忧自乞，听以大夫行丧。逾年，诏使者赐牛酒，夺服，即拜光禄大夫，迁太常。时废皇太子为济阴王，焉与太仆来历、廷尉张皓谏，不能得，事已具《来历传》。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷41·桓荣丁鸿列传》",
+      "paragraphs": [
+        {
+          "volume": "桓荣丁鸿列传",
+          "paragraph_from": 19,
+          "paragraph_to": 21
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_041_04",
+      "史略名称": "桓典",
+      "史略简介": "桓典",
+      "原文字句": "典字公雅，复传其家业，以《尚书》教授颍川，门徒数百人。举孝廉为郎。居无几，会国相王吉以罪被诛，故人亲戚莫敢至者。典独弃官收敛归葬，服丧三年，负土成坟，为立祠堂，尽礼而去。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷41·桓荣丁鸿列传》",
+      "paragraphs": [
+        {
+          "volume": "桓荣丁鸿列传",
+          "paragraph_from": 22,
+          "paragraph_to": 25
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_041_05",
+      "史略名称": "丁鸿",
+      "史略简介": "丁鸿",
+      "原文字句": "丁鸿字孝公，颍川定陵人也。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷41·桓荣丁鸿列传》",
+      "paragraphs": [
+        {
+          "volume": "桓荣丁鸿列传",
+          "paragraph_from": 36,
+          "paragraph_to": 49
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "work": "03后汉书",
+  "vol": "049",
+  "total_paragraphs": 43,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_049_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 42,
+      "paragraph_to": 43,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "邓彪",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 4,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "邓彪字智伯，南阳新野人，太傅禹之宗也。父邯，中兴初以功封鄳侯，仕至勃海太守。彪少",
+        "close_paragraph": 4,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P4"
+      }
+    },
+    {
+      "name": "张禹",
+      "category": "文臣",
+      "paragraph_from": 5,
+      "paragraph_to": 12,
+      "boundary_evidence": {
+        "open_paragraph": 5,
+        "open_phrase": "张禹字伯达，赵国襄国人也。",
+        "close_paragraph": 12,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P5–P12"
+      }
+    },
+    {
+      "name": "徐防",
+      "category": "文臣",
+      "paragraph_from": 13,
+      "paragraph_to": 20,
+      "boundary_evidence": {
+        "open_paragraph": 13,
+        "open_phrase": "徐防字谒卿，沛国铚人也。祖父宣，为讲学大夫，以《易》教授王莽。父宪，亦传宣业。",
+        "close_paragraph": 20,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P13–P20"
+      }
+    },
+    {
+      "name": "张敏",
+      "category": "文臣",
+      "paragraph_from": 21,
+      "paragraph_to": 27,
+      "boundary_evidence": {
+        "open_paragraph": 21,
+        "open_phrase": "张敏字伯达，河间鄚人也。建初二年，举孝廉，四迁，五年，为尚书。",
+        "close_paragraph": 27,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P21–P27"
+      }
+    },
+    {
+      "name": "胡广",
+      "category": "文臣",
+      "paragraph_from": 28,
+      "paragraph_to": 41,
+      "boundary_evidence": {
+        "open_paragraph": 28,
+        "open_phrase": "胡广字伯始，南郡华容人也。六世祖刚，清高有志节。平帝时，大司徒马宫辟之。值王莽居",
+        "close_paragraph": 41,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P28–P41"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

@@ -1,0 +1,449 @@
+{
+  "volume": "朱景王杜马刘傅坚马列传",
+  "source_file": "03后汉书_024_朱景王杜马刘傅坚马列传第十二.txt",
+  "total_paragraphs": 64,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "朱祐",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "朱祐",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "朱祐",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "朱祐",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "朱祐",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "朱祐",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 9,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 10,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 11,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 12,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 13,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 14,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 15,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 16,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 17,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 18,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 19,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 20,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 21,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 22,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 23,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 24,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 25,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 26,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 27,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "刘隆",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "刘隆",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "刘隆",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "刘隆",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 33,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 34,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 35,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 36,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 37,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "马武",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "马武",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "马武",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "马武",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "马武",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "马武",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "马武",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "马武",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 47,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 48,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 49,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 50,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 51,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 52,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 53,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 54,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 55,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 56,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 57,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 58,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 59,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 60,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 61,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 62,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 63,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 64,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HOUHANSHU_024_01",
+      "史略名称": "朱祐",
+      "史略简介": "朱祐",
+      "原文字句": "朱祐字仲先，南阳宛人也。少孤，归外家复阳刘氏，往来舂陵，世祖与伯升皆亲爱之。伯升拜大司徒，以祐为护军。及世祖为大司马，讨河北，复以祐为护军，常见亲幸，舍止于中。祐侍宴，从容曰：“长安政乱，公有日角之相，此天命也。”世祖曰：“召刺奸收护军！”祐乃不敢复言。从征河北，常力战陷阵，以为偏将军，封安阳侯。世祖即位，拜为建义大将军。建武二年，更封堵阳侯。冬，与诸将击邓奉于淯阳，祐军败，为奉所获。明年，奉破，",
+      "史略分类": "武将",
+      "主要史料出处": "《03后汉书·卷24·朱景王杜马刘傅坚马列传》",
+      "paragraphs": [
+        {
+          "volume": "朱景王杜马刘傅坚马列传",
+          "paragraph_from": 2,
+          "paragraph_to": 7
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_024_02",
+      "史略名称": "刘隆",
+      "史略简介": "刘隆",
+      "原文字句": "刘隆字元伯，南阳安众侯宗室也。王莽居摄中，隆父礼与安众侯崇起兵诛莽，事泄，隆以年未七岁，故得免。及壮，学于长安，更始拜为骑都尉。谒归，迎妻、子置洛阳。闻世祖在河内，即追及于射犬，以为骑都尉，与冯异共拒朱鲔、李轶等，轶遂杀隆妻、子。建武二年，封亢父侯。四年，拜诛虏将军，讨李宪。宪平，遣隆屯田武当。",
+      "史略分类": "武将",
+      "主要史料出处": "《03后汉书·卷24·朱景王杜马刘傅坚马列传》",
+      "paragraphs": [
+        {
+          "volume": "朱景王杜马刘傅坚马列传",
+          "paragraph_from": 28,
+          "paragraph_to": 31
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_024_03",
+      "史略名称": "马武",
+      "史略简介": "马武",
+      "原文字句": "马武字子张，南阳湖阳人也。少时避仇，客居江夏。王莽末，竟陵、西阳三老起兵于郡界，武往从之，后入绿林中，遂与汉军合。更始立，以武为侍郎，与世祖破王寻等。拜为振威将军，与尚书令谢躬共攻王郎。",
+      "史略分类": "武将",
+      "主要史料出处": "《03后汉书·卷24·朱景王杜马刘傅坚马列传》",
+      "paragraphs": [
+        {
+          "volume": "朱景王杜马刘傅坚马列传",
+          "paragraph_from": 38,
+          "paragraph_to": 45
+        }
+      ]
+    }
+  ]
+}

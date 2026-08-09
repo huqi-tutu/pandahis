@@ -1,0 +1,43 @@
+{
+  "work": "03后汉书",
+  "vol": "040",
+  "volume_name": "郑范陈贾张列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_arc": "C",
+  "volume_texture": "sequential",
+  "skip_reason": null,
+  "protagonists_cap_note": "卷名五人：郑兴、范升、陈元、贾逵、张霸；郑众附于兴，楷/陵附于霸。",
+  "protagonists": [
+    {
+      "name": "郑兴",
+      "category": "文臣",
+      "rationale": "左氏学；P2–P18（含子众）。"
+    },
+    {
+      "name": "范升",
+      "category": "文臣",
+      "rationale": "P19–P25。"
+    },
+    {
+      "name": "陈元",
+      "category": "文臣",
+      "rationale": "P26–P35。"
+    },
+    {
+      "name": "贾逵",
+      "category": "文臣",
+      "rationale": "P36–P48。"
+    },
+    {
+      "name": "张霸",
+      "category": "文臣",
+      "rationale": "字伯饶；P50–P61（含子楷陵等）。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "论赞"
+  ]
+}

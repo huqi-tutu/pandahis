@@ -1,0 +1,39 @@
+{
+  "work": "03后汉书",
+  "vol": "043",
+  "volume_name": "刘赵淳于江刘周赵列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_arc": "C",
+  "volume_texture": "sequential",
+  "skip_reason": null,
+  "protagonists_cap_note": "≤5：刘平(公子)、赵孝(长平)、淳于恭(孟孙)、江革(次翁)、刘般(伯兴)。",
+  "protagonists": [
+    {
+      "name": "刘平",
+      "category": "文臣",
+      "rationale": "字公子；P6–P10。"
+    },
+    {
+      "name": "赵孝",
+      "category": "文臣",
+      "rationale": "字长平；P13–P14。"
+    },
+    {
+      "name": "淳于恭",
+      "category": "文臣",
+      "rationale": "字孟孙；P18–P20。"
+    },
+    {
+      "name": "江革",
+      "category": "文臣",
+      "rationale": "字次翁；P21–P25。"
+    },
+    {
+      "name": "刘般",
+      "category": "宗戚",
+      "rationale": "字伯兴；P26–P32。"
+    }
+  ]
+}

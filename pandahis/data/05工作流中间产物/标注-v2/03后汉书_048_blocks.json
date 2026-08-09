@@ -1,0 +1,75 @@
+{
+  "work": "03后汉书",
+  "vol": "048",
+  "total_paragraphs": 52,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_048_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 31,
+      "paragraph_to": 31,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 51,
+      "paragraph_to": 52,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "朱晖",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 10,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "朱晖字文季，南阳宛人也。家世衣冠。晖早孤，有气决。年十三，王莽败，天下乱，与外氏",
+        "close_paragraph": 10,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P10"
+      }
+    },
+    {
+      "name": "朱穆",
+      "category": "文臣",
+      "paragraph_from": 11,
+      "paragraph_to": 30,
+      "boundary_evidence": {
+        "open_paragraph": 11,
+        "open_phrase": "穆字公叔。年五岁，便有孝称。父母有病，辄不饮食，差乃复常。及壮耽学，锐意讲诵，或",
+        "close_paragraph": 30,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P11–P30"
+      }
+    },
+    {
+      "name": "乐恢",
+      "category": "文臣",
+      "paragraph_from": 32,
+      "paragraph_to": 37,
+      "boundary_evidence": {
+        "open_paragraph": 32,
+        "open_phrase": "乐恢字伯奇，京兆长陵人也。父亲，为县吏，得罪于令，收将杀之。恢年十一，常俯伏寺门",
+        "close_paragraph": 37,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P32–P37"
+      }
+    },
+    {
+      "name": "何敞",
+      "category": "文臣",
+      "paragraph_from": 38,
+      "paragraph_to": 50,
+      "boundary_evidence": {
+        "open_paragraph": 38,
+        "open_phrase": "何敞字文高，扶风平陵人也。其先家于汝阴。六世祖比干，学《尚书》于朝错，武帝时为廷",
+        "close_paragraph": 50,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P38–P50"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

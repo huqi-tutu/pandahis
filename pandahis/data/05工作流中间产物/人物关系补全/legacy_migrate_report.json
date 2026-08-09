@@ -1,0 +1,34 @@
+[
+  {
+    "file": "周文王关系表.json",
+    "mode": "normalize",
+    "rows": 34,
+    "hubs": [
+      "父母",
+      "配偶",
+      "兄弟姐妹",
+      "君王",
+      "臣子",
+      "同僚",
+      "内敌",
+      "外敌"
+    ],
+    "notes": [],
+    "written": true
+  },
+  {
+    "file": "周武王关系表.json",
+    "mode": "normalize",
+    "rows": 32,
+    "hubs": [
+      "父母",
+      "配偶",
+      "兄弟姐妹",
+      "臣子",
+      "外敌",
+      "老师"
+    ],
+    "notes": [],
+    "written": true
+  }
+]

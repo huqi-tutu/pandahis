@@ -1,0 +1,29 @@
+{
+  "work": "03后汉书",
+  "vol": "013",
+  "volume_name": "刘玄刘盆子列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_arc": "C",
+  "volume_texture": "interleaved",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "汉更始帝",
+      "category": "君王",
+      "rationale": "更始帝刘玄，帝王.json有汉更始帝；P2–P23（含绿林缘起P3）。"
+    },
+    {
+      "name": "刘盆子",
+      "category": "宗戚",
+      "rationale": "城阳景王章之后、宗室式侯苗裔，赤眉所立；宗室血统归宗戚。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "世系链",
+    "论赞",
+    "赞曰"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "work": "03后汉书",
+  "vol": "011",
+  "volume_name": "皇后纪第十上",
+  "volume_type_guess": "纪",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_arc": "C",
+  "volume_texture": "interleaved",
+  "skip_reason": null,
+  "protagonists_cap_note": "皇后纪两卷合计主轴8：本卷保留开国至和熹五位正位皇后；贾贵人/恭怀/和帝阴后附传不建条。",
+  "protagonists": [
+    {
+      "name": "光武郭皇后",
+      "category": "宗戚",
+      "rationale": "光武首任皇后，废立关键。"
+    },
+    {
+      "name": "光烈阴皇后",
+      "category": "宗戚",
+      "rationale": "光武正位皇后，开国母仪。"
+    },
+    {
+      "name": "明德马皇后",
+      "category": "宗戚",
+      "rationale": "明帝皇后，拒封外戚，东汉母仪典范。"
+    },
+    {
+      "name": "章德窦皇后",
+      "category": "宗戚",
+      "rationale": "章帝皇后，窦宪专权之源。"
+    },
+    {
+      "name": "和熹邓皇后",
+      "category": "宗戚",
+      "rationale": "和帝皇后，临朝最久，本卷传文最重。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "共段总述",
+    "世系链",
+    "论赞"
+  ]
+}

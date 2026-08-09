@@ -1,0 +1,131 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01165",
+  "写作结构": "正史叙述见翻译详录（《史记·吕太后本纪》《汉书·高后纪》）；史外异说与延展：以《资治通鉴·汉纪》为编年参照，辅以《西汉年纪》等后世编年著作的异说；留白：汉后少帝被废杀的具体过程细节（幽禁地点、处决方式）不作展开。",
+  "候选著作": [
+    {
+      "出处": "《史记·吕太后本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "汉后少帝被立、废、杀的主要正史记载来源",
+      "检索词": "少帝",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《汉书·高后纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "汉后少帝废立事件的官方纪传记载",
+      "检索词": "少帝",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《资治通鉴·汉纪五》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "司马光编年体综述吕后立废少帝事，可作时间线参照",
+      "检索词": "少帝",
+      "采用": true,
+      "原文摘句": "太后废帝，幽之永巷，群臣皆曰：‘今少帝病久不愈，宜废。’太后遂废帝，立恒山王弘为帝。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《西汉年纪·卷四》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "南宋王益之编年西汉史，对吕后废少帝事有综合考异",
+      "检索词": "少帝",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《通鉴纪事本末·吕后称制》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "袁枢纪事本末体，将吕后立废少帝事归入吕后称制专题，可作叙事框架参考",
+      "检索词": "少帝",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·吕太后本纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "汉后少帝被立、废、杀的主要正史记载来源",
+      "检索词": "少帝",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《汉书·高后纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "汉后少帝废立事件的官方纪传记载",
+      "检索词": "少帝",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《资治通鉴·汉纪五》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "司马光编年体综述吕后立废少帝事，可作时间线参照",
+      "检索词": "少帝",
+      "采用": true,
+      "原文摘句": "太后废帝，幽之永巷，群臣皆曰：‘今少帝病久不愈，宜废。’太后遂废帝，立恒山王弘为帝。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《西汉年纪·卷四》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "南宋王益之编年西汉史，对吕后废少帝事有综合考异",
+      "检索词": "少帝",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《通鉴纪事本末·吕后称制》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "袁枢纪事本末体，将吕后立废少帝事归入吕后称制专题，可作叙事框架参考",
+      "检索词": "少帝",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 3,
+    "overall": "B"
+  }
+}

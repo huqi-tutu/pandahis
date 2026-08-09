@@ -120,6 +120,7 @@ function isPublicContentPath(path) {
         || p.startsWith('/home/')
         || p === '/health'
         || p.startsWith('/membership/plans')
+        || p.startsWith('/config/')
         || p.startsWith('/dictionary/')
         || p.startsWith('/wikipedia/'));
 }
@@ -131,6 +132,16 @@ function shouldAttachBearerToken(path, method, auth) {
     if (method === 'GET' && isPublicContentPath(path))
         return false;
     return true;
+}
+function buildRequestHeaders(path, method, auth, contentType = 'application/json') {
+    const header = { 'content-type': contentType };
+    const envVersion = (0, runtime_env_1.getEnvVersion)();
+    if (envVersion)
+        header['X-Miniapp-Env'] = envVersion;
+    if (shouldAttachBearerToken(path, method, auth)) {
+        header.Authorization = `Bearer ${getToken()}`;
+    }
+    return header;
 }
 function setDevelopApiBaseUrl(url) {
     const normalized = normalizeDevelopBaseUrl(url);
@@ -214,10 +225,7 @@ function request(path, opts) {
     const baseUrl = getBaseUrl();
     const url = baseUrl.replace(/\/$/, '') + (path.startsWith('/') ? path : `/${path}`);
     const method = (opts === null || opts === void 0 ? void 0 : opts.method) || 'GET';
-    const header = { 'content-type': 'application/json' };
-    if (shouldAttachBearerToken(path, method, opts === null || opts === void 0 ? void 0 : opts.auth)) {
-        header.Authorization = `Bearer ${getToken()}`;
-    }
+    const header = buildRequestHeaders(path, method, opts === null || opts === void 0 ? void 0 : opts.auth);
     return new Promise((resolve, reject) => {
         wx.request({
             url,
@@ -283,10 +291,8 @@ function uploadFile(path, filePath, opts) {
     const baseUrl = getBaseUrl();
     const url = baseUrl.replace(/\/$/, '') + (path.startsWith('/') ? path : `/${path}`);
     const name = (opts === null || opts === void 0 ? void 0 : opts.name) || 'file';
-    const header = {};
-    const token = getToken();
-    if (token)
-        header.Authorization = `Bearer ${token}`;
+    const header = buildRequestHeaders(path, 'POST', true, '');
+    delete header['content-type'];
     return new Promise((resolve, reject) => {
         wx.uploadFile({
             url,

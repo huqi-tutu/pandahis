@@ -1,0 +1,97 @@
+{
+  "work": "03后汉书",
+  "vol": "037",
+  "total_paragraphs": 44,
+  "volume_subtype": "hezhuan",
+  "derived_from": "03后汉书_037_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 21,
+      "paragraph_to": 21,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 27,
+      "paragraph_to": 29,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 35,
+      "paragraph_to": 35,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 43,
+      "paragraph_to": 44,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "朱浮",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 20,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "朱浮字叔元，沛国萧人也。初从光武为大司马主簿，迁偏将军，从破邯郸。光武遣吴汉诛更",
+        "close_paragraph": 20,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P20"
+      }
+    },
+    {
+      "name": "冯鲂",
+      "category": "文臣",
+      "paragraph_from": 22,
+      "paragraph_to": 26,
+      "boundary_evidence": {
+        "open_paragraph": 22,
+        "open_phrase": "冯鲂字孝孙，南阳湖阳人也。其先魏之支别，食菜冯城，因以氏焉。秦灭魏，迁于湖阳，为",
+        "close_paragraph": 26,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P22–P26"
+      }
+    },
+    {
+      "name": "虞延",
+      "category": "文臣",
+      "paragraph_from": 30,
+      "paragraph_to": 34,
+      "boundary_evidence": {
+        "open_paragraph": 30,
+        "open_phrase": "虞延字子大，陈留东昏人也。延初生，其上有物若一匹练，遂上升上，占者以为吉。及长，",
+        "close_paragraph": 34,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P30–P34"
+      }
+    },
+    {
+      "name": "郑弘",
+      "category": "文臣",
+      "paragraph_from": 36,
+      "paragraph_to": 40,
+      "boundary_evidence": {
+        "open_paragraph": 36,
+        "open_phrase": "郑弘字巨君，会稽山阴人也。从祖吉，宣帝时为西域都护。弘少为乡啬夫，太守第五伦行春",
+        "close_paragraph": 40,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P36–P40"
+      }
+    },
+    {
+      "name": "周章",
+      "category": "文臣",
+      "paragraph_from": 41,
+      "paragraph_to": 42,
+      "boundary_evidence": {
+        "open_paragraph": 41,
+        "open_phrase": "周章子次叔，南阳随人也。初仕郡为功曹。时大将军窦宪免，封冠军侯就国。章从太守行春",
+        "close_paragraph": 42,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P41–P42"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

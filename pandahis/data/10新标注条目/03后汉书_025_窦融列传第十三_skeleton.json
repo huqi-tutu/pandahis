@@ -1,0 +1,470 @@
+{
+  "volume": "窦融列传",
+  "source_file": "03后汉书_025_窦融列传第十三.txt",
+  "total_paragraphs": 46,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "窦融",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "窦融",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "窦融",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "窦融",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "窦融",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "窦融",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "窦融",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "窦融",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "窦融",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "窦融",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "窦融",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "窦融",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "窦融",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "窦融",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "窦融",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "窦融",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "窦融",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "窦融",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "窦融",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "窦融",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "窦融",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "窦融",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "窦固",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "窦固",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "窦固",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "窦固",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "窦宪",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "窦宪",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "窦宪",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "窦宪",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "窦宪",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "窦宪",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "窦宪",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "窦宪",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "窦宪",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "窦宪",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "窦宪",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "窦宪",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "窦章",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "窦章",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "窦章",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "窦章",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HOUHANSHU_025_01",
+      "史略名称": "窦融",
+      "史略简介": "窦融",
+      "原文字句": "窦融字周公，扶风平陵人也。七世祖广国，孝文皇后之弟，封章武侯。融高祖父，宣帝时以吏二千石自常山徙焉。融早孤。王莽居摄中，为强弩将军司马，东击翟义，还攻槐里，以军功封建武男。女弟为大司空王邑小妻。家长安中，出入贵戚，连结闾里豪杰，以任侠为名；然事母兄，养弱弟，内修行义。王莽末，青、徐贼起，太师王匡请融为助军，与共东征。",
+      "史略分类": "武将",
+      "主要史料出处": "《03后汉书·卷25·窦融列传》",
+      "paragraphs": [
+        {
+          "volume": "窦融列传",
+          "paragraph_from": 2,
+          "paragraph_to": 23
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_025_02",
+      "史略名称": "窦固",
+      "史略简介": "窦固",
+      "原文字句": "固字孟孙，少以尚公主为黄门侍郎。好览书传，喜兵法，贵显用事。中元元年，袭父友封显亲侯。显宗即位，迁中郎将，监羽林士。后坐从兄穆有罪，废于家十余年。时天下乂安，帝欲遵武帝故事，击匈奴，通西域，以固明习边事，十五年冬，拜为奉车都尉，以骑都尉耿忠为副，谒者仆射耿秉为驸马都尉，秦彭为副，皆置从事、司马，并出屯凉州。明年，固与忠率酒泉、敦煌、张掖甲卒及卢水羌胡万二千骑出酒泉塞，耿秉、秦彭率武威、陇西、天水募",
+      "史略分类": "武将",
+      "主要史料出处": "《03后汉书·卷25·窦融列传》",
+      "paragraphs": [
+        {
+          "volume": "窦融列传",
+          "paragraph_from": 25,
+          "paragraph_to": 28
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_025_03",
+      "史略名称": "窦宪",
+      "史略简介": "窦宪",
+      "原文字句": "宪字伯度。父勋被诛，宪少孤。建初二年，女弟立为皇后，拜宪为郎，稍迁侍中、虎贲中郎将；弟笃，为黄门侍郎。兄弟亲幸，并侍宫省，赏赐累积，宠贵日盛，自王、主及阴、马诸家，莫不畏惮。宪恃宫掖声势，遂以贱直请夺沁水公主园田，主逼畏，不敢计。后肃宗驾出过园，指以向宪，宪阴喝不得对。后发觉，帝大怒，召宪切责曰：“深思前过，夺主田园过，何用愈赵高指鹿为马？久念使人惊怖。昔永平中，常令阴党、阴博、邓叠三人更相纠察，",
+      "史略分类": "武将",
+      "主要史料出处": "《03后汉书·卷25·窦融列传》",
+      "paragraphs": [
+        {
+          "volume": "窦融列传",
+          "paragraph_from": 29,
+          "paragraph_to": 40
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_025_04",
+      "史略名称": "窦章",
+      "史略简介": "窦章",
+      "原文字句": "章字伯向。少好学，有文章，与马融、崔瑗同好，更相推荐。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷25·窦融列传》",
+      "paragraphs": [
+        {
+          "volume": "窦融列传",
+          "paragraph_from": 42,
+          "paragraph_to": 45
+        }
+      ]
+    }
+  ]
+}

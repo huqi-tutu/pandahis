@@ -1,0 +1,588 @@
+{
+  "volume": "杨李翟应霍爰徐列传",
+  "source_file": "03后汉书_053_杨李翟应霍爰徐列传第三十八.txt",
+  "total_paragraphs": 61,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "杨终",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "杨终",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "杨终",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "杨终",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "杨终",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "杨终",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "杨终",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "杨终",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "杨终",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "李法",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "翟酺",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "翟酺",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "翟酺",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "翟酺",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "翟酺",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "翟酺",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "翟酺",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "翟酺",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "翟酺",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "翟酺",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "翟酺",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "应奉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "应奉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "应奉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "应奉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "应奉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "应奉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "应奉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "应奉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "应奉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "应奉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "应奉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "应奉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "应奉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "应奉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "应奉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "应奉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "应奉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "应奉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "应奉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "应奉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "应奉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "应奉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "霍谞",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [
+        {
+          "name": "霍谞",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 47,
+      "owners": [
+        {
+          "name": "霍谞",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 48,
+      "owners": [
+        {
+          "name": "霍谞",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 49,
+      "owners": [
+        {
+          "name": "霍谞",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 50,
+      "owners": [
+        {
+          "name": "霍谞",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 51,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 52,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 53,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 54,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 55,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 56,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 57,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 58,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 59,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 60,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 61,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HOUHANSHU_053_01",
+      "史略名称": "杨终",
+      "史略简介": "杨终",
+      "原文字句": "杨终字子山，蜀郡成都人也。年十三，为郡小吏，太守奇其才，遣诣京师受业，习《春秋》，显宗时，征诣兰台，拜校书郎。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷53·杨李翟应霍爰徐列传》",
+      "paragraphs": [
+        {
+          "volume": "杨李翟应霍爰徐列传",
+          "paragraph_from": 2,
+          "paragraph_to": 10
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_053_02",
+      "史略名称": "李法",
+      "史略简介": "李法",
+      "原文字句": "李法字伯度，汉中南郑人也。博通群书，性刚而有节。和帝永元九年，应贤艮方正对策。除博士，迁侍中、光禄大夫。岁余，上疏以为朝政苛碎，违永平、建初故事；宦官权重，椒房宠盛，又讥史官记事不实，后世有识，寻功计德，必不明信。坐失旨，下有司，免为庶人，还乡里，杜门自守。故人儒生时有侯之者，言谈之次，问其不合上意之由，法未尝应对。友人固问之，法曰：“鄙夫可与事君乎哉？敬患失之，无所不至。孟子有言：‘夫仁者如射，",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷53·杨李翟应霍爰徐列传》",
+      "paragraphs": [
+        {
+          "volume": "杨李翟应霍爰徐列传",
+          "paragraph_from": 11,
+          "paragraph_to": 11
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_053_03",
+      "史略名称": "翟酺",
+      "史略简介": "翟酺",
+      "原文字句": "翟酺字子超，广汉雒人也。四世传《诗》。酺好《老子》，尤善图纬、天文、历算。以报舅仇，当徙日南，亡于长安，为卜相工，后牧羊凉州。遇赦还。仕郡，征拜议郎，迁侍中。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷53·杨李翟应霍爰徐列传》",
+      "paragraphs": [
+        {
+          "volume": "杨李翟应霍爰徐列传",
+          "paragraph_from": 12,
+          "paragraph_to": 22
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_053_04",
+      "史略名称": "应奉",
+      "史略简介": "应奉",
+      "原文字句": "应奉字世叔，汝南南顿人也。曾祖父顺，字华仲，和帝时为河南尹、将作大匠，公廉约己，明达政事。生十子，皆有才学。中子叠，江夏太守，叠生郴，武陵太守。郴生奉。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷53·杨李翟应霍爰徐列传》",
+      "paragraphs": [
+        {
+          "volume": "杨李翟应霍爰徐列传",
+          "paragraph_from": 23,
+          "paragraph_to": 44
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_053_05",
+      "史略名称": "霍谞",
+      "史略简介": "霍谞",
+      "原文字句": "霍谞字叔智，魏郡邺人也。少为诸生，明经。有人诬谞舅宋光于大将军梁商者，以为妄刊章文，坐系洛阳诏狱，掠考困极。谞时年十五，奏记于商曰：",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷53·杨李翟应霍爰徐列传》",
+      "paragraphs": [
+        {
+          "volume": "杨李翟应霍爰徐列传",
+          "paragraph_from": 45,
+          "paragraph_to": 50
+        }
+      ]
+    }
+  ]
+}

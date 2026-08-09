@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.parseCivilizationFromCrumb = exports.requireLoginForCorrection = exports.fetchCorrectionDetail = exports.fetchCorrections = exports.submitCorrection = exports.promptLoginForCorrection = exports.formatCorrectionTime = exports.correctionSourceLabel = exports.correctionStatusLabel = exports.CORRECTION_SOURCE_LABEL = exports.CORRECTION_STATUS_LABEL = void 0;
+exports.navigateToCorrectionSource = exports.resolveCorrectionSourceNav = exports.parseCivilizationFromCrumb = exports.requireLoginForCorrection = exports.fetchCorrectionDetail = exports.fetchCorrections = exports.submitCorrection = exports.promptLoginForCorrection = exports.formatCorrectionTime = exports.correctionSourceLabel = exports.correctionStatusLabel = exports.CORRECTION_SOURCE_LABEL = exports.CORRECTION_STATUS_LABEL = void 0;
 const api_1 = require("./api");
 const encode_path_segment_1 = require("./encode-path-segment");
 const router_1 = require("./router");
@@ -33,8 +33,14 @@ function formatCorrectionTime(iso) {
     return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
 }
 exports.formatCorrectionTime = formatCorrectionTime;
+function toNullableNumber(raw) {
+    if (raw === undefined || raw === null || raw === '')
+        return null;
+    const n = Number(raw);
+    return Number.isFinite(n) && n > 0 ? n : null;
+}
 function normalizeDetail(raw) {
-    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v;
+    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w;
     return {
         id: Number((_b = (_a = raw.id) !== null && _a !== void 0 ? _a : raw['id']) !== null && _b !== void 0 ? _b : 0),
         boxId: String((_d = (_c = raw.boxId) !== null && _c !== void 0 ? _c : raw['box_id']) !== null && _d !== void 0 ? _d : ''),
@@ -43,10 +49,11 @@ function normalizeDetail(raw) {
         civilizationName: String((_k = (_j = raw.civilizationName) !== null && _j !== void 0 ? _j : raw['civilization_name']) !== null && _k !== void 0 ? _k : ''),
         dynastyName: String((_m = (_l = raw.dynastyName) !== null && _l !== void 0 ? _l : raw['dynasty_name']) !== null && _m !== void 0 ? _m : ''),
         sourceType: String((_p = (_o = raw.sourceType) !== null && _o !== void 0 ? _o : raw['source_type']) !== null && _p !== void 0 ? _p : ''),
-        selectedText: ((_r = (_q = raw.selectedText) !== null && _q !== void 0 ? _q : raw['selected_text']) !== null && _r !== void 0 ? _r : null),
-        reason: ((_s = raw.reason) !== null && _s !== void 0 ? _s : null),
-        status: String((_t = raw.status) !== null && _t !== void 0 ? _t : 'pending'),
-        createdAt: String((_v = (_u = raw.createdAt) !== null && _u !== void 0 ? _u : raw['created_at']) !== null && _v !== void 0 ? _v : ''),
+        sourceRefId: toNullableNumber((_q = raw.sourceRefId) !== null && _q !== void 0 ? _q : raw['source_ref_id']),
+        selectedText: ((_s = (_r = raw.selectedText) !== null && _r !== void 0 ? _r : raw['selected_text']) !== null && _s !== void 0 ? _s : null),
+        reason: ((_t = raw.reason) !== null && _t !== void 0 ? _t : null),
+        status: String((_u = raw.status) !== null && _u !== void 0 ? _u : 'pending'),
+        createdAt: String((_w = (_v = raw.createdAt) !== null && _v !== void 0 ? _v : raw['created_at']) !== null && _w !== void 0 ? _w : ''),
     };
 }
 function normalizeListItem(raw) {
@@ -80,6 +87,7 @@ async function submitCorrection(payload) {
             sourceType: payload.sourceType,
             reason: payload.reason || undefined,
             selectedText: payload.selectedText || undefined,
+            sourceRefId: payload.sourceRefId || undefined,
         },
     });
     return normalizeDetail((res.data || {}));
@@ -115,3 +123,61 @@ function parseCivilizationFromCrumb(crumbText) {
     return idx >= 0 ? text.slice(0, idx).trim() : text;
 }
 exports.parseCivilizationFromCrumb = parseCivilizationFromCrumb;
+/** 解析纠错来源对应的跳转目标；无法跳转时返回 error */
+function resolveCorrectionSourceNav(detail) {
+    const sourceType = detail.sourceType;
+    if (sourceType === 'dynasty_canvas') {
+        const unitId = String(detail.unitId || '').trim();
+        if (!unitId)
+            return { error: '缺少朝代信息，无法跳转' };
+        return {
+            path: router_1.ROUTES.dynastyDetail,
+            query: {
+                unitId,
+                dynasty: String(detail.dynastyName || '').trim(),
+            },
+        };
+    }
+    if (sourceType === 'box_detail_selection') {
+        const boxId = String(detail.boxId || '').trim();
+        if (!boxId)
+            return { error: '缺少史略信息，无法跳转' };
+        return {
+            path: router_1.ROUTES.boxDetail,
+            query: {
+                boxId,
+                title: String(detail.boxTitle || '').trim(),
+            },
+        };
+    }
+    if (sourceType === 'critique_detail_selection') {
+        const critiqueId = toNullableNumber(detail.sourceRefId);
+        if (!critiqueId)
+            return { error: '缺少评述信息，无法跳转' };
+        return {
+            path: router_1.ROUTES.critiqueDetail,
+            query: { critiqueId },
+        };
+    }
+    if (sourceType === 'relic_detail_selection') {
+        const relicId = toNullableNumber(detail.sourceRefId);
+        if (!relicId)
+            return { error: '缺少见证信息，无法跳转' };
+        return {
+            path: router_1.ROUTES.relicDetail,
+            query: { relicId },
+        };
+    }
+    return { error: '未知来源，无法跳转' };
+}
+exports.resolveCorrectionSourceNav = resolveCorrectionSourceNav;
+function navigateToCorrectionSource(detail) {
+    const nav = resolveCorrectionSourceNav(detail);
+    if ('error' in nav) {
+        wx.showToast({ title: nav.error, icon: 'none' });
+        return false;
+    }
+    (0, router_1.navigateTo)(nav.path, nav.query);
+    return true;
+}
+exports.navigateToCorrectionSource = navigateToCorrectionSource;

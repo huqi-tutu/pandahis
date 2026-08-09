@@ -1,0 +1,440 @@
+{
+  "volume": "刘赵淳于江刘周赵列传",
+  "source_file": "03后汉书_043_刘赵淳于江刘周赵列传第二十九.txt",
+  "total_paragraphs": 53,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 3,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 4,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 5,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "刘平",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "刘平",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "刘平",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "刘平",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "刘平",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 12,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "赵孝",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "赵孝",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 16,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 17,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "淳于恭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "淳于恭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "淳于恭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "江革",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "江革",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "江革",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "江革",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "江革",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "刘般",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "刘般",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "刘般",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "刘般",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "刘般",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "刘般",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "刘般",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 34,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 35,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 36,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 37,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 38,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 39,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 40,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 41,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 42,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 43,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 44,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 45,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 46,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 47,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 48,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 49,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 50,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 51,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 52,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 53,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HOUHANSHU_043_01",
+      "史略名称": "刘平",
+      "史略简介": "刘平",
+      "原文字句": "刘平字公子，楚郡彭城人也。本名旷，显宗后改为平。王莽时为郡吏，守菑丘长，政教大行。其后每属县有剧贼，辄令平守之，所至皆理，由是一郡称其能。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷43·刘赵淳于江刘周赵列传》",
+      "paragraphs": [
+        {
+          "volume": "刘赵淳于江刘周赵列传",
+          "paragraph_from": 6,
+          "paragraph_to": 10
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_043_02",
+      "史略名称": "赵孝",
+      "史略简介": "赵孝",
+      "原文字句": "赵孝字长平，沛国蕲人也。父普，王莽时为田禾将军，任孝为郎。每告归，常白衣步担。尝从长安还，欲止邮亭。亭长先时闻孝当过，以有长者客，扫洒待之。孝既至，不自名，长不肯内，因问曰：“闻田禾将军子当从长安来，何时至乎？”孝曰：“寻到矣。”于是遂去。及天下乱，人相食。孝弟礼为饿贼所得，孝闻之，即自缚诣贼，曰：“礼久饿羸瘦，不如孝肥饱。”贼大惊，并放之，谓曰：“可且归，更持米糒来。”孝求不能得，复往报贼，愿就",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷43·刘赵淳于江刘周赵列传》",
+      "paragraphs": [
+        {
+          "volume": "刘赵淳于江刘周赵列传",
+          "paragraph_from": 13,
+          "paragraph_to": 14
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_043_03",
+      "史略名称": "淳于恭",
+      "史略简介": "淳于恭",
+      "原文字句": "淳于恭字孟孙，北海淳于人也。善说《老子》，清静不慕荣名。家有山田果树，人或侵盗，辄助为收采。又见偷刈禾者，恭念其愧，因伏草中，盗去乃起，里落化之。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷43·刘赵淳于江刘周赵列传》",
+      "paragraphs": [
+        {
+          "volume": "刘赵淳于江刘周赵列传",
+          "paragraph_from": 18,
+          "paragraph_to": 20
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_043_04",
+      "史略名称": "江革",
+      "史略简介": "江革",
+      "原文字句": "江革字次翁，齐国临淄人也。少失父，独与母居。遭天下乱，盗贼并起，革负母逃难，备经阻险，常采拾以为养。数遇贼，或劫欲将去，革辄涕泣求哀，言有老母，辞气愿款，有足感动人者。贼以是不忍犯之，或乃指避兵之方，遂得俱全于难。革转客下邳，穷贫裸跣，行佣以供母，便身之物，莫不必给。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷43·刘赵淳于江刘周赵列传》",
+      "paragraphs": [
+        {
+          "volume": "刘赵淳于江刘周赵列传",
+          "paragraph_from": 21,
+          "paragraph_to": 25
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_043_05",
+      "史略名称": "刘般",
+      "史略简介": "刘般",
+      "原文字句": "刘般字伯兴，宣帝之玄孙也。宣帝封子嚣于楚，是为孝王。孝王生思王衍，衍生王纡，纡生般。自嚣至般，积累仁义，世有名节，而纡尤慈笃。早失母，同产弟原乡侯平尚幼，纡亲自鞠养，常与共卧起饮食。及成人，未尝离左右。平病卒，纡哭泣欧血，数月亦殁。初，纡袭王封，因值王莽篡位，废为庶人，因家于彭城。",
+      "史略分类": "宗戚",
+      "主要史料出处": "《03后汉书·卷43·刘赵淳于江刘周赵列传》",
+      "paragraphs": [
+        {
+          "volume": "刘赵淳于江刘周赵列传",
+          "paragraph_from": 26,
+          "paragraph_to": 32
+        }
+      ]
+    }
+  ]
+}

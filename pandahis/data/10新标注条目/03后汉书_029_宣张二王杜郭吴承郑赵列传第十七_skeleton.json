@@ -1,0 +1,439 @@
+{
+  "volume": "宣张二王杜郭吴承郑赵列传",
+  "source_file": "03后汉书_029_宣张二王杜郭吴承郑赵列传第十七.txt",
+  "total_paragraphs": 52,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "宣秉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "宣秉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 5,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 6,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 7,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 8,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 9,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 10,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 11,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 12,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 13,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 14,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "王良",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "王良",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "王良",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "王良",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "杜林",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "杜林",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "杜林",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "杜林",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "杜林",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "杜林",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "杜林",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "杜林",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "杜林",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "杜林",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 31,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 32,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 33,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 34,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 35,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 36,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 37,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 38,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 39,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 40,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "郑均",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "郑均",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "郑均",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "赵典",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "赵典",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [
+        {
+          "name": "赵典",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 47,
+      "owners": [
+        {
+          "name": "赵典",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 48,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 49,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 50,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 51,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 52,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HOUHANSHU_029_01",
+      "史略名称": "宣秉",
+      "史略简介": "宣秉",
+      "原文字句": "宣秉字巨公，冯翊云阳人也。少修高节，显名三辅。哀、平际，见王氏据权专政，侵削宗室，有逆乱萌，遂隐遁深山，州郡连召，常称疾不仕。王莽为宰衡，辟命不应。及莽篡位，又遣使者征之，秉固称疾病。更始即位，征为侍中。建武元年，拜御史中丞。光武特诏御史中丞与司隶校尉、尚书令会同并专席而坐，故京师号曰“三独坐”。明年，迁司隶校尉。务举大纲，简略苛细，百僚敬之。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷29·宣张二王杜郭吴承郑赵列传》",
+      "paragraphs": [
+        {
+          "volume": "宣张二王杜郭吴承郑赵列传",
+          "paragraph_from": 2,
+          "paragraph_to": 3
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_029_02",
+      "史略名称": "王良",
+      "史略简介": "王良",
+      "原文字句": "王良字仲子，东海兰陵人也。少好学，习《小夏侯尚书》。王莽时，寝病不仕，教授诸生千余人。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷29·宣张二王杜郭吴承郑赵列传》",
+      "paragraphs": [
+        {
+          "volume": "宣张二王杜郭吴承郑赵列传",
+          "paragraph_from": 15,
+          "paragraph_to": 18
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_029_03",
+      "史略名称": "杜林",
+      "史略简介": "杜林",
+      "原文字句": "杜林字伯山，扶风茂陵人也。父邺，成、哀间为凉州刺史。林少好学沉深，家既多书，又外氏张竦父子喜文采，林从竦受学，博洽多闻，时称通儒。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷29·宣张二王杜郭吴承郑赵列传》",
+      "paragraphs": [
+        {
+          "volume": "宣张二王杜郭吴承郑赵列传",
+          "paragraph_from": 20,
+          "paragraph_to": 29
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_029_04",
+      "史略名称": "郑均",
+      "史略简介": "郑均",
+      "原文字句": "郑均字仲虞，东平任城人也。少好黄、老书。兄为县吏，颇受礼遗，均数谏止，不听。即脱身为佣，岁余，得钱帛，归以与兄。曰：“物尽可复得，为吏坐臧，终身捐弃。”兄感其言，遂为廉洁。均好义笃实，养寡嫂孤儿，恩礼敦至。常称病家廷，不应州郡辟召。郡将欲必致之，使县令谲将诣门，既至，卒不能屈。均于是客于濮阳。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷29·宣张二王杜郭吴承郑赵列传》",
+      "paragraphs": [
+        {
+          "volume": "宣张二王杜郭吴承郑赵列传",
+          "paragraph_from": 41,
+          "paragraph_to": 43
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_029_05",
+      "史略名称": "赵典",
+      "史略简介": "赵典",
+      "原文字句": "赵典字仲经，蜀郡成都人也。父戒，为太尉，桓帝立，以定策封厨亭侯。典少笃行隐约，博学经书，弟子自远方至。建和初，四府表荐，征拜议郎，侍讲禁内，再迁为侍中。时，帝欲广开鸿池，典谏曰：“鸿池泛溉，已且百顷，犹复增而深之，非所以崇唐、虞之约己，遵孝之爱人也。”帝纳其言而止。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷29·宣张二王杜郭吴承郑赵列传》",
+      "paragraphs": [
+        {
+          "volume": "宣张二王杜郭吴承郑赵列传",
+          "paragraph_from": 44,
+          "paragraph_to": 47
+        }
+      ]
+    }
+  ]
+}

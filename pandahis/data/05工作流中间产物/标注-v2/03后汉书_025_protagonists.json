@@ -1,0 +1,38 @@
+{
+  "work": "03后汉书",
+  "vol": "025",
+  "volume_name": "窦融列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_arc": "C",
+  "volume_texture": "sequential",
+  "skip_reason": null,
+  "protagonists_cap_note": "窦融/固/宪/章；融后嗣封奉祀段归融。",
+  "protagonists": [
+    {
+      "name": "窦融",
+      "category": "武将",
+      "rationale": "P2–P23（含奉融后嗣封）。"
+    },
+    {
+      "name": "窦固",
+      "category": "武将",
+      "rationale": "P25–P28。"
+    },
+    {
+      "name": "窦宪",
+      "category": "武将",
+      "rationale": "P29–P40。"
+    },
+    {
+      "name": "窦章",
+      "category": "文臣",
+      "rationale": "P42–P45。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "论赞"
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "work": "03后汉书",
+  "vol": "011",
+  "total_paragraphs": 59,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_011_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 2,
+      "paragraph_to": 5,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 11,
+      "paragraph_to": 11,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 30,
+      "paragraph_to": 30,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 33,
+      "paragraph_to": 33,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 36,
+      "paragraph_to": 38,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 59,
+      "paragraph_to": 59,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "光武郭皇后",
+      "category": "宗戚",
+      "paragraph_from": 6,
+      "paragraph_to": 10,
+      "boundary_evidence": {
+        "open_paragraph": 6,
+        "open_phrase": "光武郭皇后讳圣通，真定稿人也。为郡著姓。父昌，让田宅财产数百万与异母弟，国人义之",
+        "close_paragraph": 10,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P6–P10"
+      }
+    },
+    {
+      "name": "光烈阴皇后",
+      "category": "宗戚",
+      "paragraph_from": 12,
+      "paragraph_to": 16,
+      "boundary_evidence": {
+        "open_paragraph": 12,
+        "open_phrase": "光烈阴皇后讳丽华，南阳新野人。初，光武适新野，闻后美，心悦之。后至长安，见执金吾",
+        "close_paragraph": 16,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P12–P16"
+      }
+    },
+    {
+      "name": "明德马皇后",
+      "category": "宗戚",
+      "paragraph_from": 17,
+      "paragraph_to": 29,
+      "boundary_evidence": {
+        "open_paragraph": 17,
+        "open_phrase": "明德马皇后讳某，伏波将军援之小女也。少丧父母。兄客卿惠敏早夭，母蔺夫人悲伤发疾慌",
+        "close_paragraph": 29,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P17–P29"
+      }
+    },
+    {
+      "name": "章德窦皇后",
+      "category": "宗戚",
+      "paragraph_from": 31,
+      "paragraph_to": 32,
+      "boundary_evidence": {
+        "open_paragraph": 31,
+        "open_phrase": "章德窦皇后讳某，扶风平陵人，大司空融之曾孙也。祖穆，父勋，坐事死，事在《窦融传》",
+        "close_paragraph": 32,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P31–P32"
+      }
+    },
+    {
+      "name": "章德窦皇后",
+      "category": "宗戚",
+      "paragraph_from": 34,
+      "paragraph_to": 35,
+      "boundary_evidence": {
+        "open_paragraph": 34,
+        "open_phrase": "及帝崩，和帝即位，尊后为皇太后。皇太后临朝，尊母沘阳公主为长公主，益汤沐邑三千户",
+        "close_paragraph": 35,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P34–P35"
+      }
+    },
+    {
+      "name": "和熹邓皇后",
+      "category": "宗戚",
+      "paragraph_from": 39,
+      "paragraph_to": 58,
+      "boundary_evidence": {
+        "open_paragraph": 39,
+        "open_phrase": "和熹邓皇后讳绥，太傅禹之孙也。父训，护羌校尉；母阴氏，光烈皇后从弟女也。后年五岁",
+        "close_paragraph": 58,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P39–P58"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

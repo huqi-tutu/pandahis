@@ -1,0 +1,39 @@
+{
+  "work": "03后汉书",
+  "vol": "042",
+  "volume_name": "张法滕冯度杨列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_arc": "C",
+  "volume_texture": "sequential",
+  "skip_reason": null,
+  "protagonists_cap_note": "≤5：张宗、法雄、滕抚、冯绲、度尚；杨璇不取。嗣封归本人。",
+  "protagonists": [
+    {
+      "name": "张宗",
+      "category": "武将",
+      "rationale": "P2–P4。"
+    },
+    {
+      "name": "法雄",
+      "category": "武将",
+      "rationale": "P5–P9（含子真）。"
+    },
+    {
+      "name": "滕抚",
+      "category": "武将",
+      "rationale": "P10–P12。"
+    },
+    {
+      "name": "冯绲",
+      "category": "武将",
+      "rationale": "P13–P19（含弟允）。"
+    },
+    {
+      "name": "度尚",
+      "category": "武将",
+      "rationale": "P20–P26。"
+    }
+  ]
+}

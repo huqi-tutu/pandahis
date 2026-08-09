@@ -1,0 +1,414 @@
+{
+  "volume": "李王邓来列传",
+  "source_file": "03后汉书_017_李王邓来列传第五.txt",
+  "total_paragraphs": 38,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "interleaved",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "李通",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "李通",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "李通",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "李通",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "李通",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "李通",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "李通",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "李通",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "王常",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "王常",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "王常",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "王常",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "王常",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "王常",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "邓晨",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "邓晨",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "邓晨",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "邓晨",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "邓晨",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "邓晨",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "来歙",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "来歙",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "来歙",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "来歙",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "来歙",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "来歙",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "来歙",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "来歙",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "来歙",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "来歙",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "来历",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "来历",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "来历",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "来历",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HOUHANSHU_017_01",
+      "史略名称": "李通",
+      "史略简介": "李通",
+      "原文字句": "李通，字次元，南阳宛人也。世以贷殖著姓。父守，身长九尺，容貌绝异，为人严毅，居家如官廷。初事刘歆，好星历谶记，为王莽宗卿师。通亦为五威将军从事，出补巫丞，有能名。莽未，百姓愁怨，通素闻守说谶云“刘氏复兴，李氏为辅”，私常怀之。且居家富逸，为闾里雄，以此不乐为吏，乃自免归。",
+      "史略分类": "武将",
+      "主要史料出处": "《03后汉书·卷17·李王邓来列传》",
+      "paragraphs": [
+        {
+          "volume": "李王邓来列传",
+          "paragraph_from": 2,
+          "paragraph_to": 9
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_017_02",
+      "史略名称": "王常",
+      "史略简介": "王常",
+      "原文字句": "王常字颜卿，颍川舞阳人也。王莽未，为弟报仇，亡命江夏。久之，与王凤、王匡等起兵云杜绿林中，聚众数万人，以常为偏裨，攻傍县。后与成丹、张卬别入南郡蓝口，号下江兵。王莽遣严尤、陈茂击破之。常与丹、卬收散卒入蒌溪，劫略钟、龙间，众复振。引军与刑州牧战于上唐，大破之，遂北至宜秋。",
+      "史略分类": "武将",
+      "主要史料出处": "《03后汉书·卷17·李王邓来列传》",
+      "paragraphs": [
+        {
+          "volume": "李王邓来列传",
+          "paragraph_from": 11,
+          "paragraph_to": 16
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_017_03",
+      "史略名称": "邓晨",
+      "史略简介": "邓晨",
+      "原文字句": "邓晨字伟卿，南阳新野人也。世吏二千石。父宏，预章都尉。晨初聚光武姊元。王莽末，光武尝与兄伯升及晨俱之宛，与穰人蔡少公等宴语。少公颇学图谶，言刘秀当为天子。或曰：“是国师公刘秀乎？”光武戏曰：“何用知非仆耶？”坐者皆大笑，晨心独喜。及光武与家属避吏新野，舍晨庐，甚相亲爱。晨因谓光武曰：“王莽悖暴，盛夏斩人，此天亡之时也。往时会宛，独当应耶？”光武笑不答。",
+      "史略分类": "武将",
+      "主要史料出处": "《03后汉书·卷17·李王邓来列传》",
+      "paragraphs": [
+        {
+          "volume": "李王邓来列传",
+          "paragraph_from": 17,
+          "paragraph_to": 22
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_017_04",
+      "史略名称": "来歙",
+      "史略简介": "来歙",
+      "原文字句": "来歙字君叔，南阳新野人也。六世祖汉，有才力，武帝世，以光禄大夫副楼船将军杨仆，击破南越、朝鲜。父仲，哀帝时为谏大夫，娶光武祖姑，生歙。光武甚亲敬之，数共往来长安。",
+      "史略分类": "武将",
+      "主要史料出处": "《03后汉书·卷17·李王邓来列传》",
+      "paragraphs": [
+        {
+          "volume": "李王邓来列传",
+          "paragraph_from": 23,
+          "paragraph_to": 32
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_017_05",
+      "史略名称": "来历",
+      "史略简介": "来历",
+      "原文字句": "历字伯珍，少袭爵，以公主子，永元中为侍中，监羽林右骑。永初三年，迁射声校尉。永宁元年，代冯石为执金吾。延光元年，尊历母为长公主。二年，迁历太仆。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷17·李王邓来列传》",
+      "paragraphs": [
+        {
+          "volume": "李王邓来列传",
+          "paragraph_from": 34,
+          "paragraph_to": 37
+        }
+      ]
+    }
+  ],
+  "translation_qa_hint": "混写卷：人物段落非连续。翻译质检须按 entries[].paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。"
+}

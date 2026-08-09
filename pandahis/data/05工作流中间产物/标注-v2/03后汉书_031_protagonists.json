@@ -1,0 +1,24 @@
+{
+  "work": "03后汉书",
+  "vol": "031",
+  "volume_name": "冯衍列传第十八下",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_arc": "C",
+  "volume_texture": "sequential",
+  "skip_reason": null,
+  "protagonists_cap_note": "上卷续传，单主轴冯衍；P5赋序归衍。",
+  "protagonists": [
+    {
+      "name": "冯衍",
+      "category": "文臣",
+      "rationale": "P2–P17（含赋序与诸子）。 冯衍与030上卷同书分卷，合并/翻译须两卷并召。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "论赞"
+  ],
+  "volume_split_note": "冯衍与030上卷同书分卷，合并/翻译须两卷并召。"
+}

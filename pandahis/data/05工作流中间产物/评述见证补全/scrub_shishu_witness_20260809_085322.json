@@ -1,0 +1,1636 @@
+{
+  "dry_run": true,
+  "dynasties": [
+    "五帝",
+    "夏",
+    "商",
+    "西周",
+    "春秋",
+    "战国",
+    "秦"
+  ],
+  "files_touched": 108,
+  "rows_dropped": 108,
+  "report": [
+    {
+      "id": "GLBL_00058",
+      "name": "帝辛（纣）",
+      "dynasty": "商",
+      "before": 4,
+      "after": 3,
+      "dropped": [
+        {
+          "title": "许仲琳《封神演义》",
+          "loc": "传世文本·见明万历刻本系统",
+          "reason": "非诗词歌赋文学见证"
+        }
+      ],
+      "file": "GLBL_00058_帝辛（纣）_见证.json"
+    },
+    {
+      "id": "GLBL_00097",
+      "name": "秦二世",
+      "dynasty": "秦",
+      "before": 5,
+      "after": 4,
+      "dropped": [
+        {
+          "title": "贾谊《过秦论》",
+          "loc": "传世文本·见《史记·秦始皇本纪》及《文选》",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_00097_秦二世_见证.json"
+    },
+    {
+      "id": "GLBL_00145",
+      "name": "魏安釐王",
+      "dynasty": "战国",
+      "before": 2,
+      "after": 1,
+      "dropped": [
+        {
+          "title": "汲冢竹书（《竹书纪年》《穆天子传》等）",
+          "loc": "中国·原简已佚（晋代整理本传世，见《汲冢书》及各辑本）",
+          "reason": "主名额传世史书"
+        }
+      ],
+      "file": "GLBL_00145_魏安釐王_见证.json"
+    },
+    {
+      "id": "GLBL_00221",
+      "name": "优旃",
+      "dynasty": "秦",
+      "before": 3,
+      "after": 2,
+      "dropped": [
+        {
+          "title": "《史记·滑稽列传》优旃事迹",
+          "loc": "传世文本·见《史记》",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_00221_优旃_见证.json"
+    },
+    {
+      "id": "GLBL_00230",
+      "name": "卓氏",
+      "dynasty": "秦",
+      "before": 4,
+      "after": 3,
+      "dropped": [
+        {
+          "title": "卓文君与司马相如琴挑故事相关文献群",
+          "loc": "传世文本·见《史记·司马相如列传》及《西京杂记》",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_00230_卓氏_见证.json"
+    },
+    {
+      "id": "GLBL_00233",
+      "name": "宛孔氏",
+      "dynasty": "秦",
+      "before": 3,
+      "after": 2,
+      "dropped": [
+        {
+          "title": "《史记·货殖列传》宛孔氏本传",
+          "loc": "传世文本·见《史记》（中华书局点校本）",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_00233_宛孔氏_见证.json"
+    },
+    {
+      "id": "GLBL_00297",
+      "name": "吕不韦",
+      "dynasty": "秦",
+      "before": 5,
+      "after": 4,
+      "dropped": [
+        {
+          "title": "司马贞《史记索隐》论吕不韦",
+          "loc": "传世文本·见《史记索隐》",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_00297_吕不韦_见证.json"
+    },
+    {
+      "id": "GLBL_00479",
+      "name": "韩非",
+      "dynasty": "秦",
+      "before": 6,
+      "after": 5,
+      "dropped": [
+        {
+          "title": "《韩非子》·《五蠹》篇（附加文学见证）",
+          "loc": "传世文本·见《韩非子》通行本",
+          "reason": "非诗词歌赋文学见证"
+        }
+      ],
+      "file": "GLBL_00479_韩非_见证.json"
+    },
+    {
+      "id": "GLBL_00522",
+      "name": "王翦",
+      "dynasty": "秦",
+      "before": 4,
+      "after": 3,
+      "dropped": [
+        {
+          "title": "《史记·白起王翦列传》",
+          "loc": "传世文本·见《史记》（中华书局点校本）",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_00522_王翦_见证.json"
+    },
+    {
+      "id": "GLBL_00524",
+      "name": "田儋",
+      "dynasty": "秦",
+      "before": 3,
+      "after": 2,
+      "dropped": [
+        {
+          "title": "《史记·田儋列传》",
+          "loc": "传世文本·见《史记》（中华书局点校本）",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_00524_田儋_见证.json"
+    },
+    {
+      "id": "GLBL_00678",
+      "name": "比干",
+      "dynasty": "商",
+      "before": 4,
+      "after": 3,
+      "dropped": [
+        {
+          "title": "许仲琳《封神演义》",
+          "loc": "传世文本·见明万历刻本系统",
+          "reason": "非诗词歌赋文学见证"
+        }
+      ],
+      "file": "GLBL_00678_比干_见证.json"
+    },
+    {
+      "id": "GLBL_00913",
+      "name": "北击匈奴",
+      "dynasty": "秦",
+      "before": 5,
+      "after": 4,
+      "dropped": [
+        {
+          "title": "《史记·蒙恬列传》",
+          "loc": "传世文本·见中华书局点校本《史记》",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_00913_北击匈奴_见证.json"
+    },
+    {
+      "id": "GLBL_00915",
+      "name": "灵渠开凿",
+      "dynasty": "秦",
+      "before": 5,
+      "after": 4,
+      "dropped": [
+        {
+          "title": "唐·鱼孟威《灵渠记》",
+          "loc": "传世文本·见《全唐文》",
+          "reason": "非诗词歌赋文学见证"
+        }
+      ],
+      "file": "GLBL_00915_灵渠开凿_见证.json"
+    },
+    {
+      "id": "GLBL_00918",
+      "name": "沙丘之变",
+      "dynasty": "秦",
+      "before": 5,
+      "after": 4,
+      "dropped": [
+        {
+          "title": "司马迁《史记·秦始皇本纪》",
+          "loc": "传世文本·见中华书局点校本《史记》",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_00918_沙丘之变_见证.json"
+    },
+    {
+      "id": "GLBL_00920",
+      "name": "指鹿为马",
+      "dynasty": "秦",
+      "before": 5,
+      "after": 4,
+      "dropped": [
+        {
+          "title": "《史记·秦始皇本纪》",
+          "loc": "传世文本·见《史记》通行本",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_00920_指鹿为马_见证.json"
+    },
+    {
+      "id": "GLBL_00925",
+      "name": "书同文",
+      "dynasty": "秦",
+      "before": 5,
+      "after": 4,
+      "dropped": [
+        {
+          "title": "许慎《说文解字》",
+          "loc": "传世文本·见宋刻本（中国·国家图书馆藏）",
+          "reason": "非诗词歌赋文学见证"
+        }
+      ],
+      "file": "GLBL_00925_书同文_见证.json"
+    },
+    {
+      "id": "GLBL_00927",
+      "name": "统一车轨",
+      "dynasty": "秦",
+      "before": 5,
+      "after": 4,
+      "dropped": [
+        {
+          "title": "东汉《说文解字》「轨」字条",
+          "loc": "传世文本·见《说文解字》大徐本",
+          "reason": "非诗词歌赋文学见证"
+        }
+      ],
+      "file": "GLBL_00927_统一车轨_见证.json"
+    },
+    {
+      "id": "GLBL_00933",
+      "name": "公子高",
+      "dynasty": "秦",
+      "before": 4,
+      "after": 3,
+      "dropped": [
+        {
+          "title": "司马迁《史记·秦始皇本纪》",
+          "loc": "传世文本·见中华书局点校本《史记》",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_00933_公子高_见证.json"
+    },
+    {
+      "id": "GLBL_00934",
+      "name": "赵高",
+      "dynasty": "秦",
+      "before": 5,
+      "after": 4,
+      "dropped": [
+        {
+          "title": "《史记·秦始皇本纪》「指鹿为马」段（附加文学见证）",
+          "loc": "传世文本·见中华书局点校本《史记》",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_00934_赵高_见证.json"
+    },
+    {
+      "id": "GLBL_00935",
+      "name": "冯去疾",
+      "dynasty": "秦",
+      "before": 5,
+      "after": 4,
+      "dropped": [
+        {
+          "title": "司马迁《史记·秦始皇本纪》",
+          "loc": "传世文本·见中华书局点校本《史记》",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_00935_冯去疾_见证.json"
+    },
+    {
+      "id": "GLBL_00936",
+      "name": "尉缭",
+      "dynasty": "秦",
+      "before": 4,
+      "after": 3,
+      "dropped": [
+        {
+          "title": "《汉书·艺文志》兵权谋家著录",
+          "loc": "传世文本·见中华书局点校本《汉书》",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_00936_尉缭_见证.json"
+    },
+    {
+      "id": "GLBL_00937",
+      "name": "卢生",
+      "dynasty": "秦",
+      "before": 2,
+      "after": 1,
+      "dropped": [
+        {
+          "title": "元·无名氏《秦坑儒》杂剧（佚）",
+          "loc": "传世文本·见《录鬼簿》著录",
+          "reason": "非诗词歌赋文学见证"
+        }
+      ],
+      "file": "GLBL_00937_卢生_见证.json"
+    },
+    {
+      "id": "GLBL_00938",
+      "name": "王贲",
+      "dynasty": "秦",
+      "before": 3,
+      "after": 2,
+      "dropped": [
+        {
+          "title": "《史记·白起王翦列传》（附王贲事迹）",
+          "loc": "传世文本·见《史记》（中华书局点校本）",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_00938_王贲_见证.json"
+    },
+    {
+      "id": "GLBL_00939",
+      "name": "章邯",
+      "dynasty": "秦",
+      "before": 1,
+      "after": 0,
+      "dropped": [
+        {
+          "title": "《史记·项羽本纪》章邯巨鹿之战叙事",
+          "loc": "传世文本·见《史记》（中华书局点校本）",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_00939_章邯_见证.json"
+    },
+    {
+      "id": "GLBL_00940",
+      "name": "百越",
+      "dynasty": "秦",
+      "before": 5,
+      "after": 4,
+      "dropped": [
+        {
+          "title": "《淮南子·人间训》",
+          "loc": "传世文本·见中华书局《淮南子集释》",
+          "reason": "非诗词歌赋文学见证"
+        }
+      ],
+      "file": "GLBL_00940_百越_见证.json"
+    },
+    {
+      "id": "GLBL_00941",
+      "name": "匈奴",
+      "dynasty": "秦",
+      "before": 5,
+      "after": 4,
+      "dropped": [
+        {
+          "title": "司马迁《史记·匈奴列传》",
+          "loc": "传世文本·见《史记》（中华书局点校本）",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_00941_匈奴_见证.json"
+    },
+    {
+      "id": "GLBL_00944",
+      "name": "驰道系统全线竣工",
+      "dynasty": "秦",
+      "before": 5,
+      "after": 4,
+      "dropped": [
+        {
+          "title": "《史记·秦始皇本纪》驰道记载",
+          "loc": "传世文本·见中华书局点校本《史记》",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_00944_驰道系统全线竣工_见证.json"
+    },
+    {
+      "id": "GLBL_00949",
+      "name": "驰道营建通行规制",
+      "dynasty": "秦",
+      "before": 5,
+      "after": 4,
+      "dropped": [
+        {
+          "title": "《史记·秦始皇本纪》驰道记载（宋刻本）",
+          "loc": "传世文本·见《史记》（宋黄善夫刻本·中国·国家图书馆）",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_00949_驰道营建通行规制_见证.json"
+    },
+    {
+      "id": "GLBL_00953",
+      "name": "二十等爵制全域推行",
+      "dynasty": "秦",
+      "before": 6,
+      "after": 5,
+      "dropped": [
+        {
+          "title": "司马迁《史记·商君列传》",
+          "loc": "传世文本·见中华书局点校本《史记》",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_00953_二十等爵制全域推行_见证.json"
+    },
+    {
+      "id": "GLBL_00957",
+      "name": "夷三族刑制",
+      "dynasty": "秦",
+      "before": 4,
+      "after": 3,
+      "dropped": [
+        {
+          "title": "《汉书·刑法志》论族刑沿革",
+          "loc": "传世文本·见中华书局点校本《汉书》",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_00957_夷三族刑制_见证.json"
+    },
+    {
+      "id": "GLBL_00959",
+      "name": "秦代识字三篇（仓颉/爰历/博学）",
+      "dynasty": "秦",
+      "before": 4,
+      "after": 3,
+      "dropped": [
+        {
+          "title": "《说文解字·叙》著录秦三篇字书",
+          "loc": "传世文本·见《说文解字》",
+          "reason": "非诗词歌赋文学见证"
+        }
+      ],
+      "file": "GLBL_00959_秦代识字三篇（仓颉_爰历_博学）_见证.json"
+    },
+    {
+      "id": "GLBL_00961",
+      "name": "魏咎",
+      "dynasty": "秦",
+      "before": 1,
+      "after": 0,
+      "dropped": [
+        {
+          "title": "《资治通鉴·秦纪》",
+          "loc": "传世文本·见中华书局点校本《资治通鉴》",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_00961_魏咎_见证.json"
+    },
+    {
+      "id": "GLBL_00962",
+      "name": "熊心",
+      "dynasty": "秦",
+      "before": 3,
+      "after": 2,
+      "dropped": [
+        {
+          "title": "《史记·项羽本纪》所载义帝事迹",
+          "loc": "传世文本·见《史记》（中华书局点校本）",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_00962_熊心_见证.json"
+    },
+    {
+      "id": "GLBL_00963",
+      "name": "赵歇",
+      "dynasty": "秦",
+      "before": 3,
+      "after": 2,
+      "dropped": [
+        {
+          "title": "《史记·张耳陈馀列传》赵歇记事",
+          "loc": "传世文本·见《史记》（中华书局点校本）",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_00963_赵歇_见证.json"
+    },
+    {
+      "id": "GLBL_00964",
+      "name": "韩成",
+      "dynasty": "秦",
+      "before": 2,
+      "after": 1,
+      "dropped": [
+        {
+          "title": "《资治通鉴·秦纪》韩成立废",
+          "loc": "传世文本·见《资治通鉴》（北宋司马光撰，今存宋刻本及通行本）",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_00964_韩成_见证.json"
+    },
+    {
+      "id": "GLBL_00966",
+      "name": "景驹",
+      "dynasty": "秦",
+      "before": 2,
+      "after": 1,
+      "dropped": [
+        {
+          "title": "《资治通鉴·秦纪》相关卷次（传世文献）",
+          "loc": "传世文本·见中华书局点校本《资治通鉴》",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_00966_景驹_见证.json"
+    },
+    {
+      "id": "GLBL_00970",
+      "name": "子婴",
+      "dynasty": "秦",
+      "before": 4,
+      "after": 3,
+      "dropped": [
+        {
+          "title": "《秦并天下》瓦当（秦代）",
+          "loc": "传世文本·见《史记·秦始皇本纪》",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_00970_子婴_见证.json"
+    },
+    {
+      "id": "GLBL_00971",
+      "name": "韩谈",
+      "dynasty": "秦",
+      "before": 1,
+      "after": 0,
+      "dropped": [
+        {
+          "title": "韩谈",
+          "loc": "传世文本·见《史记·秦始皇本纪》",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_00971_韩谈_见证.json"
+    },
+    {
+      "id": "GLBL_00972",
+      "name": "姚贾",
+      "dynasty": "秦",
+      "before": 1,
+      "after": 0,
+      "dropped": [
+        {
+          "title": "《资治通鉴·秦纪》姚贾外交事",
+          "loc": "传世文本·见《资治通鉴》",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_00972_姚贾_见证.json"
+    },
+    {
+      "id": "GLBL_00973",
+      "name": "淳于越",
+      "dynasty": "秦",
+      "before": 2,
+      "after": 1,
+      "dropped": [
+        {
+          "title": "柳宗元《封建论》（传世文本）",
+          "loc": "传世文本·见《柳河东集》",
+          "reason": "非诗词歌赋文学见证"
+        }
+      ],
+      "file": "GLBL_00973_淳于越_见证.json"
+    },
+    {
+      "id": "GLBL_00976",
+      "name": "王绾",
+      "dynasty": "秦",
+      "before": 4,
+      "after": 3,
+      "dropped": [
+        {
+          "title": "《史记·秦始皇本纪》王绾记事",
+          "loc": "传世文本·见中华书局点校本《史记》",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_00976_王绾_见证.json"
+    },
+    {
+      "id": "GLBL_00977",
+      "name": "冯劫",
+      "dynasty": "秦",
+      "before": 4,
+      "after": 3,
+      "dropped": [
+        {
+          "title": "《史记·秦始皇本纪》冯劫事迹著录",
+          "loc": "传世文本·见中华书局点校本《史记》",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_00977_冯劫_见证.json"
+    },
+    {
+      "id": "GLBL_00978",
+      "name": "张苍",
+      "dynasty": "秦",
+      "before": 3,
+      "after": 2,
+      "dropped": [
+        {
+          "title": "《史记·张丞相列传》",
+          "loc": "传世文本·见《史记》",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_00978_张苍_见证.json"
+    },
+    {
+      "id": "GLBL_00979",
+      "name": "王离",
+      "dynasty": "秦",
+      "before": 4,
+      "after": 3,
+      "dropped": [
+        {
+          "title": "司马迁《史记·项羽本纪》",
+          "loc": "传世文本·见《史记》通行本",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_00979_王离_见证.json"
+    },
+    {
+      "id": "GLBL_00980",
+      "name": "涉间",
+      "dynasty": "秦",
+      "before": 1,
+      "after": 0,
+      "dropped": [
+        {
+          "title": "涉间",
+          "loc": "传世文本·见《史记·项羽本纪》",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_00980_涉间_见证.json"
+    },
+    {
+      "id": "GLBL_00983",
+      "name": "西羌",
+      "dynasty": "秦",
+      "before": 3,
+      "after": 2,
+      "dropped": [
+        {
+          "title": "《后汉书·西羌传》",
+          "loc": "传世文本·见中华书局点校本《后汉书》",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_00983_西羌_见证.json"
+    },
+    {
+      "id": "GLBL_00984",
+      "name": "西南夷",
+      "dynasty": "秦",
+      "before": 5,
+      "after": 4,
+      "dropped": [
+        {
+          "title": "《史记·西南夷列传》",
+          "loc": "传世文本·见中华书局点校本《史记》",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_00984_西南夷_见证.json"
+    },
+    {
+      "id": "GLBL_00993",
+      "name": "太康失国",
+      "dynasty": "夏",
+      "before": 2,
+      "after": 1,
+      "dropped": [
+        {
+          "title": "《尚书·五子之歌》",
+          "loc": "传世文本·见《尚书》（《十三经注疏》本）",
+          "reason": "非诗词歌赋文学见证"
+        }
+      ],
+      "file": "GLBL_00993_太康失国_见证.json"
+    },
+    {
+      "id": "GLBL_01021",
+      "name": "齐献公",
+      "dynasty": "春秋",
+      "before": 3,
+      "after": 2,
+      "dropped": [
+        {
+          "title": "《史记·齐太公世家》献公迁都记事",
+          "loc": "传世文本·见《史记》（中华书局点校本）",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_01021_齐献公_见证.json"
+    },
+    {
+      "id": "GLBL_01022",
+      "name": "齐昭公",
+      "dynasty": "春秋",
+      "before": 3,
+      "after": 2,
+      "dropped": [
+        {
+          "title": "《左传》齐昭公纪事",
+          "loc": "传世文本·见《春秋左传注疏》",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_01022_齐昭公_见证.json"
+    },
+    {
+      "id": "GLBL_01023",
+      "name": "齐文公",
+      "dynasty": "春秋",
+      "before": 4,
+      "after": 3,
+      "dropped": [
+        {
+          "title": "《史记·齐太公世家》",
+          "loc": "传世文本·见中华书局点校本《史记》",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_01023_齐文公_见证.json"
+    },
+    {
+      "id": "GLBL_01024",
+      "name": "鲁惠公",
+      "dynasty": "春秋",
+      "before": 4,
+      "after": 3,
+      "dropped": [
+        {
+          "title": "《左传》隐公元年「惠公之薨」叙事",
+          "loc": "传世文本·见《春秋左传正义》",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_01024_鲁惠公_见证.json"
+    },
+    {
+      "id": "GLBL_01026",
+      "name": "陈哀公",
+      "dynasty": "春秋",
+      "before": 4,
+      "after": 3,
+      "dropped": [
+        {
+          "title": "《春秋左传·昭公八年》陈灭记事",
+          "loc": "传世文本·见《十三经注疏》本《春秋左传正义》",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_01026_陈哀公_见证.json"
+    },
+    {
+      "id": "GLBL_01027",
+      "name": "郑釐公",
+      "dynasty": "春秋",
+      "before": 4,
+      "after": 3,
+      "dropped": [
+        {
+          "title": "《左传·襄公七年》郑僖公弑君叙事",
+          "loc": "传世文本·见《春秋左传正义》",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_01027_郑釐公_见证.json"
+    },
+    {
+      "id": "GLBL_01028",
+      "name": "郑缪公",
+      "dynasty": "春秋",
+      "before": 4,
+      "after": 3,
+      "dropped": [
+        {
+          "title": "《史记·郑世家》郑缪公篇（传世文献）",
+          "loc": "传世文本·见中华书局点校本《史记》",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_01028_郑缪公_见证.json"
+    },
+    {
+      "id": "GLBL_01029",
+      "name": "郑武公",
+      "dynasty": "春秋",
+      "before": 4,
+      "after": 3,
+      "dropped": [
+        {
+          "title": "《左传·隐公元年》郑伯克段记事（传世文献）",
+          "loc": "传世文本·见《春秋左传》",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_01029_郑武公_见证.json"
+    },
+    {
+      "id": "GLBL_01031",
+      "name": "郑定公",
+      "dynasty": "春秋",
+      "before": 3,
+      "after": 2,
+      "dropped": [
+        {
+          "title": "《左传·昭公》郑定公记事",
+          "loc": "传世文本·见《春秋左传正义》",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_01031_郑定公_见证.json"
+    },
+    {
+      "id": "GLBL_01033",
+      "name": "蔡缪侯",
+      "dynasty": "春秋",
+      "before": 3,
+      "after": 2,
+      "dropped": [
+        {
+          "title": "《春秋·僖公十四年》蔡侯肸卒",
+          "loc": "传世文本·见《春秋经传集解》",
+          "reason": "非诗词歌赋文学见证"
+        }
+      ],
+      "file": "GLBL_01033_蔡缪侯_见证.json"
+    },
+    {
+      "id": "GLBL_01034",
+      "name": "蔡平侯",
+      "dynasty": "春秋",
+      "before": 5,
+      "after": 4,
+      "dropped": [
+        {
+          "title": "《春秋·昭公十三年》蔡平侯记事（经传文本）",
+          "loc": "传世文本·见《春秋左传注疏》（中华书局点校本）",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_01034_蔡平侯_见证.json"
+    },
+    {
+      "id": "GLBL_01035",
+      "name": "蔡哀侯",
+      "dynasty": "春秋",
+      "before": 3,
+      "after": 2,
+      "dropped": [
+        {
+          "title": "《史记·管蔡世家》蔡哀侯专段（传世文献）",
+          "loc": "传世文本·见中华书局点校本《史记》",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_01035_蔡哀侯_见证.json"
+    },
+    {
+      "id": "GLBL_01036",
+      "name": "燕惠公",
+      "dynasty": "春秋",
+      "before": 3,
+      "after": 2,
+      "dropped": [
+        {
+          "title": "燕惠公相关后世文献著录",
+          "loc": "传世文本·见《春秋左传正义》等",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_01036_燕惠公_见证.json"
+    },
+    {
+      "id": "GLBL_01037",
+      "name": "楚文王",
+      "dynasty": "春秋",
+      "before": 4,
+      "after": 3,
+      "dropped": [
+        {
+          "title": "《左传·庄公四年》楚文王伐随",
+          "loc": "传世文本·见《春秋左传正义》",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_01037_楚文王_见证.json"
+    },
+    {
+      "id": "GLBL_01038",
+      "name": "楚共王",
+      "dynasty": "春秋",
+      "before": 5,
+      "after": 4,
+      "dropped": [
+        {
+          "title": "《左传》鄢陵之战叙事",
+          "loc": "传世文本·见《春秋左传正义》",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_01038_楚共王_见证.json"
+    },
+    {
+      "id": "GLBL_01039",
+      "name": "曹成公",
+      "dynasty": "春秋",
+      "before": 3,
+      "after": 2,
+      "dropped": [
+        {
+          "title": "《春秋左传》曹成公记事",
+          "loc": "传世文本·见《十三经注疏》",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_01039_曹成公_见证.json"
+    },
+    {
+      "id": "GLBL_01044",
+      "name": "卫襄公",
+      "dynasty": "春秋",
+      "before": 3,
+      "after": 2,
+      "dropped": [
+        {
+          "title": "明代《卫辉府志》卫襄公庙祀记载",
+          "loc": "传世文本·见明万历《卫辉府志》",
+          "reason": "非诗词歌赋文学见证"
+        }
+      ],
+      "file": "GLBL_01044_卫襄公_见证.json"
+    },
+    {
+      "id": "GLBL_01045",
+      "name": "卫懿公",
+      "dynasty": "春秋",
+      "before": 4,
+      "after": 3,
+      "dropped": [
+        {
+          "title": "《诗经·卫风·定之方中》",
+          "loc": "传世文本·见《毛诗正义》",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_01045_卫懿公_见证.json"
+    },
+    {
+      "id": "GLBL_01046",
+      "name": "周景王",
+      "dynasty": "春秋",
+      "before": 5,
+      "after": 4,
+      "dropped": [
+        {
+          "title": "《左传》昭公二十一年至二十二年（景王崩及王子朝之乱）",
+          "loc": "传世文本·见《春秋左传正义》（十三经注疏本）",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_01046_周景王_见证.json"
+    },
+    {
+      "id": "GLBL_01047",
+      "name": "周灵王",
+      "dynasty": "春秋",
+      "before": 5,
+      "after": 4,
+      "dropped": [
+        {
+          "title": "《左传·襄公二十八年》周灵王崩",
+          "loc": "传世文本·见《春秋左传正义》",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_01047_周灵王_见证.json"
+    },
+    {
+      "id": "GLBL_01048",
+      "name": "周釐王",
+      "dynasty": "春秋",
+      "before": 4,
+      "after": 3,
+      "dropped": [
+        {
+          "title": "春秋·《春秋左氏传》（庄公至僖公篇）",
+          "loc": "传世文本·见《春秋左氏传》（今有中华书局点校本）",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_01048_周釐王_见证.json"
+    },
+    {
+      "id": "GLBL_01049",
+      "name": "周庄王",
+      "dynasty": "春秋",
+      "before": 4,
+      "after": 3,
+      "dropped": [
+        {
+          "title": "《春秋·桓公十五年》庄王纪事",
+          "loc": "传世文本·见《春秋经传集解》",
+          "reason": "非诗词歌赋文学见证"
+        }
+      ],
+      "file": "GLBL_01049_周庄王_见证.json"
+    },
+    {
+      "id": "GLBL_01052",
+      "name": "周简王",
+      "dynasty": "春秋",
+      "before": 3,
+      "after": 2,
+      "dropped": [
+        {
+          "title": "《春秋·成公》周简王世系记事",
+          "loc": "传世文本·见《春秋经传集解》",
+          "reason": "非诗词歌赋文学见证"
+        }
+      ],
+      "file": "GLBL_01052_周简王_见证.json"
+    },
+    {
+      "id": "GLBL_01053",
+      "name": "周顷王",
+      "dynasty": "春秋",
+      "before": 4,
+      "after": 3,
+      "dropped": [
+        {
+          "title": "《史记·周本纪》周顷王记事（宋刻本）",
+          "loc": "传世文本·见《史记》（宋黄善夫刻本）",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_01053_周顷王_见证.json"
+    },
+    {
+      "id": "GLBL_01054",
+      "name": "周匡王",
+      "dynasty": "春秋",
+      "before": 3,
+      "after": 2,
+      "dropped": [
+        {
+          "title": "《春秋·宣公二年》周匡王记事",
+          "loc": "传世文本·见《春秋经传集解》",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_01054_周匡王_见证.json"
+    },
+    {
+      "id": "GLBL_01055",
+      "name": "骊姬",
+      "dynasty": "春秋",
+      "before": 4,
+      "after": 3,
+      "dropped": [
+        {
+          "title": "《东周列国志》骊姬乱晋故事",
+          "loc": "传世文本·见《东周列国志》（明末清初刊本）",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_01055_骊姬_见证.json"
+    },
+    {
+      "id": "GLBL_01057",
+      "name": "共叔段",
+      "dynasty": "春秋",
+      "before": 2,
+      "after": 1,
+      "dropped": [
+        {
+          "title": "《左传·隐公元年》「郑伯克段于鄢」叙事",
+          "loc": "传世文本·见《春秋左传正义》",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_01057_共叔段_见证.json"
+    },
+    {
+      "id": "GLBL_01058",
+      "name": "公子纠",
+      "dynasty": "春秋",
+      "before": 3,
+      "after": 2,
+      "dropped": [
+        {
+          "title": "《史记·齐太公世家》相关篇章（传世文献）",
+          "loc": "传世文本·见中华书局点校本",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_01058_公子纠_见证.json"
+    },
+    {
+      "id": "GLBL_01060",
+      "name": "韩万",
+      "dynasty": "春秋",
+      "before": 3,
+      "after": 2,
+      "dropped": [
+        {
+          "title": "《史记·韩世家》",
+          "loc": "传世文本·见《史记》通行本",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_01060_韩万_见证.json"
+    },
+    {
+      "id": "GLBL_01061",
+      "name": "竖刁",
+      "dynasty": "春秋",
+      "before": 1,
+      "after": 0,
+      "dropped": [
+        {
+          "title": "《东周列国志》第二十八回",
+          "loc": "传世文本·见清蔡元放评点本《东周列国志》",
+          "reason": "非诗词歌赋文学见证"
+        }
+      ],
+      "file": "GLBL_01061_竖刁_见证.json"
+    },
+    {
+      "id": "GLBL_01062",
+      "name": "费无极",
+      "dynasty": "春秋",
+      "before": 1,
+      "after": 0,
+      "dropped": [
+        {
+          "title": "《吕氏春秋·慎行》",
+          "loc": "传世文本·见《诸子集成》本",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_01062_费无极_见证.json"
+    },
+    {
+      "id": "GLBL_01063",
+      "name": "伊戾",
+      "dynasty": "春秋",
+      "before": 1,
+      "after": 0,
+      "dropped": [
+        {
+          "title": "《通鉴纪事本末》宋伊戾之乱",
+          "loc": "传世文本·见中华书局点校本《通鉴纪事本末》",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_01063_伊戾_见证.json"
+    },
+    {
+      "id": "GLBL_01064",
+      "name": "赵盾",
+      "dynasty": "春秋",
+      "before": 3,
+      "after": 2,
+      "dropped": [
+        {
+          "title": "纪君祥《赵氏孤儿》元刊本",
+          "loc": "传世文本·见《元刊杂剧三十种》",
+          "reason": "非诗词歌赋文学见证"
+        }
+      ],
+      "file": "GLBL_01064_赵盾_见证.json"
+    },
+    {
+      "id": "GLBL_01065",
+      "name": "百里奚",
+      "dynasty": "春秋",
+      "before": 1,
+      "after": 0,
+      "dropped": [
+        {
+          "title": "元杂剧《百里奚认妻》",
+          "loc": "传世文本·见《元曲选》",
+          "reason": "非诗词歌赋文学见证"
+        }
+      ],
+      "file": "GLBL_01065_百里奚_见证.json"
+    },
+    {
+      "id": "GLBL_01067",
+      "name": "季札",
+      "dynasty": "春秋",
+      "before": 3,
+      "after": 2,
+      "dropped": [
+        {
+          "title": "《春秋左传》季札让国记事",
+          "loc": "传世文本·见《春秋左传》（襄公二十九年）",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_01067_季札_见证.json"
+    },
+    {
+      "id": "GLBL_01068",
+      "name": "师旷",
+      "dynasty": "春秋",
+      "before": 2,
+      "after": 1,
+      "dropped": [
+        {
+          "title": "《孟子·离娄上》师旷之聪（传世文献）",
+          "loc": "传世文本·见《孟子注疏》",
+          "reason": "非诗词歌赋文学见证"
+        }
+      ],
+      "file": "GLBL_01068_师旷_见证.json"
+    },
+    {
+      "id": "GLBL_01069",
+      "name": "卜商",
+      "dynasty": "春秋",
+      "before": 3,
+      "after": 2,
+      "dropped": [
+        {
+          "title": "《子夏易传》旧题传本",
+          "loc": "传世文本·见《四库全书》存目",
+          "reason": "非诗词歌赋文学见证"
+        }
+      ],
+      "file": "GLBL_01069_卜商_见证.json"
+    },
+    {
+      "id": "GLBL_01070",
+      "name": "鲍叔牙",
+      "dynasty": "春秋",
+      "before": 3,
+      "after": 2,
+      "dropped": [
+        {
+          "title": "《鲍叔牙》杂剧（元·佚名）",
+          "loc": "传世文本·见《录鬼簿》著录",
+          "reason": "非诗词歌赋文学见证"
+        }
+      ],
+      "file": "GLBL_01070_鲍叔牙_见证.json"
+    },
+    {
+      "id": "GLBL_01071",
+      "name": "狐偃",
+      "dynasty": "春秋",
+      "before": 4,
+      "after": 3,
+      "dropped": [
+        {
+          "title": "《国语·晋语》狐偃言行记载",
+          "loc": "传世文本·见《国语》",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_01071_狐偃_见证.json"
+    },
+    {
+      "id": "GLBL_01072",
+      "name": "文种",
+      "dynasty": "春秋",
+      "before": 4,
+      "after": 3,
+      "dropped": [
+        {
+          "title": "明·梁辰鱼《浣纱记》",
+          "loc": "传世文本·见明万历刻本《浣纱记》",
+          "reason": "非诗词歌赋文学见证"
+        }
+      ],
+      "file": "GLBL_01072_文种_见证.json"
+    },
+    {
+      "id": "GLBL_01073",
+      "name": "先轸",
+      "dynasty": "春秋",
+      "before": 3,
+      "after": 2,
+      "dropped": [
+        {
+          "title": "《东周列国志》先轸故事",
+          "loc": "传世文本·见明末冯梦龙《东周列国志》",
+          "reason": "非诗词歌赋文学见证"
+        }
+      ],
+      "file": "GLBL_01073_先轸_见证.json"
+    },
+    {
+      "id": "GLBL_01074",
+      "name": "孟明视",
+      "dynasty": "春秋",
+      "before": 4,
+      "after": 3,
+      "dropped": [
+        {
+          "title": "《史记·秦本纪》孟明视事迹（明刻本）",
+          "loc": "传世文本·明刻本·中国·国家图书馆",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_01074_孟明视_见证.json"
+    },
+    {
+      "id": "GLBL_01075",
+      "name": "曹刿",
+      "dynasty": "春秋",
+      "before": 2,
+      "after": 1,
+      "dropped": [
+        {
+          "title": "《左传·曹刿论战》后世咏史诗",
+          "loc": "传世文本·见《全唐诗》",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_01075_曹刿_见证.json"
+    },
+    {
+      "id": "GLBL_01076",
+      "name": "郤克",
+      "dynasty": "春秋",
+      "before": 2,
+      "after": 1,
+      "dropped": [
+        {
+          "title": "《春秋·成公二年》经文「六月癸酉，季孙行父、臧孙许、叔孙侨如、公孙婴齐帅师会晋郤克、卫孙良夫、曹公子首及齐侯战于鞍」",
+          "loc": "传世文本·见《春秋经》（十三经注疏本）",
+          "reason": "非诗词歌赋文学见证"
+        }
+      ],
+      "file": "GLBL_01076_郤克_见证.json"
+    },
+    {
+      "id": "GLBL_01077",
+      "name": "申包胥",
+      "dynasty": "春秋",
+      "before": 3,
+      "after": 2,
+      "dropped": [
+        {
+          "title": "明传奇《申包胥》",
+          "loc": "传世文本·见《古本戏曲丛刊》",
+          "reason": "非诗词歌赋文学见证"
+        }
+      ],
+      "file": "GLBL_01077_申包胥_见证.json"
+    },
+    {
+      "id": "GLBL_01078",
+      "name": "赤狄",
+      "dynasty": "春秋",
+      "before": 4,
+      "after": 3,
+      "dropped": [
+        {
+          "title": "《春秋》经传所载赤狄诸部灭国记录（传世文献）",
+          "loc": "传世文本·见《春秋经传集解》（杜预注本）",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_01078_赤狄_见证.json"
+    },
+    {
+      "id": "GLBL_01079",
+      "name": "白狄",
+      "dynasty": "春秋",
+      "before": 4,
+      "after": 3,
+      "dropped": [
+        {
+          "title": "《左传》春秋白狄记事",
+          "loc": "传世文本·见《春秋左传正义》",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_01079_白狄_见证.json"
+    },
+    {
+      "id": "GLBL_01080",
+      "name": "山戎",
+      "dynasty": "春秋",
+      "before": 4,
+      "after": 3,
+      "dropped": [
+        {
+          "title": "《史记·匈奴列传》山戎记事（传世文献）",
+          "loc": "传世文本·见《史记》（中华书局点校本）",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_01080_山戎_见证.json"
+    },
+    {
+      "id": "GLBL_01081",
+      "name": "陆浑戎",
+      "dynasty": "春秋",
+      "before": 5,
+      "after": 4,
+      "dropped": [
+        {
+          "title": "《左传·僖公二十二年》陆浑之戎迁伊川记事",
+          "loc": "传世文本·见《春秋左传正义》（清阮元校刻《十三经注疏》本）",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_01081_陆浑戎_见证.json"
+    },
+    {
+      "id": "GLBL_01082",
+      "name": "百濮",
+      "dynasty": "春秋",
+      "before": 3,
+      "after": 2,
+      "dropped": [
+        {
+          "title": "《左传·文公十六年》百濮伐楚事（传世文献）",
+          "loc": "传世文本·见《春秋左传正义》",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_01082_百濮_见证.json"
+    },
+    {
+      "id": "GLBL_01083",
+      "name": "钟子期",
+      "dynasty": "春秋",
+      "before": 3,
+      "after": 2,
+      "dropped": [
+        {
+          "title": "冯梦龙《俞伯牙摔琴谢知音》",
+          "loc": "传世文本·见《警世通言》第一卷（明·冯梦龙编，今存通行本）",
+          "reason": "非诗词歌赋文学见证"
+        }
+      ],
+      "file": "GLBL_01083_钟子期_见证.json"
+    },
+    {
+      "id": "GLBL_01084",
+      "name": "柳下惠",
+      "dynasty": "春秋",
+      "before": 4,
+      "after": 3,
+      "dropped": [
+        {
+          "title": "《孟子·万章下》柳下惠事迹记载",
+          "loc": "传世文本·见《孟子》",
+          "reason": "非诗词歌赋文学见证"
+        }
+      ],
+      "file": "GLBL_01084_柳下惠_见证.json"
+    },
+    {
+      "id": "GLBL_01085",
+      "name": "程婴",
+      "dynasty": "春秋",
+      "before": 3,
+      "after": 2,
+      "dropped": [
+        {
+          "title": "纪君祥《赵氏孤儿》杂剧",
+          "loc": "传世文本·见《元刊杂剧三十种》及明刊《元曲选》",
+          "reason": "非诗词歌赋文学见证"
+        }
+      ],
+      "file": "GLBL_01085_程婴_见证.json"
+    },
+    {
+      "id": "GLBL_01086",
+      "name": "弦高",
+      "dynasty": "春秋",
+      "before": 4,
+      "after": 3,
+      "dropped": [
+        {
+          "title": "《左传·僖公三十三年》弦高犒师记载",
+          "loc": "传世文本·见《春秋左传正义》（十三经注疏本）",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_01086_弦高_见证.json"
+    },
+    {
+      "id": "GLBL_01105",
+      "name": "庄子",
+      "dynasty": "战国",
+      "before": 4,
+      "after": 3,
+      "dropped": [
+        {
+          "title": "苏轼《庄子祠堂记》",
+          "loc": "传世文本·见《苏轼文集》",
+          "reason": "非诗词歌赋文学见证"
+        }
+      ],
+      "file": "GLBL_01105_庄子_见证.json"
+    },
+    {
+      "id": "GLBL_01108",
+      "name": "范蠡",
+      "dynasty": "春秋",
+      "before": 5,
+      "after": 4,
+      "dropped": [
+        {
+          "title": "赵晔《吴越春秋》",
+          "loc": "传世文本·见《吴越春秋》",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_01108_范蠡_见证.json"
+    },
+    {
+      "id": "GLBL_01110",
+      "name": "韩厥",
+      "dynasty": "春秋",
+      "before": 3,
+      "after": 2,
+      "dropped": [
+        {
+          "title": "元杂剧《赵氏孤儿》",
+          "loc": "传世文本·见元杂剧《赵氏孤儿》",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_01110_韩厥_见证.json"
+    },
+    {
+      "id": "GLBL_01112",
+      "name": "孙膑",
+      "dynasty": "春秋",
+      "before": 5,
+      "after": 4,
+      "dropped": [
+        {
+          "title": "《东周列国志》孙膑斗智故事",
+          "loc": "传世文本·见《东周列国志》",
+          "reason": "非诗词歌赋文学见证"
+        }
+      ],
+      "file": "GLBL_01112_孙膑_见证.json"
+    },
+    {
+      "id": "GLBL_01120",
+      "name": "郑定公",
+      "dynasty": "春秋",
+      "before": 3,
+      "after": 2,
+      "dropped": [
+        {
+          "title": "《左传·昭公》郑定公记事",
+          "loc": "传世文本·见《春秋左传正义》",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_01120_郑定公_见证.json"
+    },
+    {
+      "id": "GLBL_01121",
+      "name": "齐桓公午",
+      "dynasty": "战国",
+      "before": 5,
+      "after": 4,
+      "dropped": [
+        {
+          "title": "《史记·田敬仲完世家》",
+          "loc": "传世文本·见中华书局点校本《史记》",
+          "reason": "史书文学见证"
+        }
+      ],
+      "file": "GLBL_01121_齐桓公午_见证.json"
+    }
+  ]
+}

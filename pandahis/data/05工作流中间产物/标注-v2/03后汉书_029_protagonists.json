@@ -1,0 +1,44 @@
+{
+  "work": "03后汉书",
+  "vol": "029",
+  "volume_name": "宣张二王杜郭吴承郑赵列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_arc": "C",
+  "volume_texture": "sequential",
+  "skip_reason": null,
+  "protagonists_cap_note": "合传主轴≤5：杜林、宣秉、赵典、郑均、王良；P35及张湛/王丹/郭丹/吴良/承宫等不取。",
+  "protagonists": [
+    {
+      "name": "杜林",
+      "category": "文臣",
+      "rationale": "字伯山；P20–P29。"
+    },
+    {
+      "name": "宣秉",
+      "category": "文臣",
+      "rationale": "字巨公；P2–P3。"
+    },
+    {
+      "name": "赵典",
+      "category": "文臣",
+      "rationale": "字仲经；P44–P47。"
+    },
+    {
+      "name": "郑均",
+      "category": "文臣",
+      "rationale": "字仲虞；P41–P43。"
+    },
+    {
+      "name": "王良",
+      "category": "文臣",
+      "rationale": "字仲子；P15–P18。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "论赞",
+    "其他"
+  ]
+}

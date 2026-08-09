@@ -1,0 +1,41 @@
+{
+  "work": "03后汉书",
+  "vol": "030",
+  "total_paragraphs": 38,
+  "volume_subtype": "hezhuan",
+  "derived_from": "03后汉书_030_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "桓谭",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 16,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "桓谭字君山，沛国相人也。父成帝时为太乐令。谭以父任为郎，因好音律，善鼓琴。博学多",
+        "close_paragraph": 16,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P16"
+      }
+    },
+    {
+      "name": "冯衍",
+      "category": "文臣",
+      "paragraph_from": 17,
+      "paragraph_to": 38,
+      "boundary_evidence": {
+        "open_paragraph": 17,
+        "open_phrase": "冯衍字敬通，京兆杜陵人也。祖野王，元帝时为大鸿胪。衍幼有奇才，年九岁，能诵《诗》",
+        "close_paragraph": 38,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P17–P38"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

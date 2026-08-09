@@ -11,6 +11,7 @@ const EMPTY_DETAIL = {
     civilizationName: '',
     dynastyName: '',
     sourceType: 'dynasty_canvas',
+    sourceRefId: null,
     status: 'pending',
     createdAt: '',
 };
@@ -21,6 +22,7 @@ Page({
         items: [],
         detailVisible: false,
         detail: EMPTY_DETAIL,
+        canViewSource: false,
         pageTopPadPx: 88,
     },
     onLoad() {
@@ -82,7 +84,8 @@ Page({
             wx.showLoading({ title: '加载中', mask: true });
             const detail = await (0, correction_1.fetchCorrectionDetail)(id);
             wx.hideLoading();
-            this.setData({ detail, detailVisible: true });
+            const canViewSource = !('error' in (0, correction_1.resolveCorrectionSourceNav)(detail));
+            this.setData({ detail, detailVisible: true, canViewSource });
         }
         catch (err) {
             wx.hideLoading();
@@ -91,6 +94,14 @@ Page({
         }
     },
     closeDetail() {
-        this.setData({ detailVisible: false });
+        this.setData({ detailVisible: false, canViewSource: false });
+    },
+    onViewSource() {
+        const detail = this.data.detail;
+        if (!detail || !detail.id || !this.data.canViewSource)
+            return;
+        const ok = (0, correction_1.navigateToCorrectionSource)(detail);
+        if (ok)
+            this.setData({ detailVisible: false, canViewSource: false });
     },
 });

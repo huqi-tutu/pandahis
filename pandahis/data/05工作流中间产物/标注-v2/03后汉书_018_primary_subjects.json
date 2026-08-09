@@ -1,0 +1,387 @@
+{
+  "work": "03后汉书",
+  "vol": "018",
+  "total_paragraphs": 72,
+  "paragraphs": [
+    {
+      "paragraph": 1,
+      "disposition": "exclude",
+      "exclude_reason": "卷首标题",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 2,
+      "disposition": "block",
+      "primary_subject": "邓禹"
+    },
+    {
+      "paragraph": 3,
+      "disposition": "block",
+      "primary_subject": "邓禹"
+    },
+    {
+      "paragraph": 4,
+      "disposition": "block",
+      "primary_subject": "邓禹"
+    },
+    {
+      "paragraph": 5,
+      "disposition": "block",
+      "primary_subject": "邓禹"
+    },
+    {
+      "paragraph": 6,
+      "disposition": "block",
+      "primary_subject": "邓禹"
+    },
+    {
+      "paragraph": 7,
+      "disposition": "block",
+      "primary_subject": "邓禹"
+    },
+    {
+      "paragraph": 8,
+      "disposition": "block",
+      "primary_subject": "邓禹"
+    },
+    {
+      "paragraph": 9,
+      "disposition": "block",
+      "primary_subject": "邓禹"
+    },
+    {
+      "paragraph": 10,
+      "disposition": "block",
+      "primary_subject": "邓禹"
+    },
+    {
+      "paragraph": 11,
+      "disposition": "block",
+      "primary_subject": "邓禹"
+    },
+    {
+      "paragraph": 12,
+      "disposition": "block",
+      "primary_subject": "邓禹"
+    },
+    {
+      "paragraph": 13,
+      "disposition": "block",
+      "primary_subject": "邓禹"
+    },
+    {
+      "paragraph": 14,
+      "disposition": "block",
+      "primary_subject": "邓禹"
+    },
+    {
+      "paragraph": 15,
+      "disposition": "block",
+      "primary_subject": "邓禹"
+    },
+    {
+      "paragraph": 16,
+      "disposition": "block",
+      "primary_subject": "邓禹"
+    },
+    {
+      "paragraph": 17,
+      "disposition": "block",
+      "primary_subject": "邓禹"
+    },
+    {
+      "paragraph": 18,
+      "disposition": "block",
+      "primary_subject": "邓禹"
+    },
+    {
+      "paragraph": 19,
+      "disposition": "block",
+      "primary_subject": "邓禹"
+    },
+    {
+      "paragraph": 20,
+      "disposition": "exclude",
+      "exclude_reason": "论赞",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 21,
+      "disposition": "block",
+      "primary_subject": "邓训"
+    },
+    {
+      "paragraph": 22,
+      "disposition": "block",
+      "primary_subject": "邓训"
+    },
+    {
+      "paragraph": 23,
+      "disposition": "block",
+      "primary_subject": "邓训"
+    },
+    {
+      "paragraph": 24,
+      "disposition": "block",
+      "primary_subject": "邓训"
+    },
+    {
+      "paragraph": 25,
+      "disposition": "block",
+      "primary_subject": "邓训"
+    },
+    {
+      "paragraph": 26,
+      "disposition": "block",
+      "primary_subject": "邓训"
+    },
+    {
+      "paragraph": 27,
+      "disposition": "block",
+      "primary_subject": "邓训"
+    },
+    {
+      "paragraph": 28,
+      "disposition": "block",
+      "primary_subject": "邓训"
+    },
+    {
+      "paragraph": 29,
+      "disposition": "block",
+      "primary_subject": "邓训"
+    },
+    {
+      "paragraph": 30,
+      "disposition": "block",
+      "primary_subject": "邓训"
+    },
+    {
+      "paragraph": 31,
+      "disposition": "block",
+      "primary_subject": "邓训"
+    },
+    {
+      "paragraph": 32,
+      "disposition": "block",
+      "primary_subject": "邓骘"
+    },
+    {
+      "paragraph": 33,
+      "disposition": "block",
+      "primary_subject": "邓骘"
+    },
+    {
+      "paragraph": 34,
+      "disposition": "block",
+      "primary_subject": "邓骘"
+    },
+    {
+      "paragraph": 35,
+      "disposition": "block",
+      "primary_subject": "邓骘"
+    },
+    {
+      "paragraph": 36,
+      "disposition": "block",
+      "primary_subject": "邓骘"
+    },
+    {
+      "paragraph": 37,
+      "disposition": "block",
+      "primary_subject": "邓骘"
+    },
+    {
+      "paragraph": 38,
+      "disposition": "block",
+      "primary_subject": "邓骘"
+    },
+    {
+      "paragraph": 39,
+      "disposition": "block",
+      "primary_subject": "邓骘"
+    },
+    {
+      "paragraph": 40,
+      "disposition": "block",
+      "primary_subject": "邓骘"
+    },
+    {
+      "paragraph": 41,
+      "disposition": "block",
+      "primary_subject": "邓骘"
+    },
+    {
+      "paragraph": 42,
+      "disposition": "block",
+      "primary_subject": "邓骘"
+    },
+    {
+      "paragraph": 43,
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 44,
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 45,
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 46,
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 47,
+      "disposition": "exclude",
+      "exclude_reason": "论赞",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 48,
+      "disposition": "block",
+      "primary_subject": "寇恂"
+    },
+    {
+      "paragraph": 49,
+      "disposition": "block",
+      "primary_subject": "寇恂"
+    },
+    {
+      "paragraph": 50,
+      "disposition": "block",
+      "primary_subject": "寇恂"
+    },
+    {
+      "paragraph": 51,
+      "disposition": "block",
+      "primary_subject": "寇恂"
+    },
+    {
+      "paragraph": 52,
+      "disposition": "block",
+      "primary_subject": "寇恂"
+    },
+    {
+      "paragraph": 53,
+      "disposition": "block",
+      "primary_subject": "寇恂"
+    },
+    {
+      "paragraph": 54,
+      "disposition": "block",
+      "primary_subject": "寇恂"
+    },
+    {
+      "paragraph": 55,
+      "disposition": "block",
+      "primary_subject": "寇恂"
+    },
+    {
+      "paragraph": 56,
+      "disposition": "block",
+      "primary_subject": "寇恂"
+    },
+    {
+      "paragraph": 57,
+      "disposition": "block",
+      "primary_subject": "寇恂"
+    },
+    {
+      "paragraph": 58,
+      "disposition": "block",
+      "primary_subject": "寇恂"
+    },
+    {
+      "paragraph": 59,
+      "disposition": "block",
+      "primary_subject": "寇恂"
+    },
+    {
+      "paragraph": 60,
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 61,
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 62,
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 63,
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 64,
+      "disposition": "exclude",
+      "exclude_reason": "论赞",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 65,
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 66,
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 67,
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 68,
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 69,
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 70,
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 71,
+      "disposition": "exclude",
+      "exclude_reason": "世系链",
+      "primary_subject": null
+    },
+    {
+      "paragraph": 72,
+      "disposition": "exclude",
+      "exclude_reason": "论赞",
+      "primary_subject": null
+    }
+  ]
+}

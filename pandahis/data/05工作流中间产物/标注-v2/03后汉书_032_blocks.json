@@ -1,0 +1,75 @@
+{
+  "work": "03后汉书",
+  "vol": "032",
+  "total_paragraphs": 41,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_032_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 20,
+      "paragraph_to": 20,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 41,
+      "paragraph_to": 41,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "申屠刚",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 11,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "申屠刚字巨卿，扶风茂陵人也。七世祖嘉，文帝时为丞相。刚质性方直，常慕史、汲黯之",
+        "close_paragraph": 11,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P11"
+      }
+    },
+    {
+      "name": "鲍永",
+      "category": "文臣",
+      "paragraph_from": 12,
+      "paragraph_to": 19,
+      "boundary_evidence": {
+        "open_paragraph": 12,
+        "open_phrase": "鲍永字君长，上党屯留人也。父宣，哀帝时任司隶校尉，为王莽所杀。永少有志操，习欧阳",
+        "close_paragraph": 19,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P12–P19"
+      }
+    },
+    {
+      "name": "鲍昱",
+      "category": "文臣",
+      "paragraph_from": 21,
+      "paragraph_to": 27,
+      "boundary_evidence": {
+        "open_paragraph": 21,
+        "open_phrase": "昱字文泉。少传父学，客授于东平。建武初，太行山中有剧贼，太守戴涉闻昱鲍永子，有智",
+        "close_paragraph": 27,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P21–P27"
+      }
+    },
+    {
+      "name": "郅恽",
+      "category": "文臣",
+      "paragraph_from": 28,
+      "paragraph_to": 40,
+      "boundary_evidence": {
+        "open_paragraph": 28,
+        "open_phrase": "郅恽字君章，汝南西平人也。年十二失母，居丧过礼。及长，理《韩诗》《严氏春秋》，明",
+        "close_paragraph": 40,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P28–P40"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

@@ -56,6 +56,10 @@ Component({
             type: Boolean,
             value: false,
         },
+        showViewSource: {
+            type: Boolean,
+            value: false,
+        },
     },
     data: {
         draftReason: '',
@@ -96,6 +100,9 @@ Component({
         },
         onClose() {
             this.triggerEvent('close');
+        },
+        onViewSource() {
+            this.triggerEvent('viewsource');
         },
         onReasonInput(e) {
             const value = String(e.detail.value || '').slice(0, 500);

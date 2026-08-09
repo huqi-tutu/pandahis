@@ -1,0 +1,78 @@
+{
+  "work": "03后汉书",
+  "vol": "024",
+  "total_paragraphs": 64,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_024_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 8,
+      "paragraph_to": 27,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 32,
+      "paragraph_to": 37,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 46,
+      "paragraph_to": 47,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 48,
+      "paragraph_to": 63,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 64,
+      "paragraph_to": 64,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "朱祐",
+      "category": "武将",
+      "paragraph_from": 2,
+      "paragraph_to": 7,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "朱祐字仲先，南阳宛人也。少孤，归外家复阳刘氏，往来舂陵，世祖与伯升皆亲爱之。伯升",
+        "close_paragraph": 7,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P7"
+      }
+    },
+    {
+      "name": "刘隆",
+      "category": "武将",
+      "paragraph_from": 28,
+      "paragraph_to": 31,
+      "boundary_evidence": {
+        "open_paragraph": 28,
+        "open_phrase": "刘隆字元伯，南阳安众侯宗室也。王莽居摄中，隆父礼与安众侯崇起兵诛莽，事泄，隆以年",
+        "close_paragraph": 31,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P28–P31"
+      }
+    },
+    {
+      "name": "马武",
+      "category": "武将",
+      "paragraph_from": 38,
+      "paragraph_to": 45,
+      "boundary_evidence": {
+        "open_paragraph": 38,
+        "open_phrase": "马武字子张，南阳湖阳人也。少时避仇，客居江夏。王莽末，竟陵、西阳三老起兵于郡界，",
+        "close_paragraph": 45,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P38–P45"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

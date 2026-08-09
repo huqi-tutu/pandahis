@@ -1,0 +1,36 @@
+{
+  "work": "03后汉书",
+  "vol": "012",
+  "volume_name": "皇后纪第十下",
+  "volume_type_guess": "纪",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_arc": "C",
+  "volume_texture": "interleaved",
+  "skip_reason": null,
+  "protagonists_cap_note": "皇后纪两卷合计主轴8：本卷保留安思阎、顺烈梁、灵思何；其余贵人美人追尊及汉末诸后不建条。",
+  "protagonists": [
+    {
+      "name": "安思阎皇后",
+      "category": "宗戚",
+      "rationale": "安帝皇后，阎显废立，外戚专权。"
+    },
+    {
+      "name": "顺烈梁皇后",
+      "category": "宗戚",
+      "rationale": "顺帝皇后，梁冀专权之源，临朝。"
+    },
+    {
+      "name": "灵思何皇后",
+      "category": "宗戚",
+      "rationale": "灵帝皇后，何进与宦官，汉末枢轴。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "共段总述",
+    "世系链",
+    "论赞",
+    "赞曰"
+  ]
+}

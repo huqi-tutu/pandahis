@@ -1,0 +1,38 @@
+{
+  "work": "03后汉书",
+  "vol": "039",
+  "volume_name": "张曹郑列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_arc": "C",
+  "volume_texture": "sequential",
+  "skip_reason": null,
+  "protagonists_cap_note": "张纯、张奋、曹褒、郑玄；张霸在040。",
+  "protagonists": [
+    {
+      "name": "张纯",
+      "category": "文臣",
+      "rationale": "字伯仁，大司空；P2–P8。"
+    },
+    {
+      "name": "张奋",
+      "category": "文臣",
+      "rationale": "纯子；P9–P13（含嗣封）。"
+    },
+    {
+      "name": "曹褒",
+      "category": "文臣",
+      "rationale": "字叔通，定汉礼；P14–P21。"
+    },
+    {
+      "name": "郑玄",
+      "category": "文臣",
+      "rationale": "字康成；P23–P32。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "论赞"
+  ]
+}

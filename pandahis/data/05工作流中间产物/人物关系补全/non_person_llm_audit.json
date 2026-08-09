@@ -1,0 +1,264 @@
+{
+  "candidates": [
+    "东山皋落氏",
+    "丹",
+    "人方（东夷）",
+    "公叔氏",
+    "启",
+    "国氏",
+    "姺",
+    "徐君",
+    "戎州",
+    "戎王",
+    "摎",
+    "斟寻氏",
+    "斟灌氏",
+    "有扈氏",
+    "有苏氏",
+    "林",
+    "汤",
+    "浇",
+    "犁",
+    "狄人",
+    "禹",
+    "缪氏家族",
+    "翟人（狄人）",
+    "舜",
+    "若敖氏",
+    "虢君",
+    "诸侯",
+    "象",
+    "豷",
+    "跃",
+    "邳",
+    "郐君",
+    "靡",
+    "高氏",
+    "鲍氏",
+    "鲧"
+  ],
+  "classified": {
+    "东山皋落氏": {
+      "nonPerson": true,
+      "kind": "ethnic",
+      "note": "赤狄部族名，非具体人物"
+    },
+    "丹": {
+      "nonPerson": true,
+      "kind": "state",
+      "note": "古国名，非具体人物"
+    },
+    "人方（东夷）": {
+      "nonPerson": true,
+      "kind": "ethnic",
+      "note": "东夷部族方国，非具体人物"
+    },
+    "公叔氏": {
+      "nonPerson": false,
+      "kind": "clan",
+      "note": "氏姓家族称谓，保留"
+    },
+    "启": {
+      "nonPerson": false,
+      "kind": "person",
+      "note": "夏启，具体人物"
+    },
+    "国氏": {
+      "nonPerson": false,
+      "kind": "clan",
+      "note": "氏姓家族称谓，保留"
+    },
+    "姺": {
+      "nonPerson": true,
+      "kind": "state",
+      "note": "古国名，非具体人物"
+    },
+    "徐君": {
+      "nonPerson": true,
+      "kind": "title_empty",
+      "note": "职衔式空名，无具体人名"
+    },
+    "戎州": {
+      "nonPerson": true,
+      "kind": "state",
+      "note": "古国或地名，非具体人物"
+    },
+    "戎王": {
+      "nonPerson": true,
+      "kind": "title_empty",
+      "note": "职衔式空名，无具体人名"
+    },
+    "摎": {
+      "nonPerson": false,
+      "kind": "person",
+      "note": "具体人名，保留"
+    },
+    "斟寻氏": {
+      "nonPerson": true,
+      "kind": "ethnic",
+      "note": "古部族方国名，非具体人物"
+    },
+    "斟灌氏": {
+      "nonPerson": true,
+      "kind": "ethnic",
+      "note": "古部族方国名，非具体人物"
+    },
+    "有扈氏": {
+      "nonPerson": true,
+      "kind": "ethnic",
+      "note": "方国部族名，非具体人物"
+    },
+    "有苏氏": {
+      "nonPerson": true,
+      "kind": "ethnic",
+      "note": "方国部族名，非具体人物"
+    },
+    "林": {
+      "nonPerson": false,
+      "kind": "person",
+      "note": "具体人名，保留"
+    },
+    "汤": {
+      "nonPerson": false,
+      "kind": "person",
+      "note": "商汤，具体人物"
+    },
+    "浇": {
+      "nonPerson": false,
+      "kind": "person",
+      "note": "寒浞之子，具体人物"
+    },
+    "犁": {
+      "nonPerson": false,
+      "kind": "person",
+      "note": "具体人名，保留"
+    },
+    "狄人": {
+      "nonPerson": true,
+      "kind": "ethnic",
+      "note": "北方部族泛称，非具体人物"
+    },
+    "禹": {
+      "nonPerson": false,
+      "kind": "person",
+      "note": "大禹，具体人物"
+    },
+    "缪氏家族": {
+      "nonPerson": false,
+      "kind": "clan",
+      "note": "家族称谓，保留"
+    },
+    "翟人（狄人）": {
+      "nonPerson": true,
+      "kind": "ethnic",
+      "note": "北方部族泛称，非具体人物"
+    },
+    "舜": {
+      "nonPerson": false,
+      "kind": "person",
+      "note": "虞舜，具体人物"
+    },
+    "若敖氏": {
+      "nonPerson": false,
+      "kind": "clan",
+      "note": "楚公族氏姓，保留"
+    },
+    "虢君": {
+      "nonPerson": true,
+      "kind": "title_empty",
+      "note": "职衔式空名，无具体人名"
+    },
+    "诸侯": {
+      "nonPerson": true,
+      "kind": "title_empty",
+      "note": "职衔式空名，无具体人名"
+    },
+    "象": {
+      "nonPerson": false,
+      "kind": "person",
+      "note": "舜弟，具体人物"
+    },
+    "豷": {
+      "nonPerson": false,
+      "kind": "person",
+      "note": "寒浞之子，具体人物"
+    },
+    "跃": {
+      "nonPerson": false,
+      "kind": "person",
+      "note": "具体人名，保留"
+    },
+    "邳": {
+      "nonPerson": true,
+      "kind": "state",
+      "note": "古国名，非具体人物"
+    },
+    "郐君": {
+      "nonPerson": true,
+      "kind": "title_empty",
+      "note": "职衔式空名，无具体人名"
+    },
+    "靡": {
+      "nonPerson": false,
+      "kind": "person",
+      "note": "夏臣，具体人物"
+    },
+    "高氏": {
+      "nonPerson": false,
+      "kind": "clan",
+      "note": "氏姓家族称谓，保留"
+    },
+    "鲍氏": {
+      "nonPerson": false,
+      "kind": "clan",
+      "note": "氏姓家族称谓，保留"
+    },
+    "鲧": {
+      "nonPerson": false,
+      "kind": "person",
+      "note": "禹父，具体人物"
+    }
+  },
+  "missing": [],
+  "errors": [],
+  "nonPersonNames": [
+    "东山皋落氏",
+    "丹",
+    "人方（东夷）",
+    "姺",
+    "徐君",
+    "戎州",
+    "戎王",
+    "斟寻氏",
+    "斟灌氏",
+    "有扈氏",
+    "有苏氏",
+    "狄人",
+    "翟人（狄人）",
+    "虢君",
+    "诸侯",
+    "邳",
+    "郐君"
+  ],
+  "keepNames": [
+    "公叔氏",
+    "启",
+    "国氏",
+    "摎",
+    "林",
+    "汤",
+    "浇",
+    "犁",
+    "禹",
+    "缪氏家族",
+    "舜",
+    "若敖氏",
+    "象",
+    "豷",
+    "跃",
+    "靡",
+    "高氏",
+    "鲍氏",
+    "鲧"
+  ]
+}

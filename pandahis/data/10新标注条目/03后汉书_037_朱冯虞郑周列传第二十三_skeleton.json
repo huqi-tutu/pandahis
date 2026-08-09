@@ -1,0 +1,451 @@
+{
+  "volume": "朱冯虞郑周列传",
+  "source_file": "03后汉书_037_朱冯虞郑周列传第二十三.txt",
+  "total_paragraphs": 44,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "朱浮",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "朱浮",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "朱浮",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "朱浮",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "朱浮",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "朱浮",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "朱浮",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "朱浮",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "朱浮",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "朱浮",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "朱浮",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "朱浮",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "朱浮",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "朱浮",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "朱浮",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "朱浮",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "朱浮",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "朱浮",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "朱浮",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "冯鲂",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "冯鲂",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "冯鲂",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "冯鲂",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "冯鲂",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 28,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 29,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "虞延",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "虞延",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "虞延",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "虞延",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "虞延",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "郑弘",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "郑弘",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "郑弘",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "郑弘",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "郑弘",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "周章",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "周章",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 44,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HOUHANSHU_037_01",
+      "史略名称": "朱浮",
+      "史略简介": "朱浮",
+      "原文字句": "朱浮字叔元，沛国萧人也。初从光武为大司马主簿，迁偏将军，从破邯郸。光武遣吴汉诛更始幽州牧苗曾，乃拜浮为大将军幽州牧，守蓟城，遂讨定北边。建武二年，封舞阳侯，食三县。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷37·朱冯虞郑周列传》",
+      "paragraphs": [
+        {
+          "volume": "朱冯虞郑周列传",
+          "paragraph_from": 2,
+          "paragraph_to": 20
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_037_02",
+      "史略名称": "冯鲂",
+      "史略简介": "冯鲂",
+      "原文字句": "冯鲂字孝孙，南阳湖阳人也。其先魏之支别，食菜冯城，因以氏焉。秦灭魏，迁于湖阳，为郡族姓。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷37·朱冯虞郑周列传》",
+      "paragraphs": [
+        {
+          "volume": "朱冯虞郑周列传",
+          "paragraph_from": 22,
+          "paragraph_to": 26
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_037_03",
+      "史略名称": "虞延",
+      "史略简介": "虞延",
+      "原文字句": "虞延字子大，陈留东昏人也。延初生，其上有物若一匹练，遂上升上，占者以为吉。及长，长八尺六寸，要带十围，力能扛鼎。少为户牖亭长。时王莽贵人魏氏宾客放从，延率吏卒突入其家捕之，以此见怨，故位不升。性敦朴，不拘小节，又无乡曲之誉。王莽末，天下大乱，延常婴甲胄，拥卫亲族，扞御抄盗，赖其全者甚众。延从女弟年在孩乳，其母不能活之，弃于沟中，延闻其号声，哀而收之，养至成人。建武初，仕执金吾府，除细阳令。每至岁时",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷37·朱冯虞郑周列传》",
+      "paragraphs": [
+        {
+          "volume": "朱冯虞郑周列传",
+          "paragraph_from": 30,
+          "paragraph_to": 34
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_037_04",
+      "史略名称": "郑弘",
+      "史略简介": "郑弘",
+      "原文字句": "郑弘字巨君，会稽山阴人也。从祖吉，宣帝时为西域都护。弘少为乡啬夫，太守第五伦行春，见而深奇之，召署督邮，举孝廉。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷37·朱冯虞郑周列传》",
+      "paragraphs": [
+        {
+          "volume": "朱冯虞郑周列传",
+          "paragraph_from": 36,
+          "paragraph_to": 40
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_037_05",
+      "史略名称": "周章",
+      "史略简介": "周章",
+      "原文字句": "周章子次叔，南阳随人也。初仕郡为功曹。时大将军窦宪免，封冠军侯就国。章从太守行春到冠军，太守犹欲谒之。章进谏曰：“今日公行春，岂可越仪私交。且宪椒房之亲，势倾王室，而退就藩国，祸福难量。明府剖符大臣，千里重任，举止进退，其可轻乎？”太守不听，遂便升车。章前拔佩刀绝马鞅，于是乃止。及宪被诛，公卿以下多以交关得罪，太守幸免，以此重章。举孝廉，六迁为五官中郎将。延平元年，为光禄勋。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷37·朱冯虞郑周列传》",
+      "paragraphs": [
+        {
+          "volume": "朱冯虞郑周列传",
+          "paragraph_from": 41,
+          "paragraph_to": 42
+        }
+      ]
+    }
+  ]
+}

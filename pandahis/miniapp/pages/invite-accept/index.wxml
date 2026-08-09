@@ -11,7 +11,7 @@
     </view>
 
     <view class="card card-paper">
-      <view class="title">欢迎通过好友邀请来到历史图谱</view>
+      <view class="title">{{welcomeTitle}}</view>
       <view class="line muted" wx:if="{{hasPendingInvite}}">已记录好友邀请，登录后将自动绑定（仅新用户首次注册生效）。</view>
       <view class="line muted" wx:else>通过分享进入时邀请码会自动保存；也可手动填写后登录。</view>
 

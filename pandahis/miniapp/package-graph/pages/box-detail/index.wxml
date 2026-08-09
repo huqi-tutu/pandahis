@@ -219,7 +219,7 @@
     <!-- 旋转封面 -->
     <view class="box-audio-cover">
       <view class="box-audio-cover-disc {{narrationState === 'playing' ? 'box-audio-cover-disc--spin' : ''}}" bindtap="toggleAudioOverlay">
-        <image class="box-audio-cover-logo" src="/images/icons/history-logo.png" mode="aspectFill" />
+        <image class="box-audio-cover-logo" src="{{narrationCoverLogoUrl}}" mode="aspectFill" />
       </view>
       <text class="box-audio-cover-title">{{navTitle}}</text>
       <text class="box-audio-cover-time">{{audioTimeRange}}</text>

@@ -1,0 +1,633 @@
+{
+  "volume": "郑范陈贾张列传",
+  "source_file": "03后汉书_040_郑范陈贾张列传第二十六.txt",
+  "total_paragraphs": 62,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "郑兴",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "郑兴",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "郑兴",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "郑兴",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "郑兴",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "郑兴",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "郑兴",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "郑兴",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "郑兴",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "郑兴",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "郑兴",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "郑兴",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "郑兴",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "郑兴",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "郑兴",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "郑兴",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "郑兴",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "范升",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "范升",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "范升",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "范升",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "范升",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "范升",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "范升",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "陈元",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "陈元",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "陈元",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "陈元",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "陈元",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "陈元",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "陈元",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "陈元",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "陈元",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "陈元",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "贾逵",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "贾逵",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "贾逵",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "贾逵",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "贾逵",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "贾逵",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "贾逵",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "贾逵",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "贾逵",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "贾逵",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [
+        {
+          "name": "贾逵",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 47,
+      "owners": [
+        {
+          "name": "贾逵",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 48,
+      "owners": [
+        {
+          "name": "贾逵",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 49,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 50,
+      "owners": [
+        {
+          "name": "张霸",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 51,
+      "owners": [
+        {
+          "name": "张霸",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 52,
+      "owners": [
+        {
+          "name": "张霸",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 53,
+      "owners": [
+        {
+          "name": "张霸",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 54,
+      "owners": [
+        {
+          "name": "张霸",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 55,
+      "owners": [
+        {
+          "name": "张霸",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 56,
+      "owners": [
+        {
+          "name": "张霸",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 57,
+      "owners": [
+        {
+          "name": "张霸",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 58,
+      "owners": [
+        {
+          "name": "张霸",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 59,
+      "owners": [
+        {
+          "name": "张霸",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 60,
+      "owners": [
+        {
+          "name": "张霸",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 61,
+      "owners": [
+        {
+          "name": "张霸",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 62,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HOUHANSHU_040_01",
+      "史略名称": "郑兴",
+      "史略简介": "郑兴",
+      "原文字句": "郑兴字少赣，河南开封人也。少学《公羊春秋》。晚善《左氏传》，遂积精深思，通达其旨，同学者皆师之。天凤中，将门人从刘歆讲正大义，歆美兴才，使撰条例、章句、传诂，及校《三统历》。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷40·郑范陈贾张列传》",
+      "paragraphs": [
+        {
+          "volume": "郑范陈贾张列传",
+          "paragraph_from": 2,
+          "paragraph_to": 18
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_040_02",
+      "史略名称": "范升",
+      "史略简介": "范升",
+      "原文字句": "范升字辩卿，代郡人也。少孤，依外家居。九岁通《论语》《孝经》，及长，习《梁丘易》《老子》，教授后生。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷40·郑范陈贾张列传》",
+      "paragraphs": [
+        {
+          "volume": "郑范陈贾张列传",
+          "paragraph_from": 19,
+          "paragraph_to": 25
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_040_03",
+      "史略名称": "陈元",
+      "史略简介": "陈元",
+      "原文字句": "陈元字长孙，苍梧广信人也。父钦，习《左氏春秋》，事黎阳贾护，与刘歆同时而别自名家。王莽从钦受《左氏》学，以钦为厌难将军。元少传父业，为之训诂，锐精覃思，至不与乡里通。以父任为郎。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷40·郑范陈贾张列传》",
+      "paragraphs": [
+        {
+          "volume": "郑范陈贾张列传",
+          "paragraph_from": 26,
+          "paragraph_to": 35
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_040_04",
+      "史略名称": "贾逵",
+      "史略简介": "贾逵",
+      "原文字句": "贾逵字景伯，扶风平陵人也。九世祖谊，文帝时为梁王太傅。曾祖父光，为常山太守，宣帝时以吏二千石自洛阳徙焉。父徽，从刘歆受《左氏春秋》，兼习《国语》《周官》，又受《古文尚书》于涂恽，学《毛诗》于谢曼卿，作《左氏条例》二十一篇。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷40·郑范陈贾张列传》",
+      "paragraphs": [
+        {
+          "volume": "郑范陈贾张列传",
+          "paragraph_from": 36,
+          "paragraph_to": 48
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_040_05",
+      "史略名称": "张霸",
+      "史略简介": "张霸",
+      "原文字句": "张霸字伯饶，蜀郡成都人也。年数岁而知孝让，虽出入饮食，自然合礼，乡人号为“张曾子”。七岁通《春秋》，复欲进余经，父母曰：“汝小未能也”，霸曰“我饶为之”，故字曰“饶”焉。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷40·郑范陈贾张列传》",
+      "paragraphs": [
+        {
+          "volume": "郑范陈贾张列传",
+          "paragraph_from": 50,
+          "paragraph_to": 61
+        }
+      ]
+    }
+  ]
+}

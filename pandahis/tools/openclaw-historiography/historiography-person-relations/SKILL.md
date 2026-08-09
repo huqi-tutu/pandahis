@@ -12,9 +12,9 @@ origin: ECC
 
 | 模块 | 职责 | 产出 |
 |------|------|------|
-| **historiography-annotate** | 一期卷级人物标注 | 03 索引 |
+| **historiography-annotate-v2** | 卷级人物标注 | 10 索引 |
 | **historiography-dynasty-knowledge** | 朝代知识 + 人物详情 | 06 详情 |
-| **historiography-translate** | 史略译文 | 04 史料翻译 |
+| **historiography-translate** | 史略译文 | **11 新标注条目翻译**（v2 SSOT；不再用 04） |
 | **historiography-person-relations**（本 skill） | **人物关系图谱** | **07 人物关系** → `box_graph_*` |
 
 **禁止**为非人物类史略（事略 / 典制 / 论著 / 蕃祚）建关系表。
@@ -43,19 +43,35 @@ origin: ECC
 | **正式产出** | `data/07人物关系/` |
 | 单人物文件 | `data/07人物关系/{关联史略名称}关系表.json` |
 | 人物索引 / GLBL | 线上索引 / `03` 索引（`paths_config.global_index`） |
-| **Grounding（唯一事实源）** | `data/06朝代知识补全/详情/`、`data/04史料翻译/`、索引原文字句 |
+| **Grounding（唯一事实源）** | `data/11新标注条目翻译/`、`data/06朝代知识补全/详情/`（可选）、索引原文字句 |
 | 校验脚本 | `scripts/verify_relations.py` |
 | 导入脚本 | `scripts/import_relations_lib.py` |
+
+## 节点资格（强制）
+
+叶子节点（非二级枢纽）**只收具体人物**；不得写国家/政权/民族/职衔空名。细则以 SSOT #1「敌对 · 节点资格」为准。
+
+| 可写 | 不可写 |
+|------|--------|
+| 具名人物；家族/氏姓（如鲍氏、高氏） | 秦国/齐国等政权；犬戎/淮夷等族；东周君/中山国君等空名；战役名 |
+
+存量清洗优先：
+
+1. **硬规则**只删高置信项（已知国/族表、`××国君`/`××周君`、`…之戎`/`诸部` 等）；**禁止**用「尾字戎/夷/狄/国」泛匹配（会误杀伯夷、简狄、孔安国、芈戎）。
+2. **其余可疑标题**（敌对中带氏/族/国/职衔空名等形态）→ 分批问 LLM：**只判断是否为国家/政权/少数民族/职衔空名**；家族氏姓（鲍氏、高氏）判保留。不必塞全套 taxonomy。
+3. 脚本：`scripts/audit_non_person_nodes.py`（`--scan` / `--apply-hard` / `--llm-audit` / `--apply-llm`）。
 
 ## 存量修复原则（强制）
 
 每条存量修复 = **证据驱动的数据补全** + **新 schema 呈现改造**。
 
 1. **禁止**仅凭模型通识 / 对话记忆增补节点。
-2. **必须**先读该人物 grounding（06 详情优先，其次 04 译文，再次索引原文字句）。
+2. **必须**先读该人物 grounding（11 译文优先，其次 06 详情若有，再次索引原文字句）。
 3. **必须**经 `relations.py compose-one`（DeepSeek v4 Pro）按新 taxonomy 成稿；可对照旧 07 表做 diff，但旧表不是事实源。
-4. 有据则补全；无据则不写；旧表无据或超深度（如孙辈）须删除。
+4. 有据则补全；无据则不写；旧表无据或超深度（曾孙/徒孙）须删除；**配偶支孙辈（四级）有据则保留/补全**。
 5. 同谱系已修复关系表仅可作交叉核验，**不得**单独作为写入依据。
+6. 应用互斥：家庭 > 同僚 > 好友；家庭亦排斥师徒；清洗重复挂载。
+7. 应用**节点资格**：删国家/政权/民族/职衔空名；家族氏姓可留。
 
 ## 执行清单（每人必做）
 
@@ -63,7 +79,7 @@ origin: ECC
 Task Progress:
 - [ ] 1. 确认目标为人物类史略（君王/宗戚/文臣/武将/宦官/庶众）
 - [ ] 2. 读取 SSOT + schema
-- [ ] 3. 读取该人物 06/04/索引 grounding（禁止跳过）
+- [ ] 3. 读取该人物 11/06/索引 grounding（禁止跳过）
 - [ ] 4. relations.py compose-one（DeepSeek v4 Pro 成稿）
 - [ ] 5. 对照旧 07 表 diff：保留有据、补漏、删无据/超深度
 - [ ] 6. verify_relations.py --strict
@@ -79,7 +95,7 @@ Task Progress:
 
 1. 解析输入：`GLBL_00149` / `黄帝` / 二者之一即可。
 2. 确认人物六类之一。
-3. 读 grounding（06 → 04 → 索引）。
+3. 读 grounding（11 → 06 → 索引）。
 4. `compose-one` 按新五类 + 二级枢纽产出。
 5. verify → import。
 
@@ -113,10 +129,29 @@ python3 verify_relations.py --strict "$HISTOGRAPH_ROOT/data/07人物关系/黄�
 ## 输出质量门禁
 
 - `关系类别` ∈ {家庭, 同僚, 敌对, 师徒, 好友}
-- 二级分类枢纽：`节点类型=二级分类`，`关系层级=一级`，`上级连接线标题=""`
-- 好友无二级枢纽；除配偶→子女外人物为叶节点
+- 二级分类枢纽：`节点类型=二级分类`，`关系层级=一级`，`上级连接线标题=""`；**好友亦须有二级枢纽「好友」**
+- 无人物/子树的二级枢纽不写；家庭边标题用单字白名单（父/母/妻/妾/妃/夫/子/女/兄/弟/姐/妹，或兄弟/姐妹）
+- **每个二级枢纽下直接人物 ≤10**（超限只留最重要 10 人）
+- 配偶支可至四级（孙辈）；禁止曾孙/徒孙
+- 互斥：家庭排斥同僚/好友/师徒；同僚排斥好友
+- **叶子节点为人**（或可保留的家族/氏姓）；无国家/政权/民族/「××国君」类空名
+- **枢纽名不得落人物层**：`父母/配偶/臣子/外敌/…` 仅允许 `节点类型=二级分类`；`所属二级/三级关系` 必须是人名（或「不详」）
 - `verify_relations.py --strict` 退出码 0
 - 已 import 到对应 `box_id`
+
+```bash
+# 枢纽名伪人物清洗
+python3 fix_hub_as_person_nodes.py          # dry-run
+python3 fix_hub_as_person_nodes.py --apply
+```
+
+```bash
+# 存量：非人物节点清洗（硬规则 + LLM 分批）
+python3 audit_non_person_nodes.py --scan
+python3 audit_non_person_nodes.py --apply-hard
+python3 audit_non_person_nodes.py --llm-audit --batch-size 40
+python3 audit_non_person_nodes.py --apply-llm
+```
 
 ## 附加资源
 

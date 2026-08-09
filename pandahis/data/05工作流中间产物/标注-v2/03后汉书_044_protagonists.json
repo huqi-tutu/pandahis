@@ -1,0 +1,24 @@
+{
+  "work": "03后汉书",
+  "vol": "044",
+  "volume_name": "班彪列传第三十上",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_arc": "C",
+  "volume_texture": "sequential",
+  "skip_reason": null,
+  "volume_split_note": "班固两都赋自东都主人以下入045；班固同书分卷。",
+  "protagonists": [
+    {
+      "name": "班彪",
+      "category": "文臣",
+      "rationale": "字叔皮；P2–P14。"
+    },
+    {
+      "name": "班固",
+      "category": "文臣",
+      "rationale": "彪子；本卷P16–P31（两都赋上），下卷续。"
+    }
+  ]
+}

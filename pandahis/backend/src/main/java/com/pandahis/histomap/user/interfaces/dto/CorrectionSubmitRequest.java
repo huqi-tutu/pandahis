@@ -7,5 +7,6 @@ public record CorrectionSubmitRequest(
     @NotBlank @Size(max = 128) String boxId,
     @NotBlank @Size(max = 32) String sourceType,
     @Size(max = 500) String reason,
-    @Size(max = 4000) String selectedText
+    @Size(max = 4000) String selectedText,
+    Long sourceRefId
 ) {}

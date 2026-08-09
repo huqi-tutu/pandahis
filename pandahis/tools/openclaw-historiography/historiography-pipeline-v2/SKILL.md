@@ -1,15 +1,15 @@
 ---
 name: historiography-pipeline-v2
 description: >
-  新版史料标注调度入口（v2 轨道 → data/10）。单卷 Step1→4 闭环；批量=逐卷重复。
+  史料标注调度入口（v2 轨道 → data/10，唯一 Agent 入口）。单卷 Step1→4 闭环；批量=逐卷重复。
   v2.5：逐段主语 + 脚本合并 blocks + gate + 展开。
-  激活词：新版标注流水线、pipeline v2、新版标下一卷、新版批量标注。
+  激活词：标注流水线、pipeline、标下一卷、批量标注、史料标注。
 ---
 
-# 新版史料标注流水线（v2 调度）
+# 史料标注流水线（v2 调度）
 
-**本 skill 是 v2 批量标注的唯一入口。**  
-细则：`historiography-annotate-v2`（v2.5 先逐段主语再合并 blocks）· Step 3：`historiography-audit`
+**本 skill 是标注批量与多步闭环的唯一 Agent 入口。**  
+细则：`historiography-annotate-v2` · Step 3：`historiography-audit` · 脚本：`historiography-pipeline/run_volume_pipeline.py`
 
 ## 轨道开关
 
@@ -71,7 +71,7 @@ python3 .../run_volume_pipeline.py --track v2 verify --work 01史记 --vol 001 -
 
 ### Step 2–4 · Step M
 
-与旧版相同，`--track v2` 或 `export HIST_ANNOTATE_TRACK=v2`。
+共用 `historiography-annotate/` 下脚本（`check_format` · `fill_fields` · `peak_year` 等），须 `--track v2` 或 `export HIST_ANNOTATE_TRACK=v2`。
 
 ---
 
@@ -82,10 +82,11 @@ python3 .../run_volume_pipeline.py --track v2 verify --work 01史记 --vol 001 -
 
 ---
 
-## 与 v1 pipeline
+## 说明
 
-| | v1 | v2 |
-|--|----|----|
-| 产出 | data/03 | data/10 |
-| Step1b | 块优先 + 宽 exclude | **整卷划块 + v2 gate** |
-| 进度 | 03/标注进度 | 10/标注进度 |
+| 项 | v2（生产） |
+|----|------------|
+| 产出 | `data/10新标注条目/` |
+| Step1b | 整卷划块 + v2 gate |
+| 进度 | `10/标注进度` |
+| 老版 v1 Agent Skill | 已移除；`data/03` 只读 |

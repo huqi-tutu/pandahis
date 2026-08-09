@@ -1,0 +1,133 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01130",
+  "写作结构": "正史叙述见翻译详录（《汉书·西域传》《汉书·武帝纪》）。拓展文以史外异说与延展为主：先引《资治通鉴·汉纪》对诏书背景的综述（B档，不写细节），再引《资治通鉴考异》对诏书系年的考辨（B档），最后可引《西汉年纪》作为后世编年异说（legend，仅合段补充）。留白处：诏书颁布仪式、轮台之役细节、武帝心理活动均不写。",
+  "候选著作": [
+    {
+      "出处": "《汉书·西域传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史主要出处，载轮台罪己诏全文及背景",
+      "检索词": "轮台",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《汉书·武帝纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史主要出处，载征和四年诏书事",
+      "检索词": "征和四年",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《资治通鉴·汉纪十四》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "司马光综述武帝晚年政策转向，引诏书要旨，可作史外异说补充",
+      "检索词": "轮台",
+      "采用": true,
+      "原文摘句": "上乃下诏，深陈既往之悔，曰：‘前有司奏，欲益民赋三十助边用，是重困老弱孤独也。……当今务在禁苛暴，止擅赋，力本农。’",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《资治通鉴考异》卷一",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "司马光考辨轮台诏书系年及史源，可作异说参考",
+      "检索词": "轮台",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《西汉年纪》卷二十四",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "南宋王益之编年西汉史，对轮台诏书时间及后续有异说，可作legend补充",
+      "检索词": "轮台",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《汉书·西域传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史主要出处，载轮台罪己诏全文及背景",
+      "检索词": "轮台",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《汉书·武帝纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史主要出处，载征和四年诏书事",
+      "检索词": "征和四年",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《资治通鉴·汉纪十四》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "司马光综述武帝晚年政策转向，引诏书要旨，可作史外异说补充",
+      "检索词": "轮台",
+      "采用": true,
+      "原文摘句": "上乃下诏，深陈既往之悔，曰：‘前有司奏，欲益民赋三十助边用，是重困老弱孤独也。……当今务在禁苛暴，止擅赋，力本农。’",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《资治通鉴考异》卷一",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "司马光考辨轮台诏书系年及史源，可作异说参考",
+      "检索词": "轮台",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《西汉年纪》卷二十四",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "南宋王益之编年西汉史，对轮台诏书时间及后续有异说，可作legend补充",
+      "检索词": "轮台",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 3,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

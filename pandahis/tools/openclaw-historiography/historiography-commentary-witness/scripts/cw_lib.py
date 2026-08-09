@@ -223,14 +223,19 @@ def load_detail_bibliography(
     entry: dict[str, Any],
     paths: dict[str, Path] | None = None,
 ) -> list[str]:
-    """合并 04 译文 + 06 详情 中的参考著作列表（去重保序）。"""
+    """合并 04/11 译文 + 06 详情 中的参考著作列表（去重保序）。
+
+    V2 顺译落在 ``translate_output_v2``（11新标注条目翻译），须一并扫描，
+    否则西汉等 V2 条目评述无法排除详情已用书目。
+    """
     paths = paths or histograph_paths()
     eid = str(entry.get("史略ID", "")).strip()
     name = safe_name(str(entry.get("史略名称", "")).strip())
     texts: list[str] = []
 
-    trans_dir = paths["translate_output"]
-    if trans_dir.is_dir():
+    def _collect_from_dir(trans_dir: Path | None) -> None:
+        if not trans_dir or not trans_dir.is_dir():
+            return
         for fp in sorted(trans_dir.glob(f"{eid}_*.json")):
             try:
                 doc = json.loads(fp.read_text(encoding="utf-8"))
@@ -239,6 +244,9 @@ def load_detail_bibliography(
                     texts.append(t)
             except (json.JSONDecodeError, OSError):
                 continue
+
+    _collect_from_dir(paths.get("translate_output"))
+    _collect_from_dir(paths.get("translate_output_v2"))
 
     detail_dir = paths.get("dynasty_knowledge_details")
     if detail_dir and detail_dir.is_dir():
@@ -374,11 +382,14 @@ def build_prompt(
             "- 见证力分层：A+本人造物 > A确证陵墓/出土 > B早期存在性（上古）"
             " > C专属空间 > D后世纪念 > F文学见证 > E软关联。\n"
             "- **附加 F 文学见证**：额外 0–1 条，不计入 1–5 主名额；"
-            "取全史略最知名、影响力最大的艺术创作一条；字段 `附加文学见证: true`；"
-            "- 附加 F 排 entries 末尾；`附加文学见证: true`；诗歌须引原文"
-            "（≤8句全文，>8句引2–8句）；**介绍须全中文，禁止夹杂英文**。\n"
-            "- **F 层（主名额内仍禁止多条诗词）**：后世诗、词、曲、赋、杂剧、小说等；"
-            "证明文化记忆与艺术再现。本人著作/作品仍归 A+；学术论赞归 08 评述。\n"
+            "**体裁限诗词歌赋与文章**（诗/词/曲/赋/歌行；论/记/说/序等）；"
+            "取最知名一条；字段 `附加文学见证: true`；排 entries 末尾；诗歌须引原文"
+            "（≤8句全文，>8句引2–8句）；文章须引关键句；**介绍须全中文**。\n"
+            "- **禁止把史书当见证**：不得收入《史记》本纪/世家/列传、《汉书》《左传》"
+            "《资治通鉴》等史传篇目（与史略正文重复）；亦不得用杂剧/演义/字书条目冒充 F。\n"
+            "- **合格 F 例**：杜牧《阿房宫赋》、贾谊《过秦论》、李白《古风·秦王扫六合》；"
+            "**不合格例**：《史记·秦始皇本纪》、章回演义、元杂剧。\n"
+            "- 本人著作/作品仍归 A+；学术论赞归 08 评述；出土简牍属实物主名额。\n"
             "- **E 层（现代纪念碑、纯传说软关联、「传为」陵墓）不得标 P0**；"
             "仅有 E 时优先输出 []（空结果勇气）。\n"
             "- 上古人物：确有的早期存在性物证（如陈侯因齐敦类）必须纳入。\n"
@@ -400,6 +411,17 @@ def build_prompt(
 
 
 
+_END_PUNCT = re.compile(r"[。！？；」』\"'\)\]】]$")
+
+
+def _ensure_end_punct(text: str) -> str:
+    """补句末标点，规避 LLM 截断导致的 CRITICAL。"""
+    t = (text or "").strip()
+    if t and not _END_PUNCT.search(t):
+        return t + "。"
+    return t
+
+
 def normalize_commentary_entries(
     raw: list[dict[str, Any]],
     *,
@@ -419,8 +441,8 @@ def normalize_commentary_entries(
                 "史略名称": name,
                 "评述人": str(row.get("评述人") or "").strip(),
                 "评述著作": str(row.get("评述著作") or "").strip(),
-                "评述内容": str(row.get("评述内容") or "").strip(),
-                "评述简介": str(row.get("评述简介") or "").strip(),
+                "评述内容": _ensure_end_punct(str(row.get("评述内容") or "")),
+                "评述简介": _ensure_end_punct(str(row.get("评述简介") or "")),
                 "评述年代": str(row.get("评述年代") or "").strip(),
             }
         )
@@ -476,6 +498,58 @@ def merge_lunzan_into_commentary(
     return normalize_commentary_entries(merged, entry=entry), action
 
 
+def _is_literary_witness_row(row: dict[str, Any]) -> bool:
+    """与 verify_cw.is_literary_extra 对齐，避免循环导入。"""
+    if row.get("附加文学见证") is True:
+        return True
+    reason = str(row.get("优先级判定理由") or "")
+    if "附加名额" in reason or "附加文学" in reason:
+        return True
+    loc = str(row.get("现藏地点") or "")
+    return loc.startswith("传世文本")
+
+
+# 与 verify_cw.SOFT_P0 对齐
+_SOFT_WITNESS = re.compile(
+    r"(纪念碑|纪念亭|新建|手植柏|"
+    r"传为.{0,8}葬|"
+    r"(?:19|20)\d{2}\s*年.{0,12}(?:立|建|修|落成|重建|揭幕)|"
+    r"(?:立|建|修|落成|重建|揭幕).{0,12}(?:19|20)\d{2}\s*年)"
+)
+
+
+def _is_soft_witness_row(row: dict[str, Any]) -> bool:
+    title = str(row.get("文物标题") or row.get("文物名称") or "")
+    intro = str(row.get("文物介绍") or row.get("详细介绍") or "")
+    reason = str(row.get("优先级判定理由") or "")
+    blob = f"{title}\n{intro}\n{reason}"
+    return bool(_SOFT_WITNESS.search(blob)) or ("证据力弱" in reason)
+
+
+def _count_han(text: str) -> int:
+    return len(re.findall(r"[\u4e00-\u9fff]", text or ""))
+
+
+def _clamp_intro_han(text: str, *, lo: int = 100, hi: int = 200) -> str:
+    """裁到汉字 ≤hi；过短不臆补（留给校验/重写）。"""
+    t = (text or "").strip()
+    if _count_han(t) <= hi:
+        return t
+    # 按字符裁剪至汉字数落入区间，并保证句末标点
+    buf: list[str] = []
+    han = 0
+    for ch in t:
+        if "\u4e00" <= ch <= "\u9fff":
+            if han >= hi:
+                break
+            han += 1
+        buf.append(ch)
+    out = "".join(buf).rstrip("，、；,")
+    if out and not re.search(r"[。！？；」』\"'\)\]】]$", out):
+        out += "。"
+    return out
+
+
 def normalize_witness_entries(
     raw: list[dict[str, Any]],
     *,
@@ -483,20 +557,51 @@ def normalize_witness_entries(
 ) -> list[dict[str, Any]]:
     eid = str(entry.get("史略ID", "")).strip()
     name = str(entry.get("史略名称", "")).strip()
-    # 按优先级排序
     pri_rank = {"P0": 0, "P1": 1, "P2": 2, "P3": 3, "P4": 4}
     rows = [r for r in raw if isinstance(r, dict)]
-    rows.sort(key=lambda r: pri_rank.get(str(r.get("文物优先级") or "").strip().upper(), 99))
-    out: list[dict[str, Any]] = []
-    for i, row in enumerate(rows, start=1):
+
+    hard: list[dict[str, Any]] = []
+    soft: list[dict[str, Any]] = []
+    literary: list[dict[str, Any]] = []
+    for row in rows:
+        if _is_literary_witness_row(row):
+            literary.append(row)
+        elif _is_soft_witness_row(row):
+            soft.append(row)
+        else:
+            hard.append(row)
+
+    hard.sort(
+        key=lambda r: pri_rank.get(str(r.get("文物优先级") or "").strip().upper(), 99)
+    )
+    soft.sort(
+        key=lambda r: pri_rank.get(str(r.get("文物优先级") or "").strip().upper(), 99)
+    )
+    # 仅有软关联 → 空结果（与「仅有 E 则 []」一致）；有硬证据则最多再附 1 条软关联于末档
+    if not hard and not literary:
+        return []
+    physical = hard[:5]
+    if hard and soft and len(physical) < 5:
+        physical.append(soft[0])
+    literary = literary[-1:] if literary else []
+
+    assigned: list[dict[str, Any]] = []
+    next_pri = 0
+    for row in physical:
         title = str(row.get("文物标题") or row.get("文物名称") or "").strip()
-        intro = str(row.get("文物介绍") or row.get("详细介绍") or "").strip()
-        pri = str(row.get("文物优先级") or "").strip().upper()
-        if pri and not pri.startswith("P"):
-            pri = f"P{pri}" if pri.isdigit() else pri
-        out.append(
+        intro = _clamp_intro_han(str(row.get("文物介绍") or row.get("详细介绍") or ""))
+        reason = str(row.get("优先级判定理由") or "").strip()
+        is_soft = _is_soft_witness_row(row)
+        if is_soft:
+            pri = "P3" if next_pri <= 3 else "P4"
+            if "证据力弱" not in reason:
+                reason = (reason + "；证据力弱，不作首证。").strip("；")
+        else:
+            pri = f"P{min(next_pri, 4)}"
+            next_pri += 1
+        assigned.append(
             {
-                "文物ID": f"{eid}_W{i:02d}",
+                "文物ID": "",
                 "文物标题": title,
                 "史略ID": eid,
                 "史略名称": name,
@@ -504,14 +609,44 @@ def normalize_witness_entries(
                 "文物介绍": intro,
                 "文物图片": "",
                 "文物优先级": pri,
-                "优先级判定理由": str(row.get("优先级判定理由") or "").strip(),
-                **(
-                    {"附加文学见证": True}
-                    if row.get("附加文学见证") is True
-                    else {}
-                ),
+                "优先级判定理由": reason,
             }
         )
+    # 若软关联抢走了与硬证据相同的 P 档，再扫一遍去重
+    used: set[str] = set()
+    for row in assigned:
+        pri = str(row["文物优先级"])
+        if pri in used:
+            for cand in ("P1", "P2", "P3", "P4"):
+                if cand not in used:
+                    row["文物优先级"] = cand
+                    pri = cand
+                    break
+        used.add(pri)
+
+    for row in literary:
+        title = str(row.get("文物标题") or row.get("文物名称") or "").strip()
+        intro = _clamp_intro_han(str(row.get("文物介绍") or row.get("详细介绍") or ""))
+        assigned.append(
+            {
+                "文物ID": "",
+                "文物标题": title,
+                "史略ID": eid,
+                "史略名称": name,
+                "现藏地点": str(row.get("现藏地点") or "传世文本·文学定本").strip()
+                or "传世文本·文学定本",
+                "文物介绍": intro,
+                "文物图片": "",
+                "文物优先级": "P4",
+                "优先级判定理由": str(row.get("优先级判定理由") or "").strip()
+                or "附加文学见证名额，取最知名艺术定本。",
+                "附加文学见证": True,
+            }
+        )
+
+    out: list[dict[str, Any]] = []
+    for i, row in enumerate(assigned, start=1):
+        out.append({**row, "文物ID": f"{eid}_W{i:02d}"})
     return out
 
 
@@ -627,8 +762,9 @@ def compose_one(
             )
         else:
             bib_hint = (
-                "\n见证分层：A+造物>A确证陵墓>B早期存在性>C专属>D纪念>F文学见证>E软关联；"
+                "\n见证分层：A+造物>A确证陵墓>B早期存在性>C专属>D纪念>F诗词歌赋>E软关联；"
                 "E/F不得P0；仅有E则输出[]；制度类须写时间跨度；"
+                "F仅限诗词歌赋且最多1条；禁止史记/汉书/左传/通鉴等史书篇目；"
                 "文学见证须写定本出处与后世观点。\n"
             )
         if extra_prompt.strip():

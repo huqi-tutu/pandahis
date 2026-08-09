@@ -5,6 +5,7 @@ exports.openPosterShareMenu = exports.savePosterToAlbum = exports.ensureAlbumWri
 const POSTER_W = 750;
 const DPR = 2;
 const share_poster_layout_1 = require("./share-poster-layout");
+const brand_assets_1 = require("./brand-assets");
 const COLORS = {
     bg: '#2A2420',
     quote: '#D4C19C',
@@ -124,7 +125,7 @@ async function renderSharePosterToCanvas(canvas, payload) {
     const sourceLine1 = String(payload.sourceLine1 || '').trim();
     const sourceLine2 = String(payload.sourceLine2 || '').trim();
     const excerptDate = formatExcerptDate(payload.excerptDate);
-    const brandName = String(payload.brandName || '历史图谱').trim() || '历史图谱';
+    const brandName = String(payload.brandName || brand_assets_1.APP_DISPLAY_NAME).trim() || brand_assets_1.APP_DISPLAY_NAME;
     canvas.width = POSTER_W * DPR;
     canvas.height = 1150 * DPR;
     const measureCtx = canvas.getContext('2d');

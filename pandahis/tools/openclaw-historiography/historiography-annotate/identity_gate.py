@@ -51,7 +51,7 @@ VOLUME_IDENTITY_RULES: Dict[Tuple[str, str], dict] = {
         "volume_hint": "高祖本纪 → 主轴须为「汉高祖」(西汉)，禁止「南汉高祖」",
         "required": [{"name": "汉高祖", "category": "君王"}],
         "forbidden_names": ["南汉高祖"],
-        "junwang_dynasties": {"西汉", "秦末汉初"},
+        "junwang_dynasties": {"西汉", "楚汉"},
     },
     ("01史记", "009"): {
         "volume_hint": "吕太后本纪 → 主轴「吕太后」须为 category=宗戚（临朝太后），禁止君王",
@@ -156,7 +156,7 @@ VOLUME_NAME_PATTERNS: List[dict] = [
         "not_re": r"南汉",
         "required": [{"name": "汉高祖", "category": "君王"}],
         "forbidden_names": ["南汉高祖"],
-        "junwang_dynasties": {"西汉", "秦末汉初"},
+        "junwang_dynasties": {"西汉", "楚汉"},
         "hint": "高祖本纪主轴为西汉汉高祖",
     },
     {

@@ -287,6 +287,82 @@ def is_literary_extra(row: dict[str, Any]) -> bool:
     return False
 
 
+# 史书 / 正史篇目（不得作为见证，尤其不得作附加文学见证）
+SHISHU_WITNESS = re.compile(
+    r"(《[^》]*(史记|汉书|后汉书|三国志|左传|公羊|谷梁|国语|战国策|"
+    r"竹书纪年|逸周书|吴越春秋|越绝书|东观汉记|汉纪|后汉纪|资治通鉴|通鉴)[^》]*》|"
+    r"(史记|汉书|后汉书|资治通鉴).{0,8}(本纪|世家|列传|表|志)|"
+    r"(本纪|世家|列传))"
+)
+# 诗词歌赋 / 文章名篇（F 层合格）
+POETIC_WITNESS = re.compile(
+    r"(诗|词|曲|赋|歌行|乐府|绝句|律诗|楚辞|诗经|离骚|颂|谣|古风|"
+    r"咏史|怀古|五子之歌)"
+)
+ARTICLE_WITNESS = re.compile(
+    r"(《[^》]+(论|记|说|序|议|辩|书)》|(过秦论|封建论|灵渠记|祠堂记|五蠹)|"
+    r"(论|记|说|序|议)[》」]?$)"
+)
+# 明确不合格：戏曲小说、字书、史注疏（非文章名篇）
+BANNED_LIT = re.compile(
+    r"(杂剧|传奇|小说|话本|章回|戏曲|剧本|演义|评书|"
+    r"说文解字|艺文志|索隐|正义|注疏|府志|县志|纪事本末)"
+)
+
+
+def is_shishu_witness_row(row: dict[str, Any]) -> bool:
+    """史书篇目：标题指向正史纪传本文；文章名篇即使附载于《史记》也不算史书见证。"""
+    title = str(row.get("文物标题") or "")
+    loc = str(row.get("现藏地点") or "")
+    intro = str(row.get("文物介绍") or "")
+    # 出土简牍实物：馆藏机构定位，不算「史书文本见证」
+    if re.search(r"(出土|竹简|简牍|清华简|睡虎地|里耶|岳麓)", title + loc) and not loc.startswith(
+        "传世文本"
+    ):
+        return False
+    # 标题已是诗词歌赋/文章名篇（如《过秦论》）→ 非史书见证
+    # 但「《史记·秦始皇本纪》」这类标题仍算史书
+    title_is_shishu_chapter = bool(
+        re.search(
+            r"(史记|汉书|后汉书|左传|国语|战国策|资治通鉴|通鉴).{0,12}(本纪|世家|列传|表|志)|"
+            r"《(史记|汉书|后汉书|左传|国语|战国策|资治通鉴)[^》]*》",
+            title,
+        )
+    )
+    if title_is_shishu_chapter:
+        return True
+    if ARTICLE_WITNESS.search(title) or POETIC_WITNESS.search(title):
+        return False
+    blob = f"{title}\n{loc}\n{intro}"
+    if loc.startswith("传世文本") and SHISHU_WITNESS.search(title):
+        return True
+    if SHISHU_WITNESS.search(title) and (
+        loc.startswith("传世文本") or "点校本" in loc or "传世" in loc
+    ):
+        return True
+    # 标题无史书名、仅地点写「见《史记》」的文章 → 不算
+    if not SHISHU_WITNESS.search(title):
+        return False
+    return bool(SHISHU_WITNESS.search(blob))
+
+
+def is_poetic_literary_row(row: dict[str, Any]) -> bool:
+    """兼容旧名：诗词歌赋或文章名篇。"""
+    return is_allowed_literary_row(row)
+
+
+def is_allowed_literary_row(row: dict[str, Any]) -> bool:
+    """F 层：诗词歌赋 + 文章；排除戏曲演义与字书等。"""
+    title = str(row.get("文物标题") or "")
+    intro = str(row.get("文物介绍") or "")
+    blob = title + "\n" + intro
+    if BANNED_LIT.search(title):
+        return False
+    if POETIC_WITNESS.search(blob) or ARTICLE_WITNESS.search(title) or ARTICLE_WITNESS.search(blob):
+        return True
+    return False
+
+
 def verify_witness_entries(doc: dict[str, Any]) -> list[dict[str, str]]:
     issues: list[dict[str, str]] = []
     eid = str(doc.get("史略ID") or "").strip()
@@ -344,6 +420,29 @@ def verify_witness_entries(doc: dict[str, Any]) -> list[dict[str, str]]:
                 issues.append(
                     _issue("CRITICAL", f"{prefix} 附加文学见证不得标 P0")
                 )
+            if is_shishu_witness_row(row):
+                issues.append(
+                    _issue(
+                        "CRITICAL",
+                        f"{prefix} 禁止史书篇目作见证（如史记本纪/世家/列传、汉书、左传、通鉴）",
+                    )
+                )
+            elif not is_allowed_literary_row(row):
+                issues.append(
+                    _issue(
+                        "CRITICAL",
+                        f"{prefix} 附加文学见证仅限诗词歌赋或文章名篇（论/记/说/序等）；"
+                        "禁止史书纪传、杂剧演义、字书条目",
+                    )
+                )
+        elif is_shishu_witness_row(row):
+            # 主名额也不允许纯传世史书文本冒充实物
+            issues.append(
+                _issue(
+                    "CRITICAL",
+                    f"{prefix} 禁止以传世史书文本充当见证（与史略正文重复）",
+                )
+            )
 
         soft_blob = f"{title}\n{intro}\n{reason}"
         is_soft = bool(SOFT_P0.search(soft_blob)) or ("证据力弱" in reason)

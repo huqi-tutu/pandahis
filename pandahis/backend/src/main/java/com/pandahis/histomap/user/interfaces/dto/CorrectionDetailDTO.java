@@ -8,6 +8,7 @@ public record CorrectionDetailDTO(
     String civilizationName,
     String dynastyName,
     String sourceType,
+    Long sourceRefId,
     String selectedText,
     String reason,
     String status,

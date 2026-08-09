@@ -1,0 +1,41 @@
+{
+  "work": "03后汉书",
+  "vol": "033",
+  "total_paragraphs": 16,
+  "volume_subtype": "hezhuan",
+  "derived_from": "03后汉书_033_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "苏竟",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 11,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "苏竟字伯况，扶风平陵人也。平帝世，竟以明《易》为博士讲《书》祭酒。善图纬，能通百",
+        "close_paragraph": 11,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P11"
+      }
+    },
+    {
+      "name": "杨厚",
+      "category": "文臣",
+      "paragraph_from": 12,
+      "paragraph_to": 16,
+      "boundary_evidence": {
+        "open_paragraph": 12,
+        "open_phrase": "杨厚字仲桓，广汉新都人也。祖父春卿，善图谶学，为公孙述将。汉兵平蜀，春卿自杀，临",
+        "close_paragraph": 16,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P12–P16"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

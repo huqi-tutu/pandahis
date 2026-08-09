@@ -1,4 +1,4 @@
-import { computeMindmapPositions } from '../../utils/relation-mindmap-layout'
+import { prepareRelationGraph, RING_RADIUS } from '../../utils/relation-mindmap-layout'
 
 type GraphNode = { key: string; name?: string; type?: string; targetBoxId?: string; extraJson?: string }
 type GraphEdge = { fromKey: string; toKey: string; label?: string }
@@ -47,49 +47,81 @@ type Pos = {
 type LayoutResult = {
   positions: Pos[]
   edgeList: EdgeDraw[]
+  /** 完整拓扑边（含一级分类），用于点击高亮整条关系链 */
+  topologyEdges: GraphEdge[]
   bounds: { minX: number; minY: number; maxX: number; maxY: number }
   centerKey: string
 }
 
 const BG = '#F8F6F2'
-const CENTER_FILL = '#B85C48'
-const CENTER_STROKE = 'rgba(140, 72, 58, 0.72)'
+const CENTER_FILL = '#4A3F3F'
 const CENTER_TEXT = '#FAF8F5'
-const CATEGORY_FILL: Record<string, string> = {
-  家庭: 'rgba(250, 246, 242, 0.95)',
-  同僚: 'rgba(248, 246, 244, 0.95)',
-  敌对: 'rgba(250, 244, 244, 0.95)',
-  师徒: 'rgba(246, 250, 248, 0.95)',
-  好友: 'rgba(246, 248, 252, 0.95)',
+/** 绢帛色：家庭赭石 / 同僚苔绿 / 敌对绾红 / 师徒黛青 / 好友藕合 */
+const GROUP_SOLID: Record<string, string> = {
+  家庭: '#A2734F',
+  同僚: '#7D8A6A',
+  敌对: '#A46A65',
+  师徒: '#63899C',
+  好友: '#9A798F',
 }
+const GROUP_BG: Record<string, string> = {
+  家庭: '#ECE4DB',
+  同僚: '#E7E7DF',
+  敌对: '#ECE2DE',
+  师徒: '#E3E7E6',
+  好友: '#EBE4E4',
+}
+const CATEGORY_FILL = GROUP_BG
 const CATEGORY_STROKE: Record<string, string> = {
-  家庭: 'rgba(162, 115, 79, 0.38)',
-  同僚: 'rgba(127, 176, 105, 0.38)',
-  敌对: 'rgba(180, 100, 100, 0.35)',
-  师徒: 'rgba(99, 137, 156, 0.38)',
-  好友: 'rgba(120, 140, 180, 0.38)',
+  家庭: 'rgba(162, 115, 79, 0.22)',
+  同僚: 'rgba(125, 138, 106, 0.22)',
+  敌对: 'rgba(164, 106, 101, 0.22)',
+  师徒: 'rgba(99, 137, 156, 0.22)',
+  好友: 'rgba(154, 121, 143, 0.22)',
 }
-const CATEGORY_TEXT = '#6C757D'
+const CATEGORY_TEXT = '#4A4540'
 const LEAF_FILL = '#FAF8F5'
-const LEAF_STROKE = 'rgba(162, 115, 79, 0.32)'
+const LEAF_STROKE = 'rgba(162, 115, 79, 0.18)'
 const LEAF_TEXT = '#343A40'
-const REL_LABEL_FILL = 'rgba(108, 117, 125, 0.9)'
-const REL_LABEL_TEXT = '#FAF8F5'
+/**
+ * 主题延伸连线（实线）：比圈层辅助线略深，
+ * 但不深于旧版虚线连线（原 0.22）。
+ */
 const GROUP_EDGE: Record<string, string> = {
-  家庭: 'rgba(162, 115, 79, 0.45)',
-  同僚: 'rgba(127, 176, 105, 0.45)',
-  敌对: 'rgba(180, 100, 100, 0.42)',
-  师徒: 'rgba(99, 137, 156, 0.45)',
-  好友: 'rgba(120, 140, 180, 0.42)',
-  other: 'rgba(120, 110, 105, 0.38)',
+  家庭: 'rgba(162, 115, 79, 0.16)',
+  同僚: 'rgba(125, 138, 106, 0.16)',
+  敌对: 'rgba(164, 106, 101, 0.16)',
+  师徒: 'rgba(99, 137, 156, 0.16)',
+  好友: 'rgba(154, 121, 143, 0.16)',
+  other: 'rgba(150, 142, 135, 0.14)',
 }
+/** 四圈层辅助线：极淡版(180,172,165,0.06)与深版(150,146,140,0.22)折中 */
+const RING_STROKE = 'rgba(165, 159, 153, 0.14)'
+/** 圈层点状虚线：[点长, 间隙] */
+const RING_DOT_DASH: [number, number] = [1.1, 3.0]
 const NO_EDGE_LABEL_GROUPS = new Set(['同僚', '敌对', '师徒', '好友'])
+const EDGE_LABEL_NORMALIZE: Record<string, string> = {
+  父亲: '父',
+  母亲: '母',
+  正妻: '妻',
+  正室: '妻',
+  正妃: '妻',
+  嫔妃: '妃',
+  丈夫: '夫',
+  儿子: '子',
+  女儿: '女',
+}
 const CENTER_R = 28
 const PERSON_R = 22
 const NODE_GAP = 10
 const CAT_FONT = 11
-const REL_LABEL_H = 13
-const REL_LABEL_FONT = 7
+/** 连接线标题：嵌在线上的弱化小字牌（边框跟连线；文字用主题色） */
+const REL_LABEL_H = 11
+const REL_LABEL_FONT = 6
+const REL_LABEL_FILL = '#FAF8F5'
+const REL_LABEL_TEXT = '#4A3F3F'
+const REL_LABEL_RADIUS = 3
+const REL_LABEL_LINE = 0.7
 
 function normalizeGroupName(raw: string): string {
   const g = (raw || '').trim()
@@ -198,6 +230,33 @@ function truncateName(name: string, maxLen: number): string {
   return `${name.slice(0, Math.max(1, maxLen - 1))}…`
 }
 
+/** 中心史略名：在圆内自适应字号；过长则两行，保证完整可见 */
+function fitCenterLabel(
+  ctx: CanvasRenderingContext2D,
+  text: string,
+  circleR: number
+): { fontSize: number; lines: string[] } {
+  const maxW = circleR * 2 - 14
+  const maxH = circleR * 2 - 14
+  const chars = Array.from(text || '')
+  if (!chars.length) return { fontSize: 12, lines: [''] }
+
+  for (let fs = 14; fs >= 8; fs--) {
+    ctx.font = `600 ${fs}px sans-serif`
+    if (ctx.measureText(text).width <= maxW) return { fontSize: fs, lines: [text] }
+  }
+
+  const mid = Math.ceil(chars.length / 2)
+  const lines = [chars.slice(0, mid).join(''), chars.slice(mid).join('')]
+  for (let fs = 12; fs >= 7; fs--) {
+    ctx.font = `600 ${fs}px sans-serif`
+    const w = Math.max(...lines.map((l) => ctx.measureText(l).width))
+    const h = fs * lines.length * 1.25
+    if (w <= maxW && h <= maxH) return { fontSize: fs, lines }
+  }
+  return { fontSize: 7, lines }
+}
+
 function addPos(
   posMap: Map<string, Pos>,
   meta: GraphNode,
@@ -221,7 +280,9 @@ function addPos(
     circleR = CENTER_R
     boxW = CENTER_R * 2
     boxH = CENTER_R * 2
-    fontSize = 14
+    // 初值按字数预估；绘制时再按 measureText 精调
+    const len = Math.max(1, Array.from(fullName).length)
+    fontSize = len <= 2 ? 14 : len <= 4 ? 12 : len <= 6 ? 10 : 9
   } else if (isCategory) {
     const box = categoryBox(fullName)
     boxW = box.w
@@ -233,9 +294,11 @@ function addPos(
     boxH = box.h
     fontSize = Math.max(9, CAT_FONT - 1)
   } else {
-    circleR = PERSON_R
-    boxW = PERSON_R * 2
-    boxH = PERSON_R * 2
+    // 与布局侧 estimatePersonBox 对齐：人名胶囊按字数定宽，避免视觉比碰撞盒更大
+    const len = Math.max(1, Array.from(fullName).length)
+    boxW = Math.max(40, Math.min(76, len * 11 + 14))
+    boxH = 28
+    circleR = Math.max(boxW, boxH) / 2
     fontSize = personFontSize(fullName)
   }
 
@@ -291,25 +354,48 @@ function posFromNode(meta: GraphNode, x: number, y: number, depth: number, cente
 }
 
 function layoutMindMap(nodes: GraphNode[], edges: GraphEdge[], centerKey: string): LayoutResult {
-  const nodeMap = new Map(nodes.map((n) => [n.key, n]))
+  const prepared = prepareRelationGraph(centerKey, nodes, edges)
+  const layoutNodes = prepared.nodes
+  const layoutEdges = prepared.edges
+  const nodeMap = new Map(layoutNodes.map((n) => [n.key, n]))
   const centerMeta = nodeMap.get(centerKey)
   if (!centerMeta) {
-    return { positions: [], edgeList: [], bounds: { minX: -1, minY: -1, maxX: 1, maxY: 1 }, centerKey }
+    return {
+      positions: [],
+      edgeList: [],
+      topologyEdges: [],
+      bounds: { minX: -1, minY: -1, maxX: 1, maxY: 1 },
+      centerKey,
+    }
   }
 
-  const coordMap = computeMindmapPositions(centerKey, nodes, edges)
-  const depthMap = computeDepthMap(centerKey, edges)
+  const coordMap = prepared.positions
+  const depthMap = computeDepthMap(centerKey, layoutEdges)
   const positions: Pos[] = []
-  for (const n of nodes) {
+  for (const n of layoutNodes) {
     const pt = coordMap.get(n.key)
     if (!pt) continue
     positions.push(posFromNode(n, pt.x, pt.y, depthMap.get(n.key) ?? 0, centerKey))
   }
 
-  const edgeList = buildEdgeList(positions, edges, nodeMap)
+  const edgeList = buildEdgeList(positions, layoutEdges, nodeMap)
   enrichEdgesWithCurves(edgeList)
   placeEdgeLabelsOnLine(edgeList, positions)
-  return { positions, edgeList, bounds: computeBounds(positions, edgeList), centerKey }
+  return {
+    positions,
+    edgeList,
+    topologyEdges: layoutEdges,
+    bounds: computeBounds(positions, edgeList),
+    centerKey,
+  }
+}
+
+/** 与 drawNode 一致的人物框尺寸，供锚点贴边 */
+function personBoxSize(p: Pos): { w: number; h: number } {
+  return {
+    w: Math.max(40, p.boxW || PERSON_R * 2),
+    h: Math.max(26, Math.min(p.boxH || 28, 30)),
+  }
 }
 
 function nodeBounds(p: Pos) {
@@ -330,81 +416,25 @@ function boxesOverlap(
 }
 
 function measureRelLabel(text: string): { w: number; h: number } {
-  const w = Math.max(22, text.length * 7 + 10)
+  // 单字接近方盒；多字略加宽，整体保持弱化小尺寸
+  const w = Math.max(REL_LABEL_H, text.length * (REL_LABEL_FONT + 1) + 6)
   return { w, h: REL_LABEL_H }
 }
 
-/** 标签贴在线上；同父多条边按序号错开 t，避免「儿子」叠成一堆 */
-function placeEdgeLabelsOnLine(edgeList: EdgeDraw[], positions: Pos[]) {
-  const placed: { l: number; r: number; t: number; b: number }[] = positions.map((p) => nodeBounds(p))
-  const byKey = new Map(positions.map((p) => [p.key, p]))
-  const labeled = edgeList.filter((e) => e.label)
-
-  const groups = new Map<string, EdgeDraw[]>()
-  for (const e of labeled) {
-    const g = e.fromKey
-    if (!groups.has(g)) groups.set(g, [])
-    groups.get(g)!.push(e)
-  }
-
-  for (const [, edges] of groups) {
-    const from = byKey.get(edges[0].fromKey)
-    const hideLabels = edges.length > 5
-    edges.sort((ea, eb) => {
-      const ta = byKey.get(ea.toKey)
-      const tb = byKey.get(eb.toKey)
-      if (!from || !ta || !tb) return 0
-      return Math.atan2(ta.y - from.y, ta.x - from.x) - Math.atan2(tb.y - from.y, tb.x - from.x)
-    })
-
-    edges.forEach((e, idx) => {
-      if (hideLabels) {
-        e.label = ''
-        e.labelW = 0
-        e.labelH = 0
-        return
-      }
-      const { w, h } = measureRelLabel(e.label)
-      e.labelW = w
-      e.labelH = h
-      const n = edges.length
-      const baseT = n === 1 ? 0.5 : 0.34 + (idx / Math.max(1, n - 1)) * 0.32
-      const tCandidates = [baseT, baseT - 0.06, baseT + 0.06, baseT - 0.12, baseT + 0.12, 0.5]
-
-      let found = false
-      for (const t of tCandidates) {
-        if (t < 0.22 || t > 0.78) continue
-        const lane = n > 1 ? idx - (n - 1) / 2 : 0
-        const pt = pointOnEdge(e, t)
-        const tg = tangentOnEdge(e, t)
-        const lx = pt.x - tg.uy * lane * 9
-        const ly = pt.y + tg.ux * lane * 9
-        const box = labelBox(lx, ly, w + 2, h + 2)
-        if (placed.some((b) => boxesOverlap(box, b))) continue
-        e.labelX = lx
-        e.labelY = ly
-        placed.push(box)
-        found = true
-        break
-      }
-      if (!found) {
-        const lane = n > 1 ? idx - (n - 1) / 2 : 0
-        const pt = pointOnEdge(e, baseT)
-        const tg = tangentOnEdge(e, baseT)
-        e.labelX = pt.x - tg.uy * lane * 9
-        e.labelY = pt.y + tg.ux * lane * 9
-        placed.push(labelBox(e.labelX, e.labelY, w + 2, h + 2))
-      }
-    })
-  }
-
-  for (const e of labeled) {
-    if (e.labelW > 0) continue
+/** 标签锚在连接线中点，背景盖住线段，呈现「嵌在线上」 */
+function placeEdgeLabelsOnLine(edgeList: EdgeDraw[], _positions: Pos[]) {
+  for (const e of edgeList) {
+    if (!e.label) {
+      e.labelW = 0
+      e.labelH = 0
+      continue
+    }
     const { w, h } = measureRelLabel(e.label)
     e.labelW = w
     e.labelH = h
-    e.labelX = (e.x1 + e.x2) / 2
-    e.labelY = (e.y1 + e.y2) / 2
+    const pt = pointOnEdge(e, 0.5)
+    e.labelX = pt.x
+    e.labelY = pt.y
   }
 }
 
@@ -416,15 +446,10 @@ function quadPoint(x1: number, y1: number, cx: number, cy: number, x2: number, y
   }
 }
 
-function quadTangent(x1: number, y1: number, cx: number, cy: number, x2: number, y2: number, t: number) {
-  const u = 1 - t
-  return {
-    x: 2 * u * (cx - x1) + 2 * t * (x2 - cx),
-    y: 2 * u * (cy - y1) + 2 * t * (y2 - cy),
-  }
-}
-
-/** 借鉴 F6 processParallelEdges：同对节点多边错开；控制点向中心微弯成思维导图弧 */
+/**
+ * 径向连线：控制点落在两端半径之间，禁止向中心弯（消除倒挂）。
+ * 同对多边仅做法向微错车道。
+ */
 function enrichEdgesWithCurves(edgeList: EdgeDraw[]) {
   const pairTotal = new Map<string, number>()
   for (const e of edgeList) {
@@ -437,12 +462,22 @@ function enrichEdgesWithCurves(edgeList: EdgeDraw[]) {
     const total = pairTotal.get(k) || 1
     const idx = pairIdx.get(k) || 0
     pairIdx.set(k, idx + 1)
-    const lane = total === 1 ? 0 : (idx - (total - 1) / 2) * 16
-    const mx = (e.x1 + e.x2) / 2
-    const my = (e.y1 + e.y2) / 2
-    const bend = 0.2
-    let cx = mx * (1 - bend)
-    let cy = my * (1 - bend)
+    const lane = total === 1 ? 0 : (idx - (total - 1) / 2) * 10
+
+    const r1 = Math.hypot(e.x1, e.y1)
+    const r2 = Math.hypot(e.x2, e.y2)
+    const a1 = Math.atan2(e.y1, e.x1)
+    const a2 = Math.atan2(e.y2, e.x2)
+    // 短边几乎直线；长边控制点取中间角、中间半径
+    let midA = (a1 + a2) / 2
+    // 处理 ±π 跨越
+    let dA = a2 - a1
+    while (dA > Math.PI) dA -= Math.PI * 2
+    while (dA < -Math.PI) dA += Math.PI * 2
+    midA = a1 + dA / 2
+    const midR = (r1 + r2) / 2
+    let cx = Math.cos(midA) * midR
+    let cy = Math.sin(midA) * midR
     const dx = e.x2 - e.x1
     const dy = e.y2 - e.y1
     const len = Math.hypot(dx, dy) || 1
@@ -464,12 +499,6 @@ function fitZoomScale(w: number, h: number, bounds: LayoutResult['bounds']): num
 
 function pointOnEdge(e: EdgeDraw, t: number) {
   return quadPoint(e.x1, e.y1, e.cx, e.cy, e.x2, e.y2, t)
-}
-
-function tangentOnEdge(e: EdgeDraw, t: number) {
-  const tg = quadTangent(e.x1, e.y1, e.cx, e.cy, e.x2, e.y2, t)
-  const len = Math.hypot(tg.x, tg.y) || 1
-  return { ux: tg.x / len, uy: tg.y / len }
 }
 
 function computeBounds(positions: Pos[], edgeList: EdgeDraw[]) {
@@ -501,11 +530,11 @@ function edgeLabelText(e: GraphEdge, a: Pos, b: Pos): string {
   if (a.isCenter && (b.isCategory || b.isSubCategory)) return ''
   // 一级分类 → 二级枢纽：不显示边标题
   if (a.isCategory && b.isSubCategory) return ''
-  // 同僚 / 敌对 / 师徒 / 好友：二级→人物（或好友一级→人物）不显示边标题
-  if (NO_EDGE_LABEL_GROUPS.has(a.group || b.group)) {
-    if (a.isSubCategory || a.isCategory) return ''
-  }
-  const labelRaw = (e.label || '').trim().slice(0, 8)
+  // 同僚 / 敌对 / 师徒 / 好友：不显示边标题
+  if (NO_EDGE_LABEL_GROUPS.has(a.group || b.group)) return ''
+  let labelRaw = (e.label || '').trim()
+  labelRaw = EDGE_LABEL_NORMALIZE[labelRaw] || labelRaw
+  labelRaw = labelRaw.slice(0, 4)
   if (!labelRaw) return ''
   if (b.fullName.includes(`(${labelRaw})`)) return ''
   return labelRaw
@@ -518,29 +547,48 @@ function nodeAnchor(from: Pos, to: Pos): { x: number; y: number } {
   const ux = dx / len
   const uy = dy / len
 
-  if (from.isCategory || from.isSubCategory || from.isCenter) {
-    const hw = from.boxW / 2
-    const hh = from.boxH / 2
-    const ax = Math.abs(ux)
-    const ay = Math.abs(uy)
-    let t = Infinity
-    if (ax > 1e-6) t = Math.min(t, hw / ax)
-    if (ay > 1e-6) t = Math.min(t, hh / ay)
-    if (!Number.isFinite(t)) t = Math.max(hw, hh)
-    return { x: from.x + ux * t, y: from.y + uy * t }
+  // 中心圆：贴边（无外扩空隙）
+  if (from.isCenter) {
+    const r = from.circleR
+    return { x: from.x + ux * r, y: from.y + uy * r }
   }
 
-  const r = from.circleR + 2
-  return { x: from.x + ux * r, y: from.y + uy * r }
+  // 二级枢纽 / 人物：圆角矩形贴边
+  let hw = from.boxW / 2
+  let hh = from.boxH / 2
+  if (from.isPerson || (!from.isSubCategory && !from.isCategory && !from.isCenter)) {
+    const box = personBoxSize(from)
+    hw = box.w / 2
+    hh = box.h / 2
+  } else if (from.isSubCategory) {
+    hw = from.boxW / 2
+    hh = from.boxH / 2
+  }
+
+  const ax = Math.abs(ux)
+  const ay = Math.abs(uy)
+  let t = Infinity
+  if (ax > 1e-6) t = Math.min(t, hw / ax)
+  if (ay > 1e-6) t = Math.min(t, hh / ay)
+  if (!Number.isFinite(t)) t = Math.max(hw, hh)
+  return { x: from.x + ux * t, y: from.y + uy * t }
 }
 
 function buildEdgeList(positions: Pos[], edges: GraphEdge[], nodeMap: Map<string, GraphNode>): EdgeDraw[] {
   const m = new Map(positions.map((p) => [p.key, p]))
+  const centerPos = positions.find((p) => p.isCenter)
   const out: EdgeDraw[] = []
   for (const e of edges || []) {
-    const a = m.get(e.fromKey)
-    const b = m.get(e.toKey)
+    let a = m.get(e.fromKey)
+    let b = m.get(e.toKey)
     if (!a || !b) continue
+    // 一级分类叠在中心：不画指向一级的边；一级→二级改画为中心→二级
+    if (b.isCategory) continue
+    if (a.isCategory) {
+      if (!centerPos) continue
+      a = centerPos
+    }
+    if (Math.hypot(a.x - b.x, a.y - b.y) < 2) continue
     const group =
       parseExtraGroup(nodeMap.get(e.toKey)?.extraJson) ||
       parseExtraGroup(nodeMap.get(e.fromKey)?.extraJson) ||
@@ -572,13 +620,23 @@ function buildEdgeList(positions: Pos[], edges: GraphEdge[], nodeMap: Map<string
   return out
 }
 
-function pathEdgeKeys(targetKey: string, centerKey: string, parentMap: Map<string, string>): Set<string> {
+function pathEdgeKeys(
+  targetKey: string,
+  centerKey: string,
+  parentMap: Map<string, string>,
+  positions?: Map<string, Pos>
+): Set<string> {
   const keys = new Set<string>()
   let cur = targetKey
   while (cur && cur !== centerKey) {
     const parent = parentMap.get(cur)
     if (!parent) break
     keys.add(`${parent}|${cur}`)
+    // 一级分类不绘制：其出边在画布上改挂到中心，高亮时同时匹配视觉边
+    const parentPos = positions?.get(parent)
+    if (parentPos?.isCategory) {
+      keys.add(`${centerKey}|${cur}`)
+    }
     cur = parent
   }
   return keys
@@ -613,24 +671,36 @@ function roundRectPath(ctx: CanvasRenderingContext2D, x: number, y: number, w: n
   ctx.closePath()
 }
 
-function drawRelLabelPill(
+/** 带边框小字牌：不透明底盖住连线；边框跟连线色，文字用主题色 */
+function drawRelLabelChip(
   ctx: CanvasRenderingContext2D,
   text: string,
   x: number,
   y: number,
   w: number,
   h: number,
+  lineColor: string,
   dimmed: boolean
 ) {
-  if (!text) return
-  roundRectPath(ctx, x - w / 2, y - h / 2, w, h, 5)
-  ctx.fillStyle = dimmed ? 'rgba(108,117,125,0.4)' : REL_LABEL_FILL
+  if (!text || w <= 0 || h <= 0) return
+  const border = lineColor || GROUP_EDGE.other
+  ctx.save()
+  ctx.globalAlpha = dimmed ? 0.35 : 1
+  const left = x - w / 2
+  const top = y - h / 2
+  roundRectPath(ctx, left, top, w, h, REL_LABEL_RADIUS)
+  ctx.fillStyle = REL_LABEL_FILL
   ctx.fill()
-  ctx.fillStyle = dimmed ? 'rgba(250,248,245,0.55)' : REL_LABEL_TEXT
-  ctx.font = `${REL_LABEL_FONT}px sans-serif`
+  ctx.strokeStyle = border
+  ctx.lineWidth = REL_LABEL_LINE
+  ctx.setLineDash([])
+  ctx.stroke()
+  ctx.fillStyle = REL_LABEL_TEXT
+  ctx.font = `400 ${REL_LABEL_FONT}px sans-serif`
   ctx.textAlign = 'center'
   ctx.textBaseline = 'middle'
-  ctx.fillText(text, x, y)
+  ctx.fillText(text, x, y + 0.3)
+  ctx.restore()
 }
 
 function drawCatRect(
@@ -791,7 +861,8 @@ Component({
           ;(this as any)._selectedKey = ''
           const layout = layoutMindMap(nodes, edges, centerKey)
           ;(this as any)._layout = layout
-          ;(this as any)._parentMap = buildParentMap(centerKey, edges)
+          // 必须用完整拓扑边（含一级分类），否则点击无法点亮整条关系链
+          ;(this as any)._parentMap = buildParentMap(centerKey, layout.topologyEdges)
           ;(this as any)._zoomScale = fitZoomScale(w, h, layout.bounds)
           this.centerView()
           this.syncScaleLabel()
@@ -813,8 +884,9 @@ Component({
       const panY = (this as any)._panY || 0
       const selectedKey = ((this as any)._selectedKey as string) || ''
       const parentMap = ((this as any)._parentMap as Map<string, string>) || new Map()
+      const posByKey = new Map(layout.positions.map((p) => [p.key, p]))
       const highlightEdges = selectedKey
-        ? pathEdgeKeys(selectedKey, layout.centerKey, parentMap)
+        ? pathEdgeKeys(selectedKey, layout.centerKey, parentMap, posByKey)
         : new Set<string>()
       const highlightNodes = selectedKey
         ? pathNodeKeys(selectedKey, layout.centerKey, parentMap)
@@ -827,20 +899,34 @@ Component({
       ctx.translate(w / 2 + panX, h / 2 + panY)
       ctx.scale(s, s)
 
-      for (const e of layout.edgeList) {
-        const id = `${e.fromKey}|${e.toKey}`
-        const active = !selectedKey || highlightEdges.has(id)
-        const highlighted = highlightEdges.has(id)
+      // 四圈层：更淡的点状虚线环
+      for (let i = 1; i < RING_RADIUS.length; i++) {
         ctx.beginPath()
-        ctx.moveTo(e.x1, e.y1)
-        ctx.quadraticCurveTo(e.cx, e.cy, e.x2, e.y2)
-        ctx.strokeStyle = active ? e.color : 'rgba(180, 172, 165, 0.12)'
-        ctx.globalAlpha = highlighted ? 1 : active ? 0.58 : 1
-        ctx.lineWidth = highlighted ? 1.5 : 1
-        ctx.setLineDash([4, 4])
+        ctx.arc(0, 0, RING_RADIUS[i], 0, Math.PI * 2)
+        ctx.strokeStyle = RING_STROKE
+        ctx.lineWidth = 1
+        ctx.setLineDash(RING_DOT_DASH)
         ctx.lineCap = 'round'
         ctx.stroke()
         ctx.setLineDash([])
+      }
+
+      // 史略主题延伸连线：实线，略深于圈层、浅于旧版连线
+      for (const e of layout.edgeList) {
+        const id = `${e.fromKey}|${e.toKey}`
+        const visualId = `${layout.centerKey}|${e.toKey}`
+        const active =
+          !selectedKey || highlightEdges.has(id) || highlightEdges.has(visualId)
+        const highlighted = highlightEdges.has(id) || highlightEdges.has(visualId)
+        ctx.beginPath()
+        ctx.moveTo(e.x1, e.y1)
+        ctx.quadraticCurveTo(e.cx, e.cy, e.x2, e.y2)
+        ctx.strokeStyle = active ? e.color : 'rgba(180, 172, 165, 0.05)'
+        ctx.globalAlpha = highlighted ? 0.95 : active ? 0.85 : 1
+        ctx.lineWidth = highlighted ? 1.2 : 1
+        ctx.setLineDash([])
+        ctx.lineCap = 'round'
+        ctx.stroke()
         ctx.globalAlpha = 1
       }
 
@@ -852,13 +938,14 @@ Component({
         const id = `${e.fromKey}|${e.toKey}`
         const active = !selectedKey || highlightEdges.has(id)
         if (!e.label || !active) continue
-        drawRelLabelPill(
+        drawRelLabelChip(
           ctx,
           e.label,
           e.labelX,
           e.labelY,
           e.labelW,
           e.labelH,
+          e.color,
           !!selectedKey && !highlightEdges.has(id)
         )
       }
@@ -870,16 +957,45 @@ Component({
       ctx.save()
       ctx.globalAlpha = dimmed ? 0.38 : 1
 
+      // 一级分类不绘制（仅后端分组）
+      if (p.isCategory) {
+        ctx.restore()
+        return
+      }
+
       if (p.isCenter) {
-        const s = p.boxW
-        roundRectPath(ctx, p.x - p.boxW / 2, p.y - p.boxH / 2, s, s, 8)
+        ctx.beginPath()
+        ctx.arc(p.x, p.y, p.circleR, 0, Math.PI * 2)
         ctx.fillStyle = CENTER_FILL
         ctx.fill()
-        ctx.strokeStyle = highlighted ? '#8C483A' : CENTER_STROKE
-        ctx.lineWidth = highlighted ? 2 : 1.5
-        ctx.stroke()
+        // 主题圆无描边；字号/行数自适应，保证史略名完整可见
+        const { fontSize, lines } = fitCenterLabel(ctx, p.fullName, p.circleR)
         ctx.fillStyle = CENTER_TEXT
-        ctx.font = `600 ${p.fontSize}px sans-serif`
+        ctx.font = `600 ${fontSize}px sans-serif`
+        ctx.textAlign = 'center'
+        ctx.textBaseline = 'middle'
+        if (lines.length === 1) {
+          ctx.fillText(lines[0], p.x, p.y)
+        } else {
+          const lh = fontSize * 1.25
+          const y0 = p.y - ((lines.length - 1) * lh) / 2
+          lines.forEach((line, i) => ctx.fillText(line, p.x, y0 + i * lh))
+        }
+        ctx.restore()
+        return
+      }
+
+      if (p.isSubCategory) {
+        // 二级枢纽：主题色实底 + 浅字
+        const solid = GROUP_SOLID[p.group] || '#6C757D'
+        roundRectPath(ctx, p.x - p.boxW / 2, p.y - p.boxH / 2, p.boxW, p.boxH, 8)
+        ctx.fillStyle = solid
+        ctx.fill()
+        ctx.strokeStyle = highlighted ? solid : CATEGORY_STROKE[p.group] || 'rgba(108,117,125,0.3)'
+        ctx.lineWidth = highlighted ? 1.5 : 1
+        ctx.stroke()
+        ctx.fillStyle = '#FAF8F5'
+        ctx.font = `500 ${p.fontSize}px sans-serif`
         ctx.textAlign = 'center'
         ctx.textBaseline = 'middle'
         ctx.fillText(p.fullName, p.x, p.y)
@@ -887,19 +1003,14 @@ Component({
         return
       }
 
-      if (p.isCategory || p.isSubCategory) {
-        drawCatRect(ctx, p, highlighted, dimmed)
-        ctx.restore()
-        return
-      }
-
-      ctx.beginPath()
-      ctx.arc(p.x, p.y, p.circleR, 0, Math.PI * 2)
-      ctx.fillStyle = LEAF_FILL
+      // 人物节点：浅主题底圆角矩形（与二级枢纽同形）
+      const { w: pw, h: ph } = personBoxSize(p)
+      roundRectPath(ctx, p.x - pw / 2, p.y - ph / 2, pw, ph, 8)
+      ctx.fillStyle = GROUP_BG[p.group] || LEAF_FILL
       ctx.fill()
       ctx.strokeStyle = highlighted
         ? (GROUP_EDGE[p.group] || GROUP_EDGE.other).replace(/[\d.]+\)$/, '0.85)')
-        : LEAF_STROKE
+        : CATEGORY_STROKE[p.group] || LEAF_STROKE
       ctx.lineWidth = highlighted ? 1.5 : 1
       ctx.stroke()
       ctx.fillStyle = LEAF_TEXT
@@ -907,10 +1018,10 @@ Component({
       let fs = p.fontSize
       for (; fs >= 6; fs--) {
         ctx.font = `400 ${fs}px sans-serif`
-        if (ctx.measureText(text).width <= p.circleR * 1.7) break
+        if (ctx.measureText(text).width <= pw - 10) break
       }
       let show = text
-      if (fs === 6 && ctx.measureText(show).width > p.circleR * 1.7) {
+      if (fs === 6 && ctx.measureText(show).width > pw - 10) {
         show = truncateName(text, 4)
       }
       ctx.font = `400 ${fs}px sans-serif`
@@ -966,9 +1077,18 @@ Component({
       return null
     },
 
+    /** 双指缩放结束后，用剩余手指当前位置重锚定，避免沿用旧起点造成跳动 */
+    reanchorPanFromTouch(touch: WechatMiniprogram.TouchDetail) {
+      ;(this as any)._touchStartX = touch.clientX
+      ;(this as any)._touchStartY = touch.clientY
+      ;(this as any)._panStartX = (this as any)._panX || 0
+      ;(this as any)._panStartY = (this as any)._panY || 0
+    },
+
     onTouchStart(e: WechatMiniprogram.TouchEvent) {
       const layout = (this as any)._layout as LayoutResult | null
       if (!layout?.positions.length) return
+      ;(this as any)._pinchJustEnded = false
       const touches = e.touches
       if (touches.length >= 2) {
         ;(this as any)._touchMode = 'pinch'
@@ -978,10 +1098,7 @@ Component({
       }
       const touch = touches[0]
       ;(this as any)._touchMode = 'pending'
-      ;(this as any)._touchStartX = touch.clientX
-      ;(this as any)._touchStartY = touch.clientY
-      ;(this as any)._panStartX = (this as any)._panX || 0
-      ;(this as any)._panStartY = (this as any)._panY || 0
+      this.reanchorPanFromTouch(touch)
     },
 
     onTouchMove(e: WechatMiniprogram.TouchEvent) {
@@ -997,6 +1114,14 @@ Component({
           this.syncScaleLabel()
           this.paintCached()
         }
+        return
+      }
+      // 缩放过程中手指数偶发变成 1：立刻重锚定，禁止用缩放前旧坐标去平移
+      if ((this as any)._touchMode === 'pinch' && touches.length === 1) {
+        ;(this as any)._pinchJustEnded = true
+        ;(this as any)._touchMode = 'pending'
+        this.reanchorPanFromTouch(touches[0])
+        this.syncScaleLabel()
         return
       }
       const touch = touches[0]
@@ -1015,12 +1140,25 @@ Component({
     onTouchEnd(e: WechatMiniprogram.TouchEvent) {
       if ((this as any)._touchMode === 'pinch') {
         if (e.touches.length >= 2) return
-        ;(this as any)._touchMode = 'pending'
+        ;(this as any)._pinchJustEnded = true
+        if (e.touches.length === 1) {
+          // 仍留一指：以当前指位重锚定，松手/续拖都不会突然跳
+          ;(this as any)._touchMode = 'pending'
+          this.reanchorPanFromTouch(e.touches[0])
+        } else {
+          ;(this as any)._touchMode = ''
+        }
         this.syncScaleLabel()
         return
       }
       if ((this as any)._touchMode === 'pan') {
-        ;(this as any)._touchMode = 'pending'
+        ;(this as any)._touchMode = ''
+        return
+      }
+      // 双指缩放刚结束：吞掉松手点击，避免误选节点，也不产生位移
+      if ((this as any)._pinchJustEnded) {
+        ;(this as any)._pinchJustEnded = false
+        ;(this as any)._touchMode = ''
         return
       }
       const layout = (this as any)._layout as LayoutResult | null

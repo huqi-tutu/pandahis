@@ -1,0 +1,655 @@
+{
+  "volume": "马援列传",
+  "source_file": "03后汉书_026_马援列传第十四.txt",
+  "total_paragraphs": 67,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "马援",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "马援",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "马援",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "马援",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "马援",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "马援",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "马援",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "马援",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "马援",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "马援",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "马援",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "马援",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "马援",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "马援",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "马援",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "马援",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "马援",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "马援",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "马援",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "马援",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "马援",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "马援",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "马援",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "马援",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "马援",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "马援",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "马援",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "马援",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "马援",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "马援",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "马援",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "马援",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "马援",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "马援",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "马援",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "马援",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "马援",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "马援",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "马援",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "马援",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "马援",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "马援",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "马廖",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [
+        {
+          "name": "马廖",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 47,
+      "owners": [
+        {
+          "name": "马廖",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 48,
+      "owners": [
+        {
+          "name": "马廖",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 49,
+      "owners": [
+        {
+          "name": "马廖",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 50,
+      "owners": [
+        {
+          "name": "马廖",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 51,
+      "owners": [
+        {
+          "name": "马廖",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 52,
+      "owners": [
+        {
+          "name": "马防",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 53,
+      "owners": [
+        {
+          "name": "马防",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 54,
+      "owners": [
+        {
+          "name": "马防",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 55,
+      "owners": [
+        {
+          "name": "马防",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 56,
+      "owners": [
+        {
+          "name": "马防",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 57,
+      "owners": [
+        {
+          "name": "马防",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 58,
+      "owners": [
+        {
+          "name": "马严",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 59,
+      "owners": [
+        {
+          "name": "马严",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 60,
+      "owners": [
+        {
+          "name": "马严",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 61,
+      "owners": [
+        {
+          "name": "马严",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 62,
+      "owners": [
+        {
+          "name": "马严",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 63,
+      "owners": [
+        {
+          "name": "马严",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 64,
+      "owners": [
+        {
+          "name": "马严",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 65,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 66,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 67,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HOUHANSHU_026_01",
+      "史略名称": "马援",
+      "史略简介": "马援",
+      "原文字句": "马援字文渊，扶风茂陵人也。其先赵奢为赵将，号曰马服君，子孙因为氏。武帝时，以吏二千石自邯郸徙焉。曾祖父通，以功封重合侯，坐兄何罗反，被诛，故援再世不显。援三兄况、余、员，并有才能，王莽时皆为二千石。",
+      "史略分类": "武将",
+      "主要史料出处": "《03后汉书·卷26·马援列传》",
+      "paragraphs": [
+        {
+          "volume": "马援列传",
+          "paragraph_from": 2,
+          "paragraph_to": 43
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_026_02",
+      "史略名称": "马廖",
+      "史略简介": "马廖",
+      "原文字句": "廖字敬平，少以父任为郎。明德皇后既立，拜廖为羽林左监、虎贲中郎将。显宗崩，受遗诏典掌门禁，遂代赵熹为卫尉，肃宗甚尊重之。",
+      "史略分类": "武将",
+      "主要史料出处": "《03后汉书·卷26·马援列传》",
+      "paragraphs": [
+        {
+          "volume": "马援列传",
+          "paragraph_from": 45,
+          "paragraph_to": 51
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_026_03",
+      "史略名称": "马防",
+      "史略简介": "马防",
+      "原文字句": "防字江平，永平十二年，与弟光俱为黄门侍郎。肃宗即位，拜防中郎将，稍迁城门校尉。",
+      "史略分类": "武将",
+      "主要史料出处": "《03后汉书·卷26·马援列传》",
+      "paragraphs": [
+        {
+          "volume": "马援列传",
+          "paragraph_from": 52,
+          "paragraph_to": 57
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_026_04",
+      "史略名称": "马严",
+      "史略简介": "马严",
+      "原文字句": "严字威卿。父余。王莽时为杨州牧。严少孤，而好击剑，习骑射。后乃白援，从平原杨太伯讲学，专心坟典，能通《春秋左氏》，因览百家群言，遂交结英贤，京师大人咸器异之。仕郡督邮，援常与计议，委以家事。弟敦，字孺卿，亦知名。援卒后，严乃与敦俱归安陵，居钜下，三辅称其义行，号曰“钜下二卿”。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷26·马援列传》",
+      "paragraphs": [
+        {
+          "volume": "马援列传",
+          "paragraph_from": 58,
+          "paragraph_to": 64
+        }
+      ]
+    }
+  ]
+}

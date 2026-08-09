@@ -1,0 +1,87 @@
+{
+  "work": "03后汉书",
+  "vol": "027",
+  "total_paragraphs": 47,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_027_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 10,
+      "paragraph_to": 10,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 47,
+      "paragraph_to": 47,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "卓茂",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 9,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "卓茂字子康，南阳宛人也。父祖皆至郡守。茂，元帝时学于长安，事博士江生，习《诗》《",
+        "close_paragraph": 9,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P9"
+      }
+    },
+    {
+      "name": "鲁恭",
+      "category": "文臣",
+      "paragraph_from": 11,
+      "paragraph_to": 30,
+      "boundary_evidence": {
+        "open_paragraph": 11,
+        "open_phrase": "鲁恭字仲康，扶风平陵人也。其先出于鲁顷公，为楚所灭，迁于下邑，因氏焉。世吏二千石",
+        "close_paragraph": 30,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P11–P30"
+      }
+    },
+    {
+      "name": "鲁丕",
+      "category": "文臣",
+      "paragraph_from": 31,
+      "paragraph_to": 37,
+      "boundary_evidence": {
+        "open_paragraph": 31,
+        "open_phrase": "丕字叔陵，性沉深好学，孳孳不倦，遂杜绝交游，不答候问之礼。士友常以此短之，而丕欣",
+        "close_paragraph": 37,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P31–P37"
+      }
+    },
+    {
+      "name": "魏霸",
+      "category": "文臣",
+      "paragraph_from": 38,
+      "paragraph_to": 41,
+      "boundary_evidence": {
+        "open_paragraph": 38,
+        "open_phrase": "魏霸字乔卿，济阴句阳人也。世有礼义。霸少丧亲，兄弟同居，州里慕其雍和。",
+        "close_paragraph": 41,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P38–P41"
+      }
+    },
+    {
+      "name": "刘宽",
+      "category": "文臣",
+      "paragraph_from": 42,
+      "paragraph_to": 46,
+      "boundary_evidence": {
+        "open_paragraph": 42,
+        "open_phrase": "刘宽字文饶，弘农华阴人也。父崎，顺帝时为司徒。宽尝行，有人失牛者，乃就宽车中认之",
+        "close_paragraph": 46,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P42–P46"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

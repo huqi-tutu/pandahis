@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const brand_assets_1 = require("../../native-utils/brand-assets");
 const api_1 = require("../../native-utils/api");
 const invite_bind_1 = require("../../native-utils/invite-bind");
 const invite_storage_1 = require("../../native-utils/invite-storage");
@@ -12,6 +13,7 @@ Page({
         loggingIn: false,
         inviteCodeInput: '',
         pageTopPadPx: 88,
+        welcomeTitle: `欢迎通过好友邀请来到${brand_assets_1.APP_DISPLAY_NAME}`,
     },
     onLoad(query) {
         var _a;

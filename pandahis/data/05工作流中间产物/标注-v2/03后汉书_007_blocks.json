@@ -1,0 +1,63 @@
+{
+  "work": "03后汉书",
+  "vol": "007",
+  "total_paragraphs": 203,
+  "volume_subtype": "hezhuan",
+  "derived_from": "03后汉书_007_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 167,
+      "paragraph_to": 167,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 203,
+      "paragraph_to": 203,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "汉顺帝",
+      "category": "君王",
+      "paragraph_from": 2,
+      "paragraph_to": 166,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "孝顺皇帝讳保，安帝之子也。母李氏，为阎皇后所害。永宁元年，立为皇太子。延光三年，",
+        "close_paragraph": 166,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P166"
+      }
+    },
+    {
+      "name": "汉冲帝",
+      "category": "君王",
+      "paragraph_from": 168,
+      "paragraph_to": 176,
+      "boundary_evidence": {
+        "open_paragraph": 168,
+        "open_phrase": "孝冲皇帝讳炳，顺帝之子也。母曰虞贵人。",
+        "close_paragraph": 176,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P168–P176"
+      }
+    },
+    {
+      "name": "汉质帝",
+      "category": "君王",
+      "paragraph_from": 177,
+      "paragraph_to": 202,
+      "boundary_evidence": {
+        "open_paragraph": 177,
+        "open_phrase": "孝质皇帝讳缵，肃宗玄孙。曾祖父千乘贞王伉，祖父乐安夷王宠，父勃海孝王鸿，母陈夫人",
+        "close_paragraph": 202,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P177–P202"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

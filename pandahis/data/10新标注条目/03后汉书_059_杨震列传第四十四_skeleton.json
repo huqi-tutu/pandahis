@@ -1,0 +1,627 @@
+{
+  "volume": "杨震列传",
+  "source_file": "03后汉书_059_杨震列传第四十四.txt",
+  "total_paragraphs": 63,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "杨震",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "杨震",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "杨震",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "杨震",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "杨震",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "杨震",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "杨震",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "杨震",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "杨震",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "杨震",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "杨震",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "杨震",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "杨震",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "杨震",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "杨震",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "杨震",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "杨震",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "杨震",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "杨震",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "杨震",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "杨震",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "杨震",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "杨震",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "杨秉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "杨秉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "杨秉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "杨秉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "杨秉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "杨秉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "杨秉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "杨秉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "杨秉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "杨秉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "杨秉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "杨秉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "杨秉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "杨赐",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "杨赐",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "杨赐",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "杨赐",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "杨赐",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "杨赐",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "杨赐",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "杨赐",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [
+        {
+          "name": "杨赐",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 47,
+      "owners": [
+        {
+          "name": "杨赐",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 48,
+      "owners": [
+        {
+          "name": "杨赐",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 49,
+      "owners": [
+        {
+          "name": "杨赐",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 50,
+      "owners": [
+        {
+          "name": "杨赐",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 51,
+      "owners": [
+        {
+          "name": "杨赐",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 52,
+      "owners": [
+        {
+          "name": "杨赐",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 53,
+      "owners": [
+        {
+          "name": "杨赐",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 54,
+      "owners": [
+        {
+          "name": "杨彪",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 55,
+      "owners": [
+        {
+          "name": "杨彪",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 56,
+      "owners": [
+        {
+          "name": "杨彪",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 57,
+      "owners": [
+        {
+          "name": "杨彪",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 58,
+      "owners": [
+        {
+          "name": "杨彪",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 59,
+      "owners": [
+        {
+          "name": "杨彪",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 60,
+      "owners": [
+        {
+          "name": "杨彪",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 61,
+      "owners": [
+        {
+          "name": "杨彪",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 62,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 63,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HOUHANSHU_059_01",
+      "史略名称": "杨震",
+      "史略简介": "杨震",
+      "原文字句": "杨震字伯起，弘农华阴人也。八世祖喜，高祖时有功，封赤泉侯。高祖敞，昭帝时为丞相，封安平侯。父宝，习《欧阳尚书》。哀、平之世，隐居教授。居摄二年，与两龚、蒋诩俱征，遂遁逃，不知所处。光武高其节。建武中，公车特征，老病不到，卒于家。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷59·杨震列传》",
+      "paragraphs": [
+        {
+          "volume": "杨震列传",
+          "paragraph_from": 2,
+          "paragraph_to": 24
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_059_02",
+      "史略名称": "杨秉",
+      "史略简介": "杨秉",
+      "原文字句": "秉字叔节，少传父业，兼明《京氏易》，博通书传，常隐居教授。年四十余，乃应司空辟，拜侍御史，频出为豫、荆、徐、兖四州刺史，迁任城相。自为刺史、二千石，计日受奉，余禄不入私门。故吏赍钱百万遗之，闭门不受。以廉洁称。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷59·杨震列传》",
+      "paragraphs": [
+        {
+          "volume": "杨震列传",
+          "paragraph_from": 25,
+          "paragraph_to": 37
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_059_03",
+      "史略名称": "杨赐",
+      "史略简介": "杨赐",
+      "原文字句": "赐字伯献。少传家学，笃志博闻。常退居隐约，教授门徒，不答州郡礼命。后辟大将军梁冀府，非其好也。出除陈仓令，因病不行。公车征不至，连辞三公之命。后以司空高第，再迁侍中、越骑校尉。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷59·杨震列传》",
+      "paragraphs": [
+        {
+          "volume": "杨震列传",
+          "paragraph_from": 38,
+          "paragraph_to": 53
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_059_04",
+      "史略名称": "杨彪",
+      "史略简介": "杨彪",
+      "原文字句": "彪字文先，少传家学。初举孝廉，州举茂才，辟公府，皆不应。熹平中，以博习旧闻，公车征拜议郎，迁侍中、京兆尹。光和中，黄门令王甫使门生于郡界辜榷官财物七千余万，彪发其奸，言之司隶。司隶校尉阳球因此奏诛甫，天下莫不惬心。征还为侍中、五官中郎将，迁颍川、南阳太守，复拜侍中，三迁永乐少府、太仆、卫尉。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷59·杨震列传》",
+      "paragraphs": [
+        {
+          "volume": "杨震列传",
+          "paragraph_from": 54,
+          "paragraph_to": 61
+        }
+      ]
+    }
+  ]
+}

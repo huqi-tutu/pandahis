@@ -1,0 +1,21 @@
+{
+  "work": "03后汉书",
+  "vol": "008",
+  "volume_name": "孝桓帝纪",
+  "volume_type_guess": "本纪",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "汉桓帝",
+      "category": "君王",
+      "rationale": "《后汉书·孝桓帝纪》为东汉皇帝刘志（汉桓帝）的本纪，以记载其生平、在位事迹及朝政大事为卷之主轴。汉桓帝为天下共主、东汉天子，符合『君王』分类准入标准（天子/皇帝/霸王级本纪共主）。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "论曰",
+    "赞曰",
+    "其他"
+  ]
+}

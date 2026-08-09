@@ -1,0 +1,112 @@
+{
+  "work": "03后汉书",
+  "vol": "043",
+  "total_paragraphs": 53,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_043_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 2,
+      "paragraph_to": 2,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 3,
+      "paragraph_to": 4,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 5,
+      "paragraph_to": 5,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 11,
+      "paragraph_to": 12,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 15,
+      "paragraph_to": 17,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 33,
+      "paragraph_to": 52,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 53,
+      "paragraph_to": 53,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "刘平",
+      "category": "文臣",
+      "paragraph_from": 6,
+      "paragraph_to": 10,
+      "boundary_evidence": {
+        "open_paragraph": 6,
+        "open_phrase": "刘平字公子，楚郡彭城人也。本名旷，显宗后改为平。王莽时为郡吏，守菑丘长，政教大行",
+        "close_paragraph": 10,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P6–P10"
+      }
+    },
+    {
+      "name": "赵孝",
+      "category": "文臣",
+      "paragraph_from": 13,
+      "paragraph_to": 14,
+      "boundary_evidence": {
+        "open_paragraph": 13,
+        "open_phrase": "赵孝字长平，沛国蕲人也。父普，王莽时为田禾将军，任孝为郎。每告归，常白衣步担。尝",
+        "close_paragraph": 14,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P13–P14"
+      }
+    },
+    {
+      "name": "淳于恭",
+      "category": "文臣",
+      "paragraph_from": 18,
+      "paragraph_to": 20,
+      "boundary_evidence": {
+        "open_paragraph": 18,
+        "open_phrase": "淳于恭字孟孙，北海淳于人也。善说《老子》，清静不慕荣名。家有山田果树，人或侵盗，",
+        "close_paragraph": 20,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P18–P20"
+      }
+    },
+    {
+      "name": "江革",
+      "category": "文臣",
+      "paragraph_from": 21,
+      "paragraph_to": 25,
+      "boundary_evidence": {
+        "open_paragraph": 21,
+        "open_phrase": "江革字次翁，齐国临淄人也。少失父，独与母居。遭天下乱，盗贼并起，革负母逃难，备经",
+        "close_paragraph": 25,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P21–P25"
+      }
+    },
+    {
+      "name": "刘般",
+      "category": "宗戚",
+      "paragraph_from": 26,
+      "paragraph_to": 32,
+      "boundary_evidence": {
+        "open_paragraph": 26,
+        "open_phrase": "刘般字伯兴，宣帝之玄孙也。宣帝封子嚣于楚，是为孝王。孝王生思王衍，衍生王纡，纡生",
+        "close_paragraph": 32,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P26–P32"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

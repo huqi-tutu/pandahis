@@ -14,11 +14,24 @@ public record UnitSwimMatrixDTO(
     String timeScaleMode,
     List<Lane> lanes,
     List<String> concurrentItems,
+    List<ConcurrentTab> concurrentTabs,
     int sheetWidthRpx,
     int canvasHeightRpx,
     int canvasPadLeftRpx,
     List<CategoryBand> categoryBands
 ) {
+  /** 同期并发政权 Tab（含跳转 dynastyId） */
+  public record ConcurrentTab(String label, String civilizationName, String dynastyId) {}
+
+  public UnitSwimMatrixDTO {
+    if (concurrentItems == null) {
+      concurrentItems = List.of();
+    }
+    if (concurrentTabs == null) {
+      concurrentTabs = List.of();
+    }
+  }
+
   public record AxisTick(
       String label,
       String left,

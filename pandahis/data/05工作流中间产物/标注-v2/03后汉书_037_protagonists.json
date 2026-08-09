@@ -1,0 +1,40 @@
+{
+  "work": "03后汉书",
+  "vol": "037",
+  "volume_name": "朱冯虞郑周列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "朱浮",
+      "category": "文臣",
+      "rationale": "卷名首姓，东汉初名臣，以政论、行政才能著称，属文臣列传主轴。"
+    },
+    {
+      "name": "冯鲂",
+      "category": "文臣",
+      "rationale": "卷名第二姓，东汉初大臣，历任地方与朝中要职，以治理才能闻名，属文臣列传主轴。"
+    },
+    {
+      "name": "虞延",
+      "category": "文臣",
+      "rationale": "卷名第三姓，东汉大臣，以刚直执法、政绩卓著著称，属文臣列传主轴。"
+    },
+    {
+      "name": "郑弘",
+      "category": "文臣",
+      "rationale": "卷名第四姓，东汉名臣，官至太尉，以清廉正直、政绩显著闻名，属文臣列传主轴。"
+    },
+    {
+      "name": "周章",
+      "category": "文臣",
+      "rationale": "卷名末姓，东汉大臣，以忠直敢谏著称，属文臣列传主轴。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

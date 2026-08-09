@@ -1,0 +1,182 @@
+{
+  "volume": "苏竟杨厚列传第二十上",
+  "source_file": "03后汉书_033_苏竟杨厚列传第二十上.txt",
+  "total_paragraphs": 16,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "苏竟",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "苏竟",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "苏竟",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "苏竟",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "苏竟",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "苏竟",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "苏竟",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "苏竟",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "苏竟",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "苏竟",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "杨厚",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "杨厚",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "杨厚",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "杨厚",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "杨厚",
+          "category": "文臣"
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HOUHANSHU_033_01",
+      "史略名称": "苏竟",
+      "史略简介": "苏竟",
+      "原文字句": "苏竟字伯况，扶风平陵人也。平帝世，竟以明《易》为博士讲《书》祭酒。善图纬，能通百家之言。王莽时，与刘歆等共典校书，拜代郡中尉。时匈奴扰乱，北边多罹其祸，竟终完辑一郡。光武即位，就拜代郡太守，使固塞以拒匈奴。建武五年冬，卢芳略得北边诸郡，帝使偏将军随弟屯代郡。竟病笃，以兵属弟，诣京师谢罪。拜侍中，数月，以病免。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷33·苏竟杨厚列传第二十上》",
+      "paragraphs": [
+        {
+          "volume": "苏竟杨厚列传第二十上",
+          "paragraph_from": 2,
+          "paragraph_to": 11
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_033_02",
+      "史略名称": "杨厚",
+      "史略简介": "杨厚",
+      "原文字句": "杨厚字仲桓，广汉新都人也。祖父春卿，善图谶学，为公孙述将。汉兵平蜀，春卿自杀，临命戒子统曰：“吾绨帙中有先祖所传秘记，为汉家用，尔其修之。”统感父遗言，服阕，辞家从犍为周循学习先法，又就同郡郑伯山受《河洛书》及天文推步之术。建初中为彭城令，一州大旱，统推阴阳消伏，县界蒙泽。太守宗湛使统求为郡求雨，亦即降澍。自是朝廷灾异，多以访之。统作《家法章句》及《内谶》二卷角说，位至光禄大夫，为国三老。年九十卒",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷33·苏竟杨厚列传第二十上》",
+      "paragraphs": [
+        {
+          "volume": "苏竟杨厚列传第二十上",
+          "paragraph_from": 12,
+          "paragraph_to": 16
+        }
+      ]
+    }
+  ]
+}

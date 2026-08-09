@@ -1,0 +1,35 @@
+{
+  "work": "03后汉书",
+  "vol": "020",
+  "volume_name": "吴盖陈臧列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "吴汉",
+      "category": "武将",
+      "rationale": "卷名首姓，东汉开国名将，云台二十八将之一，以军功征战为主轴，符合武将准入。"
+    },
+    {
+      "name": "盖延",
+      "category": "武将",
+      "rationale": "卷名第二人，东汉光武帝麾下将领，以军功征战为主轴，符合武将准入。"
+    },
+    {
+      "name": "陈俊",
+      "category": "武将",
+      "rationale": "卷名第三人，东汉开国将领，以军功征战为主轴，符合武将准入。"
+    },
+    {
+      "name": "臧宫",
+      "category": "武将",
+      "rationale": "卷名第四人，东汉开国将领，以军功征战为主轴，符合武将准入。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "work": "03后汉书",
+  "vol": "060",
+  "total_paragraphs": 46,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_060_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 2,
+      "paragraph_to": 2,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 8,
+      "paragraph_to": 8,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 42,
+      "paragraph_to": 44,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 45,
+      "paragraph_to": 46,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "刘伉",
+      "category": "宗戚",
+      "paragraph_from": 3,
+      "paragraph_to": 7,
+      "boundary_evidence": {
+        "open_paragraph": 3,
+        "open_phrase": "千乘贞王伉，建初四年封。和帝即位，以伉长兄，甚见尊礼立十五年薨。",
+        "close_paragraph": 7,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P3–P7"
+      }
+    },
+    {
+      "name": "刘庆",
+      "category": "宗戚",
+      "paragraph_from": 9,
+      "paragraph_to": 26,
+      "boundary_evidence": {
+        "open_paragraph": 9,
+        "open_phrase": "清河孝王庆，母宋贵人。贵人，宋昌八世孙，扶风平陵人也。父杨，以恭孝称于乡闾，不应",
+        "close_paragraph": 26,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P9–P26"
+      }
+    },
+    {
+      "name": "刘寿",
+      "category": "宗戚",
+      "paragraph_from": 27,
+      "paragraph_to": 32,
+      "boundary_evidence": {
+        "open_paragraph": 27,
+        "open_phrase": "济北惠王寿，母申贵人，颍川人也，世吏二千石。贵人年十三，入掖庭。寿以永元二年封，",
+        "close_paragraph": 32,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P27–P32"
+      }
+    },
+    {
+      "name": "刘开",
+      "category": "宗戚",
+      "paragraph_from": 33,
+      "paragraph_to": 40,
+      "boundary_evidence": {
+        "open_paragraph": 33,
+        "open_phrase": "河间孝王开，以永元二年封，分乐成、勃海、涿郡为国。延平元年就国。开奉遵法度，吏人",
+        "close_paragraph": 40,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P33–P40"
+      }
+    },
+    {
+      "name": "刘淑",
+      "category": "宗戚",
+      "paragraph_from": 41,
+      "paragraph_to": 41,
+      "boundary_evidence": {
+        "open_paragraph": 41,
+        "open_phrase": "城阳怀王淑，以永元二年分济阴为国。立五年薨，葬于京师，无子，国除，还并济阴。",
+        "close_paragraph": 41,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P41–P41"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

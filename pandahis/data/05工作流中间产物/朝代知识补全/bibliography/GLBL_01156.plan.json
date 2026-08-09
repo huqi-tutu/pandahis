@@ -1,0 +1,181 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01156",
+  "写作结构": "正史叙述见翻译详录（《汉书·董仲舒传》）。史外异说与延展：以《春秋繁露》历代注疏（凌曙《春秋繁露注》、苏舆《春秋繁露义证》）为经学阐释层，辅以《汉书·五行志》所载董仲舒灾异说之旁证，以及《论衡》对天人感应说的批判性异说。留白：不涉及具体篇章结构、原文语句及汉武帝直接评价。",
+  "候选著作": [
+    {
+      "出处": "《汉书·董仲舒传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史索引，董仲舒生平及天人三策，为《春秋繁露》思想之官方背景",
+      "检索词": "董仲舒",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《春秋繁露·立元神》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "《春秋繁露》篇目，集中体现天人感应、君权神授思想，为直接文本依据",
+      "检索词": "立元神",
+      "采用": true,
+      "原文摘句": "天地人主一也，然则人主之守在六正，六正者，天之道也。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《春秋繁露·王道通三》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "阐述王道贯通天地人，以阴阳五行论证政治秩序，为天人感应体系核心篇目",
+      "检索词": "王道通三",
+      "采用": true,
+      "原文摘句": "古之造文者，三画而连其中，谓之王。三画者，天地与人也。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《春秋繁露·阴阳义》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "系统以阴阳五行说灾异，为董仲舒天人感应之方法论基础",
+      "检索词": "阴阳义",
+      "采用": true,
+      "原文摘句": "天地之常，一阴一阳。阳者天之德也，阴者天之刑也。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《汉书·五行志》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "载董仲舒灾异之对，为《春秋繁露》天人感应思想在史书中的旁证",
+      "检索词": "董仲舒",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《论衡·谴告》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "王充批判天人感应说，为汉代思想史上重要异说，可作对照",
+      "检索词": "谴告",
+      "采用": true,
+      "原文摘句": "夫天道自然也，无为。如谴告人，是有为，非自然也。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《春秋繁露义证》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "苏舆集解，为清代《春秋繁露》最详注本，反映后世经学阐释",
+      "检索词": "春秋繁露义证",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《汉书·董仲舒传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史索引，董仲舒生平及天人三策，为《春秋繁露》思想之官方背景",
+      "检索词": "董仲舒",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《春秋繁露·立元神》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "《春秋繁露》篇目，集中体现天人感应、君权神授思想，为直接文本依据",
+      "检索词": "立元神",
+      "采用": true,
+      "原文摘句": "天地人主一也，然则人主之守在六正，六正者，天之道也。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《春秋繁露·王道通三》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "阐述王道贯通天地人，以阴阳五行论证政治秩序，为天人感应体系核心篇目",
+      "检索词": "王道通三",
+      "采用": true,
+      "原文摘句": "古之造文者，三画而连其中，谓之王。三画者，天地与人也。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《春秋繁露·阴阳义》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "系统以阴阳五行说灾异，为董仲舒天人感应之方法论基础",
+      "检索词": "阴阳义",
+      "采用": true,
+      "原文摘句": "天地之常，一阴一阳。阳者天之德也，阴者天之刑也。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《汉书·五行志》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "载董仲舒灾异之对，为《春秋繁露》天人感应思想在史书中的旁证",
+      "检索词": "董仲舒",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《论衡·谴告》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "王充批判天人感应说，为汉代思想史上重要异说，可作对照",
+      "检索词": "谴告",
+      "采用": true,
+      "原文摘句": "夫天道自然也，无为。如谴告人，是有为，非自然也。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《春秋繁露义证》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "苏舆集解，为清代《春秋繁露》最详注本，反映后世经学阐释",
+      "检索词": "春秋繁露义证",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 5,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

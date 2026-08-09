@@ -1,0 +1,38 @@
+{
+  "work": "03后汉书",
+  "vol": "002",
+  "total_paragraphs": 220,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 219,
+      "paragraph_to": 219,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 220,
+      "paragraph_to": 220,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "汉光武帝",
+      "category": "君王",
+      "paragraph_from": 2,
+      "paragraph_to": 218,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "六年春正月丙辰，改舂陵乡为章陵县。世世复徭役，比丰、沛，无有所豫。辛酉，诏曰：“",
+        "close_paragraph": 218,
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

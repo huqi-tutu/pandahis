@@ -1,0 +1,39 @@
+{
+  "work": "03后汉书",
+  "vol": "053",
+  "volume_name": "杨李翟应霍爰徐列传",
+  "volume_type_guess": "传",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_arc": "C",
+  "volume_texture": "sequential",
+  "skip_reason": null,
+  "protagonists_cap_note": "合传主轴≤5：取卷名杨李翟应霍；爰延、徐璆不建条；应劭归应奉。",
+  "protagonists": [
+    {
+      "name": "杨终",
+      "category": "文臣",
+      "rationale": "卷名首轴，白虎观议经。"
+    },
+    {
+      "name": "李法",
+      "category": "文臣",
+      "rationale": "卷名次轴。"
+    },
+    {
+      "name": "翟酺",
+      "category": "文臣",
+      "rationale": "卷名第三，图纬历算。"
+    },
+    {
+      "name": "应奉",
+      "category": "文臣",
+      "rationale": "卷名应氏；子劭厚附归奉以控≤5。"
+    },
+    {
+      "name": "霍谞",
+      "category": "文臣",
+      "rationale": "卷名霍氏。"
+    }
+  ]
+}

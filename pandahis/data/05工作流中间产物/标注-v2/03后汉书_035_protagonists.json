@@ -1,0 +1,44 @@
+{
+  "work": "03后汉书",
+  "vol": "035",
+  "volume_name": "郭杜孔张廉王苏羊贾陆列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_arc": "C",
+  "volume_texture": "sequential",
+  "skip_reason": null,
+  "protagonists_cap_note": "合传≤5：杜诗(君公)、羊续(兴祖)、郭伋(细侯)、张堪(君游)、贾琮(孟坚)。",
+  "protagonists": [
+    {
+      "name": "杜诗",
+      "category": "文臣",
+      "rationale": "字君公，南阳太守；P9–P17。"
+    },
+    {
+      "name": "羊续",
+      "category": "文臣",
+      "rationale": "字兴祖，南阳太守悬鱼；P44–P48。"
+    },
+    {
+      "name": "郭伋",
+      "category": "文臣",
+      "rationale": "字细侯，并州牧竹马；P2–P8。"
+    },
+    {
+      "name": "张堪",
+      "category": "文臣",
+      "rationale": "字君游，渔阳太守；P24–P27。"
+    },
+    {
+      "name": "贾琮",
+      "category": "文臣",
+      "rationale": "字孟坚，交阯/冀州刺史；P49–P52。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "论赞",
+    "其他"
+  ]
+}

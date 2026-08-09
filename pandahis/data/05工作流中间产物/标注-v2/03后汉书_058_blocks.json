@@ -1,0 +1,97 @@
+{
+  "work": "03后汉书",
+  "vol": "058",
+  "total_paragraphs": 35,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_058_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 2,
+      "paragraph_to": 6,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 14,
+      "paragraph_to": 14,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 21,
+      "paragraph_to": 21,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 35,
+      "paragraph_to": 35,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "周燮",
+      "category": "庶众",
+      "paragraph_from": 7,
+      "paragraph_to": 10,
+      "boundary_evidence": {
+        "open_paragraph": 7,
+        "open_phrase": "周燮字彦祖，汝南安城人，决曹掾燕之后也。燮生而钦颐折頞，丑状骇人。其母欲弃之，其",
+        "close_paragraph": 10,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P7–P10"
+      }
+    },
+    {
+      "name": "黄宪",
+      "category": "庶众",
+      "paragraph_from": 11,
+      "paragraph_to": 13,
+      "boundary_evidence": {
+        "open_paragraph": 11,
+        "open_phrase": "黄宪字叔度，汝南慎阳人也。世贫贱，父为牛医。",
+        "close_paragraph": 13,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P11–P13"
+      }
+    },
+    {
+      "name": "徐稚",
+      "category": "庶众",
+      "paragraph_from": 15,
+      "paragraph_to": 20,
+      "boundary_evidence": {
+        "open_paragraph": 15,
+        "open_phrase": "徐稺，字孺子，豫章南昌人也。家贫，常自耕稼，非其力不食。恭俭义让，所居服其德。屡",
+        "close_paragraph": 20,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P15–P20"
+      }
+    },
+    {
+      "name": "姜肱",
+      "category": "庶众",
+      "paragraph_from": 22,
+      "paragraph_to": 26,
+      "boundary_evidence": {
+        "open_paragraph": 22,
+        "open_phrase": "姜肱字伯淮，彭城广戚人也。家世名族。肱与二弟仲海、季江，俱以孝行著闻。其友爱天至",
+        "close_paragraph": 26,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P22–P26"
+      }
+    },
+    {
+      "name": "申屠蟠",
+      "category": "庶众",
+      "paragraph_from": 27,
+      "paragraph_to": 34,
+      "boundary_evidence": {
+        "open_paragraph": 27,
+        "open_phrase": "申屠蟠字子龙，陈留外黄人也。九岁丧父，哀毁过礼。服除，不进酒肉十余年。每忌日，辄",
+        "close_paragraph": 34,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P27–P34"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

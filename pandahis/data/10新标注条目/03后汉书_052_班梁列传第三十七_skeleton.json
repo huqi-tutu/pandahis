@@ -1,0 +1,468 @@
+{
+  "volume": "班梁列传",
+  "source_file": "03后汉书_052_班梁列传第三十七.txt",
+  "total_paragraphs": 47,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "班超",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "班超",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "班超",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "班超",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "班超",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "班超",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "班超",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "班超",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "班超",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "班超",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "班超",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "班超",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "班超",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "班超",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "班超",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "班超",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "班超",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "班超",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "班超",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "班超",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "班超",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "班超",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "班超",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "班超",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "班超",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "班超",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "班勇",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "班勇",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "班勇",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "班勇",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "班勇",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "班勇",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "班勇",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "班勇",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "班勇",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "班勇",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "梁慬",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "梁慬",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "梁慬",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "梁慬",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "梁慬",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "梁慬",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "梁慬",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "梁慬",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 47,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HOUHANSHU_052_01",
+      "史略名称": "班超",
+      "史略简介": "班超",
+      "原文字句": "班超字仲升，扶风平陵人，徐令彪之少子也。为人有大志，不修细节。然内孝谨，居家常执勤苦，不耻劳辱。有口辩，而涉猎书传。永平五年，兄固被召诣校书郎，超与母随至洛阳。家贫，常为官佣书以供养。久劳苦，尝辍业投笔叹曰：“大丈夫无它志略，犹当效傅介子、张骞立功异域，以取封侯，安能久事笔研间乎？”左右皆笑之。超曰：“小子安知壮士志哉！”其后行诣相者，曰：“祭酒，布衣诸生耳，而当封侯万里之外。”超问其状。相者指曰",
+      "史略分类": "武将",
+      "主要史料出处": "《03后汉书·卷52·班梁列传》",
+      "paragraphs": [
+        {
+          "volume": "班梁列传",
+          "paragraph_from": 2,
+          "paragraph_to": 27
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_052_02",
+      "史略名称": "班勇",
+      "史略简介": "班勇",
+      "原文字句": "勇字宜僚，少有父风。永初元年，西域反叛，以勇为军司马。与兄雄俱出敦煌，迎都护及西域甲卒而还。因罢都护。后西域绝，无汉吏十余年。",
+      "史略分类": "武将",
+      "主要史料出处": "《03后汉书·卷52·班梁列传》",
+      "paragraphs": [
+        {
+          "volume": "班梁列传",
+          "paragraph_from": 28,
+          "paragraph_to": 37
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_052_03",
+      "史略名称": "梁慬",
+      "史略简介": "梁慬",
+      "原文字句": "梁慬字伯威，北地弋居人也。父讽，历州宰。永元元年，车骑将军窦宪出征匈奴，除讽为军司马，令先赍金帛使北单于，宣国威德，其归附者万余人。后坐失宪意，髡输武威，武威太守承旨杀之。窦氏既灭，和帝知其为宪所诬，征慬，除为郎中。",
+      "史略分类": "武将",
+      "主要史料出处": "《03后汉书·卷52·班梁列传》",
+      "paragraphs": [
+        {
+          "volume": "班梁列传",
+          "paragraph_from": 38,
+          "paragraph_to": 45
+        }
+      ]
+    }
+  ]
+}

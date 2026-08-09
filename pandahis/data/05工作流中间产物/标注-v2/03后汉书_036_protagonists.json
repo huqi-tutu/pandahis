@@ -1,0 +1,43 @@
+{
+  "work": "03后汉书",
+  "vol": "036",
+  "volume_name": "樊宏阴识列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_arc": "C",
+  "volume_texture": "sequential",
+  "skip_reason": null,
+  "protagonists_cap_note": "外戚合传≤5：樊宏、樊鯈、樊准、阴识、阴兴；嗣封归各传主。",
+  "protagonists": [
+    {
+      "name": "樊宏",
+      "category": "宗戚",
+      "rationale": "光武舅；P2–P6。"
+    },
+    {
+      "name": "樊鯈",
+      "category": "宗戚",
+      "rationale": "宏子，长水校尉；P8–P14。"
+    },
+    {
+      "name": "樊准",
+      "category": "文臣",
+      "rationale": "宏族曾孙，御史中丞；P15–P23。"
+    },
+    {
+      "name": "阴识",
+      "category": "宗戚",
+      "rationale": "光烈后兄；P24–P29（含嗣封）。"
+    },
+    {
+      "name": "阴兴",
+      "category": "宗戚",
+      "rationale": "光烈后弟；P30–P35。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "论赞"
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "work": "03后汉书",
+  "vol": "018",
+  "total_paragraphs": 72,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_018_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 20,
+      "paragraph_to": 20,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 43,
+      "paragraph_to": 46,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 47,
+      "paragraph_to": 47,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 60,
+      "paragraph_to": 63,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 64,
+      "paragraph_to": 64,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 65,
+      "paragraph_to": 71,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 72,
+      "paragraph_to": 72,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "邓禹",
+      "category": "武将",
+      "paragraph_from": 2,
+      "paragraph_to": 19,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "邓禹字仲华，南阳新野人也。年十三，能诵诗，受业长安。时光武亦游学京师，禹年虽幼，",
+        "close_paragraph": 19,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P19"
+      }
+    },
+    {
+      "name": "邓训",
+      "category": "武将",
+      "paragraph_from": 21,
+      "paragraph_to": 31,
+      "boundary_evidence": {
+        "open_paragraph": 21,
+        "open_phrase": "训字平叔，禹第六子也。少有大志，不好文学，禹常非之。显宗即位，初以为郎中。训乐施",
+        "close_paragraph": 31,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P21–P31"
+      }
+    },
+    {
+      "name": "邓骘",
+      "category": "武将",
+      "paragraph_from": 32,
+      "paragraph_to": 42,
+      "boundary_evidence": {
+        "open_paragraph": 32,
+        "open_phrase": "骘字昭伯，少辟大将军窦宪府。及女弟为贵人，骘兄弟皆除郎中。及贵人立，是为和熹皇后",
+        "close_paragraph": 42,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P32–P42"
+      }
+    },
+    {
+      "name": "寇恂",
+      "category": "文臣",
+      "paragraph_from": 48,
+      "paragraph_to": 59,
+      "boundary_evidence": {
+        "open_paragraph": 48,
+        "open_phrase": "寇恂字子翼，上谷昌平人也，世为著姓。恂初为郡功曹，太守耿况甚重之。",
+        "close_paragraph": 59,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P48–P59"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}
