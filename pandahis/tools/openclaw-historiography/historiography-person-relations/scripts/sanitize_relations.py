@@ -8,7 +8,25 @@ from typing import Any
 MAX_PERSONS_PER_HUB = 10
 
 FAMILY_EDGE_WHITELIST = frozenset(
-    {"", "父", "母", "妻", "妾", "妃", "夫", "子", "女", "兄", "弟", "姐", "妹", "兄弟", "姐妹"}
+    {
+        "",
+        "父",
+        "母",
+        "祖",
+        "祖母",
+        "妻",
+        "妾",
+        "妃",
+        "夫",
+        "子",
+        "女",
+        "兄",
+        "弟",
+        "姐",
+        "妹",
+        "兄弟",
+        "姐妹",
+    }
 )
 
 # 可确定性映射到白名单的旧称 / 近义
@@ -32,13 +50,13 @@ FAMILY_EDGE_MAP = {
     "妹妹": "妹",
     "兄弟": "兄弟",
     "姐妹": "姐妹",
+    "祖父": "祖",
+    "祖母": "祖母",
 }
 
 # 不在 taxonomy 内的亲属边：丢弃该节点（及子孙）
 FAMILY_EDGE_DROP = frozenset(
     {
-        "祖父",
-        "祖母",
         "外祖父",
         "外祖母",
         "爷爷",
@@ -78,6 +96,8 @@ FAMILY_EDGE_DROP = frozenset(
 FAMILY_EDGE_SCORE = {
     "父": 100,
     "母": 100,
+    "祖": 92,
+    "祖母": 92,
     "夫": 96,
     "妻": 96,
     "子": 88,
@@ -95,6 +115,7 @@ FAMILY_EDGE_SCORE = {
 
 # 枢纽本身的「紧密/核心」权重（跨 hub 不比；同 hub 内作微调）
 HUB_WEIGHT = {
+    "祖父母": 11,
     "父母": 10,
     "配偶": 8,
     "兄弟姐妹": 4,
@@ -183,6 +204,14 @@ def normalize_family_edges(records: list[dict[str, Any]]) -> tuple[list[dict[str
             if new_edge != edge:
                 notes.append(f"map family edge {title}: {edge!r}→{new_edge!r}")
             row["上级连接线标题"] = new_edge
+            edge = new_edge
+
+        if edge in {"祖", "祖母"}:
+            if str(row.get("所属一级关系") or "") != "祖父母":
+                notes.append(
+                    f"reassign family hub {title}: {row.get('所属一级关系')!r}→祖父母"
+                )
+                row["所属一级关系"] = "祖父母"
             mapped.append(row)
             continue
 
@@ -352,6 +381,112 @@ def cap_hub_people(
     return out, notes
 
 
+def dedupe_same_key_people(
+    records: list[dict[str, Any]],
+) -> tuple[list[dict[str, Any]], list[str]]:
+    """同 (标题, 层级, 类别) 真人名去重；「不详」允许多条，不合并。
+
+    保留首次出现，后续条的关系简述并入首条；子孙仍挂同名即可。
+    """
+    notes: list[str] = []
+    seen: dict[tuple[str, str, str], dict[str, Any]] = {}
+    drop_ids: set[str] = set()
+    out: list[dict[str, Any]] = []
+
+    for rec in records:
+        row = dict(rec)
+        if _is_hub(row):
+            out.append(row)
+            continue
+        title = _title(row)
+        level = _level(row)
+        cat = _cat(row)
+        if not title or title == "不详":
+            out.append(row)
+            continue
+        key = (title, level, cat)
+        if key not in seen:
+            seen[key] = row
+            out.append(row)
+            continue
+        # merge summary into first
+        first = seen[key]
+        s1 = str(first.get("关系简述") or "").strip()
+        s2 = str(row.get("关系简述") or "").strip()
+        if s2 and s2 not in s1:
+            first["关系简述"] = f"{s1}；{s2}" if s1 else s2
+        rid = str(row.get("关系ID") or row.get("record_id") or title)
+        drop_ids.add(rid)
+        notes.append(f"dedupe {cat}/{level}/{title}")
+
+    if not drop_ids:
+        return out, notes
+
+    # out already skipped duplicates; just return
+    return out, notes
+
+
+def drop_broken_parent_links(
+    records: list[dict[str, Any]],
+) -> tuple[list[dict[str, Any]], list[str]]:
+    """删除所属链指向不存在父节点的记录（及其继续挂靠的子孙）。"""
+    notes: list[str] = []
+
+    def _index(rows: list[dict[str, Any]]) -> dict[tuple[str, str], set[str]]:
+        idx: dict[tuple[str, str], set[str]] = {}
+        for r in rows:
+            lv = _level(r)
+            t = _title(r)
+            if lv and t:
+                idx.setdefault((lv, t), set()).add(_cat(r))
+        return idx
+
+    def parent_ok(rec: dict[str, Any], rows: list[dict[str, Any]], idx: dict) -> bool:
+        lv = _level(rec)
+        if lv == "二级":
+            hub = str(rec.get("所属一级关系") or "").strip()
+            if not hub:
+                return False
+            return any(
+                _is_hub(r) and _title(r) == hub and _cat(r) == _cat(rec) for r in rows
+            )
+        if lv == "三级":
+            p2 = str(rec.get("所属二级关系") or "").strip()
+            return bool(p2) and ("二级", p2) in idx
+        if lv == "四级":
+            p2 = str(rec.get("所属二级关系") or "").strip()
+            p3 = str(rec.get("所属三级关系") or "").strip()
+            return (
+                bool(p2)
+                and bool(p3)
+                and ("二级", p2) in idx
+                and ("三级", p3) in idx
+            )
+        return True
+
+    cur = [dict(r) for r in records]
+    while True:
+        idx = _index(cur)
+        nxt: list[dict[str, Any]] = []
+        dropped = 0
+        for r in cur:
+            if _is_hub(r) or _level(r) in {"", "一级"}:
+                nxt.append(r)
+                continue
+            if parent_ok(r, cur, idx):
+                nxt.append(r)
+                continue
+            notes.append(
+                f"drop broken link {_cat(r)}/{_level(r)}/{_title(r)} "
+                f"(p2={r.get('所属二级关系')!r} p3={r.get('所属三级关系')!r})"
+            )
+            dropped += 1
+        cur = nxt
+        if dropped == 0:
+            break
+    return cur, notes
+
+
 def drop_empty_hubs(records: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[str]]:
     """删除其下已无二级人物的二级分类枢纽。"""
     notes: list[str] = []
@@ -374,6 +509,32 @@ def drop_empty_hubs(records: list[dict[str, Any]]) -> tuple[list[dict[str, Any]]
     return out, notes
 
 
+def ensure_grandparents_hub(
+    records: list[dict[str, Any]],
+) -> tuple[list[dict[str, Any]], list[str]]:
+    """祖/祖母改挂后若缺「祖父母」枢纽则补一条，避免随后被 drop_broken_parent_links 删掉。"""
+    notes: list[str] = []
+    has_hub = any(_is_hub(r) and _cat(r) == "家庭" and _title(r) == "祖父母" for r in records)
+    needs = any(
+        _cat(r) == "家庭" and _edge(r) in {"祖", "祖母"} and not _is_hub(r) for r in records
+    )
+    if not needs or has_hub:
+        return records, notes
+    subject = next((str(r.get("关联史略名称") or "").strip() for r in records), "")
+    hub = {
+        "关联史略名称": subject,
+        "关系ID": "HD-FAM-GP-HUB",
+        "关系类别": "家庭",
+        "关系层级": "一级",
+        "关系节点标题": "祖父母",
+        "上级连接线标题": "",
+        "节点类型": "二级分类",
+        "关系简述": f"{subject}之祖父母支。" if subject else "祖父母枢纽",
+    }
+    notes.append("insert missing hub 家庭/祖父母")
+    return [hub, *records], notes
+
+
 def sanitize_relation_records(
     records: list[dict[str, Any]],
     *,
@@ -386,10 +547,19 @@ def sanitize_relation_records(
     cur, notes = normalize_family_edges(cur)
     all_notes.extend(notes)
 
+    cur, notes = ensure_grandparents_hub(cur)
+    all_notes.extend(notes)
+
     cur, notes = apply_mutex(cur)
     all_notes.extend(notes)
 
+    cur, notes = dedupe_same_key_people(cur)
+    all_notes.extend(notes)
+
     cur, notes = cap_hub_people(cur, index_names=index_names)
+    all_notes.extend(notes)
+
+    cur, notes = drop_broken_parent_links(cur)
     all_notes.extend(notes)
 
     cur, notes = drop_empty_hubs(cur)
@@ -412,12 +582,32 @@ def _self_check() -> None:
         },
         {
             "关联史略名称": "测试帝",
+            "关系ID": "HD-FAM-GP-001",
+            "关系类别": "家庭",
+            "关系层级": "一级",
+            "关系节点标题": "祖父母",
+            "上级连接线标题": "",
+            "关系简述": "祖父母枢纽",
+            "节点类型": "二级分类",
+        },
+        {
+            "关联史略名称": "测试帝",
             "关系ID": "HD-FAM-002",
             "关系类别": "家庭",
             "关系层级": "二级",
             "关系节点标题": "某祖",
             "上级连接线标题": "祖父",
             "关系简述": "祖父某某",
+            "所属一级关系": "父母",
+        },
+        {
+            "关联史略名称": "测试帝",
+            "关系ID": "HD-FAM-NEP",
+            "关系类别": "家庭",
+            "关系层级": "二级",
+            "关系节点标题": "某侄",
+            "上级连接线标题": "侄",
+            "关系简述": "侄子某某",
             "所属一级关系": "父母",
         },
         {
@@ -483,7 +673,11 @@ def _self_check() -> None:
 
     out, notes = sanitize_relation_records(sample, index_names={"臣11"})
     titles = {_title(r) for r in out if not _is_hub(r)}
-    assert "某祖" not in titles, titles
+    assert "某祖" in titles, titles
+    assert "某侄" not in titles, titles
+    ancestor = next(r for r in out if _title(r) == "某祖")
+    assert _edge(ancestor) == "祖", ancestor
+    assert str(ancestor.get("所属一级关系") or "") == "祖父母", ancestor
     assert "某父" in titles
     father = next(r for r in out if _title(r) == "某父" and _cat(r) == "家庭")
     assert _edge(father) == "父", father
@@ -493,6 +687,43 @@ def _self_check() -> None:
     assert len(col_people) == 10, len(col_people)
     assert any(_title(r) == "臣11" for r in col_people), [_title(r) for r in col_people]
     assert not any(_cat(r) == "好友" and _title(r) == "某父" and not _is_hub(r) for r in out)
+
+    sample_no_hub = [
+        {
+            "关联史略名称": "测试帝",
+            "关系ID": "HD-FAM-001",
+            "关系类别": "家庭",
+            "关系层级": "一级",
+            "关系节点标题": "父母",
+            "上级连接线标题": "",
+            "关系简述": "父母枢纽",
+            "节点类型": "二级分类",
+        },
+        {
+            "关联史略名称": "测试帝",
+            "关系ID": "HD-FAM-002",
+            "关系类别": "家庭",
+            "关系层级": "二级",
+            "关系节点标题": "某祖母",
+            "上级连接线标题": "祖母",
+            "关系简述": "祖母某某",
+            "所属一级关系": "父母",
+        },
+        {
+            "关联史略名称": "测试帝",
+            "关系ID": "HD-FAM-003",
+            "关系类别": "家庭",
+            "关系层级": "二级",
+            "关系节点标题": "某父",
+            "上级连接线标题": "父",
+            "关系简述": "生父",
+            "所属一级关系": "父母",
+        },
+    ]
+    out2, notes2 = sanitize_relation_records(sample_no_hub)
+    assert any(_is_hub(r) and _title(r) == "祖父母" for r in out2), notes2
+    gm = next(r for r in out2 if _title(r) == "某祖母")
+    assert _edge(gm) == "祖母" and str(gm.get("所属一级关系") or "") == "祖父母"
     print("sanitize_relations self-check OK")
     for n in notes:
         print(" ", n)

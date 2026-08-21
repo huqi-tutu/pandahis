@@ -28,3 +28,13 @@ def test_coverage_retries() -> None:
     )
     assert plan.root_cause == "COVERAGE_MISS"
     assert plan.disposition == "retry_llm"
+
+
+def test_mother_span_drop_not_legend() -> None:
+    plan = classify_translate_failure(
+        ["整段漏：母本第72–74段在成稿中对不上（锚点：谒者随何）"],
+        stage="phase2",
+        fail_count=1,
+    )
+    assert plan.root_cause == "MOTHER_SPAN_DROP"
+    assert plan.action == "phase2_splice_missing_spans"

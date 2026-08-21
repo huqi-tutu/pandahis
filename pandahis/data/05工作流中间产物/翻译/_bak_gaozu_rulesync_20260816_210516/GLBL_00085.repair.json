@@ -1,0 +1,28 @@
+{
+  "schema": "qa_repair_ticket/v1",
+  "pipeline": "translate",
+  "entry_id": "GLBL_00085",
+  "entry_name": "汉高祖",
+  "stage": "verify",
+  "fail_count": 4,
+  "errors": [
+    "第 3/7 章（b09–b12）：plan 有 2 条经典引用候选，正文直角「」仅 0 处（至少 1 处）；史料著作原文须用直角「」镶嵌（禁止只用弯引“”；忌同义破折号作业体主腔；禁止整章零「」）",
+    "第 3/7 章（b09–b12）：相对 Phase1 母本几乎逐句誊抄（去虚词 4-gram 重合 100% ≥ 95%）；须按说书人笔调重写（见声口金标），禁止原文照搬"
+  ],
+  "plan": {
+    "root_cause": "PLAN_SOURCE",
+    "disposition": "retry_llm",
+    "action": "fix_source_plan",
+    "structured_prompt": "【根因：source_plan 外部补全引用无效】\n删除不存在的 GLBL·过渡段引用；仅保留真实条目或改为采用:false。\n重跑 plan 后再 Phase2。",
+    "refine_scope": "",
+    "route_to": "",
+    "next_command": "",
+    "invalidate": [
+      "plan"
+    ],
+    "max_retries": 2,
+    "extra": {}
+  },
+  "feedback": "【根因：source_plan 外部补全引用无效】\n删除不存在的 GLBL·过渡段引用；仅保留真实条目或改为采用:false。\n重跑 plan 后再 Phase2。\n\n---\n【原始错误】\n第 3/7 章（b09–b12）：plan 有 2 条经典引用候选，正文直角「」仅 0 处（至少 1 处）；史料著作原文须用直角「」镶嵌（禁止只用弯引“”；忌同义破折号作业体主腔；禁止整章零「」）\n第 3/7 章（b09–b12）：相对 Phase1 母本几乎逐句誊抄（去虚词 4-gram 重合 100% ≥ 95%）；须按说书人笔调重写（见声口金标），禁止原文照搬",
+  "updated_at": "2026-08-16T10:07:37Z"
+}

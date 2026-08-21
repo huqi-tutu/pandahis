@@ -1,0 +1,82 @@
+{
+  "work": "04三国志",
+  "vol": "036",
+  "total_paragraphs": 19,
+  "volume_subtype": "hezhuan",
+  "derived_from": "04三国志_036_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 19,
+      "paragraph_to": 19,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "关羽",
+      "category": "武将",
+      "paragraph_from": 2,
+      "paragraph_to": 7,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "关羽字云长，本字长生，河东解人也。亡命奔涿郡。先主于乡里合徒众，而羽与张飞为之御",
+        "close_paragraph": 7,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P7"
+      }
+    },
+    {
+      "name": "张飞",
+      "category": "武将",
+      "paragraph_from": 8,
+      "paragraph_to": 10,
+      "boundary_evidence": {
+        "open_paragraph": 8,
+        "open_phrase": "张飞字益德，涿郡人也，少与关羽俱事先主。羽年长数岁，飞兄事之。先主从曹公破吕布，",
+        "close_paragraph": 10,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P8–P10"
+      }
+    },
+    {
+      "name": "马超",
+      "category": "武将",
+      "paragraph_from": 11,
+      "paragraph_to": 13,
+      "boundary_evidence": {
+        "open_paragraph": 11,
+        "open_phrase": "马超字孟起，扶风茂陵人也。父腾，灵帝末与边章、韩遂等俱起事于西州。初平三年，遂、",
+        "close_paragraph": 13,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P11–P13"
+      }
+    },
+    {
+      "name": "黄忠",
+      "category": "武将",
+      "paragraph_from": 14,
+      "paragraph_to": 14,
+      "boundary_evidence": {
+        "open_paragraph": 14,
+        "open_phrase": "黄忠字汉升，南阳人也。荆州牧刘表以为中郎将，与表从子磐共守长沙攸县。及曹公克荆州",
+        "close_paragraph": 14,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P14–P14"
+      }
+    },
+    {
+      "name": "赵云",
+      "category": "武将",
+      "paragraph_from": 15,
+      "paragraph_to": 18,
+      "boundary_evidence": {
+        "open_paragraph": 15,
+        "open_phrase": "赵云字子龙，常山真定人也。本属公孙瓒，瓒遣先主为田楷拒袁绍，云遂随从，为先主主骑",
+        "close_paragraph": 18,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P15–P18"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

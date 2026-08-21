@@ -1,0 +1,82 @@
+{
+  "work": "04三国志",
+  "vol": "028",
+  "total_paragraphs": 47,
+  "volume_subtype": "hezhuan",
+  "derived_from": "04三国志_028_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 47,
+      "paragraph_to": 47,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "王凌",
+      "category": "武将",
+      "paragraph_from": 2,
+      "paragraph_to": 4,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "王凌字彦云，太原祁人也。叔父允，为汉司徒，诛董卓。卓将李傕、郭汜等为卓报仇，入长",
+        "close_paragraph": 4,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P4"
+      }
+    },
+    {
+      "name": "毌丘俭",
+      "category": "武将",
+      "paragraph_from": 5,
+      "paragraph_to": 12,
+      "boundary_evidence": {
+        "open_paragraph": 5,
+        "open_phrase": "毌丘俭字仲恭，河东闻喜人也。父兴，黄初中为武威太守，伐叛柔服，开通河右，名次金城",
+        "close_paragraph": 12,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P5–P12"
+      }
+    },
+    {
+      "name": "诸葛诞",
+      "category": "武将",
+      "paragraph_from": 13,
+      "paragraph_to": 20,
+      "boundary_evidence": {
+        "open_paragraph": 13,
+        "open_phrase": "诸葛诞字公休，琅邪阳都人，诸葛丰后也。初以尚书郎为荥阳令，入为吏部郎。人有所属讬",
+        "close_paragraph": 20,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P13–P20"
+      }
+    },
+    {
+      "name": "邓艾",
+      "category": "武将",
+      "paragraph_from": 21,
+      "paragraph_to": 34,
+      "boundary_evidence": {
+        "open_paragraph": 21,
+        "open_phrase": "邓艾字士载，义阳棘阳人也。少孤，太祖破荆州，徙汝南，为农民养犊。年十二，随母至颍",
+        "close_paragraph": 34,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P21–P34"
+      }
+    },
+    {
+      "name": "钟会",
+      "category": "武将",
+      "paragraph_from": 35,
+      "paragraph_to": 46,
+      "boundary_evidence": {
+        "open_paragraph": 35,
+        "open_phrase": "钟会字士季，颍川长社人，太傅繇小子也。少敏惠夙成。中护军蒋济著论，谓“观其眸子，",
+        "close_paragraph": 46,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P35–P46"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

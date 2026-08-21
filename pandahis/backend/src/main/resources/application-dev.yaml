@@ -1,4 +1,4 @@
-# 本地 / --spring.profiles.active=dev 后端：与线上一致，默认关闭文明切换
+# 本地 / --spring.profiles.active=dev 后端：默认可切换全部文明，便于补数据
 histomap:
   features:
-    civ-switch-enabled: false
+    civ-switch-enabled: true

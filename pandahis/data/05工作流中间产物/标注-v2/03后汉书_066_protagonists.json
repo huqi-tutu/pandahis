@@ -1,0 +1,20 @@
+{
+  "work": "03后汉书",
+  "vol": "066",
+  "volume_name": "蔡邕列传第五十下",
+  "volume_type_guess": "列传",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "蔡邕",
+      "category": "文臣",
+      "rationale": "卷名《蔡邕列传》明确以蔡邕为单人列传主轴；蔡邕为东汉文学家、书法家、议郎，以儒学、文学、议政仕宦为主，符合文臣准入标准（行政、儒学、文学仕宦为主轴）。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

@@ -20,7 +20,7 @@ if str(_ANNOTATE) not in sys.path:
 from paths_config import histograph_paths  # noqa: E402
 
 VALID_EXCLUDE_REASONS = frozenset(
-    {"卷首标题", "太史公曰", "论赞", "赞曰", "共段总述", "世系链"}
+    {"卷首标题", "太史公曰", "论赞", "赞曰", "共段总述", "世系链", "其他"}
 )
 
 

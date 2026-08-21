@@ -1,0 +1,153 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01194",
+  "写作结构": "正史叙述见翻译详录（《汉书·苏武传》）；拓展文以史外异说与延展为主：先述《资治通鉴》对苏武事迹的编年整合（可作补充），再引《汉武故事》等杂史中的轶闻异说（legend池，仅合段补充），最后以《新序》《说苑》等汉代文献中的气节类记载作精神延展；北海牧羊细节及与李陵私交等传说按anchor纪律留白。",
+  "候选著作": [
+    {
+      "出处": "《汉书·苏武传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "苏武事迹的主要正史来源，anchor全部claims的底本",
+      "检索词": "苏武",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《资治通鉴·汉纪》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "司马光对苏武出使、被扣、归汉的编年整合，可补充时间线索",
+      "检索词": "苏武",
+      "采用": true,
+      "原文摘句": "（汉昭帝始元六年）苏武至自匈奴，以为典属国。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《汉武故事》",
+      "tier": "经注/杂史",
+      "pool": "legend",
+      "与本主题关系": "杂史笔记，载汉武帝时期宫廷轶闻，或有苏武相关传说异说",
+      "检索词": "苏武",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《新序·节士》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "刘向编撰，载历代节义之士事迹，可作气节精神之旁证",
+      "检索词": "节士",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《说苑·立节》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "刘向所辑，多载忠节故事，可延展气节主题",
+      "检索词": "立节",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《太平御览·人事部》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋代类书，辑录前代文献中苏武相关记载，可作异说汇集",
+      "检索词": "苏武",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《汉书·苏武传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "苏武事迹的主要正史来源，anchor全部claims的底本",
+      "检索词": "苏武",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《资治通鉴·汉纪》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "司马光对苏武出使、被扣、归汉的编年整合，可补充时间线索",
+      "检索词": "苏武",
+      "采用": true,
+      "原文摘句": "（汉昭帝始元六年）苏武至自匈奴，以为典属国。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《新序·节士》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "刘向编撰，载历代节义之士事迹，可作气节精神之旁证",
+      "检索词": "节士",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《说苑·立节》",
+      "tier": "先秦文献",
+      "pool": "primary",
+      "与本主题关系": "刘向所辑，多载忠节故事，可延展气节主题",
+      "检索词": "立节",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《汉武故事》",
+      "tier": "经注/杂史",
+      "pool": "legend",
+      "与本主题关系": "杂史笔记，载汉武帝时期宫廷轶闻，或有苏武相关传说异说",
+      "检索词": "苏武",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《太平御览·人事部》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋代类书，辑录前代文献中苏武相关记载，可作异说汇集",
+      "检索词": "苏武",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 4,
+    "overall": "B"
+  }
+}

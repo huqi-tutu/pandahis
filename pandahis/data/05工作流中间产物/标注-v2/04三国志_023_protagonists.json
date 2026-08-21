@@ -1,0 +1,45 @@
+{
+  "work": "04三国志",
+  "vol": "023",
+  "volume_name": "和常杨杜赵裴传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "和洽",
+      "category": "文臣",
+      "rationale": "《和常杨杜赵裴传》为魏臣合传，和洽为卷名首姓，以行政、谏议仕宦为主轴，属文臣。"
+    },
+    {
+      "name": "常林",
+      "category": "文臣",
+      "rationale": "卷名合传第二人，以地方治理与仕宦行政为主轴，属文臣。"
+    },
+    {
+      "name": "杨俊",
+      "category": "文臣",
+      "rationale": "卷名合传第三人，以举荐人才、地方治理为主轴，属文臣。"
+    },
+    {
+      "name": "杜袭",
+      "category": "文臣",
+      "rationale": "卷名合传第四人，以谋略、行政仕宦为主轴，属文臣。"
+    },
+    {
+      "name": "赵俨",
+      "category": "文臣",
+      "rationale": "卷名合传第五人，以军务参赞、行政协调为主轴，属文臣。"
+    },
+    {
+      "name": "裴潜",
+      "category": "文臣",
+      "rationale": "卷名合传末人，以地方治理、行政仕宦为主轴，属文臣。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "评曰",
+    "其他"
+  ]
+}

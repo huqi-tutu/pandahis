@@ -36,3 +36,6 @@ deploy/_tmp_assets/
 
 # Large local archives (do not push)
 *.zip
+
+# Temp images at repo root (hash-named downloads, keep out of git)
+/*.png

@@ -1,0 +1,38 @@
+{
+  "work": "03后汉书",
+  "vol": "066",
+  "total_paragraphs": 42,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 41,
+      "paragraph_to": 41,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 42,
+      "paragraph_to": 42,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "蔡邕",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 40,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "蔡邕字伯喈，陈留圉人也。六世祖勋，好黄、老，平帝时为眉阝令。王莽初，授以厌戎连率",
+        "close_paragraph": 40,
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

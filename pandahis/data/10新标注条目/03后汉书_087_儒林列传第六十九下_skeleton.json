@@ -1,0 +1,522 @@
+{
+  "volume": "儒林列传第六十九下",
+  "source_file": "03后汉书_087_儒林列传第六十九下.txt",
+  "total_paragraphs": 72,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 3,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 4,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "包咸",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "包咸",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "包咸",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "包咸",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 10,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 11,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 12,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 13,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 14,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 15,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 16,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 17,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 18,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 19,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 20,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 21,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 22,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 23,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 24,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 25,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "赵晔",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "赵晔",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "卫宏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "卫宏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "卫宏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 33,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 34,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 35,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 36,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 37,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "丁恭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 40,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 41,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 42,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 43,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 44,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 45,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 46,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 47,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 48,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 49,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 50,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 51,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 52,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 53,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 54,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 55,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 56,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 57,
+      "owners": [
+        {
+          "name": "何休",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 58,
+      "owners": [
+        {
+          "name": "何休",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 59,
+      "owners": [
+        {
+          "name": "何休",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 60,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 61,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 62,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 63,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 64,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 65,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 66,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 67,
+      "owners": [
+        {
+          "name": "许慎",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 68,
+      "owners": [
+        {
+          "name": "许慎",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 69,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 70,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 71,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 72,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HOUHANSHU_087_01",
+      "史略名称": "包咸",
+      "史略简介": "包咸",
+      "原文字句": "包咸字子良，会稽曲阿人也。少为诸生，受业长安，师事博士右师细君，习《鲁诗》《论语》。王莽末，去归乡里，于东海界为赤眉贼所得，遂见拘执。十余日，咸晨夜诵经自若，贼异而遣之。因住东海，立精舍讲授。光武即位，乃归乡里。太守黄谠署户曹史，欲召咸入授其子。咸曰：“礼有来学，而无往教。”谠遂遣子师之。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷87·儒林列传第六十九下》",
+      "paragraphs": [
+        {
+          "volume": "儒林列传第六十九下",
+          "paragraph_from": 5,
+          "paragraph_to": 8
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_087_02",
+      "史略名称": "赵晔",
+      "史略简介": "赵晔",
+      "原文字句": "赵晔字长君，会稽山阴人也。少尝为县吏，奉檄迎督邮，晔耻于斯役，遂弃车马去。到犍为资中，诣杜抚受《韩诗》，究竟其术。积二十年，绝问不还，家为发丧制服。抚卒乃归。州召补从事，不就。举有道。卒于家。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷87·儒林列传第六十九下》",
+      "paragraphs": [
+        {
+          "volume": "儒林列传第六十九下",
+          "paragraph_from": 26,
+          "paragraph_to": 27
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_087_03",
+      "史略名称": "卫宏",
+      "史略简介": "卫宏",
+      "原文字句": "卫宏字敬仲，东海人也。少与河南郑兴俱好古学。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷87·儒林列传第六十九下》",
+      "paragraphs": [
+        {
+          "volume": "儒林列传第六十九下",
+          "paragraph_from": 29,
+          "paragraph_to": 31
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_087_04",
+      "史略名称": "丁恭",
+      "史略简介": "丁恭",
+      "原文字句": "丁恭字子然，山阳东缗人也。习《公羊严氏春秋》。恭学义精明，教授常数百人，州郡请召不应。建武初，为谏议大夫、博士，封关内侯。十一年，迁少府。诸生自远方至者，著录数千人，当世称为大儒。太常楼望、侍中承宫、长水校尉樊儵等皆受业于恭。二十年，拜侍中祭酒、骑都尉，与侍中刘昆俱在光武左右，每事谘访焉。卒于官。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷87·儒林列传第六十九下》",
+      "paragraphs": [
+        {
+          "volume": "儒林列传第六十九下",
+          "paragraph_from": 38,
+          "paragraph_to": 38
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_087_05",
+      "史略名称": "何休",
+      "史略简介": "何休",
+      "原文字句": "何休字邵公，任城樊人也。父豹，少府。休为人质朴讷口，而雅有心思，精研《六经》，世儒无及者。以列卿子诏拜郎中，非其好也，辞疾而去。不仕州郡。进退必以礼。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷87·儒林列传第六十九下》",
+      "paragraphs": [
+        {
+          "volume": "儒林列传第六十九下",
+          "paragraph_from": 57,
+          "paragraph_to": 59
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_087_06",
+      "史略名称": "许慎",
+      "史略简介": "许慎",
+      "原文字句": "许慎字叔重，汝南召陵人也。性淳笃，少博学经籍，马融常推敬之，时人为之语曰：“《五经》无双许叔重。”为郡功曹，举孝廉，再迁除洨长。卒于家。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷87·儒林列传第六十九下》",
+      "paragraphs": [
+        {
+          "volume": "儒林列传第六十九下",
+          "paragraph_from": 67,
+          "paragraph_to": 68
+        }
+      ]
+    }
+  ]
+}

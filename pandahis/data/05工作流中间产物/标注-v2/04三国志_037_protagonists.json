@@ -1,0 +1,25 @@
+{
+  "work": "04三国志",
+  "vol": "037",
+  "volume_name": "庞统法正传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "庞统",
+      "category": "文臣",
+      "rationale": "卷名《庞统法正传》以庞统为合传首列人物，庞统为刘备帐下谋士，官至军师中郎将，以谋略辅政为主轴，属文臣。"
+    },
+    {
+      "name": "法正",
+      "category": "文臣",
+      "rationale": "卷名《庞统法正传》以法正为合传次列人物，法正为刘备谋主，官至尚书令、护军将军，以出谋划策、辅佐刘备取蜀为主轴，属文臣。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "schema": "qa_repair_ticket/v1",
+  "pipeline": "translate",
+  "entry_id": "GLBL_00084",
+  "entry_name": "汉武帝",
+  "stage": "verify",
+  "fail_count": 8,
+  "errors": [
+    "Phase5: 复检未通过"
+  ],
+  "plan": {
+    "root_cause": "RETRY_EXHAUSTED",
+    "disposition": "retry_llm",
+    "action": "generic_retry",
+    "structured_prompt": "【已多次重试，须换写法】\n勿重复上一轮相同表述；逐项对照下方原始错误修正。\nPhase5: 复检未通过",
+    "refine_scope": "",
+    "route_to": "",
+    "next_command": "",
+    "invalidate": [],
+    "max_retries": 5,
+    "extra": {}
+  },
+  "feedback": "【已多次重试，须换写法】\n勿重复上一轮相同表述；逐项对照下方原始错误修正。\nPhase5: 复检未通过\n\n---\n【原始错误】\nPhase5: 复检未通过",
+  "updated_at": "2026-08-17T15:21:18Z"
+}

@@ -10,7 +10,7 @@ const { trySilentWxLogin } = require('../../native-utils/wx-auth.js')
 const { collapsedForCiv, hasRestorableViewport, mergePersistPayload, mergeRemoteHomeState, stripViewportFields, updateCollapsedForCiv } = require('../../native-utils/home-state.js')
 const { mergeRemoteLoadResult, isViewportReadCurrent } = require('../../native-utils/home-state-coordinator.js')
 const { createRemoteStateSaveQueue } = require('../../native-utils/remote-state-save-queue.js')
-const { buildNavFromRows, findActiveNavIndex, invalidateHomeEmperorCountCache } = require('../../native-utils/matrix/dynasty-nav-data.js')
+const { buildNavFromRows, findActiveNavIndex, invalidateHomeEmperorCountCache, calcMaxScrollPx, resolveNavSnapTopPx } = require('../../native-utils/matrix/dynasty-nav-data.js')
 const {
   CIV_CODE_BY_SLUG,
   CIV_SLUG_BY_CODE,
@@ -315,6 +315,30 @@ function scrollTopPxForRow(row, ratio, insetPx) {
   return Math.max(0, Math.round(row.y * (ratio || 0.5)) - inset)
 }
 
+function pageMaxScrollPx(page) {
+  const data = page && page.data ? page.data : {}
+  return calcMaxScrollPx(
+    data.matrixTotalH,
+    data.matrixScrollBottomPad,
+    page && page._ratio ? page._ratio : 0.5,
+    data.matrixHeight
+  )
+}
+
+function pageNavSnapCtx(page) {
+  const data = page && page.data ? page.data : {}
+  return {
+    ratio: page && page._ratio ? page._ratio : 0.5,
+    matrixBlocks: data.matrixBlocks || [],
+    navItems: data.navItems || [],
+    matrixRows: data.matrixRows || [],
+    matrixTotalH: data.matrixTotalH || 0,
+    matrixScrollBottomPad: data.matrixScrollBottomPad || 0,
+    matrixHeight: data.matrixHeight || 0,
+    scrollInsetPx: 8,
+  }
+}
+
 /** 收展后 scrollTop：保持点击行在视口中的相对位置不变 */
 function resolveToggleTargetScroll(viewport, clickedRow, anchorRow, ratio, maxScroll) {
   const r = ratio || 0.5
@@ -579,6 +603,7 @@ Page({
     headerPadPx:       88,
     pageTopPadPx:      88,
     expandedDynasties: {},
+    matrixReady:       false,
     matrixDataLoading: true,
     civPickerOpen:     false,
     civPickerItems:    CIV_TABS.map((t, i) => Object.assign({}, t, { realIdx: i })),
@@ -672,6 +697,7 @@ Page({
     }, buildTabLayerStyles(0), pickerMetrics))
 
     this._tabAlpha = 0
+    this._skeletonShownAt = Date.now()
     this._preloadCivImages()
     this._lastScrollTop = this._lastScrollTop || 0
     this._skipShowRefresh = true
@@ -878,6 +904,28 @@ Page({
     }
   },
 
+  /** 首屏骨架最短展示，避免本地数据过快导致闪一下 */
+  _scheduleMatrixReveal() {
+    if (this.data.matrixReady) return
+    if (this._matrixRevealTimer) {
+      clearTimeout(this._matrixRevealTimer)
+      this._matrixRevealTimer = null
+    }
+    const minMs = 180
+    const elapsed = Date.now() - (this._skeletonShownAt || Date.now())
+    const wait = Math.max(0, minMs - elapsed)
+    const reveal = () => {
+      this._matrixRevealTimer = null
+      if (this._homeStateDisposed || this.data.matrixReady) return
+      this.setData({ matrixReady: true })
+    }
+    if (wait === 0) {
+      reveal()
+      return
+    }
+    this._matrixRevealTimer = setTimeout(reveal, wait)
+  },
+
   /** 构建并注入矩阵行（失败时降级为收起态） */
   _loadMatrix(civId, expandedDynasties, onReady, opts) {
     const done = typeof onReady === 'function' ? onReady : null
@@ -909,6 +957,7 @@ Page({
       }
       this.setData(patch, () => {
         this._cacheNavRect()
+        this._scheduleMatrixReveal()
         if (done) done()
       })
     } catch (err) {
@@ -935,10 +984,12 @@ Page({
         }
         this.setData(fallbackPatch, () => {
           this._cacheNavRect()
+          this._scheduleMatrixReveal()
           if (done) done()
         })
       } catch (err2) {
         console.error('[home-matrix] fallback load failed', err2)
+        this._scheduleMatrixReveal()
         if (done) done()
       }
     }
@@ -1000,7 +1051,7 @@ Page({
     const navItems = this.data.navItems || []
     const matrixRows = this.data.matrixRows || []
     const ratio = this._ratio || 0.5
-    const maxScroll = Math.max(0, this.data.matrixTotalH * ratio - this.data.matrixHeight)
+    const maxScroll = pageMaxScrollPx(this)
     let navIdx = -1
     let navItem = null
     let scrollTop = 0
@@ -1041,8 +1092,10 @@ Page({
     scrollTop = Math.max(0, Math.min(maxScroll, scrollTop))
     if (navItem && navItem.key) {
       this._lastDynastyKey = navItem.key
+      this._navPinnedKey = navItem.key
     } else if (normalized.lastDynastyKey) {
       this._lastDynastyKey = normalized.lastDynastyKey
+      this._navPinnedKey = normalized.lastDynastyKey
     }
     if (navIdx < 0 && navItem) {
       navIdx = findNavIndexByDynastyKey(navItem.key, navItems)
@@ -1133,18 +1186,10 @@ Page({
   _scrollToDynastyStart(dynastyKey) {
     const key = String(dynastyKey || '').trim()
     if (!key) return
-    const ratio = this._ratio || 0.5
-    const rawTop = resolveDynastyScrollTopPx(key, {
-      ratio,
-      matrixBlocks: this.data.matrixBlocks || [],
-      navItems: this.data.navItems || [],
-      matrixRows: this.data.matrixRows || [],
-    })
-    if (rawTop <= 0) return
-    const maxScroll = Math.max(0, this.data.matrixTotalH * ratio - this.data.matrixHeight)
-    const scrollTop = Math.max(0, Math.min(maxScroll, rawTop))
+    const scrollTop = resolveNavSnapTopPx(key, pageNavSnapCtx(this))
     const navIdx = findNavIndexByDynastyKey(key, this.data.navItems || [])
     this._lastDynastyKey = key
+    this._navPinnedKey = key
     if (navIdx >= 0) this._lastNavActiveIdx = navIdx
     this._applyProgrammaticScroll({
       scrollTop,
@@ -1227,7 +1272,12 @@ Page({
 
   /** 收展：更新矩阵并恢复 scroll，保持点击行在视口中的位置 */
   _applyMatrixTogglePreserveViewport(matrixPatch, viewport, clickedRow, anchorRow, navIdx, ratio) {
-    const maxScroll = Math.max(0, (matrixPatch.matrixTotalH || 0) * ratio - this.data.matrixHeight)
+    const maxScroll = calcMaxScrollPx(
+      matrixPatch.matrixTotalH,
+      this.data.matrixScrollBottomPad,
+      ratio,
+      this.data.matrixHeight
+    )
     const targetScroll = resolveToggleTargetScroll(viewport, clickedRow, anchorRow, ratio, maxScroll)
     const resolvedNavIdx = navIdx >= 0 ? navIdx : this.data.navActiveIdx
     const nudgeTop = targetScroll > 0 ? targetScroll + 1 : 1
@@ -1293,7 +1343,14 @@ Page({
 
   // ─── 导航高亮更新 ──────────────────────────────────────────────
   _updateNavHighlight(scrollTopPx) {
-    const activeIdx = findActiveNavIndex(scrollTopPx, this.data.navItems)
+    const maxScroll = pageMaxScrollPx(this)
+    if (this._navPinnedKey && scrollTopPx < maxScroll - 16) {
+      this._navPinnedKey = ''
+    }
+    const activeIdx = findActiveNavIndex(scrollTopPx, this.data.navItems, undefined, {
+      pinnedKey: this._navPinnedKey,
+      maxScroll,
+    })
     if (activeIdx !== this.data.navActiveIdx) {
       this.setData({ navActiveIdx: activeIdx })
     }
@@ -1445,6 +1502,7 @@ Page({
 
   onUnload() {
     if (this._matrixLoadTimer) clearTimeout(this._matrixLoadTimer)
+    if (this._matrixRevealTimer) clearTimeout(this._matrixRevealTimer)
     if (this._civSwitchTimer) clearTimeout(this._civSwitchTimer)
     if (this._homeStateSaveTimer) clearTimeout(this._homeStateSaveTimer)
     if (this._homeStateScrollTimer) clearTimeout(this._homeStateScrollTimer)
@@ -1792,7 +1850,7 @@ Page({
       if (item && item.key) {
         this._lastDynastyKey = item.key
         this._lastNavActiveIdx = idx
-        if (item.yPx >= 0) this._lastScrollTop = item.yPx
+        this._navPinnedKey = item.key
         this._persistHomeViewportState(true)
       }
       this._navLastActiveIdx = -1
@@ -1809,9 +1867,9 @@ Page({
     if (!touch) return
     var relY = touch.clientY - this._navRect.top
     var ratio = Math.max(0, Math.min(1, relY / this._navRect.height))
-    var totalHPx = this.data.matrixTotalH * this._ratio
+    var totalHPx = (this.data.matrixTotalH + (this.data.matrixScrollBottomPad || 0)) * this._ratio
     var scrollTop = Math.round(ratio * totalHPx)
-    var maxScroll = Math.max(0, totalHPx - this.data.matrixHeight)
+    var maxScroll = pageMaxScrollPx(this)
     scrollTop = Math.max(0, Math.min(maxScroll, scrollTop))
     this.setData({ matrixScrollTop: scrollTop, navDragActive: true })
     // 短暂激活后释放（利用 scroll-top 完成一次性跳转）
@@ -1838,13 +1896,11 @@ Page({
     var idx = Math.round(ratio * (navItems.length - 1))
     idx = Math.max(0, Math.min(navItems.length - 1, idx))
     var item = navItems[idx]
-    if (!item || item.yPx < 0) return
-    // 如果朝代没有变化则不处理（每次只切换一个朝代）
+    if (!item) return
     if (idx === this._navLastActiveIdx && this._navLastActiveIdx >= 0) return
     this._navLastActiveIdx = idx
-    // 直接 snap 到该朝代的 yPx 位置（第一个卡片在屏幕顶部）
-    var maxScroll = Math.max(0, this.data.matrixTotalH * this._ratio - this.data.matrixHeight)
-    var snapTop = Math.max(0, Math.min(maxScroll, item.yPx))
+    this._navPinnedKey = item.key
+    var snapTop = resolveNavSnapTopPx(item.key, pageNavSnapCtx(this))
     this.setData({
       matrixScrollTop: snapTop,
       navDragActive: true,
@@ -1852,7 +1908,6 @@ Page({
     this._lastScrollTop = snapTop
     this._lastDynastyKey = item.key
     this._lastNavActiveIdx = idx
-    // 更新高亮和 HUD
     this.setData({ navActiveIdx: idx })
     this._showNavHud(navItems[idx])
     this._persistHomeViewportState(true)

@@ -1,0 +1,107 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01193",
+  "写作结构": "正史叙述见翻译详录（《史记·卫将军骠骑列传》），拓展文写史外异说与延展：以《汉书·卫青霍去病传》为对照补充（但属正史，不摘句），可引《资治通鉴·汉纪》对元朔年间战事的编年记载（B档），并酌情提及《西汉年纪》等后世编年著作的异说；无可靠史外细节，叙事性留白。",
+  "候选著作": [
+    {
+      "出处": "《史记·卫将军骠骑列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载张次公从卫青击匈奴、封岸头侯等事",
+      "检索词": "张次公",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《汉书·卫青霍去病传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "与史记互证，补充张次公军功与封侯的官方记载",
+      "检索词": "张次公",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《资治通鉴·汉纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "编年体综述元朔年间卫青出击匈奴事，可提供战役时间背景，但非原始史料",
+      "检索词": "卫青 匈奴",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《西汉年纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋代王益之编年西汉史，可能对张次公封侯时间有异说，但属后世综述",
+      "检索词": "张次公",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·卫将军骠骑列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，记载张次公从卫青击匈奴、封岸头侯等事",
+      "检索词": "张次公",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《汉书·卫青霍去病传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "与史记互证，补充张次公军功与封侯的官方记载",
+      "检索词": "张次公",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《资治通鉴·汉纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "编年体综述元朔年间卫青出击匈奴事，可提供战役时间背景，但非原始史料",
+      "检索词": "卫青 匈奴",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《西汉年纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋代王益之编年西汉史，可能对张次公封侯时间有异说，但属后世综述",
+      "检索词": "张次公",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 1,
+    "C_excluded": 3,
+    "overall": "B"
+  }
+}

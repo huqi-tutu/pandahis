@@ -1,0 +1,40 @@
+{
+  "work": "04三国志",
+  "vol": "059",
+  "volume_name": "吴主五子传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "孙登",
+      "category": "宗戚",
+      "rationale": "卷名『吴主五子传』，孙登为吴主孙权长子，属同姓宗室藩王/宗支，非天下共主，故归宗戚。"
+    },
+    {
+      "name": "孙虑",
+      "category": "宗戚",
+      "rationale": "卷名『吴主五子传』，孙虑为孙权次子，属同姓宗室宗支，非天下共主，故归宗戚。"
+    },
+    {
+      "name": "孙和",
+      "category": "宗戚",
+      "rationale": "卷名『吴主五子传』，孙和为孙权第三子，属同姓宗室宗支，非天下共主，故归宗戚。"
+    },
+    {
+      "name": "孙霸",
+      "category": "宗戚",
+      "rationale": "卷名『吴主五子传』，孙霸为孙权第四子，属同姓宗室宗支，非天下共主，故归宗戚。"
+    },
+    {
+      "name": "孙奋",
+      "category": "宗戚",
+      "rationale": "卷名『吴主五子传』，孙奋为孙权第五子，属同姓宗室宗支，非天下共主，故归宗戚。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

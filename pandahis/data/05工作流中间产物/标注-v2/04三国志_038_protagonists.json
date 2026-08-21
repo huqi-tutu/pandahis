@@ -1,0 +1,45 @@
+{
+  "work": "04三国志",
+  "vol": "038",
+  "volume_name": "许麋孙简伊秦传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "许靖",
+      "category": "文臣",
+      "rationale": "卷名首姓，蜀汉重臣，以名士清议、仕宦行政为主轴，属文臣列传合传主人公。"
+    },
+    {
+      "name": "麋竺",
+      "category": "文臣",
+      "rationale": "卷名第二姓，蜀汉开国功臣，以资财助刘备、仕宦行政为主轴，属文臣列传合传主人公。"
+    },
+    {
+      "name": "孙乾",
+      "category": "文臣",
+      "rationale": "卷名第三姓，蜀汉谋士，以外交、行政仕宦为主轴，属文臣列传合传主人公。"
+    },
+    {
+      "name": "简雍",
+      "category": "文臣",
+      "rationale": "卷名第四姓，蜀汉谋士，以言谏、行政仕宦为主轴，属文臣列传合传主人公。"
+    },
+    {
+      "name": "伊籍",
+      "category": "文臣",
+      "rationale": "卷名第五姓，蜀汉谋士，以外交、行政仕宦为主轴，属文臣列传合传主人公。"
+    },
+    {
+      "name": "秦宓",
+      "category": "文臣",
+      "rationale": "卷名末姓，蜀汉名士，以才学、言辩、仕宦为主轴，属文臣列传合传主人公。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

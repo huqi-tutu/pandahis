@@ -7,7 +7,10 @@
 
 .page {
   box-sizing: border-box;
-  padding: 0 32rpx calc(48rpx + env(safe-area-inset-bottom));
+  /* 勿用 padding 简写：会盖掉内联 pageTopPadPx */
+  padding-left: 32rpx;
+  padding-right: 32rpx;
+  padding-bottom: calc(48rpx + env(safe-area-inset-bottom));
 }
 
 /* ─── Hero ─── */

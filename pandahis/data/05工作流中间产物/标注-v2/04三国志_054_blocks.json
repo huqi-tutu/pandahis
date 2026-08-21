@@ -1,0 +1,63 @@
+{
+  "work": "04三国志",
+  "vol": "054",
+  "total_paragraphs": 41,
+  "volume_subtype": "hezhuan",
+  "derived_from": "04三国志_054_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 40,
+      "paragraph_to": 40,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 41,
+      "paragraph_to": 41,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "周瑜",
+      "category": "武将",
+      "paragraph_from": 2,
+      "paragraph_to": 12,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "周瑜字公瑾，庐江舒人也。从祖父景，景子忠，皆为汉太尉。父异，洛阳令。",
+        "close_paragraph": 12,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P12"
+      }
+    },
+    {
+      "name": "鲁肃",
+      "category": "文臣",
+      "paragraph_from": 13,
+      "paragraph_to": 24,
+      "boundary_evidence": {
+        "open_paragraph": 13,
+        "open_phrase": "鲁肃字子敬，临淮东城人也。生而失父，与祖母居。家富于财，性好施与。尔时天下已乱，",
+        "close_paragraph": 24,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P13–P24"
+      }
+    },
+    {
+      "name": "吕蒙",
+      "category": "武将",
+      "paragraph_from": 25,
+      "paragraph_to": 39,
+      "boundary_evidence": {
+        "open_paragraph": 25,
+        "open_phrase": "吕蒙字子明，汝南富陂人也。少南渡，依姊夫邓当。当为孙策将，数讨山越。蒙年十五六，",
+        "close_paragraph": 39,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P25–P39"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

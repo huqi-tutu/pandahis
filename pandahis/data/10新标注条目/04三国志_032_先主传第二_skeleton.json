@@ -1,0 +1,275 @@
+{
+  "volume": "先主传",
+  "source_file": "04三国志_032_先主传第二.txt",
+  "total_paragraphs": 28,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "single",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "蜀昭烈帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "蜀昭烈帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "蜀昭烈帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "蜀昭烈帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "蜀昭烈帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "蜀昭烈帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "蜀昭烈帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "蜀昭烈帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "蜀昭烈帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "蜀昭烈帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "蜀昭烈帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "蜀昭烈帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "蜀昭烈帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "蜀昭烈帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "蜀昭烈帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "蜀昭烈帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "蜀昭烈帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "蜀昭烈帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "蜀昭烈帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "蜀昭烈帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "蜀昭烈帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "蜀昭烈帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "蜀昭烈帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "蜀昭烈帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "蜀昭烈帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "蜀昭烈帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "蜀昭烈帝",
+          "category": "君王"
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SANGUOZHI_032_01",
+      "史略名称": "蜀昭烈帝",
+      "史略简介": "蜀昭烈帝",
+      "原文字句": "先主姓刘，讳备，字玄德，涿郡涿县人，汉景帝子中山靖王胜之后也。胜子贞，元狩六年封涿县陆城亭侯。坐酎金失侯，因家焉。先主祖雄，父弘，世仕州郡。雄举孝廉，官至东郡范令。",
+      "史略分类": "君王",
+      "主要史料出处": "《04三国志·卷32·先主传》",
+      "paragraphs": [
+        {
+          "volume": "先主传",
+          "paragraph_from": 2,
+          "paragraph_to": 28
+        }
+      ]
+    }
+  ]
+}

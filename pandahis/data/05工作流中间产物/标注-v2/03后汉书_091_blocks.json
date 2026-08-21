@@ -1,0 +1,107 @@
+{
+  "work": "03后汉书",
+  "vol": "091",
+  "total_paragraphs": 53,
+  "volume_subtype": "hezhuan",
+  "derived_from": "03后汉书_091_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 2,
+      "paragraph_to": 5,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 6,
+      "paragraph_to": 9,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 14,
+      "paragraph_to": 18,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 24,
+      "paragraph_to": 28,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 34,
+      "paragraph_to": 42,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 53,
+      "paragraph_to": 53,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "郭宪",
+      "category": "庶众",
+      "paragraph_from": 10,
+      "paragraph_to": 13,
+      "boundary_evidence": {
+        "open_paragraph": 10,
+        "open_phrase": "郭宪字子横，汝南宋人也。少师事东海王仲子。时，王莽为大司马，召仲子。仲子欲往。宪",
+        "close_paragraph": 13,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P10–P13"
+      }
+    },
+    {
+      "name": "王乔",
+      "category": "庶众",
+      "paragraph_from": 19,
+      "paragraph_to": 19,
+      "boundary_evidence": {
+        "open_paragraph": 19,
+        "open_phrase": "王乔者，河东人也。显宗世，为叶令。乔有神术，每月朔望，常自县诣台朝。帝怪其来数，",
+        "close_paragraph": 19,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P19–P19"
+      }
+    },
+    {
+      "name": "谢夷吾",
+      "category": "庶众",
+      "paragraph_from": 20,
+      "paragraph_to": 23,
+      "boundary_evidence": {
+        "open_paragraph": 20,
+        "open_phrase": "谢夷吾字尧卿，会稽山阴人也。少为郡吏，学风角占候。太守第五伦擢为督邮。时，乌程长",
+        "close_paragraph": 23,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P20–P23"
+      }
+    },
+    {
+      "name": "李郃",
+      "category": "庶众",
+      "paragraph_from": 29,
+      "paragraph_to": 33,
+      "boundary_evidence": {
+        "open_paragraph": 29,
+        "open_phrase": "李郃字孟节，汉中南郑人也。父颉，以儒学称，官至博士。郃袭父业，游太学，通《五经》",
+        "close_paragraph": 33,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P29–P33"
+      }
+    },
+    {
+      "name": "樊英",
+      "category": "庶众",
+      "paragraph_from": 43,
+      "paragraph_to": 52,
+      "boundary_evidence": {
+        "open_paragraph": 43,
+        "open_phrase": "樊英字季齐，南阳鲁阳人也。少受业三辅，习《京氏易》，兼明《五经》。又善风角、星算",
+        "close_paragraph": 52,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P43–P52"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

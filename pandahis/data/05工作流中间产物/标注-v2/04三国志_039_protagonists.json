@@ -1,0 +1,45 @@
+{
+  "work": "04三国志",
+  "vol": "039",
+  "volume_name": "董刘马陈董吕传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "董和",
+      "category": "文臣",
+      "rationale": "卷名首姓人物，蜀汉官员，以行政理政为主轴，属文臣。"
+    },
+    {
+      "name": "刘巴",
+      "category": "文臣",
+      "rationale": "卷名第二姓人物，蜀汉重臣，以文治谋略为主轴，属文臣。"
+    },
+    {
+      "name": "马良",
+      "category": "文臣",
+      "rationale": "卷名第三姓人物，蜀汉名臣，以文才辅政为主轴，属文臣。"
+    },
+    {
+      "name": "陈震",
+      "category": "文臣",
+      "rationale": "卷名第四姓人物，蜀汉官员，以外交使节为主轴，属文臣。"
+    },
+    {
+      "name": "董允",
+      "category": "文臣",
+      "rationale": "卷名第五姓人物，蜀汉重臣，以匡政直谏为主轴，属文臣。"
+    },
+    {
+      "name": "吕乂",
+      "category": "文臣",
+      "rationale": "卷名末姓人物，蜀汉官员，以行政理政为主轴，属文臣。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

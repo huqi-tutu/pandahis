@@ -16,17 +16,12 @@
   min-height: 100vh;
 }
 
-.dynasty-state {
-  padding: 48rpx 32rpx;
-  text-align: center;
-  box-sizing: border-box;
-}
-
 .dynasty-state-text {
   display: block;
   font-size: 28rpx;
   line-height: 1.6;
   color: #6C757D;
+  text-align: center;
 }
 
 .dynasty-state-actions {
@@ -1842,11 +1837,11 @@ $cat-index-w: 28rpx;
   color: rgba(74, 63, 63, 0.52);
 }
 
-/* ── 简介弹层 ── */
+/* ── 简介弹层（content-sheet 统一壳） ── */
 .ud-modal {
   position: fixed;
   inset: 0;
-  background: rgba(36, 25, 23, 0.50);
+  background: rgba($theme-primary, 0.50);
   display: flex;
   align-items: flex-end;
   z-index: 200;
@@ -1854,26 +1849,53 @@ $cat-index-w: 28rpx;
 
 .ud-modal-card {
   width: 100%;
-  background: #F8F6F2;
+  background: $page-bg;
   border-radius: 24rpx 24rpx 0 0;
   padding: 28rpx 28rpx calc(28rpx + env(safe-area-inset-bottom));
   box-sizing: border-box;
+  max-height: 78vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: $shadow-elevated;
+  animation: contentSheetSlideUp 0.22s ease;
+}
+
+@keyframes contentSheetSlideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
 }
 
 .ud-modal-header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 16rpx;
   margin-bottom: 24rpx;
+  flex-shrink: 0;
+}
+
+.ud-modal-title-wrap {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6rpx;
 }
 
 .ud-modal-title {
-  flex: 1;
-  min-width: 0;
+  font-family: $font-family-title;
   font-size: 34rpx;
   font-weight: 700;
-  color: #4A3F3F;
+  color: $theme-primary;
+  line-height: 1.3;
+}
+
+.ud-modal-source {
+  font-size: 24rpx;
+  font-weight: 400;
+  color: $text-caption;
+  line-height: 1.4;
 }
 
 .ud-modal-close {
@@ -1881,7 +1903,7 @@ $cat-index-w: 28rpx;
   width: 56rpx;
   height: 56rpx;
   border-radius: 50%;
-  background: rgba(74, 63, 63, 0.06);
+  background: rgba($theme-primary, 0.06);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1890,11 +1912,15 @@ $cat-index-w: 28rpx;
 .ud-modal-close-icon {
   font-size: 28rpx;
   line-height: 1;
-  color: #6A6A6A;
+  color: $text-body;
 }
 
 .ud-modal-body {
-  max-height: 60vh;
+  flex: 1;
+  min-height: 0;
+  height: 0;
+  max-height: 62vh;
+  overflow: hidden;
 }
 
 .ud-modal-para {
@@ -1903,7 +1929,7 @@ $cat-index-w: 28rpx;
   line-height: 1.65;
   color: rgba(36, 25, 23, 0.85);
   margin-bottom: 24rpx;
-  font-family: 'Noto Serif SC', 'Songti SC', serif;
+  font-family: $font-family-title;
 }
 
 .ud-modal-para:last-child {

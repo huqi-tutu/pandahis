@@ -1,0 +1,529 @@
+{
+  "volume": "儒林列传第六十九上",
+  "source_file": "03后汉书_086_儒林列传第六十九上.txt",
+  "total_paragraphs": 63,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 3,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 4,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 5,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 6,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 7,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "刘昆",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "刘昆",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "刘昆",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "刘昆",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "刘昆",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 14,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 15,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "杨政",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "杨政",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "杨政",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 20,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "戴凭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "戴凭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "戴凭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 25,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 26,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 27,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "欧阳歙",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "欧阳歙",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "欧阳歙",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "欧阳歙",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 33,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 34,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 35,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 36,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 37,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 38,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 39,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 40,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "尹敏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "尹敏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "尹敏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "尹敏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "尹敏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 47,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 48,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 49,
+      "owners": [
+        {
+          "name": "孔僖",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 50,
+      "owners": [
+        {
+          "name": "孔僖",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 51,
+      "owners": [
+        {
+          "name": "孔僖",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 52,
+      "owners": [
+        {
+          "name": "孔僖",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 53,
+      "owners": [
+        {
+          "name": "孔僖",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 54,
+      "owners": [
+        {
+          "name": "孔僖",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 55,
+      "owners": [
+        {
+          "name": "孔僖",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 56,
+      "owners": [
+        {
+          "name": "孔僖",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 57,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 58,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 59,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 60,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 61,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 62,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 63,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HOUHANSHU_086_01",
+      "史略名称": "刘昆",
+      "史略简介": "刘昆",
+      "原文字句": "刘昆字桓公，陈留东昏人，梁孝王之胤也。少习容礼。平帝时，受《施氏易》于沛人戴宾。能弹雅琴，知清角之操。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷86·儒林列传第六十九上》",
+      "paragraphs": [
+        {
+          "volume": "儒林列传第六十九上",
+          "paragraph_from": 8,
+          "paragraph_to": 12
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_086_02",
+      "史略名称": "杨政",
+      "史略简介": "杨政",
+      "原文字句": "杨政字子行，京兆人也。少好学，从代郡范升受《梁丘易》，善说经书。京师为之语曰：“说经铿铿杨子行。”教授数百人。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷86·儒林列传第六十九上》",
+      "paragraphs": [
+        {
+          "volume": "儒林列传第六十九上",
+          "paragraph_from": 16,
+          "paragraph_to": 18
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_086_03",
+      "史略名称": "戴凭",
+      "史略简介": "戴凭",
+      "原文字句": "戴凭字次仲，汝南平舆人也。习《京氏易》。年十六，郡举明经，征试博士，拜郎中。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷86·儒林列传第六十九上》",
+      "paragraphs": [
+        {
+          "volume": "儒林列传第六十九上",
+          "paragraph_from": 21,
+          "paragraph_to": 23
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_086_04",
+      "史略名称": "欧阳歙",
+      "史略简介": "欧阳歙",
+      "原文字句": "欧阳歙字正思，乐安千乘人也。自欧阳生传《伏生尚书》，至歙八世，皆为博士。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷86·儒林列传第六十九上》",
+      "paragraphs": [
+        {
+          "volume": "儒林列传第六十九上",
+          "paragraph_from": 28,
+          "paragraph_to": 31
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_086_05",
+      "史略名称": "尹敏",
+      "史略简介": "尹敏",
+      "原文字句": "尹敏字幼季，南阳堵阳人也。少为诸生。初习《欧阳尚书》，后受《古文》，兼善《毛诗》《谷梁》《左氏春秋》。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷86·儒林列传第六十九上》",
+      "paragraphs": [
+        {
+          "volume": "儒林列传第六十九上",
+          "paragraph_from": 41,
+          "paragraph_to": 45
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_086_06",
+      "史略名称": "孔僖",
+      "史略简介": "孔僖",
+      "原文字句": "孔僖字仲和，鲁国鲁人也。自安国以下，世传《古文尚书》《毛诗》。曾祖父子建，少游长安，与崔篆友善。及篆仕王莽为建新大尹，尝劝子建仕。对曰：“吾有布衣之心，子有衮冕之志，各从所好，不亦善乎！道既乘矣，请从此辞。”遂归，终于家。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷86·儒林列传第六十九上》",
+      "paragraphs": [
+        {
+          "volume": "儒林列传第六十九上",
+          "paragraph_from": 49,
+          "paragraph_to": 56
+        }
+      ]
+    }
+  ]
+}

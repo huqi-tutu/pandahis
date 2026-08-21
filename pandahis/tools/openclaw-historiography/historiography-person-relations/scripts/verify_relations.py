@@ -14,6 +14,7 @@ LEGACY_CATEGORIES = {"君臣", "外敌", "师从"}
 VALID_LEVELS = {"一级", "二级", "三级", "四级"}
 # 二级分类枢纽名：禁止作为非枢纽叶子标题，也禁止出现在所属二级/三级关系
 HUB_TITLES = {
+    "祖父母",
     "父母",
     "配偶",
     "兄弟姐妹",
@@ -49,6 +50,8 @@ FAMILY_EDGE_LABELS = {
     "",
     "父",
     "母",
+    "祖",
+    "祖母",
     "妻",
     "妾",
     "妃",
@@ -165,7 +168,8 @@ def verify_file(path: Path, *, strict: bool) -> list[str]:
         if title and level in VALID_LEVELS:
             cat_key = cat if cat in VALID_CATEGORIES else str(rec.get("关系类别", "")).strip()
             key = (title, level, cat_key)
-            if key in nodes_by_key:
+            # 「不详」占位可多条（多配偶生母不明等），不参与同名唯一校验
+            if key in nodes_by_key and title != "不详":
                 msg = f"CRITICAL {loc}: duplicate node ({title!r}, {level}, {cat_key!r})" if strict else (
                     f"WARN {loc}: duplicate node ({title!r}, {level}, {cat_key!r})"
                 )

@@ -1,0 +1,37 @@
+{
+  "work": "04三国志",
+  "vol": "006",
+  "volume_name": "董二袁刘传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_arc": "C",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "董卓",
+      "category": "武将",
+      "rationale": "卷名首列；汉末权臣军阀，以军事割据为主轴。对齐后汉书董卓列传→武将。非君王/诸侯。"
+    },
+    {
+      "name": "袁绍",
+      "category": "武将",
+      "rationale": "卷名『二袁』之一；河北军阀。对齐后汉书袁绍刘表列传→武将。非君王/诸侯。"
+    },
+    {
+      "name": "袁术",
+      "category": "武将",
+      "rationale": "卷名『二袁』之一；淮南军阀。对齐后汉书刘焉袁术吕布列传→武将。非君王/诸侯。"
+    },
+    {
+      "name": "刘表",
+      "category": "武将",
+      "rationale": "卷名『刘』；荆州牧军阀。对齐后汉书袁绍刘表列传→武将。非君王/诸侯。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "论赞",
+    "其他"
+  ]
+}

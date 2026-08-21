@@ -1,0 +1,625 @@
+{
+  "volume": "循吏列传",
+  "source_file": "03后汉书_083_循吏列传第六十六.txt",
+  "total_paragraphs": 71,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "卫飒",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "卫飒",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "卫飒",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "卫飒",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "卫飒",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "任延",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "任延",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "任延",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "任延",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "任延",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "任延",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "任延",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "任延",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "任延",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "任延",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "任延",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "王景",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "王景",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "王景",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "王景",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "王景",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "王景",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "王景",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 27,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 28,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 29,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 30,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 31,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 32,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 33,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 34,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 35,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 36,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 37,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 38,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 39,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "孟尝",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "孟尝",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "孟尝",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "孟尝",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "孟尝",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "孟尝",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 47,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 48,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 49,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 50,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 51,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 52,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 53,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 54,
+      "owners": [
+        {
+          "name": "刘宠",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 55,
+      "owners": [
+        {
+          "name": "刘宠",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 56,
+      "owners": [
+        {
+          "name": "刘宠",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 57,
+      "owners": [
+        {
+          "name": "刘宠",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 58,
+      "owners": [
+        {
+          "name": "刘宠",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 59,
+      "owners": [
+        {
+          "name": "刘宠",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 60,
+      "owners": [
+        {
+          "name": "刘宠",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 61,
+      "owners": [
+        {
+          "name": "刘宠",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 62,
+      "owners": [
+        {
+          "name": "仇览",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 63,
+      "owners": [
+        {
+          "name": "仇览",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 64,
+      "owners": [
+        {
+          "name": "仇览",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 65,
+      "owners": [
+        {
+          "name": "仇览",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 66,
+      "owners": [
+        {
+          "name": "仇览",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 67,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 68,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 69,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 70,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 71,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HOUHANSHU_083_01",
+      "史略名称": "卫飒",
+      "史略简介": "卫飒",
+      "原文字句": "卫飒字子产，河内脩武人也。家贫好学问，随师无粮，常佣以自给。王莽时，仕郡历州宰。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷83·循吏列传》",
+      "paragraphs": [
+        {
+          "volume": "循吏列传",
+          "paragraph_from": 3,
+          "paragraph_to": 7
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_083_02",
+      "史略名称": "任延",
+      "史略简介": "任延",
+      "原文字句": "任延字长孙，南阳宛人也。年十二，为诸生，学于长安，明《诗》《易》《春秋》，显名太学，学中号为“任圣童”。值仓卒，避兵之陇西。时隗嚣已据四郡，遣使请延，延不应。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷83·循吏列传》",
+      "paragraphs": [
+        {
+          "volume": "循吏列传",
+          "paragraph_from": 8,
+          "paragraph_to": 18
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_083_03",
+      "史略名称": "王景",
+      "史略简介": "王景",
+      "原文字句": "王景字仲通，乐浪讲邯人也。八世祖仲，本琅邪不其人。好道术，明天文。诸吕作乱，齐哀王襄谋发兵，而数问于仲。及济北王兴居反，欲委兵师仲，仲惧祸及，乃浮海东奔乐浪山中，因而家焉。父闳，为郡三老。更始败，土人王调杀郡守刘宪，自称大将军、乐浪太守。建武六年，光武遣太守王遵将兵击之。至辽东，闳与郡决曹史杨邑等共杀调迎遵，皆封为列侯，闳独让爵。帝奇而征之，道病座。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷83·循吏列传》",
+      "paragraphs": [
+        {
+          "volume": "循吏列传",
+          "paragraph_from": 19,
+          "paragraph_to": 25
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_083_04",
+      "史略名称": "孟尝",
+      "史略简介": "孟尝",
+      "原文字句": "孟尝字伯周，会稽上虞上也。其先三世为郡吏，并伏节死难。尝少修操行，仕郡为户曹史。上虞有寡妇至孝养姑。姑年老寿终，夫女弟先怀嫌忌，乃诬妇厌苦供养，加鸩其母，列讼县庭。郡不加寻察，遂结竟其罪。尝先知枉状，备言之于太守，太守不为理。尝哀泣外门，因谢病去，妇竟冤死。自是郡中连旱二年，祷请无所获。后太守殷丹到官，访问其故，尝诣府具陈寡妇冤诬之事。因曰：“昔东海孝妇，感天致旱，于公一言，甘泽时降。宜戮讼者，以",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷83·循吏列传》",
+      "paragraphs": [
+        {
+          "volume": "循吏列传",
+          "paragraph_from": 40,
+          "paragraph_to": 45
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_083_05",
+      "史略名称": "刘宠",
+      "史略简介": "刘宠",
+      "原文字句": "刘宠字祖荣，东莱牟平人，齐悼惠王之后也。悼惠王子孝王将闾，将闾少子封牟平侯，子孙家焉。父丕，博学，号为通儒。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷83·循吏列传》",
+      "paragraphs": [
+        {
+          "volume": "循吏列传",
+          "paragraph_from": 54,
+          "paragraph_to": 61
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_083_06",
+      "史略名称": "仇览",
+      "史略简介": "仇览",
+      "原文字句": "仇览字季智，一名香，除留考城人也。少为书生淳默，乡里无知者。年四十，县召补史，选为蒲亭长。劝人生业，为制科令，至于果菜为限，鸡豕有数，农事既毕，乃令子弟群居，还就黉学。其剽轻游恣者，皆役以田桑，严设科罚。躬助丧事，赈恤穷寡。期年称大化。览初到亭，人有陈元者，独与母居，而母诣览告元不孝。览惊曰：“吾近日过舍，庐落整顿，耕耘以时。此非恶人，当是教化未及至耻。母守寡养孤，苦身投老，奈何肆忿于一朝，欲致子",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷83·循吏列传》",
+      "paragraphs": [
+        {
+          "volume": "循吏列传",
+          "paragraph_from": 62,
+          "paragraph_to": 66
+        }
+      ]
+    }
+  ]
+}

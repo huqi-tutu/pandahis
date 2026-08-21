@@ -1,0 +1,87 @@
+{
+  "work": "04三国志",
+  "vol": "017",
+  "total_paragraphs": 22,
+  "volume_subtype": "hezhuan",
+  "derived_from": "04三国志_017_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 21,
+      "paragraph_to": 21,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 22,
+      "paragraph_to": 22,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "张辽",
+      "category": "武将",
+      "paragraph_from": 2,
+      "paragraph_to": 5,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "张辽字文远，雁门马邑人也。本聂壹之后，以避怨变姓。少为郡吏。汉末，并州刺史丁原以",
+        "close_paragraph": 5,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P5"
+      }
+    },
+    {
+      "name": "乐进",
+      "category": "武将",
+      "paragraph_from": 6,
+      "paragraph_to": 7,
+      "boundary_evidence": {
+        "open_paragraph": 6,
+        "open_phrase": "乐进字文谦，阳平卫国人也。容貌短小，以胆烈从太祖，为帐下吏。遣还本郡募兵，得千余",
+        "close_paragraph": 7,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P6–P7"
+      }
+    },
+    {
+      "name": "于禁",
+      "category": "武将",
+      "paragraph_from": 8,
+      "paragraph_to": 10,
+      "boundary_evidence": {
+        "open_paragraph": 8,
+        "open_phrase": "于禁字文则，泰山钜平人也。黄巾起，鲍信招合徒众，禁附从焉。及太祖领兖州，禁与其党",
+        "close_paragraph": 10,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P8–P10"
+      }
+    },
+    {
+      "name": "张郃",
+      "category": "武将",
+      "paragraph_from": 11,
+      "paragraph_to": 15,
+      "boundary_evidence": {
+        "open_paragraph": 11,
+        "open_phrase": "张郃字俊乂，河间鄚人也。汉末应募讨黄巾，为军司马，属韩馥。馥败，以兵归袁绍。绍以",
+        "close_paragraph": 15,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P11–P15"
+      }
+    },
+    {
+      "name": "徐晃",
+      "category": "武将",
+      "paragraph_from": 16,
+      "paragraph_to": 20,
+      "boundary_evidence": {
+        "open_paragraph": 16,
+        "open_phrase": "徐晃字公明，河东杨人也。为郡吏，从车骑将军杨奉讨贼有功，拜骑都尉。李傕、郭汜之乱",
+        "close_paragraph": 20,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P16–P20"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

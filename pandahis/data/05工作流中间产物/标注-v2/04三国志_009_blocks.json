@@ -1,0 +1,106 @@
+{
+  "work": "04三国志",
+  "vol": "009",
+  "total_paragraphs": 37,
+  "volume_subtype": "hezhuan",
+  "derived_from": "04三国志_009_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 37,
+      "paragraph_to": 37,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "夏侯惇",
+      "category": "武将",
+      "paragraph_from": 2,
+      "paragraph_to": 5,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "夏侯惇字元让，沛国谯人，夏侯婴之后也。年十四，就师学，人有辱其师者，惇杀之，由是",
+        "close_paragraph": 5,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P5"
+      }
+    },
+    {
+      "name": "夏侯渊",
+      "category": "武将",
+      "paragraph_from": 6,
+      "paragraph_to": 10,
+      "boundary_evidence": {
+        "open_paragraph": 6,
+        "open_phrase": "夏侯渊字妙才，惇族弟也。太祖居家，曾有县官事，渊代引重罪，太祖营救之，得免。太祖",
+        "close_paragraph": 10,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P6–P10"
+      }
+    },
+    {
+      "name": "曹仁",
+      "category": "武将",
+      "paragraph_from": 11,
+      "paragraph_to": 17,
+      "boundary_evidence": {
+        "open_paragraph": 11,
+        "open_phrase": "曹仁字子孝，太祖从弟也。少好弓马弋猎。后豪杰并起，仁亦阴结少年，得千余人，周旋淮",
+        "close_paragraph": 17,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P11–P17"
+      }
+    },
+    {
+      "name": "曹洪",
+      "category": "武将",
+      "paragraph_from": 18,
+      "paragraph_to": 19,
+      "boundary_evidence": {
+        "open_paragraph": 18,
+        "open_phrase": "曹洪字子廉，太祖从弟也。太祖起义兵讨董卓，至荥阳，为卓将徐荣所败。太祖失马，贼追",
+        "close_paragraph": 19,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P18–P19"
+      }
+    },
+    {
+      "name": "曹休",
+      "category": "武将",
+      "paragraph_from": 20,
+      "paragraph_to": 21,
+      "boundary_evidence": {
+        "open_paragraph": 20,
+        "open_phrase": "曹休字文烈，太祖族子也。天下乱，宗族各散去乡里。休年十余岁，丧父，独与一客担丧假",
+        "close_paragraph": 21,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P20–P21"
+      }
+    },
+    {
+      "name": "曹真",
+      "category": "武将",
+      "paragraph_from": 22,
+      "paragraph_to": 30,
+      "boundary_evidence": {
+        "open_paragraph": 22,
+        "open_phrase": "曹真字子丹，太祖族子也。太祖起兵，真父邵募徒众，为州郡所杀。太祖哀真少孤，收养与",
+        "close_paragraph": 30,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P22–P30"
+      }
+    },
+    {
+      "name": "夏侯渊",
+      "category": "武将",
+      "paragraph_from": 31,
+      "paragraph_to": 36,
+      "boundary_evidence": {
+        "open_paragraph": 31,
+        "open_phrase": "夏侯尚字伯仁，渊从子也。文帝与之亲友。太祖定冀州，尚为军司马，将骑从征伐，后为五",
+        "close_paragraph": 36,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P31–P36"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

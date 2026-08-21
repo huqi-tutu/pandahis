@@ -1,0 +1,128 @@
+{
+  "work": "04三国志",
+  "vol": "053",
+  "total_paragraphs": 20,
+  "method": "Step1b-α LLM",
+  "paragraphs": [
+    {
+      "paragraph": 1,
+      "primary_subject": "卷首标题",
+      "disposition": "exclude",
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "primary_subject": "张昭",
+      "disposition": "block",
+      "text_snippet": "张纮字子纲，广陵人。游学京都，还本郡，举茂才，公府辟，皆不就，避难江东。孙策创业，遂委质焉。"
+    },
+    {
+      "paragraph": 3,
+      "primary_subject": "张昭",
+      "disposition": "block",
+      "text_snippet": "建安四年，策遣纮奉章至许宫，留为侍御史。少府孔融等皆与亲善。"
+    },
+    {
+      "paragraph": 4,
+      "primary_subject": "张昭",
+      "disposition": "block",
+      "text_snippet": "后权以纮为长史，从征合肥。权率轻骑将往突敌，纮谏曰："
+    },
+    {
+      "paragraph": 5,
+      "primary_subject": "张昭",
+      "disposition": "block",
+      "text_snippet": "纮著诗赋铭诔十余篇。子玄，官至南郡太守、尚书。"
+    },
+    {
+      "paragraph": 6,
+      "primary_subject": "张昭",
+      "disposition": "block",
+      "text_snippet": "初，纮同郡秦松字文表，陈端字子正，并与纮见待于孙策，参与谋谟。各早卒。"
+    },
+    {
+      "paragraph": 7,
+      "primary_subject": "严峻",
+      "disposition": "block",
+      "text_snippet": "严畯字曼才，彭城人也。少耽学，善诗、书、三礼，又好说文。"
+    },
+    {
+      "paragraph": 8,
+      "primary_subject": "严峻",
+      "disposition": "block",
+      "text_snippet": "畯著《孝经传》《潮水论》，又与裴玄、张承论管仲、季路，皆传于世。"
+    },
+    {
+      "paragraph": 9,
+      "primary_subject": "程秉",
+      "disposition": "block",
+      "text_snippet": "程秉字德枢，汝南南顿人也。逮事郑玄，后避乱交州，与刘熙考论大义，遂博通五经。"
+    },
+    {
+      "paragraph": 10,
+      "primary_subject": "程秉",
+      "disposition": "block",
+      "text_snippet": "病卒官。著《周易摘》《尚书駮》《论语弼》，凡三万余言。"
+    },
+    {
+      "paragraph": 11,
+      "primary_subject": "阚泽",
+      "disposition": "block",
+      "text_snippet": "阚泽字德润，会稽山阴人也。家世农夫，至泽好学，居贫无资，常为人佣书，以供纸笔。"
+    },
+    {
+      "paragraph": 12,
+      "primary_subject": "阚泽",
+      "disposition": "block",
+      "text_snippet": "泽以经传文多，难得尽用，乃斟酌诸家，刊约礼文及诸注说以授二宫。"
+    },
+    {
+      "paragraph": 13,
+      "primary_subject": "阚泽",
+      "disposition": "block",
+      "text_snippet": "泽州里先辈丹杨唐固亦修身积学，称为儒者，著国语、公羊、谷梁传注。"
+    },
+    {
+      "paragraph": 14,
+      "primary_subject": "薛综",
+      "disposition": "block",
+      "text_snippet": "薛综字敬文，沛郡竹邑人也。少依族人避地交州，从刘熙学。"
+    },
+    {
+      "paragraph": 15,
+      "primary_subject": "薛综",
+      "disposition": "block",
+      "text_snippet": "吕岱从交州召出，综惧继岱者非其人，上疏曰："
+    },
+    {
+      "paragraph": 16,
+      "primary_subject": "薛综",
+      "disposition": "block",
+      "text_snippet": "黄龙三年，建昌侯虑为镇军大将军，屯半州，以综为长史，外掌众事，内授书籍。"
+    },
+    {
+      "paragraph": 17,
+      "primary_subject": "薛综",
+      "disposition": "block",
+      "text_snippet": "正月乙未，权敕综祝祖不得用常文，综承诏，卒造文义，信辞粲烂。"
+    },
+    {
+      "paragraph": 18,
+      "primary_subject": "薛综",
+      "disposition": "block",
+      "text_snippet": "子珝，宫至威南将军，征交阯还，道病死。珝弟莹，字道言，初为秘府中书郎。"
+    },
+    {
+      "paragraph": 19,
+      "primary_subject": "薛综",
+      "disposition": "block",
+      "text_snippet": "是岁，何定建议凿圣溪以通江淮，皓令莹督万人往，遂以多盘石难施功，罢还。"
+    },
+    {
+      "paragraph": 20,
+      "primary_subject": "论赞",
+      "disposition": "exclude",
+      "exclude_reason": "论赞"
+    }
+  ]
+}

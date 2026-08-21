@@ -1,0 +1,166 @@
+{
+  "work": "04三国志",
+  "vol": "055",
+  "total_paragraphs": 60,
+  "volume_subtype": "hezhuan",
+  "derived_from": "04三国志_055_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 60,
+      "paragraph_to": 60,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "程普",
+      "category": "武将",
+      "paragraph_from": 2,
+      "paragraph_to": 5,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "程普字德谋，右北平土垠人也。初为州郡吏，有容貌计略，善于应对。从孙坚征伐，讨黄巾",
+        "close_paragraph": 5,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P5"
+      }
+    },
+    {
+      "name": "黄盖",
+      "category": "武将",
+      "paragraph_from": 6,
+      "paragraph_to": 9,
+      "boundary_evidence": {
+        "open_paragraph": 6,
+        "open_phrase": "黄盖字公覆，零陵泉陵人也。初为郡吏，察孝廉，辟公府。孙坚举义兵，盖从之。坚南破山",
+        "close_paragraph": 9,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P6–P9"
+      }
+    },
+    {
+      "name": "韩当",
+      "category": "武将",
+      "paragraph_from": 10,
+      "paragraph_to": 11,
+      "boundary_evidence": {
+        "open_paragraph": 10,
+        "open_phrase": "韩当字义公，辽西令支人也。（令音郎定反。支音巨儿反。）以便弓马，有膂力，幸于孙坚",
+        "close_paragraph": 11,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P10–P11"
+      }
+    },
+    {
+      "name": "蒋钦",
+      "category": "武将",
+      "paragraph_from": 12,
+      "paragraph_to": 15,
+      "boundary_evidence": {
+        "open_paragraph": 12,
+        "open_phrase": "蒋钦字公奕，九江寿春人也。孙策之袭袁术，钦随从给事。及策东渡，拜别部司马，授兵。",
+        "close_paragraph": 15,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P12–P15"
+      }
+    },
+    {
+      "name": "周泰",
+      "category": "武将",
+      "paragraph_from": 16,
+      "paragraph_to": 19,
+      "boundary_evidence": {
+        "open_paragraph": 16,
+        "open_phrase": "周泰字幼平，九江下蔡人也。与蒋钦随孙策为左右，服事恭敬，数战有功。策入会稽，署别",
+        "close_paragraph": 19,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P16–P19"
+      }
+    },
+    {
+      "name": "陈武",
+      "category": "武将",
+      "paragraph_from": 20,
+      "paragraph_to": 22,
+      "boundary_evidence": {
+        "open_paragraph": 20,
+        "open_phrase": "陈武字子烈，庐江松滋人。孙策在寿春，武往脩谒，时年十八，长七尺七寸，因从渡江，征",
+        "close_paragraph": 22,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P20–P22"
+      }
+    },
+    {
+      "name": "董袭",
+      "category": "武将",
+      "paragraph_from": 23,
+      "paragraph_to": 27,
+      "boundary_evidence": {
+        "open_paragraph": 23,
+        "open_phrase": "董袭字元代，会稽余姚人，长八尺，武力过人。孙策入郡，袭迎于高迁亭，策见而伟之，到",
+        "close_paragraph": 27,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P23–P27"
+      }
+    },
+    {
+      "name": "甘宁",
+      "category": "武将",
+      "paragraph_from": 28,
+      "paragraph_to": 35,
+      "boundary_evidence": {
+        "open_paragraph": 28,
+        "open_phrase": "甘宁字兴霸，巴郡临江人也。少有气力，好游侠，招合轻薄少年，为之渠帅；群聚相随，挟",
+        "close_paragraph": 35,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P28–P35"
+      }
+    },
+    {
+      "name": "凌统",
+      "category": "武将",
+      "paragraph_from": 36,
+      "paragraph_to": 42,
+      "boundary_evidence": {
+        "open_paragraph": 36,
+        "open_phrase": "凌统字公绩，吴郡余杭人也。父操，轻侠有胆气，孙策初兴，每从征伐，常冠军履锋。守永",
+        "close_paragraph": 42,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P36–P42"
+      }
+    },
+    {
+      "name": "徐盛",
+      "category": "武将",
+      "paragraph_from": 43,
+      "paragraph_to": 48,
+      "boundary_evidence": {
+        "open_paragraph": 43,
+        "open_phrase": "徐盛字文向，琅邪莒人也。遭乱，客居吴，以勇气闻。孙权统事，以为别部司马，授兵五百",
+        "close_paragraph": 48,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P43–P48"
+      }
+    },
+    {
+      "name": "潘璋",
+      "category": "武将",
+      "paragraph_from": 49,
+      "paragraph_to": 53,
+      "boundary_evidence": {
+        "open_paragraph": 49,
+        "open_phrase": "潘璋字文珪，东郡发干人也。孙权为阳羡长，始往随权。性博荡嗜酒，居贫，好赊酤，债家",
+        "close_paragraph": 53,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P49–P53"
+      }
+    },
+    {
+      "name": "丁奉",
+      "category": "武将",
+      "paragraph_from": 54,
+      "paragraph_to": 59,
+      "boundary_evidence": {
+        "open_paragraph": 54,
+        "open_phrase": "丁奉字承渊，庐江安丰人也。少以骁勇为小将，属甘宁、陆逊、潘璋等。数随征伐，战斗常",
+        "close_paragraph": 59,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P54–P59"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

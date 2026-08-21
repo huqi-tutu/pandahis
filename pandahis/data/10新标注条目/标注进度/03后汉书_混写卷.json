@@ -1,6 +1,6 @@
 {
   "work": "03后汉书",
-  "updated_at": "2026-08-09T14:10:42Z",
+  "updated_at": "2026-08-17T14:44:09Z",
   "volumes": {
     "011": {
       "volume_name": "皇后纪第十上",
@@ -61,6 +61,17 @@
       "skeleton_file": "03后汉书_018_邓寇列传第六_skeleton.json",
       "note": "混写卷：同一人物段落非连续。翻译/质检须按 entry.paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。",
       "registered_at": "2026-08-09T02:27:33Z"
+    },
+    "085": {
+      "volume_name": "宦者列传",
+      "volume_texture": "interleaved",
+      "reason": "explicit",
+      "noncontiguous_entries": [
+        "郑众"
+      ],
+      "skeleton_file": "03后汉书_085_宦者列传第六十八_skeleton.json",
+      "note": "混写卷：同一人物段落非连续。翻译/质检须按 entry.paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。",
+      "registered_at": "2026-08-17T14:17:53Z"
     }
   }
 }

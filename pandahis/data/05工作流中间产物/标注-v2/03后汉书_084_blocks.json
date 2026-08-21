@@ -1,0 +1,97 @@
+{
+  "work": "03后汉书",
+  "vol": "084",
+  "total_paragraphs": 40,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_084_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 2,
+      "paragraph_to": 3,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 11,
+      "paragraph_to": 13,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 38,
+      "paragraph_to": 38,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 39,
+      "paragraph_to": 40,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "董宣",
+      "category": "文臣",
+      "paragraph_from": 4,
+      "paragraph_to": 7,
+      "boundary_evidence": {
+        "open_paragraph": 4,
+        "open_phrase": "董宣字少平，陈留圉人也。初为司徒侯霸所辟，举高第，累迁北海相。到官，以大姓公孙丹",
+        "close_paragraph": 7,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P4–P7"
+      }
+    },
+    {
+      "name": "樊晔",
+      "category": "文臣",
+      "paragraph_from": 8,
+      "paragraph_to": 10,
+      "boundary_evidence": {
+        "open_paragraph": 8,
+        "open_phrase": "樊晔字仲华，南阳新野人也。与光武少游旧。建武初，征为侍御史，迁河东都尉，引见云台",
+        "close_paragraph": 10,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P8–P10"
+      }
+    },
+    {
+      "name": "周䊸",
+      "category": "文臣",
+      "paragraph_from": 14,
+      "paragraph_to": 21,
+      "boundary_evidence": {
+        "open_paragraph": 14,
+        "open_phrase": "周纟亏字文通，下邳徐人也。为人刻削少恩，好韩非之术。少为廷尉史。",
+        "close_paragraph": 21,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P14–P21"
+      }
+    },
+    {
+      "name": "黄昌",
+      "category": "文臣",
+      "paragraph_from": 22,
+      "paragraph_to": 27,
+      "boundary_evidence": {
+        "open_paragraph": 22,
+        "open_phrase": "黄昌字圣真，会稽余姚人也。本出孤微。居近学官，数见诸生修庠序之礼，因好之，遂就经",
+        "close_paragraph": 27,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P22–P27"
+      }
+    },
+    {
+      "name": "阳球",
+      "category": "文臣",
+      "paragraph_from": 28,
+      "paragraph_to": 37,
+      "boundary_evidence": {
+        "open_paragraph": 28,
+        "open_phrase": "阳球字方正，渔阳泉州人也。家世大姓冠盖。球能击剑，习弓马。性严厉，好申、韩之学。",
+        "close_paragraph": 37,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P28–P37"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

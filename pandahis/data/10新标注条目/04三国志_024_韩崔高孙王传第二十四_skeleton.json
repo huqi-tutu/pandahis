@@ -1,0 +1,394 @@
+{
+  "volume": "韩崔高孙王传",
+  "source_file": "04三国志_024_韩崔高孙王传第二十四.txt",
+  "total_paragraphs": 35,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "韩暨",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "韩暨",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "韩暨",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "崔林",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "崔林",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "崔林",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "崔林",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "崔林",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "崔林",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "崔林",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "高柔",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "高柔",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "高柔",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "高柔",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "高柔",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "高柔",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "高柔",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "高柔",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "高柔",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "高柔",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "高柔",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "高柔",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "高柔",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "高柔",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "高柔",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "孙礼",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "孙礼",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "孙礼",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "孙礼",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "孙礼",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "孙礼",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "王观",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "王观",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SANGUOZHI_024_01",
+      "史略名称": "韩暨",
+      "史略简介": "韩暨",
+      "原文字句": "韩暨字公至，南阳堵阳人也。同县豪右陈茂，谮暨父兄，畿至大辟。暨阳不以为言，庸赁积资，阴结死士，遂追呼寻禽茂，以首祭父墓，由是显名。举孝廉，司空辟，皆不就。乃变名姓，隐居避乱鲁阳山中。山民合党，欲行寇掠。暨散家财以供牛酒，请其渠帅，为陈安危。山民化之，终不为害。避袁术命召，徙居山都之山。荆州牧刘表礼辟，遂遁逃，南居孱陵界，所在见敬爱，而表深恨之。暨惧，应命，除宜城长。",
+      "史略分类": "文臣",
+      "主要史料出处": "《04三国志·卷24·韩崔高孙王传》",
+      "paragraphs": [
+        {
+          "volume": "韩崔高孙王传",
+          "paragraph_from": 2,
+          "paragraph_to": 4
+        }
+      ]
+    },
+    {
+      "史略ID": "SANGUOZHI_024_02",
+      "史略名称": "崔林",
+      "史略简介": "崔林",
+      "原文字句": "崔林字德儒，清河东武城人也。少时晚成，宗族莫知，惟从兄琰异之。太祖定冀州，召除邬长，贫无车马，单步之官。太祖征壶关，问长吏德政最者，并州刺史张陟以林对，于是擢为冀州主簿，徙署别驾、丞相掾属。魏国既建，稍迁御史中丞。",
+      "史略分类": "文臣",
+      "主要史料出处": "《04三国志·卷24·韩崔高孙王传》",
+      "paragraphs": [
+        {
+          "volume": "韩崔高孙王传",
+          "paragraph_from": 5,
+          "paragraph_to": 11
+        }
+      ]
+    },
+    {
+      "史略ID": "SANGUOZHI_024_03",
+      "史略名称": "高柔",
+      "史略简介": "高柔",
+      "原文字句": "高柔字文惠，陈留圉人也。父靖，为蜀郡都尉。柔留乡里，谓邑中曰：“今者英雄并起，陈留四战之地也。曹将军虽据兖州，本有四方之图，未得安坐守也。而张府君先得志于陈留，吾恐变乘间作也，欲与诸君避之。”众人皆以张邈与太祖善，柔又年少，不然其言。柔从兄幹，袁绍甥也，在河北呼柔，柔举宗从之。会靖卒于西州，时道路艰涩，兵寇纵横，而柔冒艰险诣蜀迎丧，辛苦荼毒，无所不尝，三年乃还。",
+      "史略分类": "文臣",
+      "主要史料出处": "《04三国志·卷24·韩崔高孙王传》",
+      "paragraphs": [
+        {
+          "volume": "韩崔高孙王传",
+          "paragraph_from": 12,
+          "paragraph_to": 26
+        }
+      ]
+    },
+    {
+      "史略ID": "SANGUOZHI_024_04",
+      "史略名称": "孙礼",
+      "史略简介": "孙礼",
+      "原文字句": "孙礼字德达，涿郡容城人也。太祖平幽州，召为司空军谋掾。初丧乱时，礼与母相失，同郡马台求得礼母，礼推家财尽以与台。台后坐法当死，礼私导令逾狱自首，既而曰：“臣无逃亡之义。”径诣刺奸主簿温恢。恢嘉之，具白太祖，各减死一等。",
+      "史略分类": "武将",
+      "主要史料出处": "《04三国志·卷24·韩崔高孙王传》",
+      "paragraphs": [
+        {
+          "volume": "韩崔高孙王传",
+          "paragraph_from": 27,
+          "paragraph_to": 32
+        }
+      ]
+    },
+    {
+      "史略ID": "SANGUOZHI_024_05",
+      "史略名称": "王观",
+      "史略简介": "王观",
+      "原文字句": "王观字伟台，东郡廪丘人也。少孤贫励志，太祖召为丞相文学掾，出为高唐、阳泉、酂、任令，所在称治。文帝践阼，入为尚书郎、廷尉监，出为南阳、涿郡太守。涿北接鲜卑，数有寇盗，观令边民十家已上，屯居，筑京候。时或有不愿者，观乃假遣朝吏，使归助子弟，不与期会，但敕事讫各还。于是吏民相率不督自劝，旬日之中，一时俱成。守御有备，寇钞以息。明帝即位，下诏书使郡县条为剧、中、平者。主者欲言郡为中平，观教曰：“此郡滨近",
+      "史略分类": "文臣",
+      "主要史料出处": "《04三国志·卷24·韩崔高孙王传》",
+      "paragraphs": [
+        {
+          "volume": "韩崔高孙王传",
+          "paragraph_from": 33,
+          "paragraph_to": 34
+        }
+      ]
+    }
+  ]
+}

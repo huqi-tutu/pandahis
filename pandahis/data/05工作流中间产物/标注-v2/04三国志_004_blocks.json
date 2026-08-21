@@ -1,0 +1,58 @@
+{
+  "work": "04三国志",
+  "vol": "004",
+  "total_paragraphs": 86,
+  "volume_subtype": "hezhuan",
+  "derived_from": "04三国志_004_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 86,
+      "paragraph_to": 86,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "魏齐王",
+      "category": "君王",
+      "paragraph_from": 2,
+      "paragraph_to": 27,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "齐王讳芳，字兰卿。明帝无子，养王及秦王询；宫省事秘，莫有知其所由来者。青龙三年，",
+        "close_paragraph": 27,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P27"
+      }
+    },
+    {
+      "name": "魏高贵乡公",
+      "category": "君王",
+      "paragraph_from": 28,
+      "paragraph_to": 60,
+      "boundary_evidence": {
+        "open_paragraph": 28,
+        "open_phrase": "丁丑，令曰：“东海王霖，高祖文皇帝之子。霖之诸子，与国至亲，高贵乡公髦有大成之量",
+        "close_paragraph": 60,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P28–P60"
+      }
+    },
+    {
+      "name": "魏陈留王",
+      "category": "君王",
+      "paragraph_from": 61,
+      "paragraph_to": 85,
+      "boundary_evidence": {
+        "open_paragraph": 61,
+        "open_phrase": "使使持节行中护军中垒将军司马炎北迎常道乡公璜嗣明帝后。辛卯，群公奏太后曰：“殿下",
+        "close_paragraph": 85,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P61–P85"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

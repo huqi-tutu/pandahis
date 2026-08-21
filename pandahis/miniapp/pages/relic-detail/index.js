@@ -2,6 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const api_1 = require("../../native-utils/api");
 const correction_1 = require("../../native-utils/correction");
+const note_1 = require("../../native-utils/note");
+const note_highlight_1 = require("../../native-utils/note-highlight");
 const encode_path_segment_1 = require("../../native-utils/encode-path-segment");
 const nav_metrics_1 = require("../../native-utils/nav-metrics");
 const selection_bar_position_1 = require("../../native-utils/selection-bar-position");
@@ -13,6 +15,7 @@ Page({
         name: '',
         museum: '',
         detail: '',
+        detailSegs: [],
         imageUrl: '',
         boxId: '',
         boxTitle: '',
@@ -30,6 +33,10 @@ Page({
         correctionVisible: false,
         correctionSubmitting: false,
         correctionSelectedText: '',
+        noteVisible: false,
+        noteSubmitting: false,
+        noteSelectedText: '',
+        focusNoteId: 0,
     },
     _selectionContext: null,
     async onLoad(query) {
@@ -40,6 +47,8 @@ Page({
             this.setData({ pageTopPadPx: 88 });
         }
         const relicId = Number(query.relicId || 0);
+        const focusNoteId = Number(query.noteId || 0);
+        this.setData({ focusNoteId: Number.isFinite(focusNoteId) ? focusNoteId : 0 });
         if (relicId > 0) {
             this.setData({ relicId });
             await this.loadById(relicId);
@@ -59,6 +68,7 @@ Page({
             civilizationName: decodeURIComponent(query.civilizationName || ''),
             dynastyName: decodeURIComponent(query.dynastyName || ''),
         });
+        await this.loadHighlights();
     },
     async loadById(relicId) {
         try {
@@ -80,6 +90,7 @@ Page({
                 detail: String(d.description || d.summary || '').trim(),
                 imageUrl: String(d.imageUrl || '').trim(),
             });
+            await this.loadHighlights();
         }
         catch (err) {
             wx.hideLoading();
@@ -137,7 +148,7 @@ Page({
             left: this.data.selectionBarLeft,
             top: this.data.selectionBarTop,
             placement: this.data.selectionBarPlacement,
-        }, { buttonCount: 3 });
+        }, { buttonCount: 4 });
         this.setData({
             selectionBarVisible: true,
             selectionBarText: selected,
@@ -183,6 +194,83 @@ Page({
                 correctionSelectedText: text,
             });
         });
+    },
+    onSelectionNote() {
+        const text = this.data.selectionBarText;
+        this.hideSelectionBar();
+        if (!text)
+            return;
+        (0, note_1.requireLoginForNote)(() => {
+            this.setData({
+                noteVisible: true,
+                noteSubmitting: false,
+                noteSelectedText: text,
+            });
+        });
+    },
+    closeNote() {
+        this.setData({ noteVisible: false, noteSubmitting: false });
+        this.clearBodySelection();
+    },
+    applyHighlights(highlights) {
+        const detail = String(this.data.detail || '');
+        this.setData({
+            detailSegs: (0, note_highlight_1.applyHighlightsToPlain)(detail, highlights, this.data.focusNoteId),
+        });
+        if (this.data.focusNoteId) {
+            const id = (0, note_highlight_1.highlightAnchorId)(this.data.focusNoteId);
+            setTimeout(() => {
+                wx.pageScrollTo({ selector: `#${id}`, duration: 240 });
+            }, 80);
+        }
+    },
+    async loadHighlights() {
+        const boxId = this.data.boxId;
+        const relicId = Number(this.data.relicId || 0);
+        if (!boxId || !(relicId > 0)) {
+            this.applyHighlights([]);
+            return;
+        }
+        try {
+            const highlights = await (0, note_1.fetchNoteHighlights)(boxId, SOURCE_TYPE, relicId);
+            this.applyHighlights(highlights);
+        }
+        catch {
+            this.applyHighlights([]);
+        }
+    },
+    async onNoteSubmit(e) {
+        var _a;
+        const noteText = String(((_a = e.detail) === null || _a === void 0 ? void 0 : _a.noteText) || '');
+        const boxId = this.data.boxId;
+        const relicId = Number(this.data.relicId || 0);
+        if (!boxId || this.data.noteSubmitting) {
+            if (!boxId)
+                wx.showToast({ title: '缺少史略信息，无法保存', icon: 'none' });
+            return;
+        }
+        if (!(relicId > 0)) {
+            wx.showToast({ title: '缺少见证信息，无法保存', icon: 'none' });
+            return;
+        }
+        this.setData({ noteSubmitting: true });
+        try {
+            await (0, note_1.submitNote)({
+                boxId,
+                sourceType: SOURCE_TYPE,
+                selectedText: this.data.noteSelectedText,
+                noteText,
+                sourceRefId: relicId,
+            });
+            wx.showToast({ title: '笔记已保存', icon: 'success' });
+            this.setData({ noteVisible: false, noteSubmitting: false });
+            await this.loadHighlights();
+        }
+        catch (err) {
+            this.setData({ noteSubmitting: false });
+            const msg = err instanceof Error ? err.message : '保存失败，请稍后重试';
+            wx.showToast({ title: msg, icon: 'none' });
+        }
     },
     closeCorrection() {
         this.setData({ correctionVisible: false, correctionSubmitting: false });

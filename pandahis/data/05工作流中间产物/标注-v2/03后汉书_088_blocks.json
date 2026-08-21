@@ -1,0 +1,80 @@
+{
+  "work": "03后汉书",
+  "vol": "088",
+  "total_paragraphs": 62,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_088_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 18,
+      "paragraph_to": 22,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 43,
+      "paragraph_to": 48,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 50,
+      "paragraph_to": 62,
+      "exclude_reason": "世系链"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "杜笃",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 17,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "杜笃字季雅，京兆杜陵人也。高祖延年，宣帝时为御史大夫。笃少博学，不修小节，不为乡",
+        "close_paragraph": 17,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P17"
+      }
+    },
+    {
+      "name": "傅毅",
+      "category": "文臣",
+      "paragraph_from": 23,
+      "paragraph_to": 36,
+      "boundary_evidence": {
+        "open_paragraph": 23,
+        "open_phrase": "傅毅字武仲，扶风茂陵人也。少傅学。永平中，于平陵习章句，因作《迪志诗》曰：",
+        "close_paragraph": 36,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P23–P36"
+      }
+    },
+    {
+      "name": "黄香",
+      "category": "文臣",
+      "paragraph_from": 37,
+      "paragraph_to": 42,
+      "boundary_evidence": {
+        "open_paragraph": 37,
+        "open_phrase": "黄香字文强，江夏安陆人也。年九岁，失母，思慕憔悴，殆不免丧，乡人称其至孝。年十二",
+        "close_paragraph": 42,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P37–P42"
+      }
+    },
+    {
+      "name": "刘珍",
+      "category": "文臣",
+      "paragraph_from": 49,
+      "paragraph_to": 49,
+      "boundary_evidence": {
+        "open_paragraph": 49,
+        "open_phrase": "刘珍字秋孙，一名宝，南阳蔡阳人也。少好学。永初中，为谒者仆射。邓太后诏，使与校书",
+        "close_paragraph": 49,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P49–P49"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

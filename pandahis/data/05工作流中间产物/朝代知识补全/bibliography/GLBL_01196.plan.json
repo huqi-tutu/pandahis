@@ -1,0 +1,201 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01196",
+  "写作结构": "正史叙述见翻译详录（《史记·大宛列传》《汉书·西域传》）；拓展文写史外异说与延展：1）《汉书·张骞李广利传》补充张骞使乌孙、昆莫见汉使细节；2）《资治通鉴·汉纪》编年视角梳理和亲与西域局势；3）《西河旧事》辑佚存乌孙山、赤谷城地理异说；4）《通典·边防》后世综述乌孙风俗与兴衰；5）《文献通考·四裔考》综述乌孙与汉匈关系；6）《册府元龟·外臣部》辑录和亲册封诏策。留白：乌孙内部昆莫继承之争细节、具体战役过程不展开。",
+  "候选著作": [
+    {
+      "出处": "《史记·大宛列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史索引，乌孙始见与张骞通西域记载",
+      "检索词": "乌孙",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《汉书·西域传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史索引，乌孙国传、和亲、昆莫世系",
+      "检索词": "乌孙",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《汉书·张骞李广利传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "张骞第二次出使乌孙、昆莫见汉使细节，补充正史索引",
+      "检索词": "乌孙",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《资治通鉴·汉纪》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "编年体梳理乌孙与汉和亲、匈奴争夺西域的时间线",
+      "检索词": "乌孙",
+      "采用": true,
+      "原文摘句": "（元封六年）汉以江都王建女细君为公主，妻乌孙王昆莫，赠送甚盛。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《西河旧事》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "辑佚文献，存乌孙山、赤谷城地理异说，可补正史地理",
+      "检索词": "乌孙",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《通典·边防九》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "唐代杜佑综述乌孙风俗、与汉匈关系，后世综述层",
+      "检索词": "乌孙",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《文献通考·四裔考》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋元之际综述乌孙与汉和亲、匈奴消长，后世综述层",
+      "检索词": "乌孙",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《册府元龟·外臣部》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "宋代类书辑录汉与乌孙和亲诏策、册封昆弥等文献",
+      "检索词": "乌孙",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·大宛列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史索引，乌孙始见与张骞通西域记载",
+      "检索词": "乌孙",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《汉书·西域传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史索引，乌孙国传、和亲、昆莫世系",
+      "检索词": "乌孙",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《汉书·张骞李广利传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "张骞第二次出使乌孙、昆莫见汉使细节，补充正史索引",
+      "检索词": "乌孙",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《资治通鉴·汉纪》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "编年体梳理乌孙与汉和亲、匈奴争夺西域的时间线",
+      "检索词": "乌孙",
+      "采用": true,
+      "原文摘句": "（元封六年）汉以江都王建女细君为公主，妻乌孙王昆莫，赠送甚盛。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《西河旧事》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "辑佚文献，存乌孙山、赤谷城地理异说，可补正史地理",
+      "检索词": "乌孙",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《册府元龟·外臣部》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "宋代类书辑录汉与乌孙和亲诏策、册封昆弥等文献",
+      "检索词": "乌孙",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《通典·边防九》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "唐代杜佑综述乌孙风俗、与汉匈关系，后世综述层",
+      "检索词": "乌孙",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《文献通考·四裔考》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋元之际综述乌孙与汉和亲、匈奴消长，后世综述层",
+      "检索词": "乌孙",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 4,
+    "C_excluded": 4,
+    "overall": "B"
+  }
+}

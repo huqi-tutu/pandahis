@@ -1,0 +1,60 @@
+{
+  "work": "04三国志",
+  "vol": "042",
+  "volume_name": "杜周杜许孟来尹李谯郤传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "杜周",
+      "category": "文臣",
+      "rationale": "卷名首姓，合传主人公之一，以行政刑名仕宦为主轴。"
+    },
+    {
+      "name": "杜袭",
+      "category": "文臣",
+      "rationale": "卷名次姓，合传主人公之一，以仕宦行政为主轴。"
+    },
+    {
+      "name": "许靖",
+      "category": "文臣",
+      "rationale": "卷名第三姓，合传主人公之一，以名士仕宦为主轴。"
+    },
+    {
+      "name": "孟光",
+      "category": "文臣",
+      "rationale": "卷名第四姓，合传主人公之一，以儒学仕宦为主轴。"
+    },
+    {
+      "name": "来敏",
+      "category": "文臣",
+      "rationale": "卷名第五姓，合传主人公之一，以儒学仕宦为主轴。"
+    },
+    {
+      "name": "尹默",
+      "category": "文臣",
+      "rationale": "卷名第六姓，合传主人公之一，以儒学仕宦为主轴。"
+    },
+    {
+      "name": "李譔",
+      "category": "文臣",
+      "rationale": "卷名第七姓，合传主人公之一，以儒学仕宦为主轴。"
+    },
+    {
+      "name": "谯周",
+      "category": "文臣",
+      "rationale": "卷名第八姓，合传主人公之一，以儒学史学仕宦为主轴。"
+    },
+    {
+      "name": "郤正",
+      "category": "文臣",
+      "rationale": "卷名末姓，合传主人公之一，以文学仕宦为主轴。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

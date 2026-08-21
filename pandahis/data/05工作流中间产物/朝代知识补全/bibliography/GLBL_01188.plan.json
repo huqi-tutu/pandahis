@@ -1,0 +1,155 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01188",
+  "写作结构": "正史叙述（《史记》《汉书》）见翻译详录；拓展文以史外异说与延展为主：先引《资治通鉴》对李陵战败及司马迁辩护的编年记载（作为杂史/编年补充），再引《前汉纪》的异说（如李陵与苏武关系、单于待遇等），最后以《太平御览》等类书所存佚文或后世笔记（如《西京杂记》）作legend层补充，并明确留白（不虚构细节）。",
+  "候选著作": [
+    {
+      "出处": "《史记·李将军列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史主要出处，记载李陵生平及战败投降始末",
+      "检索词": "李陵",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《汉书·李陵传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史主要出处，详载李陵战败、投降及族灭事",
+      "检索词": "李陵",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《资治通鉴·汉纪》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "编年体史书，对李陵战败、司马迁辩护及武帝处置有编年记载，可补充正史时间线",
+      "检索词": "李陵",
+      "采用": true,
+      "原文摘句": "陵军五千人，矢尽道穷，救兵不至，遂降匈奴。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《前汉纪·孝武皇帝纪》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "东汉荀悦所编，记载李陵事迹及朝议，与《汉书》有异文，可作异说参考",
+      "检索词": "李陵",
+      "采用": true,
+      "原文摘句": "陵曰：'吾为汉将，非有罪也，何至是乎？'遂降。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《太平御览·兵部》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "类书引录李陵相关佚文，如《李陵别传》等，可作后世传说层补充",
+      "检索词": "李陵",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《西京杂记》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "笔记小说，载李陵与苏武交往等传说，属legend层，仅合段补充",
+      "检索词": "李陵",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·李将军列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史主要出处，记载李陵生平及战败投降始末",
+      "检索词": "李陵",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《汉书·李陵传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史主要出处，详载李陵战败、投降及族灭事",
+      "检索词": "李陵",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《资治通鉴·汉纪》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "编年体史书，对李陵战败、司马迁辩护及武帝处置有编年记载，可补充正史时间线",
+      "检索词": "李陵",
+      "采用": true,
+      "原文摘句": "陵军五千人，矢尽道穷，救兵不至，遂降匈奴。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《前汉纪·孝武皇帝纪》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "东汉荀悦所编，记载李陵事迹及朝议，与《汉书》有异文，可作异说参考",
+      "检索词": "李陵",
+      "采用": true,
+      "原文摘句": "陵曰：'吾为汉将，非有罪也，何至是乎？'遂降。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《太平御览·兵部》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "类书引录李陵相关佚文，如《李陵别传》等，可作后世传说层补充",
+      "检索词": "李陵",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《西京杂记》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "笔记小说，载李陵与苏武交往等传说，属legend层，仅合段补充",
+      "检索词": "李陵",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 3,
+    "C_excluded": 3,
+    "overall": "B"
+  }
+}

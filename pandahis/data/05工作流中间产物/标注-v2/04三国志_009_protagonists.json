@@ -1,0 +1,44 @@
+{
+  "work": "04三国志",
+  "vol": "009",
+  "volume_name": "诸夏侯曹传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "夏侯惇",
+      "category": "武将",
+      "rationale": "《诸夏侯曹传》为三国志中曹魏宗亲勋贵合传，夏侯惇为卷名首列人物，以军功征战为主轴，属武将。"
+    },
+    {
+      "name": "夏侯渊",
+      "category": "武将",
+      "rationale": "卷名「诸夏侯」之一，曹魏名将，以征战军功为叙事主轴，属武将。"
+    },
+    {
+      "name": "曹仁",
+      "category": "武将",
+      "rationale": "卷名「曹传」核心人物，曹魏宗室大将，以统军征战为主轴，属武将。"
+    },
+    {
+      "name": "曹洪",
+      "category": "武将",
+      "rationale": "卷名「曹传」核心人物，曹魏宗室将领，以军功征战为叙事主轴，属武将。"
+    },
+    {
+      "name": "曹休",
+      "category": "武将",
+      "rationale": "卷名「曹传」核心人物，曹魏宗室将领，以征战军功为主轴，属武将。"
+    },
+    {
+      "name": "曹真",
+      "category": "武将",
+      "rationale": "卷名「曹传」核心人物，曹魏宗室大将，以统军征战为主轴，属武将。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "其他"
+  ]
+}

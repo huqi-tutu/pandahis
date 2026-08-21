@@ -1,0 +1,384 @@
+{
+  "volume": "王卫二刘傅传",
+  "source_file": "04三国志_021_王卫二刘傅传第二十一.txt",
+  "total_paragraphs": 35,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "interleaved",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "王粲",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "王粲",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "王粲",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "王粲",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 7,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 8,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 9,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "王粲",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "王粲",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "王粲",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "王粲",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "王粲",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "王粲",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "王粲",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "卫觊",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "卫觊",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "卫觊",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "刘廙",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "刘廙",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "刘廙",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "刘劭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "刘劭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "刘劭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "刘劭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "刘劭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "刘劭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "刘劭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "刘劭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "傅嘏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "傅嘏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "傅嘏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "傅嘏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SANGUOZHI_021_01",
+      "史略名称": "王粲",
+      "史略简介": "王粲",
+      "原文字句": "王粲字仲宣，山阳高平人也。曾祖父龚，祖父畅，皆为汉三公。父谦，为大将军何进长史。进以谦名公之胄，欲与为婚，见其二子，使择焉。谦弗许。以疾免，卒于家。",
+      "史略分类": "文臣",
+      "主要史料出处": "《04三国志·卷21·王卫二刘傅传》",
+      "paragraphs": [
+        {
+          "volume": "王卫二刘傅传",
+          "paragraph_from": 2,
+          "paragraph_to": 5
+        },
+        {
+          "volume": "王卫二刘傅传",
+          "paragraph_from": 10,
+          "paragraph_to": 16
+        }
+      ]
+    },
+    {
+      "史略ID": "SANGUOZHI_021_02",
+      "史略名称": "卫觊",
+      "史略简介": "卫觊",
+      "原文字句": "卫觊字伯儒，河东安邑人也。少夙成，以才学称。太祖辟为司空掾属，除茂陵令、尚书郎。太祖征袁绍，而刘表为绍援，关中诸将又中立。益州牧刘璋与表有隙，觊以治书侍御史使益州，令璋下兵以缀表军。至长安，道路不通，觊不得进，遂留镇关中。时四方大有还民，关中诸将多引为部曲，觊书与荀彧曰：“关中膏腴之地，顷遭荒乱，人民流入荆州者十万余家，闻本土安宁，皆企望思归。而归者无以自业，诸将各竞招怀，以为部曲。郡县贫弱，不能",
+      "史略分类": "文臣",
+      "主要史料出处": "《04三国志·卷21·王卫二刘傅传》",
+      "paragraphs": [
+        {
+          "volume": "王卫二刘傅传",
+          "paragraph_from": 17,
+          "paragraph_to": 19
+        }
+      ]
+    },
+    {
+      "史略ID": "SANGUOZHI_021_03",
+      "史略名称": "刘廙",
+      "史略简介": "刘廙",
+      "原文字句": "刘廙字恭嗣，南阳安众人也。年十岁，戏于讲堂上，颍川司马德操拊其头曰：“孺子，孺子，‘黄中通理’，宁自知不？”廙兄望之，有名于世，荆州牧刘表辟为从事。而其友二人，皆以谗毁，为表所诛。望之又以正谏不合，投传告归。廙谓望之曰：“赵杀鸣、犊，仲尼回轮。今兄既不能法柳下惠和光同尘于内，则宜模范蠡迁化于外。坐而自绝于时，殆不可也！”望之不从，寻复见害。廙惧，奔扬州，遂归太祖。太祖辟为丞相掾属，转五官将文学。文",
+      "史略分类": "文臣",
+      "主要史料出处": "《04三国志·卷21·王卫二刘傅传》",
+      "paragraphs": [
+        {
+          "volume": "王卫二刘傅传",
+          "paragraph_from": 20,
+          "paragraph_to": 22
+        }
+      ]
+    },
+    {
+      "史略ID": "SANGUOZHI_021_04",
+      "史略名称": "刘劭",
+      "史略简介": "刘劭",
+      "原文字句": "刘劭字孔才，广平邯郸人也。建安中，为计吏，诣许。太史上言：“正旦当日蚀。”劭时在尚书令荀彧所，坐者数十人，或云当废朝，或云宜卻会。劭曰：“梓慎、裨灶，古之良史，犹占水火，错失天时。《礼记》曰诸侯旅见天子，及门不得终礼者四，日蚀在一。然则圣人垂制，不为变异豫废朝礼者，或灾消异伏，或推术谬误也。”彧善其言。敕朝会如旧，日亦不蚀。",
+      "史略分类": "文臣",
+      "主要史料出处": "《04三国志·卷21·王卫二刘傅传》",
+      "paragraphs": [
+        {
+          "volume": "王卫二刘傅传",
+          "paragraph_from": 23,
+          "paragraph_to": 30
+        }
+      ]
+    },
+    {
+      "史略ID": "SANGUOZHI_021_05",
+      "史略名称": "傅嘏",
+      "史略简介": "傅嘏",
+      "原文字句": "傅嘏字兰石，北地泥阳人，傅介子之后也。伯父巽，黄初中为侍中尚书。嘏弱冠知名，司空陈群辟为掾。时散骑常侍刘劭作考课法，事下三府。嘏难劭论曰：“盖闻帝制宏深，圣道奥远，苟非其才，则道不虚行，神而明之，存乎其人。暨乎王略亏颓而旷载罔缀，微言既没，六籍泯玷。何则？道弘致远而众才莫晞也。案劭考课论，虽欲寻前代黜陟之文，然其制度略以阙亡。礼之存者，惟有周典，外建侯伯，藩屏九服，内立列司，筦齐六职，土有恒贡，官",
+      "史略分类": "文臣",
+      "主要史料出处": "《04三国志·卷21·王卫二刘傅传》",
+      "paragraphs": [
+        {
+          "volume": "王卫二刘傅传",
+          "paragraph_from": 31,
+          "paragraph_to": 34
+        }
+      ]
+    }
+  ],
+  "translation_qa_hint": "混写卷：人物段落非连续。翻译质检须按 entries[].paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。"
+}

@@ -1,0 +1,94 @@
+.page-loading {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24rpx;
+  padding: 32rpx;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+.page-loading--block {
+  pointer-events: auto;
+}
+
+.page-loading-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-loading-text {
+  font-size: 28rpx;
+  line-height: 1;
+  color: #6c757d;
+  letter-spacing: 1rpx;
+}
+
+.page-loading-ellipsis {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 36rpx;
+  height: 28rpx;
+  margin-left: 4rpx;
+}
+
+.page-loading-ellipsis-dot {
+  width: 8rpx;
+  height: 8rpx;
+  margin-right: 6rpx;
+  border-radius: 50%;
+  background: #6c757d;
+  opacity: 0;
+}
+
+.page-loading-ellipsis-dot:last-child {
+  margin-right: 0;
+}
+
+.page-loading-ellipsis-dot:nth-child(1) {
+  animation: page-loading-ellipsis 1.2s steps(1, end) infinite;
+}
+
+.page-loading-ellipsis-dot:nth-child(2) {
+  animation: page-loading-ellipsis-2 1.2s steps(1, end) infinite;
+}
+
+.page-loading-ellipsis-dot:nth-child(3) {
+  animation: page-loading-ellipsis-3 1.2s steps(1, end) infinite;
+}
+
+@keyframes page-loading-ellipsis {
+  0%,
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes page-loading-ellipsis-2 {
+  0%,
+  32.9% {
+    opacity: 0;
+  }
+  33%,
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes page-loading-ellipsis-3 {
+  0%,
+  65.9% {
+    opacity: 0;
+  }
+  66%,
+  100% {
+    opacity: 1;
+  }
+}

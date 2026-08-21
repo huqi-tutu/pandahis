@@ -1,0 +1,41 @@
+{
+  "work": "03后汉书",
+  "vol": "088",
+  "volume_name": "文苑列传第七十上",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_arc": "C",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "sequential",
+  "skip_reason": null,
+  "protagonists_cap_note": "黄香傅毅杜笃刘珍；边韶归089。",
+  "protagonists": [
+    {
+      "name": "杜笃",
+      "category": "文臣",
+      "rationale": "论都赋，卷首文士。"
+    },
+    {
+      "name": "傅毅",
+      "category": "文臣",
+      "rationale": "东观文人主轴。"
+    },
+    {
+      "name": "黄香",
+      "category": "文臣",
+      "rationale": "天下无双江夏黄童。"
+    },
+    {
+      "name": "刘珍",
+      "category": "文臣",
+      "rationale": "东观修史。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "论赞",
+    "赞曰",
+    "世系链",
+    "共段总述"
+  ]
+}

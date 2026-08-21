@@ -1,0 +1,411 @@
+{
+  "volume": "酷吏列传",
+  "source_file": "03后汉书_084_酷吏列传第六十七.txt",
+  "total_paragraphs": 40,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 3,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "董宣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "董宣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "董宣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "董宣",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "樊晔",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "樊晔",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "樊晔",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 12,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 13,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "周䊸",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "周䊸",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "周䊸",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "周䊸",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "周䊸",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "周䊸",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "周䊸",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "周䊸",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "黄昌",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "黄昌",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "黄昌",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "黄昌",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "黄昌",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "黄昌",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "阳球",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "阳球",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "阳球",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "阳球",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "阳球",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "阳球",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "阳球",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "阳球",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "阳球",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "阳球",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 39,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 40,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HOUHANSHU_084_01",
+      "史略名称": "董宣",
+      "史略简介": "董宣",
+      "原文字句": "董宣字少平，陈留圉人也。初为司徒侯霸所辟，举高第，累迁北海相。到官，以大姓公孙丹为五官掾。丹新造居宅，而卜工以为当有死者，丹乃令其子杀道行人，置尸舍内，以塞其咎。宣知，即收丹父子杀之。丹宗族亲党三十余人，操兵诣府，称冤叫号。宣以丹前附王莽、虑交通海贼，乃悉收系剧狱，使门下书佐水丘岑尽杀之。青州以其多滥，奏宣考岑，宣坐征诣廷尉。在狱，晨夜讽诵，无忧色。及当出刑，官属具馔送之，宣乃厉色曰：“董宣生平未",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷84·酷吏列传》",
+      "paragraphs": [
+        {
+          "volume": "酷吏列传",
+          "paragraph_from": 4,
+          "paragraph_to": 7
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_084_02",
+      "史略名称": "樊晔",
+      "史略简介": "樊晔",
+      "原文字句": "樊晔字仲华，南阳新野人也。与光武少游旧。建武初，征为侍御史，迁河东都尉，引见云台。初，光武微时，尝以事拘于新野，晔为市吏，饣鬼饵一笥，帝德之不忘，仍赐晔御食，及乘舆服物。因戏之曰：“一笥饵得都尉，何如？”晔顿首辞谢。及至郡，诛讨大姓马適匡等。盗贼清，吏人畏之。数年，迁杨州牧，教民耕田种树理家之术。视事十余年，坐法左转积长。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷84·酷吏列传》",
+      "paragraphs": [
+        {
+          "volume": "酷吏列传",
+          "paragraph_from": 8,
+          "paragraph_to": 10
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_084_03",
+      "史略名称": "周䊸",
+      "史略简介": "周䊸",
+      "原文字句": "周纟亏字文通，下邳徐人也。为人刻削少恩，好韩非之术。少为廷尉史。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷84·酷吏列传》",
+      "paragraphs": [
+        {
+          "volume": "酷吏列传",
+          "paragraph_from": 14,
+          "paragraph_to": 21
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_084_04",
+      "史略名称": "黄昌",
+      "史略简介": "黄昌",
+      "原文字句": "黄昌字圣真，会稽余姚人也。本出孤微。居近学官，数见诸生修庠序之礼，因好之，遂就经学。又晓习文法，仕郡为决曹。刺史行部，见昌，甚奇之，辟从事。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷84·酷吏列传》",
+      "paragraphs": [
+        {
+          "volume": "酷吏列传",
+          "paragraph_from": 22,
+          "paragraph_to": 27
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_084_05",
+      "史略名称": "阳球",
+      "史略简介": "阳球",
+      "原文字句": "阳球字方正，渔阳泉州人也。家世大姓冠盖。球能击剑，习弓马。性严厉，好申、韩之学。郡吏有辱其母者，球结少年数十人，杀吏，灭其家，由是知名。初举孝廉，补尚书侍郎，闲达故事，其章奏处议，常为台阁所崇信。出为高唐令，以严苛过理，郡守收举，会赦见原。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷84·酷吏列传》",
+      "paragraphs": [
+        {
+          "volume": "酷吏列传",
+          "paragraph_from": 28,
+          "paragraph_to": 37
+        }
+      ]
+    }
+  ]
+}

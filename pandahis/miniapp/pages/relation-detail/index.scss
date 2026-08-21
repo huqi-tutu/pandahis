@@ -6,9 +6,11 @@
 }
 
 .detail-body {
-  padding: 0 24rpx 24rpx;
-  box-sizing: border-box;
+  /* 勿用 padding 简写：会盖掉内联 pageTopPadPx */
+  padding-left: 24rpx;
+  padding-right: 24rpx;
   padding-bottom: 60rpx;
+  box-sizing: border-box;
 }
 
 .meta {

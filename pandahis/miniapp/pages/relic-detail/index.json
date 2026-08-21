@@ -2,6 +2,7 @@
   "usingComponents": {
     "proto-nav": "/components/proto-nav/proto-nav",
     "correction-modal": "/components/correction-modal/correction-modal",
+    "note-modal": "/components/note-modal/note-modal",
     "dictionary-sheet": "/components/dictionary-sheet/dictionary-sheet",
     "text-selection-bar": "/components/text-selection-bar/text-selection-bar"
   },

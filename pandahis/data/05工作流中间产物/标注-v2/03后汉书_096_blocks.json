@@ -1,0 +1,46 @@
+{
+  "work": "03后汉书",
+  "vol": "096",
+  "total_paragraphs": 60,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_096_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 59,
+      "paragraph_to": 60,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "南蛮",
+      "category": "蕃祚",
+      "paragraph_from": 2,
+      "paragraph_to": 26,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "昔高辛氏有犬戎之寇，帝患其侵暴，而征伐不克。乃访募天下，有能得犬戎之将吴将军头者",
+        "close_paragraph": 26,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P26"
+      }
+    },
+    {
+      "name": "西南夷",
+      "category": "蕃祚",
+      "paragraph_from": 27,
+      "paragraph_to": 58,
+      "boundary_evidence": {
+        "open_paragraph": 27,
+        "open_phrase": "西南夷者，在蜀郡徼外。有夜郎国，东接交阯，西有滇国，北有邛都国，各立君长。其人皆",
+        "close_paragraph": 58,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P27–P58"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

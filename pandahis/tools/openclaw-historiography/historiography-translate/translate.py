@@ -6,7 +6,7 @@
   python3 translate.py init [--index PATH]
   python3 translate.py recall --id GLBL_00001
   python3 translate.py run --from GLBL_00001 --max 1 [--priority P0] [--single-source-only]
-  python3 translate.py run-one --id GLBL_00001 [--from-phase phase2] [--dry-run]
+  python3 translate.py run-one --id GLBL_00001 [--from-phase phase2|phase3|phase4|phase5] [--dry-run]
   python3 translate.py repair --id GLBL_00001 [--execute] [--dry-run]
   python3 translate.py repair-show --id GLBL_00001
   python3 translate.py verify --id GLBL_00001
@@ -78,8 +78,11 @@ def main() -> int:
         "--from-phase",
         dest="from_phase",
         default=None,
-        choices=("phase2",),
-        help="从指定阶段续跑（需已有中间产物）",
+        choices=("phase2", "phase3", "phase4", "phase5"),
+        help=(
+            "续跑：phase2=跳过母本重跑润色+质检；phase3=仅第一轮质检；"
+            "phase4=人工确认后定向修复；phase5=修复后复检"
+        ),
     )
 
     p = sub.add_parser("verify", help="质检产出 JSON")
@@ -111,10 +114,16 @@ def main() -> int:
         "--scope",
         default="full",
         choices=("intro", "mother", "tail", "full", "attribution"),
-        help="attribution=规则清洗；其余 scope 走 LLM",
+        help="attribution=规则清洗；其余 scope 走 LLM（文风在 Phase2/full 落地）",
     )
     p.add_argument("--instructions", default="", help="用户修改意见")
     p.add_argument("--index", type=Path, default=None)
+    p.add_argument(
+        "--output-dir",
+        type=Path,
+        default=None,
+        help="产出目录（V2 索引默认 11新标注条目翻译）",
+    )
     p.add_argument("--dry-run", action="store_true")
     p.add_argument("--no-llm", action="store_true", help="仅 attribution scope 可用")
 
@@ -229,6 +238,7 @@ def main() -> int:
             scope=args.scope,
             instructions=args.instructions,
             index_path=index,
+            output_dir=getattr(args, "output_dir", None),
             dry_run=args.dry_run,
             use_llm=not args.no_llm,
         )

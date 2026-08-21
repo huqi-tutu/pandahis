@@ -1,0 +1,50 @@
+{
+  "work": "04三国志",
+  "vol": "012",
+  "volume_name": "崔毛徐何邢鲍司马传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "崔琰",
+      "category": "文臣",
+      "rationale": "卷名首姓，崔琰为曹魏重臣，以清正敢谏、名士风范著称，属行政文臣主轴。"
+    },
+    {
+      "name": "毛玠",
+      "category": "文臣",
+      "rationale": "卷名次姓，毛玠为曹操谋臣，提出奉天子以令不臣、修耕植以畜军资之策，属文臣主轴。"
+    },
+    {
+      "name": "徐奕",
+      "category": "文臣",
+      "rationale": "卷名第三姓，徐奕为曹魏官员，以刚直守正闻名，属文臣主轴。"
+    },
+    {
+      "name": "何夔",
+      "category": "文臣",
+      "rationale": "卷名第四姓，何夔为曹魏重臣，以德行与治理才能著称，属文臣主轴。"
+    },
+    {
+      "name": "邢颙",
+      "category": "文臣",
+      "rationale": "卷名第五姓，邢颙为曹魏官员，以德行笃实、时称‘德行堂堂邢子昂’闻名，属文臣主轴。"
+    },
+    {
+      "name": "鲍勋",
+      "category": "文臣",
+      "rationale": "卷名第六姓，鲍勋为曹魏官员，以忠直敢谏著称，属文臣主轴。"
+    },
+    {
+      "name": "司马芝",
+      "category": "文臣",
+      "rationale": "卷名末姓，司马芝为曹魏官员，以清正廉明、执法不阿著称，属文臣主轴。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

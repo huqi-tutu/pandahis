@@ -1,0 +1,20 @@
+{
+  "work": "03后汉书",
+  "vol": "098",
+  "volume_name": "西域传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "fanzuo",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "西域诸国",
+      "category": "蕃祚",
+      "rationale": "《后汉书·西域传》为蕃祚卷型，主轴为西域诸国/部族集体，非单一君王；据卷名与史学常识，本卷以西域诸国兴衰及与汉朝关系为叙事主线，符合蕃祚类准入标准。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

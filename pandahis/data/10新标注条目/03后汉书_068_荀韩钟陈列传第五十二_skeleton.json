@@ -1,0 +1,572 @@
+{
+  "volume": "荀韩钟陈列传",
+  "source_file": "03后汉书_068_荀韩钟陈列传第五十二.txt",
+  "total_paragraphs": 54,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "荀淑",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "荀淑",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "荀淑",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "荀淑",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "荀淑",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "荀爽",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "荀爽",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "荀爽",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "荀爽",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "荀爽",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "荀爽",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "荀爽",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "荀爽",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "荀爽",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "荀爽",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "荀爽",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "荀爽",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "荀悦",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "荀悦",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "荀悦",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "荀悦",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "荀悦",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "荀悦",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "荀悦",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "荀悦",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "荀悦",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "荀悦",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "荀悦",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "荀悦",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "荀悦",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "荀悦",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "荀悦",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "荀悦",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "荀悦",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "韩韶",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "韩韶",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "钟皓",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "钟皓",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "钟皓",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "钟皓",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "陈寔",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "陈寔",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "陈寔",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [
+        {
+          "name": "陈寔",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 47,
+      "owners": [
+        {
+          "name": "陈寔",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 48,
+      "owners": [
+        {
+          "name": "陈寔",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 49,
+      "owners": [
+        {
+          "name": "陈寔",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 50,
+      "owners": [
+        {
+          "name": "陈寔",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 51,
+      "owners": [
+        {
+          "name": "陈寔",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 52,
+      "owners": [
+        {
+          "name": "陈寔",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 53,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 54,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HOUHANSHU_068_01",
+      "史略名称": "荀淑",
+      "史略简介": "荀淑",
+      "原文字句": "荀淑字季和，颍川颍阴人，荀卿十一世孙也。少有高行，博学而不好章句，多为俗儒所非，而州里称其知人。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷68·荀韩钟陈列传》",
+      "paragraphs": [
+        {
+          "volume": "荀韩钟陈列传",
+          "paragraph_from": 2,
+          "paragraph_to": 6
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_068_02",
+      "史略名称": "荀爽",
+      "史略简介": "荀爽",
+      "原文字句": "爽字慈明，一名谞。幼而好学，年十二，能通《春秋》《论语》。太尉杜乔见而称之，曰：“可为人师。”爽遂耽思经书，庆吊不行，征命不应。颍川为之语曰：“荀氏八龙，慈明无双。”",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷68·荀韩钟陈列传》",
+      "paragraphs": [
+        {
+          "volume": "荀韩钟陈列传",
+          "paragraph_from": 7,
+          "paragraph_to": 18
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_068_03",
+      "史略名称": "荀悦",
+      "史略简介": "荀悦",
+      "原文字句": "悦字仲豫，俭之子也。俭早卒。悦年十二，能说《春秋》。家贫无书，每之人间，所见篇牍，一览多能诵记。性沉静，美姿容，尤好著述。灵帝时阉官用权，士多退身穷处，悦乃托疾隐居，时人莫之识，唯从弟彧特称敬焉。初辟镇东将军曹操府，迁黄门侍郎。献帝颇好文学，悦与彧及少府孔融侍讲禁中，旦夕谈论。累迁秘书监、侍中。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷68·荀韩钟陈列传》",
+      "paragraphs": [
+        {
+          "volume": "荀韩钟陈列传",
+          "paragraph_from": 20,
+          "paragraph_to": 36
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_068_04",
+      "史略名称": "韩韶",
+      "史略简介": "韩韶",
+      "原文字句": "韩韶字仲黄，颍川舞阳人也。少仕郡，辟司徒府。时，太山贼公孙举伪号历年，守、令不能破散，多为坐法。尚书选三府掾能理剧者，乃以韶为赢长。贼闻其贤，相戒不入赢境。余县多被寇盗，废耕桑，其流入县界求索衣粮者甚众。韶愍其饥困，乃开仓赈之，所禀赡万余户。主者争谓不可。韶曰：“长活沟壑之人，而以此伏罪，含笑入地矣。”太守素知韶名德，竟无所坐。以病卒官。同郡李膺、陈寔、杜密、荀淑等为立碑颂焉。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷68·荀韩钟陈列传》",
+      "paragraphs": [
+        {
+          "volume": "荀韩钟陈列传",
+          "paragraph_from": 37,
+          "paragraph_to": 38
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_068_05",
+      "史略名称": "钟皓",
+      "史略简介": "钟皓",
+      "原文字句": "钟皓字季明，颍川长社人也。为郡著姓，世善刑律。皓少以笃行称，公府连辟，为二兄未仕，避隐密山，以诗律教授门徒千余人。同郡陈寔，年不及皓，皓引与为友。皓为郡功曹，会辟司徒府，临辞，太守问：“谁可代卿者？”皓曰：“明府欲必得其人，西门亭长陈寔可。”寔闻之，曰：“钟君似不察人，不知何独识我？”皓顷之自劾去。前后九辟公府，征为廷尉正、博士、林虑长，皆不就。时，皓及荀淑并为士大夫所归慕。李膺常叹曰：“荀君清识",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷68·荀韩钟陈列传》",
+      "paragraphs": [
+        {
+          "volume": "荀韩钟陈列传",
+          "paragraph_from": 39,
+          "paragraph_to": 42
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_068_06",
+      "史略名称": "陈寔",
+      "史略简介": "陈寔",
+      "原文字句": "陈寔字仲弓，颍川许人也。出于单微。自为儿童，虽在戏弄，为等类所归。少作县吏，常给事厮役，后为都亭佐。而有志好学，坐立诵读。县令邓邵试与语，奇之，听受业太学。后令复召为吏，乃避隐阳城山中。时有杀人者，同县杨吏以疑寔，县遂逮系，考掠无实，而后得出。乃为督邮，乃密托许令，礼召杨吏。远近闻者，咸叹服之。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷68·荀韩钟陈列传》",
+      "paragraphs": [
+        {
+          "volume": "荀韩钟陈列传",
+          "paragraph_from": 43,
+          "paragraph_to": 52
+        }
+      ]
+    }
+  ]
+}

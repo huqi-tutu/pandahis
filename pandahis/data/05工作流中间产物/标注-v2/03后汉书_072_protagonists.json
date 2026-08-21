@@ -1,0 +1,27 @@
+{
+  "work": "03后汉书",
+  "vol": "072",
+  "volume_name": "陈王列传",
+  "volume_type_guess": "列传",
+  "volume_arc": "C",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "陈蕃",
+      "category": "文臣",
+      "rationale": "《陈王列传》卷名首姓，陈蕃为东汉名臣，官至太傅，以忠直清节、党锢之祸中殉节为主轴叙事，属行政仕宦型列传主轴，符合文臣准入。"
+    },
+    {
+      "name": "王允",
+      "category": "文臣",
+      "rationale": "《陈王列传》卷名第二人，王允为东汉司徒，以诛董卓、后为李傕郭汜所害为主线，属行政仕宦型列传主轴，符合文臣准入。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

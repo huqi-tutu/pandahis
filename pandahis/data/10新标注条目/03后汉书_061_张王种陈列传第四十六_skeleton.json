@@ -1,0 +1,577 @@
+{
+  "volume": "张王种陈列传",
+  "source_file": "03后汉书_061_张王种陈列传第四十六.txt",
+  "total_paragraphs": 50,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "张晧",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "张晧",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "张晧",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "张晧",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "张纲",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "张纲",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "张纲",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "张纲",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "张纲",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "张纲",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "张纲",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "张纲",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "王龚",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "王龚",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "王龚",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "王龚",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "王龚",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "王龚",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "王畅",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "王畅",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "王畅",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "王畅",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "王畅",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "王畅",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "种暠",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "种暠",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "种暠",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "种暠",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "种暠",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "种暠",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "种岱",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "种岱",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "种拂",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "种拂",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "种劭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "种劭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "种劭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "陈球",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "陈球",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "陈球",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "陈球",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "陈球",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [
+        {
+          "name": "陈球",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 47,
+      "owners": [
+        {
+          "name": "陈球",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 48,
+      "owners": [
+        {
+          "name": "陈球",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 49,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 50,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HOUHANSHU_061_01",
+      "史略名称": "张晧",
+      "史略简介": "张晧",
+      "原文字句": "张皓字叔明，犍为武阳人也。六世祖良，高帝时为太子少傅，封留侯。皓少游学京师，永元中，归仕州郡，辟大将军邓骘府，五迁尚书仆射，职事八年，出为彭城相。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷61·张王种陈列传》",
+      "paragraphs": [
+        {
+          "volume": "张王种陈列传",
+          "paragraph_from": 2,
+          "paragraph_to": 5
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_061_02",
+      "史略名称": "张纲",
+      "史略简介": "张纲",
+      "原文字句": "纲字文纪。少明经学。虽为公子，而厉布衣之节。举孝廉不就，司徒辟高第为侍御史。时顺帝委纵宦官，有识危心。纲常感激，慨然叹曰：“秽恶满朝，不能奋身出命埽国家之难，虽生，吾不愿也。”退而上书曰：",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷61·张王种陈列传》",
+      "paragraphs": [
+        {
+          "volume": "张王种陈列传",
+          "paragraph_from": 6,
+          "paragraph_to": 13
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_061_03",
+      "史略名称": "王龚",
+      "史略简介": "王龚",
+      "原文字句": "王龚字伯宗，山阳高平人也。世为豪族。初举孝廉，稍迁青州刺史，劾奏贪浊二千石数人，安旁嘉之，征拜尚书。建光元年，擢为司隶校尉，明年迁汝南太守。政崇温和，好才爱士，引进郡人黄宪、陈蕃等。宪虽不屈，蕃遂就吏。蕃性气高明，初到，龚不即召见之。乃留记谢病去。龚怒，使除其录。功曹袁阆请见，言曰：“闻之传曰‘人臣不见察于君，不敢立于朝’，蕃既以贤见引，不宜退以非礼。”龚改容谢曰：“是吾过也。”乃复厚遇待之。由是",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷61·张王种陈列传》",
+      "paragraphs": [
+        {
+          "volume": "张王种陈列传",
+          "paragraph_from": 14,
+          "paragraph_to": 19
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_061_04",
+      "史略名称": "王畅",
+      "史略简介": "王畅",
+      "原文字句": "畅字叔茂。少以清实为称，无所交党。初举孝廉，辞病不就。大将军梁商特辟举茂才，四迁尚书令，出为齐相。征拜司隶校尉，转渔阳太守。所在以严明为称。坐事免官。是时，政事多归尚书，桓帝特诏三公，令高选庸能。太尉陈蕃荐畅清方公正，有不可犯之色，由是复为尚书。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷61·张王种陈列传》",
+      "paragraphs": [
+        {
+          "volume": "张王种陈列传",
+          "paragraph_from": 21,
+          "paragraph_to": 26
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_061_05",
+      "史略名称": "种暠",
+      "史略简介": "种暠",
+      "原文字句": "种暠字景伯，河南洛阳人，仲山甫之后也。父为定陶令，有财三千万。父卒，暠悉以赈恤宗族及邑里之贫者。其有进趣名利，皆不与交通。始为县门下史。时河南尹田歆外甥王谌，名知人。歆谓之曰：“今当举六孝廉，多得贵戚书命，不宜相违，欲自用一名士以报国家，尔助我求之。”明日，谌送客于大阳郭，遥见暠，异之。还白歆曰：“为尹得孝廉矣，近洛阳门下史也。”歆笑曰：“当得山泽隐滞，乃洛阳吏邪？”谌曰：“山泽不必有异士，异士不",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷61·张王种陈列传》",
+      "paragraphs": [
+        {
+          "volume": "张王种陈列传",
+          "paragraph_from": 28,
+          "paragraph_to": 33
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_061_06",
+      "史略名称": "种岱",
+      "史略简介": "种岱",
+      "原文字句": "岱字公祖。好学养志。举孝廉、茂才，辟公府，皆不就。公车特征，病卒。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷61·张王种陈列传》",
+      "paragraphs": [
+        {
+          "volume": "张王种陈列传",
+          "paragraph_from": 34,
+          "paragraph_to": 35
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_061_07",
+      "史略名称": "种拂",
+      "史略简介": "种拂",
+      "原文字句": "拂字颖伯。初为司隶从事，拜宛令。时，南阳郡吏好因休沐，游戏市里，为百姓所患。拂出逢之，必下车公谒，以愧其心，自是莫敢出者。政有能名，累迁光禄大夫。初平元年，代荀爽为司空。明年，以地震策免，复为太常。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷61·张王种陈列传》",
+      "paragraphs": [
+        {
+          "volume": "张王种陈列传",
+          "paragraph_from": 36,
+          "paragraph_to": 37
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_061_08",
+      "史略名称": "种劭",
+      "史略简介": "种劭",
+      "原文字句": "劭字申甫。少知名。中平末，为谏议大夫。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷61·张王种陈列传》",
+      "paragraphs": [
+        {
+          "volume": "张王种陈列传",
+          "paragraph_from": 38,
+          "paragraph_to": 40
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_061_09",
+      "史略名称": "陈球",
+      "史略简介": "陈球",
+      "原文字句": "陈球字伯真，下邳淮浦人也。历世著名。父亹，广汉太守。球少涉儒学，善律令。阳嘉中，举孝廉，稍迁繁阳令。时魏郡太守讽县求纳货贿，球不与之，太守怒而挝督邮，欲令逐球。督邮不肯，曰：“魏郡十五城，独繁阳有异政，今受命逐之，将致议于天下矣。”太守乃止。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷61·张王种陈列传》",
+      "paragraphs": [
+        {
+          "volume": "张王种陈列传",
+          "paragraph_from": 41,
+          "paragraph_to": 48
+        }
+      ]
+    }
+  ]
+}

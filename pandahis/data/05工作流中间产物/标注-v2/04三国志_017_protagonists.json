@@ -1,0 +1,39 @@
+{
+  "work": "04三国志",
+  "vol": "017",
+  "volume_name": "张乐于张徐传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "张辽",
+      "category": "武将",
+      "rationale": "卷名《张乐于张徐传》以张辽为首，为曹魏名将，以军功征战为主轴，符合武将准入标准。"
+    },
+    {
+      "name": "乐进",
+      "category": "武将",
+      "rationale": "卷名第二人，曹魏五子良将之一，以军功征战为主轴，符合武将准入标准。"
+    },
+    {
+      "name": "于禁",
+      "category": "武将",
+      "rationale": "卷名第三人，曹魏五子良将之一，以军功征战为主轴，符合武将准入标准。"
+    },
+    {
+      "name": "张郃",
+      "category": "武将",
+      "rationale": "卷名第四人，曹魏五子良将之一，以军功征战为主轴，符合武将准入标准。"
+    },
+    {
+      "name": "徐晃",
+      "category": "武将",
+      "rationale": "卷名第五人，曹魏五子良将之一，以军功征战为主轴，符合武将准入标准。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "其他"
+  ]
+}

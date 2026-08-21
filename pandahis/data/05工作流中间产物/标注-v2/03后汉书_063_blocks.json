@@ -1,0 +1,70 @@
+{
+  "work": "03后汉书",
+  "vol": "063",
+  "total_paragraphs": 53,
+  "volume_subtype": "hezhuan",
+  "derived_from": "03后汉书_063_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 52,
+      "paragraph_to": 53,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "虞诩",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 14,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "虞诩字升卿，陈国武平人也。祖父经，为郡县狱吏，案法平允，务存宽恕，每冬月上其状，",
+        "close_paragraph": 14,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P14"
+      }
+    },
+    {
+      "name": "傅燮",
+      "category": "武将",
+      "paragraph_from": 15,
+      "paragraph_to": 28,
+      "boundary_evidence": {
+        "open_paragraph": 15,
+        "open_phrase": "傅燮字南容，北地灵州人也。本字幼起，慕南容三复白珪，乃易字焉。身长八尺，有威容。",
+        "close_paragraph": 28,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P15–P28"
+      }
+    },
+    {
+      "name": "盖勋",
+      "category": "武将",
+      "paragraph_from": 29,
+      "paragraph_to": 36,
+      "boundary_evidence": {
+        "open_paragraph": 29,
+        "open_phrase": "盖勋字元固，敦煌广至人也。家世二千石。初举孝廉，为汉阳长史。时，武威太守倚恃权势",
+        "close_paragraph": 36,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P29–P36"
+      }
+    },
+    {
+      "name": "臧洪",
+      "category": "武将",
+      "paragraph_from": 37,
+      "paragraph_to": 51,
+      "boundary_evidence": {
+        "open_paragraph": 37,
+        "open_phrase": "臧洪字子源，广陵射阳人也。父旻，有干事才。熹平元年，会稽妖贼许昭起兵句章，自称“",
+        "close_paragraph": 51,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P37–P51"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

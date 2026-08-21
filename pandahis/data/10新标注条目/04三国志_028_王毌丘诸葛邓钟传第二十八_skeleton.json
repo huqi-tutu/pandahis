@@ -1,0 +1,502 @@
+{
+  "volume": "王毌丘诸葛邓钟传",
+  "source_file": "04三国志_028_王毌丘诸葛邓钟传第二十八.txt",
+  "total_paragraphs": 47,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "王凌",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "王凌",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "王凌",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "毌丘俭",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "毌丘俭",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "毌丘俭",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "毌丘俭",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "毌丘俭",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "毌丘俭",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "毌丘俭",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "毌丘俭",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "诸葛诞",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "诸葛诞",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "诸葛诞",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "诸葛诞",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "诸葛诞",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "诸葛诞",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "诸葛诞",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "诸葛诞",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "邓艾",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "邓艾",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "邓艾",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "邓艾",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "邓艾",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "邓艾",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "邓艾",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "邓艾",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "邓艾",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "邓艾",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "邓艾",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "邓艾",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "邓艾",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "邓艾",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "钟会",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "钟会",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "钟会",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "钟会",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "钟会",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "钟会",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "钟会",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "钟会",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "钟会",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "钟会",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "钟会",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [
+        {
+          "name": "钟会",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 47,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SANGUOZHI_028_01",
+      "史略名称": "王凌",
+      "史略简介": "王凌",
+      "原文字句": "王凌字彦云，太原祁人也。叔父允，为汉司徒，诛董卓。卓将李傕、郭汜等为卓报仇，入长安，杀允，尽害其家。凌及兄晨，时年皆少，逾城得脱，亡命归乡里。凌举孝廉，为发干长，稍迁至中山太守，所在有治，太祖辟为丞相掾属。",
+      "史略分类": "武将",
+      "主要史料出处": "《04三国志·卷28·王毌丘诸葛邓钟传》",
+      "paragraphs": [
+        {
+          "volume": "王毌丘诸葛邓钟传",
+          "paragraph_from": 2,
+          "paragraph_to": 4
+        }
+      ]
+    },
+    {
+      "史略ID": "SANGUOZHI_028_02",
+      "史略名称": "毌丘俭",
+      "史略简介": "毌丘俭",
+      "原文字句": "毌丘俭字仲恭，河东闻喜人也。父兴，黄初中为武威太守，伐叛柔服，开通河右，名次金城太守苏则。讨贼张进及讨叛胡有功，封高阳乡侯。入为将作大匠。俭袭父爵，为平原侯文学。明帝即位，为尚书郎，迁羽林监。以东宫之旧，甚见亲待。出为洛阳典农。时取农民以治宫室，俭上疏曰：“臣愚以为天下所急除者二贼，所急务者衣食。诚使二贼不灭，士民饥冻，虽崇美宫室，犹无益也。”迁荆州刺史。",
+      "史略分类": "武将",
+      "主要史料出处": "《04三国志·卷28·王毌丘诸葛邓钟传》",
+      "paragraphs": [
+        {
+          "volume": "王毌丘诸葛邓钟传",
+          "paragraph_from": 5,
+          "paragraph_to": 12
+        }
+      ]
+    },
+    {
+      "史略ID": "SANGUOZHI_028_03",
+      "史略名称": "诸葛诞",
+      "史略简介": "诸葛诞",
+      "原文字句": "诸葛诞字公休，琅邪阳都人，诸葛丰后也。初以尚书郎为荥阳令，入为吏部郎。人有所属讬，辄显其言而承用之，后有当否，则公议其得失以为褒贬，自是群僚莫不慎其所举。累迁御史中丞尚书，与夏侯玄、邓飏等相善，收名朝廷，京都翕然。言事者以诞、飏等脩浮华，合虚誉，渐不可长。明帝恶之，免诞官。会帝崩，正始初，玄等并在职。复以诞为御史中丞尚书，出为扬州刺史，加昭武将军。",
+      "史略分类": "武将",
+      "主要史料出处": "《04三国志·卷28·王毌丘诸葛邓钟传》",
+      "paragraphs": [
+        {
+          "volume": "王毌丘诸葛邓钟传",
+          "paragraph_from": 13,
+          "paragraph_to": 20
+        }
+      ]
+    },
+    {
+      "史略ID": "SANGUOZHI_028_04",
+      "史略名称": "邓艾",
+      "史略简介": "邓艾",
+      "原文字句": "邓艾字士载，义阳棘阳人也。少孤，太祖破荆州，徙汝南，为农民养犊。年十二，随母至颍川，读故太丘长陈寔碑文，言“文为世范，行为士则”，艾遂自名范，字士则。后宗族有与同者，故改焉。为都尉学士，以口吃，不得作幹佐。为稻田守丛草吏。同郡吏父怜其家贫，资给甚厚，艾初不称谢。每见高山大泽，辄规度指画军营处所，时人多笑焉。后为典农纲纪，上计吏，因使见太尉司马宣王。宣王奇之，辟之为掾，迁尚书郎。",
+      "史略分类": "武将",
+      "主要史料出处": "《04三国志·卷28·王毌丘诸葛邓钟传》",
+      "paragraphs": [
+        {
+          "volume": "王毌丘诸葛邓钟传",
+          "paragraph_from": 21,
+          "paragraph_to": 34
+        }
+      ]
+    },
+    {
+      "史略ID": "SANGUOZHI_028_05",
+      "史略名称": "钟会",
+      "史略简介": "钟会",
+      "原文字句": "钟会字士季，颍川长社人，太傅繇小子也。少敏惠夙成。中护军蒋济著论，谓“观其眸子，足以知人。”会年五岁，繇遣见济，济甚异之，曰：“非常人也。”及壮，有才数技艺，而博学精练名理，以夜续昼，由是获声誉。正始中，以为秘书郎，迁尚书中书侍郎。高贵乡公即尊位，赐爵关内侯。",
+      "史略分类": "武将",
+      "主要史料出处": "《04三国志·卷28·王毌丘诸葛邓钟传》",
+      "paragraphs": [
+        {
+          "volume": "王毌丘诸葛邓钟传",
+          "paragraph_from": 35,
+          "paragraph_to": 46
+        }
+      ]
+    }
+  ]
+}

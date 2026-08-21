@@ -1,0 +1,58 @@
+{
+  "work": "03后汉书",
+  "vol": "067",
+  "total_paragraphs": 52,
+  "volume_subtype": "hezhuan",
+  "derived_from": "03后汉书_067_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 51,
+      "paragraph_to": 52,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "左雄",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 15,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "左雄字伯豪，南阳涅阳人也。安帝时，举孝廉，稍迁冀州刺史。州部多豪族，好请托，雄常",
+        "close_paragraph": 15,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P15"
+      }
+    },
+    {
+      "name": "周举",
+      "category": "文臣",
+      "paragraph_from": 16,
+      "paragraph_to": 30,
+      "boundary_evidence": {
+        "open_paragraph": 16,
+        "open_phrase": "周举字宣光，汝南汝阳人，陈留太守防之子。防在《儒林传》。举姿貌短陋，而博学洽闻，",
+        "close_paragraph": 30,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P16–P30"
+      }
+    },
+    {
+      "name": "黄琼",
+      "category": "文臣",
+      "paragraph_from": 31,
+      "paragraph_to": 50,
+      "boundary_evidence": {
+        "open_paragraph": 31,
+        "open_phrase": "黄琼字世英，江夏安陆人，魏郡太守香之子也。香在《文苑传》。琼初以父任为太子舍人，",
+        "close_paragraph": 50,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P31–P50"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

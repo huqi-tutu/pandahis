@@ -1,0 +1,58 @@
+{
+  "work": "04三国志",
+  "vol": "044",
+  "total_paragraphs": 23,
+  "volume_subtype": "hezhuan",
+  "derived_from": "04三国志_044_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 23,
+      "paragraph_to": 23,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "蒋琬",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 8,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "蒋琬字公琰、零陵湘乡人也。弱冠与外弟泉陵刘敏俱知名。琬以州书佐随先主入蜀，除广都",
+        "close_paragraph": 8,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P8"
+      }
+    },
+    {
+      "name": "费祎",
+      "category": "文臣",
+      "paragraph_from": 9,
+      "paragraph_to": 11,
+      "boundary_evidence": {
+        "open_paragraph": 9,
+        "open_phrase": "费祎字文伟，江夏鄳人也。（鄳音盲。）少孤，依族父伯仁。伯仁姑，益州牧刘璋之母也。",
+        "close_paragraph": 11,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P9–P11"
+      }
+    },
+    {
+      "name": "姜维",
+      "category": "武将",
+      "paragraph_from": 12,
+      "paragraph_to": 22,
+      "boundary_evidence": {
+        "open_paragraph": 12,
+        "open_phrase": "姜维字伯约，天水冀人也。少孤，与母居。好郑氏学。仕郡上计掾，州辟为从事。以父冏昔",
+        "close_paragraph": 22,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P12–P22"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

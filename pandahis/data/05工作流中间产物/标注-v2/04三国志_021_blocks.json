@@ -1,0 +1,99 @@
+{
+  "work": "04三国志",
+  "vol": "021",
+  "total_paragraphs": 35,
+  "volume_subtype": "hezhuan",
+  "derived_from": "04三国志_021_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 6,
+      "paragraph_to": 9,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 35,
+      "paragraph_to": 35,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "王粲",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 5,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "王粲字仲宣，山阳高平人也。曾祖父龚，祖父畅，皆为汉三公。父谦，为大将军何进长史。",
+        "close_paragraph": 5,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P5"
+      }
+    },
+    {
+      "name": "王粲",
+      "category": "文臣",
+      "paragraph_from": 10,
+      "paragraph_to": 16,
+      "boundary_evidence": {
+        "open_paragraph": 10,
+        "open_phrase": "瑀以十七年卒。幹、琳、玚、桢二十二年卒。文帝书与元城令吴质曰：“昔年疾疫，亲故多",
+        "close_paragraph": 16,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P10–P16"
+      }
+    },
+    {
+      "name": "卫觊",
+      "category": "文臣",
+      "paragraph_from": 17,
+      "paragraph_to": 19,
+      "boundary_evidence": {
+        "open_paragraph": 17,
+        "open_phrase": "卫觊字伯儒，河东安邑人也。少夙成，以才学称。太祖辟为司空掾属，除茂陵令、尚书郎。",
+        "close_paragraph": 19,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P17–P19"
+      }
+    },
+    {
+      "name": "刘廙",
+      "category": "文臣",
+      "paragraph_from": 20,
+      "paragraph_to": 22,
+      "boundary_evidence": {
+        "open_paragraph": 20,
+        "open_phrase": "刘廙字恭嗣，南阳安众人也。年十岁，戏于讲堂上，颍川司马德操拊其头曰：“孺子，孺子",
+        "close_paragraph": 22,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P20–P22"
+      }
+    },
+    {
+      "name": "刘劭",
+      "category": "文臣",
+      "paragraph_from": 23,
+      "paragraph_to": 30,
+      "boundary_evidence": {
+        "open_paragraph": 23,
+        "open_phrase": "刘劭字孔才，广平邯郸人也。建安中，为计吏，诣许。太史上言：“正旦当日蚀。”劭时在",
+        "close_paragraph": 30,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P23–P30"
+      }
+    },
+    {
+      "name": "傅嘏",
+      "category": "文臣",
+      "paragraph_from": 31,
+      "paragraph_to": 34,
+      "boundary_evidence": {
+        "open_paragraph": 31,
+        "open_phrase": "傅嘏字兰石，北地泥阳人，傅介子之后也。伯父巽，黄初中为侍中尚书。嘏弱冠知名，司空",
+        "close_paragraph": 34,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P31–P34"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

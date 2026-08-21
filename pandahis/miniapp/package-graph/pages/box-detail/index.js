@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const api_1 = require("../../../native-utils/api");
+const box_reading_progress_1 = require("../../../native-utils/box-reading-progress");
 const box_narration_1 = require("../../../native-utils/box-narration");
 const encode_path_segment_1 = require("../../../native-utils/encode-path-segment");
 const query_value_1 = require("../../../native-utils/query-value");
@@ -9,10 +10,14 @@ const year_format_1 = require("../../../native-utils/year-format");
 const router_1 = require("../../../native-utils/router");
 const share_poster_open_1 = require("../../../native-utils/share-poster-open");
 const correction_1 = require("../../../native-utils/correction");
+const note_1 = require("../../../native-utils/note");
+const note_highlight_1 = require("../../../native-utils/note-highlight");
 const category_label_1 = require("../../../native-utils/category-label");
 const read_complete_1 = require("../../../native-utils/read-complete");
 const selection_bar_position_1 = require("../../../native-utils/selection-bar-position");
 const brand_assets_1 = require("../../../native-utils/brand-assets");
+const box_detail_search_1 = require("../../../native-utils/box-detail-search");
+const box_detail_search_history_1 = require("../../../native-utils/box-detail-search-history");
 function relicThumbLabel(name) {
     const n = (name || '').trim();
     if (!n)
@@ -397,6 +402,7 @@ Page({
         isReadComplete: false,
         detailMd: '',
         detailParagraphs: [],
+        blurbSegs: [],
         detailMetaDisplay: '',
         detailReady: false,
         detailErr: '',
@@ -440,6 +446,9 @@ Page({
         originalFallback: '',
         originalEmpty: true,
         originalLoading: false,
+        /** 仅程序定位时写入数字；定位后立刻置 ''，避免 scroll-top 受控锁死 */
+        originalScrollAssign: '',
+        originalReadingProgress: 0,
         correctionVisible: false,
         dictionaryVisible: false,
         dictionaryQuery: '',
@@ -448,12 +457,24 @@ Page({
         correctionCivilizationName: '',
         correctionDynastyName: '',
         correctionSelectedText: '',
+        correctionSourceType: 'box_detail_selection',
+        noteVisible: false,
+        noteSubmitting: false,
+        noteSelectedText: '',
+        noteBoxTitle: '',
+        noteCivilizationName: '',
+        noteDynastyName: '',
+        detailHighlights: [],
+        relationNotedNames: [],
+        focusNoteId: 0,
+        noteScrollIntoView: '',
         selectionBarVisible: false,
         selectionBarLeft: 0,
         selectionBarTop: 0,
         selectionBarPlacement: 'above',
         selectionBarText: '',
         selectionMountKey: 1,
+        originalSelectionMountKey: 1,
         sharePosterVisible: false,
         sharePosterQuote: '',
         sharePosterSourceLine1: '',
@@ -461,8 +482,37 @@ Page({
         sharePosterUserName: '历史读者',
         sharePosterUserAvatar: '',
         sharePosterExcerptDate: '',
+        /** 详情正文页内搜索半屏 */
+        showContentSearch: false,
+        contentSearchKeyword: '',
+        contentSearchHasSearched: false,
+        contentSearchResults: [],
+        contentSearchHistory: [],
+        contentSearchEmptyHint: '',
+        searchFlashParaIndex: -1,
+        contentSearchFocus: false,
+        contentSearchTruncated: false,
+        /** 搜索半屏：键盘顶起后垫高，避免历史/结果被挡 */
+        contentSearchKeyboardHeight: 0,
+        contentSearchModalStyle: '',
+        contentSearchCardStyle: '',
+        contentSearchBodyStyle: '',
+        /** 轻量搜索浏览态：顶条 + 上一个/下一个 */
+        contentSearchBrowseActive: false,
+        contentSearchBrowseIndex: 0,
+        contentSearchBrowseCounter: '',
+        searchBrowseParaIndex: -1,
     },
     _selectionContext: null,
+    _originalSelectionContext: null,
+    _openOriginalOnReady: false,
+    _searchFlashTimer: null,
+    _searchFlashClearTimer: null,
+    _ignoreTapFromBar: false,
+    _onContentSearchKeyboard: null,
+    _rawDetailParagraphs: [],
+    _rawBlurbSegs: [],
+    _focusNoteName: '',
     /** 详情 Tab 实时滚动位置（沉浸态判定用） */
     _detailScrollTop: 0,
     /** 离开详情 Tab 时缓存的阅读进度（当次访问有效） */
@@ -472,6 +522,26 @@ Page({
     _suppressChromeHide: false,
     _suppressChromeHideTimer: null,
     _restoreContentScrollTimer: null,
+    /** 程序定位 scroll-top 的世代号，用于作废过期 setData 回调 */
+    _bodyScrollAssignSeq: 0,
+    /** 正在按持久化进度恢复滚动，期间不写回进度 */
+    _restoringReadingProgress: false,
+    /** 正在拉取/合并跨次进度，期间禁止 flush，避免 0% 误删 */
+    _progressHydrating: false,
+    /** 本页是否已完成本次跨次阅读进度 hydrate */
+    _persistedProgressApplied: false,
+    _persistReadingProgressTimer: null,
+    /** 详情 scroll-view 可视高度（与恢复共用，保证百分比换算一致） */
+    _detailViewportH: 0,
+    _originalScrollTop: 0,
+    _originalReadingProgress: 0,
+    _originalViewportH: 0,
+    _restoringOriginalProgress: false,
+    _originalProgressHydrating: false,
+    _originalProgressApplied: false,
+    _persistOriginalProgressTimer: null,
+    _restoreOriginalScrollTimer: null,
+    _unlockOriginalProgressTimer: null,
     _rawOriginalRef: null,
     onReady() {
         this.bindDetailSelectionContext();
@@ -483,6 +553,16 @@ Page({
             .context((res) => {
             var _a;
             this._selectionContext = (_a = res === null || res === void 0 ? void 0 : res.context) !== null && _a !== void 0 ? _a : null;
+        })
+            .exec();
+    },
+    bindOriginalSelectionContext() {
+        wx.createSelectorQuery()
+            .in(this)
+            .select('#originalBodySelection')
+            .context((res) => {
+            var _a;
+            this._originalSelectionContext = (_a = res === null || res === void 0 ? void 0 : res.context) !== null && _a !== void 0 ? _a : null;
         })
             .exec();
     },
@@ -501,6 +581,28 @@ Page({
             this.bindDetailSelectionContext();
         });
     },
+    clearOriginalSelection() {
+        const ctx = this._originalSelectionContext;
+        if (ctx && typeof ctx.removeSelection === 'function') {
+            try {
+                ctx.removeSelection();
+                return;
+            }
+            catch {
+                // fallback to remount below
+            }
+        }
+        if (!this.data.showOriginal)
+            return;
+        this.setData({ originalSelectionMountKey: this.data.originalSelectionMountKey + 1 }, () => {
+            this.bindOriginalSelectionContext();
+        });
+    },
+    onHide() {
+        this.flushPersistReadingProgress();
+        this.cancelOriginalProgressRestore();
+        void this.flushPersistOriginalReadingProgress();
+    },
     onUnload() {
         if (this._suppressChromeHideTimer) {
             clearTimeout(this._suppressChromeHideTimer);
@@ -510,32 +612,190 @@ Page({
             clearTimeout(this._restoreContentScrollTimer);
             this._restoreContentScrollTimer = null;
         }
+        if (this._persistReadingProgressTimer) {
+            clearTimeout(this._persistReadingProgressTimer);
+            this._persistReadingProgressTimer = null;
+        }
+        this.clearSearchFlashTimers();
+        this.unbindContentSearchKeyboard();
+        this.cancelOriginalProgressRestore();
+        void this.flushPersistReadingProgress();
+        void this.flushPersistOriginalReadingProgress();
         (0, box_narration_1.stopNarration)();
         this.setData({ audioOpen: false });
     },
-    /** 强制设置 scroll-view 的 scroll-top（同值时需先 bump 再设回） */
-    applyBodyScrollTop(target, after) {
-        const safeTarget = Math.max(0, target);
-        const bump = this.data.bodyScrollTop === safeTarget
-            ? (safeTarget === 0 ? 0.01 : safeTarget - 0.01)
-            : safeTarget;
-        this.setData({ bodyScrollTop: bump }, () => {
-            if (bump !== safeTarget) {
-                this.setData({ bodyScrollTop: safeTarget }, after);
-            }
-            else {
-                after === null || after === void 0 ? void 0 : after();
-            }
+    clearSearchFlashTimers() {
+        if (this._searchFlashTimer) {
+            clearTimeout(this._searchFlashTimer);
+            this._searchFlashTimer = null;
+        }
+        if (this._searchFlashClearTimer) {
+            clearTimeout(this._searchFlashClearTimer);
+            this._searchFlashClearTimer = null;
+        }
+    },
+    bindContentSearchKeyboard() {
+        if (this._onContentSearchKeyboard)
+            return;
+        this._onContentSearchKeyboard = (res) => {
+            if (!this.data.showContentSearch)
+                return;
+            const height = Math.max(0, Math.floor(Number(res === null || res === void 0 ? void 0 : res.height) || 0));
+            this.applyContentSearchSheetLayout(height);
+        };
+        if (typeof wx.onKeyboardHeightChange === 'function') {
+            wx.onKeyboardHeightChange(this._onContentSearchKeyboard);
+        }
+    },
+    unbindContentSearchKeyboard() {
+        const handler = this._onContentSearchKeyboard;
+        if (handler && typeof wx.offKeyboardHeightChange === 'function') {
+            wx.offKeyboardHeightChange(handler);
+        }
+        this._onContentSearchKeyboard = null;
+    },
+    /** 搜索半屏高度封顶约 75%；键盘升起时整体上移且不越过小程序顶栏 */
+    applyContentSearchSheetLayout(keyboardHeight) {
+        var _a;
+        const kb = Math.max(0, Math.floor((_a = keyboardHeight !== null && keyboardHeight !== void 0 ? keyboardHeight : this.data.contentSearchKeyboardHeight) !== null && _a !== void 0 ? _a : 0));
+        let windowHeight = 667;
+        let windowWidth = 375;
+        let safeBottom = 0;
+        try {
+            const sys = wx.getSystemInfoSync();
+            windowHeight = Math.max(1, Math.floor(Number(sys.windowHeight) || 667));
+            windowWidth = Math.max(1, Math.floor(Number(sys.windowWidth) || 375));
+            const insets = sys.safeAreaInsets;
+            safeBottom = Math.max(0, Math.floor(Number(insets === null || insets === void 0 ? void 0 : insets.bottom) || 0));
+        }
+        catch {
+            // keep defaults
+        }
+        const padBottomRest = Math.max(14, Math.round((28 * windowWidth) / 750)) + safeBottom;
+        const padBottom = kb > 0 ? Math.max(12, Math.round((16 * windowWidth) / 750)) : padBottomRest;
+        const heightCap = Math.floor(windowHeight * 0.75);
+        // 有键盘时：半屏仍不超过 75%，且不超过键盘上方剩余空间
+        const aboveKeyboard = kb > 0 ? Math.max(260, windowHeight - kb - 8) : heightCap;
+        const cardMaxHeightPx = Math.min(heightCap, aboveKeyboard);
+        const headerPx = Math.round((88 * windowWidth) / 750);
+        const barPx = Math.round((100 * windowWidth) / 750);
+        const padTopPx = Math.round((28 * windowWidth) / 750);
+        const chromePx = padTopPx + headerPx + barPx + padBottom;
+        const bodyHeightPx = Math.max(160, cardMaxHeightPx - chromePx);
+        this.setData({
+            contentSearchKeyboardHeight: kb,
+            contentSearchModalStyle: kb > 0 ? `padding-bottom: ${kb}px;` : '',
+            contentSearchCardStyle: `max-height: ${cardMaxHeightPx}px; padding-bottom: ${padBottom}px;`,
+            contentSearchBodyStyle: `height: ${bodyHeightPx}px; max-height: ${bodyHeightPx}px;`,
         });
     },
-    /** 详情 DOM 重建后恢复阅读进度（scrollHeight 就绪前会短间隔重试） */
-    restoreContentScrollTop(target, attempt = 0) {
-        const safeTarget = Math.max(0, target);
-        if (safeTarget <= 0) {
-            this.applyBodyScrollTop(0, () => this.bindDetailSelectionContext());
+    currentReadingProgressPct() {
+        if (this.data.tab === 'content') {
+            return (0, box_reading_progress_1.clampProgressPct)(this.data.readingProgress || 0);
+        }
+        return (0, box_reading_progress_1.clampProgressPct)(this._contentReadingProgress || 0);
+    },
+    currentReadingScrollTopPx() {
+        if (this.data.tab === 'content') {
+            return Math.max(0, Math.round(this._detailScrollTop || 0));
+        }
+        return Math.max(0, Math.round(this._contentScrollTop || 0));
+    },
+    /** 与有栏布局一致：优先实测 scroll-view 高；回退 windowHeight - tabTop */
+    detailViewportHeightPx() {
+        if (this._detailViewportH > 0)
+            return this._detailViewportH;
+        const sys = wx.getSystemInfoSync();
+        return (0, box_reading_progress_1.detailViewportFallbackPx)(sys.windowHeight || 0, this.data.tabTop || 0);
+    },
+    measureDetailViewport(done) {
+        wx.createSelectorQuery()
+            .in(this)
+            .select('#boxBodyScroll')
+            .boundingClientRect()
+            .exec((res) => {
+            const rect = (res && res[0]);
+            const h = Number(rect === null || rect === void 0 ? void 0 : rect.height) || 0;
+            if (h > 0)
+                this._detailViewportH = h;
+            done === null || done === void 0 ? void 0 : done();
+        });
+    },
+    schedulePersistReadingProgress(immediate = false) {
+        if (!(0, api_1.hasToken)() || this._restoringReadingProgress || this._progressHydrating)
+            return;
+        if (!this._persistedProgressApplied)
+            return;
+        if (this._persistReadingProgressTimer) {
+            clearTimeout(this._persistReadingProgressTimer);
+            this._persistReadingProgressTimer = null;
+        }
+        if (immediate) {
+            void this.flushPersistReadingProgress();
             return;
         }
-        const maxAttempts = 8;
+        this._persistReadingProgressTimer = setTimeout(() => {
+            this._persistReadingProgressTimer = null;
+            void this.flushPersistReadingProgress();
+        }, 1200);
+    },
+    async flushPersistReadingProgress() {
+        if (!(0, api_1.hasToken)() || this._restoringReadingProgress || this._progressHydrating)
+            return;
+        if (!this._persistedProgressApplied)
+            return;
+        const boxId = this.data.boxId;
+        if (!boxId)
+            return;
+        const progressPct = this.currentReadingProgressPct();
+        const scrollTopPx = this.currentReadingScrollTopPx();
+        try {
+            await (0, box_reading_progress_1.persistBoxReadingProgress)(boxId, { progressPct, scrollTopPx });
+        }
+        catch {
+            // 静默失败：本地已优先写入
+        }
+    },
+    /** 登录用户：正文就绪后按有栏坐标系恢复阅读位置 */
+    async tryRestorePersistedReadingProgress() {
+        if (!(0, api_1.hasToken)() || this._persistedProgressApplied || this._progressHydrating)
+            return;
+        const boxId = this.data.boxId;
+        if (!boxId || this.data.tab !== 'content' || !this.data.detailReady)
+            return;
+        this._progressHydrating = true;
+        this._restoringReadingProgress = true;
+        // 恢复时始终按「导航+Tab 可见」呈现，与进度锚点一致
+        if (!this.data.uiFocused) {
+            this.setData({ uiFocused: true });
+        }
+        let record = null;
+        try {
+            record = await (0, box_reading_progress_1.resolveBoxReadingProgress)(boxId);
+        }
+        catch {
+            this._restoringReadingProgress = false;
+            this._progressHydrating = false;
+            this._persistedProgressApplied = true;
+            return;
+        }
+        this._persistedProgressApplied = true;
+        this._progressHydrating = false;
+        if (!record || !(0, box_reading_progress_1.isRestorableProgressPct)(record.progressPct)) {
+            this._restoringReadingProgress = false;
+            return;
+        }
+        this._contentReadingProgress = record.progressPct;
+        this.setData({ readingProgress: record.progressPct, uiFocused: true });
+        this.restoreContentScrollFromRecord(record);
+    },
+    restoreContentScrollFromRecord(record, attempt = 0) {
+        if (!(0, box_reading_progress_1.isRestorableProgressPct)(record.progressPct)) {
+            this._restoringReadingProgress = false;
+            return;
+        }
+        const maxAttempts = 10;
+        this._restoringReadingProgress = true;
         wx.createSelectorQuery()
             .in(this)
             .select('#boxBodyScroll')
@@ -546,16 +806,123 @@ Page({
             const scroll = (res && res[0]);
             const rect = (res && res[1]);
             const scrollHeight = Number(scroll === null || scroll === void 0 ? void 0 : scroll.scrollHeight) || 0;
-            const viewportH = Number(rect === null || rect === void 0 ? void 0 : rect.height) || 0;
-            const ready = scrollHeight >= safeTarget + Math.max(viewportH * 0.35, 64);
+            const viewportH = Number(rect === null || rect === void 0 ? void 0 : rect.height) || this.detailViewportHeightPx();
+            if (viewportH > 0)
+                this._detailViewportH = viewportH;
+            const maxScroll = (0, box_reading_progress_1.maxScrollFromMetrics)(scrollHeight, viewportH);
+            const target = (0, box_reading_progress_1.resolveRestoreScrollTop)(record, maxScroll);
+            const ready = maxScroll > 0 && scrollHeight >= Math.max(viewportH * 1.2, 120);
             if (ready || attempt >= maxAttempts) {
-                this.applyBodyScrollTop(safeTarget, () => this.bindDetailSelectionContext());
+                this._contentScrollTop = target;
+                this._detailScrollTop = target;
+                this.restoreContentScrollTop(target);
+                if (target > 0) {
+                    wx.showToast({ title: '已回到上次阅读位置', icon: 'none', duration: 1600 });
+                }
+                setTimeout(() => {
+                    this._restoringReadingProgress = false;
+                }, 400);
                 return;
             }
             this._restoreContentScrollTimer = setTimeout(() => {
                 this._restoreContentScrollTimer = null;
-                this.restoreContentScrollTop(safeTarget, attempt + 1);
-            }, 40 + attempt * 24);
+                this.restoreContentScrollFromRecord(record, attempt + 1);
+            }, 48 + attempt * 28);
+        });
+    },
+    /** 强制设置 scroll-view 的 scroll-top（同值时需先 bump 再设回） */
+    applyBodyScrollTop(target, after) {
+        const safeTarget = Math.max(0, target);
+        const seq = ++this._bodyScrollAssignSeq;
+        const prev = Number(this.data.bodyScrollTop);
+        const mid = safeTarget <= 0
+            ? (prev === 0 ? 0.01 : 0)
+            : (prev === 0.01 ? 0.02 : 0.01);
+        const applyFinal = () => {
+            if (seq !== this._bodyScrollAssignSeq)
+                return;
+            if (mid === safeTarget) {
+                after === null || after === void 0 ? void 0 : after();
+                return;
+            }
+            this.setData({ bodyScrollTop: safeTarget }, () => {
+                if (seq !== this._bodyScrollAssignSeq)
+                    return;
+                after === null || after === void 0 ? void 0 : after();
+            });
+        };
+        if (prev === mid) {
+            applyFinal();
+            return;
+        }
+        this.setData({ bodyScrollTop: mid }, applyFinal);
+    },
+    /** 详情 DOM 重建后恢复阅读进度（scrollHeight 就绪前会短间隔重试） */
+    restoreContentScrollTop(target, attempt = 0) {
+        if (this.data.tab !== 'content') {
+            this._restoringReadingProgress = false;
+            return;
+        }
+        const safeTarget = Math.max(0, target);
+        if (safeTarget <= 0) {
+            this._restoringReadingProgress = false;
+            this.applyBodyScrollTop(0, () => this.bindDetailSelectionContext());
+            return;
+        }
+        const maxAttempts = 12;
+        wx.createSelectorQuery()
+            .in(this)
+            .select('#boxBodyScroll')
+            .scrollOffset()
+            .select('#boxBodyScroll')
+            .boundingClientRect()
+            .select('#boxTab1Body')
+            .boundingClientRect()
+            .exec((res) => {
+            if (this.data.tab !== 'content') {
+                this._restoringReadingProgress = false;
+                return;
+            }
+            const scroll = (res && res[0]);
+            const rect = (res && res[1]);
+            const contentRect = (res && res[2]);
+            const scrollHeight = Number(scroll === null || scroll === void 0 ? void 0 : scroll.scrollHeight) || 0;
+            const contentH = Number(contentRect === null || contentRect === void 0 ? void 0 : contentRect.height) || 0;
+            const viewportH = Number(rect === null || rect === void 0 ? void 0 : rect.height) || 0;
+            const minH = safeTarget + Math.max(viewportH * 0.35, 64);
+            const ready = contentH > 0 && Math.max(contentH, scrollHeight) >= minH;
+            if (!ready && attempt < maxAttempts) {
+                this._restoreContentScrollTimer = setTimeout(() => {
+                    this._restoreContentScrollTimer = null;
+                    this.restoreContentScrollTop(safeTarget, attempt + 1);
+                }, 40 + attempt * 24);
+                return;
+            }
+            this.applyBodyScrollTop(safeTarget, () => {
+                this.bindDetailSelectionContext();
+                wx.createSelectorQuery()
+                    .in(this)
+                    .select('#boxBodyScroll')
+                    .scrollOffset()
+                    .exec((check) => {
+                    var _a;
+                    if (this.data.tab !== 'content') {
+                        this._restoringReadingProgress = false;
+                        return;
+                    }
+                    const actual = Math.round(Number((_a = (check && check[0])) === null || _a === void 0 ? void 0 : _a.scrollTop) || 0);
+                    if (Math.abs(actual - safeTarget) > 16 && attempt < maxAttempts) {
+                        this._restoreContentScrollTimer = setTimeout(() => {
+                            this._restoreContentScrollTimer = null;
+                            this.restoreContentScrollTop(safeTarget, attempt + 1);
+                        }, 48 + attempt * 24);
+                        return;
+                    }
+                    setTimeout(() => {
+                        this._restoringReadingProgress = false;
+                    }, 400);
+                });
+            });
         });
     },
     onShareAppMessage() {
@@ -613,12 +980,32 @@ Page({
         const zoomBarPx = 0;
         const graphCanvasH = Math.max(400, Math.floor((sys.windowHeight || 667) - bodyTop - zoomBarPx));
         this._tabBarPx = tabBarPx;
+        this._persistedProgressApplied = false;
+        this._progressHydrating = false;
+        this._restoringReadingProgress = false;
+        this._bodyScrollAssignSeq = 0;
+        this._contentScrollTop = 0;
+        this._contentReadingProgress = 0;
+        this._detailScrollTop = 0;
+        this._detailViewportH = 0;
+        this._originalScrollTop = 0;
+        this._originalReadingProgress = 0;
+        this._originalViewportH = 0;
+        this._restoringOriginalProgress = false;
+        this._originalProgressHydrating = false;
+        this._originalProgressApplied = false;
+        const requestedTab = query.tab === 'relations' ? 'relations' : 'content';
+        const focusNoteId = Number(query.noteId || 0);
+        this._focusNoteName = (0, query_value_1.decodeQueryValue)(query.highlightName || '');
+        this._openOriginalOnReady = query.openOriginal === '1';
         this.setData({
             boxId,
             navTitle: provisionalTitle || '史略详情',
             tabTop,
             bodyTop,
             graphCanvasH,
+            tab: requestedTab,
+            focusNoteId: Number.isFinite(focusNoteId) ? focusNoteId : 0,
         });
         try {
             const res = await (0, api_1.request)(`/boxes/${(0, encode_path_segment_1.encodePathSegment)(boxId)}`, {
@@ -638,7 +1025,7 @@ Page({
                 detailMetaDisplay: buildDetailMetaFromBox(header.box),
                 audioTimeRange: timeRange,
                 audioCategoryPath: [civ, dynasty].filter(Boolean).join(' · '),
-                blurbSegs: parseDisplaySegments(header.box.blurb || ''),
+                blurbSegs: (this._rawBlurbSegs = parseDisplaySegments(header.box.blurb || '')),
                 showRelationsTab,
                 tab,
                 isReadComplete: !!header.isReadComplete,
@@ -646,6 +1033,26 @@ Page({
             await this.refreshFavState();
             await this.recordFootprint();
             await this.ensureTab('content');
+            await this.loadDetailHighlights();
+            if (tab === 'relations' && showRelationsTab) {
+                this.setData({ tab: 'relations' });
+                await this.ensureTab('relations');
+                this.focusRelationNoteIfNeeded();
+            }
+            else if (this.data.focusNoteId) {
+                this.measureDetailViewport(() => {
+                    this.scrollToNoteAnchor(this.data.focusNoteId);
+                });
+            }
+            else if (tab === 'content') {
+                this.measureDetailViewport(() => {
+                    void this.tryRestorePersistedReadingProgress();
+                });
+            }
+            if (this._openOriginalOnReady) {
+                this._openOriginalOnReady = false;
+                this.goOriginal();
+            }
             // 详情正文就绪后预取关系图，切换 Tab 时无需再等
             if (showRelationsTab) {
                 this.loadRelationsGraph();
@@ -756,6 +1163,8 @@ Page({
                     graphScaleLabel: '100%',
                 });
                 console.info('[box-detail] graph loaded nodes=', nodeCount);
+                void this.loadRelationHighlights();
+                this.focusRelationNoteIfNeeded();
             }
             catch (e) {
                 console.warn('[box-detail] graph fetch failed', (e === null || e === void 0 ? void 0 : e.message) || e);
@@ -787,6 +1196,7 @@ Page({
                 const res = await (0, api_1.request)(`/boxes/${enc}/detail`);
                 const md = res.data.detailMd || '';
                 const parsed = splitDetailParagraphs(md);
+                this._rawDetailParagraphs = parsed;
                 this.setData({
                     detailMd: md,
                     detailParagraphs: parsed,
@@ -883,6 +1293,7 @@ Page({
         this.setData({ graphRenderHint: hint });
     },
     setTab(e) {
+        var _a;
         const tab = e.currentTarget.dataset.tab;
         if (!tab)
             return;
@@ -895,11 +1306,17 @@ Page({
             return;
         }
         this.hideSelectionBar();
+        if (this.data.contentSearchBrowseActive && tab !== 'content') {
+            this.exitContentSearchBrowse();
+        }
+        const graph = this.selectComponent('#bdRelationGraph');
+        (_a = graph === null || graph === void 0 ? void 0 : graph.hideSelectionBar) === null || _a === void 0 ? void 0 : _a.call(graph);
         const prevTab = this.data.tab;
         // 离开详情 Tab：缓存当次阅读进度
         if (prevTab === 'content') {
             this._contentScrollTop = this._detailScrollTop || 0;
             this._contentReadingProgress = this.data.readingProgress || 0;
+            this.schedulePersistReadingProgress(true);
         }
         // 防止同一次点击冒泡到 onPageTap 后又被切成阅读全屏态
         this._ignoreTapFromBar = true;
@@ -918,6 +1335,12 @@ Page({
         const restoreContent = tab === 'content';
         const restoreTop = restoreContent ? Math.max(0, this._contentScrollTop || 0) : 0;
         this._detailScrollTop = restoreTop;
+        if (restoreContent) {
+            this._restoringReadingProgress = restoreTop > 0;
+        }
+        else {
+            this._restoringReadingProgress = false;
+        }
         // 切换 Tab 时始终显示顶部四 Tab（非详情阅读沉浸态）
         this.setData({
             tab,
@@ -925,11 +1348,7 @@ Page({
             readingProgress: restoreContent ? this._contentReadingProgress || 0 : 0,
         }, () => {
             if (restoreContent) {
-                this.applyBodyScrollTop(0);
-                this._restoreContentScrollTimer = setTimeout(() => {
-                    this._restoreContentScrollTimer = null;
-                    this.restoreContentScrollTop(restoreTop);
-                }, 32);
+                this.restoreContentScrollTop(restoreTop);
             }
             else {
                 this.applyBodyScrollTop(0);
@@ -981,13 +1400,10 @@ Page({
             this.setData({ narrationState: (0, box_narration_1.getNarrationState)() });
             return;
         }
+        // 卡在 loading 时允许强制重开，避免「点了没反应」
         if (cur === 'loading') {
-            wx.showToast({
-                title: this.data.audioOpen ? '正在加载音频…' : '正在准备朗读…',
-                icon: 'none',
-                duration: 1500,
-            });
-            return;
+            (0, box_narration_1.stopNarration)({ silent: true });
+            this.setData({ narrationState: 'idle' });
         }
         if (!this.data.detailFetched) {
             await this.ensureTab('content');
@@ -1174,7 +1590,7 @@ Page({
         const scale = (_b = (_a = c === null || c === void 0 ? void 0 : c.getZoomScale) === null || _a === void 0 ? void 0 : _a.call(c)) !== null && _b !== void 0 ? _b : 1;
         this.setData({ graphScaleLabel: this.formatGraphScaleLabel(scale) });
     },
-    /** 解析原文引用（同 pages/original-text） */
+    /** 解析原文引用 */
     _parseOriginalRef(ref) {
         var _a, _b, _c, _d, _f;
         if (ref == null || (Array.isArray(ref) && ref.length === 0) || (typeof ref === 'object' && Object.keys(ref).length === 0))
@@ -1230,7 +1646,259 @@ Page({
             return null;
         return { title, sourceWork, items, fallback: '' };
     },
+    originalViewportHeightPx() {
+        if (this._originalViewportH > 0)
+            return this._originalViewportH;
+        const sys = wx.getSystemInfoSync();
+        return (0, box_reading_progress_1.originalViewportFallbackPx)(sys.windowHeight || 0);
+    },
+    clearOriginalProgressTimers() {
+        if (this._persistOriginalProgressTimer) {
+            clearTimeout(this._persistOriginalProgressTimer);
+            this._persistOriginalProgressTimer = null;
+        }
+        if (this._restoreOriginalScrollTimer) {
+            clearTimeout(this._restoreOriginalScrollTimer);
+            this._restoreOriginalScrollTimer = null;
+        }
+        if (this._unlockOriginalProgressTimer) {
+            clearTimeout(this._unlockOriginalProgressTimer);
+            this._unlockOriginalProgressTimer = null;
+        }
+    },
+    cancelOriginalProgressRestore() {
+        this.clearOriginalProgressTimers();
+        this._restoringOriginalProgress = false;
+        this._originalProgressHydrating = false;
+    },
+    unlockOriginalProgressSoon() {
+        if (this._unlockOriginalProgressTimer) {
+            clearTimeout(this._unlockOriginalProgressTimer);
+            this._unlockOriginalProgressTimer = null;
+        }
+        this._unlockOriginalProgressTimer = setTimeout(() => {
+            this._unlockOriginalProgressTimer = null;
+            this._restoringOriginalProgress = false;
+        }, 400);
+    },
+    schedulePersistOriginalReadingProgress(immediate = false) {
+        if (!(0, api_1.hasToken)() || this._restoringOriginalProgress || this._originalProgressHydrating)
+            return;
+        if (!this._originalProgressApplied)
+            return;
+        if (this._persistOriginalProgressTimer) {
+            clearTimeout(this._persistOriginalProgressTimer);
+            this._persistOriginalProgressTimer = null;
+        }
+        if (immediate) {
+            void this.flushPersistOriginalReadingProgress();
+            return;
+        }
+        this._persistOriginalProgressTimer = setTimeout(() => {
+            this._persistOriginalProgressTimer = null;
+            void this.flushPersistOriginalReadingProgress();
+        }, 1200);
+    },
+    async flushPersistOriginalReadingProgress() {
+        if (!(0, api_1.hasToken)() || this._restoringOriginalProgress || this._originalProgressHydrating)
+            return;
+        if (!this._originalProgressApplied)
+            return;
+        const boxId = this.data.boxId;
+        if (!boxId)
+            return;
+        const progressPct = (0, box_reading_progress_1.clampProgressPct)(this.data.originalReadingProgress || this._originalReadingProgress || 0);
+        const scrollTopPx = Math.max(0, Math.round(this._originalScrollTop || 0));
+        try {
+            await (0, box_reading_progress_1.persistBoxReadingProgress)((0, box_reading_progress_1.originalReadingProgressId)(this.data.boxId), { progressPct, scrollTopPx });
+        }
+        catch {
+            // 静默失败：本地已优先写入
+        }
+    },
+    async tryRestoreOriginalReadingProgress() {
+        if (!this.data.showOriginal || this.data.originalLoading || this.data.originalEmpty) {
+            this._restoringOriginalProgress = false;
+            this._originalProgressHydrating = false;
+            return;
+        }
+        if (!(0, api_1.hasToken)()) {
+            this._originalProgressApplied = true;
+            const memoryTop = Math.max(0, Math.round(this._originalScrollTop || 0));
+            if (memoryTop > 0)
+                this.restoreOriginalScrollTop(memoryTop);
+            else
+                this._restoringOriginalProgress = false;
+            return;
+        }
+        if (this._originalProgressHydrating)
+            return;
+        this._originalProgressHydrating = true;
+        this._restoringOriginalProgress = true;
+        this._originalProgressApplied = false;
+        let record = null;
+        try {
+            record = await (0, box_reading_progress_1.resolveBoxReadingProgress)((0, box_reading_progress_1.originalReadingProgressId)(this.data.boxId));
+        }
+        catch {
+            this._restoringOriginalProgress = false;
+            this._originalProgressHydrating = false;
+            if (this.data.showOriginal)
+                this._originalProgressApplied = true;
+            return;
+        }
+        this._originalProgressHydrating = false;
+        if (!this.data.showOriginal) {
+            this._restoringOriginalProgress = false;
+            return;
+        }
+        this._originalProgressApplied = true;
+        if (!record || !(0, box_reading_progress_1.isRestorableProgressPct)(record.progressPct)) {
+            this._restoringOriginalProgress = false;
+            const memoryTop = Math.max(0, Math.round(this._originalScrollTop || 0));
+            if (memoryTop > 0)
+                this.restoreOriginalScrollTop(memoryTop);
+            return;
+        }
+        this._originalReadingProgress = record.progressPct;
+        const stashedTop = Math.max(0, Math.round(Number(record.scrollTopPx) || 0));
+        if (stashedTop > 0)
+            this._originalScrollTop = stashedTop;
+        this.setData({ originalReadingProgress: record.progressPct });
+        this.restoreOriginalScrollFromRecord(record);
+    },
+    restoreOriginalScrollFromRecord(record, attempt = 0) {
+        if (!(0, box_reading_progress_1.isRestorableProgressPct)(record.progressPct) || !this.data.showOriginal) {
+            this._restoringOriginalProgress = false;
+            return;
+        }
+        const maxAttempts = 10;
+        this._restoringOriginalProgress = true;
+        wx.createSelectorQuery()
+            .in(this)
+            .select('#originalBodyScroll')
+            .scrollOffset()
+            .select('#originalBodyScroll')
+            .boundingClientRect()
+            .exec((res) => {
+            if (!this.data.showOriginal) {
+                this._restoringOriginalProgress = false;
+                return;
+            }
+            const scroll = (res && res[0]);
+            const rect = (res && res[1]);
+            const scrollHeight = Number(scroll === null || scroll === void 0 ? void 0 : scroll.scrollHeight) || 0;
+            const viewportH = Number(rect === null || rect === void 0 ? void 0 : rect.height) || this.originalViewportHeightPx();
+            if (viewportH > 0)
+                this._originalViewportH = viewportH;
+            const maxScroll = (0, box_reading_progress_1.maxScrollFromMetrics)(scrollHeight, viewportH);
+            const target = (0, box_reading_progress_1.resolveRestoreScrollTop)(record, maxScroll);
+            const ready = maxScroll > 0 && scrollHeight >= Math.max(viewportH * 1.2, 120);
+            if (ready || attempt >= maxAttempts) {
+                if (!(maxScroll > 0)) {
+                    this._restoringOriginalProgress = false;
+                    return;
+                }
+                this._originalScrollTop = target;
+                this.restoreOriginalScrollTop(target);
+                if (target > 0) {
+                    wx.showToast({ title: '已回到上次阅读位置', icon: 'none', duration: 1600 });
+                }
+                return;
+            }
+            if (this._restoreOriginalScrollTimer) {
+                clearTimeout(this._restoreOriginalScrollTimer);
+                this._restoreOriginalScrollTimer = null;
+            }
+            this._restoreOriginalScrollTimer = setTimeout(() => {
+                this._restoreOriginalScrollTimer = null;
+                this.restoreOriginalScrollFromRecord(record, attempt + 1);
+            }, 48 + attempt * 28);
+        });
+    },
+    applyOriginalScrollTop(target, after) {
+        const safeTarget = Math.max(0, target);
+        if (safeTarget <= 0) {
+            after === null || after === void 0 ? void 0 : after();
+            return;
+        }
+        const prev = this.data.originalScrollAssign;
+        const bump = prev === safeTarget
+            ? safeTarget - 0.01
+            : safeTarget;
+        // 定位后保留数字绑定；用户滚动时在 onOriginalScroll 里静默同步，避免被拽回旧值
+        this.setData({ originalScrollAssign: bump }, () => {
+            if (bump !== safeTarget) {
+                this.setData({ originalScrollAssign: safeTarget }, after);
+            }
+            else {
+                after === null || after === void 0 ? void 0 : after();
+            }
+        });
+    },
+    restoreOriginalScrollTop(target, attempt = 0) {
+        if (!this.data.showOriginal) {
+            this._restoringOriginalProgress = false;
+            return;
+        }
+        const safeTarget = Math.max(0, target);
+        if (safeTarget <= 0) {
+            this.unlockOriginalProgressSoon();
+            return;
+        }
+        const maxAttempts = 8;
+        wx.createSelectorQuery()
+            .in(this)
+            .select('#originalBodyScroll')
+            .scrollOffset()
+            .select('#originalBodyScroll')
+            .boundingClientRect()
+            .exec((res) => {
+            if (!this.data.showOriginal) {
+                this._restoringOriginalProgress = false;
+                return;
+            }
+            const scroll = (res && res[0]);
+            const rect = (res && res[1]);
+            const scrollHeight = Number(scroll === null || scroll === void 0 ? void 0 : scroll.scrollHeight) || 0;
+            const viewportH = Number(rect === null || rect === void 0 ? void 0 : rect.height) || 0;
+            const ready = scrollHeight >= safeTarget + Math.max(viewportH * 0.35, 64);
+            if (ready || attempt >= maxAttempts) {
+                this.applyOriginalScrollTop(safeTarget, () => this.unlockOriginalProgressSoon());
+                return;
+            }
+            if (this._restoreOriginalScrollTimer) {
+                clearTimeout(this._restoreOriginalScrollTimer);
+                this._restoreOriginalScrollTimer = null;
+            }
+            this._restoreOriginalScrollTimer = setTimeout(() => {
+                this._restoreOriginalScrollTimer = null;
+                this.restoreOriginalScrollTop(safeTarget, attempt + 1);
+            }, 40 + attempt * 24);
+        });
+    },
+    onOriginalScroll(e) {
+        if (!this.data.showOriginal || this._restoringOriginalProgress || this._originalProgressHydrating)
+            return;
+        const d = e.detail || { scrollTop: 0, scrollHeight: 0 };
+        const scrollTop = d.scrollTop || 0;
+        const scrollHeight = d.scrollHeight || 0;
+        const viewportH = this.originalViewportHeightPx();
+        const maxScroll = (0, box_reading_progress_1.maxScrollFromMetrics)(scrollHeight, viewportH);
+        const pct = (0, box_reading_progress_1.progressPctFromScroll)(scrollTop, maxScroll);
+        this._originalScrollTop = scrollTop;
+        this._originalReadingProgress = pct;
+        // 静默同步绑定值，避免后续只改进度条的 setData 把正文拽回恢复点
+        this.data.originalScrollAssign = scrollTop;
+        this.schedulePersistOriginalReadingProgress(false);
+        if (pct === this.data.originalReadingProgress)
+            return;
+        this.setData({ originalReadingProgress: pct });
+    },
     goOriginal() {
+        this.hideSelectionBar();
+        this.cancelOriginalProgressRestore();
+        this._originalProgressApplied = false;
         // 优先使用之前缓存的数据
         const ref = this._rawOriginalRef;
         if (ref != null) {
@@ -1238,18 +1906,22 @@ Page({
             if (parsed && (parsed.items.length > 0 || parsed.fallback.length > 0)) {
                 this.setData({
                     showOriginal: true,
+                    originalScrollAssign: '',
                     originalTitle: parsed.title,
                     originalSourceWork: parsed.sourceWork,
                     originalItems: parsed.items,
                     originalFallback: parsed.fallback,
                     originalEmpty: false,
                     originalLoading: false,
+                }, () => {
+                    this.bindOriginalSelectionContext();
+                    void this.tryRestoreOriginalReadingProgress();
                 });
                 return;
             }
         }
         // 无缓存，重新请求
-        this.setData({ showOriginal: true, originalLoading: true, originalEmpty: true });
+        this.setData({ showOriginal: true, originalScrollAssign: '', originalLoading: true, originalEmpty: true });
         const run = async () => {
             try {
                 const enc = (0, encode_path_segment_1.encodePathSegment)(this.data.boxId);
@@ -1273,6 +1945,9 @@ Page({
                     originalSourceWork: parsed.sourceWork,
                     originalItems: parsed.items,
                     originalFallback: parsed.fallback,
+                }, () => {
+                    this.bindOriginalSelectionContext();
+                    void this.tryRestoreOriginalReadingProgress();
                 });
             }
             catch {
@@ -1283,7 +1958,10 @@ Page({
         void run();
     },
     closeOriginal() {
-        this.setData({ showOriginal: false });
+        this.hideSelectionBar();
+        this.cancelOriginalProgressRestore();
+        this.schedulePersistOriginalReadingProgress(true);
+        this.setData({ showOriginal: false, originalScrollAssign: '' });
     },
     copyOriginalLink(e) {
         var _a, _b;
@@ -1294,7 +1972,56 @@ Page({
         }
     },
     onGraphNodeTap(_e) {
-        // 关系图谱暂不支持点击跳转
+        // 短按仅高亮；长按选字由图谱 cover-view 浮层处理
+        if (this.data.selectionBarVisible)
+            this.hideSelectionBar();
+    },
+    onGraphNodeLongPress(e) {
+        var _a;
+        const selected = String(((_a = e.detail) === null || _a === void 0 ? void 0 : _a.text) || '').trim();
+        if (!selected)
+            return;
+        this.setData({
+            selectionBarText: selected,
+            correctionSourceType: 'relation_graph_selection',
+        });
+    },
+    onGraphSelectionCopy(e) {
+        var _a;
+        const text = String(((_a = e.detail) === null || _a === void 0 ? void 0 : _a.text) || this.data.selectionBarText || '').trim();
+        if (!text)
+            return;
+        wx.setClipboardData({
+            data: text,
+            success: () => wx.showToast({ title: '已复制', icon: 'success' }),
+        });
+    },
+    onGraphSelectionQuery(e) {
+        var _a;
+        const text = String(((_a = e.detail) === null || _a === void 0 ? void 0 : _a.text) || this.data.selectionBarText || '').trim();
+        if (!text)
+            return;
+        this.setData({
+            dictionaryVisible: true,
+            dictionaryQuery: text,
+            correctionSourceType: 'relation_graph_selection',
+        });
+    },
+    onGraphSelectionCorrection(e) {
+        var _a;
+        const text = String(((_a = e.detail) === null || _a === void 0 ? void 0 : _a.text) || this.data.selectionBarText || '').trim();
+        if (!text)
+            return;
+        this.setData({ correctionSourceType: 'relation_graph_selection' });
+        this.openCorrectionModal(text);
+    },
+    onGraphSelectionNote(e) {
+        var _a;
+        const text = String(((_a = e.detail) === null || _a === void 0 ? void 0 : _a.text) || this.data.selectionBarText || '').trim();
+        if (!text)
+            return;
+        this.setData({ correctionSourceType: 'relation_graph_selection' });
+        this.openNoteModal(text);
     },
     noop() { },
     /** 标记本次tap来自底部操作栏，阻止导航栏切换 */
@@ -1342,12 +2069,20 @@ Page({
         const d = e.detail || { scrollTop: 0, scrollHeight: 0 };
         const scrollTop = d.scrollTop || 0;
         const scrollHeight = d.scrollHeight || 0;
-        const sysInfo = wx.getSystemInfoSync();
-        const bodyTop = this.data.bodyTop;
-        const viewportH = sysInfo.windowHeight - bodyTop;
-        const maxScroll = Math.max(scrollHeight - viewportH, 1);
-        const pct = Math.min(Math.round((scrollTop / maxScroll) * 100), 100);
-        this.setData({ readingProgress: pct });
+        const viewportH = this.detailViewportHeightPx();
+        const maxScroll = (0, box_reading_progress_1.maxScrollFromMetrics)(scrollHeight, viewportH);
+        const pct = (0, box_reading_progress_1.progressPctFromScroll)(scrollTop, maxScroll);
+        if (this._restoringReadingProgress || this._progressHydrating) {
+            return;
+        }
+        // 静默同步绑定值，避免后续只改进度条的 setData 把正文拽回旧位置
+        this.data.bodyScrollTop = scrollTop;
+        if (this.data.tab === 'content') {
+            this.schedulePersistReadingProgress(false);
+        }
+        if (pct !== this.data.readingProgress) {
+            this.setData({ readingProgress: pct });
+        }
         // 自动隐藏 tab 栏（仅详情 Tab），使用 CSS transition 实现无抖动显隐
         if (this.data.tab === 'content' && !this._suppressChromeHide) {
             const prevScrollTop = (_a = this._detailScrollTop) !== null && _a !== void 0 ? _a : 0;
@@ -1381,16 +2116,239 @@ Page({
     },
     /** 点击屏幕切换导航栏显隐 */
     onPageTap() {
-        if (this.data.showOriginal)
-            return;
         if (this.data.selectionBarVisible) {
             this.hideSelectionBar();
             return;
         }
+        if (this.data.showOriginal || this.data.showContentSearch)
+            return;
+        if (this.data.contentSearchBrowseActive)
+            return;
         if (this.data.tab === 'content' && !this._ignoreTapFromBar) {
             this.onToggleUI(!this.data.uiFocused);
         }
         this._ignoreTapFromBar = false;
+    },
+    openContentSearch() {
+        this.hideSelectionBar();
+        const history = (0, box_detail_search_history_1.readBoxDetailSearchHistory)(this.data.boxId);
+        this.bindContentSearchKeyboard();
+        // 从浏览态「全部结果」回来时保留关键词与结果
+        const keepResults = this.data.contentSearchBrowseActive &&
+            this.data.contentSearchHasSearched &&
+            this.data.contentSearchResults.length > 0;
+        this.setData({
+            showContentSearch: true,
+            contentSearchKeyword: keepResults ? this.data.contentSearchKeyword : '',
+            contentSearchHasSearched: keepResults,
+            contentSearchResults: keepResults ? this.data.contentSearchResults : [],
+            contentSearchHistory: history,
+            contentSearchEmptyHint: keepResults
+                ? this.data.contentSearchResults.length
+                    ? ''
+                    : '未找到匹配段落'
+                : '',
+            contentSearchFocus: !keepResults,
+            contentSearchTruncated: keepResults ? this.data.contentSearchTruncated : false,
+            uiFocused: true,
+        });
+        this.applyContentSearchSheetLayout(0);
+    },
+    closeContentSearch() {
+        this.unbindContentSearchKeyboard();
+        this.setData({
+            showContentSearch: false,
+            contentSearchEmptyHint: '',
+            contentSearchFocus: false,
+            contentSearchKeyboardHeight: 0,
+            contentSearchModalStyle: '',
+            contentSearchCardStyle: '',
+            contentSearchBodyStyle: '',
+        });
+    },
+    onContentSearchInput(e) {
+        var _a;
+        this.setData({ contentSearchKeyword: String(((_a = e.detail) === null || _a === void 0 ? void 0 : _a.value) || '') });
+    },
+    onContentSearchClear() {
+        this.setData({
+            contentSearchKeyword: '',
+            contentSearchEmptyHint: '',
+            contentSearchHasSearched: false,
+            contentSearchResults: [],
+            contentSearchHistory: (0, box_detail_search_history_1.readBoxDetailSearchHistory)(this.data.boxId),
+            contentSearchFocus: true,
+            contentSearchTruncated: false,
+        });
+    },
+    /** 右侧「搜索」按钮：空词空态；否则出匹配段落列表并写入本篇历史 */
+    runContentSearch() {
+        const keyword = String(this.data.contentSearchKeyword || '').trim().slice(0, 50);
+        if (!keyword) {
+            this.setData({
+                contentSearchHasSearched: true,
+                contentSearchResults: [],
+                contentSearchEmptyHint: '请输入搜索词',
+                contentSearchFocus: false,
+                contentSearchTruncated: false,
+            });
+            return;
+        }
+        const paragraphs = this.contentSearchParagraphs();
+        const results = (0, box_detail_search_1.searchDetailParagraphs)(paragraphs, keyword);
+        (0, box_detail_search_history_1.addBoxDetailSearchHistory)(this.data.boxId, keyword);
+        const truncated = results.length >= box_detail_search_1.DETAIL_SEARCH_MAX_RESULTS;
+        this.setData({
+            contentSearchKeyword: keyword,
+            contentSearchHasSearched: true,
+            contentSearchResults: results,
+            contentSearchHistory: (0, box_detail_search_history_1.readBoxDetailSearchHistory)(this.data.boxId),
+            contentSearchEmptyHint: results.length ? '' : '未找到匹配段落',
+            contentSearchFocus: false,
+            contentSearchTruncated: truncated,
+        });
+    },
+    contentSearchParagraphs() {
+        var _a, _b;
+        const paras = this.data.detailParagraphs;
+        if (paras.length)
+            return paras.map((p) => p.plain);
+        const blurb = String(((_b = (_a = this.data.header) === null || _a === void 0 ? void 0 : _a.box) === null || _b === void 0 ? void 0 : _b.blurb) || '').trim();
+        if (blurb) {
+            const segs = this.data.blurbSegs;
+            const plain = segs.length ? segs.map((s) => s.text).join('') : blurb;
+            return [plain];
+        }
+        return [];
+    },
+    onContentSearchHistoryTap(e) {
+        var _a, _b;
+        const k = String(((_b = (_a = e.currentTarget) === null || _a === void 0 ? void 0 : _a.dataset) === null || _b === void 0 ? void 0 : _b.k) || '').trim();
+        if (!k)
+            return;
+        this.setData({ contentSearchKeyword: k }, () => {
+            this.runContentSearch();
+        });
+    },
+    onContentSearchHistoryClearAll() {
+        (0, box_detail_search_history_1.clearBoxDetailSearchHistory)(this.data.boxId);
+        this.setData({ contentSearchHistory: [] });
+    },
+    onContentSearchResultTap(e) {
+        var _a;
+        const ds = (_a = e.currentTarget) === null || _a === void 0 ? void 0 : _a.dataset;
+        const index = Number(ds === null || ds === void 0 ? void 0 : ds.index);
+        if (!Number.isFinite(index) || index < 0)
+            return;
+        this.enterContentSearchBrowse(index);
+    },
+    contentSearchBrowseCounterText(index, total) {
+        if (total <= 0)
+            return '0/0';
+        return `${index + 1}/${total}`;
+    },
+    enterContentSearchBrowse(index) {
+        const results = this.data.contentSearchResults;
+        if (!results.length)
+            return;
+        const i = Math.max(0, Math.min(Math.floor(index), results.length - 1));
+        this.closeContentSearch();
+        this.setData({
+            contentSearchBrowseActive: true,
+            contentSearchBrowseIndex: i,
+            contentSearchBrowseCounter: this.contentSearchBrowseCounterText(i, results.length),
+            uiFocused: true,
+        });
+        this.jumpToSearchBrowseHit(i, true);
+    },
+    exitContentSearchBrowse() {
+        this.clearSearchFlashTimers();
+        this.setData({
+            contentSearchBrowseActive: false,
+            contentSearchBrowseIndex: 0,
+            contentSearchBrowseCounter: '',
+            searchBrowseParaIndex: -1,
+            searchFlashParaIndex: -1,
+            uiFocused: true,
+        });
+    },
+    /** 浏览态底栏：回到结果半屏（保留关键词与列表） */
+    onSearchBrowseAllResults() {
+        if (!this.data.contentSearchBrowseActive)
+            return;
+        this.openContentSearch();
+    },
+    onSearchBrowsePrev() {
+        if (!this.data.contentSearchBrowseActive)
+            return;
+        const i = this.data.contentSearchBrowseIndex;
+        if (i <= 0) {
+            wx.showToast({ title: '已是第一条', icon: 'none' });
+            return;
+        }
+        this.goSearchBrowseIndex(i - 1);
+    },
+    onSearchBrowseNext() {
+        if (!this.data.contentSearchBrowseActive)
+            return;
+        const results = this.data.contentSearchResults;
+        const i = this.data.contentSearchBrowseIndex;
+        if (i >= results.length - 1) {
+            wx.showToast({ title: '已是最后一条', icon: 'none' });
+            return;
+        }
+        this.goSearchBrowseIndex(i + 1);
+    },
+    goSearchBrowseIndex(index) {
+        const results = this.data.contentSearchResults;
+        if (!results.length)
+            return;
+        const i = Math.max(0, Math.min(Math.floor(index), results.length - 1));
+        this.setData({
+            contentSearchBrowseIndex: i,
+            contentSearchBrowseCounter: this.contentSearchBrowseCounterText(i, results.length),
+        });
+        this.jumpToSearchBrowseHit(i, true);
+    },
+    jumpToSearchBrowseHit(index, flash) {
+        const results = this.data.contentSearchResults;
+        const hit = results[index];
+        if (!hit)
+            return;
+        const paragraphIndex = hit.paragraphIndex;
+        const id = (0, box_detail_search_1.detailParaAnchorId)(paragraphIndex);
+        this.clearSearchFlashTimers();
+        this.setData({
+            noteScrollIntoView: '',
+            searchBrowseParaIndex: paragraphIndex,
+            searchFlashParaIndex: -1,
+        }, () => {
+            const next = { noteScrollIntoView: id };
+            if (flash)
+                next.searchFlashParaIndex = paragraphIndex;
+            this.setData(next);
+            if (flash) {
+                this._searchFlashClearTimer = setTimeout(() => {
+                    this._searchFlashClearTimer = null;
+                    if (this.data.searchFlashParaIndex === paragraphIndex) {
+                        this.setData({ searchFlashParaIndex: -1 });
+                    }
+                }, 1800);
+            }
+        });
+    },
+    scrollToDetailParagraph(paragraphIndex) {
+        const id = (0, box_detail_search_1.detailParaAnchorId)(paragraphIndex);
+        this.clearSearchFlashTimers();
+        this.setData({ noteScrollIntoView: '', searchFlashParaIndex: -1 }, () => {
+            this.setData({ noteScrollIntoView: id, searchFlashParaIndex: paragraphIndex });
+            this._searchFlashClearTimer = setTimeout(() => {
+                this._searchFlashClearTimer = null;
+                if (this.data.searchFlashParaIndex === paragraphIndex) {
+                    this.setData({ searchFlashParaIndex: -1 });
+                }
+            }, 1800);
+        });
     },
     toggleFav() {
         if (!(0, api_1.hasToken)()) {
@@ -1449,10 +2407,17 @@ Page({
             selectionBarVisible: false,
             selectionBarText: '',
         });
-        this.clearDetailSelection();
+        if (this.data.showOriginal)
+            this.clearOriginalSelection();
+        else
+            this.clearDetailSelection();
+    },
+    onOriginalSheetTap() {
+        if (this.data.selectionBarVisible)
+            this.hideSelectionBar();
     },
     onDetailSelectionChange(e) {
-        if (this.data.tab !== 'content')
+        if (this.data.tab !== 'content' || this.data.showOriginal || this.data.showContentSearch)
             return;
         const detail = (e.detail || {});
         const selected = String(detail.selectedString || '').trim();
@@ -1464,13 +2429,37 @@ Page({
             left: this.data.selectionBarLeft,
             top: this.data.selectionBarTop,
             placement: this.data.selectionBarPlacement,
-        });
+        }, { buttonCount: 5 });
         this.setData({
             selectionBarVisible: true,
             selectionBarText: selected,
             selectionBarLeft: anchor.left,
             selectionBarTop: anchor.top,
             selectionBarPlacement: anchor.placement,
+            correctionSourceType: 'box_detail_selection',
+        });
+    },
+    onOriginalSelectionChange(e) {
+        if (!this.data.showOriginal)
+            return;
+        const detail = (e.detail || {});
+        const selected = String(detail.selectedString || '').trim();
+        if (detail.isCollapsed || !selected) {
+            this.hideSelectionBar();
+            return;
+        }
+        const anchor = (0, selection_bar_position_1.resolveSelectionBarAnchor)(detail.firstRangeRect, {
+            left: this.data.selectionBarLeft,
+            top: this.data.selectionBarTop,
+            placement: this.data.selectionBarPlacement,
+        }, { buttonCount: 4 });
+        this.setData({
+            selectionBarVisible: true,
+            selectionBarText: selected,
+            selectionBarLeft: anchor.left,
+            selectionBarTop: anchor.top,
+            selectionBarPlacement: anchor.placement,
+            correctionSourceType: 'box_original_selection',
         });
     },
     async onSelectionShare() {
@@ -1499,7 +2488,6 @@ Page({
         this.hideSelectionBar();
         if (!text)
             return;
-        this.clearDetailSelection();
         this.setData({
             dictionaryVisible: true,
             dictionaryQuery: text,
@@ -1515,6 +2503,123 @@ Page({
         if (!text)
             return;
         this.openCorrectionModal(text);
+    },
+    onSelectionNote() {
+        if (this.data.showOriginal)
+            return;
+        const text = this.data.selectionBarText;
+        this.hideSelectionBar();
+        if (!text)
+            return;
+        this.openNoteModal(text);
+    },
+    applyDetailHighlights() {
+        const highlights = this.data.detailHighlights;
+        const focusId = this.data.focusNoteId || 0;
+        const rawParas = this._rawDetailParagraphs.length
+            ? this._rawDetailParagraphs
+            : this.data.detailParagraphs;
+        const rawBlurb = this._rawBlurbSegs.length ? this._rawBlurbSegs : this.data.blurbSegs;
+        this.setData({
+            detailParagraphs: rawParas.map((p) => ({
+                plain: p.plain,
+                segs: (0, note_highlight_1.applyHighlightsToSegs)(p.segs, highlights, focusId),
+            })),
+            blurbSegs: (0, note_highlight_1.applyHighlightsToSegs)(rawBlurb, highlights, focusId),
+        });
+    },
+    async loadDetailHighlights() {
+        const boxId = this.data.boxId;
+        if (!boxId || !(0, api_1.hasToken)())
+            return;
+        try {
+            const highlights = await (0, note_1.fetchNoteHighlights)(boxId, 'box_detail_selection');
+            this.setData({ detailHighlights: highlights });
+            this.applyDetailHighlights();
+        }
+        catch {
+            // 未登录或接口失败时保持原文
+        }
+    },
+    async loadRelationHighlights() {
+        const boxId = this.data.boxId;
+        if (!boxId || !(0, api_1.hasToken)())
+            return;
+        try {
+            const highlights = await (0, note_1.fetchNoteHighlights)(boxId, 'relation_graph_selection');
+            this.setData({
+                relationNotedNames: highlights.map((h) => h.selectedText).filter(Boolean),
+            });
+        }
+        catch {
+            this.setData({ relationNotedNames: [] });
+        }
+    },
+    scrollToNoteAnchor(noteId) {
+        if (!noteId)
+            return;
+        const id = (0, note_highlight_1.highlightAnchorId)(noteId);
+        this.setData({ noteScrollIntoView: '' }, () => {
+            this.setData({ noteScrollIntoView: id });
+        });
+    },
+    focusRelationNoteIfNeeded() {
+        var _a;
+        const name = String(this._focusNoteName || '').trim();
+        if (!name)
+            return;
+        const c = this.selectComponent('#bdRelationGraph');
+        (_a = c === null || c === void 0 ? void 0 : c.focusNodeByName) === null || _a === void 0 ? void 0 : _a.call(c, name);
+    },
+    openNoteModal(selectedText) {
+        this.clearDetailSelection();
+        (0, note_1.requireLoginForNote)(() => {
+            var _a;
+            const header = this.data.header;
+            const { civ, dynasty } = readBoxLocationNames(header === null || header === void 0 ? void 0 : header.box);
+            this.setData({
+                noteVisible: true,
+                noteSubmitting: false,
+                noteSelectedText: selectedText,
+                noteBoxTitle: ((_a = header === null || header === void 0 ? void 0 : header.box) === null || _a === void 0 ? void 0 : _a.title) || this.data.navTitle,
+                noteCivilizationName: civ,
+                noteDynastyName: dynasty,
+            });
+        });
+    },
+    closeNote() {
+        this.setData({ noteVisible: false, noteSubmitting: false });
+        this.clearDetailSelection();
+    },
+    async onNoteSubmit(e) {
+        var _a;
+        const noteText = String(((_a = e.detail) === null || _a === void 0 ? void 0 : _a.noteText) || '');
+        const boxId = this.data.boxId;
+        if (!boxId || this.data.noteSubmitting)
+            return;
+        this.setData({ noteSubmitting: true });
+        try {
+            const sourceType = (this.data.correctionSourceType || 'box_detail_selection');
+            await (0, note_1.submitNote)({
+                boxId,
+                sourceType,
+                selectedText: this.data.noteSelectedText,
+                noteText,
+            });
+            wx.showToast({ title: '笔记已保存', icon: 'success' });
+            this.setData({ noteVisible: false, noteSubmitting: false });
+            if (sourceType === 'relation_graph_selection') {
+                void this.loadRelationHighlights();
+            }
+            else {
+                void this.loadDetailHighlights();
+            }
+        }
+        catch (err) {
+            this.setData({ noteSubmitting: false });
+            const msg = err instanceof Error ? err.message : '保存失败，请稍后重试';
+            wx.showToast({ title: msg, icon: 'none' });
+        }
     },
     openCorrectionModal(selectedText) {
         this.clearDetailSelection();
@@ -1546,7 +2651,7 @@ Page({
         try {
             await (0, correction_1.submitCorrection)({
                 boxId,
-                sourceType: 'box_detail_selection',
+                sourceType: this.data.correctionSourceType || 'box_detail_selection',
                 reason,
                 selectedText: this.data.correctionSelectedText,
             });

@@ -1,0 +1,70 @@
+{
+  "work": "04三国志",
+  "vol": "006",
+  "total_paragraphs": 35,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "04三国志_006_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 35,
+      "paragraph_to": 35,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "董卓",
+      "category": "武将",
+      "paragraph_from": 2,
+      "paragraph_to": 14,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "董卓字仲颖，陇西临洮人也。少好侠，尝游羌中，尽与诸豪帅相结。后归耕于野，而豪帅有",
+        "close_paragraph": 14,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P14"
+      }
+    },
+    {
+      "name": "袁绍",
+      "category": "武将",
+      "paragraph_from": 15,
+      "paragraph_to": 26,
+      "boundary_evidence": {
+        "open_paragraph": 15,
+        "open_phrase": "袁绍字本初，汝南汝阳人也。高祖父安，为汉司徒。自安以下四世居三公位，由是势倾天下",
+        "close_paragraph": 26,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P15–P26"
+      }
+    },
+    {
+      "name": "袁术",
+      "category": "武将",
+      "paragraph_from": 27,
+      "paragraph_to": 29,
+      "boundary_evidence": {
+        "open_paragraph": 27,
+        "open_phrase": "袁术字公路，司空逢子，绍之从弟也。以侠气闻。举孝廉，除郎中，历职内外，后为折冲校",
+        "close_paragraph": 29,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P27–P29"
+      }
+    },
+    {
+      "name": "刘表",
+      "category": "武将",
+      "paragraph_from": 30,
+      "paragraph_to": 34,
+      "boundary_evidence": {
+        "open_paragraph": 30,
+        "open_phrase": "刘表字景升，山阳高平人也。少知名，号八俊。长八尺余，姿貌甚伟。以大将军掾为北军中",
+        "close_paragraph": 34,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P30–P34"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

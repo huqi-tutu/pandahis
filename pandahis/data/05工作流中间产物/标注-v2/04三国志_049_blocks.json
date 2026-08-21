@@ -1,0 +1,75 @@
+{
+  "work": "04三国志",
+  "vol": "049",
+  "total_paragraphs": 20,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "04三国志_049_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 4,
+      "paragraph_to": 4,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 20,
+      "paragraph_to": 20,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "刘繇",
+      "category": "武将",
+      "paragraph_from": 2,
+      "paragraph_to": 3,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "刘繇字正礼，东莱牟平人也。齐孝王少子封牟平侯，子孙家焉。繇伯父宠，为汉太尉。繇兄",
+        "close_paragraph": 3,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P3"
+      }
+    },
+    {
+      "name": "刘繇",
+      "category": "武将",
+      "paragraph_from": 5,
+      "paragraph_to": 6,
+      "boundary_evidence": {
+        "open_paragraph": 5,
+        "open_phrase": "后策西伐江夏，还过豫章，收载繇丧，善遇其家。王朗遗策书曰：“刘正礼昔初临州，未能",
+        "close_paragraph": 6,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P5–P6"
+      }
+    },
+    {
+      "name": "太史慈",
+      "category": "武将",
+      "paragraph_from": 7,
+      "paragraph_to": 12,
+      "boundary_evidence": {
+        "open_paragraph": 7,
+        "open_phrase": "太史慈字子义，东莱黄人也。少好学，仕郡奏曹史。会郡与州有隙，曲直未分，以先闻者为",
+        "close_paragraph": 12,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P7–P12"
+      }
+    },
+    {
+      "name": "士燮",
+      "category": "文臣",
+      "paragraph_from": 13,
+      "paragraph_to": 19,
+      "boundary_evidence": {
+        "open_paragraph": 13,
+        "open_phrase": "士燮字威彦，苍梧广信人也。其先本鲁国汶阳人，至王莽之乱，避地交州。六世至燮父赐，",
+        "close_paragraph": 19,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P13–P19"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

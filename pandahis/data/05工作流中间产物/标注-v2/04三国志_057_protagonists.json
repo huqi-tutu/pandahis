@@ -1,0 +1,50 @@
+{
+  "work": "04三国志",
+  "vol": "057",
+  "volume_name": "虞陆张骆陆吾朱传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "虞翻",
+      "category": "文臣",
+      "rationale": "卷名首姓，三国吴臣，以经学、谏诤知名，属文臣列传合传主轴。"
+    },
+    {
+      "name": "陆绩",
+      "category": "文臣",
+      "rationale": "卷名第二人，三国吴臣，以博学多识、政绩著称，属文臣列传合传主轴。"
+    },
+    {
+      "name": "张温",
+      "category": "文臣",
+      "rationale": "卷名第三人，三国吴臣，以才望、外交使蜀闻名，属文臣列传合传主轴。"
+    },
+    {
+      "name": "骆统",
+      "category": "文臣",
+      "rationale": "卷名第四人，三国吴臣，以政论、谏言见称，属文臣列传合传主轴。"
+    },
+    {
+      "name": "陆瑁",
+      "category": "文臣",
+      "rationale": "卷名第五人，三国吴臣，以德行、清望著称，属文臣列传合传主轴。"
+    },
+    {
+      "name": "吾粲",
+      "category": "文臣",
+      "rationale": "卷名第六人，三国吴臣，以忠直、政事见称，属文臣列传合传主轴。"
+    },
+    {
+      "name": "朱据",
+      "category": "文臣",
+      "rationale": "卷名末人，三国吴臣，以文武兼资、忠正著称，属文臣列传合传主轴。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

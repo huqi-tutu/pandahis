@@ -1,0 +1,70 @@
+{
+  "work": "04三国志",
+  "vol": "056",
+  "total_paragraphs": 36,
+  "volume_subtype": "hezhuan",
+  "derived_from": "04三国志_056_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 36,
+      "paragraph_to": 36,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "朱治",
+      "category": "武将",
+      "paragraph_from": 2,
+      "paragraph_to": 8,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "朱治字君理，丹杨故鄣人也。初为县吏，后察孝廉，州辟从事，随孙坚征伐。中平五年，拜",
+        "close_paragraph": 8,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P8"
+      }
+    },
+    {
+      "name": "朱然",
+      "category": "武将",
+      "paragraph_from": 9,
+      "paragraph_to": 17,
+      "boundary_evidence": {
+        "open_paragraph": 9,
+        "open_phrase": "朱然字义封，治姊子也，本姓施氏。初治未有子，然年十三，乃启策乞以为嗣。策命丹杨郡",
+        "close_paragraph": 17,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P9–P17"
+      }
+    },
+    {
+      "name": "吕范",
+      "category": "武将",
+      "paragraph_from": 18,
+      "paragraph_to": 28,
+      "boundary_evidence": {
+        "open_paragraph": 18,
+        "open_phrase": "吕范字子衡，汝南细阳人也。少为县吏，有容观姿貌。邑人刘氏，家富女美，范求之。女母",
+        "close_paragraph": 28,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P18–P28"
+      }
+    },
+    {
+      "name": "朱桓",
+      "category": "武将",
+      "paragraph_from": 29,
+      "paragraph_to": 35,
+      "boundary_evidence": {
+        "open_paragraph": 29,
+        "open_phrase": "朱桓字休穆，吴郡吴人也。孙权为将军，桓给事幕府，除余姚长。往遇疫疠，谷食荒贵，桓",
+        "close_paragraph": 35,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P29–P35"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

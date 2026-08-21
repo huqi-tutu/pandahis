@@ -1,0 +1,29 @@
+{
+  "work": "03后汉书",
+  "vol": "100",
+  "volume_name": "乌桓鲜卑列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_arc": "C",
+  "volume_texture": "sequential",
+  "skip_reason": null,
+  "protagonists_cap_note": "后汉书四夷蕃祚（fanzuo_volumes 白名单）。",
+  "protagonists": [
+    {
+      "name": "乌桓",
+      "category": "蕃祚",
+      "rationale": "卷名首列乌桓集体。"
+    },
+    {
+      "name": "鲜卑",
+      "category": "蕃祚",
+      "rationale": "卷名次列鲜卑集体。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "论赞",
+    "赞曰"
+  ]
+}

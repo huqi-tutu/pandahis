@@ -3,10 +3,10 @@
  * 中心 → 圈1 二级枢纽 → 圈2 直接人物 → 圈3 子女 → 圈4 孙辈
  *
  * 核心规则：
- * 1) 一级扇区 ∝ 圈2 总人数；二级枢纽在一级内按圈2 占比；圈2 在枢纽内均分
+ * 1) 一级扇区 ∝ 圈2 总人数；相邻一级扇区间留 CATEGORY_SECTOR_GAP_DEG 角向缝隙
  * 2) 同层级节点必须落在 RING_RADIUS[ringIndex] 同一圆上（禁止径向飞圈）
  * 3) 圈3 角向跨度：以「标签不重叠」所需为准，可向一级扇区扩张，但不必占满
- * 4) 空间上限 = 所属一级分类扇区；碰撞只做角向推开/缩牌，不做径向外扩
+ * 4) 空间上限 = 所属一级分类扇区；碰撞优先角向推开/缩牌；仍叠则方案 B 弹性扩大同层圆半径
  * 5) 圈4：同圆、够摆开；角向上限为所属二级枢纽扇区（避免被圈3 窄楔夹死叠牌）
  */
 import type { GraphEdge, GraphNode } from './graph-types'
@@ -27,6 +27,12 @@ export const LAYOUT_NODE_R = {
 
 /** 四圈层基准半径 */
 export const RING_RADIUS = [0, 128, 230, 340, 450] as const
+
+/** 方案 B：各圈弹性扩展上限（仍保持同层共圆，仅扩大半径） */
+const RING_RADIUS_CEIL = [0, 180, 340, 500, 620] as const
+const RING_EXPAND_STEP = 22
+/** 相邻圈层最小径向间距 */
+const MIN_RING_RADIAL_GAP = 88
 
 type Pos = LayoutPoint & {
   key: string
@@ -54,6 +60,10 @@ const MIN_HUB_CHORD = 64
 /** 每个二级枢纽下直接人物上限（与数据规范一致） */
 export const MAX_PERSONS_PER_HUB = 10
 const TWO_PI = Math.PI * 2
+
+/** 相邻一级关系扇区之间的角向缝隙（度）；5 类合计约 20° 空白，边界可辨但不浪费空间 */
+export const CATEGORY_SECTOR_GAP_DEG = 4
+const CATEGORY_SECTOR_GAP_RAD = (CATEGORY_SECTOR_GAP_DEG * Math.PI) / 180
 
 function normalizeGroupName(raw: string): string {
   const g = (raw || '').trim()
@@ -504,7 +514,7 @@ function relayoutRing1Globally(
       g.hubs.reduce((s, h) => s + hubMinAngle(String(h.meta.name || ''), r1) * 0.45, 0)
     )
   )
-  const catGap = Math.min(0.04, (TWO_PI * 0.05) / Math.max(groups.length, 1))
+  const catGap = CATEGORY_SECTOR_GAP_RAD
   const catSpans = allocateSpansByWeight(catRing2, catMin, TWO_PI - catGap * groups.length)
 
   for (const h of hubs) {
@@ -586,7 +596,8 @@ function placeRing3ByCategorySectors(
   edges: GraphEdge[],
   nodeMap: Map<string, GraphNode>,
   posMap: Map<string, Pos>,
-  weightCache: Map<string, number>
+  weightCache: Map<string, number>,
+  ringRadii: readonly number[] = RING_RADIUS
 ) {
   for (const cat of categoryWedges) {
     const pad = Math.min(0.03, (cat.a1 - cat.a0) * 0.06)
@@ -610,8 +621,8 @@ function placeRing3ByCategorySectors(
 
     branches.sort((a, b) => a.mid - b.mid)
 
-    // 圈3 全体固定在 RING_RADIUS[3]
-    const ringR = RING_RADIUS[3]
+    // 圈3 全体落在 layoutRingRadii[3]
+    const ringR = ringRAt(ringRadii, 3)
 
     // 各分支紧凑跨度（够摆开即可；总和超出一级上限时等比压缩）
     const spans = branches.map((b) =>
@@ -704,7 +715,8 @@ function replaceRing3FromHubWedges(
   edges: GraphEdge[],
   nodeMap: Map<string, GraphNode>,
   posMap: Map<string, Pos>,
-  weightCache: Map<string, number>
+  weightCache: Map<string, number>,
+  ringRadii: readonly number[] = RING_RADIUS
 ) {
   const hubs = [...posMap.values()].filter((p) => isRing1Hub(p) && p.a0 != null && p.a1 != null)
   const byGroup = new Map<string, Pos[]>()
@@ -730,7 +742,7 @@ function replaceRing3FromHubWedges(
     }
     wedges.push({ group, a0, a1, hubKeys: list.map((h) => h.key) })
   }
-  placeRing3ByCategorySectors(wedges, edges, nodeMap, posMap, weightCache)
+  placeRing3ByCategorySectors(wedges, edges, nodeMap, posMap, weightCache, ringRadii)
 }
 
 function rotatePosBy(p: Pos, delta: number) {
@@ -1121,17 +1133,130 @@ function collisionRadius(p: Pos): number {
   return Math.max(p.boxW, p.boxH) / 2 + NODE_GAP * 0.35
 }
 
+function ringRAt(ringRadii: readonly number[], ringIndex: number): number {
+  const ri = Math.min(Math.max(ringIndex, 1), ringRadii.length - 1)
+  return ringRadii[ri] ?? RING_RADIUS[ri]
+}
+
+/** 严格碰撞检测：两节点胶囊是否重叠（阈值 1.0） */
+function findStrictOverlappingPairs(positions: Pos[]): [Pos, Pos][] {
+  const pairs: [Pos, Pos][] = []
+  for (let i = 0; i < positions.length; i++) {
+    for (let j = i + 1; j < positions.length; j++) {
+      const a = positions[i]
+      const b = positions[j]
+      if (a.isCategory || b.isCategory) continue
+      if (a.isCenter || b.isCenter) continue
+      const ra = collisionRadius(a)
+      const rb = collisionRadius(b)
+      const dx = b.x - a.x
+      const dy = b.y - a.y
+      if (dx * dx + dy * dy < (ra + rb) * (ra + rb)) pairs.push([a, b])
+    }
+  }
+  return pairs
+}
+
+/** 维持外圈 ≥ 内圈 + 最小径向间距，并不超过上限 */
+function normalizeRingRadii(radii: number[]): void {
+  for (let i = 2; i < radii.length; i++) {
+    radii[i] = Math.max(radii[i], radii[i - 1] + MIN_RING_RADIAL_GAP)
+    const ceil = RING_RADIUS_CEIL[i] ?? radii[i]
+    radii[i] = Math.min(radii[i], ceil)
+  }
+  for (let i = 1; i < radii.length; i++) {
+    const ceil = RING_RADIUS_CEIL[i] ?? radii[i]
+    radii[i] = Math.min(radii[i], ceil)
+  }
+}
+
+/**
+ * 方案 B：基准布局后若仍有节点重叠，逐步扩大同层圆半径直至无碰撞或触顶。
+ * @returns 最终各圈半径（供 Canvas 绘制圈层虚线）
+ */
+function expandRingsUntilClear(
+  posMap: Map<string, Pos>,
+  edges: GraphEdge[],
+  nodeMap: Map<string, GraphNode>,
+  weightCache: Map<string, number>
+): number[] {
+  const radii: number[] = [...RING_RADIUS]
+  const list = () => [...posMap.values()]
+  const finish = () => {
+    snapAllToCanonicalRings(posMap, radii)
+    return radii
+  }
+
+  for (let pass = 0; pass < 36; pass++) {
+    const pairs = findStrictOverlappingPairs(list())
+    if (!pairs.length) return finish()
+
+    const ringsToExpand = new Set<number>()
+    for (const [a, b] of pairs) {
+      ringsToExpand.add(a.ringIndex ?? (a.isSubCategory ? 1 : 2))
+      ringsToExpand.add(b.ringIndex ?? (b.isSubCategory ? 1 : 2))
+    }
+
+    let progressed = false
+    for (const ri of ringsToExpand) {
+      if (ri < 1 || ri >= radii.length) continue
+      const ceil = RING_RADIUS_CEIL[ri] ?? radii[ri] + RING_EXPAND_STEP
+      const next = Math.min(radii[ri] + RING_EXPAND_STEP, ceil)
+      if (next > radii[ri]) {
+        radii[ri] = next
+        progressed = true
+      }
+    }
+    normalizeRingRadii(radii)
+    if (!progressed) break
+
+    snapAllToCanonicalRings(posMap, radii)
+    resolveNodeOverlaps(list(), 96, radii)
+    clampPersonsToWedges(posMap, radii)
+    snapAllToCanonicalRings(posMap, radii)
+  }
+
+  enforceRing2HardSeparation(edges, nodeMap, posMap, weightCache, radii)
+  snapAllToCanonicalRings(posMap, radii)
+  resolveNodeOverlaps(list(), 96, radii)
+  clampPersonsToWedges(posMap, radii)
+
+  for (let pass = 0; pass < 12; pass++) {
+    const pairs = findStrictOverlappingPairs(list())
+    if (!pairs.length) return finish()
+    let progressed = false
+    for (const [a, b] of pairs) {
+      const ri = Math.max(a.ringIndex ?? 2, b.ringIndex ?? 2)
+      if (ri < 1 || ri >= radii.length) continue
+      const ceil = RING_RADIUS_CEIL[ri] ?? radii[ri]
+      const next = Math.min(radii[ri] + RING_EXPAND_STEP, ceil)
+      if (next > radii[ri]) {
+        radii[ri] = next
+        progressed = true
+      }
+    }
+    normalizeRingRadii(radii)
+    if (!progressed) break
+    snapAllToCanonicalRings(posMap, radii)
+    resolveNodeOverlaps(list(), 96, radii)
+    clampPersonsToWedges(posMap, radii)
+    snapAllToCanonicalRings(posMap, radii)
+  }
+
+  return finish()
+}
+
 function isRing1Hub(p: Pos): boolean {
   return !!p.isSubCategory && (p.ringIndex ?? 0) === 1
 }
 
 /** 将人物夹回自身角域（防止任何推挤造成跨分类） */
-function clampPersonsToWedges(posMap: Map<string, Pos>) {
+function clampPersonsToWedges(posMap: Map<string, Pos>, ringRadii: readonly number[] = RING_RADIUS) {
   for (const p of posMap.values()) {
     if (p.isCenter || p.isCategory || isRing1Hub(p)) continue
     if (p.a0 == null || p.a1 == null) continue
-    const ri = Math.min(Math.max(p.ringIndex ?? 2, 1), RING_RADIUS.length - 1)
-    const r = RING_RADIUS[ri]
+    const ri = Math.min(Math.max(p.ringIndex ?? 2, 1), ringRadii.length - 1)
+    const r = ringRAt(ringRadii, ri)
     const ang = clampAngleToWedge(Math.atan2(p.y, p.x), p.a0, p.a1)
     p.x = Math.cos(ang) * r
     p.y = Math.sin(ang) * r
@@ -1139,15 +1264,15 @@ function clampPersonsToWedges(posMap: Map<string, Pos>) {
 }
 
 /** 全图按 ringIndex 吸附到基准圆：同层级必须共圆 */
-function snapAllToCanonicalRings(posMap: Map<string, Pos>) {
+function snapAllToCanonicalRings(posMap: Map<string, Pos>, ringRadii: readonly number[] = RING_RADIUS) {
   for (const p of posMap.values()) {
     if (p.isCenter || p.isCategory) {
       p.x = 0
       p.y = 0
       continue
     }
-    const ri = Math.min(Math.max(p.ringIndex ?? (p.isSubCategory ? 1 : 2), 1), RING_RADIUS.length - 1)
-    const targetR = RING_RADIUS[ri]
+    const ri = Math.min(Math.max(p.ringIndex ?? (p.isSubCategory ? 1 : 2), 1), ringRadii.length - 1)
+    const targetR = ringRAt(ringRadii, ri)
     const ang = Math.atan2(p.y, p.x)
     p.x = Math.cos(ang) * targetR
     p.y = Math.sin(ang) * targetR
@@ -1186,7 +1311,8 @@ function enforceRing2HardSeparation(
   edges: GraphEdge[],
   nodeMap: Map<string, GraphNode>,
   posMap: Map<string, Pos>,
-  weightCache: Map<string, number>
+  weightCache: Map<string, number>,
+  ringRadii: readonly number[] = RING_RADIUS
 ) {
   const hubs = [...posMap.values()].filter((p) => isRing1Hub(p))
   for (const hub of hubs) {
@@ -1244,13 +1370,13 @@ function enforceRing2HardSeparation(
         nodeMap,
         posMap,
         weightCache,
-        RING_RADIUS[2],
+        ringRAt(ringRadii, 2),
         { skipChildren: true, lockRadius: true }
       )
     })
   }
   // 圈2 重挂后，圈3 仍按一级扇区均分
-  replaceRing3FromHubWedges(edges, nodeMap, posMap, weightCache)
+  replaceRing3FromHubWedges(edges, nodeMap, posMap, weightCache, ringRadii)
 
   // 跨枢纽：只向各自扇区中心角向收回（保持基准圆半径，绝不径向飞圈）
   const persons = [...posMap.values()].filter(
@@ -1286,8 +1412,8 @@ function enforceRing2HardSeparation(
           }
           const next = ang + (mid - ang) * 0.4
           const clamped = clampAngleToWedge(next, p.a0, p.a1)
-          const ri = Math.min(Math.max(p.ringIndex ?? 2, 1), RING_RADIUS.length - 1)
-          const r = RING_RADIUS[ri]
+          const ri = Math.min(Math.max(p.ringIndex ?? 2, 1), ringRadii.length - 1)
+          const r = ringRAt(ringRadii, ri)
           if (Math.abs(clamped - ang) < 1e-4) return false
           p.x = Math.cos(clamped) * r
           p.y = Math.sin(clamped) * r
@@ -1305,7 +1431,7 @@ function enforceRing2HardSeparation(
   clampPersonsToWedges(posMap)
 }
 
-function resolveNodeOverlaps(positions: Pos[], maxPass = 80) {
+function resolveNodeOverlaps(positions: Pos[], maxPass = 80, ringRadii: readonly number[] = RING_RADIUS) {
   // 圈1 二级胶囊由全局扇区硬约束定位；人物只做角向推开并锁在基准圆
   const list = positions.filter((p) => !p.isCenter && !p.isCategory && !isRing1Hub(p))
   for (let pass = 0; pass < maxPass; pass++) {
@@ -1326,8 +1452,8 @@ function resolveNodeOverlaps(positions: Pos[], maxPass = 80) {
           [b, 1],
         ] as const) {
           let ang = Math.atan2(p.y, p.x)
-          const ring = Math.min(Math.max(p.ringIndex ?? 2, 1), RING_RADIUS.length - 1)
-          const r = RING_RADIUS[ring]
+          const ring = Math.min(Math.max(p.ringIndex ?? 2, 1), ringRadii.length - 1)
+          const r = ringRAt(ringRadii, ring)
           ang += sign * (push / Math.max(r, 40))
           if (p.a0 != null && p.a1 != null) {
             ang = clampAngleToWedge(ang, p.a0, p.a1)
@@ -1342,14 +1468,18 @@ function resolveNodeOverlaps(positions: Pos[], maxPass = 80) {
   }
 }
 
-function buildPosList(centerKey: string, nodesIn: GraphNode[], edgesIn: GraphEdge[]): Pos[] {
+function buildPosList(
+  centerKey: string,
+  nodesIn: GraphNode[],
+  edgesIn: GraphEdge[]
+): { positions: Pos[]; ringRadii: number[] } {
   const withHub = ensureFriendHub(nodesIn, edgesIn)
   const { nodes, edges } = capDirectPeoplePerHub(withHub.nodes, withHub.edges)
   const nodeMap = new Map(nodes.map((n) => [n.key, n]))
   const posMap = new Map<string, Pos>()
   const weightCache = new Map<string, number>()
   const centerMeta = nodeMap.get(centerKey)
-  if (!centerMeta) return []
+  if (!centerMeta) return { positions: [], ringRadii: [...RING_RADIUS] }
 
   addPos(posMap, centerMeta, 0, 0, 0, { isCenter: true })
 
@@ -1363,10 +1493,12 @@ function buildPosList(centerKey: string, nodesIn: GraphNode[], edgesIn: GraphEdg
     return { cat: c, w: Math.max(stats.ring2, stats.hubCount, 1), hubCount: stats.hubCount }
   })
   const totalW = catWeights.reduce((s, x) => s + x.w, 0) || categoryNodes.length
+  const categoryGapTotal = CATEGORY_SECTOR_GAP_RAD * catWeights.length
+  const allocatableAngle = Math.max(TWO_PI - categoryGapTotal, TWO_PI * 0.5)
 
   let cursor = -Math.PI / 2
   for (const item of catWeights) {
-    const span = (item.w / totalW) * Math.PI * 2
+    const span = (item.w / totalW) * allocatableAngle
     const pad = Math.min(0.04, span * 0.08)
     layoutCategorySector(
       item.cat,
@@ -1377,7 +1509,7 @@ function buildPosList(centerKey: string, nodesIn: GraphNode[], edgesIn: GraphEdg
       posMap,
       weightCache
     )
-    cursor += span
+    cursor += span + CATEGORY_SECTOR_GAP_RAD
   }
 
   // 跨一级类别重排圈1，消灭「老师/父母」这类扇区接缝重叠
@@ -1406,24 +1538,35 @@ function buildPosList(centerKey: string, nodesIn: GraphNode[], edgesIn: GraphEdg
   snapAllToCanonicalRings(posMap)
   clampPersonsToWedges(posMap)
 
+  // 方案 B：基准布局仍叠牌时，扩大同层圆半径
+  const layoutRingRadii = expandRingsUntilClear(posMap, edges, nodeMap, weightCache)
+
   const keys = new Set(nodesIn.map((n) => n.key))
   if (posMap.has(VIRT_FRI_HUB)) keys.add(VIRT_FRI_HUB)
-  return [...keys]
-    .map((k) => posMap.get(k))
-    .filter((p): p is Pos => p != null)
+  return {
+    positions: [...keys]
+      .map((k) => posMap.get(k))
+      .filter((p): p is Pos => p != null),
+    ringRadii: layoutRingRadii,
+  }
 }
 
 export function prepareRelationGraph(
   centerKey: string,
   nodes: GraphNode[],
   edges: GraphEdge[]
-): { nodes: GraphNode[]; edges: GraphEdge[]; positions: Map<string, LayoutPoint> } {
+): {
+  nodes: GraphNode[]
+  edges: GraphEdge[]
+  positions: Map<string, LayoutPoint>
+  ringRadii: readonly number[]
+} {
   const withHub = ensureFriendHub(nodes, edges)
   const prepared = capDirectPeoplePerHub(withHub.nodes, withHub.edges, MAX_PERSONS_PER_HUB)
-  const posList = buildPosList(centerKey, prepared.nodes, prepared.edges)
+  const { positions: posList, ringRadii } = buildPosList(centerKey, prepared.nodes, prepared.edges)
   const positions = new Map<string, LayoutPoint>()
   for (const p of posList) positions.set(p.key, { x: p.x, y: p.y })
-  return { nodes: prepared.nodes, edges: prepared.edges, positions }
+  return { nodes: prepared.nodes, edges: prepared.edges, positions, ringRadii }
 }
 
 export function computeMindmapPositions(
@@ -1444,7 +1587,7 @@ export function childWithinParentWedge(
   childKey: string
 ): boolean {
   const prepared = ensureFriendHub(nodes, edges)
-  const posList = buildPosList(centerKey, prepared.nodes, prepared.edges)
+  const posList = buildPosList(centerKey, prepared.nodes, prepared.edges).positions
   const parent = posList.find((p) => p.key === parentKey)
   const child = posList.find((p) => p.key === childKey)
   if (!parent || !child) return false
@@ -1453,13 +1596,61 @@ export function childWithinParentWedge(
   return angleInWedge(ang, parent.a0, parent.a1, 0.04)
 }
 
+function angularGapRad(fromA1: number, toA0: number): number {
+  let gap = toA0 - fromA1
+  while (gap < -1e-6) gap += TWO_PI
+  return gap
+}
+
+/** 相邻一级关系扇区之间的最小角向缝隙（弧度，测试/调试用） */
+export function minCategorySectorGapRadians(
+  centerKey: string,
+  nodes: GraphNode[],
+  edges: GraphEdge[]
+): number {
+  const withHub = ensureFriendHub(nodes, edges)
+  const { nodes: n2, edges: e2 } = capDirectPeoplePerHub(withHub.nodes, withHub.edges)
+  const nodeMap = new Map(n2.map((n) => [n.key, n]))
+  const posList = buildPosList(centerKey, n2, e2).positions
+
+  const byGroup = new Map<string, { a0: number; a1: number }>()
+  for (const h of posList) {
+    if (!h.isSubCategory || (h.ringIndex ?? 0) !== 1) continue
+    if (h.a0 == null || h.a1 == null) continue
+    const meta = nodeMap.get(h.key)
+    if (!meta) continue
+    const g = hubGroupName(meta)
+    const cur = byGroup.get(g)
+    if (!cur) {
+      byGroup.set(g, { a0: h.a0, a1: h.a1 })
+    } else {
+      cur.a0 = Math.min(cur.a0, h.a0)
+      cur.a1 = Math.max(cur.a1, h.a1)
+    }
+  }
+
+  const ordered = CATEGORY_ORDER.filter((g) => byGroup.has(g)).map((g) => ({
+    group: g,
+    ...byGroup.get(g)!,
+  }))
+  if (ordered.length < 2) return TWO_PI
+
+  let minGap = TWO_PI
+  for (let i = 0; i < ordered.length; i++) {
+    const a = ordered[i]
+    const b = ordered[(i + 1) % ordered.length]
+    minGap = Math.min(minGap, angularGapRad(a.a1, b.a0))
+  }
+  return minGap
+}
+
 export function hasNodeOverlap(
   centerKey: string,
   nodes: GraphNode[],
   edges: GraphEdge[]
 ): boolean {
   const prepared = ensureFriendHub(nodes, edges)
-  const positions = buildPosList(centerKey, prepared.nodes, prepared.edges)
+  const positions = buildPosList(centerKey, prepared.nodes, prepared.edges).positions
   for (let i = 0; i < positions.length; i++) {
     for (let j = i + 1; j < positions.length; j++) {
       const a = positions[i]
@@ -1470,7 +1661,7 @@ export function hasNodeOverlap(
       const rb = collisionRadius(b)
       const dx = b.x - a.x
       const dy = b.y - a.y
-      if (dx * dx + dy * dy < (ra + rb) * (ra + rb) * 0.92) return true
+      if (dx * dx + dy * dy < (ra + rb) * (ra + rb)) return true
     }
   }
   return false

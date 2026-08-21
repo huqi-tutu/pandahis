@@ -1,0 +1,99 @@
+{
+  "work": "03后汉书",
+  "vol": "062",
+  "total_paragraphs": 54,
+  "volume_subtype": "hezhuan",
+  "derived_from": "03后汉书_062_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 35,
+      "paragraph_to": 35,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 54,
+      "paragraph_to": 54,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "杜根",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 5,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "杜根字伯坚，颍川定陵人也。父安，字伯夷，少有志节，年十三入太学，号奇童。京师贵戚",
+        "close_paragraph": 5,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P5"
+      }
+    },
+    {
+      "name": "栾巴",
+      "category": "文臣",
+      "paragraph_from": 6,
+      "paragraph_to": 9,
+      "boundary_evidence": {
+        "open_paragraph": 6,
+        "open_phrase": "栾巴字叔元，魏郡内黄人也。好道。顺帝世，以宦者给事掖庭，补黄门令，非其好也。性质",
+        "close_paragraph": 9,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P6–P9"
+      }
+    },
+    {
+      "name": "刘陶",
+      "category": "文臣",
+      "paragraph_from": 10,
+      "paragraph_to": 30,
+      "boundary_evidence": {
+        "open_paragraph": 10,
+        "open_phrase": "刘陶字子奇，一名伟，颍川颍阴人，济北贞王勃之后。陶为人居简，不修上节。所与交友，",
+        "close_paragraph": 30,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P10–P30"
+      }
+    },
+    {
+      "name": "李云",
+      "category": "文臣",
+      "paragraph_from": 31,
+      "paragraph_to": 34,
+      "boundary_evidence": {
+        "open_paragraph": 31,
+        "open_phrase": "李云字行祖，甘陵人也。性好学，善阴阳。初举孝廉，再迁白马令。",
+        "close_paragraph": 34,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P31–P34"
+      }
+    },
+    {
+      "name": "刘瑜",
+      "category": "文臣",
+      "paragraph_from": 36,
+      "paragraph_to": 47,
+      "boundary_evidence": {
+        "open_paragraph": 36,
+        "open_phrase": "刘瑜字季节，广陵人也。高祖父广陵靖王。父辩，清河太守。瑜少好经学，尤善图谶、天文",
+        "close_paragraph": 47,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P36–P47"
+      }
+    },
+    {
+      "name": "谢弼",
+      "category": "文臣",
+      "paragraph_from": 48,
+      "paragraph_to": 53,
+      "boundary_evidence": {
+        "open_paragraph": 48,
+        "open_phrase": "谢弼字辅宣，东郡武阳人也。中直方正，为乡邑所宗师。建宁二年，诏举有道之士，弼与东",
+        "close_paragraph": 53,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P48–P53"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

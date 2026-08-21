@@ -1,0 +1,94 @@
+{
+  "work": "04三国志",
+  "vol": "041",
+  "total_paragraphs": 17,
+  "volume_subtype": "hezhuan",
+  "derived_from": "04三国志_041_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 17,
+      "paragraph_to": 17,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "霍峻",
+      "category": "武将",
+      "paragraph_from": 2,
+      "paragraph_to": 3,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "霍峻字仲邈，南郡枝江人也。兄笃，于乡里合部曲数百人。笃卒，荆州牧刘表令峻摄其众。",
+        "close_paragraph": 3,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P3"
+      }
+    },
+    {
+      "name": "王连",
+      "category": "文臣",
+      "paragraph_from": 4,
+      "paragraph_to": 4,
+      "boundary_evidence": {
+        "open_paragraph": 4,
+        "open_phrase": "王连字文仪，南阳人也。刘璋时入蜀，为梓潼令。先主起事葭萌，进军来南，连闭城不降，",
+        "close_paragraph": 4,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P4–P4"
+      }
+    },
+    {
+      "name": "向朗",
+      "category": "文臣",
+      "paragraph_from": 5,
+      "paragraph_to": 6,
+      "boundary_evidence": {
+        "open_paragraph": 5,
+        "open_phrase": "向朗字巨达，襄阳宜城人也。荆州牧刘表以为临沮长。表卒，归先主。先主定江南，使朗督",
+        "close_paragraph": 6,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P5–P6"
+      }
+    },
+    {
+      "name": "张裔",
+      "category": "文臣",
+      "paragraph_from": 7,
+      "paragraph_to": 9,
+      "boundary_evidence": {
+        "open_paragraph": 7,
+        "open_phrase": "张裔字君嗣，蜀郡成都人也。治《公羊春秋》，博涉史、汉。汝南许文休入蜀，谓裔幹理敏",
+        "close_paragraph": 9,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P7–P9"
+      }
+    },
+    {
+      "name": "杨洪",
+      "category": "文臣",
+      "paragraph_from": 10,
+      "paragraph_to": 13,
+      "boundary_evidence": {
+        "open_paragraph": 10,
+        "open_phrase": "杨洪字季休，犍为武阳人也。刘璋时历部诸郡。先主定蜀，太守李严命为功曹。严欲徙郡治",
+        "close_paragraph": 13,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P10–P13"
+      }
+    },
+    {
+      "name": "费诗",
+      "category": "文臣",
+      "paragraph_from": 14,
+      "paragraph_to": 16,
+      "boundary_evidence": {
+        "open_paragraph": 14,
+        "open_phrase": "费诗字公举，犍为南安人也。刘璋时为绵竹令，先主攻绵竹时，诗先举城降。成都既定，先",
+        "close_paragraph": 16,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P14–P16"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

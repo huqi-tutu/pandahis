@@ -1,0 +1,30 @@
+{
+  "work": "03后汉书",
+  "vol": "082",
+  "volume_name": "刘焉袁术吕布列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_arc": "C",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "sequential",
+  "skip_reason": null,
+  "protagonists_cap_note": "袁术标武将（非诸侯/君王）；刘焉宗戚、吕布武将。",
+  "protagonists": [
+    {
+      "name": "刘焉",
+      "category": "宗戚",
+      "rationale": "卷名首列；汉宗室益州牧，标宗戚。"
+    },
+    {
+      "name": "袁术",
+      "category": "武将",
+      "rationale": "卷名次列；割据称帝前仍按晚汉军阀标武将，不入帝王表。"
+    },
+    {
+      "name": "吕布",
+      "category": "武将",
+      "rationale": "卷名并列；以武勇割据为主轴。"
+    }
+  ],
+  "excluded_kinds_hint": ["卷首标题", "论赞", "赞曰"]
+}

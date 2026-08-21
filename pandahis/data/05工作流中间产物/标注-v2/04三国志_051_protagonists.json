@@ -1,0 +1,38 @@
+{
+  "work": "04三国志",
+  "vol": "051",
+  "volume_name": "宗室传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_arc": "C",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "孙静",
+      "category": "宗戚",
+      "rationale": "吴书《宗室传》卷首：孙坚季弟，纠合宗室起事，属孙权同姓宗亲。"
+    },
+    {
+      "name": "孙皎",
+      "category": "宗戚",
+      "rationale": "宗室传重头：征虏将军、督夏口，独立长传。"
+    },
+    {
+      "name": "孙贲",
+      "category": "宗戚",
+      "rationale": "孙坚兄子，豫章太守，宗室骨干。"
+    },
+    {
+      "name": "孙韶",
+      "category": "宗戚",
+      "rationale": "继孙河镇京城，拒备守边，独立叙事充分。"
+    },
+    {
+      "name": "孙桓",
+      "category": "宗戚",
+      "rationale": "与陆逊共拒刘备，宗室传收束人物。"
+    }
+  ],
+  "excluded_kinds_hint": ["卷首标题", "论赞", "世系链"]
+}

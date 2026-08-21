@@ -6,8 +6,10 @@
 }
 
 .fp-body {
-  /* 左右/底边距；顶距由内联 pageTopPadPx（仅导航占位）负责 */
-  padding: 0 32rpx calc(48rpx + env(safe-area-inset-bottom));
+  /* 左右/底边距；顶距由内联 pageTopPadPx 负责（勿用 padding 简写覆盖） */
+  padding-left: 32rpx;
+  padding-right: 32rpx;
+  padding-bottom: calc(48rpx + env(safe-area-inset-bottom));
   box-sizing: border-box;
 }
 
@@ -112,9 +114,3 @@
   padding: 0 56rpx;
 }
 
-.loading {
-  padding: 80rpx 32rpx;
-  text-align: center;
-  font-size: 28rpx;
-  color: $text-body;
-}

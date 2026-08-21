@@ -1,0 +1,24 @@
+{
+  "work": "03后汉书",
+  "vol": "080",
+  "volume_name": "袁绍刘表列传第六十四上",
+  "volume_type_guess": "列传",
+  "narrative_mode": "single",
+  "volume_arc": "A",
+  "volume_subtype": "liezhuan_single",
+  "volume_texture": "sequential",
+  "skip_reason": null,
+  "protagonists_cap_note": "第六十四上仅袁绍叙事；刘表在081下卷开传。同书分卷。",
+  "protagonists": [
+    {
+      "name": "袁绍",
+      "category": "武将",
+      "rationale": "本卷（上）自「袁绍字本初」贯穿至薨；与董卓例标武将。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "论赞",
+    "赞曰"
+  ]
+}

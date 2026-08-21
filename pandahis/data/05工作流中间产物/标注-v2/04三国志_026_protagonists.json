@@ -1,0 +1,35 @@
+{
+  "work": "04三国志",
+  "vol": "026",
+  "volume_name": "满田牵郭传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "满宠",
+      "category": "武将",
+      "rationale": "《满田牵郭传》卷名首姓，满宠为曹魏名将，以军功征战为主轴，符合武将准入标准。"
+    },
+    {
+      "name": "田豫",
+      "category": "武将",
+      "rationale": "《满田牵郭传》卷名第二人，田豫为曹魏边将，以军功镇边为主轴，符合武将准入标准。"
+    },
+    {
+      "name": "牵招",
+      "category": "武将",
+      "rationale": "《满田牵郭传》卷名第三人，牵招为曹魏将领，以军功征战为主轴，符合武将准入标准。"
+    },
+    {
+      "name": "郭淮",
+      "category": "武将",
+      "rationale": "《满田牵郭传》卷名末人，郭淮为曹魏名将，以军功征战为主轴，符合武将准入标准。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "work": "04三国志",
+  "vol": "031",
+  "volume_name": "刘二牧传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_arc": "C",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "刘焉",
+      "category": "宗戚",
+      "rationale": "卷名『刘二牧』父；汉室宗支、益州牧。对齐后汉书刘焉袁术吕布列传→宗戚。非君王/诸侯。"
+    },
+    {
+      "name": "刘璋",
+      "category": "宗戚",
+      "rationale": "卷名『刘二牧』子；继任益州牧，汉室宗支。与刘焉同口径→宗戚。非君王/诸侯。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "论赞",
+    "其他"
+  ]
+}

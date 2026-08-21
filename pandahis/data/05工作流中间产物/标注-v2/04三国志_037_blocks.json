@@ -1,0 +1,46 @@
+{
+  "work": "04三国志",
+  "vol": "037",
+  "total_paragraphs": 11,
+  "volume_subtype": "hezhuan",
+  "derived_from": "04三国志_037_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 11,
+      "paragraph_to": 11,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "庞统",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 5,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "庞统字士元，襄阳人也。少时朴钝，未有识者。颍川司马徽清雅有知人鉴，统弱冠往见徽，",
+        "close_paragraph": 5,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P5"
+      }
+    },
+    {
+      "name": "法正",
+      "category": "文臣",
+      "paragraph_from": 6,
+      "paragraph_to": 10,
+      "boundary_evidence": {
+        "open_paragraph": 6,
+        "open_phrase": "法正字孝直，扶风郿人也。祖父真，有清节高名。建安初，天下饥荒，正与同郡孟达俱入蜀",
+        "close_paragraph": 10,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P6–P10"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

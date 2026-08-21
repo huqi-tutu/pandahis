@@ -1,0 +1,140 @@
+{
+  "work": "03后汉书",
+  "vol": "085",
+  "total_paragraphs": 78,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_085_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 2,
+      "paragraph_to": 3,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 5,
+      "paragraph_to": 6,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 76,
+      "paragraph_to": 78,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "郑众",
+      "category": "宦官",
+      "paragraph_from": 4,
+      "paragraph_to": 4,
+      "boundary_evidence": {
+        "open_paragraph": 4,
+        "open_phrase": "中兴之初，宦官悉用阉人，不复杂调他士。至永平中，始置员数，中常侍四人，小黄门十人",
+        "close_paragraph": 4,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P4–P4"
+      }
+    },
+    {
+      "name": "郑众",
+      "category": "宦官",
+      "paragraph_from": 7,
+      "paragraph_to": 10,
+      "boundary_evidence": {
+        "open_paragraph": 7,
+        "open_phrase": "郑众字季产，南阳犨人也。为人谨敏有心几。永平中，初给事太子家。肃宗即位，拜小黄门",
+        "close_paragraph": 10,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P7–P10"
+      }
+    },
+    {
+      "name": "蔡伦",
+      "category": "宦官",
+      "paragraph_from": 11,
+      "paragraph_to": 15,
+      "boundary_evidence": {
+        "open_paragraph": 11,
+        "open_phrase": "蔡伦字敬仲，桂阳人也。以永平末始给事宫掖，建初中，为小黄门。及和帝即位，转中常侍",
+        "close_paragraph": 15,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P11–P15"
+      }
+    },
+    {
+      "name": "孙程",
+      "category": "宦官",
+      "paragraph_from": 16,
+      "paragraph_to": 28,
+      "boundary_evidence": {
+        "open_paragraph": 16,
+        "open_phrase": "孙程字稚卿，涿郡新城人也。安帝时，为中黄门，给事长乐宫。",
+        "close_paragraph": 28,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P16–P28"
+      }
+    },
+    {
+      "name": "曹腾",
+      "category": "宦官",
+      "paragraph_from": 29,
+      "paragraph_to": 32,
+      "boundary_evidence": {
+        "open_paragraph": 29,
+        "open_phrase": "曹腾字季兴，沛国谯人也。安帝时，除黄门从官。顺帝在东宫，邓太后以腾年少谨厚，使侍",
+        "close_paragraph": 32,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P29–P32"
+      }
+    },
+    {
+      "name": "单超",
+      "category": "宦官",
+      "paragraph_from": 33,
+      "paragraph_to": 39,
+      "boundary_evidence": {
+        "open_paragraph": 33,
+        "open_phrase": "单超，河南人；徐璜，下邳良城人；具瑗，魏郡元城人；左悺，河南平阴人；唐衡，颍川郾",
+        "close_paragraph": 39,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P33–P39"
+      }
+    },
+    {
+      "name": "侯览",
+      "category": "宦官",
+      "paragraph_from": 40,
+      "paragraph_to": 44,
+      "boundary_evidence": {
+        "open_paragraph": 40,
+        "open_phrase": "侯览者，山阳防东人。桓帝初为中常侍，以佞猾进，倚势贪放，受纳货遗以巨万计。延熹中",
+        "close_paragraph": 44,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P40–P44"
+      }
+    },
+    {
+      "name": "曹节",
+      "category": "宦官",
+      "paragraph_from": 45,
+      "paragraph_to": 67,
+      "boundary_evidence": {
+        "open_paragraph": 45,
+        "open_phrase": "曹节字汉丰，南阳新野人也。其本魏郡人，世吏二千石。顺帝初，以西园骑迁小黄门。桓帝",
+        "close_paragraph": 67,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P45–P67"
+      }
+    },
+    {
+      "name": "张让",
+      "category": "宦官",
+      "paragraph_from": 68,
+      "paragraph_to": 75,
+      "boundary_evidence": {
+        "open_paragraph": 68,
+        "open_phrase": "张让者，颎川人；赵忠者，安平人也。少皆给事者中，桓帝时为小黄门。忠以与诛梁冀功封",
+        "close_paragraph": 75,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P68–P75"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

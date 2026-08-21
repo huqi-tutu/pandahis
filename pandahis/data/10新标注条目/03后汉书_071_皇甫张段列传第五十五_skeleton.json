@@ -1,0 +1,640 @@
+{
+  "volume": "皇甫张段列传",
+  "source_file": "03后汉书_071_皇甫张段列传第五十五.txt",
+  "total_paragraphs": 67,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "皇甫规",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "皇甫规",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "皇甫规",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "皇甫规",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "皇甫规",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "皇甫规",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "皇甫规",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "皇甫规",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "皇甫规",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "皇甫规",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "皇甫规",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "皇甫规",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "皇甫规",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "皇甫规",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "皇甫规",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "皇甫规",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "皇甫规",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "皇甫规",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "皇甫规",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "皇甫规",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "皇甫规",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "张奂",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "张奂",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "张奂",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "张奂",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "张奂",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "张奂",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "张奂",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "张奂",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "张奂",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "张奂",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "张奂",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "张奂",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "张奂",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "张奂",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "张奂",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "张奂",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "张奂",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "张奂",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "张奂",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "段颎",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "段颎",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [
+        {
+          "name": "段颎",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 47,
+      "owners": [
+        {
+          "name": "段颎",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 48,
+      "owners": [
+        {
+          "name": "段颎",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 49,
+      "owners": [
+        {
+          "name": "段颎",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 50,
+      "owners": [
+        {
+          "name": "段颎",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 51,
+      "owners": [
+        {
+          "name": "段颎",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 52,
+      "owners": [
+        {
+          "name": "段颎",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 53,
+      "owners": [
+        {
+          "name": "段颎",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 54,
+      "owners": [
+        {
+          "name": "段颎",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 55,
+      "owners": [
+        {
+          "name": "段颎",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 56,
+      "owners": [
+        {
+          "name": "段颎",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 57,
+      "owners": [
+        {
+          "name": "段颎",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 58,
+      "owners": [
+        {
+          "name": "段颎",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 59,
+      "owners": [
+        {
+          "name": "段颎",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 60,
+      "owners": [
+        {
+          "name": "段颎",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 61,
+      "owners": [
+        {
+          "name": "段颎",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 62,
+      "owners": [
+        {
+          "name": "段颎",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 63,
+      "owners": [
+        {
+          "name": "段颎",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 64,
+      "owners": [
+        {
+          "name": "段颎",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 65,
+      "owners": [
+        {
+          "name": "段颎",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 66,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 67,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HOUHANSHU_071_01",
+      "史略名称": "皇甫规",
+      "史略简介": "皇甫规",
+      "原文字句": "皇甫规字威明，安定朝那人也。祖父棱，度辽将军。父旗，扶风都尉。",
+      "史略分类": "武将",
+      "主要史料出处": "《03后汉书·卷71·皇甫张段列传》",
+      "paragraphs": [
+        {
+          "volume": "皇甫张段列传",
+          "paragraph_from": 2,
+          "paragraph_to": 22
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_071_02",
+      "史略名称": "张奂",
+      "史略简介": "张奂",
+      "原文字句": "张奂字然明，敦煌渊泉人也。父惇，为汉阳太守。奂少游三辅，师事太尉朱宠，学《欧阳尚书》。初，《牟氏章句》浮辞繁多，有四十五万余言，奂减为九万言。后辟大将军梁冀府，乃上书桓帝，奏其《章句》，诏下东观，以疾去官，复举贤良，对策第一，擢拜议郎。",
+      "史略分类": "武将",
+      "主要史料出处": "《03后汉书·卷71·皇甫张段列传》",
+      "paragraphs": [
+        {
+          "volume": "皇甫张段列传",
+          "paragraph_from": 24,
+          "paragraph_to": 42
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_071_03",
+      "史略名称": "段颎",
+      "史略简介": "段颎",
+      "原文字句": "段颎字纪明，武威姑臧人也。其先出郑共叔段，西域都护会宗之从曾孙也。颎少便习弓马，尚游侠，轻财贿，长乃折节好古学。初举孝廉，为宪陵园丞、阳陵令，所在有能政。",
+      "史略分类": "武将",
+      "主要史料出处": "《03后汉书·卷71·皇甫张段列传》",
+      "paragraphs": [
+        {
+          "volume": "皇甫张段列传",
+          "paragraph_from": 44,
+          "paragraph_to": 65
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "work": "03后汉书",
+  "vol": "091",
+  "volume_name": "方术列传第七十二上",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "樊英",
+      "category": "庶众",
+      "rationale": "《方术列传》为方士、术士合传，樊英为方术之士，属方士群体，归庶众类。"
+    },
+    {
+      "name": "李郃",
+      "category": "庶众",
+      "rationale": "《方术列传》为方士、术士合传，李郃为方术之士，属方士群体，归庶众类。"
+    },
+    {
+      "name": "王乔",
+      "category": "庶众",
+      "rationale": "《方术列传》为方士、术士合传，王乔为方术之士，属方士群体，归庶众类。"
+    },
+    {
+      "name": "郭宪",
+      "category": "庶众",
+      "rationale": "《方术列传》为方士、术士合传，郭宪为方术之士，属方士群体，归庶众类。"
+    },
+    {
+      "name": "谢夷吾",
+      "category": "庶众",
+      "rationale": "《方术列传》为方士、术士合传，谢夷吾为方术之士，属方士群体，归庶众类。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ],
+  "protagonists_cap_note": "历史意义 Top5 收紧；落选→世系链 exclude。落选: 任文公、许杨、高获、杨由、李南、段翳、廖扶、折像",
+  "volume_texture": "sequential"
+}

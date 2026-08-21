@@ -1,13 +1,8 @@
 <view wx:if="{{visible}}" class="correction-modal" catchtap="onBackdropTap">
-  <view
-    class="correction-modal-card"
-    style="margin-bottom: {{keyboardHeight}}px; max-height: {{cardMaxHeightPx}}px;"
-    catchtap="noop"
-  >
+  <view class="correction-modal-card" style="{{cardStyle}}" catchtap="onSheetTap">
     <view class="correction-modal-header">
       <view class="correction-modal-title-wrap">
         <text class="correction-modal-title">{{mode === 'edit' ? '提交纠错' : '纠错详情'}}</text>
-        <text wx:if="{{sourceLabel}}" class="correction-modal-source">来源：{{sourceLabel}}</text>
       </view>
       <view class="correction-modal-close" bindtap="onClose">
         <text class="correction-modal-close-icon">✕</text>
@@ -16,24 +11,19 @@
 
     <scroll-view
       class="correction-modal-body"
+      style="{{bodyStyle}}"
       scroll-y
       enhanced
       show-scrollbar="{{false}}"
-      scroll-into-view="{{scrollIntoView}}"
-      scroll-with-animation="{{true}}"
     >
-      <view class="correction-field">
-        <text class="correction-label">文明</text>
-        <text class="correction-value">{{civilizationName || '—'}}</text>
+      <view wx:if="{{sourceLabel}}" class="correction-field">
+        <text class="correction-label">来源</text>
+        <text class="correction-value">{{sourceLabel}}</text>
       </view>
       <view class="correction-field">
-        <text class="correction-label">朝代</text>
-        <text class="correction-value">{{dynastyName || '—'}}</text>
-      </view>
-      <view class="correction-field">
-        <text class="correction-label">史略</text>
+        <text class="correction-label">坐标</text>
         <view class="correction-value-row">
-          <text class="correction-value correction-value--inline">{{boxTitle || '—'}}</text>
+          <text class="correction-value correction-value--inline">{{coordinateText || '—'}}</text>
           <view
             wx:if="{{mode === 'view' && showViewSource}}"
             class="correction-view-source"
@@ -47,7 +37,14 @@
 
       <view wx:if="{{selectedText}}" class="correction-field correction-field--block">
         <text class="correction-label">选中内容</text>
-        <text class="correction-quote">{{selectedText}}</text>
+        <view class="correction-quote {{quoteClampClass}}" style="{{quoteClampStyle}}">{{selectedText}}</view>
+        <view
+          wx:if="{{showQuoteToggle}}"
+          class="correction-quote-toggle"
+          catchtap="onToggleQuote"
+        >
+          <text class="correction-quote-toggle-text">{{quoteToggleLabel}}</text>
+        </view>
       </view>
 
       <view wx:if="{{mode === 'view' && submittedAt}}" class="correction-field">
@@ -60,35 +57,39 @@
         <text class="correction-value correction-status correction-status--{{status}}">{{statusLabel}}</text>
       </view>
 
-      <view id="correction-reason-field" class="correction-field correction-field--block">
+      <view wx:if="{{mode === 'view'}}" class="correction-field correction-field--block">
         <text class="correction-label">纠错原因</text>
-        <block wx:if="{{mode === 'edit'}}">
-          <textarea
-            class="correction-textarea"
-            placeholder="请描述发现的问题（选填，最多500字）"
-            maxlength="500"
-            value="{{draftReason}}"
-            bindinput="onReasonInput"
-            bindfocus="onReasonFocus"
-            bindkeyboardheightchange="onKeyboardHeightChange"
-            adjust-position="{{false}}"
-            cursor-spacing="{{24}}"
-            hold-keyboard="{{true}}"
-            auto-height="{{false}}"
-            show-confirm-bar="{{false}}"
-            disable-default-padding="{{true}}"
-          />
-          <text class="correction-counter">{{draftReason.length}}/500</text>
-        </block>
-        <text wx:else class="correction-value correction-reason">{{reasonDisplay}}</text>
+        <text class="correction-value correction-reason">{{reasonDisplay}}</text>
       </view>
     </scroll-view>
 
-    <view wx:if="{{mode === 'edit'}}" class="correction-modal-footer">
-      <view
-        class="correction-submit {{submitting ? 'correction-submit--disabled' : ''}}"
-        bindtap="onSubmit"
-      >{{submitting ? '提交中…' : '提交'}}</view>
+    <view wx:if="{{mode === 'edit'}}" class="correction-modal-composer">
+      <view class="correction-field correction-field--block">
+        <text class="correction-label">纠错原因</text>
+        <textarea
+          class="correction-textarea"
+          style="height: {{textareaHeightPx}}px;"
+          placeholder="请描述发现的问题（选填，最多500字）"
+          maxlength="500"
+          value="{{draftReason}}"
+          bindinput="onReasonInput"
+          bindkeyboardheightchange="onKeyboardHeightChange"
+          catchtap="noop"
+          adjust-position="{{false}}"
+          cursor-spacing="{{24}}"
+          hold-keyboard="{{true}}"
+          auto-height="{{false}}"
+          show-confirm-bar="{{false}}"
+          disable-default-padding="{{true}}"
+        />
+        <text class="correction-counter">{{draftReason.length}}/500</text>
+      </view>
+      <view class="correction-modal-footer">
+        <view
+          class="correction-submit {{submitting ? 'correction-submit--disabled' : ''}}"
+          catchtap="onSubmit"
+        >{{submitting ? '提交中…' : '提交'}}</view>
+      </view>
     </view>
   </view>
 </view>

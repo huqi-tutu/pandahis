@@ -7,6 +7,8 @@ const {
   layoutMaxRadius,
   prepareRelationGraph,
   childWithinParentWedge,
+  minCategorySectorGapRadians,
+  CATEGORY_SECTOR_GAP_DEG,
   RING_RADIUS,
 } = require('../utils/relation-mindmap-layout')
 
@@ -797,4 +799,216 @@ test('黄帝式：圈3 子女摊开家庭扇区，圈4 仍靠近圈3 父节点',
   const dist = Math.hypot(a.x - b.x, a.y - b.y)
   assert.ok(dist >= 28, `玄嚣/昌意 too close: ${dist}`)
   assert.equal(hasNodeOverlap('center', nodes, edges), false)
+})
+
+test('汉高祖式：高密度家庭/臣子/敌对阵营不得叠牌（方案 B 弹性扩圈）', () => {
+  const famExtra = () => JSON.stringify({ 关系类别: '家庭' })
+  const colExtra = () => JSON.stringify({ 关系类别: '同僚' })
+  const foeExtra = () => JSON.stringify({ 关系类别: '敌对' })
+  const masExtra = () => JSON.stringify({ 关系类别: '师徒' })
+  const friExtra = () => JSON.stringify({ 关系类别: '好友' })
+  const hubNode = (name, key, group) => ({
+    key,
+    name,
+    type: 'subcategory',
+    extraJson: JSON.stringify({
+      isSubCategoryNode: true,
+      节点类型: '二级分类',
+      关系类别: group,
+    }),
+  })
+  const catNode = (name, key, group) => ({
+    key,
+    name,
+    type: 'category',
+    extraJson: JSON.stringify({ isCategoryNode: true, 关系类别: group }),
+  })
+  const person = (key, name, extra) => ({ key, name, type: 'person', extraJson: extra })
+
+  const ministers = [
+    '萧何',
+    '曹参',
+    '张良',
+    '韩信',
+    '陈平',
+    '樊哙',
+    '周勃',
+    '灌婴',
+    '郦食其',
+    '王陵',
+  ]
+  const innerFoes = [
+    '韩信',
+    '彭越',
+    '黥布',
+    '陈豨',
+    '卢绾',
+    '臧荼',
+    '利几',
+    '贯高',
+    '雍齿',
+    '曹无伤',
+  ]
+  const outerFoes = ['项羽', '章邯', '共尉', '韩王信', '冒顿']
+  const wives = ['吕后', '戚夫人', '薄太后', '不详']
+  const childrenByWife = {
+    吕后: ['刘盈', '鲁元公主'],
+    戚夫人: ['刘如意'],
+    薄太后: ['刘恒'],
+    不详: ['刘肥', '刘恢', '刘友', '刘长', '刘建'],
+  }
+
+  const nodes = [
+    person('center', '汉高祖', famExtra()),
+    catNode('家庭', 'cat_fam', '家庭'),
+    catNode('同僚', 'cat_col', '同僚'),
+    catNode('敌对', 'cat_foe', '敌对'),
+    catNode('师徒', 'cat_mas', '师徒'),
+    catNode('好友', 'cat_fri', '好友'),
+    hubNode('父母', 'sub_parents', '家庭'),
+    hubNode('配偶', 'sub_spouses', '家庭'),
+    hubNode('兄弟姐妹', 'sub_sibs', '家庭'),
+    hubNode('臣子', 'sub_min', '同僚'),
+    hubNode('内敌', 'sub_in_foe', '敌对'),
+    hubNode('外敌', 'sub_out_foe', '敌对'),
+    hubNode('老师', 'sub_teacher', '师徒'),
+    hubNode('好友', 'sub_friends', '好友'),
+    person('father', '刘太公', famExtra()),
+    person('mother', '刘媪', famExtra()),
+    ...wives.map((n, i) => person(`wife${i}`, n, famExtra())),
+    person('sib1', '刘伯', famExtra()),
+    person('sib2', '刘仲', famExtra()),
+    person('sib3', '刘交', famExtra()),
+    ...ministers.map((n, i) => person(`min${i}`, n, colExtra())),
+    ...innerFoes.map((n, i) => person(`ifo${i}`, n, foeExtra())),
+    ...outerFoes.map((n, i) => person(`ofo${i}`, n, foeExtra())),
+    person('teacher', '张良', masExtra()),
+    person('friend1', '卢绾', friExtra()),
+    person('friend2', '王媪', friExtra()),
+  ]
+
+  for (const [wi, wname] of wives.entries()) {
+    for (const [ci, cname] of (childrenByWife[wname] || []).entries()) {
+      nodes.push(person(`child_${wi}_${ci}`, cname, famExtra()))
+    }
+  }
+
+  const edges = [
+    { fromKey: 'center', toKey: 'cat_fam', label: '' },
+    { fromKey: 'center', toKey: 'cat_col', label: '' },
+    { fromKey: 'center', toKey: 'cat_foe', label: '' },
+    { fromKey: 'center', toKey: 'cat_mas', label: '' },
+    { fromKey: 'center', toKey: 'cat_fri', label: '' },
+    { fromKey: 'cat_fam', toKey: 'sub_parents', label: '' },
+    { fromKey: 'cat_fam', toKey: 'sub_spouses', label: '' },
+    { fromKey: 'cat_fam', toKey: 'sub_sibs', label: '' },
+    { fromKey: 'cat_col', toKey: 'sub_min', label: '' },
+    { fromKey: 'cat_foe', toKey: 'sub_in_foe', label: '' },
+    { fromKey: 'cat_foe', toKey: 'sub_out_foe', label: '' },
+    { fromKey: 'cat_mas', toKey: 'sub_teacher', label: '' },
+    { fromKey: 'cat_fri', toKey: 'sub_friends', label: '' },
+    { fromKey: 'sub_parents', toKey: 'father', label: '父' },
+    { fromKey: 'sub_parents', toKey: 'mother', label: '母' },
+    ...wives.map((_, i) => ({ fromKey: 'sub_spouses', toKey: `wife${i}`, label: '妻' })),
+    { fromKey: 'sub_sibs', toKey: 'sib1', label: '兄' },
+    { fromKey: 'sub_sibs', toKey: 'sib2', label: '兄' },
+    { fromKey: 'sub_sibs', toKey: 'sib3', label: '弟' },
+    ...ministers.map((_, i) => ({ fromKey: 'sub_min', toKey: `min${i}`, label: '' })),
+    ...innerFoes.map((_, i) => ({ fromKey: 'sub_in_foe', toKey: `ifo${i}`, label: '' })),
+    ...outerFoes.map((_, i) => ({ fromKey: 'sub_out_foe', toKey: `ofo${i}`, label: '' })),
+    { fromKey: 'sub_teacher', toKey: 'teacher', label: '' },
+    { fromKey: 'sub_friends', toKey: 'friend1', label: '' },
+    { fromKey: 'sub_friends', toKey: 'friend2', label: '' },
+  ]
+
+  for (const [wi, wname] of wives.entries()) {
+    for (const [ci, cname] of (childrenByWife[wname] || []).entries()) {
+      const label = cname.includes('公主') ? '女' : '子'
+      edges.push({ fromKey: `wife${wi}`, toKey: `child_${wi}_${ci}`, label })
+    }
+  }
+
+  assert.equal(hasNodeOverlap('center', nodes, edges), false)
+  const preparedHg = prepareRelationGraph('center', nodes, edges)
+  const ring3 = preparedHg.ringRadii[3]
+  for (const n of preparedHg.nodes) {
+    if (!n.key.startsWith('child_')) continue
+    const pt = preparedHg.positions.get(n.key)
+    assert.ok(pt, n.name)
+    const r = Math.hypot(pt.x, pt.y)
+    assert.ok(
+      Math.abs(r - ring3) < 1.5,
+      `${n.name} 须落在圈3 虚线上: r=${r.toFixed(1)} ring3=${ring3}`
+    )
+  }
+  const spread = layoutMaxRadius('center', nodes, edges)
+  assert.ok(spread <= 900, `汉高祖式布局过散: ${spread}`)
+  assert.ok(spread >= 180, `汉高祖式布局过扁: ${spread}`)
+})
+
+test('一级关系扇区之间保留可见角向缝隙（家庭/好友等边界可辨）', () => {
+  const famExtra = () => JSON.stringify({ 关系类别: '家庭' })
+  const colExtra = () => JSON.stringify({ 关系类别: '同僚' })
+  const foeExtra = () => JSON.stringify({ 关系类别: '敌对' })
+  const masExtra = () => JSON.stringify({ 关系类别: '师徒' })
+  const friExtra = () => JSON.stringify({ 关系类别: '好友' })
+  const hubNode = (name, key, group) => ({
+    key,
+    name,
+    type: 'subcategory',
+    extraJson: JSON.stringify({
+      isSubCategoryNode: true,
+      节点类型: '二级分类',
+      关系类别: group,
+    }),
+  })
+  const catNode = (name, key, group) => ({
+    key,
+    name,
+    type: 'category',
+    extraJson: JSON.stringify({ isCategoryNode: true, 关系类别: group }),
+  })
+  const person = (key, name, extra) => ({ key, name, type: 'person', extraJson: extra })
+  const nodes = [
+    person('center', '汉高祖', famExtra()),
+    catNode('家庭', 'cat_fam', '家庭'),
+    catNode('同僚', 'cat_col', '同僚'),
+    catNode('敌对', 'cat_foe', '敌对'),
+    catNode('师徒', 'cat_mas', '师徒'),
+    catNode('好友', 'cat_fri', '好友'),
+    hubNode('父母', 'sub_parents', '家庭'),
+    hubNode('配偶', 'sub_spouses', '家庭'),
+    hubNode('臣子', 'sub_min', '同僚'),
+    hubNode('内敌', 'sub_in_foe', '敌对'),
+    hubNode('老师', 'sub_teacher', '师徒'),
+    hubNode('好友', 'sub_friends', '好友'),
+    person('father', '刘太公', famExtra()),
+    person('wife0', '吕后', famExtra()),
+    person('min0', '萧何', colExtra()),
+    person('ifo0', '韩信', foeExtra()),
+    person('teacher', '张良', masExtra()),
+    person('friend1', '卢绾', friExtra()),
+  ]
+  const edges = [
+    { fromKey: 'center', toKey: 'cat_fam', label: '' },
+    { fromKey: 'center', toKey: 'cat_col', label: '' },
+    { fromKey: 'center', toKey: 'cat_foe', label: '' },
+    { fromKey: 'center', toKey: 'cat_mas', label: '' },
+    { fromKey: 'center', toKey: 'cat_fri', label: '' },
+    { fromKey: 'cat_fam', toKey: 'sub_parents', label: '' },
+    { fromKey: 'cat_fam', toKey: 'sub_spouses', label: '' },
+    { fromKey: 'cat_col', toKey: 'sub_min', label: '' },
+    { fromKey: 'cat_foe', toKey: 'sub_in_foe', label: '' },
+    { fromKey: 'cat_mas', toKey: 'sub_teacher', label: '' },
+    { fromKey: 'cat_fri', toKey: 'sub_friends', label: '' },
+    { fromKey: 'sub_parents', toKey: 'father', label: '父' },
+    { fromKey: 'sub_spouses', toKey: 'wife0', label: '妻' },
+    { fromKey: 'sub_min', toKey: 'min0', label: '' },
+    { fromKey: 'sub_in_foe', toKey: 'ifo0', label: '' },
+    { fromKey: 'sub_teacher', toKey: 'teacher', label: '' },
+    { fromKey: 'sub_friends', toKey: 'friend1', label: '' },
+  ]
+  const gap = minCategorySectorGapRadians('center', nodes, edges)
+  const expect = (CATEGORY_SECTOR_GAP_DEG * Math.PI) / 180
+  assert.ok(gap >= expect * 0.85, `五类齐全时缝隙不足: ${((gap * 180) / Math.PI).toFixed(2)}°`)
 })

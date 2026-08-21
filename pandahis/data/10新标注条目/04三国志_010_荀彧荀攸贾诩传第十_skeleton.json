@@ -1,0 +1,274 @@
+{
+  "volume": "荀彧荀攸贾诩传",
+  "source_file": "04三国志_010_荀彧荀攸贾诩传第十.txt",
+  "total_paragraphs": 25,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "荀彧",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "荀彧",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "荀彧",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "荀彧",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "荀彧",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "荀彧",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "荀彧",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "荀彧",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "荀彧",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "荀彧",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "荀彧",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "荀攸",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "荀攸",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "荀攸",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "荀攸",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "荀攸",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "荀攸",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "荀攸",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "贾诩",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "贾诩",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "贾诩",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "贾诩",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "贾诩",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SANGUOZHI_010_01",
+      "史略名称": "荀彧",
+      "史略简介": "荀彧",
+      "原文字句": "荀彧字文若，颍川颍阴人也。祖父淑，字季和，朗陵令。当汉顺、桓之间，知名当世。有子八人，号曰八龙。彧父绲，济南相。叔父爽，司空。",
+      "史略分类": "文臣",
+      "主要史料出处": "《04三国志·卷10·荀彧荀攸贾诩传》",
+      "paragraphs": [
+        {
+          "volume": "荀彧荀攸贾诩传",
+          "paragraph_from": 2,
+          "paragraph_to": 12
+        }
+      ]
+    },
+    {
+      "史略ID": "SANGUOZHI_010_02",
+      "史略名称": "荀攸",
+      "史略简介": "荀攸",
+      "原文字句": "荀攸字公达，彧从子也。祖父昙，广陵太守。攸少孤。及昙卒，故吏张权求守昙墓。攸年十三，疑之，谓叔父衢曰：“此吏有非常之色，殆将有奸！”衢寤，乃推问，果杀人亡命。由是异之。何进秉政，徵海内名士攸等二十余人。攸到，拜黄门侍郎。董卓之乱，关东兵起，卓徙都长安。攸与议郎郑泰、何颙、侍中种辑、越骑校尉伍琼等谋曰：“董卓无道，甚于桀纣，天下皆怨之，虽资强兵，实一匹夫耳。今直刺杀之以谢百姓，然后据殽、函，辅王命，",
+      "史略分类": "文臣",
+      "主要史料出处": "《04三国志·卷10·荀彧荀攸贾诩传》",
+      "paragraphs": [
+        {
+          "volume": "荀彧荀攸贾诩传",
+          "paragraph_from": 13,
+          "paragraph_to": 19
+        }
+      ]
+    },
+    {
+      "史略ID": "SANGUOZHI_010_03",
+      "史略名称": "贾诩",
+      "史略简介": "贾诩",
+      "原文字句": "贾诩字文和，武威姑臧人也。少时人莫知，唯汉阳阎忠异之，谓诩有良、平之奇。察孝廉为郎，疾病去官，西还至汧，道遇叛氐，同行数十人皆为所执。诩曰：“我段公外孙也，汝别埋我，我家必厚赎之。”时太尉段颎，昔久为边将，威震西土，故诩假以惧氐。氐果不敢害，与盟而送之，其余悉死。诩实非段甥，权以济事，咸此类也。",
+      "史略分类": "文臣",
+      "主要史料出处": "《04三国志·卷10·荀彧荀攸贾诩传》",
+      "paragraphs": [
+        {
+          "volume": "荀彧荀攸贾诩传",
+          "paragraph_from": 20,
+          "paragraph_to": 24
+        }
+      ]
+    }
+  ]
+}

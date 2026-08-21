@@ -1,0 +1,63 @@
+{
+  "work": "04三国志",
+  "vol": "030",
+  "total_paragraphs": 37,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "04三国志_030_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 2,
+      "paragraph_to": 2,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 37,
+      "paragraph_to": 37,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "乌丸",
+      "category": "蕃祚",
+      "paragraph_from": 3,
+      "paragraph_to": 4,
+      "boundary_evidence": {
+        "open_paragraph": 3,
+        "open_phrase": "汉末，辽西乌丸大人丘力居，众五千余落，上谷乌丸大人难楼，众九千余落，各称王，而辽",
+        "close_paragraph": 4,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P3–P4"
+      }
+    },
+    {
+      "name": "鲜卑",
+      "category": "蕃祚",
+      "paragraph_from": 5,
+      "paragraph_to": 8,
+      "boundary_evidence": {
+        "open_paragraph": 5,
+        "open_phrase": "鲜卑步度根既立，众稍衰弱，中兄扶罗韩亦别拥众数万为大人。建安中，太祖定幽州，步度",
+        "close_paragraph": 8,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P5–P8"
+      }
+    },
+    {
+      "name": "东夷",
+      "category": "蕃祚",
+      "paragraph_from": 9,
+      "paragraph_to": 36,
+      "boundary_evidence": {
+        "open_paragraph": 9,
+        "open_phrase": "书称“东渐于海，西被于流沙”。其九服之制，可得而言也。然荒域之外，重译而至，非足",
+        "close_paragraph": 36,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P9–P36"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

@@ -1,0 +1,46 @@
+{
+  "work": "03后汉书",
+  "vol": "100",
+  "total_paragraphs": 37,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_100_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 36,
+      "paragraph_to": 37,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "乌桓",
+      "category": "蕃祚",
+      "paragraph_from": 2,
+      "paragraph_to": 14,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "乌桓者，本东胡也。汉初，匈奴冒顿灭其国，余类保乌桓山，因以为号焉。俗善骑射，弋猎",
+        "close_paragraph": 14,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P14"
+      }
+    },
+    {
+      "name": "鲜卑",
+      "category": "蕃祚",
+      "paragraph_from": 15,
+      "paragraph_to": 35,
+      "boundary_evidence": {
+        "open_paragraph": 15,
+        "open_phrase": "鲜卑者，亦东胡之支也，别依鲜卑山，故因号焉。其言语习俗与乌桓同。唯婚姻先髡头，以",
+        "close_paragraph": 35,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P15–P35"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

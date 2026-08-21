@@ -23,7 +23,17 @@
       </view>
       <block wx:for="{{[selectionMountKey]}}" wx:key="*this">
         <selection id="relicBodySelection" disable-context-menu bindselectionchange="onDetailSelectionChange">
-          <text class="section-body" user-select>{{detail || '暂无详细介绍'}}</text>
+          <text class="section-body" user-select>
+            <block wx:if="{{detailSegs.length}}">
+              <text
+                wx:for="{{detailSegs}}"
+                wx:key="index"
+                id="{{item.anchorId}}"
+                class="{{item.highlight ? 'note-hl' : ''}} {{item.focus ? 'note-hl--focus' : ''}}"
+              >{{item.text}}</text>
+            </block>
+            <block wx:else>{{detail || '暂无详细介绍'}}</block>
+          </text>
         </selection>
       </block>
     </view>
@@ -42,6 +52,18 @@
     bind:submit="onCorrectionSubmit"
   />
 
+  <note-modal
+    visible="{{noteVisible}}"
+    mode="edit"
+    boxTitle="{{boxTitle}}"
+    civilizationName="{{civilizationName}}"
+    dynastyName="{{dynastyName}}"
+    selectedText="{{noteSelectedText}}"
+    submitting="{{noteSubmitting}}"
+    bind:close="closeNote"
+    bind:submit="onNoteSubmit"
+  />
+
   <dictionary-sheet
     visible="{{dictionaryVisible}}"
     query="{{dictionaryQuery}}"
@@ -56,6 +78,7 @@
     showShare="{{false}}"
     bind:copy="onSelectionCopy"
     bind:query="onSelectionQuery"
+    bind:note="onSelectionNote"
     bind:correction="onSelectionCorrection"
   />
 </view>

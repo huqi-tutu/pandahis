@@ -1,0 +1,50 @@
+{
+  "work": "04三国志",
+  "vol": "040",
+  "volume_name": "刘彭廖李刘魏杨传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "刘封",
+      "category": "武将",
+      "rationale": "《三国志·刘彭廖李刘魏杨传》为蜀汉人物合传，卷名首列刘封，为刘备养子、蜀汉将领，以军功征战为主轴，符合武将准入。"
+    },
+    {
+      "name": "彭羕",
+      "category": "文臣",
+      "rationale": "卷名次列彭羕，蜀汉官员，以才学谋略仕宦为主轴，符合文臣准入。"
+    },
+    {
+      "name": "廖立",
+      "category": "文臣",
+      "rationale": "卷名第三列廖立，蜀汉官员，以行政才能仕宦为主轴，符合文臣准入。"
+    },
+    {
+      "name": "李严",
+      "category": "文臣",
+      "rationale": "卷名第四列李严，蜀汉重臣，以行政、辅政为主轴，符合文臣准入。"
+    },
+    {
+      "name": "刘琰",
+      "category": "文臣",
+      "rationale": "卷名第五列刘琰，蜀汉官员，以仕宦行政为主轴，符合文臣准入。"
+    },
+    {
+      "name": "魏延",
+      "category": "武将",
+      "rationale": "卷名第六列魏延，蜀汉名将，以军功征战为主轴，符合武将准入。"
+    },
+    {
+      "name": "杨仪",
+      "category": "文臣",
+      "rationale": "卷名末列杨仪，蜀汉官员，以行政、谋略仕宦为主轴，符合文臣准入。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "评曰",
+    "其他"
+  ]
+}

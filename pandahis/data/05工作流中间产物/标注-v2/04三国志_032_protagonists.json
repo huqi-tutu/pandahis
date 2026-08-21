@@ -1,0 +1,19 @@
+{
+  "work": "04三国志",
+  "vol": "032",
+  "volume_name": "先主传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "蜀昭烈帝",
+      "category": "君王",
+      "rationale": "《三国志·先主传》为蜀汉开国皇帝刘备的本传，卷名『先主』即指刘备。刘备称帝建蜀汉，为天下三分之主之一，属天子/皇帝级共主，符合『君王』准入标准。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "其他"
+  ]
+}

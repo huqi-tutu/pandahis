@@ -32,6 +32,11 @@ def _strip_volume_ordinal(title: str) -> str:
     return _ORDINAL_SUFFIX_RE.sub("", title).strip() or title
 
 
+def strip_volume_ordinal(title: str) -> str:
+    """公开：去掉典籍卷名末尾「第X」次序。"""
+    return _strip_volume_ordinal(title)
+
+
 def display_work_name(work: str) -> str:
     """01史记 → 史记"""
     work = str(work or "").strip()

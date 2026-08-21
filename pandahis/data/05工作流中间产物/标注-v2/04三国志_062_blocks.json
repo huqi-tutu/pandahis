@@ -1,0 +1,51 @@
+{
+  "work": "04三国志",
+  "vol": "062",
+  "total_paragraphs": 27,
+  "volume_subtype": "hezhuan",
+  "derived_from": "04三国志_062_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 26,
+      "paragraph_to": 26,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 27,
+      "paragraph_to": 27,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "是仪",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 13,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "是仪字子羽，北海营陵人也。本姓氏，初为县吏，后仕郡，郡相孔融嘲仪，言“氏”字“民",
+        "close_paragraph": 13,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P13"
+      }
+    },
+    {
+      "name": "胡综",
+      "category": "文臣",
+      "paragraph_from": 14,
+      "paragraph_to": 25,
+      "boundary_evidence": {
+        "open_paragraph": 14,
+        "open_phrase": "胡综字伟则，汝南固始人也。少孤，母将避难江东。孙策领会稽太守，综年十四，为门下循",
+        "close_paragraph": 25,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P14–P25"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

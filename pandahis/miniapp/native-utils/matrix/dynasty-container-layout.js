@@ -20,6 +20,8 @@ const FIT_CONTAINER_SUB_CARD_GAP_RPX = 16
 const FIT_CONTAINER_SUB_CARD_PAD_RPX = 16
 /** 辽/金：堆叠区占满可用内高（不扩容器、不溢出） */
 const FIT_CONTAINER_STACK_FILL_RATIO = 1
+/** 辽/金矮卡：缩小名称与卡顶间距，把空间留给在位时间 */
+const FIT_COMPACT_HEADER_INSET_RPX = 2
 /** 二级卡与外层容器之间的内边距（顶/底/侧视觉留白） */
 const SUB_CARD_PAD_RPX = 24
 /** 补偿 buildBlocks 垂直间距对容器底缘的占用，保证底内边距生效 */
@@ -1576,7 +1578,7 @@ function buildDynastyContainerVisuals(ctx) {
         const useStackedLayout = containerId === '三国'
         const useInlineEmperorLayout = isFitToContainerId(containerId)
         const isCompactEmperorCard = useInlineEmperorLayout && !emp.isRegimeOnly && h < 64
-        const headerInset = isCompactEmperorCard ? 4 : HEADER_TOP_INSET
+        const headerInset = isCompactEmperorCard ? FIT_COMPACT_HEADER_INSET_RPX : HEADER_TOP_INSET
         const cardHeaderTop = isRegimeCard
           ? top
           : ((useStackedLayout || useInlineEmperorLayout) ? top + headerInset : top)
@@ -1603,7 +1605,9 @@ function buildDynastyContainerVisuals(ctx) {
           dynastyId: emp.dynastyId || (getContainerNavFields(containerId) || {}).dynastyId || '',
         }))
 
-        const timeFontRpx = fitCardTimeFontSize(fields.timeRange, canvasGeom.widthPct)
+        const timeFontRpx = isCompactEmperorCard
+          ? Math.min(12, fitCardTimeFontSize(fields.timeRange, canvasGeom.widthPct))
+          : fitCardTimeFontSize(fields.timeRange, canvasGeom.widthPct)
         const isContainerEmperorCard = (useStackedLayout || useInlineEmperorLayout) && !emp.isRegimeOnly
         const labelLayout = useStackedLayout
           ? 'stacked'

@@ -1,0 +1,46 @@
+{
+  "work": "03后汉书",
+  "vol": "075",
+  "total_paragraphs": 37,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_075_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 36,
+      "paragraph_to": 37,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "窦武",
+      "category": "宗戚",
+      "paragraph_from": 2,
+      "paragraph_to": 17,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "窦武字游平，扶风平陵人，安丰戴侯融之玄孙也。父奉，定襄太守。武少以经行著称，常教",
+        "close_paragraph": 17,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P17"
+      }
+    },
+    {
+      "name": "何进",
+      "category": "宗戚",
+      "paragraph_from": 18,
+      "paragraph_to": 35,
+      "boundary_evidence": {
+        "open_paragraph": 18,
+        "open_phrase": "何进字遂高，南阳宛人也。异母女弟选入掖庭为贵人，有宠于灵帝，拜进郎中，再迁虎贲中",
+        "close_paragraph": 35,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P18–P35"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

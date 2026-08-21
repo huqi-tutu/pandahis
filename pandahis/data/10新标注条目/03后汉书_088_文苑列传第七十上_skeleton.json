@@ -1,0 +1,530 @@
+{
+  "volume": "文苑列传第七十上",
+  "source_file": "03后汉书_088_文苑列传第七十上.txt",
+  "total_paragraphs": 62,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "杜笃",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "杜笃",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "杜笃",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "杜笃",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "杜笃",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "杜笃",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "杜笃",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "杜笃",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "杜笃",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "杜笃",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "杜笃",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "杜笃",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "杜笃",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "杜笃",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "杜笃",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "杜笃",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 19,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 20,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 21,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 22,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "傅毅",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "傅毅",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "傅毅",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "傅毅",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "傅毅",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "傅毅",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "傅毅",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "傅毅",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "傅毅",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "傅毅",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "傅毅",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "傅毅",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "傅毅",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "傅毅",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "黄香",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "黄香",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "黄香",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "黄香",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "黄香",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "黄香",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 44,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 45,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 46,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 47,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 48,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 49,
+      "owners": [
+        {
+          "name": "刘珍",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 50,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 51,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 52,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 53,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 54,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 55,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 56,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 57,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 58,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 59,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 60,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 61,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 62,
+      "owners": [],
+      "exclude_reason": "世系链"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HOUHANSHU_088_01",
+      "史略名称": "杜笃",
+      "史略简介": "杜笃",
+      "原文字句": "杜笃字季雅，京兆杜陵人也。高祖延年，宣帝时为御史大夫。笃少博学，不修小节，不为乡人所礼。居美阳，与美阳令游，数从请托，不谐，颇相恨。令怒，收笃送京师。会大司马吴汉薨，光武诏诸儒诔之，笃于狱中为诔，辞最高，美帝之，赐帛免刑。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷88·文苑列传第七十上》",
+      "paragraphs": [
+        {
+          "volume": "文苑列传第七十上",
+          "paragraph_from": 2,
+          "paragraph_to": 17
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_088_02",
+      "史略名称": "傅毅",
+      "史略简介": "傅毅",
+      "原文字句": "傅毅字武仲，扶风茂陵人也。少傅学。永平中，于平陵习章句，因作《迪志诗》曰：",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷88·文苑列传第七十上》",
+      "paragraphs": [
+        {
+          "volume": "文苑列传第七十上",
+          "paragraph_from": 23,
+          "paragraph_to": 36
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_088_03",
+      "史略名称": "黄香",
+      "史略简介": "黄香",
+      "原文字句": "黄香字文强，江夏安陆人也。年九岁，失母，思慕憔悴，殆不免丧，乡人称其至孝。年十二，太守刘护闻而召之，署门下孝子，甚见爱敬。香家贫，内无仆妾，躬执苦勤，尽心奉养。遂博学经典，究精道术，能文章，京师号曰“天下无双江夏黄童”。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷88·文苑列传第七十上》",
+      "paragraphs": [
+        {
+          "volume": "文苑列传第七十上",
+          "paragraph_from": 37,
+          "paragraph_to": 42
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_088_04",
+      "史略名称": "刘珍",
+      "史略简介": "刘珍",
+      "原文字句": "刘珍字秋孙，一名宝，南阳蔡阳人也。少好学。永初中，为谒者仆射。邓太后诏，使与校书刘騊駼、马融及《五经》博士，校定东观《五观》、诸子传记、百家艺术，整齐脱误，是正文字。永宁元年，太后又诏珍与騊駼作建武已来名臣传，迁侍中、越骑校尉。延光四年，拜宗正。明年，转卫尉，卒官。著诔、颂、连珠凡七篇。又撰《释名》三十篇，以辩万物之称号云。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷88·文苑列传第七十上》",
+      "paragraphs": [
+        {
+          "volume": "文苑列传第七十上",
+          "paragraph_from": 49,
+          "paragraph_to": 49
+        }
+      ]
+    }
+  ]
+}

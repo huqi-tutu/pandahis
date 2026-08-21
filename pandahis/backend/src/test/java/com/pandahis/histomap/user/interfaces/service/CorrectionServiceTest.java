@@ -115,6 +115,31 @@ class CorrectionServiceTest {
   }
 
   @Test
+  void submitOriginalWithoutSourceRef() {
+    CorrectionDetailDTO dto =
+        correctionService.submit(
+            1L,
+            new CorrectionSubmitRequest(
+                "box_corr_test", "box_original_selection", "原文有误", "孝武本纪句", null));
+    assertTrue(dto.id() > 0);
+    assertEquals("box_original_selection", dto.sourceType());
+    assertNull(dto.sourceRefId());
+    assertEquals("测试史略", dto.boxTitle());
+  }
+
+  @Test
+  void submitRelationWithoutSourceRef() {
+    CorrectionDetailDTO dto =
+        correctionService.submit(
+            1L,
+            new CorrectionSubmitRequest(
+                "box_corr_test", "relation_graph_selection", "关系有误", "片段", null));
+    assertTrue(dto.id() > 0);
+    assertEquals("relation_graph_selection", dto.sourceType());
+    assertNull(dto.sourceRefId());
+  }
+
+  @Test
   void submitCritiqueStoresSourceRefId() {
     long critiqueId = seedCritique();
     CorrectionDetailDTO dto =

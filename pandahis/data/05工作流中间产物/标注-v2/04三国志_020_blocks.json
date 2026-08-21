@@ -1,0 +1,122 @@
+{
+  "work": "04三国志",
+  "vol": "020",
+  "total_paragraphs": 34,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "04三国志_020_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 2,
+      "paragraph_to": 2,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 3,
+      "paragraph_to": 4,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 6,
+      "paragraph_to": 8,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 11,
+      "paragraph_to": 13,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 15,
+      "paragraph_to": 15,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 17,
+      "paragraph_to": 23,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 25,
+      "paragraph_to": 25,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 26,
+      "paragraph_to": 33,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 34,
+      "paragraph_to": 34,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "曹冲",
+      "category": "宗戚",
+      "paragraph_from": 5,
+      "paragraph_to": 5,
+      "boundary_evidence": {
+        "open_paragraph": 5,
+        "open_phrase": "邓哀王冲字仓舒。少聪察岐嶷，生五六岁，智意所及，有若成人之智。时孙权曾致巨象，太",
+        "close_paragraph": 5,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P5–P5"
+      }
+    },
+    {
+      "name": "曹衮",
+      "category": "宗戚",
+      "paragraph_from": 9,
+      "paragraph_to": 10,
+      "boundary_evidence": {
+        "open_paragraph": 9,
+        "open_phrase": "中山恭王衮，建安二十一年封平乡侯。少好学，年十余岁能属文。每读书，文学左右常恐以",
+        "close_paragraph": 10,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P9–P10"
+      }
+    },
+    {
+      "name": "曹幹",
+      "category": "宗戚",
+      "paragraph_from": 14,
+      "paragraph_to": 14,
+      "boundary_evidence": {
+        "open_paragraph": 14,
+        "open_phrase": "赵王幹，建安二十年封高平亭侯。二十二年，徙封赖亭侯。其年改封弘农侯。黄初二年，进",
+        "close_paragraph": 14,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P14–P14"
+      }
+    },
+    {
+      "name": "曹彪",
+      "category": "宗戚",
+      "paragraph_from": 16,
+      "paragraph_to": 16,
+      "boundary_evidence": {
+        "open_paragraph": 16,
+        "open_phrase": "楚王彪字朱虎。建安二十一年，封寿春侯。黄初二年，进爵，徙封汝阳公。三年，封弋阳王",
+        "close_paragraph": 16,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P16–P16"
+      }
+    },
+    {
+      "name": "曹茂",
+      "category": "宗戚",
+      "paragraph_from": 24,
+      "paragraph_to": 24,
+      "boundary_evidence": {
+        "open_paragraph": 24,
+        "open_phrase": "乐陵王茂，建安二十二年封万岁亭侯。二十三年，改封平舆侯。黄初三年，进爵，徙封乘氏",
+        "close_paragraph": 24,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P24–P24"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

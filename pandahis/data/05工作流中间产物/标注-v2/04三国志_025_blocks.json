@@ -1,0 +1,63 @@
+{
+  "work": "04三国志",
+  "vol": "025",
+  "total_paragraphs": 46,
+  "volume_subtype": "hezhuan",
+  "derived_from": "04三国志_025_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 45,
+      "paragraph_to": 45,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 46,
+      "paragraph_to": 46,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "辛毗",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 9,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "辛毗字佐治，颍川阳翟人也。其先建武中，自陇西东迁。毗随兄评从袁绍。太祖为司空，辟",
+        "close_paragraph": 9,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P9"
+      }
+    },
+    {
+      "name": "杨阜",
+      "category": "文臣",
+      "paragraph_from": 10,
+      "paragraph_to": 22,
+      "boundary_evidence": {
+        "open_paragraph": 10,
+        "open_phrase": "杨阜字义山，天水冀人也。以州从事为牧韦端使诣许，拜安定长史。阜还，关右诸将问袁、",
+        "close_paragraph": 22,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P10–P22"
+      }
+    },
+    {
+      "name": "高堂隆",
+      "category": "文臣",
+      "paragraph_from": 23,
+      "paragraph_to": 44,
+      "boundary_evidence": {
+        "open_paragraph": 23,
+        "open_phrase": "高堂隆字升平，泰山平阳人，鲁高堂生后也。少为诸生，泰山太守薛悌命为督邮。郡督军与",
+        "close_paragraph": 44,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P23–P44"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

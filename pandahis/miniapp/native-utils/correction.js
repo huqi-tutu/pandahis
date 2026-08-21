@@ -12,8 +12,10 @@ exports.CORRECTION_STATUS_LABEL = {
 exports.CORRECTION_SOURCE_LABEL = {
     dynasty_canvas: '朝代详情页',
     box_detail_selection: '史略详情页',
+    box_original_selection: '母本原文',
     critique_detail_selection: '评述',
     relic_detail_selection: '见证',
+    relation_graph_selection: '关系图谱页',
 };
 function correctionStatusLabel(status) {
     return exports.CORRECTION_STATUS_LABEL[status] || status || '待处理';
@@ -150,6 +152,19 @@ function resolveCorrectionSourceNav(detail) {
             },
         };
     }
+    if (sourceType === 'box_original_selection') {
+        const boxId = String(detail.boxId || '').trim();
+        if (!boxId)
+            return { error: '缺少史略信息，无法跳转' };
+        return {
+            path: router_1.ROUTES.boxDetail,
+            query: {
+                boxId,
+                title: String(detail.boxTitle || '').trim(),
+                openOriginal: '1',
+            },
+        };
+    }
     if (sourceType === 'critique_detail_selection') {
         const critiqueId = toNullableNumber(detail.sourceRefId);
         if (!critiqueId)
@@ -166,6 +181,18 @@ function resolveCorrectionSourceNav(detail) {
         return {
             path: router_1.ROUTES.relicDetail,
             query: { relicId },
+        };
+    }
+    if (sourceType === 'relation_graph_selection') {
+        const boxId = String(detail.boxId || '').trim();
+        if (!boxId)
+            return { error: '缺少史略信息，无法跳转' };
+        return {
+            path: router_1.ROUTES.boxDetail,
+            query: {
+                boxId,
+                title: String(detail.boxTitle || '').trim(),
+            },
         };
     }
     return { error: '未知来源，无法跳转' };

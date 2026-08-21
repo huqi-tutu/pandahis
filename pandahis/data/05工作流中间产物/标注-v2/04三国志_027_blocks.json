@@ -1,0 +1,70 @@
+{
+  "work": "04三国志",
+  "vol": "027",
+  "total_paragraphs": 28,
+  "volume_subtype": "hezhuan",
+  "derived_from": "04三国志_027_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 28,
+      "paragraph_to": 28,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "徐邈",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 4,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "徐邈字景山，燕国蓟人也。太祖平河朔，召为丞相军谋掾，试守奉高令，入为东曹议令史。",
+        "close_paragraph": 4,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P4"
+      }
+    },
+    {
+      "name": "胡质",
+      "category": "文臣",
+      "paragraph_from": 5,
+      "paragraph_to": 9,
+      "boundary_evidence": {
+        "open_paragraph": 5,
+        "open_phrase": "胡质字文德，楚国寿春人也。少与蒋济、朱绩俱知名于江、淮间，仕州郡。蒋济为别驾，使",
+        "close_paragraph": 9,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P5–P9"
+      }
+    },
+    {
+      "name": "王昶",
+      "category": "文臣",
+      "paragraph_from": 10,
+      "paragraph_to": 17,
+      "boundary_evidence": {
+        "open_paragraph": 10,
+        "open_phrase": "王昶字文舒，太原晋阳人也。少与同郡王凌俱知名。凌年长，昶兄事之。文帝在东宫，昶为",
+        "close_paragraph": 17,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P10–P17"
+      }
+    },
+    {
+      "name": "王基",
+      "category": "武将",
+      "paragraph_from": 18,
+      "paragraph_to": 27,
+      "boundary_evidence": {
+        "open_paragraph": 18,
+        "open_phrase": "王基字伯舆，东莱曲城人也。少孤，与叔父翁居。翁抚养甚笃，基亦以孝称。年十七，郡召",
+        "close_paragraph": 27,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P18–P27"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

@@ -1,0 +1,51 @@
+{
+  "work": "04三国志",
+  "vol": "046",
+  "total_paragraphs": 13,
+  "volume_subtype": "hezhuan",
+  "derived_from": "04三国志_046_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 12,
+      "paragraph_to": 12,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 13,
+      "paragraph_to": 13,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "孙坚",
+      "category": "武将",
+      "paragraph_from": 2,
+      "paragraph_to": 7,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "孙坚字文台，吴郡富春人，盖孙武之后也。少为县吏。年十七，与父共载船至钱唐，会海贼",
+        "close_paragraph": 7,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P7"
+      }
+    },
+    {
+      "name": "孙策",
+      "category": "武将",
+      "paragraph_from": 8,
+      "paragraph_to": 11,
+      "boundary_evidence": {
+        "open_paragraph": 8,
+        "open_phrase": "策字伯符。坚初兴义兵，策将母徙居舒，与周瑜相友，收合士大夫，江、淮间人咸向之。坚",
+        "close_paragraph": 11,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P8–P11"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

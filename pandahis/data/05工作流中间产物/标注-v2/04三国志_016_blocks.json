@@ -1,0 +1,109 @@
+{
+  "work": "04三国志",
+  "vol": "016",
+  "total_paragraphs": 35,
+  "volume_subtype": "hezhuan",
+  "derived_from": "04三国志_016_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 12,
+      "paragraph_to": 27,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 29,
+      "paragraph_to": 29,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 34,
+      "paragraph_to": 34,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 35,
+      "paragraph_to": 35,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "任峻",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 3,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "任峻字伯达，河南中牟人也。汉末扰乱，关东皆震。中牟令杨原愁恐，欲弃官走。峻说原曰",
+        "close_paragraph": 3,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P3"
+      }
+    },
+    {
+      "name": "苏则",
+      "category": "文臣",
+      "paragraph_from": 4,
+      "paragraph_to": 6,
+      "boundary_evidence": {
+        "open_paragraph": 4,
+        "open_phrase": "苏则字文师，扶风武功人也。少以学行闻，举孝廉茂才，辟公府，皆不就。起家为酒泉太守",
+        "close_paragraph": 6,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P4–P6"
+      }
+    },
+    {
+      "name": "杜畿",
+      "category": "文臣",
+      "paragraph_from": 7,
+      "paragraph_to": 11,
+      "boundary_evidence": {
+        "open_paragraph": 7,
+        "open_phrase": "杜畿字伯侯，京兆杜陵人也。少孤，继母苦之，以孝闻。年二十，为郡功曹，守郑县令。县",
+        "close_paragraph": 11,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P7–P11"
+      }
+    },
+    {
+      "name": "杜畿",
+      "category": "文臣",
+      "paragraph_from": 28,
+      "paragraph_to": 28,
+      "boundary_evidence": {
+        "open_paragraph": 28,
+        "open_phrase": "甘露二年，河东乐详年九十余，上书讼畿之遗绩，朝廷感焉。诏封恕子预为丰乐亭侯，邑百",
+        "close_paragraph": 28,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P28–P28"
+      }
+    },
+    {
+      "name": "郑浑",
+      "category": "文臣",
+      "paragraph_from": 30,
+      "paragraph_to": 32,
+      "boundary_evidence": {
+        "open_paragraph": 30,
+        "open_phrase": "郑浑字文公，河南开封人也。高祖父众，众父兴，皆为名儒。浑兄泰，与荀攸等谋诛董卓，",
+        "close_paragraph": 32,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P30–P32"
+      }
+    },
+    {
+      "name": "仓慈",
+      "category": "文臣",
+      "paragraph_from": 33,
+      "paragraph_to": 33,
+      "boundary_evidence": {
+        "open_paragraph": 33,
+        "open_phrase": "仓慈字孝仁，淮南人也。始为郡吏。建安中，太祖开募屯田于淮南，以慈为绥集都尉。黄初",
+        "close_paragraph": 33,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P33–P33"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

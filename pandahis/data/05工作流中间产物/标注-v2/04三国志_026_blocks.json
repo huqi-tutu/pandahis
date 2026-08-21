@@ -1,0 +1,70 @@
+{
+  "work": "04三国志",
+  "vol": "026",
+  "total_paragraphs": 31,
+  "volume_subtype": "hezhuan",
+  "derived_from": "04三国志_026_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 31,
+      "paragraph_to": 31,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "满宠",
+      "category": "武将",
+      "paragraph_from": 2,
+      "paragraph_to": 7,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "满宠字伯宁，山阳昌邑人也。年十八，为郡督邮。时郡内李朔等各拥部曲，害于平民，太守",
+        "close_paragraph": 7,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P7"
+      }
+    },
+    {
+      "name": "田豫",
+      "category": "武将",
+      "paragraph_from": 8,
+      "paragraph_to": 16,
+      "boundary_evidence": {
+        "open_paragraph": 8,
+        "open_phrase": "田豫字国让，渔阳雍奴人也。刘备之奔公孙瓒也，豫时年少，自讬于备，备甚奇之。备为豫",
+        "close_paragraph": 16,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P8–P16"
+      }
+    },
+    {
+      "name": "牵招",
+      "category": "武将",
+      "paragraph_from": 17,
+      "paragraph_to": 24,
+      "boundary_evidence": {
+        "open_paragraph": 17,
+        "open_phrase": "牵招字子经，安平观津人也。年十余岁，诣同县乐隐受学。后隐为车骑将军何苗长史，招随",
+        "close_paragraph": 24,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P17–P24"
+      }
+    },
+    {
+      "name": "郭淮",
+      "category": "武将",
+      "paragraph_from": 25,
+      "paragraph_to": 30,
+      "boundary_evidence": {
+        "open_paragraph": 25,
+        "open_phrase": "郭淮字伯济，太原阳曲人也。建安中举孝廉，除平原府丞。文帝为五官将，召淮署为门下贼",
+        "close_paragraph": 30,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P25–P30"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

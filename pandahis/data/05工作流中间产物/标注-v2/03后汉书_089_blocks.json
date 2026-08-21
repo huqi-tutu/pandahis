@@ -1,0 +1,97 @@
+{
+  "work": "03后汉书",
+  "vol": "089",
+  "total_paragraphs": 59,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_089_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 2,
+      "paragraph_to": 4,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 39,
+      "paragraph_to": 43,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 49,
+      "paragraph_to": 49,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 59,
+      "paragraph_to": 59,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "赵壹",
+      "category": "文臣",
+      "paragraph_from": 5,
+      "paragraph_to": 17,
+      "boundary_evidence": {
+        "open_paragraph": 5,
+        "open_phrase": "赵壹字元叔，汉阳西县人也。体貌魁梧，身长九尺，美须豪眉，望之甚伟。而恃才倨傲，为",
+        "close_paragraph": 17,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P5–P17"
+      }
+    },
+    {
+      "name": "刘梁",
+      "category": "文臣",
+      "paragraph_from": 18,
+      "paragraph_to": 28,
+      "boundary_evidence": {
+        "open_paragraph": 18,
+        "open_phrase": "刘梁字曼山，一名岑，东平宁阳人也。梁宗室子孙，而少孤贫，卖书于市以自资。",
+        "close_paragraph": 28,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P18–P28"
+      }
+    },
+    {
+      "name": "边韶",
+      "category": "文臣",
+      "paragraph_from": 29,
+      "paragraph_to": 38,
+      "boundary_evidence": {
+        "open_paragraph": 29,
+        "open_phrase": "边让字文礼，除留浚仪人也。少辩博，能属文。作《章华赋》，虽多淫丽之辞，而终之以正",
+        "close_paragraph": 38,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P29–P38"
+      }
+    },
+    {
+      "name": "高彪",
+      "category": "文臣",
+      "paragraph_from": 44,
+      "paragraph_to": 48,
+      "boundary_evidence": {
+        "open_paragraph": 44,
+        "open_phrase": "高彪字义方，吴郡无锡人也。家本单寒，至彪为诸生，游太学。有雅才而讷于言。尝从马融",
+        "close_paragraph": 48,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P44–P48"
+      }
+    },
+    {
+      "name": "祢衡",
+      "category": "文臣",
+      "paragraph_from": 50,
+      "paragraph_to": 58,
+      "boundary_evidence": {
+        "open_paragraph": 50,
+        "open_phrase": "祢衡字正平，平原般人也。少有才辩，而尚气刚傲，好矫时慢物。兴平中，避难荆州。建安",
+        "close_paragraph": 58,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P50–P58"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

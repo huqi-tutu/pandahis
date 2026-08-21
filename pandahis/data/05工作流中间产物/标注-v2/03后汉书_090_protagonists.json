@@ -1,0 +1,51 @@
+{
+  "work": "03后汉书",
+  "vol": "090",
+  "volume_name": "独行列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_arc": "C",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "sequential",
+  "skip_reason": null,
+  "protagonists_cap_note": "范式李业谯玄陆续王烈+范冉。",
+  "protagonists": [
+    {
+      "name": "谯玄",
+      "category": "文臣",
+      "rationale": "拒王莽，卷首。"
+    },
+    {
+      "name": "李业",
+      "category": "文臣",
+      "rationale": "拒公孙述殉节。"
+    },
+    {
+      "name": "范式",
+      "category": "文臣",
+      "rationale": "范张鸡黍。"
+    },
+    {
+      "name": "陆续",
+      "category": "文臣",
+      "rationale": "怀橘等典故。"
+    },
+    {
+      "name": "范冉",
+      "category": "文臣",
+      "rationale": "甑中生尘范史云。"
+    },
+    {
+      "name": "王烈",
+      "category": "文臣",
+      "rationale": "感化盗贼。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "论赞",
+    "赞曰",
+    "世系链",
+    "共段总述"
+  ]
+}

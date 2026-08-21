@@ -16,13 +16,17 @@ public class CorrectionService {
   private static final int MAX_SUBMISSIONS_PER_BOX = 20;
   private static final String SOURCE_DYNASTY = "dynasty_canvas";
   private static final String SOURCE_BOX_DETAIL = "box_detail_selection";
+  private static final String SOURCE_BOX_ORIGINAL = "box_original_selection";
   private static final String SOURCE_CRITIQUE = "critique_detail_selection";
   private static final String SOURCE_RELIC = "relic_detail_selection";
+  private static final String SOURCE_RELATION = "relation_graph_selection";
   private static final Set<String> SOURCE_TYPES = Set.of(
       SOURCE_DYNASTY,
       SOURCE_BOX_DETAIL,
+      SOURCE_BOX_ORIGINAL,
       SOURCE_CRITIQUE,
-      SOURCE_RELIC);
+      SOURCE_RELIC,
+      SOURCE_RELATION);
 
   private final JdbcTemplate jdbcTemplate;
 

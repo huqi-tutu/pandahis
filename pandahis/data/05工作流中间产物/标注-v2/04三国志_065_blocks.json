@@ -1,0 +1,87 @@
+{
+  "work": "04三国志",
+  "vol": "065",
+  "total_paragraphs": 44,
+  "volume_subtype": "hezhuan",
+  "derived_from": "04三国志_065_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 39,
+      "paragraph_to": 39,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 40,
+      "paragraph_to": 44,
+      "exclude_reason": "世系链"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "王蕃",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 5,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "王蕃字永元，庐江人也。博览多闻，兼通术艺。始为尚书郎，去官。孙休即位，与贺邵、薛",
+        "close_paragraph": 5,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P5"
+      }
+    },
+    {
+      "name": "楼玄",
+      "category": "文臣",
+      "paragraph_from": 6,
+      "paragraph_to": 7,
+      "boundary_evidence": {
+        "open_paragraph": 6,
+        "open_phrase": "楼玄字承先，沛郡蕲人也。孙休时为监农御史。孙皓即位，与王蕃、郭逴、万彧俱为散骑中",
+        "close_paragraph": 7,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P6–P7"
+      }
+    },
+    {
+      "name": "贺邵",
+      "category": "文臣",
+      "paragraph_from": 8,
+      "paragraph_to": 15,
+      "boundary_evidence": {
+        "open_paragraph": 8,
+        "open_phrase": "贺邵字兴伯，会稽山阴人也。孙休即位，从中郎为散骑中常侍，出为吴郡太守。孙皓时，入",
+        "close_paragraph": 15,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P8–P15"
+      }
+    },
+    {
+      "name": "韦昭",
+      "category": "文臣",
+      "paragraph_from": 16,
+      "paragraph_to": 26,
+      "boundary_evidence": {
+        "open_paragraph": 16,
+        "open_phrase": "韦曜字弘嗣，吴郡云阳人也。少好学，能属文，从丞相掾，除西安令，还为尚书郎，迁太子",
+        "close_paragraph": 26,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P16–P26"
+      }
+    },
+    {
+      "name": "华覈",
+      "category": "文臣",
+      "paragraph_from": 27,
+      "paragraph_to": 38,
+      "boundary_evidence": {
+        "open_paragraph": 27,
+        "open_phrase": "华覈字永先，吴郡武进人也。始为上虞尉、典农都尉，以文学入为秘府郎，迁中书丞。",
+        "close_paragraph": 38,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P27–P38"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

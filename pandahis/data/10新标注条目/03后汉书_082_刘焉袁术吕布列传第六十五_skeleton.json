@@ -1,0 +1,412 @@
+{
+  "volume": "刘焉袁术吕布列传",
+  "source_file": "03后汉书_082_刘焉袁术吕布列传第六十五.txt",
+  "total_paragraphs": 43,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "刘焉",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "刘焉",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "刘焉",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "刘焉",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "刘焉",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "刘焉",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "刘焉",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "刘焉",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "刘焉",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "刘焉",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "刘焉",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "刘焉",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 15,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 16,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 17,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 18,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "袁术",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "袁术",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "袁术",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "袁术",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "袁术",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "袁术",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "袁术",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "袁术",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "袁术",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "袁术",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "吕布",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "吕布",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "吕布",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "吕布",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "吕布",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "吕布",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "吕布",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "吕布",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "吕布",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "吕布",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "吕布",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "吕布",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "吕布",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HOUHANSHU_082_01",
+      "史略名称": "刘焉",
+      "史略简介": "刘焉",
+      "原文字句": "刘焉字君郎，江夏竟陵人也，鲁恭王后也。肃宗时，徙竟陵。焉少任州郡，以宗室拜郎中。去官居阳城山，精学教授。举贤良方正，稍迁南阳太守、宗正、太常。",
+      "史略分类": "宗戚",
+      "主要史料出处": "《03后汉书·卷82·刘焉袁术吕布列传》",
+      "paragraphs": [
+        {
+          "volume": "刘焉袁术吕布列传",
+          "paragraph_from": 2,
+          "paragraph_to": 13
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_082_02",
+      "史略名称": "袁术",
+      "史略简介": "袁术",
+      "原文字句": "袁术字公路，汝南汝阳人，司空逢之子也。少以侠气闻，数与诸公子飞鹰走狗，后颇折节。举孝廉，累迁至河南尹、虎贲中郎将。",
+      "史略分类": "武将",
+      "主要史料出处": "《03后汉书·卷82·刘焉袁术吕布列传》",
+      "paragraphs": [
+        {
+          "volume": "刘焉袁术吕布列传",
+          "paragraph_from": 19,
+          "paragraph_to": 28
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_082_03",
+      "史略名称": "吕布",
+      "史略简介": "吕布",
+      "原文字句": "吕布字奉先，五原九原人也。以弓马骁武给并州。刺史丁原为骑都尉，屯河内，以布为主簿，甚见亲侍。灵帝崩，原受何进召，将兵诣洛阳，为执金吾。会进败，董卓诱布杀原而并其兵。",
+      "史略分类": "武将",
+      "主要史料出处": "《03后汉书·卷82·刘焉袁术吕布列传》",
+      "paragraphs": [
+        {
+          "volume": "刘焉袁术吕布列传",
+          "paragraph_from": 30,
+          "paragraph_to": 42
+        }
+      ]
+    }
+  ]
+}

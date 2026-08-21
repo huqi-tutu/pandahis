@@ -1,0 +1,82 @@
+{
+  "work": "04三国志",
+  "vol": "024",
+  "total_paragraphs": 35,
+  "volume_subtype": "hezhuan",
+  "derived_from": "04三国志_024_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 35,
+      "paragraph_to": 35,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "韩暨",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 4,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "韩暨字公至，南阳堵阳人也。同县豪右陈茂，谮暨父兄，畿至大辟。暨阳不以为言，庸赁积",
+        "close_paragraph": 4,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P4"
+      }
+    },
+    {
+      "name": "崔林",
+      "category": "文臣",
+      "paragraph_from": 5,
+      "paragraph_to": 11,
+      "boundary_evidence": {
+        "open_paragraph": 5,
+        "open_phrase": "崔林字德儒，清河东武城人也。少时晚成，宗族莫知，惟从兄琰异之。太祖定冀州，召除邬",
+        "close_paragraph": 11,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P5–P11"
+      }
+    },
+    {
+      "name": "高柔",
+      "category": "文臣",
+      "paragraph_from": 12,
+      "paragraph_to": 26,
+      "boundary_evidence": {
+        "open_paragraph": 12,
+        "open_phrase": "高柔字文惠，陈留圉人也。父靖，为蜀郡都尉。柔留乡里，谓邑中曰：“今者英雄并起，陈",
+        "close_paragraph": 26,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P12–P26"
+      }
+    },
+    {
+      "name": "孙礼",
+      "category": "武将",
+      "paragraph_from": 27,
+      "paragraph_to": 32,
+      "boundary_evidence": {
+        "open_paragraph": 27,
+        "open_phrase": "孙礼字德达，涿郡容城人也。太祖平幽州，召为司空军谋掾。初丧乱时，礼与母相失，同郡",
+        "close_paragraph": 32,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P27–P32"
+      }
+    },
+    {
+      "name": "王观",
+      "category": "文臣",
+      "paragraph_from": 33,
+      "paragraph_to": 34,
+      "boundary_evidence": {
+        "open_paragraph": 33,
+        "open_phrase": "王观字伟台，东郡廪丘人也。少孤贫励志，太祖召为丞相文学掾，出为高唐、阳泉、酂、任",
+        "close_paragraph": 34,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P33–P34"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

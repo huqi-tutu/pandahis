@@ -1,0 +1,28 @@
+{
+  "work": "03后汉书",
+  "vol": "080",
+  "total_paragraphs": 47,
+  "volume_subtype": "liezhuan_single",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "袁绍",
+      "category": "武将",
+      "paragraph_from": 2,
+      "paragraph_to": 47,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "袁绍字本初，汝南阳人，司徒汤之孙。父成，五官中郎将，壮健好交结，大将军梁冀以下莫",
+        "close_paragraph": 47,
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

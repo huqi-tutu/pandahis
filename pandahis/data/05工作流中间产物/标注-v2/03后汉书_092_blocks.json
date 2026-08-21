@@ -1,0 +1,122 @@
+{
+  "work": "03后汉书",
+  "vol": "092",
+  "total_paragraphs": 62,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_092_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 2,
+      "paragraph_to": 4,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 10,
+      "paragraph_to": 19,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 35,
+      "paragraph_to": 36,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 37,
+      "paragraph_to": 39,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 47,
+      "paragraph_to": 50,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 53,
+      "paragraph_to": 58,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 59,
+      "paragraph_to": 60,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 61,
+      "paragraph_to": 61,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 62,
+      "paragraph_to": 62,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "公沙穆",
+      "category": "文臣",
+      "paragraph_from": 5,
+      "paragraph_to": 9,
+      "boundary_evidence": {
+        "open_paragraph": 5,
+        "open_phrase": "公沙穆字文乂，北海胶东人也。家贫贱，自为儿童不好戏弄，长习《韩诗》《公羊春秋》，",
+        "close_paragraph": 9,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P5–P9"
+      }
+    },
+    {
+      "name": "郭玉",
+      "category": "文臣",
+      "paragraph_from": 20,
+      "paragraph_to": 21,
+      "boundary_evidence": {
+        "open_paragraph": 20,
+        "open_phrase": "郭玉者，广汉雒人也。初，有老父不知何出，常渔钓于涪水，因号涪翁。乞食人间，见有疾",
+        "close_paragraph": 21,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P20–P21"
+      }
+    },
+    {
+      "name": "华佗",
+      "category": "文臣",
+      "paragraph_from": 22,
+      "paragraph_to": 34,
+      "boundary_evidence": {
+        "open_paragraph": 22,
+        "open_phrase": "华佗字元化，沛国谯人也，一名旉。游学徐土，兼通数经。晓养性之术，年且百岁而犹有壮",
+        "close_paragraph": 34,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P22–P34"
+      }
+    },
+    {
+      "name": "费长房",
+      "category": "庶众",
+      "paragraph_from": 40,
+      "paragraph_to": 46,
+      "boundary_evidence": {
+        "open_paragraph": 40,
+        "open_phrase": "费长房者，汝南人也。曾为市掾。市中有老翁卖药，悬一壶于肆头，及市罢，辄跳入壶中。",
+        "close_paragraph": 46,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P40–P46"
+      }
+    },
+    {
+      "name": "左慈",
+      "category": "庶众",
+      "paragraph_from": 51,
+      "paragraph_to": 52,
+      "boundary_evidence": {
+        "open_paragraph": 51,
+        "open_phrase": "左慈字元放，庐江人也。少有神道。尝在司空曹操坐，操从容顾众宾曰：“今日高会，珍羞",
+        "close_paragraph": 52,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P51–P52"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

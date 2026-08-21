@@ -1,0 +1,92 @@
+{
+  "work": "03后汉书",
+  "vol": "070",
+  "total_paragraphs": 47,
+  "volume_subtype": "hezhuan",
+  "derived_from": "03后汉书_070_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 22,
+      "paragraph_to": 22,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 37,
+      "paragraph_to": 37,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 47,
+      "paragraph_to": 47,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "吴祐",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 6,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "吴祐字季英，陈留长垣人也。父恢，为南海太守。祐年十二，随从到官。恢欲杀青简以写经",
+        "close_paragraph": 6,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P6"
+      }
+    },
+    {
+      "name": "延笃",
+      "category": "文臣",
+      "paragraph_from": 7,
+      "paragraph_to": 15,
+      "boundary_evidence": {
+        "open_paragraph": 7,
+        "open_phrase": "延笃字叔坚，南阳犨人也。少从颍川唐溪典受《左氏传》，旬日能讽之，典深敬焉。又从马",
+        "close_paragraph": 15,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P7–P15"
+      }
+    },
+    {
+      "name": "史弼",
+      "category": "文臣",
+      "paragraph_from": 16,
+      "paragraph_to": 21,
+      "boundary_evidence": {
+        "open_paragraph": 16,
+        "open_phrase": "史弼字公谦，陈留考城人也。父敞，顺帝时以佞辩至尚书、郡守。弼少笃学，聚徒数百。仕",
+        "close_paragraph": 21,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P16–P21"
+      }
+    },
+    {
+      "name": "卢植",
+      "category": "文臣",
+      "paragraph_from": 23,
+      "paragraph_to": 36,
+      "boundary_evidence": {
+        "open_paragraph": 23,
+        "open_phrase": "卢植字子幹，涿郡涿人也。身长八尺二寸，音声如钟。少与郑玄俱事马融，能通古今学，好",
+        "close_paragraph": 36,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P23–P36"
+      }
+    },
+    {
+      "name": "赵岐",
+      "category": "文臣",
+      "paragraph_from": 38,
+      "paragraph_to": 46,
+      "boundary_evidence": {
+        "open_paragraph": 38,
+        "open_phrase": "赵岐字邠卿，京兆长陵人也。初名嘉，生于御史台，因字台卿，后避难，故自改名字，示不",
+        "close_paragraph": 46,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P38–P46"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

@@ -1,0 +1,414 @@
+{
+  "volume": "周瑜鲁肃吕蒙传",
+  "source_file": "04三国志_054_周瑜鲁肃吕蒙传第九.txt",
+  "total_paragraphs": 41,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "周瑜",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "周瑜",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "周瑜",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "周瑜",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "周瑜",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "周瑜",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "周瑜",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "周瑜",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "周瑜",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "周瑜",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "周瑜",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "鲁肃",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "鲁肃",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "鲁肃",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "鲁肃",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "鲁肃",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "鲁肃",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "鲁肃",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "鲁肃",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "鲁肃",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "鲁肃",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "鲁肃",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "鲁肃",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "吕蒙",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "吕蒙",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "吕蒙",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "吕蒙",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "吕蒙",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "吕蒙",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "吕蒙",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "吕蒙",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "吕蒙",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "吕蒙",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "吕蒙",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "吕蒙",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "吕蒙",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "吕蒙",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "吕蒙",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 41,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SANGUOZHI_054_01",
+      "史略名称": "周瑜",
+      "史略简介": "周瑜",
+      "原文字句": "周瑜字公瑾，庐江舒人也。从祖父景，景子忠，皆为汉太尉。父异，洛阳令。",
+      "史略分类": "武将",
+      "主要史料出处": "《04三国志·卷54·周瑜鲁肃吕蒙传》",
+      "paragraphs": [
+        {
+          "volume": "周瑜鲁肃吕蒙传",
+          "paragraph_from": 2,
+          "paragraph_to": 12
+        }
+      ]
+    },
+    {
+      "史略ID": "SANGUOZHI_054_02",
+      "史略名称": "鲁肃",
+      "史略简介": "鲁肃",
+      "原文字句": "鲁肃字子敬，临淮东城人也。生而失父，与祖母居。家富于财，性好施与。尔时天下已乱，肃不治家事，大散财货，摽卖田地，以赈穷弊结士为务，甚得乡邑欢心。",
+      "史略分类": "文臣",
+      "主要史料出处": "《04三国志·卷54·周瑜鲁肃吕蒙传》",
+      "paragraphs": [
+        {
+          "volume": "周瑜鲁肃吕蒙传",
+          "paragraph_from": 13,
+          "paragraph_to": 24
+        }
+      ]
+    },
+    {
+      "史略ID": "SANGUOZHI_054_03",
+      "史略名称": "吕蒙",
+      "史略简介": "吕蒙",
+      "原文字句": "吕蒙字子明，汝南富陂人也。少南渡，依姊夫邓当。当为孙策将，数讨山越。蒙年十五六，窃随当击贼，当顾见大惊，呵叱不能禁止。归以告蒙母，母恚欲罚之，蒙曰：“贫贱难可居，脱误有功，富贵可致。且不探虎穴，安得虎子？”母哀而舍之。时当职吏以蒙年小轻之，曰：“彼竖子何能为？此欲以肉喂虎耳。”他日与蒙会，又蚩辱之。蒙大怒，引刀杀吏，出走，逃邑子郑长家。出因校尉袁雄自首，承间为言，策召见奇之，引置左右。",
+      "史略分类": "武将",
+      "主要史料出处": "《04三国志·卷54·周瑜鲁肃吕蒙传》",
+      "paragraphs": [
+        {
+          "volume": "周瑜鲁肃吕蒙传",
+          "paragraph_from": 25,
+          "paragraph_to": 39
+        }
+      ]
+    }
+  ]
+}

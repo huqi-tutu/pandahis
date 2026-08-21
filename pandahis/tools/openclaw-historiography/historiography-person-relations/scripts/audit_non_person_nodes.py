@@ -34,6 +34,7 @@ from relations_lib import call_llm, extract_json_array, load_env  # noqa: E402
 
 HUB_TITLES = frozenset(
     {
+        "祖父母",
         "父母",
         "配偶",
         "兄弟姐妹",

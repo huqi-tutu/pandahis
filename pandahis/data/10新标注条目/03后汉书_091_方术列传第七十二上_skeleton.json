@@ -1,0 +1,448 @@
+{
+  "volume": "方术列传第七十二上",
+  "source_file": "03后汉书_091_方术列传第七十二上.txt",
+  "total_paragraphs": 53,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 3,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 4,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 5,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 6,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 7,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 8,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 9,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "郭宪",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "郭宪",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "郭宪",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "郭宪",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 15,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 16,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 17,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 18,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "王乔",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "谢夷吾",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "谢夷吾",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "谢夷吾",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "谢夷吾",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 25,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 26,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 27,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 28,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "李郃",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "李郃",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "李郃",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "李郃",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "李郃",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 35,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 36,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 37,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 38,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 39,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 40,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 41,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 42,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "樊英",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "樊英",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "樊英",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [
+        {
+          "name": "樊英",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 47,
+      "owners": [
+        {
+          "name": "樊英",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 48,
+      "owners": [
+        {
+          "name": "樊英",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 49,
+      "owners": [
+        {
+          "name": "樊英",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 50,
+      "owners": [
+        {
+          "name": "樊英",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 51,
+      "owners": [
+        {
+          "name": "樊英",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 52,
+      "owners": [
+        {
+          "name": "樊英",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 53,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HOUHANSHU_091_01",
+      "史略名称": "郭宪",
+      "史略简介": "郭宪",
+      "原文字句": "郭宪字子横，汝南宋人也。少师事东海王仲子。时，王莽为大司马，召仲子。仲子欲往。宪谏曰：“礼有来学，无有往教之义。今君贱道畏贵，窃所不取。”仲子曰：“王公至重，不敢违之。”宪曰：“今正临讲业，且当讫事。”仲子从之，日晏乃往。莽问：“君来何迟？”仲子具以宪言对，莽阴奇之。及后篡位，拜宪郎中，赐以衣服。宪受衣焚之，逃于东海之滨。莽深忿恚，讨逐不知所在。",
+      "史略分类": "庶众",
+      "主要史料出处": "《03后汉书·卷91·方术列传第七十二上》",
+      "paragraphs": [
+        {
+          "volume": "方术列传第七十二上",
+          "paragraph_from": 10,
+          "paragraph_to": 13
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_091_02",
+      "史略名称": "王乔",
+      "史略简介": "王乔",
+      "原文字句": "王乔者，河东人也。显宗世，为叶令。乔有神术，每月朔望，常自县诣台朝。帝怪其来数，而不见车骑，密令太史伺望之。言其临至，辄有双凫从东南飞来。于是候凫至，举罗张之，但得一只舄焉。乃诏上方讠尔视，则四年中所赐尚书官属履也。每当朝时，叶门下鼓不击自鸣，闻于京师。后天下玉棺于堂前，吏人推排，终不摇动。乔曰：“天帝独召我邪？”乃沐浴服饰寝其中，盖便立覆。宿昔葬于城东，土自成坟。其夕，县中牛皆流汗喘乏，而人无知",
+      "史略分类": "庶众",
+      "主要史料出处": "《03后汉书·卷91·方术列传第七十二上》",
+      "paragraphs": [
+        {
+          "volume": "方术列传第七十二上",
+          "paragraph_from": 19,
+          "paragraph_to": 19
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_091_03",
+      "史略名称": "谢夷吾",
+      "史略简介": "谢夷吾",
+      "原文字句": "谢夷吾字尧卿，会稽山阴人也。少为郡吏，学风角占候。太守第五伦擢为督邮。时，乌程长有臧衅，伦使收案其罪。夷吾到县，无所验，但望阁伏哭而还。一县惊怪，不知所为。及还，白伦曰：“窃以占候，知长当死。近三十日，远不过六十日，游魂假息，非刑所加，故不收之。”伦听其言，至月余，果有驿马赍长印绶，上言暴卒。伦以此益礼信之。",
+      "史略分类": "庶众",
+      "主要史料出处": "《03后汉书·卷91·方术列传第七十二上》",
+      "paragraphs": [
+        {
+          "volume": "方术列传第七十二上",
+          "paragraph_from": 20,
+          "paragraph_to": 23
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_091_04",
+      "史略名称": "李郃",
+      "史略简介": "李郃",
+      "原文字句": "李郃字孟节，汉中南郑人也。父颉，以儒学称，官至博士。郃袭父业，游太学，通《五经》。善《河》《洛》风星，外质朴，人莫之识。县召署幕门候吏。",
+      "史略分类": "庶众",
+      "主要史料出处": "《03后汉书·卷91·方术列传第七十二上》",
+      "paragraphs": [
+        {
+          "volume": "方术列传第七十二上",
+          "paragraph_from": 29,
+          "paragraph_to": 33
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_091_05",
+      "史略名称": "樊英",
+      "史略简介": "樊英",
+      "原文字句": "樊英字季齐，南阳鲁阳人也。少受业三辅，习《京氏易》，兼明《五经》。又善风角、星算，《河》《洛》七纬，推步灾异。隐于壶山之阳，受业者四方而至。州郡前后礼请，不应；公卿举贤良方正、有道，皆不行。",
+      "史略分类": "庶众",
+      "主要史料出处": "《03后汉书·卷91·方术列传第七十二上》",
+      "paragraphs": [
+        {
+          "volume": "方术列传第七十二上",
+          "paragraph_from": 43,
+          "paragraph_to": 52
+        }
+      ]
+    }
+  ]
+}

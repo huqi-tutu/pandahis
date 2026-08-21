@@ -1,0 +1,87 @@
+{
+  "work": "04三国志",
+  "vol": "005",
+  "total_paragraphs": 21,
+  "volume_subtype": "hezhuan",
+  "derived_from": "04三国志_005_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 2,
+      "paragraph_to": 3,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 21,
+      "paragraph_to": 21,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "武宣卞皇后",
+      "category": "宗戚",
+      "paragraph_from": 4,
+      "paragraph_to": 7,
+      "boundary_evidence": {
+        "open_paragraph": 4,
+        "open_phrase": "武宣卞皇后，琅邪开阳人，文帝母也。本倡家，年二十，太祖于谯纳后为妾。后随太祖至洛",
+        "close_paragraph": 7,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P4–P7"
+      }
+    },
+    {
+      "name": "文昭甄皇后",
+      "category": "宗戚",
+      "paragraph_from": 8,
+      "paragraph_to": 12,
+      "boundary_evidence": {
+        "open_paragraph": 8,
+        "open_phrase": "文昭甄皇后，中山无极人，明帝母，汉太保甄邯后也，世吏二千石。父逸，上蔡令。后三岁",
+        "close_paragraph": 12,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P8–P12"
+      }
+    },
+    {
+      "name": "文德郭皇后",
+      "category": "宗戚",
+      "paragraph_from": 13,
+      "paragraph_to": 16,
+      "boundary_evidence": {
+        "open_paragraph": 13,
+        "open_phrase": "文德郭皇后，安平广宗人也。祖世长吏。后少而父永奇之曰：“此乃吾女中王也。”遂以女",
+        "close_paragraph": 16,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P13–P16"
+      }
+    },
+    {
+      "name": "明悼毛皇后",
+      "category": "宗戚",
+      "paragraph_from": 17,
+      "paragraph_to": 19,
+      "boundary_evidence": {
+        "open_paragraph": 17,
+        "open_phrase": "明悼毛皇后，河内人也。黄初中，以选入东宫，明帝时为平原王，进御有宠，出入与同舆辇",
+        "close_paragraph": 19,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P17–P19"
+      }
+    },
+    {
+      "name": "明元郭皇后",
+      "category": "宗戚",
+      "paragraph_from": 20,
+      "paragraph_to": 20,
+      "boundary_evidence": {
+        "open_paragraph": 20,
+        "open_phrase": "明元郭皇后，西平人也，世河右大族。黄初中，本郡反叛，遂没入宫。明帝即位，甚见爱幸",
+        "close_paragraph": 20,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P20–P20"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

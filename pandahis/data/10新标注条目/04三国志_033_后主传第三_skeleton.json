@@ -1,0 +1,428 @@
+{
+  "volume": "后主传",
+  "source_file": "04三国志_033_后主传第三.txt",
+  "total_paragraphs": 45,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "single",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "蜀汉后主",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "蜀汉后主",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "蜀汉后主",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "蜀汉后主",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "蜀汉后主",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "蜀汉后主",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "蜀汉后主",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "蜀汉后主",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "蜀汉后主",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "蜀汉后主",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "蜀汉后主",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "蜀汉后主",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "蜀汉后主",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "蜀汉后主",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "蜀汉后主",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "蜀汉后主",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "蜀汉后主",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "蜀汉后主",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "蜀汉后主",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "蜀汉后主",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "蜀汉后主",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "蜀汉后主",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "蜀汉后主",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "蜀汉后主",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "蜀汉后主",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "蜀汉后主",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "蜀汉后主",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "蜀汉后主",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "蜀汉后主",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "蜀汉后主",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "蜀汉后主",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "蜀汉后主",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "蜀汉后主",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "蜀汉后主",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "蜀汉后主",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "蜀汉后主",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "蜀汉后主",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "蜀汉后主",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "蜀汉后主",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "蜀汉后主",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "蜀汉后主",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "蜀汉后主",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "蜀汉后主",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "蜀汉后主",
+          "category": "君王"
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SANGUOZHI_033_01",
+      "史略名称": "蜀汉后主",
+      "史略简介": "蜀汉后主",
+      "原文字句": "后主讳禅，字公嗣，先主子也。建安二十四年，先主为汉中王，立为王太子。及即尊号，册曰：“惟章武元年五月辛巳，皇帝若曰：太子禅，朕遭汉运艰难，贼臣篡盗，社稷无主，格人群正，以天明命，朕继大统。今以禅为皇太子，以承宗庙，祗肃社稷。使使持节丞相亮授印绶，敬听师傅，行一物而三善皆得焉，可不勉与！”三年夏四月，先主殂于永安宫。五月，后主袭位于成都，时年十七。尊皇后曰皇太后。大赦，改元。是岁魏黄初四年也。",
+      "史略分类": "君王",
+      "主要史料出处": "《04三国志·卷33·后主传》",
+      "paragraphs": [
+        {
+          "volume": "后主传",
+          "paragraph_from": 2,
+          "paragraph_to": 45
+        }
+      ]
+    }
+  ]
+}

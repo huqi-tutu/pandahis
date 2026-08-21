@@ -1,0 +1,20 @@
+{
+  "work": "04三国志",
+  "vol": "058",
+  "volume_name": "陆逊传",
+  "volume_type_guess": "列传",
+  "volume_arc": "A",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "陆逊",
+      "category": "武将",
+      "rationale": "卷名《陆逊传》为单人列传，陆逊为东吴名将，以军功征战为主轴，符合武将准入标准。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "其他"
+  ]
+}

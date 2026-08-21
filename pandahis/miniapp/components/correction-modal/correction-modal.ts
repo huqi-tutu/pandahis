@@ -3,13 +3,43 @@ import {
   correctionStatusLabel,
   formatCorrectionTime,
 } from '../../native-utils/correction'
+import {
+  composerSheetViewModel,
+  formatSheetCoordinate,
+  readComposerSheetMetrics,
+} from '../../native-utils/composer-sheet-layout'
 
-function windowHeightPx(): number {
-  try {
-    const sys = wx.getSystemInfoSync()
-    return sys.windowHeight || 667
-  } catch {
-    return 667
+type SheetOverride = {
+  keyboardHeight?: number
+  quoteExpanded?: boolean
+  restWindowHeight?: number
+  mode?: string
+  selectedText?: string
+}
+
+function sheetPatch(
+  component: { properties: Record<string, any>; data: Record<string, any> },
+  override: SheetOverride = {},
+) {
+  const metrics = readComposerSheetMetrics()
+  const quoteExpanded = override.quoteExpanded ?? Boolean(component.data.quoteExpanded)
+  const restWindowHeight =
+    override.restWindowHeight ||
+    Number(component.data.restWindowHeight) ||
+    metrics.windowHeight
+  const vm = composerSheetViewModel({
+    ...metrics,
+    keyboardHeight:
+      override.keyboardHeight ?? (Math.max(0, Number(component.data.keyboardHeight) || 0)),
+    restWindowHeight,
+    mode: String(override.mode ?? (component.properties.mode || 'edit')),
+    selectedText: String(override.selectedText ?? (component.properties.selectedText || '')),
+    quoteExpanded,
+  })
+  return {
+    ...vm,
+    quoteExpanded,
+    restWindowHeight,
   }
 }
 
@@ -71,31 +101,86 @@ Component({
     reasonDisplay: '（未填写）',
     submittedAtDisplay: '',
     keyboardHeight: 0,
-    cardMaxHeightPx: Math.floor(windowHeightPx() * 0.85),
-    scrollIntoView: '',
+    keyboardOpen: false,
+    keyboardLiftPx: 0,
+    restWindowHeight: 0,
+    cardStyle: '',
+    bodyStyle: '',
+    textareaHeightPx: 110,
+    quoteExpanded: false,
+    quoteMaxLines: 0,
+    quoteClampClass: '',
+    quoteClampStyle: '',
+    showQuoteToggle: false,
+    quoteToggleLabel: '展开',
+    sheetOpen: false,
+    coordinateText: '',
+  },
+  lifetimes: {
+    attached() {
+      this._onKeyboardHeight = (res: { height?: number }) => {
+        if (!this.properties.visible) return
+        const height = Math.max(0, Math.floor(Number(res?.height) || 0))
+        this.setData(sheetPatch(this, { keyboardHeight: height }))
+      }
+      if (typeof wx.onKeyboardHeightChange === 'function') {
+        wx.onKeyboardHeightChange(this._onKeyboardHeight)
+      }
+    },
+    detached() {
+      if (this._onKeyboardHeight && typeof wx.offKeyboardHeightChange === 'function') {
+        wx.offKeyboardHeightChange(this._onKeyboardHeight)
+      }
+    },
   },
   observers: {
-    'visible, mode, reason, status, sourceType, submittedAt': function syncFields(
+    'visible, mode, reason, status, sourceType, submittedAt, selectedText, civilizationName, dynastyName, boxTitle': function syncFields(
       visible: boolean,
       mode: string,
       reason: string,
       status: string,
       sourceType: string,
-      submittedAt: string
+      submittedAt: string,
+      selectedText: string,
+      civilizationName: string,
+      dynastyName: string,
+      boxTitle: string
     ) {
+      const metrics = readComposerSheetMetrics()
+      const coordinateText = formatSheetCoordinate(civilizationName, dynastyName, boxTitle)
       if (!visible) {
         this.setData({
-          keyboardHeight: 0,
-          cardMaxHeightPx: Math.floor(windowHeightPx() * 0.85),
-          scrollIntoView: '',
+          sourceLabel: correctionSourceLabel(sourceType),
+          statusLabel: correctionStatusLabel(status),
+          reasonDisplay: (reason || '').trim() || '（未填写）',
+          submittedAtDisplay: formatCorrectionTime(submittedAt),
+          coordinateText,
+          sheetOpen: false,
+          ...sheetPatch(this, {
+            keyboardHeight: 0,
+            quoteExpanded: false,
+            restWindowHeight: metrics.windowHeight,
+            mode,
+            selectedText,
+          }),
         })
         return
       }
-      const patch: Record<string, string> = {
+      const opening = !this.data.sheetOpen
+      const patch: Record<string, unknown> = {
         sourceLabel: correctionSourceLabel(sourceType),
         statusLabel: correctionStatusLabel(status),
         reasonDisplay: (reason || '').trim() || '（未填写）',
         submittedAtDisplay: formatCorrectionTime(submittedAt),
+        coordinateText,
+        sheetOpen: true,
+        ...sheetPatch(this, {
+          keyboardHeight: opening ? 0 : this.data.keyboardHeight,
+          quoteExpanded: opening ? false : this.data.quoteExpanded,
+          restWindowHeight: opening ? metrics.windowHeight : this.data.restWindowHeight,
+          mode,
+          selectedText,
+        }),
       }
       if (mode === 'edit') {
         patch.draftReason = (reason || '').slice(0, 500)
@@ -105,7 +190,18 @@ Component({
   },
   methods: {
     noop() {},
+    hideKeyboard() {
+      if (!this.data.keyboardOpen) return
+      if (typeof wx.hideKeyboard === 'function') wx.hideKeyboard()
+    },
+    onSheetTap() {
+      this.hideKeyboard()
+    },
     onBackdropTap() {
+      if (this.data.keyboardOpen) {
+        this.hideKeyboard()
+        return
+      }
       this.triggerEvent('close')
     },
     onClose() {
@@ -118,18 +214,13 @@ Component({
       const value = String(e.detail.value || '').slice(0, 500)
       this.setData({ draftReason: value })
     },
-    onReasonFocus() {
-      this.setData({ scrollIntoView: 'correction-reason-field' })
+    onToggleQuote() {
+      if (this.data.keyboardOpen) return
+      this.setData(sheetPatch(this, { quoteExpanded: !this.data.quoteExpanded }))
     },
     onKeyboardHeightChange(e: WechatMiniprogram.TextareaKeyboardHeightChange) {
       const height = Math.max(0, Math.floor(Number(e.detail?.height) || 0))
-      const winH = windowHeightPx()
-      const maxH = height > 0 ? Math.max(280, winH - height - 12) : Math.floor(winH * 0.85)
-      this.setData({
-        keyboardHeight: height,
-        cardMaxHeightPx: maxH,
-        scrollIntoView: height > 0 ? 'correction-reason-field' : '',
-      })
+      this.setData(sheetPatch(this, { keyboardHeight: height }))
     },
     onSubmit() {
       if (this.properties.submitting) return

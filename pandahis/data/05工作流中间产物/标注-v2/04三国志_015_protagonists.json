@@ -1,0 +1,45 @@
+{
+  "work": "04三国志",
+  "vol": "015",
+  "volume_name": "刘司马梁张温贾传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "刘馥",
+      "category": "文臣",
+      "rationale": "卷名首姓，合传主人公之一；以治理州郡、安抚百姓为政绩主轴，属文臣。"
+    },
+    {
+      "name": "司马朗",
+      "category": "文臣",
+      "rationale": "卷名第二人，合传主人公之一；以行政才能、治理地方著称，属文臣。"
+    },
+    {
+      "name": "梁习",
+      "category": "文臣",
+      "rationale": "卷名第三人，合传主人公之一；以地方治理、安抚边民为政绩，属文臣。"
+    },
+    {
+      "name": "张既",
+      "category": "文臣",
+      "rationale": "卷名第四人，合传主人公之一；以治理州郡、安抚羌胡著称，属文臣。"
+    },
+    {
+      "name": "温恢",
+      "category": "文臣",
+      "rationale": "卷名第五人，合传主人公之一；以州郡治理、行政才能为政绩，属文臣。"
+    },
+    {
+      "name": "贾逵",
+      "category": "文臣",
+      "rationale": "卷名末人，合传主人公之一；以治理州郡、军政才能著称，属文臣。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

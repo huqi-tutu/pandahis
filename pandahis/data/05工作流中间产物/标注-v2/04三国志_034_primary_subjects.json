@@ -1,0 +1,55 @@
+{
+  "work": "04三国志",
+  "vol": "034",
+  "total_paragraphs": 9,
+  "method": "Step1b-α LLM",
+  "paragraphs": [
+    {
+      "paragraph": 1,
+      "primary_subject": "卷首标题",
+      "disposition": "exclude",
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "primary_subject": "先主甘皇后",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 3,
+      "primary_subject": "先主穆皇后",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 4,
+      "primary_subject": "后主敬哀皇后",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 5,
+      "primary_subject": "后主张皇后",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 6,
+      "primary_subject": "刘永",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 7,
+      "primary_subject": "刘理",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 8,
+      "primary_subject": "刘璿",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 9,
+      "primary_subject": "论赞",
+      "disposition": "exclude",
+      "exclude_reason": "论赞"
+    }
+  ]
+}

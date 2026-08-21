@@ -1,0 +1,63 @@
+{
+  "work": "04三国志",
+  "vol": "043",
+  "total_paragraphs": 28,
+  "volume_subtype": "hezhuan",
+  "derived_from": "04三国志_043_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 2,
+      "paragraph_to": 10,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 28,
+      "paragraph_to": 28,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "马忠",
+      "category": "武将",
+      "paragraph_from": 11,
+      "paragraph_to": 13,
+      "boundary_evidence": {
+        "open_paragraph": 11,
+        "open_phrase": "马忠字德信，巴西阆中人也。少养外家，姓狐，名笃，后乃复姓，改名忠。为郡吏，建安末",
+        "close_paragraph": 13,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P11–P13"
+      }
+    },
+    {
+      "name": "王平",
+      "category": "武将",
+      "paragraph_from": 14,
+      "paragraph_to": 17,
+      "boundary_evidence": {
+        "open_paragraph": 14,
+        "open_phrase": "王平字子均，巴西宕渠人也。本养外家何氏，后复姓王。随杜濩、朴胡诣洛阳，假校尉，从",
+        "close_paragraph": 17,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P14–P17"
+      }
+    },
+    {
+      "name": "张嶷",
+      "category": "武将",
+      "paragraph_from": 18,
+      "paragraph_to": 27,
+      "boundary_evidence": {
+        "open_paragraph": 18,
+        "open_phrase": "张嶷字伯岐，巴郡南充国人也。弱冠为县功曹。先主定蜀之际，山寇攻县，县长捐家逃亡，",
+        "close_paragraph": 27,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P18–P27"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

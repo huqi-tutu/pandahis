@@ -1,0 +1,58 @@
+{
+  "work": "04三国志",
+  "vol": "010",
+  "total_paragraphs": 25,
+  "volume_subtype": "hezhuan",
+  "derived_from": "04三国志_010_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 25,
+      "paragraph_to": 25,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "荀彧",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 12,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "荀彧字文若，颍川颍阴人也。祖父淑，字季和，朗陵令。当汉顺、桓之间，知名当世。有子",
+        "close_paragraph": 12,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P12"
+      }
+    },
+    {
+      "name": "荀攸",
+      "category": "文臣",
+      "paragraph_from": 13,
+      "paragraph_to": 19,
+      "boundary_evidence": {
+        "open_paragraph": 13,
+        "open_phrase": "荀攸字公达，彧从子也。祖父昙，广陵太守。攸少孤。及昙卒，故吏张权求守昙墓。攸年十",
+        "close_paragraph": 19,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P13–P19"
+      }
+    },
+    {
+      "name": "贾诩",
+      "category": "文臣",
+      "paragraph_from": 20,
+      "paragraph_to": 24,
+      "boundary_evidence": {
+        "open_paragraph": 20,
+        "open_phrase": "贾诩字文和，武威姑臧人也。少时人莫知，唯汉阳阎忠异之，谓诩有良、平之奇。察孝廉为",
+        "close_paragraph": 24,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P20–P24"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

@@ -1,0 +1,106 @@
+{
+  "work": "04三国志",
+  "vol": "034",
+  "total_paragraphs": 9,
+  "volume_subtype": "hezhuan",
+  "derived_from": "04三国志_034_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 9,
+      "paragraph_to": 9,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "先主甘皇后",
+      "category": "宗戚",
+      "paragraph_from": 2,
+      "paragraph_to": 2,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "先主甘皇后，沛人也。先主临豫州，住小沛，纳以为妾。先主数丧嫡室，常摄内事。随先主",
+        "close_paragraph": 2,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P2"
+      }
+    },
+    {
+      "name": "先主穆皇后",
+      "category": "宗戚",
+      "paragraph_from": 3,
+      "paragraph_to": 3,
+      "boundary_evidence": {
+        "open_paragraph": 3,
+        "open_phrase": "先主穆皇后，陈留人也。兄吴壹，少孤，壹父素与刘焉有旧，是以举家随焉入蜀。焉有异志",
+        "close_paragraph": 3,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P3–P3"
+      }
+    },
+    {
+      "name": "后主敬哀皇后",
+      "category": "宗戚",
+      "paragraph_from": 4,
+      "paragraph_to": 4,
+      "boundary_evidence": {
+        "open_paragraph": 4,
+        "open_phrase": "后主敬哀皇后，车骑将军张飞长女也。章武元年，纳为太子妃。建兴元年，立为皇后。十五",
+        "close_paragraph": 4,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P4–P4"
+      }
+    },
+    {
+      "name": "后主张皇后",
+      "category": "宗戚",
+      "paragraph_from": 5,
+      "paragraph_to": 5,
+      "boundary_evidence": {
+        "open_paragraph": 5,
+        "open_phrase": "后主张皇后，前后敬哀之妹也。建兴十五年，入为贵人。延熙元年春正月，策曰：“朕统承",
+        "close_paragraph": 5,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P5–P5"
+      }
+    },
+    {
+      "name": "刘永",
+      "category": "宗戚",
+      "paragraph_from": 6,
+      "paragraph_to": 6,
+      "boundary_evidence": {
+        "open_paragraph": 6,
+        "open_phrase": "刘永字公寿，先主子，后主庶弟也。章武元年六月，使司徒靖立永为鲁王，策曰：“小子永",
+        "close_paragraph": 6,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P6–P6"
+      }
+    },
+    {
+      "name": "刘理",
+      "category": "宗戚",
+      "paragraph_from": 7,
+      "paragraph_to": 7,
+      "boundary_evidence": {
+        "open_paragraph": 7,
+        "open_phrase": "刘理字奉孝，亦后主庶弟也，与永异母。章武元年六月，使司徒靖立理为梁王，策曰：“小",
+        "close_paragraph": 7,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P7–P7"
+      }
+    },
+    {
+      "name": "刘璿",
+      "category": "宗戚",
+      "paragraph_from": 8,
+      "paragraph_to": 8,
+      "boundary_evidence": {
+        "open_paragraph": 8,
+        "open_phrase": "后主太子璿，字文衡。母王贵人，本敬哀张皇后侍人也。延熙元年正月策曰：“在昔帝王，",
+        "close_paragraph": 8,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P8–P8"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

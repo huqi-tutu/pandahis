@@ -1,0 +1,82 @@
+{
+  "work": "04三国志",
+  "vol": "029",
+  "total_paragraphs": 52,
+  "volume_subtype": "hezhuan",
+  "derived_from": "04三国志_029_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 52,
+      "paragraph_to": 52,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "华佗",
+      "category": "庶众",
+      "paragraph_from": 2,
+      "paragraph_to": 20,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "华佗字元化，沛国谯人也，一名旉。游学徐土，兼通数经。沛相陈珪举孝廉，太尉黄琬辟，",
+        "close_paragraph": 20,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P20"
+      }
+    },
+    {
+      "name": "杜夔",
+      "category": "庶众",
+      "paragraph_from": 21,
+      "paragraph_to": 24,
+      "boundary_evidence": {
+        "open_paragraph": 21,
+        "open_phrase": "杜夔字公良，河南人也。以知音为雅乐郎，中平五年，疾去官。州郡司徒礼辟，以世乱奔荆",
+        "close_paragraph": 24,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P21–P24"
+      }
+    },
+    {
+      "name": "朱建平",
+      "category": "庶众",
+      "paragraph_from": 25,
+      "paragraph_to": 28,
+      "boundary_evidence": {
+        "open_paragraph": 25,
+        "open_phrase": "朱建平，沛国人也。善相术，于闾巷之间，效验非一。太祖为魏公，闻之，召为郎。文帝为",
+        "close_paragraph": 28,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P25–P28"
+      }
+    },
+    {
+      "name": "周宣",
+      "category": "庶众",
+      "paragraph_from": 29,
+      "paragraph_to": 32,
+      "boundary_evidence": {
+        "open_paragraph": 29,
+        "open_phrase": "周宣字孔和，乐安人也。为郡吏。太守杨沛梦人曰：“八月一日曹公当至，必与君杖，饮以",
+        "close_paragraph": 32,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P29–P32"
+      }
+    },
+    {
+      "name": "管辂",
+      "category": "庶众",
+      "paragraph_from": 33,
+      "paragraph_to": 51,
+      "boundary_evidence": {
+        "open_paragraph": 33,
+        "open_phrase": "管辂字公明，平原人也。容貌粗丑，无威仪而嗜酒，饮食言戏，不择非类，故人多爱之而不",
+        "close_paragraph": 51,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P33–P51"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

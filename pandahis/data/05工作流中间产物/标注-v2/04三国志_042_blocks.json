@@ -1,0 +1,99 @@
+{
+  "work": "04三国志",
+  "vol": "042",
+  "total_paragraphs": 34,
+  "volume_subtype": "hezhuan",
+  "derived_from": "04三国志_042_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 2,
+      "paragraph_to": 8,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 34,
+      "paragraph_to": 34,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "孟光",
+      "category": "文臣",
+      "paragraph_from": 9,
+      "paragraph_to": 10,
+      "boundary_evidence": {
+        "open_paragraph": 9,
+        "open_phrase": "孟光字孝裕，河南洛阳人，汉太尉孟郁之族。灵帝末为讲部吏。献帝迁都长安，遂逃入蜀，",
+        "close_paragraph": 10,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P9–P10"
+      }
+    },
+    {
+      "name": "来敏",
+      "category": "文臣",
+      "paragraph_from": 11,
+      "paragraph_to": 11,
+      "boundary_evidence": {
+        "open_paragraph": 11,
+        "open_phrase": "来敏字敬达，义阳新野人，来歙之后也。父艳，为汉司空。汉末大乱，敏随姊奔荆州，姊夫",
+        "close_paragraph": 11,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P11–P11"
+      }
+    },
+    {
+      "name": "尹默",
+      "category": "文臣",
+      "paragraph_from": 12,
+      "paragraph_to": 12,
+      "boundary_evidence": {
+        "open_paragraph": 12,
+        "open_phrase": "尹默字思潜，梓潼涪人也。益部多贵今文而不崇章句，默知其不博，乃远游荆州，从司马德",
+        "close_paragraph": 12,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P12–P12"
+      }
+    },
+    {
+      "name": "李譔",
+      "category": "文臣",
+      "paragraph_from": 13,
+      "paragraph_to": 13,
+      "boundary_evidence": {
+        "open_paragraph": 13,
+        "open_phrase": "李譔字钦仲，梓潼涪人也。父仁，字德贤，与同县尹默俱游荆州，从司马徽、宋忠等学。撰",
+        "close_paragraph": 13,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P13–P13"
+      }
+    },
+    {
+      "name": "谯周",
+      "category": "文臣",
+      "paragraph_from": 14,
+      "paragraph_to": 22,
+      "boundary_evidence": {
+        "open_paragraph": 14,
+        "open_phrase": "谯周字允南，巴西西充国人也。父<山并>，字荣始，治尚书，兼通诸经及图、纬。州郡辟",
+        "close_paragraph": 22,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P14–P22"
+      }
+    },
+    {
+      "name": "郤正",
+      "category": "文臣",
+      "paragraph_from": 23,
+      "paragraph_to": 33,
+      "boundary_evidence": {
+        "open_paragraph": 23,
+        "open_phrase": "郤正字令先，河南偃师人也。祖父俭，灵帝末为益州刺史，为盗贼所杀。会天下大乱，故正",
+        "close_paragraph": 33,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P23–P33"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

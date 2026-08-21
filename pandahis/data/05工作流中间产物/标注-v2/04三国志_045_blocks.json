@@ -1,0 +1,87 @@
+{
+  "work": "04三国志",
+  "vol": "045",
+  "total_paragraphs": 68,
+  "volume_subtype": "hezhuan",
+  "derived_from": "04三国志_045_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 8,
+      "paragraph_to": 8,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 68,
+      "paragraph_to": 68,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "邓芝",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 4,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "邓芝字伯苗，义阳新野人，汉司徒禹之后也。汉末入蜀，未见知待。时益州从事张裕善相，",
+        "close_paragraph": 4,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P4"
+      }
+    },
+    {
+      "name": "张翼",
+      "category": "武将",
+      "paragraph_from": 5,
+      "paragraph_to": 6,
+      "boundary_evidence": {
+        "open_paragraph": 5,
+        "open_phrase": "张翼字伯恭，犍为武阳人也。高祖父司空浩，曾祖父广陵太守纲，皆有名迹。先主定益州，",
+        "close_paragraph": 6,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P5–P6"
+      }
+    },
+    {
+      "name": "宗预",
+      "category": "文臣",
+      "paragraph_from": 7,
+      "paragraph_to": 7,
+      "boundary_evidence": {
+        "open_paragraph": 7,
+        "open_phrase": "宗预字德艳，南阳安众人也。建安中，随张飞入蜀。建兴初，丞相亮以为主簿，迁参军右中",
+        "close_paragraph": 7,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P7–P7"
+      }
+    },
+    {
+      "name": "宗预",
+      "category": "文臣",
+      "paragraph_from": 9,
+      "paragraph_to": 9,
+      "boundary_evidence": {
+        "open_paragraph": 9,
+        "open_phrase": "咸熙元年春，化、预俱内徙洛阳，道病卒。",
+        "close_paragraph": 9,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P9–P9"
+      }
+    },
+    {
+      "name": "杨戏",
+      "category": "文臣",
+      "paragraph_from": 10,
+      "paragraph_to": 67,
+      "boundary_evidence": {
+        "open_paragraph": 10,
+        "open_phrase": "杨戏字文然，犍为武阳人也。少与巴西程祁公弘、巴郡杨汰季儒、蜀郡张表伯达并知名。戏",
+        "close_paragraph": 67,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P10–P67"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

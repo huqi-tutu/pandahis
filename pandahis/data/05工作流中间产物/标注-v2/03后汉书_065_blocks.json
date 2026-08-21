@@ -1,0 +1,33 @@
+{
+  "work": "03后汉书",
+  "vol": "065",
+  "total_paragraphs": 21,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 21,
+      "paragraph_to": 21,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "马融",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 20,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "马融字季长，扶风茂陵人也，将作大匠严之子。为人美辞貌，有俊才。初，京兆挚恂以儒术",
+        "close_paragraph": 20,
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

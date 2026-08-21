@@ -1,0 +1,30 @@
+{
+  "work": "03后汉书",
+  "vol": "079",
+  "volume_name": "刘虞公孙瓒陶谦列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "刘虞",
+      "category": "宗戚",
+      "rationale": "卷名首列人物，东汉宗室（光武帝之子刘强的后裔），任幽州牧，为汉末地方重臣，属同姓藩王宗支，故归宗戚。"
+    },
+    {
+      "name": "公孙瓒",
+      "category": "武将",
+      "rationale": "卷名并列人物，汉末割据幽州的军阀，以军功征战为主轴，属武将。"
+    },
+    {
+      "name": "陶谦",
+      "category": "文臣",
+      "rationale": "卷名并列人物，汉末徐州牧，以行政治理、地方牧守为主轴，属文臣。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

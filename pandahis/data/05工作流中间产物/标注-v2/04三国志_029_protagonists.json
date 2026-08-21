@@ -1,0 +1,39 @@
+{
+  "work": "04三国志",
+  "vol": "029",
+  "volume_name": "方技传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "华佗",
+      "category": "庶众",
+      "rationale": "《方技传》为方术技艺之士合传，华佗为卷首首列、医术方技主轴人物，属方士/技艺之士，归庶众类。"
+    },
+    {
+      "name": "杜夔",
+      "category": "庶众",
+      "rationale": "《方技传》合传人物之一，以音律技艺著称，属方技之士，归庶众类。"
+    },
+    {
+      "name": "朱建平",
+      "category": "庶众",
+      "rationale": "《方技传》合传人物之一，以相术闻名，属方技之士，归庶众类。"
+    },
+    {
+      "name": "周宣",
+      "category": "庶众",
+      "rationale": "《方技传》合传人物之一，以占梦之术著称，属方技之士，归庶众类。"
+    },
+    {
+      "name": "管辂",
+      "category": "庶众",
+      "rationale": "《方技传》合传人物之一，以卜筮术数闻名，属方技之士，归庶众类。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "其他"
+  ]
+}

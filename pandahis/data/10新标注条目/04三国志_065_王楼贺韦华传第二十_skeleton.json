@@ -1,0 +1,455 @@
+{
+  "volume": "王楼贺韦华传",
+  "source_file": "04三国志_065_王楼贺韦华传第二十.txt",
+  "total_paragraphs": 44,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "王蕃",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "王蕃",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "王蕃",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "王蕃",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "楼玄",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "楼玄",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "贺邵",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "贺邵",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "贺邵",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "贺邵",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "贺邵",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "贺邵",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "贺邵",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "贺邵",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "韦昭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "韦昭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "韦昭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "韦昭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "韦昭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "韦昭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "韦昭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "韦昭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "韦昭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "韦昭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "韦昭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "华覈",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "华覈",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "华覈",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "华覈",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "华覈",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "华覈",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "华覈",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "华覈",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "华覈",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "华覈",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "华覈",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "华覈",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 40,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 41,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 42,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 43,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 44,
+      "owners": [],
+      "exclude_reason": "世系链"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SANGUOZHI_065_01",
+      "史略名称": "王蕃",
+      "史略简介": "王蕃",
+      "原文字句": "王蕃字永元，庐江人也。博览多闻，兼通术艺。始为尚书郎，去官。孙休即位，与贺邵、薛莹、虞汜俱为散骑中常侍，皆加驸马都尉。时论清之。遣使至蜀，蜀人称焉，还为夏口监军。",
+      "史略分类": "文臣",
+      "主要史料出处": "《04三国志·卷65·王楼贺韦华传》",
+      "paragraphs": [
+        {
+          "volume": "王楼贺韦华传",
+          "paragraph_from": 2,
+          "paragraph_to": 5
+        }
+      ]
+    },
+    {
+      "史略ID": "SANGUOZHI_065_02",
+      "史略名称": "楼玄",
+      "史略简介": "楼玄",
+      "原文字句": "楼玄字承先，沛郡蕲人也。孙休时为监农御史。孙皓即位，与王蕃、郭逴、万彧俱为散骑中常侍，出为会稽太守，入为大司农。旧禁中主者自用亲近人作之，彧陈亲密近识，宜用好人，皓因敕有司，求忠清之士，以应其选，遂用玄为宫下镇禁中候，主殿中事。玄从九卿持刀侍卫，正身率众，奉法而行，应对切直，数迕皓意，渐见责怒。后人诬白玄与贺邵相逢，驻共耳语大笑，谤讪政事，遂被诏诘责，送付广州。",
+      "史略分类": "文臣",
+      "主要史料出处": "《04三国志·卷65·王楼贺韦华传》",
+      "paragraphs": [
+        {
+          "volume": "王楼贺韦华传",
+          "paragraph_from": 6,
+          "paragraph_to": 7
+        }
+      ]
+    },
+    {
+      "史略ID": "SANGUOZHI_065_03",
+      "史略名称": "贺邵",
+      "史略简介": "贺邵",
+      "原文字句": "贺邵字兴伯，会稽山阴人也。孙休即位，从中郎为散骑中常侍，出为吴郡太守。孙皓时，入为左典军，迁中书令，领太子太傅。",
+      "史略分类": "文臣",
+      "主要史料出处": "《04三国志·卷65·王楼贺韦华传》",
+      "paragraphs": [
+        {
+          "volume": "王楼贺韦华传",
+          "paragraph_from": 8,
+          "paragraph_to": 15
+        }
+      ]
+    },
+    {
+      "史略ID": "SANGUOZHI_065_04",
+      "史略名称": "韦昭",
+      "史略简介": "韦昭",
+      "原文字句": "韦曜字弘嗣，吴郡云阳人也。少好学，能属文，从丞相掾，除西安令，还为尚书郎，迁太子中庶子。",
+      "史略分类": "文臣",
+      "主要史料出处": "《04三国志·卷65·王楼贺韦华传》",
+      "paragraphs": [
+        {
+          "volume": "王楼贺韦华传",
+          "paragraph_from": 16,
+          "paragraph_to": 26
+        }
+      ]
+    },
+    {
+      "史略ID": "SANGUOZHI_065_05",
+      "史略名称": "华覈",
+      "史略简介": "华覈",
+      "原文字句": "华覈字永先，吴郡武进人也。始为上虞尉、典农都尉，以文学入为秘府郎，迁中书丞。",
+      "史略分类": "文臣",
+      "主要史料出处": "《04三国志·卷65·王楼贺韦华传》",
+      "paragraphs": [
+        {
+          "volume": "王楼贺韦华传",
+          "paragraph_from": 27,
+          "paragraph_to": 38
+        }
+      ]
+    }
+  ]
+}

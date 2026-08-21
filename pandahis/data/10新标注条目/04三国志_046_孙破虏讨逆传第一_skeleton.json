@@ -1,0 +1,147 @@
+{
+  "volume": "孙破虏讨逆传",
+  "source_file": "04三国志_046_孙破虏讨逆传第一.txt",
+  "total_paragraphs": 13,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "孙坚",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "孙坚",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "孙坚",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "孙坚",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "孙坚",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "孙坚",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "孙策",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "孙策",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "孙策",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "孙策",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 13,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SANGUOZHI_046_01",
+      "史略名称": "孙坚",
+      "史略简介": "孙坚",
+      "原文字句": "孙坚字文台，吴郡富春人，盖孙武之后也。少为县吏。年十七，与父共载船至钱唐，会海贼胡玉等从匏里上掠取贾人财物，方于岸上分之，行旅皆住，船不敢进。坚谓父曰：“此贼可击，请讨之。”父曰：“非尔所图也。”坚行操刀上岸，以手东西指麾，若分部人兵以罗遮贼状。贼望见，以为官兵捕之，即委财物散走。坚追，斩得一级以还；父大惊。由是显闻，府召署假尉。会稽妖贼许昌起于句章，自称阳明皇帝，与其子韶扇动诸县，众以万数。坚以",
+      "史略分类": "武将",
+      "主要史料出处": "《04三国志·卷46·孙破虏讨逆传》",
+      "paragraphs": [
+        {
+          "volume": "孙破虏讨逆传",
+          "paragraph_from": 2,
+          "paragraph_to": 7
+        }
+      ]
+    },
+    {
+      "史略ID": "SANGUOZHI_046_02",
+      "史略名称": "孙策",
+      "史略简介": "孙策",
+      "原文字句": "策字伯符。坚初兴义兵，策将母徙居舒，与周瑜相友，收合士大夫，江、淮间人咸向之。坚薨，还葬曲阿。已乃渡江居江都。",
+      "史略分类": "武将",
+      "主要史料出处": "《04三国志·卷46·孙破虏讨逆传》",
+      "paragraphs": [
+        {
+          "volume": "孙破虏讨逆传",
+          "paragraph_from": 8,
+          "paragraph_to": 11
+        }
+      ]
+    }
+  ]
+}

@@ -13,7 +13,11 @@ from lib.mother_sentences import (
     mother_sentence_count,
     plan_min_sentence_ratio,
 )
-from lib.plan_postprocess import finalize_plan, validate_external_items
+from lib.plan_postprocess import (
+    MAX_REFERENCE_WORKS,
+    finalize_plan,
+    validate_external_items,
+)
 from lib.verify import sanitize_entry_name
 
 
@@ -27,6 +31,16 @@ def plan_path(entry_id: str, entry_name: str, work_dir: Path) -> Path:
 
 def mother_draft_path(entry_id: str, entry_name: str, work_dir: Path) -> Path:
     return work_dir / f"{artifact_stem(entry_id, entry_name)}.mother.json"
+
+
+def voice_draft_path(entry_id: str, entry_name: str, work_dir: Path) -> Path:
+    """Phase3 润色原稿（校验前落盘；失败回滚终稿时仍可人工查看）。"""
+    return work_dir / f"{artifact_stem(entry_id, entry_name)}.voice.json"
+
+
+def voice_alerts_path(entry_id: str, entry_name: str, work_dir: Path) -> Path:
+    """Phase3 格式层自动修复/报警清单（抽检用，非硬拦）。"""
+    return work_dir / f"{artifact_stem(entry_id, entry_name)}.voice.alerts.json"
 
 
 def load_plan(path: Path) -> Tuple[bool, Dict[str, Any], List[str]]:
@@ -145,9 +159,21 @@ def normalize_plan(
     return out
 
 
-def save_plan(path: Path, plan: Dict[str, Any], recalled: Dict[str, Any] | None = None, *, id_start: int = 1) -> None:
+def save_plan(
+    path: Path,
+    plan: Dict[str, Any],
+    recalled: Dict[str, Any] | None = None,
+    *,
+    id_start: int = 1,
+    external_dedupe_llm: bool = False,
+) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    normalized = finalize_plan(normalize_plan(plan, recalled), recalled, id_start=id_start)
+    normalized = finalize_plan(
+        normalize_plan(plan, recalled),
+        recalled,
+        id_start=id_start,
+        external_dedupe_llm=external_dedupe_llm,
+    )
     for k in ("翻译详情", "content", "result", "output"):
         normalized.pop(k, None)
     path.write_text(
@@ -169,6 +195,19 @@ def verify_plan(
     ok, plan, errors = load_plan(path)
     if not ok:
         return False, errors
+    # 门禁：截断前先查硬上限（促使模型重试只交最重要的 ≤10）
+    raw_refs = plan.get("参考著作")
+    if isinstance(raw_refs, list):
+        seen: List[str] = []
+        for r in raw_refs:
+            s = str(r or "").strip()
+            if s and s not in seen:
+                seen.append(s)
+        if len(seen) > MAX_REFERENCE_WORKS:
+            errors.append(
+                f"参考著作超过硬上限 {MAX_REFERENCE_WORKS} 条（当前 {len(seen)}）；"
+                f"只返回最重要的 {MAX_REFERENCE_WORKS} 个"
+            )
     plan = finalize_plan(normalize_plan(plan, recalled), recalled, id_start=1)
 
     if plan.get("史略ID") != entry_id:
@@ -194,6 +233,17 @@ def verify_plan(
     refs = plan.get("参考著作") or []
     if not isinstance(refs, list) or not refs:
         errors.append("source plan 缺少「参考著作」")
+    else:
+        seen_refs: List[str] = []
+        for r in refs:
+            s = str(r or "").strip()
+            if s and s not in seen_refs:
+                seen_refs.append(s)
+        if len(seen_refs) > MAX_REFERENCE_WORKS:
+            errors.append(
+                f"参考著作超过硬上限 {MAX_REFERENCE_WORKS} 条（当前 {len(seen_refs)}）；"
+                f"只返回最重要的 {MAX_REFERENCE_WORKS} 个"
+            )
 
     supplements = plan.get("索引补充处理") or []
     supplement_blocks = [
@@ -206,6 +256,19 @@ def verify_plan(
 
     external = plan.get("外部补全") or []
     if isinstance(external, list):
+        from lib.external_macro import plan_external_hunt_enabled
+        from lib.longform_compat import is_longform
+
+        # polish 路径：plan 不再挖外部补全，空数组合法
+        if (
+            plan_external_hunt_enabled()
+            and is_longform(plan)
+            and len(external) == 0
+        ):
+            errors.append(
+                "长文 source plan 禁止「外部补全」为空数组；"
+                "须列带《书·卷》的候选再标采用（宁缺毋滥：不要求凑满采用:true 条数）"
+            )
         for i, item in enumerate(external):
             if not isinstance(item, dict):
                 errors.append(f"外部补全[{i}] 不是对象")
@@ -216,6 +279,28 @@ def verify_plan(
                 errors.append(f"外部补全[{i}] 缺少「出处」")
     else:
         errors.append("source plan「外部补全」必须为数组")
+
+    # 他书索引补充不得整卷「去重不用」
+    if supplement_blocks and isinstance(supplements, list):
+        mother_work = str(recalled.get("母本著作") or plan.get("母本著作") or "")
+        # 若召回有非母本补充块，却全部去重 → 失败（finalize 本应已纠偏；此处兜底）
+        other_blocks = [
+            b
+            for b in supplement_blocks
+            if str(b.get("work") or "").strip() != mother_work
+        ]
+        if other_blocks:
+            useful = [
+                e
+                for e in supplements
+                if isinstance(e, dict)
+                and str(e.get("处理") or "").strip() in ("引入", "异说")
+            ]
+            if not useful:
+                errors.append(
+                    "索引补充含他书，不得全部「去重不用」；"
+                    "须至少一条「引入」或「异说」以筛差异点"
+                )
 
     structure = plan.get("写作结构") or []
     if not isinstance(structure, list) or not structure:

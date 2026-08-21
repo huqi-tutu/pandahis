@@ -1,0 +1,105 @@
+{
+  "work": "04三国志",
+  "vol": "008",
+  "total_paragraphs": 19,
+  "method": "Step1b-α LLM",
+  "paragraphs": [
+    {
+      "paragraph": 1,
+      "primary_subject": "卷首标题",
+      "disposition": "exclude",
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "primary_subject": "公孙瓒",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 3,
+      "primary_subject": "公孙瓒",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 4,
+      "primary_subject": "公孙瓒",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 5,
+      "primary_subject": "公孙瓒",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 6,
+      "primary_subject": "公孙瓒",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 7,
+      "primary_subject": "公孙瓒",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 8,
+      "primary_subject": "陶谦",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 9,
+      "primary_subject": "陶谦",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 10,
+      "primary_subject": "张杨",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 11,
+      "primary_subject": "公孙度",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 12,
+      "primary_subject": "公孙度",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 13,
+      "primary_subject": "公孙度",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 14,
+      "primary_subject": "公孙度",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 15,
+      "primary_subject": "张燕",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 16,
+      "primary_subject": "张绣",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 17,
+      "primary_subject": "张鲁",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 18,
+      "primary_subject": "张鲁",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 19,
+      "primary_subject": "论赞",
+      "disposition": "exclude",
+      "exclude_reason": "论赞"
+    }
+  ]
+}

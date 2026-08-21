@@ -48374,3 +48374,5 @@
 {"ts": "2026-07-04T19:24:09Z", "event": "job_done", "work": "02汉书", "vol": "119", "step": "4"}
 {"ts": "2026-08-08T08:24:54Z", "event": "bootstrap_start", "work": "03后汉书"}
 {"ts": "2026-08-08T08:24:55Z", "event": "bootstrap_done", "work": "03后汉书", "volumes": 130}
+{"ts": "2026-08-17T14:37:38Z", "event": "bootstrap_start", "work": "04三国志"}
+{"ts": "2026-08-17T14:37:38Z", "event": "bootstrap_done", "work": "04三国志", "volumes": 65}

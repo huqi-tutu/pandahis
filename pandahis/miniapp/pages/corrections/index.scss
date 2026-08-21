@@ -6,8 +6,15 @@
 }
 
 .corrections-body {
-  padding: 0 32rpx calc(48rpx + env(safe-area-inset-bottom));
+  /* 勿用 padding 简写：会盖掉内联 pageTopPadPx，导致列表顶进导航栏 */
+  padding-left: 32rpx;
+  padding-right: 32rpx;
+  padding-bottom: calc(48rpx + env(safe-area-inset-bottom));
   box-sizing: border-box;
+}
+
+.corrections-inner {
+  padding-top: 24rpx;
 }
 
 .correction-list {
@@ -109,12 +116,6 @@
   font-size: 28rpx;
 }
 
-.loading {
-  text-align: center;
-  padding: 80rpx;
-  color: $inactive-text;
-  font-size: 28rpx;
-}
 
 .login-btn {
   margin-top: 8rpx;

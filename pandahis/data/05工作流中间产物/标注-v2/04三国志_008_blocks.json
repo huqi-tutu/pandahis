@@ -1,0 +1,106 @@
+{
+  "work": "04三国志",
+  "vol": "008",
+  "total_paragraphs": 19,
+  "volume_subtype": "hezhuan",
+  "derived_from": "04三国志_008_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 19,
+      "paragraph_to": 19,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "公孙瓒",
+      "category": "武将",
+      "paragraph_from": 2,
+      "paragraph_to": 7,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "公孙瓒字伯珪，辽西令支人也。（令音郎定反。支音其儿反。）为郡门下书佐。有姿仪，大",
+        "close_paragraph": 7,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P7"
+      }
+    },
+    {
+      "name": "陶谦",
+      "category": "武将",
+      "paragraph_from": 8,
+      "paragraph_to": 9,
+      "boundary_evidence": {
+        "open_paragraph": 8,
+        "open_phrase": "陶谦字恭祖，丹杨人。少好学，为诸生，仕州郡，举茂才，除卢令，迁幽州刺史，徵拜议郎",
+        "close_paragraph": 9,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P8–P9"
+      }
+    },
+    {
+      "name": "张杨",
+      "category": "武将",
+      "paragraph_from": 10,
+      "paragraph_to": 10,
+      "boundary_evidence": {
+        "open_paragraph": 10,
+        "open_phrase": "张杨字稚叔，云中人也。以武勇给并州，为武猛从事。灵帝末，天下乱，帝以所宠小黄门蹇",
+        "close_paragraph": 10,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P10–P10"
+      }
+    },
+    {
+      "name": "公孙度",
+      "category": "武将",
+      "paragraph_from": 11,
+      "paragraph_to": 14,
+      "boundary_evidence": {
+        "open_paragraph": 11,
+        "open_phrase": "公孙度字升济，本辽东襄平人也。度父延，避吏居玄菟，任度为郡吏。时玄菟太守公孙琙，",
+        "close_paragraph": 14,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P11–P14"
+      }
+    },
+    {
+      "name": "张燕",
+      "category": "武将",
+      "paragraph_from": 15,
+      "paragraph_to": 15,
+      "boundary_evidence": {
+        "open_paragraph": 15,
+        "open_phrase": "张燕，常山真定人也，本姓褚。黄巾起，燕合聚少年为群盗，在山泽间转攻，还真定，众万",
+        "close_paragraph": 15,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P15–P15"
+      }
+    },
+    {
+      "name": "张绣",
+      "category": "武将",
+      "paragraph_from": 16,
+      "paragraph_to": 16,
+      "boundary_evidence": {
+        "open_paragraph": 16,
+        "open_phrase": "张绣，武威祖厉人，骠骑将军济族子也。边章、韩遂为乱凉州，金城麹胜袭杀祖厉长刘隽。",
+        "close_paragraph": 16,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P16–P16"
+      }
+    },
+    {
+      "name": "张鲁",
+      "category": "武将",
+      "paragraph_from": 17,
+      "paragraph_to": 18,
+      "boundary_evidence": {
+        "open_paragraph": 17,
+        "open_phrase": "张鲁字公祺，沛国丰人也。祖父陵，客蜀，学道鹄鸣山中，造作道书以惑百姓，从受道者出",
+        "close_paragraph": 18,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P17–P18"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

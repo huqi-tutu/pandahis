@@ -1,0 +1,82 @@
+{
+  "work": "04三国志",
+  "vol": "060",
+  "total_paragraphs": 44,
+  "volume_subtype": "hezhuan",
+  "derived_from": "04三国志_060_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 44,
+      "paragraph_to": 44,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "贺齐",
+      "category": "武将",
+      "paragraph_from": 2,
+      "paragraph_to": 12,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "贺齐字公苗，会稽山阴人也。少为郡吏，守剡长。县吏斯从轻侠为奸，齐欲治之，主簿谏曰",
+        "close_paragraph": 12,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P12"
+      }
+    },
+    {
+      "name": "全琮",
+      "category": "武将",
+      "paragraph_from": 13,
+      "paragraph_to": 19,
+      "boundary_evidence": {
+        "open_paragraph": 13,
+        "open_phrase": "全琮字子璜，吴郡钱唐人也。父柔，汉灵帝时举孝廉，补尚书郎右丞，董卓之乱，弃官归，",
+        "close_paragraph": 19,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P13–P19"
+      }
+    },
+    {
+      "name": "吕岱",
+      "category": "武将",
+      "paragraph_from": 20,
+      "paragraph_to": 28,
+      "boundary_evidence": {
+        "open_paragraph": 20,
+        "open_phrase": "吕岱字定公，广陵海陵人也，为郡县吏，避乱南渡。孙权统事，岱诣幕府，出守吴丞。权亲",
+        "close_paragraph": 28,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P20–P28"
+      }
+    },
+    {
+      "name": "周鲂",
+      "category": "武将",
+      "paragraph_from": 29,
+      "paragraph_to": 40,
+      "boundary_evidence": {
+        "open_paragraph": 29,
+        "open_phrase": "周鲂字子鱼，吴郡阳羡人也。少好学，举孝廉，为宁国长，转在怀安。钱唐大帅彭式等蚁聚",
+        "close_paragraph": 40,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P29–P40"
+      }
+    },
+    {
+      "name": "钟离牧",
+      "category": "武将",
+      "paragraph_from": 41,
+      "paragraph_to": 43,
+      "boundary_evidence": {
+        "open_paragraph": 41,
+        "open_phrase": "钟离牧字子幹，会稽山阴人，汉鲁相意七世孙也。少爰居永兴，躬自垦田，种稻二十余亩。",
+        "close_paragraph": 43,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P41–P43"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

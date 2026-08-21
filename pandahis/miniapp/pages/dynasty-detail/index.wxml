@@ -5,17 +5,14 @@
   <!-- 导航栏 -->
   <proto-nav title="{{navTitle}}" show-back="{{true}}" />
 
-  <view wx:if="{{loading}}" class="dynasty-state" style="padding-top: {{scrollTop}}px;">
-    <text class="dynasty-state-text">加载中…</text>
-  </view>
+  <page-loading wx:if="{{loading}}" text="加载中"></page-loading>
 
-  <view wx:elif="{{loadError}}" class="dynasty-state" style="padding-top: {{scrollTop}}px;">
-    <text class="dynasty-state-text">{{loadError}}</text>
+  <page-loading wx:elif="{{loadError}}" text="{{loadError}}" show-dots="{{false}}" block="{{true}}">
     <view class="dynasty-state-actions">
       <view class="dynasty-retry-btn" bindtap="retryLoad" hover-class="dynasty-retry-hover" hover-stay-time="60">重试</view>
       <view wx:if="{{loadErrorDetail}}" class="dynasty-copy-btn" bindtap="copyLoadError" hover-class="dynasty-retry-hover" hover-stay-time="60">复制错误信息</view>
     </view>
-  </view>
+  </page-loading>
 
   <view wx:elif="{{unit && swim}}">
 
@@ -350,7 +347,10 @@
   <view class="ud-modal" wx:if="{{showIntroModal}}" bindtap="closeIntro">
     <view class="ud-modal-card" catchtap="noop">
       <view class="ud-modal-header">
-        <view class="ud-modal-title">{{introModalTitle}}</view>
+        <view class="ud-modal-title-wrap">
+          <view class="ud-modal-title">朝代简介</view>
+          <view class="ud-modal-source" wx:if="{{dynastyTitle}}">{{dynastyTitle}}</view>
+        </view>
         <view class="ud-modal-close" catchtap="closeIntro">
           <text class="ud-modal-close-icon">✕</text>
         </view>

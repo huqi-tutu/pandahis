@@ -1,0 +1,808 @@
+{
+  "volume": "宦者列传",
+  "source_file": "03后汉书_085_宦者列传第六十八.txt",
+  "total_paragraphs": 78,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "interleaved",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 3,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "郑众",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 6,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "郑众",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "郑众",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "郑众",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "郑众",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "蔡伦",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "蔡伦",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "蔡伦",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "蔡伦",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "蔡伦",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "孙程",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "孙程",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "孙程",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "孙程",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "孙程",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "孙程",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "孙程",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "孙程",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "孙程",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "孙程",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "孙程",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "孙程",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "孙程",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "曹腾",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "曹腾",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "曹腾",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "曹腾",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "单超",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "单超",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "单超",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "单超",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "单超",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "单超",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "单超",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "侯览",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "侯览",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "侯览",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "侯览",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "侯览",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "曹节",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [
+        {
+          "name": "曹节",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 47,
+      "owners": [
+        {
+          "name": "曹节",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 48,
+      "owners": [
+        {
+          "name": "曹节",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 49,
+      "owners": [
+        {
+          "name": "曹节",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 50,
+      "owners": [
+        {
+          "name": "曹节",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 51,
+      "owners": [
+        {
+          "name": "曹节",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 52,
+      "owners": [
+        {
+          "name": "曹节",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 53,
+      "owners": [
+        {
+          "name": "曹节",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 54,
+      "owners": [
+        {
+          "name": "曹节",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 55,
+      "owners": [
+        {
+          "name": "曹节",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 56,
+      "owners": [
+        {
+          "name": "曹节",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 57,
+      "owners": [
+        {
+          "name": "曹节",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 58,
+      "owners": [
+        {
+          "name": "曹节",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 59,
+      "owners": [
+        {
+          "name": "曹节",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 60,
+      "owners": [
+        {
+          "name": "曹节",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 61,
+      "owners": [
+        {
+          "name": "曹节",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 62,
+      "owners": [
+        {
+          "name": "曹节",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 63,
+      "owners": [
+        {
+          "name": "曹节",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 64,
+      "owners": [
+        {
+          "name": "曹节",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 65,
+      "owners": [
+        {
+          "name": "曹节",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 66,
+      "owners": [
+        {
+          "name": "曹节",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 67,
+      "owners": [
+        {
+          "name": "曹节",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 68,
+      "owners": [
+        {
+          "name": "张让",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 69,
+      "owners": [
+        {
+          "name": "张让",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 70,
+      "owners": [
+        {
+          "name": "张让",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 71,
+      "owners": [
+        {
+          "name": "张让",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 72,
+      "owners": [
+        {
+          "name": "张让",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 73,
+      "owners": [
+        {
+          "name": "张让",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 74,
+      "owners": [
+        {
+          "name": "张让",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 75,
+      "owners": [
+        {
+          "name": "张让",
+          "category": "宦官"
+        }
+      ]
+    },
+    {
+      "paragraph": 76,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 77,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 78,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HOUHANSHU_085_01",
+      "史略名称": "郑众",
+      "史略简介": "郑众",
+      "原文字句": "中兴之初，宦官悉用阉人，不复杂调他士。至永平中，始置员数，中常侍四人，小黄门十人。和帝即祚幼弱，而窦宪兄弟专总权威，内外臣僚，莫由亲接，所与居者，唯庵宦而已。故郑众得专谋禁中，终除大憝，遂享分土之封，超登宫卿之位。于是中官始盛焉。",
+      "史略分类": "宦官",
+      "主要史料出处": "《03后汉书·卷85·宦者列传》",
+      "paragraphs": [
+        {
+          "volume": "宦者列传",
+          "paragraph_from": 4,
+          "paragraph_to": 4
+        },
+        {
+          "volume": "宦者列传",
+          "paragraph_from": 7,
+          "paragraph_to": 10
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_085_02",
+      "史略名称": "蔡伦",
+      "史略简介": "蔡伦",
+      "原文字句": "蔡伦字敬仲，桂阳人也。以永平末始给事宫掖，建初中，为小黄门。及和帝即位，转中常侍，豫参帷幄。",
+      "史略分类": "宦官",
+      "主要史料出处": "《03后汉书·卷85·宦者列传》",
+      "paragraphs": [
+        {
+          "volume": "宦者列传",
+          "paragraph_from": 11,
+          "paragraph_to": 15
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_085_03",
+      "史略名称": "孙程",
+      "史略简介": "孙程",
+      "原文字句": "孙程字稚卿，涿郡新城人也。安帝时，为中黄门，给事长乐宫。",
+      "史略分类": "宦官",
+      "主要史料出处": "《03后汉书·卷85·宦者列传》",
+      "paragraphs": [
+        {
+          "volume": "宦者列传",
+          "paragraph_from": 16,
+          "paragraph_to": 28
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_085_04",
+      "史略名称": "曹腾",
+      "史略简介": "曹腾",
+      "原文字句": "曹腾字季兴，沛国谯人也。安帝时，除黄门从官。顺帝在东宫，邓太后以腾年少谨厚，使侍皇太子书，特见亲爱。及帝即位，腾为小黄门，迁中常侍。桓帝得立，腾与长乐太仆州辅等七人，以定策功，皆封亭侯，腾为费亭侯，迁大长秋，加位特进。",
+      "史略分类": "宦官",
+      "主要史料出处": "《03后汉书·卷85·宦者列传》",
+      "paragraphs": [
+        {
+          "volume": "宦者列传",
+          "paragraph_from": 29,
+          "paragraph_to": 32
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_085_05",
+      "史略名称": "单超",
+      "史略简介": "单超",
+      "原文字句": "单超，河南人；徐璜，下邳良城人；具瑗，魏郡元城人；左悺，河南平阴人；唐衡，颍川郾人也。桓帝初，超、璜、瑗为中常侍，悺、衡为小黄门史。",
+      "史略分类": "宦官",
+      "主要史料出处": "《03后汉书·卷85·宦者列传》",
+      "paragraphs": [
+        {
+          "volume": "宦者列传",
+          "paragraph_from": 33,
+          "paragraph_to": 39
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_085_06",
+      "史略名称": "侯览",
+      "史略简介": "侯览",
+      "原文字句": "侯览者，山阳防东人。桓帝初为中常侍，以佞猾进，倚势贪放，受纳货遗以巨万计。延熹中，连岁征伐，府帑空虚，乃假百官奉禄，王侯租税。览亦上缣五千匹，赐爵关内侯。又托以与议诛梁冀功，进封高乡侯。",
+      "史略分类": "宦官",
+      "主要史料出处": "《03后汉书·卷85·宦者列传》",
+      "paragraphs": [
+        {
+          "volume": "宦者列传",
+          "paragraph_from": 40,
+          "paragraph_to": 44
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_085_07",
+      "史略名称": "曹节",
+      "史略简介": "曹节",
+      "原文字句": "曹节字汉丰，南阳新野人也。其本魏郡人，世吏二千石。顺帝初，以西园骑迁小黄门。桓帝时，迁中常侍，奉车都尉。建宁元年，持节将中黄门虎贲羽林千人，北迎灵帝，陪乘入宫。及即位，以定策封长安乡侯，六百户。",
+      "史略分类": "宦官",
+      "主要史料出处": "《03后汉书·卷85·宦者列传》",
+      "paragraphs": [
+        {
+          "volume": "宦者列传",
+          "paragraph_from": 45,
+          "paragraph_to": 67
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_085_08",
+      "史略名称": "张让",
+      "史略简介": "张让",
+      "原文字句": "张让者，颎川人；赵忠者，安平人也。少皆给事者中，桓帝时为小黄门。忠以与诛梁冀功封都乡侯。延熹八年，黜为关内侯，食本县租千斛。",
+      "史略分类": "宦官",
+      "主要史料出处": "《03后汉书·卷85·宦者列传》",
+      "paragraphs": [
+        {
+          "volume": "宦者列传",
+          "paragraph_from": 68,
+          "paragraph_to": 75
+        }
+      ]
+    }
+  ],
+  "translation_qa_hint": "混写卷：人物段落非连续。翻译质检须按 entries[].paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。"
+}

@@ -1,0 +1,39 @@
+<view class="page-shell">
+  <proto-nav title="{{navTitle}}" show-back="{{true}}"></proto-nav>
+
+  <view class="notes-body" style="padding-top: {{pageTopPadPx}}px;">
+    <view class="notes-inner">
+      <view wx:if="{{!hasToken}}" class="empty-state">
+        <text class="empty-icon">🔒</text>
+        <text class="empty-text">登录后可查看笔记</text>
+        <view class="login-btn btn-primary" bindtap="goLogin">去登录</view>
+      </view>
+
+      <block wx:elif="{{loaded}}">
+        <view wx:if="{{!items.length}}" class="empty-state">
+          <text class="empty-icon">✎</text>
+          <text class="empty-text">这个朝代还没有笔记</text>
+        </view>
+
+        <view wx:else class="card-list">
+          <view
+            class="card card-paper"
+            wx:for="{{items}}"
+            wx:key="id"
+            data-id="{{item.id}}"
+            bindtap="onItemTap"
+          >
+            <view class="top">
+              <text class="t">{{item.boxTitle}}</text>
+              <text class="time muted">{{item.createdAtLabel}}</text>
+            </view>
+            <text class="quote">{{item.selectedExcerpt}}</text>
+            <text class="remark {{item.emptyRemark ? 'remark--empty' : ''}}">{{item.remarkLabel}}</text>
+          </view>
+        </view>
+      </block>
+
+      <page-loading wx:else text="加载中"></page-loading>
+    </view>
+  </view>
+</view>

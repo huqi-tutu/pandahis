@@ -1,0 +1,94 @@
+{
+  "work": "04三国志",
+  "vol": "015",
+  "total_paragraphs": 28,
+  "volume_subtype": "hezhuan",
+  "derived_from": "04三国志_015_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 28,
+      "paragraph_to": 28,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "刘馥",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 5,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "刘馥字元颖，沛国相人也。避乱扬州，建安初，说袁术将戚寄、秦翊，使率众与俱诣太祖。",
+        "close_paragraph": 5,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P5"
+      }
+    },
+    {
+      "name": "司马朗",
+      "category": "文臣",
+      "paragraph_from": 6,
+      "paragraph_to": 10,
+      "boundary_evidence": {
+        "open_paragraph": 6,
+        "open_phrase": "司马朗字伯达，河内温人也。九岁，人有道其父字者，朗曰：“慢人亲者，不敬其亲者也。",
+        "close_paragraph": 10,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P6–P10"
+      }
+    },
+    {
+      "name": "梁习",
+      "category": "文臣",
+      "paragraph_from": 11,
+      "paragraph_to": 12,
+      "boundary_evidence": {
+        "open_paragraph": 11,
+        "open_phrase": "梁习字子虞，陈郡柘人也，为郡纲纪。太祖为司空，辟召为漳长，累转乘氏、海西、下邳令",
+        "close_paragraph": 12,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P11–P12"
+      }
+    },
+    {
+      "name": "张既",
+      "category": "文臣",
+      "paragraph_from": 13,
+      "paragraph_to": 17,
+      "boundary_evidence": {
+        "open_paragraph": 13,
+        "open_phrase": "张既字德容，冯翊高陵人也。年十六，为郡小吏。后历右职，举孝廉，不行。太祖为司空，",
+        "close_paragraph": 17,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P13–P17"
+      }
+    },
+    {
+      "name": "温恢",
+      "category": "文臣",
+      "paragraph_from": 18,
+      "paragraph_to": 21,
+      "boundary_evidence": {
+        "open_paragraph": 18,
+        "open_phrase": "温恢字曼基，太原祁人也。父恕，为涿郡太守，卒。恢年十五，送丧还归乡里，内足于财。",
+        "close_paragraph": 21,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P18–P21"
+      }
+    },
+    {
+      "name": "贾逵",
+      "category": "文臣",
+      "paragraph_from": 22,
+      "paragraph_to": 27,
+      "boundary_evidence": {
+        "open_paragraph": 22,
+        "open_phrase": "贾逵字梁道，河东襄陵人也。自为儿童，戏弄常设部伍，祖父习异之，曰：“汝大必为将率",
+        "close_paragraph": 27,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P22–P27"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

@@ -1,0 +1,27 @@
+{
+  "work": "03后汉书",
+  "vol": "075",
+  "volume_name": "窦何列传",
+  "volume_type_guess": "列传",
+  "volume_arc": "C",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "窦武",
+      "category": "宗戚",
+      "rationale": "卷名『窦何列传』以窦武、何进二人并列合传。窦武为东汉外戚（窦太后之父），桓灵之际以外戚大将军辅政，谋诛宦官事败而死，属后族外戚身份，故归宗戚。"
+    },
+    {
+      "name": "何进",
+      "category": "宗戚",
+      "rationale": "卷名『窦何列传』以窦武、何进二人并列合传。何进为东汉外戚（何太后之兄），灵帝末以外戚大将军辅政，谋诛宦官事泄被杀，属后族外戚身份，故归宗戚。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "work": "04三国志",
+  "vol": "038",
+  "total_paragraphs": 21,
+  "volume_subtype": "hezhuan",
+  "derived_from": "04三国志_038_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 21,
+      "paragraph_to": 21,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "许靖",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 9,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "许靖字文休，汝南平舆人。少与从弟劭俱知名，并有人伦臧否之称，而私情不协。劭为郡功",
+        "close_paragraph": 9,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P9"
+      }
+    },
+    {
+      "name": "麋竺",
+      "category": "文臣",
+      "paragraph_from": 10,
+      "paragraph_to": 11,
+      "boundary_evidence": {
+        "open_paragraph": 10,
+        "open_phrase": "麋竺字子仲，东海朐人也。祖世货殖，僮客万人，赀产钜亿。后徐州牧陶谦辟为别驾从事。",
+        "close_paragraph": 11,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P10–P11"
+      }
+    },
+    {
+      "name": "孙乾",
+      "category": "文臣",
+      "paragraph_from": 12,
+      "paragraph_to": 12,
+      "boundary_evidence": {
+        "open_paragraph": 12,
+        "open_phrase": "孙乾字公祐，北海人也。先主领徐州，辟为从事，后随从周旋。先主之背曹公，遣乾自结袁",
+        "close_paragraph": 12,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P12–P12"
+      }
+    },
+    {
+      "name": "简雍",
+      "category": "文臣",
+      "paragraph_from": 13,
+      "paragraph_to": 13,
+      "boundary_evidence": {
+        "open_paragraph": 13,
+        "open_phrase": "简雍字宪和，涿郡人也。少与先主有旧，随从周旋。先主至荆州，雍与麋竺、孙乾同为从事",
+        "close_paragraph": 13,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P13–P13"
+      }
+    },
+    {
+      "name": "伊籍",
+      "category": "文臣",
+      "paragraph_from": 14,
+      "paragraph_to": 14,
+      "boundary_evidence": {
+        "open_paragraph": 14,
+        "open_phrase": "伊籍字机伯，山阳人。少依邑人镇南将军刘表。先主之在荆州，籍常往来自讬。表卒，遂随",
+        "close_paragraph": 14,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P14–P14"
+      }
+    },
+    {
+      "name": "秦宓",
+      "category": "文臣",
+      "paragraph_from": 15,
+      "paragraph_to": 20,
+      "boundary_evidence": {
+        "open_paragraph": 15,
+        "open_phrase": "秦宓字子敕，广汉绵竹人也。少有才学，州郡辟命，辄称疾不往。奏记州牧刘焉，荐儒士任",
+        "close_paragraph": 20,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P15–P20"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

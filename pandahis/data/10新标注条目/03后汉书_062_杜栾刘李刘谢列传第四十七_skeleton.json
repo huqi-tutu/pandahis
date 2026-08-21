@@ -1,0 +1,576 @@
+{
+  "volume": "杜栾刘李刘谢列传",
+  "source_file": "03后汉书_062_杜栾刘李刘谢列传第四十七.txt",
+  "total_paragraphs": 54,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "杜根",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "杜根",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "杜根",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "杜根",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "栾巴",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "栾巴",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "栾巴",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "栾巴",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "刘陶",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "刘陶",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "刘陶",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "刘陶",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "刘陶",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "刘陶",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "刘陶",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "刘陶",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "刘陶",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "刘陶",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "刘陶",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "刘陶",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "刘陶",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "刘陶",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "刘陶",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "刘陶",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "刘陶",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "刘陶",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "刘陶",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "刘陶",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "刘陶",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "李云",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "李云",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "李云",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "李云",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "刘瑜",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "刘瑜",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "刘瑜",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "刘瑜",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "刘瑜",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "刘瑜",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "刘瑜",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "刘瑜",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "刘瑜",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "刘瑜",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [
+        {
+          "name": "刘瑜",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 47,
+      "owners": [
+        {
+          "name": "刘瑜",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 48,
+      "owners": [
+        {
+          "name": "谢弼",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 49,
+      "owners": [
+        {
+          "name": "谢弼",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 50,
+      "owners": [
+        {
+          "name": "谢弼",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 51,
+      "owners": [
+        {
+          "name": "谢弼",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 52,
+      "owners": [
+        {
+          "name": "谢弼",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 53,
+      "owners": [
+        {
+          "name": "谢弼",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 54,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HOUHANSHU_062_01",
+      "史略名称": "杜根",
+      "史略简介": "杜根",
+      "原文字句": "杜根字伯坚，颍川定陵人也。父安，字伯夷，少有志节，年十三入太学，号奇童。京师贵戚慕其名，或遣之书，安不发，悉壁藏之。及后捕案贵戚宾客，安开壁出书，印封如故，竟不离其患，时人贵之。位至巴郡太守，政甚有声。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷62·杜栾刘李刘谢列传》",
+      "paragraphs": [
+        {
+          "volume": "杜栾刘李刘谢列传",
+          "paragraph_from": 2,
+          "paragraph_to": 5
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_062_02",
+      "史略名称": "栾巴",
+      "史略简介": "栾巴",
+      "原文字句": "栾巴字叔元，魏郡内黄人也。好道。顺帝世，以宦者给事掖庭，补黄门令，非其好也。性质直，学览经典，虽在中官，不与诸常侍交接。后阳气通畅，白上乞退，擢拜郎中，四迁桂杨太守。以郡处南垂，不闲典训，为吏人定婚姻丧纪之礼，兴立学校，以奖进之。虽干吏卑末，皆课令习读，程试殿最，随能升授。政事明察。视事七年，以病乞骸骨。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷62·杜栾刘李刘谢列传》",
+      "paragraphs": [
+        {
+          "volume": "杜栾刘李刘谢列传",
+          "paragraph_from": 6,
+          "paragraph_to": 9
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_062_03",
+      "史略名称": "刘陶",
+      "史略简介": "刘陶",
+      "原文字句": "刘陶字子奇，一名伟，颍川颍阴人，济北贞王勃之后。陶为人居简，不修上节。所与交友，必也同志。好尚或殊，富贵不求合；情趣苟同，贫贱不易意。同宗刘恺，以雅德知名，独深器陶。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷62·杜栾刘李刘谢列传》",
+      "paragraphs": [
+        {
+          "volume": "杜栾刘李刘谢列传",
+          "paragraph_from": 10,
+          "paragraph_to": 30
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_062_04",
+      "史略名称": "李云",
+      "史略简介": "李云",
+      "原文字句": "李云字行祖，甘陵人也。性好学，善阴阳。初举孝廉，再迁白马令。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷62·杜栾刘李刘谢列传》",
+      "paragraphs": [
+        {
+          "volume": "杜栾刘李刘谢列传",
+          "paragraph_from": 31,
+          "paragraph_to": 34
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_062_05",
+      "史略名称": "刘瑜",
+      "史略简介": "刘瑜",
+      "原文字句": "刘瑜字季节，广陵人也。高祖父广陵靖王。父辩，清河太守。瑜少好经学，尤善图谶、天文、历算之术。州郡礼请不就。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷62·杜栾刘李刘谢列传》",
+      "paragraphs": [
+        {
+          "volume": "杜栾刘李刘谢列传",
+          "paragraph_from": 36,
+          "paragraph_to": 47
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_062_06",
+      "史略名称": "谢弼",
+      "史略简介": "谢弼",
+      "原文字句": "谢弼字辅宣，东郡武阳人也。中直方正，为乡邑所宗师。建宁二年，诏举有道之士，弼与东海陈敦、玄菟公孙度俱对策，皆除郎中。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷62·杜栾刘李刘谢列传》",
+      "paragraphs": [
+        {
+          "volume": "杜栾刘李刘谢列传",
+          "paragraph_from": 48,
+          "paragraph_to": 53
+        }
+      ]
+    }
+  ]
+}

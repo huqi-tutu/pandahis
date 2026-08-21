@@ -1,0 +1,553 @@
+{
+  "volume": "党锢列传",
+  "source_file": "03后汉书_073_党锢列传第五十七.txt",
+  "total_paragraphs": 80,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 3,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 4,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 5,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 6,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 7,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 8,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 9,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 10,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 11,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 12,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 13,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 14,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 15,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "李膺",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "李膺",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "李膺",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "李膺",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "李膺",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "李膺",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "李膺",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "李膺",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "李膺",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "李膺",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "李膺",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "李膺",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "李膺",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 30,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 31,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 32,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 33,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 34,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 35,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 36,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 37,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 38,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 39,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 40,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 41,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 42,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 43,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 44,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 45,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 46,
+      "owners": [
+        {
+          "name": "范滂",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 47,
+      "owners": [
+        {
+          "name": "范滂",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 48,
+      "owners": [
+        {
+          "name": "范滂",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 49,
+      "owners": [
+        {
+          "name": "范滂",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 50,
+      "owners": [
+        {
+          "name": "范滂",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 51,
+      "owners": [
+        {
+          "name": "范滂",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 52,
+      "owners": [
+        {
+          "name": "范滂",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 53,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 54,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 55,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 56,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 57,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 58,
+      "owners": [
+        {
+          "name": "张俭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 59,
+      "owners": [
+        {
+          "name": "张俭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 60,
+      "owners": [
+        {
+          "name": "张俭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 61,
+      "owners": [
+        {
+          "name": "张俭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 62,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 63,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 64,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 65,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 66,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 67,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 68,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 69,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 70,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 71,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 72,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 73,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 74,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 75,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 76,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 77,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 78,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 79,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 80,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HOUHANSHU_073_01",
+      "史略名称": "李膺",
+      "史略简介": "李膺",
+      "原文字句": "李膺字元礼，颍川襄城人也。祖父脩，安帝时为太尉。父益，赵国相。膺性简亢，无所交接，唯以同郡荀淑、陈寔为师友。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷73·党锢列传》",
+      "paragraphs": [
+        {
+          "volume": "党锢列传",
+          "paragraph_from": 16,
+          "paragraph_to": 28
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_073_02",
+      "史略名称": "范滂",
+      "史略简介": "范滂",
+      "原文字句": "范滂字孟博，汝南征羌人也。少厉清节，为州里所服，举孝廉，光禄四行。时冀州饥荒，盗贼群起，乃以滂为清诏使，案察之。滂登车揽辔，慨然有澄清天下之志。乃至州境，守令自知臧污，望风解印绶去。其所举奏，莫不厌塞众议。迁光禄勋主事。时，陈蕃为光禄勋，滂执公仪诣蕃，蕃不止之，滂怀恨，投版弃官而去。郭林宗闻而让蕃曰：“若范孟博者，岂宜以公礼格之？今成其去就之名，得无自取不优之议也？”蕃乃谢焉。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷73·党锢列传》",
+      "paragraphs": [
+        {
+          "volume": "党锢列传",
+          "paragraph_from": 46,
+          "paragraph_to": 52
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_073_03",
+      "史略名称": "张俭",
+      "史略简介": "张俭",
+      "原文字句": "张俭字元节，山阳高平人，赵王张耳之后也。父成，江夏太守，俭初举茂才，以刺史非其人，谢病不起。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷73·党锢列传》",
+      "paragraphs": [
+        {
+          "volume": "党锢列传",
+          "paragraph_from": 58,
+          "paragraph_to": 61
+        }
+      ]
+    }
+  ]
+}

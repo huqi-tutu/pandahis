@@ -1,0 +1,40 @@
+{
+  "work": "03后汉书",
+  "vol": "094",
+  "volume_name": "列女传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "鲍宣妻桓少君",
+      "category": "庶众",
+      "rationale": "《列女传》为后汉书所载历代贞节贤德女性之合传，桓少君为卷首列女，以德行著称，属庶众类。"
+    },
+    {
+      "name": "王霸妻",
+      "category": "庶众",
+      "rationale": "《列女传》以女性人物为主轴，王霸妻以贤德隐逸著称，属庶众类。"
+    },
+    {
+      "name": "姜诗妻庞氏",
+      "category": "庶众",
+      "rationale": "《列女传》列女之一，以孝行感天著称，属庶众类。"
+    },
+    {
+      "name": "曹世叔妻班昭",
+      "category": "文臣",
+      "rationale": "班昭为东汉著名女史学家、文学家，续成《汉书》，以才学仕宦闻名，属文臣类。"
+    },
+    {
+      "name": "蔡邕女蔡文姬",
+      "category": "庶众",
+      "rationale": "《列女传》列女之一，以才学与坎坷身世著称，属庶众类。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

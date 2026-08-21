@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>半屏浮窗统一 · Content Sheet 对照稿</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --theme-primary: #4a3f3f;
+      --page-bg: #f8f6f2;
+      --card-bg: #ffffff;
+      --divider: #edeae6;
+      --text-title: #262626;
+      --text-ink: #4a3f3f;
+      --text-body: #6a6a6a;
+      --text-caption: #8a8a8a;
+      --text-time: #b0a89e;
+      --shadow-elevated: 0 4px 12px rgba(74, 63, 63, 0.06);
+      --dyn-c1-deep: #7b573c;
+      --dyn-c1-active: #ece4db;
+      --status-pending: #8d7745;
+      --status-link: #2a7a5d;
+      --mask: rgba(74, 63, 63, 0.50);
+      --radius-sheet: 12px;
+      --font-title: "Noto Serif SC", "Songti SC", "STSong", serif;
+      --font-body: "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; }
+    body {
+      font-family: var(--font-body);
+      color: var(--text-ink);
+      background:
+        radial-gradient(ellipse 80% 50% at 20% 0%, rgba(162, 115, 79, 0.08), transparent 55%),
+        radial-gradient(ellipse 70% 45% at 90% 10%, rgba(99, 137, 156, 0.07), transparent 50%),
+        linear-gradient(180deg, #f3efe8 0%, #ebe6de 100%);
+    }
+
+    .page {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 36px 28px 64px;
+    }
+
+    .hero {
+      margin-bottom: 32px;
+    }
+
+    .hero-kicker {
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-caption);
+      margin-bottom: 10px;
+    }
+
+    .hero h1 {
+      margin: 0 0 10px;
+      font-family: var(--font-title);
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--text-title);
+      letter-spacing: 0.02em;
+    }
+
+    .hero p {
+      margin: 0;
+      max-width: 720px;
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text-body);
+    }
+
+    .spec {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .spec span {
+      display: inline-flex;
+      align-items: center;
+      height: 28px;
+      padding: 0 12px;
+      border-radius: 6px;
+      background: rgba(74, 63, 63, 0.06);
+      color: var(--text-ink);
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px 16px;
+      margin-bottom: 24px;
+    }
+
+    .toolbar-label {
+      font-size: 12px;
+      color: var(--text-caption);
+    }
+
+    .btn {
+      appearance: none;
+      border: 1px solid rgba(74, 63, 63, 0.16);
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--text-ink);
+      font: inherit;
+      font-size: 13px;
+      font-weight: 500;
+      height: 34px;
+      padding: 0 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+
+    .btn:hover {
+      background: #fff;
+      border-color: rgba(74, 63, 63, 0.28);
+    }
+
+    .btn.is-on {
+      background: var(--theme-primary);
+      border-color: var(--theme-primary);
+      color: #fdfcfa;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 28px;
+    }
+
+    @media (max-width: 1100px) {
+      .grid { grid-template-columns: 1fr; max-width: 390px; margin: 0 auto; }
+    }
+
+    .col-head {
+      margin-bottom: 12px;
+    }
+
+    .col-head h2 {
+      margin: 0 0 4px;
+      font-family: var(--font-title);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-title);
+    }
+
+    .col-head p {
+      margin: 0;
+      font-size: 12px;
+      line-height: 1.55;
+      color: var(--text-caption);
+    }
+
+    .variant-tag {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--dyn-c1-deep);
+      background: var(--dyn-c1-active);
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+
+    /* —— 手机框 —— */
+    .phone {
+      position: relative;
+      width: 100%;
+      max-width: 375px;
+      aspect-ratio: 375 / 780;
+      margin: 0 auto;
+      border-radius: 28px;
+      overflow: hidden;
+      background: #1c1816;
+      box-shadow:
+        0 1px 0 rgba(255,255,255,0.35) inset,
+        0 24px 48px rgba(36, 25, 23, 0.18);
+      border: 1px solid rgba(36, 25, 23, 0.35);
+    }
+
+    .phone-notch {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 98px;
+      height: 22px;
+      border-radius: 12px;
+      background: #0f0d0c;
+      z-index: 5;
+    }
+
+    .phone-stage {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(248, 246, 242, 0.92), rgba(248, 246, 242, 0.75)),
+        url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 59.5h60M59.5 0v60' stroke='%23e8e2d8' stroke-width='1'/%3E%3C/svg%3E");
+    }
+
+    .phone-fake-ui {
+      padding: 54px 20px 20px;
+      color: var(--text-caption);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .phone-fake-ui strong {
+      display: block;
+      font-family: var(--font-title);
+      font-size: 20px;
+      color: var(--text-title);
+      margin-bottom: 6px;
+    }
+
+    /* —— 统一壳 content-sheet —— */
+    .sheet-mask {
+      position: absolute;
+      inset: 0;
+      background: var(--mask);
+      display: flex;
+      align-items: flex-end;
+      z-index: 10;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.22s ease;
+    }
+
+    .sheet-mask.is-open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .sheet {
+      width: 100%;
+      background: var(--page-bg);
+      border-radius: var(--radius-sheet) var(--radius-sheet) 0 0;
+      box-shadow: var(--shadow-elevated);
+      padding: 14px 14px calc(14px + env(safe-area-inset-bottom, 0px));
+      display: flex;
+      flex-direction: column;
+      max-height: var(--sheet-h, 78%);
+      transform: translateY(100%);
+      transition: transform 0.22s ease;
+    }
+
+    .sheet-mask.is-open .sheet {
+      transform: translateY(0);
+    }
+
+    .sheet--short { --sheet-h: 62%; }
+    .sheet--standard { --sheet-h: 78%; }
+
+    .sheet-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 12px;
+      flex-shrink: 0;
+    }
+
+    .sheet-title-wrap {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .sheet-title {
+      font-family: var(--font-title);
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text-ink);
+      line-height: 1.3;
+    }
+
+    .sheet-subtitle {
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--text-caption);
+      line-height: 1.4;
+    }
+
+    .sheet-close {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(74, 63, 63, 0.06);
+      color: var(--text-body);
+      font-size: 14px;
+      line-height: 1;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      padding: 0;
+    }
+
+    .sheet-close:active {
+      background: rgba(74, 63, 63, 0.10);
+    }
+
+    .sheet-body {
+      flex: 1;
+      min-height: 0;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .sheet-body::-webkit-scrollbar { display: none; }
+
+    /* —— meta：纠错 —— */
+    .field {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .field--block {
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .field-label {
+      flex-shrink: 0;
+      width: 64px;
+      font-size: 13px;
+      color: var(--text-caption);
+      line-height: 1.5;
+    }
+
+    .field-value {
+      flex: 1;
+      font-size: 14px;
+      color: var(--text-ink);
+      line-height: 1.5;
+      word-break: break-word;
+    }
+
+    .field-row {
+      flex: 1;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 4px 8px;
+      min-width: 0;
+    }
+
+    .link-action {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--status-link);
+      cursor: pointer;
+    }
+
+    .quote {
+      font-size: 13px;
+      color: var(--text-body);
+      line-height: 1.65;
+      background: rgba(74, 63, 63, 0.05);
+      border-radius: 6px;
+      padding: 8px 9px;
+    }
+
+    .status-pending {
+      color: var(--status-pending);
+      font-weight: 500;
+    }
+
+    /* —— prose：简介 —— */
+    .prose p {
+      margin: 0 0 12px;
+      font-family: var(--font-title);
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.65;
+      color: rgba(36, 25, 23, 0.85);
+    }
+
+    .prose p:last-child { margin-bottom: 0; }
+
+    .note {
+      margin-top: 40px;
+      padding: 18px 20px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.55);
+      border: 1px solid rgba(74, 63, 63, 0.08);
+      font-size: 13px;
+      line-height: 1.7;
+      color: var(--text-body);
+    }
+
+    .note strong {
+      color: var(--text-ink);
+      font-weight: 600;
+    }
+
+    .note code {
+      font-size: 12px;
+      background: rgba(74, 63, 63, 0.06);
+      padding: 1px 6px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <div class="hero-kicker">PandaHis · Design Prototype</div>
+      <h1>半屏浮窗统一对照</h1>
+      <p>
+        同一套 <strong>content-sheet 壳</strong>（遮罩、圆角、底色、关闭钮、标题层级、上滑动效、高度档位）。
+        纠错用字段列表；简介 / 原文共用「大标题 + 小副标题」与衬线正文，出处只出现在副标题，正文不再重复。
+      </p>
+      <div class="spec">
+        <span>遮罩 rgba(墨色, .50)</span>
+        <span>面板 #F8F6F2</span>
+        <span>顶圆角 12px（24rpx）</span>
+        <span>关闭钮 28px 圆</span>
+        <span>标题 Noto Serif SC 17px</span>
+        <span>动效 0.22s 上滑</span>
+        <span>短档 ~62% / 标准档 ~78%</span>
+      </div>
+    </header>
+
+    <div class="toolbar">
+      <span class="toolbar-label">预览</span>
+      <button class="btn is-on" type="button" data-action="open-all">全部展开</button>
+      <button class="btn" type="button" data-action="close-all">全部收起</button>
+      <button class="btn" type="button" data-action="replay">重播动效</button>
+    </div>
+
+    <div class="grid">
+      <!-- 1 meta -->
+      <section>
+        <div class="col-head">
+          <h2>纠错详情</h2>
+          <p>来源作为首字段，与文明等同列。高度用标准档。</p>
+          <span class="variant-tag">content · meta</span>
+        </div>
+        <div class="phone" data-phone="meta">
+          <div class="phone-notch"></div>
+          <div class="phone-stage">
+            <div class="phone-fake-ui">
+              <strong>我的纠错</strong>
+              点击条目后从底部升起半屏。背景仅为示意。
+            </div>
+            <div class="sheet-mask is-open" data-sheet>
+              <div class="sheet sheet--standard" role="dialog" aria-label="纠错详情">
+                <div class="sheet-header">
+                  <div class="sheet-title-wrap">
+                    <div class="sheet-title">纠错详情</div>
+                  </div>
+                  <button class="sheet-close" type="button" aria-label="关闭" data-close>×</button>
+                </div>
+                <div class="sheet-body">
+                  <div class="field">
+                    <div class="field-label">来源</div>
+                    <div class="field-value">史略详情页</div>
+                  </div>
+                  <div class="field">
+                    <div class="field-label">文明</div>
+                    <div class="field-value">中国史</div>
+                  </div>
+                  <div class="field">
+                    <div class="field-label">朝代</div>
+                    <div class="field-value">秦</div>
+                  </div>
+                  <div class="field">
+                    <div class="field-label">史略</div>
+                    <div class="field-row">
+                      <div class="field-value">统一六国</div>
+                      <span class="link-action">去查看 ›</span>
+                    </div>
+                  </div>
+                  <div class="field field--block">
+                    <div class="field-label">选中内容</div>
+                    <div class="quote">始皇二十六年，秦并天下，分天下以为三十六郡，郡置守、尉、监。</div>
+                  </div>
+                  <div class="field">
+                    <div class="field-label">提交时间</div>
+                    <div class="field-value">2026-03-12 14:28</div>
+                  </div>
+                  <div class="field">
+                    <div class="field-label">处理状态</div>
+                    <div class="field-value status-pending">待处理</div>
+                  </div>
+                  <div class="field field--block">
+                    <div class="field-label">纠错原因</div>
+                    <div class="field-value">「三十六郡」表述与下文列表不完全对应，建议注明初置郡数与后续增置之别。</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2 prose -->
+      <section>
+        <div class="col-head">
+          <h2>朝代简介</h2>
+          <p>大标题「朝代简介」，副标题写朝代名；衬线正文。高度用短档。</p>
+          <span class="variant-tag">content · prose</span>
+        </div>
+        <div class="phone" data-phone="prose">
+          <div class="phone-notch"></div>
+          <div class="phone-stage">
+            <div class="phone-fake-ui">
+              <strong>秦 · 朝代详情</strong>
+              点击「朝代简介」展开。背景仅为示意。
+            </div>
+            <div class="sheet-mask is-open" data-sheet>
+              <div class="sheet sheet--short" role="dialog" aria-label="朝代简介">
+                <div class="sheet-header">
+                  <div class="sheet-title-wrap">
+                    <div class="sheet-title">朝代简介</div>
+                    <div class="sheet-subtitle">秦</div>
+                  </div>
+                  <button class="sheet-close" type="button" aria-label="关闭" data-close>×</button>
+                </div>
+                <div class="sheet-body prose">
+                  <p>秦朝（前221—前207）是中国历史上第一个大一统的中央集权王朝。秦始皇嬴政灭六国后，废分封、行郡县，车同轨、书同文，统一度量衡与货币，奠定此后两千余年帝国制度的基本骨架。</p>
+                  <p>然刑法严苛、徭役繁重，二世而亡。陈胜吴广揭竿而起，楚汉相争之后，刘邦建立汉朝。秦虽短促，其制度遗产深远，史称「百代皆行秦政法」。</p>
+                  <p>本简介仅作图谱浏览辅助，细节可在史略与原文引用中继续对照。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3 excerpt -->
+      <section>
+        <div class="col-head">
+          <h2>母本原文</h2>
+          <p>出处只在副标题；正文同简介衬线段落，无白框、不重复书名卷名。</p>
+          <span class="variant-tag">content · prose</span>
+        </div>
+        <div class="phone" data-phone="excerpt">
+          <div class="phone-notch"></div>
+          <div class="phone-stage">
+            <div class="phone-fake-ui">
+              <strong>史略详情</strong>
+              底部栏点「原文」展开。背景仅为示意。
+            </div>
+            <div class="sheet-mask is-open" data-sheet>
+              <div class="sheet sheet--standard" role="dialog" aria-label="母本原文">
+                <div class="sheet-header">
+                  <div class="sheet-title-wrap">
+                    <div class="sheet-title">母本原文</div>
+                    <div class="sheet-subtitle">史记 · 秦始皇本纪</div>
+                  </div>
+                  <button class="sheet-close" type="button" aria-label="关闭" data-close>×</button>
+                </div>
+                <div class="sheet-body prose">
+                  <p>二十六年，秦初并天下……分天下以为三十六郡，郡置守、尉、监。更名民曰「黔首」。大酺。收天下兵，聚之咸阳，销以为钟鐻，金人十二，重各千石，置廷宫中。</p>
+                  <p>一法度衡石丈尺。车同轨。书同文字。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="note">
+      <strong>怎么看：</strong>三列并排对比「壳是否像一家」。纠错是字段表；简介与原文标题结构对齐（大标题 + 小副标题），正文同为衬线段落。
+      若方向成立，下一步再抽小程序组件 <code>content-sheet</code> 迁移。
+      <br />文件位置：<code>miniapp/prototypes/content-sheet-unify.html</code>（浏览器直接打开即可）。
+    </div>
+  </div>
+
+  <script>
+    const sheets = () => [...document.querySelectorAll("[data-sheet]")];
+
+    function setAll(open) {
+      sheets().forEach((el) => el.classList.toggle("is-open", open));
+    }
+
+    function replay() {
+      setAll(false);
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => setAll(true));
+      });
+    }
+
+    document.querySelectorAll("[data-action]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const action = btn.getAttribute("data-action");
+        document.querySelectorAll(".toolbar .btn").forEach((b) => b.classList.remove("is-on"));
+        if (action === "open-all") {
+          setAll(true);
+          btn.classList.add("is-on");
+        } else if (action === "close-all") {
+          setAll(false);
+          btn.classList.add("is-on");
+        } else if (action === "replay") {
+          replay();
+          document.querySelector('[data-action="open-all"]').classList.add("is-on");
+        }
+      });
+    });
+
+    document.querySelectorAll("[data-close]").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        btn.closest("[data-sheet]")?.classList.remove("is-open");
+      });
+    });
+
+    document.querySelectorAll("[data-sheet]").forEach((mask) => {
+      mask.addEventListener("click", (e) => {
+        if (e.target === mask) mask.classList.remove("is-open");
+      });
+    });
+
+    document.querySelectorAll("[data-phone]").forEach((phone) => {
+      phone.addEventListener("click", (e) => {
+        if (e.target.closest("[data-sheet]")) return;
+        phone.querySelector("[data-sheet]")?.classList.add("is-open");
+      });
+    });
+  </script>
+</body>
+</html>

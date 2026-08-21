@@ -230,6 +230,26 @@ CREATE TABLE IF NOT EXISTS user_box_correction (
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE TABLE IF NOT EXISTS user_box_note (
+  id BIGINT PRIMARY KEY AUTO_INCREMENT,
+  user_id BIGINT NOT NULL,
+  box_id VARCHAR(128) NOT NULL,
+  box_title VARCHAR(256) NOT NULL DEFAULT '',
+  box_category_key VARCHAR(16) NOT NULL DEFAULT '',
+  unit_id VARCHAR(128) NULL,
+  civilization_name VARCHAR(128) NOT NULL DEFAULT '',
+  dynasty_name VARCHAR(128) NOT NULL DEFAULT '',
+  regime_name VARCHAR(128) NOT NULL DEFAULT '',
+  emperor_name VARCHAR(128) NOT NULL DEFAULT '',
+  coordinate_text VARCHAR(512) NOT NULL DEFAULT '',
+  source_type VARCHAR(32) NOT NULL,
+  source_ref_id BIGINT NULL,
+  selected_text VARCHAR(2000) NOT NULL,
+  note_text VARCHAR(2000) NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
 CREATE TABLE IF NOT EXISTS user_home_matrix_state (
   id BIGINT PRIMARY KEY AUTO_INCREMENT,
   user_id BIGINT NOT NULL,
@@ -240,6 +260,17 @@ CREATE TABLE IF NOT EXISTS user_home_matrix_state (
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   UNIQUE (user_id)
+);
+
+CREATE TABLE IF NOT EXISTS user_box_reading_progress (
+  id BIGINT PRIMARY KEY AUTO_INCREMENT,
+  user_id BIGINT NOT NULL,
+  box_id VARCHAR(128) NOT NULL,
+  progress_pct TINYINT NOT NULL,
+  scroll_top_px INT NULL,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  UNIQUE (user_id, box_id)
 );
 
 CREATE TABLE IF NOT EXISTS membership (

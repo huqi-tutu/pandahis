@@ -225,7 +225,7 @@ def build_category_prompt(
 6. **所有类别**（含好友）须先写二级分类枢纽（`关系层级=一级`，`节点类型=二级分类`，`上级连接线标题=""`），再挂具体人物。好友一级名与二级枢纽名同为「好友」。**无具体人物的二级枢纽不要写**（不适用则整类输出 `[]`）。
 7. **每个二级枢纽下直接人物（关系层级=二级）最多 10 人（硬上限）**；超过则只输出最重要、最紧密的 10 人。选取优先：至亲/核心君臣/关键战和政争主角 > 史料笔墨多者 > 已有独立史略者；禁止堆砌满朝文武、全体宗室。不满 10 不必凑数。
 8. 展开深度：家庭·配偶支最多四级（配偶→子女→孙辈）；其余人物为叶节点。禁止曾孙、徒孙、兄弟姐妹之子女。生母不详时配偶节点标题用「不详」。
-9. 同僚/敌对/师徒/好友：二级枢纽→人物的 `上级连接线标题` 必须为 `""`。家庭边标题**仅允许**白名单单字/词：父/母、妻/妾/妃/夫、兄/弟/姐/妹（分不清用兄弟/姐妹）、子/女。**禁止**祖父/祖母/孙/侄/婿等（祖辈不入表；孙辈只能挂在配偶→子女下用子/女）。配偶边标题**必须站在条目主人公视角**（如嫘祖→黄帝用「夫」，黄帝→嫘祖用「妻」）。
+9. 同僚/敌对/师徒/好友：二级枢纽→人物的 `上级连接线标题` 必须为 `""`。家庭边标题**仅允许**白名单：父/母、祖/祖母、妻/妾/妃/夫、兄/弟/姐/妹（分不清用兄弟/姐妹）、子/女。**禁止**曾祖/外祖/孙/侄/婿等（祖父母仅上一代；孙辈只能挂在配偶→子女下用子/女）。配偶边标题**必须站在条目主人公视角**（如嫘祖→黄帝用「夫」，黄帝→嫘祖用「妻」）。
 10. 互斥：家庭排斥同僚/好友/师徒；同僚排斥好友；敌对可与他类共现。禁止旧类别名：`君臣`→`同僚`；顶级`外敌`→`敌对`；`师从`→`师徒`。`关系简述` 1–2 句写依据要点（可追溯到 grounding）。
 11. **节点资格**：叶子节点只写**具体人物**；家族/氏姓（鲍氏、高氏）可写。禁止国家/政权/方国（秦国、齐国）、少数民族/部族（犬戎、淮夷、三苗）、职衔空名（东周君、中山国君）、战役名。敌对外敌须写具体君主/将领；名失载则不写该节点。
 
@@ -315,7 +315,7 @@ def sanitize_and_reid(
 REVISE_RULES = """硬性修正规则（必须全部满足）：
 1. 关系类别仅 家庭/同僚/敌对/师徒/好友；二级分类为枢纽（含好友）。
 2. 每个二级枢纽下直接人物（关系层级=二级）**最多 10 人**；超出只保留最重要、最紧密的 10 人，删除其余及其子孙。
-3. 家庭边标题白名单仅：父/母/妻/妾/妃/夫/兄/弟/姐/妹/兄弟/姐妹/子/女；禁止祖父/祖母/孙/侄等；旧称父亲→父、儿子→子。
+3. 家庭边标题白名单仅：父/母/祖/祖母/妻/妾/妃/夫/兄/弟/姐/妹/兄弟/姐妹/子/女；禁止曾祖/外祖/孙/侄等；旧称父亲→父、祖父→祖、儿子→子。标题「不详」允许同层多条（多配偶生母不明）；真人名同层同类别不得重复。
 4. 非家庭人物边标题必须为 ""。
 5. 互斥：家庭 > 同僚 > 好友；家庭亦排斥师徒。
 6. 配偶支可至四级孙辈；禁止曾孙/五级。"""
@@ -474,23 +474,30 @@ def compose_one(
         all_records.extend(cat_records)
 
     records = reassign_relation_ids(all_records)
-    if not records:
-        raise RuntimeError("全部类别均无有效产出")
-
     index_names = _index_person_names(index_path)
-    records, san_notes = sanitize_and_reid(
-        records, subject, index_path=index_path, index_names=index_names
-    )
-    if san_notes:
-        print("sanitize:")
-        for n in san_notes[:40]:
-            print(f"  - {n}")
-        if len(san_notes) > 40:
-            print(f"  …另有 {len(san_notes)-40} 条")
-    if not records:
-        raise RuntimeError("清洗后关系表为空")
+    if records:
+        records, san_notes = sanitize_and_reid(
+            records, subject, index_path=index_path, index_names=index_names
+        )
+        if san_notes:
+            print("sanitize:")
+            for n in san_notes[:40]:
+                print(f"  - {n}")
+            if len(san_notes) > 40:
+                print(f"  …另有 {len(san_notes)-40} 条")
+    else:
+        print("ℹ️ 各类均无有效产出 → 空关系表")
 
+    # 史料确无具名关系时允许空表 []，不强制挂点
     write_output(out_path, records)
+    if not records:
+        ok, verify_out = run_verify(out_path, strict=True)
+        print(verify_out)
+        print(f"✅ 空关系表已落盘（无内容可挂）: {out_path}")
+        if sync_db:
+            import_json_file(out_path, entry_id=eid, index_path=index_path, sql_out=sql_out, mysql=mysql)
+        return out_path
+
     ok, verify_out = run_verify(out_path, strict=True)
     print(verify_out)
 
@@ -521,7 +528,12 @@ def compose_one(
     log_artifact(paths, eid, "response_revise", raw2)
     records2 = normalize_records(extract_json_array(raw2), subject)
     if not records2:
-        raise RuntimeError(f"修订轮未返回有效 JSON\n{verify_out}")
+        # 修订轮交空数组：视为确认无内容
+        write_output(out_path, [])
+        print(f"✅ 修订轮确认无内容 → 空关系表: {out_path}")
+        if sync_db:
+            import_json_file(out_path, entry_id=eid, index_path=index_path, sql_out=sql_out, mysql=mysql)
+        return out_path
     records2, san_notes2 = sanitize_and_reid(
         records2, subject, index_path=index_path, index_names=index_names
     )
@@ -529,9 +541,14 @@ def compose_one(
         print("sanitize(after revise):")
         for n in san_notes2[:40]:
             print(f"  - {n}")
-    if not records2:
-        raise RuntimeError(f"修订清洗后为空\n{verify_out}")
     write_output(out_path, records2)
+    if not records2:
+        ok2, verify_out2 = run_verify(out_path, strict=True)
+        print(verify_out2)
+        print(f"✅ 修订清洗后为空关系表: {out_path}")
+        if sync_db:
+            import_json_file(out_path, entry_id=eid, index_path=index_path, sql_out=sql_out, mysql=mysql)
+        return out_path
     ok2, verify_out2 = run_verify(out_path, strict=True)
     print(verify_out2)
     if not ok2:

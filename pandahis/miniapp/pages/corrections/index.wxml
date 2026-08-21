@@ -2,6 +2,7 @@
   <proto-nav title="我的纠错" show-back="{{true}}"></proto-nav>
 
   <view class="corrections-body" style="padding-top: {{pageTopPadPx}}px;">
+    <view class="corrections-inner">
     <view wx:if="{{!hasToken}}" class="empty-state">
       <text class="empty-icon">🔒</text>
       <text class="empty-text">登录后可查看纠错记录</text>
@@ -35,7 +36,8 @@
       </view>
     </block>
 
-    <view wx:else class="loading">加载中…</view>
+    <page-loading wx:else text="加载中"></page-loading>
+    </view>
   </view>
 
   <correction-modal

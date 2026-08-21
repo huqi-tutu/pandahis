@@ -1,0 +1,133 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01190",
+  "写作结构": "正史叙述见翻译详录（《史记·卫将军骠骑列传》《汉书·武帝纪》等），拓展文写史外异说与延展：以《资治通鉴》编年记载补足赵破奴破楼兰、击匈奴及被俘的时间线；以《通典》边防典补楼兰地理位置与西域形势；以《太平御览》引《汉书》异文或后世类书保存的细节作异说层；留白处为被俘后结局、生卒年等，不编造。",
+  "候选著作": [
+    {
+      "出处": "《史记·卫将军骠骑列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "赵破奴主要传记来源，记载其从军、破楼兰、击匈奴及封侯事迹",
+      "检索词": "赵破奴",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《汉书·武帝纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "汉武帝时期编年大事记，涉及赵破奴破楼兰、击匈奴及被俘的年份",
+      "检索词": "赵破奴",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《资治通鉴·汉纪》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "编年体史书，综合《史记》《汉书》记载，提供赵破奴活动的时间线（前108年破楼兰、前103年被俘）",
+      "检索词": "赵破奴",
+      "采用": true,
+      "原文摘句": "元封三年，遣从票侯赵破奴击楼兰，破之，虏楼兰王。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《通典·边防典》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "唐代典志，记载楼兰、匈奴等西域诸国地理与历史，可补赵破奴军事活动的地理背景",
+      "检索词": "楼兰",
+      "采用": true,
+      "原文摘句": "楼兰，在敦煌正西，去长安六千一百里。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《太平御览·兵部》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋代类书，引《汉书》等旧籍，可能保存赵破奴事迹的异文或细节",
+      "检索词": "赵破奴",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·卫将军骠骑列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "赵破奴主要传记来源，记载其从军、破楼兰、击匈奴及封侯事迹",
+      "检索词": "赵破奴",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《汉书·武帝纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "汉武帝时期编年大事记，涉及赵破奴破楼兰、击匈奴及被俘的年份",
+      "检索词": "赵破奴",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《资治通鉴·汉纪》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "编年体史书，综合《史记》《汉书》记载，提供赵破奴活动的时间线（前108年破楼兰、前103年被俘）",
+      "检索词": "赵破奴",
+      "采用": true,
+      "原文摘句": "元封三年，遣从票侯赵破奴击楼兰，破之，虏楼兰王。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《通典·边防典》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "唐代典志，记载楼兰、匈奴等西域诸国地理与历史，可补赵破奴军事活动的地理背景",
+      "检索词": "楼兰",
+      "采用": true,
+      "原文摘句": "楼兰，在敦煌正西，去长安六千一百里。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《太平御览·兵部》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋代类书，引《汉书》等旧籍，可能保存赵破奴事迹的异文或细节",
+      "检索词": "赵破奴",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 3,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

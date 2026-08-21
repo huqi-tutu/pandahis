@@ -1,0 +1,32 @@
+{
+  "史略ID": "GLBL_00085",
+  "stage": "phase3_voice",
+  "severity": "alert",
+  "updated_at": 1786457173.999594,
+  "updated_iso": "2026-08-11 22:06:13",
+  "alert_count": 2,
+  "auto_fixed_count": 1,
+  "alerts": [
+    {
+      "severity": "alert",
+      "layer": "format",
+      "code": "voice_unwrap_nested_json",
+      "message": "拆出嵌套/截断 JSON 中的翻译详情正文",
+      "auto_fixed": true,
+      "before_snippet": "{\n  \"史略ID\": \"GLBL_00085\",\n  \"翻译详情\": \"汉高祖刘邦，是秦末乱世里杀出来的开国皇帝。他出身平民，从沛县一个亭长做起，一路灭秦、败项羽，最终建立汉朝，奠定了此后四百年大汉",
+      "after_snippet": "汉高祖刘邦，是秦末乱世里杀出来的开国皇帝。他出身平民，从沛县一个亭长做起，一路灭秦、败项羽，最终建立汉朝，奠定了此后四百年大汉江山的根基。《史记》的作者司马迁在《高祖本纪》里，用大量生动的细节，记录了"
+    },
+    {
+      "severity": "alert",
+      "layer": "quality",
+      "code": "voice_length_collapse",
+      "message": "润色正文过短/截断 unwrapped=10535 phase2=18812；终稿回滚 Phase2",
+      "auto_fixed": false,
+      "before_snippet": "phase2=18812",
+      "after_snippet": "voice=10535"
+    }
+  ],
+  "rolled_back": true,
+  "voice_draft": "GLBL_00085_汉高祖.voice.json",
+  "phase2_recovered": "GLBL_00085_汉高祖.phase2.recovered.json"
+}

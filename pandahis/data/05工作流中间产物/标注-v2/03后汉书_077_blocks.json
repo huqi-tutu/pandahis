@@ -1,0 +1,46 @@
+{
+  "work": "03后汉书",
+  "vol": "077",
+  "total_paragraphs": 38,
+  "volume_subtype": "hezhuan",
+  "derived_from": "03后汉书_077_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 36,
+      "paragraph_to": 38,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "皇甫嵩",
+      "category": "武将",
+      "paragraph_from": 2,
+      "paragraph_to": 19,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "皇甫嵩字义真，安定朝那人，度辽将军规之兄子也。父节，雁门太守。嵩少有文武志介，好",
+        "close_paragraph": 19,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P19"
+      }
+    },
+    {
+      "name": "朱俊",
+      "category": "武将",
+      "paragraph_from": 20,
+      "paragraph_to": 35,
+      "boundary_evidence": {
+        "open_paragraph": 20,
+        "open_phrase": "朱俊字公伟，会稽上虞人也。少孤，母尝贩缯为业。俊以孝养致名，为县门下书佐，好义轻",
+        "close_paragraph": 35,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P20–P35"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

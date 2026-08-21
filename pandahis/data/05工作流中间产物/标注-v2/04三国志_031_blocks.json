@@ -1,0 +1,46 @@
+{
+  "work": "04三国志",
+  "vol": "031",
+  "total_paragraphs": 7,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "04三国志_031_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 7,
+      "paragraph_to": 7,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "刘焉",
+      "category": "宗戚",
+      "paragraph_from": 2,
+      "paragraph_to": 4,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "刘焉字君郎，江夏竟陵人也，汉鲁恭王之后裔，章帝元和中徙封竟陵，支庶家焉。焉少仕州",
+        "close_paragraph": 4,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P4"
+      }
+    },
+    {
+      "name": "刘璋",
+      "category": "宗戚",
+      "paragraph_from": 5,
+      "paragraph_to": 6,
+      "boundary_evidence": {
+        "open_paragraph": 5,
+        "open_phrase": "璋，字季玉，既袭焉位，而张鲁稍骄恣，不承顺璋，璋杀鲁母及弟，遂为雠敌。璋累遣庞羲",
+        "close_paragraph": 6,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P5–P6"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

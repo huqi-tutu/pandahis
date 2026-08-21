@@ -1,0 +1,109 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01182",
+  "写作结构": "正史叙述见翻译详录（《汉书·霍光传》《汉书·外戚传》）。拓展文以史外异说与延展为主：先述上官桀在武帝托孤中的角色（据《资治通鉴》等编年史补充时间线），再述昭帝朝与霍光争权及谋反被诛（可引《汉书·昭帝纪》作为正史补充，但非拓展摘句），最后引《西京杂记》等杂史中的异说或轶事作为legend池补充。留白处：上官桀生年、早年经历不虚构。",
+  "候选著作": [
+    {
+      "出处": "《汉书·昭帝纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载昭帝即位、上官桀等辅政及谋反被诛的编年线索，与索引《汉书·霍光传》互补。",
+      "检索词": "上官桀",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《资治通鉴·汉纪》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "司马光综合《汉书》等史料，按编年体叙述武帝托孤、昭帝朝政治斗争，可提供时间线和事件顺序的综述。",
+      "检索词": "上官桀",
+      "采用": true,
+      "原文摘句": "（卷二十二）武帝崩，太子即位，霍光、金日磾、上官桀受遗诏辅政。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《西京杂记》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "杂记西汉轶事，可能载有上官桀相关传闻或异说，可作为legend池补充。",
+      "检索词": "上官桀",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《汉武故事》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "托名班固的杂史，载汉武帝遗诏及托孤传闻，或与上官桀相关，但可靠性低。",
+      "检索词": "上官桀",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《汉书·昭帝纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "记载昭帝即位、上官桀等辅政及谋反被诛的编年线索，与索引《汉书·霍光传》互补。",
+      "检索词": "上官桀",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《资治通鉴·汉纪》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "司马光综合《汉书》等史料，按编年体叙述武帝托孤、昭帝朝政治斗争，可提供时间线和事件顺序的综述。",
+      "检索词": "上官桀",
+      "采用": true,
+      "原文摘句": "（卷二十二）武帝崩，太子即位，霍光、金日磾、上官桀受遗诏辅政。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《西京杂记》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "杂记西汉轶事，可能载有上官桀相关传闻或异说，可作为legend池补充。",
+      "检索词": "上官桀",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《汉武故事》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "托名班固的杂史，载汉武帝遗诏及托孤传闻，或与上官桀相关，但可靠性低。",
+      "检索词": "上官桀",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

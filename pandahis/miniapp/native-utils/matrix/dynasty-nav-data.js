@@ -141,7 +141,7 @@ function buildNavFromRows(matrixRows, ratio, civId) {
  * 规则：取 yPx 不超过视口顶线（+ 阈值）的最后一个索引项；
  * 五帝等不在 nav 中的顶部段（scrollTop 尚未到达首个索引）返回 -1。
  */
-function findActiveNavIndex(scrollTopPx, navItems, thresholdPx) {
+function findActiveNavIndex(scrollTopPx, navItems, thresholdPx, opts) {
   if (!navItems || !navItems.length) return -1
   const topLine = Math.max(0, scrollTopPx + (thresholdPx != null ? thresholdPx : 32))
   let bestIdx = -1
@@ -151,7 +151,115 @@ function findActiveNavIndex(scrollTopPx, navItems, thresholdPx) {
     if (yPx <= topLine) bestIdx = i
     else break
   }
+
+  const pinnedKey = opts && opts.pinnedKey ? String(opts.pinnedKey).trim() : ''
+  const maxScroll = opts && opts.maxScroll
+  if (
+    pinnedKey &&
+    maxScroll != null &&
+    Number.isFinite(maxScroll) &&
+    scrollTopPx >= maxScroll - 16
+  ) {
+    const pinnedIdx = navItems.findIndex(item => item.key === pinnedKey || item.label === pinnedKey)
+    if (pinnedIdx >= 0 && navItems[pinnedIdx].yPx > maxScroll) {
+      return pinnedIdx
+    }
+  }
   return bestIdx
+}
+
+/** 末代无法置顶时，选中明/清仍须把两张卡完整露出来 */
+const NAV_REVEAL_CLUSTERS = [
+  ['明', '清'],
+]
+
+function getNavRevealCluster(key) {
+  const k = String(key || '').trim()
+  if (!k) return []
+  const cluster = NAV_REVEAL_CLUSTERS.find(keys => keys.indexOf(k) >= 0)
+  return cluster ? cluster.slice() : [k]
+}
+
+function calcMaxScrollPx(totalHRpx, bottomPadRpx, ratio, viewportPx) {
+  const r = Number(ratio) || 0
+  const contentPx = (Number(totalHRpx) || 0) * r + (Number(bottomPadRpx) || 0) * r
+  return Math.max(0, contentPx - (Number(viewportPx) || 0))
+}
+
+function blockMatchesNavKey(block, key) {
+  if (!block || !key) return false
+  if (block.containerId === key) return true
+  if (block.entryId === `container_span_${key}`) return true
+  if (block.dynasty === key || block.displayName === key) return true
+  if (key === '宋' && (block.dynasty === '北宋' || block.displayName === '北宋' || block.dynasty === '南宋')) return true
+  if (key === '两晋' && (block.dynasty === '西晋' || block.dynasty === '东晋')) return true
+  if (key === '周' && (block.dynasty === '西周' || block.dynasty === '东周')) return true
+  if (key === '汉' && (block.dynasty === '西汉' || block.dynasty === '东汉')) return true
+  if (key === '晋' && (block.dynasty === '西晋' || block.dynasty === '东晋')) return true
+  return false
+}
+
+function measureKeysRangePx(keys, ctx) {
+  const ratio = ctx.ratio || 0.5
+  const blocks = ctx.matrixBlocks || []
+  const navItems = ctx.navItems || []
+  let topPx = Infinity
+  let bottomPx = -Infinity
+
+  ;(keys || []).forEach(key => {
+    const matched = blocks.filter(b => blockMatchesNavKey(b, key))
+    matched.forEach(b => {
+      const top = Number(b.top) * ratio
+      const bottom = (Number(b.top) + Number(b.h)) * ratio
+      if (Number.isFinite(top)) topPx = Math.min(topPx, top)
+      if (Number.isFinite(bottom)) bottomPx = Math.max(bottomPx, bottom)
+    })
+    if (matched.length) return
+    const navItem = navItems.find(item => item.key === key || item.label === key)
+    if (navItem && navItem.yPx > 0) {
+      topPx = Math.min(topPx, navItem.yPx)
+      bottomPx = Math.max(bottomPx, navItem.yPx)
+    }
+  })
+
+  if (!Number.isFinite(topPx) || !Number.isFinite(bottomPx) || bottomPx < topPx) return null
+  return { topPx, bottomPx }
+}
+
+/**
+ * 索引导航吸附：默认把目标朝代置顶；末代置顶不下时，保证需露出来的卡片完整可见。
+ */
+function resolveNavSnapTopPx(targetKey, ctx) {
+  const key = String(targetKey || '').trim()
+  if (!key || !ctx) return 0
+  const ratio = ctx.ratio || 0.5
+  const viewportPx = Number(ctx.matrixHeight) || 0
+  const maxScroll = calcMaxScrollPx(
+    ctx.matrixTotalH,
+    ctx.matrixScrollBottomPad,
+    ratio,
+    viewportPx
+  )
+  const navItems = ctx.navItems || []
+  const item = navItems.find(i => i.key === key || i.label === key)
+  const clusterKeys = getNavRevealCluster(key)
+  const range = measureKeysRangePx(clusterKeys, ctx)
+  const pinTop = item && item.yPx > 0
+    ? item.yPx
+    : (range ? range.topPx : 0)
+  const inset = ctx.scrollInsetPx != null ? ctx.scrollInsetPx : 8
+  const preferred = Math.max(0, pinTop - inset)
+
+  if (range && viewportPx > 0 && range.bottomPx - range.topPx <= viewportPx) {
+    const minScroll = Math.max(0, range.bottomPx - viewportPx)
+    const maxKeepTop = Math.max(0, range.topPx - inset)
+    let snap = preferred
+    if (snap < minScroll) snap = minScroll
+    if (snap > maxKeepTop) snap = maxKeepTop
+    return Math.max(0, Math.min(maxScroll, snap))
+  }
+
+  return Math.max(0, Math.min(maxScroll, preferred))
 }
 
 /**
@@ -172,11 +280,15 @@ function getPrimaryDynastyLabels() {
 module.exports = {
   NAV_PRIMARY_DYNASTIES,
   EMPEROR_COUNT_MAP,
+  NAV_REVEAL_CLUSTERS,
   buildHomeEmperorCountMap,
   getHomeEmperorCountMap,
   invalidateHomeEmperorCountCache,
   buildNavFromRows,
   findActiveNavIndex,
+  calcMaxScrollPx,
+  resolveNavSnapTopPx,
+  getNavRevealCluster,
   getEmperorCount,
   getPrimaryDynastyLabels,
 }

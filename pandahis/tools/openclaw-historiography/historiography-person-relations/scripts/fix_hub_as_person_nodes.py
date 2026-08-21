@@ -19,6 +19,7 @@ from typing import Any
 
 HUB_TITLES = frozenset(
     {
+        "祖父母",
         "父母",
         "配偶",
         "兄弟姐妹",

@@ -1,0 +1,35 @@
+{
+  "work": "04三国志",
+  "vol": "052",
+  "volume_name": "张顾诸葛步传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "张昭",
+      "category": "文臣",
+      "rationale": "卷名首姓，东吴重臣，以谋略、谏诤、辅政为列传主轴，属文臣。"
+    },
+    {
+      "name": "顾雍",
+      "category": "文臣",
+      "rationale": "卷名第二姓，东吴丞相，以行政、用人、持重为列传主轴，属文臣。"
+    },
+    {
+      "name": "诸葛瑾",
+      "category": "文臣",
+      "rationale": "卷名第三姓，东吴重臣，以外交、军政、宽厚为列传主轴，属文臣。"
+    },
+    {
+      "name": "步骘",
+      "category": "文臣",
+      "rationale": "卷名第四姓，东吴重臣，以镇守、抚民、行政为列传主轴，属文臣。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

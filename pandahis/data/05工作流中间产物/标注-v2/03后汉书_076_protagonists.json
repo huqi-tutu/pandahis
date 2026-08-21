@@ -1,0 +1,30 @@
+{
+  "work": "03后汉书",
+  "vol": "076",
+  "volume_name": "郑孔荀列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "郑玄",
+      "category": "文臣",
+      "rationale": "《郑孔荀列传》卷名首姓，郑玄为东汉经学大师，以儒学著述为生平主轴，属文臣类。"
+    },
+    {
+      "name": "孔融",
+      "category": "文臣",
+      "rationale": "《郑孔荀列传》卷名第二姓，孔融为东汉名士、文学家，以文才名节仕宦为主轴，属文臣类。"
+    },
+    {
+      "name": "荀彧",
+      "category": "文臣",
+      "rationale": "《郑孔荀列传》卷名第三姓，荀彧为东汉末年政治家、谋士，以辅佐曹操、参与朝政为主轴，属文臣类。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

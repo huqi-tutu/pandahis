@@ -1,0 +1,24 @@
+{
+  "work": "03后汉书",
+  "vol": "097",
+  "volume_name": "西羌传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "fanzuo",
+  "volume_subtype": "fanzuo",
+  "volume_arc": "A",
+  "volume_texture": "sequential",
+  "skip_reason": null,
+  "protagonists_cap_note": "后汉书四夷蕃祚（fanzuo_volumes 白名单）。",
+  "protagonists": [
+    {
+      "name": "西羌",
+      "category": "蕃祚",
+      "rationale": "卷名西羌集体；蕃祚卷型。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "论赞",
+    "赞曰"
+  ]
+}

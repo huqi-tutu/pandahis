@@ -1,0 +1,46 @@
+{
+  "work": "03后汉书",
+  "vol": "089",
+  "volume_name": "文苑列传第七十下",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_arc": "C",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "sequential",
+  "skip_reason": null,
+  "protagonists_cap_note": "祢衡赵壹边韶刘梁高彪。",
+  "protagonists": [
+    {
+      "name": "赵壹",
+      "category": "文臣",
+      "rationale": "刺世疾邪赋。"
+    },
+    {
+      "name": "刘梁",
+      "category": "文臣",
+      "rationale": "本卷厚文士。"
+    },
+    {
+      "name": "边韶",
+      "category": "文臣",
+      "rationale": "腹便便典故。"
+    },
+    {
+      "name": "高彪",
+      "category": "文臣",
+      "rationale": "文苑第五。"
+    },
+    {
+      "name": "祢衡",
+      "category": "文臣",
+      "rationale": "击鼓骂曹。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "论赞",
+    "赞曰",
+    "世系链",
+    "共段总述"
+  ]
+}

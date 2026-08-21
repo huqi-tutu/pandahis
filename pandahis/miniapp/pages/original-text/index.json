@@ -1,7 +1,0 @@
-{
-  "usingComponents": {
-    "proto-nav": "/components/proto-nav/proto-nav",
-    "empty-state": "/components/empty-state/empty-state"
-  },
-  "navigationStyle": "custom"
-}

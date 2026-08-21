@@ -74,11 +74,11 @@ RELEASE_FLAGS=$(curl -sS "https://www.pandahis.com/api/v1/config/features" | pyt
 DEV_FLAGS=$(curl -sS -H "X-Miniapp-Env: develop" "https://www.pandahis.com/api/v1/config/features" | python3 -c 'import sys,json; print(json.load(sys.stdin).get("data",{}).get("civSwitchEnabled"))')
 echo "smoke civSwitch release=${RELEASE_FLAGS} develop=${DEV_FLAGS}"
 if [[ "${RELEASE_FLAGS}" != "False" && "${RELEASE_FLAGS}" != "false" ]]; then
-  echo "警告：文明切换应为 false（请确认 prod profile 已生效）" >&2
+  echo "警告：trial/release 文明切换应为 false（请确认 prod profile 已生效）" >&2
   exit 1
 fi
-if [[ "${DEV_FLAGS}" != "False" && "${DEV_FLAGS}" != "false" ]]; then
-  echo "警告：develop 请求头下文明切换也应为 false" >&2
+if [[ "${DEV_FLAGS}" != "True" && "${DEV_FLAGS}" != "true" ]]; then
+  echo "警告：develop 请求头下文明切换应为 true" >&2
   exit 1
 fi
 # 冒烟：搜索不应再 INTERNAL_ERROR；头像路由应存在（无登录为 UNAUTHORIZED/INVALID，不是 NOT_FOUND）

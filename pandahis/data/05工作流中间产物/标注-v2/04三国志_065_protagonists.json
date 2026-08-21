@@ -1,0 +1,40 @@
+{
+  "work": "04三国志",
+  "vol": "065",
+  "volume_name": "王楼贺韦华传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "王蕃",
+      "category": "文臣",
+      "rationale": "卷名首姓，合传主人公之一。王蕃为三国吴官员，以文臣身份入传。"
+    },
+    {
+      "name": "楼玄",
+      "category": "文臣",
+      "rationale": "卷名第二姓，合传主人公之一。楼玄为三国吴官员，以文臣身份入传。"
+    },
+    {
+      "name": "贺邵",
+      "category": "文臣",
+      "rationale": "卷名第三姓，合传主人公之一。贺邵为三国吴官员，以文臣身份入传。"
+    },
+    {
+      "name": "韦昭",
+      "category": "文臣",
+      "rationale": "卷名第四姓，合传主人公之一。韦昭为三国吴史官、学者，以文臣身份入传。"
+    },
+    {
+      "name": "华覈",
+      "category": "文臣",
+      "rationale": "卷名末姓，合传主人公之一。华覈为三国吴官员，以文臣身份入传。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

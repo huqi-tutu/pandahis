@@ -3,7 +3,7 @@
 .correction-modal {
   position: fixed;
   inset: 0;
-  background: rgba(36, 25, 23, 0.50);
+  background: rgba($theme-primary, 0.50);
   display: flex;
   align-items: flex-end;
   z-index: 120;
@@ -11,15 +11,24 @@
 
 .correction-modal-card {
   width: 100%;
-  background: #F8F6F2;
+  background: $page-bg;
   border-radius: 24rpx 24rpx 0 0;
-  padding: 28rpx 28rpx calc(28rpx + env(safe-area-inset-bottom));
+  padding: 28rpx 28rpx 0;
   box-sizing: border-box;
   max-height: 85vh;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  transition: margin-bottom 0.18s ease, max-height 0.18s ease;
+  box-shadow: $shadow-elevated;
+  animation: contentSheetSlideUp 0.22s ease;
+  transition-property: margin-bottom, max-height, height, padding-bottom;
+  transition-duration: 0.18s;
+  transition-timing-function: ease;
+}
+
+@keyframes contentSheetSlideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
 }
 
 .correction-modal-header {
@@ -34,22 +43,13 @@
 .correction-modal-title-wrap {
   flex: 1;
   min-width: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 6rpx;
 }
 
 .correction-modal-title {
   font-family: $font-family-title;
   font-size: 34rpx;
   font-weight: 700;
-  color: #4A3F3F;
-}
-
-.correction-modal-source {
-  font-size: 24rpx;
-  color: $text-caption;
-  line-height: 1.4;
+  color: $theme-primary;
 }
 
 .correction-modal-close {
@@ -57,7 +57,7 @@
   width: 56rpx;
   height: 56rpx;
   border-radius: 50%;
-  background: rgba(74, 63, 63, 0.06);
+  background: rgba($theme-primary, 0.06);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -83,6 +83,10 @@
 .correction-field--block {
   flex-direction: column;
   gap: 10rpx;
+}
+
+.correction-field--block .correction-label {
+  width: auto;
 }
 
 .correction-label {
@@ -148,10 +152,31 @@
   word-break: break-word;
 }
 
+.correction-quote.is-clamp-15 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 15;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.correction-quote-toggle {
+  align-self: flex-start;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  padding: 0 4rpx;
+}
+
+.correction-quote-toggle-text {
+  font-size: 24rpx;
+  color: $text-caption;
+  font-weight: 600;
+}
+
 .correction-textarea {
   width: 100%;
-  height: 220rpx;
-  min-height: 220rpx;
+  min-height: 128rpx;
   padding: 18rpx 20rpx;
   box-sizing: border-box;
   border-radius: 12rpx;
@@ -166,6 +191,18 @@
   align-self: flex-end;
   font-size: 22rpx;
   color: $text-time;
+  font-variant-numeric: tabular-nums;
+}
+
+.correction-modal-composer {
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+  padding-top: 8rpx;
+}
+
+.correction-modal-composer .correction-field {
+  margin-bottom: 0;
 }
 
 .correction-reason {

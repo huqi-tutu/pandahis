@@ -1,0 +1,30 @@
+{
+  "work": "04三国志",
+  "vol": "019",
+  "volume_name": "任城陈萧王传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "曹彰",
+      "category": "宗戚",
+      "rationale": "卷名首列任城王曹彰，为曹操之子、魏文帝曹丕之弟，属同姓藩王，依宗戚专则应归宗戚。"
+    },
+    {
+      "name": "曹植",
+      "category": "宗戚",
+      "rationale": "卷名次列陈王曹植，为曹操之子、魏文帝曹丕之弟，封陈王，属同姓藩王，依宗戚专则应归宗戚。"
+    },
+    {
+      "name": "曹彪",
+      "category": "宗戚",
+      "rationale": "卷名末列萧王曹彪，为曹操之子、魏文帝曹丕之弟，封萧王，属同姓藩王，依宗戚专则应归宗戚。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

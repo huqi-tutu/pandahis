@@ -1,0 +1,38 @@
+{
+  "work": "03后汉书",
+  "vol": "098",
+  "total_paragraphs": 72,
+  "volume_subtype": "fanzuo",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 71,
+      "paragraph_to": 71,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 72,
+      "paragraph_to": 72,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "西域诸国",
+      "category": "蕃祚",
+      "paragraph_from": 2,
+      "paragraph_to": 70,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "武帝时，西域内属，有三十六国。汉为置使者、校尉领护之。宣帝改曰都护。元帝又置戊己",
+        "close_paragraph": 70,
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

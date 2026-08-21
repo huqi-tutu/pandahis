@@ -1,0 +1,82 @@
+{
+  "work": "04三国志",
+  "vol": "053",
+  "total_paragraphs": 20,
+  "volume_subtype": "hezhuan",
+  "derived_from": "04三国志_053_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 20,
+      "paragraph_to": 20,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "张昭",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 6,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "张纮字子纲，广陵人。游学京都，还本郡，举茂才，公府辟，皆不就，避难江东。孙策创业",
+        "close_paragraph": 6,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P6"
+      }
+    },
+    {
+      "name": "严峻",
+      "category": "文臣",
+      "paragraph_from": 7,
+      "paragraph_to": 8,
+      "boundary_evidence": {
+        "open_paragraph": 7,
+        "open_phrase": "严畯字曼才，彭城人也。少耽学，善诗、书、三礼，又好说文。避乱江东，与诸葛瑾、步骘",
+        "close_paragraph": 8,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P7–P8"
+      }
+    },
+    {
+      "name": "程秉",
+      "category": "文臣",
+      "paragraph_from": 9,
+      "paragraph_to": 10,
+      "boundary_evidence": {
+        "open_paragraph": 9,
+        "open_phrase": "程秉字德枢，汝南南顿人也。逮事郑玄，后避乱交州，与刘熙考论大义，遂博通五经。士燮",
+        "close_paragraph": 10,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P9–P10"
+      }
+    },
+    {
+      "name": "阚泽",
+      "category": "文臣",
+      "paragraph_from": 11,
+      "paragraph_to": 13,
+      "boundary_evidence": {
+        "open_paragraph": 11,
+        "open_phrase": "阚泽字德润，会稽山阴人也。家世农夫，至泽好学，居贫无资，常为人佣书，以供纸笔，所",
+        "close_paragraph": 13,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P11–P13"
+      }
+    },
+    {
+      "name": "薛综",
+      "category": "文臣",
+      "paragraph_from": 14,
+      "paragraph_to": 19,
+      "boundary_evidence": {
+        "open_paragraph": 14,
+        "open_phrase": "薛综字敬文，沛郡竹邑人也。少依族人避地交州，从刘熙学。士燮既附孙权，召综为五官中",
+        "close_paragraph": 19,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P14–P19"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

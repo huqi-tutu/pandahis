@@ -1,0 +1,45 @@
+{
+  "work": "04三国志",
+  "vol": "031",
+  "total_paragraphs": 7,
+  "method": "Step1b-α LLM",
+  "paragraphs": [
+    {
+      "paragraph": 1,
+      "primary_subject": "卷首标题",
+      "disposition": "exclude",
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "primary_subject": "刘焉",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 3,
+      "primary_subject": "刘焉",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 4,
+      "primary_subject": "刘焉",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 5,
+      "primary_subject": "刘璋",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 6,
+      "primary_subject": "刘璋",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 7,
+      "primary_subject": "论赞",
+      "disposition": "exclude",
+      "exclude_reason": "论赞"
+    }
+  ]
+}

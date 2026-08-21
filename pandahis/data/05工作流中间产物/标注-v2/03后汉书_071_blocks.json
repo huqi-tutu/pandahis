@@ -1,0 +1,73 @@
+{
+  "work": "03后汉书",
+  "vol": "071",
+  "total_paragraphs": 67,
+  "volume_subtype": "hezhuan",
+  "derived_from": "03后汉书_071_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 23,
+      "paragraph_to": 23,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 43,
+      "paragraph_to": 43,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 66,
+      "paragraph_to": 66,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 67,
+      "paragraph_to": 67,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "皇甫规",
+      "category": "武将",
+      "paragraph_from": 2,
+      "paragraph_to": 22,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "皇甫规字威明，安定朝那人也。祖父棱，度辽将军。父旗，扶风都尉。",
+        "close_paragraph": 22,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P22"
+      }
+    },
+    {
+      "name": "张奂",
+      "category": "武将",
+      "paragraph_from": 24,
+      "paragraph_to": 42,
+      "boundary_evidence": {
+        "open_paragraph": 24,
+        "open_phrase": "张奂字然明，敦煌渊泉人也。父惇，为汉阳太守。奂少游三辅，师事太尉朱宠，学《欧阳尚",
+        "close_paragraph": 42,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P24–P42"
+      }
+    },
+    {
+      "name": "段颎",
+      "category": "武将",
+      "paragraph_from": 44,
+      "paragraph_to": 65,
+      "boundary_evidence": {
+        "open_paragraph": 44,
+        "open_phrase": "段颎字纪明，武威姑臧人也。其先出郑共叔段，西域都护会宗之从曾孙也。颎少便习弓马，",
+        "close_paragraph": 65,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P44–P65"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

@@ -1,0 +1,58 @@
+{
+  "work": "04三国志",
+  "vol": "013",
+  "total_paragraphs": 27,
+  "volume_subtype": "hezhuan",
+  "derived_from": "04三国志_013_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 27,
+      "paragraph_to": 27,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "钟繇",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 8,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "钟繇字元常，颍川长社人也。尝与族父瑜俱至洛阳，道遇相者，曰：“此童有贵相，然当厄",
+        "close_paragraph": 8,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P8"
+      }
+    },
+    {
+      "name": "华歆",
+      "category": "文臣",
+      "paragraph_from": 9,
+      "paragraph_to": 12,
+      "boundary_evidence": {
+        "open_paragraph": 9,
+        "open_phrase": "华歆字子鱼，平原高唐人也。高唐为齐名都，衣冠无不游行市里。歆为吏，休沐出府，则归",
+        "close_paragraph": 12,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P9–P12"
+      }
+    },
+    {
+      "name": "王朗",
+      "category": "文臣",
+      "paragraph_from": 13,
+      "paragraph_to": 26,
+      "boundary_evidence": {
+        "open_paragraph": 13,
+        "open_phrase": "王郎字景兴，东海郯人也。以通经，拜郎中，除菑丘长。师太尉杨赐，赐薨，弃官行服。举",
+        "close_paragraph": 26,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P13–P26"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

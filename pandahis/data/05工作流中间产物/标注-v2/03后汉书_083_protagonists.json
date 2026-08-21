@@ -1,0 +1,51 @@
+{
+  "work": "03后汉书",
+  "vol": "083",
+  "volume_name": "循吏列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_arc": "C",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "sequential",
+  "skip_reason": null,
+  "protagonists_cap_note": "Top+加留：卫飒任延王景孟尝刘宠仇览；砍秦彭许荆刘矩童恢第五访/伦等。",
+  "protagonists": [
+    {
+      "name": "卫飒",
+      "category": "文臣",
+      "rationale": "卷首循吏标杆，桂阳开化。"
+    },
+    {
+      "name": "任延",
+      "category": "文臣",
+      "rationale": "光武明帝朝循吏代表。"
+    },
+    {
+      "name": "王景",
+      "category": "文臣",
+      "rationale": "治河修汴，东汉水利第一人。"
+    },
+    {
+      "name": "孟尝",
+      "category": "文臣",
+      "rationale": "合浦还珠，文化典故。"
+    },
+    {
+      "name": "刘宠",
+      "category": "文臣",
+      "rationale": "一钱太守。"
+    },
+    {
+      "name": "仇览",
+      "category": "文臣",
+      "rationale": "劝学改过，故事性强。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "论赞",
+    "赞曰",
+    "世系链",
+    "共段总述"
+  ]
+}

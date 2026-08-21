@@ -1,0 +1,98 @@
+{
+  "work": "03后汉书",
+  "vol": "073",
+  "total_paragraphs": 80,
+  "volume_subtype": "hezhuan",
+  "derived_from": "03后汉书_073_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 2,
+      "paragraph_to": 5,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 6,
+      "paragraph_to": 14,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 15,
+      "paragraph_to": 15,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 29,
+      "paragraph_to": 45,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 53,
+      "paragraph_to": 53,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 54,
+      "paragraph_to": 57,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 62,
+      "paragraph_to": 62,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 63,
+      "paragraph_to": 79,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 80,
+      "paragraph_to": 80,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "李膺",
+      "category": "文臣",
+      "paragraph_from": 16,
+      "paragraph_to": 28,
+      "boundary_evidence": {
+        "open_paragraph": 16,
+        "open_phrase": "李膺字元礼，颍川襄城人也。祖父脩，安帝时为太尉。父益，赵国相。膺性简亢，无所交接",
+        "close_paragraph": 28,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P16–P28"
+      }
+    },
+    {
+      "name": "范滂",
+      "category": "文臣",
+      "paragraph_from": 46,
+      "paragraph_to": 52,
+      "boundary_evidence": {
+        "open_paragraph": 46,
+        "open_phrase": "范滂字孟博，汝南征羌人也。少厉清节，为州里所服，举孝廉，光禄四行。时冀州饥荒，盗",
+        "close_paragraph": 52,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P46–P52"
+      }
+    },
+    {
+      "name": "张俭",
+      "category": "文臣",
+      "paragraph_from": 58,
+      "paragraph_to": 61,
+      "boundary_evidence": {
+        "open_paragraph": 58,
+        "open_phrase": "张俭字元节，山阳高平人，赵王张耳之后也。父成，江夏太守，俭初举茂才，以刺史非其人",
+        "close_paragraph": 61,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P58–P61"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

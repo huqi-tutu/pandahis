@@ -1,0 +1,51 @@
+{
+  "work": "03后汉书",
+  "vol": "072",
+  "total_paragraphs": 53,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_072_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 32,
+      "paragraph_to": 32,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 52,
+      "paragraph_to": 53,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "陈蕃",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 31,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "陈蕃字仲举，汝南平舆人也。祖河东太守。蕃年十年，尝闲处一室，而庭宇芜秽。父友同郡",
+        "close_paragraph": 31,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P31"
+      }
+    },
+    {
+      "name": "王允",
+      "category": "文臣",
+      "paragraph_from": 33,
+      "paragraph_to": 51,
+      "boundary_evidence": {
+        "open_paragraph": 33,
+        "open_phrase": "王允字子师，太原祁人也。世仕州郡为冠盖。同郡郭林宗尝见允而奇之，曰：“王生一日千",
+        "close_paragraph": 51,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P33–P51"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

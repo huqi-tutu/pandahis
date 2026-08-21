@@ -1,0 +1,40 @@
+{
+  "work": "04三国志",
+  "vol": "028",
+  "volume_name": "王毌丘诸葛邓钟传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "王凌",
+      "category": "武将",
+      "rationale": "卷名首姓，魏末重臣，合传主人公之一，以军事征伐与政治斗争为主线。"
+    },
+    {
+      "name": "毌丘俭",
+      "category": "武将",
+      "rationale": "卷名第二姓，魏将，以征辽东、讨高句丽等军功及淮南起兵为主线，合传主人公之一。"
+    },
+    {
+      "name": "诸葛诞",
+      "category": "武将",
+      "rationale": "卷名第三姓，魏将，以寿春起兵反司马氏为主线，合传主人公之一。"
+    },
+    {
+      "name": "邓艾",
+      "category": "武将",
+      "rationale": "卷名第四姓，魏将，以灭蜀之战、屯田治边等军功为主线，合传主人公之一。"
+    },
+    {
+      "name": "钟会",
+      "category": "武将",
+      "rationale": "卷名末姓，魏将，以伐蜀之役及谋反事败为主线，合传主人公之一。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

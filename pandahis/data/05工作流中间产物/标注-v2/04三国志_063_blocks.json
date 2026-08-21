@@ -1,0 +1,58 @@
+{
+  "work": "04三国志",
+  "vol": "063",
+  "total_paragraphs": 18,
+  "volume_subtype": "hezhuan",
+  "derived_from": "04三国志_063_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 18,
+      "paragraph_to": 18,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "吴范",
+      "category": "庶众",
+      "paragraph_from": 2,
+      "paragraph_to": 10,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "吴范字文则，会稽上虞人也。以治历数，知风气，闻于郡中。举有道，诣京都，世乱不行。",
+        "close_paragraph": 10,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P10"
+      }
+    },
+    {
+      "name": "刘惇",
+      "category": "庶众",
+      "paragraph_from": 11,
+      "paragraph_to": 13,
+      "boundary_evidence": {
+        "open_paragraph": 11,
+        "open_phrase": "刘惇字子仁，平原人也。遭乱避地，客游庐陵，事孙辅。以明天官达占数显于南土。每有水",
+        "close_paragraph": 13,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P11–P13"
+      }
+    },
+    {
+      "name": "赵达",
+      "category": "庶众",
+      "paragraph_from": 14,
+      "paragraph_to": 17,
+      "boundary_evidence": {
+        "open_paragraph": 14,
+        "open_phrase": "赵达，河南人也。少从汉侍中单甫受学，用思精密，谓东南有王者气，可以避难，故脱身渡",
+        "close_paragraph": 17,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P14–P17"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

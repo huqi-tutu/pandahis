@@ -373,6 +373,8 @@ const TIME_CARD_INSET = LABEL_CARD_INSET
 const BLOCK_RADIUS_RPX = 12
 /** 时间轴年份最小纵向间距（过密则跳过中间年份，朝代起点始终显示） */
 const TIME_YEAR_LABEL_MIN_GAP_RPX = 280
+/** 时间轴收展热区最小高度：展开态薄切片（元 20 / 清 55）否则点不到折叠 */
+const TIME_HX_HIT_MIN_RPX = 88
 
 /** 色块上不展示文字标签（保留左侧色条与底色） */
 const HIDE_LABEL_ENTRY_IDS = new Set([])
@@ -697,6 +699,7 @@ function applyHuaxiaTimelineChromeSuppressions(rows, expandedDynasties, civName)
     row.expandable = false
     row.expanded = false
     row.showYear = false
+    row.hxHitH = row.h
   })
 }
 
@@ -4553,6 +4556,7 @@ function buildRows(civId, expandedDynasties) {
       key:         `row_${sl.tS}_${idx}`,
       y,
       h,
+      hxHitH:      expandable ? Math.max(h, TIME_HX_HIT_MIN_RPX) : h,
       year:        fmtTimelineYear(sl.tS),
       hxLabel:     sl.hxLabel,
       expandable,
@@ -4885,6 +4889,10 @@ nbContainer.top = align + BLOCK_V_GAP_RPX
     applyHuaxiaTimelineChromeSuppressions(rows, expandedDynasties, civName)
   }
 
+  rows.forEach(row => {
+    row.hxHitH = row.expandable ? Math.max(row.h || 0, TIME_HX_HIT_MIN_RPX) : (row.h || 0)
+  })
+
   return {
     rows,
     blocks,
@@ -4969,4 +4977,5 @@ module.exports = {
   toggleDynastyExpanded,
   isDynastyExpanded,
   loadMatrixData,
+  TIME_HX_HIT_MIN_RPX,
 }

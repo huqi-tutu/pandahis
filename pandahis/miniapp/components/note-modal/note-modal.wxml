@@ -1,0 +1,71 @@
+<view wx:if="{{visible}}" class="note-modal" catchtap="onBackdropTap">
+  <view class="note-modal-card" style="{{cardStyle}}" catchtap="onSheetTap">
+    <view class="note-modal-header">
+      <view class="note-modal-title-wrap">
+        <text class="note-modal-title">{{mode === 'edit' ? '写笔记' : '笔记详情'}}</text>
+      </view>
+      <view class="note-modal-close" bindtap="onClose">
+        <text class="note-modal-close-icon">✕</text>
+      </view>
+    </view>
+
+    <scroll-view
+      class="note-modal-body"
+      style="{{bodyStyle}}"
+      scroll-y
+      enhanced
+      show-scrollbar="{{false}}"
+    >
+      <view class="note-field">
+        <text class="note-label">坐标</text>
+        <text class="note-value">{{coordinateText || '—'}}</text>
+      </view>
+
+      <view class="note-field note-field--block">
+        <text class="note-label">划线原文</text>
+        <view class="note-quote {{quoteClampClass}}" style="{{quoteClampStyle}}">{{selectedText || '—'}}</view>
+        <view
+          wx:if="{{showQuoteToggle}}"
+          class="note-quote-toggle"
+          catchtap="onToggleQuote"
+        >
+          <text class="note-quote-toggle-text">{{quoteToggleLabel}}</text>
+        </view>
+      </view>
+
+      <view wx:if="{{mode === 'view'}}" class="note-field note-field--block">
+        <text class="note-label">笔记</text>
+        <text class="note-value note-remark">{{remarkDisplay}}</text>
+      </view>
+    </scroll-view>
+
+    <view wx:if="{{mode === 'edit'}}" class="note-modal-composer">
+      <view class="note-field note-field--block">
+        <text class="note-label">笔记</text>
+        <textarea
+          class="note-textarea"
+          style="height: {{textareaHeightPx}}px;"
+          placeholder="选填，写下你想记住的话（最多2000字）"
+          maxlength="2000"
+          value="{{draftNote}}"
+          bindinput="onNoteInput"
+          bindkeyboardheightchange="onKeyboardHeightChange"
+          catchtap="noop"
+          adjust-position="{{false}}"
+          cursor-spacing="{{24}}"
+          hold-keyboard="{{true}}"
+          auto-height="{{false}}"
+          show-confirm-bar="{{false}}"
+          disable-default-padding="{{true}}"
+        />
+        <text class="note-counter">{{draftNote.length}}/2000</text>
+      </view>
+      <view class="note-modal-footer">
+        <view
+          class="note-submit {{submitting ? 'note-submit--disabled' : ''}}"
+          catchtap="onSubmit"
+        >{{submitting ? '保存中…' : '保存'}}</view>
+      </view>
+    </view>
+  </view>
+</view>

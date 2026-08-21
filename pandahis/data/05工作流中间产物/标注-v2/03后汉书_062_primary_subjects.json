@@ -1,0 +1,281 @@
+{
+  "work": "03后汉书",
+  "vol": "062",
+  "total_paragraphs": 54,
+  "method": "Step1b-α LLM",
+  "paragraphs": [
+    {
+      "paragraph": 1,
+      "primary_subject": "卷首标题",
+      "disposition": "exclude",
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "primary_subject": "杜根",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 3,
+      "primary_subject": "杜根",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 4,
+      "primary_subject": "杜根",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 5,
+      "primary_subject": "杜根",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 6,
+      "primary_subject": "栾巴",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 7,
+      "primary_subject": "栾巴",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 8,
+      "primary_subject": "栾巴",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 9,
+      "primary_subject": "栾巴",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 10,
+      "primary_subject": "刘陶",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 11,
+      "primary_subject": "刘陶",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 12,
+      "primary_subject": "刘陶",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 13,
+      "primary_subject": "刘陶",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 14,
+      "primary_subject": "刘陶",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 15,
+      "primary_subject": "刘陶",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 16,
+      "primary_subject": "刘陶",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 17,
+      "primary_subject": "刘陶",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 18,
+      "primary_subject": "刘陶",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 19,
+      "primary_subject": "刘陶",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 20,
+      "primary_subject": "刘陶",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 21,
+      "primary_subject": "刘陶",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 22,
+      "primary_subject": "刘陶",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 23,
+      "primary_subject": "刘陶",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 24,
+      "primary_subject": "刘陶",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 25,
+      "primary_subject": "刘陶",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 26,
+      "primary_subject": "刘陶",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 27,
+      "primary_subject": "刘陶",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 28,
+      "primary_subject": "刘陶",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 29,
+      "primary_subject": "刘陶",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 30,
+      "primary_subject": "刘陶",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 31,
+      "primary_subject": "李云",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 32,
+      "primary_subject": "李云",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 33,
+      "primary_subject": "李云",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 34,
+      "primary_subject": "李云",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 35,
+      "primary_subject": "论赞",
+      "disposition": "exclude",
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 36,
+      "primary_subject": "刘瑜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 37,
+      "primary_subject": "刘瑜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 38,
+      "primary_subject": "刘瑜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 39,
+      "primary_subject": "刘瑜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 40,
+      "primary_subject": "刘瑜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 41,
+      "primary_subject": "刘瑜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 42,
+      "primary_subject": "刘瑜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 43,
+      "primary_subject": "刘瑜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 44,
+      "primary_subject": "刘瑜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 45,
+      "primary_subject": "刘瑜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 46,
+      "primary_subject": "刘瑜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 47,
+      "primary_subject": "刘瑜",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 48,
+      "primary_subject": "谢弼",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 49,
+      "primary_subject": "谢弼",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 50,
+      "primary_subject": "谢弼",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 51,
+      "primary_subject": "谢弼",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 52,
+      "primary_subject": "谢弼",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 53,
+      "primary_subject": "谢弼",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 54,
+      "primary_subject": "论赞",
+      "disposition": "exclude",
+      "exclude_reason": "论赞"
+    }
+  ]
+}

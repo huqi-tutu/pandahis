@@ -1890,7 +1890,7 @@ Page({
   },
   openIntro() {
     if (!this.data.introCanExpand) return
-    this.setData({ showIntroModal: true, introModalTitle: (this.data.dynastyTitle || '') + '·朝代简介' })
+    this.setData({ showIntroModal: true })
   },
   closeIntro() {
     this.setData({ showIntroModal: false })

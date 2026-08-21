@@ -1,0 +1,51 @@
+{
+  "work": "03后汉书",
+  "vol": "086",
+  "volume_name": "儒林列传第六十九上",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_arc": "C",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "sequential",
+  "skip_reason": null,
+  "protagonists_cap_note": "孔僖欧阳歙尹敏戴凭刘昆+杨政。",
+  "protagonists": [
+    {
+      "name": "刘昆",
+      "category": "文臣",
+      "rationale": "卷首名儒。"
+    },
+    {
+      "name": "杨政",
+      "category": "文臣",
+      "rationale": "说经铿铿。"
+    },
+    {
+      "name": "戴凭",
+      "category": "文臣",
+      "rationale": "解经不穷戴侍中。"
+    },
+    {
+      "name": "欧阳歙",
+      "category": "文臣",
+      "rationale": "尚书欧阳氏八世博士。"
+    },
+    {
+      "name": "尹敏",
+      "category": "文臣",
+      "rationale": "拒图谶。"
+    },
+    {
+      "name": "孔僖",
+      "category": "文臣",
+      "rationale": "孔子后裔，论武宣。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "论赞",
+    "赞曰",
+    "世系链",
+    "共段总述"
+  ]
+}

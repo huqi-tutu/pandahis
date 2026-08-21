@@ -1,0 +1,220 @@
+#!/usr/bin/env python3
+"""Resume Phase2 from chapter 2 (reuse ch01), then merge/verify/write output."""
+
+from __future__ import annotations
+
+import json
+import os
+import sys
+import time
+from pathlib import Path
+
+_TRANSLATE_ROOT = Path(__file__).resolve().parent.parent
+_OPENCLAW_ROOT = _TRANSLATE_ROOT.parent
+sys.path.insert(0, str(_TRANSLATE_ROOT))
+sys.path.insert(0, str(_OPENCLAW_ROOT))
+
+from shared.qa_repair import classify_translate_failure, format_retry_feedback  # noqa: E402
+from lib.config import load_dotenv, resolve_output_dir  # noqa: E402
+from lib.phase2_batch import (  # noqa: E402
+    batch_checklist_items,
+    build_chapter_enrich_prompt,
+    classic_quote_must_embed_note,
+    concatenate_mother_batch_texts,
+    discover_mother_batches,
+    extract_voice_sample,
+    group_batches_into_chapters,
+    merge_enrich_batches,
+    plan_for_enrich_batch,
+)
+from lib.prose_sanitize import polish_enrich_file, polish_enrich_file_full  # noqa: E402
+from lib.recall import recall_entry  # noqa: E402
+from lib.runner import (  # noqa: E402
+    _load_mother_text,
+    _llm_turn,
+    _phase2_max_retries,
+    _phase2_temperature,
+    _rebuild_output_references,
+    _repair_feedback_suffix,
+    _verify_enrich_with_autofix,
+    attach_source_original,
+    touch_heartbeat,
+)
+from lib.verify import verify_enrich_batch_slice  # noqa: E402
+
+
+def main() -> int:
+    load_dotenv()
+    os.environ.setdefault("HIST_LLM_PROVIDER", "deepseek")
+    os.environ["TRANSLATE_AUTO_SYNC"] = "0"
+    # default a bit hotter for remaining chapters
+    os.environ.setdefault("TRANSLATE_PHASE2_TEMPERATURE", "0.55")
+
+    hist = Path(os.environ["HISTOGRAPH_ROOT"])
+    work = hist / "data/05工作流中间产物/翻译"
+    idx = hist / "data/10新标注条目/史略索引_史记汉书.json"
+    out_dir = resolve_output_dir(index_path=idx)
+    entry_id = "GLBL_00085"
+    entry_name = "汉高祖"
+    plan = json.loads((work / "GLBL_00085_汉高祖.plan.json").read_text(encoding="utf-8"))
+    recalled = recall_entry(entry_id, index_path=idx)
+    mother_file = work / "GLBL_00085_汉高祖.mother.json"
+    target = out_dir / f"{entry_id}_{entry_name}.json"
+    t0 = time.time()
+    session_id = "tr-glbl-00085-p2-resume-ch2"
+
+    batch_files = discover_mother_batches(mother_file)
+    chapters = group_batches_into_chapters(batch_files)
+    total = len(chapters)
+    print(f"resume Phase2 from ch2: {total} chapters", flush=True)
+
+    ch01 = mother_file.with_name(f"{mother_file.stem}-ch01.enrich.json")
+    if not ch01.is_file():
+        print("missing ch01", flush=True)
+        return 2
+    parts = [_load_mother_text(ch01)]
+    voice_sample = extract_voice_sample(parts[0])
+
+    # drop failed ch02
+    ch02 = mother_file.with_name(f"{mother_file.stem}-ch02.enrich.json")
+    if ch02.exists():
+        ch02.unlink()
+        print("removed failed ch02", flush=True)
+
+    for ci in range(2, total + 1):
+        chapter_batches = chapters[ci - 1]
+        batch_nos = []
+        for p in chapter_batches:
+            # mother-b05.json → 5
+            stem = p.stem
+            num = int(stem.rsplit("-b", 1)[-1])
+            batch_nos.append(num)
+        chapter_mother = concatenate_mother_batch_texts(chapter_batches)
+        chapter_target = mother_file.with_name(f"{mother_file.stem}-ch{ci:02d}.enrich.json")
+        label = f"第 {ci}/{total} 章（b{batch_nos[0]:02d}–b{batch_nos[-1]:02d}）"
+        chapter_ok = False
+        chapter_errs: list[str] = []
+        for attempt in range(_phase2_max_retries() + 1):
+            retry_note = ""
+            if attempt > 0 and chapter_errs:
+                plan_fb = classify_translate_failure(
+                    chapter_errs, stage="phase2", fail_count=attempt
+                )
+                retry_note = (
+                    "\n\n--- 上轮 Phase2 质检失败，须修正 ---\n"
+                    + format_retry_feedback(plan_fb, chapter_errs)
+                )
+                if any("誊抄" in e or "改表达" in e or "重合" in e for e in chapter_errs):
+                    head = (chapter_mother or "").strip().split("\n\n")[0][:120]
+                    retry_note += (
+                        "\n\n【改表达 · 硬重试】禁止几乎原样粘贴 Phase1；"
+                        "同信息必须换句式与用词（口语/场面/释义旁白），"
+                        "目标与母本去虚词 4-gram 重合显著低于 95%。\n"
+                        "【覆盖 · 硬】必须从本章母本**开头情节**写起，不得跳章；"
+                        f"本章母本首段起句供核对：{head}…"
+                    )
+                if any("经典引用候选" in e or "直角「」" in e for e in chapter_errs):
+                    _c_items = []
+                    for bn in batch_nos:
+                        _c_items.extend(batch_checklist_items(plan, bn))
+                    retry_note += classic_quote_must_embed_note(_c_items)
+            prompt = (
+                build_chapter_enrich_prompt(
+                    entry_id,
+                    recalled,
+                    plan,
+                    chapter_mother,
+                    chapter_target,
+                    chapter_no=ci,
+                    total_chapters=total,
+                    batch_nos=batch_nos,
+                    include_intro=False,
+                    voice_sample=voice_sample,
+                )
+                + retry_note
+                + _repair_feedback_suffix()
+            )
+            print(
+                f"⏳ {label} → {chapter_target.name}"
+                + (f"（重试 {attempt}/{_phase2_max_retries()}）" if attempt else ""),
+                flush=True,
+            )
+            under_rw = any("誊抄" in e or "重合" in e for e in (chapter_errs or []))
+            _llm_turn(
+                work,
+                entry_id,
+                "enrich",
+                prompt,
+                session_id=f"{session_id}-ch{ci}-r{attempt}",
+                timeout_sec=900,
+                artifact_paths={"output": chapter_target},
+                temperature=_phase2_temperature(
+                    attempt=attempt, under_rewrite=under_rw or attempt == 0
+                ),
+            )
+            if not chapter_target.is_file():
+                chapter_errs = [f"{label}: 未落盘"]
+                continue
+            polish_enrich_file(chapter_target)
+            from lib.citation_mode import apply_quote_style_fixes_to_file
+
+            q_changes = apply_quote_style_fixes_to_file(chapter_target, plan)
+            if q_changes:
+                print(f"   🔧 引号风格: {', '.join(q_changes)}", flush=True)
+            ch_items = []
+            for bn in batch_nos:
+                ch_items.extend(batch_checklist_items(plan, bn))
+            chapter_plan = plan_for_enrich_batch(plan, ch_items)
+            slice_ok, slice_errs = verify_enrich_batch_slice(
+                entry_id,
+                recalled,
+                chapter_target,
+                batch_mother_text=chapter_mother,
+                batch_label=label,
+                plan=chapter_plan,
+            )
+            if not slice_ok:
+                chapter_errs = slice_errs or [f"{label}: 质检未通过"]
+                print(f"⚠️ {label} 未通过: {chapter_errs[0]}", flush=True)
+                continue
+            body = _load_mother_text(chapter_target)
+            # quick coverage smoke: chapter mother head keyword
+            head_kw = ""
+            for tok in ("雍齿", "丰邑", "沛公收兵", "亢父"):
+                if tok in chapter_mother[:200] and tok not in body:
+                    head_kw = tok
+                    break
+            if head_kw and ci == 2:
+                chapter_errs = [f"{label}: 章首疑漏写「{head_kw}」，须从母本开头写起"]
+                print(f"⚠️ {chapter_errs[0]}", flush=True)
+                continue
+            parts.append(body)
+            voice_sample = extract_voice_sample(body)
+            chapter_ok = True
+            break
+        if not chapter_ok:
+            print("FAIL", label, chapter_errs[:2], flush=True)
+            return 3
+
+    combined = merge_enrich_batches(entry_id, parts, plan, recalled)
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(
+        json.dumps({"史略ID": entry_id, "翻译详情": combined}, ensure_ascii=False, indent=2)
+        + "\n",
+        encoding="utf-8",
+    )
+    polish_enrich_file_full(target)
+    _rebuild_output_references(target, recalled, plan)
+    attach_source_original(target, recalled)
+
+    e_ok, e_errs = _verify_enrich_with_autofix(
+        entry_id, recalled, target, plan, mother_text=_load_mother_text(mother_file)
+    )
+    print("final verify", e_ok, e_errs[:5] if e_errs else [], "chars", len(combined), flush=True)
+    touch_heartbeat(work, entry_id, stage="done_enrich")
+    print(f"elapsed {time.time()-t0:.0f}s → {target}", flush=True)
+    return 0 if e_ok else 4
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

@@ -1,0 +1,106 @@
+{
+  "work": "04三国志",
+  "vol": "040",
+  "total_paragraphs": 22,
+  "volume_subtype": "hezhuan",
+  "derived_from": "04三国志_040_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 22,
+      "paragraph_to": 22,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "刘封",
+      "category": "武将",
+      "paragraph_from": 2,
+      "paragraph_to": 6,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "刘封者，本罗侯寇氏之子，长沙刘氏之甥也。先主至荆州，以未有继嗣，养封为子。及先主",
+        "close_paragraph": 6,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P6"
+      }
+    },
+    {
+      "name": "彭羕",
+      "category": "文臣",
+      "paragraph_from": 7,
+      "paragraph_to": 10,
+      "boundary_evidence": {
+        "open_paragraph": 7,
+        "open_phrase": "彭羕字永年，广汉人。身长八尺，容貌甚伟。姿性骄傲，多所轻忽，惟敬同郡秦子敕，荐之",
+        "close_paragraph": 10,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P7–P10"
+      }
+    },
+    {
+      "name": "廖立",
+      "category": "文臣",
+      "paragraph_from": 11,
+      "paragraph_to": 12,
+      "boundary_evidence": {
+        "open_paragraph": 11,
+        "open_phrase": "廖立（廖音理救反。）字公渊，武陵临沅人。先主领荆州牧，辟为从事，年未三十，擢为长",
+        "close_paragraph": 12,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P11–P12"
+      }
+    },
+    {
+      "name": "李严",
+      "category": "文臣",
+      "paragraph_from": 13,
+      "paragraph_to": 14,
+      "boundary_evidence": {
+        "open_paragraph": 13,
+        "open_phrase": "李严字正方，南阳人也。少为郡职吏，以才幹称。荆州牧刘表使历诸郡县。曹公入荆州时，",
+        "close_paragraph": 14,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P13–P14"
+      }
+    },
+    {
+      "name": "刘琰",
+      "category": "文臣",
+      "paragraph_from": 15,
+      "paragraph_to": 16,
+      "boundary_evidence": {
+        "open_paragraph": 15,
+        "open_phrase": "刘琰字威硕，鲁国人也。先主在豫州，辟为从事，以其宗姓，有风流，善谈论，厚亲待之，",
+        "close_paragraph": 16,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P15–P16"
+      }
+    },
+    {
+      "name": "魏延",
+      "category": "武将",
+      "paragraph_from": 17,
+      "paragraph_to": 19,
+      "boundary_evidence": {
+        "open_paragraph": 17,
+        "open_phrase": "魏延字文长，义阳人也。以部曲随先主入蜀，数有战功，迁牙门将军。先主为汉中王，迁治",
+        "close_paragraph": 19,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P17–P19"
+      }
+    },
+    {
+      "name": "杨仪",
+      "category": "文臣",
+      "paragraph_from": 20,
+      "paragraph_to": 21,
+      "boundary_evidence": {
+        "open_paragraph": 20,
+        "open_phrase": "杨仪字威公，襄阳人也。建安中，为荆州刺史傅群主簿，背群而诣襄阳太守关羽。羽命为功",
+        "close_paragraph": 21,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P20–P21"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

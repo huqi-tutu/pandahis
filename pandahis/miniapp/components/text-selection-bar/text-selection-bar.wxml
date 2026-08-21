@@ -17,6 +17,10 @@
       <image class="text-selection-bar-icon" src="/images/icons/sousuo.png" mode="aspectFit" />
       <text class="text-selection-bar-label">查询</text>
     </view>
+    <view wx:if="{{showNote}}" class="text-selection-bar-item" catchtap="onNote">
+      <image class="text-selection-bar-icon" src="/images/icons/biji.png" mode="aspectFit" />
+      <text class="text-selection-bar-label">笔记</text>
+    </view>
     <view class="text-selection-bar-item" catchtap="onCorrection">
       <image class="text-selection-bar-icon" src="/images/icons/jiucuo.png" mode="aspectFit" />
       <text class="text-selection-bar-label">纠错</text>

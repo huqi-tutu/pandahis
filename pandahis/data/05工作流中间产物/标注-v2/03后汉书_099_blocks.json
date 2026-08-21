@@ -1,0 +1,38 @@
+{
+  "work": "03后汉书",
+  "vol": "099",
+  "total_paragraphs": 71,
+  "volume_subtype": "fanzuo",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 70,
+      "paragraph_to": 70,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 71,
+      "paragraph_to": 71,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "南匈奴",
+      "category": "蕃祚",
+      "paragraph_from": 2,
+      "paragraph_to": 69,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "南匈奴醯落尸逐鞮单于比者，呼韩邪单于之孙，乌珠留若鞮单于之子也。自呼韩邪后，诸子",
+        "close_paragraph": 69,
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

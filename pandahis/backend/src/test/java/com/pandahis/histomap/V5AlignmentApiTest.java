@@ -35,6 +35,7 @@ class V5AlignmentApiTest {
   @BeforeEach
   void cleanHomeMatrixState() {
     jdbcTemplate.update("DELETE FROM user_home_matrix_state WHERE user_id=1");
+    jdbcTemplate.update("DELETE FROM user_box_reading_progress WHERE user_id=1");
     jdbcTemplate.update("DELETE FROM user_box_tab_read_ledger WHERE user_id=1");
     jdbcTemplate.update("UPDATE app_user SET read_balance=3 WHERE id=1");
   }
@@ -231,5 +232,69 @@ class V5AlignmentApiTest {
         .andExpect(status().isOk())
         .andExpect(jsonPath("$.data.lastDynastyKey").value("唐"))
         .andExpect(jsonPath("$.data.collapsedDynastyKeys.length()").value(2));
+  }
+
+  @Test
+  void boxReadingProgress_defaultEmptyThenUpsertAndClearEdges() throws Exception {
+    mockMvc.perform(get("/me/boxes/GLBL_01079/reading-progress").header(HttpHeaders.AUTHORIZATION, AUTH))
+        .andExpect(status().isOk())
+        .andExpect(jsonPath("$.code").value("OK"))
+        .andExpect(jsonPath("$.data.boxId").value("GLBL_01079"))
+        .andExpect(jsonPath("$.data.progressPct").doesNotExist());
+
+    mockMvc.perform(put("/me/boxes/GLBL_01079/reading-progress")
+            .header(HttpHeaders.AUTHORIZATION, AUTH)
+            .contentType(MediaType.APPLICATION_JSON)
+            .content("{\"progressPct\":42,\"scrollTopPx\":1280}"))
+        .andExpect(status().isOk())
+        .andExpect(jsonPath("$.data.progressPct").value(42))
+        .andExpect(jsonPath("$.data.scrollTopPx").value(1280));
+
+    mockMvc.perform(get("/me/boxes/GLBL_01079/reading-progress").header(HttpHeaders.AUTHORIZATION, AUTH))
+        .andExpect(status().isOk())
+        .andExpect(jsonPath("$.data.progressPct").value(42))
+        .andExpect(jsonPath("$.data.scrollTopPx").value(1280));
+
+    // 过浅：清除
+    mockMvc.perform(put("/me/boxes/GLBL_01079/reading-progress")
+            .header(HttpHeaders.AUTHORIZATION, AUTH)
+            .contentType(MediaType.APPLICATION_JSON)
+            .content("{\"progressPct\":3,\"scrollTopPx\":20}"))
+        .andExpect(status().isOk())
+        .andExpect(jsonPath("$.data.progressPct").doesNotExist())
+        .andExpect(jsonPath("$.data.scrollTopPx").doesNotExist());
+
+    mockMvc.perform(get("/me/boxes/GLBL_01079/reading-progress").header(HttpHeaders.AUTHORIZATION, AUTH))
+        .andExpect(status().isOk())
+        .andExpect(jsonPath("$.data.progressPct").doesNotExist());
+  }
+
+  @Test
+  void boxReadingProgress_originalNamespaceIndependentFromDetail() throws Exception {
+    mockMvc.perform(put("/me/boxes/GLBL_01079/reading-progress")
+            .header(HttpHeaders.AUTHORIZATION, AUTH)
+            .contentType(MediaType.APPLICATION_JSON)
+            .content("{\"progressPct\":42,\"scrollTopPx\":1280}"))
+        .andExpect(status().isOk())
+        .andExpect(jsonPath("$.data.progressPct").value(42));
+
+    mockMvc.perform(put("/me/boxes/GLBL_01079__original/reading-progress")
+            .header(HttpHeaders.AUTHORIZATION, AUTH)
+            .contentType(MediaType.APPLICATION_JSON)
+            .content("{\"progressPct\":70,\"scrollTopPx\":880}"))
+        .andExpect(status().isOk())
+        .andExpect(jsonPath("$.data.boxId").value("GLBL_01079__original"))
+        .andExpect(jsonPath("$.data.progressPct").value(70))
+        .andExpect(jsonPath("$.data.scrollTopPx").value(880));
+
+    mockMvc.perform(get("/me/boxes/GLBL_01079/reading-progress").header(HttpHeaders.AUTHORIZATION, AUTH))
+        .andExpect(status().isOk())
+        .andExpect(jsonPath("$.data.progressPct").value(42))
+        .andExpect(jsonPath("$.data.scrollTopPx").value(1280));
+
+    mockMvc.perform(get("/me/boxes/GLBL_01079__original/reading-progress").header(HttpHeaders.AUTHORIZATION, AUTH))
+        .andExpect(status().isOk())
+        .andExpect(jsonPath("$.data.progressPct").value(70))
+        .andExpect(jsonPath("$.data.scrollTopPx").value(880));
   }
 }

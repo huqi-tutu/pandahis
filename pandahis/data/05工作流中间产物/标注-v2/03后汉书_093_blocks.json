@@ -1,0 +1,122 @@
+{
+  "work": "03后汉书",
+  "vol": "093",
+  "total_paragraphs": 53,
+  "volume_subtype": "hezhuan",
+  "derived_from": "03后汉书_093_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 2,
+      "paragraph_to": 3,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 4,
+      "paragraph_to": 5,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 11,
+      "paragraph_to": 17,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 22,
+      "paragraph_to": 23,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 32,
+      "paragraph_to": 34,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 35,
+      "paragraph_to": 35,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 36,
+      "paragraph_to": 36,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 38,
+      "paragraph_to": 51,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 53,
+      "paragraph_to": 53,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "逢萌",
+      "category": "庶众",
+      "paragraph_from": 6,
+      "paragraph_to": 10,
+      "boundary_evidence": {
+        "open_paragraph": 6,
+        "open_phrase": "逢萌字子康，北海都昌人也。家贫，给事县为亭长。时尉行过亭，萌候迎拜谒，既而掷楯叹",
+        "close_paragraph": 10,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P6–P10"
+      }
+    },
+    {
+      "name": "严光",
+      "category": "庶众",
+      "paragraph_from": 18,
+      "paragraph_to": 21,
+      "boundary_evidence": {
+        "open_paragraph": 18,
+        "open_phrase": "严光字子陵，一名遵，会稽余姚人也。少有高名，与光武同游学。及光武即位，乃变名姓，",
+        "close_paragraph": 21,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P18–P21"
+      }
+    },
+    {
+      "name": "梁鸿",
+      "category": "庶众",
+      "paragraph_from": 24,
+      "paragraph_to": 31,
+      "boundary_evidence": {
+        "open_paragraph": 24,
+        "open_phrase": "梁鸿字伯鸾，扶风平陵人也。父让，王莽时为城门校尉，封脩远伯，使奉少昊后，寓于北地",
+        "close_paragraph": 31,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P24–P31"
+      }
+    },
+    {
+      "name": "韩康",
+      "category": "庶众",
+      "paragraph_from": 37,
+      "paragraph_to": 37,
+      "boundary_evidence": {
+        "open_paragraph": 37,
+        "open_phrase": "韩康字伯休，一名恬休，京兆霸陵人。家世著姓。常采药名山，卖于长安市，口不二价，三",
+        "close_paragraph": 37,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P37–P37"
+      }
+    },
+    {
+      "name": "庞公",
+      "category": "庶众",
+      "paragraph_from": 52,
+      "paragraph_to": 52,
+      "boundary_evidence": {
+        "open_paragraph": 52,
+        "open_phrase": "庞公者，南郡襄阳人也。居岘山之南，未尝入城府。夫妻相敬如宾。荆州刺史列表数延请，",
+        "close_paragraph": 52,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P52–P52"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

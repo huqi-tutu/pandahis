@@ -1,0 +1,65 @@
+{
+  "work": "03后汉书",
+  "vol": "061",
+  "volume_name": "张王种陈列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_arc": "C",
+  "volume_texture": "sequential",
+  "skip_reason": null,
+  "protagonists_cap_note": "卷名四姓 + 厚附传单立（张纲、王畅、种岱/拂/劭）；短世系句 P27/P49 仍 exclude。",
+  "protagonists": [
+    {
+      "name": "张晧",
+      "category": "文臣",
+      "rationale": "卷名首姓；自「张皓字叔明」开传至卒官。"
+    },
+    {
+      "name": "张纲",
+      "category": "文臣",
+      "rationale": "晧子厚附；自「纲字文纪」埋轮、广陵降贼至卒，独立叙事。"
+    },
+    {
+      "name": "王龚",
+      "category": "文臣",
+      "rationale": "卷名第二姓；自「王龚字伯宗」开传。"
+    },
+    {
+      "name": "王畅",
+      "category": "文臣",
+      "rationale": "龚子厚附；自「畅字叔茂」开传至卒于家。"
+    },
+    {
+      "name": "种暠",
+      "category": "文臣",
+      "rationale": "卷名第三姓；自「种暠字景伯」开传至薨。"
+    },
+    {
+      "name": "种岱",
+      "category": "文臣",
+      "rationale": "暠子附传；自「岱字公祖」至李燮求加礼。"
+    },
+    {
+      "name": "种拂",
+      "category": "文臣",
+      "rationale": "暠子附传；自「拂字颖伯」至长安战死。"
+    },
+    {
+      "name": "种劭",
+      "category": "文臣",
+      "rationale": "拂子附传；自「劭字申甫」质责董卓至长平观战死。"
+    },
+    {
+      "name": "陈球",
+      "category": "文臣",
+      "rationale": "卷名第四姓；自「陈球字伯真」开传至下狱死。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "论赞",
+    "赞曰",
+    "世系链"
+  ]
+}

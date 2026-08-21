@@ -1,0 +1,428 @@
+{
+  "volume": "明帝纪",
+  "source_file": "04三国志_003_明帝纪第三.txt",
+  "total_paragraphs": 45,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "single",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "魏明帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "魏明帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "魏明帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "魏明帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "魏明帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "魏明帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "魏明帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "魏明帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "魏明帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "魏明帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "魏明帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "魏明帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "魏明帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "魏明帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "魏明帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "魏明帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "魏明帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "魏明帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "魏明帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "魏明帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "魏明帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "魏明帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "魏明帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "魏明帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "魏明帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "魏明帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "魏明帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "魏明帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "魏明帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "魏明帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "魏明帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "魏明帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "魏明帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "魏明帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "魏明帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "魏明帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "魏明帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "魏明帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "魏明帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "魏明帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "魏明帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "魏明帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "魏明帝",
+          "category": "君王"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "魏明帝",
+          "category": "君王"
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SANGUOZHI_003_01",
+      "史略名称": "魏明帝",
+      "史略简介": "魏明帝",
+      "原文字句": "明皇帝讳叡，字元仲，文帝太子也。生而太祖爱之，常令在左右。年十五，封武德侯，黄初二年为齐公，三年为平原王。以其母诛，故未建为嗣。七年夏五月，帝病笃，乃立为皇太子。丁巳，即皇帝位，大赦。尊皇太后曰太皇太后，皇后曰皇太后。诸臣封爵各有差。癸未，追谥母甄夫人曰文昭皇后。壬辰，立皇弟蕤为阳平王。",
+      "史略分类": "君王",
+      "主要史料出处": "《04三国志·卷3·明帝纪》",
+      "paragraphs": [
+        {
+          "volume": "明帝纪",
+          "paragraph_from": 2,
+          "paragraph_to": 45
+        }
+      ]
+    }
+  ]
+}

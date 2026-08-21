@@ -1,0 +1,24 @@
+{
+  "work": "04三国志",
+  "vol": "046",
+  "volume_name": "孙破虏讨逆传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "孙坚",
+      "category": "武将",
+      "rationale": "卷名『孙破虏讨逆传』中『孙破虏』即孙坚（破虏将军），为卷名首指人物，以军功征战为主轴，符合武将准入。"
+    },
+    {
+      "name": "孙策",
+      "category": "武将",
+      "rationale": "卷名『孙破虏讨逆传』中『讨逆』即孙策（讨逆将军），与孙坚并列合传，以征战开拓江东为主轴，符合武将准入。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "其他"
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "work": "03后汉书",
+  "vol": "079",
+  "total_paragraphs": 33,
+  "volume_subtype": "hezhuan",
+  "derived_from": "03后汉书_079_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 26,
+      "paragraph_to": 26,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 33,
+      "paragraph_to": 33,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "刘虞",
+      "category": "宗戚",
+      "paragraph_from": 2,
+      "paragraph_to": 7,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "刘虞字伯安，东海郯人也。祖父嘉，光禄勋。虞初举孝廉，稍迁幽州刺史，民夷感其德化，",
+        "close_paragraph": 7,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P7"
+      }
+    },
+    {
+      "name": "公孙瓒",
+      "category": "武将",
+      "paragraph_from": 8,
+      "paragraph_to": 25,
+      "boundary_evidence": {
+        "open_paragraph": 8,
+        "open_phrase": "初，虞以俭素为操，冠敝不改，乃就补其穿。及遇害，瓒兵搜其内，而妻妾服罗纨，盛绮饰",
+        "close_paragraph": 25,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P8–P25"
+      }
+    },
+    {
+      "name": "陶谦",
+      "category": "文臣",
+      "paragraph_from": 27,
+      "paragraph_to": 32,
+      "boundary_evidence": {
+        "open_paragraph": 27,
+        "open_phrase": "陶谦字恭祖，丹阳人也。少为诸生，仕州郡，四迁为车骑将军张温司马，西讨边章。会徐州",
+        "close_paragraph": 32,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P27–P32"
+      }
+    }
+  ],
+  "multi_owner_segments": [
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "公孙瓒",
+          "category": "武将"
+        },
+        {
+          "name": "刘虞",
+          "category": "宗戚"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "公孙瓒",
+          "category": "武将"
+        },
+        {
+          "name": "刘虞",
+          "category": "宗戚"
+        }
+      ]
+    }
+  ]
+}

@@ -29,6 +29,8 @@ EDGE_LABEL_MAP = {
 FAMILY_EDGE_OK = {
     "父",
     "母",
+    "祖",
+    "祖母",
     "妻",
     "妾",
     "妃",

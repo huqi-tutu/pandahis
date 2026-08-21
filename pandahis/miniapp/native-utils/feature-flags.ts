@@ -1,6 +1,7 @@
 import { request } from './api'
+import { isDevelopEnv } from './runtime-env'
 
-/** 请求失败时的兜底：默认关闭文明切换 */
+/** trial/release 请求失败时的兜底（develop 版在前端也会强制 true） */
 const DEFAULT_FLAGS: FeatureFlags = { civSwitchEnabled: false }
 
 export const TOAST_CIV_LOCKED = '即将上线，敬请期待'
@@ -19,6 +20,7 @@ export function getFeatureFlags(): FeatureFlags {
 }
 
 export function isCivSwitchEnabled(): boolean {
+  if (isDevelopEnv()) return true
   return getFeatureFlags().civSwitchEnabled !== false
 }
 

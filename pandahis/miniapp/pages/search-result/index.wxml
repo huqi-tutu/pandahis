@@ -8,7 +8,7 @@
       <text class="kw-count muted">共 {{preciseResults.length + relatedResults.length}} 条</text>
     </view>
 
-    <view wx:if="{{searching}}" class="loading muted">搜索中…</view>
+    <page-loading wx:if="{{searching}}" text="搜索中"></page-loading>
 
     <view wx:elif="{{!preciseResults.length && !relatedResults.length}}" class="empty-state">
       <text class="empty-text">未找到结果</text>

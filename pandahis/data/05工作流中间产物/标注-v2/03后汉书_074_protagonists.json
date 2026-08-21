@@ -1,0 +1,30 @@
+{
+  "work": "03后汉书",
+  "vol": "074",
+  "volume_name": "郭符许列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "郭泰",
+      "category": "文臣",
+      "rationale": "卷名『郭符许列传』以郭泰为首，郭泰为东汉名士、太学生领袖，以清议品评人物著称，属儒学文士仕宦清流主轴，符合文臣准入。"
+    },
+    {
+      "name": "符融",
+      "category": "文臣",
+      "rationale": "卷名『郭符许列传』第二人，符融为东汉名士，游太学、师事李膺，以儒学清议知名，属文臣主轴。"
+    },
+    {
+      "name": "许劭",
+      "category": "文臣",
+      "rationale": "卷名『郭符许列传』第三人，许劭为东汉名士，以品评人物（月旦评）著称，属儒学清议文士主轴，符合文臣准入。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

@@ -55,6 +55,33 @@ describe('resolveCorrectionSourceNav', () => {
     assert.equal(nav.query.relicId, 9)
   })
 
+  it('routes relation_graph_selection to box detail', () => {
+    const nav = resolveCorrectionSourceNav({
+      sourceType: 'relation_graph_selection',
+      boxId: 'box_1',
+      boxTitle: '乌台诗案',
+      unitId: null,
+      sourceRefId: null,
+      dynastyName: '',
+    })
+    assert.equal(nav.path, '/package-graph/pages/box-detail/index')
+    assert.equal(nav.query.boxId, 'box_1')
+  })
+
+  it('routes box_original_selection to box detail original sheet', () => {
+    const nav = resolveCorrectionSourceNav({
+      sourceType: 'box_original_selection',
+      boxId: 'box_1',
+      boxTitle: '汉武帝',
+      unitId: null,
+      sourceRefId: null,
+      dynastyName: '',
+    })
+    assert.equal(nav.path, '/package-graph/pages/box-detail/index')
+    assert.equal(nav.query.boxId, 'box_1')
+    assert.equal(nav.query.openOriginal, '1')
+  })
+
   it('errors when critique sourceRefId missing', () => {
     const nav = resolveCorrectionSourceNav({
       sourceType: 'critique_detail_selection',

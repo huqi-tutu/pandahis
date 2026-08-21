@@ -1,0 +1,40 @@
+{
+  "work": "04三国志",
+  "vol": "022",
+  "volume_name": "桓二陈徐卫卢传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "桓阶",
+      "category": "文臣",
+      "rationale": "卷名首姓，合传主人公之一，以行政仕宦为主轴，属文臣。"
+    },
+    {
+      "name": "陈群",
+      "category": "文臣",
+      "rationale": "卷名次姓，合传主人公之一，以行政、礼法仕宦为主轴，属文臣。"
+    },
+    {
+      "name": "徐宣",
+      "category": "文臣",
+      "rationale": "卷名第三人，合传主人公之一，以仕宦行政为主轴，属文臣。"
+    },
+    {
+      "name": "卫臻",
+      "category": "文臣",
+      "rationale": "卷名第四人，合传主人公之一，以仕宦行政为主轴，属文臣。"
+    },
+    {
+      "name": "卢毓",
+      "category": "文臣",
+      "rationale": "卷名末姓，合传主人公之一，以仕宦行政为主轴，属文臣。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

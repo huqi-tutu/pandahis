@@ -8,7 +8,7 @@ from pathlib import Path
 from typing import Any, Dict, List, Tuple
 
 from lib.attribution import apply_attribution_fixes
-from lib.config import default_index_path, paths
+from lib.config import default_index_path, paths, resolve_output_dir
 from lib.openclaw import (
     build_translate_enrich_prompt,
     build_translate_mother_prompt,
@@ -105,7 +105,7 @@ def refine_entry(
     idx = index_path or default_index_path()
     recalled = recall_entry(entry_id, index_path=idx)
     entry_name = str(recalled.get("史略名称") or "")
-    out_dir = output_dir or paths()["translate_output"]
+    out_dir = resolve_output_dir(index_path=idx, output_dir=output_dir)
     ok, data, errs = load_output(entry_id, out_dir, entry_name)
     if not ok:
         return False, "; ".join(errs)
@@ -140,14 +140,16 @@ def refine_entry(
     output_file = resolve_output_path(entry_id, out_dir, entry_name)
     recalled_json = json.dumps(recalled, ensure_ascii=False, indent=2)
     plan_json = json.dumps(
-        plan_for_enrich_phase(plan) if scope in ("intro", "tail", "full") else plan_for_mother_phase(plan),
+        plan_for_enrich_phase(plan)
+        if scope in ("intro", "tail", "full")
+        else plan_for_mother_phase(plan),
         ensure_ascii=False,
         indent=2,
     )
 
     extra = (
         f"\n\n## 局部更新 scope: {scope}\n"
-        f"## 用户意见\n{instructions or '按最新规则优化：叙事句专名融入白话，「」用于完整摘句/对话/句群；避免与母本重复、禁释通识字'}\n"
+        f"## 用户意见\n{instructions or '按最新规则优化：叙事白话为主；经典句用直角「」镶嵌原文后接叙；白话对话用 “”；避免对照体与母本重复'}\n"
         f"## 当前正文片段（待改）\n"
         f"{_intro_paragraphs(detail.split('*参考著作*')[0], 3) if scope == 'intro' else detail[:2500]}\n"
     )

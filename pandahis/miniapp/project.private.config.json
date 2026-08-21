@@ -1,5 +1,5 @@
 {
-  "libVersion": "3.14.5",
+  "libVersion": "3.17.0",
   "projectname": "miniapp",
   "setting": {
     "useCompilerPlugins": [
@@ -16,7 +16,7 @@
     "useStaticServer": false,
     "useLanDebug": true,
     "showES6CompileOption": false,
-    "compileHotReLoad": false,
+    "compileHotReLoad": true,
     "checkInvalidKey": true,
     "ignoreDevUnusedFiles": false,
     "bigPackageSizeSupport": true

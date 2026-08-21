@@ -1,0 +1,30 @@
+{
+  "work": "04三国志",
+  "vol": "010",
+  "volume_name": "荀彧荀攸贾诩传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "荀彧",
+      "category": "文臣",
+      "rationale": "卷名首列人物，三国志合传主轴之一；以谋略辅政、参与军国大计为主，属文臣列传主轴。"
+    },
+    {
+      "name": "荀攸",
+      "category": "文臣",
+      "rationale": "卷名次列人物，合传主轴之一；以谋主身份为曹操画策，属文臣列传主轴。"
+    },
+    {
+      "name": "贾诩",
+      "category": "文臣",
+      "rationale": "卷名末列人物，合传主轴之一；以奇谋善断著称，历仕多主终归曹魏，属文臣列传主轴。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

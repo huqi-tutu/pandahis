@@ -1,0 +1,70 @@
+{
+  "work": "04三国志",
+  "vol": "052",
+  "total_paragraphs": 33,
+  "volume_subtype": "hezhuan",
+  "derived_from": "04三国志_052_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 32,
+      "paragraph_to": 33,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "张昭",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 10,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "张昭字子布，彭城人也。少好学，善隶书，从白侯子安受《左氏春秋》，博览众书，与琅邪",
+        "close_paragraph": 10,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P10"
+      }
+    },
+    {
+      "name": "顾雍",
+      "category": "文臣",
+      "paragraph_from": 11,
+      "paragraph_to": 16,
+      "boundary_evidence": {
+        "open_paragraph": 11,
+        "open_phrase": "顾雍字元叹，吴郡吴人也。蔡伯喈从朔方还，尝避怨于吴，雍从学琴书。州郡表荐，弱冠为",
+        "close_paragraph": 16,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P11–P16"
+      }
+    },
+    {
+      "name": "诸葛瑾",
+      "category": "文臣",
+      "paragraph_from": 17,
+      "paragraph_to": 22,
+      "boundary_evidence": {
+        "open_paragraph": 17,
+        "open_phrase": "诸葛瑾字子瑜，琅邪阳都人也。汉末避乱江东。值孙策卒，孙权姊婿曲阿弘咨见而异之，荐",
+        "close_paragraph": 22,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P17–P22"
+      }
+    },
+    {
+      "name": "步骘",
+      "category": "文臣",
+      "paragraph_from": 23,
+      "paragraph_to": 31,
+      "boundary_evidence": {
+        "open_paragraph": 23,
+        "open_phrase": "步骘字子山，临淮淮阴人也。世乱，避难江东，单身穷困，与广陵卫旌同年相善，俱以种瓜",
+        "close_paragraph": 31,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P23–P31"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

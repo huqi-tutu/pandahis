@@ -1,0 +1,280 @@
+{
+  "volume": "吕布（张邈）臧洪传",
+  "source_file": "04三国志_007_吕布（张邈）臧洪传第七.txt",
+  "total_paragraphs": 25,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "interleaved",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "吕布",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "吕布",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "吕布",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "吕布",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "张邈",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "张邈",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "吕布",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "吕布",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "吕布",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "吕布",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "吕布",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "吕布",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "吕布",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "臧洪",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "臧洪",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "臧洪",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "臧洪",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "臧洪",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "臧洪",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "臧洪",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "臧洪",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "臧洪",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "臧洪",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SANGUOZHI_007_01",
+      "史略名称": "吕布",
+      "史略简介": "吕布",
+      "原文字句": "吕布字奉先，五原郡九原人也。以骁武给并州。刺史丁原为骑都尉，屯河内，以布为主簿，大见亲待。灵帝崩，原将兵诣洛阳。与何进谋诛诸黄门，拜执金吾。进败，董卓入京都，将为乱，欲杀原，并其兵众。卓以布见信于原，诱布令杀原。布斩原首诣卓，卓以布为骑都尉，甚爱信之，誓为父子。",
+      "史略分类": "武将",
+      "主要史料出处": "《04三国志·卷7·吕布（张邈）臧洪传》",
+      "paragraphs": [
+        {
+          "volume": "吕布（张邈）臧洪传",
+          "paragraph_from": 2,
+          "paragraph_to": 5
+        },
+        {
+          "volume": "吕布（张邈）臧洪传",
+          "paragraph_from": 8,
+          "paragraph_to": 14
+        }
+      ]
+    },
+    {
+      "史略ID": "SANGUOZHI_007_02",
+      "史略名称": "张邈",
+      "史略简介": "张邈",
+      "原文字句": "张邈字孟卓，东平寿张人也。少以侠闻，振穷救急，倾家无爱，士多归之。太祖、袁绍皆与邈友。辟公府，以高第拜骑都尉，迁陈留太守。董卓之乱，太祖与邈首举义兵。汴水之战，邈遣卫兹将兵随太祖。袁绍既为盟主，有骄矜色，邈正议责绍。绍使太祖杀邈，太祖不听，责绍曰：“孟卓，亲友也，是非当容之。今天下未定，不宜自相危也。”邈知之，益德太祖。太祖之征陶谦，敕家曰：“我若不还，往依孟卓。”后还，见邈，垂泣相对。其亲如此。",
+      "史略分类": "武将",
+      "主要史料出处": "《04三国志·卷7·吕布（张邈）臧洪传》",
+      "paragraphs": [
+        {
+          "volume": "吕布（张邈）臧洪传",
+          "paragraph_from": 6,
+          "paragraph_to": 7
+        }
+      ]
+    },
+    {
+      "史略ID": "SANGUOZHI_007_03",
+      "史略名称": "臧洪",
+      "史略简介": "臧洪",
+      "原文字句": "臧洪字子源，广陵射阳人也。父旻，历匈奴中郎将、中山、太原太守，所在有名。洪体貌魁梧，有异于人，举孝廉为郎。时选三署郎以补县长；琅邪赵昱为莒长，东莱刘繇下邑长，东海王朗菑丘长，洪即丘长。灵帝末，弃官还家，太守张超请洪为功曹。",
+      "史略分类": "武将",
+      "主要史料出处": "《04三国志·卷7·吕布（张邈）臧洪传》",
+      "paragraphs": [
+        {
+          "volume": "吕布（张邈）臧洪传",
+          "paragraph_from": 15,
+          "paragraph_to": 24
+        }
+      ]
+    }
+  ],
+  "translation_qa_hint": "混写卷：人物段落非连续。翻译质检须按 entries[].paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。"
+}

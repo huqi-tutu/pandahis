@@ -1,0 +1,11 @@
+<view class="page-loading {{block ? 'page-loading--block' : ''}}">
+  <view class="page-loading-row">
+    <text class="page-loading-text">{{text}}</text>
+    <view wx:if="{{showDots}}" class="page-loading-ellipsis" aria-hidden="true">
+      <view class="page-loading-ellipsis-dot"></view>
+      <view class="page-loading-ellipsis-dot"></view>
+      <view class="page-loading-ellipsis-dot"></view>
+    </view>
+  </view>
+  <slot></slot>
+</view>

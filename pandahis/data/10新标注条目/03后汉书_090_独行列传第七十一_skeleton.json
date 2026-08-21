@@ -1,0 +1,695 @@
+{
+  "volume": "独行列传",
+  "source_file": "03后汉书_090_独行列传第七十一.txt",
+  "total_paragraphs": 93,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 3,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "谯玄",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "谯玄",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "谯玄",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "谯玄",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "谯玄",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "谯玄",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "谯玄",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "谯玄",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "李业",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "李业",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "李业",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "李业",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "李业",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "李业",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 19,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 20,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 21,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 22,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 23,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 24,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 25,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 26,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 27,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 28,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 29,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 30,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 31,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 32,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 33,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 34,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 35,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "范式",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "范式",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "范式",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "范式",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "范式",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "范式",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 43,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 44,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 45,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 46,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 47,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 48,
+      "owners": [
+        {
+          "name": "陆续",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 49,
+      "owners": [
+        {
+          "name": "陆续",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 50,
+      "owners": [
+        {
+          "name": "陆续",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 51,
+      "owners": [
+        {
+          "name": "陆续",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 52,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 53,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 54,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 55,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 56,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 57,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 58,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 59,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 60,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 61,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 62,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 63,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 64,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 65,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 66,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 67,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 68,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 69,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 70,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 71,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 72,
+      "owners": [
+        {
+          "name": "范冉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 73,
+      "owners": [
+        {
+          "name": "范冉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 74,
+      "owners": [
+        {
+          "name": "范冉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 75,
+      "owners": [
+        {
+          "name": "范冉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 76,
+      "owners": [
+        {
+          "name": "范冉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 77,
+      "owners": [
+        {
+          "name": "范冉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 78,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 79,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 80,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 81,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 82,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 83,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 84,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 85,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 86,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 87,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 88,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 89,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 90,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 91,
+      "owners": [
+        {
+          "name": "王烈",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 92,
+      "owners": [
+        {
+          "name": "王烈",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 93,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HOUHANSHU_090_01",
+      "史略名称": "谯玄",
+      "史略简介": "谯玄",
+      "原文字句": "谯玄字君黄，巴郡阆中人也。少好学，能说《易》《春秋》。仕于州郡。成帝永始二年，有日食之灾，乃诏举敦朴逊让、有行义者各一人。州举玄，诣公车，对策高第，拜议郎。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷90·独行列传》",
+      "paragraphs": [
+        {
+          "volume": "独行列传",
+          "paragraph_from": 4,
+          "paragraph_to": 11
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_090_02",
+      "史略名称": "李业",
+      "史略简介": "李业",
+      "原文字句": "李业字巨游，广汉梓潼人也。少有志操，介特。习《鲁诗》，师博士许晃。元始中，举明经，除为郎。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷90·独行列传》",
+      "paragraphs": [
+        {
+          "volume": "独行列传",
+          "paragraph_from": 12,
+          "paragraph_to": 17
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_090_03",
+      "史略名称": "范式",
+      "史略简介": "范式",
+      "原文字句": "范式字巨卿，山阳金乡人也，一名汜。少游太学，为诸生，与汝南张劭为友。劭字元伯。二人并告归乡里。式谓元伯曰：“后二年当还，将过拜尊亲，见孺子焉。”乃共克期日。后期方至，元伯具以白母，请设馔以候之。母曰：“二年之别，千里结言，尔何相信之审邪？”对曰：“巨卿信士，必不乖违。”母曰：“若然，当为尔酝酒。”至其日，巨卿果到，升堂拜饮，尽欢而别。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷90·独行列传》",
+      "paragraphs": [
+        {
+          "volume": "独行列传",
+          "paragraph_from": 36,
+          "paragraph_to": 41
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_090_04",
+      "史略名称": "陆续",
+      "史略简介": "陆续",
+      "原文字句": "陆续字智初，会稽吴人也。世为族姓。祖父闳，字子春，建武中为尚书令。美姿貌，喜着越布单衣，光武见而好之，自是常敕会稽郡献越布。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷90·独行列传》",
+      "paragraphs": [
+        {
+          "volume": "独行列传",
+          "paragraph_from": 48,
+          "paragraph_to": 51
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_090_05",
+      "史略名称": "范冉",
+      "史略简介": "范冉",
+      "原文字句": "范冉字史云，陈留外黄人也。少为县小吏，年十八，奉檄迎督邮，冉耻之，乃遁去。到南阳，受业于樊英。又游三辅，就马融通经，历年乃还。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷90·独行列传》",
+      "paragraphs": [
+        {
+          "volume": "独行列传",
+          "paragraph_from": 72,
+          "paragraph_to": 77
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_090_06",
+      "史略名称": "王烈",
+      "史略简介": "王烈",
+      "原文字句": "王烈字彦方，太原人也。少师事陈寔，以义行称乡里。有盗牛者，主得之，盗请罪曰：“刑戮是甘，乞不使王彦方知也。”烈闻而使人谢之，遗布一端。或问其故，烈曰：“盗惧吾闻其过，是有耻恶之心。既怀耻恶，必能改善，故以此激之。”后有老父遗剑于路，行道一人见而守之，至暮，老父还寻，得剑，怪而问其姓名，以事告烈。烈使推求，乃先盗牛者也。诸有争讼曲直，将质之于烈，或至涂而反，或望庐而还。其以德感人若此。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷90·独行列传》",
+      "paragraphs": [
+        {
+          "volume": "独行列传",
+          "paragraph_from": 91,
+          "paragraph_to": 92
+        }
+      ]
+    }
+  ]
+}

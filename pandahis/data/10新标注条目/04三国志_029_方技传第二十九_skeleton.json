@@ -1,0 +1,547 @@
+{
+  "volume": "方技传",
+  "source_file": "04三国志_029_方技传第二十九.txt",
+  "total_paragraphs": 52,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "华佗",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "华佗",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "华佗",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "华佗",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "华佗",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "华佗",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "华佗",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "华佗",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "华佗",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "华佗",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "华佗",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "华佗",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "华佗",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "华佗",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "华佗",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "华佗",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "华佗",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "华佗",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "华佗",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "杜夔",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "杜夔",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "杜夔",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "杜夔",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "朱建平",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "朱建平",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "朱建平",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "朱建平",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "周宣",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "周宣",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "周宣",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "周宣",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "管辂",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "管辂",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "管辂",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "管辂",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "管辂",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "管辂",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "管辂",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "管辂",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "管辂",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "管辂",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "管辂",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "管辂",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "管辂",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [
+        {
+          "name": "管辂",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 47,
+      "owners": [
+        {
+          "name": "管辂",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 48,
+      "owners": [
+        {
+          "name": "管辂",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 49,
+      "owners": [
+        {
+          "name": "管辂",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 50,
+      "owners": [
+        {
+          "name": "管辂",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 51,
+      "owners": [
+        {
+          "name": "管辂",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 52,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SANGUOZHI_029_01",
+      "史略名称": "华佗",
+      "史略简介": "华佗",
+      "原文字句": "华佗字元化，沛国谯人也，一名旉。游学徐土，兼通数经。沛相陈珪举孝廉，太尉黄琬辟，皆不就。晓养性之术，时人以为年且百岁而貌有壮容。又精方药，其疗疾，合汤不过数种，心解分剂，不复称量，煮熟便饮，语其节度，舍去辄愈。若当灸，不过一两处，每处不过七八壮，病亦应除。若当针，亦不过一两处，下针言“当引某许，若至，语人”。病者言“已到”，应便拔针，病亦行差。若病结积在内，针药所不能及，当须刳割者，便饮其麻沸散，",
+      "史略分类": "庶众",
+      "主要史料出处": "《04三国志·卷29·方技传》",
+      "paragraphs": [
+        {
+          "volume": "方技传",
+          "paragraph_from": 2,
+          "paragraph_to": 20
+        }
+      ]
+    },
+    {
+      "史略ID": "SANGUOZHI_029_02",
+      "史略名称": "杜夔",
+      "史略简介": "杜夔",
+      "原文字句": "杜夔字公良，河南人也。以知音为雅乐郎，中平五年，疾去官。州郡司徒礼辟，以世乱奔荆州。荆州牧刘表令与孟曜为汉主合雅乐，乐备，表欲庭观之，夔谏曰：“今将军号为天子合乐，而庭作之，无乃不可乎！”表纳其言而止。后表子琮降太祖，太祖以夔为军谋祭酒，参太乐事，因令创制雅乐。",
+      "史略分类": "庶众",
+      "主要史料出处": "《04三国志·卷29·方技传》",
+      "paragraphs": [
+        {
+          "volume": "方技传",
+          "paragraph_from": 21,
+          "paragraph_to": 24
+        }
+      ]
+    },
+    {
+      "史略ID": "SANGUOZHI_029_03",
+      "史略名称": "朱建平",
+      "史略简介": "朱建平",
+      "原文字句": "朱建平，沛国人也。善相术，于闾巷之间，效验非一。太祖为魏公，闻之，召为郎。文帝为五官将，坐上会客三十余人，文帝问己年寿，又令遍相众宾。建平曰：“将军当寿八十，至四十时当有小厄，愿谨护之。”谓夏侯威曰：“君四十九位为州牧，而当有厄，厄若得过，可年至七十，致位公辅。”谓应璩曰：“君六十二位为常伯，而当有厄，先此一年，当独见一白狗，而旁人不见也。”谓曹彪曰：“君据藩国，至五十七当厄于兵，宜善防之。”",
+      "史略分类": "庶众",
+      "主要史料出处": "《04三国志·卷29·方技传》",
+      "paragraphs": [
+        {
+          "volume": "方技传",
+          "paragraph_from": 25,
+          "paragraph_to": 28
+        }
+      ]
+    },
+    {
+      "史略ID": "SANGUOZHI_029_04",
+      "史略名称": "周宣",
+      "史略简介": "周宣",
+      "原文字句": "周宣字孔和，乐安人也。为郡吏。太守杨沛梦人曰：“八月一日曹公当至，必与君杖，饮以药酒。”使宣占之。是时黄巾贼起，宣对曰：“夫杖起弱者，药治人病，八月一日，贼必除灭。”至期，贼果破。",
+      "史略分类": "庶众",
+      "主要史料出处": "《04三国志·卷29·方技传》",
+      "paragraphs": [
+        {
+          "volume": "方技传",
+          "paragraph_from": 29,
+          "paragraph_to": 32
+        }
+      ]
+    },
+    {
+      "史略ID": "SANGUOZHI_029_05",
+      "史略名称": "管辂",
+      "史略简介": "管辂",
+      "原文字句": "管辂字公明，平原人也。容貌粗丑，无威仪而嗜酒，饮食言戏，不择非类，故人多爱之而不敬也。",
+      "史略分类": "庶众",
+      "主要史料出处": "《04三国志·卷29·方技传》",
+      "paragraphs": [
+        {
+          "volume": "方技传",
+          "paragraph_from": 33,
+          "paragraph_to": 51
+        }
+      ]
+    }
+  ]
+}

@@ -28,7 +28,17 @@
       </view>
       <block wx:for="{{[selectionMountKey]}}" wx:key="*this">
         <selection id="critiqueBodySelection" disable-context-menu bindselectionchange="onDetailSelectionChange">
-          <text class="section-body" user-select>{{body || '暂无评述详情'}}</text>
+          <text class="section-body" user-select>
+            <block wx:if="{{bodySegs.length}}">
+              <text
+                wx:for="{{bodySegs}}"
+                wx:key="index"
+                id="{{item.anchorId}}"
+                class="{{item.highlight ? 'note-hl' : ''}} {{item.focus ? 'note-hl--focus' : ''}}"
+              >{{item.text}}</text>
+            </block>
+            <block wx:else>{{body || '暂无评述详情'}}</block>
+          </text>
         </selection>
       </block>
     </view>
@@ -47,6 +57,18 @@
     bind:submit="onCorrectionSubmit"
   />
 
+  <note-modal
+    visible="{{noteVisible}}"
+    mode="edit"
+    boxTitle="{{boxTitle}}"
+    civilizationName="{{civilizationName}}"
+    dynastyName="{{dynastyName}}"
+    selectedText="{{noteSelectedText}}"
+    submitting="{{noteSubmitting}}"
+    bind:close="closeNote"
+    bind:submit="onNoteSubmit"
+  />
+
   <dictionary-sheet
     visible="{{dictionaryVisible}}"
     query="{{dictionaryQuery}}"
@@ -61,6 +83,7 @@
     showShare="{{false}}"
     bind:copy="onSelectionCopy"
     bind:query="onSelectionQuery"
+    bind:note="onSelectionNote"
     bind:correction="onSelectionCorrection"
   />
 </view>

@@ -45,8 +45,137 @@ _FIXUPS: tuple[tuple[str, str], ...] = (
 )
 
 
+# 标点硬错：冒号后逗号、句末引号外逗号、引号后逗号再破折号、段首破折号
+_COLON_COMMA = re.compile(r"[：:]，")
+# 引语内已有句末点号时，后引号外不得再加逗号（GB/T 15834）
+_TERMINAL_QUOTE_OUTER_COMMA = re.compile(r"([。！？][」”])，")
+_QUOTE_COMMA_EMDASH = re.compile(r"([」”])，\s*——")
+_PARA_START_EMDASH = re.compile(r"(?m)^[ \t]*——")
+
+
+def heal_prose_punctuation(text: str) -> str:
+    """愈合标点硬错（写作规则「禁止事项 · 标点硬错」）。
+
+    1. `：，` / `:，` → `：`
+    2. `。”，` / `？」，` / `！」，` 等 → 去掉后引号外逗号
+    3. `」`/`”` 与 `——` 之间的多余逗号 → 直连
+    4. 段首 `——` → 删除破折号，保留后文
+    """
+    if not text:
+        return text
+    out = _COLON_COMMA.sub("：", text)
+    out = _TERMINAL_QUOTE_OUTER_COMMA.sub(r"\1", out)
+    out = _QUOTE_COMMA_EMDASH.sub(r"\1——", out)
+    out = _PARA_START_EMDASH.sub("", out)
+    return out
+
+
+def detect_prose_punctuation_defects(text: str) -> list[str]:
+    """返回仍存在的标点硬错说明（愈合后应为空）。"""
+    body = text or ""
+    found: list[str] = []
+    if _COLON_COMMA.search(body):
+        found.append("冒号后紧跟逗号（：，）")
+    if _TERMINAL_QUOTE_OUTER_COMMA.search(body):
+        found.append("句末引号外多逗号（。”，/？」，）")
+    if _QUOTE_COMMA_EMDASH.search(body):
+        found.append("引号后多逗号再破折号（」，——）")
+    if _PARA_START_EMDASH.search(body):
+        found.append("段首破折号（——）")
+    return found
+
+
+def _unwrap_nested_output_json(text: str) -> str:
+    """剥掉误嵌的 {"史略ID":..., "翻译详情"|"母本顺译": "..."}（整段或夹在正文中）。
+
+    兼容含未转义控制字符/尾部 ``` 的伪 JSON：用字段定位 + 字符串扫描兜底。
+    """
+    s = (text or "").strip()
+    if not s or "史略ID" not in s:
+        return s
+    # 去掉模型偶发追加的 markdown 围栏
+    s = re.sub(r"^```(?:json)?\s*", "", s)
+    s = re.sub(r"\s*```$", "", s).strip()
+
+    def _inner_from_obj(obj: Any) -> str | None:
+        if not isinstance(obj, dict):
+            return None
+        inner = obj.get("翻译详情") or obj.get("母本顺译")
+        if isinstance(inner, str) and inner.strip():
+            return inner.strip()
+        return None
+
+    def _scan_inner_string(blob: str) -> str | None:
+        m = re.search(r'"(?:翻译详情|母本顺译)"\s*:\s*"', blob)
+        if not m:
+            return None
+        chars: list[str] = []
+        i = m.end()
+        while i < len(blob):
+            c = blob[i]
+            if c == "\\" and i + 1 < len(blob):
+                nxt = blob[i + 1]
+                esc = {"n": "\n", "r": "\r", "t": "\t", '"': '"', "\\": "\\", "/": "/"}
+                chars.append(esc.get(nxt, nxt))
+                i += 2
+                continue
+            if c == '"':
+                break
+            chars.append(c)
+            i += 1
+        inner = "".join(chars).strip()
+        return inner or None
+
+    # 整段就是 JSON
+    if s.startswith("{"):
+        try:
+            inner = _inner_from_obj(json.loads(s))
+            if inner:
+                return inner
+        except json.JSONDecodeError:
+            start, end = s.find("{"), s.rfind("}")
+            if start >= 0 and end > start:
+                try:
+                    inner = _inner_from_obj(json.loads(s[start : end + 1]))
+                    if inner:
+                        return inner
+                except json.JSONDecodeError:
+                    scanned = _scan_inner_string(s)
+                    if scanned:
+                        return scanned
+
+    # 正文中夹嵌：用内层正文替换该 JSON 块（保留前后叙事）
+    for m in re.finditer(r"\{\s*\"史略ID\"\s*:", s):
+        start = m.start()
+        depth = 0
+        end = -1
+        for i, ch in enumerate(s[start:], start=start):
+            if ch == "{":
+                depth += 1
+            elif ch == "}":
+                depth -= 1
+                if depth == 0:
+                    end = i + 1
+                    break
+        if end < 0:
+            # 截断 JSON：从该起点扫描字段
+            scanned = _scan_inner_string(s[start:])
+            if scanned:
+                s = (s[:start].rstrip() + "\n\n" + scanned).strip()
+            break
+        blob = s[start:end]
+        try:
+            inner = _inner_from_obj(json.loads(blob))
+        except json.JSONDecodeError:
+            inner = _scan_inner_string(blob)
+        if inner:
+            s = (s[:start].rstrip() + "\n\n" + inner + "\n\n" + s[end:].lstrip()).strip()
+            break
+    return s
+
+
 def sanitize_mother_detail(detail: str) -> str:
-    text = (detail or "").strip()
+    text = _unwrap_nested_output_json((detail or "").strip())
     if not text:
         return text
     # Phase1 误用《「篇名」》引用他书，改回引号原词
@@ -90,7 +219,7 @@ def _demote_six_arts_citations(text: str) -> str:
 
 
 def sanitize_enrich_detail(detail: str) -> str:
-    text = (detail or "").strip()
+    text = _unwrap_nested_output_json((detail or "").strip())
     if not text:
         return text
 
@@ -123,6 +252,7 @@ def sanitize_enrich_detail(detail: str) -> str:
 
     text = re.sub(r"[，,]{2,}", "，", text)
     text = re.sub(r"\n{3,}", "\n\n", text)
+    text = heal_prose_punctuation(text)
     return text.strip()
 
 
@@ -194,13 +324,23 @@ def fix_reference_section_format(detail: str) -> str:
     return f"{before}\n\n{after}"
 
 
+_ATX_HEADING = re.compile(r"(?m)^#{1,6}\s+.*$")
+
+
+def _strip_markdown_headings(text: str) -> str:
+    text = _ATX_HEADING.sub("", text or "")
+    return re.sub(r"\n{3,}", "\n\n", text).strip()
+
+
 def sanitize_enrich_detail_full(detail: str) -> str:
-    """增强版后处理：段落合并 + 去加粗 + 去分节词 + 参考著作段格式。"""
+    """增强版后处理：段落合并 + 去加粗 + 去章节标题 + 去分节词 + 参考著作段格式。"""
     text = sanitize_enrich_detail(detail)
+    text = _strip_markdown_headings(text)
     text = _merge_short_paragraphs(text)
     text = _remove_bold_markers(text)
     text = _strip_first_second_markers(text)
     text = fix_reference_section_format(text)
+    text = heal_prose_punctuation(text)
     return text
 
 

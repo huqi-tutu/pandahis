@@ -1,0 +1,425 @@
+{
+  "volume": "列女传",
+  "source_file": "03后汉书_094_列女传第七十四.txt",
+  "total_paragraphs": 46,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "鲍宣妻桓少君",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "鲍宣妻桓少君",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "王霸妻",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "姜诗妻庞氏",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "姜诗妻庞氏",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "曹世叔妻班昭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "曹世叔妻班昭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "曹世叔妻班昭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "曹世叔妻班昭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "曹世叔妻班昭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "曹世叔妻班昭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "曹世叔妻班昭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "曹世叔妻班昭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "曹世叔妻班昭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "曹世叔妻班昭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "曹世叔妻班昭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "曹世叔妻班昭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "曹世叔妻班昭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "曹世叔妻班昭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "曹世叔妻班昭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "曹世叔妻班昭",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 26,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 27,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 28,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 29,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 30,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 31,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 32,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 33,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 34,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 35,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 36,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 37,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 38,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 39,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "蔡邕女蔡文姬",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "蔡邕女蔡文姬",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "蔡邕女蔡文姬",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "蔡邕女蔡文姬",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "蔡邕女蔡文姬",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "蔡邕女蔡文姬",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HOUHANSHU_094_01",
+      "史略名称": "鲍宣妻桓少君",
+      "史略简介": "鲍宣妻桓少君",
+      "原文字句": "勃海鲍宣妻者，桓氏之女也，字少君。宣尝就少君父学，父奇其清苦，故以女妻之，装送资贿甚盛。宣不悦，谓妻曰：“少君生富骄，习美饰，而吾实贫贱，不敢当礼。”妻曰：“大人以先生修德守约，故使贱妾侍执巾栉。即奉承君子，唯命是从。”宣笑曰：“能如是，是吾志也。”妻乃悉归侍御服饰，更着短布裳，与宣共挽鹿车归乡里。拜姑礼毕，提瓮出汲，修行妇道，乡邦称之。",
+      "史略分类": "庶众",
+      "主要史料出处": "《03后汉书·卷94·列女传》",
+      "paragraphs": [
+        {
+          "volume": "列女传",
+          "paragraph_from": 3,
+          "paragraph_to": 4
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_094_02",
+      "史略名称": "王霸妻",
+      "史略简介": "王霸妻",
+      "原文字句": "太原王霸妻者，不知何氏之女也。霸少立高节，光武时连征，不仕。霸已见《逸人传》。妻亦美志行。初，霸与同郡令狐子伯为友，后子伯为楚相，而其子为郡功曹。子伯乃令子奉书于霸，车马服从，雍容如也。霸子时方耕于野，闻宾至，投耒而归，见令狐子，沮怍不能仰视。霸目之，有愧容，客去而久卧不起。妻怪问其故，始不肯告，妻请罪，而后言曰：“吾与子伯素不相若，向见其子容服甚光，举措有适，而我儿曹蓬发历齿，未知礼则，见客而有",
+      "史略分类": "庶众",
+      "主要史料出处": "《03后汉书·卷94·列女传》",
+      "paragraphs": [
+        {
+          "volume": "列女传",
+          "paragraph_from": 5,
+          "paragraph_to": 5
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_094_03",
+      "史略名称": "姜诗妻庞氏",
+      "史略简介": "姜诗妻庞氏",
+      "原文字句": "广汉姜诗妻者，同郡庞盛之女也。诗事母至孝，妻奉顺尤笃。母好饮江水，水去舍六七里，妻常溯流而汲。后值风，不时得还，母渴，诗责而遣之。妻乃寄止邻舍，昼夜纺绩，市珍羞，使邻母以意自遗其姑。如是者久之，姑怪问邻母，邻母具对。姑感惭呼还，恩养愈谨。其子后因远汲溺死，妻恐姑哀伤，不敢言，而托以行学不在。姑嗜鱼鲙，又不能独食，夫妇常力作供鲙，呼邻母共之。舍侧忽有涌泉，味如江水，每旦辄出双鲤鱼，常以供二母之膳。赤",
+      "史略分类": "庶众",
+      "主要史料出处": "《03后汉书·卷94·列女传》",
+      "paragraphs": [
+        {
+          "volume": "列女传",
+          "paragraph_from": 6,
+          "paragraph_to": 7
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_094_04",
+      "史略名称": "曹世叔妻班昭",
+      "史略简介": "曹世叔妻班昭",
+      "原文字句": "扶风曹世叔妻者，同郡班彪之女也，名昭，字惠班，一名姬。博学高才。世叔早卒，有节行法度。兄固著《汉书》，其八表及《天文志》未及竟而卒，和帝诏昭就东观臧书阁踵而成之。帝数召入宫，令皇后诸贵人师事焉，号曰大家。每有贡献异物，辄诏大家作赋颂。及邓太后临朝，与闻政事。以出入之勤，特封子成关内侯，官至齐相。时《汉书》始出，多未能通者，同郡马融伏于阁下，从昭受读，后又诏融兄续继昭成之。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷94·列女传》",
+      "paragraphs": [
+        {
+          "volume": "列女传",
+          "paragraph_from": 9,
+          "paragraph_to": 24
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_094_05",
+      "史略名称": "蔡邕女蔡文姬",
+      "史略简介": "蔡邕女蔡文姬",
+      "原文字句": "陈留董祀妻者，同郡察邕之女也，名琰，字文姬。博学有才辩，又妙于音律。适河东卫仲道。夫亡无子，归宁于家。兴平中，天下丧乱，文姬为胡骑所获，没于南匈奴左贤王，在胡中十二年，生二子。曹操素与邕善，痛其无嗣，乃遣使者以金璧赎之，而重嫁于祀。",
+      "史略分类": "庶众",
+      "主要史料出处": "《03后汉书·卷94·列女传》",
+      "paragraphs": [
+        {
+          "volume": "列女传",
+          "paragraph_from": 40,
+          "paragraph_to": 45
+        }
+      ]
+    }
+  ]
+}

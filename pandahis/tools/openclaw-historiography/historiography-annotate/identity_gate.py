@@ -188,15 +188,101 @@ VOLUME_NAME_PATTERNS: List[dict] = [
     },
     {
         "name_re": r"匈奴传",
+        "not_re": r"南匈奴",
+        "works": ["01史记", "02汉书"],
         "required": [{"name": "匈奴", "category": "蕃祚"}],
         "forbidden_names": ["冒顿", "头曼", "老上单"],
         "hint": "匈奴传主轴为匈奴部族/政权集体（蕃祚）；年=政权立国至灭亡，非个人生卒",
     },
     {
         "name_re": r"匈奴列传",
+        "not_re": r"南匈奴",
+        "works": ["01史记"],
         "required": [{"name": "匈奴", "category": "蕃祚"}],
         "forbidden_names": ["冒顿", "头曼", "老上单"],
         "hint": "匈奴列传主轴为匈奴部族/政权集体（蕃祚）；年=政权立国至灭亡，非个人生卒",
+    },
+    {
+        "name_re": r"南匈奴列传",
+        "works": ["03后汉书"],
+        "required": [{"name": "南匈奴", "category": "蕃祚"}],
+        "hint": "后汉书南匈奴列传主轴为南匈奴集体（蕃祚），勿填史记「匈奴」",
+    },
+    {
+        "name_re": r"东夷列传",
+        "works": ["03后汉书"],
+        "required": [{"name": "东夷", "category": "蕃祚"}],
+        "hint": "后汉书东夷列传主轴为东夷诸部集体（蕃祚）",
+    },
+    {
+        "name_re": r"南蛮西南夷列传",
+        "works": ["03后汉书"],
+        "required": [
+            {"name": "南蛮", "category": "蕃祚"},
+            {"name": "西南夷", "category": "蕃祚"},
+        ],
+        "min_protagonists": 2,
+        "hint": "后汉书南蛮西南夷合传：南蛮与西南夷两主轴（同汉书109体例）",
+    },
+    {
+        "name_re": r"西羌传",
+        "works": ["03后汉书"],
+        "required": [{"name": "西羌", "category": "蕃祚"}],
+        "hint": "后汉书西羌传主轴为西羌集体（蕃祚）",
+    },
+    {
+        "name_re": r"乌桓鲜卑列传",
+        "works": ["03后汉书"],
+        "required": [
+            {"name": "乌桓", "category": "蕃祚"},
+            {"name": "鲜卑", "category": "蕃祚"},
+        ],
+        "min_protagonists": 2,
+        "hint": "后汉书乌桓鲜卑合传：乌桓与鲜卑两主轴",
+    },
+    {
+        "name_re": r"董二袁刘传",
+        "works": ["04三国志"],
+        "required": [
+            {"name": "董卓", "category": "武将"},
+            {"name": "袁绍", "category": "武将"},
+            {"name": "袁术", "category": "武将"},
+            {"name": "刘表", "category": "武将"},
+        ],
+        "min_protagonists": 4,
+        "hint": "汉末军阀合传：董卓/袁绍/袁术/刘表均为武将；禁止君王/诸侯（对齐后汉书同人）",
+    },
+    {
+        "name_re": r"刘二牧传",
+        "works": ["04三国志"],
+        "required": [
+            {"name": "刘焉", "category": "宗戚"},
+            {"name": "刘璋", "category": "宗戚"},
+        ],
+        "min_protagonists": 2,
+        "hint": "益州二牧：刘焉/刘璋为汉室宗支→宗戚；禁止君王/诸侯（对齐后汉书刘焉）",
+    },
+    {
+        "name_re": r"刘繇太史慈士燮传",
+        "works": ["04三国志"],
+        "required": [
+            {"name": "刘繇", "category": "武将"},
+            {"name": "太史慈", "category": "武将"},
+            {"name": "士燮", "category": "文臣"},
+        ],
+        "min_protagonists": 3,
+        "hint": "刘繇/太史慈→武将，士燮→文臣；禁止君王/诸侯",
+    },
+    {
+        "name_re": r"乌丸鲜卑东夷传",
+        "works": ["04三国志"],
+        "required": [
+            {"name": "乌丸", "category": "蕃祚"},
+            {"name": "鲜卑", "category": "蕃祚"},
+            {"name": "东夷", "category": "蕃祚"},
+        ],
+        "min_protagonists": 3,
+        "hint": "三国志蕃祚合传：乌丸/鲜卑/东夷三集体主轴",
     },
     {
         "name_re": r"南越列传",
@@ -236,7 +322,9 @@ VOLUME_NAME_PATTERNS: List[dict] = [
         "hint": "仲尼弟子列传（v2）：Top5 主轴颜回/子路/宰予/子贡/子夏（须用通称，勿填仲由/端木赐/卜商）；其余弟子段落 Step1b 按独立叙事段归对应人或 exclude（名册/一句带过→世系链）",
     },
     {
+        # 《史记》儒林；《后汉书》《汉书》儒林人物不同，勿套用
         "name_re": r"儒林列传",
+        "works": ["01史记"],
         "required": [
             {"name": "申公", "category": "文臣"},
             {"name": "辕固生", "category": "文臣"},
@@ -248,7 +336,9 @@ VOLUME_NAME_PATTERNS: List[dict] = [
         "hint": "儒林列传记汉代经师合传，禁止以孔子或卷名为唯一主轴",
     },
     {
+        # 《史记》酷吏；《后汉书》酷吏为董宣等，勿套用郅都/张汤
         "name_re": r"酷吏列传",
+        "works": ["01史记"],
         "required": [
             {"name": "郅都", "category": "文臣"},
             {"name": "张汤", "category": "文臣"},
@@ -270,6 +360,8 @@ VOLUME_NAME_PATTERNS: List[dict] = [
     },
     {
         "name_re": r"西南夷列传",
+        "not_re": r"南蛮",
+        "works": ["01史记"],
         "required": [{"name": "西南夷", "category": "蕃祚"}],
         "forbidden_names": ["庄蹻"],
         "hint": "西南夷列传主轴为西南夷族群/诸国集体（蕃祚）；年=政权立国至灭亡",
@@ -297,6 +389,12 @@ def _rule_for(work: str, vol: str, volume_name: str) -> Optional[dict]:
         if not re.search(pat["name_re"], vn):
             continue
         if pat.get("not_re") and re.search(pat["not_re"], vn):
+            continue
+        works = pat.get("works")
+        if works and work not in works:
+            continue
+        not_works = pat.get("not_works")
+        if not_works and work in not_works:
             continue
         return pat
     return None

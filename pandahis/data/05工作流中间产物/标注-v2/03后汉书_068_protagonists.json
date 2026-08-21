@@ -1,0 +1,49 @@
+{
+  "work": "03后汉书",
+  "vol": "068",
+  "volume_name": "荀韩钟陈列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_arc": "C",
+  "volume_texture": "sequential",
+  "skip_reason": null,
+  "protagonists_cap_note": "卷名四姓 + 荀氏厚附：荀爽（P7）、荀悦（P20）单立；勿并入荀淑。",
+  "protagonists": [
+    {
+      "name": "荀淑",
+      "category": "文臣",
+      "rationale": "卷名首姓；自「荀淑字季和」开传至卒及八龙总叙。"
+    },
+    {
+      "name": "荀爽",
+      "category": "文臣",
+      "rationale": "淑子厚附；自「爽字慈明」对策、党锢、至司空、著述。"
+    },
+    {
+      "name": "荀悦",
+      "category": "文臣",
+      "rationale": "俭之子、淑孙厚附；自「悦字仲豫」作《申鉴》《汉纪》。"
+    },
+    {
+      "name": "韩韶",
+      "category": "文臣",
+      "rationale": "卷名第二姓；自「韩韶字仲黄」开传。"
+    },
+    {
+      "name": "钟皓",
+      "category": "文臣",
+      "rationale": "卷名第三姓；自「钟皓字季明」开传。"
+    },
+    {
+      "name": "陈寔",
+      "category": "文臣",
+      "rationale": "卷名第四姓；自「陈寔字仲弓」开传（含子纪、谌附叙）。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "论赞",
+    "赞曰"
+  ]
+}

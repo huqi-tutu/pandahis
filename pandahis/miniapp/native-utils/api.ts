@@ -240,6 +240,8 @@ export function request<T>(
     auth?: boolean
     /** 为 true 时 401 仅拒绝 Promise，不清除本地 token（用于会员/热力图等并行次要请求） */
     softAuth?: boolean
+    /** 请求超时 ms，默认 60000 */
+    timeout?: number
   }
 ): Promise<ApiResponse<T>> {
   if (opts?.auth && !getToken()) {
@@ -260,7 +262,7 @@ export function request<T>(
       enableHttp2: false,
       enableQuic: false,
       // 首请求含连接池建连 + 远端 MySQL 时可能 >10s；与后端日志对齐，避免误报 timeout
-      timeout: 60000,
+      timeout: opts?.timeout ?? 60000,
       success(res) {
         const status = res.statusCode || 0
         const body = parseResponseBody(res.data)

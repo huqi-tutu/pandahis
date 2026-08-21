@@ -1,0 +1,40 @@
+{
+  "work": "04三国志",
+  "vol": "053",
+  "volume_name": "张严程阚薛传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "张昭",
+      "category": "文臣",
+      "rationale": "《张严程阚薛传》卷名首姓，张昭为东吴重臣，以谋略、辅政、谏诤为叙事主轴，属文臣列传合传主人公。"
+    },
+    {
+      "name": "严峻",
+      "category": "文臣",
+      "rationale": "卷名第二人，严峻以儒学、文学仕宦于东吴，属文臣列传合传主人公。"
+    },
+    {
+      "name": "程秉",
+      "category": "文臣",
+      "rationale": "卷名第三人，程秉以经学、儒学仕宦于东吴，属文臣列传合传主人公。"
+    },
+    {
+      "name": "阚泽",
+      "category": "文臣",
+      "rationale": "卷名第四人，阚泽以儒学、天文历法仕宦于东吴，属文臣列传合传主人公。"
+    },
+    {
+      "name": "薛综",
+      "category": "文臣",
+      "rationale": "卷名第五人，薛综以文才、外交、儒学仕宦于东吴，属文臣列传合传主人公。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

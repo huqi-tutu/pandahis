@@ -10,9 +10,11 @@
     "pages/invite-accept/index",
     "pages/favorites/index",
     "pages/corrections/index",
+    "pages/notes/index",
+    "pages/notes/list",
+    "pages/notes/detail",
     "pages/footprints/index",
     "pages/read-completed/index",
-    "pages/original-text/index",
     "pages/settings/index",
     "pages/feedback/index",
     "pages/about/index",
@@ -32,6 +34,9 @@
       ]
     }
   ],
+  "usingComponents": {
+    "page-loading": "/components/page-loading/page-loading"
+  },
   "window": {
     "navigationBarTextStyle": "black",
     "navigationStyle": "custom"

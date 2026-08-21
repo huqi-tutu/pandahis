@@ -1,0 +1,22 @@
+{
+  "work": "03后汉书",
+  "vol": "078",
+  "volume_name": "董卓列传",
+  "volume_type_guess": "列传",
+  "volume_arc": "C",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "董卓",
+      "category": "武将",
+      "rationale": "卷名首列人物，东汉末年权臣、军阀，以军功起家、把持朝政，列传主轴核心人物，属武将类。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

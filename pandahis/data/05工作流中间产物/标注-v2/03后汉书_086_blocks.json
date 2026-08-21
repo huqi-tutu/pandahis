@@ -1,0 +1,134 @@
+{
+  "work": "03后汉书",
+  "vol": "086",
+  "total_paragraphs": 63,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_086_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 2,
+      "paragraph_to": 7,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 13,
+      "paragraph_to": 15,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 19,
+      "paragraph_to": 20,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 24,
+      "paragraph_to": 25,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 26,
+      "paragraph_to": 27,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 32,
+      "paragraph_to": 40,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 46,
+      "paragraph_to": 48,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 57,
+      "paragraph_to": 62,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 63,
+      "paragraph_to": 63,
+      "exclude_reason": "共段总述"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "刘昆",
+      "category": "文臣",
+      "paragraph_from": 8,
+      "paragraph_to": 12,
+      "boundary_evidence": {
+        "open_paragraph": 8,
+        "open_phrase": "刘昆字桓公，陈留东昏人，梁孝王之胤也。少习容礼。平帝时，受《施氏易》于沛人戴宾。",
+        "close_paragraph": 12,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P8–P12"
+      }
+    },
+    {
+      "name": "杨政",
+      "category": "文臣",
+      "paragraph_from": 16,
+      "paragraph_to": 18,
+      "boundary_evidence": {
+        "open_paragraph": 16,
+        "open_phrase": "杨政字子行，京兆人也。少好学，从代郡范升受《梁丘易》，善说经书。京师为之语曰：“",
+        "close_paragraph": 18,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P16–P18"
+      }
+    },
+    {
+      "name": "戴凭",
+      "category": "文臣",
+      "paragraph_from": 21,
+      "paragraph_to": 23,
+      "boundary_evidence": {
+        "open_paragraph": 21,
+        "open_phrase": "戴凭字次仲，汝南平舆人也。习《京氏易》。年十六，郡举明经，征试博士，拜郎中。",
+        "close_paragraph": 23,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P21–P23"
+      }
+    },
+    {
+      "name": "欧阳歙",
+      "category": "文臣",
+      "paragraph_from": 28,
+      "paragraph_to": 31,
+      "boundary_evidence": {
+        "open_paragraph": 28,
+        "open_phrase": "欧阳歙字正思，乐安千乘人也。自欧阳生传《伏生尚书》，至歙八世，皆为博士。",
+        "close_paragraph": 31,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P28–P31"
+      }
+    },
+    {
+      "name": "尹敏",
+      "category": "文臣",
+      "paragraph_from": 41,
+      "paragraph_to": 45,
+      "boundary_evidence": {
+        "open_paragraph": 41,
+        "open_phrase": "尹敏字幼季，南阳堵阳人也。少为诸生。初习《欧阳尚书》，后受《古文》，兼善《毛诗》",
+        "close_paragraph": 45,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P41–P45"
+      }
+    },
+    {
+      "name": "孔僖",
+      "category": "文臣",
+      "paragraph_from": 49,
+      "paragraph_to": 56,
+      "boundary_evidence": {
+        "open_paragraph": 49,
+        "open_phrase": "孔僖字仲和，鲁国鲁人也。自安国以下，世传《古文尚书》《毛诗》。曾祖父子建，少游长",
+        "close_paragraph": 56,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P49–P56"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

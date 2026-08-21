@@ -59,22 +59,22 @@
         ></view>
         <view class="matrix-scroll-anchor matrix-scroll-anchor--pad" style="height: {{matrixScrollBottomPad}}rpx;"></view>
       </view>
-      <view class="matrix-time-col" >
-        <view wx:for="{{matrixRows}}" wx:key="key" wx:for-item="row" id="ts_{{row.key}}" class="time-row-abs {{row.showYear ? '' : 'time-row-abs--compact'}}" style="top: {{row.y}}rpx; height: {{row.h}}rpx;">
+      <view wx:if="{{matrixReady}}" class="matrix-time-col">
+        <view wx:for="{{matrixRows}}" wx:key="key" wx:for-item="row" id="ts_{{row.key}}" class="time-row-abs {{row.showYear ? '' : 'time-row-abs--compact'}} {{row.expandable ? 'time-row-abs--hit' : ''}}" style="top: {{row.y}}rpx; height: {{row.hxHitH || row.h}}rpx; z-index: {{row.expandable ? 4 : 1}};" bindtap="{{row.expandable ? 'onDynastyToggle' : ''}}" data-dynasty="{{row.dynastyKey}}" data-row-key="{{row.key}}">
           <view class="time-label-wrap">
             <view wx:if="{{row.showYear}}" class="time-year-row">
               <view class="time-h-line time-h-line--edge"></view>
               <view class="time-year" style="font-size: {{row.yearFontSize}}rpx;">{{row.year}}</view>
               <view class="time-h-line time-h-line--edge"></view>
             </view>
-            <view wx:if="{{row.hxLabel}}" class="time-hx-wrap {{row.expandable ? 'time-hx-wrap--tap' : ''}}" bindtap="{{row.expandable ? 'onDynastyToggle' : ''}}" data-dynasty="{{row.dynastyKey}}" data-row-key="{{row.key}}">
+            <view wx:if="{{row.hxLabel}}" class="time-hx-wrap {{row.expandable ? 'time-hx-wrap--tap' : ''}}">
               <text class="time-dynasty {{row.isMajorNode ? 'time-dynasty--major' : ''}}" style="font-size: {{row.hxFontSize}}rpx;">{{row.hxLabel}}</text>
               <image wx:if="{{row.expandable}}" class="time-expand-arrow {{row.expanded ? 'time-expand-arrow--expanded' : ''}}" src="/配图/icons/kaihe.png" mode="aspectFit" />
             </view>
           </view>
         </view>
       </view>
-      <view class="matrix-canvas">
+      <view wx:if="{{matrixReady}}" class="matrix-canvas">
         <view class="matrix-canvas-inner">
           <view wx:for="{{matrixBlocks}}" wx:key="id" wx:for-item="blk" class="era-block {{blk.edgeClass}}{{blk.isDynastyContainer ? ' era-block--dynasty-container' : ''}}" style="top: {{blk.top}}rpx; height: {{blk.h}}rpx; left: {{blk.leftPct}}%; width: {{blk.widthPct}}%; border-radius: {{blk.radiusStyle}}; z-index: {{blk.zIndex || 1}};" hover-class="{{blk.isDynastyContainer ? '' : 'era-block--hover'}}" bindtap="{{blk.isDynastyContainer ? '' : 'onCardTap'}}" data-dynasty="{{blk.dynasty}}" data-display-name="{{blk.displayName}}" data-person="{{blk.person}}" data-civ="{{blk.civ}}" data-anchor-year="{{blk.anchorYear}}" data-entity-type="{{blk.entityType}}" data-entity-id="{{blk.entityId}}" data-dynasty-id="{{blk.dynastyId}}" data-legacy-id="{{blk.legacyId}}">
             <view class="era-block-fill {{blk.fillSeamFix ? 'era-block-fill--solid-seam' : ''}}{{blk.seamGapTop ? ' era-block-fill--gap-top' : ''}}{{blk.seamGapBottom ? ' era-block-fill--gap-bottom' : ''}}{{blk.seamGapLeft ? ' era-block-fill--gap-left' : ''}}{{blk.seamGapRight ? ' era-block-fill--gap-right' : ''}}" style="background: {{blk.cardBg}}; border-radius: {{blk.radiusStyle}};{{blk.fillStyleExtra || ''}}"></view>
@@ -163,10 +163,28 @@
   </scroll-view>
 
 
+  <view
+    wx:if="{{!matrixReady}}"
+    class="matrix-skeleton"
+    style="top: {{scrollAreaTop}}px; height: {{matrixHeight}}px;"
+  >
+    <view class="matrix-skeleton-time"></view>
+    <view class="matrix-skeleton-canvas">
+      <view class="matrix-skeleton-card" wx:for="{{[1,2,3,4,5,6]}}" wx:key="*this">
+        <view class="matrix-skeleton-meta">
+          <view class="matrix-skeleton-name"></view>
+          <view class="matrix-skeleton-tag"></view>
+        </view>
+        <view class="matrix-skeleton-year"></view>
+        <view class="matrix-skeleton-sheen"></view>
+      </view>
+    </view>
+  </view>
+
   <!-- 导航索引触控层（catch 捕获，阻止 scroll-view 原生滚动） -->
-  <view class="dynasty-nav-touch" style="top: {{scrollAreaTop}}px; height: {{matrixHeight}}px;" catchtouchstart="onNavTouchStart" catchtouchmove="onNavTouchMove" catchtouchend="onNavTouchEnd"></view>
+  <view wx:if="{{matrixReady}}" class="dynasty-nav-touch" style="top: {{scrollAreaTop}}px; height: {{matrixHeight}}px;" catchtouchstart="onNavTouchStart" catchtouchmove="onNavTouchMove" catchtouchend="onNavTouchEnd"></view>
   <!-- 导航索引视觉层（纯展示，不接收触摸） -->
-  <view class="dynasty-nav {{navActive ? 'dynasty-nav--active' : 'dynasty-nav--hidden'}}" style="top: {{scrollAreaTop}}px; height: {{matrixHeight}}px;">
+  <view wx:if="{{matrixReady}}" class="dynasty-nav {{navActive ? 'dynasty-nav--active' : 'dynasty-nav--hidden'}}" style="top: {{scrollAreaTop}}px; height: {{matrixHeight}}px;">
     <view
       wx:for="{{navItems}}"
       wx:key="key"
@@ -197,7 +215,7 @@
     <view class="civ-picker-backdrop" bindtap="onCivPickerClose"></view>
   </view>
 
-  <view wx:if="{{matrixDataLoading}}" class="matrix-data-loading">
+  <view wx:if="{{matrixDataLoading && matrixReady}}" class="matrix-data-loading">
     <view class="matrix-data-loading__inner">
       <view class="matrix-data-loading__dot"></view>
       <text class="matrix-data-loading__text">同步历史数据…</text>

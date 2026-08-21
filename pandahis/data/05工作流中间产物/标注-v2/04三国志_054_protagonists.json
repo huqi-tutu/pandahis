@@ -1,0 +1,30 @@
+{
+  "work": "04三国志",
+  "vol": "054",
+  "volume_name": "周瑜鲁肃吕蒙传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "周瑜",
+      "category": "武将",
+      "rationale": "卷名首列人物，三国时期东吴名将，以赤壁之战等军功征战为主轴，符合武将准入标准。"
+    },
+    {
+      "name": "鲁肃",
+      "category": "文臣",
+      "rationale": "卷名次列人物，东吴重臣，以战略规划、外交斡旋（如榻上策、联刘抗曹）为主轴，符合文臣准入标准。"
+    },
+    {
+      "name": "吕蒙",
+      "category": "武将",
+      "rationale": "卷名末列人物，东吴名将，以白衣渡江、袭取荆州等军功征战为主轴，符合武将准入标准。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

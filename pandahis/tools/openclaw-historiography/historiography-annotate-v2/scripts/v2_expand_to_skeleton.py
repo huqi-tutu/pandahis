@@ -26,6 +26,7 @@ WORK_ENTRY_PREFIX: Dict[str, str] = {
     "01A尚书": "SHANGSHU",
     "02汉书": "HANSHU",
     "03后汉书": "HOUHANSHU",
+    "04三国志": "SANGUOZHI",
 }
 
 

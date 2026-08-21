@@ -1,0 +1,194 @@
+@import '../../native-utils/design-tokens.scss';
+
+.note-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba($theme-primary, 0.50);
+  display: flex;
+  align-items: flex-end;
+  z-index: 120;
+}
+
+.note-modal-card {
+  width: 100%;
+  background: $page-bg;
+  border-radius: 24rpx 24rpx 0 0;
+  padding: 28rpx 28rpx 0;
+  box-sizing: border-box;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: $shadow-elevated;
+  animation: noteSheetSlideUp 0.22s ease;
+  transition-property: margin-bottom, max-height, height, padding-bottom;
+  transition-duration: 0.18s;
+  transition-timing-function: ease;
+}
+
+@keyframes noteSheetSlideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.note-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16rpx;
+  margin-bottom: 24rpx;
+  flex-shrink: 0;
+}
+
+.note-modal-title-wrap {
+  flex: 1;
+  min-width: 0;
+}
+
+.note-modal-title {
+  font-family: $font-family-title;
+  font-size: 34rpx;
+  font-weight: 700;
+  color: $theme-primary;
+}
+
+.note-modal-close {
+  flex-shrink: 0;
+  width: 56rpx;
+  height: 56rpx;
+  border-radius: 50%;
+  background: rgba($theme-primary, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.note-modal-close-icon {
+  font-size: 28rpx;
+  color: $text-body;
+}
+
+.note-modal-body {
+  flex: 1;
+  min-height: 0;
+}
+
+.note-field {
+  display: flex;
+  align-items: flex-start;
+  gap: 16rpx;
+  margin-bottom: 20rpx;
+}
+
+.note-field--block {
+  flex-direction: column;
+  gap: 10rpx;
+}
+
+.note-label {
+  flex-shrink: 0;
+  width: 128rpx;
+  font-size: 26rpx;
+  color: $text-caption;
+  line-height: 1.5;
+}
+
+.note-field--block .note-label {
+  width: auto;
+}
+
+.note-value {
+  flex: 1;
+  font-size: 28rpx;
+  color: #4A3F3F;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.note-quote {
+  font-size: 26rpx;
+  color: $text-body;
+  line-height: 1.65;
+  background: rgba(74, 63, 63, 0.05);
+  border-radius: 12rpx;
+  padding: 16rpx 18rpx;
+  word-break: break-word;
+}
+
+.note-quote.is-clamp-15 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 15;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.note-quote-toggle {
+  align-self: flex-start;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  padding: 0 4rpx;
+}
+
+.note-quote-toggle-text {
+  font-size: 24rpx;
+  color: $text-caption;
+  font-weight: 600;
+}
+
+.note-textarea {
+  width: 100%;
+  min-height: 128rpx;
+  padding: 18rpx 20rpx;
+  box-sizing: border-box;
+  border-radius: 12rpx;
+  background: #fff;
+  border: 1rpx solid rgba(74, 63, 63, 0.12);
+  font-size: 28rpx;
+  color: #4A3F3F;
+  line-height: 1.6;
+}
+
+.note-counter {
+  align-self: flex-end;
+  font-size: 22rpx;
+  color: $text-time;
+  font-variant-numeric: tabular-nums;
+}
+
+.note-modal-composer {
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+  padding-top: 8rpx;
+}
+
+.note-modal-composer .note-field {
+  margin-bottom: 0;
+}
+
+.note-remark {
+  white-space: pre-wrap;
+}
+
+.note-modal-footer {
+  flex-shrink: 0;
+  padding-top: 12rpx;
+}
+
+.note-submit {
+  height: 88rpx;
+  border-radius: 16rpx;
+  background: $theme-primary;
+  color: $theme-on-primary;
+  font-size: 30rpx;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.note-submit--disabled {
+  opacity: 0.6;
+}

@@ -1,0 +1,29 @@
+{
+  "work": "04三国志",
+  "vol": "013",
+  "volume_name": "钟繇华歆王朗传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "钟繇",
+      "category": "文臣",
+      "rationale": "《钟繇华歆王朗传》卷名首列钟繇，为合传主人公之一；钟繇历仕东汉、曹魏，以刑律、书法及行政才能著称，属文臣主轴。"
+    },
+    {
+      "name": "华歆",
+      "category": "文臣",
+      "rationale": "《钟繇华歆王朗传》卷名次列华歆，为合传主人公之一；华歆为汉魏之际名臣，以清德雅望、行政理政见称，属文臣主轴。"
+    },
+    {
+      "name": "王朗",
+      "category": "文臣",
+      "rationale": "《钟繇华歆王朗传》卷名末列王朗，为合传主人公之一；王朗为汉魏之际经学名儒、重臣，以儒学文治著称，属文臣主轴。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "其他"
+  ]
+}

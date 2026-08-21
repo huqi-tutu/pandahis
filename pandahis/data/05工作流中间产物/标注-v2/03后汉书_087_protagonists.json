@@ -1,0 +1,51 @@
+{
+  "work": "03后汉书",
+  "vol": "087",
+  "volume_name": "儒林列传第六十九下",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_arc": "C",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "sequential",
+  "skip_reason": null,
+  "protagonists_cap_note": "许慎何休卫宏赵晔包咸+丁恭。",
+  "protagonists": [
+    {
+      "name": "包咸",
+      "category": "文臣",
+      "rationale": "授明帝、论语。"
+    },
+    {
+      "name": "赵晔",
+      "category": "文臣",
+      "rationale": "吴越春秋。"
+    },
+    {
+      "name": "卫宏",
+      "category": "文臣",
+      "rationale": "毛诗序、古文学。"
+    },
+    {
+      "name": "丁恭",
+      "category": "文臣",
+      "rationale": "严氏春秋大宗师。"
+    },
+    {
+      "name": "何休",
+      "category": "文臣",
+      "rationale": "公羊学宗师。"
+    },
+    {
+      "name": "许慎",
+      "category": "文臣",
+      "rationale": "说文解字，必留。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "论赞",
+    "赞曰",
+    "世系链",
+    "共段总述"
+  ]
+}

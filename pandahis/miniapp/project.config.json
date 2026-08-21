@@ -37,15 +37,42 @@
   "simulatorPluginLibVersion": {},
   "packOptions": {
     "ignore": [
-      { "type": "folder", "value": "node_modules" },
-      { "type": "folder", "value": "scripts" },
-      { "type": "folder", "value": "typings" },
-      { "type": "file", "value": "package.json" },
-      { "type": "file", "value": "package-lock.json" },
-      { "type": "file", "value": "tsconfig.json" },
-      { "type": "suffix", "value": ".ts" },
-      { "type": "file", "value": "tsconfig.build.json" },
-      { "type": "suffix", "value": ".map" }
+      {
+        "value": "node_modules",
+        "type": "folder"
+      },
+      {
+        "value": "scripts",
+        "type": "folder"
+      },
+      {
+        "value": "typings",
+        "type": "folder"
+      },
+      {
+        "value": "package.json",
+        "type": "file"
+      },
+      {
+        "value": "package-lock.json",
+        "type": "file"
+      },
+      {
+        "value": "tsconfig.json",
+        "type": "file"
+      },
+      {
+        "value": ".ts",
+        "type": "suffix"
+      },
+      {
+        "value": "tsconfig.build.json",
+        "type": "file"
+      },
+      {
+        "value": ".map",
+        "type": "suffix"
+      }
     ],
     "include": []
   },

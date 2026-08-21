@@ -1,0 +1,82 @@
+<view class="page-shell">
+  <proto-nav title="笔记详情" show-back="{{true}}"></proto-nav>
+
+  <view class="notes-body" style="padding-top: {{pageTopPadPx}}px;">
+    <view class="notes-inner">
+      <view wx:if="{{!hasToken}}" class="empty-state">
+        <text class="empty-icon">🔒</text>
+        <text class="empty-text">登录后可查看笔记</text>
+        <view class="login-btn btn-primary" bindtap="goLogin">去登录</view>
+      </view>
+
+      <block wx:elif="{{loaded && detail.id}}">
+        <view class="card card-paper">
+          <view class="field">
+            <text class="label">史略</text>
+            <text class="value">{{detail.boxTitle}}</text>
+          </view>
+          <view class="field">
+            <text class="label">类型</text>
+            <text class="value">{{detail.boxCategoryName || '—'}}</text>
+          </view>
+          <view class="field">
+            <text class="label">坐标</text>
+            <text class="value">{{detail.coordinateText || '—'}}</text>
+          </view>
+          <view class="field">
+            <text class="label">来源</text>
+            <view class="value-row">
+              <text class="value value--inline">{{sourceLabel}}</text>
+              <view
+                wx:if="{{canViewSource}}"
+                class="view-source"
+                catchtap="onViewSource"
+              >
+                <text class="view-source-text">回原文</text>
+                <text class="view-source-arrow">›</text>
+              </view>
+            </view>
+          </view>
+          <view class="field">
+            <text class="label">时间</text>
+            <text class="value">{{createdAtLabel}}</text>
+          </view>
+        </view>
+
+        <view class="card card-paper">
+          <text class="block-label">划线原文</text>
+          <text class="quote">{{detail.selectedText}}</text>
+        </view>
+
+        <view class="card card-paper">
+          <text class="block-label">笔记</text>
+          <text class="remark {{emptyRemark ? 'remark--empty' : ''}}">{{remarkLabel}}</text>
+        </view>
+
+        <view class="actions">
+          <view class="btn btn--delete" bindtap="onDelete">删除</view>
+          <view class="btn btn--edit" bindtap="onEdit">编辑</view>
+        </view>
+      </block>
+
+      <view wx:elif="{{loaded}}" class="empty-state">
+        <text class="empty-text">笔记不存在或已删除</text>
+      </view>
+
+      <page-loading wx:else text="加载中"></page-loading>
+    </view>
+  </view>
+
+  <note-modal
+    visible="{{editVisible}}"
+    mode="edit"
+    boxTitle="{{detail.boxTitle}}"
+    civilizationName="{{detail.civilizationName}}"
+    dynastyName="{{detail.dynastyName}}"
+    selectedText="{{detail.selectedText}}"
+    noteText="{{detail.noteText}}"
+    submitting="{{submitting}}"
+    bind:close="closeEdit"
+    bind:submit="onEditSubmit"
+  />
+</view>

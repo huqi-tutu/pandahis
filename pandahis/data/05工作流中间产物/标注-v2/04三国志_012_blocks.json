@@ -1,0 +1,106 @@
+{
+  "work": "04三国志",
+  "vol": "012",
+  "total_paragraphs": 33,
+  "volume_subtype": "hezhuan",
+  "derived_from": "04三国志_012_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 33,
+      "paragraph_to": 33,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "崔琰",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 9,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "崔琰字季珪，清河东武城人也。少朴讷，好击剑，尚武事。年二十三，乡移为正，始感激，",
+        "close_paragraph": 9,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P9"
+      }
+    },
+    {
+      "name": "毛玠",
+      "category": "文臣",
+      "paragraph_from": 10,
+      "paragraph_to": 12,
+      "boundary_evidence": {
+        "open_paragraph": 10,
+        "open_phrase": "毛玠字孝先，陈留平丘人也。少为县吏，以清公称。将避乱荆州，未至，闻刘表政令不明，",
+        "close_paragraph": 12,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P10–P12"
+      }
+    },
+    {
+      "name": "徐奕",
+      "category": "文臣",
+      "paragraph_from": 13,
+      "paragraph_to": 14,
+      "boundary_evidence": {
+        "open_paragraph": 13,
+        "open_phrase": "徐奕字季才，东莞人也。避难江东，孙策礼命之。奕改姓名，微服还本郡。太祖为司空，辟",
+        "close_paragraph": 14,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P13–P14"
+      }
+    },
+    {
+      "name": "何夔",
+      "category": "文臣",
+      "paragraph_from": 15,
+      "paragraph_to": 18,
+      "boundary_evidence": {
+        "open_paragraph": 15,
+        "open_phrase": "何夔字叔龙，陈郡阳夏人也。曾祖父熙，汉安帝时官至车骑将军。夔幼丧父，与母兄居，以",
+        "close_paragraph": 18,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P15–P18"
+      }
+    },
+    {
+      "name": "邢颙",
+      "category": "文臣",
+      "paragraph_from": 19,
+      "paragraph_to": 20,
+      "boundary_evidence": {
+        "open_paragraph": 19,
+        "open_phrase": "邢颙、字子昂，河间鄚人也。举孝廉，司徒辟，皆不就。易姓字，適右北平，从田畴游。积",
+        "close_paragraph": 20,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P19–P20"
+      }
+    },
+    {
+      "name": "鲍勋",
+      "category": "文臣",
+      "paragraph_from": 21,
+      "paragraph_to": 25,
+      "boundary_evidence": {
+        "open_paragraph": 21,
+        "open_phrase": "鲍勋字叔业，泰山平阳人也，汉司隶校尉鲍宣九世孙。宣后嗣有从上党徙泰山者，遂家焉。",
+        "close_paragraph": 25,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P21–P25"
+      }
+    },
+    {
+      "name": "司马芝",
+      "category": "文臣",
+      "paragraph_from": 26,
+      "paragraph_to": 32,
+      "boundary_evidence": {
+        "open_paragraph": 26,
+        "open_phrase": "司马芝字子华，河内温人也。少为书生，避乱荆州，于鲁阳山遇贼，同行者皆弃老弱走，芝",
+        "close_paragraph": 32,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P26–P32"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

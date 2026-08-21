@@ -1,4 +1,4 @@
-"""前置引入分档：按母本厚度写入 plan 说明（无程序质检）。"""
+"""前置引入分档：按母本厚度写入 plan；宏观引入由 lib/intro_frame 做程序硬检。"""
 
 from __future__ import annotations
 
@@ -8,7 +8,7 @@ from lib.mother_sentences import extract_mother_sentences
 
 # 写入 plan / 提示词的建议篇幅（非硬拦）
 INTRO_PROMPT_MAX_CHARS = 250
-INTRO_PROMPT_MIN_CHARS = 60
+INTRO_PROMPT_MIN_CHARS = 100
 
 _THIN_CHAR_LIMIT = 150
 _MEDIUM_CHAR_LIMIT = 500
@@ -67,5 +67,5 @@ def inject_intro_tier(plan: Dict[str, Any], recalled: Dict[str, Any]) -> None:
         "母本句数": m_count,
         "作用": "笼统定位后自然进入母本叙事；不展开具体事迹",
         "字数建议": f"{INTRO_PROMPT_MIN_CHARS}–{INTRO_PROMPT_MAX_CHARS}",
-        "质检": "无程序硬拦；不展开细节靠写作自律",
+        "质检": "程序硬拦：引入须独立成段、约60–250字、勿展开出生/起兵等情节",
     }

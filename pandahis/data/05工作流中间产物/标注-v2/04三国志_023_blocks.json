@@ -1,0 +1,94 @@
+{
+  "work": "04三国志",
+  "vol": "023",
+  "total_paragraphs": 28,
+  "volume_subtype": "hezhuan",
+  "derived_from": "04三国志_023_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 28,
+      "paragraph_to": 28,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "和洽",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 8,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "和洽字阳士，汝南西平人也。举孝廉，大将军辟，皆不就。袁绍在冀州，遣使迎汝南士大夫",
+        "close_paragraph": 8,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P8"
+      }
+    },
+    {
+      "name": "常林",
+      "category": "文臣",
+      "paragraph_from": 9,
+      "paragraph_to": 11,
+      "boundary_evidence": {
+        "open_paragraph": 9,
+        "open_phrase": "常林字伯槐，河内温人也。年七岁，有父党造门，问林：“伯先在否？汝何不拜！”林曰：",
+        "close_paragraph": 11,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P9–P11"
+      }
+    },
+    {
+      "name": "杨俊",
+      "category": "文臣",
+      "paragraph_from": 12,
+      "paragraph_to": 14,
+      "boundary_evidence": {
+        "open_paragraph": 12,
+        "open_phrase": "杨俊字季才，河内获嘉人也。受学陈留边让，让器异之。俊以兵乱方起，而河内处四达之衢",
+        "close_paragraph": 14,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P12–P14"
+      }
+    },
+    {
+      "name": "杜袭",
+      "category": "文臣",
+      "paragraph_from": 15,
+      "paragraph_to": 19,
+      "boundary_evidence": {
+        "open_paragraph": 15,
+        "open_phrase": "杜袭字子绪，颍川定陵人也。曾祖父安，祖父根，著名前世。袭避乱荆州，刘表待以宾礼。",
+        "close_paragraph": 19,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P15–P19"
+      }
+    },
+    {
+      "name": "赵俨",
+      "category": "文臣",
+      "paragraph_from": 20,
+      "paragraph_to": 24,
+      "boundary_evidence": {
+        "open_paragraph": 20,
+        "open_phrase": "赵俨字伯然，颍川阳翟人也。避乱荆州，与杜袭、繁钦通财同计，合为一家。太祖始迎献帝",
+        "close_paragraph": 24,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P20–P24"
+      }
+    },
+    {
+      "name": "裴潜",
+      "category": "文臣",
+      "paragraph_from": 25,
+      "paragraph_to": 27,
+      "boundary_evidence": {
+        "open_paragraph": 25,
+        "open_phrase": "裴潜字文行，河东闻喜人也。避乱荆州，刘表待以宾礼。潜私谓所亲王粲、司马芝曰：“刘",
+        "close_paragraph": 27,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P25–P27"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

@@ -1,0 +1,19 @@
+{
+  "work": "04三国志",
+  "vol": "001",
+  "volume_name": "武帝纪",
+  "volume_type_guess": "本纪",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "曹操",
+      "category": "君王",
+      "rationale": "《三国志·武帝纪》为魏武帝曹操之本纪，卷名即指曹操（曹魏追尊武帝），属天下共主级本纪主轴（虽未称帝，但为魏国奠基者，帝王表中以武帝著录），故为君王。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "其他"
+  ]
+}

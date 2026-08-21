@@ -14,6 +14,7 @@ WORK_SPLIT_MODE = {
     "01A尚书": "line",  # 已归一化（无全角缩进），与史记统一
     "02汉书": "line",
     "03后汉书": "line",
+    "04三国志": "line",
 }
 
 YUANWEN_MARK = "【原文】"

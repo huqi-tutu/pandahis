@@ -1,0 +1,38 @@
+{
+  "work": "03后汉书",
+  "vol": "097",
+  "total_paragraphs": 56,
+  "volume_subtype": "fanzuo",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 54,
+      "paragraph_to": 55,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 56,
+      "paragraph_to": 56,
+      "exclude_reason": "赞曰"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "西羌",
+      "category": "蕃祚",
+      "paragraph_from": 2,
+      "paragraph_to": 53,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "西羌之本，出自三苗，姜姓之别也。其国近南岳。及舜流四凶，徙之三危，河关之西南羌地",
+        "close_paragraph": 53,
+        "close_note": "叙事收束于月氏胡；其后为论赞"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

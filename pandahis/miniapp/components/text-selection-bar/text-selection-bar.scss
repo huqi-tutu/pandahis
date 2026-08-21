@@ -18,8 +18,8 @@
   display: flex;
   flex-direction: row;
   align-items: stretch;
-  gap: 4rpx;
-  padding: 16rpx 8rpx 14rpx;
+  gap: 14rpx;
+  padding: 16rpx 14rpx 14rpx;
   border-radius: 16rpx;
   background: rgba(74, 63, 63, 0.96);
   box-shadow: 0 8rpx 28rpx rgba(0, 0, 0, 0.22);
@@ -31,8 +31,8 @@
   align-items: center;
   justify-content: center;
   gap: 8rpx;
-  min-width: 84rpx;
-  padding: 4rpx 6rpx;
+  min-width: 88rpx;
+  padding: 4rpx 10rpx;
 }
 
 .text-selection-bar-icon {

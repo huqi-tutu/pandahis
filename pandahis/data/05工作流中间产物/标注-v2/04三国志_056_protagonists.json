@@ -1,0 +1,35 @@
+{
+  "work": "04三国志",
+  "vol": "056",
+  "volume_name": "朱治朱然吕范朱桓传",
+  "volume_type_guess": "列传",
+  "volume_arc": "C",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "朱治",
+      "category": "武将",
+      "rationale": "卷名首列人物，吴国将领，以军功征战为主轴，属合传主人公之一。"
+    },
+    {
+      "name": "朱然",
+      "category": "武将",
+      "rationale": "卷名次列人物，朱治养子，东吴名将，以征战军功为主轴，属合传主人公之一。"
+    },
+    {
+      "name": "吕范",
+      "category": "武将",
+      "rationale": "卷名第三人物，东吴重臣将领，以军功与行政辅佐为主轴，属合传主人公之一。"
+    },
+    {
+      "name": "朱桓",
+      "category": "武将",
+      "rationale": "卷名末列人物，东吴将领，以军功征战为主轴，属合传主人公之一。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "其他"
+  ]
+}

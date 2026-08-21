@@ -5,8 +5,10 @@ import { ROUTES, navigateTo } from './router'
 export type CorrectionSourceType =
   | 'dynasty_canvas'
   | 'box_detail_selection'
+  | 'box_original_selection'
   | 'critique_detail_selection'
   | 'relic_detail_selection'
+  | 'relation_graph_selection'
 
 export type CorrectionStatus = 'pending' | 'reviewed' | 'resolved'
 
@@ -42,8 +44,10 @@ export const CORRECTION_STATUS_LABEL: Record<string, string> = {
 export const CORRECTION_SOURCE_LABEL: Record<string, string> = {
   dynasty_canvas: '朝代详情页',
   box_detail_selection: '史略详情页',
+  box_original_selection: '母本原文',
   critique_detail_selection: '评述',
   relic_detail_selection: '见证',
+  relation_graph_selection: '关系图谱页',
 }
 
 export function correctionStatusLabel(status: string): string {
@@ -187,6 +191,18 @@ export function resolveCorrectionSourceNav(
       },
     }
   }
+  if (sourceType === 'box_original_selection') {
+    const boxId = String(detail.boxId || '').trim()
+    if (!boxId) return { error: '缺少史略信息，无法跳转' }
+    return {
+      path: ROUTES.boxDetail,
+      query: {
+        boxId,
+        title: String(detail.boxTitle || '').trim(),
+        openOriginal: '1',
+      },
+    }
+  }
   if (sourceType === 'critique_detail_selection') {
     const critiqueId = toNullableNumber(detail.sourceRefId)
     if (!critiqueId) return { error: '缺少评述信息，无法跳转' }
@@ -201,6 +217,17 @@ export function resolveCorrectionSourceNav(
     return {
       path: ROUTES.relicDetail,
       query: { relicId },
+    }
+  }
+  if (sourceType === 'relation_graph_selection') {
+    const boxId = String(detail.boxId || '').trim()
+    if (!boxId) return { error: '缺少史略信息，无法跳转' }
+    return {
+      path: ROUTES.boxDetail,
+      query: {
+        boxId,
+        title: String(detail.boxTitle || '').trim(),
+      },
     }
   }
   return { error: '未知来源，无法跳转' }

@@ -1,0 +1,94 @@
+{
+  "work": "04三国志",
+  "vol": "039",
+  "total_paragraphs": 18,
+  "volume_subtype": "hezhuan",
+  "derived_from": "04三国志_039_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 18,
+      "paragraph_to": 18,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "董和",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 3,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "董和字幼宰，南郡枝江人也，其先本巴郡江州人。汉末，和率宗族西迁，益州牧刘璋以为牛",
+        "close_paragraph": 3,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P3"
+      }
+    },
+    {
+      "name": "刘巴",
+      "category": "文臣",
+      "paragraph_from": 4,
+      "paragraph_to": 5,
+      "boundary_evidence": {
+        "open_paragraph": 4,
+        "open_phrase": "刘巴字子初，零陵烝阳人也。少知名，荆州牧刘表连辟，及举茂才，皆不就。表卒，曹公征",
+        "close_paragraph": 5,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P4–P5"
+      }
+    },
+    {
+      "name": "马良",
+      "category": "文臣",
+      "paragraph_from": 6,
+      "paragraph_to": 10,
+      "boundary_evidence": {
+        "open_paragraph": 6,
+        "open_phrase": "马良字季常，襄阳宜城人也。兄弟五人，并有才名，乡里为之谚曰：“马氏五常，白眉最良",
+        "close_paragraph": 10,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P6–P10"
+      }
+    },
+    {
+      "name": "陈震",
+      "category": "文臣",
+      "paragraph_from": 11,
+      "paragraph_to": 11,
+      "boundary_evidence": {
+        "open_paragraph": 11,
+        "open_phrase": "陈震字孝起，南阳人也。先主领荆州牧，辟为从事，部诸郡，随先主入蜀。蜀既定，为蜀郡",
+        "close_paragraph": 11,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P11–P11"
+      }
+    },
+    {
+      "name": "董允",
+      "category": "文臣",
+      "paragraph_from": 12,
+      "paragraph_to": 15,
+      "boundary_evidence": {
+        "open_paragraph": 12,
+        "open_phrase": "董允字休昭，掌军中郎将和之子也。先主立太子，允以选为舍人，徙洗马。后主袭位，迁黄",
+        "close_paragraph": 15,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P12–P15"
+      }
+    },
+    {
+      "name": "吕乂",
+      "category": "文臣",
+      "paragraph_from": 16,
+      "paragraph_to": 17,
+      "boundary_evidence": {
+        "open_paragraph": 16,
+        "open_phrase": "吕乂字季阳，南阳人也。父常，送故将刘焉入蜀，值王路隔塞，遂不得还。乂少孤，好读书",
+        "close_paragraph": 17,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P16–P17"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

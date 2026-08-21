@@ -1,0 +1,30 @@
+{
+  "work": "03后汉书",
+  "vol": "067",
+  "volume_name": "左周黄列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "左雄",
+      "category": "文臣",
+      "rationale": "卷名「左周黄列传」以左雄居首，为合传主人公之一；东汉名臣，以政论谏诤著称，属文臣主轴。"
+    },
+    {
+      "name": "周举",
+      "category": "文臣",
+      "rationale": "卷名「左周黄列传」中「周」即周举，合传主人公之一；东汉大臣，以儒学方正、直言敢谏闻名，属文臣主轴。"
+    },
+    {
+      "name": "黄琼",
+      "category": "文臣",
+      "rationale": "卷名「左周黄列传」中「黄」即黄琼，合传主人公之一；东汉名臣，累官至太尉，以清忠亮直著称，属文臣主轴。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

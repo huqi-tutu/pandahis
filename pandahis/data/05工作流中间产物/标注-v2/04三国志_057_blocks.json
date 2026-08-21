@@ -1,0 +1,106 @@
+{
+  "work": "04三国志",
+  "vol": "057",
+  "total_paragraphs": 37,
+  "volume_subtype": "hezhuan",
+  "derived_from": "04三国志_057_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 37,
+      "paragraph_to": 37,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "虞翻",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 13,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "虞翻字仲翔，会稽余姚人也，太守王朗命为功曹。孙策征会稽，翻时遭父丧，衰绖诣府门，",
+        "close_paragraph": 13,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P13"
+      }
+    },
+    {
+      "name": "陆绩",
+      "category": "文臣",
+      "paragraph_from": 14,
+      "paragraph_to": 15,
+      "boundary_evidence": {
+        "open_paragraph": 14,
+        "open_phrase": "陆绩字公纪，吴郡吴人也。父康，汉末为庐江太守。绩年六岁，于九江见袁术。术出橘，绩",
+        "close_paragraph": 15,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P14–P15"
+      }
+    },
+    {
+      "name": "张温",
+      "category": "文臣",
+      "paragraph_from": 16,
+      "paragraph_to": 20,
+      "boundary_evidence": {
+        "open_paragraph": 16,
+        "open_phrase": "张温字惠恕，吴郡吴人也。父允，以轻财重士，名显州郡，为孙权东曹掾，卒。温少脩节操",
+        "close_paragraph": 20,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P16–P20"
+      }
+    },
+    {
+      "name": "骆统",
+      "category": "文臣",
+      "paragraph_from": 21,
+      "paragraph_to": 24,
+      "boundary_evidence": {
+        "open_paragraph": 21,
+        "open_phrase": "骆统字公绪，会稽乌伤人也。父俊，官至陈相，为袁术所害。统母改適，为华歆小妻，统时",
+        "close_paragraph": 24,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P21–P24"
+      }
+    },
+    {
+      "name": "陆瑁",
+      "category": "文臣",
+      "paragraph_from": 25,
+      "paragraph_to": 30,
+      "boundary_evidence": {
+        "open_paragraph": 25,
+        "open_phrase": "陆瑁字子璋，丞相逊弟也。少好学笃义。陈国陈融、陈留濮阳逸、沛郡蒋纂、广陵袁迪等，",
+        "close_paragraph": 30,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P25–P30"
+      }
+    },
+    {
+      "name": "吾粲",
+      "category": "文臣",
+      "paragraph_from": 31,
+      "paragraph_to": 33,
+      "boundary_evidence": {
+        "open_paragraph": 31,
+        "open_phrase": "吾粲字孔休，吴郡乌程人也。孙河为县长，粲为小吏，河深奇之。河后为将军，得自选长吏",
+        "close_paragraph": 33,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P31–P33"
+      }
+    },
+    {
+      "name": "朱据",
+      "category": "文臣",
+      "paragraph_from": 34,
+      "paragraph_to": 36,
+      "boundary_evidence": {
+        "open_paragraph": 34,
+        "open_phrase": "朱据字子据，吴郡吴人也。有姿貌膂力，又能论难。黄武初，徵拜五官郎中，补侍御史。是",
+        "close_paragraph": 36,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P34–P36"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

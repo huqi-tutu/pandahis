@@ -47,7 +47,7 @@
         </block>
       </block>
 
-      <view wx:else class="loading">加载中…</view>
+      <page-loading wx:else text="加载中"></page-loading>
     </view>
   </view>
 </view>

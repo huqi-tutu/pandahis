@@ -1,0 +1,41 @@
+<view class="page-shell">
+  <proto-nav title="我的笔记" show-back="{{true}}"></proto-nav>
+
+  <view class="notes-body" style="padding-top: {{pageTopPadPx}}px;">
+    <view class="notes-inner">
+      <view wx:if="{{!hasToken}}" class="empty-state">
+        <text class="empty-icon">🔒</text>
+        <text class="empty-text">登录后可查看笔记</text>
+        <view class="login-btn btn-primary" bindtap="goLogin">去登录</view>
+      </view>
+
+      <block wx:elif="{{loaded}}">
+        <view wx:if="{{!items.length}}" class="empty-state">
+          <text class="empty-icon">✎</text>
+          <text class="empty-text">暂无笔记</text>
+          <text class="empty-hint">在史略详情、评述、见证或关系图中划线即可记下</text>
+        </view>
+
+        <view wx:else class="card-list">
+          <view
+            class="card card-paper"
+            wx:for="{{items}}"
+            wx:key="dynastyId"
+            data-id="{{item.dynastyId}}"
+            data-name="{{item.dynastyName}}"
+            data-civ="{{item.civilizationName}}"
+            bindtap="onDynastyTap"
+          >
+            <view class="top">
+              <text class="t">{{item.dynastyName || '未分朝代'}}</text>
+              <text class="count">{{item.noteCount}} 条</text>
+            </view>
+            <text class="civ muted">{{item.civilizationName || '—'}}</text>
+          </view>
+        </view>
+      </block>
+
+      <page-loading wx:else text="加载中"></page-loading>
+    </view>
+  </view>
+</view>

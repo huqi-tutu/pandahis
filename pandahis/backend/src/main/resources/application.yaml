@@ -68,7 +68,7 @@ histomap:
       highlight:
         importanceThreshold: 4
   features:
-    # 一级文明切换：false 时各环境仅华夏可切，非华夏点击 Toast；app_kv 可热更新
+    # 一级文明切换：trial/release 默认关；develop 请求头强制开；可被 app_kv 覆盖（仅 trial/release）
     civ-switch-enabled: false
   box:
     critiques:

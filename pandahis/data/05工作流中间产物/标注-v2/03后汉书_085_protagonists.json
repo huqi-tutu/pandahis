@@ -1,0 +1,61 @@
+{
+  "work": "03后汉书",
+  "vol": "085",
+  "volume_name": "宦者列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_arc": "C",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "interleaved",
+  "skip_reason": null,
+  "protagonists_cap_note": "历史意义Top5+读懂本卷必需：全8人保留。",
+  "protagonists": [
+    {
+      "name": "郑众",
+      "category": "宦官",
+      "rationale": "东汉宦官干政起点。"
+    },
+    {
+      "name": "蔡伦",
+      "category": "宦官",
+      "rationale": "造纸，世界史级。"
+    },
+    {
+      "name": "孙程",
+      "category": "宦官",
+      "rationale": "迎立顺帝。"
+    },
+    {
+      "name": "曹腾",
+      "category": "宦官",
+      "rationale": "曹操祖父，曹魏渊源。"
+    },
+    {
+      "name": "单超",
+      "category": "宦官",
+      "rationale": "五侯。"
+    },
+    {
+      "name": "侯览",
+      "category": "宦官",
+      "rationale": "党锢加害方。"
+    },
+    {
+      "name": "曹节",
+      "category": "宦官",
+      "rationale": "桓灵宦官专权主轴。"
+    },
+    {
+      "name": "张让",
+      "category": "宦官",
+      "rationale": "十常侍、灵帝朝。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "论赞",
+    "赞曰",
+    "世系链",
+    "共段总述"
+  ]
+}

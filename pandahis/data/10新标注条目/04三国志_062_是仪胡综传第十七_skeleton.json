@@ -1,0 +1,273 @@
+{
+  "volume": "是仪胡综传",
+  "source_file": "04三国志_062_是仪胡综传第十七.txt",
+  "total_paragraphs": 27,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "是仪",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "是仪",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "是仪",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "是仪",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "是仪",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "是仪",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "是仪",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "是仪",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "是仪",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "是仪",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "是仪",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "是仪",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "胡综",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "胡综",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "胡综",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "胡综",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "胡综",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "胡综",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "胡综",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "胡综",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "胡综",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "胡综",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "胡综",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "胡综",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 27,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SANGUOZHI_062_01",
+      "史略名称": "是仪",
+      "史略简介": "是仪",
+      "原文字句": "是仪字子羽，北海营陵人也。本姓氏，初为县吏，后仕郡，郡相孔融嘲仪，言“氏”字“民”无上，可改为“是”，乃遂改焉。后依刘繇，避乱江东。繇军败，仪徙会稽。",
+      "史略分类": "文臣",
+      "主要史料出处": "《04三国志·卷62·是仪胡综传》",
+      "paragraphs": [
+        {
+          "volume": "是仪胡综传",
+          "paragraph_from": 2,
+          "paragraph_to": 13
+        }
+      ]
+    },
+    {
+      "史略ID": "SANGUOZHI_062_02",
+      "史略名称": "胡综",
+      "史略简介": "胡综",
+      "原文字句": "胡综字伟则，汝南固始人也。少孤，母将避难江东。孙策领会稽太守，综年十四，为门下循行，留吴与孙权共读书。策薨，权为讨虏将军，以综为金曹从事，从讨黄祖，拜鄂长。权为车骑将军，都京，召综还，为书部，与是仪、徐详俱典军国密事。刘备下白帝，权以见兵少，使综料诸县，得六千人，立解烦两部，详领左部、综领右部督。吴将晋宗叛归魏，魏以宗为蕲春太守，去江数百里，数为寇害。权使综与贺齐轻行掩袭，生虏得宗，加建武中郎将。",
+      "史略分类": "文臣",
+      "主要史料出处": "《04三国志·卷62·是仪胡综传》",
+      "paragraphs": [
+        {
+          "volume": "是仪胡综传",
+          "paragraph_from": 14,
+          "paragraph_to": 25
+        }
+      ]
+    }
+  ]
+}

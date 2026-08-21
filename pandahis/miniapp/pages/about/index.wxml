@@ -7,9 +7,11 @@
   </view>
 
   <view class="card-paper intro-card">
-    <view class="para text-body">{{introLead}}</view>
-    <view class="divider intro-divider"></view>
-    <view class="para text-body">评述、见证、原文等深度 Tab 支持按次阅读；邀请好友可获得阅读点奖励。</view>
+    <view
+      wx:for="{{introParas}}"
+      wx:key="*this"
+      class="para text-body {{index > 0 ? 'para-gap' : ''}}"
+    >{{item}}</view>
   </view>
 
   <view class="footer text-caption">© Pandahis</view>

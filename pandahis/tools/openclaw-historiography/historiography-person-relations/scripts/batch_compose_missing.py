@@ -39,7 +39,8 @@ def _needs_compose(paths: dict, name: str) -> bool:
         rows = json.loads(fp.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError):
         return True
-    return not isinstance(rows, list) or len(rows) == 0
+    # 已有合法 JSON 数组即视为完成（含空表 []：史料确无可挂关系）
+    return not isinstance(rows, list)
 
 
 def main() -> int:

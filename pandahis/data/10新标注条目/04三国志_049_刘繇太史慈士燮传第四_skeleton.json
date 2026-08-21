@@ -1,0 +1,231 @@
+{
+  "volume": "刘繇太史慈士燮传",
+  "source_file": "04三国志_049_刘繇太史慈士燮传第四.txt",
+  "total_paragraphs": 20,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "interleaved",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "刘繇",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "刘繇",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "刘繇",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "刘繇",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "太史慈",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "太史慈",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "太史慈",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "太史慈",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "太史慈",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "太史慈",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "士燮",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "士燮",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "士燮",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "士燮",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "士燮",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "士燮",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "士燮",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SANGUOZHI_049_01",
+      "史略名称": "刘繇",
+      "史略简介": "刘繇",
+      "原文字句": "刘繇字正礼，东莱牟平人也。齐孝王少子封牟平侯，子孙家焉。繇伯父宠，为汉太尉。繇兄岱，字公山，历位侍中，兖州刺史。",
+      "史略分类": "武将",
+      "主要史料出处": "《04三国志·卷49·刘繇太史慈士燮传》",
+      "paragraphs": [
+        {
+          "volume": "刘繇太史慈士燮传",
+          "paragraph_from": 2,
+          "paragraph_to": 3
+        },
+        {
+          "volume": "刘繇太史慈士燮传",
+          "paragraph_from": 5,
+          "paragraph_to": 6
+        }
+      ]
+    },
+    {
+      "史略ID": "SANGUOZHI_049_02",
+      "史略名称": "太史慈",
+      "史略简介": "太史慈",
+      "原文字句": "太史慈字子义，东莱黄人也。少好学，仕郡奏曹史。会郡与州有隙，曲直未分，以先闻者为善。时州章已去，郡守恐后之，求可使者。慈年二十一，以选行，晨夜取道，到洛阳，诣公车门，见州吏始欲求通。慈问曰：“君欲通章邪？”吏曰：“然。”问：“章安在？”曰：“车上。”慈曰：“章题署得无误邪？取来视之。”吏殊不知其东莱人也，因为取章。慈已先怀刀，便截败之。吏踊跃大呼，言“人坏我章”！慈将至车间，与语曰：“向使君不以章",
+      "史略分类": "武将",
+      "主要史料出处": "《04三国志·卷49·刘繇太史慈士燮传》",
+      "paragraphs": [
+        {
+          "volume": "刘繇太史慈士燮传",
+          "paragraph_from": 7,
+          "paragraph_to": 12
+        }
+      ]
+    },
+    {
+      "史略ID": "SANGUOZHI_049_03",
+      "史略名称": "士燮",
+      "史略简介": "士燮",
+      "原文字句": "士燮字威彦，苍梧广信人也。其先本鲁国汶阳人，至王莽之乱，避地交州。六世至燮父赐，桓帝时为日南太守。燮少游学京师，事颍川刘子奇，治《左氏春秋》。察孝廉，补尚书郎，公事免官。父赐丧阕后，举茂才，除巫令，迁交阯太守。",
+      "史略分类": "文臣",
+      "主要史料出处": "《04三国志·卷49·刘繇太史慈士燮传》",
+      "paragraphs": [
+        {
+          "volume": "刘繇太史慈士燮传",
+          "paragraph_from": 13,
+          "paragraph_to": 19
+        }
+      ]
+    }
+  ],
+  "translation_qa_hint": "混写卷：人物段落非连续。翻译质检须按 entries[].paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。"
+}

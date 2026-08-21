@@ -1,0 +1,20 @@
+{
+  "work": "04三国志",
+  "vol": "035",
+  "volume_name": "诸葛亮传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "诸葛亮",
+      "category": "文臣",
+      "rationale": "《三国志·诸葛亮传》为单人列传，卷名即主轴人物。诸葛亮以丞相身份辅政、治国、北伐，行政与外交为主轴，属文臣而非武将（虽兼将略，但以宰辅治国为核心）。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "评曰",
+    "其他"
+  ]
+}

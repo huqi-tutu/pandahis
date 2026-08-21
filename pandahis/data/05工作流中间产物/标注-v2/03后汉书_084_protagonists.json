@@ -1,0 +1,46 @@
+{
+  "work": "03后汉书",
+  "vol": "084",
+  "volume_name": "酷吏列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_arc": "C",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "sequential",
+  "skip_reason": null,
+  "protagonists_cap_note": "董宣阳球周䊸樊晔黄昌；砍李章王吉。",
+  "protagonists": [
+    {
+      "name": "董宣",
+      "category": "文臣",
+      "rationale": "强项令。"
+    },
+    {
+      "name": "樊晔",
+      "category": "文臣",
+      "rationale": "光武旧人酷吏。"
+    },
+    {
+      "name": "周䊸",
+      "category": "文臣",
+      "rationale": "本卷厚酷吏。"
+    },
+    {
+      "name": "黄昌",
+      "category": "文臣",
+      "rationale": "酷吏第五。"
+    },
+    {
+      "name": "阳球",
+      "category": "文臣",
+      "rationale": "磔王甫，宦官斗争关键。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "论赞",
+    "赞曰",
+    "世系链",
+    "共段总述"
+  ]
+}

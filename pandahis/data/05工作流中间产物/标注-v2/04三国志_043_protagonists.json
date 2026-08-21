@@ -1,0 +1,45 @@
+{
+  "work": "04三国志",
+  "vol": "043",
+  "volume_name": "黄李吕马王张传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "黄忠",
+      "category": "武将",
+      "rationale": "卷名首姓，蜀汉名将，以军功征战为主轴，属武将列传合传主人公。"
+    },
+    {
+      "name": "李严",
+      "category": "文臣",
+      "rationale": "卷名次姓，蜀汉重臣，以行政、辅政为主轴，属文臣列传合传主人公。"
+    },
+    {
+      "name": "吕乂",
+      "category": "文臣",
+      "rationale": "卷名第三姓，蜀汉官员，以行政理政为主轴，属文臣列传合传主人公。"
+    },
+    {
+      "name": "马忠",
+      "category": "武将",
+      "rationale": "卷名第四姓，蜀汉将领，以军功镇守为主轴，属武将列传合传主人公。"
+    },
+    {
+      "name": "王平",
+      "category": "武将",
+      "rationale": "卷名第五姓，蜀汉名将，以军功征战为主轴，属武将列传合传主人公。"
+    },
+    {
+      "name": "张嶷",
+      "category": "武将",
+      "rationale": "卷名末姓，蜀汉将领，以军功征讨为主轴，属武将列传合传主人公。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "评曰",
+    "其他"
+  ]
+}

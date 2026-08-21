@@ -1,0 +1,94 @@
+{
+  "work": "04三国志",
+  "vol": "014",
+  "total_paragraphs": 42,
+  "volume_subtype": "hezhuan",
+  "derived_from": "04三国志_014_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 42,
+      "paragraph_to": 42,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "程昱",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 8,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "程昱字仲德，东郡东阿人也。长八尺三寸，美须髯。黄巾起，县丞王度反应之，烧仓库。县",
+        "close_paragraph": 8,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P8"
+      }
+    },
+    {
+      "name": "郭嘉",
+      "category": "文臣",
+      "paragraph_from": 9,
+      "paragraph_to": 15,
+      "boundary_evidence": {
+        "open_paragraph": 9,
+        "open_phrase": "郭嘉字奉孝，颍川阳翟人也。初，北见袁绍，谓绍谋臣辛评、郭图曰：“夫智者审于量主，",
+        "close_paragraph": 15,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P9–P15"
+      }
+    },
+    {
+      "name": "董昭",
+      "category": "文臣",
+      "paragraph_from": 16,
+      "paragraph_to": 25,
+      "boundary_evidence": {
+        "open_paragraph": 16,
+        "open_phrase": "董昭字公仁，济阴定陶人也。举孝廉，除瘿陶长、柏人令，袁绍以为参军事。绍逆公孙瓒于",
+        "close_paragraph": 25,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P16–P25"
+      }
+    },
+    {
+      "name": "刘晔",
+      "category": "文臣",
+      "paragraph_from": 26,
+      "paragraph_to": 32,
+      "boundary_evidence": {
+        "open_paragraph": 26,
+        "open_phrase": "刘晔字子扬，淮南成惪人，（惪音德。）汉光武子阜陵王延后也。父普，母脩，产涣及晔。",
+        "close_paragraph": 32,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P26–P32"
+      }
+    },
+    {
+      "name": "蒋济",
+      "category": "文臣",
+      "paragraph_from": 33,
+      "paragraph_to": 37,
+      "boundary_evidence": {
+        "open_paragraph": 33,
+        "open_phrase": "蒋济字子通，楚国平阿人也。仕郡计吏、州别驾。建安十三年，孙权率众围合肥。时大军征",
+        "close_paragraph": 37,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P33–P37"
+      }
+    },
+    {
+      "name": "刘放",
+      "category": "文臣",
+      "paragraph_from": 38,
+      "paragraph_to": 41,
+      "boundary_evidence": {
+        "open_paragraph": 38,
+        "open_phrase": "刘放字子弃，涿郡人，汉广阳顺王子西乡侯宏后也。历郡纲纪，举孝廉。遭世大乱，时渔阳",
+        "close_paragraph": 41,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P38–P41"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

@@ -1,0 +1,82 @@
+{
+  "work": "04三国志",
+  "vol": "059",
+  "total_paragraphs": 20,
+  "volume_subtype": "hezhuan",
+  "derived_from": "04三国志_059_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 20,
+      "paragraph_to": 20,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "孙登",
+      "category": "宗戚",
+      "paragraph_from": 2,
+      "paragraph_to": 7,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "孙登字子高，权长子也。魏黄初二年，以权为吴王，拜登东中郎将，封万户侯，登辞疾不受",
+        "close_paragraph": 7,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P7"
+      }
+    },
+    {
+      "name": "孙虑",
+      "category": "宗戚",
+      "paragraph_from": 8,
+      "paragraph_to": 8,
+      "boundary_evidence": {
+        "open_paragraph": 8,
+        "open_phrase": "孙虑字子智，登弟也。少敏惠有才艺，权器爱之。黄武七年，封建昌侯。后二年，丞相雍等",
+        "close_paragraph": 8,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P8–P8"
+      }
+    },
+    {
+      "name": "孙和",
+      "category": "宗戚",
+      "paragraph_from": 9,
+      "paragraph_to": 13,
+      "boundary_evidence": {
+        "open_paragraph": 9,
+        "open_phrase": "孙和字子孝，虑弟也。少以母王有宠见爱，年十四，为置宫卫，使中书令阚泽教以书艺。好",
+        "close_paragraph": 13,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P9–P13"
+      }
+    },
+    {
+      "name": "孙霸",
+      "category": "宗戚",
+      "paragraph_from": 14,
+      "paragraph_to": 16,
+      "boundary_evidence": {
+        "open_paragraph": 14,
+        "open_phrase": "孙霸字子威，和弟也。和为太子。霸为鲁王，宠爱崇特，与和无殊。顷之，和、霸不穆之声",
+        "close_paragraph": 16,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P14–P16"
+      }
+    },
+    {
+      "name": "孙奋",
+      "category": "宗戚",
+      "paragraph_from": 17,
+      "paragraph_to": 19,
+      "boundary_evidence": {
+        "open_paragraph": 17,
+        "open_phrase": "孙奋字子扬，霸弟也，母曰仲姬。太元二年，立为齐王，居武昌。权薨，太傅诸葛恪不欲诸",
+        "close_paragraph": 19,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P17–P19"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

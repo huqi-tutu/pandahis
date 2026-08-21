@@ -1,0 +1,32 @@
+{
+  "work": "04三国志",
+  "vol": "049",
+  "volume_name": "刘繇太史慈士燮传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_arc": "C",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "刘繇",
+      "category": "武将",
+      "rationale": "卷名首列；扬州刺史/军阀，以军事割据叙事为主。非君王/诸侯。"
+    },
+    {
+      "name": "太史慈",
+      "category": "武将",
+      "rationale": "卷名次列；东吴名将，以战功为主轴。非君王。"
+    },
+    {
+      "name": "士燮",
+      "category": "文臣",
+      "rationale": "卷名末列；交趾太守，长期治边、经学士人型牧守。非君王/诸侯。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "论赞",
+    "其他"
+  ]
+}

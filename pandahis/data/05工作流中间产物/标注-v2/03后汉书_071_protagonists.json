@@ -1,0 +1,30 @@
+{
+  "work": "03后汉书",
+  "vol": "071",
+  "volume_name": "皇甫张段列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "皇甫规",
+      "category": "武将",
+      "rationale": "卷名『皇甫张段列传』首列皇甫，皇甫规为东汉名将，以军功征伐为主轴，符合武将准入标准。"
+    },
+    {
+      "name": "张奂",
+      "category": "武将",
+      "rationale": "卷名『皇甫张段列传』次列张，张奂为东汉名将，以边塞征战、羌胡平乱为主轴，符合武将准入标准。"
+    },
+    {
+      "name": "段颎",
+      "category": "武将",
+      "rationale": "卷名『皇甫张段列传』末列段，段颎为东汉名将，以征讨羌人、军功显赫为主轴，符合武将准入标准。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

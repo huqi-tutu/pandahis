@@ -1,0 +1,29 @@
+{
+  "work": "04三国志",
+  "vol": "048",
+  "volume_name": "三嗣主传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "吴会稽王",
+      "category": "君王",
+      "rationale": "《三嗣主传》为三国吴国三位嗣主合传，孙亮为吴国第二任皇帝（孙权之后），属天下共主，故category为君王。"
+    },
+    {
+      "name": "吴景帝",
+      "category": "君王",
+      "rationale": "《三嗣主传》为三国吴国三位嗣主合传，孙休为吴国第三任皇帝，属天下共主，故category为君王。"
+    },
+    {
+      "name": "吴末帝",
+      "category": "君王",
+      "rationale": "《三嗣主传》为三国吴国三位嗣主合传，孙皓为吴国末帝，属天下共主，故category为君王。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "其他"
+  ]
+}

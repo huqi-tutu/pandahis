@@ -1,0 +1,73 @@
+{
+  "work": "03后汉书",
+  "vol": "082",
+  "total_paragraphs": 43,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_082_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 14,
+      "paragraph_to": 17,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 18,
+      "paragraph_to": 18,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 29,
+      "paragraph_to": 29,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 43,
+      "paragraph_to": 43,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "刘焉",
+      "category": "宗戚",
+      "paragraph_from": 2,
+      "paragraph_to": 13,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "刘焉字君郎，江夏竟陵人也，鲁恭王后也。肃宗时，徙竟陵。焉少任州郡，以宗室拜郎中。",
+        "close_paragraph": 13,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P13"
+      }
+    },
+    {
+      "name": "袁术",
+      "category": "武将",
+      "paragraph_from": 19,
+      "paragraph_to": 28,
+      "boundary_evidence": {
+        "open_paragraph": 19,
+        "open_phrase": "袁术字公路，汝南汝阳人，司空逢之子也。少以侠气闻，数与诸公子飞鹰走狗，后颇折节。",
+        "close_paragraph": 28,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P19–P28"
+      }
+    },
+    {
+      "name": "吕布",
+      "category": "武将",
+      "paragraph_from": 30,
+      "paragraph_to": 42,
+      "boundary_evidence": {
+        "open_paragraph": 30,
+        "open_phrase": "吕布字奉先，五原九原人也。以弓马骁武给并州。刺史丁原为骑都尉，屯河内，以布为主簿",
+        "close_paragraph": 42,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P30–P42"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

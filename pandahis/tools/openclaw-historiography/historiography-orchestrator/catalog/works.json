@@ -1,5 +1,5 @@
 {
-  "queue_order": ["01A尚书", "01史记", "01C战国策", "01D列子", "01E吴越春秋", "02汉书", "03后汉书"],
+  "queue_order": ["01A尚书", "01史记", "01C战国策", "01D列子", "01E吴越春秋", "02汉书", "03后汉书", "04三国志"],
   "works": {
     "01A尚书": {
       "title": "尚书",
@@ -134,6 +134,30 @@
       "long_volume_paragraph_threshold": 0,
       "step1_blocks_mode": true,
       "entry_id_prefix": "HOUHANSHU",
+      "llm_step_seconds_hard_floor": 5,
+      "step1_seconds_advisory": false,
+      "step1_seconds_floor": 0,
+      "step1_seconds_per_para": 0,
+      "step1_seconds_cap": 0,
+      "step3_seconds_advisory": false,
+      "step3_seconds_floor": 0,
+      "step3_seconds_per_para": 0,
+      "step3_seconds_cap": 0,
+      "evidence_spot_check_paragraphs": 8,
+      "max_retries_per_step": 2,
+      "require_llm_knowledge": true,
+      "force_step4_llm": true
+    },
+    "04三国志": {
+      "title": "三国志",
+      "split_dir": "04三国志_拆分后",
+      "paragraph_mode": "line",
+      "volume_type_default": "纪传叙事",
+      "gold_volumes": ["001"],
+      "openclaw_agent": "hist-worker",
+      "long_volume_paragraph_threshold": 0,
+      "step1_blocks_mode": true,
+      "entry_id_prefix": "SANGUOZHI",
       "llm_step_seconds_hard_floor": 5,
       "step1_seconds_advisory": false,
       "step1_seconds_floor": 0,

@@ -1,0 +1,28 @@
+{
+  "work": "04三国志",
+  "vol": "058",
+  "total_paragraphs": 36,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "陆逊",
+      "category": "武将",
+      "paragraph_from": 2,
+      "paragraph_to": 36,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "陆逊字伯言，吴郡吴人也。本名议，世江东大族。逊少孤，随从祖庐江太守康在官。袁术与",
+        "close_paragraph": 36,
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

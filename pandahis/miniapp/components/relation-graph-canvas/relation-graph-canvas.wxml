@@ -8,6 +8,31 @@
     bindtouchend="onTouchEnd"
     bindtouchcancel="onTouchEnd"
   ></canvas>
+  <cover-view
+    wx:if="{{selectionBarVisible}}"
+    class="sel-bar"
+    style="left: {{selectionBarLeft}}px; top: {{selectionBarTop}}px;"
+    catchtap="noop"
+  >
+    <cover-view class="sel-bar-panel">
+      <cover-view class="sel-bar-item" catchtap="onSelectionCopy">
+        <cover-image class="sel-bar-icon" src="/images/icons/fuzhi-white.png" />
+        <cover-view class="sel-bar-label">复制</cover-view>
+      </cover-view>
+      <cover-view class="sel-bar-item" catchtap="onSelectionQuery">
+        <cover-image class="sel-bar-icon" src="/images/icons/sousuo-white.png" />
+        <cover-view class="sel-bar-label">查询</cover-view>
+      </cover-view>
+      <cover-view class="sel-bar-item" catchtap="onSelectionNote">
+        <cover-image class="sel-bar-icon" src="/images/icons/biji-white.png" />
+        <cover-view class="sel-bar-label">笔记</cover-view>
+      </cover-view>
+      <cover-view class="sel-bar-item" catchtap="onSelectionCorrection">
+        <cover-image class="sel-bar-icon" src="/images/icons/jiucuo-white.png" />
+        <cover-view class="sel-bar-label">纠错</cover-view>
+      </cover-view>
+    </cover-view>
+  </cover-view>
   <cover-view wx:if="{{!hint}}" class="zoom-bar">
     <cover-view class="zoom-btn" bindtap="onZoomOutTap">−</cover-view>
     <cover-view class="zoom-label">{{scaleLabel}}</cover-view>

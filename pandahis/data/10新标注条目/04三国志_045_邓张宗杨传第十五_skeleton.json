@@ -1,0 +1,678 @@
+{
+  "volume": "邓张宗杨传",
+  "source_file": "04三国志_045_邓张宗杨传第十五.txt",
+  "total_paragraphs": 68,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "interleaved",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "邓芝",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "邓芝",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "邓芝",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "张翼",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "张翼",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "宗预",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "宗预",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 47,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 48,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 49,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 50,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 51,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 52,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 53,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 54,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 55,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 56,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 57,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 58,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 59,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 60,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 61,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 62,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 63,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 64,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 65,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 66,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 67,
+      "owners": [
+        {
+          "name": "杨戏",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 68,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SANGUOZHI_045_01",
+      "史略名称": "邓芝",
+      "史略简介": "邓芝",
+      "原文字句": "邓芝字伯苗，义阳新野人，汉司徒禹之后也。汉末入蜀，未见知待。时益州从事张裕善相，芝往从之，裕谓芝曰：“君年过七十，位至大将军，封侯。”芝闻巴西太守庞羲好士，往依焉。先主定益州，芝为郫邸阁督。先主出至郫，与语，大奇之，擢为郫令，迁广汉太守。所在清严有治绩，入为尚书。",
+      "史略分类": "文臣",
+      "主要史料出处": "《04三国志·卷45·邓张宗杨传》",
+      "paragraphs": [
+        {
+          "volume": "邓张宗杨传",
+          "paragraph_from": 2,
+          "paragraph_to": 4
+        }
+      ]
+    },
+    {
+      "史略ID": "SANGUOZHI_045_02",
+      "史略名称": "张翼",
+      "史略简介": "张翼",
+      "原文字句": "张翼字伯恭，犍为武阳人也。高祖父司空浩，曾祖父广陵太守纲，皆有名迹。先主定益州，领牧，翼为书佐。建安末，举孝廉，为江阳长，徙涪陵令，迁梓潼太守，累迁至广汉、蜀郡太守。建兴九年，为庲降都督、绥南中郎将。翼性持法严，不得殊俗之欢心。耆率刘胄背叛作乱，翼举兵讨胄。胄未破，会被徵当还，群下咸以为宜便驰骑即罪，翼曰：“不然。吾以蛮夷蠢动，不称职故还耳，然代人未至，吾方临战场，当运粮积谷，为灭贼之资，岂可以黜",
+      "史略分类": "武将",
+      "主要史料出处": "《04三国志·卷45·邓张宗杨传》",
+      "paragraphs": [
+        {
+          "volume": "邓张宗杨传",
+          "paragraph_from": 5,
+          "paragraph_to": 6
+        }
+      ]
+    },
+    {
+      "史略ID": "SANGUOZHI_045_03",
+      "史略名称": "宗预",
+      "史略简介": "宗预",
+      "原文字句": "宗预字德艳，南阳安众人也。建安中，随张飞入蜀。建兴初，丞相亮以为主簿，迁参军右中郎将。及亮卒，吴虑魏或承衰取蜀，增巴丘守兵万人，一欲以为救援，二欲以事分割也。蜀闻之，亦益永安之守，以防非常。预将命使吴，孙权问预曰：“东之与西，譬犹一家，而闻西更增白帝之守，何也？”预对曰：“臣以为东益巴丘之戍，西增白帝之守，皆事势宜然，俱不足以相问也。”权大笑，嘉其抗直，甚爱待之，见敬亚于邓芝、费祎。迁为侍中，徙尚",
+      "史略分类": "文臣",
+      "主要史料出处": "《04三国志·卷45·邓张宗杨传》",
+      "paragraphs": [
+        {
+          "volume": "邓张宗杨传",
+          "paragraph_from": 7,
+          "paragraph_to": 7
+        },
+        {
+          "volume": "邓张宗杨传",
+          "paragraph_from": 9,
+          "paragraph_to": 9
+        }
+      ]
+    },
+    {
+      "史略ID": "SANGUOZHI_045_04",
+      "史略名称": "杨戏",
+      "史略简介": "杨戏",
+      "原文字句": "杨戏字文然，犍为武阳人也。少与巴西程祁公弘、巴郡杨汰季儒、蜀郡张表伯达并知名。戏每推祁以为冠首，丞相亮深识之。戏年二十余，从州书佐为督军从事，职典刑狱，论法决疑，号为平当，府辟为属主簿。亮卒，为尚书右选部郎，刺史蒋琬请为治中从事史。琬以大将军开府，又辟为东曹掾，迁南中郎参军，副贰庲降都督，领建宁太守。以疾徵还成都，拜护军监军，出领梓潼太守，入为射声校尉，所在清约不烦。延熙二十年，随大将军姜维出军至",
+      "史略分类": "文臣",
+      "主要史料出处": "《04三国志·卷45·邓张宗杨传》",
+      "paragraphs": [
+        {
+          "volume": "邓张宗杨传",
+          "paragraph_from": 10,
+          "paragraph_to": 67
+        }
+      ]
+    }
+  ],
+  "translation_qa_hint": "混写卷：人物段落非连续。翻译质检须按 entries[].paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。"
+}

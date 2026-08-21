@@ -1,0 +1,63 @@
+{
+  "work": "03后汉书",
+  "vol": "076",
+  "total_paragraphs": 57,
+  "volume_subtype": "hezhuan",
+  "derived_from": "03后汉书_076_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 37,
+      "paragraph_to": 37,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 56,
+      "paragraph_to": 57,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "郑玄",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 7,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "郑太字公业，河南开封人，司农众之曾孙也。少有少略。灵帝末，知天下将乱，阴交结豪杰",
+        "close_paragraph": 7,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P7"
+      }
+    },
+    {
+      "name": "孔融",
+      "category": "文臣",
+      "paragraph_from": 8,
+      "paragraph_to": 36,
+      "boundary_evidence": {
+        "open_paragraph": 8,
+        "open_phrase": "孔融字文举，鲁国人，孔子二十世孙也。七世祖霸，为元帝师，位至侍中。父宙，太山都尉",
+        "close_paragraph": 36,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P8–P36"
+      }
+    },
+    {
+      "name": "荀彧",
+      "category": "文臣",
+      "paragraph_from": 38,
+      "paragraph_to": 55,
+      "boundary_evidence": {
+        "open_paragraph": 38,
+        "open_phrase": "荀彧字文若，颍川颍阴人，朗陵令淑之孙也。父绲，为济南相。绲畏惮宦官，乃为彧娶中常",
+        "close_paragraph": 55,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P38–P55"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

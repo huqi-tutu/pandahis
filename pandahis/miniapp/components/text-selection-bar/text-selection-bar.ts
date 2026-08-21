@@ -21,6 +21,11 @@ Component({
       type: Boolean,
       value: true,
     },
+    /** 为 false 时隐藏笔记（母本原文半屏） */
+    showNote: {
+      type: Boolean,
+      value: true,
+    },
   },
   methods: {
     noop() {},
@@ -32,6 +37,9 @@ Component({
     },
     onQuery() {
       this.triggerEvent('query')
+    },
+    onNote() {
+      this.triggerEvent('note')
     },
     onCorrection() {
       this.triggerEvent('correction')

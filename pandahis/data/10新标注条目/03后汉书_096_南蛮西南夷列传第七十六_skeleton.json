@@ -1,0 +1,570 @@
+{
+  "volume": "南蛮西南夷列传",
+  "source_file": "03后汉书_096_南蛮西南夷列传第七十六.txt",
+  "total_paragraphs": 60,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "南蛮",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "南蛮",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "南蛮",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "南蛮",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "南蛮",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "南蛮",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "南蛮",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "南蛮",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "南蛮",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "南蛮",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "南蛮",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "南蛮",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "南蛮",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "南蛮",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "南蛮",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "南蛮",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "南蛮",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "南蛮",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "南蛮",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "南蛮",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "南蛮",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "南蛮",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "南蛮",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "南蛮",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "南蛮",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "西南夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "西南夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "西南夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "西南夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "西南夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "西南夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "西南夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "西南夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "西南夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "西南夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "西南夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "西南夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "西南夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "西南夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "西南夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "西南夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "西南夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "西南夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "西南夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [
+        {
+          "name": "西南夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 47,
+      "owners": [
+        {
+          "name": "西南夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 48,
+      "owners": [
+        {
+          "name": "西南夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 49,
+      "owners": [
+        {
+          "name": "西南夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 50,
+      "owners": [
+        {
+          "name": "西南夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 51,
+      "owners": [
+        {
+          "name": "西南夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 52,
+      "owners": [
+        {
+          "name": "西南夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 53,
+      "owners": [
+        {
+          "name": "西南夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 54,
+      "owners": [
+        {
+          "name": "西南夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 55,
+      "owners": [
+        {
+          "name": "西南夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 56,
+      "owners": [
+        {
+          "name": "西南夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 57,
+      "owners": [
+        {
+          "name": "西南夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 58,
+      "owners": [
+        {
+          "name": "西南夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 59,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 60,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HOUHANSHU_096_01",
+      "史略名称": "南蛮",
+      "史略简介": "南蛮",
+      "原文字句": "昔高辛氏有犬戎之寇，帝患其侵暴，而征伐不克。乃访募天下，有能得犬戎之将吴将军头者，购黄金千镒，邑万家，又妻以少女。时帝有畜狗，其毛五采，名曰槃瓠。下令之后，槃瓠遂衔人头造阙下，群臣怪而诊之，乃吴将军首也。帝大喜，而计槃瓠不可妻之以女，又无封爵之道，议欲有报而未知所宜。女闻之，以为帝皇下令，不可违信，因请行。帝不得已，乃以女配槃瓠。槃瓠得女，负而走入南山，止石室中。所处险绝，人迹不至。于是女解去衣裳",
+      "史略分类": "蕃祚",
+      "主要史料出处": "《03后汉书·卷96·南蛮西南夷列传》",
+      "paragraphs": [
+        {
+          "volume": "南蛮西南夷列传",
+          "paragraph_from": 2,
+          "paragraph_to": 26
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_096_02",
+      "史略名称": "西南夷",
+      "史略简介": "西南夷",
+      "原文字句": "西南夷者，在蜀郡徼外。有夜郎国，东接交阯，西有滇国，北有邛都国，各立君长。其人皆椎结左衽，邑聚而居，能耕田。其外又有巂、昆明诸落，西极同师，东北至叶榆，地方数千里。无君长，辫发，随畜迁徙无常。自巂东北有莋都国，东北有冉駹国，或土著，或随畜迁徙。自冉駹东北有白马国，氐种是也。此三国亦有君长。",
+      "史略分类": "蕃祚",
+      "主要史料出处": "《03后汉书·卷96·南蛮西南夷列传》",
+      "paragraphs": [
+        {
+          "volume": "南蛮西南夷列传",
+          "paragraph_from": 27,
+          "paragraph_to": 58
+        }
+      ]
+    }
+  ]
+}

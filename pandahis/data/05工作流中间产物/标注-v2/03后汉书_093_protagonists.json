@@ -1,0 +1,43 @@
+{
+  "work": "03后汉书",
+  "vol": "093",
+  "volume_name": "逸民列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "严光",
+      "category": "庶众",
+      "rationale": "《逸民列传》所载隐逸之士，光武帝故交而隐居不仕，属庶众类隐者。"
+    },
+    {
+      "name": "梁鸿",
+      "category": "庶众",
+      "rationale": "《逸民列传》所载隐逸之士，隐居不仕，属庶众类隐者。"
+    },
+    {
+      "name": "逢萌",
+      "category": "庶众",
+      "rationale": "《逸民列传》所载隐逸之士，隐居不仕，属庶众类隐者。"
+    },
+    {
+      "name": "庞公",
+      "category": "庶众",
+      "rationale": "《逸民列传》所载隐逸之士，隐居不仕，属庶众类隐者。"
+    },
+    {
+      "name": "韩康",
+      "category": "庶众",
+      "rationale": "《逸民列传》所载隐逸之士，隐居不仕，属庶众类隐者。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "论曰",
+    "赞曰",
+    "其他"
+  ],
+  "protagonists_cap_note": "历史意义 Top5 收紧；落选→世系链 exclude。落选: 野王二老、向长、台佟、矫慎、戴良、法真",
+  "volume_texture": "sequential"
+}

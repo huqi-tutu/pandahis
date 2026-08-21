@@ -2,7 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.isHuaxiaUnitId = exports.isHuaxiaCivSlug = exports.toastCivLocked = exports.loadFeatureFlags = exports.isCivSwitchEnabled = exports.getFeatureFlags = exports.TOAST_CIV_LOCKED = void 0;
 const api_1 = require("./api");
-/** 请求失败时的兜底：默认关闭文明切换 */
+const runtime_env_1 = require("./runtime-env");
+/** trial/release 请求失败时的兜底（develop 版在前端也会强制 true） */
 const DEFAULT_FLAGS = { civSwitchEnabled: false };
 exports.TOAST_CIV_LOCKED = '即将上线，敬请期待';
 function getFeatureFlags() {
@@ -17,6 +18,8 @@ function getFeatureFlags() {
 }
 exports.getFeatureFlags = getFeatureFlags;
 function isCivSwitchEnabled() {
+    if ((0, runtime_env_1.isDevelopEnv)())
+        return true;
     return getFeatureFlags().civSwitchEnabled !== false;
 }
 exports.isCivSwitchEnabled = isCivSwitchEnabled;

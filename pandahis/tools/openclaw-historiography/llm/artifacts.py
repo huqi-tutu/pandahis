@@ -331,20 +331,52 @@ def unwrap_plan_payload(obj: Dict[str, Any]) -> Dict[str, Any]:
     return cleaned
 
 
+def _is_plan_decision_object(obj: Dict[str, Any]) -> bool:
+    """长文决策包：可无母本逐句清单，但须有外部补全/参考著作/索引处理等决策字段。"""
+    if not isinstance(obj, dict):
+        return False
+    if isinstance(obj.get("母本逐句清单"), list) and obj.get("母本逐句清单"):
+        return True
+    if "母本顺译" in obj or "翻译详情" in obj:
+        return False
+    has_decision = (
+        "外部补全" in obj
+        or "参考著作" in obj
+        or "索引补充处理" in obj
+        or "写作结构" in obj
+    )
+    return bool(has_decision and (obj.get("史略ID") or obj.get("史略名称") or has_decision))
+
+
 def extract_plan_json(text: str) -> Optional[Dict[str, Any]]:
-    objects = extract_json_objects(text)
-    candidates = [
+    objects = [o for o in extract_json_objects(text) if isinstance(o, dict)]
+    if not objects:
+        return None
+
+    unwrapped = [unwrap_plan_payload(o) for o in objects]
+
+    # 1) 优先：带非空外部补全的决策包（长文主路径）
+    with_ext = [
         o
-        for o in objects
-        if isinstance(o, dict) and isinstance(o.get("母本逐句清单"), list) and o.get("母本逐句清单")
+        for o in unwrapped
+        if isinstance(o.get("外部补全"), list) and len(o.get("外部补全") or []) > 0
     ]
-    if candidates:
-        return max(candidates, key=lambda o: len(o.get("母本逐句清单") or []))
-    for obj in objects:
-        if isinstance(obj, dict):
-            unwrapped = unwrap_plan_payload(obj)
-            if isinstance(unwrapped.get("母本逐句清单"), list) and unwrapped.get("母本逐句清单"):
-                return unwrapped
+    if with_ext:
+        return max(with_ext, key=lambda o: len(o.get("外部补全") or []))
+
+    # 2) 短文/旧路径：带母本逐句清单
+    with_cl = [
+        o
+        for o in unwrapped
+        if isinstance(o.get("母本逐句清单"), list) and o.get("母本逐句清单")
+    ]
+    if with_cl:
+        return max(with_cl, key=lambda o: len(o.get("母本逐句清单") or []))
+
+    # 3) 决策壳（外部补全可能为空数组，仍须落盘供 verify/重试读到结构）
+    for o in unwrapped:
+        if _is_plan_decision_object(o):
+            return o
     return None
 
 
@@ -375,12 +407,18 @@ def extract_best_json(text: str) -> Optional[Any]:
         if isinstance(obj, dict) and "segment_attribution" in obj and "entries" in obj:
             return obj
 
+    # 翻译正文 / 母本顺译
     for obj in objects:
-        if isinstance(obj, dict) and (
-            "母本顺译" in obj
-            or "翻译详情" in obj
-            or "母本逐句清单" in obj
-        ):
+        if isinstance(obj, dict) and ("母本顺译" in obj or "翻译详情" in obj):
+            return obj
+
+    # source plan：含清单或长文决策包（外部补全/参考著作等）
+    plan = extract_plan_json(text)
+    if plan is not None:
+        return plan
+
+    for obj in objects:
+        if isinstance(obj, dict) and "母本逐句清单" in obj:
             return obj
     return None
 

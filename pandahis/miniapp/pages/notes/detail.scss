@@ -1,0 +1,172 @@
+@import '../../native-utils/design-tokens.scss';
+
+.page-shell {
+  min-height: 100vh;
+  background: $page-bg;
+}
+
+.notes-body {
+  padding-left: 32rpx;
+  padding-right: 32rpx;
+  padding-bottom: calc(48rpx + env(safe-area-inset-bottom));
+  box-sizing: border-box;
+}
+
+.notes-inner {
+  padding-top: 24rpx;
+}
+
+.card {
+  padding: 24rpx;
+  margin-bottom: 16rpx;
+}
+
+.field {
+  display: flex;
+  align-items: flex-start;
+  gap: 16rpx;
+  margin-bottom: 16rpx;
+}
+
+.field:last-child {
+  margin-bottom: 0;
+}
+
+.label {
+  flex-shrink: 0;
+  width: 88rpx;
+  font-size: 24rpx;
+  color: $text-caption;
+  line-height: 1.5;
+}
+
+.value {
+  flex: 1;
+  font-size: 28rpx;
+  color: $text-title;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.value-row {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8rpx 12rpx;
+}
+
+.value--inline {
+  flex: 0 1 auto;
+  min-width: 0;
+}
+
+.view-source {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 2rpx;
+  padding: 0;
+  font-size: 26rpx;
+  line-height: 1.5;
+  color: #2A7A5D;
+  font-weight: 600;
+}
+
+.view-source-text {
+  color: inherit;
+}
+
+.view-source-arrow {
+  color: inherit;
+  font-size: 28rpx;
+  line-height: 1;
+  margin-top: -1rpx;
+}
+
+.block-label {
+  display: block;
+  font-size: 24rpx;
+  color: $text-caption;
+  margin-bottom: 12rpx;
+}
+
+.quote {
+  display: block;
+  font-size: 28rpx;
+  line-height: 1.7;
+  color: $text-body;
+  background: rgba(185, 157, 91, 0.16);
+  border-radius: 12rpx;
+  padding: 16rpx 18rpx;
+}
+
+.remark {
+  display: block;
+  font-size: 28rpx;
+  line-height: 1.7;
+  color: $text-title;
+  white-space: pre-wrap;
+}
+
+.remark--empty {
+  color: $text-time;
+}
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  gap: 16rpx;
+  margin-top: 12rpx;
+}
+
+.btn {
+  flex: 1;
+  height: 88rpx;
+  border-radius: 16rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30rpx;
+  font-weight: 600;
+  letter-spacing: 2rpx;
+}
+
+.btn--edit {
+  background: $theme-primary;
+  color: $theme-on-primary;
+}
+
+.btn--delete {
+  background: $inactive-bg;
+  color: $inactive-text;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 120rpx 32rpx;
+  gap: 16rpx;
+}
+
+.empty-icon {
+  font-size: 64rpx;
+  line-height: 1;
+}
+
+.empty-text {
+  font-size: 30rpx;
+  color: $text-title;
+  font-weight: 600;
+}
+
+.login-btn {
+  margin-top: 8rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80rpx;
+  padding: 0 56rpx;
+}

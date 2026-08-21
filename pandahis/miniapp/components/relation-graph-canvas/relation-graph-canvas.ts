@@ -51,6 +51,8 @@ type LayoutResult = {
   topologyEdges: GraphEdge[]
   bounds: { minX: number; minY: number; maxX: number; maxY: number }
   centerKey: string
+  /** 各圈实际半径（扩圈后与 RING_RADIUS 基准值可能不同） */
+  ringRadii: readonly number[]
 }
 
 const BG = '#F8F6F2'
@@ -98,6 +100,8 @@ const GROUP_EDGE: Record<string, string> = {
 /** 四圈层辅助线：极淡版(180,172,165,0.06)与深版(150,146,140,0.22)折中 */
 const RING_STROKE = 'rgba(165, 159, 153, 0.14)'
 /** 圈层点状虚线：[点长, 间隙] */
+const RING_DASH: [number, number] = [1.2, 5.5]
+const LONG_PRESS_MS = 400
 const RING_DOT_DASH: [number, number] = [1.1, 3.0]
 const NO_EDGE_LABEL_GROUPS = new Set(['同僚', '敌对', '师徒', '好友'])
 const EDGE_LABEL_NORMALIZE: Record<string, string> = {
@@ -366,6 +370,7 @@ function layoutMindMap(nodes: GraphNode[], edges: GraphEdge[], centerKey: string
       topologyEdges: [],
       bounds: { minX: -1, minY: -1, maxX: 1, maxY: 1 },
       centerKey,
+      ringRadii: RING_RADIUS,
     }
   }
 
@@ -380,13 +385,14 @@ function layoutMindMap(nodes: GraphNode[], edges: GraphEdge[], centerKey: string
 
   const edgeList = buildEdgeList(positions, layoutEdges, nodeMap)
   enrichEdgesWithCurves(edgeList)
-  placeEdgeLabelsOnLine(edgeList, positions)
+  resolveEdgeLabelCollisions(edgeList, positions)
   return {
     positions,
     edgeList,
     topologyEdges: layoutEdges,
     bounds: computeBounds(positions, edgeList),
     centerKey,
+    ringRadii: prepared.ringRadii,
   }
 }
 
@@ -421,8 +427,49 @@ function measureRelLabel(text: string): { w: number; h: number } {
   return { w, h: REL_LABEL_H }
 }
 
-/** 标签锚在连接线中点，背景盖住线段，呈现「嵌在线上」 */
-function placeEdgeLabelsOnLine(edgeList: EdgeDraw[], _positions: Pos[]) {
+/** 沿连线采样的 t 值：优先中点，再向两端滑动找空位 */
+const EDGE_LABEL_T_SAMPLES = [
+  0.5, 0.42, 0.58, 0.35, 0.65, 0.28, 0.72, 0.22, 0.78, 0.4, 0.6, 0.32, 0.68,
+]
+
+type RectBox = { l: number; r: number; t: number; b: number }
+
+/** 节点/枢纽的实际渲染障碍盒（含间距） */
+function nodeObstacleBoxes(positions: Pos[]): RectBox[] {
+  const boxes: RectBox[] = []
+  for (const p of positions) {
+    if (p.isCategory) continue
+    const pad = p.isCenter ? 4 : 5
+    if (p.isPerson || (!p.isSubCategory && !p.isCategory && !p.isCenter)) {
+      const { w, h } = personBoxSize(p)
+      boxes.push({
+        l: p.x - w / 2 - pad,
+        r: p.x + w / 2 + pad,
+        t: p.y - h / 2 - pad,
+        b: p.y + h / 2 + pad,
+      })
+    } else {
+      const b = nodeBounds(p)
+      boxes.push(b)
+    }
+  }
+  return boxes
+}
+
+function boxCollidesAny(box: RectBox, obstacles: RectBox[]): boolean {
+  for (const o of obstacles) {
+    if (boxesOverlap(box, o)) return true
+  }
+  return false
+}
+
+/**
+ * 方案 A：边标签沿连线滑动找无碰撞位置；仍冲突则隐藏该边标签。
+ */
+function resolveEdgeLabelCollisions(edgeList: EdgeDraw[], positions: Pos[]) {
+  const nodeBoxes = nodeObstacleBoxes(positions)
+  const placedLabels: RectBox[] = []
+
   for (const e of edgeList) {
     if (!e.label) {
       e.labelW = 0
@@ -432,9 +479,32 @@ function placeEdgeLabelsOnLine(edgeList: EdgeDraw[], _positions: Pos[]) {
     const { w, h } = measureRelLabel(e.label)
     e.labelW = w
     e.labelH = h
-    const pt = pointOnEdge(e, 0.5)
-    e.labelX = pt.x
-    e.labelY = pt.y
+
+    const edgeLen = Math.hypot(e.x2 - e.x1, e.y2 - e.y1)
+    if (edgeLen < 28) {
+      e.label = ''
+      e.labelW = 0
+      e.labelH = 0
+      continue
+    }
+
+    let placed = false
+    for (const t of EDGE_LABEL_T_SAMPLES) {
+      const pt = pointOnEdge(e, t)
+      const box = labelBox(pt.x, pt.y, w, h)
+      if (boxCollidesAny(box, nodeBoxes) || boxCollidesAny(box, placedLabels)) continue
+      e.labelX = pt.x
+      e.labelY = pt.y
+      placedLabels.push(box)
+      placed = true
+      break
+    }
+
+    if (!placed) {
+      e.label = ''
+      e.labelW = 0
+      e.labelH = 0
+    }
   }
 }
 
@@ -736,21 +806,149 @@ Component({
       value: null as unknown as GraphPayload,
       observer: 'onGraphObserver',
     },
+    notedNames: {
+      type: Array,
+      value: [] as string[],
+      observer: 'paintCached',
+    },
   },
   data: {
     hint: '',
     scaleLabel: '100%',
+    selectionBarVisible: false,
+    selectionBarLeft: 0,
+    selectionBarTop: 0,
+    selectionBarPlacement: 'above',
+    selectionBarText: '',
   },
   lifetimes: {
     attached() {
       this.scheduleDraw()
     },
+    detached() {
+      this.clearLongPressTimer()
+    },
   },
 
   methods: {
     onGraphObserver() {
+      this.hideSelectionBar()
       this.scheduleDraw()
     },
+
+    clearLongPressTimer() {
+      const timer = (this as any)._longPressTimer as ReturnType<typeof setTimeout> | null
+      if (timer) {
+        clearTimeout(timer)
+        ;(this as any)._longPressTimer = null
+      }
+    },
+
+    hideSelectionBar() {
+      if (!this.data.selectionBarVisible && !this.data.selectionBarText) return
+      this.setData({
+        selectionBarVisible: false,
+        selectionBarText: '',
+      })
+    },
+
+    layoutToLocal(lx: number, ly: number): { x: number; y: number } {
+      const rect = (this as any)._rect as WechatMiniprogram.BoundingClientRectCallbackResult | undefined
+      const w = Number(rect?.width) || 0
+      const h = Number(rect?.height) || 0
+      const s = (this as any)._zoomScale || 1
+      const panX = (this as any)._panX || 0
+      const panY = (this as any)._panY || 0
+      return {
+        x: lx * s + w / 2 + panX,
+        y: ly * s + h / 2 + panY,
+      }
+    },
+
+    showSelectionBarForNode(hit: Pos) {
+      const text = String(hit.fullName || hit.displayName || '').trim()
+      if (!text) return
+      const rect = (this as any)._rect as WechatMiniprogram.BoundingClientRectCallbackResult | undefined
+      const w = Number(rect?.width) || 0
+      const h = Number(rect?.height) || 0
+      const s = (this as any)._zoomScale || 1
+      const local = this.layoutToLocal(hit.x, hit.y)
+      const boxW = Math.max(hit.boxW || hit.circleR * 2 || 40, 24) * s
+      const boxH = Math.max(hit.boxH || hit.circleR * 2 || 28, 24) * s
+      const sys = wx.getSystemInfoSync()
+      const rpx = (sys.windowWidth || 375) / 750
+      // 与 text-selection-bar（4 按钮：复制/查询/笔记/纠错）尺寸对齐
+      // 宽：4×88 + 3×14 gap + 两侧 padding 14 = 422rpx
+      // 高：padding 16+14 + icon 40 + gap 8 + label ~28 ≈ 106rpx
+      const barW = 422 * rpx
+      const barH = 106 * rpx
+      const gap = 14 * rpx
+      const edge = 12
+      let centerX = local.x
+      centerX = Math.max(edge + barW / 2, Math.min(w - edge - barW / 2, centerX))
+      const spaceAbove = local.y - boxH / 2
+      const spaceBelow = h - (local.y + boxH / 2)
+      const placement = spaceAbove >= barH + gap || spaceAbove >= spaceBelow ? 'above' : 'below'
+      const left = centerX - barW / 2
+      const top =
+        placement === 'above'
+          ? Math.max(edge, local.y - boxH / 2 - gap - barH)
+          : Math.min(h - edge - barH, local.y + boxH / 2 + gap)
+      ;(this as any)._selectedKey = hit.key
+      ;(this as any)._longPressFired = true
+      this.paintCached()
+      try {
+        wx.vibrateShort({ type: 'light' })
+      } catch {
+        // ignore
+      }
+      this.setData({
+        selectionBarVisible: true,
+        selectionBarText: text,
+        selectionBarLeft: left,
+        selectionBarTop: top,
+        selectionBarPlacement: placement,
+      })
+      this.triggerEvent('nodeLongPress', { key: hit.key, text })
+    },
+
+    onSelectionCopy() {
+      const text = this.data.selectionBarText
+      this.hideSelectionBar()
+      if (!text) return
+      this.triggerEvent('selectionCopy', { text })
+    },
+    onSelectionQuery() {
+      const text = this.data.selectionBarText
+      this.hideSelectionBar()
+      if (!text) return
+      this.triggerEvent('selectionQuery', { text })
+    },
+    onSelectionNote() {
+      const text = this.data.selectionBarText
+      this.hideSelectionBar()
+      if (!text) return
+      this.triggerEvent('selectionNote', { text })
+    },
+    onSelectionCorrection() {
+      const text = this.data.selectionBarText
+      this.hideSelectionBar()
+      if (!text) return
+      this.triggerEvent('selectionCorrection', { text })
+    },
+    focusNodeByName(name: string) {
+      const target = String(name || '').trim()
+      if (!target) return false
+      const layout = (this as any)._layout as LayoutResult | null
+      const hit = (layout?.positions || []).find(
+        (p) => p.fullName === target || p.displayName === target
+      )
+      if (!hit) return false
+      ;(this as any)._selectedKey = hit.key
+      this.paintCached()
+      return true
+    },
+    noop() {},
 
     scheduleDraw() {
       wx.nextTick(() => setTimeout(() => this.draw(), 48))
@@ -899,10 +1097,11 @@ Component({
       ctx.translate(w / 2 + panX, h / 2 + panY)
       ctx.scale(s, s)
 
-      // 四圈层：更淡的点状虚线环
-      for (let i = 1; i < RING_RADIUS.length; i++) {
+      // 四圈层：更淡的点状虚线环（半径与布局一致，人物中心落在圆上）
+      const ringRadii = layout.ringRadii?.length ? layout.ringRadii : RING_RADIUS
+      for (let i = 1; i < ringRadii.length; i++) {
         ctx.beginPath()
-        ctx.arc(0, 0, RING_RADIUS[i], 0, Math.PI * 2)
+        ctx.arc(0, 0, ringRadii[i], 0, Math.PI * 2)
         ctx.strokeStyle = RING_STROKE
         ctx.lineWidth = 1
         ctx.setLineDash(RING_DOT_DASH)
@@ -1028,6 +1227,17 @@ Component({
       ctx.textAlign = 'center'
       ctx.textBaseline = 'middle'
       ctx.fillText(show, p.x, p.y)
+      const noted = ((this.properties.notedNames as string[]) || []).some(
+        (n) => n === p.fullName || n === p.displayName
+      )
+      if (noted) {
+        ctx.strokeStyle = '#B99D5B'
+        ctx.lineWidth = 2
+        ctx.beginPath()
+        ctx.moveTo(p.x - pw / 2 + 6, p.y + ph / 2 - 4)
+        ctx.lineTo(p.x + pw / 2 - 6, p.y + ph / 2 - 4)
+        ctx.stroke()
+      }
       ctx.restore()
     },
 
@@ -1088,7 +1298,9 @@ Component({
     onTouchStart(e: WechatMiniprogram.TouchEvent) {
       const layout = (this as any)._layout as LayoutResult | null
       if (!layout?.positions.length) return
+      this.clearLongPressTimer()
       ;(this as any)._pinchJustEnded = false
+      ;(this as any)._longPressFired = false
       const touches = e.touches
       if (touches.length >= 2) {
         ;(this as any)._touchMode = 'pinch'
@@ -1099,11 +1311,24 @@ Component({
       const touch = touches[0]
       ;(this as any)._touchMode = 'pending'
       this.reanchorPanFromTouch(touch)
+
+      const rect = (this as any)._rect as WechatMiniprogram.BoundingClientRectCallbackResult | undefined
+      if (!rect || !touch) return
+      const pt = this.screenToLayout(touch.clientX - rect.left, touch.clientY - rect.top)
+      const hit = this.hitTestNode(layout, pt.x, pt.y)
+      if (!hit) return
+      ;(this as any)._longPressTimer = setTimeout(() => {
+        ;(this as any)._longPressTimer = null
+        if ((this as any)._touchMode !== 'pending') return
+        this.showSelectionBarForNode(hit)
+      }, LONG_PRESS_MS)
     },
 
     onTouchMove(e: WechatMiniprogram.TouchEvent) {
       const touches = e.touches
       if ((this as any)._touchMode === 'pinch' && touches.length >= 2) {
+        this.clearLongPressTimer()
+        this.hideSelectionBar()
         const startDist = (this as any)._pinchStartDist as number
         const curDist = this.touchDistance(touches)
         if (startDist > 0 && curDist > 0) {
@@ -1118,6 +1343,7 @@ Component({
       }
       // 缩放过程中手指数偶发变成 1：立刻重锚定，禁止用缩放前旧坐标去平移
       if ((this as any)._touchMode === 'pinch' && touches.length === 1) {
+        this.clearLongPressTimer()
         ;(this as any)._pinchJustEnded = true
         ;(this as any)._touchMode = 'pending'
         this.reanchorPanFromTouch(touches[0])
@@ -1129,6 +1355,8 @@ Component({
       const dx = touch.clientX - ((this as any)._touchStartX || 0)
       const dy = touch.clientY - ((this as any)._touchStartY || 0)
       if ((this as any)._touchMode === 'pending' && Math.hypot(dx, dy) > 8) {
+        this.clearLongPressTimer()
+        this.hideSelectionBar()
         ;(this as any)._touchMode = 'pan'
       }
       if ((this as any)._touchMode !== 'pan') return
@@ -1138,6 +1366,7 @@ Component({
     },
 
     onTouchEnd(e: WechatMiniprogram.TouchEvent) {
+      this.clearLongPressTimer()
       if ((this as any)._touchMode === 'pinch') {
         if (e.touches.length >= 2) return
         ;(this as any)._pinchJustEnded = true
@@ -1161,6 +1390,12 @@ Component({
         ;(this as any)._touchMode = ''
         return
       }
+      // 长按已弹出选字浮层：吞掉短按
+      if ((this as any)._longPressFired) {
+        ;(this as any)._longPressFired = false
+        ;(this as any)._touchMode = ''
+        return
+      }
       const layout = (this as any)._layout as LayoutResult | null
       const rect = (this as any)._rect as WechatMiniprogram.BoundingClientRectCallbackResult | undefined
       const touch = e.changedTouches?.[0]
@@ -1172,8 +1407,11 @@ Component({
           ;(this as any)._selectedKey = ''
           this.paintCached()
         }
+        this.hideSelectionBar()
+        this.triggerEvent('nodeTap', { key: '', cancelled: true })
         return
       }
+      this.hideSelectionBar()
       ;(this as any)._selectedKey = hit.key
       this.paintCached()
       this.triggerEvent('nodeTap', { key: hit.key, targetBoxId: hit.targetBoxId, nodeType: hit.type })

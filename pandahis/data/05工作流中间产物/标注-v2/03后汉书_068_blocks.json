@@ -1,0 +1,99 @@
+{
+  "work": "03后汉书",
+  "vol": "068",
+  "total_paragraphs": 54,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_068_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 19,
+      "paragraph_to": 19,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 53,
+      "paragraph_to": 54,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "荀淑",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 6,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "荀淑字季和，颍川颍阴人，荀卿十一世孙也。少有高行，博学而不好章句，多为俗儒所非，",
+        "close_paragraph": 6,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P6"
+      }
+    },
+    {
+      "name": "荀爽",
+      "category": "文臣",
+      "paragraph_from": 7,
+      "paragraph_to": 18,
+      "boundary_evidence": {
+        "open_paragraph": 7,
+        "open_phrase": "爽字慈明，一名谞。幼而好学，年十二，能通《春秋》《论语》。太尉杜乔见而称之，曰：",
+        "close_paragraph": 18,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P7–P18"
+      }
+    },
+    {
+      "name": "荀悦",
+      "category": "文臣",
+      "paragraph_from": 20,
+      "paragraph_to": 36,
+      "boundary_evidence": {
+        "open_paragraph": 20,
+        "open_phrase": "悦字仲豫，俭之子也。俭早卒。悦年十二，能说《春秋》。家贫无书，每之人间，所见篇牍",
+        "close_paragraph": 36,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P20–P36"
+      }
+    },
+    {
+      "name": "韩韶",
+      "category": "文臣",
+      "paragraph_from": 37,
+      "paragraph_to": 38,
+      "boundary_evidence": {
+        "open_paragraph": 37,
+        "open_phrase": "韩韶字仲黄，颍川舞阳人也。少仕郡，辟司徒府。时，太山贼公孙举伪号历年，守、令不能",
+        "close_paragraph": 38,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P37–P38"
+      }
+    },
+    {
+      "name": "钟皓",
+      "category": "文臣",
+      "paragraph_from": 39,
+      "paragraph_to": 42,
+      "boundary_evidence": {
+        "open_paragraph": 39,
+        "open_phrase": "钟皓字季明，颍川长社人也。为郡著姓，世善刑律。皓少以笃行称，公府连辟，为二兄未仕",
+        "close_paragraph": 42,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P39–P42"
+      }
+    },
+    {
+      "name": "陈寔",
+      "category": "文臣",
+      "paragraph_from": 43,
+      "paragraph_to": 52,
+      "boundary_evidence": {
+        "open_paragraph": 43,
+        "open_phrase": "陈寔字仲弓，颍川许人也。出于单微。自为儿童，虽在戏弄，为等类所归。少作县吏，常给",
+        "close_paragraph": 52,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P43–P52"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

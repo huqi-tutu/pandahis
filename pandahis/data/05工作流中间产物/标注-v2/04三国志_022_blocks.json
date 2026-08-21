@@ -1,0 +1,82 @@
+{
+  "work": "04三国志",
+  "vol": "022",
+  "total_paragraphs": 32,
+  "volume_subtype": "hezhuan",
+  "derived_from": "04三国志_022_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 32,
+      "paragraph_to": 32,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "桓阶",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 4,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "桓阶字伯绪，长沙临湘人也。仕郡功曹。太守孙坚举阶孝廉，除尚书郎。父丧还乡里。会坚",
+        "close_paragraph": 4,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P4"
+      }
+    },
+    {
+      "name": "陈群",
+      "category": "文臣",
+      "paragraph_from": 5,
+      "paragraph_to": 20,
+      "boundary_evidence": {
+        "open_paragraph": 5,
+        "open_phrase": "陈群字长文，颍川许昌也。祖父寔，父纪，叔父谌，皆有盛名。群为儿时，寔常奇异之，谓",
+        "close_paragraph": 20,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P5–P20"
+      }
+    },
+    {
+      "name": "徐宣",
+      "category": "文臣",
+      "paragraph_from": 21,
+      "paragraph_to": 22,
+      "boundary_evidence": {
+        "open_paragraph": 21,
+        "open_phrase": "徐宣字宝坚，广陵海西人也。避乱江东，又辞孙策之命，还本郡。与陈矫并为纲纪，二人齐",
+        "close_paragraph": 22,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P21–P22"
+      }
+    },
+    {
+      "name": "卫臻",
+      "category": "文臣",
+      "paragraph_from": 23,
+      "paragraph_to": 26,
+      "boundary_evidence": {
+        "open_paragraph": 23,
+        "open_phrase": "卫臻字公振，陈留襄邑人也。父兹，有大节，不应三公之辟。太祖之初至陈留，兹曰：“平",
+        "close_paragraph": 26,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P23–P26"
+      }
+    },
+    {
+      "name": "卢毓",
+      "category": "文臣",
+      "paragraph_from": 27,
+      "paragraph_to": 31,
+      "boundary_evidence": {
+        "open_paragraph": 27,
+        "open_phrase": "卢毓字子家，涿郡涿人也。父植，有名于世。毓十岁而孤，遇本州乱，二兄死难。当袁绍、",
+        "close_paragraph": 31,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P27–P31"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

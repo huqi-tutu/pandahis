@@ -1,29 +1,13 @@
 <view class="page-shell" bindtap="onPageTap">
-  <proto-nav hidden="{{audioOpen || (tab === 'content' && !uiFocused)}}" title="{{navTitle}}" show-back="{{true}}"></proto-nav>
+  <proto-nav hidden="{{audioOpen || (tab === 'content' && !uiFocused && !contentSearchBrowseActive)}}" title="{{navTitle}}" show-back="{{true}}"></proto-nav>
 
- <view wx:if="{{!header}}" class="box-page-body box-page-body--boot" style="top: {{tabTop}}px;">
-  <view class="box-tabs-wrap">
-   <view class="box-tab active">详情</view>
-   <view class="box-tab">评述</view>
-   <view class="box-tab">见证</view>
-  </view>
-  <view class="box-boot-body">
-   <view class="tab-empty tab-empty--loading">
-    <view class="tab-empty-loading">
-     <text class="tab-empty-loading-dot">·</text>
-     <text class="tab-empty-loading-dot">·</text>
-     <text class="tab-empty-loading-dot">·</text>
-    </view>
-    <text class="tab-empty-text">加载中</text>
-   </view>
-  </view>
- </view>
+ <page-loading wx:if="{{!header}}" text="加载中"></page-loading>
 
  <block wx:if="{{header}}">
   <!-- 页面主体容器（固定定位，包含 Tab 栏 + 滚动区） -->
   <view class="box-page-body" style="top: {{tabTop}}px;">
    <!-- 内容 Tab 栏（文档流占位，避免关系 Tab canvas 原生层级盖住） -->
-   <view class="box-tabs-wrap {{tab !== 'content' ? 'box-tabs-wrap--persistent' : ''}} {{tab === 'content' && !uiFocused ? 'box-tabs-wrap--hidden' : ''}}" catchtap="noop">
+   <view class="box-tabs-wrap {{tab !== 'content' ? 'box-tabs-wrap--persistent' : ''}} {{(tab === 'content' && !uiFocused) || contentSearchBrowseActive ? 'box-tabs-wrap--hidden' : ''}}" catchtap="noop">
     <view class="box-tab {{tab === 'content' ? 'active' : ''}}" data-tab="content" catchtap="setTab">详情</view>
     <view wx:if="{{showRelationsTab}}" class="box-tab {{tab === 'relations' ? 'active' : ''}}" data-tab="relations" catchtap="setTab">关系</view>
     <view class="box-tab {{tab === 'reviews' ? 'active' : ''}}" data-tab="reviews" catchtap="setTab">评述</view>
@@ -35,12 +19,14 @@
     class="box-body-scroll"
     scroll-y="{{!showRelationsTab || tab !== 'relations'}}"
     scroll-top="{{bodyScrollTop}}"
+    scroll-into-view="{{noteScrollIntoView}}"
+    scroll-with-animation="{{false}}"
     enhanced
     show-scrollbar="{{false}}"
     id="boxBodyScroll"
     bindscroll="onDetailScroll">
    <!-- Tab 0：详情 -->
-   <view wx:if="{{tab === 'content'}}" class="box-tab1-body">
+   <view wx:if="{{tab === 'content'}}" id="boxTab1Body" class="box-tab1-body">
     <!-- 左侧滚动指示器 -->
     <view wx:if="{{readingProgress> 0}}" class="scroll-indicator-left">
      <view class="scroll-indicator-track"></view>
@@ -55,11 +41,13 @@
      <view wx:if="{{!detailParagraphs.length && header.box.blurb}}" class="detail-body">
       <block wx:for="{{[selectionMountKey]}}" wx:key="*this">
        <selection id="detailBodySelection" disable-context-menu bindselectionchange="onDetailSelectionChange">
-        <text class="box-p" user-select>
-         <block wx:for="{{blurbSegs}}" wx:for-item="seg" wx:for-index="segIndex" wx:key="segIndex">
-          <text style="font-weight: {{seg.bold ? 700 : 400}};">{{seg.text}}</text>
-         </block>
-        </text>
+        <view id="detail-para-0" class="box-p-wrap {{searchBrowseParaIndex === 0 ? 'box-p-wrap--search-active' : ''}} {{searchFlashParaIndex === 0 ? 'box-p-wrap--search-flash' : ''}}">
+         <text class="box-p" user-select>
+          <block wx:for="{{blurbSegs}}" wx:for-item="seg" wx:for-index="segIndex" wx:key="segIndex">
+           <text id="{{seg.anchorId}}" class="{{seg.highlight ? 'note-hl' : ''}} {{seg.focus ? 'note-hl--focus' : ''}}" style="font-weight: {{seg.bold ? 700 : 400}};">{{seg.text}}</text>
+          </block>
+         </text>
+        </view>
        </selection>
       </block>
      </view>
@@ -67,11 +55,13 @@
       <block wx:for="{{[selectionMountKey]}}" wx:key="*this">
        <selection id="detailBodySelection" disable-context-menu bindselectionchange="onDetailSelectionChange">
         <block wx:for="{{detailParagraphs}}" wx:for-item="para" wx:for-index="pIndex" wx:key="pIndex">
-         <text class="box-p {{pIndex === detailParagraphs.length - 1 ? 'box-p--last' : ''}}" user-select>
-          <block wx:for="{{para.segs}}" wx:for-item="seg" wx:for-index="segIndex" wx:key="segIndex">
-           <text style="font-weight: {{seg.bold ? 700 : 400}};">{{seg.text}}</text>
-          </block>
-         </text>
+         <view id="detail-para-{{pIndex}}" class="box-p-wrap {{searchBrowseParaIndex === pIndex ? 'box-p-wrap--search-active' : ''}} {{searchFlashParaIndex === pIndex ? 'box-p-wrap--search-flash' : ''}}">
+          <text class="box-p {{pIndex === detailParagraphs.length - 1 ? 'box-p--last' : ''}}" user-select>
+           <block wx:for="{{para.segs}}" wx:for-item="seg" wx:for-index="segIndex" wx:key="segIndex">
+            <text id="{{seg.anchorId}}" class="{{seg.highlight ? 'note-hl' : ''}} {{seg.focus ? 'note-hl--focus' : ''}}" style="font-weight: {{seg.bold ? 700 : 400}};">{{seg.text}}</text>
+           </block>
+          </text>
+         </view>
         </block>
        </selection>
       </block>
@@ -98,14 +88,7 @@
       </view>
      </view>
  </block>
-    <view wx:else class="tab-empty tab-empty--loading">
-     <view class="tab-empty-loading">
-      <text class="tab-empty-loading-dot">·</text>
-      <text class="tab-empty-loading-dot">·</text>
-      <text class="tab-empty-loading-dot">·</text>
-     </view>
-     <text class="tab-empty-text">加载中</text>
-    </view>
+    <page-loading wx:else text="加载中"></page-loading>
    </view>
 
    <!-- Tab 1：关系图谱 -->
@@ -123,19 +106,18 @@
        id="bdRelationGraph"
        class="rel-graph-canvas"
        graph="{{graph}}"
+       noted-names="{{relationNotedNames}}"
        bind:nodeTap="onGraphNodeTap"
+       bind:nodeLongPress="onGraphNodeLongPress"
+       bind:selectionCopy="onGraphSelectionCopy"
+       bind:selectionQuery="onGraphSelectionQuery"
+       bind:selectionNote="onGraphSelectionNote"
+       bind:selectionCorrection="onGraphSelectionCorrection"
        bind:zoomChange="onGraphZoomChange"
       />
      </view>
     </view>
-    <view wx:elif="{{graphPhase === 'loading'}}" class="tab-empty tab-empty--loading">
-     <view class="tab-empty-loading">
-      <text class="tab-empty-loading-dot">·</text>
-      <text class="tab-empty-loading-dot">·</text>
-      <text class="tab-empty-loading-dot">·</text>
-     </view>
-     <text class="tab-empty-text">加载中…</text>
-    </view>
+    <page-loading wx:elif="{{graphPhase === 'loading'}}" text="加载中"></page-loading>
    </view>
 
    <!-- Tab 2：评述 -->
@@ -168,9 +150,7 @@
      </view>
      <text wx:if="{{item.cardSummary}}" class="ref-body">{{item.cardSummary}}</text>
     </view>
-    <view wx:if="{{!critReady && !critErr}}" class="tab-empty">
-     <text class="tab-empty-text">加载中…</text>
-    </view>
+    <page-loading wx:if="{{!critReady && !critErr}}" text="加载中"></page-loading>
    </view>
 
    <!-- Tab 3：见证 -->
@@ -204,9 +184,7 @@
      </view>
      <text wx:if="{{item.summary}}" class="ref-body">{{item.summary}}</text>
     </view>
-    <view wx:if="{{!relicReady && !relicErr}}" class="tab-empty">
-     <text class="tab-empty-text">加载中…</text>
-    </view>
+    <page-loading wx:if="{{!relicReady && !relicErr}}" text="加载中"></page-loading>
    </view>
 
    <view wx:if="{{!showRelationsTab || tab !== 'relations'}}" style="height: 96rpx;"></view>
@@ -278,11 +256,15 @@
       </view>
     </view>
   </view>
-  <!-- 底部悬浮操作栏（原文/播放/收藏/分享） -->
-  <view wx:if="{{tab === 'content'}}" class="bottom-action-bar {{!uiFocused || sharePosterVisible ? 'bottom-action-bar--hidden' : ''}}" catchtap="markTapFromBar">
+  <!-- 底部悬浮操作栏（原文/搜索/朗读/收藏/分享） -->
+  <view wx:if="{{tab === 'content' && !contentSearchBrowseActive}}" class="bottom-action-bar {{!uiFocused || sharePosterVisible ? 'bottom-action-bar--hidden' : ''}}" catchtap="markTapFromBar">
    <view class="bottom-action-item" bindtap="goOriginal">
     <image class="bottom-action-icon" src="/images/icons/yuanwen.png" mode="aspectFit" />
     <text class="bottom-action-label">原文</text>
+   </view>
+   <view class="bottom-action-item" bindtap="openContentSearch">
+    <image class="bottom-action-icon" src="/images/icons/sousuo.png" mode="aspectFit" />
+    <text class="bottom-action-label">搜索</text>
    </view>
    <view class="bottom-action-item" bindtap="onPlayIntro">
     <image class="bottom-action-icon" src="/images/icons/langdu.png" mode="aspectFit" />
@@ -298,9 +280,34 @@
    </view>
   </view>
 
-  <!-- 原文半屏弹层（样式同朝代简介） -->
+  <!-- 搜索浏览态：顶条 + 底栏（全部结果 / 上一个 / 下一个） -->
+  <block wx:if="{{tab === 'content' && contentSearchBrowseActive}}">
+   <view class="search-browse-top" style="top: {{tabTop}}px;" catchtap="markTapFromBar">
+    <view class="search-browse-top-pill">
+     <text class="search-browse-top-text">本篇「{{contentSearchKeyword}}」 · {{contentSearchBrowseCounter}}</text>
+     <view class="search-browse-top-close" catchtap="exitContentSearchBrowse">
+      <text class="search-browse-top-close-ico">✕</text>
+     </view>
+    </view>
+   </view>
+   <view class="search-browse-bar" catchtap="markTapFromBar">
+    <view class="search-browse-bar-item" bindtap="onSearchBrowseAllResults">
+     <text class="search-browse-bar-label">全部结果</text>
+    </view>
+    <view class="search-browse-bar-divider"></view>
+    <view class="search-browse-bar-item {{contentSearchBrowseIndex <= 0 ? 'search-browse-bar-item--disabled' : ''}}" bindtap="onSearchBrowsePrev">
+     <text class="search-browse-bar-label">上一个</text>
+    </view>
+    <view class="search-browse-bar-divider"></view>
+    <view class="search-browse-bar-item {{contentSearchBrowseIndex >= contentSearchResults.length - 1 ? 'search-browse-bar-item--disabled' : ''}}" bindtap="onSearchBrowseNext">
+     <text class="search-browse-bar-label">下一个</text>
+    </view>
+   </view>
+  </block>
+
+  <!-- 原文半屏弹层（content-sheet 统一壳，正文同朝代简介） -->
   <view class="ud-modal" wx:if="{{showOriginal}}" bindtap="closeOriginal" data-close="1">
-   <view class="ud-modal-card" catchtap="noop">
+   <view class="ud-modal-card" catchtap="onOriginalSheetTap">
     <view class="ud-modal-header">
      <view class="ud-modal-title-wrap">
       <view class="ud-modal-title">{{originalTitle || '母本原文'}}</view>
@@ -310,7 +317,18 @@
       <text class="ud-modal-close-icon">✕</text>
      </view>
     </view>
-    <scroll-view scroll-y class="ud-modal-body" enhanced show-scrollbar="{{false}}">
+    <view wx:if="{{originalReadingProgress > 0}}" class="ud-modal-scroll-indicator">
+      <view class="ud-modal-scroll-track"></view>
+      <view class="ud-modal-scroll-thumb" style="top: {{originalReadingProgress}}%;"></view>
+     </view>
+     <scroll-view
+      scroll-y
+      class="ud-modal-body"
+      enhanced
+      show-scrollbar="{{false}}"
+      id="originalBodyScroll"
+      scroll-top="{{originalScrollAssign}}"
+      bindscroll="onOriginalScroll">
      <view wx:if="{{originalLoading}}" class="tab-empty tab-empty--loading">
       <view class="tab-empty-loading">
        <text class="tab-empty-loading-dot">·</text>
@@ -322,21 +340,111 @@
      <view wx:elif="{{originalEmpty}}" class="tab-empty">
       <text class="tab-empty-text">暂无原文引用</text>
      </view>
-     <block wx:elif="{{originalItems.length}}">
-      <view wx:for="{{originalItems}}" wx:key="index" class="ud-modal-ref-card">
-       <view class="ud-modal-ref-head" wx:if="{{item.work || item.chapter}}">
-        <view class="ud-modal-ref-chip" wx:if="{{item.work}}">{{item.work}}</view>
-        <view class="ud-modal-ref-chip ud-modal-ref-chip--muted" wx:if="{{item.chapter}}">{{item.chapter}}</view>
+     <block wx:else>
+      <block wx:for="{{[originalSelectionMountKey]}}" wx:key="*this">
+       <selection id="originalBodySelection" disable-context-menu bindselectionchange="onOriginalSelectionChange">
+        <block wx:if="{{originalItems.length}}">
+         <block wx:for="{{originalItems}}" wx:key="index">
+          <text wx:if="{{item.excerpt}}" class="ud-modal-para" user-select>{{item.excerpt}}</text>
+          <view wx:if="{{item.url}}" class="ud-modal-actions">
+           <view class="ud-modal-copy-btn" catchtap="copyOriginalLink" data-url="{{item.url}}">复制链接</view>
+          </view>
+         </block>
+        </block>
+        <text wx:elif="{{originalFallback}}" class="ud-modal-para ud-modal-para--pre" user-select>{{originalFallback}}</text>
+       </selection>
+      </block>
+     </block>
+    </scroll-view>
+   </view>
+  </view>
+
+  <!-- 详情正文搜索半屏：同一壳，顶栏输入 + 历史 / 结果 -->
+  <view class="ud-modal ud-modal--search" wx:if="{{showContentSearch}}" style="{{contentSearchModalStyle}}" bindtap="closeContentSearch" data-close="1">
+   <view class="ud-modal-card ud-modal-card--search" style="{{contentSearchCardStyle}}" catchtap="noop">
+    <view class="ud-modal-header">
+     <view class="ud-modal-title-wrap">
+      <view class="ud-modal-title">搜索正文</view>
+     </view>
+     <view class="ud-modal-close" catchtap="closeContentSearch">
+      <text class="ud-modal-close-icon">✕</text>
+     </view>
+    </view>
+    <view class="content-search-bar">
+     <input
+      class="content-search-input"
+      placeholder="输入关键词"
+      placeholder-class="content-search-placeholder"
+      value="{{contentSearchKeyword}}"
+      maxlength="{{50}}"
+      confirm-type="search"
+      bindinput="onContentSearchInput"
+      bindconfirm="runContentSearch"
+      adjust-position="{{false}}"
+      hold-keyboard="{{true}}"
+      cursor-spacing="{{24}}"
+      focus="{{contentSearchFocus}}"
+     />
+     <view wx:if="{{contentSearchKeyword}}" class="content-search-clear" catchtap="onContentSearchClear">
+      <text class="content-search-clear-ico">✕</text>
+     </view>
+     <view class="content-search-submit" catchtap="runContentSearch">搜索</view>
+    </view>
+    <scroll-view scroll-y class="content-search-body" style="{{contentSearchBodyStyle}}" enhanced show-scrollbar="{{false}}">
+     <!-- 未触发搜索：本篇搜索历史（胶囊横滑 + 右侧清空） -->
+     <block wx:if="{{!contentSearchHasSearched}}">
+      <view wx:if="{{contentSearchHistory.length}}" class="content-search-section">
+       <text class="content-search-section-title">搜索历史</text>
+       <view class="content-search-history-row">
+        <scroll-view
+         class="content-search-history-scroll"
+         scroll-x
+         enhanced
+         show-scrollbar="{{false}}"
+         enable-flex
+        >
+         <view class="content-search-history-chips">
+          <view
+           wx:for="{{contentSearchHistory}}"
+           wx:key="*this"
+           class="content-search-chip"
+           bindtap="onContentSearchHistoryTap"
+           data-k="{{item}}"
+          >{{item}}</view>
+         </view>
+        </scroll-view>
+        <view
+         class="content-search-history-clear"
+         catchtap="onContentSearchHistoryClearAll"
+         hover-class="content-search-history-clear--hover"
+         hover-stay-time="80"
+        >
+         <text class="content-search-history-clear-ico">✕</text>
+        </view>
        </view>
-       <view class="ud-modal-ref-excerpt" wx:if="{{item.excerpt}}">{{item.excerpt}}</view>
-       <view class="ud-modal-actions" wx:if="{{item.url}}">
-        <view class="ud-modal-copy-btn" bindtap="copyOriginalLink" data-url="{{item.url}}">复制链接</view>
+      </view>
+      <view wx:else class="content-search-empty">输入关键词搜索本篇正文</view>
+     </block>
+     <!-- 已搜索：匹配段落或空态 -->
+     <block wx:else>
+      <view wx:if="{{contentSearchEmptyHint}}" class="content-search-empty">{{contentSearchEmptyHint}}</view>
+      <view wx:elif="{{contentSearchResults.length}}" class="content-search-section">
+       <text class="content-search-section-title">匹配段落 · {{contentSearchResults.length}}{{contentSearchTruncated ? '（仅显示前 50 条）' : ''}}</text>
+       <view
+        wx:for="{{contentSearchResults}}"
+        wx:key="key"
+        class="content-search-result"
+        bindtap="onContentSearchResultTap"
+        data-index="{{index}}"
+       >
+        <view class="content-search-result-text">
+         <block wx:for="{{item.segs}}" wx:for-item="seg" wx:for-index="segIndex" wx:key="segIndex">
+          <text class="{{seg.hl ? 'content-search-hl' : ''}}">{{seg.text}}</text>
+         </block>
+        </view>
        </view>
       </view>
      </block>
-     <view wx:elif="{{originalFallback}}" class="ud-modal-fallback">
-      <view class="ud-modal-fallback-body">{{originalFallback}}</view>
-     </view>
     </scroll-view>
    </view>
   </view>
@@ -349,10 +457,22 @@
   dynastyName="{{correctionDynastyName}}"
   boxTitle="{{correctionBoxTitle}}"
   selectedText="{{correctionSelectedText}}"
-  sourceType="box_detail_selection"
+  sourceType="{{correctionSourceType}}"
   submitting="{{correctionSubmitting}}"
   bind:close="closeCorrection"
   bind:submit="onCorrectionSubmit"
+ />
+
+ <note-modal
+  visible="{{noteVisible}}"
+  mode="edit"
+  boxTitle="{{noteBoxTitle}}"
+  civilizationName="{{noteCivilizationName}}"
+  dynastyName="{{noteDynastyName}}"
+  selectedText="{{noteSelectedText}}"
+  submitting="{{noteSubmitting}}"
+  bind:close="closeNote"
+  bind:submit="onNoteSubmit"
  />
 
  <dictionary-sheet
@@ -366,9 +486,11 @@
   left="{{selectionBarLeft}}"
   top="{{selectionBarTop}}"
   placement="{{selectionBarPlacement}}"
+  showNote="{{!showOriginal}}"
   bind:share="onSelectionShare"
   bind:copy="onSelectionCopy"
   bind:query="onSelectionQuery"
+  bind:note="onSelectionNote"
   bind:correction="onSelectionCorrection"
  />
 

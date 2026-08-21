@@ -1,0 +1,46 @@
+{
+  "work": "04三国志",
+  "vol": "061",
+  "total_paragraphs": 49,
+  "volume_subtype": "hezhuan",
+  "derived_from": "04三国志_061_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 49,
+      "paragraph_to": 49,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "潘濬",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 5,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "潘濬字承明，武陵汉寿人也。弱冠从宋仲子受学。年未三十，荆州牧刘表辟为部江夏从事。",
+        "close_paragraph": 5,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P5"
+      }
+    },
+    {
+      "name": "陆凯",
+      "category": "文臣",
+      "paragraph_from": 6,
+      "paragraph_to": 48,
+      "boundary_evidence": {
+        "open_paragraph": 6,
+        "open_phrase": "陆凯字敬风，吴郡吴人，丞相逊族子也。黄武初为永兴、诸暨长，所在有治迹，拜建武都尉",
+        "close_paragraph": 48,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P6–P48"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

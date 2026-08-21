@@ -1,0 +1,98 @@
+@import '../../native-utils/design-tokens.scss';
+
+.page-shell {
+  min-height: 100vh;
+  background: $page-bg;
+}
+
+.notes-body {
+  padding-left: 32rpx;
+  padding-right: 32rpx;
+  padding-bottom: calc(48rpx + env(safe-area-inset-bottom));
+  box-sizing: border-box;
+}
+
+.notes-inner {
+  padding-top: 24rpx;
+}
+
+.card-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  padding: 24rpx;
+  margin-bottom: 16rpx;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10rpx;
+}
+
+.t {
+  flex: 1;
+  margin-right: 16rpx;
+  font-size: 30rpx;
+  font-weight: 600;
+  color: $text-title;
+  line-height: 1.35;
+}
+
+.time {
+  flex-shrink: 0;
+  font-size: 22rpx;
+}
+
+.quote {
+  display: block;
+  font-size: 26rpx;
+  line-height: 1.6;
+  color: $text-body;
+  background: rgba(185, 157, 91, 0.14);
+  border-radius: 10rpx;
+  padding: 12rpx 14rpx;
+  margin-bottom: 12rpx;
+}
+
+.remark {
+  display: block;
+  font-size: 26rpx;
+  line-height: 1.5;
+  color: $text-title;
+}
+
+.remark--empty {
+  color: $text-time;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 120rpx 32rpx;
+  gap: 16rpx;
+}
+
+.empty-icon {
+  font-size: 64rpx;
+  line-height: 1;
+}
+
+.empty-text {
+  font-size: 30rpx;
+  color: $text-title;
+  font-weight: 600;
+}
+
+.login-btn {
+  margin-top: 8rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80rpx;
+  padding: 0 56rpx;
+}

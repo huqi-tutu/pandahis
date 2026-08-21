@@ -25,9 +25,9 @@ function resolveSelectionBarAnchor(rect, fallback, options) {
     const safeTop = statusBar + rpxToPx(88 + 72, ww);
     const safeBottom = rpxToPx(48, ww);
     const edge = rpxToPx(16, ww);
-    // 与 text-selection-bar.scss 尺寸对齐：N×84 + gap×(N-1) + padding
+    // 与 text-selection-bar.scss 尺寸对齐：N×88 + gap×(N-1) + padding
     const buttonCount = Math.max(1, Math.floor((_a = options === null || options === void 0 ? void 0 : options.buttonCount) !== null && _a !== void 0 ? _a : 4));
-    const barW = rpxToPx(84 * buttonCount + 4 * Math.max(buttonCount - 1, 0) + 8 * 2, ww);
+    const barW = rpxToPx(88 * buttonCount + 14 * Math.max(buttonCount - 1, 0) + 14 * 2, ww);
     const barH = rpxToPx(16 + 14 + 40 + 8 + 28, ww);
     const gap = rpxToPx(14, ww);
     const selLeft = Number(rect.left) || 0;

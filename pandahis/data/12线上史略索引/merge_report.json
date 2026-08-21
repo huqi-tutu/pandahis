@@ -1,16 +1,16 @@
 {
   "schema": "online-index-merge-report/v1",
-  "generated_at": "2026-08-06T23:50:07.818297+00:00",
+  "generated_at": "2026-08-10T15:25:40.196600+00:00",
   "sources": {
     "v2_index": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/史略索引_史记汉书.json",
     "dk_entries_dir": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/06朝代知识补全/索引条目"
   },
   "counts": {
-    "v2_input": 928,
-    "dk_input": 703,
-    "merged_total": 976,
-    "skipped_06_same_id_as_v2": 655,
-    "added_from_06_only": 48,
+    "v2_input": 929,
+    "dk_input": 779,
+    "merged_total": 1052,
+    "skipped_06_same_id_as_v2": 656,
+    "added_from_06_only": 123,
     "chunqiu_person_1021_1086": 0
   },
   "v2_wins_over_06_ids": [
@@ -59,6 +59,7 @@
     "GLBL_00088",
     "GLBL_00089",
     "GLBL_00090",
+    "GLBL_00097",
     "GLBL_00102",
     "GLBL_00103",
     "GLBL_00104",

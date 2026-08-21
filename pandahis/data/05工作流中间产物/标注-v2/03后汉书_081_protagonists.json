@@ -1,0 +1,25 @@
+{
+  "work": "03后汉书",
+  "vol": "081",
+  "volume_name": "袁绍刘表列传第六十四下",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_arc": "C",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "sequential",
+  "skip_reason": null,
+  "protagonists_cap_note": "第六十四下：P2–20 袁绍传余绪（谭/尚）；P21 起刘表开传。与080上同书分卷。均标武将。",
+  "protagonists": [
+    {
+      "name": "袁绍",
+      "category": "武将",
+      "rationale": "上卷主轴延续；下卷前半谭尚争夺仍属绍传收束，与080同书分卷。"
+    },
+    {
+      "name": "刘表",
+      "category": "武将",
+      "rationale": "自「刘表字景升」开传至卒；荆州牧割据，标武将。"
+    }
+  ],
+  "excluded_kinds_hint": ["卷首标题", "论赞", "赞曰"]
+}

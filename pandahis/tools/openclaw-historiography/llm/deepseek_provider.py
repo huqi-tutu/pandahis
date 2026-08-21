@@ -56,7 +56,7 @@ def run_deepseek_turn(
         "messages": [{"role": "user", "content": message}],
         "temperature": settings["temperature"] if temperature is None else temperature,
     }
-    max_tokens = int(os.environ.get("DEEPSEEK_MAX_TOKENS", "8192"))
+    max_tokens = int(os.environ.get("DEEPSEEK_MAX_TOKENS", "50000"))
     if max_tokens > 0:
         payload["max_tokens"] = max_tokens
     if response_format is not None:

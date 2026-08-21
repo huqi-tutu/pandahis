@@ -1,0 +1,55 @@
+{
+  "work": "04三国志",
+  "vol": "011",
+  "volume_name": "袁张凉国田王邴管传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "袁涣",
+      "category": "文臣",
+      "rationale": "《三国志·袁张凉国田王邴管传》卷名首列袁涣，为合传主人公之一，以文臣仕宦为主轴。"
+    },
+    {
+      "name": "张范",
+      "category": "文臣",
+      "rationale": "卷名第二人张范，合传主人公之一，以德行文臣为主轴。"
+    },
+    {
+      "name": "凉茂",
+      "category": "文臣",
+      "rationale": "卷名第三人凉茂，合传主人公之一，以文臣仕宦为主轴。"
+    },
+    {
+      "name": "国渊",
+      "category": "文臣",
+      "rationale": "卷名第四人国渊，合传主人公之一，以文臣仕宦为主轴。"
+    },
+    {
+      "name": "田畴",
+      "category": "文臣",
+      "rationale": "卷名第五人田畴，合传主人公之一，以文臣德行为主轴。"
+    },
+    {
+      "name": "王修",
+      "category": "文臣",
+      "rationale": "卷名第六人王修，合传主人公之一，以文臣仕宦为主轴。"
+    },
+    {
+      "name": "邴原",
+      "category": "文臣",
+      "rationale": "卷名第七人邴原，合传主人公之一，以文臣德行为主轴。"
+    },
+    {
+      "name": "管宁",
+      "category": "文臣",
+      "rationale": "卷名末人管宁，合传主人公之一，以隐逸文臣为主轴。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

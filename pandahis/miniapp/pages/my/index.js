@@ -41,6 +41,7 @@ Page({
         scrollEnabled: false,
         shortcuts: [
             // 会员入口二期再开放；一期保留页码与后端能力
+            { id: 'notes', label: '笔记', icon: '/images/icons/biji.png', action: 'notes' },
             { id: 'corrections', label: '纠错', icon: '/images/icons/jiucuo.png', action: 'corrections' },
             { id: 'invite', label: '邀请', icon: '/images/icons/fenxiang.png', action: 'invite' },
             { id: 'settings', label: '设置', icon: '/images/icons/shezhi.png', action: 'settings' },
@@ -200,6 +201,9 @@ Page({
     goFavorites() {
         this.requireLogin(() => (0, router_1.navigateTo)(router_1.ROUTES.favorites));
     },
+    goNotes() {
+        this.requireLogin(() => (0, router_1.navigateTo)(router_1.ROUTES.notes));
+    },
     goCorrections() {
         this.requireLogin(() => (0, router_1.navigateTo)(router_1.ROUTES.corrections));
     },
@@ -224,6 +228,9 @@ Page({
         switch (action) {
             case 'membership':
                 this.goMembership();
+                break;
+            case 'notes':
+                this.goNotes();
                 break;
             case 'corrections':
                 this.goCorrections();

@@ -6,9 +6,11 @@
 }
 
 .detail-body {
-  padding: 0 24rpx 24rpx;
-  box-sizing: border-box;
+  /* 勿用 padding 简写：会盖掉内联 pageTopPadPx */
+  padding-left: 24rpx;
+  padding-right: 24rpx;
   padding-bottom: 60rpx;
+  box-sizing: border-box;
 }
 
 /* ── 主信息卡片 ── */
@@ -97,4 +99,17 @@
   line-height: 1.8;
   color: $text-body;
   display: block;
+}
+
+.note-hl {
+  background: none;
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: rgba(74, 63, 63, 0.26);
+  text-decoration-thickness: 2rpx;
+  text-underline-offset: 6rpx;
+}
+
+.note-hl--focus {
+  text-decoration-color: rgba(74, 63, 63, 0.4);
 }

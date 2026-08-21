@@ -1,0 +1,24 @@
+{
+  "work": "04三国志",
+  "vol": "062",
+  "volume_name": "是仪胡综传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "是仪",
+      "category": "文臣",
+      "rationale": "卷名首列人物，三国吴重臣，以行政、谏议、刑名事务为主轴，属文臣列传。"
+    },
+    {
+      "name": "胡综",
+      "category": "文臣",
+      "rationale": "卷名次列人物，三国吴文臣，以文翰、外交辞令、典章制度为事功主轴，属文臣列传。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "其他"
+  ]
+}

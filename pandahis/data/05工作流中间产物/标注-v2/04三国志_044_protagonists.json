@@ -1,0 +1,30 @@
+{
+  "work": "04三国志",
+  "vol": "044",
+  "volume_name": "蒋琬费祎姜维传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "蒋琬",
+      "category": "文臣",
+      "rationale": "卷名首列人物，蜀汉重臣，继诸葛亮后执政，以行政治国为主轴，属文臣列传。"
+    },
+    {
+      "name": "费祎",
+      "category": "文臣",
+      "rationale": "卷名并列人物，蜀汉重臣，继蒋琬后执政，以行政治国为主轴，属文臣列传。"
+    },
+    {
+      "name": "姜维",
+      "category": "武将",
+      "rationale": "卷名并列人物，蜀汉大将，以军功征战为主轴，属武将列传。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

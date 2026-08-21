@@ -1,0 +1,46 @@
+{
+  "work": "03后汉书",
+  "vol": "069",
+  "total_paragraphs": 44,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_069_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 43,
+      "paragraph_to": 44,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "李固",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 36,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "李固字子坚，汉中南郑人，司徒郃之子也。郃在《方术传》。固貌状有奇表，鼎角匿犀，足",
+        "close_paragraph": 36,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P36"
+      }
+    },
+    {
+      "name": "杜乔",
+      "category": "文臣",
+      "paragraph_from": 37,
+      "paragraph_to": 42,
+      "boundary_evidence": {
+        "open_paragraph": 37,
+        "open_phrase": "杜乔字叔荣，河内林虑人也。少为诸生，举孝廉，辟司徒杨震府。稍迁为南郡太守，转东海",
+        "close_paragraph": 42,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P37–P42"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

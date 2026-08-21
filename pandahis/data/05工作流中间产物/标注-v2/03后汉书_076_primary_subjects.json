@@ -1,0 +1,350 @@
+{
+  "work": "03后汉书",
+  "vol": "076",
+  "total_paragraphs": 57,
+  "method": "Step1b-α LLM",
+  "paragraphs": [
+    {
+      "paragraph": 1,
+      "primary_subject": "卷首标题",
+      "disposition": "exclude",
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "primary_subject": "郑玄",
+      "disposition": "block",
+      "text_snippet": "郑太字公业，河南开封人，司农众之曾孙也。少有少略。灵帝末，知天下将乱，阴交结豪杰。"
+    },
+    {
+      "paragraph": 3,
+      "primary_subject": "郑玄",
+      "disposition": "block",
+      "text_snippet": "初，举孝廉，三府辟，公车征，皆不就。及大将军何进辅政，征用名士，以公业为尚书侍郎，迁侍御史。"
+    },
+    {
+      "paragraph": 4,
+      "primary_subject": "郑玄",
+      "disposition": "block",
+      "text_snippet": "进寻见害，卓果作乱。公业等与侍中伍琼、卓长史何颙共说卓，以袁绍为勃海太守，以发山东之谋。"
+    },
+    {
+      "paragraph": 5,
+      "primary_subject": "郑玄",
+      "disposition": "block",
+      "text_snippet": "非谓无用，以为山东不足加大兵耳。如有不信，试为明公略陈其要。"
+    },
+    {
+      "paragraph": 6,
+      "primary_subject": "郑玄",
+      "disposition": "block",
+      "text_snippet": "卓乃悦，以公业为将军，使统诸军讨击关东。或说卓曰：郑公业智略过人，而结谋外寇"
+    },
+    {
+      "paragraph": 7,
+      "primary_subject": "郑玄",
+      "disposition": "block",
+      "text_snippet": "卓既迁都长安，天下饥乱，士大夫多不得其命。而公业家有余资，日引宾客高会倡乐"
+    },
+    {
+      "paragraph": 8,
+      "primary_subject": "孔融",
+      "disposition": "block",
+      "text_snippet": "孔融字文举，鲁国人，孔子二十世孙也。七世祖霸，为元帝师，位至侍中。"
+    },
+    {
+      "paragraph": 9,
+      "primary_subject": "孔融",
+      "disposition": "block",
+      "text_snippet": "融幼有异才。年十岁，随父诣京师。时，河南尹李膺以简重自居"
+    },
+    {
+      "paragraph": 10,
+      "primary_subject": "孔融",
+      "disposition": "block",
+      "text_snippet": "年十三，丧父，哀悴过毁，扶而后起，州里归其孝。性好学，博涉多该览。"
+    },
+    {
+      "paragraph": 11,
+      "primary_subject": "孔融",
+      "disposition": "block",
+      "text_snippet": "辟司徒杨赐府。时，隐核官僚之贪浊者，将加贬黜，融多举中官亲族。"
+    },
+    {
+      "paragraph": 12,
+      "primary_subject": "孔融",
+      "disposition": "block",
+      "text_snippet": "后辟司空掾，拜中军候。在职三日，迁虎贲中郎将。会董卓废立，融每因对答，辄有匡正之言。"
+    },
+    {
+      "paragraph": 13,
+      "primary_subject": "孔融",
+      "disposition": "block",
+      "text_snippet": "融到郡，收合士民，起兵讲武，驰檄飞翰，引谋州郡。"
+    },
+    {
+      "paragraph": 14,
+      "primary_subject": "孔融",
+      "disposition": "block",
+      "text_snippet": "时，袁、曹方盛，而融无所协附。左丞祖者，称有意谋，劝融有所结纳。"
+    },
+    {
+      "paragraph": 15,
+      "primary_subject": "孔融",
+      "disposition": "block",
+      "text_snippet": "融负有高气，志在靖难，而才疏意广，迄无成功。在郡六年，刘备表领青州刺史。"
+    },
+    {
+      "paragraph": 16,
+      "primary_subject": "孔融",
+      "disposition": "block",
+      "text_snippet": "及献帝都许，征融为将作大匠，迁少府。每朝会访对，融辄引正定议"
+    },
+    {
+      "paragraph": 17,
+      "primary_subject": "孔融",
+      "disposition": "block",
+      "text_snippet": "初，太傅马日磾奉使山东，及至淮南，数有意于袁术。术轻侮之。"
+    },
+    {
+      "paragraph": 18,
+      "primary_subject": "孔融",
+      "disposition": "block",
+      "text_snippet": "时论者多欲复肉刑。融乃建议曰："
+    },
+    {
+      "paragraph": 19,
+      "primary_subject": "孔融",
+      "disposition": "block",
+      "text_snippet": "古者敦厖，善否不别，吏端刑清，政无过失。百姓有罪，皆自取之。"
+    },
+    {
+      "paragraph": 20,
+      "primary_subject": "孔融",
+      "disposition": "block",
+      "text_snippet": "朝廷善之，卒不改焉。"
+    },
+    {
+      "paragraph": 21,
+      "primary_subject": "孔融",
+      "disposition": "block",
+      "text_snippet": "是时，荆州牧刘表不供职贡，多行僭伪，遂乃郊祀天地，拟斥乘舆。诏书班下其事。融上疏曰："
+    },
+    {
+      "paragraph": 22,
+      "primary_subject": "孔融",
+      "disposition": "block",
+      "text_snippet": "窃闻领荆州牧刘表桀逆放恣，所为不轨，至乃郊祭天地，拟仪社稷。"
+    },
+    {
+      "paragraph": 23,
+      "primary_subject": "孔融",
+      "disposition": "block",
+      "text_snippet": "五年，南阳王冯、东海王祗薨，帝伤其早殁，欲为修四时之祭，以访于融。融对曰："
+    },
+    {
+      "paragraph": 24,
+      "primary_subject": "孔融",
+      "disposition": "block",
+      "text_snippet": "圣恩敦睦，盛时增思，悼二王之灵，发哀愍之诏，稽度前典，以正礼制。"
+    },
+    {
+      "paragraph": 25,
+      "primary_subject": "孔融",
+      "disposition": "block",
+      "text_snippet": "初，曹操攻屠邺城，袁氏妇子多见侵略，而操子丕私纳袁熙妻甄氏。融乃与操书"
+    },
+    {
+      "paragraph": 26,
+      "primary_subject": "孔融",
+      "disposition": "block",
+      "text_snippet": "时，年饥兵兴，操表制酒禁，融频书争之，多侮慢之辞。"
+    },
+    {
+      "paragraph": 27,
+      "primary_subject": "孔融",
+      "disposition": "block",
+      "text_snippet": "盖闻唐、虞之朝，有克让之臣，故麟凤来而颂声作也。"
+    },
+    {
+      "paragraph": 28,
+      "primary_subject": "孔融",
+      "disposition": "block",
+      "text_snippet": "融报曰："
+    },
+    {
+      "paragraph": 29,
+      "primary_subject": "孔融",
+      "disposition": "block",
+      "text_snippet": "猥惠书教，告所不逮。融与鸿豫州里比郡，知之最早。"
+    },
+    {
+      "paragraph": 30,
+      "primary_subject": "孔融",
+      "disposition": "block",
+      "text_snippet": "岁余，复拜太中大夫。性宽容少忌，好士，喜诱益后进。"
+    },
+    {
+      "paragraph": 31,
+      "primary_subject": "孔融",
+      "disposition": "block",
+      "text_snippet": "曹操既积嫌忌，而郗虑复构成其罪，遂令丞相军谋祭酒路粹枉状奏融曰："
+    },
+    {
+      "paragraph": 32,
+      "primary_subject": "孔融",
+      "disposition": "block",
+      "text_snippet": "少府孔融，昔在北海，见王室不静，而招合徒众，欲规不轨"
+    },
+    {
+      "paragraph": 33,
+      "primary_subject": "孔融",
+      "disposition": "block",
+      "text_snippet": "书奏，下狱弃市。时年五十六。妻、子皆被诛。"
+    },
+    {
+      "paragraph": 34,
+      "primary_subject": "孔融",
+      "disposition": "block",
+      "text_snippet": "初，女年七岁，男年九岁，以其幼弱得全，寄它舍。二子方弈棋，融被收而不动。"
+    },
+    {
+      "paragraph": 35,
+      "primary_subject": "孔融",
+      "disposition": "block",
+      "text_snippet": "初，京兆人脂习元升，与融相善，每戒融刚直。及被害，许下莫敢收者"
+    },
+    {
+      "paragraph": 36,
+      "primary_subject": "孔融",
+      "disposition": "block",
+      "text_snippet": "魏文帝深好融文辞，每叹曰：杨、班俦也。"
+    },
+    {
+      "paragraph": 37,
+      "primary_subject": "论赞",
+      "disposition": "exclude",
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 38,
+      "primary_subject": "荀彧",
+      "disposition": "block",
+      "text_snippet": "荀彧字文若，颍川颍阴人，朗陵令淑之孙也。父绲，为济南相。"
+    },
+    {
+      "paragraph": 39,
+      "primary_subject": "荀彧",
+      "disposition": "block",
+      "text_snippet": "中平六年，举孝廉，再迁亢父令。董卓之乱，弃官归乡里。"
+    },
+    {
+      "paragraph": 40,
+      "primary_subject": "荀彧",
+      "disposition": "block",
+      "text_snippet": "彧比至冀州，而袁绍已夺馥位，绍待彧以上宾之礼。"
+    },
+    {
+      "paragraph": 41,
+      "primary_subject": "荀彧",
+      "disposition": "block",
+      "text_snippet": "兴平元年，操东击陶谦，使彧守甄城，任以留事。"
+    },
+    {
+      "paragraph": 42,
+      "primary_subject": "荀彧",
+      "disposition": "block",
+      "text_snippet": "二年，陶谦死，操欲遂取徐州，还定吕布。彧谏曰："
+    },
+    {
+      "paragraph": 43,
+      "primary_subject": "荀彧",
+      "disposition": "block",
+      "text_snippet": "昔高祖保关中，光武据河内，皆深根固本，以制天下。"
+    },
+    {
+      "paragraph": 44,
+      "primary_subject": "荀彧",
+      "disposition": "block",
+      "text_snippet": "操于是大收熟麦，复与布战。布败走，因分定诸县，兖州遂平。"
+    },
+    {
+      "paragraph": 45,
+      "primary_subject": "荀彧",
+      "disposition": "block",
+      "text_snippet": "建安元年，献帝自河东还洛阳，操议欲奉迎车驾，徙都于许。"
+    },
+    {
+      "paragraph": 46,
+      "primary_subject": "荀彧",
+      "disposition": "block",
+      "text_snippet": "及帝都许，以彧为侍中，守尚书令。操每征伐在外，其军国之事，皆与彧筹焉"
+    },
+    {
+      "paragraph": 47,
+      "primary_subject": "荀彧",
+      "disposition": "block",
+      "text_snippet": "袁绍既兼河朔之地，有骄气。而操败于张绣，绍与操书甚倨。"
+    },
+    {
+      "paragraph": 48,
+      "primary_subject": "荀彧",
+      "disposition": "block",
+      "text_snippet": "五年，袁绍率大众以攻许，操与相距。绍甲兵甚盛，议者咸怀惶惧。"
+    },
+    {
+      "paragraph": 49,
+      "primary_subject": "荀彧",
+      "disposition": "block",
+      "text_snippet": "操保官度，与绍连战，虽胜而军粮方尽，书与彧议，欲还许以致绍师。"
+    },
+    {
+      "paragraph": 50,
+      "primary_subject": "荀彧",
+      "disposition": "block",
+      "text_snippet": "六年，操以绍新破，未能为患，但欲留兵卫之，自欲南征刘表，以计问彧。"
+    },
+    {
+      "paragraph": 51,
+      "primary_subject": "荀彧",
+      "disposition": "block",
+      "text_snippet": "九年，操拔邺，自领冀州牧。有说操宜复置九州者，以为冀部所统既广，则天下易服。"
+    },
+    {
+      "paragraph": 52,
+      "primary_subject": "荀彧",
+      "disposition": "block",
+      "text_snippet": "十二年，操上书表彧曰："
+    },
+    {
+      "paragraph": 53,
+      "primary_subject": "荀彧",
+      "disposition": "block",
+      "text_snippet": "昔袁绍作逆，连兵官度，时众寡粮单，图欲还许。尚书令荀彧深建宜住之便"
+    },
+    {
+      "paragraph": 54,
+      "primary_subject": "荀彧",
+      "disposition": "block",
+      "text_snippet": "彧深辞让。操譬之曰：昔介子推有言：窃人之财，犹谓之盗。"
+    },
+    {
+      "paragraph": 55,
+      "primary_subject": "荀彧",
+      "disposition": "block",
+      "text_snippet": "十七年，董昭等欲共进操爵国公，九锡备物，密以访彧。"
+    },
+    {
+      "paragraph": 56,
+      "primary_subject": "论赞",
+      "disposition": "exclude",
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 57,
+      "primary_subject": "论赞",
+      "disposition": "exclude",
+      "exclude_reason": "论赞"
+    }
+  ]
+}

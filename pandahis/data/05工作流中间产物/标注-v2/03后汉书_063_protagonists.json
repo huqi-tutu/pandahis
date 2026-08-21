@@ -1,0 +1,35 @@
+{
+  "work": "03后汉书",
+  "vol": "063",
+  "volume_name": "虞傅盖臧列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "虞诩",
+      "category": "文臣",
+      "rationale": "卷名首姓，虞傅盖臧列传合传主人公之一；据《后汉书》列传体例，虞诩为东汉名臣，以政谏、治郡、用兵见长，属文臣主轴。"
+    },
+    {
+      "name": "傅燮",
+      "category": "武将",
+      "rationale": "卷名第二姓，合传主人公之一；傅燮为东汉末将帅，以军功征战、守城殉节为主轴，属武将。"
+    },
+    {
+      "name": "盖勋",
+      "category": "武将",
+      "rationale": "卷名第三姓，合传主人公之一；盖勋为东汉末凉州名将，以军功、平叛、忠节为主轴，属武将。"
+    },
+    {
+      "name": "臧洪",
+      "category": "武将",
+      "rationale": "卷名第四姓，合传主人公之一；臧洪为东汉末地方将帅，以守城抗敌、忠义死节为主轴，属武将。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

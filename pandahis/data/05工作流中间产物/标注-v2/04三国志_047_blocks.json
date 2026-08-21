@@ -1,0 +1,28 @@
+{
+  "work": "04三国志",
+  "vol": "047",
+  "total_paragraphs": 53,
+  "volume_subtype": "single",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "吴大帝",
+      "category": "君王",
+      "paragraph_from": 2,
+      "paragraph_to": 53,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "孙权字仲谋。兄策既定诸郡，时权年十五，以为阳羡长。郡察孝廉，州举茂才，行奉义校尉",
+        "close_paragraph": 53,
+        "close_note": "single/fanzuo 机械整卷"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

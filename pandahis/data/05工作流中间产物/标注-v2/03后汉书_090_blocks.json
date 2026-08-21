@@ -1,0 +1,119 @@
+{
+  "work": "03后汉书",
+  "vol": "090",
+  "total_paragraphs": 93,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_090_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 2,
+      "paragraph_to": 3,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 18,
+      "paragraph_to": 35,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 42,
+      "paragraph_to": 47,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 52,
+      "paragraph_to": 71,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 78,
+      "paragraph_to": 90,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 93,
+      "paragraph_to": 93,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "谯玄",
+      "category": "文臣",
+      "paragraph_from": 4,
+      "paragraph_to": 11,
+      "boundary_evidence": {
+        "open_paragraph": 4,
+        "open_phrase": "谯玄字君黄，巴郡阆中人也。少好学，能说《易》《春秋》。仕于州郡。成帝永始二年，有",
+        "close_paragraph": 11,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P4–P11"
+      }
+    },
+    {
+      "name": "李业",
+      "category": "文臣",
+      "paragraph_from": 12,
+      "paragraph_to": 17,
+      "boundary_evidence": {
+        "open_paragraph": 12,
+        "open_phrase": "李业字巨游，广汉梓潼人也。少有志操，介特。习《鲁诗》，师博士许晃。元始中，举明经",
+        "close_paragraph": 17,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P12–P17"
+      }
+    },
+    {
+      "name": "范式",
+      "category": "文臣",
+      "paragraph_from": 36,
+      "paragraph_to": 41,
+      "boundary_evidence": {
+        "open_paragraph": 36,
+        "open_phrase": "范式字巨卿，山阳金乡人也，一名汜。少游太学，为诸生，与汝南张劭为友。劭字元伯。二",
+        "close_paragraph": 41,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P36–P41"
+      }
+    },
+    {
+      "name": "陆续",
+      "category": "文臣",
+      "paragraph_from": 48,
+      "paragraph_to": 51,
+      "boundary_evidence": {
+        "open_paragraph": 48,
+        "open_phrase": "陆续字智初，会稽吴人也。世为族姓。祖父闳，字子春，建武中为尚书令。美姿貌，喜着越",
+        "close_paragraph": 51,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P48–P51"
+      }
+    },
+    {
+      "name": "范冉",
+      "category": "文臣",
+      "paragraph_from": 72,
+      "paragraph_to": 77,
+      "boundary_evidence": {
+        "open_paragraph": 72,
+        "open_phrase": "范冉字史云，陈留外黄人也。少为县小吏，年十八，奉檄迎督邮，冉耻之，乃遁去。到南阳",
+        "close_paragraph": 77,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P72–P77"
+      }
+    },
+    {
+      "name": "王烈",
+      "category": "文臣",
+      "paragraph_from": 91,
+      "paragraph_to": 92,
+      "boundary_evidence": {
+        "open_paragraph": 91,
+        "open_phrase": "王烈字彦方，太原人也。少师事陈寔，以义行称乡里。有盗牛者，主得之，盗请罪曰：“刑",
+        "close_paragraph": 92,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P91–P92"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

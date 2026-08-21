@@ -1,0 +1,28 @@
+{
+  "work": "04三国志",
+  "vol": "030",
+  "volume_name": "乌丸鲜卑东夷传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_arc": "C",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "乌丸",
+      "category": "蕃祚",
+      "rationale": "卷名首部；乌丸诸大人与蹋顿等边族集体。"
+    },
+    {
+      "name": "鲜卑",
+      "category": "蕃祚",
+      "rationale": "卷名中部；步度根、轲比能等鲜卑诸部集体。"
+    },
+    {
+      "name": "东夷",
+      "category": "蕃祚",
+      "rationale": "卷名末部；夫余、高句丽、沃沮、韩、倭等东夷诸部集体。"
+    }
+  ],
+  "excluded_kinds_hint": ["卷首标题", "共段总述", "论赞"]
+}

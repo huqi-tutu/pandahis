@@ -1,0 +1,494 @@
+{
+  "volume": "吴延史卢赵列传",
+  "source_file": "03后汉书_070_吴延史卢赵列传第五十四.txt",
+  "total_paragraphs": 47,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "吴祐",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "吴祐",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "吴祐",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "吴祐",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "吴祐",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "延笃",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "延笃",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "延笃",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "延笃",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "延笃",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "延笃",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "延笃",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "延笃",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "延笃",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "史弼",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "史弼",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "史弼",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "史弼",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "史弼",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "史弼",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "卢植",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "卢植",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "卢植",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "卢植",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "卢植",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "卢植",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "卢植",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "卢植",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "卢植",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "卢植",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "卢植",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "卢植",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "卢植",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "卢植",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [],
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "赵岐",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [
+        {
+          "name": "赵岐",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "赵岐",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "赵岐",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "赵岐",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "赵岐",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "赵岐",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "赵岐",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [
+        {
+          "name": "赵岐",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 47,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HOUHANSHU_070_01",
+      "史略名称": "吴祐",
+      "史略简介": "吴祐",
+      "原文字句": "吴祐字季英，陈留长垣人也。父恢，为南海太守。祐年十二，随从到官。恢欲杀青简以写经书，祐谏曰：“今大人逾越五领，远在海滨，其俗诚陋，然旧多珍怪，上为国家所疑，下为权戚所望。此书若成，则载之兼两。昔马援以薏苡兴谤，王阳以衣囊徼名。嫌疑之间，诚先贤所慎也。”恢及止，抚其首曰：“吴氏世不乏季子矣。”及年二十，丧父，居无檐石，而不受赡遗。常牧豕于长坦泽中，行吟经书。遇父故人，谓曰：“卿二千石子而自业贱事，纵",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷70·吴延史卢赵列传》",
+      "paragraphs": [
+        {
+          "volume": "吴延史卢赵列传",
+          "paragraph_from": 2,
+          "paragraph_to": 6
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_070_02",
+      "史略名称": "延笃",
+      "史略简介": "延笃",
+      "原文字句": "延笃字叔坚，南阳犨人也。少从颍川唐溪典受《左氏传》，旬日能讽之，典深敬焉。又从马融受业，博通经传及百家之言，能著文章，有名京师。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷70·吴延史卢赵列传》",
+      "paragraphs": [
+        {
+          "volume": "吴延史卢赵列传",
+          "paragraph_from": 7,
+          "paragraph_to": 15
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_070_03",
+      "史略名称": "史弼",
+      "史略简介": "史弼",
+      "原文字句": "史弼字公谦，陈留考城人也。父敞，顺帝时以佞辩至尚书、郡守。弼少笃学，聚徒数百。仕州郡，辟公府，迁北军中候。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷70·吴延史卢赵列传》",
+      "paragraphs": [
+        {
+          "volume": "吴延史卢赵列传",
+          "paragraph_from": 16,
+          "paragraph_to": 21
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_070_04",
+      "史略名称": "卢植",
+      "史略简介": "卢植",
+      "原文字句": "卢植字子幹，涿郡涿人也。身长八尺二寸，音声如钟。少与郑玄俱事马融，能通古今学，好研精而不守章句。融外戚豪家，多列女倡歌舞于前。植侍讲积年，未尝转眄，融以是敬之。学终辞归，阖门教授。性刚毅有大节，常怀济世志，不好辞赋，能饮酒一石。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷70·吴延史卢赵列传》",
+      "paragraphs": [
+        {
+          "volume": "吴延史卢赵列传",
+          "paragraph_from": 23,
+          "paragraph_to": 36
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_070_05",
+      "史略名称": "赵岐",
+      "史略简介": "赵岐",
+      "原文字句": "赵岐字邠卿，京兆长陵人也。初名嘉，生于御史台，因字台卿，后避难，故自改名字，示不忘本土也。岐少明经，有才艺，娶扶风马融兄女。融外戚豪家，岐常鄙之，不与融相见，仕州郡，以廉直疾恶见惮。年三十余，有重疾，卧蓐七年，自虑奄忽，乃为遗令敕兄子曰：“大丈夫生世，遁无箕山之操，仕无伊、吕之勋，天不我与，复何言哉！可立一员石于吾墓前，刻之曰：‘汉有逸人，姓赵名嘉。有志无时，命也奈何！’”其后疾瘳。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷70·吴延史卢赵列传》",
+      "paragraphs": [
+        {
+          "volume": "吴延史卢赵列传",
+          "paragraph_from": 38,
+          "paragraph_to": 46
+        }
+      ]
+    }
+  ]
+}

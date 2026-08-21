@@ -1,0 +1,114 @@
+{
+  "work": "03后汉书",
+  "vol": "083",
+  "total_paragraphs": 71,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_083_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 2,
+      "paragraph_to": 2,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 26,
+      "paragraph_to": 39,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 46,
+      "paragraph_to": 53,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 67,
+      "paragraph_to": 70,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 71,
+      "paragraph_to": 71,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "卫飒",
+      "category": "文臣",
+      "paragraph_from": 3,
+      "paragraph_to": 7,
+      "boundary_evidence": {
+        "open_paragraph": 3,
+        "open_phrase": "卫飒字子产，河内脩武人也。家贫好学问，随师无粮，常佣以自给。王莽时，仕郡历州宰。",
+        "close_paragraph": 7,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P3–P7"
+      }
+    },
+    {
+      "name": "任延",
+      "category": "文臣",
+      "paragraph_from": 8,
+      "paragraph_to": 18,
+      "boundary_evidence": {
+        "open_paragraph": 8,
+        "open_phrase": "任延字长孙，南阳宛人也。年十二，为诸生，学于长安，明《诗》《易》《春秋》，显名太",
+        "close_paragraph": 18,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P8–P18"
+      }
+    },
+    {
+      "name": "王景",
+      "category": "文臣",
+      "paragraph_from": 19,
+      "paragraph_to": 25,
+      "boundary_evidence": {
+        "open_paragraph": 19,
+        "open_phrase": "王景字仲通，乐浪讲邯人也。八世祖仲，本琅邪不其人。好道术，明天文。诸吕作乱，齐哀",
+        "close_paragraph": 25,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P19–P25"
+      }
+    },
+    {
+      "name": "孟尝",
+      "category": "文臣",
+      "paragraph_from": 40,
+      "paragraph_to": 45,
+      "boundary_evidence": {
+        "open_paragraph": 40,
+        "open_phrase": "孟尝字伯周，会稽上虞上也。其先三世为郡吏，并伏节死难。尝少修操行，仕郡为户曹史。",
+        "close_paragraph": 45,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P40–P45"
+      }
+    },
+    {
+      "name": "刘宠",
+      "category": "文臣",
+      "paragraph_from": 54,
+      "paragraph_to": 61,
+      "boundary_evidence": {
+        "open_paragraph": 54,
+        "open_phrase": "刘宠字祖荣，东莱牟平人，齐悼惠王之后也。悼惠王子孝王将闾，将闾少子封牟平侯，子孙",
+        "close_paragraph": 61,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P54–P61"
+      }
+    },
+    {
+      "name": "仇览",
+      "category": "文臣",
+      "paragraph_from": 62,
+      "paragraph_to": 66,
+      "boundary_evidence": {
+        "open_paragraph": 62,
+        "open_phrase": "仇览字季智，一名香，除留考城人也。少为书生淳默，乡里无知者。年四十，县召补史，选",
+        "close_paragraph": 66,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P62–P66"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

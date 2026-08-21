@@ -1,0 +1,34 @@
+{
+  "work": "03后汉书",
+  "vol": "078",
+  "total_paragraphs": 43,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_078_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 42,
+      "paragraph_to": 43,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "董卓",
+      "category": "武将",
+      "paragraph_from": 2,
+      "paragraph_to": 41,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "董卓字仲颍，陇西临洮人也。性粗猛有谋。少尝游羌中，尽与豪帅相结。后归耕于野，诸豪",
+        "close_paragraph": 41,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P41"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

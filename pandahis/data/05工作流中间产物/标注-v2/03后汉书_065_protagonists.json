@@ -1,0 +1,20 @@
+{
+  "work": "03后汉书",
+  "vol": "065",
+  "volume_name": "马融列传第五十上",
+  "volume_type_guess": "列传",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "马融",
+      "category": "文臣",
+      "rationale": "卷名《马融列传》明确以马融为传主，属单人列传。马融为东汉经学家、文学家，以儒学、文学仕宦为主轴，符合文臣准入标准。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

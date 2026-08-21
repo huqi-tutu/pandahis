@@ -69,6 +69,20 @@ def classify_translate_failure(
             ),
         )
 
+    if _has_any(e, ("整段漏", "母本段落洞", "MOTHER_SPAN")):
+        return RepairPlan(
+            root_cause="MOTHER_SPAN_DROP",
+            disposition="retry_llm",
+            action="phase2_splice_missing_spans",
+            refine_scope="span_backfill",
+            structured_prompt=(
+                "【根因：润色删了连续母本情节】\n"
+                "不要整篇重写。按标明的成稿夹缝（上一覆盖段之后、下一覆盖段之前）补回情节，\n"
+                "改成前后一致的说书口吻。若附近有一句概括顶替，删掉或改写，禁止详写+概括双写。"
+            ),
+            max_retries=2,
+        )
+
     if _has_any(e, ("原词锚点", "必现词", "must_phrase", "锚点须在译文中", "命中率不足")):
         return RepairPlan(
             root_cause="MUST_PHRASE_MISS",

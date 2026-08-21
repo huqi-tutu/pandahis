@@ -28,7 +28,7 @@ histomap:
   civ-tab:
     image-cache-bust: "2025052401"
   features:
-    # 生产 trial/release 默认关
+    # 生产 trial/release 默认关；个人 develop 版通过 X-Miniapp-Env: develop 仍全开
     civ-switch-enabled: false
 
   wechat:

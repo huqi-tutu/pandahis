@@ -1,0 +1,177 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01199",
+  "写作结构": "正史叙述见翻译详录（《汉书·匈奴传》《后汉书·南匈奴传》），拓展文写史外异说与延展：先述正史基本事实（出塞和亲、阏氏、再嫁），再引《琴操》《西京杂记》等杂史异说（画工毛延寿、悲怨形象），最后以《王昭君变文》等后世文学作legend补充，并留白正史未载细节。",
+  "候选著作": [
+    {
+      "出处": "《汉书·匈奴传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史主要出处，记载王昭君出塞和亲呼韩邪单于的基本事实",
+      "检索词": "王昭君",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《后汉书·南匈奴传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史另一出处，补充王昭君在匈奴生活及再嫁细节",
+      "检索词": "王昭君",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《西京杂记·卷上》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "最早记载画工毛延寿受贿丑化王昭君的故事，为后世传说源头",
+      "检索词": "毛延寿",
+      "采用": true,
+      "原文摘句": "元帝后宫既多，不得常见，乃使画工图形，案图召幸之。诸宫人皆赂画工，多者十万，少者亦不减五万。独王嫱不肯，遂不得见。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《琴操·怨旷思惟歌》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "记载王昭君自请出塞及悲怨情绪，为后世文学形象奠基",
+      "检索词": "昭君",
+      "采用": true,
+      "原文摘句": "昭君恨帝始不见遇，乃作怨旷思惟歌……",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《王昭君变文》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "唐代变文，将王昭君故事文学化，塑造悲怨形象，属艺术创作",
+      "检索词": "王昭君变文",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《世说新语·贤媛》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "记载王昭君出塞时仪容动人，为后世细节补充",
+      "检索词": "王明君",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《乐府诗集·昭君怨》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "收录历代咏昭君诗作，反映后世文学形象演变",
+      "检索词": "昭君怨",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《汉书·匈奴传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史主要出处，记载王昭君出塞和亲呼韩邪单于的基本事实",
+      "检索词": "王昭君",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《后汉书·南匈奴传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史另一出处，补充王昭君在匈奴生活及再嫁细节",
+      "检索词": "王昭君",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《西京杂记·卷上》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "最早记载画工毛延寿受贿丑化王昭君的故事，为后世传说源头",
+      "检索词": "毛延寿",
+      "采用": true,
+      "原文摘句": "元帝后宫既多，不得常见，乃使画工图形，案图召幸之。诸宫人皆赂画工，多者十万，少者亦不减五万。独王嫱不肯，遂不得见。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《琴操·怨旷思惟歌》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "记载王昭君自请出塞及悲怨情绪，为后世文学形象奠基",
+      "检索词": "昭君",
+      "采用": true,
+      "原文摘句": "昭君恨帝始不见遇，乃作怨旷思惟歌……",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《世说新语·贤媛》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "记载王昭君出塞时仪容动人，为后世细节补充",
+      "检索词": "王明君",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《王昭君变文》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "唐代变文，将王昭君故事文学化，塑造悲怨形象，属艺术创作",
+      "检索词": "王昭君变文",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《乐府诗集·昭君怨》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "收录历代咏昭君诗作，反映后世文学形象演变",
+      "检索词": "昭君怨",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 3,
+    "C_excluded": 4,
+    "overall": "B"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "work": "03后汉书",
+  "vol": "064",
+  "volume_name": "张衡列传",
+  "volume_type_guess": "列传",
+  "volume_arc": "A",
+  "narrative_mode": "single",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "张衡",
+      "category": "文臣",
+      "rationale": "卷名《张衡列传》为单人列传，张衡为东汉著名文学家、科学家、官员，以文学仕宦为主轴，符合文臣准入标准。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

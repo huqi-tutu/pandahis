@@ -1,0 +1,173 @@
+{
+  "fixed": [
+    {
+      "id": "GLBL_00083",
+      "name": "汉景帝",
+      "notes": [
+        "dedupe 家庭/三级/刘舜"
+      ],
+      "n": 69
+    },
+    {
+      "id": "GLBL_00154",
+      "name": "傅喜",
+      "notes": [],
+      "n": 22
+    },
+    {
+      "id": "GLBL_00185",
+      "name": "卫子夫",
+      "notes": [],
+      "n": 28
+    },
+    {
+      "id": "GLBL_00254",
+      "name": "东方朔",
+      "notes": [],
+      "n": 22
+    },
+    {
+      "id": "GLBL_00327",
+      "name": "尹翁归",
+      "notes": [
+        "dedupe 家庭/三级/子"
+      ],
+      "n": 19
+    },
+    {
+      "id": "GLBL_00370",
+      "name": "杜周",
+      "notes": [],
+      "n": 31
+    },
+    {
+      "id": "GLBL_00377",
+      "name": "枚乘",
+      "notes": [],
+      "n": 16
+    },
+    {
+      "id": "GLBL_00413",
+      "name": "疏广",
+      "notes": [],
+      "n": 15
+    },
+    {
+      "id": "GLBL_00417",
+      "name": "眭弘",
+      "notes": [],
+      "n": 14
+    },
+    {
+      "id": "GLBL_00450",
+      "name": "贾谊",
+      "notes": [],
+      "n": 28
+    },
+    {
+      "id": "GLBL_00452",
+      "name": "赵广汉",
+      "notes": [],
+      "n": 20
+    },
+    {
+      "id": "GLBL_00469",
+      "name": "陈馀",
+      "notes": [
+        "dedupe 同僚/二级/夏说",
+        "drop empty hub 同僚/臣子"
+      ],
+      "n": 23
+    },
+    {
+      "id": "GLBL_00483",
+      "name": "马宫",
+      "notes": [],
+      "n": 13
+    },
+    {
+      "id": "GLBL_00489",
+      "name": "魏相",
+      "notes": [],
+      "n": 17
+    },
+    {
+      "id": "GLBL_00491",
+      "name": "鲍宣",
+      "notes": [],
+      "n": 30
+    },
+    {
+      "id": "GLBL_00511",
+      "name": "常惠",
+      "notes": [],
+      "n": 19
+    },
+    {
+      "id": "GLBL_00515",
+      "name": "李广利",
+      "notes": [
+        "dedupe 家庭/二级/李夫人"
+      ],
+      "n": 23
+    },
+    {
+      "id": "GLBL_00530",
+      "name": "苏建",
+      "notes": [],
+      "n": 18
+    },
+    {
+      "id": "GLBL_00533",
+      "name": "赵充国",
+      "notes": [
+        "drop broken link 家庭/四级/赵岑 (p2='不详' p3='赵钦')"
+      ],
+      "n": 33
+    },
+    {
+      "id": "GLBL_00536",
+      "name": "曲周侯郦商",
+      "notes": [],
+      "n": 27
+    },
+    {
+      "id": "GLBL_00538",
+      "name": "陈汤",
+      "notes": [],
+      "n": 27
+    },
+    {
+      "id": "GLBL_01088",
+      "name": "刘将闾",
+      "notes": [
+        "dedupe 同僚/二级/路中大夫",
+        "drop empty hub 同僚/臣子"
+      ],
+      "n": 24
+    },
+    {
+      "id": "GLBL_01095",
+      "name": "楚王刘戊",
+      "notes": [
+        "dedupe 同僚/二级/张尚",
+        "dedupe 同僚/二级/赵夷吾",
+        "drop empty hub 同僚/臣子"
+      ],
+      "n": 27
+    },
+    {
+      "id": "GLBL_01107",
+      "name": "田仁",
+      "notes": [],
+      "n": 19
+    }
+  ],
+  "still": [],
+  "missing": [
+    {
+      "id": "GLBL_01097",
+      "name": "任氏"
+    }
+  ]
+}

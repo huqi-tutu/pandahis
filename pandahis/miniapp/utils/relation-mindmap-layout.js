@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.isSubCategoryNode = exports.isCategoryNode = exports.normalizeGroupName = exports.parseExtraGroup = exports.layoutMaxRadius = exports.hasNodeOverlap = exports.childWithinParentWedge = exports.computeMindmapPositions = exports.prepareRelationGraph = exports.MAX_PERSONS_PER_HUB = exports.RING_RADIUS = exports.LAYOUT_NODE_R = void 0;
+exports.isSubCategoryNode = exports.isCategoryNode = exports.normalizeGroupName = exports.parseExtraGroup = exports.layoutMaxRadius = exports.hasNodeOverlap = exports.minCategorySectorGapRadians = exports.childWithinParentWedge = exports.computeMindmapPositions = exports.prepareRelationGraph = exports.CATEGORY_SECTOR_GAP_DEG = exports.MAX_PERSONS_PER_HUB = exports.RING_RADIUS = exports.LAYOUT_NODE_R = void 0;
 exports.LAYOUT_NODE_R = {
     center: 28,
     category: 2,
@@ -9,6 +9,11 @@ exports.LAYOUT_NODE_R = {
 };
 /** 四圈层基准半径 */
 exports.RING_RADIUS = [0, 128, 230, 340, 450];
+/** 方案 B：各圈弹性扩展上限（仍保持同层共圆，仅扩大半径） */
+const RING_RADIUS_CEIL = [0, 180, 340, 500, 620];
+const RING_EXPAND_STEP = 22;
+/** 相邻圈层最小径向间距 */
+const MIN_RING_RADIAL_GAP = 88;
 const NODE_GAP = 8;
 const MIN_SECTOR = 0.18;
 const CATEGORY_ORDER = ['家庭', '同僚', '敌对', '师徒', '好友'];
@@ -18,6 +23,9 @@ const MIN_HUB_CHORD = 64;
 /** 每个二级枢纽下直接人物上限（与数据规范一致） */
 exports.MAX_PERSONS_PER_HUB = 10;
 const TWO_PI = Math.PI * 2;
+/** 相邻一级关系扇区之间的角向缝隙（度）；5 类合计约 20° 空白，边界可辨但不浪费空间 */
+exports.CATEGORY_SECTOR_GAP_DEG = 4;
+const CATEGORY_SECTOR_GAP_RAD = (exports.CATEGORY_SECTOR_GAP_DEG * Math.PI) / 180;
 function normalizeGroupName(raw) {
     const g = (raw || '').trim();
     if (g === '君臣')
@@ -377,7 +385,7 @@ function relayoutRing1Globally(edges, nodeMap, posMap, weightCache) {
         groups.push({ group: 'other', hubs: orphan });
     const catRing2 = groups.map((g) => g.hubs.reduce((s, h) => s + h.ring2, 0));
     const catMin = groups.map((g) => Math.max(0.2, g.hubs.reduce((s, h) => s + hubMinAngle(String(h.meta.name || ''), r1) * 0.45, 0)));
-    const catGap = Math.min(0.04, (TWO_PI * 0.05) / Math.max(groups.length, 1));
+    const catGap = CATEGORY_SECTOR_GAP_RAD;
     const catSpans = allocateSpansByWeight(catRing2, catMin, TWO_PI - catGap * groups.length);
     for (const h of hubs) {
         for (const d of collectDescendants(h.key, edges)) {
@@ -431,7 +439,7 @@ function relayoutRing1Globally(edges, nodeMap, posMap, weightCache) {
  * 每组同圆、紧凑均分，中心靠近父节点；跨度上限为一级扇区（不强制占满）。
  * 多组在一级扇区内互不重叠地排开。
  */
-function placeRing3ByCategorySectors(categoryWedges, edges, nodeMap, posMap, weightCache) {
+function placeRing3ByCategorySectors(categoryWedges, edges, nodeMap, posMap, weightCache, ringRadii = exports.RING_RADIUS) {
     for (const cat of categoryWedges) {
         const pad = Math.min(0.03, (cat.a1 - cat.a0) * 0.06);
         const ceilA0 = cat.a0 + pad;
@@ -452,8 +460,8 @@ function placeRing3ByCategorySectors(categoryWedges, edges, nodeMap, posMap, wei
         if (!branches.length)
             continue;
         branches.sort((a, b) => a.mid - b.mid);
-        // 圈3 全体固定在 RING_RADIUS[3]
-        const ringR = exports.RING_RADIUS[3];
+        // 圈3 全体落在 layoutRingRadii[3]
+        const ringR = ringRAt(ringRadii, 3);
         // 各分支紧凑跨度（够摆开即可；总和超出一级上限时等比压缩）
         const spans = branches.map((b) => Math.min(angularSpanNeeded(b.kids, ringR, nodeMap), ceilSpan));
         const totalNeed = spans.reduce((s, x) => s + x, 0);
@@ -523,7 +531,7 @@ function placeRing3ByCategorySectors(categoryWedges, edges, nodeMap, posMap, wei
     }
 }
 /** 从当前枢纽角域反推一级扇区，并重挂圈3 */
-function replaceRing3FromHubWedges(edges, nodeMap, posMap, weightCache) {
+function replaceRing3FromHubWedges(edges, nodeMap, posMap, weightCache, ringRadii = exports.RING_RADIUS) {
     const hubs = [...posMap.values()].filter((p) => isRing1Hub(p) && p.a0 != null && p.a1 != null);
     const byGroup = new Map();
     for (const h of hubs) {
@@ -550,7 +558,7 @@ function replaceRing3FromHubWedges(edges, nodeMap, posMap, weightCache) {
         }
         wedges.push({ group, a0, a1, hubKeys: list.map((h) => h.key) });
     }
-    placeRing3ByCategorySectors(wedges, edges, nodeMap, posMap, weightCache);
+    placeRing3ByCategorySectors(wedges, edges, nodeMap, posMap, weightCache, ringRadii);
 }
 function rotatePosBy(p, delta) {
     if (!delta)
@@ -859,27 +867,136 @@ function collisionRadius(p) {
         return Math.max(p.boxW, p.boxH) / 2 + NODE_GAP * 0.4;
     return Math.max(p.boxW, p.boxH) / 2 + NODE_GAP * 0.35;
 }
+function ringRAt(ringRadii, ringIndex) {
+    var _a;
+    const ri = Math.min(Math.max(ringIndex, 1), ringRadii.length - 1);
+    return (_a = ringRadii[ri]) !== null && _a !== void 0 ? _a : exports.RING_RADIUS[ri];
+}
+/** 严格碰撞检测：两节点胶囊是否重叠（阈值 1.0） */
+function findStrictOverlappingPairs(positions) {
+    const pairs = [];
+    for (let i = 0; i < positions.length; i++) {
+        for (let j = i + 1; j < positions.length; j++) {
+            const a = positions[i];
+            const b = positions[j];
+            if (a.isCategory || b.isCategory)
+                continue;
+            if (a.isCenter || b.isCenter)
+                continue;
+            const ra = collisionRadius(a);
+            const rb = collisionRadius(b);
+            const dx = b.x - a.x;
+            const dy = b.y - a.y;
+            if (dx * dx + dy * dy < (ra + rb) * (ra + rb))
+                pairs.push([a, b]);
+        }
+    }
+    return pairs;
+}
+/** 维持外圈 ≥ 内圈 + 最小径向间距，并不超过上限 */
+function normalizeRingRadii(radii) {
+    var _a, _b;
+    for (let i = 2; i < radii.length; i++) {
+        radii[i] = Math.max(radii[i], radii[i - 1] + MIN_RING_RADIAL_GAP);
+        const ceil = (_a = RING_RADIUS_CEIL[i]) !== null && _a !== void 0 ? _a : radii[i];
+        radii[i] = Math.min(radii[i], ceil);
+    }
+    for (let i = 1; i < radii.length; i++) {
+        const ceil = (_b = RING_RADIUS_CEIL[i]) !== null && _b !== void 0 ? _b : radii[i];
+        radii[i] = Math.min(radii[i], ceil);
+    }
+}
+/**
+ * 方案 B：基准布局后若仍有节点重叠，逐步扩大同层圆半径直至无碰撞或触顶。
+ * @returns 最终各圈半径（供 Canvas 绘制圈层虚线）
+ */
+function expandRingsUntilClear(posMap, edges, nodeMap, weightCache) {
+    var _a, _b, _c, _d, _e, _f;
+    const radii = [...exports.RING_RADIUS];
+    const list = () => [...posMap.values()];
+    const finish = () => {
+        snapAllToCanonicalRings(posMap, radii);
+        return radii;
+    };
+    for (let pass = 0; pass < 36; pass++) {
+        const pairs = findStrictOverlappingPairs(list());
+        if (!pairs.length)
+            return finish();
+        const ringsToExpand = new Set();
+        for (const [a, b] of pairs) {
+            ringsToExpand.add((_a = a.ringIndex) !== null && _a !== void 0 ? _a : (a.isSubCategory ? 1 : 2));
+            ringsToExpand.add((_b = b.ringIndex) !== null && _b !== void 0 ? _b : (b.isSubCategory ? 1 : 2));
+        }
+        let progressed = false;
+        for (const ri of ringsToExpand) {
+            if (ri < 1 || ri >= radii.length)
+                continue;
+            const ceil = (_c = RING_RADIUS_CEIL[ri]) !== null && _c !== void 0 ? _c : radii[ri] + RING_EXPAND_STEP;
+            const next = Math.min(radii[ri] + RING_EXPAND_STEP, ceil);
+            if (next > radii[ri]) {
+                radii[ri] = next;
+                progressed = true;
+            }
+        }
+        normalizeRingRadii(radii);
+        if (!progressed)
+            break;
+        snapAllToCanonicalRings(posMap, radii);
+        resolveNodeOverlaps(list(), 96, radii);
+        clampPersonsToWedges(posMap, radii);
+        snapAllToCanonicalRings(posMap, radii);
+    }
+    enforceRing2HardSeparation(edges, nodeMap, posMap, weightCache, radii);
+    snapAllToCanonicalRings(posMap, radii);
+    resolveNodeOverlaps(list(), 96, radii);
+    clampPersonsToWedges(posMap, radii);
+    for (let pass = 0; pass < 12; pass++) {
+        const pairs = findStrictOverlappingPairs(list());
+        if (!pairs.length)
+            return finish();
+        let progressed = false;
+        for (const [a, b] of pairs) {
+            const ri = Math.max((_d = a.ringIndex) !== null && _d !== void 0 ? _d : 2, (_e = b.ringIndex) !== null && _e !== void 0 ? _e : 2);
+            if (ri < 1 || ri >= radii.length)
+                continue;
+            const ceil = (_f = RING_RADIUS_CEIL[ri]) !== null && _f !== void 0 ? _f : radii[ri];
+            const next = Math.min(radii[ri] + RING_EXPAND_STEP, ceil);
+            if (next > radii[ri]) {
+                radii[ri] = next;
+                progressed = true;
+            }
+        }
+        normalizeRingRadii(radii);
+        if (!progressed)
+            break;
+        snapAllToCanonicalRings(posMap, radii);
+        resolveNodeOverlaps(list(), 96, radii);
+        clampPersonsToWedges(posMap, radii);
+        snapAllToCanonicalRings(posMap, radii);
+    }
+    return finish();
+}
 function isRing1Hub(p) {
     var _a;
     return !!p.isSubCategory && ((_a = p.ringIndex) !== null && _a !== void 0 ? _a : 0) === 1;
 }
 /** 将人物夹回自身角域（防止任何推挤造成跨分类） */
-function clampPersonsToWedges(posMap) {
+function clampPersonsToWedges(posMap, ringRadii = exports.RING_RADIUS) {
     var _a;
     for (const p of posMap.values()) {
         if (p.isCenter || p.isCategory || isRing1Hub(p))
             continue;
         if (p.a0 == null || p.a1 == null)
             continue;
-        const ri = Math.min(Math.max((_a = p.ringIndex) !== null && _a !== void 0 ? _a : 2, 1), exports.RING_RADIUS.length - 1);
-        const r = exports.RING_RADIUS[ri];
+        const ri = Math.min(Math.max((_a = p.ringIndex) !== null && _a !== void 0 ? _a : 2, 1), ringRadii.length - 1);
+        const r = ringRAt(ringRadii, ri);
         const ang = clampAngleToWedge(Math.atan2(p.y, p.x), p.a0, p.a1);
         p.x = Math.cos(ang) * r;
         p.y = Math.sin(ang) * r;
     }
 }
 /** 全图按 ringIndex 吸附到基准圆：同层级必须共圆 */
-function snapAllToCanonicalRings(posMap) {
+function snapAllToCanonicalRings(posMap, ringRadii = exports.RING_RADIUS) {
     var _a;
     for (const p of posMap.values()) {
         if (p.isCenter || p.isCategory) {
@@ -887,8 +1004,8 @@ function snapAllToCanonicalRings(posMap) {
             p.y = 0;
             continue;
         }
-        const ri = Math.min(Math.max((_a = p.ringIndex) !== null && _a !== void 0 ? _a : (p.isSubCategory ? 1 : 2), 1), exports.RING_RADIUS.length - 1);
-        const targetR = exports.RING_RADIUS[ri];
+        const ri = Math.min(Math.max((_a = p.ringIndex) !== null && _a !== void 0 ? _a : (p.isSubCategory ? 1 : 2), 1), ringRadii.length - 1);
+        const targetR = ringRAt(ringRadii, ri);
         const ang = Math.atan2(p.y, p.x);
         p.x = Math.cos(ang) * targetR;
         p.y = Math.sin(ang) * targetR;
@@ -922,7 +1039,7 @@ function unifySiblingRingRadii(edges, nodeMap, posMap) {
  * 圈2/圈3 硬校验：仅在同一父角域内重排或外扩半径。
  * 绝不跨枢纽角向推开（那会打穿分类扇区）。
  */
-function enforceRing2HardSeparation(edges, nodeMap, posMap, weightCache) {
+function enforceRing2HardSeparation(edges, nodeMap, posMap, weightCache, ringRadii = exports.RING_RADIUS) {
     var _a, _b, _c, _d;
     const hubs = [...posMap.values()].filter((p) => isRing1Hub(p));
     for (const hub of hubs) {
@@ -974,11 +1091,11 @@ function enforceRing2HardSeparation(edges, nodeMap, posMap, weightCache) {
         const inner1 = Math.max(inner0 + 0.04, hub.a1 - edgePad);
         const pSlices = splitEvenly(people.length, inner0, inner1);
         people.forEach((p, j) => {
-            placePersonBranch(p, pSlices[j].s0, pSlices[j].s1, 2, 2, edges, nodeMap, posMap, weightCache, exports.RING_RADIUS[2], { skipChildren: true, lockRadius: true });
+            placePersonBranch(p, pSlices[j].s0, pSlices[j].s1, 2, 2, edges, nodeMap, posMap, weightCache, ringRAt(ringRadii, 2), { skipChildren: true, lockRadius: true });
         });
     }
     // 圈2 重挂后，圈3 仍按一级扇区均分
-    replaceRing3FromHubWedges(edges, nodeMap, posMap, weightCache);
+    replaceRing3FromHubWedges(edges, nodeMap, posMap, weightCache, ringRadii);
     // 跨枢纽：只向各自扇区中心角向收回（保持基准圆半径，绝不径向飞圈）
     const persons = [...posMap.values()].filter((p) => !p.isCenter && !p.isCategory && !p.isSubCategory);
     for (let pass = 0; pass < 48; pass++) {
@@ -1014,8 +1131,8 @@ function enforceRing2HardSeparation(edges, nodeMap, posMap, weightCache) {
                     }
                     const next = ang + (mid - ang) * 0.4;
                     const clamped = clampAngleToWedge(next, p.a0, p.a1);
-                    const ri = Math.min(Math.max((_a = p.ringIndex) !== null && _a !== void 0 ? _a : 2, 1), exports.RING_RADIUS.length - 1);
-                    const r = exports.RING_RADIUS[ri];
+                    const ri = Math.min(Math.max((_a = p.ringIndex) !== null && _a !== void 0 ? _a : 2, 1), ringRadii.length - 1);
+                    const r = ringRAt(ringRadii, ri);
                     if (Math.abs(clamped - ang) < 1e-4)
                         return false;
                     p.x = Math.cos(clamped) * r;
@@ -1034,7 +1151,7 @@ function enforceRing2HardSeparation(edges, nodeMap, posMap, weightCache) {
     snapAllToCanonicalRings(posMap);
     clampPersonsToWedges(posMap);
 }
-function resolveNodeOverlaps(positions, maxPass = 80) {
+function resolveNodeOverlaps(positions, maxPass = 80, ringRadii = exports.RING_RADIUS) {
     var _a, _b, _c;
     // 圈1 二级胶囊由全局扇区硬约束定位；人物只做角向推开并锁在基准圆
     const list = positions.filter((p) => !p.isCenter && !p.isCategory && !isRing1Hub(p));
@@ -1058,8 +1175,8 @@ function resolveNodeOverlaps(positions, maxPass = 80) {
                     [b, 1],
                 ]) {
                     let ang = Math.atan2(p.y, p.x);
-                    const ring = Math.min(Math.max((_c = p.ringIndex) !== null && _c !== void 0 ? _c : 2, 1), exports.RING_RADIUS.length - 1);
-                    const r = exports.RING_RADIUS[ring];
+                    const ring = Math.min(Math.max((_c = p.ringIndex) !== null && _c !== void 0 ? _c : 2, 1), ringRadii.length - 1);
+                    const r = ringRAt(ringRadii, ring);
                     ang += sign * (push / Math.max(r, 40));
                     if (p.a0 != null && p.a1 != null) {
                         ang = clampAngleToWedge(ang, p.a0, p.a1);
@@ -1082,7 +1199,7 @@ function buildPosList(centerKey, nodesIn, edgesIn) {
     const weightCache = new Map();
     const centerMeta = nodeMap.get(centerKey);
     if (!centerMeta)
-        return [];
+        return { positions: [], ringRadii: [...exports.RING_RADIUS] };
     addPos(posMap, centerMeta, 0, 0, 0, { isCenter: true });
     const categoryNodes = CATEGORY_ORDER.map((g) => nodes.find((n) => isCategoryNode(n) && normalizeGroupName(String(n.name || '')) === g)).filter((n) => n != null);
     // 一级分类初值扇区也按圈2 人数占比（与二级规则一致；最终枢纽仍全局重排）
@@ -1091,12 +1208,14 @@ function buildPosList(centerKey, nodesIn, edgesIn) {
         return { cat: c, w: Math.max(stats.ring2, stats.hubCount, 1), hubCount: stats.hubCount };
     });
     const totalW = catWeights.reduce((s, x) => s + x.w, 0) || categoryNodes.length;
+    const categoryGapTotal = CATEGORY_SECTOR_GAP_RAD * catWeights.length;
+    const allocatableAngle = Math.max(TWO_PI - categoryGapTotal, TWO_PI * 0.5);
     let cursor = -Math.PI / 2;
     for (const item of catWeights) {
-        const span = (item.w / totalW) * Math.PI * 2;
+        const span = (item.w / totalW) * allocatableAngle;
         const pad = Math.min(0.04, span * 0.08);
         layoutCategorySector(item.cat, cursor + pad / 2, cursor + span - pad / 2, edges, nodeMap, posMap, weightCache);
-        cursor += span;
+        cursor += span + CATEGORY_SECTOR_GAP_RAD;
     }
     // 跨一级类别重排圈1，消灭「老师/父母」这类扇区接缝重叠
     relayoutRing1Globally(edges, nodeMap, posMap, weightCache);
@@ -1122,21 +1241,26 @@ function buildPosList(centerKey, nodesIn, edgesIn) {
     unifySiblingRingRadii(edges, nodeMap, posMap);
     snapAllToCanonicalRings(posMap);
     clampPersonsToWedges(posMap);
+    // 方案 B：基准布局仍叠牌时，扩大同层圆半径
+    const layoutRingRadii = expandRingsUntilClear(posMap, edges, nodeMap, weightCache);
     const keys = new Set(nodesIn.map((n) => n.key));
     if (posMap.has(VIRT_FRI_HUB))
         keys.add(VIRT_FRI_HUB);
-    return [...keys]
-        .map((k) => posMap.get(k))
-        .filter((p) => p != null);
+    return {
+        positions: [...keys]
+            .map((k) => posMap.get(k))
+            .filter((p) => p != null),
+        ringRadii: layoutRingRadii,
+    };
 }
 function prepareRelationGraph(centerKey, nodes, edges) {
     const withHub = ensureFriendHub(nodes, edges);
     const prepared = capDirectPeoplePerHub(withHub.nodes, withHub.edges, exports.MAX_PERSONS_PER_HUB);
-    const posList = buildPosList(centerKey, prepared.nodes, prepared.edges);
+    const { positions: posList, ringRadii } = buildPosList(centerKey, prepared.nodes, prepared.edges);
     const positions = new Map();
     for (const p of posList)
         positions.set(p.key, { x: p.x, y: p.y });
-    return { nodes: prepared.nodes, edges: prepared.edges, positions };
+    return { nodes: prepared.nodes, edges: prepared.edges, positions, ringRadii };
 }
 exports.prepareRelationGraph = prepareRelationGraph;
 function computeMindmapPositions(centerKey, nodes, edges, _viewport) {
@@ -1146,7 +1270,7 @@ exports.computeMindmapPositions = computeMindmapPositions;
 /** 子节点是否落在父节点角域内（测试用） */
 function childWithinParentWedge(centerKey, nodes, edges, parentKey, childKey) {
     const prepared = ensureFriendHub(nodes, edges);
-    const posList = buildPosList(centerKey, prepared.nodes, prepared.edges);
+    const posList = buildPosList(centerKey, prepared.nodes, prepared.edges).positions;
     const parent = posList.find((p) => p.key === parentKey);
     const child = posList.find((p) => p.key === childKey);
     if (!parent || !child)
@@ -1157,9 +1281,56 @@ function childWithinParentWedge(centerKey, nodes, edges, parentKey, childKey) {
     return angleInWedge(ang, parent.a0, parent.a1, 0.04);
 }
 exports.childWithinParentWedge = childWithinParentWedge;
+function angularGapRad(fromA1, toA0) {
+    let gap = toA0 - fromA1;
+    while (gap < -1e-6)
+        gap += TWO_PI;
+    return gap;
+}
+/** 相邻一级关系扇区之间的最小角向缝隙（弧度，测试/调试用） */
+function minCategorySectorGapRadians(centerKey, nodes, edges) {
+    var _a;
+    const withHub = ensureFriendHub(nodes, edges);
+    const { nodes: n2, edges: e2 } = capDirectPeoplePerHub(withHub.nodes, withHub.edges);
+    const nodeMap = new Map(n2.map((n) => [n.key, n]));
+    const posList = buildPosList(centerKey, n2, e2).positions;
+    const byGroup = new Map();
+    for (const h of posList) {
+        if (!h.isSubCategory || ((_a = h.ringIndex) !== null && _a !== void 0 ? _a : 0) !== 1)
+            continue;
+        if (h.a0 == null || h.a1 == null)
+            continue;
+        const meta = nodeMap.get(h.key);
+        if (!meta)
+            continue;
+        const g = hubGroupName(meta);
+        const cur = byGroup.get(g);
+        if (!cur) {
+            byGroup.set(g, { a0: h.a0, a1: h.a1 });
+        }
+        else {
+            cur.a0 = Math.min(cur.a0, h.a0);
+            cur.a1 = Math.max(cur.a1, h.a1);
+        }
+    }
+    const ordered = CATEGORY_ORDER.filter((g) => byGroup.has(g)).map((g) => ({
+        group: g,
+        ...byGroup.get(g),
+    }));
+    if (ordered.length < 2)
+        return TWO_PI;
+    let minGap = TWO_PI;
+    for (let i = 0; i < ordered.length; i++) {
+        const a = ordered[i];
+        const b = ordered[(i + 1) % ordered.length];
+        minGap = Math.min(minGap, angularGapRad(a.a1, b.a0));
+    }
+    return minGap;
+}
+exports.minCategorySectorGapRadians = minCategorySectorGapRadians;
 function hasNodeOverlap(centerKey, nodes, edges) {
     const prepared = ensureFriendHub(nodes, edges);
-    const positions = buildPosList(centerKey, prepared.nodes, prepared.edges);
+    const positions = buildPosList(centerKey, prepared.nodes, prepared.edges).positions;
     for (let i = 0; i < positions.length; i++) {
         for (let j = i + 1; j < positions.length; j++) {
             const a = positions[i];
@@ -1172,7 +1343,7 @@ function hasNodeOverlap(centerKey, nodes, edges) {
             const rb = collisionRadius(b);
             const dx = b.x - a.x;
             const dy = b.y - a.y;
-            if (dx * dx + dy * dy < (ra + rb) * (ra + rb) * 0.92)
+            if (dx * dx + dy * dy < (ra + rb) * (ra + rb))
                 return true;
         }
     }

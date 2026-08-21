@@ -1,0 +1,145 @@
+{
+  "work": "03后汉书",
+  "vol": "061",
+  "total_paragraphs": 50,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_061_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 20,
+      "paragraph_to": 20,
+      "exclude_reason": "论赞"
+    },
+    {
+      "paragraph_from": 27,
+      "paragraph_to": 27,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 49,
+      "paragraph_to": 49,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 50,
+      "paragraph_to": 50,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "张晧",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 5,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "张皓字叔明，犍为武阳人也。六世祖良，高帝时为太子少傅，封留侯。皓少游学京师，永元",
+        "close_paragraph": 5,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P5"
+      }
+    },
+    {
+      "name": "张纲",
+      "category": "文臣",
+      "paragraph_from": 6,
+      "paragraph_to": 13,
+      "boundary_evidence": {
+        "open_paragraph": 6,
+        "open_phrase": "纲字文纪。少明经学。虽为公子，而厉布衣之节。举孝廉不就，司徒辟高第为侍御史。时顺",
+        "close_paragraph": 13,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P6–P13"
+      }
+    },
+    {
+      "name": "王龚",
+      "category": "文臣",
+      "paragraph_from": 14,
+      "paragraph_to": 19,
+      "boundary_evidence": {
+        "open_paragraph": 14,
+        "open_phrase": "王龚字伯宗，山阳高平人也。世为豪族。初举孝廉，稍迁青州刺史，劾奏贪浊二千石数人，",
+        "close_paragraph": 19,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P14–P19"
+      }
+    },
+    {
+      "name": "王畅",
+      "category": "文臣",
+      "paragraph_from": 21,
+      "paragraph_to": 26,
+      "boundary_evidence": {
+        "open_paragraph": 21,
+        "open_phrase": "畅字叔茂。少以清实为称，无所交党。初举孝廉，辞病不就。大将军梁商特辟举茂才，四迁",
+        "close_paragraph": 26,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P21–P26"
+      }
+    },
+    {
+      "name": "种暠",
+      "category": "文臣",
+      "paragraph_from": 28,
+      "paragraph_to": 33,
+      "boundary_evidence": {
+        "open_paragraph": 28,
+        "open_phrase": "种暠字景伯，河南洛阳人，仲山甫之后也。父为定陶令，有财三千万。父卒，暠悉以赈恤宗",
+        "close_paragraph": 33,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P28–P33"
+      }
+    },
+    {
+      "name": "种岱",
+      "category": "文臣",
+      "paragraph_from": 34,
+      "paragraph_to": 35,
+      "boundary_evidence": {
+        "open_paragraph": 34,
+        "open_phrase": "岱字公祖。好学养志。举孝廉、茂才，辟公府，皆不就。公车特征，病卒。",
+        "close_paragraph": 35,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P34–P35"
+      }
+    },
+    {
+      "name": "种拂",
+      "category": "文臣",
+      "paragraph_from": 36,
+      "paragraph_to": 37,
+      "boundary_evidence": {
+        "open_paragraph": 36,
+        "open_phrase": "拂字颖伯。初为司隶从事，拜宛令。时，南阳郡吏好因休沐，游戏市里，为百姓所患。拂出",
+        "close_paragraph": 37,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P36–P37"
+      }
+    },
+    {
+      "name": "种劭",
+      "category": "文臣",
+      "paragraph_from": 38,
+      "paragraph_to": 40,
+      "boundary_evidence": {
+        "open_paragraph": 38,
+        "open_phrase": "劭字申甫。少知名。中平末，为谏议大夫。",
+        "close_paragraph": 40,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P38–P40"
+      }
+    },
+    {
+      "name": "陈球",
+      "category": "文臣",
+      "paragraph_from": 41,
+      "paragraph_to": 48,
+      "boundary_evidence": {
+        "open_paragraph": 41,
+        "open_phrase": "陈球字伯真，下邳淮浦人也。历世著名。父亹，广汉太守。球少涉儒学，善律令。阳嘉中，",
+        "close_paragraph": 48,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P41–P48"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

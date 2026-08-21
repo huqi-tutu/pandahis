@@ -227,6 +227,7 @@ function request(path, opts) {
     const method = (opts === null || opts === void 0 ? void 0 : opts.method) || 'GET';
     const header = buildRequestHeaders(path, method, opts === null || opts === void 0 ? void 0 : opts.auth);
     return new Promise((resolve, reject) => {
+        var _a;
         wx.request({
             url,
             method: method,
@@ -235,7 +236,7 @@ function request(path, opts) {
             enableHttp2: false,
             enableQuic: false,
             // 首请求含连接池建连 + 远端 MySQL 时可能 >10s；与后端日志对齐，避免误报 timeout
-            timeout: 60000,
+            timeout: (_a = opts === null || opts === void 0 ? void 0 : opts.timeout) !== null && _a !== void 0 ? _a : 60000,
             success(res) {
                 const status = res.statusCode || 0;
                 const body = parseResponseBody(res.data);

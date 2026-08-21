@@ -1,0 +1,87 @@
+{
+  "work": "04三国志",
+  "vol": "051",
+  "total_paragraphs": 16,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "04三国志_051_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 9,
+      "paragraph_to": 11,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 16,
+      "paragraph_to": 16,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "孙静",
+      "category": "宗戚",
+      "paragraph_from": 2,
+      "paragraph_to": 3,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "孙静字幼台，坚季弟也。坚始举事，静纠合乡曲及宗室五六百人以为保障，众咸附焉。策破",
+        "close_paragraph": 3,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P3"
+      }
+    },
+    {
+      "name": "孙皎",
+      "category": "宗戚",
+      "paragraph_from": 4,
+      "paragraph_to": 5,
+      "boundary_evidence": {
+        "open_paragraph": 4,
+        "open_phrase": "孙皎字叔朗，始拜护军校尉，领众二千余人。是时曹公数出濡须，皎每赴拒，号为精锐。迁",
+        "close_paragraph": 5,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P4–P5"
+      }
+    },
+    {
+      "name": "孙贲",
+      "category": "宗戚",
+      "paragraph_from": 6,
+      "paragraph_to": 8,
+      "boundary_evidence": {
+        "open_paragraph": 6,
+        "open_phrase": "孙贲字伯阳。父羌字圣台，坚同产兄也。贲早失二亲，弟辅婴孩，贲自赡育，友爱甚笃。为",
+        "close_paragraph": 8,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P6–P8"
+      }
+    },
+    {
+      "name": "孙韶",
+      "category": "宗戚",
+      "paragraph_from": 12,
+      "paragraph_to": 14,
+      "boundary_evidence": {
+        "open_paragraph": 12,
+        "open_phrase": "孙韶字公礼。伯父河，字伯海，本姓俞氏，亦吴人也。孙策爱之，赐姓为孙，列之属籍。后",
+        "close_paragraph": 14,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P12–P14"
+      }
+    },
+    {
+      "name": "孙桓",
+      "category": "宗戚",
+      "paragraph_from": 15,
+      "paragraph_to": 15,
+      "boundary_evidence": {
+        "open_paragraph": 15,
+        "open_phrase": "孙桓字叔武，河之子也。年二十五，拜安东中郎将，与陆逊共拒刘备。备军众甚盛，弥山盈",
+        "close_paragraph": 15,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P15–P15"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

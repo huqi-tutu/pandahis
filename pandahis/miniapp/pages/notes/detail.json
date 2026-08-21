@@ -1,0 +1,8 @@
+{
+  "navigationStyle": "custom",
+  "navigationBarTitleText": "笔记详情",
+  "usingComponents": {
+    "proto-nav": "/components/proto-nav/proto-nav",
+    "note-modal": "/components/note-modal/note-modal"
+  }
+}

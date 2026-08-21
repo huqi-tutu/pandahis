@@ -1,0 +1,574 @@
+{
+  "volume": "文苑列传第七十下",
+  "source_file": "03后汉书_089_文苑列传第七十下.txt",
+  "total_paragraphs": 59,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 3,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 4,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "赵壹",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "赵壹",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "赵壹",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "赵壹",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "赵壹",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "赵壹",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "赵壹",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "赵壹",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "赵壹",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "赵壹",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "赵壹",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "赵壹",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "赵壹",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "刘梁",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "刘梁",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "刘梁",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "刘梁",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "刘梁",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "刘梁",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "刘梁",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "刘梁",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "刘梁",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "刘梁",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "刘梁",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "边韶",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "边韶",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "边韶",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "边韶",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "边韶",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "边韶",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "边韶",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "边韶",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [
+        {
+          "name": "边韶",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
+      "owners": [
+        {
+          "name": "边韶",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 39,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 40,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 41,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 42,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 43,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "高彪",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "高彪",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [
+        {
+          "name": "高彪",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 47,
+      "owners": [
+        {
+          "name": "高彪",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 48,
+      "owners": [
+        {
+          "name": "高彪",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 49,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 50,
+      "owners": [
+        {
+          "name": "祢衡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 51,
+      "owners": [
+        {
+          "name": "祢衡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 52,
+      "owners": [
+        {
+          "name": "祢衡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 53,
+      "owners": [
+        {
+          "name": "祢衡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 54,
+      "owners": [
+        {
+          "name": "祢衡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 55,
+      "owners": [
+        {
+          "name": "祢衡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 56,
+      "owners": [
+        {
+          "name": "祢衡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 57,
+      "owners": [
+        {
+          "name": "祢衡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 58,
+      "owners": [
+        {
+          "name": "祢衡",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 59,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HOUHANSHU_089_01",
+      "史略名称": "赵壹",
+      "史略简介": "赵壹",
+      "原文字句": "赵壹字元叔，汉阳西县人也。体貌魁梧，身长九尺，美须豪眉，望之甚伟。而恃才倨傲，为乡党所摈，乃作《解摈》。后屡抵罪，几至死，友人救，得免。壹乃贻书谢恩曰：",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷89·文苑列传第七十下》",
+      "paragraphs": [
+        {
+          "volume": "文苑列传第七十下",
+          "paragraph_from": 5,
+          "paragraph_to": 17
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_089_02",
+      "史略名称": "刘梁",
+      "史略简介": "刘梁",
+      "原文字句": "刘梁字曼山，一名岑，东平宁阳人也。梁宗室子孙，而少孤贫，卖书于市以自资。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷89·文苑列传第七十下》",
+      "paragraphs": [
+        {
+          "volume": "文苑列传第七十下",
+          "paragraph_from": 18,
+          "paragraph_to": 28
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_089_03",
+      "史略名称": "边韶",
+      "史略简介": "边韶",
+      "原文字句": "边让字文礼，除留浚仪人也。少辩博，能属文。作《章华赋》，虽多淫丽之辞，而终之以正，亦如相如之讽也。其辞曰：",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷89·文苑列传第七十下》",
+      "paragraphs": [
+        {
+          "volume": "文苑列传第七十下",
+          "paragraph_from": 29,
+          "paragraph_to": 38
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_089_04",
+      "史略名称": "高彪",
+      "史略简介": "高彪",
+      "原文字句": "高彪字义方，吴郡无锡人也。家本单寒，至彪为诸生，游太学。有雅才而讷于言。尝从马融欲访大义，融疾，不获见，乃复刺遗融书曰：“承服风问，从来有年，故不待介者而谒大君子之门，冀一见龙光，以叙腹心之愿。不图遭疾，幽闭莫启。昔周公旦父文兄武，九命作伯，以尹华夏，犹挥沐吐餐，垂接白屋，故周道以隆，天下归德。公今养疴傲士，故其宜也。”融省书惭，追谢还之，彪逝而不顾。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷89·文苑列传第七十下》",
+      "paragraphs": [
+        {
+          "volume": "文苑列传第七十下",
+          "paragraph_from": 44,
+          "paragraph_to": 48
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_089_05",
+      "史略名称": "祢衡",
+      "史略简介": "祢衡",
+      "原文字句": "祢衡字正平，平原般人也。少有才辩，而尚气刚傲，好矫时慢物。兴平中，避难荆州。建安初，来游许下。始达颍川，乃阴怀一刺，既而无所之适，至于刺字漫灭。是时，许都新建，贤士大夫，四方来集。或问衡曰：“盍从陈长文、司马伯达乎？”对曰：“吾焉能从屠沽儿耶！”又问：“荀文若、赵稚长云何？”衡曰：“文若可借面吊丧，稚长可使监厨请客。”唯善鲁国孔融及弘农杨脩。常称曰：“大儿孔文举，小儿杨德祖。余子碌碌，莫足数也。”",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷89·文苑列传第七十下》",
+      "paragraphs": [
+        {
+          "volume": "文苑列传第七十下",
+          "paragraph_from": 50,
+          "paragraph_to": 58
+        }
+      ]
+    }
+  ]
+}

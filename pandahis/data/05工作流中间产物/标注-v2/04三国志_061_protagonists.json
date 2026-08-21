@@ -1,0 +1,25 @@
+{
+  "work": "04三国志",
+  "vol": "061",
+  "volume_name": "潘濬陆凯传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "潘濬",
+      "category": "文臣",
+      "rationale": "《三国志·潘濬陆凯传》卷名首列潘濬，为吴国重臣，历任荆州治中、太常等职，以行政、谏议为主轴，属文臣列传合传主人公。"
+    },
+    {
+      "name": "陆凯",
+      "category": "文臣",
+      "rationale": "《三国志·潘濬陆凯传》卷名并列陆凯，为吴国名臣，官至丞相，以直谏、辅政为叙事主轴，属文臣列传合传主人公。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "评曰",
+    "其他"
+  ]
+}

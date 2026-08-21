@@ -1,0 +1,343 @@
+{
+  "volume": "满田牵郭传",
+  "source_file": "04三国志_026_满田牵郭传第二十六.txt",
+  "total_paragraphs": 31,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [
+        {
+          "name": "满宠",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "满宠",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "满宠",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "满宠",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "满宠",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "满宠",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "田豫",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "田豫",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "田豫",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "田豫",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "田豫",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "田豫",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "田豫",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "田豫",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "田豫",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "牵招",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "牵招",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "牵招",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "牵招",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "牵招",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "牵招",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "牵招",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "牵招",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "郭淮",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "郭淮",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "郭淮",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "郭淮",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "郭淮",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "郭淮",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SANGUOZHI_026_01",
+      "史略名称": "满宠",
+      "史略简介": "满宠",
+      "原文字句": "满宠字伯宁，山阳昌邑人也。年十八，为郡督邮。时郡内李朔等各拥部曲，害于平民，太守使宠纠焉。朔等请罪，不复钞略。守高平令。县人张苞为郡督邮，贪秽受取，干乱吏政。宠因其来在传舍，率吏卒出收之，诘责所犯，即日考竟，遂弃官归。",
+      "史略分类": "武将",
+      "主要史料出处": "《04三国志·卷26·满田牵郭传》",
+      "paragraphs": [
+        {
+          "volume": "满田牵郭传",
+          "paragraph_from": 2,
+          "paragraph_to": 7
+        }
+      ]
+    },
+    {
+      "史略ID": "SANGUOZHI_026_02",
+      "史略名称": "田豫",
+      "史略简介": "田豫",
+      "原文字句": "田豫字国让，渔阳雍奴人也。刘备之奔公孙瓒也，豫时年少，自讬于备，备甚奇之。备为豫州刺史，豫以母老求归，备涕泣与别，曰：“恨不与君共成大事也。”",
+      "史略分类": "武将",
+      "主要史料出处": "《04三国志·卷26·满田牵郭传》",
+      "paragraphs": [
+        {
+          "volume": "满田牵郭传",
+          "paragraph_from": 8,
+          "paragraph_to": 16
+        }
+      ]
+    },
+    {
+      "史略ID": "SANGUOZHI_026_03",
+      "史略名称": "牵招",
+      "史略简介": "牵招",
+      "原文字句": "牵招字子经，安平观津人也。年十余岁，诣同县乐隐受学。后隐为车骑将军何苗长史，招随卒业。值京都乱，苗、隐见害，招俱与隐门生史路等触蹈锋刃，共殡敛隐尸，送丧还归。道遇寇钞，路等皆悉散走。贼欲斫棺取钉，招垂泪请赦。贼义之，乃释而去。由此显名。",
+      "史略分类": "武将",
+      "主要史料出处": "《04三国志·卷26·满田牵郭传》",
+      "paragraphs": [
+        {
+          "volume": "满田牵郭传",
+          "paragraph_from": 17,
+          "paragraph_to": 24
+        }
+      ]
+    },
+    {
+      "史略ID": "SANGUOZHI_026_04",
+      "史略名称": "郭淮",
+      "史略简介": "郭淮",
+      "原文字句": "郭淮字伯济，太原阳曲人也。建安中举孝廉，除平原府丞。文帝为五官将，召淮署为门下贼曹，转为丞相兵曹议令史，从征汉中。太祖还，留征西将军夏侯渊拒刘备，以淮为渊司马。渊与备战，淮时有疾不出。渊遇害，军中扰扰，淮收散卒，推荡寇将军张郃为军主，诸营乃定。其明日，备欲渡汉水来攻。诸将议众寡不敌，备便乘胜，欲依水为陈以拒之。淮曰：“此示弱而不足挫敌，非算也。不如远水为陈，引而致之，半济而后击，备可破也。”既陈，",
+      "史略分类": "武将",
+      "主要史料出处": "《04三国志·卷26·满田牵郭传》",
+      "paragraphs": [
+        {
+          "volume": "满田牵郭传",
+          "paragraph_from": 25,
+          "paragraph_to": 30
+        }
+      ]
+    }
+  ]
+}

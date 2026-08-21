@@ -1,0 +1,147 @@
+{
+  "work": "04三国志",
+  "vol": "018",
+  "total_paragraphs": 25,
+  "volume_subtype": "hezhuan",
+  "derived_from": "04三国志_018_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 12,
+      "paragraph_to": 12,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 25,
+      "paragraph_to": 25,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "李典",
+      "category": "武将",
+      "paragraph_from": 2,
+      "paragraph_to": 4,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "李典字曼成，山阳钜野人也。典从父乾，有雄气，合宾客数千家在乘氏。初平中，以众随太",
+        "close_paragraph": 4,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P4"
+      }
+    },
+    {
+      "name": "李通",
+      "category": "武将",
+      "paragraph_from": 5,
+      "paragraph_to": 6,
+      "boundary_evidence": {
+        "open_paragraph": 5,
+        "open_phrase": "李通字文达，江夏平春人也。以侠闻于江、汝之间。与其郡人陈恭共起兵于朗陵，众多归之",
+        "close_paragraph": 6,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P5–P6"
+      }
+    },
+    {
+      "name": "臧霸",
+      "category": "武将",
+      "paragraph_from": 7,
+      "paragraph_to": 9,
+      "boundary_evidence": {
+        "open_paragraph": 7,
+        "open_phrase": "臧霸字宣高，泰山华人也。父戒，为县狱掾，据法不听太守欲所私杀。太守大怒，令收戒诣",
+        "close_paragraph": 9,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P7–P9"
+      }
+    },
+    {
+      "name": "文聘",
+      "category": "武将",
+      "paragraph_from": 10,
+      "paragraph_to": 11,
+      "boundary_evidence": {
+        "open_paragraph": 10,
+        "open_phrase": "文聘字仲业，南阳宛人也，为刘表大将，使御北方。表死，其子琮立。太祖征荆州，琮举州",
+        "close_paragraph": 11,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P10–P11"
+      }
+    },
+    {
+      "name": "吕虔",
+      "category": "武将",
+      "paragraph_from": 13,
+      "paragraph_to": 13,
+      "boundary_evidence": {
+        "open_paragraph": 13,
+        "open_phrase": "吕虔字子恪，任城人也。太祖在兖州，闻虔有胆策，以为从事，将家兵守湖陆。襄贲校尉杜",
+        "close_paragraph": 13,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P13–P13"
+      }
+    },
+    {
+      "name": "许褚",
+      "category": "武将",
+      "paragraph_from": 14,
+      "paragraph_to": 16,
+      "boundary_evidence": {
+        "open_paragraph": 14,
+        "open_phrase": "许褚字仲康，谯国谯人也。长八尺余，腰大十围，容貌雄毅，勇力绝人。汉末，聚少年及宗",
+        "close_paragraph": 16,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P14–P16"
+      }
+    },
+    {
+      "name": "典韦",
+      "category": "武将",
+      "paragraph_from": 17,
+      "paragraph_to": 18,
+      "boundary_evidence": {
+        "open_paragraph": 17,
+        "open_phrase": "典韦，陈留己吾人也。形貌魁梧，旅力过人，有志节任侠。襄邑刘氏与睢阳李永为雠，韦为",
+        "close_paragraph": 18,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P17–P18"
+      }
+    },
+    {
+      "name": "庞德",
+      "category": "武将",
+      "paragraph_from": 19,
+      "paragraph_to": 20,
+      "boundary_evidence": {
+        "open_paragraph": 19,
+        "open_phrase": "庞惪字令明，南安狟道人也。（狟音桓。）少为郡吏州从事。初平中，从马腾击反羌叛氐。",
+        "close_paragraph": 20,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P19–P20"
+      }
+    },
+    {
+      "name": "庞淯",
+      "category": "武将",
+      "paragraph_from": 21,
+      "paragraph_to": 22,
+      "boundary_evidence": {
+        "open_paragraph": 21,
+        "open_phrase": "庞淯字子异，酒泉表氏人也。初以凉州从事守破羌长，会武威太守张猛反，杀刺史邯郸商，",
+        "close_paragraph": 22,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P21–P22"
+      }
+    },
+    {
+      "name": "阎温",
+      "category": "武将",
+      "paragraph_from": 23,
+      "paragraph_to": 24,
+      "boundary_evidence": {
+        "open_paragraph": 23,
+        "open_phrase": "阎温字伯俭，天水西城人也。以凉州别驾守上邽令。马超走奔上邽，郡人任养等举众迎之。",
+        "close_paragraph": 24,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P23–P24"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

@@ -1,0 +1,118 @@
+{
+  "work": "04三国志",
+  "vol": "011",
+  "total_paragraphs": 31,
+  "volume_subtype": "hezhuan",
+  "derived_from": "04三国志_011_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 31,
+      "paragraph_to": 31,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "袁涣",
+      "category": "文臣",
+      "paragraph_from": 2,
+      "paragraph_to": 6,
+      "boundary_evidence": {
+        "open_paragraph": 2,
+        "open_phrase": "袁涣字曜卿，陈郡扶乐人也。父滂，为汉司徒。当时诸公子多越法度，而涣清静，举动必以",
+        "close_paragraph": 6,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P6"
+      }
+    },
+    {
+      "name": "张范",
+      "category": "文臣",
+      "paragraph_from": 7,
+      "paragraph_to": 8,
+      "boundary_evidence": {
+        "open_paragraph": 7,
+        "open_phrase": "张范，字公仪，河内脩武人也。祖父歆，为汉司徒。父延，为太尉。太傅袁隗欲以女妻范，",
+        "close_paragraph": 8,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P7–P8"
+      }
+    },
+    {
+      "name": "凉茂",
+      "category": "文臣",
+      "paragraph_from": 9,
+      "paragraph_to": 9,
+      "boundary_evidence": {
+        "open_paragraph": 9,
+        "open_phrase": "凉茂字伯方，山阳昌邑人也。少好学，论议常据经典，以处是非。太祖辟为司空掾，举高第",
+        "close_paragraph": 9,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P9–P9"
+      }
+    },
+    {
+      "name": "国渊",
+      "category": "文臣",
+      "paragraph_from": 10,
+      "paragraph_to": 11,
+      "boundary_evidence": {
+        "open_paragraph": 10,
+        "open_phrase": "国渊字子尼，乐安盖人也。师事郑玄。后与邴原、管宁等避乱辽东。既还旧土，太祖辟为司",
+        "close_paragraph": 11,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P10–P11"
+      }
+    },
+    {
+      "name": "田畴",
+      "category": "文臣",
+      "paragraph_from": 12,
+      "paragraph_to": 15,
+      "boundary_evidence": {
+        "open_paragraph": 12,
+        "open_phrase": "田畴字子泰，右北平无终人也。好读书，善击剑。初平元年，义兵起，董卓迁帝于长安。幽",
+        "close_paragraph": 15,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P12–P15"
+      }
+    },
+    {
+      "name": "王修",
+      "category": "文臣",
+      "paragraph_from": 16,
+      "paragraph_to": 17,
+      "boundary_evidence": {
+        "open_paragraph": 16,
+        "open_phrase": "王脩字叔治，北海营陵人也。年七岁丧母。母以社日亡，来岁邻里社，脩感念母，哀甚。邻",
+        "close_paragraph": 17,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P16–P17"
+      }
+    },
+    {
+      "name": "邴原",
+      "category": "文臣",
+      "paragraph_from": 18,
+      "paragraph_to": 20,
+      "boundary_evidence": {
+        "open_paragraph": 18,
+        "open_phrase": "邴原字根矩，北海朱虚人也。少与管宁俱以操尚称，州府辟命皆不就。黄巾起，原将家属入",
+        "close_paragraph": 20,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P18–P20"
+      }
+    },
+    {
+      "name": "管宁",
+      "category": "文臣",
+      "paragraph_from": 21,
+      "paragraph_to": 30,
+      "boundary_evidence": {
+        "open_paragraph": 21,
+        "open_phrase": "管宁字幼安，北海朱虚人也。年十六丧父，中表愍其孤贫，咸共赠赗，悉辞不受，称财以送",
+        "close_paragraph": 30,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P21–P30"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}

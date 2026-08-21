@@ -1,0 +1,378 @@
+{
+  "volume": "乌丸鲜卑东夷传",
+  "source_file": "04三国志_030_乌丸鲜卑东夷传第三十.txt",
+  "total_paragraphs": 37,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 3,
+      "owners": [
+        {
+          "name": "乌丸",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 4,
+      "owners": [
+        {
+          "name": "乌丸",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "鲜卑",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "鲜卑",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "鲜卑",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "鲜卑",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "东夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [
+        {
+          "name": "东夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 11,
+      "owners": [
+        {
+          "name": "东夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 12,
+      "owners": [
+        {
+          "name": "东夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 13,
+      "owners": [
+        {
+          "name": "东夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 14,
+      "owners": [
+        {
+          "name": "东夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 15,
+      "owners": [
+        {
+          "name": "东夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 16,
+      "owners": [
+        {
+          "name": "东夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 17,
+      "owners": [
+        {
+          "name": "东夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 18,
+      "owners": [
+        {
+          "name": "东夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 19,
+      "owners": [
+        {
+          "name": "东夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "东夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "东夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "东夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "东夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "东夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "东夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "东夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "东夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "东夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "东夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "东夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "东夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "东夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "东夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "东夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [
+        {
+          "name": "东夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 36,
+      "owners": [
+        {
+          "name": "东夷",
+          "category": "蕃祚"
+        }
+      ]
+    },
+    {
+      "paragraph": 37,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "SANGUOZHI_030_01",
+      "史略名称": "乌丸",
+      "史略简介": "乌丸",
+      "原文字句": "汉末，辽西乌丸大人丘力居，众五千余落，上谷乌丸大人难楼，众九千余落，各称王，而辽东属国乌丸大人苏仆延，众千余落，自称峭王，右北平乌丸大人乌延，众八百余落，自称汗鲁王，皆有计策勇健。中山太守张纯叛入丘力居众中，自号弥天安定王，为三郡乌丸元帅，寇略青、徐、幽、冀四州，杀略吏民。灵帝末，以刘虞为州牧，募胡斩纯首，北州乃定。后丘力居死，子楼班年小，从子蹋顿有武略，代立，总摄三王部，众皆从其教令。袁绍与公孙",
+      "史略分类": "蕃祚",
+      "主要史料出处": "《04三国志·卷30·乌丸鲜卑东夷传》",
+      "paragraphs": [
+        {
+          "volume": "乌丸鲜卑东夷传",
+          "paragraph_from": 3,
+          "paragraph_to": 4
+        }
+      ]
+    },
+    {
+      "史略ID": "SANGUOZHI_030_02",
+      "史略名称": "鲜卑",
+      "史略简介": "鲜卑",
+      "原文字句": "鲜卑步度根既立，众稍衰弱，中兄扶罗韩亦别拥众数万为大人。建安中，太祖定幽州，步度根与轲比能等因乌丸校尉阎柔上贡献。后代郡乌丸能臣氐等叛，求属扶罗韩，扶罗韩将万余骑迎之。到桑乾，氏等议，以为扶罗韩部威禁宽缓，恐不见济，更遣人呼轲比能。比能即将万余骑到，当共盟誓。比能便于会上杀扶罗韩，扶罗韩子泄归泥及部众悉属比能。比能自以杀归泥父，特又善遇之。步度根由是怨比能。文帝践阼，田豫为乌丸校尉，持节并护鲜卑，",
+      "史略分类": "蕃祚",
+      "主要史料出处": "《04三国志·卷30·乌丸鲜卑东夷传》",
+      "paragraphs": [
+        {
+          "volume": "乌丸鲜卑东夷传",
+          "paragraph_from": 5,
+          "paragraph_to": 8
+        }
+      ]
+    },
+    {
+      "史略ID": "SANGUOZHI_030_03",
+      "史略名称": "东夷",
+      "史略简介": "东夷",
+      "原文字句": "书称“东渐于海，西被于流沙”。其九服之制，可得而言也。然荒域之外，重译而至，非足迹车轨所及，未有知其国俗殊方者也。自虞暨周，西戎有白环之献，东夷有肃慎之贡，皆旷世而至，其遐远也如此。及汉氏遣张骞使西域，穷河源，经历诸国，遂置都护以总领之，然后西域之事具存，故史官得详载焉。魏兴，西域虽不能尽至，其大国龟兹、于寘、康居、乌孙、疏勒、月氏、鄯善、车师之属，无岁不奉朝贡，略如汉氏故事。而公孙渊仍父祖三世有",
+      "史略分类": "蕃祚",
+      "主要史料出处": "《04三国志·卷30·乌丸鲜卑东夷传》",
+      "paragraphs": [
+        {
+          "volume": "乌丸鲜卑东夷传",
+          "paragraph_from": 9,
+          "paragraph_to": 36
+        }
+      ]
+    }
+  ]
+}

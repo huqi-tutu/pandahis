@@ -1,0 +1,513 @@
+{
+  "volume": "方术列传第七十二下",
+  "source_file": "03后汉书_092_方术列传第七十二下.txt",
+  "total_paragraphs": 62,
+  "volume_type": "纪传叙事",
+  "volume_subtype": "liezhuan_hezhuan",
+  "volume_texture": "sequential",
+  "segment_attribution": [
+    {
+      "paragraph": 1,
+      "owners": [],
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph": 2,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 3,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 4,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 5,
+      "owners": [
+        {
+          "name": "公沙穆",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 6,
+      "owners": [
+        {
+          "name": "公沙穆",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 7,
+      "owners": [
+        {
+          "name": "公沙穆",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 8,
+      "owners": [
+        {
+          "name": "公沙穆",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "公沙穆",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 10,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 11,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 12,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 13,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 14,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 15,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 16,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 17,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 18,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 19,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 20,
+      "owners": [
+        {
+          "name": "郭玉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 21,
+      "owners": [
+        {
+          "name": "郭玉",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 22,
+      "owners": [
+        {
+          "name": "华佗",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 23,
+      "owners": [
+        {
+          "name": "华佗",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 24,
+      "owners": [
+        {
+          "name": "华佗",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 25,
+      "owners": [
+        {
+          "name": "华佗",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 26,
+      "owners": [
+        {
+          "name": "华佗",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 27,
+      "owners": [
+        {
+          "name": "华佗",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 28,
+      "owners": [
+        {
+          "name": "华佗",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 29,
+      "owners": [
+        {
+          "name": "华佗",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 30,
+      "owners": [
+        {
+          "name": "华佗",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 31,
+      "owners": [
+        {
+          "name": "华佗",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 32,
+      "owners": [
+        {
+          "name": "华佗",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 33,
+      "owners": [
+        {
+          "name": "华佗",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 34,
+      "owners": [
+        {
+          "name": "华佗",
+          "category": "文臣"
+        }
+      ]
+    },
+    {
+      "paragraph": 35,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 36,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 37,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 38,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 39,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 40,
+      "owners": [
+        {
+          "name": "费长房",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 41,
+      "owners": [
+        {
+          "name": "费长房",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 42,
+      "owners": [
+        {
+          "name": "费长房",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 43,
+      "owners": [
+        {
+          "name": "费长房",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 44,
+      "owners": [
+        {
+          "name": "费长房",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 45,
+      "owners": [
+        {
+          "name": "费长房",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 46,
+      "owners": [
+        {
+          "name": "费长房",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 47,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 48,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 49,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 50,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 51,
+      "owners": [
+        {
+          "name": "左慈",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 52,
+      "owners": [
+        {
+          "name": "左慈",
+          "category": "庶众"
+        }
+      ]
+    },
+    {
+      "paragraph": 53,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 54,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 55,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 56,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 57,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 58,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 59,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 60,
+      "owners": [],
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph": 61,
+      "owners": [],
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph": 62,
+      "owners": [],
+      "exclude_reason": "论赞"
+    }
+  ],
+  "entries": [
+    {
+      "史略ID": "HOUHANSHU_092_01",
+      "史略名称": "公沙穆",
+      "史略简介": "公沙穆",
+      "原文字句": "公沙穆字文乂，北海胶东人也。家贫贱，自为儿童不好戏弄，长习《韩诗》《公羊春秋》，尤锐思《河》《洛》推步之术。居建成山中，依林阻为室，独宿无侣。时，暴风震雷，有声于外，呼穆者三，穆不与语。有顷，呼者自牖而入，音状甚怪，穆诵经自若，终亦无它妖异，时人奇之。后遂隐居东莱山，学者自远而至。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷92·方术列传第七十二下》",
+      "paragraphs": [
+        {
+          "volume": "方术列传第七十二下",
+          "paragraph_from": 5,
+          "paragraph_to": 9
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_092_02",
+      "史略名称": "郭玉",
+      "史略简介": "郭玉",
+      "原文字句": "郭玉者，广汉雒人也。初，有老父不知何出，常渔钓于涪水，因号涪翁。乞食人间，见有疾者，时下针石，辄应时而效，乃著《针经》《诊脉法》传于世。弟子程高，寻求积年，翁乃授之。高亦隐迹不仕。玉少师事高，学方诊六微之技，阴阳隐侧之术。和帝时，为太医丞，多有效应。帝奇之，仍试令嬖臣美手腕者与女子杂处帷中，使玉各诊一手，问所疾苦。玉曰：“左阳右阴，脉有男女，状若异人。臣疑其故。”帝叹息称善。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷92·方术列传第七十二下》",
+      "paragraphs": [
+        {
+          "volume": "方术列传第七十二下",
+          "paragraph_from": 20,
+          "paragraph_to": 21
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_092_03",
+      "史略名称": "华佗",
+      "史略简介": "华佗",
+      "原文字句": "华佗字元化，沛国谯人也，一名旉。游学徐土，兼通数经。晓养性之术，年且百岁而犹有壮容，时人以为仙。沛相陈珪举孝廉，太尉黄琬辟，皆不就。",
+      "史略分类": "文臣",
+      "主要史料出处": "《03后汉书·卷92·方术列传第七十二下》",
+      "paragraphs": [
+        {
+          "volume": "方术列传第七十二下",
+          "paragraph_from": 22,
+          "paragraph_to": 34
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_092_04",
+      "史略名称": "费长房",
+      "史略简介": "费长房",
+      "原文字句": "费长房者，汝南人也。曾为市掾。市中有老翁卖药，悬一壶于肆头，及市罢，辄跳入壶中。市人莫之见，唯长房于楼上睹之，异焉，因往再拜奉酒脯。翁知长房之意其神也，谓之曰：“子明日可更来。”长房旦日复诣翁，翁乃与俱入壶中。唯见玉堂严丽，旨酒甘肴，盈衍其中，共饮毕而出。翁约不听与人言之。后乃就楼上候长房曰：“我神仙之人，以过见责，今事毕当去，子宁能相随乎？楼下有少酒，与卿与别。”长房使人取之，不能胜，又令十人扛",
+      "史略分类": "庶众",
+      "主要史料出处": "《03后汉书·卷92·方术列传第七十二下》",
+      "paragraphs": [
+        {
+          "volume": "方术列传第七十二下",
+          "paragraph_from": 40,
+          "paragraph_to": 46
+        }
+      ]
+    },
+    {
+      "史略ID": "HOUHANSHU_092_05",
+      "史略名称": "左慈",
+      "史略简介": "左慈",
+      "原文字句": "左慈字元放，庐江人也。少有神道。尝在司空曹操坐，操从容顾众宾曰：“今日高会，珍羞略备，所少吴松江鲈鱼耳。”放于下坐应曰：“此可得也。”因求铜盘贮水，以竹竿饵钓于盘中，须臾引一鲈鱼出。操大拊掌笑，会者皆惊。操曰：“一鱼不周坐席，可更得乎？”放乃更饵钩沉之，须臾复引出，皆长三尺余，生鲜可爱。操使目前鲙之，周浃会者。操又谓曰：“既已得鱼，恨无蜀中生姜耳。”放曰：“亦可得也。”操恐其近即所取，因曰：“吾前",
+      "史略分类": "庶众",
+      "主要史料出处": "《03后汉书·卷92·方术列传第七十二下》",
+      "paragraphs": [
+        {
+          "volume": "方术列传第七十二下",
+          "paragraph_from": 51,
+          "paragraph_to": 52
+        }
+      ]
+    }
+  ]
+}

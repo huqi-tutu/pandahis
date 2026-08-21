@@ -1,0 +1,45 @@
+{
+  "work": "03后汉书",
+  "vol": "062",
+  "volume_name": "杜栾刘李刘谢列传",
+  "volume_type_guess": "列传",
+  "narrative_mode": "hezhuan",
+  "skip_reason": null,
+  "protagonists": [
+    {
+      "name": "杜根",
+      "category": "文臣",
+      "rationale": "卷名首姓，杜栾刘李刘谢合传之第一主轴人物，东汉士人，以直谏著称，属文臣列传。"
+    },
+    {
+      "name": "栾巴",
+      "category": "文臣",
+      "rationale": "卷名第二姓，合传主轴人物之一，东汉官员，以政绩与忠直闻名，属文臣列传。"
+    },
+    {
+      "name": "刘陶",
+      "category": "文臣",
+      "rationale": "卷名第三姓，合传主轴人物之一，东汉大臣，以谏言与学术著称，属文臣列传。"
+    },
+    {
+      "name": "李云",
+      "category": "文臣",
+      "rationale": "卷名第四姓，合传主轴人物之一，东汉官员，因直谏获罪，属文臣列传。"
+    },
+    {
+      "name": "刘瑜",
+      "category": "文臣",
+      "rationale": "卷名第五姓（刘），合传主轴人物之一，东汉宗室大臣，以经学与谏言著称，属文臣列传。"
+    },
+    {
+      "name": "谢弼",
+      "category": "文臣",
+      "rationale": "卷名第六姓（谢），合传主轴人物之一，东汉官员，以忠直敢谏闻名，属文臣列传。"
+    }
+  ],
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "赞曰",
+    "其他"
+  ]
+}

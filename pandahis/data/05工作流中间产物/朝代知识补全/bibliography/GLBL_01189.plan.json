@@ -1,0 +1,133 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01189",
+  "写作结构": "正史叙述见翻译详录（《史记·卫将军骠骑列传》《汉书·武帝纪》）。拓展文以史外异说与延展为主：①《资治通鉴·汉纪》对平南越与屯居延的编年系事可作时间线参照；②《水经注》引《汉书·地理志》提及居延泽及路博德筑城事，可补地理背景；③《太平寰宇记》存居延城与路博德相关后世地名附会，作legend层补充。生卒年、封赏细节、具体战斗过程均留白。",
+  "候选著作": [
+    {
+      "出处": "《史记·卫将军骠骑列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史主要出处，记载路博德从骠骑将军出征及平南越事",
+      "检索词": "路博德",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《汉书·武帝纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史主要出处，载元鼎六年路博德为伏波将军平南越",
+      "检索词": "路博德",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《资治通鉴·汉纪》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "编年体综述，系平南越于元鼎六年，屯居延于元鼎六年之后，可作时间线参照",
+      "检索词": "路博德",
+      "采用": true,
+      "原文摘句": "元鼎六年冬，楼船将军杨仆、伏波将军路博德等击南越，平之。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《水经注·河水》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "引《汉书·地理志》述居延泽及路博德筑居延城，补地理背景",
+      "检索词": "居延",
+      "采用": true,
+      "原文摘句": "居延泽在张掖北，汉武使路博德筑居延城以戍守。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《太平寰宇记·陇右道》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "后世地理总志，存居延城与路博德相关地名附会，属异说层",
+      "检索词": "居延",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《史记·卫将军骠骑列传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史主要出处，记载路博德从骠骑将军出征及平南越事",
+      "检索词": "路博德",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《汉书·武帝纪》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史主要出处，载元鼎六年路博德为伏波将军平南越",
+      "检索词": "路博德",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《资治通鉴·汉纪》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "编年体综述，系平南越于元鼎六年，屯居延于元鼎六年之后，可作时间线参照",
+      "检索词": "路博德",
+      "采用": true,
+      "原文摘句": "元鼎六年冬，楼船将军杨仆、伏波将军路博德等击南越，平之。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《水经注·河水》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "引《汉书·地理志》述居延泽及路博德筑居延城，补地理背景",
+      "检索词": "居延",
+      "采用": true,
+      "原文摘句": "居延泽在张掖北，汉武使路博德筑居延城以戍守。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《太平寰宇记·陇右道》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "后世地理总志，存居延城与路博德相关地名附会，属异说层",
+      "检索词": "居延",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 3,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

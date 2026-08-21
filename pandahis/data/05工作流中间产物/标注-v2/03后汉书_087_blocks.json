@@ -1,0 +1,149 @@
+{
+  "work": "03后汉书",
+  "vol": "087",
+  "total_paragraphs": 72,
+  "volume_subtype": "liezhuan_hezhuan",
+  "derived_from": "03后汉书_087_primary_subjects.json",
+  "excludes": [
+    {
+      "paragraph_from": 1,
+      "paragraph_to": 1,
+      "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 2,
+      "paragraph_to": 2,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 3,
+      "paragraph_to": 4,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 9,
+      "paragraph_to": 25,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 28,
+      "paragraph_to": 28,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 32,
+      "paragraph_to": 33,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 34,
+      "paragraph_to": 35,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 36,
+      "paragraph_to": 37,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 39,
+      "paragraph_to": 56,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 60,
+      "paragraph_to": 65,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 66,
+      "paragraph_to": 66,
+      "exclude_reason": "共段总述"
+    },
+    {
+      "paragraph_from": 69,
+      "paragraph_to": 69,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 70,
+      "paragraph_to": 72,
+      "exclude_reason": "论赞"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "包咸",
+      "category": "文臣",
+      "paragraph_from": 5,
+      "paragraph_to": 8,
+      "boundary_evidence": {
+        "open_paragraph": 5,
+        "open_phrase": "包咸字子良，会稽曲阿人也。少为诸生，受业长安，师事博士右师细君，习《鲁诗》《论语",
+        "close_paragraph": 8,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P5–P8"
+      }
+    },
+    {
+      "name": "赵晔",
+      "category": "文臣",
+      "paragraph_from": 26,
+      "paragraph_to": 27,
+      "boundary_evidence": {
+        "open_paragraph": 26,
+        "open_phrase": "赵晔字长君，会稽山阴人也。少尝为县吏，奉檄迎督邮，晔耻于斯役，遂弃车马去。到犍为",
+        "close_paragraph": 27,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P26–P27"
+      }
+    },
+    {
+      "name": "卫宏",
+      "category": "文臣",
+      "paragraph_from": 29,
+      "paragraph_to": 31,
+      "boundary_evidence": {
+        "open_paragraph": 29,
+        "open_phrase": "卫宏字敬仲，东海人也。少与河南郑兴俱好古学。",
+        "close_paragraph": 31,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P29–P31"
+      }
+    },
+    {
+      "name": "丁恭",
+      "category": "文臣",
+      "paragraph_from": 38,
+      "paragraph_to": 38,
+      "boundary_evidence": {
+        "open_paragraph": 38,
+        "open_phrase": "丁恭字子然，山阳东缗人也。习《公羊严氏春秋》。恭学义精明，教授常数百人，州郡请召",
+        "close_paragraph": 38,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P38–P38"
+      }
+    },
+    {
+      "name": "何休",
+      "category": "文臣",
+      "paragraph_from": 57,
+      "paragraph_to": 59,
+      "boundary_evidence": {
+        "open_paragraph": 57,
+        "open_phrase": "何休字邵公，任城樊人也。父豹，少府。休为人质朴讷口，而雅有心思，精研《六经》，世",
+        "close_paragraph": 59,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P57–P59"
+      }
+    },
+    {
+      "name": "许慎",
+      "category": "文臣",
+      "paragraph_from": 67,
+      "paragraph_to": 68,
+      "boundary_evidence": {
+        "open_paragraph": 67,
+        "open_phrase": "许慎字叔重，汝南召陵人也。性淳笃，少博学经籍，马融常推敬之，时人为之语曰：“《五",
+        "close_paragraph": 68,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P67–P68"
+      }
+    }
+  ],
+  "multi_owner_segments": []
+}
