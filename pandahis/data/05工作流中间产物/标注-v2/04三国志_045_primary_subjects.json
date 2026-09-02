@@ -2,7 +2,7 @@
   "work": "04三国志",
   "vol": "045",
   "total_paragraphs": 68,
-  "method": "Step1b-α LLM",
+  "method": "manual_repair",
   "paragraphs": [
     {
       "paragraph": 1,
@@ -43,13 +43,13 @@
     {
       "paragraph": 8,
       "primary_subject": "廖化",
-      "disposition": "exclude",
-      "exclude_reason": "非主轴人物附传"
+      "disposition": "block"
     },
     {
       "paragraph": 9,
-      "primary_subject": "宗预",
-      "disposition": "block"
+      "primary_subject": "廖化",
+      "disposition": "block",
+      "co_owner": "宗预"
     },
     {
       "paragraph": 10,
@@ -338,7 +338,7 @@
     },
     {
       "paragraph": 67,
-      "primary_subject": "杨戏",
+      "primary_subject": "糜芳",
       "disposition": "block"
     },
     {

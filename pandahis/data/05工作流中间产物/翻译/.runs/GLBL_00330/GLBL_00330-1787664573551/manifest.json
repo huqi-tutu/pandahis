@@ -1,0 +1,17 @@
+{
+  "entry_id": "GLBL_00330",
+  "run_id": "GLBL_00330-1787664573551",
+  "directory": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/翻译/.runs/GLBL_00330/GLBL_00330-1787664573551",
+  "formal_target": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/11新标注条目翻译/GLBL_00330_屈原.json",
+  "source_fingerprint": "d70722dc9d113b42",
+  "status": "pending_recovery",
+  "current_phase": "verify",
+  "formal_promoted": false,
+  "attempts": {
+    "verify": 1
+  },
+  "next_action": "retry_full",
+  "last_error": "装配: 装配: LLM 未落盘",
+  "resume_phase": "phase5",
+  "candidate": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/翻译/.runs/GLBL_00330/GLBL_00330-1787664573551/candidate.json"
+}

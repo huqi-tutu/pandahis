@@ -12,13 +12,13 @@
     },
     {
       "paragraph_from": 6,
-      "paragraph_to": 9,
+      "paragraph_to": 16,
       "exclude_reason": "世系链"
     },
     {
       "paragraph_from": 35,
       "paragraph_to": 35,
-      "exclude_reason": "论赞"
+      "exclude_reason": "评曰"
     }
   ],
   "blocks": [
@@ -32,18 +32,6 @@
         "open_phrase": "王粲字仲宣，山阳高平人也。曾祖父龚，祖父畅，皆为汉三公。父谦，为大将军何进长史。",
         "close_paragraph": 5,
         "close_note": "Step1b-β 自 primary_subjects 合并 P2–P5"
-      }
-    },
-    {
-      "name": "王粲",
-      "category": "文臣",
-      "paragraph_from": 10,
-      "paragraph_to": 16,
-      "boundary_evidence": {
-        "open_paragraph": 10,
-        "open_phrase": "瑀以十七年卒。幹、琳、玚、桢二十二年卒。文帝书与元城令吴质曰：“昔年疾疫，亲故多",
-        "close_paragraph": 16,
-        "close_note": "Step1b-β 自 primary_subjects 合并 P10–P16"
       }
     },
     {

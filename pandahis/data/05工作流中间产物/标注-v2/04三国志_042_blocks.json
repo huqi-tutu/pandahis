@@ -12,62 +12,31 @@
     },
     {
       "paragraph_from": 2,
-      "paragraph_to": 8,
+      "paragraph_to": 6,
+      "exclude_reason": "世系链"
+    },
+    {
+      "paragraph_from": 8,
+      "paragraph_to": 13,
       "exclude_reason": "世系链"
     },
     {
       "paragraph_from": 34,
       "paragraph_to": 34,
-      "exclude_reason": "论赞"
+      "exclude_reason": "评曰"
     }
   ],
   "blocks": [
     {
-      "name": "孟光",
+      "name": "杜琼",
       "category": "文臣",
-      "paragraph_from": 9,
-      "paragraph_to": 10,
+      "paragraph_from": 7,
+      "paragraph_to": 7,
       "boundary_evidence": {
-        "open_paragraph": 9,
-        "open_phrase": "孟光字孝裕，河南洛阳人，汉太尉孟郁之族。灵帝末为讲部吏。献帝迁都长安，遂逃入蜀，",
-        "close_paragraph": 10,
-        "close_note": "Step1b-β 自 primary_subjects 合并 P9–P10"
-      }
-    },
-    {
-      "name": "来敏",
-      "category": "文臣",
-      "paragraph_from": 11,
-      "paragraph_to": 11,
-      "boundary_evidence": {
-        "open_paragraph": 11,
-        "open_phrase": "来敏字敬达，义阳新野人，来歙之后也。父艳，为汉司空。汉末大乱，敏随姊奔荆州，姊夫",
-        "close_paragraph": 11,
-        "close_note": "Step1b-β 自 primary_subjects 合并 P11–P11"
-      }
-    },
-    {
-      "name": "尹默",
-      "category": "文臣",
-      "paragraph_from": 12,
-      "paragraph_to": 12,
-      "boundary_evidence": {
-        "open_paragraph": 12,
-        "open_phrase": "尹默字思潜，梓潼涪人也。益部多贵今文而不崇章句，默知其不博，乃远游荆州，从司马德",
-        "close_paragraph": 12,
-        "close_note": "Step1b-β 自 primary_subjects 合并 P12–P12"
-      }
-    },
-    {
-      "name": "李譔",
-      "category": "文臣",
-      "paragraph_from": 13,
-      "paragraph_to": 13,
-      "boundary_evidence": {
-        "open_paragraph": 13,
-        "open_phrase": "李譔字钦仲，梓潼涪人也。父仁，字德贤，与同县尹默俱游荆州，从司马徽、宋忠等学。撰",
-        "close_paragraph": 13,
-        "close_note": "Step1b-β 自 primary_subjects 合并 P13–P13"
+        "open_paragraph": 7,
+        "open_phrase": "杜琼字伯瑜，蜀郡成都人也。少受学于任安，精究安术。刘璋时辟为从事。先主定益州，领",
+        "close_paragraph": 7,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P7–P7"
       }
     },
     {

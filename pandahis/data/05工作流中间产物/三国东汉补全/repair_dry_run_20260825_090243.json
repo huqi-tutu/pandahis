@@ -1,0 +1,100 @@
+{
+  "schema": "sg-dh-poisoned-years-repair/v1",
+  "generated_at": "2026-08-25T01:02:43.555836+00:00",
+  "poisoned_before": 564,
+  "samples": [
+    {
+      "id": "GLBL_01147",
+      "name": "何进",
+      "dynasty": "东汉",
+      "patron": "汉灵帝",
+      "years": [
+        25,
+        25
+      ],
+      "peak": 25
+    },
+    {
+      "id": "GLBL_01148",
+      "name": "先主甘皇后",
+      "dynasty": "三国",
+      "patron": "蜀昭烈帝",
+      "years": [
+        221,
+        223
+      ],
+      "peak": 223
+    },
+    {
+      "id": "GLBL_01149",
+      "name": "先主穆皇后",
+      "dynasty": "三国",
+      "patron": "蜀昭烈帝",
+      "years": [
+        221,
+        223
+      ],
+      "peak": 221
+    },
+    {
+      "id": "GLBL_01150",
+      "name": "光武郭皇后",
+      "dynasty": "东汉",
+      "patron": "汉光武帝",
+      "years": [
+        25,
+        25
+      ],
+      "peak": 25
+    },
+    {
+      "id": "GLBL_01151",
+      "name": "光烈阴皇后",
+      "dynasty": "东汉",
+      "patron": "汉光武帝",
+      "years": [
+        25,
+        25
+      ],
+      "peak": 25
+    },
+    {
+      "id": "GLBL_01152",
+      "name": "刘伉",
+      "dynasty": "东汉",
+      "patron": "汉章帝",
+      "years": [
+        25,
+        25
+      ],
+      "peak": 25
+    },
+    {
+      "id": "GLBL_01153",
+      "name": "刘党",
+      "dynasty": "东汉",
+      "patron": "汉明帝",
+      "years": [
+        25,
+        25
+      ],
+      "peak": 25
+    },
+    {
+      "id": "GLBL_01154",
+      "name": "刘寿",
+      "dynasty": "东汉",
+      "patron": "汉章帝",
+      "years": [
+        25,
+        25
+      ],
+      "peak": 25
+    }
+  ],
+  "patron_changes": [],
+  "year_stats": {},
+  "peak_stats": {},
+  "v2_patched": 0,
+  "still_poisoned": []
+}

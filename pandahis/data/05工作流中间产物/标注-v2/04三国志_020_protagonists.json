@@ -9,30 +9,25 @@
   "skip_reason": null,
   "protagonists": [
     {
+      "name": "曹昂",
+      "category": "宗戚",
+      "rationale": "丰愍王昂，随太祖南征为张绣所害，本卷武帝诸子中独立成传。"
+    },
+    {
       "name": "曹冲",
       "category": "宗戚",
       "rationale": "邓哀王冲，称象等独立长叙事；任城/陈思另卷，本卷武帝诸子中事迹最著。"
     },
     {
-      "name": "曹衮",
-      "category": "宗戚",
-      "rationale": "中山恭王衮，好学属文及削县戒敕，两段独立叙事。"
-    },
-    {
-      "name": "曹幹",
-      "category": "宗戚",
-      "rationale": "赵王幹，长传纪封徙与母环夫人事。"
-    },
-    {
       "name": "曹彪",
       "category": "宗戚",
       "rationale": "楚王彪，封徙与嘉平谋泄长叙事。"
-    },
-    {
-      "name": "曹茂",
-      "category": "宗戚",
-      "rationale": "乐陵王茂，性傲少宠等独立事迹。"
     }
   ],
-  "excluded_kinds_hint": ["卷首标题", "共段总述", "世系链", "论赞"]
+  "excluded_kinds_hint": [
+    "卷首标题",
+    "共段总述",
+    "世系链",
+    "论赞"
+  ]
 }

@@ -9,8 +9,10 @@
 | LLM 调用 | `llm/`（默认 DeepSeek，不用 OpenClaw agent 落盘） |
 | 原文母本 | `data/00原文母本/二十四史原文/` |
 | 史料原文（拆分） | `data/02二十四史拆分后/` |
-| 标注终态产出 | `data/03索引标注条目/` |
-| 翻译终态产出 | `data/04史料翻译/` |
+| 标注终态产出（现行） | `data/10新标注条目/`（含段落索引、skeleton、全局索引） |
+| 标注终态产出（v1 废弃） | `data/03索引标注条目/`（待删除；禁止新流程默认读取） |
+| 翻译终态产出（现行） | `data/11新标注条目翻译/` |
+| 翻译终态产出（v1 历史） | `data/04史料翻译/` |
 | **中间产物 / 运行态** | `data/05工作流中间产物/` |
 
 ### `05工作流中间产物` 子目录
@@ -44,12 +46,17 @@ python3 tools/openclaw-historiography/scripts/verify_workflow_roots.py
 cd tools/openclaw-historiography/historiography-translate
 python3 translate.py init
 
+# 翻译队列（生产唯一入口；含退避重试与 manifest 恢复）
+python3 scripts/run_v2_translate_queue.py
+
 # 标注编排
 cd ../historiography-orchestrator
 python3 hist.py bootstrap --work 01史记
 ```
 
 不要用 `openclaw agent`、飞书 hist-worker、或 OpenClaw skill 目录里的副本脚本跑生产。
+也不要再写 ad-hoc supervisor bash / resume_*_ch*.py 救章脚本：
+Phase1 分批、Phase2 分章均有缓存与 manifest checkpoint，队列会自动从断点续跑。
 
 ## 修改规范
 

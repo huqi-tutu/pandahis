@@ -1,0 +1,157 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01856",
+  "写作结构": "compose 以《脉经》自著文本与《伤寒论》题署为叙事主干；以皇甫谧《针灸甲乙经·序》为早期旁证，仅引述其称许王叔和撰次仲景遗论，不展开整理过程；以《四库全书总目提要》作后世接受史合段，说明脉学承前启后地位；《太平御览》《古今医统大全》等后世类书、医籍中的生平异说一律不坐实，只作引述或留白。正史相关书目如《隋书·经籍志》属正史系统，见翻译详录，不在此拓展摘句；不补充《脉经》具体脉象病证对应关系，不坐实《伤寒论》卷次条文编排细节。",
+  "候选著作": [
+    {
+      "出处": "《脉经》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "王叔和自著的脉学专著，系统归纳脉象与诊断意义，是条目核心文本。",
+      "检索词": "脉经",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《针灸甲乙经·序》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "皇甫谧在自序中提及王叔和撰次张仲景遗论，是早期同时代旁证。",
+      "检索词": "甲乙经",
+      "采用": true,
+      "原文摘句": "近世太医令王叔和撰次仲景遗论甚精，指事施用。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《伤寒论》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "传世《伤寒论》题“汉张仲景述，晋王叔和撰次”，是王叔和整理仲景伤寒著作的流传载体。",
+      "检索词": "伤寒论",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《太平御览·方术部》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋代类书辑存王叔和生平资料及早期医书佚文，后世相关异说多由此层转引。",
+      "检索词": "王叔和",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《四库全书总目提要·医家类·脉经》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "官修提要著录《脉经》并评价其承前启后，后世医家多所取资，可证王叔和医学史地位。",
+      "检索词": "脉经",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《古今医统大全》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "明代医家传略收录王叔和，后世以“脉学鼻祖/脉学之宗”追尊的概括与此类医籍相关。",
+      "检索词": "王叔和",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《脉经》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "王叔和自著的脉学专著，系统归纳脉象与诊断意义，是条目核心文本。",
+      "检索词": "脉经",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《针灸甲乙经·序》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "皇甫谧在自序中提及王叔和撰次张仲景遗论，是早期同时代旁证。",
+      "检索词": "甲乙经",
+      "采用": true,
+      "原文摘句": "近世太医令王叔和撰次仲景遗论甚精，指事施用。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《伤寒论》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "传世《伤寒论》题“汉张仲景述，晋王叔和撰次”，是王叔和整理仲景伤寒著作的流传载体。",
+      "检索词": "伤寒论",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《太平御览·方术部》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋代类书辑存王叔和生平资料及早期医书佚文，后世相关异说多由此层转引。",
+      "检索词": "王叔和",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《四库全书总目提要·医家类·脉经》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "官修提要著录《脉经》并评价其承前启后，后世医家多所取资，可证王叔和医学史地位。",
+      "检索词": "脉经",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《古今医统大全》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "明代医家传略收录王叔和，后世以“脉学鼻祖/脉学之宗”追尊的概括与此类医籍相关。",
+      "检索词": "王叔和",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 4,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

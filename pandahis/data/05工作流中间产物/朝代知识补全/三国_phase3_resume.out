@@ -1,0 +1,344 @@
+===== 2026-08-24T12:25:54Z RESUME START =====
+待补详情: 16 条
+  · GLBL_01783 司马懿平辽东
+  · GLBL_01784 高平陵之变
+  · GLBL_01785 二宫之争
+  · GLBL_01786 淮南三叛
+  · GLBL_01787 曹髦讨司马昭
+  · GLBL_01788 魏灭蜀
+  · GLBL_01789 钟会之乱
+  · GLBL_01790 曹魏禅晋
+  · GLBL_01791 晋灭吴
+  · GLBL_01792 姜维北伐
+  · GLBL_01793 东兴之战
+  · GLBL_01794 新城之战
+  · GLBL_01795 西陵之战
+  · GLBL_01796 九品中正制
+  · GLBL_01797 曹魏中书省制度
+  · GLBL_01855 皇甫谧
+===== 2026-08-24T12:25:54Z START compose-pending (resume) =====
+模块: historiography-dynasty-knowledge | 朝代: 三国
+LLM: DeepSeek (deepseek-v4-flash)
+📝 compose-pending：16 条
+  [1/16] compose-detail GLBL_01783 司马懿平辽东
+🤖 bibliography-plan GLBL_01783 …
+  📄 prompt 快照: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/logs/prompts/GLBL_01783_bibliography-plan.txt
+  ✅ 书目 plan GLBL_01783.plan.json（候选 6，采用 1）
+📥 fetch-snippets GLBL_01783 …
+  ✅ A=0 B=1 overall=B
+  📄 prompt 快照: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/logs/prompts/GLBL_01783_compose-detail.txt
+🤖 compose-detail GLBL_01783 司马懿平辽东 (temp=0.3) …
+  ✅ 详情 GLBL_01783_司马懿平辽东.json (785 字)
+✅ verify-detail GLBL_01783 通过
+🎯 coverage-check GLBL_01783 …
+✅ coverage-check GLBL_01783 通过 → GLBL_01783_coverage.json
+  [2/16] compose-detail GLBL_01784 高平陵之变
+📌 无锚点，先 anchor-research GLBL_01784 …
+🤖 anchor-research GLBL_01784 …
+  📄 prompt 快照: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/logs/prompts/GLBL_01784_anchor-research.txt
+  ✅ 锚点 GLBL_01784.json（claims=7）
+🤖 bibliography-plan GLBL_01784 …
+  📄 prompt 快照: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/logs/prompts/GLBL_01784_bibliography-plan.txt
+  ✅ 书目 plan GLBL_01784.plan.json（候选 6，采用 2）
+📥 fetch-snippets GLBL_01784 …
+  ✅ A=0 B=2 overall=B
+  📄 prompt 快照: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/logs/prompts/GLBL_01784_compose-detail.txt
+🤖 compose-detail GLBL_01784 高平陵之变 (temp=0.3) …
+  ✅ 详情 GLBL_01784_高平陵之变.json (907 字)
+✅ verify-detail GLBL_01784 通过
+🎯 coverage-check GLBL_01784 …
+✅ coverage-check GLBL_01784 通过 → GLBL_01784_coverage.json
+  [3/16] compose-detail GLBL_01785 二宫之争
+📌 无锚点，先 anchor-research GLBL_01785 …
+🤖 anchor-research GLBL_01785 …
+  📄 prompt 快照: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/logs/prompts/GLBL_01785_anchor-research.txt
+  ✅ 锚点 GLBL_01785.json（claims=6）
+🤖 bibliography-plan GLBL_01785 …
+  📄 prompt 快照: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/logs/prompts/GLBL_01785_bibliography-plan.txt
+  ✅ 书目 plan GLBL_01785.plan.json（候选 6，采用 2）
+📥 fetch-snippets GLBL_01785 …
+  ✅ A=0 B=2 overall=B
+  📄 prompt 快照: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/logs/prompts/GLBL_01785_compose-detail.txt
+🤖 compose-detail GLBL_01785 二宫之争 (temp=0.3) …
+  ✅ 详情 GLBL_01785_二宫之争.json (783 字)
+✅ verify-detail GLBL_01785 通过
+🎯 coverage-check GLBL_01785 …
+✅ coverage-check GLBL_01785 通过 → GLBL_01785_coverage.json
+  [4/16] compose-detail GLBL_01786 淮南三叛
+📌 无锚点，先 anchor-research GLBL_01786 …
+🤖 anchor-research GLBL_01786 …
+  📄 prompt 快照: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/logs/prompts/GLBL_01786_anchor-research.txt
+  ✅ 锚点 GLBL_01786.json（claims=6）
+🤖 bibliography-plan GLBL_01786 …
+  📄 prompt 快照: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/logs/prompts/GLBL_01786_bibliography-plan.txt
+  ✅ 书目 plan GLBL_01786.plan.json（候选 13，采用 1）
+📥 fetch-snippets GLBL_01786 …
+  ✅ A=0 B=1 overall=B
+  📄 prompt 快照: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/logs/prompts/GLBL_01786_compose-detail.txt
+🤖 compose-detail GLBL_01786 淮南三叛 (temp=0.3) …
+  ✅ 详情 GLBL_01786_淮南三叛.json (783 字)
+✅ verify-detail GLBL_01786 通过
+🎯 coverage-check GLBL_01786 …
+✅ coverage-check GLBL_01786 通过 → GLBL_01786_coverage.json
+  [5/16] compose-detail GLBL_01787 曹髦讨司马昭
+📌 无锚点，先 anchor-research GLBL_01787 …
+🤖 anchor-research GLBL_01787 …
+  📄 prompt 快照: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/logs/prompts/GLBL_01787_anchor-research.txt
+  ✅ 锚点 GLBL_01787.json（claims=6）
+🤖 bibliography-plan GLBL_01787 …
+  📄 prompt 快照: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/logs/prompts/GLBL_01787_bibliography-plan.txt
+  ✅ 书目 plan GLBL_01787.plan.json（候选 6，采用 0）
+📥 fetch-snippets GLBL_01787 …
+  ✅ A=0 B=0 overall=C
+  📄 prompt 快照: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/logs/prompts/GLBL_01787_compose-detail.txt
+🤖 compose-detail GLBL_01787 曹髦讨司马昭 (temp=0.3) …
+  ✅ 详情 GLBL_01787_曹髦讨司马昭.json (760 字)
+✅ verify-detail GLBL_01787 通过
+🎯 coverage-check GLBL_01787 …
+✅ coverage-check GLBL_01787 通过 → GLBL_01787_coverage.json
+  [6/16] compose-detail GLBL_01788 魏灭蜀
+📌 无锚点，先 anchor-research GLBL_01788 …
+🤖 anchor-research GLBL_01788 …
+  📄 prompt 快照: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/logs/prompts/GLBL_01788_anchor-research.txt
+  ✅ 锚点 GLBL_01788.json（claims=7）
+🤖 bibliography-plan GLBL_01788 …
+  📄 prompt 快照: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/logs/prompts/GLBL_01788_bibliography-plan.txt
+  ✅ 书目 plan GLBL_01788.plan.json（候选 9，采用 1）
+📥 fetch-snippets GLBL_01788 …
+  ✅ A=0 B=1 overall=B
+  📄 prompt 快照: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/logs/prompts/GLBL_01788_compose-detail.txt
+🤖 compose-detail GLBL_01788 魏灭蜀 (temp=0.3) …
+  ✅ 详情 GLBL_01788_魏灭蜀.json (996 字)
+✅ verify-detail GLBL_01788 通过
+🎯 coverage-check GLBL_01788 …
+✅ coverage-check GLBL_01788 通过 → GLBL_01788_coverage.json
+  [7/16] compose-detail GLBL_01789 钟会之乱
+📌 无锚点，先 anchor-research GLBL_01789 …
+🤖 anchor-research GLBL_01789 …
+  📄 prompt 快照: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/logs/prompts/GLBL_01789_anchor-research.txt
+  ✅ 锚点 GLBL_01789.json（claims=7）
+🤖 bibliography-plan GLBL_01789 …
+  📄 prompt 快照: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/logs/prompts/GLBL_01789_bibliography-plan.txt
+  ✅ 书目 plan GLBL_01789.plan.json（候选 7，采用 1）
+📥 fetch-snippets GLBL_01789 …
+  ✅ A=0 B=1 overall=B
+  📄 prompt 快照: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/logs/prompts/GLBL_01789_compose-detail.txt
+🤖 compose-detail GLBL_01789 钟会之乱 (temp=0.3) …
+  ✅ 详情 GLBL_01789_钟会之乱.json (952 字)
+✅ verify-detail GLBL_01789 通过
+🎯 coverage-check GLBL_01789 …
+✅ coverage-check GLBL_01789 通过 → GLBL_01789_coverage.json
+  [8/16] compose-detail GLBL_01790 曹魏禅晋
+📌 无锚点，先 anchor-research GLBL_01790 …
+🤖 anchor-research GLBL_01790 …
+  📄 prompt 快照: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/logs/prompts/GLBL_01790_anchor-research.txt
+  ✅ 锚点 GLBL_01790.json（claims=6）
+🤖 bibliography-plan GLBL_01790 …
+  📄 prompt 快照: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/logs/prompts/GLBL_01790_bibliography-plan.txt
+  ✅ 书目 plan GLBL_01790.plan.json（候选 6，采用 3）
+📥 fetch-snippets GLBL_01790 …
+  ✅ A=0 B=3 overall=B
+  📄 prompt 快照: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/logs/prompts/GLBL_01790_compose-detail.txt
+🤖 compose-detail GLBL_01790 曹魏禅晋 (temp=0.3) …
+  ✅ 详情 GLBL_01790_曹魏禅晋.json (855 字)
+✅ verify-detail GLBL_01790 通过
+🎯 coverage-check GLBL_01790 …
+✅ coverage-check GLBL_01790 通过 → GLBL_01790_coverage.json
+  [9/16] compose-detail GLBL_01791 晋灭吴
+📌 无锚点，先 anchor-research GLBL_01791 …
+🤖 anchor-research GLBL_01791 …
+  📄 prompt 快照: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/logs/prompts/GLBL_01791_anchor-research.txt
+  ✅ 锚点 GLBL_01791.json（claims=6）
+🤖 bibliography-plan GLBL_01791 …
+  📄 prompt 快照: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/logs/prompts/GLBL_01791_bibliography-plan.txt
+  ✅ 书目 plan GLBL_01791.plan.json（候选 8，采用 2）
+📥 fetch-snippets GLBL_01791 …
+  ✅ A=0 B=2 overall=B
+  📄 prompt 快照: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/logs/prompts/GLBL_01791_compose-detail.txt
+🤖 compose-detail GLBL_01791 晋灭吴 (temp=0.3) …
+  ✅ 详情 GLBL_01791_晋灭吴.json (1249 字)
+✅ verify-detail GLBL_01791 通过
+🎯 coverage-check GLBL_01791 …
+✅ coverage-check GLBL_01791 通过 → GLBL_01791_coverage.json
+  [10/16] compose-detail GLBL_01792 姜维北伐
+📌 无锚点，先 anchor-research GLBL_01792 …
+🤖 anchor-research GLBL_01792 …
+  📄 prompt 快照: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/logs/prompts/GLBL_01792_anchor-research.txt
+  ✅ 锚点 GLBL_01792.json（claims=6）
+🤖 bibliography-plan GLBL_01792 …
+  📄 prompt 快照: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/logs/prompts/GLBL_01792_bibliography-plan.txt
+  ✅ 书目 plan GLBL_01792.plan.json（候选 8，采用 4）
+📥 fetch-snippets GLBL_01792 …
+  ✅ A=0 B=4 overall=B
+  📄 prompt 快照: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/logs/prompts/GLBL_01792_compose-detail.txt
+🤖 compose-detail GLBL_01792 姜维北伐 (temp=0.3) …
+  ✅ 详情 GLBL_01792_姜维北伐.json (866 字)
+✅ verify-detail GLBL_01792 通过
+🎯 coverage-check GLBL_01792 …
+✅ coverage-check GLBL_01792 通过 → GLBL_01792_coverage.json
+  [11/16] compose-detail GLBL_01793 东兴之战
+📌 无锚点，先 anchor-research GLBL_01793 …
+🤖 anchor-research GLBL_01793 …
+  📄 prompt 快照: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/logs/prompts/GLBL_01793_anchor-research.txt
+  ✅ 锚点 GLBL_01793.json（claims=7）
+🤖 bibliography-plan GLBL_01793 …
+  📄 prompt 快照: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/logs/prompts/GLBL_01793_bibliography-plan.txt
+  ✅ 书目 plan GLBL_01793.plan.json（候选 5，采用 2）
+📥 fetch-snippets GLBL_01793 …
+  ✅ A=0 B=2 overall=B
+  📄 prompt 快照: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/logs/prompts/GLBL_01793_compose-detail.txt
+🤖 compose-detail GLBL_01793 东兴之战 (temp=0.3) …
+  ✅ 详情 GLBL_01793_东兴之战.json (610 字)
+✅ verify-detail GLBL_01793 通过
+🎯 coverage-check GLBL_01793 …
+✅ coverage-check GLBL_01793 通过 → GLBL_01793_coverage.json
+  [12/16] compose-detail GLBL_01794 新城之战
+📌 无锚点，先 anchor-research GLBL_01794 …
+🤖 anchor-research GLBL_01794 …
+  📄 prompt 快照: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/logs/prompts/GLBL_01794_anchor-research.txt
+  ✅ 锚点 GLBL_01794.json（claims=6）
+🤖 bibliography-plan GLBL_01794 …
+  📄 prompt 快照: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/logs/prompts/GLBL_01794_bibliography-plan.txt
+  ✅ 书目 plan GLBL_01794.plan.json（候选 3，采用 1）
+📥 fetch-snippets GLBL_01794 …
+  ✅ A=0 B=1 overall=B
+  📄 prompt 快照: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/logs/prompts/GLBL_01794_compose-detail.txt
+🤖 compose-detail GLBL_01794 新城之战 (temp=0.3) …
+  ✅ 详情 GLBL_01794_新城之战.json (468 字)
+✅ verify-detail GLBL_01794 通过
+🎯 coverage-check GLBL_01794 …
+✅ coverage-check GLBL_01794 通过 → GLBL_01794_coverage.json
+  [13/16] compose-detail GLBL_01795 西陵之战
+🤖 bibliography-plan GLBL_01795 …
+  📄 prompt 快照: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/logs/prompts/GLBL_01795_bibliography-plan.txt
+  ✅ 书目 plan GLBL_01795.plan.json（候选 4，采用 1）
+📥 fetch-snippets GLBL_01795 …
+  ✅ A=0 B=1 overall=B
+  📄 prompt 快照: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/logs/prompts/GLBL_01795_compose-detail.txt
+🤖 compose-detail GLBL_01795 西陵之战 (temp=0.3) …
+  ✅ 详情 GLBL_01795_西陵之战.json (864 字)
+✅ verify-detail GLBL_01795 通过
+🎯 coverage-check GLBL_01795 …
+✅ coverage-check GLBL_01795 通过 → GLBL_01795_coverage.json
+  [14/16] compose-detail GLBL_01796 九品中正制
+🤖 bibliography-plan GLBL_01796 …
+  📄 prompt 快照: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/logs/prompts/GLBL_01796_bibliography-plan.txt
+  ✅ 书目 plan GLBL_01796.plan.json（候选 5，采用 1）
+📥 fetch-snippets GLBL_01796 …
+  ✅ A=0 B=1 overall=B
+  📄 prompt 快照: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/logs/prompts/GLBL_01796_compose-detail.txt
+🤖 compose-detail GLBL_01796 九品中正制 (temp=0.2) …
+  ✅ 详情 GLBL_01796_九品中正制.json (777 字)
+✅ verify-detail GLBL_01796 通过
+🎯 coverage-check GLBL_01796 …
+✅ coverage-check GLBL_01796 通过 → GLBL_01796_coverage.json
+  [15/16] compose-detail GLBL_01797 曹魏中书省制度
+📌 无锚点，先 anchor-research GLBL_01797 …
+🤖 anchor-research GLBL_01797 …
+  📄 prompt 快照: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/logs/prompts/GLBL_01797_anchor-research.txt
+  ✅ 锚点 GLBL_01797.json（claims=6）
+🤖 bibliography-plan GLBL_01797 …
+  📄 prompt 快照: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/logs/prompts/GLBL_01797_bibliography-plan.txt
+  ✅ 书目 plan GLBL_01797.plan.json（候选 6，采用 1）
+📥 fetch-snippets GLBL_01797 …
+  ✅ A=0 B=1 overall=B
+  📄 prompt 快照: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/logs/prompts/GLBL_01797_compose-detail.txt
+🤖 compose-detail GLBL_01797 曹魏中书省制度 (temp=0.2) …
+  ✅ 详情 GLBL_01797_曹魏中书省制度.json (1105 字)
+✅ verify-detail GLBL_01797 通过
+🎯 coverage-check GLBL_01797 …
+✅ coverage-check GLBL_01797 通过 → GLBL_01797_coverage.json
+  [16/16] compose-detail GLBL_01855 皇甫谧
+🤖 bibliography-plan GLBL_01855 …
+  📄 prompt 快照: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/logs/prompts/GLBL_01855_bibliography-plan.txt
+  ✅ 书目 plan GLBL_01855.plan.json（候选 8，采用 4）
+📥 fetch-snippets GLBL_01855 …
+  ✅ A=0 B=4 overall=B
+  📄 prompt 快照: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/logs/prompts/GLBL_01855_compose-detail.txt
+🤖 compose-detail GLBL_01855 皇甫谧 (temp=0.3) …
+  ✅ 详情 GLBL_01855_皇甫谧.json (728 字)
+✅ verify-detail GLBL_01855 通过
+🎯 coverage-check GLBL_01855 …
+✅ coverage-check GLBL_01855 通过 → GLBL_01855_coverage.json
+✅ compose-pending 完成（16 条）
+📋 遗漏审阅提示词 → /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/三国_遗漏审阅提示词.md
+===== 2026-08-24T13:46:06Z DONE  compose-pending =====
+===== 2026-08-24T13:46:06Z START gate =====
+模块: historiography-dynasty-knowledge | 朝代: 三国
+LLM: DeepSeek (deepseek-v4-flash)
+  ⚠️ [GLBL_01776] 未跑 review-detail（建议 qa-detail）
+  ⚠️ [GLBL_01777] 未跑 review-detail（建议 qa-detail）
+  ⚠️ [GLBL_01778] 未跑 review-detail（建议 qa-detail）
+  ⚠️ [GLBL_01779] 未跑 review-detail（建议 qa-detail）
+  ⚠️ [GLBL_01780] 未跑 review-detail（建议 qa-detail）
+  ⚠️ [GLBL_01781] 未跑 review-detail（建议 qa-detail）
+  ⚠️ [GLBL_01782] 未跑 review-detail（建议 qa-detail）
+  ⚠️ [GLBL_01783] 未跑 review-detail（建议 qa-detail）
+  ⚠️ [GLBL_01784] 未跑 review-detail（建议 qa-detail）
+  ⚠️ [GLBL_01785] 未跑 review-detail（建议 qa-detail）
+  ⚠️ [GLBL_01786] 未跑 review-detail（建议 qa-detail）
+  ⚠️ [GLBL_01787] 未跑 review-detail（建议 qa-detail）
+  ⚠️ [GLBL_01788] verify/missing_source_quotes: 正文引用典籍 5 处但无「」原文摘引；经典描述须「原文」+译述
+  ⚠️ [GLBL_01788] 未跑 review-detail（建议 qa-detail）
+  ⚠️ [GLBL_01789] 未跑 review-detail（建议 qa-detail）
+  ⚠️ [GLBL_01790] 未跑 review-detail（建议 qa-detail）
+  ⚠️ [GLBL_01791] 未跑 review-detail（建议 qa-detail）
+  ⚠️ [GLBL_01792] verify/legend_ratio: 传说层篇幅约 34% > 参考上限 20%（仅 warn，不阻断）
+  ⚠️ [GLBL_01792] 未跑 review-detail（建议 qa-detail）
+  ⚠️ [GLBL_01793] 未跑 review-detail（建议 qa-detail）
+  ⚠️ [GLBL_01794] 未跑 review-detail（建议 qa-detail）
+  ⚠️ [GLBL_01795] 未跑 review-detail（建议 qa-detail）
+  ⚠️ [GLBL_01796] 未跑 review-detail（建议 qa-detail）
+  ⚠️ [GLBL_01797] 未跑 review-detail（建议 qa-detail）
+  ⚠️ [GLBL_01798] 未跑 review-detail（建议 qa-detail）
+  ⚠️ [GLBL_01799] 未跑 review-detail（建议 qa-detail）
+  ⚠️ [GLBL_01800] 未跑 review-detail（建议 qa-detail）
+  ⚠️ [GLBL_01801] 未跑 review-detail（建议 qa-detail）
+  ⚠️ [GLBL_01802] verify/missing_source_quotes: 正文引用典籍 7 处但无「」原文摘引；经典描述须「原文」+译述
+  ⚠️ [GLBL_01802] 未跑 review-detail（建议 qa-detail）
+  ⚠️ [GLBL_01803] 未跑 review-detail（建议 qa-detail）
+  ⚠️ [GLBL_01804] 未跑 review-detail（建议 qa-detail）
+  ⚠️ [GLBL_01805] 未跑 review-detail（建议 qa-detail）
+  ⚠️ [GLBL_01806] 未跑 review-detail（建议 qa-detail）
+  ⚠️ [GLBL_01807] verify/missing_source_quotes: 正文引用典籍 12 处但无「」原文摘引；经典描述须「原文」+译述
+  ⚠️ [GLBL_01807] 未跑 review-detail（建议 qa-detail）
+  ⚠️ [GLBL_01808] 未跑 review-detail（建议 qa-detail）
+  ⚠️ [GLBL_01809] 未跑 review-detail（建议 qa-detail）
+  ⚠️ [GLBL_01810] 未跑 review-detail（建议 qa-detail）
+  ⚠️ [GLBL_01811] 未跑 review-detail（建议 qa-detail）
+  ⚠️ [GLBL_01812] 未跑 review-detail（建议 qa-detail）
+  ⚠️ [GLBL_01813] 未跑 review-detail（建议 qa-detail）
+  ⚠️ [GLBL_01814] 未跑 review-detail（建议 qa-detail）
+  ⚠️ [GLBL_01815] 未跑 review-detail（建议 qa-detail）
+  ⚠️ [GLBL_01816] 未跑 review-detail（建议 qa-detail）
+❌ gate 问题 49 项：
+  - [GLBL_01776] 主要史料出处 类型错误: 期望 list, 实际 str (值: 《三国志·魏书·文帝纪》)
+  - [GLBL_01777] 主要史料出处 类型错误: 期望 list, 实际 str (值: 《三国志·吴书·陆逊传》《蜀书·先主传》)
+  - [GLBL_01778] 主要史料出处 类型错误: 期望 list, 实际 str (值: 《三国志·蜀书·邓芝传》)
+  - [GLBL_01779] 主要史料出处 类型错误: 期望 list, 实际 str (值: 《三国志·蜀书·诸葛亮传》)
+  - [GLBL_01780] 主要史料出处 类型错误: 期望 list, 实际 str (值: 《三国志·蜀书·诸葛亮传》)
+  - [GLBL_01781] 主要史料出处 类型错误: 期望 list, 实际 str (值: 《三国志·蜀书·诸葛亮传》)
+  - [GLBL_01782] 主要史料出处 类型错误: 期望 list, 实际 str (值: 《三国志·吴书·陆逊传》)
+  - [GLBL_01783] 主要史料出处 类型错误: 期望 list, 实际 str (值: 《晋书·宣帝纪》《三国志·魏书·公孙度传》)
+  - [GLBL_01784] 主要史料出处 类型错误: 期望 list, 实际 str (值: 《晋书·宣帝纪》《三国志·魏书·曹爽传》)
+  - [GLBL_01785] 主要史料出处 类型错误: 期望 list, 实际 str (值: 《三国志·吴书·吴主五子传》)
+  - [GLBL_01786] 主要史料出处 类型错误: 期望 list, 实际 str (值: 《三国志·魏书·王毌丘诸葛邓钟传》)
+  - [GLBL_01787] 主要史料出处 类型错误: 期望 list, 实际 str (值: 《三国志·魏书·三少帝纪》)
+  - [GLBL_01788] 主要史料出处 类型错误: 期望 list, 实际 str (值: 《三国志·魏书·钟会传》《蜀书·后主传》)
+  - [GLBL_01789] 主要史料出处 类型错误: 期望 list, 实际 str (值: 《三国志·魏书·钟会传》)
+  - [GLBL_01790] 主要史料出处 类型错误: 期望 list, 实际 str (值: 《晋书·武帝纪》)
+  - [GLBL_01791] 主要史料出处 类型错误: 期望 list, 实际 str (值: 《晋书·武帝纪》《三国志·吴书·三嗣主传》)
+  - [GLBL_01792] 主要史料出处 类型错误: 期望 list, 实际 str (值: 《三国志·蜀书·姜维传》)
+  - [GLBL_01793] 主要史料出处 类型错误: 期望 list, 实际 str (值: 《三国志·吴书·丁奉传》)
+  - [GLBL_01794] 主要史料出处 类型错误: 期望 list, 实际 str (值: 《三国志·吴书·诸葛恪传》)
+  - [GLBL_01795] 主要史料出处 类型错误: 期望 list, 实际 str (值: 《三国志·吴书·陆逊传附》)
+  - [GLBL_01796] 主要史料出处 类型错误: 期望 list, 实际 str (值: 《三国志·魏书·陈群传》)
+  - [GLBL_01797] 主要史料出处 类型错误: 期望 list, 实际 str (值: 《晋书·职官志》)
+  - [GLBL_01798] 主要史料出处 类型错误: 期望 list, 实际 str (值: 《三国志·魏书》裴注引《魏书》)
+  - [GLBL_01799] 主要史料出处 类型错误: 期望 list, 实际 str (值: 《晋书·职官志》)
+  - [GLBL_01800] 主要史料出处 类型错误: 期望 list, 实际 str (值: 《三国志·吴书·吕蒙传》)
+  - [GLBL_01801] 主要史料出处 类型错误: 期望 list, 实际 str (值: 《晋书·刑法志》)
+  - [GLBL_01802] 主要史料出处 类型错误: 期望 list, 实际 str (值: 《晋书·刑法志》)
+  - [GLBL_01803] 主要史料出处 类型错误: 期望 list, 实际 str (值: 《三国志·魏书·邓艾传》)
+  - [GLBL_01804] 主要史料出处 类型错误: 期望 list, 实际 str (值: 《三国志·吴书》)
+  - [GLBL_01805] 主要史料出处 类型错误: 期望 list, 实际 str (值: 《晋书·刑法志》)

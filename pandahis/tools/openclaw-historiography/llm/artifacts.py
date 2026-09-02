@@ -227,6 +227,16 @@ def extract_translate_payload(message: str, text: str) -> Optional[Dict[str, Any
         text.strip(),
         flags=re.DOTALL | re.IGNORECASE,
     ).strip()
+    # 引入 / 结尾：短文可直接包装（JSON 已由 extract_best_json 优先处理）
+    is_intro = "前置引入" in message and "篇末结尾" not in message
+    is_ending = "篇末结尾" in message or (
+        "结尾" in message and "前置引入" in message and "终稿装配" in message
+    )
+    if is_intro and 40 <= len(body) <= 400 and "{" not in body[:20]:
+        return {"史略ID": entry_id, "前置引入": body}
+    if is_ending and 40 <= len(body) <= 500 and "{" not in body[:20]:
+        # 兼容旧「总结」字段名
+        return {"史略ID": entry_id, "结尾": body}
     if len(body) < 200:
         return None
     is_phase2 = "Phase2" in message or "补全成稿" in message
@@ -410,6 +420,16 @@ def extract_best_json(text: str) -> Optional[Any]:
     # 翻译正文 / 母本顺译
     for obj in objects:
         if isinstance(obj, dict) and ("母本顺译" in obj or "翻译详情" in obj):
+            return obj
+
+    # 引入 / 结尾 / 定向补段（仅短字段，无整篇正文）
+    for obj in objects:
+        if isinstance(obj, dict) and (
+            "前置引入" in obj
+            or "结尾" in obj
+            or "总结" in obj
+            or "插入段" in obj
+        ):
             return obj
 
     # source plan：含清单或长文决策包（外部补全/参考著作等）

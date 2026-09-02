@@ -1,0 +1,155 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01778",
+  "写作结构": "正史叙述见翻译详录（《三国志·蜀书·邓芝传》），拓展文不摘正史句。建议以《资治通鉴·魏纪二》作编年背景合段，交代刘备新丧、诸葛亮主政并遣使修好的时间框架；以《华阳国志·刘后主志》补蜀汉侧政情；以《江表传》等裴注辑佚补孙吴侧权衡与通使往来。具体谈判言辞、心理、盟约条款及曹魏反应按 anchor 留白；不采口传附会。",
+  "候选著作": [
+    {
+      "出处": "《三国志·蜀书·邓芝传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "条目索引所据正史，记邓芝使吴、孙权绝魏连蜀的始末",
+      "检索词": "邓芝",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《资治通鉴·卷七十·魏纪二》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "以编年体系年叙述223年吴蜀复盟，可补纪传体所缺的时间节点与过程框架",
+      "检索词": "邓芝",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《华阳国志·刘后主志》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "蜀汉故地地方史志，可补诸葛亮主政后遣使修好的蜀汉侧背景及后续通使",
+      "检索词": "邓芝",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《江表传》（《三国志》裴松之注引）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "孙吴一方史书佚文，存录孙权在魏蜀之间的权衡与吴方对复盟的态度",
+      "检索词": "邓芝",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《吴录》（《三国志》裴松之注引）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "孙吴史佚文，可备吴蜀通使与孙权绝魏连蜀的旁证",
+      "检索词": "吴录",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《汉晋春秋》（《三国志》裴松之注引）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "习凿齿杂史佚文，间载蜀汉与孙吴关系，可备异说层比对",
+      "检索词": "汉晋春秋",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《三国志·蜀书·邓芝传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "条目索引所据正史，记邓芝使吴、孙权绝魏连蜀的始末",
+      "检索词": "邓芝",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《华阳国志·刘后主志》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "蜀汉故地地方史志，可补诸葛亮主政后遣使修好的蜀汉侧背景及后续通使",
+      "检索词": "邓芝",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《江表传》（《三国志》裴松之注引）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "孙吴一方史书佚文，存录孙权在魏蜀之间的权衡与吴方对复盟的态度",
+      "检索词": "邓芝",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《吴录》（《三国志》裴松之注引）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "孙吴史佚文，可备吴蜀通使与孙权绝魏连蜀的旁证",
+      "检索词": "吴录",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《汉晋春秋》（《三国志》裴松之注引）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "习凿齿杂史佚文，间载蜀汉与孙吴关系，可备异说层比对",
+      "检索词": "汉晋春秋",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《资治通鉴·卷七十·魏纪二》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "以编年体系年叙述223年吴蜀复盟，可补纪传体所缺的时间节点与过程框架",
+      "检索词": "邓芝",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 3,
+    "C_excluded": 3,
+    "overall": "B"
+  }
+}

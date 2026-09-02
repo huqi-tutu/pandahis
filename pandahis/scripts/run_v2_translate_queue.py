@@ -6,8 +6,10 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import subprocess
 import sys
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -24,6 +26,9 @@ TRANSLATE_WORK = WORK / "翻译"
 
 sys.path.insert(0, str(ROOT / "scripts"))
 from translate_queue_helpers import (  # noqa: E402
+    TranslateRunSpec,
+    build_translate_run,
+    is_api_transient_error,
     is_translate_verify_done,
     pick_retry_mode,
 )
@@ -77,16 +82,13 @@ def remove_invalid_11(eid: str) -> int:
     return removed
 
 
-def run_translate(eid: str, name: str, log: Path) -> tuple[bool, str, str]:
-    mode = pick_retry_mode(eid, entry_name=name)
-    remove_invalid_11(eid)
-
+def _build_cmd(spec: TranslateRunSpec, eid: str) -> list[str]:
     base = [
         sys.executable,
         str(TRANSLATE / "translate.py"),
     ]
-    if mode == "repair":
-        cmd = base + [
+    if spec.mode == "repair":
+        return base + [
             "repair",
             "--id",
             eid,
@@ -96,40 +98,74 @@ def run_translate(eid: str, name: str, log: Path) -> tuple[bool, str, str]:
             "--output-dir",
             str(OUT_11),
         ]
-    elif mode == "phase2":
-        cmd = base + [
-            "run-one",
-            "--id",
-            eid,
-            "--index",
-            str(V2_INDEX),
-            "--output-dir",
-            str(OUT_11),
-            "--from-phase",
-            "phase2",
-        ]
-    else:
-        cmd = base + [
-            "run-one",
-            "--id",
-            eid,
-            "--index",
-            str(V2_INDEX),
-            "--output-dir",
-            str(OUT_11),
-        ]
+    cmd = base + [
+        "run-one",
+        "--id",
+        eid,
+        "--index",
+        str(V2_INDEX),
+        "--output-dir",
+        str(OUT_11),
+    ]
+    cmd.extend(list(spec.cli_args))
+    return cmd
 
-    with log.open("a", encoding="utf-8") as fh:
-        fh.write(
-            f"\n===== {datetime.now(timezone.utc).isoformat()} translate {eid} "
-            f"({name}) mode={mode} =====\n"
-        )
-        fh.flush()
-        proc = subprocess.run(cmd, cwd=str(TRANSLATE), stdout=fh, stderr=subprocess.STDOUT)
 
-    if is_translate_verify_done(eid, entry_name=name):
-        return True, "ok", mode
-    return False, f"exit={proc.returncode}", mode
+def _read_log_tail(log: Path, *, max_bytes: int = 8000) -> str:
+    if not log.is_file():
+        return ""
+    try:
+        data = log.read_bytes()
+        if len(data) > max_bytes:
+            data = data[-max_bytes:]
+        return data.decode("utf-8", errors="replace")
+    except OSError:
+        return ""
+
+
+def run_translate(
+    eid: str,
+    name: str,
+    log: Path,
+    *,
+    entry_retries: int,
+    api_backoff_sec: int,
+) -> tuple[bool, str, str]:
+    remove_invalid_11(eid)
+    last_mode = "full"
+    last_msg = ""
+
+    for attempt in range(1, max(1, entry_retries) + 1):
+        spec = build_translate_run(eid, entry_name=name)
+        last_mode = spec.label()
+        cmd = _build_cmd(spec, eid)
+
+        with log.open("a", encoding="utf-8") as fh:
+            fh.write(
+                f"\n===== {datetime.now(timezone.utc).isoformat()} translate {eid} "
+                f"({name}) mode={last_mode} attempt={attempt}/{entry_retries} "
+                f"reason={spec.reason} =====\n"
+            )
+            fh.flush()
+            proc = subprocess.run(cmd, cwd=str(TRANSLATE), stdout=fh, stderr=subprocess.STDOUT)
+
+        if is_translate_verify_done(eid, entry_name=name):
+            return True, "ok", last_mode
+
+        last_msg = f"exit={proc.returncode}"
+        tail = _read_log_tail(log)
+        if attempt < entry_retries and is_api_transient_error(tail):
+            wait = api_backoff_sec * attempt
+            print(
+                f"  ⏳ {eid} API/网络 transient，{wait}s 后重试 "
+                f"({attempt}/{entry_retries})…",
+                flush=True,
+            )
+            time.sleep(wait)
+            continue
+        break
+
+    return False, last_msg, last_mode
 
 
 def translate_queue_satisfied(queue: list[dict]) -> bool:
@@ -199,6 +235,18 @@ def main() -> int:
         default=None,
         help="checkpoint JSON（默认同队列名前缀，如 v2_xihan_junwang_translate_checkpoint.json）",
     )
+    parser.add_argument(
+        "--entry-retries",
+        type=int,
+        default=int(os.environ.get("TRANSLATE_QUEUE_ENTRY_RETRIES", "3")),
+        help="单条 transient 失败时的重试次数（默认 3）",
+    )
+    parser.add_argument(
+        "--api-backoff-sec",
+        type=int,
+        default=int(os.environ.get("TRANSLATE_QUEUE_API_BACKOFF_SEC", "60")),
+        help="API transient 退避基数秒（默认 60，线性递增）",
+    )
     args = parser.parse_args()
 
     queue_path = args.queue
@@ -234,7 +282,7 @@ def main() -> int:
 
     if not pending:
         print(f"无待顺译条目（队列 {len(queue)}，有效完成 {len(done)}）")
-        if args.then-compose and translate_queue_satisfied(queue):
+        if args.then_compose and translate_queue_satisfied(queue):
             return unpause_and_run_compose()
         return 0
 
@@ -245,9 +293,10 @@ def main() -> int:
         print(f"待重跑 {len(pending)} 条：")
         for i, row in enumerate(pending[:20], 1):
             eid = row["史略ID"]
+            spec = build_translate_run(eid, entry_name=row.get("史略名称"))
             print(
                 f"  [{i}] {eid} {row.get('史略名称')} "
-                f"mode={pick_retry_mode(eid, entry_name=row.get('史略名称'))}"
+                f"mode={spec.label()} — {spec.reason}"
             )
         return 0
 
@@ -255,8 +304,15 @@ def main() -> int:
     for i, row in enumerate(pending, 1):
         eid = row["史略ID"]
         name = row.get("史略名称") or ""
-        print(f"[{i}/{len(pending)}] translate {eid} {name} (mode={pick_retry_mode(eid, entry_name=name)})")
-        ok, msg, mode = run_translate(eid, name, log)
+        spec = build_translate_run(eid, entry_name=name)
+        print(f"[{i}/{len(pending)}] translate {eid} {name} ({spec.label()})")
+        ok, msg, mode = run_translate(
+            eid,
+            name,
+            log,
+            entry_retries=args.entry_retries,
+            api_backoff_sec=args.api_backoff_sec,
+        )
         if ok:
             done.add(eid)
             failed_map.pop(eid, None)

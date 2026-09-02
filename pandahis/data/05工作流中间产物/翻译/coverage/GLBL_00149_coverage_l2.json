@@ -1,0 +1,33 @@
+{
+  "schema": "translate-coverage-l2/v1",
+  "史略ID": "GLBL_00149",
+  "passed": true,
+  "degraded": false,
+  "summary": "三条母本信息均已在白话译文中明确传达，无缺失或矛盾。",
+  "l1_ratio": 0.0,
+  "l1_min_ratio": 0.0,
+  "claims": [
+    {
+      "id": "M030",
+      "claim": "母本信息：昌意娶蜀山氏女，曰昌仆，生高阳，高阳有圣德焉。",
+      "status": "conveyed",
+      "evidence": "白话译文直接引述并解释了'昌意娶蜀山氏女，曰昌仆，生高阳，高阳有圣德焉'，明确说明昌意娶昌仆生高阳，高阳有圣德。",
+      "note": ""
+    },
+    {
+      "id": "M031",
+      "claim": "母本信息：黄帝崩，葬桥山。",
+      "status": "conveyed",
+      "evidence": "白话译文有'黄帝去世，葬桥山'，直接对应母本信息。",
+      "note": ""
+    },
+    {
+      "id": "M032",
+      "claim": "母本信息：其孙昌意之子高阳立，是为帝颛顼也。",
+      "status": "conveyed",
+      "evidence": "白话译文有'他的孙子、昌意的儿子高阳即位，这就是帝颛顼'，完整传达了母本信息。",
+      "note": ""
+    }
+  ],
+  "issues": []
+}

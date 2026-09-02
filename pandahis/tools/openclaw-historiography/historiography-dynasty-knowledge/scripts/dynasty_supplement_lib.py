@@ -341,10 +341,55 @@ def v2_global_index_path(histograph_root: Path) -> Path:
     return histograph_root / "data" / "10新标注条目" / "史略索引_史记汉书.json"
 
 
+def v2_index_03_04_path(histograph_root: Path) -> Path:
+    """后汉×三国合并索引（V2 增量）。"""
+    return histograph_root / "data" / "10新标注条目" / "史略索引_03至04.json"
+
+
+# 母本/来源著作 → 朝代ID（条目无 朝代ID 时推断，供去重）
+_WORK_DYNASTY_ID: dict[str, str] = {
+    "01史记": "CD_HX_XIHAN",  # 粗粒度；有 朝代ID 时以字段为准
+    "02汉书": "CD_HX_XIHAN",
+    "03后汉书": "CD_HX_DONGHAN",
+    "04三国志": "CD_HX_SANGUO",
+}
+
+_DYNASTY_NAME_TO_ID: dict[str, str] = {
+    "西汉": "CD_HX_XIHAN",
+    "东汉": "CD_HX_DONGHAN",
+    "三国": "CD_HX_SANGUO",
+    "秦": "CD_HX_QIN",
+}
+
+
+def infer_entry_dynasty_id(entry: dict[str, Any]) -> str:
+    """从 朝代ID / 二级朝代坐标 / 母本著作 推断条目所属朝代。"""
+    did = str(entry.get("朝代ID") or "").strip()
+    if did:
+        return did
+    coord = str(entry.get("二级朝代坐标") or "").strip()
+    if coord in _DYNASTY_NAME_TO_ID:
+        return _DYNASTY_NAME_TO_ID[coord]
+    for key in ("母本著作",):
+        work = str(entry.get(key) or "").strip()
+        if work in _WORK_DYNASTY_ID:
+            return _WORK_DYNASTY_ID[work]
+    works = entry.get("来源著作") or []
+    if isinstance(works, list):
+        for w in works:
+            ws = str(w or "").strip()
+            if ws in _WORK_DYNASTY_ID:
+                return _WORK_DYNASTY_ID[ws]
+    return ""
+
+
 def phase1_index_paths(histograph_root: Path) -> list[Path]:
-    """一期去重/回填只读 V2 全局索引（不再使用 03 V1）。"""
-    path = v2_global_index_path(histograph_root)
-    return [path] if path.is_file() else []
+    """一期去重/回填：史记汉书 + 后汉三国合并索引。"""
+    out: list[Path] = []
+    for p in (v2_global_index_path(histograph_root), v2_index_03_04_path(histograph_root)):
+        if p.is_file():
+            out.append(p)
+    return out
 
 
 def max_glbl_num(histograph_root: Path) -> int:
@@ -544,7 +589,10 @@ def lookup_phase1_attach_emperor(
                 continue
             if str(e.get("史略名称", "")).strip() != name:
                 continue
-            if dynasty_id and str(e.get("朝代ID", "")).strip() not in ("", dynasty_id):
+            entry_dyn = infer_entry_dynasty_id(e)
+            if dynasty_id and entry_dyn and entry_dyn != dynasty_id:
+                continue
+            if dynasty_id and not entry_dyn and str(e.get("朝代ID", "")).strip() not in ("", dynasty_id):
                 if str(e.get("朝代ID", "")).strip() and str(e.get("朝代ID", "")).strip() != dynasty_id:
                     continue
             attach = str(e.get("四级帝王坐标") or "").strip()
@@ -1455,7 +1503,7 @@ def load_phase1_person_index(
         for e in entries:
             if not isinstance(e, dict):
                 continue
-            if str(e.get("朝代ID", "")).strip() != dynasty_id:
+            if infer_entry_dynasty_id(e) != dynasty_id:
                 continue
             cat = str(e.get("史略分类", "")).strip()
             if cat not in PERSON_INDEX_CATEGORIES:
@@ -1581,7 +1629,7 @@ def collect_covered_emperor_names(
         for e in index_entries or []:
             if not isinstance(e, dict):
                 continue
-            if str(e.get("朝代ID", "")).strip() != dynasty_id:
+            if infer_entry_dynasty_id(e) != dynasty_id:
                 continue
             if str(e.get("史略分类", "")).strip() not in SOVEREIGN_CATEGORIES:
                 continue
@@ -1707,6 +1755,12 @@ def inject_mandatory_juwang_candidates(
     return out
 
 
+def thin_deferred_registry_paths(histograph_root: Path) -> list[Path]:
+    base = histograph_root / "data" / "05工作流中间产物" / "薄标注待补全"
+    names = ("registry.json", "registry_v2.json", "registry_v2_03至04.json")
+    return [base / n for n in names if (base / n).is_file()]
+
+
 def thin_deferred_registry_path(histograph_root: Path) -> Path:
     return histograph_root / "data" / "05工作流中间产物" / "薄标注待补全" / "registry.json"
 
@@ -1718,25 +1772,39 @@ def load_thin_deferred_for_dynasty(
     dynasty_name: str = "",
 ) -> list[dict[str, Any]]:
     """merge 厚度门拒收的薄标注条目（本朝），供 candidates-renwu 优先候选。"""
-    fp = thin_deferred_registry_path(histograph_root)
-    if not fp.is_file():
+    paths = thin_deferred_registry_paths(histograph_root)
+    if not paths and not thin_deferred_registry_path(histograph_root).is_file():
         return []
-    doc = json.loads(fp.read_text(encoding="utf-8"))
-    rows = doc.get("entries") if isinstance(doc, dict) else doc
-    if not isinstance(rows, list):
-        return []
+    if not paths:
+        paths = [thin_deferred_registry_path(histograph_root)]
     out: list[dict[str, Any]] = []
-    for row in rows:
-        if not isinstance(row, dict):
+    seen: set[str] = set()
+    for fp in paths:
+        doc = json.loads(fp.read_text(encoding="utf-8"))
+        rows = doc.get("entries") if isinstance(doc, dict) else doc
+        if not isinstance(rows, list):
             continue
-        row_dyn = str(row.get("朝代ID", "")).strip()
-        row_coord = str(row.get("二级朝代坐标", "")).strip()
-        if row_dyn != dynasty_id and not (dynasty_name and row_coord == dynasty_name):
-            continue
-        cat = str(row.get("史略分类", "")).strip()
-        if cat not in PERSON_INDEX_CATEGORIES:
-            continue
-        out.append(row)
+        for row in rows:
+            if not isinstance(row, dict):
+                continue
+            row_dyn = str(row.get("朝代ID", "")).strip()
+            row_coord = str(row.get("二级朝代坐标", "")).strip()
+            work = ""
+            for r in row.get("merge_sources") or []:
+                work = str(r.get("work") or "").strip()
+                if work:
+                    break
+            inferred = row_dyn or _WORK_DYNASTY_ID.get(work, "")
+            if inferred != dynasty_id and not (dynasty_name and row_coord == dynasty_name):
+                continue
+            cat = str(row.get("史略分类", "")).strip()
+            if cat not in PERSON_INDEX_CATEGORIES:
+                continue
+            key = f"{row.get('史略名称')}|{row.get('史略ID')}"
+            if key in seen:
+                continue
+            seen.add(key)
+            out.append(row)
     return out
 
 

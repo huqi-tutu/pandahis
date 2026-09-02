@@ -47,3 +47,35 @@ def load_repair_ticket(work_dir: Path, entry_id: str) -> dict[str, Any] | None:
     if not path.is_file():
         return None
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def save_open_issues_ticket(
+    work_dir: Path,
+    *,
+    entry_id: str,
+    entry_name: str,
+    stage: str,
+    issues: list[str],
+) -> Path | None:
+    """终检通过但存在软问题：写工单供后续 refine/repair，不阻断出队。"""
+    if not issues:
+        return None
+    plan = classify_translate_failure(issues, stage=stage, fail_count=0)
+    work_dir.mkdir(parents=True, exist_ok=True)
+    doc: dict[str, Any] = {
+        "schema": "qa_repair_ticket/v1",
+        "pipeline": "translate",
+        "entry_id": entry_id,
+        "entry_name": entry_name,
+        "stage": stage,
+        "status": "open_issues",
+        "severity": "ticket",
+        "fail_count": 0,
+        "errors": issues,
+        "plan": plan.to_dict(),
+        "feedback": format_repair_feedback(plan, issues),
+        "updated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+    }
+    path = ticket_path(work_dir, entry_id)
+    path.write_text(json.dumps(doc, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    return path

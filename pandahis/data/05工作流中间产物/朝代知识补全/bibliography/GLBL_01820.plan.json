@@ -1,0 +1,129 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01820",
+  "写作结构": "正史叙述见翻译详录，不在此摘句；步夫人本传以《三国志·吴书·妃嫔传》为骨架。史外延展只采用《建康实录》作编年旁证，且因无 verified 摘句，只能按 B 档写“《建康实录》另有记载”一类提示，不写具体过程、对话或朝议细节。《资治通鉴》与六朝方志类暂不采用，作为备检书目；若无可靠摘句则叙事留白，不涉二宫之争、不虚构子嗣。",
+  "候选著作": [
+    {
+      "出处": "《三国志·吴书·妃嫔传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "步夫人本传，anchor 六条 claims 的直接出处。",
+      "检索词": "步夫人",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《建康实录·吴太祖下》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "唐许嵩编孙吴编年史，正史之外最早将步夫人追册事系于吴赤乌元年的编年旁证。",
+      "检索词": "步夫人",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《资治通鉴·魏纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "编年史系统记载孙权时事，可提供与曹魏纪年对照的编年坐标。",
+      "检索词": "步夫人",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《六朝事迹编类·六朝陵寝》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "南京古迹专书，录六朝陵寝，或存蒋陵、步夫人葬地等后世地理异说。",
+      "检索词": "蒋陵",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《元和姓纂·步氏》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "唐代姓氏谱系文献，可佐证临淮步氏郡望及步夫人与步骘同族的家族背景。",
+      "检索词": "步氏",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《三国志·吴书·妃嫔传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "步夫人本传，anchor 六条 claims 的直接出处。",
+      "检索词": "步夫人",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《建康实录·吴太祖下》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "唐许嵩编孙吴编年史，正史之外最早将步夫人追册事系于吴赤乌元年的编年旁证。",
+      "检索词": "步夫人",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《元和姓纂·步氏》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "唐代姓氏谱系文献，可佐证临淮步氏郡望及步夫人与步骘同族的家族背景。",
+      "检索词": "步氏",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《资治通鉴·魏纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "编年史系统记载孙权时事，可提供与曹魏纪年对照的编年坐标。",
+      "检索词": "步夫人",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《六朝事迹编类·六朝陵寝》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "南京古迹专书，录六朝陵寝，或存蒋陵、步夫人葬地等后世地理异说。",
+      "检索词": "蒋陵",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 1,
+    "C_excluded": 4,
+    "overall": "B"
+  }
+}

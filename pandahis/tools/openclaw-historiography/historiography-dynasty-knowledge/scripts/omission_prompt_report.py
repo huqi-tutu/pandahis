@@ -53,10 +53,8 @@ def load_phase1_names(
     dynasty_id: str,
     dynasty_name: str = "",
 ) -> dict[str, list[str]]:
-    # 现行一期 = V2：10新标注条目/史略索引_史记汉书.json（不用 03 V1）
-    index_paths = [
-        histograph_root / "data" / "10新标注条目" / "史略索引_史记汉书.json",
-    ]
+    """一期史料标注（V2 全局索引 + 后汉三国合并索引）。"""
+    index_paths = dkl.phase1_index_paths(histograph_root)
     out: dict[str, list[str]] = {c: [] for c in PROMPT_CATEGORIES}
     seen: dict[str, set[str]] = {c: set() for c in PROMPT_CATEGORIES}
 
@@ -80,15 +78,43 @@ def load_phase1_names(
         for e in entries:
             if not isinstance(e, dict):
                 continue
-            did = str(e.get("朝代ID", "")).strip()
-            coord = str(e.get("二级朝代坐标", "")).strip()
-            matched = did == dynasty_id or (dynasty_name and coord == dynasty_name)
-            orphan = (not did and not coord) and dynasty_id == "CD_HX_XIHAN"
-            if not matched and not orphan:
+            if dkl.infer_entry_dynasty_id(e) != dynasty_id:
                 continue
             cat = str(e.get("史略分类", "")).strip()
             name = str(e.get("史略名称", "")).strip()
             _add(cat, name)
+    for cat in PROMPT_CATEGORIES:
+        out[cat] = sorted(set(out[cat]), key=lambda x: (len(x), x))
+    return out
+
+
+def load_supplement06_names(
+    histograph_root: Path,
+    dynasty_id: str,
+) -> dict[str, list[str]]:
+    """06 朝代知识补全已入库条目（本朝）。"""
+    out: dict[str, list[str]] = {c: [] for c in PROMPT_CATEGORIES}
+    entries_dir = histograph_root / "data" / "06朝代知识补全" / "索引条目"
+    if not entries_dir.is_dir():
+        return out
+    seen: dict[str, set[str]] = {c: set() for c in PROMPT_CATEGORIES}
+    for fp in sorted(entries_dir.glob("*.json")):
+        doc = json.loads(fp.read_text(encoding="utf-8"))
+        rows = doc.get("entries") if isinstance(doc, dict) else doc
+        if not isinstance(rows, list):
+            continue
+        for e in rows:
+            if not isinstance(e, dict):
+                continue
+            if str(e.get("朝代ID", "")).strip() != dynasty_id:
+                continue
+            cat = str(e.get("史略分类", "")).strip()
+            name = _name_from_row(e)
+            if cat in out and name and name not in seen[cat]:
+                seen[cat].add(name)
+                out[cat].append(name)
+    for cat in PROMPT_CATEGORIES:
+        out[cat] = sorted(set(out[cat]), key=lambda x: (len(x), x))
     return out
 
 
@@ -140,15 +166,26 @@ def detect_phase(paths: dict[str, Path]) -> str:
     return "research"
 
 
-def _format_names_block(by_cat: dict[str, list[str]]) -> list[str]:
+def _format_names_block(
+    by_cat: dict[str, list[str]],
+    *,
+    include_juwang: bool = True,
+    names_per_line: int = 15,
+) -> list[str]:
     lines: list[str] = []
     any_row = False
     for cat in PROMPT_CATEGORIES:
+        if cat == "君王" and not include_juwang:
+            continue
         names = by_cat.get(cat) or []
         if not names:
             continue
         any_row = True
-        lines.append(f"**{cat}**：{'、'.join(names)}")
+        lines.append(f"【{cat}】共 {len(names)} 条：")
+        for i in range(0, len(names), names_per_line):
+            chunk = names[i : i + names_per_line]
+            lines.append("、".join(chunk))
+        lines.append("")
     if not any_row:
         lines.append("（暂无）")
     return lines
@@ -162,6 +199,7 @@ def build_omission_prompt(
     phase: str = "auto",
     trigger_step: str = "",
 ) -> str:
+    del trigger_step  # 不写入提示词正文，避免复制时出现内部步骤标记
     if phase == "auto":
         phase = detect_phase(paths)
 
@@ -172,66 +210,79 @@ def build_omission_prompt(
 
     extracted = _pick_source_names(paths, phase)
     phase1 = load_phase1_names(histograph_root, dynasty_id, dynasty_name=dynasty_name)
+    supplement06 = load_supplement06_names(histograph_root, dynasty_id)
     supplement_cats = "、".join(PROMPT_CATEGORIES)
 
     lines: list[str] = [
-        f"你是熟悉中国史的编辑。请帮我把**{dynasty_name}**（约 {start}—{end}）的「朝代知识补全」条目查漏。",
+        f"你是熟悉中国史的编辑。请帮我把「{dynasty_name}」（约 {start}—{end}）的朝代知识补全条目查漏。",
+        "",
+        "说明：下文列出我方已占用的全部史略名称（史料标注 + 本期候选 + 已入库补全）。请勿与其中任何名称重复（含同义、别名、爵号变体）。",
         "",
         "## 史略分类说明（我方选条尺度）",
         "",
-        "以下解释每一类史略**泛指什么**；君王由帝王表与一期标注覆盖，**本次不需你补君王**。",
+        "君王由帝王表与史料标注覆盖，本次不需你补君王；但下表仍会列出已有君王名称供你对照勿重复。",
         "",
     ]
     for cat in PROMPT_CATEGORIES:
         gloss = CATEGORY_GLOSS.get(cat, "")
-        lines.append(f"- **{cat}**：{gloss}")
+        lines.append(f"- {cat}：{gloss}")
     lines.append("")
 
     lines.extend(
         [
-            "## 我已提取的史略（本期 · 仅名称）",
+            "## 一、史料标注已有（二十四史卷级提取 · 请勿重复）",
+            "",
+            "来源：10新标注条目全局索引（含后汉书等已标注卷）。",
             "",
         ]
     )
-    lines.extend(_format_names_block(extracted))
+    lines.extend(_format_names_block(phase1, include_juwang=True))
     lines.append("")
 
-    if any(phase1[c] for c in PROMPT_CATEGORIES):
+    lines.extend(
+        [
+            "## 二、本期朝代知识补全候选（研究/候选步骤已产出 · 请勿重复）",
+            "",
+            "来源：本朝候选清单（事略/典制/论著/人物六类）。",
+            "",
+        ]
+    )
+    lines.extend(_format_names_block(extracted, include_juwang=False))
+    lines.append("")
+
+    if any(supplement06[c] for c in PROMPT_CATEGORIES):
         lines.extend(
             [
-                "## 一期卷级标注已有（仅名称 · 同样勿重复）",
+                "## 三、已入库朝代知识补全（06 · 请勿重复）",
                 "",
             ]
         )
-        lines.extend(_format_names_block(phase1))
+        lines.extend(_format_names_block(supplement06, include_juwang=False))
         lines.append("")
 
     lines.extend(
         [
             "## 请你补充",
             "",
-            f"除上列名称以外，**还有哪些史略值得补？** 请按分类（{supplement_cats}）列出**名称**，每条附一句理由。",
-            "**不要补君王。**",
+            f"除上文已列名称外，还有哪些史略值得补？请按分类（{supplement_cats}）列出名称，每条附一句理由。",
+            "不要补君王。",
             "",
-            "**入选标准**：",
-            "- **够重要**：通史里常单独成段、后世常提起；",
-            "- **有记忆点**：读者能用一个标签记住；",
-            "- **粒度适中**：一条一个主题，不要太细。",
+            "入选标准：",
+            "- 够重要：通史里常单独成段、后世常提起；",
+            "- 有记忆点：读者能用一个标签记住；",
+            "- 粒度适中：一条一个主题，不要太细。",
             "",
-            "**请勿重复**上文已列的任何名称（含同义、别名、爵号变体，如「酂侯萧何」=「萧何」）。若无补充，直接说「无」。",
+            "若无补充，直接回复「无」。",
             "",
             "## 跨朝代归属（硬纪律）",
             "",
-            "除**君王/诸侯**（以**即位年**定归属）外，每条须先估算 **pick year**（峰值年 / 立国封制年 / 成书年 / 事件高潮年，见 `跨朝代归属规则.md`）。",
-            f"**仅列 pick year 落在 {dynasty_name}（约 {start}—{end}）区间内的条目**；若应归相邻朝代，**不得列出**。",
+            "除君王、诸侯（以即位年定归属）外，每条须先估算 pick year：峰值年 / 立国或封制年 / 成书年 / 事件高潮年，取最能代表该条历史重心的一年。",
+            f"仅列 pick year 落在 {dynasty_name}（约 {start}—{end}）区间内的条目；若应归相邻朝代，不得列出。",
             "",
-            "**典型错误**：把 pick year 主要落在下一朝的人物/事略/典制/论著塞进本朝（如跑批战国时误列李斯、吕不韦、蒙恬、秦灭六国统一等应归秦者）。",
-            "**相邻朝已建条**：王莽已在「新」朝以君王建条，本朝勿再补人物「王莽」（事略「王莽篡汉」若已在上方「我已提取」中则勿重复）。",
+            "典型错误：把主要活动或成书年代在下一朝的人物、事略、典制、论著塞进本朝。",
+            "相邻朝已建条：王莽已在新朝以君王建条，勿再补人物「王莽」。",
         ]
     )
-    if trigger_step:
-        lines.append("")
-        lines.append(f"（生成步骤：{trigger_step}）")
     return "\n".join(lines)
 
 
@@ -251,8 +302,6 @@ def write_omission_prompt_report(
         phase=phase,
         trigger_step=trigger_step,
     )
-    header = (
-        f"<!-- {context.get('朝代名称', '')} · 遗漏审阅 · 复制正文到其他模型即可 -->\n\n"
-    )
+    header = f"{context.get('朝代名称', '')} · 遗漏审阅提示词（复制全文到其他模型即可，勿含链接）\n\n"
     out_path.write_text(header + body + "\n", encoding="utf-8")
     return out_path

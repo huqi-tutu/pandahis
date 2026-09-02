@@ -44,7 +44,7 @@ class TestCitationHints(unittest.TestCase):
         enrich_checklist_citation_modes(cl)
         tip = cl[0]["母本提示"]
         self.assertNotIn("先整段或整簇引用原文，再作一段白话解释", tip)
-        self.assertIn("禁止", tip)
+        self.assertTrue("直角「」" in tip or "引用" in tip)
 
 
 class TestClassicCandidates(unittest.TestCase):

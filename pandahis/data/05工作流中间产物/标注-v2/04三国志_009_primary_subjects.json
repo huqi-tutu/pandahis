@@ -1,8 +1,8 @@
 {
   "work": "04三国志",
   "vol": "009",
-  "total_paragraphs": 37,
-  "method": "Step1b-α LLM",
+  "total_paragraphs": 38,
+  "method": "manual_repair",
   "paragraphs": [
     {
       "paragraph": 1,
@@ -27,8 +27,9 @@
     },
     {
       "paragraph": 5,
-      "primary_subject": "夏侯惇",
-      "disposition": "block"
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
     },
     {
       "paragraph": 6,
@@ -157,39 +158,44 @@
     },
     {
       "paragraph": 31,
-      "primary_subject": "夏侯渊",
+      "primary_subject": "夏侯尚",
       "disposition": "block"
     },
     {
       "paragraph": 32,
-      "primary_subject": "夏侯渊",
+      "primary_subject": "夏侯尚",
       "disposition": "block"
     },
     {
       "paragraph": 33,
-      "primary_subject": "夏侯渊",
+      "primary_subject": "夏侯尚",
       "disposition": "block"
     },
     {
       "paragraph": 34,
-      "primary_subject": "夏侯渊",
+      "primary_subject": "夏侯尚",
       "disposition": "block"
     },
     {
       "paragraph": 35,
-      "primary_subject": "夏侯渊",
+      "primary_subject": "夏侯尚",
       "disposition": "block"
     },
     {
       "paragraph": 36,
-      "primary_subject": "夏侯渊",
+      "primary_subject": "夏侯尚",
       "disposition": "block"
     },
     {
       "paragraph": 37,
-      "primary_subject": "论赞",
+      "primary_subject": "夏侯尚",
+      "disposition": "block"
+    },
+    {
+      "paragraph": 38,
+      "primary_subject": "评曰",
       "disposition": "exclude",
-      "exclude_reason": "论赞"
+      "exclude_reason": "评曰"
     }
   ]
 }

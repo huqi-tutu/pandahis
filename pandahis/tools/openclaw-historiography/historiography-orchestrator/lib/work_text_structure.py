@@ -53,7 +53,21 @@ def _hint_hanshu() -> str:
     )
 
 
+def _hint_sanguozhi() -> str:
+    return (
+        "【正文结构 · 《三国志》拆分 txt】\n"
+        "- **P1 通常是卷首标题行**（如「卷一 魏书一  武帝纪第一」）→ `exclude_reason: 卷首标题`\n"
+        "- **正文从 P2 起**\n"
+        "- 卷末陈寿论赞以「**评曰**」起笔 → `exclude_reason: 评曰`，**不建条目、不划入事略**。"
+        "只排除该段，勿把评曰之后的裴注上表等一并盲延为论赞\n"
+        "- 若「评曰」粘在叙事末句后，须先拆成独立段再 exclude\n"
+        "- **禁止**标为 `太史公曰` / `赞曰`\n"
+        "- 合传按传记段首划块；卷末评曰总评本卷诸人，不归任何传主"
+    )
+
+
 _HINTS: Dict[str, callable] = {
     "01史记": _hint_shiji,
     "02汉书": _hint_hanshu,
+    "04三国志": _hint_sanguozhi,
 }

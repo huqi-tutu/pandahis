@@ -25,6 +25,7 @@ V2_EXCLUDE_REASONS = frozenset({
     "太史公曰",
     "论赞",
     "赞曰",
+    "评曰",
     "共段总述",
     "世系链",  # 与主轴无直接关系的族谱/享国纪年
 })
@@ -39,7 +40,7 @@ LEGACY_EXCLUDE_MARKERS = (
     "其他",
 )
 
-LUNZAN_REASONS = frozenset({"太史公曰", "论赞", "赞曰"})
+LUNZAN_REASONS = frozenset({"太史公曰", "论赞", "赞曰", "评曰"})
 
 _CHRONICLE_RESUME = re.compile(
     r"^(?:"
@@ -68,11 +69,10 @@ def _paragraph_index_path(work: str, vol: str) -> Path:
     vol = vol.zfill(3)
     paths = histograph_paths()
     names = (f"{work}_{vol}.json", f"{work}_{vol.zfill(3)}.json")
-    for base in (paths["paragraph_index"], paths.get("annotations_v1", paths["data"] / "03索引标注条目") / "段落索引"):
-        for name in names:
-            candidate = base / name
-            if candidate.exists():
-                return candidate
+    for name in names:
+        candidate = paths["paragraph_index"] / name
+        if candidate.exists():
+            return candidate
     raise FileNotFoundError(f"段落索引不存在: {work} vol {vol}")
 
 
@@ -106,13 +106,14 @@ def _load_json(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def _is_taishigong_header(text: str) -> bool:
-    return text.strip().startswith("太史公曰")
+def _is_lunzan_opener(text: str) -> bool:
+    t = (text or "").strip()
+    return t.startswith(("太史公曰", "赞曰", "评曰", "论曰", "褚先生曰"))
 
 
 def _is_chronicle_resume(text: str) -> bool:
     t = text.strip()
-    if not t or _is_taishigong_header(t):
+    if not t or _is_lunzan_opener(t):
         return False
     if _GENEALOGY_TABLE.match(t):
         return False
@@ -175,7 +176,7 @@ def _validate_lunzan_overreach(
         # 论赞块内若出现编年叙事续写 → 误标 exclude
         for p in range(start, end + 1):
             text = para_text.get(p, "")
-            if p == start and _is_taishigong_header(text):
+            if p == start and _is_lunzan_opener(text):
                 continue
             if _is_chronicle_resume(text):
                 errors.append(
@@ -305,6 +306,18 @@ def validate_blocks(
         if p not in exclude_map and p not in owner_map:
             errors.append(f"COVERAGE: P{p} 未覆盖")
 
+    for pid, text in para_text.items():
+        if not (text or "").strip().startswith("评曰"):
+            continue
+        if pid in owner_map:
+            errors.append(
+                f"LUNZAN_OWNED: P{pid} 以「评曰」起笔，禁止划入 block [{owner_map[pid]}]"
+            )
+        elif exclude_map.get(pid) not in LUNZAN_REASONS:
+            errors.append(
+                f"LUNZAN_MISSING: P{pid} 以「评曰」起笔，须 exclude 评曰/论赞"
+            )
+
     # expand_blocks dry run
     dry = dict(draft)
     dry["total_paragraphs"] = total
@@ -333,6 +346,7 @@ def validate_blocks(
                 "太史公曰",
                 "论赞",
                 "赞曰",
+                "评曰",
                 "卷首标题",
             )
         ):

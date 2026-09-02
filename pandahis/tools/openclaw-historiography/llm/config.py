@@ -3,17 +3,20 @@
 from __future__ import annotations
 
 import os
+import re
 from pathlib import Path
 
 PROVIDER_OPENCLAW = "openclaw"
 PROVIDER_DEEPSEEK = "deepseek"
 VALID_PROVIDERS = frozenset({PROVIDER_OPENCLAW, PROVIDER_DEEPSEEK})
 
-# 按流水线写死模型（覆盖 DEEPSEEK_MODEL 环境变量）
-MODEL_FLASH = "deepseek-v4-flash"
+# 翻译主流水线默认：智谱 GLM-5.3（OpenAI Chat Completions 兼容）
+OFFICIAL_DEEPSEEK_BASE_URL = "https://open.bigmodel.cn/api/paas/v4"
+MODEL_FLASH = "glm-5.3"
 MODEL_ANNOTATE = MODEL_FLASH
 MODEL_PRO = MODEL_FLASH  # 翻译·见证·详情·关系等主流水线
 DEFAULT_DEEPSEEK_MODEL = MODEL_FLASH
+DEFAULT_MAX_TOKENS = 65536
 
 
 def _load_env_file() -> None:
@@ -52,10 +55,27 @@ def provider_label(name: str | None = None) -> str:
 def deepseek_settings() -> dict[str, str | float]:
     return {
         "api_key": os.environ.get("DEEPSEEK_API_KEY", ""),
-        "base_url": os.environ.get("DEEPSEEK_BASE_URL", "https://api.deepseek.com").rstrip("/"),
+        "base_url": os.environ.get("DEEPSEEK_BASE_URL", OFFICIAL_DEEPSEEK_BASE_URL).rstrip("/"),
         "model": os.environ.get("DEEPSEEK_MODEL", DEFAULT_DEEPSEEK_MODEL),
         "temperature": float(os.environ.get("DEEPSEEK_TEMPERATURE", "0.2")),
     }
+
+
+def chat_completions_url(base_url: str) -> str:
+    """拼 Chat Completions URL。
+
+    - DeepSeek 官方：`{base}/v1/chat/completions`
+    - 智谱 OpenAI 兼容：`https://open.bigmodel.cn/api/paas/v4` → `{base}/chat/completions`
+    """
+    base = (base_url or "").rstrip("/")
+    if not base:
+        raise RuntimeError("DEEPSEEK_BASE_URL 为空")
+    if base.endswith("/chat/completions"):
+        return base
+    # 已带版本路径（/v4、/paas/v4 等）则直接拼 chat/completions
+    if re.search(r"/v\d+$", base):
+        return f"{base}/chat/completions"
+    return f"{base}/v1/chat/completions"
 
 
 def pin_deepseek_model(required_model: str) -> str:
@@ -74,16 +94,17 @@ def ensure_annotate_model() -> str:
 
 
 def ensure_deepseek_v4_pro() -> str:
-    """翻译、朝代知识补全、人物关系、评述见证等（deepseek-v4-flash）。"""
+    """翻译、朝代知识补全、人物关系、评述见证等（默认 glm-5.3）。"""
     return pin_deepseek_model(MODEL_PRO)
 
 
 def review_settings() -> dict[str, str | float]:
-    """详情质检/审校 LLM（OpenAI 兼容，默认 DeepSeek Flash）。"""
+    """详情质检/审校 LLM（OpenAI 兼容，默认与主流水线同源）。"""
     ds = deepseek_settings()
     base = os.environ.get("REVIEW_BASE_URL") or str(ds["base_url"])
     base = base.rstrip("/")
-    if not base.endswith("/v1"):
+    # 智谱 /v4 不需要再拼 /v1；DeepSeek 官方仍拼 /v1
+    if not re.search(r"/v\d+$", base) and not base.endswith("/v1"):
         base = f"{base}/v1"
     api_key = os.environ.get("REVIEW_API_KEY") or str(ds["api_key"])
     return {

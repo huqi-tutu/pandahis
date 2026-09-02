@@ -1,0 +1,17 @@
+{
+  "entry_id": "GLBL_00330",
+  "run_id": "GLBL_00330-1787662682222",
+  "directory": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/翻译/.runs/GLBL_00330/GLBL_00330-1787662682222",
+  "formal_target": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/04史料翻译/GLBL_00330_屈原.json",
+  "source_fingerprint": "d70722dc9d113b42",
+  "status": "pending_recovery",
+  "current_phase": "verify",
+  "formal_promoted": false,
+  "attempts": {
+    "verify": 1
+  },
+  "next_action": "retry_full",
+  "last_error": "外部补全[0] 补全类型无效或缺失: '异说/注释' （须为 ['冲突观点', '异说', '必要上下文', '背景', '补充细节', '评价差异'] 之一）; 外部补全[1] 补全类型无效或缺失: '制度' （须为 ['冲突观点', '异说', '必要上下文', '背景', '补充细节', '评价差异'] 之一）; 外部补全[2] 补全类型无效或缺失: '结局' （须为 ['冲突观点', '异说', '必要上下文', '背景', '补充细节', '评价差异'] 之一）",
+  "resume_phase": "phase5",
+  "candidate": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/翻译/.runs/GLBL_00330/GLBL_00330-1787662682222/candidate.json"
+}

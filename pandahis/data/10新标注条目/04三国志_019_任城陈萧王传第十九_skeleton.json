@@ -283,17 +283,13 @@
     },
     {
       "paragraph": 32,
-      "owners": [
-        {
-          "name": "曹彪",
-          "category": "宗戚"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "世系链"
     },
     {
       "paragraph": 33,
       "owners": [],
-      "exclude_reason": "论赞"
+      "exclude_reason": "评曰"
     }
   ],
   "entries": [
@@ -324,21 +320,6 @@
           "volume": "任城陈萧王传",
           "paragraph_from": 5,
           "paragraph_to": 31
-        }
-      ]
-    },
-    {
-      "史略ID": "SANGUOZHI_019_03",
-      "史略名称": "曹彪",
-      "史略简介": "曹彪",
-      "原文字句": "萧怀王熊，早薨。黄初二年追封谥萧怀公。太和三年，又追封爵为王。青龙二年，子哀王炳嗣，食邑二千五百户。六年薨，无子，国除。",
-      "史略分类": "宗戚",
-      "主要史料出处": "《04三国志·卷19·任城陈萧王传》",
-      "paragraphs": [
-        {
-          "volume": "任城陈萧王传",
-          "paragraph_from": 32,
-          "paragraph_to": 32
         }
       ]
     }

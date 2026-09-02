@@ -1,0 +1,201 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01837",
+  "写作结构": "正史叙述见翻译详录，拓展文不摘《晋书》句；史外以《世说新语·任诞》为唯一采用 legend 异说，合段补刘伶任诞形象；《文选·酒德颂》作文本层旁证；《竹林七贤论》《水经注·清水》作书目级异说或地理旁证，不展开具体过程；卒年、葬所、家世等无据处留白。",
+  "候选著作": [
+    {
+      "出处": "《晋书·刘伶传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "条目主要史料出处，载刘伶为竹林七贤、嗜酒放达、任建威参军、《酒德颂》及以寿终等生平；正史叙述交由翻译详录，本 plan 不摘句。",
+      "检索词": "刘伶",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《文选·酒德颂》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "总集“颂”类载刘伶《酒德颂》全文，是史外可核查的刘伶代表文本。",
+      "检索词": "酒德颂",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《世说新语·任诞》",
+      "tier": "经注/杂史",
+      "pool": "legend",
+      "与本主题关系": "载“刘伶病酒”“天生刘伶”等任诞轶事及七贤竹林之游，与本传略异，是后世嗜酒形象的主要来源。",
+      "检索词": "刘伶",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《世说新语·文学》",
+      "tier": "经注/杂史",
+      "pool": "legend",
+      "与本主题关系": "记刘伶著《酒德颂》“意气所寄”，可旁证其文化与文学影响。",
+      "检索词": "酒德颂",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《世说新语·容止》",
+      "tier": "经注/杂史",
+      "pool": "legend",
+      "与本主题关系": "记刘伶身长貌寝、土木形骸，补其外在放达形象，属人物品题类异说。",
+      "检索词": "土木形骸",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《竹林七贤论》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "袁宏所撰七贤专论，原书散佚，后世注类书有引，多存刘伶事迹异文。",
+      "检索词": "七贤",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《水经注·清水》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "记载山阳七贤祠与七人寓居竹林遗迹，为七贤之游提供地理文献旁证。",
+      "检索词": "七贤祠",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《艺文类聚·酒》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "类书酒部集录《酒德颂》及饮酒轶事，可作《文选》本与《晋书》本的参校线索。",
+      "检索词": "酒德颂",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《晋书·刘伶传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "条目主要史料出处，载刘伶为竹林七贤、嗜酒放达、任建威参军、《酒德颂》及以寿终等生平；正史叙述交由翻译详录，本 plan 不摘句。",
+      "检索词": "刘伶",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《文选·酒德颂》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "总集“颂”类载刘伶《酒德颂》全文，是史外可核查的刘伶代表文本。",
+      "检索词": "酒德颂",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《竹林七贤论》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "袁宏所撰七贤专论，原书散佚，后世注类书有引，多存刘伶事迹异文。",
+      "检索词": "七贤",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《水经注·清水》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "记载山阳七贤祠与七人寓居竹林遗迹，为七贤之游提供地理文献旁证。",
+      "检索词": "七贤祠",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《艺文类聚·酒》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "类书酒部集录《酒德颂》及饮酒轶事，可作《文选》本与《晋书》本的参校线索。",
+      "检索词": "酒德颂",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《世说新语·任诞》",
+      "tier": "经注/杂史",
+      "pool": "legend",
+      "与本主题关系": "载“刘伶病酒”“天生刘伶”等任诞轶事及七贤竹林之游，与本传略异，是后世嗜酒形象的主要来源。",
+      "检索词": "刘伶",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《世说新语·文学》",
+      "tier": "经注/杂史",
+      "pool": "legend",
+      "与本主题关系": "记刘伶著《酒德颂》“意气所寄”，可旁证其文化与文学影响。",
+      "检索词": "酒德颂",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《世说新语·容止》",
+      "tier": "经注/杂史",
+      "pool": "legend",
+      "与本主题关系": "记刘伶身长貌寝、土木形骸，补其外在放达形象，属人物品题类异说。",
+      "检索词": "土木形骸",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 4,
+    "C_excluded": 4,
+    "overall": "B"
+  }
+}

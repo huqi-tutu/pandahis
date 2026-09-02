@@ -1,0 +1,237 @@
+START 2026-08-26T12:55:53+08:00 MAX=384000 THINK=disabled
+🧭 发散式 plan（保留程序 M 清单）→ GLBL_00085_汉高祖.plan.json
+📋 修复工单 → GLBL_00085.repair.json（RETRY_EXHAUSTED / retry_llm）
+💡 将自动重试：retry_llm / generic_retry（RETRY_EXHAUSTED）
+❌ 翻译未通过:
+   外部补全[3] 须说明「与母本关系」（为何不是重复母本）
+   外部补全[4] 须说明「与母本关系」（为何不是重复母本）
+   外部补全[8] 须说明「与母本关系」（为何不是重复母本）
+   外部补全[9] 须说明「与母本关系」（为何不是重复母本）
+   外部补全[14] 须说明「与母本关系」（为何不是重复母本）
+   外部补全[15] 须说明「与母本关系」（为何不是重复母本）
+   外部补全[16] 须说明「与母本关系」（为何不是重复母本）
+   外部补全[19] 须说明「与母本关系」（为何不是重复母本）
+   外部补全[20] 须说明「与母本关系」（为何不是重复母本）
+   外部补全[21] 须说明「与母本关系」（为何不是重复母本）
+   外部补全[22] 须说明「与母本关系」（为何不是重复母本）
+   外部补全[23] 须说明「与母本关系」（为何不是重复母本）
+   外部补全[24] 须说明「与母本关系」（为何不是重复母本）
+   外部补全[25] 须说明「与母本关系」（为何不是重复母本）
+   外部补全[26] 须说明「与母本关系」（为何不是重复母本）
+   外部补全[27] 须说明「与母本关系」（为何不是重复母本）
+   外部补全[28] 须说明「与母本关系」（为何不是重复母本）
+   外部补全[29] 须说明「与母本关系」（为何不是重复母本）
+   外部补全[30] 须说明「与母本关系」（为何不是重复母本）
+   外部补全[31] 须说明「与母本关系」（为何不是重复母本）
+   外部补全[32] 须说明「与母本关系」（为何不是重复母本）
+   外部补全[33] 须说明「与母本关系」（为何不是重复母本）
+   外部补全[34] 须说明「与母本关系」（为何不是重复母本）
+   外部补全[35] 须说明「与母本关系」（为何不是重复母本）
+   外部补全[36] 须说明「与母本关系」（为何不是重复母本）
+   外部补全[37] 须说明「与母本关系」（为何不是重复母本）
+   外部补全[42] 须说明「与母本关系」（为何不是重复母本）
+   外部补全[43] 须说明「与母本关系」（为何不是重复母本）
+   外部补全[44] 须说明「与母本关系」（为何不是重复母本）
+   外部补全[45] 须说明「与母本关系」（为何不是重复母本）
+   外部补全[46] 须说明「与母本关系」（为何不是重复母本）
+   外部补全[48] 须说明「与母本关系」（为何不是重复母本）
+   外部补全[49] 须说明「与母本关系」（为何不是重复母本）
+EXIT 0 at 2026-08-26T12:57:23+08:00
+RESTART 2026-08-26T12:58:51+08:00
+📦 分批成稿 GLBL_00085：26 批
+成稿 第 1/26 批（M001–M018）
+成稿 第 2/26 批（M019–M036）
+   🔧 已修正批内误用书名号
+成稿 第 3/26 批（M037–M054）
+成稿 第 4/26 批（M055–M072）
+成稿 第 5/26 批（M073–M090）
+成稿 第 6/26 批（M091–M108）
+成稿 第 7/26 批（M109–M126）
+成稿 第 8/26 批（M127–M144）
+成稿 第 9/26 批（M145–M162）
+成稿 第 10/26 批（M163–M180）
+成稿 第 11/26 批（M181–M198）
+成稿 第 12/26 批（M199–M216）
+成稿 第 13/26 批（M217–M234）
+成稿 第 14/26 批（M235–M252）
+成稿 第 15/26 批（M253–M270）
+成稿 第 16/26 批（M271–M288）
+成稿 第 17/26 批（M289–M306）
+成稿 第 18/26 批（M307–M324）
+成稿 第 19/26 批（M325–M342）
+成稿 第 20/26 批（M343–M360）
+成稿 第 21/26 批（M361–M378）
+成稿 第 22/26 批（M379–M396）
+成稿 第 23/26 批（M397–M414）
+成稿 第 24/26 批（M415–M432）
+成稿 第 25/26 批（M433–M450）
+成稿 第 26/26 批（M451–M467）
+⏳ 前置引入 GLBL_00085
+⏳ 篇末结尾 GLBL_00085
+❌ LLM 失败: DeepSeek API 失败（已重试 3 次）: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)>
+EXIT 0 at 2026-08-26T13:04:04+08:00
+ASSEMBLE 2026-08-26T13:09:43+08:00
+⏳ 前置引入 GLBL_00085
+⏳ 篇末结尾 GLBL_00085
+✅ GLBL_00085 精简流水线成稿 20933 字 → GLBL_00085_汉高祖.json
+   🔧 成稿后处理: 程序拼接参考著作
+   ⚠️ 成稿字数偏少: 20933 < 母本×1.2=32144 （软警告，不阻断落盘；请抽查是否漏译或 Phase2 补全不足）
+   ℹ️ 语义覆盖（合并补验）：待复核 430/430 单元
+   ℹ️ 语义覆盖复核开始: 430 单元 → 72 批（每批 ≤6）
+   ℹ️ 语义覆盖复核 [1/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [1/72]
+   ℹ️ 语义覆盖复核 [2/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [2/72]
+   ℹ️ 语义覆盖复核 [3/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [3/72]
+   ℹ️ 语义覆盖复核 [4/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [4/72]
+   ℹ️ 语义覆盖复核 [5/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [5/72]
+   ℹ️ 语义覆盖复核 [6/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [6/72]
+   ℹ️ 语义覆盖复核 [7/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [7/72]
+   ℹ️ 语义覆盖复核 [8/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [8/72]
+   ℹ️ 语义覆盖复核 [9/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [9/72]
+   ℹ️ 语义覆盖复核 [10/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [10/72]
+   ℹ️ 语义覆盖复核 [11/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [11/72]
+   ℹ️ 语义覆盖复核 [12/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [12/72]
+   ℹ️ 语义覆盖复核 [13/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [13/72]
+   ℹ️ 语义覆盖复核 [14/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [14/72]
+   ℹ️ 语义覆盖复核 [15/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [15/72]
+   ℹ️ 语义覆盖复核 [16/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [16/72]
+   ℹ️ 语义覆盖复核 [17/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [17/72]
+   ℹ️ 语义覆盖复核 [18/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [18/72]
+   ℹ️ 语义覆盖复核 [19/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [19/72]
+   ℹ️ 语义覆盖复核 [20/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [20/72]
+   ℹ️ 语义覆盖复核 [21/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [21/72]
+   ℹ️ 语义覆盖复核 [22/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [22/72]
+   ℹ️ 语义覆盖复核 [23/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [23/72]
+   ℹ️ 语义覆盖复核 [24/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [24/72]
+   ℹ️ 语义覆盖复核 [25/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [25/72]
+   ℹ️ 语义覆盖复核 [26/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [26/72]
+   ℹ️ 语义覆盖复核 [27/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [27/72]
+   ℹ️ 语义覆盖复核 [28/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [28/72]
+   ℹ️ 语义覆盖复核 [29/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [29/72]
+   ℹ️ 语义覆盖复核 [30/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [30/72]
+   ℹ️ 语义覆盖复核 [31/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [31/72]
+   ℹ️ 语义覆盖复核 [32/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [32/72]
+   ℹ️ 语义覆盖复核 [33/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [33/72]
+   ℹ️ 语义覆盖复核 [34/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [34/72]
+   ℹ️ 语义覆盖复核 [35/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [35/72]
+   ℹ️ 语义覆盖复核 [36/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [36/72]
+   ℹ️ 语义覆盖复核 [37/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [37/72]
+   ℹ️ 语义覆盖复核 [38/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [38/72]
+   ℹ️ 语义覆盖复核 [39/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [39/72]
+   ℹ️ 语义覆盖复核 [40/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [40/72]
+   ℹ️ 语义覆盖复核 [41/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [41/72]
+   ℹ️ 语义覆盖复核 [42/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [42/72]
+   ℹ️ 语义覆盖复核 [43/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [43/72]
+   ℹ️ 语义覆盖复核 [44/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [44/72]
+   ℹ️ 语义覆盖复核 [45/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [45/72]
+   ℹ️ 语义覆盖复核 [46/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [46/72]
+   ℹ️ 语义覆盖复核 [47/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [47/72]
+   ℹ️ 语义覆盖复核 [48/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [48/72]
+   ℹ️ 语义覆盖复核 [49/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [49/72]
+   ℹ️ 语义覆盖复核 [50/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [50/72]
+   ℹ️ 语义覆盖复核 [51/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [51/72]
+   ℹ️ 语义覆盖复核 [52/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [52/72]
+   ℹ️ 语义覆盖复核 [53/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [53/72]
+   ℹ️ 语义覆盖复核 [54/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [54/72]
+   ℹ️ 语义覆盖复核 [55/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [55/72]
+   ℹ️ 语义覆盖复核 [56/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [56/72]
+   ℹ️ 语义覆盖复核 [57/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [57/72]
+   ℹ️ 语义覆盖复核 [58/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [58/72]
+   ℹ️ 语义覆盖复核 [59/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [59/72]
+   ℹ️ 语义覆盖复核 [60/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [60/72]
+   ℹ️ 语义覆盖复核 [61/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [61/72]
+   ℹ️ 语义覆盖复核 [62/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [62/72]
+   ℹ️ 语义覆盖复核 [63/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [63/72]
+   ℹ️ 语义覆盖复核 [64/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [64/72]
+   ℹ️ 语义覆盖复核 [65/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [65/72]
+   ℹ️ 语义覆盖复核 [66/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [66/72]
+   ℹ️ 语义覆盖复核 [67/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [67/72]
+   ℹ️ 语义覆盖复核 [68/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [68/72]
+   ℹ️ 语义覆盖复核 [69/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [69/72]
+   ℹ️ 语义覆盖复核 [70/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [70/72]
+   ℹ️ 语义覆盖复核 [71/72] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [71/72]
+   ℹ️ 语义覆盖复核 [72/72] conveyed=4 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [72/72]
+   ℹ️ 语义覆盖复核完成: conveyed=430/430 unclear=0 missing=0 contradicted=0
+   ℹ️ 母本语义覆盖: 430/430 单元已传达 (100%)；满足传达率 ≥80% 且未传达 ≤3；本次新复核 430 单元
+   ⚠️ 质检工单: plan 外部补全[4] 采用:true 未在正文引用: 泗水亭长——秦制十里一亭，亭有亭长，掌治安、民事。泗水亭在今江苏沛县东。（出处: 《汉书·卷十九上·百官公卿表第七上》）
+   ⚠️ 质检工单: plan 外部补全[8] 采用:true 未在正文引用: 萧何——沛县丰邑人，时为沛县主吏掾，后为汉相国，封酂侯。（出处: 《史记·卷五十三·萧相国世家》）
+   ⚠️ 质检工单: plan 外部补全[10] 采用:true 未在正文引用: 吕后名吕雉，字娥姁。孝惠帝刘盈为刘邦与吕后之子，鲁元公主为长安，后嫁张耳之子张敖。（出处: 《史记·卷九·吕太后本纪》）
+📋 修复工单 → GLBL_00085.repair.json（RETRY_EXHAUSTED / retry_llm）
+💡 将自动重试：retry_llm / generic_retry（RETRY_EXHAUSTED）
+❌ verify 未通过:
+   通识词冗余解释: 「负」通「妇」，就是
+   通识词冗余解释: 「徭」，就是
+   通识词冗余解释: 「屈」，就是
+   通识词冗余解释: 「哺」，就是
+ASSEMBLE EXIT 0 at 2026-08-26T13:17:12+08:00

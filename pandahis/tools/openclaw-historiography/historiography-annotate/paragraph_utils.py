@@ -98,6 +98,42 @@ def _is_file_metadata_line(text: str) -> bool:
 _GLUE_BODY_RE = re.compile(
     r"(?=禹别|禹|尧|舜|黄帝|陈胜|魏之|秦|汉|武帝|帝|王|曰|昔|初|乃|既|太|夫|子|先|世宗|高|项)"
 )
+# 卷末论赞粘在叙事末句后（三国志「。……评曰：」）
+_GLUED_PINGYUE_RE = re.compile(r"(?<=[。！？])评曰[：:]")
+
+
+def lunzan_exclude_reason(text: str) -> Optional[str]:
+    """段首论赞套语 → exclude_reason；非论赞返回 None。"""
+    t = (text or "").strip()
+    if not t:
+        return None
+    head = t[:24]
+    if t.startswith("太史公曰") or "太史公曰" in head:
+        return "太史公曰"
+    if t.startswith("褚先生曰"):
+        return "论赞"
+    if t.startswith("评曰") or head.startswith("评曰：") or head.startswith("评曰:"):
+        return "评曰"
+    if t.startswith("赞曰") or "赞曰：" in head[:8] or "赞曰:" in head[:8]:
+        return "赞曰"
+    if t.startswith("论曰") or "论曰：" in head[:8] or "论曰:" in head[:8]:
+        return "论赞"
+    return None
+
+
+def split_glued_pingyue(text: str) -> Optional[List[str]]:
+    """叙事末句后粘连「评曰」时拆成两段。无法拆则返回 None。"""
+    s = (text or "").strip()
+    if not s or s.startswith("评曰"):
+        return None
+    match = _GLUED_PINGYUE_RE.search(s)
+    if not match or match.start() < 8:
+        return None
+    before = s[: match.start()].strip()
+    after = s[match.start() :].strip()
+    if before and after.startswith("评曰"):
+        return [before, after]
+    return None
 
 
 def _split_yuanwen_remainder(remainder: str) -> Tuple[str, str]:
@@ -160,6 +196,10 @@ def decompose_line_to_paragraphs(line: str) -> List[str]:
 
     if _looks_like_standalone_volume_heading(s):
         return [s]
+
+    glued = split_glued_pingyue(s)
+    if glued:
+        return glued
 
     return [s]
 

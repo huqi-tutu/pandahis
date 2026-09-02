@@ -1,4 +1,4 @@
-"""翻译归因清洗：尾部模板补丁清除。"""
+"""翻译归因清洗 + 成稿程序化终处理（引号 / 参考著作）。"""
 
 from __future__ import annotations
 
@@ -37,10 +37,15 @@ def apply_attribution_fixes(
     recalled: Dict[str, Any],
     plan: Dict[str, Any] | None = None,
 ) -> Tuple[str, List[str]]:
-    """归因清洗：清除历史尾部模板残留。"""
-    _ = recalled, plan
+    """归因清洗 + 引号校正 + 程序拼接参考著作。"""
     changes: List[str] = []
     cleaned, stripped = strip_tail_exit_template(detail)
     if stripped:
         changes.append("清除尾部又记模板")
-    return cleaned, changes
+    from lib.final_polish import finalize_translation_detail
+
+    finalized, polish_changes = finalize_translation_detail(
+        cleaned, recalled, plan=plan
+    )
+    changes.extend(polish_changes)
+    return finalized, changes

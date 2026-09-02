@@ -2,12 +2,13 @@
 
 from __future__ import annotations
 
+import os
 import sys
 import unittest
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1] / "historiography-translate"
-sys.path.insert(0, str(ROOT))
+ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT / "historiography-translate"))
 
 from lib.coverage_info import CoverageUnit  # noqa: E402
 from lib.coverage_ledger import (  # noqa: E402
@@ -47,3 +48,46 @@ class TestCoverageLedger(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestFrozenUnits(unittest.TestCase):
+    def setUp(self) -> None:
+        self._old = os.environ.get("TRANSLATE_COVERAGE_L2_MAX_ATTEMPTS")
+        os.environ["TRANSLATE_COVERAGE_L2_MAX_ATTEMPTS"] = "2"
+
+    def tearDown(self) -> None:
+        if self._old is None:
+            os.environ.pop("TRANSLATE_COVERAGE_L2_MAX_ATTEMPTS", None)
+        else:
+            os.environ["TRANSLATE_COVERAGE_L2_MAX_ATTEMPTS"] = self._old
+
+    def test_unclear_freezes_after_max_attempts(self) -> None:
+        u1 = _unit("M001", "禹将天下传给益。", "以天下授益。")
+        fp = claim_fingerprint(u1)
+        entries: dict = {}
+        apply_claim_results(entries, claim_id="M001", status="unclear", claim_fp=fp)
+        pending, _, _ = pending_units([u1], entries)
+        self.assertEqual(len(pending), 1)
+        apply_claim_results(entries, claim_id="M001", status="unclear", claim_fp=fp)
+        self.assertTrue(entries["M001"]["frozen"])
+        self.assertEqual(entries["M001"]["attempts"], 2)
+        pending, _, _ = pending_units([u1], entries)
+        self.assertEqual(pending, [])
+
+    def test_fp_change_unfreezes(self) -> None:
+        u1 = _unit("M001", "禹将天下传给益。", "以天下授益。")
+        fp = claim_fingerprint(u1)
+        entries: dict = {}
+        apply_claim_results(entries, claim_id="M001", status="unclear", claim_fp=fp)
+        apply_claim_results(entries, claim_id="M001", status="unclear", claim_fp=fp)
+        u1b = _unit("M001", "禹把天下交给启。", "以天下授启。")
+        pending, _, _ = pending_units([u1b], entries)
+        self.assertEqual(len(pending), 1)
+
+    def test_conveyed_never_frozen(self) -> None:
+        u1 = _unit("M001", "禹将天下传给益。", "以天下授益。")
+        fp = claim_fingerprint(u1)
+        entries: dict = {}
+        for _ in range(3):
+            apply_claim_results(entries, claim_id="M001", status="conveyed", claim_fp=fp)
+        self.assertFalse(entries["M001"]["frozen"])

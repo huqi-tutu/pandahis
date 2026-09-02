@@ -171,6 +171,30 @@ class TestVolumeManifest(unittest.TestCase):
         self.assertEqual(by_name["赵尧"]["paragraph_from"], 4)
 
 
+    def test_mechanical_blocks_sanguozhi_pingyue(self):
+        m = {
+            "work": "04三国志",
+            "vol": "001",
+            "volume_name": "武帝纪",
+            "narrative_mode": "single",
+            "protagonists": [
+                {"name": "曹操", "category": "君王", "rationale": "本纪"}
+            ],
+        }
+        draft = build_mechanical_blocks(
+            m,
+            total_paragraphs=4,
+            para_text={
+                1: "卷一 魏书一  武帝纪第一",
+                2: "太祖武皇帝，沛国谯人也。",
+                3: "建安元年春正月，太祖迎天子都许。",
+                4: "评曰：汉末，天下大乱，雄豪并起。",
+            },
+        )
+        self.assertEqual(draft["blocks"][0]["paragraph_to"], 3)
+        self.assertTrue(any(e["exclude_reason"] == "评曰" for e in draft["excludes"]))
+
+
 class TestSpindleFourthEmperor(unittest.TestCase):
     def test_needs_llm_only_fourth_emperor(self):
         entry = {

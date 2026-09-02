@@ -1,0 +1,155 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01851",
+  "写作结构": "正史无康僧会专传，不须从二十四史摘句。叙事主源为《高僧传》卷一，辅以《出三藏记集》补译经记录，并借《建康实录》作地域史志旁证。史外传说只作延展，不写祈请舍利的具体仪式、不写对话、不写孙权内心变化；若无原文摘句，关键情节留白。",
+  "候选著作": [
+    {
+      "出处": "《高僧传·卷一·康僧会传》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "康僧会的基本传记，详载其家世、入吴、祈请舍利、孙权建建初寺及江左佛法始兴",
+      "检索词": "康僧会",
+      "采用": true,
+      "原文摘句": "康僧会，其先康居人，世居天竺。其父因商贾，移于交阯。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《出三藏记集·卷十三·康僧会传》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "早期经录所收康僧会传，记录其译经活动与传法事迹，可校补《高僧传》",
+      "检索词": "康僧会",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《建康实录》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "吴都建康的地域编年史，记康僧会至建业及建初寺由来，是僧传之外的历史旁证",
+      "检索词": "康僧会",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《法苑珠林·舍利篇》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "唐代佛教类书转引舍利感应故事，可作传说层合证，不用于主叙事",
+      "检索词": "舍利",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《六朝事迹编类·寺院·建初寺》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋代金陵风土志著录建初寺，反映后世对康僧会建寺的追述",
+      "检索词": "建初寺",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《金陵梵刹志·建初寺》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "明代金陵寺院志著录建初寺源流，属晚期寺院记忆，不用于主叙事",
+      "检索词": "建初寺",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《高僧传·卷一·康僧会传》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "康僧会的基本传记，详载其家世、入吴、祈请舍利、孙权建建初寺及江左佛法始兴",
+      "检索词": "康僧会",
+      "采用": true,
+      "原文摘句": "康僧会，其先康居人，世居天竺。其父因商贾，移于交阯。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《出三藏记集·卷十三·康僧会传》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "早期经录所收康僧会传，记录其译经活动与传法事迹，可校补《高僧传》",
+      "检索词": "康僧会",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《建康实录》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "吴都建康的地域编年史，记康僧会至建业及建初寺由来，是僧传之外的历史旁证",
+      "检索词": "康僧会",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《法苑珠林·舍利篇》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "唐代佛教类书转引舍利感应故事，可作传说层合证，不用于主叙事",
+      "检索词": "舍利",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《六朝事迹编类·寺院·建初寺》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋代金陵风土志著录建初寺，反映后世对康僧会建寺的追述",
+      "检索词": "建初寺",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《金陵梵刹志·建初寺》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "明代金陵寺院志著录建初寺源流，属晚期寺院记忆，不用于主叙事",
+      "检索词": "建初寺",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 3,
+    "C_excluded": 3,
+    "overall": "B"
+  }
+}

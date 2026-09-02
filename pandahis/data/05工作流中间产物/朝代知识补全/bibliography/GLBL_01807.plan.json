@@ -1,0 +1,109 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01807",
+  "写作结构": "正史著录见《隋书·经籍志》翻译详录；拓展文以传世《人物志》本文及刘昞注为主，摘句限定于已核验文本；后世书目提要仅作背景，不进入叙事；无核验细节处留白。",
+  "候选著作": [
+    {
+      "出处": "《隋书·经籍志》子部名家类",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，著录《人物志》三卷并归入名家类。",
+      "检索词": "人物志",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《人物志》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "本条目主题原著，直接承载才性品鉴与任用原则，是anchor各论断的首要文本。",
+      "检索词": "情性",
+      "采用": true,
+      "原文摘句": "盖人物之本，出乎情性。情性之理，甚微而玄，非圣人之察，其孰能究之哉？",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《人物志注》（刘昞）",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "现存最早的《人物志》注本，对才性术语有早期解释，可辅助理解正文。",
+      "检索词": "人物志注",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《四库全书总目提要》子部名家类",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "后世官修书目对《人物志》的归类与解题，可作学术史背景，不提供原书事实。",
+      "检索词": "人物志",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《隋书·经籍志》子部名家类",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要史料出处，著录《人物志》三卷并归入名家类。",
+      "检索词": "人物志",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《人物志》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "本条目主题原著，直接承载才性品鉴与任用原则，是anchor各论断的首要文本。",
+      "检索词": "情性",
+      "采用": true,
+      "原文摘句": "盖人物之本，出乎情性。情性之理，甚微而玄，非圣人之察，其孰能究之哉？",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《人物志注》（刘昞）",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "现存最早的《人物志》注本，对才性术语有早期解释，可辅助理解正文。",
+      "检索词": "人物志注",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《四库全书总目提要》子部名家类",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "后世官修书目对《人物志》的归类与解题，可作学术史背景，不提供原书事实。",
+      "检索词": "人物志",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

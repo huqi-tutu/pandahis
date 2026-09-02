@@ -1,0 +1,125 @@
+{
+  "schema": "thin_annotation_deferred/v2_03至04",
+  "source": "10新标注条目/03-04",
+  "generated_at": "2026-08-23T03:07:22Z",
+  "threshold_han_chars": 100,
+  "entry_count": 4,
+  "entries": [
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 31,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "HOUHANSHU_060_05",
+      "史略名称": "刘淑",
+      "史略分类": "宗戚",
+      "朝代ID": "",
+      "二级朝代坐标": "",
+      "主要史料出处": "《03后汉书·卷60·章帝八王列传》",
+      "paragraphs": [
+        {
+          "volume": "章帝八王列传",
+          "paragraph_from": 41,
+          "paragraph_to": 41
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/03后汉书_060_章帝八王列传第四十五_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "HOUHANSHU_060_05",
+          "work": "03后汉书",
+          "vol": "060",
+          "vol_name": "章帝八王列传",
+          "source_char_count": 31,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/03后汉书_060_章帝八王列传第四十五_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 91,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SANGUOZHI_034_04",
+      "史略名称": "后主张皇后",
+      "史略分类": "宗戚",
+      "朝代ID": "",
+      "二级朝代坐标": "",
+      "主要史料出处": "《04三国志·卷34·二主妃子传》",
+      "paragraphs": [
+        {
+          "volume": "二主妃子传",
+          "paragraph_from": 5,
+          "paragraph_to": 5
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/04三国志_034_二主妃子传第四_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SANGUOZHI_034_04",
+          "work": "04三国志",
+          "vol": "034",
+          "vol_name": "二主妃子传",
+          "source_char_count": 91,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/04三国志_034_二主妃子传第四_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 39,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "SANGUOZHI_034_03",
+      "史略名称": "后主敬哀皇后",
+      "史略分类": "宗戚",
+      "朝代ID": "",
+      "二级朝代坐标": "",
+      "主要史料出处": "《04三国志·卷34·二主妃子传》",
+      "paragraphs": [
+        {
+          "volume": "二主妃子传",
+          "paragraph_from": 4,
+          "paragraph_to": 4
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/04三国志_034_二主妃子传第四_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "SANGUOZHI_034_03",
+          "work": "04三国志",
+          "vol": "034",
+          "vol_name": "二主妃子传",
+          "source_char_count": 39,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/04三国志_034_二主妃子传第四_skeleton.json"
+        }
+      ]
+    },
+    {
+      "defer_reason": "thin_source_total_under_100",
+      "source_char_count": 85,
+      "recommended_path": "dynasty_knowledge_supplement",
+      "史略ID": "HOUHANSHU_087_06",
+      "史略名称": "许慎",
+      "史略分类": "文臣",
+      "朝代ID": "",
+      "二级朝代坐标": "",
+      "主要史料出处": "《03后汉书·卷87·儒林列传第六十九下》",
+      "paragraphs": [
+        {
+          "volume": "儒林列传第六十九下",
+          "paragraph_from": 67,
+          "paragraph_to": 68
+        }
+      ],
+      "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/03后汉书_087_儒林列传第六十九下_skeleton.json",
+      "merge_sources": [
+        {
+          "史略ID": "HOUHANSHU_087_06",
+          "work": "03后汉书",
+          "vol": "087",
+          "vol_name": "儒林列传第六十九下",
+          "source_char_count": 85,
+          "skeleton_path": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/03后汉书_087_儒林列传第六十九下_skeleton.json"
+        }
+      ]
+    }
+  ]
+}

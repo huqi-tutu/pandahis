@@ -1,0 +1,153 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01832",
+  "写作结构": "正史叙述见翻译详录：以《晋书·杜预传》为主干，参《三国志》及裴注补杜预由曹魏入西晋的家世背景；史外部分用《杜预别传》《春秋左传正义》补其“杜武库”形象与经学成就；灭吴具体战斗、阵地细节及未见于正史的对话一律留白，不据后世演义或猜测展开。",
+  "候选著作": [
+    {
+      "出处": "《晋书·杜预传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "条目索引所据本传，涵盖仕魏、平吴、注左传、谥成等全过程；按纪律不作文本摘句。",
+      "检索词": "杜预",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《三国志·魏书·杜畿传》裴松之注引《杜氏新书》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "杜预祖父杜畿、父杜恕均为曹魏臣僚，由此可理解其由魏入晋的家世身份；裴注引书兼存时人评语。",
+      "检索词": "杜畿",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《杜预别传》（《世说新语注》《太平御览》等引）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "佚存别传称杜预博学无所不通，故有“武库”之号；系本传之外可引用的独立传记材料。",
+      "检索词": "杜预别传",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《春秋左传正义》（孔颖达等，含杜预《春秋左氏经传集解》）",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "完整保存杜预《春秋左氏经传集解》之经注与序文，是说明其经学成就的直接典籍。",
+      "检索词": "杜预",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《晋阳秋》（孙盛撰，清人辑本）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "东晋编年史，记平吴前后事，可与《晋书》互证；因anchor禁止补写战术细节，不作为具体过程来源。",
+      "检索词": "杜预",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《水经注·沔水》",
+      "tier": "经注/杂史",
+      "pool": "legend",
+      "与本主题关系": "郦道元注记襄阳、沔水一带地理，涉及杜预沉碑等后世流传说法，可备掌故而不作叙事主干。",
+      "检索词": "杜预",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《晋书·杜预传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "条目索引所据本传，涵盖仕魏、平吴、注左传、谥成等全过程；按纪律不作文本摘句。",
+      "检索词": "杜预",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《三国志·魏书·杜畿传》裴松之注引《杜氏新书》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "杜预祖父杜畿、父杜恕均为曹魏臣僚，由此可理解其由魏入晋的家世身份；裴注引书兼存时人评语。",
+      "检索词": "杜畿",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《杜预别传》（《世说新语注》《太平御览》等引）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "佚存别传称杜预博学无所不通，故有“武库”之号；系本传之外可引用的独立传记材料。",
+      "检索词": "杜预别传",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《春秋左传正义》（孔颖达等，含杜预《春秋左氏经传集解》）",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "完整保存杜预《春秋左氏经传集解》之经注与序文，是说明其经学成就的直接典籍。",
+      "检索词": "杜预",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《晋阳秋》（孙盛撰，清人辑本）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "东晋编年史，记平吴前后事，可与《晋书》互证；因anchor禁止补写战术细节，不作为具体过程来源。",
+      "检索词": "杜预",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《水经注·沔水》",
+      "tier": "经注/杂史",
+      "pool": "legend",
+      "与本主题关系": "郦道元注记襄阳、沔水一带地理，涉及杜预沉碑等后世流传说法，可备掌故而不作叙事主干。",
+      "检索词": "杜预",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 4,
+    "overall": "B"
+  }
+}

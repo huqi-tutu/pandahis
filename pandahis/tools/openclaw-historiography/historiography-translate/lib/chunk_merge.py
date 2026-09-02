@@ -123,8 +123,11 @@ def merge_chunk_bodies(
     detail = "\n\n".join(parts)
     refs = _dedupe_refs(reference_works)
     if refs:
+        from lib.reference_normalize import normalize_reference_list
+
+        refs = normalize_reference_list(refs)
         lines = "\n".join(f"{i}. {r}" for i, r in enumerate(refs, start=1))
-        detail = f"{detail}\n\n*参考著作：*\n{lines}"
+        detail = f"{detail}\n\n参考著作：\n{lines}"
     return detail, []
 
 

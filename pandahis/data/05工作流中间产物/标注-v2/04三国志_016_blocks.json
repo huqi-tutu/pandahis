@@ -11,16 +11,6 @@
       "exclude_reason": "卷首标题"
     },
     {
-      "paragraph_from": 12,
-      "paragraph_to": 27,
-      "exclude_reason": "世系链"
-    },
-    {
-      "paragraph_from": 29,
-      "paragraph_to": 29,
-      "exclude_reason": "世系链"
-    },
-    {
       "paragraph_from": 34,
       "paragraph_to": 34,
       "exclude_reason": "共段总述"
@@ -28,7 +18,7 @@
     {
       "paragraph_from": 35,
       "paragraph_to": 35,
-      "exclude_reason": "论赞"
+      "exclude_reason": "评曰"
     }
   ],
   "blocks": [
@@ -69,15 +59,15 @@
       }
     },
     {
-      "name": "杜畿",
+      "name": "杜恕",
       "category": "文臣",
-      "paragraph_from": 28,
-      "paragraph_to": 28,
+      "paragraph_from": 12,
+      "paragraph_to": 29,
       "boundary_evidence": {
-        "open_paragraph": 28,
-        "open_phrase": "甘露二年，河东乐详年九十余，上书讼畿之遗绩，朝廷感焉。诏封恕子预为丰乐亭侯，邑百",
-        "close_paragraph": 28,
-        "close_note": "Step1b-β 自 primary_subjects 合并 P28–P28"
+        "open_paragraph": 12,
+        "open_phrase": "恕字务伯，太和中为散骑黄门侍郎。恕推诚以质，不治饰，少无名誉。及在朝，不结交援，",
+        "close_paragraph": 29,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P12–P29"
       }
     },
     {

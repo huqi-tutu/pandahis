@@ -62,6 +62,31 @@ SOURCE_PLAN_DONE
         self.assertEqual(plan["史略ID"], "y")
         self.assertGreaterEqual(len(plan["外部补全"]), 1)
 
+    def test_intro_only_json(self) -> None:
+        text = (
+            '{"史略ID":"GLBL_00330","前置引入":'
+            '"战国楚国风雨飘摇。屈原这个名字后来被端午裹得很甜，'
+            '可在史书里他首先是个把心掏给楚王的人。'
+            '《史记·屈原贾生列传》对屈原生平的描写。"}'
+        )
+        best = extract_best_json(text)
+        self.assertIsNotNone(best)
+        assert isinstance(best, dict)
+        self.assertIn("前置引入", best)
+        self.assertEqual(best["史略ID"], "GLBL_00330")
+
+    def test_ending_only_json(self) -> None:
+        text = (
+            '```json\n{"史略ID":"GLBL_00330","结尾":'
+            '"江水还在流，那份不肯同流合污的心气，'
+            '却成了后来无数人嘴里的屈原。"}\n```\n'
+            "TRANSLATE_DONE GLBL_00330"
+        )
+        best = extract_best_json(text)
+        self.assertIsNotNone(best)
+        assert isinstance(best, dict)
+        self.assertIn("结尾", best)
+
 
 if __name__ == "__main__":
     unittest.main()

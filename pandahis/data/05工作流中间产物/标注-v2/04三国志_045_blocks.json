@@ -11,14 +11,9 @@
       "exclude_reason": "卷首标题"
     },
     {
-      "paragraph_from": 8,
-      "paragraph_to": 8,
-      "exclude_reason": "世系链"
-    },
-    {
       "paragraph_from": 68,
       "paragraph_to": 68,
-      "exclude_reason": "论赞"
+      "exclude_reason": "评曰"
     }
   ],
   "blocks": [
@@ -59,29 +54,55 @@
       }
     },
     {
-      "name": "宗预",
-      "category": "文臣",
-      "paragraph_from": 9,
+      "name": "廖化",
+      "category": "武将",
+      "paragraph_from": 8,
       "paragraph_to": 9,
       "boundary_evidence": {
-        "open_paragraph": 9,
-        "open_phrase": "咸熙元年春，化、预俱内徙洛阳，道病卒。",
+        "open_paragraph": 8,
+        "open_phrase": "廖化字元俭，本名淳，襄阳人也。为前将军关羽主簿，羽败，属吴。思归先主，乃诈死，时",
         "close_paragraph": 9,
-        "close_note": "Step1b-β 自 primary_subjects 合并 P9–P9"
+        "close_note": "Step1b-β 自 primary_subjects 合并 P8–P9"
       }
     },
     {
       "name": "杨戏",
       "category": "文臣",
       "paragraph_from": 10,
-      "paragraph_to": 67,
+      "paragraph_to": 66,
       "boundary_evidence": {
         "open_paragraph": 10,
         "open_phrase": "杨戏字文然，犍为武阳人也。少与巴西程祁公弘、巴郡杨汰季儒、蜀郡张表伯达并知名。戏",
+        "close_paragraph": 66,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P10–P66"
+      }
+    },
+    {
+      "name": "糜芳",
+      "category": "武将",
+      "paragraph_from": 67,
+      "paragraph_to": 67,
+      "boundary_evidence": {
+        "open_paragraph": 67,
+        "open_phrase": "糜芳字子方，东海人也，为南郡太守。士仁字君义，广阳人也，为将军，住公安，统属关羽",
         "close_paragraph": 67,
-        "close_note": "Step1b-β 自 primary_subjects 合并 P10–P67"
+        "close_note": "Step1b-β 自 primary_subjects 合并 P67–P67"
       }
     }
   ],
-  "multi_owner_segments": []
+  "multi_owner_segments": [
+    {
+      "paragraph": 9,
+      "owners": [
+        {
+          "name": "宗预",
+          "category": "文臣"
+        },
+        {
+          "name": "廖化",
+          "category": "武将"
+        }
+      ]
+    }
+  ]
 }

@@ -90,7 +90,7 @@ Step M   merge_volumes.py
 | 中间 · 逐段主语 | `data/05工作流中间产物/标注-v2/{著作}_{卷号}_primary_subjects.json` |
 | 中间 · 划块 | `data/05工作流中间产物/标注-v2/{著作}_{卷号}_blocks.json` |
 | **混写卷清单** | `data/10新标注条目/标注进度/{著作}_混写卷.json` |
-| 段落索引 | `data/03索引标注条目/段落索引/`（v1/v2 共用 SSOT，不在 10 下复制） |
+| 段落索引 | `data/10新标注条目/段落索引/`（SSOT；已从 03 迁入） |
 
 **混写卷怎么记**：Step1a/`protagonists.json` 写 `volume_texture: "interleaved"`；expand 写入 skeleton 同名字段，并自动登记清单。查询：
 
@@ -177,7 +177,7 @@ python3 historiography-annotate-v2/scripts/v2_expand_to_skeleton.py \
   --work 01史记 --vol 007 --mechanical
 ```
 
-- exclude：卷首标题（汉书 P1）+ 太史公曰/论赞/赞曰
+- exclude：卷首标题（汉书/三国志 P1）+ 太史公曰/论赞/赞曰/评曰
 - 史记本纪/列传 P1 通常**非**卷首 exclude，归入 narrative block
 - 其余段落 → 唯一主人公（single）或蕃祚 entry（fanzuo）
 

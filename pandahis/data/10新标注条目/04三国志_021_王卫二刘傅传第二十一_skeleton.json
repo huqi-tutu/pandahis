@@ -4,7 +4,7 @@
   "total_paragraphs": 35,
   "volume_type": "纪传叙事",
   "volume_subtype": "hezhuan",
-  "volume_texture": "interleaved",
+  "volume_texture": "sequential",
   "segment_attribution": [
     {
       "paragraph": 1,
@@ -69,66 +69,38 @@
     },
     {
       "paragraph": 10,
-      "owners": [
-        {
-          "name": "王粲",
-          "category": "文臣"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "世系链"
     },
     {
       "paragraph": 11,
-      "owners": [
-        {
-          "name": "王粲",
-          "category": "文臣"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "世系链"
     },
     {
       "paragraph": 12,
-      "owners": [
-        {
-          "name": "王粲",
-          "category": "文臣"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "世系链"
     },
     {
       "paragraph": 13,
-      "owners": [
-        {
-          "name": "王粲",
-          "category": "文臣"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "世系链"
     },
     {
       "paragraph": 14,
-      "owners": [
-        {
-          "name": "王粲",
-          "category": "文臣"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "世系链"
     },
     {
       "paragraph": 15,
-      "owners": [
-        {
-          "name": "王粲",
-          "category": "文臣"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "世系链"
     },
     {
       "paragraph": 16,
-      "owners": [
-        {
-          "name": "王粲",
-          "category": "文臣"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "世系链"
     },
     {
       "paragraph": 17,
@@ -295,7 +267,7 @@
     {
       "paragraph": 35,
       "owners": [],
-      "exclude_reason": "论赞"
+      "exclude_reason": "评曰"
     }
   ],
   "entries": [
@@ -311,11 +283,6 @@
           "volume": "王卫二刘傅传",
           "paragraph_from": 2,
           "paragraph_to": 5
-        },
-        {
-          "volume": "王卫二刘傅传",
-          "paragraph_from": 10,
-          "paragraph_to": 16
         }
       ]
     },
@@ -379,6 +346,5 @@
         }
       ]
     }
-  ],
-  "translation_qa_hint": "混写卷：人物段落非连续。翻译质检须按 entries[].paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。"
+  ]
 }

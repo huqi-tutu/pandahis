@@ -4,7 +4,7 @@
   "total_paragraphs": 35,
   "volume_type": "纪传叙事",
   "volume_subtype": "hezhuan",
-  "volume_texture": "interleaved",
+  "volume_texture": "sequential",
   "segment_attribution": [
     {
       "paragraph": 1,
@@ -103,97 +103,165 @@
     },
     {
       "paragraph": 12,
-      "owners": [],
-      "exclude_reason": "世系链"
+      "owners": [
+        {
+          "name": "杜恕",
+          "category": "文臣"
+        }
+      ]
     },
     {
       "paragraph": 13,
-      "owners": [],
-      "exclude_reason": "世系链"
+      "owners": [
+        {
+          "name": "杜恕",
+          "category": "文臣"
+        }
+      ]
     },
     {
       "paragraph": 14,
-      "owners": [],
-      "exclude_reason": "世系链"
+      "owners": [
+        {
+          "name": "杜恕",
+          "category": "文臣"
+        }
+      ]
     },
     {
       "paragraph": 15,
-      "owners": [],
-      "exclude_reason": "世系链"
+      "owners": [
+        {
+          "name": "杜恕",
+          "category": "文臣"
+        }
+      ]
     },
     {
       "paragraph": 16,
-      "owners": [],
-      "exclude_reason": "世系链"
+      "owners": [
+        {
+          "name": "杜恕",
+          "category": "文臣"
+        }
+      ]
     },
     {
       "paragraph": 17,
-      "owners": [],
-      "exclude_reason": "世系链"
+      "owners": [
+        {
+          "name": "杜恕",
+          "category": "文臣"
+        }
+      ]
     },
     {
       "paragraph": 18,
-      "owners": [],
-      "exclude_reason": "世系链"
+      "owners": [
+        {
+          "name": "杜恕",
+          "category": "文臣"
+        }
+      ]
     },
     {
       "paragraph": 19,
-      "owners": [],
-      "exclude_reason": "世系链"
+      "owners": [
+        {
+          "name": "杜恕",
+          "category": "文臣"
+        }
+      ]
     },
     {
       "paragraph": 20,
-      "owners": [],
-      "exclude_reason": "世系链"
+      "owners": [
+        {
+          "name": "杜恕",
+          "category": "文臣"
+        }
+      ]
     },
     {
       "paragraph": 21,
-      "owners": [],
-      "exclude_reason": "世系链"
+      "owners": [
+        {
+          "name": "杜恕",
+          "category": "文臣"
+        }
+      ]
     },
     {
       "paragraph": 22,
-      "owners": [],
-      "exclude_reason": "世系链"
+      "owners": [
+        {
+          "name": "杜恕",
+          "category": "文臣"
+        }
+      ]
     },
     {
       "paragraph": 23,
-      "owners": [],
-      "exclude_reason": "世系链"
+      "owners": [
+        {
+          "name": "杜恕",
+          "category": "文臣"
+        }
+      ]
     },
     {
       "paragraph": 24,
-      "owners": [],
-      "exclude_reason": "世系链"
+      "owners": [
+        {
+          "name": "杜恕",
+          "category": "文臣"
+        }
+      ]
     },
     {
       "paragraph": 25,
-      "owners": [],
-      "exclude_reason": "世系链"
+      "owners": [
+        {
+          "name": "杜恕",
+          "category": "文臣"
+        }
+      ]
     },
     {
       "paragraph": 26,
-      "owners": [],
-      "exclude_reason": "世系链"
+      "owners": [
+        {
+          "name": "杜恕",
+          "category": "文臣"
+        }
+      ]
     },
     {
       "paragraph": 27,
-      "owners": [],
-      "exclude_reason": "世系链"
+      "owners": [
+        {
+          "name": "杜恕",
+          "category": "文臣"
+        }
+      ]
     },
     {
       "paragraph": 28,
       "owners": [
         {
-          "name": "杜畿",
+          "name": "杜恕",
           "category": "文臣"
         }
       ]
     },
     {
       "paragraph": 29,
-      "owners": [],
-      "exclude_reason": "世系链"
+      "owners": [
+        {
+          "name": "杜恕",
+          "category": "文臣"
+        }
+      ]
     },
     {
       "paragraph": 30,
@@ -239,7 +307,7 @@
     {
       "paragraph": 35,
       "owners": [],
-      "exclude_reason": "论赞"
+      "exclude_reason": "评曰"
     }
   ],
   "entries": [
@@ -285,16 +353,26 @@
           "volume": "任苏杜郑仓传",
           "paragraph_from": 7,
           "paragraph_to": 11
-        },
-        {
-          "volume": "任苏杜郑仓传",
-          "paragraph_from": 28,
-          "paragraph_to": 28
         }
       ]
     },
     {
       "史略ID": "SANGUOZHI_016_04",
+      "史略名称": "杜恕",
+      "史略简介": "杜恕",
+      "原文字句": "恕字务伯，太和中为散骑黄门侍郎。恕推诚以质，不治饰，少无名誉。及在朝，不结交援，专心向公。每政有得失，常引纲维以正言，于是侍中辛毗等器重之。",
+      "史略分类": "文臣",
+      "主要史料出处": "《04三国志·卷16·任苏杜郑仓传》",
+      "paragraphs": [
+        {
+          "volume": "任苏杜郑仓传",
+          "paragraph_from": 12,
+          "paragraph_to": 29
+        }
+      ]
+    },
+    {
+      "史略ID": "SANGUOZHI_016_05",
       "史略名称": "郑浑",
       "史略简介": "郑浑",
       "原文字句": "郑浑字文公，河南开封人也。高祖父众，众父兴，皆为名儒。浑兄泰，与荀攸等谋诛董卓，为扬州刺史，卒。浑将泰小子袤避难淮南，袁术宾礼甚厚。浑知术必败。时华歆为豫章太守，素与泰善，浑乃渡江投歆。太祖闻其笃行，召为掾，复迁下蔡长、邵陵令。天下未定，民皆剽轻，不念产殖；其生子无以相活，率皆不举。浑所在夺其渔猎之具，课使耕桑，又兼开稻田，重去子之法。民初畏罪，后稍丰给，无不举赡；所育男女，多以郑为字。辟为丞相掾",
@@ -309,7 +387,7 @@
       ]
     },
     {
-      "史略ID": "SANGUOZHI_016_05",
+      "史略ID": "SANGUOZHI_016_06",
       "史略名称": "仓慈",
       "史略简介": "仓慈",
       "原文字句": "仓慈字孝仁，淮南人也。始为郡吏。建安中，太祖开募屯田于淮南，以慈为绥集都尉。黄初末，为长安令，清约有方，吏民畏而爱之。太和中，迁敦煌太守。郡在西陲，以丧乱隔绝，旷无太守二十岁，大姓雄张，遂以为俗。前太守尹奉等，循故而已，无所匡革。慈到，抑挫权右，抚恤贫羸，甚得其理。旧大族田地有余，而小民无立锥之土；慈皆随口割赋，稍稍使毕其本直。先是属城狱讼众猥，县不能决，多集治下；慈躬往省阅，料简轻重，自非殊死，",
@@ -323,6 +401,5 @@
         }
       ]
     }
-  ],
-  "translation_qa_hint": "混写卷：人物段落非连续。翻译质检须按 entries[].paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。"
+  ]
 }

@@ -1093,12 +1093,8 @@
     },
     {
       "paragraph": 122,
-      "owners": [
-        {
-          "name": "曹操",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "评曰"
     }
   ],
   "entries": [
@@ -1113,7 +1109,7 @@
         {
           "volume": "武帝纪",
           "paragraph_from": 2,
-          "paragraph_to": 122
+          "paragraph_to": 121
         }
       ]
     }

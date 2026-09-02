@@ -2,7 +2,7 @@
   "work": "04三国志",
   "vol": "007",
   "total_paragraphs": 25,
-  "method": "Step1b-α LLM",
+  "method": "manual_repair",
   "paragraphs": [
     {
       "paragraph": 1,
@@ -32,12 +32,12 @@
     },
     {
       "paragraph": 6,
-      "primary_subject": "张邈",
+      "primary_subject": "吕布",
       "disposition": "block"
     },
     {
       "paragraph": 7,
-      "primary_subject": "张邈",
+      "primary_subject": "吕布",
       "disposition": "block"
     },
     {
@@ -72,8 +72,9 @@
     },
     {
       "paragraph": 14,
-      "primary_subject": "吕布",
-      "disposition": "block"
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
     },
     {
       "paragraph": 15,

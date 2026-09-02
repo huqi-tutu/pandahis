@@ -24,7 +24,6 @@ DEFAULT_AGENT = os.environ.get("TRANSLATE_AGENT", "hist-worker")
 
 # V2 顺译产出目录（11）与版本标记
 TRANSLATION_VERSION_V2 = "v2"
-V2_INDEX_BASENAME = "史略索引_史记汉书.json"
 
 
 def load_dotenv() -> None:
@@ -72,16 +71,18 @@ def resolve_output_dir(
     index_path: Path | None = None,
     output_dir: Path | None = None,
 ) -> Path:
-    """V2 索引（史记汉书）默认写入 11新标注条目翻译；V1 仍写 04。"""
+    """新工作流默认写入 11新标注条目翻译；仅显式 V1 索引或 --output-dir 才写 04。"""
     p = paths()
     if output_dir is not None:
         resolved = Path(output_dir)
         if not resolved.is_absolute():
             resolved = p["root"] / resolved
-    elif index_path is not None and V2_INDEX_BASENAME in Path(index_path).name:
-        resolved = p["translate_output_v2"]
     else:
-        resolved = p["translate_output"]
+        idx_name = Path(index_path or default_index_path()).name
+        if idx_name == DEFAULT_GLOBAL_INDEX:
+            resolved = p["translate_output"]
+        else:
+            resolved = p["translate_output_v2"]
     resolved.mkdir(parents=True, exist_ok=True)
     return resolved
 

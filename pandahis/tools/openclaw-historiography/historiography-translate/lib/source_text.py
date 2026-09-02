@@ -12,7 +12,12 @@ from lib.source_citation import build_source_citation
 def build_source_original_from_index_entry(entry: dict, data_root: Path | None = None) -> str:
     """从索引条目的 paragraphs 元数据 + 段落索引文件组装母本原文。"""
     root = data_root or Path(__file__).resolve().parents[3] / "data"
-    para_dir = root / "03索引标注条目" / "段落索引"
+    # 段落索引 SSOT：10新标注条目（03 已废弃）
+    para_dir = root / "10新标注条目" / "段落索引"
+    if not para_dir.is_dir():
+        legacy = root / "03索引标注条目" / "段落索引"
+        if legacy.is_dir():
+            para_dir = legacy
     texts: List[str] = []
     for block in entry.get("paragraphs") or []:
         index_file = str(block.get("index_file") or "").replace("段落索引/", "")

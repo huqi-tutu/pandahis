@@ -1,0 +1,151 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01797",
+  "写作结构": "正史叙述见翻译详录（《晋书·职官志》《三国志·魏书·刘放孙资传》）。拓展文以史外政书《通典·职官三》为延展主线，补魏文帝改秘书为中书、置监令的沿革，但不作逐字引文；《唐六典》《资治通鉴》可作旁证与年代坐标。汉武帝时中书谒者溯源依anchor作为异说一句带过；刘放、孙资具体对话/决策场景，以及品级、俸禄、官署规制均留白。",
+  "候选著作": [
+    {
+      "出处": "《晋书·职官志》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "条目索引的直接依据，载曹魏改秘书为中书、置监令掌诏命。",
+      "检索词": "中书监",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《三国志·魏书·刘放孙资传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "刘放、孙资以亲信近臣为中书监、令，可印证anchor所称亲信任职之制。",
+      "检索词": "刘放",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《通典·职官三·中书省》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "唐代典制史，有明确篇卷，述魏文帝改秘书为中书、置监令，以刘放、孙资分任，为史外可核查记载。",
+      "检索词": "改秘书",
+      "采用": true,
+      "原文摘句": "魏文帝黄初初，改秘书为中书，置监、令，以刘放为中书监，孙资为中书令。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《唐六典·卷九·中书省》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "唐代官制文献，卷首叙中书省沿革，可佐证曹魏中书为后世之源的典制传承。",
+      "检索词": "魏文帝",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《资治通鉴·魏纪一》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "编年系于黄初元年，记魏文帝改制设中书监令，可作年代坐标。",
+      "检索词": "改秘书",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《汉官六种·汉官仪》",
+      "tier": "辑佚/出土",
+      "pool": "legend",
+      "与本主题关系": "辑本存汉代中书谒者等旧职，为后世追溯中书职能至汉武帝时的异说提供原始线索，但anchor定为非直接沿革定论。",
+      "检索词": "中书谒者",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《晋书·职官志》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "条目索引的直接依据，载曹魏改秘书为中书、置监令掌诏命。",
+      "检索词": "中书监",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《三国志·魏书·刘放孙资传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "刘放、孙资以亲信近臣为中书监、令，可印证anchor所称亲信任职之制。",
+      "检索词": "刘放",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《通典·职官三·中书省》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "唐代典制史，有明确篇卷，述魏文帝改秘书为中书、置监令，以刘放、孙资分任，为史外可核查记载。",
+      "检索词": "改秘书",
+      "采用": true,
+      "原文摘句": "魏文帝黄初初，改秘书为中书，置监、令，以刘放为中书监，孙资为中书令。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《唐六典·卷九·中书省》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "唐代官制文献，卷首叙中书省沿革，可佐证曹魏中书为后世之源的典制传承。",
+      "检索词": "魏文帝",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《资治通鉴·魏纪一》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "编年系于黄初元年，记魏文帝改制设中书监令，可作年代坐标。",
+      "检索词": "改秘书",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《汉官六种·汉官仪》",
+      "tier": "辑佚/出土",
+      "pool": "legend",
+      "与本主题关系": "辑本存汉代中书谒者等旧职，为后世追溯中书职能至汉武帝时的异说提供原始线索，但anchor定为非直接沿革定论。",
+      "检索词": "中书谒者",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 1,
+    "C_excluded": 5,
+    "overall": "B"
+  }
+}

@@ -339,6 +339,11 @@ def validate_exclude_for_paragraph(
                 f"P{p} 非「太史公曰」起笔（{_snippet(t)}），禁止 exclude=太史公曰"
             )
 
+    if reason == "评曰" and not t.startswith("评曰"):
+        errors.append(
+            f"P{p} 非「评曰」起笔（{_snippet(t)}），禁止 exclude=评曰"
+        )
+
     return errors
 
 

@@ -1,0 +1,16 @@
+{
+  "entry_id": "GLBL_00084",
+  "run_id": "GLBL_00084-1787756932457",
+  "directory": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/翻译/.runs/GLBL_00084/GLBL_00084-1787756932457",
+  "formal_target": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/11新标注条目翻译/GLBL_00084_汉武帝.json",
+  "source_fingerprint": "0f7b42a75a30e785",
+  "status": "promoted",
+  "current_phase": "phase2",
+  "formal_promoted": true,
+  "attempts": {
+    "phase2": 1
+  },
+  "next_action": "done",
+  "candidate": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/翻译/.runs/GLBL_00084/GLBL_00084-1787756932457/candidate.json",
+  "resume_phase": "phase2"
+}

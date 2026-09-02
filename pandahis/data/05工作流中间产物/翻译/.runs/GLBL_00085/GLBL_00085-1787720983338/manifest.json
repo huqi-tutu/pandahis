@@ -1,0 +1,17 @@
+{
+  "entry_id": "GLBL_00085",
+  "run_id": "GLBL_00085-1787720983338",
+  "directory": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/翻译/.runs/GLBL_00085/GLBL_00085-1787720983338",
+  "formal_target": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/11新标注条目翻译/GLBL_00085_汉高祖.json",
+  "source_fingerprint": "ab83824d333084f6",
+  "status": "pending_recovery",
+  "current_phase": "verify_final",
+  "formal_promoted": false,
+  "attempts": {
+    "verify_final": 1
+  },
+  "next_action": "retry_full",
+  "last_error": "通识词冗余解释: 「负」通「妇」，就是; 通识词冗余解释: 「徭」，就是; 通识词冗余解释: 「屈」，就是",
+  "resume_phase": "phase5",
+  "candidate": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/翻译/.runs/GLBL_00085/GLBL_00085-1787720983338/candidate.json"
+}

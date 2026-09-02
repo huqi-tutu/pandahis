@@ -319,12 +319,8 @@
     },
     {
       "paragraph": 36,
-      "owners": [
-        {
-          "name": "陆逊",
-          "category": "武将"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "评曰"
     }
   ],
   "entries": [
@@ -339,7 +335,7 @@
         {
           "volume": "陆逊传",
           "paragraph_from": 2,
-          "paragraph_to": 36
+          "paragraph_to": 35
         }
       ]
     }

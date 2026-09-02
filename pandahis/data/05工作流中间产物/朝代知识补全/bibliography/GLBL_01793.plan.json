@@ -1,0 +1,131 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01793",
+  "写作结构": "正史叙述见翻译详录，以《三国志·吴书·丁奉传》为骨架，并参《三国志·吴书·诸葛恪传》中诸葛恪主持防御的叙述。拓展文写史外异说与延展：以《资治通鉴》补252年秋冬魏攻东兴的编年时序，以《建康实录》补吴都视角的东兴防线与战后形势；二者暂按B档书目级引用，不展开具体战术细节。留白：兵力总数、伤亡数、诸将密议、丁奉与魏将单挑等均不写，《三国演义》文学回目不采作史实。",
+  "候选著作": [
+    {
+      "出处": "《三国志·吴书·丁奉传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "索引正史出处，丁奉雪中破魏军的主要传记，由翻译详录承担",
+      "检索词": "丁奉",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《资治通鉴·卷七十五·魏纪七》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "司马光编年史详载魏攻东兴及吴军救东兴的时序，为二十四史以外的后续史源",
+      "检索词": "东兴",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《建康实录·废帝亮》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "唐代私修建康地方史，以吴都视角记录吴废帝建兴元年东兴之战及东兴堤防后续",
+      "检索词": "丁奉",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《三国志注·卷五十五·吴书·丁奉传》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "裴松之征引魏晋杂史以补充或考辨丁奉事迹，是史外异说的入口",
+      "检索词": "丁奉",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《三国演义·第一百八回》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "小说回目重演“丁奉雪中奋短兵”，属文学演绎；anchor明确禁止以其为史实",
+      "检索词": "雪中奋短兵",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《三国志·吴书·丁奉传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "索引正史出处，丁奉雪中破魏军的主要传记，由翻译详录承担",
+      "检索词": "丁奉",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《资治通鉴·卷七十五·魏纪七》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "司马光编年史详载魏攻东兴及吴军救东兴的时序，为二十四史以外的后续史源",
+      "检索词": "东兴",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《建康实录·废帝亮》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "唐代私修建康地方史，以吴都视角记录吴废帝建兴元年东兴之战及东兴堤防后续",
+      "检索词": "丁奉",
+      "采用": true,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《三国志注·卷五十五·吴书·丁奉传》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "裴松之征引魏晋杂史以补充或考辨丁奉事迹，是史外异说的入口",
+      "检索词": "丁奉",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《三国演义·第一百八回》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "小说回目重演“丁奉雪中奋短兵”，属文学演绎；anchor明确禁止以其为史实",
+      "检索词": "雪中奋短兵",
+      "采用": false,
+      "原文摘句": null,
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 3,
+    "overall": "B"
+  }
+}

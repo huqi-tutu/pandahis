@@ -1,0 +1,201 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01792",
+  "写作结构": "正史叙述以《三国志·蜀书·姜维传》为底本，魏方对应见《三国志·魏书·邓艾传》，均归翻译详录；拓展文以《华阳国志·刘后主志》补蜀汉地方视角，以裴注引《魏略》《汉晋春秋》《世语》收束姜维早岁、晚年密谋与死事异说；《资治通鉴》作编年参照，《三国演义》的虚构只作传奇层提示，不进入叙事主体。",
+  "候选著作": [
+    {
+      "出处": "《三国志·蜀书·姜维传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史本传，北伐主线、年间战役及蜀亡前后事均见于此。",
+      "检索词": "姜维",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《三国志·魏书·邓艾传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "魏方主将邓艾应对姜维诸役的对应纪事，可对照北伐攻防。",
+      "检索词": "邓艾",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《华阳国志·刘后主志》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "蜀汉地方史，按年记姜维出军及蜀汉末年形势，可补地方视角。",
+      "检索词": "姜维",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《魏略》（《三国志·蜀书·姜维传》裴注引）",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "曹魏私修史，裴注引其文记姜维天水出身与早年才名，为正史之外的异文。",
+      "检索词": "魏略曰",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《汉晋春秋》（《三国志·蜀书·姜维传》裴注引）",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "习凿齿编年史，裴注多引，含姜维晚年密谋与蜀汉存亡表述，可备一说。",
+      "检索词": "汉晋春秋",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《世语》（《三国志·蜀书·姜维传》裴注引）",
+      "tier": "经注/杂史",
+      "pool": "legend",
+      "与本主题关系": "裴注引《世语》载姜维死时被剖、胆如斗大，即“胆大如斗”典故来源。",
+      "检索词": "胆如斗大",
+      "采用": true,
+      "原文摘句": "维死时见剖，胆如斗大。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《资治通鉴·魏纪》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "宋代编年通史，将姜维多次北伐逐年编排，可作时间坐标与叙事合参。",
+      "检索词": "姜维",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《三国演义》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "明刊演义虚构“天水麒麟儿”等情节，塑造姜维为诸葛亮传人，属小说层。",
+      "检索词": "姜维",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《三国志·蜀书·姜维传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "正史本传，北伐主线、年间战役及蜀亡前后事均见于此。",
+      "检索词": "姜维",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《三国志·魏书·邓艾传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "魏方主将邓艾应对姜维诸役的对应纪事，可对照北伐攻防。",
+      "检索词": "邓艾",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《华阳国志·刘后主志》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "蜀汉地方史，按年记姜维出军及蜀汉末年形势，可补地方视角。",
+      "检索词": "姜维",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《魏略》（《三国志·蜀书·姜维传》裴注引）",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "曹魏私修史，裴注引其文记姜维天水出身与早年才名，为正史之外的异文。",
+      "检索词": "魏略曰",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《汉晋春秋》（《三国志·蜀书·姜维传》裴注引）",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "习凿齿编年史，裴注多引，含姜维晚年密谋与蜀汉存亡表述，可备一说。",
+      "检索词": "汉晋春秋",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《资治通鉴·魏纪》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "宋代编年通史，将姜维多次北伐逐年编排，可作时间坐标与叙事合参。",
+      "检索词": "姜维",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《世语》（《三国志·蜀书·姜维传》裴注引）",
+      "tier": "经注/杂史",
+      "pool": "legend",
+      "与本主题关系": "裴注引《世语》载姜维死时被剖、胆如斗大，即“胆大如斗”典故来源。",
+      "检索词": "胆如斗大",
+      "采用": true,
+      "原文摘句": "维死时见剖，胆如斗大。",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《三国演义》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "明刊演义虚构“天水麒麟儿”等情节，塑造姜维为诸葛亮传人，属小说层。",
+      "检索词": "姜维",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 4,
+    "C_excluded": 4,
+    "overall": "B"
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01846",
+  "写作结构": "正史叙述见翻译详录；拓展文以史外异说与延展为主：《魏末传》裴注与《资治通鉴》编年材料可用以钩沉乐嘉之战及归晋后平羌胡事迹，但须遵守B档限制，不写具体冲杀细节；《三国演义》作为唯一采用legend，仅用‘单骑退雄兵’合段补充，点明小说渲染即可；其余缺失处留白。",
+  "候选著作": [
+    {
+      "出处": "《晋书·文鸯传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "索引所标主要史料出处，正史纪传叙述文鸯生平归晋后事。",
+      "检索词": "文鸯",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《三国志·魏书·诸葛诞传》裴注引《魏末传》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "裴松之注引《魏末传》保存了文鸯（文俶）小名、勇力以及乐嘉之战相关记载，属于正史之外的早期史料。",
+      "检索词": "文鸯",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C",
+      "fetch_note": "二十四史由翻译详录服务，拓展路不摘句"
+    },
+    {
+      "出处": "《资治通鉴·魏纪八》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "编年体史书记载正元二年乐嘉之战及文鸯单骑退敌事，可作史外参照。",
+      "检索词": "文鸯",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《三国演义·第一百一十回》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "小说将文鸯乐嘉之战单骑退敌渲染为‘文鸯单骑退雄兵’，是民间传说层的主要来源。",
+      "检索词": "单骑退雄兵",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《晋书·文鸯传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "索引所标主要史料出处，正史纪传叙述文鸯生平归晋后事。",
+      "检索词": "文鸯",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《三国志·魏书·诸葛诞传》裴注引《魏末传》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "裴松之注引《魏末传》保存了文鸯（文俶）小名、勇力以及乐嘉之战相关记载，属于正史之外的早期史料。",
+      "检索词": "文鸯",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C",
+      "fetch_note": "二十四史由翻译详录服务，拓展路不摘句"
+    },
+    {
+      "出处": "《资治通鉴·魏纪八》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "编年体史书记载正元二年乐嘉之战及文鸯单骑退敌事，可作史外参照。",
+      "检索词": "文鸯",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《三国演义·第一百一十回》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "小说将文鸯乐嘉之战单骑退敌渲染为‘文鸯单骑退雄兵’，是民间传说层的主要来源。",
+      "检索词": "单骑退雄兵",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

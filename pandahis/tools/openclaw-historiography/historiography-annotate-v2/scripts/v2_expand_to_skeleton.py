@@ -34,11 +34,10 @@ def _paragraph_index_path(work: str, vol: str) -> Path:
     vol = vol.zfill(3)
     paths = histograph_paths()
     names = (f"{work}_{vol}.json",)
-    for base in (paths["paragraph_index"], paths["annotations_v1"] / "段落索引"):
-        for name in names:
-            candidate = base / name
-            if candidate.exists():
-                return candidate
+    for name in names:
+        candidate = paths["paragraph_index"] / name
+        if candidate.exists():
+            return candidate
     raise FileNotFoundError(f"段落索引不存在: {work} vol {vol}")
 
 
@@ -160,13 +159,17 @@ def _detect_exclude_paragraphs(para_text: Dict[int, str], work: str) -> List[Tup
                 next_pid not in covered
                 and len((para_text.get(next_pid) or "").strip()) > 80
                 and not (para_text.get(next_pid) or "").strip()[:24].startswith(
-                    ("论曰", "赞曰", "太史公曰")
+                    ("论曰", "赞曰", "太史公曰", "评曰")
                 )
                 for next_pid in range(pid + 1, max_pid + 1)
             )
             if not has_following_narrative:
                 excludes.append((pid, pid, "赞曰"))
                 covered.add(pid)
+        elif head.startswith("评曰") or "评曰：" in head[:20] or "评曰:" in head[:20]:
+            # 《三国志》陈寿卷末论赞。只标本段，勿盲延（065 评曰后为裴注上表）
+            excludes.append((pid, pid, "评曰"))
+            covered.add(pid)
         elif head.startswith("论曰") or "论曰：" in head[:20]:
             excludes.append((pid, pid, "论赞"))
             covered.add(pid)

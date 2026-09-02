@@ -16,28 +16,18 @@
       "exclude_reason": "共段总述"
     },
     {
-      "paragraph_from": 3,
+      "paragraph_from": 4,
       "paragraph_to": 4,
       "exclude_reason": "世系链"
     },
     {
       "paragraph_from": 6,
-      "paragraph_to": 8,
-      "exclude_reason": "世系链"
-    },
-    {
-      "paragraph_from": 11,
-      "paragraph_to": 13,
-      "exclude_reason": "世系链"
-    },
-    {
-      "paragraph_from": 15,
       "paragraph_to": 15,
       "exclude_reason": "世系链"
     },
     {
       "paragraph_from": 17,
-      "paragraph_to": 23,
+      "paragraph_to": 24,
       "exclude_reason": "世系链"
     },
     {
@@ -53,10 +43,22 @@
     {
       "paragraph_from": 34,
       "paragraph_to": 34,
-      "exclude_reason": "论赞"
+      "exclude_reason": "评曰"
     }
   ],
   "blocks": [
+    {
+      "name": "曹昂",
+      "category": "宗戚",
+      "paragraph_from": 3,
+      "paragraph_to": 3,
+      "boundary_evidence": {
+        "open_paragraph": 3,
+        "open_phrase": "丰愍王昂字子脩。弱冠举孝廉。随太祖南征，为张绣所害。无子。黄初二年追封，谥曰丰悼",
+        "close_paragraph": 3,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P3–P3"
+      }
+    },
     {
       "name": "曹冲",
       "category": "宗戚",
@@ -70,30 +72,6 @@
       }
     },
     {
-      "name": "曹衮",
-      "category": "宗戚",
-      "paragraph_from": 9,
-      "paragraph_to": 10,
-      "boundary_evidence": {
-        "open_paragraph": 9,
-        "open_phrase": "中山恭王衮，建安二十一年封平乡侯。少好学，年十余岁能属文。每读书，文学左右常恐以",
-        "close_paragraph": 10,
-        "close_note": "Step1b-β 自 primary_subjects 合并 P9–P10"
-      }
-    },
-    {
-      "name": "曹幹",
-      "category": "宗戚",
-      "paragraph_from": 14,
-      "paragraph_to": 14,
-      "boundary_evidence": {
-        "open_paragraph": 14,
-        "open_phrase": "赵王幹，建安二十年封高平亭侯。二十二年，徙封赖亭侯。其年改封弘农侯。黄初二年，进",
-        "close_paragraph": 14,
-        "close_note": "Step1b-β 自 primary_subjects 合并 P14–P14"
-      }
-    },
-    {
       "name": "曹彪",
       "category": "宗戚",
       "paragraph_from": 16,
@@ -103,18 +81,6 @@
         "open_phrase": "楚王彪字朱虎。建安二十一年，封寿春侯。黄初二年，进爵，徙封汝阳公。三年，封弋阳王",
         "close_paragraph": 16,
         "close_note": "Step1b-β 自 primary_subjects 合并 P16–P16"
-      }
-    },
-    {
-      "name": "曹茂",
-      "category": "宗戚",
-      "paragraph_from": 24,
-      "paragraph_to": 24,
-      "boundary_evidence": {
-        "open_paragraph": 24,
-        "open_phrase": "乐陵王茂，建安二十二年封万岁亭侯。二十三年，改封平舆侯。黄初三年，进爵，徙封乘氏",
-        "close_paragraph": 24,
-        "close_note": "Step1b-β 自 primary_subjects 合并 P24–P24"
       }
     }
   ],

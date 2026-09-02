@@ -2,7 +2,7 @@
   "work": "04三国志",
   "vol": "021",
   "total_paragraphs": 35,
-  "method": "Step1b-α LLM",
+  "method": "manual_repair",
   "paragraphs": [
     {
       "paragraph": 1,
@@ -32,62 +32,69 @@
     },
     {
       "paragraph": 6,
-      "primary_subject": "徐幹",
+      "primary_subject": "世系链",
       "disposition": "exclude",
-      "exclude_reason": "非主轴人物"
+      "exclude_reason": "世系链"
     },
     {
       "paragraph": 7,
-      "primary_subject": "陈琳",
+      "primary_subject": "世系链",
       "disposition": "exclude",
-      "exclude_reason": "非主轴人物"
+      "exclude_reason": "世系链"
     },
     {
       "paragraph": 8,
-      "primary_subject": "阮瑀",
+      "primary_subject": "世系链",
       "disposition": "exclude",
-      "exclude_reason": "非主轴人物"
+      "exclude_reason": "世系链"
     },
     {
       "paragraph": 9,
-      "primary_subject": "应玚",
+      "primary_subject": "世系链",
       "disposition": "exclude",
-      "exclude_reason": "非主轴人物"
+      "exclude_reason": "世系链"
     },
     {
       "paragraph": 10,
-      "primary_subject": "王粲",
-      "disposition": "block"
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
     },
     {
       "paragraph": 11,
-      "primary_subject": "王粲",
-      "disposition": "block"
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
     },
     {
       "paragraph": 12,
-      "primary_subject": "王粲",
-      "disposition": "block"
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
     },
     {
       "paragraph": 13,
-      "primary_subject": "王粲",
-      "disposition": "block"
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
     },
     {
       "paragraph": 14,
-      "primary_subject": "王粲",
-      "disposition": "block"
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
     },
     {
       "paragraph": 15,
-      "primary_subject": "王粲",
-      "disposition": "block"
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
     },
     {
       "paragraph": 16,
-      "primary_subject": "王粲",
-      "disposition": "block"
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
     },
     {
       "paragraph": 17,

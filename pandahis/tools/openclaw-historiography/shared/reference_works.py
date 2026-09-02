@@ -7,6 +7,30 @@ from typing import Any
 
 _REF_MARKERS = ("*参考著作", "参考著作")
 
+# 多卷典籍：正文可写裸《史记》作 framing，但参考著作须《书名·卷篇》
+KNOWN_MULTI_VOLUME_WORKS = frozenset(
+    {
+        "史记",
+        "汉书",
+        "后汉书",
+        "三国志",
+        "左传",
+        "战国策",
+        "资治通鉴",
+        "吕氏春秋",
+        "管子",
+        "韩非子",
+        "墨子",
+        "庄子",
+        "荀子",
+        "淮南子",
+        "尚书",
+        "礼记",
+        "周易",
+        "周礼",
+    }
+)
+
 
 def strip_reference_section(text: str) -> str:
     body = text
@@ -66,13 +90,20 @@ def _volume_suffixes(refs: list[str]) -> set[str]:
 
 
 def dedupe_reference_works(refs: list[str]) -> list[str]:
-    """去重：同卷篇只留一条；同一母书的不同卷篇均保留。"""
+    """去重：同卷篇只留一条；同一母书的不同卷篇均保留。
+
+    多卷典籍的裸书名（无 ·）一律不入列——正文 framing 用《汉书》可以，
+    参考著作须精确到卷篇；与同书卷篇并存时同样丢弃裸名。
+    """
     normalized = [_normalize_ref(r) for r in refs if str(r).strip()]
     vol_suffixes = _volume_suffixes(normalized)
     mother_plain: dict[str, str] = {}
     for ref in normalized:
         inner = ref.strip("《》")
         if "·" in inner:
+            continue
+        # 多卷典籍裸名：永不入参考著作（即使全文只有这一条）
+        if inner in KNOWN_MULTI_VOLUME_WORKS:
             continue
         key = _title_key(ref)
         prev = mother_plain.get(key)
@@ -94,6 +125,8 @@ def dedupe_reference_works(refs: list[str]) -> list[str]:
                 continue
             seen.add(ref)
             out.append(ref)
+            continue
+        if inner in KNOWN_MULTI_VOLUME_WORKS:
             continue
         key = _title_key(ref)
         # 《康诰》与《尚书·康诰》等同名末段，保留带卷篇者
@@ -261,6 +294,9 @@ def reference_works_verify_issues(
     body_titles = extract_book_titles(body)
 
     for title in body_titles:
+        # 多卷典籍裸名仅作正文 framing，不要求也不允许入参考著作
+        if "·" not in title and title in KNOWN_MULTI_VOLUME_WORKS:
+            continue
         if not any(_titles_match(title, rt) for rt in ref_titles):
             issues.append(
                 (

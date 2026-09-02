@@ -20,6 +20,12 @@ class TestWorkTextStructure(unittest.TestCase):
         self.assertIn("无独立卷首标题", hint)
         self.assertIn("太史公曰", hint)
 
+    def test_sanguozhi_has_volume_title_and_pingyue(self) -> None:
+        hint = work_text_structure_hint("04三国志")
+        self.assertIn("卷首标题", hint)
+        self.assertIn("评曰", hint)
+        self.assertIn("不建条目", hint)
+
     def test_unknown_work_generic(self) -> None:
         hint = work_text_structure_hint("99未知")
         self.assertIn("通用", hint)

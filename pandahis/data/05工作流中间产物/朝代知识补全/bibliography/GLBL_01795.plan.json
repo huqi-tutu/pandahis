@@ -1,0 +1,107 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01795",
+  "写作结构": "正史叙述见翻译详录（《三国志·吴书·陆抗传》）。拓展文以《资治通鉴·卷七十九·晋纪一》为史外主干，补纪年、起因与结局；《建康实录》与《水经注》留作备检，不直接影响细节叙事；无书名的口传附会一律留白。",
+  "候选著作": [
+    {
+      "出处": "《三国志·吴书·陆抗传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "索引所指向的正文，记陆抗讨步阐、复西陵；由翻译详录负责，本 plan 不另摘句。",
+      "检索词": "陆抗",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《资治通鉴·卷七十九·晋纪一》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "编年体记泰始八年（272）步阐叛吴降晋、陆抗围西陵、晋援军失利，为可核查的史外纪年主干。",
+      "检索词": "陆抗",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《建康实录·吴后主》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "唐许嵩据吴地旧史编录，孙皓朝纪或存步阐降晋、陆抗平乱的吴都视角记载，可作互证。",
+      "检索词": "步阐",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《水经注·江水》",
+      "tier": "经注/杂史",
+      "pool": "legend",
+      "与本主题关系": "记西陵（夷陵）地理沿革，为战役地点提供背景，不叙具体战事。",
+      "检索词": "夷陵",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《三国志·吴书·陆抗传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "索引所指向的正文，记陆抗讨步阐、复西陵；由翻译详录负责，本 plan 不另摘句。",
+      "检索词": "陆抗",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《资治通鉴·卷七十九·晋纪一》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "编年体记泰始八年（272）步阐叛吴降晋、陆抗围西陵、晋援军失利，为可核查的史外纪年主干。",
+      "检索词": "陆抗",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《建康实录·吴后主》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "唐许嵩据吴地旧史编录，孙皓朝纪或存步阐降晋、陆抗平乱的吴都视角记载，可作互证。",
+      "检索词": "步阐",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《水经注·江水》",
+      "tier": "经注/杂史",
+      "pool": "legend",
+      "与本主题关系": "记西陵（夷陵）地理沿革，为战役地点提供背景，不叙具体战事。",
+      "检索词": "夷陵",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 1,
+    "C_excluded": 3,
+    "overall": "B"
+  }
+}

@@ -1,0 +1,29 @@
+   ℹ️ 语义覆盖（合并补验）：待复核 2/287 单元
+   ℹ️ 语义覆盖复核开始: 2 单元 → 1 批（每批 ≤6）
+   ℹ️ 语义覆盖复核 [1/1] conveyed=0 unclear=0 missing=2 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [1/1]
+   ℹ️ 语义覆盖复核完成: conveyed=0/2 unclear=0 missing=2 contradicted=0
+   ℹ️ 母本语义覆盖: 285/287 单元已传达 (99%)；未传达 2 条；满足传达率 ≥80% 且未传达 ≤3；本次新复核 2 单元
+⏭️ 跳过 Phase1（沿用 GLBL_00084_汉武帝.mother.json）
+📦 Phase2 分批补全 GLBL_00084：18 批（母本 >10000 字，避免单次输出截断）
+⏳ Phase2 补全 GLBL_00084 第 1/18 批 → GLBL_00084_汉武帝.mother-b01.enrich.json
+   ⚠️ 第 1/18 批字数偏少: 761 < 母本×1.2=1484 （软警告，不阻断落盘；请抽查是否漏译或 Phase2 补全不足）
+⏳ Phase2 补全 GLBL_00084 第 2/18 批 → GLBL_00084_汉武帝.mother-b02.enrich.json
+   ⚠️ 第 2/18 批字数偏少: 924 < 母本×1.2=1070 （软警告，不阻断落盘；请抽查是否漏译或 Phase2 补全不足）
+⏳ Phase2 补全 GLBL_00084 第 3/18 批 → GLBL_00084_汉武帝.mother-b03.enrich.json
+   ⚠️ 第 3/18 批字数偏少: 703 < 母本×1.2=936 （软警告，不阻断落盘；请抽查是否漏译或 Phase2 补全不足）
+⏳ Phase2 补全 GLBL_00084 第 4/18 批 → GLBL_00084_汉武帝.mother-b04.enrich.json
+   ⚠️ 第 4/18 批字数偏少: 603 < 母本×1.2=604 （软警告，不阻断落盘；请抽查是否漏译或 Phase2 补全不足）
+⏳ Phase2 补全 GLBL_00084 第 5/18 批 → GLBL_00084_汉武帝.mother-b05.enrich.json
+   ⚠️ 第 5/18 批字数偏少: 812 < 母本×1.2=942 （软警告，不阻断落盘；请抽查是否漏译或 Phase2 补全不足）
+⏳ Phase2 补全 GLBL_00084 第 6/18 批 → GLBL_00084_汉武帝.mother-b06.enrich.json
+   ⚠️ 第 6/18 批字数偏少: 961 < 母本×1.2=2223 （软警告，不阻断落盘；请抽查是否漏译或 Phase2 补全不足）
+⏳ Phase2 补全 GLBL_00084 第 7/18 批 → GLBL_00084_汉武帝.mother-b07.enrich.json
+   ⚠️ 第 7/18 批字数偏少: 799 < 母本×1.2=1801 （软警告，不阻断落盘；请抽查是否漏译或 Phase2 补全不足）
+⏳ Phase2 补全 GLBL_00084 第 8/18 批 → GLBL_00084_汉武帝.mother-b08.enrich.json
+   🔧 已自动修正本批模糊出处表述
+⏳ Phase2 补全 GLBL_00084 第 9/18 批 → GLBL_00084_汉武帝.mother-b09.enrich.json
+⏳ Phase2 补全 GLBL_00084 第 10/18 批 → GLBL_00084_汉武帝.mother-b10.enrich.json
+   🔧 已自动修正本批模糊出处表述
+   ⚠️ 第 10/18 批字数偏少: 1167 < 母本×1.2=2448 （软警告，不阻断落盘；请抽查是否漏译或 Phase2 补全不足）
+⏳ Phase2 补全 GLBL_00084 第 11/18 批 → GLBL_00084_汉武帝.mother-b11.enrich.json

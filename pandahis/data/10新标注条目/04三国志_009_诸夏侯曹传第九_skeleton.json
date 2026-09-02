@@ -1,10 +1,10 @@
 {
   "volume": "诸夏侯曹传",
   "source_file": "04三国志_009_诸夏侯曹传第九.txt",
-  "total_paragraphs": 37,
+  "total_paragraphs": 38,
   "volume_type": "纪传叙事",
   "volume_subtype": "hezhuan",
-  "volume_texture": "interleaved",
+  "volume_texture": "sequential",
   "segment_attribution": [
     {
       "paragraph": 1,
@@ -40,12 +40,8 @@
     },
     {
       "paragraph": 5,
-      "owners": [
-        {
-          "name": "夏侯惇",
-          "category": "武将"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "世系链"
     },
     {
       "paragraph": 6,
@@ -276,7 +272,7 @@
       "paragraph": 31,
       "owners": [
         {
-          "name": "夏侯渊",
+          "name": "夏侯尚",
           "category": "武将"
         }
       ]
@@ -285,7 +281,7 @@
       "paragraph": 32,
       "owners": [
         {
-          "name": "夏侯渊",
+          "name": "夏侯尚",
           "category": "武将"
         }
       ]
@@ -294,7 +290,7 @@
       "paragraph": 33,
       "owners": [
         {
-          "name": "夏侯渊",
+          "name": "夏侯尚",
           "category": "武将"
         }
       ]
@@ -303,7 +299,7 @@
       "paragraph": 34,
       "owners": [
         {
-          "name": "夏侯渊",
+          "name": "夏侯尚",
           "category": "武将"
         }
       ]
@@ -312,7 +308,7 @@
       "paragraph": 35,
       "owners": [
         {
-          "name": "夏侯渊",
+          "name": "夏侯尚",
           "category": "武将"
         }
       ]
@@ -321,15 +317,24 @@
       "paragraph": 36,
       "owners": [
         {
-          "name": "夏侯渊",
+          "name": "夏侯尚",
           "category": "武将"
         }
       ]
     },
     {
       "paragraph": 37,
+      "owners": [
+        {
+          "name": "夏侯尚",
+          "category": "武将"
+        }
+      ]
+    },
+    {
+      "paragraph": 38,
       "owners": [],
-      "exclude_reason": "论赞"
+      "exclude_reason": "评曰"
     }
   ],
   "entries": [
@@ -344,7 +349,7 @@
         {
           "volume": "诸夏侯曹传",
           "paragraph_from": 2,
-          "paragraph_to": 5
+          "paragraph_to": 4
         }
       ]
     },
@@ -360,11 +365,6 @@
           "volume": "诸夏侯曹传",
           "paragraph_from": 6,
           "paragraph_to": 10
-        },
-        {
-          "volume": "诸夏侯曹传",
-          "paragraph_from": 31,
-          "paragraph_to": 36
         }
       ]
     },
@@ -427,7 +427,21 @@
           "paragraph_to": 30
         }
       ]
+    },
+    {
+      "史略ID": "SANGUOZHI_009_07",
+      "史略名称": "夏侯尚",
+      "史略简介": "夏侯尚",
+      "原文字句": "夏侯尚字伯仁，渊从子也。文帝与之亲友。太祖定冀州，尚为军司马，将骑从征伐，后为五官将文学。魏国初建，迁黄门侍郎。代郡胡叛，遣鄢陵侯彰征讨之，以尚参彰军事，定代地，还。太祖崩于洛阳，尚持节，奉梓宫还邺。并录前功，封平陵亭侯，拜散骑常侍，迁中领军。文帝践阼，更封平陵乡侯，迁征南将军，领荆州刺史，假节都督南方诸军事。尚奏：“刘备别军在上庸，山道险难，彼不我虞，若以奇兵潜行，出其不意，则独克之势也。”遂勒",
+      "史略分类": "武将",
+      "主要史料出处": "《04三国志·卷9·诸夏侯曹传》",
+      "paragraphs": [
+        {
+          "volume": "诸夏侯曹传",
+          "paragraph_from": 31,
+          "paragraph_to": 37
+        }
+      ]
     }
-  ],
-  "translation_qa_hint": "混写卷：人物段落非连续。翻译质检须按 entries[].paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。"
+  ]
 }

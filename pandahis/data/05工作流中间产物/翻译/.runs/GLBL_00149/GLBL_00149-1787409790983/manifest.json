@@ -1,0 +1,17 @@
+{
+  "entry_id": "GLBL_00149",
+  "run_id": "GLBL_00149-1787409790983",
+  "directory": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/翻译/.runs/GLBL_00149/GLBL_00149-1787409790983",
+  "formal_target": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/翻译/sandbox_GLBL_00149_v2/GLBL_00149_黄帝.json",
+  "source_fingerprint": "599de383ac63d384",
+  "status": "pending_recovery",
+  "current_phase": "verify_final",
+  "formal_promoted": false,
+  "attempts": {
+    "verify_final": 1
+  },
+  "next_action": "retry_verify",
+  "candidate": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/翻译/.runs/GLBL_00149/GLBL_00149-1787409790983/candidate.json",
+  "last_error": "成稿：外部补全未落地「蚩尤及其兄弟与神话形象细节补充」@ M006 后 — 缺出处 《述异记》；请按锚点写入差异点并出现 《述异记》；成稿：外部补全未落地「黄帝驱猛兽部队的真相及与炎帝的冲突」@ M008 内 — 缺出处 《列子·黄帝》；请按锚点写入差异点并出现 《列子·黄帝》；成稿：外部补全未落地「涿鹿之战的神话辅助（旱魃应龙）」@ M011 后 — 缺出处 《山海经·大荒北经》；请按锚点写入差异点并出现 《山海经·大荒北经》；成稿：外部补全未落地「黄帝四处征伐的具体地点及传说」@ M013 后 — 缺出处 《帝王世纪》；请按锚点写入差异点并出现 《帝王世纪》；成稿：外部补全未落地「黄帝的归宿（鼎湖龙去/葬桥山）及嫘祖功绩」@ M029 后 — 已挂出处但缺主题指纹（须含其一：先蚕、黄帝的归、鼎湖龙去、葬桥山）；请按锚点写入差异点并出现 《史记·封禅书》《史记·五帝本纪》《蚕经》",
+  "resume_phase": "phase3"
+}

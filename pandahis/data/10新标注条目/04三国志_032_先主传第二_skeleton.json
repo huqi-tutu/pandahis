@@ -247,12 +247,8 @@
     },
     {
       "paragraph": 28,
-      "owners": [
-        {
-          "name": "蜀昭烈帝",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "评曰"
     }
   ],
   "entries": [
@@ -267,7 +263,7 @@
         {
           "volume": "先主传",
           "paragraph_from": 2,
-          "paragraph_to": 28
+          "paragraph_to": 27
         }
       ]
     }

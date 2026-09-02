@@ -2,7 +2,7 @@
   "work": "04三国志",
   "vol": "042",
   "total_paragraphs": 34,
-  "method": "Step1b-α LLM",
+  "method": "manual_repair",
   "paragraphs": [
     {
       "paragraph": 1,
@@ -12,69 +12,74 @@
     },
     {
       "paragraph": 2,
-      "primary_subject": "杜微",
-      "disposition": "block"
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
     },
     {
       "paragraph": 3,
-      "primary_subject": "五梁",
+      "primary_subject": "世系链",
       "disposition": "exclude",
-      "exclude_reason": "非主轴人物附传"
+      "exclude_reason": "世系链"
     },
     {
       "paragraph": 4,
-      "primary_subject": "周群",
+      "primary_subject": "世系链",
       "disposition": "exclude",
-      "exclude_reason": "非主轴人物附传"
+      "exclude_reason": "世系链"
     },
     {
       "paragraph": 5,
-      "primary_subject": "张裕",
+      "primary_subject": "世系链",
       "disposition": "exclude",
-      "exclude_reason": "非主轴人物附传"
+      "exclude_reason": "世系链"
     },
     {
       "paragraph": 6,
-      "primary_subject": "周群",
+      "primary_subject": "世系链",
       "disposition": "exclude",
-      "exclude_reason": "非主轴人物附传"
+      "exclude_reason": "世系链"
     },
     {
       "paragraph": 7,
       "primary_subject": "杜琼",
-      "disposition": "exclude",
-      "exclude_reason": "非主轴人物附传"
+      "disposition": "block"
     },
     {
       "paragraph": 8,
-      "primary_subject": "许慈",
+      "primary_subject": "世系链",
       "disposition": "exclude",
-      "exclude_reason": "非主轴人物附传"
+      "exclude_reason": "世系链"
     },
     {
       "paragraph": 9,
-      "primary_subject": "孟光",
-      "disposition": "block"
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
     },
     {
       "paragraph": 10,
-      "primary_subject": "孟光",
-      "disposition": "block"
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
     },
     {
       "paragraph": 11,
-      "primary_subject": "来敏",
-      "disposition": "block"
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
     },
     {
       "paragraph": 12,
-      "primary_subject": "尹默",
-      "disposition": "block"
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
     },
     {
       "paragraph": 13,
-      "primary_subject": "李譔",
-      "disposition": "block"
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
     },
     {
       "paragraph": 14,

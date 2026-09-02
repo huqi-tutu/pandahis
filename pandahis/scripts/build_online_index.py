@@ -4,7 +4,7 @@
 构建线上史略索引：V2 提取 + 06 朝代知识补全（不写 V1）。
 
 合并规则（按 史略ID）：
-  1. V2 条目优先；同 ID 在 06 中的重复拷贝丢弃（如 GLBL_00103 等 11 条）。
+  1. V2 条目优先（史记汉书 + 03至04 一期标注）；同 ID 在 06 中的重复拷贝丢弃。
   2. 仅存在于 06 的条目并入（含春秋人物 GLBL_01021–01086 共 66 条）。
   3. V1 不参与合并。
 
@@ -24,6 +24,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
 V2_INDEX = DATA / "10新标注条目" / "史略索引_史记汉书.json"
+V2_INDEX_03_04 = DATA / "10新标注条目" / "史略索引_03至04.json"
 DK_ENTRIES = DATA / "06朝代知识补全" / "索引条目"
 OUT_DIR = DATA / "12线上史略索引"
 OUT_INDEX = OUT_DIR / "史略索引_online.json"
@@ -93,7 +94,16 @@ def glbl_num(entry_id: str) -> int | None:
 
 
 def load_v2_entries() -> list[dict]:
-    return json.loads(V2_INDEX.read_text(encoding="utf-8"))
+    rows: list[dict] = []
+    for path in (V2_INDEX, V2_INDEX_03_04):
+        if not path.is_file():
+            continue
+        doc = json.loads(path.read_text(encoding="utf-8"))
+        if isinstance(doc, list):
+            rows.extend(doc)
+        elif isinstance(doc, dict):
+            rows.extend(doc.get("entries") or [])
+    return rows
 
 
 def load_dk_entries() -> list[dict]:
@@ -198,10 +208,17 @@ def merge_online_index() -> tuple[list[dict], dict]:
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "sources": {
             "v2_index": str(V2_INDEX),
+            "v2_index_03_04": str(V2_INDEX_03_04),
             "dk_entries_dir": str(DK_ENTRIES),
         },
         "counts": {
             "v2_input": len(v2_list),
+            "v2_shiji_hanshu": sum(
+                1 for e in v2_list if str(e.get("史略ID", "")) <= "GLBL_01121"
+            ),
+            "v2_03_04": sum(
+                1 for e in v2_list if str(e.get("史略ID", "")) >= "GLBL_01122"
+            ),
             "dk_input": len(dk_list),
             "merged_total": len(merged),
             "skipped_06_same_id_as_v2": len(skipped_06_same_id),

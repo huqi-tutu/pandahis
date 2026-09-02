@@ -1,0 +1,120 @@
+{
+  "schema": "index_expand_manifest/v1",
+  "generated_at": "2026-08-23T03:07:22Z",
+  "target_master": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/10新标注条目/史略索引_史记汉书.json",
+  "entry_count": 4,
+  "entries": [
+    {
+      "target_glbl_id": "GLBL_00285",
+      "史略名称": "刘辅",
+      "史略分类": "宗戚",
+      "action": "append_source_entries",
+      "new_sources": [
+        {
+          "史略ID": "HOUHANSHU_047_02",
+          "role": "补充",
+          "work": "03后汉书",
+          "vol": "047",
+          "主要史料出处": "《03后汉书·卷47·光武十王列传》"
+        }
+      ],
+      "paragraphs_to_append": [
+        {
+          "work": "03后汉书",
+          "vol": "047",
+          "volume": "光武十王列传",
+          "paragraph_from": 12,
+          "paragraph_to": 18,
+          "source_file": "03后汉书_047_光武十王列传第三十二.txt",
+          "index_file": "段落索引/03后汉书_047.json",
+          "source_entry_id": "HOUHANSHU_047_02",
+          "role": "补充"
+        }
+      ]
+    },
+    {
+      "target_glbl_id": "GLBL_00340",
+      "史略名称": "张禹",
+      "史略分类": "文臣",
+      "action": "append_source_entries",
+      "new_sources": [
+        {
+          "史略ID": "HOUHANSHU_049_02",
+          "role": "补充",
+          "work": "03后汉书",
+          "vol": "049",
+          "主要史料出处": "《03后汉书·卷49·邓张徐张胡列传》"
+        }
+      ],
+      "paragraphs_to_append": [
+        {
+          "work": "03后汉书",
+          "vol": "049",
+          "volume": "邓张徐张胡列传",
+          "paragraph_from": 5,
+          "paragraph_to": 12,
+          "source_file": "03后汉书_049_邓张徐张胡列传第三十四.txt",
+          "index_file": "段落索引/03后汉书_049.json",
+          "source_entry_id": "HOUHANSHU_049_02",
+          "role": "补充"
+        }
+      ]
+    },
+    {
+      "target_glbl_id": "GLBL_00461",
+      "史略名称": "郑弘",
+      "史略分类": "文臣",
+      "action": "append_source_entries",
+      "new_sources": [
+        {
+          "史略ID": "HOUHANSHU_037_04",
+          "role": "补充",
+          "work": "03后汉书",
+          "vol": "037",
+          "主要史料出处": "《03后汉书·卷37·朱冯虞郑周列传》"
+        }
+      ],
+      "paragraphs_to_append": [
+        {
+          "work": "03后汉书",
+          "vol": "037",
+          "volume": "朱冯虞郑周列传",
+          "paragraph_from": 36,
+          "paragraph_to": 40,
+          "source_file": "03后汉书_037_朱冯虞郑周列传第二十三.txt",
+          "index_file": "段落索引/03后汉书_037.json",
+          "source_entry_id": "HOUHANSHU_037_04",
+          "role": "补充"
+        }
+      ]
+    },
+    {
+      "target_glbl_id": "GLBL_01117",
+      "史略名称": "西域诸国",
+      "史略分类": "蕃祚",
+      "action": "append_source_entries",
+      "new_sources": [
+        {
+          "史略ID": "HOUHANSHU_098_01",
+          "role": "补充",
+          "work": "03后汉书",
+          "vol": "098",
+          "主要史料出处": "《03后汉书·卷98·西域传》"
+        }
+      ],
+      "paragraphs_to_append": [
+        {
+          "work": "03后汉书",
+          "vol": "098",
+          "volume": "西域传",
+          "paragraph_from": 2,
+          "paragraph_to": 70,
+          "source_file": "03后汉书_098_西域传第七十八.txt",
+          "index_file": "段落索引/03后汉书_098.json",
+          "source_entry_id": "HOUHANSHU_098_01",
+          "role": "补充"
+        }
+      ]
+    }
+  ]
+}

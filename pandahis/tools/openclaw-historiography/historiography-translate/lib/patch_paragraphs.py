@@ -56,8 +56,7 @@ def _moben_block(entry: dict) -> dict:
 
 
 def _para_map(work: str, vol: str) -> Dict[int, str]:
-    root = paths()["root"]
-    fp = root / "data" / "03索引标注条目" / "段落索引" / f"{work}_{_norm_vol(vol)}.json"
+    fp = paths()["paragraph_index"] / f"{work}_{_norm_vol(vol)}.json"
     doc = json.loads(fp.read_text(encoding="utf-8"))
     return {int(p["id"]): str(p.get("text") or "") for p in doc.get("paragraphs") or []}
 

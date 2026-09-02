@@ -1,0 +1,109 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01779",
+  "写作结构": "正史叙述见翻译详录；史外部分以《华阳国志》补充李严同受托孤的辅政格局，以《三国演义》点明白帝城托孤的文学演绎；其余细节按 anchor 留白，不作虚构展开。",
+  "候选著作": [
+    {
+      "出处": "《三国志·蜀书·诸葛亮传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "刘备托孤的核心正史记载所在，作为翻译详录的底本，不单独拓展摘句。",
+      "检索词": "托孤",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《诸葛亮集·遗诏》（裴松之注引）",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "收录刘备临终给后主的遗诏，可与托孤事互相印证，属史外原始文献。",
+      "检索词": "先主遗诏",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《华阳国志·刘先主志》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "记载刘备病笃时召诸葛亮及李严托孤，补充诸葛亮为付托首辅、李严为副的辅政格局。",
+      "检索词": "托孤",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《三国演义·第八十五回》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "白帝城托孤的文学演绎，渲染‘君可自为成都之主’等对话，与正史有异，作为传说层补充。",
+      "检索词": "白帝城托孤",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《三国志·蜀书·诸葛亮传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "刘备托孤的核心正史记载所在，作为翻译详录的底本，不单独拓展摘句。",
+      "检索词": "托孤",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《诸葛亮集·遗诏》（裴松之注引）",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "收录刘备临终给后主的遗诏，可与托孤事互相印证，属史外原始文献。",
+      "检索词": "先主遗诏",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《华阳国志·刘先主志》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "记载刘备病笃时召诸葛亮及李严托孤，补充诸葛亮为付托首辅、李严为副的辅政格局。",
+      "检索词": "托孤",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《三国演义·第八十五回》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "白帝城托孤的文学演绎，渲染‘君可自为成都之主’等对话，与正史有异，作为传说层补充。",
+      "检索词": "白帝城托孤",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 2,
+    "C_excluded": 2,
+    "overall": "B"
+  }
+}

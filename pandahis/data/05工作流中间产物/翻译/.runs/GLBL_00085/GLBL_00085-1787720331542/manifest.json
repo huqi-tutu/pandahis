@@ -1,0 +1,12 @@
+{
+  "entry_id": "GLBL_00085",
+  "run_id": "GLBL_00085-1787720331542",
+  "directory": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/翻译/.runs/GLBL_00085/GLBL_00085-1787720331542",
+  "formal_target": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/11新标注条目翻译/GLBL_00085_汉高祖.json",
+  "source_fingerprint": "ab83824d333084f6",
+  "status": "running",
+  "current_phase": "recall",
+  "formal_promoted": false,
+  "attempts": {},
+  "next_action": "run_phase1"
+}

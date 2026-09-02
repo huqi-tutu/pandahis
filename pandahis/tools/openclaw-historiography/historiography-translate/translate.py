@@ -6,13 +6,14 @@
   python3 translate.py init [--index PATH]
   python3 translate.py recall --id GLBL_00001
   python3 translate.py run --from GLBL_00001 --max 1 [--priority P0] [--single-source-only]
-  python3 translate.py run-one --id GLBL_00001 [--from-phase phase2|phase3|phase4|phase5] [--dry-run]
+  python3 translate.py run-one --id GLBL_00001 [--from-phase phase2] [--dry-run]
   python3 translate.py repair --id GLBL_00001 [--execute] [--dry-run]
   python3 translate.py repair-show --id GLBL_00001
   python3 translate.py verify --id GLBL_00001
   python3 translate.py aggregate
   python3 translate.py status
-  python3 translate.py patch-paragraphs --id GLBL_00149 [--dry-run] [--force]
+  python3 translate.py promote --id GLBL_00001 [--sync] [--version v7] [--note "..."]
+  python3 translate.py sync --id GLBL_00001
   python3 translate.py patch-paragraphs --id GLBL_00730 --source-only
   # 产出默认写入 待补全段落翻译/_patch_output/，基稿不动，待人工确认后再 promote
 """
@@ -78,16 +79,14 @@ def main() -> int:
         "--from-phase",
         dest="from_phase",
         default=None,
-        choices=("phase2", "phase3", "phase4", "phase5"),
-        help=(
-            "续跑：phase2=跳过母本重跑润色+质检；phase3=仅第一轮质检；"
-            "phase4=人工确认后定向修复；phase5=修复后复检"
-        ),
+        choices=("phase_b", "phase_c", "phase_d", "phase2", "assemble", "batch"),
+        help="续跑：assemble=终稿装配；batch=分批成稿；phase_b/c/d（ABCD）；phase2 等同 phase_d",
     )
 
     p = sub.add_parser("verify", help="质检产出 JSON")
     p.add_argument("--id", required=True, dest="entry_id")
     p.add_argument("--index", type=Path, default=None)
+    p.add_argument("--output-dir", type=Path, default=None)
 
     sub.add_parser("status", help="查看进度")
 
@@ -103,6 +102,15 @@ def main() -> int:
     p.add_argument("--dry-run", action="store_true")
     p.add_argument("--index", type=Path, default=None)
 
+    p = sub.add_parser("promote", help="人工确认后 promote 至 11/_versions（与 sync 分离）")
+    p.add_argument("--id", required=True, dest="entry_id")
+    p.add_argument("--index", type=Path, default=None)
+    p.add_argument("--output-dir", type=Path, default=None)
+    p.add_argument("--version", default=None, help="指定版本号，如 v7")
+    p.add_argument("--note", default="", help="版本说明")
+    p.add_argument("--sync", action="store_true", help="promote 后立即同步线上")
+    p.add_argument("--dry-run", action="store_true")
+
     p = sub.add_parser("retry", help="将 failed 任务重置为 pending（无成稿者）")
     p.add_argument("--dynasty", default=None)
     p.add_argument("--priority", default=None)
@@ -114,16 +122,10 @@ def main() -> int:
         "--scope",
         default="full",
         choices=("intro", "mother", "tail", "full", "attribution"),
-        help="attribution=规则清洗；其余 scope 走 LLM（文风在 Phase2/full 落地）",
+        help="attribution=规则清洗；其余 scope 走 LLM",
     )
     p.add_argument("--instructions", default="", help="用户修改意见")
     p.add_argument("--index", type=Path, default=None)
-    p.add_argument(
-        "--output-dir",
-        type=Path,
-        default=None,
-        help="产出目录（V2 索引默认 11新标注条目翻译）",
-    )
     p.add_argument("--dry-run", action="store_true")
     p.add_argument("--no-llm", action="store_true", help="仅 attribution scope 可用")
 
@@ -200,7 +202,11 @@ def main() -> int:
         )
 
     if args.cmd == "verify":
-        return runner.verify_cmd(args.entry_id, index_path=index)
+        return runner.verify_cmd(
+            args.entry_id,
+            index_path=index,
+            output_dir=getattr(args, "output_dir", None),
+        )
 
     if args.cmd == "status":
         return runner.print_status()
@@ -221,6 +227,18 @@ def main() -> int:
             index_path=index,
         )
 
+    if args.cmd == "promote":
+        index = args.index if hasattr(args, "index") else None
+        return runner.promote_cmd(
+            args.entry_id,
+            index_path=index,
+            output_dir=getattr(args, "output_dir", None),
+            version=getattr(args, "version", None),
+            note=getattr(args, "note", "") or "",
+            sync=getattr(args, "sync", False),
+            dry_run=getattr(args, "dry_run", False),
+        )
+
     if args.cmd == "retry":
         index = args.index if hasattr(args, "index") else None
         return runner.retry_failed_cmd(
@@ -238,7 +256,6 @@ def main() -> int:
             scope=args.scope,
             instructions=args.instructions,
             index_path=index,
-            output_dir=getattr(args, "output_dir", None),
             dry_run=args.dry_run,
             use_llm=not args.no_llm,
         )

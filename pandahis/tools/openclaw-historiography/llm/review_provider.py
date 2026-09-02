@@ -54,6 +54,8 @@ def run_review_turn(
         "model": settings["model"],
         "messages": [{"role": "user", "content": message}],
         "temperature": settings["temperature"] if temperature is None else temperature,
+        # 网关默认流式返回 SSE；非流式才返回标准 JSON，供 json.loads 解析
+        "stream": False,
     }
     url = f"{settings['base_url']}/chat/completions"
     last_err: Optional[Exception] = None

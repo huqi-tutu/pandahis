@@ -14,6 +14,7 @@ from shared.coverage_semantic import (  # noqa: E402
     ClaimSpec,
     build_coverage_response_skeleton,
     build_translate_coverage_prompt,
+    is_retryable_infra_error,
     parse_semantic_coverage_response,
     run_semantic_coverage_batches,
     should_trigger_l2,
@@ -118,6 +119,14 @@ class TestCoverageSkeleton(unittest.TestCase):
         self.assertIn("禁止增删 claims", prompt)
 
 
+class TestInfraErrors(unittest.TestCase):
+    def test_retryable_infra_error(self) -> None:
+        self.assertTrue(
+            is_retryable_infra_error(RuntimeError("DeepSeek API 失败 (HTTP 503). no_capacity"))
+        )
+        self.assertFalse(is_retryable_infra_error(RuntimeError("输出非 JSON")))
+
+
 class TestDegradeFallback(unittest.TestCase):
     def test_unclear_fallback(self) -> None:
         claims = [ClaimSpec("M001", "a"), ClaimSpec("M002", "b")]
@@ -141,6 +150,25 @@ class TestDegradeFallback(unittest.TestCase):
         )
         self.assertTrue(rep.degraded)
         self.assertEqual(rep.claims[0].status, "unclear")
+
+    def test_run_batches_infra_error_no_degrade(self) -> None:
+        claims = [ClaimSpec("M001", "a")]
+
+        def api_down(_prompt: str) -> str:
+            raise RuntimeError(
+                'DeepSeek API 失败 (HTTP 503).\n{"error":{"type":"no_capacity"}}'
+            )
+
+        with self.assertRaises(RuntimeError) as ctx:
+            run_semantic_coverage_batches(
+                entry_id="GLBL_00001",
+                entry_name="测试",
+                detail_text="正文",
+                claims=claims,
+                llm_call=api_down,
+                max_attempts=1,
+            )
+        self.assertIn("503", str(ctx.exception))
 
     def test_batch_progress_callback(self) -> None:
         claims = [ClaimSpec("M001", "a")]

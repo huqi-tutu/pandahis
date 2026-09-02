@@ -1,0 +1,15 @@
+更新时间(UTC): 2026-08-24T08:04:41Z
+进程运行中: no
+已落盘详情: 65 / 81
+当前进度行: [81/81] compose-detail GLBL_01856 王叔和
+最近成功: ✅ 详情 GLBL_01856_王叔和.json (930 字)
+最近错误: · GLBL_01792 姜维北伐: RuntimeError: DeepSeek API 失败（已重试 3 次）: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)>
+流水线阶段: ===== 2026-08-24T08:04:12Z START qa-detail --skip-review =====
+---
+日志末尾:
+===== 2026-08-24T08:04:12Z DONE  compose-pending =====
+===== 2026-08-24T08:04:12Z START qa-detail --skip-review =====
+模块: historiography-dynasty-knowledge | 朝代: 三国
+LLM: DeepSeek (deepseek-v4-flash)
+qa-detail 必须 --entry-id
+[2026-08-24T08:04:41Z] compose-pending 已结束，watcher 退出

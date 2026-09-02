@@ -8,6 +8,11 @@
       "paragraph_from": 1,
       "paragraph_to": 1,
       "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 45,
+      "paragraph_to": 45,
+      "exclude_reason": "评曰"
     }
   ],
   "blocks": [
@@ -15,11 +20,11 @@
       "name": "魏明帝",
       "category": "君王",
       "paragraph_from": 2,
-      "paragraph_to": 45,
+      "paragraph_to": 44,
       "boundary_evidence": {
         "open_paragraph": 2,
         "open_phrase": "明皇帝讳叡，字元仲，文帝太子也。生而太祖爱之，常令在左右。年十五，封武德侯，黄初",
-        "close_paragraph": 45,
+        "close_paragraph": 44,
         "close_note": "single/fanzuo 机械整卷"
       }
     }

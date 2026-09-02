@@ -2,7 +2,7 @@
   "work": "04三国志",
   "vol": "019",
   "total_paragraphs": 33,
-  "method": "Step1b-α LLM",
+  "method": "manual_repair",
   "paragraphs": [
     {
       "paragraph": 1,
@@ -162,8 +162,9 @@
     },
     {
       "paragraph": 32,
-      "primary_subject": "曹彪",
-      "disposition": "block"
+      "primary_subject": "世系链",
+      "disposition": "exclude",
+      "exclude_reason": "世系链"
     },
     {
       "paragraph": 33,

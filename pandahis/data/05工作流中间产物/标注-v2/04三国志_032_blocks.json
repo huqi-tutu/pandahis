@@ -8,6 +8,11 @@
       "paragraph_from": 1,
       "paragraph_to": 1,
       "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 28,
+      "paragraph_to": 28,
+      "exclude_reason": "评曰"
     }
   ],
   "blocks": [
@@ -15,11 +20,11 @@
       "name": "蜀昭烈帝",
       "category": "君王",
       "paragraph_from": 2,
-      "paragraph_to": 28,
+      "paragraph_to": 27,
       "boundary_evidence": {
         "open_paragraph": 2,
         "open_phrase": "先主姓刘，讳备，字玄德，涿郡涿县人，汉景帝子中山靖王胜之后也。胜子贞，元狩六年封",
-        "close_paragraph": 28,
+        "close_paragraph": 27,
         "close_note": "single/fanzuo 机械整卷"
       }
     }

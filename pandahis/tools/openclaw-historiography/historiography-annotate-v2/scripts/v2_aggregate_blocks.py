@@ -20,7 +20,7 @@ if str(_ANNOTATE) not in sys.path:
 from paths_config import histograph_paths  # noqa: E402
 
 VALID_EXCLUDE_REASONS = frozenset(
-    {"卷首标题", "太史公曰", "论赞", "赞曰", "共段总述", "世系链", "其他"}
+    {"卷首标题", "太史公曰", "论赞", "赞曰", "评曰", "共段总述", "世系链", "其他"}
 )
 
 
@@ -45,10 +45,9 @@ def protagonists_path(work: str, vol: str) -> Path:
 def _paragraph_index_path(work: str, vol: str) -> Path:
     vol = vol.zfill(3)
     paths = histograph_paths()
-    for base in (paths["paragraph_index"], paths["annotations_v1"] / "段落索引"):
-        fp = base / f"{work}_{vol}.json"
-        if fp.is_file():
-            return fp
+    fp = paths["paragraph_index"] / f"{work}_{vol}.json"
+    if fp.is_file():
+        return fp
     raise FileNotFoundError(f"段落索引不存在: {work} vol {vol}")
 
 
@@ -131,6 +130,9 @@ def aggregate_blocks(
     for row in rows:
         pid = int(row["paragraph"])
         kind, key = _classify_row(row, prot_names)
+        text = (para_text.get(pid) or "").strip()
+        if text.startswith("评曰"):
+            kind, key = "exclude", "评曰"
         classified.append((pid, kind, key))
 
     excludes: List[dict] = []

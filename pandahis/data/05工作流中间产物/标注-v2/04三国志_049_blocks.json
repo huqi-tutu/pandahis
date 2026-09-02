@@ -11,14 +11,9 @@
       "exclude_reason": "卷首标题"
     },
     {
-      "paragraph_from": 4,
-      "paragraph_to": 4,
-      "exclude_reason": "世系链"
-    },
-    {
       "paragraph_from": 20,
       "paragraph_to": 20,
-      "exclude_reason": "论赞"
+      "exclude_reason": "评曰"
     }
   ],
   "blocks": [
@@ -32,6 +27,18 @@
         "open_phrase": "刘繇字正礼，东莱牟平人也。齐孝王少子封牟平侯，子孙家焉。繇伯父宠，为汉太尉。繇兄",
         "close_paragraph": 3,
         "close_note": "Step1b-β 自 primary_subjects 合并 P2–P3"
+      }
+    },
+    {
+      "name": "笮融",
+      "category": "武将",
+      "paragraph_from": 4,
+      "paragraph_to": 4,
+      "boundary_evidence": {
+        "open_paragraph": 4,
+        "open_phrase": "笮融者，丹杨人，初聚众数百，往依徐州牧陶谦。谦使督广陵、彭城运漕，遂放纵擅杀，坐",
+        "close_paragraph": 4,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P4–P4"
       }
     },
     {

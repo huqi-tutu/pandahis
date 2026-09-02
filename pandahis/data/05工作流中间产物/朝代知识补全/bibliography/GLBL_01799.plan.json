@@ -1,0 +1,129 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01799",
+  "写作结构": "正史叙述（以《晋书·职官志》为主体）归翻译详录；拓展文以史外政书／类书为限。首列《通典·职官十四》为验核对象，若能取得 verified 摘句，可据以展开都督等差、持节权限及与刺史兼任等延展；未取得前仅作书目级提示。不以《三国志》《资治通鉴》补写具体任命、仪仗或冲突案例。",
+  "候选著作": [
+    {
+      "出处": "《晋书·职官志》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "本条目索引所据正史文本，anchor 诸 claim 之底本；不在拓展层摘句",
+      "检索词": "都督诸州军事",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《宋书·百官志》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "南朝史志追述魏晋都督制度，可佐证但属二十四史，不用于拓展摘句",
+      "检索词": "都督诸州军事",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《通典·职官十四·州牧刺史》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "唐人政书于州牧刺史目下叙述魏晋都督诸州军事、督诸军等差及持节权限，属史外制度文献",
+      "检索词": "都督诸州军事",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《太平御览·职官部·都督》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋代类书辑存历代都督故实，可作备检；因属类书综述，不直接取为 verbatim 摘句",
+      "检索词": "都督",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《文献通考·职官考》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "马端临汇考历代都督沿革，可查后世异说，但非一手制度文本",
+      "检索词": "都督",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《晋书·职官志》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "本条目索引所据正史文本，anchor 诸 claim 之底本；不在拓展层摘句",
+      "检索词": "都督诸州军事",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《宋书·百官志》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "南朝史志追述魏晋都督制度，可佐证但属二十四史，不用于拓展摘句",
+      "检索词": "都督诸州军事",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《通典·职官十四·州牧刺史》",
+      "tier": "后世综述",
+      "pool": "primary",
+      "与本主题关系": "唐人政书于州牧刺史目下叙述魏晋都督诸州军事、督诸军等差及持节权限，属史外制度文献",
+      "检索词": "都督诸州军事",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《太平御览·职官部·都督》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋代类书辑存历代都督故实，可作备检；因属类书综述，不直接取为 verbatim 摘句",
+      "检索词": "都督",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《文献通考·职官考》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "马端临汇考历代都督沿革，可查后世异说，但非一手制度文本",
+      "检索词": "都督",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 1,
+    "C_excluded": 4,
+    "overall": "B"
+  }
+}

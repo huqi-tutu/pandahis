@@ -65,8 +65,11 @@ def get_histograph_root() -> Path:
 
 
 def get_annotate_track() -> str:
-    """标注轨道：v1 → data/03；v2 → data/10。环境变量 HIST_ANNOTATE_TRACK。"""
-    track = (os.environ.get(ENV_ANNOTATE_TRACK) or "v1").strip().lower()
+    """标注轨道：v1 → data/03（遗留）；v2 → data/10（现行默认）。
+
+    环境变量 HIST_ANNOTATE_TRACK；未设置时默认 v2。
+    """
+    track = (os.environ.get(ENV_ANNOTATE_TRACK) or "v2").strip().lower()
     if track not in VALID_ANNOTATE_TRACKS:
         raise RuntimeError(
             f"{ENV_ANNOTATE_TRACK} 非法: {track!r}，允许 {sorted(VALID_ANNOTATE_TRACKS)}"
@@ -81,9 +84,12 @@ def _annotations_dir(data: Path, track: str) -> Path:
 
 
 def _paragraph_index_dir(data: Path, track: str, annotations: Path) -> Path:
-    """段落索引 SSOT：仅 data/03索引标注条目/段落索引/（v1/v2 共用，与原文拆分绑定）。"""
-    _ = (track, annotations)  # v2 不在 10 下维护段落索引副本
-    return data / DIR_ANNOTATIONS / SUBDIR_PARAGRAPH_INDEX
+    """段落索引 SSOT：data/10新标注条目/段落索引/（与 v2 标注同目录）。
+
+    v1 轨道脚本若仍读 03，应改为走本路径；03/段落索引 仅作迁移过渡副本。
+    """
+    _ = (track, annotations)
+    return data / DIR_ANNOTATIONS_V2 / SUBDIR_PARAGRAPH_INDEX
 
 
 def ensure_workflow_data_dirs(data: Path) -> None:
@@ -111,10 +117,10 @@ def ensure_workflow_data_dirs(data: Path) -> None:
     ):
         (intermediate / sub).mkdir(parents=True, exist_ok=True)
     ann_v1 = data / DIR_ANNOTATIONS
-    for sub in (SUBDIR_PARAGRAPH_INDEX, SUBDIR_PROGRESS, SUBDIR_AUDIT, SUBDIR_STATS):
+    for sub in (SUBDIR_PROGRESS, SUBDIR_AUDIT, SUBDIR_STATS):
         (ann_v1 / sub).mkdir(parents=True, exist_ok=True)
     ann_v2 = data / DIR_ANNOTATIONS_V2
-    for sub in (SUBDIR_PROGRESS, SUBDIR_AUDIT, SUBDIR_STATS):
+    for sub in (SUBDIR_PARAGRAPH_INDEX, SUBDIR_PROGRESS, SUBDIR_AUDIT, SUBDIR_STATS):
         (ann_v2 / sub).mkdir(parents=True, exist_ok=True)
     (intermediate / SUBDIR_INTERMEDIATE_TRANSLATE / SUBDIR_TRANSLATE_QUEUE).mkdir(
         parents=True, exist_ok=True
@@ -159,13 +165,19 @@ def validate_histograph_root(root: Path | None = None) -> Path:
             raise RuntimeError(f"HISTOGRAPH_ROOT 指向禁止目录: {resolved}")
 
     data = resolved / DIR_DATA
-    for name in (DIR_SOURCES, DIR_ANNOTATIONS, DIR_TRANSLATIONS):
+    for name in (DIR_SOURCES, DIR_ANNOTATIONS_V2, DIR_TRANSLATIONS_V2):
         sub = data / name
         if not sub.is_dir():
             raise RuntimeError(
                 f"项目 data 子目录缺失: {sub}\n"
-                "请确认在 pandahis/pandahis/data 下已创建 02/03/04 目录。"
+                "请确认在 pandahis/pandahis/data 下已创建 02/10/11 等现行目录。"
             )
+    para_idx = data / DIR_ANNOTATIONS_V2 / SUBDIR_PARAGRAPH_INDEX
+    if not para_idx.is_dir():
+        raise RuntimeError(
+            f"段落索引目录缺失: {para_idx}\n"
+            "SSOT 已迁至 data/10新标注条目/段落索引/。"
+        )
 
     ensure_workflow_data_dirs(data)
     return resolved

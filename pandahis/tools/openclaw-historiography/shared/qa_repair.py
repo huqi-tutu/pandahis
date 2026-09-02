@@ -69,20 +69,6 @@ def classify_translate_failure(
             ),
         )
 
-    if _has_any(e, ("整段漏", "母本段落洞", "MOTHER_SPAN")):
-        return RepairPlan(
-            root_cause="MOTHER_SPAN_DROP",
-            disposition="retry_llm",
-            action="phase2_splice_missing_spans",
-            refine_scope="span_backfill",
-            structured_prompt=(
-                "【根因：润色删了连续母本情节】\n"
-                "不要整篇重写。按标明的成稿夹缝（上一覆盖段之后、下一覆盖段之前）补回情节，\n"
-                "改成前后一致的说书口吻。若附近有一句概括顶替，删掉或改写，禁止详写+概括双写。"
-            ),
-            max_retries=2,
-        )
-
     if _has_any(e, ("原词锚点", "必现词", "must_phrase", "锚点须在译文中", "命中率不足")):
         return RepairPlan(
             root_cause="MUST_PHRASE_MISS",
@@ -208,6 +194,60 @@ def classify_translate_failure(
                 "【分块边界】合并相邻块或放宽分块边界，保证每块上下文连贯后再译。"
             ),
             max_retries=1,
+        )
+
+    if _has_any(e, ("plan 外部补全", "采用:true", "未在正文引用")):
+        return RepairPlan(
+            root_cause="PLAN_ADOPTED_MISS",
+            disposition="retry_llm" if fail_count < 2 else "refine_scope",
+            action="phase2_adopted_external",
+            refine_scope="full",
+            structured_prompt=(
+                "【根因：plan 采用:true 的外部补全未写入正文】\n"
+                "对照 source_plan 外部补全，在母本锚点处补《书名·卷》引用；\n"
+                "缺项补写，勿重复母本已述事实。"
+            ),
+            extra={"from_phase": "phase2"},
+            max_retries=2,
+        )
+
+    if _has_any(e, ("篇末空泛升华", "时代翻篇", "由此而来", "共同起点")):
+        return RepairPlan(
+            root_cause="SUMMARY_ENDING",
+            disposition="refine_scope",
+            action="fix_tail_transition",
+            refine_scope="tail",
+            structured_prompt=(
+                "【根因：篇末总结腔】\n"
+                "删「翻篇/由此而来」等空泛升华；用承接上一情节的 1–2 句叙事收束。"
+            ),
+            max_retries=2,
+        )
+
+    if _has_any(e, ("段落过碎", "单句成段")):
+        return RepairPlan(
+            root_cause="PARAGRAPH_FRAGMENT",
+            disposition="refine_scope",
+            action="merge_paragraphs",
+            refine_scope="full",
+            structured_prompt=(
+                "【根因：段落过碎】\n"
+                "合并连续单句段为叙事段；保留场景切换处分段，勿刷屏。"
+            ),
+            max_retries=2,
+        )
+
+    if _has_any(e, ("参考著作节书目", "参考著作与正文")):
+        return RepairPlan(
+            root_cause="REFERENCE_FORMAT",
+            disposition="refine_scope",
+            action="fix_reference_section",
+            refine_scope="full",
+            structured_prompt=(
+                "【根因：参考著作格式】\n"
+                "正文末与「参考著作」之间空一行；书目与正文引用一致。"
+            ),
+            max_retries=2,
         )
 
     if fail_count >= 3:

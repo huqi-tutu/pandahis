@@ -11,14 +11,10 @@ from typing import Any, Dict, List, Tuple
 
 from lib.coverage import verify_mother_coverage
 from lib.source_text import build_source_original, source_original_fingerprint
-from lib.gloss_rules import detect_forbidden_gloss, detect_quote_dash_gloss
-from lib.citation_mode import (
-    classic_quote_candidate_count,
-    count_classic_corner_quotes,
-    count_short_quote_density,
-    detect_curly_source_quotes,
-)
+from lib.gloss_rules import detect_forbidden_gloss
+from lib.citation_mode import count_short_quote_density
 from lib.attribution import apply_attribution_fixes
+from lib.draft_parse import extract_draft_body
 
 _OPENCLAW_ROOT = Path(__file__).resolve().parents[2]
 if str(_OPENCLAW_ROOT) not in sys.path:
@@ -28,24 +24,14 @@ from shared.ai_flavor_words import (  # noqa: E402
     AI_FLAVOR_WORDS,
     ai_flavor_verify_issues,
 )
-
-
-def _phase2_is_polish_mode() -> bool:
-    """polish 路径：不按 plan 外部补全/索引异说打卡验收（含分章 polish）。"""
-    raw = (os.environ.get("TRANSLATE_PHASE2_MODE") or "polish").strip().lower()
-    return raw not in {
-        "enrich",
-        "enrich_legacy",
-        "legacy",
-        "legacy_batch",
-        "batch",
-    }
 from shared.legend_quota import legend_quota_verify_issues  # noqa: E402
+from shared.reference_works import KNOWN_MULTI_VOLUME_WORKS  # noqa: E402
 from shared.vague_citation import VAGUE_CITATION_TRIGGERS  # noqa: E402
 
 # 兼容旧 import 名
 FORBIDDEN_PROSE = AI_FLAVOR_WORDS
 VAGUE_CITATION_PATTERNS = VAGUE_CITATION_TRIGGERS
+_KNOWN_MULTI_VOLUME_MOTHERS = KNOWN_MULTI_VOLUME_WORKS
 
 PLACEHOLDER_PATTERNS = (
     r"TODO",
@@ -74,120 +60,6 @@ def _log_verify_warnings(warnings: List[str]) -> None:
     for raw in warnings:
         text = raw[7:] if raw.startswith("[warn]") else raw
         print(f"   ⚠️ {text}", flush=True)
-
-
-def _classic_quote_min_required(cand: int, *, stage: str) -> int:
-    """长卷经典「」下限：成稿按候选比例；母本/分章至少 1。"""
-    if cand <= 0:
-        return 0
-    if stage in ("final", "enrich", "成稿"):
-        # 13 候选 → 至少 5；3 候选 → 至少 1；避免「只塞 1 处「」过关」
-        return max(1, min(8, (cand + 2) // 3))
-    return 1
-
-
-def _classic_quote_hard_errors(
-    detail: str,
-    plan: Dict[str, Any] | None,
-    *,
-    label: str,
-    stage: str = "final",
-) -> List[str]:
-    """有经典引用候选却「」不足 → 硬失败（促使重写镶嵌史料原文）。"""
-    from lib.longform_compat import is_longform
-
-    if not plan or not is_longform(plan):
-        return []
-    cand = classic_quote_candidate_count(plan)
-    if cand <= 0:
-        return []
-    n = count_classic_corner_quotes(detail)
-    need = _classic_quote_min_required(cand, stage=stage)
-    if n >= need:
-        return []
-    return [
-        f"{label}：plan 有 {cand} 条经典引用候选，正文直角「」仅 {n} 处（至少 {need} 处）；"
-        "史料著作原文须用直角「」镶嵌（禁止只用弯引“”；忌同义破折号作业体主腔；禁止整章零「」）"
-    ]
-
-
-def _classic_quote_soft_warnings(
-    detail: str, plan: Dict[str, Any] | None, *, label: str
-) -> List[str]:
-    """已改硬拦；保留空实现兼容旧调用。"""
-    del detail, plan, label
-    return []
-
-
-def detect_intro_failures(detail: str, plan: Dict[str, Any] | None) -> List[str]:
-    """宏观前置引入硬拦（见 lib/intro_frame.py）。"""
-    from lib.intro_frame import detect_macro_intro_failures
-
-    mother = ""
-    return detect_macro_intro_failures(detail, plan, mother=mother)
-
-
-def detect_intro_failures_with_mother(
-    detail: str,
-    plan: Dict[str, Any] | None,
-    *,
-    mother: str = "",
-) -> List[str]:
-    from lib.intro_frame import detect_macro_intro_failures
-
-    return detect_macro_intro_failures(detail, plan, mother=mother)
-
-
-def detect_epilogue_failures(detail: str, plan: Dict[str, Any] | None) -> List[str]:
-    """篇末人物收束硬拦（见 lib/intro_frame.py）。"""
-    from lib.intro_frame import detect_macro_epilogue_failures
-
-    return detect_macro_epilogue_failures(detail, plan)
-
-
-def _plan_cross_book_sources(plan: Dict[str, Any]) -> List[str]:
-    """须落地出处书名（外部补全逐条 + 索引引入/异说）；兼容 enrich 切片无 `采用` 字段。"""
-    from lib.enrich_landing import (
-        iter_external_landing_items,
-        iter_index_landing_titles,
-    )
-
-    titles: List[str] = []
-    for item in iter_external_landing_items(plan):
-        for t in item.get("titles") or []:
-            if t and t not in titles:
-                titles.append(t)
-    for t in iter_index_landing_titles(plan):
-        if t and t not in titles:
-            titles.append(t)
-    return titles
-
-
-def _cross_book_title_hit(required: str, body_books: List[str]) -> bool:
-    """出处与正文《》是否对上（允许卷名省略/包含）。"""
-    from lib.enrich_landing import cross_book_title_hit
-
-    return cross_book_title_hit(required, body_books)
-
-
-def _cross_book_hard_errors(
-    detail: str, plan: Dict[str, Any] | None, *, label: str
-) -> List[str]:
-    """plan 采用/异说须**逐条**落地（出处 + 主题指纹）→ 硬失败。
-
-    不再「正文出现任意一本他书即过关」。
-    """
-    from lib.enrich_landing import cross_book_landing_errors
-
-    return cross_book_landing_errors(detail, plan, label=label)
-
-
-def _cross_book_soft_warnings(
-    detail: str, plan: Dict[str, Any] | None, *, label: str
-) -> List[str]:
-    """已改硬拦；保留空实现兼容旧调用。"""
-    del detail, plan, label
-    return []
 
 
 def _must_phrase_min_ratio(checklist_size: int) -> float:
@@ -226,9 +98,17 @@ def _must_phrase_block_decision(
 
     return ratio < min_ratio, ratio, min_ratio, misses
 
-# 段落破折号结尾检测
 # 段末破折号：不再硬拦（自然过渡常用 —— 收束，改由人工审读）
 _DASH_ENDING_PATTERN = re.compile(r"——\s*$", re.MULTILINE)
+
+# 篇末空泛升华（出现即 error，不限频次）
+_SUMMARY_ENDING_PHRASES: tuple[str, ...] = (
+    "时代翻篇",
+    "由此而来",
+    "共同起点",
+    "翻开新篇章",
+    "历史的翻页",
+)
 
 # 段落过碎检测：连续单句成段
 _MIN_SENTENCES_PER_PARA = 1
@@ -254,12 +134,20 @@ def resolve_output_path(
     base: Path,
     entry_name: str = "",
 ) -> Path:
-    """定位产出文件：优先 canonical 名，再 glob，兼容旧版 {id}.json。"""
+    """定位产出文件：优先 canonical 名，再 glob，兼容旧版 {id}.json。
+
+    忽略 `*.json.phase2_*.json` / `*.pre_*_backup.json` 等旁路备份，
+    避免误把失败薄稿当作成稿而跳过重跑。
+    """
     if entry_name:
         canonical = output_path(entry_id, base, entry_name)
         if canonical.is_file():
             return canonical
-    matches = sorted(base.glob(f"{entry_id}_*.json"))
+    matches = sorted(
+        p
+        for p in base.glob(f"{entry_id}_*.json")
+        if p.name.count(".json") == 1 and ".json." not in p.name
+    )
     if matches:
         return matches[0]
     legacy = base / f"{entry_id}.json"
@@ -399,6 +287,25 @@ def _detect_reference_section_format(detail: str) -> List[str]:
     return ["参考著作须独立成段（前有空行 \\n\\n），禁止与正文末句同段"]
 
 
+def _detect_reference_granularity(detail: str) -> List[str]:
+    """参考著作须精确到卷篇；禁裸母书名及与同书卷篇重复。"""
+    refs = _refs_from_detail_section(detail)
+    if not refs:
+        return []
+    errors: List[str] = []
+    vol_mothers = {t.split("·", 1)[0] for t in refs if "·" in t}
+    for title in refs:
+        if "·" in title:
+            continue
+        if title in _KNOWN_MULTI_VOLUME_MOTHERS:
+            errors.append(f"参考著作须精确到卷篇，禁止仅列《{title}》")
+        elif title in vol_mothers:
+            errors.append(
+                f"参考著作已有《{title}·…》卷篇，禁止重复列裸《{title}》"
+            )
+    return errors
+
+
 def _detect_dash_ending(detail: str) -> List[str]:
     """段末破折号已放宽，不再作为 verify 硬失败项。"""
     _ = detail
@@ -416,13 +323,10 @@ def _legend_quota_hard_errors(detail: str, recalled: Dict[str, Any]) -> List[str
 
 
 def _detect_markdown_bold(detail: str) -> List[str]:
-    """禁止 Markdown 加粗与章节标题；加粗由小程序对「」『』内原文自动处理。"""
-    errs: List[str] = []
+    """禁止 ** markdown 加粗；加粗由小程序对「」内原文自动处理。"""
     if re.search(r"\*\*[^*]+\*\*", detail):
-        errs.append("正文含 Markdown **加粗**（禁止；史料原文请用直角引号「」，由小程序自动加粗）")
-    if re.search(r"(?m)^#{1,6}\s+\S", detail):
-        errs.append("正文含 Markdown 章节标题（# / ##）；成稿须连续说书，禁止论文提纲")
-    return errs
+        return ["正文含 Markdown **加粗**（禁止；史料原文请用直角引号「」，由小程序自动加粗）"]
+    return []
 
 
 def _detect_excessive_descriptive_refs(detail: str) -> List[str]:
@@ -430,6 +334,21 @@ def _detect_excessive_descriptive_refs(detail: str) -> List[str]:
     count = len(_DESCRIPTIVE_REF_PATTERN.findall(detail))
     if count > 3:
         return [f"描述性称呼过多: {count}处（这家伙/这位爷），上限3次"]
+    return []
+
+
+def _detect_summary_ending(detail: str) -> List[str]:
+    """检测篇末（最后两段）空泛升华腔。"""
+    body = detail
+    if "参考著作" in body:
+        body = body.split("参考著作", 1)[0]
+    paras = [p.strip() for p in body.split("\n\n") if p.strip()]
+    if not paras:
+        return []
+    tail = "\n".join(paras[-2:])
+    hits = [ph for ph in _SUMMARY_ENDING_PHRASES if ph in tail]
+    if hits:
+        return [f"篇末空泛升华: {', '.join(hits)}（改用承接情节的叙事收束）"]
     return []
 
 
@@ -471,7 +390,7 @@ def verify_mother_draft(
     if data.get("史略ID") != entry_id:
         errors.append(f"母本顺译 史略ID 不一致: {data.get('史略ID')!r}")
 
-    detail = (data.get("母本顺译") or data.get("翻译详情") or "").strip()
+    detail = extract_draft_body(data, "母本顺译", "翻译详情")
     if not detail:
         errors.append("母本顺译为空")
         return False, errors
@@ -481,15 +400,33 @@ def verify_mother_draft(
 
     mother_work = str(recalled.get("母本著作") or "")
     mother_src = _mother_source_text(recalled)
-    _log_verify_warnings(
-        _foreign_citations_in_mother(detail, mother_work, mother_src)
-    )
+    # 精简流水线分批成稿允许 plan 他书补全；旧 Phase1「禁他书」告警在此会误报，跳过。
+    # legacy ABCD 的纯母本顺译仍保留该软警告。
+    skip_foreign_warn = False
+    try:
+        from lib.pipeline_streamlined import streamlined_pipeline_enabled
+
+        skip_foreign_warn = streamlined_pipeline_enabled()
+    except Exception:
+        skip_foreign_warn = os.environ.get("TRANSLATE_PIPELINE", "streamlined").strip().lower() not in (
+            "abcd",
+            "legacy",
+        )
+    if not skip_foreign_warn:
+        _log_verify_warnings(
+            _foreign_citations_in_mother(detail, mother_work, mother_src)
+        )
 
     if plan and batch_mode:
         from lib.config import paths as _paths
         from lib.coverage import _coverage_mode
 
-        if _coverage_mode() == "semantic":
+        batch_semantic = os.environ.get("TRANSLATE_BATCH_SEMANTIC", "0").strip() in {
+            "1",
+            "true",
+            "yes",
+        }
+        if _coverage_mode() == "semantic" and batch_semantic:
             from lib.coverage_l2 import verify_mother_batch_semantic_coverage
 
             cov_ok, cov_errs = verify_mother_batch_semantic_coverage(
@@ -506,6 +443,8 @@ def verify_mother_draft(
                 for line in cov_errs:
                     if line.startswith("[info]"):
                         print(f"   ℹ️ {line[7:]}", flush=True)
+        elif _coverage_mode() == "semantic":
+            errors.extend(_verify_must_phrases(detail, plan, batch_mode=batch_mode))
     elif plan and not batch_mode:
         errors.extend(_verify_must_phrases(detail, plan, batch_mode=batch_mode))
         from lib.config import paths as _paths
@@ -527,7 +466,6 @@ def verify_mother_draft(
     errors.extend(_detect_markdown_bold(detail))
     errors.extend(_detect_reference_section_format(detail))
     errors.extend(detect_forbidden_gloss(detail))
-    _log_verify_warnings(detect_quote_dash_gloss(detail))
     if not batch_mode:
         short_q = count_short_quote_density(detail, threshold_len=4)
         short_q_limit = max(12, len(detail) // 95)
@@ -538,8 +476,6 @@ def verify_mother_draft(
 
     errors.extend(_detect_dash_ending(detail))
     errors.extend(_detect_excessive_descriptive_refs(detail))
-    errors.extend(_classic_quote_hard_errors(detail, plan, label="母本顺译", stage="mother"))
-    errors.extend(detect_curly_source_quotes(detail, plan, label="母本顺译"))
 
     wc = len(detail)
     if not batch_mode:
@@ -549,6 +485,281 @@ def verify_mother_draft(
             _log_verify_warnings([warn])
 
     return len(errors) == 0, errors
+
+
+def verify_structural_draft(
+    entry_id: str,
+    recalled: Dict[str, Any],
+    path: Path,
+    plan: Dict[str, Any] | None = None,
+    *,
+    batch_mode: bool = False,
+    batch_label: str = "",
+) -> Tuple[bool, List[str]]:
+    """A 阶段结构顺译质检（字段 结构顺译）。"""
+    errors: List[str] = list(verify_source_thickness(recalled))
+    if not path.is_file():
+        return False, [f"缺少结构顺译: {path}"]
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        return False, [f"结构顺译 JSON 解析失败: {exc}"]
+
+    if data.get("史略ID") != entry_id:
+        errors.append(f"结构顺译 史略ID 不一致: {data.get('史略ID')!r}")
+
+    detail = extract_draft_body(data, "结构顺译", "母本顺译", "翻译详情")
+    if not detail:
+        errors.append("结构顺译为空")
+        return False, errors
+
+    if "参考著作" in detail:
+        errors.append("A 阶段不应含「参考著作」")
+
+    mother_work = str(recalled.get("母本著作") or "")
+    mother_src = _mother_source_text(recalled)
+    _log_verify_warnings(_foreign_citations_in_mother(detail, mother_work, mother_src))
+
+    if plan:
+        if batch_mode:
+            from lib.config import paths as _paths
+            from lib.coverage import _coverage_mode
+
+            batch_semantic = os.environ.get("TRANSLATE_BATCH_SEMANTIC", "0").strip() in {
+                "1",
+                "true",
+                "yes",
+            }
+            if _coverage_mode() == "semantic" and batch_semantic:
+                from lib.coverage_l2 import verify_mother_batch_semantic_coverage
+
+                cov_ok, cov_errs = verify_mother_batch_semantic_coverage(
+                    detail,
+                    plan,
+                    entry_id=entry_id,
+                    entry_name=str(recalled.get("史略名称") or ""),
+                    work_dir=_paths()["translate_work"],
+                    batch_label=batch_label,
+                )
+                if not cov_ok:
+                    errors.extend(
+                        [f"结构顺译 {e}" for e in cov_errs if not str(e).startswith("[info]")]
+                    )
+        elif not batch_mode:
+            errors.extend(_verify_must_phrases(detail, plan, batch_mode=batch_mode))
+            from lib.config import paths as _paths
+
+            cov_ok, cov_errs = verify_mother_coverage(
+                detail,
+                plan,
+                entry_id=entry_id,
+                entry_name=str(recalled.get("史略名称") or ""),
+                work_dir=_paths()["translate_work"],
+            )
+            if not cov_ok:
+                errors.extend(
+                    [f"结构顺译 {e}" for e in cov_errs if not str(e).startswith("[info]")]
+                )
+
+    errors.extend(_detect_markdown_bold(detail))
+    errors.extend(detect_forbidden_gloss(detail))
+
+    return len(errors) == 0, errors
+
+
+def _paragraph_count(text: str) -> int:
+    body = text.split("参考著作", 1)[0]
+    return len([p for p in body.split("\n\n") if p.strip()])
+
+
+def _paragraph_similarity(a: str, b: str) -> float:
+    def norm(s: str) -> str:
+        return re.sub(r"[\s，。、；：\"\"''「」？！]", "", s)
+
+    x, y = norm(a), norm(b)
+    if not x or not y:
+        return 0.0
+    if x == y:
+        return 1.0
+    shorter, longer = (x, y) if len(x) <= len(y) else (y, x)
+    hits = sum(1 for ch in shorter if ch in longer)
+    return hits / max(len(shorter), 1)
+
+
+def detect_adjacent_duplicate_paragraphs(detail: str) -> List[str]:
+    """相邻段高度相似（全库 hard）。"""
+    errors: List[str] = []
+    body = detail.split("参考著作", 1)[0].strip()
+    paras = [p.strip() for p in body.split("\n\n") if p.strip()]
+    threshold = float(os.environ.get("TRANSLATE_DUP_PARA_RATIO", "0.88"))
+    for i in range(len(paras) - 1):
+        sim = _paragraph_similarity(paras[i], paras[i + 1])
+        if sim >= threshold:
+            errors.append(
+                f"相邻段重复（相似度 {sim:.0%}）：第 {i + 1}/{i + 2} 段"
+            )
+    return errors
+
+
+def verify_enrich_vs_baseline(
+    enriched_detail: str,
+    baseline_detail: str,
+) -> Tuple[bool, List[str]]:
+    """D 相对 baseline：字数与段落不得缩水（hard）。"""
+    import os
+
+    errors: List[str] = []
+    e_body = enriched_detail.split("参考著作", 1)[0].strip()
+    b_body = baseline_detail.split("参考著作", 1)[0].strip()
+    if not b_body:
+        return True, []
+    min_ratio = float(os.environ.get("TRANSLATE_ENRICH_MIN_RATIO", "1.05"))
+    e_plain = re.sub(r"\s+", "", e_body)
+    b_plain = re.sub(r"\s+", "", b_body)
+    if len(e_plain) < int(len(b_plain) * min_ratio):
+        errors.append(
+            f"D 成稿短于 baseline×{min_ratio:.0%}: {len(e_plain)} < {int(len(b_plain)*min_ratio)}"
+        )
+    e_paras = _paragraph_count(e_body)
+    b_paras = _paragraph_count(b_body)
+    if e_paras < b_paras:
+        errors.append(f"D 段落数少于 baseline: {e_paras} < {b_paras}")
+    return len(errors) == 0, errors
+
+
+def verify_assemble_parts(intro: str, tail: str) -> Tuple[bool, List[str]]:
+    """终稿装配：引入 + 结尾/总结字数。"""
+    errors: List[str] = []
+    intro = (intro or "").strip()
+    tail = (tail or "").strip()
+    if not intro:
+        errors.append("缺少前置引入")
+    elif not (60 <= len(intro) <= 250):
+        errors.append(f"前置引入字数须在 60–250：当前 {len(intro)}")
+    if not tail:
+        errors.append("缺少结尾/总结")
+    elif not (100 <= len(tail) <= 250):
+        errors.append(f"结尾/总结字数须在 100–250：当前 {len(tail)}")
+    return len(errors) == 0, errors
+
+
+def verify_intro_only(intro: str) -> Tuple[bool, List[str]]:
+    intro = (intro or "").strip()
+    if not intro:
+        return False, ["缺少前置引入"]
+    if not (60 <= len(intro) <= 250):
+        return False, [f"前置引入字数须在 60–250：当前 {len(intro)}"]
+    return True, []
+
+
+def verify_ending_only(tail: str) -> Tuple[bool, List[str]]:
+    tail = (tail or "").strip()
+    if not tail:
+        return False, ["缺少结尾/总结"]
+    if not (100 <= len(tail) <= 250):
+        return False, [f"结尾/总结字数须在 100–250：当前 {len(tail)}"]
+    return True, []
+
+
+def verify_baseline_draft(
+    entry_id: str,
+    recalled: Dict[str, Any],
+    baseline_path: Path,
+    plan: Dict[str, Any] | None = None,
+    *,
+    mother_body: str = "",
+) -> Tuple[bool, List[str]]:
+    """C 阶段 baseline 质检：含引入/正文/结尾/参考著作（母本）。"""
+    errors: List[str] = []
+    if not baseline_path.is_file():
+        return False, [f"缺少 baseline 成稿: {baseline_path}"]
+    try:
+        data = json.loads(baseline_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        return False, [f"baseline JSON 解析失败: {exc}"]
+
+    if data.get("史略ID") != entry_id:
+        errors.append(f"baseline 史略ID 不一致: {data.get('史略ID')!r}")
+
+    detail = (data.get("翻译详情") or "").strip()
+    if not detail:
+        errors.append("baseline 翻译详情为空")
+        return False, errors
+
+    intro = str(data.get("前置引入") or "").strip()
+    body = str(data.get("正文") or "").strip()
+    tail = str(data.get("结尾") or "").strip()
+    if not intro or not body or not tail:
+        errors.append("baseline 缺少显式字段：前置引入/正文/结尾")
+
+    ver = str(data.get("翻译版本") or "").strip()
+    if not ver:
+        errors.append("baseline 缺少「翻译版本」标注")
+
+    if "参考著作" not in detail:
+        errors.append("baseline 缺少「参考著作」节")
+    errors.extend(_detect_reference_section_format(detail))
+
+    if intro and (len(intro) < 40 or len(intro) > 400):
+        errors.append(f"前置引入篇幅异常: {len(intro)} 字（建议 60–250）")
+
+    body_for_checks = body or detail.split("参考著作", 1)[0].strip()
+    errors.extend(_detect_summary_ending(body_for_checks))
+
+    detail_body = detail.split("参考著作", 1)[0].strip()
+    detail_paras = [p.strip() for p in detail_body.split("\n\n") if p.strip()]
+    if intro and detail_paras and detail_paras[0] != intro:
+        if intro in detail_paras[0] and len(detail_paras[0]) > len(intro) + 20:
+            errors.append("baseline 前置引入与正文首段粘连，须程序分隔为独立段")
+    if intro and body and len(detail_paras) >= 2:
+        if detail_paras[0] != intro:
+            errors.append("baseline 翻译详情首段须为前置引入")
+
+    if mother_body:
+        ok2, errs2 = verify_style_retains_structural(
+            mother_body, body or body_for_checks
+        )
+        errors.extend(errs2)
+
+    if plan:
+        from lib.config import paths as _paths
+
+        cov_ok, cov_errs = verify_mother_coverage(
+            body or body_for_checks,
+            plan,
+            entry_id=entry_id,
+            entry_name=str(recalled.get("史略名称") or ""),
+            work_dir=_paths()["translate_work"],
+        )
+        if not cov_ok:
+            errors.extend(
+                [f"baseline {e}" for e in cov_errs if not str(e).startswith("[info]")]
+            )
+
+    return len(errors) == 0, errors
+
+
+def verify_style_retains_structural(
+    structural_text: str,
+    styled_text: str,
+    *,
+    min_ratio: float | None = None,
+) -> Tuple[bool, List[str]]:
+    """B 相对 A 不得明显缩水（防润色丢段）。"""
+    import os
+
+    ratio = min_ratio
+    if ratio is None:
+        ratio = float(os.environ.get("TRANSLATE_STYLE_MIN_RATIO", "0.85"))
+    a = re.sub(r"\s+", "", structural_text or "")
+    b = re.sub(r"\s+", "", styled_text or "")
+    if not a:
+        return True, []
+    if len(b) < int(len(a) * ratio):
+        return False, [
+            f"文风整饰后字数偏少: {len(b)} < A×{ratio:.0%}={int(len(a)*ratio)}（疑遗漏段落）"
+        ]
+    return True, []
 
 
 def _allowed_mother_citation(title: str, mother_work: str) -> bool:
@@ -766,80 +977,13 @@ def _verify_must_phrases(
     ]
 
 
-def _collect_allowed_titles(
-    recalled: Dict[str, Any],
-    plan: Dict[str, Any] | None,
-    mother_work: str,
-) -> set[str]:
-    allowed: set[str] = {"史记"}
-    core = re.sub(r"^\d+[A-Z]?", "", mother_work)
-    if core:
-        allowed.add(core)
-    for block in recalled.get("blocks") or []:
-        work = str(block.get("work") or "")
-        vol = str(block.get("vol") or "")
-        volume = str(block.get("volume") or "")
-        if work:
-            allowed.add(work)
-            allowed.add(re.sub(r"^\d+[A-Z]?", "", work))
-        if volume:
-            allowed.add(volume)
-            allowed.add(f"{work}·{volume}" if work else volume)
-        if vol and volume:
-            allowed.add(f"{work}·{volume}")
-    if plan:
-        for ref in plan.get("参考著作") or []:
-            if isinstance(ref, str):
-                for t in re.findall(r"《([^》]+)》", ref):
-                    allowed.add(t)
-        for item in plan.get("外部补全") or []:
-            if not isinstance(item, dict) or item.get("采用") is not True:
-                continue
-            src = str(item.get("出处") or "")
-            for t in re.findall(r"《([^》]+)》", src):
-                allowed.add(t)
-        for src in plan.get("允许引用白名单") or []:
-            for t in re.findall(r"《([^》]+)》", str(src)):
-                allowed.add(t)
-    return allowed
-
-
-def _title_allowed(title: str, allowed: set[str], mother_src: str = "") -> bool:
-    if "史记" in title:
-        return True
-    src_plain = re.sub(r"\s+", "", mother_src)
-    if title in src_plain or title.replace("·", "") in src_plain:
-        return True
-    if title in allowed:
-        return True
-    for a in allowed:
-        if a in title or title in a:
-            return True
-        if a.replace("·", "") in title.replace("·", ""):
-            return True
-    return False
-
-
-def _unauthorized_citations(
-    detail: str,
-    allowed: set[str],
-    mother_src: str = "",
-) -> List[str]:
-    """plan 白名单外书名：仅警告，不阻断。"""
-    warnings: List[str] = []
-    for title in re.findall(r"《([^》]+)》", detail):
-        if not _title_allowed(title, allowed, mother_src):
-            warnings.append(_as_warn(f"未授权引用: 《{title}》"))
-    return warnings
-
-
 def verify_enrich_draft(
     entry_id: str,
     recalled: Dict[str, Any],
     output_path: Path,
     plan: Dict[str, Any] | None = None,
     *,
-    mother_text: str = "",
+    baseline_detail: str = "",
 ) -> Tuple[bool, List[str]]:
     """Phase2 成稿前置质检：禁模糊出处、白名单《》、参考著作节。"""
     errors: List[str] = []
@@ -870,91 +1014,16 @@ def verify_enrich_draft(
     if "*参考著作*" not in detail and "参考著作" not in detail:
         errors.append("文末缺少「参考著作」列表")
 
-    mother_work = str(recalled.get("母本著作") or "")
-    mother_src = _mother_source_text(recalled)
-    allowed = _collect_allowed_titles(recalled, plan, mother_work)
-    _log_verify_warnings(_unauthorized_citations(detail, allowed, mother_src)[:5])
-
     errors.extend(_detect_reference_section_format(detail))
     errors.extend(detect_forbidden_gloss(detail))
-    _log_verify_warnings(detect_quote_dash_gloss(detail))
-    errors.extend(detect_intro_failures(detail, plan))
-    errors.extend(detect_epilogue_failures(detail, plan))
-    errors.extend(
-        _classic_quote_hard_errors(detail, plan, label="成稿", stage="enrich")
-    )
-    errors.extend(
-        detect_curly_source_quotes(
-            detail,
-            plan,
-            source_original=str(data.get("史料原文") or ""),
-            label="成稿",
-        )
-    )
-    if not _phase2_is_polish_mode():
-        errors.extend(_cross_book_hard_errors(detail, plan, label="成稿"))
-    if mother_text.strip():
-        from lib.longform_compat import (
-            detect_under_rewrite,
-            detect_under_rewrite_warnings,
-        )
-
-        errors.extend(detect_under_rewrite(mother_text, detail, label="成稿"))
-        _log_verify_warnings(
-            detect_under_rewrite_warnings(mother_text, detail, label="成稿")
-        )
     errors.extend(_detect_dash_ending(detail))
     errors.extend(_detect_excessive_descriptive_refs(detail))
-
-    return len(errors) == 0, errors
-
-
-def verify_voice_draft(
-    entry_id: str,
-    recalled: Dict[str, Any],
-    output_path: Path,
-    plan: Dict[str, Any] | None = None,
-) -> Tuple[bool, List[str]]:
-    """Phase3 风格润色质检：只硬拦翻译质量问题。
-
-    硬失败：空稿、元叙述、传说/据说配额、AI 腔。
-    参考著作 / 加粗 / 禁释词注释 / 段格式等属格式层——Phase3 应由程序补修或降级警告，
-    不因它们回滚整份润色稿、更不触发重跑 Phase1/2。
-    """
-    _ = plan
-    errors: List[str] = []
-    warnings: List[str] = []
-    if not output_path.is_file():
-        return False, [f"缺少译稿: {output_path}"]
-    try:
-        data = json.loads(output_path.read_text(encoding="utf-8"))
-    except json.JSONDecodeError as exc:
-        return False, [f"译稿 JSON 解析失败: {exc}"]
-
-    if data.get("史略ID") not in (entry_id, None):
-        errors.append(f"史略ID 不一致: {data.get('史略ID')!r}")
-
-    detail = (data.get("翻译详情") or "").strip()
-    if not detail:
-        errors.append("翻译详情为空")
-        return False, errors
-
-    if re.search(r"^本条\s*\d+\s*段（母本", detail) or "已读完" in detail[:120]:
-        errors.append("正文含「喊数/进度汇报」元叙述，须删除后再落盘")
-
-    errors.extend(_legend_quota_hard_errors(detail, recalled))
-    for _code, message, _severity in ai_flavor_verify_issues(detail):
-        errors.append(message)
-
-    # 格式层：只警告
-    if "*参考著作*" not in detail and "参考著作" not in detail:
-        warnings.append("文末缺少「参考著作」列表（应由程序补回）")
-    warnings.extend(_detect_reference_section_format(detail))
-    warnings.extend(_detect_markdown_bold(detail))
-    warnings.extend(detect_forbidden_gloss(detail))
-    warnings.extend(_detect_excessive_descriptive_refs(detail))
-    if warnings:
-        _log_verify_warnings([f"[Phase3格式] {w}" for w in warnings[:8]])
+    errors.extend(_detect_summary_ending(detail))
+    errors.extend(detect_adjacent_duplicate_paragraphs(detail))
+    if baseline_detail.strip():
+        ok_bl, bl_errs = verify_enrich_vs_baseline(detail, baseline_detail)
+        if not ok_bl:
+            errors.extend(bl_errs)
 
     return len(errors) == 0, errors
 
@@ -966,9 +1035,8 @@ def verify_enrich_batch_slice(
     *,
     batch_mother_text: str = "",
     batch_label: str = "",
-    plan: Dict[str, Any] | None = None,
 ) -> Tuple[bool, List[str]]:
-    """Phase2 分章/分批落盘质检（不含参考著作节；终检仍走 verify_output）。"""
+    """Phase2 分批落盘质检（不含参考著作节；终检仍走 verify_output）。"""
     errors: List[str] = []
     if not output_path.is_file():
         return False, [f"缺少本批译稿: {output_path}"]
@@ -993,30 +1061,7 @@ def verify_enrich_batch_slice(
 
     errors.extend(_detect_markdown_bold(detail))
     errors.extend(detect_forbidden_gloss(detail))
-    _log_verify_warnings(detect_quote_dash_gloss(detail))
     errors.extend(_detect_dash_ending(detail))
-
-    label = batch_label or "本批成稿"
-    if plan:
-        errors.extend(
-            _classic_quote_hard_errors(detail, plan, label=label, stage="mother")
-        )
-        errors.extend(detect_curly_source_quotes(detail, plan, label=label))
-        errors.extend(_cross_book_hard_errors(detail, plan, label=label))
-    else:
-        errors.extend(detect_curly_source_quotes(detail, None, label=label))
-    if batch_mother_text.strip():
-        from lib.longform_compat import (
-            detect_under_rewrite,
-            detect_under_rewrite_warnings,
-        )
-
-        errors.extend(
-            detect_under_rewrite(batch_mother_text, detail, label=label)
-        )
-        _log_verify_warnings(
-            detect_under_rewrite_warnings(batch_mother_text, detail, label=label)
-        )
 
     wc = len(detail)
     src = _source_char_len(batch_mother_text)
@@ -1034,17 +1079,41 @@ def verify_output(
     recalled: Dict[str, Any],
     output_dir: Path,
     plan: Dict[str, Any] | None = None,
-) -> Tuple[bool, List[str]]:
+    *,
+    coverage: str = "strict",
+    verify_mode: str = "full",
+) -> Tuple[bool, List[str], List[str]]:
+    """终检。coverage=report 时覆盖不足可降为工单；verify_mode=baseline 为母本降级稿。"""
+    is_baseline = verify_mode == "baseline"
+    coverage_report = str(coverage).strip().lower() == "report"
     errors: List[str] = list(verify_source_thickness(recalled))
     entry_name = str(recalled.get("史略名称") or "")
+    output_path = resolve_output_path(entry_id, output_dir, entry_name)
     ok, data, load_errs = load_output(entry_id, output_dir, entry_name)
     errors.extend(load_errs)
     if not ok:
-        return False, errors
+        return False, errors, []
+
+    detail_raw = str(data.get("翻译详情") or "")
+    if detail_raw:
+        fixed, fix_changes = apply_attribution_fixes(detail_raw, recalled, plan)
+        if fixed != detail_raw:
+            data["翻译详情"] = fixed
+            output_path.write_text(
+                json.dumps(data, ensure_ascii=False, indent=2) + "\n",
+                encoding="utf-8",
+            )
+            print(f"   🔧 终检引号校正: {', '.join(fix_changes[:5])}", flush=True)
 
     keys = set(data.keys())
     required = {"史略ID", "翻译详情", "史料原文"}
-    allowed = required | {"原文出处", "翻译版本", "_版本说明", "史料原文"}
+    allowed = required | {
+        "原文出处",
+        "翻译版本",
+        "_baseline_meta",
+        "_pipeline_meta",
+        "_版本说明",
+    }
     extra = keys - allowed
     missing = required - keys
     if extra:
@@ -1092,45 +1161,10 @@ def verify_output(
         warn = translation_length_warning(wc, src_len, label="成稿")
         if warn:
             _log_verify_warnings([warn])
-        errors.extend(
-            _classic_quote_hard_errors(detail, plan, label="成稿", stage="final")
-        )
-        errors.extend(
-            detect_curly_source_quotes(
-                detail,
-                plan,
-                source_original=str(data.get("史料原文") or ""),
-                label="成稿",
-            )
-        )
-        if not _phase2_is_polish_mode():
-            errors.extend(_cross_book_hard_errors(detail, plan, label="成稿"))
 
-        mother_for_base = ""
-        try:
-            from lib.config import paths as _paths
-            from lib.work_artifacts import mother_draft_path
-
-            mf = mother_draft_path(entry_id, entry_name, _paths()["translate_work"])
-            if mf.is_file():
-                mother_for_base = str(
-                    json.loads(mf.read_text(encoding="utf-8")).get("母本顺译") or ""
-                )
-        except Exception:
-            mother_for_base = ""
-        errors.extend(
-            detect_intro_failures_with_mother(
-                detail, plan, mother=mother_for_base
-            )
-        )
-        errors.extend(detect_epilogue_failures(detail, plan))
-
-        from lib.prose_cleanliness import detect_prose_cleanliness_errors
-
-        errors.extend(detect_prose_cleanliness_errors(detail, label="成稿"))
-
-        if "*参考著作*" not in detail and "参考著作" not in detail:
-            errors.append("文末缺少「参考著作」列表")
+        if not is_baseline:
+            if "*参考著作*" not in detail and "参考著作" not in detail:
+                errors.append("文末缺少「参考著作」列表")
 
         for pat in PLACEHOLDER_PATTERNS:
             if re.search(pat, detail, re.I):
@@ -1143,17 +1177,20 @@ def verify_output(
 
         repeated = _repeated_long_paragraphs(detail)
         if repeated:
-            errors.append(f"疑似重复段落: {repeated[:2]}")
+            errors.append(f"疑似重复段落/事件: {repeated[:2]}")
+        errors.extend(detect_adjacent_duplicate_paragraphs(detail))
 
         tongjia_errs = _invalid_tongjia_annotations(detail)
         errors.extend(tongjia_errs)
 
         errors.extend(_detect_reference_section_format(detail))
+        if not is_baseline:
+            errors.extend(_detect_reference_granularity(detail))
         errors.extend(detect_forbidden_gloss(detail))
-        _log_verify_warnings(detect_quote_dash_gloss(detail))
         errors.extend(_detect_dash_ending(detail))
         errors.extend(_detect_excessive_descriptive_refs(detail))
         errors.extend(_detect_single_sentence_paragraphs(detail))
+        errors.extend(_detect_summary_ending(detail))
         short_q = count_short_quote_density(detail, threshold_len=4)
         short_q_limit = max(15, len(detail) // 95)
         if short_q >= short_q_limit:
@@ -1161,21 +1198,9 @@ def verify_output(
                 f"「」引用宜以完整摘句、对话或并列句群为单位（当前 {short_q} 处，阈值 {short_q_limit}）"
             )
 
-        from lib.baseline_quality import detect_baseline_regression
-
-        errors.extend(
-            detect_baseline_regression(
-                entry_id,
-                detail,
-                out_dir=output_dir,
-                entry_name=entry_name,
-                exclude_version=str(data.get("翻译版本") or ""),
-                mother=mother_for_base,
-            )
-        )
-
         if plan:
-            errors.extend(_verify_plan_sources_in_detail(detail, plan))
+            if not is_baseline:
+                errors.extend(_verify_plan_sources_in_detail(detail, plan))
             from lib.config import paths as _paths
 
             cov_ok, cov_errs = verify_mother_coverage(
@@ -1186,7 +1211,12 @@ def verify_output(
                 work_dir=_paths()["translate_work"],
             )
             if not cov_ok:
-                errors.extend([e for e in cov_errs if not str(e).startswith("[info]")])
+                cov_hard = [e for e in cov_errs if not str(e).startswith("[info]")]
+                if coverage_report or is_baseline:
+                    for w in cov_hard:
+                        _log_verify_warnings([f"覆盖: {w}"])
+                else:
+                    errors.extend(cov_hard)
             else:
                 for w in cov_errs:
                     if w.startswith("[info]"):
@@ -1195,15 +1225,39 @@ def verify_output(
                         print(f"   ⚠️ {w[7:]}", flush=True)
 
     block_count = int(recalled.get("block_count") or 1)
-    if block_count > 1:
+    if block_count > 1 and not is_baseline:
         mother = recalled.get("母本著作") or ""
         mother_name = re.sub(r"^\d+[A-Z]?", "", mother)
         if mother_name and mother_name not in detail:
-            # 宽松：至少应出现常见母本简称或参考著作节
             if "参考著作" not in detail:
                 errors.append("多源条目但正文/参考著作未体现母本")
 
-    return len(errors) == 0, errors
+    return _finalize_verify_errors(
+        errors,
+        verify_mode=verify_mode,
+        coverage_report=coverage_report,
+    )
+
+
+def _finalize_verify_errors(
+    errors: List[str],
+    *,
+    verify_mode: str = "full",
+    coverage_report: bool = False,
+) -> Tuple[bool, List[str], List[str]]:
+    from lib.verify_tiers import partition_verify_errors
+
+    blocks, tickets, logs = partition_verify_errors(
+        errors,
+        verify_mode=verify_mode,
+        coverage_report=coverage_report,
+    )
+    for line in logs:
+        if line.startswith("[info]"):
+            print(f"   ℹ️ {line[7:]}", flush=True)
+    for ticket in tickets:
+        _log_verify_warnings([f"质检工单: {ticket}"])
+    return len(blocks) == 0, blocks, tickets
 
 
 def verify_chunk_body(
@@ -1237,7 +1291,6 @@ def verify_chunk_body(
 
     errors.extend(_invalid_tongjia_annotations(text))
     errors.extend(detect_forbidden_gloss(text))
-    errors.extend(detect_curly_source_quotes(text, None, label="分块"))
 
     return len(errors) == 0, errors
 
@@ -1259,7 +1312,6 @@ def _invalid_tongjia_annotations(text: str) -> List[str]:
 
 
 def _repeated_long_paragraphs(detail: str) -> List[str]:
-    """仅字面长段重复 → 可硬拦。事件指纹回指见 `_repeated_event_fingerprint_warnings`。"""
     chunks = [
         re.sub(r"\s+", "", p)
         for p in detail.split("\n\n")
@@ -1273,16 +1325,6 @@ def _repeated_long_paragraphs(detail: str) -> List[str]:
             repeated.append(c[:60] + "...")
         seen.add(key)
     return repeated
-
-
-def _repeated_event_fingerprint_warnings(detail: str) -> List[str]:
-    """事件指纹重复：只作软警告，绝不硬失败、绝不删段。"""
-    try:
-        from lib.longform_compat import find_repeated_event_fingerprints
-
-        return find_repeated_event_fingerprints(detail)
-    except Exception:
-        return []
 
 
 def _citation_present(source: str, detail: str, *, any_title: bool = False) -> bool:
@@ -1327,8 +1369,7 @@ def _refs_from_detail_section(detail: str) -> List[str]:
 
 def _verify_plan_sources_in_detail(detail: str, plan: Dict[str, Any]) -> List[str]:
     errors: List[str] = []
-    # 采用:true / 索引异说 → 正文必须出现对应他书《》（硬）
-    errors.extend(_cross_book_hard_errors(detail, plan, label="成稿"))
+    # plan 外部补全「采用:true」仅作写作提示，不强制每条都写入正文（避免 plan 脏数据误杀成稿）
     # 文末参考著作节中列出的书，须在正文有对应引用
     for title in _refs_from_detail_section(detail):
         if not _citation_present(f"《{title}》", detail, any_title=True):

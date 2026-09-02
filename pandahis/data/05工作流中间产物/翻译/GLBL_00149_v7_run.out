@@ -1,0 +1,91 @@
+📐 长文模式：A/B 拆分（M>15 或超字符阈值）
+📦 A 分批 GLBL_00149：2 批
+A 第 1/2 批（M001–M018）
+⚠️ A 第 1/2 批（M001–M018） 未通过: 结构顺译为空
+A 第 1/2 批（M001–M018）（重试 1/2）
+⚠️ A 第 1/2 批（M001–M018） 未通过: 结构顺译为空
+A 第 1/2 批（M001–M018）（重试 2/2）
+⚠️ A 第 1/2 批（M001–M018） 未通过: 结构顺译为空
+📋 修复工单 → GLBL_00149.repair.json（COVERAGE_MISS / retry_llm）
+💡 将自动重试：retry_llm / phase1_or_phase2_coverage_retry（COVERAGE_MISS）
+❌ 翻译未通过:
+   A 第 1/2 批（M001–M018）: 结构顺译为空
+📐 长文模式：A/B 拆分（M>15 或超字符阈值）
+📦 A 分批 GLBL_00149：2 批
+A 第 1/2 批（M001–M018）
+   ℹ️ 语义覆盖（A 第 1/2 批（M001–M018））：待复核 17/17 单元
+   ℹ️ 语义覆盖复核开始: 17 单元 → 3 批（每批 ≤6）
+   ℹ️ 语义覆盖复核 [1/3] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [1/3]
+   ℹ️ 语义覆盖复核 [2/3] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [2/3]
+   ℹ️ 语义覆盖复核 [3/3] conveyed=5 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [3/3]
+   ℹ️ 语义覆盖复核完成: conveyed=17/17 unclear=0 missing=0 contradicted=0
+A 第 2/2 批（M019–M029）
+   ℹ️ 语义覆盖（A 第 2/2 批（M019–M029））：待复核 9/9 单元
+   ℹ️ 语义覆盖复核开始: 9 单元 → 2 批（每批 ≤6）
+   ℹ️ 语义覆盖复核 [1/2] conveyed=6 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [1/2]
+   ℹ️ 语义覆盖复核 [2/2] conveyed=3 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖账本已更新 [2/2]
+   ℹ️ 语义覆盖复核完成: conveyed=9/9 unclear=0 missing=0 contradicted=0
+   ℹ️ 语义覆盖（合并补验）：待复核 0/26 单元
+   ℹ️ 语义覆盖：26/26 单元已由账本确认，跳过 LLM
+📦 B 分批 GLBL_00149：2 批
+B 第 1/2 批（M001–M018）
+   ℹ️ 语义覆盖（B 第 1/2 批（M001–M018））：待复核 0/17 单元
+   ℹ️ 语义覆盖：17/17 单元已由账本确认，跳过 LLM
+   ℹ️ 母本语义覆盖: 17/17 单元已传达 (100%)；满足传达率 ≥90% 且未传达 ≤1；全部命中账本缓存
+B 第 2/2 批（M019–M029）
+   ℹ️ 语义覆盖（B 第 2/2 批（M019–M029））：待复核 0/9 单元
+   ℹ️ 语义覆盖：9/9 单元已由账本确认，跳过 LLM
+   ℹ️ 母本语义覆盖: 9/9 单元已传达 (100%)；满足传达率 ≥90% 且未传达 ≤1；全部命中账本缓存
+   ℹ️ 语义覆盖（合并补验）：待复核 0/26 单元
+   ℹ️ 语义覆盖：26/26 单元已由账本确认，跳过 LLM
+   ℹ️ 母本语义覆盖: 26/26 单元已传达 (100%)；满足传达率 ≥80% 且未传达 ≤3；全部命中账本缓存
+⏳ C 写引入+结尾 GLBL_00149
+   ℹ️ 语义覆盖（合并补验）：待复核 0/26 单元
+   ℹ️ 语义覆盖：26/26 单元已由账本确认，跳过 LLM
+   ℹ️ 语义覆盖（合并补验）：待复核 0/26 单元
+   ℹ️ 语义覆盖：26/26 单元已由账本确认，跳过 LLM
+✅ baseline_ready GLBL_00149 → GLBL_00149_黄帝.baseline.json
+🧭 重写 enrich plan（D 前置，基于 C 初稿）→ GLBL_00149_黄帝.plan.json
+Traceback (most recent call last):
+  File "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/tools/openclaw-historiography/historiography-translate/translate.py", line 327, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/tools/openclaw-historiography/historiography-translate/translate.py", line 193, in main
+    return runner.run_one(
+           ^^^^^^^^^^^^^^^
+  File "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/tools/openclaw-historiography/historiography-translate/lib/runner.py", line 1257, in run_one
+    ok, errs, elapsed = _run_single_pass(
+                        ^^^^^^^^^^^^^^^^^
+  File "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/tools/openclaw-historiography/historiography-translate/lib/runner.py", line 918, in _run_single_pass
+    ok2, errs2, elapsed = _run_phase2_enrich(
+                          ^^^^^^^^^^^^^^^^^^^
+  File "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/tools/openclaw-historiography/historiography-translate/lib/runner.py", line 771, in _run_phase2_enrich
+    enrich_source = baseline_body_for_enrich(baseline_file)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'baseline_body_for_enrich' where it is not associated with a value
+⏭️ 跳过 A/B/C（沿用 GLBL_00149_黄帝.baseline.json）
+🧭 重写 enrich plan（D 前置，基于 C 初稿）→ GLBL_00149_黄帝.plan.json
+⏳ Phase2 补全成稿 GLBL_00149 → GLBL_00149_黄帝.json
+   🔧 已自动修正模糊出处表述
+⚠️ Phase2 未通过: D 段落数少于 baseline: 10 < 15
+⏳ Phase2 补全成稿 GLBL_00149 → GLBL_00149_黄帝.json（重试 1/3）
+   🔧 已自动修正模糊出处表述
+⚠️ Phase2 未通过: D 段落数少于 baseline: 10 < 15
+⏳ Phase2 补全成稿 GLBL_00149 → GLBL_00149_黄帝.json（重试 2/3）
+   🔧 已自动修正模糊出处表述
+⚠️ Phase2 未通过: D 段落数少于 baseline: 10 < 15
+⏳ Phase2 补全成稿 GLBL_00149 → GLBL_00149_黄帝.json（重试 3/3）
+   🔧 已自动修正模糊出处表述
+⚠️ Phase2 未通过: D 段落数少于 baseline: 10 < 15
+⚠️ D 阶段未通过，降级发布 baseline（baseline_ready）
+   ℹ️ 语义覆盖（合并补验）：待复核 0/26 单元
+   ℹ️ 语义覆盖：26/26 单元已由账本确认，跳过 LLM
+   ℹ️ 母本语义覆盖: 26/26 单元已传达 (100%)；满足传达率 ≥80% 且未传达 ≤3；全部命中账本缓存
+✅ GLBL_00149 baseline_ready 1539 字（母本顺译，Phase2 待补） (single, 517s) → 04史料翻译/
+📦 baseline 跳过汇总更新（enrich 后再 aggregate）
+📌 产出已落盘（未自动同步）。人工确认后: python3 translate.py promote --id GLBL_00149 [--sync]

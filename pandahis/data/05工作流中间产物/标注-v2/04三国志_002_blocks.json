@@ -8,6 +8,11 @@
       "paragraph_from": 1,
       "paragraph_to": 1,
       "exclude_reason": "卷首标题"
+    },
+    {
+      "paragraph_from": 39,
+      "paragraph_to": 39,
+      "exclude_reason": "评曰"
     }
   ],
   "blocks": [
@@ -15,11 +20,11 @@
       "name": "魏文帝",
       "category": "君王",
       "paragraph_from": 2,
-      "paragraph_to": 39,
+      "paragraph_to": 38,
       "boundary_evidence": {
         "open_paragraph": 2,
         "open_phrase": "文皇帝讳丕，字子桓，武帝太子也。中平四年冬，生于谯。建安十六年，为五官中郎将、副",
-        "close_paragraph": 39,
+        "close_paragraph": 38,
         "close_note": "single/fanzuo 机械整卷"
       }
     }

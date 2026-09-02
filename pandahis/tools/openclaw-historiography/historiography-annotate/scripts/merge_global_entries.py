@@ -37,6 +37,22 @@ from source_thickness import (  # noqa: E402
 
 GROUP_KEYWORDS = ("儒林", "酷吏", "游侠", "货殖", "佞幸", "循吏")
 
+# 著作编号 → (work 标签, merge 排序用 work_ord)
+WORK_BY_PREFIX: Dict[str, Tuple[str, int]] = {
+    "01": ("01史记", 1),
+    "02": ("02汉书", 2),
+    "03": ("03后汉书", 3),
+    "04": ("04三国志", 4),
+}
+
+# 扩挂白名单：03×04 skeleton 命中时并入既有 GLBL，不新建（见 merge_v2_03_to_04.py）
+CROSS_INDEX_EXPAND_TARGETS: Dict[str, str] = {
+    "刘辅": "GLBL_00285",
+    "张禹": "GLBL_00340",
+    "郑弘": "GLBL_00461",
+    "西域诸国": "GLBL_01117",
+}
+
 # 硬编码异名归一（merge_key）；宗戚异名见 _load_zongqi_aliases()
 NAME_ALIASES: Dict[str, str] = {
     "项籍": "项羽",
@@ -146,19 +162,37 @@ def _canonical_name(name: str) -> str:
     return _zongqi_alias_map().get(n, n)
 
 
+def _work_from_filename(work_code: str) -> Tuple[str, int]:
+    prefix = (work_code or "")[:2]
+    if prefix in WORK_BY_PREFIX:
+        return WORK_BY_PREFIX[prefix]
+    if work_code.startswith("01"):
+        return "01史记", 1
+    if work_code.startswith("02"):
+        return "02汉书", 2
+    if work_code.startswith("03"):
+        return "03后汉书", 3
+    if work_code.startswith("04"):
+        return "04三国志", 4
+    ord_guess = int(prefix) if prefix.isdigit() else 99
+    return work_code, ord_guess
+
+
 def _parse_skeleton_path(fp: Path) -> Tuple[str, str, str]:
     m = re.match(r"(\d{2}[^_]+)_(\d{3})_(.+?)_skeleton\.json", fp.name)
     if not m:
         raise ValueError(f"无法解析: {fp.name}")
     work_code, vol, title = m.groups()
-    work = "01史记" if work_code.startswith("01") else "02汉书"
+    work, _ord = _work_from_filename(work_code)
     return work, vol, title
 
 
 def _vol_type(rec: dict) -> Tuple[str, int]:
+    if rec.get("volume_texture") == "interleaved":
+        return "混写传", 2
     vn = rec["vol_name"]
     if any(k in vn for k in GROUP_KEYWORDS):
-        return "群像传", 2
+        return "群像传", 1
     if "纪" in vn and "传" not in vn:
         return "纪", 4
     if rec.get("protagonist_count", 99) == 1 and ("传" in vn or "世家" in vn):
@@ -171,13 +205,19 @@ def _vol_type(rec: dict) -> Tuple[str, int]:
 def _load_sources(data_root: Path, work_glob: str) -> List[dict]:
     out: List[dict] = []
     for fp in sorted(data_root.glob(work_glob)):
-        work, vol, _title = _parse_skeleton_path(fp)
+        m = re.match(r"(\d{2}[^_]+)_(\d{3})_(.+?)_skeleton\.json", fp.name)
+        if not m:
+            continue
+        work_code, vol, _title = m.groups()
+        work, work_ord = _work_from_filename(work_code)
         data = json.loads(fp.read_text(encoding="utf-8"))
+        volume_texture = str(data.get("volume_texture") or "sequential").strip()
         meta = {
             "volume": data.get("volume", ""),
             "source_file": data.get("source_file", fp.name.replace("_skeleton.json", ".txt")),
             "原文路径": data.get("原文路径", ""),
             "protagonist_count": data.get("protagonist_count") or len(data.get("entries") or []),
+            "volume_texture": volume_texture,
         }
         for entry in data.get("entries") or []:
             name = (entry.get("史略名称") or "").strip()
@@ -189,9 +229,10 @@ def _load_sources(data_root: Path, work_glob: str) -> List[dict]:
             out.append(
                 {
                     "work": work,
-                    "work_ord": 1 if work.startswith("01") else 2,
+                    "work_ord": work_ord,
                     "vol": vol,
                     "vol_name": meta["volume"],
+                    "volume_texture": volume_texture,
                     "name": name,
                     "canonical": _canonical_name(name),
                     "cat": str(cat).strip(),
@@ -207,7 +248,14 @@ def _load_sources(data_root: Path, work_glob: str) -> List[dict]:
 def _rank_sources(sources: List[dict]) -> List[dict]:
     scored = []
     for s in sources:
-        vt, pri = _vol_type({**s, "vol_name": s["vol_name"], "protagonist_count": s["meta"]["protagonist_count"]})
+        vt, pri = _vol_type(
+            {
+                **s,
+                "vol_name": s["vol_name"],
+                "protagonist_count": s["meta"]["protagonist_count"],
+                "volume_texture": s.get("volume_texture") or s["meta"].get("volume_texture"),
+            }
+        )
         scored.append((pri, s["work_ord"], s["vol"], s["eid"], vt, s))
     scored.sort(key=lambda x: (-x[0], x[1], x[2], x[3]))
     return [x[5] for x in scored]

@@ -1,0 +1,17 @@
+{
+  "entry_id": "GLBL_00084",
+  "run_id": "GLBL_00084-1787360207326",
+  "directory": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/翻译/.runs/GLBL_00084/GLBL_00084-1787360207326",
+  "formal_target": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/04史料翻译/GLBL_00084_汉武帝.json",
+  "source_fingerprint": "1612b0154afcb3c4",
+  "status": "running",
+  "current_phase": "phase1",
+  "formal_promoted": false,
+  "attempts": {
+    "runtime": 11,
+    "phase1": 7
+  },
+  "next_action": "run_phase2",
+  "last_error": "DeepSeek API 失败 (HTTP 504).\n{\"error\":{\"type\":\"gateway_timeout\",\"code\":\"upstream_stream_stalled\",\"message\":\"Node node2 stopped producing Chat Completions progress\"}}",
+  "resume_phase": "phase1"
+}

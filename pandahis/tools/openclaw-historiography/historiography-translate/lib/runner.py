@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import json
 import os
-import re
 import time
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
@@ -16,15 +15,9 @@ from lib.config import (
     resolve_output_dir,
     translation_version_for_output_dir,
 )
-from lib.plan_postprocess import (
-    build_plan_skeleton,
-    merge_llm_plan_decisions,
-    plan_for_enrich_phase,
-    plan_for_mother_phase,
-)
+from lib.plan_postprocess import plan_for_enrich_phase, plan_for_mother_phase
 from lib.prose_sanitize import polish_enrich_file, polish_enrich_file_full, polish_mother_file, sanitize_mother_detail
 from lib.attribution import apply_attribution_fixes
-from lib.remote_sync import auto_sync_enabled
 from lib.stall_watch import (
     diagnose_stall,
     is_stalled,
@@ -46,8 +39,6 @@ from lib.openclaw import (
     build_source_plan_prompt,
     build_translate_enrich_prompt,
     build_translate_mother_prompt,
-    build_translate_polish_backfill_prompt,
-    build_translate_polish_prompt,
     build_translate_prompt,
     make_session_id,
     run_agent_turn,
@@ -70,6 +61,7 @@ from lib.verify import (
 from lib.repair_ticket import save_repair_ticket
 from shared.qa_repair import classify_translate_failure, format_retry_feedback
 from lib.work_artifacts import (
+    baseline_draft_path,
     load_normalized_plan,
     load_plan,
     mother_draft_path,
@@ -77,6 +69,9 @@ from lib.work_artifacts import (
     save_plan,
     verify_plan,
 )
+from lib.pipeline_abcd import abcd_pipeline_enabled, run_abcd_baseline, baseline_body_for_enrich
+from lib.pipeline_streamlined import streamlined_pipeline_enabled, run_streamlined_pipeline
+from lib.coverage_plan import ensure_coverage_ledger, ensure_enrich_plan, plan_json_for_phase_d
 
 
 def _ensure_output_dir(
@@ -202,9 +197,9 @@ def _should_skip(
     if not plan_ok:
         return False
     if job and job.get("source_fingerprint") == fp and job.get("status") == "done":
-        v_ok, _ = verify_output(entry_id, recalled, out_dir, plan=plan)
+        v_ok, _, _ = verify_output(entry_id, recalled, out_dir, plan=plan)
         return v_ok
-    v_ok, _ = verify_output(entry_id, recalled, out_dir, plan=plan)
+    v_ok, _, _ = verify_output(entry_id, recalled, out_dir, plan=plan)
     if v_ok:
         wc = len((data.get("翻译详情") or ""))
         db.update_job(
@@ -218,28 +213,6 @@ def _should_skip(
     return False
 
 
-def _plan_max_retries() -> int:
-    return max(0, int(os.environ.get("TRANSLATE_PLAN_MAX_RETRIES", "2")))
-
-
-def _format_plan_retry_feedback(errors: List[str]) -> str:
-    from lib.plan_postprocess import MAX_REFERENCE_WORKS
-
-    lines = [f"- {e}" for e in (errors or [])[:12]]
-    hint = (
-        "修正要点：\n"
-        "- 宏观选题两层：①通道检索（非交作业）；②重要性门槛（合法性/制度/战局用人/评价/神话辩伪）；"
-        "宁缺毋滥，禁止碎闻神异灌水与为凑通道凑 true；禁止更简平行纪与现代评述。\n"
-        "- `外部补全` 禁止空数组；不确定标 false 并写理由。\n"
-        "- **禁止**母本同一卷；禁止用雕花凑 `采用:true`。\n"
-        "- `采用:true` 须合法补全类型 + 《书·卷》+「与母本关系」写清冲突/另说/背景/异评；"
-        "禁止 GLBL_/过渡段/「原文翻译」作出处。\n"
-        "- 须有非空 `参考著作` 与 `写作结构`；"
-        f"`参考著作` 硬上限 ≤{MAX_REFERENCE_WORKS}，只交最重要的，超限会拒收重试。\n"
-    )
-    return ("\n".join(lines) + "\n" + hint) if lines else hint.strip()
-
-
 def ensure_source_plan(
     entry_id: str,
     recalled: Dict[str, Any],
@@ -250,35 +223,17 @@ def ensure_source_plan(
     dry_run: bool = False,
     use_llm: bool = True,
 ) -> tuple[bool, List[str]]:
-    from lib.external_macro import macro_plan_enabled, plan_external_hunt_enabled
-
     ok, errors = verify_plan(entry_id, recalled, plan_file)
     if ok:
         ok_load, raw, _ = load_plan(plan_file)
         if ok_load:
-            from lib.plan_postprocess import apply_reference_works_cap
-
-            save_plan(plan_file, apply_reference_works_cap(raw), recalled)
+            save_plan(plan_file, raw, recalled)
         return True, []
 
-    # 默认：plan 不挖外部补全，只程序生成母本清单骨架
-    if not plan_external_hunt_enabled():
-        if dry_run:
-            print(f"🧭 source-plan dry-run（骨架-only，不挖外部补全）→ {plan_file}")
-            return False, errors
-        return _ensure_source_plan_skeleton(
-            entry_id, recalled, plan_file, work_dir=work_dir
-        )
-
+    prompt = build_source_plan_prompt(
+        entry_id, recalled, recalled_summary(recalled), plan_file
+    )
     if dry_run:
-        if macro_plan_enabled():
-            from lib.external_macro import build_external_macro_prompt
-
-            prompt = build_external_macro_prompt(entry_id, recalled)
-        else:
-            prompt = build_source_plan_prompt(
-                entry_id, recalled, recalled_summary(recalled), plan_file
-            )
         print(f"🧭 source-plan dry-run → {plan_file}")
         print(f"   plan prompt 约 {len(prompt)} 字符")
         if errors:
@@ -288,311 +243,22 @@ def ensure_source_plan(
     if not use_llm:
         return False, errors
 
-    if macro_plan_enabled():
-        return _ensure_source_plan_macro(
-            entry_id,
-            recalled,
-            plan_file,
-            session_id=session_id,
-            work_dir=work_dir,
-            initial_errors=errors,
-        )
-
-    return _ensure_source_plan_legacy(
+    print(f"🧭 生成 source plan → {plan_file}", flush=True)
+    wd = work_dir or plan_file.parent
+    touch_heartbeat(wd, entry_id, stage="plan", detail=str(plan_file.name))
+    _llm_turn(
+        wd,
         entry_id,
-        recalled,
-        plan_file,
+        "plan",
+        prompt,
         session_id=session_id,
-        work_dir=work_dir,
-        initial_errors=errors,
+        timeout_sec=900,
+        artifact_paths={"plan": plan_file},
     )
-
-
-def _ensure_source_plan_skeleton(
-    entry_id: str,
-    recalled: Dict[str, Any],
-    plan_file: Path,
-    *,
-    work_dir: Path | None = None,
-) -> tuple[bool, List[str]]:
-    """plan 只生成母本清单/索引裁决骨架；外部补全交 Phase2。"""
-    del work_dir
-    from lib.plan_postprocess import (
-        apply_reference_works_cap,
-        build_plan_skeleton,
-        finalize_plan,
-    )
-    from lib.source_citation import build_source_citation
-
-    print("🧭 source-plan：骨架-only（不挖外部补全，交 Phase2 自补）", flush=True)
-    skeleton = build_plan_skeleton(recalled)
-    skeleton["史略ID"] = entry_id
-    skeleton["外部补全"] = []
-    cite = build_source_citation(recalled).strip()
-    if cite:
-        mother_ref = cite if cite.startswith("《") else f"《{cite}》"
-    else:
-        mother_ref = str(recalled.get("母本著作") or "母本").strip()
-        if mother_ref and not mother_ref.startswith("《"):
-            mother_ref = f"《{mother_ref}》"
-    skeleton["参考著作"] = [mother_ref] if mother_ref else []
-    skeleton["写作结构"] = [
-        {"小节": "本传", "说明": "Phase1 母本顺译 → Phase2 润色自挖补充并文末列参考"}
-    ]
-    skeleton["风险提示"] = [
-        "plan 不再选题外部补全；Phase2 可凭史识补充，但凡补充须在文末「参考著作」列出实际用到的书",
-        "流畅性不得凌驾时间真实性；禁止把晚年事插到中前期",
-    ]
-    plan = finalize_plan(skeleton, recalled, id_start=1, external_dedupe_llm=False)
-    plan = apply_reference_works_cap(plan)
-    save_plan(plan_file, plan, recalled)
-    ok, errors = verify_plan(entry_id, recalled, plan_file)
-    if ok:
-        print(f"   ✅ plan 骨架已落盘（外部补全=0）→ {plan_file.name}", flush=True)
-    return ok, errors
-
-
-def _ensure_source_plan_macro(
-    entry_id: str,
-    recalled: Dict[str, Any],
-    plan_file: Path,
-    *,
-    session_id: str,
-    work_dir: Path | None,
-    initial_errors: List[str],
-) -> tuple[bool, List[str]]:
-    """两步法：宏观选题 → 全书判重 → 挂锚 → 落盘。"""
-    from lib.external_dedupe import apply_external_mother_dedupe
-    from lib.external_macro import (
-        build_decision_from_macro,
-        macro_reference_count,
-        normalize_macro_external,
-        run_anchor_external,
-        run_macro_external_select,
-    )
-    from lib.plan_postprocess import MAX_REFERENCE_WORKS, apply_reference_works_cap
-
-    wd = work_dir or plan_file.parent
-    max_retries = _plan_max_retries()
-    last_errors = list(initial_errors)
-    skeleton = build_plan_skeleton(recalled)
-
-    for attempt in range(max_retries + 1):
-        need_feedback = attempt > 0 or any("空数组" in e for e in last_errors)
-        label = f"宏观选题 source plan → {plan_file}"
-        if attempt:
-            label = f"重试宏观选题（{attempt}/{max_retries}）→ {plan_file}"
-        print(f"🧭 {label}", flush=True)
-        touch_heartbeat(
-            wd,
-            entry_id,
-            stage="plan_macro",
-            detail=f"{plan_file.name}" + (f" retry={attempt}" if attempt else ""),
-        )
-        macro, raw = run_macro_external_select(
-            entry_id,
-            recalled,
-            session_id=f"{session_id}-macro-r{attempt}" if attempt else f"{session_id}-macro",
-            retry_feedback=(
-                _format_plan_retry_feedback(last_errors) if need_feedback else ""
-            ),
-        )
-        try:
-            plan_file.with_suffix(".macro.raw.txt").write_text(raw, encoding="utf-8")
-            plan_file.with_suffix(".macro.json").write_text(
-                json.dumps(macro, ensure_ascii=False, indent=2) + "\n",
-                encoding="utf-8",
-            )
-        except OSError:
-            pass
-
-        external = normalize_macro_external(macro.get("外部补全"))
-        n_ext = len(external)
-        n_adopt = sum(1 for x in external if x.get("采用") is True)
-        print(
-            f"   📥 宏观选题: 外部补全={n_ext} 条, 采用={n_adopt} 条, raw_len={len(raw)}",
-            flush=True,
-        )
-        if n_ext <= 0:
-            last_errors = ["宏观选题外部补全为空或未解析到"]
-            print(f"⚠️ source plan 未通过: {last_errors[0]}", flush=True)
-            continue
-
-        n_refs = macro_reference_count(macro, external)
-        if n_refs > MAX_REFERENCE_WORKS:
-            last_errors = [
-                f"参考著作超过硬上限 {MAX_REFERENCE_WORKS} 条（当前 {n_refs}）；"
-                f"只返回最重要的 {MAX_REFERENCE_WORKS} 个，勿罗列次要书目"
-            ]
-            print(f"⚠️ source plan 未通过: {last_errors[0]}", flush=True)
-            continue
-
-        # 先并入骨架：禁同卷降级 + 全书母本判重
-        draft = merge_llm_plan_decisions(
-            skeleton, build_decision_from_macro(entry_id, recalled, macro, external)
-        )
-        from lib.plan_postprocess import finalize_external
-
-        finalize_external(draft, recalled)
-        apply_external_mother_dedupe(
-            draft, entry_id=entry_id, use_llm=True
-        )
-        external = [
-            x for x in (draft.get("外部补全") or []) if isinstance(x, dict)
-        ]
-        n_adopt2 = sum(1 for x in external if x.get("采用") is True)
-        print(f"   🔎 判重后采用={n_adopt2} 条", flush=True)
-
-        touch_heartbeat(wd, entry_id, stage="plan_anchor", detail=plan_file.name)
-        print("🧭 外部补全挂锚 → 分批嵌入点", flush=True)
-        external, anchor_raw = run_anchor_external(
-            entry_id,
-            recalled,
-            external,
-            list(skeleton.get("母本逐句清单") or []),
-            session_id=f"{session_id}-anchor-r{attempt}" if attempt else f"{session_id}-anchor",
-        )
-        if anchor_raw:
-            try:
-                plan_file.with_suffix(".anchor.raw.txt").write_text(
-                    anchor_raw, encoding="utf-8"
-                )
-            except OSError:
-                pass
-
-        llm_plan = build_decision_from_macro(entry_id, recalled, macro, external)
-        try:
-            plan_file.with_suffix(".llm.json").write_text(
-                json.dumps(llm_plan, ensure_ascii=False, indent=2) + "\n",
-                encoding="utf-8",
-            )
-        except OSError:
-            pass
-        merged = merge_llm_plan_decisions(skeleton, llm_plan)
-        # 宏观路径已做一次判重；落盘再跑脚本闸（默认不开二次 LLM）
-        save_plan(plan_file, merged, recalled, external_dedupe_llm=False)
-        ok, last_errors = verify_plan(entry_id, recalled, plan_file)
-        if ok:
-            ok_load, accepted, _ = load_plan(plan_file)
-            if ok_load:
-                save_plan(
-                    plan_file,
-                    apply_reference_works_cap(accepted),
-                    recalled,
-                    external_dedupe_llm=False,
-                )
-            return True, []
-        print(
-            f"⚠️ source plan 未通过: {last_errors[0] if last_errors else '?'}",
-            flush=True,
-        )
-
-    return False, last_errors
-
-
-def _ensure_source_plan_legacy(
-    entry_id: str,
-    recalled: Dict[str, Any],
-    plan_file: Path,
-    *,
-    session_id: str,
-    work_dir: Path | None,
-    initial_errors: List[str],
-) -> tuple[bool, List[str]]:
-    """旧路径：整包 source_plan prompt（TRANSLATE_EXTERNAL_MACRO=0）。"""
-    wd = work_dir or plan_file.parent
-    max_retries = _plan_max_retries()
-    last_errors = list(initial_errors)
-    skeleton = build_plan_skeleton(recalled)
-
-    for attempt in range(max_retries + 1):
-        need_feedback = attempt > 0 or any("空数组" in e for e in last_errors)
-        prompt = build_source_plan_prompt(
-            entry_id,
-            recalled,
-            recalled_summary(recalled),
-            plan_file,
-            retry_feedback=(
-                _format_plan_retry_feedback(last_errors) if need_feedback else ""
-            ),
-        )
-        label = f"生成 source plan → {plan_file}"
-        if attempt:
-            label = f"重试 source plan（{attempt}/{max_retries}）→ {plan_file}"
-        print(f"🧭 {label}", flush=True)
-        touch_heartbeat(
-            wd,
-            entry_id,
-            stage="plan",
-            detail=f"{plan_file.name}" + (f" retry={attempt}" if attempt else ""),
-        )
-        _llm_turn(
-            wd,
-            entry_id,
-            "plan",
-            prompt,
-            session_id=f"{session_id}-r{attempt}" if attempt else session_id,
-            timeout_sec=900,
-            artifact_paths={"plan": plan_file},
-        )
-        ok_load, llm_plan, load_errs = load_plan(plan_file)
-        if not ok_load:
-            last_errors = load_errs or ["plan 落盘失败"]
-            continue
-        raw_ext = llm_plan.get("外部补全") if isinstance(llm_plan, dict) else None
-        raw_cl = llm_plan.get("母本逐句清单") if isinstance(llm_plan, dict) else None
-        n_ext = len(raw_ext) if isinstance(raw_ext, list) else -1
-        n_cl = len(raw_cl) if isinstance(raw_cl, list) else 0
-        print(
-            f"   📥 LLM plan 落盘: 外部补全={n_ext} 条, 母本清单={n_cl} 条"
-            + ("（长文决策包）" if n_cl == 0 and n_ext >= 0 else ""),
-            flush=True,
-        )
-        try:
-            llm_dump = plan_file.with_suffix(".llm.json")
-            llm_dump.write_text(
-                json.dumps(llm_plan, ensure_ascii=False, indent=2) + "\n",
-                encoding="utf-8",
-            )
-        except OSError:
-            pass
-
-        from lib.plan_postprocess import MAX_REFERENCE_WORKS, apply_reference_works_cap
-
-        raw_refs = llm_plan.get("参考著作") if isinstance(llm_plan, dict) else None
-        if isinstance(raw_refs, list):
-            seen_refs: List[str] = []
-            for r in raw_refs:
-                s = str(r or "").strip()
-                if s and s not in seen_refs:
-                    seen_refs.append(s)
-            if len(seen_refs) > MAX_REFERENCE_WORKS:
-                last_errors = [
-                    f"参考著作超过硬上限 {MAX_REFERENCE_WORKS} 条（当前 {len(seen_refs)}）；"
-                    f"只返回最重要的 {MAX_REFERENCE_WORKS} 个，勿罗列次要书目"
-                ]
-                print(f"⚠️ source plan 未通过: {last_errors[0]}", flush=True)
-                continue
-
-        merged = merge_llm_plan_decisions(skeleton, llm_plan)
-        save_plan(plan_file, merged, recalled, external_dedupe_llm=True)
-        ok, last_errors = verify_plan(entry_id, recalled, plan_file)
-        if ok:
-            ok_load, accepted, _ = load_plan(plan_file)
-            if ok_load:
-                save_plan(
-                    plan_file,
-                    apply_reference_works_cap(accepted),
-                    recalled,
-                    external_dedupe_llm=False,
-                )
-            return True, []
-        print(
-            f"⚠️ source plan 未通过: {last_errors[0] if last_errors else '?'}",
-            flush=True,
-        )
-
-    return False, last_errors
+    ok_load, plan_data, _ = load_plan(plan_file)
+    if ok_load:
+        save_plan(plan_file, plan_data, recalled)
+    return verify_plan(entry_id, recalled, plan_file)
 
 
 def _plan_json_for_mother(plan_data: Dict[str, Any]) -> str:
@@ -604,7 +270,7 @@ def _plan_json_for_enrich(plan_data: Dict[str, Any]) -> str:
 
 
 def _phase1_max_retries() -> int:
-    return max(0, int(os.environ.get("TRANSLATE_PHASE1_MAX_RETRIES", "4")))
+    return max(0, int(os.environ.get("TRANSLATE_PHASE1_MAX_RETRIES", "2")))
 
 
 def _repair_feedback_suffix() -> str:
@@ -652,23 +318,12 @@ def _phase1_retry_temperature() -> float:
     return float(os.environ.get("TRANSLATE_PHASE1_RETRY_TEMPERATURE", "0.4"))
 
 
-def _phase2_temperature(*, attempt: int = 0, under_rewrite: bool = False) -> float:
-    """Phase2 润色温度；誊抄重试只小幅抬温，避免「看官表演感」飙升。"""
-    base = float(os.environ.get("TRANSLATE_PHASE2_TEMPERATURE", "0.45"))
-    if under_rewrite:
-        # 旧逻辑可到 0.85；改为封顶约 0.6，靠提示词/门禁逼改表达而非演戏
-        return min(0.62, max(base, 0.5) + 0.03 * max(0, attempt - 1))
-    if attempt > 0:
-        return min(0.58, base + 0.05 * attempt)
-    return base
-
-
 def _apply_attribution_polish(
     target: Path,
     recalled: Dict[str, Any],
     plan_data: Dict[str, Any],
 ) -> None:
-    """Phase2 落盘后：归因清洗 + 弯引原文改「」+ 本传缺漏退场补全。"""
+    """Phase2 落盘后：归因清洗 + 本传缺漏退场补全。"""
     if not target.is_file():
         return
     try:
@@ -677,45 +332,15 @@ def _apply_attribution_polish(
         return
     detail = str(data.get("翻译详情") or "")
     fixed, changes = apply_attribution_fixes(detail, recalled, plan_data)
-    from lib.citation_mode import apply_quote_style_fixes
-
-    quote_fixed, quote_changes = apply_quote_style_fixes(fixed, plan_data)
-    if quote_changes:
-        fixed = quote_fixed
-        changes = list(changes) + list(quote_changes)
     if not changes:
         return
     data["翻译详情"] = fixed
     target.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"   🔧 归因修复: {', '.join(changes[:4])}", flush=True)
-
-
-def _rebuild_output_references(
-    target: Path,
-    recalled: Dict[str, Any],
-    plan_data: Dict[str, Any],
-) -> None:
-    """Phase2 后程序重建文末参考著作（按正文《》；去掉·相关卷占位）。"""
-    from lib.phase2_batch import append_reference_section
-
-    if not target.is_file():
-        return
-    ok, data, _ = load_output_from_path(target)
-    if not ok or not data:
-        return
-    detail = str(data.get("翻译详情") or "").strip()
-    if not detail:
-        return
-    rebuilt = append_reference_section(detail, plan_data, recalled)
-    if rebuilt == detail:
-        return
-    data["翻译详情"] = rebuilt
-    target.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print("   🔧 已按正文引用重建参考著作", flush=True)
+    print(f"   🔧 成稿后处理: {', '.join(changes[:5])}", flush=True)
 
 
 def _phase2_max_retries() -> int:
-    return max(0, int(os.environ.get("TRANSLATE_PHASE2_MAX_RETRIES", "5")))
+    return max(0, int(os.environ.get("TRANSLATE_PHASE2_MAX_RETRIES", "3")))
 
 
 def _verify_enrich_with_autofix(
@@ -724,106 +349,17 @@ def _verify_enrich_with_autofix(
     target: Path,
     plan_data: Dict[str, Any],
     *,
-    mother_text: str = "",
+    baseline_detail: str = "",
 ) -> Tuple[bool, List[str]]:
     """Phase2 质检；落盘后先跑归因脚本清洗再验。"""
     _apply_attribution_polish(target, recalled, plan_data)
     return verify_enrich_draft(
-        entry_id, recalled, target, plan=plan_data, mother_text=mother_text
+        entry_id,
+        recalled,
+        target,
+        plan=plan_data,
+        baseline_detail=baseline_detail,
     )
-
-
-def _try_enrich_landing_patch(
-    entry_id: str,
-    recalled: Dict[str, Any],
-    *,
-    chapter_target: Path,
-    chapter_plan: Dict[str, Any],
-    chapter_mother: str,
-    label: str,
-    session_id: str,
-    work_dir: Path,
-    slice_errs: List[str],
-) -> Tuple[bool, List[str]]:
-    """L2 定向补洞：仅补全落地失败时插入缺失句，避免整章重写。"""
-    from lib.enrich_landing import (
-        apply_landing_inserts,
-        build_landing_patch_prompt,
-        enrich_patch_max,
-        is_landing_only_failure,
-        load_detail_from_enrich_file,
-        missing_landing_items,
-        save_detail_to_enrich_file,
-        _extract_json_obj,
-    )
-
-    if enrich_patch_max() <= 0 or not is_landing_only_failure(slice_errs):
-        return False, slice_errs
-
-    body = load_detail_from_enrich_file(chapter_target)
-    missing = missing_landing_items(body, chapter_plan)
-    if not missing:
-        # 可能是索引书名缺失；L2 暂只处理外部补全逐条
-        return False, slice_errs
-
-    last_errs = list(slice_errs)
-    for pi in range(enrich_patch_max()):
-        patch_file = chapter_target.with_name(
-            f"{chapter_target.stem}.patch{pi + 1}.json"
-        )
-        prompt = build_landing_patch_prompt(
-            entry_id=entry_id,
-            chapter_body=body,
-            missing=missing,
-            output_file=patch_file,
-        )
-        print(
-            f"   🩹 Phase2 定向补洞 {label}："
-            f"{len(missing)} 条未落地 → {patch_file.name}"
-            f"（{pi + 1}/{enrich_patch_max()}）",
-            flush=True,
-        )
-        _llm_turn(
-            work_dir,
-            entry_id,
-            "enrich_patch",
-            prompt,
-            session_id=f"{session_id}-patch{pi + 1}",
-            timeout_sec=300,
-            artifact_paths={"output": patch_file},
-            temperature=0.2,
-        )
-        raw = ""
-        if patch_file.is_file():
-            raw = patch_file.read_text(encoding="utf-8")
-        obj = _extract_json_obj(raw)
-        if not obj or not isinstance(obj.get("inserts"), list):
-            last_errs = [f"{label}：定向补洞未返回 inserts JSON"]
-            print(f"   ⚠️ {last_errs[0]}", flush=True)
-            continue
-        new_body, n = apply_landing_inserts(body, obj.get("inserts") or [])
-        if n <= 0:
-            last_errs = [f"{label}：定向补洞 marker 未命中正文"]
-            print(f"   ⚠️ {last_errs[0]}", flush=True)
-            continue
-        save_detail_to_enrich_file(chapter_target, entry_id, new_body)
-        print(f"   ✅ 定向补洞已插入 {n} 处", flush=True)
-        body = new_body
-        ok, errs = verify_enrich_batch_slice(
-            entry_id,
-            recalled,
-            chapter_target,
-            batch_mother_text=chapter_mother,
-            batch_label=label,
-            plan=chapter_plan,
-        )
-        if ok:
-            return True, []
-        last_errs = errs or last_errs
-        missing = missing_landing_items(body, chapter_plan)
-        if not missing or not is_landing_only_failure(last_errs):
-            break
-    return False, last_errs
 
 
 def _mother_batch_size() -> int:
@@ -891,15 +427,7 @@ def _run_phase1_mother(
             return False, [f"Phase1 {label}: {e}" for e in errs]
         parts.append(_load_mother_text(batch_file))
 
-    from lib.longform_compat import join_narrative_parts
-
-    cleaned = [p for p in parts if p.strip()]
-    combined = join_narrative_parts(cleaned)
-    from lib.citation_mode import apply_quote_style_fixes
-
-    combined, q_changes = apply_quote_style_fixes(combined, plan_data)
-    if q_changes:
-        print(f"   🔧 合并母本：{', '.join(q_changes)}", flush=True)
+    combined = "\n\n".join(p for p in parts if p.strip())
     _write_mother_draft(mother_file, entry_id, sanitize_mother_detail(combined))
     touch_heartbeat(work_dir, entry_id, stage="verify_mother")
     return verify_mother_draft(entry_id, recalled, mother_file, plan=plan_data)
@@ -939,35 +467,18 @@ def _run_phase1_mother_single(
                 )
         batch_note = ""
         if batch_label:
-            from lib.longform_compat import mother_batch_guard_note
-
-            m_ids = [
-                str(x.get("编号") or "")
-                for x in checklist
-                if isinstance(x, dict) and x.get("编号")
-            ]
-            batch_note = mother_batch_guard_note(batch_label=batch_label, m_ids=m_ids)
-        from lib.recalled_window import (
-            batch_window_guard_note,
-            build_mother_batch_m_payload,
-        )
-
-        # Phase1：按本批 M 原文摘句注入（与分批口径一致）；禁止整段灌窗
-        window_payload = build_mother_batch_m_payload(
-            recalled, checklist if isinstance(checklist, list) else []
-        )
-        recalled_json = json.dumps(window_payload, ensure_ascii=False, indent=2)
-        window_note = batch_window_guard_note(window_payload)
+            batch_note = (
+                f"\n\n--- {batch_label}：只译下列 M 清单，保留句序与原词锚点 ---\n"
+            )
         m_prompt = (
             build_translate_mother_prompt(
                 entry_id,
                 recalled,
-                recalled_json,
+                recalled_summary(recalled),
                 mother_plan_json,
                 mother_file,
             )
             + batch_note
-            + window_note
             + retry_note
             + _repair_feedback_suffix()
         )
@@ -989,25 +500,7 @@ def _run_phase1_mother_single(
         if not mother_file.is_file():
             return False, ["Phase1: LLM 未落盘母本顺译"]
         if polish_mother_file(mother_file):
-            print("   🔧 已修正 Phase1 误用书名号", flush=True)
-        # 弯引装未译原文 → 自动改「」，避免无意义重试烧批
-        try:
-            data = json.loads(mother_file.read_text(encoding="utf-8"))
-        except json.JSONDecodeError:
-            data = None
-        if isinstance(data, dict):
-            key = "母本顺译" if "母本顺译" in data else "翻译详情"
-            body = str(data.get(key) or "")
-            from lib.citation_mode import apply_quote_style_fixes
-
-            fixed, q_changes = apply_quote_style_fixes(body, plan_data)
-            if q_changes:
-                data[key] = fixed
-                mother_file.write_text(
-                    json.dumps(data, ensure_ascii=False, indent=2) + "\n",
-                    encoding="utf-8",
-                )
-                print(f"   🔧 引号风格: {', '.join(q_changes)}", flush=True)
+            print("   🔧 已校正 Phase1 引号形态", flush=True)
         mother_detail = _load_mother_text(mother_file)
         touch_heartbeat(
             work_dir, entry_id, stage="verify_mother", detail=batch_label or ""
@@ -1078,197 +571,6 @@ def _use_chunked_pipeline(recalled: Dict[str, Any]) -> bool:
     return should_use_chunked_flow(recalled)
 
 
-def _run_phase2_enrich_chaptered(
-    entry_id: str,
-    recalled: Dict[str, Any],
-    *,
-    plan_data: Dict[str, Any],
-    mother_file: Path,
-    target: Path,
-    session_id: str,
-    work_dir: Path,
-    entry_name: str,
-    t0: float,
-) -> Tuple[bool, List[str], float]:
-    """长母本 Phase2：分章 enrich + 上章声口样例，再合并终稿。"""
-    from lib.phase2_batch import (
-        concatenate_mother_batch_texts,
-        build_chapter_enrich_prompt,
-        discover_mother_batches,
-        extract_voice_sample,
-        group_batches_into_chapters,
-        merge_enrich_batches,
-        phase2_chapter_batch_count,
-        style_density_warnings,
-    )
-
-    batch_files = discover_mother_batches(mother_file)
-    chapters = group_batches_into_chapters(batch_files)
-    total = len(chapters)
-    per = phase2_chapter_batch_count()
-    print(
-        f"📖 Phase2 分章说书 {entry_id}：{len(batch_files)} 母本批 → {total} 章"
-        f"（每章约 {per} 批；上章声口样例续写）",
-        flush=True,
-    )
-    parts: List[str] = []
-    voice_sample = ""
-    for ci, chapter_files in enumerate(chapters, start=1):
-        # batch 文件名 …-b01.json → 序号与 Phase1 批号一致（1-based 按排序）
-        batch_nos: List[int] = []
-        for bf in chapter_files:
-            m = re.search(r"-b(\d+)\.", bf.name)
-            batch_nos.append(int(m.group(1)) if m else (len(batch_nos) + 1))
-        chapter_mother = concatenate_mother_batch_texts(chapter_files)
-        chapter_target = mother_file.with_name(
-            f"{mother_file.stem}-ch{ci:02d}.enrich.json"
-        )
-        label = f"第 {ci}/{total} 章（b{batch_nos[0]:02d}–b{batch_nos[-1]:02d}）"
-        chapter_ok = False
-        chapter_errs: List[str] = []
-        for attempt in range(_phase2_max_retries() + 1):
-            retry_note = ""
-            if attempt > 0 and chapter_errs:
-                plan_fb = classify_translate_failure(
-                    chapter_errs, stage="phase2", fail_count=attempt
-                )
-                retry_note = (
-                    "\n\n--- 上轮 Phase2 质检失败，须修正 ---\n"
-                    + format_retry_feedback(plan_fb, chapter_errs)
-                )
-                if any("誊抄" in e or "改表达" in e or "重合" in e for e in chapter_errs):
-                    head = (chapter_mother or "").strip().split("\n\n")[0][:120]
-                    retry_note += (
-                        "\n\n【改表达 · 硬重试】禁止几乎原样粘贴 Phase1；"
-                        "同信息必须换句式与用词（口语/场面/释义旁白），"
-                        "目标与母本去虚词 4-gram 重合显著低于 95%。\n"
-                        "【覆盖 · 硬】必须从本章母本**开头情节**写起，不得跳章；"
-                        f"本章母本首段起句供核对：{head}…"
-                    )
-                # 经典「」漏嵌时把原文摘句再顶一遍，避免只见白话母本
-                if any("经典引用候选" in e or "直角「」" in e for e in chapter_errs):
-                    from lib.phase2_batch import (
-                        batch_checklist_items,
-                        classic_quote_must_embed_note,
-                    )
-
-                    _c_items: List[Dict[str, Any]] = []
-                    for bn in batch_nos:
-                        _c_items.extend(batch_checklist_items(plan_data, bn))
-                    retry_note += classic_quote_must_embed_note(_c_items)
-            prompt = (
-                build_chapter_enrich_prompt(
-                    entry_id,
-                    recalled,
-                    plan_data,
-                    chapter_mother,
-                    chapter_target,
-                    chapter_no=ci,
-                    total_chapters=total,
-                    batch_nos=batch_nos,
-                    include_intro=(ci == 1),
-                    voice_sample=voice_sample,
-                )
-                + retry_note
-                + _repair_feedback_suffix()
-            )
-            print(
-                f"⏳ Phase2 说书润色 {entry_id} {label} → {chapter_target.name}"
-                + (f"（重试 {attempt}/{_phase2_max_retries()}）" if attempt else ""),
-                flush=True,
-            )
-            under_rw = any(
-                "誊抄" in e or "重合" in e for e in (chapter_errs or [])
-            )
-            _llm_turn(
-                work_dir,
-                entry_id,
-                "enrich",
-                prompt,
-                session_id=f"{session_id}-enrich-ch{ci}-r{attempt}",
-                timeout_sec=900,
-                artifact_paths={"output": chapter_target},
-                temperature=_phase2_temperature(
-                    attempt=attempt, under_rewrite=under_rw
-                ),
-            )
-            if not chapter_target.is_file():
-                chapter_errs = [f"Phase2 {label}: LLM 未落盘本章译稿"]
-                print(f"⚠️ {chapter_errs[0]}", flush=True)
-                continue
-            if polish_enrich_file(chapter_target):
-                print("   🔧 已自动修正本章模糊出处表述", flush=True)
-            from lib.citation_mode import apply_quote_style_fixes_to_file
-            from lib.phase2_batch import batch_checklist_items, plan_for_enrich_batch
-
-            q_changes = apply_quote_style_fixes_to_file(chapter_target, plan_data)
-            if q_changes:
-                print(f"   🔧 引号风格: {', '.join(q_changes)}", flush=True)
-
-            ch_items: List[Dict[str, Any]] = []
-            for bn in batch_nos:
-                ch_items.extend(batch_checklist_items(plan_data, bn))
-            chapter_plan = plan_for_enrich_batch(plan_data, ch_items)
-            slice_ok, slice_errs = verify_enrich_batch_slice(
-                entry_id,
-                recalled,
-                chapter_target,
-                batch_mother_text=chapter_mother,
-                batch_label=label,
-                plan=chapter_plan,
-            )
-            if not slice_ok:
-                chapter_errs = slice_errs or [f"Phase2 {label}: 本章质检未通过"]
-                patched_ok, patched_errs = _try_enrich_landing_patch(
-                    entry_id,
-                    recalled,
-                    chapter_target=chapter_target,
-                    chapter_plan=chapter_plan,
-                    chapter_mother=chapter_mother,
-                    label=label,
-                    session_id=f"{session_id}-enrich-ch{ci}-r{attempt}",
-                    work_dir=work_dir,
-                    slice_errs=chapter_errs,
-                )
-                if patched_ok:
-                    chapter_body = _load_mother_text(chapter_target)
-                    parts.append(chapter_body)
-                    voice_sample = extract_voice_sample(chapter_body)
-                    chapter_ok = True
-                    break
-                if patched_errs:
-                    chapter_errs = patched_errs
-                print(f"⚠️ Phase2 {label} 未通过: {chapter_errs[0]}", flush=True)
-                continue
-            chapter_body = _load_mother_text(chapter_target)
-            parts.append(chapter_body)
-            voice_sample = extract_voice_sample(chapter_body)
-            chapter_ok = True
-            break
-        if not chapter_ok:
-            return False, chapter_errs or [f"Phase2 {label} 失败"], time.time() - t0
-
-    combined = merge_enrich_batches(entry_id, parts, plan_data, recalled)
-    for w in style_density_warnings(combined):
-        print(f"   ⚠️ {w}", flush=True)
-    target.parent.mkdir(parents=True, exist_ok=True)
-    target.write_text(
-        json.dumps({"史略ID": entry_id, "翻译详情": combined}, ensure_ascii=False, indent=2)
-        + "\n",
-        encoding="utf-8",
-    )
-    if polish_enrich_file_full(target):
-        print("   🔧 已自动修正模糊出处表述", flush=True)
-    _rebuild_output_references(target, recalled, plan_data)
-    touch_heartbeat(work_dir, entry_id, stage="verify_enrich")
-    e_ok, e_errs = _verify_enrich_with_autofix(
-        entry_id, recalled, target, plan_data, mother_text=_load_mother_text(mother_file)
-    )
-    if not e_ok:
-        return False, [f"Phase2: {e}" for e in e_errs], time.time() - t0
-    return True, [], time.time() - t0
-
-
 def _run_phase2_enrich_batched(
     entry_id: str,
     recalled: Dict[str, Any],
@@ -1280,29 +582,72 @@ def _run_phase2_enrich_batched(
     work_dir: Path,
     entry_name: str,
     t0: float,
+    baseline_file: Path | None = None,
 ) -> Tuple[bool, List[str], float]:
-    """长母本 Phase2（旧路径）：按 Phase1 分批文件逐批 enrich，再合并终稿。"""
+    """长稿 D 阶段：按 baseline 整篇段落分批 enrich，再合并终稿。"""
     from lib.phase2_batch import (
+        batch_context_prefix,
+        build_baseline_batch_enrich_prompt,
         build_batch_enrich_prompt,
         discover_mother_batches,
         merge_enrich_batches,
         phase2_batch_char_threshold,
+        split_detail_paragraph_batches,
     )
+    from lib.pipeline_abcd import baseline_body_for_enrich
 
-    batches = discover_mother_batches(mother_file)
-    total = len(batches)
+    threshold = phase2_batch_char_threshold()
+    use_baseline = bool(baseline_file and baseline_file.is_file())
+    baseline_detail = baseline_body_for_enrich(baseline_file) if use_baseline else ""
+
+    if use_baseline:
+        batch_texts = split_detail_paragraph_batches(baseline_detail, threshold)
+        batch_specs: List[tuple[str, Path, str]] = []
+        for bi, text in enumerate(batch_texts, start=1):
+            batch_target = baseline_file.with_name(
+                f"{baseline_file.stem}-d-b{bi:02d}.enrich.json"
+            )
+            batch_specs.append((text, batch_target, f"第 {bi}/{len(batch_texts)} 批"))
+        mode_label = "baseline 整篇"
+    else:
+        batches = discover_mother_batches(mother_file)
+        batch_specs = [
+            (
+                _load_mother_text(batch_file),
+                batch_file.with_suffix(".enrich.json"),
+                f"第 {bi}/{len(batches)} 批",
+            )
+            for bi, batch_file in enumerate(batches, start=1)
+        ]
+        mode_label = "母本"
+
+    total = len(batch_specs)
     print(
-        f"📦 Phase2 旧分批补全 {entry_id}：{total} 批"
-        f"（母本 >{phase2_batch_char_threshold()} 字；TRANSLATE_PHASE2_MODE=legacy_batch）",
+        f"📦 D 分批 enrich {entry_id}：{total} 批"
+        f"（{mode_label} >{threshold} 字，避免单次输出截断）",
         flush=True,
     )
     parts: List[str] = []
-    for bi, batch_file in enumerate(batches, start=1):
-        batch_mother = _load_mother_text(batch_file)
-        batch_target = batch_file.with_suffix(".enrich.json")
-        label = f"第 {bi}/{total} 批"
+    prev_batch = ""
+    for bi, (batch_text, batch_target, label) in enumerate(batch_specs, start=1):
         batch_ok = False
         batch_errs: List[str] = []
+        if batch_target.is_file():
+            slice_ok, slice_errs = verify_enrich_batch_slice(
+                entry_id,
+                recalled,
+                batch_target,
+                batch_mother_text=batch_text,
+                batch_label=label,
+            )
+            if slice_ok:
+                print(
+                    f"⏭️ D {label} 沿用已有 {batch_target.name}",
+                    flush=True,
+                )
+                parts.append(_load_mother_text(batch_target))
+                prev_batch = batch_text
+                continue
         for attempt in range(_phase2_max_retries() + 1):
             retry_note = ""
             if attempt > 0 and batch_errs:
@@ -1310,25 +655,42 @@ def _run_phase2_enrich_batched(
                     batch_errs, stage="phase2", fail_count=attempt
                 )
                 retry_note = (
-                    "\n\n--- 上轮 Phase2 质检失败，须修正 ---\n"
+                    "\n\n--- 上轮 D 质检失败，须修正 ---\n"
                     + format_retry_feedback(plan_fb, batch_errs)
                 )
-            prompt = (
-                build_batch_enrich_prompt(
-                    entry_id,
-                    recalled,
-                    plan_data,
-                    batch_mother,
-                    batch_target,
-                    batch_no=bi,
-                    total_batches=total,
-                    include_intro=(bi == 1),
+            if use_baseline:
+                ctx = batch_context_prefix(prev_batch) if bi > 1 else ""
+                prompt = (
+                    build_baseline_batch_enrich_prompt(
+                        entry_id,
+                        recalled,
+                        plan_data,
+                        batch_text,
+                        batch_target,
+                        batch_no=bi,
+                        total_batches=total,
+                        context_prefix=ctx,
+                    )
+                    + retry_note
+                    + _repair_feedback_suffix()
                 )
-                + retry_note
-                + _repair_feedback_suffix()
-            )
+            else:
+                prompt = (
+                    build_batch_enrich_prompt(
+                        entry_id,
+                        recalled,
+                        plan_data,
+                        batch_text,
+                        batch_target,
+                        batch_no=bi,
+                        total_batches=total,
+                        include_intro=(bi == 1),
+                    )
+                    + retry_note
+                    + _repair_feedback_suffix()
+                )
             print(
-                f"⏳ Phase2 补全 {entry_id} {label} → {batch_target.name}"
+                f"⏳ D enrich {entry_id} {label} → {batch_target.name}"
                 + (f"（重试 {attempt}/{_phase2_max_retries()}）" if attempt else ""),
                 flush=True,
             )
@@ -1340,59 +702,30 @@ def _run_phase2_enrich_batched(
                 session_id=f"{session_id}-enrich-b{bi}-r{attempt}",
                 timeout_sec=900,
                 artifact_paths={"output": batch_target},
-                temperature=_phase2_temperature(),
             )
             if not batch_target.is_file():
-                batch_errs = [f"Phase2 {label}: LLM 未落盘本批译稿"]
+                batch_errs = [f"D {label}: LLM 未落盘本批译稿"]
                 print(f"⚠️ {batch_errs[0]}", flush=True)
                 continue
             if polish_enrich_file(batch_target):
                 print("   🔧 已自动修正本批模糊出处表述", flush=True)
-            from lib.citation_mode import apply_quote_style_fixes_to_file
-            from lib.phase2_batch import batch_checklist_items, plan_for_enrich_batch
-
-            q_changes = apply_quote_style_fixes_to_file(batch_target, plan_data)
-            if q_changes:
-                print(f"   🔧 引号风格: {', '.join(q_changes)}", flush=True)
-
-            b_items = batch_checklist_items(plan_data, bi)
-            batch_plan = plan_for_enrich_batch(plan_data, b_items)
             slice_ok, slice_errs = verify_enrich_batch_slice(
                 entry_id,
                 recalled,
                 batch_target,
-                batch_mother_text=batch_mother,
+                batch_mother_text=batch_text,
                 batch_label=label,
-                plan=batch_plan,
             )
             if not slice_ok:
-                batch_errs = slice_errs or [f"Phase2 {label}: 本批质检未通过"]
-                patched_ok, patched_errs = _try_enrich_landing_patch(
-                    entry_id,
-                    recalled,
-                    chapter_target=batch_target,
-                    chapter_plan=batch_plan,
-                    chapter_mother=batch_mother,
-                    label=label,
-                    session_id=f"{session_id}-enrich-b{bi}-r{attempt}",
-                    work_dir=work_dir,
-                    slice_errs=batch_errs,
-                )
-                if patched_ok:
-                    batch_body = _load_mother_text(batch_target)
-                    parts.append(batch_body)
-                    batch_ok = True
-                    break
-                if patched_errs:
-                    batch_errs = patched_errs
-                print(f"⚠️ Phase2 {label} 未通过: {batch_errs[0]}", flush=True)
+                batch_errs = slice_errs or [f"D {label}: 本批质检未通过"]
+                print(f"⚠️ D {label} 未通过: {batch_errs[0]}", flush=True)
                 continue
-            batch_body = _load_mother_text(batch_target)
-            parts.append(batch_body)
+            parts.append(_load_mother_text(batch_target))
+            prev_batch = batch_text
             batch_ok = True
             break
         if not batch_ok:
-            return False, batch_errs or [f"Phase2 {label} 失败"], time.time() - t0
+            return False, batch_errs or [f"D {label} 失败"], time.time() - t0
 
     combined = merge_enrich_batches(entry_id, parts, plan_data, recalled)
     target.parent.mkdir(parents=True, exist_ok=True)
@@ -1403,755 +736,13 @@ def _run_phase2_enrich_batched(
     )
     if polish_enrich_file_full(target):
         print("   🔧 已自动修正模糊出处表述", flush=True)
-    _rebuild_output_references(target, recalled, plan_data)
     touch_heartbeat(work_dir, entry_id, stage="verify_enrich")
     e_ok, e_errs = _verify_enrich_with_autofix(
-        entry_id, recalled, target, plan_data, mother_text=_load_mother_text(mother_file)
+        entry_id, recalled, target, plan_data, baseline_detail=baseline_detail
     )
     if not e_ok:
         return False, [f"Phase2: {e}" for e in e_errs], time.time() - t0
     return True, [], time.time() - t0
-
-
-def _phase2_use_legacy_enrich() -> bool:
-    """旧「分章+plan 补全」路径；默认关闭，走 polish（长卷可分章 polish）。"""
-    raw = (os.environ.get("TRANSLATE_PHASE2_MODE") or "polish").strip().lower()
-    return raw in {"enrich", "enrich_legacy", "legacy", "legacy_batch", "batch"}
-
-
-def _phase2_force_whole_polish() -> bool:
-    raw = (os.environ.get("TRANSLATE_PHASE2_MODE") or "polish").strip().lower()
-    return raw in {"polish_whole", "whole", "full"}
-
-
-def _phase2_force_chapter_polish() -> bool:
-    raw = (os.environ.get("TRANSLATE_PHASE2_MODE") or "polish").strip().lower()
-    return raw in {"polish_chapter", "chapter_polish", "chapter"}
-
-
-def _phase2_should_chapter_polish(mother_body: str, mother_file: Path) -> bool:
-    """长卷默认分章说书润色（同一套 polish 规则切片）。"""
-    if _phase2_force_whole_polish():
-        return False
-    if _phase2_force_chapter_polish():
-        return True
-    from lib.phase2_batch import discover_mother_batches, phase2_batch_char_threshold
-
-    long_cut = max(
-        phase2_batch_char_threshold(),
-        int(os.environ.get("TRANSLATE_PHASE2_LONG_MOTHER_CHARS", "8000") or "8000"),
-    )
-    batches = discover_mother_batches(mother_file)
-    return len(mother_body or "") > long_cut and len(batches) >= 2
-
-
-def _phase2_thin_or_overlap_fail(errs: List[str]) -> bool:
-    return any(
-        ("偏薄" in e) or ("誊抄" in e) or ("重合" in e) or ("变薄" in e)
-        for e in (errs or [])
-    )
-
-
-def _run_phase2_polish_chaptered(
-    entry_id: str,
-    recalled: Dict[str, Any],
-    *,
-    plan_data: Dict[str, Any],
-    mother_body: str,
-    mother_file: Path,
-    target: Path,
-    session_id: str,
-    work_dir: Path,
-    entry_name: str,
-    t0: float,
-    out_dir: Optional[Path] = None,
-) -> Tuple[bool, List[str], float]:
-    """长母本 Phase2：按章界切母本，逐章 polish（非 enrich 打卡）。"""
-    from lib.enrich_landing import load_detail_from_enrich_file
-    from lib.openclaw import build_translate_polish_prompt
-    from lib.phase2_batch import (
-        concatenate_mother_batch_texts,
-        discover_mother_batches,
-        extract_voice_sample,
-        group_batches_into_chapters,
-        merge_enrich_batches,
-        phase2_chapter_batch_count,
-        style_density_warnings,
-    )
-    from lib.phase3_qa import apply_post_polish_heals, verify_polish_draft_light
-    from lib.source_text import build_source_original
-
-    del mother_body
-    source_original = build_source_original(recalled)
-    batch_files = discover_mother_batches(mother_file)
-    chapters = group_batches_into_chapters(batch_files)
-    total = len(chapters)
-    per = phase2_chapter_batch_count()
-    print(
-        f"📖 Phase2 分章润色 {entry_id}：{len(batch_files)} 母本批 → {total} 章"
-        f"（每章约 {per} 批；同一套 polish 规则 + 上章声口样例）",
-        flush=True,
-    )
-    parts: List[str] = []
-    voice_sample = ""
-    for ci, chapter_files in enumerate(chapters, start=1):
-        batch_nos: List[int] = []
-        for bf in chapter_files:
-            m = re.search(r"-b(\d+)\.", bf.name)
-            batch_nos.append(int(m.group(1)) if m else (len(batch_nos) + 1))
-        chapter_mother = concatenate_mother_batch_texts(chapter_files)
-        chapter_target = mother_file.with_name(
-            f"{mother_file.stem}-ch{ci:02d}.polish.json"
-        )
-        label = f"第 {ci}/{total} 章（b{batch_nos[0]:02d}–b{batch_nos[-1]:02d}）"
-        chapter_ok = False
-        chapter_errs: List[str] = []
-        for attempt in range(_phase2_max_retries() + 1):
-            retry_note = ""
-            if attempt > 0 and chapter_errs:
-                plan_fb = classify_translate_failure(
-                    chapter_errs, stage="phase2", fail_count=attempt
-                )
-                retry_note = (
-                    "\n\n--- 上轮本章润色未通过，请修正（仍只写本章）---\n"
-                    + format_retry_feedback(plan_fb, chapter_errs)
-                )
-                if _phase2_thin_or_overlap_fail(chapter_errs):
-                    head = (chapter_mother or "").strip().split("\n\n")[0][:120]
-                    retry_note += (
-                        "\n\n【加厚·改表达 · 硬重试】禁止近誊抄；"
-                        "须明显加讲解/场面/异说，并换句式；"
-                        "长卷与母本去虚词 4-gram 重合须显著低于 85%。\n"
-                        "【成文洁净 · 硬】保持第三人称历史叙事；"
-                        "禁止「看官/听客/上回/下回/今儿个/这位爷/本篇以」；"
-                        "自然感来自句法，不来自说书场表演。\n"
-                        f"本章母本首段起句供核对：{head}…"
-                    )
-            e_prompt = (
-                build_translate_polish_prompt(
-                    entry_id,
-                    chapter_mother,
-                    chapter_target,
-                    source_original=source_original,
-                    chapter_no=ci,
-                    total_chapters=total,
-                    voice_sample=voice_sample,
-                    include_intro=(ci == 1),
-                    include_epilogue=(ci == total),
-                    intro_material=(
-                        plan_data.get("前置引入素材")
-                        if isinstance(plan_data.get("前置引入素材"), dict)
-                        else None
-                    ),
-                )
-                + retry_note
-            )
-            print(
-                f"⏳ Phase2 分章润色 {entry_id} {label} → {chapter_target.name}"
-                + (f"（重试 {attempt}/{_phase2_max_retries()}）" if attempt else ""),
-                flush=True,
-            )
-            under_rw = _phase2_thin_or_overlap_fail(chapter_errs)
-            _llm_turn(
-                work_dir,
-                entry_id,
-                "enrich",
-                e_prompt,
-                session_id=f"{session_id}-polish-ch{ci}-r{attempt}",
-                timeout_sec=1200,
-                artifact_paths={"output": chapter_target},
-                temperature=_phase2_temperature(
-                    attempt=attempt, under_rewrite=under_rw
-                ),
-            )
-            if not chapter_target.is_file():
-                chapter_errs = [f"Phase2 {label}: LLM 未落盘本章译稿"]
-                print(f"⚠️ {chapter_errs[0]}", flush=True)
-                continue
-            if polish_enrich_file(chapter_target):
-                print("   🔧 已自动修正本章模糊出处表述", flush=True)
-            heals = apply_post_polish_heals(
-                chapter_target,
-                entry_id,
-                plan=plan_data,
-                source_original=source_original,
-                mother=chapter_mother,
-            )
-            if heals:
-                print(f"   🔧 本章愈合: {', '.join(heals)}", flush=True)
-            chapter_body = load_detail_from_enrich_file(chapter_target)
-            e_ok, e_errs = verify_polish_draft_light(
-                entry_id=entry_id,
-                detail=chapter_body if "参考著作" in chapter_body else (chapter_body + "\n\n参考著作\n- 《史记》"),
-                mother=chapter_mother,
-                source_original=source_original,
-                plan=plan_data,
-                check_intro=(ci == 1),
-                check_epilogue=(ci == total),
-            )
-            # 分章阶段不做全书基线回归（合并后再检）；非末章不拦参考著作
-            e_errs = [
-                e
-                for e in e_errs
-                if "旧优稿" not in e and "关键收束" not in e
-            ]
-            if ci < total:
-                e_errs = [e for e in e_errs if "参考著作" not in e]
-            if not e_errs:
-                parts.append(chapter_body)
-                voice_sample = extract_voice_sample(chapter_body)
-                chapter_ok = True
-                break
-            chapter_errs = e_errs
-            print(f"⚠️ Phase2 {label} 未通过: {chapter_errs[0]}", flush=True)
-        if not chapter_ok:
-            return False, chapter_errs or [f"Phase2 {label} 失败"], time.time() - t0
-
-    combined = merge_enrich_batches(entry_id, parts, plan_data, recalled)
-    for w in style_density_warnings(combined):
-        print(f"   ⚠️ {w}", flush=True)
-    target.parent.mkdir(parents=True, exist_ok=True)
-    target.write_text(
-        json.dumps({"史略ID": entry_id, "翻译详情": combined}, ensure_ascii=False, indent=2)
-        + "\n",
-        encoding="utf-8",
-    )
-    if polish_enrich_file_full(target):
-        print("   🔧 已自动修正模糊出处表述", flush=True)
-    _rebuild_output_references(target, recalled, plan_data)
-    heals = apply_post_polish_heals(
-        target,
-        entry_id,
-        plan=plan_data,
-        source_original=source_original,
-        mother=_load_mother_text(mother_file),
-    )
-    if heals:
-        print(f"   🔧 合并后愈合: {', '.join(heals)}", flush=True)
-    detail = _load_mother_text(target)
-    full_mother = _load_mother_text(mother_file)
-    e_ok, e_errs = verify_polish_draft_light(
-        entry_id=entry_id,
-        detail=detail,
-        mother=full_mother,
-        source_original=source_original,
-        out_dir=out_dir,
-        entry_name=entry_name,
-        plan=plan_data,
-        check_intro=True,
-        check_epilogue=True,
-    )
-    if not e_ok:
-        return False, [f"Phase2: {e}" for e in e_errs], time.time() - t0
-    from lib.coverage_ledger import clear_ledger
-
-    clear_ledger(work_dir, entry_id)
-    print("   🔧 已清空覆盖账本（成稿相对母本重验，不沿用 Phase1 conveyed）", flush=True)
-    return True, [], time.time() - t0
-
-
-def _run_phase2_polish(
-    entry_id: str,
-    recalled: Dict[str, Any],
-    *,
-    plan_data: Dict[str, Any],
-    mother_body: str,
-    mother_file: Path,
-    target: Path,
-    session_id: str,
-    work_dir: Path,
-    entry_name: str,
-    t0: float,
-    out_dir: Optional[Path] = None,
-    allow_chapter_fallback: bool = True,
-) -> Tuple[bool, List[str], float]:
-    """Phase2 整篇润色：一次喂全文；偏薄/高重合耗尽重试后可降级分章。"""
-    from lib.enrich_landing import load_detail_from_enrich_file
-    from lib.mother_span import (
-        format_span_hole_retry_note,
-        locate_span_backfill_slots,
-    )
-    from lib.phase3_qa import apply_post_polish_heals, verify_polish_draft_light
-    from lib.source_text import build_source_original
-
-    source_original = build_source_original(recalled)
-    e_errs: List[str] = []
-    e_ok = False
-    for attempt in range(_phase2_max_retries() + 1):
-        span_drop = any("整段漏" in e for e in (e_errs or []))
-        if attempt > 0 and span_drop and target.is_file():
-            current = load_detail_from_enrich_file(target)
-            slots = locate_span_backfill_slots(
-                current, mother_body, source_original
-            )
-            if slots:
-                print(
-                    f"   🔧 定位到 {len(slots)} 处漏段夹缝，本轮局部补洞（不程序插原文）",
-                    flush=True,
-                )
-                e_prompt = build_translate_polish_backfill_prompt(
-                    entry_id,
-                    mother_body,
-                    current,
-                    target,
-                    format_span_hole_retry_note(
-                        [s.hole for s in slots], slots=slots
-                    ),
-                )
-            else:
-                plan_fb = classify_translate_failure(
-                    e_errs, stage="phase2", fail_count=attempt
-                )
-                e_prompt = build_translate_polish_prompt(
-                    entry_id,
-                    mother_body,
-                    target,
-                    source_original=source_original,
-                    intro_material=(
-                        plan_data.get("前置引入素材")
-                        if isinstance(plan_data.get("前置引入素材"), dict)
-                        else None
-                    ),
-                ) + (
-                    "\n\n--- 上轮 Phase2 未通过，请整篇修正（仍不分章）---\n"
-                    + format_retry_feedback(plan_fb, e_errs)
-                )
-        else:
-            retry_note = ""
-            if attempt > 0 and e_errs:
-                plan_fb = classify_translate_failure(
-                    e_errs, stage="phase2", fail_count=attempt
-                )
-                retry_note = (
-                    "\n\n--- 上轮 Phase2 未通过，请整篇修正（仍不分章）---\n"
-                    + format_retry_feedback(plan_fb, e_errs)
-                )
-            e_prompt = (
-                build_translate_polish_prompt(
-                    entry_id,
-                    mother_body,
-                    target,
-                    source_original=source_original,
-                    intro_material=(
-                        plan_data.get("前置引入素材")
-                        if isinstance(plan_data.get("前置引入素材"), dict)
-                        else None
-                    ),
-                )
-                + retry_note
-            )
-        print(
-            f"⏳ Phase2 整篇润色 {entry_id} → {target.name}"
-            + (f"（重试 {attempt}/{_phase2_max_retries()}）" if attempt else ""),
-            flush=True,
-        )
-        under_rw = _phase2_thin_or_overlap_fail(e_errs)
-        _llm_turn(
-            work_dir,
-            entry_id,
-            "enrich",
-            e_prompt,
-            session_id=f"{session_id}-polish-r{attempt}",
-            timeout_sec=1200,
-            artifact_paths={"output": target},
-            temperature=_phase2_temperature(attempt=attempt, under_rewrite=under_rw),
-        )
-        if not target.is_file():
-            e_errs = ["Phase2: LLM 未落盘最终译稿"]
-            e_ok = False
-            print(f"⚠️ Phase2 未通过: {e_errs[0]}", flush=True)
-            continue
-        if polish_enrich_file_full(target):
-            print("   🔧 已自动修正模糊出处表述", flush=True)
-        heals = apply_post_polish_heals(
-            target,
-            entry_id,
-            plan=plan_data,
-            source_original=source_original,
-            mother=mother_body,
-        )
-        if heals:
-            print(f"   🔧 润色后愈合: {', '.join(heals)}", flush=True)
-        detail = _load_mother_text(target)
-        e_ok, e_errs = verify_polish_draft_light(
-            entry_id=entry_id,
-            detail=detail,
-            mother=mother_body,
-            source_original=source_original,
-            out_dir=out_dir,
-            entry_name=entry_name,
-            plan=plan_data,
-            check_intro=True,
-            check_epilogue=True,
-        )
-        if e_ok:
-            break
-        print(f"⚠️ Phase2 未通过: {e_errs[0] if e_errs else '?'}", flush=True)
-    if not e_ok:
-        # 整篇因偏薄/高重合耗尽 → 自动降级分章重跑一次
-        can_fallback = (
-            allow_chapter_fallback
-            and not _phase2_force_whole_polish()
-            and _phase2_thin_or_overlap_fail(e_errs)
-            and len(discover_mother_batches_safe(mother_file)) >= 2
-        )
-        if can_fallback:
-            print(
-                "↪️ Phase2 整篇因偏薄/近誊抄耗尽重试，自动降级为分章润色…",
-                flush=True,
-            )
-            return _run_phase2_polish_chaptered(
-                entry_id,
-                recalled,
-                plan_data=plan_data,
-                mother_body=mother_body,
-                mother_file=mother_file,
-                target=target,
-                session_id=f"{session_id}-chfb",
-                work_dir=work_dir,
-                entry_name=entry_name,
-                t0=t0,
-                out_dir=out_dir,
-            )
-        return False, [f"Phase2: {e}" for e in e_errs], time.time() - t0
-    from lib.coverage_ledger import clear_ledger
-
-    clear_ledger(work_dir, entry_id)
-    print("   🔧 已清空覆盖账本（成稿相对母本重验，不沿用 Phase1 conveyed）", flush=True)
-    return True, [], time.time() - t0
-
-
-def discover_mother_batches_safe(mother_file: Path) -> List[Path]:
-    from lib.phase2_batch import discover_mother_batches
-
-    return discover_mother_batches(mother_file)
-
-
-def _run_phase3_qa(
-    entry_id: str,
-    recalled: Dict[str, Any],
-    *,
-    plan_data: Dict[str, Any],
-    mother_body: str,
-    target: Path,
-    session_id: str,
-    work_dir: Path,
-) -> Tuple[bool, List[str]]:
-    """Phase3：只质检不重写。报告 → *.qa.md + *.qa.json。"""
-    from lib.phase3_qa import (
-        build_phase3_qa_prompt,
-        merge_qa_report,
-        phase3_enabled,
-        program_qa_findings,
-        _extract_qa_json,
-    )
-
-    from lib.source_text import build_source_original
-
-    if not phase3_enabled():
-        print("⏭️ Phase3 质检已关闭（TRANSLATE_PHASE3_QA=0）", flush=True)
-        return True, []
-
-    detail = _load_mother_text(target)
-    prog = program_qa_findings(
-        mother=mother_body,
-        detail=detail,
-        plan=plan_data,
-        source_original=build_source_original(recalled),
-    )
-    qa_json_path = work_dir / f"{target.stem}.qa.json"
-    qa_md_path = work_dir / f"{target.stem}.qa.md"
-    core = str(recalled.get("母本著作") or recalled.get("母本卷名") or "").strip()
-    if core and not core.startswith("《"):
-        core = f"《{core}》"
-    person = str(recalled.get("史略名称") or "").strip()
-    prompt = build_phase3_qa_prompt(
-        entry_id=entry_id,
-        mother=mother_body,
-        detail=detail,
-        output_file=qa_md_path,
-        program_findings=prog,
-        core_source=core,
-        person=person,
-    )
-    print(f"⏳ Phase3 第一轮质检 {entry_id} → {qa_md_path.name}", flush=True)
-    touch_heartbeat(work_dir, entry_id, stage="phase3_qa")
-    _llm_turn(
-        work_dir,
-        entry_id,
-        "qa",
-        prompt,
-        session_id=f"{session_id}-qa",
-        timeout_sec=900,
-        artifact_paths={"markdown": qa_md_path},
-        temperature=0.1,
-    )
-    raw = qa_md_path.read_text(encoding="utf-8") if qa_md_path.is_file() else ""
-    # 若误写成 JSON 外壳
-    if raw.strip().startswith("{") and "翻译详情" in raw[:80]:
-        try:
-            outer = json.loads(raw)
-            if isinstance(outer, dict) and isinstance(outer.get("翻译详情"), str):
-                raw = outer["翻译详情"]
-                qa_md_path.write_text(raw + "\n", encoding="utf-8")
-        except json.JSONDecodeError:
-            pass
-    llm_obj = _extract_qa_json(raw)
-    report = merge_qa_report(prog, llm_obj)
-    report["核心原典"] = core
-    report["人物"] = person
-    report["qa_md"] = str(qa_md_path)
-    qa_json_path.write_text(
-        json.dumps(
-            {"史略ID": entry_id, "史略名称": recalled.get("史略名称"), **report},
-            ensure_ascii=False,
-            indent=2,
-        )
-        + "\n",
-        encoding="utf-8",
-    )
-    p0 = [x for x in report.get("问题") or [] if str(x.get("级别")) == "P0"]
-    p1 = [x for x in report.get("问题") or [] if str(x.get("级别")) == "P1"]
-    print(
-        f"{'✅' if report.get('通过') else '📋'} Phase3 质检报告已写入 "
-        f"{qa_md_path.name} / {qa_json_path.name}："
-        f"P0={len(p0)} P1={len(p1)} 总问题={len(report.get('问题') or [])}",
-        flush=True,
-    )
-    # 默认不因 P0 中断：后续自动 Phase4/5 消化；仅 TRANSLATE_PHASE3_BLOCK_ON_P0=1 且未开自动修复时才硬拦
-    auto_repair = (os.environ.get("TRANSLATE_AUTO_REPAIR") or "1").strip().lower() not in {
-        "0",
-        "false",
-        "no",
-        "off",
-    }
-    block = (os.environ.get("TRANSLATE_PHASE3_BLOCK_ON_P0") or "0").strip().lower() in {
-        "1",
-        "true",
-        "yes",
-        "on",
-    }
-    if report.get("通过") or auto_repair or not p0:
-        return True, []
-    if not block:
-        return True, []
-    errs = [
-        f"Phase3[{x.get('类别')}]: {x.get('说明')}"
-        for x in p0[:6]
-    ] or ["Phase3: 质检未通过"]
-    return False, errs
-
-
-def _core_source_person(recalled: Dict[str, Any]) -> Tuple[str, str]:
-    core = str(recalled.get("母本著作") or recalled.get("母本卷名") or "").strip()
-    if core and not core.startswith("《"):
-        core = f"《{core}》"
-    person = str(recalled.get("史略名称") or "").strip()
-    return core, person
-
-
-def _run_phase4_repair(
-    entry_id: str,
-    recalled: Dict[str, Any],
-    *,
-    target: Path,
-    session_id: str,
-    work_dir: Path,
-    accept_all_p0: bool = True,
-) -> Tuple[bool, List[str]]:
-    """Phase4：按质检清单自动定向修复（无人工确认；列入即修）。"""
-    from lib.phase3_qa import (
-        build_accepted_issue_text,
-        build_phase4_repair_prompt,
-        extract_repair_json,
-        extract_repaired_body,
-        issues_need_repair,
-        load_qa_accept,
-    )
-    from lib.enrich_landing import save_detail_to_enrich_file
-
-    detail = _load_mother_text(target)
-    qa_json_path = work_dir / f"{target.stem}.qa.json"
-    qa_md_path = work_dir / f"{target.stem}.qa.md"
-    if not qa_json_path.is_file():
-        return False, ["缺少 Phase3 报告（*.qa.json），请先跑 phase3"]
-    qa_json = json.loads(qa_json_path.read_text(encoding="utf-8"))
-    qa_md = qa_md_path.read_text(encoding="utf-8") if qa_md_path.is_file() else ""
-    if not issues_need_repair(qa_json):
-        print("⏭️ Phase4：无待修问题，跳过修复", flush=True)
-        return True, []
-    accept = load_qa_accept(work_dir / f"{target.stem}.qa.accept.json")
-    # 默认自动采纳；accept 文件仅可加额外说明，不再当门禁
-    del accept_all_p0  # 保留参数兼容调用方
-    issues_text = build_accepted_issue_text(
-        qa_md, qa_json, accept, auto=True, include_qa_md=False
-    )
-    core, _person = _core_source_person(recalled)
-    before_path = work_dir / f"{target.stem}.before_repair.json"
-    # 每次修复覆盖备份，保证 Phase5 对照的是本轮修复前
-    before_path.write_text(
-        json.dumps(
-            {"史略ID": entry_id, "翻译详情": detail},
-            ensure_ascii=False,
-            indent=2,
-        )
-        + "\n",
-        encoding="utf-8",
-    )
-    repair_log = work_dir / f"{target.stem}.repair.md"
-    prompt = build_phase4_repair_prompt(
-        entry_id=entry_id,
-        detail=detail,
-        core_source=core,
-        accepted_issues=issues_text,
-        output_file=repair_log,
-    )
-    print(f"⏳ Phase4 定向修复 {entry_id} → {target.name}", flush=True)
-    touch_heartbeat(work_dir, entry_id, stage="phase4_repair")
-    _llm_turn(
-        work_dir,
-        entry_id,
-        "repair",
-        prompt,
-        session_id=f"{session_id}-repair",
-        timeout_sec=1200,
-        artifact_paths={"markdown": repair_log},
-        temperature=0.2,
-    )
-    raw = repair_log.read_text(encoding="utf-8") if repair_log.is_file() else ""
-    new_body = extract_repaired_body(raw)
-    if not new_body or len(new_body) < 80:
-        return False, ["Phase4: 未解析到 <<<REPAIRED>>> 正文"]
-    save_detail_to_enrich_file(target, entry_id, new_body)
-    # 立即补回史料原文（save 已尽量保留；此处按召回再钉一次，防空稿）
-    try:
-        from lib.source_text import attach_source_original
-
-        attach_source_original(target, recalled)
-    except Exception as exc:  # noqa: BLE001
-        print(f"   ⚠️ Phase4 补挂史料原文失败: {exc}", flush=True)
-    meta = extract_repair_json(raw) or {}
-    print(
-        f"✅ Phase4 已写回成稿；修改条数≈{meta.get('修改条数', '?')} "
-        f"改变时间线={meta.get('改变时间线')}",
-        flush=True,
-    )
-    return True, []
-
-
-def _run_phase5_recheck(
-    entry_id: str,
-    recalled: Dict[str, Any],
-    *,
-    target: Path,
-    session_id: str,
-    work_dir: Path,
-    mother_body: str = "",
-    out_dir: Optional[Path] = None,
-    entry_name: str = "",
-) -> Tuple[bool, List[str]]:
-    """Phase5：修复后复检。建议入库须与程序终检口径一致，不得只凭 LLM 放行。"""
-    from lib.phase3_qa import build_phase5_recheck_prompt, extract_recheck_json, verify_polish_draft_light
-
-    after = _load_mother_text(target)
-    before_path = work_dir / f"{target.stem}.before_repair.json"
-    qa_md_path = work_dir / f"{target.stem}.qa.md"
-    qa_json_path = work_dir / f"{target.stem}.qa.json"
-    if before_path.is_file():
-        before = json.loads(before_path.read_text(encoding="utf-8")).get("翻译详情") or ""
-    else:
-        before = after
-    qa_md = qa_md_path.read_text(encoding="utf-8") if qa_md_path.is_file() else ""
-    issue_digest = ""
-    if qa_json_path.is_file():
-        try:
-            from lib.phase3_qa import build_accepted_issue_text
-
-            qa_obj = json.loads(qa_json_path.read_text(encoding="utf-8"))
-            issue_digest = build_accepted_issue_text(
-                "", qa_obj, auto=True, include_qa_md=False
-            )
-        except (json.JSONDecodeError, TypeError):
-            issue_digest = ""
-    core, person = _core_source_person(recalled)
-    recheck_path = work_dir / f"{target.stem}.recheck.md"
-    prompt = build_phase5_recheck_prompt(
-        entry_id=entry_id,
-        core_source=core,
-        person=person,
-        before=before,
-        after=after,
-        qa_md=qa_md,
-        output_file=recheck_path,
-        issue_digest=issue_digest,
-    )
-    print(f"⏳ Phase5 最终复检 {entry_id} → {recheck_path.name}", flush=True)
-    touch_heartbeat(work_dir, entry_id, stage="phase5_recheck")
-    _llm_turn(
-        work_dir,
-        entry_id,
-        "recheck",
-        prompt,
-        session_id=f"{session_id}-recheck",
-        timeout_sec=900,
-        artifact_paths={"markdown": recheck_path},
-        temperature=0.1,
-    )
-    raw = recheck_path.read_text(encoding="utf-8") if recheck_path.is_file() else ""
-    obj = extract_recheck_json(raw) or {}
-
-    # 程序门禁：偏薄/近誊抄/基线回退等仍视为未过，不得标建议入库
-    prog_errs: List[str] = []
-    if mother_body.strip():
-        from lib.source_text import build_source_original
-
-        _ok_p, prog_errs = verify_polish_draft_light(
-            entry_id=entry_id,
-            detail=after,
-            mother=mother_body,
-            source_original=build_source_original(recalled),
-            out_dir=out_dir,
-            entry_name=entry_name or str(recalled.get("史略名称") or ""),
-            plan=None,
-            check_intro=True,
-            check_epilogue=True,
-        )
-        if prog_errs:
-            obj["建议入库"] = False
-            obj["通过"] = False
-            note = "程序终检未过：" + "；".join(prog_errs[:4])
-            prev = str(obj.get("摘要") or "").strip()
-            obj["摘要"] = f"{prev}｜{note}" if prev else note
-            existing = [str(x) for x in (obj.get("未修复P0") or []) if x]
-            for e in prog_errs[:6]:
-                if e not in existing:
-                    existing.append(e)
-            obj["未修复P0"] = existing
-
-    recheck_json = work_dir / f"{target.stem}.recheck.json"
-    recheck_json.write_text(
-        json.dumps({"史略ID": entry_id, **obj}, ensure_ascii=False, indent=2) + "\n",
-        encoding="utf-8",
-    )
-    ok = bool(obj.get("通过") or obj.get("建议入库")) and not prog_errs
-    # 仅新增 P0 才硬拦；仅 P1/文风问题改为软过（重质检、轻门禁）
-    new_p0 = [x for x in (obj.get("新增P0") or []) if x]
-    unfixed_p0 = [x for x in (obj.get("未修复P0") or []) if x]
-    print(
-        f"{'✅' if ok else '⚠️'} Phase5 复检 "
-        f"{'建议入库' if obj.get('建议入库') else '不建议入库'}："
-        f"{obj.get('摘要') or ''}",
-        flush=True,
-    )
-    if prog_errs:
-        return False, [f"Phase5: {e}" for e in prog_errs[:6]]
-    if ok:
-        return True, []
-    if not new_p0 and not unfixed_p0:
-        print("   （无未修复/新增 P0：软通过，详见 recheck 报告）", flush=True)
-        return True, []
-    errs = [f"Phase5: {x}" for x in (unfixed_p0 or new_p0)[:6]]
-    return False, errs or ["Phase5: 复检未通过"]
 
 
 def _run_phase2_enrich(
@@ -2166,48 +757,38 @@ def _run_phase2_enrich(
     work_dir: Path,
     entry_name: str,
     t0: float,
-    out_dir: Optional[Path] = None,
+    baseline_file: Path | None = None,
 ) -> Tuple[bool, List[str], float]:
-    """Phase2：默认 polish；长卷分章 polish；enrich* 走旧补全路径。"""
-    if not _phase2_use_legacy_enrich():
-        if _phase2_should_chapter_polish(mother_body, mother_file):
-            return _run_phase2_polish_chaptered(
-                entry_id,
-                recalled,
-                plan_data=plan_data,
-                mother_body=mother_body,
-                mother_file=mother_file,
-                target=target,
-                session_id=session_id,
-                work_dir=work_dir,
-                entry_name=entry_name,
-                t0=t0,
-                out_dir=out_dir,
-            )
-        return _run_phase2_polish(
-            entry_id,
-            recalled,
-            plan_data=plan_data,
-            mother_body=mother_body,
-            mother_file=mother_file,
-            target=target,
-            session_id=session_id,
-            work_dir=work_dir,
-            entry_name=entry_name,
-            t0=t0,
-            out_dir=out_dir,
-            allow_chapter_fallback=True,
-        )
-
+    """Phase2/D 知识增强 + 前置质检 + 重试。"""
     from lib.phase2_batch import (
         discover_mother_batches,
         phase2_batch_char_threshold,
-        phase2_mode,
+        split_detail_paragraph_batches,
     )
 
-    batch_files = discover_mother_batches(mother_file)
-    if len(mother_body) > phase2_batch_char_threshold() and batch_files:
-        if phase2_mode() == "legacy_batch":
+    threshold = phase2_batch_char_threshold()
+    enrich_source = mother_body
+    if baseline_file and baseline_file.is_file():
+        enrich_source = baseline_body_for_enrich(baseline_file)
+
+    if len(enrich_source) > threshold:
+        if baseline_file and baseline_file.is_file():
+            batches = split_detail_paragraph_batches(enrich_source, threshold)
+            if len(batches) > 1:
+                return _run_phase2_enrich_batched(
+                    entry_id,
+                    recalled,
+                    plan_data=plan_data,
+                    mother_file=mother_file,
+                    target=target,
+                    session_id=session_id,
+                    work_dir=work_dir,
+                    entry_name=entry_name,
+                    t0=t0,
+                    baseline_file=baseline_file,
+                )
+        batch_files = discover_mother_batches(mother_file)
+        if batch_files:
             return _run_phase2_enrich_batched(
                 entry_id,
                 recalled,
@@ -2218,18 +799,8 @@ def _run_phase2_enrich(
                 work_dir=work_dir,
                 entry_name=entry_name,
                 t0=t0,
+                baseline_file=baseline_file,
             )
-        return _run_phase2_enrich_chaptered(
-            entry_id,
-            recalled,
-            plan_data=plan_data,
-            mother_file=mother_file,
-            target=target,
-            session_id=session_id,
-            work_dir=work_dir,
-            entry_name=entry_name,
-            t0=t0,
-        )
     enrich_plan_json = _plan_json_for_enrich(plan_data)
     e_errs: List[str] = []
     e_ok = False
@@ -2241,28 +812,14 @@ def _run_phase2_enrich(
                 "\n\n--- 上轮 Phase2 质检失败，须修正 ---\n"
                 + format_retry_feedback(plan_fb, e_errs)
             )
-        from lib.recalled_window import (
-            batch_window_guard_note,
-            build_batch_recalled_payload,
-        )
-
-        full_checklist = plan_data.get("母本逐句清单") or []
-        window_payload = build_batch_recalled_payload(
-            recalled, full_checklist if isinstance(full_checklist, list) else []
-        )
-        e_prompt = (
-            build_translate_enrich_prompt(
-                entry_id,
-                recalled,
-                json.dumps(window_payload, ensure_ascii=False, indent=2),
-                enrich_plan_json,
-                mother_body,
-                target,
-            )
-            + batch_window_guard_note(window_payload)
-            + retry_note
-            + _repair_feedback_suffix()
-        )
+        e_prompt = build_translate_enrich_prompt(
+            entry_id,
+            recalled,
+            recalled_summary(recalled),
+            enrich_plan_json,
+            enrich_source,
+            target,
+        ) + retry_note + _repair_feedback_suffix()
         print(
             f"⏳ Phase2 补全成稿 {entry_id} → {target.name}"
             + (f"（重试 {attempt}/{_phase2_max_retries()}）" if attempt else ""),
@@ -2276,7 +833,6 @@ def _run_phase2_enrich(
             session_id=f"{session_id}-enrich-r{attempt}",
             timeout_sec=900,
             artifact_paths={"output": target},
-            temperature=_phase2_temperature(),
         )
         if not target.is_file():
             e_errs = ["Phase2: LLM 未落盘最终译稿"]
@@ -2285,10 +841,12 @@ def _run_phase2_enrich(
             continue
         if polish_enrich_file_full(target):
             print("   🔧 已自动修正模糊出处表述", flush=True)
-        _rebuild_output_references(target, recalled, plan_data)
         touch_heartbeat(work_dir, entry_id, stage="verify_enrich")
+        bl_detail = ""
+        if baseline_file and baseline_file.is_file():
+            bl_detail = baseline_body_for_enrich(baseline_file)
         e_ok, e_errs = _verify_enrich_with_autofix(
-            entry_id, recalled, target, plan_data, mother_text=mother_body
+            entry_id, recalled, target, plan_data, baseline_detail=bl_detail
         )
         if e_ok:
             break
@@ -2312,8 +870,114 @@ def _run_single_pass(
     from_phase: str | None = None,
     translation_version: str | None = None,
 ) -> Tuple[bool, List[str], float]:
-    """plan + (Phase1 母本 + Phase2 补全) 或 legacy 单次 draft。"""
-    plan_ok, plan_errors = ensure_source_plan(
+    """plan + ABCD 或 legacy Phase1/Phase2 或单次 draft。"""
+    t0 = time.time()
+    touch_heartbeat(work_dir, entry_id, stage="start", detail=entry_name)
+
+    if _two_phase_enabled() and streamlined_pipeline_enabled():
+        ok, errs = run_streamlined_pipeline(
+            entry_id,
+            recalled,
+            plan_file=plan_file,
+            target=target,
+            work_dir=work_dir,
+            entry_name=entry_name,
+            session_id=session_id,
+            use_llm=use_llm,
+            from_phase=from_phase,
+        )
+        if not ok:
+            return False, errs, time.time() - t0
+        attach_source_original(target, recalled, translation_version=translation_version)
+        plan_ok, plan_data, _ = load_plan(plan_file)
+        _apply_attribution_polish(target, recalled, plan_data if plan_ok else {})
+        return True, [], time.time() - t0
+
+    if _two_phase_enabled() and abcd_pipeline_enabled():
+        mother_file = mother_draft_path(entry_id, entry_name, work_dir)
+        baseline_file = baseline_draft_path(entry_id, entry_name, work_dir)
+        fp = from_phase or ""
+        if fp == "phase2":
+            fp = "phase_d"
+
+        if fp not in ("phase_d", "phase2"):
+            bl_ok, bl_errs, plan_data = run_abcd_baseline(
+                entry_id,
+                recalled,
+                plan_file=plan_file,
+                work_dir=work_dir,
+                entry_name=entry_name,
+                session_id=session_id,
+                use_llm=use_llm,
+                from_phase=fp or None,
+            )
+            if not bl_ok:
+                return False, bl_errs, time.time() - t0
+        else:
+            _, plan_data, _ = load_normalized_plan(plan_file, recalled)
+            if not baseline_file.is_file():
+                return False, ["缺少 baseline 成稿，无法 D 阶段 enrich"], time.time() - t0
+            print(f"⏭️ 跳过 A/B/C（沿用 {baseline_file.name}）", flush=True)
+
+        baseline_body = baseline_body_for_enrich(baseline_file)
+        ep_ok, plan_data, ep_errs = ensure_enrich_plan(
+            entry_id,
+            recalled,
+            plan_file,
+            baseline_body=baseline_body,
+            work_dir=work_dir,
+            session_id=session_id,
+            use_llm=use_llm,
+            baseline_file=baseline_file,
+        )
+        if not ep_ok:
+            return False, ep_errs, time.time() - t0
+
+        ok2, errs2, elapsed = _run_phase2_enrich(
+            entry_id,
+            recalled,
+            plan_data=plan_data,
+            mother_body=baseline_body,
+            mother_file=mother_file,
+            target=target,
+            session_id=session_id,
+            work_dir=work_dir,
+            entry_name=entry_name,
+            t0=t0,
+            baseline_file=baseline_file,
+        )
+        if not ok2:
+            from lib.baseline_promote import baseline_fallback_enabled, write_baseline_from_file
+
+            if baseline_fallback_enabled():
+                print(
+                    "⚠️ D 阶段未通过，降级发布 baseline（baseline_ready）",
+                    flush=True,
+                )
+                write_baseline_from_file(
+                    target,
+                    baseline_file,
+                    entry_id,
+                    translation_version=translation_version or "baseline_ready",
+                    phase2_errors=errs2,
+                )
+                attach_source_original(
+                    target,
+                    recalled,
+                    translation_version=translation_version or "baseline_ready",
+                )
+                return True, [
+                    "baseline_ready: D 未通过，已发布 baseline；可 --from-phase phase_d 续跑"
+                ], elapsed
+            return ok2, errs2, elapsed
+        attach_source_original(
+            target,
+            recalled,
+            translation_version=translation_version or "abcd_enriched",
+        )
+        return True, [], elapsed
+
+    plan_ok, plan_data, plan_errors = ensure_coverage_ledger(
         entry_id,
         recalled,
         plan_file,
@@ -2328,123 +992,9 @@ def _run_single_pass(
     inflate_errs = _guard_plan_inflation(recalled, plan_data)
     if inflate_errs:
         return False, inflate_errs, 0.0
-    t0 = time.time()
-    touch_heartbeat(work_dir, entry_id, stage="start", detail=entry_name)
 
     if _two_phase_enabled():
         mother_file = mother_draft_path(entry_id, entry_name, work_dir)
-        if from_phase == "phase3":
-            if not mother_file.is_file() or not target.is_file():
-                return False, [
-                    "Phase3 需要已有母本与成稿；请先跑完 Phase1+Phase2"
-                ], time.time() - t0
-            mother_body = _load_mother_text(mother_file)
-            ok3, errs3 = _run_phase3_qa(
-                entry_id,
-                recalled,
-                plan_data=plan_data,
-                mother_body=mother_body,
-                target=target,
-                session_id=session_id,
-                work_dir=work_dir,
-            )
-            if not ok3:
-                return False, errs3, time.time() - t0
-            auto_repair = (os.environ.get("TRANSLATE_AUTO_REPAIR") or "1").strip().lower() not in {
-                "0",
-                "false",
-                "no",
-                "off",
-            }
-            if auto_repair:
-                from lib.phase3_qa import issues_need_repair
-
-                qa_json_path = work_dir / f"{target.stem}.qa.json"
-                qa_obj: Dict[str, Any] = {}
-                if qa_json_path.is_file():
-                    try:
-                        qa_obj = json.loads(qa_json_path.read_text(encoding="utf-8"))
-                    except json.JSONDecodeError:
-                        qa_obj = {}
-                if issues_need_repair(qa_obj):
-                    ok4, errs4 = _run_phase4_repair(
-                        entry_id,
-                        recalled,
-                        target=target,
-                        session_id=session_id,
-                        work_dir=work_dir,
-                    )
-                    if not ok4:
-                        return False, errs4, time.time() - t0
-                    ok5, errs5 = _run_phase5_recheck(
-                        entry_id,
-                        recalled,
-                        target=target,
-                        session_id=session_id,
-                        work_dir=work_dir,
-                        mother_body=_load_mother_text(mother_file) if mother_file.is_file() else "",
-                        out_dir=out_dir,
-                        entry_name=entry_name,
-                    )
-                    if not ok5:
-                        return False, errs5, time.time() - t0
-                else:
-                    print("⏭️ 无待修问题，跳过 Phase4/5", flush=True)
-            attach_source_original(
-                target, recalled, translation_version=translation_version
-            )
-            return True, [], time.time() - t0
-
-        if from_phase == "phase4":
-            if not target.is_file():
-                return False, ["Phase4 需要已有成稿；请先跑完 Phase2"], time.time() - t0
-            ok4, errs4 = _run_phase4_repair(
-                entry_id,
-                recalled,
-                target=target,
-                session_id=session_id,
-                work_dir=work_dir,
-            )
-            elapsed = time.time() - t0
-            if not ok4:
-                return False, errs4, elapsed
-            # 修复后默认紧跟复检
-            ok5, errs5 = _run_phase5_recheck(
-                entry_id,
-                recalled,
-                target=target,
-                session_id=session_id,
-                work_dir=work_dir,
-                        mother_body=_load_mother_text(mother_file) if mother_file.is_file() else "",
-                        out_dir=out_dir,
-                        entry_name=entry_name,
-            )
-            if ok5:
-                attach_source_original(
-                    target, recalled, translation_version=translation_version
-                )
-            return ok5, errs5, time.time() - t0
-
-        if from_phase == "phase5":
-            if not target.is_file():
-                return False, ["Phase5 需要已有成稿；请先跑完 Phase4"], time.time() - t0
-            ok5, errs5 = _run_phase5_recheck(
-                entry_id,
-                recalled,
-                target=target,
-                session_id=session_id,
-                work_dir=work_dir,
-                        mother_body=_load_mother_text(mother_file) if mother_file.is_file() else "",
-                        out_dir=out_dir,
-                        entry_name=entry_name,
-            )
-            elapsed = time.time() - t0
-            if ok5:
-                attach_source_original(
-                    target, recalled, translation_version=translation_version
-                )
-            return ok5, errs5, elapsed
-
         skip_phase1 = from_phase == "phase2"
 
         if skip_phase1:
@@ -2474,18 +1024,6 @@ def _run_single_pass(
                 return False, m_errs, time.time() - t0
 
         mother_body = _load_mother_text(mother_file)
-        # mother.json 常为空壳；整篇润色优先用分批母本拼接
-        from lib.phase2_batch import (
-            concatenate_mother_batch_texts,
-            discover_mother_batches,
-        )
-
-        batches = discover_mother_batches(mother_file)
-        if batches:
-            concat = concatenate_mother_batch_texts(batches)
-            if len(concat) > len(mother_body):
-                mother_body = concat
-
         ok2, errs2, elapsed = _run_phase2_enrich(
             entry_id,
             recalled,
@@ -2497,66 +1035,33 @@ def _run_single_pass(
             work_dir=work_dir,
             entry_name=entry_name,
             t0=t0,
-            out_dir=out_dir,
         )
         if not ok2:
+            from lib.baseline_promote import baseline_fallback_enabled, write_baseline_from_mother
+
+            if baseline_fallback_enabled():
+                print(
+                    "⚠️ Phase2 未通过，降级发布母本顺译（baseline_ready）",
+                    flush=True,
+                )
+                write_baseline_from_mother(
+                    target,
+                    entry_id,
+                    mother_body,
+                    translation_version=translation_version or "baseline_mother",
+                    phase2_errors=errs2,
+                )
+                attach_source_original(
+                    target,
+                    recalled,
+                    translation_version=translation_version or "baseline_mother",
+                )
+                return True, [
+                    "baseline_ready: Phase2 未通过，已发布母本顺译；可后续 --from-phase phase2 补全"
+                ], elapsed
             return ok2, errs2, elapsed
-
-        ok3, errs3 = _run_phase3_qa(
-            entry_id,
-            recalled,
-            plan_data=plan_data,
-            mother_body=mother_body,
-            target=target,
-            session_id=session_id,
-            work_dir=work_dir,
-        )
-        if not ok3:
-            return False, errs3, time.time() - t0
-
-        auto_repair = (os.environ.get("TRANSLATE_AUTO_REPAIR") or "1").strip().lower() not in {
-            "0",
-            "false",
-            "no",
-            "off",
-        }
-        if auto_repair:
-            from lib.phase3_qa import issues_need_repair
-
-            qa_json_path = work_dir / f"{target.stem}.qa.json"
-            qa_obj: Dict[str, Any] = {}
-            if qa_json_path.is_file():
-                try:
-                    qa_obj = json.loads(qa_json_path.read_text(encoding="utf-8"))
-                except json.JSONDecodeError:
-                    qa_obj = {}
-            if issues_need_repair(qa_obj):
-                ok4, errs4 = _run_phase4_repair(
-                    entry_id,
-                    recalled,
-                    target=target,
-                    session_id=session_id,
-                    work_dir=work_dir,
-                )
-                if not ok4:
-                    return False, errs4, time.time() - t0
-                ok5, errs5 = _run_phase5_recheck(
-                    entry_id,
-                    recalled,
-                    target=target,
-                    session_id=session_id,
-                    work_dir=work_dir,
-                    mother_body=_load_mother_text(mother_file) if mother_file.is_file() else "",
-                    out_dir=out_dir,
-                    entry_name=entry_name,
-                )
-                if not ok5:
-                    return False, errs5, time.time() - t0
-            else:
-                print("⏭️ 无待修问题，跳过 Phase4/5", flush=True)
-
         attach_source_original(target, recalled, translation_version=translation_version)
-        return True, [], time.time() - t0
+        return True, [], elapsed
     else:
         plan_json = json.dumps(plan_data, ensure_ascii=False, indent=2) if plan_data else "{}"
         prompt = build_translate_prompt(
@@ -2662,11 +1167,9 @@ def run_one(
         )
         return rc
 
-    if not from_phase and _should_skip(entry_id, recalled, job, plan_file, out_dir=out_dir):
+    if _should_skip(entry_id, recalled, job, plan_file, out_dir=out_dir):
         print(f"⏭️ 跳过 {entry_id}（产出已有效 fp={fp}）")
         return 0
-    if from_phase:
-        print(f"🔁 续跑 --from-phase {from_phase}（跳过「产出已有效」短路）", flush=True)
 
     if recall_only:
         print(recalled_summary(recalled))
@@ -2737,6 +1240,15 @@ def run_one(
         return 0
 
     session_id = make_session_id(entry_id, int(job["id"]))
+    from lib.run_ledger import new_run, preserve_candidate, save, update
+
+    run_manifest = new_run(
+        work_dir,
+        entry_id,
+        formal_target=target,
+        source_fingerprint=fp,
+    )
+    save(run_manifest)
     db.update_job(
         entry_id,
         status="running",
@@ -2782,6 +1294,16 @@ def run_one(
     if not ok:
         fail = int(job.get("fail_count") or 0) + 1
         stage = "verify"
+        update(
+            run_manifest,
+            phase=stage,
+            status="pending_recovery",
+            next_action="retry_full",
+            error="; ".join(errs[:3]),
+        )
+        preserve_candidate(run_manifest, target if target.is_file() else mother_draft_path(
+            entry_id, entry_name, work_dir
+        ))
         rc, plan = _record_translate_failure(
             entry_id,
             entry_name,
@@ -2800,29 +1322,43 @@ def run_one(
         return rc
 
     _, plan_data, _ = load_normalized_plan(plan_file, recalled)
-    v_ok, v_errs = verify_output(
-        entry_id, recalled, out_dir, plan=plan_data if plan_data else None
+    is_baseline = any(str(e).startswith("baseline_ready") for e in errs)
+    coverage_report = is_baseline or str(
+        os.environ.get("TRANSLATE_COVERAGE_VERIFY", "report")
+    ).strip().lower() in {"report", "warn", "ticket", "1", "true", "yes"}
+    v_ok, v_errs, v_tickets = verify_output(
+        entry_id,
+        recalled,
+        out_dir,
+        plan=plan_data if plan_data else None,
+        coverage="report" if coverage_report else "strict",
+        verify_mode="baseline" if is_baseline else "full",
     )
+    if v_ok and v_tickets:
+        from lib.repair_ticket import save_open_issues_ticket
+
+        ticket = save_open_issues_ticket(
+            work_dir,
+            entry_id=entry_id,
+            entry_name=entry_name,
+            stage="verify_open_issues",
+            issues=v_tickets,
+        )
+        if ticket:
+            print(
+                f"📋 软质检工单 → {ticket.name}（{len(v_tickets)} 项，不阻断出队）",
+                flush=True,
+            )
     if not v_ok:
-        # 终检不过则不得保留 Phase5「建议入库」
-        recheck_json = work_dir / f"{target.stem}.recheck.json"
-        if recheck_json.is_file():
-            try:
-                robj = json.loads(recheck_json.read_text(encoding="utf-8"))
-                if robj.get("建议入库") or robj.get("通过"):
-                    robj["建议入库"] = False
-                    robj["通过"] = False
-                    note = "终检未过，撤销建议入库：" + "；".join(v_errs[:3])
-                    prev = str(robj.get("摘要") or "").strip()
-                    robj["摘要"] = f"{prev}｜{note}" if prev else note
-                    recheck_json.write_text(
-                        json.dumps(robj, ensure_ascii=False, indent=2) + "\n",
-                        encoding="utf-8",
-                    )
-                    print("   ⚠️ Phase5 建议入库已与终检对齐（撤销）", flush=True)
-            except (OSError, json.JSONDecodeError, TypeError):
-                pass
         fail = int(job.get("fail_count") or 0) + 1
+        update(
+            run_manifest,
+            phase="verify_final",
+            status="pending_recovery",
+            next_action="retry_phase2" if is_baseline else "retry_full",
+            error="; ".join(v_errs[:3]),
+        )
+        preserve_candidate(run_manifest, target)
         rc, plan = _record_translate_failure(
             entry_id,
             entry_name,
@@ -2842,30 +1378,53 @@ def run_one(
 
     _, data, _ = load_output(entry_id, out_dir, entry_name)
     wc = len((data.get("翻译详情") or ""))
+    if not is_baseline:
+        from lib.promote_output import stamp_pending_review
+
+        stamp_pending_review(target)
     mode = "chunked" if _use_chunked_pipeline(recalled) else "single"
+    job_status = "baseline_ready" if is_baseline else "done"
+    job_detail = (
+        f"baseline_ready {mode} {elapsed:.0f}s"
+        if is_baseline
+        else f"ok {mode} {elapsed:.0f}s"
+    )
     db.update_job(
         entry_id,
-        status="done",
+        status=job_status,
         source_fingerprint=fp,
         output_word_count=wc,
-        detail=f"ok {mode} {elapsed:.0f}s",
+        detail=job_detail,
     )
-    print(f"✅ {entry_id} 完成 {wc} 字 ({mode}, {elapsed:.0f}s) → {out_dir.name}/")
-    if not trans_version:
+    if is_baseline:
+        print(
+            f"✅ {entry_id} baseline_ready {wc} 字（母本顺译，Phase2 待补）"
+            f" ({mode}, {elapsed:.0f}s) → {out_dir.name}/"
+        )
+    else:
+        print(f"✅ {entry_id} 完成 {wc} 字 ({mode}, {elapsed:.0f}s) → {out_dir.name}/")
+    preserve_candidate(run_manifest, target)
+    update(
+        run_manifest,
+        phase="phase2" if not is_baseline else "phase1",
+        status="promoted" if not is_baseline else "baseline_ready",
+        next_action="done" if not is_baseline else "retry_phase2",
+    )
+    run_manifest["formal_promoted"] = True
+    save(run_manifest)
+    if not trans_version and not is_baseline:
         try:
             agg_path, agg_count = rebuild_aggregate(out_dir)
             print(f"📦 汇总已更新 → {agg_path}（{agg_count} 条）")
         except OSError as exc:
             print(f"⚠️ 汇总更新失败（单条产出已保留）: {exc}")
+    elif is_baseline:
+        print("📦 baseline 跳过汇总更新（enrich 后再 aggregate）", flush=True)
 
-    if auto_sync_enabled():
-        from lib.remote_sync import sync_output_entry
-
-        s_ok, s_msg = sync_output_entry(entry_id, out_dir, entry_name)
-        if s_ok:
-            print(f"☁️ 已同步线上 DB: {entry_id} — {s_msg}")
-        else:
-            print(f"⚠️ 线上同步失败（本地产出已保留）: {s_msg}")
+    print(
+        f"📌 产出已落盘（未自动同步）。人工确认后: python3 translate.py promote --id {entry_id} [--sync]",
+        flush=True,
+    )
     return 0
 
 
@@ -2987,7 +1546,12 @@ def run_batch(
     return rc
 
 
-def verify_cmd(entry_id: str, *, index_path: Path | None = None) -> int:
+def verify_cmd(
+    entry_id: str,
+    *,
+    index_path: Path | None = None,
+    output_dir: Path | None = None,
+) -> int:
     recalled = recall_entry(entry_id, index_path=index_path)
     work_dir = _ensure_work_dir()
     p = plan_path(
@@ -2996,10 +1560,10 @@ def verify_cmd(entry_id: str, *, index_path: Path | None = None) -> int:
         work_dir,
     )
     plan_ok, plan_data, plan_errs = load_plan(p)
-    ok, errs = verify_output(
+    ok, errs, tickets = verify_output(
         entry_id,
         recalled,
-        _ensure_output_dir(),
+        _ensure_output_dir(index_path=index_path, output_dir=output_dir),
         plan=plan_data if plan_ok else None,
     )
     if not plan_ok:
@@ -3007,10 +1571,14 @@ def verify_cmd(entry_id: str, *, index_path: Path | None = None) -> int:
         ok = False
     if ok:
         print(f"✅ verify 通过: {entry_id}")
+        for t in tickets:
+            print(f"   ⚠️ 工单: {t}")
         return 0
     print(f"❌ verify 失败: {entry_id}")
     for e in errs:
         print(f"   · {e}")
+    for t in tickets:
+        print(f"   ⚠️ 工单: {t}")
     return 1
 
 
@@ -3059,7 +1627,7 @@ def sync_cmd(
     from lib.remote_sync import sync_all_box_details, sync_all_from_aggregate, sync_output_entry
     from lib.aggregate import aggregate_path
 
-    out_dir = _ensure_output_dir(index_path=index_path)
+    out_dir = _ensure_output_dir()
 
     if all_from_aggregate:
         agg = aggregate_path(out_dir)
@@ -3096,6 +1664,45 @@ def sync_cmd(
     return 1
 
 
+def promote_cmd(
+    entry_id: str,
+    *,
+    index_path: Path | None = None,
+    output_dir: Path | None = None,
+    version: str | None = None,
+    note: str = "",
+    sync: bool = False,
+    dry_run: bool = False,
+) -> int:
+    """人工确认后 promote 至 11/_versions；可选 --sync 同步线上。"""
+    from lib.promote_output import promote_from_output_dir
+
+    out_dir = _ensure_output_dir(index_path=index_path, output_dir=output_dir)
+    entry_name = ""
+    try:
+        recalled = recall_entry(entry_id, index_path=index_path or default_index_path())
+        entry_name = str(recalled.get("史略名称") or "")
+    except RecallError:
+        pass
+
+    versions_root = out_dir / "_versions"
+    ok, msg, _target = promote_from_output_dir(
+        entry_id,
+        out_dir,
+        versions_root=versions_root,
+        entry_name=entry_name,
+        version=version,
+        note=note,
+    )
+    if not ok:
+        print(f"❌ promote 失败: {msg}")
+        return 1
+    print(f"✅ {msg}")
+    if sync:
+        return sync_cmd(entry_id, index_path=index_path, dry_run=dry_run)
+    return 0
+
+
 def print_status() -> int:
     db.init_schema()
     total = db.count_jobs()
@@ -3107,13 +1714,15 @@ def print_status() -> int:
     idx = db.get_meta("index_path")
     if idx:
         print(f"   索引: {idx}")
-    print(f"   产出: {paths()['translate_output']}")
+    out_dir = _ensure_output_dir(
+        index_path=Path(idx) if idx else None,
+    )
+    print(f"   产出: {out_dir}")
 
     idx_path = Path(idx) if idx else default_index_path()
     if idx_path.is_file():
         index = load_global_index(idx_path)
         entries = index.get("entries") or []
-        out_dir = Path(paths()["translate_output"])
         detail_agg = paths()["dynasty_knowledge_detail_aggregate"]
         progress = compute_progress(
             entries,

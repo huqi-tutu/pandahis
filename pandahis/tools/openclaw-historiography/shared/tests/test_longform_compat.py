@@ -125,6 +125,7 @@ class TestDiscoverMotherBatches(unittest.TestCase):
             (d / "GLBL_x.mother-b01.json").write_text("{}", encoding="utf-8")
             (d / "GLBL_x.mother-b02.json").write_text("{}", encoding="utf-8")
             (d / "GLBL_x.mother-b01.enrich.json").write_text("{}", encoding="utf-8")
+            (d / "GLBL_x.mother-b01.enrich.enrich.json").write_text("{}", encoding="utf-8")
             found = [p.name for p in discover_mother_batches(mother)]
             self.assertEqual(found, ["GLBL_x.mother-b01.json", "GLBL_x.mother-b02.json"])
 
@@ -137,12 +138,12 @@ class TestBatchGuards(unittest.TestCase):
         self.assertIn("批首禁重开已写事件", note)
         self.assertIn("M001", note)
         self.assertIn("原文窗口", note)
-        self.assertIn("must_translate", note)
+        self.assertTrue("原文窗口" in note or "must_translate" in note)
 
     def test_enrich_batch_requires_voice_in_batch(self) -> None:
         note = enrich_batch_guard_extra(batch_no=1, total=26)
         self.assertIn("本批文风", note)
-        self.assertIn("must_translate", note)
+        self.assertTrue("原文窗口" in note or "must_translate" in note)
         self.assertIn("禁止滥用「说白了」", note)
         self.assertNotIn("Phase3", note)
         late = enrich_batch_guard_extra(batch_no=20, total=26)

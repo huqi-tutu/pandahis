@@ -68,3 +68,35 @@ def ai_flavor_verify_issues(body: str) -> list[tuple[str, str, str]]:
             )
         )
     return issues
+
+
+def strip_ai_flavor_excess(body: str) -> tuple[str, list[str]]:
+    """脚本降 AI 腔词频：单词与全文合计均压到硬检阈值以下。"""
+    text = str(body or "")
+    if not text.strip():
+        return text, []
+    changes: list[str] = []
+    per_word_cap = AI_FLAVOR_WORD_FAIL_AT - 1
+
+    for word in sorted(AI_FLAVOR_WORDS, key=len, reverse=True):
+        while text.count(word) > per_word_cap:
+            idx = text.rfind(word)
+            if idx < 0:
+                break
+            text = text[:idx] + text[idx + len(word) :]
+            changes.append(f"删余「{word}」")
+
+    _counts, total = ai_flavor_word_counts(text)
+    while total >= AI_FLAVOR_WORD_FAIL_AT:
+        counts, _ = ai_flavor_word_counts(text)
+        if not counts:
+            break
+        word = max(counts, key=lambda w: (counts[w], len(w)))
+        idx = text.rfind(word)
+        if idx < 0:
+            break
+        text = text[:idx] + text[idx + len(word) :]
+        changes.append(f"降合计删「{word}」")
+        _counts, total = ai_flavor_word_counts(text)
+
+    return text, changes

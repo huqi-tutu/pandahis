@@ -36,6 +36,7 @@ HEZHUAN_BIO_ALIASES: Dict[str, Tuple[str, ...]] = {
 COMMENTARY_MARKERS = (
     "太史公曰",
     "赞曰",
+    "评曰",
     "班固曰",
     "司马贞",
     "索隐",
@@ -139,8 +140,12 @@ def _commentary_exclude_reason(text: str) -> str:
     t = (text or "").strip()[:16]
     if "太史公" in t:
         return "太史公曰"
+    if t.startswith("评曰"):
+        return "评曰"
     if t.startswith("赞曰"):
         return "赞曰"
+    if t.startswith("论曰"):
+        return "论赞"
     if "班固曰" in t:
         return "其他"
     return "其他"

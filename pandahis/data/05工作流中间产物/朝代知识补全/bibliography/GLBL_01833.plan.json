@@ -1,0 +1,199 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01833",
+  "写作结构": "正史叙述以《晋书·王濬传》为主，见翻译详录；拓展部分引入《华阳国志》《建康实录》《水经注》等史外文献，只按书目级提示异说，不作具体战斗、对话细节；若候选著作无 verified 摘句，则仅书其名而不断言细节；《晋书》中的三刀梦、童谣等异说归入传奇合段，不另作史实叙事。",
+  "候选著作": [
+    {
+      "出处": "《晋书·王濬传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "条目主要史料出处，王濬生平、楼船造舰、平吴功业及与王浑争功的底本。",
+      "检索词": "王濬",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《华阳国志·大同志》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "东晋常璩所撰益州地方史，记王濬在益州造楼船及伐吴事，可补《晋书》以外的蜀地视角。",
+      "检索词": "王濬",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《建康实录》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "唐许嵩撰建康地方编年史，涉及吴都建业陷落与孙皓出降，可从吴方视角对观王濬兵临建业。",
+      "检索词": "王濬",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《水经注·江水》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "北魏郦道元注《水经》，于江水篇涉及长江航路与王濬楼船伐吴地理形势，可佐证舟师东下路线。",
+      "检索词": "王濬",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《资治通鉴·晋纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋代司马光编年所述平吴始末，虽可参看，但多依据《晋书》等正史，拓展性有限。",
+      "检索词": "王濬",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《太平御览·舟部》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋代类书辑录楼船、战船典故，可检索王濬造舰相关佚文，亦能辅助定位《晋书》以外异说。",
+      "检索词": "王濬",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《汉晋春秋》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "习凿齿杂史，今存辑本，或有王濬平吴相关异说；在《太平御览》等书中保存零条。",
+      "检索词": "王濬",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《晋阳秋》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "孙盛所撰晋史，已佚，清人有辑本；早期记载或有与唐修《晋书》相异之处，可备异说。",
+      "检索词": "王濬",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《晋书·王濬传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "条目主要史料出处，王濬生平、楼船造舰、平吴功业及与王浑争功的底本。",
+      "检索词": "王濬",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C"
+    },
+    {
+      "出处": "《华阳国志·大同志》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "东晋常璩所撰益州地方史，记王濬在益州造楼船及伐吴事，可补《晋书》以外的蜀地视角。",
+      "检索词": "王濬",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《建康实录》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "唐许嵩撰建康地方编年史，涉及吴都建业陷落与孙皓出降，可从吴方视角对观王濬兵临建业。",
+      "检索词": "王濬",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《水经注·江水》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "北魏郦道元注《水经》，于江水篇涉及长江航路与王濬楼船伐吴地理形势，可佐证舟师东下路线。",
+      "检索词": "王濬",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《汉晋春秋》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "习凿齿杂史，今存辑本，或有王濬平吴相关异说；在《太平御览》等书中保存零条。",
+      "检索词": "王濬",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《晋阳秋》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "孙盛所撰晋史，已佚，清人有辑本；早期记载或有与唐修《晋书》相异之处，可备异说。",
+      "检索词": "王濬",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《资治通鉴·晋纪》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋代司马光编年所述平吴始末，虽可参看，但多依据《晋书》等正史，拓展性有限。",
+      "检索词": "王濬",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《太平御览·舟部》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋代类书辑录楼船、战船典故，可检索王濬造舰相关佚文，亦能辅助定位《晋书》以外异说。",
+      "检索词": "王濬",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 3,
+    "C_excluded": 5,
+    "overall": "B"
+  }
+}

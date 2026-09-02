@@ -172,7 +172,7 @@ primary_subjects 产出路径: {primary_out}
 - 先判每段「主要在记述谁」，再由脚本合并 blocks
 - 非 Top5 小君纯享国链 → exclude 世系链；**叙事段（季札聘国、弑僚等）不得误标世系链**
 - 开传边界：incoming 从「是为 XX」/「王XX元年」起
-- 太史公曰 / 论赞 → exclude
+- 太史公曰 / 论赞 / 评曰 → exclude（三国志评曰不建条目）
 
 === step1b_primary_subjects.md ===
 {step1b_alpha_md}

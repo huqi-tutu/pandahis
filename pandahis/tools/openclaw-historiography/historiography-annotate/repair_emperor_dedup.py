@@ -23,7 +23,7 @@ REPORT_DIR = SKILL_DIR / "reference" / "audit"
 
 # P3：帝王名称消歧（ID 已分时，索引仍按名称建键，须改显示名）
 P3_RENAME: Dict[str, str] = {
-    "蜀后主|三国·蜀|刘禅": "蜀汉后主",
+    "蜀后主|三国·蜀|刘禅": "蜀后主",
     "蜀后主|十国·前蜀|王衍": "前蜀后主",
     "蜀后主|十国·后蜀|孟昶": "后蜀后主",
     "汉少帝|东汉|刘懿": "少帝刘懿",
@@ -239,9 +239,9 @@ def update_aliases() -> List[str]:
     data = json.loads(ALIAS_JSON.read_text(encoding="utf-8"))
     g = data.setdefault("global", {})
     alias_add = {
-        "蜀后主": "蜀汉后主",
-        "后主": "蜀汉后主",
-        "刘禅": "蜀汉后主",
+        "蜀后主": "蜀后主",
+        "后主": "蜀后主",
+        "刘禅": "蜀后主",
         "王衍": "前蜀后主",
         "孟昶": "后蜀后主",
         "汉少帝": "少帝刘辩",

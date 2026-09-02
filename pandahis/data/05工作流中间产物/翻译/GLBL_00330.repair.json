@@ -3,23 +3,23 @@
   "pipeline": "translate",
   "entry_id": "GLBL_00330",
   "entry_name": "屈原",
-  "stage": "verify",
-  "fail_count": 2,
+  "stage": "verify_final",
+  "fail_count": 4,
   "errors": [
-    "Phase2: 参考著作须独立成段（前有空行 \\n\\n），禁止与正文末句同段"
+    "多余字段: ['_pipeline_meta']"
   ],
   "plan": {
-    "root_cause": "UNKNOWN",
+    "root_cause": "RETRY_EXHAUSTED",
     "disposition": "retry_llm",
     "action": "generic_retry",
-    "structured_prompt": "【根因未分类】请据下列 verify 错误逐项修正，勿重复上一轮相同写法。\nPhase2: 参考著作须独立成段（前有空行 \\n\\n），禁止与正文末句同段",
+    "structured_prompt": "【已多次重试，须换写法】\n勿重复上一轮相同表述；逐项对照下方原始错误修正。\n多余字段: ['_pipeline_meta']",
     "refine_scope": "",
     "route_to": "",
     "next_command": "",
     "invalidate": [],
-    "max_retries": 2,
+    "max_retries": 5,
     "extra": {}
   },
-  "feedback": "【根因未分类】请据下列 verify 错误逐项修正，勿重复上一轮相同写法。\nPhase2: 参考著作须独立成段（前有空行 \\n\\n），禁止与正文末句同段\n\n---\n【原始错误】\nPhase2: 参考著作须独立成段（前有空行 \\n\\n），禁止与正文末句同段",
-  "updated_at": "2026-08-06T01:06:27Z"
+  "feedback": "【已多次重试，须换写法】\n勿重复上一轮相同表述；逐项对照下方原始错误修正。\n多余字段: ['_pipeline_meta']\n\n---\n【原始错误】\n多余字段: ['_pipeline_meta']",
+  "updated_at": "2026-08-25T14:32:49Z"
 }

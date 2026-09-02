@@ -1,0 +1,12 @@
+{
+  "entry_id": "GLBL_00084",
+  "run_id": "GLBL_00084-1787324300558",
+  "directory": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/翻译/.runs/GLBL_00084/GLBL_00084-1787324300558",
+  "formal_target": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/04史料翻译/GLBL_00084_汉武帝.json",
+  "source_fingerprint": "1612b0154afcb3c4",
+  "status": "running",
+  "current_phase": "recall",
+  "formal_promoted": false,
+  "attempts": {},
+  "next_action": "run_phase1"
+}

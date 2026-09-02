@@ -1,0 +1,62 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01845",
+  "写作结构": "正史叙述见翻译详录（《三国志·蜀书·黄权传》）。拓展文以《华阳国志·刘先主志》作早期蜀地史源对照，可写其作为非正史的并行记载；对黄权降魏后曹魏朝廷任免程序、具体诏令、对话细节及夷陵战斗细节不做推演，按Anchor留白。",
+  "候选著作": [
+    {
+      "出处": "《三国志·蜀书·黄权传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要正史出处，覆盖Anchor c01-c07全部基本事实；翻译详录承担，不在拓展中摘句。",
+      "检索词": "黄权",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《华阳国志·刘先主志》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "东晋常璩所撰蜀地史志，保存黄权谏刘璋、归刘备后策划取汉中、夷陵战前请命及降魏经过的早期地方史表述，可与《三国志》互证，提供正史外延展依据。",
+      "检索词": "黄权",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《三国志·蜀书·黄权传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "主要正史出处，覆盖Anchor c01-c07全部基本事实；翻译详录承担，不在拓展中摘句。",
+      "检索词": "黄权",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《华阳国志·刘先主志》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "东晋常璩所撰蜀地史志，保存黄权谏刘璋、归刘备后策划取汉中、夷陵战前请命及降魏经过的早期地方史表述，可与《三国志》互证，提供正史外延展依据。",
+      "检索词": "黄权",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 1,
+    "C_excluded": 1,
+    "overall": "B"
+  }
+}

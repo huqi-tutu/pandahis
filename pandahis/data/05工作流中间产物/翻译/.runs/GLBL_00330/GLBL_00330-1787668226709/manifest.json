@@ -1,0 +1,17 @@
+{
+  "entry_id": "GLBL_00330",
+  "run_id": "GLBL_00330-1787668226709",
+  "directory": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/翻译/.runs/GLBL_00330/GLBL_00330-1787668226709",
+  "formal_target": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/11新标注条目翻译/GLBL_00330_屈原.json",
+  "source_fingerprint": "d70722dc9d113b42",
+  "status": "pending_recovery",
+  "current_phase": "verify_final",
+  "formal_promoted": false,
+  "attempts": {
+    "verify_final": 1
+  },
+  "next_action": "retry_full",
+  "last_error": "多余字段: ['_pipeline_meta']",
+  "resume_phase": "phase5",
+  "candidate": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/翻译/.runs/GLBL_00330/GLBL_00330-1787668226709/candidate.json"
+}

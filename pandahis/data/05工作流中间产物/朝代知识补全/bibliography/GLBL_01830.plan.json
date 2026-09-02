@@ -1,0 +1,207 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01830",
+  "写作结构": "正史叙述见翻译详录（《三国志·魏书·王朗传附》），拓展文不摘二十四史句。史外部分先以《经典释文·序录》《玉函山房辑佚书》证王肃遍注群经及王学流传，以《孔子家语》注本见其经学立场；再以《全上古三代秦汉三国六朝文·全三国文》存其奏疏议礼文、《通典》存其礼制议论，补足谏诤与太常典制；《圣证论》只作书名/存佚提示，不展开与郑玄的具体论辩细节。姻亲、封赠等事按正史叙述，不另作史外推测。后世伪《孔传》出王肃之说，作为异说合段，放于末节。",
+  "候选著作": [
+    {
+      "出处": "《三国志·魏书·王朗传附》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "条目主要史料出处，王肃附传所在；正史叙述由翻译详录，不在史外拓展中摘句。",
+      "检索词": "王肃",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《孔子家语》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "今传本有王肃注及《序》，是王肃经学立场与改易郑学的重要文本。",
+      "检索词": "家语",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《圣证论》（玉函山房辑佚书本）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "王肃讥短郑玄经说的专论，原书已佚，今以辑本存其要旨；可证其经学自成一系。",
+      "检索词": "圣证论",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《玉函山房辑佚书》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "辑录王肃《周易注》《尚书注》《毛诗注》《三礼注》《论语注》等佚文，是“遍注群经”的直接文献汇编。",
+      "检索词": "王肃",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《全上古三代秦汉三国六朝文·全三国文》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "严可均辑存王肃奏疏议礼文，如谏兴宫室、议礼制等，与正史所载相印证。",
+      "检索词": "王肃",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《经典释文·序录》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "陆德明记述王肃所注经籍及汉魏经学传授，为“遍注群经”和“王学”流传提供目录学证据。",
+      "检索词": "王肃",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《通典》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "载录王肃议礼文字，涉及郊祀、宗庙、丧纪等，可见其太常掌礼与实际影响。",
+      "检索词": "王肃",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《尚书余论》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "清人丁晏主张伪孔《尚书传》或出王肃，属后世学术争议，只作异说合段。",
+      "检索词": "尚书余论",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《三国志·魏书·王朗传附》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "条目主要史料出处，王肃附传所在；正史叙述由翻译详录，不在史外拓展中摘句。",
+      "检索词": "王肃",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《孔子家语》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "今传本有王肃注及《序》，是王肃经学立场与改易郑学的重要文本。",
+      "检索词": "家语",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《圣证论》（玉函山房辑佚书本）",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "王肃讥短郑玄经说的专论，原书已佚，今以辑本存其要旨；可证其经学自成一系。",
+      "检索词": "圣证论",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《玉函山房辑佚书》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "辑录王肃《周易注》《尚书注》《毛诗注》《三礼注》《论语注》等佚文，是“遍注群经”的直接文献汇编。",
+      "检索词": "王肃",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《全上古三代秦汉三国六朝文·全三国文》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "严可均辑存王肃奏疏议礼文，如谏兴宫室、议礼制等，与正史所载相印证。",
+      "检索词": "王肃",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《经典释文·序录》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "陆德明记述王肃所注经籍及汉魏经学传授，为“遍注群经”和“王学”流传提供目录学证据。",
+      "检索词": "王肃",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《通典》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "载录王肃议礼文字，涉及郊祀、宗庙、丧纪等，可见其太常掌礼与实际影响。",
+      "检索词": "王肃",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《尚书余论》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "清人丁晏主张伪孔《尚书传》或出王肃，属后世学术争议，只作异说合段。",
+      "检索词": "尚书余论",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 7,
+    "C_excluded": 1,
+    "overall": "B"
+  }
+}

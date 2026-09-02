@@ -38,3 +38,24 @@ def test_mother_span_drop_not_legend() -> None:
     )
     assert plan.root_cause == "MOTHER_SPAN_DROP"
     assert plan.action == "phase2_splice_missing_spans"
+
+
+def test_ai_flavor_script_fix() -> None:
+    plan = classify_translate_failure(
+        ["AI 腔词「可谓」出现 6 次 ≥ 5（单篇最多 4 次）"],
+        stage="verify_final",
+        fail_count=0,
+    )
+    assert plan.root_cause == "AI_FLAVOR"
+    assert plan.disposition == "script_fix"
+    assert plan.refine_scope == "ai_flavor"
+
+
+def test_ai_flavor_refine_after_script() -> None:
+    plan = classify_translate_failure(
+        ["AI 腔词全文合计 6 次 ≥ 5"],
+        stage="verify_final",
+        fail_count=1,
+    )
+    assert plan.root_cause == "AI_FLAVOR"
+    assert plan.disposition == "refine_scope"

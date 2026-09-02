@@ -400,12 +400,8 @@
     },
     {
       "paragraph": 45,
-      "owners": [
-        {
-          "name": "魏明帝",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "评曰"
     }
   ],
   "entries": [
@@ -420,7 +416,7 @@
         {
           "volume": "明帝纪",
           "paragraph_from": 2,
-          "paragraph_to": 45
+          "paragraph_to": 44
         }
       ]
     }

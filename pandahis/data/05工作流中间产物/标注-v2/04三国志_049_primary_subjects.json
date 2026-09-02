@@ -2,7 +2,7 @@
   "work": "04三国志",
   "vol": "049",
   "total_paragraphs": 20,
-  "method": "Step1b-α LLM",
+  "method": "manual_repair",
   "paragraphs": [
     {
       "paragraph": 1,
@@ -22,9 +22,8 @@
     },
     {
       "paragraph": 4,
-      "primary_subject": "世系链",
-      "disposition": "exclude",
-      "exclude_reason": "世系链"
+      "primary_subject": "笮融",
+      "disposition": "block"
     },
     {
       "paragraph": 5,

@@ -11,9 +11,14 @@
       "exclude_reason": "卷首标题"
     },
     {
+      "paragraph_from": 14,
+      "paragraph_to": 14,
+      "exclude_reason": "世系链"
+    },
+    {
       "paragraph_from": 25,
       "paragraph_to": 25,
-      "exclude_reason": "论赞"
+      "exclude_reason": "评曰"
     }
   ],
   "blocks": [
@@ -21,36 +26,12 @@
       "name": "吕布",
       "category": "武将",
       "paragraph_from": 2,
-      "paragraph_to": 5,
+      "paragraph_to": 13,
       "boundary_evidence": {
         "open_paragraph": 2,
         "open_phrase": "吕布字奉先，五原郡九原人也。以骁武给并州。刺史丁原为骑都尉，屯河内，以布为主簿，",
-        "close_paragraph": 5,
-        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P5"
-      }
-    },
-    {
-      "name": "张邈",
-      "category": "武将",
-      "paragraph_from": 6,
-      "paragraph_to": 7,
-      "boundary_evidence": {
-        "open_paragraph": 6,
-        "open_phrase": "张邈字孟卓，东平寿张人也。少以侠闻，振穷救急，倾家无爱，士多归之。太祖、袁绍皆与",
-        "close_paragraph": 7,
-        "close_note": "Step1b-β 自 primary_subjects 合并 P6–P7"
-      }
-    },
-    {
-      "name": "吕布",
-      "category": "武将",
-      "paragraph_from": 8,
-      "paragraph_to": 14,
-      "boundary_evidence": {
-        "open_paragraph": 8,
-        "open_phrase": "备东击术，布袭取下邳，备还归布。布遣备屯小沛。布自称徐州刺史。术遣将纪灵等步骑三",
-        "close_paragraph": 14,
-        "close_note": "Step1b-β 自 primary_subjects 合并 P8–P14"
+        "close_paragraph": 13,
+        "close_note": "Step1b-β 自 primary_subjects 合并 P2–P13"
       }
     },
     {

@@ -15,6 +15,7 @@ from lib.phase3_qa import (  # noqa: E402
     extract_repaired_body,
     merge_qa_report,
     program_qa_findings,
+    verify_repair_effects,
 )
 
 
@@ -37,6 +38,42 @@ class TestPhase3ProgramQA(unittest.TestCase):
             {"通过": True, "问题": [], "摘要": "ok"},
         )
         self.assertFalse(report["通过"])
+
+    def test_qa_json_parse_failure_is_fail_closed(self) -> None:
+        report = merge_qa_report([], None)
+        self.assertFalse(report["通过"])
+        self.assertTrue(report["协议错误"])
+
+    def test_detects_orphan_repair_marker(self) -> None:
+        finds = program_qa_findings(
+            mother="甲" * 500,
+            detail="前文。\n\n这是对第4\n\n后文。\n\n参考著作：\n- 《史记》",
+        )
+        self.assertTrue(any("残句" in f.get("说明", "") for f in finds))
+
+    def test_repair_effect_rejects_unchanged_excerpt(self) -> None:
+        errors = verify_repair_effects(
+            "正文包含磁石解释。",
+            "正文包含磁石解释。",
+            [{"级别": "P0", "说明": "无据新增", "摘录": "磁石解释"}],
+        )
+        self.assertTrue(errors)
+
+    def test_repair_effect_accepts_removed_excerpt(self) -> None:
+        errors = verify_repair_effects(
+            "正文包含磁石解释。",
+            "正文删除了无据解释。",
+            [{"级别": "P0", "类别": "编辑残留", "说明": "无据新增", "摘录": "磁石解释"}],
+        )
+        self.assertFalse(errors)
+
+    def test_repair_effect_keeps_corrected_entity_name(self) -> None:
+        errors = verify_repair_effects(
+            "公玊带献图，时间线需要调整。",
+            "公玊带献图，改为正确的前后顺序。",
+            [{"级别": "P0", "类别": "实体", "说明": "实体与时间线需核对", "摘录": "公玊带"}],
+        )
+        self.assertFalse(errors)
 
     def test_extract_fenced_block(self) -> None:
         raw = "前言\n<<<QA_JSON\n{\"通过\": false}\nQA_JSON\n后记"

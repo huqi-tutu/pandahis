@@ -1,0 +1,37 @@
+===== 2026-08-23T05:21:42Z START candidates-shilue =====
+模块: historiography-dynasty-knowledge | 朝代: 三国
+LLM: DeepSeek (deepseek-v4-flash)
+🤖 LLM candidates (事略 only) …
+✅ 事略 候选 17 条 → /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/三国_候选清单.json
+📋 遗漏审阅提示词 → /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/三国_遗漏审阅提示词.md
+===== 2026-08-23T05:22:51Z DONE  candidates-shilue =====
+===== 2026-08-23T05:22:51Z START candidates-dianzhi =====
+模块: historiography-dynasty-knowledge | 朝代: 三国
+LLM: DeepSeek (deepseek-v4-flash)
+🤖 LLM candidates (典制 only) …
+✅ 典制 候选 11 条 → /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/三国_候选清单.json
+📋 遗漏审阅提示词 → /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/三国_遗漏审阅提示词.md
+===== 2026-08-23T05:25:36Z DONE  candidates-dianzhi =====
+===== 2026-08-23T05:25:36Z START candidates-lunzhu =====
+模块: historiography-dynasty-knowledge | 朝代: 三国
+LLM: DeepSeek (deepseek-v4-flash)
+🤖 LLM candidates (论著 only) …
+✅ 论著 候选 10 条 → /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/三国_候选清单.json
+📋 遗漏审阅提示词 → /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/三国_遗漏审阅提示词.md
+===== 2026-08-23T05:29:02Z DONE  candidates-lunzhu =====
+===== 2026-08-23T05:29:02Z START candidates-renwu =====
+模块: historiography-dynasty-knowledge | 朝代: 三国
+LLM: DeepSeek (deepseek-v4-flash)
+🤖 LLM candidates-renwu（一期已标注 256 条，禁止重复）…
+  ✅ 君王: 0 条候选
+  ✅ 诸侯: 0 条候选
+  ✅ 宗戚: 6 条候选
+  ✅ 宦官: 1 条候选
+  ✅ 文臣: 12 条候选
+  ✅ 武将: 10 条候选
+  ✅ 蕃祚: 4 条候选
+  ✅ 庶众: 4 条候选
+✅ 人物候选已写入 /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/三国_候选清单.json
+📋 遗漏审阅提示词 → /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/三国_遗漏审阅提示词.md
+===== 2026-08-23T05:35:13Z DONE  candidates-renwu =====
+===== ALL CANDIDATE STEPS COMPLETE =====

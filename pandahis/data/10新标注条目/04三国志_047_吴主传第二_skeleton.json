@@ -472,12 +472,8 @@
     },
     {
       "paragraph": 53,
-      "owners": [
-        {
-          "name": "吴大帝",
-          "category": "君王"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "评曰"
     }
   ],
   "entries": [
@@ -492,7 +488,7 @@
         {
           "volume": "吴主传",
           "paragraph_from": 2,
-          "paragraph_to": 53
+          "paragraph_to": 52
         }
       ]
     }

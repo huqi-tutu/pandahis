@@ -337,12 +337,8 @@
     },
     {
       "paragraph": 38,
-      "owners": [
-        {
-          "name": "诸葛亮",
-          "category": "文臣"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "评曰"
     }
   ],
   "entries": [
@@ -357,7 +353,7 @@
         {
           "volume": "诸葛亮传",
           "paragraph_from": 2,
-          "paragraph_to": 38
+          "paragraph_to": 37
         }
       ]
     }

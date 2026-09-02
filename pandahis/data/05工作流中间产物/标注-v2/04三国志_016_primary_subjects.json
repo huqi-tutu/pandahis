@@ -2,7 +2,7 @@
   "work": "04三国志",
   "vol": "016",
   "total_paragraphs": 35,
-  "method": "Step1b-α LLM",
+  "method": "manual_repair",
   "paragraphs": [
     {
       "paragraph": 1,
@@ -63,109 +63,92 @@
     {
       "paragraph": 12,
       "primary_subject": "杜恕",
-      "disposition": "exclude",
-      "exclude_reason": "非主轴人物叙事"
+      "disposition": "block"
     },
     {
       "paragraph": 13,
       "primary_subject": "杜恕",
-      "disposition": "exclude",
-      "exclude_reason": "非主轴人物叙事"
+      "disposition": "block"
     },
     {
       "paragraph": 14,
       "primary_subject": "杜恕",
-      "disposition": "exclude",
-      "exclude_reason": "非主轴人物叙事"
+      "disposition": "block"
     },
     {
       "paragraph": 15,
       "primary_subject": "杜恕",
-      "disposition": "exclude",
-      "exclude_reason": "非主轴人物叙事"
+      "disposition": "block"
     },
     {
       "paragraph": 16,
       "primary_subject": "杜恕",
-      "disposition": "exclude",
-      "exclude_reason": "非主轴人物叙事"
+      "disposition": "block"
     },
     {
       "paragraph": 17,
       "primary_subject": "杜恕",
-      "disposition": "exclude",
-      "exclude_reason": "非主轴人物叙事"
+      "disposition": "block"
     },
     {
       "paragraph": 18,
       "primary_subject": "杜恕",
-      "disposition": "exclude",
-      "exclude_reason": "非主轴人物叙事"
+      "disposition": "block"
     },
     {
       "paragraph": 19,
       "primary_subject": "杜恕",
-      "disposition": "exclude",
-      "exclude_reason": "非主轴人物叙事"
+      "disposition": "block"
     },
     {
       "paragraph": 20,
       "primary_subject": "杜恕",
-      "disposition": "exclude",
-      "exclude_reason": "非主轴人物叙事"
+      "disposition": "block"
     },
     {
       "paragraph": 21,
       "primary_subject": "杜恕",
-      "disposition": "exclude",
-      "exclude_reason": "非主轴人物叙事"
+      "disposition": "block"
     },
     {
       "paragraph": 22,
       "primary_subject": "杜恕",
-      "disposition": "exclude",
-      "exclude_reason": "非主轴人物叙事"
+      "disposition": "block"
     },
     {
       "paragraph": 23,
       "primary_subject": "杜恕",
-      "disposition": "exclude",
-      "exclude_reason": "非主轴人物叙事"
+      "disposition": "block"
     },
     {
       "paragraph": 24,
       "primary_subject": "杜恕",
-      "disposition": "exclude",
-      "exclude_reason": "非主轴人物叙事"
+      "disposition": "block"
     },
     {
       "paragraph": 25,
       "primary_subject": "杜恕",
-      "disposition": "exclude",
-      "exclude_reason": "非主轴人物叙事"
+      "disposition": "block"
     },
     {
       "paragraph": 26,
       "primary_subject": "杜恕",
-      "disposition": "exclude",
-      "exclude_reason": "非主轴人物叙事"
+      "disposition": "block"
     },
     {
       "paragraph": 27,
       "primary_subject": "杜恕",
-      "disposition": "exclude",
-      "exclude_reason": "非主轴人物叙事"
+      "disposition": "block"
     },
     {
       "paragraph": 28,
-      "primary_subject": "杜畿",
+      "primary_subject": "杜恕",
       "disposition": "block"
     },
     {
       "paragraph": 29,
       "primary_subject": "杜恕",
-      "disposition": "exclude",
-      "exclude_reason": "非主轴人物叙事"
+      "disposition": "block"
     },
     {
       "paragraph": 30,

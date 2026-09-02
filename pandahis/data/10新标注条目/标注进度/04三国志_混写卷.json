@@ -1,51 +1,7 @@
 {
   "work": "04三国志",
-  "updated_at": "2026-08-17T14:50:42Z",
+  "updated_at": "2026-08-22T03:00:46Z",
   "volumes": {
-    "007": {
-      "volume_name": "吕布（张邈）臧洪传",
-      "volume_texture": "interleaved",
-      "reason": "explicit",
-      "noncontiguous_entries": [
-        "吕布"
-      ],
-      "skeleton_file": "04三国志_007_吕布（张邈）臧洪传第七_skeleton.json",
-      "note": "混写卷：同一人物段落非连续。翻译/质检须按 entry.paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。",
-      "registered_at": "2026-08-17T14:38:30Z"
-    },
-    "009": {
-      "volume_name": "诸夏侯曹传",
-      "volume_texture": "interleaved",
-      "reason": "explicit",
-      "noncontiguous_entries": [
-        "夏侯渊"
-      ],
-      "skeleton_file": "04三国志_009_诸夏侯曹传第九_skeleton.json",
-      "note": "混写卷：同一人物段落非连续。翻译/质检须按 entry.paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。",
-      "registered_at": "2026-08-17T14:38:47Z"
-    },
-    "016": {
-      "volume_name": "任苏杜郑仓传",
-      "volume_texture": "interleaved",
-      "reason": "explicit",
-      "noncontiguous_entries": [
-        "杜畿"
-      ],
-      "skeleton_file": "04三国志_016_任苏杜郑仓传第十六_skeleton.json",
-      "note": "混写卷：同一人物段落非连续。翻译/质检须按 entry.paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。",
-      "registered_at": "2026-08-17T14:39:51Z"
-    },
-    "021": {
-      "volume_name": "王卫二刘傅传",
-      "volume_texture": "interleaved",
-      "reason": "explicit",
-      "noncontiguous_entries": [
-        "王粲"
-      ],
-      "skeleton_file": "04三国志_021_王卫二刘傅传第二十一_skeleton.json",
-      "note": "混写卷：同一人物段落非连续。翻译/质检须按 entry.paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。",
-      "registered_at": "2026-08-17T14:40:33Z"
-    },
     "045": {
       "volume_name": "邓张宗杨传",
       "volume_texture": "interleaved",
@@ -55,7 +11,7 @@
       ],
       "skeleton_file": "04三国志_045_邓张宗杨传第十五_skeleton.json",
       "note": "混写卷：同一人物段落非连续。翻译/质检须按 entry.paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。",
-      "registered_at": "2026-08-17T14:43:20Z"
+      "registered_at": "2026-08-22T03:00:46Z"
     },
     "049": {
       "volume_name": "刘繇太史慈士燮传",
@@ -66,7 +22,7 @@
       ],
       "skeleton_file": "04三国志_049_刘繇太史慈士燮传第四_skeleton.json",
       "note": "混写卷：同一人物段落非连续。翻译/质检须按 entry.paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。",
-      "registered_at": "2026-08-17T14:50:42Z"
+      "registered_at": "2026-08-22T03:00:46Z"
     }
   }
 }

@@ -2,7 +2,7 @@
   "work": "04三国志",
   "vol": "004",
   "total_paragraphs": 86,
-  "method": "Step1b-α LLM",
+  "method": "manual_repair",
   "paragraphs": [
     {
       "paragraph": 1,
@@ -307,22 +307,22 @@
     },
     {
       "paragraph": 61,
-      "primary_subject": "魏陈留王",
+      "primary_subject": "魏高贵乡公",
       "disposition": "block"
     },
     {
       "paragraph": 62,
-      "primary_subject": "魏陈留王",
+      "primary_subject": "魏高贵乡公",
       "disposition": "block"
     },
     {
       "paragraph": 63,
-      "primary_subject": "魏陈留王",
+      "primary_subject": "魏高贵乡公",
       "disposition": "block"
     },
     {
       "paragraph": 64,
-      "primary_subject": "魏陈留王",
+      "primary_subject": "魏高贵乡公",
       "disposition": "block"
     },
     {

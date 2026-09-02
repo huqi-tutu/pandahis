@@ -1,0 +1,201 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01855",
+  "写作结构": "正史叙述见翻译详录；本拓展不另取《晋书》摘句。以皇甫谧自述（《针灸甲乙经·序》《玄晏春秋》佚文）为一手层，以《世说新语·文学》所记左思《三都赋》作序事为早期笔记层，以《针灸大成·针道源流》为后世针灸传承中的追述层；后世所传‘针灸鼻祖’按 anchor 只作后起追述，不归入当世叙事。未能核实原文的佚文仅按书目级处理，不写具体过程与对话。",
+  "候选著作": [
+    {
+      "出处": "《晋书·皇甫谧传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "索引主要史料出处，正史叙述见翻译详录，本 plan 不取作拓展摘句。",
+      "检索词": "皇甫谧",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《针灸甲乙经·序》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "皇甫谧自序，述其删定《素问》《针经》《明堂孔穴针灸治要》为十二卷，是《针灸甲乙经》成书过程的第一手证据。",
+      "检索词": "甲乙经",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《玄晏春秋》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "皇甫谧自述生平志趣的佚书，可补正史本传之外的个人声音；佚文散见唐宋类书。",
+      "检索词": "玄晏春秋",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《世说新语·文学》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "记左思《三都赋》初成后请皇甫谧作序，可见其当世学者声望，属正史之外的早期笔记异说。",
+      "检索词": "皇甫谧",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《高士传》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "皇甫谧所撰隐逸人物传，反映其隐逸志趣，与屡征不就相印证。",
+      "检索词": "高士传",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《帝王世纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "皇甫谧所撰古史著作，反映其博通典籍的学术面向；原书已佚，有辑本。",
+      "检索词": "帝王世纪",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《隋书·经籍志》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "著录皇甫谧多种撰述，可顾问其著作在隋代书目中的收录情况。",
+      "检索词": "皇甫谧",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《针灸大成·针道源流》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "明代针灸专著列皇甫谧及《甲乙经》于针灸源流，是后世视其为针灸宗源的后起文献。",
+      "检索词": "皇甫谧",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《晋书·皇甫谧传》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "索引主要史料出处，正史叙述见翻译详录，本 plan 不取作拓展摘句。",
+      "检索词": "皇甫谧",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《针灸甲乙经·序》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "皇甫谧自序，述其删定《素问》《针经》《明堂孔穴针灸治要》为十二卷，是《针灸甲乙经》成书过程的第一手证据。",
+      "检索词": "甲乙经",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《玄晏春秋》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "皇甫谧自述生平志趣的佚书，可补正史本传之外的个人声音；佚文散见唐宋类书。",
+      "检索词": "玄晏春秋",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《世说新语·文学》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "记左思《三都赋》初成后请皇甫谧作序，可见其当世学者声望，属正史之外的早期笔记异说。",
+      "检索词": "皇甫谧",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    },
+    {
+      "出处": "《高士传》",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "皇甫谧所撰隐逸人物传，反映其隐逸志趣，与屡征不就相印证。",
+      "检索词": "高士传",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《帝王世纪》",
+      "tier": "辑佚/出土",
+      "pool": "primary",
+      "与本主题关系": "皇甫谧所撰古史著作，反映其博通典籍的学术面向；原书已佚，有辑本。",
+      "检索词": "帝王世纪",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《隋书·经籍志》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "著录皇甫谧多种撰述，可顾问其著作在隋代书目中的收录情况。",
+      "检索词": "皇甫谧",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《针灸大成·针道源流》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "明代针灸专著列皇甫谧及《甲乙经》于针灸源流，是后世视其为针灸宗源的后起文献。",
+      "检索词": "皇甫谧",
+      "采用": true,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B",
+      "fetch_note": "ctext 未命中原文，compose 仅可书目级引用"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 4,
+    "C_excluded": 4,
+    "overall": "B"
+  }
+}

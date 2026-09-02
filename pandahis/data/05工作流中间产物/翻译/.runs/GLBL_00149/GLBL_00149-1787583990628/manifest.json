@@ -1,0 +1,16 @@
+{
+  "entry_id": "GLBL_00149",
+  "run_id": "GLBL_00149-1787583990628",
+  "directory": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/翻译/.runs/GLBL_00149/GLBL_00149-1787583990628",
+  "formal_target": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/04史料翻译/GLBL_00149_黄帝.json",
+  "source_fingerprint": "d1e3ec2835e8d341",
+  "status": "baseline_ready",
+  "current_phase": "phase1",
+  "formal_promoted": true,
+  "attempts": {
+    "phase1": 1
+  },
+  "next_action": "retry_phase2",
+  "candidate": "/Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/翻译/.runs/GLBL_00149/GLBL_00149-1787583990628/candidate.json",
+  "resume_phase": "phase1"
+}

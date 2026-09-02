@@ -1,0 +1,315 @@
+===== 2026-08-23T05:13:58Z PHASE2 START =====
+✅ 人审批准 candidates: 96 条
+===== 2026-08-23T05:13:58Z START fill-shilue =====
+模块: historiography-dynasty-knowledge | 朝代: 东汉
+LLM: DeepSeek (deepseek-v4-flash)
+🤖 fill [事略] 1/18 光武统一天下 (GLBL_01719) …
+  ✅ 索引已写入 GLBL_01719
+🤖 fill [事略] 2/18 南匈奴附汉 (GLBL_01720) …
+  ✅ 索引已写入 GLBL_01720
+🤖 fill [事略] 3/18 光武度田 (GLBL_01721) …
+  ✅ 索引已写入 GLBL_01721
+🤖 fill [事略] 4/18 王景治河 (GLBL_01722) …
+  ✅ 索引已写入 GLBL_01722
+🤖 fill [事略] 5/18 班超定西域 (GLBL_01723) …
+  ✅ 索引已写入 GLBL_01723
+🤖 fill [事略] 6/18 燕然勒功 (GLBL_01724) …
+  ✅ 索引已写入 GLBL_01724
+🤖 fill [事略] 7/18 和帝诛窦 (GLBL_01725) …
+  ✅ 索引已写入 GLBL_01725
+🤖 fill [事略] 8/18 羌乱 (GLBL_01726) …
+  ✅ 索引已写入 GLBL_01726
+🤖 fill [事略] 9/18 白虎观会议 (GLBL_01727) …
+  ✅ 索引已写入 GLBL_01727
+🤖 fill [事略] 10/18 梁冀伏诛 (GLBL_01728) …
+  ✅ 索引已写入 GLBL_01728
+🤖 fill [事略] 11/18 党锢之祸 (GLBL_01729) …
+  ✅ 索引已写入 GLBL_01729
+🤖 fill [事略] 12/18 黄巾起义 (GLBL_01730) …
+  ✅ 索引已写入 GLBL_01730
+🤖 fill [事略] 13/18 董卓之乱 (GLBL_01731) …
+  ✅ 索引已写入 GLBL_01731
+🤖 fill [事略] 14/18 曹操迎献帝都许 (GLBL_01732) …
+  ✅ 索引已写入 GLBL_01732
+🤖 fill [事略] 15/18 曹丕代汉 (GLBL_01733) …
+  ✅ 索引已写入 GLBL_01733
+🤖 fill [事略] 16/18 佛教传入 (GLBL_01734) …
+  ✅ 索引已写入 GLBL_01734
+🤖 fill [事略] 17/18 十常侍之乱 (GLBL_01735) …
+  ✅ 索引已写入 GLBL_01735
+🤖 fill [事略] 18/18 衣带诏 (GLBL_01736) …
+  ✅ 索引已写入 GLBL_01736
+✅ fill-shilue 完成 → /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/06朝代知识补全/索引条目/东汉_事略典制论著.json
+📋 遗漏审阅提示词 → /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/东汉_遗漏审阅提示词.md
+===== 2026-08-23T05:21:12Z DONE  fill-shilue =====
+===== 2026-08-23T05:21:12Z START fill-dianzhi =====
+模块: historiography-dynasty-knowledge | 朝代: 东汉
+LLM: DeepSeek (deepseek-v4-flash)
+🤖 fill [典制] 1/14 尚书台制度 (GLBL_01737) …
+  ✅ 索引已写入 GLBL_01737
+🤖 fill [典制] 2/14 度田令 (GLBL_01738) …
+  ✅ 索引已写入 GLBL_01738
+🤖 fill [典制] 3/14 释放奴婢令 (GLBL_01739) …
+  ✅ 索引已写入 GLBL_01739
+🤖 fill [典制] 4/14 罢郡国兵制 (GLBL_01740) …
+===== 2026-08-23T05:22:23Z INDEX-ONLY PHASE START =====
+范围：fill 索引 + enrich 元数据 + 线上 historical_box（不含详情/翻译/见证/关系/评述）
+✅ 人审批准 candidates: 96 条
+===== 2026-08-23T05:22:23Z START fill-shilue =====
+模块: historiography-dynasty-knowledge | 朝代: 东汉
+LLM: DeepSeek (deepseek-v4-flash)
+✅ fill-shilue 完成 → /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/06朝代知识补全/索引条目/东汉_事略典制论著.json
+📋 遗漏审阅提示词 → /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/东汉_遗漏审阅提示词.md
+===== 2026-08-23T05:22:23Z DONE  fill-shilue =====
+===== 2026-08-23T05:22:23Z START fill-dianzhi =====
+模块: historiography-dynasty-knowledge | 朝代: 东汉
+LLM: DeepSeek (deepseek-v4-flash)
+🤖 fill [典制] 4/14 罢郡国兵制 (GLBL_01740) …
+  ✅ 索引已写入 GLBL_01740
+🤖 fill [典制] 5/14 宣布图谶于天下 (GLBL_01741) …
+  ✅ 索引已写入 GLBL_01741
+🤖 fill [典制] 6/14 五经博士 (GLBL_01742) …
+  ✅ 索引已写入 GLBL_01742
+🤖 fill [典制] 7/14 四分历 (GLBL_01743) …
+  ✅ 索引已写入 GLBL_01743
+🤖 fill [典制] 8/14 西域都护府 (GLBL_01744) …
+  ✅ 索引已写入 GLBL_01744
+🤖 fill [典制] 9/14 弛盐铁之禁 (GLBL_01745) …
+  ✅ 索引已写入 GLBL_01745
+🤖 fill [典制] 10/14 阳嘉察举新制 (GLBL_01746) …
+  ✅ 索引已写入 GLBL_01746
+🤖 fill [典制] 11/14 西邸卖官 (GLBL_01747) …
+  ✅ 索引已写入 GLBL_01747
+🤖 fill [典制] 12/14 州牧制度 (GLBL_01748) …
+  ✅ 索引已写入 GLBL_01748
+🤖 fill [典制] 13/14 鸿都门学 (GLBL_01749) …
+  ✅ 索引已写入 GLBL_01749
+🤖 fill [典制] 14/14 三互法 (GLBL_01750) …
+  ✅ 索引已写入 GLBL_01750
+✅ fill-dianzhi 完成 → /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/06朝代知识补全/索引条目/东汉_事略典制论著.json
+📋 遗漏审阅提示词 → /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/东汉_遗漏审阅提示词.md
+===== 2026-08-23T05:26:44Z DONE  fill-dianzhi =====
+===== 2026-08-23T05:26:44Z START fill-lunzhu =====
+模块: historiography-dynasty-knowledge | 朝代: 东汉
+LLM: DeepSeek (deepseek-v4-flash)
+GLBL_01751 挂靠帝王「光武帝」不在本朝帝王表；可选：汉光武帝, 汉明帝, 汉章帝, 汉和帝, 汉献帝, 汉殇帝, 汉安帝, 少帝刘懿, 汉顺帝, 汉冲帝, 汉质帝, 汉桓帝, 汉灵帝, 少帝刘辩
+===== 2026-08-23T05:46:46Z RESUME fill-lunzhu/renwu =====
+===== START fill-lunzhu =====
+模块: historiography-dynasty-knowledge | 朝代: 东汉
+LLM: DeepSeek (deepseek-v4-flash)
+🤖 fill [论著] 1/21 《新论》 (GLBL_01751) …
+  ✅ 索引已写入 GLBL_01751
+🤖 fill [论著] 2/21 《两都赋》 (GLBL_01752) …
+  ✅ 索引已写入 GLBL_01752
+🤖 fill [论著] 3/21 《白虎通义》 (GLBL_01753) …
+  ✅ 索引已写入 GLBL_01753
+🤖 fill [论著] 4/21 《论衡》 (GLBL_01754) …
+  ✅ 索引已写入 GLBL_01754
+🤖 fill [论著] 5/21 《汉书》 (GLBL_01755) …
+  ✅ 索引已写入 GLBL_01755
+🤖 fill [论著] 6/21 《说文解字》 (GLBL_01756) …
+  ✅ 索引已写入 GLBL_01756
+🤖 fill [论著] 7/21 《归田赋》 (GLBL_01757) …
+  ✅ 索引已写入 GLBL_01757
+🤖 fill [论著] 8/21 《太平经》 (GLBL_01758) …
+  ✅ 索引已写入 GLBL_01758
+🤖 fill [论著] 9/21 《曹全碑》 (GLBL_01759) …
+  ✅ 索引已写入 GLBL_01759
+🤖 fill [论著] 10/21 《伤寒杂病论》 (GLBL_01760) …
+  ✅ 索引已写入 GLBL_01760
+🤖 fill [论著] 11/21 《孔雀东南飞》 (GLBL_01761) …
+  ✅ 索引已写入 GLBL_01761
+🤖 fill [论著] 12/21 郑学 (GLBL_01762) …
+  ✅ 索引已写入 GLBL_01762
+🤖 fill [论著] 13/21 《九章算术》 (GLBL_01763) …
+  ✅ 索引已写入 GLBL_01763
+🤖 fill [论著] 14/21 《释名》 (GLBL_01764) …
+  ✅ 索引已写入 GLBL_01764
+🤖 fill [论著] 15/21 《东观汉记》 (GLBL_01765) …
+  ✅ 索引已写入 GLBL_01765
+🤖 fill [论著] 16/21 《古诗十九首》 (GLBL_01766) …
+  ✅ 索引已写入 GLBL_01766
+🤖 fill [论著] 17/21 《神农本草经》 (GLBL_01767) …
+  ✅ 索引已写入 GLBL_01767
+🤖 fill [论著] 18/21 《理惑论》 (GLBL_01768) …
+  ✅ 索引已写入 GLBL_01768
+🤖 fill [论著] 19/21 《四十二章经》 (GLBL_01769) …
+  ✅ 索引已写入 GLBL_01769
+🤖 fill [论著] 20/21 《二京赋》 (GLBL_01770) …
+  ✅ 索引已写入 GLBL_01770
+🤖 fill [论著] 21/21 《参同契》 (GLBL_01771) …
+  ✅ 索引已写入 GLBL_01771
+✅ fill-lunzhu 完成 → /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/06朝代知识补全/索引条目/东汉_事略典制论著.json
+📋 遗漏审阅提示词 → /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/东汉_遗漏审阅提示词.md
+===== DONE fill-lunzhu =====
+===== START fill-renwu =====
+模块: historiography-dynasty-knowledge | 朝代: 东汉
+LLM: DeepSeek (deepseek-v4-flash)
+GLBL_01772 挂靠帝王「汉少帝」不在本朝帝王表；可选：汉光武帝, 汉明帝, 汉章帝, 汉和帝, 汉献帝, 汉殇帝, 汉安帝, 少帝刘懿, 汉顺帝, 汉冲帝, 汉质帝, 汉桓帝, 汉灵帝, 少帝刘辩
+===== START enrich-all =====
+模块: historiography-dynasty-knowledge | 朝代: 东汉
+LLM: DeepSeek (deepseek-v4-flash)
+✅ repair-index 完成（0 处）
+🤖 优先级: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/06朝代知识补全/索引条目/东汉_事略典制论著.json --llm --dynasty-id CD_HX_DONGHAN
+  朝代过滤 CD_HX_DONGHAN: 53 条
+  🤖 [东汉] 第 1/3 批 (20 条) P0=0
+  🤖 [东汉] 第 2/3 批 (20 条) P0=6
+  🤖 [东汉] 第 3/3 批 (13 条) P0=16
+📊 朝代优先级: dynasties=1 entries=53 skipped_fresh=0 skipped_locked=0 llm=53 fallback=0 flagged=0
+✅ 已写回: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/06朝代知识补全/索引条目/东汉_事略典制论著.json
+🤖 峰值年: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/06朝代知识补全/索引条目/东汉_事略典制论著.json --llm --dynasty-id CD_HX_DONGHAN
+  朝代过滤 CD_HX_DONGHAN: 53/53 条
+  🤖 LLM 峰值判定 [事略] 第 1 批 (3 条, 常规)
+📊 峰值年标注: total=53 locked=0 fresh=0 rule=50 llm=3 llm_flagged=0 fallback=0 no_year=0
+✅ 已写回: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/06朝代知识补全/索引条目/东汉_事略典制论著.json
+✅ enrich 完成
+缺少人物索引: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/06朝代知识补全/索引条目/东汉_人物.json
+===== 2026-08-23T06:03:26Z RESUME fill-renwu =====
+模块: historiography-dynasty-knowledge | 朝代: 东汉
+LLM: DeepSeek (deepseek-v4-flash)
+🤖 fill-renwu [君王] 1/1 少帝刘辩 (GLBL_01772) …
+  ✅ 索引已写入 GLBL_01772
+🤖 fill-renwu [宗戚] 1/5 桓思窦皇后 (GLBL_01773) …
+  ✅ 索引已写入 GLBL_01773
+🤖 fill-renwu [宗戚] 2/5 孝仁董皇后 (GLBL_01774) …
+  ✅ 索引已写入 GLBL_01774
+🤖 fill-renwu [宗戚] 3/5 献帝伏皇后 (GLBL_01775) …
+  ✅ 索引已写入 GLBL_01775
+🤖 fill-renwu [宗戚] 4/5 刘淑 (GLBL_01776) …
+  ✅ 索引已写入 GLBL_01776
+🤖 fill-renwu [宗戚] 5/5 刘悝 (GLBL_01777) …
+  ✅ 索引已写入 GLBL_01777
+🤖 fill-renwu [宦官] 1/8 蹇硕 (GLBL_01778) …
+  ✅ 索引已写入 GLBL_01778
+🤖 fill-renwu [宦官] 2/8 赵忠 (GLBL_01779) …
+  ✅ 索引已写入 GLBL_01779
+🤖 fill-renwu [宦官] 3/8 王甫 (GLBL_01780) …
+  ✅ 索引已写入 GLBL_01780
+🤖 fill-renwu [宦官] 4/8 左悺 (GLBL_01781) …
+  ✅ 索引已写入 GLBL_01781
+🤖 fill-renwu [宦官] 5/8 具瑗 (GLBL_01782) …
+  ✅ 索引已写入 GLBL_01782
+🤖 fill-renwu [宦官] 6/8 唐衡 (GLBL_01783) …
+  ✅ 索引已写入 GLBL_01783
+🤖 fill-renwu [宦官] 7/8 徐璜 (GLBL_01784) …
+  ✅ 索引已写入 GLBL_01784
+🤖 fill-renwu [宦官] 8/8 樊丰 (GLBL_01785) …
+  ✅ 索引已写入 GLBL_01785
+🤖 fill-renwu [文臣] 1/7 许慎 (GLBL_01786) …
+  ✅ 索引已写入 GLBL_01786
+🤖 fill-renwu [文臣] 2/7 张仲景 (GLBL_01787) …
+  ✅ 索引已写入 GLBL_01787
+🤖 fill-renwu [文臣] 3/7 应劭 (GLBL_01788) …
+  ✅ 索引已写入 GLBL_01788
+🤖 fill-renwu [文臣] 4/7 杜密 (GLBL_01789) …
+  ✅ 索引已写入 GLBL_01789
+🤖 fill-renwu [文臣] 5/7 刘洪 (GLBL_01790) …
+  ✅ 索引已写入 GLBL_01790
+🤖 fill-renwu [文臣] 6/7 陈琳 (GLBL_01791) …
+  ✅ 索引已写入 GLBL_01791
+🤖 fill-renwu [文臣] 7/7 杨修 (GLBL_01792) …
+  ✅ 索引已写入 GLBL_01792
+🤖 fill-renwu [武将] 1/6 李傕 (GLBL_01793) …
+  ✅ 索引已写入 GLBL_01793
+🤖 fill-renwu [武将] 2/6 郭汜 (GLBL_01794) …
+  ✅ 索引已写入 GLBL_01794
+🤖 fill-renwu [武将] 3/6 韩遂 (GLBL_01795) …
+  ✅ 索引已写入 GLBL_01795
+🤖 fill-renwu [武将] 4/6 马腾 (GLBL_01796) …
+  ✅ 索引已写入 GLBL_01796
+🤖 fill-renwu [武将] 5/6 丁原 (GLBL_01797) …
+  ✅ 索引已写入 GLBL_01797
+🤖 fill-renwu [武将] 6/6 景丹 (GLBL_01798) …
+  ✅ 索引已写入 GLBL_01798
+🤖 fill-renwu [蕃祚] 1/6 北匈奴 (GLBL_01799) …
+  ✅ 索引已写入 GLBL_01799
+🤖 fill-renwu [蕃祚] 2/6 西域诸国 (GLBL_01800) …
+  ✅ 索引已写入 GLBL_01800
+🤖 fill-renwu [蕃祚] 3/6 大秦 (GLBL_01801) …
+  ✅ 索引已写入 GLBL_01801
+🤖 fill-renwu [蕃祚] 4/6 倭 (GLBL_01802) …
+  ✅ 索引已写入 GLBL_01802
+🤖 fill-renwu [蕃祚] 5/6 安息 (GLBL_01803) …
+  ✅ 索引已写入 GLBL_01803
+🤖 fill-renwu [蕃祚] 6/6 贵霜 (GLBL_01804) …
+  ✅ 索引已写入 GLBL_01804
+🤖 fill-renwu [庶众] 1/4 张角 (GLBL_01805) …
+  ✅ 索引已写入 GLBL_01805
+🤖 fill-renwu [庶众] 2/4 张陵 (GLBL_01806) …
+  ✅ 索引已写入 GLBL_01806
+🤖 fill-renwu [庶众] 3/4 樊崇 (GLBL_01807) …
+  ✅ 索引已写入 GLBL_01807
+🤖 fill-renwu [庶众] 4/4 孟光 (GLBL_01808) …
+  ✅ 索引已写入 GLBL_01808
+✅ fill-renwu 完成 37 条 → /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/06朝代知识补全/索引条目/东汉_人物.json
+📋 遗漏审阅提示词 → /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/05工作流中间产物/朝代知识补全/东汉_遗漏审阅提示词.md
+===== 2026-08-23T06:18:28Z START enrich-all =====
+模块: historiography-dynasty-knowledge | 朝代: 东汉
+LLM: DeepSeek (deepseek-v4-flash)
+🔧 repair-index 东汉_人物.json: 2 处
+  - GLBL_01776 年份兜底(活跃期帝王在位): 167~189 — 活跃期取四级帝王「汉灵帝」在位 167～189
+  - GLBL_01808 年份兜底(活跃期帝王在位): 57~75 — 活跃期取四级帝王「汉明帝」在位 57～75
+✅ repair-index 完成（2 处）
+🤖 优先级: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/06朝代知识补全/索引条目/东汉_事略典制论著.json --llm --dynasty-id CD_HX_DONGHAN
+  朝代过滤 CD_HX_DONGHAN: 53 条
+  🤖 [东汉] 第 1/3 批 (20 条) P0=0
+  🤖 [东汉] 第 2/3 批 (20 条) P0=7
+  🤖 [东汉] 第 3/3 批 (7 条) P0=15
+📊 朝代优先级: dynasties=1 entries=47 skipped_fresh=6 skipped_locked=0 llm=47 fallback=0 flagged=0
+✅ 已写回: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/06朝代知识补全/索引条目/东汉_事略典制论著.json
+🤖 峰值年: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/06朝代知识补全/索引条目/东汉_事略典制论著.json --llm --dynasty-id CD_HX_DONGHAN
+  朝代过滤 CD_HX_DONGHAN: 53/53 条
+📊 峰值年标注: total=53 locked=0 fresh=53 rule=0 llm=0 llm_flagged=0 fallback=0 no_year=0
+✅ 已写回: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/06朝代知识补全/索引条目/东汉_事略典制论著.json
+✅ enrich 完成
+🤖 优先级: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/06朝代知识补全/索引条目/东汉_人物.json --llm --dynasty-id CD_HX_DONGHAN
+  朝代过滤 CD_HX_DONGHAN: 37 条
+  🤖 [东汉] 第 1/2 批 (20 条) P0=0
+  🤖 [东汉] 第 2/2 批 (17 条) P0=2
+📊 朝代优先级: dynasties=1 entries=37 skipped_fresh=0 skipped_locked=0 llm=37 fallback=0 flagged=0
+✅ 已写回: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/06朝代知识补全/索引条目/东汉_人物.json
+🤖 峰值年: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/06朝代知识补全/索引条目/东汉_人物.json --llm --dynasty-id CD_HX_DONGHAN
+  朝代过滤 CD_HX_DONGHAN: 37/37 条
+  🤖 LLM 峰值判定 [宗戚] 第 1 批 (1 条, 常规)
+  🤖 LLM 峰值判定 [宦官] 第 2 批 (5 条, 常规)
+  🤖 LLM 峰值判定 [文臣] 第 3 批 (1 条, 含1条高风险)
+  🤖 LLM 峰值判定 [文臣] 第 4 批 (4 条, 常规)
+  🤖 LLM 峰值判定 [蕃祚] 第 5 批 (5 条, 含5条高风险)
+  🤖 LLM 峰值判定 [蕃祚] 第 6 批 (1 条, 含1条高风险)
+  🤖 LLM 峰值判定 [庶众] 第 7 批 (2 条, 常规)
+📊 峰值年标注: total=37 locked=0 fresh=0 rule=18 llm=19 llm_flagged=0 fallback=0 no_year=0
+  🔎 待人工审核 4 条
+✅ 已写回: /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/06朝代知识补全/索引条目/东汉_人物.json
+🤖 人物标签: --llm --no-empty --dynasty-id CD_HX_DONGHAN
+  🤖 LLM 人物标签 第 1 批 (15 条)
+  🤖 LLM 人物标签 第 2 批 (15 条)
+  🤖 LLM 人物标签 第 3 批 (7 条)
+朝代过滤 CD_HX_DONGHAN: 37 条参与
+人物标签 total=37 skipped=0 locked=0 fresh=0 llm=37 empty=0 failed=0
+📊 total=37 skipped=0 locked=0 fresh=0 llm=37 empty=0 failed=0
+✅ enrich-renwu 完成
+===== 2026-08-23T06:49:18Z START sync index online =====
+V2 输入: 929
+06 输入: 950
+合并总数: 1190
+06 同 ID 被 V2 覆盖: 689
+06 独占并入: 261
+春秋人物 01021–01086: 0
+警告: 春秋人物期望 66 条，实际并入 0 条
+已写入 → /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/12线上史略索引/史略索引_online.json
+报告 → /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/12线上史略索引/merge_report.json
+线上索引: 1190 条 → /Users/rachelcheng/Desktop/padanhis/pandahis/pandahis/data/12线上史略索引/史略索引_online.json
+帝王 FK 预处理: {'resolved_by_name': 0, 'inserted_stub': 0}
+完成: 导入/更新 1190 条史略，删除多余 1 条，historical_box 共 1190 条
+  wenchen: 288
+  zhuhou: 161
+  shilue: 133
+  junji: 115
+  dianzhi: 107
+  wujiang: 101
+  zongqi: 100
+  lunzhu: 82
+  shuzhong: 55
+  fanzhu: 36
+  huanguan: 12
+===== 2026-08-23T06:51:27Z RESUME COMPLETE =====

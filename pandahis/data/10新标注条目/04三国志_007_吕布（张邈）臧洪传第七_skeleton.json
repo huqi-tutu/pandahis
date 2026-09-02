@@ -4,7 +4,7 @@
   "total_paragraphs": 25,
   "volume_type": "纪传叙事",
   "volume_subtype": "hezhuan",
-  "volume_texture": "interleaved",
+  "volume_texture": "sequential",
   "segment_attribution": [
     {
       "paragraph": 1,
@@ -51,7 +51,7 @@
       "paragraph": 6,
       "owners": [
         {
-          "name": "张邈",
+          "name": "吕布",
           "category": "武将"
         }
       ]
@@ -60,7 +60,7 @@
       "paragraph": 7,
       "owners": [
         {
-          "name": "张邈",
+          "name": "吕布",
           "category": "武将"
         }
       ]
@@ -121,12 +121,8 @@
     },
     {
       "paragraph": 14,
-      "owners": [
-        {
-          "name": "吕布",
-          "category": "武将"
-        }
-      ]
+      "owners": [],
+      "exclude_reason": "世系链"
     },
     {
       "paragraph": 15,
@@ -221,7 +217,7 @@
     {
       "paragraph": 25,
       "owners": [],
-      "exclude_reason": "论赞"
+      "exclude_reason": "评曰"
     }
   ],
   "entries": [
@@ -236,32 +232,12 @@
         {
           "volume": "吕布（张邈）臧洪传",
           "paragraph_from": 2,
-          "paragraph_to": 5
-        },
-        {
-          "volume": "吕布（张邈）臧洪传",
-          "paragraph_from": 8,
-          "paragraph_to": 14
+          "paragraph_to": 13
         }
       ]
     },
     {
       "史略ID": "SANGUOZHI_007_02",
-      "史略名称": "张邈",
-      "史略简介": "张邈",
-      "原文字句": "张邈字孟卓，东平寿张人也。少以侠闻，振穷救急，倾家无爱，士多归之。太祖、袁绍皆与邈友。辟公府，以高第拜骑都尉，迁陈留太守。董卓之乱，太祖与邈首举义兵。汴水之战，邈遣卫兹将兵随太祖。袁绍既为盟主，有骄矜色，邈正议责绍。绍使太祖杀邈，太祖不听，责绍曰：“孟卓，亲友也，是非当容之。今天下未定，不宜自相危也。”邈知之，益德太祖。太祖之征陶谦，敕家曰：“我若不还，往依孟卓。”后还，见邈，垂泣相对。其亲如此。",
-      "史略分类": "武将",
-      "主要史料出处": "《04三国志·卷7·吕布（张邈）臧洪传》",
-      "paragraphs": [
-        {
-          "volume": "吕布（张邈）臧洪传",
-          "paragraph_from": 6,
-          "paragraph_to": 7
-        }
-      ]
-    },
-    {
-      "史略ID": "SANGUOZHI_007_03",
       "史略名称": "臧洪",
       "史略简介": "臧洪",
       "原文字句": "臧洪字子源，广陵射阳人也。父旻，历匈奴中郎将、中山、太原太守，所在有名。洪体貌魁梧，有异于人，举孝廉为郎。时选三署郎以补县长；琅邪赵昱为莒长，东莱刘繇下邑长，东海王朗菑丘长，洪即丘长。灵帝末，弃官还家，太守张超请洪为功曹。",
@@ -275,6 +251,5 @@
         }
       ]
     }
-  ],
-  "translation_qa_hint": "混写卷：人物段落非连续。翻译质检须按 entries[].paragraphs 多段拼接，勿按卷内段号顺序假定语义连贯。"
+  ]
 }

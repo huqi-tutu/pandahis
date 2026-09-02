@@ -1,0 +1,129 @@
+{
+  "schema": "dynasty-knowledge-bibliography/v1",
+  "史略ID": "GLBL_01815",
+  "写作结构": "正史叙述（《三国志》正文）见翻译详录；拓展文以裴松之注所引《魏略》佚文为核心，辅以类书辑存线索；《魏略》原书散佚，对具体篇卷、佚文细节保持留白，不虚构篇目卷数及逸文。",
+  "候选著作": [
+    {
+      "出处": "《三国志》裴松之注",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "裴注大量征引《魏略》，常以‘魏略曰’起句，是《魏略》佚文的主要存留载体。",
+      "检索词": "魏略曰",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C",
+      "fetch_note": "二十四史由翻译详录服务，拓展路不摘句"
+    },
+    {
+      "出处": "《三国志》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "陈寿所撰三国正史，裴注所附正文本体，不列为拓展摘句来源。",
+      "检索词": "魏略",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《隋书·经籍志》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "史志目录著录《魏略》及鱼豢著作信息，属正史系统，不拓展摘句。",
+      "检索词": "魏略",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《太平御览》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋代类书征引《魏略》佚文，可作辑佚比对与旁证。",
+      "检索词": "魏略",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史通》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "唐代刘知几对《魏略》等私修史书有评述，属后世史学评论。",
+      "检索词": "魏略",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "primary_sources": [
+    {
+      "出处": "《三国志》裴松之注",
+      "tier": "经注/杂史",
+      "pool": "primary",
+      "与本主题关系": "裴注大量征引《魏略》，常以‘魏略曰’起句，是《魏略》佚文的主要存留载体。",
+      "检索词": "魏略曰",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "C",
+      "fetch_note": "二十四史由翻译详录服务，拓展路不摘句"
+    },
+    {
+      "出处": "《三国志》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "陈寿所撰三国正史，裴注所附正文本体，不列为拓展摘句来源。",
+      "检索词": "魏略",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《隋书·经籍志》",
+      "tier": "正史-见翻译",
+      "pool": "primary",
+      "与本主题关系": "史志目录著录《魏略》及鱼豢著作信息，属正史系统，不拓展摘句。",
+      "检索词": "魏略",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "legend_sources": [
+    {
+      "出处": "《太平御览》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "宋代类书征引《魏略》佚文，可作辑佚比对与旁证。",
+      "检索词": "魏略",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    },
+    {
+      "出处": "《史通》",
+      "tier": "后世综述",
+      "pool": "legend",
+      "与本主题关系": "唐代刘知几对《魏略》等私修史书有评述，属后世史学评论。",
+      "检索词": "魏略",
+      "采用": false,
+      "原文摘句": "",
+      "snippet_verified": false,
+      "material_tier": "B"
+    }
+  ],
+  "material_summary": {
+    "A_verified": 0,
+    "B_bibliography_only": 0,
+    "C_excluded": 5,
+    "overall": "C"
+  }
+}

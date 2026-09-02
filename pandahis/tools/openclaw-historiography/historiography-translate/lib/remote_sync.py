@@ -36,7 +36,8 @@ def encode_source_original_json(source_original: Any) -> str | None:
 
 
 def auto_sync_enabled() -> bool:
-    return os.environ.get("TRANSLATE_AUTO_SYNC", "1") != "0"
+    """默认关闭；仅在你明确确认产出并要发布时设 TRANSLATE_AUTO_SYNC=1。"""
+    return os.environ.get("TRANSLATE_AUTO_SYNC", "0") != "0"
 
 
 def mysql_settings() -> Dict[str, Any]:
@@ -128,6 +129,14 @@ def ensure_schema(cursor) -> None:
               AFTER source_original_json
             """
         )
+    if not _column_exists(cursor, "historical_box_detail", "translate_version"):
+        cursor.execute(
+            """
+            ALTER TABLE historical_box_detail
+              ADD COLUMN translate_version VARCHAR(64) NULL COMMENT '翻译版本号（vN / baseline_ready）'
+              AFTER source_citation
+            """
+        )
 
 
 def upsert_translate_detail(
@@ -138,25 +147,29 @@ def upsert_translate_detail(
     source_citation: str | None = None,
     *,
     detail_source: str | None = None,
+    translate_version: str | None = None,
 ) -> None:
     source_json = source_original_json if source_original_json is not None else None
     citation = (source_citation or "").strip() or None
+    version = (translate_version or "").strip() or None
     cursor.execute(
         """
         INSERT INTO historical_box_detail
-          (box_id, translate_detail, source_original_json, source_citation)
+          (box_id, translate_detail, source_original_json, source_citation, translate_version)
         VALUES
-          (%(box_id)s, %(translate_detail)s, %(source_original_json)s, %(source_citation)s)
+          (%(box_id)s, %(translate_detail)s, %(source_original_json)s, %(source_citation)s, %(translate_version)s)
         ON DUPLICATE KEY UPDATE
           translate_detail = VALUES(translate_detail),
           source_original_json = VALUES(source_original_json),
-          source_citation = VALUES(source_citation)
+          source_citation = VALUES(source_citation),
+          translate_version = VALUES(translate_version)
         """,
         {
             "box_id": box_id,
             "translate_detail": translate_detail,
             "source_original_json": source_json,
             "source_citation": citation,
+            "translate_version": version,
         },
     )
     if detail_source:
@@ -214,6 +227,7 @@ def sync_translate_detail(
     source_citation: str | None = None,
     dry_run: bool = False,
     detail_source: str | None = "translate",
+    translate_version: str | None = None,
 ) -> Tuple[bool, str]:
     """将单条翻译详情 upsert 到线上 DB（不删除其它记录）。"""
     detail = str(translate_detail or "").strip()
@@ -238,6 +252,8 @@ def sync_translate_detail(
         extra = f"，原文 {text_len} 字" if source_json else ""
         if citation:
             extra += f"，出处 {citation}"
+        if translate_version:
+            extra += f"，版本 {translate_version}"
         return True, f"dry-run: 将 upsert {entry_id}（{len(detail)} 字{extra}）"
 
     conn = _connect()
@@ -245,7 +261,13 @@ def sync_translate_detail(
         with conn.cursor() as cursor:
             ensure_schema(cursor)
             upsert_translate_detail(
-                cursor, entry_id, detail, source_json, citation, detail_source=detail_source
+                cursor,
+                entry_id,
+                detail,
+                source_json,
+                citation,
+                detail_source=detail_source,
+                translate_version=translate_version,
             )
         conn.commit()
         return True, f"{len(detail)} 字已写入 historical_box_detail"
@@ -266,9 +288,18 @@ def sync_output_entry(
     ok, data, errs = load_output(entry_id, output_dir, entry_name)
     if not ok:
         return False, "; ".join(errs) or "无法读取产出 JSON"
+    from lib.baseline_gate import baseline_sync_blocked, is_baseline_output
+
+    if baseline_sync_blocked(data):
+        return False, "baseline 母本稿跳过线上同步（完成 phase2 enrich 后再 sync；或 TRANSLATE_SYNC_BASELINE=1）"
+    meta = data.get("_pipeline_meta") if isinstance(data.get("_pipeline_meta"), dict) else {}
+    if str(meta.get("status") or "").strip() == "pending_review":
+        if os.environ.get("TRANSLATE_SYNC_FORCE", "0") != "1":
+            return False, "pending_review 产出须先 promote 确认后再 sync（或 TRANSLATE_SYNC_FORCE=1）"
     detail = str(data.get("翻译详情") or "")
     source_original = data.get("史料原文")
     citation = data.get("原文出处")
+    translate_version = str(data.get("翻译版本") or "").strip() or None
     return sync_translate_detail(
         entry_id,
         detail,
@@ -276,6 +307,7 @@ def sync_output_entry(
         source_citation=str(citation).strip() if citation else None,
         dry_run=dry_run,
         detail_source="translate",
+        translate_version=translate_version,
     )
 
 
